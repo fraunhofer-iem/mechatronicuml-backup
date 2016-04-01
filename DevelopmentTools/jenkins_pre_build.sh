@@ -23,11 +23,20 @@
 
 
 function build_command(){
+	svn co https://svn-serv.cs.upb.de/mechatronicuml/trunk/DevelopmentTools/build.execution
 	QUERY=$(find . -maxdepth 2 -iname "*.cquery" -printf "%P")
+	XTEND=$(find . -iname "*.xtend")
+	BUILDCOMMAND=""
+	if [ -n "$XTEND" ] 
+	then
+		$BUILDCOMMAND="build -c --continueonerror
+launch -l build.execution/New_configuration.launch --stdout --stderr
+build"
+	fi
 	cat <<EOF > build_command.txt
 importtargetdefinition -A 'https://svn-serv.cs.upb.de/mechatronicuml/trunk/UpdateSite/de.uni_paderborn.fujaba.targetPlatformBuild/headless.target'
 import $QUERY
-build -c
+$BUILDCOMMAND
 perform -D target.os=* -D target.ws=* -D target.arch=* ${QUERY%/*}#site.p2
 EOF
 }
