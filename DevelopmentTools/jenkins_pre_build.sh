@@ -19,13 +19,25 @@
 ## 2) set rights for jenkins user
 ## 3) set executable
 ##
-## 
+##
+
+
+function build_command(){
+	QUERY=$(find . -maxdepth 2 -iname "*.cquery" -printf "%P")
+	cat <<EOF > build_command.txt
+importtargetdefinition -A 'https://svn-serv.cs.upb.de/mechatronicuml/trunk/UpdateSite/de.uni_paderborn.fujaba.targetPlatformBuild/headless.target'
+import $QUERY
+build -c
+perform -D target.os=* -D target.ws=* -D target.arch=* ${QUERY%/*}#site.p2
+EOF
+}
+ 
 function junit_test(){
 	if [ -e build_command.txt ]
 	then
-	        cat /dev/null > build_command.txt
+	        cat /dev/null > junit_command.txt
 	else
-	        touch build_command.txt
+	        touch junit_command.txt
 	fi
 	find -name "*.test*.launch" |
 	while read filename
@@ -34,7 +46,7 @@ function junit_test(){
 	 name=`basename $filename`
 	if [[ $name != *.ui* ]] 
 	then
-	        echo "junit -t 120 -l '$directory/$name' -o 'output/junit/$name.xml'"  >> build_command.txt
+	        echo "junit -t 120 -l '$directory/$name' -o 'output/junit/$name.xml'"  >> junit_command.txt
 	fi
 	done
 }
