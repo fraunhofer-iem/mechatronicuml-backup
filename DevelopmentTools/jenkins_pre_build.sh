@@ -35,7 +35,11 @@ function build_command(){
 		then
 			sed -i 's#</feature>#<plugin\nid="build.execution"\ndownload-size="0"\ninstall-size="0"\nversion="0.0.0"\n unpack="false"/>\n</feature>#' "$BUCKMINSTER_FEATURE_DIR/feature.xml"
 		fi
-		BUILDCOMMAND=$(echo -e "build -c --continueonerror \n launch -l build.execution/New_configuration.launch --stdout --stderr")
+		BUILDCOMMAND=$(echo -e "build -c --continueonerror \n launch -l build.execution/New_configuration.launch --stdout --stderr \n build")
+		if [ -n "$ACCELEO" ] 
+		then
+			BUILDCOMMAND="$BUILDCOMMAND \n launch -l build.execution/New_configuration.launch --stdout --stderr"
+		fi
 	fi	
 	cat <<EOF > build_command.txt
 importtargetdefinition -A 'https://svn-serv.cs.upb.de/mechatronicuml/trunk/UpdateSite/de.uni_paderborn.fujaba.targetPlatformBuild/headless.target'
