@@ -23,7 +23,7 @@
 
 
 function build_command(){
-	svn co https://svn-serv.cs.upb.de/mechatronicuml/trunk/DevelopmentTools/build.test
+	svn co https://svn-serv.cs.upb.de/mechatronicuml/trunk/DevelopmentTools/build.execution
 	QUERY=$(find . -maxdepth 2 -iname "*.cquery" -printf "%P")
 	BUCKMINSTER_FEATURE_DIR=${QUERY%/*}
 	XTEND=$(find . -iname "*.xtend")
