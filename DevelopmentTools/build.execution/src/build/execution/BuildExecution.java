@@ -12,7 +12,7 @@ import org.eclipse.core.runtime.NullProgressMonitor;
 
 public class BuildExecution {
 
-	public void test() throws CoreException {
+	public static void build() CoreException {
 		IProgressMonitor progressMonitor = new NullProgressMonitor();
 		IWorkspace workspace = ResourcesPlugin.getWorkspace();
 		IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
@@ -29,6 +29,17 @@ public class BuildExecution {
 		});
 
 		workspace.build(IncrementalProjectBuilder.FULL_BUILD, progressMonitor);
+		IMarker[] markers = null;
+		try {
+			markers = root.findMarkers(AcceleoMarkerUtils.PROBLEM_MARKER_ID,
+				            true, IResource.DEPTH_INFINITE);
+		} catch (CoreException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		if (markers != null && markers.length > 0) {
+			throw new IllegalStateException("acceleo build failed!!!");
+		}
 
 		workspace.save(true, progressMonitor);
 

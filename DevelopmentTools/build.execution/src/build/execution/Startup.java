@@ -13,9 +13,8 @@ public class Startup implements IStartup {
 		workbench.getDisplay().asyncExec(new Runnable() {
 			public void run() {
 				
-				BuildExecution build = new BuildExecution();
 				try {
-					build.test();
+					BuildExecution.build();
 				} catch (CoreException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
