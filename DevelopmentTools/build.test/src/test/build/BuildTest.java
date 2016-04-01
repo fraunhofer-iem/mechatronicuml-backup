@@ -48,27 +48,20 @@ public class BuildTest {
 			e.printStackTrace();
 		}
 		
-		try {
-			root.accept(new IResourceVisitor() {
 
-				@Override
-				public boolean visit(IResource resource) throws CoreException {
-					System.out.println(resource.getName());
-					if (resource instanceof ICompilationUnit)
-						if(findJavaProblemMarkers((ICompilationUnit) resource).length>0){
-							fail("compilation problem");
-						};
-					return false;
-				}
-			});
+		
+		IMarker[] markers=null;
+		try {
+			markers=root.findMarkers(AcceleoMarkerUtils.PROBLEM_MARKER_ID,
+				            true, IResource.DEPTH_INFINITE);
 		} catch (CoreException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
-		
-		
-		
-		
+		if(markers!=null && markers.length>0){
+			fail("compilation problem");
+
+		}
 		
 		try {
 			workspace.save(true, progressMonitor);
@@ -79,16 +72,7 @@ public class BuildTest {
 	}
 
 	
-	  public IMarker[] findJavaProblemMarkers(ICompilationUnit cu) 
-		      throws CoreException {
-		      IResource javaSourceFile = cu.getUnderlyingResource();
-		      IMarker[] markers = 
-		         javaSourceFile.findMarkers(IJavaModelMarker.JAVA_MODEL_PROBLEM_MARKER,
-		            true, IResource.DEPTH_INFINITE);
-		      javaSourceFile.findMarkers(AcceleoMarkerUtils.PROBLEM_MARKER_ID,
-			            true, IResource.DEPTH_INFINITE);
-			return markers;
-		   }
+
 
 	
 }
