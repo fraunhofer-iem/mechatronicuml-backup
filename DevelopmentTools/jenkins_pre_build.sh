@@ -26,7 +26,7 @@ function build_command(){
 	svn co https://svn-serv.cs.upb.de/mechatronicuml/trunk/DevelopmentTools/build.execution
 	QUERY=$(find . -maxdepth 2 -iname "*.cquery" -printf "%P")
 	XTEND=$(find . -iname "*.xtend")
-	BUILDCOMMAND=""
+	BUILDCOMMAND="build -c"
 	if [ -n "$XTEND" ] 
 	then
 		$BUILDCOMMAND="build -c --continueonerror
