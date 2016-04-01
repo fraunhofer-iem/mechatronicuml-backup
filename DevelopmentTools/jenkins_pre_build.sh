@@ -30,18 +30,18 @@ function build_command(){
 	BUILDCOMMAND="build -c"
 	if [ -n "$XTEND" -o  -n "$ACCELEO" ] 
 	then
-		svn co https://svn-serv.cs.upb.de/mechatronicuml/trunk/DevelopmentTools/build.execution
-		if [ -z $(grep "id=\"build.execution\"" "$BUCKMINSTER_FEATURE_DIR/feature.xml") ]
+		svn co https://svn-serv.cs.upb.de/mechatronicuml/trunk/DevelopmentTools/build.test
+		if [ -z $(grep "id=\"build.test\"" "$BUCKMINSTER_FEATURE_DIR/feature.xml") ]
 		then
-			sed -i 's#</feature>#<plugin\nid="build.execution"\ndownload-size="0"\ninstall-size="0"\nversion="0.0.0"\n unpack="false"/>\n</feature>#' "$BUCKMINSTER_FEATURE_DIR/feature.xml"
+			sed -i 's#</feature>#<plugin\nid="build.test"\ndownload-size="0"\ninstall-size="0"\nversion="0.0.0"\n unpack="false"/>\n</feature>#' "$BUCKMINSTER_FEATURE_DIR/feature.xml"
 		fi
-		BUILDCOMMAND=$(echo -e "build -c --continueonerror \n launch -l build.execution/New_configuration.launch --stdout --stderr")
+		BUILDCOMMAND=$(echo -e "build -c --continueonerror \n launch -l build.test/BuildTest.launch --stdout --stderr")
 		if [ -n "$XTEND" ]
 		then
 			BUILDCOMMAND=$(echo -e "$BUILDCOMMAND \n build")
 			if [ -n "$ACCELEO" ] 
 			then
-				BUILDCOMMAND=$(echo -e "$BUILDCOMMAND \n launch -l build.execution/New_configuration.launch --stdout --stderr")
+				BUILDCOMMAND=$(echo -e "$BUILDCOMMAND \n launch -l build.test/BuildTest.launch --stdout --stderr")
 			fi
 		fi
 	fi	
