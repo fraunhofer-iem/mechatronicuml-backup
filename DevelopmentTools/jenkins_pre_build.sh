@@ -23,7 +23,7 @@
 
 
 function build_command(){
-	svn co https://svn-serv.cs.upb.de/mechatronicuml/trunk/DevelopmentTools/build.execution
+	svn co https://svn-serv.cs.upb.de/mechatronicuml/trunk/DevelopmentTools/build.test
 	QUERY=$(find . -maxdepth 2 -iname "*.cquery" -printf "%P")
 	BUCKMINSTER_FEATURE_DIR=${QUERY%/*}
 	XTEND=$(find . -iname "*.xtend")
@@ -33,9 +33,9 @@ function build_command(){
 	then
 		if [ -z $(grep "id=\"build.execution\"" "$BUCKMINSTER_FEATURE_DIR/feature.xml") ]
 		then
-			sed -i 's#</feature>#<plugin\nid="build.execution"\ndownload-size="0"\ninstall-size="0"\nversion="0.0.0"\n unpack="false"/>\n</feature>#' "$BUCKMINSTER_FEATURE_DIR/feature.xml"
+			sed -i 's#</feature>#<plugin\nid="build.test"\ndownload-size="0"\ninstall-size="0"\nversion="0.0.0"\n unpack="false"/>\n</feature>#' "$BUCKMINSTER_FEATURE_DIR/feature.xml"
 		fi
-		BUILDCOMMAND=$(echo -e "build -c --continueonerror \n launch -l build.execution/New_configuration.launch --stdout --stderr \n build")
+		BUILDCOMMAND=$(echo -e "build -c --continueonerror \n junit -t 240 -l build.test/BuildTest.launch --stdout --stderr \n build")
 	fi	
 	cat <<EOF > build_command.txt
 importtargetdefinition -A 'https://svn-serv.cs.upb.de/mechatronicuml/trunk/UpdateSite/de.uni_paderborn.fujaba.targetPlatformBuild/headless.target'
