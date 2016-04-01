@@ -8,4 +8,7 @@ Require-Bundle: org.junit,
  org.eclipse.core.resources,
  org.eclipse.platform;bundle-version="4.5.1",
  org.eclipse.swt;bundle-version="3.104.1",
- org.eclipse.core.runtime;bundle-version="3.11.1"
+ org.eclipse.core.runtime;bundle-version="3.11.1",
+ org.eclipse.xtend.ide;bundle-version="2.9.1",
+ org.eclipse.xtend.standalone;bundle-version="2.9.1",
+ org.eclipse.acceleo.ide.ui;bundle-version="3.6.1"
