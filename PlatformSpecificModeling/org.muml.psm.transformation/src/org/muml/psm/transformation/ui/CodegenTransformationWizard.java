@@ -174,7 +174,7 @@ public class CodegenTransformationWizard extends Wizard implements INewWizard {
 						psmJob.setUser(true);
 
 						MumlPSM2CodegenJob codeGenJob = new MumlPSM2CodegenJob(
-								allocation, codgenModelPath,
+								allocation, URI.createURI(codgenModelPath.toOSString()),
 								Messages.CodegenTransformationWizard_0);
 						codeGenJob.setUser(true);
 						codeGenJob.setProgressGroup(monitor, 10);
