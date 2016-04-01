@@ -29,7 +29,7 @@ function build_command(){
 	BUILDCOMMAND="build -c"
 	if [ -n "$XTEND" ] 
 	then
-		$BUILDCOMMAND="build -c --continueonerror
+		BUILDCOMMAND="build -c --continueonerror
 launch -l build.execution/New_configuration.launch --stdout --stderr
 build"
 	fi
