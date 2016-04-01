@@ -44,7 +44,7 @@ public class BuildTest {
 			workspace.build(IncrementalProjectBuilder.FULL_BUILD, progressMonitor);
 		} catch (CoreException e) {
 			// TODO Auto-generated catch block
-			fail("build failed!!!!!!!!");
+			fail("build failed!!!");
 			e.printStackTrace();
 		}
 		
@@ -59,7 +59,7 @@ public class BuildTest {
 			e1.printStackTrace();
 		}
 		if(markers!=null && markers.length>0){
-			fail("compilation problem");
+			fail("compilation problem!!!");
 
 		}
 		
