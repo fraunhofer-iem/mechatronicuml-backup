@@ -33,13 +33,7 @@ function build_command(){
 	then
 		if [ -z $(grep "id=\"build.execution\"" "$BUCKMINSTER_FEATURE_DIR/feature.xml") ]
 		then
-			sed -i 's#</feature>#   <plugin
-         id="build.execution"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-</feature>#' "$BUCKMINSTER_FEATURE_DIR/feature.xml"
+			sed -i 's#</feature>#<plugin\nid="build.execution"\ndownload-size="0"\ninstall-size="0"\nversion="0.0.0"\n unpack="false"/>\n</feature>#' "$BUCKMINSTER_FEATURE_DIR/feature.xml"
 		fi
 		BUILDCOMMAND=$(echo -e "build -c --continueonerror \n launch -l build.execution/New_configuration.launch --stdout --stderr \n build")
 	fi	
