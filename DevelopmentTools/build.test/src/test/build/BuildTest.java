@@ -15,10 +15,19 @@ import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.jdt.core.ICompilationUnit;
 import org.eclipse.jdt.core.IJavaModelMarker;
+import org.junit.AfterClass;
 import org.junit.Test;
 
 public class BuildTest {
-
+	IMarker[] markers=null;
+	
+	@AfterClass
+	public void setFail(){
+		if(markers!=null && markers.length>0){
+			System.exit(1);
+		}
+	}
+	
 	@Test
 	public void test() {
 		IProgressMonitor progressMonitor = new NullProgressMonitor();
@@ -50,7 +59,7 @@ public class BuildTest {
 		
 
 		
-		IMarker[] markers=null;
+		
 		try {
 			markers=root.findMarkers(AcceleoMarkerUtils.PROBLEM_MARKER_ID,
 				            true, IResource.DEPTH_INFINITE);
@@ -59,7 +68,7 @@ public class BuildTest {
 			e1.printStackTrace();
 		}
 		if(markers!=null && markers.length>0){
-			System.exit(1);
+			
 			fail("compilation problem!!!");
 
 		}
