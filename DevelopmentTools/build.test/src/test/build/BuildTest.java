@@ -19,10 +19,10 @@ import org.junit.AfterClass;
 import org.junit.Test;
 
 public class BuildTest {
-	IMarker[] markers=null;
+	public static IMarker[] markers=null;
 	
 	@AfterClass
-	public void setFail(){
+	public static void setFail(){
 		if(markers!=null && markers.length>0){
 			System.exit(1);
 		}
