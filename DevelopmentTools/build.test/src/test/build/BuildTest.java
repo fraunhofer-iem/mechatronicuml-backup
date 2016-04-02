@@ -59,6 +59,7 @@ public class BuildTest {
 			e1.printStackTrace();
 		}
 		if(markers!=null && markers.length>0){
+			System.exit(1);
 			fail("compilation problem!!!");
 
 		}
