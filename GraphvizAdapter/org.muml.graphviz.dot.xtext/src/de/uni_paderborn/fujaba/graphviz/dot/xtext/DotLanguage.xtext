@@ -28,7 +28,16 @@ DotNode returns dot::DotNode:
 ;
 
 DotEdge returns dot::DotEdge:
-	source=[dot::DotNode|DotID] ('--' | '->') target=[dot::DotNode|DotID]
+	(DirectedDotEdge | UndirectedDotEdge)
+;
+
+DirectedDotEdge returns dot::DirectedDotEdge:
+	source=[dot::DotNode|DotID] '->' target=[dot::DotNode|DotID]
+	('[' settings += Setting (',' settings += Setting)* ']')? ';'?
+;
+
+UndirectedDotEdge returns dot::UndirectedDotEdge:
+	source=[dot::DotNode|DotID] '--' target=[dot::DotNode|DotID]
 	('[' settings += Setting (',' settings += Setting)* ']')? ';'?
 ;
 
