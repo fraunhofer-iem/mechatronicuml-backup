@@ -1,5 +1,7 @@
 package build.execution;
 
+import org.eclipse.acceleo.internal.ide.ui.builders.AcceleoMarkerUtils;
+import org.eclipse.core.resources.IMarker;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.IResourceVisitor;
 import org.eclipse.core.resources.IWorkspace;
@@ -12,7 +14,7 @@ import org.eclipse.core.runtime.NullProgressMonitor;
 
 public class BuildExecution {
 
-	public static void build() CoreException {
+	public static IMarker[] build() throws CoreException {
 		IProgressMonitor progressMonitor = new NullProgressMonitor();
 		IWorkspace workspace = ResourcesPlugin.getWorkspace();
 		IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
@@ -37,12 +39,10 @@ public class BuildExecution {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
-		if (markers != null && markers.length > 0) {
-			throw new IllegalStateException("acceleo build failed!!!");
-		}
+	
 
 		workspace.save(true, progressMonitor);
-
+		return markers;
 	}
 
 }
