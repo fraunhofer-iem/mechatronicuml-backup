@@ -32,8 +32,15 @@ public class DotLanguageFormatter extends AbstractDeclarativeFormatter {
 			c.setNoSpace().before(comma)
 			c.setLinewrap().after(comma)
 		}
+		for (semicolon : findKeywords(';')) {
+			c.setNoLinewrap.before(semicolon)
+			c.setNoSpace.before(semicolon)
+			c.setLinewrap.after(semicolon)
+		}
 		c.setLinewrap(0, 1, 2).before(SL_COMMENTRule)
 		c.setLinewrap(0, 1, 2).before(ML_COMMENTRule)
 		c.setLinewrap(0, 1, 1).after(ML_COMMENTRule)
+		c.setLinewrap.after(dotNodeRule)
+		c.setLinewrap.after(dotEdgeRule)
 	}
 }

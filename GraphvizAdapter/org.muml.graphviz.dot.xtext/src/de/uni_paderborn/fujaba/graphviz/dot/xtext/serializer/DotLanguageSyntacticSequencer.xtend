@@ -3,5 +3,42 @@
  */
 package de.uni_paderborn.fujaba.graphviz.dot.xtext.serializer
 
+import java.util.List
+import org.eclipse.emf.ecore.EObject
+import org.eclipse.xtext.nodemodel.INode
+import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynNavigable
+
 class DotLanguageSyntacticSequencer extends AbstractDotLanguageSyntacticSequencer {
+	protected override void emit_DotGraph_SemicolonKeyword_3_0_5_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		if (nodes != null) {
+			super.emit_DotGraph_SemicolonKeyword_3_0_5_q(semanticObject, transition, nodes)
+			return
+		}
+		// emit semicolon
+		acceptUnassignedKeyword(grammarAccess.getDotGraphAccess()
+			.getSemicolonKeyword_3_0_5(), ";", null
+		)
+	}
+	
+	protected override void emit_DotGraph_SemicolonKeyword_3_1_5_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		if (nodes != null) {
+			super.emit_DotGraph_SemicolonKeyword_3_1_5_q(semanticObject, transition, nodes)
+			return
+		}
+		// emit semicolon
+		acceptUnassignedKeyword(grammarAccess.getDotGraphAccess()
+			.getSemicolonKeyword_3_1_5(), ";", null
+		)
+	}
+	
+	protected override void emit_DotGraph_SemicolonKeyword_3_2_5_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		if (nodes != null) {
+			super.emit_DotGraph_SemicolonKeyword_3_2_5_q(semanticObject, transition, nodes)
+			return
+		}
+		// emit semicolon
+		acceptUnassignedKeyword(grammarAccess.getDotGraphAccess()
+			.getSemicolonKeyword_3_2_5(), ";", null
+		)
+	}
 }
