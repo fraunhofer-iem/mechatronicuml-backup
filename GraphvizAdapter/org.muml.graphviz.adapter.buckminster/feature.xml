@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
-      id="org.muml.graphviz.buckminster"
+      id="org.muml.graphviz.adapter.buckminster"
       label="Buckminster"
       version="1.0.0.qualifier">
 
@@ -21,17 +21,18 @@
          version="0.0.0"/>
 
    <plugin
-         id="build.test"
+         id="org.muml.graphviz.dot.xtext.tests"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="build.execution"
+         id="org.muml.graphviz.plain.xtext.tests"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
+
 
 </feature>
