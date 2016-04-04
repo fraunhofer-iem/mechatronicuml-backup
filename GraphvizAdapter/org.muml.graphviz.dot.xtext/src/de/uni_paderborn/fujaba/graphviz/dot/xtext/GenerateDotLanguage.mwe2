@@ -6,7 +6,7 @@ import org.eclipse.xtext.ui.generator.*
 
 var grammarURI = "classpath:/de/uni_paderborn/fujaba/graphviz/dot/xtext/DotLanguage.xtext"
 var fileExtensions = "graphviz_dot"
-var projectName = "de.uni_paderborn.fujaba.graphviz.dot.xtext"
+var projectName = "org.muml.graphviz.dot.xtext"
 var runtimeProject = "../${projectName}"
 var generateXtendStub = true
 
@@ -15,7 +15,7 @@ Workflow {
 		scanClassPath  = true
 		platformUri = "${runtimeProject}/.."
 		registerGeneratedEPackage = "de.uni_paderborn.fujaba.graphviz.dot.DotPackage"
-		registerGenModelFile = "platform:/resource/de.uni_paderborn.fujaba.graphviz/model/graphviz.genmodel"
+		registerGenModelFile = "platform:/resource/org.muml.graphviz/model/graphviz.genmodel"
 	}
 
 	component = DirectoryCleaner {
