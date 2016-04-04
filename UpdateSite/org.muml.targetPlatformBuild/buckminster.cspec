@@ -1,14 +1,14 @@
-<?xml version="1.0" encoding="UTF-8"?><cs:cspec xmlns:cs="http://www.eclipse.org/buckminster/CSpec-1.0" name="de.uni_paderborn.fujaba.targetPlatformBuild" componentType="buckminster" version="1.0.0">
+<?xml version="1.0" encoding="UTF-8"?><cs:cspec xmlns:cs="http://www.eclipse.org/buckminster/CSpec-1.0" name="org.muml.targetPlatformBuild" componentType="buckminster" version="1.0.0">
     <cs:dependencies>
-        <cs:dependency name="org.eclipse.epp.package.modeling.feature" componentType="eclipse.feature"/>
         <cs:dependency name="org.eclipse.acceleo.feature.group" componentType="eclipse.feature"/>
-        <cs:dependency name="org.eclipse.m2m.qvt.oml.sdk.feature.group" componentType="eclipse.feature"/>
+        <cs:dependency name="org.eclipse.cdt.feature.group" componentType="eclipse.feature"/>
+        <cs:dependency name="org.eclipse.emf.compare.feature.group" componentType="eclipse.feature"/>
+        <cs:dependency name="org.eclipse.emf.compare.ide.ui.feature.group" componentType="eclipse.feature"/>
+        <cs:dependency name="org.eclipse.epp.package.modeling.feature" componentType="eclipse.feature"/>
         <cs:dependency name="org.eclipse.gmf.sdk.feature.group" componentType="eclipse.feature"/>
-        <cs:dependency name="org.eclipse.xtext.sdk.feature.group" componentType="eclipse.feature"/>
+        <cs:dependency name="org.eclipse.m2m.qvt.oml.sdk.feature.group" componentType="eclipse.feature"/>
+        <cs:dependency name="org.eclipse.ocl.examples.feature.group" componentType="eclipse.feature"/>
         <cs:dependency name="org.eclipse.xtend.sdk.feature.group" componentType="eclipse.feature"/>
-        <cs:dependency name="org.eclipse.ocl.examples.feature.group" componentType="eclipse.feature"/>       
-        <cs:dependency name="org.eclipse.cdt.feature.group" componentType="eclipse.feature"/> 
-        <cs:dependency name="org.eclipse.emf.compare.feature.group" componentType="eclipse.feature"/> 
-        <cs:dependency name=" org.eclipse.emf.compare.ide.ui.feature.group" componentType="eclipse.feature"/>       
+        <cs:dependency name="org.eclipse.xtext.sdk.feature.group" componentType="eclipse.feature"/>
     </cs:dependencies>
 </cs:cspec>
