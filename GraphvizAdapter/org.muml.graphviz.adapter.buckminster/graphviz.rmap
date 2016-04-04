@@ -3,7 +3,8 @@
   <rm:locator searchPathRef="default" failOnError="false"/>
    <rm:locator searchPathRef="m2t" failOnError="false"/>
   
-  <rm:redirect href="https://svn-serv.cs.upb.de/mechatronicuml/trunk/UpdateSite/de.uni_paderborn.fujaba.muml.releng.site.feature/default.rmap" />
+  <rm:redirect href="https://svn-serv.cs.upb.de/mechatronicuml/trunk/UpdateSite/org.muml.releng.site.feature/default.rmap" />
+
 
   <rm:searchPath name="default">
     <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="local" mutable="true" source="true">
