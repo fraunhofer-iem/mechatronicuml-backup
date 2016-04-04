@@ -1,11 +1,9 @@
 package de.uni_paderborn.fujaba.graphviz.blackbox;
 
-import java.io.IOException;
-
 import org.eclipse.jdt.annotation.NonNull;
 
 import de.uni_paderborn.fujaba.graphviz.dot.DotGraph;
-import de.uni_paderborn.fujaba.graphviz.m2t.main.CustomDot;
+import de.uni_paderborn.fujaba.graphviz.dot.xtext.resource.DotLanguageResource;
 
 public abstract class AbstractDotBasedInputLayouter<O> extends AbstractGraphvizLayouter<DotGraph, O> {
 	
@@ -14,13 +12,12 @@ public abstract class AbstractDotBasedInputLayouter<O> extends AbstractGraphvizL
 	@Override
 	@NonNull
 	public String createInput(DotGraph graph) {
-		try	{
-			CustomDot dotGenerator = new CustomDot(graph);
-			return dotGenerator.generateDot();
-		} catch (IOException e) {
-			// should not happen
-			throw new IllegalStateException(e);
-		}
+		return getDotLanguageResource().serializeEObject(graph, null);
+	}
+	
+	@NonNull
+	protected DotLanguageResource getDotLanguageResource() {
+		return new DotLanguageResource();
 	}
 	
 	@NonNull

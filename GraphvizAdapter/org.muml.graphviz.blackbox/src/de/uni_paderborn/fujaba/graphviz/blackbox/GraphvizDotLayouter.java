@@ -4,7 +4,6 @@ import org.eclipse.jdt.annotation.NonNull;
 import org.muml.core.common.xtext.ILanguageResource;
 
 import de.uni_paderborn.fujaba.graphviz.dot.DotGraph;
-import de.uni_paderborn.fujaba.graphviz.dot.xtext.resource.DotLanguageResource;
 
 public class GraphvizDotLayouter extends AbstractDotBasedInputLayouter<DotGraph> {
 
@@ -18,7 +17,7 @@ public class GraphvizDotLayouter extends AbstractDotBasedInputLayouter<DotGraph>
 	@Override
 	@NonNull
 	protected ILanguageResource getLanguageResource() {
-		return new DotLanguageResource();
+		return getDotLanguageResource();
 	}
 
 	// XXX: workaround for kepler's qvto (shouldn't be needed in luna)
