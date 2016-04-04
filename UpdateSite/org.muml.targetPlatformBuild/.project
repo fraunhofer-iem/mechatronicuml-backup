@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>org.muml.targetPlatformBuild</name>
+	<name>org.muml.releng.targetplatform</name>
 	<comment></comment>
 	<projects>
 	</projects>
