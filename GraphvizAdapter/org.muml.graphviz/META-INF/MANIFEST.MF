@@ -23,6 +23,5 @@ Export-Package: de.uni_paderborn.fujaba.graphviz,
  de.uni_paderborn.fujaba.graphviz.util.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
- org.storydriven.core;visibility:=reexport,
  org.muml.core;bundle-version="1.0.1"
 Bundle-ActivationPolicy: lazy
