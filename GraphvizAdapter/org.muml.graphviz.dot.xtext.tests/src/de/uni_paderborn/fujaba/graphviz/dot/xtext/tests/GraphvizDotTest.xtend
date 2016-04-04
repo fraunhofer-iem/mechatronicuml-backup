@@ -1,9 +1,10 @@
 package de.uni_paderborn.fujaba.graphviz.dot.xtext.tests
 
 import com.google.inject.Inject
-import de.uni_paderborn.fujaba.graphviz.dot.DotEdge
+import de.uni_paderborn.fujaba.graphviz.dot.DirectedDotEdge
 import de.uni_paderborn.fujaba.graphviz.dot.DotGraph
 import de.uni_paderborn.fujaba.graphviz.dot.DotNode
+import de.uni_paderborn.fujaba.graphviz.dot.UndirectedDotEdge
 import de.uni_paderborn.fujaba.graphviz.dot.xtext.DotLanguageInjectorProvider
 import org.eclipse.xtext.junit4.InjectWith
 import org.eclipse.xtext.junit4.XtextRunner
@@ -11,12 +12,16 @@ import org.junit.Test
 import org.junit.runner.RunWith
 
 import static org.junit.Assert.*
+import de.uni_paderborn.fujaba.graphviz.dot.DotFactory
 
 @RunWith(typeof(XtextRunner))
 @InjectWith(typeof(DotLanguageInjectorProvider))
 class GraphvizDotTest {
 	@Inject
 	ParseHelperWithLoadException<DotGraph> parser
+	
+	@Inject
+	SerializeHelper serializer
 
 	@Test 
 	def void parseSimpleDot() {
@@ -43,7 +48,7 @@ class GraphvizDotTest {
   		assertEquals(2, graph.edges.size)
   		assertEquals(0, graph.subgraphs.size)
   		assertTrue(graph.nodes.get(0) instanceof DotNode)
-  		assertTrue(graph.edges.get(0) instanceof DotEdge)
+  		assertTrue(graph.edges.get(0) instanceof DirectedDotEdge)
   		// check graph's bb setting
   		assertEquals("bb", graph.graphSettings.get(0).attribute)
   		assertEquals("0,0,126,112", graph.graphSettings.get(0).value)
@@ -112,6 +117,7 @@ class GraphvizDotTest {
   		assertEquals("bb", graph.graphSettings.get(3).attribute)
   		// check first graph edge
   		val edge = graph.edges.get(0)
+  		assertTrue(edge instanceof UndirectedDotEdge)
   		assertEquals("yp1", edge.source.name)
   		assertEquals("rp1", edge.target.name)
   		assertEquals(1, edge.settings.size)
@@ -157,4 +163,106 @@ class GraphvizDotTest {
   			'''
   		)
   	}
+  	
+  	@Test
+  	def void serializeDirectedDotGraph() {
+  		val graph = DotFactory.eINSTANCE.createDotGraph
+  		graph.directedGraph = true
+  		// create node
+  		var node = DotFactory.eINSTANCE.createDotNode
+  		node.name = "foo bar"
+  		graph.nodes += node
+  		// create node
+  		node = DotFactory.eINSTANCE.createDotNode
+  		node.name = "42"
+  		graph.nodes += node
+  		// create directed edge
+  		var DirectedDotEdge edge edge = DotFactory.eINSTANCE
+  			.createDirectedDotEdge
+  		edge.source = graph.nodes.get(0)
+  		edge.target = graph.nodes.get(1) 
+  		graph.edges += edge
+  		// create node
+  		node = DotFactory.eINSTANCE.createDotNode
+  		node.name = "9foo"
+  		graph.nodes += node
+  		// create node
+  		node = DotFactory.eINSTANCE.createDotNode
+  		node.name = "-2.7183"
+  		graph.nodes += node
+  		// create edge
+  		edge = DotFactory.eINSTANCE.createDirectedDotEdge
+  		edge.source = graph.nodes.get(2)
+  		edge.target = graph.nodes.get(3)
+  		graph.edges += edge
+  		serializer.serialize(graph)
+  		assertEquals(
+  			'''
+			digraph {
+				"foo bar"
+				42
+				9foo
+				-2.7183
+				"foo bar" -> 42
+				9foo -> -2.7183
+			}'''.toString,
+			serializer.serialize(graph)
+  		)
+  	}
+  	
+  	@Test
+  	def void serializeUndirectedDotGraph() {
+  		val graph = DotFactory.eINSTANCE.createDotGraph
+  		graph.directedGraph = false
+  		// create graph setting
+  		var setting = DotFactory.eINSTANCE.createSetting
+  		setting.attribute = "splines"
+  		setting.value = "polyline"
+  		graph.graphSettings += setting
+  		// create graph setting
+  		setting = DotFactory.eINSTANCE.createSetting
+  		setting.attribute = "margin"
+  		setting.value = "0"
+  		graph.graphSettings += setting
+  		// create node setting
+  		setting = DotFactory.eINSTANCE.createSetting
+  		setting.attribute = "width"
+  		setting.value = "1!"
+  		graph.nodeSettings += setting
+  		// create edge setting
+  		setting = DotFactory.eINSTANCE.createSetting
+  		setting.attribute = "arrowhead"
+  		setting.value = "diamond"
+  		graph.edgeSettings += setting
+  		// create node
+  		var node = DotFactory.eINSTANCE.createDotNode
+  		node.name = "42 foobar"
+  		graph.nodes += node
+  		// create node
+  		node = DotFactory.eINSTANCE.createDotNode
+  		node.name = "xyz"
+  		graph.nodes += node
+  		// create edge
+  		var UndirectedDotEdge edge = DotFactory.eINSTANCE
+  			.createUndirectedDotEdge
+  		edge.source = graph.nodes.get(0)
+  		edge.target = graph.nodes.get(1)
+  		graph.edges += edge
+  		serializer.serialize(graph)
+  		assertEquals(
+  			'''
+  			graph {
+  				graph [ splines = polyline ];
+  				graph [ margin = 0 ];
+  				node [ width = "1!" ];
+  				edge [ arrowhead = diamond ];
+  				"42 foobar"
+  				xyz
+  				"42 foobar" -- xyz
+  			}'''.toString,
+  			serializer.serialize(graph)
+  		)
+  	}
+  	
+  	// TODO: testcase(s) for subgraph serialization
 }
