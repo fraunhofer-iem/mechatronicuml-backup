@@ -46,7 +46,7 @@ function build_command(){
 		fi
 	fi	
 	cat <<EOF > build_command.txt
-importtargetdefinition -A 'https://svn-serv.cs.upb.de/mechatronicuml/trunk/UpdateSite/de.uni_paderborn.fujaba.targetPlatformBuild/headless.target'
+importtargetdefinition -A 'https://svn-serv.cs.upb.de/mechatronicuml/trunk/UpdateSite/org.muml.releng.targetplatform/headless.target'
 import $QUERY
 $BUILDCOMMAND
 perform -D target.os=* -D target.ws=* -D target.arch=* $BUCKMINSTER_FEATURE_DIR#site.p2
