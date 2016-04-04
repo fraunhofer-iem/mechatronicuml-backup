@@ -21,7 +21,7 @@ public class Activator extends Plugin {
     /**
      * The plug-in ID.
      */
-    public static final String PLUGIN_ID = "de.uni_paderborn.fujaba.modelica.m2t";
+    public static final String PLUGIN_ID = "org.muml.modelica.adapter";
 
     /**
      * The shared instance.

@@ -47,7 +47,7 @@ import org.muml.core.modelinstance.ModelinstanceFactory;
 import org.muml.core.modelinstance.ModelinstancePackage;
 import org.muml.core.modelinstance.RootNode;
 import org.muml.core.modelinstance.categories.ModelElementCategoryRegistry;
-import org.muml.core.modelinstance.ui.FujabaNewwizardPlugin;
+import org.muml.core.modelinstance.ui.ModelinstanceUiPlugin;
 import org.muml.core.modelinstance.ui.diagrams.IDiagramInformation;
 
 /**
@@ -92,7 +92,7 @@ public class CreateDiagramCommand extends AbstractTransactionalCommand {
 		if (!ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY
 				.isSuperTypeOf(diagramElementClass)) {
 			diagramElement = EcoreUtil.create(diagramElementClass);
-			FujabaNewwizardPlugin.getDefault().initializeModel(diagramElement);
+			ModelinstanceUiPlugin.getDefault().initializeModel(diagramElement);
 		}
 
 		
@@ -150,7 +150,7 @@ public class CreateDiagramCommand extends AbstractTransactionalCommand {
 			}
 			diagramResource.save(saveOptions);
 		} catch (IOException e) {
-			FujabaNewwizardPlugin.getDefault().logError(
+			ModelinstanceUiPlugin.getDefault().logError(
 					"Unable to store model and diagramResource resources", e); //$NON-NLS-1$
 		}
 		return CommandResult.newOKCommandResult();
@@ -247,7 +247,7 @@ public class CreateDiagramCommand extends AbstractTransactionalCommand {
 		try {
 			operation.execute(new NullProgressMonitor(), null);
 		} catch (ExecutionException e) {
-			FujabaNewwizardPlugin.getDefault().logError(
+			ModelinstanceUiPlugin.getDefault().logError(
 					"Unable to create initial views.", e); //$NON-NLS-1$
 		}
 	}

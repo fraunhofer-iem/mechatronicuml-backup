@@ -19,7 +19,7 @@ import org.eclipse.gmf.runtime.emf.core.GMFEditingDomainFactory;
 import org.muml.core.common.DiagramEditorUtil;
 import org.muml.core.modelinstance.ModelElementCategory;
 import org.muml.core.modelinstance.ModelinstanceFactory;
-import org.muml.core.modelinstance.ui.FujabaNewwizardPlugin;
+import org.muml.core.modelinstance.ui.ModelinstanceUiPlugin;
 
 public class CreateTypesFileCommand extends AbstractCreateFileCommand {
 
@@ -48,7 +48,7 @@ public class CreateTypesFileCommand extends AbstractCreateFileCommand {
 				// Let extensions initialize the model
 				category.setKey("de.uni_paderborn.fujaba.muml.types.category");
 				category.setName("types");
-				FujabaNewwizardPlugin.getDefault().initializeModel(category);
+				ModelinstanceUiPlugin.getDefault().initializeModel(category);
 
 				modelResource.getContents().add(category);
 				return CommandResult.newOKCommandResult();
@@ -60,10 +60,10 @@ public class CreateTypesFileCommand extends AbstractCreateFileCommand {
 			modelResource.save(DiagramEditorUtil.getSaveOptions());
 
 		} catch (ExecutionException e) {
-			FujabaNewwizardPlugin.getDefault().logError(
+			ModelinstanceUiPlugin.getDefault().logError(
 					"Unable to create model", e); //$NON-NLS-1$
 		} catch (IOException ex) {
-			FujabaNewwizardPlugin.getDefault().logError(
+			ModelinstanceUiPlugin.getDefault().logError(
 					"Save operation failed for: " + diagramModelURI, ex); //$NON-NLS-1$
 		}
 		

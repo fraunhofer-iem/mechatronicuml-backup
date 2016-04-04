@@ -24,7 +24,7 @@ import org.muml.core.common.DiagramEditorUtil;
 import org.muml.core.common.Messages;
 import org.muml.core.modelinstance.ModelInstancePlugin;
 import org.muml.core.modelinstance.categories.ModelElementCategoryRegistry;
-import org.muml.core.modelinstance.ui.FujabaNewwizardPlugin;
+import org.muml.core.modelinstance.ui.ModelinstanceUiPlugin;
 import org.muml.core.modelinstance.ui.commands.CreateEmptyDiagramCommand;
 import org.muml.core.modelinstance.ui.diagrams.IDiagramInformation;
 
@@ -36,7 +36,7 @@ public abstract class AbstractCreateDiagramFileCommand extends
 	private IDiagramInformation diagramInformation;
 
 	public AbstractCreateDiagramFileCommand() {
-		diagramInformation = FujabaNewwizardPlugin.getDefault()
+		diagramInformation = ModelinstanceUiPlugin.getDefault()
 				.getDiagramInformation(getEditorId());
 	}
 
@@ -50,7 +50,7 @@ public abstract class AbstractCreateDiagramFileCommand extends
 			Resource resource = resourceSet.getResource(selectedURI, true);
 			diagramRoot = (EObject) resource.getContents().get(0);
 		} catch (WrappedException ex) {
-			FujabaNewwizardPlugin.getDefault().logError(
+			ModelinstanceUiPlugin.getDefault().logError(
 					"Unable to load resource: " + selectedURI, ex); //$NON-NLS-1$
 		}
 
@@ -88,10 +88,10 @@ public abstract class AbstractCreateDiagramFileCommand extends
 			}
 
 		} catch (ExecutionException e) {
-			FujabaNewwizardPlugin.getDefault().logError(
+			ModelinstanceUiPlugin.getDefault().logError(
 					"Unable to create model and diagram", e); //$NON-NLS-1$
 		} catch (IOException ex) {
-			FujabaNewwizardPlugin.getDefault().logError(
+			ModelinstanceUiPlugin.getDefault().logError(
 					"Save operation failed for: " + diagramModelURI, ex); //$NON-NLS-1$
 		} catch (PartInitException ex) {
 			ErrorDialog.openError(getShell(),
@@ -111,7 +111,7 @@ public abstract class AbstractCreateDiagramFileCommand extends
 
 	@Override
 	protected String getExtension() {
-		IDiagramInformation diagramInformation = FujabaNewwizardPlugin
+		IDiagramInformation diagramInformation = ModelinstanceUiPlugin
 				.getDefault().getDiagramInformation(getEditorId());
 		if (diagramInformation != null) {
 			return diagramInformation.getFileExtension();

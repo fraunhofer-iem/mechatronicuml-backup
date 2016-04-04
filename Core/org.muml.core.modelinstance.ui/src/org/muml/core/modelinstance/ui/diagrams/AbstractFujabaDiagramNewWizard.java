@@ -38,7 +38,7 @@ import org.muml.core.common.DiagramEditorUtil;
 import org.muml.core.common.Messages;
 import org.muml.core.common.ui.ResourceLocationProvider;
 import org.muml.core.modelinstance.ModelinstancePackage;
-import org.muml.core.modelinstance.ui.FujabaNewwizardPlugin;
+import org.muml.core.modelinstance.ui.ModelinstanceUiPlugin;
 import org.muml.core.modelinstance.ui.commands.CreateDiagramCommand;
 import org.muml.core.modelinstance.ui.diagrams.pages.DiagramContentsSelectionPage;
 import org.muml.core.modelinstance.ui.diagrams.pages.DiagramElementSelectionPage;
@@ -156,7 +156,7 @@ public abstract class AbstractFujabaDiagramNewWizard extends Wizard implements
 	 */
 	public IDiagramInformation getDiagramInformation() {
 		if (diagramInformation == null) {
-			diagramInformation = FujabaNewwizardPlugin.getDefault()
+			diagramInformation = ModelinstanceUiPlugin.getDefault()
 					.getDiagramInformation(getEditorId());
 		}
 		return diagramInformation;
@@ -279,7 +279,7 @@ public abstract class AbstractFujabaDiagramNewWizard extends Wizard implements
 						Messages.CreationWizardCreationError, null,
 						((CoreException) e.getTargetException()).getStatus());
 			} else {
-				FujabaNewwizardPlugin.getDefault().logError(
+				ModelinstanceUiPlugin.getDefault().logError(
 						"Error creating resources", e.getTargetException()); //$NON-NLS-1$
 			}
 			return false;
@@ -326,7 +326,7 @@ public abstract class AbstractFujabaDiagramNewWizard extends Wizard implements
 			OperationHistoryFactory.getOperationHistory().execute(command,
 					new SubProgressMonitor(progressMonitor, 1), null);
 		} catch (ExecutionException e) {
-			FujabaNewwizardPlugin.getDefault().logError(
+			ModelinstanceUiPlugin.getDefault().logError(
 					"Unable to create model and diagramResource", e); //$NON-NLS-1$
 		}
 		DiagramEditorUtil.setCharset(WorkspaceSynchronizer

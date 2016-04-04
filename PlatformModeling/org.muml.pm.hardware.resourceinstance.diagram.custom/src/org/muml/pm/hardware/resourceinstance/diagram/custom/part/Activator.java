@@ -25,7 +25,7 @@ import org.osgi.framework.BundleContext;
 public class Activator extends AbstractUIPlugin {
 
 	// The plug-in ID
-	public static final String PLUGIN_ID = "de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.custom";
+
 	public static final String CREATEINSTANCE_TRANSFORMATION = "/de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.custom/transforms/SynchInstances.qvto";
 
 	// The shared instance

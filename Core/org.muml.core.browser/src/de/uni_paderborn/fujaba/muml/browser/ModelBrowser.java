@@ -74,7 +74,7 @@ public final class ModelBrowser extends CommonNavigator implements
 		}
 	}
 
-	public static final String VIEW_ID = "de.uni_paderborn.fujaba.muml.browser.views.ModelBrowser";
+
 
 	private int rootMode;
 

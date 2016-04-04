@@ -10,7 +10,7 @@ import org.osgi.framework.BundleContext;
 
 public class Activator extends AbstractUIPlugin {
 
-	public static final String ID = "de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.custom"; //$NON-NLS-1$
+
 
 
 	private static Activator instance;

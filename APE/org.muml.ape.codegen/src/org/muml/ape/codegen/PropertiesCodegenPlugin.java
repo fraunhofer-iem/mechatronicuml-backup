@@ -4,7 +4,8 @@ import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 
 public class PropertiesCodegenPlugin implements BundleActivator {
-	public static final String ID = "de.uni_paderborn.fujaba.properties.codegen";
+	
+	public static final String ID = "org.muml.ape.codegen";
 
 	//@Override This override causes problems when deploying as plugin.
 	public void start(BundleContext context) throws Exception {

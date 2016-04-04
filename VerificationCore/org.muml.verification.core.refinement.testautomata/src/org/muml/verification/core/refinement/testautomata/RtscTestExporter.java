@@ -27,7 +27,7 @@ import org.muml.core.common.Messages;
 import org.muml.core.modelinstance.ModelElementCategory;
 import org.muml.core.modelinstance.ModelinstanceFactory;
 import org.muml.core.modelinstance.RootNode;
-import org.muml.core.modelinstance.ui.FujabaNewwizardPlugin;
+import org.muml.core.modelinstance.ui.ModelinstanceUiPlugin;
 import org.muml.pim.realtimestatechart.RealtimeStatechart;
 
 public class RtscTestExporter {
@@ -111,7 +111,7 @@ public class RtscTestExporter {
 					modelResource.save(saveOptions);
 					// diagramResource.save(saveOptions);
 				} catch (IOException e) {
-					FujabaNewwizardPlugin.getDefault().logError(
+					ModelinstanceUiPlugin.getDefault().logError(
 							"Unable to store modelResource resource", e); //$NON-NLS-1$
 				}
 				return CommandResult.newOKCommandResult();
@@ -145,7 +145,7 @@ public class RtscTestExporter {
 					null, null);
 		} catch (ExecutionException e) {
 			e.printStackTrace();
-			FujabaNewwizardPlugin.getDefault().logError(
+			ModelinstanceUiPlugin.getDefault().logError(
 					"Unable to create model and diagramResource", e); //$NON-NLS-1$
 		}
 		DiagramEditorUtil.setCharset(WorkspaceSynchronizer

@@ -39,7 +39,7 @@ public class ExecutePlugin extends AbstractUIPlugin {
 	
 
 	// The plug-in ID
-	public static final String PLUGIN_ID = "de.uni_paderborn.fujaba.ecore.migration.execute"; //$NON-NLS-1$
+
 
 	// The shared instance
 	private static ExecutePlugin plugin;

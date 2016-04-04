@@ -22,7 +22,7 @@ import org.osgi.framework.BundleContext;
 
 public class Activator extends AbstractUIPlugin {
 
-	public static final String ID = "de.uni_paderborn.fujaba.muml.component.diagram.custom"; //$NON-NLS-1$
+
 
 	public static final String COPYTOPORT_TRANSFORMATION = "/de.uni_paderborn.fujaba.muml.component.diagram.custom/transforms/CopyRolePropertiesToPort.qvto";
 

@@ -10,7 +10,7 @@ import org.osgi.framework.BundleContext;
 public class MCRegistry extends AbstractUIPlugin {
 
 	// The plug-in ID
-	public static final String PLUGIN_ID = "de.uni_paderborn.fujaba.muml.verification.modelchecker.registry.ui"; //$NON-NLS-1$
+	public static final String PLUGIN_ID = "org.muml.reconfigurationverification.modelchecker.ui"; //$NON-NLS-1$
 
 	// The shared instance
 	private static MCRegistry plugin;

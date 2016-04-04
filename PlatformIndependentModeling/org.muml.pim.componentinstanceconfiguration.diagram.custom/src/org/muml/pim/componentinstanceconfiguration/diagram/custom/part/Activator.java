@@ -19,7 +19,7 @@ import org.osgi.framework.BundleContext;
 
 public class Activator extends AbstractUIPlugin {
 
-	public static final String ID = "de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.custom"; //$NON-NLS-1$
+
 
 	public static final String CREATE_INSTANCE_TRANSFORMATION = "/de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.custom/transforms/instances.qvto";
 

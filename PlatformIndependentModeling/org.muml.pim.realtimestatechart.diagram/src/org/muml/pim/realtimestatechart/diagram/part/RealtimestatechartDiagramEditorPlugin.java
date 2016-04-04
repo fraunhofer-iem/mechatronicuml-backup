@@ -42,7 +42,7 @@ public class RealtimestatechartDiagramEditorPlugin extends AbstractUIPlugin {
 	/**
 	 * @generated
 	 */
-	public static final String ID = "de.uni_paderborn.fujaba.muml.realtimestatechart.diagram"; //$NON-NLS-1$
+	public static final String ID = "org.muml.pim.realtimestatechart.diagram"; //$NON-NLS-1$
 
 	/**
 	 * @generated

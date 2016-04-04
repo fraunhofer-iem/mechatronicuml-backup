@@ -24,7 +24,7 @@ import org.muml.core.common.DiagramEditorUtil;
 import org.muml.core.common.Messages;
 import org.muml.core.modelinstance.ModelinstanceFactory;
 import org.muml.core.modelinstance.RootNode;
-import org.muml.core.modelinstance.ui.FujabaNewwizardPlugin;
+import org.muml.core.modelinstance.ui.ModelinstanceUiPlugin;
 import org.muml.core.modelinstance.ui.diagrams.pages.NewExtendedFileCreationPage;
 
 /**
@@ -66,7 +66,7 @@ public class FujabaModelNewWizard extends Wizard implements INewWizard {
 		setNeedsProgressMonitor(true);
 
 		domainModelFilePage = new NewExtendedFileCreationPage(
-				"DiagramModelFile", selection, FujabaNewwizardPlugin.FUJABA_MODEL_EXTENSION); //$NON-NLS-1$
+				"DiagramModelFile", selection, ModelinstanceUiPlugin.FUJABA_MODEL_EXTENSION); //$NON-NLS-1$
 
 		domainModelFilePage
 				.setTitle(Messages.NewDiagramFileWizard_CreationPageTitle);
@@ -82,7 +82,7 @@ public class FujabaModelNewWizard extends Wizard implements INewWizard {
 	@Override
 	public boolean performFinish() {
 		IFile domainModelFile = domainModelFilePage.createNewFile();
-		FujabaNewwizardPlugin.getDefault().createModel(domainModelFile,
+		ModelinstanceUiPlugin.getDefault().createModel(domainModelFile,
 				editingDomain);
 		return true;
 	}

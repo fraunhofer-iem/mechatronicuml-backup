@@ -32,7 +32,7 @@ public class ResourceInstanceDiagramEditorPlugin extends AbstractUIPlugin {
 	/**
 	 * @generated
 	 */
-	public static final String ID = "de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram"; //$NON-NLS-1$
+	public static final String ID = "org.muml.pm.hardware.resourceinstance.diagram"; //$NON-NLS-1$
 
 	/**
 	 * @generated

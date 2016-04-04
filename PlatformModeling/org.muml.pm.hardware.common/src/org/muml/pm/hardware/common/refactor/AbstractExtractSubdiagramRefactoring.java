@@ -24,7 +24,7 @@ import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.Style;
 import org.eclipse.gmf.runtime.notation.View;
-import org.muml.core.modelinstance.ui.FujabaNewwizardPlugin;
+import org.muml.core.modelinstance.ui.ModelinstanceUiPlugin;
 import org.muml.core.modelinstance.ui.diagrams.IDiagramInformation;
 
 /**
@@ -100,7 +100,7 @@ public abstract class AbstractExtractSubdiagramRefactoring<T extends EObject> ex
 	protected Diagram createSubdiagram() {
 		View contextView = getContextObject();
 		T contextElement = (T) contextView.getElement();
-		Map<String, IDiagramInformation> diagramInformationMap = FujabaNewwizardPlugin.getDefault()
+		Map<String, IDiagramInformation> diagramInformationMap = ModelinstanceUiPlugin.getDefault()
 				.getDiagramInformationMap();
 		IDiagramInformation information = diagramInformationMap.get(getEditorID());
 		Diagram newSubdiagram = ViewService.createDiagram(getElementToExtract(contextElement), information.getModelId(),

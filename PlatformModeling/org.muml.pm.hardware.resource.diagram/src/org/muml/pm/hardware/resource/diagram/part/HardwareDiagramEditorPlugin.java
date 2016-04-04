@@ -32,7 +32,7 @@ public class HardwareDiagramEditorPlugin extends AbstractUIPlugin {
 	/**
 	 * @generated
 	 */
-	public static final String ID = "de.uni_paderborn.fujaba.muml.hardware.resource.diagram"; //$NON-NLS-1$
+	public static final String ID = "org.muml.pm.hardware.resource.diagram"; //$NON-NLS-1$
 
 	/**
 	 * @generated

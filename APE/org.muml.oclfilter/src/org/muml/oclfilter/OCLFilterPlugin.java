@@ -26,7 +26,7 @@ import org.osgi.framework.BundleContext;
 public class OCLFilterPlugin extends AbstractUIPlugin {
 
 	// The plug-in ID
-	public static final String PLUGIN_ID = "de.uni_paderborn.emf.codegen.oclfilter"; //$NON-NLS-1$
+
 
 	// The shared instance
 	private static OCLFilterPlugin plugin;

@@ -27,7 +27,7 @@ public class TestLanguageDiagramEditorPlugin extends AbstractUIPlugin {
 	/**
 	 * @generated
 	 */
-	public static final String ID = "de.uni_paderborn.fujaba.muml.testlanguage.diagram"; //$NON-NLS-1$
+	public static final String ID = "org.muml.testlanguage.diagram"; //$NON-NLS-1$
 
 	/**
 	 * @generated

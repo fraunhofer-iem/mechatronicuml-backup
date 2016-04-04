@@ -10,15 +10,15 @@ import org.osgi.framework.BundleContext;
 
 public class Activator extends AbstractUIPlugin {
 
-	public static final String ID = "de.uni_paderborn.fujaba.muml.pattern.diagram.custom"; //$NON-NLS-1$
+	public static final String ID = "org.muml.pim.pattern.diagram.custom"; //$NON-NLS-1$
 
-	public static final String CREATE_ROLE_RTSC = "/de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.custom/transforms/CreateRoleRTSC.qvto";
+	public static final String CREATE_ROLE_RTSC = "/org.muml.pim.coordinationprotocol.diagram.custom/transforms/CreateRoleRTSC.qvto";
 
-	public static final String TRANSFORM_PATTERN_TO_PROTOCOTOL_STEP1="/de.uni_paderborn.fujaba.muml.pattern.diagram.custom/transforms/TransformPatternToProtocolStep1.qvto";
-	public static final String TRANSFORM_PATTERN_TO_PROTOCOTOL_STEP2="/de.uni_paderborn.fujaba.muml.pattern.diagram.custom/transforms/TransformPatternToProtocolStep2.qvto";
-	public static final String TRANSFORM_PROTOCOL_TO_PATTERN="/de.uni_paderborn.fujaba.muml.pattern.diagram.custom/transforms/TransformProtocolToPattern.qvto";
+	public static final String TRANSFORM_PATTERN_TO_PROTOCOTOL_STEP1="/org.muml.pim.pattern.diagram.custom/transforms/TransformPatternToProtocolStep1.qvto";
+	public static final String TRANSFORM_PATTERN_TO_PROTOCOTOL_STEP2="/org.muml.pim.pattern.diagram.custom/transforms/TransformPatternToProtocolStep2.qvto";
+	public static final String TRANSFORM_PROTOCOL_TO_PATTERN="/org.muml.pim.pattern.diagram.custom/transforms/TransformProtocolToPattern.qvto";
 
-	public static final String TRANSFORM_PATTERN_TO_PROTOCOL_VERIFICATION="/de.uni_paderborn.fujaba.muml.pattern.diagram.custom/transforms/TransformPatternToProtocolNewModel.qvto";
+	public static final String TRANSFORM_PATTERN_TO_PROTOCOL_VERIFICATION="/org.muml.pim.pattern.diagram.custom/transforms/TransformPatternToProtocolNewModel.qvto";
 
 	private static Activator instance;
 

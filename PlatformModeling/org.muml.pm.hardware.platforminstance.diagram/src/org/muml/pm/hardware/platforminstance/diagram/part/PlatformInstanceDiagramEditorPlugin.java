@@ -30,7 +30,7 @@ public class PlatformInstanceDiagramEditorPlugin extends AbstractUIPlugin {
 	/**
 	 * @generated
 	 */
-	public static final String ID = "de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram"; //$NON-NLS-1$
+	public static final String ID = "org.muml.pm.hardware.platforminstance.diagram"; //$NON-NLS-1$
 
 	/**
 	 * @generated

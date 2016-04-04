@@ -153,7 +153,7 @@ public class ModelBrowserView extends ViewPart implements ISelectionProvider, IT
 	/**
 	 * The ID of the view as specified by the extension.
 	 */
-	public static final String ID = "de.uni_paderborn.fujaba.muml.browser.views.ModelBrowserView";
+
 
 	private TreeViewer viewer;
 	private DrillDownAdapter drillDownAdapter;

@@ -21,7 +21,7 @@ import org.muml.core.provider.CoreEditPlugin;
  */
 public final class ModelinstanceEditorPlugin extends EMFPlugin {
 	
-	public static final String ID = "de.uni_paderborn.fujaba.modelinstance.editor";
+
 	
 	public static ComposedAdapterFactory adapterFactory;
 	

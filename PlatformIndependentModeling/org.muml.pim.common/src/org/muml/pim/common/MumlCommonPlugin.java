@@ -10,7 +10,7 @@ public class MumlCommonPlugin implements BundleActivator {
 
 	private static BundleContext context;
 
-	public static String ID = "de.uni_paderborn.fujaba.muml.common";
+
 
 	static BundleContext getContext() {
 		return context;

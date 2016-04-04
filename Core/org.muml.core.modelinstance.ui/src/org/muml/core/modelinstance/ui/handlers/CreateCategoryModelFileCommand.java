@@ -22,7 +22,7 @@ import org.muml.core.modelinstance.ModelElementCategory;
 import org.muml.core.modelinstance.ModelInstancePlugin;
 import org.muml.core.modelinstance.ModelinstanceFactory;
 import org.muml.core.modelinstance.categories.ModelElementCategoryRegistry;
-import org.muml.core.modelinstance.ui.FujabaNewwizardPlugin;
+import org.muml.core.modelinstance.ui.ModelinstanceUiPlugin;
 
 public class CreateCategoryModelFileCommand extends AbstractCreateFileCommand {
 
@@ -72,7 +72,7 @@ public class CreateCategoryModelFileCommand extends AbstractCreateFileCommand {
 				// Let extensions initialize the model
 				category.setKey(categoryKey);
 				category.setName(categoryName);
-				FujabaNewwizardPlugin.getDefault().initializeModel(category);
+				ModelinstanceUiPlugin.getDefault().initializeModel(category);
 
 				modelResource.getContents().add(category);
 				return CommandResult.newOKCommandResult();
@@ -84,10 +84,10 @@ public class CreateCategoryModelFileCommand extends AbstractCreateFileCommand {
 			modelResource.save(DiagramEditorUtil.getSaveOptions());
 
 		} catch (ExecutionException e) {
-			FujabaNewwizardPlugin.getDefault().logError(
+			ModelinstanceUiPlugin.getDefault().logError(
 					"Unable to create model", e); //$NON-NLS-1$
 		} catch (IOException ex) {
-			FujabaNewwizardPlugin.getDefault().logError(
+			ModelinstanceUiPlugin.getDefault().logError(
 					"Save operation failed for: " + diagramModelURI, ex); //$NON-NLS-1$
 		}
 		

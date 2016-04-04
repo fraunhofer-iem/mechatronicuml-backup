@@ -5,7 +5,8 @@ import org.muml.pim.actionlanguage.xtext.ui.ActionLanguageExecutableExtensionFac
 import org.osgi.framework.Bundle;
 
 public class CSDExecutableExtensionFactory extends ActionLanguageExecutableExtensionFactory {
-	private static final String PLUGIN_ID = "de.uni_paderborn.fujaba.muml.reconfiguration.common";
+	
+	private static final String PLUGIN_ID = "org.muml.reconfiguration.common";
 	
 	@Override
 	public Bundle getBundle() {

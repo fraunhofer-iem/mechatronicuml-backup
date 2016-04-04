@@ -48,7 +48,7 @@ import org.muml.core.common.Messages;
 import org.muml.core.modelinstance.ModelElementCategory;
 import org.muml.core.modelinstance.ModelinstancePackage;
 import org.muml.core.modelinstance.RootNode;
-import org.muml.core.modelinstance.ui.FujabaNewwizardPlugin;
+import org.muml.core.modelinstance.ui.ModelinstanceUiPlugin;
 import org.muml.core.modelinstance.ui.commands.CreateDiagramCommand;
 import org.muml.core.modelinstance.ui.diagrams.IDiagramInformation;
 
@@ -136,7 +136,7 @@ public class BatchDiagramCreationWizard extends Wizard implements INewWizard {
 						Messages.CreationWizardCreationError, null,
 						((CoreException) e.getTargetException()).getStatus());
 			} else {
-				FujabaNewwizardPlugin.getDefault().logError(
+				ModelinstanceUiPlugin.getDefault().logError(
 						"Error creating resources", e.getTargetException()); //$NON-NLS-1$
 			}
 			return false;
@@ -170,7 +170,7 @@ public class BatchDiagramCreationWizard extends Wizard implements INewWizard {
 
 		final Resource modelResource = getModelResource();
 
-		Map<String, IDiagramInformation> diagramInformationMap = FujabaNewwizardPlugin
+		Map<String, IDiagramInformation> diagramInformationMap = ModelinstanceUiPlugin
 				.getDefault().getDiagramInformationMap();
 		Map<EObject, ElementInformation> elementInformationMap = new HashMap<EObject, ElementInformation>();
 
@@ -237,7 +237,7 @@ public class BatchDiagramCreationWizard extends Wizard implements INewWizard {
 				OperationHistoryFactory.getOperationHistory().execute(command,
 						new SubProgressMonitor(progressMonitor, 1), null);
 			} catch (ExecutionException e) {
-				FujabaNewwizardPlugin.getDefault().logError(
+				ModelinstanceUiPlugin.getDefault().logError(
 						"Unable to create model and diagramResource", e); //$NON-NLS-1$
 			}
 			DiagramEditorUtil.setCharset(WorkspaceSynchronizer

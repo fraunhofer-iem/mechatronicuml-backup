@@ -20,7 +20,7 @@ import org.muml.core.modelinstance.ModelElementCategory;
 import org.muml.core.modelinstance.ModelInstancePlugin;
 import org.muml.core.modelinstance.ModelinstancePackage;
 import org.muml.core.modelinstance.RootNode;
-import org.muml.core.modelinstance.ui.FujabaNewwizardPlugin;
+import org.muml.core.modelinstance.ui.ModelinstanceUiPlugin;
 
 /**
  * Creates a new empty Diagram.
@@ -55,7 +55,7 @@ public class CreateEmptyDiagramCommand extends AbstractTransactionalCommand {
 		diagramElement = null;
 		if (!ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY.isSuperTypeOf(diagramElementClass)) {
 			diagramElement = EcoreUtil.create(diagramElementClass);
-			FujabaNewwizardPlugin.getDefault().initializeModel(diagramElement);
+			ModelinstanceUiPlugin.getDefault().initializeModel(diagramElement);
 		}
 	}
 

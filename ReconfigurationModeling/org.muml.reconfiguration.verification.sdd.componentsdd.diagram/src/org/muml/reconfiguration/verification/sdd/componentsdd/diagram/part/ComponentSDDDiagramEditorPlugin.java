@@ -51,7 +51,7 @@ public class ComponentSDDDiagramEditorPlugin extends AbstractUIPlugin {
 	/**
 	 * @generated
 	 */
-	public static final String ID = "de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram"; //$NON-NLS-1$
+	public static final String ID = "org.muml.reconfiguration.verification.sdd.componentsdd.diagram"; //$NON-NLS-1$
 
 	/**
 	 * @generated

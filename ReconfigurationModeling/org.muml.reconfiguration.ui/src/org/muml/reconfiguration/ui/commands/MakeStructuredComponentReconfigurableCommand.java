@@ -60,7 +60,7 @@ import org.muml.core.common.DiagramEditorUtil;
 import org.muml.core.modelinstance.ModelElementCategory;
 import org.muml.core.modelinstance.ModelinstancePackage;
 import org.muml.core.modelinstance.RootNode;
-import org.muml.core.modelinstance.ui.FujabaNewwizardPlugin;
+import org.muml.core.modelinstance.ui.ModelinstanceUiPlugin;
 import org.muml.core.modelinstance.ui.diagrams.IDiagramInformation;
 import org.muml.pim.component.StaticStructuredComponent;
 import org.muml.pim.component.diagram.edit.parts.StaticStructuredComponentEditPart;
@@ -130,7 +130,7 @@ public class MakeStructuredComponentReconfigurableCommand extends AbstractHandle
 					reconfComponent.eResource().save(saveOptions);
 					diagram.eResource().save(saveOptions);
 				} catch (IOException e) {
-					FujabaNewwizardPlugin.getDefault().logError(
+					ModelinstanceUiPlugin.getDefault().logError(
 							"Unable to store model and diagramResource resources", e); //$NON-NLS-1$
 				}
 				
@@ -257,7 +257,7 @@ public class MakeStructuredComponentReconfigurableCommand extends AbstractHandle
 	}
 	
 	private IDiagramInformation getDiagramInformation(EObject element) {
-		Map<String, IDiagramInformation> diagramInformationMap = FujabaNewwizardPlugin
+		Map<String, IDiagramInformation> diagramInformationMap = ModelinstanceUiPlugin
 				.getDefault().getDiagramInformationMap();
 		for (IDiagramInformation information : diagramInformationMap.values()) {
 			String modelId = information.getModelId();
@@ -370,7 +370,7 @@ public class MakeStructuredComponentReconfigurableCommand extends AbstractHandle
 			try {
 				operation.execute(new NullProgressMonitor(), null);
 			} catch (ExecutionException e) {
-				FujabaNewwizardPlugin.getDefault().logError(
+				ModelinstanceUiPlugin.getDefault().logError(
 						"Unable to create initial views.", e); //$NON-NLS-1$
 			}
 		}

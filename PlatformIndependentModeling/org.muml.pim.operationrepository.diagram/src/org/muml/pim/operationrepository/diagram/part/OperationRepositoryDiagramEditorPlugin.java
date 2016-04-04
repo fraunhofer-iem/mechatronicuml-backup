@@ -30,7 +30,7 @@ public class OperationRepositoryDiagramEditorPlugin extends AbstractUIPlugin {
 	/**
 	 * @generated
 	 */
-	public static final String ID = "de.uni_paderborn.fujaba.muml.operationrepository.diagram"; //$NON-NLS-1$
+	public static final String ID = "org.muml.pim.operationrepository.diagram"; //$NON-NLS-1$
 
 	/**
 	 * @generated

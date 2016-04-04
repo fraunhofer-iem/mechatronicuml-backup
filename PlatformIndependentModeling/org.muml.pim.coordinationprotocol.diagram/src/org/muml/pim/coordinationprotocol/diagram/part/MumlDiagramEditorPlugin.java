@@ -42,7 +42,7 @@ public class MumlDiagramEditorPlugin extends AbstractUIPlugin {
 	/**
 	 * @generated
 	 */
-	public static final String ID = "de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram"; //$NON-NLS-1$
+	public static final String ID = "org.muml.pim.coordinationprotocol.diagram"; //$NON-NLS-1$
 
 	/**
 	 * @generated

@@ -40,12 +40,12 @@ import org.osgi.framework.BundleContext;
 /**
  * The activator class controls the plug-in life cycle
  */
-public class FujabaNewwizardPlugin extends AbstractUIPlugin {
+public class ModelinstanceUiPlugin extends AbstractUIPlugin {
 	
 	private List<IModelInitializer> modelInitializers;
 
 	// The plug-in ID
-	public static final String ID = "de.uni_paderborn.fujaba.muml.modelwizard"; //$NON-NLS-1$
+	public static final String ID = "org.muml.core.modelinstance.ui"; //$NON-NLS-1$
 
 	public static final String FUJABA_MODEL_EXTENSION = "muml";
 
@@ -55,12 +55,12 @@ public class FujabaNewwizardPlugin extends AbstractUIPlugin {
 	private Map<String, IDiagramInformation> editorIdToDiagramInformation;
 
 	// The shared instance
-	private static FujabaNewwizardPlugin plugin;
+	private static ModelinstanceUiPlugin plugin;
 
 	/**
 	 * The constructor
 	 */
-	public FujabaNewwizardPlugin() {
+	public ModelinstanceUiPlugin() {
 
 	}
 
@@ -135,7 +135,7 @@ public class FujabaNewwizardPlugin extends AbstractUIPlugin {
 	 * 
 	 * @return the shared instance
 	 */
-	public static FujabaNewwizardPlugin getDefault() {
+	public static ModelinstanceUiPlugin getDefault() {
 		return plugin;
 	}
 
@@ -148,7 +148,7 @@ public class FujabaNewwizardPlugin extends AbstractUIPlugin {
 			error = throwable.getMessage();
 		}
 		getLog().log(
-				new Status(IStatus.ERROR, FujabaNewwizardPlugin.ID, IStatus.OK,
+				new Status(IStatus.ERROR, ModelinstanceUiPlugin.ID, IStatus.OK,
 						error, throwable));
 		debug(error, throwable);
 	}
@@ -162,7 +162,7 @@ public class FujabaNewwizardPlugin extends AbstractUIPlugin {
 			message = throwable.getMessage();
 		}
 		getLog().log(
-				new Status(IStatus.INFO, FujabaNewwizardPlugin.ID, IStatus.OK,
+				new Status(IStatus.INFO, ModelinstanceUiPlugin.ID, IStatus.OK,
 						message, throwable));
 		debug(message, throwable);
 	}
@@ -264,10 +264,10 @@ public class FujabaNewwizardPlugin extends AbstractUIPlugin {
 			modelResource.save(DiagramEditorUtil.getSaveOptions());
 
 		} catch (ExecutionException e) {
-			FujabaNewwizardPlugin.getDefault().logError(
+			ModelinstanceUiPlugin.getDefault().logError(
 					"Unable to create model", e); //$NON-NLS-1$
 		} catch (IOException ex) {
-			FujabaNewwizardPlugin.getDefault().logError(
+			ModelinstanceUiPlugin.getDefault().logError(
 					"Save operation failed for: " + diagramModelURI, ex); //$NON-NLS-1$
 		}
 	}

@@ -21,7 +21,7 @@ public class Activator extends AbstractUIPlugin {
 	/**
 	 * The plug-in ID.
 	 */
-	public static final String PLUGIN_ID = "de.uni_paderborn.fujaba.modelica.m2t.ui";
+	public static final String PLUGIN_ID = "org.muml.modelica.adapter.ui";
 
 	/**
 	 * The shared instance.
