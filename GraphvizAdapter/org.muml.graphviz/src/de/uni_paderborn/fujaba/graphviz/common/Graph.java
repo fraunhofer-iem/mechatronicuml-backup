@@ -18,11 +18,11 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.graphviz.common.Graph#getNodes <em>Nodes</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.graphviz.common.Graph#getEdges <em>Edges</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.graphviz.common.CommonPackage#getGraph()
  * @model
@@ -31,7 +31,6 @@ import org.eclipse.emf.ecore.EObject;
 public interface Graph<V extends Node, E extends Edge<V>> extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Nodes</b></em>' containment reference list.
-	 * The list contents are of type {@link V}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Nodes</em>' containment reference list isn't clear,
@@ -47,7 +46,6 @@ public interface Graph<V extends Node, E extends Edge<V>> extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Edges</b></em>' containment reference list.
-	 * The list contents are of type {@link E}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Edges</em>' containment reference list isn't clear,

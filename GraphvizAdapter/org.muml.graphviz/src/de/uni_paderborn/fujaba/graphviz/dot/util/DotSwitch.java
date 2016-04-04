@@ -11,6 +11,7 @@ import org.muml.core.NamedElement;
 import de.uni_paderborn.fujaba.graphviz.common.Edge;
 import de.uni_paderborn.fujaba.graphviz.common.Graph;
 import de.uni_paderborn.fujaba.graphviz.common.Node;
+import de.uni_paderborn.fujaba.graphviz.dot.*;
 import de.uni_paderborn.fujaba.graphviz.dot.DotEdge;
 import de.uni_paderborn.fujaba.graphviz.dot.DotGraph;
 import de.uni_paderborn.fujaba.graphviz.dot.DotNode;
@@ -55,7 +56,7 @@ public class DotSwitch<T> extends Switch<T> {
 	 * Checks whether this is a switch for the given package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @parameter ePackage the package in question.
+	 * @param ePackage the package in question.
 	 * @return whether this is a switch for the given package.
 	 * @generated
 	 */
@@ -100,6 +101,22 @@ public class DotSwitch<T> extends Switch<T> {
 			case DotPackage.SETTING: {
 				Setting setting = (Setting)theEObject;
 				T result = caseSetting(setting);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case DotPackage.DIRECTED_DOT_EDGE: {
+				DirectedDotEdge directedDotEdge = (DirectedDotEdge)theEObject;
+				T result = caseDirectedDotEdge(directedDotEdge);
+				if (result == null) result = caseDotEdge(directedDotEdge);
+				if (result == null) result = caseEdge(directedDotEdge);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case DotPackage.UNDIRECTED_DOT_EDGE: {
+				UndirectedDotEdge undirectedDotEdge = (UndirectedDotEdge)theEObject;
+				T result = caseUndirectedDotEdge(undirectedDotEdge);
+				if (result == null) result = caseDotEdge(undirectedDotEdge);
+				if (result == null) result = caseEdge(undirectedDotEdge);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -164,6 +181,36 @@ public class DotSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseSetting(Setting object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Directed Dot Edge</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Directed Dot Edge</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDirectedDotEdge(DirectedDotEdge object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Undirected Dot Edge</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Undirected Dot Edge</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseUndirectedDotEdge(UndirectedDotEdge object) {
 		return null;
 	}
 

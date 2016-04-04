@@ -20,12 +20,12 @@ import de.uni_paderborn.fujaba.graphviz.plain.PlainPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.graphviz.plain.impl.PlainGraphImpl#getScale <em>Scale</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.graphviz.plain.impl.PlainGraphImpl#getWidth <em>Width</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.graphviz.plain.impl.PlainGraphImpl#getHeight <em>Height</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

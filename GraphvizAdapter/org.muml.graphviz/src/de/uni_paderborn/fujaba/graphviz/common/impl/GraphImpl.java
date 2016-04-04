@@ -23,11 +23,11 @@ import de.uni_paderborn.fujaba.graphviz.common.Node;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.graphviz.common.impl.GraphImpl#getNodes <em>Nodes</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.graphviz.common.impl.GraphImpl#getEdges <em>Edges</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

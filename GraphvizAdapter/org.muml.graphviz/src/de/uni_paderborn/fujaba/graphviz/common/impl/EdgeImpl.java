@@ -18,11 +18,11 @@ import de.uni_paderborn.fujaba.graphviz.common.Node;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.graphviz.common.impl.EdgeImpl#getSource <em>Source</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.graphviz.common.impl.EdgeImpl#getTarget <em>Target</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

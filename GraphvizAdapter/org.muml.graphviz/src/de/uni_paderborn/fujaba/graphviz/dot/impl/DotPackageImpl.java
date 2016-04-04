@@ -15,12 +15,14 @@ import org.muml.core.CorePackage;
 import de.uni_paderborn.fujaba.graphviz.GraphvizPackage;
 import de.uni_paderborn.fujaba.graphviz.common.CommonPackage;
 import de.uni_paderborn.fujaba.graphviz.common.impl.CommonPackageImpl;
+import de.uni_paderborn.fujaba.graphviz.dot.DirectedDotEdge;
 import de.uni_paderborn.fujaba.graphviz.dot.DotEdge;
 import de.uni_paderborn.fujaba.graphviz.dot.DotFactory;
 import de.uni_paderborn.fujaba.graphviz.dot.DotGraph;
 import de.uni_paderborn.fujaba.graphviz.dot.DotNode;
 import de.uni_paderborn.fujaba.graphviz.dot.DotPackage;
 import de.uni_paderborn.fujaba.graphviz.dot.Setting;
+import de.uni_paderborn.fujaba.graphviz.dot.UndirectedDotEdge;
 import de.uni_paderborn.fujaba.graphviz.impl.GraphvizPackageImpl;
 import de.uni_paderborn.fujaba.graphviz.plain.PlainPackage;
 import de.uni_paderborn.fujaba.graphviz.plain.impl.PlainPackageImpl;
@@ -61,6 +63,20 @@ public class DotPackageImpl extends EPackageImpl implements DotPackage {
 	 * @generated
 	 */
 	private EClass settingEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass directedDotEdgeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass undirectedDotEdgeEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -280,6 +296,24 @@ public class DotPackageImpl extends EPackageImpl implements DotPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getDirectedDotEdge() {
+		return directedDotEdgeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getUndirectedDotEdge() {
+		return undirectedDotEdgeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public DotFactory getDotFactory() {
 		return (DotFactory)getEFactoryInstance();
 	}
@@ -321,6 +355,10 @@ public class DotPackageImpl extends EPackageImpl implements DotPackage {
 		settingEClass = createEClass(SETTING);
 		createEAttribute(settingEClass, SETTING__ATTRIBUTE);
 		createEAttribute(settingEClass, SETTING__VALUE);
+
+		directedDotEdgeEClass = createEClass(DIRECTED_DOT_EDGE);
+
+		undirectedDotEdgeEClass = createEClass(UNDIRECTED_DOT_EDGE);
 	}
 
 	/**
@@ -365,6 +403,8 @@ public class DotPackageImpl extends EPackageImpl implements DotPackage {
 		g2 = createEGenericType(this.getDotNode());
 		g1.getETypeArguments().add(g2);
 		dotEdgeEClass.getEGenericSuperTypes().add(g1);
+		directedDotEdgeEClass.getESuperTypes().add(this.getDotEdge());
+		undirectedDotEdgeEClass.getESuperTypes().add(this.getDotEdge());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(dotGraphEClass, DotGraph.class, "DotGraph", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -379,12 +419,16 @@ public class DotPackageImpl extends EPackageImpl implements DotPackage {
 		initEClass(dotNodeEClass, DotNode.class, "DotNode", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDotNode_Settings(), this.getSetting(), null, "settings", null, 0, -1, DotNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(dotEdgeEClass, DotEdge.class, "DotEdge", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(dotEdgeEClass, DotEdge.class, "DotEdge", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDotEdge_Settings(), this.getSetting(), null, "settings", null, 0, -1, DotEdge.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(settingEClass, Setting.class, "Setting", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSetting_Attribute(), ecorePackage.getEString(), "attribute", null, 1, 1, Setting.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSetting_Value(), ecorePackage.getEString(), "value", null, 1, 1, Setting.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(directedDotEdgeEClass, DirectedDotEdge.class, "DirectedDotEdge", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(undirectedDotEdgeEClass, UndirectedDotEdge.class, "UndirectedDotEdge", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 	}
 
 } //DotPackageImpl

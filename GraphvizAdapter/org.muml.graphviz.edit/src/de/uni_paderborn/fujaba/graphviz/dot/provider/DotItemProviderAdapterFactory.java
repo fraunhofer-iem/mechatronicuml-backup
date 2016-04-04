@@ -117,29 +117,6 @@ public class DotItemProviderAdapterFactory extends DotAdapterFactory implements 
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.graphviz.dot.DotEdge} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected DotEdgeItemProvider dotEdgeItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.graphviz.dot.DotEdge}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createDotEdgeAdapter() {
-		if (dotEdgeItemProvider == null) {
-			dotEdgeItemProvider = new DotEdgeItemProvider(this);
-		}
-
-		return dotEdgeItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.graphviz.dot.Setting} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -160,6 +137,52 @@ public class DotItemProviderAdapterFactory extends DotAdapterFactory implements 
 		}
 
 		return settingItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.graphviz.dot.DirectedDotEdge} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected DirectedDotEdgeItemProvider directedDotEdgeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.graphviz.dot.DirectedDotEdge}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createDirectedDotEdgeAdapter() {
+		if (directedDotEdgeItemProvider == null) {
+			directedDotEdgeItemProvider = new DirectedDotEdgeItemProvider(this);
+		}
+
+		return directedDotEdgeItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.graphviz.dot.UndirectedDotEdge} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected UndirectedDotEdgeItemProvider undirectedDotEdgeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.graphviz.dot.UndirectedDotEdge}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createUndirectedDotEdgeAdapter() {
+		if (undirectedDotEdgeItemProvider == null) {
+			undirectedDotEdgeItemProvider = new UndirectedDotEdgeItemProvider(this);
+		}
+
+		return undirectedDotEdgeItemProvider;
 	}
 
 	/**
@@ -263,8 +286,9 @@ public class DotItemProviderAdapterFactory extends DotAdapterFactory implements 
 	public void dispose() {
 		if (dotGraphItemProvider != null) dotGraphItemProvider.dispose();
 		if (dotNodeItemProvider != null) dotNodeItemProvider.dispose();
-		if (dotEdgeItemProvider != null) dotEdgeItemProvider.dispose();
 		if (settingItemProvider != null) settingItemProvider.dispose();
+		if (directedDotEdgeItemProvider != null) directedDotEdgeItemProvider.dispose();
+		if (undirectedDotEdgeItemProvider != null) undirectedDotEdgeItemProvider.dispose();
 	}
 
 }

@@ -1,6 +1,6 @@
 /**
  */
-package de.uni_paderborn.fujaba.graphviz.common.provider;
+package de.uni_paderborn.fujaba.graphviz.dot.provider;
 
 
 import java.util.Collection;
@@ -8,28 +8,23 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.util.ResourceLocator;
-import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.muml.core.provider.NamedElementItemProvider;
 
-import de.uni_paderborn.fujaba.graphviz.common.Node;
-import de.uni_paderborn.fujaba.graphviz.provider.GraphvizEditPlugin;
+import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
 /**
- * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.graphviz.common.Node} object.
+ * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.graphviz.dot.DirectedDotEdge} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class NodeItemProvider
-	extends NamedElementItemProvider {
+public class DirectedDotEdgeItemProvider extends DotEdgeItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NodeItemProvider(AdapterFactory adapterFactory) {
+	public DirectedDotEdgeItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -49,14 +44,14 @@ public class NodeItemProvider
 	}
 
 	/**
-	 * This returns Node.gif.
+	 * This returns DirectedDotEdge.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Node"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/DirectedDotEdge"));
 	}
 
 	/**
@@ -77,11 +72,9 @@ public class NodeItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Node)object).getName();
-		return label == null || label.length() == 0 ?
-			getString("_UI_Node_type") :
-			getString("_UI_Node_type") + " " + label;
+		return getString("_UI_DirectedDotEdge_type");
 	}
+	
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -106,17 +99,6 @@ public class NodeItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-	}
-
-	/**
-	 * Return the resource locator for this item provider's resources.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ResourceLocator getResourceLocator() {
-		return GraphvizEditPlugin.INSTANCE;
 	}
 
 }

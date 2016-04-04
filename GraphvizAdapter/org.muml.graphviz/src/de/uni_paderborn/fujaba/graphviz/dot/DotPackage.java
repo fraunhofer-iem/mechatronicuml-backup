@@ -508,6 +508,116 @@ public interface DotPackage extends EPackage {
 	int SETTING_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.graphviz.dot.impl.DirectedDotEdgeImpl <em>Directed Dot Edge</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.graphviz.dot.impl.DirectedDotEdgeImpl
+	 * @see de.uni_paderborn.fujaba.graphviz.dot.impl.DotPackageImpl#getDirectedDotEdge()
+	 * @generated
+	 */
+	int DIRECTED_DOT_EDGE = 4;
+
+	/**
+	 * The feature id for the '<em><b>Source</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIRECTED_DOT_EDGE__SOURCE = DOT_EDGE__SOURCE;
+
+	/**
+	 * The feature id for the '<em><b>Target</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIRECTED_DOT_EDGE__TARGET = DOT_EDGE__TARGET;
+
+	/**
+	 * The feature id for the '<em><b>Settings</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIRECTED_DOT_EDGE__SETTINGS = DOT_EDGE__SETTINGS;
+
+	/**
+	 * The number of structural features of the '<em>Directed Dot Edge</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIRECTED_DOT_EDGE_FEATURE_COUNT = DOT_EDGE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Directed Dot Edge</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIRECTED_DOT_EDGE_OPERATION_COUNT = DOT_EDGE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.graphviz.dot.impl.UndirectedDotEdgeImpl <em>Undirected Dot Edge</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.graphviz.dot.impl.UndirectedDotEdgeImpl
+	 * @see de.uni_paderborn.fujaba.graphviz.dot.impl.DotPackageImpl#getUndirectedDotEdge()
+	 * @generated
+	 */
+	int UNDIRECTED_DOT_EDGE = 5;
+
+	/**
+	 * The feature id for the '<em><b>Source</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNDIRECTED_DOT_EDGE__SOURCE = DOT_EDGE__SOURCE;
+
+	/**
+	 * The feature id for the '<em><b>Target</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNDIRECTED_DOT_EDGE__TARGET = DOT_EDGE__TARGET;
+
+	/**
+	 * The feature id for the '<em><b>Settings</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNDIRECTED_DOT_EDGE__SETTINGS = DOT_EDGE__SETTINGS;
+
+	/**
+	 * The number of structural features of the '<em>Undirected Dot Edge</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNDIRECTED_DOT_EDGE_FEATURE_COUNT = DOT_EDGE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Undirected Dot Edge</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNDIRECTED_DOT_EDGE_OPERATION_COUNT = DOT_EDGE_OPERATION_COUNT + 0;
+
+	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.graphviz.dot.DotGraph <em>Graph</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -669,6 +779,26 @@ public interface DotPackage extends EPackage {
 	EAttribute getSetting_Value();
 
 	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.graphviz.dot.DirectedDotEdge <em>Directed Dot Edge</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Directed Dot Edge</em>'.
+	 * @see de.uni_paderborn.fujaba.graphviz.dot.DirectedDotEdge
+	 * @generated
+	 */
+	EClass getDirectedDotEdge();
+
+	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.graphviz.dot.UndirectedDotEdge <em>Undirected Dot Edge</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Undirected Dot Edge</em>'.
+	 * @see de.uni_paderborn.fujaba.graphviz.dot.UndirectedDotEdge
+	 * @generated
+	 */
+	EClass getUndirectedDotEdge();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -818,6 +948,26 @@ public interface DotPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute SETTING__VALUE = eINSTANCE.getSetting_Value();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.graphviz.dot.impl.DirectedDotEdgeImpl <em>Directed Dot Edge</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.graphviz.dot.impl.DirectedDotEdgeImpl
+		 * @see de.uni_paderborn.fujaba.graphviz.dot.impl.DotPackageImpl#getDirectedDotEdge()
+		 * @generated
+		 */
+		EClass DIRECTED_DOT_EDGE = eINSTANCE.getDirectedDotEdge();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.graphviz.dot.impl.UndirectedDotEdgeImpl <em>Undirected Dot Edge</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.graphviz.dot.impl.UndirectedDotEdgeImpl
+		 * @see de.uni_paderborn.fujaba.graphviz.dot.impl.DotPackageImpl#getUndirectedDotEdge()
+		 * @generated
+		 */
+		EClass UNDIRECTED_DOT_EDGE = eINSTANCE.getUndirectedDotEdge();
 
 	}
 

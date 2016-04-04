@@ -12,12 +12,12 @@ import de.uni_paderborn.fujaba.graphviz.util.Point;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.graphviz.plain.PlainNode#getWidth <em>Width</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.graphviz.plain.PlainNode#getHeight <em>Height</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.graphviz.plain.PlainNode#getPosition <em>Position</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.graphviz.plain.PlainPackage#getPlainNode()
  * @model

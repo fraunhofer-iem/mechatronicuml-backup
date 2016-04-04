@@ -23,14 +23,14 @@ import de.uni_paderborn.fujaba.graphviz.dot.Setting;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.graphviz.dot.impl.DotEdgeImpl#getSettings <em>Settings</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
-public class DotEdgeImpl extends EdgeImpl<DotNode> implements DotEdge {
+public abstract class DotEdgeImpl extends EdgeImpl<DotNode> implements DotEdge {
 	/**
 	 * The cached value of the '{@link #getSettings() <em>Settings</em>}' containment reference list.
 	 * <!-- begin-user-doc -->

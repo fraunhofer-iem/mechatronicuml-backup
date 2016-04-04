@@ -11,11 +11,11 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.graphviz.util.Point#getX <em>X</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.graphviz.util.Point#getY <em>Y</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.graphviz.util.UtilPackage#getPoint()
  * @model

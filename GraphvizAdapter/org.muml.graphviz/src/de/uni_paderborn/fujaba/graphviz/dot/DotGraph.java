@@ -13,6 +13,7 @@ import de.uni_paderborn.fujaba.graphviz.common.Graph;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.graphviz.dot.DotGraph#isDirectedGraph <em>Directed Graph</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.graphviz.dot.DotGraph#getSubgraphs <em>Subgraphs</em>}</li>
@@ -22,7 +23,6 @@ import de.uni_paderborn.fujaba.graphviz.common.Graph;
  *   <li>{@link de.uni_paderborn.fujaba.graphviz.dot.DotGraph#getEdgeSettings <em>Edge Settings</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.graphviz.dot.DotGraph#getId <em>Id</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.graphviz.dot.DotPackage#getDotGraph()
  * @model

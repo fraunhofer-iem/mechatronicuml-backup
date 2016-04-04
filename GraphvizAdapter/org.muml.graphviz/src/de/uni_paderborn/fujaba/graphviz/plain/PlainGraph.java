@@ -11,12 +11,12 @@ import de.uni_paderborn.fujaba.graphviz.common.Graph;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.graphviz.plain.PlainGraph#getScale <em>Scale</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.graphviz.plain.PlainGraph#getWidth <em>Width</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.graphviz.plain.PlainGraph#getHeight <em>Height</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.graphviz.plain.PlainPackage#getPlainGraph()
  * @model

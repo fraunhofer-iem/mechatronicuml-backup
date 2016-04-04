@@ -23,10 +23,10 @@ import de.uni_paderborn.fujaba.graphviz.util.Point;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.graphviz.plain.impl.PlainEdgeImpl#getSplinePoints <em>Spline Points</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -12,6 +12,7 @@ import org.muml.core.NamedElement;
 import de.uni_paderborn.fujaba.graphviz.common.Edge;
 import de.uni_paderborn.fujaba.graphviz.common.Graph;
 import de.uni_paderborn.fujaba.graphviz.common.Node;
+import de.uni_paderborn.fujaba.graphviz.dot.*;
 import de.uni_paderborn.fujaba.graphviz.dot.DotEdge;
 import de.uni_paderborn.fujaba.graphviz.dot.DotGraph;
 import de.uni_paderborn.fujaba.graphviz.dot.DotNode;
@@ -89,6 +90,14 @@ public class DotAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseSetting(Setting object) {
 				return createSettingAdapter();
+			}
+			@Override
+			public Adapter caseDirectedDotEdge(DirectedDotEdge object) {
+				return createDirectedDotEdgeAdapter();
+			}
+			@Override
+			public Adapter caseUndirectedDotEdge(UndirectedDotEdge object) {
+				return createUndirectedDotEdgeAdapter();
 			}
 			@Override
 			public <V extends Node, E extends Edge<V>> Adapter caseGraph(Graph<V, E> object) {
@@ -183,6 +192,34 @@ public class DotAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createSettingAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.graphviz.dot.DirectedDotEdge <em>Directed Dot Edge</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.graphviz.dot.DirectedDotEdge
+	 * @generated
+	 */
+	public Adapter createDirectedDotEdgeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.graphviz.dot.UndirectedDotEdge <em>Undirected Dot Edge</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.graphviz.dot.UndirectedDotEdge
+	 * @generated
+	 */
+	public Adapter createUndirectedDotEdgeAdapter() {
 		return null;
 	}
 

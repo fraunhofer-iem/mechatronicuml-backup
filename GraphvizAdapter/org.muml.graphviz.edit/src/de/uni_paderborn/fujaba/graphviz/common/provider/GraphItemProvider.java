@@ -182,7 +182,12 @@ public class GraphItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(CommonPackage.Literals.GRAPH__EDGES,
-				 DotFactory.eINSTANCE.createDotEdge()));
+				 DotFactory.eINSTANCE.createDirectedDotEdge()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(CommonPackage.Literals.GRAPH__EDGES,
+				 DotFactory.eINSTANCE.createUndirectedDotEdge()));
 
 		newChildDescriptors.add
 			(createChildParameter

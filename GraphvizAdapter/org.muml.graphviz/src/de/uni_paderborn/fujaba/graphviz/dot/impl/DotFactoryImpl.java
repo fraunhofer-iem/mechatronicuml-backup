@@ -2,18 +2,12 @@
  */
 package de.uni_paderborn.fujaba.graphviz.dot.impl;
 
+import de.uni_paderborn.fujaba.graphviz.dot.*;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
-import de.uni_paderborn.fujaba.graphviz.dot.DotEdge;
-import de.uni_paderborn.fujaba.graphviz.dot.DotFactory;
-import de.uni_paderborn.fujaba.graphviz.dot.DotGraph;
-import de.uni_paderborn.fujaba.graphviz.dot.DotNode;
-import de.uni_paderborn.fujaba.graphviz.dot.DotPackage;
-import de.uni_paderborn.fujaba.graphviz.dot.Setting;
 
 /**
  * <!-- begin-user-doc -->
@@ -61,8 +55,9 @@ public class DotFactoryImpl extends EFactoryImpl implements DotFactory {
 		switch (eClass.getClassifierID()) {
 			case DotPackage.DOT_GRAPH: return createDotGraph();
 			case DotPackage.DOT_NODE: return createDotNode();
-			case DotPackage.DOT_EDGE: return createDotEdge();
 			case DotPackage.SETTING: return createSetting();
+			case DotPackage.DIRECTED_DOT_EDGE: return createDirectedDotEdge();
+			case DotPackage.UNDIRECTED_DOT_EDGE: return createUndirectedDotEdge();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -93,9 +88,9 @@ public class DotFactoryImpl extends EFactoryImpl implements DotFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DotEdge createDotEdge() {
-		DotEdgeImpl dotEdge = new DotEdgeImpl();
-		return dotEdge;
+	public Setting createSetting() {
+		SettingImpl setting = new SettingImpl();
+		return setting;
 	}
 
 	/**
@@ -103,9 +98,19 @@ public class DotFactoryImpl extends EFactoryImpl implements DotFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Setting createSetting() {
-		SettingImpl setting = new SettingImpl();
-		return setting;
+	public DirectedDotEdge createDirectedDotEdge() {
+		DirectedDotEdgeImpl directedDotEdge = new DirectedDotEdgeImpl();
+		return directedDotEdge;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public UndirectedDotEdge createUndirectedDotEdge() {
+		UndirectedDotEdgeImpl undirectedDotEdge = new UndirectedDotEdgeImpl();
+		return undirectedDotEdge;
 	}
 
 	/**

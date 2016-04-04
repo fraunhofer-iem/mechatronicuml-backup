@@ -13,13 +13,13 @@ import de.uni_paderborn.fujaba.graphviz.common.Edge;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.graphviz.dot.DotEdge#getSettings <em>Settings</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.graphviz.dot.DotPackage#getDotEdge()
- * @model
+ * @model abstract="true"
  * @generated
  */
 public interface DotEdge extends Edge<DotNode> {

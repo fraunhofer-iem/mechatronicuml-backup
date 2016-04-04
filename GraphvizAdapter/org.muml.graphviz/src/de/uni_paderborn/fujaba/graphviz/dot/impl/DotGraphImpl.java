@@ -28,6 +28,7 @@ import de.uni_paderborn.fujaba.graphviz.dot.Setting;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.graphviz.dot.impl.DotGraphImpl#isDirectedGraph <em>Directed Graph</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.graphviz.dot.impl.DotGraphImpl#getSubgraphs <em>Subgraphs</em>}</li>
@@ -37,7 +38,6 @@ import de.uni_paderborn.fujaba.graphviz.dot.Setting;
  *   <li>{@link de.uni_paderborn.fujaba.graphviz.dot.impl.DotGraphImpl#getEdgeSettings <em>Edge Settings</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.graphviz.dot.impl.DotGraphImpl#getId <em>Id</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

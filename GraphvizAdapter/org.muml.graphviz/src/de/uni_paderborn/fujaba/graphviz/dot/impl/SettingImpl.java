@@ -16,11 +16,11 @@ import de.uni_paderborn.fujaba.graphviz.dot.Setting;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.graphviz.dot.impl.SettingImpl#getAttribute <em>Attribute</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.graphviz.dot.impl.SettingImpl#getValue <em>Value</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

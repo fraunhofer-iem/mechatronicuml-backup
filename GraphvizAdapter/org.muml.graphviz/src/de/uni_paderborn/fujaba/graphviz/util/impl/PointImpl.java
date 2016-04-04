@@ -16,11 +16,11 @@ import de.uni_paderborn.fujaba.graphviz.util.UtilPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.graphviz.util.impl.PointImpl#getX <em>X</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.graphviz.util.impl.PointImpl#getY <em>Y</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

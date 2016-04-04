@@ -40,15 +40,6 @@ public interface DotFactory extends EFactory {
 	DotNode createDotNode();
 
 	/**
-	 * Returns a new object of class '<em>Edge</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Edge</em>'.
-	 * @generated
-	 */
-	DotEdge createDotEdge();
-
-	/**
 	 * Returns a new object of class '<em>Setting</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -56,6 +47,24 @@ public interface DotFactory extends EFactory {
 	 * @generated
 	 */
 	Setting createSetting();
+
+	/**
+	 * Returns a new object of class '<em>Directed Dot Edge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Directed Dot Edge</em>'.
+	 * @generated
+	 */
+	DirectedDotEdge createDirectedDotEdge();
+
+	/**
+	 * Returns a new object of class '<em>Undirected Dot Edge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Undirected Dot Edge</em>'.
+	 * @generated
+	 */
+	UndirectedDotEdge createUndirectedDotEdge();
 
 	/**
 	 * Returns the package supported by this factory.

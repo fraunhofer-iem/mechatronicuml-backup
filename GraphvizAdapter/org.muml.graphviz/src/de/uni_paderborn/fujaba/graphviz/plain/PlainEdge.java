@@ -14,10 +14,10 @@ import de.uni_paderborn.fujaba.graphviz.util.Point;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.graphviz.plain.PlainEdge#getSplinePoints <em>Spline Points</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.graphviz.plain.PlainPackage#getPlainEdge()
  * @model

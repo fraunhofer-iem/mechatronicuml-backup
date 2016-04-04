@@ -31,7 +31,7 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="settings" upperBound="-1"
           eType="#//dot/Setting" containment="true"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="DotEdge">
+    <eClassifiers xsi:type="ecore:EClass" name="DotEdge" abstract="true">
       <eStructuralFeatures xsi:type="ecore:EReference" name="settings" upperBound="-1"
           eType="#//dot/Setting" containment="true"/>
       <eGenericSuperTypes eClassifier="#//common/Edge">
@@ -44,6 +44,8 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="DirectedDotEdge" eSuperTypes="#//dot/DotEdge"/>
+    <eClassifiers xsi:type="ecore:EClass" name="UndirectedDotEdge" eSuperTypes="#//dot/DotEdge"/>
   </eSubpackages>
   <eSubpackages name="plain" nsURI="http://www.fujaba.de/graphviz/plain/0.1.0" nsPrefix="plain">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">

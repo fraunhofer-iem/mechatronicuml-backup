@@ -19,12 +19,12 @@ import de.uni_paderborn.fujaba.graphviz.util.Point;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.graphviz.plain.impl.PlainNodeImpl#getWidth <em>Width</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.graphviz.plain.impl.PlainNodeImpl#getHeight <em>Height</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.graphviz.plain.impl.PlainNodeImpl#getPosition <em>Position</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

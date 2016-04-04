@@ -12,8 +12,6 @@ import de.uni_paderborn.fujaba.graphviz.GraphvizPackage;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Dummy Class For Acceleo Will Be Deleted</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */

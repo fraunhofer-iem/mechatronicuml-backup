@@ -13,10 +13,10 @@ import de.uni_paderborn.fujaba.graphviz.common.Node;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.graphviz.dot.DotNode#getSettings <em>Settings</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.graphviz.dot.DotPackage#getDotNode()
  * @model
