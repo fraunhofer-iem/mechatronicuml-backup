@@ -30,7 +30,7 @@ public class BuildExecution {
 			}
 		});
 
-		workspace.build(IncrementalProjectBuilder.AUTO_BUILD, progressMonitor);
+		workspace.build(IncrementalProjectBuilder.FULL_BUILD, progressMonitor);
 		IMarker[] markers = null;
 		try {
 			markers = root.findMarkers(AcceleoMarkerUtils.PROBLEM_MARKER_ID,
