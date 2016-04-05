@@ -30,16 +30,19 @@ public class BuildExecution {
 			}
 		});
 
-		workspace.build(IncrementalProjectBuilder.FULL_BUILD, progressMonitor);
+		try {
+			workspace.build(IncrementalProjectBuilder.FULL_BUILD, progressMonitor);
+		} catch (CoreException e) {
+			workspace.build(IncrementalProjectBuilder.INCREMENTAL_BUILD, progressMonitor);
+
+		}
 		IMarker[] markers = null;
 		try {
-			markers = root.findMarkers(AcceleoMarkerUtils.PROBLEM_MARKER_ID,
-				            true, IResource.DEPTH_INFINITE);
+			markers = root.findMarkers(AcceleoMarkerUtils.PROBLEM_MARKER_ID, true, IResource.DEPTH_INFINITE);
 		} catch (CoreException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
-	
 
 		workspace.save(true, progressMonitor);
 		return markers;
