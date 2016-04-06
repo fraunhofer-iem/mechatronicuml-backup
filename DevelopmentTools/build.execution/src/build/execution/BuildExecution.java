@@ -18,7 +18,7 @@ public class BuildExecution {
 		IProgressMonitor progressMonitor = new NullProgressMonitor();
 		IWorkspace workspace = ResourcesPlugin.getWorkspace();
 		IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
-
+		root.refreshLocal(IWorkspaceRoot.DEPTH_INFINITE, progressMonitor);
 		root.accept(new IResourceVisitor() {
 
 			@Override
@@ -35,7 +35,7 @@ public class BuildExecution {
 		} catch (CoreException e) {
 			workspace.build(IncrementalProjectBuilder.CLEAN_BUILD, progressMonitor);
 			workspace.build(IncrementalProjectBuilder.FULL_BUILD, progressMonitor);
-
+			e.printStackTrace(System.out);
 		}
 		System.out.println("Build Progress Successfully!");
 
