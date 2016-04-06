@@ -15,14 +15,15 @@ public class Startup implements IStartup {
 			public void run() {
 				int exitCode = 0;
 				IMarker[] markers = null;
-				try {
-					markers = BuildExecution.build();
-				} catch (CoreException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-					exitCode = 1;
-
-				}
+//				try {
+//					markers = BuildExecution.build();
+//				} catch (CoreException e) {
+//					// TODO Auto-generated catch block
+//					e.printStackTrace();
+//					exitCode = 1;
+//
+//				}
+				System.out.println("Started Eclipse");
 				if (markers != null && markers.length > 0) {
 					exitCode = 1;
 				}
