@@ -9,7 +9,7 @@ Export-Package: org.muml.simulink.adapter.reconfiguration.analysis.inter,
  org.muml.simulink.adapter.reconfiguration.analysis.pre.reach,
  org.muml.simulink.adapter.reconfiguration.analysis.pre.reach.state
 Require-Bundle: org.eclipse.emf.ecore;bundle-version="2.9.1",
- org.muml.core;bundle-version="1.0.1",
+ org.muml.core;bundle-version="1.0.0",
  org.muml.storydiagram;bundle-version="1.0.1",
  org.muml.core.modelinstance;bundle-version="0.4.0",
  org.muml.pim;bundle-version="0.4.0",

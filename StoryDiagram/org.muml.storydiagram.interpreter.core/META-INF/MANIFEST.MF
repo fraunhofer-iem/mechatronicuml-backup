@@ -7,7 +7,7 @@ Bundle-SymbolicName: org.muml.storydiagram.interpreter.core;singleton:=true
 Bundle-Version: 1.0.1.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Require-Bundle: org.muml.storydiagram.interpreter.core.mdelab;bundle-version="1.0.0";visibility:=reexport,
- org.muml.core;bundle-version="1.0.1";visibility:=reexport,
+ org.muml.core;bundle-version="1.0.0";visibility:=reexport,
  org.muml.storydiagram;bundle-version="1.0.1";visibility:=reexport,
  org.muml.storydiagram.expressions,
  org.eclipse.emf.ecore
