@@ -21,25 +21,25 @@ public class EEnumLiteralEditor extends org.muml.ape.runtime.editors.ClassProper
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorEAnnotations_DocumentationTab_Editor(), false);
+			addPropertyEditor(createEditorEAnnotations_tab_documentationTab_Editor(), false);
 
-			addPropertyEditor(createEditorName_DefaultTab_Editor(), false);
+			addPropertyEditor(createEditorName_tab_defaultTab_Editor(), false);
 
-			addPropertyEditor(createEditorValue_DefaultTab_Editor(), false);
+			addPropertyEditor(createEditorValue_tab_defaultTab_Editor(), false);
 
-			addPropertyEditor(createEditorLiteral_DefaultTab_Editor(), false);
+			addPropertyEditor(createEditorLiteral_tab_defaultTab_Editor(), false);
 
 		} else if ("tab.default".equals(tab)) { // Tab Default
 
-			addPropertyEditor(createEditorName_DefaultTab_Editor(), false);
+			addPropertyEditor(createEditorName_tab_defaultTab_Editor(), false);
 
-			addPropertyEditor(createEditorValue_DefaultTab_Editor(), false);
+			addPropertyEditor(createEditorValue_tab_defaultTab_Editor(), false);
 
-			addPropertyEditor(createEditorLiteral_DefaultTab_Editor(), false);
+			addPropertyEditor(createEditorLiteral_tab_defaultTab_Editor(), false);
 
 		} else if ("tab.documentation".equals(tab)) { // Tab Documentation
 
-			addPropertyEditor(createEditorEAnnotations_DocumentationTab_Editor(), false);
+			addPropertyEditor(createEditorEAnnotations_tab_documentationTab_Editor(), false);
 
 		} else if ("tab.ocl".equals(tab)) { // Tab OCL
 
@@ -49,56 +49,56 @@ public class EEnumLiteralEditor extends org.muml.ape.runtime.editors.ClassProper
 		}
 	}
 
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorValue_DefaultTab;
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorValue_DefaultTab_Editor() {
-		if (this.editorValue_DefaultTab == null) {
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorValue_tab_defaultTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorValue_tab_defaultTab_Editor() {
+		if (this.editorValue_tab_defaultTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.eclipse.emf.ecore.EcorePackage.eINSTANCE
 					.getEEnumLiteral_Value();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.SpinnerPropertyEditor(
 					adapterFactory, feature, 0);
 
-			this.editorValue_DefaultTab = editor;
+			this.editorValue_tab_defaultTab = editor;
 		}
-		return this.editorValue_DefaultTab;
+		return this.editorValue_tab_defaultTab;
 	}
 
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorLiteral_DefaultTab;
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorLiteral_DefaultTab_Editor() {
-		if (this.editorLiteral_DefaultTab == null) {
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorLiteral_tab_defaultTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorLiteral_tab_defaultTab_Editor() {
+		if (this.editorLiteral_tab_defaultTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.eclipse.emf.ecore.EcorePackage.eINSTANCE
 					.getEEnumLiteral_Literal();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.TextPropertyEditor(
 					adapterFactory, feature, false);
 
-			this.editorLiteral_DefaultTab = editor;
+			this.editorLiteral_tab_defaultTab = editor;
 		}
-		return this.editorLiteral_DefaultTab;
+		return this.editorLiteral_tab_defaultTab;
 	}
 
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorName_DefaultTab;
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorName_DefaultTab_Editor() {
-		if (this.editorName_DefaultTab == null) {
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorName_tab_defaultTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorName_tab_defaultTab_Editor() {
+		if (this.editorName_tab_defaultTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.eclipse.emf.ecore.EcorePackage.eINSTANCE
 					.getENamedElement_Name();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.TextPropertyEditor(
 					adapterFactory, feature, false);
 
-			this.editorName_DefaultTab = editor;
+			this.editorName_tab_defaultTab = editor;
 		}
-		return this.editorName_DefaultTab;
+		return this.editorName_tab_defaultTab;
 	}
 
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorEAnnotations_DocumentationTab;
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorEAnnotations_DocumentationTab_Editor() {
-		if (this.editorEAnnotations_DocumentationTab == null) {
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorEAnnotations_tab_documentationTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorEAnnotations_tab_documentationTab_Editor() {
+		if (this.editorEAnnotations_tab_documentationTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.eclipse.emf.ecore.EcorePackage.eINSTANCE
 					.getEModelElement_EAnnotations();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.eclipse.emf.ecore.properties.ecore.editor.DocumentationAnnotationPropertyEditor(
 					adapterFactory, feature);
 
-			this.editorEAnnotations_DocumentationTab = editor;
+			this.editorEAnnotations_tab_documentationTab = editor;
 		}
-		return this.editorEAnnotations_DocumentationTab;
+		return this.editorEAnnotations_tab_documentationTab;
 	}
 
 	//

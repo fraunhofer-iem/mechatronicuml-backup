@@ -1,8 +1,8 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Properties
-Bundle-SymbolicName: org.muml.ape.ecore.edit.properties;singleton:=true
-Bundle-Version: 0.1.0.qualifier
+Bundle-Name: Ecore Editor-Support
+Bundle-SymbolicName: org.muml.ape.ecore.edit.properties; singleton:=true
+Bundle-Version: 1.0.0.qualifier
 Require-Bundle: org.eclipse.emf.ecore,
  org.eclipse.core.runtime,
  org.muml.ape.runtime,

@@ -21,252 +21,234 @@ public class EReferenceEditor extends org.muml.ape.runtime.editors.ClassProperty
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorName_DefaultTab_Editor(), false);
+			addPropertyEditor(createEditorName_tab_defaultTab_Editor(), false);
 
-			addPropertyEditor(createEditorEType_DefaultTab_Editor(), false);
+			addPropertyEditor(createEditorEType_tab_defaultTab_Editor(), false);
 
-			addPropertyEditor(createEditorDefaultValueLiteral_DefaultTab_Editor(), false);
+			addPropertyEditor(createEditorDefaultValueLiteral_tab_defaultTab_Editor(), false);
 
-			addPropertyEditor(createEditorEOpposite_DefaultTab_Editor(), false);
+			addPropertyEditor(createEditorEOpposite_tab_defaultTab_Editor(), false);
 
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Cardinality", "Cardinality",
-					org.eclipse.swt.SWT.HORIZONTAL, true);
+			addSubCategory("org.muml.ape.category.Cardinality", "Cardinality", org.eclipse.swt.SWT.HORIZONTAL, true);
 
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Cardinality",
-					createEditorLowerBound_DefaultTab_Editor(), false);
+			addEditorToCategory("org.muml.ape.category.Cardinality", createEditorLowerBound_tab_defaultTab_Editor(),
+					false);
 
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Cardinality",
-					createEditorUpperBound_DefaultTab_Editor(), false);
+			addEditorToCategory("org.muml.ape.category.Cardinality", createEditorUpperBound_tab_defaultTab_Editor(),
+					false);
 
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Booleans", "Booleans",
-					org.eclipse.swt.SWT.HORIZONTAL, true);
+			addSubCategory("org.muml.ape.category.Booleans", "Booleans", org.eclipse.swt.SWT.HORIZONTAL, true);
 
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Booleans",
-					createEditorChangeable_DefaultTab_Editor(), false);
+			addEditorToCategory("org.muml.ape.category.Booleans", createEditorChangeable_tab_defaultTab_Editor(),
+					false);
 
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Booleans",
-					createEditorContainment_DefaultTab_Editor(), false);
+			addEditorToCategory("org.muml.ape.category.Booleans", createEditorContainment_tab_defaultTab_Editor(),
+					false);
 
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Booleans",
-					createEditorResolveProxies_DefaultTab_Editor(), false);
+			addEditorToCategory("org.muml.ape.category.Booleans", createEditorResolveProxies_tab_defaultTab_Editor(),
+					false);
 
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Booleans",
-					createEditorVolatile_DefaultTab_Editor(), false);
+			addEditorToCategory("org.muml.ape.category.Booleans", createEditorVolatile_tab_defaultTab_Editor(), false);
 
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Booleans",
-					createEditorTransient_DefaultTab_Editor(), false);
+			addEditorToCategory("org.muml.ape.category.Booleans", createEditorTransient_tab_defaultTab_Editor(), false);
 
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Booleans",
-					createEditorUnsettable_DefaultTab_Editor(), false);
+			addEditorToCategory("org.muml.ape.category.Booleans", createEditorUnsettable_tab_defaultTab_Editor(),
+					false);
 
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Booleans",
-					createEditorDerived_DefaultTab_Editor(), false);
+			addEditorToCategory("org.muml.ape.category.Booleans", createEditorDerived_tab_defaultTab_Editor(), false);
 
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Booleans",
-					createEditorOrdered_DefaultTab_Editor(), false);
+			addEditorToCategory("org.muml.ape.category.Booleans", createEditorOrdered_tab_defaultTab_Editor(), false);
 
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Booleans",
-					createEditorUnique_DefaultTab_Editor(), false);
+			addEditorToCategory("org.muml.ape.category.Booleans", createEditorUnique_tab_defaultTab_Editor(), false);
 
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists", "Lists", org.eclipse.swt.SWT.HORIZONTAL,
-					true);
+			addSubCategory("org.muml.ape.category.Lists", "Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
 
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					createEditorEKeys_DefaultTab_Editor(), false);
+			addEditorToCategory("org.muml.ape.category.Lists", createEditorEKeys_tab_defaultTab_Editor(), false);
 
-			addPropertyEditor(createEditorEAnnotations_DocumentationTab_0_Editor(), false);
+			addPropertyEditor(createEditorEAnnotations_tab_documentationTab_0_Editor(), false);
 
-			addPropertyEditor(createEditorEAnnotations_FilterTab_1_Editor(), false);
+			addPropertyEditor(createEditorEAnnotations_tab_filterTab_1_Editor(), false);
 
 		} else if ("tab.default".equals(tab)) { // Tab Default
 
-			addPropertyEditor(createEditorName_DefaultTab_Editor(), false);
+			addPropertyEditor(createEditorName_tab_defaultTab_Editor(), false);
 
-			addPropertyEditor(createEditorEType_DefaultTab_Editor(), false);
+			addPropertyEditor(createEditorEType_tab_defaultTab_Editor(), false);
 
-			addPropertyEditor(createEditorDefaultValueLiteral_DefaultTab_Editor(), false);
+			addPropertyEditor(createEditorDefaultValueLiteral_tab_defaultTab_Editor(), false);
 
-			addPropertyEditor(createEditorEOpposite_DefaultTab_Editor(), false);
+			addPropertyEditor(createEditorEOpposite_tab_defaultTab_Editor(), false);
 
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Cardinality", "Cardinality",
-					org.eclipse.swt.SWT.HORIZONTAL, true);
+			addSubCategory("org.muml.ape.category.Cardinality", "Cardinality", org.eclipse.swt.SWT.HORIZONTAL, true);
 
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Cardinality",
-					createEditorLowerBound_DefaultTab_Editor(), false);
+			addEditorToCategory("org.muml.ape.category.Cardinality", createEditorLowerBound_tab_defaultTab_Editor(),
+					false);
 
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Cardinality",
-					createEditorUpperBound_DefaultTab_Editor(), false);
+			addEditorToCategory("org.muml.ape.category.Cardinality", createEditorUpperBound_tab_defaultTab_Editor(),
+					false);
 
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Booleans", "Booleans",
-					org.eclipse.swt.SWT.HORIZONTAL, true);
+			addSubCategory("org.muml.ape.category.Booleans", "Booleans", org.eclipse.swt.SWT.HORIZONTAL, true);
 
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Booleans",
-					createEditorChangeable_DefaultTab_Editor(), false);
+			addEditorToCategory("org.muml.ape.category.Booleans", createEditorChangeable_tab_defaultTab_Editor(),
+					false);
 
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Booleans",
-					createEditorContainment_DefaultTab_Editor(), false);
+			addEditorToCategory("org.muml.ape.category.Booleans", createEditorContainment_tab_defaultTab_Editor(),
+					false);
 
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Booleans",
-					createEditorResolveProxies_DefaultTab_Editor(), false);
+			addEditorToCategory("org.muml.ape.category.Booleans", createEditorResolveProxies_tab_defaultTab_Editor(),
+					false);
 
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Booleans",
-					createEditorVolatile_DefaultTab_Editor(), false);
+			addEditorToCategory("org.muml.ape.category.Booleans", createEditorVolatile_tab_defaultTab_Editor(), false);
 
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Booleans",
-					createEditorTransient_DefaultTab_Editor(), false);
+			addEditorToCategory("org.muml.ape.category.Booleans", createEditorTransient_tab_defaultTab_Editor(), false);
 
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Booleans",
-					createEditorUnsettable_DefaultTab_Editor(), false);
+			addEditorToCategory("org.muml.ape.category.Booleans", createEditorUnsettable_tab_defaultTab_Editor(),
+					false);
 
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Booleans",
-					createEditorDerived_DefaultTab_Editor(), false);
+			addEditorToCategory("org.muml.ape.category.Booleans", createEditorDerived_tab_defaultTab_Editor(), false);
 
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Booleans",
-					createEditorOrdered_DefaultTab_Editor(), false);
+			addEditorToCategory("org.muml.ape.category.Booleans", createEditorOrdered_tab_defaultTab_Editor(), false);
 
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Booleans",
-					createEditorUnique_DefaultTab_Editor(), false);
+			addEditorToCategory("org.muml.ape.category.Booleans", createEditorUnique_tab_defaultTab_Editor(), false);
 
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists", "Lists", org.eclipse.swt.SWT.HORIZONTAL,
-					true);
+			addSubCategory("org.muml.ape.category.Lists", "Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
 
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					createEditorEKeys_DefaultTab_Editor(), false);
+			addEditorToCategory("org.muml.ape.category.Lists", createEditorEKeys_tab_defaultTab_Editor(), false);
 
 		} else if ("tab.documentation".equals(tab)) { // Tab Documentation
 
-			addPropertyEditor(createEditorEAnnotations_DocumentationTab_0_Editor(), false);
+			addPropertyEditor(createEditorEAnnotations_tab_documentationTab_0_Editor(), false);
 
 		} else if ("tab.ocl".equals(tab)) { // Tab OCL
 
 		} else if ("tab.filter".equals(tab)) { // Tab Filter
 
-			addPropertyEditor(createEditorEAnnotations_FilterTab_1_Editor(), false);
+			addPropertyEditor(createEditorEAnnotations_tab_filterTab_1_Editor(), false);
 
 		} else {
 		}
 	}
 
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorEOpposite_DefaultTab;
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorEOpposite_DefaultTab_Editor() {
-		if (this.editorEOpposite_DefaultTab == null) {
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorEOpposite_tab_defaultTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorEOpposite_tab_defaultTab_Editor() {
+		if (this.editorEOpposite_tab_defaultTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.eclipse.emf.ecore.EcorePackage.eINSTANCE
 					.getEReference_EOpposite();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.ComboPropertyEditor(
 					adapterFactory, feature);
 
-			this.editorEOpposite_DefaultTab = editor;
+			this.editorEOpposite_tab_defaultTab = editor;
 		}
-		return this.editorEOpposite_DefaultTab;
+		return this.editorEOpposite_tab_defaultTab;
 	}
 
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorContainment_DefaultTab;
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorContainment_DefaultTab_Editor() {
-		if (this.editorContainment_DefaultTab == null) {
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorContainment_tab_defaultTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorContainment_tab_defaultTab_Editor() {
+		if (this.editorContainment_tab_defaultTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.eclipse.emf.ecore.EcorePackage.eINSTANCE
 					.getEReference_Containment();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.CheckboxPropertyEditor(
 					adapterFactory, feature);
 
-			this.editorContainment_DefaultTab = editor;
+			this.editorContainment_tab_defaultTab = editor;
 		}
-		return this.editorContainment_DefaultTab;
+		return this.editorContainment_tab_defaultTab;
 	}
 
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorResolveProxies_DefaultTab;
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorResolveProxies_DefaultTab_Editor() {
-		if (this.editorResolveProxies_DefaultTab == null) {
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorResolveProxies_tab_defaultTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorResolveProxies_tab_defaultTab_Editor() {
+		if (this.editorResolveProxies_tab_defaultTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.eclipse.emf.ecore.EcorePackage.eINSTANCE
 					.getEReference_ResolveProxies();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.CheckboxPropertyEditor(
 					adapterFactory, feature);
 
-			this.editorResolveProxies_DefaultTab = editor;
+			this.editorResolveProxies_tab_defaultTab = editor;
 		}
-		return this.editorResolveProxies_DefaultTab;
+		return this.editorResolveProxies_tab_defaultTab;
 	}
 
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorEKeys_DefaultTab;
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorEKeys_DefaultTab_Editor() {
-		if (this.editorEKeys_DefaultTab == null) {
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorEKeys_tab_defaultTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorEKeys_tab_defaultTab_Editor() {
+		if (this.editorEKeys_tab_defaultTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.eclipse.emf.ecore.EcorePackage.eINSTANCE
 					.getEReference_EKeys();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.ListPropertyEditor(
 					adapterFactory, feature);
 
-			this.editorEKeys_DefaultTab = editor;
+			this.editorEKeys_tab_defaultTab = editor;
 		}
-		return this.editorEKeys_DefaultTab;
+		return this.editorEKeys_tab_defaultTab;
 	}
 
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorEAnnotations_DocumentationTab_0;
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorEAnnotations_DocumentationTab_0_Editor() {
-		if (this.editorEAnnotations_DocumentationTab_0 == null) {
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorEAnnotations_tab_documentationTab_0;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorEAnnotations_tab_documentationTab_0_Editor() {
+		if (this.editorEAnnotations_tab_documentationTab_0 == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.eclipse.emf.ecore.EcorePackage.eINSTANCE
 					.getEModelElement_EAnnotations();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.eclipse.emf.ecore.properties.ecore.editor.DocumentationAnnotationPropertyEditor(
 					adapterFactory, feature);
 
-			this.editorEAnnotations_DocumentationTab_0 = editor;
+			this.editorEAnnotations_tab_documentationTab_0 = editor;
 		}
-		return this.editorEAnnotations_DocumentationTab_0;
+		return this.editorEAnnotations_tab_documentationTab_0;
 	}
 
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorEAnnotations_FilterTab_1;
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorEAnnotations_FilterTab_1_Editor() {
-		if (this.editorEAnnotations_FilterTab_1 == null) {
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorEAnnotations_tab_filterTab_1;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorEAnnotations_tab_filterTab_1_Editor() {
+		if (this.editorEAnnotations_tab_filterTab_1 == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.eclipse.emf.ecore.EcorePackage.eINSTANCE
 					.getEModelElement_EAnnotations();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.eclipse.emf.ecore.properties.ecore.editor.OCLFilterPropertyEditor(
 					adapterFactory, feature);
 
-			this.editorEAnnotations_FilterTab_1 = editor;
+			this.editorEAnnotations_tab_filterTab_1 = editor;
 		}
-		return this.editorEAnnotations_FilterTab_1;
+		return this.editorEAnnotations_tab_filterTab_1;
 	}
 
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorChangeable_DefaultTab;
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorChangeable_DefaultTab_Editor() {
-		if (this.editorChangeable_DefaultTab == null) {
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorChangeable_tab_defaultTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorChangeable_tab_defaultTab_Editor() {
+		if (this.editorChangeable_tab_defaultTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.eclipse.emf.ecore.EcorePackage.eINSTANCE
 					.getEStructuralFeature_Changeable();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.CheckboxPropertyEditor(
 					adapterFactory, feature);
 
-			this.editorChangeable_DefaultTab = editor;
+			this.editorChangeable_tab_defaultTab = editor;
 		}
-		return this.editorChangeable_DefaultTab;
+		return this.editorChangeable_tab_defaultTab;
 	}
 
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorVolatile_DefaultTab;
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorVolatile_DefaultTab_Editor() {
-		if (this.editorVolatile_DefaultTab == null) {
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorVolatile_tab_defaultTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorVolatile_tab_defaultTab_Editor() {
+		if (this.editorVolatile_tab_defaultTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.eclipse.emf.ecore.EcorePackage.eINSTANCE
 					.getEStructuralFeature_Volatile();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.CheckboxPropertyEditor(
 					adapterFactory, feature);
 
-			this.editorVolatile_DefaultTab = editor;
+			this.editorVolatile_tab_defaultTab = editor;
 		}
-		return this.editorVolatile_DefaultTab;
+		return this.editorVolatile_tab_defaultTab;
 	}
 
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorTransient_DefaultTab;
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorTransient_DefaultTab_Editor() {
-		if (this.editorTransient_DefaultTab == null) {
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorTransient_tab_defaultTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorTransient_tab_defaultTab_Editor() {
+		if (this.editorTransient_tab_defaultTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.eclipse.emf.ecore.EcorePackage.eINSTANCE
 					.getEStructuralFeature_Transient();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.CheckboxPropertyEditor(
 					adapterFactory, feature);
 
-			this.editorTransient_DefaultTab = editor;
+			this.editorTransient_tab_defaultTab = editor;
 		}
-		return this.editorTransient_DefaultTab;
+		return this.editorTransient_tab_defaultTab;
 	}
 
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorDefaultValueLiteral_DefaultTab;
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorDefaultValueLiteral_DefaultTab_Editor() {
-		if (this.editorDefaultValueLiteral_DefaultTab == null) {
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorDefaultValueLiteral_tab_defaultTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorDefaultValueLiteral_tab_defaultTab_Editor() {
+		if (this.editorDefaultValueLiteral_tab_defaultTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.eclipse.emf.ecore.EcorePackage.eINSTANCE
 					.getEStructuralFeature_DefaultValueLiteral();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.TextPropertyEditor(
@@ -298,118 +280,118 @@ public class EReferenceEditor extends org.muml.ape.runtime.editors.ClassProperty
 					}
 
 				};
-				if (filter != null) {
+				if (filter != null && expression != null) {
 					editor.addVisibilityFilter(filter);
 				}
 			}
 
-			this.editorDefaultValueLiteral_DefaultTab = editor;
+			this.editorDefaultValueLiteral_tab_defaultTab = editor;
 		}
-		return this.editorDefaultValueLiteral_DefaultTab;
+		return this.editorDefaultValueLiteral_tab_defaultTab;
 	}
 
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorUnsettable_DefaultTab;
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorUnsettable_DefaultTab_Editor() {
-		if (this.editorUnsettable_DefaultTab == null) {
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorUnsettable_tab_defaultTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorUnsettable_tab_defaultTab_Editor() {
+		if (this.editorUnsettable_tab_defaultTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.eclipse.emf.ecore.EcorePackage.eINSTANCE
 					.getEStructuralFeature_Unsettable();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.CheckboxPropertyEditor(
 					adapterFactory, feature);
 
-			this.editorUnsettable_DefaultTab = editor;
+			this.editorUnsettable_tab_defaultTab = editor;
 		}
-		return this.editorUnsettable_DefaultTab;
+		return this.editorUnsettable_tab_defaultTab;
 	}
 
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorDerived_DefaultTab;
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorDerived_DefaultTab_Editor() {
-		if (this.editorDerived_DefaultTab == null) {
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorDerived_tab_defaultTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorDerived_tab_defaultTab_Editor() {
+		if (this.editorDerived_tab_defaultTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.eclipse.emf.ecore.EcorePackage.eINSTANCE
 					.getEStructuralFeature_Derived();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.CheckboxPropertyEditor(
 					adapterFactory, feature);
 
-			this.editorDerived_DefaultTab = editor;
+			this.editorDerived_tab_defaultTab = editor;
 		}
-		return this.editorDerived_DefaultTab;
+		return this.editorDerived_tab_defaultTab;
 	}
 
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorOrdered_DefaultTab;
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorOrdered_DefaultTab_Editor() {
-		if (this.editorOrdered_DefaultTab == null) {
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorOrdered_tab_defaultTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorOrdered_tab_defaultTab_Editor() {
+		if (this.editorOrdered_tab_defaultTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.eclipse.emf.ecore.EcorePackage.eINSTANCE
 					.getETypedElement_Ordered();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.CheckboxPropertyEditor(
 					adapterFactory, feature);
 
-			this.editorOrdered_DefaultTab = editor;
+			this.editorOrdered_tab_defaultTab = editor;
 		}
-		return this.editorOrdered_DefaultTab;
+		return this.editorOrdered_tab_defaultTab;
 	}
 
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorUnique_DefaultTab;
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorUnique_DefaultTab_Editor() {
-		if (this.editorUnique_DefaultTab == null) {
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorUnique_tab_defaultTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorUnique_tab_defaultTab_Editor() {
+		if (this.editorUnique_tab_defaultTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.eclipse.emf.ecore.EcorePackage.eINSTANCE
 					.getETypedElement_Unique();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.CheckboxPropertyEditor(
 					adapterFactory, feature);
 
-			this.editorUnique_DefaultTab = editor;
+			this.editorUnique_tab_defaultTab = editor;
 		}
-		return this.editorUnique_DefaultTab;
+		return this.editorUnique_tab_defaultTab;
 	}
 
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorUpperBound_DefaultTab;
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorUpperBound_DefaultTab_Editor() {
-		if (this.editorUpperBound_DefaultTab == null) {
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorUpperBound_tab_defaultTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorUpperBound_tab_defaultTab_Editor() {
+		if (this.editorUpperBound_tab_defaultTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.eclipse.emf.ecore.EcorePackage.eINSTANCE
 					.getETypedElement_UpperBound();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.SpinnerPropertyEditor(
 					adapterFactory, feature, 0);
 
-			this.editorUpperBound_DefaultTab = editor;
+			this.editorUpperBound_tab_defaultTab = editor;
 		}
-		return this.editorUpperBound_DefaultTab;
+		return this.editorUpperBound_tab_defaultTab;
 	}
 
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorLowerBound_DefaultTab;
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorLowerBound_DefaultTab_Editor() {
-		if (this.editorLowerBound_DefaultTab == null) {
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorLowerBound_tab_defaultTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorLowerBound_tab_defaultTab_Editor() {
+		if (this.editorLowerBound_tab_defaultTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.eclipse.emf.ecore.EcorePackage.eINSTANCE
 					.getETypedElement_LowerBound();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.SpinnerPropertyEditor(
 					adapterFactory, feature, 0);
 
-			this.editorLowerBound_DefaultTab = editor;
+			this.editorLowerBound_tab_defaultTab = editor;
 		}
-		return this.editorLowerBound_DefaultTab;
+		return this.editorLowerBound_tab_defaultTab;
 	}
 
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorEType_DefaultTab;
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorEType_DefaultTab_Editor() {
-		if (this.editorEType_DefaultTab == null) {
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorEType_tab_defaultTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorEType_tab_defaultTab_Editor() {
+		if (this.editorEType_tab_defaultTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.eclipse.emf.ecore.EcorePackage.eINSTANCE
 					.getETypedElement_EType();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.ComboPropertyEditor(
 					adapterFactory, feature);
 
-			this.editorEType_DefaultTab = editor;
+			this.editorEType_tab_defaultTab = editor;
 		}
-		return this.editorEType_DefaultTab;
+		return this.editorEType_tab_defaultTab;
 	}
 
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorName_DefaultTab;
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorName_DefaultTab_Editor() {
-		if (this.editorName_DefaultTab == null) {
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorName_tab_defaultTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorName_tab_defaultTab_Editor() {
+		if (this.editorName_tab_defaultTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.eclipse.emf.ecore.EcorePackage.eINSTANCE
 					.getENamedElement_Name();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.TextPropertyEditor(
 					adapterFactory, feature, false);
 
-			this.editorName_DefaultTab = editor;
+			this.editorName_tab_defaultTab = editor;
 		}
-		return this.editorName_DefaultTab;
+		return this.editorName_tab_defaultTab;
 	}
 
 	//

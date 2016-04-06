@@ -21,15 +21,15 @@ public class EGenericTypeEditor extends org.muml.ape.runtime.editors.ClassProper
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorETypeParameter_DefaultTab_Editor(), false);
+			addPropertyEditor(createEditorETypeParameter_tab_defaultTab_Editor(), false);
 
-			addPropertyEditor(createEditorEClassifier_DefaultTab_Editor(), false);
+			addPropertyEditor(createEditorEClassifier_tab_defaultTab_Editor(), false);
 
 		} else if ("tab.default".equals(tab)) { // Tab Default
 
-			addPropertyEditor(createEditorETypeParameter_DefaultTab_Editor(), false);
+			addPropertyEditor(createEditorETypeParameter_tab_defaultTab_Editor(), false);
 
-			addPropertyEditor(createEditorEClassifier_DefaultTab_Editor(), false);
+			addPropertyEditor(createEditorEClassifier_tab_defaultTab_Editor(), false);
 
 		} else if ("tab.documentation".equals(tab)) { // Tab Documentation
 
@@ -41,30 +41,30 @@ public class EGenericTypeEditor extends org.muml.ape.runtime.editors.ClassProper
 		}
 	}
 
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorETypeParameter_DefaultTab;
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorETypeParameter_DefaultTab_Editor() {
-		if (this.editorETypeParameter_DefaultTab == null) {
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorETypeParameter_tab_defaultTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorETypeParameter_tab_defaultTab_Editor() {
+		if (this.editorETypeParameter_tab_defaultTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.eclipse.emf.ecore.EcorePackage.eINSTANCE
 					.getEGenericType_ETypeParameter();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.ComboPropertyEditor(
 					adapterFactory, feature);
 
-			this.editorETypeParameter_DefaultTab = editor;
+			this.editorETypeParameter_tab_defaultTab = editor;
 		}
-		return this.editorETypeParameter_DefaultTab;
+		return this.editorETypeParameter_tab_defaultTab;
 	}
 
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorEClassifier_DefaultTab;
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorEClassifier_DefaultTab_Editor() {
-		if (this.editorEClassifier_DefaultTab == null) {
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorEClassifier_tab_defaultTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorEClassifier_tab_defaultTab_Editor() {
+		if (this.editorEClassifier_tab_defaultTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.eclipse.emf.ecore.EcorePackage.eINSTANCE
 					.getEGenericType_EClassifier();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.ComboPropertyEditor(
 					adapterFactory, feature);
 
-			this.editorEClassifier_DefaultTab = editor;
+			this.editorEClassifier_tab_defaultTab = editor;
 		}
-		return this.editorEClassifier_DefaultTab;
+		return this.editorEClassifier_tab_defaultTab;
 	}
 
 	//

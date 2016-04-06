@@ -6,7 +6,7 @@
   <extension
          point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
     <propertyContributor
-          contributorId="org.eclipse.emf.ecore.editor.improved.contributor">
+          contributorId="org.muml.ape.contributor">
        <propertyCategory
              category="domain">
        </propertyCategory>
@@ -25,7 +25,7 @@
 
 
 <extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
-      <propertyTabs contributorId="org.eclipse.emf.ecore.editor.improved.contributor">
+      <propertyTabs contributorId="org.muml.ape.contributor">
           <propertyTab
              category="domain"
              id="tab.default"
@@ -54,10 +54,10 @@
 
 
   <extension point="org.eclipse.ui.views.properties.tabbed.propertySections"> 
-      <propertySections contributorId="org.eclipse.emf.ecore.editor.improved.contributor">
+      <propertySections contributorId="org.muml.ape.contributor">
           <propertySection
-            class="de.uni_paderborn.fujaba.properties.runtime.sections.ObjectPropertySection"
-            filter="org.eclipse.emf.ecore.properties.tabs.DefaultTabElementFilter"
+            class="org.muml.ape.runtime.sections.ObjectPropertySection"
+            filter="org.eclipse.emf.ecore.properties.tabs.Tab_defaultTabElementFilter"
             id="tab.default"
             tab="tab.default">
              <input
@@ -65,8 +65,8 @@
              </input>
           </propertySection>
           <propertySection
-            class="de.uni_paderborn.fujaba.properties.runtime.sections.ObjectPropertySection"
-            filter="org.eclipse.emf.ecore.properties.tabs.DocumentationTabElementFilter"
+            class="org.muml.ape.runtime.sections.ObjectPropertySection"
+            filter="org.eclipse.emf.ecore.properties.tabs.Tab_documentationTabElementFilter"
             id="tab.documentation"
             tab="tab.documentation">
              <input
@@ -74,8 +74,8 @@
              </input>
           </propertySection>
           <propertySection
-            class="de.uni_paderborn.fujaba.properties.runtime.sections.ObjectPropertySection"
-            filter="org.eclipse.emf.ecore.properties.tabs.OCLTabElementFilter"
+            class="org.muml.ape.runtime.sections.ObjectPropertySection"
+            filter="org.eclipse.emf.ecore.properties.tabs.Tab_oclTabElementFilter"
             id="tab.ocl"
             tab="tab.ocl">
              <input
@@ -83,8 +83,8 @@
              </input>
           </propertySection>
           <propertySection
-            class="de.uni_paderborn.fujaba.properties.runtime.sections.ObjectPropertySection"
-            filter="org.eclipse.emf.ecore.properties.tabs.FilterTabElementFilter"
+            class="org.muml.ape.runtime.sections.ObjectPropertySection"
+            filter="org.eclipse.emf.ecore.properties.tabs.Tab_filterTabElementFilter"
             id="tab.filter"
             tab="tab.filter">
              <input

@@ -4,9 +4,7 @@ package org.eclipse.emf.ecore.properties.ecore.editor;
 /**
  * @generated
  */
-public class EStringToStringMapEntryEditor
-		extends
-			org.muml.ape.runtime.editors.ClassPropertyEditor {
+public class EStringToStringMapEntryEditor extends org.muml.ape.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
@@ -23,19 +21,19 @@ public class EStringToStringMapEntryEditor
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorKey_DefaultTab_Editor(), false);
+			addPropertyEditor(createEditorKey_tab_defaultTab_Editor(), false);
 
-			addPropertyEditor(createEditorValue_DefaultTab_0_Editor(), false);
+			addPropertyEditor(createEditorValue_tab_defaultTab_0_Editor(), false);
 
-			addPropertyEditor(createEditorValue_DefaultTab_1_Editor(), false);
+			addPropertyEditor(createEditorValue_tab_defaultTab_1_Editor(), false);
 
 		} else if ("tab.default".equals(tab)) { // Tab Default
 
-			addPropertyEditor(createEditorKey_DefaultTab_Editor(), false);
+			addPropertyEditor(createEditorKey_tab_defaultTab_Editor(), false);
 
-			addPropertyEditor(createEditorValue_DefaultTab_0_Editor(), false);
+			addPropertyEditor(createEditorValue_tab_defaultTab_0_Editor(), false);
 
-			addPropertyEditor(createEditorValue_DefaultTab_1_Editor(), false);
+			addPropertyEditor(createEditorValue_tab_defaultTab_1_Editor(), false);
 
 		} else if ("tab.documentation".equals(tab)) { // Tab Documentation
 
@@ -47,22 +45,22 @@ public class EStringToStringMapEntryEditor
 		}
 	}
 
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorKey_DefaultTab;
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorKey_DefaultTab_Editor() {
-		if (this.editorKey_DefaultTab == null) {
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorKey_tab_defaultTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorKey_tab_defaultTab_Editor() {
+		if (this.editorKey_tab_defaultTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.eclipse.emf.ecore.EcorePackage.eINSTANCE
 					.getEStringToStringMapEntry_Key();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.TextPropertyEditor(
 					adapterFactory, feature, false);
 
-			this.editorKey_DefaultTab = editor;
+			this.editorKey_tab_defaultTab = editor;
 		}
-		return this.editorKey_DefaultTab;
+		return this.editorKey_tab_defaultTab;
 	}
 
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorValue_DefaultTab_0;
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorValue_DefaultTab_0_Editor() {
-		if (this.editorValue_DefaultTab_0 == null) {
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorValue_tab_defaultTab_0;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorValue_tab_defaultTab_0_Editor() {
+		if (this.editorValue_tab_defaultTab_0 == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.eclipse.emf.ecore.EcorePackage.eINSTANCE
 					.getEStringToStringMapEntry_Value();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.TextPropertyEditor(
@@ -96,19 +94,19 @@ public class EStringToStringMapEntryEditor
 					}
 
 				};
-				if (filter != null) {
+				if (filter != null && expression != null) {
 					editor.addVisibilityFilter(filter);
 				}
 			}
 
-			this.editorValue_DefaultTab_0 = editor;
+			this.editorValue_tab_defaultTab_0 = editor;
 		}
-		return this.editorValue_DefaultTab_0;
+		return this.editorValue_tab_defaultTab_0;
 	}
 
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorValue_DefaultTab_1;
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorValue_DefaultTab_1_Editor() {
-		if (this.editorValue_DefaultTab_1 == null) {
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorValue_tab_defaultTab_1;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorValue_tab_defaultTab_1_Editor() {
+		if (this.editorValue_tab_defaultTab_1 == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.eclipse.emf.ecore.EcorePackage.eINSTANCE
 					.getEStringToStringMapEntry_Value();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.eclipse.emf.ecore.properties.ecore.editor.CustomOCLPropertyEditor(
@@ -142,14 +140,14 @@ public class EStringToStringMapEntryEditor
 					}
 
 				};
-				if (filter != null) {
+				if (filter != null && expression != null) {
 					editor.addVisibilityFilter(filter);
 				}
 			}
 
-			this.editorValue_DefaultTab_1 = editor;
+			this.editorValue_tab_defaultTab_1 = editor;
 		}
-		return this.editorValue_DefaultTab_1;
+		return this.editorValue_tab_defaultTab_1;
 	}
 
 	//

@@ -21,17 +21,17 @@ public class EFactoryEditor extends org.muml.ape.runtime.editors.ClassPropertyEd
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorEAnnotations_DocumentationTab_Editor(), false);
+			addPropertyEditor(createEditorEAnnotations_tab_documentationTab_Editor(), false);
 
-			addPropertyEditor(createEditorEPackage_DefaultTab_Editor(), false);
+			addPropertyEditor(createEditorEPackage_tab_defaultTab_Editor(), false);
 
 		} else if ("tab.default".equals(tab)) { // Tab Default
 
-			addPropertyEditor(createEditorEPackage_DefaultTab_Editor(), false);
+			addPropertyEditor(createEditorEPackage_tab_defaultTab_Editor(), false);
 
 		} else if ("tab.documentation".equals(tab)) { // Tab Documentation
 
-			addPropertyEditor(createEditorEAnnotations_DocumentationTab_Editor(), false);
+			addPropertyEditor(createEditorEAnnotations_tab_documentationTab_Editor(), false);
 
 		} else if ("tab.ocl".equals(tab)) { // Tab OCL
 
@@ -41,30 +41,61 @@ public class EFactoryEditor extends org.muml.ape.runtime.editors.ClassPropertyEd
 		}
 	}
 
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorEPackage_DefaultTab;
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorEPackage_DefaultTab_Editor() {
-		if (this.editorEPackage_DefaultTab == null) {
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorEPackage_tab_defaultTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorEPackage_tab_defaultTab_Editor() {
+		if (this.editorEPackage_tab_defaultTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.eclipse.emf.ecore.EcorePackage.eINSTANCE
 					.getEFactory_EPackage();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.ComboPropertyEditor(
 					adapterFactory, feature);
 
-			this.editorEPackage_DefaultTab = editor;
+			{
+				final org.eclipse.ocl.ecore.OCLExpression expression = org.muml.ape.runtime.RuntimePlugin
+						.createOCLExpression("true", feature, getEClass());
+				editor.setInput(input);
+				editor.registerOCLAdapter(expression, new org.eclipse.emf.common.notify.impl.AdapterImpl() {
+					@Override
+					public void notifyChanged(org.eclipse.emf.common.notify.Notification notification) {
+						boolean visibleBefore = editor.isVisible();
+						editor.updateVisibility(true);
+
+						// Set default value, if we are hiding the editor and it was not hidden before.
+						if (!editor.isVisible() && visibleBefore) {
+							editor.setDefaultValue();
+						}
+					}
+				});
+				final org.eclipse.ocl.Query<org.eclipse.emf.ecore.EClassifier, ?, ?> query = org.muml.ape.runtime.RuntimePlugin.OCL_ECORE
+						.createQuery(expression);
+				org.eclipse.jface.viewers.IFilter filter = new org.eclipse.jface.viewers.IFilter() {
+
+					@Override
+					public boolean select(Object object) {
+						return object != null && Boolean.TRUE.equals(query.evaluate(object));
+					}
+
+				};
+				if (filter != null) {
+					editor.addReadOnlyFilter(filter);
+				}
+			}
+
+			this.editorEPackage_tab_defaultTab = editor;
 		}
-		return this.editorEPackage_DefaultTab;
+		return this.editorEPackage_tab_defaultTab;
 	}
 
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorEAnnotations_DocumentationTab;
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorEAnnotations_DocumentationTab_Editor() {
-		if (this.editorEAnnotations_DocumentationTab == null) {
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorEAnnotations_tab_documentationTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorEAnnotations_tab_documentationTab_Editor() {
+		if (this.editorEAnnotations_tab_documentationTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.eclipse.emf.ecore.EcorePackage.eINSTANCE
 					.getEModelElement_EAnnotations();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.eclipse.emf.ecore.properties.ecore.editor.DocumentationAnnotationPropertyEditor(
 					adapterFactory, feature);
 
-			this.editorEAnnotations_DocumentationTab = editor;
+			this.editorEAnnotations_tab_documentationTab = editor;
 		}
-		return this.editorEAnnotations_DocumentationTab;
+		return this.editorEAnnotations_tab_documentationTab;
 	}
 
 	//
