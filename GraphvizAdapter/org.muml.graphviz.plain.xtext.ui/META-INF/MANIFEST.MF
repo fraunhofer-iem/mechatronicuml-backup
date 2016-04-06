@@ -19,8 +19,8 @@ Require-Bundle: org.muml.graphviz.plain.xtext;visibility:=reexport,
 Import-Package: org.apache.log4j,
  org.eclipse.xtext.xbase.lib
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: de.uni_paderborn.fujaba.graphviz.plain.xtext.ui.quickfix,
- de.uni_paderborn.fujaba.graphviz.plain.xtext.ui.contentassist,
- de.uni_paderborn.fujaba.graphviz.plain.xtext.ui.contentassist.antlr,
- de.uni_paderborn.fujaba.graphviz.plain.xtext.ui.internal
-Bundle-Activator: de.uni_paderborn.fujaba.graphviz.plain.xtext.ui.internal.GraphvizPlainActivator
+Export-Package: org.muml.graphviz.plain.xtext.ui.contentassist,
+ org.muml.graphviz.plain.xtext.ui.contentassist.antlr,
+ org.muml.graphviz.plain.xtext.ui.internal,
+ org.muml.graphviz.plain.xtext.ui.quickfix
+Bundle-Activator: org.muml.graphviz.plain.xtext.ui.internal.GraphvizPlainActivator

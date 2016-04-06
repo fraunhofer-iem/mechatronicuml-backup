@@ -19,7 +19,7 @@ Require-Bundle: org.muml.graphviz.dot.xtext,
  org.eclipse.xtext.xbase.lib,
  org.objectweb.asm;bundle-version="[5.0.1,6.0.0)";resolution:=optional
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: de.uni_paderborn.fujaba.graphviz.dot.xtext
+Export-Package: org.muml.graphviz.dot.xtext
 Import-Package: org.junit.runner;version="4.5.0",
  org.junit.runner.manipulation;version="4.5.0",
  org.junit.runner.notification;version="4.5.0",

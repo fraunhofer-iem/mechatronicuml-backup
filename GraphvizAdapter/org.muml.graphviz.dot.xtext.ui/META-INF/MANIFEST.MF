@@ -19,9 +19,9 @@ Require-Bundle: org.muml.graphviz.dot.xtext;visibility:=reexport,
  org.eclipse.xtext.xbase.lib,
  org.apache.log4j
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: de.uni_paderborn.fujaba.graphviz.dot.xtext.ui.quickfix,
- de.uni_paderborn.fujaba.graphviz.dot.xtext.ui.contentassist,
- de.uni_paderborn.fujaba.graphviz.dot.xtext.ui.contentassist.antlr,
- de.uni_paderborn.fujaba.graphviz.dot.xtext.ui.internal,
- de.uni_paderborn.fujaba.graphviz.dot.xtext.ui.contentassist.antlr.internal
-Bundle-Activator: de.uni_paderborn.fujaba.graphviz.dot.xtext.ui.internal.DotLanguageActivator
+Export-Package: org.muml.graphviz.dot.xtext.ui.contentassist,
+ org.muml.graphviz.dot.xtext.ui.contentassist.antlr,
+ org.muml.graphviz.dot.xtext.ui.contentassist.antlr.internal,
+ org.muml.graphviz.dot.xtext.ui.internal,
+ org.muml.graphviz.dot.xtext.ui.quickfix
+Bundle-Activator: org.muml.graphviz.dot.xtext.ui.internal.DotLanguageActivator

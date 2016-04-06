@@ -10,7 +10,7 @@
       <!-- @generated graphviz -->
       <factory
             uri="http://www.fujaba.de/graphviz/0.1.0"
-            class="de.uni_paderborn.fujaba.graphviz.provider.GraphvizItemProviderAdapterFactory"
+            class="org.muml.graphviz.provider.GraphvizItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider
@@ -23,7 +23,7 @@
       <!-- @generated graphviz -->
       <factory
             uri="http://www.fujaba.de/graphviz/dot/0.1.0"
-            class="de.uni_paderborn.fujaba.graphviz.dot.provider.DotItemProviderAdapterFactory"
+            class="org.muml.graphviz.dot.provider.DotItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider
@@ -36,7 +36,7 @@
       <!-- @generated graphviz -->
       <factory
             uri="http://www.fujaba.de/graphviz/plain/0.1.0"
-            class="de.uni_paderborn.fujaba.graphviz.plain.provider.PlainItemProviderAdapterFactory"
+            class="org.muml.graphviz.plain.provider.PlainItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider
@@ -49,7 +49,7 @@
       <!-- @generated graphviz -->
       <factory
             uri="http://www.fujaba.de/graphviz/common/0.1.0"
-            class="de.uni_paderborn.fujaba.graphviz.common.provider.CommonItemProviderAdapterFactory"
+            class="org.muml.graphviz.common.provider.CommonItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider
@@ -62,7 +62,7 @@
       <!-- @generated graphviz -->
       <factory
             uri="http://www.fujaba.de/graphviz/util/0.1.0"
-            class="de.uni_paderborn.fujaba.graphviz.util.provider.UtilItemProviderAdapterFactory"
+            class="org.muml.graphviz.util.provider.UtilItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider

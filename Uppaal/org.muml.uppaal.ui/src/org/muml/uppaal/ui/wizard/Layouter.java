@@ -5,22 +5,21 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
+import org.muml.graphviz.blackbox.GraphvizPlainLayouter;
+import org.muml.graphviz.dot.DotEdge;
+import org.muml.graphviz.dot.DotFactory;
+import org.muml.graphviz.dot.DotGraph;
+import org.muml.graphviz.dot.DotNode;
+import org.muml.graphviz.dot.DotPackage;
+import org.muml.graphviz.plain.PlainEdge;
+import org.muml.graphviz.plain.PlainGraph;
+import org.muml.graphviz.plain.PlainNode;
 import org.muml.uppaal.templates.Edge;
 import org.muml.uppaal.templates.Location;
 import org.muml.uppaal.templates.Template;
 import org.muml.uppaal.visuals.Point;
 import org.muml.uppaal.visuals.VisualsFactory;
 import org.muml.uppaal.visuals.VisualsPackage;
-
-import de.uni_paderborn.fujaba.graphviz.blackbox.GraphvizPlainLayouter;
-import de.uni_paderborn.fujaba.graphviz.dot.DotEdge;
-import de.uni_paderborn.fujaba.graphviz.dot.DotFactory;
-import de.uni_paderborn.fujaba.graphviz.dot.DotGraph;
-import de.uni_paderborn.fujaba.graphviz.dot.DotNode;
-import de.uni_paderborn.fujaba.graphviz.dot.DotPackage;
-import de.uni_paderborn.fujaba.graphviz.plain.PlainEdge;
-import de.uni_paderborn.fujaba.graphviz.plain.PlainGraph;
-import de.uni_paderborn.fujaba.graphviz.plain.PlainNode;
 
 public class Layouter {
 	
@@ -51,7 +50,7 @@ public class Layouter {
 			for (Edge uppaalEdge : unsplinedEdges) {
 				if (uppaalEdge.getSource() != locations.get(edge.getSource().getName()) || uppaalEdge.getTarget() != locations.get(edge.getTarget().getName()))
 					continue;
-				for (de.uni_paderborn.fujaba.graphviz.util.Point pt : edge.getSplinePoints()) {
+				for (org.muml.graphviz.util.Point pt : edge.getSplinePoints()) {
 					Point uppaalPoint = factory.createPoint();
 					uppaalPoint.setX(graphvizCoordToUppaalCoord(pt.getX()));
 					uppaalPoint.setY(graphvizCoordToUppaalCoord(pt.getY()));

@@ -21,14 +21,14 @@ Require-Bundle: org.eclipse.xtext;visibility:=reexport,
 Import-Package: org.apache.log4j,
  org.eclipse.xtext.xbase.lib
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: de.uni_paderborn.fujaba.graphviz.plain.xtext,
- de.uni_paderborn.fujaba.graphviz.plain.xtext.formatting,
- de.uni_paderborn.fujaba.graphviz.plain.xtext.generator,
- de.uni_paderborn.fujaba.graphviz.plain.xtext.parser.antlr,
- de.uni_paderborn.fujaba.graphviz.plain.xtext.parser.antlr.internal,
- de.uni_paderborn.fujaba.graphviz.plain.xtext.resource,
- de.uni_paderborn.fujaba.graphviz.plain.xtext.scoping,
- de.uni_paderborn.fujaba.graphviz.plain.xtext.serializer,
- de.uni_paderborn.fujaba.graphviz.plain.xtext.services,
- de.uni_paderborn.fujaba.graphviz.plain.xtext.validation
+Export-Package: org.muml.graphviz.plain.xtext,
+ org.muml.graphviz.plain.xtext.formatting,
+ org.muml.graphviz.plain.xtext.generator,
+ org.muml.graphviz.plain.xtext.parser.antlr,
+ org.muml.graphviz.plain.xtext.parser.antlr.internal,
+ org.muml.graphviz.plain.xtext.resource,
+ org.muml.graphviz.plain.xtext.scoping,
+ org.muml.graphviz.plain.xtext.serializer,
+ org.muml.graphviz.plain.xtext.services,
+ org.muml.graphviz.plain.xtext.validation
 

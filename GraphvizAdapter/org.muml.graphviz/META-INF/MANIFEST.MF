@@ -7,20 +7,20 @@ Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: de.uni_paderborn.fujaba.graphviz,
- de.uni_paderborn.fujaba.graphviz.common,
- de.uni_paderborn.fujaba.graphviz.common.impl,
- de.uni_paderborn.fujaba.graphviz.common.util,
- de.uni_paderborn.fujaba.graphviz.dot,
- de.uni_paderborn.fujaba.graphviz.dot.impl,
- de.uni_paderborn.fujaba.graphviz.dot.util,
- de.uni_paderborn.fujaba.graphviz.impl,
- de.uni_paderborn.fujaba.graphviz.plain,
- de.uni_paderborn.fujaba.graphviz.plain.impl,
- de.uni_paderborn.fujaba.graphviz.plain.util,
- de.uni_paderborn.fujaba.graphviz.util,
- de.uni_paderborn.fujaba.graphviz.util.impl,
- de.uni_paderborn.fujaba.graphviz.util.util
+Export-Package: org.muml.graphviz,
+ org.muml.graphviz.common,
+ org.muml.graphviz.common.impl,
+ org.muml.graphviz.common.util,
+ org.muml.graphviz.dot,
+ org.muml.graphviz.dot.impl,
+ org.muml.graphviz.dot.util,
+ org.muml.graphviz.impl,
+ org.muml.graphviz.plain,
+ org.muml.graphviz.plain.impl,
+ org.muml.graphviz.plain.util,
+ org.muml.graphviz.util,
+ org.muml.graphviz.util.impl,
+ org.muml.graphviz.util.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.muml.core;bundle-version="1.0.1"

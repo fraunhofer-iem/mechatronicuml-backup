@@ -23,16 +23,16 @@ Require-Bundle: org.eclipse.xtext;visibility:=reexport,
 Import-Package: org.apache.log4j,
  org.eclipse.xtext.xbase.lib
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: de.uni_paderborn.fujaba.graphviz.dot.xtext,
- de.uni_paderborn.fujaba.graphviz.dot.xtext.conversion,
- de.uni_paderborn.fujaba.graphviz.dot.xtext.formatting,
- de.uni_paderborn.fujaba.graphviz.dot.xtext.generator,
- de.uni_paderborn.fujaba.graphviz.dot.xtext.parser.antlr,
- de.uni_paderborn.fujaba.graphviz.dot.xtext.parser.antlr.internal,
- de.uni_paderborn.fujaba.graphviz.dot.xtext.resource,
- de.uni_paderborn.fujaba.graphviz.dot.xtext.scoping,
- de.uni_paderborn.fujaba.graphviz.dot.xtext.serializer,
- de.uni_paderborn.fujaba.graphviz.dot.xtext.service,
- de.uni_paderborn.fujaba.graphviz.dot.xtext.services,
- de.uni_paderborn.fujaba.graphviz.dot.xtext.validation
+Export-Package: org.muml.graphviz.dot.xtext,
+ org.muml.graphviz.dot.xtext.conversion,
+ org.muml.graphviz.dot.xtext.formatting,
+ org.muml.graphviz.dot.xtext.generator,
+ org.muml.graphviz.dot.xtext.parser.antlr,
+ org.muml.graphviz.dot.xtext.parser.antlr.internal,
+ org.muml.graphviz.dot.xtext.resource,
+ org.muml.graphviz.dot.xtext.scoping,
+ org.muml.graphviz.dot.xtext.serializer,
+ org.muml.graphviz.dot.xtext.service,
+ org.muml.graphviz.dot.xtext.services,
+ org.muml.graphviz.dot.xtext.validation
 
