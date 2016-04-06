@@ -51,7 +51,7 @@ import org.muml.reconfigurationverification.timedstorydiagram.TimedGraphTransfor
 import org.muml.reconfigurationverification.timedstorydiagram.TimedStoryDiagram;
 import org.muml.reconfigurationverification.timedstorydiagram.TimedstorydiagramFactory;
 import org.muml.reconfigurationverification.timedstorydiagram.TimedstorydiagramPackage;
-import org.muml.storydiagram.StorydiagramsPackage;
+import org.muml.storydiagram.StorydiagramPackage;
 
 public class TestRuleApplications {
 	
@@ -76,7 +76,7 @@ public class TestRuleApplications {
 		EcorePackage.eINSTANCE.eClass();
 		TimedstorydiagramPackage.eINSTANCE.eClass();
 		TsdmhelperPackage.eINSTANCE.eClass();
-		StorydiagramsPackage.eINSTANCE.eClass();
+		StorydiagramPackage.eINSTANCE.eClass();
 		LabelingPackage.eINSTANCE.eClass();
 		
 		//load test model

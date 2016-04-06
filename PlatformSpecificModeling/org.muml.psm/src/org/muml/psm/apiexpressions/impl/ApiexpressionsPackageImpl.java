@@ -16,7 +16,6 @@ import org.muml.pm.hardware.hwplatforminstance.HwplatforminstancePackage;
 import org.muml.pm.hardware.hwresource.HwresourcePackage;
 import org.muml.pm.hardware.hwresourceinstance.HwresourceinstancePackage;
 import org.muml.pm.hardware.hwvaluetype.HwvaluetypePackage;
-import org.muml.pm.software.platform.SwplatformPackage;
 import org.muml.psm.PsmPackage;
 import org.muml.psm.allocation.AllocationPackage;
 import org.muml.psm.allocation.impl.AllocationPackageImpl;
@@ -41,6 +40,8 @@ import org.muml.psm.psm_realtimestatechart.realtimestatechartparameter.Realtimes
 import org.muml.psm.psm_realtimestatechart.realtimestatechartparameter.impl.RealtimestatechartparameterPackageImpl;
 import org.muml.psm.psm_realtimestatechart.realtimestatechartparameterbinding.RealtimestatechartparameterbindingPackage;
 import org.muml.psm.psm_realtimestatechart.realtimestatechartparameterbinding.impl.RealtimestatechartparameterbindingPackageImpl;
+import platform.PlatformPackage;
+import platform.impl.PlatformPackageImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -123,7 +124,6 @@ public class ApiexpressionsPackageImpl extends EPackageImpl implements Apiexpres
 		HwplatforminstancePackage.eINSTANCE.eClass();
 		HwresourcePackage.eINSTANCE.eClass();
 		HwresourceinstancePackage.eINSTANCE.eClass();
-		SwplatformPackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
 		PsmPackageImpl thePsmPackage = (PsmPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(PsmPackage.eNS_URI) instanceof PsmPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PsmPackage.eNS_URI) : PsmPackage.eINSTANCE);
@@ -135,6 +135,7 @@ public class ApiexpressionsPackageImpl extends EPackageImpl implements Apiexpres
 		Psm_instancePackageImpl thePsm_instancePackage = (Psm_instancePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(Psm_instancePackage.eNS_URI) instanceof Psm_instancePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(Psm_instancePackage.eNS_URI) : Psm_instancePackage.eINSTANCE);
 		PortapimappingPackageImpl thePortapimappingPackage = (PortapimappingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(PortapimappingPackage.eNS_URI) instanceof PortapimappingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PortapimappingPackage.eNS_URI) : PortapimappingPackage.eINSTANCE);
 		CodegenPackageImpl theCodegenPackage = (CodegenPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CodegenPackage.eNS_URI) instanceof CodegenPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CodegenPackage.eNS_URI) : CodegenPackage.eINSTANCE);
+		PlatformPackageImpl thePlatformPackage = (PlatformPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(PlatformPackage.eNS_URI) instanceof PlatformPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PlatformPackage.eNS_URI) : PlatformPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theApiexpressionsPackage.createPackageContents();
@@ -147,6 +148,7 @@ public class ApiexpressionsPackageImpl extends EPackageImpl implements Apiexpres
 		thePsm_instancePackage.createPackageContents();
 		thePortapimappingPackage.createPackageContents();
 		theCodegenPackage.createPackageContents();
+		thePlatformPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theApiexpressionsPackage.initializePackageContents();
@@ -159,6 +161,7 @@ public class ApiexpressionsPackageImpl extends EPackageImpl implements Apiexpres
 		thePsm_instancePackage.initializePackageContents();
 		thePortapimappingPackage.initializePackageContents();
 		theCodegenPackage.initializePackageContents();
+		thePlatformPackage.initializePackageContents();
 
 		// Register package validator
 		EValidator.Registry.INSTANCE.put
@@ -305,7 +308,7 @@ public class ApiexpressionsPackageImpl extends EPackageImpl implements Apiexpres
 
 		// Obtain other dependent packages
 		ExpressionsPackage theExpressionsPackage = (ExpressionsPackage)EPackage.Registry.INSTANCE.getEPackage(ExpressionsPackage.eNS_URI);
-		SwplatformPackage theSwplatformPackage = (SwplatformPackage)EPackage.Registry.INSTANCE.getEPackage(SwplatformPackage.eNS_URI);
+		PlatformPackage thePlatformPackage = (PlatformPackage)EPackage.Registry.INSTANCE.getEPackage(PlatformPackage.eNS_URI);
 		BehaviorPackage theBehaviorPackage = (BehaviorPackage)EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI);
 		InstancePackage theInstancePackage = (InstancePackage)EPackage.Registry.INSTANCE.getEPackage(InstancePackage.eNS_URI);
 
@@ -320,11 +323,11 @@ public class ApiexpressionsPackageImpl extends EPackageImpl implements Apiexpres
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(apiCallExpressionEClass, APICallExpression.class, "APICallExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAPICallExpression_ApiCommand(), theSwplatformPackage.getAPICommand(), null, "apiCommand", null, 1, 1, APICallExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAPICallExpression_ApiCommand(), thePlatformPackage.getAPICommand(), null, "apiCommand", null, 1, 1, APICallExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAPICallExpression_ParameterBindings(), theBehaviorPackage.getParameterBinding(), null, "parameterBindings", null, 0, -1, APICallExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(enumerationValueExpressionEClass, EnumerationValueExpression.class, "EnumerationValueExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getEnumerationValueExpression_EnumValue(), theSwplatformPackage.getEnumerationValue(), null, "enumValue", null, 1, 1, EnumerationValueExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEnumerationValueExpression_EnumValue(), thePlatformPackage.getEnumerationValue(), null, "enumValue", null, 1, 1, EnumerationValueExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(continuousPortExpressionEClass, ContinuousPortExpression.class, "ContinuousPortExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getContinuousPortExpression_ContinuousPort(), theInstancePackage.getContinuousPortInstance(), null, "continuousPort", null, 1, 1, ContinuousPortExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

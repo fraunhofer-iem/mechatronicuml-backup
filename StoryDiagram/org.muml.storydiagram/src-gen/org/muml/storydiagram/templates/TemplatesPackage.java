@@ -41,7 +41,7 @@ public interface TemplatesPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.storydriven.org/storydiagrams/templates/0.2.0";
+	String eNS_URI = "http://www.muml.org/storydiagram/templates/1.0.0";
 
 	/**
 	 * The package namespace name.
@@ -57,8 +57,7 @@ public interface TemplatesPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	TemplatesPackage eINSTANCE = org.muml.storydiagram.templates.impl.TemplatesPackageImpl
-			.init();
+	TemplatesPackage eINSTANCE = org.muml.storydiagram.templates.impl.TemplatesPackageImpl.init();
 
 	/**
 	 * The meta object id for the '{@link org.muml.storydiagram.templates.impl.TemplateBindingImpl <em>Template Binding</em>}' class.
@@ -71,22 +70,22 @@ public interface TemplatesPackage extends EPackage {
 	int TEMPLATE_BINDING = 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TEMPLATE_BINDING__ANNOTATION = CorePackage.EXTENDABLE_ELEMENT__ANNOTATION;
+	int TEMPLATE_BINDING__ANNOTATIONS = CorePackage.EXTENDABLE_ELEMENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TEMPLATE_BINDING__EXTENSION = CorePackage.EXTENDABLE_ELEMENT__EXTENSION;
+	int TEMPLATE_BINDING__EXTENSIONS = CorePackage.EXTENDABLE_ELEMENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Bound Parameter</b></em>' reference.
@@ -221,7 +220,7 @@ public interface TemplatesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEMPLATE_BINDING___EGET__ESTRUCTURALFEATURE = CorePackage.EXTENDABLE_ELEMENT___EGET__ESTRUCTURALFEATURE;
+	int TEMPLATE_BINDING___EGET__ESTRUCTURALFEATURE = CorePackage.EXTENDABLE_ELEMENT___EGET__ESTRUCTURALFEATURE_1;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -230,7 +229,7 @@ public interface TemplatesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEMPLATE_BINDING___EGET__ESTRUCTURALFEATURE_BOOLEAN = CorePackage.EXTENDABLE_ELEMENT___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+	int TEMPLATE_BINDING___EGET__ESTRUCTURALFEATURE_BOOLEAN = CorePackage.EXTENDABLE_ELEMENT___EGET__ESTRUCTURALFEATURE_BOOLEAN_1;
 
 	/**
 	 * The operation id for the '<em>ESet</em>' operation.
@@ -239,7 +238,7 @@ public interface TemplatesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEMPLATE_BINDING___ESET__ESTRUCTURALFEATURE_OBJECT = CorePackage.EXTENDABLE_ELEMENT___ESET__ESTRUCTURALFEATURE_OBJECT;
+	int TEMPLATE_BINDING___ESET__ESTRUCTURALFEATURE_OBJECT = CorePackage.EXTENDABLE_ELEMENT___ESET__ESTRUCTURALFEATURE_OBJECT_1;
 
 	/**
 	 * The operation id for the '<em>EIs Set</em>' operation.
@@ -248,7 +247,7 @@ public interface TemplatesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEMPLATE_BINDING___EIS_SET__ESTRUCTURALFEATURE = CorePackage.EXTENDABLE_ELEMENT___EIS_SET__ESTRUCTURALFEATURE;
+	int TEMPLATE_BINDING___EIS_SET__ESTRUCTURALFEATURE = CorePackage.EXTENDABLE_ELEMENT___EIS_SET__ESTRUCTURALFEATURE_1;
 
 	/**
 	 * The operation id for the '<em>EUnset</em>' operation.
@@ -257,7 +256,7 @@ public interface TemplatesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEMPLATE_BINDING___EUNSET__ESTRUCTURALFEATURE = CorePackage.EXTENDABLE_ELEMENT___EUNSET__ESTRUCTURALFEATURE;
+	int TEMPLATE_BINDING___EUNSET__ESTRUCTURALFEATURE = CorePackage.EXTENDABLE_ELEMENT___EUNSET__ESTRUCTURALFEATURE_1;
 
 	/**
 	 * The operation id for the '<em>EInvoke</em>' operation.
@@ -266,7 +265,7 @@ public interface TemplatesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEMPLATE_BINDING___EINVOKE__EOPERATION_ELIST = CorePackage.EXTENDABLE_ELEMENT___EINVOKE__EOPERATION_ELIST;
+	int TEMPLATE_BINDING___EINVOKE__EOPERATION_ELIST = CorePackage.EXTENDABLE_ELEMENT___EINVOKE__EOPERATION_ELIST_1;
 
 	/**
 	 * The operation id for the '<em>Get Extension</em>' operation.
@@ -324,22 +323,22 @@ public interface TemplatesPackage extends EPackage {
 	int PROPERTY_BINDING = 1;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY_BINDING__ANNOTATION = CorePackage.EXTENDABLE_ELEMENT__ANNOTATION;
+	int PROPERTY_BINDING__ANNOTATIONS = CorePackage.EXTENDABLE_ELEMENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY_BINDING__EXTENSION = CorePackage.EXTENDABLE_ELEMENT__EXTENSION;
+	int PROPERTY_BINDING__EXTENSIONS = CorePackage.EXTENDABLE_ELEMENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Bound Property</b></em>' reference.
@@ -465,7 +464,7 @@ public interface TemplatesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY_BINDING___EGET__ESTRUCTURALFEATURE = CorePackage.EXTENDABLE_ELEMENT___EGET__ESTRUCTURALFEATURE;
+	int PROPERTY_BINDING___EGET__ESTRUCTURALFEATURE = CorePackage.EXTENDABLE_ELEMENT___EGET__ESTRUCTURALFEATURE_1;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -474,7 +473,7 @@ public interface TemplatesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY_BINDING___EGET__ESTRUCTURALFEATURE_BOOLEAN = CorePackage.EXTENDABLE_ELEMENT___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+	int PROPERTY_BINDING___EGET__ESTRUCTURALFEATURE_BOOLEAN = CorePackage.EXTENDABLE_ELEMENT___EGET__ESTRUCTURALFEATURE_BOOLEAN_1;
 
 	/**
 	 * The operation id for the '<em>ESet</em>' operation.
@@ -483,7 +482,7 @@ public interface TemplatesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY_BINDING___ESET__ESTRUCTURALFEATURE_OBJECT = CorePackage.EXTENDABLE_ELEMENT___ESET__ESTRUCTURALFEATURE_OBJECT;
+	int PROPERTY_BINDING___ESET__ESTRUCTURALFEATURE_OBJECT = CorePackage.EXTENDABLE_ELEMENT___ESET__ESTRUCTURALFEATURE_OBJECT_1;
 
 	/**
 	 * The operation id for the '<em>EIs Set</em>' operation.
@@ -492,7 +491,7 @@ public interface TemplatesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY_BINDING___EIS_SET__ESTRUCTURALFEATURE = CorePackage.EXTENDABLE_ELEMENT___EIS_SET__ESTRUCTURALFEATURE;
+	int PROPERTY_BINDING___EIS_SET__ESTRUCTURALFEATURE = CorePackage.EXTENDABLE_ELEMENT___EIS_SET__ESTRUCTURALFEATURE_1;
 
 	/**
 	 * The operation id for the '<em>EUnset</em>' operation.
@@ -501,7 +500,7 @@ public interface TemplatesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY_BINDING___EUNSET__ESTRUCTURALFEATURE = CorePackage.EXTENDABLE_ELEMENT___EUNSET__ESTRUCTURALFEATURE;
+	int PROPERTY_BINDING___EUNSET__ESTRUCTURALFEATURE = CorePackage.EXTENDABLE_ELEMENT___EUNSET__ESTRUCTURALFEATURE_1;
 
 	/**
 	 * The operation id for the '<em>EInvoke</em>' operation.
@@ -510,7 +509,7 @@ public interface TemplatesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY_BINDING___EINVOKE__EOPERATION_ELIST = CorePackage.EXTENDABLE_ELEMENT___EINVOKE__EOPERATION_ELIST;
+	int PROPERTY_BINDING___EINVOKE__EOPERATION_ELIST = CorePackage.EXTENDABLE_ELEMENT___EINVOKE__EOPERATION_ELIST_1;
 
 	/**
 	 * The operation id for the '<em>Get Extension</em>' operation.
@@ -656,11 +655,11 @@ public interface TemplatesPackage extends EPackage {
 	EReference getTemplateBinding_Template();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.muml.storydiagram.templates.TemplateBinding#getPropertyBindings <em>Property Binding</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.muml.storydiagram.templates.TemplateBinding#getPropertyBinding <em>Property Binding</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Property Binding</em>'.
-	 * @see org.muml.storydiagram.templates.TemplateBinding#getPropertyBindings()
+	 * @see org.muml.storydiagram.templates.TemplateBinding#getPropertyBinding()
 	 * @see #getTemplateBinding()
 	 * @generated
 	 */
@@ -720,22 +719,22 @@ public interface TemplatesPackage extends EPackage {
 	EClass getTemplateSignature();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.muml.storydiagram.templates.TemplateSignature#getTemplateBindings <em>Template Binding</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.muml.storydiagram.templates.TemplateSignature#getTemplateBinding <em>Template Binding</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Template Binding</em>'.
-	 * @see org.muml.storydiagram.templates.TemplateSignature#getTemplateBindings()
+	 * @see org.muml.storydiagram.templates.TemplateSignature#getTemplateBinding()
 	 * @see #getTemplateSignature()
 	 * @generated
 	 */
 	EReference getTemplateSignature_TemplateBinding();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.muml.storydiagram.templates.TemplateSignature#getTypeParameters <em>Type Parameter</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.muml.storydiagram.templates.TemplateSignature#getTypeParameter <em>Type Parameter</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Type Parameter</em>'.
-	 * @see org.muml.storydiagram.templates.TemplateSignature#getTypeParameters()
+	 * @see org.muml.storydiagram.templates.TemplateSignature#getTypeParameter()
 	 * @see #getTemplateSignature()
 	 * @generated
 	 */
@@ -790,8 +789,7 @@ public interface TemplatesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference TEMPLATE_BINDING__BOUND_PARAMETER = eINSTANCE
-				.getTemplateBinding_BoundParameter();
+		EReference TEMPLATE_BINDING__BOUND_PARAMETER = eINSTANCE.getTemplateBinding_BoundParameter();
 
 		/**
 		 * The meta object literal for the '<em><b>Binding Expression</b></em>' containment reference feature.
@@ -799,8 +797,7 @@ public interface TemplatesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference TEMPLATE_BINDING__BINDING_EXPRESSION = eINSTANCE
-				.getTemplateBinding_BindingExpression();
+		EReference TEMPLATE_BINDING__BINDING_EXPRESSION = eINSTANCE.getTemplateBinding_BindingExpression();
 
 		/**
 		 * The meta object literal for the '<em><b>Template</b></em>' container reference feature.
@@ -808,8 +805,7 @@ public interface TemplatesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference TEMPLATE_BINDING__TEMPLATE = eINSTANCE
-				.getTemplateBinding_Template();
+		EReference TEMPLATE_BINDING__TEMPLATE = eINSTANCE.getTemplateBinding_Template();
 
 		/**
 		 * The meta object literal for the '<em><b>Property Binding</b></em>' containment reference list feature.
@@ -817,8 +813,7 @@ public interface TemplatesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference TEMPLATE_BINDING__PROPERTY_BINDING = eINSTANCE
-				.getTemplateBinding_PropertyBinding();
+		EReference TEMPLATE_BINDING__PROPERTY_BINDING = eINSTANCE.getTemplateBinding_PropertyBinding();
 
 		/**
 		 * The meta object literal for the '{@link org.muml.storydiagram.templates.impl.PropertyBindingImpl <em>Property Binding</em>}' class.
@@ -836,8 +831,7 @@ public interface TemplatesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PROPERTY_BINDING__BOUND_PROPERTY = eINSTANCE
-				.getPropertyBinding_BoundProperty();
+		EReference PROPERTY_BINDING__BOUND_PROPERTY = eINSTANCE.getPropertyBinding_BoundProperty();
 
 		/**
 		 * The meta object literal for the '<em><b>Binding Expression</b></em>' containment reference feature.
@@ -845,8 +839,7 @@ public interface TemplatesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PROPERTY_BINDING__BINDING_EXPRESSION = eINSTANCE
-				.getPropertyBinding_BindingExpression();
+		EReference PROPERTY_BINDING__BINDING_EXPRESSION = eINSTANCE.getPropertyBinding_BindingExpression();
 
 		/**
 		 * The meta object literal for the '<em><b>Template Binding</b></em>' container reference feature.
@@ -854,8 +847,7 @@ public interface TemplatesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PROPERTY_BINDING__TEMPLATE_BINDING = eINSTANCE
-				.getPropertyBinding_TemplateBinding();
+		EReference PROPERTY_BINDING__TEMPLATE_BINDING = eINSTANCE.getPropertyBinding_TemplateBinding();
 
 		/**
 		 * The meta object literal for the '{@link org.muml.storydiagram.templates.impl.TemplateSignatureImpl <em>Template Signature</em>}' class.
@@ -873,8 +865,7 @@ public interface TemplatesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference TEMPLATE_SIGNATURE__TEMPLATE_BINDING = eINSTANCE
-				.getTemplateSignature_TemplateBinding();
+		EReference TEMPLATE_SIGNATURE__TEMPLATE_BINDING = eINSTANCE.getTemplateSignature_TemplateBinding();
 
 		/**
 		 * The meta object literal for the '<em><b>Type Parameter</b></em>' containment reference list feature.
@@ -882,8 +873,7 @@ public interface TemplatesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference TEMPLATE_SIGNATURE__TYPE_PARAMETER = eINSTANCE
-				.getTemplateSignature_TypeParameter();
+		EReference TEMPLATE_SIGNATURE__TYPE_PARAMETER = eINSTANCE.getTemplateSignature_TypeParameter();
 
 		/**
 		 * The meta object literal for the '<em><b>Pattern</b></em>' container reference feature.
@@ -891,8 +881,7 @@ public interface TemplatesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference TEMPLATE_SIGNATURE__PATTERN = eINSTANCE
-				.getTemplateSignature_Pattern();
+		EReference TEMPLATE_SIGNATURE__PATTERN = eINSTANCE.getTemplateSignature_Pattern();
 
 	}
 

@@ -22,13 +22,13 @@ import org.muml.storydiagram.Variable;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.storydiagram.activities.ExceptionVariable#getActivityEdge <em>Activity Edge</em>}</li>
  *   <li>{@link org.muml.storydiagram.activities.ExceptionVariable#getName <em>Name</em>}</li>
- *   <li>{@link org.muml.storydiagram.activities.ExceptionVariable#getExceptionTypes <em>Exception Type</em>}</li>
- *   <li>{@link org.muml.storydiagram.activities.ExceptionVariable#getGenericExceptionTypes <em>Generic Exception Type</em>}</li>
+ *   <li>{@link org.muml.storydiagram.activities.ExceptionVariable#getExceptionType <em>Exception Type</em>}</li>
+ *   <li>{@link org.muml.storydiagram.activities.ExceptionVariable#getGenericExceptionType <em>Generic Exception Type</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.storydiagram.activities.ActivitiesPackage#getExceptionVariable()
  * @model
@@ -37,7 +37,7 @@ import org.muml.storydiagram.Variable;
 public interface ExceptionVariable extends Variable {
 	/**
 	 * Returns the value of the '<em><b>Activity Edge</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link org.muml.storydiagram.activities.ActivityEdge#getGuardExceptions <em>Guard Exception</em>}'.
+	 * It is bidirectional and its opposite is '{@link org.muml.storydiagram.activities.ActivityEdge#getGuardException <em>Guard Exception</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -46,7 +46,7 @@ public interface ExceptionVariable extends Variable {
 	 * @return the value of the '<em>Activity Edge</em>' container reference.
 	 * @see #setActivityEdge(ActivityEdge)
 	 * @see org.muml.storydiagram.activities.ActivitiesPackage#getExceptionVariable_ActivityEdge()
-	 * @see org.muml.storydiagram.activities.ActivityEdge#getGuardExceptions
+	 * @see org.muml.storydiagram.activities.ActivityEdge#getGuardException
 	 * @model opposite="guardException" required="true" transient="false" ordered="false"
 	 * @generated
 	 */
@@ -100,7 +100,7 @@ public interface ExceptionVariable extends Variable {
 	 * @model transient="true" ordered="false"
 	 * @generated
 	 */
-	EList<EClassifier> getExceptionTypes();
+	EList<EClassifier> getExceptionType();
 
 	/**
 	 * Returns the value of the '<em><b>Generic Exception Type</b></em>' reference list.
@@ -116,6 +116,6 @@ public interface ExceptionVariable extends Variable {
 	 * @model ordered="false"
 	 * @generated
 	 */
-	EList<EGenericType> getGenericExceptionTypes();
+	EList<EGenericType> getGenericExceptionType();
 
 } // ExceptionVariable

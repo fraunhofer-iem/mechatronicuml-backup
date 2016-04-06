@@ -24,7 +24,7 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.muml.core.CorePackage;
 import org.muml.core.provider.TypedElementItemProvider;
-import org.muml.storydiagram.StorydiagramsPackage;
+import org.muml.storydiagram.StorydiagramPackage;
 import org.muml.storydiagram.Variable;
 import org.muml.storydiagram.activities.ActivitiesFactory;
 import org.muml.storydiagram.calls.CallsFactory;
@@ -79,7 +79,7 @@ public class VariableItemProvider extends TypedElementItemProvider implements
 				getString("_UI_PropertyDescriptor_description",
 						"_UI_Variable_variableName_feature",
 						"_UI_Variable_type"),
-				StorydiagramsPackage.Literals.VARIABLE__VARIABLE_NAME, true,
+				StorydiagramPackage.Literals.VARIABLE__VARIABLE_NAME, true,
 				false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
 				null));
 	}
@@ -130,7 +130,7 @@ public class VariableItemProvider extends TypedElementItemProvider implements
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Variable.class)) {
-		case StorydiagramsPackage.VARIABLE__VARIABLE_NAME:
+		case StorydiagramPackage.VARIABLE__VARIABLE_NAME:
 			fireNotifyChanged(new ViewerNotification(notification,
 					notification.getNotifier(), false, true));
 			return;

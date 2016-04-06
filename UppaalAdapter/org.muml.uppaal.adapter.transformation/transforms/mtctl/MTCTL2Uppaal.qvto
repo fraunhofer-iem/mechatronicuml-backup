@@ -12,7 +12,7 @@ modeltype mumlBehavior uses 'http://www.fujaba.de/muml/behavior/0.4.0';
 modeltype mumlconnector uses pim::connector('http://www.muml.org/pim/1.0.0');
 modeltype mumlInstance uses muml::instance('http://www.fujaba.de/muml/0.4.0');
 modeltype mumlmsgtype uses muml::msgtype('http://www.fujaba.de/muml/0.4.0');
-modeltype modelinstance uses 'http://www.fujaba.de/modelinstance/0.4.0';
+modeltype modelinstance uses 'http://www.muml.org/core/modelinstance/1.0.0';
 
 modeltype storydriven uses 'http://www.muml.org/core/1.0.0';
 

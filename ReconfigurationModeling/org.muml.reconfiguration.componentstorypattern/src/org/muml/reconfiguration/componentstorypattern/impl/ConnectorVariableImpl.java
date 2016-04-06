@@ -24,12 +24,12 @@ import org.muml.reconfiguration.componentstorypattern.PortVariable;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.reconfiguration.componentstorypattern.impl.ConnectorVariableImpl#getConnectorEndpoints <em>Connector Endpoints</em>}</li>
  *   <li>{@link org.muml.reconfiguration.componentstorypattern.impl.ConnectorVariableImpl#isSelfConnector <em>Self Connector</em>}</li>
  *   <li>{@link org.muml.reconfiguration.componentstorypattern.impl.ConnectorVariableImpl#getPortVariables <em>Port Variables</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

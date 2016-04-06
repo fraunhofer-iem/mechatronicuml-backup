@@ -34,6 +34,7 @@ import org.muml.pm.software.platform.SwplatformPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.pm.software.platform.impl.APICommandImpl#getComment <em>Comment</em>}</li>
  *   <li>{@link org.muml.pm.software.platform.impl.APICommandImpl#getReturnDataType <em>Return Data Type</em>}</li>
@@ -41,7 +42,6 @@ import org.muml.pm.software.platform.SwplatformPackage;
  *   <li>{@link org.muml.pm.software.platform.impl.APICommandImpl#getRepository <em>Repository</em>}</li>
  *   <li>{@link org.muml.pm.software.platform.impl.APICommandImpl#getConstraints <em>Constraints</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

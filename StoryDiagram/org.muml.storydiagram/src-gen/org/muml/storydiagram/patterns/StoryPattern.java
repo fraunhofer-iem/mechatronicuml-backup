@@ -22,16 +22,16 @@ import org.muml.storydiagram.templates.TemplateSignature;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
- *   <li>{@link org.muml.storydiagram.patterns.StoryPattern#getVariables <em>Variable</em>}</li>
- *   <li>{@link org.muml.storydiagram.patterns.StoryPattern#getConstraints <em>Constraint</em>}</li>
- *   <li>{@link org.muml.storydiagram.patterns.StoryPattern#getLinkVariables <em>Link Variable</em>}</li>
+ *   <li>{@link org.muml.storydiagram.patterns.StoryPattern#getVariable <em>Variable</em>}</li>
+ *   <li>{@link org.muml.storydiagram.patterns.StoryPattern#getConstraint <em>Constraint</em>}</li>
+ *   <li>{@link org.muml.storydiagram.patterns.StoryPattern#getLinkVariable <em>Link Variable</em>}</li>
  *   <li>{@link org.muml.storydiagram.patterns.StoryPattern#getParentPattern <em>Parent Pattern</em>}</li>
- *   <li>{@link org.muml.storydiagram.patterns.StoryPattern#getContainedPatterns <em>Contained Pattern</em>}</li>
+ *   <li>{@link org.muml.storydiagram.patterns.StoryPattern#getContainedPattern <em>Contained Pattern</em>}</li>
  *   <li>{@link org.muml.storydiagram.patterns.StoryPattern#getBindingSemantics <em>Binding Semantics</em>}</li>
  *   <li>{@link org.muml.storydiagram.patterns.StoryPattern#getTemplateSignature <em>Template Signature</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.storydiagram.patterns.PatternsPackage#getStoryPattern()
  * @model
@@ -51,10 +51,10 @@ public interface StoryPattern extends CommentableElement {
 	 * @return the value of the '<em>Variable</em>' containment reference list.
 	 * @see org.muml.storydiagram.patterns.PatternsPackage#getStoryPattern_Variable()
 	 * @see org.muml.storydiagram.patterns.AbstractVariable#getPattern
-	 * @model opposite="pattern" containment="true" resolveProxies="true" ordered="false"
+	 * @model opposite="pattern" containment="true" ordered="false"
 	 * @generated
 	 */
-	EList<AbstractVariable> getVariables();
+	EList<AbstractVariable> getVariable();
 
 	/**
 	 * Returns the value of the '<em><b>Constraint</b></em>' containment reference list.
@@ -68,10 +68,10 @@ public interface StoryPattern extends CommentableElement {
 	 * @return the value of the '<em>Constraint</em>' containment reference list.
 	 * @see org.muml.storydiagram.patterns.PatternsPackage#getStoryPattern_Constraint()
 	 * @see org.muml.storydiagram.patterns.Constraint#getPattern
-	 * @model opposite="pattern" containment="true" resolveProxies="true" ordered="false"
+	 * @model opposite="pattern" containment="true" ordered="false"
 	 * @generated
 	 */
-	EList<Constraint> getConstraints();
+	EList<Constraint> getConstraint();
 
 	/**
 	 * Returns the value of the '<em><b>Link Variable</b></em>' containment reference list.
@@ -86,14 +86,14 @@ public interface StoryPattern extends CommentableElement {
 	 * @return the value of the '<em>Link Variable</em>' containment reference list.
 	 * @see org.muml.storydiagram.patterns.PatternsPackage#getStoryPattern_LinkVariable()
 	 * @see org.muml.storydiagram.patterns.AbstractLinkVariable#getPattern
-	 * @model opposite="pattern" containment="true" resolveProxies="true"
+	 * @model opposite="pattern" containment="true"
 	 * @generated
 	 */
-	EList<AbstractLinkVariable> getLinkVariables();
+	EList<AbstractLinkVariable> getLinkVariable();
 
 	/**
 	 * Returns the value of the '<em><b>Parent Pattern</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link org.muml.storydiagram.patterns.StoryPattern#getContainedPatterns <em>Contained Pattern</em>}'.
+	 * It is bidirectional and its opposite is '{@link org.muml.storydiagram.patterns.StoryPattern#getContainedPattern <em>Contained Pattern</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Parent Pattern</em>' container reference isn't clear,
@@ -103,7 +103,7 @@ public interface StoryPattern extends CommentableElement {
 	 * @return the value of the '<em>Parent Pattern</em>' container reference.
 	 * @see #setParentPattern(StoryPattern)
 	 * @see org.muml.storydiagram.patterns.PatternsPackage#getStoryPattern_ParentPattern()
-	 * @see org.muml.storydiagram.patterns.StoryPattern#getContainedPatterns
+	 * @see org.muml.storydiagram.patterns.StoryPattern#getContainedPattern
 	 * @model opposite="containedPattern" transient="false" ordered="false"
 	 * @generated
 	 */
@@ -132,10 +132,10 @@ public interface StoryPattern extends CommentableElement {
 	 * @return the value of the '<em>Contained Pattern</em>' containment reference list.
 	 * @see org.muml.storydiagram.patterns.PatternsPackage#getStoryPattern_ContainedPattern()
 	 * @see org.muml.storydiagram.patterns.StoryPattern#getParentPattern
-	 * @model opposite="parentPattern" containment="true" resolveProxies="true" ordered="false"
+	 * @model opposite="parentPattern" containment="true" ordered="false"
 	 * @generated
 	 */
-	EList<StoryPattern> getContainedPatterns();
+	EList<StoryPattern> getContainedPattern();
 
 	/**
 	 * Returns the value of the '<em><b>Binding Semantics</b></em>' attribute.
@@ -180,7 +180,7 @@ public interface StoryPattern extends CommentableElement {
 	 * @see #setTemplateSignature(TemplateSignature)
 	 * @see org.muml.storydiagram.patterns.PatternsPackage#getStoryPattern_TemplateSignature()
 	 * @see org.muml.storydiagram.templates.TemplateSignature#getPattern
-	 * @model opposite="pattern" containment="true" resolveProxies="true" ordered="false"
+	 * @model opposite="pattern" containment="true" ordered="false"
 	 * @generated
 	 */
 	TemplateSignature getTemplateSignature();

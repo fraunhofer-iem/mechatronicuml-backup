@@ -37,7 +37,7 @@ Workflow {
 		registerGenModelFile = "platform:/resource/org.muml.core/model/core.genmodel"
 		registerGenModelFile = "platform:/resource/org.muml.core.modelinstance/model/modelinstance.genmodel"
 		registerGenModelFile = "platform:/resource/org.muml.pim/model/pim.genmodel"
-		registerGenModelFile = "platform:/resource/de.uni_paderborn.fujaba.muml.swplatform/model/swplatform.genmodel"
+		registerGenModelFile = "platform:/resource/org.muml.pm.software.platform/model/swplatform.genmodel"
 		registerGenModelFile = "platform:/resource/de.uni_paderborn.fujaba.muml.actionlanguage/model/actionlanguage.genmodel"
 
 	}

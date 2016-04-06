@@ -12,11 +12,11 @@ import org.muml.pim.realtimestatechart.RealtimeStatechart;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.modelica.transform.Entry#getKey <em>Key</em>}</li>
  *   <li>{@link org.muml.modelica.transform.Entry#getValue <em>Value</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.modelica.transform.TransformPackage#getEntry()
  * @model

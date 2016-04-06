@@ -16,10 +16,10 @@ import org.muml.reconfiguration.componentstorypattern.FadingComponentPartVariabl
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.reconfiguration.componentstorypattern.impl.FadingComponentPartVariableImpl#getAppliedFadingFunction <em>Applied Fading Function</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

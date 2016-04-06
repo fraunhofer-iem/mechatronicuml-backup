@@ -21,23 +21,33 @@ public class BlockEditor extends org.muml.ape.runtime.editors.ClassPropertyEdito
 	protected void createProperties() {
 		if (tab == null) {
 
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists", "Lists", org.eclipse.swt.SWT.HORIZONTAL,
-					true);
+			addSubCategory("org.muml.ape.category.Lists", "Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
 
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					createEditorExpressions_property_tab_generalTab_Editor(), false);
+			addEditorToCategory("org.muml.ape.category.Lists", createEditorExpressions_property_tab_generalTab_Editor(),
+					false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
 		} else if ("property.tab.descriptionAspects".equals(tab)) { // Tab Description Aspects
 
+		} else if ("property.tab.condition".equals(tab)) { // Tab Condition
+
+		} else if ("property.tab.effect".equals(tab)) { // Tab Effect
+
+		} else if ("property.tab.deadline".equals(tab)) { // Tab Deadline
+
+		} else if ("property.tab.sampling".equals(tab)) { // Tab Sampling
+
+		} else if ("property.tab.message".equals(tab)) { // Tab Message
+
+		} else if ("property.tab.behavior".equals(tab)) { // Tab Behavior
+
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists", "Lists", org.eclipse.swt.SWT.HORIZONTAL,
-					true);
+			addSubCategory("org.muml.ape.category.Lists", "Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
 
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					createEditorExpressions_property_tab_generalTab_Editor(), false);
+			addEditorToCategory("org.muml.ape.category.Lists", createEditorExpressions_property_tab_generalTab_Editor(),
+					false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
@@ -71,8 +81,7 @@ public class BlockEditor extends org.muml.ape.runtime.editors.ClassPropertyEdito
 	 * @generated
 	 */
 	public BlockEditor(String tab) {
-		this(tab,
-				org.muml.pim.actionlanguage.properties.util.PropertiesUtil.INSTANCE.getAdapterFactory(),
+		this(tab, org.muml.pim.actionlanguage.properties.util.PropertiesUtil.INSTANCE.getAdapterFactory(),
 				org.muml.pim.actionlanguage.ActionlanguagePackage.eINSTANCE.getBlock());
 	}
 

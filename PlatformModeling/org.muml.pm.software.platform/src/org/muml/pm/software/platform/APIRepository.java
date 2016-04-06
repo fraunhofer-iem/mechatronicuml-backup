@@ -17,11 +17,11 @@ import org.muml.core.NamedElement;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.pm.software.platform.APIRepository#getApiCommands <em>Api Commands</em>}</li>
  *   <li>{@link org.muml.pm.software.platform.APIRepository#getSwPlatform <em>Sw Platform</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.pm.software.platform.SwplatformPackage#getAPIRepository()
  * @model

@@ -364,7 +364,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_2vk5sxr6EeSqbsYy6Ikcsw"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_2vfaIRr6EeSqbsYy6Ikcsw" fontColor="4210752" fontName="Segoe UI" fontHeight="10" lineColor="8421504"/>
-    <element xmi:type="ecore:EEnum" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/BindingSemantics"/>
+    <element xmi:type="ecore:EEnum" href="platform:/resource/org.muml.storydiagram/model/storydiagrams.ecore#//patterns/BindingSemantics"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_2vfaIhr6EeSqbsYy6Ikcsw" x="105" y="590" width="138"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_2vmH0Br6EeSqbsYy6Ikcsw" type="1005">
@@ -378,7 +378,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_2vmu5Br6EeSqbsYy6Ikcsw"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_2vmH0Rr6EeSqbsYy6Ikcsw" fontColor="4210752" fontName="Segoe UI" fontHeight="10" lineColor="8421504"/>
-    <element xmi:type="ecore:EEnum" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/BindingState"/>
+    <element xmi:type="ecore:EEnum" href="platform:/resource/org.muml.storydiagram/model/storydiagrams.ecore#//patterns/BindingState"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_2vmH0hr6EeSqbsYy6Ikcsw" x="265" y="590" width="139"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_2vnV8Br6EeSqbsYy6Ikcsw" type="1005">
@@ -392,7 +392,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_2vn9BBr6EeSqbsYy6Ikcsw"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_2vnV8Rr6EeSqbsYy6Ikcsw" fontColor="4210752" fontName="Segoe UI" fontHeight="10" lineColor="8421504"/>
-    <element xmi:type="ecore:EEnum" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/BindingOperator"/>
+    <element xmi:type="ecore:EEnum" href="platform:/resource/org.muml.storydiagram/model/storydiagrams.ecore#//patterns/BindingOperator"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_2vnV8hr6EeSqbsYy6Ikcsw" x="425" y="590" width="134"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_N5naIE6-EeSN78ZAoSrvMQ" type="1001">

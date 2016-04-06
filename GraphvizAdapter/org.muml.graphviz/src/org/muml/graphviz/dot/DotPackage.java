@@ -43,7 +43,7 @@ public interface DotPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.fujaba.de/graphviz/dot/0.1.0";
+	String eNS_URI = "http://www.muml.org/graphviz/dot/1.0.0";
 
 	/**
 	 * The package namespace name.
@@ -181,22 +181,22 @@ public interface DotPackage extends EPackage {
 	int DOT_NODE = 1;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DOT_NODE__ANNOTATION = CommonPackage.NODE__ANNOTATION;
+	int DOT_NODE__ANNOTATIONS = CommonPackage.NODE__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DOT_NODE__EXTENSION = CommonPackage.NODE__EXTENSION;
+	int DOT_NODE__EXTENSIONS = CommonPackage.NODE__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.

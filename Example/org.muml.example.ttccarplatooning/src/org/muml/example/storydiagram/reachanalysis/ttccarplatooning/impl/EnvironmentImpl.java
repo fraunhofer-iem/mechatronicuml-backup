@@ -31,11 +31,11 @@ import org.muml.example.storydiagram.reachanalysis.ttccarplatooning.Ttccarplatoo
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.example.storydiagram.reachanalysis.ttccarplatooning.impl.EnvironmentImpl#getMaxNumOfCars <em>Max Num Of Cars</em>}</li>
  *   <li>{@link org.muml.example.storydiagram.reachanalysis.ttccarplatooning.impl.EnvironmentImpl#getCars <em>Cars</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -27,9 +27,9 @@ import org.muml.core.expressions.common.CommonExpressionsFactory;
 import org.muml.reconfiguration.HybridPortMapping;
 import org.muml.reconfiguration.ReconfigurationPackage;
 import org.muml.reconfiguration.expression.ExpressionFactory;
-import org.muml.storydiagram.activities.expressions.ActivitiesExpressionsFactory;
-import org.muml.storydiagram.calls.expressions.CallsExpressionsFactory;
-import org.muml.storydiagram.patterns.expressions.PatternsExpressionsFactory;
+import org.storydriven.storydiagrams.activities.expressions.ActivitiesExpressionsFactory;
+import org.storydriven.storydiagrams.calls.expressions.CallsExpressionsFactory;
+import org.storydriven.storydiagrams.patterns.expressions.PatternsExpressionsFactory;
 
 /**
  * This is the item provider adapter for a {@link org.muml.reconfiguration.HybridPortMapping} object.

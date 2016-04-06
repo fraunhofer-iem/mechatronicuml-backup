@@ -32,10 +32,10 @@ import org.muml.pim.realtimestatechart.RealtimeStatechart;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.modelica.transform.impl.MapImpl#getEntries <em>Entries</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

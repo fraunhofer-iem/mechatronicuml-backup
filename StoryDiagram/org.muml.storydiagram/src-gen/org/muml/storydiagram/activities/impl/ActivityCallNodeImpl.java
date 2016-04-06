@@ -29,12 +29,12 @@ import org.muml.storydiagram.calls.ParameterBinding;
  * <!-- begin-user-doc --> An implementation of the model object '<em><b>Activity Call Node</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.storydiagram.activities.impl.ActivityCallNodeImpl#getOwnedParameterBindings <em>Owned Parameter Bindings</em>}</li>
  *   <li>{@link org.muml.storydiagram.activities.impl.ActivityCallNodeImpl#getCallee <em>Callee</em>}</li>
- *   <li>{@link org.muml.storydiagram.activities.impl.ActivityCallNodeImpl#getCalledActivities <em>Called Activity</em>}</li>
+ *   <li>{@link org.muml.storydiagram.activities.impl.ActivityCallNodeImpl#getCalledActivity <em>Called Activity</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -59,13 +59,14 @@ public class ActivityCallNodeImpl extends ActivityNodeImpl implements
 	protected Callable callee;
 
 	/**
-	 * The cached value of the '{@link #getCalledActivities() <em>Called Activity</em>}' reference list.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @see #getCalledActivities()
+	 * The cached value of the '{@link #getCalledActivity() <em>Called Activity</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCalledActivity()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Activity> calledActivities;
+	protected EList<Activity> calledActivity;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -90,11 +91,7 @@ public class ActivityCallNodeImpl extends ActivityNodeImpl implements
 	 */
 	public EList<ParameterBinding> getOwnedParameterBindings() {
 		if (ownedParameterBindings == null) {
-			ownedParameterBindings = new EObjectContainmentWithInverseEList.Resolving<ParameterBinding>(
-					ParameterBinding.class,
-					this,
-					ActivitiesPackage.ACTIVITY_CALL_NODE__OWNED_PARAMETER_BINDINGS,
-					CallsPackage.PARAMETER_BINDING__INVOCATION);
+			ownedParameterBindings = new EObjectContainmentWithInverseEList<ParameterBinding>(ParameterBinding.class, this, ActivitiesPackage.ACTIVITY_CALL_NODE__OWNED_PARAMETER_BINDINGS, CallsPackage.PARAMETER_BINDING__INVOCATION);
 		}
 		return ownedParameterBindings;
 	}
@@ -105,13 +102,11 @@ public class ActivityCallNodeImpl extends ActivityNodeImpl implements
 	 */
 	public Callable getCallee() {
 		if (callee != null && callee.eIsProxy()) {
-			InternalEObject oldCallee = (InternalEObject) callee;
-			callee = (Callable) eResolveProxy(oldCallee);
+			InternalEObject oldCallee = (InternalEObject)callee;
+			callee = (Callable)eResolveProxy(oldCallee);
 			if (callee != oldCallee) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							ActivitiesPackage.ACTIVITY_CALL_NODE__CALLEE,
-							oldCallee, callee));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ActivitiesPackage.ACTIVITY_CALL_NODE__CALLEE, oldCallee, callee));
 			}
 		}
 		return callee;
@@ -133,22 +128,19 @@ public class ActivityCallNodeImpl extends ActivityNodeImpl implements
 		Callable oldCallee = callee;
 		callee = newCallee;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					ActivitiesPackage.ACTIVITY_CALL_NODE__CALLEE, oldCallee,
-					callee));
+			eNotify(new ENotificationImpl(this, Notification.SET, ActivitiesPackage.ACTIVITY_CALL_NODE__CALLEE, oldCallee, callee));
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Activity> getCalledActivities() {
-		if (calledActivities == null) {
-			calledActivities = new EObjectResolvingEList<Activity>(
-					Activity.class, this,
-					ActivitiesPackage.ACTIVITY_CALL_NODE__CALLED_ACTIVITY);
+	public EList<Activity> getCalledActivity() {
+		if (calledActivity == null) {
+			calledActivity = new EObjectResolvingEList<Activity>(Activity.class, this, ActivitiesPackage.ACTIVITY_CALL_NODE__CALLED_ACTIVITY);
 		}
-		return calledActivities;
+		return calledActivity;
 	}
 
 	/**
@@ -160,9 +152,8 @@ public class ActivityCallNodeImpl extends ActivityNodeImpl implements
 	public NotificationChain eInverseAdd(InternalEObject otherEnd,
 			int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case ActivitiesPackage.ACTIVITY_CALL_NODE__OWNED_PARAMETER_BINDINGS:
-			return ((InternalEList<InternalEObject>) (InternalEList<?>) getOwnedParameterBindings())
-					.basicAdd(otherEnd, msgs);
+			case ActivitiesPackage.ACTIVITY_CALL_NODE__OWNED_PARAMETER_BINDINGS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getOwnedParameterBindings()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -175,9 +166,8 @@ public class ActivityCallNodeImpl extends ActivityNodeImpl implements
 	public NotificationChain eInverseRemove(InternalEObject otherEnd,
 			int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case ActivitiesPackage.ACTIVITY_CALL_NODE__OWNED_PARAMETER_BINDINGS:
-			return ((InternalEList<?>) getOwnedParameterBindings())
-					.basicRemove(otherEnd, msgs);
+			case ActivitiesPackage.ACTIVITY_CALL_NODE__OWNED_PARAMETER_BINDINGS:
+				return ((InternalEList<?>)getOwnedParameterBindings()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -189,14 +179,13 @@ public class ActivityCallNodeImpl extends ActivityNodeImpl implements
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case ActivitiesPackage.ACTIVITY_CALL_NODE__OWNED_PARAMETER_BINDINGS:
-			return getOwnedParameterBindings();
-		case ActivitiesPackage.ACTIVITY_CALL_NODE__CALLEE:
-			if (resolve)
-				return getCallee();
-			return basicGetCallee();
-		case ActivitiesPackage.ACTIVITY_CALL_NODE__CALLED_ACTIVITY:
-			return getCalledActivities();
+			case ActivitiesPackage.ACTIVITY_CALL_NODE__OWNED_PARAMETER_BINDINGS:
+				return getOwnedParameterBindings();
+			case ActivitiesPackage.ACTIVITY_CALL_NODE__CALLEE:
+				if (resolve) return getCallee();
+				return basicGetCallee();
+			case ActivitiesPackage.ACTIVITY_CALL_NODE__CALLED_ACTIVITY:
+				return getCalledActivity();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -209,19 +198,17 @@ public class ActivityCallNodeImpl extends ActivityNodeImpl implements
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case ActivitiesPackage.ACTIVITY_CALL_NODE__OWNED_PARAMETER_BINDINGS:
-			getOwnedParameterBindings().clear();
-			getOwnedParameterBindings().addAll(
-					(Collection<? extends ParameterBinding>) newValue);
-			return;
-		case ActivitiesPackage.ACTIVITY_CALL_NODE__CALLEE:
-			setCallee((Callable) newValue);
-			return;
-		case ActivitiesPackage.ACTIVITY_CALL_NODE__CALLED_ACTIVITY:
-			getCalledActivities().clear();
-			getCalledActivities().addAll(
-					(Collection<? extends Activity>) newValue);
-			return;
+			case ActivitiesPackage.ACTIVITY_CALL_NODE__OWNED_PARAMETER_BINDINGS:
+				getOwnedParameterBindings().clear();
+				getOwnedParameterBindings().addAll((Collection<? extends ParameterBinding>)newValue);
+				return;
+			case ActivitiesPackage.ACTIVITY_CALL_NODE__CALLEE:
+				setCallee((Callable)newValue);
+				return;
+			case ActivitiesPackage.ACTIVITY_CALL_NODE__CALLED_ACTIVITY:
+				getCalledActivity().clear();
+				getCalledActivity().addAll((Collection<? extends Activity>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -233,15 +220,15 @@ public class ActivityCallNodeImpl extends ActivityNodeImpl implements
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case ActivitiesPackage.ACTIVITY_CALL_NODE__OWNED_PARAMETER_BINDINGS:
-			getOwnedParameterBindings().clear();
-			return;
-		case ActivitiesPackage.ACTIVITY_CALL_NODE__CALLEE:
-			setCallee((Callable) null);
-			return;
-		case ActivitiesPackage.ACTIVITY_CALL_NODE__CALLED_ACTIVITY:
-			getCalledActivities().clear();
-			return;
+			case ActivitiesPackage.ACTIVITY_CALL_NODE__OWNED_PARAMETER_BINDINGS:
+				getOwnedParameterBindings().clear();
+				return;
+			case ActivitiesPackage.ACTIVITY_CALL_NODE__CALLEE:
+				setCallee((Callable)null);
+				return;
+			case ActivitiesPackage.ACTIVITY_CALL_NODE__CALLED_ACTIVITY:
+				getCalledActivity().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -253,13 +240,12 @@ public class ActivityCallNodeImpl extends ActivityNodeImpl implements
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case ActivitiesPackage.ACTIVITY_CALL_NODE__OWNED_PARAMETER_BINDINGS:
-			return ownedParameterBindings != null
-					&& !ownedParameterBindings.isEmpty();
-		case ActivitiesPackage.ACTIVITY_CALL_NODE__CALLEE:
-			return callee != null;
-		case ActivitiesPackage.ACTIVITY_CALL_NODE__CALLED_ACTIVITY:
-			return calledActivities != null && !calledActivities.isEmpty();
+			case ActivitiesPackage.ACTIVITY_CALL_NODE__OWNED_PARAMETER_BINDINGS:
+				return ownedParameterBindings != null && !ownedParameterBindings.isEmpty();
+			case ActivitiesPackage.ACTIVITY_CALL_NODE__CALLEE:
+				return callee != null;
+			case ActivitiesPackage.ACTIVITY_CALL_NODE__CALLED_ACTIVITY:
+				return calledActivity != null && !calledActivity.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -272,12 +258,9 @@ public class ActivityCallNodeImpl extends ActivityNodeImpl implements
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == Invocation.class) {
 			switch (derivedFeatureID) {
-			case ActivitiesPackage.ACTIVITY_CALL_NODE__OWNED_PARAMETER_BINDINGS:
-				return CallsPackage.INVOCATION__OWNED_PARAMETER_BINDINGS;
-			case ActivitiesPackage.ACTIVITY_CALL_NODE__CALLEE:
-				return CallsPackage.INVOCATION__CALLEE;
-			default:
-				return -1;
+				case ActivitiesPackage.ACTIVITY_CALL_NODE__OWNED_PARAMETER_BINDINGS: return CallsPackage.INVOCATION__OWNED_PARAMETER_BINDINGS;
+				case ActivitiesPackage.ACTIVITY_CALL_NODE__CALLEE: return CallsPackage.INVOCATION__CALLEE;
+				default: return -1;
 			}
 		}
 		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
@@ -291,12 +274,9 @@ public class ActivityCallNodeImpl extends ActivityNodeImpl implements
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
 		if (baseClass == Invocation.class) {
 			switch (baseFeatureID) {
-			case CallsPackage.INVOCATION__OWNED_PARAMETER_BINDINGS:
-				return ActivitiesPackage.ACTIVITY_CALL_NODE__OWNED_PARAMETER_BINDINGS;
-			case CallsPackage.INVOCATION__CALLEE:
-				return ActivitiesPackage.ACTIVITY_CALL_NODE__CALLEE;
-			default:
-				return -1;
+				case CallsPackage.INVOCATION__OWNED_PARAMETER_BINDINGS: return ActivitiesPackage.ACTIVITY_CALL_NODE__OWNED_PARAMETER_BINDINGS;
+				case CallsPackage.INVOCATION__CALLEE: return ActivitiesPackage.ACTIVITY_CALL_NODE__CALLEE;
+				default: return -1;
 			}
 		}
 		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);

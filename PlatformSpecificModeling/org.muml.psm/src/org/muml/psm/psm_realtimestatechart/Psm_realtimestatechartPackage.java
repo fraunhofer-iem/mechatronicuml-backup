@@ -43,7 +43,7 @@ public interface Psm_realtimestatechartPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.fujaba.de/muml/psm/realtimestatechart/0.4.0/";
+	String eNS_URI = "http://www.muml.org/psm/realtimestatechart/1.0.0";
 
 	/**
 	 * The package namespace name.
@@ -72,22 +72,22 @@ public interface Psm_realtimestatechartPackage extends EPackage {
 	int PARAMETERIZED_REALTIME_STATECHART = 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETERIZED_REALTIME_STATECHART__ANNOTATION = RealtimestatechartPackage.REALTIME_STATECHART__ANNOTATION;
+	int PARAMETERIZED_REALTIME_STATECHART__ANNOTATIONS = RealtimestatechartPackage.REALTIME_STATECHART__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETERIZED_REALTIME_STATECHART__EXTENSION = RealtimestatechartPackage.REALTIME_STATECHART__EXTENSION;
+	int PARAMETERIZED_REALTIME_STATECHART__EXTENSIONS = RealtimestatechartPackage.REALTIME_STATECHART__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -505,22 +505,22 @@ public interface Psm_realtimestatechartPackage extends EPackage {
 	int API_CALL = 1;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int API_CALL__ANNOTATION = ActionlanguagePackage.OPERATION_CALL__ANNOTATION;
+	int API_CALL__ANNOTATIONS = ActionlanguagePackage.OPERATION_CALL__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int API_CALL__EXTENSION = ActionlanguagePackage.OPERATION_CALL__EXTENSION;
+	int API_CALL__EXTENSIONS = ActionlanguagePackage.OPERATION_CALL__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.

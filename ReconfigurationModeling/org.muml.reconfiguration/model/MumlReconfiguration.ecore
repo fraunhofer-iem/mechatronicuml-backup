@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="reconfiguration" nsURI="http://www.fujaba.de/muml/reconfiguration/0.3.18"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="reconfiguration" nsURI="http://www.muml.org/reconfiguration/1.0.0"
     nsPrefix="reconfiguration">
   <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
     <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
@@ -586,7 +586,7 @@
         eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//realtimestatechart/Message"
         containment="true"/>
   </eClassifiers>
-  <eSubpackages name="expression" nsURI="http://www.fujaba.de/muml/reconfiguration/expression/0.3.7"
+  <eSubpackages name="expression" nsURI="http://www.muml.org/reconfiguration/expression/1.0.0"
       nsPrefix="expression">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="This package defines expressions that may used for calling reconfiguration operations&#xD;&#xA;in the action language."/>
@@ -596,12 +596,12 @@
       <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
       <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
     </eAnnotations>
-    <eClassifiers xsi:type="ecore:EClass" name="ActivityCallExpression" eSuperTypes="../../org.muml.core/model/core.ecore#//expressions/Expression ../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//calls/Invocation">
+    <eClassifiers xsi:type="ecore:EClass" name="ActivityCallExpression" eSuperTypes="../../org.muml.core/model/core.ecore#//expressions/Expression ../../org.muml.storydiagram/model/storydiagrams.ecore#//calls/Invocation">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="An ActivityCallExpression can be used for calling a story diagram from an expression specified by the MechatronicUML action language. &#xD;&#xA;In particular, it may be used for calling a story diagram in the action of a transition of a real-time statechart."/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="activity" lowerBound="1"
-          eType="ecore:EClass ../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/Activity"
+          eType="ecore:EClass ../../org.muml.storydiagram/model/storydiagrams.ecore#//activities/Activity"
           volatile="true" transient="true" derived="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
           <details key="derivation" value="self.callee.oclAsType(storydiagrams::activities::Activity)"/>
@@ -646,7 +646,7 @@
           lowerBound="1" eType="#//StructuralCondition"/>
     </eClassifiers>
   </eSubpackages>
-  <eSubpackages name="structdatatype" nsURI="http://www.fujaba.de/muml/reconfiguration/structdatatype/0.3.18"
+  <eSubpackages name="structdatatype" nsURI="http://www.muml.org/reconfiguration/structdatatype/1.0.0"
       nsPrefix="structdatatype">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
@@ -692,7 +692,7 @@
       </eStructuralFeatures>
     </eClassifiers>
   </eSubpackages>
-  <eSubpackages name="protocolinstantiation" nsURI="http://www.fujaba.de/muml/reconfiguration/protocolinstantiation/0.4.0"
+  <eSubpackages name="protocolinstantiation" nsURI="http://www.muml.org/reconfiguration/protocolinstantiation/1.0.0"
       nsPrefix="protocolinstantiation">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
@@ -744,7 +744,7 @@
       </eAnnotations>
     </eClassifiers>
   </eSubpackages>
-  <eSubpackages name="reconfInstance" nsURI="http://www.fujaba.de/muml/reconfiguration/reconfInstance/0.4.0"
+  <eSubpackages name="reconfInstance" nsURI="http://www.muml.org/reconfiguration/reconfInstance/1.0.0"
       nsPrefix="reconfInstance">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>

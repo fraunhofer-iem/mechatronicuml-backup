@@ -26,11 +26,11 @@ import org.muml.example.storydiagram.reachanalysis.ttccarplatooning.Ttccarplatoo
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.example.storydiagram.reachanalysis.ttccarplatooning.impl.StateImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.muml.example.storydiagram.reachanalysis.ttccarplatooning.impl.StateImpl#getStatechart <em>Statechart</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -102,7 +102,7 @@ public class StateImpl extends EObjectImpl implements State {
 	 */
 	public Statechart getStatechart() {
 		if (eContainerFeatureID() != TtccarplatooningPackage.STATE__STATECHART) return null;
-		return (Statechart)eContainer();
+		return (Statechart)eInternalContainer();
 	}
 
 	/**

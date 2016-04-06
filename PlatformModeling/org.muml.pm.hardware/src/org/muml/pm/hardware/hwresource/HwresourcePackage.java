@@ -42,7 +42,7 @@ public interface HwresourcePackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.fujaba.de/muml/hardware/hwresource/1.1/";
+	String eNS_URI = "http://www.muml.org/pm/hardware/hwresource/1.0.0";
 
 	/**
 	 * The package namespace name.
@@ -71,22 +71,22 @@ public interface HwresourcePackage extends EPackage {
 	int RESOURCE = 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE__ANNOTATION = CorePackage.NAMED_ELEMENT__ANNOTATION;
+	int RESOURCE__ANNOTATIONS = CorePackage.NAMED_ELEMENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE__EXTENSION = CorePackage.NAMED_ELEMENT__EXTENSION;
+	int RESOURCE__EXTENSIONS = CorePackage.NAMED_ELEMENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -306,22 +306,22 @@ public interface HwresourcePackage extends EPackage {
 	int ATOMIC_RESOURCE = 7;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ATOMIC_RESOURCE__ANNOTATION = RESOURCE__ANNOTATION;
+	int ATOMIC_RESOURCE__ANNOTATIONS = RESOURCE__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ATOMIC_RESOURCE__EXTENSION = RESOURCE__EXTENSION;
+	int ATOMIC_RESOURCE__EXTENSIONS = RESOURCE__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -550,22 +550,22 @@ public interface HwresourcePackage extends EPackage {
 	int COMPUTING_RESOURCE = 1;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPUTING_RESOURCE__ANNOTATION = ATOMIC_RESOURCE__ANNOTATION;
+	int COMPUTING_RESOURCE__ANNOTATIONS = ATOMIC_RESOURCE__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPUTING_RESOURCE__EXTENSION = ATOMIC_RESOURCE__EXTENSION;
+	int COMPUTING_RESOURCE__EXTENSIONS = ATOMIC_RESOURCE__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -794,22 +794,22 @@ public interface HwresourcePackage extends EPackage {
 	int MEMORY_RESOURCE = 2;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MEMORY_RESOURCE__ANNOTATION = ATOMIC_RESOURCE__ANNOTATION;
+	int MEMORY_RESOURCE__ANNOTATIONS = ATOMIC_RESOURCE__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MEMORY_RESOURCE__EXTENSION = ATOMIC_RESOURCE__EXTENSION;
+	int MEMORY_RESOURCE__EXTENSIONS = ATOMIC_RESOURCE__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1065,22 +1065,22 @@ public interface HwresourcePackage extends EPackage {
 	int DEVICE = 3;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE__ANNOTATION = RESOURCE__ANNOTATION;
+	int DEVICE__ANNOTATIONS = RESOURCE__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE__EXTENSION = RESOURCE__EXTENSION;
+	int DEVICE__EXTENSIONS = RESOURCE__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1309,22 +1309,22 @@ public interface HwresourcePackage extends EPackage {
 	int CACHE = 4;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CACHE__ANNOTATION = MEMORY_RESOURCE__ANNOTATION;
+	int CACHE__ANNOTATIONS = MEMORY_RESOURCE__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CACHE__EXTENSION = MEMORY_RESOURCE__EXTENSION;
+	int CACHE__EXTENSIONS = MEMORY_RESOURCE__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1625,22 +1625,22 @@ public interface HwresourcePackage extends EPackage {
 	int PROGRAMMABLE_LOGIC_DEVICE = 5;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROGRAMMABLE_LOGIC_DEVICE__ANNOTATION = COMPUTING_RESOURCE__ANNOTATION;
+	int PROGRAMMABLE_LOGIC_DEVICE__ANNOTATIONS = COMPUTING_RESOURCE__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROGRAMMABLE_LOGIC_DEVICE__EXTENSION = COMPUTING_RESOURCE__EXTENSION;
+	int PROGRAMMABLE_LOGIC_DEVICE__EXTENSIONS = COMPUTING_RESOURCE__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1869,22 +1869,22 @@ public interface HwresourcePackage extends EPackage {
 	int PROCESSOR = 6;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESSOR__ANNOTATION = COMPUTING_RESOURCE__ANNOTATION;
+	int PROCESSOR__ANNOTATIONS = COMPUTING_RESOURCE__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESSOR__EXTENSION = COMPUTING_RESOURCE__EXTENSION;
+	int PROCESSOR__EXTENSIONS = COMPUTING_RESOURCE__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2158,22 +2158,22 @@ public interface HwresourcePackage extends EPackage {
 	int STRUCTURED_RESOURCE = 8;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCTURED_RESOURCE__ANNOTATION = RESOURCE__ANNOTATION;
+	int STRUCTURED_RESOURCE__ANNOTATIONS = RESOURCE__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCTURED_RESOURCE__EXTENSION = RESOURCE__EXTENSION;
+	int STRUCTURED_RESOURCE__EXTENSIONS = RESOURCE__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2402,22 +2402,22 @@ public interface HwresourcePackage extends EPackage {
 	int RESOURCE_REPOSITORY = 9;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_REPOSITORY__ANNOTATION = CorePackage.COMMENTABLE_ELEMENT__ANNOTATION;
+	int RESOURCE_REPOSITORY__ANNOTATIONS = CorePackage.COMMENTABLE_ELEMENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_REPOSITORY__EXTENSION = CorePackage.COMMENTABLE_ELEMENT__EXTENSION;
+	int RESOURCE_REPOSITORY__EXTENSIONS = CorePackage.COMMENTABLE_ELEMENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -2646,22 +2646,22 @@ public interface HwresourcePackage extends EPackage {
 	int COMMUNICATION_PROTOCOL_REPOSITORY = 10;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMMUNICATION_PROTOCOL_REPOSITORY__ANNOTATION = CorePackage.NAMED_ELEMENT__ANNOTATION;
+	int COMMUNICATION_PROTOCOL_REPOSITORY__ANNOTATIONS = CorePackage.NAMED_ELEMENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMMUNICATION_PROTOCOL_REPOSITORY__EXTENSION = CorePackage.NAMED_ELEMENT__EXTENSION;
+	int COMMUNICATION_PROTOCOL_REPOSITORY__EXTENSIONS = CorePackage.NAMED_ELEMENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2881,22 +2881,22 @@ public interface HwresourcePackage extends EPackage {
 	int COMMUNICATION_PROTOCOL = 11;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMMUNICATION_PROTOCOL__ANNOTATION = CorePackage.NAMED_ELEMENT__ANNOTATION;
+	int COMMUNICATION_PROTOCOL__ANNOTATIONS = CorePackage.NAMED_ELEMENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMMUNICATION_PROTOCOL__EXTENSION = CorePackage.NAMED_ELEMENT__EXTENSION;
+	int COMMUNICATION_PROTOCOL__EXTENSIONS = CorePackage.NAMED_ELEMENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3170,22 +3170,22 @@ public interface HwresourcePackage extends EPackage {
 	int BUS_PROTOCOL = 12;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BUS_PROTOCOL__ANNOTATION = COMMUNICATION_PROTOCOL__ANNOTATION;
+	int BUS_PROTOCOL__ANNOTATIONS = COMMUNICATION_PROTOCOL__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BUS_PROTOCOL__EXTENSION = COMMUNICATION_PROTOCOL__EXTENSION;
+	int BUS_PROTOCOL__EXTENSIONS = COMMUNICATION_PROTOCOL__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3477,22 +3477,22 @@ public interface HwresourcePackage extends EPackage {
 	int LINK_PROTOCOL = 13;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LINK_PROTOCOL__ANNOTATION = COMMUNICATION_PROTOCOL__ANNOTATION;
+	int LINK_PROTOCOL__ANNOTATIONS = COMMUNICATION_PROTOCOL__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LINK_PROTOCOL__EXTENSION = COMMUNICATION_PROTOCOL__EXTENSION;
+	int LINK_PROTOCOL__EXTENSIONS = COMMUNICATION_PROTOCOL__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3784,22 +3784,22 @@ public interface HwresourcePackage extends EPackage {
 	int COMMUNICATION_RESOURCE = 14;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMMUNICATION_RESOURCE__ANNOTATION = CorePackage.NAMED_ELEMENT__ANNOTATION;
+	int COMMUNICATION_RESOURCE__ANNOTATIONS = CorePackage.NAMED_ELEMENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMMUNICATION_RESOURCE__EXTENSION = CorePackage.NAMED_ELEMENT__EXTENSION;
+	int COMMUNICATION_RESOURCE__EXTENSIONS = CorePackage.NAMED_ELEMENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.

@@ -12,7 +12,7 @@ import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.muml.core.CorePackage;
-import org.muml.storydiagram.StorydiagramsPackage;
+import org.muml.storydiagram.StorydiagramPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -48,7 +48,7 @@ public interface CallsPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.storydriven.org/storydiagrams/calls/0.2.0";
+	String eNS_URI = "http://www.muml.org/storydiagram/calls/1.0.0";
 
 	/**
 	 * The package namespace name.
@@ -64,8 +64,7 @@ public interface CallsPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	CallsPackage eINSTANCE = org.muml.storydiagram.calls.impl.CallsPackageImpl
-			.init();
+	CallsPackage eINSTANCE = org.muml.storydiagram.calls.impl.CallsPackageImpl.init();
 
 	/**
 	 * The meta object id for the '{@link org.muml.storydiagram.calls.impl.InvocationImpl <em>Invocation</em>}' class.
@@ -78,22 +77,22 @@ public interface CallsPackage extends EPackage {
 	int INVOCATION = 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INVOCATION__ANNOTATION = CorePackage.COMMENTABLE_ELEMENT__ANNOTATION;
+	int INVOCATION__ANNOTATIONS = CorePackage.COMMENTABLE_ELEMENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INVOCATION__EXTENSION = CorePackage.COMMENTABLE_ELEMENT__EXTENSION;
+	int INVOCATION__EXTENSIONS = CorePackage.COMMENTABLE_ELEMENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -219,7 +218,7 @@ public interface CallsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INVOCATION___EGET__ESTRUCTURALFEATURE = CorePackage.COMMENTABLE_ELEMENT___EGET__ESTRUCTURALFEATURE;
+	int INVOCATION___EGET__ESTRUCTURALFEATURE = CorePackage.COMMENTABLE_ELEMENT___EGET__ESTRUCTURALFEATURE_1;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -228,7 +227,7 @@ public interface CallsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INVOCATION___EGET__ESTRUCTURALFEATURE_BOOLEAN = CorePackage.COMMENTABLE_ELEMENT___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+	int INVOCATION___EGET__ESTRUCTURALFEATURE_BOOLEAN = CorePackage.COMMENTABLE_ELEMENT___EGET__ESTRUCTURALFEATURE_BOOLEAN_1;
 
 	/**
 	 * The operation id for the '<em>ESet</em>' operation.
@@ -237,7 +236,7 @@ public interface CallsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INVOCATION___ESET__ESTRUCTURALFEATURE_OBJECT = CorePackage.COMMENTABLE_ELEMENT___ESET__ESTRUCTURALFEATURE_OBJECT;
+	int INVOCATION___ESET__ESTRUCTURALFEATURE_OBJECT = CorePackage.COMMENTABLE_ELEMENT___ESET__ESTRUCTURALFEATURE_OBJECT_1;
 
 	/**
 	 * The operation id for the '<em>EIs Set</em>' operation.
@@ -246,7 +245,7 @@ public interface CallsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INVOCATION___EIS_SET__ESTRUCTURALFEATURE = CorePackage.COMMENTABLE_ELEMENT___EIS_SET__ESTRUCTURALFEATURE;
+	int INVOCATION___EIS_SET__ESTRUCTURALFEATURE = CorePackage.COMMENTABLE_ELEMENT___EIS_SET__ESTRUCTURALFEATURE_1;
 
 	/**
 	 * The operation id for the '<em>EUnset</em>' operation.
@@ -255,7 +254,7 @@ public interface CallsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INVOCATION___EUNSET__ESTRUCTURALFEATURE = CorePackage.COMMENTABLE_ELEMENT___EUNSET__ESTRUCTURALFEATURE;
+	int INVOCATION___EUNSET__ESTRUCTURALFEATURE = CorePackage.COMMENTABLE_ELEMENT___EUNSET__ESTRUCTURALFEATURE_1;
 
 	/**
 	 * The operation id for the '<em>EInvoke</em>' operation.
@@ -264,7 +263,7 @@ public interface CallsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INVOCATION___EINVOKE__EOPERATION_ELIST = CorePackage.COMMENTABLE_ELEMENT___EINVOKE__EOPERATION_ELIST;
+	int INVOCATION___EINVOKE__EOPERATION_ELIST = CorePackage.COMMENTABLE_ELEMENT___EINVOKE__EOPERATION_ELIST_1;
 
 	/**
 	 * The operation id for the '<em>Get Extension</em>' operation.
@@ -322,22 +321,22 @@ public interface CallsPackage extends EPackage {
 	int PARAMETER_BINDING = 1;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_BINDING__ANNOTATION = CorePackage.COMMENTABLE_ELEMENT__ANNOTATION;
+	int PARAMETER_BINDING__ANNOTATIONS = CorePackage.COMMENTABLE_ELEMENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_BINDING__EXTENSION = CorePackage.COMMENTABLE_ELEMENT__EXTENSION;
+	int PARAMETER_BINDING__EXTENSIONS = CorePackage.COMMENTABLE_ELEMENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -472,7 +471,7 @@ public interface CallsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_BINDING___EGET__ESTRUCTURALFEATURE = CorePackage.COMMENTABLE_ELEMENT___EGET__ESTRUCTURALFEATURE;
+	int PARAMETER_BINDING___EGET__ESTRUCTURALFEATURE = CorePackage.COMMENTABLE_ELEMENT___EGET__ESTRUCTURALFEATURE_1;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -481,7 +480,7 @@ public interface CallsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_BINDING___EGET__ESTRUCTURALFEATURE_BOOLEAN = CorePackage.COMMENTABLE_ELEMENT___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+	int PARAMETER_BINDING___EGET__ESTRUCTURALFEATURE_BOOLEAN = CorePackage.COMMENTABLE_ELEMENT___EGET__ESTRUCTURALFEATURE_BOOLEAN_1;
 
 	/**
 	 * The operation id for the '<em>ESet</em>' operation.
@@ -490,7 +489,7 @@ public interface CallsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_BINDING___ESET__ESTRUCTURALFEATURE_OBJECT = CorePackage.COMMENTABLE_ELEMENT___ESET__ESTRUCTURALFEATURE_OBJECT;
+	int PARAMETER_BINDING___ESET__ESTRUCTURALFEATURE_OBJECT = CorePackage.COMMENTABLE_ELEMENT___ESET__ESTRUCTURALFEATURE_OBJECT_1;
 
 	/**
 	 * The operation id for the '<em>EIs Set</em>' operation.
@@ -499,7 +498,7 @@ public interface CallsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_BINDING___EIS_SET__ESTRUCTURALFEATURE = CorePackage.COMMENTABLE_ELEMENT___EIS_SET__ESTRUCTURALFEATURE;
+	int PARAMETER_BINDING___EIS_SET__ESTRUCTURALFEATURE = CorePackage.COMMENTABLE_ELEMENT___EIS_SET__ESTRUCTURALFEATURE_1;
 
 	/**
 	 * The operation id for the '<em>EUnset</em>' operation.
@@ -508,7 +507,7 @@ public interface CallsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_BINDING___EUNSET__ESTRUCTURALFEATURE = CorePackage.COMMENTABLE_ELEMENT___EUNSET__ESTRUCTURALFEATURE;
+	int PARAMETER_BINDING___EUNSET__ESTRUCTURALFEATURE = CorePackage.COMMENTABLE_ELEMENT___EUNSET__ESTRUCTURALFEATURE_1;
 
 	/**
 	 * The operation id for the '<em>EInvoke</em>' operation.
@@ -517,7 +516,7 @@ public interface CallsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_BINDING___EINVOKE__EOPERATION_ELIST = CorePackage.COMMENTABLE_ELEMENT___EINVOKE__EOPERATION_ELIST;
+	int PARAMETER_BINDING___EINVOKE__EOPERATION_ELIST = CorePackage.COMMENTABLE_ELEMENT___EINVOKE__EOPERATION_ELIST_1;
 
 	/**
 	 * The operation id for the '<em>Get Extension</em>' operation.
@@ -575,22 +574,22 @@ public interface CallsPackage extends EPackage {
 	int CALLABLE = 4;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CALLABLE__ANNOTATION = CorePackage.COMMENTABLE_ELEMENT__ANNOTATION;
+	int CALLABLE__ANNOTATIONS = CorePackage.COMMENTABLE_ELEMENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CALLABLE__EXTENSION = CorePackage.COMMENTABLE_ELEMENT__EXTENSION;
+	int CALLABLE__EXTENSIONS = CorePackage.COMMENTABLE_ELEMENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -725,7 +724,7 @@ public interface CallsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CALLABLE___EGET__ESTRUCTURALFEATURE = CorePackage.COMMENTABLE_ELEMENT___EGET__ESTRUCTURALFEATURE;
+	int CALLABLE___EGET__ESTRUCTURALFEATURE = CorePackage.COMMENTABLE_ELEMENT___EGET__ESTRUCTURALFEATURE_1;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -734,7 +733,7 @@ public interface CallsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CALLABLE___EGET__ESTRUCTURALFEATURE_BOOLEAN = CorePackage.COMMENTABLE_ELEMENT___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+	int CALLABLE___EGET__ESTRUCTURALFEATURE_BOOLEAN = CorePackage.COMMENTABLE_ELEMENT___EGET__ESTRUCTURALFEATURE_BOOLEAN_1;
 
 	/**
 	 * The operation id for the '<em>ESet</em>' operation.
@@ -743,7 +742,7 @@ public interface CallsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CALLABLE___ESET__ESTRUCTURALFEATURE_OBJECT = CorePackage.COMMENTABLE_ELEMENT___ESET__ESTRUCTURALFEATURE_OBJECT;
+	int CALLABLE___ESET__ESTRUCTURALFEATURE_OBJECT = CorePackage.COMMENTABLE_ELEMENT___ESET__ESTRUCTURALFEATURE_OBJECT_1;
 
 	/**
 	 * The operation id for the '<em>EIs Set</em>' operation.
@@ -752,7 +751,7 @@ public interface CallsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CALLABLE___EIS_SET__ESTRUCTURALFEATURE = CorePackage.COMMENTABLE_ELEMENT___EIS_SET__ESTRUCTURALFEATURE;
+	int CALLABLE___EIS_SET__ESTRUCTURALFEATURE = CorePackage.COMMENTABLE_ELEMENT___EIS_SET__ESTRUCTURALFEATURE_1;
 
 	/**
 	 * The operation id for the '<em>EUnset</em>' operation.
@@ -761,7 +760,7 @@ public interface CallsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CALLABLE___EUNSET__ESTRUCTURALFEATURE = CorePackage.COMMENTABLE_ELEMENT___EUNSET__ESTRUCTURALFEATURE;
+	int CALLABLE___EUNSET__ESTRUCTURALFEATURE = CorePackage.COMMENTABLE_ELEMENT___EUNSET__ESTRUCTURALFEATURE_1;
 
 	/**
 	 * The operation id for the '<em>EInvoke</em>' operation.
@@ -770,7 +769,7 @@ public interface CallsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CALLABLE___EINVOKE__EOPERATION_ELIST = CorePackage.COMMENTABLE_ELEMENT___EINVOKE__EOPERATION_ELIST;
+	int CALLABLE___EINVOKE__EOPERATION_ELIST = CorePackage.COMMENTABLE_ELEMENT___EINVOKE__EOPERATION_ELIST_1;
 
 	/**
 	 * The operation id for the '<em>Get Extension</em>' operation.
@@ -828,22 +827,22 @@ public interface CallsPackage extends EPackage {
 	int OPAQUE_CALLABLE = 2;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OPAQUE_CALLABLE__ANNOTATION = CALLABLE__ANNOTATION;
+	int OPAQUE_CALLABLE__ANNOTATIONS = CALLABLE__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OPAQUE_CALLABLE__EXTENSION = CALLABLE__EXTENSION;
+	int OPAQUE_CALLABLE__EXTENSIONS = CALLABLE__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -1108,22 +1107,22 @@ public interface CallsPackage extends EPackage {
 	int PARAMETER_EXTENSION = 3;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_EXTENSION__ANNOTATION = StorydiagramsPackage.VARIABLE__ANNOTATION;
+	int PARAMETER_EXTENSION__ANNOTATIONS = StorydiagramPackage.VARIABLE__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_EXTENSION__EXTENSION = StorydiagramsPackage.VARIABLE__EXTENSION;
+	int PARAMETER_EXTENSION__EXTENSIONS = StorydiagramPackage.VARIABLE__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' reference.
@@ -1132,7 +1131,7 @@ public interface CallsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_EXTENSION__TYPE = StorydiagramsPackage.VARIABLE__TYPE;
+	int PARAMETER_EXTENSION__TYPE = StorydiagramPackage.VARIABLE__TYPE;
 
 	/**
 	 * The feature id for the '<em><b>Generic Type</b></em>' containment reference.
@@ -1141,7 +1140,7 @@ public interface CallsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_EXTENSION__GENERIC_TYPE = StorydiagramsPackage.VARIABLE__GENERIC_TYPE;
+	int PARAMETER_EXTENSION__GENERIC_TYPE = StorydiagramPackage.VARIABLE__GENERIC_TYPE;
 
 	/**
 	 * The feature id for the '<em><b>Variable Name</b></em>' attribute.
@@ -1150,7 +1149,7 @@ public interface CallsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_EXTENSION__VARIABLE_NAME = StorydiagramsPackage.VARIABLE__VARIABLE_NAME;
+	int PARAMETER_EXTENSION__VARIABLE_NAME = StorydiagramPackage.VARIABLE__VARIABLE_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Base</b></em>' reference.
@@ -1159,7 +1158,7 @@ public interface CallsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_EXTENSION__BASE = StorydiagramsPackage.VARIABLE_FEATURE_COUNT + 0;
+	int PARAMETER_EXTENSION__BASE = StorydiagramPackage.VARIABLE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Model Base</b></em>' reference.
@@ -1168,7 +1167,7 @@ public interface CallsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_EXTENSION__MODEL_BASE = StorydiagramsPackage.VARIABLE_FEATURE_COUNT + 1;
+	int PARAMETER_EXTENSION__MODEL_BASE = StorydiagramPackage.VARIABLE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Owning Annotation</b></em>' reference.
@@ -1177,7 +1176,7 @@ public interface CallsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_EXTENSION__OWNING_ANNOTATION = StorydiagramsPackage.VARIABLE_FEATURE_COUNT + 2;
+	int PARAMETER_EXTENSION__OWNING_ANNOTATION = StorydiagramPackage.VARIABLE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Extendable Base</b></em>' container reference.
@@ -1186,7 +1185,7 @@ public interface CallsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_EXTENSION__EXTENDABLE_BASE = StorydiagramsPackage.VARIABLE_FEATURE_COUNT + 3;
+	int PARAMETER_EXTENSION__EXTENDABLE_BASE = StorydiagramPackage.VARIABLE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Parameter</b></em>' reference.
@@ -1195,7 +1194,7 @@ public interface CallsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_EXTENSION__PARAMETER = StorydiagramsPackage.VARIABLE_FEATURE_COUNT + 4;
+	int PARAMETER_EXTENSION__PARAMETER = StorydiagramPackage.VARIABLE_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Parameter Extension</em>' class.
@@ -1204,7 +1203,7 @@ public interface CallsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_EXTENSION_FEATURE_COUNT = StorydiagramsPackage.VARIABLE_FEATURE_COUNT + 5;
+	int PARAMETER_EXTENSION_FEATURE_COUNT = StorydiagramPackage.VARIABLE_FEATURE_COUNT + 5;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -1213,7 +1212,7 @@ public interface CallsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_EXTENSION___ECLASS = StorydiagramsPackage.VARIABLE___ECLASS;
+	int PARAMETER_EXTENSION___ECLASS = StorydiagramPackage.VARIABLE___ECLASS;
 
 	/**
 	 * The operation id for the '<em>EIs Proxy</em>' operation.
@@ -1222,7 +1221,7 @@ public interface CallsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_EXTENSION___EIS_PROXY = StorydiagramsPackage.VARIABLE___EIS_PROXY;
+	int PARAMETER_EXTENSION___EIS_PROXY = StorydiagramPackage.VARIABLE___EIS_PROXY;
 
 	/**
 	 * The operation id for the '<em>EResource</em>' operation.
@@ -1231,7 +1230,7 @@ public interface CallsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_EXTENSION___ERESOURCE = StorydiagramsPackage.VARIABLE___ERESOURCE;
+	int PARAMETER_EXTENSION___ERESOURCE = StorydiagramPackage.VARIABLE___ERESOURCE;
 
 	/**
 	 * The operation id for the '<em>EContainer</em>' operation.
@@ -1240,7 +1239,7 @@ public interface CallsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_EXTENSION___ECONTAINER = StorydiagramsPackage.VARIABLE___ECONTAINER;
+	int PARAMETER_EXTENSION___ECONTAINER = StorydiagramPackage.VARIABLE___ECONTAINER;
 
 	/**
 	 * The operation id for the '<em>EContaining Feature</em>' operation.
@@ -1249,7 +1248,7 @@ public interface CallsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_EXTENSION___ECONTAINING_FEATURE = StorydiagramsPackage.VARIABLE___ECONTAINING_FEATURE;
+	int PARAMETER_EXTENSION___ECONTAINING_FEATURE = StorydiagramPackage.VARIABLE___ECONTAINING_FEATURE;
 
 	/**
 	 * The operation id for the '<em>EContainment Feature</em>' operation.
@@ -1258,7 +1257,7 @@ public interface CallsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_EXTENSION___ECONTAINMENT_FEATURE = StorydiagramsPackage.VARIABLE___ECONTAINMENT_FEATURE;
+	int PARAMETER_EXTENSION___ECONTAINMENT_FEATURE = StorydiagramPackage.VARIABLE___ECONTAINMENT_FEATURE;
 
 	/**
 	 * The operation id for the '<em>EContents</em>' operation.
@@ -1267,7 +1266,7 @@ public interface CallsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_EXTENSION___ECONTENTS = StorydiagramsPackage.VARIABLE___ECONTENTS;
+	int PARAMETER_EXTENSION___ECONTENTS = StorydiagramPackage.VARIABLE___ECONTENTS;
 
 	/**
 	 * The operation id for the '<em>EAll Contents</em>' operation.
@@ -1276,7 +1275,7 @@ public interface CallsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_EXTENSION___EALL_CONTENTS = StorydiagramsPackage.VARIABLE___EALL_CONTENTS;
+	int PARAMETER_EXTENSION___EALL_CONTENTS = StorydiagramPackage.VARIABLE___EALL_CONTENTS;
 
 	/**
 	 * The operation id for the '<em>ECross References</em>' operation.
@@ -1285,7 +1284,7 @@ public interface CallsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_EXTENSION___ECROSS_REFERENCES = StorydiagramsPackage.VARIABLE___ECROSS_REFERENCES;
+	int PARAMETER_EXTENSION___ECROSS_REFERENCES = StorydiagramPackage.VARIABLE___ECROSS_REFERENCES;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -1294,7 +1293,7 @@ public interface CallsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_EXTENSION___EGET__ESTRUCTURALFEATURE = StorydiagramsPackage.VARIABLE___EGET__ESTRUCTURALFEATURE;
+	int PARAMETER_EXTENSION___EGET__ESTRUCTURALFEATURE = StorydiagramPackage.VARIABLE___EGET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -1303,7 +1302,7 @@ public interface CallsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_EXTENSION___EGET__ESTRUCTURALFEATURE_BOOLEAN = StorydiagramsPackage.VARIABLE___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+	int PARAMETER_EXTENSION___EGET__ESTRUCTURALFEATURE_BOOLEAN = StorydiagramPackage.VARIABLE___EGET__ESTRUCTURALFEATURE_BOOLEAN;
 
 	/**
 	 * The operation id for the '<em>ESet</em>' operation.
@@ -1312,7 +1311,7 @@ public interface CallsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_EXTENSION___ESET__ESTRUCTURALFEATURE_OBJECT = StorydiagramsPackage.VARIABLE___ESET__ESTRUCTURALFEATURE_OBJECT;
+	int PARAMETER_EXTENSION___ESET__ESTRUCTURALFEATURE_OBJECT = StorydiagramPackage.VARIABLE___ESET__ESTRUCTURALFEATURE_OBJECT;
 
 	/**
 	 * The operation id for the '<em>EIs Set</em>' operation.
@@ -1321,7 +1320,7 @@ public interface CallsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_EXTENSION___EIS_SET__ESTRUCTURALFEATURE = StorydiagramsPackage.VARIABLE___EIS_SET__ESTRUCTURALFEATURE;
+	int PARAMETER_EXTENSION___EIS_SET__ESTRUCTURALFEATURE = StorydiagramPackage.VARIABLE___EIS_SET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EUnset</em>' operation.
@@ -1330,7 +1329,7 @@ public interface CallsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_EXTENSION___EUNSET__ESTRUCTURALFEATURE = StorydiagramsPackage.VARIABLE___EUNSET__ESTRUCTURALFEATURE;
+	int PARAMETER_EXTENSION___EUNSET__ESTRUCTURALFEATURE = StorydiagramPackage.VARIABLE___EUNSET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EInvoke</em>' operation.
@@ -1339,7 +1338,7 @@ public interface CallsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_EXTENSION___EINVOKE__EOPERATION_ELIST = StorydiagramsPackage.VARIABLE___EINVOKE__EOPERATION_ELIST;
+	int PARAMETER_EXTENSION___EINVOKE__EOPERATION_ELIST = StorydiagramPackage.VARIABLE___EINVOKE__EOPERATION_ELIST;
 
 	/**
 	 * The operation id for the '<em>Get Extension</em>' operation.
@@ -1348,7 +1347,7 @@ public interface CallsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_EXTENSION___GET_EXTENSION__ECLASS = StorydiagramsPackage.VARIABLE___GET_EXTENSION__ECLASS;
+	int PARAMETER_EXTENSION___GET_EXTENSION__ECLASS = StorydiagramPackage.VARIABLE___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Provide Extension</em>' operation.
@@ -1357,7 +1356,7 @@ public interface CallsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_EXTENSION___PROVIDE_EXTENSION__ECLASS = StorydiagramsPackage.VARIABLE___PROVIDE_EXTENSION__ECLASS;
+	int PARAMETER_EXTENSION___PROVIDE_EXTENSION__ECLASS = StorydiagramPackage.VARIABLE___PROVIDE_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Annotation</em>' operation.
@@ -1366,7 +1365,7 @@ public interface CallsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_EXTENSION___GET_ANNOTATION__STRING = StorydiagramsPackage.VARIABLE___GET_ANNOTATION__STRING;
+	int PARAMETER_EXTENSION___GET_ANNOTATION__STRING = StorydiagramPackage.VARIABLE___GET_ANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Provide Annotation</em>' operation.
@@ -1375,7 +1374,7 @@ public interface CallsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_EXTENSION___PROVIDE_ANNOTATION__STRING = StorydiagramsPackage.VARIABLE___PROVIDE_ANNOTATION__STRING;
+	int PARAMETER_EXTENSION___PROVIDE_ANNOTATION__STRING = StorydiagramPackage.VARIABLE___PROVIDE_ANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Parameter Extension</em>' class.
@@ -1384,7 +1383,7 @@ public interface CallsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_EXTENSION_OPERATION_COUNT = StorydiagramsPackage.VARIABLE_OPERATION_COUNT + 0;
+	int PARAMETER_EXTENSION_OPERATION_COUNT = StorydiagramPackage.VARIABLE_OPERATION_COUNT + 0;
 
 	/**
 	 * Returns the meta object for class '{@link org.muml.storydiagram.calls.Invocation <em>Invocation</em>}'.
@@ -1535,22 +1534,22 @@ public interface CallsPackage extends EPackage {
 	EClass getCallable();
 
 	/**
-	 * Returns the meta object for the reference list '{@link org.muml.storydiagram.calls.Callable#getInParameters <em>In Parameter</em>}'.
+	 * Returns the meta object for the reference list '{@link org.muml.storydiagram.calls.Callable#getInParameter <em>In Parameter</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference list '<em>In Parameter</em>'.
-	 * @see org.muml.storydiagram.calls.Callable#getInParameters()
+	 * @see org.muml.storydiagram.calls.Callable#getInParameter()
 	 * @see #getCallable()
 	 * @generated
 	 */
 	EReference getCallable_InParameter();
 
 	/**
-	 * Returns the meta object for the reference list '{@link org.muml.storydiagram.calls.Callable#getOutParameters <em>Out Parameter</em>}'.
+	 * Returns the meta object for the reference list '{@link org.muml.storydiagram.calls.Callable#getOutParameter <em>Out Parameter</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference list '<em>Out Parameter</em>'.
-	 * @see org.muml.storydiagram.calls.Callable#getOutParameters()
+	 * @see org.muml.storydiagram.calls.Callable#getOutParameter()
 	 * @see #getCallable()
 	 * @generated
 	 */
@@ -1605,8 +1604,7 @@ public interface CallsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference INVOCATION__OWNED_PARAMETER_BINDINGS = eINSTANCE
-				.getInvocation_OwnedParameterBindings();
+		EReference INVOCATION__OWNED_PARAMETER_BINDINGS = eINSTANCE.getInvocation_OwnedParameterBindings();
 
 		/**
 		 * The meta object literal for the '<em><b>Callee</b></em>' reference feature.
@@ -1632,8 +1630,7 @@ public interface CallsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PARAMETER_BINDING__VALUE_EXPRESSION = eINSTANCE
-				.getParameterBinding_ValueExpression();
+		EReference PARAMETER_BINDING__VALUE_EXPRESSION = eINSTANCE.getParameterBinding_ValueExpression();
 
 		/**
 		 * The meta object literal for the '<em><b>Parameter</b></em>' reference feature.
@@ -1641,8 +1638,7 @@ public interface CallsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PARAMETER_BINDING__PARAMETER = eINSTANCE
-				.getParameterBinding_Parameter();
+		EReference PARAMETER_BINDING__PARAMETER = eINSTANCE.getParameterBinding_Parameter();
 
 		/**
 		 * The meta object literal for the '<em><b>Invocation</b></em>' container reference feature.
@@ -1650,8 +1646,7 @@ public interface CallsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PARAMETER_BINDING__INVOCATION = eINSTANCE
-				.getParameterBinding_Invocation();
+		EReference PARAMETER_BINDING__INVOCATION = eINSTANCE.getParameterBinding_Invocation();
 
 		/**
 		 * The meta object literal for the '{@link org.muml.storydiagram.calls.impl.OpaqueCallableImpl <em>Opaque Callable</em>}' class.
@@ -1677,8 +1672,7 @@ public interface CallsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference OPAQUE_CALLABLE__CALL_EXPRESSION = eINSTANCE
-				.getOpaqueCallable_CallExpression();
+		EReference OPAQUE_CALLABLE__CALL_EXPRESSION = eINSTANCE.getOpaqueCallable_CallExpression();
 
 		/**
 		 * The meta object literal for the '<em><b>Number Of Out Params</b></em>' operation.
@@ -1686,8 +1680,7 @@ public interface CallsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation OPAQUE_CALLABLE___NUMBER_OF_OUT_PARAMS__DIAGNOSTICCHAIN_MAP = eINSTANCE
-				.getOpaqueCallable__NumberOfOutParams__DiagnosticChain_Map();
+		EOperation OPAQUE_CALLABLE___NUMBER_OF_OUT_PARAMS__DIAGNOSTICCHAIN_MAP = eINSTANCE.getOpaqueCallable__NumberOfOutParams__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '{@link org.muml.storydiagram.calls.impl.ParameterExtensionImpl <em>Parameter Extension</em>}' class.
@@ -1705,8 +1698,7 @@ public interface CallsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PARAMETER_EXTENSION__PARAMETER = eINSTANCE
-				.getParameterExtension_Parameter();
+		EReference PARAMETER_EXTENSION__PARAMETER = eINSTANCE.getParameterExtension_Parameter();
 
 		/**
 		 * The meta object literal for the '{@link org.muml.storydiagram.calls.impl.CallableImpl <em>Callable</em>}' class.
@@ -1732,8 +1724,7 @@ public interface CallsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference CALLABLE__OUT_PARAMETER = eINSTANCE
-				.getCallable_OutParameter();
+		EReference CALLABLE__OUT_PARAMETER = eINSTANCE.getCallable_OutParameter();
 
 		/**
 		 * The meta object literal for the '<em><b>Contained Parameters</b></em>' containment reference list feature.
@@ -1741,8 +1732,7 @@ public interface CallsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference CALLABLE__CONTAINED_PARAMETERS = eINSTANCE
-				.getCallable_ContainedParameters();
+		EReference CALLABLE__CONTAINED_PARAMETERS = eINSTANCE.getCallable_ContainedParameters();
 
 	}
 

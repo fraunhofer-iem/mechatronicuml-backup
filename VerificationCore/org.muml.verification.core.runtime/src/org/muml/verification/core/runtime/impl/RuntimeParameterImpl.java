@@ -24,12 +24,12 @@ import org.muml.verification.core.runtime.RuntimeParameter;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.verification.core.runtime.impl.RuntimeParameterImpl#getMessage <em>Message</em>}</li>
  *   <li>{@link org.muml.verification.core.runtime.impl.RuntimeParameterImpl#getValue <em>Value</em>}</li>
  *   <li>{@link org.muml.verification.core.runtime.impl.RuntimeParameterImpl#getParameter <em>Parameter</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

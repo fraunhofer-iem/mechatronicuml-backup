@@ -22,10 +22,10 @@ import org.muml.pm.software.platform.SwplatformPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.pm.software.platform.impl.ConstraintImpl#getApiCommand <em>Api Command</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

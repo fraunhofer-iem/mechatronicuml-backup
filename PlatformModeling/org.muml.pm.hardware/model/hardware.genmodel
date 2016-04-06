@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Germany and Software Engineering, Project Group Mechatronic Systems Design, Fraunhofer Institute for Production Technology IPT, Germany"
-    modelDirectory="/de.uni_paderborn.fujaba.muml.hardware/src" modelPluginID="de.uni_paderborn.fujaba.muml.hardware"
+    modelDirectory="/org.muml.pm.hardware/src" modelPluginID="org.muml.pm.hardware"
     modelName="Hardware" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" copyrightFields="false"
     usedGenPackages="../../org.muml.core/model/core.genmodel#//core ../../org.muml.pim/model/pim.genmodel#//pim"
     operationReflection="true" importOrganizing="true">
   <foreignModel>hardware.ecore</foreignModel>
-  <genPackages prefix="Hardware" basePackage="de.uni_paderborn.fujaba.muml" disposableProviderFactory="true"
+  <genPackages prefix="Hardware" basePackage="org.muml.pm" disposableProviderFactory="true"
       ecorePackage="hardware.ecore#/">
-    <nestedGenPackages prefix="Hwplatform" basePackage="de.uni_paderborn.fujaba.muml.hardware"
-        disposableProviderFactory="true" ecorePackage="hardware.ecore#//hwplatform">
+    <nestedGenPackages prefix="Hwplatform" basePackage="org.muml.pm.hardware" disposableProviderFactory="true"
+        ecorePackage="hardware.ecore#//hwplatform">
       <genClasses ecoreClass="hardware.ecore#//hwplatform/HWPlatform">
         <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference hardware.ecore#//hwplatform/HWPlatform/embeddedPlatformParts"/>
         <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference hardware.ecore#//hwplatform/HWPlatform/networkingHardware"/>
@@ -62,8 +62,8 @@
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference hardware.ecore#//hwplatform/NetworkConnector/delegationHWPorts"/>
       </genClasses>
     </nestedGenPackages>
-    <nestedGenPackages prefix="Hwvaluetype" basePackage="de.uni_paderborn.fujaba.muml.hardware"
-        disposableProviderFactory="true" ecorePackage="hardware.ecore#//hwvaluetype">
+    <nestedGenPackages prefix="Hwvaluetype" basePackage="org.muml.pm.hardware" disposableProviderFactory="true"
+        ecorePackage="hardware.ecore#//hwvaluetype">
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="hardware.ecore#//hwvaluetype/DataSizeUnit">
         <genEnumLiterals ecoreEnumLiteral="hardware.ecore#//hwvaluetype/DataSizeUnit/Byte"/>
         <genEnumLiterals ecoreEnumLiteral="hardware.ecore#//hwvaluetype/DataSizeUnit/KByte"/>
@@ -104,7 +104,7 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hardware.ecore#//hwvaluetype/TimeInterval/unit"/>
       </genClasses>
     </nestedGenPackages>
-    <nestedGenPackages prefix="Hwplatforminstance" basePackage="de.uni_paderborn.fujaba.muml.hardware"
+    <nestedGenPackages prefix="Hwplatforminstance" basePackage="org.muml.pm.hardware"
         disposableProviderFactory="true" ecorePackage="hardware.ecore#//hwplatforminstance">
       <genClasses ecoreClass="hardware.ecore#//hwplatforminstance/HWPlatformInstance">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
@@ -155,8 +155,8 @@
             ecoreFeature="ecore:EReference hardware.ecore#//hwplatforminstance/NetworkConnectorInstance/networkConnectorType"/>
       </genClasses>
     </nestedGenPackages>
-    <nestedGenPackages prefix="Hwresource" basePackage="de.uni_paderborn.fujaba.muml.hardware"
-        disposableProviderFactory="true" ecorePackage="hardware.ecore#//hwresource">
+    <nestedGenPackages prefix="Hwresource" basePackage="org.muml.pm.hardware" disposableProviderFactory="true"
+        ecorePackage="hardware.ecore#//hwresource">
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="hardware.ecore#//hwresource/DeviceKind">
         <genEnumLiterals ecoreEnumLiteral="hardware.ecore#//hwresource/DeviceKind/SENSOR"/>
         <genEnumLiterals ecoreEnumLiteral="hardware.ecore#//hwresource/DeviceKind/ACTUATOR"/>
@@ -283,7 +283,7 @@
         <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference hardware.ecore#//hwresource/CommunicationResource/parentResource"/>
       </genClasses>
     </nestedGenPackages>
-    <nestedGenPackages prefix="Hwresourceinstance" basePackage="de.uni_paderborn.fujaba.muml.hardware"
+    <nestedGenPackages prefix="Hwresourceinstance" basePackage="org.muml.pm.hardware"
         disposableProviderFactory="true" ecorePackage="hardware.ecore#//hwresourceinstance">
       <genClasses image="false" ecoreClass="hardware.ecore#//hwresourceinstance/ResourceInstance">
         <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference hardware.ecore#//hwresourceinstance/ResourceInstance/hwports"/>

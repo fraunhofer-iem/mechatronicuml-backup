@@ -13,10 +13,10 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.modelica.transform.Root#getMaps <em>Maps</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.modelica.transform.TransformPackage#getRoot()
  * @model

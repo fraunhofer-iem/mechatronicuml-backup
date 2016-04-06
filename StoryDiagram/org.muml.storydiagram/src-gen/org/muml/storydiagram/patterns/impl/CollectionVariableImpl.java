@@ -18,11 +18,11 @@ import org.muml.storydiagram.patterns.PatternsPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.storydiagram.patterns.impl.CollectionVariableImpl#isAtLeastOne <em>At Least One</em>}</li>
  *   <li>{@link org.muml.storydiagram.patterns.impl.CollectionVariableImpl#isUnique <em>Unique</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -105,9 +105,7 @@ public class CollectionVariableImpl extends ObjectVariableImpl implements
 		boolean oldAtLeastOne = atLeastOne;
 		atLeastOne = newAtLeastOne;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					PatternsPackage.COLLECTION_VARIABLE__AT_LEAST_ONE,
-					oldAtLeastOne, atLeastOne));
+			eNotify(new ENotificationImpl(this, Notification.SET, PatternsPackage.COLLECTION_VARIABLE__AT_LEAST_ONE, oldAtLeastOne, atLeastOne));
 	}
 
 	/**
@@ -128,9 +126,7 @@ public class CollectionVariableImpl extends ObjectVariableImpl implements
 		boolean oldUnique = unique;
 		unique = newUnique;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					PatternsPackage.COLLECTION_VARIABLE__UNIQUE, oldUnique,
-					unique));
+			eNotify(new ENotificationImpl(this, Notification.SET, PatternsPackage.COLLECTION_VARIABLE__UNIQUE, oldUnique, unique));
 	}
 
 	/**
@@ -141,10 +137,10 @@ public class CollectionVariableImpl extends ObjectVariableImpl implements
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case PatternsPackage.COLLECTION_VARIABLE__AT_LEAST_ONE:
-			return isAtLeastOne();
-		case PatternsPackage.COLLECTION_VARIABLE__UNIQUE:
-			return isUnique();
+			case PatternsPackage.COLLECTION_VARIABLE__AT_LEAST_ONE:
+				return isAtLeastOne();
+			case PatternsPackage.COLLECTION_VARIABLE__UNIQUE:
+				return isUnique();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -157,12 +153,12 @@ public class CollectionVariableImpl extends ObjectVariableImpl implements
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case PatternsPackage.COLLECTION_VARIABLE__AT_LEAST_ONE:
-			setAtLeastOne((Boolean) newValue);
-			return;
-		case PatternsPackage.COLLECTION_VARIABLE__UNIQUE:
-			setUnique((Boolean) newValue);
-			return;
+			case PatternsPackage.COLLECTION_VARIABLE__AT_LEAST_ONE:
+				setAtLeastOne((Boolean)newValue);
+				return;
+			case PatternsPackage.COLLECTION_VARIABLE__UNIQUE:
+				setUnique((Boolean)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -175,12 +171,12 @@ public class CollectionVariableImpl extends ObjectVariableImpl implements
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case PatternsPackage.COLLECTION_VARIABLE__AT_LEAST_ONE:
-			setAtLeastOne(AT_LEAST_ONE_EDEFAULT);
-			return;
-		case PatternsPackage.COLLECTION_VARIABLE__UNIQUE:
-			setUnique(UNIQUE_EDEFAULT);
-			return;
+			case PatternsPackage.COLLECTION_VARIABLE__AT_LEAST_ONE:
+				setAtLeastOne(AT_LEAST_ONE_EDEFAULT);
+				return;
+			case PatternsPackage.COLLECTION_VARIABLE__UNIQUE:
+				setUnique(UNIQUE_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -193,10 +189,10 @@ public class CollectionVariableImpl extends ObjectVariableImpl implements
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case PatternsPackage.COLLECTION_VARIABLE__AT_LEAST_ONE:
-			return atLeastOne != AT_LEAST_ONE_EDEFAULT;
-		case PatternsPackage.COLLECTION_VARIABLE__UNIQUE:
-			return unique != UNIQUE_EDEFAULT;
+			case PatternsPackage.COLLECTION_VARIABLE__AT_LEAST_ONE:
+				return atLeastOne != AT_LEAST_ONE_EDEFAULT;
+			case PatternsPackage.COLLECTION_VARIABLE__UNIQUE:
+				return unique != UNIQUE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -208,8 +204,7 @@ public class CollectionVariableImpl extends ObjectVariableImpl implements
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy())
-			return super.toString();
+		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (atLeastOne: ");

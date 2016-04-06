@@ -20,12 +20,12 @@ import org.muml.storydiagram.patterns.PrimitiveVariable;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.storydiagram.patterns.expressions.PrimitiveVariableExpression#getPrimitiveVariable <em>Primitive Variable</em>}</li>
  * </ul>
- * </p>
  *
- * @see org.muml.storydiagram.patterns.expressions.PatternsExpressionsPackage#getPrimitiveVariableExpression()
+ * @see org.muml.storydiagram.patterns.expressions.ExpressionsPackage#getPrimitiveVariableExpression()
  * @model
  * @generated
  */
@@ -40,7 +40,7 @@ public interface PrimitiveVariableExpression extends Expression {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Primitive Variable</em>' reference.
 	 * @see #setPrimitiveVariable(PrimitiveVariable)
-	 * @see org.muml.storydiagram.patterns.expressions.PatternsExpressionsPackage#getPrimitiveVariableExpression_PrimitiveVariable()
+	 * @see org.muml.storydiagram.patterns.expressions.ExpressionsPackage#getPrimitiveVariableExpression_PrimitiveVariable()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */

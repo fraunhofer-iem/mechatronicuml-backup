@@ -41,7 +41,7 @@ public interface TtccarplatooningPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0";
+	String eNS_URI = "http://www.muml.org/example/ttccarplatooning/1.1.0";
 
 	/**
 	 * The package namespace name.

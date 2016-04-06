@@ -28,8 +28,8 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.INotifyChangedListener;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-import org.muml.storydiagram.StorydiagramsPackage;
-import org.muml.storydiagram.util.StorydiagramsAdapterFactory;
+import org.muml.storydiagram.StorydiagramPackage;
+import org.muml.storydiagram.util.StorydiagramAdapterFactory;
 
 /**
  * This is the factory that is used to provide the interfaces needed to support Viewers.
@@ -41,7 +41,7 @@ import org.muml.storydiagram.util.StorydiagramsAdapterFactory;
  * @generated
  */
 public class StorydiagramsItemProviderAdapterFactory extends
-		StorydiagramsAdapterFactory implements ComposeableAdapterFactory,
+		StorydiagramAdapterFactory implements ComposeableAdapterFactory,
 		IChangeNotifier, IDisposable, IChildCreationExtender {
 	/**
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
@@ -66,7 +66,7 @@ public class StorydiagramsItemProviderAdapterFactory extends
 	 * @generated
 	 */
 	protected ChildCreationExtenderManager childCreationExtenderManager = new ChildCreationExtenderManager(
-			StorydiagramsEditPlugin.INSTANCE, StorydiagramsPackage.eNS_URI);
+			StorydiagramsEditPlugin.INSTANCE, StorydiagramPackage.eNS_URI);
 
 	/**
 	 * This keeps track of all the supported types checked by {@link #isFactoryForType isFactoryForType}.

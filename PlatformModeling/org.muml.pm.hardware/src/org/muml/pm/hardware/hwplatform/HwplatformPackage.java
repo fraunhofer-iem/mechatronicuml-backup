@@ -46,7 +46,7 @@ public interface HwplatformPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.fujaba.de/muml/hardware/hwplatform/1.1/";
+	String eNS_URI = "http://www.muml.org/pm/hardware/hwplatform/1.0.0";
 
 	/**
 	 * The package namespace name.
@@ -75,22 +75,22 @@ public interface HwplatformPackage extends EPackage {
 	int HW_PLATFORM = 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HW_PLATFORM__ANNOTATION = CorePackage.NAMED_ELEMENT__ANNOTATION;
+	int HW_PLATFORM__ANNOTATIONS = CorePackage.NAMED_ELEMENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HW_PLATFORM__EXTENSION = CorePackage.NAMED_ELEMENT__EXTENSION;
+	int HW_PLATFORM__EXTENSIONS = CorePackage.NAMED_ELEMENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -337,22 +337,22 @@ public interface HwplatformPackage extends EPackage {
 	int PLATFORM_PART = 1;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PLATFORM_PART__ANNOTATION = CorePackage.NAMED_ELEMENT__ANNOTATION;
+	int PLATFORM_PART__ANNOTATIONS = CorePackage.NAMED_ELEMENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PLATFORM_PART__EXTENSION = CorePackage.NAMED_ELEMENT__EXTENSION;
+	int PLATFORM_PART__EXTENSIONS = CorePackage.NAMED_ELEMENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -590,22 +590,22 @@ public interface HwplatformPackage extends EPackage {
 	int HW_PLATFORM_PART = 2;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HW_PLATFORM_PART__ANNOTATION = PLATFORM_PART__ANNOTATION;
+	int HW_PLATFORM_PART__ANNOTATIONS = PLATFORM_PART__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HW_PLATFORM_PART__EXTENSION = PLATFORM_PART__EXTENSION;
+	int HW_PLATFORM_PART__EXTENSIONS = PLATFORM_PART__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -861,22 +861,22 @@ public interface HwplatformPackage extends EPackage {
 	int RESOURCE_PART = 3;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_PART__ANNOTATION = PLATFORM_PART__ANNOTATION;
+	int RESOURCE_PART__ANNOTATIONS = PLATFORM_PART__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_PART__EXTENSION = PLATFORM_PART__EXTENSION;
+	int RESOURCE_PART__EXTENSIONS = PLATFORM_PART__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1123,22 +1123,22 @@ public interface HwplatformPackage extends EPackage {
 	int DELEGATION_HW_PORT = 4;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DELEGATION_HW_PORT__ANNOTATION = ConnectorPackage.CONNECTOR_ENDPOINT__ANNOTATION;
+	int DELEGATION_HW_PORT__ANNOTATIONS = ConnectorPackage.CONNECTOR_ENDPOINT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DELEGATION_HW_PORT__EXTENSION = ConnectorPackage.CONNECTOR_ENDPOINT__EXTENSION;
+	int DELEGATION_HW_PORT__EXTENSIONS = ConnectorPackage.CONNECTOR_ENDPOINT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -1421,22 +1421,22 @@ public interface HwplatformPackage extends EPackage {
 	int HW_PORT_PART = 5;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HW_PORT_PART__ANNOTATION = ConnectorPackage.CONNECTOR_ENDPOINT__ANNOTATION;
+	int HW_PORT_PART__ANNOTATIONS = ConnectorPackage.CONNECTOR_ENDPOINT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HW_PORT_PART__EXTENSION = ConnectorPackage.CONNECTOR_ENDPOINT__EXTENSION;
+	int HW_PORT_PART__EXTENSIONS = ConnectorPackage.CONNECTOR_ENDPOINT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -1701,22 +1701,22 @@ public interface HwplatformPackage extends EPackage {
 	int BUS = 6;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BUS__ANNOTATION = ConnectorPackage.CONNECTOR_ENDPOINT__ANNOTATION;
+	int BUS__ANNOTATIONS = ConnectorPackage.CONNECTOR_ENDPOINT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BUS__EXTENSION = ConnectorPackage.CONNECTOR_ENDPOINT__EXTENSION;
+	int BUS__EXTENSIONS = ConnectorPackage.CONNECTOR_ENDPOINT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -1963,22 +1963,22 @@ public interface HwplatformPackage extends EPackage {
 	int NETWORKING_HARDWARE = 8;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NETWORKING_HARDWARE__ANNOTATION = CorePackage.EXTENDABLE_ELEMENT__ANNOTATION;
+	int NETWORKING_HARDWARE__ANNOTATIONS = CorePackage.EXTENDABLE_ELEMENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NETWORKING_HARDWARE__EXTENSION = CorePackage.EXTENDABLE_ELEMENT__EXTENSION;
+	int NETWORKING_HARDWARE__EXTENSIONS = CorePackage.EXTENDABLE_ELEMENT__EXTENSIONS;
 
 	/**
 	 * The number of structural features of the '<em>Networking Hardware</em>' class.
@@ -2180,22 +2180,22 @@ public interface HwplatformPackage extends EPackage {
 	int NETWORK_BRIDGE = 7;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NETWORK_BRIDGE__ANNOTATION = NETWORKING_HARDWARE__ANNOTATION;
+	int NETWORK_BRIDGE__ANNOTATIONS = NETWORKING_HARDWARE__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NETWORK_BRIDGE__EXTENSION = NETWORKING_HARDWARE__EXTENSION;
+	int NETWORK_BRIDGE__EXTENSIONS = NETWORKING_HARDWARE__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -2433,22 +2433,22 @@ public interface HwplatformPackage extends EPackage {
 	int NETWORK_CONNECTOR = 9;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NETWORK_CONNECTOR__ANNOTATION = ConnectorPackage.CONNECTOR__ANNOTATION;
+	int NETWORK_CONNECTOR__ANNOTATIONS = ConnectorPackage.CONNECTOR__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NETWORK_CONNECTOR__EXTENSION = ConnectorPackage.CONNECTOR__EXTENSION;
+	int NETWORK_CONNECTOR__EXTENSIONS = ConnectorPackage.CONNECTOR__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.

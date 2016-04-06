@@ -19,7 +19,7 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated ontology -->
       <package
-            uri="http://www.fujaba.de/muml/ontology/0.4.0"
+            uri="http://www.muml.org/ontology/1.0.0"
             class="org.muml.ontology.OntologyPackage"
             genModel="model/ontology.genmodel"/>
    </extension>

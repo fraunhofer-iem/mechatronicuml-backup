@@ -29,11 +29,11 @@ import java.util.Collection;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.verification.core.runtime.impl.RuntimeDiscreteMultiPortInstanceImpl#getStatechartInstance <em>Statechart Instance</em>}</li>
  *   <li>{@link org.muml.verification.core.runtime.impl.RuntimeDiscreteMultiPortInstanceImpl#getMessageBuffer <em>Message Buffer</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

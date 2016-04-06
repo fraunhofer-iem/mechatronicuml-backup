@@ -19,10 +19,10 @@ import org.muml.storydiagram.patterns.MatchingPattern;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.storydiagram.activities.MatchingStoryNode#getOwnedPattern <em>Owned Pattern</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.storydiagram.activities.ActivitiesPackage#getMatchingStoryNode()
  * @model
@@ -31,12 +31,6 @@ import org.muml.storydiagram.patterns.MatchingPattern;
 public interface MatchingStoryNode extends StoryNode {
 	/**
 	 * Returns the value of the '<em><b>Owned Pattern</b></em>' containment reference.
-	 * <p>
-	 * This feature subsets the following features:
-	 * <ul>
-	 *   <li>'{@link org.muml.storydiagram.activities.StoryNode#getStoryPattern() <em>Story Pattern</em>}'</li>
-	 * </ul>
-	 * </p>
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -45,7 +39,7 @@ public interface MatchingStoryNode extends StoryNode {
 	 * @return the value of the '<em>Owned Pattern</em>' containment reference.
 	 * @see #setOwnedPattern(MatchingPattern)
 	 * @see org.muml.storydiagram.activities.ActivitiesPackage#getMatchingStoryNode_OwnedPattern()
-	 * @model containment="true" resolveProxies="true" required="true" ordered="false"
+	 * @model containment="true" required="true" ordered="false"
 	 * @generated
 	 */
 	MatchingPattern getOwnedPattern();

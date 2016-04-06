@@ -30,11 +30,11 @@ import java.util.Collection;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.verification.core.runtime.impl.RuntimeComponentInstanceImpl#getStatechartInstance <em>Statechart Instance</em>}</li>
  *   <li>{@link org.muml.verification.core.runtime.impl.RuntimeComponentInstanceImpl#getMessageBuffer <em>Message Buffer</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

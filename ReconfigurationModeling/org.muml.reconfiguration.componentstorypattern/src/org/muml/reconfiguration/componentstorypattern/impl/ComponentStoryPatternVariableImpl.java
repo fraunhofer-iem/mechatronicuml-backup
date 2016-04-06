@@ -20,13 +20,13 @@ import org.muml.storydiagram.patterns.BindingState;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.reconfiguration.componentstorypattern.impl.ComponentStoryPatternVariableImpl#getComment <em>Comment</em>}</li>
  *   <li>{@link org.muml.reconfiguration.componentstorypattern.impl.ComponentStoryPatternVariableImpl#getBindingSemantics <em>Binding Semantics</em>}</li>
  *   <li>{@link org.muml.reconfiguration.componentstorypattern.impl.ComponentStoryPatternVariableImpl#getBindingOperator <em>Binding Operator</em>}</li>
  *   <li>{@link org.muml.reconfiguration.componentstorypattern.impl.ComponentStoryPatternVariableImpl#getBindingState <em>Binding State</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

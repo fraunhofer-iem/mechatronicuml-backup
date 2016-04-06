@@ -63,7 +63,7 @@ public class ActivitiesAdapterFactory extends AdapterFactoryImpl {
 			return true;
 		}
 		if (object instanceof EObject) {
-			return ((EObject) object).eClass().getEPackage() == modelPackage;
+			return ((EObject)object).eClass().getEPackage() == modelPackage;
 		}
 		return false;
 	}
@@ -75,126 +75,103 @@ public class ActivitiesAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	protected ActivitiesSwitch<Adapter> modelSwitch = new ActivitiesSwitch<Adapter>() {
-		@Override
-		public Adapter caseExceptionVariable(ExceptionVariable object) {
-			return createExceptionVariableAdapter();
-		}
-
-		@Override
-		public Adapter caseActivityEdge(ActivityEdge object) {
-			return createActivityEdgeAdapter();
-		}
-
-		@Override
-		public Adapter caseActivityNode(ActivityNode object) {
-			return createActivityNodeAdapter();
-		}
-
-		@Override
-		public Adapter caseActivity(Activity object) {
-			return createActivityAdapter();
-		}
-
-		@Override
-		public Adapter caseOperationExtension(OperationExtension object) {
-			return createOperationExtensionAdapter();
-		}
-
-		@Override
-		public Adapter caseMatchingStoryNode(MatchingStoryNode object) {
-			return createMatchingStoryNodeAdapter();
-		}
-
-		@Override
-		public Adapter caseStoryNode(StoryNode object) {
-			return createStoryNodeAdapter();
-		}
-
-		@Override
-		public Adapter caseStructuredNode(StructuredNode object) {
-			return createStructuredNodeAdapter();
-		}
-
-		@Override
-		public Adapter caseJunctionNode(JunctionNode object) {
-			return createJunctionNodeAdapter();
-		}
-
-		@Override
-		public Adapter caseInitialNode(InitialNode object) {
-			return createInitialNodeAdapter();
-		}
-
-		@Override
-		public Adapter caseStatementNode(StatementNode object) {
-			return createStatementNodeAdapter();
-		}
-
-		@Override
-		public Adapter caseActivityFinalNode(ActivityFinalNode object) {
-			return createActivityFinalNodeAdapter();
-		}
-
-		@Override
-		public Adapter caseActivityCallNode(ActivityCallNode object) {
-			return createActivityCallNodeAdapter();
-		}
-
-		@Override
-		public Adapter caseModifyingStoryNode(ModifyingStoryNode object) {
-			return createModifyingStoryNodeAdapter();
-		}
-
-		@Override
-		public Adapter caseFlowFinalNode(FlowFinalNode object) {
-			return createFlowFinalNodeAdapter();
-		}
-
-		@Override
-		public Adapter caseExtendableElement(ExtendableElement object) {
-			return createExtendableElementAdapter();
-		}
-
-		@Override
-		public Adapter caseTypedElement(TypedElement object) {
-			return createTypedElementAdapter();
-		}
-
-		@Override
-		public Adapter caseVariable(Variable object) {
-			return createVariableAdapter();
-		}
-
-		@Override
-		public Adapter caseNamedElement(NamedElement object) {
-			return createNamedElementAdapter();
-		}
-
-		@Override
-		public Adapter caseCommentableElement(CommentableElement object) {
-			return createCommentableElementAdapter();
-		}
-
-		@Override
-		public Adapter caseCallable(Callable object) {
-			return createCallableAdapter();
-		}
-
-		@Override
-		public Adapter caseExtension(Extension object) {
-			return createExtensionAdapter();
-		}
-
-		@Override
-		public Adapter caseInvocation(Invocation object) {
-			return createInvocationAdapter();
-		}
-
-		@Override
-		public Adapter defaultCase(EObject object) {
-			return createEObjectAdapter();
-		}
-	};
+			@Override
+			public Adapter caseExceptionVariable(ExceptionVariable object) {
+				return createExceptionVariableAdapter();
+			}
+			@Override
+			public Adapter caseActivityEdge(ActivityEdge object) {
+				return createActivityEdgeAdapter();
+			}
+			@Override
+			public Adapter caseActivityNode(ActivityNode object) {
+				return createActivityNodeAdapter();
+			}
+			@Override
+			public Adapter caseActivity(Activity object) {
+				return createActivityAdapter();
+			}
+			@Override
+			public Adapter caseOperationExtension(OperationExtension object) {
+				return createOperationExtensionAdapter();
+			}
+			@Override
+			public Adapter caseMatchingStoryNode(MatchingStoryNode object) {
+				return createMatchingStoryNodeAdapter();
+			}
+			@Override
+			public Adapter caseStoryNode(StoryNode object) {
+				return createStoryNodeAdapter();
+			}
+			@Override
+			public Adapter caseStructuredNode(StructuredNode object) {
+				return createStructuredNodeAdapter();
+			}
+			@Override
+			public Adapter caseJunctionNode(JunctionNode object) {
+				return createJunctionNodeAdapter();
+			}
+			@Override
+			public Adapter caseInitialNode(InitialNode object) {
+				return createInitialNodeAdapter();
+			}
+			@Override
+			public Adapter caseStatementNode(StatementNode object) {
+				return createStatementNodeAdapter();
+			}
+			@Override
+			public Adapter caseActivityFinalNode(ActivityFinalNode object) {
+				return createActivityFinalNodeAdapter();
+			}
+			@Override
+			public Adapter caseActivityCallNode(ActivityCallNode object) {
+				return createActivityCallNodeAdapter();
+			}
+			@Override
+			public Adapter caseModifyingStoryNode(ModifyingStoryNode object) {
+				return createModifyingStoryNodeAdapter();
+			}
+			@Override
+			public Adapter caseFlowFinalNode(FlowFinalNode object) {
+				return createFlowFinalNodeAdapter();
+			}
+			@Override
+			public Adapter caseExtendableElement(ExtendableElement object) {
+				return createExtendableElementAdapter();
+			}
+			@Override
+			public Adapter caseTypedElement(TypedElement object) {
+				return createTypedElementAdapter();
+			}
+			@Override
+			public Adapter caseVariable(Variable object) {
+				return createVariableAdapter();
+			}
+			@Override
+			public Adapter caseNamedElement(NamedElement object) {
+				return createNamedElementAdapter();
+			}
+			@Override
+			public Adapter caseCommentableElement(CommentableElement object) {
+				return createCommentableElementAdapter();
+			}
+			@Override
+			public Adapter caseCallable(Callable object) {
+				return createCallableAdapter();
+			}
+			@Override
+			public Adapter caseExtension(Extension object) {
+				return createExtensionAdapter();
+			}
+			@Override
+			public Adapter caseInvocation(Invocation object) {
+				return createInvocationAdapter();
+			}
+			@Override
+			public Adapter defaultCase(EObject object) {
+				return createEObjectAdapter();
+			}
+		};
 
 	/**
 	 * Creates an adapter for the <code>target</code>.
@@ -206,7 +183,7 @@ public class ActivitiesAdapterFactory extends AdapterFactoryImpl {
 	 */
 	@Override
 	public Adapter createAdapter(Notifier target) {
-		return modelSwitch.doSwitch((EObject) target);
+		return modelSwitch.doSwitch((EObject)target);
 	}
 
 	/**

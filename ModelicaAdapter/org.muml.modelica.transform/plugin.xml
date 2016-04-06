@@ -8,7 +8,7 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated transform -->
       <package
-            uri="http://www.fujaba.de/modelica/m2t/transform/0.4.0"
+            uri="http://www.muml.de/modelica/transform/1.0.0"
             class="org.muml.modelica.transform.TransformPackage"
             genModel="model/transform.genmodel"/>
    </extension>

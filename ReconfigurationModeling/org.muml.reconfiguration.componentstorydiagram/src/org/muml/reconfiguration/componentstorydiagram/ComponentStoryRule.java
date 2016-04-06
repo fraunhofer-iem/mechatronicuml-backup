@@ -16,11 +16,11 @@ import org.muml.storydiagram.activities.Activity;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.reconfiguration.componentstorydiagram.ComponentStoryRule#getActivity <em>Activity</em>}</li>
  *   <li>{@link org.muml.reconfiguration.componentstorydiagram.ComponentStoryRule#isConstructor <em>Constructor</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.reconfiguration.componentstorydiagram.ComponentstorydiagramPackage#getComponentStoryRule()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL ComponentVariableHasToHaveSameTypeAsReconfiguredComponent='-- A ComponentVariable has to have the reconfigured component as type\r\nself.activity.ownedActivityNode->select(oclIsTypeOf(ComponentStoryNode))->forAll(oAN | oAN.oclAsType(ComponentStoryNode).componentStoryPattern.thisVariable.type = self.reconfiguredComponent)\r\nand\r\nself.activity.ownedActivityNode->select(oclIsTypeOf(ControllerExchangeNode))->forAll(oAN | oAN.oclAsType(ControllerExchangeNode).componentStoryPattern.thisVariable.type = self.reconfiguredComponent)'"

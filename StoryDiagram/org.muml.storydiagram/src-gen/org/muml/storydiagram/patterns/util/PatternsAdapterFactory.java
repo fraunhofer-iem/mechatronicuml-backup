@@ -60,7 +60,7 @@ public class PatternsAdapterFactory extends AdapterFactoryImpl {
 			return true;
 		}
 		if (object instanceof EObject) {
-			return ((EObject) object).eClass().getEPackage() == modelPackage;
+			return ((EObject)object).eClass().getEPackage() == modelPackage;
 		}
 		return false;
 	}
@@ -72,106 +72,87 @@ public class PatternsAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	protected PatternsSwitch<Adapter> modelSwitch = new PatternsSwitch<Adapter>() {
-		@Override
-		public Adapter caseObjectVariable(ObjectVariable object) {
-			return createObjectVariableAdapter();
-		}
-
-		@Override
-		public Adapter caseAbstractVariable(AbstractVariable object) {
-			return createAbstractVariableAdapter();
-		}
-
-		@Override
-		public Adapter caseConstraint(Constraint object) {
-			return createConstraintAdapter();
-		}
-
-		@Override
-		public Adapter caseAbstractLinkVariable(AbstractLinkVariable object) {
-			return createAbstractLinkVariableAdapter();
-		}
-
-		@Override
-		public Adapter caseLinkConstraint(LinkConstraint object) {
-			return createLinkConstraintAdapter();
-		}
-
-		@Override
-		public Adapter caseAttributeAssignment(AttributeAssignment object) {
-			return createAttributeAssignmentAdapter();
-		}
-
-		@Override
-		public Adapter caseCollectionVariable(CollectionVariable object) {
-			return createCollectionVariableAdapter();
-		}
-
-		@Override
-		public Adapter casePrimitiveVariable(PrimitiveVariable object) {
-			return createPrimitiveVariableAdapter();
-		}
-
-		@Override
-		public Adapter casePath(Path object) {
-			return createPathAdapter();
-		}
-
-		@Override
-		public Adapter caseLinkVariable(LinkVariable object) {
-			return createLinkVariableAdapter();
-		}
-
-		@Override
-		public Adapter caseInclusionLink(InclusionLink object) {
-			return createInclusionLinkAdapter();
-		}
-
-		@Override
-		public Adapter caseMatchingPattern(MatchingPattern object) {
-			return createMatchingPatternAdapter();
-		}
-
-		@Override
-		public Adapter caseMaybeLink(MaybeLink object) {
-			return createMaybeLinkAdapter();
-		}
-
-		@Override
-		public Adapter caseStoryPattern(StoryPattern object) {
-			return createStoryPatternAdapter();
-		}
-
-		@Override
-		public Adapter caseExtendableElement(ExtendableElement object) {
-			return createExtendableElementAdapter();
-		}
-
-		@Override
-		public Adapter caseTypedElement(TypedElement object) {
-			return createTypedElementAdapter();
-		}
-
-		@Override
-		public Adapter caseVariable(Variable object) {
-			return createVariableAdapter();
-		}
-
-		@Override
-		public Adapter caseNamedElement(NamedElement object) {
-			return createNamedElementAdapter();
-		}
-
-		@Override
-		public Adapter caseCommentableElement(CommentableElement object) {
-			return createCommentableElementAdapter();
-		}
-
-		@Override
-		public Adapter defaultCase(EObject object) {
-			return createEObjectAdapter();
-		}
-	};
+			@Override
+			public Adapter caseObjectVariable(ObjectVariable object) {
+				return createObjectVariableAdapter();
+			}
+			@Override
+			public Adapter caseAbstractVariable(AbstractVariable object) {
+				return createAbstractVariableAdapter();
+			}
+			@Override
+			public Adapter caseConstraint(Constraint object) {
+				return createConstraintAdapter();
+			}
+			@Override
+			public Adapter caseAbstractLinkVariable(AbstractLinkVariable object) {
+				return createAbstractLinkVariableAdapter();
+			}
+			@Override
+			public Adapter caseLinkConstraint(LinkConstraint object) {
+				return createLinkConstraintAdapter();
+			}
+			@Override
+			public Adapter caseAttributeAssignment(AttributeAssignment object) {
+				return createAttributeAssignmentAdapter();
+			}
+			@Override
+			public Adapter caseCollectionVariable(CollectionVariable object) {
+				return createCollectionVariableAdapter();
+			}
+			@Override
+			public Adapter casePrimitiveVariable(PrimitiveVariable object) {
+				return createPrimitiveVariableAdapter();
+			}
+			@Override
+			public Adapter casePath(Path object) {
+				return createPathAdapter();
+			}
+			@Override
+			public Adapter caseLinkVariable(LinkVariable object) {
+				return createLinkVariableAdapter();
+			}
+			@Override
+			public Adapter caseInclusionLink(InclusionLink object) {
+				return createInclusionLinkAdapter();
+			}
+			@Override
+			public Adapter caseMatchingPattern(MatchingPattern object) {
+				return createMatchingPatternAdapter();
+			}
+			@Override
+			public Adapter caseMaybeLink(MaybeLink object) {
+				return createMaybeLinkAdapter();
+			}
+			@Override
+			public Adapter caseStoryPattern(StoryPattern object) {
+				return createStoryPatternAdapter();
+			}
+			@Override
+			public Adapter caseExtendableElement(ExtendableElement object) {
+				return createExtendableElementAdapter();
+			}
+			@Override
+			public Adapter caseTypedElement(TypedElement object) {
+				return createTypedElementAdapter();
+			}
+			@Override
+			public Adapter caseVariable(Variable object) {
+				return createVariableAdapter();
+			}
+			@Override
+			public Adapter caseNamedElement(NamedElement object) {
+				return createNamedElementAdapter();
+			}
+			@Override
+			public Adapter caseCommentableElement(CommentableElement object) {
+				return createCommentableElementAdapter();
+			}
+			@Override
+			public Adapter defaultCase(EObject object) {
+				return createEObjectAdapter();
+			}
+		};
 
 	/**
 	 * Creates an adapter for the <code>target</code>.
@@ -183,7 +164,7 @@ public class PatternsAdapterFactory extends AdapterFactoryImpl {
 	 */
 	@Override
 	public Adapter createAdapter(Notifier target) {
-		return modelSwitch.doSwitch((EObject) target);
+		return modelSwitch.doSwitch((EObject)target);
 	}
 
 	/**

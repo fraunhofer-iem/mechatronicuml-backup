@@ -19,10 +19,10 @@ import org.muml.pm.software.platform.TimeConstraint;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.pm.software.platform.impl.TimeConstraintImpl#getSamplingTime <em>Sampling Time</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

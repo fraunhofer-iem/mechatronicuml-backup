@@ -14,11 +14,11 @@ import org.muml.pim.connector.ConnectorEndpoint;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.reconfiguration.componentstorypattern.PortVariable#getPortType <em>Port Type</em>}</li>
  *   <li>{@link org.muml.reconfiguration.componentstorypattern.PortVariable#getConnectorVariables <em>Connector Variables</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.reconfiguration.componentstorypattern.ComponentstorypatternPackage#getPortVariable()
  * @model abstract="true"

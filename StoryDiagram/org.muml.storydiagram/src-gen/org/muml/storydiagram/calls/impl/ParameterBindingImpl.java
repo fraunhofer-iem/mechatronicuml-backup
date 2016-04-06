@@ -23,12 +23,12 @@ import org.muml.storydiagram.calls.ParameterBinding;
  * <!-- begin-user-doc --> An implementation of the model object '<em><b>Parameter Binding</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.storydiagram.calls.impl.ParameterBindingImpl#getValueExpression <em>Value Expression</em>}</li>
  *   <li>{@link org.muml.storydiagram.calls.impl.ParameterBindingImpl#getParameter <em>Parameter</em>}</li>
  *   <li>{@link org.muml.storydiagram.calls.impl.ParameterBindingImpl#getInvocation <em>Invocation</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -74,41 +74,6 @@ public class ParameterBindingImpl extends CommentableElementImpl implements
 	 * @generated
 	 */
 	public Expression getValueExpression() {
-		if (valueExpression != null && valueExpression.eIsProxy()) {
-			InternalEObject oldValueExpression = (InternalEObject) valueExpression;
-			valueExpression = (Expression) eResolveProxy(oldValueExpression);
-			if (valueExpression != oldValueExpression) {
-				InternalEObject newValueExpression = (InternalEObject) valueExpression;
-				NotificationChain msgs = oldValueExpression
-						.eInverseRemove(
-								this,
-								EOPPOSITE_FEATURE_BASE
-										- CallsPackage.PARAMETER_BINDING__VALUE_EXPRESSION,
-								null, null);
-				if (newValueExpression.eInternalContainer() == null) {
-					msgs = newValueExpression
-							.eInverseAdd(
-									this,
-									EOPPOSITE_FEATURE_BASE
-											- CallsPackage.PARAMETER_BINDING__VALUE_EXPRESSION,
-									null, msgs);
-				}
-				if (msgs != null)
-					msgs.dispatch();
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							CallsPackage.PARAMETER_BINDING__VALUE_EXPRESSION,
-							oldValueExpression, valueExpression));
-			}
-		}
-		return valueExpression;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Expression basicGetValueExpression() {
 		return valueExpression;
 	}
 
@@ -121,14 +86,8 @@ public class ParameterBindingImpl extends CommentableElementImpl implements
 		Expression oldValueExpression = valueExpression;
 		valueExpression = newValueExpression;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this,
-					Notification.SET,
-					CallsPackage.PARAMETER_BINDING__VALUE_EXPRESSION,
-					oldValueExpression, newValueExpression);
-			if (msgs == null)
-				msgs = notification;
-			else
-				msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CallsPackage.PARAMETER_BINDING__VALUE_EXPRESSION, oldValueExpression, newValueExpression);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -141,26 +100,14 @@ public class ParameterBindingImpl extends CommentableElementImpl implements
 		if (newValueExpression != valueExpression) {
 			NotificationChain msgs = null;
 			if (valueExpression != null)
-				msgs = ((InternalEObject) valueExpression)
-						.eInverseRemove(
-								this,
-								EOPPOSITE_FEATURE_BASE
-										- CallsPackage.PARAMETER_BINDING__VALUE_EXPRESSION,
-								null, msgs);
+				msgs = ((InternalEObject)valueExpression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CallsPackage.PARAMETER_BINDING__VALUE_EXPRESSION, null, msgs);
 			if (newValueExpression != null)
-				msgs = ((InternalEObject) newValueExpression)
-						.eInverseAdd(
-								this,
-								EOPPOSITE_FEATURE_BASE
-										- CallsPackage.PARAMETER_BINDING__VALUE_EXPRESSION,
-								null, msgs);
+				msgs = ((InternalEObject)newValueExpression).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CallsPackage.PARAMETER_BINDING__VALUE_EXPRESSION, null, msgs);
 			msgs = basicSetValueExpression(newValueExpression, msgs);
-			if (msgs != null)
-				msgs.dispatch();
-		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					CallsPackage.PARAMETER_BINDING__VALUE_EXPRESSION,
-					newValueExpression, newValueExpression));
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CallsPackage.PARAMETER_BINDING__VALUE_EXPRESSION, newValueExpression, newValueExpression));
 	}
 
 	/**
@@ -169,13 +116,11 @@ public class ParameterBindingImpl extends CommentableElementImpl implements
 	 */
 	public EParameter getParameter() {
 		if (parameter != null && parameter.eIsProxy()) {
-			InternalEObject oldParameter = (InternalEObject) parameter;
-			parameter = (EParameter) eResolveProxy(oldParameter);
+			InternalEObject oldParameter = (InternalEObject)parameter;
+			parameter = (EParameter)eResolveProxy(oldParameter);
 			if (parameter != oldParameter) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							CallsPackage.PARAMETER_BINDING__PARAMETER,
-							oldParameter, parameter));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CallsPackage.PARAMETER_BINDING__PARAMETER, oldParameter, parameter));
 			}
 		}
 		return parameter;
@@ -197,9 +142,7 @@ public class ParameterBindingImpl extends CommentableElementImpl implements
 		EParameter oldParameter = parameter;
 		parameter = newParameter;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					CallsPackage.PARAMETER_BINDING__PARAMETER, oldParameter,
-					parameter));
+			eNotify(new ENotificationImpl(this, Notification.SET, CallsPackage.PARAMETER_BINDING__PARAMETER, oldParameter, parameter));
 	}
 
 	/**
@@ -207,19 +150,8 @@ public class ParameterBindingImpl extends CommentableElementImpl implements
 	 * @generated
 	 */
 	public Invocation getInvocation() {
-		if (eContainerFeatureID() != CallsPackage.PARAMETER_BINDING__INVOCATION)
-			return null;
-		return (Invocation) eContainer();
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Invocation basicGetInvocation() {
-		if (eContainerFeatureID() != CallsPackage.PARAMETER_BINDING__INVOCATION)
-			return null;
-		return (Invocation) eInternalContainer();
+		if (eContainerFeatureID() != CallsPackage.PARAMETER_BINDING__INVOCATION) return null;
+		return (Invocation)eInternalContainer();
 	}
 
 	/**
@@ -228,8 +160,7 @@ public class ParameterBindingImpl extends CommentableElementImpl implements
 	 */
 	public NotificationChain basicSetInvocation(Invocation newInvocation,
 			NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject) newInvocation,
-				CallsPackage.PARAMETER_BINDING__INVOCATION, msgs);
+		msgs = eBasicSetContainer((InternalEObject)newInvocation, CallsPackage.PARAMETER_BINDING__INVOCATION, msgs);
 		return msgs;
 	}
 
@@ -238,25 +169,19 @@ public class ParameterBindingImpl extends CommentableElementImpl implements
 	 * @generated
 	 */
 	public void setInvocation(Invocation newInvocation) {
-		if (newInvocation != eInternalContainer()
-				|| (eContainerFeatureID() != CallsPackage.PARAMETER_BINDING__INVOCATION && newInvocation != null)) {
+		if (newInvocation != eInternalContainer() || (eContainerFeatureID() != CallsPackage.PARAMETER_BINDING__INVOCATION && newInvocation != null)) {
 			if (EcoreUtil.isAncestor(this, newInvocation))
-				throw new IllegalArgumentException(
-						"Recursive containment not allowed for " + toString());
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newInvocation != null)
-				msgs = ((InternalEObject) newInvocation).eInverseAdd(this,
-						CallsPackage.INVOCATION__OWNED_PARAMETER_BINDINGS,
-						Invocation.class, msgs);
+				msgs = ((InternalEObject)newInvocation).eInverseAdd(this, CallsPackage.INVOCATION__OWNED_PARAMETER_BINDINGS, Invocation.class, msgs);
 			msgs = basicSetInvocation(newInvocation, msgs);
-			if (msgs != null)
-				msgs.dispatch();
-		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					CallsPackage.PARAMETER_BINDING__INVOCATION, newInvocation,
-					newInvocation));
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CallsPackage.PARAMETER_BINDING__INVOCATION, newInvocation, newInvocation));
 	}
 
 	/**
@@ -267,10 +192,10 @@ public class ParameterBindingImpl extends CommentableElementImpl implements
 	public NotificationChain eInverseAdd(InternalEObject otherEnd,
 			int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case CallsPackage.PARAMETER_BINDING__INVOCATION:
-			if (eInternalContainer() != null)
-				msgs = eBasicRemoveFromContainer(msgs);
-			return basicSetInvocation((Invocation) otherEnd, msgs);
+			case CallsPackage.PARAMETER_BINDING__INVOCATION:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetInvocation((Invocation)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -283,10 +208,10 @@ public class ParameterBindingImpl extends CommentableElementImpl implements
 	public NotificationChain eInverseRemove(InternalEObject otherEnd,
 			int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case CallsPackage.PARAMETER_BINDING__VALUE_EXPRESSION:
-			return basicSetValueExpression(null, msgs);
-		case CallsPackage.PARAMETER_BINDING__INVOCATION:
-			return basicSetInvocation(null, msgs);
+			case CallsPackage.PARAMETER_BINDING__VALUE_EXPRESSION:
+				return basicSetValueExpression(null, msgs);
+			case CallsPackage.PARAMETER_BINDING__INVOCATION:
+				return basicSetInvocation(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -299,10 +224,8 @@ public class ParameterBindingImpl extends CommentableElementImpl implements
 	public NotificationChain eBasicRemoveFromContainerFeature(
 			NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
-		case CallsPackage.PARAMETER_BINDING__INVOCATION:
-			return eInternalContainer().eInverseRemove(this,
-					CallsPackage.INVOCATION__OWNED_PARAMETER_BINDINGS,
-					Invocation.class, msgs);
+			case CallsPackage.PARAMETER_BINDING__INVOCATION:
+				return eInternalContainer().eInverseRemove(this, CallsPackage.INVOCATION__OWNED_PARAMETER_BINDINGS, Invocation.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -314,18 +237,13 @@ public class ParameterBindingImpl extends CommentableElementImpl implements
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case CallsPackage.PARAMETER_BINDING__VALUE_EXPRESSION:
-			if (resolve)
+			case CallsPackage.PARAMETER_BINDING__VALUE_EXPRESSION:
 				return getValueExpression();
-			return basicGetValueExpression();
-		case CallsPackage.PARAMETER_BINDING__PARAMETER:
-			if (resolve)
-				return getParameter();
-			return basicGetParameter();
-		case CallsPackage.PARAMETER_BINDING__INVOCATION:
-			if (resolve)
+			case CallsPackage.PARAMETER_BINDING__PARAMETER:
+				if (resolve) return getParameter();
+				return basicGetParameter();
+			case CallsPackage.PARAMETER_BINDING__INVOCATION:
 				return getInvocation();
-			return basicGetInvocation();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -337,15 +255,15 @@ public class ParameterBindingImpl extends CommentableElementImpl implements
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case CallsPackage.PARAMETER_BINDING__VALUE_EXPRESSION:
-			setValueExpression((Expression) newValue);
-			return;
-		case CallsPackage.PARAMETER_BINDING__PARAMETER:
-			setParameter((EParameter) newValue);
-			return;
-		case CallsPackage.PARAMETER_BINDING__INVOCATION:
-			setInvocation((Invocation) newValue);
-			return;
+			case CallsPackage.PARAMETER_BINDING__VALUE_EXPRESSION:
+				setValueExpression((Expression)newValue);
+				return;
+			case CallsPackage.PARAMETER_BINDING__PARAMETER:
+				setParameter((EParameter)newValue);
+				return;
+			case CallsPackage.PARAMETER_BINDING__INVOCATION:
+				setInvocation((Invocation)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -357,15 +275,15 @@ public class ParameterBindingImpl extends CommentableElementImpl implements
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case CallsPackage.PARAMETER_BINDING__VALUE_EXPRESSION:
-			setValueExpression((Expression) null);
-			return;
-		case CallsPackage.PARAMETER_BINDING__PARAMETER:
-			setParameter((EParameter) null);
-			return;
-		case CallsPackage.PARAMETER_BINDING__INVOCATION:
-			setInvocation((Invocation) null);
-			return;
+			case CallsPackage.PARAMETER_BINDING__VALUE_EXPRESSION:
+				setValueExpression((Expression)null);
+				return;
+			case CallsPackage.PARAMETER_BINDING__PARAMETER:
+				setParameter((EParameter)null);
+				return;
+			case CallsPackage.PARAMETER_BINDING__INVOCATION:
+				setInvocation((Invocation)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -377,12 +295,12 @@ public class ParameterBindingImpl extends CommentableElementImpl implements
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case CallsPackage.PARAMETER_BINDING__VALUE_EXPRESSION:
-			return valueExpression != null;
-		case CallsPackage.PARAMETER_BINDING__PARAMETER:
-			return parameter != null;
-		case CallsPackage.PARAMETER_BINDING__INVOCATION:
-			return basicGetInvocation() != null;
+			case CallsPackage.PARAMETER_BINDING__VALUE_EXPRESSION:
+				return valueExpression != null;
+			case CallsPackage.PARAMETER_BINDING__PARAMETER:
+				return parameter != null;
+			case CallsPackage.PARAMETER_BINDING__INVOCATION:
+				return getInvocation() != null;
 		}
 		return super.eIsSet(featureID);
 	}

@@ -32,7 +32,7 @@
                 xsi:type="gmfmap:ReferenceNewElementSpec">
               <feature
                   xsi:type="ecore:EReference"
-                  href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.ecore#//ComponentStoryPattern/thisVariable"/>
+                  href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.ecore#//ComponentStoryPattern/thisVariable"/>
               <newElementInitializers>
                 <initializers
                     xsi:type="gmfmap:FeatureValueSpec">
@@ -46,7 +46,7 @@
                     xsi:type="gmfmap:FeatureValueSpec">
                   <feature
                       xsi:type="ecore:EAttribute"
-                      href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.ecore#//ComponentStoryPatternVariable/bindingState"/>
+                      href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.ecore#//ComponentStoryPatternVariable/bindingState"/>
                   <value
                       body="storydiagrams::patterns::BindingState::BOUND"/>
                 </initializers>
@@ -54,7 +54,7 @@
                     xsi:type="gmfmap:FeatureValueSpec">
                   <feature
                       xsi:type="ecore:EAttribute"
-                      href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.ecore#//ComponentStoryPatternVariable/bindingSemantics"/>
+                      href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.ecore#//ComponentStoryPatternVariable/bindingSemantics"/>
                   <value
                       body="storydiagrams::patterns::BindingSemantics::MANDATORY"/>
                 </initializers>
@@ -62,7 +62,7 @@
                     xsi:type="gmfmap:FeatureValueSpec">
                   <feature
                       xsi:type="ecore:EReference"
-                      href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.ecore#//ComponentVariable/type"/>
+                      href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.ecore#//ComponentVariable/type"/>
                   <value
                       body="let&#xD;&#xA;&#x9;--couldn't get ->closure() working. Nicer Implementation would be something like: self->closure(eContainer())->select(oclIsTypeOf(componentsdd::ComponentStoryDecisionDiagram))&#xD;&#xA;&#x9;compStoryRule : componentsdd::ComponentStoryDecisionDiagram = self.eContainer().eContainer().eContainer().oclAsType(componentsdd::ComponentStoryDecisionDiagram)&#xD;&#xA;in&#xD;&#xA;&#x9;if&#xD;&#xA;&#x9;&#x9;not compStoryRule.reconfigurableComponent.oclIsUndefined()&#xD;&#xA;&#x9;then&#xD;&#xA;&#x9;&#x9;compStoryRule.reconfigurableComponent&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;null&#xD;&#xA;&#x9;endif"/>
                 </initializers>
@@ -106,16 +106,16 @@
             href="../../de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD/model/ComponentSDD.ecore#//ComponentStoryPatternNode/pattern"/>
         <ownedChild>
           <domainMetaElement
-              href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.ecore#//ComponentStoryPattern"/>
+              href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.ecore#//ComponentStoryPattern"/>
           <diagramNode
               href="../../de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram/model/ComponentStoryDiagram.gmfgraph#ComponentStoryPattern"/>
           <children
               compartment="//@nodes.0/@ownedChild/@children.0/@ownedChild/@compartments.0">
             <containmentFeature
-                href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.ecore#//ComponentStoryPattern/thisVariable"/>
+                href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.ecore#//ComponentStoryPattern/thisVariable"/>
             <ownedChild>
               <domainMetaElement
-                  href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.ecore#//ComponentVariable"/>
+                  href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.ecore#//ComponentVariable"/>
               <labelMappings
                   readOnly="true">
                 <diagramLabel
@@ -131,29 +131,29 @@
               <children
                   compartment="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.0/@ownedChild/@compartments.0">
                 <containmentFeature
-                    href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.ecore#//ComponentVariable/partVariables"/>
+                    href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.ecore#//ComponentVariable/partVariables"/>
                 <referencedChild
                     href="../../de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram/model/ComponentStoryDiagram.gmfmap#//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.0/@ownedChild/@children.0/@ownedChild/@children.0/@ownedChild"/>
               </children>
               <children>
                 <containmentFeature
-                    href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.ecore#//ComponentVariable/portVariables"/>
+                    href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.ecore#//ComponentVariable/portVariables"/>
                 <referencedChild
                     href="../../de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram/model/ComponentStoryDiagram.gmfmap#//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.0/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild"/>
               </children>
               <children>
                 <containmentFeature
-                    href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.ecore#//ComponentVariable/portVariables"/>
+                    href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.ecore#//ComponentVariable/portVariables"/>
                 <referencedChild
                     href="../../de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram/model/ComponentStoryDiagram.gmfmap#//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.0/@ownedChild/@children.0/@ownedChild/@children.2/@ownedChild"/>
               </children>
               <children
                   compartment="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.0/@ownedChild/@compartments.0">
                 <containmentFeature
-                    href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.ecore#//ComponentVariable/partVariables"/>
+                    href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.ecore#//ComponentVariable/partVariables"/>
                 <ownedChild>
                   <domainMetaElement
-                      href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.ecore#//FadingComponentPartVariable"/>
+                      href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.ecore#//FadingComponentPartVariable"/>
                   <labelMappings
                       xsi:type="gmfmap:ExpressionLabelMapping"
                       readOnly="true">
@@ -181,13 +181,13 @@
                       href="../../de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram/model/ComponentStoryDiagram.gmfgraph#FadingComponentVariable"/>
                   <children>
                     <containmentFeature
-                        href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.ecore#//PartVariable/portVariables"/>
+                        href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.ecore#//PartVariable/portVariables"/>
                     <referencedChild
                         href="../../de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram/model/ComponentStoryDiagram.gmfmap#//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.0/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild"/>
                   </children>
                   <children>
                     <containmentFeature
-                        href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.ecore#//PartVariable/portVariables"/>
+                        href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.ecore#//PartVariable/portVariables"/>
                     <referencedChild
                         href="../../de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram/model/ComponentStoryDiagram.gmfmap#//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.0/@ownedChild/@children.0/@ownedChild/@children.2/@ownedChild"/>
                   </children>
@@ -275,14 +275,14 @@
   </links>
   <links>
     <domainMetaElement
-        href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.ecore#//AssemblyVariable"/>
+        href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.ecore#//AssemblyVariable"/>
     <domainInitializer
         xsi:type="gmfmap:FeatureSeqInitializer">
       <initializers
           xsi:type="gmfmap:FeatureValueSpec">
         <feature
             xsi:type="ecore:EReference"
-            href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.ecore#//AssemblyVariable/type"/>
+            href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.ecore#//AssemblyVariable/type"/>
         <value
             body="let this : componentstorypattern::ComponentVariable = self.eContainer().oclAsType(ComponentVariable),&#xD;&#xA;&#x9;assemblyConnectors : Collection(muml::connector::Connector) = this.type.oclAsType(muml::component::StructuredComponent).connectors->select(oclIsTypeOf(muml::component::AssemblyConnector)),&#xD;&#xA;&#x9;portVariableTypes: Collection(muml::component::Port) = self.portVariables.portType->excluding(null),&#xD;&#xA;&#x9;connector : muml::component::AssemblyConnector = assemblyConnectors->select(aC | portVariableTypes->forAll(p | aC.oclAsType(muml::component::AssemblyConnector).portParts.portType->includes(p)))->any(true).oclAsType(muml::component::AssemblyConnector)&#xD;&#xA;in&#xD;&#xA;&#x9;if&#xD;&#xA;&#x9;&#x9;not connector.oclIsUndefined()&#xD;&#xA;&#x9;then&#xD;&#xA;&#x9;&#x9;connector&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;null&#xD;&#xA;&#x9;endif"/>
       </initializers>
@@ -297,7 +297,7 @@
           href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
     </labelMappings>
     <containmentFeature
-        href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.ecore#//ComponentVariable/connectorVariables"/>
+        href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.ecore#//ComponentVariable/connectorVariables"/>
     <tool
         xsi:type="gmftool:CreationTool"
         href="../../de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram/model/ComponentStoryDiagram.gmftool#//@palette/@tools.1/@tools.3"/>
@@ -318,14 +318,14 @@
   </links>
   <links>
     <domainMetaElement
-        href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.ecore#//DelegationVariable"/>
+        href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.ecore#//DelegationVariable"/>
     <domainInitializer
         xsi:type="gmfmap:FeatureSeqInitializer">
       <initializers
           xsi:type="gmfmap:FeatureValueSpec">
         <feature
             xsi:type="ecore:EReference"
-            href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.ecore#//DelegationVariable/type"/>
+            href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.ecore#//DelegationVariable/type"/>
         <value
             body="let outerPort : muml::component::Port = self.portVariables->select(eContainer().oclIsTypeOf(ComponentVariable))->at(1).portType,&#xD;&#xA;&#x9;innerPort : muml::component::Port = self.portVariables.portType->excluding(outerPort)->at(1),&#xD;&#xA;&#x9;delegationConnectorsOuter : OrderedSet(muml::connector::Connector) = outerPort.connectors->select(oclIsTypeOf(muml::component::DelegationConnector))&#xD;&#xA;in&#xD;&#xA;&#x9;delegationConnectorsOuter->select(dC | dC.oclAsType(muml::component::DelegationConnector).portPart.portType = innerPort)->any(true).oclAsType(muml::component::DelegationConnector)"/>
       </initializers>
@@ -340,7 +340,7 @@
           href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
     </labelMappings>
     <containmentFeature
-        href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.ecore#//ComponentVariable/connectorVariables"/>
+        href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.ecore#//ComponentVariable/connectorVariables"/>
     <tool
         xsi:type="gmftool:CreationTool"
         href="../../de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram/model/ComponentStoryDiagram.gmftool#//@palette/@tools.1/@tools.4"/>
@@ -361,7 +361,7 @@
   </links>
   <links>
     <domainMetaElement
-        href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.ecore#//MultiPortOrderConstraint"/>
+        href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.ecore#//MultiPortOrderConstraint"/>
     <labelMappings
         xsi:type="gmfmap:ExpressionLabelMapping"
         readOnly="true">
@@ -371,7 +371,7 @@
           body="if self.orderConstraintType = MultiPortOrderConstraintType::NEXT then&#xD;&#xA;'«next»'&#xD;&#xA;else&#xD;&#xA;'«prev»'&#xD;&#xA;endif"/>
     </labelMappings>
     <containmentFeature
-        href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.ecore#//MultiPortVariable/orderConstraints"/>
+        href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.ecore#//MultiPortVariable/orderConstraints"/>
     <tool
         xsi:type="gmftool:CreationTool"
         href="../../de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram/model/ComponentStoryDiagram.gmftool#//@palette/@tools.1/@tools.6"/>
@@ -379,10 +379,10 @@
         href="../../de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram/model/ComponentStoryDiagram.gmfgraph#MultiPortOrderConstraint"/>
     <sourceMetaFeature
         xsi:type="ecore:EReference"
-        href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.ecore#//MultiPortOrderConstraint/srcSubPortVariable"/>
+        href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.ecore#//MultiPortOrderConstraint/srcSubPortVariable"/>
     <linkMetaFeature
         xsi:type="ecore:EReference"
-        href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.ecore#//MultiPortOrderConstraint/tgtSubPortVariable"/>
+        href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.ecore#//MultiPortOrderConstraint/tgtSubPortVariable"/>
   </links>
   <diagram>
     <diagramCanvas

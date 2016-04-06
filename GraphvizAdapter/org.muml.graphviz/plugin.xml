@@ -9,7 +9,7 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated graphviz -->
       <package
-            uri="http://www.fujaba.de/graphviz/0.1.0"
+            uri="http://www.muml.org/graphviz/1.0.0"
             class="org.muml.graphviz.GraphvizPackage"
             genModel="model/graphviz.genmodel"/>
    </extension>
@@ -17,7 +17,7 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated graphviz -->
       <package
-            uri="http://www.fujaba.de/graphviz/dot/0.1.0"
+            uri="http://www.muml.org/graphviz/dot/1.0.0"
             class="org.muml.graphviz.dot.DotPackage"
             genModel="model/graphviz.genmodel"/>
    </extension>
@@ -25,7 +25,7 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated graphviz -->
       <package
-            uri="http://www.fujaba.de/graphviz/plain/0.1.0"
+            uri="http://www.muml.org/graphviz/plain/1.0.0"
             class="org.muml.graphviz.plain.PlainPackage"
             genModel="model/graphviz.genmodel"/>
    </extension>
@@ -33,7 +33,7 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated graphviz -->
       <package
-            uri="http://www.fujaba.de/graphviz/common/0.1.0"
+            uri="http://www.muml.org/graphviz/common/1.0.0"
             class="org.muml.graphviz.common.CommonPackage"
             genModel="model/graphviz.genmodel"/>
    </extension>
@@ -41,7 +41,7 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated graphviz -->
       <package
-            uri="http://www.fujaba.de/graphviz/util/0.1.0"
+            uri="http://www.muml.org/graphviz/util/1.0.0"
             class="org.muml.graphviz.util.UtilPackage"
             genModel="model/graphviz.genmodel"/>
    </extension>

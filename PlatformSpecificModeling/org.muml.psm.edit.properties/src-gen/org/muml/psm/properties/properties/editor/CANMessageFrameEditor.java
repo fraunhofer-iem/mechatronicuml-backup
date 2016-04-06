@@ -21,7 +21,7 @@ public class CANMessageFrameEditor extends org.muml.ape.runtime.editors.ClassPro
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorExtension_property_tab_extensionsTab_Editor(), false);
+			addPropertyEditor(createEditorExtensions_property_tab_extensionsTab_Editor(), false);
 
 			addPropertyEditor(createEditorSize_property_tab_psmTab_Editor(), false);
 
@@ -30,6 +30,8 @@ public class CANMessageFrameEditor extends org.muml.ape.runtime.editors.ClassPro
 			addPropertyEditor(createEditorPriority_property_tab_psmTab_Editor(), false);
 
 			addPropertyEditor(createEditorDeadline_property_tab_psmTab_Editor(), false);
+
+			addPropertyEditor(createEditorExtendableBase_property_tab_extensionsTab_Editor(), false);
 
 		} else if ("property.tab.psm".equals(tab)) { // Tab PSM
 
@@ -47,11 +49,25 @@ public class CANMessageFrameEditor extends org.muml.ape.runtime.editors.ClassPro
 
 		} else if ("property.tab.extensions".equals(tab)) { // Tab Extensions
 
-			addPropertyEditor(createEditorExtension_property_tab_extensionsTab_Editor(), false);
+			addPropertyEditor(createEditorExtensions_property_tab_extensionsTab_Editor(), false);
+
+			addPropertyEditor(createEditorExtendableBase_property_tab_extensionsTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
 		} else if ("property.tab.descriptionAspects".equals(tab)) { // Tab Description Aspects
+
+		} else if ("property.tab.condition".equals(tab)) { // Tab Condition
+
+		} else if ("property.tab.effect".equals(tab)) { // Tab Effect
+
+		} else if ("property.tab.deadline".equals(tab)) { // Tab Deadline
+
+		} else if ("property.tab.sampling".equals(tab)) { // Tab Sampling
+
+		} else if ("property.tab.message".equals(tab)) { // Tab Message
+
+		} else if ("property.tab.behavior".equals(tab)) { // Tab Behavior
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
@@ -64,8 +80,8 @@ public class CANMessageFrameEditor extends org.muml.ape.runtime.editors.ClassPro
 		if (this.editorPriority_property_tab_psmTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.psm.properties.PropertiesPackage.eINSTANCE
 					.getCANMessageFrame_Priority();
-			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.NavigationFeaturePropertyEditor(
-					adapterFactory, feature);
+			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.TextPropertyEditor(
+					adapterFactory, feature, false);
 
 			this.editorPriority_property_tab_psmTab = editor;
 		}
@@ -83,6 +99,21 @@ public class CANMessageFrameEditor extends org.muml.ape.runtime.editors.ClassPro
 			this.editorDeadline_property_tab_psmTab = editor;
 		}
 		return this.editorDeadline_property_tab_psmTab;
+	}
+
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorExtendableBase_property_tab_extensionsTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorExtendableBase_property_tab_extensionsTab_Editor() {
+		if (this.editorExtendableBase_property_tab_extensionsTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.core.CorePackage.eINSTANCE
+					.getExtension_ExtendableBase();
+			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.ComboPropertyEditor(
+					adapterFactory, feature);
+
+			editor.setTooltipMessage("The extendable element that is extended by this extension.");
+
+			this.editorExtendableBase_property_tab_extensionsTab = editor;
+		}
+		return this.editorExtendableBase_property_tab_extensionsTab;
 	}
 
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorSize_property_tab_psmTab;
@@ -111,17 +142,19 @@ public class CANMessageFrameEditor extends org.muml.ape.runtime.editors.ClassPro
 		return this.editorPeriod_property_tab_psmTab;
 	}
 
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorExtension_property_tab_extensionsTab;
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorExtension_property_tab_extensionsTab_Editor() {
-		if (this.editorExtension_property_tab_extensionsTab == null) {
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorExtensions_property_tab_extensionsTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorExtensions_property_tab_extensionsTab_Editor() {
+		if (this.editorExtensions_property_tab_extensionsTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.core.CorePackage.eINSTANCE
-					.getExtendableElement_Extension();
+					.getExtendableElement_Extensions();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.FlattenedListPropertyEditor(
 					adapterFactory, feature);
 
-			this.editorExtension_property_tab_extensionsTab = editor;
+			editor.setTooltipMessage("Extendable Elements can be extended by an Extension.");
+
+			this.editorExtensions_property_tab_extensionsTab = editor;
 		}
-		return this.editorExtension_property_tab_extensionsTab;
+		return this.editorExtensions_property_tab_extensionsTab;
 	}
 
 	//

@@ -46,7 +46,7 @@ public interface RuntimePackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.fujaba.de/muml/runtime/0.4.0";
+	String eNS_URI = "http://www.muml.org/verification/core/runtime/1.0.0";
 
 	/**
 	 * The package namespace name.
@@ -73,6 +73,24 @@ public interface RuntimePackage extends EPackage {
 	 * @generated
 	 */
 	int RUNTIME_COMPONENT_INSTANCE = 0;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_COMPONENT_INSTANCE__ANNOTATIONS = InstancePackage.COMPONENT_INSTANCE__ANNOTATIONS;
+
+	/**
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_COMPONENT_INSTANCE__EXTENSIONS = InstancePackage.COMPONENT_INSTANCE__EXTENSIONS;
 
 	/**
 	 * The meta object id for the '{@link org.muml.verification.core.runtime.impl.RuntimeDiscretePortInstanceImpl <em>Discrete Port Instance</em>}' class.
@@ -123,24 +141,6 @@ public interface RuntimePackage extends EPackage {
 	 * @generated
 	 */
 	int RUNTIME_BEHAVIORAL_ELEMENT = 8;
-
-	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RUNTIME_COMPONENT_INSTANCE__ANNOTATION = InstancePackage.COMPONENT_INSTANCE__ANNOTATION;
-
-	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RUNTIME_COMPONENT_INSTANCE__EXTENSION = InstancePackage.COMPONENT_INSTANCE__EXTENSION;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -224,22 +224,22 @@ public interface RuntimePackage extends EPackage {
 	int RUNTIME_COMPONENT_INSTANCE_FEATURE_COUNT = InstancePackage.COMPONENT_INSTANCE_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RUNTIME_DISCRETE_PORT_INSTANCE__ANNOTATION = InstancePackage.DISCRETE_PORT_INSTANCE__ANNOTATION;
+	int RUNTIME_DISCRETE_PORT_INSTANCE__ANNOTATIONS = InstancePackage.DISCRETE_PORT_INSTANCE__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RUNTIME_DISCRETE_PORT_INSTANCE__EXTENSION = InstancePackage.DISCRETE_PORT_INSTANCE__EXTENSION;
+	int RUNTIME_DISCRETE_PORT_INSTANCE__EXTENSIONS = InstancePackage.DISCRETE_PORT_INSTANCE__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -377,6 +377,24 @@ public interface RuntimePackage extends EPackage {
 	int RUNTIME_DISCRETE_PORT_INSTANCE_FEATURE_COUNT = InstancePackage.DISCRETE_PORT_INSTANCE_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_BEHAVIORAL_ELEMENT__ANNOTATIONS = CorePackage.NAMED_ELEMENT__ANNOTATIONS;
+
+	/**
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_BEHAVIORAL_ELEMENT__EXTENSIONS = CorePackage.NAMED_ELEMENT__EXTENSIONS;
+
+	/**
 	 * The meta object id for the '{@link org.muml.verification.core.runtime.impl.SingleRoleInstanceImpl <em>Single Role Instance</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -395,24 +413,6 @@ public interface RuntimePackage extends EPackage {
 	 * @generated
 	 */
 	int MULTI_ROLE_INSTANCE = 10;
-
-	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RUNTIME_BEHAVIORAL_ELEMENT__ANNOTATION = CorePackage.NAMED_ELEMENT__ANNOTATION;
-
-	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RUNTIME_BEHAVIORAL_ELEMENT__EXTENSION = CorePackage.NAMED_ELEMENT__EXTENSION;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -462,22 +462,22 @@ public interface RuntimePackage extends EPackage {
 	int RUNTIME_DISCRETE_INTERACTION_ENDPOINT_INSTANCE = 15;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RUNTIME_DISCRETE_INTERACTION_ENDPOINT_INSTANCE__ANNOTATION = RUNTIME_BEHAVIORAL_ELEMENT__ANNOTATION;
+	int RUNTIME_DISCRETE_INTERACTION_ENDPOINT_INSTANCE__ANNOTATIONS = RUNTIME_BEHAVIORAL_ELEMENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RUNTIME_DISCRETE_INTERACTION_ENDPOINT_INSTANCE__EXTENSION = RUNTIME_BEHAVIORAL_ELEMENT__EXTENSION;
+	int RUNTIME_DISCRETE_INTERACTION_ENDPOINT_INSTANCE__EXTENSIONS = RUNTIME_BEHAVIORAL_ELEMENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -553,22 +553,22 @@ public interface RuntimePackage extends EPackage {
 	int ROLE_INSTANCE = 2;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE_INSTANCE__ANNOTATION = RUNTIME_DISCRETE_INTERACTION_ENDPOINT_INSTANCE__ANNOTATION;
+	int ROLE_INSTANCE__ANNOTATIONS = RUNTIME_DISCRETE_INTERACTION_ENDPOINT_INSTANCE__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE_INSTANCE__EXTENSION = RUNTIME_DISCRETE_INTERACTION_ENDPOINT_INSTANCE__EXTENSION;
+	int ROLE_INSTANCE__EXTENSIONS = RUNTIME_DISCRETE_INTERACTION_ENDPOINT_INSTANCE__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -662,22 +662,22 @@ public interface RuntimePackage extends EPackage {
 	int RUNTIME_MESSAGE_BUFFER = 3;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RUNTIME_MESSAGE_BUFFER__ANNOTATION = CorePackage.EXTENDABLE_ELEMENT__ANNOTATION;
+	int RUNTIME_MESSAGE_BUFFER__ANNOTATIONS = CorePackage.EXTENDABLE_ELEMENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RUNTIME_MESSAGE_BUFFER__EXTENSION = CorePackage.EXTENDABLE_ELEMENT__EXTENSION;
+	int RUNTIME_MESSAGE_BUFFER__EXTENSIONS = CorePackage.EXTENDABLE_ELEMENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Messages</b></em>' containment reference list.
@@ -716,22 +716,22 @@ public interface RuntimePackage extends EPackage {
 	int RUNTIME_MESSAGE_BUFFER_FEATURE_COUNT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REALTIME_STATECHART_INSTANCE__ANNOTATION = CorePackage.EXTENDABLE_ELEMENT__ANNOTATION;
+	int REALTIME_STATECHART_INSTANCE__ANNOTATIONS = CorePackage.EXTENDABLE_ELEMENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REALTIME_STATECHART_INSTANCE__EXTENSION = CorePackage.EXTENDABLE_ELEMENT__EXTENSION;
+	int REALTIME_STATECHART_INSTANCE__EXTENSIONS = CorePackage.EXTENDABLE_ELEMENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Runtime Behavioral Element</b></em>' reference.
@@ -824,22 +824,22 @@ public interface RuntimePackage extends EPackage {
 	int REALTIME_STATECHART_INSTANCE_FEATURE_COUNT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RUNTIME_MESSAGE__ANNOTATION = CorePackage.NAMED_ELEMENT__ANNOTATION;
+	int RUNTIME_MESSAGE__ANNOTATIONS = CorePackage.NAMED_ELEMENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RUNTIME_MESSAGE__EXTENSION = CorePackage.NAMED_ELEMENT__EXTENSION;
+	int RUNTIME_MESSAGE__EXTENSIONS = CorePackage.NAMED_ELEMENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -878,22 +878,22 @@ public interface RuntimePackage extends EPackage {
 	int RUNTIME_MESSAGE_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RUNTIME_PARAMETER__ANNOTATION = CorePackage.NAMED_ELEMENT__ANNOTATION;
+	int RUNTIME_PARAMETER__ANNOTATIONS = CorePackage.NAMED_ELEMENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RUNTIME_PARAMETER__EXTENSION = CorePackage.NAMED_ELEMENT__EXTENSION;
+	int RUNTIME_PARAMETER__EXTENSIONS = CorePackage.NAMED_ELEMENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -951,22 +951,22 @@ public interface RuntimePackage extends EPackage {
 	int VARIABLE_BINDING = 7;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VARIABLE_BINDING__ANNOTATION = CorePackage.EXTENDABLE_ELEMENT__ANNOTATION;
+	int VARIABLE_BINDING__ANNOTATIONS = CorePackage.EXTENDABLE_ELEMENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VARIABLE_BINDING__EXTENSION = CorePackage.EXTENDABLE_ELEMENT__EXTENSION;
+	int VARIABLE_BINDING__EXTENSIONS = CorePackage.EXTENDABLE_ELEMENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Variable</b></em>' reference.
@@ -996,22 +996,22 @@ public interface RuntimePackage extends EPackage {
 	int VARIABLE_BINDING_FEATURE_COUNT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SINGLE_ROLE_INSTANCE__ANNOTATION = ROLE_INSTANCE__ANNOTATION;
+	int SINGLE_ROLE_INSTANCE__ANNOTATIONS = ROLE_INSTANCE__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SINGLE_ROLE_INSTANCE__EXTENSION = ROLE_INSTANCE__EXTENSION;
+	int SINGLE_ROLE_INSTANCE__EXTENSIONS = ROLE_INSTANCE__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1140,22 +1140,22 @@ public interface RuntimePackage extends EPackage {
 	int SINGLE_ROLE_INSTANCE_FEATURE_COUNT = ROLE_INSTANCE_FEATURE_COUNT + 5;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MULTI_ROLE_INSTANCE__ANNOTATION = ROLE_INSTANCE__ANNOTATION;
+	int MULTI_ROLE_INSTANCE__ANNOTATIONS = ROLE_INSTANCE__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MULTI_ROLE_INSTANCE__EXTENSION = ROLE_INSTANCE__EXTENSION;
+	int MULTI_ROLE_INSTANCE__EXTENSIONS = ROLE_INSTANCE__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1276,22 +1276,22 @@ public interface RuntimePackage extends EPackage {
 	int RUNTIME_CONNECTOR_INSTANCE = 12;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RUNTIME_CONNECTOR_INSTANCE__ANNOTATION = ConnectorPackage.CONNECTOR_INSTANCE__ANNOTATION;
+	int RUNTIME_CONNECTOR_INSTANCE__ANNOTATIONS = ConnectorPackage.CONNECTOR_INSTANCE__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RUNTIME_CONNECTOR_INSTANCE__EXTENSION = ConnectorPackage.CONNECTOR_INSTANCE__EXTENSION;
+	int RUNTIME_CONNECTOR_INSTANCE__EXTENSIONS = ConnectorPackage.CONNECTOR_INSTANCE__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -1349,22 +1349,22 @@ public interface RuntimePackage extends EPackage {
 	int RUNTIME_ROLE_CONNECTOR_INSTANCE = 11;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RUNTIME_ROLE_CONNECTOR_INSTANCE__ANNOTATION = RUNTIME_CONNECTOR_INSTANCE__ANNOTATION;
+	int RUNTIME_ROLE_CONNECTOR_INSTANCE__ANNOTATIONS = RUNTIME_CONNECTOR_INSTANCE__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RUNTIME_ROLE_CONNECTOR_INSTANCE__EXTENSION = RUNTIME_CONNECTOR_INSTANCE__EXTENSION;
+	int RUNTIME_ROLE_CONNECTOR_INSTANCE__EXTENSIONS = RUNTIME_CONNECTOR_INSTANCE__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -1422,22 +1422,22 @@ public interface RuntimePackage extends EPackage {
 	int RUNTIME_ASSEMBLY_CONNECTOR_INSTANCE = 13;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RUNTIME_ASSEMBLY_CONNECTOR_INSTANCE__ANNOTATION = InstancePackage.ASSEMBLY_CONNECTOR_INSTANCE__ANNOTATION;
+	int RUNTIME_ASSEMBLY_CONNECTOR_INSTANCE__ANNOTATIONS = InstancePackage.ASSEMBLY_CONNECTOR_INSTANCE__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RUNTIME_ASSEMBLY_CONNECTOR_INSTANCE__EXTENSION = InstancePackage.ASSEMBLY_CONNECTOR_INSTANCE__EXTENSION;
+	int RUNTIME_ASSEMBLY_CONNECTOR_INSTANCE__EXTENSIONS = InstancePackage.ASSEMBLY_CONNECTOR_INSTANCE__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -1522,22 +1522,22 @@ public interface RuntimePackage extends EPackage {
 	int MESSAGE_ON_CONNECTOR = 14;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_ON_CONNECTOR__ANNOTATION = CorePackage.EXTENDABLE_ELEMENT__ANNOTATION;
+	int MESSAGE_ON_CONNECTOR__ANNOTATIONS = CorePackage.EXTENDABLE_ELEMENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_ON_CONNECTOR__EXTENSION = CorePackage.EXTENDABLE_ELEMENT__EXTENSION;
+	int MESSAGE_ON_CONNECTOR__EXTENSIONS = CorePackage.EXTENDABLE_ELEMENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Receiver</b></em>' reference.
@@ -1586,22 +1586,22 @@ public interface RuntimePackage extends EPackage {
 	int RUNTIME_DISCRETE_SINGLE_PORT_INSTANCE = 16;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RUNTIME_DISCRETE_SINGLE_PORT_INSTANCE__ANNOTATION = RUNTIME_DISCRETE_PORT_INSTANCE__ANNOTATION;
+	int RUNTIME_DISCRETE_SINGLE_PORT_INSTANCE__ANNOTATIONS = RUNTIME_DISCRETE_PORT_INSTANCE__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RUNTIME_DISCRETE_SINGLE_PORT_INSTANCE__EXTENSION = RUNTIME_DISCRETE_PORT_INSTANCE__EXTENSION;
+	int RUNTIME_DISCRETE_SINGLE_PORT_INSTANCE__EXTENSIONS = RUNTIME_DISCRETE_PORT_INSTANCE__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1794,22 +1794,22 @@ public interface RuntimePackage extends EPackage {
 	int RUNTIME_DISCRETE_MULTI_PORT_INSTANCE = 17;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RUNTIME_DISCRETE_MULTI_PORT_INSTANCE__ANNOTATION = InstancePackage.DISCRETE_MULTI_PORT_INSTANCE__ANNOTATION;
+	int RUNTIME_DISCRETE_MULTI_PORT_INSTANCE__ANNOTATIONS = InstancePackage.DISCRETE_MULTI_PORT_INSTANCE__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RUNTIME_DISCRETE_MULTI_PORT_INSTANCE__EXTENSION = InstancePackage.DISCRETE_MULTI_PORT_INSTANCE__EXTENSION;
+	int RUNTIME_DISCRETE_MULTI_PORT_INSTANCE__EXTENSIONS = InstancePackage.DISCRETE_MULTI_PORT_INSTANCE__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.

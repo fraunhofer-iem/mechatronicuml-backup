@@ -9,6 +9,7 @@ import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.EObjectValidator;
+import org.muml.reconfiguration.componentstorydiagram.*;
 import org.muml.reconfiguration.componentstorydiagram.ComponentStoryNode;
 import org.muml.reconfiguration.componentstorydiagram.ComponentStoryRule;
 import org.muml.reconfiguration.componentstorydiagram.ComponentstorydiagramPackage;
@@ -39,7 +40,7 @@ public class ComponentstorydiagramValidator extends EObjectValidator {
 	 * @see org.eclipse.emf.common.util.Diagnostic#getCode()
 	 * @generated
 	 */
-	public static final String DIAGNOSTIC_SOURCE = "de.uni_paderborn.fujaba.muml.componentstorydiagram";
+	public static final String DIAGNOSTIC_SOURCE = "org.muml.reconfiguration.componentstorydiagram";
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants.

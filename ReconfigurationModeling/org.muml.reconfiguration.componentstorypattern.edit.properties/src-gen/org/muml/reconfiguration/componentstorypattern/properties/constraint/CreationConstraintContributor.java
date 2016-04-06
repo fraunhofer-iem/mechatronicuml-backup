@@ -1,3 +1,4 @@
+
 package org.muml.reconfiguration.componentstorypattern.properties.constraint;
 
 public class CreationConstraintContributor

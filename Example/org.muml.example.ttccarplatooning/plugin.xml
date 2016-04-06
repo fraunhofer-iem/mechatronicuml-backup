@@ -11,8 +11,9 @@
 <plugin>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated TTC -->
       <package
-            uri="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0"
+            uri="http://www.muml.org/example/ttccarplatooning/1.1.0"
             class="org.muml.example.storydiagram.reachanalysis.ttccarplatooning.TtccarplatooningPackage"
             genModel="model/TTC.genmodel"/>
    </extension>

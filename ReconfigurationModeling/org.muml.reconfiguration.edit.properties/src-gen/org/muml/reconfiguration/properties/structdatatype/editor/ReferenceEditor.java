@@ -21,15 +21,29 @@ public class ReferenceEditor extends org.muml.ape.runtime.editors.ClassPropertyE
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorType_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorType_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
+
+		} else if ("property.tab.descriptionAspects".equals(tab)) { // Tab Description Aspects
+
+		} else if ("property.tab.condition".equals(tab)) { // Tab Condition
+
+		} else if ("property.tab.effect".equals(tab)) { // Tab Effect
+
+		} else if ("property.tab.deadline".equals(tab)) { // Tab Deadline
+
+		} else if ("property.tab.sampling".equals(tab)) { // Tab Sampling
+
+		} else if ("property.tab.message".equals(tab)) { // Tab Message
+
+		} else if ("property.tab.behavior".equals(tab)) { // Tab Behavior
 
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
-			addPropertyEditor(createEditorType_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorType_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
@@ -39,9 +53,9 @@ public class ReferenceEditor extends org.muml.ape.runtime.editors.ClassPropertyE
 		}
 	}
 
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorType_GeneralTab;
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorType_GeneralTab_Editor() {
-		if (this.editorType_GeneralTab == null) {
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorType_property_tab_generalTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorType_property_tab_generalTab_Editor() {
+		if (this.editorType_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.reconfiguration.structdatatype.StructdatatypePackage.eINSTANCE
 					.getReference_Type();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.ComboPropertyEditor(
@@ -50,9 +64,9 @@ public class ReferenceEditor extends org.muml.ape.runtime.editors.ClassPropertyE
 			editor.setTooltipMessage(
 					"The data type of this reference. The data type needs to be another struct type\nor an element of the MechatronicUML model such as a component or port.");
 
-			this.editorType_GeneralTab = editor;
+			this.editorType_property_tab_generalTab = editor;
 		}
-		return this.editorType_GeneralTab;
+		return this.editorType_property_tab_generalTab;
 	}
 
 	//
@@ -63,11 +77,8 @@ public class ReferenceEditor extends org.muml.ape.runtime.editors.ClassPropertyE
 	 * @generated
 	 */
 	public ReferenceEditor(String tab) {
-		this(tab,
-				org.muml.reconfiguration.properties.util.PropertiesUtil.INSTANCE
-						.getAdapterFactory(),
-				org.muml.reconfiguration.structdatatype.StructdatatypePackage.eINSTANCE
-						.getReference());
+		this(tab, org.muml.reconfiguration.properties.util.PropertiesUtil.INSTANCE.getAdapterFactory(),
+				org.muml.reconfiguration.structdatatype.StructdatatypePackage.eINSTANCE.getReference());
 	}
 
 	/**

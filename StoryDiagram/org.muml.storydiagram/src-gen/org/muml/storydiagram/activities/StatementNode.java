@@ -19,10 +19,10 @@ import org.muml.core.expressions.Expression;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.storydiagram.activities.StatementNode#getStatementExpression <em>Statement Expression</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.storydiagram.activities.ActivitiesPackage#getStatementNode()
  * @model
@@ -39,7 +39,7 @@ public interface StatementNode extends ActivityNode {
 	 * @return the value of the '<em>Statement Expression</em>' containment reference.
 	 * @see #setStatementExpression(Expression)
 	 * @see org.muml.storydiagram.activities.ActivitiesPackage#getStatementNode_StatementExpression()
-	 * @model containment="true" resolveProxies="true" required="true" ordered="false"
+	 * @model containment="true" required="true" ordered="false"
 	 * @generated
 	 */
 	Expression getStatementExpression();

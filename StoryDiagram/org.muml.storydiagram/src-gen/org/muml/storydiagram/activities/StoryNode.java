@@ -19,11 +19,11 @@ import org.muml.storydiagram.patterns.StoryPattern;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.storydiagram.activities.StoryNode#isForEach <em>For Each</em>}</li>
  *   <li>{@link org.muml.storydiagram.activities.StoryNode#getStoryPattern <em>Story Pattern</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.storydiagram.activities.ActivitiesPackage#getStoryNode()
  * @model abstract="true"
@@ -57,7 +57,6 @@ public interface StoryNode extends ActivityNode {
 
 	/**
 	 * Returns the value of the '<em><b>Story Pattern</b></em>' reference.
-	 * This feature is a derived union.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Story Pattern</em>' reference isn't clear,

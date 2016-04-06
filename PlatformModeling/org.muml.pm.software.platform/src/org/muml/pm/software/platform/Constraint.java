@@ -15,10 +15,10 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.pm.software.platform.Constraint#getApiCommand <em>Api Command</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.pm.software.platform.SwplatformPackage#getConstraint()
  * @model abstract="true"

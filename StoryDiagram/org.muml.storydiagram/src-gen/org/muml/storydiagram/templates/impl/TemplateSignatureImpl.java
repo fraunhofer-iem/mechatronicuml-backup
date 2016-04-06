@@ -15,7 +15,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.EObjectImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
@@ -30,34 +30,36 @@ import org.muml.storydiagram.templates.TemplatesPackage;
  * <!-- begin-user-doc --> An implementation of the model object '<em><b>Template Signature</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
- *   <li>{@link org.muml.storydiagram.templates.impl.TemplateSignatureImpl#getTemplateBindings <em>Template Binding</em>}</li>
- *   <li>{@link org.muml.storydiagram.templates.impl.TemplateSignatureImpl#getTypeParameters <em>Type Parameter</em>}</li>
+ *   <li>{@link org.muml.storydiagram.templates.impl.TemplateSignatureImpl#getTemplateBinding <em>Template Binding</em>}</li>
+ *   <li>{@link org.muml.storydiagram.templates.impl.TemplateSignatureImpl#getTypeParameter <em>Type Parameter</em>}</li>
  *   <li>{@link org.muml.storydiagram.templates.impl.TemplateSignatureImpl#getPattern <em>Pattern</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
-public class TemplateSignatureImpl extends EObjectImpl implements
+public class TemplateSignatureImpl extends MinimalEObjectImpl.Container implements
 		TemplateSignature {
 	/**
-	 * The cached value of the '{@link #getTemplateBindings() <em>Template Binding</em>}' containment reference list.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @see #getTemplateBindings()
+	 * The cached value of the '{@link #getTemplateBinding() <em>Template Binding</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTemplateBinding()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<TemplateBinding> templateBindings;
+	protected EList<TemplateBinding> templateBinding;
 
 	/**
-	 * The cached value of the '{@link #getTypeParameters() <em>Type Parameter</em>}' containment reference list.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @see #getTypeParameters()
+	 * The cached value of the '{@link #getTypeParameter() <em>Type Parameter</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTypeParameter()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<EClassifier> typeParameters;
+	protected EList<EClassifier> typeParameter;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -77,30 +79,27 @@ public class TemplateSignatureImpl extends EObjectImpl implements
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<EClassifier> getTypeParameters() {
-		if (typeParameters == null) {
-			typeParameters = new EObjectContainmentEList.Resolving<EClassifier>(
-					EClassifier.class, this,
-					TemplatesPackage.TEMPLATE_SIGNATURE__TYPE_PARAMETER);
+	public EList<TemplateBinding> getTemplateBinding() {
+		if (templateBinding == null) {
+			templateBinding = new EObjectContainmentWithInverseEList<TemplateBinding>(TemplateBinding.class, this, TemplatesPackage.TEMPLATE_SIGNATURE__TEMPLATE_BINDING, TemplatesPackage.TEMPLATE_BINDING__TEMPLATE);
 		}
-		return typeParameters;
+		return templateBinding;
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<TemplateBinding> getTemplateBindings() {
-		if (templateBindings == null) {
-			templateBindings = new EObjectContainmentWithInverseEList.Resolving<TemplateBinding>(
-					TemplateBinding.class, this,
-					TemplatesPackage.TEMPLATE_SIGNATURE__TEMPLATE_BINDING,
-					TemplatesPackage.TEMPLATE_BINDING__TEMPLATE);
+	public EList<EClassifier> getTypeParameter() {
+		if (typeParameter == null) {
+			typeParameter = new EObjectContainmentEList<EClassifier>(EClassifier.class, this, TemplatesPackage.TEMPLATE_SIGNATURE__TYPE_PARAMETER);
 		}
-		return templateBindings;
+		return typeParameter;
 	}
 
 	/**
@@ -108,19 +107,8 @@ public class TemplateSignatureImpl extends EObjectImpl implements
 	 * @generated
 	 */
 	public StoryPattern getPattern() {
-		if (eContainerFeatureID() != TemplatesPackage.TEMPLATE_SIGNATURE__PATTERN)
-			return null;
-		return (StoryPattern) eContainer();
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	public StoryPattern basicGetPattern() {
-		if (eContainerFeatureID() != TemplatesPackage.TEMPLATE_SIGNATURE__PATTERN)
-			return null;
-		return (StoryPattern) eInternalContainer();
+		if (eContainerFeatureID() != TemplatesPackage.TEMPLATE_SIGNATURE__PATTERN) return null;
+		return (StoryPattern)eInternalContainer();
 	}
 
 	/**
@@ -129,8 +117,7 @@ public class TemplateSignatureImpl extends EObjectImpl implements
 	 */
 	public NotificationChain basicSetPattern(StoryPattern newPattern,
 			NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject) newPattern,
-				TemplatesPackage.TEMPLATE_SIGNATURE__PATTERN, msgs);
+		msgs = eBasicSetContainer((InternalEObject)newPattern, TemplatesPackage.TEMPLATE_SIGNATURE__PATTERN, msgs);
 		return msgs;
 	}
 
@@ -139,25 +126,19 @@ public class TemplateSignatureImpl extends EObjectImpl implements
 	 * @generated
 	 */
 	public void setPattern(StoryPattern newPattern) {
-		if (newPattern != eInternalContainer()
-				|| (eContainerFeatureID() != TemplatesPackage.TEMPLATE_SIGNATURE__PATTERN && newPattern != null)) {
+		if (newPattern != eInternalContainer() || (eContainerFeatureID() != TemplatesPackage.TEMPLATE_SIGNATURE__PATTERN && newPattern != null)) {
 			if (EcoreUtil.isAncestor(this, newPattern))
-				throw new IllegalArgumentException(
-						"Recursive containment not allowed for " + toString());
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newPattern != null)
-				msgs = ((InternalEObject) newPattern).eInverseAdd(this,
-						PatternsPackage.STORY_PATTERN__TEMPLATE_SIGNATURE,
-						StoryPattern.class, msgs);
+				msgs = ((InternalEObject)newPattern).eInverseAdd(this, PatternsPackage.STORY_PATTERN__TEMPLATE_SIGNATURE, StoryPattern.class, msgs);
 			msgs = basicSetPattern(newPattern, msgs);
-			if (msgs != null)
-				msgs.dispatch();
-		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					TemplatesPackage.TEMPLATE_SIGNATURE__PATTERN, newPattern,
-					newPattern));
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TemplatesPackage.TEMPLATE_SIGNATURE__PATTERN, newPattern, newPattern));
 	}
 
 	/**
@@ -169,13 +150,12 @@ public class TemplateSignatureImpl extends EObjectImpl implements
 	public NotificationChain eInverseAdd(InternalEObject otherEnd,
 			int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case TemplatesPackage.TEMPLATE_SIGNATURE__TEMPLATE_BINDING:
-			return ((InternalEList<InternalEObject>) (InternalEList<?>) getTemplateBindings())
-					.basicAdd(otherEnd, msgs);
-		case TemplatesPackage.TEMPLATE_SIGNATURE__PATTERN:
-			if (eInternalContainer() != null)
-				msgs = eBasicRemoveFromContainer(msgs);
-			return basicSetPattern((StoryPattern) otherEnd, msgs);
+			case TemplatesPackage.TEMPLATE_SIGNATURE__TEMPLATE_BINDING:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getTemplateBinding()).basicAdd(otherEnd, msgs);
+			case TemplatesPackage.TEMPLATE_SIGNATURE__PATTERN:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetPattern((StoryPattern)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -188,14 +168,12 @@ public class TemplateSignatureImpl extends EObjectImpl implements
 	public NotificationChain eInverseRemove(InternalEObject otherEnd,
 			int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case TemplatesPackage.TEMPLATE_SIGNATURE__TEMPLATE_BINDING:
-			return ((InternalEList<?>) getTemplateBindings()).basicRemove(
-					otherEnd, msgs);
-		case TemplatesPackage.TEMPLATE_SIGNATURE__TYPE_PARAMETER:
-			return ((InternalEList<?>) getTypeParameters()).basicRemove(
-					otherEnd, msgs);
-		case TemplatesPackage.TEMPLATE_SIGNATURE__PATTERN:
-			return basicSetPattern(null, msgs);
+			case TemplatesPackage.TEMPLATE_SIGNATURE__TEMPLATE_BINDING:
+				return ((InternalEList<?>)getTemplateBinding()).basicRemove(otherEnd, msgs);
+			case TemplatesPackage.TEMPLATE_SIGNATURE__TYPE_PARAMETER:
+				return ((InternalEList<?>)getTypeParameter()).basicRemove(otherEnd, msgs);
+			case TemplatesPackage.TEMPLATE_SIGNATURE__PATTERN:
+				return basicSetPattern(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -208,10 +186,8 @@ public class TemplateSignatureImpl extends EObjectImpl implements
 	public NotificationChain eBasicRemoveFromContainerFeature(
 			NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
-		case TemplatesPackage.TEMPLATE_SIGNATURE__PATTERN:
-			return eInternalContainer().eInverseRemove(this,
-					PatternsPackage.STORY_PATTERN__TEMPLATE_SIGNATURE,
-					StoryPattern.class, msgs);
+			case TemplatesPackage.TEMPLATE_SIGNATURE__PATTERN:
+				return eInternalContainer().eInverseRemove(this, PatternsPackage.STORY_PATTERN__TEMPLATE_SIGNATURE, StoryPattern.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -223,14 +199,12 @@ public class TemplateSignatureImpl extends EObjectImpl implements
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case TemplatesPackage.TEMPLATE_SIGNATURE__TEMPLATE_BINDING:
-			return getTemplateBindings();
-		case TemplatesPackage.TEMPLATE_SIGNATURE__TYPE_PARAMETER:
-			return getTypeParameters();
-		case TemplatesPackage.TEMPLATE_SIGNATURE__PATTERN:
-			if (resolve)
+			case TemplatesPackage.TEMPLATE_SIGNATURE__TEMPLATE_BINDING:
+				return getTemplateBinding();
+			case TemplatesPackage.TEMPLATE_SIGNATURE__TYPE_PARAMETER:
+				return getTypeParameter();
+			case TemplatesPackage.TEMPLATE_SIGNATURE__PATTERN:
 				return getPattern();
-			return basicGetPattern();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -243,19 +217,17 @@ public class TemplateSignatureImpl extends EObjectImpl implements
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case TemplatesPackage.TEMPLATE_SIGNATURE__TEMPLATE_BINDING:
-			getTemplateBindings().clear();
-			getTemplateBindings().addAll(
-					(Collection<? extends TemplateBinding>) newValue);
-			return;
-		case TemplatesPackage.TEMPLATE_SIGNATURE__TYPE_PARAMETER:
-			getTypeParameters().clear();
-			getTypeParameters().addAll(
-					(Collection<? extends EClassifier>) newValue);
-			return;
-		case TemplatesPackage.TEMPLATE_SIGNATURE__PATTERN:
-			setPattern((StoryPattern) newValue);
-			return;
+			case TemplatesPackage.TEMPLATE_SIGNATURE__TEMPLATE_BINDING:
+				getTemplateBinding().clear();
+				getTemplateBinding().addAll((Collection<? extends TemplateBinding>)newValue);
+				return;
+			case TemplatesPackage.TEMPLATE_SIGNATURE__TYPE_PARAMETER:
+				getTypeParameter().clear();
+				getTypeParameter().addAll((Collection<? extends EClassifier>)newValue);
+				return;
+			case TemplatesPackage.TEMPLATE_SIGNATURE__PATTERN:
+				setPattern((StoryPattern)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -267,15 +239,15 @@ public class TemplateSignatureImpl extends EObjectImpl implements
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case TemplatesPackage.TEMPLATE_SIGNATURE__TEMPLATE_BINDING:
-			getTemplateBindings().clear();
-			return;
-		case TemplatesPackage.TEMPLATE_SIGNATURE__TYPE_PARAMETER:
-			getTypeParameters().clear();
-			return;
-		case TemplatesPackage.TEMPLATE_SIGNATURE__PATTERN:
-			setPattern((StoryPattern) null);
-			return;
+			case TemplatesPackage.TEMPLATE_SIGNATURE__TEMPLATE_BINDING:
+				getTemplateBinding().clear();
+				return;
+			case TemplatesPackage.TEMPLATE_SIGNATURE__TYPE_PARAMETER:
+				getTypeParameter().clear();
+				return;
+			case TemplatesPackage.TEMPLATE_SIGNATURE__PATTERN:
+				setPattern((StoryPattern)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -287,12 +259,12 @@ public class TemplateSignatureImpl extends EObjectImpl implements
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case TemplatesPackage.TEMPLATE_SIGNATURE__TEMPLATE_BINDING:
-			return templateBindings != null && !templateBindings.isEmpty();
-		case TemplatesPackage.TEMPLATE_SIGNATURE__TYPE_PARAMETER:
-			return typeParameters != null && !typeParameters.isEmpty();
-		case TemplatesPackage.TEMPLATE_SIGNATURE__PATTERN:
-			return basicGetPattern() != null;
+			case TemplatesPackage.TEMPLATE_SIGNATURE__TEMPLATE_BINDING:
+				return templateBinding != null && !templateBinding.isEmpty();
+			case TemplatesPackage.TEMPLATE_SIGNATURE__TYPE_PARAMETER:
+				return typeParameter != null && !typeParameter.isEmpty();
+			case TemplatesPackage.TEMPLATE_SIGNATURE__PATTERN:
+				return getPattern() != null;
 		}
 		return super.eIsSet(featureID);
 	}

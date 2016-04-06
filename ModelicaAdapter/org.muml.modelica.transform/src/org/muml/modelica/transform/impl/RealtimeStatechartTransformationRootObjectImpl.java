@@ -11,8 +11,6 @@ import org.muml.pim.realtimestatechart.RealtimeStatechart;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Realtime Statechart Transformation Root Object</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */

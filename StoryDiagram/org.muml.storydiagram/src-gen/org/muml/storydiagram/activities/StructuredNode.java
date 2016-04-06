@@ -19,10 +19,10 @@ import org.eclipse.emf.common.util.EList;
  *
  * <p>
  * The following features are supported:
- * <ul>
- *   <li>{@link org.muml.storydiagram.activities.StructuredNode#getOwnedActivityNodes <em>Owned Activity Node</em>}</li>
- * </ul>
  * </p>
+ * <ul>
+ *   <li>{@link org.muml.storydiagram.activities.StructuredNode#getOwnedActivityNode <em>Owned Activity Node</em>}</li>
+ * </ul>
  *
  * @see org.muml.storydiagram.activities.ActivitiesPackage#getStructuredNode()
  * @model
@@ -41,9 +41,9 @@ public interface StructuredNode extends ActivityNode {
 	 * @return the value of the '<em>Owned Activity Node</em>' containment reference list.
 	 * @see org.muml.storydiagram.activities.ActivitiesPackage#getStructuredNode_OwnedActivityNode()
 	 * @see org.muml.storydiagram.activities.ActivityNode#getOwningActivityNode
-	 * @model opposite="owningActivityNode" containment="true" resolveProxies="true" ordered="false"
+	 * @model opposite="owningActivityNode" containment="true" ordered="false"
 	 * @generated
 	 */
-	EList<ActivityNode> getOwnedActivityNodes();
+	EList<ActivityNode> getOwnedActivityNode();
 
 } // StructuredNode

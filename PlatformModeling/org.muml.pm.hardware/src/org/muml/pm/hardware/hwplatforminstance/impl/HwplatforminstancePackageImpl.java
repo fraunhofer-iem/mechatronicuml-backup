@@ -8,17 +8,8 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.muml.core.CorePackage;
-import org.muml.pim.behavior.BehaviorPackage;
-import org.muml.pim.component.ComponentPackage;
+import org.muml.pim.PimPackage;
 import org.muml.pim.connector.ConnectorPackage;
-import org.muml.pim.constraint.ConstraintPackage;
-import org.muml.pim.instance.InstancePackage;
-import org.muml.pim.msgtype.MsgtypePackage;
-import org.muml.pim.pattern.PatternPackage;
-import org.muml.pim.protocol.ProtocolPackage;
-import org.muml.pim.realtimestatechart.RealtimestatechartPackage;
-import org.muml.pim.types.TypesPackage;
-import org.muml.pim.valuetype.ValuetypePackage;
 import org.muml.pm.hardware.hwplatform.HwplatformPackage;
 import org.muml.pm.hardware.hwplatform.impl.HwplatformPackageImpl;
 import org.muml.pm.hardware.hwplatforminstance.BusInstance;
@@ -148,17 +139,7 @@ public class HwplatforminstancePackageImpl extends EPackageImpl implements Hwpla
 		isInited = true;
 
 		// Initialize simple dependencies
-		ConstraintPackage.eINSTANCE.eClass();
-		InstancePackage.eINSTANCE.eClass();
-		ProtocolPackage.eINSTANCE.eClass();
-		RealtimestatechartPackage.eINSTANCE.eClass();
-		MsgtypePackage.eINSTANCE.eClass();
-		TypesPackage.eINSTANCE.eClass();
-		ConnectorPackage.eINSTANCE.eClass();
-		ValuetypePackage.eINSTANCE.eClass();
-		BehaviorPackage.eINSTANCE.eClass();
-		ComponentPackage.eINSTANCE.eClass();
-		PatternPackage.eINSTANCE.eClass();
+		PimPackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
 		HwplatformPackageImpl theHwplatformPackage = (HwplatformPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(HwplatformPackage.eNS_URI) instanceof HwplatformPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(HwplatformPackage.eNS_URI) : HwplatformPackage.eINSTANCE);

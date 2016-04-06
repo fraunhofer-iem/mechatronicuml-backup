@@ -11,15 +11,7 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.muml.core.CorePackage;
-import org.muml.pim.behavior.BehaviorPackage;
-import org.muml.pim.component.ComponentPackage;
-import org.muml.pim.connector.ConnectorPackage;
-import org.muml.pim.constraint.ConstraintPackage;
-import org.muml.pim.instance.InstancePackage;
-import org.muml.pim.msgtype.MsgtypePackage;
-import org.muml.pim.pattern.PatternPackage;
-import org.muml.pim.protocol.ProtocolPackage;
-import org.muml.pim.realtimestatechart.RealtimestatechartPackage;
+import org.muml.pim.PimPackage;
 import org.muml.pim.types.TypesPackage;
 import org.muml.pim.valuetype.ValuetypePackage;
 import org.muml.reconfiguration.ReconfigurationPackage;
@@ -34,7 +26,7 @@ import org.muml.reconfiguration.structdatatype.Reference;
 import org.muml.reconfiguration.structdatatype.StructType;
 import org.muml.reconfiguration.structdatatype.StructdatatypeFactory;
 import org.muml.reconfiguration.structdatatype.StructdatatypePackage;
-import org.muml.storydiagram.StorydiagramsPackage;
+import org.storydriven.storydiagrams.StorydiagramsPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -104,18 +96,8 @@ public class StructdatatypePackageImpl extends EPackageImpl implements Structdat
 		isInited = true;
 
 		// Initialize simple dependencies
-		ComponentPackage.eINSTANCE.eClass();
-		ConstraintPackage.eINSTANCE.eClass();
-		InstancePackage.eINSTANCE.eClass();
-		ProtocolPackage.eINSTANCE.eClass();
-		RealtimestatechartPackage.eINSTANCE.eClass();
-		MsgtypePackage.eINSTANCE.eClass();
-		TypesPackage.eINSTANCE.eClass();
-		ConnectorPackage.eINSTANCE.eClass();
-		ValuetypePackage.eINSTANCE.eClass();
-		BehaviorPackage.eINSTANCE.eClass();
-		PatternPackage.eINSTANCE.eClass();
-		StorydiagramsPackage.eINSTANCE.eClass();
+		PimPackage.eINSTANCE.eClass();
+		StorydiagramPackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
 		ReconfigurationPackageImpl theReconfigurationPackage = (ReconfigurationPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ReconfigurationPackage.eNS_URI) instanceof ReconfigurationPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ReconfigurationPackage.eNS_URI) : ReconfigurationPackage.eINSTANCE);

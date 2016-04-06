@@ -32,11 +32,11 @@ import java.util.Collection;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.verification.core.runtime.impl.RuntimeDiscretePortInstanceImpl#getStatechartInstance <em>Statechart Instance</em>}</li>
  *   <li>{@link org.muml.verification.core.runtime.impl.RuntimeDiscretePortInstanceImpl#getMessageBuffer <em>Message Buffer</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

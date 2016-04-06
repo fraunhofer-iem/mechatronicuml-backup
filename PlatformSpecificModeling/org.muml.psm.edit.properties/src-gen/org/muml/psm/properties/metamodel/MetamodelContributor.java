@@ -1,9 +1,7 @@
 
 package org.muml.psm.properties.metamodel;
 
-public class MetamodelContributor
-		implements
-			org.muml.ape.runtime.metamodel.IMetamodelContributor {
+public class MetamodelContributor implements org.muml.ape.runtime.metamodel.IMetamodelContributor {
 
 	/**
 	 * @generated
@@ -33,17 +31,14 @@ public class MetamodelContributor
 
 		factories.add(new org.muml.psm.allocation.provider.AllocationItemProviderAdapterFactory());
 
-		factories.add(
-				new org.muml.psm.portapimapping.provider.PortapimappingItemProviderAdapterFactory());
+		factories.add(new org.muml.psm.portapimapping.provider.PortapimappingItemProviderAdapterFactory());
 
 		factories.add(
 				new org.muml.psm.psm_realtimestatechart.realtimestatechartparameter.provider.RealtimestatechartparameterItemProviderAdapterFactory());
 
-		factories.add(
-				new org.muml.psm.apiexpressions.provider.ApiexpressionsItemProviderAdapterFactory());
+		factories.add(new org.muml.psm.apiexpressions.provider.ApiexpressionsItemProviderAdapterFactory());
 
-		factories.add(
-				new org.muml.psm.psm_instance.provider.Psm_instanceItemProviderAdapterFactory());
+		factories.add(new org.muml.psm.psm_instance.provider.Psm_instanceItemProviderAdapterFactory());
 
 	}
 

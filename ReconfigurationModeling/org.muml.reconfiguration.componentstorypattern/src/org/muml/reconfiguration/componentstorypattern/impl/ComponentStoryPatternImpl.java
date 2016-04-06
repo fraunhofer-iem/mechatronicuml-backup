@@ -20,11 +20,11 @@ import org.muml.reconfiguration.componentstorypattern.ComponentstorypatternPacka
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.reconfiguration.componentstorypattern.impl.ComponentStoryPatternImpl#getComment <em>Comment</em>}</li>
  *   <li>{@link org.muml.reconfiguration.componentstorypattern.impl.ComponentStoryPatternImpl#getThisVariable <em>This Variable</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

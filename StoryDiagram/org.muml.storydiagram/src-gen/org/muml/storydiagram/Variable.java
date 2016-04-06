@@ -19,12 +19,12 @@ import org.muml.core.TypedElement;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.storydiagram.Variable#getVariableName <em>Variable Name</em>}</li>
  * </ul>
- * </p>
  *
- * @see org.muml.storydiagram.StorydiagramsPackage#getVariable()
+ * @see org.muml.storydiagram.StorydiagramPackage#getVariable()
  * @model abstract="true"
  * @generated
  */
@@ -38,7 +38,7 @@ public interface Variable extends TypedElement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Variable Name</em>' attribute.
-	 * @see org.muml.storydiagram.StorydiagramsPackage#getVariable_VariableName()
+	 * @see org.muml.storydiagram.StorydiagramPackage#getVariable_VariableName()
 	 * @model transient="true" changeable="false" volatile="true" derived="true" ordered="false"
 	 * @generated
 	 */

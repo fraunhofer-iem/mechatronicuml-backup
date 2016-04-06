@@ -104,7 +104,10 @@ public enum BindingSemantics implements Enumerator {
 	 * @generated
 	 */
 	private static final BindingSemantics[] VALUES_ARRAY = new BindingSemantics[] {
-			MANDATORY, NEGATIVE, OPTIONAL, };
+			MANDATORY,
+			NEGATIVE,
+			OPTIONAL,
+		};
 
 	/**
 	 * A public read-only list of all the '<em><b>Binding Semantics</b></em>' enumerators.
@@ -112,13 +115,14 @@ public enum BindingSemantics implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final List<BindingSemantics> VALUES = Collections
-			.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+	public static final List<BindingSemantics> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
 	/**
 	 * Returns the '<em><b>Binding Semantics</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @param literal the literal.
+	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static BindingSemantics get(String literal) {
@@ -135,6 +139,8 @@ public enum BindingSemantics implements Enumerator {
 	 * Returns the '<em><b>Binding Semantics</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @param name the name.
+	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static BindingSemantics getByName(String name) {
@@ -151,16 +157,15 @@ public enum BindingSemantics implements Enumerator {
 	 * Returns the '<em><b>Binding Semantics</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @param value the integer value.
+	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static BindingSemantics get(int value) {
 		switch (value) {
-		case MANDATORY_VALUE:
-			return MANDATORY;
-		case NEGATIVE_VALUE:
-			return NEGATIVE;
-		case OPTIONAL_VALUE:
-			return OPTIONAL;
+			case MANDATORY_VALUE: return MANDATORY;
+			case NEGATIVE_VALUE: return NEGATIVE;
+			case OPTIONAL_VALUE: return OPTIONAL;
 		}
 		return null;
 	}
@@ -204,7 +209,7 @@ public enum BindingSemantics implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-		return value;
+	  return value;
 	}
 
 	/**
@@ -213,7 +218,7 @@ public enum BindingSemantics implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-		return name;
+	  return name;
 	}
 
 	/**
@@ -222,7 +227,7 @@ public enum BindingSemantics implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-		return literal;
+	  return literal;
 	}
 
 	/**

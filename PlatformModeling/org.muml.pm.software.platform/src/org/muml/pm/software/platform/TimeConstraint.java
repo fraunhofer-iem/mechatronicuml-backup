@@ -15,10 +15,10 @@ import org.muml.pim.valuetype.TimeValue;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.pm.software.platform.TimeConstraint#getSamplingTime <em>Sampling Time</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.pm.software.platform.SwplatformPackage#getTimeConstraint()
  * @model

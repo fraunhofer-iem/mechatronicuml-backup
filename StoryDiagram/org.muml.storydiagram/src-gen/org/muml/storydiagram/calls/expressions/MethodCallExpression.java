@@ -21,13 +21,13 @@ import org.muml.storydiagram.calls.OpaqueCallable;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.storydiagram.calls.expressions.MethodCallExpression#getTarget <em>Target</em>}</li>
  *   <li>{@link org.muml.storydiagram.calls.expressions.MethodCallExpression#getOpaqueCallable <em>Opaque Callable</em>}</li>
  * </ul>
- * </p>
  *
- * @see org.muml.storydiagram.calls.expressions.CallsExpressionsPackage#getMethodCallExpression()
+ * @see org.muml.storydiagram.calls.expressions.ExpressionsPackage#getMethodCallExpression()
  * @model
  * @generated
  */
@@ -41,8 +41,8 @@ public interface MethodCallExpression extends Expression, Invocation {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Target</em>' containment reference.
 	 * @see #setTarget(Expression)
-	 * @see org.muml.storydiagram.calls.expressions.CallsExpressionsPackage#getMethodCallExpression_Target()
-	 * @model containment="true" resolveProxies="true" ordered="false"
+	 * @see org.muml.storydiagram.calls.expressions.ExpressionsPackage#getMethodCallExpression_Target()
+	 * @model containment="true" ordered="false"
 	 * @generated
 	 */
 	Expression getTarget();
@@ -67,9 +67,9 @@ public interface MethodCallExpression extends Expression, Invocation {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Opaque Callable</em>' containment reference.
 	 * @see #setOpaqueCallable(OpaqueCallable)
-	 * @see org.muml.storydiagram.calls.expressions.CallsExpressionsPackage#getMethodCallExpression_OpaqueCallable()
+	 * @see org.muml.storydiagram.calls.expressions.ExpressionsPackage#getMethodCallExpression_OpaqueCallable()
 	 * @see org.muml.storydiagram.calls.OpaqueCallable#getCallExpression
-	 * @model opposite="callExpression" containment="true" resolveProxies="true" ordered="false"
+	 * @model opposite="callExpression" containment="true" ordered="false"
 	 * @generated
 	 */
 	OpaqueCallable getOpaqueCallable();

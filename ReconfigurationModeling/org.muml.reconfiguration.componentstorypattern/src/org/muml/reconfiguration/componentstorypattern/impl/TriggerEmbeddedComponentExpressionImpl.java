@@ -11,8 +11,6 @@ import org.muml.reconfiguration.componentstorypattern.TriggerEmbeddedComponentEx
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Trigger Embedded Component Expression</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */

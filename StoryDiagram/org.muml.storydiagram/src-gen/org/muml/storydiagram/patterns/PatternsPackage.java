@@ -13,7 +13,7 @@ import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.muml.core.CorePackage;
-import org.muml.storydiagram.StorydiagramsPackage;
+import org.muml.storydiagram.StorydiagramPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -49,7 +49,7 @@ public interface PatternsPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.storydriven.org/storydiagrams/patterns/0.2.1";
+	String eNS_URI = "http://www.muml.org/storydiagram/patterns/1.0.0";
 
 	/**
 	 * The package namespace name.
@@ -65,8 +65,7 @@ public interface PatternsPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	PatternsPackage eINSTANCE = org.muml.storydiagram.patterns.impl.PatternsPackageImpl
-			.init();
+	PatternsPackage eINSTANCE = org.muml.storydiagram.patterns.impl.PatternsPackageImpl.init();
 
 	/**
 	 * The meta object id for the '{@link org.muml.storydiagram.patterns.impl.AbstractVariableImpl <em>Abstract Variable</em>}' class.
@@ -79,22 +78,22 @@ public interface PatternsPackage extends EPackage {
 	int ABSTRACT_VARIABLE = 1;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_VARIABLE__ANNOTATION = StorydiagramsPackage.VARIABLE__ANNOTATION;
+	int ABSTRACT_VARIABLE__ANNOTATIONS = StorydiagramPackage.VARIABLE__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_VARIABLE__EXTENSION = StorydiagramsPackage.VARIABLE__EXTENSION;
+	int ABSTRACT_VARIABLE__EXTENSIONS = StorydiagramPackage.VARIABLE__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' reference.
@@ -103,7 +102,7 @@ public interface PatternsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_VARIABLE__TYPE = StorydiagramsPackage.VARIABLE__TYPE;
+	int ABSTRACT_VARIABLE__TYPE = StorydiagramPackage.VARIABLE__TYPE;
 
 	/**
 	 * The feature id for the '<em><b>Generic Type</b></em>' containment reference.
@@ -112,7 +111,7 @@ public interface PatternsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_VARIABLE__GENERIC_TYPE = StorydiagramsPackage.VARIABLE__GENERIC_TYPE;
+	int ABSTRACT_VARIABLE__GENERIC_TYPE = StorydiagramPackage.VARIABLE__GENERIC_TYPE;
 
 	/**
 	 * The feature id for the '<em><b>Variable Name</b></em>' attribute.
@@ -121,7 +120,7 @@ public interface PatternsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_VARIABLE__VARIABLE_NAME = StorydiagramsPackage.VARIABLE__VARIABLE_NAME;
+	int ABSTRACT_VARIABLE__VARIABLE_NAME = StorydiagramPackage.VARIABLE__VARIABLE_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -130,7 +129,7 @@ public interface PatternsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_VARIABLE__NAME = StorydiagramsPackage.VARIABLE_FEATURE_COUNT + 0;
+	int ABSTRACT_VARIABLE__NAME = StorydiagramPackage.VARIABLE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Pattern</b></em>' container reference.
@@ -139,7 +138,7 @@ public interface PatternsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_VARIABLE__PATTERN = StorydiagramsPackage.VARIABLE_FEATURE_COUNT + 1;
+	int ABSTRACT_VARIABLE__PATTERN = StorydiagramPackage.VARIABLE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Binding State</b></em>' attribute.
@@ -148,7 +147,7 @@ public interface PatternsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_VARIABLE__BINDING_STATE = StorydiagramsPackage.VARIABLE_FEATURE_COUNT + 2;
+	int ABSTRACT_VARIABLE__BINDING_STATE = StorydiagramPackage.VARIABLE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Binding Expression</b></em>' containment reference.
@@ -157,7 +156,7 @@ public interface PatternsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_VARIABLE__BINDING_EXPRESSION = StorydiagramsPackage.VARIABLE_FEATURE_COUNT + 3;
+	int ABSTRACT_VARIABLE__BINDING_EXPRESSION = StorydiagramPackage.VARIABLE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Constraint</b></em>' containment reference list.
@@ -166,7 +165,7 @@ public interface PatternsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_VARIABLE__CONSTRAINT = StorydiagramsPackage.VARIABLE_FEATURE_COUNT + 4;
+	int ABSTRACT_VARIABLE__CONSTRAINT = StorydiagramPackage.VARIABLE_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Incoming Link</b></em>' reference list.
@@ -175,7 +174,7 @@ public interface PatternsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_VARIABLE__INCOMING_LINK = StorydiagramsPackage.VARIABLE_FEATURE_COUNT + 5;
+	int ABSTRACT_VARIABLE__INCOMING_LINK = StorydiagramPackage.VARIABLE_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Abstract Variable</em>' class.
@@ -184,7 +183,7 @@ public interface PatternsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_VARIABLE_FEATURE_COUNT = StorydiagramsPackage.VARIABLE_FEATURE_COUNT + 6;
+	int ABSTRACT_VARIABLE_FEATURE_COUNT = StorydiagramPackage.VARIABLE_FEATURE_COUNT + 6;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -193,7 +192,7 @@ public interface PatternsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_VARIABLE___ECLASS = StorydiagramsPackage.VARIABLE___ECLASS;
+	int ABSTRACT_VARIABLE___ECLASS = StorydiagramPackage.VARIABLE___ECLASS;
 
 	/**
 	 * The operation id for the '<em>EIs Proxy</em>' operation.
@@ -202,7 +201,7 @@ public interface PatternsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_VARIABLE___EIS_PROXY = StorydiagramsPackage.VARIABLE___EIS_PROXY;
+	int ABSTRACT_VARIABLE___EIS_PROXY = StorydiagramPackage.VARIABLE___EIS_PROXY;
 
 	/**
 	 * The operation id for the '<em>EResource</em>' operation.
@@ -211,7 +210,7 @@ public interface PatternsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_VARIABLE___ERESOURCE = StorydiagramsPackage.VARIABLE___ERESOURCE;
+	int ABSTRACT_VARIABLE___ERESOURCE = StorydiagramPackage.VARIABLE___ERESOURCE;
 
 	/**
 	 * The operation id for the '<em>EContainer</em>' operation.
@@ -220,7 +219,7 @@ public interface PatternsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_VARIABLE___ECONTAINER = StorydiagramsPackage.VARIABLE___ECONTAINER;
+	int ABSTRACT_VARIABLE___ECONTAINER = StorydiagramPackage.VARIABLE___ECONTAINER;
 
 	/**
 	 * The operation id for the '<em>EContaining Feature</em>' operation.
@@ -229,7 +228,7 @@ public interface PatternsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_VARIABLE___ECONTAINING_FEATURE = StorydiagramsPackage.VARIABLE___ECONTAINING_FEATURE;
+	int ABSTRACT_VARIABLE___ECONTAINING_FEATURE = StorydiagramPackage.VARIABLE___ECONTAINING_FEATURE;
 
 	/**
 	 * The operation id for the '<em>EContainment Feature</em>' operation.
@@ -238,7 +237,7 @@ public interface PatternsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_VARIABLE___ECONTAINMENT_FEATURE = StorydiagramsPackage.VARIABLE___ECONTAINMENT_FEATURE;
+	int ABSTRACT_VARIABLE___ECONTAINMENT_FEATURE = StorydiagramPackage.VARIABLE___ECONTAINMENT_FEATURE;
 
 	/**
 	 * The operation id for the '<em>EContents</em>' operation.
@@ -247,7 +246,7 @@ public interface PatternsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_VARIABLE___ECONTENTS = StorydiagramsPackage.VARIABLE___ECONTENTS;
+	int ABSTRACT_VARIABLE___ECONTENTS = StorydiagramPackage.VARIABLE___ECONTENTS;
 
 	/**
 	 * The operation id for the '<em>EAll Contents</em>' operation.
@@ -256,7 +255,7 @@ public interface PatternsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_VARIABLE___EALL_CONTENTS = StorydiagramsPackage.VARIABLE___EALL_CONTENTS;
+	int ABSTRACT_VARIABLE___EALL_CONTENTS = StorydiagramPackage.VARIABLE___EALL_CONTENTS;
 
 	/**
 	 * The operation id for the '<em>ECross References</em>' operation.
@@ -265,7 +264,7 @@ public interface PatternsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_VARIABLE___ECROSS_REFERENCES = StorydiagramsPackage.VARIABLE___ECROSS_REFERENCES;
+	int ABSTRACT_VARIABLE___ECROSS_REFERENCES = StorydiagramPackage.VARIABLE___ECROSS_REFERENCES;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -274,7 +273,7 @@ public interface PatternsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_VARIABLE___EGET__ESTRUCTURALFEATURE = StorydiagramsPackage.VARIABLE___EGET__ESTRUCTURALFEATURE;
+	int ABSTRACT_VARIABLE___EGET__ESTRUCTURALFEATURE = StorydiagramPackage.VARIABLE___EGET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -283,7 +282,7 @@ public interface PatternsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_VARIABLE___EGET__ESTRUCTURALFEATURE_BOOLEAN = StorydiagramsPackage.VARIABLE___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+	int ABSTRACT_VARIABLE___EGET__ESTRUCTURALFEATURE_BOOLEAN = StorydiagramPackage.VARIABLE___EGET__ESTRUCTURALFEATURE_BOOLEAN;
 
 	/**
 	 * The operation id for the '<em>ESet</em>' operation.
@@ -292,7 +291,7 @@ public interface PatternsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_VARIABLE___ESET__ESTRUCTURALFEATURE_OBJECT = StorydiagramsPackage.VARIABLE___ESET__ESTRUCTURALFEATURE_OBJECT;
+	int ABSTRACT_VARIABLE___ESET__ESTRUCTURALFEATURE_OBJECT = StorydiagramPackage.VARIABLE___ESET__ESTRUCTURALFEATURE_OBJECT;
 
 	/**
 	 * The operation id for the '<em>EIs Set</em>' operation.
@@ -301,7 +300,7 @@ public interface PatternsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_VARIABLE___EIS_SET__ESTRUCTURALFEATURE = StorydiagramsPackage.VARIABLE___EIS_SET__ESTRUCTURALFEATURE;
+	int ABSTRACT_VARIABLE___EIS_SET__ESTRUCTURALFEATURE = StorydiagramPackage.VARIABLE___EIS_SET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EUnset</em>' operation.
@@ -310,7 +309,7 @@ public interface PatternsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_VARIABLE___EUNSET__ESTRUCTURALFEATURE = StorydiagramsPackage.VARIABLE___EUNSET__ESTRUCTURALFEATURE;
+	int ABSTRACT_VARIABLE___EUNSET__ESTRUCTURALFEATURE = StorydiagramPackage.VARIABLE___EUNSET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EInvoke</em>' operation.
@@ -319,7 +318,7 @@ public interface PatternsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_VARIABLE___EINVOKE__EOPERATION_ELIST = StorydiagramsPackage.VARIABLE___EINVOKE__EOPERATION_ELIST;
+	int ABSTRACT_VARIABLE___EINVOKE__EOPERATION_ELIST = StorydiagramPackage.VARIABLE___EINVOKE__EOPERATION_ELIST;
 
 	/**
 	 * The operation id for the '<em>Get Extension</em>' operation.
@@ -328,7 +327,7 @@ public interface PatternsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_VARIABLE___GET_EXTENSION__ECLASS = StorydiagramsPackage.VARIABLE___GET_EXTENSION__ECLASS;
+	int ABSTRACT_VARIABLE___GET_EXTENSION__ECLASS = StorydiagramPackage.VARIABLE___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Provide Extension</em>' operation.
@@ -337,7 +336,7 @@ public interface PatternsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_VARIABLE___PROVIDE_EXTENSION__ECLASS = StorydiagramsPackage.VARIABLE___PROVIDE_EXTENSION__ECLASS;
+	int ABSTRACT_VARIABLE___PROVIDE_EXTENSION__ECLASS = StorydiagramPackage.VARIABLE___PROVIDE_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Annotation</em>' operation.
@@ -346,7 +345,7 @@ public interface PatternsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_VARIABLE___GET_ANNOTATION__STRING = StorydiagramsPackage.VARIABLE___GET_ANNOTATION__STRING;
+	int ABSTRACT_VARIABLE___GET_ANNOTATION__STRING = StorydiagramPackage.VARIABLE___GET_ANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Provide Annotation</em>' operation.
@@ -355,7 +354,7 @@ public interface PatternsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_VARIABLE___PROVIDE_ANNOTATION__STRING = StorydiagramsPackage.VARIABLE___PROVIDE_ANNOTATION__STRING;
+	int ABSTRACT_VARIABLE___PROVIDE_ANNOTATION__STRING = StorydiagramPackage.VARIABLE___PROVIDE_ANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Abstract Variable</em>' class.
@@ -364,7 +363,7 @@ public interface PatternsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_VARIABLE_OPERATION_COUNT = StorydiagramsPackage.VARIABLE_OPERATION_COUNT + 0;
+	int ABSTRACT_VARIABLE_OPERATION_COUNT = StorydiagramPackage.VARIABLE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.muml.storydiagram.patterns.impl.ObjectVariableImpl <em>Object Variable</em>}' class.
@@ -377,22 +376,22 @@ public interface PatternsPackage extends EPackage {
 	int OBJECT_VARIABLE = 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OBJECT_VARIABLE__ANNOTATION = ABSTRACT_VARIABLE__ANNOTATION;
+	int OBJECT_VARIABLE__ANNOTATIONS = ABSTRACT_VARIABLE__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OBJECT_VARIABLE__EXTENSION = ABSTRACT_VARIABLE__EXTENSION;
+	int OBJECT_VARIABLE__EXTENSIONS = ABSTRACT_VARIABLE__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' reference.
@@ -784,22 +783,22 @@ public interface PatternsPackage extends EPackage {
 	int ABSTRACT_LINK_VARIABLE = 3;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_LINK_VARIABLE__ANNOTATION = CorePackage.NAMED_ELEMENT__ANNOTATION;
+	int ABSTRACT_LINK_VARIABLE__ANNOTATIONS = CorePackage.NAMED_ELEMENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_LINK_VARIABLE__EXTENSION = CorePackage.NAMED_ELEMENT__EXTENSION;
+	int ABSTRACT_LINK_VARIABLE__EXTENSIONS = CorePackage.NAMED_ELEMENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -970,7 +969,7 @@ public interface PatternsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_LINK_VARIABLE___EGET__ESTRUCTURALFEATURE = CorePackage.NAMED_ELEMENT___EGET__ESTRUCTURALFEATURE;
+	int ABSTRACT_LINK_VARIABLE___EGET__ESTRUCTURALFEATURE = CorePackage.NAMED_ELEMENT___EGET__ESTRUCTURALFEATURE_1;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -979,7 +978,7 @@ public interface PatternsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_LINK_VARIABLE___EGET__ESTRUCTURALFEATURE_BOOLEAN = CorePackage.NAMED_ELEMENT___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+	int ABSTRACT_LINK_VARIABLE___EGET__ESTRUCTURALFEATURE_BOOLEAN = CorePackage.NAMED_ELEMENT___EGET__ESTRUCTURALFEATURE_BOOLEAN_1;
 
 	/**
 	 * The operation id for the '<em>ESet</em>' operation.
@@ -988,7 +987,7 @@ public interface PatternsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_LINK_VARIABLE___ESET__ESTRUCTURALFEATURE_OBJECT = CorePackage.NAMED_ELEMENT___ESET__ESTRUCTURALFEATURE_OBJECT;
+	int ABSTRACT_LINK_VARIABLE___ESET__ESTRUCTURALFEATURE_OBJECT = CorePackage.NAMED_ELEMENT___ESET__ESTRUCTURALFEATURE_OBJECT_1;
 
 	/**
 	 * The operation id for the '<em>EIs Set</em>' operation.
@@ -997,7 +996,7 @@ public interface PatternsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_LINK_VARIABLE___EIS_SET__ESTRUCTURALFEATURE = CorePackage.NAMED_ELEMENT___EIS_SET__ESTRUCTURALFEATURE;
+	int ABSTRACT_LINK_VARIABLE___EIS_SET__ESTRUCTURALFEATURE = CorePackage.NAMED_ELEMENT___EIS_SET__ESTRUCTURALFEATURE_1;
 
 	/**
 	 * The operation id for the '<em>EUnset</em>' operation.
@@ -1006,7 +1005,7 @@ public interface PatternsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_LINK_VARIABLE___EUNSET__ESTRUCTURALFEATURE = CorePackage.NAMED_ELEMENT___EUNSET__ESTRUCTURALFEATURE;
+	int ABSTRACT_LINK_VARIABLE___EUNSET__ESTRUCTURALFEATURE = CorePackage.NAMED_ELEMENT___EUNSET__ESTRUCTURALFEATURE_1;
 
 	/**
 	 * The operation id for the '<em>EInvoke</em>' operation.
@@ -1015,7 +1014,7 @@ public interface PatternsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_LINK_VARIABLE___EINVOKE__EOPERATION_ELIST = CorePackage.NAMED_ELEMENT___EINVOKE__EOPERATION_ELIST;
+	int ABSTRACT_LINK_VARIABLE___EINVOKE__EOPERATION_ELIST = CorePackage.NAMED_ELEMENT___EINVOKE__EOPERATION_ELIST_1;
 
 	/**
 	 * The operation id for the '<em>Get Extension</em>' operation.
@@ -1073,22 +1072,22 @@ public interface PatternsPackage extends EPackage {
 	int LINK_CONSTRAINT = 4;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LINK_CONSTRAINT__ANNOTATION = CorePackage.EXTENDABLE_ELEMENT__ANNOTATION;
+	int LINK_CONSTRAINT__ANNOTATIONS = CorePackage.EXTENDABLE_ELEMENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LINK_CONSTRAINT__EXTENSION = CorePackage.EXTENDABLE_ELEMENT__EXTENSION;
+	int LINK_CONSTRAINT__EXTENSIONS = CorePackage.EXTENDABLE_ELEMENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Index</b></em>' attribute.
@@ -1241,7 +1240,7 @@ public interface PatternsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LINK_CONSTRAINT___EGET__ESTRUCTURALFEATURE = CorePackage.EXTENDABLE_ELEMENT___EGET__ESTRUCTURALFEATURE;
+	int LINK_CONSTRAINT___EGET__ESTRUCTURALFEATURE = CorePackage.EXTENDABLE_ELEMENT___EGET__ESTRUCTURALFEATURE_1;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -1250,7 +1249,7 @@ public interface PatternsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LINK_CONSTRAINT___EGET__ESTRUCTURALFEATURE_BOOLEAN = CorePackage.EXTENDABLE_ELEMENT___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+	int LINK_CONSTRAINT___EGET__ESTRUCTURALFEATURE_BOOLEAN = CorePackage.EXTENDABLE_ELEMENT___EGET__ESTRUCTURALFEATURE_BOOLEAN_1;
 
 	/**
 	 * The operation id for the '<em>ESet</em>' operation.
@@ -1259,7 +1258,7 @@ public interface PatternsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LINK_CONSTRAINT___ESET__ESTRUCTURALFEATURE_OBJECT = CorePackage.EXTENDABLE_ELEMENT___ESET__ESTRUCTURALFEATURE_OBJECT;
+	int LINK_CONSTRAINT___ESET__ESTRUCTURALFEATURE_OBJECT = CorePackage.EXTENDABLE_ELEMENT___ESET__ESTRUCTURALFEATURE_OBJECT_1;
 
 	/**
 	 * The operation id for the '<em>EIs Set</em>' operation.
@@ -1268,7 +1267,7 @@ public interface PatternsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LINK_CONSTRAINT___EIS_SET__ESTRUCTURALFEATURE = CorePackage.EXTENDABLE_ELEMENT___EIS_SET__ESTRUCTURALFEATURE;
+	int LINK_CONSTRAINT___EIS_SET__ESTRUCTURALFEATURE = CorePackage.EXTENDABLE_ELEMENT___EIS_SET__ESTRUCTURALFEATURE_1;
 
 	/**
 	 * The operation id for the '<em>EUnset</em>' operation.
@@ -1277,7 +1276,7 @@ public interface PatternsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LINK_CONSTRAINT___EUNSET__ESTRUCTURALFEATURE = CorePackage.EXTENDABLE_ELEMENT___EUNSET__ESTRUCTURALFEATURE;
+	int LINK_CONSTRAINT___EUNSET__ESTRUCTURALFEATURE = CorePackage.EXTENDABLE_ELEMENT___EUNSET__ESTRUCTURALFEATURE_1;
 
 	/**
 	 * The operation id for the '<em>EInvoke</em>' operation.
@@ -1286,7 +1285,7 @@ public interface PatternsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LINK_CONSTRAINT___EINVOKE__EOPERATION_ELIST = CorePackage.EXTENDABLE_ELEMENT___EINVOKE__EOPERATION_ELIST;
+	int LINK_CONSTRAINT___EINVOKE__EOPERATION_ELIST = CorePackage.EXTENDABLE_ELEMENT___EINVOKE__EOPERATION_ELIST_1;
 
 	/**
 	 * The operation id for the '<em>Get Extension</em>' operation.
@@ -1399,22 +1398,22 @@ public interface PatternsPackage extends EPackage {
 	int COLLECTION_VARIABLE = 6;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COLLECTION_VARIABLE__ANNOTATION = OBJECT_VARIABLE__ANNOTATION;
+	int COLLECTION_VARIABLE__ANNOTATIONS = OBJECT_VARIABLE__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COLLECTION_VARIABLE__EXTENSION = OBJECT_VARIABLE__EXTENSION;
+	int COLLECTION_VARIABLE__EXTENSIONS = OBJECT_VARIABLE__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' reference.
@@ -1769,22 +1768,22 @@ public interface PatternsPackage extends EPackage {
 	int PRIMITIVE_VARIABLE = 7;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PRIMITIVE_VARIABLE__ANNOTATION = ABSTRACT_VARIABLE__ANNOTATION;
+	int PRIMITIVE_VARIABLE__ANNOTATIONS = ABSTRACT_VARIABLE__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PRIMITIVE_VARIABLE__EXTENSION = ABSTRACT_VARIABLE__EXTENSION;
+	int PRIMITIVE_VARIABLE__EXTENSIONS = ABSTRACT_VARIABLE__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' reference.
@@ -2076,22 +2075,22 @@ public interface PatternsPackage extends EPackage {
 	int PATH = 8;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PATH__ANNOTATION = ABSTRACT_LINK_VARIABLE__ANNOTATION;
+	int PATH__ANNOTATIONS = ABSTRACT_LINK_VARIABLE__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PATH__EXTENSION = ABSTRACT_LINK_VARIABLE__EXTENSION;
+	int PATH__EXTENSIONS = ABSTRACT_LINK_VARIABLE__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2374,22 +2373,22 @@ public interface PatternsPackage extends EPackage {
 	int LINK_VARIABLE = 9;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LINK_VARIABLE__ANNOTATION = ABSTRACT_LINK_VARIABLE__ANNOTATION;
+	int LINK_VARIABLE__ANNOTATIONS = ABSTRACT_LINK_VARIABLE__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LINK_VARIABLE__EXTENSION = ABSTRACT_LINK_VARIABLE__EXTENSION;
+	int LINK_VARIABLE__EXTENSIONS = ABSTRACT_LINK_VARIABLE__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2690,22 +2689,22 @@ public interface PatternsPackage extends EPackage {
 	int INCLUSION_LINK = 10;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INCLUSION_LINK__ANNOTATION = ABSTRACT_LINK_VARIABLE__ANNOTATION;
+	int INCLUSION_LINK__ANNOTATIONS = ABSTRACT_LINK_VARIABLE__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INCLUSION_LINK__EXTENSION = ABSTRACT_LINK_VARIABLE__EXTENSION;
+	int INCLUSION_LINK__EXTENSIONS = ABSTRACT_LINK_VARIABLE__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2979,22 +2978,22 @@ public interface PatternsPackage extends EPackage {
 	int STORY_PATTERN = 13;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STORY_PATTERN__ANNOTATION = CorePackage.COMMENTABLE_ELEMENT__ANNOTATION;
+	int STORY_PATTERN__ANNOTATIONS = CorePackage.COMMENTABLE_ELEMENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STORY_PATTERN__EXTENSION = CorePackage.COMMENTABLE_ELEMENT__EXTENSION;
+	int STORY_PATTERN__EXTENSIONS = CorePackage.COMMENTABLE_ELEMENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -3165,7 +3164,7 @@ public interface PatternsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STORY_PATTERN___EGET__ESTRUCTURALFEATURE = CorePackage.COMMENTABLE_ELEMENT___EGET__ESTRUCTURALFEATURE;
+	int STORY_PATTERN___EGET__ESTRUCTURALFEATURE = CorePackage.COMMENTABLE_ELEMENT___EGET__ESTRUCTURALFEATURE_1;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -3174,7 +3173,7 @@ public interface PatternsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STORY_PATTERN___EGET__ESTRUCTURALFEATURE_BOOLEAN = CorePackage.COMMENTABLE_ELEMENT___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+	int STORY_PATTERN___EGET__ESTRUCTURALFEATURE_BOOLEAN = CorePackage.COMMENTABLE_ELEMENT___EGET__ESTRUCTURALFEATURE_BOOLEAN_1;
 
 	/**
 	 * The operation id for the '<em>ESet</em>' operation.
@@ -3183,7 +3182,7 @@ public interface PatternsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STORY_PATTERN___ESET__ESTRUCTURALFEATURE_OBJECT = CorePackage.COMMENTABLE_ELEMENT___ESET__ESTRUCTURALFEATURE_OBJECT;
+	int STORY_PATTERN___ESET__ESTRUCTURALFEATURE_OBJECT = CorePackage.COMMENTABLE_ELEMENT___ESET__ESTRUCTURALFEATURE_OBJECT_1;
 
 	/**
 	 * The operation id for the '<em>EIs Set</em>' operation.
@@ -3192,7 +3191,7 @@ public interface PatternsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STORY_PATTERN___EIS_SET__ESTRUCTURALFEATURE = CorePackage.COMMENTABLE_ELEMENT___EIS_SET__ESTRUCTURALFEATURE;
+	int STORY_PATTERN___EIS_SET__ESTRUCTURALFEATURE = CorePackage.COMMENTABLE_ELEMENT___EIS_SET__ESTRUCTURALFEATURE_1;
 
 	/**
 	 * The operation id for the '<em>EUnset</em>' operation.
@@ -3201,7 +3200,7 @@ public interface PatternsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STORY_PATTERN___EUNSET__ESTRUCTURALFEATURE = CorePackage.COMMENTABLE_ELEMENT___EUNSET__ESTRUCTURALFEATURE;
+	int STORY_PATTERN___EUNSET__ESTRUCTURALFEATURE = CorePackage.COMMENTABLE_ELEMENT___EUNSET__ESTRUCTURALFEATURE_1;
 
 	/**
 	 * The operation id for the '<em>EInvoke</em>' operation.
@@ -3210,7 +3209,7 @@ public interface PatternsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STORY_PATTERN___EINVOKE__EOPERATION_ELIST = CorePackage.COMMENTABLE_ELEMENT___EINVOKE__EOPERATION_ELIST;
+	int STORY_PATTERN___EINVOKE__EOPERATION_ELIST = CorePackage.COMMENTABLE_ELEMENT___EINVOKE__EOPERATION_ELIST_1;
 
 	/**
 	 * The operation id for the '<em>Get Extension</em>' operation.
@@ -3268,22 +3267,22 @@ public interface PatternsPackage extends EPackage {
 	int MATCHING_PATTERN = 11;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MATCHING_PATTERN__ANNOTATION = STORY_PATTERN__ANNOTATION;
+	int MATCHING_PATTERN__ANNOTATIONS = STORY_PATTERN__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MATCHING_PATTERN__EXTENSION = STORY_PATTERN__EXTENSION;
+	int MATCHING_PATTERN__EXTENSIONS = STORY_PATTERN__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -3566,22 +3565,22 @@ public interface PatternsPackage extends EPackage {
 	int MAYBE_LINK = 12;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MAYBE_LINK__ANNOTATION = ABSTRACT_LINK_VARIABLE__ANNOTATION;
+	int MAYBE_LINK__ANNOTATIONS = ABSTRACT_LINK_VARIABLE__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MAYBE_LINK__EXTENSION = ABSTRACT_LINK_VARIABLE__EXTENSION;
+	int MAYBE_LINK__EXTENSIONS = ABSTRACT_LINK_VARIABLE__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3895,22 +3894,22 @@ public interface PatternsPackage extends EPackage {
 	EClass getObjectVariable();
 
 	/**
-	 * Returns the meta object for the reference list '{@link org.muml.storydiagram.patterns.ObjectVariable#getOutgoingLinks <em>Outgoing Link</em>}'.
+	 * Returns the meta object for the reference list '{@link org.muml.storydiagram.patterns.ObjectVariable#getOutgoingLink <em>Outgoing Link</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference list '<em>Outgoing Link</em>'.
-	 * @see org.muml.storydiagram.patterns.ObjectVariable#getOutgoingLinks()
+	 * @see org.muml.storydiagram.patterns.ObjectVariable#getOutgoingLink()
 	 * @see #getObjectVariable()
 	 * @generated
 	 */
 	EReference getObjectVariable_OutgoingLink();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.muml.storydiagram.patterns.ObjectVariable#getLinkOrderConstraints <em>Link Order Constraint</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.muml.storydiagram.patterns.ObjectVariable#getLinkOrderConstraint <em>Link Order Constraint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Link Order Constraint</em>'.
-	 * @see org.muml.storydiagram.patterns.ObjectVariable#getLinkOrderConstraints()
+	 * @see org.muml.storydiagram.patterns.ObjectVariable#getLinkOrderConstraint()
 	 * @see #getObjectVariable()
 	 * @generated
 	 */
@@ -3939,11 +3938,11 @@ public interface PatternsPackage extends EPackage {
 	EAttribute getObjectVariable_BindingOperator();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.muml.storydiagram.patterns.ObjectVariable#getAttributeAssignments <em>Attribute Assignment</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.muml.storydiagram.patterns.ObjectVariable#getAttributeAssignment <em>Attribute Assignment</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Attribute Assignment</em>'.
-	 * @see org.muml.storydiagram.patterns.ObjectVariable#getAttributeAssignments()
+	 * @see org.muml.storydiagram.patterns.ObjectVariable#getAttributeAssignment()
 	 * @see #getObjectVariable()
 	 * @generated
 	 */
@@ -4004,22 +4003,22 @@ public interface PatternsPackage extends EPackage {
 	EReference getAbstractVariable_BindingExpression();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.muml.storydiagram.patterns.AbstractVariable#getConstraints <em>Constraint</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.muml.storydiagram.patterns.AbstractVariable#getConstraint <em>Constraint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Constraint</em>'.
-	 * @see org.muml.storydiagram.patterns.AbstractVariable#getConstraints()
+	 * @see org.muml.storydiagram.patterns.AbstractVariable#getConstraint()
 	 * @see #getAbstractVariable()
 	 * @generated
 	 */
 	EReference getAbstractVariable_Constraint();
 
 	/**
-	 * Returns the meta object for the reference list '{@link org.muml.storydiagram.patterns.AbstractVariable#getIncomingLinks <em>Incoming Link</em>}'.
+	 * Returns the meta object for the reference list '{@link org.muml.storydiagram.patterns.AbstractVariable#getIncomingLink <em>Incoming Link</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference list '<em>Incoming Link</em>'.
-	 * @see org.muml.storydiagram.patterns.AbstractVariable#getIncomingLinks()
+	 * @see org.muml.storydiagram.patterns.AbstractVariable#getIncomingLink()
 	 * @see #getAbstractVariable()
 	 * @generated
 	 */
@@ -4112,22 +4111,22 @@ public interface PatternsPackage extends EPackage {
 	EReference getAbstractLinkVariable_Source();
 
 	/**
-	 * Returns the meta object for the reference list '{@link org.muml.storydiagram.patterns.AbstractLinkVariable#getSecondLinkConstraints <em>Second Link Constraint</em>}'.
+	 * Returns the meta object for the reference list '{@link org.muml.storydiagram.patterns.AbstractLinkVariable#getSecondLinkConstraint <em>Second Link Constraint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference list '<em>Second Link Constraint</em>'.
-	 * @see org.muml.storydiagram.patterns.AbstractLinkVariable#getSecondLinkConstraints()
+	 * @see org.muml.storydiagram.patterns.AbstractLinkVariable#getSecondLinkConstraint()
 	 * @see #getAbstractLinkVariable()
 	 * @generated
 	 */
 	EReference getAbstractLinkVariable_SecondLinkConstraint();
 
 	/**
-	 * Returns the meta object for the reference list '{@link org.muml.storydiagram.patterns.AbstractLinkVariable#getFirstLinkConstraints <em>First Link Constraint</em>}'.
+	 * Returns the meta object for the reference list '{@link org.muml.storydiagram.patterns.AbstractLinkVariable#getFirstLinkConstraint <em>First Link Constraint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference list '<em>First Link Constraint</em>'.
-	 * @see org.muml.storydiagram.patterns.AbstractLinkVariable#getFirstLinkConstraints()
+	 * @see org.muml.storydiagram.patterns.AbstractLinkVariable#getFirstLinkConstraint()
 	 * @see #getAbstractLinkVariable()
 	 * @generated
 	 */
@@ -4432,33 +4431,33 @@ public interface PatternsPackage extends EPackage {
 	EClass getStoryPattern();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.muml.storydiagram.patterns.StoryPattern#getVariables <em>Variable</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.muml.storydiagram.patterns.StoryPattern#getVariable <em>Variable</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Variable</em>'.
-	 * @see org.muml.storydiagram.patterns.StoryPattern#getVariables()
+	 * @see org.muml.storydiagram.patterns.StoryPattern#getVariable()
 	 * @see #getStoryPattern()
 	 * @generated
 	 */
 	EReference getStoryPattern_Variable();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.muml.storydiagram.patterns.StoryPattern#getConstraints <em>Constraint</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.muml.storydiagram.patterns.StoryPattern#getConstraint <em>Constraint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Constraint</em>'.
-	 * @see org.muml.storydiagram.patterns.StoryPattern#getConstraints()
+	 * @see org.muml.storydiagram.patterns.StoryPattern#getConstraint()
 	 * @see #getStoryPattern()
 	 * @generated
 	 */
 	EReference getStoryPattern_Constraint();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.muml.storydiagram.patterns.StoryPattern#getLinkVariables <em>Link Variable</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.muml.storydiagram.patterns.StoryPattern#getLinkVariable <em>Link Variable</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Link Variable</em>'.
-	 * @see org.muml.storydiagram.patterns.StoryPattern#getLinkVariables()
+	 * @see org.muml.storydiagram.patterns.StoryPattern#getLinkVariable()
 	 * @see #getStoryPattern()
 	 * @generated
 	 */
@@ -4476,11 +4475,11 @@ public interface PatternsPackage extends EPackage {
 	EReference getStoryPattern_ParentPattern();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.muml.storydiagram.patterns.StoryPattern#getContainedPatterns <em>Contained Pattern</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.muml.storydiagram.patterns.StoryPattern#getContainedPattern <em>Contained Pattern</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Contained Pattern</em>'.
-	 * @see org.muml.storydiagram.patterns.StoryPattern#getContainedPatterns()
+	 * @see org.muml.storydiagram.patterns.StoryPattern#getContainedPattern()
 	 * @see #getStoryPattern()
 	 * @generated
 	 */
@@ -4596,8 +4595,7 @@ public interface PatternsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference OBJECT_VARIABLE__OUTGOING_LINK = eINSTANCE
-				.getObjectVariable_OutgoingLink();
+		EReference OBJECT_VARIABLE__OUTGOING_LINK = eINSTANCE.getObjectVariable_OutgoingLink();
 
 		/**
 		 * The meta object literal for the '<em><b>Link Order Constraint</b></em>' containment reference list feature.
@@ -4605,8 +4603,7 @@ public interface PatternsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference OBJECT_VARIABLE__LINK_ORDER_CONSTRAINT = eINSTANCE
-				.getObjectVariable_LinkOrderConstraint();
+		EReference OBJECT_VARIABLE__LINK_ORDER_CONSTRAINT = eINSTANCE.getObjectVariable_LinkOrderConstraint();
 
 		/**
 		 * The meta object literal for the '<em><b>Binding Semantics</b></em>' attribute feature.
@@ -4614,8 +4611,7 @@ public interface PatternsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute OBJECT_VARIABLE__BINDING_SEMANTICS = eINSTANCE
-				.getObjectVariable_BindingSemantics();
+		EAttribute OBJECT_VARIABLE__BINDING_SEMANTICS = eINSTANCE.getObjectVariable_BindingSemantics();
 
 		/**
 		 * The meta object literal for the '<em><b>Binding Operator</b></em>' attribute feature.
@@ -4623,8 +4619,7 @@ public interface PatternsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute OBJECT_VARIABLE__BINDING_OPERATOR = eINSTANCE
-				.getObjectVariable_BindingOperator();
+		EAttribute OBJECT_VARIABLE__BINDING_OPERATOR = eINSTANCE.getObjectVariable_BindingOperator();
 
 		/**
 		 * The meta object literal for the '<em><b>Attribute Assignment</b></em>' containment reference list feature.
@@ -4632,8 +4627,7 @@ public interface PatternsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference OBJECT_VARIABLE__ATTRIBUTE_ASSIGNMENT = eINSTANCE
-				.getObjectVariable_AttributeAssignment();
+		EReference OBJECT_VARIABLE__ATTRIBUTE_ASSIGNMENT = eINSTANCE.getObjectVariable_AttributeAssignment();
 
 		/**
 		 * The meta object literal for the '<em><b>Classifier</b></em>' reference feature.
@@ -4641,8 +4635,7 @@ public interface PatternsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference OBJECT_VARIABLE__CLASSIFIER = eINSTANCE
-				.getObjectVariable_Classifier();
+		EReference OBJECT_VARIABLE__CLASSIFIER = eINSTANCE.getObjectVariable_Classifier();
 
 		/**
 		 * The meta object literal for the '{@link org.muml.storydiagram.patterns.impl.AbstractVariableImpl <em>Abstract Variable</em>}' class.
@@ -4660,8 +4653,7 @@ public interface PatternsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ABSTRACT_VARIABLE__PATTERN = eINSTANCE
-				.getAbstractVariable_Pattern();
+		EReference ABSTRACT_VARIABLE__PATTERN = eINSTANCE.getAbstractVariable_Pattern();
 
 		/**
 		 * The meta object literal for the '<em><b>Binding State</b></em>' attribute feature.
@@ -4669,8 +4661,7 @@ public interface PatternsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ABSTRACT_VARIABLE__BINDING_STATE = eINSTANCE
-				.getAbstractVariable_BindingState();
+		EAttribute ABSTRACT_VARIABLE__BINDING_STATE = eINSTANCE.getAbstractVariable_BindingState();
 
 		/**
 		 * The meta object literal for the '<em><b>Binding Expression</b></em>' containment reference feature.
@@ -4678,8 +4669,7 @@ public interface PatternsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ABSTRACT_VARIABLE__BINDING_EXPRESSION = eINSTANCE
-				.getAbstractVariable_BindingExpression();
+		EReference ABSTRACT_VARIABLE__BINDING_EXPRESSION = eINSTANCE.getAbstractVariable_BindingExpression();
 
 		/**
 		 * The meta object literal for the '<em><b>Constraint</b></em>' containment reference list feature.
@@ -4687,8 +4677,7 @@ public interface PatternsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ABSTRACT_VARIABLE__CONSTRAINT = eINSTANCE
-				.getAbstractVariable_Constraint();
+		EReference ABSTRACT_VARIABLE__CONSTRAINT = eINSTANCE.getAbstractVariable_Constraint();
 
 		/**
 		 * The meta object literal for the '<em><b>Incoming Link</b></em>' reference list feature.
@@ -4696,8 +4685,7 @@ public interface PatternsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ABSTRACT_VARIABLE__INCOMING_LINK = eINSTANCE
-				.getAbstractVariable_IncomingLink();
+		EReference ABSTRACT_VARIABLE__INCOMING_LINK = eINSTANCE.getAbstractVariable_IncomingLink();
 
 		/**
 		 * The meta object literal for the '{@link org.muml.storydiagram.patterns.impl.ConstraintImpl <em>Constraint</em>}' class.
@@ -4715,8 +4703,7 @@ public interface PatternsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference CONSTRAINT__CONSTRAINT_EXPRESSION = eINSTANCE
-				.getConstraint_ConstraintExpression();
+		EReference CONSTRAINT__CONSTRAINT_EXPRESSION = eINSTANCE.getConstraint_ConstraintExpression();
 
 		/**
 		 * The meta object literal for the '<em><b>Pattern</b></em>' container reference feature.
@@ -4732,8 +4719,7 @@ public interface PatternsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference CONSTRAINT__OBJECT_VARIABLE = eINSTANCE
-				.getConstraint_ObjectVariable();
+		EReference CONSTRAINT__OBJECT_VARIABLE = eINSTANCE.getConstraint_ObjectVariable();
 
 		/**
 		 * The meta object literal for the '{@link org.muml.storydiagram.patterns.impl.AbstractLinkVariableImpl <em>Abstract Link Variable</em>}' class.
@@ -4751,8 +4737,7 @@ public interface PatternsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ABSTRACT_LINK_VARIABLE__BINDING_SEMANTICS = eINSTANCE
-				.getAbstractLinkVariable_BindingSemantics();
+		EAttribute ABSTRACT_LINK_VARIABLE__BINDING_SEMANTICS = eINSTANCE.getAbstractLinkVariable_BindingSemantics();
 
 		/**
 		 * The meta object literal for the '<em><b>Binding Operator</b></em>' attribute feature.
@@ -4760,8 +4745,7 @@ public interface PatternsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ABSTRACT_LINK_VARIABLE__BINDING_OPERATOR = eINSTANCE
-				.getAbstractLinkVariable_BindingOperator();
+		EAttribute ABSTRACT_LINK_VARIABLE__BINDING_OPERATOR = eINSTANCE.getAbstractLinkVariable_BindingOperator();
 
 		/**
 		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
@@ -4769,8 +4753,7 @@ public interface PatternsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ABSTRACT_LINK_VARIABLE__SOURCE = eINSTANCE
-				.getAbstractLinkVariable_Source();
+		EReference ABSTRACT_LINK_VARIABLE__SOURCE = eINSTANCE.getAbstractLinkVariable_Source();
 
 		/**
 		 * The meta object literal for the '<em><b>Second Link Constraint</b></em>' reference list feature.
@@ -4778,8 +4761,7 @@ public interface PatternsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ABSTRACT_LINK_VARIABLE__SECOND_LINK_CONSTRAINT = eINSTANCE
-				.getAbstractLinkVariable_SecondLinkConstraint();
+		EReference ABSTRACT_LINK_VARIABLE__SECOND_LINK_CONSTRAINT = eINSTANCE.getAbstractLinkVariable_SecondLinkConstraint();
 
 		/**
 		 * The meta object literal for the '<em><b>First Link Constraint</b></em>' reference list feature.
@@ -4787,8 +4769,7 @@ public interface PatternsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ABSTRACT_LINK_VARIABLE__FIRST_LINK_CONSTRAINT = eINSTANCE
-				.getAbstractLinkVariable_FirstLinkConstraint();
+		EReference ABSTRACT_LINK_VARIABLE__FIRST_LINK_CONSTRAINT = eINSTANCE.getAbstractLinkVariable_FirstLinkConstraint();
 
 		/**
 		 * The meta object literal for the '<em><b>Pattern</b></em>' container reference feature.
@@ -4796,8 +4777,7 @@ public interface PatternsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ABSTRACT_LINK_VARIABLE__PATTERN = eINSTANCE
-				.getAbstractLinkVariable_Pattern();
+		EReference ABSTRACT_LINK_VARIABLE__PATTERN = eINSTANCE.getAbstractLinkVariable_Pattern();
 
 		/**
 		 * The meta object literal for the '<em><b>Target</b></em>' reference feature.
@@ -4805,8 +4785,7 @@ public interface PatternsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ABSTRACT_LINK_VARIABLE__TARGET = eINSTANCE
-				.getAbstractLinkVariable_Target();
+		EReference ABSTRACT_LINK_VARIABLE__TARGET = eINSTANCE.getAbstractLinkVariable_Target();
 
 		/**
 		 * The meta object literal for the '{@link org.muml.storydiagram.patterns.impl.LinkConstraintImpl <em>Link Constraint</em>}' class.
@@ -4832,8 +4811,7 @@ public interface PatternsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute LINK_CONSTRAINT__CONSTRAINT_TYPE = eINSTANCE
-				.getLinkConstraint_ConstraintType();
+		EAttribute LINK_CONSTRAINT__CONSTRAINT_TYPE = eINSTANCE.getLinkConstraint_ConstraintType();
 
 		/**
 		 * The meta object literal for the '<em><b>Negative</b></em>' attribute feature.
@@ -4841,8 +4819,7 @@ public interface PatternsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute LINK_CONSTRAINT__NEGATIVE = eINSTANCE
-				.getLinkConstraint_Negative();
+		EAttribute LINK_CONSTRAINT__NEGATIVE = eINSTANCE.getLinkConstraint_Negative();
 
 		/**
 		 * The meta object literal for the '<em><b>First Link</b></em>' reference feature.
@@ -4850,8 +4827,7 @@ public interface PatternsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference LINK_CONSTRAINT__FIRST_LINK = eINSTANCE
-				.getLinkConstraint_FirstLink();
+		EReference LINK_CONSTRAINT__FIRST_LINK = eINSTANCE.getLinkConstraint_FirstLink();
 
 		/**
 		 * The meta object literal for the '<em><b>Referencing Object</b></em>' container reference feature.
@@ -4859,8 +4835,7 @@ public interface PatternsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference LINK_CONSTRAINT__REFERENCING_OBJECT = eINSTANCE
-				.getLinkConstraint_ReferencingObject();
+		EReference LINK_CONSTRAINT__REFERENCING_OBJECT = eINSTANCE.getLinkConstraint_ReferencingObject();
 
 		/**
 		 * The meta object literal for the '<em><b>Second Link</b></em>' reference feature.
@@ -4868,8 +4843,7 @@ public interface PatternsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference LINK_CONSTRAINT__SECOND_LINK = eINSTANCE
-				.getLinkConstraint_SecondLink();
+		EReference LINK_CONSTRAINT__SECOND_LINK = eINSTANCE.getLinkConstraint_SecondLink();
 
 		/**
 		 * The meta object literal for the '{@link org.muml.storydiagram.patterns.impl.AttributeAssignmentImpl <em>Attribute Assignment</em>}' class.
@@ -4887,8 +4861,7 @@ public interface PatternsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ATTRIBUTE_ASSIGNMENT__ATTRIBUTE = eINSTANCE
-				.getAttributeAssignment_Attribute();
+		EReference ATTRIBUTE_ASSIGNMENT__ATTRIBUTE = eINSTANCE.getAttributeAssignment_Attribute();
 
 		/**
 		 * The meta object literal for the '<em><b>Value Expression</b></em>' containment reference feature.
@@ -4896,8 +4869,7 @@ public interface PatternsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ATTRIBUTE_ASSIGNMENT__VALUE_EXPRESSION = eINSTANCE
-				.getAttributeAssignment_ValueExpression();
+		EReference ATTRIBUTE_ASSIGNMENT__VALUE_EXPRESSION = eINSTANCE.getAttributeAssignment_ValueExpression();
 
 		/**
 		 * The meta object literal for the '<em><b>Object Variable</b></em>' container reference feature.
@@ -4905,8 +4877,7 @@ public interface PatternsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ATTRIBUTE_ASSIGNMENT__OBJECT_VARIABLE = eINSTANCE
-				.getAttributeAssignment_ObjectVariable();
+		EReference ATTRIBUTE_ASSIGNMENT__OBJECT_VARIABLE = eINSTANCE.getAttributeAssignment_ObjectVariable();
 
 		/**
 		 * The meta object literal for the '{@link org.muml.storydiagram.patterns.impl.CollectionVariableImpl <em>Collection Variable</em>}' class.
@@ -4924,8 +4895,7 @@ public interface PatternsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute COLLECTION_VARIABLE__AT_LEAST_ONE = eINSTANCE
-				.getCollectionVariable_AtLeastOne();
+		EAttribute COLLECTION_VARIABLE__AT_LEAST_ONE = eINSTANCE.getCollectionVariable_AtLeastOne();
 
 		/**
 		 * The meta object literal for the '<em><b>Unique</b></em>' attribute feature.
@@ -4933,8 +4903,7 @@ public interface PatternsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute COLLECTION_VARIABLE__UNIQUE = eINSTANCE
-				.getCollectionVariable_Unique();
+		EAttribute COLLECTION_VARIABLE__UNIQUE = eINSTANCE.getCollectionVariable_Unique();
 
 		/**
 		 * The meta object literal for the '{@link org.muml.storydiagram.patterns.impl.PrimitiveVariableImpl <em>Primitive Variable</em>}' class.
@@ -4952,8 +4921,7 @@ public interface PatternsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PRIMITIVE_VARIABLE__CLASSIFIER = eINSTANCE
-				.getPrimitiveVariable_Classifier();
+		EReference PRIMITIVE_VARIABLE__CLASSIFIER = eINSTANCE.getPrimitiveVariable_Classifier();
 
 		/**
 		 * The meta object literal for the '{@link org.muml.storydiagram.patterns.impl.PathImpl <em>Path</em>}' class.
@@ -4989,8 +4957,7 @@ public interface PatternsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference LINK_VARIABLE__SOURCE_END = eINSTANCE
-				.getLinkVariable_SourceEnd();
+		EReference LINK_VARIABLE__SOURCE_END = eINSTANCE.getLinkVariable_SourceEnd();
 
 		/**
 		 * The meta object literal for the '<em><b>Target End</b></em>' reference feature.
@@ -4998,8 +4965,7 @@ public interface PatternsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference LINK_VARIABLE__TARGET_END = eINSTANCE
-				.getLinkVariable_TargetEnd();
+		EReference LINK_VARIABLE__TARGET_END = eINSTANCE.getLinkVariable_TargetEnd();
 
 		/**
 		 * The meta object literal for the '<em><b>Qualifier Expression</b></em>' containment reference feature.
@@ -5007,8 +4973,7 @@ public interface PatternsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference LINK_VARIABLE__QUALIFIER_EXPRESSION = eINSTANCE
-				.getLinkVariable_QualifierExpression();
+		EReference LINK_VARIABLE__QUALIFIER_EXPRESSION = eINSTANCE.getLinkVariable_QualifierExpression();
 
 		/**
 		 * The meta object literal for the '{@link org.muml.storydiagram.patterns.impl.InclusionLinkImpl <em>Inclusion Link</em>}' class.
@@ -5036,8 +5001,7 @@ public interface PatternsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation MATCHING_PATTERN___NO_MODIFIER_IN_MATCHING_PATTERN__DIAGNOSTICCHAIN_MAP = eINSTANCE
-				.getMatchingPattern__NoModifierInMatchingPattern__DiagnosticChain_Map();
+		EOperation MATCHING_PATTERN___NO_MODIFIER_IN_MATCHING_PATTERN__DIAGNOSTICCHAIN_MAP = eINSTANCE.getMatchingPattern__NoModifierInMatchingPattern__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '{@link org.muml.storydiagram.patterns.impl.StoryPatternImpl <em>Story Pattern</em>}' class.
@@ -5055,8 +5019,7 @@ public interface PatternsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference STORY_PATTERN__VARIABLE = eINSTANCE
-				.getStoryPattern_Variable();
+		EReference STORY_PATTERN__VARIABLE = eINSTANCE.getStoryPattern_Variable();
 
 		/**
 		 * The meta object literal for the '<em><b>Constraint</b></em>' containment reference list feature.
@@ -5064,8 +5027,7 @@ public interface PatternsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference STORY_PATTERN__CONSTRAINT = eINSTANCE
-				.getStoryPattern_Constraint();
+		EReference STORY_PATTERN__CONSTRAINT = eINSTANCE.getStoryPattern_Constraint();
 
 		/**
 		 * The meta object literal for the '<em><b>Link Variable</b></em>' containment reference list feature.
@@ -5073,8 +5035,7 @@ public interface PatternsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference STORY_PATTERN__LINK_VARIABLE = eINSTANCE
-				.getStoryPattern_LinkVariable();
+		EReference STORY_PATTERN__LINK_VARIABLE = eINSTANCE.getStoryPattern_LinkVariable();
 
 		/**
 		 * The meta object literal for the '<em><b>Parent Pattern</b></em>' container reference feature.
@@ -5082,8 +5043,7 @@ public interface PatternsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference STORY_PATTERN__PARENT_PATTERN = eINSTANCE
-				.getStoryPattern_ParentPattern();
+		EReference STORY_PATTERN__PARENT_PATTERN = eINSTANCE.getStoryPattern_ParentPattern();
 
 		/**
 		 * The meta object literal for the '<em><b>Contained Pattern</b></em>' containment reference list feature.
@@ -5091,8 +5051,7 @@ public interface PatternsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference STORY_PATTERN__CONTAINED_PATTERN = eINSTANCE
-				.getStoryPattern_ContainedPattern();
+		EReference STORY_PATTERN__CONTAINED_PATTERN = eINSTANCE.getStoryPattern_ContainedPattern();
 
 		/**
 		 * The meta object literal for the '<em><b>Binding Semantics</b></em>' attribute feature.
@@ -5100,8 +5059,7 @@ public interface PatternsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute STORY_PATTERN__BINDING_SEMANTICS = eINSTANCE
-				.getStoryPattern_BindingSemantics();
+		EAttribute STORY_PATTERN__BINDING_SEMANTICS = eINSTANCE.getStoryPattern_BindingSemantics();
 
 		/**
 		 * The meta object literal for the '<em><b>Template Signature</b></em>' containment reference feature.
@@ -5109,8 +5067,7 @@ public interface PatternsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference STORY_PATTERN__TEMPLATE_SIGNATURE = eINSTANCE
-				.getStoryPattern_TemplateSignature();
+		EReference STORY_PATTERN__TEMPLATE_SIGNATURE = eINSTANCE.getStoryPattern_TemplateSignature();
 
 		/**
 		 * The meta object literal for the '{@link org.muml.storydiagram.patterns.impl.MaybeLinkImpl <em>Maybe Link</em>}' class.

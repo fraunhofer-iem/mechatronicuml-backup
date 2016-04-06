@@ -12,13 +12,13 @@ import org.muml.reconfiguration.ReconfigurableComponent;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.reconfiguration.componentstorypattern.ComponentVariable#getPortVariables <em>Port Variables</em>}</li>
  *   <li>{@link org.muml.reconfiguration.componentstorypattern.ComponentVariable#getPartVariables <em>Part Variables</em>}</li>
  *   <li>{@link org.muml.reconfiguration.componentstorypattern.ComponentVariable#getConnectorVariables <em>Connector Variables</em>}</li>
  *   <li>{@link org.muml.reconfiguration.componentstorypattern.ComponentVariable#getType <em>Type</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.reconfiguration.componentstorypattern.ComponentstorypatternPackage#getComponentVariable()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL AtLeastOnePartVariableOrPortVariable='self.portVariables->size() > 0 or self.partVariables->size() > 0'"

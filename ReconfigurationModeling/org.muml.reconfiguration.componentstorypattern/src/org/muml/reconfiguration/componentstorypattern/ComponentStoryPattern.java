@@ -12,10 +12,10 @@ import org.muml.core.NamedElement;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.reconfiguration.componentstorypattern.ComponentStoryPattern#getThisVariable <em>This Variable</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.reconfiguration.componentstorypattern.ComponentstorypatternPackage#getComponentStoryPattern()
  * @model

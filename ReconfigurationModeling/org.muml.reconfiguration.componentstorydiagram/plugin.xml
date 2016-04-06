@@ -6,14 +6,12 @@
  $Id$
 --><plugin>
 
-
-   <extension
-         point="org.eclipse.emf.ecore.generated_package">
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated ComponentStoryDiagram -->
       <package
+            uri="http://www.muml.org/reconfiguration/componentstorydiagram/1.0.0"
             class="org.muml.reconfiguration.componentstorydiagram.ComponentstorydiagramPackage"
-            genModel="model/ComponentStoryDiagram.genmodel"
-            uri="http://www.fujaba.de/muml/componentstorydiagram/0.4.0">
-      </package>
+            genModel="model/ComponentStoryDiagram.genmodel"/>
    </extension>
 
 </plugin>

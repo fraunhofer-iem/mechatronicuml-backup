@@ -46,7 +46,7 @@ public final class ComponentStoryDiagramEditPlugin extends EMFPlugin {
 		     ComponentStoryPatternEditPlugin.INSTANCE,
 		     CoreEditPlugin.INSTANCE,
 		     EcoreEditPlugin.INSTANCE,
-		     MumlEditPlugin.INSTANCE,
+		     org.muml.pim.provider.MumlEditPlugin.INSTANCE,
 		     MumlReconfigurationEditPlugin.INSTANCE,
 		     StorydiagramsEditPlugin.INSTANCE,
 		   });

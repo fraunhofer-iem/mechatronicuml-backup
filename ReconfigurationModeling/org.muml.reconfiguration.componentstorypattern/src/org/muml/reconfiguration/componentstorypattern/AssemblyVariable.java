@@ -11,10 +11,10 @@ import org.muml.pim.component.AssemblyConnector;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.reconfiguration.componentstorypattern.AssemblyVariable#getType <em>Type</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.reconfiguration.componentstorypattern.ComponentstorypatternPackage#getAssemblyVariable()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL ExistingAssemblyConnectorBetweenPortVariableTypes='if not self.type.oclIsUndefined() then\r\n\tlet selfPorts = self.portVariables.portType.oclAsType(muml::component::Port), typePorts = self.type.connectorEndpoints.oclAsType(muml::component::PortPart).portType in \r\n\tselfPorts->intersection(typePorts)->size() = 2\t\t\r\nelse\r\n\t\tfalse\r\nendif\r\n'"

@@ -21,19 +21,33 @@ public class FadingFunctionEditor extends org.muml.ape.runtime.editors.ClassProp
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorFromPort_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorFromPort_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorToPort_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorToPort_property_tab_generalTab_Editor(), false);
+
+		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
-		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
+		} else if ("property.tab.descriptionAspects".equals(tab)) { // Tab Description Aspects
+
+		} else if ("property.tab.condition".equals(tab)) { // Tab Condition
+
+		} else if ("property.tab.effect".equals(tab)) { // Tab Effect
+
+		} else if ("property.tab.deadline".equals(tab)) { // Tab Deadline
+
+		} else if ("property.tab.sampling".equals(tab)) { // Tab Sampling
+
+		} else if ("property.tab.message".equals(tab)) { // Tab Message
+
+		} else if ("property.tab.behavior".equals(tab)) { // Tab Behavior
 
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
-			addPropertyEditor(createEditorFromPort_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorFromPort_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorToPort_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorToPort_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
@@ -43,30 +57,30 @@ public class FadingFunctionEditor extends org.muml.ape.runtime.editors.ClassProp
 		}
 	}
 
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorFromPort_GeneralTab;
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorFromPort_GeneralTab_Editor() {
-		if (this.editorFromPort_GeneralTab == null) {
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorFromPort_property_tab_generalTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorFromPort_property_tab_generalTab_Editor() {
+		if (this.editorFromPort_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
 					.getFadingFunction_FromPort();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.ComboPropertyEditor(
 					adapterFactory, feature);
 
-			this.editorFromPort_GeneralTab = editor;
+			this.editorFromPort_property_tab_generalTab = editor;
 		}
-		return this.editorFromPort_GeneralTab;
+		return this.editorFromPort_property_tab_generalTab;
 	}
 
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorToPort_GeneralTab;
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorToPort_GeneralTab_Editor() {
-		if (this.editorToPort_GeneralTab == null) {
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorToPort_property_tab_generalTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorToPort_property_tab_generalTab_Editor() {
+		if (this.editorToPort_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
 					.getFadingFunction_ToPort();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.ComboPropertyEditor(
 					adapterFactory, feature);
 
-			this.editorToPort_GeneralTab = editor;
+			this.editorToPort_property_tab_generalTab = editor;
 		}
-		return this.editorToPort_GeneralTab;
+		return this.editorToPort_property_tab_generalTab;
 	}
 
 	//
@@ -77,9 +91,7 @@ public class FadingFunctionEditor extends org.muml.ape.runtime.editors.ClassProp
 	 * @generated
 	 */
 	public FadingFunctionEditor(String tab) {
-		this(tab,
-				org.muml.reconfiguration.properties.util.PropertiesUtil.INSTANCE
-						.getAdapterFactory(),
+		this(tab, org.muml.reconfiguration.properties.util.PropertiesUtil.INSTANCE.getAdapterFactory(),
 				org.muml.reconfiguration.ReconfigurationPackage.eINSTANCE.getFadingFunction());
 	}
 

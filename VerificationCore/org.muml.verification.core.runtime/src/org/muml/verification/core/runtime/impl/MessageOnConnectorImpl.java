@@ -25,12 +25,12 @@ import org.muml.verification.core.runtime.RuntimePackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.verification.core.runtime.impl.MessageOnConnectorImpl#getReceiver <em>Receiver</em>}</li>
  *   <li>{@link org.muml.verification.core.runtime.impl.MessageOnConnectorImpl#getMessage <em>Message</em>}</li>
  *   <li>{@link org.muml.verification.core.runtime.impl.MessageOnConnectorImpl#getRuntimeConnectorInstance <em>Runtime Connector Instance</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -1,9 +1,7 @@
 
 package org.muml.storydiagram.properties.metamodel;
 
-public class MetamodelContributor
-		implements
-			org.muml.ape.runtime.metamodel.IMetamodelContributor {
+public class MetamodelContributor implements org.muml.ape.runtime.metamodel.IMetamodelContributor {
 
 	/**
 	 * @generated
@@ -19,7 +17,7 @@ public class MetamodelContributor
 	 */
 	protected void fillItemProviderFactories(java.util.List<org.eclipse.emf.common.notify.AdapterFactory> factories) {
 
-		factories.add(new org.muml.storydiagram.provider.StorydiagramsItemProviderAdapterFactory());
+		factories.add(new org.muml.storydiagram.provider.StorydiagramItemProviderAdapterFactory());
 
 		factories.add(new org.muml.storydiagram.activities.provider.ActivitiesItemProviderAdapterFactory());
 
@@ -28,6 +26,13 @@ public class MetamodelContributor
 		factories.add(new org.muml.storydiagram.patterns.provider.PatternsItemProviderAdapterFactory());
 
 		factories.add(new org.muml.storydiagram.templates.provider.TemplatesItemProviderAdapterFactory());
+
+		factories.add(new org.muml.storydiagram.calls.expressions.provider.ExpressionsItemProviderAdapterFactory());
+
+		factories.add(new org.muml.storydiagram.patterns.expressions.provider.ExpressionsItemProviderAdapterFactory());
+
+		factories
+				.add(new org.muml.storydiagram.activities.expressions.provider.ExpressionsItemProviderAdapterFactory());
 
 	}
 

@@ -44,7 +44,7 @@ public final class ComponentStoryPatternEditPlugin extends EMFPlugin {
 		  (new ResourceLocator [] {
 		     CoreEditPlugin.INSTANCE,
 		     EcoreEditPlugin.INSTANCE,
-		     MumlEditPlugin.INSTANCE,
+		     org.muml.pim.provider.MumlEditPlugin.INSTANCE,
 		     MumlReconfigurationEditPlugin.INSTANCE,
 		     StorydiagramsEditPlugin.INSTANCE,
 		   });

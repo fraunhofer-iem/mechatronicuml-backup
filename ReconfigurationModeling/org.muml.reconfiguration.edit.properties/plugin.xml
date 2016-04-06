@@ -41,8 +41,8 @@
   <extension point="org.eclipse.ui.views.properties.tabbed.propertySections"> 
       <propertySections contributorId="org.muml.ape.contributor">
           <propertySection
-            class="de.uni_paderborn.fujaba.properties.runtime.sections.ObjectPropertySection"
-            filter="org.muml.reconfiguration.properties.tabs.ConstraintTabElementFilter"
+            class="org.muml.ape.runtime.sections.ObjectPropertySection"
+            filter="org.muml.reconfiguration.properties.tabs.Property_tab_constraintTabElementFilter"
             id="property.tab.constraint"
             tab="property.tab.constraint">
              <input
@@ -60,202 +60,202 @@
     
        <propertyEditor
              factory="org.muml.reconfiguration.properties.protocolinstantiation.editor.BroadcastPortEditor$Factory"
-             type="http://www.fujaba.de/muml/reconfiguration/protocolinstantiation/0.4.0#BroadcastPort">
+             type="http://www.muml.org/reconfiguration/protocolinstantiation/1.0.0#BroadcastPort">
        </propertyEditor>
     
        <propertyEditor
              factory="org.muml.reconfiguration.properties.protocolinstantiation.editor.ProtocolInstantiationPortSpecificationEditor$Factory"
-             type="http://www.fujaba.de/muml/reconfiguration/protocolinstantiation/0.4.0#ProtocolInstantiationPortSpecification">
+             type="http://www.muml.org/reconfiguration/protocolinstantiation/1.0.0#ProtocolInstantiationPortSpecification">
        </propertyEditor>
     
        <propertyEditor
              factory="org.muml.reconfiguration.properties.protocolinstantiation.editor.DiscoveryPortSpecificationEditor$Factory"
-             type="http://www.fujaba.de/muml/reconfiguration/protocolinstantiation/0.4.0#DiscoveryPortSpecification">
+             type="http://www.muml.org/reconfiguration/protocolinstantiation/1.0.0#DiscoveryPortSpecification">
        </propertyEditor>
     
        <propertyEditor
              factory="org.muml.reconfiguration.properties.reconfiguration.editor.ReconfigurableAtomicComponentEditor$Factory"
-             type="http://www.fujaba.de/muml/reconfiguration/0.3.18#ReconfigurableAtomicComponent">
+             type="http://www.muml.org/reconfiguration/1.0.0#ReconfigurableAtomicComponent">
        </propertyEditor>
     
        <propertyEditor
              factory="org.muml.reconfiguration.properties.reconfiguration.editor.ReconfigurableStructuredComponentEditor$Factory"
-             type="http://www.fujaba.de/muml/reconfiguration/0.3.18#ReconfigurableStructuredComponent">
+             type="http://www.muml.org/reconfiguration/1.0.0#ReconfigurableStructuredComponent">
        </propertyEditor>
     
        <propertyEditor
              factory="org.muml.reconfiguration.properties.reconfiguration.editor.ReconfigurationPortInterfaceEntryEditor$Factory"
-             type="http://www.fujaba.de/muml/reconfiguration/0.3.18#ReconfigurationPortInterfaceEntry">
+             type="http://www.muml.org/reconfiguration/1.0.0#ReconfigurationPortInterfaceEntry">
        </propertyEditor>
     
        <propertyEditor
              factory="org.muml.reconfiguration.properties.reconfiguration.editor.ReconfigurationMessagePortEditor$Factory"
-             type="http://www.fujaba.de/muml/reconfiguration/0.3.18#ReconfigurationMessagePort">
+             type="http://www.muml.org/reconfiguration/1.0.0#ReconfigurationMessagePort">
        </propertyEditor>
     
        <propertyEditor
              factory="org.muml.reconfiguration.properties.reconfiguration.editor.ReconfigurationMessagePortInterfaceEntryEditor$Factory"
-             type="http://www.fujaba.de/muml/reconfiguration/0.3.18#ReconfigurationMessagePortInterfaceEntry">
+             type="http://www.muml.org/reconfiguration/1.0.0#ReconfigurationMessagePortInterfaceEntry">
        </propertyEditor>
     
        <propertyEditor
              factory="org.muml.reconfiguration.properties.reconfiguration.editor.ReconfigurationExecutionPortEditor$Factory"
-             type="http://www.fujaba.de/muml/reconfiguration/0.3.18#ReconfigurationExecutionPort">
+             type="http://www.muml.org/reconfiguration/1.0.0#ReconfigurationExecutionPort">
        </propertyEditor>
     
        <propertyEditor
              factory="org.muml.reconfiguration.properties.reconfiguration.editor.ReconfigurationExecutionPortInterfaceEntryEditor$Factory"
-             type="http://www.fujaba.de/muml/reconfiguration/0.3.18#ReconfigurationExecutionPortInterfaceEntry">
+             type="http://www.muml.org/reconfiguration/1.0.0#ReconfigurationExecutionPortInterfaceEntry">
        </propertyEditor>
     
        <propertyEditor
              factory="org.muml.reconfiguration.properties.reconfiguration.editor.ExecutionTimingSpecificationSinglePhaseEditor$Factory"
-             type="http://www.fujaba.de/muml/reconfiguration/0.3.18#ExecutionTimingSpecificationSinglePhase">
+             type="http://www.muml.org/reconfiguration/1.0.0#ExecutionTimingSpecificationSinglePhase">
        </propertyEditor>
     
        <propertyEditor
              factory="org.muml.reconfiguration.properties.reconfiguration.editor.ExecutionTimingSpecificationThreePhaseEditor$Factory"
-             type="http://www.fujaba.de/muml/reconfiguration/0.3.18#ExecutionTimingSpecificationThreePhase">
+             type="http://www.muml.org/reconfiguration/1.0.0#ExecutionTimingSpecificationThreePhase">
        </propertyEditor>
     
        <propertyEditor
              factory="org.muml.reconfiguration.properties.reconfiguration.editor.InternalReconfigurationCommunicationPortEditor$Factory"
-             type="http://www.fujaba.de/muml/reconfiguration/0.3.18#InternalReconfigurationCommunicationPort">
+             type="http://www.muml.org/reconfiguration/1.0.0#InternalReconfigurationCommunicationPort">
        </propertyEditor>
     
        <propertyEditor
              factory="org.muml.reconfiguration.properties.reconfiguration.editor.RuleBasedReconfigurationControllerEditor$Factory"
-             type="http://www.fujaba.de/muml/reconfiguration/0.3.18#RuleBasedReconfigurationController">
+             type="http://www.muml.org/reconfiguration/1.0.0#RuleBasedReconfigurationController">
        </propertyEditor>
     
        <propertyEditor
              factory="org.muml.reconfiguration.properties.reconfiguration.editor.ManagerEditor$Factory"
-             type="http://www.fujaba.de/muml/reconfiguration/0.3.18#Manager">
+             type="http://www.muml.org/reconfiguration/1.0.0#Manager">
        </propertyEditor>
     
        <propertyEditor
              factory="org.muml.reconfiguration.properties.reconfiguration.editor.ManagerSpecificationEntryEditor$Factory"
-             type="http://www.fujaba.de/muml/reconfiguration/0.3.18#ManagerSpecificationEntry">
+             type="http://www.muml.org/reconfiguration/1.0.0#ManagerSpecificationEntry">
        </propertyEditor>
     
        <propertyEditor
              factory="org.muml.reconfiguration.properties.reconfiguration.editor.ExecutorEditor$Factory"
-             type="http://www.fujaba.de/muml/reconfiguration/0.3.18#Executor">
+             type="http://www.muml.org/reconfiguration/1.0.0#Executor">
        </propertyEditor>
     
        <propertyEditor
              factory="org.muml.reconfiguration.properties.reconfiguration.editor.ExecutorSpecificationEntryEditor$Factory"
-             type="http://www.fujaba.de/muml/reconfiguration/0.3.18#ExecutorSpecificationEntry">
+             type="http://www.muml.org/reconfiguration/1.0.0#ExecutorSpecificationEntry">
        </propertyEditor>
     
        <propertyEditor
              factory="org.muml.reconfiguration.properties.reconfiguration.editor.SignatureEditor$Factory"
-             type="http://www.fujaba.de/muml/reconfiguration/0.3.18#Signature">
+             type="http://www.muml.org/reconfiguration/1.0.0#Signature">
        </propertyEditor>
     
        <propertyEditor
              factory="org.muml.reconfiguration.properties.reconfiguration.editor.ReconfigurationPortAssemblyConnectorEditor$Factory"
-             type="http://www.fujaba.de/muml/reconfiguration/0.3.18#ReconfigurationPortAssemblyConnector">
+             type="http://www.muml.org/reconfiguration/1.0.0#ReconfigurationPortAssemblyConnector">
        </propertyEditor>
     
        <propertyEditor
              factory="org.muml.reconfiguration.properties.reconfiguration.editor.ReconfigurationPortDelegationConnectorEditor$Factory"
-             type="http://www.fujaba.de/muml/reconfiguration/0.3.18#ReconfigurationPortDelegationConnector">
+             type="http://www.muml.org/reconfiguration/1.0.0#ReconfigurationPortDelegationConnector">
        </propertyEditor>
     
        <propertyEditor
              factory="org.muml.reconfiguration.properties.reconfiguration.editor.FadingComponentEditor$Factory"
-             type="http://www.fujaba.de/muml/reconfiguration/0.3.18#FadingComponent">
+             type="http://www.muml.org/reconfiguration/1.0.0#FadingComponent">
        </propertyEditor>
     
        <propertyEditor
              factory="org.muml.reconfiguration.properties.reconfiguration.editor.FadingFunctionEditor$Factory"
-             type="http://www.fujaba.de/muml/reconfiguration/0.3.18#FadingFunction">
+             type="http://www.muml.org/reconfiguration/1.0.0#FadingFunction">
        </propertyEditor>
     
        <propertyEditor
              factory="org.muml.reconfiguration.properties.reconfiguration.editor.HybridPortMappingEditor$Factory"
-             type="http://www.fujaba.de/muml/reconfiguration/0.3.18#HybridPortMapping">
+             type="http://www.muml.org/reconfiguration/1.0.0#HybridPortMapping">
        </propertyEditor>
     
        <propertyEditor
              factory="org.muml.reconfiguration.properties.reconfiguration.editor.ReconfigurationExecutionSpecificationEntryEditor$Factory"
-             type="http://www.fujaba.de/muml/reconfiguration/0.3.18#ReconfigurationExecutionSpecificationEntry">
+             type="http://www.muml.org/reconfiguration/1.0.0#ReconfigurationExecutionSpecificationEntry">
        </propertyEditor>
     
        <propertyEditor
              factory="org.muml.reconfiguration.properties.reconfiguration.editor.ReconfigurationManagementSpecificationEntryEditor$Factory"
-             type="http://www.fujaba.de/muml/reconfiguration/0.3.18#ReconfigurationManagementSpecificationEntry">
+             type="http://www.muml.org/reconfiguration/1.0.0#ReconfigurationManagementSpecificationEntry">
        </propertyEditor>
     
        <propertyEditor
              factory="org.muml.reconfiguration.properties.expression.editor.ActivityCallExpressionEditor$Factory"
-             type="http://www.fujaba.de/muml/reconfiguration/expression/0.3.7#ActivityCallExpression">
+             type="http://www.muml.org/reconfiguration/expression/1.0.0#ActivityCallExpression">
        </propertyEditor>
     
        <propertyEditor
              factory="org.muml.reconfiguration.properties.expression.editor.ReconfigurationRuleCallExpressionEditor$Factory"
-             type="http://www.fujaba.de/muml/reconfiguration/expression/0.3.7#ReconfigurationRuleCallExpression">
+             type="http://www.muml.org/reconfiguration/expression/1.0.0#ReconfigurationRuleCallExpression">
        </propertyEditor>
     
        <propertyEditor
              factory="org.muml.reconfiguration.properties.expression.editor.EvaluateStructuralConditionExpressionEditor$Factory"
-             type="http://www.fujaba.de/muml/reconfiguration/expression/0.3.7#EvaluateStructuralConditionExpression">
+             type="http://www.muml.org/reconfiguration/expression/1.0.0#EvaluateStructuralConditionExpression">
        </propertyEditor>
     
        <propertyEditor
              factory="org.muml.reconfiguration.properties.structdatatype.editor.StructTypeEditor$Factory"
-             type="http://www.fujaba.de/muml/reconfiguration/structdatatype/0.3.18#StructType">
+             type="http://www.muml.org/reconfiguration/structdatatype/1.0.0#StructType">
        </propertyEditor>
     
        <propertyEditor
              factory="org.muml.reconfiguration.properties.structdatatype.editor.ReferenceEditor$Factory"
-             type="http://www.fujaba.de/muml/reconfiguration/structdatatype/0.3.18#Reference">
+             type="http://www.muml.org/reconfiguration/structdatatype/1.0.0#Reference">
        </propertyEditor>
     
        <propertyEditor
              factory="org.muml.reconfiguration.properties.reconfInstance.editor.ReconfigurationPortInstanceEditor$Factory"
-             type="http://www.fujaba.de/muml/reconfiguration/reconfInstance/0.4.0#ReconfigurationPortInstance">
+             type="http://www.muml.org/reconfiguration/reconfInstance/1.0.0#ReconfigurationPortInstance">
        </propertyEditor>
     
        <propertyEditor
              factory="org.muml.reconfiguration.properties.reconfInstance.editor.ReconfigurationMessagePortInstanceEditor$Factory"
-             type="http://www.fujaba.de/muml/reconfiguration/reconfInstance/0.4.0#ReconfigurationMessagePortInstance">
+             type="http://www.muml.org/reconfiguration/reconfInstance/1.0.0#ReconfigurationMessagePortInstance">
        </propertyEditor>
     
        <propertyEditor
              factory="org.muml.reconfiguration.properties.reconfInstance.editor.ReconfigurationExecutionPortInstanceEditor$Factory"
-             type="http://www.fujaba.de/muml/reconfiguration/reconfInstance/0.4.0#ReconfigurationExecutionPortInstance">
+             type="http://www.muml.org/reconfiguration/reconfInstance/1.0.0#ReconfigurationExecutionPortInstance">
        </propertyEditor>
     
        <propertyEditor
              factory="org.muml.reconfiguration.properties.reconfInstance.editor.InternalReconfigurationCommunicationPortInstanceEditor$Factory"
-             type="http://www.fujaba.de/muml/reconfiguration/reconfInstance/0.4.0#InternalReconfigurationCommunicationPortInstance">
+             type="http://www.muml.org/reconfiguration/reconfInstance/1.0.0#InternalReconfigurationCommunicationPortInstance">
        </propertyEditor>
     
        <propertyEditor
              factory="org.muml.reconfiguration.properties.reconfInstance.editor.RuleBasedReconfigurationControllerInstanceEditor$Factory"
-             type="http://www.fujaba.de/muml/reconfiguration/reconfInstance/0.4.0#RuleBasedReconfigurationControllerInstance">
+             type="http://www.muml.org/reconfiguration/reconfInstance/1.0.0#RuleBasedReconfigurationControllerInstance">
        </propertyEditor>
     
        <propertyEditor
              factory="org.muml.reconfiguration.properties.reconfInstance.editor.ManagerInstanceEditor$Factory"
-             type="http://www.fujaba.de/muml/reconfiguration/reconfInstance/0.4.0#ManagerInstance">
+             type="http://www.muml.org/reconfiguration/reconfInstance/1.0.0#ManagerInstance">
        </propertyEditor>
     
        <propertyEditor
              factory="org.muml.reconfiguration.properties.reconfInstance.editor.ExecutorInstanceEditor$Factory"
-             type="http://www.fujaba.de/muml/reconfiguration/reconfInstance/0.4.0#ExecutorInstance">
+             type="http://www.muml.org/reconfiguration/reconfInstance/1.0.0#ExecutorInstance">
        </propertyEditor>
     
        <propertyEditor
              factory="org.muml.reconfiguration.properties.reconfInstance.editor.ReconfigurableAtomicComponentInstanceEditor$Factory"
-             type="http://www.fujaba.de/muml/reconfiguration/reconfInstance/0.4.0#ReconfigurableAtomicComponentInstance">
+             type="http://www.muml.org/reconfiguration/reconfInstance/1.0.0#ReconfigurableAtomicComponentInstance">
        </propertyEditor>
     
        <propertyEditor
              factory="org.muml.reconfiguration.properties.reconfInstance.editor.ReconfigurableStructuredComponentInstanceEditor$Factory"
-             type="http://www.fujaba.de/muml/reconfiguration/reconfInstance/0.4.0#ReconfigurableStructuredComponentInstance">
+             type="http://www.muml.org/reconfiguration/reconfInstance/1.0.0#ReconfigurableStructuredComponentInstance">
        </propertyEditor>
     
     </propertyEditors>

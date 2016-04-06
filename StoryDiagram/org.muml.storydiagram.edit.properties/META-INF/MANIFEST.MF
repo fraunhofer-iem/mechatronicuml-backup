@@ -1,27 +1,26 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Storydiagrams Tabbed Properties
-Bundle-SymbolicName: org.muml.storydiagram.edit.properties;singleton:=true
-Bundle-Version: 0.5.0.qualifier
+Bundle-SymbolicName: org.muml.storydiagram.edit.properties; singleton:=true
+Bundle-Version: 1.0.0.qualifier
 Require-Bundle: org.eclipse.emf.ecore,
  org.eclipse.ui,
  org.eclipse.core.runtime,
- org.muml.ape.runtime,
- org.muml.storydiagram.edit,
  org.eclipse.emf.edit,
  org.muml.storydiagram,
- org.muml.core.edit,
- org.muml.core.edit.properties,
+ org.muml.storydiagram.edit,
+ org.muml.ape.runtime,
  org.muml.pim.edit,
- org.muml.pim.edit.properties,
- org.muml.pim.actionlanguage.xtext.ui
+ org.muml.pim.edit.properties
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: org.muml.storydiagram.properties.activities.editor,
+Export-Package: org.muml.storydiagram.properties.metamodel, org.muml.storydiagram.properties.constraint,
+ org.muml.storydiagram.properties.storydiagram.editor,
+ org.muml.storydiagram.properties.activities.editor,
  org.muml.storydiagram.properties.calls.editor,
- org.muml.storydiagram.properties.constraint,
- org.muml.storydiagram.properties.metamodel,
  org.muml.storydiagram.properties.patterns.editor,
- org.muml.storydiagram.properties.storydiagrams.editor,
- org.muml.storydiagram.properties.templates.editor
+ org.muml.storydiagram.properties.templates.editor,
+ org.muml.storydiagram.properties.expressions.editor,
+ org.muml.storydiagram.properties.expressions.editor,
+ org.muml.storydiagram.properties.expressions.editor
 Bundle-Vendor: 

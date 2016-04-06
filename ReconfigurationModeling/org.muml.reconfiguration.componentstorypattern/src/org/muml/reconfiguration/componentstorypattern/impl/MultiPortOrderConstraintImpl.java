@@ -21,13 +21,13 @@ import org.muml.reconfiguration.componentstorypattern.SinglePortVariable;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.reconfiguration.componentstorypattern.impl.MultiPortOrderConstraintImpl#getMultiPortVariable <em>Multi Port Variable</em>}</li>
  *   <li>{@link org.muml.reconfiguration.componentstorypattern.impl.MultiPortOrderConstraintImpl#getSrcSubPortVariable <em>Src Sub Port Variable</em>}</li>
  *   <li>{@link org.muml.reconfiguration.componentstorypattern.impl.MultiPortOrderConstraintImpl#getOrderConstraintType <em>Order Constraint Type</em>}</li>
  *   <li>{@link org.muml.reconfiguration.componentstorypattern.impl.MultiPortOrderConstraintImpl#getTgtSubPortVariable <em>Tgt Sub Port Variable</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

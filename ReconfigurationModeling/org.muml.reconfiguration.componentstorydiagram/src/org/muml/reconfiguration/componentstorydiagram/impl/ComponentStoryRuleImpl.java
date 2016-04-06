@@ -18,11 +18,11 @@ import org.muml.storydiagram.activities.Activity;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.reconfiguration.componentstorydiagram.impl.ComponentStoryRuleImpl#getActivity <em>Activity</em>}</li>
  *   <li>{@link org.muml.reconfiguration.componentstorydiagram.impl.ComponentStoryRuleImpl#isConstructor <em>Constructor</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

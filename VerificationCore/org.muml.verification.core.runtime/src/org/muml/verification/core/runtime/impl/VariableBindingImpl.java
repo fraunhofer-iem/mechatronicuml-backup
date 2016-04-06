@@ -21,11 +21,11 @@ import org.muml.verification.core.runtime.VariableBinding;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.verification.core.runtime.impl.VariableBindingImpl#getVariable <em>Variable</em>}</li>
  *   <li>{@link org.muml.verification.core.runtime.impl.VariableBindingImpl#getValue <em>Value</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

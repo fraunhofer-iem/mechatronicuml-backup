@@ -21,11 +21,11 @@ import org.muml.pim.realtimestatechart.RealtimeStatechart;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.modelica.transform.impl.EntryImpl#getKey <em>Key</em>}</li>
  *   <li>{@link org.muml.modelica.transform.impl.EntryImpl#getValue <em>Value</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

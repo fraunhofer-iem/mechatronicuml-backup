@@ -20,15 +20,15 @@ import org.eclipse.emf.ecore.EClass;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
- *   <li>{@link org.muml.storydiagram.patterns.ObjectVariable#getOutgoingLinks <em>Outgoing Link</em>}</li>
- *   <li>{@link org.muml.storydiagram.patterns.ObjectVariable#getLinkOrderConstraints <em>Link Order Constraint</em>}</li>
+ *   <li>{@link org.muml.storydiagram.patterns.ObjectVariable#getOutgoingLink <em>Outgoing Link</em>}</li>
+ *   <li>{@link org.muml.storydiagram.patterns.ObjectVariable#getLinkOrderConstraint <em>Link Order Constraint</em>}</li>
  *   <li>{@link org.muml.storydiagram.patterns.ObjectVariable#getBindingSemantics <em>Binding Semantics</em>}</li>
  *   <li>{@link org.muml.storydiagram.patterns.ObjectVariable#getBindingOperator <em>Binding Operator</em>}</li>
- *   <li>{@link org.muml.storydiagram.patterns.ObjectVariable#getAttributeAssignments <em>Attribute Assignment</em>}</li>
+ *   <li>{@link org.muml.storydiagram.patterns.ObjectVariable#getAttributeAssignment <em>Attribute Assignment</em>}</li>
  *   <li>{@link org.muml.storydiagram.patterns.ObjectVariable#getClassifier <em>Classifier</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.storydiagram.patterns.PatternsPackage#getObjectVariable()
  * @model
@@ -51,7 +51,7 @@ public interface ObjectVariable extends AbstractVariable {
 	 * @model opposite="source" ordered="false"
 	 * @generated
 	 */
-	EList<AbstractLinkVariable> getOutgoingLinks();
+	EList<AbstractLinkVariable> getOutgoingLink();
 
 	/**
 	 * Returns the value of the '<em><b>Link Order Constraint</b></em>' containment reference list.
@@ -66,10 +66,10 @@ public interface ObjectVariable extends AbstractVariable {
 	 * @return the value of the '<em>Link Order Constraint</em>' containment reference list.
 	 * @see org.muml.storydiagram.patterns.PatternsPackage#getObjectVariable_LinkOrderConstraint()
 	 * @see org.muml.storydiagram.patterns.LinkConstraint#getReferencingObject
-	 * @model opposite="referencingObject" containment="true" resolveProxies="true"
+	 * @model opposite="referencingObject" containment="true"
 	 * @generated
 	 */
-	EList<LinkConstraint> getLinkOrderConstraints();
+	EList<LinkConstraint> getLinkOrderConstraint();
 
 	/**
 	 * Returns the value of the '<em><b>Binding Semantics</b></em>' attribute.
@@ -142,19 +142,13 @@ public interface ObjectVariable extends AbstractVariable {
 	 * @return the value of the '<em>Attribute Assignment</em>' containment reference list.
 	 * @see org.muml.storydiagram.patterns.PatternsPackage#getObjectVariable_AttributeAssignment()
 	 * @see org.muml.storydiagram.patterns.AttributeAssignment#getObjectVariable
-	 * @model opposite="objectVariable" containment="true" resolveProxies="true"
+	 * @model opposite="objectVariable" containment="true"
 	 * @generated
 	 */
-	EList<AttributeAssignment> getAttributeAssignments();
+	EList<AttributeAssignment> getAttributeAssignment();
 
 	/**
 	 * Returns the value of the '<em><b>Classifier</b></em>' reference.
-	 * <p>
-	 * This feature subsets the following features:
-	 * <ul>
-	 *   <li>'{@link org.muml.core.TypedElement#getType() <em>Type</em>}'</li>
-	 * </ul>
-	 * </p>
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->

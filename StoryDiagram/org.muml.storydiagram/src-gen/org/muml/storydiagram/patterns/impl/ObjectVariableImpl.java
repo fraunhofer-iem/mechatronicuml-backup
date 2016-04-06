@@ -31,37 +31,38 @@ import org.muml.storydiagram.patterns.PatternsPackage;
  * <!-- begin-user-doc --> An implementation of the model object '<em><b>Object</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
- *   <li>{@link org.muml.storydiagram.patterns.impl.ObjectVariableImpl#getType <em>Type</em>}</li>
- *   <li>{@link org.muml.storydiagram.patterns.impl.ObjectVariableImpl#getOutgoingLinks <em>Outgoing Link</em>}</li>
- *   <li>{@link org.muml.storydiagram.patterns.impl.ObjectVariableImpl#getLinkOrderConstraints <em>Link Order Constraint</em>}</li>
+ *   <li>{@link org.muml.storydiagram.patterns.impl.ObjectVariableImpl#getOutgoingLink <em>Outgoing Link</em>}</li>
+ *   <li>{@link org.muml.storydiagram.patterns.impl.ObjectVariableImpl#getLinkOrderConstraint <em>Link Order Constraint</em>}</li>
  *   <li>{@link org.muml.storydiagram.patterns.impl.ObjectVariableImpl#getBindingSemantics <em>Binding Semantics</em>}</li>
  *   <li>{@link org.muml.storydiagram.patterns.impl.ObjectVariableImpl#getBindingOperator <em>Binding Operator</em>}</li>
- *   <li>{@link org.muml.storydiagram.patterns.impl.ObjectVariableImpl#getAttributeAssignments <em>Attribute Assignment</em>}</li>
+ *   <li>{@link org.muml.storydiagram.patterns.impl.ObjectVariableImpl#getAttributeAssignment <em>Attribute Assignment</em>}</li>
  *   <li>{@link org.muml.storydiagram.patterns.impl.ObjectVariableImpl#getClassifier <em>Classifier</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
 public class ObjectVariableImpl extends AbstractVariableImpl implements
 		ObjectVariable {
 	/**
-	 * The cached value of the '{@link #getOutgoingLinks() <em>Outgoing Link</em>}' reference list.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @see #getOutgoingLinks()
+	 * The cached value of the '{@link #getOutgoingLink() <em>Outgoing Link</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOutgoingLink()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<AbstractLinkVariable> outgoingLinks;
+	protected EList<AbstractLinkVariable> outgoingLink;
 	/**
-	 * The cached value of the '{@link #getLinkOrderConstraints() <em>Link Order Constraint</em>}' containment reference list.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @see #getLinkOrderConstraints()
+	 * The cached value of the '{@link #getLinkOrderConstraint() <em>Link Order Constraint</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLinkOrderConstraint()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<LinkConstraint> linkOrderConstraints;
+	protected EList<LinkConstraint> linkOrderConstraint;
 	/**
 	 * The default value of the '{@link #getBindingSemantics() <em>Binding Semantics</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -95,13 +96,14 @@ public class ObjectVariableImpl extends AbstractVariableImpl implements
 	 */
 	protected BindingOperator bindingOperator = BINDING_OPERATOR_EDEFAULT;
 	/**
-	 * The cached value of the '{@link #getAttributeAssignments() <em>Attribute Assignment</em>}' containment reference list.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @see #getAttributeAssignments()
+	 * The cached value of the '{@link #getAttributeAssignment() <em>Attribute Assignment</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAttributeAssignment()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<AttributeAssignment> attributeAssignments;
+	protected EList<AttributeAssignment> attributeAssignment;
 	/**
 	 * The cached value of the '{@link #getClassifier() <em>Classifier</em>}' reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -133,11 +135,11 @@ public class ObjectVariableImpl extends AbstractVariableImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public EClassifier getType() {
-		EClassifier type = basicGetType();
-		return type != null && type.eIsProxy() ? (EClassifier) eResolveProxy((InternalEObject) type)
-				: type;
+	public EList<AbstractLinkVariable> getOutgoingLink() {
+		if (outgoingLink == null) {
+			outgoingLink = new EObjectWithInverseResolvingEList<AbstractLinkVariable>(AbstractLinkVariable.class, this, PatternsPackage.OBJECT_VARIABLE__OUTGOING_LINK, PatternsPackage.ABSTRACT_LINK_VARIABLE__SOURCE);
+		}
+		return outgoingLink;
 	}
 
 	/**
@@ -145,12 +147,11 @@ public class ObjectVariableImpl extends AbstractVariableImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public EClassifier basicGetType() {
-		if (eIsSet(PatternsPackage.OBJECT_VARIABLE__CLASSIFIER)) {
-			return basicGetClassifier();
+	public EList<LinkConstraint> getLinkOrderConstraint() {
+		if (linkOrderConstraint == null) {
+			linkOrderConstraint = new EObjectContainmentWithInverseEList<LinkConstraint>(LinkConstraint.class, this, PatternsPackage.OBJECT_VARIABLE__LINK_ORDER_CONSTRAINT, PatternsPackage.LINK_CONSTRAINT__REFERENCING_OBJECT);
 		}
-		return super.basicGetType();
+		return linkOrderConstraint;
 	}
 
 	/**
@@ -167,12 +168,9 @@ public class ObjectVariableImpl extends AbstractVariableImpl implements
 	 */
 	public void setBindingSemantics(BindingSemantics newBindingSemantics) {
 		BindingSemantics oldBindingSemantics = bindingSemantics;
-		bindingSemantics = newBindingSemantics == null ? BINDING_SEMANTICS_EDEFAULT
-				: newBindingSemantics;
+		bindingSemantics = newBindingSemantics == null ? BINDING_SEMANTICS_EDEFAULT : newBindingSemantics;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					PatternsPackage.OBJECT_VARIABLE__BINDING_SEMANTICS,
-					oldBindingSemantics, bindingSemantics));
+			eNotify(new ENotificationImpl(this, Notification.SET, PatternsPackage.OBJECT_VARIABLE__BINDING_SEMANTICS, oldBindingSemantics, bindingSemantics));
 	}
 
 	/**
@@ -189,40 +187,21 @@ public class ObjectVariableImpl extends AbstractVariableImpl implements
 	 */
 	public void setBindingOperator(BindingOperator newBindingOperator) {
 		BindingOperator oldBindingOperator = bindingOperator;
-		bindingOperator = newBindingOperator == null ? BINDING_OPERATOR_EDEFAULT
-				: newBindingOperator;
+		bindingOperator = newBindingOperator == null ? BINDING_OPERATOR_EDEFAULT : newBindingOperator;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					PatternsPackage.OBJECT_VARIABLE__BINDING_OPERATOR,
-					oldBindingOperator, bindingOperator));
+			eNotify(new ENotificationImpl(this, Notification.SET, PatternsPackage.OBJECT_VARIABLE__BINDING_OPERATOR, oldBindingOperator, bindingOperator));
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<AbstractLinkVariable> getOutgoingLinks() {
-		if (outgoingLinks == null) {
-			outgoingLinks = new EObjectWithInverseResolvingEList<AbstractLinkVariable>(
-					AbstractLinkVariable.class, this,
-					PatternsPackage.OBJECT_VARIABLE__OUTGOING_LINK,
-					PatternsPackage.ABSTRACT_LINK_VARIABLE__SOURCE);
+	public EList<AttributeAssignment> getAttributeAssignment() {
+		if (attributeAssignment == null) {
+			attributeAssignment = new EObjectContainmentWithInverseEList<AttributeAssignment>(AttributeAssignment.class, this, PatternsPackage.OBJECT_VARIABLE__ATTRIBUTE_ASSIGNMENT, PatternsPackage.ATTRIBUTE_ASSIGNMENT__OBJECT_VARIABLE);
 		}
-		return outgoingLinks;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<LinkConstraint> getLinkOrderConstraints() {
-		if (linkOrderConstraints == null) {
-			linkOrderConstraints = new EObjectContainmentWithInverseEList.Resolving<LinkConstraint>(
-					LinkConstraint.class, this,
-					PatternsPackage.OBJECT_VARIABLE__LINK_ORDER_CONSTRAINT,
-					PatternsPackage.LINK_CONSTRAINT__REFERENCING_OBJECT);
-		}
-		return linkOrderConstraints;
+		return attributeAssignment;
 	}
 
 	/**
@@ -231,13 +210,11 @@ public class ObjectVariableImpl extends AbstractVariableImpl implements
 	 */
 	public EClass getClassifier() {
 		if (classifier != null && classifier.eIsProxy()) {
-			InternalEObject oldClassifier = (InternalEObject) classifier;
-			classifier = (EClass) eResolveProxy(oldClassifier);
+			InternalEObject oldClassifier = (InternalEObject)classifier;
+			classifier = (EClass)eResolveProxy(oldClassifier);
 			if (classifier != oldClassifier) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							PatternsPackage.OBJECT_VARIABLE__CLASSIFIER,
-							oldClassifier, classifier));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PatternsPackage.OBJECT_VARIABLE__CLASSIFIER, oldClassifier, classifier));
 			}
 		}
 		return classifier;
@@ -271,34 +248,17 @@ public class ObjectVariableImpl extends AbstractVariableImpl implements
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<AttributeAssignment> getAttributeAssignments() {
-		if (attributeAssignments == null) {
-			attributeAssignments = new EObjectContainmentWithInverseEList.Resolving<AttributeAssignment>(
-					AttributeAssignment.class, this,
-					PatternsPackage.OBJECT_VARIABLE__ATTRIBUTE_ASSIGNMENT,
-					PatternsPackage.ATTRIBUTE_ASSIGNMENT__OBJECT_VARIABLE);
-		}
-		return attributeAssignments;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd,
 			int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case PatternsPackage.OBJECT_VARIABLE__OUTGOING_LINK:
-			return ((InternalEList<InternalEObject>) (InternalEList<?>) getOutgoingLinks())
-					.basicAdd(otherEnd, msgs);
-		case PatternsPackage.OBJECT_VARIABLE__LINK_ORDER_CONSTRAINT:
-			return ((InternalEList<InternalEObject>) (InternalEList<?>) getLinkOrderConstraints())
-					.basicAdd(otherEnd, msgs);
-		case PatternsPackage.OBJECT_VARIABLE__ATTRIBUTE_ASSIGNMENT:
-			return ((InternalEList<InternalEObject>) (InternalEList<?>) getAttributeAssignments())
-					.basicAdd(otherEnd, msgs);
+			case PatternsPackage.OBJECT_VARIABLE__OUTGOING_LINK:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getOutgoingLink()).basicAdd(otherEnd, msgs);
+			case PatternsPackage.OBJECT_VARIABLE__LINK_ORDER_CONSTRAINT:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getLinkOrderConstraint()).basicAdd(otherEnd, msgs);
+			case PatternsPackage.OBJECT_VARIABLE__ATTRIBUTE_ASSIGNMENT:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getAttributeAssignment()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -311,15 +271,12 @@ public class ObjectVariableImpl extends AbstractVariableImpl implements
 	public NotificationChain eInverseRemove(InternalEObject otherEnd,
 			int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case PatternsPackage.OBJECT_VARIABLE__OUTGOING_LINK:
-			return ((InternalEList<?>) getOutgoingLinks()).basicRemove(
-					otherEnd, msgs);
-		case PatternsPackage.OBJECT_VARIABLE__LINK_ORDER_CONSTRAINT:
-			return ((InternalEList<?>) getLinkOrderConstraints()).basicRemove(
-					otherEnd, msgs);
-		case PatternsPackage.OBJECT_VARIABLE__ATTRIBUTE_ASSIGNMENT:
-			return ((InternalEList<?>) getAttributeAssignments()).basicRemove(
-					otherEnd, msgs);
+			case PatternsPackage.OBJECT_VARIABLE__OUTGOING_LINK:
+				return ((InternalEList<?>)getOutgoingLink()).basicRemove(otherEnd, msgs);
+			case PatternsPackage.OBJECT_VARIABLE__LINK_ORDER_CONSTRAINT:
+				return ((InternalEList<?>)getLinkOrderConstraint()).basicRemove(otherEnd, msgs);
+			case PatternsPackage.OBJECT_VARIABLE__ATTRIBUTE_ASSIGNMENT:
+				return ((InternalEList<?>)getAttributeAssignment()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -331,20 +288,19 @@ public class ObjectVariableImpl extends AbstractVariableImpl implements
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case PatternsPackage.OBJECT_VARIABLE__OUTGOING_LINK:
-			return getOutgoingLinks();
-		case PatternsPackage.OBJECT_VARIABLE__LINK_ORDER_CONSTRAINT:
-			return getLinkOrderConstraints();
-		case PatternsPackage.OBJECT_VARIABLE__BINDING_SEMANTICS:
-			return getBindingSemantics();
-		case PatternsPackage.OBJECT_VARIABLE__BINDING_OPERATOR:
-			return getBindingOperator();
-		case PatternsPackage.OBJECT_VARIABLE__ATTRIBUTE_ASSIGNMENT:
-			return getAttributeAssignments();
-		case PatternsPackage.OBJECT_VARIABLE__CLASSIFIER:
-			if (resolve)
-				return getClassifier();
-			return basicGetClassifier();
+			case PatternsPackage.OBJECT_VARIABLE__OUTGOING_LINK:
+				return getOutgoingLink();
+			case PatternsPackage.OBJECT_VARIABLE__LINK_ORDER_CONSTRAINT:
+				return getLinkOrderConstraint();
+			case PatternsPackage.OBJECT_VARIABLE__BINDING_SEMANTICS:
+				return getBindingSemantics();
+			case PatternsPackage.OBJECT_VARIABLE__BINDING_OPERATOR:
+				return getBindingOperator();
+			case PatternsPackage.OBJECT_VARIABLE__ATTRIBUTE_ASSIGNMENT:
+				return getAttributeAssignment();
+			case PatternsPackage.OBJECT_VARIABLE__CLASSIFIER:
+				if (resolve) return getClassifier();
+				return basicGetClassifier();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -357,30 +313,27 @@ public class ObjectVariableImpl extends AbstractVariableImpl implements
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case PatternsPackage.OBJECT_VARIABLE__OUTGOING_LINK:
-			getOutgoingLinks().clear();
-			getOutgoingLinks().addAll(
-					(Collection<? extends AbstractLinkVariable>) newValue);
-			return;
-		case PatternsPackage.OBJECT_VARIABLE__LINK_ORDER_CONSTRAINT:
-			getLinkOrderConstraints().clear();
-			getLinkOrderConstraints().addAll(
-					(Collection<? extends LinkConstraint>) newValue);
-			return;
-		case PatternsPackage.OBJECT_VARIABLE__BINDING_SEMANTICS:
-			setBindingSemantics((BindingSemantics) newValue);
-			return;
-		case PatternsPackage.OBJECT_VARIABLE__BINDING_OPERATOR:
-			setBindingOperator((BindingOperator) newValue);
-			return;
-		case PatternsPackage.OBJECT_VARIABLE__ATTRIBUTE_ASSIGNMENT:
-			getAttributeAssignments().clear();
-			getAttributeAssignments().addAll(
-					(Collection<? extends AttributeAssignment>) newValue);
-			return;
-		case PatternsPackage.OBJECT_VARIABLE__CLASSIFIER:
-			setClassifier((EClass) newValue);
-			return;
+			case PatternsPackage.OBJECT_VARIABLE__OUTGOING_LINK:
+				getOutgoingLink().clear();
+				getOutgoingLink().addAll((Collection<? extends AbstractLinkVariable>)newValue);
+				return;
+			case PatternsPackage.OBJECT_VARIABLE__LINK_ORDER_CONSTRAINT:
+				getLinkOrderConstraint().clear();
+				getLinkOrderConstraint().addAll((Collection<? extends LinkConstraint>)newValue);
+				return;
+			case PatternsPackage.OBJECT_VARIABLE__BINDING_SEMANTICS:
+				setBindingSemantics((BindingSemantics)newValue);
+				return;
+			case PatternsPackage.OBJECT_VARIABLE__BINDING_OPERATOR:
+				setBindingOperator((BindingOperator)newValue);
+				return;
+			case PatternsPackage.OBJECT_VARIABLE__ATTRIBUTE_ASSIGNMENT:
+				getAttributeAssignment().clear();
+				getAttributeAssignment().addAll((Collection<? extends AttributeAssignment>)newValue);
+				return;
+			case PatternsPackage.OBJECT_VARIABLE__CLASSIFIER:
+				setClassifier((EClass)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -392,24 +345,24 @@ public class ObjectVariableImpl extends AbstractVariableImpl implements
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case PatternsPackage.OBJECT_VARIABLE__OUTGOING_LINK:
-			getOutgoingLinks().clear();
-			return;
-		case PatternsPackage.OBJECT_VARIABLE__LINK_ORDER_CONSTRAINT:
-			getLinkOrderConstraints().clear();
-			return;
-		case PatternsPackage.OBJECT_VARIABLE__BINDING_SEMANTICS:
-			setBindingSemantics(BINDING_SEMANTICS_EDEFAULT);
-			return;
-		case PatternsPackage.OBJECT_VARIABLE__BINDING_OPERATOR:
-			setBindingOperator(BINDING_OPERATOR_EDEFAULT);
-			return;
-		case PatternsPackage.OBJECT_VARIABLE__ATTRIBUTE_ASSIGNMENT:
-			getAttributeAssignments().clear();
-			return;
-		case PatternsPackage.OBJECT_VARIABLE__CLASSIFIER:
-			setClassifier((EClass) null);
-			return;
+			case PatternsPackage.OBJECT_VARIABLE__OUTGOING_LINK:
+				getOutgoingLink().clear();
+				return;
+			case PatternsPackage.OBJECT_VARIABLE__LINK_ORDER_CONSTRAINT:
+				getLinkOrderConstraint().clear();
+				return;
+			case PatternsPackage.OBJECT_VARIABLE__BINDING_SEMANTICS:
+				setBindingSemantics(BINDING_SEMANTICS_EDEFAULT);
+				return;
+			case PatternsPackage.OBJECT_VARIABLE__BINDING_OPERATOR:
+				setBindingOperator(BINDING_OPERATOR_EDEFAULT);
+				return;
+			case PatternsPackage.OBJECT_VARIABLE__ATTRIBUTE_ASSIGNMENT:
+				getAttributeAssignment().clear();
+				return;
+			case PatternsPackage.OBJECT_VARIABLE__CLASSIFIER:
+				setClassifier((EClass)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -421,22 +374,18 @@ public class ObjectVariableImpl extends AbstractVariableImpl implements
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case PatternsPackage.OBJECT_VARIABLE__TYPE:
-			return isSetType();
-		case PatternsPackage.OBJECT_VARIABLE__OUTGOING_LINK:
-			return outgoingLinks != null && !outgoingLinks.isEmpty();
-		case PatternsPackage.OBJECT_VARIABLE__LINK_ORDER_CONSTRAINT:
-			return linkOrderConstraints != null
-					&& !linkOrderConstraints.isEmpty();
-		case PatternsPackage.OBJECT_VARIABLE__BINDING_SEMANTICS:
-			return bindingSemantics != BINDING_SEMANTICS_EDEFAULT;
-		case PatternsPackage.OBJECT_VARIABLE__BINDING_OPERATOR:
-			return bindingOperator != BINDING_OPERATOR_EDEFAULT;
-		case PatternsPackage.OBJECT_VARIABLE__ATTRIBUTE_ASSIGNMENT:
-			return attributeAssignments != null
-					&& !attributeAssignments.isEmpty();
-		case PatternsPackage.OBJECT_VARIABLE__CLASSIFIER:
-			return classifier != null;
+			case PatternsPackage.OBJECT_VARIABLE__OUTGOING_LINK:
+				return outgoingLink != null && !outgoingLink.isEmpty();
+			case PatternsPackage.OBJECT_VARIABLE__LINK_ORDER_CONSTRAINT:
+				return linkOrderConstraint != null && !linkOrderConstraint.isEmpty();
+			case PatternsPackage.OBJECT_VARIABLE__BINDING_SEMANTICS:
+				return bindingSemantics != BINDING_SEMANTICS_EDEFAULT;
+			case PatternsPackage.OBJECT_VARIABLE__BINDING_OPERATOR:
+				return bindingOperator != BINDING_OPERATOR_EDEFAULT;
+			case PatternsPackage.OBJECT_VARIABLE__ATTRIBUTE_ASSIGNMENT:
+				return attributeAssignment != null && !attributeAssignment.isEmpty();
+			case PatternsPackage.OBJECT_VARIABLE__CLASSIFIER:
+				return classifier != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -447,8 +396,7 @@ public class ObjectVariableImpl extends AbstractVariableImpl implements
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy())
-			return super.toString();
+		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (bindingSemantics: ");
@@ -457,17 +405,6 @@ public class ObjectVariableImpl extends AbstractVariableImpl implements
 		result.append(bindingOperator);
 		result.append(')');
 		return result.toString();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean isSetType() {
-		return super.isSetType()
-				|| eIsSet(PatternsPackage.OBJECT_VARIABLE__CLASSIFIER);
 	}
 
 	/**

@@ -20,12 +20,12 @@ import org.muml.core.expressions.Expression;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.storydiagram.patterns.Constraint#getConstraintExpression <em>Constraint Expression</em>}</li>
  *   <li>{@link org.muml.storydiagram.patterns.Constraint#getPattern <em>Pattern</em>}</li>
  *   <li>{@link org.muml.storydiagram.patterns.Constraint#getObjectVariable <em>Object Variable</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.storydiagram.patterns.PatternsPackage#getConstraint()
  * @model
@@ -42,7 +42,7 @@ public interface Constraint extends EObject {
 	 * @return the value of the '<em>Constraint Expression</em>' containment reference.
 	 * @see #setConstraintExpression(Expression)
 	 * @see org.muml.storydiagram.patterns.PatternsPackage#getConstraint_ConstraintExpression()
-	 * @model containment="true" resolveProxies="true" required="true" ordered="false"
+	 * @model containment="true" required="true" ordered="false"
 	 * @generated
 	 */
 	Expression getConstraintExpression();
@@ -59,7 +59,7 @@ public interface Constraint extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Pattern</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link org.muml.storydiagram.patterns.StoryPattern#getConstraints <em>Constraint</em>}'.
+	 * It is bidirectional and its opposite is '{@link org.muml.storydiagram.patterns.StoryPattern#getConstraint <em>Constraint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -68,7 +68,7 @@ public interface Constraint extends EObject {
 	 * @return the value of the '<em>Pattern</em>' container reference.
 	 * @see #setPattern(StoryPattern)
 	 * @see org.muml.storydiagram.patterns.PatternsPackage#getConstraint_Pattern()
-	 * @see org.muml.storydiagram.patterns.StoryPattern#getConstraints
+	 * @see org.muml.storydiagram.patterns.StoryPattern#getConstraint
 	 * @model opposite="constraint" transient="false" ordered="false"
 	 * @generated
 	 */
@@ -86,7 +86,7 @@ public interface Constraint extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Object Variable</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link org.muml.storydiagram.patterns.AbstractVariable#getConstraints <em>Constraint</em>}'.
+	 * It is bidirectional and its opposite is '{@link org.muml.storydiagram.patterns.AbstractVariable#getConstraint <em>Constraint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -95,7 +95,7 @@ public interface Constraint extends EObject {
 	 * @return the value of the '<em>Object Variable</em>' container reference.
 	 * @see #setObjectVariable(AbstractVariable)
 	 * @see org.muml.storydiagram.patterns.PatternsPackage#getConstraint_ObjectVariable()
-	 * @see org.muml.storydiagram.patterns.AbstractVariable#getConstraints
+	 * @see org.muml.storydiagram.patterns.AbstractVariable#getConstraint
 	 * @model opposite="constraint" transient="false" ordered="false"
 	 * @generated
 	 */

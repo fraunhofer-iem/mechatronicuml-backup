@@ -11,12 +11,12 @@ import org.muml.pim.realtimestatechart.Region;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.modelica.transform.RegionInstance#getInstanceOf <em>Instance Of</em>}</li>
  *   <li>{@link org.muml.modelica.transform.RegionInstance#isEmbedsSinglePortStatechart <em>Embeds Single Port Statechart</em>}</li>
  *   <li>{@link org.muml.modelica.transform.RegionInstance#isEmbedsMultiPortStatechart <em>Embeds Multi Port Statechart</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.modelica.transform.TransformPackage#getRegionInstance()
  * @model

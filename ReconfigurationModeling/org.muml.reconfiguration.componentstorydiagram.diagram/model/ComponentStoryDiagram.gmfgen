@@ -55,9 +55,9 @@
         <metaClass
             href="../../de.uni_paderborn.fujaba.muml.componentstorydiagram/model/ComponentStoryDiagram.genmodel#//componentstorydiagram/ComponentStoryNode"/>
         <containmentMetaFeature
-            href="../../org.storydriven.storydiagrams/model/storydiagrams.uml.genmodel#//storydiagrams/activities/Activity/ownedActivityNode"/>
+            href="../../org.muml.storydiagram/model/storydiagrams.genmodel#//storydiagram/activities/Activity/ownedActivityNode"/>
         <childMetaFeature
-            href="../../org.storydriven.storydiagrams/model/storydiagrams.uml.genmodel#//storydiagrams/activities/Activity/ownedActivityNode"/>
+            href="../../org.muml.storydiagram/model/storydiagrams.genmodel#//storydiagram/activities/Activity/ownedActivityNode"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
@@ -74,7 +74,7 @@
               <initializers
                   xsi:type="gmfgen:GenReferenceNewElementSpec">
                 <feature
-                    href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentStoryPattern/thisVariable"/>
+                    href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentStoryPattern/thisVariable"/>
                 <newElementInitializers>
                   <initializers
                       xsi:type="gmfgen:GenFeatureValueSpec"
@@ -86,19 +86,19 @@
                       xsi:type="gmfgen:GenFeatureValueSpec"
                       value="//@expressionProviders/@providers.0/@expressions.3">
                     <feature
-                        href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentStoryPatternVariable/bindingState"/>
+                        href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentStoryPatternVariable/bindingState"/>
                   </initializers>
                   <initializers
                       xsi:type="gmfgen:GenFeatureValueSpec"
                       value="//@expressionProviders/@providers.0/@expressions.4">
                     <feature
-                        href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentStoryPatternVariable/bindingSemantics"/>
+                        href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentStoryPatternVariable/bindingSemantics"/>
                   </initializers>
                   <initializers
                       xsi:type="gmfgen:GenFeatureValueSpec"
                       value="//@expressionProviders/@providers.0/@expressions.5">
                     <feature
-                        href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentVariable/type"/>
+                        href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentVariable/type"/>
                   </initializers>
                 </newElementInitializers>
               </initializers>
@@ -152,7 +152,7 @@
           classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ComponentStoryPatternFigure extends org.eclipse.draw2d.RoundedRectangle {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RoundedRectangle fFigureComponentStoryPatternContainer; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ComponentStoryPatternFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutThis = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutThis.numColumns = 1;&#xA;&#x9;layoutThis.makeColumnsEqualWidth = true;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;this.setCornerDimensions(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(12)&#xA;, getMapMode().DPtoLP(12)&#xA;));&#xA;this.setFill(false);&#xA;this.setOutline(false);&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureComponentStoryPatternContainer = new org.eclipse.draw2d.RoundedRectangle();&#xA;&#xA;fFigureComponentStoryPatternContainer.setCornerDimensions(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(12)&#xA;, getMapMode().DPtoLP(12)&#xA;));&#xA;fFigureComponentStoryPatternContainer.setFill(false);&#xA;fFigureComponentStoryPatternContainer.setOutline(false);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureComponentStoryPatternContainer = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureComponentStoryPatternContainer.verticalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintFFigureComponentStoryPatternContainer.horizontalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintFFigureComponentStoryPatternContainer.horizontalIndent = 0;&#xA;constraintFFigureComponentStoryPatternContainer.horizontalSpan = 1;&#xA;constraintFFigureComponentStoryPatternContainer.verticalSpan = 1;&#xA;constraintFFigureComponentStoryPatternContainer.grabExcessHorizontalSpace = true;&#xA;constraintFFigureComponentStoryPatternContainer.grabExcessVerticalSpace = true;&#xA;this.add(fFigureComponentStoryPatternContainer, constraintFFigureComponentStoryPatternContainer);&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RoundedRectangle getFigureComponentStoryPatternContainer() {&#xA;&#x9;&#x9;return fFigureComponentStoryPatternContainer;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentStoryPattern"/>
+            href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentStoryPattern"/>
         <containmentMetaFeature
             href="../../de.uni_paderborn.fujaba.muml.componentstorydiagram/model/ComponentStoryDiagram.genmodel#//componentstorydiagram/ComponentStoryNode/componentStoryPattern"/>
         <childMetaFeature
@@ -185,11 +185,11 @@
           editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.reconfiguration.common.edit.policies.ComponentStoryPatternVariableEditPolicy"/>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentVariable"/>
+            href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentVariable"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentStoryPattern/thisVariable"/>
+            href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentStoryPattern/thisVariable"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentStoryPattern/thisVariable"/>
+            href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentStoryPattern/thisVariable"/>
       </modelFacet>
       <labels
           xsi:type="gmfgen:GenExternalNodeLabel"
@@ -260,11 +260,11 @@
           editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.reconfiguration.common.edit.policies.ComponentPartVariableTriggerEmbeddedComponentExpressionLabelEditPolicy"/>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentPartVariable"/>
+            href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentPartVariable"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentVariable/partVariables"/>
+            href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentVariable/partVariables"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentVariable/partVariables"/>
+            href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentVariable/partVariables"/>
       </modelFacet>
       <labels
           xsi:type="gmfgen:GenExternalNodeLabel"
@@ -358,11 +358,11 @@
           editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.reconfiguration.common.edit.policies.ComponentStoryPatternVariableEditPolicy"/>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/MultiPortVariable"/>
+            href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/MultiPortVariable"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/PartVariable/portVariables"/>
+            href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/PartVariable/portVariables"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/PartVariable/portVariables"/>
+            href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/PartVariable/portVariables"/>
       </modelFacet>
       <labels
           xsi:type="gmfgen:GenExternalNodeLabel"
@@ -461,11 +461,11 @@
           editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.reconfiguration.common.edit.policies.EmbeddedSinglePortVariableExternalLabelsEditPolicy"/>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/SinglePortVariable"/>
+            href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/SinglePortVariable"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/MultiPortVariable/gmfSubPortVariables"/>
+            href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/MultiPortVariable/gmfSubPortVariables"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/MultiPortVariable/gmfSubPortVariables"/>
+            href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/MultiPortVariable/gmfSubPortVariables"/>
       </modelFacet>
     </childNodes>
     <childNodes
@@ -502,11 +502,11 @@
       <modelFacet
           modelElementSelector="//@expressionProviders/@providers.0/@expressions.8">
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/SinglePortVariable"/>
+            href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/SinglePortVariable"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/PartVariable/portVariables"/>
+            href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/PartVariable/portVariables"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/PartVariable/portVariables"/>
+            href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/PartVariable/portVariables"/>
       </modelFacet>
       <labels
           xsi:type="gmfgen:GenExternalNodeLabel"
@@ -606,11 +606,11 @@
           editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.reconfiguration.common.edit.policies.ComponentStoryPatternVariableEditPolicy"/>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/MultiPortVariable"/>
+            href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/MultiPortVariable"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentVariable/portVariables"/>
+            href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentVariable/portVariables"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentVariable/portVariables"/>
+            href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentVariable/portVariables"/>
       </modelFacet>
       <labels
           xsi:type="gmfgen:GenExternalNodeLabel"
@@ -708,11 +708,11 @@
       <modelFacet
           modelElementSelector="//@expressionProviders/@providers.0/@expressions.8">
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/SinglePortVariable"/>
+            href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/SinglePortVariable"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentVariable/portVariables"/>
+            href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentVariable/portVariables"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentVariable/portVariables"/>
+            href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentVariable/portVariables"/>
       </modelFacet>
       <labels
           xsi:type="gmfgen:GenExternalNodeLabel"
@@ -796,11 +796,11 @@
           classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class InitialNodeFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fInitialNodeLabel; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public InitialNodeFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutThis = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutThis.numColumns = 1;&#xA;&#x9;layoutThis.makeColumnsEqualWidth = false;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;this.setFill(false);&#xA;this.setOutline(false);&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;org.eclipse.draw2d.Ellipse startNodeEllipse0 = new org.eclipse.draw2d.Ellipse();&#xA;&#xA;&#x9;startNodeEllipse0.setForegroundColor(org.eclipse.draw2d.ColorConstants.black);&#xA;&#x9;startNodeEllipse0.setBackgroundColor(org.eclipse.draw2d.ColorConstants.black);&#xA;startNodeEllipse0.setPreferredSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(15)&#xA;, getMapMode().DPtoLP(15)&#xA;));&#xA;startNodeEllipse0.setMaximumSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(15)&#xA;, getMapMode().DPtoLP(15)&#xA;));&#xA;startNodeEllipse0.setMinimumSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(15)&#xA;, getMapMode().DPtoLP(15)&#xA;));&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintStartNodeEllipse0 = new org.eclipse.draw2d.GridData();&#xA;constraintStartNodeEllipse0.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintStartNodeEllipse0.horizontalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintStartNodeEllipse0.horizontalIndent = 0;&#xA;constraintStartNodeEllipse0.horizontalSpan = 1;&#xA;constraintStartNodeEllipse0.verticalSpan = 1;&#xA;constraintStartNodeEllipse0.grabExcessHorizontalSpace = false;&#xA;constraintStartNodeEllipse0.grabExcessVerticalSpace = false;&#xA;this.add(startNodeEllipse0, constraintStartNodeEllipse0);&#xA;&#xA;&#xA;&#xA;&#xA;fInitialNodeLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fInitialNodeLabel.setText(&quot;&quot;);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFInitialNodeLabel = new org.eclipse.draw2d.GridData();&#xA;constraintFInitialNodeLabel.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFInitialNodeLabel.horizontalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFInitialNodeLabel.horizontalIndent = 0;&#xA;constraintFInitialNodeLabel.horizontalSpan = 1;&#xA;constraintFInitialNodeLabel.verticalSpan = 1;&#xA;constraintFInitialNodeLabel.grabExcessHorizontalSpace = true;&#xA;constraintFInitialNodeLabel.grabExcessVerticalSpace = false;&#xA;this.add(fInitialNodeLabel, constraintFInitialNodeLabel);&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getInitialNodeLabel() {&#xA;&#x9;&#x9;return fInitialNodeLabel;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
       <modelFacet>
         <metaClass
-            href="../../org.storydriven.storydiagrams/model/storydiagrams.uml.genmodel#//storydiagrams/activities/InitialNode"/>
+            href="../../org.muml.storydiagram/model/storydiagrams.genmodel#//storydiagram/activities/InitialNode"/>
         <containmentMetaFeature
-            href="../../org.storydriven.storydiagrams/model/storydiagrams.uml.genmodel#//storydiagrams/activities/Activity/ownedActivityNode"/>
+            href="../../org.muml.storydiagram/model/storydiagrams.genmodel#//storydiagram/activities/Activity/ownedActivityNode"/>
         <childMetaFeature
-            href="../../org.storydriven.storydiagrams/model/storydiagrams.uml.genmodel#//storydiagrams/activities/Activity/ownedActivityNode"/>
+            href="../../org.muml.storydiagram/model/storydiagrams.genmodel#//storydiagram/activities/Activity/ownedActivityNode"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
@@ -840,11 +840,11 @@
       </viewmap>
       <modelFacet>
         <metaClass
-            href="../../org.storydriven.storydiagrams/model/storydiagrams.uml.genmodel#//storydiagrams/activities/JunctionNode"/>
+            href="../../org.muml.storydiagram/model/storydiagrams.genmodel#//storydiagram/activities/JunctionNode"/>
         <containmentMetaFeature
-            href="../../org.storydriven.storydiagrams/model/storydiagrams.uml.genmodel#//storydiagrams/activities/Activity/ownedActivityNode"/>
+            href="../../org.muml.storydiagram/model/storydiagrams.genmodel#//storydiagram/activities/Activity/ownedActivityNode"/>
         <childMetaFeature
-            href="../../org.storydriven.storydiagrams/model/storydiagrams.uml.genmodel#//storydiagrams/activities/Activity/ownedActivityNode"/>
+            href="../../org.muml.storydiagram/model/storydiagrams.genmodel#//storydiagram/activities/Activity/ownedActivityNode"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
@@ -876,11 +876,11 @@
           classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ActivityFinalNodeFigureDescriptor extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fActivityFinalNodeLabel; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ActivityFinalNodeFigureDescriptor() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutThis = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutThis.numColumns = 1;&#xA;&#x9;layoutThis.makeColumnsEqualWidth = false;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;this.setOutline(false);&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;org.eclipse.draw2d.Ellipse activityFinalNodeEllipse0 = new org.eclipse.draw2d.Ellipse();&#xA;&#xA;&#x9;activityFinalNodeEllipse0.setForegroundColor(org.eclipse.draw2d.ColorConstants.black);&#xA;activityFinalNodeEllipse0.setPreferredSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(23)&#xA;, getMapMode().DPtoLP(23)&#xA;));&#xA;activityFinalNodeEllipse0.setMaximumSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(23)&#xA;, getMapMode().DPtoLP(23)&#xA;));&#xA;activityFinalNodeEllipse0.setMinimumSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(23)&#xA;, getMapMode().DPtoLP(23)&#xA;));&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintActivityFinalNodeEllipse0 = new org.eclipse.draw2d.GridData();&#xA;constraintActivityFinalNodeEllipse0.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintActivityFinalNodeEllipse0.horizontalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintActivityFinalNodeEllipse0.horizontalIndent = 0;&#xA;constraintActivityFinalNodeEllipse0.horizontalSpan = 1;&#xA;constraintActivityFinalNodeEllipse0.verticalSpan = 1;&#xA;constraintActivityFinalNodeEllipse0.grabExcessHorizontalSpace = false;&#xA;constraintActivityFinalNodeEllipse0.grabExcessVerticalSpace = false;&#xA;this.add(activityFinalNodeEllipse0, constraintActivityFinalNodeEllipse0);&#xA;&#xA;&#xA;&#xA;&#xA;fActivityFinalNodeLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fActivityFinalNodeLabel.setText(&quot;&quot;);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFActivityFinalNodeLabel = new org.eclipse.draw2d.GridData();&#xA;constraintFActivityFinalNodeLabel.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFActivityFinalNodeLabel.horizontalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFActivityFinalNodeLabel.horizontalIndent = 0;&#xA;constraintFActivityFinalNodeLabel.horizontalSpan = 1;&#xA;constraintFActivityFinalNodeLabel.verticalSpan = 1;&#xA;constraintFActivityFinalNodeLabel.grabExcessHorizontalSpace = true;&#xA;constraintFActivityFinalNodeLabel.grabExcessVerticalSpace = false;&#xA;this.add(fActivityFinalNodeLabel, constraintFActivityFinalNodeLabel);&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getActivityFinalNodeLabel() {&#xA;&#x9;&#x9;return fActivityFinalNodeLabel;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
       <modelFacet>
         <metaClass
-            href="../../org.storydriven.storydiagrams/model/storydiagrams.uml.genmodel#//storydiagrams/activities/ActivityFinalNode"/>
+            href="../../org.muml.storydiagram/model/storydiagrams.genmodel#//storydiagram/activities/ActivityFinalNode"/>
         <containmentMetaFeature
-            href="../../org.storydriven.storydiagrams/model/storydiagrams.uml.genmodel#//storydiagrams/activities/Activity/ownedActivityNode"/>
+            href="../../org.muml.storydiagram/model/storydiagrams.genmodel#//storydiagram/activities/Activity/ownedActivityNode"/>
         <childMetaFeature
-            href="../../org.storydriven.storydiagrams/model/storydiagrams.uml.genmodel#//storydiagrams/activities/Activity/ownedActivityNode"/>
+            href="../../org.muml.storydiagram/model/storydiagrams.genmodel#//storydiagram/activities/Activity/ownedActivityNode"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
@@ -930,9 +930,9 @@
         <metaClass
             href="../../de.uni_paderborn.fujaba.muml.componentstorydiagram/model/ComponentStoryDiagram.genmodel#//componentstorydiagram/ControllerExchangeNode"/>
         <containmentMetaFeature
-            href="../../org.storydriven.storydiagrams/model/storydiagrams.uml.genmodel#//storydiagrams/activities/Activity/ownedActivityNode"/>
+            href="../../org.muml.storydiagram/model/storydiagrams.genmodel#//storydiagram/activities/Activity/ownedActivityNode"/>
         <childMetaFeature
-            href="../../org.storydriven.storydiagrams/model/storydiagrams.uml.genmodel#//storydiagrams/activities/Activity/ownedActivityNode"/>
+            href="../../org.muml.storydiagram/model/storydiagrams.genmodel#//storydiagram/activities/Activity/ownedActivityNode"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
@@ -949,7 +949,7 @@
               <initializers
                   xsi:type="gmfgen:GenReferenceNewElementSpec">
                 <feature
-                    href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentStoryPattern/thisVariable"/>
+                    href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentStoryPattern/thisVariable"/>
                 <newElementInitializers>
                   <initializers
                       xsi:type="gmfgen:GenFeatureValueSpec"
@@ -961,44 +961,44 @@
                       xsi:type="gmfgen:GenFeatureValueSpec"
                       value="//@expressionProviders/@providers.0/@expressions.17">
                     <feature
-                        href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentStoryPatternVariable/bindingState"/>
+                        href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentStoryPatternVariable/bindingState"/>
                   </initializers>
                   <initializers
                       xsi:type="gmfgen:GenFeatureValueSpec"
                       value="//@expressionProviders/@providers.0/@expressions.18">
                     <feature
-                        href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentStoryPatternVariable/bindingSemantics"/>
+                        href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentStoryPatternVariable/bindingSemantics"/>
                   </initializers>
                   <initializers
                       xsi:type="gmfgen:GenReferenceNewElementSpec">
                     <feature
-                        href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentVariable/partVariables"/>
+                        href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentVariable/partVariables"/>
                     <newElementInitializers>
                       <initializers
                           xsi:type="gmfgen:GenFeatureValueSpec"
                           value="//@expressionProviders/@providers.0/@expressions.19">
                         <feature
-                            href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentStoryPatternVariable/bindingOperator"/>
+                            href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentStoryPatternVariable/bindingOperator"/>
                       </initializers>
                       <elementClass
-                          href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentPartVariable"/>
+                          href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentPartVariable"/>
                     </newElementInitializers>
                     <newElementInitializers>
                       <initializers
                           xsi:type="gmfgen:GenFeatureValueSpec"
                           value="//@expressionProviders/@providers.0/@expressions.20">
                         <feature
-                            href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentStoryPatternVariable/bindingOperator"/>
+                            href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentStoryPatternVariable/bindingOperator"/>
                       </initializers>
                       <elementClass
-                          href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentPartVariable"/>
+                          href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentPartVariable"/>
                     </newElementInitializers>
                   </initializers>
                   <initializers
                       xsi:type="gmfgen:GenFeatureValueSpec"
                       value="//@expressionProviders/@providers.0/@expressions.21">
                     <feature
-                        href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentVariable/type"/>
+                        href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentVariable/type"/>
                   </initializers>
                 </newElementInitializers>
               </initializers>
@@ -1068,7 +1068,7 @@
           classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ComponentStoryPatternFigure extends org.eclipse.draw2d.RoundedRectangle {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RoundedRectangle fFigureComponentStoryPatternContainer; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ComponentStoryPatternFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutThis = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutThis.numColumns = 1;&#xA;&#x9;layoutThis.makeColumnsEqualWidth = true;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;this.setCornerDimensions(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(12)&#xA;, getMapMode().DPtoLP(12)&#xA;));&#xA;this.setFill(false);&#xA;this.setOutline(false);&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureComponentStoryPatternContainer = new org.eclipse.draw2d.RoundedRectangle();&#xA;&#xA;fFigureComponentStoryPatternContainer.setCornerDimensions(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(12)&#xA;, getMapMode().DPtoLP(12)&#xA;));&#xA;fFigureComponentStoryPatternContainer.setFill(false);&#xA;fFigureComponentStoryPatternContainer.setOutline(false);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureComponentStoryPatternContainer = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureComponentStoryPatternContainer.verticalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintFFigureComponentStoryPatternContainer.horizontalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintFFigureComponentStoryPatternContainer.horizontalIndent = 0;&#xA;constraintFFigureComponentStoryPatternContainer.horizontalSpan = 1;&#xA;constraintFFigureComponentStoryPatternContainer.verticalSpan = 1;&#xA;constraintFFigureComponentStoryPatternContainer.grabExcessHorizontalSpace = true;&#xA;constraintFFigureComponentStoryPatternContainer.grabExcessVerticalSpace = true;&#xA;this.add(fFigureComponentStoryPatternContainer, constraintFFigureComponentStoryPatternContainer);&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RoundedRectangle getFigureComponentStoryPatternContainer() {&#xA;&#x9;&#x9;return fFigureComponentStoryPatternContainer;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentStoryPattern"/>
+            href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentStoryPattern"/>
         <containmentMetaFeature
             href="../../de.uni_paderborn.fujaba.muml.componentstorydiagram/model/ComponentStoryDiagram.genmodel#//componentstorydiagram/ControllerExchangeNode/componentStoryPattern"/>
         <childMetaFeature
@@ -1097,11 +1097,11 @@
           classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ComponentVariableFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureComponentVariableNameFigure; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureChildren; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ComponentVariableFigure() {&#xA;&#x9;&#x9;this.setLayoutManager(new org.eclipse.draw2d.StackLayout());&#xA;&#x9;&#x9;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure componentVariableContent0 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;componentVariableContent0.setFill(false);&#xA;componentVariableContent0.setOutline(false);&#xA;&#xA;this.add(componentVariableContent0);&#xA;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutComponentVariableContent0 = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutComponentVariableContent0.numColumns = 1;&#xA;&#x9;layoutComponentVariableContent0.makeColumnsEqualWidth = true;&#xA;&#x9;componentVariableContent0.setLayoutManager(layoutComponentVariableContent0);&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure container1 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;container1.setFill(false);&#xA;container1.setOutline(false);&#xA;container1.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(3)&#xA;, getMapMode().DPtoLP(3)&#xA;, getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(3)&#xA;));&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintContainer1 = new org.eclipse.draw2d.GridData();&#xA;constraintContainer1.verticalAlignment = org.eclipse.draw2d.GridData.BEGINNING;&#xA;constraintContainer1.horizontalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintContainer1.horizontalIndent = 0;&#xA;constraintContainer1.horizontalSpan = 1;&#xA;constraintContainer1.verticalSpan = 1;&#xA;constraintContainer1.grabExcessHorizontalSpace = true;&#xA;constraintContainer1.grabExcessVerticalSpace = false;&#xA;componentVariableContent0.add(container1, constraintContainer1);&#xA;&#xA;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutContainer1 = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutContainer1.numColumns = 3;&#xA;&#x9;layoutContainer1.makeColumnsEqualWidth = true;&#xA;&#x9;container1.setLayoutManager(layoutContainer1);&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure fake2 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;fake2.setFill(false);&#xA;fake2.setOutline(false);&#xA;&#xA;container1.add(fake2);&#xA;&#xA;&#xA;&#xA;fFigureComponentVariableNameFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureComponentVariableNameFigure.setText(&quot;this&quot;);&#xA;&#xA;fFigureComponentVariableNameFigure.setFont(FFIGURECOMPONENTVARIABLENAMEFIGURE_FONT);&#xA;&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureComponentVariableNameFigure = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureComponentVariableNameFigure.verticalAlignment = org.eclipse.draw2d.GridData.BEGINNING;&#xA;constraintFFigureComponentVariableNameFigure.horizontalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureComponentVariableNameFigure.horizontalIndent = 0;&#xA;constraintFFigureComponentVariableNameFigure.horizontalSpan = 1;&#xA;constraintFFigureComponentVariableNameFigure.verticalSpan = 1;&#xA;constraintFFigureComponentVariableNameFigure.grabExcessHorizontalSpace = true;&#xA;constraintFFigureComponentVariableNameFigure.grabExcessVerticalSpace = false;&#xA;container1.add(fFigureComponentVariableNameFigure, constraintFFigureComponentVariableNameFigure);&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure componentIconFigure2 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;componentIconFigure2.setFill(false);&#xA;componentIconFigure2.setOutline(false);&#xA;componentIconFigure2.setPreferredSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(20)&#xA;, getMapMode().DPtoLP(20)&#xA;));&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintComponentIconFigure2 = new org.eclipse.draw2d.GridData();&#xA;constraintComponentIconFigure2.verticalAlignment = org.eclipse.draw2d.GridData.BEGINNING;&#xA;constraintComponentIconFigure2.horizontalAlignment = org.eclipse.draw2d.GridData.END;&#xA;constraintComponentIconFigure2.horizontalIndent = 0;&#xA;constraintComponentIconFigure2.horizontalSpan = 1;&#xA;constraintComponentIconFigure2.verticalSpan = 1;&#xA;constraintComponentIconFigure2.grabExcessHorizontalSpace = true;&#xA;constraintComponentIconFigure2.grabExcessVerticalSpace = false;&#xA;container1.add(componentIconFigure2, constraintComponentIconFigure2);&#xA;&#xA;componentIconFigure2.setLayoutManager(new org.eclipse.draw2d.StackLayout());&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure componentIconOuter3 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;componentIconOuter3.setFill(false);&#xA;componentIconOuter3.setOutline(false);&#xA;&#xA;componentIconFigure2.add(componentIconOuter3);&#xA;componentIconOuter3.setLayoutManager(new org.eclipse.draw2d.XYLayout());&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure b14 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;&#xA;componentIconOuter3.add(b14, &#xA;new org.eclipse.draw2d.geometry.Rectangle(getMapMode().DPtoLP(4)&#xA;, getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(16)&#xA;, getMapMode().DPtoLP(20)&#xA;)&#xA;);&#xA;&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure componentIconInner13 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;componentIconInner13.setFill(false);&#xA;componentIconInner13.setOutline(false);&#xA;&#xA;componentIconFigure2.add(componentIconInner13);&#xA;componentIconInner13.setLayoutManager(new org.eclipse.draw2d.XYLayout());&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure c14 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;&#xA;componentIconInner13.add(c14, &#xA;new org.eclipse.draw2d.geometry.Rectangle(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(2)&#xA;, getMapMode().DPtoLP(12)&#xA;, getMapMode().DPtoLP(6)&#xA;)&#xA;);&#xA;&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure componentIconInner23 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;componentIconInner23.setFill(false);&#xA;componentIconInner23.setOutline(false);&#xA;&#xA;componentIconFigure2.add(componentIconInner23);&#xA;componentIconInner23.setLayoutManager(new org.eclipse.draw2d.XYLayout());&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure d14 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;&#xA;componentIconInner23.add(d14, &#xA;new org.eclipse.draw2d.geometry.Rectangle(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(10)&#xA;, getMapMode().DPtoLP(12)&#xA;, getMapMode().DPtoLP(6)&#xA;)&#xA;);&#xA;&#xA;&#xA;&#xA;// Process FigureRef details&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;container1.add(componentIconFigure2);&#xA;&#xA;&#xA;&#xA;&#xA;fFigureChildren = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;fFigureChildren.setFill(false);&#xA;fFigureChildren.setOutline(false);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureChildren = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureChildren.verticalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintFFigureChildren.horizontalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintFFigureChildren.horizontalIndent = 0;&#xA;constraintFFigureChildren.horizontalSpan = 1;&#xA;constraintFFigureChildren.verticalSpan = 1;&#xA;constraintFFigureChildren.grabExcessHorizontalSpace = true;&#xA;constraintFFigureChildren.grabExcessVerticalSpace = true;&#xA;componentVariableContent0.add(fFigureChildren, constraintFFigureChildren);&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureComponentVariableNameFigure() {&#xA;&#x9;&#x9;return fFigureComponentVariableNameFigure;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureChildren() {&#xA;&#x9;&#x9;return fFigureChildren;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Font FFIGURECOMPONENTVARIABLENAMEFIGURE_FONT = new org.eclipse.swt.graphics.Font(org.eclipse.swt.widgets.Display.getCurrent(), org.eclipse.swt.widgets.Display.getDefault().getSystemFont().getFontData()[0].getName(), 9, org.eclipse.swt.SWT.BOLD);&#xA;&#xA;"/>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentVariable"/>
+            href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentVariable"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentStoryPattern/thisVariable"/>
+            href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentStoryPattern/thisVariable"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentStoryPattern/thisVariable"/>
+            href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentStoryPattern/thisVariable"/>
       </modelFacet>
       <labels
           xsi:type="gmfgen:GenExternalNodeLabel"
@@ -1168,11 +1168,11 @@
           editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.reconfiguration.common.edit.policies.ComponentStoryPatternVariableEditPolicy"/>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/FadingComponentPartVariable"/>
+            href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/FadingComponentPartVariable"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentVariable/partVariables"/>
+            href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentVariable/partVariables"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentVariable/partVariables"/>
+            href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentVariable/partVariables"/>
       </modelFacet>
       <labels
           visualID="5054"
@@ -1245,7 +1245,7 @@
           classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ActivityFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureActivityContainer; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureActivityName; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ActivityFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutThis = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutThis.numColumns = 1;&#xA;&#x9;layoutThis.makeColumnsEqualWidth = false;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;this.setFill(false);&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;org.eclipse.draw2d.ScalablePolygonShape polyline0 = new org.eclipse.draw2d.ScalablePolygonShape();&#xA;&#xA;polyline0.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(2)&#xA;));&#xA;polyline0.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(20)&#xA;, getMapMode().DPtoLP(2)&#xA;));&#xA;polyline0.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(21)&#xA;, getMapMode().DPtoLP(1)&#xA;));&#xA;polyline0.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(21)&#xA;, getMapMode().DPtoLP(0)&#xA;));&#xA;polyline0.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(21)&#xA;, getMapMode().DPtoLP(1)&#xA;));&#xA;polyline0.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(20)&#xA;, getMapMode().DPtoLP(2)&#xA;));&#xA;polyline0.setFill(true);&#xA;polyline0.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(2)&#xA;, getMapMode().DPtoLP(2)&#xA;, getMapMode().DPtoLP(2)&#xA;, getMapMode().DPtoLP(20)&#xA;));&#xA;&#xA;this.add(polyline0);&#xA;polyline0.setLayoutManager(new org.eclipse.draw2d.StackLayout());&#xA;&#xA;&#xA;fFigureActivityName = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureActivityName.setText(&quot;&quot;);&#xA;&#xA;polyline0.add(fFigureActivityName);&#xA;&#xA;&#xA;&#xA;&#xA;fFigureActivityContainer = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;fFigureActivityContainer.setFill(false);&#xA;fFigureActivityContainer.setOutline(false);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureActivityContainer = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureActivityContainer.verticalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintFFigureActivityContainer.horizontalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintFFigureActivityContainer.horizontalIndent = 0;&#xA;constraintFFigureActivityContainer.horizontalSpan = 1;&#xA;constraintFFigureActivityContainer.verticalSpan = 1;&#xA;constraintFFigureActivityContainer.grabExcessHorizontalSpace = true;&#xA;constraintFFigureActivityContainer.grabExcessVerticalSpace = true;&#xA;this.add(fFigureActivityContainer, constraintFFigureActivityContainer);&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureActivityContainer() {&#xA;&#x9;&#x9;return fFigureActivityContainer;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureActivityName() {&#xA;&#x9;&#x9;return fFigureActivityName;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
       <modelFacet>
         <metaClass
-            href="../../org.storydriven.storydiagrams/model/storydiagrams.uml.genmodel#//storydiagrams/activities/Activity"/>
+            href="../../org.muml.storydiagram/model/storydiagrams.genmodel#//storydiagram/activities/Activity"/>
         <containmentMetaFeature
             href="../../de.uni_paderborn.fujaba.muml.componentstorydiagram/model/ComponentStoryDiagram.genmodel#//componentstorydiagram/ComponentStoryRule/activity"/>
         <childMetaFeature
@@ -1295,15 +1295,15 @@
       <modelFacet
           xsi:type="gmfgen:TypeLinkModelFacet">
         <metaClass
-            href="../../org.storydriven.storydiagrams/model/storydiagrams.uml.genmodel#//storydiagrams/activities/ActivityEdge"/>
+            href="../../org.muml.storydiagram/model/storydiagrams.genmodel#//storydiagram/activities/ActivityEdge"/>
         <containmentMetaFeature
-            href="../../org.storydriven.storydiagrams/model/storydiagrams.uml.genmodel#//storydiagrams/activities/Activity/ownedActivityEdge"/>
+            href="../../org.muml.storydiagram/model/storydiagrams.genmodel#//storydiagram/activities/Activity/ownedActivityEdge"/>
         <childMetaFeature
-            href="../../org.storydriven.storydiagrams/model/storydiagrams.uml.genmodel#//storydiagrams/activities/Activity/ownedActivityEdge"/>
+            href="../../org.muml.storydiagram/model/storydiagrams.genmodel#//storydiagram/activities/Activity/ownedActivityEdge"/>
         <sourceMetaFeature
-            href="../../org.storydriven.storydiagrams/model/storydiagrams.uml.genmodel#//storydiagrams/activities/ActivityEdge/source"/>
+            href="../../org.muml.storydiagram/model/storydiagrams.genmodel#//storydiagram/activities/ActivityEdge/source"/>
         <targetMetaFeature
-            href="../../org.storydriven.storydiagrams/model/storydiagrams.uml.genmodel#//storydiagrams/activities/ActivityEdge/target"/>
+            href="../../org.muml.storydiagram/model/storydiagrams.genmodel#//storydiagram/activities/ActivityEdge/target"/>
       </modelFacet>
       <labels
           visualID="6001"
@@ -1343,18 +1343,18 @@
       <modelFacet
           xsi:type="gmfgen:TypeLinkModelFacet">
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/AssemblyVariable"/>
+            href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/AssemblyVariable"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentVariable/connectorVariables"/>
+            href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentVariable/connectorVariables"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentVariable/connectorVariables"/>
+            href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentVariable/connectorVariables"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
               value="//@expressionProviders/@providers.0/@expressions.26">
             <feature
-                href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/AssemblyVariable/type"/>
+                href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/AssemblyVariable/type"/>
           </initializers>
         </modelElementInitializer>
         <sourceMetaFeature
@@ -1409,18 +1409,18 @@
       <modelFacet
           xsi:type="gmfgen:TypeLinkModelFacet">
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/DelegationVariable"/>
+            href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/DelegationVariable"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentVariable/connectorVariables"/>
+            href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentVariable/connectorVariables"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentVariable/connectorVariables"/>
+            href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentVariable/connectorVariables"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
               value="//@expressionProviders/@providers.0/@expressions.29">
             <feature
-                href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/DelegationVariable/type"/>
+                href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/DelegationVariable/type"/>
           </initializers>
         </modelElementInitializer>
         <sourceMetaFeature
@@ -1479,15 +1479,15 @@
       <modelFacet
           xsi:type="gmfgen:TypeLinkModelFacet">
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/MultiPortOrderConstraint"/>
+            href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/MultiPortOrderConstraint"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/MultiPortVariable/orderConstraints"/>
+            href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/MultiPortVariable/orderConstraints"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/MultiPortVariable/orderConstraints"/>
+            href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/MultiPortVariable/orderConstraints"/>
         <sourceMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/MultiPortOrderConstraint/srcSubPortVariable"/>
+            href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/MultiPortOrderConstraint/srcSubPortVariable"/>
         <targetMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/MultiPortOrderConstraint/tgtSubPortVariable"/>
+            href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/MultiPortOrderConstraint/tgtSubPortVariable"/>
       </modelFacet>
       <labels
           visualID="6006"
@@ -1987,7 +1987,7 @@
         className="MultiPortVariableLabelExpressionLabelParser5056"
         viewExpression="//@expressionProviders/@providers.0/@expressions.7">
       <expressionContext
-          href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/MultiPortVariable"/>
+          href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/MultiPortVariable"/>
     </implementations>
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
@@ -1995,7 +1995,7 @@
         className="SinglePortVariableLabelExpressionLabelParser5057"
         viewExpression="//@expressionProviders/@providers.0/@expressions.9">
       <expressionContext
-          href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/SinglePortVariable"/>
+          href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/SinglePortVariable"/>
     </implementations>
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
@@ -2003,7 +2003,7 @@
         className="ComponentPartVariableLabelExpressionLabelParser5018"
         viewExpression="//@expressionProviders/@providers.0/@expressions.10">
       <expressionContext
-          href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentPartVariable"/>
+          href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentPartVariable"/>
     </implementations>
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
@@ -2011,7 +2011,7 @@
         className="ComponentPartVariableLabelExpressionLabelParser5063"
         viewExpression="//@expressionProviders/@providers.0/@expressions.11">
       <expressionContext
-          href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentPartVariable"/>
+          href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentPartVariable"/>
     </implementations>
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
@@ -2019,7 +2019,7 @@
         className="MultiPortVariableLabelExpressionLabelParser5058"
         viewExpression="//@expressionProviders/@providers.0/@expressions.7">
       <expressionContext
-          href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/MultiPortVariable"/>
+          href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/MultiPortVariable"/>
     </implementations>
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
@@ -2027,7 +2027,7 @@
         className="SinglePortVariableLabelExpressionLabelParser5059"
         viewExpression="//@expressionProviders/@providers.0/@expressions.9">
       <expressionContext
-          href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/SinglePortVariable"/>
+          href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/SinglePortVariable"/>
     </implementations>
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
@@ -2035,7 +2035,7 @@
         className="FadingComponentPartVariableLabelExpressionLabelParser5054"
         viewExpression="//@expressionProviders/@providers.0/@expressions.23">
       <expressionContext
-          href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/FadingComponentPartVariable"/>
+          href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/FadingComponentPartVariable"/>
     </implementations>
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
@@ -2043,7 +2043,7 @@
         className="FadingComponentPartVariableLabelExpressionLabelParser5065"
         viewExpression="//@expressionProviders/@providers.0/@expressions.24">
       <expressionContext
-          href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/FadingComponentPartVariable"/>
+          href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/FadingComponentPartVariable"/>
     </implementations>
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
@@ -2059,7 +2059,7 @@
         className="MultiPortOrderConstraintLabelExpressionLabelParser6006"
         viewExpression="//@expressionProviders/@providers.0/@expressions.32">
       <expressionContext
-          href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/MultiPortOrderConstraint"/>
+          href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/MultiPortOrderConstraint"/>
     </implementations>
   </labelParsers>
   <contextMenus

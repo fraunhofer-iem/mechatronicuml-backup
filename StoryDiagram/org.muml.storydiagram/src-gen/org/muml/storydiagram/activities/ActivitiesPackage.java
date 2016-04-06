@@ -13,7 +13,7 @@ import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.muml.core.CorePackage;
-import org.muml.storydiagram.StorydiagramsPackage;
+import org.muml.storydiagram.StorydiagramPackage;
 import org.muml.storydiagram.calls.CallsPackage;
 
 /**
@@ -46,7 +46,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.storydriven.org/storydiagrams/activities/0.2.1";
+	String eNS_URI = "http://www.muml.org/storydiagram/activities/1.0.0";
 
 	/**
 	 * The package namespace name.
@@ -62,8 +62,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	ActivitiesPackage eINSTANCE = org.muml.storydiagram.activities.impl.ActivitiesPackageImpl
-			.init();
+	ActivitiesPackage eINSTANCE = org.muml.storydiagram.activities.impl.ActivitiesPackageImpl.init();
 
 	/**
 	 * The meta object id for the '{@link org.muml.storydiagram.activities.impl.ExceptionVariableImpl <em>Exception Variable</em>}' class.
@@ -76,22 +75,22 @@ public interface ActivitiesPackage extends EPackage {
 	int EXCEPTION_VARIABLE = 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXCEPTION_VARIABLE__ANNOTATION = StorydiagramsPackage.VARIABLE__ANNOTATION;
+	int EXCEPTION_VARIABLE__ANNOTATIONS = StorydiagramPackage.VARIABLE__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXCEPTION_VARIABLE__EXTENSION = StorydiagramsPackage.VARIABLE__EXTENSION;
+	int EXCEPTION_VARIABLE__EXTENSIONS = StorydiagramPackage.VARIABLE__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' reference.
@@ -100,7 +99,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXCEPTION_VARIABLE__TYPE = StorydiagramsPackage.VARIABLE__TYPE;
+	int EXCEPTION_VARIABLE__TYPE = StorydiagramPackage.VARIABLE__TYPE;
 
 	/**
 	 * The feature id for the '<em><b>Generic Type</b></em>' containment reference.
@@ -109,7 +108,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXCEPTION_VARIABLE__GENERIC_TYPE = StorydiagramsPackage.VARIABLE__GENERIC_TYPE;
+	int EXCEPTION_VARIABLE__GENERIC_TYPE = StorydiagramPackage.VARIABLE__GENERIC_TYPE;
 
 	/**
 	 * The feature id for the '<em><b>Variable Name</b></em>' attribute.
@@ -118,7 +117,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXCEPTION_VARIABLE__VARIABLE_NAME = StorydiagramsPackage.VARIABLE__VARIABLE_NAME;
+	int EXCEPTION_VARIABLE__VARIABLE_NAME = StorydiagramPackage.VARIABLE__VARIABLE_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Activity Edge</b></em>' container reference.
@@ -127,7 +126,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXCEPTION_VARIABLE__ACTIVITY_EDGE = StorydiagramsPackage.VARIABLE_FEATURE_COUNT + 0;
+	int EXCEPTION_VARIABLE__ACTIVITY_EDGE = StorydiagramPackage.VARIABLE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -136,7 +135,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXCEPTION_VARIABLE__NAME = StorydiagramsPackage.VARIABLE_FEATURE_COUNT + 1;
+	int EXCEPTION_VARIABLE__NAME = StorydiagramPackage.VARIABLE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Exception Type</b></em>' reference list.
@@ -145,7 +144,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXCEPTION_VARIABLE__EXCEPTION_TYPE = StorydiagramsPackage.VARIABLE_FEATURE_COUNT + 2;
+	int EXCEPTION_VARIABLE__EXCEPTION_TYPE = StorydiagramPackage.VARIABLE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Generic Exception Type</b></em>' reference list.
@@ -154,7 +153,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXCEPTION_VARIABLE__GENERIC_EXCEPTION_TYPE = StorydiagramsPackage.VARIABLE_FEATURE_COUNT + 3;
+	int EXCEPTION_VARIABLE__GENERIC_EXCEPTION_TYPE = StorydiagramPackage.VARIABLE_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Exception Variable</em>' class.
@@ -163,7 +162,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXCEPTION_VARIABLE_FEATURE_COUNT = StorydiagramsPackage.VARIABLE_FEATURE_COUNT + 4;
+	int EXCEPTION_VARIABLE_FEATURE_COUNT = StorydiagramPackage.VARIABLE_FEATURE_COUNT + 4;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -172,7 +171,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXCEPTION_VARIABLE___ECLASS = StorydiagramsPackage.VARIABLE___ECLASS;
+	int EXCEPTION_VARIABLE___ECLASS = StorydiagramPackage.VARIABLE___ECLASS;
 
 	/**
 	 * The operation id for the '<em>EIs Proxy</em>' operation.
@@ -181,7 +180,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXCEPTION_VARIABLE___EIS_PROXY = StorydiagramsPackage.VARIABLE___EIS_PROXY;
+	int EXCEPTION_VARIABLE___EIS_PROXY = StorydiagramPackage.VARIABLE___EIS_PROXY;
 
 	/**
 	 * The operation id for the '<em>EResource</em>' operation.
@@ -190,7 +189,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXCEPTION_VARIABLE___ERESOURCE = StorydiagramsPackage.VARIABLE___ERESOURCE;
+	int EXCEPTION_VARIABLE___ERESOURCE = StorydiagramPackage.VARIABLE___ERESOURCE;
 
 	/**
 	 * The operation id for the '<em>EContainer</em>' operation.
@@ -199,7 +198,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXCEPTION_VARIABLE___ECONTAINER = StorydiagramsPackage.VARIABLE___ECONTAINER;
+	int EXCEPTION_VARIABLE___ECONTAINER = StorydiagramPackage.VARIABLE___ECONTAINER;
 
 	/**
 	 * The operation id for the '<em>EContaining Feature</em>' operation.
@@ -208,7 +207,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXCEPTION_VARIABLE___ECONTAINING_FEATURE = StorydiagramsPackage.VARIABLE___ECONTAINING_FEATURE;
+	int EXCEPTION_VARIABLE___ECONTAINING_FEATURE = StorydiagramPackage.VARIABLE___ECONTAINING_FEATURE;
 
 	/**
 	 * The operation id for the '<em>EContainment Feature</em>' operation.
@@ -217,7 +216,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXCEPTION_VARIABLE___ECONTAINMENT_FEATURE = StorydiagramsPackage.VARIABLE___ECONTAINMENT_FEATURE;
+	int EXCEPTION_VARIABLE___ECONTAINMENT_FEATURE = StorydiagramPackage.VARIABLE___ECONTAINMENT_FEATURE;
 
 	/**
 	 * The operation id for the '<em>EContents</em>' operation.
@@ -226,7 +225,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXCEPTION_VARIABLE___ECONTENTS = StorydiagramsPackage.VARIABLE___ECONTENTS;
+	int EXCEPTION_VARIABLE___ECONTENTS = StorydiagramPackage.VARIABLE___ECONTENTS;
 
 	/**
 	 * The operation id for the '<em>EAll Contents</em>' operation.
@@ -235,7 +234,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXCEPTION_VARIABLE___EALL_CONTENTS = StorydiagramsPackage.VARIABLE___EALL_CONTENTS;
+	int EXCEPTION_VARIABLE___EALL_CONTENTS = StorydiagramPackage.VARIABLE___EALL_CONTENTS;
 
 	/**
 	 * The operation id for the '<em>ECross References</em>' operation.
@@ -244,7 +243,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXCEPTION_VARIABLE___ECROSS_REFERENCES = StorydiagramsPackage.VARIABLE___ECROSS_REFERENCES;
+	int EXCEPTION_VARIABLE___ECROSS_REFERENCES = StorydiagramPackage.VARIABLE___ECROSS_REFERENCES;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -253,7 +252,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXCEPTION_VARIABLE___EGET__ESTRUCTURALFEATURE = StorydiagramsPackage.VARIABLE___EGET__ESTRUCTURALFEATURE;
+	int EXCEPTION_VARIABLE___EGET__ESTRUCTURALFEATURE = StorydiagramPackage.VARIABLE___EGET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -262,7 +261,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXCEPTION_VARIABLE___EGET__ESTRUCTURALFEATURE_BOOLEAN = StorydiagramsPackage.VARIABLE___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+	int EXCEPTION_VARIABLE___EGET__ESTRUCTURALFEATURE_BOOLEAN = StorydiagramPackage.VARIABLE___EGET__ESTRUCTURALFEATURE_BOOLEAN;
 
 	/**
 	 * The operation id for the '<em>ESet</em>' operation.
@@ -271,7 +270,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXCEPTION_VARIABLE___ESET__ESTRUCTURALFEATURE_OBJECT = StorydiagramsPackage.VARIABLE___ESET__ESTRUCTURALFEATURE_OBJECT;
+	int EXCEPTION_VARIABLE___ESET__ESTRUCTURALFEATURE_OBJECT = StorydiagramPackage.VARIABLE___ESET__ESTRUCTURALFEATURE_OBJECT;
 
 	/**
 	 * The operation id for the '<em>EIs Set</em>' operation.
@@ -280,7 +279,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXCEPTION_VARIABLE___EIS_SET__ESTRUCTURALFEATURE = StorydiagramsPackage.VARIABLE___EIS_SET__ESTRUCTURALFEATURE;
+	int EXCEPTION_VARIABLE___EIS_SET__ESTRUCTURALFEATURE = StorydiagramPackage.VARIABLE___EIS_SET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EUnset</em>' operation.
@@ -289,7 +288,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXCEPTION_VARIABLE___EUNSET__ESTRUCTURALFEATURE = StorydiagramsPackage.VARIABLE___EUNSET__ESTRUCTURALFEATURE;
+	int EXCEPTION_VARIABLE___EUNSET__ESTRUCTURALFEATURE = StorydiagramPackage.VARIABLE___EUNSET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EInvoke</em>' operation.
@@ -298,7 +297,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXCEPTION_VARIABLE___EINVOKE__EOPERATION_ELIST = StorydiagramsPackage.VARIABLE___EINVOKE__EOPERATION_ELIST;
+	int EXCEPTION_VARIABLE___EINVOKE__EOPERATION_ELIST = StorydiagramPackage.VARIABLE___EINVOKE__EOPERATION_ELIST;
 
 	/**
 	 * The operation id for the '<em>Get Extension</em>' operation.
@@ -307,7 +306,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXCEPTION_VARIABLE___GET_EXTENSION__ECLASS = StorydiagramsPackage.VARIABLE___GET_EXTENSION__ECLASS;
+	int EXCEPTION_VARIABLE___GET_EXTENSION__ECLASS = StorydiagramPackage.VARIABLE___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Provide Extension</em>' operation.
@@ -316,7 +315,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXCEPTION_VARIABLE___PROVIDE_EXTENSION__ECLASS = StorydiagramsPackage.VARIABLE___PROVIDE_EXTENSION__ECLASS;
+	int EXCEPTION_VARIABLE___PROVIDE_EXTENSION__ECLASS = StorydiagramPackage.VARIABLE___PROVIDE_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Annotation</em>' operation.
@@ -325,7 +324,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXCEPTION_VARIABLE___GET_ANNOTATION__STRING = StorydiagramsPackage.VARIABLE___GET_ANNOTATION__STRING;
+	int EXCEPTION_VARIABLE___GET_ANNOTATION__STRING = StorydiagramPackage.VARIABLE___GET_ANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Provide Annotation</em>' operation.
@@ -334,7 +333,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXCEPTION_VARIABLE___PROVIDE_ANNOTATION__STRING = StorydiagramsPackage.VARIABLE___PROVIDE_ANNOTATION__STRING;
+	int EXCEPTION_VARIABLE___PROVIDE_ANNOTATION__STRING = StorydiagramPackage.VARIABLE___PROVIDE_ANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Exception Variable</em>' class.
@@ -343,7 +342,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXCEPTION_VARIABLE_OPERATION_COUNT = StorydiagramsPackage.VARIABLE_OPERATION_COUNT + 0;
+	int EXCEPTION_VARIABLE_OPERATION_COUNT = StorydiagramPackage.VARIABLE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.muml.storydiagram.activities.impl.ActivityEdgeImpl <em>Activity Edge</em>}' class.
@@ -356,22 +355,22 @@ public interface ActivitiesPackage extends EPackage {
 	int ACTIVITY_EDGE = 1;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ACTIVITY_EDGE__ANNOTATION = CorePackage.EXTENDABLE_ELEMENT__ANNOTATION;
+	int ACTIVITY_EDGE__ANNOTATIONS = CorePackage.EXTENDABLE_ELEMENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ACTIVITY_EDGE__EXTENSION = CorePackage.EXTENDABLE_ELEMENT__EXTENSION;
+	int ACTIVITY_EDGE__EXTENSIONS = CorePackage.EXTENDABLE_ELEMENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Target</b></em>' reference.
@@ -524,7 +523,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTIVITY_EDGE___EGET__ESTRUCTURALFEATURE = CorePackage.EXTENDABLE_ELEMENT___EGET__ESTRUCTURALFEATURE;
+	int ACTIVITY_EDGE___EGET__ESTRUCTURALFEATURE = CorePackage.EXTENDABLE_ELEMENT___EGET__ESTRUCTURALFEATURE_1;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -533,7 +532,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTIVITY_EDGE___EGET__ESTRUCTURALFEATURE_BOOLEAN = CorePackage.EXTENDABLE_ELEMENT___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+	int ACTIVITY_EDGE___EGET__ESTRUCTURALFEATURE_BOOLEAN = CorePackage.EXTENDABLE_ELEMENT___EGET__ESTRUCTURALFEATURE_BOOLEAN_1;
 
 	/**
 	 * The operation id for the '<em>ESet</em>' operation.
@@ -542,7 +541,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTIVITY_EDGE___ESET__ESTRUCTURALFEATURE_OBJECT = CorePackage.EXTENDABLE_ELEMENT___ESET__ESTRUCTURALFEATURE_OBJECT;
+	int ACTIVITY_EDGE___ESET__ESTRUCTURALFEATURE_OBJECT = CorePackage.EXTENDABLE_ELEMENT___ESET__ESTRUCTURALFEATURE_OBJECT_1;
 
 	/**
 	 * The operation id for the '<em>EIs Set</em>' operation.
@@ -551,7 +550,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTIVITY_EDGE___EIS_SET__ESTRUCTURALFEATURE = CorePackage.EXTENDABLE_ELEMENT___EIS_SET__ESTRUCTURALFEATURE;
+	int ACTIVITY_EDGE___EIS_SET__ESTRUCTURALFEATURE = CorePackage.EXTENDABLE_ELEMENT___EIS_SET__ESTRUCTURALFEATURE_1;
 
 	/**
 	 * The operation id for the '<em>EUnset</em>' operation.
@@ -560,7 +559,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTIVITY_EDGE___EUNSET__ESTRUCTURALFEATURE = CorePackage.EXTENDABLE_ELEMENT___EUNSET__ESTRUCTURALFEATURE;
+	int ACTIVITY_EDGE___EUNSET__ESTRUCTURALFEATURE = CorePackage.EXTENDABLE_ELEMENT___EUNSET__ESTRUCTURALFEATURE_1;
 
 	/**
 	 * The operation id for the '<em>EInvoke</em>' operation.
@@ -569,7 +568,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTIVITY_EDGE___EINVOKE__EOPERATION_ELIST = CorePackage.EXTENDABLE_ELEMENT___EINVOKE__EOPERATION_ELIST;
+	int ACTIVITY_EDGE___EINVOKE__EOPERATION_ELIST = CorePackage.EXTENDABLE_ELEMENT___EINVOKE__EOPERATION_ELIST_1;
 
 	/**
 	 * The operation id for the '<em>Get Extension</em>' operation.
@@ -627,22 +626,22 @@ public interface ActivitiesPackage extends EPackage {
 	int ACTIVITY_NODE = 2;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ACTIVITY_NODE__ANNOTATION = CorePackage.NAMED_ELEMENT__ANNOTATION;
+	int ACTIVITY_NODE__ANNOTATIONS = CorePackage.NAMED_ELEMENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ACTIVITY_NODE__EXTENSION = CorePackage.NAMED_ELEMENT__EXTENSION;
+	int ACTIVITY_NODE__EXTENSIONS = CorePackage.NAMED_ELEMENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -795,7 +794,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTIVITY_NODE___EGET__ESTRUCTURALFEATURE = CorePackage.NAMED_ELEMENT___EGET__ESTRUCTURALFEATURE;
+	int ACTIVITY_NODE___EGET__ESTRUCTURALFEATURE = CorePackage.NAMED_ELEMENT___EGET__ESTRUCTURALFEATURE_1;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -804,7 +803,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTIVITY_NODE___EGET__ESTRUCTURALFEATURE_BOOLEAN = CorePackage.NAMED_ELEMENT___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+	int ACTIVITY_NODE___EGET__ESTRUCTURALFEATURE_BOOLEAN = CorePackage.NAMED_ELEMENT___EGET__ESTRUCTURALFEATURE_BOOLEAN_1;
 
 	/**
 	 * The operation id for the '<em>ESet</em>' operation.
@@ -813,7 +812,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTIVITY_NODE___ESET__ESTRUCTURALFEATURE_OBJECT = CorePackage.NAMED_ELEMENT___ESET__ESTRUCTURALFEATURE_OBJECT;
+	int ACTIVITY_NODE___ESET__ESTRUCTURALFEATURE_OBJECT = CorePackage.NAMED_ELEMENT___ESET__ESTRUCTURALFEATURE_OBJECT_1;
 
 	/**
 	 * The operation id for the '<em>EIs Set</em>' operation.
@@ -822,7 +821,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTIVITY_NODE___EIS_SET__ESTRUCTURALFEATURE = CorePackage.NAMED_ELEMENT___EIS_SET__ESTRUCTURALFEATURE;
+	int ACTIVITY_NODE___EIS_SET__ESTRUCTURALFEATURE = CorePackage.NAMED_ELEMENT___EIS_SET__ESTRUCTURALFEATURE_1;
 
 	/**
 	 * The operation id for the '<em>EUnset</em>' operation.
@@ -831,7 +830,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTIVITY_NODE___EUNSET__ESTRUCTURALFEATURE = CorePackage.NAMED_ELEMENT___EUNSET__ESTRUCTURALFEATURE;
+	int ACTIVITY_NODE___EUNSET__ESTRUCTURALFEATURE = CorePackage.NAMED_ELEMENT___EUNSET__ESTRUCTURALFEATURE_1;
 
 	/**
 	 * The operation id for the '<em>EInvoke</em>' operation.
@@ -840,7 +839,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTIVITY_NODE___EINVOKE__EOPERATION_ELIST = CorePackage.NAMED_ELEMENT___EINVOKE__EOPERATION_ELIST;
+	int ACTIVITY_NODE___EINVOKE__EOPERATION_ELIST = CorePackage.NAMED_ELEMENT___EINVOKE__EOPERATION_ELIST_1;
 
 	/**
 	 * The operation id for the '<em>Get Extension</em>' operation.
@@ -898,22 +897,22 @@ public interface ActivitiesPackage extends EPackage {
 	int ACTIVITY = 3;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ACTIVITY__ANNOTATION = CallsPackage.CALLABLE__ANNOTATION;
+	int ACTIVITY__ANNOTATIONS = CallsPackage.CALLABLE__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ACTIVITY__EXTENSION = CallsPackage.CALLABLE__EXTENSION;
+	int ACTIVITY__EXTENSIONS = CallsPackage.CALLABLE__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -1196,22 +1195,22 @@ public interface ActivitiesPackage extends EPackage {
 	int OPERATION_EXTENSION = 4;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATION_EXTENSION__ANNOTATION = CorePackage.EXTENSION__ANNOTATION;
+	int OPERATION_EXTENSION__ANNOTATIONS = CorePackage.EXTENSION__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATION_EXTENSION__EXTENSION = CorePackage.EXTENSION__EXTENSION;
+	int OPERATION_EXTENSION__EXTENSIONS = CorePackage.EXTENSION__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Base</b></em>' reference.
@@ -1409,7 +1408,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATION_EXTENSION___EGET__ESTRUCTURALFEATURE = CorePackage.EXTENSION___EGET__ESTRUCTURALFEATURE;
+	int OPERATION_EXTENSION___EGET__ESTRUCTURALFEATURE = CorePackage.EXTENSION___EGET__ESTRUCTURALFEATURE_1;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -1418,7 +1417,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATION_EXTENSION___EGET__ESTRUCTURALFEATURE_BOOLEAN = CorePackage.EXTENSION___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+	int OPERATION_EXTENSION___EGET__ESTRUCTURALFEATURE_BOOLEAN = CorePackage.EXTENSION___EGET__ESTRUCTURALFEATURE_BOOLEAN_1;
 
 	/**
 	 * The operation id for the '<em>ESet</em>' operation.
@@ -1427,7 +1426,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATION_EXTENSION___ESET__ESTRUCTURALFEATURE_OBJECT = CorePackage.EXTENSION___ESET__ESTRUCTURALFEATURE_OBJECT;
+	int OPERATION_EXTENSION___ESET__ESTRUCTURALFEATURE_OBJECT = CorePackage.EXTENSION___ESET__ESTRUCTURALFEATURE_OBJECT_1;
 
 	/**
 	 * The operation id for the '<em>EIs Set</em>' operation.
@@ -1436,7 +1435,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATION_EXTENSION___EIS_SET__ESTRUCTURALFEATURE = CorePackage.EXTENSION___EIS_SET__ESTRUCTURALFEATURE;
+	int OPERATION_EXTENSION___EIS_SET__ESTRUCTURALFEATURE = CorePackage.EXTENSION___EIS_SET__ESTRUCTURALFEATURE_1;
 
 	/**
 	 * The operation id for the '<em>EUnset</em>' operation.
@@ -1445,7 +1444,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATION_EXTENSION___EUNSET__ESTRUCTURALFEATURE = CorePackage.EXTENSION___EUNSET__ESTRUCTURALFEATURE;
+	int OPERATION_EXTENSION___EUNSET__ESTRUCTURALFEATURE = CorePackage.EXTENSION___EUNSET__ESTRUCTURALFEATURE_1;
 
 	/**
 	 * The operation id for the '<em>EInvoke</em>' operation.
@@ -1454,7 +1453,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATION_EXTENSION___EINVOKE__EOPERATION_ELIST = CorePackage.EXTENSION___EINVOKE__EOPERATION_ELIST;
+	int OPERATION_EXTENSION___EINVOKE__EOPERATION_ELIST = CorePackage.EXTENSION___EINVOKE__EOPERATION_ELIST_1;
 
 	/**
 	 * The operation id for the '<em>Get Extension</em>' operation.
@@ -1521,22 +1520,22 @@ public interface ActivitiesPackage extends EPackage {
 	int STORY_NODE = 6;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STORY_NODE__ANNOTATION = ACTIVITY_NODE__ANNOTATION;
+	int STORY_NODE__ANNOTATIONS = ACTIVITY_NODE__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STORY_NODE__EXTENSION = ACTIVITY_NODE__EXTENSION;
+	int STORY_NODE__EXTENSIONS = ACTIVITY_NODE__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1810,22 +1809,22 @@ public interface ActivitiesPackage extends EPackage {
 	int MATCHING_STORY_NODE = 5;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MATCHING_STORY_NODE__ANNOTATION = STORY_NODE__ANNOTATION;
+	int MATCHING_STORY_NODE__ANNOTATIONS = STORY_NODE__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MATCHING_STORY_NODE__EXTENSION = STORY_NODE__EXTENSION;
+	int MATCHING_STORY_NODE__EXTENSIONS = STORY_NODE__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2108,22 +2107,22 @@ public interface ActivitiesPackage extends EPackage {
 	int STRUCTURED_NODE = 7;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCTURED_NODE__ANNOTATION = ACTIVITY_NODE__ANNOTATION;
+	int STRUCTURED_NODE__ANNOTATIONS = ACTIVITY_NODE__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCTURED_NODE__EXTENSION = ACTIVITY_NODE__EXTENSION;
+	int STRUCTURED_NODE__EXTENSIONS = ACTIVITY_NODE__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2388,22 +2387,22 @@ public interface ActivitiesPackage extends EPackage {
 	int JUNCTION_NODE = 8;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int JUNCTION_NODE__ANNOTATION = ACTIVITY_NODE__ANNOTATION;
+	int JUNCTION_NODE__ANNOTATIONS = ACTIVITY_NODE__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int JUNCTION_NODE__EXTENSION = ACTIVITY_NODE__EXTENSION;
+	int JUNCTION_NODE__EXTENSIONS = ACTIVITY_NODE__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2659,22 +2658,22 @@ public interface ActivitiesPackage extends EPackage {
 	int INITIAL_NODE = 9;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INITIAL_NODE__ANNOTATION = ACTIVITY_NODE__ANNOTATION;
+	int INITIAL_NODE__ANNOTATIONS = ACTIVITY_NODE__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INITIAL_NODE__EXTENSION = ACTIVITY_NODE__EXTENSION;
+	int INITIAL_NODE__EXTENSIONS = ACTIVITY_NODE__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2930,22 +2929,22 @@ public interface ActivitiesPackage extends EPackage {
 	int STATEMENT_NODE = 10;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STATEMENT_NODE__ANNOTATION = ACTIVITY_NODE__ANNOTATION;
+	int STATEMENT_NODE__ANNOTATIONS = ACTIVITY_NODE__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STATEMENT_NODE__EXTENSION = ACTIVITY_NODE__EXTENSION;
+	int STATEMENT_NODE__EXTENSIONS = ACTIVITY_NODE__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3210,22 +3209,22 @@ public interface ActivitiesPackage extends EPackage {
 	int ACTIVITY_FINAL_NODE = 11;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ACTIVITY_FINAL_NODE__ANNOTATION = ACTIVITY_NODE__ANNOTATION;
+	int ACTIVITY_FINAL_NODE__ANNOTATIONS = ACTIVITY_NODE__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ACTIVITY_FINAL_NODE__EXTENSION = ACTIVITY_NODE__EXTENSION;
+	int ACTIVITY_FINAL_NODE__EXTENSIONS = ACTIVITY_NODE__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3508,22 +3507,22 @@ public interface ActivitiesPackage extends EPackage {
 	int ACTIVITY_CALL_NODE = 12;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ACTIVITY_CALL_NODE__ANNOTATION = ACTIVITY_NODE__ANNOTATION;
+	int ACTIVITY_CALL_NODE__ANNOTATIONS = ACTIVITY_NODE__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ACTIVITY_CALL_NODE__EXTENSION = ACTIVITY_NODE__EXTENSION;
+	int ACTIVITY_CALL_NODE__EXTENSIONS = ACTIVITY_NODE__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3806,22 +3805,22 @@ public interface ActivitiesPackage extends EPackage {
 	int MODIFYING_STORY_NODE = 13;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MODIFYING_STORY_NODE__ANNOTATION = STORY_NODE__ANNOTATION;
+	int MODIFYING_STORY_NODE__ANNOTATIONS = STORY_NODE__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MODIFYING_STORY_NODE__EXTENSION = STORY_NODE__EXTENSION;
+	int MODIFYING_STORY_NODE__EXTENSIONS = STORY_NODE__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -4104,22 +4103,22 @@ public interface ActivitiesPackage extends EPackage {
 	int FLOW_FINAL_NODE = 14;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FLOW_FINAL_NODE__ANNOTATION = ACTIVITY_FINAL_NODE__ANNOTATION;
+	int FLOW_FINAL_NODE__ANNOTATIONS = ACTIVITY_FINAL_NODE__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FLOW_FINAL_NODE__EXTENSION = ACTIVITY_FINAL_NODE__EXTENSION;
+	int FLOW_FINAL_NODE__EXTENSIONS = ACTIVITY_FINAL_NODE__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -4430,8 +4429,7 @@ public interface ActivitiesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference EXCEPTION_VARIABLE__ACTIVITY_EDGE = eINSTANCE
-				.getExceptionVariable_ActivityEdge();
+		EReference EXCEPTION_VARIABLE__ACTIVITY_EDGE = eINSTANCE.getExceptionVariable_ActivityEdge();
 
 		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -4439,8 +4437,7 @@ public interface ActivitiesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute EXCEPTION_VARIABLE__NAME = eINSTANCE
-				.getExceptionVariable_Name();
+		EAttribute EXCEPTION_VARIABLE__NAME = eINSTANCE.getExceptionVariable_Name();
 
 		/**
 		 * The meta object literal for the '<em><b>Exception Type</b></em>' reference list feature.
@@ -4448,8 +4445,7 @@ public interface ActivitiesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference EXCEPTION_VARIABLE__EXCEPTION_TYPE = eINSTANCE
-				.getExceptionVariable_ExceptionType();
+		EReference EXCEPTION_VARIABLE__EXCEPTION_TYPE = eINSTANCE.getExceptionVariable_ExceptionType();
 
 		/**
 		 * The meta object literal for the '<em><b>Generic Exception Type</b></em>' reference list feature.
@@ -4457,8 +4453,7 @@ public interface ActivitiesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference EXCEPTION_VARIABLE__GENERIC_EXCEPTION_TYPE = eINSTANCE
-				.getExceptionVariable_GenericExceptionType();
+		EReference EXCEPTION_VARIABLE__GENERIC_EXCEPTION_TYPE = eINSTANCE.getExceptionVariable_GenericExceptionType();
 
 		/**
 		 * The meta object literal for the '{@link org.muml.storydiagram.activities.impl.ActivityEdgeImpl <em>Activity Edge</em>}' class.
@@ -4492,8 +4487,7 @@ public interface ActivitiesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ACTIVITY_EDGE__OWNING_ACTIVITY = eINSTANCE
-				.getActivityEdge_OwningActivity();
+		EReference ACTIVITY_EDGE__OWNING_ACTIVITY = eINSTANCE.getActivityEdge_OwningActivity();
 
 		/**
 		 * The meta object literal for the '<em><b>Guard</b></em>' attribute feature.
@@ -4509,8 +4503,7 @@ public interface ActivitiesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ACTIVITY_EDGE__GUARD_EXPRESSION = eINSTANCE
-				.getActivityEdge_GuardExpression();
+		EReference ACTIVITY_EDGE__GUARD_EXPRESSION = eINSTANCE.getActivityEdge_GuardExpression();
 
 		/**
 		 * The meta object literal for the '<em><b>Guard Exception</b></em>' containment reference list feature.
@@ -4518,8 +4511,7 @@ public interface ActivitiesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ACTIVITY_EDGE__GUARD_EXCEPTION = eINSTANCE
-				.getActivityEdge_GuardException();
+		EReference ACTIVITY_EDGE__GUARD_EXCEPTION = eINSTANCE.getActivityEdge_GuardException();
 
 		/**
 		 * The meta object literal for the '{@link org.muml.storydiagram.activities.impl.ActivityNodeImpl <em>Activity Node</em>}' class.
@@ -4537,8 +4529,7 @@ public interface ActivitiesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ACTIVITY_NODE__OUTGOING = eINSTANCE
-				.getActivityNode_Outgoing();
+		EReference ACTIVITY_NODE__OUTGOING = eINSTANCE.getActivityNode_Outgoing();
 
 		/**
 		 * The meta object literal for the '<em><b>Owning Activity</b></em>' container reference feature.
@@ -4546,8 +4537,7 @@ public interface ActivitiesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ACTIVITY_NODE__OWNING_ACTIVITY = eINSTANCE
-				.getActivityNode_OwningActivity();
+		EReference ACTIVITY_NODE__OWNING_ACTIVITY = eINSTANCE.getActivityNode_OwningActivity();
 
 		/**
 		 * The meta object literal for the '<em><b>Owning Activity Node</b></em>' container reference feature.
@@ -4555,8 +4545,7 @@ public interface ActivitiesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ACTIVITY_NODE__OWNING_ACTIVITY_NODE = eINSTANCE
-				.getActivityNode_OwningActivityNode();
+		EReference ACTIVITY_NODE__OWNING_ACTIVITY_NODE = eINSTANCE.getActivityNode_OwningActivityNode();
 
 		/**
 		 * The meta object literal for the '<em><b>Incoming</b></em>' reference list feature.
@@ -4564,8 +4553,7 @@ public interface ActivitiesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ACTIVITY_NODE__INCOMING = eINSTANCE
-				.getActivityNode_Incoming();
+		EReference ACTIVITY_NODE__INCOMING = eINSTANCE.getActivityNode_Incoming();
 
 		/**
 		 * The meta object literal for the '{@link org.muml.storydiagram.activities.impl.ActivityImpl <em>Activity</em>}' class.
@@ -4583,8 +4571,7 @@ public interface ActivitiesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ACTIVITY__OWNING_OPERATION = eINSTANCE
-				.getActivity_OwningOperation();
+		EReference ACTIVITY__OWNING_OPERATION = eINSTANCE.getActivity_OwningOperation();
 
 		/**
 		 * The meta object literal for the '<em><b>Owned Activity Edge</b></em>' containment reference list feature.
@@ -4592,8 +4579,7 @@ public interface ActivitiesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ACTIVITY__OWNED_ACTIVITY_EDGE = eINSTANCE
-				.getActivity_OwnedActivityEdge();
+		EReference ACTIVITY__OWNED_ACTIVITY_EDGE = eINSTANCE.getActivity_OwnedActivityEdge();
 
 		/**
 		 * The meta object literal for the '<em><b>Precondition</b></em>' reference feature.
@@ -4601,8 +4587,7 @@ public interface ActivitiesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ACTIVITY__PRECONDITION = eINSTANCE
-				.getActivity_Precondition();
+		EReference ACTIVITY__PRECONDITION = eINSTANCE.getActivity_Precondition();
 
 		/**
 		 * The meta object literal for the '<em><b>Owned Activity Node</b></em>' containment reference list feature.
@@ -4610,8 +4595,7 @@ public interface ActivitiesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ACTIVITY__OWNED_ACTIVITY_NODE = eINSTANCE
-				.getActivity_OwnedActivityNode();
+		EReference ACTIVITY__OWNED_ACTIVITY_NODE = eINSTANCE.getActivity_OwnedActivityNode();
 
 		/**
 		 * The meta object literal for the '{@link org.muml.storydiagram.activities.impl.OperationExtensionImpl <em>Operation Extension</em>}' class.
@@ -4629,8 +4613,7 @@ public interface ActivitiesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference OPERATION_EXTENSION__OPERATION = eINSTANCE
-				.getOperationExtension_Operation();
+		EReference OPERATION_EXTENSION__OPERATION = eINSTANCE.getOperationExtension_Operation();
 
 		/**
 		 * The meta object literal for the '<em><b>Return Value</b></em>' containment reference feature.
@@ -4638,8 +4621,7 @@ public interface ActivitiesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference OPERATION_EXTENSION__RETURN_VALUE = eINSTANCE
-				.getOperationExtension_ReturnValue();
+		EReference OPERATION_EXTENSION__RETURN_VALUE = eINSTANCE.getOperationExtension_ReturnValue();
 
 		/**
 		 * The meta object literal for the '<em><b>Owned Activity</b></em>' containment reference feature.
@@ -4647,8 +4629,7 @@ public interface ActivitiesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference OPERATION_EXTENSION__OWNED_ACTIVITY = eINSTANCE
-				.getOperationExtension_OwnedActivity();
+		EReference OPERATION_EXTENSION__OWNED_ACTIVITY = eINSTANCE.getOperationExtension_OwnedActivity();
 
 		/**
 		 * The meta object literal for the '<em><b>Number Of Out Params</b></em>' operation.
@@ -4656,8 +4637,7 @@ public interface ActivitiesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation OPERATION_EXTENSION___NUMBER_OF_OUT_PARAMS__DIAGNOSTICCHAIN_MAP = eINSTANCE
-				.getOperationExtension__NumberOfOutParams__DiagnosticChain_Map();
+		EOperation OPERATION_EXTENSION___NUMBER_OF_OUT_PARAMS__DIAGNOSTICCHAIN_MAP = eINSTANCE.getOperationExtension__NumberOfOutParams__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '{@link org.muml.storydiagram.activities.impl.MatchingStoryNodeImpl <em>Matching Story Node</em>}' class.
@@ -4675,8 +4655,7 @@ public interface ActivitiesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference MATCHING_STORY_NODE__OWNED_PATTERN = eINSTANCE
-				.getMatchingStoryNode_OwnedPattern();
+		EReference MATCHING_STORY_NODE__OWNED_PATTERN = eINSTANCE.getMatchingStoryNode_OwnedPattern();
 
 		/**
 		 * The meta object literal for the '{@link org.muml.storydiagram.activities.impl.StoryNodeImpl <em>Story Node</em>}' class.
@@ -4702,8 +4681,7 @@ public interface ActivitiesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference STORY_NODE__STORY_PATTERN = eINSTANCE
-				.getStoryNode_StoryPattern();
+		EReference STORY_NODE__STORY_PATTERN = eINSTANCE.getStoryNode_StoryPattern();
 
 		/**
 		 * The meta object literal for the '{@link org.muml.storydiagram.activities.impl.StructuredNodeImpl <em>Structured Node</em>}' class.
@@ -4721,8 +4699,7 @@ public interface ActivitiesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference STRUCTURED_NODE__OWNED_ACTIVITY_NODE = eINSTANCE
-				.getStructuredNode_OwnedActivityNode();
+		EReference STRUCTURED_NODE__OWNED_ACTIVITY_NODE = eINSTANCE.getStructuredNode_OwnedActivityNode();
 
 		/**
 		 * The meta object literal for the '{@link org.muml.storydiagram.activities.impl.JunctionNodeImpl <em>Junction Node</em>}' class.
@@ -4760,8 +4737,7 @@ public interface ActivitiesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference STATEMENT_NODE__STATEMENT_EXPRESSION = eINSTANCE
-				.getStatementNode_StatementExpression();
+		EReference STATEMENT_NODE__STATEMENT_EXPRESSION = eINSTANCE.getStatementNode_StatementExpression();
 
 		/**
 		 * The meta object literal for the '{@link org.muml.storydiagram.activities.impl.ActivityFinalNodeImpl <em>Activity Final Node</em>}' class.
@@ -4779,8 +4755,7 @@ public interface ActivitiesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ACTIVITY_FINAL_NODE__RETURN_VALUE = eINSTANCE
-				.getActivityFinalNode_ReturnValue();
+		EReference ACTIVITY_FINAL_NODE__RETURN_VALUE = eINSTANCE.getActivityFinalNode_ReturnValue();
 
 		/**
 		 * The meta object literal for the '<em><b>Return Values</b></em>' containment reference list feature.
@@ -4788,8 +4763,7 @@ public interface ActivitiesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ACTIVITY_FINAL_NODE__RETURN_VALUES = eINSTANCE
-				.getActivityFinalNode_ReturnValues();
+		EReference ACTIVITY_FINAL_NODE__RETURN_VALUES = eINSTANCE.getActivityFinalNode_ReturnValues();
 
 		/**
 		 * The meta object literal for the '<em><b>Success</b></em>' attribute feature.
@@ -4797,8 +4771,7 @@ public interface ActivitiesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ACTIVITY_FINAL_NODE__SUCCESS = eINSTANCE
-				.getActivityFinalNode_Success();
+		EAttribute ACTIVITY_FINAL_NODE__SUCCESS = eINSTANCE.getActivityFinalNode_Success();
 
 		/**
 		 * The meta object literal for the '{@link org.muml.storydiagram.activities.impl.ActivityCallNodeImpl <em>Activity Call Node</em>}' class.
@@ -4816,8 +4789,7 @@ public interface ActivitiesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ACTIVITY_CALL_NODE__CALLED_ACTIVITY = eINSTANCE
-				.getActivityCallNode_CalledActivity();
+		EReference ACTIVITY_CALL_NODE__CALLED_ACTIVITY = eINSTANCE.getActivityCallNode_CalledActivity();
 
 		/**
 		 * The meta object literal for the '{@link org.muml.storydiagram.activities.impl.ModifyingStoryNodeImpl <em>Modifying Story Node</em>}' class.
@@ -4835,8 +4807,7 @@ public interface ActivitiesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference MODIFYING_STORY_NODE__OWNED_RULE = eINSTANCE
-				.getModifyingStoryNode_OwnedRule();
+		EReference MODIFYING_STORY_NODE__OWNED_RULE = eINSTANCE.getModifyingStoryNode_OwnedRule();
 
 		/**
 		 * The meta object literal for the '{@link org.muml.storydiagram.activities.impl.FlowFinalNodeImpl <em>Flow Final Node</em>}' class.
@@ -4893,22 +4864,22 @@ public interface ActivitiesPackage extends EPackage {
 	EAttribute getExceptionVariable_Name();
 
 	/**
-	 * Returns the meta object for the reference list '{@link org.muml.storydiagram.activities.ExceptionVariable#getExceptionTypes <em>Exception Type</em>}'.
+	 * Returns the meta object for the reference list '{@link org.muml.storydiagram.activities.ExceptionVariable#getExceptionType <em>Exception Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference list '<em>Exception Type</em>'.
-	 * @see org.muml.storydiagram.activities.ExceptionVariable#getExceptionTypes()
+	 * @see org.muml.storydiagram.activities.ExceptionVariable#getExceptionType()
 	 * @see #getExceptionVariable()
 	 * @generated
 	 */
 	EReference getExceptionVariable_ExceptionType();
 
 	/**
-	 * Returns the meta object for the reference list '{@link org.muml.storydiagram.activities.ExceptionVariable#getGenericExceptionTypes <em>Generic Exception Type</em>}'.
+	 * Returns the meta object for the reference list '{@link org.muml.storydiagram.activities.ExceptionVariable#getGenericExceptionType <em>Generic Exception Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference list '<em>Generic Exception Type</em>'.
-	 * @see org.muml.storydiagram.activities.ExceptionVariable#getGenericExceptionTypes()
+	 * @see org.muml.storydiagram.activities.ExceptionVariable#getGenericExceptionType()
 	 * @see #getExceptionVariable()
 	 * @generated
 	 */
@@ -4980,11 +4951,11 @@ public interface ActivitiesPackage extends EPackage {
 	EReference getActivityEdge_GuardExpression();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.muml.storydiagram.activities.ActivityEdge#getGuardExceptions <em>Guard Exception</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.muml.storydiagram.activities.ActivityEdge#getGuardException <em>Guard Exception</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Guard Exception</em>'.
-	 * @see org.muml.storydiagram.activities.ActivityEdge#getGuardExceptions()
+	 * @see org.muml.storydiagram.activities.ActivityEdge#getGuardException()
 	 * @see #getActivityEdge()
 	 * @generated
 	 */
@@ -5001,11 +4972,11 @@ public interface ActivitiesPackage extends EPackage {
 	EClass getActivityNode();
 
 	/**
-	 * Returns the meta object for the reference list '{@link org.muml.storydiagram.activities.ActivityNode#getOutgoings <em>Outgoing</em>}'.
+	 * Returns the meta object for the reference list '{@link org.muml.storydiagram.activities.ActivityNode#getOutgoing <em>Outgoing</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference list '<em>Outgoing</em>'.
-	 * @see org.muml.storydiagram.activities.ActivityNode#getOutgoings()
+	 * @see org.muml.storydiagram.activities.ActivityNode#getOutgoing()
 	 * @see #getActivityNode()
 	 * @generated
 	 */
@@ -5034,11 +5005,11 @@ public interface ActivitiesPackage extends EPackage {
 	EReference getActivityNode_OwningActivityNode();
 
 	/**
-	 * Returns the meta object for the reference list '{@link org.muml.storydiagram.activities.ActivityNode#getIncomings <em>Incoming</em>}'.
+	 * Returns the meta object for the reference list '{@link org.muml.storydiagram.activities.ActivityNode#getIncoming <em>Incoming</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference list '<em>Incoming</em>'.
-	 * @see org.muml.storydiagram.activities.ActivityNode#getIncomings()
+	 * @see org.muml.storydiagram.activities.ActivityNode#getIncoming()
 	 * @see #getActivityNode()
 	 * @generated
 	 */
@@ -5066,11 +5037,11 @@ public interface ActivitiesPackage extends EPackage {
 	EReference getActivity_OwningOperation();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.muml.storydiagram.activities.Activity#getOwnedActivityEdges <em>Owned Activity Edge</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.muml.storydiagram.activities.Activity#getOwnedActivityEdge <em>Owned Activity Edge</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Owned Activity Edge</em>'.
-	 * @see org.muml.storydiagram.activities.Activity#getOwnedActivityEdges()
+	 * @see org.muml.storydiagram.activities.Activity#getOwnedActivityEdge()
 	 * @see #getActivity()
 	 * @generated
 	 */
@@ -5088,11 +5059,11 @@ public interface ActivitiesPackage extends EPackage {
 	EReference getActivity_Precondition();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.muml.storydiagram.activities.Activity#getOwnedActivityNodes <em>Owned Activity Node</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.muml.storydiagram.activities.Activity#getOwnedActivityNode <em>Owned Activity Node</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Owned Activity Node</em>'.
-	 * @see org.muml.storydiagram.activities.Activity#getOwnedActivityNodes()
+	 * @see org.muml.storydiagram.activities.Activity#getOwnedActivityNode()
 	 * @see #getActivity()
 	 * @generated
 	 */
@@ -5215,11 +5186,11 @@ public interface ActivitiesPackage extends EPackage {
 	EClass getStructuredNode();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.muml.storydiagram.activities.StructuredNode#getOwnedActivityNodes <em>Owned Activity Node</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.muml.storydiagram.activities.StructuredNode#getOwnedActivityNode <em>Owned Activity Node</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Owned Activity Node</em>'.
-	 * @see org.muml.storydiagram.activities.StructuredNode#getOwnedActivityNodes()
+	 * @see org.muml.storydiagram.activities.StructuredNode#getOwnedActivityNode()
 	 * @see #getStructuredNode()
 	 * @generated
 	 */
@@ -5320,11 +5291,11 @@ public interface ActivitiesPackage extends EPackage {
 	EClass getActivityCallNode();
 
 	/**
-	 * Returns the meta object for the reference list '{@link org.muml.storydiagram.activities.ActivityCallNode#getCalledActivities <em>Called Activity</em>}'.
+	 * Returns the meta object for the reference list '{@link org.muml.storydiagram.activities.ActivityCallNode#getCalledActivity <em>Called Activity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference list '<em>Called Activity</em>'.
-	 * @see org.muml.storydiagram.activities.ActivityCallNode#getCalledActivities()
+	 * @see org.muml.storydiagram.activities.ActivityCallNode#getCalledActivity()
 	 * @see #getActivityCallNode()
 	 * @generated
 	 */

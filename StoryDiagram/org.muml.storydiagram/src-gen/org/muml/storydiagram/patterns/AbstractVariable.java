@@ -22,14 +22,14 @@ import org.muml.storydiagram.Variable;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.storydiagram.patterns.AbstractVariable#getPattern <em>Pattern</em>}</li>
  *   <li>{@link org.muml.storydiagram.patterns.AbstractVariable#getBindingState <em>Binding State</em>}</li>
  *   <li>{@link org.muml.storydiagram.patterns.AbstractVariable#getBindingExpression <em>Binding Expression</em>}</li>
- *   <li>{@link org.muml.storydiagram.patterns.AbstractVariable#getConstraints <em>Constraint</em>}</li>
- *   <li>{@link org.muml.storydiagram.patterns.AbstractVariable#getIncomingLinks <em>Incoming Link</em>}</li>
+ *   <li>{@link org.muml.storydiagram.patterns.AbstractVariable#getConstraint <em>Constraint</em>}</li>
+ *   <li>{@link org.muml.storydiagram.patterns.AbstractVariable#getIncomingLink <em>Incoming Link</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.storydiagram.patterns.PatternsPackage#getAbstractVariable()
  * @model abstract="true"
@@ -38,7 +38,7 @@ import org.muml.storydiagram.Variable;
 public interface AbstractVariable extends Variable, NamedElement {
 	/**
 	 * Returns the value of the '<em><b>Pattern</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link org.muml.storydiagram.patterns.StoryPattern#getVariables <em>Variable</em>}'.
+	 * It is bidirectional and its opposite is '{@link org.muml.storydiagram.patterns.StoryPattern#getVariable <em>Variable</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Pattern</em>' container reference isn't clear,
@@ -48,7 +48,7 @@ public interface AbstractVariable extends Variable, NamedElement {
 	 * @return the value of the '<em>Pattern</em>' container reference.
 	 * @see #setPattern(StoryPattern)
 	 * @see org.muml.storydiagram.patterns.PatternsPackage#getAbstractVariable_Pattern()
-	 * @see org.muml.storydiagram.patterns.StoryPattern#getVariables
+	 * @see org.muml.storydiagram.patterns.StoryPattern#getVariable
 	 * @model opposite="variable" required="true" transient="false" ordered="false"
 	 * @generated
 	 */
@@ -103,7 +103,7 @@ public interface AbstractVariable extends Variable, NamedElement {
 	 * @return the value of the '<em>Binding Expression</em>' containment reference.
 	 * @see #setBindingExpression(Expression)
 	 * @see org.muml.storydiagram.patterns.PatternsPackage#getAbstractVariable_BindingExpression()
-	 * @model containment="true" resolveProxies="true" ordered="false"
+	 * @model containment="true" ordered="false"
 	 * @generated
 	 */
 	Expression getBindingExpression();
@@ -130,10 +130,10 @@ public interface AbstractVariable extends Variable, NamedElement {
 	 * @return the value of the '<em>Constraint</em>' containment reference list.
 	 * @see org.muml.storydiagram.patterns.PatternsPackage#getAbstractVariable_Constraint()
 	 * @see org.muml.storydiagram.patterns.Constraint#getObjectVariable
-	 * @model opposite="objectVariable" containment="true" resolveProxies="true"
+	 * @model opposite="objectVariable" containment="true"
 	 * @generated
 	 */
-	EList<Constraint> getConstraints();
+	EList<Constraint> getConstraint();
 
 	/**
 	 * Returns the value of the '<em><b>Incoming Link</b></em>' reference list.
@@ -151,6 +151,6 @@ public interface AbstractVariable extends Variable, NamedElement {
 	 * @model opposite="target" ordered="false"
 	 * @generated
 	 */
-	EList<AbstractLinkVariable> getIncomingLinks();
+	EList<AbstractLinkVariable> getIncomingLink();
 
 } // AbstractVariable

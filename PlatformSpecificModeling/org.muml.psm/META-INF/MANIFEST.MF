@@ -36,7 +36,10 @@ Export-Package: org.muml.psm,
  org.muml.psm.psm_realtimestatechart.realtimestatechartparameterbinding.impl,
  org.muml.psm.psm_realtimestatechart.realtimestatechartparameterbinding.util,
  org.muml.psm.psm_realtimestatechart.util,
- org.muml.psm.util
+ org.muml.psm.util,
+ platform,
+ platform.impl,
+ platform.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.muml.pim.actionlanguage;visibility:=reexport,

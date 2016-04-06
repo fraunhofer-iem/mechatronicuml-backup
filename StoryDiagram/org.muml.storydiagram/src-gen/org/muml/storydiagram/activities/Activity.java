@@ -21,13 +21,13 @@ import org.muml.storydiagram.calls.Callable;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.storydiagram.activities.Activity#getOwningOperation <em>Owning Operation</em>}</li>
- *   <li>{@link org.muml.storydiagram.activities.Activity#getOwnedActivityEdges <em>Owned Activity Edge</em>}</li>
+ *   <li>{@link org.muml.storydiagram.activities.Activity#getOwnedActivityEdge <em>Owned Activity Edge</em>}</li>
  *   <li>{@link org.muml.storydiagram.activities.Activity#getPrecondition <em>Precondition</em>}</li>
- *   <li>{@link org.muml.storydiagram.activities.Activity#getOwnedActivityNodes <em>Owned Activity Node</em>}</li>
+ *   <li>{@link org.muml.storydiagram.activities.Activity#getOwnedActivityNode <em>Owned Activity Node</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.storydiagram.activities.ActivitiesPackage#getActivity()
  * @model
@@ -74,10 +74,10 @@ public interface Activity extends Callable, NamedElement {
 	 * @return the value of the '<em>Owned Activity Edge</em>' containment reference list.
 	 * @see org.muml.storydiagram.activities.ActivitiesPackage#getActivity_OwnedActivityEdge()
 	 * @see org.muml.storydiagram.activities.ActivityEdge#getOwningActivity
-	 * @model opposite="owningActivity" containment="true" resolveProxies="true"
+	 * @model opposite="owningActivity" containment="true"
 	 * @generated
 	 */
-	EList<ActivityEdge> getOwnedActivityEdges();
+	EList<ActivityEdge> getOwnedActivityEdge();
 
 	/**
 	 * Returns the value of the '<em><b>Precondition</b></em>' reference.
@@ -116,9 +116,9 @@ public interface Activity extends Callable, NamedElement {
 	 * @return the value of the '<em>Owned Activity Node</em>' containment reference list.
 	 * @see org.muml.storydiagram.activities.ActivitiesPackage#getActivity_OwnedActivityNode()
 	 * @see org.muml.storydiagram.activities.ActivityNode#getOwningActivity
-	 * @model opposite="owningActivity" containment="true" resolveProxies="true" ordered="false"
+	 * @model opposite="owningActivity" containment="true" ordered="false"
 	 * @generated
 	 */
-	EList<ActivityNode> getOwnedActivityNodes();
+	EList<ActivityNode> getOwnedActivityNode();
 
 } // Activity

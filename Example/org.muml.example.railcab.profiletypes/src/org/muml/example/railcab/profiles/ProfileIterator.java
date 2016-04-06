@@ -13,10 +13,10 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.example.railcab.profiles.ProfileIterator#getProfilesToDo <em>Profiles To Do</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.example.railcab.profiles.ProfilesPackage#getProfileIterator()
  * @model

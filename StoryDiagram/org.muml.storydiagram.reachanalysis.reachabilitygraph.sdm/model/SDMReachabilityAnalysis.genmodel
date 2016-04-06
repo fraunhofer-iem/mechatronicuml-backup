@@ -3,7 +3,7 @@
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.sdm/src"
     modelPluginID="de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.sdm"
     modelName="SDMReachabilityAnalysis" importerID="org.eclipse.emf.importer.ecore"
-    complianceLevel="6.0" copyrightFields="false" usedGenPackages="../../org.muml.core/model/core.genmodel#//core platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph/model/ReachabilityAnalysisCore.genmodel#//reachabilityGraph ../../org.storydriven.storydiagrams/model/storydiagrams.uml.genmodel#//storydiagrams">
+    complianceLevel="6.0" copyrightFields="false" usedGenPackages="../../org.muml.core/model/core.genmodel#//core platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph/model/ReachabilityAnalysisCore.genmodel#//reachabilityGraph ../../org.muml.storydiagram/model/storydiagrams.genmodel#//storydiagram">
   <foreignModel>SDMReachabilityAnalysis.ecore</foreignModel>
   <genPackages prefix="Sdm" basePackage="de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph"
       disposableProviderFactory="true" ecorePackage="SDMReachabilityAnalysis.ecore#/">

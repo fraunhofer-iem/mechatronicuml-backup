@@ -29,10 +29,10 @@ import org.muml.example.storydiagram.reachanalysis.ttccarplatooning.Ttccarplatoo
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.example.storydiagram.reachanalysis.ttccarplatooning.impl.StatechartImpl#getStates <em>States</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

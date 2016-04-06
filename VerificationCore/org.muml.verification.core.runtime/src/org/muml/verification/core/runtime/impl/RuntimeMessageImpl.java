@@ -28,11 +28,11 @@ import org.muml.verification.core.runtime.RuntimeParameter;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.verification.core.runtime.impl.RuntimeMessageImpl#getParameters <em>Parameters</em>}</li>
  *   <li>{@link org.muml.verification.core.runtime.impl.RuntimeMessageImpl#getType <em>Type</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

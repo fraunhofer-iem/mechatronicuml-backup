@@ -21,10 +21,10 @@ import org.muml.storydiagram.calls.Invocation;
  *
  * <p>
  * The following features are supported:
- * <ul>
- *   <li>{@link org.muml.storydiagram.activities.ActivityCallNode#getCalledActivities <em>Called Activity</em>}</li>
- * </ul>
  * </p>
+ * <ul>
+ *   <li>{@link org.muml.storydiagram.activities.ActivityCallNode#getCalledActivity <em>Called Activity</em>}</li>
+ * </ul>
  *
  * @see org.muml.storydiagram.activities.ActivitiesPackage#getActivityCallNode()
  * @model
@@ -44,6 +44,6 @@ public interface ActivityCallNode extends ActivityNode, Invocation {
 	 * @model required="true"
 	 * @generated
 	 */
-	EList<Activity> getCalledActivities();
+	EList<Activity> getCalledActivity();
 
 } // ActivityCallNode

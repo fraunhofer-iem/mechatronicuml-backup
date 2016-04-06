@@ -8,7 +8,7 @@ import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-import org.muml.storydiagram.StorydiagramsPackage;
+import org.muml.storydiagram.StorydiagramPackage;
 import org.muml.storydiagram.patterns.PatternsPackage;
 import org.muml.storydiagram.verification.sdd.SDDPackage;
 import org.muml.storydiagram.verification.sdd.basicsdd.BasicSDDFactory;
@@ -86,7 +86,7 @@ public class BasicSDDPackageImpl extends EPackageImpl implements BasicSDDPackage
 
 		// Initialize simple dependencies
 		SDDPackage.eINSTANCE.eClass();
-		StorydiagramsPackage.eINSTANCE.eClass();
+		StorydiagramPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theBasicSDDPackage.createPackageContents();

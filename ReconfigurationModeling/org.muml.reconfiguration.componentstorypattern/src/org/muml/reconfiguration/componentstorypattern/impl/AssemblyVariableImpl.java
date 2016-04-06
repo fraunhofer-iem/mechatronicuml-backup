@@ -16,10 +16,10 @@ import org.muml.reconfiguration.componentstorypattern.ComponentstorypatternPacka
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.reconfiguration.componentstorypattern.impl.AssemblyVariableImpl#getType <em>Type</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

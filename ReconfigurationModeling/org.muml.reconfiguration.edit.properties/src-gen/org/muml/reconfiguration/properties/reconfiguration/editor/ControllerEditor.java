@@ -21,15 +21,29 @@ public abstract class ControllerEditor extends org.muml.ape.runtime.editors.Clas
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorBehavior_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorBehavior_property_tab_behaviorTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
+
+		} else if ("property.tab.descriptionAspects".equals(tab)) { // Tab Description Aspects
+
+		} else if ("property.tab.condition".equals(tab)) { // Tab Condition
+
+		} else if ("property.tab.effect".equals(tab)) { // Tab Effect
+
+		} else if ("property.tab.deadline".equals(tab)) { // Tab Deadline
+
+		} else if ("property.tab.sampling".equals(tab)) { // Tab Sampling
+
+		} else if ("property.tab.message".equals(tab)) { // Tab Message
+
+		} else if ("property.tab.behavior".equals(tab)) { // Tab Behavior
+
+			addPropertyEditor(createEditorBehavior_property_tab_behaviorTab_Editor(), false);
 
 		} else if ("property.tab.general".equals(tab)) { // Tab General
-
-			addPropertyEditor(createEditorBehavior_GeneralTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
@@ -39,9 +53,9 @@ public abstract class ControllerEditor extends org.muml.ape.runtime.editors.Clas
 		}
 	}
 
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorBehavior_GeneralTab;
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorBehavior_GeneralTab_Editor() {
-		if (this.editorBehavior_GeneralTab == null) {
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorBehavior_property_tab_behaviorTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorBehavior_property_tab_behaviorTab_Editor() {
+		if (this.editorBehavior_property_tab_behaviorTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.pim.behavior.BehaviorPackage.eINSTANCE
 					.getBehavioralElement_Behavior();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.ComboPropertyEditor(
@@ -49,9 +63,9 @@ public abstract class ControllerEditor extends org.muml.ape.runtime.editors.Clas
 
 			editor.setTooltipMessage("The behavior of this behavioral element.");
 
-			this.editorBehavior_GeneralTab = editor;
+			this.editorBehavior_property_tab_behaviorTab = editor;
 		}
-		return this.editorBehavior_GeneralTab;
+		return this.editorBehavior_property_tab_behaviorTab;
 	}
 
 }

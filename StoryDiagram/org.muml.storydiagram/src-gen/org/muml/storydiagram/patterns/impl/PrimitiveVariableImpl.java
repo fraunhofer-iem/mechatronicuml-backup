@@ -21,11 +21,10 @@ import org.muml.storydiagram.patterns.PrimitiveVariable;
  * <!-- begin-user-doc --> An implementation of the model object '<em><b>Primitive Variable</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
- *   <li>{@link org.muml.storydiagram.patterns.impl.PrimitiveVariableImpl#getType <em>Type</em>}</li>
  *   <li>{@link org.muml.storydiagram.patterns.impl.PrimitiveVariableImpl#getClassifier <em>Classifier</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -58,43 +57,16 @@ public class PrimitiveVariableImpl extends AbstractVariableImpl implements
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClassifier getType() {
-		EClassifier type = basicGetType();
-		return type != null && type.eIsProxy() ? (EClassifier) eResolveProxy((InternalEObject) type)
-				: type;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClassifier basicGetType() {
-		if (eIsSet(PatternsPackage.PRIMITIVE_VARIABLE__CLASSIFIER)) {
-			return basicGetClassifier();
-		}
-		return super.basicGetType();
-	}
-
-	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public EDataType getClassifier() {
 		if (classifier != null && classifier.eIsProxy()) {
-			InternalEObject oldClassifier = (InternalEObject) classifier;
-			classifier = (EDataType) eResolveProxy(oldClassifier);
+			InternalEObject oldClassifier = (InternalEObject)classifier;
+			classifier = (EDataType)eResolveProxy(oldClassifier);
 			if (classifier != oldClassifier) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							PatternsPackage.PRIMITIVE_VARIABLE__CLASSIFIER,
-							oldClassifier, classifier));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PatternsPackage.PRIMITIVE_VARIABLE__CLASSIFIER, oldClassifier, classifier));
 			}
 		}
 		return classifier;
@@ -116,9 +88,7 @@ public class PrimitiveVariableImpl extends AbstractVariableImpl implements
 		EDataType oldClassifier = classifier;
 		classifier = newClassifier;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					PatternsPackage.PRIMITIVE_VARIABLE__CLASSIFIER,
-					oldClassifier, classifier));
+			eNotify(new ENotificationImpl(this, Notification.SET, PatternsPackage.PRIMITIVE_VARIABLE__CLASSIFIER, oldClassifier, classifier));
 	}
 
 	/**
@@ -128,10 +98,9 @@ public class PrimitiveVariableImpl extends AbstractVariableImpl implements
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case PatternsPackage.PRIMITIVE_VARIABLE__CLASSIFIER:
-			if (resolve)
-				return getClassifier();
-			return basicGetClassifier();
+			case PatternsPackage.PRIMITIVE_VARIABLE__CLASSIFIER:
+				if (resolve) return getClassifier();
+				return basicGetClassifier();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -143,9 +112,9 @@ public class PrimitiveVariableImpl extends AbstractVariableImpl implements
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case PatternsPackage.PRIMITIVE_VARIABLE__CLASSIFIER:
-			setClassifier((EDataType) newValue);
-			return;
+			case PatternsPackage.PRIMITIVE_VARIABLE__CLASSIFIER:
+				setClassifier((EDataType)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -157,9 +126,9 @@ public class PrimitiveVariableImpl extends AbstractVariableImpl implements
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case PatternsPackage.PRIMITIVE_VARIABLE__CLASSIFIER:
-			setClassifier((EDataType) null);
-			return;
+			case PatternsPackage.PRIMITIVE_VARIABLE__CLASSIFIER:
+				setClassifier((EDataType)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -171,23 +140,10 @@ public class PrimitiveVariableImpl extends AbstractVariableImpl implements
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case PatternsPackage.PRIMITIVE_VARIABLE__TYPE:
-			return isSetType();
-		case PatternsPackage.PRIMITIVE_VARIABLE__CLASSIFIER:
-			return classifier != null;
+			case PatternsPackage.PRIMITIVE_VARIABLE__CLASSIFIER:
+				return classifier != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean isSetType() {
-		return super.isSetType()
-				|| eIsSet(PatternsPackage.PRIMITIVE_VARIABLE__CLASSIFIER);
 	}
 
 	/**

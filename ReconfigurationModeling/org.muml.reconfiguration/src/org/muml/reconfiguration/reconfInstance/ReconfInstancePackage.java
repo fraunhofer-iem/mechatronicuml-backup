@@ -43,7 +43,7 @@ public interface ReconfInstancePackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.fujaba.de/muml/reconfiguration/reconfInstance/0.4.0";
+	String eNS_URI = "http://www.muml.org/reconfiguration/reconfInstance/1.0.0";
 
 	/**
 	 * The package namespace name.
@@ -72,22 +72,22 @@ public interface ReconfInstancePackage extends EPackage {
 	int RECONFIGURABLE_COMPONENT_INSTANCE = 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_COMPONENT_INSTANCE__ANNOTATION = InstancePackage.COMPONENT_INSTANCE__ANNOTATION;
+	int RECONFIGURABLE_COMPONENT_INSTANCE__ANNOTATIONS = InstancePackage.COMPONENT_INSTANCE__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_COMPONENT_INSTANCE__EXTENSION = InstancePackage.COMPONENT_INSTANCE__EXTENSION;
+	int RECONFIGURABLE_COMPONENT_INSTANCE__EXTENSIONS = InstancePackage.COMPONENT_INSTANCE__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -343,22 +343,22 @@ public interface ReconfInstancePackage extends EPackage {
 	int RECONFIGURATION_PORT_INSTANCE = 1;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_PORT_INSTANCE__ANNOTATION = InstancePackage.PORT_INSTANCE__ANNOTATION;
+	int RECONFIGURATION_PORT_INSTANCE__ANNOTATIONS = InstancePackage.PORT_INSTANCE__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_PORT_INSTANCE__EXTENSION = InstancePackage.PORT_INSTANCE__EXTENSION;
+	int RECONFIGURATION_PORT_INSTANCE__EXTENSIONS = InstancePackage.PORT_INSTANCE__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -632,22 +632,22 @@ public interface ReconfInstancePackage extends EPackage {
 	int RECONFIGURATION_MESSAGE_PORT_INSTANCE = 2;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_MESSAGE_PORT_INSTANCE__ANNOTATION = RECONFIGURATION_PORT_INSTANCE__ANNOTATION;
+	int RECONFIGURATION_MESSAGE_PORT_INSTANCE__ANNOTATIONS = RECONFIGURATION_PORT_INSTANCE__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_MESSAGE_PORT_INSTANCE__EXTENSION = RECONFIGURATION_PORT_INSTANCE__EXTENSION;
+	int RECONFIGURATION_MESSAGE_PORT_INSTANCE__EXTENSIONS = RECONFIGURATION_PORT_INSTANCE__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -921,22 +921,22 @@ public interface ReconfInstancePackage extends EPackage {
 	int RECONFIGURATION_EXECUTION_PORT_INSTANCE = 3;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_EXECUTION_PORT_INSTANCE__ANNOTATION = RECONFIGURATION_PORT_INSTANCE__ANNOTATION;
+	int RECONFIGURATION_EXECUTION_PORT_INSTANCE__ANNOTATIONS = RECONFIGURATION_PORT_INSTANCE__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_EXECUTION_PORT_INSTANCE__EXTENSION = RECONFIGURATION_PORT_INSTANCE__EXTENSION;
+	int RECONFIGURATION_EXECUTION_PORT_INSTANCE__EXTENSIONS = RECONFIGURATION_PORT_INSTANCE__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1210,22 +1210,22 @@ public interface ReconfInstancePackage extends EPackage {
 	int INTERNAL_RECONFIGURATION_COMMUNICATION_PORT_INSTANCE = 4;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INTERNAL_RECONFIGURATION_COMMUNICATION_PORT_INSTANCE__ANNOTATION = RECONFIGURATION_PORT_INSTANCE__ANNOTATION;
+	int INTERNAL_RECONFIGURATION_COMMUNICATION_PORT_INSTANCE__ANNOTATIONS = RECONFIGURATION_PORT_INSTANCE__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INTERNAL_RECONFIGURATION_COMMUNICATION_PORT_INSTANCE__EXTENSION = RECONFIGURATION_PORT_INSTANCE__EXTENSION;
+	int INTERNAL_RECONFIGURATION_COMMUNICATION_PORT_INSTANCE__EXTENSIONS = RECONFIGURATION_PORT_INSTANCE__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1499,22 +1499,22 @@ public interface ReconfInstancePackage extends EPackage {
 	int CONTROLLER_INSTANCE = 6;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROLLER_INSTANCE__ANNOTATION = CorePackage.EXTENDABLE_ELEMENT__ANNOTATION;
+	int CONTROLLER_INSTANCE__ANNOTATIONS = CorePackage.EXTENDABLE_ELEMENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROLLER_INSTANCE__EXTENSION = CorePackage.EXTENDABLE_ELEMENT__EXTENSION;
+	int CONTROLLER_INSTANCE__EXTENSIONS = CorePackage.EXTENDABLE_ELEMENT__EXTENSIONS;
 
 	/**
 	 * The number of structural features of the '<em>Controller Instance</em>' class.
@@ -1716,22 +1716,22 @@ public interface ReconfInstancePackage extends EPackage {
 	int RECONFIGURATION_CONTROLLER_INSTANCE = 5;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_CONTROLLER_INSTANCE__ANNOTATION = CONTROLLER_INSTANCE__ANNOTATION;
+	int RECONFIGURATION_CONTROLLER_INSTANCE__ANNOTATIONS = CONTROLLER_INSTANCE__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_CONTROLLER_INSTANCE__EXTENSION = CONTROLLER_INSTANCE__EXTENSION;
+	int RECONFIGURATION_CONTROLLER_INSTANCE__EXTENSIONS = CONTROLLER_INSTANCE__EXTENSIONS;
 
 	/**
 	 * The number of structural features of the '<em>Reconfiguration Controller Instance</em>' class.
@@ -1933,22 +1933,22 @@ public interface ReconfInstancePackage extends EPackage {
 	int RULE_BASED_RECONFIGURATION_CONTROLLER_INSTANCE = 7;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RULE_BASED_RECONFIGURATION_CONTROLLER_INSTANCE__ANNOTATION = RECONFIGURATION_CONTROLLER_INSTANCE__ANNOTATION;
+	int RULE_BASED_RECONFIGURATION_CONTROLLER_INSTANCE__ANNOTATIONS = RECONFIGURATION_CONTROLLER_INSTANCE__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RULE_BASED_RECONFIGURATION_CONTROLLER_INSTANCE__EXTENSION = RECONFIGURATION_CONTROLLER_INSTANCE__EXTENSION;
+	int RULE_BASED_RECONFIGURATION_CONTROLLER_INSTANCE__EXTENSIONS = RECONFIGURATION_CONTROLLER_INSTANCE__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Manager Instance</b></em>' containment reference.
@@ -2168,22 +2168,22 @@ public interface ReconfInstancePackage extends EPackage {
 	int MANAGER_INSTANCE = 8;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MANAGER_INSTANCE__ANNOTATION = CorePackage.NAMED_ELEMENT__ANNOTATION;
+	int MANAGER_INSTANCE__ANNOTATIONS = CorePackage.NAMED_ELEMENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MANAGER_INSTANCE__EXTENSION = CorePackage.NAMED_ELEMENT__EXTENSION;
+	int MANAGER_INSTANCE__EXTENSIONS = CorePackage.NAMED_ELEMENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2421,22 +2421,22 @@ public interface ReconfInstancePackage extends EPackage {
 	int EXECUTOR_INSTANCE = 9;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXECUTOR_INSTANCE__ANNOTATION = CorePackage.NAMED_ELEMENT__ANNOTATION;
+	int EXECUTOR_INSTANCE__ANNOTATIONS = CorePackage.NAMED_ELEMENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXECUTOR_INSTANCE__EXTENSION = CorePackage.NAMED_ELEMENT__EXTENSION;
+	int EXECUTOR_INSTANCE__EXTENSIONS = CorePackage.NAMED_ELEMENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2674,22 +2674,22 @@ public interface ReconfInstancePackage extends EPackage {
 	int RECONFIGURABLE_ATOMIC_COMPONENT_INSTANCE = 10;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_ATOMIC_COMPONENT_INSTANCE__ANNOTATION = InstancePackage.ATOMIC_COMPONENT_INSTANCE__ANNOTATION;
+	int RECONFIGURABLE_ATOMIC_COMPONENT_INSTANCE__ANNOTATIONS = InstancePackage.ATOMIC_COMPONENT_INSTANCE__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_ATOMIC_COMPONENT_INSTANCE__EXTENSION = InstancePackage.ATOMIC_COMPONENT_INSTANCE__EXTENSION;
+	int RECONFIGURABLE_ATOMIC_COMPONENT_INSTANCE__EXTENSIONS = InstancePackage.ATOMIC_COMPONENT_INSTANCE__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2945,22 +2945,22 @@ public interface ReconfInstancePackage extends EPackage {
 	int RECONFIGURABLE_STRUCTURED_COMPONENT_INSTANCE = 11;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_STRUCTURED_COMPONENT_INSTANCE__ANNOTATION = InstancePackage.STRUCTURED_COMPONENT_INSTANCE__ANNOTATION;
+	int RECONFIGURABLE_STRUCTURED_COMPONENT_INSTANCE__ANNOTATIONS = InstancePackage.STRUCTURED_COMPONENT_INSTANCE__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_STRUCTURED_COMPONENT_INSTANCE__EXTENSION = InstancePackage.STRUCTURED_COMPONENT_INSTANCE__EXTENSION;
+	int RECONFIGURABLE_STRUCTURED_COMPONENT_INSTANCE__EXTENSIONS = InstancePackage.STRUCTURED_COMPONENT_INSTANCE__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.

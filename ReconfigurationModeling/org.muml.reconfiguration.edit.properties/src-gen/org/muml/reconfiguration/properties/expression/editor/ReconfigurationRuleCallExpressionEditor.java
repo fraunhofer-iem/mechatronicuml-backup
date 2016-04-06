@@ -4,9 +4,7 @@ package org.muml.reconfiguration.properties.expression.editor;
 /**
  * @generated
  */
-public class ReconfigurationRuleCallExpressionEditor
-		extends
-			org.muml.ape.runtime.editors.ClassPropertyEditor {
+public class ReconfigurationRuleCallExpressionEditor extends org.muml.ape.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
@@ -23,15 +21,29 @@ public class ReconfigurationRuleCallExpressionEditor
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorReconfigurationRule_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorReconfigurationRule_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
+
+		} else if ("property.tab.descriptionAspects".equals(tab)) { // Tab Description Aspects
+
+		} else if ("property.tab.condition".equals(tab)) { // Tab Condition
+
+		} else if ("property.tab.effect".equals(tab)) { // Tab Effect
+
+		} else if ("property.tab.deadline".equals(tab)) { // Tab Deadline
+
+		} else if ("property.tab.sampling".equals(tab)) { // Tab Sampling
+
+		} else if ("property.tab.message".equals(tab)) { // Tab Message
+
+		} else if ("property.tab.behavior".equals(tab)) { // Tab Behavior
 
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
-			addPropertyEditor(createEditorReconfigurationRule_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorReconfigurationRule_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
@@ -41,9 +53,9 @@ public class ReconfigurationRuleCallExpressionEditor
 		}
 	}
 
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorReconfigurationRule_GeneralTab;
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorReconfigurationRule_GeneralTab_Editor() {
-		if (this.editorReconfigurationRule_GeneralTab == null) {
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorReconfigurationRule_property_tab_generalTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorReconfigurationRule_property_tab_generalTab_Editor() {
+		if (this.editorReconfigurationRule_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.reconfiguration.expression.ExpressionPackage.eINSTANCE
 					.getReconfigurationRuleCallExpression_ReconfigurationRule();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.ComboPropertyEditor(
@@ -51,9 +63,9 @@ public class ReconfigurationRuleCallExpressionEditor
 
 			editor.setTooltipMessage("The reconfiguration rule that is called by this expression.");
 
-			this.editorReconfigurationRule_GeneralTab = editor;
+			this.editorReconfigurationRule_property_tab_generalTab = editor;
 		}
-		return this.editorReconfigurationRule_GeneralTab;
+		return this.editorReconfigurationRule_property_tab_generalTab;
 	}
 
 	//
@@ -64,11 +76,8 @@ public class ReconfigurationRuleCallExpressionEditor
 	 * @generated
 	 */
 	public ReconfigurationRuleCallExpressionEditor(String tab) {
-		this(tab,
-				org.muml.reconfiguration.properties.util.PropertiesUtil.INSTANCE
-						.getAdapterFactory(),
-				org.muml.reconfiguration.expression.ExpressionPackage.eINSTANCE
-						.getReconfigurationRuleCallExpression());
+		this(tab, org.muml.reconfiguration.properties.util.PropertiesUtil.INSTANCE.getAdapterFactory(),
+				org.muml.reconfiguration.expression.ExpressionPackage.eINSTANCE.getReconfigurationRuleCallExpression());
 	}
 
 	/**

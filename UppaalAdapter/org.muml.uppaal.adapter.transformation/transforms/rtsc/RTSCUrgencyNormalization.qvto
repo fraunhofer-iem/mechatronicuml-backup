@@ -7,7 +7,7 @@ modeltype rtsc uses pim::realtimestatechart('http://www.muml.org/pim/1.0.0');
 modeltype behavior uses pim::behavior('http://www.muml.org/pim/1.0.0');
 modeltype verificationExtension uses 'http://www.fujaba.de/muml/verification/extension/0.4.0';
 modeltype instancePackage uses muml::instance('http://www.fujaba.de/muml/0.4.0');
-modeltype modelinstance uses 'http://www.fujaba.de/modelinstance/0.4.0';
+modeltype modelinstance uses 'http://www.muml.org/core/modelinstance/1.0.0';
 modeltype mtctl uses 'http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl';
 modeltype mtctlQuantifiers uses mtctl::Quantifiers('http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl');
 modeltype mtctlPredicates uses mtctl::Predicates('http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl');

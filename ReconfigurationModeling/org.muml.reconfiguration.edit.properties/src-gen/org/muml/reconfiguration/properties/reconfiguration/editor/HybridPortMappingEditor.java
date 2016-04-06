@@ -21,15 +21,29 @@ public class HybridPortMappingEditor extends org.muml.ape.runtime.editors.ClassP
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorHybridPort_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorHybridPort_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
+
+		} else if ("property.tab.descriptionAspects".equals(tab)) { // Tab Description Aspects
+
+		} else if ("property.tab.condition".equals(tab)) { // Tab Condition
+
+		} else if ("property.tab.effect".equals(tab)) { // Tab Effect
+
+		} else if ("property.tab.deadline".equals(tab)) { // Tab Deadline
+
+		} else if ("property.tab.sampling".equals(tab)) { // Tab Sampling
+
+		} else if ("property.tab.message".equals(tab)) { // Tab Message
+
+		} else if ("property.tab.behavior".equals(tab)) { // Tab Behavior
 
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
-			addPropertyEditor(createEditorHybridPort_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorHybridPort_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
@@ -39,17 +53,17 @@ public class HybridPortMappingEditor extends org.muml.ape.runtime.editors.ClassP
 		}
 	}
 
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorHybridPort_GeneralTab;
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorHybridPort_GeneralTab_Editor() {
-		if (this.editorHybridPort_GeneralTab == null) {
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorHybridPort_property_tab_generalTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorHybridPort_property_tab_generalTab_Editor() {
+		if (this.editorHybridPort_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
 					.getHybridPortMapping_HybridPort();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.ComboPropertyEditor(
 					adapterFactory, feature);
 
-			this.editorHybridPort_GeneralTab = editor;
+			this.editorHybridPort_property_tab_generalTab = editor;
 		}
-		return this.editorHybridPort_GeneralTab;
+		return this.editorHybridPort_property_tab_generalTab;
 	}
 
 	//
@@ -60,9 +74,7 @@ public class HybridPortMappingEditor extends org.muml.ape.runtime.editors.ClassP
 	 * @generated
 	 */
 	public HybridPortMappingEditor(String tab) {
-		this(tab,
-				org.muml.reconfiguration.properties.util.PropertiesUtil.INSTANCE
-						.getAdapterFactory(),
+		this(tab, org.muml.reconfiguration.properties.util.PropertiesUtil.INSTANCE.getAdapterFactory(),
 				org.muml.reconfiguration.ReconfigurationPackage.eINSTANCE.getHybridPortMapping());
 	}
 

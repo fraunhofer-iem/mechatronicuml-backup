@@ -12,8 +12,8 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.muml.core.expressions.impl.ExpressionImpl;
 import org.muml.storydiagram.patterns.ObjectVariable;
+import org.muml.storydiagram.patterns.expressions.ExpressionsPackage;
 import org.muml.storydiagram.patterns.expressions.ObjectVariableExpression;
-import org.muml.storydiagram.patterns.expressions.PatternsExpressionsPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,10 +21,10 @@ import org.muml.storydiagram.patterns.expressions.PatternsExpressionsPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.storydiagram.patterns.expressions.impl.ObjectVariableExpressionImpl#getObject <em>Object</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -56,7 +56,7 @@ public class ObjectVariableExpressionImpl extends ExpressionImpl implements
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return PatternsExpressionsPackage.Literals.OBJECT_VARIABLE_EXPRESSION;
+		return ExpressionsPackage.Literals.OBJECT_VARIABLE_EXPRESSION;
 	}
 
 	/**
@@ -66,15 +66,11 @@ public class ObjectVariableExpressionImpl extends ExpressionImpl implements
 	 */
 	public ObjectVariable getObject() {
 		if (object != null && object.eIsProxy()) {
-			InternalEObject oldObject = (InternalEObject) object;
-			object = (ObjectVariable) eResolveProxy(oldObject);
+			InternalEObject oldObject = (InternalEObject)object;
+			object = (ObjectVariable)eResolveProxy(oldObject);
 			if (object != oldObject) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(
-							this,
-							Notification.RESOLVE,
-							PatternsExpressionsPackage.OBJECT_VARIABLE_EXPRESSION__OBJECT,
-							oldObject, object));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ExpressionsPackage.OBJECT_VARIABLE_EXPRESSION__OBJECT, oldObject, object));
 			}
 		}
 		return object;
@@ -98,11 +94,7 @@ public class ObjectVariableExpressionImpl extends ExpressionImpl implements
 		ObjectVariable oldObject = object;
 		object = newObject;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(
-					this,
-					Notification.SET,
-					PatternsExpressionsPackage.OBJECT_VARIABLE_EXPRESSION__OBJECT,
-					oldObject, object));
+			eNotify(new ENotificationImpl(this, Notification.SET, ExpressionsPackage.OBJECT_VARIABLE_EXPRESSION__OBJECT, oldObject, object));
 	}
 
 	/**
@@ -113,10 +105,9 @@ public class ObjectVariableExpressionImpl extends ExpressionImpl implements
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case PatternsExpressionsPackage.OBJECT_VARIABLE_EXPRESSION__OBJECT:
-			if (resolve)
-				return getObject();
-			return basicGetObject();
+			case ExpressionsPackage.OBJECT_VARIABLE_EXPRESSION__OBJECT:
+				if (resolve) return getObject();
+				return basicGetObject();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -129,9 +120,9 @@ public class ObjectVariableExpressionImpl extends ExpressionImpl implements
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case PatternsExpressionsPackage.OBJECT_VARIABLE_EXPRESSION__OBJECT:
-			setObject((ObjectVariable) newValue);
-			return;
+			case ExpressionsPackage.OBJECT_VARIABLE_EXPRESSION__OBJECT:
+				setObject((ObjectVariable)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -144,9 +135,9 @@ public class ObjectVariableExpressionImpl extends ExpressionImpl implements
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case PatternsExpressionsPackage.OBJECT_VARIABLE_EXPRESSION__OBJECT:
-			setObject((ObjectVariable) null);
-			return;
+			case ExpressionsPackage.OBJECT_VARIABLE_EXPRESSION__OBJECT:
+				setObject((ObjectVariable)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -159,8 +150,8 @@ public class ObjectVariableExpressionImpl extends ExpressionImpl implements
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case PatternsExpressionsPackage.OBJECT_VARIABLE_EXPRESSION__OBJECT:
-			return object != null;
+			case ExpressionsPackage.OBJECT_VARIABLE_EXPRESSION__OBJECT:
+				return object != null;
 		}
 		return super.eIsSet(featureID);
 	}

@@ -16,11 +16,11 @@ import org.muml.pim.behavior.Variable;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.verification.core.runtime.VariableBinding#getVariable <em>Variable</em>}</li>
  *   <li>{@link org.muml.verification.core.runtime.VariableBinding#getValue <em>Value</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.verification.core.runtime.RuntimePackage#getVariableBinding()
  * @model
@@ -64,7 +64,7 @@ public interface VariableBinding extends ExtendableElement {
 	 * @return the value of the '<em>Value</em>' attribute.
 	 * @see #setValue(Object)
 	 * @see org.muml.verification.core.runtime.RuntimePackage#getVariableBinding_Value()
-	 * @model dataType="de.uni_paderborn.fujaba.muml.runtime.JavaObject" transient="true"
+	 * @model dataType="org.muml.verification.core.runtime.JavaObject" transient="true"
 	 * @generated
 	 */
 	Object getValue();

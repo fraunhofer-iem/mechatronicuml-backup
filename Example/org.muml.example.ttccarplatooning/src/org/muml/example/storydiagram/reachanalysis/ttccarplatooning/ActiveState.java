@@ -15,11 +15,11 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.example.storydiagram.reachanalysis.ttccarplatooning.ActiveState#getActive <em>Active</em>}</li>
  *   <li>{@link org.muml.example.storydiagram.reachanalysis.ttccarplatooning.ActiveState#getIn <em>In</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.example.storydiagram.reachanalysis.ttccarplatooning.TtccarplatooningPackage#getActiveState()
  * @model

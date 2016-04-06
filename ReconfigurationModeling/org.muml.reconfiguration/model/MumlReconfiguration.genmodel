@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
-    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/de.uni_paderborn.fujaba.muml.reconfiguration/src"
-    modelPluginID="de.uni_paderborn.fujaba.muml.reconfiguration" modelName="MumlReconfiguration"
-    importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" copyrightFields="false"
-    usedGenPackages="../../org.muml.core/model/core.genmodel#//core platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../org.muml.pim/model/pim.genmodel#//pim ../../org.storydriven.storydiagrams/model/storydiagrams.uml.genmodel#//storydiagrams"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.muml.reconfiguration/src" modelPluginID="org.muml.reconfiguration"
+    modelName="MumlReconfiguration" importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0"
+    copyrightFields="false" usedGenPackages="../../org.muml.core/model/core.genmodel#//core platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../org.muml.pim/model/pim.genmodel#//pim ../../org.muml.storydiagram/model/storydiagrams.genmodel#//storydiagram"
     operationReflection="true" importOrganizing="true">
   <foreignModel>MumlReconfiguration.ecore</foreignModel>
-  <genPackages prefix="Reconfiguration" basePackage="de.uni_paderborn.fujaba.muml"
-      disposableProviderFactory="true" ecorePackage="MumlReconfiguration.ecore#/">
+  <genPackages prefix="Reconfiguration" basePackage="org.muml" disposableProviderFactory="true"
+      ecorePackage="MumlReconfiguration.ecore#/">
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="MumlReconfiguration.ecore#//ReconfigurationMessageTypeEnum">
       <genEnumLiterals ecoreEnumLiteral="MumlReconfiguration.ecore#//ReconfigurationMessageTypeEnum/INFO"/>
       <genEnumLiterals ecoreEnumLiteral="MumlReconfiguration.ecore#//ReconfigurationMessageTypeEnum/REQUEST"/>
@@ -133,7 +132,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MumlReconfiguration.ecore#//ReconfigurationManagementSpecificationEntry/conditions"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MumlReconfiguration.ecore#//ReconfigurationManagementSpecificationEntry/message"/>
     </genClasses>
-    <nestedGenPackages prefix="Expression" basePackage="de.uni_paderborn.fujaba.muml.reconfiguration"
+    <nestedGenPackages prefix="Expression" basePackage="org.muml.reconfiguration"
         disposableProviderFactory="true" ecorePackage="MumlReconfiguration.ecore#//expression">
       <genClasses ecoreClass="MumlReconfiguration.ecore#//expression/ActivityCallExpression">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
@@ -150,7 +149,7 @@
             ecoreFeature="ecore:EReference MumlReconfiguration.ecore#//expression/EvaluateStructuralConditionExpression/structuralCondition"/>
       </genClasses>
     </nestedGenPackages>
-    <nestedGenPackages prefix="Structdatatype" basePackage="de.uni_paderborn.fujaba.muml.reconfiguration"
+    <nestedGenPackages prefix="Structdatatype" basePackage="org.muml.reconfiguration"
         disposableProviderFactory="true" ecorePackage="MumlReconfiguration.ecore#//structdatatype">
       <genClasses ecoreClass="MumlReconfiguration.ecore#//structdatatype/StructType">
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MumlReconfiguration.ecore#//structdatatype/StructType/references"/>
@@ -162,7 +161,7 @@
             ecoreFeature="ecore:EReference MumlReconfiguration.ecore#//structdatatype/Reference/type"/>
       </genClasses>
     </nestedGenPackages>
-    <nestedGenPackages prefix="Protocolinstantiation" basePackage="de.uni_paderborn.fujaba.muml.reconfiguration"
+    <nestedGenPackages prefix="Protocolinstantiation" basePackage="org.muml.reconfiguration"
         disposableProviderFactory="true" ecorePackage="MumlReconfiguration.ecore#//protocolinstantiation">
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="MumlReconfiguration.ecore#//protocolinstantiation/BroadcastPortKind">
         <genEnumLiterals ecoreEnumLiteral="MumlReconfiguration.ecore#//protocolinstantiation/BroadcastPortKind/DISCOVERY"/>
@@ -176,7 +175,7 @@
       <genClasses ecoreClass="MumlReconfiguration.ecore#//protocolinstantiation/ProtocolInstantiationPortSpecification"/>
       <genClasses ecoreClass="MumlReconfiguration.ecore#//protocolinstantiation/DiscoveryPortSpecification"/>
     </nestedGenPackages>
-    <nestedGenPackages prefix="ReconfInstance" basePackage="de.uni_paderborn.fujaba.muml.reconfiguration"
+    <nestedGenPackages prefix="ReconfInstance" basePackage="org.muml.reconfiguration"
         disposableProviderFactory="true" ecorePackage="MumlReconfiguration.ecore#//reconfInstance">
       <genClasses image="false" ecoreClass="MumlReconfiguration.ecore#//reconfInstance/ReconfigurableComponentInstance"/>
       <genClasses ecoreClass="MumlReconfiguration.ecore#//reconfInstance/ReconfigurationPortInstance"/>

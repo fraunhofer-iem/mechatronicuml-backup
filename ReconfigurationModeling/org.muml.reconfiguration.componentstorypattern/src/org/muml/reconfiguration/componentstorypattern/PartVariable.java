@@ -13,11 +13,11 @@ import org.muml.pim.component.ComponentPart;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.reconfiguration.componentstorypattern.PartVariable#getPortVariables <em>Port Variables</em>}</li>
  *   <li>{@link org.muml.reconfiguration.componentstorypattern.PartVariable#getComponentPartType <em>Component Part Type</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.reconfiguration.componentstorypattern.ComponentstorypatternPackage#getPartVariable()
  * @model abstract="true"

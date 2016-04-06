@@ -18,13 +18,13 @@ import org.muml.core.expressions.Expression;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.storydiagram.templates.TemplateBinding#getBoundParameter <em>Bound Parameter</em>}</li>
  *   <li>{@link org.muml.storydiagram.templates.TemplateBinding#getBindingExpression <em>Binding Expression</em>}</li>
  *   <li>{@link org.muml.storydiagram.templates.TemplateBinding#getTemplate <em>Template</em>}</li>
- *   <li>{@link org.muml.storydiagram.templates.TemplateBinding#getPropertyBindings <em>Property Binding</em>}</li>
+ *   <li>{@link org.muml.storydiagram.templates.TemplateBinding#getPropertyBinding <em>Property Binding</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.storydiagram.templates.TemplatesPackage#getTemplateBinding()
  * @model
@@ -68,7 +68,7 @@ public interface TemplateBinding extends ExtendableElement {
 	 * @return the value of the '<em>Binding Expression</em>' containment reference.
 	 * @see #setBindingExpression(Expression)
 	 * @see org.muml.storydiagram.templates.TemplatesPackage#getTemplateBinding_BindingExpression()
-	 * @model containment="true" resolveProxies="true" required="true" ordered="false"
+	 * @model containment="true" required="true" ordered="false"
 	 * @generated
 	 */
 	Expression getBindingExpression();
@@ -85,7 +85,7 @@ public interface TemplateBinding extends ExtendableElement {
 
 	/**
 	 * Returns the value of the '<em><b>Template</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link org.muml.storydiagram.templates.TemplateSignature#getTemplateBindings <em>Template Binding</em>}'.
+	 * It is bidirectional and its opposite is '{@link org.muml.storydiagram.templates.TemplateSignature#getTemplateBinding <em>Template Binding</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Template</em>' container reference isn't clear,
@@ -95,7 +95,7 @@ public interface TemplateBinding extends ExtendableElement {
 	 * @return the value of the '<em>Template</em>' container reference.
 	 * @see #setTemplate(TemplateSignature)
 	 * @see org.muml.storydiagram.templates.TemplatesPackage#getTemplateBinding_Template()
-	 * @see org.muml.storydiagram.templates.TemplateSignature#getTemplateBindings
+	 * @see org.muml.storydiagram.templates.TemplateSignature#getTemplateBinding
 	 * @model opposite="templateBinding" required="true" transient="false" ordered="false"
 	 * @generated
 	 */
@@ -124,9 +124,9 @@ public interface TemplateBinding extends ExtendableElement {
 	 * @return the value of the '<em>Property Binding</em>' containment reference list.
 	 * @see org.muml.storydiagram.templates.TemplatesPackage#getTemplateBinding_PropertyBinding()
 	 * @see org.muml.storydiagram.templates.PropertyBinding#getTemplateBinding
-	 * @model opposite="templateBinding" containment="true" resolveProxies="true" ordered="false"
+	 * @model opposite="templateBinding" containment="true" ordered="false"
 	 * @generated
 	 */
-	EList<PropertyBinding> getPropertyBindings();
+	EList<PropertyBinding> getPropertyBinding();
 
 } // TemplateBinding

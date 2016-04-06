@@ -21,12 +21,12 @@ import org.muml.core.CommentableElement;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
- *   <li>{@link org.muml.storydiagram.calls.Callable#getInParameters <em>In Parameter</em>}</li>
- *   <li>{@link org.muml.storydiagram.calls.Callable#getOutParameters <em>Out Parameter</em>}</li>
+ *   <li>{@link org.muml.storydiagram.calls.Callable#getInParameter <em>In Parameter</em>}</li>
+ *   <li>{@link org.muml.storydiagram.calls.Callable#getOutParameter <em>Out Parameter</em>}</li>
  *   <li>{@link org.muml.storydiagram.calls.Callable#getContainedParameters <em>Contained Parameters</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.storydiagram.calls.CallsPackage#getCallable()
  * @model abstract="true"
@@ -46,7 +46,7 @@ public interface Callable extends CommentableElement {
 	 * @model
 	 * @generated
 	 */
-	EList<EParameter> getInParameters();
+	EList<EParameter> getInParameter();
 
 	/**
 	 * Returns the value of the '<em><b>Out Parameter</b></em>' reference list.
@@ -61,7 +61,7 @@ public interface Callable extends CommentableElement {
 	 * @model
 	 * @generated
 	 */
-	EList<EParameter> getOutParameters();
+	EList<EParameter> getOutParameter();
 
 	/**
 	 * Returns the value of the '<em><b>Contained Parameters</b></em>' containment reference list.
@@ -73,7 +73,7 @@ public interface Callable extends CommentableElement {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Contained Parameters</em>' containment reference list.
 	 * @see org.muml.storydiagram.calls.CallsPackage#getCallable_ContainedParameters()
-	 * @model containment="true" resolveProxies="true"
+	 * @model containment="true"
 	 * @generated
 	 */
 	EList<EParameter> getContainedParameters();

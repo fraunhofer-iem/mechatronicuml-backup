@@ -40,8 +40,8 @@
   <extension point="org.eclipse.ui.views.properties.tabbed.propertySections"> 
       <propertySections contributorId="org.muml.ape.contributor">
           <propertySection
-            class="de.uni_paderborn.fujaba.properties.runtime.sections.ObjectPropertySection"
-            filter="org.muml.ontology.properties.tabs.OntologyTabElementFilter"
+            class="org.muml.ape.runtime.sections.ObjectPropertySection"
+            filter="org.muml.ontology.properties.tabs.Property_tab_ontologyTabElementFilter"
             id="property.tab.ontology"
             tab="property.tab.ontology">
              <input
@@ -59,7 +59,7 @@
     
        <propertyEditor
              factory="org.muml.ontology.properties.ontology.editor.OntologyExtensionEditor$Factory"
-             type="http://www.fujaba.de/muml/ontology/0.4.0#OntologyExtension">
+             type="http://www.muml.org/ontology/1.0.0#OntologyExtension">
        </propertyEditor>
     
     </propertyEditors>

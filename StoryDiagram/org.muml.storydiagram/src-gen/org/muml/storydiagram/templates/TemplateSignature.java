@@ -18,12 +18,12 @@ import org.muml.storydiagram.patterns.StoryPattern;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
- *   <li>{@link org.muml.storydiagram.templates.TemplateSignature#getTemplateBindings <em>Template Binding</em>}</li>
- *   <li>{@link org.muml.storydiagram.templates.TemplateSignature#getTypeParameters <em>Type Parameter</em>}</li>
+ *   <li>{@link org.muml.storydiagram.templates.TemplateSignature#getTemplateBinding <em>Template Binding</em>}</li>
+ *   <li>{@link org.muml.storydiagram.templates.TemplateSignature#getTypeParameter <em>Type Parameter</em>}</li>
  *   <li>{@link org.muml.storydiagram.templates.TemplateSignature#getPattern <em>Pattern</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.storydiagram.templates.TemplatesPackage#getTemplateSignature()
  * @model
@@ -43,10 +43,10 @@ public interface TemplateSignature extends EObject {
 	 * @return the value of the '<em>Template Binding</em>' containment reference list.
 	 * @see org.muml.storydiagram.templates.TemplatesPackage#getTemplateSignature_TemplateBinding()
 	 * @see org.muml.storydiagram.templates.TemplateBinding#getTemplate
-	 * @model opposite="template" containment="true" resolveProxies="true" ordered="false"
+	 * @model opposite="template" containment="true" ordered="false"
 	 * @generated
 	 */
-	EList<TemplateBinding> getTemplateBindings();
+	EList<TemplateBinding> getTemplateBinding();
 
 	/**
 	 * Returns the value of the '<em><b>Type Parameter</b></em>' containment reference list.
@@ -59,10 +59,10 @@ public interface TemplateSignature extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Type Parameter</em>' containment reference list.
 	 * @see org.muml.storydiagram.templates.TemplatesPackage#getTemplateSignature_TypeParameter()
-	 * @model containment="true" resolveProxies="true" ordered="false"
+	 * @model containment="true" ordered="false"
 	 * @generated
 	 */
-	EList<EClassifier> getTypeParameters();
+	EList<EClassifier> getTypeParameter();
 
 	/**
 	 * Returns the value of the '<em><b>Pattern</b></em>' container reference.

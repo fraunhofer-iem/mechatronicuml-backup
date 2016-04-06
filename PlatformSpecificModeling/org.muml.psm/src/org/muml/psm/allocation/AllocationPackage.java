@@ -42,7 +42,7 @@ public interface AllocationPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.fujaba.de/muml/psm/allocation/0.4.0/";
+	String eNS_URI = "http://www.muml.org/psm/allocation/1.0.0";
 
 	/**
 	 * The package namespace name.
@@ -71,22 +71,22 @@ public interface AllocationPackage extends EPackage {
 	int SYSTEM_ALLOCATION = 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SYSTEM_ALLOCATION__ANNOTATION = CorePackage.EXTENDABLE_ELEMENT__ANNOTATION;
+	int SYSTEM_ALLOCATION__ANNOTATIONS = CorePackage.EXTENDABLE_ELEMENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SYSTEM_ALLOCATION__EXTENSION = CorePackage.EXTENDABLE_ELEMENT__EXTENSION;
+	int SYSTEM_ALLOCATION__EXTENSIONS = CorePackage.EXTENDABLE_ELEMENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Allocations</b></em>' containment reference list.
@@ -324,22 +324,22 @@ public interface AllocationPackage extends EPackage {
 	int ALLOCATION = 1;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ALLOCATION__ANNOTATION = CorePackage.EXTENDABLE_ELEMENT__ANNOTATION;
+	int ALLOCATION__ANNOTATIONS = CorePackage.EXTENDABLE_ELEMENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ALLOCATION__EXTENSION = CorePackage.EXTENDABLE_ELEMENT__EXTENSION;
+	int ALLOCATION__EXTENSIONS = CorePackage.EXTENDABLE_ELEMENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Component Instance</b></em>' reference.

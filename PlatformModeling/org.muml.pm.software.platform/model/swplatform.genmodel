@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
-    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/de.uni_paderborn.fujaba.muml.swplatform/src" modelPluginID="de.uni_paderborn.fujaba.muml.swplatform"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.muml.pm.software.platform/src" modelPluginID="org.muml.pm.software.platform"
     modelName="Swplatform" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="7.0" copyrightFields="false"
     usedGenPackages="../../org.muml.core/model/core.genmodel#//core ../../org.muml.pim/model/pim.genmodel#//pim"
     operationReflection="true" importOrganizing="true">
   <foreignModel>swplatform.ecore</foreignModel>
-  <genPackages prefix="Swplatform" basePackage="de.uni_paderborn.fujaba.muml" disposableProviderFactory="true"
+  <genPackages prefix="Swplatform" basePackage="org.muml.pm.software" disposableProviderFactory="true"
       ecorePackage="swplatform.ecore#/">
     <genClasses ecoreClass="swplatform.ecore#//OperatingSystem">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference swplatform.ecore#//OperatingSystem/apirepositories"/>

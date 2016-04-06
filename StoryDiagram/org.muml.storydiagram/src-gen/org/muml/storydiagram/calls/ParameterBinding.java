@@ -21,12 +21,12 @@ import org.muml.core.expressions.Expression;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.storydiagram.calls.ParameterBinding#getValueExpression <em>Value Expression</em>}</li>
  *   <li>{@link org.muml.storydiagram.calls.ParameterBinding#getParameter <em>Parameter</em>}</li>
  *   <li>{@link org.muml.storydiagram.calls.ParameterBinding#getInvocation <em>Invocation</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.storydiagram.calls.CallsPackage#getParameterBinding()
  * @model
@@ -44,7 +44,7 @@ public interface ParameterBinding extends CommentableElement {
 	 * @return the value of the '<em>Value Expression</em>' containment reference.
 	 * @see #setValueExpression(Expression)
 	 * @see org.muml.storydiagram.calls.CallsPackage#getParameterBinding_ValueExpression()
-	 * @model containment="true" resolveProxies="true" required="true" ordered="false"
+	 * @model containment="true" required="true" ordered="false"
 	 * @generated
 	 */
 	Expression getValueExpression();

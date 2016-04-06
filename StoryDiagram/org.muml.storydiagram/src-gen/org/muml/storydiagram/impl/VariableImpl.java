@@ -8,17 +8,17 @@ package org.muml.storydiagram.impl;
 
 import org.eclipse.emf.ecore.EClass;
 import org.muml.core.impl.TypedElementImpl;
-import org.muml.storydiagram.StorydiagramsPackage;
+import org.muml.storydiagram.StorydiagramPackage;
 import org.muml.storydiagram.Variable;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '<em><b>Variable</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.storydiagram.impl.VariableImpl#getVariableName <em>Variable Name</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -46,7 +46,7 @@ public abstract class VariableImpl extends TypedElementImpl implements Variable 
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return StorydiagramsPackage.Literals.VARIABLE;
+		return StorydiagramPackage.Literals.VARIABLE;
 	}
 
 	/**
@@ -63,8 +63,8 @@ public abstract class VariableImpl extends TypedElementImpl implements Variable 
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case StorydiagramsPackage.VARIABLE__VARIABLE_NAME:
-			return getVariableName();
+			case StorydiagramPackage.VARIABLE__VARIABLE_NAME:
+				return getVariableName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -76,9 +76,8 @@ public abstract class VariableImpl extends TypedElementImpl implements Variable 
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case StorydiagramsPackage.VARIABLE__VARIABLE_NAME:
-			return VARIABLE_NAME_EDEFAULT == null ? getVariableName() != null
-					: !VARIABLE_NAME_EDEFAULT.equals(getVariableName());
+			case StorydiagramPackage.VARIABLE__VARIABLE_NAME:
+				return VARIABLE_NAME_EDEFAULT == null ? getVariableName() != null : !VARIABLE_NAME_EDEFAULT.equals(getVariableName());
 		}
 		return super.eIsSet(featureID);
 	}

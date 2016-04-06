@@ -9,7 +9,7 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated swplatform -->
       <package
-            uri="http://www.fujaba.de/muml/swplatform/0.4.0/"
+            uri="http://www.muml.org/pm/software/platform/1.0.0"
             class="org.muml.pm.software.platform.SwplatformPackage"
             genModel="model/swplatform.genmodel"/>
    </extension>

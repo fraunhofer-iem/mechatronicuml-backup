@@ -8,10 +8,10 @@
     xmlns:gmftool="http://www.eclipse.org/gmf/2005/ToolDefinition">
   <nodes>
     <containmentFeature
-        href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwplatforminstance/HWPlatformInstanceConfiguration/hwplatformInstances"/>
+        href="../../org.muml.pm.hardware/model/hardware.ecore#//hwplatforminstance/HWPlatformInstanceConfiguration/hwplatformInstances"/>
     <ownedChild>
       <domainMetaElement
-          href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwplatforminstance/HWPlatformInstance"/>
+          href="../../org.muml.pm.hardware/model/hardware.ecore#//hwplatforminstance/HWPlatformInstance"/>
       <labelMappings
           xsi:type="gmfmap:FeatureLabelMapping">
         <diagramLabel
@@ -30,25 +30,25 @@
           compartment="//@nodes.0/@ownedChild/@compartments.0"
           referencedChild="//@nodes.0/@ownedChild/@children.0/@ownedChild">
         <containmentFeature
-            href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwplatforminstance/HWPlatformInstance/embeddedHPIC"/>
+            href="../../org.muml.pm.hardware/model/hardware.ecore#//hwplatforminstance/HWPlatformInstance/embeddedHPIC"/>
         <ownedChild>
           <domainMetaElement
-              href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwplatforminstance/HWPlatformInstanceConfiguration"/>
+              href="../../org.muml.pm.hardware/model/hardware.ecore#//hwplatforminstance/HWPlatformInstanceConfiguration"/>
           <diagramNode
               href="platforminstance.gmfgraph#HWPInstanceConfiguration"/>
           <children
               compartment="//@nodes.0/@ownedChild/@children.0/@ownedChild/@compartments.0"
               referencedChild="//@nodes.0/@ownedChild">
             <containmentFeature
-                href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwplatforminstance/HWPlatformInstanceConfiguration/hwplatformInstances"/>
+                href="../../org.muml.pm.hardware/model/hardware.ecore#//hwplatforminstance/HWPlatformInstanceConfiguration/hwplatformInstances"/>
           </children>
           <children
               compartment="//@nodes.0/@ownedChild/@children.0/@ownedChild/@compartments.0">
             <containmentFeature
-                href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwplatforminstance/HWPlatformInstanceConfiguration/resources"/>
+                href="../../org.muml.pm.hardware/model/hardware.ecore#//hwplatforminstance/HWPlatformInstanceConfiguration/resources"/>
             <ownedChild>
               <domainMetaElement
-                  href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwresourceinstance/StructuredResourceInstance"/>
+                  href="../../org.muml.pm.hardware/model/hardware.ecore#//hwresourceinstance/StructuredResourceInstance"/>
               <labelMappings
                   xsi:type="gmfmap:FeatureLabelMapping">
                 <diagramLabel
@@ -94,10 +94,10 @@
                   href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#Resource"/>
               <children>
                 <containmentFeature
-                    href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwresourceinstance/ResourceInstance/hwports"/>
+                    href="../../org.muml.pm.hardware/model/hardware.ecore#//hwresourceinstance/ResourceInstance/hwports"/>
                 <ownedChild>
                   <domainMetaElement
-                      href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwplatforminstance/HWPortInstance"/>
+                      href="../../org.muml.pm.hardware/model/hardware.ecore#//hwplatforminstance/HWPortInstance"/>
                   <labelMappings
                       xsi:type="gmfmap:ExpressionLabelMapping">
                     <diagramLabel
@@ -114,10 +114,10 @@
           <children
               compartment="//@nodes.0/@ownedChild/@children.0/@ownedChild/@compartments.0">
             <containmentFeature
-                href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwplatforminstance/HWPlatformInstanceConfiguration/resources"/>
+                href="../../org.muml.pm.hardware/model/hardware.ecore#//hwplatforminstance/HWPlatformInstanceConfiguration/resources"/>
             <ownedChild>
               <domainMetaElement
-                  href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwresourceinstance/ActuatorInstance"/>
+                  href="../../org.muml.pm.hardware/model/hardware.ecore#//hwresourceinstance/ActuatorInstance"/>
               <labelMappings
                   xsi:type="gmfmap:FeatureLabelMapping">
                 <diagramLabel
@@ -149,17 +149,17 @@
               <children
                   referencedChild="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild">
                 <containmentFeature
-                    href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwresourceinstance/ResourceInstance/hwports"/>
+                    href="../../org.muml.pm.hardware/model/hardware.ecore#//hwresourceinstance/ResourceInstance/hwports"/>
               </children>
             </ownedChild>
           </children>
           <children
               compartment="//@nodes.0/@ownedChild/@children.0/@ownedChild/@compartments.0">
             <containmentFeature
-                href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwplatforminstance/HWPlatformInstanceConfiguration/resources"/>
+                href="../../org.muml.pm.hardware/model/hardware.ecore#//hwplatforminstance/HWPlatformInstanceConfiguration/resources"/>
             <ownedChild>
               <domainMetaElement
-                  href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwresourceinstance/SensorInstance"/>
+                  href="../../org.muml.pm.hardware/model/hardware.ecore#//hwresourceinstance/SensorInstance"/>
               <labelMappings
                   xsi:type="gmfmap:FeatureLabelMapping">
                 <diagramLabel
@@ -192,17 +192,17 @@
               <children
                   referencedChild="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild">
                 <containmentFeature
-                    href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwresourceinstance/ResourceInstance/hwports"/>
+                    href="../../org.muml.pm.hardware/model/hardware.ecore#//hwresourceinstance/ResourceInstance/hwports"/>
               </children>
             </ownedChild>
           </children>
           <children
               compartment="//@nodes.0/@ownedChild/@children.0/@ownedChild/@compartments.0">
             <containmentFeature
-                href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwplatforminstance/HWPlatformInstanceConfiguration/networkingHardwareInstances"/>
+                href="../../org.muml.pm.hardware/model/hardware.ecore#//hwplatforminstance/HWPlatformInstanceConfiguration/networkingHardwareInstances"/>
             <ownedChild>
               <domainMetaElement
-                  href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwplatforminstance/BusInstance"/>
+                  href="../../org.muml.pm.hardware/model/hardware.ecore#//hwplatforminstance/BusInstance"/>
               <labelMappings
                   xsi:type="gmfmap:ExpressionLabelMapping"
                   readOnly="true">
@@ -226,10 +226,10 @@
           <children
               compartment="//@nodes.0/@ownedChild/@children.0/@ownedChild/@compartments.0">
             <containmentFeature
-                href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwplatforminstance/HWPlatformInstanceConfiguration/networkingHardwareInstances"/>
+                href="../../org.muml.pm.hardware/model/hardware.ecore#//hwplatforminstance/HWPlatformInstanceConfiguration/networkingHardwareInstances"/>
             <ownedChild>
               <domainMetaElement
-                  href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwplatforminstance/NetworkBridgeInstance"/>
+                  href="../../org.muml.pm.hardware/model/hardware.ecore#//hwplatforminstance/NetworkBridgeInstance"/>
               <labelMappings
                   xsi:type="gmfmap:ExpressionLabelMapping"
                   readOnly="true">
@@ -251,10 +251,10 @@
       </children>
       <children>
         <containmentFeature
-            href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwplatforminstance/HWPlatformInstance/delegationPorts"/>
+            href="../../org.muml.pm.hardware/model/hardware.ecore#//hwplatforminstance/HWPlatformInstance/delegationPorts"/>
         <ownedChild>
           <domainMetaElement
-              href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwplatforminstance/DelegationHWPortInstance"/>
+              href="../../org.muml.pm.hardware/model/hardware.ecore#//hwplatforminstance/DelegationHWPortInstance"/>
           <labelMappings
               xsi:type="gmfmap:ExpressionLabelMapping">
             <diagramLabel
@@ -277,9 +277,9 @@
   </nodes>
   <links>
     <domainMetaElement
-        href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwplatforminstance/NetworkConnectorInstance"/>
+        href="../../org.muml.pm.hardware/model/hardware.ecore#//hwplatforminstance/NetworkConnectorInstance"/>
     <containmentFeature
-        href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwplatforminstance/HWPlatformInstanceConfiguration/networkConnectorInstances"/>
+        href="../../org.muml.pm.hardware/model/hardware.ecore#//hwplatforminstance/HWPlatformInstanceConfiguration/networkConnectorInstances"/>
     <tool
         xsi:type="gmftool:CreationTool"
         href="../../de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram/model/resourceinstance.gmftool#//@palette/@tools.0/@tools.5"/>
@@ -296,9 +296,9 @@
     <diagramCanvas
         href="platforminstance.gmfgraph#hardware"/>
     <domainModel
-        href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwplatforminstance"/>
+        href="../../org.muml.pm.hardware/model/hardware.ecore#//hwplatforminstance"/>
     <domainMetaElement
-        href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwplatforminstance/HWPlatformInstanceConfiguration"/>
+        href="../../org.muml.pm.hardware/model/hardware.ecore#//hwplatforminstance/HWPlatformInstanceConfiguration"/>
     <palette
         href="platforminstance.gmftool#//@palette"/>
   </diagram>

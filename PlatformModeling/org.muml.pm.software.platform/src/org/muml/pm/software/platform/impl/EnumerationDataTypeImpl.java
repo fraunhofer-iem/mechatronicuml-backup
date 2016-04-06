@@ -24,10 +24,10 @@ import org.muml.pm.software.platform.SwplatformPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.pm.software.platform.impl.EnumerationDataTypeImpl#getEnumerationValues <em>Enumeration Values</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -17,11 +17,11 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.example.storydiagram.reachanalysis.ttccarplatooning.Environment#getMaxNumOfCars <em>Max Num Of Cars</em>}</li>
  *   <li>{@link org.muml.example.storydiagram.reachanalysis.ttccarplatooning.Environment#getCars <em>Cars</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.example.storydiagram.reachanalysis.ttccarplatooning.TtccarplatooningPackage#getEnvironment()
  * @model

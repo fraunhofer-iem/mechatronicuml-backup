@@ -36,7 +36,7 @@ public class HardwareMetamodelTest extends MetamodelTest {
 
 		
 		Resource mumlModel = TestUtilities.loadResource(resourceSet,
-				"de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore");
+				"org.muml.pm.hardware/model/hardware.ecore");
 
 
 		

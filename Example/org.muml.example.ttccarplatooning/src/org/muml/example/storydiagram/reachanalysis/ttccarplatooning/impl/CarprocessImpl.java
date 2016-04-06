@@ -35,6 +35,7 @@ import org.muml.example.storydiagram.reachanalysis.ttccarplatooning.Ttccarplatoo
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.example.storydiagram.reachanalysis.ttccarplatooning.impl.CarprocessImpl#getCurState <em>Cur State</em>}</li>
  *   <li>{@link org.muml.example.storydiagram.reachanalysis.ttccarplatooning.impl.CarprocessImpl#getQueue <em>Queue</em>}</li>
@@ -45,7 +46,6 @@ import org.muml.example.storydiagram.reachanalysis.ttccarplatooning.Ttccarplatoo
  *   <li>{@link org.muml.example.storydiagram.reachanalysis.ttccarplatooning.impl.CarprocessImpl#getBldr <em>Bldr</em>}</li>
  *   <li>{@link org.muml.example.storydiagram.reachanalysis.ttccarplatooning.impl.CarprocessImpl#getCarParameter <em>Car Parameter</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

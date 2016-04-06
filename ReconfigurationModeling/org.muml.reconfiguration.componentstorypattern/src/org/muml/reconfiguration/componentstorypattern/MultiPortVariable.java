@@ -11,12 +11,12 @@ import org.eclipse.emf.common.util.EList;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.reconfiguration.componentstorypattern.MultiPortVariable#getSubPortVariables <em>Sub Port Variables</em>}</li>
  *   <li>{@link org.muml.reconfiguration.componentstorypattern.MultiPortVariable#getGmfSubPortVariables <em>Gmf Sub Port Variables</em>}</li>
  *   <li>{@link org.muml.reconfiguration.componentstorypattern.MultiPortVariable#getOrderConstraints <em>Order Constraints</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.reconfiguration.componentstorypattern.ComponentstorypatternPackage#getMultiPortVariable()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL MultiPortCreatedOnlyIfParentCreated='-- Multi Port Variables may only be created if their parent is created as well\r\nif(self.bindingOperator = storydiagrams::patterns::BindingOperator::CREATE and self.eContainer().oclIsKindOf(ComponentStoryPatternVariable)) then\r\n\tself.eContainer().oclAsType(ComponentStoryPatternVariable).bindingOperator = storydiagrams::patterns::BindingOperator::CREATE\r\nelse\r\n\ttrue\r\nendif'"

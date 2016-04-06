@@ -26,11 +26,11 @@ import org.muml.storydiagram.calls.ParameterBinding;
  * <!-- begin-user-doc --> An implementation of the model object '<em><b>Invocation</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.storydiagram.calls.impl.InvocationImpl#getOwnedParameterBindings <em>Owned Parameter Bindings</em>}</li>
  *   <li>{@link org.muml.storydiagram.calls.impl.InvocationImpl#getCallee <em>Callee</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -77,10 +77,7 @@ public abstract class InvocationImpl extends CommentableElementImpl implements
 	 */
 	public EList<ParameterBinding> getOwnedParameterBindings() {
 		if (ownedParameterBindings == null) {
-			ownedParameterBindings = new EObjectContainmentWithInverseEList.Resolving<ParameterBinding>(
-					ParameterBinding.class, this,
-					CallsPackage.INVOCATION__OWNED_PARAMETER_BINDINGS,
-					CallsPackage.PARAMETER_BINDING__INVOCATION);
+			ownedParameterBindings = new EObjectContainmentWithInverseEList<ParameterBinding>(ParameterBinding.class, this, CallsPackage.INVOCATION__OWNED_PARAMETER_BINDINGS, CallsPackage.PARAMETER_BINDING__INVOCATION);
 		}
 		return ownedParameterBindings;
 	}
@@ -91,12 +88,11 @@ public abstract class InvocationImpl extends CommentableElementImpl implements
 	 */
 	public Callable getCallee() {
 		if (callee != null && callee.eIsProxy()) {
-			InternalEObject oldCallee = (InternalEObject) callee;
-			callee = (Callable) eResolveProxy(oldCallee);
+			InternalEObject oldCallee = (InternalEObject)callee;
+			callee = (Callable)eResolveProxy(oldCallee);
 			if (callee != oldCallee) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							CallsPackage.INVOCATION__CALLEE, oldCallee, callee));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CallsPackage.INVOCATION__CALLEE, oldCallee, callee));
 			}
 		}
 		return callee;
@@ -118,8 +114,7 @@ public abstract class InvocationImpl extends CommentableElementImpl implements
 		Callable oldCallee = callee;
 		callee = newCallee;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					CallsPackage.INVOCATION__CALLEE, oldCallee, callee));
+			eNotify(new ENotificationImpl(this, Notification.SET, CallsPackage.INVOCATION__CALLEE, oldCallee, callee));
 	}
 
 	/**
@@ -131,9 +126,8 @@ public abstract class InvocationImpl extends CommentableElementImpl implements
 	public NotificationChain eInverseAdd(InternalEObject otherEnd,
 			int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case CallsPackage.INVOCATION__OWNED_PARAMETER_BINDINGS:
-			return ((InternalEList<InternalEObject>) (InternalEList<?>) getOwnedParameterBindings())
-					.basicAdd(otherEnd, msgs);
+			case CallsPackage.INVOCATION__OWNED_PARAMETER_BINDINGS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getOwnedParameterBindings()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -146,9 +140,8 @@ public abstract class InvocationImpl extends CommentableElementImpl implements
 	public NotificationChain eInverseRemove(InternalEObject otherEnd,
 			int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case CallsPackage.INVOCATION__OWNED_PARAMETER_BINDINGS:
-			return ((InternalEList<?>) getOwnedParameterBindings())
-					.basicRemove(otherEnd, msgs);
+			case CallsPackage.INVOCATION__OWNED_PARAMETER_BINDINGS:
+				return ((InternalEList<?>)getOwnedParameterBindings()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -160,12 +153,11 @@ public abstract class InvocationImpl extends CommentableElementImpl implements
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case CallsPackage.INVOCATION__OWNED_PARAMETER_BINDINGS:
-			return getOwnedParameterBindings();
-		case CallsPackage.INVOCATION__CALLEE:
-			if (resolve)
-				return getCallee();
-			return basicGetCallee();
+			case CallsPackage.INVOCATION__OWNED_PARAMETER_BINDINGS:
+				return getOwnedParameterBindings();
+			case CallsPackage.INVOCATION__CALLEE:
+				if (resolve) return getCallee();
+				return basicGetCallee();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -178,14 +170,13 @@ public abstract class InvocationImpl extends CommentableElementImpl implements
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case CallsPackage.INVOCATION__OWNED_PARAMETER_BINDINGS:
-			getOwnedParameterBindings().clear();
-			getOwnedParameterBindings().addAll(
-					(Collection<? extends ParameterBinding>) newValue);
-			return;
-		case CallsPackage.INVOCATION__CALLEE:
-			setCallee((Callable) newValue);
-			return;
+			case CallsPackage.INVOCATION__OWNED_PARAMETER_BINDINGS:
+				getOwnedParameterBindings().clear();
+				getOwnedParameterBindings().addAll((Collection<? extends ParameterBinding>)newValue);
+				return;
+			case CallsPackage.INVOCATION__CALLEE:
+				setCallee((Callable)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -197,12 +188,12 @@ public abstract class InvocationImpl extends CommentableElementImpl implements
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case CallsPackage.INVOCATION__OWNED_PARAMETER_BINDINGS:
-			getOwnedParameterBindings().clear();
-			return;
-		case CallsPackage.INVOCATION__CALLEE:
-			setCallee((Callable) null);
-			return;
+			case CallsPackage.INVOCATION__OWNED_PARAMETER_BINDINGS:
+				getOwnedParameterBindings().clear();
+				return;
+			case CallsPackage.INVOCATION__CALLEE:
+				setCallee((Callable)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -214,11 +205,10 @@ public abstract class InvocationImpl extends CommentableElementImpl implements
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case CallsPackage.INVOCATION__OWNED_PARAMETER_BINDINGS:
-			return ownedParameterBindings != null
-					&& !ownedParameterBindings.isEmpty();
-		case CallsPackage.INVOCATION__CALLEE:
-			return callee != null;
+			case CallsPackage.INVOCATION__OWNED_PARAMETER_BINDINGS:
+				return ownedParameterBindings != null && !ownedParameterBindings.isEmpty();
+			case CallsPackage.INVOCATION__CALLEE:
+				return callee != null;
 		}
 		return super.eIsSet(featureID);
 	}

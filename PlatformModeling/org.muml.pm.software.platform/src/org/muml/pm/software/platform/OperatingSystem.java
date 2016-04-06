@@ -17,12 +17,12 @@ import org.muml.core.NamedElement;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.pm.software.platform.OperatingSystem#getApirepositories <em>Apirepositories</em>}</li>
  *   <li>{@link org.muml.pm.software.platform.OperatingSystem#getEnumerationDataTypes <em>Enumeration Data Types</em>}</li>
  *   <li>{@link org.muml.pm.software.platform.OperatingSystem#getImports <em>Imports</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.pm.software.platform.SwplatformPackage#getOperatingSystem()
  * @model

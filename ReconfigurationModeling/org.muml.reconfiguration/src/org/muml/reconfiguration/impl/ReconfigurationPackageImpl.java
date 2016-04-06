@@ -16,14 +16,12 @@ import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.muml.core.CorePackage;
 import org.muml.core.expressions.ExpressionsPackage;
+import org.muml.pim.PimPackage;
 import org.muml.pim.behavior.BehaviorPackage;
 import org.muml.pim.component.ComponentPackage;
 import org.muml.pim.connector.ConnectorPackage;
-import org.muml.pim.constraint.ConstraintPackage;
 import org.muml.pim.instance.InstancePackage;
 import org.muml.pim.msgtype.MsgtypePackage;
-import org.muml.pim.pattern.PatternPackage;
-import org.muml.pim.protocol.ProtocolPackage;
 import org.muml.pim.realtimestatechart.RealtimestatechartPackage;
 import org.muml.pim.types.TypesPackage;
 import org.muml.pim.valuetype.ValuetypePackage;
@@ -70,7 +68,7 @@ import org.muml.reconfiguration.reconfInstance.impl.ReconfInstancePackageImpl;
 import org.muml.reconfiguration.structdatatype.StructdatatypePackage;
 import org.muml.reconfiguration.structdatatype.impl.StructdatatypePackageImpl;
 import org.muml.reconfiguration.util.ReconfigurationValidator;
-import org.muml.storydiagram.StorydiagramsPackage;
+import org.storydriven.storydiagrams.StorydiagramsPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -350,18 +348,8 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 		isInited = true;
 
 		// Initialize simple dependencies
-		ComponentPackage.eINSTANCE.eClass();
-		ConstraintPackage.eINSTANCE.eClass();
-		InstancePackage.eINSTANCE.eClass();
-		ProtocolPackage.eINSTANCE.eClass();
-		RealtimestatechartPackage.eINSTANCE.eClass();
-		MsgtypePackage.eINSTANCE.eClass();
-		TypesPackage.eINSTANCE.eClass();
-		ConnectorPackage.eINSTANCE.eClass();
-		ValuetypePackage.eINSTANCE.eClass();
-		BehaviorPackage.eINSTANCE.eClass();
-		PatternPackage.eINSTANCE.eClass();
-		StorydiagramsPackage.eINSTANCE.eClass();
+		PimPackage.eINSTANCE.eClass();
+		StorydiagramPackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
 		ExpressionPackageImpl theExpressionPackage = (ExpressionPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ExpressionPackage.eNS_URI) instanceof ExpressionPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ExpressionPackage.eNS_URI) : ExpressionPackage.eINSTANCE);

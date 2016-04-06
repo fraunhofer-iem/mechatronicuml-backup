@@ -24,6 +24,7 @@ import org.muml.verification.core.runtime.SingleRoleInstance;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.verification.core.runtime.impl.SingleRoleInstanceImpl#getMultiInteractionEndpointInstance <em>Multi Interaction Endpoint Instance</em>}</li>
  *   <li>{@link org.muml.verification.core.runtime.impl.SingleRoleInstanceImpl#getNext <em>Next</em>}</li>
@@ -31,7 +32,6 @@ import org.muml.verification.core.runtime.SingleRoleInstance;
  *   <li>{@link org.muml.verification.core.runtime.impl.SingleRoleInstanceImpl#getFirst <em>First</em>}</li>
  *   <li>{@link org.muml.verification.core.runtime.impl.SingleRoleInstanceImpl#getLast <em>Last</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

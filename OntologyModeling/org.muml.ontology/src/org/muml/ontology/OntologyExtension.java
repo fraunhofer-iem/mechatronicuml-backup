@@ -21,10 +21,10 @@ import org.muml.core.Extension;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.ontology.OntologyExtension#getOntologyReference <em>Ontology Reference</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.ontology.OntologyPackage#getOntologyExtension()
  * @model

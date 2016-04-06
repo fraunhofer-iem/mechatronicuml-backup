@@ -16,10 +16,10 @@ import org.muml.pim.connector.ConnectorInstance;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.verification.core.runtime.RuntimeConnectorInstance#getTransientMessages <em>Transient Messages</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.verification.core.runtime.RuntimePackage#getRuntimeConnectorInstance()
  * @model abstract="true"

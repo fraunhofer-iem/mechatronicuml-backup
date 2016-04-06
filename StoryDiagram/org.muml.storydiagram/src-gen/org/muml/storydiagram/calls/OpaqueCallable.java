@@ -22,11 +22,11 @@ import org.muml.storydiagram.calls.expressions.MethodCallExpression;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.storydiagram.calls.OpaqueCallable#getName <em>Name</em>}</li>
  *   <li>{@link org.muml.storydiagram.calls.OpaqueCallable#getCallExpression <em>Call Expression</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.storydiagram.calls.CallsPackage#getOpaqueCallable()
  * @model

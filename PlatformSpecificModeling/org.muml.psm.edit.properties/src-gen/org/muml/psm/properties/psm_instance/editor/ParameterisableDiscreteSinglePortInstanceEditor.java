@@ -4,9 +4,7 @@ package org.muml.psm.properties.psm_instance.editor;
 /**
  * @generated
  */
-public class ParameterisableDiscreteSinglePortInstanceEditor
-		extends
-			org.muml.ape.runtime.editors.ClassPropertyEditor {
+public class ParameterisableDiscreteSinglePortInstanceEditor extends org.muml.ape.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
@@ -23,63 +21,45 @@ public class ParameterisableDiscreteSinglePortInstanceEditor
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorExtension_property_tab_extensionsTab_Editor(), false);
+			addPropertyEditor(createEditorExtensions_property_tab_extensionsTab_Editor(), false);
 
 			addPropertyEditor(createEditorComment_property_tab_documentationTab_Editor(), false);
 
-			addPropertyEditor(createEditorExtension_property_tab_extensionsTab_Editor(), false);
+			addPropertyEditor(createEditorExtensions_property_tab_extensionsTab_Editor(), false);
 
 			addPropertyEditor(createEditorName_property_tab_generalTab_Editor(), false);
 
 			addPropertyEditor(createEditorType_property_tab_generalTab_Editor(), false);
 
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists", "Lists", org.eclipse.swt.SWT.HORIZONTAL,
-					true);
-
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					createEditorConnectorInstances_property_tab_generalTab_Editor(), false);
-
-			addPropertyEditor(createEditorComponentInstance_property_tab_generalTab_Editor(), false);
-
-			addPropertyEditor(createEditorExtension_property_tab_extensionsTab_Editor(), false);
+			addPropertyEditor(createEditorExtensions_property_tab_extensionsTab_Editor(), false);
 
 			addPropertyEditor(createEditorComment_property_tab_documentationTab_Editor(), false);
 
-			addPropertyEditor(createEditorExtension_property_tab_extensionsTab_Editor(), false);
+			addPropertyEditor(createEditorExtensions_property_tab_extensionsTab_Editor(), false);
 
 			addPropertyEditor(createEditorName_property_tab_generalTab_Editor(), false);
 
 			addPropertyEditor(createEditorType_property_tab_generalTab_Editor(), false);
 
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists", "Lists", org.eclipse.swt.SWT.HORIZONTAL,
-					true);
-
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					createEditorConnectorInstances_property_tab_generalTab_Editor(), false);
-
-			addPropertyEditor(createEditorExtension_property_tab_extensionsTab_Editor(), false);
+			addPropertyEditor(createEditorExtensions_property_tab_extensionsTab_Editor(), false);
 
 			addPropertyEditor(createEditorComment_property_tab_documentationTab_Editor(), false);
 
-			addPropertyEditor(createEditorExtension_property_tab_extensionsTab_Editor(), false);
+			addPropertyEditor(createEditorExtensions_property_tab_extensionsTab_Editor(), false);
 
 			addPropertyEditor(createEditorName_property_tab_generalTab_Editor(), false);
 
 			addPropertyEditor(createEditorType_property_tab_generalTab_Editor(), false);
-
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists", "Lists", org.eclipse.swt.SWT.HORIZONTAL,
-					true);
-
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					createEditorConnectorInstances_property_tab_generalTab_Editor(), false);
-
-			addPropertyEditor(createEditorMultiInteractionEndpointInstance_property_tab_generalTab_Editor(), false);
 
 			addPropertyEditor(createEditorNext_property_tab_generalTab_Editor(), false);
 
 			addPropertyEditor(createEditorPrevious_property_tab_generalTab_Editor(), false);
 
+			addPropertyEditor(createEditorBindings_property_tab_psmTab_Editor(), false);
+
 		} else if ("property.tab.psm".equals(tab)) { // Tab PSM
+
+			addPropertyEditor(createEditorBindings_property_tab_psmTab_Editor(), false);
 
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
@@ -87,35 +67,13 @@ public class ParameterisableDiscreteSinglePortInstanceEditor
 
 			addPropertyEditor(createEditorType_property_tab_generalTab_Editor(), false);
 
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists", "Lists", org.eclipse.swt.SWT.HORIZONTAL,
-					true);
-
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					createEditorConnectorInstances_property_tab_generalTab_Editor(), false);
-
-			addPropertyEditor(createEditorComponentInstance_property_tab_generalTab_Editor(), false);
-
 			addPropertyEditor(createEditorName_property_tab_generalTab_Editor(), false);
 
 			addPropertyEditor(createEditorType_property_tab_generalTab_Editor(), false);
 
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists", "Lists", org.eclipse.swt.SWT.HORIZONTAL,
-					true);
-
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					createEditorConnectorInstances_property_tab_generalTab_Editor(), false);
-
 			addPropertyEditor(createEditorName_property_tab_generalTab_Editor(), false);
 
 			addPropertyEditor(createEditorType_property_tab_generalTab_Editor(), false);
-
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists", "Lists", org.eclipse.swt.SWT.HORIZONTAL,
-					true);
-
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					createEditorConnectorInstances_property_tab_generalTab_Editor(), false);
-
-			addPropertyEditor(createEditorMultiInteractionEndpointInstance_property_tab_generalTab_Editor(), false);
 
 			addPropertyEditor(createEditorNext_property_tab_generalTab_Editor(), false);
 
@@ -131,21 +89,33 @@ public class ParameterisableDiscreteSinglePortInstanceEditor
 
 		} else if ("property.tab.extensions".equals(tab)) { // Tab Extensions
 
-			addPropertyEditor(createEditorExtension_property_tab_extensionsTab_Editor(), false);
+			addPropertyEditor(createEditorExtensions_property_tab_extensionsTab_Editor(), false);
 
-			addPropertyEditor(createEditorExtension_property_tab_extensionsTab_Editor(), false);
+			addPropertyEditor(createEditorExtensions_property_tab_extensionsTab_Editor(), false);
 
-			addPropertyEditor(createEditorExtension_property_tab_extensionsTab_Editor(), false);
+			addPropertyEditor(createEditorExtensions_property_tab_extensionsTab_Editor(), false);
 
-			addPropertyEditor(createEditorExtension_property_tab_extensionsTab_Editor(), false);
+			addPropertyEditor(createEditorExtensions_property_tab_extensionsTab_Editor(), false);
 
-			addPropertyEditor(createEditorExtension_property_tab_extensionsTab_Editor(), false);
+			addPropertyEditor(createEditorExtensions_property_tab_extensionsTab_Editor(), false);
 
-			addPropertyEditor(createEditorExtension_property_tab_extensionsTab_Editor(), false);
+			addPropertyEditor(createEditorExtensions_property_tab_extensionsTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
 		} else if ("property.tab.descriptionAspects".equals(tab)) { // Tab Description Aspects
+
+		} else if ("property.tab.condition".equals(tab)) { // Tab Condition
+
+		} else if ("property.tab.effect".equals(tab)) { // Tab Effect
+
+		} else if ("property.tab.deadline".equals(tab)) { // Tab Deadline
+
+		} else if ("property.tab.sampling".equals(tab)) { // Tab Sampling
+
+		} else if ("property.tab.message".equals(tab)) { // Tab Message
+
+		} else if ("property.tab.behavior".equals(tab)) { // Tab Behavior
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
@@ -153,34 +123,19 @@ public class ParameterisableDiscreteSinglePortInstanceEditor
 		}
 	}
 
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorComponentInstance_property_tab_generalTab;
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorComponentInstance_property_tab_generalTab_Editor() {
-		if (this.editorComponentInstance_property_tab_generalTab == null) {
-			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.pim.instance.InstancePackage.eINSTANCE
-					.getPortInstance_ComponentInstance();
-			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.ComboPropertyEditor(
-					adapterFactory, feature);
-
-			editor.setTooltipMessage("The component instance this port instance belongs to.");
-
-			this.editorComponentInstance_property_tab_generalTab = editor;
-		}
-		return this.editorComponentInstance_property_tab_generalTab;
-	}
-
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorConnectorInstances_property_tab_generalTab;
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorConnectorInstances_property_tab_generalTab_Editor() {
-		if (this.editorConnectorInstances_property_tab_generalTab == null) {
-			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.pim.connector.ConnectorPackage.eINSTANCE
-					.getConnectorEndpointInstance_ConnectorInstances();
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorBindings_property_tab_psmTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorBindings_property_tab_psmTab_Editor() {
+		if (this.editorBindings_property_tab_psmTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.psm.psm_instance.Psm_instancePackage.eINSTANCE
+					.getParameterisableDiscreteSinglePortInstance_Bindings();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.ListPropertyEditor(
 					adapterFactory, feature);
 
-			editor.setTooltipMessage("The connector instances attached to this endpoint instance.");
+			editor.setTooltipMessage("The parameter bindings for each parameter of the statechart of the port.");
 
-			this.editorConnectorInstances_property_tab_generalTab = editor;
+			this.editorBindings_property_tab_psmTab = editor;
 		}
-		return this.editorConnectorInstances_property_tab_generalTab;
+		return this.editorBindings_property_tab_psmTab;
 	}
 
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorType_property_tab_generalTab;
@@ -214,17 +169,19 @@ public class ParameterisableDiscreteSinglePortInstanceEditor
 		return this.editorComment_property_tab_documentationTab;
 	}
 
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorExtension_property_tab_extensionsTab;
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorExtension_property_tab_extensionsTab_Editor() {
-		if (this.editorExtension_property_tab_extensionsTab == null) {
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorExtensions_property_tab_extensionsTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorExtensions_property_tab_extensionsTab_Editor() {
+		if (this.editorExtensions_property_tab_extensionsTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.core.CorePackage.eINSTANCE
-					.getExtendableElement_Extension();
+					.getExtendableElement_Extensions();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.FlattenedListPropertyEditor(
 					adapterFactory, feature);
 
-			this.editorExtension_property_tab_extensionsTab = editor;
+			editor.setTooltipMessage("Extendable Elements can be extended by an Extension.");
+
+			this.editorExtensions_property_tab_extensionsTab = editor;
 		}
-		return this.editorExtension_property_tab_extensionsTab;
+		return this.editorExtensions_property_tab_extensionsTab;
 	}
 
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorName_property_tab_generalTab;
@@ -252,22 +209,6 @@ public class ParameterisableDiscreteSinglePortInstanceEditor
 			this.editorName_property_tab_generalTab = editor;
 		}
 		return this.editorName_property_tab_generalTab;
-	}
-
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorMultiInteractionEndpointInstance_property_tab_generalTab;
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorMultiInteractionEndpointInstance_property_tab_generalTab_Editor() {
-		if (this.editorMultiInteractionEndpointInstance_property_tab_generalTab == null) {
-			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.pim.connector.ConnectorPackage.eINSTANCE
-					.getDiscreteSingleInteractionEndpointInstance_MultiInteractionEndpointInstance();
-			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.ComboPropertyEditor(
-					adapterFactory, feature);
-
-			editor.setTooltipMessage(
-					"If this is an instance of a multi discrete interaction endpoint, refers to the corresponding multi instance.");
-
-			this.editorMultiInteractionEndpointInstance_property_tab_generalTab = editor;
-		}
-		return this.editorMultiInteractionEndpointInstance_property_tab_generalTab;
 	}
 
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorNext_property_tab_generalTab;
@@ -311,8 +252,7 @@ public class ParameterisableDiscreteSinglePortInstanceEditor
 	 */
 	public ParameterisableDiscreteSinglePortInstanceEditor(String tab) {
 		this(tab, org.muml.psm.properties.util.PropertiesUtil.INSTANCE.getAdapterFactory(),
-				org.muml.psm.psm_instance.Psm_instancePackage.eINSTANCE
-						.getParameterisableDiscreteSinglePortInstance());
+				org.muml.psm.psm_instance.Psm_instancePackage.eINSTANCE.getParameterisableDiscreteSinglePortInstance());
 	}
 
 	/**
@@ -326,10 +266,10 @@ public class ParameterisableDiscreteSinglePortInstanceEditor
 
 		@Override
 		public boolean hasTab(java.lang.String tab) {
-			return java.util.Arrays.asList(new java.lang.String[]{"property.tab.general", "property.tab.general",
-					"property.tab.general", "property.tab.documentation", "property.tab.extensions",
-					"property.tab.general", "property.tab.general", "property.tab.general", "property.tab.general"})
-					.contains(tab);
+			return java.util.Arrays.asList(new java.lang.String[]{"property.tab.psm", "property.tab.general",
+					"property.tab.general", "property.tab.general", "property.tab.documentation",
+					"property.tab.extensions", "property.tab.general", "property.tab.general", "property.tab.general",
+					"property.tab.general"}).contains(tab);
 		}
 	}
 

@@ -27,10 +27,10 @@ import org.muml.ontology.OntologyPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.ontology.impl.OntologyExtensionImpl#getOntologyReference <em>Ontology Reference</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

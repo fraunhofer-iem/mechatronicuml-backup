@@ -12,10 +12,10 @@ import org.muml.pim.connector.Connector;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.reconfiguration.componentstorypattern.ConnectorVariable#getPortVariables <em>Port Variables</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.reconfiguration.componentstorypattern.ComponentstorypatternPackage#getConnectorVariable()
  * @model abstract="true"

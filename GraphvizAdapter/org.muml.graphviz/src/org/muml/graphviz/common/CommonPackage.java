@@ -42,7 +42,7 @@ public interface CommonPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.fujaba.de/graphviz/common/0.1.0";
+	String eNS_URI = "http://www.muml.org/graphviz/common/1.0.0";
 
 	/**
 	 * The package namespace name.
@@ -117,22 +117,22 @@ public interface CommonPackage extends EPackage {
 	int NODE = 1;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NODE__ANNOTATION = CorePackage.NAMED_ELEMENT__ANNOTATIONS;
+	int NODE__ANNOTATIONS = CorePackage.NAMED_ELEMENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NODE__EXTENSION = CorePackage.NAMED_ELEMENT__EXTENSIONS;
+	int NODE__EXTENSIONS = CorePackage.NAMED_ELEMENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.

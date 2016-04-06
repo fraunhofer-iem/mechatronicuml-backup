@@ -9,7 +9,7 @@ import org.junit.runners.Parameterized.Parameters;
 import org.muml.pim.PimPackage;
 import org.muml.reconfiguration.componentstorydiagram.ComponentstorydiagramPackage;
 import org.muml.reconfiguration.componentstorypattern.ComponentstorypatternPackage;
-import org.muml.storydiagram.StorydiagramsPackage;
+import org.muml.storydiagram.StorydiagramPackage;
 import org.junit.runners.Parameterized;
 
 @RunWith(Parameterized.class)
@@ -26,7 +26,7 @@ public class ReconfDiagramPluginXmlTest extends org.muml.core.tests.DiagramPlugi
 		PimPackage.eINSTANCE.eClass();
 		ComponentstorydiagramPackage.eINSTANCE.eClass();
 		ComponentstorypatternPackage.eINSTANCE.eClass();
-		StorydiagramsPackage.eINSTANCE.eClass();
+		StorydiagramPackage.eINSTANCE.eClass();
 	}
 	
 	

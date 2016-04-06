@@ -24,7 +24,7 @@ import org.eclipse.m2m.qvt.oml.ModelExtent;
 import org.eclipse.m2m.qvt.oml.TransformationExecutor;
 import org.junit.Before;
 import org.junit.Test;
-import org.muml.storydiagram.StorydiagramsPackage;
+import org.muml.storydiagram.StorydiagramPackage;
 import org.muml.storydiagram.activities.Activity;
 import org.muml.storydiagram.activities.ActivityEdge;
 import org.muml.storydiagram.activities.ActivityFinalNode;
@@ -55,7 +55,7 @@ public abstract class TransformationTest {
 	public void setUp() throws Exception
 	{
 		EcorePackage.eINSTANCE.eClass();
-		StorydiagramsPackage.eINSTANCE.eClass();
+		StorydiagramPackage.eINSTANCE.eClass();
 		
 
 		load(getRuleName());

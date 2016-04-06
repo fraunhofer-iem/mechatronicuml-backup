@@ -50,7 +50,7 @@ public final class RuntimeModelEditPlugin extends EMFPlugin {
 	public RuntimeModelEditPlugin() {
 		super
 		  (new ResourceLocator [] {
-		     MumlEditPlugin.INSTANCE,
+		     org.muml.pim.provider.MumlEditPlugin.INSTANCE,
 		     CoreEditPlugin.INSTANCE,
 		   });
 	}

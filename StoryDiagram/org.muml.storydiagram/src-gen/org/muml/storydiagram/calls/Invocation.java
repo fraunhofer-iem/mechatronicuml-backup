@@ -20,11 +20,11 @@ import org.muml.core.CommentableElement;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.storydiagram.calls.Invocation#getOwnedParameterBindings <em>Owned Parameter Bindings</em>}</li>
  *   <li>{@link org.muml.storydiagram.calls.Invocation#getCallee <em>Callee</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.storydiagram.calls.CallsPackage#getInvocation()
  * @model abstract="true"
@@ -44,7 +44,7 @@ public interface Invocation extends CommentableElement {
 	 * @return the value of the '<em>Owned Parameter Bindings</em>' containment reference list.
 	 * @see org.muml.storydiagram.calls.CallsPackage#getInvocation_OwnedParameterBindings()
 	 * @see org.muml.storydiagram.calls.ParameterBinding#getInvocation
-	 * @model opposite="invocation" containment="true" resolveProxies="true"
+	 * @model opposite="invocation" containment="true"
 	 * @generated
 	 */
 	EList<ParameterBinding> getOwnedParameterBindings();

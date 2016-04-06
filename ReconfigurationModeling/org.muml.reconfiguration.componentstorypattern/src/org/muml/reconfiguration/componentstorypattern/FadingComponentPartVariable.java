@@ -17,10 +17,10 @@ import org.muml.reconfiguration.FadingFunction;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.reconfiguration.componentstorypattern.FadingComponentPartVariable#getAppliedFadingFunction <em>Applied Fading Function</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.reconfiguration.componentstorypattern.ComponentstorypatternPackage#getFadingComponentPartVariable()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL AppliedFadingFunctionIsContainedInType=' let fadingFunction : reconfiguration::FadingFunction = self.appliedFadingFunction.oclAsType(reconfiguration::FadingFunction) in\r\n \tif fadingFunction.oclIsUndefined()\r\n \tthen true\r\n \telse\r\n\t\tself.dataType.oclAsType(muml::component::ComponentPart).componentType.oclAsType(reconfiguration::FadingComponent).fadingFunction\r\n\t\t->select(curFadingFunction : reconfiguration::FadingFunction| curFadingFunction = fadingFunction)->size()=1\r\n\tendif' NotDefineAppliedFadingFunctionForVariableNotContainedInControllerExchangeNode='if not self.eContainer().eContainer().eContainer().oclIsTypeOf(componentstorydiagram::ControllerExchangeNode)\r\n\tthen self.appliedFadingFunction.oclIsUndefined()\r\nelse true\r\nendif'"

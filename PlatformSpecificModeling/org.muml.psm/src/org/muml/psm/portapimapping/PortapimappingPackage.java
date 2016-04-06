@@ -41,7 +41,7 @@ public interface PortapimappingPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.fujaba.de/muml/psm/portapimapping/0.4.0/";
+	String eNS_URI = "http://www.muml.org/psm/portapimapping/1.0.0";
 
 	/**
 	 * The package namespace name.
@@ -70,22 +70,22 @@ public interface PortapimappingPackage extends EPackage {
 	int PORT_API_MAPPING = 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PORT_API_MAPPING__ANNOTATION = CorePackage.COMMENTABLE_ELEMENT__ANNOTATION;
+	int PORT_API_MAPPING__ANNOTATIONS = CorePackage.COMMENTABLE_ELEMENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PORT_API_MAPPING__EXTENSION = CorePackage.COMMENTABLE_ELEMENT__EXTENSION;
+	int PORT_API_MAPPING__EXTENSIONS = CorePackage.COMMENTABLE_ELEMENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -332,22 +332,22 @@ public interface PortapimappingPackage extends EPackage {
 	int MAPPING_REPOSITORY = 1;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MAPPING_REPOSITORY__ANNOTATION = CorePackage.NAMED_ELEMENT__ANNOTATION;
+	int MAPPING_REPOSITORY__ANNOTATIONS = CorePackage.NAMED_ELEMENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MAPPING_REPOSITORY__EXTENSION = CorePackage.NAMED_ELEMENT__EXTENSION;
+	int MAPPING_REPOSITORY__EXTENSIONS = CorePackage.NAMED_ELEMENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.

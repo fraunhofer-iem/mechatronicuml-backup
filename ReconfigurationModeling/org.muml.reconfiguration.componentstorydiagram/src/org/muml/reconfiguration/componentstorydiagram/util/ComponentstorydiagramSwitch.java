@@ -10,6 +10,7 @@ import org.muml.core.ExtendableElement;
 import org.muml.core.NamedElement;
 import org.muml.core.expressions.Expression;
 import org.muml.reconfiguration.ReconfigurationRule;
+import org.muml.reconfiguration.componentstorydiagram.*;
 import org.muml.reconfiguration.componentstorydiagram.ComponentStoryNode;
 import org.muml.reconfiguration.componentstorydiagram.ComponentStoryRule;
 import org.muml.reconfiguration.componentstorydiagram.ComponentstorydiagramPackage;
@@ -56,7 +57,7 @@ public class ComponentstorydiagramSwitch<T> extends Switch<T> {
 	 * Checks whether this is a switch for the given package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @parameter ePackage the package in question.
+	 * @param ePackage the package in question.
 	 * @return whether this is a switch for the given package.
 	 * @generated
 	 */

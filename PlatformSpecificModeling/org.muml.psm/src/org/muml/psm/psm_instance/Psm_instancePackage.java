@@ -42,7 +42,7 @@ public interface Psm_instancePackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.fujaba.de/muml/psm/instance/0.4.0/";
+	String eNS_URI = "http://www.muml.org/psm/instance/1.0.0";
 
 	/**
 	 * The package namespace name.
@@ -71,22 +71,22 @@ public interface Psm_instancePackage extends EPackage {
 	int PARAMETERISABLE_DISCRETE_SINGLE_PORT_INSTANCE = 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETERISABLE_DISCRETE_SINGLE_PORT_INSTANCE__ANNOTATION = InstancePackage.DISCRETE_SINGLE_PORT_INSTANCE__ANNOTATION;
+	int PARAMETERISABLE_DISCRETE_SINGLE_PORT_INSTANCE__ANNOTATIONS = InstancePackage.DISCRETE_SINGLE_PORT_INSTANCE__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETERISABLE_DISCRETE_SINGLE_PORT_INSTANCE__EXTENSION = InstancePackage.DISCRETE_SINGLE_PORT_INSTANCE__EXTENSION;
+	int PARAMETERISABLE_DISCRETE_SINGLE_PORT_INSTANCE__EXTENSIONS = InstancePackage.DISCRETE_SINGLE_PORT_INSTANCE__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.

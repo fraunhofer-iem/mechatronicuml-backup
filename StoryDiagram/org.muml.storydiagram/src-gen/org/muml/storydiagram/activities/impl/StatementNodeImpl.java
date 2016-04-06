@@ -19,10 +19,10 @@ import org.muml.storydiagram.activities.StatementNode;
  * <!-- begin-user-doc --> An implementation of the model object '<em><b>Statement Node</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.storydiagram.activities.impl.StatementNodeImpl#getStatementExpression <em>Statement Expression</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -59,43 +59,6 @@ public class StatementNodeImpl extends ActivityNodeImpl implements
 	 * @generated
 	 */
 	public Expression getStatementExpression() {
-		if (statementExpression != null && statementExpression.eIsProxy()) {
-			InternalEObject oldStatementExpression = (InternalEObject) statementExpression;
-			statementExpression = (Expression) eResolveProxy(oldStatementExpression);
-			if (statementExpression != oldStatementExpression) {
-				InternalEObject newStatementExpression = (InternalEObject) statementExpression;
-				NotificationChain msgs = oldStatementExpression
-						.eInverseRemove(
-								this,
-								EOPPOSITE_FEATURE_BASE
-										- ActivitiesPackage.STATEMENT_NODE__STATEMENT_EXPRESSION,
-								null, null);
-				if (newStatementExpression.eInternalContainer() == null) {
-					msgs = newStatementExpression
-							.eInverseAdd(
-									this,
-									EOPPOSITE_FEATURE_BASE
-											- ActivitiesPackage.STATEMENT_NODE__STATEMENT_EXPRESSION,
-									null, msgs);
-				}
-				if (msgs != null)
-					msgs.dispatch();
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(
-							this,
-							Notification.RESOLVE,
-							ActivitiesPackage.STATEMENT_NODE__STATEMENT_EXPRESSION,
-							oldStatementExpression, statementExpression));
-			}
-		}
-		return statementExpression;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Expression basicGetStatementExpression() {
 		return statementExpression;
 	}
 
@@ -108,14 +71,8 @@ public class StatementNodeImpl extends ActivityNodeImpl implements
 		Expression oldStatementExpression = statementExpression;
 		statementExpression = newStatementExpression;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this,
-					Notification.SET,
-					ActivitiesPackage.STATEMENT_NODE__STATEMENT_EXPRESSION,
-					oldStatementExpression, newStatementExpression);
-			if (msgs == null)
-				msgs = notification;
-			else
-				msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActivitiesPackage.STATEMENT_NODE__STATEMENT_EXPRESSION, oldStatementExpression, newStatementExpression);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -128,26 +85,14 @@ public class StatementNodeImpl extends ActivityNodeImpl implements
 		if (newStatementExpression != statementExpression) {
 			NotificationChain msgs = null;
 			if (statementExpression != null)
-				msgs = ((InternalEObject) statementExpression)
-						.eInverseRemove(
-								this,
-								EOPPOSITE_FEATURE_BASE
-										- ActivitiesPackage.STATEMENT_NODE__STATEMENT_EXPRESSION,
-								null, msgs);
+				msgs = ((InternalEObject)statementExpression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActivitiesPackage.STATEMENT_NODE__STATEMENT_EXPRESSION, null, msgs);
 			if (newStatementExpression != null)
-				msgs = ((InternalEObject) newStatementExpression)
-						.eInverseAdd(
-								this,
-								EOPPOSITE_FEATURE_BASE
-										- ActivitiesPackage.STATEMENT_NODE__STATEMENT_EXPRESSION,
-								null, msgs);
+				msgs = ((InternalEObject)newStatementExpression).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActivitiesPackage.STATEMENT_NODE__STATEMENT_EXPRESSION, null, msgs);
 			msgs = basicSetStatementExpression(newStatementExpression, msgs);
-			if (msgs != null)
-				msgs.dispatch();
-		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					ActivitiesPackage.STATEMENT_NODE__STATEMENT_EXPRESSION,
-					newStatementExpression, newStatementExpression));
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActivitiesPackage.STATEMENT_NODE__STATEMENT_EXPRESSION, newStatementExpression, newStatementExpression));
 	}
 
 	/**
@@ -158,8 +103,8 @@ public class StatementNodeImpl extends ActivityNodeImpl implements
 	public NotificationChain eInverseRemove(InternalEObject otherEnd,
 			int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case ActivitiesPackage.STATEMENT_NODE__STATEMENT_EXPRESSION:
-			return basicSetStatementExpression(null, msgs);
+			case ActivitiesPackage.STATEMENT_NODE__STATEMENT_EXPRESSION:
+				return basicSetStatementExpression(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -171,10 +116,8 @@ public class StatementNodeImpl extends ActivityNodeImpl implements
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case ActivitiesPackage.STATEMENT_NODE__STATEMENT_EXPRESSION:
-			if (resolve)
+			case ActivitiesPackage.STATEMENT_NODE__STATEMENT_EXPRESSION:
 				return getStatementExpression();
-			return basicGetStatementExpression();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -186,9 +129,9 @@ public class StatementNodeImpl extends ActivityNodeImpl implements
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case ActivitiesPackage.STATEMENT_NODE__STATEMENT_EXPRESSION:
-			setStatementExpression((Expression) newValue);
-			return;
+			case ActivitiesPackage.STATEMENT_NODE__STATEMENT_EXPRESSION:
+				setStatementExpression((Expression)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -200,9 +143,9 @@ public class StatementNodeImpl extends ActivityNodeImpl implements
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case ActivitiesPackage.STATEMENT_NODE__STATEMENT_EXPRESSION:
-			setStatementExpression((Expression) null);
-			return;
+			case ActivitiesPackage.STATEMENT_NODE__STATEMENT_EXPRESSION:
+				setStatementExpression((Expression)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -214,8 +157,8 @@ public class StatementNodeImpl extends ActivityNodeImpl implements
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case ActivitiesPackage.STATEMENT_NODE__STATEMENT_EXPRESSION:
-			return statementExpression != null;
+			case ActivitiesPackage.STATEMENT_NODE__STATEMENT_EXPRESSION:
+				return statementExpression != null;
 		}
 		return super.eIsSet(featureID);
 	}

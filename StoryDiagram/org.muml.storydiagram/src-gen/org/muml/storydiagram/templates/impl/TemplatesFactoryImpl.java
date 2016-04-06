@@ -29,12 +29,12 @@ public class TemplatesFactoryImpl extends EFactoryImpl implements
 	 */
 	public static TemplatesFactory init() {
 		try {
-			TemplatesFactory theTemplatesFactory = (TemplatesFactory) EPackage.Registry.INSTANCE
-					.getEFactory(TemplatesPackage.eNS_URI);
+			TemplatesFactory theTemplatesFactory = (TemplatesFactory)EPackage.Registry.INSTANCE.getEFactory(TemplatesPackage.eNS_URI);
 			if (theTemplatesFactory != null) {
 				return theTemplatesFactory;
 			}
-		} catch (Exception exception) {
+		}
+		catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new TemplatesFactoryImpl();
@@ -58,15 +58,11 @@ public class TemplatesFactoryImpl extends EFactoryImpl implements
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-		case TemplatesPackage.TEMPLATE_BINDING:
-			return createTemplateBinding();
-		case TemplatesPackage.PROPERTY_BINDING:
-			return createPropertyBinding();
-		case TemplatesPackage.TEMPLATE_SIGNATURE:
-			return createTemplateSignature();
-		default:
-			throw new IllegalArgumentException("The class '" + eClass.getName()
-					+ "' is not a valid classifier");
+			case TemplatesPackage.TEMPLATE_BINDING: return createTemplateBinding();
+			case TemplatesPackage.PROPERTY_BINDING: return createPropertyBinding();
+			case TemplatesPackage.TEMPLATE_SIGNATURE: return createTemplateSignature();
+			default:
+				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 
@@ -106,7 +102,7 @@ public class TemplatesFactoryImpl extends EFactoryImpl implements
 	 * @generated
 	 */
 	public TemplatesPackage getTemplatesPackage() {
-		return (TemplatesPackage) getEPackage();
+		return (TemplatesPackage)getEPackage();
 	}
 
 	/**

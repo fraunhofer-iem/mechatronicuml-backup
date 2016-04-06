@@ -30,13 +30,13 @@ import org.muml.reconfiguration.componentstorypattern.PortVariable;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.reconfiguration.componentstorypattern.impl.PortVariableImpl#getConnectors <em>Connectors</em>}</li>
  *   <li>{@link org.muml.reconfiguration.componentstorypattern.impl.PortVariableImpl#getDataType <em>Data Type</em>}</li>
  *   <li>{@link org.muml.reconfiguration.componentstorypattern.impl.PortVariableImpl#getPortType <em>Port Type</em>}</li>
  *   <li>{@link org.muml.reconfiguration.componentstorypattern.impl.PortVariableImpl#getConnectorVariables <em>Connector Variables</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

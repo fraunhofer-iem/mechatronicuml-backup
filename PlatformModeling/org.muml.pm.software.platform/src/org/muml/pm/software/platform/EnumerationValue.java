@@ -15,11 +15,11 @@ import org.muml.core.ExtendableElement;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.pm.software.platform.EnumerationValue#getValue <em>Value</em>}</li>
  *   <li>{@link org.muml.pm.software.platform.EnumerationValue#getEnumerationDataType <em>Enumeration Data Type</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.pm.software.platform.SwplatformPackage#getEnumerationValue()
  * @model

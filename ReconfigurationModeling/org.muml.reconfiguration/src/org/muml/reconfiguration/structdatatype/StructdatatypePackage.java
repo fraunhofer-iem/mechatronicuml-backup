@@ -47,7 +47,7 @@ public interface StructdatatypePackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.fujaba.de/muml/reconfiguration/structdatatype/0.3.18";
+	String eNS_URI = "http://www.muml.org/reconfiguration/structdatatype/1.0.0";
 
 	/**
 	 * The package namespace name.
@@ -76,22 +76,22 @@ public interface StructdatatypePackage extends EPackage {
 	int STRUCT_TYPE = 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCT_TYPE__ANNOTATION = TypesPackage.STRUCTURE_DATA_TYPE__ANNOTATION;
+	int STRUCT_TYPE__ANNOTATIONS = TypesPackage.STRUCTURE_DATA_TYPE__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCT_TYPE__EXTENSION = TypesPackage.STRUCTURE_DATA_TYPE__EXTENSION;
+	int STRUCT_TYPE__EXTENSIONS = TypesPackage.STRUCTURE_DATA_TYPE__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -329,22 +329,22 @@ public interface StructdatatypePackage extends EPackage {
 	int REFERENCE = 1;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE__ANNOTATION = CorePackage.NAMED_ELEMENT__ANNOTATION;
+	int REFERENCE__ANNOTATIONS = CorePackage.NAMED_ELEMENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE__EXTENSION = CorePackage.NAMED_ELEMENT__EXTENSION;
+	int REFERENCE__EXTENSIONS = CorePackage.NAMED_ELEMENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.

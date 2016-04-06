@@ -24,11 +24,11 @@ import org.muml.reconfiguration.componentstorypattern.impl.TriggerEmbeddedCompon
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.reconfiguration.componentstorydiagram.impl.SendReconfigurationMessageExpressionImpl#getReconfigurationMessageType <em>Reconfiguration Message Type</em>}</li>
  *   <li>{@link org.muml.reconfiguration.componentstorydiagram.impl.SendReconfigurationMessageExpressionImpl#getParameterBindings <em>Parameter Bindings</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

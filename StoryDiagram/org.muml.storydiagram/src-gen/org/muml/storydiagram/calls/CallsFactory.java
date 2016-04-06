@@ -23,8 +23,7 @@ public interface CallsFactory extends EFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	CallsFactory eINSTANCE = org.muml.storydiagram.calls.impl.CallsFactoryImpl
-			.init();
+	CallsFactory eINSTANCE = org.muml.storydiagram.calls.impl.CallsFactoryImpl.init();
 
 	/**
 	 * Returns a new object of class '<em>Parameter Binding</em>'.

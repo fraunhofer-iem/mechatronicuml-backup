@@ -1,29 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<de.uni_paderborn.fujaba:PropertyGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.uni_paderborn.fujaba="http://www.muml.org/ape/1.0.0" xmi:id="_RmFlIM1gEeSIgPDefa6ZBw" contributorId="org.muml.ape.contributor">
+<org.muml:PropertyGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.muml="http://www.muml.org/ape/1.0.0" xmi:id="_RmFlIM1gEeSIgPDefa6ZBw" contributorId="org.muml.ape.contributor">
   <reconciler xmi:id="_RmFlIc1gEeSIgPDefa6ZBw">
-    <customTransformations xmi:id="_RmGMMM1gEeSIgPDefa6ZBw" uri="platform:/plugin/de.uni_paderborn.fujaba.muml.common/transformations/muml-propsheet.qvto"/>
-    <customTransformations xmi:id="_RmGMMc1gEeSIgPDefa6ZBw" uri="platform:/plugin/de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/transformations/xtext-propsheet.qvto"/>
+    <customTransformations xmi:id="_RmGMMM1gEeSIgPDefa6ZBw" uri="platform:/plugin/org.muml.pim.common.common/transformations/muml-propsheet.qvto"/>
+    <customTransformations xmi:id="_RmGMMc1gEeSIgPDefa6ZBw" uri="platform:/plugin/org.muml.pim.actionlanguage.xtext.ui/transformations/xtext-propsheet.qvto"/>
   </reconciler>
   <genModel href="MumlReconfiguration.genmodel#/"/>
   <referencedGenerators href="../../org.muml.pim/model/pim.propsheet#_VZIdoMwbEeSjx7OWZCcdLw"/>
-  <referencedGenerators href="../../org.storydriven.storydiagrams/model/storydiagrams.propsheet#_RnsusM1gEeSIgPDefa6ZBw"/>
-  <plugin xmi:id="_RmGMMs1gEeSIgPDefa6ZBw" id="de.uni_paderborn.fujaba.muml.reconfiguration.edit.properties" name="Reconfiguration Tabbed Properties" vendor="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn" version="0.5.0.qualifier">
-    <requiredBundles>de.uni_paderborn.fujaba.muml.edit</requiredBundles>
+  <referencedGenerators href="../../org.muml.storydiagram/model/storydiagrams.propsheet#_RnsusM1gEeSIgPDefa6ZBw"/>
+  <plugin xmi:id="_RmGMMs1gEeSIgPDefa6ZBw" id="org.muml.reconfiguration.edit.properties" name="Reconfiguration Tabbed Properties" vendor="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn" version="1.0.0.qualifier">
     <requiredBundles>org.eclipse.emf.ecore</requiredBundles>
     <requiredBundles>org.eclipse.core.runtime</requiredBundles>
-    <requiredBundles>de.uni_paderborn.fujaba.muml</requiredBundles>
     <requiredBundles>org.eclipse.emf.edit</requiredBundles>
-    <requiredBundles>de.uni_paderborn.fujaba.properties.runtime</requiredBundles>
     <requiredBundles>org.eclipse.ui</requiredBundles>
-    <requiredBundles>org.storydriven.core.edit</requiredBundles>
-    <requiredBundles>org.storydriven.core.edit.properties</requiredBundles>
-    <requiredBundles>de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui</requiredBundles>
-    <requiredBundles>de.uni_paderborn.fujaba.muml.common</requiredBundles>
-    <requiredBundles>de.uni_paderborn.fujaba.muml.reconfiguration.edit</requiredBundles>
-    <requiredBundles>de.uni_paderborn.fujaba.muml.reconfiguration</requiredBundles>
-    <requiredBundles>de.uni_paderborn.fujaba.muml.edit.properties</requiredBundles>
-    <requiredBundles>org.storydriven.storydiagrams.edit</requiredBundles>
-    <requiredBundles>org.storydriven.storydiagrams.edit.properties</requiredBundles>
+    <requiredBundles>org.muml.ape.runtime</requiredBundles>
+    <requiredBundles>org.muml.reconfiguration</requiredBundles>
+    <requiredBundles>org.muml.reconfiguration.edit</requiredBundles>
+    <requiredBundles>org.muml.pim.edit</requiredBundles>
+    <requiredBundles>org.muml.pim.edit.properties</requiredBundles>
+    <requiredBundles>org.muml.storydiagram.edit</requiredBundles>
+    <requiredBundles>org.muml.storydiagram.edit.properties</requiredBundles>
   </plugin>
   <defaultTab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
   <tabs xmi:id="_RmGzQM1gEeSIgPDefa6ZBw" id="property.tab.constraint" name="Constraint" afterTab="property.tab.comment"/>
@@ -31,10 +26,10 @@
     <genPackage href="MumlReconfiguration.genmodel#//reconfiguration/protocolinstantiation"/>
     <classes>
       <genClass href="MumlReconfiguration.genmodel#//reconfiguration/protocolinstantiation/BroadcastPort"/>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
+      <orderedElements xsi:type="org.muml:Property">
         <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/protocolinstantiation/BroadcastPort/kind"/>
         <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor"/>
+        <editor xsi:type="org.muml:RadioPropertyEditor"/>
       </orderedElements>
       <superClasses href="../../org.muml.pim/model/pim.propsheet#_VZYVQMwbEeSjx7OWZCcdLw"/>
       <superClasses href="../../org.muml.pim/model/pim.propsheet#_VZVR9MwbEeSjx7OWZCcdLw"/>
@@ -62,10 +57,10 @@
     </classes>
     <classes>
       <genClass href="MumlReconfiguration.genmodel#//reconfiguration/ReconfigurableStructuredComponent"/>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
+      <orderedElements xsi:type="org.muml:Property">
         <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/ReconfigurableStructuredComponent/initialConfiguration"/>
         <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor"/>
       </orderedElements>
       <superClasses href="#//@packages.1/@classes.0"/>
       <superClasses href="../../org.muml.pim/model/pim.propsheet#_VZV5DcwbEeSjx7OWZCcdLw"/>
@@ -77,15 +72,15 @@
     </classes>
     <classes>
       <genClass href="MumlReconfiguration.genmodel#//reconfiguration/ReconfigurationPortInterfaceEntry"/>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
+      <orderedElements xsi:type="org.muml:Property">
         <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/ReconfigurationPortInterfaceEntry/description"/>
         <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
+        <editor xsi:type="org.muml:TextPropertyEditor"/>
       </orderedElements>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
+      <orderedElements xsi:type="org.muml:Property">
         <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/ReconfigurationPortInterfaceEntry/messageType"/>
         <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor"/>
       </orderedElements>
     </classes>
     <classes superClasses="//@packages.1/@classes.3">
@@ -93,10 +88,10 @@
     </classes>
     <classes superClasses="//@packages.1/@classes.4">
       <genClass href="MumlReconfiguration.genmodel#//reconfiguration/ReconfigurationMessagePortInterfaceEntry"/>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
+      <orderedElements xsi:type="org.muml:Property">
         <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/ReconfigurationMessagePortInterfaceEntry/reconfigurationMessageType"/>
         <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor"/>
+        <editor xsi:type="org.muml:RadioPropertyEditor"/>
       </orderedElements>
     </classes>
     <classes superClasses="//@packages.1/@classes.3">
@@ -133,42 +128,42 @@
     </classes>
     <classes>
       <genClass href="MumlReconfiguration.genmodel#//reconfiguration/ManagerSpecificationEntry"/>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
+      <orderedElements xsi:type="org.muml:Property">
         <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/ManagerSpecificationEntry/treat"/>
         <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
+        <editor xsi:type="org.muml:CheckboxPropertyEditor"/>
       </orderedElements>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
+      <orderedElements xsi:type="org.muml:Property">
         <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/ManagerSpecificationEntry/propagate"/>
         <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
+        <editor xsi:type="org.muml:CheckboxPropertyEditor"/>
       </orderedElements>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
+      <orderedElements xsi:type="org.muml:Property">
         <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/ManagerSpecificationEntry/messageType"/>
         <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor"/>
       </orderedElements>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
+      <orderedElements xsi:type="org.muml:Property">
         <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/ManagerSpecificationEntry/structuralCondition"/>
         <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor"/>
       </orderedElements>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
+      <orderedElements xsi:type="org.muml:Property">
         <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/ManagerSpecificationEntry/reconfigurationRule"/>
         <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor"/>
       </orderedElements>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
+      <orderedElements xsi:type="org.muml:Property">
         <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/ManagerSpecificationEntry/invokePlanner"/>
         <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
+        <editor xsi:type="org.muml:CheckboxPropertyEditor"/>
       </orderedElements>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
+      <orderedElements xsi:type="org.muml:Property">
         <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/ManagerSpecificationEntry/blockable"/>
         <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
+        <editor xsi:type="org.muml:CheckboxPropertyEditor"/>
       </orderedElements>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:PropertyCategory" title="Booleans" properties="//@packages.1/@classes.17/@orderedElements.0 //@packages.1/@classes.17/@orderedElements.1 //@packages.1/@classes.17/@orderedElements.5 //@packages.1/@classes.17/@orderedElements.6"/>
+      <orderedElements xsi:type="org.muml:PropertyCategory" title="Booleans" properties="//@packages.1/@classes.17/@orderedElements.0 //@packages.1/@classes.17/@orderedElements.1 //@packages.1/@classes.17/@orderedElements.5 //@packages.1/@classes.17/@orderedElements.6"/>
     </classes>
     <classes>
       <genClass href="MumlReconfiguration.genmodel#//reconfiguration/Executor"/>
@@ -176,23 +171,23 @@
     </classes>
     <classes>
       <genClass href="MumlReconfiguration.genmodel#//reconfiguration/ExecutorSpecificationEntry"/>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
+      <orderedElements xsi:type="org.muml:Property">
         <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/ExecutorSpecificationEntry/reconfigurationRule"/>
         <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor"/>
       </orderedElements>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
+      <orderedElements xsi:type="org.muml:Property">
         <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/ExecutorSpecificationEntry/id"/>
         <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:SpinnerPropertyEditor"/>
+        <editor xsi:type="org.muml:SpinnerPropertyEditor"/>
       </orderedElements>
     </classes>
     <classes>
       <genClass href="MumlReconfiguration.genmodel#//reconfiguration/ReconfigurationRule"/>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
+      <orderedElements xsi:type="org.muml:Property">
         <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/ReconfigurationRule/reconfiguredComponent"/>
         <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor"/>
       </orderedElements>
     </classes>
     <classes>
@@ -200,10 +195,10 @@
     </classes>
     <classes>
       <genClass href="MumlReconfiguration.genmodel#//reconfiguration/StructuralCondition"/>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
+      <orderedElements xsi:type="org.muml:Property">
         <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/StructuralCondition/reconfigurableComponent"/>
         <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor"/>
       </orderedElements>
     </classes>
     <classes>
@@ -220,15 +215,15 @@
     </classes>
     <classes>
       <genClass href="MumlReconfiguration.genmodel#//reconfiguration/FadingFunction"/>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
+      <orderedElements xsi:type="org.muml:Property">
         <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/FadingFunction/fromPort"/>
         <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor"/>
       </orderedElements>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
+      <orderedElements xsi:type="org.muml:Property">
         <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/FadingFunction/toPort"/>
         <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor"/>
       </orderedElements>
     </classes>
     <classes>
@@ -236,18 +231,18 @@
     </classes>
     <classes>
       <genClass href="MumlReconfiguration.genmodel#//reconfiguration/HybridPortMapping"/>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
+      <orderedElements xsi:type="org.muml:Property">
         <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/HybridPortMapping/hybridPort"/>
         <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor"/>
       </orderedElements>
     </classes>
     <classes>
       <genClass href="MumlReconfiguration.genmodel#//reconfiguration/ReconfigurationExecutionSpecificationEntry"/>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
+      <orderedElements xsi:type="org.muml:Property">
         <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/ReconfigurationExecutionSpecificationEntry/hybridPortMappings"/>
         <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
+        <editor xsi:type="org.muml:ListPropertyEditor"/>
       </orderedElements>
       <superClasses href="../../org.muml.pim/model/pim.propsheet#_VZRnm8wbEeSjx7OWZCcdLw"/>
     </classes>
@@ -260,22 +255,22 @@
     <genPackage href="MumlReconfiguration.genmodel#//reconfiguration/expression"/>
     <classes>
       <genClass href="MumlReconfiguration.genmodel#//reconfiguration/expression/ActivityCallExpression"/>
-      <superClasses href="../../org.storydriven.storydiagrams/model/storydiagrams.propsheet#//@packages.2/@classes.0"/>
+      <superClasses href="../../org.muml.storydiagram/model/storydiagrams.propsheet#//@packages.2/@classes.0"/>
     </classes>
     <classes>
       <genClass href="MumlReconfiguration.genmodel#//reconfiguration/expression/ReconfigurationRuleCallExpression"/>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
+      <orderedElements xsi:type="org.muml:Property">
         <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/expression/ReconfigurationRuleCallExpression/reconfigurationRule"/>
         <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor"/>
       </orderedElements>
     </classes>
     <classes>
       <genClass href="MumlReconfiguration.genmodel#//reconfiguration/expression/EvaluateStructuralConditionExpression"/>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
+      <orderedElements xsi:type="org.muml:Property">
         <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/expression/EvaluateStructuralConditionExpression/structuralCondition"/>
         <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor"/>
       </orderedElements>
     </classes>
   </packages>
@@ -287,10 +282,10 @@
     </classes>
     <classes>
       <genClass href="MumlReconfiguration.genmodel#//reconfiguration/structdatatype/Reference"/>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
+      <orderedElements xsi:type="org.muml:Property">
         <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/structdatatype/Reference/type"/>
         <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor"/>
       </orderedElements>
     </classes>
   </packages>
@@ -325,28 +320,28 @@
     </classes>
     <classes>
       <genClass href="MumlReconfiguration.genmodel#//reconfiguration/reconfInstance/ManagerInstance"/>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
+      <orderedElements xsi:type="org.muml:Property">
         <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/reconfInstance/ManagerInstance/manager"/>
         <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor"/>
       </orderedElements>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
+      <orderedElements xsi:type="org.muml:Property">
         <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/reconfInstance/ManagerInstance/portInstances"/>
         <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
+        <editor xsi:type="org.muml:ListPropertyEditor"/>
       </orderedElements>
     </classes>
     <classes>
       <genClass href="MumlReconfiguration.genmodel#//reconfiguration/reconfInstance/ExecutorInstance"/>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
+      <orderedElements xsi:type="org.muml:Property">
         <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/reconfInstance/ExecutorInstance/executor"/>
         <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor"/>
       </orderedElements>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
+      <orderedElements xsi:type="org.muml:Property">
         <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/reconfInstance/ExecutorInstance/portInstances"/>
         <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
+        <editor xsi:type="org.muml:ListPropertyEditor"/>
       </orderedElements>
     </classes>
     <classes>
@@ -355,12 +350,12 @@
     </classes>
     <classes>
       <genClass href="MumlReconfiguration.genmodel#//reconfiguration/reconfInstance/ReconfigurableStructuredComponentInstance"/>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
+      <orderedElements xsi:type="org.muml:Property">
         <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/reconfInstance/ReconfigurableStructuredComponentInstance/controllerInstance"/>
         <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor"/>
       </orderedElements>
       <superClasses href="../../org.muml.pim/model/pim.propsheet#_VZQZeMwbEeSjx7OWZCcdLw"/>
     </classes>
   </packages>
-</de.uni_paderborn.fujaba:PropertyGenerator>
+</org.muml:PropertyGenerator>

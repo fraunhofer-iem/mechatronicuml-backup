@@ -30,7 +30,7 @@ public class TtccarplatooningFactoryImpl extends EFactoryImpl implements Ttccarp
 	 */
 	public static TtccarplatooningFactory init() {
 		try {
-			TtccarplatooningFactory theTtccarplatooningFactory = (TtccarplatooningFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0"); 
+			TtccarplatooningFactory theTtccarplatooningFactory = (TtccarplatooningFactory)EPackage.Registry.INSTANCE.getEFactory(TtccarplatooningPackage.eNS_URI);
 			if (theTtccarplatooningFactory != null) {
 				return theTtccarplatooningFactory;
 			}

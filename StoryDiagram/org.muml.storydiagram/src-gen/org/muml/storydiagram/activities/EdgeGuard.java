@@ -247,8 +247,17 @@ public enum EdgeGuard implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final EdgeGuard[] VALUES_ARRAY = new EdgeGuard[] { NONE,
-			SUCCESS, FAILURE, EACH_TIME, END, ELSE, BOOL, EXCEPTION, FINALLY, };
+	private static final EdgeGuard[] VALUES_ARRAY = new EdgeGuard[] {
+			NONE,
+			SUCCESS,
+			FAILURE,
+			EACH_TIME,
+			END,
+			ELSE,
+			BOOL,
+			EXCEPTION,
+			FINALLY,
+		};
 
 	/**
 	 * A public read-only list of all the '<em><b>Edge Guard</b></em>' enumerators.
@@ -256,13 +265,14 @@ public enum EdgeGuard implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final List<EdgeGuard> VALUES = Collections
-			.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+	public static final List<EdgeGuard> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
 	/**
 	 * Returns the '<em><b>Edge Guard</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @param literal the literal.
+	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static EdgeGuard get(String literal) {
@@ -279,6 +289,8 @@ public enum EdgeGuard implements Enumerator {
 	 * Returns the '<em><b>Edge Guard</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @param name the name.
+	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static EdgeGuard getByName(String name) {
@@ -295,28 +307,21 @@ public enum EdgeGuard implements Enumerator {
 	 * Returns the '<em><b>Edge Guard</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @param value the integer value.
+	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static EdgeGuard get(int value) {
 		switch (value) {
-		case NONE_VALUE:
-			return NONE;
-		case SUCCESS_VALUE:
-			return SUCCESS;
-		case FAILURE_VALUE:
-			return FAILURE;
-		case EACH_TIME_VALUE:
-			return EACH_TIME;
-		case END_VALUE:
-			return END;
-		case ELSE_VALUE:
-			return ELSE;
-		case BOOL_VALUE:
-			return BOOL;
-		case EXCEPTION_VALUE:
-			return EXCEPTION;
-		case FINALLY_VALUE:
-			return FINALLY;
+			case NONE_VALUE: return NONE;
+			case SUCCESS_VALUE: return SUCCESS;
+			case FAILURE_VALUE: return FAILURE;
+			case EACH_TIME_VALUE: return EACH_TIME;
+			case END_VALUE: return END;
+			case ELSE_VALUE: return ELSE;
+			case BOOL_VALUE: return BOOL;
+			case EXCEPTION_VALUE: return EXCEPTION;
+			case FINALLY_VALUE: return FINALLY;
 		}
 		return null;
 	}
@@ -360,7 +365,7 @@ public enum EdgeGuard implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-		return value;
+	  return value;
 	}
 
 	/**
@@ -369,7 +374,7 @@ public enum EdgeGuard implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-		return name;
+	  return name;
 	}
 
 	/**
@@ -378,7 +383,7 @@ public enum EdgeGuard implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-		return literal;
+	  return literal;
 	}
 
 	/**

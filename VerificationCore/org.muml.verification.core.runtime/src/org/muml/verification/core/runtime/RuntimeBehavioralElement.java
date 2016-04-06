@@ -16,11 +16,11 @@ import org.muml.core.NamedElement;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.verification.core.runtime.RuntimeBehavioralElement#getStatechartInstance <em>Statechart Instance</em>}</li>
  *   <li>{@link org.muml.verification.core.runtime.RuntimeBehavioralElement#getMessageBuffer <em>Message Buffer</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.verification.core.runtime.RuntimePackage#getRuntimeBehavioralElement()
  * @model abstract="true"

@@ -232,27 +232,27 @@ public class SystemAllocationItemProvider extends ExtendableElementItemProvider 
 
 		newChildDescriptors.add
 			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSIONS,
 				 PropertiesFactory.eINSTANCE.createWCET()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSIONS,
 				 PropertiesFactory.eINSTANCE.createRequiredMemory()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSIONS,
 				 PropertiesFactory.eINSTANCE.createScheduling()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSIONS,
 				 PropertiesFactory.eINSTANCE.createMessageFrame()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSIONS,
 				 PropertiesFactory.eINSTANCE.createCANMessageFrame()));
 
 		newChildDescriptors.add

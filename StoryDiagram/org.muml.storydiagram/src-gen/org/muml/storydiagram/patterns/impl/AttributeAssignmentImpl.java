@@ -12,7 +12,7 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.EObjectImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.muml.core.expressions.Expression;
 import org.muml.storydiagram.patterns.AttributeAssignment;
@@ -23,16 +23,16 @@ import org.muml.storydiagram.patterns.PatternsPackage;
  * <!-- begin-user-doc --> An implementation of the model object '<em><b>Attribute Assignment</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.storydiagram.patterns.impl.AttributeAssignmentImpl#getAttribute <em>Attribute</em>}</li>
  *   <li>{@link org.muml.storydiagram.patterns.impl.AttributeAssignmentImpl#getValueExpression <em>Value Expression</em>}</li>
  *   <li>{@link org.muml.storydiagram.patterns.impl.AttributeAssignmentImpl#getObjectVariable <em>Object Variable</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
-public class AttributeAssignmentImpl extends EObjectImpl implements
+public class AttributeAssignmentImpl extends MinimalEObjectImpl.Container implements
 		AttributeAssignment {
 	/**
 	 * The cached value of the '{@link #getAttribute() <em>Attribute</em>}' reference.
@@ -74,19 +74,8 @@ public class AttributeAssignmentImpl extends EObjectImpl implements
 	 * @generated
 	 */
 	public ObjectVariable getObjectVariable() {
-		if (eContainerFeatureID() != PatternsPackage.ATTRIBUTE_ASSIGNMENT__OBJECT_VARIABLE)
-			return null;
-		return (ObjectVariable) eContainer();
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ObjectVariable basicGetObjectVariable() {
-		if (eContainerFeatureID() != PatternsPackage.ATTRIBUTE_ASSIGNMENT__OBJECT_VARIABLE)
-			return null;
-		return (ObjectVariable) eInternalContainer();
+		if (eContainerFeatureID() != PatternsPackage.ATTRIBUTE_ASSIGNMENT__OBJECT_VARIABLE) return null;
+		return (ObjectVariable)eInternalContainer();
 	}
 
 	/**
@@ -95,8 +84,7 @@ public class AttributeAssignmentImpl extends EObjectImpl implements
 	 */
 	public NotificationChain basicSetObjectVariable(
 			ObjectVariable newObjectVariable, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject) newObjectVariable,
-				PatternsPackage.ATTRIBUTE_ASSIGNMENT__OBJECT_VARIABLE, msgs);
+		msgs = eBasicSetContainer((InternalEObject)newObjectVariable, PatternsPackage.ATTRIBUTE_ASSIGNMENT__OBJECT_VARIABLE, msgs);
 		return msgs;
 	}
 
@@ -105,25 +93,19 @@ public class AttributeAssignmentImpl extends EObjectImpl implements
 	 * @generated
 	 */
 	public void setObjectVariable(ObjectVariable newObjectVariable) {
-		if (newObjectVariable != eInternalContainer()
-				|| (eContainerFeatureID() != PatternsPackage.ATTRIBUTE_ASSIGNMENT__OBJECT_VARIABLE && newObjectVariable != null)) {
+		if (newObjectVariable != eInternalContainer() || (eContainerFeatureID() != PatternsPackage.ATTRIBUTE_ASSIGNMENT__OBJECT_VARIABLE && newObjectVariable != null)) {
 			if (EcoreUtil.isAncestor(this, newObjectVariable))
-				throw new IllegalArgumentException(
-						"Recursive containment not allowed for " + toString());
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newObjectVariable != null)
-				msgs = ((InternalEObject) newObjectVariable).eInverseAdd(this,
-						PatternsPackage.OBJECT_VARIABLE__ATTRIBUTE_ASSIGNMENT,
-						ObjectVariable.class, msgs);
+				msgs = ((InternalEObject)newObjectVariable).eInverseAdd(this, PatternsPackage.OBJECT_VARIABLE__ATTRIBUTE_ASSIGNMENT, ObjectVariable.class, msgs);
 			msgs = basicSetObjectVariable(newObjectVariable, msgs);
-			if (msgs != null)
-				msgs.dispatch();
-		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					PatternsPackage.ATTRIBUTE_ASSIGNMENT__OBJECT_VARIABLE,
-					newObjectVariable, newObjectVariable));
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PatternsPackage.ATTRIBUTE_ASSIGNMENT__OBJECT_VARIABLE, newObjectVariable, newObjectVariable));
 	}
 
 	/**
@@ -132,13 +114,11 @@ public class AttributeAssignmentImpl extends EObjectImpl implements
 	 */
 	public EAttribute getAttribute() {
 		if (attribute != null && attribute.eIsProxy()) {
-			InternalEObject oldAttribute = (InternalEObject) attribute;
-			attribute = (EAttribute) eResolveProxy(oldAttribute);
+			InternalEObject oldAttribute = (InternalEObject)attribute;
+			attribute = (EAttribute)eResolveProxy(oldAttribute);
 			if (attribute != oldAttribute) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							PatternsPackage.ATTRIBUTE_ASSIGNMENT__ATTRIBUTE,
-							oldAttribute, attribute));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PatternsPackage.ATTRIBUTE_ASSIGNMENT__ATTRIBUTE, oldAttribute, attribute));
 			}
 		}
 		return attribute;
@@ -160,9 +140,7 @@ public class AttributeAssignmentImpl extends EObjectImpl implements
 		EAttribute oldAttribute = attribute;
 		attribute = newAttribute;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					PatternsPackage.ATTRIBUTE_ASSIGNMENT__ATTRIBUTE,
-					oldAttribute, attribute));
+			eNotify(new ENotificationImpl(this, Notification.SET, PatternsPackage.ATTRIBUTE_ASSIGNMENT__ATTRIBUTE, oldAttribute, attribute));
 	}
 
 	/**
@@ -170,43 +148,6 @@ public class AttributeAssignmentImpl extends EObjectImpl implements
 	 * @generated
 	 */
 	public Expression getValueExpression() {
-		if (valueExpression != null && valueExpression.eIsProxy()) {
-			InternalEObject oldValueExpression = (InternalEObject) valueExpression;
-			valueExpression = (Expression) eResolveProxy(oldValueExpression);
-			if (valueExpression != oldValueExpression) {
-				InternalEObject newValueExpression = (InternalEObject) valueExpression;
-				NotificationChain msgs = oldValueExpression
-						.eInverseRemove(
-								this,
-								EOPPOSITE_FEATURE_BASE
-										- PatternsPackage.ATTRIBUTE_ASSIGNMENT__VALUE_EXPRESSION,
-								null, null);
-				if (newValueExpression.eInternalContainer() == null) {
-					msgs = newValueExpression
-							.eInverseAdd(
-									this,
-									EOPPOSITE_FEATURE_BASE
-											- PatternsPackage.ATTRIBUTE_ASSIGNMENT__VALUE_EXPRESSION,
-									null, msgs);
-				}
-				if (msgs != null)
-					msgs.dispatch();
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(
-							this,
-							Notification.RESOLVE,
-							PatternsPackage.ATTRIBUTE_ASSIGNMENT__VALUE_EXPRESSION,
-							oldValueExpression, valueExpression));
-			}
-		}
-		return valueExpression;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Expression basicGetValueExpression() {
 		return valueExpression;
 	}
 
@@ -219,14 +160,8 @@ public class AttributeAssignmentImpl extends EObjectImpl implements
 		Expression oldValueExpression = valueExpression;
 		valueExpression = newValueExpression;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this,
-					Notification.SET,
-					PatternsPackage.ATTRIBUTE_ASSIGNMENT__VALUE_EXPRESSION,
-					oldValueExpression, newValueExpression);
-			if (msgs == null)
-				msgs = notification;
-			else
-				msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PatternsPackage.ATTRIBUTE_ASSIGNMENT__VALUE_EXPRESSION, oldValueExpression, newValueExpression);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -239,26 +174,14 @@ public class AttributeAssignmentImpl extends EObjectImpl implements
 		if (newValueExpression != valueExpression) {
 			NotificationChain msgs = null;
 			if (valueExpression != null)
-				msgs = ((InternalEObject) valueExpression)
-						.eInverseRemove(
-								this,
-								EOPPOSITE_FEATURE_BASE
-										- PatternsPackage.ATTRIBUTE_ASSIGNMENT__VALUE_EXPRESSION,
-								null, msgs);
+				msgs = ((InternalEObject)valueExpression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PatternsPackage.ATTRIBUTE_ASSIGNMENT__VALUE_EXPRESSION, null, msgs);
 			if (newValueExpression != null)
-				msgs = ((InternalEObject) newValueExpression)
-						.eInverseAdd(
-								this,
-								EOPPOSITE_FEATURE_BASE
-										- PatternsPackage.ATTRIBUTE_ASSIGNMENT__VALUE_EXPRESSION,
-								null, msgs);
+				msgs = ((InternalEObject)newValueExpression).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PatternsPackage.ATTRIBUTE_ASSIGNMENT__VALUE_EXPRESSION, null, msgs);
 			msgs = basicSetValueExpression(newValueExpression, msgs);
-			if (msgs != null)
-				msgs.dispatch();
-		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					PatternsPackage.ATTRIBUTE_ASSIGNMENT__VALUE_EXPRESSION,
-					newValueExpression, newValueExpression));
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PatternsPackage.ATTRIBUTE_ASSIGNMENT__VALUE_EXPRESSION, newValueExpression, newValueExpression));
 	}
 
 	/**
@@ -269,10 +192,10 @@ public class AttributeAssignmentImpl extends EObjectImpl implements
 	public NotificationChain eInverseAdd(InternalEObject otherEnd,
 			int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case PatternsPackage.ATTRIBUTE_ASSIGNMENT__OBJECT_VARIABLE:
-			if (eInternalContainer() != null)
-				msgs = eBasicRemoveFromContainer(msgs);
-			return basicSetObjectVariable((ObjectVariable) otherEnd, msgs);
+			case PatternsPackage.ATTRIBUTE_ASSIGNMENT__OBJECT_VARIABLE:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetObjectVariable((ObjectVariable)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -285,10 +208,10 @@ public class AttributeAssignmentImpl extends EObjectImpl implements
 	public NotificationChain eInverseRemove(InternalEObject otherEnd,
 			int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case PatternsPackage.ATTRIBUTE_ASSIGNMENT__VALUE_EXPRESSION:
-			return basicSetValueExpression(null, msgs);
-		case PatternsPackage.ATTRIBUTE_ASSIGNMENT__OBJECT_VARIABLE:
-			return basicSetObjectVariable(null, msgs);
+			case PatternsPackage.ATTRIBUTE_ASSIGNMENT__VALUE_EXPRESSION:
+				return basicSetValueExpression(null, msgs);
+			case PatternsPackage.ATTRIBUTE_ASSIGNMENT__OBJECT_VARIABLE:
+				return basicSetObjectVariable(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -301,10 +224,8 @@ public class AttributeAssignmentImpl extends EObjectImpl implements
 	public NotificationChain eBasicRemoveFromContainerFeature(
 			NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
-		case PatternsPackage.ATTRIBUTE_ASSIGNMENT__OBJECT_VARIABLE:
-			return eInternalContainer().eInverseRemove(this,
-					PatternsPackage.OBJECT_VARIABLE__ATTRIBUTE_ASSIGNMENT,
-					ObjectVariable.class, msgs);
+			case PatternsPackage.ATTRIBUTE_ASSIGNMENT__OBJECT_VARIABLE:
+				return eInternalContainer().eInverseRemove(this, PatternsPackage.OBJECT_VARIABLE__ATTRIBUTE_ASSIGNMENT, ObjectVariable.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -316,18 +237,13 @@ public class AttributeAssignmentImpl extends EObjectImpl implements
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case PatternsPackage.ATTRIBUTE_ASSIGNMENT__ATTRIBUTE:
-			if (resolve)
-				return getAttribute();
-			return basicGetAttribute();
-		case PatternsPackage.ATTRIBUTE_ASSIGNMENT__VALUE_EXPRESSION:
-			if (resolve)
+			case PatternsPackage.ATTRIBUTE_ASSIGNMENT__ATTRIBUTE:
+				if (resolve) return getAttribute();
+				return basicGetAttribute();
+			case PatternsPackage.ATTRIBUTE_ASSIGNMENT__VALUE_EXPRESSION:
 				return getValueExpression();
-			return basicGetValueExpression();
-		case PatternsPackage.ATTRIBUTE_ASSIGNMENT__OBJECT_VARIABLE:
-			if (resolve)
+			case PatternsPackage.ATTRIBUTE_ASSIGNMENT__OBJECT_VARIABLE:
 				return getObjectVariable();
-			return basicGetObjectVariable();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -339,15 +255,15 @@ public class AttributeAssignmentImpl extends EObjectImpl implements
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case PatternsPackage.ATTRIBUTE_ASSIGNMENT__ATTRIBUTE:
-			setAttribute((EAttribute) newValue);
-			return;
-		case PatternsPackage.ATTRIBUTE_ASSIGNMENT__VALUE_EXPRESSION:
-			setValueExpression((Expression) newValue);
-			return;
-		case PatternsPackage.ATTRIBUTE_ASSIGNMENT__OBJECT_VARIABLE:
-			setObjectVariable((ObjectVariable) newValue);
-			return;
+			case PatternsPackage.ATTRIBUTE_ASSIGNMENT__ATTRIBUTE:
+				setAttribute((EAttribute)newValue);
+				return;
+			case PatternsPackage.ATTRIBUTE_ASSIGNMENT__VALUE_EXPRESSION:
+				setValueExpression((Expression)newValue);
+				return;
+			case PatternsPackage.ATTRIBUTE_ASSIGNMENT__OBJECT_VARIABLE:
+				setObjectVariable((ObjectVariable)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -359,15 +275,15 @@ public class AttributeAssignmentImpl extends EObjectImpl implements
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case PatternsPackage.ATTRIBUTE_ASSIGNMENT__ATTRIBUTE:
-			setAttribute((EAttribute) null);
-			return;
-		case PatternsPackage.ATTRIBUTE_ASSIGNMENT__VALUE_EXPRESSION:
-			setValueExpression((Expression) null);
-			return;
-		case PatternsPackage.ATTRIBUTE_ASSIGNMENT__OBJECT_VARIABLE:
-			setObjectVariable((ObjectVariable) null);
-			return;
+			case PatternsPackage.ATTRIBUTE_ASSIGNMENT__ATTRIBUTE:
+				setAttribute((EAttribute)null);
+				return;
+			case PatternsPackage.ATTRIBUTE_ASSIGNMENT__VALUE_EXPRESSION:
+				setValueExpression((Expression)null);
+				return;
+			case PatternsPackage.ATTRIBUTE_ASSIGNMENT__OBJECT_VARIABLE:
+				setObjectVariable((ObjectVariable)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -379,12 +295,12 @@ public class AttributeAssignmentImpl extends EObjectImpl implements
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case PatternsPackage.ATTRIBUTE_ASSIGNMENT__ATTRIBUTE:
-			return attribute != null;
-		case PatternsPackage.ATTRIBUTE_ASSIGNMENT__VALUE_EXPRESSION:
-			return valueExpression != null;
-		case PatternsPackage.ATTRIBUTE_ASSIGNMENT__OBJECT_VARIABLE:
-			return basicGetObjectVariable() != null;
+			case PatternsPackage.ATTRIBUTE_ASSIGNMENT__ATTRIBUTE:
+				return attribute != null;
+			case PatternsPackage.ATTRIBUTE_ASSIGNMENT__VALUE_EXPRESSION:
+				return valueExpression != null;
+			case PatternsPackage.ATTRIBUTE_ASSIGNMENT__OBJECT_VARIABLE:
+				return getObjectVariable() != null;
 		}
 		return super.eIsSet(featureID);
 	}

@@ -48,7 +48,7 @@ public interface OntologyPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.fujaba.de/muml/ontology/0.4.0";
+	String eNS_URI = "http://www.muml.org/ontology/1.0.0";
 
 	/**
 	 * The package namespace name.
@@ -77,22 +77,22 @@ public interface OntologyPackage extends EPackage {
 	int ONTOLOGY_EXTENSION = 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ONTOLOGY_EXTENSION__ANNOTATION = CorePackage.EXTENSION__ANNOTATION;
+	int ONTOLOGY_EXTENSION__ANNOTATIONS = CorePackage.EXTENSION__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ONTOLOGY_EXTENSION__EXTENSION = CorePackage.EXTENSION__EXTENSION;
+	int ONTOLOGY_EXTENSION__EXTENSIONS = CorePackage.EXTENSION__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Base</b></em>' reference.

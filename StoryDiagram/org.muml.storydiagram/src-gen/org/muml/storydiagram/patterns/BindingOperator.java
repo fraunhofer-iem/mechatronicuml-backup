@@ -104,7 +104,10 @@ public enum BindingOperator implements Enumerator {
 	 * @generated
 	 */
 	private static final BindingOperator[] VALUES_ARRAY = new BindingOperator[] {
-			CHECK_ONLY, CREATE, DESTROY, };
+			CHECK_ONLY,
+			CREATE,
+			DESTROY,
+		};
 
 	/**
 	 * A public read-only list of all the '<em><b>Binding Operator</b></em>' enumerators.
@@ -112,13 +115,14 @@ public enum BindingOperator implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final List<BindingOperator> VALUES = Collections
-			.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+	public static final List<BindingOperator> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
 	/**
 	 * Returns the '<em><b>Binding Operator</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @param literal the literal.
+	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static BindingOperator get(String literal) {
@@ -135,6 +139,8 @@ public enum BindingOperator implements Enumerator {
 	 * Returns the '<em><b>Binding Operator</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @param name the name.
+	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static BindingOperator getByName(String name) {
@@ -151,16 +157,15 @@ public enum BindingOperator implements Enumerator {
 	 * Returns the '<em><b>Binding Operator</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @param value the integer value.
+	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static BindingOperator get(int value) {
 		switch (value) {
-		case CHECK_ONLY_VALUE:
-			return CHECK_ONLY;
-		case CREATE_VALUE:
-			return CREATE;
-		case DESTROY_VALUE:
-			return DESTROY;
+			case CHECK_ONLY_VALUE: return CHECK_ONLY;
+			case CREATE_VALUE: return CREATE;
+			case DESTROY_VALUE: return DESTROY;
 		}
 		return null;
 	}
@@ -204,7 +209,7 @@ public enum BindingOperator implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-		return value;
+	  return value;
 	}
 
 	/**
@@ -213,7 +218,7 @@ public enum BindingOperator implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-		return name;
+	  return name;
 	}
 
 	/**
@@ -222,7 +227,7 @@ public enum BindingOperator implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-		return literal;
+	  return literal;
 	}
 
 	/**

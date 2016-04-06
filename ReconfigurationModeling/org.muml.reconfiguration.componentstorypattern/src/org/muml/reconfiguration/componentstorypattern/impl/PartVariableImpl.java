@@ -27,12 +27,12 @@ import org.muml.reconfiguration.componentstorypattern.PortVariable;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.reconfiguration.componentstorypattern.impl.PartVariableImpl#getDataType <em>Data Type</em>}</li>
  *   <li>{@link org.muml.reconfiguration.componentstorypattern.impl.PartVariableImpl#getPortVariables <em>Port Variables</em>}</li>
  *   <li>{@link org.muml.reconfiguration.componentstorypattern.impl.PartVariableImpl#getComponentPartType <em>Component Part Type</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

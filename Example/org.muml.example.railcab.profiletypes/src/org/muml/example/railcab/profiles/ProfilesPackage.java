@@ -37,7 +37,7 @@ public interface ProfilesPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.fujaba.de/muml/examples/profiles/0.3.2";
+	String eNS_URI = "http://www.muml.org/examples/profiles/1.0.0";
 
 	/**
 	 * The package namespace name.

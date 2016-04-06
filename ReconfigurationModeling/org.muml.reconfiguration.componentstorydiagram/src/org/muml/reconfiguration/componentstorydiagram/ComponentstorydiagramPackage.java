@@ -41,7 +41,7 @@ public interface ComponentstorydiagramPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.fujaba.de/muml/componentstorydiagram/0.4.0";
+	String eNS_URI = "http://www.muml.org/reconfiguration/componentstorydiagram/1.0.0";
 
 	/**
 	 * The package namespace name.
@@ -70,22 +70,22 @@ public interface ComponentstorydiagramPackage extends EPackage {
 	int COMPONENT_STORY_RULE = 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_STORY_RULE__ANNOTATION = ReconfigurationPackage.RECONFIGURATION_RULE__ANNOTATION;
+	int COMPONENT_STORY_RULE__ANNOTATIONS = ReconfigurationPackage.RECONFIGURATION_RULE__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_STORY_RULE__EXTENSION = ReconfigurationPackage.RECONFIGURATION_RULE__EXTENSION;
+	int COMPONENT_STORY_RULE__EXTENSIONS = ReconfigurationPackage.RECONFIGURATION_RULE__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -341,22 +341,22 @@ public interface ComponentstorydiagramPackage extends EPackage {
 	int COMPONENT_STORY_NODE = 1;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_STORY_NODE__ANNOTATION = ActivitiesPackage.ACTIVITY_NODE__ANNOTATION;
+	int COMPONENT_STORY_NODE__ANNOTATIONS = ActivitiesPackage.ACTIVITY_NODE__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_STORY_NODE__EXTENSION = ActivitiesPackage.ACTIVITY_NODE__EXTENSION;
+	int COMPONENT_STORY_NODE__EXTENSIONS = ActivitiesPackage.ACTIVITY_NODE__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -630,22 +630,22 @@ public interface ComponentstorydiagramPackage extends EPackage {
 	int CONTROLLER_EXCHANGE_NODE = 2;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROLLER_EXCHANGE_NODE__ANNOTATION = ActivitiesPackage.ACTIVITY_NODE__ANNOTATION;
+	int CONTROLLER_EXCHANGE_NODE__ANNOTATIONS = ActivitiesPackage.ACTIVITY_NODE__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROLLER_EXCHANGE_NODE__EXTENSION = ActivitiesPackage.ACTIVITY_NODE__EXTENSION;
+	int CONTROLLER_EXCHANGE_NODE__EXTENSIONS = ActivitiesPackage.ACTIVITY_NODE__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -920,22 +920,22 @@ public interface ComponentstorydiagramPackage extends EPackage {
 	int SEND_RECONFIGURATION_MESSAGE_EXPRESSION = 3;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SEND_RECONFIGURATION_MESSAGE_EXPRESSION__ANNOTATION = ComponentstorypatternPackage.TRIGGER_EMBEDDED_COMPONENT_EXPRESSION__ANNOTATION;
+	int SEND_RECONFIGURATION_MESSAGE_EXPRESSION__ANNOTATIONS = ComponentstorypatternPackage.TRIGGER_EMBEDDED_COMPONENT_EXPRESSION__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SEND_RECONFIGURATION_MESSAGE_EXPRESSION__EXTENSION = ComponentstorypatternPackage.TRIGGER_EMBEDDED_COMPONENT_EXPRESSION__EXTENSION;
+	int SEND_RECONFIGURATION_MESSAGE_EXPRESSION__EXTENSIONS = ComponentstorypatternPackage.TRIGGER_EMBEDDED_COMPONENT_EXPRESSION__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.

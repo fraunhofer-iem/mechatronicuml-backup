@@ -26,8 +26,8 @@ import org.muml.pim.connector.ConnectorPackage;
 import org.muml.pim.valuetype.ValuetypeFactory;
 import org.muml.reconfiguration.ReconfigurationPackage;
 import org.muml.reconfiguration.ReconfigurationPort;
-import org.muml.storydiagram.activities.ActivitiesFactory;
-import org.muml.storydiagram.calls.CallsFactory;
+import org.storydriven.storydiagrams.activities.ActivitiesFactory;
+import org.storydriven.storydiagrams.calls.CallsFactory;
 
 /**
  * This is the item provider adapter for a {@link org.muml.reconfiguration.ReconfigurationPort} object.
@@ -216,7 +216,7 @@ public class ReconfigurationPortItemProvider
 				 getString("_UI_DiscreteInteractionEndpoint_receiverMessageBuffer_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_DiscreteInteractionEndpoint_receiverMessageBuffer_feature", "_UI_DiscreteInteractionEndpoint_type"),
 				 ConnectorPackage.Literals.DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_BUFFER,
-				 false,
+				 true,
 				 false,
 				 false,
 				 null,
@@ -338,12 +338,12 @@ public class ReconfigurationPortItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSIONS,
 				 ActivitiesFactory.eINSTANCE.createOperationExtension()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSIONS,
 				 CallsFactory.eINSTANCE.createParameterExtension()));
 
 		newChildDescriptors.add
@@ -368,4 +368,19 @@ public class ReconfigurationPortItemProvider
 		return MumlReconfigurationEditPlugin.INSTANCE;
 	}
 
+	/**
+	 * This enables OCL property filtering.
+	 * @generated OCL
+	 */
+	protected org.eclipse.emf.edit.provider.ItemPropertyDescriptor createItemPropertyDescriptor(org.eclipse.emf.common.notify.AdapterFactory adapterFactory, org.eclipse.emf.common.util.ResourceLocator resourceLocator,String displayName,String description,org.eclipse.emf.ecore.EStructuralFeature feature,boolean isSettable,Object staticImage,String category,String[] filterFlags) {
+	    return new ocl.OCLItemPropertyDescriptor(adapterFactory,resourceLocator,displayName,description,feature,isSettable,false,false,staticImage,category,filterFlags);
+	}
+	
+	/**
+	 * This enables OCL property filtering.
+	 * @generated OCL
+	 */
+	protected org.eclipse.emf.edit.provider.ItemPropertyDescriptor createItemPropertyDescriptor(org.eclipse.emf.common.notify.AdapterFactory adapterFactory, org.eclipse.emf.common.util.ResourceLocator resourceLocator, String displayName, String description, org.eclipse.emf.ecore.EStructuralFeature feature, boolean isSettable, boolean multiLine, boolean sortChoices, Object staticImage,String category, String[] filterFlags) {
+		return new ocl.OCLItemPropertyDescriptor(adapterFactory, resourceLocator, displayName,description,feature,isSettable,multiLine,sortChoices, staticImage, category,filterFlags);
+	}
 }

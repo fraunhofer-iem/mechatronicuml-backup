@@ -14,8 +14,6 @@ import org.muml.storydiagram.activities.InitialNode;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Initial Node</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */

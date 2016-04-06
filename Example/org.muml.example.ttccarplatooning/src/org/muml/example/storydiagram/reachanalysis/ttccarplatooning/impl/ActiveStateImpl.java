@@ -24,11 +24,11 @@ import org.muml.example.storydiagram.reachanalysis.ttccarplatooning.Ttccarplatoo
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.example.storydiagram.reachanalysis.ttccarplatooning.impl.ActiveStateImpl#getActive <em>Active</em>}</li>
  *   <li>{@link org.muml.example.storydiagram.reachanalysis.ttccarplatooning.impl.ActiveStateImpl#getIn <em>In</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

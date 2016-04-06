@@ -20,6 +20,7 @@ import org.muml.modelica.transform.Root;
 import org.muml.modelica.transform.TransformFactory;
 import org.muml.modelica.transform.TransformPackage;
 import org.muml.modelica.transform.TransformationRootObject;
+import org.muml.pim.PimPackage;
 import org.muml.pim.behavior.BehaviorPackage;
 import org.muml.pim.component.ComponentPackage;
 import org.muml.pim.connector.ConnectorPackage;
@@ -127,16 +128,8 @@ public class TransformPackageImpl extends EPackageImpl implements TransformPacka
 		isInited = true;
 
 		// Initialize simple dependencies
-		ComponentPackage.eINSTANCE.eClass();
-		ConstraintPackage.eINSTANCE.eClass();
-		InstancePackage.eINSTANCE.eClass();
-		ProtocolPackage.eINSTANCE.eClass();
-		RealtimestatechartPackage.eINSTANCE.eClass();
-		MsgtypePackage.eINSTANCE.eClass();
-		TypesPackage.eINSTANCE.eClass();
-		ConnectorPackage.eINSTANCE.eClass();
-		ValuetypePackage.eINSTANCE.eClass();
-		BehaviorPackage.eINSTANCE.eClass();
+		EcorePackage.eINSTANCE.eClass();
+		PimPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theTransformPackage.createPackageContents();

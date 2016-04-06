@@ -19,6 +19,7 @@ import org.muml.core.ExtendableElement;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.storydiagram.patterns.LinkConstraint#getIndex <em>Index</em>}</li>
  *   <li>{@link org.muml.storydiagram.patterns.LinkConstraint#getConstraintType <em>Constraint Type</em>}</li>
@@ -27,7 +28,6 @@ import org.muml.core.ExtendableElement;
  *   <li>{@link org.muml.storydiagram.patterns.LinkConstraint#getReferencingObject <em>Referencing Object</em>}</li>
  *   <li>{@link org.muml.storydiagram.patterns.LinkConstraint#getSecondLink <em>Second Link</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.storydiagram.patterns.PatternsPackage#getLinkConstraint()
  * @model
@@ -115,7 +115,7 @@ public interface LinkConstraint extends ExtendableElement {
 
 	/**
 	 * Returns the value of the '<em><b>First Link</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link org.muml.storydiagram.patterns.AbstractLinkVariable#getFirstLinkConstraints <em>First Link Constraint</em>}'.
+	 * It is bidirectional and its opposite is '{@link org.muml.storydiagram.patterns.AbstractLinkVariable#getFirstLinkConstraint <em>First Link Constraint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>First Link</em>' reference isn't clear,
@@ -125,7 +125,7 @@ public interface LinkConstraint extends ExtendableElement {
 	 * @return the value of the '<em>First Link</em>' reference.
 	 * @see #setFirstLink(AbstractLinkVariable)
 	 * @see org.muml.storydiagram.patterns.PatternsPackage#getLinkConstraint_FirstLink()
-	 * @see org.muml.storydiagram.patterns.AbstractLinkVariable#getFirstLinkConstraints
+	 * @see org.muml.storydiagram.patterns.AbstractLinkVariable#getFirstLinkConstraint
 	 * @model opposite="firstLinkConstraint" required="true" ordered="false"
 	 * @generated
 	 */
@@ -143,7 +143,7 @@ public interface LinkConstraint extends ExtendableElement {
 
 	/**
 	 * Returns the value of the '<em><b>Referencing Object</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link org.muml.storydiagram.patterns.ObjectVariable#getLinkOrderConstraints <em>Link Order Constraint</em>}'.
+	 * It is bidirectional and its opposite is '{@link org.muml.storydiagram.patterns.ObjectVariable#getLinkOrderConstraint <em>Link Order Constraint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Referencing Object</em>' container reference isn't clear,
@@ -153,7 +153,7 @@ public interface LinkConstraint extends ExtendableElement {
 	 * @return the value of the '<em>Referencing Object</em>' container reference.
 	 * @see #setReferencingObject(ObjectVariable)
 	 * @see org.muml.storydiagram.patterns.PatternsPackage#getLinkConstraint_ReferencingObject()
-	 * @see org.muml.storydiagram.patterns.ObjectVariable#getLinkOrderConstraints
+	 * @see org.muml.storydiagram.patterns.ObjectVariable#getLinkOrderConstraint
 	 * @model opposite="linkOrderConstraint" required="true" transient="false" ordered="false"
 	 * @generated
 	 */
@@ -171,7 +171,7 @@ public interface LinkConstraint extends ExtendableElement {
 
 	/**
 	 * Returns the value of the '<em><b>Second Link</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link org.muml.storydiagram.patterns.AbstractLinkVariable#getSecondLinkConstraints <em>Second Link Constraint</em>}'.
+	 * It is bidirectional and its opposite is '{@link org.muml.storydiagram.patterns.AbstractLinkVariable#getSecondLinkConstraint <em>Second Link Constraint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Second Link</em>' reference isn't clear,
@@ -181,7 +181,7 @@ public interface LinkConstraint extends ExtendableElement {
 	 * @return the value of the '<em>Second Link</em>' reference.
 	 * @see #setSecondLink(AbstractLinkVariable)
 	 * @see org.muml.storydiagram.patterns.PatternsPackage#getLinkConstraint_SecondLink()
-	 * @see org.muml.storydiagram.patterns.AbstractLinkVariable#getSecondLinkConstraints
+	 * @see org.muml.storydiagram.patterns.AbstractLinkVariable#getSecondLinkConstraint
 	 * @model opposite="secondLinkConstraint" ordered="false"
 	 * @generated
 	 */

@@ -15,11 +15,11 @@ import org.muml.pim.protocol.Role;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.verification.core.runtime.RoleInstance#getRole <em>Role</em>}</li>
  *   <li>{@link org.muml.verification.core.runtime.RoleInstance#getAssembly <em>Assembly</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.verification.core.runtime.RuntimePackage#getRoleInstance()
  * @model abstract="true"

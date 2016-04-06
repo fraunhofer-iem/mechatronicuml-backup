@@ -19,11 +19,11 @@ import org.muml.storydiagram.activities.impl.ActivityNodeImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.reconfiguration.componentstorydiagram.impl.ControllerExchangeNodeImpl#getDeadline <em>Deadline</em>}</li>
  *   <li>{@link org.muml.reconfiguration.componentstorydiagram.impl.ControllerExchangeNodeImpl#getComponentStoryPattern <em>Component Story Pattern</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

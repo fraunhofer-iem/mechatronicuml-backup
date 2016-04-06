@@ -7,6 +7,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+import org.muml.reconfiguration.componentstorydiagram.*;
 import org.muml.reconfiguration.componentstorydiagram.ComponentStoryNode;
 import org.muml.reconfiguration.componentstorydiagram.ComponentStoryRule;
 import org.muml.reconfiguration.componentstorydiagram.ComponentstorydiagramFactory;

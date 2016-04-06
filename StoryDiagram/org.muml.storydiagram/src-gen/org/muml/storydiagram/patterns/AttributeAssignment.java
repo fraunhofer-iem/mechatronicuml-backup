@@ -21,12 +21,12 @@ import org.muml.core.expressions.Expression;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.storydiagram.patterns.AttributeAssignment#getAttribute <em>Attribute</em>}</li>
  *   <li>{@link org.muml.storydiagram.patterns.AttributeAssignment#getValueExpression <em>Value Expression</em>}</li>
  *   <li>{@link org.muml.storydiagram.patterns.AttributeAssignment#getObjectVariable <em>Object Variable</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.storydiagram.patterns.PatternsPackage#getAttributeAssignment()
  * @model
@@ -68,7 +68,7 @@ public interface AttributeAssignment extends EObject {
 	 * @return the value of the '<em>Value Expression</em>' containment reference.
 	 * @see #setValueExpression(Expression)
 	 * @see org.muml.storydiagram.patterns.PatternsPackage#getAttributeAssignment_ValueExpression()
-	 * @model containment="true" resolveProxies="true" required="true" ordered="false"
+	 * @model containment="true" required="true" ordered="false"
 	 * @generated
 	 */
 	Expression getValueExpression();
@@ -85,7 +85,7 @@ public interface AttributeAssignment extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Object Variable</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link org.muml.storydiagram.patterns.ObjectVariable#getAttributeAssignments <em>Attribute Assignment</em>}'.
+	 * It is bidirectional and its opposite is '{@link org.muml.storydiagram.patterns.ObjectVariable#getAttributeAssignment <em>Attribute Assignment</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Object Variable</em>' container reference isn't clear,
@@ -95,7 +95,7 @@ public interface AttributeAssignment extends EObject {
 	 * @return the value of the '<em>Object Variable</em>' container reference.
 	 * @see #setObjectVariable(ObjectVariable)
 	 * @see org.muml.storydiagram.patterns.PatternsPackage#getAttributeAssignment_ObjectVariable()
-	 * @see org.muml.storydiagram.patterns.ObjectVariable#getAttributeAssignments
+	 * @see org.muml.storydiagram.patterns.ObjectVariable#getAttributeAssignment
 	 * @model opposite="attributeAssignment" required="true" transient="false" ordered="false"
 	 * @generated
 	 */

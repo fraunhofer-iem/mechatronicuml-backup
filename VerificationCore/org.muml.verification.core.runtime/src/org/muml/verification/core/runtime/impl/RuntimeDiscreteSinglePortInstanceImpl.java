@@ -21,6 +21,7 @@ import org.muml.verification.core.runtime.RuntimePackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.verification.core.runtime.impl.RuntimeDiscreteSinglePortInstanceImpl#getMultiInteractionEndpointInstance <em>Multi Interaction Endpoint Instance</em>}</li>
  *   <li>{@link org.muml.verification.core.runtime.impl.RuntimeDiscreteSinglePortInstanceImpl#getNext <em>Next</em>}</li>
@@ -28,7 +29,6 @@ import org.muml.verification.core.runtime.RuntimePackage;
  *   <li>{@link org.muml.verification.core.runtime.impl.RuntimeDiscreteSinglePortInstanceImpl#getFirst <em>First</em>}</li>
  *   <li>{@link org.muml.verification.core.runtime.impl.RuntimeDiscreteSinglePortInstanceImpl#getLast <em>Last</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

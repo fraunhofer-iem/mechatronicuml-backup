@@ -20,12 +20,12 @@ import org.muml.pim.realtimestatechart.impl.RegionImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.modelica.transform.impl.RegionInstanceImpl#getInstanceOf <em>Instance Of</em>}</li>
  *   <li>{@link org.muml.modelica.transform.impl.RegionInstanceImpl#isEmbedsSinglePortStatechart <em>Embeds Single Port Statechart</em>}</li>
  *   <li>{@link org.muml.modelica.transform.impl.RegionInstanceImpl#isEmbedsMultiPortStatechart <em>Embeds Multi Port Statechart</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

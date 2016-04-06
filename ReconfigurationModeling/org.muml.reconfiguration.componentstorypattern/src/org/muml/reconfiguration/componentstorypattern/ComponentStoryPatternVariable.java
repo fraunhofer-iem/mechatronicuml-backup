@@ -15,12 +15,12 @@ import org.muml.storydiagram.patterns.BindingState;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.reconfiguration.componentstorypattern.ComponentStoryPatternVariable#getBindingSemantics <em>Binding Semantics</em>}</li>
  *   <li>{@link org.muml.reconfiguration.componentstorypattern.ComponentStoryPatternVariable#getBindingOperator <em>Binding Operator</em>}</li>
  *   <li>{@link org.muml.reconfiguration.componentstorypattern.ComponentStoryPatternVariable#getBindingState <em>Binding State</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.reconfiguration.componentstorypattern.ComponentstorypatternPackage#getComponentStoryPatternVariable()
  * @model

@@ -12,7 +12,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.muml.core.expressions.impl.ExpressionImpl;
 import org.muml.storydiagram.patterns.PrimitiveVariable;
-import org.muml.storydiagram.patterns.expressions.PatternsExpressionsPackage;
+import org.muml.storydiagram.patterns.expressions.ExpressionsPackage;
 import org.muml.storydiagram.patterns.expressions.PrimitiveVariableExpression;
 
 /**
@@ -21,10 +21,10 @@ import org.muml.storydiagram.patterns.expressions.PrimitiveVariableExpression;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.storydiagram.patterns.expressions.impl.PrimitiveVariableExpressionImpl#getPrimitiveVariable <em>Primitive Variable</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -56,7 +56,7 @@ public class PrimitiveVariableExpressionImpl extends ExpressionImpl implements
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return PatternsExpressionsPackage.Literals.PRIMITIVE_VARIABLE_EXPRESSION;
+		return ExpressionsPackage.Literals.PRIMITIVE_VARIABLE_EXPRESSION;
 	}
 
 	/**
@@ -66,15 +66,11 @@ public class PrimitiveVariableExpressionImpl extends ExpressionImpl implements
 	 */
 	public PrimitiveVariable getPrimitiveVariable() {
 		if (primitiveVariable != null && primitiveVariable.eIsProxy()) {
-			InternalEObject oldPrimitiveVariable = (InternalEObject) primitiveVariable;
-			primitiveVariable = (PrimitiveVariable) eResolveProxy(oldPrimitiveVariable);
+			InternalEObject oldPrimitiveVariable = (InternalEObject)primitiveVariable;
+			primitiveVariable = (PrimitiveVariable)eResolveProxy(oldPrimitiveVariable);
 			if (primitiveVariable != oldPrimitiveVariable) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(
-							this,
-							Notification.RESOLVE,
-							PatternsExpressionsPackage.PRIMITIVE_VARIABLE_EXPRESSION__PRIMITIVE_VARIABLE,
-							oldPrimitiveVariable, primitiveVariable));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ExpressionsPackage.PRIMITIVE_VARIABLE_EXPRESSION__PRIMITIVE_VARIABLE, oldPrimitiveVariable, primitiveVariable));
 			}
 		}
 		return primitiveVariable;
@@ -98,11 +94,7 @@ public class PrimitiveVariableExpressionImpl extends ExpressionImpl implements
 		PrimitiveVariable oldPrimitiveVariable = primitiveVariable;
 		primitiveVariable = newPrimitiveVariable;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(
-					this,
-					Notification.SET,
-					PatternsExpressionsPackage.PRIMITIVE_VARIABLE_EXPRESSION__PRIMITIVE_VARIABLE,
-					oldPrimitiveVariable, primitiveVariable));
+			eNotify(new ENotificationImpl(this, Notification.SET, ExpressionsPackage.PRIMITIVE_VARIABLE_EXPRESSION__PRIMITIVE_VARIABLE, oldPrimitiveVariable, primitiveVariable));
 	}
 
 	/**
@@ -113,10 +105,9 @@ public class PrimitiveVariableExpressionImpl extends ExpressionImpl implements
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case PatternsExpressionsPackage.PRIMITIVE_VARIABLE_EXPRESSION__PRIMITIVE_VARIABLE:
-			if (resolve)
-				return getPrimitiveVariable();
-			return basicGetPrimitiveVariable();
+			case ExpressionsPackage.PRIMITIVE_VARIABLE_EXPRESSION__PRIMITIVE_VARIABLE:
+				if (resolve) return getPrimitiveVariable();
+				return basicGetPrimitiveVariable();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -129,9 +120,9 @@ public class PrimitiveVariableExpressionImpl extends ExpressionImpl implements
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case PatternsExpressionsPackage.PRIMITIVE_VARIABLE_EXPRESSION__PRIMITIVE_VARIABLE:
-			setPrimitiveVariable((PrimitiveVariable) newValue);
-			return;
+			case ExpressionsPackage.PRIMITIVE_VARIABLE_EXPRESSION__PRIMITIVE_VARIABLE:
+				setPrimitiveVariable((PrimitiveVariable)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -144,9 +135,9 @@ public class PrimitiveVariableExpressionImpl extends ExpressionImpl implements
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case PatternsExpressionsPackage.PRIMITIVE_VARIABLE_EXPRESSION__PRIMITIVE_VARIABLE:
-			setPrimitiveVariable((PrimitiveVariable) null);
-			return;
+			case ExpressionsPackage.PRIMITIVE_VARIABLE_EXPRESSION__PRIMITIVE_VARIABLE:
+				setPrimitiveVariable((PrimitiveVariable)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -159,8 +150,8 @@ public class PrimitiveVariableExpressionImpl extends ExpressionImpl implements
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case PatternsExpressionsPackage.PRIMITIVE_VARIABLE_EXPRESSION__PRIMITIVE_VARIABLE:
-			return primitiveVariable != null;
+			case ExpressionsPackage.PRIMITIVE_VARIABLE_EXPRESSION__PRIMITIVE_VARIABLE:
+				return primitiveVariable != null;
 		}
 		return super.eIsSet(featureID);
 	}

@@ -36,7 +36,7 @@ public interface SwplatformPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNAME = "swplatform";
+	String eNAME = "platform";
 
 	/**
 	 * The package namespace URI.
@@ -44,7 +44,7 @@ public interface SwplatformPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.fujaba.de/muml/swplatform/0.4.0/";
+	String eNS_URI = "http://www.muml.org/pm/software/platform/1.0.0";
 
 	/**
 	 * The package namespace name.
@@ -52,7 +52,7 @@ public interface SwplatformPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_PREFIX = "swplatform";
+	String eNS_PREFIX = "platform";
 
 	/**
 	 * The singleton instance of the package.
@@ -73,22 +73,22 @@ public interface SwplatformPackage extends EPackage {
 	int OPERATING_SYSTEM = 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATING_SYSTEM__ANNOTATION = CorePackage.NAMED_ELEMENT__ANNOTATION;
+	int OPERATING_SYSTEM__ANNOTATIONS = CorePackage.NAMED_ELEMENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATING_SYSTEM__EXTENSION = CorePackage.NAMED_ELEMENT__EXTENSION;
+	int OPERATING_SYSTEM__EXTENSIONS = CorePackage.NAMED_ELEMENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -335,22 +335,22 @@ public interface SwplatformPackage extends EPackage {
 	int API_REPOSITORY = 1;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int API_REPOSITORY__ANNOTATION = CorePackage.NAMED_ELEMENT__ANNOTATION;
+	int API_REPOSITORY__ANNOTATIONS = CorePackage.NAMED_ELEMENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int API_REPOSITORY__EXTENSION = CorePackage.NAMED_ELEMENT__EXTENSION;
+	int API_REPOSITORY__EXTENSIONS = CorePackage.NAMED_ELEMENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -588,22 +588,22 @@ public interface SwplatformPackage extends EPackage {
 	int API_COMMAND = 2;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int API_COMMAND__ANNOTATION = CorePackage.NAMED_ELEMENT__ANNOTATION;
+	int API_COMMAND__ANNOTATIONS = CorePackage.NAMED_ELEMENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int API_COMMAND__EXTENSION = CorePackage.NAMED_ELEMENT__EXTENSION;
+	int API_COMMAND__EXTENSIONS = CorePackage.NAMED_ELEMENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -859,22 +859,22 @@ public interface SwplatformPackage extends EPackage {
 	int ENUMERATION_VALUE = 3;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENUMERATION_VALUE__ANNOTATION = CorePackage.EXTENDABLE_ELEMENT__ANNOTATION;
+	int ENUMERATION_VALUE__ANNOTATIONS = CorePackage.EXTENDABLE_ELEMENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENUMERATION_VALUE__EXTENSION = CorePackage.EXTENDABLE_ELEMENT__EXTENSION;
+	int ENUMERATION_VALUE__EXTENSIONS = CorePackage.EXTENDABLE_ELEMENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1094,22 +1094,22 @@ public interface SwplatformPackage extends EPackage {
 	int ENUMERATION_DATA_TYPE = 4;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENUMERATION_DATA_TYPE__ANNOTATION = TypesPackage.DATA_TYPE__ANNOTATION;
+	int ENUMERATION_DATA_TYPE__ANNOTATIONS = TypesPackage.DATA_TYPE__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENUMERATION_DATA_TYPE__EXTENSION = TypesPackage.DATA_TYPE__EXTENSION;
+	int ENUMERATION_DATA_TYPE__EXTENSIONS = TypesPackage.DATA_TYPE__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.

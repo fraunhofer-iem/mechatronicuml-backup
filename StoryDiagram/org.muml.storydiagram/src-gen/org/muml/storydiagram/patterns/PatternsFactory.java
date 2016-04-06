@@ -23,8 +23,7 @@ public interface PatternsFactory extends EFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	PatternsFactory eINSTANCE = org.muml.storydiagram.patterns.impl.PatternsFactoryImpl
-			.init();
+	PatternsFactory eINSTANCE = org.muml.storydiagram.patterns.impl.PatternsFactoryImpl.init();
 
 	/**
 	 * Returns a new object of class '<em>Object Variable</em>'.

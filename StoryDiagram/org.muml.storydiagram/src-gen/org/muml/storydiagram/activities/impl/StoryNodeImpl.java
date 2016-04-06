@@ -18,11 +18,11 @@ import org.muml.storydiagram.patterns.StoryPattern;
  * <!-- begin-user-doc --> An implementation of the model object '<em><b>Story Node</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * <ul>
- *   <li>{@link org.muml.storydiagram.activities.impl.StoryNodeImpl#getStoryPattern <em>Story Pattern</em>}</li>
- *   <li>{@link org.muml.storydiagram.activities.impl.StoryNodeImpl#isForEach <em>For Each</em>}</li>
- * </ul>
  * </p>
+ * <ul>
+ *   <li>{@link org.muml.storydiagram.activities.impl.StoryNodeImpl#isForEach <em>For Each</em>}</li>
+ *   <li>{@link org.muml.storydiagram.activities.impl.StoryNodeImpl#getStoryPattern <em>Story Pattern</em>}</li>
+ * </ul>
  *
  * @generated
  */
@@ -79,8 +79,7 @@ public abstract class StoryNodeImpl extends ActivityNodeImpl implements
 		boolean oldForEach = forEach;
 		forEach = newForEach;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					ActivitiesPackage.STORY_NODE__FOR_EACH, oldForEach, forEach));
+			eNotify(new ENotificationImpl(this, Notification.SET, ActivitiesPackage.STORY_NODE__FOR_EACH, oldForEach, forEach));
 	}
 
 	/**
@@ -89,8 +88,7 @@ public abstract class StoryNodeImpl extends ActivityNodeImpl implements
 	 */
 	public StoryPattern getStoryPattern() {
 		StoryPattern storyPattern = basicGetStoryPattern();
-		return storyPattern != null && storyPattern.eIsProxy() ? (StoryPattern) eResolveProxy((InternalEObject) storyPattern)
-				: storyPattern;
+		return storyPattern != null && storyPattern.eIsProxy() ? (StoryPattern)eResolveProxy((InternalEObject)storyPattern) : storyPattern;
 	}
 
 	/**
@@ -98,7 +96,10 @@ public abstract class StoryNodeImpl extends ActivityNodeImpl implements
 	 * @generated
 	 */
 	public StoryPattern basicGetStoryPattern() {
-		return null;
+		// TODO: implement this method to return the 'Story Pattern' reference
+		// -> do not perform proxy resolution
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -108,12 +109,11 @@ public abstract class StoryNodeImpl extends ActivityNodeImpl implements
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case ActivitiesPackage.STORY_NODE__STORY_PATTERN:
-			if (resolve)
-				return getStoryPattern();
-			return basicGetStoryPattern();
-		case ActivitiesPackage.STORY_NODE__FOR_EACH:
-			return isForEach();
+			case ActivitiesPackage.STORY_NODE__FOR_EACH:
+				return isForEach();
+			case ActivitiesPackage.STORY_NODE__STORY_PATTERN:
+				if (resolve) return getStoryPattern();
+				return basicGetStoryPattern();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -125,9 +125,9 @@ public abstract class StoryNodeImpl extends ActivityNodeImpl implements
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case ActivitiesPackage.STORY_NODE__FOR_EACH:
-			setForEach((Boolean) newValue);
-			return;
+			case ActivitiesPackage.STORY_NODE__FOR_EACH:
+				setForEach((Boolean)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -139,9 +139,9 @@ public abstract class StoryNodeImpl extends ActivityNodeImpl implements
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case ActivitiesPackage.STORY_NODE__FOR_EACH:
-			setForEach(FOR_EACH_EDEFAULT);
-			return;
+			case ActivitiesPackage.STORY_NODE__FOR_EACH:
+				setForEach(FOR_EACH_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -153,10 +153,10 @@ public abstract class StoryNodeImpl extends ActivityNodeImpl implements
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case ActivitiesPackage.STORY_NODE__STORY_PATTERN:
-			return isSetStoryPattern();
-		case ActivitiesPackage.STORY_NODE__FOR_EACH:
-			return forEach != FOR_EACH_EDEFAULT;
+			case ActivitiesPackage.STORY_NODE__FOR_EACH:
+				return forEach != FOR_EACH_EDEFAULT;
+			case ActivitiesPackage.STORY_NODE__STORY_PATTERN:
+				return basicGetStoryPattern() != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -167,22 +167,13 @@ public abstract class StoryNodeImpl extends ActivityNodeImpl implements
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy())
-			return super.toString();
+		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (forEach: ");
 		result.append(forEach);
 		result.append(')');
 		return result.toString();
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean isSetStoryPattern() {
-		return false;
 	}
 
 } // StoryNodeImpl

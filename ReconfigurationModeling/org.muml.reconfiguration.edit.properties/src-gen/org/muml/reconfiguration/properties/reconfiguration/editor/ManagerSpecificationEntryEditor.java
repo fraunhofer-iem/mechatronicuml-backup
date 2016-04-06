@@ -4,9 +4,7 @@ package org.muml.reconfiguration.properties.reconfiguration.editor;
 /**
  * @generated
  */
-public class ManagerSpecificationEntryEditor
-		extends
-			org.muml.ape.runtime.editors.ClassPropertyEditor {
+public class ManagerSpecificationEntryEditor extends org.muml.ape.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
@@ -23,53 +21,65 @@ public class ManagerSpecificationEntryEditor
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorMessageType_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorMessageType_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorStructuralCondition_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorStructuralCondition_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorReconfigurationRule_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorReconfigurationRule_property_tab_generalTab_Editor(), false);
 
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Booleans", "Booleans",
-					org.eclipse.swt.SWT.HORIZONTAL, true);
+			addSubCategory("org.muml.ape.category.Booleans", "Booleans", org.eclipse.swt.SWT.HORIZONTAL, true);
 
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Booleans",
-					createEditorTreat_GeneralTab_Editor(), false);
+			addEditorToCategory("org.muml.ape.category.Booleans", createEditorTreat_property_tab_generalTab_Editor(),
+					false);
 
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Booleans",
-					createEditorPropagate_GeneralTab_Editor(), false);
+			addEditorToCategory("org.muml.ape.category.Booleans",
+					createEditorPropagate_property_tab_generalTab_Editor(), false);
 
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Booleans",
-					createEditorInvokePlanner_GeneralTab_Editor(), false);
+			addEditorToCategory("org.muml.ape.category.Booleans",
+					createEditorInvokePlanner_property_tab_generalTab_Editor(), false);
 
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Booleans",
-					createEditorBlockable_GeneralTab_Editor(), false);
+			addEditorToCategory("org.muml.ape.category.Booleans",
+					createEditorBlockable_property_tab_generalTab_Editor(), false);
+
+		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
-		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
+		} else if ("property.tab.descriptionAspects".equals(tab)) { // Tab Description Aspects
+
+		} else if ("property.tab.condition".equals(tab)) { // Tab Condition
+
+		} else if ("property.tab.effect".equals(tab)) { // Tab Effect
+
+		} else if ("property.tab.deadline".equals(tab)) { // Tab Deadline
+
+		} else if ("property.tab.sampling".equals(tab)) { // Tab Sampling
+
+		} else if ("property.tab.message".equals(tab)) { // Tab Message
+
+		} else if ("property.tab.behavior".equals(tab)) { // Tab Behavior
 
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
-			addPropertyEditor(createEditorMessageType_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorMessageType_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorStructuralCondition_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorStructuralCondition_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorReconfigurationRule_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorReconfigurationRule_property_tab_generalTab_Editor(), false);
 
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Booleans", "Booleans",
-					org.eclipse.swt.SWT.HORIZONTAL, true);
+			addSubCategory("org.muml.ape.category.Booleans", "Booleans", org.eclipse.swt.SWT.HORIZONTAL, true);
 
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Booleans",
-					createEditorTreat_GeneralTab_Editor(), false);
+			addEditorToCategory("org.muml.ape.category.Booleans", createEditorTreat_property_tab_generalTab_Editor(),
+					false);
 
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Booleans",
-					createEditorPropagate_GeneralTab_Editor(), false);
+			addEditorToCategory("org.muml.ape.category.Booleans",
+					createEditorPropagate_property_tab_generalTab_Editor(), false);
 
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Booleans",
-					createEditorInvokePlanner_GeneralTab_Editor(), false);
+			addEditorToCategory("org.muml.ape.category.Booleans",
+					createEditorInvokePlanner_property_tab_generalTab_Editor(), false);
 
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Booleans",
-					createEditorBlockable_GeneralTab_Editor(), false);
+			addEditorToCategory("org.muml.ape.category.Booleans",
+					createEditorBlockable_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
@@ -79,9 +89,9 @@ public class ManagerSpecificationEntryEditor
 		}
 	}
 
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorTreat_GeneralTab;
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorTreat_GeneralTab_Editor() {
-		if (this.editorTreat_GeneralTab == null) {
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorTreat_property_tab_generalTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorTreat_property_tab_generalTab_Editor() {
+		if (this.editorTreat_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
 					.getManagerSpecificationEntry_Treat();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.CheckboxPropertyEditor(
@@ -89,14 +99,14 @@ public class ManagerSpecificationEntryEditor
 
 			editor.setTooltipMessage("If true, then message of the type referenced by this entry will be treated.");
 
-			this.editorTreat_GeneralTab = editor;
+			this.editorTreat_property_tab_generalTab = editor;
 		}
-		return this.editorTreat_GeneralTab;
+		return this.editorTreat_property_tab_generalTab;
 	}
 
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorPropagate_GeneralTab;
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorPropagate_GeneralTab_Editor() {
-		if (this.editorPropagate_GeneralTab == null) {
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorPropagate_property_tab_generalTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorPropagate_property_tab_generalTab_Editor() {
+		if (this.editorPropagate_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
 					.getManagerSpecificationEntry_Propagate();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.CheckboxPropertyEditor(
@@ -104,14 +114,14 @@ public class ManagerSpecificationEntryEditor
 
 			editor.setTooltipMessage("If true, then message of the type referenced by this entry will be propagated.");
 
-			this.editorPropagate_GeneralTab = editor;
+			this.editorPropagate_property_tab_generalTab = editor;
 		}
-		return this.editorPropagate_GeneralTab;
+		return this.editorPropagate_property_tab_generalTab;
 	}
 
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorMessageType_GeneralTab;
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorMessageType_GeneralTab_Editor() {
-		if (this.editorMessageType_GeneralTab == null) {
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorMessageType_property_tab_generalTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorMessageType_property_tab_generalTab_Editor() {
+		if (this.editorMessageType_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
 					.getManagerSpecificationEntry_MessageType();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.ComboPropertyEditor(
@@ -120,14 +130,14 @@ public class ManagerSpecificationEntryEditor
 			editor.setTooltipMessage(
 					"The message type which is processed by this entry. This message type either \nneeds to be offered by the executor to the parent or it must be sent by one of\nthe embedded components.");
 
-			this.editorMessageType_GeneralTab = editor;
+			this.editorMessageType_property_tab_generalTab = editor;
 		}
-		return this.editorMessageType_GeneralTab;
+		return this.editorMessageType_property_tab_generalTab;
 	}
 
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorStructuralCondition_GeneralTab;
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorStructuralCondition_GeneralTab_Editor() {
-		if (this.editorStructuralCondition_GeneralTab == null) {
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorStructuralCondition_property_tab_generalTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorStructuralCondition_property_tab_generalTab_Editor() {
+		if (this.editorStructuralCondition_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
 					.getManagerSpecificationEntry_StructuralCondition();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.ComboPropertyEditor(
@@ -136,14 +146,14 @@ public class ManagerSpecificationEntryEditor
 			editor.setTooltipMessage(
 					"The structural condition is a condition on the embedded components and ports\nof the component that must evaluate to true for being able to execute the\nreconfiguration.");
 
-			this.editorStructuralCondition_GeneralTab = editor;
+			this.editorStructuralCondition_property_tab_generalTab = editor;
 		}
-		return this.editorStructuralCondition_GeneralTab;
+		return this.editorStructuralCondition_property_tab_generalTab;
 	}
 
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorReconfigurationRule_GeneralTab;
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorReconfigurationRule_GeneralTab_Editor() {
-		if (this.editorReconfigurationRule_GeneralTab == null) {
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorReconfigurationRule_property_tab_generalTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorReconfigurationRule_property_tab_generalTab_Editor() {
+		if (this.editorReconfigurationRule_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
 					.getManagerSpecificationEntry_ReconfigurationRule();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.ComboPropertyEditor(
@@ -152,14 +162,14 @@ public class ManagerSpecificationEntryEditor
 			editor.setTooltipMessage(
 					"The reconfiguration rule that will be executed by the executor if this entry\nis treated and all conditions evaluate to true during run-time.");
 
-			this.editorReconfigurationRule_GeneralTab = editor;
+			this.editorReconfigurationRule_property_tab_generalTab = editor;
 		}
-		return this.editorReconfigurationRule_GeneralTab;
+		return this.editorReconfigurationRule_property_tab_generalTab;
 	}
 
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorInvokePlanner_GeneralTab;
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorInvokePlanner_GeneralTab_Editor() {
-		if (this.editorInvokePlanner_GeneralTab == null) {
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorInvokePlanner_property_tab_generalTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorInvokePlanner_property_tab_generalTab_Editor() {
+		if (this.editorInvokePlanner_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
 					.getManagerSpecificationEntry_InvokePlanner();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.CheckboxPropertyEditor(
@@ -168,14 +178,14 @@ public class ManagerSpecificationEntryEditor
 			editor.setTooltipMessage(
 					"If true, then a planner will be invoke at run-time to determine whether it is \nuseful to execute the requested reconfiguration.");
 
-			this.editorInvokePlanner_GeneralTab = editor;
+			this.editorInvokePlanner_property_tab_generalTab = editor;
 		}
-		return this.editorInvokePlanner_GeneralTab;
+		return this.editorInvokePlanner_property_tab_generalTab;
 	}
 
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorBlockable_GeneralTab;
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorBlockable_GeneralTab_Editor() {
-		if (this.editorBlockable_GeneralTab == null) {
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorBlockable_property_tab_generalTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorBlockable_property_tab_generalTab_Editor() {
+		if (this.editorBlockable_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
 					.getManagerSpecificationEntry_Blockable();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.CheckboxPropertyEditor(
@@ -184,9 +194,9 @@ public class ManagerSpecificationEntryEditor
 			editor.setTooltipMessage(
 					"If true, then the component checks whether it is safe to execute the reconfiguration\nusing a run-time safety analysis.");
 
-			this.editorBlockable_GeneralTab = editor;
+			this.editorBlockable_property_tab_generalTab = editor;
 		}
-		return this.editorBlockable_GeneralTab;
+		return this.editorBlockable_property_tab_generalTab;
 	}
 
 	//
@@ -197,11 +207,8 @@ public class ManagerSpecificationEntryEditor
 	 * @generated
 	 */
 	public ManagerSpecificationEntryEditor(String tab) {
-		this(tab,
-				org.muml.reconfiguration.properties.util.PropertiesUtil.INSTANCE
-						.getAdapterFactory(),
-				org.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
-						.getManagerSpecificationEntry());
+		this(tab, org.muml.reconfiguration.properties.util.PropertiesUtil.INSTANCE.getAdapterFactory(),
+				org.muml.reconfiguration.ReconfigurationPackage.eINSTANCE.getManagerSpecificationEntry());
 	}
 
 	/**

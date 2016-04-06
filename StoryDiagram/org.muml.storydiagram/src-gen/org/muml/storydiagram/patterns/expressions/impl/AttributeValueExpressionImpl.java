@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.muml.core.expressions.impl.ExpressionImpl;
 import org.muml.storydiagram.patterns.ObjectVariable;
 import org.muml.storydiagram.patterns.expressions.AttributeValueExpression;
-import org.muml.storydiagram.patterns.expressions.PatternsExpressionsPackage;
+import org.muml.storydiagram.patterns.expressions.ExpressionsPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,11 +22,11 @@ import org.muml.storydiagram.patterns.expressions.PatternsExpressionsPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.storydiagram.patterns.expressions.impl.AttributeValueExpressionImpl#getObject <em>Object</em>}</li>
  *   <li>{@link org.muml.storydiagram.patterns.expressions.impl.AttributeValueExpressionImpl#getAttribute <em>Attribute</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -68,7 +68,7 @@ public class AttributeValueExpressionImpl extends ExpressionImpl implements
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return PatternsExpressionsPackage.Literals.ATTRIBUTE_VALUE_EXPRESSION;
+		return ExpressionsPackage.Literals.ATTRIBUTE_VALUE_EXPRESSION;
 	}
 
 	/**
@@ -78,15 +78,11 @@ public class AttributeValueExpressionImpl extends ExpressionImpl implements
 	 */
 	public ObjectVariable getObject() {
 		if (object != null && object.eIsProxy()) {
-			InternalEObject oldObject = (InternalEObject) object;
-			object = (ObjectVariable) eResolveProxy(oldObject);
+			InternalEObject oldObject = (InternalEObject)object;
+			object = (ObjectVariable)eResolveProxy(oldObject);
 			if (object != oldObject) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(
-							this,
-							Notification.RESOLVE,
-							PatternsExpressionsPackage.ATTRIBUTE_VALUE_EXPRESSION__OBJECT,
-							oldObject, object));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ExpressionsPackage.ATTRIBUTE_VALUE_EXPRESSION__OBJECT, oldObject, object));
 			}
 		}
 		return object;
@@ -110,11 +106,7 @@ public class AttributeValueExpressionImpl extends ExpressionImpl implements
 		ObjectVariable oldObject = object;
 		object = newObject;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(
-					this,
-					Notification.SET,
-					PatternsExpressionsPackage.ATTRIBUTE_VALUE_EXPRESSION__OBJECT,
-					oldObject, object));
+			eNotify(new ENotificationImpl(this, Notification.SET, ExpressionsPackage.ATTRIBUTE_VALUE_EXPRESSION__OBJECT, oldObject, object));
 	}
 
 	/**
@@ -124,15 +116,11 @@ public class AttributeValueExpressionImpl extends ExpressionImpl implements
 	 */
 	public EAttribute getAttribute() {
 		if (attribute != null && attribute.eIsProxy()) {
-			InternalEObject oldAttribute = (InternalEObject) attribute;
-			attribute = (EAttribute) eResolveProxy(oldAttribute);
+			InternalEObject oldAttribute = (InternalEObject)attribute;
+			attribute = (EAttribute)eResolveProxy(oldAttribute);
 			if (attribute != oldAttribute) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(
-							this,
-							Notification.RESOLVE,
-							PatternsExpressionsPackage.ATTRIBUTE_VALUE_EXPRESSION__ATTRIBUTE,
-							oldAttribute, attribute));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ExpressionsPackage.ATTRIBUTE_VALUE_EXPRESSION__ATTRIBUTE, oldAttribute, attribute));
 			}
 		}
 		return attribute;
@@ -156,11 +144,7 @@ public class AttributeValueExpressionImpl extends ExpressionImpl implements
 		EAttribute oldAttribute = attribute;
 		attribute = newAttribute;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(
-					this,
-					Notification.SET,
-					PatternsExpressionsPackage.ATTRIBUTE_VALUE_EXPRESSION__ATTRIBUTE,
-					oldAttribute, attribute));
+			eNotify(new ENotificationImpl(this, Notification.SET, ExpressionsPackage.ATTRIBUTE_VALUE_EXPRESSION__ATTRIBUTE, oldAttribute, attribute));
 	}
 
 	/**
@@ -171,14 +155,12 @@ public class AttributeValueExpressionImpl extends ExpressionImpl implements
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case PatternsExpressionsPackage.ATTRIBUTE_VALUE_EXPRESSION__OBJECT:
-			if (resolve)
-				return getObject();
-			return basicGetObject();
-		case PatternsExpressionsPackage.ATTRIBUTE_VALUE_EXPRESSION__ATTRIBUTE:
-			if (resolve)
-				return getAttribute();
-			return basicGetAttribute();
+			case ExpressionsPackage.ATTRIBUTE_VALUE_EXPRESSION__OBJECT:
+				if (resolve) return getObject();
+				return basicGetObject();
+			case ExpressionsPackage.ATTRIBUTE_VALUE_EXPRESSION__ATTRIBUTE:
+				if (resolve) return getAttribute();
+				return basicGetAttribute();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -191,12 +173,12 @@ public class AttributeValueExpressionImpl extends ExpressionImpl implements
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case PatternsExpressionsPackage.ATTRIBUTE_VALUE_EXPRESSION__OBJECT:
-			setObject((ObjectVariable) newValue);
-			return;
-		case PatternsExpressionsPackage.ATTRIBUTE_VALUE_EXPRESSION__ATTRIBUTE:
-			setAttribute((EAttribute) newValue);
-			return;
+			case ExpressionsPackage.ATTRIBUTE_VALUE_EXPRESSION__OBJECT:
+				setObject((ObjectVariable)newValue);
+				return;
+			case ExpressionsPackage.ATTRIBUTE_VALUE_EXPRESSION__ATTRIBUTE:
+				setAttribute((EAttribute)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -209,12 +191,12 @@ public class AttributeValueExpressionImpl extends ExpressionImpl implements
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case PatternsExpressionsPackage.ATTRIBUTE_VALUE_EXPRESSION__OBJECT:
-			setObject((ObjectVariable) null);
-			return;
-		case PatternsExpressionsPackage.ATTRIBUTE_VALUE_EXPRESSION__ATTRIBUTE:
-			setAttribute((EAttribute) null);
-			return;
+			case ExpressionsPackage.ATTRIBUTE_VALUE_EXPRESSION__OBJECT:
+				setObject((ObjectVariable)null);
+				return;
+			case ExpressionsPackage.ATTRIBUTE_VALUE_EXPRESSION__ATTRIBUTE:
+				setAttribute((EAttribute)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -227,10 +209,10 @@ public class AttributeValueExpressionImpl extends ExpressionImpl implements
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case PatternsExpressionsPackage.ATTRIBUTE_VALUE_EXPRESSION__OBJECT:
-			return object != null;
-		case PatternsExpressionsPackage.ATTRIBUTE_VALUE_EXPRESSION__ATTRIBUTE:
-			return attribute != null;
+			case ExpressionsPackage.ATTRIBUTE_VALUE_EXPRESSION__OBJECT:
+				return object != null;
+			case ExpressionsPackage.ATTRIBUTE_VALUE_EXPRESSION__ATTRIBUTE:
+				return attribute != null;
 		}
 		return super.eIsSet(featureID);
 	}

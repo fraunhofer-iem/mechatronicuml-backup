@@ -22,11 +22,11 @@ import org.muml.pm.software.platform.SwplatformPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.pm.software.platform.impl.EnumerationValueImpl#getValue <em>Value</em>}</li>
  *   <li>{@link org.muml.pm.software.platform.impl.EnumerationValueImpl#getEnumerationDataType <em>Enumeration Data Type</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

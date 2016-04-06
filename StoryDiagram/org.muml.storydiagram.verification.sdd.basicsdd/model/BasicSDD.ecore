@@ -19,7 +19,7 @@
       <details key="noObjectModifications" value="(not pattern.oclIsUndefined()) implies pattern.variable->select(oclIsKindOf(storydiagrams::patterns::ObjectVariable)).oclAsType(storydiagrams::patterns::ObjectVariable)->forAll(oV |oV.bindingOperator = storydiagrams::patterns::BindingOperator::CHECK_ONLY)"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="pattern" lowerBound="1"
-        eType="ecore:EClass ../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/StoryPattern"
+        eType="ecore:EClass ../../org.muml.storydiagram/model/storydiagrams.ecore#//patterns/StoryPattern"
         containment="true"/>
   </eClassifiers>
 </ecore:EPackage>

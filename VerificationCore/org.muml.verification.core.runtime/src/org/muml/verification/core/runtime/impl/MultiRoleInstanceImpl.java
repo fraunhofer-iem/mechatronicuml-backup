@@ -28,12 +28,12 @@ import org.muml.verification.core.runtime.RuntimePackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.verification.core.runtime.impl.MultiRoleInstanceImpl#getSubInteractionEndpointInstances <em>Sub Interaction Endpoint Instances</em>}</li>
  *   <li>{@link org.muml.verification.core.runtime.impl.MultiRoleInstanceImpl#getFirst <em>First</em>}</li>
  *   <li>{@link org.muml.verification.core.runtime.impl.MultiRoleInstanceImpl#getLast <em>Last</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

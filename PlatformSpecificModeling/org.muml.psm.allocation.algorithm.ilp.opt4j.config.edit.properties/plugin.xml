@@ -28,7 +28,7 @@
       <propertyTabs contributorId="">
           <propertyTab
              category="domain"
-             id="de.uni_paderborn.fujaba.muml.allocation.algorithm.ilp.opt4j.config"
+             id="org.muml.allocation.algorithm.ilp.opt4j.config"
              label="Opt4j Configuration"/>
           
       </propertyTabs>
@@ -40,10 +40,10 @@
   <extension point="org.eclipse.ui.views.properties.tabbed.propertySections"> 
       <propertySections contributorId="">
           <propertySection
-            class="de.uni_paderborn.fujaba.properties.runtime.sections.ObjectPropertySection"
-            filter="org.muml.psm.allocation.algorithm.ilp.opt4j.config.properties.tabs.De_uni_paderborn_fujaba_muml_allocation_algorithm_ilp_opt4j_configTabElementFilter"
-            id="de.uni_paderborn.fujaba.muml.allocation.algorithm.ilp.opt4j.config"
-            tab="de.uni_paderborn.fujaba.muml.allocation.algorithm.ilp.opt4j.config">
+            class="org.muml.ape.runtime.sections.ObjectPropertySection"
+            filter="org.muml.psm.allocation.algorithm.ilp.opt4j.config.properties.tabs.Org_muml_allocation_algorithm_ilp_opt4j_configTabElementFilter"
+            id="org.muml.allocation.algorithm.ilp.opt4j.config"
+            tab="org.muml.allocation.algorithm.ilp.opt4j.config">
              <input
                type="org.eclipse.emf.ecore.EObject">
              </input>
@@ -59,7 +59,7 @@
     
        <propertyEditor
              factory="org.muml.psm.allocation.algorithm.ilp.opt4j.config.properties.config.editor.Opt4jConfigurationEditor$Factory"
-             type="http://www.fujaba.de/muml/allocation/algorithm/ilp/opt4j/0.1.0/config#Opt4jConfiguration">
+             type="http://www.muml.org/psm/allocation/algorithm/ilp/opt4j/config/1.0.0#Opt4jConfiguration">
        </propertyEditor>
     
     </propertyEditors>

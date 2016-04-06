@@ -1,9 +1,7 @@
 
 package org.muml.pm.hardware.properties.metamodel;
 
-public class MetamodelContributor
-		implements
-			org.muml.ape.runtime.metamodel.IMetamodelContributor {
+public class MetamodelContributor implements org.muml.ape.runtime.metamodel.IMetamodelContributor {
 
 	/**
 	 * @generated
@@ -19,14 +17,11 @@ public class MetamodelContributor
 	 */
 	protected void fillItemProviderFactories(java.util.List<org.eclipse.emf.common.notify.AdapterFactory> factories) {
 
-		factories.add(
-				new org.muml.pm.hardware.hwplatform.provider.HwplatformItemProviderAdapterFactory());
+		factories.add(new org.muml.pm.hardware.hwplatform.provider.HwplatformItemProviderAdapterFactory());
 
-		factories.add(
-				new org.muml.pm.hardware.hwresource.provider.HwresourceItemProviderAdapterFactory());
+		factories.add(new org.muml.pm.hardware.hwresource.provider.HwresourceItemProviderAdapterFactory());
 
-		factories.add(
-				new org.muml.pm.hardware.hwvaluetype.provider.HwvaluetypeItemProviderAdapterFactory());
+		factories.add(new org.muml.pm.hardware.hwvaluetype.provider.HwvaluetypeItemProviderAdapterFactory());
 
 		factories.add(
 				new org.muml.pm.hardware.hwresourceinstance.provider.HwresourceinstanceItemProviderAdapterFactory());

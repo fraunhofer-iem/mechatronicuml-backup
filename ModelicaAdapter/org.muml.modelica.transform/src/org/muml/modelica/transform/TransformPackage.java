@@ -41,7 +41,7 @@ public interface TransformPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.fujaba.de/modelica/m2t/transform/0.4.0";
+	String eNS_URI = "http://www.muml.de/modelica/transform/1.0.0";
 
 	/**
 	 * The package namespace name.
@@ -199,22 +199,22 @@ public interface TransformPackage extends EPackage {
 	int REGION_INSTANCE = 3;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REGION_INSTANCE__ANNOTATION = RealtimestatechartPackage.REGION__ANNOTATION;
+	int REGION_INSTANCE__ANNOTATIONS = RealtimestatechartPackage.REGION__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REGION_INSTANCE__EXTENSION = RealtimestatechartPackage.REGION__EXTENSION;
+	int REGION_INSTANCE__EXTENSIONS = RealtimestatechartPackage.REGION__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.

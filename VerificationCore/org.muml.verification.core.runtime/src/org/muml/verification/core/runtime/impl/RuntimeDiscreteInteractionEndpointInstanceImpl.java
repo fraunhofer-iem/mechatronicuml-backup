@@ -29,12 +29,12 @@ import org.muml.verification.core.runtime.RuntimePackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.verification.core.runtime.impl.RuntimeDiscreteInteractionEndpointInstanceImpl#getComment <em>Comment</em>}</li>
  *   <li>{@link org.muml.verification.core.runtime.impl.RuntimeDiscreteInteractionEndpointInstanceImpl#getConnectorInstances <em>Connector Instances</em>}</li>
  *   <li>{@link org.muml.verification.core.runtime.impl.RuntimeDiscreteInteractionEndpointInstanceImpl#getType <em>Type</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -31,11 +31,11 @@ import org.muml.example.storydiagram.reachanalysis.ttccarplatooning.Ttccarplatoo
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.example.storydiagram.reachanalysis.ttccarplatooning.impl.MessageImpl#getParameters <em>Parameters</em>}</li>
  *   <li>{@link org.muml.example.storydiagram.reachanalysis.ttccarplatooning.impl.MessageImpl#getName <em>Name</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -14,10 +14,10 @@ import org.muml.pim.realtimestatechart.RealtimeStatechart;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.modelica.transform.Map#getEntries <em>Entries</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.modelica.transform.TransformPackage#getMap()
  * @model

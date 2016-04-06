@@ -20,12 +20,12 @@ import org.muml.storydiagram.patterns.CollectionVariable;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.storydiagram.patterns.expressions.CollectionSizeExpression#getSet <em>Set</em>}</li>
  * </ul>
- * </p>
  *
- * @see org.muml.storydiagram.patterns.expressions.PatternsExpressionsPackage#getCollectionSizeExpression()
+ * @see org.muml.storydiagram.patterns.expressions.ExpressionsPackage#getCollectionSizeExpression()
  * @model
  * @generated
  */
@@ -39,7 +39,7 @@ public interface CollectionSizeExpression extends Expression {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Set</em>' reference.
 	 * @see #setSet(CollectionVariable)
-	 * @see org.muml.storydiagram.patterns.expressions.PatternsExpressionsPackage#getCollectionSizeExpression_Set()
+	 * @see org.muml.storydiagram.patterns.expressions.ExpressionsPackage#getCollectionSizeExpression_Set()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */

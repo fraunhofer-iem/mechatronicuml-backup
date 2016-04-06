@@ -25,12 +25,12 @@ import org.muml.storydiagram.calls.Callable;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.storydiagram.activities.OperationExtension#getOperation <em>Operation</em>}</li>
  *   <li>{@link org.muml.storydiagram.activities.OperationExtension#getReturnValue <em>Return Value</em>}</li>
  *   <li>{@link org.muml.storydiagram.activities.OperationExtension#getOwnedActivity <em>Owned Activity</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.storydiagram.activities.ActivitiesPackage#getOperationExtension()
  * @model
@@ -39,12 +39,6 @@ import org.muml.storydiagram.calls.Callable;
 public interface OperationExtension extends Extension, Callable {
 	/**
 	 * Returns the value of the '<em><b>Operation</b></em>' reference.
-	 * <p>
-	 * This feature redefines the following features:
-	 * <ul>
-	 *   <li>'{@link org.muml.core.Extension#getBase() <em>Base</em>}'</li>
-	 * </ul>
-	 * </p>
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -105,7 +99,7 @@ public interface OperationExtension extends Extension, Callable {
 	 * @return the value of the '<em>Return Value</em>' containment reference.
 	 * @see #setReturnValue(EParameter)
 	 * @see org.muml.storydiagram.activities.ActivitiesPackage#getOperationExtension_ReturnValue()
-	 * @model containment="true" resolveProxies="true" ordered="false"
+	 * @model containment="true" ordered="false"
 	 * @generated
 	 */
 	EParameter getReturnValue();
@@ -133,7 +127,7 @@ public interface OperationExtension extends Extension, Callable {
 	 * @see #setOwnedActivity(Activity)
 	 * @see org.muml.storydiagram.activities.ActivitiesPackage#getOperationExtension_OwnedActivity()
 	 * @see org.muml.storydiagram.activities.Activity#getOwningOperation
-	 * @model opposite="owningOperation" containment="true" resolveProxies="true" ordered="false"
+	 * @model opposite="owningOperation" containment="true" ordered="false"
 	 * @generated
 	 */
 	Activity getOwnedActivity();

@@ -11,10 +11,10 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.modelica.transform.TransformationRootObject#getEObject <em>EObject</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.modelica.transform.TransformPackage#getTransformationRootObject()
  * @model

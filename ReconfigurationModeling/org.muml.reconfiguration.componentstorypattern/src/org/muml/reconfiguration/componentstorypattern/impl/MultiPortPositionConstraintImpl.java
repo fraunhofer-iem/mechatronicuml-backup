@@ -20,11 +20,11 @@ import org.muml.reconfiguration.componentstorypattern.SinglePortVariable;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.reconfiguration.componentstorypattern.impl.MultiPortPositionConstraintImpl#getPositionConstraintType <em>Position Constraint Type</em>}</li>
  *   <li>{@link org.muml.reconfiguration.componentstorypattern.impl.MultiPortPositionConstraintImpl#getSubPortVariable <em>Sub Port Variable</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

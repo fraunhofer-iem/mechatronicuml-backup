@@ -44,7 +44,7 @@ public final class TransformEditPlugin extends EMFPlugin {
 		  (new ResourceLocator [] {
 		     CoreEditPlugin.INSTANCE,
 		     EcoreEditPlugin.INSTANCE,
-		     MumlEditPlugin.INSTANCE,
+		     org.muml.pim.provider.MumlEditPlugin.INSTANCE,
 		   });
 	}
 

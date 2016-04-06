@@ -68,7 +68,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_jeyvq9v7EeOBxdZ1QJfccw"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_jeyvodv7EeOBxdZ1QJfccw" fontColor="4210752" fontName="Segoe UI" fontHeight="10" lineColor="8421504"/>
-    <element xmi:type="ecore:EClass" href="platform:/resource/de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.ecore#//ComponentStoryPattern"/>
+    <element xmi:type="ecore:EClass" href="platform:/resource/org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.ecore#//ComponentStoryPattern"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_jeyvotv7EeOBxdZ1QJfccw" x="425" y="485" width="198"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_jeyvrtv7EeOBxdZ1QJfccw" type="1001">
@@ -229,7 +229,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_zh7cG9v7EeOBxdZ1QJfccw"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_zh7cEdv7EeOBxdZ1QJfccw" fontColor="4210752" fontName="Segoe UI" fontHeight="10" lineColor="8421504"/>
-    <element xmi:type="ecore:EClass" href="platform:/resource/de.uni_paderborn.fujaba.muml.reconfiguration/model/MumlReconfiguration.ecore#//StructuralCondition"/>
+    <element xmi:type="ecore:EClass" href="platform:/resource/org.muml.reconfiguration/model/MumlReconfiguration.ecore#//StructuralCondition"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zh7cEtv7EeOBxdZ1QJfccw" x="625" y="45" width="173"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_4uu4INv7EeOBxdZ1QJfccw" type="1001">
@@ -248,7 +248,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_4uu4K9v7EeOBxdZ1QJfccw"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_4uu4Idv7EeOBxdZ1QJfccw" fontColor="4210752" fontName="Segoe UI" fontHeight="10" lineColor="8421504"/>
-    <element xmi:type="ecore:EClass" href="platform:/resource/de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.ecore#//TriggerEmbeddedComponentExpression"/>
+    <element xmi:type="ecore:EClass" href="platform:/resource/org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.ecore#//TriggerEmbeddedComponentExpression"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4uu4Itv7EeOBxdZ1QJfccw" x="605" y="360"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_vzWegdtsEeOBxdZ1QJfccw"/>

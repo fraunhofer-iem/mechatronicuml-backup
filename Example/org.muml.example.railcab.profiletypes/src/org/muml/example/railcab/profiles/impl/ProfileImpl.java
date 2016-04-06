@@ -12,8 +12,6 @@ import org.muml.example.railcab.profiles.ProfilesPackage;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Profile</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */

@@ -27,7 +27,7 @@ import org.muml.reconfigurationverification.timedstorydiagram.TimedStoryPattern;
 import org.muml.reconfigurationverification.timedstorydiagram.TimedstorydiagramFactory;
 import org.muml.reconfigurationverification.timedstorydiagram.TimedstorydiagramPackage;
 import org.muml.reconfigurationverification.timedstorydiagram.util.TimedstorydiagramValidator;
-import org.muml.storydiagram.StorydiagramsPackage;
+import org.muml.storydiagram.StorydiagramPackage;
 import org.muml.storydiagram.activities.ActivitiesPackage;
 import org.muml.storydiagram.patterns.PatternsPackage;
 
@@ -148,7 +148,7 @@ public class TimedstorydiagramPackageImpl extends EPackageImpl implements Timeds
 		isInited = true;
 
 		// Initialize simple dependencies
-		StorydiagramsPackage.eINSTANCE.eClass();
+		StorydiagramPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theTimedstorydiagramPackage.createPackageContents();

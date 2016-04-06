@@ -14,8 +14,6 @@ import org.muml.verification.core.runtime.RuntimeRoleConnectorInstance;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Role Connector Instance</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */

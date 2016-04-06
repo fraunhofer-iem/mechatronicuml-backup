@@ -26,12 +26,12 @@ import org.muml.verification.core.runtime.RuntimePackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.verification.core.runtime.impl.RuntimeMessageBufferImpl#getMessages <em>Messages</em>}</li>
  *   <li>{@link org.muml.verification.core.runtime.impl.RuntimeMessageBufferImpl#getRuntimeBehavioralElement <em>Runtime Behavioral Element</em>}</li>
  *   <li>{@link org.muml.verification.core.runtime.impl.RuntimeMessageBufferImpl#getMessageBuffer <em>Message Buffer</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

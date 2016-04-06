@@ -16,11 +16,11 @@ import org.muml.storydiagram.activities.ActivityNode;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.reconfiguration.componentstorydiagram.ComponentStoryNode#getComponentStoryPattern <em>Component Story Pattern</em>}</li>
  *   <li>{@link org.muml.reconfiguration.componentstorydiagram.ComponentStoryNode#isForEach <em>For Each</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.reconfiguration.componentstorydiagram.ComponentstorydiagramPackage#getComponentStoryNode()
  * @model

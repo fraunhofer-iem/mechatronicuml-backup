@@ -8,7 +8,7 @@
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <!-- @generated transform -->
       <factory
-            uri="http://www.fujaba.de/modelica/m2t/transform/0.4.0"
+            uri="http://www.muml.de/modelica/transform/1.0.0"
             class="org.muml.modelica.transform.provider.TransformItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider

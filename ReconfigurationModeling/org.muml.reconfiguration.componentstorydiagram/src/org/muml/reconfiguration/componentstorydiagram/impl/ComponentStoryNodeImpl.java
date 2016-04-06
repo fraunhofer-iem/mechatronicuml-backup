@@ -18,11 +18,11 @@ import org.muml.storydiagram.activities.impl.ActivityNodeImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.reconfiguration.componentstorydiagram.impl.ComponentStoryNodeImpl#getComponentStoryPattern <em>Component Story Pattern</em>}</li>
  *   <li>{@link org.muml.reconfiguration.componentstorydiagram.impl.ComponentStoryNodeImpl#isForEach <em>For Each</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

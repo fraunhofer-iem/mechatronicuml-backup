@@ -37,7 +37,7 @@ public interface TimeInterval extends Range {
 	 * @return the value of the '<em>Unit</em>' attribute.
 	 * @see #setUnit(TimeUnit)
 	 * @see org.muml.pm.hardware.hwvaluetype.HwvaluetypePackage#getTimeInterval_Unit()
-	 * @model dataType="de.uni_paderborn.fujaba.muml.valuetype.TimeUnit" required="true"
+	 * @model dataType="org.muml.pim.valuetype.TimeUnit" required="true"
 	 * @generated
 	 */
 	TimeUnit getUnit();

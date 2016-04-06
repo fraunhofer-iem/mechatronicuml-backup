@@ -22,7 +22,7 @@ public class HardwareValidateMetamodelsTest extends ValidateMetamodelsTest {
 //				new Object[] {"org.storydriven.core/model/core.ecore"},
 //				new Object[] {"de.uni_paderborn.fujaba.muml/model/muml.ecore"},
 //				new Object[] {"de.uni_paderborn.fujaba.muml.actionlanguage/model/actionlanguage.ecore"},
-				new Object[] {"de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore"}
+				new Object[] {"org.muml.pm.hardware/model/hardware.ecore"}
 		}));
 	}
 }

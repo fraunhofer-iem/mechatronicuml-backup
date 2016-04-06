@@ -41,7 +41,7 @@ public interface ComponentstorypatternPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.fujaba.de/muml/componentstorypattern/0.4.0";
+	String eNS_URI = "http://www.muml.org/reconfiguration/componentstorypattern/1.0.0";
 
 	/**
 	 * The package namespace name.
@@ -70,22 +70,22 @@ public interface ComponentstorypatternPackage extends EPackage {
 	int COMPONENT_STORY_PATTERN = 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_STORY_PATTERN__ANNOTATION = CorePackage.NAMED_ELEMENT__ANNOTATION;
+	int COMPONENT_STORY_PATTERN__ANNOTATIONS = CorePackage.NAMED_ELEMENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_STORY_PATTERN__EXTENSION = CorePackage.NAMED_ELEMENT__EXTENSION;
+	int COMPONENT_STORY_PATTERN__EXTENSIONS = CorePackage.NAMED_ELEMENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -314,22 +314,22 @@ public interface ComponentstorypatternPackage extends EPackage {
 	int COMPONENT_STORY_PATTERN_VARIABLE = 1;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_STORY_PATTERN_VARIABLE__ANNOTATION = CorePackage.NAMED_ELEMENT__ANNOTATION;
+	int COMPONENT_STORY_PATTERN_VARIABLE__ANNOTATIONS = CorePackage.NAMED_ELEMENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_STORY_PATTERN_VARIABLE__EXTENSION = CorePackage.NAMED_ELEMENT__EXTENSION;
+	int COMPONENT_STORY_PATTERN_VARIABLE__EXTENSIONS = CorePackage.NAMED_ELEMENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -576,22 +576,22 @@ public interface ComponentstorypatternPackage extends EPackage {
 	int COMPONENT_VARIABLE = 2;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_VARIABLE__ANNOTATION = COMPONENT_STORY_PATTERN_VARIABLE__ANNOTATION;
+	int COMPONENT_VARIABLE__ANNOTATIONS = COMPONENT_STORY_PATTERN_VARIABLE__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_VARIABLE__EXTENSION = COMPONENT_STORY_PATTERN_VARIABLE__EXTENSION;
+	int COMPONENT_VARIABLE__EXTENSIONS = COMPONENT_STORY_PATTERN_VARIABLE__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -874,22 +874,22 @@ public interface ComponentstorypatternPackage extends EPackage {
 	int PORT_VARIABLE = 3;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PORT_VARIABLE__ANNOTATION = COMPONENT_STORY_PATTERN_VARIABLE__ANNOTATION;
+	int PORT_VARIABLE__ANNOTATIONS = COMPONENT_STORY_PATTERN_VARIABLE__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PORT_VARIABLE__EXTENSION = COMPONENT_STORY_PATTERN_VARIABLE__EXTENSION;
+	int PORT_VARIABLE__EXTENSIONS = COMPONENT_STORY_PATTERN_VARIABLE__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1172,22 +1172,22 @@ public interface ComponentstorypatternPackage extends EPackage {
 	int PART_VARIABLE = 4;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PART_VARIABLE__ANNOTATION = COMPONENT_STORY_PATTERN_VARIABLE__ANNOTATION;
+	int PART_VARIABLE__ANNOTATIONS = COMPONENT_STORY_PATTERN_VARIABLE__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PART_VARIABLE__EXTENSION = COMPONENT_STORY_PATTERN_VARIABLE__EXTENSION;
+	int PART_VARIABLE__EXTENSIONS = COMPONENT_STORY_PATTERN_VARIABLE__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1461,22 +1461,22 @@ public interface ComponentstorypatternPackage extends EPackage {
 	int CONNECTOR_VARIABLE = 5;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_VARIABLE__ANNOTATION = COMPONENT_STORY_PATTERN_VARIABLE__ANNOTATION;
+	int CONNECTOR_VARIABLE__ANNOTATIONS = COMPONENT_STORY_PATTERN_VARIABLE__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_VARIABLE__EXTENSION = COMPONENT_STORY_PATTERN_VARIABLE__EXTENSION;
+	int CONNECTOR_VARIABLE__EXTENSIONS = COMPONENT_STORY_PATTERN_VARIABLE__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1750,22 +1750,22 @@ public interface ComponentstorypatternPackage extends EPackage {
 	int ASSEMBLY_VARIABLE = 6;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ASSEMBLY_VARIABLE__ANNOTATION = CONNECTOR_VARIABLE__ANNOTATION;
+	int ASSEMBLY_VARIABLE__ANNOTATIONS = CONNECTOR_VARIABLE__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ASSEMBLY_VARIABLE__EXTENSION = CONNECTOR_VARIABLE__EXTENSION;
+	int ASSEMBLY_VARIABLE__EXTENSIONS = CONNECTOR_VARIABLE__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2048,22 +2048,22 @@ public interface ComponentstorypatternPackage extends EPackage {
 	int DELEGATION_VARIABLE = 7;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DELEGATION_VARIABLE__ANNOTATION = CONNECTOR_VARIABLE__ANNOTATION;
+	int DELEGATION_VARIABLE__ANNOTATIONS = CONNECTOR_VARIABLE__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DELEGATION_VARIABLE__EXTENSION = CONNECTOR_VARIABLE__EXTENSION;
+	int DELEGATION_VARIABLE__EXTENSIONS = CONNECTOR_VARIABLE__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2346,22 +2346,22 @@ public interface ComponentstorypatternPackage extends EPackage {
 	int SINGLE_PORT_VARIABLE = 8;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SINGLE_PORT_VARIABLE__ANNOTATION = PORT_VARIABLE__ANNOTATION;
+	int SINGLE_PORT_VARIABLE__ANNOTATIONS = PORT_VARIABLE__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SINGLE_PORT_VARIABLE__EXTENSION = PORT_VARIABLE__EXTENSION;
+	int SINGLE_PORT_VARIABLE__EXTENSIONS = PORT_VARIABLE__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2662,22 +2662,22 @@ public interface ComponentstorypatternPackage extends EPackage {
 	int MULTI_PORT_VARIABLE = 9;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MULTI_PORT_VARIABLE__ANNOTATION = PORT_VARIABLE__ANNOTATION;
+	int MULTI_PORT_VARIABLE__ANNOTATIONS = PORT_VARIABLE__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MULTI_PORT_VARIABLE__EXTENSION = PORT_VARIABLE__EXTENSION;
+	int MULTI_PORT_VARIABLE__EXTENSIONS = PORT_VARIABLE__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2988,22 +2988,22 @@ public interface ComponentstorypatternPackage extends EPackage {
 	int TRIGGER_EMBEDDED_COMPONENT_EXPRESSION = 10;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRIGGER_EMBEDDED_COMPONENT_EXPRESSION__ANNOTATION = ExpressionsPackage.EXPRESSION__ANNOTATION;
+	int TRIGGER_EMBEDDED_COMPONENT_EXPRESSION__ANNOTATIONS = ExpressionsPackage.EXPRESSION__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRIGGER_EMBEDDED_COMPONENT_EXPRESSION__EXTENSION = ExpressionsPackage.EXPRESSION__EXTENSION;
+	int TRIGGER_EMBEDDED_COMPONENT_EXPRESSION__EXTENSIONS = ExpressionsPackage.EXPRESSION__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -3215,22 +3215,22 @@ public interface ComponentstorypatternPackage extends EPackage {
 	int FADING_COMPONENT_PART_VARIABLE = 11;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FADING_COMPONENT_PART_VARIABLE__ANNOTATION = PART_VARIABLE__ANNOTATION;
+	int FADING_COMPONENT_PART_VARIABLE__ANNOTATIONS = PART_VARIABLE__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FADING_COMPONENT_PART_VARIABLE__EXTENSION = PART_VARIABLE__EXTENSION;
+	int FADING_COMPONENT_PART_VARIABLE__EXTENSIONS = PART_VARIABLE__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3513,22 +3513,22 @@ public interface ComponentstorypatternPackage extends EPackage {
 	int COMPONENT_PART_VARIABLE = 12;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_PART_VARIABLE__ANNOTATION = PART_VARIABLE__ANNOTATION;
+	int COMPONENT_PART_VARIABLE__ANNOTATIONS = PART_VARIABLE__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_PART_VARIABLE__EXTENSION = PART_VARIABLE__EXTENSION;
+	int COMPONENT_PART_VARIABLE__EXTENSIONS = PART_VARIABLE__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.

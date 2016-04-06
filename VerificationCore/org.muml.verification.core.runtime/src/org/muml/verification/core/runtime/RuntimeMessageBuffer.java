@@ -13,12 +13,12 @@ import org.muml.pim.connector.MessageBuffer;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.verification.core.runtime.RuntimeMessageBuffer#getMessages <em>Messages</em>}</li>
  *   <li>{@link org.muml.verification.core.runtime.RuntimeMessageBuffer#getRuntimeBehavioralElement <em>Runtime Behavioral Element</em>}</li>
  *   <li>{@link org.muml.verification.core.runtime.RuntimeMessageBuffer#getMessageBuffer <em>Message Buffer</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.verification.core.runtime.RuntimePackage#getRuntimeMessageBuffer()
  * @model

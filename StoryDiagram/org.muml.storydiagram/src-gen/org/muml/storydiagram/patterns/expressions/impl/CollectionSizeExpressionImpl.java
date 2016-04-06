@@ -13,7 +13,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.muml.core.expressions.impl.ExpressionImpl;
 import org.muml.storydiagram.patterns.CollectionVariable;
 import org.muml.storydiagram.patterns.expressions.CollectionSizeExpression;
-import org.muml.storydiagram.patterns.expressions.PatternsExpressionsPackage;
+import org.muml.storydiagram.patterns.expressions.ExpressionsPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,10 +21,10 @@ import org.muml.storydiagram.patterns.expressions.PatternsExpressionsPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.storydiagram.patterns.expressions.impl.CollectionSizeExpressionImpl#getSet <em>Set</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -56,7 +56,7 @@ public class CollectionSizeExpressionImpl extends ExpressionImpl implements
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return PatternsExpressionsPackage.Literals.COLLECTION_SIZE_EXPRESSION;
+		return ExpressionsPackage.Literals.COLLECTION_SIZE_EXPRESSION;
 	}
 
 	/**
@@ -66,15 +66,11 @@ public class CollectionSizeExpressionImpl extends ExpressionImpl implements
 	 */
 	public CollectionVariable getSet() {
 		if (set != null && set.eIsProxy()) {
-			InternalEObject oldSet = (InternalEObject) set;
-			set = (CollectionVariable) eResolveProxy(oldSet);
+			InternalEObject oldSet = (InternalEObject)set;
+			set = (CollectionVariable)eResolveProxy(oldSet);
 			if (set != oldSet) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(
-							this,
-							Notification.RESOLVE,
-							PatternsExpressionsPackage.COLLECTION_SIZE_EXPRESSION__SET,
-							oldSet, set));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ExpressionsPackage.COLLECTION_SIZE_EXPRESSION__SET, oldSet, set));
 			}
 		}
 		return set;
@@ -98,9 +94,7 @@ public class CollectionSizeExpressionImpl extends ExpressionImpl implements
 		CollectionVariable oldSet = set;
 		set = newSet;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					PatternsExpressionsPackage.COLLECTION_SIZE_EXPRESSION__SET,
-					oldSet, set));
+			eNotify(new ENotificationImpl(this, Notification.SET, ExpressionsPackage.COLLECTION_SIZE_EXPRESSION__SET, oldSet, set));
 	}
 
 	/**
@@ -111,10 +105,9 @@ public class CollectionSizeExpressionImpl extends ExpressionImpl implements
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case PatternsExpressionsPackage.COLLECTION_SIZE_EXPRESSION__SET:
-			if (resolve)
-				return getSet();
-			return basicGetSet();
+			case ExpressionsPackage.COLLECTION_SIZE_EXPRESSION__SET:
+				if (resolve) return getSet();
+				return basicGetSet();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -127,9 +120,9 @@ public class CollectionSizeExpressionImpl extends ExpressionImpl implements
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case PatternsExpressionsPackage.COLLECTION_SIZE_EXPRESSION__SET:
-			setSet((CollectionVariable) newValue);
-			return;
+			case ExpressionsPackage.COLLECTION_SIZE_EXPRESSION__SET:
+				setSet((CollectionVariable)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -142,9 +135,9 @@ public class CollectionSizeExpressionImpl extends ExpressionImpl implements
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case PatternsExpressionsPackage.COLLECTION_SIZE_EXPRESSION__SET:
-			setSet((CollectionVariable) null);
-			return;
+			case ExpressionsPackage.COLLECTION_SIZE_EXPRESSION__SET:
+				setSet((CollectionVariable)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -157,8 +150,8 @@ public class CollectionSizeExpressionImpl extends ExpressionImpl implements
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case PatternsExpressionsPackage.COLLECTION_SIZE_EXPRESSION__SET:
-			return set != null;
+			case ExpressionsPackage.COLLECTION_SIZE_EXPRESSION__SET:
+				return set != null;
 		}
 		return super.eIsSet(featureID);
 	}

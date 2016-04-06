@@ -13,8 +13,8 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.muml.core.CorePackage;
 import org.muml.pim.component.provider.PortConnectorItemProvider;
 import org.muml.reconfiguration.ReconfigurationPortAssemblyConnector;
-import org.muml.storydiagram.activities.ActivitiesFactory;
-import org.muml.storydiagram.calls.CallsFactory;
+import org.storydriven.storydiagrams.activities.ActivitiesFactory;
+import org.storydriven.storydiagrams.calls.CallsFactory;
 
 /**
  * This is the item provider adapter for a {@link org.muml.reconfiguration.ReconfigurationPortAssemblyConnector} object.
@@ -100,12 +100,12 @@ public class ReconfigurationPortAssemblyConnectorItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSIONS,
 				 ActivitiesFactory.eINSTANCE.createOperationExtension()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSIONS,
 				 CallsFactory.eINSTANCE.createParameterExtension()));
 	}
 

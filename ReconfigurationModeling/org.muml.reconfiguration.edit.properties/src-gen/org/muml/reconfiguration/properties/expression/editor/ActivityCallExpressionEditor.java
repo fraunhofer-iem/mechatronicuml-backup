@@ -4,9 +4,7 @@ package org.muml.reconfiguration.properties.expression.editor;
 /**
  * @generated
  */
-public class ActivityCallExpressionEditor
-		extends
-			org.muml.ape.runtime.editors.ClassPropertyEditor {
+public class ActivityCallExpressionEditor extends org.muml.ape.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
@@ -23,15 +21,29 @@ public class ActivityCallExpressionEditor
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorCallee_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorCallee_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
+
+		} else if ("property.tab.descriptionAspects".equals(tab)) { // Tab Description Aspects
+
+		} else if ("property.tab.condition".equals(tab)) { // Tab Condition
+
+		} else if ("property.tab.effect".equals(tab)) { // Tab Effect
+
+		} else if ("property.tab.deadline".equals(tab)) { // Tab Deadline
+
+		} else if ("property.tab.sampling".equals(tab)) { // Tab Sampling
+
+		} else if ("property.tab.message".equals(tab)) { // Tab Message
+
+		} else if ("property.tab.behavior".equals(tab)) { // Tab Behavior
 
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
-			addPropertyEditor(createEditorCallee_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorCallee_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
@@ -41,17 +53,17 @@ public class ActivityCallExpressionEditor
 		}
 	}
 
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorCallee_GeneralTab;
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorCallee_GeneralTab_Editor() {
-		if (this.editorCallee_GeneralTab == null) {
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorCallee_property_tab_generalTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorCallee_property_tab_generalTab_Editor() {
+		if (this.editorCallee_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.storydiagram.calls.CallsPackage.eINSTANCE
 					.getInvocation_Callee();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.ComboPropertyEditor(
 					adapterFactory, feature);
 
-			this.editorCallee_GeneralTab = editor;
+			this.editorCallee_property_tab_generalTab = editor;
 		}
-		return this.editorCallee_GeneralTab;
+		return this.editorCallee_property_tab_generalTab;
 	}
 
 	//
@@ -62,11 +74,8 @@ public class ActivityCallExpressionEditor
 	 * @generated
 	 */
 	public ActivityCallExpressionEditor(String tab) {
-		this(tab,
-				org.muml.reconfiguration.properties.util.PropertiesUtil.INSTANCE
-						.getAdapterFactory(),
-				org.muml.reconfiguration.expression.ExpressionPackage.eINSTANCE
-						.getActivityCallExpression());
+		this(tab, org.muml.reconfiguration.properties.util.PropertiesUtil.INSTANCE.getAdapterFactory(),
+				org.muml.reconfiguration.expression.ExpressionPackage.eINSTANCE.getActivityCallExpression());
 	}
 
 	/**

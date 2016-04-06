@@ -24,20 +24,20 @@ import org.muml.storydiagram.calls.CallsPackage;
 import org.muml.storydiagram.calls.Invocation;
 import org.muml.storydiagram.calls.OpaqueCallable;
 import org.muml.storydiagram.calls.ParameterBinding;
-import org.muml.storydiagram.calls.expressions.CallsExpressionsPackage;
+import org.muml.storydiagram.calls.expressions.ExpressionsPackage;
 import org.muml.storydiagram.calls.expressions.MethodCallExpression;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '<em><b>Method Call Expression</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.storydiagram.calls.expressions.impl.MethodCallExpressionImpl#getOwnedParameterBindings <em>Owned Parameter Bindings</em>}</li>
  *   <li>{@link org.muml.storydiagram.calls.expressions.impl.MethodCallExpressionImpl#getCallee <em>Callee</em>}</li>
  *   <li>{@link org.muml.storydiagram.calls.expressions.impl.MethodCallExpressionImpl#getTarget <em>Target</em>}</li>
  *   <li>{@link org.muml.storydiagram.calls.expressions.impl.MethodCallExpressionImpl#getOpaqueCallable <em>Opaque Callable</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -93,7 +93,7 @@ public class MethodCallExpressionImpl extends ExpressionImpl implements
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CallsExpressionsPackage.Literals.METHOD_CALL_EXPRESSION;
+		return ExpressionsPackage.Literals.METHOD_CALL_EXPRESSION;
 	}
 
 	/**
@@ -102,11 +102,7 @@ public class MethodCallExpressionImpl extends ExpressionImpl implements
 	 */
 	public EList<ParameterBinding> getOwnedParameterBindings() {
 		if (ownedParameterBindings == null) {
-			ownedParameterBindings = new EObjectContainmentWithInverseEList.Resolving<ParameterBinding>(
-					ParameterBinding.class,
-					this,
-					CallsExpressionsPackage.METHOD_CALL_EXPRESSION__OWNED_PARAMETER_BINDINGS,
-					CallsPackage.PARAMETER_BINDING__INVOCATION);
+			ownedParameterBindings = new EObjectContainmentWithInverseEList<ParameterBinding>(ParameterBinding.class, this, ExpressionsPackage.METHOD_CALL_EXPRESSION__OWNED_PARAMETER_BINDINGS, CallsPackage.PARAMETER_BINDING__INVOCATION);
 		}
 		return ownedParameterBindings;
 	}
@@ -117,15 +113,11 @@ public class MethodCallExpressionImpl extends ExpressionImpl implements
 	 */
 	public Callable getCallee() {
 		if (callee != null && callee.eIsProxy()) {
-			InternalEObject oldCallee = (InternalEObject) callee;
-			callee = (Callable) eResolveProxy(oldCallee);
+			InternalEObject oldCallee = (InternalEObject)callee;
+			callee = (Callable)eResolveProxy(oldCallee);
 			if (callee != oldCallee) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(
-							this,
-							Notification.RESOLVE,
-							CallsExpressionsPackage.METHOD_CALL_EXPRESSION__CALLEE,
-							oldCallee, callee));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ExpressionsPackage.METHOD_CALL_EXPRESSION__CALLEE, oldCallee, callee));
 			}
 		}
 		return callee;
@@ -147,9 +139,7 @@ public class MethodCallExpressionImpl extends ExpressionImpl implements
 		Callable oldCallee = callee;
 		callee = newCallee;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					CallsExpressionsPackage.METHOD_CALL_EXPRESSION__CALLEE,
-					oldCallee, callee));
+			eNotify(new ENotificationImpl(this, Notification.SET, ExpressionsPackage.METHOD_CALL_EXPRESSION__CALLEE, oldCallee, callee));
 	}
 
 	/**
@@ -157,43 +147,6 @@ public class MethodCallExpressionImpl extends ExpressionImpl implements
 	 * @generated
 	 */
 	public Expression getTarget() {
-		if (target != null && target.eIsProxy()) {
-			InternalEObject oldTarget = (InternalEObject) target;
-			target = (Expression) eResolveProxy(oldTarget);
-			if (target != oldTarget) {
-				InternalEObject newTarget = (InternalEObject) target;
-				NotificationChain msgs = oldTarget
-						.eInverseRemove(
-								this,
-								EOPPOSITE_FEATURE_BASE
-										- CallsExpressionsPackage.METHOD_CALL_EXPRESSION__TARGET,
-								null, null);
-				if (newTarget.eInternalContainer() == null) {
-					msgs = newTarget
-							.eInverseAdd(
-									this,
-									EOPPOSITE_FEATURE_BASE
-											- CallsExpressionsPackage.METHOD_CALL_EXPRESSION__TARGET,
-									null, msgs);
-				}
-				if (msgs != null)
-					msgs.dispatch();
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(
-							this,
-							Notification.RESOLVE,
-							CallsExpressionsPackage.METHOD_CALL_EXPRESSION__TARGET,
-							oldTarget, target));
-			}
-		}
-		return target;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Expression basicGetTarget() {
 		return target;
 	}
 
@@ -206,14 +159,8 @@ public class MethodCallExpressionImpl extends ExpressionImpl implements
 		Expression oldTarget = target;
 		target = newTarget;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this,
-					Notification.SET,
-					CallsExpressionsPackage.METHOD_CALL_EXPRESSION__TARGET,
-					oldTarget, newTarget);
-			if (msgs == null)
-				msgs = notification;
-			else
-				msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ExpressionsPackage.METHOD_CALL_EXPRESSION__TARGET, oldTarget, newTarget);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -226,26 +173,14 @@ public class MethodCallExpressionImpl extends ExpressionImpl implements
 		if (newTarget != target) {
 			NotificationChain msgs = null;
 			if (target != null)
-				msgs = ((InternalEObject) target)
-						.eInverseRemove(
-								this,
-								EOPPOSITE_FEATURE_BASE
-										- CallsExpressionsPackage.METHOD_CALL_EXPRESSION__TARGET,
-								null, msgs);
+				msgs = ((InternalEObject)target).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ExpressionsPackage.METHOD_CALL_EXPRESSION__TARGET, null, msgs);
 			if (newTarget != null)
-				msgs = ((InternalEObject) newTarget)
-						.eInverseAdd(
-								this,
-								EOPPOSITE_FEATURE_BASE
-										- CallsExpressionsPackage.METHOD_CALL_EXPRESSION__TARGET,
-								null, msgs);
+				msgs = ((InternalEObject)newTarget).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ExpressionsPackage.METHOD_CALL_EXPRESSION__TARGET, null, msgs);
 			msgs = basicSetTarget(newTarget, msgs);
-			if (msgs != null)
-				msgs.dispatch();
-		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					CallsExpressionsPackage.METHOD_CALL_EXPRESSION__TARGET,
-					newTarget, newTarget));
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ExpressionsPackage.METHOD_CALL_EXPRESSION__TARGET, newTarget, newTarget));
 	}
 
 	/**
@@ -253,37 +188,6 @@ public class MethodCallExpressionImpl extends ExpressionImpl implements
 	 * @generated
 	 */
 	public OpaqueCallable getOpaqueCallable() {
-		if (opaqueCallable != null && opaqueCallable.eIsProxy()) {
-			InternalEObject oldOpaqueCallable = (InternalEObject) opaqueCallable;
-			opaqueCallable = (OpaqueCallable) eResolveProxy(oldOpaqueCallable);
-			if (opaqueCallable != oldOpaqueCallable) {
-				InternalEObject newOpaqueCallable = (InternalEObject) opaqueCallable;
-				NotificationChain msgs = oldOpaqueCallable.eInverseRemove(this,
-						CallsPackage.OPAQUE_CALLABLE__CALL_EXPRESSION,
-						OpaqueCallable.class, null);
-				if (newOpaqueCallable.eInternalContainer() == null) {
-					msgs = newOpaqueCallable.eInverseAdd(this,
-							CallsPackage.OPAQUE_CALLABLE__CALL_EXPRESSION,
-							OpaqueCallable.class, msgs);
-				}
-				if (msgs != null)
-					msgs.dispatch();
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(
-							this,
-							Notification.RESOLVE,
-							CallsExpressionsPackage.METHOD_CALL_EXPRESSION__OPAQUE_CALLABLE,
-							oldOpaqueCallable, opaqueCallable));
-			}
-		}
-		return opaqueCallable;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	public OpaqueCallable basicGetOpaqueCallable() {
 		return opaqueCallable;
 	}
 
@@ -296,15 +200,8 @@ public class MethodCallExpressionImpl extends ExpressionImpl implements
 		OpaqueCallable oldOpaqueCallable = opaqueCallable;
 		opaqueCallable = newOpaqueCallable;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(
-					this,
-					Notification.SET,
-					CallsExpressionsPackage.METHOD_CALL_EXPRESSION__OPAQUE_CALLABLE,
-					oldOpaqueCallable, newOpaqueCallable);
-			if (msgs == null)
-				msgs = notification;
-			else
-				msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ExpressionsPackage.METHOD_CALL_EXPRESSION__OPAQUE_CALLABLE, oldOpaqueCallable, newOpaqueCallable);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -317,22 +214,14 @@ public class MethodCallExpressionImpl extends ExpressionImpl implements
 		if (newOpaqueCallable != opaqueCallable) {
 			NotificationChain msgs = null;
 			if (opaqueCallable != null)
-				msgs = ((InternalEObject) opaqueCallable).eInverseRemove(this,
-						CallsPackage.OPAQUE_CALLABLE__CALL_EXPRESSION,
-						OpaqueCallable.class, msgs);
+				msgs = ((InternalEObject)opaqueCallable).eInverseRemove(this, CallsPackage.OPAQUE_CALLABLE__CALL_EXPRESSION, OpaqueCallable.class, msgs);
 			if (newOpaqueCallable != null)
-				msgs = ((InternalEObject) newOpaqueCallable).eInverseAdd(this,
-						CallsPackage.OPAQUE_CALLABLE__CALL_EXPRESSION,
-						OpaqueCallable.class, msgs);
+				msgs = ((InternalEObject)newOpaqueCallable).eInverseAdd(this, CallsPackage.OPAQUE_CALLABLE__CALL_EXPRESSION, OpaqueCallable.class, msgs);
 			msgs = basicSetOpaqueCallable(newOpaqueCallable, msgs);
-			if (msgs != null)
-				msgs.dispatch();
-		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(
-					this,
-					Notification.SET,
-					CallsExpressionsPackage.METHOD_CALL_EXPRESSION__OPAQUE_CALLABLE,
-					newOpaqueCallable, newOpaqueCallable));
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ExpressionsPackage.METHOD_CALL_EXPRESSION__OPAQUE_CALLABLE, newOpaqueCallable, newOpaqueCallable));
 	}
 
 	protected EParameter getReturnParameter() {
@@ -357,18 +246,12 @@ public class MethodCallExpressionImpl extends ExpressionImpl implements
 	public NotificationChain eInverseAdd(InternalEObject otherEnd,
 			int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case CallsExpressionsPackage.METHOD_CALL_EXPRESSION__OWNED_PARAMETER_BINDINGS:
-			return ((InternalEList<InternalEObject>) (InternalEList<?>) getOwnedParameterBindings())
-					.basicAdd(otherEnd, msgs);
-		case CallsExpressionsPackage.METHOD_CALL_EXPRESSION__OPAQUE_CALLABLE:
-			if (opaqueCallable != null)
-				msgs = ((InternalEObject) opaqueCallable)
-						.eInverseRemove(
-								this,
-								EOPPOSITE_FEATURE_BASE
-										- CallsExpressionsPackage.METHOD_CALL_EXPRESSION__OPAQUE_CALLABLE,
-								null, msgs);
-			return basicSetOpaqueCallable((OpaqueCallable) otherEnd, msgs);
+			case ExpressionsPackage.METHOD_CALL_EXPRESSION__OWNED_PARAMETER_BINDINGS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getOwnedParameterBindings()).basicAdd(otherEnd, msgs);
+			case ExpressionsPackage.METHOD_CALL_EXPRESSION__OPAQUE_CALLABLE:
+				if (opaqueCallable != null)
+					msgs = ((InternalEObject)opaqueCallable).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ExpressionsPackage.METHOD_CALL_EXPRESSION__OPAQUE_CALLABLE, null, msgs);
+				return basicSetOpaqueCallable((OpaqueCallable)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -381,13 +264,12 @@ public class MethodCallExpressionImpl extends ExpressionImpl implements
 	public NotificationChain eInverseRemove(InternalEObject otherEnd,
 			int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case CallsExpressionsPackage.METHOD_CALL_EXPRESSION__OWNED_PARAMETER_BINDINGS:
-			return ((InternalEList<?>) getOwnedParameterBindings())
-					.basicRemove(otherEnd, msgs);
-		case CallsExpressionsPackage.METHOD_CALL_EXPRESSION__TARGET:
-			return basicSetTarget(null, msgs);
-		case CallsExpressionsPackage.METHOD_CALL_EXPRESSION__OPAQUE_CALLABLE:
-			return basicSetOpaqueCallable(null, msgs);
+			case ExpressionsPackage.METHOD_CALL_EXPRESSION__OWNED_PARAMETER_BINDINGS:
+				return ((InternalEList<?>)getOwnedParameterBindings()).basicRemove(otherEnd, msgs);
+			case ExpressionsPackage.METHOD_CALL_EXPRESSION__TARGET:
+				return basicSetTarget(null, msgs);
+			case ExpressionsPackage.METHOD_CALL_EXPRESSION__OPAQUE_CALLABLE:
+				return basicSetOpaqueCallable(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -399,20 +281,15 @@ public class MethodCallExpressionImpl extends ExpressionImpl implements
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case CallsExpressionsPackage.METHOD_CALL_EXPRESSION__OWNED_PARAMETER_BINDINGS:
-			return getOwnedParameterBindings();
-		case CallsExpressionsPackage.METHOD_CALL_EXPRESSION__CALLEE:
-			if (resolve)
-				return getCallee();
-			return basicGetCallee();
-		case CallsExpressionsPackage.METHOD_CALL_EXPRESSION__TARGET:
-			if (resolve)
+			case ExpressionsPackage.METHOD_CALL_EXPRESSION__OWNED_PARAMETER_BINDINGS:
+				return getOwnedParameterBindings();
+			case ExpressionsPackage.METHOD_CALL_EXPRESSION__CALLEE:
+				if (resolve) return getCallee();
+				return basicGetCallee();
+			case ExpressionsPackage.METHOD_CALL_EXPRESSION__TARGET:
 				return getTarget();
-			return basicGetTarget();
-		case CallsExpressionsPackage.METHOD_CALL_EXPRESSION__OPAQUE_CALLABLE:
-			if (resolve)
+			case ExpressionsPackage.METHOD_CALL_EXPRESSION__OPAQUE_CALLABLE:
 				return getOpaqueCallable();
-			return basicGetOpaqueCallable();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -425,20 +302,19 @@ public class MethodCallExpressionImpl extends ExpressionImpl implements
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case CallsExpressionsPackage.METHOD_CALL_EXPRESSION__OWNED_PARAMETER_BINDINGS:
-			getOwnedParameterBindings().clear();
-			getOwnedParameterBindings().addAll(
-					(Collection<? extends ParameterBinding>) newValue);
-			return;
-		case CallsExpressionsPackage.METHOD_CALL_EXPRESSION__CALLEE:
-			setCallee((Callable) newValue);
-			return;
-		case CallsExpressionsPackage.METHOD_CALL_EXPRESSION__TARGET:
-			setTarget((Expression) newValue);
-			return;
-		case CallsExpressionsPackage.METHOD_CALL_EXPRESSION__OPAQUE_CALLABLE:
-			setOpaqueCallable((OpaqueCallable) newValue);
-			return;
+			case ExpressionsPackage.METHOD_CALL_EXPRESSION__OWNED_PARAMETER_BINDINGS:
+				getOwnedParameterBindings().clear();
+				getOwnedParameterBindings().addAll((Collection<? extends ParameterBinding>)newValue);
+				return;
+			case ExpressionsPackage.METHOD_CALL_EXPRESSION__CALLEE:
+				setCallee((Callable)newValue);
+				return;
+			case ExpressionsPackage.METHOD_CALL_EXPRESSION__TARGET:
+				setTarget((Expression)newValue);
+				return;
+			case ExpressionsPackage.METHOD_CALL_EXPRESSION__OPAQUE_CALLABLE:
+				setOpaqueCallable((OpaqueCallable)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -450,18 +326,18 @@ public class MethodCallExpressionImpl extends ExpressionImpl implements
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case CallsExpressionsPackage.METHOD_CALL_EXPRESSION__OWNED_PARAMETER_BINDINGS:
-			getOwnedParameterBindings().clear();
-			return;
-		case CallsExpressionsPackage.METHOD_CALL_EXPRESSION__CALLEE:
-			setCallee((Callable) null);
-			return;
-		case CallsExpressionsPackage.METHOD_CALL_EXPRESSION__TARGET:
-			setTarget((Expression) null);
-			return;
-		case CallsExpressionsPackage.METHOD_CALL_EXPRESSION__OPAQUE_CALLABLE:
-			setOpaqueCallable((OpaqueCallable) null);
-			return;
+			case ExpressionsPackage.METHOD_CALL_EXPRESSION__OWNED_PARAMETER_BINDINGS:
+				getOwnedParameterBindings().clear();
+				return;
+			case ExpressionsPackage.METHOD_CALL_EXPRESSION__CALLEE:
+				setCallee((Callable)null);
+				return;
+			case ExpressionsPackage.METHOD_CALL_EXPRESSION__TARGET:
+				setTarget((Expression)null);
+				return;
+			case ExpressionsPackage.METHOD_CALL_EXPRESSION__OPAQUE_CALLABLE:
+				setOpaqueCallable((OpaqueCallable)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -473,15 +349,14 @@ public class MethodCallExpressionImpl extends ExpressionImpl implements
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case CallsExpressionsPackage.METHOD_CALL_EXPRESSION__OWNED_PARAMETER_BINDINGS:
-			return ownedParameterBindings != null
-					&& !ownedParameterBindings.isEmpty();
-		case CallsExpressionsPackage.METHOD_CALL_EXPRESSION__CALLEE:
-			return callee != null;
-		case CallsExpressionsPackage.METHOD_CALL_EXPRESSION__TARGET:
-			return target != null;
-		case CallsExpressionsPackage.METHOD_CALL_EXPRESSION__OPAQUE_CALLABLE:
-			return opaqueCallable != null;
+			case ExpressionsPackage.METHOD_CALL_EXPRESSION__OWNED_PARAMETER_BINDINGS:
+				return ownedParameterBindings != null && !ownedParameterBindings.isEmpty();
+			case ExpressionsPackage.METHOD_CALL_EXPRESSION__CALLEE:
+				return callee != null;
+			case ExpressionsPackage.METHOD_CALL_EXPRESSION__TARGET:
+				return target != null;
+			case ExpressionsPackage.METHOD_CALL_EXPRESSION__OPAQUE_CALLABLE:
+				return opaqueCallable != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -494,12 +369,9 @@ public class MethodCallExpressionImpl extends ExpressionImpl implements
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == Invocation.class) {
 			switch (derivedFeatureID) {
-			case CallsExpressionsPackage.METHOD_CALL_EXPRESSION__OWNED_PARAMETER_BINDINGS:
-				return CallsPackage.INVOCATION__OWNED_PARAMETER_BINDINGS;
-			case CallsExpressionsPackage.METHOD_CALL_EXPRESSION__CALLEE:
-				return CallsPackage.INVOCATION__CALLEE;
-			default:
-				return -1;
+				case ExpressionsPackage.METHOD_CALL_EXPRESSION__OWNED_PARAMETER_BINDINGS: return CallsPackage.INVOCATION__OWNED_PARAMETER_BINDINGS;
+				case ExpressionsPackage.METHOD_CALL_EXPRESSION__CALLEE: return CallsPackage.INVOCATION__CALLEE;
+				default: return -1;
 			}
 		}
 		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
@@ -513,12 +385,9 @@ public class MethodCallExpressionImpl extends ExpressionImpl implements
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
 		if (baseClass == Invocation.class) {
 			switch (baseFeatureID) {
-			case CallsPackage.INVOCATION__OWNED_PARAMETER_BINDINGS:
-				return CallsExpressionsPackage.METHOD_CALL_EXPRESSION__OWNED_PARAMETER_BINDINGS;
-			case CallsPackage.INVOCATION__CALLEE:
-				return CallsExpressionsPackage.METHOD_CALL_EXPRESSION__CALLEE;
-			default:
-				return -1;
+				case CallsPackage.INVOCATION__OWNED_PARAMETER_BINDINGS: return ExpressionsPackage.METHOD_CALL_EXPRESSION__OWNED_PARAMETER_BINDINGS;
+				case CallsPackage.INVOCATION__CALLEE: return ExpressionsPackage.METHOD_CALL_EXPRESSION__CALLEE;
+				default: return -1;
 			}
 		}
 		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);

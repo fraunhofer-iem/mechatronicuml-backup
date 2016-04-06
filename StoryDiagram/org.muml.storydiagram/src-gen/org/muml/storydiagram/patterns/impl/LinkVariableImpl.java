@@ -20,12 +20,12 @@ import org.muml.storydiagram.patterns.PatternsPackage;
  * <!-- begin-user-doc --> An implementation of the model object '<em><b>Link</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.storydiagram.patterns.impl.LinkVariableImpl#getSourceEnd <em>Source End</em>}</li>
  *   <li>{@link org.muml.storydiagram.patterns.impl.LinkVariableImpl#getTargetEnd <em>Target End</em>}</li>
  *   <li>{@link org.muml.storydiagram.patterns.impl.LinkVariableImpl#getQualifierExpression <em>Qualifier Expression</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -72,8 +72,7 @@ public class LinkVariableImpl extends AbstractLinkVariableImpl implements
 	 */
 	public EReference getSourceEnd() {
 		EReference sourceEnd = basicGetSourceEnd();
-		return sourceEnd != null && sourceEnd.eIsProxy() ? (EReference) eResolveProxy((InternalEObject) sourceEnd)
-				: sourceEnd;
+		return sourceEnd != null && sourceEnd.eIsProxy() ? (EReference)eResolveProxy((InternalEObject)sourceEnd) : sourceEnd;
 	}
 
 	/**
@@ -110,13 +109,11 @@ public class LinkVariableImpl extends AbstractLinkVariableImpl implements
 	 */
 	public EReference getTargetEnd() {
 		if (targetEnd != null && targetEnd.eIsProxy()) {
-			InternalEObject oldTargetEnd = (InternalEObject) targetEnd;
-			targetEnd = (EReference) eResolveProxy(oldTargetEnd);
+			InternalEObject oldTargetEnd = (InternalEObject)targetEnd;
+			targetEnd = (EReference)eResolveProxy(oldTargetEnd);
 			if (targetEnd != oldTargetEnd) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							PatternsPackage.LINK_VARIABLE__TARGET_END,
-							oldTargetEnd, targetEnd));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PatternsPackage.LINK_VARIABLE__TARGET_END, oldTargetEnd, targetEnd));
 			}
 		}
 		return targetEnd;
@@ -167,43 +164,6 @@ public class LinkVariableImpl extends AbstractLinkVariableImpl implements
 	 * @generated
 	 */
 	public Expression getQualifierExpression() {
-		if (qualifierExpression != null && qualifierExpression.eIsProxy()) {
-			InternalEObject oldQualifierExpression = (InternalEObject) qualifierExpression;
-			qualifierExpression = (Expression) eResolveProxy(oldQualifierExpression);
-			if (qualifierExpression != oldQualifierExpression) {
-				InternalEObject newQualifierExpression = (InternalEObject) qualifierExpression;
-				NotificationChain msgs = oldQualifierExpression
-						.eInverseRemove(
-								this,
-								EOPPOSITE_FEATURE_BASE
-										- PatternsPackage.LINK_VARIABLE__QUALIFIER_EXPRESSION,
-								null, null);
-				if (newQualifierExpression.eInternalContainer() == null) {
-					msgs = newQualifierExpression
-							.eInverseAdd(
-									this,
-									EOPPOSITE_FEATURE_BASE
-											- PatternsPackage.LINK_VARIABLE__QUALIFIER_EXPRESSION,
-									null, msgs);
-				}
-				if (msgs != null)
-					msgs.dispatch();
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(
-							this,
-							Notification.RESOLVE,
-							PatternsPackage.LINK_VARIABLE__QUALIFIER_EXPRESSION,
-							oldQualifierExpression, qualifierExpression));
-			}
-		}
-		return qualifierExpression;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Expression basicGetQualifierExpression() {
 		return qualifierExpression;
 	}
 
@@ -216,14 +176,8 @@ public class LinkVariableImpl extends AbstractLinkVariableImpl implements
 		Expression oldQualifierExpression = qualifierExpression;
 		qualifierExpression = newQualifierExpression;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this,
-					Notification.SET,
-					PatternsPackage.LINK_VARIABLE__QUALIFIER_EXPRESSION,
-					oldQualifierExpression, newQualifierExpression);
-			if (msgs == null)
-				msgs = notification;
-			else
-				msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PatternsPackage.LINK_VARIABLE__QUALIFIER_EXPRESSION, oldQualifierExpression, newQualifierExpression);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -236,26 +190,14 @@ public class LinkVariableImpl extends AbstractLinkVariableImpl implements
 		if (newQualifierExpression != qualifierExpression) {
 			NotificationChain msgs = null;
 			if (qualifierExpression != null)
-				msgs = ((InternalEObject) qualifierExpression)
-						.eInverseRemove(
-								this,
-								EOPPOSITE_FEATURE_BASE
-										- PatternsPackage.LINK_VARIABLE__QUALIFIER_EXPRESSION,
-								null, msgs);
+				msgs = ((InternalEObject)qualifierExpression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PatternsPackage.LINK_VARIABLE__QUALIFIER_EXPRESSION, null, msgs);
 			if (newQualifierExpression != null)
-				msgs = ((InternalEObject) newQualifierExpression)
-						.eInverseAdd(
-								this,
-								EOPPOSITE_FEATURE_BASE
-										- PatternsPackage.LINK_VARIABLE__QUALIFIER_EXPRESSION,
-								null, msgs);
+				msgs = ((InternalEObject)newQualifierExpression).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PatternsPackage.LINK_VARIABLE__QUALIFIER_EXPRESSION, null, msgs);
 			msgs = basicSetQualifierExpression(newQualifierExpression, msgs);
-			if (msgs != null)
-				msgs.dispatch();
-		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					PatternsPackage.LINK_VARIABLE__QUALIFIER_EXPRESSION,
-					newQualifierExpression, newQualifierExpression));
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PatternsPackage.LINK_VARIABLE__QUALIFIER_EXPRESSION, newQualifierExpression, newQualifierExpression));
 	}
 
 	/**
@@ -266,8 +208,8 @@ public class LinkVariableImpl extends AbstractLinkVariableImpl implements
 	public NotificationChain eInverseRemove(InternalEObject otherEnd,
 			int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case PatternsPackage.LINK_VARIABLE__QUALIFIER_EXPRESSION:
-			return basicSetQualifierExpression(null, msgs);
+			case PatternsPackage.LINK_VARIABLE__QUALIFIER_EXPRESSION:
+				return basicSetQualifierExpression(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -279,18 +221,14 @@ public class LinkVariableImpl extends AbstractLinkVariableImpl implements
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case PatternsPackage.LINK_VARIABLE__SOURCE_END:
-			if (resolve)
-				return getSourceEnd();
-			return basicGetSourceEnd();
-		case PatternsPackage.LINK_VARIABLE__TARGET_END:
-			if (resolve)
-				return getTargetEnd();
-			return basicGetTargetEnd();
-		case PatternsPackage.LINK_VARIABLE__QUALIFIER_EXPRESSION:
-			if (resolve)
+			case PatternsPackage.LINK_VARIABLE__SOURCE_END:
+				if (resolve) return getSourceEnd();
+				return basicGetSourceEnd();
+			case PatternsPackage.LINK_VARIABLE__TARGET_END:
+				if (resolve) return getTargetEnd();
+				return basicGetTargetEnd();
+			case PatternsPackage.LINK_VARIABLE__QUALIFIER_EXPRESSION:
 				return getQualifierExpression();
-			return basicGetQualifierExpression();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -302,15 +240,15 @@ public class LinkVariableImpl extends AbstractLinkVariableImpl implements
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case PatternsPackage.LINK_VARIABLE__SOURCE_END:
-			setSourceEnd((EReference) newValue);
-			return;
-		case PatternsPackage.LINK_VARIABLE__TARGET_END:
-			setTargetEnd((EReference) newValue);
-			return;
-		case PatternsPackage.LINK_VARIABLE__QUALIFIER_EXPRESSION:
-			setQualifierExpression((Expression) newValue);
-			return;
+			case PatternsPackage.LINK_VARIABLE__SOURCE_END:
+				setSourceEnd((EReference)newValue);
+				return;
+			case PatternsPackage.LINK_VARIABLE__TARGET_END:
+				setTargetEnd((EReference)newValue);
+				return;
+			case PatternsPackage.LINK_VARIABLE__QUALIFIER_EXPRESSION:
+				setQualifierExpression((Expression)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -322,15 +260,15 @@ public class LinkVariableImpl extends AbstractLinkVariableImpl implements
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case PatternsPackage.LINK_VARIABLE__SOURCE_END:
-			setSourceEnd((EReference) null);
-			return;
-		case PatternsPackage.LINK_VARIABLE__TARGET_END:
-			setTargetEnd((EReference) null);
-			return;
-		case PatternsPackage.LINK_VARIABLE__QUALIFIER_EXPRESSION:
-			setQualifierExpression((Expression) null);
-			return;
+			case PatternsPackage.LINK_VARIABLE__SOURCE_END:
+				setSourceEnd((EReference)null);
+				return;
+			case PatternsPackage.LINK_VARIABLE__TARGET_END:
+				setTargetEnd((EReference)null);
+				return;
+			case PatternsPackage.LINK_VARIABLE__QUALIFIER_EXPRESSION:
+				setQualifierExpression((Expression)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -342,12 +280,12 @@ public class LinkVariableImpl extends AbstractLinkVariableImpl implements
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case PatternsPackage.LINK_VARIABLE__SOURCE_END:
-			return basicGetSourceEnd() != null;
-		case PatternsPackage.LINK_VARIABLE__TARGET_END:
-			return targetEnd != null;
-		case PatternsPackage.LINK_VARIABLE__QUALIFIER_EXPRESSION:
-			return qualifierExpression != null;
+			case PatternsPackage.LINK_VARIABLE__SOURCE_END:
+				return basicGetSourceEnd() != null;
+			case PatternsPackage.LINK_VARIABLE__TARGET_END:
+				return targetEnd != null;
+			case PatternsPackage.LINK_VARIABLE__QUALIFIER_EXPRESSION:
+				return qualifierExpression != null;
 		}
 		return super.eIsSet(featureID);
 	}

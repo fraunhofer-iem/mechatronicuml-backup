@@ -46,7 +46,7 @@ public interface ProtocolinstantiationPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.fujaba.de/muml/reconfiguration/protocolinstantiation/0.4.0";
+	String eNS_URI = "http://www.muml.org/reconfiguration/protocolinstantiation/1.0.0";
 
 	/**
 	 * The package namespace name.
@@ -75,22 +75,22 @@ public interface ProtocolinstantiationPackage extends EPackage {
 	int BROADCAST_PORT = 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BROADCAST_PORT__ANNOTATION = ComponentPackage.PORT__ANNOTATION;
+	int BROADCAST_PORT__ANNOTATIONS = ComponentPackage.PORT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BROADCAST_PORT__EXTENSION = ComponentPackage.PORT__EXTENSION;
+	int BROADCAST_PORT__EXTENSIONS = ComponentPackage.PORT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -427,22 +427,22 @@ public interface ProtocolinstantiationPackage extends EPackage {
 	int BROADCAST_PORT_SPECIFICATION = 1;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BROADCAST_PORT_SPECIFICATION__ANNOTATION = CorePackage.EXTENDABLE_ELEMENT__ANNOTATION;
+	int BROADCAST_PORT_SPECIFICATION__ANNOTATIONS = CorePackage.EXTENDABLE_ELEMENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BROADCAST_PORT_SPECIFICATION__EXTENSION = CorePackage.EXTENDABLE_ELEMENT__EXTENSION;
+	int BROADCAST_PORT_SPECIFICATION__EXTENSIONS = CorePackage.EXTENDABLE_ELEMENT__EXTENSIONS;
 
 	/**
 	 * The number of structural features of the '<em>Broadcast Port Specification</em>' class.
@@ -644,22 +644,22 @@ public interface ProtocolinstantiationPackage extends EPackage {
 	int PROTOCOL_INSTANTIATION_PORT_SPECIFICATION = 2;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROTOCOL_INSTANTIATION_PORT_SPECIFICATION__ANNOTATION = BROADCAST_PORT_SPECIFICATION__ANNOTATION;
+	int PROTOCOL_INSTANTIATION_PORT_SPECIFICATION__ANNOTATIONS = BROADCAST_PORT_SPECIFICATION__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROTOCOL_INSTANTIATION_PORT_SPECIFICATION__EXTENSION = BROADCAST_PORT_SPECIFICATION__EXTENSION;
+	int PROTOCOL_INSTANTIATION_PORT_SPECIFICATION__EXTENSIONS = BROADCAST_PORT_SPECIFICATION__EXTENSIONS;
 
 	/**
 	 * The number of structural features of the '<em>Protocol Instantiation Port Specification</em>' class.
@@ -861,22 +861,22 @@ public interface ProtocolinstantiationPackage extends EPackage {
 	int DISCOVERY_PORT_SPECIFICATION = 3;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DISCOVERY_PORT_SPECIFICATION__ANNOTATION = BROADCAST_PORT_SPECIFICATION__ANNOTATION;
+	int DISCOVERY_PORT_SPECIFICATION__ANNOTATIONS = BROADCAST_PORT_SPECIFICATION__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DISCOVERY_PORT_SPECIFICATION__EXTENSION = BROADCAST_PORT_SPECIFICATION__EXTENSION;
+	int DISCOVERY_PORT_SPECIFICATION__EXTENSIONS = BROADCAST_PORT_SPECIFICATION__EXTENSIONS;
 
 	/**
 	 * The number of structural features of the '<em>Discovery Port Specification</em>' class.

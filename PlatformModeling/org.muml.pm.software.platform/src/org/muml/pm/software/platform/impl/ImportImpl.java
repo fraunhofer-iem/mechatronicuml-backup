@@ -17,10 +17,10 @@ import org.muml.pm.software.platform.SwplatformPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.pm.software.platform.impl.ImportImpl#getImportURI <em>Import URI</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

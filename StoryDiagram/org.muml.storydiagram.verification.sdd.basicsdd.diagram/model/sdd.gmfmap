@@ -39,7 +39,7 @@
                   language="literal"/>
             </initializers>
             <elementClass
-                href="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/StoryPattern"/>
+                href="../../org.muml.storydiagram/model/storydiagrams.ecore#//patterns/StoryPattern"/>
           </newElementInitializers>
         </initializers>
       </domainInitializer>
@@ -113,9 +113,9 @@
   </links>
   <links>
     <domainMetaElement
-        href="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/LinkVariable"/>
+        href="../../org.muml.storydiagram/model/storydiagrams.ecore#//patterns/LinkVariable"/>
     <containmentFeature
-        href="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/StoryPattern/linkVariable"/>
+        href="../../org.muml.storydiagram/model/storydiagrams.ecore#//patterns/StoryPattern/linkVariable"/>
     <tool
         xsi:type="gmftool:CreationTool"
         href="../../org.storydriven.storydiagrams/model/storydiagrams.gmftool#//@palette/@tools.1/@tools.3"/>
@@ -123,10 +123,10 @@
         href="../../org.storydriven.storydiagrams/model/storydiagrams.gmfgraph#LinkVariableConnection"/>
     <sourceMetaFeature
         xsi:type="ecore:EReference"
-        href="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/AbstractLinkVariable/source"/>
+        href="../../org.muml.storydiagram/model/storydiagrams.ecore#//patterns/AbstractLinkVariable/source"/>
     <linkMetaFeature
         xsi:type="ecore:EReference"
-        href="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/AbstractLinkVariable/target"/>
+        href="../../org.muml.storydiagram/model/storydiagrams.ecore#//patterns/AbstractLinkVariable/target"/>
   </links>
   <diagram>
     <diagramCanvas

@@ -21,11 +21,15 @@ public class TimeParameterEditor extends org.muml.ape.runtime.editors.ClassPrope
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorExtension_property_tab_extensionsTab_Editor(), false);
+			addPropertyEditor(createEditorExtensions_property_tab_extensionsTab_Editor(), false);
+
+			addPropertyEditor(createEditorName_property_tab_generalTab_Editor(), false);
+
+			addPropertyEditor(createEditorExtensions_property_tab_extensionsTab_Editor(), false);
 
 			addPropertyEditor(createEditorComment_property_tab_documentationTab_Editor(), false);
 
-			addPropertyEditor(createEditorExtension_property_tab_extensionsTab_Editor(), false);
+			addPropertyEditor(createEditorExtensions_property_tab_extensionsTab_Editor(), false);
 
 			addPropertyEditor(createEditorName_property_tab_generalTab_Editor(), false);
 
@@ -33,35 +37,33 @@ public class TimeParameterEditor extends org.muml.ape.runtime.editors.ClassPrope
 
 			addPropertyEditor(createEditorInitializeExpression_property_tab_generalTab_Editor(), false);
 
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Booleans", "Booleans",
-					org.eclipse.swt.SWT.HORIZONTAL, true);
+			addPropertyEditor(createEditorConstant_property_tab_generalTab_Editor(), false);
 
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Booleans",
-					createEditorConstant_property_tab_generalTab_Editor(), false);
-
-			addPropertyEditor(createEditorExtension_property_tab_extensionsTab_Editor(), false);
+			addPropertyEditor(createEditorExtensions_property_tab_extensionsTab_Editor(), false);
 
 			addPropertyEditor(createEditorName_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorExtension_property_tab_extensionsTab_Editor(), false);
+			addPropertyEditor(createEditorExtensions_property_tab_extensionsTab_Editor(), false);
 
 			addPropertyEditor(createEditorComment_property_tab_documentationTab_Editor(), false);
 
+			addPropertyEditor(createEditorStatechart_property_tab_psmTab_Editor(), false);
+
 		} else if ("property.tab.psm".equals(tab)) { // Tab PSM
+
+			addPropertyEditor(createEditorStatechart_property_tab_psmTab_Editor(), false);
 
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
 			addPropertyEditor(createEditorName_property_tab_generalTab_Editor(), false);
 
+			addPropertyEditor(createEditorName_property_tab_generalTab_Editor(), false);
+
 			addPropertyEditor(createEditorDataType_property_tab_generalTab_Editor(), false);
 
 			addPropertyEditor(createEditorInitializeExpression_property_tab_generalTab_Editor(), false);
 
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Booleans", "Booleans",
-					org.eclipse.swt.SWT.HORIZONTAL, true);
-
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Booleans",
-					createEditorConstant_property_tab_generalTab_Editor(), false);
+			addPropertyEditor(createEditorConstant_property_tab_generalTab_Editor(), false);
 
 			addPropertyEditor(createEditorName_property_tab_generalTab_Editor(), false);
 
@@ -73,17 +75,31 @@ public class TimeParameterEditor extends org.muml.ape.runtime.editors.ClassPrope
 
 		} else if ("property.tab.extensions".equals(tab)) { // Tab Extensions
 
-			addPropertyEditor(createEditorExtension_property_tab_extensionsTab_Editor(), false);
+			addPropertyEditor(createEditorExtensions_property_tab_extensionsTab_Editor(), false);
 
-			addPropertyEditor(createEditorExtension_property_tab_extensionsTab_Editor(), false);
+			addPropertyEditor(createEditorExtensions_property_tab_extensionsTab_Editor(), false);
 
-			addPropertyEditor(createEditorExtension_property_tab_extensionsTab_Editor(), false);
+			addPropertyEditor(createEditorExtensions_property_tab_extensionsTab_Editor(), false);
 
-			addPropertyEditor(createEditorExtension_property_tab_extensionsTab_Editor(), false);
+			addPropertyEditor(createEditorExtensions_property_tab_extensionsTab_Editor(), false);
+
+			addPropertyEditor(createEditorExtensions_property_tab_extensionsTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
 		} else if ("property.tab.descriptionAspects".equals(tab)) { // Tab Description Aspects
+
+		} else if ("property.tab.condition".equals(tab)) { // Tab Condition
+
+		} else if ("property.tab.effect".equals(tab)) { // Tab Effect
+
+		} else if ("property.tab.deadline".equals(tab)) { // Tab Deadline
+
+		} else if ("property.tab.sampling".equals(tab)) { // Tab Sampling
+
+		} else if ("property.tab.message".equals(tab)) { // Tab Message
+
+		} else if ("property.tab.behavior".equals(tab)) { // Tab Behavior
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
@@ -120,35 +136,6 @@ public class TimeParameterEditor extends org.muml.ape.runtime.editors.ClassPrope
 			this.editorConstant_property_tab_generalTab = editor;
 		}
 		return this.editorConstant_property_tab_generalTab;
-	}
-
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorComment_property_tab_documentationTab;
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorComment_property_tab_documentationTab_Editor() {
-		if (this.editorComment_property_tab_documentationTab == null) {
-			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.core.CorePackage.eINSTANCE
-					.getCommentableElement_Comment();
-			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.TextPropertyEditor(
-					adapterFactory, feature, true);
-
-			editor.setTooltipMessage(
-					"The comment string that can be used to attach arbitrary information to CommentableElements.");
-
-			this.editorComment_property_tab_documentationTab = editor;
-		}
-		return this.editorComment_property_tab_documentationTab;
-	}
-
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorExtension_property_tab_extensionsTab;
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorExtension_property_tab_extensionsTab_Editor() {
-		if (this.editorExtension_property_tab_extensionsTab == null) {
-			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.core.CorePackage.eINSTANCE
-					.getExtendableElement_Extension();
-			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.FlattenedListPropertyEditor(
-					adapterFactory, feature);
-
-			this.editorExtension_property_tab_extensionsTab = editor;
-		}
-		return this.editorExtension_property_tab_extensionsTab;
 	}
 
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorDataType_property_tab_generalTab;
@@ -193,6 +180,52 @@ public class TimeParameterEditor extends org.muml.ape.runtime.editors.ClassPrope
 		return this.editorName_property_tab_generalTab;
 	}
 
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorExtensions_property_tab_extensionsTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorExtensions_property_tab_extensionsTab_Editor() {
+		if (this.editorExtensions_property_tab_extensionsTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.core.CorePackage.eINSTANCE
+					.getExtendableElement_Extensions();
+			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.FlattenedListPropertyEditor(
+					adapterFactory, feature);
+
+			editor.setTooltipMessage("Extendable Elements can be extended by an Extension.");
+
+			this.editorExtensions_property_tab_extensionsTab = editor;
+		}
+		return this.editorExtensions_property_tab_extensionsTab;
+	}
+
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorComment_property_tab_documentationTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorComment_property_tab_documentationTab_Editor() {
+		if (this.editorComment_property_tab_documentationTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.core.CorePackage.eINSTANCE
+					.getCommentableElement_Comment();
+			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.TextPropertyEditor(
+					adapterFactory, feature, true);
+
+			editor.setTooltipMessage(
+					"The comment string that can be used to attach arbitrary information to CommentableElements.");
+
+			this.editorComment_property_tab_documentationTab = editor;
+		}
+		return this.editorComment_property_tab_documentationTab;
+	}
+
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorStatechart_property_tab_psmTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorStatechart_property_tab_psmTab_Editor() {
+		if (this.editorStatechart_property_tab_psmTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.psm.psm_realtimestatechart.realtimestatechartparameter.RealtimestatechartparameterPackage.eINSTANCE
+					.getRealtimeStatechartParameter_Statechart();
+			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.ComboPropertyEditor(
+					adapterFactory, feature);
+
+			editor.setTooltipMessage("The statechart, to which this parameter belongs.");
+
+			this.editorStatechart_property_tab_psmTab = editor;
+		}
+		return this.editorStatechart_property_tab_psmTab;
+	}
+
 	//
 	// instantiation
 	//
@@ -217,10 +250,9 @@ public class TimeParameterEditor extends org.muml.ape.runtime.editors.ClassPrope
 
 		@Override
 		public boolean hasTab(java.lang.String tab) {
-			return java.util.Arrays.asList(
-					new java.lang.String[]{"property.tab.general", "property.tab.general", "property.tab.documentation",
-							"property.tab.extensions", "property.tab.general", "property.tab.general"})
-					.contains(tab);
+			return java.util.Arrays.asList(new java.lang.String[]{"property.tab.general", "property.tab.general",
+					"property.tab.general", "property.tab.general", "property.tab.extensions",
+					"property.tab.documentation", "property.tab.psm"}).contains(tab);
 		}
 	}
 

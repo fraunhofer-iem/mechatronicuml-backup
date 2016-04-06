@@ -1,29 +1,24 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: ComponentStoryDiagram Tabbed Properties
-Bundle-SymbolicName: org.muml.reconfiguration.componentstorydiagram.edit.properties;singleton:=true
+Bundle-SymbolicName: org.muml.reconfiguration.componentstorydiagram.edit.properties; singleton:=true
 Bundle-Version: 0.5.0.qualifier
-Require-Bundle: org.muml.pim.edit,
- org.eclipse.emf.ecore,
+Require-Bundle: org.eclipse.emf.ecore,
  org.eclipse.core.runtime,
- org.muml.pim,
  org.eclipse.emf.edit,
- org.muml.ape.runtime,
  org.eclipse.ui,
+ org.muml.reconfiguration.componentstorydiagram.edit,
+ org.muml.ape.runtime,
+ org.muml.reconfiguration.componentstorydiagram,
  org.muml.core.edit,
  org.muml.core.edit.properties,
- org.muml.pim.actionlanguage.xtext.ui,
- org.muml.pim.common,
- org.muml.reconfiguration.componentstorydiagram,
- org.muml.reconfiguration.componentstorydiagram.edit,
- org.muml.reconfiguration,
  org.muml.reconfiguration.edit,
  org.muml.reconfiguration.edit.properties,
+ org.muml.pim.edit,
  org.muml.pim.edit.properties
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: org.muml.reconfiguration.componentstorydiagram.properties.componentstorydiagram.editor,
- org.muml.reconfiguration.componentstorydiagram.properties.constraint,
- org.muml.reconfiguration.componentstorydiagram.properties.metamodel,
+Export-Package: org.muml.reconfiguration.componentstorydiagram.properties.metamodel, org.muml.reconfiguration.componentstorydiagram.properties.constraint,
+ org.muml.reconfiguration.componentstorydiagram.properties.componentstorydiagram.editor,
  org.muml.reconfiguration.componentstorydiagram.properties.tabs
 Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn

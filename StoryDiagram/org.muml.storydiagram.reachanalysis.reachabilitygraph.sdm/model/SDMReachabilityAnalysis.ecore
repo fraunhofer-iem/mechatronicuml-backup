@@ -44,7 +44,7 @@
         <details key="documentation" value="The index function is a map that associates an object n1 of the source graph of this&#xD;&#xA;transition with an object n2 of the target graph of this transition. n1 is the key, n2 is&#xD;&#xA;the value. (n1, n2) is element of index if n2 was created as a copy of n1 when &#xD;&#xA;cloning the source graph of this transition."/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="appliedActivity" eType="ecore:EClass ../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/Activity">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="appliedActivity" eType="ecore:EClass ../../org.muml.storydiagram/model/storydiagrams.ecore#//activities/Activity">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Stores the activity that has been applied in order to obtain this transition."/>
       </eAnnotations>
@@ -72,7 +72,7 @@
       <details key="documentation" value="Helper class that contains all activities to be used by this reachability analysis."/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="activities" upperBound="-1"
-        eType="ecore:EClass ../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/Activity"/>
+        eType="ecore:EClass ../../org.muml.storydiagram/model/storydiagrams.ecore#//activities/Activity"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="unchangeableNodes" upperBound="-1"
         eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass"/>
   </eClassifiers>

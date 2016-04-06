@@ -29,13 +29,13 @@ import org.muml.storydiagram.templates.TemplatesPackage;
  * <!-- begin-user-doc --> An implementation of the model object '<em><b>Template Binding</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.storydiagram.templates.impl.TemplateBindingImpl#getBoundParameter <em>Bound Parameter</em>}</li>
  *   <li>{@link org.muml.storydiagram.templates.impl.TemplateBindingImpl#getBindingExpression <em>Binding Expression</em>}</li>
  *   <li>{@link org.muml.storydiagram.templates.impl.TemplateBindingImpl#getTemplate <em>Template</em>}</li>
- *   <li>{@link org.muml.storydiagram.templates.impl.TemplateBindingImpl#getPropertyBindings <em>Property Binding</em>}</li>
+ *   <li>{@link org.muml.storydiagram.templates.impl.TemplateBindingImpl#getPropertyBinding <em>Property Binding</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -60,13 +60,14 @@ public class TemplateBindingImpl extends ExtendableElementImpl implements
 	protected Expression bindingExpression;
 
 	/**
-	 * The cached value of the '{@link #getPropertyBindings() <em>Property Binding</em>}' containment reference list.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @see #getPropertyBindings()
+	 * The cached value of the '{@link #getPropertyBinding() <em>Property Binding</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPropertyBinding()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<PropertyBinding> propertyBindings;
+	protected EList<PropertyBinding> propertyBinding;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -91,13 +92,11 @@ public class TemplateBindingImpl extends ExtendableElementImpl implements
 	 */
 	public EClassifier getBoundParameter() {
 		if (boundParameter != null && boundParameter.eIsProxy()) {
-			InternalEObject oldBoundParameter = (InternalEObject) boundParameter;
-			boundParameter = (EClassifier) eResolveProxy(oldBoundParameter);
+			InternalEObject oldBoundParameter = (InternalEObject)boundParameter;
+			boundParameter = (EClassifier)eResolveProxy(oldBoundParameter);
 			if (boundParameter != oldBoundParameter) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							TemplatesPackage.TEMPLATE_BINDING__BOUND_PARAMETER,
-							oldBoundParameter, boundParameter));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TemplatesPackage.TEMPLATE_BINDING__BOUND_PARAMETER, oldBoundParameter, boundParameter));
 			}
 		}
 		return boundParameter;
@@ -119,9 +118,7 @@ public class TemplateBindingImpl extends ExtendableElementImpl implements
 		EClassifier oldBoundParameter = boundParameter;
 		boundParameter = newBoundParameter;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					TemplatesPackage.TEMPLATE_BINDING__BOUND_PARAMETER,
-					oldBoundParameter, boundParameter));
+			eNotify(new ENotificationImpl(this, Notification.SET, TemplatesPackage.TEMPLATE_BINDING__BOUND_PARAMETER, oldBoundParameter, boundParameter));
 	}
 
 	/**
@@ -129,43 +126,6 @@ public class TemplateBindingImpl extends ExtendableElementImpl implements
 	 * @generated
 	 */
 	public Expression getBindingExpression() {
-		if (bindingExpression != null && bindingExpression.eIsProxy()) {
-			InternalEObject oldBindingExpression = (InternalEObject) bindingExpression;
-			bindingExpression = (Expression) eResolveProxy(oldBindingExpression);
-			if (bindingExpression != oldBindingExpression) {
-				InternalEObject newBindingExpression = (InternalEObject) bindingExpression;
-				NotificationChain msgs = oldBindingExpression
-						.eInverseRemove(
-								this,
-								EOPPOSITE_FEATURE_BASE
-										- TemplatesPackage.TEMPLATE_BINDING__BINDING_EXPRESSION,
-								null, null);
-				if (newBindingExpression.eInternalContainer() == null) {
-					msgs = newBindingExpression
-							.eInverseAdd(
-									this,
-									EOPPOSITE_FEATURE_BASE
-											- TemplatesPackage.TEMPLATE_BINDING__BINDING_EXPRESSION,
-									null, msgs);
-				}
-				if (msgs != null)
-					msgs.dispatch();
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(
-							this,
-							Notification.RESOLVE,
-							TemplatesPackage.TEMPLATE_BINDING__BINDING_EXPRESSION,
-							oldBindingExpression, bindingExpression));
-			}
-		}
-		return bindingExpression;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Expression basicGetBindingExpression() {
 		return bindingExpression;
 	}
 
@@ -178,14 +138,8 @@ public class TemplateBindingImpl extends ExtendableElementImpl implements
 		Expression oldBindingExpression = bindingExpression;
 		bindingExpression = newBindingExpression;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this,
-					Notification.SET,
-					TemplatesPackage.TEMPLATE_BINDING__BINDING_EXPRESSION,
-					oldBindingExpression, newBindingExpression);
-			if (msgs == null)
-				msgs = notification;
-			else
-				msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, TemplatesPackage.TEMPLATE_BINDING__BINDING_EXPRESSION, oldBindingExpression, newBindingExpression);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -198,40 +152,14 @@ public class TemplateBindingImpl extends ExtendableElementImpl implements
 		if (newBindingExpression != bindingExpression) {
 			NotificationChain msgs = null;
 			if (bindingExpression != null)
-				msgs = ((InternalEObject) bindingExpression)
-						.eInverseRemove(
-								this,
-								EOPPOSITE_FEATURE_BASE
-										- TemplatesPackage.TEMPLATE_BINDING__BINDING_EXPRESSION,
-								null, msgs);
+				msgs = ((InternalEObject)bindingExpression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - TemplatesPackage.TEMPLATE_BINDING__BINDING_EXPRESSION, null, msgs);
 			if (newBindingExpression != null)
-				msgs = ((InternalEObject) newBindingExpression)
-						.eInverseAdd(
-								this,
-								EOPPOSITE_FEATURE_BASE
-										- TemplatesPackage.TEMPLATE_BINDING__BINDING_EXPRESSION,
-								null, msgs);
+				msgs = ((InternalEObject)newBindingExpression).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - TemplatesPackage.TEMPLATE_BINDING__BINDING_EXPRESSION, null, msgs);
 			msgs = basicSetBindingExpression(newBindingExpression, msgs);
-			if (msgs != null)
-				msgs.dispatch();
-		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					TemplatesPackage.TEMPLATE_BINDING__BINDING_EXPRESSION,
-					newBindingExpression, newBindingExpression));
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<PropertyBinding> getPropertyBindings() {
-		if (propertyBindings == null) {
-			propertyBindings = new EObjectContainmentWithInverseEList.Resolving<PropertyBinding>(
-					PropertyBinding.class, this,
-					TemplatesPackage.TEMPLATE_BINDING__PROPERTY_BINDING,
-					TemplatesPackage.PROPERTY_BINDING__TEMPLATE_BINDING);
+			if (msgs != null) msgs.dispatch();
 		}
-		return propertyBindings;
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TemplatesPackage.TEMPLATE_BINDING__BINDING_EXPRESSION, newBindingExpression, newBindingExpression));
 	}
 
 	/**
@@ -239,19 +167,8 @@ public class TemplateBindingImpl extends ExtendableElementImpl implements
 	 * @generated
 	 */
 	public TemplateSignature getTemplate() {
-		if (eContainerFeatureID() != TemplatesPackage.TEMPLATE_BINDING__TEMPLATE)
-			return null;
-		return (TemplateSignature) eContainer();
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	public TemplateSignature basicGetTemplate() {
-		if (eContainerFeatureID() != TemplatesPackage.TEMPLATE_BINDING__TEMPLATE)
-			return null;
-		return (TemplateSignature) eInternalContainer();
+		if (eContainerFeatureID() != TemplatesPackage.TEMPLATE_BINDING__TEMPLATE) return null;
+		return (TemplateSignature)eInternalContainer();
 	}
 
 	/**
@@ -260,8 +177,7 @@ public class TemplateBindingImpl extends ExtendableElementImpl implements
 	 */
 	public NotificationChain basicSetTemplate(TemplateSignature newTemplate,
 			NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject) newTemplate,
-				TemplatesPackage.TEMPLATE_BINDING__TEMPLATE, msgs);
+		msgs = eBasicSetContainer((InternalEObject)newTemplate, TemplatesPackage.TEMPLATE_BINDING__TEMPLATE, msgs);
 		return msgs;
 	}
 
@@ -270,25 +186,31 @@ public class TemplateBindingImpl extends ExtendableElementImpl implements
 	 * @generated
 	 */
 	public void setTemplate(TemplateSignature newTemplate) {
-		if (newTemplate != eInternalContainer()
-				|| (eContainerFeatureID() != TemplatesPackage.TEMPLATE_BINDING__TEMPLATE && newTemplate != null)) {
+		if (newTemplate != eInternalContainer() || (eContainerFeatureID() != TemplatesPackage.TEMPLATE_BINDING__TEMPLATE && newTemplate != null)) {
 			if (EcoreUtil.isAncestor(this, newTemplate))
-				throw new IllegalArgumentException(
-						"Recursive containment not allowed for " + toString());
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newTemplate != null)
-				msgs = ((InternalEObject) newTemplate).eInverseAdd(this,
-						TemplatesPackage.TEMPLATE_SIGNATURE__TEMPLATE_BINDING,
-						TemplateSignature.class, msgs);
+				msgs = ((InternalEObject)newTemplate).eInverseAdd(this, TemplatesPackage.TEMPLATE_SIGNATURE__TEMPLATE_BINDING, TemplateSignature.class, msgs);
 			msgs = basicSetTemplate(newTemplate, msgs);
-			if (msgs != null)
-				msgs.dispatch();
-		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					TemplatesPackage.TEMPLATE_BINDING__TEMPLATE, newTemplate,
-					newTemplate));
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TemplatesPackage.TEMPLATE_BINDING__TEMPLATE, newTemplate, newTemplate));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<PropertyBinding> getPropertyBinding() {
+		if (propertyBinding == null) {
+			propertyBinding = new EObjectContainmentWithInverseEList<PropertyBinding>(PropertyBinding.class, this, TemplatesPackage.TEMPLATE_BINDING__PROPERTY_BINDING, TemplatesPackage.PROPERTY_BINDING__TEMPLATE_BINDING);
+		}
+		return propertyBinding;
 	}
 
 	/**
@@ -300,13 +222,12 @@ public class TemplateBindingImpl extends ExtendableElementImpl implements
 	public NotificationChain eInverseAdd(InternalEObject otherEnd,
 			int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case TemplatesPackage.TEMPLATE_BINDING__TEMPLATE:
-			if (eInternalContainer() != null)
-				msgs = eBasicRemoveFromContainer(msgs);
-			return basicSetTemplate((TemplateSignature) otherEnd, msgs);
-		case TemplatesPackage.TEMPLATE_BINDING__PROPERTY_BINDING:
-			return ((InternalEList<InternalEObject>) (InternalEList<?>) getPropertyBindings())
-					.basicAdd(otherEnd, msgs);
+			case TemplatesPackage.TEMPLATE_BINDING__TEMPLATE:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetTemplate((TemplateSignature)otherEnd, msgs);
+			case TemplatesPackage.TEMPLATE_BINDING__PROPERTY_BINDING:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getPropertyBinding()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -319,13 +240,12 @@ public class TemplateBindingImpl extends ExtendableElementImpl implements
 	public NotificationChain eInverseRemove(InternalEObject otherEnd,
 			int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case TemplatesPackage.TEMPLATE_BINDING__BINDING_EXPRESSION:
-			return basicSetBindingExpression(null, msgs);
-		case TemplatesPackage.TEMPLATE_BINDING__TEMPLATE:
-			return basicSetTemplate(null, msgs);
-		case TemplatesPackage.TEMPLATE_BINDING__PROPERTY_BINDING:
-			return ((InternalEList<?>) getPropertyBindings()).basicRemove(
-					otherEnd, msgs);
+			case TemplatesPackage.TEMPLATE_BINDING__BINDING_EXPRESSION:
+				return basicSetBindingExpression(null, msgs);
+			case TemplatesPackage.TEMPLATE_BINDING__TEMPLATE:
+				return basicSetTemplate(null, msgs);
+			case TemplatesPackage.TEMPLATE_BINDING__PROPERTY_BINDING:
+				return ((InternalEList<?>)getPropertyBinding()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -338,10 +258,8 @@ public class TemplateBindingImpl extends ExtendableElementImpl implements
 	public NotificationChain eBasicRemoveFromContainerFeature(
 			NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
-		case TemplatesPackage.TEMPLATE_BINDING__TEMPLATE:
-			return eInternalContainer().eInverseRemove(this,
-					TemplatesPackage.TEMPLATE_SIGNATURE__TEMPLATE_BINDING,
-					TemplateSignature.class, msgs);
+			case TemplatesPackage.TEMPLATE_BINDING__TEMPLATE:
+				return eInternalContainer().eInverseRemove(this, TemplatesPackage.TEMPLATE_SIGNATURE__TEMPLATE_BINDING, TemplateSignature.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -353,20 +271,15 @@ public class TemplateBindingImpl extends ExtendableElementImpl implements
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case TemplatesPackage.TEMPLATE_BINDING__BOUND_PARAMETER:
-			if (resolve)
-				return getBoundParameter();
-			return basicGetBoundParameter();
-		case TemplatesPackage.TEMPLATE_BINDING__BINDING_EXPRESSION:
-			if (resolve)
+			case TemplatesPackage.TEMPLATE_BINDING__BOUND_PARAMETER:
+				if (resolve) return getBoundParameter();
+				return basicGetBoundParameter();
+			case TemplatesPackage.TEMPLATE_BINDING__BINDING_EXPRESSION:
 				return getBindingExpression();
-			return basicGetBindingExpression();
-		case TemplatesPackage.TEMPLATE_BINDING__TEMPLATE:
-			if (resolve)
+			case TemplatesPackage.TEMPLATE_BINDING__TEMPLATE:
 				return getTemplate();
-			return basicGetTemplate();
-		case TemplatesPackage.TEMPLATE_BINDING__PROPERTY_BINDING:
-			return getPropertyBindings();
+			case TemplatesPackage.TEMPLATE_BINDING__PROPERTY_BINDING:
+				return getPropertyBinding();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -379,20 +292,19 @@ public class TemplateBindingImpl extends ExtendableElementImpl implements
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case TemplatesPackage.TEMPLATE_BINDING__BOUND_PARAMETER:
-			setBoundParameter((EClassifier) newValue);
-			return;
-		case TemplatesPackage.TEMPLATE_BINDING__BINDING_EXPRESSION:
-			setBindingExpression((Expression) newValue);
-			return;
-		case TemplatesPackage.TEMPLATE_BINDING__TEMPLATE:
-			setTemplate((TemplateSignature) newValue);
-			return;
-		case TemplatesPackage.TEMPLATE_BINDING__PROPERTY_BINDING:
-			getPropertyBindings().clear();
-			getPropertyBindings().addAll(
-					(Collection<? extends PropertyBinding>) newValue);
-			return;
+			case TemplatesPackage.TEMPLATE_BINDING__BOUND_PARAMETER:
+				setBoundParameter((EClassifier)newValue);
+				return;
+			case TemplatesPackage.TEMPLATE_BINDING__BINDING_EXPRESSION:
+				setBindingExpression((Expression)newValue);
+				return;
+			case TemplatesPackage.TEMPLATE_BINDING__TEMPLATE:
+				setTemplate((TemplateSignature)newValue);
+				return;
+			case TemplatesPackage.TEMPLATE_BINDING__PROPERTY_BINDING:
+				getPropertyBinding().clear();
+				getPropertyBinding().addAll((Collection<? extends PropertyBinding>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -404,18 +316,18 @@ public class TemplateBindingImpl extends ExtendableElementImpl implements
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case TemplatesPackage.TEMPLATE_BINDING__BOUND_PARAMETER:
-			setBoundParameter((EClassifier) null);
-			return;
-		case TemplatesPackage.TEMPLATE_BINDING__BINDING_EXPRESSION:
-			setBindingExpression((Expression) null);
-			return;
-		case TemplatesPackage.TEMPLATE_BINDING__TEMPLATE:
-			setTemplate((TemplateSignature) null);
-			return;
-		case TemplatesPackage.TEMPLATE_BINDING__PROPERTY_BINDING:
-			getPropertyBindings().clear();
-			return;
+			case TemplatesPackage.TEMPLATE_BINDING__BOUND_PARAMETER:
+				setBoundParameter((EClassifier)null);
+				return;
+			case TemplatesPackage.TEMPLATE_BINDING__BINDING_EXPRESSION:
+				setBindingExpression((Expression)null);
+				return;
+			case TemplatesPackage.TEMPLATE_BINDING__TEMPLATE:
+				setTemplate((TemplateSignature)null);
+				return;
+			case TemplatesPackage.TEMPLATE_BINDING__PROPERTY_BINDING:
+				getPropertyBinding().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -427,14 +339,14 @@ public class TemplateBindingImpl extends ExtendableElementImpl implements
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case TemplatesPackage.TEMPLATE_BINDING__BOUND_PARAMETER:
-			return boundParameter != null;
-		case TemplatesPackage.TEMPLATE_BINDING__BINDING_EXPRESSION:
-			return bindingExpression != null;
-		case TemplatesPackage.TEMPLATE_BINDING__TEMPLATE:
-			return basicGetTemplate() != null;
-		case TemplatesPackage.TEMPLATE_BINDING__PROPERTY_BINDING:
-			return propertyBindings != null && !propertyBindings.isEmpty();
+			case TemplatesPackage.TEMPLATE_BINDING__BOUND_PARAMETER:
+				return boundParameter != null;
+			case TemplatesPackage.TEMPLATE_BINDING__BINDING_EXPRESSION:
+				return bindingExpression != null;
+			case TemplatesPackage.TEMPLATE_BINDING__TEMPLATE:
+				return getTemplate() != null;
+			case TemplatesPackage.TEMPLATE_BINDING__PROPERTY_BINDING:
+				return propertyBinding != null && !propertyBinding.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

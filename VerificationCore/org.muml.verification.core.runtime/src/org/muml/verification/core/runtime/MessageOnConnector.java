@@ -15,12 +15,12 @@ import org.muml.core.ExtendableElement;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.verification.core.runtime.MessageOnConnector#getReceiver <em>Receiver</em>}</li>
  *   <li>{@link org.muml.verification.core.runtime.MessageOnConnector#getMessage <em>Message</em>}</li>
  *   <li>{@link org.muml.verification.core.runtime.MessageOnConnector#getRuntimeConnectorInstance <em>Runtime Connector Instance</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.verification.core.runtime.RuntimePackage#getMessageOnConnector()
  * @model

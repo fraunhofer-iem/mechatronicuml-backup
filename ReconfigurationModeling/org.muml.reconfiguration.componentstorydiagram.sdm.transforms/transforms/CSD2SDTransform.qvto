@@ -3,7 +3,7 @@ import Workflow;
 modeltype csd uses 'http://www.fujaba.de/muml/componentstorydiagram/0.4.0';
 modeltype sd uses 'http://www.storydriven.org/storydiagrams/0.2.1';
 
-modeltype modelinstance uses 'http://www.fujaba.de/modelinstance/0.4.0';
+modeltype modelinstance uses 'http://www.muml.org/core/modelinstance/1.0.0';
 
 // For Debugging
 //transformation CSD2SDTransform(inout model: modelinstance);

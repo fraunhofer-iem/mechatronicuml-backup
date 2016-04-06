@@ -12,8 +12,6 @@ import org.muml.storydiagram.activities.JunctionNode;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '<em><b>Junction Node</b></em>'. <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */

@@ -32,13 +32,13 @@ import org.muml.pm.software.platform.SwplatformPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.pm.software.platform.impl.OperatingSystemImpl#getComment <em>Comment</em>}</li>
  *   <li>{@link org.muml.pm.software.platform.impl.OperatingSystemImpl#getApirepositories <em>Apirepositories</em>}</li>
  *   <li>{@link org.muml.pm.software.platform.impl.OperatingSystemImpl#getEnumerationDataTypes <em>Enumeration Data Types</em>}</li>
  *   <li>{@link org.muml.pm.software.platform.impl.OperatingSystemImpl#getImports <em>Imports</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

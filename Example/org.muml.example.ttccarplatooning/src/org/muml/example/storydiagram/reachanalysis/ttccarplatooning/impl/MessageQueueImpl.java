@@ -33,11 +33,11 @@ import org.muml.example.storydiagram.reachanalysis.ttccarplatooning.Ttccarplatoo
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.example.storydiagram.reachanalysis.ttccarplatooning.impl.MessageQueueImpl#getCarprocess <em>Carprocess</em>}</li>
  *   <li>{@link org.muml.example.storydiagram.reachanalysis.ttccarplatooning.impl.MessageQueueImpl#getMessages <em>Messages</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -78,7 +78,7 @@ public class MessageQueueImpl extends EObjectImpl implements MessageQueue {
 	 */
 	public Carprocess getCarprocess() {
 		if (eContainerFeatureID() != TtccarplatooningPackage.MESSAGE_QUEUE__CARPROCESS) return null;
-		return (Carprocess)eContainer();
+		return (Carprocess)eInternalContainer();
 	}
 
 	/**

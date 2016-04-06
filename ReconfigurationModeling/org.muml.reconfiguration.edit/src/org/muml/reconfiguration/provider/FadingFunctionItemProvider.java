@@ -17,8 +17,8 @@ import org.muml.core.CorePackage;
 import org.muml.core.provider.NamedElementItemProvider;
 import org.muml.reconfiguration.FadingFunction;
 import org.muml.reconfiguration.ReconfigurationPackage;
-import org.muml.storydiagram.activities.ActivitiesFactory;
-import org.muml.storydiagram.calls.CallsFactory;
+import org.storydriven.storydiagrams.activities.ActivitiesFactory;
+import org.storydriven.storydiagrams.calls.CallsFactory;
 
 /**
  * This is the item provider adapter for a {@link org.muml.reconfiguration.FadingFunction} object.
@@ -180,12 +180,12 @@ public class FadingFunctionItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSIONS,
 				 ActivitiesFactory.eINSTANCE.createOperationExtension()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSIONS,
 				 CallsFactory.eINSTANCE.createParameterExtension()));
 	}
 

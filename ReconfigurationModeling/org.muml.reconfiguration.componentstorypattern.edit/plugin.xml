@@ -6,9 +6,11 @@
 
 <plugin>
 
+
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <!-- @generated ComponentStoryPattern -->
       <factory
-            uri="http://www.fujaba.de/muml/componentstorypattern/0.4.0"
+            uri="http://www.muml.org/reconfiguration/componentstorypattern/1.0.0"
             class="org.muml.reconfiguration.componentstorypattern.provider.ComponentstorypatternItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider

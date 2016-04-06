@@ -25,10 +25,10 @@ import org.muml.modelica.transform.TransformPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.modelica.transform.impl.RootImpl#getMaps <em>Maps</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

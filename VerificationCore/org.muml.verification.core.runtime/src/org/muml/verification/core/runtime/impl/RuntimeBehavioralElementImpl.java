@@ -28,11 +28,11 @@ import java.util.Collection;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.verification.core.runtime.impl.RuntimeBehavioralElementImpl#getStatechartInstance <em>Statechart Instance</em>}</li>
  *   <li>{@link org.muml.verification.core.runtime.impl.RuntimeBehavioralElementImpl#getMessageBuffer <em>Message Buffer</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

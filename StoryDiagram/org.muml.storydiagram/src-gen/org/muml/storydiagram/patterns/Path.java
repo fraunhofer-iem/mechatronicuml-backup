@@ -19,10 +19,10 @@ import org.muml.core.expressions.Expression;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.storydiagram.patterns.Path#getPathExpression <em>Path Expression</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.storydiagram.patterns.PatternsPackage#getPath()
  * @model
@@ -39,7 +39,7 @@ public interface Path extends AbstractLinkVariable {
 	 * @return the value of the '<em>Path Expression</em>' containment reference.
 	 * @see #setPathExpression(Expression)
 	 * @see org.muml.storydiagram.patterns.PatternsPackage#getPath_PathExpression()
-	 * @model containment="true" resolveProxies="true" required="true" ordered="false"
+	 * @model containment="true" required="true" ordered="false"
 	 * @generated
 	 */
 	Expression getPathExpression();

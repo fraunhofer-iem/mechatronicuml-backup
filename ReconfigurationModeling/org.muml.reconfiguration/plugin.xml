@@ -4,21 +4,21 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated MumlReconfiguration -->
       <package
-            uri="http://www.fujaba.de/muml/reconfiguration/0.3.18"
+            uri="http://www.muml.org/reconfiguration/1.0.0"
             class="org.muml.reconfiguration.ReconfigurationPackage"
             genModel="model/MumlReconfiguration.genmodel"/>
    </extension>
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated MumlReconfiguration -->
       <package
-            uri="http://www.fujaba.de/muml/reconfiguration/expression/0.3.7"
+            uri="http://www.muml.org/reconfiguration/expression/1.0.0"
             class="org.muml.reconfiguration.expression.ExpressionPackage"
             genModel="model/MumlReconfiguration.genmodel"/>
    </extension>
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated MumlReconfiguration -->
       <package
-            uri="http://www.fujaba.de/muml/reconfiguration/structdatatype/0.3.18"
+            uri="http://www.muml.org/reconfiguration/structdatatype/1.0.0"
             class="org.muml.reconfiguration.structdatatype.StructdatatypePackage"
             genModel="model/MumlReconfiguration.genmodel"/>
    </extension>
@@ -26,7 +26,7 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated MumlReconfiguration -->
       <package
-            uri="http://www.fujaba.de/muml/reconfiguration/protocolinstantiation/0.4.0"
+            uri="http://www.muml.org/reconfiguration/protocolinstantiation/1.0.0"
             class="org.muml.reconfiguration.protocolinstantiation.ProtocolinstantiationPackage"
             genModel="model/MumlReconfiguration.genmodel"/>
    </extension>
@@ -34,7 +34,7 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated MumlReconfiguration -->
       <package
-            uri="http://www.fujaba.de/muml/reconfiguration/reconfInstance/0.4.0"
+            uri="http://www.muml.org/reconfiguration/reconfInstance/1.0.0"
             class="org.muml.reconfiguration.reconfInstance.ReconfInstancePackage"
             genModel="model/MumlReconfiguration.genmodel"/>
    </extension>

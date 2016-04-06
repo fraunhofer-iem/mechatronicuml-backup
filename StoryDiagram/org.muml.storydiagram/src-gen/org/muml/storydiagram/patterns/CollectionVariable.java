@@ -18,11 +18,11 @@ package org.muml.storydiagram.patterns;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.storydiagram.patterns.CollectionVariable#isAtLeastOne <em>At Least One</em>}</li>
  *   <li>{@link org.muml.storydiagram.patterns.CollectionVariable#isUnique <em>Unique</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.storydiagram.patterns.PatternsPackage#getCollectionVariable()
  * @model

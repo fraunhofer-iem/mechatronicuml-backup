@@ -3,7 +3,6 @@
 package org.muml.psm.apiexpressions;
 
 import org.muml.core.expressions.Expression;
-import org.muml.pm.software.platform.EnumerationValue;
 
 /**
  * <!-- begin-user-doc -->
@@ -34,12 +33,12 @@ public interface EnumerationValueExpression extends Expression {
 	 * The EnumerationValue to which this expression belongs.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Enum Value</em>' reference.
-	 * @see #setEnumValue(EnumerationValue)
+	 * @see #setEnumValue(platform.EnumerationValue)
 	 * @see org.muml.psm.apiexpressions.ApiexpressionsPackage#getEnumerationValueExpression_EnumValue()
 	 * @model required="true"
 	 * @generated
 	 */
-	EnumerationValue getEnumValue();
+	platform.EnumerationValue getEnumValue();
 
 	/**
 	 * Sets the value of the '{@link org.muml.psm.apiexpressions.EnumerationValueExpression#getEnumValue <em>Enum Value</em>}' reference.
@@ -49,6 +48,6 @@ public interface EnumerationValueExpression extends Expression {
 	 * @see #getEnumValue()
 	 * @generated
 	 */
-	void setEnumValue(EnumerationValue value);
+	void setEnumValue(platform.EnumerationValue value);
 
 } // EnumerationValueExpression

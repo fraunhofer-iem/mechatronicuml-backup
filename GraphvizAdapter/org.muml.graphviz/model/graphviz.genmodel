@@ -6,10 +6,10 @@
     usedGenPackages="../../org.muml.core/model/core.genmodel#//core" operationReflection="true"
     importOrganizing="true">
   <foreignModel>graphviz.ecore</foreignModel>
-  <genPackages prefix="Graphviz" basePackage="de.uni_paderborn.fujaba" disposableProviderFactory="true"
+  <genPackages prefix="Graphviz" basePackage="org.muml" disposableProviderFactory="true"
       ecorePackage="graphviz.ecore#/">
     <genClasses ecoreClass="graphviz.ecore#//DummyClassForAcceleoWillBeDeleted"/>
-    <nestedGenPackages prefix="Dot" basePackage="de.uni_paderborn.fujaba.graphviz"
+    <nestedGenPackages prefix="Dot" basePackage="org.muml.graphviz"
         disposableProviderFactory="true" ecorePackage="graphviz.ecore#//dot">
       <genClasses ecoreClass="graphviz.ecore#//dot/DotGraph">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute graphviz.ecore#//dot/DotGraph/directedGraph"/>
@@ -33,7 +33,7 @@
       <genClasses ecoreClass="graphviz.ecore#//dot/DirectedDotEdge"/>
       <genClasses ecoreClass="graphviz.ecore#//dot/UndirectedDotEdge"/>
     </nestedGenPackages>
-    <nestedGenPackages prefix="Plain" basePackage="de.uni_paderborn.fujaba.graphviz"
+    <nestedGenPackages prefix="Plain" basePackage="org.muml.graphviz"
         disposableProviderFactory="true" ecorePackage="graphviz.ecore#//plain">
       <genClasses ecoreClass="graphviz.ecore#//plain/PlainGraph">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute graphviz.ecore#//plain/PlainGraph/scale"/>
@@ -49,7 +49,7 @@
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference graphviz.ecore#//plain/PlainEdge/splinePoints"/>
       </genClasses>
     </nestedGenPackages>
-    <nestedGenPackages prefix="Common" basePackage="de.uni_paderborn.fujaba.graphviz"
+    <nestedGenPackages prefix="Common" basePackage="org.muml.graphviz"
         disposableProviderFactory="true" ecorePackage="graphviz.ecore#//common">
       <genClasses ecoreClass="graphviz.ecore#//common/Graph">
         <genTypeParameters ecoreTypeParameter="graphviz.ecore#//common/Graph/V"/>
@@ -66,7 +66,7 @@
             ecoreFeature="ecore:EReference graphviz.ecore#//common/Edge/target"/>
       </genClasses>
     </nestedGenPackages>
-    <nestedGenPackages prefix="Util" basePackage="de.uni_paderborn.fujaba.graphviz"
+    <nestedGenPackages prefix="Util" basePackage="org.muml.graphviz"
         disposableProviderFactory="true" ecorePackage="graphviz.ecore#//util">
       <genClasses ecoreClass="graphviz.ecore#//util/Point">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute graphviz.ecore#//util/Point/x"/>

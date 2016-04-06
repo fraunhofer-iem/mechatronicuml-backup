@@ -20,12 +20,12 @@ import org.muml.core.expressions.Expression;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.storydiagram.activities.ActivityFinalNode#getReturnValue <em>Return Value</em>}</li>
  *   <li>{@link org.muml.storydiagram.activities.ActivityFinalNode#getReturnValues <em>Return Values</em>}</li>
  *   <li>{@link org.muml.storydiagram.activities.ActivityFinalNode#isSuccess <em>Success</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.storydiagram.activities.ActivitiesPackage#getActivityFinalNode()
  * @model
@@ -56,7 +56,7 @@ public interface ActivityFinalNode extends ActivityNode {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Return Values</em>' containment reference list.
 	 * @see org.muml.storydiagram.activities.ActivitiesPackage#getActivityFinalNode_ReturnValues()
-	 * @model containment="true" resolveProxies="true" ordered="false"
+	 * @model containment="true" ordered="false"
 	 * @generated
 	 */
 	EList<Expression> getReturnValues();

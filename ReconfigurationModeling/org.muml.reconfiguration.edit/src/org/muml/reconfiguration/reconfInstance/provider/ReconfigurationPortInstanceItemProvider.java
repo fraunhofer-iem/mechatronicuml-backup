@@ -16,8 +16,8 @@ import org.muml.core.CorePackage;
 import org.muml.pim.instance.provider.PortInstanceItemProvider;
 import org.muml.reconfiguration.provider.MumlReconfigurationEditPlugin;
 import org.muml.reconfiguration.reconfInstance.ReconfigurationPortInstance;
-import org.muml.storydiagram.activities.ActivitiesFactory;
-import org.muml.storydiagram.calls.CallsFactory;
+import org.storydriven.storydiagrams.activities.ActivitiesFactory;
+import org.storydriven.storydiagrams.calls.CallsFactory;
 
 /**
  * This is the item provider adapter for a {@link org.muml.reconfiguration.reconfInstance.ReconfigurationPortInstance} object.
@@ -103,12 +103,12 @@ public class ReconfigurationPortInstanceItemProvider extends PortInstanceItemPro
 
 		newChildDescriptors.add
 			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSIONS,
 				 ActivitiesFactory.eINSTANCE.createOperationExtension()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSIONS,
 				 CallsFactory.eINSTANCE.createParameterExtension()));
 	}
 

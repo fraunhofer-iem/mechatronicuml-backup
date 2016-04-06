@@ -17,10 +17,10 @@ import org.muml.reconfiguration.componentstorypattern.TriggerEmbeddedComponentEx
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.reconfiguration.componentstorypattern.impl.ComponentPartVariableImpl#getTriggerEmbeddedComponentExpressions <em>Trigger Embedded Component Expressions</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

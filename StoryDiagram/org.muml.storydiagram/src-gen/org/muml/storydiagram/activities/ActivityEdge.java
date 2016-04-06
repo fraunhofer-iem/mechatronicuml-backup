@@ -21,15 +21,15 @@ import org.muml.core.expressions.Expression;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.storydiagram.activities.ActivityEdge#getTarget <em>Target</em>}</li>
  *   <li>{@link org.muml.storydiagram.activities.ActivityEdge#getSource <em>Source</em>}</li>
  *   <li>{@link org.muml.storydiagram.activities.ActivityEdge#getOwningActivity <em>Owning Activity</em>}</li>
  *   <li>{@link org.muml.storydiagram.activities.ActivityEdge#getGuard <em>Guard</em>}</li>
  *   <li>{@link org.muml.storydiagram.activities.ActivityEdge#getGuardExpression <em>Guard Expression</em>}</li>
- *   <li>{@link org.muml.storydiagram.activities.ActivityEdge#getGuardExceptions <em>Guard Exception</em>}</li>
+ *   <li>{@link org.muml.storydiagram.activities.ActivityEdge#getGuardException <em>Guard Exception</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.storydiagram.activities.ActivitiesPackage#getActivityEdge()
  * @model
@@ -38,7 +38,7 @@ import org.muml.core.expressions.Expression;
 public interface ActivityEdge extends ExtendableElement {
 	/**
 	 * Returns the value of the '<em><b>Target</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link org.muml.storydiagram.activities.ActivityNode#getIncomings <em>Incoming</em>}'.
+	 * It is bidirectional and its opposite is '{@link org.muml.storydiagram.activities.ActivityNode#getIncoming <em>Incoming</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -47,7 +47,7 @@ public interface ActivityEdge extends ExtendableElement {
 	 * @return the value of the '<em>Target</em>' reference.
 	 * @see #setTarget(ActivityNode)
 	 * @see org.muml.storydiagram.activities.ActivitiesPackage#getActivityEdge_Target()
-	 * @see org.muml.storydiagram.activities.ActivityNode#getIncomings
+	 * @see org.muml.storydiagram.activities.ActivityNode#getIncoming
 	 * @model opposite="incoming" required="true" ordered="false"
 	 * @generated
 	 */
@@ -65,7 +65,7 @@ public interface ActivityEdge extends ExtendableElement {
 
 	/**
 	 * Returns the value of the '<em><b>Source</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link org.muml.storydiagram.activities.ActivityNode#getOutgoings <em>Outgoing</em>}'.
+	 * It is bidirectional and its opposite is '{@link org.muml.storydiagram.activities.ActivityNode#getOutgoing <em>Outgoing</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -74,7 +74,7 @@ public interface ActivityEdge extends ExtendableElement {
 	 * @return the value of the '<em>Source</em>' reference.
 	 * @see #setSource(ActivityNode)
 	 * @see org.muml.storydiagram.activities.ActivitiesPackage#getActivityEdge_Source()
-	 * @see org.muml.storydiagram.activities.ActivityNode#getOutgoings
+	 * @see org.muml.storydiagram.activities.ActivityNode#getOutgoing
 	 * @model opposite="outgoing" required="true" ordered="false"
 	 * @generated
 	 */
@@ -92,7 +92,7 @@ public interface ActivityEdge extends ExtendableElement {
 
 	/**
 	 * Returns the value of the '<em><b>Owning Activity</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link org.muml.storydiagram.activities.Activity#getOwnedActivityEdges <em>Owned Activity Edge</em>}'.
+	 * It is bidirectional and its opposite is '{@link org.muml.storydiagram.activities.Activity#getOwnedActivityEdge <em>Owned Activity Edge</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -101,7 +101,7 @@ public interface ActivityEdge extends ExtendableElement {
 	 * @return the value of the '<em>Owning Activity</em>' container reference.
 	 * @see #setOwningActivity(Activity)
 	 * @see org.muml.storydiagram.activities.ActivitiesPackage#getActivityEdge_OwningActivity()
-	 * @see org.muml.storydiagram.activities.Activity#getOwnedActivityEdges
+	 * @see org.muml.storydiagram.activities.Activity#getOwnedActivityEdge
 	 * @model opposite="ownedActivityEdge" required="true" transient="false" ordered="false"
 	 * @generated
 	 */
@@ -156,7 +156,7 @@ public interface ActivityEdge extends ExtendableElement {
 	 * @return the value of the '<em>Guard Expression</em>' containment reference.
 	 * @see #setGuardExpression(Expression)
 	 * @see org.muml.storydiagram.activities.ActivitiesPackage#getActivityEdge_GuardExpression()
-	 * @model containment="true" resolveProxies="true" ordered="false"
+	 * @model containment="true" ordered="false"
 	 * @generated
 	 */
 	Expression getGuardExpression();
@@ -183,9 +183,9 @@ public interface ActivityEdge extends ExtendableElement {
 	 * @return the value of the '<em>Guard Exception</em>' containment reference list.
 	 * @see org.muml.storydiagram.activities.ActivitiesPackage#getActivityEdge_GuardException()
 	 * @see org.muml.storydiagram.activities.ExceptionVariable#getActivityEdge
-	 * @model opposite="activityEdge" containment="true" resolveProxies="true"
+	 * @model opposite="activityEdge" containment="true"
 	 * @generated
 	 */
-	EList<ExceptionVariable> getGuardExceptions();
+	EList<ExceptionVariable> getGuardException();
 
 } // ActivityEdge

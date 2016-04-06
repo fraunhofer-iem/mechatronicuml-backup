@@ -19,13 +19,13 @@ import org.muml.pim.types.DataType;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.pm.software.platform.APICommand#getReturnDataType <em>Return Data Type</em>}</li>
  *   <li>{@link org.muml.pm.software.platform.APICommand#getParameters <em>Parameters</em>}</li>
  *   <li>{@link org.muml.pm.software.platform.APICommand#getRepository <em>Repository</em>}</li>
  *   <li>{@link org.muml.pm.software.platform.APICommand#getConstraints <em>Constraints</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.pm.software.platform.SwplatformPackage#getAPICommand()
  * @model

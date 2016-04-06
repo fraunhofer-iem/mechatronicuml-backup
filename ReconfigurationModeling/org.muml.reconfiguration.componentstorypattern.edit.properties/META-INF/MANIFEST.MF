@@ -1,15 +1,15 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: ComponentStoryPattern Tabbed Properties
-Bundle-SymbolicName: org.muml.reconfiguration.componentstorypattern.edit.properties;singleton:=true
+Bundle-SymbolicName: org.muml.reconfiguration.componentstorypattern.edit.properties; singleton:=true
 Bundle-Version: 0.5.0.qualifier
 Require-Bundle: org.eclipse.emf.ecore,
  org.eclipse.core.runtime,
- org.muml.ape.runtime,
- org.muml.reconfiguration.componentstorypattern,
  org.eclipse.emf.edit,
- org.muml.reconfiguration.componentstorypattern.edit,
  org.eclipse.ui,
+ org.muml.reconfiguration.componentstorypattern.edit,
+ org.muml.reconfiguration.componentstorypattern,
+ org.muml.ape.runtime,
  org.muml.core.edit,
  org.muml.core.edit.properties,
  org.muml.reconfiguration.edit,
@@ -18,8 +18,7 @@ Require-Bundle: org.eclipse.emf.ecore,
  org.muml.pim.edit.properties
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: org.muml.reconfiguration.componentstorypattern.properties.componentstorypattern.editor,
- org.muml.reconfiguration.componentstorypattern.properties.constraint,
- org.muml.reconfiguration.componentstorypattern.properties.metamodel,
+Export-Package: org.muml.reconfiguration.componentstorypattern.properties.metamodel, org.muml.reconfiguration.componentstorypattern.properties.constraint,
+ org.muml.reconfiguration.componentstorypattern.properties.componentstorypattern.editor,
  org.muml.reconfiguration.componentstorypattern.properties.tabs
 Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn

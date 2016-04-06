@@ -20,12 +20,12 @@ import org.muml.core.expressions.Expression;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.storydiagram.patterns.LinkVariable#getSourceEnd <em>Source End</em>}</li>
  *   <li>{@link org.muml.storydiagram.patterns.LinkVariable#getTargetEnd <em>Target End</em>}</li>
  *   <li>{@link org.muml.storydiagram.patterns.LinkVariable#getQualifierExpression <em>Qualifier Expression</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.storydiagram.patterns.PatternsPackage#getLinkVariable()
  * @model
@@ -92,7 +92,7 @@ public interface LinkVariable extends AbstractLinkVariable {
 	 * @return the value of the '<em>Qualifier Expression</em>' containment reference.
 	 * @see #setQualifierExpression(Expression)
 	 * @see org.muml.storydiagram.patterns.PatternsPackage#getLinkVariable_QualifierExpression()
-	 * @model containment="true" resolveProxies="true" ordered="false"
+	 * @model containment="true" ordered="false"
 	 * @generated
 	 */
 	Expression getQualifierExpression();

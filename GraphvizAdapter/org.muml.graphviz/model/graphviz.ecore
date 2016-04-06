@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="graphviz" nsURI="http://www.fujaba.de/graphviz/0.1.0" nsPrefix="graphviz">
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="graphviz" nsURI="http://www.muml.org/graphviz/1.0.0" nsPrefix="graphviz">
   <eClassifiers xsi:type="ecore:EClass" name="DummyClassForAcceleoWillBeDeleted"/>
-  <eSubpackages name="dot" nsURI="http://www.fujaba.de/graphviz/dot/0.1.0" nsPrefix="dot">
+  <eSubpackages name="dot" nsURI="http://www.muml.org/graphviz/dot/1.0.0" nsPrefix="dot">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="This package provides classes for the graphviz &quot;dot&quot; format. The classes&#xA;can be used as a &quot;dot&quot; input as well as a &quot;dot&quot; output."/>
     </eAnnotations>
@@ -47,7 +47,7 @@
     <eClassifiers xsi:type="ecore:EClass" name="DirectedDotEdge" eSuperTypes="#//dot/DotEdge"/>
     <eClassifiers xsi:type="ecore:EClass" name="UndirectedDotEdge" eSuperTypes="#//dot/DotEdge"/>
   </eSubpackages>
-  <eSubpackages name="plain" nsURI="http://www.fujaba.de/graphviz/plain/0.1.0" nsPrefix="plain">
+  <eSubpackages name="plain" nsURI="http://www.muml.org/graphviz/plain/1.0.0" nsPrefix="plain">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="This package provides classes for the &quot;plain&quot; output format."/>
     </eAnnotations>
@@ -79,7 +79,7 @@
       </eGenericSuperTypes>
     </eClassifiers>
   </eSubpackages>
-  <eSubpackages name="common" nsURI="http://www.fujaba.de/graphviz/common/0.1.0" nsPrefix="common">
+  <eSubpackages name="common" nsURI="http://www.muml.org/graphviz/common/1.0.0" nsPrefix="common">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="This package provides base classes for the more specific graphviz&#xA;input/output formats."/>
     </eAnnotations>
@@ -124,7 +124,7 @@
       </eStructuralFeatures>
     </eClassifiers>
   </eSubpackages>
-  <eSubpackages name="util" nsURI="http://www.fujaba.de/graphviz/util/0.1.0" nsPrefix="util">
+  <eSubpackages name="util" nsURI="http://www.muml.org/graphviz/util/1.0.0" nsPrefix="util">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="This package provides some general purpose classes that might be reused&#xA;by other packages/classes."/>
     </eAnnotations>

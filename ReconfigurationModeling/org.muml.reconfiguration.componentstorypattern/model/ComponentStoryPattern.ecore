@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="componentstorypattern" nsURI="http://www.fujaba.de/muml/componentstorypattern/0.4.0"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="componentstorypattern" nsURI="http://www.muml.org/reconfiguration/componentstorypattern/1.0.0"
     nsPrefix="componentstorypattern">
   <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
     <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
@@ -12,11 +12,11 @@
         eType="#//ComponentVariable" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ComponentStoryPatternVariable" eSuperTypes="../../org.muml.core/model/core.ecore#//NamedElement ../../org.muml.core/model/core.ecore#//CommentableElement">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="bindingSemantics" eType="ecore:EEnum ../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/BindingSemantics"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="bindingSemantics" eType="ecore:EEnum ../../org.muml.storydiagram/model/storydiagrams.ecore#//patterns/BindingSemantics"
         defaultValueLiteral="MANDATORY"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="bindingOperator" eType="ecore:EEnum ../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/BindingOperator"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="bindingOperator" eType="ecore:EEnum ../../org.muml.storydiagram/model/storydiagrams.ecore#//patterns/BindingOperator"
         defaultValueLiteral="CHECK_ONLY"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="bindingState" eType="ecore:EEnum ../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/BindingState"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="bindingState" eType="ecore:EEnum ../../org.muml.storydiagram/model/storydiagrams.ecore#//patterns/BindingState"
         defaultValueLiteral="UNBOUND"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ComponentVariable" eSuperTypes="#//ComponentStoryPatternVariable">
@@ -32,7 +32,7 @@
         eType="#//PartVariable" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="connectorVariables" upperBound="-1"
         eType="#//ConnectorVariable" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.reconfiguration/model/MumlReconfiguration.ecore#//ReconfigurableComponent"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="ecore:EClass ../../org.muml.reconfiguration/model/MumlReconfiguration.ecore#//ReconfigurableComponent"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PortVariable" abstract="true" eSuperTypes="#//ComponentStoryPatternVariable ../../org.muml.pim/model/pim.ecore#//connector/ConnectorEndpoint ../../org.muml.pim/model/pim.ecore#//behavior/TypedNamedElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
@@ -48,8 +48,8 @@
       <details key="feature" value="dataType"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="portType" lowerBound="1"
-        eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//component/Port"
-        changeable="false" transient="true" derived="true">
+        eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//component/Port" changeable="false"
+        transient="true" derived="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
         <details key="derivation" value="self.dataType.oclAsType(component::Port)"/>
       </eAnnotations>
@@ -173,7 +173,7 @@
       <details key="feature" value="dataType"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="appliedFadingFunction"
-        eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.reconfiguration/model/MumlReconfiguration.ecore#//FadingFunction">
+        eType="ecore:EClass ../../org.muml.reconfiguration/model/MumlReconfiguration.ecore#//FadingFunction">
       <eAnnotations source="http://www.muml.org/emf/OCLFilter">
         <details key="choices" value="self.componentPartType.componentType.oclAsType(reconfiguration::FadingComponent).fadingFunction"/>
       </eAnnotations>

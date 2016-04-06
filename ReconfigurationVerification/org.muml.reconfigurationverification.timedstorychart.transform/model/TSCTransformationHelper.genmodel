@@ -3,7 +3,7 @@
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/de.uni_paderborn.fujaba.muml.verification.timedstorychart.transform/src-gen"
     modelPluginID="de.uni_paderborn.fujaba.muml.verification.timedstorychart.transform"
     modelName="TSCTransformationHelper" importerID="org.eclipse.emf.importer.ecore"
-    complianceLevel="7.0" copyrightFields="false" usedGenPackages="../../org.muml.core/model/core.genmodel#//core platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../org.muml.pim/model/pim.genmodel#//pim ../../org.storydriven.storydiagrams/model/storydiagrams.uml.genmodel#//storydiagrams ../../de.uni_paderborn.fujaba.muml.timedstorydiagram/model/TimedStoryDiagrams.genmodel#//timedstorydiagram">
+    complianceLevel="7.0" copyrightFields="false" usedGenPackages="../../org.muml.core/model/core.genmodel#//core platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../org.muml.pim/model/pim.genmodel#//pim ../../org.muml.storydiagram/model/storydiagrams.genmodel#//storydiagram ../../de.uni_paderborn.fujaba.muml.timedstorydiagram/model/TimedStoryDiagrams.genmodel#//timedstorydiagram">
   <foreignModel>TSCTransformationHelper.ecore</foreignModel>
   <genPackages prefix="Helper" basePackage="de.uni_paderborn.fujaba.muml.verification.timedstorychart.transform"
       disposableProviderFactory="true" ecorePackage="TSCTransformationHelper.ecore#/">

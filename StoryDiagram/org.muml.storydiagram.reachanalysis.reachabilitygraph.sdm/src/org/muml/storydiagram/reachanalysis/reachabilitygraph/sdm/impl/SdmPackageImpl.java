@@ -15,7 +15,7 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraphPackage;
-import org.muml.storydiagram.StorydiagramsPackage;
+import org.muml.storydiagram.StorydiagramPackage;
 import org.muml.storydiagram.activities.ActivitiesPackage;
 import org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.GraphTransformationSystem;
 import org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.SDMReachabilityGraph;
@@ -129,7 +129,7 @@ public class SdmPackageImpl extends EPackageImpl implements SdmPackage {
 
 		// Initialize simple dependencies
 		ReachabilityGraphPackage.eINSTANCE.eClass();
-		StorydiagramsPackage.eINSTANCE.eClass();
+		StorydiagramPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theSdmPackage.createPackageContents();

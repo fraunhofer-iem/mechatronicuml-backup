@@ -12,11 +12,11 @@ import org.eclipse.emf.common.util.EList;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.reconfiguration.componentstorypattern.SinglePortVariable#getMultiPortVariable <em>Multi Port Variable</em>}</li>
  *   <li>{@link org.muml.reconfiguration.componentstorypattern.SinglePortVariable#getPositionConstraints <em>Position Constraints</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.reconfiguration.componentstorypattern.ComponentstorypatternPackage#getSinglePortVariable()
  * @model

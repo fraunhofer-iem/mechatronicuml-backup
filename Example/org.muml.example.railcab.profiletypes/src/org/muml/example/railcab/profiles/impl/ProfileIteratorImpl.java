@@ -21,10 +21,10 @@ import org.muml.example.railcab.profiles.ProfilesPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.example.railcab.profiles.impl.ProfileIteratorImpl#getProfilesToDo <em>Profiles To Do</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -38,7 +38,7 @@ import org.muml.reconfiguration.protocolinstantiation.ProtocolinstantiationPacka
 import org.muml.reconfiguration.protocolinstantiation.impl.ProtocolinstantiationPackageImpl;
 import org.muml.reconfiguration.structdatatype.StructdatatypePackage;
 import org.muml.reconfiguration.structdatatype.impl.StructdatatypePackageImpl;
-import org.muml.storydiagram.StorydiagramsPackage;
+import org.muml.storydiagram.StorydiagramPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -188,7 +188,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		ConnectorPackage.eINSTANCE.eClass();
 		ValuetypePackage.eINSTANCE.eClass();
 		BehaviorPackage.eINSTANCE.eClass();
-		StorydiagramsPackage.eINSTANCE.eClass();
+		StorydiagramPackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
 		ReconfigurationPackageImpl theReconfigurationPackage = (ReconfigurationPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ReconfigurationPackage.eNS_URI) instanceof ReconfigurationPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ReconfigurationPackage.eNS_URI) : ReconfigurationPackage.eINSTANCE);

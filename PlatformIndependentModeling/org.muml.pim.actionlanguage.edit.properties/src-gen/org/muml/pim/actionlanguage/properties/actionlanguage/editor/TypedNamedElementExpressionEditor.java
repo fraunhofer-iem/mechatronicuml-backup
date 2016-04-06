@@ -4,9 +4,7 @@ package org.muml.pim.actionlanguage.properties.actionlanguage.editor;
 /**
  * @generated
  */
-public class TypedNamedElementExpressionEditor
-		extends
-			org.muml.ape.runtime.editors.ClassPropertyEditor {
+public class TypedNamedElementExpressionEditor extends org.muml.ape.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
@@ -25,24 +23,34 @@ public class TypedNamedElementExpressionEditor
 
 			addPropertyEditor(createEditorTypedNamedElement_property_tab_generalTab_Editor(), false);
 
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists", "Lists", org.eclipse.swt.SWT.HORIZONTAL,
-					true);
+			addSubCategory("org.muml.ape.category.Lists", "Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
 
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
+			addEditorToCategory("org.muml.ape.category.Lists",
 					createEditorElementAccessors_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
 		} else if ("property.tab.descriptionAspects".equals(tab)) { // Tab Description Aspects
 
+		} else if ("property.tab.condition".equals(tab)) { // Tab Condition
+
+		} else if ("property.tab.effect".equals(tab)) { // Tab Effect
+
+		} else if ("property.tab.deadline".equals(tab)) { // Tab Deadline
+
+		} else if ("property.tab.sampling".equals(tab)) { // Tab Sampling
+
+		} else if ("property.tab.message".equals(tab)) { // Tab Message
+
+		} else if ("property.tab.behavior".equals(tab)) { // Tab Behavior
+
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
 			addPropertyEditor(createEditorTypedNamedElement_property_tab_generalTab_Editor(), false);
 
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists", "Lists", org.eclipse.swt.SWT.HORIZONTAL,
-					true);
+			addSubCategory("org.muml.ape.category.Lists", "Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
 
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
+			addEditorToCategory("org.muml.ape.category.Lists",
 					createEditorElementAccessors_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
@@ -122,10 +130,8 @@ public class TypedNamedElementExpressionEditor
 	 * @generated
 	 */
 	public TypedNamedElementExpressionEditor(String tab) {
-		this(tab,
-				org.muml.pim.actionlanguage.properties.util.PropertiesUtil.INSTANCE.getAdapterFactory(),
-				org.muml.pim.actionlanguage.ActionlanguagePackage.eINSTANCE
-						.getTypedNamedElementExpression());
+		this(tab, org.muml.pim.actionlanguage.properties.util.PropertiesUtil.INSTANCE.getAdapterFactory(),
+				org.muml.pim.actionlanguage.ActionlanguagePackage.eINSTANCE.getTypedNamedElementExpression());
 	}
 
 	/**

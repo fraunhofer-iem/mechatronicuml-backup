@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.example.storydiagram.reachanalysis.ttccarplatooning.Carprocess#getCurState <em>Cur State</em>}</li>
  *   <li>{@link org.muml.example.storydiagram.reachanalysis.ttccarplatooning.Carprocess#getQueue <em>Queue</em>}</li>
@@ -27,7 +28,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.muml.example.storydiagram.reachanalysis.ttccarplatooning.Carprocess#getBldr <em>Bldr</em>}</li>
  *   <li>{@link org.muml.example.storydiagram.reachanalysis.ttccarplatooning.Carprocess#getCarParameter <em>Car Parameter</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.example.storydiagram.reachanalysis.ttccarplatooning.TtccarplatooningPackage#getCarprocess()
  * @model

@@ -14,13 +14,13 @@ import org.muml.verification.core.runtime.RuntimeDiscreteInteractionEndpointInst
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.example.railcab.profiles.RoleProfiles#getAllProfiles <em>All Profiles</em>}</li>
  *   <li>{@link org.muml.example.railcab.profiles.RoleProfiles#getCurrentProfile <em>Current Profile</em>}</li>
  *   <li>{@link org.muml.example.railcab.profiles.RoleProfiles#getRoleInstance <em>Role Instance</em>}</li>
  *   <li>{@link org.muml.example.railcab.profiles.RoleProfiles#getSecondInstance <em>Second Instance</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.example.railcab.profiles.ProfilesPackage#getRoleProfiles()
  * @model

@@ -26,13 +26,13 @@ import org.muml.verification.core.runtime.RuntimeDiscreteInteractionEndpointInst
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.example.railcab.profiles.impl.RoleProfilesImpl#getAllProfiles <em>All Profiles</em>}</li>
  *   <li>{@link org.muml.example.railcab.profiles.impl.RoleProfilesImpl#getCurrentProfile <em>Current Profile</em>}</li>
  *   <li>{@link org.muml.example.railcab.profiles.impl.RoleProfilesImpl#getRoleInstance <em>Role Instance</em>}</li>
  *   <li>{@link org.muml.example.railcab.profiles.impl.RoleProfilesImpl#getSecondInstance <em>Second Instance</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

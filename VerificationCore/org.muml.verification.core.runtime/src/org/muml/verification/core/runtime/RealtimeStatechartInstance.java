@@ -20,6 +20,7 @@ import org.muml.pim.realtimestatechart.Vertex;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.verification.core.runtime.RealtimeStatechartInstance#getRuntimeBehavioralElement <em>Runtime Behavioral Element</em>}</li>
  *   <li>{@link org.muml.verification.core.runtime.RealtimeStatechartInstance#getInstanceOf <em>Instance Of</em>}</li>
@@ -31,7 +32,6 @@ import org.muml.pim.realtimestatechart.Vertex;
  *   <li>{@link org.muml.verification.core.runtime.RealtimeStatechartInstance#getNearestRuntimeBehavioralElement <em>Nearest Runtime Behavioral Element</em>}</li>
  *   <li>{@link org.muml.verification.core.runtime.RealtimeStatechartInstance#getActiveTransition <em>Active Transition</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.verification.core.runtime.RuntimePackage#getRealtimeStatechartInstance()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL StateAndTransitionActive='-- A Vertex and a Transition of one RTSC can not be active at the same time\r\nactiveVertex.oclIsUndefined() or activeTransition.oclIsUndefined()'"

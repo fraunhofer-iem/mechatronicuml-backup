@@ -37,7 +37,7 @@ public class ReconfigurationValidator extends EObjectValidator {
 	 * @see org.eclipse.emf.common.util.Diagnostic#getCode()
 	 * @generated
 	 */
-	public static final String DIAGNOSTIC_SOURCE = "de.uni_paderborn.fujaba.muml.reconfiguration";
+	public static final String DIAGNOSTIC_SOURCE = "org.muml.reconfiguration";
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants.

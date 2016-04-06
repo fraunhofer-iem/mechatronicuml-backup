@@ -54,13 +54,13 @@ public enum LinkConstraintType implements Enumerator {
 	 * @ordered
 	 */
 	NEXT(2, "NEXT", "NEXT"), /**
-								 * The '<em><b>INDIRECT SUCCESSOR</b></em>' literal object.
-								 * <!-- begin-user-doc -->
+	 * The '<em><b>INDIRECT SUCCESSOR</b></em>' literal object.
+	 * <!-- begin-user-doc -->
 								 * <!-- end-user-doc -->
-								 * @see #INDIRECT_SUCCESSOR_VALUE
-								 * @generated
-								 * @ordered
-								 */
+	 * @see #INDIRECT_SUCCESSOR_VALUE
+	 * @generated
+	 * @ordered
+	 */
 	INDIRECT_SUCCESSOR(3, "INDIRECT_SUCCESSOR", "INDIRECT_SUCCESSOR"),
 
 	/**
@@ -155,7 +155,12 @@ public enum LinkConstraintType implements Enumerator {
 	 * @generated
 	 */
 	private static final LinkConstraintType[] VALUES_ARRAY = new LinkConstraintType[] {
-			FIRST, LAST, NEXT, INDIRECT_SUCCESSOR, INDEX, };
+			FIRST,
+			LAST,
+			NEXT,
+			INDIRECT_SUCCESSOR,
+			INDEX,
+		};
 
 	/**
 	 * A public read-only list of all the '<em><b>Link Constraint Type</b></em>' enumerators.
@@ -163,13 +168,14 @@ public enum LinkConstraintType implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final List<LinkConstraintType> VALUES = Collections
-			.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+	public static final List<LinkConstraintType> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
 	/**
 	 * Returns the '<em><b>Link Constraint Type</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @param literal the literal.
+	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static LinkConstraintType get(String literal) {
@@ -186,6 +192,8 @@ public enum LinkConstraintType implements Enumerator {
 	 * Returns the '<em><b>Link Constraint Type</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @param name the name.
+	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static LinkConstraintType getByName(String name) {
@@ -202,20 +210,17 @@ public enum LinkConstraintType implements Enumerator {
 	 * Returns the '<em><b>Link Constraint Type</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @param value the integer value.
+	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static LinkConstraintType get(int value) {
 		switch (value) {
-		case FIRST_VALUE:
-			return FIRST;
-		case LAST_VALUE:
-			return LAST;
-		case NEXT_VALUE:
-			return NEXT;
-		case INDIRECT_SUCCESSOR_VALUE:
-			return INDIRECT_SUCCESSOR;
-		case INDEX_VALUE:
-			return INDEX;
+			case FIRST_VALUE: return FIRST;
+			case LAST_VALUE: return LAST;
+			case NEXT_VALUE: return NEXT;
+			case INDIRECT_SUCCESSOR_VALUE: return INDIRECT_SUCCESSOR;
+			case INDEX_VALUE: return INDEX;
 		}
 		return null;
 	}
@@ -259,7 +264,7 @@ public enum LinkConstraintType implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-		return value;
+	  return value;
 	}
 
 	/**
@@ -268,7 +273,7 @@ public enum LinkConstraintType implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-		return name;
+	  return name;
 	}
 
 	/**
@@ -277,7 +282,7 @@ public enum LinkConstraintType implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-		return literal;
+	  return literal;
 	}
 
 	/**

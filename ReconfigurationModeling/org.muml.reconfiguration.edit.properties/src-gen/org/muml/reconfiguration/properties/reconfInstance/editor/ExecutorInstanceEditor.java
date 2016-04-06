@@ -21,19 +21,33 @@ public class ExecutorInstanceEditor extends org.muml.ape.runtime.editors.ClassPr
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorExecutor_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorExecutor_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorPortInstances_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorPortInstances_property_tab_generalTab_Editor(), false);
+
+		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
-		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
+		} else if ("property.tab.descriptionAspects".equals(tab)) { // Tab Description Aspects
+
+		} else if ("property.tab.condition".equals(tab)) { // Tab Condition
+
+		} else if ("property.tab.effect".equals(tab)) { // Tab Effect
+
+		} else if ("property.tab.deadline".equals(tab)) { // Tab Deadline
+
+		} else if ("property.tab.sampling".equals(tab)) { // Tab Sampling
+
+		} else if ("property.tab.message".equals(tab)) { // Tab Message
+
+		} else if ("property.tab.behavior".equals(tab)) { // Tab Behavior
 
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
-			addPropertyEditor(createEditorExecutor_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorExecutor_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorPortInstances_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorPortInstances_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
@@ -43,30 +57,30 @@ public class ExecutorInstanceEditor extends org.muml.ape.runtime.editors.ClassPr
 		}
 	}
 
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorExecutor_GeneralTab;
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorExecutor_GeneralTab_Editor() {
-		if (this.editorExecutor_GeneralTab == null) {
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorExecutor_property_tab_generalTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorExecutor_property_tab_generalTab_Editor() {
+		if (this.editorExecutor_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.reconfiguration.reconfInstance.ReconfInstancePackage.eINSTANCE
 					.getExecutorInstance_Executor();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.ComboPropertyEditor(
 					adapterFactory, feature);
 
-			this.editorExecutor_GeneralTab = editor;
+			this.editorExecutor_property_tab_generalTab = editor;
 		}
-		return this.editorExecutor_GeneralTab;
+		return this.editorExecutor_property_tab_generalTab;
 	}
 
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorPortInstances_GeneralTab;
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorPortInstances_GeneralTab_Editor() {
-		if (this.editorPortInstances_GeneralTab == null) {
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorPortInstances_property_tab_generalTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorPortInstances_property_tab_generalTab_Editor() {
+		if (this.editorPortInstances_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.reconfiguration.reconfInstance.ReconfInstancePackage.eINSTANCE
 					.getExecutorInstance_PortInstances();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.ListPropertyEditor(
 					adapterFactory, feature);
 
-			this.editorPortInstances_GeneralTab = editor;
+			this.editorPortInstances_property_tab_generalTab = editor;
 		}
-		return this.editorPortInstances_GeneralTab;
+		return this.editorPortInstances_property_tab_generalTab;
 	}
 
 	//
@@ -77,11 +91,8 @@ public class ExecutorInstanceEditor extends org.muml.ape.runtime.editors.ClassPr
 	 * @generated
 	 */
 	public ExecutorInstanceEditor(String tab) {
-		this(tab,
-				org.muml.reconfiguration.properties.util.PropertiesUtil.INSTANCE
-						.getAdapterFactory(),
-				org.muml.reconfiguration.reconfInstance.ReconfInstancePackage.eINSTANCE
-						.getExecutorInstance());
+		this(tab, org.muml.reconfiguration.properties.util.PropertiesUtil.INSTANCE.getAdapterFactory(),
+				org.muml.reconfiguration.reconfInstance.ReconfInstancePackage.eINSTANCE.getExecutorInstance());
 	}
 
 	/**

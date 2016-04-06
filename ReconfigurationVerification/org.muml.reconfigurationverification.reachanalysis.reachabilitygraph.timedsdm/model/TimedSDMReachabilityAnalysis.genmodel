@@ -10,7 +10,7 @@
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" copyrightFields="false"
     editPluginID="de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.timedsdm.edit"
     editorPluginID="de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.timedsdm.editor"
-    usedGenPackages="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.sdm/model/SDMReachabilityAnalysis.genmodel#//sdm ../../de.uni_paderborn.fujaba.muml.timedstorydiagram/model/TimedStoryDiagrams.genmodel#//timedstorydiagram ../../org.muml.core/model/core.genmodel#//core ../../org.storydriven.storydiagrams/model/storydiagrams.uml.genmodel#//storydiagrams ../../de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph/model/ReachabilityAnalysisCore.genmodel#//reachabilityGraph">
+    usedGenPackages="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.sdm/model/SDMReachabilityAnalysis.genmodel#//sdm ../../de.uni_paderborn.fujaba.muml.timedstorydiagram/model/TimedStoryDiagrams.genmodel#//timedstorydiagram ../../org.muml.core/model/core.genmodel#//core ../../org.muml.storydiagram/model/storydiagrams.genmodel#//storydiagram ../../de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph/model/ReachabilityAnalysisCore.genmodel#//reachabilityGraph">
   <foreignModel>TimedSDMReachabilityAnalysis.ecore</foreignModel>
   <genPackages prefix="Timedsdm" basePackage="de.uni_paderborn.fujaba.umlrt.reachanalysis.time"
       disposableProviderFactory="true" ecorePackage="TimedSDMReachabilityAnalysis.ecore#/">

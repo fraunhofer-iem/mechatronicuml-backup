@@ -36,6 +36,7 @@ import org.muml.verification.core.runtime.VariableBinding;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.verification.core.runtime.impl.RealtimeStatechartInstanceImpl#getRuntimeBehavioralElement <em>Runtime Behavioral Element</em>}</li>
  *   <li>{@link org.muml.verification.core.runtime.impl.RealtimeStatechartInstanceImpl#getInstanceOf <em>Instance Of</em>}</li>
@@ -47,7 +48,6 @@ import org.muml.verification.core.runtime.VariableBinding;
  *   <li>{@link org.muml.verification.core.runtime.impl.RealtimeStatechartInstanceImpl#getNearestRuntimeBehavioralElement <em>Nearest Runtime Behavioral Element</em>}</li>
  *   <li>{@link org.muml.verification.core.runtime.impl.RealtimeStatechartInstanceImpl#getActiveTransition <em>Active Transition</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

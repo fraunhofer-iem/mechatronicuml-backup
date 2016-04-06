@@ -12,7 +12,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.muml.core.expressions.impl.ExpressionImpl;
 import org.muml.storydiagram.calls.ParameterExtension;
-import org.muml.storydiagram.calls.expressions.CallsExpressionsPackage;
+import org.muml.storydiagram.calls.expressions.ExpressionsPackage;
 import org.muml.storydiagram.calls.expressions.ParameterExpression;
 
 /**
@@ -21,10 +21,10 @@ import org.muml.storydiagram.calls.expressions.ParameterExpression;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.storydiagram.calls.expressions.impl.ParameterExpressionImpl#getParameter <em>Parameter</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -56,7 +56,7 @@ public class ParameterExpressionImpl extends ExpressionImpl implements
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CallsExpressionsPackage.Literals.PARAMETER_EXPRESSION;
+		return ExpressionsPackage.Literals.PARAMETER_EXPRESSION;
 	}
 
 	/**
@@ -66,15 +66,11 @@ public class ParameterExpressionImpl extends ExpressionImpl implements
 	 */
 	public ParameterExtension getParameter() {
 		if (parameter != null && parameter.eIsProxy()) {
-			InternalEObject oldParameter = (InternalEObject) parameter;
-			parameter = (ParameterExtension) eResolveProxy(oldParameter);
+			InternalEObject oldParameter = (InternalEObject)parameter;
+			parameter = (ParameterExtension)eResolveProxy(oldParameter);
 			if (parameter != oldParameter) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(
-							this,
-							Notification.RESOLVE,
-							CallsExpressionsPackage.PARAMETER_EXPRESSION__PARAMETER,
-							oldParameter, parameter));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ExpressionsPackage.PARAMETER_EXPRESSION__PARAMETER, oldParameter, parameter));
 			}
 		}
 		return parameter;
@@ -98,9 +94,7 @@ public class ParameterExpressionImpl extends ExpressionImpl implements
 		ParameterExtension oldParameter = parameter;
 		parameter = newParameter;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					CallsExpressionsPackage.PARAMETER_EXPRESSION__PARAMETER,
-					oldParameter, parameter));
+			eNotify(new ENotificationImpl(this, Notification.SET, ExpressionsPackage.PARAMETER_EXPRESSION__PARAMETER, oldParameter, parameter));
 	}
 
 	/**
@@ -111,10 +105,9 @@ public class ParameterExpressionImpl extends ExpressionImpl implements
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case CallsExpressionsPackage.PARAMETER_EXPRESSION__PARAMETER:
-			if (resolve)
-				return getParameter();
-			return basicGetParameter();
+			case ExpressionsPackage.PARAMETER_EXPRESSION__PARAMETER:
+				if (resolve) return getParameter();
+				return basicGetParameter();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -127,9 +120,9 @@ public class ParameterExpressionImpl extends ExpressionImpl implements
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case CallsExpressionsPackage.PARAMETER_EXPRESSION__PARAMETER:
-			setParameter((ParameterExtension) newValue);
-			return;
+			case ExpressionsPackage.PARAMETER_EXPRESSION__PARAMETER:
+				setParameter((ParameterExtension)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -142,9 +135,9 @@ public class ParameterExpressionImpl extends ExpressionImpl implements
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case CallsExpressionsPackage.PARAMETER_EXPRESSION__PARAMETER:
-			setParameter((ParameterExtension) null);
-			return;
+			case ExpressionsPackage.PARAMETER_EXPRESSION__PARAMETER:
+				setParameter((ParameterExtension)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -157,8 +150,8 @@ public class ParameterExpressionImpl extends ExpressionImpl implements
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case CallsExpressionsPackage.PARAMETER_EXPRESSION__PARAMETER:
-			return parameter != null;
+			case ExpressionsPackage.PARAMETER_EXPRESSION__PARAMETER:
+				return parameter != null;
 		}
 		return super.eIsSet(featureID);
 	}

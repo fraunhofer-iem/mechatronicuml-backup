@@ -25,11 +25,15 @@ public class GenComponentInstanceEditor extends org.muml.ape.runtime.editors.Cla
 
 			addPropertyEditor(createEditorInitCommands_property_tab_psmTab_Editor(), false);
 
+			addPropertyEditor(createEditorGenPortInstances_property_tab_psmTab_Editor(), false);
+
 		} else if ("property.tab.psm".equals(tab)) { // Tab PSM
 
 			addPropertyEditor(createEditorComponentInstance_property_tab_psmTab_Editor(), false);
 
 			addPropertyEditor(createEditorInitCommands_property_tab_psmTab_Editor(), false);
+
+			addPropertyEditor(createEditorGenPortInstances_property_tab_psmTab_Editor(), false);
 
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
@@ -40,6 +44,18 @@ public class GenComponentInstanceEditor extends org.muml.ape.runtime.editors.Cla
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
 		} else if ("property.tab.descriptionAspects".equals(tab)) { // Tab Description Aspects
+
+		} else if ("property.tab.condition".equals(tab)) { // Tab Condition
+
+		} else if ("property.tab.effect".equals(tab)) { // Tab Effect
+
+		} else if ("property.tab.deadline".equals(tab)) { // Tab Deadline
+
+		} else if ("property.tab.sampling".equals(tab)) { // Tab Sampling
+
+		} else if ("property.tab.message".equals(tab)) { // Tab Message
+
+		} else if ("property.tab.behavior".equals(tab)) { // Tab Behavior
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
@@ -73,6 +89,19 @@ public class GenComponentInstanceEditor extends org.muml.ape.runtime.editors.Cla
 		return this.editorInitCommands_property_tab_psmTab;
 	}
 
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorGenPortInstances_property_tab_psmTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorGenPortInstances_property_tab_psmTab_Editor() {
+		if (this.editorGenPortInstances_property_tab_psmTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.psm.codegen.CodegenPackage.eINSTANCE
+					.getGenComponentInstance_GenPortInstances();
+			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.ListPropertyEditor(
+					adapterFactory, feature);
+
+			this.editorGenPortInstances_property_tab_psmTab = editor;
+		}
+		return this.editorGenPortInstances_property_tab_psmTab;
+	}
+
 	//
 	// instantiation
 	//
@@ -96,7 +125,8 @@ public class GenComponentInstanceEditor extends org.muml.ape.runtime.editors.Cla
 
 		@Override
 		public boolean hasTab(java.lang.String tab) {
-			return java.util.Arrays.asList(new java.lang.String[]{"property.tab.psm", "property.tab.psm"})
+			return java.util.Arrays
+					.asList(new java.lang.String[]{"property.tab.psm", "property.tab.psm", "property.tab.psm"})
 					.contains(tab);
 		}
 	}

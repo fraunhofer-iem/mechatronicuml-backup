@@ -20,10 +20,10 @@ import org.muml.example.railcab.profiles.RoleProfiles;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.example.railcab.profiles.impl.ProfileStoreImpl#getRoleProfiles <em>Role Profiles</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -16,10 +16,10 @@ import org.muml.pim.types.DataType;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.pm.software.platform.EnumerationDataType#getEnumerationValues <em>Enumeration Values</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.pm.software.platform.SwplatformPackage#getEnumerationDataType()
  * @model

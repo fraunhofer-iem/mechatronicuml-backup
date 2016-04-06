@@ -4,9 +4,7 @@ package org.muml.psm.properties.codegen.editor;
 /**
  * @generated
  */
-public class RefinedStructuredResourceInstanceEditor
-		extends
-			org.muml.ape.runtime.editors.ClassPropertyEditor {
+public class RefinedStructuredResourceInstanceEditor extends org.muml.ape.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
@@ -23,11 +21,15 @@ public class RefinedStructuredResourceInstanceEditor
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorExtension_property_tab_extensionsTab_Editor(), false);
+			addPropertyEditor(createEditorExtensions_property_tab_extensionsTab_Editor(), false);
 
 			addPropertyEditor(createEditorName_property_tab_generalTab_Editor(), false);
 
 			addPropertyEditor(createEditorResourceType_property_tab_generalTab_Editor(), false);
+
+			addPropertyEditor(createEditorHwports_property_tab_generalTab_Editor(), false);
+
+			addPropertyEditor(createEditorEmbeddedAtomicResourceInstances_property_tab_generalTab_Editor(), false);
 
 			addPropertyEditor(createEditorAllocatedAtomicComponentInstances_property_tab_psmTab_Editor(), false);
 
@@ -41,15 +43,31 @@ public class RefinedStructuredResourceInstanceEditor
 
 			addPropertyEditor(createEditorResourceType_property_tab_generalTab_Editor(), false);
 
+			addPropertyEditor(createEditorHwports_property_tab_generalTab_Editor(), false);
+
+			addPropertyEditor(createEditorEmbeddedAtomicResourceInstances_property_tab_generalTab_Editor(), false);
+
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
 		} else if ("property.tab.extensions".equals(tab)) { // Tab Extensions
 
-			addPropertyEditor(createEditorExtension_property_tab_extensionsTab_Editor(), false);
+			addPropertyEditor(createEditorExtensions_property_tab_extensionsTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
 		} else if ("property.tab.descriptionAspects".equals(tab)) { // Tab Description Aspects
+
+		} else if ("property.tab.condition".equals(tab)) { // Tab Condition
+
+		} else if ("property.tab.effect".equals(tab)) { // Tab Effect
+
+		} else if ("property.tab.deadline".equals(tab)) { // Tab Deadline
+
+		} else if ("property.tab.sampling".equals(tab)) { // Tab Sampling
+
+		} else if ("property.tab.message".equals(tab)) { // Tab Message
+
+		} else if ("property.tab.behavior".equals(tab)) { // Tab Behavior
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
@@ -72,6 +90,22 @@ public class RefinedStructuredResourceInstanceEditor
 		return this.editorAllocatedAtomicComponentInstances_property_tab_psmTab;
 	}
 
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorEmbeddedAtomicResourceInstances_property_tab_generalTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorEmbeddedAtomicResourceInstances_property_tab_generalTab_Editor() {
+		if (this.editorEmbeddedAtomicResourceInstances_property_tab_generalTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.pm.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE
+					.getStructuredResourceInstance_EmbeddedAtomicResourceInstances();
+			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.ListPropertyEditor(
+					adapterFactory, feature);
+
+			editor.setTooltipMessage(
+					"The AtomicResourceInstances which are contained in this StructuredResourceInstance.\nThe AtomicResourceInstances are determined by the AtomicResources which are embedded in the StructuredResource type.");
+
+			this.editorEmbeddedAtomicResourceInstances_property_tab_generalTab = editor;
+		}
+		return this.editorEmbeddedAtomicResourceInstances_property_tab_generalTab;
+	}
+
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorResourceType_property_tab_generalTab;
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorResourceType_property_tab_generalTab_Editor() {
 		if (this.editorResourceType_property_tab_generalTab == null) {
@@ -85,6 +119,21 @@ public class RefinedStructuredResourceInstanceEditor
 			this.editorResourceType_property_tab_generalTab = editor;
 		}
 		return this.editorResourceType_property_tab_generalTab;
+	}
+
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorHwports_property_tab_generalTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorHwports_property_tab_generalTab_Editor() {
+		if (this.editorHwports_property_tab_generalTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.pm.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE
+					.getResourceInstance_Hwports();
+			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.ListPropertyEditor(
+					adapterFactory, feature);
+
+			editor.setTooltipMessage("The HWPort of this ResourceType.\n\n");
+
+			this.editorHwports_property_tab_generalTab = editor;
+		}
+		return this.editorHwports_property_tab_generalTab;
 	}
 
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorName_property_tab_generalTab;
@@ -114,17 +163,19 @@ public class RefinedStructuredResourceInstanceEditor
 		return this.editorName_property_tab_generalTab;
 	}
 
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorExtension_property_tab_extensionsTab;
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorExtension_property_tab_extensionsTab_Editor() {
-		if (this.editorExtension_property_tab_extensionsTab == null) {
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorExtensions_property_tab_extensionsTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorExtensions_property_tab_extensionsTab_Editor() {
+		if (this.editorExtensions_property_tab_extensionsTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.core.CorePackage.eINSTANCE
-					.getExtendableElement_Extension();
+					.getExtendableElement_Extensions();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.FlattenedListPropertyEditor(
 					adapterFactory, feature);
 
-			this.editorExtension_property_tab_extensionsTab = editor;
+			editor.setTooltipMessage("Extendable Elements can be extended by an Extension.");
+
+			this.editorExtensions_property_tab_extensionsTab = editor;
 		}
-		return this.editorExtension_property_tab_extensionsTab;
+		return this.editorExtensions_property_tab_extensionsTab;
 	}
 
 	//
@@ -136,8 +187,7 @@ public class RefinedStructuredResourceInstanceEditor
 	 */
 	public RefinedStructuredResourceInstanceEditor(String tab) {
 		this(tab, org.muml.psm.properties.util.PropertiesUtil.INSTANCE.getAdapterFactory(),
-				org.muml.psm.codegen.CodegenPackage.eINSTANCE
-						.getRefinedStructuredResourceInstance());
+				org.muml.psm.codegen.CodegenPackage.eINSTANCE.getRefinedStructuredResourceInstance());
 	}
 
 	/**
@@ -152,7 +202,8 @@ public class RefinedStructuredResourceInstanceEditor
 		@Override
 		public boolean hasTab(java.lang.String tab) {
 			return java.util.Arrays.asList(new java.lang.String[]{"property.tab.psm", "property.tab.general",
-					"property.tab.general", "property.tab.extensions"}).contains(tab);
+					"property.tab.general", "property.tab.general", "property.tab.general", "property.tab.extensions"})
+					.contains(tab);
 		}
 	}
 

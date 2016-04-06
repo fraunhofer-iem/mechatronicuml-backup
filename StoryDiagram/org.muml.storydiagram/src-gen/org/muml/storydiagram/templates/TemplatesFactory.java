@@ -23,8 +23,7 @@ public interface TemplatesFactory extends EFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	TemplatesFactory eINSTANCE = org.muml.storydiagram.templates.impl.TemplatesFactoryImpl
-			.init();
+	TemplatesFactory eINSTANCE = org.muml.storydiagram.templates.impl.TemplatesFactoryImpl.init();
 
 	/**
 	 * Returns a new object of class '<em>Template Binding</em>'.

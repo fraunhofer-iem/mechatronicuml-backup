@@ -5,7 +5,7 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated RuntimeModel -->
       <package
-            uri="http://www.fujaba.de/muml/runtime/0.4.0"
+            uri="http://www.muml.org/verification/core/runtime/1.0.0"
             class="org.muml.verification.core.runtime.RuntimePackage"
             genModel="model/RuntimeModel.genmodel"/>
    </extension>

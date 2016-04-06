@@ -19,11 +19,11 @@ import org.muml.reconfiguration.componentstorypattern.TriggerEmbeddedComponentEx
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.reconfiguration.componentstorydiagram.SendReconfigurationMessageExpression#getReconfigurationMessageType <em>Reconfiguration Message Type</em>}</li>
  *   <li>{@link org.muml.reconfiguration.componentstorydiagram.SendReconfigurationMessageExpression#getParameterBindings <em>Parameter Bindings</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.reconfiguration.componentstorydiagram.ComponentstorydiagramPackage#getSendReconfigurationMessageExpression()
  * @model

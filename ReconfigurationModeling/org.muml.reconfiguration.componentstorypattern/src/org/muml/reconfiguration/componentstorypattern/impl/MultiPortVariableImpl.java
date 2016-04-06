@@ -22,12 +22,12 @@ import org.muml.reconfiguration.componentstorypattern.SinglePortVariable;
  * <em><b>Multi Port Variable</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.reconfiguration.componentstorypattern.impl.MultiPortVariableImpl#getSubPortVariables <em>Sub Port Variables</em>}</li>
  *   <li>{@link org.muml.reconfiguration.componentstorypattern.impl.MultiPortVariableImpl#getGmfSubPortVariables <em>Gmf Sub Port Variables</em>}</li>
  *   <li>{@link org.muml.reconfiguration.componentstorypattern.impl.MultiPortVariableImpl#getOrderConstraints <em>Order Constraints</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

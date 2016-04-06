@@ -6,10 +6,11 @@
 
 <plugin>
 
+
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <!-- @generated swplatform -->
       <factory
-            uri="http://www.fujaba.de/muml/swplatform/0.4.0/"
+            uri="http://www.muml.org/pm/software/platform/1.0.0"
             class="org.muml.pm.software.platform.provider.SwplatformItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider

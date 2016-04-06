@@ -31,12 +31,12 @@ import org.muml.pm.software.platform.SwplatformPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.pm.software.platform.impl.APIRepositoryImpl#getComment <em>Comment</em>}</li>
  *   <li>{@link org.muml.pm.software.platform.impl.APIRepositoryImpl#getApiCommands <em>Api Commands</em>}</li>
  *   <li>{@link org.muml.pm.software.platform.impl.APIRepositoryImpl#getSwPlatform <em>Sw Platform</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

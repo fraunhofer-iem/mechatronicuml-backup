@@ -19,11 +19,11 @@ import org.muml.verification.core.runtime.RuntimeRoleConnectorInstance;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.verification.core.runtime.impl.RoleInstanceImpl#getRole <em>Role</em>}</li>
  *   <li>{@link org.muml.verification.core.runtime.impl.RoleInstanceImpl#getAssembly <em>Assembly</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

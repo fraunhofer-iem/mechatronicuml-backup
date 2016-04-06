@@ -11,10 +11,10 @@ import org.muml.pim.component.DelegationConnector;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.reconfiguration.componentstorypattern.DelegationVariable#getType <em>Type</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.reconfiguration.componentstorypattern.ComponentstorypatternPackage#getDelegationVariable()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL ExistingDelegationConnectorBetweenPortVariableTypes='if not self.type.oclIsUndefined() then\r\n\tlet selfPorts : OrderedSet(muml::component::Port) = self.portVariables.portType.oclAsType(muml::component::Port)->asOrderedSet(),\r\n\ttypePorts: OrderedSet(muml::component::Port) = self.type.connectorEndpoints->collect( cE |\r\n\t  if cE.oclIsTypeOf(muml::component::PortPart)\t\r\n      then cE.oclAsType(muml::component::PortPart).portType\r\n\t  else \r\n\t  \tif cE.oclIsKindOf(muml::component::Port)\r\n\t  \tthen cE.oclAsType(muml::component::Port)\r\n\t  \telse  null\r\n\t  \tendif\r\n\t  endif)->asOrderedSet()\r\n\tin \r\n\tselfPorts->intersection(typePorts)->size() = 2\t\t\r\nelse\r\n\t\tfalse\r\nendif'"

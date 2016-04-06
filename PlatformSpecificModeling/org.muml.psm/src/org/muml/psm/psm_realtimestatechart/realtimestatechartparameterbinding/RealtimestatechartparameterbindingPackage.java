@@ -37,7 +37,7 @@ public interface RealtimestatechartparameterbindingPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.fujaba.de/muml/psm/realtimestatechart/realtimestatechartparameterbinding/0.1.0/";
+	String eNS_URI = "http://www.muml.org/psm/realtimestatechart/realtimestatechartparameterbinding/1.0.0";
 
 	/**
 	 * The package namespace name.
@@ -130,22 +130,22 @@ public interface RealtimestatechartparameterbindingPackage extends EPackage {
 	int API_CALL_PARAMETER_BINDING__PARAMETER = REALTIME_STATECHART_PARAMETER_BINDING__PARAMETER;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int API_CALL_PARAMETER_BINDING__ANNOTATION = REALTIME_STATECHART_PARAMETER_BINDING_FEATURE_COUNT + 0;
+	int API_CALL_PARAMETER_BINDING__ANNOTATIONS = REALTIME_STATECHART_PARAMETER_BINDING_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int API_CALL_PARAMETER_BINDING__EXTENSION = REALTIME_STATECHART_PARAMETER_BINDING_FEATURE_COUNT + 1;
+	int API_CALL_PARAMETER_BINDING__EXTENSIONS = REALTIME_STATECHART_PARAMETER_BINDING_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.

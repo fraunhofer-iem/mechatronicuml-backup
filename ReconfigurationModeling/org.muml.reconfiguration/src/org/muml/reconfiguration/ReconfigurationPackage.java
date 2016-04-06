@@ -49,7 +49,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.fujaba.de/muml/reconfiguration/0.3.18";
+	String eNS_URI = "http://www.muml.org/reconfiguration/1.0.0";
 
 	/**
 	 * The package namespace name.
@@ -178,22 +178,22 @@ public interface ReconfigurationPackage extends EPackage {
 	int RECONFIGURABLE_COMPONENT = 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_COMPONENT__ANNOTATION = ComponentPackage.COMPONENT__ANNOTATION;
+	int RECONFIGURABLE_COMPONENT__ANNOTATIONS = ComponentPackage.COMPONENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_COMPONENT__EXTENSION = ComponentPackage.COMPONENT__EXTENSION;
+	int RECONFIGURABLE_COMPONENT__EXTENSIONS = ComponentPackage.COMPONENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -421,22 +421,22 @@ public interface ReconfigurationPackage extends EPackage {
 	int RECONFIGURABLE_COMPONENT_OPERATION_COUNT = ComponentPackage.COMPONENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_ATOMIC_COMPONENT__ANNOTATION = ComponentPackage.ATOMIC_COMPONENT__ANNOTATION;
+	int RECONFIGURABLE_ATOMIC_COMPONENT__ANNOTATIONS = ComponentPackage.ATOMIC_COMPONENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_ATOMIC_COMPONENT__EXTENSION = ComponentPackage.ATOMIC_COMPONENT__EXTENSION;
+	int RECONFIGURABLE_ATOMIC_COMPONENT__EXTENSIONS = ComponentPackage.ATOMIC_COMPONENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -718,22 +718,22 @@ public interface ReconfigurationPackage extends EPackage {
 	int RECONFIGURABLE_ATOMIC_COMPONENT_OPERATION_COUNT = ComponentPackage.ATOMIC_COMPONENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_STRUCTURED_COMPONENT__ANNOTATION = ComponentPackage.STRUCTURED_COMPONENT__ANNOTATION;
+	int RECONFIGURABLE_STRUCTURED_COMPONENT__ANNOTATIONS = ComponentPackage.STRUCTURED_COMPONENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_STRUCTURED_COMPONENT__EXTENSION = ComponentPackage.STRUCTURED_COMPONENT__EXTENSION;
+	int RECONFIGURABLE_STRUCTURED_COMPONENT__EXTENSIONS = ComponentPackage.STRUCTURED_COMPONENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1051,22 +1051,22 @@ public interface ReconfigurationPackage extends EPackage {
 	int RECONFIGURABLE_STRUCTURED_COMPONENT_OPERATION_COUNT = ComponentPackage.STRUCTURED_COMPONENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_PORT__ANNOTATION = ComponentPackage.PORT__ANNOTATION;
+	int RECONFIGURATION_PORT__ANNOTATIONS = ComponentPackage.PORT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_PORT__EXTENSION = ComponentPackage.PORT__EXTENSION;
+	int RECONFIGURATION_PORT__EXTENSIONS = ComponentPackage.PORT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -1425,22 +1425,22 @@ public interface ReconfigurationPackage extends EPackage {
 	int RECONFIGURATION_PORT_INTERFACE_ENTRY = 4;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_PORT_INTERFACE_ENTRY__ANNOTATION = CorePackage.EXTENDABLE_ELEMENT__ANNOTATION;
+	int RECONFIGURATION_PORT_INTERFACE_ENTRY__ANNOTATIONS = CorePackage.EXTENDABLE_ELEMENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_PORT_INTERFACE_ENTRY__EXTENSION = CorePackage.EXTENDABLE_ELEMENT__EXTENSION;
+	int RECONFIGURATION_PORT_INTERFACE_ENTRY__EXTENSIONS = CorePackage.EXTENDABLE_ELEMENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -1650,22 +1650,22 @@ public interface ReconfigurationPackage extends EPackage {
 	int RECONFIGURATION_PORT_INTERFACE_ENTRY_OPERATION_COUNT = CorePackage.EXTENDABLE_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_MESSAGE_PORT__ANNOTATION = RECONFIGURATION_PORT__ANNOTATION;
+	int RECONFIGURATION_MESSAGE_PORT__ANNOTATIONS = RECONFIGURATION_PORT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_MESSAGE_PORT__EXTENSION = RECONFIGURATION_PORT__EXTENSION;
+	int RECONFIGURATION_MESSAGE_PORT__EXTENSIONS = RECONFIGURATION_PORT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -1993,22 +1993,22 @@ public interface ReconfigurationPackage extends EPackage {
 	int RECONFIGURATION_MESSAGE_PORT_INTERFACE_ENTRY = 6;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_MESSAGE_PORT_INTERFACE_ENTRY__ANNOTATION = RECONFIGURATION_PORT_INTERFACE_ENTRY__ANNOTATION;
+	int RECONFIGURATION_MESSAGE_PORT_INTERFACE_ENTRY__ANNOTATIONS = RECONFIGURATION_PORT_INTERFACE_ENTRY__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_MESSAGE_PORT_INTERFACE_ENTRY__EXTENSION = RECONFIGURATION_PORT_INTERFACE_ENTRY__EXTENSION;
+	int RECONFIGURATION_MESSAGE_PORT_INTERFACE_ENTRY__EXTENSIONS = RECONFIGURATION_PORT_INTERFACE_ENTRY__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -2245,22 +2245,22 @@ public interface ReconfigurationPackage extends EPackage {
 	int RECONFIGURATION_MESSAGE_PORT_INTERFACE_ENTRY_OPERATION_COUNT = RECONFIGURATION_PORT_INTERFACE_ENTRY_OPERATION_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_EXECUTION_PORT__ANNOTATION = RECONFIGURATION_PORT__ANNOTATION;
+	int RECONFIGURATION_EXECUTION_PORT__ANNOTATIONS = RECONFIGURATION_PORT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_EXECUTION_PORT__EXTENSION = RECONFIGURATION_PORT__EXTENSION;
+	int RECONFIGURATION_EXECUTION_PORT__EXTENSIONS = RECONFIGURATION_PORT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -2588,22 +2588,22 @@ public interface ReconfigurationPackage extends EPackage {
 	int RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY = 8;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__ANNOTATION = RECONFIGURATION_PORT_INTERFACE_ENTRY__ANNOTATION;
+	int RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__ANNOTATIONS = RECONFIGURATION_PORT_INTERFACE_ENTRY__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__EXTENSION = RECONFIGURATION_PORT_INTERFACE_ENTRY__EXTENSION;
+	int RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__EXTENSIONS = RECONFIGURATION_PORT_INTERFACE_ENTRY__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -2877,22 +2877,22 @@ public interface ReconfigurationPackage extends EPackage {
 	int EXECUTION_TIMING_SPECIFICATION = 9;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXECUTION_TIMING_SPECIFICATION__ANNOTATION = CorePackage.EXTENDABLE_ELEMENT__ANNOTATION;
+	int EXECUTION_TIMING_SPECIFICATION__ANNOTATIONS = CorePackage.EXTENDABLE_ELEMENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXECUTION_TIMING_SPECIFICATION__EXTENSION = CorePackage.EXTENDABLE_ELEMENT__EXTENSION;
+	int EXECUTION_TIMING_SPECIFICATION__EXTENSIONS = CorePackage.EXTENDABLE_ELEMENT__EXTENSIONS;
 
 	/**
 	 * The number of structural features of the '<em>Execution Timing Specification</em>' class.
@@ -3094,22 +3094,22 @@ public interface ReconfigurationPackage extends EPackage {
 	int EXECUTION_TIMING_SPECIFICATION_SINGLE_PHASE = 10;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXECUTION_TIMING_SPECIFICATION_SINGLE_PHASE__ANNOTATION = EXECUTION_TIMING_SPECIFICATION__ANNOTATION;
+	int EXECUTION_TIMING_SPECIFICATION_SINGLE_PHASE__ANNOTATIONS = EXECUTION_TIMING_SPECIFICATION__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXECUTION_TIMING_SPECIFICATION_SINGLE_PHASE__EXTENSION = EXECUTION_TIMING_SPECIFICATION__EXTENSION;
+	int EXECUTION_TIMING_SPECIFICATION_SINGLE_PHASE__EXTENSIONS = EXECUTION_TIMING_SPECIFICATION__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Time For Execution</b></em>' containment reference.
@@ -3320,22 +3320,22 @@ public interface ReconfigurationPackage extends EPackage {
 	int EXECUTION_TIMING_SPECIFICATION_THREE_PHASE = 11;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXECUTION_TIMING_SPECIFICATION_THREE_PHASE__ANNOTATION = EXECUTION_TIMING_SPECIFICATION__ANNOTATION;
+	int EXECUTION_TIMING_SPECIFICATION_THREE_PHASE__ANNOTATIONS = EXECUTION_TIMING_SPECIFICATION__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXECUTION_TIMING_SPECIFICATION_THREE_PHASE__EXTENSION = EXECUTION_TIMING_SPECIFICATION__EXTENSION;
+	int EXECUTION_TIMING_SPECIFICATION_THREE_PHASE__EXTENSIONS = EXECUTION_TIMING_SPECIFICATION__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Time For Setup</b></em>' containment reference.
@@ -3574,22 +3574,22 @@ public interface ReconfigurationPackage extends EPackage {
 	int INTERNAL_RECONFIGURATION_COMMUNICATION_PORT = 12;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INTERNAL_RECONFIGURATION_COMMUNICATION_PORT__ANNOTATION = RECONFIGURATION_PORT__ANNOTATION;
+	int INTERNAL_RECONFIGURATION_COMMUNICATION_PORT__ANNOTATIONS = RECONFIGURATION_PORT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INTERNAL_RECONFIGURATION_COMMUNICATION_PORT__EXTENSION = RECONFIGURATION_PORT__EXTENSION;
+	int INTERNAL_RECONFIGURATION_COMMUNICATION_PORT__EXTENSIONS = RECONFIGURATION_PORT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -3898,22 +3898,22 @@ public interface ReconfigurationPackage extends EPackage {
 	int INTERNAL_RECONFIGURATION_COMMUNICATION_PORT_OPERATION_COUNT = RECONFIGURATION_PORT_OPERATION_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROLLER__ANNOTATION = CorePackage.NAMED_ELEMENT__ANNOTATION;
+	int CONTROLLER__ANNOTATIONS = CorePackage.NAMED_ELEMENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROLLER__EXTENSION = CorePackage.NAMED_ELEMENT__EXTENSION;
+	int CONTROLLER__EXTENSIONS = CorePackage.NAMED_ELEMENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -4141,22 +4141,22 @@ public interface ReconfigurationPackage extends EPackage {
 	int CONTROLLER_OPERATION_COUNT = CorePackage.NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_CONTROLLER__ANNOTATION = CONTROLLER__ANNOTATION;
+	int RECONFIGURATION_CONTROLLER__ANNOTATIONS = CONTROLLER__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_CONTROLLER__EXTENSION = CONTROLLER__EXTENSION;
+	int RECONFIGURATION_CONTROLLER__EXTENSIONS = CONTROLLER__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -4384,22 +4384,22 @@ public interface ReconfigurationPackage extends EPackage {
 	int RECONFIGURATION_CONTROLLER_OPERATION_COUNT = CONTROLLER_OPERATION_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RULE_BASED_RECONFIGURATION_CONTROLLER__ANNOTATION = RECONFIGURATION_CONTROLLER__ANNOTATION;
+	int RULE_BASED_RECONFIGURATION_CONTROLLER__ANNOTATIONS = RECONFIGURATION_CONTROLLER__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RULE_BASED_RECONFIGURATION_CONTROLLER__EXTENSION = RECONFIGURATION_CONTROLLER__EXTENSION;
+	int RULE_BASED_RECONFIGURATION_CONTROLLER__EXTENSIONS = RECONFIGURATION_CONTROLLER__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -4645,22 +4645,22 @@ public interface ReconfigurationPackage extends EPackage {
 	int RULE_BASED_RECONFIGURATION_CONTROLLER_OPERATION_COUNT = RECONFIGURATION_CONTROLLER_OPERATION_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MANAGER__ANNOTATION = CorePackage.COMMENTABLE_ELEMENT__ANNOTATION;
+	int MANAGER__ANNOTATIONS = CorePackage.COMMENTABLE_ELEMENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MANAGER__EXTENSION = CorePackage.COMMENTABLE_ELEMENT__EXTENSION;
+	int MANAGER__EXTENSIONS = CorePackage.COMMENTABLE_ELEMENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -4906,22 +4906,22 @@ public interface ReconfigurationPackage extends EPackage {
 	int MANAGER_OPERATION_COUNT = CorePackage.COMMENTABLE_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MANAGER_SPECIFICATION_ENTRY__ANNOTATION = CorePackage.COMMENTABLE_ELEMENT__ANNOTATION;
+	int MANAGER_SPECIFICATION_ENTRY__ANNOTATIONS = CorePackage.COMMENTABLE_ELEMENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MANAGER_SPECIFICATION_ENTRY__EXTENSION = CorePackage.COMMENTABLE_ELEMENT__EXTENSION;
+	int MANAGER_SPECIFICATION_ENTRY__EXTENSIONS = CorePackage.COMMENTABLE_ELEMENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -5203,22 +5203,22 @@ public interface ReconfigurationPackage extends EPackage {
 	int MANAGER_SPECIFICATION_ENTRY_OPERATION_COUNT = CorePackage.COMMENTABLE_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXECUTOR__ANNOTATION = CorePackage.COMMENTABLE_ELEMENT__ANNOTATION;
+	int EXECUTOR__ANNOTATIONS = CorePackage.COMMENTABLE_ELEMENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXECUTOR__EXTENSION = CorePackage.COMMENTABLE_ELEMENT__EXTENSION;
+	int EXECUTOR__EXTENSIONS = CorePackage.COMMENTABLE_ELEMENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -5464,22 +5464,22 @@ public interface ReconfigurationPackage extends EPackage {
 	int EXECUTOR_OPERATION_COUNT = CorePackage.COMMENTABLE_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXECUTOR_SPECIFICATION_ENTRY__ANNOTATION = CorePackage.EXTENDABLE_ELEMENT__ANNOTATION;
+	int EXECUTOR_SPECIFICATION_ENTRY__ANNOTATIONS = CorePackage.EXTENDABLE_ELEMENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXECUTOR_SPECIFICATION_ENTRY__EXTENSION = CorePackage.EXTENDABLE_ELEMENT__EXTENSION;
+	int EXECUTOR_SPECIFICATION_ENTRY__EXTENSIONS = CorePackage.EXTENDABLE_ELEMENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Executor</b></em>' container reference.
@@ -5707,22 +5707,22 @@ public interface ReconfigurationPackage extends EPackage {
 	int EXECUTOR_SPECIFICATION_ENTRY_OPERATION_COUNT = CorePackage.EXTENDABLE_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_RULE__ANNOTATION = CorePackage.COMMENTABLE_ELEMENT__ANNOTATION;
+	int RECONFIGURATION_RULE__ANNOTATIONS = CorePackage.COMMENTABLE_ELEMENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_RULE__EXTENSION = CorePackage.COMMENTABLE_ELEMENT__EXTENSION;
+	int RECONFIGURATION_RULE__EXTENSIONS = CorePackage.COMMENTABLE_ELEMENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -5950,22 +5950,22 @@ public interface ReconfigurationPackage extends EPackage {
 	int RECONFIGURATION_RULE_OPERATION_COUNT = CorePackage.COMMENTABLE_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SIGNATURE__ANNOTATION = CorePackage.NAMED_ELEMENT__ANNOTATION;
+	int SIGNATURE__ANNOTATIONS = CorePackage.NAMED_ELEMENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SIGNATURE__EXTENSION = CorePackage.NAMED_ELEMENT__EXTENSION;
+	int SIGNATURE__EXTENSIONS = CorePackage.NAMED_ELEMENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -6193,22 +6193,22 @@ public interface ReconfigurationPackage extends EPackage {
 	int SIGNATURE_OPERATION_COUNT = CorePackage.NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCTURAL_CONDITION__ANNOTATION = CorePackage.NAMED_ELEMENT__ANNOTATION;
+	int STRUCTURAL_CONDITION__ANNOTATIONS = CorePackage.NAMED_ELEMENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCTURAL_CONDITION__EXTENSION = CorePackage.NAMED_ELEMENT__EXTENSION;
+	int STRUCTURAL_CONDITION__EXTENSIONS = CorePackage.NAMED_ELEMENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -6446,22 +6446,22 @@ public interface ReconfigurationPackage extends EPackage {
 	int RECONFIGURATION_PORT_ASSEMBLY_CONNECTOR = 23;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_PORT_ASSEMBLY_CONNECTOR__ANNOTATION = ComponentPackage.PORT_CONNECTOR__ANNOTATION;
+	int RECONFIGURATION_PORT_ASSEMBLY_CONNECTOR__ANNOTATIONS = ComponentPackage.PORT_CONNECTOR__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_PORT_ASSEMBLY_CONNECTOR__EXTENSION = ComponentPackage.PORT_CONNECTOR__EXTENSION;
+	int RECONFIGURATION_PORT_ASSEMBLY_CONNECTOR__EXTENSIONS = ComponentPackage.PORT_CONNECTOR__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -6699,22 +6699,22 @@ public interface ReconfigurationPackage extends EPackage {
 	int RECONFIGURATION_PORT_DELEGATION_CONNECTOR = 24;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_PORT_DELEGATION_CONNECTOR__ANNOTATION = ComponentPackage.PORT_CONNECTOR__ANNOTATION;
+	int RECONFIGURATION_PORT_DELEGATION_CONNECTOR__ANNOTATIONS = ComponentPackage.PORT_CONNECTOR__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_PORT_DELEGATION_CONNECTOR__EXTENSION = ComponentPackage.PORT_CONNECTOR__EXTENSION;
+	int RECONFIGURATION_PORT_DELEGATION_CONNECTOR__EXTENSIONS = ComponentPackage.PORT_CONNECTOR__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -6952,22 +6952,22 @@ public interface ReconfigurationPackage extends EPackage {
 	int FADING_COMPONENT = 25;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FADING_COMPONENT__ANNOTATION = ComponentPackage.ATOMIC_COMPONENT__ANNOTATION;
+	int FADING_COMPONENT__ANNOTATIONS = ComponentPackage.ATOMIC_COMPONENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FADING_COMPONENT__EXTENSION = ComponentPackage.ATOMIC_COMPONENT__EXTENSION;
+	int FADING_COMPONENT__EXTENSIONS = ComponentPackage.ATOMIC_COMPONENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -7241,22 +7241,22 @@ public interface ReconfigurationPackage extends EPackage {
 	int FADING_FUNCTION = 26;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FADING_FUNCTION__ANNOTATION = CorePackage.NAMED_ELEMENT__ANNOTATION;
+	int FADING_FUNCTION__ANNOTATIONS = CorePackage.NAMED_ELEMENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FADING_FUNCTION__EXTENSION = CorePackage.NAMED_ELEMENT__EXTENSION;
+	int FADING_FUNCTION__EXTENSIONS = CorePackage.NAMED_ELEMENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -7568,22 +7568,22 @@ public interface ReconfigurationPackage extends EPackage {
 	int RECONFIGURATION_EXECUTION_SPECIFICATION_ENTRY = 29;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_EXECUTION_SPECIFICATION_ENTRY__ANNOTATION = TypesPackage.DATA_TYPE__ANNOTATION;
+	int RECONFIGURATION_EXECUTION_SPECIFICATION_ENTRY__ANNOTATIONS = TypesPackage.DATA_TYPE__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_EXECUTION_SPECIFICATION_ENTRY__EXTENSION = TypesPackage.DATA_TYPE__EXTENSION;
+	int RECONFIGURATION_EXECUTION_SPECIFICATION_ENTRY__EXTENSIONS = TypesPackage.DATA_TYPE__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -7839,22 +7839,22 @@ public interface ReconfigurationPackage extends EPackage {
 	int RECONFIGURATION_MANAGEMENT_SPECIFICATION_ENTRY = 30;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_MANAGEMENT_SPECIFICATION_ENTRY__ANNOTATION = TypesPackage.DATA_TYPE__ANNOTATION;
+	int RECONFIGURATION_MANAGEMENT_SPECIFICATION_ENTRY__ANNOTATIONS = TypesPackage.DATA_TYPE__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_MANAGEMENT_SPECIFICATION_ENTRY__EXTENSION = TypesPackage.DATA_TYPE__EXTENSION;
+	int RECONFIGURATION_MANAGEMENT_SPECIFICATION_ENTRY__EXTENSIONS = TypesPackage.DATA_TYPE__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.

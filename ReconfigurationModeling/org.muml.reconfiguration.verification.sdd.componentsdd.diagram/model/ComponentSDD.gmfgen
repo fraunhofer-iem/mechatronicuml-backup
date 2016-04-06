@@ -50,7 +50,7 @@
           classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ComponentStoryPatternFigure extends org.eclipse.draw2d.RoundedRectangle {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RoundedRectangle fFigureComponentStoryPatternContainer; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ComponentStoryPatternFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutThis = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutThis.numColumns = 1;&#xA;&#x9;layoutThis.makeColumnsEqualWidth = true;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;this.setCornerDimensions(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(12)&#xA;, getMapMode().DPtoLP(12)&#xA;));&#xA;this.setFill(false);&#xA;this.setOutline(false);&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureComponentStoryPatternContainer = new org.eclipse.draw2d.RoundedRectangle();&#xA;&#xA;fFigureComponentStoryPatternContainer.setCornerDimensions(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(12)&#xA;, getMapMode().DPtoLP(12)&#xA;));&#xA;fFigureComponentStoryPatternContainer.setFill(false);&#xA;fFigureComponentStoryPatternContainer.setOutline(false);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureComponentStoryPatternContainer = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureComponentStoryPatternContainer.verticalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintFFigureComponentStoryPatternContainer.horizontalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintFFigureComponentStoryPatternContainer.horizontalIndent = 0;&#xA;constraintFFigureComponentStoryPatternContainer.horizontalSpan = 1;&#xA;constraintFFigureComponentStoryPatternContainer.verticalSpan = 1;&#xA;constraintFFigureComponentStoryPatternContainer.grabExcessHorizontalSpace = true;&#xA;constraintFFigureComponentStoryPatternContainer.grabExcessVerticalSpace = true;&#xA;this.add(fFigureComponentStoryPatternContainer, constraintFFigureComponentStoryPatternContainer);&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RoundedRectangle getFigureComponentStoryPatternContainer() {&#xA;&#x9;&#x9;return fFigureComponentStoryPatternContainer;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentStoryPattern"/>
+            href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentStoryPattern"/>
         <containmentMetaFeature
             href="../../de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD/model/ComponentSDD.genmodel#//componentsdd/ComponentStoryPatternNode/pattern"/>
         <childMetaFeature
@@ -83,11 +83,11 @@
           editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.reconfiguration.common.edit.policies.ComponentStoryPatternVariableEditPolicy"/>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentVariable"/>
+            href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentVariable"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentStoryPattern/thisVariable"/>
+            href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentStoryPattern/thisVariable"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentStoryPattern/thisVariable"/>
+            href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentStoryPattern/thisVariable"/>
       </modelFacet>
       <labels
           xsi:type="gmfgen:GenExternalNodeLabel"
@@ -158,11 +158,11 @@
           editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.reconfiguration.common.edit.policies.ComponentPartVariableTriggerEmbeddedComponentExpressionLabelEditPolicy"/>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentPartVariable"/>
+            href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentPartVariable"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentVariable/partVariables"/>
+            href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentVariable/partVariables"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentVariable/partVariables"/>
+            href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentVariable/partVariables"/>
       </modelFacet>
       <labels
           xsi:type="gmfgen:GenExternalNodeLabel"
@@ -252,11 +252,11 @@
           editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.ports.MultiPortEditPolicy"/>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/MultiPortVariable"/>
+            href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/MultiPortVariable"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/PartVariable/portVariables"/>
+            href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/PartVariable/portVariables"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/PartVariable/portVariables"/>
+            href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/PartVariable/portVariables"/>
       </modelFacet>
       <labels
           xsi:type="gmfgen:GenExternalNodeLabel"
@@ -355,11 +355,11 @@
           editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.reconfiguration.common.edit.policies.EmbeddedSinglePortVariableExternalLabelsEditPolicy"/>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/SinglePortVariable"/>
+            href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/SinglePortVariable"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/MultiPortVariable/gmfSubPortVariables"/>
+            href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/MultiPortVariable/gmfSubPortVariables"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/MultiPortVariable/gmfSubPortVariables"/>
+            href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/MultiPortVariable/gmfSubPortVariables"/>
       </modelFacet>
     </childNodes>
     <childNodes
@@ -396,11 +396,11 @@
       <modelFacet
           modelElementSelector="//@expressionProviders/@providers.0/@expressions.7">
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/SinglePortVariable"/>
+            href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/SinglePortVariable"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/PartVariable/portVariables"/>
+            href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/PartVariable/portVariables"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/PartVariable/portVariables"/>
+            href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/PartVariable/portVariables"/>
       </modelFacet>
       <labels
           xsi:type="gmfgen:GenExternalNodeLabel"
@@ -496,11 +496,11 @@
           editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.ports.MultiPortEditPolicy"/>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/MultiPortVariable"/>
+            href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/MultiPortVariable"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentVariable/portVariables"/>
+            href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentVariable/portVariables"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentVariable/portVariables"/>
+            href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentVariable/portVariables"/>
       </modelFacet>
       <labels
           xsi:type="gmfgen:GenExternalNodeLabel"
@@ -598,11 +598,11 @@
       <modelFacet
           modelElementSelector="//@expressionProviders/@providers.0/@expressions.7">
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/SinglePortVariable"/>
+            href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/SinglePortVariable"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentVariable/portVariables"/>
+            href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentVariable/portVariables"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentVariable/portVariables"/>
+            href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentVariable/portVariables"/>
       </modelFacet>
       <labels
           xsi:type="gmfgen:GenExternalNodeLabel"
@@ -691,11 +691,11 @@
           editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.reconfiguration.common.edit.policies.ComponentStoryPatternVariableEditPolicy"/>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/FadingComponentPartVariable"/>
+            href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/FadingComponentPartVariable"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentVariable/partVariables"/>
+            href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentVariable/partVariables"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentVariable/partVariables"/>
+            href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentVariable/partVariables"/>
       </modelFacet>
       <labels
           visualID="5044"
@@ -797,7 +797,7 @@
               <initializers
                   xsi:type="gmfgen:GenReferenceNewElementSpec">
                 <feature
-                    href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentStoryPattern/thisVariable"/>
+                    href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentStoryPattern/thisVariable"/>
                 <newElementInitializers>
                   <initializers
                       xsi:type="gmfgen:GenFeatureValueSpec"
@@ -809,19 +809,19 @@
                       xsi:type="gmfgen:GenFeatureValueSpec"
                       value="//@expressionProviders/@providers.0/@expressions.2">
                     <feature
-                        href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentStoryPatternVariable/bindingState"/>
+                        href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentStoryPatternVariable/bindingState"/>
                   </initializers>
                   <initializers
                       xsi:type="gmfgen:GenFeatureValueSpec"
                       value="//@expressionProviders/@providers.0/@expressions.3">
                     <feature
-                        href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentStoryPatternVariable/bindingSemantics"/>
+                        href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentStoryPatternVariable/bindingSemantics"/>
                   </initializers>
                   <initializers
                       xsi:type="gmfgen:GenFeatureValueSpec"
                       value="//@expressionProviders/@providers.0/@expressions.4">
                     <feature
-                        href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentVariable/type"/>
+                        href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentVariable/type"/>
                   </initializers>
                 </newElementInitializers>
               </initializers>
@@ -1019,18 +1019,18 @@
       <modelFacet
           xsi:type="gmfgen:TypeLinkModelFacet">
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/AssemblyVariable"/>
+            href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/AssemblyVariable"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentVariable/connectorVariables"/>
+            href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentVariable/connectorVariables"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentVariable/connectorVariables"/>
+            href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentVariable/connectorVariables"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
               value="//@expressionProviders/@providers.0/@expressions.17">
             <feature
-                href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/AssemblyVariable/type"/>
+                href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/AssemblyVariable/type"/>
           </initializers>
         </modelElementInitializer>
         <sourceMetaFeature
@@ -1085,18 +1085,18 @@
       <modelFacet
           xsi:type="gmfgen:TypeLinkModelFacet">
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/DelegationVariable"/>
+            href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/DelegationVariable"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentVariable/connectorVariables"/>
+            href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentVariable/connectorVariables"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentVariable/connectorVariables"/>
+            href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentVariable/connectorVariables"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
               value="//@expressionProviders/@providers.0/@expressions.20">
             <feature
-                href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/DelegationVariable/type"/>
+                href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/DelegationVariable/type"/>
           </initializers>
         </modelElementInitializer>
         <sourceMetaFeature
@@ -1155,15 +1155,15 @@
       <modelFacet
           xsi:type="gmfgen:TypeLinkModelFacet">
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/MultiPortOrderConstraint"/>
+            href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/MultiPortOrderConstraint"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/MultiPortVariable/orderConstraints"/>
+            href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/MultiPortVariable/orderConstraints"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/MultiPortVariable/orderConstraints"/>
+            href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/MultiPortVariable/orderConstraints"/>
         <sourceMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/MultiPortOrderConstraint/srcSubPortVariable"/>
+            href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/MultiPortOrderConstraint/srcSubPortVariable"/>
         <targetMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/MultiPortOrderConstraint/tgtSubPortVariable"/>
+            href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/MultiPortOrderConstraint/tgtSubPortVariable"/>
       </modelFacet>
       <labels
           visualID="6003"
@@ -1997,7 +1997,7 @@
         className="MultiPortVariableLabelExpressionLabelParser5021"
         viewExpression="//@expressionProviders/@providers.0/@expressions.6">
       <expressionContext
-          href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/MultiPortVariable"/>
+          href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/MultiPortVariable"/>
     </implementations>
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
@@ -2005,7 +2005,7 @@
         className="SinglePortVariableLabelExpressionLabelParser5024"
         viewExpression="//@expressionProviders/@providers.0/@expressions.8">
       <expressionContext
-          href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/SinglePortVariable"/>
+          href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/SinglePortVariable"/>
     </implementations>
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
@@ -2013,7 +2013,7 @@
         className="ComponentPartVariableLabelExpressionLabelParser5026"
         viewExpression="//@expressionProviders/@providers.0/@expressions.9">
       <expressionContext
-          href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentPartVariable"/>
+          href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentPartVariable"/>
     </implementations>
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
@@ -2021,7 +2021,7 @@
         className="ComponentPartVariableLabelExpressionLabelParser5040"
         viewExpression="//@expressionProviders/@providers.0/@expressions.10">
       <expressionContext
-          href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentPartVariable"/>
+          href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentPartVariable"/>
     </implementations>
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
@@ -2029,7 +2029,7 @@
         className="MultiPortVariableLabelExpressionLabelParser5029"
         viewExpression="//@expressionProviders/@providers.0/@expressions.6">
       <expressionContext
-          href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/MultiPortVariable"/>
+          href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/MultiPortVariable"/>
     </implementations>
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
@@ -2037,7 +2037,7 @@
         className="SinglePortVariableLabelExpressionLabelParser5032"
         viewExpression="//@expressionProviders/@providers.0/@expressions.8">
       <expressionContext
-          href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/SinglePortVariable"/>
+          href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/SinglePortVariable"/>
     </implementations>
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
@@ -2045,7 +2045,7 @@
         className="FadingComponentPartVariableLabelExpressionLabelParser5044"
         viewExpression="//@expressionProviders/@providers.0/@expressions.11">
       <expressionContext
-          href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/FadingComponentPartVariable"/>
+          href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/FadingComponentPartVariable"/>
     </implementations>
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
@@ -2053,7 +2053,7 @@
         className="FadingComponentPartVariableLabelExpressionLabelParser5046"
         viewExpression="//@expressionProviders/@providers.0/@expressions.12">
       <expressionContext
-          href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/FadingComponentPartVariable"/>
+          href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/FadingComponentPartVariable"/>
     </implementations>
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
@@ -2093,7 +2093,7 @@
         className="MultiPortOrderConstraintLabelExpressionLabelParser6003"
         viewExpression="//@expressionProviders/@providers.0/@expressions.23">
       <expressionContext
-          href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/MultiPortOrderConstraint"/>
+          href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/MultiPortOrderConstraint"/>
     </implementations>
   </labelParsers>
   <contextMenus

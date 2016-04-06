@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="profiles" nsURI="http://www.fujaba.de/muml/examples/profiles/0.3.2"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="profiles" nsURI="http://www.muml.org/examples/profiles/1.0.0"
     nsPrefix="profiles">
   <eClassifiers xsi:type="ecore:EClass" name="Profile"/>
   <eClassifiers xsi:type="ecore:EClass" name="ProfileList">
@@ -19,7 +19,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="allProfiles" upperBound="-1"
         eType="#//Profile"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="currentProfile" eType="#//Profile"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="roleInstance" eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.runtime/model/RuntimeModel.ecore#//RuntimeDiscreteInteractionEndpointInstance"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="secondInstance" eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.runtime/model/RuntimeModel.ecore#//RuntimeDiscreteInteractionEndpointInstance"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="roleInstance" eType="ecore:EClass ../../org.muml.verification.core.runtime/model/RuntimeModel.ecore#//RuntimeDiscreteInteractionEndpointInstance"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="secondInstance" eType="ecore:EClass ../../org.muml.verification.core.runtime/model/RuntimeModel.ecore#//RuntimeDiscreteInteractionEndpointInstance"/>
   </eClassifiers>
 </ecore:EPackage>

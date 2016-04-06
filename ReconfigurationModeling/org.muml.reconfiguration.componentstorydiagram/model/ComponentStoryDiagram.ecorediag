@@ -84,7 +84,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_zbB3O9tpEeOBxdZ1QJfccw"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_zbB3MdtpEeOBxdZ1QJfccw" fontColor="4210752" fontName="Segoe UI" fontHeight="10" lineColor="8421504"/>
-    <element xmi:type="ecore:EClass" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/Activity"/>
+    <element xmi:type="ecore:EClass" href="platform:/resource/org.muml.storydiagram/model/storydiagrams.ecore#//activities/Activity"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zbB3MttpEeOBxdZ1QJfccw" x="405" y="140"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_zbB3PttpEeOBxdZ1QJfccw" type="1001">
@@ -103,7 +103,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_zbB3SdtpEeOBxdZ1QJfccw"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_zbB3P9tpEeOBxdZ1QJfccw" fontColor="4210752" fontName="Segoe UI" fontHeight="10" lineColor="8421504"/>
-    <element xmi:type="ecore:EClass" href="platform:/resource/de.uni_paderborn.fujaba.muml.reconfiguration/model/MumlReconfiguration.ecore#//ReconfigurationRule"/>
+    <element xmi:type="ecore:EClass" href="platform:/resource/org.muml.reconfiguration/model/MumlReconfiguration.ecore#//ReconfigurationRule"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zbB3QNtpEeOBxdZ1QJfccw" x="145" y="25" width="173"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_0wkt0NtpEeOBxdZ1QJfccw" type="1001">
@@ -122,7 +122,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_0wue09tpEeOBxdZ1QJfccw"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_0wkt0dtpEeOBxdZ1QJfccw" fontColor="4210752" fontName="Segoe UI" fontHeight="10" lineColor="8421504"/>
-    <element xmi:type="ecore:EClass" href="platform:/resource/de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.ecore#//ComponentStoryPattern"/>
+    <element xmi:type="ecore:EClass" href="platform:/resource/org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.ecore#//ComponentStoryPattern"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_0wkt0ttpEeOBxdZ1QJfccw" x="35" y="475" width="188"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_0wue1ttpEeOBxdZ1QJfccw" type="1001">
@@ -141,7 +141,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_0wue4dtpEeOBxdZ1QJfccw"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_0wue19tpEeOBxdZ1QJfccw" fontColor="4210752" fontName="Segoe UI" fontHeight="10" lineColor="8421504"/>
-    <element xmi:type="ecore:EClass" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ActivityNode"/>
+    <element xmi:type="ecore:EClass" href="platform:/resource/org.muml.storydiagram/model/storydiagrams.ecore#//activities/ActivityNode"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_0wue2NtpEeOBxdZ1QJfccw" x="160" y="275" width="288"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_2hf44NtpEeOBxdZ1QJfccw" type="1001">
@@ -160,7 +160,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_2hf469tpEeOBxdZ1QJfccw"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_2hf44dtpEeOBxdZ1QJfccw" fontColor="4210752" fontName="Segoe UI" fontHeight="10" lineColor="8421504"/>
-    <element xmi:type="ecore:EClass" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ActivityEdge"/>
+    <element xmi:type="ecore:EClass" href="platform:/resource/org.muml.storydiagram/model/storydiagrams.ecore#//activities/ActivityEdge"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_2hf44ttpEeOBxdZ1QJfccw" x="655" y="275"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_2hf4_NtpEeOBxdZ1QJfccw" type="1001">
@@ -198,7 +198,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_2hyz79tpEeOBxdZ1QJfccw"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_2hyz5dtpEeOBxdZ1QJfccw" fontColor="4210752" fontName="Segoe UI" fontHeight="10" lineColor="8421504"/>
-    <element xmi:type="ecore:EClass" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/JunctionNode"/>
+    <element xmi:type="ecore:EClass" href="platform:/resource/org.muml.storydiagram/model/storydiagrams.ecore#//activities/JunctionNode"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_2hyz5ttpEeOBxdZ1QJfccw" x="160" y="550" width="137"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_2hyz8ttpEeOBxdZ1QJfccw" type="1001">
@@ -217,7 +217,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_2hyz_dtpEeOBxdZ1QJfccw"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_2hyz89tpEeOBxdZ1QJfccw" fontColor="4210752" fontName="Segoe UI" fontHeight="10" lineColor="8421504"/>
-    <element xmi:type="ecore:EClass" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/InitialNode"/>
+    <element xmi:type="ecore:EClass" href="platform:/resource/org.muml.storydiagram/model/storydiagrams.ecore#//activities/InitialNode"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_2hyz9NtpEeOBxdZ1QJfccw" x="330" y="550" width="127"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_2hy0ANtpEeOBxdZ1QJfccw" type="1001">
@@ -236,7 +236,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_2hy0C9tpEeOBxdZ1QJfccw"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_2hy0AdtpEeOBxdZ1QJfccw" fontColor="4210752" fontName="Segoe UI" fontHeight="10" lineColor="8421504"/>
-    <element xmi:type="ecore:EClass" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/StatementNode"/>
+    <element xmi:type="ecore:EClass" href="platform:/resource/org.muml.storydiagram/model/storydiagrams.ecore#//activities/StatementNode"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_2hy0AttpEeOBxdZ1QJfccw" x="240" y="485" width="142"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_2hy0DttpEeOBxdZ1QJfccw" type="1001">
@@ -255,7 +255,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_2hy0GdtpEeOBxdZ1QJfccw"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_2hy0D9tpEeOBxdZ1QJfccw" fontColor="4210752" fontName="Segoe UI" fontHeight="10" lineColor="8421504"/>
-    <element xmi:type="ecore:EClass" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ActivityFinalNode"/>
+    <element xmi:type="ecore:EClass" href="platform:/resource/org.muml.storydiagram/model/storydiagrams.ecore#//activities/ActivityFinalNode"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_2hy0ENtpEeOBxdZ1QJfccw" x="415" y="480" width="161"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_44pWcNtpEeOBxdZ1QJfccw" type="1001">
@@ -312,7 +312,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_44zHlttpEeOBxdZ1QJfccw"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_44zHjNtpEeOBxdZ1QJfccw" fontColor="4210752" fontName="Segoe UI" fontHeight="10" lineColor="8421504"/>
-    <element xmi:type="ecore:EClass" href="platform:/resource/de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.ecore#//TriggerEmbeddedComponentExpression"/>
+    <element xmi:type="ecore:EClass" href="platform:/resource/org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.ecore#//TriggerEmbeddedComponentExpression"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_44zHjdtpEeOBxdZ1QJfccw" x="595" y="525" width="263"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_EG7MwNtqEeOBxdZ1QJfccw" type="1001">
@@ -350,7 +350,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_EG7M2dtqEeOBxdZ1QJfccw"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_EG7Mz9tqEeOBxdZ1QJfccw" fontColor="4210752" fontName="Segoe UI" fontHeight="10" lineColor="8421504"/>
-    <element xmi:type="ecore:EClass" href="platform:/resource/de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.ecore#//ComponentPartVariable"/>
+    <element xmi:type="ecore:EClass" href="platform:/resource/org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.ecore#//ComponentPartVariable"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EG7M0NtqEeOBxdZ1QJfccw" x="570" y="640" width="203"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_3kLBYNtqEeOBxdZ1QJfccw" type="1005">
@@ -364,7 +364,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_3kUyZNtqEeOBxdZ1QJfccw"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_3kLBYdtqEeOBxdZ1QJfccw" fontColor="4210752" fontName="Segoe UI" fontHeight="10" lineColor="8421504"/>
-    <element xmi:type="ecore:EEnum" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/EdgeGuard"/>
+    <element xmi:type="ecore:EEnum" href="platform:/resource/org.muml.storydiagram/model/storydiagrams.ecore#//activities/EdgeGuard"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3kLBYttqEeOBxdZ1QJfccw" x="285" y="635" width="126"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_xk6DEdtpEeOBxdZ1QJfccw"/>
@@ -422,7 +422,7 @@
     </children>
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_2iPfwdtpEeOBxdZ1QJfccw" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_2iPfwttpEeOBxdZ1QJfccw" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
-    <element xmi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ActivityNode/outgoing"/>
+    <element xmi:type="ecore:EReference" href="platform:/resource/org.muml.storydiagram/model/storydiagrams.ecore#//activities/ActivityNode/outgoing"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_2iPfw9tpEeOBxdZ1QJfccw" points="[7, 0, -389, 21]$[326, -18, -70, 3]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_843OINtqEeOBxdZ1QJfccw" id="(0.9606741573033708,0.2)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_843OIdtqEeOBxdZ1QJfccw" id="(0.02097902097902098,0.16176470588235295)"/>
@@ -436,7 +436,7 @@
     </children>
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_2iPfydtpEeOBxdZ1QJfccw" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_2iPfyttpEeOBxdZ1QJfccw" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
-    <element xmi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ActivityNode/owningActivity"/>
+    <element xmi:type="ecore:EReference" href="platform:/resource/org.muml.storydiagram/model/storydiagrams.ecore#//activities/ActivityNode/owningActivity"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_2iPfy9tpEeOBxdZ1QJfccw" points="[0, 0, -161, 77]$[29, -95, -132, -18]$[129, -82, -32, -5]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_nZwBMttqEeOBxdZ1QJfccw" id="(0.5694444444444444,0.05)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_nZwBM9tqEeOBxdZ1QJfccw" id="(0.0392156862745098,0.6166666666666667)"/>
@@ -450,7 +450,7 @@
     </children>
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_2iPf2dtpEeOBxdZ1QJfccw" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_2iPf2ttpEeOBxdZ1QJfccw" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
-    <element xmi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ActivityNode/incoming"/>
+    <element xmi:type="ecore:EReference" href="platform:/resource/org.muml.storydiagram/model/storydiagrams.ecore#//activities/ActivityNode/incoming"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_2iPf29tpEeOBxdZ1QJfccw" points="[0, 0, 0, -119]$[0, 119, 0, 0]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_9u3pENtqEeOBxdZ1QJfccw" id="(0.9831460674157303,0.7666666666666667)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_9u3pEdtqEeOBxdZ1QJfccw" id="(0.0,0.7205882352941176)"/>
@@ -472,7 +472,7 @@
     </children>
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_2iPf6dtpEeOBxdZ1QJfccw" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_2iPf6ttpEeOBxdZ1QJfccw" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
-    <element xmi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ActivityEdge/target"/>
+    <element xmi:type="ecore:EReference" href="platform:/resource/org.muml.storydiagram/model/storydiagrams.ecore#//activities/ActivityEdge/target"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_2iPf69tpEeOBxdZ1QJfccw" points="[0, 0, 0, 119]$[0, -119, 0, 0]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_UijY0NwGEeOwkrhJ0LsHsw" id="(0.0,0.7205882352941176)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_UijY0dwGEeOwkrhJ0LsHsw" id="(0.9831460674157303,0.7666666666666667)"/>
@@ -486,7 +486,7 @@
     </children>
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_2iPf8dtpEeOBxdZ1QJfccw" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_2iPf8ttpEeOBxdZ1QJfccw" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
-    <element xmi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ActivityEdge/source"/>
+    <element xmi:type="ecore:EReference" href="platform:/resource/org.muml.storydiagram/model/storydiagrams.ecore#//activities/ActivityEdge/source"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_2iPf89tpEeOBxdZ1QJfccw" points="[-70, 3, 326, -18]$[-389, 21, 7, 0]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_VD4kQNwGEeOwkrhJ0LsHsw" id="(0.02097902097902098,0.16176470588235295)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_VD4kQdwGEeOwkrhJ0LsHsw" id="(0.9606741573033708,0.2)"/>
@@ -500,7 +500,7 @@
     </children>
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_2iPf-dtpEeOBxdZ1QJfccw" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_2iPf-ttpEeOBxdZ1QJfccw" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
-    <element xmi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/Activity/ownedActivityNode"/>
+    <element xmi:type="ecore:EReference" href="platform:/resource/org.muml.storydiagram/model/storydiagrams.ecore#//activities/Activity/ownedActivityNode"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_2iPf-9tpEeOBxdZ1QJfccw" points="[-32, -5, 129, -82]$[-132, -18, 29, -95]$[-161, 77, 0, 0]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_jwXDMNtrEeOBxdZ1QJfccw" id="(0.0392156862745098,0.6166666666666667)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_jwXDMdtrEeOBxdZ1QJfccw" id="(0.5694444444444444,0.05)"/>
@@ -590,7 +590,7 @@
     </children>
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_6gVtAdtpEeOBxdZ1QJfccw" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_6gVtAttpEeOBxdZ1QJfccw" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
-    <element xmi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ActivityEdge/owningActivity"/>
+    <element xmi:type="ecore:EReference" href="platform:/resource/org.muml.storydiagram/model/storydiagrams.ecore#//activities/ActivityEdge/owningActivity"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_6gVtA9tpEeOBxdZ1QJfccw" points="[-7, 0, 237, 89]$[-7, -89, 237, 0]$[-237, -89, 7, 0]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_vIRzIttqEeOBxdZ1QJfccw" id="(0.6223776223776224,0.0)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_vIRzI9tqEeOBxdZ1QJfccw" id="(0.9313725490196079,0.6333333333333333)"/>
@@ -604,7 +604,7 @@
     </children>
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_6gVtJdtpEeOBxdZ1QJfccw" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_6gVtJttpEeOBxdZ1QJfccw" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
-    <element xmi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/Activity/ownedActivityEdge"/>
+    <element xmi:type="ecore:EReference" href="platform:/resource/org.muml.storydiagram/model/storydiagrams.ecore#//activities/Activity/ownedActivityEdge"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_6gVtJ9tpEeOBxdZ1QJfccw" points="[7, 0, -237, -89]$[237, 0, -7, -89]$[237, 89, -7, 0]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_nZwBQNtqEeOBxdZ1QJfccw" id="(0.9313725490196079,0.6333333333333333)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_nZwBQdtqEeOBxdZ1QJfccw" id="(0.6223776223776224,0.0)"/>
@@ -626,7 +626,7 @@
     </children>
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_EHE9xdtqEeOBxdZ1QJfccw" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_EHE9xttqEeOBxdZ1QJfccw" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
-    <element xmi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.ecore#//ComponentPartVariable/triggerEmbeddedComponentExpressions"/>
+    <element xmi:type="ecore:EReference" href="platform:/resource/org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.ecore#//ComponentPartVariable/triggerEmbeddedComponentExpressions"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_EHE9x9tqEeOBxdZ1QJfccw" points="[0, 0, -96, 60]$[96, -60, 0, 0]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_EHX4sNtqEeOBxdZ1QJfccw" id="(0.7438423645320197,0.0)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_EHX4sdtqEeOBxdZ1QJfccw" id="(0.46387832699619774,0.8833333333333333)"/>
@@ -640,7 +640,7 @@
     </children>
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_nZKLUdtqEeOBxdZ1QJfccw" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_nZKLUttqEeOBxdZ1QJfccw" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
-    <element xmi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ActivityEdge/guardExpression"/>
+    <element xmi:type="ecore:EReference" href="platform:/resource/org.muml.storydiagram/model/storydiagrams.ecore#//activities/ActivityEdge/guardExpression"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_nZKLU9tqEeOBxdZ1QJfccw" points="[-14, 34, 52, -132]$[-43, 108, 23, -58]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_nZm3QNtqEeOBxdZ1QJfccw" id="(0.5734265734265734,0.9705882352941176)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_nZm3QdtqEeOBxdZ1QJfccw" id="(0.4954954954954955,1.0)"/>

@@ -19,10 +19,10 @@ import org.muml.modelica.transform.TransformationRootObject;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.modelica.transform.impl.TransformationRootObjectImpl#getEObject <em>EObject</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

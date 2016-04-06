@@ -25,10 +25,10 @@ import org.muml.verification.core.runtime.RuntimePackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.verification.core.runtime.impl.RuntimeConnectorInstanceImpl#getTransientMessages <em>Transient Messages</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

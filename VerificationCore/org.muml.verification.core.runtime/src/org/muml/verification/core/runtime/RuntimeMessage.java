@@ -17,11 +17,11 @@ import org.muml.pim.msgtype.MessageType;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.verification.core.runtime.RuntimeMessage#getParameters <em>Parameters</em>}</li>
  *   <li>{@link org.muml.verification.core.runtime.RuntimeMessage#getType <em>Type</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.verification.core.runtime.RuntimePackage#getRuntimeMessage()
  * @model

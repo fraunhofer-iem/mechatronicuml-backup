@@ -38,7 +38,7 @@ public class PatternsValidator extends EObjectValidator {
 	 * @see org.eclipse.emf.common.util.Diagnostic#getCode()
 	 * @generated
 	 */
-	public static final String DIAGNOSTIC_SOURCE = "org.storydriven.storydiagrams.patterns";
+	public static final String DIAGNOSTIC_SOURCE = "org.muml.storydiagram.patterns";
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'No Modifier In Matching Pattern' of 'Matching Pattern'.
@@ -82,7 +82,7 @@ public class PatternsValidator extends EObjectValidator {
 	 */
 	@Override
 	protected EPackage getEPackage() {
-		return PatternsPackage.eINSTANCE;
+	  return PatternsPackage.eINSTANCE;
 	}
 
 	/**
@@ -95,59 +95,44 @@ public class PatternsValidator extends EObjectValidator {
 	protected boolean validate(int classifierID, Object value,
 			DiagnosticChain diagnostics, Map<Object, Object> context) {
 		switch (classifierID) {
-		case PatternsPackage.OBJECT_VARIABLE:
-			return validateObjectVariable((ObjectVariable) value, diagnostics,
-					context);
-		case PatternsPackage.ABSTRACT_VARIABLE:
-			return validateAbstractVariable((AbstractVariable) value,
-					diagnostics, context);
-		case PatternsPackage.CONSTRAINT:
-			return validateConstraint((Constraint) value, diagnostics, context);
-		case PatternsPackage.ABSTRACT_LINK_VARIABLE:
-			return validateAbstractLinkVariable((AbstractLinkVariable) value,
-					diagnostics, context);
-		case PatternsPackage.LINK_CONSTRAINT:
-			return validateLinkConstraint((LinkConstraint) value, diagnostics,
-					context);
-		case PatternsPackage.ATTRIBUTE_ASSIGNMENT:
-			return validateAttributeAssignment((AttributeAssignment) value,
-					diagnostics, context);
-		case PatternsPackage.COLLECTION_VARIABLE:
-			return validateCollectionVariable((CollectionVariable) value,
-					diagnostics, context);
-		case PatternsPackage.PRIMITIVE_VARIABLE:
-			return validatePrimitiveVariable((PrimitiveVariable) value,
-					diagnostics, context);
-		case PatternsPackage.PATH:
-			return validatePath((Path) value, diagnostics, context);
-		case PatternsPackage.LINK_VARIABLE:
-			return validateLinkVariable((LinkVariable) value, diagnostics,
-					context);
-		case PatternsPackage.INCLUSION_LINK:
-			return validateInclusionLink((InclusionLink) value, diagnostics,
-					context);
-		case PatternsPackage.MATCHING_PATTERN:
-			return validateMatchingPattern((MatchingPattern) value,
-					diagnostics, context);
-		case PatternsPackage.MAYBE_LINK:
-			return validateMaybeLink((MaybeLink) value, diagnostics, context);
-		case PatternsPackage.STORY_PATTERN:
-			return validateStoryPattern((StoryPattern) value, diagnostics,
-					context);
-		case PatternsPackage.BINDING_STATE:
-			return validateBindingState((BindingState) value, diagnostics,
-					context);
-		case PatternsPackage.BINDING_SEMANTICS:
-			return validateBindingSemantics((BindingSemantics) value,
-					diagnostics, context);
-		case PatternsPackage.BINDING_OPERATOR:
-			return validateBindingOperator((BindingOperator) value,
-					diagnostics, context);
-		case PatternsPackage.LINK_CONSTRAINT_TYPE:
-			return validateLinkConstraintType((LinkConstraintType) value,
-					diagnostics, context);
-		default:
-			return true;
+			case PatternsPackage.OBJECT_VARIABLE:
+				return validateObjectVariable((ObjectVariable)value, diagnostics, context);
+			case PatternsPackage.ABSTRACT_VARIABLE:
+				return validateAbstractVariable((AbstractVariable)value, diagnostics, context);
+			case PatternsPackage.CONSTRAINT:
+				return validateConstraint((Constraint)value, diagnostics, context);
+			case PatternsPackage.ABSTRACT_LINK_VARIABLE:
+				return validateAbstractLinkVariable((AbstractLinkVariable)value, diagnostics, context);
+			case PatternsPackage.LINK_CONSTRAINT:
+				return validateLinkConstraint((LinkConstraint)value, diagnostics, context);
+			case PatternsPackage.ATTRIBUTE_ASSIGNMENT:
+				return validateAttributeAssignment((AttributeAssignment)value, diagnostics, context);
+			case PatternsPackage.COLLECTION_VARIABLE:
+				return validateCollectionVariable((CollectionVariable)value, diagnostics, context);
+			case PatternsPackage.PRIMITIVE_VARIABLE:
+				return validatePrimitiveVariable((PrimitiveVariable)value, diagnostics, context);
+			case PatternsPackage.PATH:
+				return validatePath((Path)value, diagnostics, context);
+			case PatternsPackage.LINK_VARIABLE:
+				return validateLinkVariable((LinkVariable)value, diagnostics, context);
+			case PatternsPackage.INCLUSION_LINK:
+				return validateInclusionLink((InclusionLink)value, diagnostics, context);
+			case PatternsPackage.MATCHING_PATTERN:
+				return validateMatchingPattern((MatchingPattern)value, diagnostics, context);
+			case PatternsPackage.MAYBE_LINK:
+				return validateMaybeLink((MaybeLink)value, diagnostics, context);
+			case PatternsPackage.STORY_PATTERN:
+				return validateStoryPattern((StoryPattern)value, diagnostics, context);
+			case PatternsPackage.BINDING_STATE:
+				return validateBindingState((BindingState)value, diagnostics, context);
+			case PatternsPackage.BINDING_SEMANTICS:
+				return validateBindingSemantics((BindingSemantics)value, diagnostics, context);
+			case PatternsPackage.BINDING_OPERATOR:
+				return validateBindingOperator((BindingOperator)value, diagnostics, context);
+			case PatternsPackage.LINK_CONSTRAINT_TYPE:
+				return validateLinkConstraintType((LinkConstraintType)value, diagnostics, context);
+			default:
+				return true;
 		}
 	}
 
@@ -158,8 +143,7 @@ public class PatternsValidator extends EObjectValidator {
 	 */
 	public boolean validateObjectVariable(ObjectVariable objectVariable,
 			DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(objectVariable, diagnostics,
-				context);
+		return validate_EveryDefaultConstraint(objectVariable, diagnostics, context);
 	}
 
 	/**
@@ -169,8 +153,7 @@ public class PatternsValidator extends EObjectValidator {
 	 */
 	public boolean validateAbstractVariable(AbstractVariable abstractVariable,
 			DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(abstractVariable, diagnostics,
-				context);
+		return validate_EveryDefaultConstraint(abstractVariable, diagnostics, context);
 	}
 
 	/**
@@ -191,8 +174,7 @@ public class PatternsValidator extends EObjectValidator {
 	public boolean validateAbstractLinkVariable(
 			AbstractLinkVariable abstractLinkVariable,
 			DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(abstractLinkVariable,
-				diagnostics, context);
+		return validate_EveryDefaultConstraint(abstractLinkVariable, diagnostics, context);
 	}
 
 	/**
@@ -202,8 +184,7 @@ public class PatternsValidator extends EObjectValidator {
 	 */
 	public boolean validateLinkConstraint(LinkConstraint linkConstraint,
 			DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(linkConstraint, diagnostics,
-				context);
+		return validate_EveryDefaultConstraint(linkConstraint, diagnostics, context);
 	}
 
 	/**
@@ -214,8 +195,7 @@ public class PatternsValidator extends EObjectValidator {
 	public boolean validateAttributeAssignment(
 			AttributeAssignment attributeAssignment,
 			DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(attributeAssignment,
-				diagnostics, context);
+		return validate_EveryDefaultConstraint(attributeAssignment, diagnostics, context);
 	}
 
 	/**
@@ -226,8 +206,7 @@ public class PatternsValidator extends EObjectValidator {
 	public boolean validateCollectionVariable(
 			CollectionVariable collectionVariable, DiagnosticChain diagnostics,
 			Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(collectionVariable, diagnostics,
-				context);
+		return validate_EveryDefaultConstraint(collectionVariable, diagnostics, context);
 	}
 
 	/**
@@ -238,8 +217,7 @@ public class PatternsValidator extends EObjectValidator {
 	public boolean validatePrimitiveVariable(
 			PrimitiveVariable primitiveVariable, DiagnosticChain diagnostics,
 			Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(primitiveVariable, diagnostics,
-				context);
+		return validate_EveryDefaultConstraint(primitiveVariable, diagnostics, context);
 	}
 
 	/**
@@ -259,8 +237,7 @@ public class PatternsValidator extends EObjectValidator {
 	 */
 	public boolean validateLinkVariable(LinkVariable linkVariable,
 			DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(linkVariable, diagnostics,
-				context);
+		return validate_EveryDefaultConstraint(linkVariable, diagnostics, context);
 	}
 
 	/**
@@ -270,8 +247,7 @@ public class PatternsValidator extends EObjectValidator {
 	 */
 	public boolean validateInclusionLink(InclusionLink inclusionLink,
 			DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(inclusionLink, diagnostics,
-				context);
+		return validate_EveryDefaultConstraint(inclusionLink, diagnostics, context);
 	}
 
 	/**
@@ -281,34 +257,16 @@ public class PatternsValidator extends EObjectValidator {
 	 */
 	public boolean validateMatchingPattern(MatchingPattern matchingPattern,
 			DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(matchingPattern, diagnostics,
-				context))
-			return false;
-		boolean result = validate_EveryMultiplicityConforms(matchingPattern,
-				diagnostics, context);
-		if (result || diagnostics != null)
-			result &= validate_EveryDataValueConforms(matchingPattern,
-					diagnostics, context);
-		if (result || diagnostics != null)
-			result &= validate_EveryReferenceIsContained(matchingPattern,
-					diagnostics, context);
-		if (result || diagnostics != null)
-			result &= validate_EveryBidirectionalReferenceIsPaired(
-					matchingPattern, diagnostics, context);
-		if (result || diagnostics != null)
-			result &= validate_EveryProxyResolves(matchingPattern, diagnostics,
-					context);
-		if (result || diagnostics != null)
-			result &= validate_UniqueID(matchingPattern, diagnostics, context);
-		if (result || diagnostics != null)
-			result &= validate_EveryKeyUnique(matchingPattern, diagnostics,
-					context);
-		if (result || diagnostics != null)
-			result &= validate_EveryMapEntryUnique(matchingPattern,
-					diagnostics, context);
-		if (result || diagnostics != null)
-			result &= validateMatchingPattern_NoModifierInMatchingPattern(
-					matchingPattern, diagnostics, context);
+		if (!validate_NoCircularContainment(matchingPattern, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(matchingPattern, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(matchingPattern, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(matchingPattern, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(matchingPattern, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(matchingPattern, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(matchingPattern, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(matchingPattern, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(matchingPattern, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMatchingPattern_NoModifierInMatchingPattern(matchingPattern, diagnostics, context);
 		return result;
 	}
 
@@ -321,8 +279,7 @@ public class PatternsValidator extends EObjectValidator {
 	public boolean validateMatchingPattern_NoModifierInMatchingPattern(
 			MatchingPattern matchingPattern, DiagnosticChain diagnostics,
 			Map<Object, Object> context) {
-		return matchingPattern
-				.NoModifierInMatchingPattern(diagnostics, context);
+		return matchingPattern.NoModifierInMatchingPattern(diagnostics, context);
 	}
 
 	/**
@@ -332,8 +289,7 @@ public class PatternsValidator extends EObjectValidator {
 	 */
 	public boolean validateStoryPattern(StoryPattern storyPattern,
 			DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(storyPattern, diagnostics,
-				context);
+		return validate_EveryDefaultConstraint(storyPattern, diagnostics, context);
 	}
 
 	/**

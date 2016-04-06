@@ -41,8 +41,8 @@
   <extension point="org.eclipse.ui.views.properties.tabbed.propertySections"> 
       <propertySections contributorId="org.muml.ape.contributor">
           <propertySection
-            class="de.uni_paderborn.fujaba.properties.runtime.sections.ObjectPropertySection"
-            filter="org.muml.reconfiguration.componentstorydiagram.properties.tabs.ConstraintTabElementFilter"
+            class="org.muml.ape.runtime.sections.ObjectPropertySection"
+            filter="org.muml.reconfiguration.componentstorydiagram.properties.tabs.Property_tab_constraintTabElementFilter"
             id="property.tab.constraint"
             tab="property.tab.constraint">
              <input
@@ -60,22 +60,22 @@
     
        <propertyEditor
              factory="org.muml.reconfiguration.componentstorydiagram.properties.componentstorydiagram.editor.ComponentStoryRuleEditor$Factory"
-             type="http://www.fujaba.de/muml/componentstorydiagram/0.4.0#ComponentStoryRule">
+             type="http://www.muml.org/reconfiguration/componentstorydiagram/1.0.0#ComponentStoryRule">
        </propertyEditor>
     
        <propertyEditor
              factory="org.muml.reconfiguration.componentstorydiagram.properties.componentstorydiagram.editor.ComponentStoryNodeEditor$Factory"
-             type="http://www.fujaba.de/muml/componentstorydiagram/0.4.0#ComponentStoryNode">
+             type="http://www.muml.org/reconfiguration/componentstorydiagram/1.0.0#ComponentStoryNode">
        </propertyEditor>
     
        <propertyEditor
              factory="org.muml.reconfiguration.componentstorydiagram.properties.componentstorydiagram.editor.ControllerExchangeNodeEditor$Factory"
-             type="http://www.fujaba.de/muml/componentstorydiagram/0.4.0#ControllerExchangeNode">
+             type="http://www.muml.org/reconfiguration/componentstorydiagram/1.0.0#ControllerExchangeNode">
        </propertyEditor>
     
        <propertyEditor
              factory="org.muml.reconfiguration.componentstorydiagram.properties.componentstorydiagram.editor.SendReconfigurationMessageExpressionEditor$Factory"
-             type="http://www.fujaba.de/muml/componentstorydiagram/0.4.0#SendReconfigurationMessageExpression">
+             type="http://www.muml.org/reconfiguration/componentstorydiagram/1.0.0#SendReconfigurationMessageExpression">
        </propertyEditor>
     
     </propertyEditors>

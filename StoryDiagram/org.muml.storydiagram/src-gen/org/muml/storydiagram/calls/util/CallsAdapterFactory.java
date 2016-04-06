@@ -60,7 +60,7 @@ public class CallsAdapterFactory extends AdapterFactoryImpl {
 			return true;
 		}
 		if (object instanceof EObject) {
-			return ((EObject) object).eClass().getEPackage() == modelPackage;
+			return ((EObject)object).eClass().getEPackage() == modelPackage;
 		}
 		return false;
 	}
@@ -72,61 +72,51 @@ public class CallsAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	protected CallsSwitch<Adapter> modelSwitch = new CallsSwitch<Adapter>() {
-		@Override
-		public Adapter caseInvocation(Invocation object) {
-			return createInvocationAdapter();
-		}
-
-		@Override
-		public Adapter caseParameterBinding(ParameterBinding object) {
-			return createParameterBindingAdapter();
-		}
-
-		@Override
-		public Adapter caseOpaqueCallable(OpaqueCallable object) {
-			return createOpaqueCallableAdapter();
-		}
-
-		@Override
-		public Adapter caseParameterExtension(ParameterExtension object) {
-			return createParameterExtensionAdapter();
-		}
-
-		@Override
-		public Adapter caseCallable(Callable object) {
-			return createCallableAdapter();
-		}
-
-		@Override
-		public Adapter caseExtendableElement(ExtendableElement object) {
-			return createExtendableElementAdapter();
-		}
-
-		@Override
-		public Adapter caseCommentableElement(CommentableElement object) {
-			return createCommentableElementAdapter();
-		}
-
-		@Override
-		public Adapter caseTypedElement(TypedElement object) {
-			return createTypedElementAdapter();
-		}
-
-		@Override
-		public Adapter caseVariable(Variable object) {
-			return createVariableAdapter();
-		}
-
-		@Override
-		public Adapter caseExtension(Extension object) {
-			return createExtensionAdapter();
-		}
-
-		@Override
-		public Adapter defaultCase(EObject object) {
-			return createEObjectAdapter();
-		}
-	};
+			@Override
+			public Adapter caseInvocation(Invocation object) {
+				return createInvocationAdapter();
+			}
+			@Override
+			public Adapter caseParameterBinding(ParameterBinding object) {
+				return createParameterBindingAdapter();
+			}
+			@Override
+			public Adapter caseOpaqueCallable(OpaqueCallable object) {
+				return createOpaqueCallableAdapter();
+			}
+			@Override
+			public Adapter caseParameterExtension(ParameterExtension object) {
+				return createParameterExtensionAdapter();
+			}
+			@Override
+			public Adapter caseCallable(Callable object) {
+				return createCallableAdapter();
+			}
+			@Override
+			public Adapter caseExtendableElement(ExtendableElement object) {
+				return createExtendableElementAdapter();
+			}
+			@Override
+			public Adapter caseCommentableElement(CommentableElement object) {
+				return createCommentableElementAdapter();
+			}
+			@Override
+			public Adapter caseTypedElement(TypedElement object) {
+				return createTypedElementAdapter();
+			}
+			@Override
+			public Adapter caseVariable(Variable object) {
+				return createVariableAdapter();
+			}
+			@Override
+			public Adapter caseExtension(Extension object) {
+				return createExtensionAdapter();
+			}
+			@Override
+			public Adapter defaultCase(EObject object) {
+				return createEObjectAdapter();
+			}
+		};
 
 	/**
 	 * Creates an adapter for the <code>target</code>.
@@ -138,7 +128,7 @@ public class CallsAdapterFactory extends AdapterFactoryImpl {
 	 */
 	@Override
 	public Adapter createAdapter(Notifier target) {
-		return modelSwitch.doSwitch((EObject) target);
+		return modelSwitch.doSwitch((EObject)target);
 	}
 
 	/**

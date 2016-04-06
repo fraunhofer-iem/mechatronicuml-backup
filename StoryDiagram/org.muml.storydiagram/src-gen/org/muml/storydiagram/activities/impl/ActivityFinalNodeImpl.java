@@ -26,12 +26,12 @@ import org.muml.storydiagram.activities.ActivityFinalNode;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.storydiagram.activities.impl.ActivityFinalNodeImpl#getReturnValue <em>Return Value</em>}</li>
  *   <li>{@link org.muml.storydiagram.activities.impl.ActivityFinalNodeImpl#getReturnValues <em>Return Values</em>}</li>
  *   <li>{@link org.muml.storydiagram.activities.impl.ActivityFinalNodeImpl#isSuccess <em>Success</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -93,8 +93,7 @@ public class ActivityFinalNodeImpl extends ActivityNodeImpl implements
 	 */
 	public Expression getReturnValue() {
 		Expression returnValue = basicGetReturnValue();
-		return returnValue != null && returnValue.eIsProxy() ? (Expression) eResolveProxy((InternalEObject) returnValue)
-				: returnValue;
+		return returnValue != null && returnValue.eIsProxy() ? (Expression)eResolveProxy((InternalEObject)returnValue) : returnValue;
 	}
 
 	/**
@@ -117,9 +116,7 @@ public class ActivityFinalNodeImpl extends ActivityNodeImpl implements
 	 */
 	public EList<Expression> getReturnValues() {
 		if (returnValues == null) {
-			returnValues = new EObjectContainmentEList.Resolving<Expression>(
-					Expression.class, this,
-					ActivitiesPackage.ACTIVITY_FINAL_NODE__RETURN_VALUES);
+			returnValues = new EObjectContainmentEList<Expression>(Expression.class, this, ActivitiesPackage.ACTIVITY_FINAL_NODE__RETURN_VALUES);
 		}
 		return returnValues;
 	}
@@ -142,9 +139,7 @@ public class ActivityFinalNodeImpl extends ActivityNodeImpl implements
 		boolean oldSuccess = success;
 		success = newSuccess;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					ActivitiesPackage.ACTIVITY_FINAL_NODE__SUCCESS, oldSuccess,
-					success));
+			eNotify(new ENotificationImpl(this, Notification.SET, ActivitiesPackage.ACTIVITY_FINAL_NODE__SUCCESS, oldSuccess, success));
 	}
 
 	/**
@@ -156,9 +151,8 @@ public class ActivityFinalNodeImpl extends ActivityNodeImpl implements
 	public NotificationChain eInverseRemove(InternalEObject otherEnd,
 			int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case ActivitiesPackage.ACTIVITY_FINAL_NODE__RETURN_VALUES:
-			return ((InternalEList<?>) getReturnValues()).basicRemove(otherEnd,
-					msgs);
+			case ActivitiesPackage.ACTIVITY_FINAL_NODE__RETURN_VALUES:
+				return ((InternalEList<?>)getReturnValues()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -171,14 +165,13 @@ public class ActivityFinalNodeImpl extends ActivityNodeImpl implements
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case ActivitiesPackage.ACTIVITY_FINAL_NODE__RETURN_VALUE:
-			if (resolve)
-				return getReturnValue();
-			return basicGetReturnValue();
-		case ActivitiesPackage.ACTIVITY_FINAL_NODE__RETURN_VALUES:
-			return getReturnValues();
-		case ActivitiesPackage.ACTIVITY_FINAL_NODE__SUCCESS:
-			return isSuccess();
+			case ActivitiesPackage.ACTIVITY_FINAL_NODE__RETURN_VALUE:
+				if (resolve) return getReturnValue();
+				return basicGetReturnValue();
+			case ActivitiesPackage.ACTIVITY_FINAL_NODE__RETURN_VALUES:
+				return getReturnValues();
+			case ActivitiesPackage.ACTIVITY_FINAL_NODE__SUCCESS:
+				return isSuccess();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -192,14 +185,13 @@ public class ActivityFinalNodeImpl extends ActivityNodeImpl implements
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case ActivitiesPackage.ACTIVITY_FINAL_NODE__RETURN_VALUES:
-			getReturnValues().clear();
-			getReturnValues().addAll(
-					(Collection<? extends Expression>) newValue);
-			return;
-		case ActivitiesPackage.ACTIVITY_FINAL_NODE__SUCCESS:
-			setSuccess((Boolean) newValue);
-			return;
+			case ActivitiesPackage.ACTIVITY_FINAL_NODE__RETURN_VALUES:
+				getReturnValues().clear();
+				getReturnValues().addAll((Collection<? extends Expression>)newValue);
+				return;
+			case ActivitiesPackage.ACTIVITY_FINAL_NODE__SUCCESS:
+				setSuccess((Boolean)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -212,12 +204,12 @@ public class ActivityFinalNodeImpl extends ActivityNodeImpl implements
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case ActivitiesPackage.ACTIVITY_FINAL_NODE__RETURN_VALUES:
-			getReturnValues().clear();
-			return;
-		case ActivitiesPackage.ACTIVITY_FINAL_NODE__SUCCESS:
-			setSuccess(SUCCESS_EDEFAULT);
-			return;
+			case ActivitiesPackage.ACTIVITY_FINAL_NODE__RETURN_VALUES:
+				getReturnValues().clear();
+				return;
+			case ActivitiesPackage.ACTIVITY_FINAL_NODE__SUCCESS:
+				setSuccess(SUCCESS_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -230,12 +222,12 @@ public class ActivityFinalNodeImpl extends ActivityNodeImpl implements
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case ActivitiesPackage.ACTIVITY_FINAL_NODE__RETURN_VALUE:
-			return basicGetReturnValue() != null;
-		case ActivitiesPackage.ACTIVITY_FINAL_NODE__RETURN_VALUES:
-			return returnValues != null && !returnValues.isEmpty();
-		case ActivitiesPackage.ACTIVITY_FINAL_NODE__SUCCESS:
-			return success != SUCCESS_EDEFAULT;
+			case ActivitiesPackage.ACTIVITY_FINAL_NODE__RETURN_VALUE:
+				return basicGetReturnValue() != null;
+			case ActivitiesPackage.ACTIVITY_FINAL_NODE__RETURN_VALUES:
+				return returnValues != null && !returnValues.isEmpty();
+			case ActivitiesPackage.ACTIVITY_FINAL_NODE__SUCCESS:
+				return success != SUCCESS_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -247,8 +239,7 @@ public class ActivityFinalNodeImpl extends ActivityNodeImpl implements
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy())
-			return super.toString();
+		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (success: ");

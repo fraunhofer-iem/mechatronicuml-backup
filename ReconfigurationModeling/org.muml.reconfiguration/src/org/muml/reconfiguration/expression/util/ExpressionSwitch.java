@@ -12,11 +12,12 @@ import org.eclipse.emf.ecore.util.Switch;
 import org.muml.core.CommentableElement;
 import org.muml.core.ExtendableElement;
 import org.muml.core.expressions.Expression;
+import org.muml.reconfiguration.expression.*;
+import org.storydriven.storydiagrams.calls.Invocation;
 import org.muml.reconfiguration.expression.ActivityCallExpression;
 import org.muml.reconfiguration.expression.EvaluateStructuralConditionExpression;
 import org.muml.reconfiguration.expression.ExpressionPackage;
 import org.muml.reconfiguration.expression.ReconfigurationRuleCallExpression;
-import org.muml.storydiagram.calls.Invocation;
 
 /**
  * <!-- begin-user-doc -->

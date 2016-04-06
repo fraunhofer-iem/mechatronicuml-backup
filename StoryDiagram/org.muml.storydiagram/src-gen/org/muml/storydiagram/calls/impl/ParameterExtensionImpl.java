@@ -30,13 +30,14 @@ import org.muml.storydiagram.impl.VariableImpl;
  * <!-- begin-user-doc --> An implementation of the model object '<em><b>Parameter Extension</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.storydiagram.calls.impl.ParameterExtensionImpl#getBase <em>Base</em>}</li>
+ *   <li>{@link org.muml.storydiagram.calls.impl.ParameterExtensionImpl#getModelBase <em>Model Base</em>}</li>
  *   <li>{@link org.muml.storydiagram.calls.impl.ParameterExtensionImpl#getOwningAnnotation <em>Owning Annotation</em>}</li>
  *   <li>{@link org.muml.storydiagram.calls.impl.ParameterExtensionImpl#getExtendableBase <em>Extendable Base</em>}</li>
  *   <li>{@link org.muml.storydiagram.calls.impl.ParameterExtensionImpl#getParameter <em>Parameter</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -64,7 +65,8 @@ public class ParameterExtensionImpl extends VariableImpl implements
 	 * @generated
 	 */
 	public EModelElement getModelBase() {
-		return getParameter();
+		EModelElement modelBase = basicGetModelBase();
+		return modelBase != null && modelBase.eIsProxy() ? (EModelElement)eResolveProxy((InternalEObject)modelBase) : modelBase;
 	}
 
 	/**
@@ -109,8 +111,7 @@ public class ParameterExtensionImpl extends VariableImpl implements
 	 */
 	public EAnnotation getOwningAnnotation() {
 		EAnnotation owningAnnotation = basicGetOwningAnnotation();
-		return owningAnnotation != null && owningAnnotation.eIsProxy() ? (EAnnotation) eResolveProxy((InternalEObject) owningAnnotation)
-				: owningAnnotation;
+		return owningAnnotation != null && owningAnnotation.eIsProxy() ? (EAnnotation)eResolveProxy((InternalEObject)owningAnnotation) : owningAnnotation;
 	}
 
 	/**
@@ -154,19 +155,8 @@ public class ParameterExtensionImpl extends VariableImpl implements
 	 * @generated
 	 */
 	public ExtendableElement getExtendableBase() {
-		if (eContainerFeatureID() != CallsPackage.PARAMETER_EXTENSION__EXTENDABLE_BASE)
-			return null;
-		return (ExtendableElement) eContainer();
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ExtendableElement basicGetExtendableBase() {
-		if (eContainerFeatureID() != CallsPackage.PARAMETER_EXTENSION__EXTENDABLE_BASE)
-			return null;
-		return (ExtendableElement) eInternalContainer();
+		if (eContainerFeatureID() != CallsPackage.PARAMETER_EXTENSION__EXTENDABLE_BASE) return null;
+		return (ExtendableElement)eInternalContainer();
 	}
 
 	/**
@@ -175,8 +165,7 @@ public class ParameterExtensionImpl extends VariableImpl implements
 	 */
 	public NotificationChain basicSetExtendableBase(
 			ExtendableElement newExtendableBase, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject) newExtendableBase,
-				CallsPackage.PARAMETER_EXTENSION__EXTENDABLE_BASE, msgs);
+		msgs = eBasicSetContainer((InternalEObject)newExtendableBase, CallsPackage.PARAMETER_EXTENSION__EXTENDABLE_BASE, msgs);
 		return msgs;
 	}
 
@@ -185,25 +174,19 @@ public class ParameterExtensionImpl extends VariableImpl implements
 	 * @generated
 	 */
 	public void setExtendableBase(ExtendableElement newExtendableBase) {
-		if (newExtendableBase != eInternalContainer()
-				|| (eContainerFeatureID() != CallsPackage.PARAMETER_EXTENSION__EXTENDABLE_BASE && newExtendableBase != null)) {
+		if (newExtendableBase != eInternalContainer() || (eContainerFeatureID() != CallsPackage.PARAMETER_EXTENSION__EXTENDABLE_BASE && newExtendableBase != null)) {
 			if (EcoreUtil.isAncestor(this, newExtendableBase))
-				throw new IllegalArgumentException(
-						"Recursive containment not allowed for " + toString());
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newExtendableBase != null)
-				msgs = ((InternalEObject) newExtendableBase).eInverseAdd(this,
-						CorePackage.EXTENDABLE_ELEMENT__EXTENSION,
-						ExtendableElement.class, msgs);
+				msgs = ((InternalEObject)newExtendableBase).eInverseAdd(this, CorePackage.EXTENDABLE_ELEMENT__EXTENSIONS, ExtendableElement.class, msgs);
 			msgs = basicSetExtendableBase(newExtendableBase, msgs);
-			if (msgs != null)
-				msgs.dispatch();
-		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					CallsPackage.PARAMETER_EXTENSION__EXTENDABLE_BASE,
-					newExtendableBase, newExtendableBase));
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CallsPackage.PARAMETER_EXTENSION__EXTENDABLE_BASE, newExtendableBase, newExtendableBase));
 	}
 
 	/**
@@ -256,10 +239,10 @@ public class ParameterExtensionImpl extends VariableImpl implements
 	public NotificationChain eInverseAdd(InternalEObject otherEnd,
 			int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case CallsPackage.PARAMETER_EXTENSION__EXTENDABLE_BASE:
-			if (eInternalContainer() != null)
-				msgs = eBasicRemoveFromContainer(msgs);
-			return basicSetExtendableBase((ExtendableElement) otherEnd, msgs);
+			case CallsPackage.PARAMETER_EXTENSION__EXTENDABLE_BASE:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetExtendableBase((ExtendableElement)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -272,8 +255,8 @@ public class ParameterExtensionImpl extends VariableImpl implements
 	public NotificationChain eInverseRemove(InternalEObject otherEnd,
 			int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case CallsPackage.PARAMETER_EXTENSION__EXTENDABLE_BASE:
-			return basicSetExtendableBase(null, msgs);
+			case CallsPackage.PARAMETER_EXTENSION__EXTENDABLE_BASE:
+				return basicSetExtendableBase(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -286,10 +269,8 @@ public class ParameterExtensionImpl extends VariableImpl implements
 	public NotificationChain eBasicRemoveFromContainerFeature(
 			NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
-		case CallsPackage.PARAMETER_EXTENSION__EXTENDABLE_BASE:
-			return eInternalContainer().eInverseRemove(this,
-					CorePackage.EXTENDABLE_ELEMENT__EXTENSION,
-					ExtendableElement.class, msgs);
+			case CallsPackage.PARAMETER_EXTENSION__EXTENDABLE_BASE:
+				return eInternalContainer().eInverseRemove(this, CorePackage.EXTENDABLE_ELEMENT__EXTENSIONS, ExtendableElement.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -301,24 +282,19 @@ public class ParameterExtensionImpl extends VariableImpl implements
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case CallsPackage.PARAMETER_EXTENSION__BASE:
-			if (resolve)
-				return getBase();
-			return basicGetBase();
-		case CallsPackage.PARAMETER_EXTENSION__MODEL_BASE:
-			if (resolve)
-				return getModelBase();
-			return basicGetModelBase();
-		case CallsPackage.PARAMETER_EXTENSION__OWNING_ANNOTATION:
-			if (resolve)
-				return getOwningAnnotation();
-			return basicGetOwningAnnotation();
-		case CallsPackage.PARAMETER_EXTENSION__EXTENDABLE_BASE:
-			if (resolve)
+			case CallsPackage.PARAMETER_EXTENSION__BASE:
+				if (resolve) return getBase();
+				return basicGetBase();
+			case CallsPackage.PARAMETER_EXTENSION__MODEL_BASE:
+				if (resolve) return getModelBase();
+				return basicGetModelBase();
+			case CallsPackage.PARAMETER_EXTENSION__OWNING_ANNOTATION:
+				if (resolve) return getOwningAnnotation();
+				return basicGetOwningAnnotation();
+			case CallsPackage.PARAMETER_EXTENSION__EXTENDABLE_BASE:
 				return getExtendableBase();
-			return basicGetExtendableBase();
-		case CallsPackage.PARAMETER_EXTENSION__PARAMETER:
-			return getParameter();
+			case CallsPackage.PARAMETER_EXTENSION__PARAMETER:
+				return getParameter();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -330,18 +306,18 @@ public class ParameterExtensionImpl extends VariableImpl implements
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case CallsPackage.PARAMETER_EXTENSION__MODEL_BASE:
-			setModelBase((EModelElement) newValue);
-			return;
-		case CallsPackage.PARAMETER_EXTENSION__OWNING_ANNOTATION:
-			setOwningAnnotation((EAnnotation) newValue);
-			return;
-		case CallsPackage.PARAMETER_EXTENSION__EXTENDABLE_BASE:
-			setExtendableBase((ExtendableElement) newValue);
-			return;
-		case CallsPackage.PARAMETER_EXTENSION__PARAMETER:
-			setParameter((EParameter) newValue);
-			return;
+			case CallsPackage.PARAMETER_EXTENSION__MODEL_BASE:
+				setModelBase((EModelElement)newValue);
+				return;
+			case CallsPackage.PARAMETER_EXTENSION__OWNING_ANNOTATION:
+				setOwningAnnotation((EAnnotation)newValue);
+				return;
+			case CallsPackage.PARAMETER_EXTENSION__EXTENDABLE_BASE:
+				setExtendableBase((ExtendableElement)newValue);
+				return;
+			case CallsPackage.PARAMETER_EXTENSION__PARAMETER:
+				setParameter((EParameter)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -353,18 +329,18 @@ public class ParameterExtensionImpl extends VariableImpl implements
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case CallsPackage.PARAMETER_EXTENSION__MODEL_BASE:
-			unsetModelBase();
-			return;
-		case CallsPackage.PARAMETER_EXTENSION__OWNING_ANNOTATION:
-			unsetOwningAnnotation();
-			return;
-		case CallsPackage.PARAMETER_EXTENSION__EXTENDABLE_BASE:
-			setExtendableBase((ExtendableElement) null);
-			return;
-		case CallsPackage.PARAMETER_EXTENSION__PARAMETER:
-			unsetParameter();
-			return;
+			case CallsPackage.PARAMETER_EXTENSION__MODEL_BASE:
+				unsetModelBase();
+				return;
+			case CallsPackage.PARAMETER_EXTENSION__OWNING_ANNOTATION:
+				unsetOwningAnnotation();
+				return;
+			case CallsPackage.PARAMETER_EXTENSION__EXTENDABLE_BASE:
+				setExtendableBase((ExtendableElement)null);
+				return;
+			case CallsPackage.PARAMETER_EXTENSION__PARAMETER:
+				unsetParameter();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -376,16 +352,16 @@ public class ParameterExtensionImpl extends VariableImpl implements
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case CallsPackage.PARAMETER_EXTENSION__BASE:
-			return isSetBase();
-		case CallsPackage.PARAMETER_EXTENSION__MODEL_BASE:
-			return isSetModelBase();
-		case CallsPackage.PARAMETER_EXTENSION__OWNING_ANNOTATION:
-			return isSetOwningAnnotation();
-		case CallsPackage.PARAMETER_EXTENSION__EXTENDABLE_BASE:
-			return basicGetExtendableBase() != null;
-		case CallsPackage.PARAMETER_EXTENSION__PARAMETER:
-			return isSetParameter();
+			case CallsPackage.PARAMETER_EXTENSION__BASE:
+				return basicGetBase() != null;
+			case CallsPackage.PARAMETER_EXTENSION__MODEL_BASE:
+				return isSetModelBase();
+			case CallsPackage.PARAMETER_EXTENSION__OWNING_ANNOTATION:
+				return isSetOwningAnnotation();
+			case CallsPackage.PARAMETER_EXTENSION__EXTENDABLE_BASE:
+				return getExtendableBase() != null;
+			case CallsPackage.PARAMETER_EXTENSION__PARAMETER:
+				return isSetParameter();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -398,16 +374,11 @@ public class ParameterExtensionImpl extends VariableImpl implements
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == Extension.class) {
 			switch (derivedFeatureID) {
-			case CallsPackage.PARAMETER_EXTENSION__BASE:
-				return CorePackage.EXTENSION__BASE;
-			case CallsPackage.PARAMETER_EXTENSION__MODEL_BASE:
-				return CorePackage.EXTENSION__MODEL_BASE;
-			case CallsPackage.PARAMETER_EXTENSION__OWNING_ANNOTATION:
-				return CorePackage.EXTENSION__OWNING_ANNOTATION;
-			case CallsPackage.PARAMETER_EXTENSION__EXTENDABLE_BASE:
-				return CorePackage.EXTENSION__EXTENDABLE_BASE;
-			default:
-				return -1;
+				case CallsPackage.PARAMETER_EXTENSION__BASE: return CorePackage.EXTENSION__BASE;
+				case CallsPackage.PARAMETER_EXTENSION__MODEL_BASE: return CorePackage.EXTENSION__MODEL_BASE;
+				case CallsPackage.PARAMETER_EXTENSION__OWNING_ANNOTATION: return CorePackage.EXTENSION__OWNING_ANNOTATION;
+				case CallsPackage.PARAMETER_EXTENSION__EXTENDABLE_BASE: return CorePackage.EXTENSION__EXTENDABLE_BASE;
+				default: return -1;
 			}
 		}
 		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
@@ -421,16 +392,11 @@ public class ParameterExtensionImpl extends VariableImpl implements
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
 		if (baseClass == Extension.class) {
 			switch (baseFeatureID) {
-			case CorePackage.EXTENSION__BASE:
-				return CallsPackage.PARAMETER_EXTENSION__BASE;
-			case CorePackage.EXTENSION__MODEL_BASE:
-				return CallsPackage.PARAMETER_EXTENSION__MODEL_BASE;
-			case CorePackage.EXTENSION__OWNING_ANNOTATION:
-				return CallsPackage.PARAMETER_EXTENSION__OWNING_ANNOTATION;
-			case CorePackage.EXTENSION__EXTENDABLE_BASE:
-				return CallsPackage.PARAMETER_EXTENSION__EXTENDABLE_BASE;
-			default:
-				return -1;
+				case CorePackage.EXTENSION__BASE: return CallsPackage.PARAMETER_EXTENSION__BASE;
+				case CorePackage.EXTENSION__MODEL_BASE: return CallsPackage.PARAMETER_EXTENSION__MODEL_BASE;
+				case CorePackage.EXTENSION__OWNING_ANNOTATION: return CallsPackage.PARAMETER_EXTENSION__OWNING_ANNOTATION;
+				case CorePackage.EXTENSION__EXTENDABLE_BASE: return CallsPackage.PARAMETER_EXTENSION__EXTENDABLE_BASE;
+				default: return -1;
 			}
 		}
 		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
@@ -442,8 +408,7 @@ public class ParameterExtensionImpl extends VariableImpl implements
 	 */
 	public EObject getBase() {
 		EObject base = basicGetBase();
-		return base != null && base.eIsProxy() ? eResolveProxy((InternalEObject) base)
-				: base;
+		return base != null && base.eIsProxy() ? eResolveProxy((InternalEObject)base) : base;
 	}
 
 	/**
@@ -451,14 +416,10 @@ public class ParameterExtensionImpl extends VariableImpl implements
 	 * @generated
 	 */
 	public EObject basicGetBase() {
-		if (isSetModelBase()) {
-			return basicGetModelBase();
-		}
-		ExtendableElement extendableBase = basicGetExtendableBase();
-		if (extendableBase != null) {
-			return extendableBase;
-		}
-		return null;
+		// TODO: implement this method to return the 'Base' reference
+		// -> do not perform proxy resolution
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
