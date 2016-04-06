@@ -6,11 +6,17 @@
   </reconciler>
   <genModel href="pim.genmodel#/"/>
   <referencedGenerators href="../../org.muml.core/model/core.propsheet#_i_I4kOHNEeS5Putgio2lkg"/>
-  <plugin xmi:id="_VZIdpMwbEeSjx7OWZCcdLw" id="de.uni_paderborn.fujaba.muml.edit.properties" name="MechatronicUML Tabbed Properties" vendor="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn" version="0.5.0.qualifier">
+  <plugin xmi:id="_VZIdpMwbEeSjx7OWZCcdLw" id="org.muml.pim.edit.properties" name="MechatronicUML Tabbed Properties" vendor="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn" version="1.0.0.qualifier">
     <requiredBundles>org.eclipse.emf.ecore</requiredBundles>
     <requiredBundles>org.eclipse.core.runtime</requiredBundles>
     <requiredBundles>org.eclipse.emf.edit</requiredBundles>
     <requiredBundles>org.eclipse.ui</requiredBundles>
+    <requiredBundles>org.muml.pim.edit</requiredBundles>
+    <requiredBundles>org.muml.ape.runtime</requiredBundles>
+    <requiredBundles>org.muml.pim</requiredBundles>
+    <requiredBundles>org.muml.core.edit</requiredBundles>
+    <requiredBundles>org.muml.pim.actionlanguage.xtext.ui</requiredBundles>
+    <requiredBundles>org.muml.core.edit.properties</requiredBundles>
   </plugin>
   <defaultTab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
   <tabs xmi:id="_VZJEsMwbEeSjx7OWZCcdLw" id="property.tab.constraint" name="Constraint" afterTab="property.tab.comment"/>
@@ -68,7 +74,7 @@
       <orderedElements xsi:type="org.muml:Property" xmi:id="_VZJrx8wbEeSjx7OWZCcdLw" tooltip="" reconcile="false">
         <genFeature href="pim.genmodel#//pim/valuetype/TimeValue/value"/>
         <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
-        <editor xsi:type="org.muml:CustomPropertyEditor" xmi:id="_VZJryMwbEeSjx7OWZCcdLw" fullyQualifiedClassName="de.uni_paderborn.fujaba.muml.ui.properties.XtextPropertyEditor"/>
+        <editor xsi:type="org.muml:CustomPropertyEditor" xmi:id="_VZJryMwbEeSjx7OWZCcdLw" fullyQualifiedClassName="org.muml.pim.actionlanguage.xtext.ui.properties.XtextPropertyEditor"/>
       </orderedElements>
       <orderedElements xsi:type="org.muml:Property" xmi:id="_VZJrycwbEeSjx7OWZCcdLw">
         <genFeature href="pim.genmodel#//pim/valuetype/TimeValue/unit"/>
@@ -202,7 +208,7 @@
       </orderedElements>
       <orderedElements xsi:type="org.muml:Property" xmi:id="_VZMIDcwbEeSjx7OWZCcdLw" tab="//@tabs.2" reconcile="false" initializeOCLExpression="">
         <genFeature href="pim.genmodel#//pim/realtimestatechart/Transition/guard"/>
-        <editor xsi:type="org.muml:CustomPropertyEditor" xmi:id="_VZMIDswbEeSjx7OWZCcdLw" fullyQualifiedClassName="de.uni_paderborn.fujaba.muml.ui.properties.XtextPropertyEditor"/>
+        <editor xsi:type="org.muml:CustomPropertyEditor" xmi:id="_VZMIDswbEeSjx7OWZCcdLw" fullyQualifiedClassName="org.muml.pim.actionlanguage.xtext.ui.properties.XtextPropertyEditor"/>
       </orderedElements>
       <orderedElements xsi:type="org.muml:Property" tab="//@tabs.2" initializeOCLExpression="">
         <genFeature href="pim.genmodel#//pim/realtimestatechart/Transition/events"/>
@@ -286,7 +292,7 @@
       <orderedElements xsi:type="org.muml:Property" xmi:id="_VZMvHMwbEeSjx7OWZCcdLw" tooltip="" reconcile="false" initializeOCLExpression="">
         <genFeature href="pim.genmodel#//pim/realtimestatechart/Action/expressions"/>
         <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
-        <editor xsi:type="org.muml:CustomPropertyEditor" xmi:id="_VZMvHcwbEeSjx7OWZCcdLw" fullyQualifiedClassName="de.uni_paderborn.fujaba.muml.ui.properties.XtextPropertyEditor"/>
+        <editor xsi:type="org.muml:CustomPropertyEditor" xmi:id="_VZMvHcwbEeSjx7OWZCcdLw" fullyQualifiedClassName="org.muml.pim.actionlanguage.xtext.ui.properties.XtextPropertyEditor"/>
       </orderedElements>
       <superClasses href="../../org.muml.core/model/core.propsheet#_i_QNU-HNEeS5Putgio2lkg"/>
     </classes>
@@ -360,7 +366,7 @@
       <orderedElements xsi:type="org.muml:Property" xmi:id="_VZN9NswbEeSjx7OWZCcdLw" reconcile="false">
         <genFeature href="pim.genmodel#//pim/realtimestatechart/Synchronization/selectorExpression"/>
         <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
-        <editor xsi:type="org.muml:CustomPropertyEditor" xmi:id="_VZN9N8wbEeSjx7OWZCcdLw" fullyQualifiedClassName="de.uni_paderborn.fujaba.muml.ui.properties.XtextPropertyEditor"/>
+        <editor xsi:type="org.muml:CustomPropertyEditor" xmi:id="_VZN9N8wbEeSjx7OWZCcdLw" fullyQualifiedClassName="org.muml.pim.actionlanguage.xtext.ui.properties.XtextPropertyEditor"/>
       </orderedElements>
       <superClasses href="../../org.muml.core/model/core.propsheet#_i_PmQuHNEeS5Putgio2lkg"/>
     </classes>
@@ -797,7 +803,7 @@
       <orderedElements xsi:type="org.muml:Property" xmi:id="_VZUD0MwbEeSjx7OWZCcdLw" reconcile="false">
         <genFeature href="pim.genmodel#//pim/behavior/Variable/initializeExpression"/>
         <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
-        <editor xsi:type="org.muml:CustomPropertyEditor" xmi:id="_VZUD0cwbEeSjx7OWZCcdLw" fullyQualifiedClassName="de.uni_paderborn.fujaba.muml.ui.properties.XtextPropertyEditor"/>
+        <editor xsi:type="org.muml:CustomPropertyEditor" xmi:id="_VZUD0cwbEeSjx7OWZCcdLw" fullyQualifiedClassName="org.muml.pim.actionlanguage.xtext.ui.properties.XtextPropertyEditor"/>
       </orderedElements>
       <orderedElements xsi:type="org.muml:Property" xmi:id="_VZUD0swbEeSjx7OWZCcdLw">
         <genFeature href="pim.genmodel#//pim/behavior/Variable/constant"/>
@@ -822,7 +828,7 @@
       <orderedElements xsi:type="org.muml:Property" xmi:id="_VZUD2MwbEeSjx7OWZCcdLw" tooltip="" reconcile="false">
         <genFeature href="pim.genmodel#//pim/behavior/Operation/implementations"/>
         <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
-        <editor xsi:type="org.muml:CustomPropertyEditor" xmi:id="_VZUD2cwbEeSjx7OWZCcdLw" fullyQualifiedClassName="de.uni_paderborn.fujaba.muml.ui.properties.XtextPropertyEditor"/>
+        <editor xsi:type="org.muml:CustomPropertyEditor" xmi:id="_VZUD2cwbEeSjx7OWZCcdLw" fullyQualifiedClassName="org.muml.pim.actionlanguage.xtext.ui.properties.XtextPropertyEditor"/>
       </orderedElements>
       <superClasses href="../../org.muml.core/model/core.propsheet#_i_QNU-HNEeS5Putgio2lkg"/>
       <superClasses href="../../org.muml.core/model/core.propsheet#_i_O_MeHNEeS5Putgio2lkg"/>
@@ -842,7 +848,7 @@
       <orderedElements xsi:type="org.muml:Property" xmi:id="_VZUq48wbEeSjx7OWZCcdLw" reconcile="false">
         <genFeature href="pim.genmodel#//pim/behavior/ParameterBinding/value"/>
         <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
-        <editor xsi:type="org.muml:CustomPropertyEditor" xmi:id="_VZUq5MwbEeSjx7OWZCcdLw" fullyQualifiedClassName="de.uni_paderborn.fujaba.muml.ui.properties.XtextPropertyEditor"/>
+        <editor xsi:type="org.muml:CustomPropertyEditor" xmi:id="_VZUq5MwbEeSjx7OWZCcdLw" fullyQualifiedClassName="org.muml.pim.actionlanguage.xtext.ui.properties.XtextPropertyEditor"/>
       </orderedElements>
       <superClasses href="../../org.muml.core/model/core.propsheet#_i_PmQuHNEeS5Putgio2lkg"/>
     </classes>
@@ -915,7 +921,7 @@
       <orderedElements xsi:type="org.muml:Property" xmi:id="_VZV5AcwbEeSjx7OWZCcdLw" reconcile="false">
         <genFeature href="pim.genmodel#//pim/component/ComponentPart/cardinality"/>
         <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
-        <editor xsi:type="org.muml:CustomPropertyEditor" xmi:id="_VZV5AswbEeSjx7OWZCcdLw" fullyQualifiedClassName="de.uni_paderborn.fujaba.muml.properties.valuetype.editor.CustomCardinalityPropertyEditor"/>
+        <editor xsi:type="org.muml:CustomPropertyEditor" xmi:id="_VZV5AswbEeSjx7OWZCcdLw" fullyQualifiedClassName="org.muml.pim.properties.valuetype.editor.CustomCardinalityPropertyEditor"/>
       </orderedElements>
       <orderedElements xsi:type="org.muml:Property" reconcile="false">
         <genFeature href="pim.genmodel#//pim/component/ComponentPart/portParts"/>
@@ -989,7 +995,7 @@
       <orderedElements xsi:type="org.muml:Property" xmi:id="_VZXHIcwbEeSjx7OWZCcdLw" reconcile="false">
         <genFeature href="pim.genmodel#//pim/component/DirectedTypedPort/initializeExpression"/>
         <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
-        <editor xsi:type="org.muml:CustomPropertyEditor" xmi:id="_VZXHIswbEeSjx7OWZCcdLw" fullyQualifiedClassName="de.uni_paderborn.fujaba.muml.ui.properties.XtextPropertyEditor"/>
+        <editor xsi:type="org.muml:CustomPropertyEditor" xmi:id="_VZXHIswbEeSjx7OWZCcdLw" fullyQualifiedClassName="org.muml.pim.actionlanguage.xtext.ui.properties.XtextPropertyEditor"/>
       </orderedElements>
       <orderedElements xsi:type="org.muml:Property" xmi:id="_VZWgHMwbEeSjx7OWZCcdLw">
         <genFeature href="pim.genmodel#//pim/component/DirectedTypedPort/kind"/>
@@ -1078,7 +1084,7 @@
       <orderedElements xsi:type="org.muml:Property" xmi:id="_VZYVR8wbEeSjx7OWZCcdLw" reconcile="false">
         <genFeature href="pim.genmodel#//pim/connector/DiscreteInteractionEndpoint/cardinality"/>
         <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
-        <editor xsi:type="org.muml:CustomPropertyEditor" xmi:id="_VZYVSMwbEeSjx7OWZCcdLw" fullyQualifiedClassName="de.uni_paderborn.fujaba.muml.properties.valuetype.editor.CustomCardinalityPropertyEditor"/>
+        <editor xsi:type="org.muml:CustomPropertyEditor" xmi:id="_VZYVSMwbEeSjx7OWZCcdLw" fullyQualifiedClassName="org.muml.pim.properties.valuetype.editor.CustomCardinalityPropertyEditor"/>
       </orderedElements>
       <orderedElements xsi:type="org.muml:Property" xmi:id="_VZYVScwbEeSjx7OWZCcdLw" tab="//@tabs.6">
         <genFeature href="pim.genmodel#//pim/connector/DiscreteInteractionEndpoint/receiverMessageBuffer"/>
@@ -1287,7 +1293,7 @@
       <genClass href="pim.genmodel#//pim/realtimestatechart/one_to_n_schemata/OneToManyCommunicationSchema"/>
       <orderedElements xsi:type="org.muml:Property" tab="//@tabs.2" reconcile="false" initializeOCLExpression="">
         <genFeature href="pim.genmodel#//pim/realtimestatechart/one_to_n_schemata/OneToManyCommunicationSchema/condition"/>
-        <editor xsi:type="org.muml:CustomPropertyEditor" fullyQualifiedClassName="de.uni_paderborn.fujaba.muml.ui.properties.XtextPropertyEditor"/>
+        <editor xsi:type="org.muml:CustomPropertyEditor" fullyQualifiedClassName="org.muml.pim.actionlanguage.xtext.ui.properties.XtextPropertyEditor"/>
       </orderedElements>
       <orderedElements xsi:type="org.muml:Property" tab="//@tabs.3">
         <genFeature href="pim.genmodel#//pim/realtimestatechart/one_to_n_schemata/OneToManyCommunicationSchema/action"/>
@@ -1308,7 +1314,7 @@
       <genClass href="pim.genmodel#//pim/realtimestatechart/one_to_n_schemata/Iterate"/>
       <orderedElements xsi:type="org.muml:Property" tab="//@tabs.2" reconcile="false" initializeOCLExpression="">
         <genFeature href="pim.genmodel#//pim/realtimestatechart/one_to_n_schemata/Iterate/terminationCondition"/>
-        <editor xsi:type="org.muml:CustomPropertyEditor" fullyQualifiedClassName="de.uni_paderborn.fujaba.muml.ui.properties.XtextPropertyEditor"/>
+        <editor xsi:type="org.muml:CustomPropertyEditor" fullyQualifiedClassName="org.muml.pim.actionlanguage.xtext.ui.properties.XtextPropertyEditor"/>
       </orderedElements>
       <orderedElements xsi:type="org.muml:Property" tab="//@tabs.3">
         <genFeature href="pim.genmodel#//pim/realtimestatechart/one_to_n_schemata/OneToManyCommunicationSchema/action"/>

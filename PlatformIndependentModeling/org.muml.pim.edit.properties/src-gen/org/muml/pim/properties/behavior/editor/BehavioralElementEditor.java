@@ -4,9 +4,7 @@ package org.muml.pim.properties.behavior.editor;
 /**
  * @generated
  */
-public abstract class BehavioralElementEditor
-		extends
-			org.muml.ape.runtime.editors.ClassPropertyEditor {
+public abstract class BehavioralElementEditor extends org.muml.ape.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated

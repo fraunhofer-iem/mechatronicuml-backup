@@ -3,16 +3,16 @@ import common.AllSchemataMappings;
 import CoordinatorBehaviorTemplate;
 
 modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
-modeltype rtsc uses muml::realtimestatechart('http://www.fujaba.de/muml/0.4.0');
-modeltype common uses core::expressions::common('http://www.storydriven.org/core/0.3.1');
-modeltype expressions uses core::expressions('http://www.storydriven.org/core/0.3.1');
-modeltype behavior uses muml::behavior('http://www.fujaba.de/muml/0.4.0');
-modeltype actionLanguage uses 'http://www.fujaba.de/muml/actionlanguage/0.4.0';
-modeltype valuetype uses muml::valuetype('http://www.fujaba.de/muml/0.4.0');
-modeltype protocol uses muml::protocol('http://www.fujaba.de/muml/0.4.0');
-modeltype storydriven uses 'http://www.storydriven.org/core/0.3.1';
-modeltype schemata uses muml::realtimestatechart::one_to_n_schemata('http://www.fujaba.de/muml/0.4.0');
-modeltype types uses muml::types('http://www.fujaba.de/muml/0.4.0');
+modeltype rtsc uses pim::realtimestatechart('http://www.muml.org/pim/1.0.0');
+modeltype common uses core::expressions::common('http://www.muml.org/core/1.0.0');
+modeltype expressions uses core::expressions('http://www.muml.org/core/1.0.0');
+modeltype behavior uses pim::behavior('http://www.muml.org/pim/1.0.0');
+modeltype actionLanguage uses 'http://www.muml.org/pim/actionlanguage/1.0.0';
+modeltype valuetype uses pim::valuetype('http://www.muml.org/pim/1.0.0');
+modeltype protocol uses pim::protocol('http://www.muml.org/pim/1.0.0');
+modeltype storydriven uses 'http://www.muml.org/core/1.0.0';
+modeltype schemata uses pim::realtimestatechart::one_to_n_schemata('http://www.muml.org/pim/1.0.0');
+modeltype types uses pim::types('http://www.muml.org/pim/1.0.0');
 
 ----------------------------------------------------------XXXXXXXXXXXXXXXXX--LOADBALANCING--XXXXXXXXXXXXXXXXX-------------------------------------------------------------------------
 property loadBalancing : String = "loadBalancing";
@@ -119,8 +119,8 @@ mapping Transition :: LoadBalancing2TransSendSyncFirstSubrole(context:OclAny, re
 		};
 		
 		// distinguish variants of LoadBalancing: maxWCET or responseMessage 
-		var lb : muml::realtimestatechart::one_to_n_schemata::LoadBalancing :=
-			self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(muml::realtimestatechart::one_to_n_schemata::LoadBalancing);
+		var lb : pim::realtimestatechart::one_to_n_schemata::LoadBalancing :=
+			self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(pim::realtimestatechart::one_to_n_schemata::LoadBalancing);
 		
 		if (not lb.responseMessage.oclIsUndefined()) {
 			action.name := action.name + freeForWorkName + ":= false";	
@@ -178,7 +178,7 @@ mapping Transition :: LoadBalancing2TransReceiveSyncLastSubrole(context:OclAny, 
 		guard := createComparisonExpressionForSelectorKind(PositionSelectorKind::LAST, ComparingOperator::EQUAL);
 		
 		if((not self.raiseMessageEvent.oclIsUndefined()) and (not self.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) 
-				and self.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::LoadBalancing) 
+				and self.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(pim::realtimestatechart::one_to_n_schemata::LoadBalancing) 
 				and (not self.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined())){			
 			
 			action := self. createActionWithVariableAssignmentBlock("loadBalancingPossible:=false", loadBalancingPossibleName, "false");
@@ -209,11 +209,11 @@ mapping Transition :: LoadBalancing2SourceEmbeddedRTSCSubrole(context:OclAny, re
 		
 		transitions += self.map LoadBalancing2TransitionFromIdleToCheck(context,region);
 					
-		if(not self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(muml::realtimestatechart::one_to_n_schemata::LoadBalancing).responseMessage.oclIsUndefined()) {
+		if(not self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(pim::realtimestatechart::one_to_n_schemata::LoadBalancing).responseMessage.oclIsUndefined()) {
 			transitions += self.map LoadBalancingResponseMessage2TransitionFromCheckToRequested1(context,region);
 			transitions += self.map LoadBalancingResponseMessage2TransitionFromCheckToRequested2(context,region);
 		};
-		if(not self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(muml::realtimestatechart::one_to_n_schemata::LoadBalancing).maxWorkingTime.oclIsUndefined()) {
+		if(not self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(pim::realtimestatechart::one_to_n_schemata::LoadBalancing).maxWorkingTime.oclIsUndefined()) {
 			transitions += self.map LoadBalancingMaxWorkingTime2TransitionFromCheck2Requested1(context,region);
 			transitions += self.map LoadBalancingMaxWorkingTime2TransitionFromCheck2Requested2(context,region);
 			transitions += self.map LoadBalancingMaxWorkingTime2TransitionFromCheck2Requested3(context,region);
@@ -292,7 +292,7 @@ mapping Transition :: LoadBalancingMaxWorkingTime2TransitionFromCheck2Requested2
 		
 		action := self.createActionWithVariableAssignmentBlock(taskPlannedName + ":= false;",taskPlannedName, "false");
 		
-		clockConstraints += new ClockConstraint(self.getLoadBalancingTaskMessageClock(),self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(muml::realtimestatechart::one_to_n_schemata::LoadBalancing).maxWorkingTime.map transform(result).oclAsType(TimeValue),ComparingOperator::LESS_OR_EQUAL);
+		clockConstraints += new ClockConstraint(self.getLoadBalancingTaskMessageClock(),self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(pim::realtimestatechart::one_to_n_schemata::LoadBalancing).maxWorkingTime.map transform(result).oclAsType(TimeValue),ComparingOperator::LESS_OR_EQUAL);
 		
 		urgent := false;
 }
@@ -309,7 +309,7 @@ mapping Transition :: LoadBalancingMaxWorkingTime2TransitionFromCheck2Requested3
 			
 		action := self.createActionWithTwoVariableAssignments(loadBalancingPossibleName + " := true; "+ taskPlannedName + " :=true;",loadBalancingPossibleName,taskPlannedName,"true");
 		
-		clockConstraints += new ClockConstraint(self.getLoadBalancingTaskMessageClock(),self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(muml::realtimestatechart::one_to_n_schemata::LoadBalancing).maxWorkingTime.map transform(result).oclAsType(TimeValue),ComparingOperator::GREATER);
+		clockConstraints += new ClockConstraint(self.getLoadBalancingTaskMessageClock(),self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(pim::realtimestatechart::one_to_n_schemata::LoadBalancing).maxWorkingTime.map transform(result).oclAsType(TimeValue),ComparingOperator::GREATER);
 		
 		urgent := false;
 }
@@ -405,7 +405,7 @@ mapping RealtimeStatechart :: createSelfTransitionOfResponseRTSC (messageType : 
 		action.expressions += ass;
 }
 
-helper RealtimeStatechart :: AddResponseActionsToResponseMessageRTSC(loadBalancing : muml::realtimestatechart::one_to_n_schemata::LoadBalancing) {
+helper RealtimeStatechart :: AddResponseActionsToResponseMessageRTSC(loadBalancing : pim::realtimestatechart::one_to_n_schemata::LoadBalancing) {
 		var transition : Transition := self.map createSelfTransitionOfResponseRTSC(loadBalancing.responseMessage);
 		if(transition.action.oclIsUndefined()) {
 			transition.action := new Action();

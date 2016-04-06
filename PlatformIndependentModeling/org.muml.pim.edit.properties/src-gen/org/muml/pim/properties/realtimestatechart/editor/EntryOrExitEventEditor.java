@@ -4,9 +4,7 @@ package org.muml.pim.properties.realtimestatechart.editor;
 /**
  * @generated
  */
-public abstract class EntryOrExitEventEditor
-		extends
-			org.muml.ape.runtime.editors.ClassPropertyEditor {
+public abstract class EntryOrExitEventEditor extends org.muml.ape.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated

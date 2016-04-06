@@ -21,7 +21,7 @@ public class SynchronizationEditor extends org.muml.ape.runtime.editors.ClassPro
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorExtension_property_tab_extensionsTab_Editor(), false);
+			addPropertyEditor(createEditorExtensions_property_tab_extensionsTab_Editor(), false);
 
 			addPropertyEditor(createEditorSyncChannel_property_tab_generalTab_Editor(), false);
 
@@ -57,7 +57,7 @@ public class SynchronizationEditor extends org.muml.ape.runtime.editors.ClassPro
 
 		} else if ("property.tab.extensions".equals(tab)) { // Tab Extensions
 
-			addPropertyEditor(createEditorExtension_property_tab_extensionsTab_Editor(), false);
+			addPropertyEditor(createEditorExtensions_property_tab_extensionsTab_Editor(), false);
 
 		} else {
 		}
@@ -109,19 +109,19 @@ public class SynchronizationEditor extends org.muml.ape.runtime.editors.ClassPro
 		return this.editorSelectorExpression_property_tab_generalTab;
 	}
 
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorExtension_property_tab_extensionsTab;
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorExtension_property_tab_extensionsTab_Editor() {
-		if (this.editorExtension_property_tab_extensionsTab == null) {
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorExtensions_property_tab_extensionsTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorExtensions_property_tab_extensionsTab_Editor() {
+		if (this.editorExtensions_property_tab_extensionsTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.core.CorePackage.eINSTANCE
-					.getExtendableElement_Extension();
+					.getExtendableElement_Extensions();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.FlattenedListPropertyEditor(
 					adapterFactory, feature);
 
 			editor.setTooltipMessage("Extendable Elements can be extended by an Extension.");
 
-			this.editorExtension_property_tab_extensionsTab = editor;
+			this.editorExtensions_property_tab_extensionsTab = editor;
 		}
-		return this.editorExtension_property_tab_extensionsTab;
+		return this.editorExtensions_property_tab_extensionsTab;
 	}
 
 	//
@@ -133,8 +133,7 @@ public class SynchronizationEditor extends org.muml.ape.runtime.editors.ClassPro
 	 */
 	public SynchronizationEditor(String tab) {
 		this(tab, org.muml.pim.properties.util.PropertiesUtil.INSTANCE.getAdapterFactory(),
-				org.muml.pim.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-						.getSynchronization());
+				org.muml.pim.realtimestatechart.RealtimestatechartPackage.eINSTANCE.getSynchronization());
 	}
 
 	/**

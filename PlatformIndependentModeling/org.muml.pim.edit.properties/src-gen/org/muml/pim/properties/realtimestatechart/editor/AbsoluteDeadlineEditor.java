@@ -113,8 +113,7 @@ public class AbsoluteDeadlineEditor extends org.muml.ape.runtime.editors.ClassPr
 	 */
 	public AbsoluteDeadlineEditor(String tab) {
 		this(tab, org.muml.pim.properties.util.PropertiesUtil.INSTANCE.getAdapterFactory(),
-				org.muml.pim.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-						.getAbsoluteDeadline());
+				org.muml.pim.realtimestatechart.RealtimestatechartPackage.eINSTANCE.getAbsoluteDeadline());
 	}
 
 	/**

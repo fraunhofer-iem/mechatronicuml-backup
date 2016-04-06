@@ -1,6 +1,6 @@
 import de.uni_paderborn.fujaba.muml.types._library.TypesBlackbox;
-modeltype types uses muml::types('http://www.fujaba.de/muml/0.4.0');
-modeltype modelinstance uses modelinstance('http://www.fujaba.de/modelinstance/0.4.0');
+modeltype types uses pim::types('http://www.muml.org/pim/1.0.0');
+modeltype modelinstance uses modelinstance('http://www.muml.org/core/modelinstance/1.0.0');
 modeltype ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
 library TestLibrary;
 

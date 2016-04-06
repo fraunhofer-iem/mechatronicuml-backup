@@ -3,16 +3,16 @@ import common.AllSchemataMappings;
 import CoordinatorBehaviorTemplate;
 
 modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
-modeltype rtsc uses muml::realtimestatechart('http://www.fujaba.de/muml/0.4.0');
-modeltype common uses core::expressions::common('http://www.storydriven.org/core/0.3.1');
-modeltype expressions uses core::expressions('http://www.storydriven.org/core/0.3.1');
-modeltype behavior uses muml::behavior('http://www.fujaba.de/muml/0.4.0');
-modeltype actionLanguage uses 'http://www.fujaba.de/muml/actionlanguage/0.4.0';
-modeltype valuetype uses muml::valuetype('http://www.fujaba.de/muml/0.4.0');
-modeltype protocol uses muml::protocol('http://www.fujaba.de/muml/0.4.0');
-modeltype storydriven uses 'http://www.storydriven.org/core/0.3.1';
-modeltype schemata uses muml::realtimestatechart::one_to_n_schemata('http://www.fujaba.de/muml/0.4.0');
-modeltype types uses muml::types('http://www.fujaba.de/muml/0.4.0');
+modeltype rtsc uses pim::realtimestatechart('http://www.muml.org/pim/1.0.0');
+modeltype common uses core::expressions::common('http://www.muml.org/core/1.0.0');
+modeltype expressions uses core::expressions('http://www.muml.org/core/1.0.0');
+modeltype behavior uses pim::behavior('http://www.muml.org/pim/1.0.0');
+modeltype actionLanguage uses 'http://www.muml.org/pim/actionlanguage/1.0.0';
+modeltype valuetype uses pim::valuetype('http://www.muml.org/pim/1.0.0');
+modeltype protocol uses pim::protocol('http://www.muml.org/pim/1.0.0');
+modeltype storydriven uses 'http://www.muml.org/core/1.0.0';
+modeltype schemata uses pim::realtimestatechart::one_to_n_schemata('http://www.muml.org/pim/1.0.0');
+modeltype types uses pim::types('http://www.muml.org/pim/1.0.0');
 
 ----------------------------------------------------------XXXXXXXXXXXXXXXXX--MULTICAST--XXXXXXXXXXXXXXXXX-------------------------------------------------------------------------	
 property multicastCheckDone : String = "multicastCheckDone";
@@ -171,7 +171,7 @@ mapping Transition :: Multicast2TransReceiveSyncLastSubrole(context:OclAny, regi
 		guard :=  createComparisonExpressionForSelectorKind(PositionSelectorKind::LAST, ComparingOperator::EQUAL);
 		
 		if((not self.raiseMessageEvent.oclIsUndefined()) and (not self.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) 
-				and self.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Multicast) 
+				and self.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(pim::realtimestatechart::one_to_n_schemata::Multicast) 
 				and (not self.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined())){
 				
 			action := self. createActionWithVariableAssignmentBlock("multicastPossible:=false", multicastPossibleName, "false");

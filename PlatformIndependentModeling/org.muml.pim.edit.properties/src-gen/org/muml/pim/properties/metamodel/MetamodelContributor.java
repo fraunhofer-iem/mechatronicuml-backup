@@ -1,9 +1,7 @@
 
 package org.muml.pim.properties.metamodel;
 
-public class MetamodelContributor
-		implements
-			org.muml.ape.runtime.metamodel.IMetamodelContributor {
+public class MetamodelContributor implements org.muml.ape.runtime.metamodel.IMetamodelContributor {
 
 	/**
 	 * @generated
@@ -21,8 +19,7 @@ public class MetamodelContributor
 
 		factories.add(new org.muml.pim.valuetype.provider.ValuetypeItemProviderAdapterFactory());
 
-		factories.add(
-				new org.muml.pim.realtimestatechart.provider.RealtimestatechartItemProviderAdapterFactory());
+		factories.add(new org.muml.pim.realtimestatechart.provider.RealtimestatechartItemProviderAdapterFactory());
 
 		factories.add(new org.muml.pim.instance.provider.InstanceItemProviderAdapterFactory());
 

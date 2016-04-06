@@ -25,14 +25,14 @@ mapping inout PropertyGenerator::generator() {
 		--prop.category := null;
 
 
-		if (prop.editor[CustomPropertyEditor]->select(editor | editor.fullyQualifiedClassName = 'de.uni_paderborn.fujaba.muml.ui.properties.XtextPropertyEditor')->isEmpty()) then {
+		if (prop.editor[CustomPropertyEditor]->select(editor | editor.fullyQualifiedClassName = 'org.muml.pim.actionlanguage.xtext.ui.properties.XtextPropertyEditor')->isEmpty()) then {
 			prop->map createXtextEditor();
 		} endif;
 	}
 }
 
 mapping inout Property::createXtextEditor() {
-	self.editor := new CustomPropertyEditor("de.uni_paderborn.fujaba.muml.ui.properties.XtextPropertyEditor");
+	self.editor := new CustomPropertyEditor("org.muml.pim.actionlanguage.xtext.ui.properties.XtextPropertyEditor");
 }
 
 constructor CustomPropertyEditor::CustomPropertyEditor(className : String) {

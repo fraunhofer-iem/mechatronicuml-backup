@@ -4,9 +4,7 @@ package org.muml.pim.properties.one_to_n_schemata.editor;
 /**
  * @generated
  */
-public abstract class OneToManyCommunicationSchemaEditor
-		extends
-			org.muml.ape.runtime.editors.ClassPropertyEditor {
+public abstract class OneToManyCommunicationSchemaEditor extends org.muml.ape.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated

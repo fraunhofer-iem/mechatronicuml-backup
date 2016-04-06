@@ -21,11 +21,11 @@ public class RealtimeStatechartEditor extends org.muml.ape.runtime.editors.Class
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorExtension_property_tab_extensionsTab_Editor(), false);
+			addPropertyEditor(createEditorExtensions_property_tab_extensionsTab_Editor(), false);
 
 			addPropertyEditor(createEditorName_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorExtension_property_tab_extensionsTab_Editor(), false);
+			addPropertyEditor(createEditorExtensions_property_tab_extensionsTab_Editor(), false);
 
 			addPropertyEditor(createEditorComment_property_tab_documentationTab_Editor(), false);
 
@@ -39,19 +39,19 @@ public class RealtimeStatechartEditor extends org.muml.ape.runtime.editors.Class
 
 			addPropertyEditor(createEditorSubRoleSpecificOperations_property_tab_generalTab_Editor(), false);
 
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Embedded Elements", "Embedded Elements",
+			addSubCategory("org.muml.ape.category.Embedded Elements", "Embedded Elements",
 					org.eclipse.swt.SWT.HORIZONTAL, true);
 
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Embedded Elements",
+			addEditorToCategory("org.muml.ape.category.Embedded Elements",
 					createEditorClocks_property_tab_generalTab_Editor(), false);
 
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Embedded Elements",
+			addEditorToCategory("org.muml.ape.category.Embedded Elements",
 					createEditorOperations_property_tab_generalTab_Editor(), false);
 
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Embedded Elements",
+			addEditorToCategory("org.muml.ape.category.Embedded Elements",
 					createEditorVariables_property_tab_generalTab_Editor(), false);
 
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Embedded Elements",
+			addEditorToCategory("org.muml.ape.category.Embedded Elements",
 					createEditorVariables_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
@@ -84,19 +84,19 @@ public class RealtimeStatechartEditor extends org.muml.ape.runtime.editors.Class
 
 			addPropertyEditor(createEditorSubRoleSpecificOperations_property_tab_generalTab_Editor(), false);
 
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Embedded Elements", "Embedded Elements",
+			addSubCategory("org.muml.ape.category.Embedded Elements", "Embedded Elements",
 					org.eclipse.swt.SWT.HORIZONTAL, true);
 
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Embedded Elements",
+			addEditorToCategory("org.muml.ape.category.Embedded Elements",
 					createEditorClocks_property_tab_generalTab_Editor(), false);
 
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Embedded Elements",
+			addEditorToCategory("org.muml.ape.category.Embedded Elements",
 					createEditorOperations_property_tab_generalTab_Editor(), false);
 
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Embedded Elements",
+			addEditorToCategory("org.muml.ape.category.Embedded Elements",
 					createEditorVariables_property_tab_generalTab_Editor(), false);
 
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Embedded Elements",
+			addEditorToCategory("org.muml.ape.category.Embedded Elements",
 					createEditorVariables_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
@@ -105,9 +105,9 @@ public class RealtimeStatechartEditor extends org.muml.ape.runtime.editors.Class
 
 		} else if ("property.tab.extensions".equals(tab)) { // Tab Extensions
 
-			addPropertyEditor(createEditorExtension_property_tab_extensionsTab_Editor(), false);
+			addPropertyEditor(createEditorExtensions_property_tab_extensionsTab_Editor(), false);
 
-			addPropertyEditor(createEditorExtension_property_tab_extensionsTab_Editor(), false);
+			addPropertyEditor(createEditorExtensions_property_tab_extensionsTab_Editor(), false);
 
 		} else {
 		}
@@ -216,7 +216,7 @@ public class RealtimeStatechartEditor extends org.muml.ape.runtime.editors.Class
 					}
 
 				};
-				if (filter != null) {
+				if (filter != null && expression != null) {
 					editor.addVisibilityFilter(filter);
 				}
 			}
@@ -264,7 +264,7 @@ public class RealtimeStatechartEditor extends org.muml.ape.runtime.editors.Class
 					}
 
 				};
-				if (filter != null) {
+				if (filter != null && expression != null) {
 					editor.addVisibilityFilter(filter);
 				}
 			}
@@ -312,7 +312,7 @@ public class RealtimeStatechartEditor extends org.muml.ape.runtime.editors.Class
 					}
 
 				};
-				if (filter != null) {
+				if (filter != null && expression != null) {
 					editor.addVisibilityFilter(filter);
 				}
 			}
@@ -351,19 +351,19 @@ public class RealtimeStatechartEditor extends org.muml.ape.runtime.editors.Class
 		return this.editorName_property_tab_generalTab;
 	}
 
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorExtension_property_tab_extensionsTab;
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorExtension_property_tab_extensionsTab_Editor() {
-		if (this.editorExtension_property_tab_extensionsTab == null) {
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorExtensions_property_tab_extensionsTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorExtensions_property_tab_extensionsTab_Editor() {
+		if (this.editorExtensions_property_tab_extensionsTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.core.CorePackage.eINSTANCE
-					.getExtendableElement_Extension();
+					.getExtendableElement_Extensions();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.FlattenedListPropertyEditor(
 					adapterFactory, feature);
 
 			editor.setTooltipMessage("Extendable Elements can be extended by an Extension.");
 
-			this.editorExtension_property_tab_extensionsTab = editor;
+			this.editorExtensions_property_tab_extensionsTab = editor;
 		}
-		return this.editorExtension_property_tab_extensionsTab;
+		return this.editorExtensions_property_tab_extensionsTab;
 	}
 
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorComment_property_tab_documentationTab;
@@ -422,8 +422,7 @@ public class RealtimeStatechartEditor extends org.muml.ape.runtime.editors.Class
 	 */
 	public RealtimeStatechartEditor(String tab) {
 		this(tab, org.muml.pim.properties.util.PropertiesUtil.INSTANCE.getAdapterFactory(),
-				org.muml.pim.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-						.getRealtimeStatechart());
+				org.muml.pim.realtimestatechart.RealtimestatechartPackage.eINSTANCE.getRealtimeStatechart());
 	}
 
 	/**

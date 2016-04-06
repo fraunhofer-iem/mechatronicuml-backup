@@ -95,8 +95,7 @@ public class MulticastEditor extends org.muml.ape.runtime.editors.ClassPropertyE
 	 */
 	public MulticastEditor(String tab) {
 		this(tab, org.muml.pim.properties.util.PropertiesUtil.INSTANCE.getAdapterFactory(),
-				org.muml.pim.realtimestatechart.one_to_n_schemata.One_to_n_schemataPackage.eINSTANCE
-						.getMulticast());
+				org.muml.pim.realtimestatechart.one_to_n_schemata.One_to_n_schemataPackage.eINSTANCE.getMulticast());
 	}
 
 	/**

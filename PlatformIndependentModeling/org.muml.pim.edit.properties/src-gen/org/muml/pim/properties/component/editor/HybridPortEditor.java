@@ -21,19 +21,19 @@ public class HybridPortEditor extends org.muml.ape.runtime.editors.ClassProperty
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorExtension_property_tab_extensionsTab_Editor(), false);
+			addPropertyEditor(createEditorExtensions_property_tab_extensionsTab_Editor(), false);
 
 			addPropertyEditor(createEditorComment_property_tab_documentationTab_Editor(), false);
 
-			addPropertyEditor(createEditorExtension_property_tab_extensionsTab_Editor(), false);
+			addPropertyEditor(createEditorExtensions_property_tab_extensionsTab_Editor(), false);
 
 			addPropertyEditor(createEditorComment_property_tab_documentationTab_Editor(), false);
 
-			addPropertyEditor(createEditorExtension_property_tab_extensionsTab_Editor(), false);
+			addPropertyEditor(createEditorExtensions_property_tab_extensionsTab_Editor(), false);
 
 			addPropertyEditor(createEditorName_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorExtension_property_tab_extensionsTab_Editor(), false);
+			addPropertyEditor(createEditorExtensions_property_tab_extensionsTab_Editor(), false);
 
 			addPropertyEditor(createEditorName_property_tab_generalTab_Editor(), false);
 
@@ -41,14 +41,12 @@ public class HybridPortEditor extends org.muml.ape.runtime.editors.ClassProperty
 
 			addPropertyEditor(createEditorInitializeExpression_property_tab_generalTab_Editor(), false);
 
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Kind", "Kind", org.eclipse.swt.SWT.HORIZONTAL,
-					true);
+			addSubCategory("org.muml.ape.category.Kind", "Kind", org.eclipse.swt.SWT.HORIZONTAL, true);
 
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Kind",
-					createEditorKind_property_tab_generalTab_Editor(), false);
+			addEditorToCategory("org.muml.ape.category.Kind", createEditorKind_property_tab_generalTab_Editor(), false);
 
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Kind",
-					createEditorOptional_property_tab_generalTab_Editor(), false);
+			addEditorToCategory("org.muml.ape.category.Kind", createEditorOptional_property_tab_generalTab_Editor(),
+					false);
 
 			addPropertyEditor(createEditorSamplingInterval_property_tab_samplingTab_Editor(), false);
 
@@ -80,14 +78,12 @@ public class HybridPortEditor extends org.muml.ape.runtime.editors.ClassProperty
 
 			addPropertyEditor(createEditorInitializeExpression_property_tab_generalTab_Editor(), false);
 
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Kind", "Kind", org.eclipse.swt.SWT.HORIZONTAL,
-					true);
+			addSubCategory("org.muml.ape.category.Kind", "Kind", org.eclipse.swt.SWT.HORIZONTAL, true);
 
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Kind",
-					createEditorKind_property_tab_generalTab_Editor(), false);
+			addEditorToCategory("org.muml.ape.category.Kind", createEditorKind_property_tab_generalTab_Editor(), false);
 
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Kind",
-					createEditorOptional_property_tab_generalTab_Editor(), false);
+			addEditorToCategory("org.muml.ape.category.Kind", createEditorOptional_property_tab_generalTab_Editor(),
+					false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
@@ -97,13 +93,13 @@ public class HybridPortEditor extends org.muml.ape.runtime.editors.ClassProperty
 
 		} else if ("property.tab.extensions".equals(tab)) { // Tab Extensions
 
-			addPropertyEditor(createEditorExtension_property_tab_extensionsTab_Editor(), false);
+			addPropertyEditor(createEditorExtensions_property_tab_extensionsTab_Editor(), false);
 
-			addPropertyEditor(createEditorExtension_property_tab_extensionsTab_Editor(), false);
+			addPropertyEditor(createEditorExtensions_property_tab_extensionsTab_Editor(), false);
 
-			addPropertyEditor(createEditorExtension_property_tab_extensionsTab_Editor(), false);
+			addPropertyEditor(createEditorExtensions_property_tab_extensionsTab_Editor(), false);
 
-			addPropertyEditor(createEditorExtension_property_tab_extensionsTab_Editor(), false);
+			addPropertyEditor(createEditorExtensions_property_tab_extensionsTab_Editor(), false);
 
 		} else {
 		}
@@ -188,19 +184,19 @@ public class HybridPortEditor extends org.muml.ape.runtime.editors.ClassProperty
 		return this.editorComment_property_tab_documentationTab;
 	}
 
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorExtension_property_tab_extensionsTab;
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorExtension_property_tab_extensionsTab_Editor() {
-		if (this.editorExtension_property_tab_extensionsTab == null) {
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorExtensions_property_tab_extensionsTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorExtensions_property_tab_extensionsTab_Editor() {
+		if (this.editorExtensions_property_tab_extensionsTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.core.CorePackage.eINSTANCE
-					.getExtendableElement_Extension();
+					.getExtendableElement_Extensions();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.FlattenedListPropertyEditor(
 					adapterFactory, feature);
 
 			editor.setTooltipMessage("Extendable Elements can be extended by an Extension.");
 
-			this.editorExtension_property_tab_extensionsTab = editor;
+			this.editorExtensions_property_tab_extensionsTab = editor;
 		}
-		return this.editorExtension_property_tab_extensionsTab;
+		return this.editorExtensions_property_tab_extensionsTab;
 	}
 
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorName_property_tab_generalTab;

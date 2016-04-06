@@ -153,8 +153,7 @@ public class IterateEditor extends org.muml.ape.runtime.editors.ClassPropertyEdi
 	 */
 	public IterateEditor(String tab) {
 		this(tab, org.muml.pim.properties.util.PropertiesUtil.INSTANCE.getAdapterFactory(),
-				org.muml.pim.realtimestatechart.one_to_n_schemata.One_to_n_schemataPackage.eINSTANCE
-						.getIterate());
+				org.muml.pim.realtimestatechart.one_to_n_schemata.One_to_n_schemataPackage.eINSTANCE.getIterate());
 	}
 
 	/**

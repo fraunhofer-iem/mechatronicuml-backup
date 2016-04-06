@@ -31,14 +31,14 @@ mapping inout PropertyGenerator::generator() {
 		
 		--prop.category := null;
 
-		if (prop.editor[CustomPropertyEditor]->select(editor | editor.fullyQualifiedClassName = 'de.uni_paderborn.fujaba.muml.properties.valuetype.editor.CustomCardinalityPropertyEditor')->isEmpty()) then {
+		if (prop.editor[CustomPropertyEditor]->select(editor | editor.fullyQualifiedClassName = 'org.muml.pim.properties.valuetype.editor.CustomCardinalityPropertyEditor')->isEmpty()) then {
 			prop->map createCardinalityEditor();
 		} endif;
 	}
 }
 
 mapping inout Property::createCardinalityEditor() {
-	self.editor := new CustomPropertyEditor("de.uni_paderborn.fujaba.muml.properties.valuetype.editor.CustomCardinalityPropertyEditor");
+	self.editor := new CustomPropertyEditor("org.muml.pim.properties.valuetype.editor.CustomCardinalityPropertyEditor");
 }
 
 constructor CustomPropertyEditor::CustomPropertyEditor(className : String) {

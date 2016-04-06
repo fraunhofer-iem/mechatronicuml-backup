@@ -21,13 +21,13 @@ public class NaturalNumberEditor extends org.muml.ape.runtime.editors.ClassPrope
 	protected void createProperties() {
 		if (tab == null) {
 
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Natural Number", "Natural Number",
-					org.eclipse.swt.SWT.HORIZONTAL, true);
+			addSubCategory("org.muml.ape.category.Natural Number", "Natural Number", org.eclipse.swt.SWT.HORIZONTAL,
+					true);
 
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Natural Number",
+			addEditorToCategory("org.muml.ape.category.Natural Number",
 					createEditorValue_property_tab_generalTab_Editor(), false);
 
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Natural Number",
+			addEditorToCategory("org.muml.ape.category.Natural Number",
 					createEditorInfinity_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
@@ -48,13 +48,13 @@ public class NaturalNumberEditor extends org.muml.ape.runtime.editors.ClassPrope
 
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Natural Number", "Natural Number",
-					org.eclipse.swt.SWT.HORIZONTAL, true);
+			addSubCategory("org.muml.ape.category.Natural Number", "Natural Number", org.eclipse.swt.SWT.HORIZONTAL,
+					true);
 
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Natural Number",
+			addEditorToCategory("org.muml.ape.category.Natural Number",
 					createEditorValue_property_tab_generalTab_Editor(), false);
 
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Natural Number",
+			addEditorToCategory("org.muml.ape.category.Natural Number",
 					createEditorInfinity_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation

@@ -114,8 +114,7 @@ public class MultiReceiveEditor extends org.muml.ape.runtime.editors.ClassProper
 	 */
 	public MultiReceiveEditor(String tab) {
 		this(tab, org.muml.pim.properties.util.PropertiesUtil.INSTANCE.getAdapterFactory(),
-				org.muml.pim.realtimestatechart.one_to_n_schemata.One_to_n_schemataPackage.eINSTANCE
-						.getMultiReceive());
+				org.muml.pim.realtimestatechart.one_to_n_schemata.One_to_n_schemataPackage.eINSTANCE.getMultiReceive());
 	}
 
 	/**

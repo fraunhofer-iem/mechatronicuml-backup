@@ -4,9 +4,7 @@ package org.muml.pim.properties.protocol.editor;
 /**
  * @generated
  */
-public class ConnectorQualityOfServiceAssumptionsEditor
-		extends
-			org.muml.ape.runtime.editors.ClassPropertyEditor {
+public class ConnectorQualityOfServiceAssumptionsEditor extends org.muml.ape.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
@@ -23,23 +21,22 @@ public class ConnectorQualityOfServiceAssumptionsEditor
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorExtension_property_tab_extensionsTab_Editor(), false);
+			addPropertyEditor(createEditorExtensions_property_tab_extensionsTab_Editor(), false);
 
 			addPropertyEditor(createEditorComment_property_tab_documentationTab_Editor(), false);
 
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Message Loss", "Message Loss",
-					org.eclipse.swt.SWT.HORIZONTAL, true);
+			addSubCategory("org.muml.ape.category.Message Loss", "Message Loss", org.eclipse.swt.SWT.HORIZONTAL, true);
 
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Message Loss",
+			addEditorToCategory("org.muml.ape.category.Message Loss",
 					createEditorMessageLossPossible_property_tab_generalTab_Editor(), false);
 
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Message Delay", "Message Delay",
-					org.eclipse.swt.SWT.HORIZONTAL, true);
+			addSubCategory("org.muml.ape.category.Message Delay", "Message Delay", org.eclipse.swt.SWT.HORIZONTAL,
+					true);
 
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Message Delay",
+			addEditorToCategory("org.muml.ape.category.Message Delay",
 					createEditorMaxMessageDelay_property_tab_generalTab_Editor(), false);
 
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Message Delay",
+			addEditorToCategory("org.muml.ape.category.Message Delay",
 					createEditorMinMessageDelay_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
@@ -60,19 +57,18 @@ public class ConnectorQualityOfServiceAssumptionsEditor
 
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Message Loss", "Message Loss",
-					org.eclipse.swt.SWT.HORIZONTAL, true);
+			addSubCategory("org.muml.ape.category.Message Loss", "Message Loss", org.eclipse.swt.SWT.HORIZONTAL, true);
 
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Message Loss",
+			addEditorToCategory("org.muml.ape.category.Message Loss",
 					createEditorMessageLossPossible_property_tab_generalTab_Editor(), false);
 
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Message Delay", "Message Delay",
-					org.eclipse.swt.SWT.HORIZONTAL, true);
+			addSubCategory("org.muml.ape.category.Message Delay", "Message Delay", org.eclipse.swt.SWT.HORIZONTAL,
+					true);
 
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Message Delay",
+			addEditorToCategory("org.muml.ape.category.Message Delay",
 					createEditorMaxMessageDelay_property_tab_generalTab_Editor(), false);
 
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Message Delay",
+			addEditorToCategory("org.muml.ape.category.Message Delay",
 					createEditorMinMessageDelay_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
@@ -81,7 +77,7 @@ public class ConnectorQualityOfServiceAssumptionsEditor
 
 		} else if ("property.tab.extensions".equals(tab)) { // Tab Extensions
 
-			addPropertyEditor(createEditorExtension_property_tab_extensionsTab_Editor(), false);
+			addPropertyEditor(createEditorExtensions_property_tab_extensionsTab_Editor(), false);
 
 		} else {
 		}
@@ -137,7 +133,7 @@ public class ConnectorQualityOfServiceAssumptionsEditor
 					}
 
 				};
-				if (filter != null) {
+				if (filter != null && expression != null) {
 					editor.addVisibilityFilter(filter);
 				}
 			}
@@ -182,19 +178,19 @@ public class ConnectorQualityOfServiceAssumptionsEditor
 		return this.editorComment_property_tab_documentationTab;
 	}
 
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorExtension_property_tab_extensionsTab;
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorExtension_property_tab_extensionsTab_Editor() {
-		if (this.editorExtension_property_tab_extensionsTab == null) {
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorExtensions_property_tab_extensionsTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorExtensions_property_tab_extensionsTab_Editor() {
+		if (this.editorExtensions_property_tab_extensionsTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.core.CorePackage.eINSTANCE
-					.getExtendableElement_Extension();
+					.getExtendableElement_Extensions();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.FlattenedListPropertyEditor(
 					adapterFactory, feature);
 
 			editor.setTooltipMessage("Extendable Elements can be extended by an Extension.");
 
-			this.editorExtension_property_tab_extensionsTab = editor;
+			this.editorExtensions_property_tab_extensionsTab = editor;
 		}
-		return this.editorExtension_property_tab_extensionsTab;
+		return this.editorExtensions_property_tab_extensionsTab;
 	}
 
 	//
@@ -206,8 +202,7 @@ public class ConnectorQualityOfServiceAssumptionsEditor
 	 */
 	public ConnectorQualityOfServiceAssumptionsEditor(String tab) {
 		this(tab, org.muml.pim.properties.util.PropertiesUtil.INSTANCE.getAdapterFactory(),
-				org.muml.pim.protocol.ProtocolPackage.eINSTANCE
-						.getConnectorQualityOfServiceAssumptions());
+				org.muml.pim.protocol.ProtocolPackage.eINSTANCE.getConnectorQualityOfServiceAssumptions());
 	}
 
 	/**

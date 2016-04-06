@@ -95,8 +95,7 @@ public class UnicastEditor extends org.muml.ape.runtime.editors.ClassPropertyEdi
 	 */
 	public UnicastEditor(String tab) {
 		this(tab, org.muml.pim.properties.util.PropertiesUtil.INSTANCE.getAdapterFactory(),
-				org.muml.pim.realtimestatechart.one_to_n_schemata.One_to_n_schemataPackage.eINSTANCE
-						.getUnicast());
+				org.muml.pim.realtimestatechart.one_to_n_schemata.One_to_n_schemataPackage.eINSTANCE.getUnicast());
 	}
 
 	/**

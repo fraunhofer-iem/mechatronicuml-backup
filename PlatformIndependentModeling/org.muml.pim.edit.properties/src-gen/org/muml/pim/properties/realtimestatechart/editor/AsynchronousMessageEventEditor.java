@@ -4,9 +4,7 @@ package org.muml.pim.properties.realtimestatechart.editor;
 /**
  * @generated
  */
-public class AsynchronousMessageEventEditor
-		extends
-			org.muml.ape.runtime.editors.ClassPropertyEditor {
+public class AsynchronousMessageEventEditor extends org.muml.ape.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
@@ -140,8 +138,7 @@ public class AsynchronousMessageEventEditor
 	 */
 	public AsynchronousMessageEventEditor(String tab) {
 		this(tab, org.muml.pim.properties.util.PropertiesUtil.INSTANCE.getAdapterFactory(),
-				org.muml.pim.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-						.getAsynchronousMessageEvent());
+				org.muml.pim.realtimestatechart.RealtimestatechartPackage.eINSTANCE.getAsynchronousMessageEvent());
 	}
 
 	/**
