@@ -288,7 +288,7 @@ public class ClassItemProvider
 			String superClassesNames = null;
 			for (org.muml.ape.Class superClass : _class.getSuperClasses()) {
 				String superClassName = "null";
-				if (superClass.getGenClass() != null && superClass.getGenClass().getName() != null) {
+				if (superClass.getGenClass() != null && superClass.getGenClass() != null && superClass.getGenClass().getEcoreClassifier() != null && superClass.getGenClass().getName() != null) {
 					superClassName = superClass.getGenClass().getName();
 				}
 
