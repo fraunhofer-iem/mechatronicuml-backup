@@ -6,9 +6,9 @@
     <requiredBundles>org.eclipse.emf.ecore</requiredBundles>
     <requiredBundles>org.eclipse.core.runtime</requiredBundles>
     <requiredBundles>org.eclipse.emf.edit</requiredBundles>
-    <requiredBundles>de.uni_paderborn.fujaba.properties.edit</requiredBundles>
-    <requiredBundles>de.uni_paderborn.fujaba.properties</requiredBundles>
-    <requiredBundles>de.uni_paderborn.fujaba.properties.runtime</requiredBundles>
+    <requiredBundles>org.muml.ape.edit</requiredBundles>
+    <requiredBundles>org.muml.ape</requiredBundles>
+    <requiredBundles>org.muml.ape.runtime</requiredBundles>
     <requiredBundles>org.eclipse.ui</requiredBundles>
   </plugin>
   <tabs id="org.muml.ape.tab.general" name="General" afterTab=""/>

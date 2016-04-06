@@ -71,7 +71,7 @@ public class PropertiesReconcilePlugin extends AbstractUIPlugin {
 		if (defaultTransformationExecutor == null) {
 			URI uri = URI
 					.createPlatformPluginURI(
-							"/de.uni_paderborn.fujaba.properties.reconcile/transforms/reconcile.qvto",
+							"/org.muml.ape.reconcile/transforms/reconcile.qvto",
 							true);
 			defaultTransformationExecutor = createTransformationExecutor(uri);
 		}

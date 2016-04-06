@@ -28,7 +28,7 @@ mapping inout PropertyGenerator::generator() {
 			"org.eclipse.core.runtime",
 			"org.eclipse.emf.ecore",
 			"org.eclipse.emf.edit",
-			"de.uni_paderborn.fujaba.properties.runtime",
+			"org.muml.ape.runtime",
 			genModel.modelPluginID,
 			genModel.editPluginID
 		};
