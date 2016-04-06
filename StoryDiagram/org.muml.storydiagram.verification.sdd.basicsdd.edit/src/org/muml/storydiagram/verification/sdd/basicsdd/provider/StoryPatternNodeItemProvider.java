@@ -35,7 +35,7 @@ import org.muml.storydiagram.verification.sdd.provider.PatternNodeItemProvider;
  * @generated
  */
 public class StoryPatternNodeItemProvider
-	extends PatternNodeItemProvider {
+	extends de.uni_paderborn.fujaba.muml.verification.sdd.provider.PatternNodeItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -148,12 +148,12 @@ public class StoryPatternNodeItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSIONS,
 				 ActivitiesFactory.eINSTANCE.createOperationExtension()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSIONS,
 				 CallsFactory.eINSTANCE.createParameterExtension()));
 
 		newChildDescriptors.add

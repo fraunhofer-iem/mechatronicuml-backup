@@ -50,7 +50,7 @@ public interface ReachabilityGraphPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_PREFIX = "de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph";
+	String eNS_PREFIX = "reachabilitygraph";
 
 	/**
 	 * The singleton instance of the package.

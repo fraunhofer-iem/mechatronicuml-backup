@@ -14,8 +14,6 @@ import org.muml.reconfigurationverification.tctl.TctlPackage;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Not Formula</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */

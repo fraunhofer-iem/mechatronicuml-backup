@@ -11,12 +11,10 @@ import org.muml.storydiagram.verification.sdd.impl.AbstractStoryDecisionDiagramI
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Story Decision Diagram</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */
-public class StoryDecisionDiagramImpl extends AbstractStoryDecisionDiagramImpl implements StoryDecisionDiagram {
+public class StoryDecisionDiagramImpl extends de.uni_paderborn.fujaba.muml.verification.sdd.impl.AbstractStoryDecisionDiagramImpl implements StoryDecisionDiagram {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

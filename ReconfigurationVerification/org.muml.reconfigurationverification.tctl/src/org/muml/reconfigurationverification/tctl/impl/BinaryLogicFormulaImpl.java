@@ -19,10 +19,10 @@ import org.muml.reconfigurationverification.tctl.TctlPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.reconfigurationverification.tctl.impl.BinaryLogicFormulaImpl#getOperator <em>Operator</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -30,13 +30,13 @@ import org.muml.reconfigurationverification.fotctl.NodeLabelPredicateDecl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.reconfigurationverification.fotctl.impl.FoTCTLSpecImpl#getFormulas <em>Formulas</em>}</li>
  *   <li>{@link org.muml.reconfigurationverification.fotctl.impl.FoTCTLSpecImpl#getNodeLabelPredicates <em>Node Label Predicates</em>}</li>
  *   <li>{@link org.muml.reconfigurationverification.fotctl.impl.FoTCTLSpecImpl#getEdgeLabelPredicates <em>Edge Label Predicates</em>}</li>
  *   <li>{@link org.muml.reconfigurationverification.fotctl.impl.FoTCTLSpecImpl#getConstants <em>Constants</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -11,8 +11,9 @@
 <plugin>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated TCTL -->
       <package
-            uri="http://www.fujaba.de/muml/verification/tctl/0.1.0"
+            uri="http://www.muml.org/reconfigurationverification/tctl/1.0.0"
             class="org.muml.reconfigurationverification.tctl.TctlPackage"
             genModel="model/TCTL.genmodel"/>
    </extension>

@@ -7,8 +7,9 @@
 <plugin>
 
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <!-- @generated BasicSDD -->
       <factory
-            uri="http://www.fujaba.de/muml/verification/sdd/basicSDD/0.4.0"
+            uri="http://www.muml.org/storydiagram/verification/sdd/basicsdd/1.0.0"
             class="org.muml.storydiagram.verification.sdd.basicsdd.provider.BasicSDDItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider

@@ -88,15 +88,15 @@ public class BasicSDDAdapterFactory extends AdapterFactoryImpl {
 				return createNamedElementAdapter();
 			}
 			@Override
-			public Adapter caseAbstractStoryDecisionDiagram(AbstractStoryDecisionDiagram object) {
+			public Adapter caseAbstractStoryDecisionDiagram(de.uni_paderborn.fujaba.muml.verification.sdd.AbstractStoryDecisionDiagram object) {
 				return createAbstractStoryDecisionDiagramAdapter();
 			}
 			@Override
-			public Adapter caseNode(Node object) {
+			public Adapter caseNode(de.uni_paderborn.fujaba.muml.verification.sdd.Node object) {
 				return createNodeAdapter();
 			}
 			@Override
-			public Adapter casePatternNode(PatternNode object) {
+			public Adapter casePatternNode(de.uni_paderborn.fujaba.muml.verification.sdd.PatternNode object) {
 				return createPatternNodeAdapter();
 			}
 			@Override
@@ -176,13 +176,13 @@ public class BasicSDDAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.muml.storydiagram.verification.sdd.AbstractStoryDecisionDiagram <em>Abstract Story Decision Diagram</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.verification.sdd.AbstractStoryDecisionDiagram <em>Abstract Story Decision Diagram</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.muml.storydiagram.verification.sdd.AbstractStoryDecisionDiagram
+	 * @see de.uni_paderborn.fujaba.muml.verification.sdd.AbstractStoryDecisionDiagram
 	 * @generated
 	 */
 	public Adapter createAbstractStoryDecisionDiagramAdapter() {
@@ -190,13 +190,13 @@ public class BasicSDDAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.muml.storydiagram.verification.sdd.Node <em>Node</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.verification.sdd.Node <em>Node</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.muml.storydiagram.verification.sdd.Node
+	 * @see de.uni_paderborn.fujaba.muml.verification.sdd.Node
 	 * @generated
 	 */
 	public Adapter createNodeAdapter() {
@@ -204,13 +204,13 @@ public class BasicSDDAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.muml.storydiagram.verification.sdd.PatternNode <em>Pattern Node</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.verification.sdd.PatternNode <em>Pattern Node</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.muml.storydiagram.verification.sdd.PatternNode
+	 * @see de.uni_paderborn.fujaba.muml.verification.sdd.PatternNode
 	 * @generated
 	 */
 	public Adapter createPatternNodeAdapter() {

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <genmodel:GenModel xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
-    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/de.uni_paderborn.fujaba.muml.verification.fotctl/src"
-    modelPluginID="de.uni_paderborn.fujaba.muml.verification.fotctl" modelName="FOTCTL"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.muml.reconfigurationverification.fotctl/src"
+    modelPluginID="org.muml.reconfigurationverification.fotctl" modelName="FOTCTL"
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" copyrightFields="false"
-    usedGenPackages="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../de.uni_paderborn.fujaba.muml.verification.tctl/model/TCTL.genmodel#//tctl ../../org.muml.core/model/core.genmodel#//core">
+    usedGenPackages="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../org.muml.reconfigurationverification.tctl/model/TCTL.genmodel#//tctl ../../org.muml.core/model/core.genmodel#//core">
   <foreignModel>FOTCTL.ecore</foreignModel>
-  <genPackages prefix="Fotctl" basePackage="de.uni_paderborn.fujaba.muml.verification"
+  <genPackages prefix="Fotctl" basePackage="org.muml.reconfigurationverification"
       disposableProviderFactory="true" ecorePackage="FOTCTL.ecore#/">
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="FOTCTL.ecore#//Quantifier">
       <genEnumLiterals ecoreEnumLiteral="FOTCTL.ecore#//Quantifier/FORALL"/>

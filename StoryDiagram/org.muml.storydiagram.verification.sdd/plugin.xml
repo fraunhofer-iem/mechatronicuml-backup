@@ -11,9 +11,10 @@
 <plugin>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated sdd -->
       <package
-            uri="http://www.fujaba.de/muml/verification/sdd/0.4.0"
-            class="org.muml.storydiagram.verification.sdd.SDDPackage"
+            uri="http://www.muml.org/storydiagram/verification/sdd/1.0.0"
+            class="org.muml.storydiagram.verification.sdd.sdd.SDDPackage"
             genModel="model/sdd.genmodel"/>
    </extension>
 

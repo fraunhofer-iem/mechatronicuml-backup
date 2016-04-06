@@ -1,8 +1,7 @@
+
 package org.muml.storydiagram.verification.sdd.properties.metamodel;
 
-public class MetamodelContributor
-		implements
-			org.muml.ape.runtime.metamodel.IMetamodelContributor {
+public class MetamodelContributor implements org.muml.ape.runtime.metamodel.IMetamodelContributor {
 
 	/**
 	 * @generated
@@ -16,11 +15,9 @@ public class MetamodelContributor
 	/**
 	 * @generated
 	 */
-	protected void fillItemProviderFactories(
-			java.util.List<org.eclipse.emf.common.notify.AdapterFactory> factories) {
+	protected void fillItemProviderFactories(java.util.List<org.eclipse.emf.common.notify.AdapterFactory> factories) {
 
-		factories
-				.add(new org.muml.storydiagram.verification.sdd.provider.SDDItemProviderAdapterFactory());
+		factories.add(new org.muml.storydiagram.verification.sdd.sdd.provider.SDDItemProviderAdapterFactory());
 
 	}
 

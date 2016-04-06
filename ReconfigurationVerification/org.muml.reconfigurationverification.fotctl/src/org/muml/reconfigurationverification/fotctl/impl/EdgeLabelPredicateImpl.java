@@ -23,11 +23,11 @@ import org.muml.reconfigurationverification.tctl.impl.AtomicFormulaImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.reconfigurationverification.fotctl.impl.EdgeLabelPredicateImpl#getDeclaration <em>Declaration</em>}</li>
  *   <li>{@link org.muml.reconfigurationverification.fotctl.impl.EdgeLabelPredicateImpl#getSecondTerm <em>Second Term</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

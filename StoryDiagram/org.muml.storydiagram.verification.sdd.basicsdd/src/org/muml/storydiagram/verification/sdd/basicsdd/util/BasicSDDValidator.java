@@ -38,7 +38,7 @@ public class BasicSDDValidator extends EObjectValidator {
 	 * @see org.eclipse.emf.common.util.Diagnostic#getCode()
 	 * @generated
 	 */
-	public static final String DIAGNOSTIC_SOURCE = "de.uni_paderborn.fujaba.muml.verification.sdd.basicSDD";
+	public static final String DIAGNOSTIC_SOURCE = "org.muml.storydiagram.verification.sdd.basicsdd";
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants.
@@ -62,7 +62,7 @@ public class BasicSDDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected SDDValidator sddValidator;
+	protected de.uni_paderborn.fujaba.muml.verification.sdd.util.SDDValidator sddValidator;
 
 	/**
 	 * Creates an instance of the switch.
@@ -72,7 +72,7 @@ public class BasicSDDValidator extends EObjectValidator {
 	 */
 	public BasicSDDValidator() {
 		super();
-		sddValidator = SDDValidator.INSTANCE;
+		sddValidator = de.uni_paderborn.fujaba.muml.verification.sdd.util.SDDValidator.INSTANCE;
 	}
 
 	/**

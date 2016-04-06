@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+import org.muml.reconfigurationverification.tctl.*;
 import org.muml.reconfigurationverification.tctl.AtomicProposition;
 import org.muml.reconfigurationverification.tctl.BinaryLogicFormula;
 import org.muml.reconfigurationverification.tctl.BinaryLogicOperator;

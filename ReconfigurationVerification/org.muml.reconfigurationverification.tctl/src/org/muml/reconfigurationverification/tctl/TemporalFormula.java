@@ -15,12 +15,12 @@ import org.muml.core.ExtendableElement;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.reconfigurationverification.tctl.TemporalFormula#getComparisonOperator <em>Comparison Operator</em>}</li>
  *   <li>{@link org.muml.reconfigurationverification.tctl.TemporalFormula#getTemporalOperator <em>Temporal Operator</em>}</li>
  *   <li>{@link org.muml.reconfigurationverification.tctl.TemporalFormula#getValue <em>Value</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.reconfigurationverification.tctl.TctlPackage#getTemporalFormula()
  * @model abstract="true"

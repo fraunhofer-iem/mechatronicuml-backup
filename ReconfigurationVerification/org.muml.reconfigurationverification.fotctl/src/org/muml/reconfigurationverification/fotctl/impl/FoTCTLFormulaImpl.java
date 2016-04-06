@@ -15,8 +15,6 @@ import org.muml.reconfigurationverification.tctl.impl.TCTLFormulaImpl;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Fo TCTL Formula</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */

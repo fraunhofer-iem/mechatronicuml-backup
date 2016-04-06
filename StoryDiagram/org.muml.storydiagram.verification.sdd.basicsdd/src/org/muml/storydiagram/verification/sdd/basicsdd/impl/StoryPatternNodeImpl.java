@@ -20,14 +20,14 @@ import org.muml.storydiagram.verification.sdd.impl.PatternNodeImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.storydiagram.verification.sdd.basicsdd.impl.StoryPatternNodeImpl#getPattern <em>Pattern</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
-public class StoryPatternNodeImpl extends PatternNodeImpl implements StoryPatternNode {
+public class StoryPatternNodeImpl extends de.uni_paderborn.fujaba.muml.verification.sdd.impl.PatternNodeImpl implements StoryPatternNode {
 	/**
 	 * The cached value of the '{@link #getPattern() <em>Pattern</em>}' containment reference.
 	 * <!-- begin-user-doc -->

@@ -2,7 +2,7 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="sdm" nsURI="http://www.fujaba.de/reachabilityGraph/sdm/0.4.0"
     nsPrefix="de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.sdm">
-  <eClassifiers xsi:type="ecore:EClass" name="StepGraph" eSuperTypes="../../de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph/model/ReachabilityAnalysisCore.ecore#//ReachabilityGraphState">
+  <eClassifiers xsi:type="ecore:EClass" name="StepGraph" eSuperTypes="../../org.muml.core.reachanalysis.reachabilitygraph/model/ReachabilityAnalysisCore.ecore#//ReachabilityGraphState">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="The StepGraph contains all objects currently contained in the graph."/>
     </eAnnotations>
@@ -34,7 +34,7 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SDMTransition" eSuperTypes="../../de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph/model/ReachabilityAnalysisCore.ecore#//ActionTransition">
+  <eClassifiers xsi:type="ecore:EClass" name="SDMTransition" eSuperTypes="../../org.muml.core.reachanalysis.reachabilitygraph/model/ReachabilityAnalysisCore.ecore#//ActionTransition">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="An action transition that results from applying a story diagrams. The SDMTransition&#xD;&#xA;stores the story diagram that caused it."/>
     </eAnnotations>
@@ -76,7 +76,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="unchangeableNodes" upperBound="-1"
         eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SDMReachabilityGraph" eSuperTypes="../../de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph/model/ReachabilityAnalysisCore.ecore#//ReachabilityGraph">
+  <eClassifiers xsi:type="ecore:EClass" name="SDMReachabilityGraph" eSuperTypes="../../org.muml.core.reachanalysis.reachabilitygraph/model/ReachabilityAnalysisCore.ecore#//ReachabilityGraph">
     <eStructuralFeatures xsi:type="ecore:EReference" name="unchangeableNodes" ordered="false"
         upperBound="-1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">

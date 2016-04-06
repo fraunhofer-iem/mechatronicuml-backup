@@ -6,7 +6,7 @@
   <extension
          point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
     <propertyContributor
-          contributorId="de.uni_paderborn.fujaba.common.properties">
+          contributorId="org.muml.ape.contributor">
        <propertyCategory
              category="domain">
        </propertyCategory>
@@ -25,7 +25,7 @@
 
 
 <extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
-      <propertyTabs contributorId="de.uni_paderborn.fujaba.common.properties">
+      <propertyTabs contributorId="org.muml.ape.contributor">
           <propertyTab
              category="domain"
              id="property.tab.constraint"
@@ -39,7 +39,7 @@
 
 
   <extension point="org.eclipse.ui.views.properties.tabbed.propertySections"> 
-      <propertySections contributorId="de.uni_paderborn.fujaba.common.properties">
+      <propertySections contributorId="org.muml.ape.contributor">
           <propertySection
             class="de.uni_paderborn.fujaba.properties.runtime.sections.ObjectPropertySection"
             filter="org.muml.reconfiguration.verification.sdd.componentsdd.properties.tabs.ConstraintTabElementFilter"

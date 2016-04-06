@@ -354,9 +354,9 @@
         <metaClass
             href="../../de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd/model/BasicSDD.genmodel#//basicSDD/StoryPatternNode"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.verification.sdd/model/sdd.genmodel#//sdd/AbstractStoryDecisionDiagram/nodes"/>
+            href="../../org.muml.storydiagram.verification.sdd/model/sdd.genmodel#//sdd/AbstractStoryDecisionDiagram/nodes"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.verification.sdd/model/sdd.genmodel#//sdd/AbstractStoryDecisionDiagram/nodes"/>
+            href="../../org.muml.storydiagram.verification.sdd/model/sdd.genmodel#//sdd/AbstractStoryDecisionDiagram/nodes"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
@@ -428,7 +428,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.2">
           <metaFeatures
-              href="../../de.uni_paderborn.fujaba.muml.verification.sdd/model/sdd.genmodel#//sdd/PatternNode/type"/>
+              href="../../org.muml.storydiagram.verification.sdd/model/sdd.genmodel#//sdd/PatternNode/type"/>
         </modelFacet>
       </labels>
     </topLevelNodes>
@@ -457,11 +457,11 @@
       </viewmap>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml.verification.sdd/model/sdd.genmodel#//sdd/LeafNode"/>
+            href="../../org.muml.storydiagram.verification.sdd/model/sdd.genmodel#//sdd/LeafNode"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.verification.sdd/model/sdd.genmodel#//sdd/AbstractStoryDecisionDiagram/nodes"/>
+            href="../../org.muml.storydiagram.verification.sdd/model/sdd.genmodel#//sdd/AbstractStoryDecisionDiagram/nodes"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.verification.sdd/model/sdd.genmodel#//sdd/AbstractStoryDecisionDiagram/nodes"/>
+            href="../../org.muml.storydiagram.verification.sdd/model/sdd.genmodel#//sdd/AbstractStoryDecisionDiagram/nodes"/>
       </modelFacet>
     </topLevelNodes>
     <links
@@ -487,15 +487,15 @@
       <modelFacet
           xsi:type="gmfgen:TypeLinkModelFacet">
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml.verification.sdd/model/sdd.genmodel#//sdd/Edge"/>
+            href="../../org.muml.storydiagram.verification.sdd/model/sdd.genmodel#//sdd/Edge"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.verification.sdd/model/sdd.genmodel#//sdd/AbstractStoryDecisionDiagram/edges"/>
+            href="../../org.muml.storydiagram.verification.sdd/model/sdd.genmodel#//sdd/AbstractStoryDecisionDiagram/edges"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.verification.sdd/model/sdd.genmodel#//sdd/AbstractStoryDecisionDiagram/edges"/>
+            href="../../org.muml.storydiagram.verification.sdd/model/sdd.genmodel#//sdd/AbstractStoryDecisionDiagram/edges"/>
         <sourceMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.verification.sdd/model/sdd.genmodel#//sdd/Edge/sourceNode"/>
+            href="../../org.muml.storydiagram.verification.sdd/model/sdd.genmodel#//sdd/Edge/sourceNode"/>
         <targetMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.verification.sdd/model/sdd.genmodel#//sdd/Edge/targetNode"/>
+            href="../../org.muml.storydiagram.verification.sdd/model/sdd.genmodel#//sdd/Edge/targetNode"/>
       </modelFacet>
     </links>
     <links

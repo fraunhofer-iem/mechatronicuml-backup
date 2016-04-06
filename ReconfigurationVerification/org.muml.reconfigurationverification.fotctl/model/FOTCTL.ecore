@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ecore:EPackage xmi:version="2.0"
-    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="fotctl"
-    nsURI="http://www.fujaba.de/muml/verification/fotctl/0.1.0" nsPrefix="fotctl">
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="fotctl" nsURI="http://www.muml.org/reconfigurationverification/fotctl/1.0.0"
+    nsPrefix="fotctl">
   <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
     <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
     <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
@@ -18,28 +17,28 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="constants" upperBound="-1"
         eType="#//ConstantSymbolDecl" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="FoTCTLFormula" eSuperTypes="../../de.uni_paderborn.fujaba.muml.verification.tctl/model/TCTL.ecore#//TCTLFormula"/>
+  <eClassifiers xsi:type="ecore:EClass" name="FoTCTLFormula" eSuperTypes="../../org.muml.reconfigurationverification.tctl/model/TCTL.ecore#//TCTLFormula"/>
   <eClassifiers xsi:type="ecore:EClass" name="NodeLabelPredicateDecl" eSuperTypes="../../org.muml.core/model/core.ecore#//NamedElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="EdgeLabelPredicateDecl" eSuperTypes="../../org.muml.core/model/core.ecore#//NamedElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="ConstantSymbolDecl" eSuperTypes="../../org.muml.core/model/core.ecore#//NamedElement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="QuantifiedFormula" eSuperTypes="../../de.uni_paderborn.fujaba.muml.verification.tctl/model/TCTL.ecore#//UnaryFormula ../../org.muml.core/model/core.ecore#//NamedElement">
+  <eClassifiers xsi:type="ecore:EClass" name="QuantifiedFormula" eSuperTypes="../../org.muml.reconfigurationverification.tctl/model/TCTL.ecore#//UnaryFormula ../../org.muml.core/model/core.ecore#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="variables" lowerBound="1"
         upperBound="-1" eType="#//Variable" eOpposite="#//Variable/declaration"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="quantifier" eType="#//Quantifier"
         defaultValueLiteral="Quantifier.FORALL"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="NodeLabelPredicate" eSuperTypes="../../de.uni_paderborn.fujaba.muml.verification.tctl/model/TCTL.ecore#//AtomicFormula">
+  <eClassifiers xsi:type="ecore:EClass" name="NodeLabelPredicate" eSuperTypes="../../org.muml.reconfigurationverification.tctl/model/TCTL.ecore#//AtomicFormula">
     <eStructuralFeatures xsi:type="ecore:EReference" name="declaration" lowerBound="1"
         eType="#//NodeLabelPredicateDecl"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="EdgeLabelPredicate" eSuperTypes="../../de.uni_paderborn.fujaba.muml.verification.tctl/model/TCTL.ecore#//AtomicFormula">
+  <eClassifiers xsi:type="ecore:EClass" name="EdgeLabelPredicate" eSuperTypes="../../org.muml.reconfigurationverification.tctl/model/TCTL.ecore#//AtomicFormula">
     <eStructuralFeatures xsi:type="ecore:EReference" name="declaration" lowerBound="1"
         eType="#//EdgeLabelPredicateDecl"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="secondTerm" lowerBound="1"
-        eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.verification.tctl/model/TCTL.ecore#//Term"
+        eType="ecore:EClass ../../org.muml.reconfigurationverification.tctl/model/TCTL.ecore#//Term"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Variable" eSuperTypes="../../de.uni_paderborn.fujaba.muml.verification.tctl/model/TCTL.ecore#//Term">
+  <eClassifiers xsi:type="ecore:EClass" name="Variable" eSuperTypes="../../org.muml.reconfigurationverification.tctl/model/TCTL.ecore#//Term">
     <eStructuralFeatures xsi:type="ecore:EReference" name="declaration" lowerBound="1"
         eType="#//QuantifiedFormula" resolveProxies="false" eOpposite="#//QuantifiedFormula/variables"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
@@ -49,7 +48,7 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Constant" eSuperTypes="../../de.uni_paderborn.fujaba.muml.verification.tctl/model/TCTL.ecore#//Term">
+  <eClassifiers xsi:type="ecore:EClass" name="Constant" eSuperTypes="../../org.muml.reconfigurationverification.tctl/model/TCTL.ecore#//Term">
     <eStructuralFeatures xsi:type="ecore:EReference" name="declaration" lowerBound="1"
         eType="#//ConstantSymbolDecl" resolveProxies="false"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"

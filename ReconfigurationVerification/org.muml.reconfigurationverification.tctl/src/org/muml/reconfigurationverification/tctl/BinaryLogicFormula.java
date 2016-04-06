@@ -14,10 +14,10 @@ package org.muml.reconfigurationverification.tctl;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.reconfigurationverification.tctl.BinaryLogicFormula#getOperator <em>Operator</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.reconfigurationverification.tctl.TctlPackage#getBinaryLogicFormula()
  * @model

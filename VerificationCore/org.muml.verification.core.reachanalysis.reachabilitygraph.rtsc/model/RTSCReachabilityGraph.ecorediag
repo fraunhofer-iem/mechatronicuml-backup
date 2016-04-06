@@ -118,7 +118,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_qRUyKSETEeKLloA4O8HoyQ"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_qRUyHyETEeKLloA4O8HoyQ" fontColor="4210752" fontName="MS Shell Dlg" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
-    <element xmi:type="ecore:EClass" href="platform:/resource/de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph/model/ReachabilityAnalysisCore.ecore#//ReachabilityGraphState"/>
+    <element xmi:type="ecore:EClass" href="platform:/resource/org.muml.core.reachanalysis.reachabilitygraph/model/ReachabilityAnalysisCore.ecore#//ReachabilityGraphState"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_qRUyICETEeKLloA4O8HoyQ" x="390" y="305"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_epmhAiETEeKLloA4O8HoyQ"/>

@@ -8,7 +8,8 @@ Bundle-Activator: org.muml.storydiagram.verification.sdd.provider.SDDEditPlugin$
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: org.muml.storydiagram.verification.sdd.provider
+Export-Package: org.muml.storydiagram.verification.sdd.provider,
+ org.muml.storydiagram.verification.sdd.sdd.provider
 Require-Bundle: org.eclipse.core.runtime,
  org.muml.storydiagram.verification.sdd;visibility:=reexport,
  org.eclipse.emf.edit;visibility:=reexport,

@@ -17,13 +17,13 @@ import org.muml.core.NamedElement;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link railcab.RailCab#getMember <em>Member</em>}</li>
  *   <li>{@link railcab.RailCab#getSectionControl <em>Section Control</em>}</li>
  *   <li>{@link railcab.RailCab#isIsLeader <em>Is Leader</em>}</li>
  *   <li>{@link railcab.RailCab#getLeader <em>Leader</em>}</li>
  * </ul>
- * </p>
  *
  * @see railcab.RailcabPackage#getRailCab()
  * @model

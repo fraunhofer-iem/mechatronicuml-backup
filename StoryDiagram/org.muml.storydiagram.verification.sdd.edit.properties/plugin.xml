@@ -6,7 +6,7 @@
   <extension
          point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
     <propertyContributor
-          contributorId="de.uni_paderborn.fujaba.common.properties">
+          contributorId="org.muml.ape.contributor">
        <propertyCategory
              category="domain">
        </propertyCategory>
@@ -34,12 +34,12 @@
     
        <propertyEditor
              factory="org.muml.storydiagram.verification.sdd.properties.sdd.editor.EdgeEditor$Factory"
-             type="http://www.fujaba.de/muml/verification/sdd/0.4.0#Edge">
+             type="http://www.muml.org/storydiagram/verification/sdd/1.0.0#Edge">
        </propertyEditor>
     
        <propertyEditor
              factory="org.muml.storydiagram.verification.sdd.properties.sdd.editor.LeafNodeEditor$Factory"
-             type="http://www.fujaba.de/muml/verification/sdd/0.4.0#LeafNode">
+             type="http://www.muml.org/storydiagram/verification/sdd/1.0.0#LeafNode">
        </propertyEditor>
     
     </propertyEditors>

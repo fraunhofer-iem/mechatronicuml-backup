@@ -21,12 +21,12 @@ import org.muml.reconfigurationverification.tctl.UnaryTemporalFormula;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.reconfigurationverification.tctl.impl.UnaryTemporalFormulaImpl#getComparisonOperator <em>Comparison Operator</em>}</li>
  *   <li>{@link org.muml.reconfigurationverification.tctl.impl.UnaryTemporalFormulaImpl#getTemporalOperator <em>Temporal Operator</em>}</li>
  *   <li>{@link org.muml.reconfigurationverification.tctl.impl.UnaryTemporalFormulaImpl#getValue <em>Value</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

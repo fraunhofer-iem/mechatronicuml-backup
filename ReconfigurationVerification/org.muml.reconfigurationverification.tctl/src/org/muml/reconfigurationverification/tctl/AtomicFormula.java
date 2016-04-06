@@ -14,10 +14,10 @@ package org.muml.reconfigurationverification.tctl;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.reconfigurationverification.tctl.AtomicFormula#getTerm <em>Term</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.reconfigurationverification.tctl.TctlPackage#getAtomicFormula()
  * @model abstract="true"

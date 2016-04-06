@@ -21,10 +21,10 @@ import org.muml.reconfigurationverification.tctl.Term;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.reconfigurationverification.tctl.impl.AtomicFormulaImpl#getTerm <em>Term</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

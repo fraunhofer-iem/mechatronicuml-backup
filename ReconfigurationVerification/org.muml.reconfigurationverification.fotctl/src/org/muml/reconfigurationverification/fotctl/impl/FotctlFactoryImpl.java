@@ -29,7 +29,7 @@ public class FotctlFactoryImpl extends EFactoryImpl implements FotctlFactory {
 	 */
 	public static FotctlFactory init() {
 		try {
-			FotctlFactory theFotctlFactory = (FotctlFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/verification/fotctl/0.1.0"); 
+			FotctlFactory theFotctlFactory = (FotctlFactory)EPackage.Registry.INSTANCE.getEFactory(FotctlPackage.eNS_URI);
 			if (theFotctlFactory != null) {
 				return theFotctlFactory;
 			}

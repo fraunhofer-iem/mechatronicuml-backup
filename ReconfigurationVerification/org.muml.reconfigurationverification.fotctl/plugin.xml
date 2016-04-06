@@ -11,8 +11,9 @@
 <plugin>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated FOTCTL -->
       <package
-            uri="http://www.fujaba.de/muml/verification/fotctl/0.1.0"
+            uri="http://www.muml.org/reconfigurationverification/fotctl/1.0.0"
             class="org.muml.reconfigurationverification.fotctl.FotctlPackage"
             genModel="model/FOTCTL.genmodel"/>
    </extension>

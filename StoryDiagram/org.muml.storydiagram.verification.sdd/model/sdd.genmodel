@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
-    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/de.uni_paderborn.fujaba.muml.verification.sdd/src"
-    editDirectory="/de.uni_paderborn.fujaba.muml.verification.sdd.edit/src" editorDirectory="/de.uni_paderborn.fujaba.muml.verification.sdd.editor/src"
-    modelPluginID="de.uni_paderborn.fujaba.muml.verification.sdd" modelName="SDD"
-    editPluginClass="de.uni_paderborn.fujaba.muml.verification.sdd.provider.SDDEditPlugin"
-    editorPluginClass="de.uni_paderborn.fujaba.muml.verification.sdd.presentation.SDDEditorPlugin"
-    testSuiteClass="de.uni_paderborn.fujaba.muml.verification.sdd.tests.SDDAllTests"
-    importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" copyrightFields="false"
-    editPluginID="de.uni_paderborn.fujaba.muml.verification.sdd.edit" editorPluginID="de.uni_paderborn.fujaba.muml.verification.sdd.editor"
-    usedGenPackages="../../org.muml.core/model/core.genmodel#//core" operationReflection="true">
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.muml.storydiagram.verification.sdd/src" editDirectory="/org.muml.storydiagram.verification.sdd.edit/src"
+    editorDirectory="/org.muml.storydiagram.verification.sdd.editor/src" modelPluginID="org.muml.storydiagram.verification.sdd"
+    modelName="SDD" editPluginClass="org.muml.storydiagram.verification.sdd.provider.SDDEditPlugin"
+    editorPluginClass="org.muml.storydiagram.verification.sdd.presentation.SDDEditorPlugin"
+    testSuiteClass="org.muml.storydiagram.verification.sdd.tests.SDDAllTests" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="6.0" copyrightFields="false" editPluginID="org.muml.storydiagram.verification.sdd.edit"
+    editorPluginID="org.muml.storydiagram.verification.sdd.editor" usedGenPackages="../../org.muml.core/model/core.genmodel#//core"
+    operationReflection="true">
   <foreignModel>sdd.ecore</foreignModel>
-  <genPackages prefix="SDD" basePackage="de.uni_paderborn.fujaba.muml.verification"
-      disposableProviderFactory="true" ecorePackage="sdd.ecore#/">
+  <genPackages prefix="SDD" basePackage="org.muml.storydiagram.verification.sdd" disposableProviderFactory="true"
+      ecorePackage="sdd.ecore#/">
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="sdd.ecore#//EdgeType">
       <genEnumLiterals ecoreEnumLiteral="sdd.ecore#//EdgeType/High"/>
       <genEnumLiterals ecoreEnumLiteral="sdd.ecore#//EdgeType/Low"/>

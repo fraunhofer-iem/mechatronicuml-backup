@@ -6,7 +6,7 @@
   <extension
          point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
     <propertyContributor
-          contributorId="de.uni_paderborn.fujaba.common.properties">
+          contributorId="org.muml.ape.contributor">
        <propertyCategory
              category="domain">
        </propertyCategory>
@@ -33,13 +33,13 @@
     <propertyEditors>
     
        <propertyEditor
-             factory="org.muml.storydiagram.verification.sdd.basicsdd.properties.basicSDD.editor.StoryDecisionDiagramEditor$Factory"
-             type="http://www.fujaba.de/muml/verification/sdd/basicSDD/0.4.0#StoryDecisionDiagram">
+             factory="org.muml.storydiagram.verification.sdd.basicsdd.properties.basicsdd.editor.StoryDecisionDiagramEditor$Factory"
+             type="http://www.muml.org/storydiagram/verification/sdd/basicsdd/1.0.0#StoryDecisionDiagram">
        </propertyEditor>
     
        <propertyEditor
-             factory="org.muml.storydiagram.verification.sdd.basicsdd.properties.basicSDD.editor.StoryPatternNodeEditor$Factory"
-             type="http://www.fujaba.de/muml/verification/sdd/basicSDD/0.4.0#StoryPatternNode">
+             factory="org.muml.storydiagram.verification.sdd.basicsdd.properties.basicsdd.editor.StoryPatternNodeEditor$Factory"
+             type="http://www.muml.org/storydiagram/verification/sdd/basicsdd/1.0.0#StoryPatternNode">
        </propertyEditor>
     
     </propertyEditors>

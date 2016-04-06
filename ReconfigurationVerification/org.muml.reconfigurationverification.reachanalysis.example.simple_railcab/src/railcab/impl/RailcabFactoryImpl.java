@@ -31,7 +31,7 @@ public class RailcabFactoryImpl extends EFactoryImpl implements RailcabFactory {
 	 */
 	public static RailcabFactory init() {
 		try {
-			RailcabFactory theRailcabFactory = (RailcabFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/verification/test/railcab/0.1.0"); 
+			RailcabFactory theRailcabFactory = (RailcabFactory)EPackage.Registry.INSTANCE.getEFactory(RailcabPackage.eNS_URI);
 			if (theRailcabFactory != null) {
 				return theRailcabFactory;
 			}

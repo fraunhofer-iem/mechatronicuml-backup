@@ -22,10 +22,10 @@ import org.muml.reconfigurationverification.tctl.TctlPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.reconfigurationverification.tctl.impl.TCTLFormulaImpl#getFormula <em>Formula</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

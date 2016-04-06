@@ -21,10 +21,10 @@ import org.muml.reconfigurationverification.tctl.impl.AtomicFormulaImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.reconfigurationverification.fotctl.impl.NodeLabelPredicateImpl#getDeclaration <em>Declaration</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

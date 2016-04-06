@@ -1,79 +1,75 @@
 <?xml version="1.0" encoding="ASCII"?>
-<de.uni_paderborn.fujaba:PropertyGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.uni_paderborn.fujaba="http://www.muml.org/ape/1.0.0" xmi:id="_Rm9u4M1gEeSIgPDefa6ZBw" contributorId="de.uni_paderborn.fujaba.common.properties">
+<org.muml:PropertyGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.muml="http://www.muml.org/ape/1.0.0" xmi:id="_Rm9u4M1gEeSIgPDefa6ZBw" contributorId="org.muml.ape.contributor">
   <reconciler xmi:id="_Rm9u4c1gEeSIgPDefa6ZBw">
-    <customTransformations xmi:id="_Rm9u4s1gEeSIgPDefa6ZBw" uri="platform:/plugin/de.uni_paderborn.fujaba.muml.common/transformations/muml-propsheet.qvto"/>
-    <customTransformations xmi:id="_Rm9u481gEeSIgPDefa6ZBw" uri="platform:/plugin/de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/transformations/xtext-propsheet.qvto"/>
+    <customTransformations xmi:id="_Rm9u4s1gEeSIgPDefa6ZBw" uri="platform:/plugin/org.muml.pim.common/transformations/muml-propsheet.qvto"/>
+    <customTransformations xmi:id="_Rm9u481gEeSIgPDefa6ZBw" uri="platform:/plugin/org.muml.pim.actionlanguage.xtext.ui/transformations/xtext-propsheet.qvto"/>
   </reconciler>
   <genModel href="ComponentSDD.genmodel#/"/>
-  <referencedGenerators href="../../org.muml.core/model/core.propsheet#_VZGBYMwbEeSjx7OWZCcdLw"/>
-  <referencedGenerators href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.propsheet#_Rk4rQM1gEeSIgPDefa6ZBw"/>
+  <referencedGenerators href="../../org.muml.core/model/core.propsheet#_i_I4kOHNEeS5Putgio2lkg"/>
+  <referencedGenerators href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.propsheet#_Rk4rQM1gEeSIgPDefa6ZBw"/>
   <referencedGenerators href="../../org.muml.pim/model/pim.propsheet#_VZIdoMwbEeSjx7OWZCcdLw"/>
   <referencedGenerators href="../../org.muml.reconfiguration/model/MumlReconfiguration.propsheet#_RmFlIM1gEeSIgPDefa6ZBw"/>
-  <referencedGenerators href="../../de.uni_paderborn.fujaba.muml.verification.sdd/model/sdd.propsheet#_RmkGQM1gEeSIgPDefa6ZBw"/>
-  <referencedGenerators href="../../de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd/model/BasicSDD.propsheet#_RmxhoM1gEeSIgPDefa6ZBw"/>
+  <referencedGenerators href="../../org.muml.storydiagram.verification.sdd/model/sdd.propsheet#_RmkGQM1gEeSIgPDefa6ZBw"/>
+  <referencedGenerators href="../../org.muml.storydiagram.verification.sdd.basicsdd/model/BasicSDD.propsheet#_RmxhoM1gEeSIgPDefa6ZBw"/>
   <plugin xmi:id="_Rm-V8M1gEeSIgPDefa6ZBw" id="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.edit.properties" name="ComponentStoryDecisionDiagram Tabbed Properties" vendor="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn" version="0.5.0.qualifier">
     <requiredBundles>org.eclipse.emf.ecore</requiredBundles>
     <requiredBundles>org.eclipse.ui</requiredBundles>
     <requiredBundles>org.eclipse.core.runtime</requiredBundles>
-    <requiredBundles>de.uni_paderborn.fujaba.properties.runtime</requiredBundles>
-    <requiredBundles>de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD</requiredBundles>
-    <requiredBundles>de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.edit</requiredBundles>
     <requiredBundles>org.eclipse.emf.edit</requiredBundles>
-    <requiredBundles>de.uni_paderborn.fujaba.muml.componentstorypattern</requiredBundles>
-    <requiredBundles>org.storydriven.core.edit</requiredBundles>
-    <requiredBundles>org.storydriven.core.edit.properties</requiredBundles>
-    <requiredBundles>de.uni_paderborn.fujaba.muml.componentstorypattern.edit</requiredBundles>
-    <requiredBundles>de.uni_paderborn.fujaba.muml.componentstorypattern.edit.properties</requiredBundles>
-    <requiredBundles>de.uni_paderborn.fujaba.muml.edit</requiredBundles>
-    <requiredBundles>de.uni_paderborn.fujaba.muml.edit.properties</requiredBundles>
-    <requiredBundles>de.uni_paderborn.fujaba.muml.reconfiguration.edit</requiredBundles>
-    <requiredBundles>de.uni_paderborn.fujaba.muml.reconfiguration.edit.properties</requiredBundles>
+    <requiredBundles>org.muml.reconfiguration.verification.sdd.componentsdd</requiredBundles>
+    <requiredBundles>org.muml.ape.runtime</requiredBundles>
+    <requiredBundles>org.muml.reconfiguration.verification.sdd.componentsdd.edit</requiredBundles>
+    <requiredBundles>org.muml.core.edit</requiredBundles>
+    <requiredBundles>org.muml.core.edit.properties</requiredBundles>
+    <requiredBundles>org.muml.reconfiguration.componentstorypattern.edit</requiredBundles>
+    <requiredBundles>org.muml.reconfiguration.componentstorypattern.edit.properties</requiredBundles>
+    <requiredBundles>org.muml.pim.edit</requiredBundles>
+    <requiredBundles>org.muml.pim.edit.properties</requiredBundles>
+    <requiredBundles>org.muml.reconfiguration.edit</requiredBundles>
+    <requiredBundles>org.muml.reconfiguration.edit.properties</requiredBundles>
     <requiredBundles>de.uni_paderborn.fujaba.muml.verification.sdd.edit</requiredBundles>
     <requiredBundles>de.uni_paderborn.fujaba.muml.verification.sdd.edit.properties</requiredBundles>
-    <requiredBundles>de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd.edit</requiredBundles>
-    <requiredBundles>de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd.edit.properties</requiredBundles>
+    <requiredBundles>org.muml.storydiagram.verification.sdd.basicsdd.edit</requiredBundles>
+    <requiredBundles>org.muml.storydiagram.verification.sdd.basicsdd.edit.properties</requiredBundles>
+    <requiredBundles>org.muml.storydiagram.verification.sdd.edit</requiredBundles>
+    <requiredBundles>org.muml.storydiagram.verification.sdd.edit.properties</requiredBundles>
   </plugin>
-  <defaultTab href="../../org.muml.core/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
+  <defaultTab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
   <tabs xmi:id="_Rm-V8c1gEeSIgPDefa6ZBw" id="property.tab.constraint" name="Constraint" afterTab="property.tab.comment"/>
   <packages xmi:id="_Rm-V8s1gEeSIgPDefa6ZBw">
     <genPackage href="ComponentSDD.genmodel#//componentsdd"/>
     <classes xmi:id="_Rm-9AM1gEeSIgPDefa6ZBw">
       <genClass href="ComponentSDD.genmodel#//componentsdd/ComponentStoryDecisionDiagram"/>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_Rm-9Ac1gEeSIgPDefa6ZBw" initializeOCLExpression="">
+      <orderedElements xsi:type="org.muml:PropertyCategory" xmi:id="_Rm_kEc1gEeSIgPDefa6ZBw" title="Booleans"/>
+      <orderedElements xsi:type="org.muml:Property">
         <genFeature href="ComponentSDD.genmodel#//componentsdd/ComponentStoryDecisionDiagram/invariantSDD"/>
-        <tab href="../../org.muml.core/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor" xmi:id="_Rm_kEM1gEeSIgPDefa6ZBw"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:CheckboxPropertyEditor"/>
       </orderedElements>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:PropertyCategory" xmi:id="_Rm_kEc1gEeSIgPDefa6ZBw" title="Booleans"/>
-      <superClasses href="../../org.muml.reconfiguration/model/MumlReconfiguration.propsheet#_RmRLU81gEeSIgPDefa6ZBw"/>
-      <superClasses href="../../de.uni_paderborn.fujaba.muml.verification.sdd/model/sdd.propsheet#_RmktUs1gEeSIgPDefa6ZBw"/>
+      <superClasses href="../../org.muml.storydiagram.verification.sdd/model/sdd.propsheet#_RmktUs1gEeSIgPDefa6ZBw"/>
+      <superClasses href="../../org.muml.reconfiguration/model/MumlReconfiguration.propsheet#//@packages.1/@classes.22"/>
     </classes>
     <classes xmi:id="_Rm_kEs1gEeSIgPDefa6ZBw">
       <genClass href="ComponentSDD.genmodel#//componentsdd/ComponentStoryPatternNode"/>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_RnALIM1gEeSIgPDefa6ZBw" initializeOCLExpression="">
-        <genFeature href="../../de.uni_paderborn.fujaba.muml.verification.sdd/model/sdd.genmodel#//sdd/PatternNode/type"/>
-        <tab href="../../org.muml.core/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor" xmi:id="_RnALIc1gEeSIgPDefa6ZBw"/>
-      </orderedElements>
-      <superClasses href="../../de.uni_paderborn.fujaba.muml.verification.sdd/model/sdd.propsheet#_Rml7dM1gEeSIgPDefa6ZBw"/>
+      <superClasses href="../../org.muml.storydiagram.verification.sdd/model/sdd.propsheet#_Rml7dM1gEeSIgPDefa6ZBw"/>
     </classes>
     <classes xmi:id="_RnALIs1gEeSIgPDefa6ZBw">
       <genClass href="ComponentSDD.genmodel#//componentsdd/EvaluateComponentSDDExpression"/>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_RnALI81gEeSIgPDefa6ZBw">
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_RnALI81gEeSIgPDefa6ZBw">
         <genFeature href="ComponentSDD.genmodel#//componentsdd/EvaluateComponentSDDExpression/componentSDD"/>
-        <tab href="../../org.muml.core/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor" xmi:id="_RnALJM1gEeSIgPDefa6ZBw"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ComboBoxPropertyEditor" xmi:id="_RnALJM1gEeSIgPDefa6ZBw"/>
       </orderedElements>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_RnALJc1gEeSIgPDefa6ZBw" tooltip="" initializeOCLExpression="">
+      <orderedElements xsi:type="org.muml:Property" xmi:id="_RnALJc1gEeSIgPDefa6ZBw" tooltip="" initializeOCLExpression="">
         <genFeature href="ComponentSDD.genmodel#//componentsdd/EvaluateComponentSDDExpression/parameterBindings"/>
-        <tab href="../../org.muml.core/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor" xmi:id="_RnALJs1gEeSIgPDefa6ZBw"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="org.muml:ListPropertyEditor" xmi:id="_RnALJs1gEeSIgPDefa6ZBw"/>
       </orderedElements>
-      <superClasses href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.propsheet#_Rk7ul81gEeSIgPDefa6ZBw"/>
+      <superClasses href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.propsheet#_Rk7ul81gEeSIgPDefa6ZBw"/>
     </classes>
     <classes xmi:id="_RnALJ81gEeSIgPDefa6ZBw">
       <genClass href="ComponentSDD.genmodel#//componentsdd/InitialNode"/>
-      <superClasses href="../../de.uni_paderborn.fujaba.muml.verification.sdd/model/sdd.propsheet#_RmlUYM1gEeSIgPDefa6ZBw"/>
+      <superClasses href="../../org.muml.storydiagram.verification.sdd/model/sdd.propsheet#_RmlUYM1gEeSIgPDefa6ZBw"/>
     </classes>
   </packages>
-</de.uni_paderborn.fujaba:PropertyGenerator>
+</org.muml:PropertyGenerator>

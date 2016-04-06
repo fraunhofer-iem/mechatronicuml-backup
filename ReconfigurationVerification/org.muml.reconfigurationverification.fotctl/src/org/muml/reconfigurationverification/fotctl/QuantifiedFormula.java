@@ -17,11 +17,11 @@ import org.muml.reconfigurationverification.tctl.UnaryFormula;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.reconfigurationverification.fotctl.QuantifiedFormula#getVariables <em>Variables</em>}</li>
  *   <li>{@link org.muml.reconfigurationverification.fotctl.QuantifiedFormula#getQuantifier <em>Quantifier</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.reconfigurationverification.fotctl.FotctlPackage#getQuantifiedFormula()
  * @model

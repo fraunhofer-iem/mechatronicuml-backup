@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="tctl" nsURI="http://www.fujaba.de/muml/verification/tctl/0.1.0"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="tctl" nsURI="http://www.muml.org/reconfigurationverification/tctl/1.0.0"
     nsPrefix="tctl">
   <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
     <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>

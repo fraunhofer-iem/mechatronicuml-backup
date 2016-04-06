@@ -15,8 +15,6 @@ import org.muml.reconfigurationverification.fotctl.NodeLabelPredicateDecl;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Node Label Predicate Decl</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */

@@ -85,7 +85,7 @@ public class BasicSDDPackageImpl extends EPackageImpl implements BasicSDDPackage
 		isInited = true;
 
 		// Initialize simple dependencies
-		SDDPackage.eINSTANCE.eClass();
+		de.uni_paderborn.fujaba.muml.verification.sdd.SDDPackage.eINSTANCE.eClass();
 		StorydiagramPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
@@ -197,7 +197,7 @@ public class BasicSDDPackageImpl extends EPackageImpl implements BasicSDDPackage
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		SDDPackage theSDDPackage = (SDDPackage)EPackage.Registry.INSTANCE.getEPackage(SDDPackage.eNS_URI);
+		de.uni_paderborn.fujaba.muml.verification.sdd.SDDPackage theSDDPackage = (de.uni_paderborn.fujaba.muml.verification.sdd.SDDPackage)EPackage.Registry.INSTANCE.getEPackage(de.uni_paderborn.fujaba.muml.verification.sdd.SDDPackage.eNS_URI);
 		PatternsPackage thePatternsPackage = (PatternsPackage)EPackage.Registry.INSTANCE.getEPackage(PatternsPackage.eNS_URI);
 
 		// Create type parameters

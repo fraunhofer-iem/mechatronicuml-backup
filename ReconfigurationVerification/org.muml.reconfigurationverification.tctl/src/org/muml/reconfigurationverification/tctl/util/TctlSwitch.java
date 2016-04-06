@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.util.Switch;
 import org.muml.core.CommentableElement;
 import org.muml.core.ExtendableElement;
 import org.muml.core.NamedElement;
+import org.muml.reconfigurationverification.tctl.*;
 import org.muml.reconfigurationverification.tctl.AtomicFormula;
 import org.muml.reconfigurationverification.tctl.AtomicProposition;
 import org.muml.reconfigurationverification.tctl.BinaryFormula;
@@ -64,7 +65,7 @@ public class TctlSwitch<T> extends Switch<T> {
 	 * Checks whether this is a switch for the given package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @parameter ePackage the package in question.
+	 * @param ePackage the package in question.
 	 * @return whether this is a switch for the given package.
 	 * @generated
 	 */

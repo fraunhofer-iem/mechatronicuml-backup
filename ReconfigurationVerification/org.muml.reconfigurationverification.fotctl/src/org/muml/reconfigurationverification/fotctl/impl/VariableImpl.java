@@ -23,11 +23,11 @@ import org.muml.reconfigurationverification.tctl.impl.TermImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.reconfigurationverification.fotctl.impl.VariableImpl#getDeclaration <em>Declaration</em>}</li>
  *   <li>{@link org.muml.reconfigurationverification.fotctl.impl.VariableImpl#getName <em>Name</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

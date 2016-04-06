@@ -15,10 +15,10 @@ import org.muml.reconfigurationverification.tctl.AtomicFormula;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.reconfigurationverification.fotctl.NodeLabelPredicate#getDeclaration <em>Declaration</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.reconfigurationverification.fotctl.FotctlPackage#getNodeLabelPredicate()
  * @model

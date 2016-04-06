@@ -7,9 +7,10 @@
 <plugin>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated ComponentSDD -->
       <package
-            uri="http://www.fujaba.de/muml/verification/sdd/componentsdd/0.4.0"
-            class="org.muml.reconfiguration.verification.sdd.componentsdd.ComponentsddPackage"
+            uri="http://www.muml.org/reconfiguration/verification/sdd/componentsdd/1.0.0"
+            class="org.muml.reconfiguration.verification.sdd.componentsdd.componentsdd.ComponentsddPackage"
             genModel="model/ComponentSDD.genmodel"/>
    </extension>
 

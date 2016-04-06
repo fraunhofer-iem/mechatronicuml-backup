@@ -44,7 +44,7 @@ public interface TctlPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.fujaba.de/muml/verification/tctl/0.1.0";
+	String eNS_URI = "http://www.muml.org/reconfigurationverification/tctl/1.0.0";
 
 	/**
 	 * The package namespace name.
@@ -73,22 +73,22 @@ public interface TctlPackage extends EPackage {
 	int FORMULA_DEFINITION = 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FORMULA_DEFINITION__ANNOTATION = CorePackage.EXTENDABLE_ELEMENT__ANNOTATION;
+	int FORMULA_DEFINITION__ANNOTATIONS = CorePackage.EXTENDABLE_ELEMENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FORMULA_DEFINITION__EXTENSION = CorePackage.EXTENDABLE_ELEMENT__EXTENSION;
+	int FORMULA_DEFINITION__EXTENSIONS = CorePackage.EXTENDABLE_ELEMENT__EXTENSIONS;
 
 	/**
 	 * The number of structural features of the '<em>Formula Definition</em>' class.
@@ -120,22 +120,22 @@ public interface TctlPackage extends EPackage {
 	int ATOMIC_FORMULA = 1;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ATOMIC_FORMULA__ANNOTATION = FORMULA_DEFINITION__ANNOTATION;
+	int ATOMIC_FORMULA__ANNOTATIONS = FORMULA_DEFINITION__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ATOMIC_FORMULA__EXTENSION = FORMULA_DEFINITION__EXTENSION;
+	int ATOMIC_FORMULA__EXTENSIONS = FORMULA_DEFINITION__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Term</b></em>' containment reference.
@@ -166,22 +166,22 @@ public interface TctlPackage extends EPackage {
 	int UNARY_FORMULA = 2;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int UNARY_FORMULA__ANNOTATION = FORMULA_DEFINITION__ANNOTATION;
+	int UNARY_FORMULA__ANNOTATIONS = FORMULA_DEFINITION__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int UNARY_FORMULA__EXTENSION = FORMULA_DEFINITION__EXTENSION;
+	int UNARY_FORMULA__EXTENSIONS = FORMULA_DEFINITION__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Subformula</b></em>' containment reference.
@@ -212,22 +212,22 @@ public interface TctlPackage extends EPackage {
 	int BINARY_FORMULA = 3;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BINARY_FORMULA__ANNOTATION = FORMULA_DEFINITION__ANNOTATION;
+	int BINARY_FORMULA__ANNOTATIONS = FORMULA_DEFINITION__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BINARY_FORMULA__EXTENSION = FORMULA_DEFINITION__EXTENSION;
+	int BINARY_FORMULA__EXTENSIONS = FORMULA_DEFINITION__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Left Subformula</b></em>' containment reference.
@@ -267,22 +267,22 @@ public interface TctlPackage extends EPackage {
 	int NOT_FORMULA = 4;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NOT_FORMULA__ANNOTATION = UNARY_FORMULA__ANNOTATION;
+	int NOT_FORMULA__ANNOTATIONS = UNARY_FORMULA__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NOT_FORMULA__EXTENSION = UNARY_FORMULA__EXTENSION;
+	int NOT_FORMULA__EXTENSIONS = UNARY_FORMULA__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Subformula</b></em>' containment reference.
@@ -313,22 +313,22 @@ public interface TctlPackage extends EPackage {
 	int UNARY_TEMPORAL_FORMULA = 5;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int UNARY_TEMPORAL_FORMULA__ANNOTATION = UNARY_FORMULA__ANNOTATION;
+	int UNARY_TEMPORAL_FORMULA__ANNOTATIONS = UNARY_FORMULA__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int UNARY_TEMPORAL_FORMULA__EXTENSION = UNARY_FORMULA__EXTENSION;
+	int UNARY_TEMPORAL_FORMULA__EXTENSIONS = UNARY_FORMULA__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Subformula</b></em>' containment reference.
@@ -386,22 +386,22 @@ public interface TctlPackage extends EPackage {
 	int BINARY_LOGIC_FORMULA = 6;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BINARY_LOGIC_FORMULA__ANNOTATION = BINARY_FORMULA__ANNOTATION;
+	int BINARY_LOGIC_FORMULA__ANNOTATIONS = BINARY_FORMULA__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BINARY_LOGIC_FORMULA__EXTENSION = BINARY_FORMULA__EXTENSION;
+	int BINARY_LOGIC_FORMULA__EXTENSIONS = BINARY_FORMULA__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Left Subformula</b></em>' containment reference.
@@ -450,22 +450,22 @@ public interface TctlPackage extends EPackage {
 	int BINARY_TEMPORAL_FORMULA = 7;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BINARY_TEMPORAL_FORMULA__ANNOTATION = BINARY_FORMULA__ANNOTATION;
+	int BINARY_TEMPORAL_FORMULA__ANNOTATIONS = BINARY_FORMULA__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BINARY_TEMPORAL_FORMULA__EXTENSION = BINARY_FORMULA__EXTENSION;
+	int BINARY_TEMPORAL_FORMULA__EXTENSIONS = BINARY_FORMULA__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Left Subformula</b></em>' containment reference.
@@ -532,22 +532,22 @@ public interface TctlPackage extends EPackage {
 	int TEMPORAL_FORMULA = 8;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TEMPORAL_FORMULA__ANNOTATION = CorePackage.EXTENDABLE_ELEMENT__ANNOTATION;
+	int TEMPORAL_FORMULA__ANNOTATIONS = CorePackage.EXTENDABLE_ELEMENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TEMPORAL_FORMULA__EXTENSION = CorePackage.EXTENDABLE_ELEMENT__EXTENSION;
+	int TEMPORAL_FORMULA__EXTENSIONS = CorePackage.EXTENDABLE_ELEMENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Comparison Operator</b></em>' attribute.
@@ -596,22 +596,22 @@ public interface TctlPackage extends EPackage {
 	int TERM = 9;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TERM__ANNOTATION = CorePackage.EXTENDABLE_ELEMENT__ANNOTATION;
+	int TERM__ANNOTATIONS = CorePackage.EXTENDABLE_ELEMENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TERM__EXTENSION = CorePackage.EXTENDABLE_ELEMENT__EXTENSION;
+	int TERM__EXTENSIONS = CorePackage.EXTENDABLE_ELEMENT__EXTENSIONS;
 
 	/**
 	 * The number of structural features of the '<em>Term</em>' class.
@@ -633,22 +633,22 @@ public interface TctlPackage extends EPackage {
 	int ATOMIC_PROPOSITION = 10;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ATOMIC_PROPOSITION__ANNOTATION = TERM__ANNOTATION;
+	int ATOMIC_PROPOSITION__ANNOTATIONS = TERM__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ATOMIC_PROPOSITION__EXTENSION = TERM__EXTENSION;
+	int ATOMIC_PROPOSITION__EXTENSIONS = TERM__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -669,22 +669,22 @@ public interface TctlPackage extends EPackage {
 	int ATOMIC_PROPOSITION_FEATURE_COUNT = TERM_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TCTL_FORMULA__ANNOTATION = CorePackage.COMMENTABLE_ELEMENT__ANNOTATION;
+	int TCTL_FORMULA__ANNOTATIONS = CorePackage.COMMENTABLE_ELEMENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TCTL_FORMULA__EXTENSION = CorePackage.COMMENTABLE_ELEMENT__EXTENSION;
+	int TCTL_FORMULA__EXTENSIONS = CorePackage.COMMENTABLE_ELEMENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.

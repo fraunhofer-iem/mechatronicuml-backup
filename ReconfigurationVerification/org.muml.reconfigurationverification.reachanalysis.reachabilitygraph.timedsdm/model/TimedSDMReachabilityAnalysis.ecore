@@ -14,7 +14,7 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="federation" eType="#//reachabilityGraph/FederationObject"
           transient="true"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="TimedGTSDelayTransition" eSuperTypes="../../de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph/model/ReachabilityAnalysisCore.ecore#//ReachabilityGraphTransition"/>
+    <eClassifiers xsi:type="ecore:EClass" name="TimedGTSDelayTransition" eSuperTypes="../../org.muml.core.reachanalysis.reachabilitygraph/model/ReachabilityAnalysisCore.ecore#//ReachabilityGraphTransition"/>
     <eClassifiers xsi:type="ecore:EDataType" name="FederationObject" instanceClassName="de.uni_paderborn.fujaba.udbm.Federation"
         serializable="false"/>
   </eSubpackages>

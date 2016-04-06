@@ -31,10 +31,10 @@ import railcab.SectionControl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link railcab.impl.SectionControlImpl#getRailcabs <em>Railcabs</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

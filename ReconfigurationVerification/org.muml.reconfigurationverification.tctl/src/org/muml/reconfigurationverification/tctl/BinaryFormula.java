@@ -14,11 +14,11 @@ package org.muml.reconfigurationverification.tctl;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.reconfigurationverification.tctl.BinaryFormula#getLeftSubformula <em>Left Subformula</em>}</li>
  *   <li>{@link org.muml.reconfigurationverification.tctl.BinaryFormula#getRightSubformula <em>Right Subformula</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.reconfigurationverification.tctl.TctlPackage#getBinaryFormula()
  * @model abstract="true"

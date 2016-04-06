@@ -42,7 +42,7 @@ public interface RailcabPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.fujaba.de/muml/verification/test/railcab/0.1.0";
+	String eNS_URI = "http://www.muml.org/example/railcab/1.0.0";
 
 	/**
 	 * The package namespace name.
@@ -71,22 +71,22 @@ public interface RailcabPackage extends EPackage {
 	int RAIL_CAB = 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RAIL_CAB__ANNOTATION = CorePackage.NAMED_ELEMENT__ANNOTATION;
+	int RAIL_CAB__ANNOTATIONS = CorePackage.NAMED_ELEMENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RAIL_CAB__EXTENSION = CorePackage.NAMED_ELEMENT__EXTENSION;
+	int RAIL_CAB__EXTENSIONS = CorePackage.NAMED_ELEMENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -153,22 +153,22 @@ public interface RailcabPackage extends EPackage {
 	int SECTION_CONTROL = 1;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SECTION_CONTROL__ANNOTATION = CorePackage.NAMED_ELEMENT__ANNOTATION;
+	int SECTION_CONTROL__ANNOTATIONS = CorePackage.NAMED_ELEMENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SECTION_CONTROL__EXTENSION = CorePackage.NAMED_ELEMENT__EXTENSION;
+	int SECTION_CONTROL__EXTENSIONS = CorePackage.NAMED_ELEMENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.

@@ -16,13 +16,13 @@ import org.muml.core.ExtendableElement;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.reconfigurationverification.fotctl.FoTCTLSpec#getFormulas <em>Formulas</em>}</li>
  *   <li>{@link org.muml.reconfigurationverification.fotctl.FoTCTLSpec#getNodeLabelPredicates <em>Node Label Predicates</em>}</li>
  *   <li>{@link org.muml.reconfigurationverification.fotctl.FoTCTLSpec#getEdgeLabelPredicates <em>Edge Label Predicates</em>}</li>
  *   <li>{@link org.muml.reconfigurationverification.fotctl.FoTCTLSpec#getConstants <em>Constants</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.reconfigurationverification.fotctl.FotctlPackage#getFoTCTLSpec()
  * @model

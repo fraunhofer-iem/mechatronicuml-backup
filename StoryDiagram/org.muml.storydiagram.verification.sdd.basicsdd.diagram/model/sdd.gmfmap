@@ -8,7 +8,7 @@
     xmlns:gmftool="http://www.eclipse.org/gmf/2005/ToolDefinition">
   <nodes>
     <containmentFeature
-        href="../../de.uni_paderborn.fujaba.muml.verification.sdd/model/sdd.ecore#//AbstractStoryDecisionDiagram/nodes"/>
+        href="../../org.muml.storydiagram.verification.sdd/model/sdd.ecore#//AbstractStoryDecisionDiagram/nodes"/>
     <ownedChild>
       <domainMetaElement
           href="../../de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd/model/BasicSDD.ecore#//StoryPatternNode"/>
@@ -60,7 +60,7 @@
         <diagramLabel
             href="sdd.gmfgraph#PatternNodeType"/>
         <features
-            href="../../de.uni_paderborn.fujaba.muml.verification.sdd/model/sdd.ecore#//PatternNode/type"/>
+            href="../../org.muml.storydiagram.verification.sdd/model/sdd.ecore#//PatternNode/type"/>
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
@@ -83,10 +83,10 @@
   </nodes>
   <nodes>
     <containmentFeature
-        href="../../de.uni_paderborn.fujaba.muml.verification.sdd/model/sdd.ecore#//AbstractStoryDecisionDiagram/nodes"/>
+        href="../../org.muml.storydiagram.verification.sdd/model/sdd.ecore#//AbstractStoryDecisionDiagram/nodes"/>
     <ownedChild>
       <domainMetaElement
-          href="../../de.uni_paderborn.fujaba.muml.verification.sdd/model/sdd.ecore#//LeafNode"/>
+          href="../../org.muml.storydiagram.verification.sdd/model/sdd.ecore#//LeafNode"/>
       <tool
           xsi:type="gmftool:CreationTool"
           href="sdd.gmftool#//@palette/@tools.0/@tools.1"/>
@@ -96,9 +96,9 @@
   </nodes>
   <links>
     <domainMetaElement
-        href="../../de.uni_paderborn.fujaba.muml.verification.sdd/model/sdd.ecore#//Edge"/>
+        href="../../org.muml.storydiagram.verification.sdd/model/sdd.ecore#//Edge"/>
     <containmentFeature
-        href="../../de.uni_paderborn.fujaba.muml.verification.sdd/model/sdd.ecore#//AbstractStoryDecisionDiagram/edges"/>
+        href="../../org.muml.storydiagram.verification.sdd/model/sdd.ecore#//AbstractStoryDecisionDiagram/edges"/>
     <tool
         xsi:type="gmftool:CreationTool"
         href="sdd.gmftool#//@palette/@tools.0/@tools.0"/>
@@ -106,10 +106,10 @@
         href="sdd.gmfgraph#Edge"/>
     <sourceMetaFeature
         xsi:type="ecore:EReference"
-        href="../../de.uni_paderborn.fujaba.muml.verification.sdd/model/sdd.ecore#//Edge/sourceNode"/>
+        href="../../org.muml.storydiagram.verification.sdd/model/sdd.ecore#//Edge/sourceNode"/>
     <linkMetaFeature
         xsi:type="ecore:EReference"
-        href="../../de.uni_paderborn.fujaba.muml.verification.sdd/model/sdd.ecore#//Edge/targetNode"/>
+        href="../../org.muml.storydiagram.verification.sdd/model/sdd.ecore#//Edge/targetNode"/>
   </links>
   <links>
     <domainMetaElement

@@ -7,9 +7,10 @@
 <plugin>
 
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <!-- @generated ComponentSDD -->
       <factory
-            uri="http://www.fujaba.de/muml/verification/sdd/componentsdd/0.4.0"
-            class="org.muml.reconfiguration.verification.sdd.componentsdd.provider.ComponentsddItemProviderAdapterFactory"
+            uri="http://www.muml.org/reconfiguration/verification/sdd/componentsdd/1.0.0"
+            class="org.muml.reconfiguration.verification.sdd.componentsdd.componentsdd.provider.ComponentsddItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider

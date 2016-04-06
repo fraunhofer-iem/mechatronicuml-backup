@@ -15,10 +15,10 @@ import org.muml.core.CommentableElement;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.reconfigurationverification.tctl.TCTLFormula#getFormula <em>Formula</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.reconfigurationverification.tctl.TctlPackage#getTCTLFormula()
  * @model

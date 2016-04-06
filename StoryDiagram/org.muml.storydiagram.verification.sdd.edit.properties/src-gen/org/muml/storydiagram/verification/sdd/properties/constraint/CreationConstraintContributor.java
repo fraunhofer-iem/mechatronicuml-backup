@@ -1,3 +1,4 @@
+
 package org.muml.storydiagram.verification.sdd.properties.constraint;
 
 public class CreationConstraintContributor

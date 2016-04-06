@@ -17,10 +17,10 @@ import org.muml.core.NamedElement;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link railcab.SectionControl#getRailcabs <em>Railcabs</em>}</li>
  * </ul>
- * </p>
  *
  * @see railcab.RailcabPackage#getSectionControl()
  * @model

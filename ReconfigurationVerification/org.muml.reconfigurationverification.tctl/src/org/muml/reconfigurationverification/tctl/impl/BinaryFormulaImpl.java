@@ -21,11 +21,11 @@ import org.muml.reconfigurationverification.tctl.TctlPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.reconfigurationverification.tctl.impl.BinaryFormulaImpl#getLeftSubformula <em>Left Subformula</em>}</li>
  *   <li>{@link org.muml.reconfigurationverification.tctl.impl.BinaryFormulaImpl#getRightSubformula <em>Right Subformula</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

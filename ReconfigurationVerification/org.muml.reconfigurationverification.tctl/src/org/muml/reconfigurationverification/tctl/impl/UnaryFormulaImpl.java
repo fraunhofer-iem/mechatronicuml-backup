@@ -21,10 +21,10 @@ import org.muml.reconfigurationverification.tctl.UnaryFormula;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.reconfigurationverification.tctl.impl.UnaryFormulaImpl#getSubformula <em>Subformula</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

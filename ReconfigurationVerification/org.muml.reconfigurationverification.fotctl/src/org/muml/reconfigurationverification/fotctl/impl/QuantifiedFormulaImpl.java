@@ -30,12 +30,12 @@ import org.muml.reconfigurationverification.tctl.impl.UnaryFormulaImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.reconfigurationverification.fotctl.impl.QuantifiedFormulaImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.muml.reconfigurationverification.fotctl.impl.QuantifiedFormulaImpl#getVariables <em>Variables</em>}</li>
  *   <li>{@link org.muml.reconfigurationverification.fotctl.impl.QuantifiedFormulaImpl#getQuantifier <em>Quantifier</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.muml.core.CommentableElement;
 import org.muml.core.ExtendableElement;
 import org.muml.core.NamedElement;
+import org.muml.reconfigurationverification.tctl.*;
 import org.muml.reconfigurationverification.tctl.AtomicFormula;
 import org.muml.reconfigurationverification.tctl.AtomicProposition;
 import org.muml.reconfigurationverification.tctl.BinaryFormula;

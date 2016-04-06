@@ -4,11 +4,12 @@ Bundle-Name: %pluginName
 Bundle-SymbolicName: org.muml.reconfiguration.verification.sdd.componentsdd.edit;singleton:=true
 Bundle-Version: 0.5.0.qualifier
 Bundle-ClassPath: .
-Bundle-Activator: org.muml.reconfiguration.verification.sdd.componentsdd.provider.ComponentSDDEditPlugin$Implementation
+Bundle-Activator: org.muml.reconfiguration.verification.sdd.componentsdd.componentsdd.provider.ComponentSDDEditPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: org.muml.reconfiguration.verification.sdd.componentsdd.provider
+Export-Package: org.muml.reconfiguration.verification.sdd.componentsdd.provider,
+ org.muml.reconfiguration.verification.sdd.componentsdd.componentsdd.provider
 Require-Bundle: org.eclipse.ocl.ecore,
  org.eclipse.core.runtime,
  org.muml.reconfiguration.verification.sdd.componentsdd;visibility:=reexport,
@@ -23,6 +24,8 @@ Require-Bundle: org.eclipse.ocl.ecore,
  org.muml.pim.edit;visibility:=reexport,
  org.muml.reconfiguration;visibility:=reexport,
  org.muml.reconfiguration.edit;visibility:=reexport,
+ de.uni_paderborn.fujaba.muml.verification.sdd;visibility:=reexport,
+ de.uni_paderborn.fujaba.muml.verification.sdd.edit;visibility:=reexport,
  org.muml.storydiagram.verification.sdd;visibility:=reexport,
  org.muml.storydiagram.verification.sdd.edit;visibility:=reexport,
  org.muml.storydiagram;visibility:=reexport,

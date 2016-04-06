@@ -16,11 +16,11 @@ import org.muml.reconfigurationverification.tctl.Term;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.reconfigurationverification.fotctl.EdgeLabelPredicate#getDeclaration <em>Declaration</em>}</li>
  *   <li>{@link org.muml.reconfigurationverification.fotctl.EdgeLabelPredicate#getSecondTerm <em>Second Term</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.reconfigurationverification.fotctl.FotctlPackage#getEdgeLabelPredicate()
  * @model

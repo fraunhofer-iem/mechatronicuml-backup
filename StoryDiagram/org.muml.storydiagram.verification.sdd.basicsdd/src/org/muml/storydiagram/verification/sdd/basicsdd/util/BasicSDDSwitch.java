@@ -51,7 +51,7 @@ public class BasicSDDSwitch<T> extends Switch<T> {
 	 * Checks whether this is a switch for the given package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @parameter ePackage the package in question.
+	 * @param ePackage the package in question.
 	 * @return whether this is a switch for the given package.
 	 * @generated
 	 */
@@ -164,7 +164,7 @@ public class BasicSDDSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseAbstractStoryDecisionDiagram(AbstractStoryDecisionDiagram object) {
+	public T caseAbstractStoryDecisionDiagram(de.uni_paderborn.fujaba.muml.verification.sdd.AbstractStoryDecisionDiagram object) {
 		return null;
 	}
 
@@ -179,7 +179,7 @@ public class BasicSDDSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseNode(Node object) {
+	public T caseNode(de.uni_paderborn.fujaba.muml.verification.sdd.Node object) {
 		return null;
 	}
 
@@ -194,7 +194,7 @@ public class BasicSDDSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T casePatternNode(PatternNode object) {
+	public T casePatternNode(de.uni_paderborn.fujaba.muml.verification.sdd.PatternNode object) {
 		return null;
 	}
 

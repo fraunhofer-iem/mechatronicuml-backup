@@ -45,7 +45,7 @@ public interface FotctlPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.fujaba.de/muml/verification/fotctl/0.1.0";
+	String eNS_URI = "http://www.muml.org/reconfigurationverification/fotctl/1.0.0";
 
 	/**
 	 * The package namespace name.
@@ -74,22 +74,22 @@ public interface FotctlPackage extends EPackage {
 	int FO_TCTL_SPEC = 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FO_TCTL_SPEC__ANNOTATION = CorePackage.EXTENDABLE_ELEMENT__ANNOTATION;
+	int FO_TCTL_SPEC__ANNOTATIONS = CorePackage.EXTENDABLE_ELEMENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FO_TCTL_SPEC__EXTENSION = CorePackage.EXTENDABLE_ELEMENT__EXTENSION;
+	int FO_TCTL_SPEC__EXTENSIONS = CorePackage.EXTENDABLE_ELEMENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Formulas</b></em>' containment reference list.
@@ -147,22 +147,22 @@ public interface FotctlPackage extends EPackage {
 	int FO_TCTL_FORMULA = 1;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FO_TCTL_FORMULA__ANNOTATION = TctlPackage.TCTL_FORMULA__ANNOTATION;
+	int FO_TCTL_FORMULA__ANNOTATIONS = TctlPackage.TCTL_FORMULA__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FO_TCTL_FORMULA__EXTENSION = TctlPackage.TCTL_FORMULA__EXTENSION;
+	int FO_TCTL_FORMULA__EXTENSIONS = TctlPackage.TCTL_FORMULA__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -202,22 +202,22 @@ public interface FotctlPackage extends EPackage {
 	int NODE_LABEL_PREDICATE_DECL = 2;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NODE_LABEL_PREDICATE_DECL__ANNOTATION = CorePackage.NAMED_ELEMENT__ANNOTATION;
+	int NODE_LABEL_PREDICATE_DECL__ANNOTATIONS = CorePackage.NAMED_ELEMENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NODE_LABEL_PREDICATE_DECL__EXTENSION = CorePackage.NAMED_ELEMENT__EXTENSION;
+	int NODE_LABEL_PREDICATE_DECL__EXTENSIONS = CorePackage.NAMED_ELEMENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -248,22 +248,22 @@ public interface FotctlPackage extends EPackage {
 	int EDGE_LABEL_PREDICATE_DECL = 3;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EDGE_LABEL_PREDICATE_DECL__ANNOTATION = CorePackage.NAMED_ELEMENT__ANNOTATION;
+	int EDGE_LABEL_PREDICATE_DECL__ANNOTATIONS = CorePackage.NAMED_ELEMENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EDGE_LABEL_PREDICATE_DECL__EXTENSION = CorePackage.NAMED_ELEMENT__EXTENSION;
+	int EDGE_LABEL_PREDICATE_DECL__EXTENSIONS = CorePackage.NAMED_ELEMENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -294,22 +294,22 @@ public interface FotctlPackage extends EPackage {
 	int CONSTANT_SYMBOL_DECL = 4;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONSTANT_SYMBOL_DECL__ANNOTATION = CorePackage.NAMED_ELEMENT__ANNOTATION;
+	int CONSTANT_SYMBOL_DECL__ANNOTATIONS = CorePackage.NAMED_ELEMENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONSTANT_SYMBOL_DECL__EXTENSION = CorePackage.NAMED_ELEMENT__EXTENSION;
+	int CONSTANT_SYMBOL_DECL__EXTENSIONS = CorePackage.NAMED_ELEMENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -340,22 +340,22 @@ public interface FotctlPackage extends EPackage {
 	int QUANTIFIED_FORMULA = 5;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int QUANTIFIED_FORMULA__ANNOTATION = TctlPackage.UNARY_FORMULA__ANNOTATION;
+	int QUANTIFIED_FORMULA__ANNOTATIONS = TctlPackage.UNARY_FORMULA__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int QUANTIFIED_FORMULA__EXTENSION = TctlPackage.UNARY_FORMULA__EXTENSION;
+	int QUANTIFIED_FORMULA__EXTENSIONS = TctlPackage.UNARY_FORMULA__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Subformula</b></em>' containment reference.
@@ -413,22 +413,22 @@ public interface FotctlPackage extends EPackage {
 	int NODE_LABEL_PREDICATE = 6;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NODE_LABEL_PREDICATE__ANNOTATION = TctlPackage.ATOMIC_FORMULA__ANNOTATION;
+	int NODE_LABEL_PREDICATE__ANNOTATIONS = TctlPackage.ATOMIC_FORMULA__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NODE_LABEL_PREDICATE__EXTENSION = TctlPackage.ATOMIC_FORMULA__EXTENSION;
+	int NODE_LABEL_PREDICATE__EXTENSIONS = TctlPackage.ATOMIC_FORMULA__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Term</b></em>' containment reference.
@@ -468,22 +468,22 @@ public interface FotctlPackage extends EPackage {
 	int EDGE_LABEL_PREDICATE = 7;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EDGE_LABEL_PREDICATE__ANNOTATION = TctlPackage.ATOMIC_FORMULA__ANNOTATION;
+	int EDGE_LABEL_PREDICATE__ANNOTATIONS = TctlPackage.ATOMIC_FORMULA__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EDGE_LABEL_PREDICATE__EXTENSION = TctlPackage.ATOMIC_FORMULA__EXTENSION;
+	int EDGE_LABEL_PREDICATE__EXTENSIONS = TctlPackage.ATOMIC_FORMULA__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Term</b></em>' containment reference.
@@ -532,22 +532,22 @@ public interface FotctlPackage extends EPackage {
 	int VARIABLE = 8;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VARIABLE__ANNOTATION = TctlPackage.TERM__ANNOTATION;
+	int VARIABLE__ANNOTATIONS = TctlPackage.TERM__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VARIABLE__EXTENSION = TctlPackage.TERM__EXTENSION;
+	int VARIABLE__EXTENSIONS = TctlPackage.TERM__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Declaration</b></em>' reference.
@@ -587,22 +587,22 @@ public interface FotctlPackage extends EPackage {
 	int CONSTANT = 9;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONSTANT__ANNOTATION = TctlPackage.TERM__ANNOTATION;
+	int CONSTANT__ANNOTATIONS = TctlPackage.TERM__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONSTANT__EXTENSION = TctlPackage.TERM__EXTENSION;
+	int CONSTANT__EXTENSIONS = TctlPackage.TERM__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Declaration</b></em>' reference.

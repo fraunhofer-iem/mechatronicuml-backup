@@ -11,8 +11,9 @@
 <plugin>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated railcab -->
       <package
-            uri="http://www.fujaba.de/muml/verification/test/railcab/0.1.0"
+            uri="http://www.muml.org/example/railcab/1.0.0"
             class="railcab.RailcabPackage"
             genModel="model/railcab.genmodel"/>
    </extension>

@@ -32,7 +32,7 @@ import org.muml.storydiagram.verification.sdd.provider.AbstractStoryDecisionDiag
  * @generated
  */
 public class StoryDecisionDiagramItemProvider
-	extends AbstractStoryDecisionDiagramItemProvider {
+	extends de.uni_paderborn.fujaba.muml.verification.sdd.provider.AbstractStoryDecisionDiagramItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -109,17 +109,17 @@ public class StoryDecisionDiagramItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSIONS,
 				 ActivitiesFactory.eINSTANCE.createOperationExtension()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSIONS,
 				 CallsFactory.eINSTANCE.createParameterExtension()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(SDDPackage.Literals.ABSTRACT_STORY_DECISION_DIAGRAM__NODES,
+				(de.uni_paderborn.fujaba.muml.verification.sdd.SDDPackage.Literals.ABSTRACT_STORY_DECISION_DIAGRAM__NODES,
 				 BasicSDDFactory.eINSTANCE.createStoryPatternNode()));
 	}
 

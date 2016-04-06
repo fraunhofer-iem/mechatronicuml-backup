@@ -14,10 +14,10 @@ package org.muml.reconfigurationverification.tctl;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.reconfigurationverification.tctl.UnaryFormula#getSubformula <em>Subformula</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.reconfigurationverification.tctl.TctlPackage#getUnaryFormula()
  * @model abstract="true"

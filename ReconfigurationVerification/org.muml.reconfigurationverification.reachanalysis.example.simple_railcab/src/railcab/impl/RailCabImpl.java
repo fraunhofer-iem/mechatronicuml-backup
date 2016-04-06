@@ -31,13 +31,13 @@ import railcab.SectionControl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link railcab.impl.RailCabImpl#getMember <em>Member</em>}</li>
  *   <li>{@link railcab.impl.RailCabImpl#getSectionControl <em>Section Control</em>}</li>
  *   <li>{@link railcab.impl.RailCabImpl#isIsLeader <em>Is Leader</em>}</li>
  *   <li>{@link railcab.impl.RailCabImpl#getLeader <em>Leader</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

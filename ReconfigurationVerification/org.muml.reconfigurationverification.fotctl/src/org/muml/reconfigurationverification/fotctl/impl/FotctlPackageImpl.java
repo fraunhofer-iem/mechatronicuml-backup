@@ -160,6 +160,7 @@ public class FotctlPackageImpl extends EPackageImpl implements FotctlPackage {
 		isInited = true;
 
 		// Initialize simple dependencies
+		EcorePackage.eINSTANCE.eClass();
 		TctlPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
@@ -559,7 +560,7 @@ public class FotctlPackageImpl extends EPackageImpl implements FotctlPackage {
 	 * @generated
 	 */
 	protected void createEcoreAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore";		
+		String source = "http://www.eclipse.org/emf/2002/Ecore";	
 		addAnnotation
 		  (this, 
 		   source, 
@@ -567,7 +568,7 @@ public class FotctlPackageImpl extends EPackageImpl implements FotctlPackage {
 			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
-		   });		
+		   });
 	}
 
 	/**
@@ -577,13 +578,13 @@ public class FotctlPackageImpl extends EPackageImpl implements FotctlPackage {
 	 * @generated
 	 */
 	protected void createOCLAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";			
+		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";	
 		addAnnotation
 		  (getVariable_Name(), 
 		   source, 
 		   new String[] {
 			 "derivation", "if declaration.oclIsUndefined() then\r\n\t\'\'\r\nelse\r\n\tdeclaration.name\r\nendif"
-		   });		
+		   });	
 		addAnnotation
 		  (getConstant_Name(), 
 		   source, 
