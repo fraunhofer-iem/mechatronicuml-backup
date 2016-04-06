@@ -10,7 +10,7 @@ modeltype reconfiguration uses 'http://www.fujaba.de/muml/reconfiguration/0.3.18
 
 modeltype csp uses 'http://www.fujaba.de/muml/componentstorypattern/0.4.0';
 
-modeltype componentModel uses muml::component('http://www.fujaba.de/muml/0.4.0');
+modeltype componentModel uses pim::component('http://www.muml.org/pim/1.0.0');
 
 query getComponentInstancesReference() : EReference{
 	return ComponentInstanceConfiguration.oclAsType(EClass).eAllReferences->

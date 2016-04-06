@@ -5,7 +5,7 @@
   <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
     <details key="documentation" value="The platform package describes the informatation of the platform, e.g. the api-commands.&#xD;&#xA;It serves the viewpoint for modelling api-commands in a concrete platform."/>
   </eAnnotations>
-  <eClassifiers xsi:type="ecore:EClass" name="OperatingSystem" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement">
+  <eClassifiers xsi:type="ecore:EClass" name="OperatingSystem" eSuperTypes="../../org.muml.core/model/core.ecore#//NamedElement ../../org.muml.core/model/core.ecore#//CommentableElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="This class represents a software plattform. It is the root element for describing a software plattform."/>
     </eAnnotations>
@@ -24,7 +24,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="imports" upperBound="-1"
         eType="#//Import" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="APIRepository" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement">
+  <eClassifiers xsi:type="ecore:EClass" name="APIRepository" eSuperTypes="../../org.muml.core/model/core.ecore#//NamedElement ../../org.muml.core/model/core.ecore#//CommentableElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="This repository is used to declare API-commands."/>
     </eAnnotations>
@@ -41,18 +41,18 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="APICommand" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement">
+  <eClassifiers xsi:type="ecore:EClass" name="APICommand" eSuperTypes="../../org.muml.core/model/core.ecore#//NamedElement ../../org.muml.core/model/core.ecore#//CommentableElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="This class represents an API-command of a concrete platform."/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="returnDataType" lowerBound="1"
-        eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//types/DataType">
+        eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//types/DataType">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="The type of the return value of an api-command."/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
-        eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//behavior/Parameter"
+        eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//behavior/Parameter"
         containment="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="An api-command can have several prarameters."/>
@@ -71,7 +71,7 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="EnumerationValue" eSuperTypes="../../org.storydriven.core/model/core.ecore#//ExtendableElement">
+  <eClassifiers xsi:type="ecore:EClass" name="EnumerationValue" eSuperTypes="../../org.muml.core/model/core.ecore#//ExtendableElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="This class defines a possible value for an enumeration."/>
     </eAnnotations>
@@ -87,7 +87,7 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="EnumerationDataType" eSuperTypes="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//types/DataType">
+  <eClassifiers xsi:type="ecore:EClass" name="EnumerationDataType" eSuperTypes="../../org.muml.pim/model/pim.ecore#//types/DataType">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="An Enumeration is a possible parameter for an API-command. The Enumeration defines its possible values that can be used as concrete values at runtime."/>
     </eAnnotations>
@@ -114,7 +114,7 @@
       <details key="documentation" value="This class represents a constraint in that way, that an API-command should only be called in a given time. E.g. It can be that the API-command doesn't return valid values, if the API-command is called to often within a time period."/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="samplingTime" lowerBound="1"
-        eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype/TimeValue"
+        eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//valuetype/TimeValue"
         containment="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="The sampling time say how often one can call an API-command."/>

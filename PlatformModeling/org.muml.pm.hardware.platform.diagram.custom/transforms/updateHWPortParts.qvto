@@ -1,6 +1,6 @@
 transformation SynchHWPortPartsTransformation(inout input : PlatformPackage);
 
-modeltype MumlPackage uses muml('http://www.fujaba.de/muml/0.4.0');
+modeltype PimPackage uses pim('http://www.muml.org/pim/1.0.0');
 modeltype Ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
 modeltype HardwarePackage uses hardware('http://www.fujaba.de/muml/hardware/1.1/');
 modeltype PlatformPackage uses hardware::hwplatform('http://www.fujaba.de/muml/hardware/1.1/');

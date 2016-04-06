@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="ASCII"?>
-<de.uni_paderborn.fujaba:PropertyGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:de.uni_paderborn.fujaba="http://de.uni_paderborn.fujaba.properties/0.5.1" xmi:id="_RmxhoM1gEeSIgPDefa6ZBw" contributorId="de.uni_paderborn.fujaba.common.properties">
+<de.uni_paderborn.fujaba:PropertyGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:de.uni_paderborn.fujaba="http://www.muml.org/ape/1.0.0" xmi:id="_RmxhoM1gEeSIgPDefa6ZBw" contributorId="de.uni_paderborn.fujaba.common.properties">
   <reconciler xmi:id="_Rmxhoc1gEeSIgPDefa6ZBw"/>
   <genModel href="BasicSDD.genmodel#/"/>
   <referencedGenerators href="../../de.uni_paderborn.fujaba.muml.verification.sdd/model/sdd.propsheet#_RmkGQM1gEeSIgPDefa6ZBw"/>
-  <referencedGenerators href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#_VZIdoMwbEeSjx7OWZCcdLw"/>
-  <referencedGenerators href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBYMwbEeSjx7OWZCcdLw"/>
+  <referencedGenerators href="../../org.muml.pim/model/pim.propsheet#_VZIdoMwbEeSjx7OWZCcdLw"/>
+  <referencedGenerators href="../../org.muml.core/model/core.propsheet#_VZGBYMwbEeSjx7OWZCcdLw"/>
   <plugin xmi:id="_RmyIsM1gEeSIgPDefa6ZBw" id="de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd.edit.properties" name="Properties" vendor="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn" version="0.5.0.qualifier">
     <requiredBundles>org.eclipse.emf.ecore</requiredBundles>
     <requiredBundles>org.eclipse.ui</requiredBundles>

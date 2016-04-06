@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<de.uni_paderborn.fujaba:PropertyGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.uni_paderborn.fujaba="http://de.uni_paderborn.fujaba.properties/0.5.1" xmi:id="_RklwUM1gEeSIgPDefa6ZBw" contributorId="de.uni_paderborn.fujaba.muml.common.properties">
+<de.uni_paderborn.fujaba:PropertyGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.uni_paderborn.fujaba="http://www.muml.org/ape/1.0.0" xmi:id="_RklwUM1gEeSIgPDefa6ZBw" contributorId="org.muml.ape.contributor">
   <reconciler xmi:id="_RklwUc1gEeSIgPDefa6ZBw">
     <customTransformations xmi:id="_RkmXYM1gEeSIgPDefa6ZBw" uri="platform:/plugin/de.uni_paderborn.fujaba.muml.common/transformations/muml-propsheet.qvto"/>
     <customTransformations xmi:id="_RkmXYc1gEeSIgPDefa6ZBw" uri="platform:/plugin/de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/transformations/xtext-propsheet.qvto"/>
   </reconciler>
   <genModel href="ComponentStoryDiagram.genmodel#/"/>
-  <referencedGenerators href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBYMwbEeSjx7OWZCcdLw"/>
+  <referencedGenerators href="../../org.muml.core/model/core.propsheet#_VZGBYMwbEeSjx7OWZCcdLw"/>
   <referencedGenerators href="../../de.uni_paderborn.fujaba.muml.reconfiguration/model/MumlReconfiguration.propsheet#_RmFlIM1gEeSIgPDefa6ZBw"/>
-  <referencedGenerators href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#_VZIdoMwbEeSjx7OWZCcdLw"/>
+  <referencedGenerators href="../../org.muml.pim/model/pim.propsheet#_VZIdoMwbEeSjx7OWZCcdLw"/>
   <plugin xmi:id="_RknlgM1gEeSIgPDefa6ZBw" id="de.uni_paderborn.fujaba.muml.componentstorydiagram.edit.properties" name="ComponentStoryDiagram Tabbed Properties" vendor="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn" version="0.5.0.qualifier">
     <requiredBundles>de.uni_paderborn.fujaba.muml.edit</requiredBundles>
     <requiredBundles>org.eclipse.emf.ecore</requiredBundles>
@@ -27,7 +27,7 @@
     <requiredBundles>de.uni_paderborn.fujaba.muml.reconfiguration.edit.properties</requiredBundles>
     <requiredBundles>de.uni_paderborn.fujaba.muml.edit.properties</requiredBundles>
   </plugin>
-  <defaultTab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
+  <defaultTab href="../../org.muml.core/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
   <tabs xmi:id="_RkqBwM1gEeSIgPDefa6ZBw" id="property.tab.constraint" name="Constraint" afterTab="property.tab.comment"/>
   <packages xmi:id="_Rkqo0M1gEeSIgPDefa6ZBw">
     <genPackage href="ComponentStoryDiagram.genmodel#//componentstorydiagram"/>
@@ -35,7 +35,7 @@
       <genClass href="ComponentStoryDiagram.genmodel#//componentstorydiagram/ComponentStoryRule"/>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_Rkqo0s1gEeSIgPDefa6ZBw">
         <genFeature href="ComponentStoryDiagram.genmodel#//componentstorydiagram/ComponentStoryRule/constructor"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
         <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor" xmi:id="_RkrP4M1gEeSIgPDefa6ZBw"/>
       </orderedElements>
       <superClasses href="../../de.uni_paderborn.fujaba.muml.reconfiguration/model/MumlReconfiguration.propsheet#_RmQkQs1gEeSIgPDefa6ZBw"/>
@@ -44,7 +44,7 @@
       <genClass href="ComponentStoryDiagram.genmodel#//componentstorydiagram/ComponentStoryNode"/>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_Rkr28M1gEeSIgPDefa6ZBw">
         <genFeature href="ComponentStoryDiagram.genmodel#//componentstorydiagram/ComponentStoryNode/forEach"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
         <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor" xmi:id="_Rkr28c1gEeSIgPDefa6ZBw"/>
       </orderedElements>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:PropertyCategory" xmi:id="_RkvhUM1gEeSIgPDefa6ZBw" title="Booleans" properties="_Rkr28M1gEeSIgPDefa6ZBw"/>
@@ -53,7 +53,7 @@
       <genClass href="ComponentStoryDiagram.genmodel#//componentstorydiagram/ControllerExchangeNode"/>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_RkvhUs1gEeSIgPDefa6ZBw" tooltip="" initializeOCLExpression="">
         <genFeature href="ComponentStoryDiagram.genmodel#//componentstorydiagram/ControllerExchangeNode/deadline"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor" xmi:id="_RkwIYM1gEeSIgPDefa6ZBw"/>
       </orderedElements>
     </classes>
@@ -61,12 +61,12 @@
       <genClass href="ComponentStoryDiagram.genmodel#//componentstorydiagram/SendReconfigurationMessageExpression"/>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_RkwIYs1gEeSIgPDefa6ZBw">
         <genFeature href="ComponentStoryDiagram.genmodel#//componentstorydiagram/SendReconfigurationMessageExpression/reconfigurationMessageType"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor" xmi:id="_RkwIY81gEeSIgPDefa6ZBw"/>
       </orderedElements>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_RkwIZM1gEeSIgPDefa6ZBw" initializeOCLExpression="">
         <genFeature href="ComponentStoryDiagram.genmodel#//componentstorydiagram/SendReconfigurationMessageExpression/parameterBindings"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor" xmi:id="_Rkx9kM1gEeSIgPDefa6ZBw"/>
       </orderedElements>
     </classes>

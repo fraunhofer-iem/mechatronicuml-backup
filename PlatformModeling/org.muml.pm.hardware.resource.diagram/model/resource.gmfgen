@@ -70,7 +70,7 @@
               xsi:type="gmfgen:GenFeatureValueSpec"
               value="//@expressionProviders/@providers.0/@expressions.0">
             <feature
-                href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+                href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
           </initializers>
           <initializers
               xsi:type="gmfgen:GenReferenceNewElementSpec">
@@ -80,26 +80,26 @@
               <initializers
                   xsi:type="gmfgen:GenReferenceNewElementSpec">
                 <feature
-                    href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/valuetype/Cardinality/lowerBound"/>
+                    href="../../org.muml.pim/model/pim.genmodel#//pim/valuetype/Cardinality/lowerBound"/>
                 <newElementInitializers>
                   <initializers
                       xsi:type="gmfgen:GenFeatureValueSpec"
                       value="//@expressionProviders/@providers.0/@expressions.1">
                     <feature
-                        href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/valuetype/NaturalNumber/value"/>
+                        href="../../org.muml.pim/model/pim.genmodel#//pim/valuetype/NaturalNumber/value"/>
                   </initializers>
                 </newElementInitializers>
               </initializers>
               <initializers
                   xsi:type="gmfgen:GenReferenceNewElementSpec">
                 <feature
-                    href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/valuetype/Cardinality/upperBound"/>
+                    href="../../org.muml.pim/model/pim.genmodel#//pim/valuetype/Cardinality/upperBound"/>
                 <newElementInitializers>
                   <initializers
                       xsi:type="gmfgen:GenFeatureValueSpec"
                       value="//@expressionProviders/@providers.0/@expressions.2">
                     <feature
-                        href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/valuetype/NaturalNumber/value"/>
+                        href="../../org.muml.pim/model/pim.genmodel#//pim/valuetype/NaturalNumber/value"/>
                   </initializers>
                 </newElementInitializers>
               </initializers>
@@ -170,26 +170,26 @@
               <initializers
                   xsi:type="gmfgen:GenReferenceNewElementSpec">
                 <feature
-                    href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/valuetype/Cardinality/lowerBound"/>
+                    href="../../org.muml.pim/model/pim.genmodel#//pim/valuetype/Cardinality/lowerBound"/>
                 <newElementInitializers>
                   <initializers
                       xsi:type="gmfgen:GenFeatureValueSpec"
                       value="//@expressionProviders/@providers.0/@expressions.6">
                     <feature
-                        href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/valuetype/NaturalNumber/value"/>
+                        href="../../org.muml.pim/model/pim.genmodel#//pim/valuetype/NaturalNumber/value"/>
                   </initializers>
                 </newElementInitializers>
               </initializers>
               <initializers
                   xsi:type="gmfgen:GenReferenceNewElementSpec">
                 <feature
-                    href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/valuetype/Cardinality/upperBound"/>
+                    href="../../org.muml.pim/model/pim.genmodel#//pim/valuetype/Cardinality/upperBound"/>
                 <newElementInitializers>
                   <initializers
                       xsi:type="gmfgen:GenFeatureValueSpec"
                       value="//@expressionProviders/@providers.0/@expressions.7">
                     <feature
-                        href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/valuetype/NaturalNumber/value"/>
+                        href="../../org.muml.pim/model/pim.genmodel#//pim/valuetype/NaturalNumber/value"/>
                   </initializers>
                 </newElementInitializers>
               </initializers>
@@ -199,7 +199,7 @@
               xsi:type="gmfgen:GenFeatureValueSpec"
               value="//@expressionProviders/@providers.0/@expressions.36">
             <feature
-                href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+                href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
           </initializers>
         </modelElementInitializer>
       </modelFacet>
@@ -217,9 +217,9 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.1">
           <metaFeatures
-              href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+              href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
           <editableMetaFeatures
-              href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+              href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
         </modelFacet>
       </labels>
       <labels
@@ -296,7 +296,7 @@
               xsi:type="gmfgen:GenFeatureValueSpec"
               value="//@expressionProviders/@providers.0/@expressions.37">
             <feature
-                href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+                href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
           </initializers>
           <elementClass
               href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/Cache"/>
@@ -316,9 +316,9 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.1">
           <metaFeatures
-              href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+              href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
           <editableMetaFeatures
-              href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+              href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
         </modelFacet>
       </labels>
       <labels
@@ -428,7 +428,7 @@
                   xsi:type="gmfgen:GenFeatureValueSpec"
                   value="//@expressionProviders/@providers.0/@expressions.14">
                 <feature
-                    href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/valuetype/NaturalNumber/value"/>
+                    href="../../org.muml.pim/model/pim.genmodel#//pim/valuetype/NaturalNumber/value"/>
               </initializers>
             </newElementInitializers>
           </initializers>
@@ -436,7 +436,7 @@
               xsi:type="gmfgen:GenFeatureValueSpec"
               value="//@expressionProviders/@providers.0/@expressions.38">
             <feature
-                href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+                href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
           </initializers>
         </modelElementInitializer>
       </modelFacet>
@@ -469,9 +469,9 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.1">
           <metaFeatures
-              href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+              href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
           <editableMetaFeatures
-              href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+              href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
         </modelFacet>
       </labels>
       <labels
@@ -561,7 +561,7 @@
               xsi:type="gmfgen:GenFeatureValueSpec"
               value="//@expressionProviders/@providers.0/@expressions.39">
             <feature
-                href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+                href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
           </initializers>
           <elementClass
               href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/ProgrammableLogicDevice"/>
@@ -581,9 +581,9 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.1">
           <metaFeatures
-              href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+              href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
           <editableMetaFeatures
-              href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+              href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
         </modelFacet>
       </labels>
       <labels
@@ -660,7 +660,7 @@
               xsi:type="gmfgen:GenFeatureValueSpec"
               value="//@expressionProviders/@providers.0/@expressions.40">
             <feature
-                href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+                href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
           </initializers>
           <elementClass
               href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/MemoryResource"/>
@@ -680,9 +680,9 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.1">
           <metaFeatures
-              href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+              href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
           <editableMetaFeatures
-              href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+              href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
         </modelFacet>
       </labels>
       <labels
@@ -799,7 +799,7 @@
               xsi:type="gmfgen:GenFeatureValueSpec"
               value="//@expressionProviders/@providers.0/@expressions.41">
             <feature
-                href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+                href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
           </initializers>
         </modelElementInitializer>
       </modelFacet>
@@ -817,7 +817,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.1">
           <metaFeatures
-              href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+              href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -876,7 +876,7 @@
               xsi:type="gmfgen:GenFeatureValueSpec"
               value="//@expressionProviders/@providers.0/@expressions.42">
             <feature
-                href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+                href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
           </initializers>
         </modelElementInitializer>
       </modelFacet>
@@ -894,7 +894,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.1">
           <metaFeatures
-              href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+              href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -937,7 +937,7 @@
               xsi:type="gmfgen:GenFeatureValueSpec"
               value="//@expressionProviders/@providers.0/@expressions.33">
             <feature
-                href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+                href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
           </initializers>
           <elementClass
               href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/Device"/>
@@ -957,9 +957,9 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.1">
           <metaFeatures
-              href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+              href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
           <editableMetaFeatures
-              href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+              href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
         </modelFacet>
       </labels>
       <labels
@@ -1028,7 +1028,7 @@
               xsi:type="gmfgen:GenFeatureValueSpec"
               value="//@expressionProviders/@providers.0/@expressions.34">
             <feature
-                href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+                href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
           </initializers>
           <elementClass
               href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/StructuredResource"/>
@@ -1052,9 +1052,9 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.1">
           <metaFeatures
-              href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+              href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
           <editableMetaFeatures
-              href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+              href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
         </modelFacet>
       </labels>
       <labels
@@ -1131,7 +1131,7 @@
               xsi:type="gmfgen:GenFeatureValueSpec"
               value="//@expressionProviders/@providers.0/@expressions.35">
             <feature
-                href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+                href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
           </initializers>
           <elementClass
               href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/CommunicationProtocolRepository"/>
@@ -1155,7 +1155,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.1">
           <metaFeatures
-              href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+              href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
         </modelFacet>
       </labels>
     </topLevelNodes>

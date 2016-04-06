@@ -10,7 +10,7 @@ import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 import org.muml.core.CorePackage;
 import org.muml.core.tests.gmf.GMFMapTest;
-import org.muml.pim.MumlPackage;
+import org.muml.pim.PimPackage;
 import org.muml.pm.hardware.HardwarePackage;
 
 @RunWith(Parameterized.class)
@@ -23,7 +23,7 @@ public class HardwareGMFMapTest extends GMFMapTest {
 	@BeforeClass
 	public static void setUpBeforeClass() {
 		CorePackage.eINSTANCE.eClass();
-		MumlPackage.eINSTANCE.eClass();
+		PimPackage.eINSTANCE.eClass();
 		HardwarePackage.eINSTANCE.eClass();
 	}
 

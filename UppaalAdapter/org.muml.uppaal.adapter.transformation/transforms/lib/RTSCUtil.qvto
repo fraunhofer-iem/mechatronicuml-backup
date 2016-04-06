@@ -1,7 +1,7 @@
 library RTSCUtil;
 
-modeltype muml_behavior uses muml::behavior('http://www.fujaba.de/muml/0.4.0');
-modeltype muml_rtsc uses muml::realtimestatechart('http://www.fujaba.de/muml/0.4.0');
+modeltype muml_behavior uses pim::behavior('http://www.muml.org/pim/1.0.0');
+modeltype muml_rtsc uses pim::realtimestatechart('http://www.muml.org/pim/1.0.0');
 
 query State :: isInitiallyActive() : Boolean {
 			

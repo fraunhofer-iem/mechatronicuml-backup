@@ -3,18 +3,18 @@ import transforms.lib.ExternalizedStrings;
 import transforms.CloneModel;
 
 modeltype muml uses 'http://www.fujaba.de/muml/0.4.0';
-modeltype muml_rtsc uses muml::realtimestatechart('http://www.fujaba.de/muml/0.4.0');
-modeltype muml_connector uses muml::connector('http://www.fujaba.de/muml/0.4.0');
+modeltype muml_rtsc uses pim::realtimestatechart('http://www.muml.org/pim/1.0.0');
+modeltype muml_connector uses pim::connector('http://www.muml.org/pim/1.0.0');
 modeltype muml_constraint uses muml::constraint('http://www.fujaba.de/muml/0.4.0');
-modeltype muml_behavior uses muml::behavior('http://www.fujaba.de/muml/0.4.0');
-modeltype muml_protocol uses muml::protocol('http://www.fujaba.de/muml/0.4.0');
-modeltype muml_actionLanguage uses 'http://www.fujaba.de/muml/actionlanguage/0.4.0';
+modeltype muml_behavior uses pim::behavior('http://www.muml.org/pim/1.0.0');
+modeltype muml_protocol uses pim::protocol('http://www.muml.org/pim/1.0.0');
+modeltype muml_actionLanguage uses 'http://www.muml.org/pim/actionlanguage/1.0.0';
 modeltype muml_msgtype uses muml::msgtype('http://www.fujaba.de/muml/0.4.0');
-modeltype muml_types uses muml::types('http://www.fujaba.de/muml/0.4.0');
-modeltype muml_valuetype uses muml::valuetype('http://www.fujaba.de/muml/0.4.0');
-modeltype storydriven_core uses 'http://www.storydriven.org/core/0.3.1';
-modeltype storydriven_core_expressions_common uses core::expressions::common('http://www.storydriven.org/core/0.3.1');
-modeltype storydriven_core_expressions uses core::expressions('http://www.storydriven.org/core/0.3.1');
+modeltype muml_types uses pim::types('http://www.muml.org/pim/1.0.0');
+modeltype muml_valuetype uses pim::valuetype('http://www.muml.org/pim/1.0.0');
+modeltype storydriven_core uses 'http://www.muml.org/core/1.0.0';
+modeltype storydriven_core_expressions_common uses core::expressions::common('http://www.muml.org/core/1.0.0');
+modeltype storydriven_core_expressions uses core::expressions('http://www.muml.org/core/1.0.0');
 modeltype extension uses 'http://www.fujaba.de/muml/verification/extension/0.4.0';
 modeltype modelinstance uses 'http://www.fujaba.de/modelinstance/0.4.0';
 modeltype mtctlQuantifiers uses mtctl::Quantifiers('http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl');
@@ -97,17 +97,17 @@ mapping muml::protocol::CoordinationProtocol :: CoordinationProtocol2Coordinatio
 //Uncommented Mappings are not supported by this transformation
 mapping muml::types::DataType :: DataType2DataType() : muml::types::DataType disjuncts
 Role::createPort,
- muml::component::Component::Component2Component,
+ pim::component::Component::Component2Component,
   muml::types::ArrayDataType::ArrayDataType2ArrayDataType2,
    muml::types::RangedPrimitiveDataType::RangedPrimitiveDataType2RangedPrimitiveDataType2,
-    muml::component::ComponentPart::ComponentPart2ComponentPart,
-     muml::component::Port::Port2Port,
+    pim::component::ComponentPart::ComponentPart2ComponentPart,
+     pim::component::Port::Port2Port,
       muml::protocol::Role::Role2Role,
        muml::types::PrimitiveDataType::PrimitiveDataType2PrimitiveDataType2,
         muml::types::DataType::NonValidElementAsDataType;
 
 //Overridden to add Role::createPort to disjuncts
-mapping muml::connector::DiscreteInteractionEndpoint :: DiscreteInteractionEndpoint2DiscreteInteractionEndpoint() : muml::connector::DiscreteInteractionEndpoint disjuncts Role::createPort, Role::Role2Role, muml::component::DiscretePort::DiscretePort2DiscretePort;
+mapping pim::connector::DiscreteInteractionEndpoint :: DiscreteInteractionEndpoint2DiscreteInteractionEndpoint() : pim::connector::DiscreteInteractionEndpoint disjuncts Role::createPort, Role::Role2Role, pim::component::DiscretePort::DiscretePort2DiscretePort;
 
 
 //TODO add MessageType2MessageType to disjuncts and remove case in MumlElemExpr2MumlElemExpr when QVTO support overridden mappings in disjuncts
@@ -127,7 +127,7 @@ Role :: createPort,
 
 
 //The precondition ensures, that this mapping can only be executed in the context of already copied Roles
-mapping Role :: createPort() : muml::component::DiscretePort when{	
+mapping Role :: createPort() : pim::component::DiscretePort when{	
 self.invresolve()->oclAsSet()->flatten()->intersection(input.objects()->oclAsSet()->flatten())->size()>0
 	}
 {
@@ -149,7 +149,7 @@ self.invresolve()->oclAsSet()->flatten()->intersection(input.objects()->oclAsSet
 	
 }
 
-mapping  Role :: createComponent() : muml::component::StaticAtomicComponent{
+mapping  Role :: createComponent() : pim::component::StaticAtomicComponent{
 	name := self.name+"Component";
 	getModelElementCategory(componentCategoryKey, componentCategoryName).modelElements += result;
 	
@@ -473,7 +473,7 @@ helper portReferencedByProtocol(inout protocol : CoordinationProtocol) : Boolean
 	var allContents := directContents;
 	allContents += indirectContents;
 	
-	var referencedPorts : Set(muml::component::Port);
+	var referencedPorts : Set(pim::component::Port);
 	
 	allContents->forEach(elem){
 		var directRef : Sequence(EObject):=elem.eCrossReferences().oclAsType(EObject);
@@ -481,7 +481,7 @@ helper portReferencedByProtocol(inout protocol : CoordinationProtocol) : Boolean
 		
 		var allRef := directRef;
 		allRef += indirectRef;
-		referencedPorts += allRef[muml::component::Port];
+		referencedPorts += allRef[pim::component::Port];
 	};
 	
 	return referencedPorts->size()!=0;

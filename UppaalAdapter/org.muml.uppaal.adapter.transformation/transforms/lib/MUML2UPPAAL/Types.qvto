@@ -4,10 +4,10 @@ modeltype uppaal uses 'http://www.uni-paderborn.de/uppaal/0.4.0';
 modeltype uppaal_types uses uppaal::types('http://www.uni-paderborn.de/uppaal/0.4.0');
 modeltype uppaal_declarations uses uppaal::declarations('http://www.uni-paderborn.de/uppaal/0.4.0');
 modeltype uppaal_expressions uses uppaal::expressions('http://www.uni-paderborn.de/uppaal/0.4.0');
-modeltype core uses muml::behavior('http://www.fujaba.de/muml/0.4.0');
-modeltype types uses muml::types('http://www.fujaba.de/muml/0.4.0');
-modeltype proto uses muml::protocol('http://www.fujaba.de/muml/0.4.0');
-modeltype component uses muml::component('http://www.fujaba.de/muml/0.4.0');
+modeltype core uses pim::behavior('http://www.muml.org/pim/1.0.0');
+modeltype types uses pim::types('http://www.muml.org/pim/1.0.0');
+modeltype proto uses pim::protocol('http://www.muml.org/pim/1.0.0');
+modeltype component uses pim::component('http://www.muml.org/pim/1.0.0');
 
 	property INT : PredefinedType = null;
 	property BOOL : PredefinedType = null;

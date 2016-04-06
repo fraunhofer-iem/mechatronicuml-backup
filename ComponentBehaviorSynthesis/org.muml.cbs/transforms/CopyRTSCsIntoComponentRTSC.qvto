@@ -1,8 +1,8 @@
 import transforms.lib.RTSC2RTSCdeepContainmentCopy;
 
 modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
-modeltype rtsc uses muml::realtimestatechart('http://www.fujaba.de/muml/0.4.0');
-modeltype component uses muml::component('http://www.fujaba.de/muml/0.4.0');
+modeltype rtsc uses pim::realtimestatechart('http://www.muml.org/pim/1.0.0');
+modeltype component uses pim::component('http://www.muml.org/pim/1.0.0');
 modeltype dependencyLanguage uses 'http://www.fujaba.de/muml/dependencylanguage/0.4.0';
 modeltype modelinstance uses 'http://www.fujaba.de/modelinstance/0.4.0';
 

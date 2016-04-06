@@ -4,7 +4,7 @@
     creationIcons="false" modelPluginID="de.uni_paderborn.fujaba.muml.verification.uppaal.options"
     modelName="Options" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="7.0" copyrightFields="false"
-    usedGenPackages="../../org.storydriven.core/model/core.uml.genmodel#//core" operationReflection="true"
+    usedGenPackages="../../org.muml.core/model/core.genmodel#//core" operationReflection="true"
     importOrganizing="true">
   <foreignModel>options.ecore</foreignModel>
   <genPackages prefix="Options" basePackage="de.uni_paderborn.fujaba.muml.verification.uppaal"

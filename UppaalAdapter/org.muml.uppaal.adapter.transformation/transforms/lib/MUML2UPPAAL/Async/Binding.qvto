@@ -8,8 +8,8 @@ modeltype uppaal_declarations uses uppaal::declarations('http://www.uni-paderbor
 modeltype uppaal_expressions uses uppaal::expressions('http://www.uni-paderborn.de/uppaal/0.4.0');
 modeltype uppaal_types uses uppaal::types('http://www.uni-paderborn.de/uppaal/0.4.0');
 modeltype uppaal_statements uses uppaal::statements('http://www.uni-paderborn.de/uppaal/0.4.0');
-modeltype behavior uses muml::behavior('http://www.fujaba.de/muml/0.4.0');
-modeltype muml_actionLanguage uses 'http://www.fujaba.de/muml/actionlanguage/0.4.0';
+modeltype behavior uses pim::behavior('http://www.muml.org/pim/1.0.0');
+modeltype muml_actionLanguage uses 'http://www.muml.org/pim/actionlanguage/1.0.0';
 
 
 	mapping ParameterBinding :: ParameterBinding2ArrayInitializerExpressionBindingVariableDecl(componentInstanceID : Variable, portOrRoleInstanceID : Variable,  subPortOrRoleInstanceID : Variable) : DataVariableDeclaration when { self.parameter.dataType.oclIsKindOf(muml::types::ArrayDataType) and self.value.oclIsKindOf(muml_actionLanguage::ArrayInitializeExpression) } {

@@ -7,7 +7,7 @@ import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 import org.muml.core.CorePackage;
 import org.muml.core.modelinstance.ModelinstancePackage;
-import org.muml.pim.MumlPackage;
+import org.muml.pim.PimPackage;
 import org.muml.pim.actionlanguage.ActionlanguagePackage;
 import org.muml.uppaal.adapter.mtctl.xtext.MtctlStandaloneSetup;
 import org.muml.verification.core.preferences.VerificationPreferencesPlugin;
@@ -26,7 +26,7 @@ public class ExamplesTestSuite {
 		CorePackage.eINSTANCE.eClass();
 		ModelinstancePackage.eINSTANCE.eClass();
 
-		MumlPackage.eINSTANCE.eClass();
+		PimPackage.eINSTANCE.eClass();
 		// MtctlPackage.eINSTANCE.eClass();
 		ActionlanguagePackage.eINSTANCE.eClass();
 

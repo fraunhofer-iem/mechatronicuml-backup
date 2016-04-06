@@ -1,13 +1,13 @@
 library Util;
 
-modeltype muml_valuetype uses muml::valuetype('http://www.fujaba.de/muml/0.4.0');
+modeltype muml_valuetype uses pim::valuetype('http://www.muml.org/pim/1.0.0');
 modeltype uppaal_expressions uses uppaal::expressions('http://www.uni-paderborn.de/uppaal/0.4.0');
 modeltype uppaal_declarations uses uppaal::declarations('http://www.uni-paderborn.de/uppaal/0.4.0');
-modeltype core_expressions uses core::expressions('http://www.storydriven.org/core/0.3.1');
-modeltype core_expressions_common uses core::expressions::common('http://www.storydriven.org/core/0.3.1');
-modeltype muml_protocol uses muml::protocol('http://www.fujaba.de/muml/0.4.0');
-modeltype muml_behavior uses muml::behavior('http://www.fujaba.de/muml/0.4.0');		
-modeltype muml_connector uses muml::connector('http://www.fujaba.de/muml/0.4.0');		
+modeltype core_expressions uses core::expressions('http://www.muml.org/core/1.0.0');
+modeltype core_expressions_common uses core::expressions::common('http://www.muml.org/core/1.0.0');
+modeltype muml_protocol uses pim::protocol('http://www.muml.org/pim/1.0.0');
+modeltype muml_behavior uses pim::behavior('http://www.muml.org/pim/1.0.0');		
+modeltype muml_connector uses pim::connector('http://www.muml.org/pim/1.0.0');		
 					
 	query NaturalNumber :: getInteger() : Integer {
 		

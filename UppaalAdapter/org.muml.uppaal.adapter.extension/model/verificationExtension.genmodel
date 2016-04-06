@@ -4,7 +4,7 @@
     modelDirectory="/de.uni_paderborn.fujaba.muml.verification.extension/src" modelPluginID="de.uni_paderborn.fujaba.muml.verification.extension"
     modelName="VerificationExtension" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" copyrightFields="false"
-    usedGenPackages="../../org.storydriven.core/model/core.uml.genmodel#//core ../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml"
+    usedGenPackages="../../org.muml.core/model/core.genmodel#//core ../../org.muml.pim/model/pim.genmodel#//pim"
     operationReflection="true" importOrganizing="true">
   <foreignModel>verificationExtension.ecore</foreignModel>
   <genPackages prefix="VerificationExtension" basePackage="de.uni_paderborn.fujaba.muml.verification"

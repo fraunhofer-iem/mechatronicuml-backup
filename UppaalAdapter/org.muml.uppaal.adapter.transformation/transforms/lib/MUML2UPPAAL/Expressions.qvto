@@ -10,13 +10,13 @@ import transforms.lib.MUML2UPPAAL.Async.Variables;
 
 library Expressions;
 
-modeltype muml_actionLanguage uses 'http://www.fujaba.de/muml/actionlanguage/0.4.0';
-modeltype muml_behavior uses muml::behavior('http://www.fujaba.de/muml/0.4.0');
-modeltype muml_types uses muml::types('http://www.fujaba.de/muml/0.4.0');
-modeltype muml_rtsc uses muml::realtimestatechart('http://www.fujaba.de/muml/0.4.0');
-modeltype storydriven_core uses 'http://www.storydriven.org/core/0.3.1';
-modeltype storydriven_expressions uses core::expressions('http://www.storydriven.org/core/0.3.1');
-modeltype storydriven_expressions_common uses core::expressions::common('http://www.storydriven.org/core/0.3.1');
+modeltype muml_actionLanguage uses 'http://www.muml.org/pim/actionlanguage/1.0.0';
+modeltype muml_behavior uses pim::behavior('http://www.muml.org/pim/1.0.0');
+modeltype muml_types uses pim::types('http://www.muml.org/pim/1.0.0');
+modeltype muml_rtsc uses pim::realtimestatechart('http://www.muml.org/pim/1.0.0');
+modeltype storydriven_core uses 'http://www.muml.org/core/1.0.0';
+modeltype storydriven_expressions uses core::expressions('http://www.muml.org/core/1.0.0');
+modeltype storydriven_expressions_common uses core::expressions::common('http://www.muml.org/core/1.0.0');
 modeltype uppaal_expressions uses uppaal::expressions('http://www.uni-paderborn.de/uppaal/0.4.0');
 modeltype uppaal_statements uses uppaal::statements('http://www.uni-paderborn.de/uppaal/0.4.0');
 modeltype uppaal_types uses uppaal::types('http://www.uni-paderborn.de/uppaal/0.4.0');

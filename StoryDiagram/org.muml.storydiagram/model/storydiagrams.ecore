@@ -5,7 +5,7 @@
   <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
     <details key="documentation" value="The storydiagram package is the root package for the story diagram meta-model. It defines the type Variable and otherwise is only used to contain more specific sub-packages."/>
   </eAnnotations>
-  <eClassifiers xsi:type="ecore:EClass" name="Variable" abstract="true" eSuperTypes="../../org.storydriven.core/model/core.ecore#//TypedElement">
+  <eClassifiers xsi:type="ecore:EClass" name="Variable" abstract="true" eSuperTypes="../../org.muml.core/model/core.ecore#//TypedElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Represents a variable which can be, for example, an object variable, an attribute, or any other kind of variable."/>
     </eAnnotations>
@@ -41,7 +41,7 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="genericExceptionType"
           ordered="false" upperBound="-1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EGenericType"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ActivityEdge" eSuperTypes="../../org.storydriven.core/model/core.ecore#//ExtendableElement">
+    <eClassifiers xsi:type="ecore:EClass" name="ActivityEdge" eSuperTypes="../../org.muml.core/model/core.ecore#//ExtendableElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="The ActivityEdge represents the control flow in an activity. It is a dericted connection from one activity to another one. There exist different kinds of activity edges which are differentiated by the guard attribute."/>
       </eAnnotations>
@@ -70,7 +70,7 @@
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="guardExpression" ordered="false"
-          eType="ecore:EClass ../../org.storydriven.core/model/core.ecore#//expressions/Expression"
+          eType="ecore:EClass ../../org.muml.core/model/core.ecore#//expressions/Expression"
           containment="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="Points to an expression in case the transition guard is BOOL. The expression has to evaulate to a boolean value."/>
@@ -83,7 +83,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ActivityNode" abstract="true" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement">
+    <eClassifiers xsi:type="ecore:EClass" name="ActivityNode" abstract="true" eSuperTypes="../../org.muml.core/model/core.ecore#//NamedElement ../../org.muml.core/model/core.ecore#//CommentableElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Abstract super class for all kinds of nodes that may be added to an activity. This class provides the basic functionality of connecting the activity nodes in the activity by ActivityEdges."/>
       </eAnnotations>
@@ -112,7 +112,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Activity" eSuperTypes="#//calls/Callable ../../org.storydriven.core/model/core.ecore#//NamedElement">
+    <eClassifiers xsi:type="ecore:EClass" name="Activity" eSuperTypes="#//calls/Callable ../../org.muml.core/model/core.ecore#//NamedElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="The diagram that describes the control flow of an operation. It is used to structure a number story patterns into a stroy diagram. Story patterns are contained in activity nodes which are connected by activity edges. In addition, there are special nodes like start, stop, and juction nodes.  "/>
       </eAnnotations>
@@ -137,7 +137,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="OperationExtension" eSuperTypes="../../org.storydriven.core/model/core.ecore#//Extension #//calls/Callable">
+    <eClassifiers xsi:type="ecore:EClass" name="OperationExtension" eSuperTypes="../../org.muml.core/model/core.ecore#//Extension #//calls/Callable">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="An OperationExtension is a stand-in for an EOperation in our model. It is necessary because we cannot change the type EOperation. Thus, OperationExtension points to an EOperation but adds the reference to an Activity that describes the operations behavior."/>
       </eAnnotations>
@@ -166,7 +166,7 @@
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The EOperation whose behavior is defined by the Activity. The property is derived because the actual value is determined by the utility class OperationsExtensionOperation."/>
         </eAnnotations>
-        <eAnnotations source="redefines" references="../../org.storydriven.core/model/core.ecore#//Extension/base"/>
+        <eAnnotations source="redefines" references="../../org.muml.core/model/core.ecore#//Extension/base"/>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="returnValue" ordered="false"
           eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EParameter"
@@ -282,7 +282,7 @@
         <details key="documentation" value="A statement node is a node that just contains an expression defining its behavior. In combination with a textual expression, arbitrary souce code might be added by using StatementNodes."/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="statementExpression"
-          ordered="false" lowerBound="1" eType="ecore:EClass ../../org.storydriven.core/model/core.ecore#//expressions/Expression"
+          ordered="false" lowerBound="1" eType="ecore:EClass ../../org.muml.core/model/core.ecore#//expressions/Expression"
           containment="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The expression which defines the behavior of this StatementNode."/>
@@ -294,14 +294,14 @@
         <details key="documentation" value="At a StopNode, the execution of an activity terminates. If the activity specifies any out-parameters, they have to be bound to a return expression."/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="returnValue" ordered="false"
-          eType="ecore:EClass ../../org.storydriven.core/model/core.ecore#//expressions/Expression"
+          eType="ecore:EClass ../../org.muml.core/model/core.ecore#//expressions/Expression"
           changeable="false" volatile="true" transient="true" derived="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="Convenience method when dealing with activities that implement an EOperation. In this case, only one out parameter is supported. This attributes then returns the first out parameter."/>
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="returnValues" ordered="false"
-          upperBound="-1" eType="ecore:EClass ../../org.storydriven.core/model/core.ecore#//expressions/Expression"
+          upperBound="-1" eType="ecore:EClass ../../org.muml.core/model/core.ecore#//expressions/Expression"
           containment="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="Defines the return values of the activity. These return values will be assigned to the out-parameters."/>
@@ -337,7 +337,7 @@
     <eClassifiers xsi:type="ecore:EClass" name="FlowFinalNode" eSuperTypes="#//activities/ActivityFinalNode"/>
     <eSubpackages name="expressions" nsURI="http://www.storydriven.org/storydiagrams/activities/expressions/0.2.0"
         nsPrefix="sdae">
-      <eClassifiers xsi:type="ecore:EClass" name="ExceptionVariableExpression" eSuperTypes="../../org.storydriven.core/model/core.ecore#//expressions/Expression">
+      <eClassifiers xsi:type="ecore:EClass" name="ExceptionVariableExpression" eSuperTypes="../../org.muml.core/model/core.ecore#//expressions/Expression">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="Represents the value of an exception variable declared as a transition guard (the guard of an activity edge)."/>
         </eAnnotations>
@@ -355,7 +355,7 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="This package contains all classes for modeling calls to activities and EOperations&#xD;&#xA;from within an activity."/>
     </eAnnotations>
-    <eClassifiers xsi:type="ecore:EClass" name="Invocation" abstract="true" eSuperTypes="../../org.storydriven.core/model/core.ecore#//CommentableElement">
+    <eClassifiers xsi:type="ecore:EClass" name="Invocation" abstract="true" eSuperTypes="../../org.muml.core/model/core.ecore#//CommentableElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Superclass for invocations of behavior which is specified elsewhere, e.g. in methods (MethodCallExpression) or activities (ActivityCallNode). An invocation has one parameter binding for each parameter (in or out) of the called method/activity. For Callables which are contained in the model (i.e. Activities and OperationExtensions) the Invocation directly points to the callee. OpaqueCallables are directly referenced by (and contained in) the MethodCallExpressions."/>
       </eAnnotations>
@@ -364,12 +364,12 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="callee" ordered="false"
           eType="#//calls/Callable"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ParameterBinding" eSuperTypes="../../org.storydriven.core/model/core.ecore#//CommentableElement">
+    <eClassifiers xsi:type="ecore:EClass" name="ParameterBinding" eSuperTypes="../../org.muml.core/model/core.ecore#//CommentableElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Binds a parameter to a certain value for a given invocation. The value of the parameter is represented by an expression."/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="valueExpression" ordered="false"
-          lowerBound="1" eType="ecore:EClass ../../org.storydriven.core/model/core.ecore#//expressions/Expression"
+          lowerBound="1" eType="ecore:EClass ../../org.muml.core/model/core.ecore#//expressions/Expression"
           containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" ordered="false"
           eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EParameter"/>
@@ -413,17 +413,17 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="callExpression" ordered="false"
           lowerBound="1" eType="#//calls/expressions/MethodCallExpression" eOpposite="#//calls/expressions/MethodCallExpression/opaqueCallable"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ParameterExtension" eSuperTypes="#//Variable ../../org.storydriven.core/model/core.ecore#//Extension">
+    <eClassifiers xsi:type="ecore:EClass" name="ParameterExtension" eSuperTypes="#//Variable ../../org.muml.core/model/core.ecore#//Extension">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Represents an EParameter and adds functionality to it, especially beiing subtype of Variable."/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" ordered="false"
           eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EParameter"
           volatile="true" transient="true" unsettable="true" derived="true" resolveProxies="false">
-        <eAnnotations source="redefines" references="../../org.storydriven.core/model/core.ecore#//Extension/modelBase"/>
+        <eAnnotations source="redefines" references="../../org.muml.core/model/core.ecore#//Extension/modelBase"/>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Callable" abstract="true" eSuperTypes="../../org.storydriven.core/model/core.ecore#//CommentableElement">
+    <eClassifiers xsi:type="ecore:EClass" name="Callable" abstract="true" eSuperTypes="../../org.muml.core/model/core.ecore#//CommentableElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="An entity which can be called by an Invocation. A Callable can have a number of (ordered) parameters which are either in or out parameters. In the case of activities, the number of in and out parameters is unbounded, whereas OperationExtensions and OpaqueCallables can only have one out parameter (This is enforced by an OCL constraint)."/>
       </eAnnotations>
@@ -449,12 +449,12 @@
     </eClassifiers>
     <eSubpackages name="expressions" nsURI="http://www.storydriven.org/storydiagrams/calls/expressions/0.2.0"
         nsPrefix="sdce">
-      <eClassifiers xsi:type="ecore:EClass" name="MethodCallExpression" eSuperTypes="../../org.storydriven.core/model/core.ecore#//expressions/Expression #//calls/Invocation">
+      <eClassifiers xsi:type="ecore:EClass" name="MethodCallExpression" eSuperTypes="../../org.muml.core/model/core.ecore#//expressions/Expression #//calls/Invocation">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="A MethodCallEpression represents the direct invocation of a method. This can either be a method which is explicitly modeled as an EOperation in a class diagram (referenced by the OperationExtension) or an unmodeled method in an external library (referenced by an OpaqueCallable). Therefore, a MethodCallExpression references either an OperationExtension (indirectly via the callee role between Invocation and Callable) or an OpaqueCallable."/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="target" ordered="false"
-            eType="ecore:EClass ../../org.storydriven.core/model/core.ecore#//expressions/Expression"
+            eType="ecore:EClass ../../org.muml.core/model/core.ecore#//expressions/Expression"
             containment="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="A MethodCallExpression references an expression instead of a target object to allow the determination of the call target by an expression. This can be handy when a method should be called e.g. on the return value of another method (as in a.b().c() ). Then the method call of c() would be modeled by a MethodCallExpression with the callExpression a.b(), which again is a MethodCallExpression itself."/>
@@ -467,7 +467,7 @@
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="ParameterExpression" eSuperTypes="../../org.storydriven.core/model/core.ecore#//expressions/Expression">
+      <eClassifiers xsi:type="ecore:EClass" name="ParameterExpression" eSuperTypes="../../org.muml.core/model/core.ecore#//expressions/Expression">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="An Expressions that represents a parameter value, e.g. the value of an Activity's parameter."/>
         </eAnnotations>
@@ -509,11 +509,11 @@
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The type of this ObjectVariable, given as an EClass."/>
         </eAnnotations>
-        <eAnnotations source="subsets" references="../../org.storydriven.core/model/core.ecore#//TypedElement/type"/>
+        <eAnnotations source="subsets" references="../../org.muml.core/model/core.ecore#//TypedElement/type"/>
       </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="AbstractVariable" abstract="true"
-        eSuperTypes="#//Variable ../../org.storydriven.core/model/core.ecore#//NamedElement">
+        eSuperTypes="#//Variable ../../org.muml.core/model/core.ecore#//NamedElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Abstract super class for object and primitive variables."/>
       </eAnnotations>
@@ -526,7 +526,7 @@
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="bindingExpression" ordered="false"
-          eType="ecore:EClass ../../org.storydriven.core/model/core.ecore#//expressions/Expression"
+          eType="ecore:EClass ../../org.muml.core/model/core.ecore#//expressions/Expression"
           containment="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="A binding expression can be used to bind a variable in a different way than just by pattern matching. This way, for example, the return value of a call can be bound to a variable."/>
@@ -566,7 +566,7 @@
         <details key="documentation" value="A constraint represents a condition which must be fulfilled for a successful pattern matching. It can either be contained in the story pattern or in a variable. In the former case, the constraint is evaluated after the matching of the object structure is complete. It still has to be true for the pattern application to be sucessful (and therefore for creations and destructions to be carried out). If the constraint is contained in a variable, it constrains the matching of that variable, i.e., it is evaluated during the matching of the containing variable and has to be true for a successful matching. If the variable is an ObjectSetVariable, the constraint has to be true for every object in the set."/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="constraintExpression"
-          ordered="false" lowerBound="1" eType="ecore:EClass ../../org.storydriven.core/model/core.ecore#//expressions/Expression"
+          ordered="false" lowerBound="1" eType="ecore:EClass ../../org.muml.core/model/core.ecore#//expressions/Expression"
           containment="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The constraintExpression defines the concrete condition of this constraint."/>
@@ -586,7 +586,7 @@
       </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="AbstractLinkVariable" abstract="true"
-        eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement">
+        eSuperTypes="../../org.muml.core/model/core.ecore#//NamedElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Abstract super class for all kinds of link variables that represent links between two objects in a story pattern."/>
       </eAnnotations>
@@ -653,7 +653,7 @@
         </eAnnotations>
       </eLiterals>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="LinkConstraint" eSuperTypes="../../org.storydriven.core/model/core.ecore#//ExtendableElement">
+    <eClassifiers xsi:type="ecore:EClass" name="LinkConstraint" eSuperTypes="../../org.muml.core/model/core.ecore#//ExtendableElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Link constraints (formerly known as MultiLinks in old meta-model) constrain the ordering of links of the referencingObject is a collection. This way objects can be required to have a certain position in the collection (FIRST, LAST, INDEX) or a certain ordering relative to each other (DIRECT_SUCCESSOR, INDIRECT_SUCCESSOR). While the first kind of LinkConstraint can be imposed upon a single link, the second kind requires two links that are related to each other (e.g., have the same referencingObject)."/>
       </eAnnotations>
@@ -703,7 +703,7 @@
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="valueExpression" ordered="false"
-          lowerBound="1" eType="ecore:EClass ../../org.storydriven.core/model/core.ecore#//expressions/Expression"
+          lowerBound="1" eType="ecore:EClass ../../org.muml.core/model/core.ecore#//expressions/Expression"
           containment="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The expression that determines the new value that is given to the attribute."/>
@@ -731,7 +731,7 @@
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The type of the primitive variable which must be an EDataType."/>
         </eAnnotations>
-        <eAnnotations source="subsets" references="../../org.storydriven.core/model/core.ecore#//TypedElement/type"/>
+        <eAnnotations source="subsets" references="../../org.muml.core/model/core.ecore#//TypedElement/type"/>
       </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Path" eSuperTypes="#//patterns/AbstractLinkVariable">
@@ -739,7 +739,7 @@
         <details key="documentation" value="A path is a special link variable that specifies an indirect connection between two objects. That means, the connected objects have other links and objects &quot;between them&quot;. Exactly which types of links may be traversed during the matching of a path can be constrained by a path expression."/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="pathExpression" ordered="false"
-          lowerBound="1" eType="ecore:EClass ../../org.storydriven.core/model/core.ecore#//expressions/Expression"
+          lowerBound="1" eType="ecore:EClass ../../org.muml.core/model/core.ecore#//expressions/Expression"
           containment="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The path expression constrains the matching of the path variable during pattern application. It can determine which links may be matched when and how many times to reach the target object of the path from the source object."/>
@@ -764,7 +764,7 @@
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="qualifierExpression"
-          ordered="false" eType="ecore:EClass ../../org.storydriven.core/model/core.ecore#//expressions/Expression"
+          ordered="false" eType="ecore:EClass ../../org.muml.core/model/core.ecore#//expressions/Expression"
           containment="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="If a link is typed over a qualified reference, a qualifier determines the key under which the object reachable via the link is stored. Because the qualifier can be set by an expression, it can either be a simple string or something more complex, e.g., a call like &quot;object.getName()&quot;."/>
@@ -801,7 +801,7 @@
       </eOperations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="MaybeLink" eSuperTypes="#//patterns/AbstractLinkVariable"/>
-    <eClassifiers xsi:type="ecore:EClass" name="StoryPattern" eSuperTypes="../../org.storydriven.core/model/core.ecore#//CommentableElement">
+    <eClassifiers xsi:type="ecore:EClass" name="StoryPattern" eSuperTypes="../../org.muml.core/model/core.ecore#//CommentableElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="A Story Pattern is a graph rewrite rule that may be embedded into a StoryActivityNode&#xD;&#xA;of an Activity."/>
       </eAnnotations>
@@ -827,7 +827,7 @@
     </eClassifiers>
     <eSubpackages name="expressions" nsURI="http://www.storydriven.org/storydiagrams/patterns/expressions/0.2.1"
         nsPrefix="sdpe">
-      <eClassifiers xsi:type="ecore:EClass" name="AttributeValueExpression" eSuperTypes="../../org.storydriven.core/model/core.ecore#//expressions/Expression">
+      <eClassifiers xsi:type="ecore:EClass" name="AttributeValueExpression" eSuperTypes="../../org.muml.core/model/core.ecore#//expressions/Expression">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="Represents the value of an object's attribute, e.g. obj.attr for an object obj and an attribute attr."/>
         </eAnnotations>
@@ -844,7 +844,7 @@
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="ObjectVariableExpression" eSuperTypes="../../org.storydriven.core/model/core.ecore#//expressions/Expression">
+      <eClassifiers xsi:type="ecore:EClass" name="ObjectVariableExpression" eSuperTypes="../../org.muml.core/model/core.ecore#//expressions/Expression">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="Represents the reference to an object in an expression, i.e. the value of an object variable."/>
         </eAnnotations>
@@ -855,7 +855,7 @@
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="CollectionSizeExpression" eSuperTypes="../../org.storydriven.core/model/core.ecore#//expressions/Expression">
+      <eClassifiers xsi:type="ecore:EClass" name="CollectionSizeExpression" eSuperTypes="../../org.muml.core/model/core.ecore#//expressions/Expression">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="Represents the number of elements in the set of objects that is represented by an object set variable. For example, if you have an object set variable mySet, then this expression would represent something like mySet.size(). The expression can be used to constrain the pattern application, e.g., to only a apply the pattern when at least two objects can be matched for the set."/>
         </eAnnotations>
@@ -866,7 +866,7 @@
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="PrimitiveVariableExpression" eSuperTypes="../../org.storydriven.core/model/core.ecore#//expressions/Expression">
+      <eClassifiers xsi:type="ecore:EClass" name="PrimitiveVariableExpression" eSuperTypes="../../org.muml.core/model/core.ecore#//expressions/Expression">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="Represents the value of a primitive variable, e.g., 5 or &quot;MyName&quot;."/>
         </eAnnotations>
@@ -877,11 +877,11 @@
   </eSubpackages>
   <eSubpackages name="templates" nsURI="http://www.storydriven.org/storydiagrams/templates/0.2.0"
       nsPrefix="sdt">
-    <eClassifiers xsi:type="ecore:EClass" name="TemplateBinding" eSuperTypes="../../org.storydriven.core/model/core.ecore#//ExtendableElement">
+    <eClassifiers xsi:type="ecore:EClass" name="TemplateBinding" eSuperTypes="../../org.muml.core/model/core.ecore#//ExtendableElement">
       <eStructuralFeatures xsi:type="ecore:EReference" name="boundParameter" ordered="false"
           lowerBound="1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClassifier"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="bindingExpression" ordered="false"
-          lowerBound="1" eType="ecore:EClass ../../org.storydriven.core/model/core.ecore#//expressions/Expression"
+          lowerBound="1" eType="ecore:EClass ../../org.muml.core/model/core.ecore#//expressions/Expression"
           containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="template" ordered="false"
           lowerBound="1" eType="#//templates/TemplateSignature" eOpposite="#//templates/TemplateSignature/templateBinding"/>
@@ -889,11 +889,11 @@
           upperBound="-1" eType="#//templates/PropertyBinding" containment="true"
           eOpposite="#//templates/PropertyBinding/templateBinding"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="PropertyBinding" eSuperTypes="../../org.storydriven.core/model/core.ecore#//ExtendableElement">
+    <eClassifiers xsi:type="ecore:EClass" name="PropertyBinding" eSuperTypes="../../org.muml.core/model/core.ecore#//ExtendableElement">
       <eStructuralFeatures xsi:type="ecore:EReference" name="boundProperty" ordered="false"
           lowerBound="1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EStructuralFeature"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="bindingExpression" ordered="false"
-          lowerBound="1" eType="ecore:EClass ../../org.storydriven.core/model/core.ecore#//expressions/Expression"
+          lowerBound="1" eType="ecore:EClass ../../org.muml.core/model/core.ecore#//expressions/Expression"
           containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="templateBinding" ordered="false"
           lowerBound="1" eType="#//templates/TemplateBinding" eOpposite="#//templates/TemplateBinding/propertyBinding"/>

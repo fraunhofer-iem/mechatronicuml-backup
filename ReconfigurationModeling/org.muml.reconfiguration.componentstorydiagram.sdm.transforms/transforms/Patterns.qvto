@@ -12,13 +12,13 @@ modeltype sdPatterns uses storydiagrams::patterns('http://www.storydriven.org/st
 
 modeltype componentInstanceConfiguration uses muml::instance('http://www.fujaba.de/muml/0.4.0');
 
-modeltype storydriven uses 'http://www.storydriven.org/core/0.3.1';
+modeltype storydriven uses 'http://www.muml.org/core/1.0.0';
 
 modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
 
 modeltype modelinstance uses 'http://www.fujaba.de/modelinstance/0.4.0';
 
-modeltype componentModel uses muml::component('http://www.fujaba.de/muml/0.4.0');
+modeltype componentModel uses pim::component('http://www.muml.org/pim/1.0.0');
 
 
 mapping componentstorypattern::ComponentStoryPattern :: ComponentStoryPattern2StoryPattern() : StoryPattern{

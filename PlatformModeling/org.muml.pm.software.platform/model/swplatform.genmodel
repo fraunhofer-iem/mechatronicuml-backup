@@ -3,7 +3,7 @@
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/de.uni_paderborn.fujaba.muml.swplatform/src" modelPluginID="de.uni_paderborn.fujaba.muml.swplatform"
     modelName="Swplatform" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="7.0" copyrightFields="false"
-    usedGenPackages="../../org.storydriven.core/model/core.uml.genmodel#//core ../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml"
+    usedGenPackages="../../org.muml.core/model/core.genmodel#//core ../../org.muml.pim/model/pim.genmodel#//pim"
     operationReflection="true" importOrganizing="true">
   <foreignModel>swplatform.ecore</foreignModel>
   <genPackages prefix="Swplatform" basePackage="de.uni_paderborn.fujaba.muml" disposableProviderFactory="true"

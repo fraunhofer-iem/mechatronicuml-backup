@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ASCII"?>
-<de.uni_paderborn.fujaba:PropertyGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.uni_paderborn.fujaba="http://de.uni_paderborn.fujaba.properties/0.5.1" xmi:id="_rrUDwM1vEeSYMIUar8fgtA" defaultTab="_rrfp8M1vEeSYMIUar8fgtA" contributorId="">
+<de.uni_paderborn.fujaba:PropertyGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.uni_paderborn.fujaba="http://www.muml.org/ape/1.0.0" xmi:id="_rrUDwM1vEeSYMIUar8fgtA" defaultTab="_rrfp8M1vEeSYMIUar8fgtA" contributorId="">
   <reconciler xmi:id="_rrd0wM1vEeSYMIUar8fgtA"/>
   <genModel href="migration.genmodel#/"/>
   <plugin xmi:id="_rrfC4M1vEeSYMIUar8fgtA" id="de.uni_paderborn.fujaba.ecore.migration.edit.properties" name="Properties" vendor="ok" version="0.1">

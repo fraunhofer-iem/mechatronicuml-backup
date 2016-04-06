@@ -1,8 +1,8 @@
 library ExpressionUtil;
 
-modeltype actionLanguage uses 'http://www.fujaba.de/muml/actionlanguage/0.4.0';
-modeltype common uses core::expressions::common('http://www.storydriven.org/core/0.3.1');
-modeltype expressions uses core::expressions('http://www.storydriven.org/core/0.3.1');
+modeltype actionLanguage uses 'http://www.muml.org/pim/actionlanguage/1.0.0';
+modeltype common uses core::expressions::common('http://www.muml.org/core/1.0.0');
+modeltype expressions uses core::expressions('http://www.muml.org/core/1.0.0');
 
 helper OrderedSet(Expression) :: constructConjunction() : Expression {
 	

@@ -4,10 +4,10 @@
     creationIcons="false" modelPluginID="de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl"
     modelName="Mtctl" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" copyrightFields="false"
-    usedGenPackages="../../org.storydriven.core/model/core.uml.genmodel#//core ../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.genmodel#//modelinstance ../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml"
+    usedGenPackages="../../org.muml.core/model/core.genmodel#//core ../../org.muml.core.modelinstance/model/modelinstance.genmodel#//modelinstance ../../org.muml.pim/model/pim.genmodel#//pim"
     operationReflection="true" importOrganizing="true">
   <foreignModel>Mtctl.ecore</foreignModel>
-  <foreignModel>../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore</foreignModel>
+  <foreignModel>../../org.muml.core.modelinstance/model/modelinstance.ecore</foreignModel>
   <genPackages prefix="Mtctl" basePackage="de.uni_paderborn.fujaba.muml.verification.uppaal"
       disposableProviderFactory="true" ecorePackage="Mtctl.ecore#/">
     <genClasses ecoreClass="Mtctl.ecore#//PropertyRepository">

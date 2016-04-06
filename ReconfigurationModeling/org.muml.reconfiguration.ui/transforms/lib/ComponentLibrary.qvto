@@ -2,16 +2,16 @@ library ComponentLibrary;
 
 --core models
 modeltype core uses core('http://www.storydriven.org/core/0.3.1');
-modeltype expressions uses core::expressions('http://www.storydriven.org/core/0.3.1');
-modeltype expressions_common uses core::expressions::common('http://www.storydriven.org/core/0.3.1');
+modeltype expressions uses core::expressions('http://www.muml.org/core/1.0.0');
+modeltype expressions_common uses core::expressions::common('http://www.muml.org/core/1.0.0');
 modeltype modelinst uses modelinstance("http://www.fujaba.de/modelinstance/0.4.0");
 
 -- muml models 
-modeltype behavior uses muml::behavior("http://www.fujaba.de/muml/0.4.0");
-modeltype msgi uses muml::msgtype("http://www.fujaba.de/muml/0.4.0");
-modeltype realtimestatechart uses muml::realtimestatechart('http://www.fujaba.de/muml/0.4.0');
-modeltype types uses muml::types("http://www.fujaba.de/muml/0.4.0");
-modeltype valuetype uses muml::valuetype("http://www.fujaba.de/muml/0.4.0");
+modeltype behavior uses pim::behavior('http://www.muml.org/pim/1.0.0');
+modeltype msgi uses pim::msgtype('http://www.muml.org/pim/1.0.0');
+modeltype realtimestatechart uses pim::realtimestatechart('http://www.muml.org/pim/1.0.0');
+modeltype types uses pim::types('http://www.muml.org/pim/1.0.0');
+modeltype valuetype uses pim::valuetype('http://www.muml.org/pim/1.0.0');
 
 modeltype actionlanguage uses actionlanguage('http://www.fujaba.de/muml/actionlanguage/0.4.0');
 

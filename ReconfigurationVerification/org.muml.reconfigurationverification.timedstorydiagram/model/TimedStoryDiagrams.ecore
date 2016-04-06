@@ -7,7 +7,7 @@
     <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
     <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
   </eAnnotations>
-  <eClassifiers xsi:type="ecore:EClass" name="TimedGraphTransformationSystem" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement">
+  <eClassifiers xsi:type="ecore:EClass" name="TimedGraphTransformationSystem" eSuperTypes="../../org.muml.core/model/core.ecore#//NamedElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="A timed graph transformation system consists of a set of timed graph &#xD;&#xA;transformation rules, a set of invariant rules, a set of clock instance rules, and&#xD;&#xA;a set of object that constitute the initial graph."/>
     </eAnnotations>
@@ -89,7 +89,7 @@
       <details key="constraints" value="OnlyContainsTimedActivityNodes"/>
     </eAnnotations>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ClockInstance" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement">
+  <eClassifiers xsi:type="ecore:EClass" name="ClockInstance" eSuperTypes="../../org.muml.core/model/core.ecore#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="hasNode" ordered="false"
         lowerBound="1" upperBound="-1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>
@@ -97,7 +97,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="ClockInstanceConstraint">
     <eStructuralFeatures xsi:type="ecore:EReference" name="clockInstanceVariable"
         eType="#//ClockInstanceVariable" eOpposite="#//ClockInstanceVariable/clockInstanceConstraints"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" eType="ecore:EEnum ../../org.storydriven.core/model/core.ecore#//expressions/common/ComparingOperator"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" eType="ecore:EEnum ../../org.muml.core/model/core.ecore#//expressions/common/ComparingOperator"
         defaultValueLiteral="LESS_OR_EQUAL"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"
         defaultValueLiteral="1"/>

@@ -117,9 +117,9 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+              href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
           <editableMetaFeatures
-              href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+              href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
         </modelFacet>
       </labels>
       <labels
@@ -265,9 +265,9 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+              href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
           <editableMetaFeatures
-              href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+              href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
         </modelFacet>
       </labels>
       <labels
@@ -396,9 +396,9 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+              href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
           <editableMetaFeatures
-              href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+              href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
         </modelFacet>
       </labels>
       <labels
@@ -466,9 +466,9 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+              href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
           <editableMetaFeatures
-              href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+              href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
         </modelFacet>
       </labels>
       <labels
@@ -523,7 +523,7 @@
                   xsi:type="gmfgen:GenFeatureValueSpec"
                   value="//@expressionProviders/@providers.0/@expressions.0">
                 <feature
-                    href="../../org.storydriven.core/model/core.uml.genmodel#//core/CommentableElement/comment"/>
+                    href="../../org.muml.core/model/core.genmodel#//core/CommentableElement/comment"/>
               </initializers>
             </newElementInitializers>
           </initializers>
@@ -548,9 +548,9 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+              href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
           <editableMetaFeatures
-              href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+              href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
         </modelFacet>
       </labels>
     </topLevelNodes>
@@ -590,7 +590,7 @@
                   xsi:type="gmfgen:GenFeatureValueSpec"
                   value="//@expressionProviders/@providers.0/@expressions.1">
                 <feature
-                    href="../../org.storydriven.core/model/core.uml.genmodel#//core/CommentableElement/comment"/>
+                    href="../../org.muml.core/model/core.genmodel#//core/CommentableElement/comment"/>
               </initializers>
             </newElementInitializers>
           </initializers>
@@ -615,9 +615,9 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+              href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
           <editableMetaFeatures
-              href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+              href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
         </modelFacet>
       </labels>
     </topLevelNodes>

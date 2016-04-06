@@ -4,7 +4,7 @@ import transforms.UPPAALTrace2MUMLTrace;
 import transforms.lib.ExternalizedStrings;
 import transforms.mtctl.MTCTLEvaluateResultTransformation;
 
-modeltype storydriven uses 'http://www.storydriven.org/core/0.3.1';
+modeltype storydriven uses 'http://www.muml.org/core/1.0.0';
 
 modeltype muml uses 'http://www.fujaba.de/muml/0.4.0';
 modeltype muml_constraint uses muml::constraint('http://www.fujaba.de/muml/0.4.0');

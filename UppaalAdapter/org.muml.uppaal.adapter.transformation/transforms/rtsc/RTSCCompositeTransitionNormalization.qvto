@@ -9,15 +9,15 @@ import transforms.lib.MultiMappingUtil;
 transformation RTSCCompositeTransitionNormalization(in input:muml_rtsc, out output:muml_rtsc);
 
 modeltype muml uses 'http://www.fujaba.de/muml/0.4.0';
-modeltype muml_rtsc uses muml::realtimestatechart('http://www.fujaba.de/muml/0.4.0');
-modeltype muml_behavior uses muml::behavior('http://www.fujaba.de/muml/0.4.0');
-modeltype muml_protocol uses muml::protocol('http://www.fujaba.de/muml/0.4.0');
-modeltype muml_actionLanguage uses 'http://www.fujaba.de/muml/actionlanguage/0.4.0';
+modeltype muml_rtsc uses pim::realtimestatechart('http://www.muml.org/pim/1.0.0');
+modeltype muml_behavior uses pim::behavior('http://www.muml.org/pim/1.0.0');
+modeltype muml_protocol uses pim::protocol('http://www.muml.org/pim/1.0.0');
+modeltype muml_actionLanguage uses 'http://www.muml.org/pim/actionlanguage/1.0.0';
 modeltype muml_msgtype uses muml::msgtype('http://www.fujaba.de/muml/0.4.0');
-modeltype muml_types uses muml::types('http://www.fujaba.de/muml/0.4.0');
-modeltype muml_valuetype uses muml::valuetype('http://www.fujaba.de/muml/0.4.0');
-modeltype storydriven_core_expressions_common uses core::expressions::common('http://www.storydriven.org/core/0.3.1');
-modeltype storydriven_core_expressions uses core::expressions('http://www.storydriven.org/core/0.3.1');
+modeltype muml_types uses pim::types('http://www.muml.org/pim/1.0.0');
+modeltype muml_valuetype uses pim::valuetype('http://www.muml.org/pim/1.0.0');
+modeltype storydriven_core_expressions_common uses core::expressions::common('http://www.muml.org/core/1.0.0');
+modeltype storydriven_core_expressions uses core::expressions('http://www.muml.org/core/1.0.0');
 modeltype extension uses 'http://www.fujaba.de/muml/verification/extension/0.4.0';
 modeltype modelinstance uses 'http://www.fujaba.de/modelinstance/0.4.0';
 modeltype mtctl uses 'http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl';
@@ -70,7 +70,7 @@ helper mtctl::Expression::replaceWith(newExpr : mtctl::Expression) {
     
 mapping MumlElemExpr :: MumlElemExpr2MumlElemExpr() : MumlElemExpr {
 	if (self.elem.oclIsKindOf(Transition))
-		elem := self.elem.late resolveoneIn(muml::realtimestatechart::Transition::Transition2Transition)
+		elem := self.elem.late resolveoneIn(pim::realtimestatechart::Transition::Transition2Transition)
 	else if (self.elem.oclIsKindOf(State)) {
 		elem := self.elem.oclAsType(State).map State2State(); // SDz: will be corrected in main() after the transformation
 		mumlElemsToFix += result;
@@ -192,7 +192,7 @@ mapping State :: State2State() : State {
 	
 }
 
-mapping muml::realtimestatechart::EntryPoint :: EntryPoint2EntryPoint() : muml::realtimestatechart::EntryPoint{
+mapping pim::realtimestatechart::EntryPoint :: EntryPoint2EntryPoint() : pim::realtimestatechart::EntryPoint{
     	_name := self._name;
     	_comment := self._comment;
     	_annotation := self._annotation.map EAnnotation2EAnnotation();
@@ -202,7 +202,7 @@ mapping muml::realtimestatechart::EntryPoint :: EntryPoint2EntryPoint() : muml::
     	_state := self._state.map State2State();
    		 }
    		 
-mapping muml::realtimestatechart::ExitPoint :: ExitPoint2ExitPoint() : muml::realtimestatechart::ExitPoint{
+mapping pim::realtimestatechart::ExitPoint :: ExitPoint2ExitPoint() : pim::realtimestatechart::ExitPoint{
     	_name := self._name;
     	_comment := self._comment;
     	_annotation := self._annotation.map EAnnotation2EAnnotation();

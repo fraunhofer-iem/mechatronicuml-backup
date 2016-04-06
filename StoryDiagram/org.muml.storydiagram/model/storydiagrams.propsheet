@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="ASCII"?>
-<de.uni_paderborn.fujaba:PropertyGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.uni_paderborn.fujaba="http://de.uni_paderborn.fujaba.properties/0.5.1" xmi:id="_RnsusM1gEeSIgPDefa6ZBw" contributorId="">
+<de.uni_paderborn.fujaba:PropertyGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.uni_paderborn.fujaba="http://www.muml.org/ape/1.0.0" xmi:id="_RnsusM1gEeSIgPDefa6ZBw" contributorId="">
   <reconciler xmi:id="_Rnsusc1gEeSIgPDefa6ZBw">
     <customTransformations xmi:id="_RntVwM1gEeSIgPDefa6ZBw" uri="platform:/plugin/de.uni_paderborn.fujaba.muml.common/transformations/muml-propsheet.qvto"/>
     <customTransformations xmi:id="_Rnt80M1gEeSIgPDefa6ZBw" uri="platform:/plugin/de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/transformations/xtext-propsheet.qvto"/>
   </reconciler>
   <genModel href="storydiagrams.uml.genmodel#/"/>
-  <referencedGenerators href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#_VZIdoMwbEeSjx7OWZCcdLw"/>
+  <referencedGenerators href="../../org.muml.pim/model/pim.propsheet#_VZIdoMwbEeSjx7OWZCcdLw"/>
   <plugin xmi:id="_Rnuj4M1gEeSIgPDefa6ZBw" id="org.storydriven.storydiagrams.edit.properties" name="Storydiagrams Tabbed Properties" vendor="" version="0.5.0.qualifier">
     <requiredBundles>org.eclipse.emf.ecore</requiredBundles>
     <requiredBundles>org.eclipse.ui</requiredBundles>
@@ -20,7 +20,7 @@
     <requiredBundles>de.uni_paderborn.fujaba.muml.edit.properties</requiredBundles>
     <requiredBundles>de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui</requiredBundles>
   </plugin>
-  <defaultTab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+  <defaultTab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
   <packages xmi:id="_RnvK8M1gEeSIgPDefa6ZBw">
     <genPackage href="storydiagrams.uml.genmodel#//storydiagrams"/>
     <classes>
@@ -33,17 +33,17 @@
       <genClass href="storydiagrams.uml.genmodel#//storydiagrams/activities/ExceptionVariable"/>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
         <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/activities/ExceptionVariable/name"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
       </orderedElements>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
         <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/activities/ExceptionVariable/exceptionType"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
       </orderedElements>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
         <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/activities/ExceptionVariable/genericExceptionType"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
       </orderedElements>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:PropertyCategory" title="Lists" properties="//@packages.1/@classes.0/@orderedElements.1 //@packages.1/@classes.0/@orderedElements.2"/>
@@ -52,17 +52,17 @@
       <genClass href="storydiagrams.uml.genmodel#//storydiagrams/activities/ActivityEdge"/>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
         <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/activities/ActivityEdge/target"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </orderedElements>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
         <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/activities/ActivityEdge/source"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </orderedElements>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
         <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/activities/ActivityEdge/guard"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor"/>
       </orderedElements>
     </classes>
@@ -70,12 +70,12 @@
       <genClass href="storydiagrams.uml.genmodel#//storydiagrams/activities/ActivityNode"/>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
         <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/activities/ActivityNode/outgoing"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
       </orderedElements>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
         <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/activities/ActivityNode/incoming"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
       </orderedElements>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:PropertyCategory" title="Lists" properties="//@packages.1/@classes.2/@orderedElements.0 //@packages.1/@classes.2/@orderedElements.1"/>
@@ -84,22 +84,22 @@
       <genClass href="storydiagrams.uml.genmodel#//storydiagrams/activities/Activity"/>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
         <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/activities/Activity/precondition"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </orderedElements>
     </classes>
     <classes>
       <genClass href="storydiagrams.uml.genmodel#//storydiagrams/activities/OperationExtension"/>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
-        <genFeature href="../../org.storydriven.core/model/core.uml.genmodel#//core/Extension/extendableBase"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <genFeature href="../../org.muml.core/model/core.genmodel#//core/Extension/extendableBase"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
         <creationOppositeConstraint>
           <filters xsi:type="de.uni_paderborn.fujaba:OCLFilter" expression="false"/>
         </creationOppositeConstraint>
       </orderedElements>
       <superClasses href="#//@packages.2/@classes.4"/>
-      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_QNUeHNEeS5Putgio2lkg"/>
+      <superClasses href="../../org.muml.core/model/core.propsheet#_i_QNUeHNEeS5Putgio2lkg"/>
     </classes>
     <classes superClasses="//@packages.1/@classes.6">
       <genClass href="storydiagrams.uml.genmodel#//storydiagrams/activities/MatchingStoryNode"/>
@@ -108,7 +108,7 @@
       <genClass href="storydiagrams.uml.genmodel#//storydiagrams/activities/StoryNode"/>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
         <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/activities/StoryNode/forEach"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
       </orderedElements>
     </classes>
@@ -128,7 +128,7 @@
       <genClass href="storydiagrams.uml.genmodel#//storydiagrams/activities/ActivityFinalNode"/>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
         <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/activities/ActivityFinalNode/success"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
       </orderedElements>
     </classes>
@@ -136,7 +136,7 @@
       <genClass href="storydiagrams.uml.genmodel#//storydiagrams/activities/ActivityCallNode"/>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
         <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/activities/ActivityCallNode/calledActivity"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
       </orderedElements>
     </classes>
@@ -153,7 +153,7 @@
       <genClass href="storydiagrams.uml.genmodel#//storydiagrams/calls/Invocation"/>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
         <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/calls/Invocation/callee"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </orderedElements>
     </classes>
@@ -161,7 +161,7 @@
       <genClass href="storydiagrams.uml.genmodel#//storydiagrams/calls/ParameterBinding"/>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
         <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/calls/ParameterBinding/parameter"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </orderedElements>
     </classes>
@@ -169,33 +169,33 @@
       <genClass href="storydiagrams.uml.genmodel#//storydiagrams/calls/OpaqueCallable"/>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
         <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/calls/OpaqueCallable/name"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
       </orderedElements>
     </classes>
     <classes>
       <genClass href="storydiagrams.uml.genmodel#//storydiagrams/calls/ParameterExtension"/>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
-        <genFeature href="../../org.storydriven.core/model/core.uml.genmodel#//core/Extension/extendableBase"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <genFeature href="../../org.muml.core/model/core.genmodel#//core/Extension/extendableBase"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
         <creationOppositeConstraint>
           <filters xsi:type="de.uni_paderborn.fujaba:OCLFilter" expression="false"/>
         </creationOppositeConstraint>
       </orderedElements>
       <superClasses href="#//@packages.0/@classes.0"/>
-      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_QNUeHNEeS5Putgio2lkg"/>
+      <superClasses href="../../org.muml.core/model/core.propsheet#_i_QNUeHNEeS5Putgio2lkg"/>
     </classes>
     <classes>
       <genClass href="storydiagrams.uml.genmodel#//storydiagrams/calls/Callable"/>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
         <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/calls/Callable/inParameter"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
       </orderedElements>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
         <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/calls/Callable/outParameter"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
       </orderedElements>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:PropertyCategory" title="Lists" properties="//@packages.2/@classes.4/@orderedElements.0 //@packages.2/@classes.4/@orderedElements.1"/>
@@ -207,22 +207,22 @@
       <genClass href="storydiagrams.uml.genmodel#//storydiagrams/patterns/ObjectVariable"/>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
         <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/patterns/ObjectVariable/outgoingLink"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
       </orderedElements>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
         <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/patterns/ObjectVariable/bindingSemantics"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor"/>
       </orderedElements>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
         <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/patterns/ObjectVariable/bindingOperator"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor"/>
       </orderedElements>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
         <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/patterns/ObjectVariable/classifier"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </orderedElements>
     </classes>
@@ -230,12 +230,12 @@
       <genClass href="storydiagrams.uml.genmodel#//storydiagrams/patterns/AbstractVariable"/>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
         <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/patterns/AbstractVariable/bindingState"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor"/>
       </orderedElements>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
         <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/patterns/AbstractVariable/incomingLink"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
       </orderedElements>
     </classes>
@@ -246,32 +246,32 @@
       <genClass href="storydiagrams.uml.genmodel#//storydiagrams/patterns/AbstractLinkVariable"/>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
         <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/patterns/AbstractLinkVariable/bindingSemantics"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor"/>
       </orderedElements>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
         <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/patterns/AbstractLinkVariable/bindingOperator"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor"/>
       </orderedElements>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
         <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/patterns/AbstractLinkVariable/source"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </orderedElements>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
         <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/patterns/AbstractLinkVariable/secondLinkConstraint"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
       </orderedElements>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
         <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/patterns/AbstractLinkVariable/firstLinkConstraint"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
       </orderedElements>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
         <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/patterns/AbstractLinkVariable/target"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </orderedElements>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:PropertyCategory" title="Lists" properties="//@packages.3/@classes.3/@orderedElements.3 //@packages.3/@classes.3/@orderedElements.4"/>
@@ -280,27 +280,27 @@
       <genClass href="storydiagrams.uml.genmodel#//storydiagrams/patterns/LinkConstraint"/>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
         <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/patterns/LinkConstraint/index"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="de.uni_paderborn.fujaba:SpinnerPropertyEditor"/>
       </orderedElements>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
         <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/patterns/LinkConstraint/constraintType"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor"/>
       </orderedElements>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
         <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/patterns/LinkConstraint/negative"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
       </orderedElements>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
         <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/patterns/LinkConstraint/firstLink"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </orderedElements>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
         <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/patterns/LinkConstraint/secondLink"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </orderedElements>
     </classes>
@@ -308,7 +308,7 @@
       <genClass href="storydiagrams.uml.genmodel#//storydiagrams/patterns/AttributeAssignment"/>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
         <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/patterns/AttributeAssignment/attribute"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </orderedElements>
     </classes>
@@ -316,12 +316,12 @@
       <genClass href="storydiagrams.uml.genmodel#//storydiagrams/patterns/CollectionVariable"/>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
         <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/patterns/CollectionVariable/atLeastOne"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
       </orderedElements>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
         <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/patterns/CollectionVariable/unique"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
       </orderedElements>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:PropertyCategory" title="Booleans" properties="//@packages.3/@classes.6/@orderedElements.0 //@packages.3/@classes.6/@orderedElements.1"/>
@@ -330,7 +330,7 @@
       <genClass href="storydiagrams.uml.genmodel#//storydiagrams/patterns/PrimitiveVariable"/>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
         <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/patterns/PrimitiveVariable/classifier"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </orderedElements>
     </classes>
@@ -341,7 +341,7 @@
       <genClass href="storydiagrams.uml.genmodel#//storydiagrams/patterns/LinkVariable"/>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
         <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/patterns/LinkVariable/targetEnd"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </orderedElements>
     </classes>
@@ -358,7 +358,7 @@
       <genClass href="storydiagrams.uml.genmodel#//storydiagrams/patterns/StoryPattern"/>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
         <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/patterns/StoryPattern/bindingSemantics"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor"/>
       </orderedElements>
     </classes>
@@ -369,7 +369,7 @@
       <genClass href="storydiagrams.uml.genmodel#//storydiagrams/templates/TemplateBinding"/>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
         <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/templates/TemplateBinding/boundParameter"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </orderedElements>
     </classes>
@@ -377,7 +377,7 @@
       <genClass href="storydiagrams.uml.genmodel#//storydiagrams/templates/PropertyBinding"/>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
         <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/templates/PropertyBinding/boundProperty"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </orderedElements>
     </classes>

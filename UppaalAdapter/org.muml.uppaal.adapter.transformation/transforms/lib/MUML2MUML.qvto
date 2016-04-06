@@ -1,21 +1,21 @@
 library MUML2MUML;
-modeltype rtsc uses muml::realtimestatechart('http://www.fujaba.de/muml/0.4.0');
-modeltype behaviorModel uses muml::behavior('http://www.fujaba.de/muml/0.4.0');
-modeltype actionLanguage uses 'http://www.fujaba.de/muml/actionlanguage/0.4.0';
-modeltype common uses core::expressions::common('http://www.storydriven.org/core/0.3.1');
-modeltype expressionsModel uses core::expressions('http://www.storydriven.org/core/0.3.1');
+modeltype rtsc uses pim::realtimestatechart('http://www.muml.org/pim/1.0.0');
+modeltype behaviorModel uses pim::behavior('http://www.muml.org/pim/1.0.0');
+modeltype actionLanguage uses 'http://www.muml.org/pim/actionlanguage/1.0.0';
+modeltype common uses core::expressions::common('http://www.muml.org/core/1.0.0');
+modeltype expressionsModel uses core::expressions('http://www.muml.org/core/1.0.0');
 modeltype msgtype uses muml::msgtype('http://www.fujaba.de/muml/0.4.0');
-modeltype types uses muml::types('http://www.fujaba.de/muml/0.4.0');
-modeltype valuetype uses muml::valuetype('http://www.fujaba.de/muml/0.4.0');
-modeltype connector uses muml::connector('http://www.fujaba.de/muml/0.4.0');
-modeltype protocol uses muml::protocol('http://www.fujaba.de/muml/0.4.0');
-modeltype componentModel uses muml::component('http://www.fujaba.de/muml/0.4.0');
+modeltype types uses pim::types('http://www.muml.org/pim/1.0.0');
+modeltype valuetype uses pim::valuetype('http://www.muml.org/pim/1.0.0');
+modeltype connector uses pim::connector('http://www.muml.org/pim/1.0.0');
+modeltype protocol uses pim::protocol('http://www.muml.org/pim/1.0.0');
+modeltype componentModel uses pim::component('http://www.muml.org/pim/1.0.0');
 modeltype verificationExtension uses 'http://www.fujaba.de/muml/verification/extension/0.4.0';
 modeltype modelinstance uses 'http://www.fujaba.de/modelinstance/0.4.0';
 modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
 modeltype instanceModel uses'http://www.fujaba.de/muml/instance/0.4.0';
 modeltype constraintModel uses 'http://www.fujaba.de/muml/constraint/0.4.0';
-modeltype storydriven uses 'http://www.storydriven.org/core/0.3.1';
+modeltype storydriven uses 'http://www.muml.org/core/1.0.0';
 modeltype mtctl uses 'http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl';
 modeltype mtctlQuantifiers uses 'http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Quantifiers';
 modeltype mtctlPredicates uses 'http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Predicates';
@@ -207,11 +207,11 @@ mapping muml::valuetype::Range :: Range2Range() : muml::valuetype::Range{
     	_upperBound := self._upperBound;
    		 }
    		 
-mapping core::CommentableElement :: CommentableElement2CommentableElement() : core::CommentableElement disjuncts muml::connector::MessageBuffer::MessageBuffer2MessageBuffer, muml::behavior::Variable::Variable2Variable, muml::protocol::ConnectorQualityOfServiceAssumptions::ConnectorQualityOfServiceAssumptions2ConnectorQualityOfServiceAssumptions, muml::behavior::Parameter::Parameter2Parameter, muml::realtimestatechart::Vertex::Vertex2Vertex, muml::msgtype::MessageType::MessageType2MessageType, muml::realtimestatechart::SynchronizationChannel::SynchronizationChannel2SynchronizationChannel, core::expressions::Expression::Expression2Expression, muml::msgtype::MessageTypeRepository::MessageTypeRepository2MessageTypeRepository, muml::protocol::AbstractCoordinationSpecification::AbstractCoordinationSpecification2AbstractCoordinationSpecification, muml::component::ComponentPart::ComponentPart2ComponentPart, muml::connector::Connector::Connector2Connector, muml::connector::ConnectorEndpoint::ConnectorEndpoint2ConnectorEndpoint, muml::types::DataType::DataType2DataType, muml::component::Component::Component2Component, muml::instance::ComponentInstanceConfiguration::ComponentInstanceConfiguration2ComponentInstanceConfiguration, muml::connector::ConnectorInstance::ConnectorInstance2ConnectorInstance, muml::connector::ConnectorEndpointInstance::ConnectorEndpointInstance2ConnectorEndpointInstance, mtctl::Property::Property2Property, muml::component::CoordinationProtocolPart::CoordinationProtocolPart2CoordinationProtocolPart, muml::realtimestatechart::Region::Region2Region, muml::realtimestatechart::Transition::Transition2Transition, muml::behavior::Operation::Operation2Operation, muml::realtimestatechart::RealtimeStatechart::RealtimeStatechart2RealtimeStatechart;
+mapping core::CommentableElement :: CommentableElement2CommentableElement() : core::CommentableElement disjuncts pim::connector::MessageBuffer::MessageBuffer2MessageBuffer, muml::behavior::Variable::Variable2Variable, muml::protocol::ConnectorQualityOfServiceAssumptions::ConnectorQualityOfServiceAssumptions2ConnectorQualityOfServiceAssumptions, muml::behavior::Parameter::Parameter2Parameter, pim::realtimestatechart::Vertex::Vertex2Vertex, muml::msgtype::MessageType::MessageType2MessageType, pim::realtimestatechart::SynchronizationChannel::SynchronizationChannel2SynchronizationChannel, core::expressions::Expression::Expression2Expression, muml::msgtype::MessageTypeRepository::MessageTypeRepository2MessageTypeRepository, muml::protocol::AbstractCoordinationSpecification::AbstractCoordinationSpecification2AbstractCoordinationSpecification, pim::component::ComponentPart::ComponentPart2ComponentPart, pim::connector::Connector::Connector2Connector, pim::connector::ConnectorEndpoint::ConnectorEndpoint2ConnectorEndpoint, muml::types::DataType::DataType2DataType, pim::component::Component::Component2Component, muml::instance::ComponentInstanceConfiguration::ComponentInstanceConfiguration2ComponentInstanceConfiguration, pim::connector::ConnectorInstance::ConnectorInstance2ConnectorInstance, pim::connector::ConnectorEndpointInstance::ConnectorEndpointInstance2ConnectorEndpointInstance, mtctl::Property::Property2Property, pim::component::CoordinationProtocolPart::CoordinationProtocolPart2CoordinationProtocolPart, pim::realtimestatechart::Region::Region2Region, pim::realtimestatechart::Transition::Transition2Transition, muml::behavior::Operation::Operation2Operation, pim::realtimestatechart::RealtimeStatechart::RealtimeStatechart2RealtimeStatechart;
       	
-mapping core::ExtendableElement :: ExtendableElement2ExtendableElement() : core::ExtendableElement disjuncts core::CommentableElement::CommentableElement2CommentableElement, muml::behavior::ParameterBinding::ParameterBinding2ParameterBinding, core::NamedElement::NamedElement2NamedElement, muml::constraint::VerificationConstraintRepository::VerificationConstraintRepository2VerificationConstraintRepository, muml::realtimestatechart::Message::Message2Message, muml::realtimestatechart::ClockConstraint::ClockConstraint2ClockConstraint, muml::realtimestatechart::Synchronization::Synchronization2Synchronization, muml::valuetype::TimeValue::TimeValue2TimeValue;
+mapping core::ExtendableElement :: ExtendableElement2ExtendableElement() : core::ExtendableElement disjuncts core::CommentableElement::CommentableElement2CommentableElement, muml::behavior::ParameterBinding::ParameterBinding2ParameterBinding, core::NamedElement::NamedElement2NamedElement, muml::constraint::VerificationConstraintRepository::VerificationConstraintRepository2VerificationConstraintRepository, pim::realtimestatechart::Message::Message2Message, pim::realtimestatechart::ClockConstraint::ClockConstraint2ClockConstraint, pim::realtimestatechart::Synchronization::Synchronization2Synchronization, muml::valuetype::TimeValue::TimeValue2TimeValue;
       	
-mapping core::NamedElement :: NamedElement2NamedElement() : core::NamedElement disjuncts muml::connector::MessageBuffer::MessageBuffer2MessageBuffer, muml::msgtype::MessageType::MessageType2MessageType, muml::realtimestatechart::Vertex::Vertex2Vertex, muml::realtimestatechart::SynchronizationChannel::SynchronizationChannel2SynchronizationChannel, muml::instance::ComponentInstance::ComponentInstance2ComponentInstance, muml::msgtype::MessageTypeRepository::MessageTypeRepository2MessageTypeRepository, muml::protocol::AbstractCoordinationSpecification::AbstractCoordinationSpecification2AbstractCoordinationSpecification, muml::component::ComponentPart::ComponentPart2ComponentPart, muml::realtimestatechart::Action::Action2Action, muml::types::DataType::DataType2DataType, muml::instance::CoordinationProtocolInstance::CoordinationProtocolInstance2CoordinationProtocolInstance, muml::component::Component::Component2Component, muml::instance::ComponentInstanceConfiguration::ComponentInstanceConfiguration2ComponentInstanceConfiguration, muml::connector::DiscreteInteractionEndpoint::DiscreteInteractionEndpoint2DiscreteInteractionEndpoint, muml::realtimestatechart::Clock::Clock2Clock, muml::connector::ConnectorEndpointInstance::ConnectorEndpointInstance2ConnectorEndpointInstance, muml::behavior::Operation::Operation2Operation, muml::behavior::TypedNamedElement::TypedNamedElement2TypedNamedElement, muml::realtimestatechart::RealtimeStatechart::RealtimeStatechart2RealtimeStatechart;
+mapping core::NamedElement :: NamedElement2NamedElement() : core::NamedElement disjuncts pim::connector::MessageBuffer::MessageBuffer2MessageBuffer, muml::msgtype::MessageType::MessageType2MessageType, pim::realtimestatechart::Vertex::Vertex2Vertex, pim::realtimestatechart::SynchronizationChannel::SynchronizationChannel2SynchronizationChannel, muml::instance::ComponentInstance::ComponentInstance2ComponentInstance, muml::msgtype::MessageTypeRepository::MessageTypeRepository2MessageTypeRepository, muml::protocol::AbstractCoordinationSpecification::AbstractCoordinationSpecification2AbstractCoordinationSpecification, pim::component::ComponentPart::ComponentPart2ComponentPart, pim::realtimestatechart::Action::Action2Action, muml::types::DataType::DataType2DataType, muml::instance::CoordinationProtocolInstance::CoordinationProtocolInstance2CoordinationProtocolInstance, pim::component::Component::Component2Component, muml::instance::ComponentInstanceConfiguration::ComponentInstanceConfiguration2ComponentInstanceConfiguration, pim::connector::DiscreteInteractionEndpoint::DiscreteInteractionEndpoint2DiscreteInteractionEndpoint, pim::realtimestatechart::Clock::Clock2Clock, pim::connector::ConnectorEndpointInstance::ConnectorEndpointInstance2ConnectorEndpointInstance, muml::behavior::Operation::Operation2Operation, muml::behavior::TypedNamedElement::TypedNamedElement2TypedNamedElement, pim::realtimestatechart::RealtimeStatechart::RealtimeStatechart2RealtimeStatechart;
       	
 mapping ecore::EAttribute :: EAttribute2EAttribute() : ecore::EAttribute{
     	_name := self._name;
@@ -411,7 +411,7 @@ mapping muml::types::PrimitiveDataType :: PrimitiveDataType2PrimitiveDataType() 
     	_extension := self._extension.map Extension2Extension();
    		 }
    		 
-mapping muml::types::DataType :: DataType2DataType() : muml::types::DataType disjuncts muml::component::ComponentPart::ComponentPart2ComponentPart, muml::protocol::Role::Role2Role, muml::component::Component::Component2Component, muml::types::RangedPrimitiveDataType::RangedPrimitiveDataType2RangedPrimitiveDataType, muml::types::ArrayDataType::ArrayDataType2ArrayDataType, muml::component::Port::Port2Port, muml::types::PrimitiveDataType::PrimitiveDataType2PrimitiveDataType, muml::types::StructureDataType::StructureDataType2StructureDataType;
+mapping muml::types::DataType :: DataType2DataType() : muml::types::DataType disjuncts pim::component::ComponentPart::ComponentPart2ComponentPart, muml::protocol::Role::Role2Role, pim::component::Component::Component2Component, muml::types::RangedPrimitiveDataType::RangedPrimitiveDataType2RangedPrimitiveDataType, muml::types::ArrayDataType::ArrayDataType2ArrayDataType, pim::component::Port::Port2Port, muml::types::PrimitiveDataType::PrimitiveDataType2PrimitiveDataType, muml::types::StructureDataType::StructureDataType2StructureDataType;
       	
 mapping muml::types::RangedPrimitiveDataType :: RangedPrimitiveDataType2RangedPrimitiveDataType() : muml::types::RangedPrimitiveDataType{
     	_name := self._name;
@@ -614,7 +614,7 @@ mapping mtctl::Predicates::StateInStatechartExpr :: StateInStatechartExpr2StateI
    		 
 mapping muml::constraint::VerificationConstraintRepository :: VerificationConstraintRepository2VerificationConstraintRepository() : muml::constraint::VerificationConstraintRepository disjuncts mtctl::PropertyRepository::PropertyRepository2PropertyRepository;
       	
-mapping muml::constraint::VerifiableElement :: VerifiableElement2VerifiableElement() : muml::constraint::VerifiableElement disjuncts muml::protocol::AbstractCoordinationSpecification::AbstractCoordinationSpecification2AbstractCoordinationSpecification, muml::component::AtomicComponent::AtomicComponent2AtomicComponent, muml::instance::ComponentInstanceConfiguration::ComponentInstanceConfiguration2ComponentInstanceConfiguration;
+mapping muml::constraint::VerifiableElement :: VerifiableElement2VerifiableElement() : muml::constraint::VerifiableElement disjuncts muml::protocol::AbstractCoordinationSpecification::AbstractCoordinationSpecification2AbstractCoordinationSpecification, pim::component::AtomicComponent::AtomicComponent2AtomicComponent, muml::instance::ComponentInstanceConfiguration::ComponentInstanceConfiguration2ComponentInstanceConfiguration;
       	
 mapping mtctl::Comparables::BufferMsgCountExpr :: BufferMsgCountExpr2BufferMsgCountExpr() : mtctl::Comparables::BufferMsgCountExpr{
     	_buffer := self._buffer.map MapExpr2MapExpr();
@@ -682,11 +682,11 @@ mapping mtctl::Quantifiers::LeadsToExpr :: LeadsToExpr2LeadsToExpr() : mtctl::Qu
     	_rightOpd := self._rightOpd.map Expression2Expression();
    		 }
    		 
-mapping muml::component::Component :: Component2Component() : muml::component::Component disjuncts muml::component::AtomicComponent::AtomicComponent2AtomicComponent, muml::component::StaticComponent::StaticComponent2StaticComponent, muml::component::StructuredComponent::StructuredComponent2StructuredComponent;
+mapping pim::component::Component :: Component2Component() : pim::component::Component disjuncts pim::component::AtomicComponent::AtomicComponent2AtomicComponent, pim::component::StaticComponent::StaticComponent2StaticComponent, pim::component::StructuredComponent::StructuredComponent2StructuredComponent;
       	
-mapping muml::component::Port :: Port2Port() : muml::component::Port disjuncts muml::component::DiscretePort::DiscretePort2DiscretePort, muml::component::DirectedTypedPort::DirectedTypedPort2DirectedTypedPort;
+mapping pim::component::Port :: Port2Port() : pim::component::Port disjuncts pim::component::DiscretePort::DiscretePort2DiscretePort, pim::component::DirectedTypedPort::DirectedTypedPort2DirectedTypedPort;
       	
-mapping muml::component::ContinuousPort :: ContinuousPort2ContinuousPort() : muml::component::ContinuousPort{
+mapping pim::component::ContinuousPort :: ContinuousPort2ContinuousPort() : pim::component::ContinuousPort{
     	_comment := self._comment;
     	_name := self._name;
     	_kind := self._kind;
@@ -701,7 +701,7 @@ mapping muml::component::ContinuousPort :: ContinuousPort2ContinuousPort() : mum
     	_initializeExpression := self._initializeExpression.map Expression2Expression();
    		 }
    		 
-mapping muml::component::DiscretePort :: DiscretePort2DiscretePort() : muml::component::DiscretePort{
+mapping pim::component::DiscretePort :: DiscretePort2DiscretePort() : pim::component::DiscretePort{
     	_comment := self._comment;
     	_name := self._name;
     	_annotation := self._annotation.map EAnnotation2EAnnotation();
@@ -723,7 +723,7 @@ mapping muml::component::DiscretePort :: DiscretePort2DiscretePort() : muml::com
     	_refinedRole := self._refinedRole.map Role2Role();
    		 }
    		 
-mapping muml::component::ComponentPart :: ComponentPart2ComponentPart() : muml::component::ComponentPart{
+mapping pim::component::ComponentPart :: ComponentPart2ComponentPart() : pim::component::ComponentPart{
     	_name := self._name;
     	_comment := self._comment;
     	_annotation := self._annotation.map EAnnotation2EAnnotation();
@@ -734,7 +734,7 @@ mapping muml::component::ComponentPart :: ComponentPart2ComponentPart() : muml::
     	_portParts := self._portParts.map PortPart2PortPart();
    		 }
    		 
-mapping muml::component::StaticStructuredComponent :: StaticStructuredComponent2StaticStructuredComponent() : muml::component::StaticStructuredComponent{
+mapping pim::component::StaticStructuredComponent :: StaticStructuredComponent2StaticStructuredComponent() : pim::component::StaticStructuredComponent{
     	_name := self._name;
     	_comment := self._comment;
     	_componentKind := self._componentKind;
@@ -746,9 +746,9 @@ mapping muml::component::StaticStructuredComponent :: StaticStructuredComponent2
     	_coordinationProtocolParts := self._coordinationProtocolParts.map CoordinationProtocolPart2CoordinationProtocolPart();
    		 }
    		 
-mapping muml::component::AtomicComponent :: AtomicComponent2AtomicComponent() : muml::component::AtomicComponent disjuncts muml::component::StaticAtomicComponent::StaticAtomicComponent2StaticAtomicComponent;
+mapping pim::component::AtomicComponent :: AtomicComponent2AtomicComponent() : pim::component::AtomicComponent disjuncts pim::component::StaticAtomicComponent::StaticAtomicComponent2StaticAtomicComponent;
       	
-mapping muml::component::AssemblyConnector :: AssemblyConnector2AssemblyConnector() : muml::component::AssemblyConnector{
+mapping pim::component::AssemblyConnector :: AssemblyConnector2AssemblyConnector() : pim::component::AssemblyConnector{
     	_comment := self._comment;
     	_annotation := self._annotation.map EAnnotation2EAnnotation();
     	_extension := self._extension.map Extension2Extension();
@@ -756,7 +756,7 @@ mapping muml::component::AssemblyConnector :: AssemblyConnector2AssemblyConnecto
     	_parentComponent := self._parentComponent.map StructuredComponent2StructuredComponent();
    		 }
    		 
-mapping muml::component::DelegationConnector :: DelegationConnector2DelegationConnector() : muml::component::DelegationConnector{
+mapping pim::component::DelegationConnector :: DelegationConnector2DelegationConnector() : pim::component::DelegationConnector{
     	_comment := self._comment;
     	_annotation := self._annotation.map EAnnotation2EAnnotation();
     	_extension := self._extension.map Extension2Extension();
@@ -764,9 +764,9 @@ mapping muml::component::DelegationConnector :: DelegationConnector2DelegationCo
     	_parentComponent := self._parentComponent.map StructuredComponent2StructuredComponent();
    		 }
    		 
-mapping muml::component::PortConnector :: PortConnector2PortConnector() : muml::component::PortConnector disjuncts muml::component::AssemblyConnector::AssemblyConnector2AssemblyConnector, muml::component::DelegationConnector::DelegationConnector2DelegationConnector;
+mapping pim::component::PortConnector :: PortConnector2PortConnector() : pim::component::PortConnector disjuncts pim::component::AssemblyConnector::AssemblyConnector2AssemblyConnector, pim::component::DelegationConnector::DelegationConnector2DelegationConnector;
       	
-mapping muml::component::HybridPort :: HybridPort2HybridPort() : muml::component::HybridPort{
+mapping pim::component::HybridPort :: HybridPort2HybridPort() : pim::component::HybridPort{
     	_comment := self._comment;
     	_name := self._name;
     	_kind := self._kind;
@@ -782,9 +782,9 @@ mapping muml::component::HybridPort :: HybridPort2HybridPort() : muml::component
     	_samplingInterval := self._samplingInterval.map TimeValue2TimeValue();
    		 }
    		 
-mapping muml::component::StructuredComponent :: StructuredComponent2StructuredComponent() : muml::component::StructuredComponent disjuncts muml::component::StaticStructuredComponent::StaticStructuredComponent2StaticStructuredComponent;
+mapping pim::component::StructuredComponent :: StructuredComponent2StructuredComponent() : pim::component::StructuredComponent disjuncts pim::component::StaticStructuredComponent::StaticStructuredComponent2StaticStructuredComponent;
       	
-mapping muml::component::CoordinationProtocolPart :: CoordinationProtocolPart2CoordinationProtocolPart() : muml::component::CoordinationProtocolPart{
+mapping pim::component::CoordinationProtocolPart :: CoordinationProtocolPart2CoordinationProtocolPart() : pim::component::CoordinationProtocolPart{
     	_comment := self._comment;
     	_annotation := self._annotation.map EAnnotation2EAnnotation();
     	_extension := self._extension.map Extension2Extension();
@@ -792,9 +792,9 @@ mapping muml::component::CoordinationProtocolPart :: CoordinationProtocolPart2Co
     	_portParts := self._portParts.map PortPart2PortPart();
    		 }
    		 
-mapping muml::component::DirectedTypedPort :: DirectedTypedPort2DirectedTypedPort() : muml::component::DirectedTypedPort disjuncts muml::component::ContinuousPort::ContinuousPort2ContinuousPort, muml::component::HybridPort::HybridPort2HybridPort;
+mapping pim::component::DirectedTypedPort :: DirectedTypedPort2DirectedTypedPort() : pim::component::DirectedTypedPort disjuncts pim::component::ContinuousPort::ContinuousPort2ContinuousPort, pim::component::HybridPort::HybridPort2HybridPort;
       	
-mapping muml::component::PortPart :: PortPart2PortPart() : muml::component::PortPart{
+mapping pim::component::PortPart :: PortPart2PortPart() : pim::component::PortPart{
     	_comment := self._comment;
     	_annotation := self._annotation.map EAnnotation2EAnnotation();
     	_extension := self._extension.map Extension2Extension();
@@ -806,7 +806,7 @@ mapping muml::component::PortPart :: PortPart2PortPart() : muml::component::Port
     	_coordinationProtocolPart := self._coordinationProtocolPart.map CoordinationProtocolPart2CoordinationProtocolPart();
    		 }
    		 
-mapping muml::component::StaticAtomicComponent :: StaticAtomicComponent2StaticAtomicComponent() : muml::component::StaticAtomicComponent{
+mapping pim::component::StaticAtomicComponent :: StaticAtomicComponent2StaticAtomicComponent() : pim::component::StaticAtomicComponent{
     	_name := self._name;
     	_comment := self._comment;
     	_componentKind := self._componentKind;
@@ -817,7 +817,7 @@ mapping muml::component::StaticAtomicComponent :: StaticAtomicComponent2StaticAt
     	_verificationConstraintRepositories := self._verificationConstraintRepositories.map VerificationConstraintRepository2VerificationConstraintRepository();
    		 }
    		 
-mapping muml::component::StaticComponent :: StaticComponent2StaticComponent() : muml::component::StaticComponent disjuncts muml::component::StaticAtomicComponent::StaticAtomicComponent2StaticAtomicComponent, muml::component::StaticStructuredComponent::StaticStructuredComponent2StaticStructuredComponent;
+mapping pim::component::StaticComponent :: StaticComponent2StaticComponent() : pim::component::StaticComponent disjuncts pim::component::StaticAtomicComponent::StaticAtomicComponent2StaticAtomicComponent, pim::component::StaticStructuredComponent::StaticStructuredComponent2StaticStructuredComponent;
       	
 mapping mtctl::BooleanLogic::AndExpr :: AndExpr2AndExpr() : mtctl::BooleanLogic::AndExpr{
     	_leftOpd := self._leftOpd.map Expression2Expression();
@@ -895,9 +895,9 @@ mapping muml::msgtype::MessageTypeRepository :: MessageTypeRepository2MessageTyp
     	_messageTypes := self._messageTypes.map MessageType2MessageType();
    		 }
    		 
-mapping muml::behavior::Behavior :: Behavior2Behavior() : muml::behavior::Behavior disjuncts muml::realtimestatechart::RealtimeStatechart::RealtimeStatechart2RealtimeStatechart;
+mapping muml::behavior::Behavior :: Behavior2Behavior() : muml::behavior::Behavior disjuncts pim::realtimestatechart::RealtimeStatechart::RealtimeStatechart2RealtimeStatechart;
       	
-mapping muml::behavior::BehavioralElement :: BehavioralElement2BehavioralElement() : muml::behavior::BehavioralElement disjuncts muml::component::AtomicComponent::AtomicComponent2AtomicComponent, muml::connector::DiscreteInteractionEndpoint::DiscreteInteractionEndpoint2DiscreteInteractionEndpoint;
+mapping muml::behavior::BehavioralElement :: BehavioralElement2BehavioralElement() : muml::behavior::BehavioralElement disjuncts pim::component::AtomicComponent::AtomicComponent2AtomicComponent, pim::connector::DiscreteInteractionEndpoint::DiscreteInteractionEndpoint2DiscreteInteractionEndpoint;
       	
 mapping muml::behavior::Operation :: Operation2Operation() : muml::behavior::Operation{
     	_name := self._name;
@@ -924,7 +924,7 @@ mapping muml::behavior::ParameterBinding :: ParameterBinding2ParameterBinding() 
     	_value := self._value.map Expression2Expression();
    		 }
    		 
-mapping muml::behavior::TypedNamedElement :: TypedNamedElement2TypedNamedElement() : muml::behavior::TypedNamedElement disjuncts muml::behavior::Variable::Variable2Variable, muml::behavior::Parameter::Parameter2Parameter, muml::component::DirectedTypedPort::DirectedTypedPort2DirectedTypedPort;
+mapping muml::behavior::TypedNamedElement :: TypedNamedElement2TypedNamedElement() : muml::behavior::TypedNamedElement disjuncts muml::behavior::Variable::Variable2Variable, muml::behavior::Parameter::Parameter2Parameter, pim::component::DirectedTypedPort::DirectedTypedPort2DirectedTypedPort;
       	
 mapping muml::behavior::Variable :: Variable2Variable() : muml::behavior::Variable{
     	_name := self._name;
@@ -936,27 +936,27 @@ mapping muml::behavior::Variable :: Variable2Variable() : muml::behavior::Variab
     	_initializeExpression := self._initializeExpression.map Expression2Expression();
    		 }
    		 
-mapping muml::realtimestatechart::Deadline :: Deadline2Deadline() : muml::realtimestatechart::Deadline disjuncts muml::realtimestatechart::AbsoluteDeadline::AbsoluteDeadline2AbsoluteDeadline, muml::realtimestatechart::RelativeDeadline::RelativeDeadline2RelativeDeadline;
+mapping pim::realtimestatechart::Deadline :: Deadline2Deadline() : pim::realtimestatechart::Deadline disjuncts pim::realtimestatechart::AbsoluteDeadline::AbsoluteDeadline2AbsoluteDeadline, pim::realtimestatechart::RelativeDeadline::RelativeDeadline2RelativeDeadline;
       	
-mapping muml::realtimestatechart::AbsoluteDeadline :: AbsoluteDeadline2AbsoluteDeadline() : muml::realtimestatechart::AbsoluteDeadline{
+mapping pim::realtimestatechart::AbsoluteDeadline :: AbsoluteDeadline2AbsoluteDeadline() : pim::realtimestatechart::AbsoluteDeadline{
     	_upperBound := self._upperBound.map TimeValue2TimeValue();
     	_lowerBound := self._lowerBound.map TimeValue2TimeValue();
     	_clock := self._clock.map Clock2Clock();
    		 }
    		 
-mapping muml::realtimestatechart::RelativeDeadline :: RelativeDeadline2RelativeDeadline() : muml::realtimestatechart::RelativeDeadline{
+mapping pim::realtimestatechart::RelativeDeadline :: RelativeDeadline2RelativeDeadline() : pim::realtimestatechart::RelativeDeadline{
     	_upperBound := self._upperBound.map TimeValue2TimeValue();
     	_lowerBound := self._lowerBound.map TimeValue2TimeValue();
    		 }
    		 
-mapping muml::realtimestatechart::Clock :: Clock2Clock() : muml::realtimestatechart::Clock{
+mapping pim::realtimestatechart::Clock :: Clock2Clock() : pim::realtimestatechart::Clock{
     	_name := self._name;
     	_annotation := self._annotation.map EAnnotation2EAnnotation();
     	_extension := self._extension.map Extension2Extension();
     	_statechart := self._statechart.map RealtimeStatechart2RealtimeStatechart();
    		 }
    		 
-mapping muml::realtimestatechart::Region :: Region2Region() : muml::realtimestatechart::Region{
+mapping pim::realtimestatechart::Region :: Region2Region() : pim::realtimestatechart::Region{
     	_comment := self._comment;
     	_priority := self._priority;
     	_annotation := self._annotation.map EAnnotation2EAnnotation();
@@ -965,7 +965,7 @@ mapping muml::realtimestatechart::Region :: Region2Region() : muml::realtimestat
     	_parentState := self._parentState.map State2State();
    		 }
    		 
-mapping muml::realtimestatechart::State :: State2State() : muml::realtimestatechart::State{
+mapping pim::realtimestatechart::State :: State2State() : pim::realtimestatechart::State{
     	_name := self._name;
     	_comment := self._comment;
     	_initial := self._initial;
@@ -985,9 +985,9 @@ mapping muml::realtimestatechart::State :: State2State() : muml::realtimestatech
     	_parentStatechart := self._parentStatechart.map RealtimeStatechart2RealtimeStatechart();
    		 }
    		 
-mapping muml::realtimestatechart::Vertex :: Vertex2Vertex() : muml::realtimestatechart::Vertex disjuncts muml::realtimestatechart::StateConnectionPoint::StateConnectionPoint2StateConnectionPoint, muml::realtimestatechart::State::State2State;
+mapping pim::realtimestatechart::Vertex :: Vertex2Vertex() : pim::realtimestatechart::Vertex disjuncts pim::realtimestatechart::StateConnectionPoint::StateConnectionPoint2StateConnectionPoint, pim::realtimestatechart::State::State2State;
       	
-mapping muml::realtimestatechart::Transition :: Transition2Transition() : muml::realtimestatechart::Transition{
+mapping pim::realtimestatechart::Transition :: Transition2Transition() : pim::realtimestatechart::Transition{
     	_priority := self._priority;
     	_comment := self._comment;
     	_blockable := self._blockable;
@@ -1006,7 +1006,7 @@ mapping muml::realtimestatechart::Transition :: Transition2Transition() : muml::
     	_action := self._action.map Action2Action();
    		 }
    		 
-mapping muml::realtimestatechart::ClockConstraint :: ClockConstraint2ClockConstraint() : muml::realtimestatechart::ClockConstraint{
+mapping pim::realtimestatechart::ClockConstraint :: ClockConstraint2ClockConstraint() : pim::realtimestatechart::ClockConstraint{
     	_operator := self._operator;
     	_annotation := self._annotation.map EAnnotation2EAnnotation();
     	_extension := self._extension.map Extension2Extension();
@@ -1014,27 +1014,27 @@ mapping muml::realtimestatechart::ClockConstraint :: ClockConstraint2ClockConstr
     	_clock := self._clock.map Clock2Clock();
    		 }
    		 
-mapping muml::realtimestatechart::Action :: Action2Action() : muml::realtimestatechart::Action{
+mapping pim::realtimestatechart::Action :: Action2Action() : pim::realtimestatechart::Action{
     	_name := self._name;
     	_annotation := self._annotation.map EAnnotation2EAnnotation();
     	_extension := self._extension.map Extension2Extension();
     	_expressions := self._expressions.map Expression2Expression();
    		 }
    		 
-mapping muml::realtimestatechart::AsynchronousMessageEvent :: AsynchronousMessageEvent2AsynchronousMessageEvent() : muml::realtimestatechart::AsynchronousMessageEvent{
+mapping pim::realtimestatechart::AsynchronousMessageEvent :: AsynchronousMessageEvent2AsynchronousMessageEvent() : pim::realtimestatechart::AsynchronousMessageEvent{
     	_kind := self._kind;
     	_message := self._message.map Message2Message();
    		 }
    		 
-mapping muml::realtimestatechart::DoEvent :: DoEvent2DoEvent() : muml::realtimestatechart::DoEvent{
+mapping pim::realtimestatechart::DoEvent :: DoEvent2DoEvent() : pim::realtimestatechart::DoEvent{
     	_kind := self._kind;
     	_action := self._action.map Action2Action();
     	_period := self._period.map TimeValue2TimeValue();
    		 }
    		 
-mapping muml::realtimestatechart::EntryOrExitEvent :: EntryOrExitEvent2EntryOrExitEvent() : muml::realtimestatechart::EntryOrExitEvent disjuncts muml::realtimestatechart::ExitEvent::ExitEvent2ExitEvent, muml::realtimestatechart::EntryEvent::EntryEvent2EntryEvent;
+mapping pim::realtimestatechart::EntryOrExitEvent :: EntryOrExitEvent2EntryOrExitEvent() : pim::realtimestatechart::EntryOrExitEvent disjuncts pim::realtimestatechart::ExitEvent::ExitEvent2ExitEvent, pim::realtimestatechart::EntryEvent::EntryEvent2EntryEvent;
       	
-mapping muml::realtimestatechart::SynchronizationChannel :: SynchronizationChannel2SynchronizationChannel() : muml::realtimestatechart::SynchronizationChannel{
+mapping pim::realtimestatechart::SynchronizationChannel :: SynchronizationChannel2SynchronizationChannel() : pim::realtimestatechart::SynchronizationChannel{
     	_name := self._name;
     	_comment := self._comment;
     	_annotation := self._annotation.map EAnnotation2EAnnotation();
@@ -1043,7 +1043,7 @@ mapping muml::realtimestatechart::SynchronizationChannel :: SynchronizationChann
     	_selectorType := self._selectorType.map DataType2DataType();
    		 }
    		 
-mapping muml::realtimestatechart::Synchronization :: Synchronization2Synchronization() : muml::realtimestatechart::Synchronization{
+mapping pim::realtimestatechart::Synchronization :: Synchronization2Synchronization() : pim::realtimestatechart::Synchronization{
     	_kind := self._kind;
     	_annotation := self._annotation.map EAnnotation2EAnnotation();
     	_extension := self._extension.map Extension2Extension();
@@ -1051,9 +1051,9 @@ mapping muml::realtimestatechart::Synchronization :: Synchronization2Synchroniza
     	_selectorExpression := self._selectorExpression.map Expression2Expression();
    		 }
    		 
-mapping muml::realtimestatechart::PrioritizedElement :: PrioritizedElement2PrioritizedElement() : muml::realtimestatechart::PrioritizedElement disjuncts muml::realtimestatechart::Region::Region2Region, muml::realtimestatechart::Transition::Transition2Transition;
+mapping pim::realtimestatechart::PrioritizedElement :: PrioritizedElement2PrioritizedElement() : pim::realtimestatechart::PrioritizedElement disjuncts pim::realtimestatechart::Region::Region2Region, pim::realtimestatechart::Transition::Transition2Transition;
       	
-mapping muml::realtimestatechart::RealtimeStatechart :: RealtimeStatechart2RealtimeStatechart() : muml::realtimestatechart::RealtimeStatechart{
+mapping pim::realtimestatechart::RealtimeStatechart :: RealtimeStatechart2RealtimeStatechart() : pim::realtimestatechart::RealtimeStatechart{
     	_name := self._name;
     	_comment := self._comment;
     	_annotation := self._annotation.map EAnnotation2EAnnotation();
@@ -1067,34 +1067,34 @@ mapping muml::realtimestatechart::RealtimeStatechart :: RealtimeStatechart2Realt
     	_clocks := self._clocks.map Clock2Clock();
    		 }
    		 
-mapping muml::realtimestatechart::Event :: Event2Event() : muml::realtimestatechart::Event disjuncts muml::realtimestatechart::TransitionEvent::TransitionEvent2TransitionEvent, muml::realtimestatechart::StateEvent::StateEvent2StateEvent;
+mapping pim::realtimestatechart::Event :: Event2Event() : pim::realtimestatechart::Event disjuncts pim::realtimestatechart::TransitionEvent::TransitionEvent2TransitionEvent, pim::realtimestatechart::StateEvent::StateEvent2StateEvent;
       	
-mapping muml::realtimestatechart::TransitionEvent :: TransitionEvent2TransitionEvent() : muml::realtimestatechart::TransitionEvent disjuncts muml::realtimestatechart::AsynchronousMessageEvent::AsynchronousMessageEvent2AsynchronousMessageEvent;
+mapping pim::realtimestatechart::TransitionEvent :: TransitionEvent2TransitionEvent() : pim::realtimestatechart::TransitionEvent disjuncts pim::realtimestatechart::AsynchronousMessageEvent::AsynchronousMessageEvent2AsynchronousMessageEvent;
       	
-mapping muml::realtimestatechart::StateEvent :: StateEvent2StateEvent() : muml::realtimestatechart::StateEvent disjuncts muml::realtimestatechart::DoEvent::DoEvent2DoEvent, muml::realtimestatechart::EntryOrExitEvent::EntryOrExitEvent2EntryOrExitEvent;
+mapping pim::realtimestatechart::StateEvent :: StateEvent2StateEvent() : pim::realtimestatechart::StateEvent disjuncts pim::realtimestatechart::DoEvent::DoEvent2DoEvent, pim::realtimestatechart::EntryOrExitEvent::EntryOrExitEvent2EntryOrExitEvent;
       	
-mapping muml::realtimestatechart::Message :: Message2Message() : muml::realtimestatechart::Message{
+mapping pim::realtimestatechart::Message :: Message2Message() : pim::realtimestatechart::Message{
     	_annotation := self._annotation.map EAnnotation2EAnnotation();
     	_extension := self._extension.map Extension2Extension();
     	_instanceOf := self._instanceOf.map MessageType2MessageType();
     	_parameterBinding := self._parameterBinding.map ParameterBinding2ParameterBinding();
    		 }
    		 
-mapping muml::realtimestatechart::EntryEvent :: EntryEvent2EntryEvent() : muml::realtimestatechart::EntryEvent{
+mapping pim::realtimestatechart::EntryEvent :: EntryEvent2EntryEvent() : pim::realtimestatechart::EntryEvent{
     	_kind := self._kind;
     	_clockResets := self._clockResets.map Clock2Clock();
     	_action := self._action.map Action2Action();
    		 }
    		 
-mapping muml::realtimestatechart::ExitEvent :: ExitEvent2ExitEvent() : muml::realtimestatechart::ExitEvent{
+mapping pim::realtimestatechart::ExitEvent :: ExitEvent2ExitEvent() : pim::realtimestatechart::ExitEvent{
     	_kind := self._kind;
     	_clockResets := self._clockResets.map Clock2Clock();
     	_action := self._action.map Action2Action();
    		 }
    		 
-mapping muml::realtimestatechart::StateConnectionPoint :: StateConnectionPoint2StateConnectionPoint() : muml::realtimestatechart::StateConnectionPoint disjuncts muml::realtimestatechart::EntryPoint::EntryPoint2EntryPoint, muml::realtimestatechart::ExitPoint::ExitPoint2ExitPoint;
+mapping pim::realtimestatechart::StateConnectionPoint :: StateConnectionPoint2StateConnectionPoint() : pim::realtimestatechart::StateConnectionPoint disjuncts pim::realtimestatechart::EntryPoint::EntryPoint2EntryPoint, pim::realtimestatechart::ExitPoint::ExitPoint2ExitPoint;
       	
-mapping muml::realtimestatechart::EntryPoint :: EntryPoint2EntryPoint() : muml::realtimestatechart::EntryPoint{
+mapping pim::realtimestatechart::EntryPoint :: EntryPoint2EntryPoint() : pim::realtimestatechart::EntryPoint{
     	_name := self._name;
     	_comment := self._comment;
     	_annotation := self._annotation.map EAnnotation2EAnnotation();
@@ -1104,7 +1104,7 @@ mapping muml::realtimestatechart::EntryPoint :: EntryPoint2EntryPoint() : muml::
     	_state := self._state.map State2State();
    		 }
    		 
-mapping muml::realtimestatechart::ExitPoint :: ExitPoint2ExitPoint() : muml::realtimestatechart::ExitPoint{
+mapping pim::realtimestatechart::ExitPoint :: ExitPoint2ExitPoint() : pim::realtimestatechart::ExitPoint{
     	_name := self._name;
     	_comment := self._comment;
     	_annotation := self._annotation.map EAnnotation2EAnnotation();
@@ -1301,23 +1301,23 @@ mapping muml::protocol::ConnectorQualityOfServiceAssumptions :: ConnectorQuality
     	_maxMessageDelay := self._maxMessageDelay.map TimeValue2TimeValue();
    		 }
    		 
-mapping muml::connector::ConnectorEndpoint :: ConnectorEndpoint2ConnectorEndpoint() : muml::connector::ConnectorEndpoint disjuncts muml::component::PortPart::PortPart2PortPart, muml::connector::DiscreteInteractionEndpoint::DiscreteInteractionEndpoint2DiscreteInteractionEndpoint, muml::component::Port::Port2Port;
+mapping pim::connector::ConnectorEndpoint :: ConnectorEndpoint2ConnectorEndpoint() : pim::connector::ConnectorEndpoint disjuncts pim::component::PortPart::PortPart2PortPart, pim::connector::DiscreteInteractionEndpoint::DiscreteInteractionEndpoint2DiscreteInteractionEndpoint, pim::component::Port::Port2Port;
       	
-mapping muml::connector::Connector :: Connector2Connector() : muml::connector::Connector disjuncts muml::component::PortConnector::PortConnector2PortConnector, muml::protocol::RoleConnector::RoleConnector2RoleConnector;
+mapping pim::connector::Connector :: Connector2Connector() : pim::connector::Connector disjuncts pim::component::PortConnector::PortConnector2PortConnector, muml::protocol::RoleConnector::RoleConnector2RoleConnector;
       	
-mapping muml::connector::ConnectorEndpointInstance :: ConnectorEndpointInstance2ConnectorEndpointInstance() : muml::connector::ConnectorEndpointInstance disjuncts muml::connector::DiscreteInteractionEndpointInstance::DiscreteInteractionEndpointInstance2DiscreteInteractionEndpointInstance, muml::instance::PortInstance::PortInstance2PortInstance;
+mapping pim::connector::ConnectorEndpointInstance :: ConnectorEndpointInstance2ConnectorEndpointInstance() : pim::connector::ConnectorEndpointInstance disjuncts pim::connector::DiscreteInteractionEndpointInstance::DiscreteInteractionEndpointInstance2DiscreteInteractionEndpointInstance, muml::instance::PortInstance::PortInstance2PortInstance;
       	
-mapping muml::connector::ConnectorInstance :: ConnectorInstance2ConnectorInstance() : muml::connector::ConnectorInstance disjuncts muml::instance::PortConnectorInstance::PortConnectorInstance2PortConnectorInstance;
+mapping pim::connector::ConnectorInstance :: ConnectorInstance2ConnectorInstance() : pim::connector::ConnectorInstance disjuncts muml::instance::PortConnectorInstance::PortConnectorInstance2PortConnectorInstance;
       	
-mapping muml::connector::DiscreteInteractionEndpoint :: DiscreteInteractionEndpoint2DiscreteInteractionEndpoint() : muml::connector::DiscreteInteractionEndpoint disjuncts muml::component::DiscretePort::DiscretePort2DiscretePort, muml::protocol::Role::Role2Role;
+mapping pim::connector::DiscreteInteractionEndpoint :: DiscreteInteractionEndpoint2DiscreteInteractionEndpoint() : pim::connector::DiscreteInteractionEndpoint disjuncts pim::component::DiscretePort::DiscretePort2DiscretePort, muml::protocol::Role::Role2Role;
       	
-mapping muml::connector::DiscreteInteractionEndpointInstance :: DiscreteInteractionEndpointInstance2DiscreteInteractionEndpointInstance() : muml::connector::DiscreteInteractionEndpointInstance disjuncts muml::connector::DiscreteSingleInteractionEndpointInstance::DiscreteSingleInteractionEndpointInstance2DiscreteSingleInteractionEndpointInstance, muml::connector::DiscreteMultiInteractionEndpointInstance::DiscreteMultiInteractionEndpointInstance2DiscreteMultiInteractionEndpointInstance, muml::instance::DiscretePortInstance::DiscretePortInstance2DiscretePortInstance;
+mapping pim::connector::DiscreteInteractionEndpointInstance :: DiscreteInteractionEndpointInstance2DiscreteInteractionEndpointInstance() : pim::connector::DiscreteInteractionEndpointInstance disjuncts pim::connector::DiscreteSingleInteractionEndpointInstance::DiscreteSingleInteractionEndpointInstance2DiscreteSingleInteractionEndpointInstance, pim::connector::DiscreteMultiInteractionEndpointInstance::DiscreteMultiInteractionEndpointInstance2DiscreteMultiInteractionEndpointInstance, muml::instance::DiscretePortInstance::DiscretePortInstance2DiscretePortInstance;
       	
-mapping muml::connector::DiscreteSingleInteractionEndpointInstance :: DiscreteSingleInteractionEndpointInstance2DiscreteSingleInteractionEndpointInstance() : muml::connector::DiscreteSingleInteractionEndpointInstance disjuncts muml::instance::DiscreteSinglePortInstance::DiscreteSinglePortInstance2DiscreteSinglePortInstance;
+mapping pim::connector::DiscreteSingleInteractionEndpointInstance :: DiscreteSingleInteractionEndpointInstance2DiscreteSingleInteractionEndpointInstance() : pim::connector::DiscreteSingleInteractionEndpointInstance disjuncts muml::instance::DiscreteSinglePortInstance::DiscreteSinglePortInstance2DiscreteSinglePortInstance;
       	
-mapping muml::connector::DiscreteMultiInteractionEndpointInstance :: DiscreteMultiInteractionEndpointInstance2DiscreteMultiInteractionEndpointInstance() : muml::connector::DiscreteMultiInteractionEndpointInstance disjuncts muml::instance::DiscreteMultiPortInstance::DiscreteMultiPortInstance2DiscreteMultiPortInstance;
+mapping pim::connector::DiscreteMultiInteractionEndpointInstance :: DiscreteMultiInteractionEndpointInstance2DiscreteMultiInteractionEndpointInstance() : pim::connector::DiscreteMultiInteractionEndpointInstance disjuncts muml::instance::DiscreteMultiPortInstance::DiscreteMultiPortInstance2DiscreteMultiPortInstance;
       	
-mapping muml::connector::MessageBuffer :: MessageBuffer2MessageBuffer() : muml::connector::MessageBuffer{
+mapping pim::connector::MessageBuffer :: MessageBuffer2MessageBuffer() : pim::connector::MessageBuffer{
     	_name := self._name;
     	_comment := self._comment;
     	_bufferOverflowAvoidanceStrategy := self._bufferOverflowAvoidanceStrategy;

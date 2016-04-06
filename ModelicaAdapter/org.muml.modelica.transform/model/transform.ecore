@@ -7,7 +7,7 @@
     <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
   </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="Map">
-    <eOperations name="get" eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/RealtimeStatechart">
+    <eOperations name="get" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//realtimestatechart/RealtimeStatechart">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
         <details key="body" value="let res : OrderedSet(muml::realtimestatechart::RealtimeStatechart) = entries->select(key = instance)->collect(value.oclAsType(muml::realtimestatechart::RealtimeStatechart))->asOrderedSet()&#xA;in&#xA;if res->isEmpty() then&#xA;&#x9;null&#xA;else&#xA;&#x9;res->first()&#xA;endif"/>
       </eAnnotations>
@@ -22,12 +22,12 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Entry">
     <eStructuralFeatures xsi:type="ecore:EReference" name="key" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/RealtimeStatechart"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//realtimestatechart/RealtimeStatechart"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="RegionInstance" eSuperTypes="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/Region">
+  <eClassifiers xsi:type="ecore:EClass" name="RegionInstance" eSuperTypes="../../org.muml.pim/model/pim.ecore#//realtimestatechart/Region">
     <eStructuralFeatures xsi:type="ecore:EReference" name="instanceOf" lowerBound="1"
-        eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/Region"/>
+        eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//realtimestatechart/Region"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="embedsSinglePortStatechart"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" derived="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
@@ -49,7 +49,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RealtimeStatechartTransformationRootObject">
     <eGenericSuperTypes eClassifier="#//TransformationRootObject">
-      <eTypeArguments eClassifier="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/RealtimeStatechart"/>
+      <eTypeArguments eClassifier="ecore:EClass ../../org.muml.pim/model/pim.ecore#//realtimestatechart/RealtimeStatechart"/>
     </eGenericSuperTypes>
   </eClassifiers>
 </ecore:EPackage>

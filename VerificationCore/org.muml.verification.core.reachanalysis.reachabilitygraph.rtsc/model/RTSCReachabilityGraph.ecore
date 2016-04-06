@@ -4,7 +4,7 @@
     nsPrefix="de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.rtsc">
   <eClassifiers xsi:type="ecore:EClass" name="ZoneGraph" eSuperTypes="../../de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph/model/ReachabilityAnalysisCore.ecore#//ReachabilityGraph">
     <eStructuralFeatures xsi:type="ecore:EReference" name="clocks" ordered="false"
-        upperBound="-1" eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/Clock"/>
+        upperBound="-1" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//realtimestatechart/Clock"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ZoneGraphState" eSuperTypes="../../de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph/model/ReachabilityAnalysisCore.ecore#//ReachabilityGraphState">
     <eOperations name="toString" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString">
@@ -35,7 +35,7 @@
       </eAnnotations>
     </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="firedRTSCTransitions" ordered="false"
-        upperBound="-1" eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/Transition"/>
+        upperBound="-1" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//realtimestatechart/Transition"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DelayTransition" eSuperTypes="../../de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph/model/ReachabilityAnalysisCore.ecore#//ReachabilityGraphTransition">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">

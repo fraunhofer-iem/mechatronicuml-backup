@@ -12,9 +12,9 @@ modeltype reconfiguration uses 'http://www.fujaba.de/muml/reconfiguration/0.3.18
 
 modeltype csp uses 'http://www.fujaba.de/muml/componentstorypattern/0.4.0';
 
-modeltype componentModel uses muml::component('http://www.fujaba.de/muml/0.4.0');
+modeltype componentModel uses pim::component('http://www.muml.org/pim/1.0.0');
 
-modeltype core uses 'http://www.storydriven.org/core/0.3.1';
+modeltype core uses 'http://www.muml.org/core/1.0.0';
 
 modeltype sd_expressions uses core::expressions ('http://www.storydriven.org/core/0.3.1');
 
@@ -152,14 +152,14 @@ mapping Port :: createPortPart(compStoryPattern : componentstorypattern::Compone
 
 
 -- we need the parameter to create every "component type variable" anew for each story pattern
-mapping muml::component::Component ::createComponentType(compStoryPattern : componentstorypattern::ComponentStoryPattern) : ObjectVariable{
+mapping pim::component::Component ::createComponentType(compStoryPattern : componentstorypattern::ComponentStoryPattern) : ObjectVariable{
 	name := self.name;
 	classifier := self.eClass();
 	constraint := createNameConstraint(self.name);
 }
 
 
-mapping muml::component::ComponentPart :: createComponentPart(compStoryPattern : componentstorypattern::ComponentStoryPattern) : ObjectVariable{
+mapping pim::component::ComponentPart :: createComponentPart(compStoryPattern : componentstorypattern::ComponentStoryPattern) : ObjectVariable{
 	name := self.name;
 	classifier := self.eClass();
 	constraint := createNameConstraint(self.name);

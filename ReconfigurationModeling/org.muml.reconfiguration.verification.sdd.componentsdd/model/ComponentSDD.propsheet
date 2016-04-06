@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="ASCII"?>
-<de.uni_paderborn.fujaba:PropertyGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.uni_paderborn.fujaba="http://de.uni_paderborn.fujaba.properties/0.5.1" xmi:id="_Rm9u4M1gEeSIgPDefa6ZBw" contributorId="de.uni_paderborn.fujaba.common.properties">
+<de.uni_paderborn.fujaba:PropertyGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.uni_paderborn.fujaba="http://www.muml.org/ape/1.0.0" xmi:id="_Rm9u4M1gEeSIgPDefa6ZBw" contributorId="de.uni_paderborn.fujaba.common.properties">
   <reconciler xmi:id="_Rm9u4c1gEeSIgPDefa6ZBw">
     <customTransformations xmi:id="_Rm9u4s1gEeSIgPDefa6ZBw" uri="platform:/plugin/de.uni_paderborn.fujaba.muml.common/transformations/muml-propsheet.qvto"/>
     <customTransformations xmi:id="_Rm9u481gEeSIgPDefa6ZBw" uri="platform:/plugin/de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/transformations/xtext-propsheet.qvto"/>
   </reconciler>
   <genModel href="ComponentSDD.genmodel#/"/>
-  <referencedGenerators href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBYMwbEeSjx7OWZCcdLw"/>
+  <referencedGenerators href="../../org.muml.core/model/core.propsheet#_VZGBYMwbEeSjx7OWZCcdLw"/>
   <referencedGenerators href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.propsheet#_Rk4rQM1gEeSIgPDefa6ZBw"/>
-  <referencedGenerators href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#_VZIdoMwbEeSjx7OWZCcdLw"/>
+  <referencedGenerators href="../../org.muml.pim/model/pim.propsheet#_VZIdoMwbEeSjx7OWZCcdLw"/>
   <referencedGenerators href="../../de.uni_paderborn.fujaba.muml.reconfiguration/model/MumlReconfiguration.propsheet#_RmFlIM1gEeSIgPDefa6ZBw"/>
   <referencedGenerators href="../../de.uni_paderborn.fujaba.muml.verification.sdd/model/sdd.propsheet#_RmkGQM1gEeSIgPDefa6ZBw"/>
   <referencedGenerators href="../../de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd/model/BasicSDD.propsheet#_RmxhoM1gEeSIgPDefa6ZBw"/>
@@ -33,7 +33,7 @@
     <requiredBundles>de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd.edit</requiredBundles>
     <requiredBundles>de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd.edit.properties</requiredBundles>
   </plugin>
-  <defaultTab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
+  <defaultTab href="../../org.muml.core/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
   <tabs xmi:id="_Rm-V8c1gEeSIgPDefa6ZBw" id="property.tab.constraint" name="Constraint" afterTab="property.tab.comment"/>
   <packages xmi:id="_Rm-V8s1gEeSIgPDefa6ZBw">
     <genPackage href="ComponentSDD.genmodel#//componentsdd"/>
@@ -41,7 +41,7 @@
       <genClass href="ComponentSDD.genmodel#//componentsdd/ComponentStoryDecisionDiagram"/>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_Rm-9Ac1gEeSIgPDefa6ZBw" initializeOCLExpression="">
         <genFeature href="ComponentSDD.genmodel#//componentsdd/ComponentStoryDecisionDiagram/invariantSDD"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
         <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor" xmi:id="_Rm_kEM1gEeSIgPDefa6ZBw"/>
       </orderedElements>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:PropertyCategory" xmi:id="_Rm_kEc1gEeSIgPDefa6ZBw" title="Booleans"/>
@@ -52,7 +52,7 @@
       <genClass href="ComponentSDD.genmodel#//componentsdd/ComponentStoryPatternNode"/>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_RnALIM1gEeSIgPDefa6ZBw" initializeOCLExpression="">
         <genFeature href="../../de.uni_paderborn.fujaba.muml.verification.sdd/model/sdd.genmodel#//sdd/PatternNode/type"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
         <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor" xmi:id="_RnALIc1gEeSIgPDefa6ZBw"/>
       </orderedElements>
       <superClasses href="../../de.uni_paderborn.fujaba.muml.verification.sdd/model/sdd.propsheet#_Rml7dM1gEeSIgPDefa6ZBw"/>
@@ -61,12 +61,12 @@
       <genClass href="ComponentSDD.genmodel#//componentsdd/EvaluateComponentSDDExpression"/>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_RnALI81gEeSIgPDefa6ZBw">
         <genFeature href="ComponentSDD.genmodel#//componentsdd/EvaluateComponentSDDExpression/componentSDD"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor" xmi:id="_RnALJM1gEeSIgPDefa6ZBw"/>
       </orderedElements>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_RnALJc1gEeSIgPDefa6ZBw" tooltip="" initializeOCLExpression="">
         <genFeature href="ComponentSDD.genmodel#//componentsdd/EvaluateComponentSDDExpression/parameterBindings"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor" xmi:id="_RnALJs1gEeSIgPDefa6ZBw"/>
       </orderedElements>
       <superClasses href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.propsheet#_Rk7ul81gEeSIgPDefa6ZBw"/>

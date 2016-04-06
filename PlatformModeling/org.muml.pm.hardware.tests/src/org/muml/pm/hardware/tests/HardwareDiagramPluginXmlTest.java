@@ -8,7 +8,7 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 import org.muml.core.tests.DiagramPluginXmlTest;
-import org.muml.pim.MumlPackage;
+import org.muml.pim.PimPackage;
 
 @RunWith(Parameterized.class)
 public class HardwareDiagramPluginXmlTest extends DiagramPluginXmlTest {
@@ -19,7 +19,7 @@ public class HardwareDiagramPluginXmlTest extends DiagramPluginXmlTest {
 
 	@BeforeClass
 	public static void setUpBeforeClass() {
-		MumlPackage.eINSTANCE.eClass();
+		PimPackage.eINSTANCE.eClass();
 	}
 
 	@Parameters

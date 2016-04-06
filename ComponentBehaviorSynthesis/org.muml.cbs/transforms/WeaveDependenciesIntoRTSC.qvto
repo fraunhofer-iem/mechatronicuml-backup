@@ -4,17 +4,17 @@ import transforms.lib.RTSC2RTSCdeepContainmentCopy;
 //import de.uni_paderborn.fujaba.muml.dependencylanguage.synthesis.qvtoblackbox.XTextSerializerLibUnit;
 
 modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
-modeltype rtsc uses muml::realtimestatechart('http://www.fujaba.de/muml/0.4.0');
-modeltype component uses muml::component('http://www.fujaba.de/muml/0.4.0');
-modeltype types uses muml::types('http://www.fujaba.de/muml/0.4.0');
+modeltype rtsc uses pim::realtimestatechart('http://www.muml.org/pim/1.0.0');
+modeltype component uses pim::component('http://www.muml.org/pim/1.0.0');
+modeltype types uses pim::types('http://www.muml.org/pim/1.0.0');
 modeltype depLang uses 'http://www.fujaba.de/muml/dependencylanguage/0.4.0';
 modeltype modelinstance uses 'http://www.fujaba.de/modelinstance/0.4.0';
-modeltype actLang uses 'http://www.fujaba.de/muml/actionlanguage/0.4.0';
-modeltype behavior uses muml::behavior('http://www.fujaba.de/muml/0.4.0');
-modeltype expressions uses core::expressions('http://www.storydriven.org/core/0.3.1');
-modeltype common uses core::expressions::common('http://www.storydriven.org/core/0.3.1');
-modeltype core uses 'http://www.storydriven.org/core/0.3.1';
-modeltype valuetype uses muml::valuetype('http://www.fujaba.de/muml/0.4.0');
+modeltype actLang uses 'http://www.muml.org/pim/actionlanguage/1.0.0';
+modeltype behavior uses pim::behavior('http://www.muml.org/pim/1.0.0');
+modeltype expressions uses core::expressions('http://www.muml.org/core/1.0.0');
+modeltype common uses core::expressions::common('http://www.muml.org/core/1.0.0');
+modeltype core uses 'http://www.muml.org/core/1.0.0';
+modeltype valuetype uses pim::valuetype('http://www.muml.org/pim/1.0.0');
 
 transformation WeaveDependenciesIntoRTSC(inout input:modelinstance);
 

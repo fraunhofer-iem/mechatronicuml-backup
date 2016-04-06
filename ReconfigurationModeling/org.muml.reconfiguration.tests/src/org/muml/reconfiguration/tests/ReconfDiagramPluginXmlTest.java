@@ -6,7 +6,7 @@ import java.util.List;
 import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized.Parameters;
-import org.muml.pim.MumlPackage;
+import org.muml.pim.PimPackage;
 import org.muml.reconfiguration.componentstorydiagram.ComponentstorydiagramPackage;
 import org.muml.reconfiguration.componentstorypattern.ComponentstorypatternPackage;
 import org.muml.storydiagram.StorydiagramsPackage;
@@ -23,7 +23,7 @@ public class ReconfDiagramPluginXmlTest extends org.muml.core.tests.DiagramPlugi
 	@BeforeClass
 	public static void setUpBeforeClass() {
 		// Initialize all packages
-		MumlPackage.eINSTANCE.eClass();
+		PimPackage.eINSTANCE.eClass();
 		ComponentstorydiagramPackage.eINSTANCE.eClass();
 		ComponentstorypatternPackage.eINSTANCE.eClass();
 		StorydiagramsPackage.eINSTANCE.eClass();

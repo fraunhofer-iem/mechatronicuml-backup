@@ -32,7 +32,7 @@ Workflow {
 		registerGeneratedEPackage = "de.uni_paderborn.fujaba.muml.types.TypesPackage"
 		registerGeneratedEPackage = "de.uni_paderborn.fujaba.muml.instance.InstancePackage"
 		registerGeneratedEPackage = "de.uni_paderborn.fujaba.muml.msgtype.MsgtypePackage"
-		registerGenModelFile = "platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.genmodel"
+		registerGenModelFile = "platform:/resource/org.muml.pim/model/pim.genmodel"
 			
 	}
 

@@ -1,12 +1,12 @@
 import transforms.naming;
 
-modeltype MINSTANCE uses modelinstance('http://www.fujaba.de/modelinstance/0.4.0');
+modeltype MINSTANCE uses modelinstance('http://www.muml.org/core/modelinstance/1.0.0');
 modeltype RTSC uses muml::realtimestatechart("http://www.fujaba.de/muml/0.4.0");
-modeltype MSGTYPE uses muml::msgtype("http://www.fujaba.de/muml/0.4.0");
-modeltype BEHAVIOR uses muml::behavior("http://www.fujaba.de/muml/0.4.0");
-modeltype TYPES uses muml::types("http://www.fujaba.de/muml/0.4.0");
-modeltype COREEXP uses core::expressions('http://www.storydriven.org/core/0.3.1');
-modeltype CORE uses core::expressions::common('http://www.storydriven.org/core/0.3.1');
+modeltype MSGTYPE uses pim::msgtype('http://www.muml.org/pim/1.0.0');
+modeltype BEHAVIOR uses pim::behavior('http://www.muml.org/pim/1.0.0');
+modeltype TYPES uses pim::types('http://www.muml.org/pim/1.0.0');
+modeltype COREEXP uses core::expressions('http://www.muml.org/core/1.0.0');
+modeltype CORE uses core::expressions::common('http://www.muml.org/core/1.0.0');
 modeltype ACTION uses actionlanguage('http://www.fujaba.de/muml/actionlanguage/0.4.0');
 modeltype ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
 modeltype TRANSFORM uses transform('http://www.fujaba.de/modelica/m2t/transform/0.4.0');

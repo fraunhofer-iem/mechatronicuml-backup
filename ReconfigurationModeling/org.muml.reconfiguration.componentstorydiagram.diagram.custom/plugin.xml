@@ -103,7 +103,7 @@
 
 
    <extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
-      <propertyTabs contributorId="de.uni_paderborn.fujaba.muml.common.properties">
+      <propertyTabs contributorId="org.muml.ape.contributor">
           <propertyTab
                 afterTab="property.tab.domain"
                 category="domain"
@@ -118,7 +118,7 @@
          id="activities"
          point="org.eclipse.ui.views.properties.tabbed.propertySections">
       <propertySections
-            contributorId="de.uni_paderborn.fujaba.muml.common.properties">
+            contributorId="org.muml.ape.contributor">
          <propertySection
                class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.custom.properties.sections.ActivityFinalNodeExpressionSection"
                filter="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.custom.properties.filters.ActivityFinalNodeFilter"
@@ -131,7 +131,7 @@
 
    <extension point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
       <propertyContributor
-            contributorId="de.uni_paderborn.fujaba.muml.common.properties"
+            contributorId="org.muml.ape.contributor"
             labelProvider="org.muml.reconfiguration.componentstorydiagram.diagram.custom.properties.StorydiagramsPropertiesLabelProvider">
          <propertyCategory category="domain"/>
          <propertyCategory

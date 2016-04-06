@@ -20,20 +20,20 @@ modeltype uppaal_templates uses uppaal::templates('http://www.uni-paderborn.de/u
 modeltype uppaal_visuals uses uppaal::visuals('http://www.uni-paderborn.de/uppaal/0.4.0');
 modeltype uppaal_declarations_system uses uppaal::declarations::system('http://www.uni-paderborn.de/uppaal/0.4.0');
 modeltype uppaal_declarations uses uppaal::declarations('http://www.uni-paderborn.de/uppaal/0.4.0');
-modeltype muml_component uses muml::component('http://www.fujaba.de/muml/0.4.0');
-modeltype muml_rtsc uses muml::realtimestatechart('http://www.fujaba.de/muml/0.4.0');
-modeltype muml_behavior uses muml::behavior('http://www.fujaba.de/muml/0.4.0');
-modeltype muml_connector uses muml::connector('http://www.fujaba.de/muml/0.4.0');
-modeltype muml_types uses muml::types('http://www.fujaba.de/muml/0.4.0');
-modeltype muml_protocol uses muml::protocol('http://www.fujaba.de/muml/0.4.0');
-modeltype muml_valuetype uses muml::valuetype('http://www.fujaba.de/muml/0.4.0');
+modeltype muml_component uses pim::component('http://www.muml.org/pim/1.0.0');
+modeltype muml_rtsc uses pim::realtimestatechart('http://www.muml.org/pim/1.0.0');
+modeltype muml_behavior uses pim::behavior('http://www.muml.org/pim/1.0.0');
+modeltype muml_connector uses pim::connector('http://www.muml.org/pim/1.0.0');
+modeltype muml_types uses pim::types('http://www.muml.org/pim/1.0.0');
+modeltype muml_protocol uses pim::protocol('http://www.muml.org/pim/1.0.0');
+modeltype muml_valuetype uses pim::valuetype('http://www.muml.org/pim/1.0.0');
 modeltype muml_msgtype uses muml::msgtype('http://www.fujaba.de/muml/0.4.0');
 modeltype muml_constraint uses muml::constraint('http://www.fujaba.de/muml/0.4.0');
 modeltype muml_instance uses muml::instance('http://www.fujaba.de/muml/0.4.0');
-modeltype storydriven uses 'http://www.storydriven.org/core/0.3.1';
-modeltype storydriven_actionLanguage uses 'http://www.fujaba.de/muml/actionlanguage/0.4.0';
-modeltype storydriven_common uses core::expressions::common('http://www.storydriven.org/core/0.3.1');
-modeltype storydriven_expressions uses core::expressions('http://www.storydriven.org/core/0.3.1');
+modeltype storydriven uses 'http://www.muml.org/core/1.0.0';
+modeltype storydriven_actionLanguage uses 'http://www.muml.org/pim/actionlanguage/1.0.0';
+modeltype storydriven_common uses core::expressions::common('http://www.muml.org/core/1.0.0');
+modeltype storydriven_expressions uses core::expressions('http://www.muml.org/core/1.0.0');
 modeltype extension uses 'http://www.fujaba.de/muml/verification/extension/0.4.0';
 modeltype verification_options uses 'http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/options';
 
@@ -1367,7 +1367,7 @@ transformation MUML2UPPAAL(in original: muml_rtsc, in input: muml_instance, in o
 	}
 	
 	
-	mapping muml::realtimestatechart::SynchronizationChannel :: SynchronizationChannel2SynchronizationChannel() : muml::realtimestatechart::SynchronizationChannel{
+	mapping pim::realtimestatechart::SynchronizationChannel :: SynchronizationChannel2SynchronizationChannel() : pim::realtimestatechart::SynchronizationChannel{
     	_name := self._name;
     	_comment := self._comment;
     	_annotation := self._annotation.map EAnnotation2EAnnotation();

@@ -3,12 +3,12 @@ import transforms.lib.RTSCUtil;
 import transforms.lib.MultiMappingUtil;
 import transforms.lib.ExternalizedStrings;
 
-modeltype rtsc uses muml::realtimestatechart('http://www.fujaba.de/muml/0.4.0');
-modeltype behavior uses muml::behavior('http://www.fujaba.de/muml/0.4.0');
+modeltype rtsc uses pim::realtimestatechart('http://www.muml.org/pim/1.0.0');
+modeltype behavior uses pim::behavior('http://www.muml.org/pim/1.0.0');
 modeltype verificationExtension uses 'http://www.fujaba.de/muml/verification/extension/0.4.0';
 modeltype modelinstance uses 'http://www.fujaba.de/modelinstance/0.4.0';
-modeltype common uses core::expressions::common('http://www.storydriven.org/core/0.3.1');
-modeltype expressions uses core::expressions('http://www.storydriven.org/core/0.3.1');
+modeltype common uses core::expressions::common('http://www.muml.org/core/1.0.0');
+modeltype expressions uses core::expressions('http://www.muml.org/core/1.0.0');
 
 /**
 * Introduce regions into states that periodically execute the states' do event 
@@ -222,9 +222,9 @@ mapping State :: State2State() : State {
 		extension := self.extension.oclAsType(CommittedExtension).map CommittedExtension2CommittedExtension();	
 }
 	
-mapping muml::realtimestatechart::Transition :: Transition2Transition() : muml::realtimestatechart::Transition disjuncts Transition::doTargetTransition2Transition, Transition::doSourceTransition2Transition, Transition::normalTransition2Transition;
+mapping pim::realtimestatechart::Transition :: Transition2Transition() : pim::realtimestatechart::Transition disjuncts Transition::doTargetTransition2Transition, Transition::doSourceTransition2Transition, Transition::normalTransition2Transition;
 
-mapping muml::realtimestatechart::Transition :: doTargetTransition2Transition() : muml::realtimestatechart::Transition when{not (self.target.oclAsType(State).doEvent = null)}{
+mapping pim::realtimestatechart::Transition :: doTargetTransition2Transition() : pim::realtimestatechart::Transition when{not (self.target.oclAsType(State).doEvent = null)}{
     	priority := self.priority;
     	comment := self.comment;
     	blockable := self.blockable;
@@ -245,7 +245,7 @@ mapping muml::realtimestatechart::Transition :: doTargetTransition2Transition() 
     	action := self.action.map Action2Action();
 }
    		 
-mapping muml::realtimestatechart::Transition :: doSourceTransition2Transition() : muml::realtimestatechart::Transition when{not (self.source.oclAsType(State).doEvent = null)}{
+mapping pim::realtimestatechart::Transition :: doSourceTransition2Transition() : pim::realtimestatechart::Transition when{not (self.source.oclAsType(State).doEvent = null)}{
     	priority := self.priority;
     	comment := self.comment;
     	blockable := self.blockable;
@@ -266,7 +266,7 @@ mapping muml::realtimestatechart::Transition :: doSourceTransition2Transition() 
     	action := self.action.map Action2Action();
 }
    		 
-mapping muml::realtimestatechart::EntryPoint :: EntryPoint2EntryPoint() : muml::realtimestatechart::EntryPoint{
+mapping pim::realtimestatechart::EntryPoint :: EntryPoint2EntryPoint() : pim::realtimestatechart::EntryPoint{
     	name := self.name;
     	comment := self.comment;
     	annotation := self.annotation.map EAnnotation2EAnnotation();
@@ -281,7 +281,7 @@ mapping muml::realtimestatechart::EntryPoint :: EntryPoint2EntryPoint() : muml::
     	state := self.state.map State2State();
 }
    		 
-mapping muml::realtimestatechart::ExitPoint :: ExitPoint2ExitPoint() : muml::realtimestatechart::ExitPoint{
+mapping pim::realtimestatechart::ExitPoint :: ExitPoint2ExitPoint() : pim::realtimestatechart::ExitPoint{
     	name := self.name;
     	comment := self.comment;
     	annotation := self.annotation.map EAnnotation2EAnnotation();
@@ -297,7 +297,7 @@ mapping muml::realtimestatechart::ExitPoint :: ExitPoint2ExitPoint() : muml::rea
     	state := self.state.map State2State();
 }
 
-mapping muml::realtimestatechart::Transition :: normalTransition2Transition() : muml::realtimestatechart::Transition{
+mapping pim::realtimestatechart::Transition :: normalTransition2Transition() : pim::realtimestatechart::Transition{
     	priority := self.priority;
     	comment := self.comment;
     	blockable := self.blockable;

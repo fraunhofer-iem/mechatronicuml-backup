@@ -2,8 +2,8 @@ import transforms.lib.MUML2MUML;
 import transforms.lib.RTSCUtil;
 import transforms.lib.MultiMappingUtil;
 
-modeltype rtsc uses muml::realtimestatechart('http://www.fujaba.de/muml/0.4.0');
-modeltype behavior uses muml::behavior('http://www.fujaba.de/muml/0.4.0');
+modeltype rtsc uses pim::realtimestatechart('http://www.muml.org/pim/1.0.0');
+modeltype behavior uses pim::behavior('http://www.muml.org/pim/1.0.0');
 modeltype verificationExtension uses 'http://www.fujaba.de/muml/verification/extension/0.4.0';
 modeltype modelinstance uses 'http://www.fujaba.de/modelinstance/0.4.0';
 

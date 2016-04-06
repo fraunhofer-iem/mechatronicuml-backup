@@ -3,22 +3,22 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="helper" nsURI="http://www.fujaba.de/verification/timedstorychart/transform/helper/0.1.0"
     nsPrefix="de.uni_paderborn.fujaba.muml.verification.timedstorychart.transform.helper">
   <eClassifiers xsi:type="ecore:EClass" name="TSCTransformationInput">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="connector" eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/Connector"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="connector" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//connector/Connector"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="syncTransitionTuples" upperBound="-1"
         eType="#//TransitionTuple"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="noSyncTransitions" upperBound="-1"
-        eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/Transition"/>
+        eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//realtimestatechart/Transition"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TSCTransformationOutput">
     <eStructuralFeatures xsi:type="ecore:EReference" name="tgts" eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.timedstorydiagram/model/TimedStoryDiagrams.ecore#//TimedGraphTransformationSystem"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TransitionTuple">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="sending" eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/Transition"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="receiving" eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/Transition"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sending" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//realtimestatechart/Transition"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="receiving" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//realtimestatechart/Transition"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PreTransformationHelper">
     <eStructuralFeatures xsi:type="ecore:EReference" name="rtscs" upperBound="-1"
-        eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/RealtimeStatechart"/>
+        eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//realtimestatechart/RealtimeStatechart"/>
   </eClassifiers>
 </ecore:EPackage>

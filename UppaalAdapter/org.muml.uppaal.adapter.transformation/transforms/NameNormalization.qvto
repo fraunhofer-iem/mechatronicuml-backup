@@ -5,8 +5,8 @@ import de.uni_paderborn.fujaba.muml.verification.uppaal._blackbox.CharSubstituti
 
 modeltype modelinstance uses 'http://www.fujaba.de/modelinstance/0.4.0';
 modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
-modeltype muml_protocol uses muml::protocol('http://www.fujaba.de/muml/0.4.0');
-modeltype storydriven uses 'http://www.storydriven.org/core/0.3.1';
+modeltype muml_protocol uses pim::protocol('http://www.muml.org/pim/1.0.0');
+modeltype storydriven uses 'http://www.muml.org/core/1.0.0';
 
 transformation NameNormalization(in input:muml_protocol, out output:muml_protocol) extends MUML2MUML;
 

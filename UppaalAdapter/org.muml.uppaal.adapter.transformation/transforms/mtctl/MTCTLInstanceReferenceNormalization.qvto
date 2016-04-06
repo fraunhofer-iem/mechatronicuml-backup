@@ -3,7 +3,7 @@ import de.uni_paderborn.fujaba.muml.verification.uppaal._blackbox.MtctlLibrary;
 
 modeltype muml_cic uses muml::instance('http://www.fujaba.de/muml/0.4.0');
 
-modeltype rtsc uses muml::realtimestatechart('http://www.fujaba.de/muml/0.4.0');
+modeltype rtsc uses pim::realtimestatechart('http://www.muml.org/pim/1.0.0');
 modeltype mumlConstraint uses 'http://www.fujaba.de/muml/constraint/0.4.0';
 modeltype mumlMessageType uses 'http://www.fujaba.de/muml/msgtype/0.4.0';
 modeltype mumlBehavior uses 'http://www.fujaba.de/muml/behavior/0.4.0';

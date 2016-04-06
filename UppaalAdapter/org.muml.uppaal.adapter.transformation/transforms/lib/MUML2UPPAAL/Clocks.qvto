@@ -8,9 +8,9 @@ import transforms.lib.RTSCUtil;
 
 library Clocks;
 
-modeltype muml_rtsc uses muml::realtimestatechart('http://www.fujaba.de/muml/0.4.0');
-modeltype muml_behavior uses muml::behavior('http://www.fujaba.de/muml/0.4.0');
-modeltype muml_valuetype uses muml::valuetype('http://www.fujaba.de/muml/0.4.0');
+modeltype muml_rtsc uses pim::realtimestatechart('http://www.muml.org/pim/1.0.0');
+modeltype muml_behavior uses pim::behavior('http://www.muml.org/pim/1.0.0');
+modeltype muml_valuetype uses pim::valuetype('http://www.muml.org/pim/1.0.0');
 modeltype uppaal uses 'http://www.uni-paderborn.de/uppaal/0.4.0';
 modeltype uppaal_declarations uses uppaal::declarations('http://www.uni-paderborn.de/uppaal/0.4.0');
 modeltype uppaal_expressions uses uppaal::expressions('http://www.uni-paderborn.de/uppaal/0.4.0');

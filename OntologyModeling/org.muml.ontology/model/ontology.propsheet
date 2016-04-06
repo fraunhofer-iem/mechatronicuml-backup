@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="ASCII"?>
-<de.uni_paderborn.fujaba:PropertyGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.uni_paderborn.fujaba="http://de.uni_paderborn.fujaba.properties/0.5.1" xmi:id="_Rl70IM1gEeSIgPDefa6ZBw" defaultTab="_Rl8bMc1gEeSIgPDefa6ZBw" contributorId="de.uni_paderborn.fujaba.muml.common.properties">
+<de.uni_paderborn.fujaba:PropertyGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.uni_paderborn.fujaba="http://www.muml.org/ape/1.0.0" xmi:id="_Rl70IM1gEeSIgPDefa6ZBw" defaultTab="_Rl8bMc1gEeSIgPDefa6ZBw" contributorId="org.muml.ape.contributor">
   <reconciler xmi:id="_Rl70Ic1gEeSIgPDefa6ZBw">
     <customTransformations xmi:id="_Rl70Is1gEeSIgPDefa6ZBw" uri="/de.uni_paderborn.fujaba.muml.common/transformations/muml-propsheet.qvto"/>
   </reconciler>
   <genModel href="ontology.genmodel#/"/>
-  <referencedGenerators href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_I4kOHNEeS5Putgio2lkg"/>
-  <referencedGenerators href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#_VZIdoMwbEeSjx7OWZCcdLw"/>
+  <referencedGenerators href="../../org.muml.core/model/core.propsheet#_i_I4kOHNEeS5Putgio2lkg"/>
+  <referencedGenerators href="../../org.muml.pim/model/pim.propsheet#_VZIdoMwbEeSjx7OWZCcdLw"/>
   <referencedGenerators href="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.propsheet#_VZEMMMwbEeSjx7OWZCcdLw"/>
   <plugin xmi:id="_Rl8bMM1gEeSIgPDefa6ZBw" id="de.uni_paderborn.fujaba.muml.ontology.edit.properties" name="Ontology Properties" vendor="Software Engineering, Project Group Mechatronic Systems Design, Fraunhofer Institute for Production Technology IPT " version="0.5.0.qualifier">
     <requiredBundles>org.eclipse.emf.ecore</requiredBundles>
@@ -38,13 +38,13 @@
         <editor xsi:type="de.uni_paderborn.fujaba:CustomPropertyEditor" xmi:id="_Rl9CQc1gEeSIgPDefa6ZBw" fullyQualifiedClassName="de.uni_paderborn.fujaba.muml.ontology.edit.properties.custom.OntologyPropertyEditor"/>
       </orderedElements>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_Rl9CQs1gEeSIgPDefa6ZBw" tooltip="" reconcile="false" initializeOCLExpression="">
-        <genFeature href="../../org.storydriven.core/model/core.uml.genmodel#//core/Extension/extendableBase"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_OYIeHNEeS5Putgio2lkg"/>
+        <genFeature href="../../org.muml.core/model/core.genmodel#//core/Extension/extendableBase"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_OYIeHNEeS5Putgio2lkg"/>
         <creationOppositeConstraint xmi:id="_Rl9CQ81gEeSIgPDefa6ZBw">
           <filters xsi:type="de.uni_paderborn.fujaba:OCLFilter" xmi:id="_Rl9CRM1gEeSIgPDefa6ZBw" expression="self.oclIsKindOf(muml::component::Port) or self.oclIsKindOf(muml::component::Component) or self.oclIsKindOf(muml::component::ComponentPart) or self.oclIsKindOf(muml::component::PortPart)"/>
         </creationOppositeConstraint>
       </orderedElements>
-      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_QNUeHNEeS5Putgio2lkg"/>
+      <superClasses href="../../org.muml.core/model/core.propsheet#_i_QNUeHNEeS5Putgio2lkg"/>
     </classes>
   </packages>
 </de.uni_paderborn.fujaba:PropertyGenerator>

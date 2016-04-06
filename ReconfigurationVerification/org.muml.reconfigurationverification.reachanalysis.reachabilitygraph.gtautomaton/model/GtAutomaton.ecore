@@ -74,7 +74,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="GtAutomatonClockConstraint">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="clockInstanceIdentifier"
         eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" eType="ecore:EEnum ../../org.storydriven.core/model/core.ecore#//expressions/common/ComparingOperator"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" eType="ecore:EEnum ../../org.muml.core/model/core.ecore#//expressions/common/ComparingOperator"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="GtAutomaton" eSuperTypes="../../de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.sdm/model/SDMReachabilityAnalysis.ecore#//SDMReachabilityGraph">

@@ -298,9 +298,9 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.1">
           <metaFeatures
-              href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+              href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
           <editableMetaFeatures
-              href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+              href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
         </modelFacet>
       </labels>
       <labels
@@ -442,9 +442,9 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.1">
           <metaFeatures
-              href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+              href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
           <editableMetaFeatures
-              href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+              href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
         </modelFacet>
       </labels>
       <labels
@@ -542,9 +542,9 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.1">
           <metaFeatures
-              href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+              href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
           <editableMetaFeatures
-              href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+              href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
         </modelFacet>
       </labels>
       <labels
@@ -644,9 +644,9 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.1">
           <metaFeatures
-              href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+              href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
           <editableMetaFeatures
-              href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+              href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
         </modelFacet>
       </labels>
       <labels
@@ -792,7 +792,7 @@
                   xsi:type="gmfgen:GenFeatureValueSpec"
                   value="//@expressionProviders/@providers.0/@expressions.0">
                 <feature
-                    href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+                    href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
               </initializers>
               <initializers
                   xsi:type="gmfgen:GenReferenceNewElementSpec">
@@ -803,7 +803,7 @@
                       xsi:type="gmfgen:GenFeatureValueSpec"
                       value="//@expressionProviders/@providers.0/@expressions.1">
                     <feature
-                        href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+                        href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
                   </initializers>
                   <initializers
                       xsi:type="gmfgen:GenFeatureValueSpec"
@@ -831,7 +831,7 @@
               xsi:type="gmfgen:GenFeatureValueSpec"
               value="//@expressionProviders/@providers.0/@expressions.5">
             <feature
-                href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+                href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
           </initializers>
         </modelElementInitializer>
       </modelFacet>
@@ -1034,9 +1034,9 @@
           </initializers>
         </modelElementInitializer>
         <sourceMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/connector/Connector/connectorEndpoints"/>
+            href="../../org.muml.pim/model/pim.genmodel#//pim/connector/Connector/connectorEndpoints"/>
         <targetMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/connector/Connector/connectorEndpoints"/>
+            href="../../org.muml.pim/model/pim.genmodel#//pim/connector/Connector/connectorEndpoints"/>
       </modelFacet>
       <labels
           visualID="6001"
@@ -1057,9 +1057,9 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.1">
           <metaFeatures
-              href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+              href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
           <editableMetaFeatures
-              href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+              href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
         </modelFacet>
       </labels>
       <creationConstraints
@@ -1100,9 +1100,9 @@
           </initializers>
         </modelElementInitializer>
         <sourceMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/connector/Connector/connectorEndpoints"/>
+            href="../../org.muml.pim/model/pim.genmodel#//pim/connector/Connector/connectorEndpoints"/>
         <targetMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/connector/Connector/connectorEndpoints"/>
+            href="../../org.muml.pim/model/pim.genmodel#//pim/connector/Connector/connectorEndpoints"/>
       </modelFacet>
       <labels
           visualID="6002"
@@ -1123,9 +1123,9 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.1">
           <metaFeatures
-              href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+              href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
           <editableMetaFeatures
-              href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+              href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
         </modelFacet>
       </labels>
       <creationConstraints

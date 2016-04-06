@@ -3,7 +3,7 @@
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/de.uni_paderborn.fujaba.muml.example.railcab.profileTypes/src"
     modelPluginID="de.uni_paderborn.fujaba.muml.example.railcab.profileTypes" modelName="ConvoyCoordinationStructTypes"
     rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
-    complianceLevel="7.0" copyrightFields="false" usedGenPackages="../../org.storydriven.core/model/core.uml.genmodel#//core ../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml ../../de.uni_paderborn.fujaba.muml.runtime/model/RuntimeModel.genmodel#//runtime"
+    complianceLevel="7.0" copyrightFields="false" usedGenPackages="../../org.muml.core/model/core.genmodel#//core ../../org.muml.pim/model/pim.genmodel#//pim ../../de.uni_paderborn.fujaba.muml.runtime/model/RuntimeModel.genmodel#//runtime"
     operationReflection="true" importOrganizing="true">
   <foreignModel>ConvoyCoordinationStructTypes.ecore</foreignModel>
   <genPackages prefix="Profiles" basePackage="de.uni_paderborn.fujaba.muml.example.railcab"

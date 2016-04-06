@@ -8,7 +8,7 @@
     <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
     <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
   </eAnnotations>
-  <eClassifiers xsi:type="ecore:EClass" name="FoTCTLSpec" eSuperTypes="../../org.storydriven.core/model/core.ecore#//ExtendableElement">
+  <eClassifiers xsi:type="ecore:EClass" name="FoTCTLSpec" eSuperTypes="../../org.muml.core/model/core.ecore#//ExtendableElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="formulas" upperBound="-1"
         eType="#//FoTCTLFormula" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="nodeLabelPredicates" upperBound="-1"
@@ -19,10 +19,10 @@
         eType="#//ConstantSymbolDecl" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="FoTCTLFormula" eSuperTypes="../../de.uni_paderborn.fujaba.muml.verification.tctl/model/TCTL.ecore#//TCTLFormula"/>
-  <eClassifiers xsi:type="ecore:EClass" name="NodeLabelPredicateDecl" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="EdgeLabelPredicateDecl" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ConstantSymbolDecl" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="QuantifiedFormula" eSuperTypes="../../de.uni_paderborn.fujaba.muml.verification.tctl/model/TCTL.ecore#//UnaryFormula ../../org.storydriven.core/model/core.ecore#//NamedElement">
+  <eClassifiers xsi:type="ecore:EClass" name="NodeLabelPredicateDecl" eSuperTypes="../../org.muml.core/model/core.ecore#//NamedElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EdgeLabelPredicateDecl" eSuperTypes="../../org.muml.core/model/core.ecore#//NamedElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ConstantSymbolDecl" eSuperTypes="../../org.muml.core/model/core.ecore#//NamedElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="QuantifiedFormula" eSuperTypes="../../de.uni_paderborn.fujaba.muml.verification.tctl/model/TCTL.ecore#//UnaryFormula ../../org.muml.core/model/core.ecore#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="variables" lowerBound="1"
         upperBound="-1" eType="#//Variable" eOpposite="#//Variable/declaration"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="quantifier" eType="#//Quantifier"

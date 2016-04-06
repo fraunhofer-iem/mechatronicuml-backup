@@ -8,13 +8,13 @@ import ModelcopyLibrary;
 
 modeltype Core uses core('http://www.storydriven.org/core/0.3.1');
 
-modeltype MumlPackage uses muml('http://www.fujaba.de/muml/0.4.0');
-modeltype ConnectorPackage uses muml::connector('http://www.fujaba.de/muml/0.4.0');
-modeltype ValuetypePackage uses muml::valuetype('http://www.fujaba.de/muml/0.4.0');
-modeltype ComponentPackage uses muml::component('http://www.fujaba.de/muml/0.4.0');
+modeltype PimPackage uses pim('http://www.muml.org/pim/1.0.0');
+modeltype ConnectorPackage uses pim::connector('http://www.muml.org/pim/1.0.0');
+modeltype ValuetypePackage uses pim::valuetype('http://www.muml.org/pim/1.0.0');
+modeltype ComponentPackage uses pim::component('http://www.muml.org/pim/1.0.0');
 modeltype MessagePackage uses muml::msgtype('http://www.fujaba.de/muml/0.4.0');
 modeltype InstancePackage uses muml::instance('http://www.fujaba.de/muml/0.4.0');
-modeltype ModelInstance uses modelinstance('http://www.fujaba.de/modelinstance/0.4.0');
+modeltype ModelInstance uses modelinstance('http://www.muml.org/core/modelinstance/1.0.0');
 modeltype Actionlanguage uses actionlanguage('http://www.fujaba.de/muml/actionlanguage/0.4.0');
 
 modeltype PSM uses psm('http://www.fujaba.de/muml/psm/0.4.0/');

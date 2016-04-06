@@ -7,7 +7,7 @@
     codeFormatting="true" testsDirectory="/org.storydriven.storydiagrams.tests/src-gen"
     importerID="org.eclipse.emf.importer.ecore" containmentProxies="true" complianceLevel="6.0"
     suppressGenModelAnnotations="false" copyrightFields="false" editPluginID="org.storydriven.storydiagrams.edit"
-    editorPluginID="org.storydriven.storydiagrams.editor" usedGenPackages="../../org.storydriven.core/model/core.uml.genmodel#//core platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore"
+    editorPluginID="org.storydriven.storydiagrams.editor" usedGenPackages="../../org.muml.core/model/core.genmodel#//core platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore"
     operationReflection="true" pluralizedGetters="true" invariantPrefix="">
   <genAnnotations source="http://www.eclipse.org/emf/2002/GenModel/importer/org.eclipse.uml2.uml.ecore.importer">
     <details key="DUPLICATE_FEATURE_INHERITANCE" value="PROCESS"/>

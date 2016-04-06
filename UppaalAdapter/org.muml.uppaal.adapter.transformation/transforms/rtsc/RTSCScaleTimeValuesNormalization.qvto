@@ -2,12 +2,12 @@ import transforms.lib.MUML2MUML;
 import de.uni_paderborn.fujaba.muml.verification.uppaal._blackbox.TimeLibUnit;
 
 
-modeltype muml_rtsc uses muml::realtimestatechart('http://www.fujaba.de/muml/0.4.0');
-modeltype behavior uses muml::behavior('http://www.fujaba.de/muml/0.4.0');
+modeltype muml_rtsc uses pim::realtimestatechart('http://www.muml.org/pim/1.0.0');
+modeltype behavior uses pim::behavior('http://www.muml.org/pim/1.0.0');
 
-modeltype muml_valuetype uses muml::valuetype('http://www.fujaba.de/muml/0.4.0');
-modeltype storydriven_common uses core::expressions::common('http://www.storydriven.org/core/0.3.1');
-modeltype storydriven_expressions uses core::expressions('http://www.storydriven.org/core/0.3.1');
+modeltype muml_valuetype uses pim::valuetype('http://www.muml.org/pim/1.0.0');
+modeltype storydriven_common uses core::expressions::common('http://www.muml.org/core/1.0.0');
+modeltype storydriven_expressions uses core::expressions('http://www.muml.org/core/1.0.0');
 modeltype modelinstance uses 'http://www.fujaba.de/modelinstance/0.4.0';
 modeltype mtctlQuantifiers uses mtctl::Quantifiers('http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl');
 modeltype mtctlPredicates uses mtctl::Predicates('http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl');

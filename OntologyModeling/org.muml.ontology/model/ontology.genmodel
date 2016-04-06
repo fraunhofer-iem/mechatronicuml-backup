@@ -4,7 +4,7 @@
     modelDirectory="/de.uni_paderborn.fujaba.muml.ontology/src" modelPluginID="de.uni_paderborn.fujaba.muml.ontology"
     modelName="Ontology" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="7.0" copyrightFields="false"
-    usedGenPackages="../../org.storydriven.core/model/core.uml.genmodel#//core" operationReflection="true"
+    usedGenPackages="../../org.muml.core/model/core.genmodel#//core" operationReflection="true"
     importOrganizing="true">
   <foreignModel>ontology.ecore</foreignModel>
   <genPackages prefix="Ontology" basePackage="de.uni_paderborn.fujaba.muml" disposableProviderFactory="true"

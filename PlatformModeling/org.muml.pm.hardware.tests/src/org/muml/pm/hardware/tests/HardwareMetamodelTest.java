@@ -15,7 +15,7 @@ import org.junit.runners.Parameterized.Parameters;
 import org.muml.core.CorePackage;
 import org.muml.core.tests.MetamodelTest;
 import org.muml.core.tests.TestUtilities;
-import org.muml.pim.MumlPackage;
+import org.muml.pim.PimPackage;
 
 @RunWith(Parameterized.class)
 public class HardwareMetamodelTest extends MetamodelTest {
@@ -29,7 +29,7 @@ public class HardwareMetamodelTest extends MetamodelTest {
 		ResourceSet resourceSet = new ResourceSetImpl();
 
 		CorePackage.eINSTANCE.eClass();
-		MumlPackage.eINSTANCE.eClass();
+		PimPackage.eINSTANCE.eClass();
 		
 //		Resource coreModel = TestUtilities.loadResource(resourceSet,
 //				"org.storydriven.core/model/core.ecore");

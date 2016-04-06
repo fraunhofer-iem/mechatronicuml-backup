@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="ASCII"?>
-<de.uni_paderborn.fujaba:PropertyGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.uni_paderborn.fujaba="http://de.uni_paderborn.fujaba.properties/0.5.1" contributorId=" ">
+<de.uni_paderborn.fujaba:PropertyGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.uni_paderborn.fujaba="http://www.muml.org/ape/1.0.0" contributorId=" ">
   <reconciler/>
   <genModel href="verificationExtension.genmodel#/"/>
-  <referencedGenerators href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_I4kOHNEeS5Putgio2lkg"/>
+  <referencedGenerators href="../../org.muml.core/model/core.propsheet#_i_I4kOHNEeS5Putgio2lkg"/>
   <plugin id="de.uni_paderborn.fujaba.muml.verification.extension.edit.properties" name="Properties" vendor="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn" version="0.1">
     <requiredBundles>org.eclipse.emf.ecore</requiredBundles>
     <requiredBundles>org.eclipse.ui</requiredBundles>
@@ -17,57 +17,57 @@
     <classes>
       <genClass href="verificationExtension.genmodel#//verificationExtension/CommittedExtension"/>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
-        <genFeature href="../../org.storydriven.core/model/core.uml.genmodel#//core/Extension/extendableBase"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <genFeature href="../../org.muml.core/model/core.genmodel#//core/Extension/extendableBase"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
         <creationOppositeConstraint>
           <filters xsi:type="de.uni_paderborn.fujaba:OCLFilter" expression="false"/>
         </creationOppositeConstraint>
       </orderedElements>
-      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_QNUeHNEeS5Putgio2lkg"/>
+      <superClasses href="../../org.muml.core/model/core.propsheet#_i_QNUeHNEeS5Putgio2lkg"/>
     </classes>
     <classes>
       <genClass href="verificationExtension.genmodel#//verificationExtension/ClockBinding"/>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
         <genFeature href="verificationExtension.genmodel#//verificationExtension/ClockBinding/clock"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </orderedElements>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
         <genFeature href="verificationExtension.genmodel#//verificationExtension/ClockBinding/value"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="de.uni_paderborn.fujaba:SpinnerPropertyEditor"/>
       </orderedElements>
     </classes>
     <classes>
       <genClass href="verificationExtension.genmodel#//verificationExtension/ElementToVerifyExtension"/>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
-        <genFeature href="../../org.storydriven.core/model/core.uml.genmodel#//core/Extension/extendableBase"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <genFeature href="../../org.muml.core/model/core.genmodel#//core/Extension/extendableBase"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
         <creationOppositeConstraint>
           <filters xsi:type="de.uni_paderborn.fujaba:OCLFilter" expression="false"/>
         </creationOppositeConstraint>
       </orderedElements>
-      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_QNUeHNEeS5Putgio2lkg"/>
+      <superClasses href="../../org.muml.core/model/core.propsheet#_i_QNUeHNEeS5Putgio2lkg"/>
     </classes>
     <classes>
       <genClass href="verificationExtension.genmodel#//verificationExtension/ClockBindingsExtension"/>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
         <genFeature href="verificationExtension.genmodel#//verificationExtension/ClockBindingsExtension/clockBindings"/>
         <readOnlyFilters xsi:type="de.uni_paderborn.fujaba:OCLFilter" expression="true"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
       </orderedElements>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
-        <genFeature href="../../org.storydriven.core/model/core.uml.genmodel#//core/Extension/extendableBase"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <genFeature href="../../org.muml.core/model/core.genmodel#//core/Extension/extendableBase"/>
+        <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
         <creationOppositeConstraint>
           <filters xsi:type="de.uni_paderborn.fujaba:OCLFilter" expression="false"/>
         </creationOppositeConstraint>
       </orderedElements>
-      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_QNUeHNEeS5Putgio2lkg"/>
+      <superClasses href="../../org.muml.core/model/core.propsheet#_i_QNUeHNEeS5Putgio2lkg"/>
     </classes>
   </packages>
 </de.uni_paderborn.fujaba:PropertyGenerator>
