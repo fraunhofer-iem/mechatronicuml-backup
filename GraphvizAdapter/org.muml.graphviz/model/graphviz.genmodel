@@ -3,7 +3,7 @@
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.muml.graphviz/src" creationIcons="false" modelPluginID="org.muml.graphviz"
     modelName="Graphviz" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" copyrightFields="false"
-    usedGenPackages="../../org.storydriven.core/model/core.uml.genmodel#//core" operationReflection="true"
+    usedGenPackages="../../org.muml.core/model/core.genmodel#//core" operationReflection="true"
     importOrganizing="true">
   <foreignModel>graphviz.ecore</foreignModel>
   <genPackages prefix="Graphviz" basePackage="de.uni_paderborn.fujaba" disposableProviderFactory="true"

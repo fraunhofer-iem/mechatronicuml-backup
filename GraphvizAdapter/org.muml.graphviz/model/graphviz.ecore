@@ -104,7 +104,7 @@
         <eGenericType eTypeParameter="#//common/Graph/E"/>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Node" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement">
+    <eClassifiers xsi:type="ecore:EClass" name="Node" eSuperTypes="../../org.muml.core/model/core.ecore#//NamedElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="This class serves as a base class for all more specific node&#xA;classes. Such a base node solely consists of a single name attribute."/>
       </eAnnotations>
