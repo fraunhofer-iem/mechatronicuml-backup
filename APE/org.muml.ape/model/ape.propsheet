@@ -13,255 +13,255 @@
   </plugin>
   <tabs id="org.muml.ape.tab.general" name="General" afterTab=""/>
   <packages>
-    <genPackage href="ape.genmodel#//properties"/>
+    <genPackage href="ape.genmodel#//ape"/>
     <classes>
-      <genClass href="ape.genmodel#//properties/PropertyGenerator"/>
+      <genClass href="ape.genmodel#//ape/PropertyGenerator"/>
       <orderedElements xsi:type="org.muml.ape:Property" tab="//@tabs.0" tooltip="" initializeOCLExpression="">
-        <genFeature href="ape.genmodel#//properties/PropertyGenerator/reconciler"/>
+        <genFeature href="ape.genmodel#//ape/PropertyGenerator/reconciler"/>
         <editor xsi:type="org.muml.ape:ObjectPropertyEditor"/>
       </orderedElements>
       <orderedElements xsi:type="org.muml.ape:Property" tab="//@tabs.0">
-        <genFeature href="ape.genmodel#//properties/PropertyGenerator/genModel"/>
+        <genFeature href="ape.genmodel#//ape/PropertyGenerator/genModel"/>
         <editor xsi:type="org.muml.ape:ComboBoxPropertyEditor"/>
       </orderedElements>
       <orderedElements xsi:type="org.muml.ape:Property" tab="//@tabs.0">
-        <genFeature href="ape.genmodel#//properties/PropertyGenerator/referencedGenerators"/>
+        <genFeature href="ape.genmodel#//ape/PropertyGenerator/referencedGenerators"/>
         <editor xsi:type="org.muml.ape:ListPropertyEditor"/>
       </orderedElements>
       <orderedElements xsi:type="org.muml.ape:Property" tab="//@tabs.0">
-        <genFeature href="ape.genmodel#//properties/PropertyGenerator/plugin"/>
+        <genFeature href="ape.genmodel#//ape/PropertyGenerator/plugin"/>
         <editor xsi:type="org.muml.ape:ObjectPropertyEditor"/>
       </orderedElements>
       <orderedElements xsi:type="org.muml.ape:Property" tab="//@tabs.0">
-        <genFeature href="ape.genmodel#//properties/PropertyGenerator/defaultTab"/>
+        <genFeature href="ape.genmodel#//ape/PropertyGenerator/defaultTab"/>
         <editor xsi:type="org.muml.ape:ComboBoxPropertyEditor"/>
       </orderedElements>
       <orderedElements xsi:type="org.muml.ape:Property" tab="//@tabs.0">
-        <genFeature href="ape.genmodel#//properties/PropertyGenerator/contributorId"/>
+        <genFeature href="ape.genmodel#//ape/PropertyGenerator/contributorId"/>
         <editor xsi:type="org.muml.ape:TextPropertyEditor"/>
       </orderedElements>
       <orderedElements xsi:type="org.muml.ape:Property" tab="//@tabs.0">
-        <genFeature href="ape.genmodel#//properties/PropertyGenerator/sourceFolder"/>
+        <genFeature href="ape.genmodel#//ape/PropertyGenerator/sourceFolder"/>
         <editor xsi:type="org.muml.ape:TextPropertyEditor"/>
       </orderedElements>
     </classes>
     <classes>
-      <genClass href="ape.genmodel#//properties/Reconciler"/>
+      <genClass href="ape.genmodel#//ape/Reconciler"/>
       <orderedElements xsi:type="org.muml.ape:Property" tab="//@tabs.0" tooltip="" initializeOCLExpression="">
-        <genFeature href="ape.genmodel#//properties/Reconciler/enabled"/>
+        <genFeature href="ape.genmodel#//ape/Reconciler/enabled"/>
         <editor xsi:type="org.muml.ape:CheckboxPropertyEditor"/>
       </orderedElements>
       <orderedElements xsi:type="org.muml.ape:Property" tab="//@tabs.0">
-        <genFeature href="ape.genmodel#//properties/Reconciler/reconcilePackages"/>
+        <genFeature href="ape.genmodel#//ape/Reconciler/reconcilePackages"/>
         <editor xsi:type="org.muml.ape:CheckboxPropertyEditor"/>
       </orderedElements>
       <orderedElements xsi:type="org.muml.ape:Property" tab="//@tabs.0">
-        <genFeature href="ape.genmodel#//properties/Reconciler/reconcileClasses"/>
+        <genFeature href="ape.genmodel#//ape/Reconciler/reconcileClasses"/>
         <editor xsi:type="org.muml.ape:CheckboxPropertyEditor"/>
       </orderedElements>
       <orderedElements xsi:type="org.muml.ape:Property" tab="//@tabs.0">
-        <genFeature href="ape.genmodel#//properties/Reconciler/reconcileProperties"/>
+        <genFeature href="ape.genmodel#//ape/Reconciler/reconcileProperties"/>
         <editor xsi:type="org.muml.ape:CheckboxPropertyEditor"/>
       </orderedElements>
       <orderedElements xsi:type="org.muml.ape:PropertyCategory" title="Booleans" properties="//@packages.0/@classes.1/@orderedElements.0 //@packages.0/@classes.1/@orderedElements.1 //@packages.0/@classes.1/@orderedElements.2 //@packages.0/@classes.1/@orderedElements.3"/>
     </classes>
     <classes>
-      <genClass href="ape.genmodel#//properties/CustomTransformation"/>
+      <genClass href="ape.genmodel#//ape/CustomTransformation"/>
       <orderedElements xsi:type="org.muml.ape:Property" tab="//@tabs.0">
-        <genFeature href="ape.genmodel#//properties/CustomTransformation/uri"/>
+        <genFeature href="ape.genmodel#//ape/CustomTransformation/uri"/>
         <editor xsi:type="org.muml.ape:TextPropertyEditor"/>
       </orderedElements>
       <orderedElements xsi:type="org.muml.ape:Property" tab="//@tabs.0">
-        <genFeature href="ape.genmodel#//properties/CustomTransformation/enabled"/>
+        <genFeature href="ape.genmodel#//ape/CustomTransformation/enabled"/>
         <editor xsi:type="org.muml.ape:CheckboxPropertyEditor"/>
       </orderedElements>
       <orderedElements xsi:type="org.muml.ape:Property" tab="//@tabs.0">
-        <genFeature href="ape.genmodel#//properties/CustomTransformation/position"/>
+        <genFeature href="ape.genmodel#//ape/CustomTransformation/position"/>
         <editor xsi:type="org.muml.ape:RadioPropertyEditor"/>
       </orderedElements>
     </classes>
     <classes>
-      <genClass href="ape.genmodel#//properties/Plugin"/>
+      <genClass href="ape.genmodel#//ape/Plugin"/>
       <orderedElements xsi:type="org.muml.ape:Property" tab="//@tabs.0">
-        <genFeature href="ape.genmodel#//properties/Plugin/id"/>
+        <genFeature href="ape.genmodel#//ape/Plugin/id"/>
         <editor xsi:type="org.muml.ape:TextPropertyEditor"/>
       </orderedElements>
       <orderedElements xsi:type="org.muml.ape:Property" tab="//@tabs.0" tooltip="" initializeOCLExpression="">
-        <genFeature href="ape.genmodel#//properties/Plugin/name"/>
+        <genFeature href="ape.genmodel#//ape/Plugin/name"/>
         <editor xsi:type="org.muml.ape:TextPropertyEditor"/>
       </orderedElements>
       <orderedElements xsi:type="org.muml.ape:Property" tab="//@tabs.0">
-        <genFeature href="ape.genmodel#//properties/Plugin/vendor"/>
+        <genFeature href="ape.genmodel#//ape/Plugin/vendor"/>
         <editor xsi:type="org.muml.ape:TextPropertyEditor"/>
       </orderedElements>
       <orderedElements xsi:type="org.muml.ape:Property" tab="//@tabs.0">
-        <genFeature href="ape.genmodel#//properties/Plugin/version"/>
+        <genFeature href="ape.genmodel#//ape/Plugin/version"/>
         <editor xsi:type="org.muml.ape:TextPropertyEditor"/>
       </orderedElements>
       <orderedElements xsi:type="org.muml.ape:Property" tab="//@tabs.0">
-        <genFeature href="ape.genmodel#//properties/Plugin/requiredBundles"/>
+        <genFeature href="ape.genmodel#//ape/Plugin/requiredBundles"/>
         <editor xsi:type="org.muml.ape:TextPropertyEditor"/>
       </orderedElements>
       <orderedElements xsi:type="org.muml.ape:Property" tab="//@tabs.0" tooltip="" initializeOCLExpression="">
-        <genFeature href="ape.genmodel#//properties/Plugin/requiredExecutionEnvironment"/>
+        <genFeature href="ape.genmodel#//ape/Plugin/requiredExecutionEnvironment"/>
         <editor xsi:type="org.muml.ape:TextPropertyEditor"/>
       </orderedElements>
     </classes>
     <classes>
-      <genClass href="ape.genmodel#//properties/PropertyTab"/>
+      <genClass href="ape.genmodel#//ape/PropertyTab"/>
       <orderedElements xsi:type="org.muml.ape:Property" tab="//@tabs.0">
-        <genFeature href="ape.genmodel#//properties/PropertyTab/id"/>
+        <genFeature href="ape.genmodel#//ape/PropertyTab/id"/>
         <editor xsi:type="org.muml.ape:TextPropertyEditor"/>
       </orderedElements>
       <orderedElements xsi:type="org.muml.ape:Property" tab="//@tabs.0">
-        <genFeature href="ape.genmodel#//properties/PropertyTab/name"/>
+        <genFeature href="ape.genmodel#//ape/PropertyTab/name"/>
         <editor xsi:type="org.muml.ape:TextPropertyEditor"/>
       </orderedElements>
       <orderedElements xsi:type="org.muml.ape:Property" tab="//@tabs.0">
-        <genFeature href="ape.genmodel#//properties/PropertyTab/afterTab"/>
+        <genFeature href="ape.genmodel#//ape/PropertyTab/afterTab"/>
         <editor xsi:type="org.muml.ape:TextPropertyEditor"/>
       </orderedElements>
     </classes>
     <classes>
-      <genClass href="ape.genmodel#//properties/Package"/>
+      <genClass href="ape.genmodel#//ape/Package"/>
       <orderedElements xsi:type="org.muml.ape:Property" tab="//@tabs.0">
-        <genFeature href="ape.genmodel#//properties/Package/genPackage"/>
+        <genFeature href="ape.genmodel#//ape/Package/genPackage"/>
         <editor xsi:type="org.muml.ape:ComboBoxPropertyEditor"/>
       </orderedElements>
     </classes>
     <classes>
-      <genClass href="ape.genmodel#//properties/Class"/>
+      <genClass href="ape.genmodel#//ape/Class"/>
       <orderedElements xsi:type="org.muml.ape:Property" tab="//@tabs.0">
-        <genFeature href="ape.genmodel#//properties/Class/genClass"/>
+        <genFeature href="ape.genmodel#//ape/Class/genClass"/>
         <editor xsi:type="org.muml.ape:ComboBoxPropertyEditor"/>
       </orderedElements>
       <orderedElements xsi:type="org.muml.ape:Property" tab="//@tabs.0">
-        <genFeature href="ape.genmodel#//properties/Class/superClasses"/>
+        <genFeature href="ape.genmodel#//ape/Class/superClasses"/>
         <editor xsi:type="org.muml.ape:ListPropertyEditor"/>
       </orderedElements>
       <orderedElements xsi:type="org.muml.ape:Property" tab="//@tabs.0" tooltip="" reconcile="false" initializeOCLExpression="">
-        <genFeature href="ape.genmodel#//properties/Class/allSuperClasses"/>
+        <genFeature href="ape.genmodel#//ape/Class/allSuperClasses"/>
       </orderedElements>
     </classes>
     <classes>
-      <genClass href="ape.genmodel#//properties/OrderedElement"/>
+      <genClass href="ape.genmodel#//ape/OrderedElement"/>
       <orderedElements xsi:type="org.muml.ape:Property" tab="//@tabs.0" tooltip="" reconcile="false" initializeOCLExpression="">
-        <genFeature href="ape.genmodel#//properties/OrderedElement/clazz"/>
+        <genFeature href="ape.genmodel#//ape/OrderedElement/clazz"/>
       </orderedElements>
     </classes>
     <classes superClasses="//@packages.0/@classes.7">
-      <genClass href="ape.genmodel#//properties/Property"/>
+      <genClass href="ape.genmodel#//ape/Property"/>
       <orderedElements xsi:type="org.muml.ape:Property" tab="//@tabs.0" tooltip="" initializeOCLExpression="">
-        <genFeature href="ape.genmodel#//properties/Property/genFeature"/>
+        <genFeature href="ape.genmodel#//ape/Property/genFeature"/>
         <editor xsi:type="org.muml.ape:ComboBoxPropertyEditor"/>
       </orderedElements>
       <orderedElements xsi:type="org.muml.ape:Property" tab="//@tabs.0">
-        <genFeature href="ape.genmodel#//properties/Property/tab"/>
+        <genFeature href="ape.genmodel#//ape/Property/tab"/>
         <editor xsi:type="org.muml.ape:ComboBoxPropertyEditor"/>
       </orderedElements>
       <orderedElements xsi:type="org.muml.ape:Property" tab="//@tabs.0" tooltip="" initializeOCLExpression="">
-        <genFeature href="ape.genmodel#//properties/Property/tooltip"/>
+        <genFeature href="ape.genmodel#//ape/Property/tooltip"/>
         <editor xsi:type="org.muml.ape:TextPropertyEditor"/>
       </orderedElements>
       <orderedElements xsi:type="org.muml.ape:Property" tab="//@tabs.0">
-        <genFeature href="ape.genmodel#//properties/Property/reconcile"/>
+        <genFeature href="ape.genmodel#//ape/Property/reconcile"/>
         <editor xsi:type="org.muml.ape:CheckboxPropertyEditor"/>
       </orderedElements>
       <orderedElements xsi:type="org.muml.ape:Property" tab="//@tabs.0" tooltip="" reconcile="false" initializeOCLExpression="">
-        <genFeature href="ape.genmodel#//properties/Property/initializeOCLExpression"/>
+        <genFeature href="ape.genmodel#//ape/Property/initializeOCLExpression"/>
         <visibilityFilters xsi:type="org.muml.ape:OCLFilter" expression="self.genFeature.ecoreFeature.oclIsKindOf(ecore::EAttribute)"/>
         <editor xsi:type="org.muml.ape:OCLPropertyEditor"/>
       </orderedElements>
       <orderedElements xsi:type="org.muml.ape:Property" tab="//@tabs.0" tooltip="" reconcile="false" initializeOCLExpression="">
-        <genFeature href="ape.genmodel#//properties/OrderedElement/clazz"/>
+        <genFeature href="ape.genmodel#//ape/OrderedElement/clazz"/>
       </orderedElements>
     </classes>
     <classes>
-      <genClass href="ape.genmodel#//properties/PropertyEditor"/>
+      <genClass href="ape.genmodel#//ape/PropertyEditor"/>
     </classes>
     <classes superClasses="//@packages.0/@classes.9">
-      <genClass href="ape.genmodel#//properties/TextPropertyEditor"/>
+      <genClass href="ape.genmodel#//ape/TextPropertyEditor"/>
       <orderedElements xsi:type="org.muml.ape:Property" tab="//@tabs.0" tooltip="" initializeOCLExpression="">
-        <genFeature href="ape.genmodel#//properties/TextPropertyEditor/multiLine"/>
+        <genFeature href="ape.genmodel#//ape/TextPropertyEditor/multiLine"/>
         <editor xsi:type="org.muml.ape:CheckboxPropertyEditor"/>
       </orderedElements>
     </classes>
     <classes superClasses="//@packages.0/@classes.9">
-      <genClass href="ape.genmodel#//properties/SpinnerPropertyEditor"/>
+      <genClass href="ape.genmodel#//ape/SpinnerPropertyEditor"/>
       <orderedElements xsi:type="org.muml.ape:Property" tab="//@tabs.0" tooltip="" initializeOCLExpression="">
-        <genFeature href="ape.genmodel#//properties/SpinnerPropertyEditor/digits"/>
+        <genFeature href="ape.genmodel#//ape/SpinnerPropertyEditor/digits"/>
         <editor xsi:type="org.muml.ape:SpinnerPropertyEditor"/>
       </orderedElements>
     </classes>
     <classes superClasses="//@packages.0/@classes.9">
-      <genClass href="ape.genmodel#//properties/ComboBoxPropertyEditor"/>
+      <genClass href="ape.genmodel#//ape/ComboBoxPropertyEditor"/>
     </classes>
     <classes superClasses="//@packages.0/@classes.9">
-      <genClass href="ape.genmodel#//properties/CheckboxPropertyEditor"/>
+      <genClass href="ape.genmodel#//ape/CheckboxPropertyEditor"/>
     </classes>
     <classes superClasses="//@packages.0/@classes.9">
-      <genClass href="ape.genmodel#//properties/RadioPropertyEditor"/>
+      <genClass href="ape.genmodel#//ape/RadioPropertyEditor"/>
     </classes>
     <classes superClasses="//@packages.0/@classes.9">
-      <genClass href="ape.genmodel#//properties/ListPropertyEditor"/>
+      <genClass href="ape.genmodel#//ape/ListPropertyEditor"/>
     </classes>
     <classes superClasses="//@packages.0/@classes.9">
-      <genClass href="ape.genmodel#//properties/FlattenedListPropertyEditor"/>
+      <genClass href="ape.genmodel#//ape/FlattenedListPropertyEditor"/>
     </classes>
     <classes superClasses="//@packages.0/@classes.9">
-      <genClass href="ape.genmodel#//properties/ObjectPropertyEditor"/>
+      <genClass href="ape.genmodel#//ape/ObjectPropertyEditor"/>
     </classes>
     <classes superClasses="//@packages.0/@classes.9">
-      <genClass href="ape.genmodel#//properties/OCLPropertyEditor"/>
+      <genClass href="ape.genmodel#//ape/OCLPropertyEditor"/>
     </classes>
     <classes superClasses="//@packages.0/@classes.9">
-      <genClass href="ape.genmodel#//properties/CustomPropertyEditor"/>
+      <genClass href="ape.genmodel#//ape/CustomPropertyEditor"/>
       <orderedElements xsi:type="org.muml.ape:Property" tab="//@tabs.0">
-        <genFeature href="ape.genmodel#//properties/CustomPropertyEditor/fullyQualifiedClassName"/>
+        <genFeature href="ape.genmodel#//ape/CustomPropertyEditor/fullyQualifiedClassName"/>
         <editor xsi:type="org.muml.ape:TextPropertyEditor"/>
       </orderedElements>
     </classes>
     <classes superClasses="//@packages.0/@classes.7">
-      <genClass href="ape.genmodel#//properties/PropertyCategory"/>
+      <genClass href="ape.genmodel#//ape/PropertyCategory"/>
       <orderedElements xsi:type="org.muml.ape:Property" tab="//@tabs.0">
-        <genFeature href="ape.genmodel#//properties/PropertyCategory/title"/>
+        <genFeature href="ape.genmodel#//ape/PropertyCategory/title"/>
         <editor xsi:type="org.muml.ape:TextPropertyEditor"/>
       </orderedElements>
       <orderedElements xsi:type="org.muml.ape:Property" tab="//@tabs.0" tooltip="" initializeOCLExpression="">
-        <genFeature href="ape.genmodel#//properties/PropertyCategory/vertical"/>
+        <genFeature href="ape.genmodel#//ape/PropertyCategory/vertical"/>
         <editor xsi:type="org.muml.ape:CheckboxPropertyEditor"/>
       </orderedElements>
       <orderedElements xsi:type="org.muml.ape:Property" tab="//@tabs.0">
-        <genFeature href="ape.genmodel#//properties/PropertyCategory/open"/>
+        <genFeature href="ape.genmodel#//ape/PropertyCategory/open"/>
         <editor xsi:type="org.muml.ape:CheckboxPropertyEditor"/>
       </orderedElements>
       <orderedElements xsi:type="org.muml.ape:Property" tab="//@tabs.0">
-        <genFeature href="ape.genmodel#//properties/PropertyCategory/properties"/>
+        <genFeature href="ape.genmodel#//ape/PropertyCategory/properties"/>
         <editor xsi:type="org.muml.ape:ListPropertyEditor"/>
       </orderedElements>
       <orderedElements xsi:type="org.muml.ape:PropertyCategory" title="Booleans" properties="//@packages.0/@classes.20/@orderedElements.1 //@packages.0/@classes.20/@orderedElements.2"/>
     </classes>
     <classes>
-      <genClass href="ape.genmodel#//properties/Filter"/>
+      <genClass href="ape.genmodel#//ape/Filter"/>
     </classes>
     <classes superClasses="//@packages.0/@classes.21">
-      <genClass href="ape.genmodel#//properties/OCLFilter"/>
+      <genClass href="ape.genmodel#//ape/OCLFilter"/>
       <orderedElements xsi:type="org.muml.ape:Property" tab="//@tabs.0" tooltip="" reconcile="false" initializeOCLExpression="">
-        <genFeature href="ape.genmodel#//properties/OCLFilter/expression"/>
+        <genFeature href="ape.genmodel#//ape/OCLFilter/expression"/>
         <editor xsi:type="org.muml.ape:OCLPropertyEditor"/>
       </orderedElements>
     </classes>
     <classes>
-      <genClass href="ape.genmodel#//properties/CreationConstraint"/>
+      <genClass href="ape.genmodel#//ape/CreationConstraint"/>
       <orderedElements xsi:type="org.muml.ape:Property" tab="//@tabs.0">
-        <genFeature href="ape.genmodel#//properties/CreationConstraint/filters"/>
+        <genFeature href="ape.genmodel#//ape/CreationConstraint/filters"/>
         <editor xsi:type="org.muml.ape:ListPropertyEditor"/>
       </orderedElements>
     </classes>
     <classes superClasses="//@packages.0/@classes.7">
-      <genClass href="ape.genmodel#//properties/BaseInsertPoint"/>
+      <genClass href="ape.genmodel#//ape/BaseInsertPoint"/>
       <orderedElements xsi:type="org.muml.ape:Property" tab="//@tabs.0">
-        <genFeature href="ape.genmodel#//properties/BaseInsertPoint/baseClass"/>
+        <genFeature href="ape.genmodel#//ape/BaseInsertPoint/baseClass"/>
         <editor xsi:type="org.muml.ape:ComboBoxPropertyEditor"/>
       </orderedElements>
     </classes>
