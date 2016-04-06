@@ -9,10 +9,6 @@
       %description
    </description>
 
-   <license url="">
-      
-   </license>
-
    <plugin
          id="org.muml.graphviz"
          download-size="0"

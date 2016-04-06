@@ -50,12 +50,12 @@ public abstract class AbstractDotLanguageRuntimeModule extends org.eclipse.xtext
 
 	// contributed by org.eclipse.xtext.generator.serializer.SerializerFragment
 	public Class<? extends org.eclipse.xtext.serializer.sequencer.ISemanticSequencer> bindISemanticSequencer() {
-		return de.uni_paderborn.fujaba.graphviz.dot.xtext.serializer.DotLanguageSemanticSequencer.class;
+		return org.muml.graphviz.dot.xtext.serializer.DotLanguageSemanticSequencer.class;
 	}
 
 	// contributed by org.eclipse.xtext.generator.serializer.SerializerFragment
 	public Class<? extends org.eclipse.xtext.serializer.sequencer.ISyntacticSequencer> bindISyntacticSequencer() {
-		return de.uni_paderborn.fujaba.graphviz.dot.xtext.serializer.DotLanguageSyntacticSequencer.class;
+		return org.muml.graphviz.dot.xtext.serializer.DotLanguageSyntacticSequencer.class;
 	}
 
 	// contributed by org.eclipse.xtext.generator.serializer.SerializerFragment
@@ -99,13 +99,13 @@ public abstract class AbstractDotLanguageRuntimeModule extends org.eclipse.xtext
 	}
 
 	// contributed by org.eclipse.xtext.generator.validation.ValidatorFragment
-	@org.eclipse.xtext.service.SingletonBinding(eager=true)	public Class<? extends de.uni_paderborn.fujaba.graphviz.dot.xtext.validation.DotLanguageValidator> bindDotLanguageValidator() {
-		return de.uni_paderborn.fujaba.graphviz.dot.xtext.validation.DotLanguageValidator.class;
+	@org.eclipse.xtext.service.SingletonBinding(eager=true)	public Class<? extends org.muml.graphviz.dot.xtext.validation.DotLanguageValidator> bindDotLanguageValidator() {
+		return org.muml.graphviz.dot.xtext.validation.DotLanguageValidator.class;
 	}
 
 	// contributed by org.eclipse.xtext.generator.scoping.AbstractScopingFragment
 	public Class<? extends org.eclipse.xtext.scoping.IScopeProvider> bindIScopeProvider() {
-		return de.uni_paderborn.fujaba.graphviz.dot.xtext.scoping.DotLanguageScopeProvider.class;
+		return org.muml.graphviz.dot.xtext.scoping.DotLanguageScopeProvider.class;
 	}
 
 	// contributed by org.eclipse.xtext.generator.scoping.AbstractScopingFragment
@@ -145,12 +145,12 @@ public abstract class AbstractDotLanguageRuntimeModule extends org.eclipse.xtext
 
 	// contributed by org.eclipse.xtext.generator.generator.GeneratorFragment
 	public Class<? extends org.eclipse.xtext.generator.IGenerator> bindIGenerator() {
-		return de.uni_paderborn.fujaba.graphviz.dot.xtext.generator.DotLanguageGenerator.class;
+		return org.muml.graphviz.dot.xtext.generator.DotLanguageGenerator.class;
 	}
 
 	// contributed by org.eclipse.xtext.generator.formatting.FormatterFragment
 	public Class<? extends org.eclipse.xtext.formatting.IFormatter> bindIFormatter() {
-		return de.uni_paderborn.fujaba.graphviz.dot.xtext.formatting.DotLanguageFormatter.class;
+		return org.muml.graphviz.dot.xtext.formatting.DotLanguageFormatter.class;
 	}
 
 	// contributed by org.eclipse.xtext.generator.types.TypesGeneratorFragment

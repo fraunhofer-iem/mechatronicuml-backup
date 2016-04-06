@@ -123,7 +123,7 @@ public interface CommonPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NODE__ANNOTATION = CorePackage.NAMED_ELEMENT__ANNOTATION;
+	int NODE__ANNOTATION = CorePackage.NAMED_ELEMENT__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -132,7 +132,7 @@ public interface CommonPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NODE__EXTENSION = CorePackage.NAMED_ELEMENT__EXTENSION;
+	int NODE__EXTENSION = CorePackage.NAMED_ELEMENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.

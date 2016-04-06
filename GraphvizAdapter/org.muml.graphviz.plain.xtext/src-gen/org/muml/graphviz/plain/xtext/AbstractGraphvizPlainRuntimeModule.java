@@ -46,12 +46,12 @@ public abstract class AbstractGraphvizPlainRuntimeModule extends DefaultRuntimeM
 
 	// contributed by org.eclipse.xtext.generator.serializer.SerializerFragment
 	public Class<? extends org.eclipse.xtext.serializer.sequencer.ISemanticSequencer> bindISemanticSequencer() {
-		return de.uni_paderborn.fujaba.graphviz.plain.xtext.serializer.GraphvizPlainSemanticSequencer.class;
+		return org.muml.graphviz.plain.xtext.serializer.GraphvizPlainSemanticSequencer.class;
 	}
 
 	// contributed by org.eclipse.xtext.generator.serializer.SerializerFragment
 	public Class<? extends org.eclipse.xtext.serializer.sequencer.ISyntacticSequencer> bindISyntacticSequencer() {
-		return de.uni_paderborn.fujaba.graphviz.plain.xtext.serializer.GraphvizPlainSyntacticSequencer.class;
+		return org.muml.graphviz.plain.xtext.serializer.GraphvizPlainSyntacticSequencer.class;
 	}
 
 	// contributed by org.eclipse.xtext.generator.serializer.SerializerFragment
@@ -95,13 +95,13 @@ public abstract class AbstractGraphvizPlainRuntimeModule extends DefaultRuntimeM
 	}
 
 	// contributed by org.eclipse.xtext.generator.validation.ValidatorFragment
-	@org.eclipse.xtext.service.SingletonBinding(eager=true)	public Class<? extends de.uni_paderborn.fujaba.graphviz.plain.xtext.validation.GraphvizPlainValidator> bindGraphvizPlainValidator() {
-		return de.uni_paderborn.fujaba.graphviz.plain.xtext.validation.GraphvizPlainValidator.class;
+	@org.eclipse.xtext.service.SingletonBinding(eager=true)	public Class<? extends org.muml.graphviz.plain.xtext.validation.GraphvizPlainValidator> bindGraphvizPlainValidator() {
+		return org.muml.graphviz.plain.xtext.validation.GraphvizPlainValidator.class;
 	}
 
 	// contributed by org.eclipse.xtext.generator.scoping.AbstractScopingFragment
 	public Class<? extends org.eclipse.xtext.scoping.IScopeProvider> bindIScopeProvider() {
-		return de.uni_paderborn.fujaba.graphviz.plain.xtext.scoping.GraphvizPlainScopeProvider.class;
+		return org.muml.graphviz.plain.xtext.scoping.GraphvizPlainScopeProvider.class;
 	}
 
 	// contributed by org.eclipse.xtext.generator.scoping.AbstractScopingFragment
@@ -141,12 +141,12 @@ public abstract class AbstractGraphvizPlainRuntimeModule extends DefaultRuntimeM
 
 	// contributed by org.eclipse.xtext.generator.generator.GeneratorFragment
 	public Class<? extends org.eclipse.xtext.generator.IGenerator> bindIGenerator() {
-		return de.uni_paderborn.fujaba.graphviz.plain.xtext.generator.GraphvizPlainGenerator.class;
+		return org.muml.graphviz.plain.xtext.generator.GraphvizPlainGenerator.class;
 	}
 
 	// contributed by org.eclipse.xtext.generator.formatting.FormatterFragment
 	public Class<? extends org.eclipse.xtext.formatting.IFormatter> bindIFormatter() {
-		return de.uni_paderborn.fujaba.graphviz.plain.xtext.formatting.GraphvizPlainFormatter.class;
+		return org.muml.graphviz.plain.xtext.formatting.GraphvizPlainFormatter.class;
 	}
 
 	// contributed by org.eclipse.xtext.generator.types.TypesGeneratorFragment

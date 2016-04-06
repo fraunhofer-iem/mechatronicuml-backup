@@ -84,32 +84,32 @@ public abstract class AbstractDotLanguageUiModule extends org.eclipse.xtext.comm
 
 	// contributed by org.eclipse.xtext.ui.generator.labeling.LabelProviderFragment
 	public Class<? extends org.eclipse.jface.viewers.ILabelProvider> bindILabelProvider() {
-		return de.uni_paderborn.fujaba.graphviz.dot.xtext.ui.labeling.DotLanguageLabelProvider.class;
+		return org.muml.graphviz.dot.xtext.ui.labeling.DotLanguageLabelProvider.class;
 	}
 
 	// contributed by org.eclipse.xtext.ui.generator.labeling.LabelProviderFragment
 	public void configureResourceUIServiceLabelProvider(com.google.inject.Binder binder) {
-		binder.bind(org.eclipse.jface.viewers.ILabelProvider.class).annotatedWith(org.eclipse.xtext.ui.resource.ResourceServiceDescriptionLabelProvider.class).to(de.uni_paderborn.fujaba.graphviz.dot.xtext.ui.labeling.DotLanguageDescriptionLabelProvider.class);
+		binder.bind(org.eclipse.jface.viewers.ILabelProvider.class).annotatedWith(org.eclipse.xtext.ui.resource.ResourceServiceDescriptionLabelProvider.class).to(org.muml.graphviz.dot.xtext.ui.labeling.DotLanguageDescriptionLabelProvider.class);
 	}
 
 	// contributed by org.eclipse.xtext.ui.generator.outline.OutlineTreeProviderFragment
 	public Class<? extends org.eclipse.xtext.ui.editor.outline.IOutlineTreeProvider> bindIOutlineTreeProvider() {
-		return de.uni_paderborn.fujaba.graphviz.dot.xtext.ui.outline.DotLanguageOutlineTreeProvider.class;
+		return org.muml.graphviz.dot.xtext.ui.outline.DotLanguageOutlineTreeProvider.class;
 	}
 
 	// contributed by org.eclipse.xtext.ui.generator.outline.OutlineTreeProviderFragment
 	public Class<? extends org.eclipse.xtext.ui.editor.outline.impl.IOutlineTreeStructureProvider> bindIOutlineTreeStructureProvider() {
-		return de.uni_paderborn.fujaba.graphviz.dot.xtext.ui.outline.DotLanguageOutlineTreeProvider.class;
+		return org.muml.graphviz.dot.xtext.ui.outline.DotLanguageOutlineTreeProvider.class;
 	}
 
 	// contributed by org.eclipse.xtext.ui.generator.quickfix.QuickfixProviderFragment
 	public Class<? extends org.eclipse.xtext.ui.editor.quickfix.IssueResolutionProvider> bindIssueResolutionProvider() {
-		return de.uni_paderborn.fujaba.graphviz.dot.xtext.ui.quickfix.DotLanguageQuickfixProvider.class;
+		return org.muml.graphviz.dot.xtext.ui.quickfix.DotLanguageQuickfixProvider.class;
 	}
 
 	// contributed by org.eclipse.xtext.ui.generator.contentAssist.ContentAssistFragment
 	public Class<? extends org.eclipse.xtext.ui.editor.contentassist.IContentProposalProvider> bindIContentProposalProvider() {
-		return de.uni_paderborn.fujaba.graphviz.dot.xtext.ui.contentassist.DotLanguageProposalProvider.class;
+		return org.muml.graphviz.dot.xtext.ui.contentassist.DotLanguageProposalProvider.class;
 	}
 
 	// contributed by org.eclipse.xtext.generator.parser.antlr.XtextAntlrUiGeneratorFragment
