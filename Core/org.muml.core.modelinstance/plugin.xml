@@ -19,25 +19,25 @@
 <extension-point id="modelelementcategory" name="modelelementcategory" schema="schema/modelelementcategory.exsd"/>
 <extension-point id="version" name="version" schema="schema/version.exsd"/>
 
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      
-      <package class="org.muml.core.modelinstance.ModelinstancePackage" genModel="model/modelinstance.genmodel" uri="http://www.fujaba.de/modelinstance/0.4.0"/>
-   </extension>
-
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated modelinstance -->
-      <package
-            uri="http://www.fujaba.de/modelinstance/0.4.0"
-            class="org.muml.core.modelinstance.ModelinstancePackage"
-            genModel="model/modelinstance.genmodel"/>
-   </extension>
-
    <extension point="org.eclipse.emf.ecore.extension_parser">
       <parser class="org.muml.core.modelinstance.util.ModelinstanceResourceFactoryImpl" type="muml"/>
    </extension>
 
 
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated modelinstance -->
+      <package
+            uri="http://www.muml.org/modelinstance/1.0.0"
+            class="org.muml.core.modelinstance.ModelinstancePackage"
+            genModel="model/modelinstance.genmodel"/>
+   </extension>
+
    <extension point="org.eclipse.emf.ecore.extension_parser">
       <parser class="org.muml.core.modelinstance.util.ModelinstanceResourceFactoryImpl" type="fujaba"/>
+   </extension>
+   
+   
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <parser class="org.muml.core.modelinstance.util.ModelinstanceResourceFactoryImpl" type="muml"/>
    </extension>
 </plugin>

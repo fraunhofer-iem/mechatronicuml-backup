@@ -190,7 +190,7 @@ public final class ModelBrowser extends CommonNavigator implements
 	}
 
 	// BEGIN Tabbed Properties
- 	public static final String PROPERTIES_CONTRIBUTOR = "de.uni_paderborn.fujaba.muml.common.properties";
+ 	public static final String PROPERTIES_CONTRIBUTOR = "org.muml.ape.contributor";
 
  	protected TabbedPropertySheetPage propertySheetPage;
 

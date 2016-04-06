@@ -141,7 +141,7 @@ public class ModelinstanceEditor
 	implements IEditingDomainProvider, ISelectionProvider, IMenuListener, IViewerProvider, IGotoMarker, ITabbedPropertySheetPageContributor {
 
  	// BEGIN Tabbed Properties
- 	public static final String PROPERTIES_CONTRIBUTOR = "de.uni_paderborn.fujaba.muml.common.properties";
+ 	public static final String PROPERTIES_CONTRIBUTOR = "org.muml.ape.contributor";
 
  	protected TabbedPropertySheetPage propertySheetPage;
 

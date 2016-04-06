@@ -375,7 +375,7 @@ public class ModelBrowserView extends ViewPart implements ISelectionProvider, IT
 	}
 	
 	// BEGIN Tabbed Properties
- 	public static final String PROPERTIES_CONTRIBUTOR = "de.uni_paderborn.fujaba.muml.common.properties";
+ 	public static final String PROPERTIES_CONTRIBUTOR = "org.muml.ape.contributor";
 
  	protected TabbedPropertySheetPage propertySheetPage;
 
