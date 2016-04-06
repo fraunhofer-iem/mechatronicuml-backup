@@ -85,7 +85,7 @@ public class Layouter {
 		}
 		
 		for (Edge edge : template.getEdge()) {
-			DotEdge dotEdge = factory.createDotEdge();
+			DotEdge dotEdge = factory.createDirectedDotEdge();
 			dotEdge.setSource(locTrace.get(edge.getSource()));
 			dotEdge.setTarget(locTrace.get(edge.getTarget()));
 			
