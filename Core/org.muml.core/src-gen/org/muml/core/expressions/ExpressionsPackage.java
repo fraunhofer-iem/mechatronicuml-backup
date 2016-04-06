@@ -75,22 +75,22 @@ public interface ExpressionsPackage extends EPackage {
 	int EXPRESSION = 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXPRESSION__ANNOTATION = CorePackage.COMMENTABLE_ELEMENT__ANNOTATION;
+	int EXPRESSION__ANNOTATIONS = CorePackage.COMMENTABLE_ELEMENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXPRESSION__EXTENSION = CorePackage.COMMENTABLE_ELEMENT__EXTENSION;
+	int EXPRESSION__EXTENSIONS = CorePackage.COMMENTABLE_ELEMENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -301,22 +301,22 @@ public interface ExpressionsPackage extends EPackage {
 	int TEXTUAL_EXPRESSION = 1;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TEXTUAL_EXPRESSION__ANNOTATION = EXPRESSION__ANNOTATION;
+	int TEXTUAL_EXPRESSION__ANNOTATIONS = EXPRESSION__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TEXTUAL_EXPRESSION__EXTENSION = EXPRESSION__EXTENSION;
+	int TEXTUAL_EXPRESSION__EXTENSIONS = EXPRESSION__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.

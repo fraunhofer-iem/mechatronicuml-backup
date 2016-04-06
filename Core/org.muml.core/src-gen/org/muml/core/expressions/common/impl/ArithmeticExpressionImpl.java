@@ -11,7 +11,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.muml.core.expressions.common.ArithmeticExpression;
 import org.muml.core.expressions.common.ArithmeticOperator;
-import org.muml.core.expressions.common.CommonPackage;
+import org.muml.core.expressions.common.CommonExpressionsPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -64,7 +64,7 @@ public class ArithmeticExpressionImpl extends BinaryExpressionImpl implements
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CommonPackage.Literals.ARITHMETIC_EXPRESSION;
+		return CommonExpressionsPackage.Literals.ARITHMETIC_EXPRESSION;
 	}
 
 	/**
@@ -85,7 +85,7 @@ public class ArithmeticExpressionImpl extends BinaryExpressionImpl implements
 		ArithmeticOperator oldOperator = operator;
 		operator = newOperator == null ? OPERATOR_EDEFAULT : newOperator;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CommonPackage.ARITHMETIC_EXPRESSION__OPERATOR, oldOperator, operator));
+			eNotify(new ENotificationImpl(this, Notification.SET, CommonExpressionsPackage.ARITHMETIC_EXPRESSION__OPERATOR, oldOperator, operator));
 	}
 
 	/**
@@ -96,7 +96,7 @@ public class ArithmeticExpressionImpl extends BinaryExpressionImpl implements
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CommonPackage.ARITHMETIC_EXPRESSION__OPERATOR:
+			case CommonExpressionsPackage.ARITHMETIC_EXPRESSION__OPERATOR:
 				return getOperator();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -110,7 +110,7 @@ public class ArithmeticExpressionImpl extends BinaryExpressionImpl implements
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CommonPackage.ARITHMETIC_EXPRESSION__OPERATOR:
+			case CommonExpressionsPackage.ARITHMETIC_EXPRESSION__OPERATOR:
 				setOperator((ArithmeticOperator)newValue);
 				return;
 		}
@@ -125,7 +125,7 @@ public class ArithmeticExpressionImpl extends BinaryExpressionImpl implements
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CommonPackage.ARITHMETIC_EXPRESSION__OPERATOR:
+			case CommonExpressionsPackage.ARITHMETIC_EXPRESSION__OPERATOR:
 				setOperator(OPERATOR_EDEFAULT);
 				return;
 		}
@@ -140,7 +140,7 @@ public class ArithmeticExpressionImpl extends BinaryExpressionImpl implements
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CommonPackage.ARITHMETIC_EXPRESSION__OPERATOR:
+			case CommonExpressionsPackage.ARITHMETIC_EXPRESSION__OPERATOR:
 				return operator != OPERATOR_EDEFAULT;
 		}
 		return super.eIsSet(featureID);

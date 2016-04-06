@@ -15,8 +15,8 @@ import org.muml.core.expressions.Expression;
 import org.muml.core.expressions.ExpressionsFactory;
 import org.muml.core.expressions.ExpressionsPackage;
 import org.muml.core.expressions.TextualExpression;
-import org.muml.core.expressions.common.CommonPackage;
-import org.muml.core.expressions.common.impl.CommonPackageImpl;
+import org.muml.core.expressions.common.CommonExpressionsPackage;
+import org.muml.core.expressions.common.impl.CommonExpressionsPackageImpl;
 import org.muml.core.impl.CorePackageImpl;
 
 /**
@@ -89,17 +89,17 @@ public class ExpressionsPackageImpl extends EPackageImpl implements
 
 		// Obtain or create and register interdependencies
 		CorePackageImpl theCorePackage = (CorePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI) instanceof CorePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI) : CorePackage.eINSTANCE);
-		CommonPackageImpl theCommonPackage = (CommonPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CommonPackage.eNS_URI) instanceof CommonPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CommonPackage.eNS_URI) : CommonPackage.eINSTANCE);
+		CommonExpressionsPackageImpl theCommonExpressionsPackage = (CommonExpressionsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CommonExpressionsPackage.eNS_URI) instanceof CommonExpressionsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CommonExpressionsPackage.eNS_URI) : CommonExpressionsPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theExpressionsPackage.createPackageContents();
 		theCorePackage.createPackageContents();
-		theCommonPackage.createPackageContents();
+		theCommonExpressionsPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theExpressionsPackage.initializePackageContents();
 		theCorePackage.initializePackageContents();
-		theCommonPackage.initializePackageContents();
+		theCommonExpressionsPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theExpressionsPackage.freeze();
@@ -215,11 +215,11 @@ public class ExpressionsPackageImpl extends EPackageImpl implements
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		CommonPackage theCommonPackage = (CommonPackage)EPackage.Registry.INSTANCE.getEPackage(CommonPackage.eNS_URI);
+		CommonExpressionsPackage theCommonExpressionsPackage = (CommonExpressionsPackage)EPackage.Registry.INSTANCE.getEPackage(CommonExpressionsPackage.eNS_URI);
 		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
 
 		// Add subpackages
-		getESubpackages().add(theCommonPackage);
+		getESubpackages().add(theCommonExpressionsPackage);
 
 		// Create type parameters
 

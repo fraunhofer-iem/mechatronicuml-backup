@@ -11,8 +11,8 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//CommentableElement/comment"/>
     </genClasses>
     <genClasses image="false" ecoreClass="core.ecore#//ExtendableElement">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//ExtendableElement/annotation"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//ExtendableElement/extension"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//ExtendableElement/annotations"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//ExtendableElement/extensions"/>
       <genOperations ecoreOperation="core.ecore#//ExtendableElement/getExtension">
         <genParameters ecoreParameter="core.ecore#//ExtendableElement/getExtension/type"/>
       </genOperations>
@@ -40,15 +40,16 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//TypedElement/genericType"/>
     </genClasses>
     <genClasses image="false" ecoreClass="core.ecore#//Repository"/>
-    <nestedGenPackages prefix="Expressions" disposableProviderFactory="true" ecorePackage="core.ecore#//expressions">
+    <nestedGenPackages prefix="Expressions" basePackage="org.muml.core" disposableProviderFactory="true"
+        ecorePackage="core.ecore#//expressions">
       <genClasses image="false" ecoreClass="core.ecore#//expressions/Expression"/>
       <genClasses ecoreClass="core.ecore#//expressions/TextualExpression">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//expressions/TextualExpression/expressionText"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//expressions/TextualExpression/language"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//expressions/TextualExpression/languageVersion"/>
       </genClasses>
-      <nestedGenPackages prefix="CommonExpressions" disposableProviderFactory="true"
-          ecorePackage="core.ecore#//expressions/common">
+      <nestedGenPackages prefix="CommonExpressions" basePackage="org.muml.core.expressions"
+          disposableProviderFactory="true" ecorePackage="core.ecore#//expressions/common">
         <genEnums typeSafeEnumCompatible="false" ecoreEnum="core.ecore#//expressions/common/LogicOperator">
           <genEnumLiterals ecoreEnumLiteral="core.ecore#//expressions/common/LogicOperator/AND"/>
           <genEnumLiterals ecoreEnumLiteral="core.ecore#//expressions/common/LogicOperator/OR"/>

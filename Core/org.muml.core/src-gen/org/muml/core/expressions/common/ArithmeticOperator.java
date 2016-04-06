@@ -20,7 +20,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * <!-- begin-model-doc -->
  * Defines the operators for arithmetic expressions.
  * <!-- end-model-doc -->
- * @see org.muml.core.expressions.common.CommonPackage#getArithmeticOperator()
+ * @see org.muml.core.expressions.common.CommonExpressionsPackage#getArithmeticOperator()
  * @model
  * @generated
  */

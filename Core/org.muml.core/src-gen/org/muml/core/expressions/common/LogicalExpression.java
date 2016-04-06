@@ -22,7 +22,7 @@ package org.muml.core.expressions.common;
  *   <li>{@link org.muml.core.expressions.common.LogicalExpression#getOperator <em>Operator</em>}</li>
  * </ul>
  *
- * @see org.muml.core.expressions.common.CommonPackage#getLogicalExpression()
+ * @see org.muml.core.expressions.common.CommonExpressionsPackage#getLogicalExpression()
  * @model
  * @generated
  */
@@ -38,7 +38,7 @@ public interface LogicalExpression extends BinaryExpression {
 	 * @return the value of the '<em>Operator</em>' attribute.
 	 * @see org.muml.core.expressions.common.LogicOperator
 	 * @see #setOperator(LogicOperator)
-	 * @see org.muml.core.expressions.common.CommonPackage#getLogicalExpression_Operator()
+	 * @see org.muml.core.expressions.common.CommonExpressionsPackage#getLogicalExpression_Operator()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */

@@ -20,7 +20,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * <!-- begin-model-doc -->
  * The operator type used to specify unary logic expressions.
  * <!-- end-model-doc -->
- * @see org.muml.core.expressions.common.CommonPackage#getUnaryOperator()
+ * @see org.muml.core.expressions.common.CommonExpressionsPackage#getUnaryOperator()
  * @model
  * @generated
  */

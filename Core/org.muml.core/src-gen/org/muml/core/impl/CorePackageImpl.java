@@ -22,8 +22,8 @@ import org.muml.core.NamedElement;
 import org.muml.core.Repository;
 import org.muml.core.TypedElement;
 import org.muml.core.expressions.ExpressionsPackage;
-import org.muml.core.expressions.common.CommonPackage;
-import org.muml.core.expressions.common.impl.CommonPackageImpl;
+import org.muml.core.expressions.common.CommonExpressionsPackage;
+import org.muml.core.expressions.common.impl.CommonExpressionsPackageImpl;
 import org.muml.core.expressions.impl.ExpressionsPackageImpl;
 
 /**
@@ -123,17 +123,17 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 
 		// Obtain or create and register interdependencies
 		ExpressionsPackageImpl theExpressionsPackage = (ExpressionsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ExpressionsPackage.eNS_URI) instanceof ExpressionsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ExpressionsPackage.eNS_URI) : ExpressionsPackage.eINSTANCE);
-		CommonPackageImpl theCommonPackage = (CommonPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CommonPackage.eNS_URI) instanceof CommonPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CommonPackage.eNS_URI) : CommonPackage.eINSTANCE);
+		CommonExpressionsPackageImpl theCommonExpressionsPackage = (CommonExpressionsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CommonExpressionsPackage.eNS_URI) instanceof CommonExpressionsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CommonExpressionsPackage.eNS_URI) : CommonExpressionsPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theCorePackage.createPackageContents();
 		theExpressionsPackage.createPackageContents();
-		theCommonPackage.createPackageContents();
+		theCommonExpressionsPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theCorePackage.initializePackageContents();
 		theExpressionsPackage.initializePackageContents();
-		theCommonPackage.initializePackageContents();
+		theCommonExpressionsPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theCorePackage.freeze();
@@ -194,7 +194,7 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getExtendableElement_Annotation() {
+	public EReference getExtendableElement_Annotations() {
 		return (EReference)extendableElementEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -203,7 +203,7 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getExtendableElement_Extension() {
+	public EReference getExtendableElement_Extensions() {
 		return (EReference)extendableElementEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -356,8 +356,8 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		createEAttribute(commentableElementEClass, COMMENTABLE_ELEMENT__COMMENT);
 
 		extendableElementEClass = createEClass(EXTENDABLE_ELEMENT);
-		createEReference(extendableElementEClass, EXTENDABLE_ELEMENT__ANNOTATION);
-		createEReference(extendableElementEClass, EXTENDABLE_ELEMENT__EXTENSION);
+		createEReference(extendableElementEClass, EXTENDABLE_ELEMENT__ANNOTATIONS);
+		createEReference(extendableElementEClass, EXTENDABLE_ELEMENT__EXTENSIONS);
 		createEOperation(extendableElementEClass, EXTENDABLE_ELEMENT___GET_EXTENSION__ECLASS);
 		createEOperation(extendableElementEClass, EXTENDABLE_ELEMENT___PROVIDE_EXTENSION__ECLASS);
 		createEOperation(extendableElementEClass, EXTENDABLE_ELEMENT___GET_ANNOTATION__STRING);
@@ -426,8 +426,8 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		initEAttribute(getCommentableElement_Comment(), ecorePackage.getEString(), "comment", "\"no comment provided\"", 0, 1, CommentableElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(extendableElementEClass, ExtendableElement.class, "ExtendableElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getExtendableElement_Annotation(), ecorePackage.getEAnnotation(), null, "annotation", null, 0, -1, ExtendableElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getExtendableElement_Extension(), this.getExtension(), this.getExtension_ExtendableBase(), "extension", null, 0, -1, ExtendableElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getExtendableElement_Annotations(), ecorePackage.getEAnnotation(), null, "annotations", null, 0, -1, ExtendableElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getExtendableElement_Extensions(), this.getExtension(), this.getExtension_ExtendableBase(), "extensions", null, 0, -1, ExtendableElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		EOperation op = initEOperation(getExtendableElement__GetExtension__EClass(), this.getExtension(), "getExtension", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEClass(), "type", 1, 1, IS_UNIQUE, !IS_ORDERED);
@@ -445,7 +445,7 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		initEReference(getExtension_Base(), ecorePackage.getEObject(), null, "base", null, 1, 1, Extension.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
 		initEReference(getExtension_ModelBase(), ecorePackage.getEModelElement(), null, "modelBase", null, 0, 1, Extension.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
 		initEReference(getExtension_OwningAnnotation(), ecorePackage.getEAnnotation(), null, "owningAnnotation", null, 0, 1, Extension.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
-		initEReference(getExtension_ExtendableBase(), this.getExtendableElement(), this.getExtendableElement_Extension(), "extendableBase", null, 0, 1, Extension.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getExtension_ExtendableBase(), this.getExtendableElement(), this.getExtendableElement_Extensions(), "extendableBase", null, 0, 1, Extension.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(namedElementEClass, NamedElement.class, "NamedElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getNamedElement_Name(), ecorePackage.getEString(), "name", null, 1, 1, NamedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);

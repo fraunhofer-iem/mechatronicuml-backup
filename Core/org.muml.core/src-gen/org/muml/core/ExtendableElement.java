@@ -24,8 +24,8 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.muml.core.ExtendableElement#getAnnotation <em>Annotation</em>}</li>
- *   <li>{@link org.muml.core.ExtendableElement#getExtension <em>Extension</em>}</li>
+ *   <li>{@link org.muml.core.ExtendableElement#getAnnotations <em>Annotations</em>}</li>
+ *   <li>{@link org.muml.core.ExtendableElement#getExtensions <em>Extensions</em>}</li>
  * </ul>
  *
  * @see org.muml.core.CorePackage#getExtendableElement()
@@ -34,22 +34,22 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface ExtendableElement extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Annotation</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Annotations</b></em>' containment reference list.
 	 * The list contents are of type {@link org.eclipse.emf.ecore.EAnnotation}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * Extendable Elements can be annotated by an EAnnotation
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Annotation</em>' containment reference list.
-	 * @see org.muml.core.CorePackage#getExtendableElement_Annotation()
+	 * @return the value of the '<em>Annotations</em>' containment reference list.
+	 * @see org.muml.core.CorePackage#getExtendableElement_Annotations()
 	 * @model containment="true" ordered="false"
 	 * @generated
 	 */
-	EList<EAnnotation> getAnnotation();
+	EList<EAnnotation> getAnnotations();
 
 	/**
-	 * Returns the value of the '<em><b>Extension</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Extensions</b></em>' containment reference list.
 	 * The list contents are of type {@link org.muml.core.Extension}.
 	 * It is bidirectional and its opposite is '{@link org.muml.core.Extension#getExtendableBase <em>Extendable Base</em>}'.
 	 * <!-- begin-user-doc -->
@@ -57,13 +57,13 @@ public interface ExtendableElement extends EObject {
 	 * <!-- begin-model-doc -->
 	 * Extendable Elements can be extended by an Extension.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Extension</em>' containment reference list.
-	 * @see org.muml.core.CorePackage#getExtendableElement_Extension()
+	 * @return the value of the '<em>Extensions</em>' containment reference list.
+	 * @see org.muml.core.CorePackage#getExtendableElement_Extensions()
 	 * @see org.muml.core.Extension#getExtendableBase
 	 * @model opposite="extendableBase" containment="true" ordered="false"
 	 * @generated
 	 */
-	EList<Extension> getExtension();
+	EList<Extension> getExtensions();
 
 	/**
 	 * <!-- begin-user-doc -->

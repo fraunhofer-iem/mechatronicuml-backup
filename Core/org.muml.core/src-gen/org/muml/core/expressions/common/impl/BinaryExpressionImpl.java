@@ -13,7 +13,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.muml.core.expressions.Expression;
 import org.muml.core.expressions.common.BinaryExpression;
-import org.muml.core.expressions.common.CommonPackage;
+import org.muml.core.expressions.common.CommonExpressionsPackage;
 import org.muml.core.expressions.impl.ExpressionImpl;
 
 /**
@@ -68,7 +68,7 @@ public abstract class BinaryExpressionImpl extends ExpressionImpl implements
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CommonPackage.Literals.BINARY_EXPRESSION;
+		return CommonExpressionsPackage.Literals.BINARY_EXPRESSION;
 	}
 
 	/**
@@ -90,7 +90,7 @@ public abstract class BinaryExpressionImpl extends ExpressionImpl implements
 		Expression oldLeftExpression = leftExpression;
 		leftExpression = newLeftExpression;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CommonPackage.BINARY_EXPRESSION__LEFT_EXPRESSION, oldLeftExpression, newLeftExpression);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CommonExpressionsPackage.BINARY_EXPRESSION__LEFT_EXPRESSION, oldLeftExpression, newLeftExpression);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -105,14 +105,14 @@ public abstract class BinaryExpressionImpl extends ExpressionImpl implements
 		if (newLeftExpression != leftExpression) {
 			NotificationChain msgs = null;
 			if (leftExpression != null)
-				msgs = ((InternalEObject)leftExpression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CommonPackage.BINARY_EXPRESSION__LEFT_EXPRESSION, null, msgs);
+				msgs = ((InternalEObject)leftExpression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CommonExpressionsPackage.BINARY_EXPRESSION__LEFT_EXPRESSION, null, msgs);
 			if (newLeftExpression != null)
-				msgs = ((InternalEObject)newLeftExpression).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CommonPackage.BINARY_EXPRESSION__LEFT_EXPRESSION, null, msgs);
+				msgs = ((InternalEObject)newLeftExpression).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CommonExpressionsPackage.BINARY_EXPRESSION__LEFT_EXPRESSION, null, msgs);
 			msgs = basicSetLeftExpression(newLeftExpression, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CommonPackage.BINARY_EXPRESSION__LEFT_EXPRESSION, newLeftExpression, newLeftExpression));
+			eNotify(new ENotificationImpl(this, Notification.SET, CommonExpressionsPackage.BINARY_EXPRESSION__LEFT_EXPRESSION, newLeftExpression, newLeftExpression));
 	}
 
 	/**
@@ -134,7 +134,7 @@ public abstract class BinaryExpressionImpl extends ExpressionImpl implements
 		Expression oldRightExpression = rightExpression;
 		rightExpression = newRightExpression;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CommonPackage.BINARY_EXPRESSION__RIGHT_EXPRESSION, oldRightExpression, newRightExpression);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CommonExpressionsPackage.BINARY_EXPRESSION__RIGHT_EXPRESSION, oldRightExpression, newRightExpression);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -149,14 +149,14 @@ public abstract class BinaryExpressionImpl extends ExpressionImpl implements
 		if (newRightExpression != rightExpression) {
 			NotificationChain msgs = null;
 			if (rightExpression != null)
-				msgs = ((InternalEObject)rightExpression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CommonPackage.BINARY_EXPRESSION__RIGHT_EXPRESSION, null, msgs);
+				msgs = ((InternalEObject)rightExpression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CommonExpressionsPackage.BINARY_EXPRESSION__RIGHT_EXPRESSION, null, msgs);
 			if (newRightExpression != null)
-				msgs = ((InternalEObject)newRightExpression).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CommonPackage.BINARY_EXPRESSION__RIGHT_EXPRESSION, null, msgs);
+				msgs = ((InternalEObject)newRightExpression).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CommonExpressionsPackage.BINARY_EXPRESSION__RIGHT_EXPRESSION, null, msgs);
 			msgs = basicSetRightExpression(newRightExpression, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CommonPackage.BINARY_EXPRESSION__RIGHT_EXPRESSION, newRightExpression, newRightExpression));
+			eNotify(new ENotificationImpl(this, Notification.SET, CommonExpressionsPackage.BINARY_EXPRESSION__RIGHT_EXPRESSION, newRightExpression, newRightExpression));
 	}
 
 	/**
@@ -168,9 +168,9 @@ public abstract class BinaryExpressionImpl extends ExpressionImpl implements
 	public NotificationChain eInverseRemove(InternalEObject otherEnd,
 			int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case CommonPackage.BINARY_EXPRESSION__LEFT_EXPRESSION:
+			case CommonExpressionsPackage.BINARY_EXPRESSION__LEFT_EXPRESSION:
 				return basicSetLeftExpression(null, msgs);
-			case CommonPackage.BINARY_EXPRESSION__RIGHT_EXPRESSION:
+			case CommonExpressionsPackage.BINARY_EXPRESSION__RIGHT_EXPRESSION:
 				return basicSetRightExpression(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -184,9 +184,9 @@ public abstract class BinaryExpressionImpl extends ExpressionImpl implements
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CommonPackage.BINARY_EXPRESSION__LEFT_EXPRESSION:
+			case CommonExpressionsPackage.BINARY_EXPRESSION__LEFT_EXPRESSION:
 				return getLeftExpression();
-			case CommonPackage.BINARY_EXPRESSION__RIGHT_EXPRESSION:
+			case CommonExpressionsPackage.BINARY_EXPRESSION__RIGHT_EXPRESSION:
 				return getRightExpression();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -200,10 +200,10 @@ public abstract class BinaryExpressionImpl extends ExpressionImpl implements
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CommonPackage.BINARY_EXPRESSION__LEFT_EXPRESSION:
+			case CommonExpressionsPackage.BINARY_EXPRESSION__LEFT_EXPRESSION:
 				setLeftExpression((Expression)newValue);
 				return;
-			case CommonPackage.BINARY_EXPRESSION__RIGHT_EXPRESSION:
+			case CommonExpressionsPackage.BINARY_EXPRESSION__RIGHT_EXPRESSION:
 				setRightExpression((Expression)newValue);
 				return;
 		}
@@ -218,10 +218,10 @@ public abstract class BinaryExpressionImpl extends ExpressionImpl implements
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CommonPackage.BINARY_EXPRESSION__LEFT_EXPRESSION:
+			case CommonExpressionsPackage.BINARY_EXPRESSION__LEFT_EXPRESSION:
 				setLeftExpression((Expression)null);
 				return;
-			case CommonPackage.BINARY_EXPRESSION__RIGHT_EXPRESSION:
+			case CommonExpressionsPackage.BINARY_EXPRESSION__RIGHT_EXPRESSION:
 				setRightExpression((Expression)null);
 				return;
 		}
@@ -236,9 +236,9 @@ public abstract class BinaryExpressionImpl extends ExpressionImpl implements
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CommonPackage.BINARY_EXPRESSION__LEFT_EXPRESSION:
+			case CommonExpressionsPackage.BINARY_EXPRESSION__LEFT_EXPRESSION:
 				return leftExpression != null;
-			case CommonPackage.BINARY_EXPRESSION__RIGHT_EXPRESSION:
+			case CommonExpressionsPackage.BINARY_EXPRESSION__RIGHT_EXPRESSION:
 				return rightExpression != null;
 		}
 		return super.eIsSet(featureID);

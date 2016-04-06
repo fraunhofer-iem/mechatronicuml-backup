@@ -23,8 +23,7 @@ public interface CommonExpressionsFactory extends EFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	CommonExpressionsFactory eINSTANCE = org.muml.core.expressions.common.impl.CommonExpressionsFactoryImpl
-			.init();
+	CommonExpressionsFactory eINSTANCE = org.muml.core.expressions.common.impl.CommonExpressionsFactoryImpl.init();
 
 	/**
 	 * Returns a new object of class '<em>Unary Expression</em>'.

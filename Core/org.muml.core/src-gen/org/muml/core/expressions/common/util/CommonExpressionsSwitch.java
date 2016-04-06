@@ -52,7 +52,7 @@ public class CommonExpressionsSwitch<T> extends Switch<T> {
 	 * Checks whether this is a switch for the given package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @parameter ePackage the package in question.
+	 * @param ePackage the package in question.
 	 * @return whether this is a switch for the given package.
 	 * @generated
 	 */
@@ -71,92 +71,64 @@ public class CommonExpressionsSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-		case CommonExpressionsPackage.UNARY_EXPRESSION: {
-			UnaryExpression unaryExpression = (UnaryExpression) theEObject;
-			T result = caseUnaryExpression(unaryExpression);
-			if (result == null)
-				result = caseExpression(unaryExpression);
-			if (result == null)
-				result = caseCommentableElement(unaryExpression);
-			if (result == null)
-				result = caseExtendableElement(unaryExpression);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case CommonExpressionsPackage.BINARY_EXPRESSION: {
-			BinaryExpression binaryExpression = (BinaryExpression) theEObject;
-			T result = caseBinaryExpression(binaryExpression);
-			if (result == null)
-				result = caseExpression(binaryExpression);
-			if (result == null)
-				result = caseCommentableElement(binaryExpression);
-			if (result == null)
-				result = caseExtendableElement(binaryExpression);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case CommonExpressionsPackage.COMPARISON_EXPRESSION: {
-			ComparisonExpression comparisonExpression = (ComparisonExpression) theEObject;
-			T result = caseComparisonExpression(comparisonExpression);
-			if (result == null)
-				result = caseBinaryExpression(comparisonExpression);
-			if (result == null)
-				result = caseExpression(comparisonExpression);
-			if (result == null)
-				result = caseCommentableElement(comparisonExpression);
-			if (result == null)
-				result = caseExtendableElement(comparisonExpression);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case CommonExpressionsPackage.ARITHMETIC_EXPRESSION: {
-			ArithmeticExpression arithmeticExpression = (ArithmeticExpression) theEObject;
-			T result = caseArithmeticExpression(arithmeticExpression);
-			if (result == null)
-				result = caseBinaryExpression(arithmeticExpression);
-			if (result == null)
-				result = caseExpression(arithmeticExpression);
-			if (result == null)
-				result = caseCommentableElement(arithmeticExpression);
-			if (result == null)
-				result = caseExtendableElement(arithmeticExpression);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case CommonExpressionsPackage.LOGICAL_EXPRESSION: {
-			LogicalExpression logicalExpression = (LogicalExpression) theEObject;
-			T result = caseLogicalExpression(logicalExpression);
-			if (result == null)
-				result = caseBinaryExpression(logicalExpression);
-			if (result == null)
-				result = caseExpression(logicalExpression);
-			if (result == null)
-				result = caseCommentableElement(logicalExpression);
-			if (result == null)
-				result = caseExtendableElement(logicalExpression);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case CommonExpressionsPackage.LITERAL_EXPRESSION: {
-			LiteralExpression literalExpression = (LiteralExpression) theEObject;
-			T result = caseLiteralExpression(literalExpression);
-			if (result == null)
-				result = caseExpression(literalExpression);
-			if (result == null)
-				result = caseCommentableElement(literalExpression);
-			if (result == null)
-				result = caseExtendableElement(literalExpression);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		default:
-			return defaultCase(theEObject);
+			case CommonExpressionsPackage.UNARY_EXPRESSION: {
+				UnaryExpression unaryExpression = (UnaryExpression)theEObject;
+				T result = caseUnaryExpression(unaryExpression);
+				if (result == null) result = caseExpression(unaryExpression);
+				if (result == null) result = caseCommentableElement(unaryExpression);
+				if (result == null) result = caseExtendableElement(unaryExpression);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CommonExpressionsPackage.BINARY_EXPRESSION: {
+				BinaryExpression binaryExpression = (BinaryExpression)theEObject;
+				T result = caseBinaryExpression(binaryExpression);
+				if (result == null) result = caseExpression(binaryExpression);
+				if (result == null) result = caseCommentableElement(binaryExpression);
+				if (result == null) result = caseExtendableElement(binaryExpression);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CommonExpressionsPackage.COMPARISON_EXPRESSION: {
+				ComparisonExpression comparisonExpression = (ComparisonExpression)theEObject;
+				T result = caseComparisonExpression(comparisonExpression);
+				if (result == null) result = caseBinaryExpression(comparisonExpression);
+				if (result == null) result = caseExpression(comparisonExpression);
+				if (result == null) result = caseCommentableElement(comparisonExpression);
+				if (result == null) result = caseExtendableElement(comparisonExpression);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CommonExpressionsPackage.ARITHMETIC_EXPRESSION: {
+				ArithmeticExpression arithmeticExpression = (ArithmeticExpression)theEObject;
+				T result = caseArithmeticExpression(arithmeticExpression);
+				if (result == null) result = caseBinaryExpression(arithmeticExpression);
+				if (result == null) result = caseExpression(arithmeticExpression);
+				if (result == null) result = caseCommentableElement(arithmeticExpression);
+				if (result == null) result = caseExtendableElement(arithmeticExpression);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CommonExpressionsPackage.LOGICAL_EXPRESSION: {
+				LogicalExpression logicalExpression = (LogicalExpression)theEObject;
+				T result = caseLogicalExpression(logicalExpression);
+				if (result == null) result = caseBinaryExpression(logicalExpression);
+				if (result == null) result = caseExpression(logicalExpression);
+				if (result == null) result = caseCommentableElement(logicalExpression);
+				if (result == null) result = caseExtendableElement(logicalExpression);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CommonExpressionsPackage.LITERAL_EXPRESSION: {
+				LiteralExpression literalExpression = (LiteralExpression)theEObject;
+				T result = caseLiteralExpression(literalExpression);
+				if (result == null) result = caseExpression(literalExpression);
+				if (result == null) result = caseCommentableElement(literalExpression);
+				if (result == null) result = caseExtendableElement(literalExpression);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			default: return defaultCase(theEObject);
 		}
 	}
 

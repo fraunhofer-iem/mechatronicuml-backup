@@ -9,7 +9,7 @@ package org.muml.core.expressions.common.impl;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.muml.core.expressions.common.CommonPackage;
+import org.muml.core.expressions.common.CommonExpressionsPackage;
 import org.muml.core.expressions.common.ComparingOperator;
 import org.muml.core.expressions.common.ComparisonExpression;
 
@@ -64,7 +64,7 @@ public class ComparisonExpressionImpl extends BinaryExpressionImpl implements
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CommonPackage.Literals.COMPARISON_EXPRESSION;
+		return CommonExpressionsPackage.Literals.COMPARISON_EXPRESSION;
 	}
 
 	/**
@@ -85,7 +85,7 @@ public class ComparisonExpressionImpl extends BinaryExpressionImpl implements
 		ComparingOperator oldOperator = operator;
 		operator = newOperator == null ? OPERATOR_EDEFAULT : newOperator;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CommonPackage.COMPARISON_EXPRESSION__OPERATOR, oldOperator, operator));
+			eNotify(new ENotificationImpl(this, Notification.SET, CommonExpressionsPackage.COMPARISON_EXPRESSION__OPERATOR, oldOperator, operator));
 	}
 
 	/**
@@ -96,7 +96,7 @@ public class ComparisonExpressionImpl extends BinaryExpressionImpl implements
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CommonPackage.COMPARISON_EXPRESSION__OPERATOR:
+			case CommonExpressionsPackage.COMPARISON_EXPRESSION__OPERATOR:
 				return getOperator();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -110,7 +110,7 @@ public class ComparisonExpressionImpl extends BinaryExpressionImpl implements
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CommonPackage.COMPARISON_EXPRESSION__OPERATOR:
+			case CommonExpressionsPackage.COMPARISON_EXPRESSION__OPERATOR:
 				setOperator((ComparingOperator)newValue);
 				return;
 		}
@@ -125,7 +125,7 @@ public class ComparisonExpressionImpl extends BinaryExpressionImpl implements
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CommonPackage.COMPARISON_EXPRESSION__OPERATOR:
+			case CommonExpressionsPackage.COMPARISON_EXPRESSION__OPERATOR:
 				setOperator(OPERATOR_EDEFAULT);
 				return;
 		}
@@ -140,7 +140,7 @@ public class ComparisonExpressionImpl extends BinaryExpressionImpl implements
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CommonPackage.COMPARISON_EXPRESSION__OPERATOR:
+			case CommonExpressionsPackage.COMPARISON_EXPRESSION__OPERATOR:
 				return operator != OPERATOR_EDEFAULT;
 		}
 		return super.eIsSet(featureID);

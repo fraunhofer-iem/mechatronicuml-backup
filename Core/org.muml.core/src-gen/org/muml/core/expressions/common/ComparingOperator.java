@@ -24,7 +24,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * left hand side of a ComparisonExpression with a regular expression contained in the 
  * right hand side of the ComparisonExpression.
  * <!-- end-model-doc -->
- * @see org.muml.core.expressions.common.CommonPackage#getComparingOperator()
+ * @see org.muml.core.expressions.common.CommonExpressionsPackage#getComparingOperator()
  * @model
  * @generated
  */

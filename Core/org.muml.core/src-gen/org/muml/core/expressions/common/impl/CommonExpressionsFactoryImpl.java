@@ -30,12 +30,12 @@ public class CommonExpressionsFactoryImpl extends EFactoryImpl implements
 	 */
 	public static CommonExpressionsFactory init() {
 		try {
-			CommonExpressionsFactory theCommonExpressionsFactory = (CommonExpressionsFactory) EPackage.Registry.INSTANCE
-					.getEFactory(CommonExpressionsPackage.eNS_URI);
+			CommonExpressionsFactory theCommonExpressionsFactory = (CommonExpressionsFactory)EPackage.Registry.INSTANCE.getEFactory(CommonExpressionsPackage.eNS_URI);
 			if (theCommonExpressionsFactory != null) {
 				return theCommonExpressionsFactory;
 			}
-		} catch (Exception exception) {
+		}
+		catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new CommonExpressionsFactoryImpl();
@@ -59,19 +59,13 @@ public class CommonExpressionsFactoryImpl extends EFactoryImpl implements
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-		case CommonExpressionsPackage.UNARY_EXPRESSION:
-			return createUnaryExpression();
-		case CommonExpressionsPackage.COMPARISON_EXPRESSION:
-			return createComparisonExpression();
-		case CommonExpressionsPackage.ARITHMETIC_EXPRESSION:
-			return createArithmeticExpression();
-		case CommonExpressionsPackage.LOGICAL_EXPRESSION:
-			return createLogicalExpression();
-		case CommonExpressionsPackage.LITERAL_EXPRESSION:
-			return createLiteralExpression();
-		default:
-			throw new IllegalArgumentException("The class '" + eClass.getName()
-					+ "' is not a valid classifier");
+			case CommonExpressionsPackage.UNARY_EXPRESSION: return createUnaryExpression();
+			case CommonExpressionsPackage.COMPARISON_EXPRESSION: return createComparisonExpression();
+			case CommonExpressionsPackage.ARITHMETIC_EXPRESSION: return createArithmeticExpression();
+			case CommonExpressionsPackage.LOGICAL_EXPRESSION: return createLogicalExpression();
+			case CommonExpressionsPackage.LITERAL_EXPRESSION: return createLiteralExpression();
+			default:
+				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 
@@ -83,17 +77,16 @@ public class CommonExpressionsFactoryImpl extends EFactoryImpl implements
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
-		case CommonExpressionsPackage.LOGIC_OPERATOR:
-			return createLogicOperatorFromString(eDataType, initialValue);
-		case CommonExpressionsPackage.COMPARING_OPERATOR:
-			return createComparingOperatorFromString(eDataType, initialValue);
-		case CommonExpressionsPackage.ARITHMETIC_OPERATOR:
-			return createArithmeticOperatorFromString(eDataType, initialValue);
-		case CommonExpressionsPackage.UNARY_OPERATOR:
-			return createUnaryOperatorFromString(eDataType, initialValue);
-		default:
-			throw new IllegalArgumentException("The datatype '"
-					+ eDataType.getName() + "' is not a valid classifier");
+			case CommonExpressionsPackage.LOGIC_OPERATOR:
+				return createLogicOperatorFromString(eDataType, initialValue);
+			case CommonExpressionsPackage.COMPARING_OPERATOR:
+				return createComparingOperatorFromString(eDataType, initialValue);
+			case CommonExpressionsPackage.ARITHMETIC_OPERATOR:
+				return createArithmeticOperatorFromString(eDataType, initialValue);
+			case CommonExpressionsPackage.UNARY_OPERATOR:
+				return createUnaryOperatorFromString(eDataType, initialValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
@@ -105,17 +98,16 @@ public class CommonExpressionsFactoryImpl extends EFactoryImpl implements
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
-		case CommonExpressionsPackage.LOGIC_OPERATOR:
-			return convertLogicOperatorToString(eDataType, instanceValue);
-		case CommonExpressionsPackage.COMPARING_OPERATOR:
-			return convertComparingOperatorToString(eDataType, instanceValue);
-		case CommonExpressionsPackage.ARITHMETIC_OPERATOR:
-			return convertArithmeticOperatorToString(eDataType, instanceValue);
-		case CommonExpressionsPackage.UNARY_OPERATOR:
-			return convertUnaryOperatorToString(eDataType, instanceValue);
-		default:
-			throw new IllegalArgumentException("The datatype '"
-					+ eDataType.getName() + "' is not a valid classifier");
+			case CommonExpressionsPackage.LOGIC_OPERATOR:
+				return convertLogicOperatorToString(eDataType, instanceValue);
+			case CommonExpressionsPackage.COMPARING_OPERATOR:
+				return convertComparingOperatorToString(eDataType, instanceValue);
+			case CommonExpressionsPackage.ARITHMETIC_OPERATOR:
+				return convertArithmeticOperatorToString(eDataType, instanceValue);
+			case CommonExpressionsPackage.UNARY_OPERATOR:
+				return convertUnaryOperatorToString(eDataType, instanceValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
@@ -177,10 +169,7 @@ public class CommonExpressionsFactoryImpl extends EFactoryImpl implements
 	public LogicOperator createLogicOperatorFromString(EDataType eDataType,
 			String initialValue) {
 		LogicOperator result = LogicOperator.get(initialValue);
-		if (result == null)
-			throw new IllegalArgumentException("The value '" + initialValue
-					+ "' is not a valid enumerator of '" + eDataType.getName()
-					+ "'");
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
 		return result;
 	}
 
@@ -202,10 +191,7 @@ public class CommonExpressionsFactoryImpl extends EFactoryImpl implements
 	public ComparingOperator createComparingOperatorFromString(
 			EDataType eDataType, String initialValue) {
 		ComparingOperator result = ComparingOperator.get(initialValue);
-		if (result == null)
-			throw new IllegalArgumentException("The value '" + initialValue
-					+ "' is not a valid enumerator of '" + eDataType.getName()
-					+ "'");
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
 		return result;
 	}
 
@@ -227,10 +213,7 @@ public class CommonExpressionsFactoryImpl extends EFactoryImpl implements
 	public ArithmeticOperator createArithmeticOperatorFromString(
 			EDataType eDataType, String initialValue) {
 		ArithmeticOperator result = ArithmeticOperator.get(initialValue);
-		if (result == null)
-			throw new IllegalArgumentException("The value '" + initialValue
-					+ "' is not a valid enumerator of '" + eDataType.getName()
-					+ "'");
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
 		return result;
 	}
 
@@ -252,10 +235,7 @@ public class CommonExpressionsFactoryImpl extends EFactoryImpl implements
 	public UnaryOperator createUnaryOperatorFromString(EDataType eDataType,
 			String initialValue) {
 		UnaryOperator result = UnaryOperator.get(initialValue);
-		if (result == null)
-			throw new IllegalArgumentException("The value '" + initialValue
-					+ "' is not a valid enumerator of '" + eDataType.getName()
-					+ "'");
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
 		return result;
 	}
 
@@ -275,7 +255,7 @@ public class CommonExpressionsFactoryImpl extends EFactoryImpl implements
 	 * @generated
 	 */
 	public CommonExpressionsPackage getCommonExpressionsPackage() {
-		return (CommonExpressionsPackage) getEPackage();
+		return (CommonExpressionsPackage)getEPackage();
 	}
 
 	/**

@@ -25,7 +25,7 @@ import org.muml.core.expressions.Expression;
  *   <li>{@link org.muml.core.expressions.common.UnaryExpression#getOperator <em>Operator</em>}</li>
  * </ul>
  *
- * @see org.muml.core.expressions.common.CommonPackage#getUnaryExpression()
+ * @see org.muml.core.expressions.common.CommonExpressionsPackage#getUnaryExpression()
  * @model
  * @generated
  */
@@ -39,7 +39,7 @@ public interface UnaryExpression extends Expression {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Enclosed Expression</em>' containment reference.
 	 * @see #setEnclosedExpression(Expression)
-	 * @see org.muml.core.expressions.common.CommonPackage#getUnaryExpression_EnclosedExpression()
+	 * @see org.muml.core.expressions.common.CommonExpressionsPackage#getUnaryExpression_EnclosedExpression()
 	 * @model containment="true" required="true" ordered="false"
 	 * @generated
 	 */
@@ -70,7 +70,7 @@ public interface UnaryExpression extends Expression {
 	 * @return the value of the '<em>Operator</em>' attribute.
 	 * @see org.muml.core.expressions.common.UnaryOperator
 	 * @see #setOperator(UnaryOperator)
-	 * @see org.muml.core.expressions.common.CommonPackage#getUnaryExpression_Operator()
+	 * @see org.muml.core.expressions.common.CommonExpressionsPackage#getUnaryExpression_Operator()
 	 * @model required="true"
 	 * @generated
 	 */

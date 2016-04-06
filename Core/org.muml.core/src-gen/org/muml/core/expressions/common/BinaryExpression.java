@@ -25,7 +25,7 @@ import org.muml.core.expressions.Expression;
  *   <li>{@link org.muml.core.expressions.common.BinaryExpression#getRightExpression <em>Right Expression</em>}</li>
  * </ul>
  *
- * @see org.muml.core.expressions.common.CommonPackage#getBinaryExpression()
+ * @see org.muml.core.expressions.common.CommonExpressionsPackage#getBinaryExpression()
  * @model abstract="true"
  * @generated
  */
@@ -39,7 +39,7 @@ public interface BinaryExpression extends Expression {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Left Expression</em>' containment reference.
 	 * @see #setLeftExpression(Expression)
-	 * @see org.muml.core.expressions.common.CommonPackage#getBinaryExpression_LeftExpression()
+	 * @see org.muml.core.expressions.common.CommonExpressionsPackage#getBinaryExpression_LeftExpression()
 	 * @model containment="true" required="true" ordered="false"
 	 * @generated
 	 */
@@ -64,7 +64,7 @@ public interface BinaryExpression extends Expression {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Right Expression</em>' containment reference.
 	 * @see #setRightExpression(Expression)
-	 * @see org.muml.core.expressions.common.CommonPackage#getBinaryExpression_RightExpression()
+	 * @see org.muml.core.expressions.common.CommonExpressionsPackage#getBinaryExpression_RightExpression()
 	 * @model containment="true" required="true" ordered="false"
 	 * @generated
 	 */

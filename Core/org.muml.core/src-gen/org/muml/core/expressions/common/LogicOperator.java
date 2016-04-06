@@ -20,7 +20,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * <!-- begin-model-doc -->
  * Defines the operators for binary logic expressions.
  * <!-- end-model-doc -->
- * @see org.muml.core.expressions.common.CommonPackage#getLogicOperator()
+ * @see org.muml.core.expressions.common.CommonExpressionsPackage#getLogicOperator()
  * @model
  * @generated
  */

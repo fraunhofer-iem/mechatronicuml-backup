@@ -58,7 +58,7 @@ public class CommonExpressionsAdapterFactory extends AdapterFactoryImpl {
 			return true;
 		}
 		if (object instanceof EObject) {
-			return ((EObject) object).eClass().getEPackage() == modelPackage;
+			return ((EObject)object).eClass().getEPackage() == modelPackage;
 		}
 		return false;
 	}
@@ -70,56 +70,47 @@ public class CommonExpressionsAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	protected CommonExpressionsSwitch<Adapter> modelSwitch = new CommonExpressionsSwitch<Adapter>() {
-		@Override
-		public Adapter caseUnaryExpression(UnaryExpression object) {
-			return createUnaryExpressionAdapter();
-		}
-
-		@Override
-		public Adapter caseBinaryExpression(BinaryExpression object) {
-			return createBinaryExpressionAdapter();
-		}
-
-		@Override
-		public Adapter caseComparisonExpression(ComparisonExpression object) {
-			return createComparisonExpressionAdapter();
-		}
-
-		@Override
-		public Adapter caseArithmeticExpression(ArithmeticExpression object) {
-			return createArithmeticExpressionAdapter();
-		}
-
-		@Override
-		public Adapter caseLogicalExpression(LogicalExpression object) {
-			return createLogicalExpressionAdapter();
-		}
-
-		@Override
-		public Adapter caseLiteralExpression(LiteralExpression object) {
-			return createLiteralExpressionAdapter();
-		}
-
-		@Override
-		public Adapter caseExtendableElement(ExtendableElement object) {
-			return createExtendableElementAdapter();
-		}
-
-		@Override
-		public Adapter caseCommentableElement(CommentableElement object) {
-			return createCommentableElementAdapter();
-		}
-
-		@Override
-		public Adapter caseExpression(Expression object) {
-			return createExpressionAdapter();
-		}
-
-		@Override
-		public Adapter defaultCase(EObject object) {
-			return createEObjectAdapter();
-		}
-	};
+			@Override
+			public Adapter caseUnaryExpression(UnaryExpression object) {
+				return createUnaryExpressionAdapter();
+			}
+			@Override
+			public Adapter caseBinaryExpression(BinaryExpression object) {
+				return createBinaryExpressionAdapter();
+			}
+			@Override
+			public Adapter caseComparisonExpression(ComparisonExpression object) {
+				return createComparisonExpressionAdapter();
+			}
+			@Override
+			public Adapter caseArithmeticExpression(ArithmeticExpression object) {
+				return createArithmeticExpressionAdapter();
+			}
+			@Override
+			public Adapter caseLogicalExpression(LogicalExpression object) {
+				return createLogicalExpressionAdapter();
+			}
+			@Override
+			public Adapter caseLiteralExpression(LiteralExpression object) {
+				return createLiteralExpressionAdapter();
+			}
+			@Override
+			public Adapter caseExtendableElement(ExtendableElement object) {
+				return createExtendableElementAdapter();
+			}
+			@Override
+			public Adapter caseCommentableElement(CommentableElement object) {
+				return createCommentableElementAdapter();
+			}
+			@Override
+			public Adapter caseExpression(Expression object) {
+				return createExpressionAdapter();
+			}
+			@Override
+			public Adapter defaultCase(EObject object) {
+				return createEObjectAdapter();
+			}
+		};
 
 	/**
 	 * Creates an adapter for the <code>target</code>.
@@ -131,7 +122,7 @@ public class CommonExpressionsAdapterFactory extends AdapterFactoryImpl {
 	 */
 	@Override
 	public Adapter createAdapter(Notifier target) {
-		return modelSwitch.doSwitch((EObject) target);
+		return modelSwitch.doSwitch((EObject)target);
 	}
 
 	/**

@@ -25,6 +25,9 @@ import org.muml.core.expressions.ExpressionsPackage;
  *   <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
+ * <!-- begin-model-doc -->
+ * The package for all common expressions that can be used for modeling activities and patterns.
+ * <!-- end-model-doc -->
  * @see org.muml.core.expressions.common.CommonExpressionsFactory
  * @model kind="package"
  *        annotation="http://www.eclipse.org/emf/2002/Ecore invocationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL' settingDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL' validationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL'"
@@ -45,7 +48,7 @@ public interface CommonExpressionsPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.storydriven.org/core/expressions/common/0.3.1";
+	String eNS_URI = "http://www.muml.org/core/expressions/common/1.0.0";
 
 	/**
 	 * The package namespace name.
@@ -61,8 +64,7 @@ public interface CommonExpressionsPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	CommonExpressionsPackage eINSTANCE = org.muml.core.expressions.common.impl.CommonExpressionsPackageImpl
-			.init();
+	CommonExpressionsPackage eINSTANCE = org.muml.core.expressions.common.impl.CommonExpressionsPackageImpl.init();
 
 	/**
 	 * The meta object id for the '{@link org.muml.core.expressions.common.impl.UnaryExpressionImpl <em>Unary Expression</em>}' class.
@@ -75,22 +77,22 @@ public interface CommonExpressionsPackage extends EPackage {
 	int UNARY_EXPRESSION = 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int UNARY_EXPRESSION__ANNOTATION = ExpressionsPackage.EXPRESSION__ANNOTATION;
+	int UNARY_EXPRESSION__ANNOTATIONS = ExpressionsPackage.EXPRESSION__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int UNARY_EXPRESSION__EXTENSION = ExpressionsPackage.EXPRESSION__EXTENSION;
+	int UNARY_EXPRESSION__EXTENSIONS = ExpressionsPackage.EXPRESSION__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -319,22 +321,22 @@ public interface CommonExpressionsPackage extends EPackage {
 	int BINARY_EXPRESSION = 1;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BINARY_EXPRESSION__ANNOTATION = ExpressionsPackage.EXPRESSION__ANNOTATION;
+	int BINARY_EXPRESSION__ANNOTATIONS = ExpressionsPackage.EXPRESSION__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BINARY_EXPRESSION__EXTENSION = ExpressionsPackage.EXPRESSION__EXTENSION;
+	int BINARY_EXPRESSION__EXTENSIONS = ExpressionsPackage.EXPRESSION__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -563,22 +565,22 @@ public interface CommonExpressionsPackage extends EPackage {
 	int COMPARISON_EXPRESSION = 2;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPARISON_EXPRESSION__ANNOTATION = BINARY_EXPRESSION__ANNOTATION;
+	int COMPARISON_EXPRESSION__ANNOTATIONS = BINARY_EXPRESSION__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPARISON_EXPRESSION__EXTENSION = BINARY_EXPRESSION__EXTENSION;
+	int COMPARISON_EXPRESSION__EXTENSIONS = BINARY_EXPRESSION__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -816,22 +818,22 @@ public interface CommonExpressionsPackage extends EPackage {
 	int ARITHMETIC_EXPRESSION = 3;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ARITHMETIC_EXPRESSION__ANNOTATION = BINARY_EXPRESSION__ANNOTATION;
+	int ARITHMETIC_EXPRESSION__ANNOTATIONS = BINARY_EXPRESSION__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ARITHMETIC_EXPRESSION__EXTENSION = BINARY_EXPRESSION__EXTENSION;
+	int ARITHMETIC_EXPRESSION__EXTENSIONS = BINARY_EXPRESSION__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -1069,22 +1071,22 @@ public interface CommonExpressionsPackage extends EPackage {
 	int LOGICAL_EXPRESSION = 4;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LOGICAL_EXPRESSION__ANNOTATION = BINARY_EXPRESSION__ANNOTATION;
+	int LOGICAL_EXPRESSION__ANNOTATIONS = BINARY_EXPRESSION__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LOGICAL_EXPRESSION__EXTENSION = BINARY_EXPRESSION__EXTENSION;
+	int LOGICAL_EXPRESSION__EXTENSIONS = BINARY_EXPRESSION__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -1322,22 +1324,22 @@ public interface CommonExpressionsPackage extends EPackage {
 	int LITERAL_EXPRESSION = 5;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LITERAL_EXPRESSION__ANNOTATION = ExpressionsPackage.EXPRESSION__ANNOTATION;
+	int LITERAL_EXPRESSION__ANNOTATIONS = ExpressionsPackage.EXPRESSION__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LITERAL_EXPRESSION__EXTENSION = ExpressionsPackage.EXPRESSION__EXTENSION;
+	int LITERAL_EXPRESSION__EXTENSIONS = ExpressionsPackage.EXPRESSION__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -1813,8 +1815,7 @@ public interface CommonExpressionsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference UNARY_EXPRESSION__ENCLOSED_EXPRESSION = eINSTANCE
-				.getUnaryExpression_EnclosedExpression();
+		EReference UNARY_EXPRESSION__ENCLOSED_EXPRESSION = eINSTANCE.getUnaryExpression_EnclosedExpression();
 
 		/**
 		 * The meta object literal for the '<em><b>Operator</b></em>' attribute feature.
@@ -1822,8 +1823,7 @@ public interface CommonExpressionsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute UNARY_EXPRESSION__OPERATOR = eINSTANCE
-				.getUnaryExpression_Operator();
+		EAttribute UNARY_EXPRESSION__OPERATOR = eINSTANCE.getUnaryExpression_Operator();
 
 		/**
 		 * The meta object literal for the '{@link org.muml.core.expressions.common.impl.BinaryExpressionImpl <em>Binary Expression</em>}' class.
@@ -1841,8 +1841,7 @@ public interface CommonExpressionsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference BINARY_EXPRESSION__LEFT_EXPRESSION = eINSTANCE
-				.getBinaryExpression_LeftExpression();
+		EReference BINARY_EXPRESSION__LEFT_EXPRESSION = eINSTANCE.getBinaryExpression_LeftExpression();
 
 		/**
 		 * The meta object literal for the '<em><b>Right Expression</b></em>' containment reference feature.
@@ -1850,8 +1849,7 @@ public interface CommonExpressionsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference BINARY_EXPRESSION__RIGHT_EXPRESSION = eINSTANCE
-				.getBinaryExpression_RightExpression();
+		EReference BINARY_EXPRESSION__RIGHT_EXPRESSION = eINSTANCE.getBinaryExpression_RightExpression();
 
 		/**
 		 * The meta object literal for the '{@link org.muml.core.expressions.common.impl.ComparisonExpressionImpl <em>Comparison Expression</em>}' class.
@@ -1869,8 +1867,7 @@ public interface CommonExpressionsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute COMPARISON_EXPRESSION__OPERATOR = eINSTANCE
-				.getComparisonExpression_Operator();
+		EAttribute COMPARISON_EXPRESSION__OPERATOR = eINSTANCE.getComparisonExpression_Operator();
 
 		/**
 		 * The meta object literal for the '{@link org.muml.core.expressions.common.impl.ArithmeticExpressionImpl <em>Arithmetic Expression</em>}' class.
@@ -1888,8 +1885,7 @@ public interface CommonExpressionsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ARITHMETIC_EXPRESSION__OPERATOR = eINSTANCE
-				.getArithmeticExpression_Operator();
+		EAttribute ARITHMETIC_EXPRESSION__OPERATOR = eINSTANCE.getArithmeticExpression_Operator();
 
 		/**
 		 * The meta object literal for the '{@link org.muml.core.expressions.common.impl.LogicalExpressionImpl <em>Logical Expression</em>}' class.
@@ -1907,8 +1903,7 @@ public interface CommonExpressionsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute LOGICAL_EXPRESSION__OPERATOR = eINSTANCE
-				.getLogicalExpression_Operator();
+		EAttribute LOGICAL_EXPRESSION__OPERATOR = eINSTANCE.getLogicalExpression_Operator();
 
 		/**
 		 * The meta object literal for the '{@link org.muml.core.expressions.common.impl.LiteralExpressionImpl <em>Literal Expression</em>}' class.
@@ -1926,8 +1921,7 @@ public interface CommonExpressionsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute LITERAL_EXPRESSION__VALUE = eINSTANCE
-				.getLiteralExpression_Value();
+		EAttribute LITERAL_EXPRESSION__VALUE = eINSTANCE.getLiteralExpression_Value();
 
 		/**
 		 * The meta object literal for the '{@link org.muml.core.expressions.common.LogicOperator <em>Logic Operator</em>}' enum.

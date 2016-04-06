@@ -9,7 +9,7 @@ package org.muml.core.expressions.common.impl;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.muml.core.expressions.common.CommonPackage;
+import org.muml.core.expressions.common.CommonExpressionsPackage;
 import org.muml.core.expressions.common.LiteralExpression;
 import org.muml.core.expressions.impl.ExpressionImpl;
 
@@ -64,7 +64,7 @@ public class LiteralExpressionImpl extends ExpressionImpl implements
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CommonPackage.Literals.LITERAL_EXPRESSION;
+		return CommonExpressionsPackage.Literals.LITERAL_EXPRESSION;
 	}
 
 	/**
@@ -85,7 +85,7 @@ public class LiteralExpressionImpl extends ExpressionImpl implements
 		String oldValue = value;
 		value = newValue;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CommonPackage.LITERAL_EXPRESSION__VALUE, oldValue, value));
+			eNotify(new ENotificationImpl(this, Notification.SET, CommonExpressionsPackage.LITERAL_EXPRESSION__VALUE, oldValue, value));
 	}
 
 	/**
@@ -96,7 +96,7 @@ public class LiteralExpressionImpl extends ExpressionImpl implements
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CommonPackage.LITERAL_EXPRESSION__VALUE:
+			case CommonExpressionsPackage.LITERAL_EXPRESSION__VALUE:
 				return getValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -110,7 +110,7 @@ public class LiteralExpressionImpl extends ExpressionImpl implements
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CommonPackage.LITERAL_EXPRESSION__VALUE:
+			case CommonExpressionsPackage.LITERAL_EXPRESSION__VALUE:
 				setValue((String)newValue);
 				return;
 		}
@@ -125,7 +125,7 @@ public class LiteralExpressionImpl extends ExpressionImpl implements
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CommonPackage.LITERAL_EXPRESSION__VALUE:
+			case CommonExpressionsPackage.LITERAL_EXPRESSION__VALUE:
 				setValue(VALUE_EDEFAULT);
 				return;
 		}
@@ -140,7 +140,7 @@ public class LiteralExpressionImpl extends ExpressionImpl implements
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CommonPackage.LITERAL_EXPRESSION__VALUE:
+			case CommonExpressionsPackage.LITERAL_EXPRESSION__VALUE:
 				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
 		}
 		return super.eIsSet(featureID);
