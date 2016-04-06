@@ -1,0 +1,1683 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:mtl="http://www.eclipse.org/acceleo/mtl/3.0" xmlns:ocl.ecore="http://www.eclipse.org/ocl/1.1.0/Ecore">
+  <mtl:Module name="expression_queries" nsURI="org::muml::codegen::c::actionlanguage::expression_queries" endHeaderPosition="509">
+    <input>
+      <takesTypesFrom href="http://www.fujaba.de/muml/connector/0.4.0#/"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.fujaba.de/muml/behavior/0.4.0#/"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.storydriven.org/core/0.3.1#/"/>
+      <takesTypesFrom href="http://www.storydriven.org/core/0.3.1#//expressions"/>
+      <takesTypesFrom href="http://www.storydriven.org/core/0.3.1#//expressions/common"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.fujaba.de/muml/actionlanguage/0.4.0#/"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.fujaba.de/muml/msgtype/0.4.0#/"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.fujaba.de/muml/types/0.4.0#/"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.fujaba.de/modelinstance/0.4.0#/"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.fujaba.de/muml/component/0.4.0#/"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.fujaba.de/muml/instance/0.4.0#/"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#/"/>
+      <takesTypesFrom href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//one_to_n_schemata"/>
+    </input>
+    <imports href="../queries/stringQueries.emtl#/0"/>
+    <ownedModuleElement xsi:type="mtl:Query" name="getComparingOperator" visibility="Public">
+      <documentation xsi:type="mtl:ModuleElementDocumentation">
+        <body startPosition="571" endPosition="672" value="&#xA;Returns the operator of a comparing operator&#xA;@param comparingOperator the comparing operator&#xA;&#xA;"/>
+        <parametersDocumentation name="comparingOperator">
+          <body value=" the comparing operator"/>
+        </parametersDocumentation>
+      </documentation>
+      <parameter name="comparingOperator">
+        <eType xsi:type="ecore:EEnum" href="http://www.storydriven.org/core/0.3.1#//expressions/common/ComparingOperator"/>
+      </parameter>
+      <expression xsi:type="ocl.ecore:IfExp">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <condition xsi:type="ocl.ecore:OperationCallExp">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+          <source xsi:type="ocl.ecore:VariableExp" name="comparingOperator" referredVariable="/0/getComparingOperator/comparingOperator">
+            <eType xsi:type="ecore:EEnum" href="http://www.storydriven.org/core/0.3.1#//expressions/common/ComparingOperator"/>
+          </source>
+          <argument xsi:type="ocl.ecore:EnumLiteralExp">
+            <eType xsi:type="ecore:EEnum" href="http://www.storydriven.org/core/0.3.1#//expressions/common/ComparingOperator"/>
+            <referredEnumLiteral xsi:type="ecore:EEnumLiteral" href="http://www.storydriven.org/core/0.3.1#//expressions/common/ComparingOperator/LESS"/>
+          </argument>
+          <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/="/>
+        </condition>
+        <thenExpression xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&lt;">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </thenExpression>
+        <elseExpression xsi:type="ocl.ecore:IfExp">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <condition xsi:type="ocl.ecore:OperationCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+            <source xsi:type="ocl.ecore:VariableExp" name="comparingOperator" referredVariable="/0/getComparingOperator/comparingOperator">
+              <eType xsi:type="ecore:EEnum" href="http://www.storydriven.org/core/0.3.1#//expressions/common/ComparingOperator"/>
+            </source>
+            <argument xsi:type="ocl.ecore:EnumLiteralExp">
+              <eType xsi:type="ecore:EEnum" href="http://www.storydriven.org/core/0.3.1#//expressions/common/ComparingOperator"/>
+              <referredEnumLiteral xsi:type="ecore:EEnumLiteral" href="http://www.storydriven.org/core/0.3.1#//expressions/common/ComparingOperator/LESS_OR_EQUAL"/>
+            </argument>
+            <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/="/>
+          </condition>
+          <thenExpression xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&lt;=">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          </thenExpression>
+          <elseExpression xsi:type="ocl.ecore:IfExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <condition xsi:type="ocl.ecore:OperationCallExp">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="comparingOperator" referredVariable="/0/getComparingOperator/comparingOperator">
+                <eType xsi:type="ecore:EEnum" href="http://www.storydriven.org/core/0.3.1#//expressions/common/ComparingOperator"/>
+              </source>
+              <argument xsi:type="ocl.ecore:EnumLiteralExp">
+                <eType xsi:type="ecore:EEnum" href="http://www.storydriven.org/core/0.3.1#//expressions/common/ComparingOperator"/>
+                <referredEnumLiteral xsi:type="ecore:EEnumLiteral" href="http://www.storydriven.org/core/0.3.1#//expressions/common/ComparingOperator/GREATER"/>
+              </argument>
+              <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/="/>
+            </condition>
+            <thenExpression xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=">">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            </thenExpression>
+            <elseExpression xsi:type="ocl.ecore:IfExp">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              <condition xsi:type="ocl.ecore:OperationCallExp">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                <source xsi:type="ocl.ecore:VariableExp" name="comparingOperator" referredVariable="/0/getComparingOperator/comparingOperator">
+                  <eType xsi:type="ecore:EEnum" href="http://www.storydriven.org/core/0.3.1#//expressions/common/ComparingOperator"/>
+                </source>
+                <argument xsi:type="ocl.ecore:EnumLiteralExp">
+                  <eType xsi:type="ecore:EEnum" href="http://www.storydriven.org/core/0.3.1#//expressions/common/ComparingOperator"/>
+                  <referredEnumLiteral xsi:type="ecore:EEnumLiteral" href="http://www.storydriven.org/core/0.3.1#//expressions/common/ComparingOperator/GREATER_OR_EQUAL"/>
+                </argument>
+                <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/="/>
+              </condition>
+              <thenExpression xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=">=">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              </thenExpression>
+              <elseExpression xsi:type="ocl.ecore:IfExp">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                <condition xsi:type="ocl.ecore:OperationCallExp">
+                  <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                  <source xsi:type="ocl.ecore:VariableExp" name="comparingOperator" referredVariable="/0/getComparingOperator/comparingOperator">
+                    <eType xsi:type="ecore:EEnum" href="http://www.storydriven.org/core/0.3.1#//expressions/common/ComparingOperator"/>
+                  </source>
+                  <argument xsi:type="ocl.ecore:EnumLiteralExp">
+                    <eType xsi:type="ecore:EEnum" href="http://www.storydriven.org/core/0.3.1#//expressions/common/ComparingOperator"/>
+                    <referredEnumLiteral xsi:type="ecore:EEnumLiteral" href="http://www.storydriven.org/core/0.3.1#//expressions/common/ComparingOperator/EQUAL"/>
+                  </argument>
+                  <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/="/>
+                </condition>
+                <thenExpression xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="==">
+                  <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                </thenExpression>
+                <elseExpression xsi:type="ocl.ecore:IfExp">
+                  <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                  <condition xsi:type="ocl.ecore:OperationCallExp">
+                    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                    <source xsi:type="ocl.ecore:VariableExp" name="comparingOperator" referredVariable="/0/getComparingOperator/comparingOperator">
+                      <eType xsi:type="ecore:EEnum" href="http://www.storydriven.org/core/0.3.1#//expressions/common/ComparingOperator"/>
+                    </source>
+                    <argument xsi:type="ocl.ecore:EnumLiteralExp">
+                      <eType xsi:type="ecore:EEnum" href="http://www.storydriven.org/core/0.3.1#//expressions/common/ComparingOperator"/>
+                      <referredEnumLiteral xsi:type="ecore:EEnumLiteral" href="http://www.storydriven.org/core/0.3.1#//expressions/common/ComparingOperator/UNEQUAL"/>
+                    </argument>
+                    <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/="/>
+                  </condition>
+                  <thenExpression xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="!=">
+                    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                  </thenExpression>
+                  <elseExpression xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="/*UNSUPPORTED COMPARING OPERATOR*/">
+                    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                  </elseExpression>
+                </elseExpression>
+              </elseExpression>
+            </elseExpression>
+          </elseExpression>
+        </elseExpression>
+      </expression>
+      <type xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+    </ownedModuleElement>
+    <ownedModuleElement xsi:type="mtl:Query" name="getLogicOperator" visibility="Public">
+      <documentation xsi:type="mtl:ModuleElementDocumentation">
+        <body startPosition="1263" endPosition="1359" value="&#xA;Returns a corresponding modelica logic operator&#xA;@param logicOperator the logic operator&#xA;&#xA;"/>
+        <parametersDocumentation name="logicOperator">
+          <body value=" the logic operator"/>
+        </parametersDocumentation>
+      </documentation>
+      <parameter name="logicOperator">
+        <eType xsi:type="ecore:EEnum" href="http://www.storydriven.org/core/0.3.1#//expressions/common/LogicOperator"/>
+      </parameter>
+      <expression xsi:type="ocl.ecore:IfExp">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <condition xsi:type="ocl.ecore:OperationCallExp">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+          <source xsi:type="ocl.ecore:VariableExp" name="logicOperator" referredVariable="/0/getLogicOperator/logicOperator">
+            <eType xsi:type="ecore:EEnum" href="http://www.storydriven.org/core/0.3.1#//expressions/common/LogicOperator"/>
+          </source>
+          <argument xsi:type="ocl.ecore:EnumLiteralExp">
+            <eType xsi:type="ecore:EEnum" href="http://www.storydriven.org/core/0.3.1#//expressions/common/LogicOperator"/>
+            <referredEnumLiteral xsi:type="ecore:EEnumLiteral" href="http://www.storydriven.org/core/0.3.1#//expressions/common/LogicOperator/AND"/>
+          </argument>
+          <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/="/>
+        </condition>
+        <thenExpression xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&amp;&amp;">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </thenExpression>
+        <elseExpression xsi:type="ocl.ecore:IfExp">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <condition xsi:type="ocl.ecore:OperationCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+            <source xsi:type="ocl.ecore:VariableExp" name="logicOperator" referredVariable="/0/getLogicOperator/logicOperator">
+              <eType xsi:type="ecore:EEnum" href="http://www.storydriven.org/core/0.3.1#//expressions/common/LogicOperator"/>
+            </source>
+            <argument xsi:type="ocl.ecore:EnumLiteralExp">
+              <eType xsi:type="ecore:EEnum" href="http://www.storydriven.org/core/0.3.1#//expressions/common/LogicOperator"/>
+              <referredEnumLiteral xsi:type="ecore:EEnumLiteral" href="http://www.storydriven.org/core/0.3.1#//expressions/common/LogicOperator/OR"/>
+            </argument>
+            <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/="/>
+          </condition>
+          <thenExpression xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="||">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          </thenExpression>
+          <elseExpression xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="unsupported op">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          </elseExpression>
+        </elseExpression>
+      </expression>
+      <type xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+    </ownedModuleElement>
+    <ownedModuleElement xsi:type="mtl:Query" name="getArithmeticOperator" visibility="Public">
+      <documentation xsi:type="mtl:ModuleElementDocumentation">
+        <body startPosition="1587" endPosition="1698" value="&#xA;Returns a corresponding modelica arithmetic operator&#xA;@param arithmeticOperator the arithmetic operator&#xA;&#xA;"/>
+        <parametersDocumentation name="arithmeticOperator">
+          <body value=" the arithmetic operator"/>
+        </parametersDocumentation>
+      </documentation>
+      <parameter name="arithmeticOperator">
+        <eType xsi:type="ecore:EEnum" href="http://www.storydriven.org/core/0.3.1#//expressions/common/ArithmeticOperator"/>
+      </parameter>
+      <expression xsi:type="ocl.ecore:IfExp">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <condition xsi:type="ocl.ecore:OperationCallExp">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+          <source xsi:type="ocl.ecore:VariableExp" name="arithmeticOperator" referredVariable="/0/getArithmeticOperator/arithmeticOperator">
+            <eType xsi:type="ecore:EEnum" href="http://www.storydriven.org/core/0.3.1#//expressions/common/ArithmeticOperator"/>
+          </source>
+          <argument xsi:type="ocl.ecore:EnumLiteralExp">
+            <eType xsi:type="ecore:EEnum" href="http://www.storydriven.org/core/0.3.1#//expressions/common/ArithmeticOperator"/>
+            <referredEnumLiteral xsi:type="ecore:EEnumLiteral" href="http://www.storydriven.org/core/0.3.1#//expressions/common/ArithmeticOperator/PLUS"/>
+          </argument>
+          <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/="/>
+        </condition>
+        <thenExpression xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="+">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </thenExpression>
+        <elseExpression xsi:type="ocl.ecore:IfExp">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <condition xsi:type="ocl.ecore:OperationCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+            <source xsi:type="ocl.ecore:VariableExp" name="arithmeticOperator" referredVariable="/0/getArithmeticOperator/arithmeticOperator">
+              <eType xsi:type="ecore:EEnum" href="http://www.storydriven.org/core/0.3.1#//expressions/common/ArithmeticOperator"/>
+            </source>
+            <argument xsi:type="ocl.ecore:EnumLiteralExp">
+              <eType xsi:type="ecore:EEnum" href="http://www.storydriven.org/core/0.3.1#//expressions/common/ArithmeticOperator"/>
+              <referredEnumLiteral xsi:type="ecore:EEnumLiteral" href="http://www.storydriven.org/core/0.3.1#//expressions/common/ArithmeticOperator/MINUS"/>
+            </argument>
+            <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/="/>
+          </condition>
+          <thenExpression xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="-">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          </thenExpression>
+          <elseExpression xsi:type="ocl.ecore:IfExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <condition xsi:type="ocl.ecore:OperationCallExp">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="arithmeticOperator" referredVariable="/0/getArithmeticOperator/arithmeticOperator">
+                <eType xsi:type="ecore:EEnum" href="http://www.storydriven.org/core/0.3.1#//expressions/common/ArithmeticOperator"/>
+              </source>
+              <argument xsi:type="ocl.ecore:EnumLiteralExp">
+                <eType xsi:type="ecore:EEnum" href="http://www.storydriven.org/core/0.3.1#//expressions/common/ArithmeticOperator"/>
+                <referredEnumLiteral xsi:type="ecore:EEnumLiteral" href="http://www.storydriven.org/core/0.3.1#//expressions/common/ArithmeticOperator/TIMES"/>
+              </argument>
+              <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/="/>
+            </condition>
+            <thenExpression xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="*">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            </thenExpression>
+            <elseExpression xsi:type="ocl.ecore:IfExp">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              <condition xsi:type="ocl.ecore:OperationCallExp">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                <source xsi:type="ocl.ecore:VariableExp" name="arithmeticOperator" referredVariable="/0/getArithmeticOperator/arithmeticOperator">
+                  <eType xsi:type="ecore:EEnum" href="http://www.storydriven.org/core/0.3.1#//expressions/common/ArithmeticOperator"/>
+                </source>
+                <argument xsi:type="ocl.ecore:EnumLiteralExp">
+                  <eType xsi:type="ecore:EEnum" href="http://www.storydriven.org/core/0.3.1#//expressions/common/ArithmeticOperator"/>
+                  <referredEnumLiteral xsi:type="ecore:EEnumLiteral" href="http://www.storydriven.org/core/0.3.1#//expressions/common/ArithmeticOperator/DIVIDE"/>
+                </argument>
+                <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/="/>
+              </condition>
+              <thenExpression xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="/">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              </thenExpression>
+              <elseExpression xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="unsupported">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              </elseExpression>
+            </elseExpression>
+          </elseExpression>
+        </elseExpression>
+      </expression>
+      <type xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+    </ownedModuleElement>
+    <ownedModuleElement xsi:type="mtl:Query" name="getUnaryOperator" visibility="Public">
+      <documentation xsi:type="mtl:ModuleElementDocumentation">
+        <body startPosition="2109" endPosition="2205" value="&#xA;Returns a corresponding modelica unary operator&#xA;@param unaryOperator the unary operator&#xA;&#xA;"/>
+        <parametersDocumentation name="unaryOperator">
+          <body value=" the unary operator"/>
+        </parametersDocumentation>
+      </documentation>
+      <parameter name="unaryOperator">
+        <eType xsi:type="ecore:EEnum" href="http://www.storydriven.org/core/0.3.1#//expressions/common/UnaryOperator"/>
+      </parameter>
+      <expression xsi:type="ocl.ecore:IfExp">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <condition xsi:type="ocl.ecore:OperationCallExp">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+          <source xsi:type="ocl.ecore:VariableExp" name="unaryOperator" referredVariable="/0/getUnaryOperator/unaryOperator">
+            <eType xsi:type="ecore:EEnum" href="http://www.storydriven.org/core/0.3.1#//expressions/common/UnaryOperator"/>
+          </source>
+          <argument xsi:type="ocl.ecore:EnumLiteralExp">
+            <eType xsi:type="ecore:EEnum" href="http://www.storydriven.org/core/0.3.1#//expressions/common/UnaryOperator"/>
+            <referredEnumLiteral xsi:type="ecore:EEnumLiteral" href="http://www.storydriven.org/core/0.3.1#//expressions/common/UnaryOperator/MINUS"/>
+          </argument>
+          <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/="/>
+        </condition>
+        <thenExpression xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="-">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </thenExpression>
+        <elseExpression xsi:type="ocl.ecore:IfExp">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <condition xsi:type="ocl.ecore:OperationCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+            <source xsi:type="ocl.ecore:VariableExp" name="unaryOperator" referredVariable="/0/getUnaryOperator/unaryOperator">
+              <eType xsi:type="ecore:EEnum" href="http://www.storydriven.org/core/0.3.1#//expressions/common/UnaryOperator"/>
+            </source>
+            <argument xsi:type="ocl.ecore:EnumLiteralExp">
+              <eType xsi:type="ecore:EEnum" href="http://www.storydriven.org/core/0.3.1#//expressions/common/UnaryOperator"/>
+              <referredEnumLiteral xsi:type="ecore:EEnumLiteral" href="http://www.storydriven.org/core/0.3.1#//expressions/common/UnaryOperator/INCREMENT"/>
+            </argument>
+            <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/="/>
+          </condition>
+          <thenExpression xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="++">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          </thenExpression>
+          <elseExpression xsi:type="ocl.ecore:IfExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <condition xsi:type="ocl.ecore:OperationCallExp">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="unaryOperator" referredVariable="/0/getUnaryOperator/unaryOperator">
+                <eType xsi:type="ecore:EEnum" href="http://www.storydriven.org/core/0.3.1#//expressions/common/UnaryOperator"/>
+              </source>
+              <argument xsi:type="ocl.ecore:EnumLiteralExp">
+                <eType xsi:type="ecore:EEnum" href="http://www.storydriven.org/core/0.3.1#//expressions/common/UnaryOperator"/>
+                <referredEnumLiteral xsi:type="ecore:EEnumLiteral" href="http://www.storydriven.org/core/0.3.1#//expressions/common/UnaryOperator/DECREMENT"/>
+              </argument>
+              <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/="/>
+            </condition>
+            <thenExpression xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="--">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            </thenExpression>
+            <elseExpression xsi:type="ocl.ecore:IfExp">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              <condition xsi:type="ocl.ecore:OperationCallExp">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                <source xsi:type="ocl.ecore:VariableExp" name="unaryOperator" referredVariable="/0/getUnaryOperator/unaryOperator">
+                  <eType xsi:type="ecore:EEnum" href="http://www.storydriven.org/core/0.3.1#//expressions/common/UnaryOperator"/>
+                </source>
+                <argument xsi:type="ocl.ecore:EnumLiteralExp">
+                  <eType xsi:type="ecore:EEnum" href="http://www.storydriven.org/core/0.3.1#//expressions/common/UnaryOperator"/>
+                  <referredEnumLiteral xsi:type="ecore:EEnumLiteral" href="http://www.storydriven.org/core/0.3.1#//expressions/common/UnaryOperator/NOT"/>
+                </argument>
+                <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/="/>
+              </condition>
+              <thenExpression xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="!">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              </thenExpression>
+              <elseExpression xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="unsupported">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              </elseExpression>
+            </elseExpression>
+          </elseExpression>
+        </elseExpression>
+      </expression>
+      <type xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+    </ownedModuleElement>
+    <ownedModuleElement xsi:type="mtl:Query" name="getIncrementDecremetOperator" visibility="Public">
+      <documentation xsi:type="mtl:ModuleElementDocumentation">
+        <body startPosition="2570" endPosition="2659" value="&#xA;Returns a corresponding C unary operator&#xA;@param unaryOperator the unary operator&#xA;&#xA;"/>
+        <parametersDocumentation name="unaryOperator">
+          <body value=" the unary operator"/>
+        </parametersDocumentation>
+      </documentation>
+      <parameter name="incdecOp">
+        <eType xsi:type="ecore:EEnum" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//IncrementDecrementOperator"/>
+      </parameter>
+      <expression xsi:type="ocl.ecore:IfExp">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <condition xsi:type="ocl.ecore:OperationCallExp">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+          <source xsi:type="ocl.ecore:VariableExp" name="incdecOp" referredVariable="/0/getIncrementDecremetOperator/incdecOp">
+            <eType xsi:type="ecore:EEnum" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//IncrementDecrementOperator"/>
+          </source>
+          <argument xsi:type="ocl.ecore:EnumLiteralExp">
+            <eType xsi:type="ecore:EEnum" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//IncrementDecrementOperator"/>
+            <referredEnumLiteral xsi:type="ecore:EEnumLiteral" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//IncrementDecrementOperator/INCREMENT"/>
+          </argument>
+          <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/="/>
+        </condition>
+        <thenExpression xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="++">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </thenExpression>
+        <elseExpression xsi:type="ocl.ecore:IfExp">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <condition xsi:type="ocl.ecore:OperationCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+            <source xsi:type="ocl.ecore:VariableExp" name="incdecOp" referredVariable="/0/getIncrementDecremetOperator/incdecOp">
+              <eType xsi:type="ecore:EEnum" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//IncrementDecrementOperator"/>
+            </source>
+            <argument xsi:type="ocl.ecore:EnumLiteralExp">
+              <eType xsi:type="ecore:EEnum" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//IncrementDecrementOperator"/>
+              <referredEnumLiteral xsi:type="ecore:EEnumLiteral" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//IncrementDecrementOperator/DECREMENT"/>
+            </argument>
+            <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/="/>
+          </condition>
+          <thenExpression xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="--">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          </thenExpression>
+          <elseExpression xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="unsupported">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          </elseExpression>
+        </elseExpression>
+      </expression>
+      <type xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+    </ownedModuleElement>
+    <ownedModuleElement xsi:type="mtl:Query" name="getStatechart">
+      <documentation xsi:type="mtl:ModuleElementDocumentation">
+        <body startPosition="2933" endPosition="3126" value="&#xA;Returns the rtsc which contains the trigger message expression's&#xA;transition (that is the transition which contains the expression).&#xA;@param expression the trigger message expression&#xA;&#xA;"/>
+        <parametersDocumentation name="expression">
+          <body value=" the trigger message expression"/>
+        </parametersDocumentation>
+      </documentation>
+      <parameter name="expression">
+        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//TriggerMessageExpression"/>
+      </parameter>
+      <expression xsi:type="ocl.ecore:PropertyCallExp">
+        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+        <source xsi:type="ocl.ecore:OperationCallExp">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Transition"/>
+          <source xsi:type="ocl.ecore:IteratorExp" name="any">
+            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+            <source xsi:type="ocl.ecore:IteratorExp" name="closure" eType="/20/Set(EObject)">
+              <source xsi:type="ocl.ecore:OperationCallExp" eType="/20/Set(EObject)">
+                <source xsi:type="ocl.ecore:CollectionLiteralExp" eType="/20/Set(EObject)">
+                  <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL/Annotations">
+                    <details key="IMPLICIT_SET_CONVERSION" value="true"/>
+                  </eAnnotations>
+                  <part xsi:type="ocl.ecore:CollectionItem">
+                    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+                    <item xsi:type="ocl.ecore:OperationCallExp">
+                      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+                      <source xsi:type="ocl.ecore:VariableExp" name="expression" referredVariable="/0/getStatechart/expression">
+                        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//TriggerMessageExpression"/>
+                      </source>
+                      <argument xsi:type="ocl.ecore:TypeExp" eType="/19/EObject">
+                        <referredType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+                      </argument>
+                      <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclAsType"/>
+                    </item>
+                  </part>
+                </source>
+                <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Set(T)_Class/asSet"/>
+              </source>
+              <body xsi:type="ocl.ecore:IfExp">
+                <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+                <condition xsi:type="ocl.ecore:OperationCallExp">
+                  <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                  <source xsi:type="ocl.ecore:OperationCallExp">
+                    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                    <source xsi:type="ocl.ecore:VariableExp" name="e" referredVariable="/0/getStatechart/%.1/%/any/closure/e">
+                      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+                    </source>
+                    <argument xsi:type="ocl.ecore:TypeExp" eType="/19/Transition">
+                      <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Transition"/>
+                    </argument>
+                    <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclIsKindOf"/>
+                  </source>
+                  <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean_Class/not"/>
+                </condition>
+                <thenExpression xsi:type="ocl.ecore:OperationCallExp">
+                  <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+                  <source xsi:type="ocl.ecore:VariableExp" name="e" referredVariable="/0/getStatechart/%.1/%/any/closure/e">
+                    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+                  </source>
+                  <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/emf/2002/Ecore#//EObject/eContainer"/>
+                </thenExpression>
+                <elseExpression xsi:type="ocl.ecore:VariableExp" name="e" referredVariable="/0/getStatechart/%.1/%/any/closure/e">
+                  <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+                </elseExpression>
+              </body>
+              <iterator xsi:type="ocl.ecore:Variable" name="e">
+                <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+              </iterator>
+            </source>
+            <body xsi:type="ocl.ecore:OperationCallExp">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="temp1" referredVariable="/0/getStatechart/%.1/%/any/temp1">
+                <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+              </source>
+              <argument xsi:type="ocl.ecore:TypeExp" eType="/19/Transition">
+                <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Transition"/>
+              </argument>
+              <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclIsKindOf"/>
+            </body>
+            <iterator xsi:type="ocl.ecore:Variable" name="temp1">
+              <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+            </iterator>
+          </source>
+          <argument xsi:type="ocl.ecore:TypeExp" eType="/19/Transition">
+            <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Transition"/>
+          </argument>
+          <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclAsType"/>
+        </source>
+        <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Transition/statechart"/>
+      </expression>
+      <type xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+    </ownedModuleElement>
+    <ownedModuleElement xsi:type="mtl:Query" name="getTriggerMessageEventParameterVariableFullyQualifiedName" visibility="Public">
+      <documentation xsi:type="mtl:ModuleElementDocumentation">
+        <body startPosition="3448" endPosition="3645" value="&#xA;Returns the fully qualified name of the trigger message expression's parameter&#xA;variable. The variable is located in the port statechart.&#xA;@param expression the trigger message expression&#xA;&#xA;"/>
+        <parametersDocumentation name="expression">
+          <body value=" the trigger message expression"/>
+        </parametersDocumentation>
+      </documentation>
+      <parameter name="expression">
+        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//TriggerMessageExpression"/>
+      </parameter>
+      <expression xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/oclstdlib_String_Class/+">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <source xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="msg->">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </source>
+        <argument xsi:type="mtl:QueryInvocation">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <definition href="../queries/stringQueries.emtl#/0/getProtoBuffVariableName"/>
+          <argument xsi:type="ocl.ecore:PropertyCallExp">
+            <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/behavior/0.4.0#//Parameter"/>
+            <source xsi:type="ocl.ecore:VariableExp" name="expression" referredVariable="/0/getTriggerMessageEventParameterVariableFullyQualifiedName/expression">
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//TriggerMessageExpression"/>
+            </source>
+            <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//TriggerMessageExpression/parameter"/>
+          </argument>
+        </argument>
+      </expression>
+      <type xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+    </ownedModuleElement>
+  </mtl:Module>
+  <ecore:EPackage name="additions">
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_String_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+      </eAnnotations>
+      <eOperations name="+">
+        <eAnnotations source="MTL non-standard"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="other">
+          <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
+        </eParameters>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_Integer_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_Real_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Real"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ecore_EObject_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+      </eAnnotations>
+      <eOperations name="getComparingOperator">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/getComparingOperator"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="comparingOperator">
+          <eType xsi:type="ecore:EEnum" href="http://www.storydriven.org/core/0.3.1#//expressions/common/ComparingOperator"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="getLogicOperator">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/getLogicOperator"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="logicOperator">
+          <eType xsi:type="ecore:EEnum" href="http://www.storydriven.org/core/0.3.1#//expressions/common/LogicOperator"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="getArithmeticOperator">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/getArithmeticOperator"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="arithmeticOperator">
+          <eType xsi:type="ecore:EEnum" href="http://www.storydriven.org/core/0.3.1#//expressions/common/ArithmeticOperator"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="getUnaryOperator">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/getUnaryOperator"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="unaryOperator">
+          <eType xsi:type="ecore:EEnum" href="http://www.storydriven.org/core/0.3.1#//expressions/common/UnaryOperator"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="getIncrementDecremetOperator">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/getIncrementDecremetOperator"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="incdecOp">
+          <eType xsi:type="ecore:EEnum" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//IncrementDecrementOperator"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="getStatechart">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/getStatechart"/>
+        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+        <eParameters name="expression">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//TriggerMessageExpression"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="getTriggerMessageEventParameterVariableFullyQualifiedName">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/getTriggerMessageEventParameterVariableFullyQualifiedName"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="expression">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//TriggerMessageExpression"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="getProtoBuffVariableName">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL">
+          <references href="../queries/stringQueries.emtl#/0/getProtoBuffVariableName"/>
+        </eAnnotations>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="parameter">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/behavior/0.4.0#//Parameter"/>
+        </eParameters>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_OclAny_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_Collection(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Collection(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_Sequence(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Sequence(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_OrderedSet(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OrderedSet(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="common_ComparingOperator_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.storydriven.org/core/0.3.1#//expressions/common/ComparingOperator"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="common_LogicOperator_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.storydriven.org/core/0.3.1#//expressions/common/LogicOperator"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="common_ArithmeticOperator_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.storydriven.org/core/0.3.1#//expressions/common/ArithmeticOperator"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="common_UnaryOperator_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.storydriven.org/core/0.3.1#//expressions/common/UnaryOperator"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="actionlanguage_IncrementDecrementOperator_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//IncrementDecrementOperator"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="actionlanguage_TriggerMessageExpression_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//TriggerMessageExpression"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="realtimestatechart_RealtimeStatechart_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="connector_MessageBuffer_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/connector/0.4.0#//MessageBuffer"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="msgtype_MessageType_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/msgtype/0.4.0#//MessageType"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="behavior_OperationRepository_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/behavior/0.4.0#//OperationRepository"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="instance_ContinuousPortInstance_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/instance/0.4.0#//ContinuousPortInstance"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="instance_ComponentInstance_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstance"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="component_Component_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/component/0.4.0#//Component"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="component_Port_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/component/0.4.0#//Port"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="behavior_Operation_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/behavior/0.4.0#//Operation"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="behavior_Parameter_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/behavior/0.4.0#//Parameter"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="types_Attribute_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/types/0.4.0#//Attribute"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="component_ComponentPart_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/component/0.4.0#//ComponentPart"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="behavior_Variable_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/behavior/0.4.0#//Variable"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="realtimestatechart_Region_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Region"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="msgtype_MessageTypeRepository_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/msgtype/0.4.0#//MessageTypeRepository"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="realtimestatechart_SynchronizationChannel_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//SynchronizationChannel"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="realtimestatechart_State_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//State"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="component_HybridPort_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/component/0.4.0#//HybridPort"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="instance_PortInstance_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/instance/0.4.0#//PortInstance"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_Boolean_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="connector_Connector_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/connector/0.4.0#//Connector"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="realtimestatechart_Clock_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Clock"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="realtimestatechart_DoEvent_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//DoEvent"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="connector_ConnectorInstance_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/connector/0.4.0#//ConnectorInstance"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="types_StructureDataType_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/types/0.4.0#//StructureDataType"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="types_ArrayDataType_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/types/0.4.0#//ArrayDataType"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="types_PrimitiveDataType_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/types/0.4.0#//PrimitiveDataType"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="types_DataType_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/types/0.4.0#//DataType"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="component_DiscretePort_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/component/0.4.0#//DiscretePort"/>
+      </eAnnotations>
+    </eClassifiers>
+  </ecore:EPackage>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EEnum" href="http://www.storydriven.org/core/0.3.1#//expressions/common/ComparingOperator"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EEnum" href="http://www.storydriven.org/core/0.3.1#//expressions/common/ComparingOperator"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EEnum" href="http://www.storydriven.org/core/0.3.1#//expressions/common/LogicOperator"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EEnum" href="http://www.storydriven.org/core/0.3.1#//expressions/common/LogicOperator"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EEnum" href="http://www.storydriven.org/core/0.3.1#//expressions/common/ArithmeticOperator"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EEnum" href="http://www.storydriven.org/core/0.3.1#//expressions/common/ArithmeticOperator"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EEnum" href="http://www.storydriven.org/core/0.3.1#//expressions/common/UnaryOperator"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EEnum" href="http://www.storydriven.org/core/0.3.1#//expressions/common/UnaryOperator"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EEnum" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//IncrementDecrementOperator"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EEnum" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//IncrementDecrementOperator"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//TriggerMessageExpression"/>
+  </ocl.ecore:Variable>
+  <ecore:EPackage name="types">
+    <eClassifiers xsi:type="ocl.ecore:TypeType" name="EObject">
+      <referredType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:TypeType" name="Transition">
+      <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Transition"/>
+    </eClassifiers>
+  </ecore:EPackage>
+  <ecore:EPackage name="collections">
+    <eClassifiers xsi:type="ocl.ecore:SetType" name="Set(EObject)" instanceClassName="java.util.Set">
+      <elementType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+    </eClassifiers>
+  </ecore:EPackage>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//TriggerMessageExpression"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//TriggerMessageExpression"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//TriggerMessageExpression"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ecore:EAnnotation source="positions">
+    <eAnnotations source="positions.0" references="/0/getComparingOperator">
+      <details key="start" value="675"/>
+      <details key="end" value="1258"/>
+      <details key="line" value="16"/>
+    </eAnnotations>
+    <eAnnotations source="positions.1" references="/0/getComparingOperator/%">
+      <details key="start" value="568"/>
+      <details key="end" value="674"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.2" references="/0/getComparingOperator/%/comparingOperator">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.3" references="/0/getComparingOperator/comparingOperator">
+      <details key="start" value="710"/>
+      <details key="end" value="747"/>
+      <details key="line" value="16"/>
+    </eAnnotations>
+    <eAnnotations source="positions.4" references="/0/getComparingOperator/%.1">
+      <details key="start" value="761"/>
+      <details key="end" value="1255"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.5" references="/0/getComparingOperator/%.1/%">
+      <details key="start" value="764"/>
+      <details key="end" value="807"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.6" references="/0/getComparingOperator/%.1/%/comparingOperator">
+      <details key="start" value="764"/>
+      <details key="end" value="781"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.7" references="/0/getComparingOperator/%.1/%/%">
+      <details key="start" value="784"/>
+      <details key="end" value="807"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.8" references="/0/getComparingOperator/%.1/%.1">
+      <details key="start" value="815"/>
+      <details key="end" value="818"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.9" references="/0/getComparingOperator/%.1/%.2">
+      <details key="start" value="825"/>
+      <details key="end" value="1248"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.10" references="/0/getComparingOperator/%.1/%.2/%">
+      <details key="start" value="828"/>
+      <details key="end" value="880"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.11" references="/0/getComparingOperator/%.1/%.2/%/comparingOperator">
+      <details key="start" value="828"/>
+      <details key="end" value="845"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.12" references="/0/getComparingOperator/%.1/%.2/%/%">
+      <details key="start" value="848"/>
+      <details key="end" value="880"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.13" references="/0/getComparingOperator/%.1/%.2/%.1">
+      <details key="start" value="888"/>
+      <details key="end" value="892"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.14" references="/0/getComparingOperator/%.1/%.2/%.2">
+      <details key="start" value="899"/>
+      <details key="end" value="1241"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.15" references="/0/getComparingOperator/%.1/%.2/%.2/%">
+      <details key="start" value="902"/>
+      <details key="end" value="948"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.16" references="/0/getComparingOperator/%.1/%.2/%.2/%/comparingOperator">
+      <details key="start" value="902"/>
+      <details key="end" value="919"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.17" references="/0/getComparingOperator/%.1/%.2/%.2/%/%">
+      <details key="start" value="922"/>
+      <details key="end" value="948"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.18" references="/0/getComparingOperator/%.1/%.2/%.2/%.1">
+      <details key="start" value="956"/>
+      <details key="end" value="959"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.19" references="/0/getComparingOperator/%.1/%.2/%.2/%.2">
+      <details key="start" value="966"/>
+      <details key="end" value="1234"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.20" references="/0/getComparingOperator/%.1/%.2/%.2/%.2/%">
+      <details key="start" value="969"/>
+      <details key="end" value="1024"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.21" references="/0/getComparingOperator/%.1/%.2/%.2/%.2/%/comparingOperator">
+      <details key="start" value="969"/>
+      <details key="end" value="986"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.22" references="/0/getComparingOperator/%.1/%.2/%.2/%.2/%/%">
+      <details key="start" value="989"/>
+      <details key="end" value="1024"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.23" references="/0/getComparingOperator/%.1/%.2/%.2/%.2/%.1">
+      <details key="start" value="1032"/>
+      <details key="end" value="1036"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.24" references="/0/getComparingOperator/%.1/%.2/%.2/%.2/%.2">
+      <details key="start" value="1043"/>
+      <details key="end" value="1227"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.25" references="/0/getComparingOperator/%.1/%.2/%.2/%.2/%.2/%">
+      <details key="start" value="1046"/>
+      <details key="end" value="1090"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.26" references="/0/getComparingOperator/%.1/%.2/%.2/%.2/%.2/%/comparingOperator">
+      <details key="start" value="1046"/>
+      <details key="end" value="1063"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.27" references="/0/getComparingOperator/%.1/%.2/%.2/%.2/%.2/%/%">
+      <details key="start" value="1066"/>
+      <details key="end" value="1090"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.28" references="/0/getComparingOperator/%.1/%.2/%.2/%.2/%.2/%.1">
+      <details key="start" value="1098"/>
+      <details key="end" value="1102"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.29" references="/0/getComparingOperator/%.1/%.2/%.2/%.2/%.2/%.2">
+      <details key="start" value="1109"/>
+      <details key="end" value="1220"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.30" references="/0/getComparingOperator/%.1/%.2/%.2/%.2/%.2/%.2/%">
+      <details key="start" value="1112"/>
+      <details key="end" value="1158"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.31" references="/0/getComparingOperator/%.1/%.2/%.2/%.2/%.2/%.2/%/comparingOperator">
+      <details key="start" value="1112"/>
+      <details key="end" value="1129"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.32" references="/0/getComparingOperator/%.1/%.2/%.2/%.2/%.2/%.2/%/%">
+      <details key="start" value="1132"/>
+      <details key="end" value="1158"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.33" references="/0/getComparingOperator/%.1/%.2/%.2/%.2/%.2/%.2/%.1">
+      <details key="start" value="1166"/>
+      <details key="end" value="1170"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.34" references="/0/getComparingOperator/%.1/%.2/%.2/%.2/%.2/%.2/%.2">
+      <details key="start" value="1177"/>
+      <details key="end" value="1213"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.35" references="/0/getLogicOperator">
+      <details key="start" value="1362"/>
+      <details key="end" value="1582"/>
+      <details key="line" value="42"/>
+    </eAnnotations>
+    <eAnnotations source="positions.36" references="/0/getLogicOperator/%">
+      <details key="start" value="1260"/>
+      <details key="end" value="1361"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.37" references="/0/getLogicOperator/%/logicOperator">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.38" references="/0/getLogicOperator/logicOperator">
+      <details key="start" value="1393"/>
+      <details key="end" value="1422"/>
+      <details key="line" value="42"/>
+    </eAnnotations>
+    <eAnnotations source="positions.39" references="/0/getLogicOperator/%.1">
+      <details key="start" value="1436"/>
+      <details key="end" value="1579"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.40" references="/0/getLogicOperator/%.1/%">
+      <details key="start" value="1439"/>
+      <details key="end" value="1473"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.41" references="/0/getLogicOperator/%.1/%/logicOperator">
+      <details key="start" value="1439"/>
+      <details key="end" value="1452"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.42" references="/0/getLogicOperator/%.1/%/%">
+      <details key="start" value="1455"/>
+      <details key="end" value="1473"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.43" references="/0/getLogicOperator/%.1/%.1">
+      <details key="start" value="1481"/>
+      <details key="end" value="1485"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.44" references="/0/getLogicOperator/%.1/%.2">
+      <details key="start" value="1492"/>
+      <details key="end" value="1572"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.45" references="/0/getLogicOperator/%.1/%.2/%">
+      <details key="start" value="1495"/>
+      <details key="end" value="1528"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.46" references="/0/getLogicOperator/%.1/%.2/%/logicOperator">
+      <details key="start" value="1495"/>
+      <details key="end" value="1508"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.47" references="/0/getLogicOperator/%.1/%.2/%/%">
+      <details key="start" value="1511"/>
+      <details key="end" value="1528"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.48" references="/0/getLogicOperator/%.1/%.2/%.1">
+      <details key="start" value="1536"/>
+      <details key="end" value="1540"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.49" references="/0/getLogicOperator/%.1/%.2/%.2">
+      <details key="start" value="1549"/>
+      <details key="end" value="1565"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.50" references="/0/getArithmeticOperator">
+      <details key="start" value="1701"/>
+      <details key="end" value="2104"/>
+      <details key="line" value="57"/>
+    </eAnnotations>
+    <eAnnotations source="positions.51" references="/0/getArithmeticOperator/%">
+      <details key="start" value="1584"/>
+      <details key="end" value="1700"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.52" references="/0/getArithmeticOperator/%/arithmeticOperator">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.53" references="/0/getArithmeticOperator/arithmeticOperator">
+      <details key="start" value="1737"/>
+      <details key="end" value="1776"/>
+      <details key="line" value="57"/>
+    </eAnnotations>
+    <eAnnotations source="positions.54" references="/0/getArithmeticOperator/%.1">
+      <details key="start" value="1790"/>
+      <details key="end" value="2101"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.55" references="/0/getArithmeticOperator/%.1/%">
+      <details key="start" value="1793"/>
+      <details key="end" value="1838"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.56" references="/0/getArithmeticOperator/%.1/%/arithmeticOperator">
+      <details key="start" value="1793"/>
+      <details key="end" value="1811"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.57" references="/0/getArithmeticOperator/%.1/%/%">
+      <details key="start" value="1814"/>
+      <details key="end" value="1838"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.58" references="/0/getArithmeticOperator/%.1/%.1">
+      <details key="start" value="1846"/>
+      <details key="end" value="1849"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.59" references="/0/getArithmeticOperator/%.1/%.2">
+      <details key="start" value="1856"/>
+      <details key="end" value="2094"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.60" references="/0/getArithmeticOperator/%.1/%.2/%">
+      <details key="start" value="1859"/>
+      <details key="end" value="1905"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.61" references="/0/getArithmeticOperator/%.1/%.2/%/arithmeticOperator">
+      <details key="start" value="1859"/>
+      <details key="end" value="1877"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.62" references="/0/getArithmeticOperator/%.1/%.2/%/%">
+      <details key="start" value="1880"/>
+      <details key="end" value="1905"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.63" references="/0/getArithmeticOperator/%.1/%.2/%.1">
+      <details key="start" value="1913"/>
+      <details key="end" value="1916"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.64" references="/0/getArithmeticOperator/%.1/%.2/%.2">
+      <details key="start" value="1923"/>
+      <details key="end" value="2087"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.65" references="/0/getArithmeticOperator/%.1/%.2/%.2/%">
+      <details key="start" value="1926"/>
+      <details key="end" value="1972"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.66" references="/0/getArithmeticOperator/%.1/%.2/%.2/%/arithmeticOperator">
+      <details key="start" value="1926"/>
+      <details key="end" value="1944"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.67" references="/0/getArithmeticOperator/%.1/%.2/%.2/%/%">
+      <details key="start" value="1947"/>
+      <details key="end" value="1972"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.68" references="/0/getArithmeticOperator/%.1/%.2/%.2/%.1">
+      <details key="start" value="1980"/>
+      <details key="end" value="1983"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.69" references="/0/getArithmeticOperator/%.1/%.2/%.2/%.2">
+      <details key="start" value="1990"/>
+      <details key="end" value="2080"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.70" references="/0/getArithmeticOperator/%.1/%.2/%.2/%.2/%">
+      <details key="start" value="1993"/>
+      <details key="end" value="2040"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.71" references="/0/getArithmeticOperator/%.1/%.2/%.2/%.2/%/arithmeticOperator">
+      <details key="start" value="1993"/>
+      <details key="end" value="2011"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.72" references="/0/getArithmeticOperator/%.1/%.2/%.2/%.2/%/%">
+      <details key="start" value="2014"/>
+      <details key="end" value="2040"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.73" references="/0/getArithmeticOperator/%.1/%.2/%.2/%.2/%.1">
+      <details key="start" value="2048"/>
+      <details key="end" value="2051"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.74" references="/0/getArithmeticOperator/%.1/%.2/%.2/%.2/%.2">
+      <details key="start" value="2060"/>
+      <details key="end" value="2073"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.75" references="/0/getUnaryOperator">
+      <details key="start" value="2208"/>
+      <details key="end" value="2564"/>
+      <details key="line" value="78"/>
+    </eAnnotations>
+    <eAnnotations source="positions.76" references="/0/getUnaryOperator/%">
+      <details key="start" value="2106"/>
+      <details key="end" value="2207"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.77" references="/0/getUnaryOperator/%/unaryOperator">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.78" references="/0/getUnaryOperator/unaryOperator">
+      <details key="start" value="2239"/>
+      <details key="end" value="2268"/>
+      <details key="line" value="78"/>
+    </eAnnotations>
+    <eAnnotations source="positions.79" references="/0/getUnaryOperator/%.1">
+      <details key="start" value="2282"/>
+      <details key="end" value="2561"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.80" references="/0/getUnaryOperator/%.1/%">
+      <details key="start" value="2285"/>
+      <details key="end" value="2321"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.81" references="/0/getUnaryOperator/%.1/%/unaryOperator">
+      <details key="start" value="2285"/>
+      <details key="end" value="2298"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.82" references="/0/getUnaryOperator/%.1/%/%">
+      <details key="start" value="2301"/>
+      <details key="end" value="2321"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.83" references="/0/getUnaryOperator/%.1/%.1">
+      <details key="start" value="2329"/>
+      <details key="end" value="2332"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.84" references="/0/getUnaryOperator/%.1/%.2">
+      <details key="start" value="2339"/>
+      <details key="end" value="2554"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.85" references="/0/getUnaryOperator/%.1/%.2/%">
+      <details key="start" value="2342"/>
+      <details key="end" value="2382"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.86" references="/0/getUnaryOperator/%.1/%.2/%/unaryOperator">
+      <details key="start" value="2342"/>
+      <details key="end" value="2355"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.87" references="/0/getUnaryOperator/%.1/%.2/%/%">
+      <details key="start" value="2358"/>
+      <details key="end" value="2382"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.88" references="/0/getUnaryOperator/%.1/%.2/%.1">
+      <details key="start" value="2390"/>
+      <details key="end" value="2394"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.89" references="/0/getUnaryOperator/%.1/%.2/%.2">
+      <details key="start" value="2401"/>
+      <details key="end" value="2547"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.90" references="/0/getUnaryOperator/%.1/%.2/%.2/%">
+      <details key="start" value="2404"/>
+      <details key="end" value="2444"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.91" references="/0/getUnaryOperator/%.1/%.2/%.2/%/unaryOperator">
+      <details key="start" value="2404"/>
+      <details key="end" value="2417"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.92" references="/0/getUnaryOperator/%.1/%.2/%.2/%/%">
+      <details key="start" value="2420"/>
+      <details key="end" value="2444"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.93" references="/0/getUnaryOperator/%.1/%.2/%.2/%.1">
+      <details key="start" value="2452"/>
+      <details key="end" value="2456"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.94" references="/0/getUnaryOperator/%.1/%.2/%.2/%.2">
+      <details key="start" value="2463"/>
+      <details key="end" value="2540"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.95" references="/0/getUnaryOperator/%.1/%.2/%.2/%.2/%">
+      <details key="start" value="2466"/>
+      <details key="end" value="2500"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.96" references="/0/getUnaryOperator/%.1/%.2/%.2/%.2/%/unaryOperator">
+      <details key="start" value="2466"/>
+      <details key="end" value="2479"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.97" references="/0/getUnaryOperator/%.1/%.2/%.2/%.2/%/%">
+      <details key="start" value="2482"/>
+      <details key="end" value="2500"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.98" references="/0/getUnaryOperator/%.1/%.2/%.2/%.2/%.1">
+      <details key="start" value="2508"/>
+      <details key="end" value="2511"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.99" references="/0/getUnaryOperator/%.1/%.2/%.2/%.2/%.2">
+      <details key="start" value="2520"/>
+      <details key="end" value="2533"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.100" references="/0/getIncrementDecremetOperator">
+      <details key="start" value="2662"/>
+      <details key="end" value="2928"/>
+      <details key="line" value="100"/>
+    </eAnnotations>
+    <eAnnotations source="positions.101" references="/0/getIncrementDecremetOperator/%">
+      <details key="start" value="2567"/>
+      <details key="end" value="2661"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.102" references="/0/getIncrementDecremetOperator/%/unaryOperator">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.103" references="/0/getIncrementDecremetOperator/incdecOp">
+      <details key="start" value="2705"/>
+      <details key="end" value="2742"/>
+      <details key="line" value="100"/>
+    </eAnnotations>
+    <eAnnotations source="positions.104" references="/0/getIncrementDecremetOperator/%.1">
+      <details key="start" value="2756"/>
+      <details key="end" value="2925"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.105" references="/0/getIncrementDecremetOperator/%.1/%">
+      <details key="start" value="2759"/>
+      <details key="end" value="2807"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.106" references="/0/getIncrementDecremetOperator/%.1/%/incdecOp">
+      <details key="start" value="2759"/>
+      <details key="end" value="2767"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.107" references="/0/getIncrementDecremetOperator/%.1/%/%">
+      <details key="start" value="2770"/>
+      <details key="end" value="2807"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.108" references="/0/getIncrementDecremetOperator/%.1/%.1">
+      <details key="start" value="2815"/>
+      <details key="end" value="2819"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.109" references="/0/getIncrementDecremetOperator/%.1/%.2">
+      <details key="start" value="2826"/>
+      <details key="end" value="2918"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.110" references="/0/getIncrementDecremetOperator/%.1/%.2/%">
+      <details key="start" value="2829"/>
+      <details key="end" value="2877"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.111" references="/0/getIncrementDecremetOperator/%.1/%.2/%/incdecOp">
+      <details key="start" value="2829"/>
+      <details key="end" value="2837"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.112" references="/0/getIncrementDecremetOperator/%.1/%.2/%/%">
+      <details key="start" value="2840"/>
+      <details key="end" value="2877"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.113" references="/0/getIncrementDecremetOperator/%.1/%.2/%.1">
+      <details key="start" value="2885"/>
+      <details key="end" value="2889"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.114" references="/0/getIncrementDecremetOperator/%.1/%.2/%.2">
+      <details key="start" value="2898"/>
+      <details key="end" value="2911"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.115" references="/0/getStatechart">
+      <details key="start" value="3129"/>
+      <details key="end" value="3443"/>
+      <details key="line" value="116"/>
+    </eAnnotations>
+    <eAnnotations source="positions.116" references="/0/getStatechart/%">
+      <details key="start" value="2930"/>
+      <details key="end" value="3128"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.117" references="/0/getStatechart/%/expression">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.118" references="/0/getStatechart/expression">
+      <details key="start" value="3158"/>
+      <details key="end" value="3195"/>
+      <details key="line" value="116"/>
+    </eAnnotations>
+    <eAnnotations source="positions.119" references="/0/getStatechart/%.1">
+      <details key="start" value="3221"/>
+      <details key="end" value="3440"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.120" references="/0/getStatechart/%.1/%">
+      <details key="start" value="3221"/>
+      <details key="end" value="3429"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.121" references="/0/getStatechart/%.1/%/any">
+      <details key="start" value="3221"/>
+      <details key="end" value="3407"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.122" references="/0/getStatechart/%.1/%/any/closure">
+      <details key="start" value="3221"/>
+      <details key="end" value="3377"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.123" references="/0/getStatechart/%.1/%/any/closure/%">
+      <details key="start" value="3221"/>
+      <details key="end" value="3266"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.124" references="/0/getStatechart/%.1/%/any/closure/%/%">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.125" references="/0/getStatechart/%.1/%/any/closure/%/%/%/%">
+      <details key="start" value="3221"/>
+      <details key="end" value="3257"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.126" references="/0/getStatechart/%.1/%/any/closure/%/%/%/%/expression">
+      <details key="start" value="3221"/>
+      <details key="end" value="3231"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.127" references="/0/getStatechart/%.1/%/any/closure/%/%/%/%/%">
+      <details key="start" value="3242"/>
+      <details key="end" value="3256"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.128" references="/0/getStatechart/%.1/%/any/closure/%.1">
+      <details key="start" value="3299"/>
+      <details key="end" value="3374"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.129" references="/0/getStatechart/%.1/%/any/closure/%.1/%">
+      <details key="start" value="3302"/>
+      <details key="end" value="3331"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.130" references="/0/getStatechart/%.1/%/any/closure/%.1/%/%">
+      <details key="start" value="3306"/>
+      <details key="end" value="3331"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.131" references="/0/getStatechart/%.1/%/any/closure/%.1/%/%/e">
+      <details key="start" value="3306"/>
+      <details key="end" value="3307"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.132" references="/0/getStatechart/%.1/%/any/closure/%.1/%/%/%">
+      <details key="start" value="3320"/>
+      <details key="end" value="3330"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.133" references="/0/getStatechart/%.1/%/any/closure/%.1/%.1">
+      <details key="start" value="3340"/>
+      <details key="end" value="3354"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.134" references="/0/getStatechart/%.1/%/any/closure/%.1/%.1/e">
+      <details key="start" value="3340"/>
+      <details key="end" value="3341"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.135" references="/0/getStatechart/%.1/%/any/closure/%.1/e">
+      <details key="start" value="3365"/>
+      <details key="end" value="3366"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.136" references="/0/getStatechart/%.1/%/any/closure/e">
+      <details key="start" value="3276"/>
+      <details key="end" value="3294"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.137" references="/0/getStatechart/%.1/%/any/%">
+      <details key="start" value="3383"/>
+      <details key="end" value="3406"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.138" references="/0/getStatechart/%.1/%/any/%/temp1">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.139" references="/0/getStatechart/%.1/%/any/%/%">
+      <details key="start" value="3395"/>
+      <details key="end" value="3405"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.140" references="/0/getStatechart/%.1/%/any/temp1">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.141" references="/0/getStatechart/%.1/%/%">
+      <details key="start" value="3418"/>
+      <details key="end" value="3428"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.142" references="/0/getTriggerMessageEventParameterVariableFullyQualifiedName">
+      <details key="start" value="3648"/>
+      <details key="end" value="3829"/>
+      <details key="line" value="131"/>
+    </eAnnotations>
+    <eAnnotations source="positions.143" references="/0/getTriggerMessageEventParameterVariableFullyQualifiedName/%">
+      <details key="start" value="3445"/>
+      <details key="end" value="3647"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.144" references="/0/getTriggerMessageEventParameterVariableFullyQualifiedName/%/expression">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.145" references="/0/getTriggerMessageEventParameterVariableFullyQualifiedName/expression">
+      <details key="start" value="3720"/>
+      <details key="end" value="3757"/>
+      <details key="line" value="131"/>
+    </eAnnotations>
+    <eAnnotations source="positions.146" references="/0/getTriggerMessageEventParameterVariableFullyQualifiedName/%.1">
+      <details key="start" value="3771"/>
+      <details key="end" value="3826"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.147" references="/0/getTriggerMessageEventParameterVariableFullyQualifiedName/%.1/%">
+      <details key="start" value="3771"/>
+      <details key="end" value="3778"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.148" references="/0/getTriggerMessageEventParameterVariableFullyQualifiedName/%.1/%.1">
+      <details key="start" value="3779"/>
+      <details key="end" value="3826"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.149" references="/0/getTriggerMessageEventParameterVariableFullyQualifiedName/%.1/%.1/%">
+      <details key="start" value="3779"/>
+      <details key="end" value="3799"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.150" references="/0/getTriggerMessageEventParameterVariableFullyQualifiedName/%.1/%.1/%/expression">
+      <details key="start" value="3779"/>
+      <details key="end" value="3789"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+  </ecore:EAnnotation>
+</xmi:XMI>
