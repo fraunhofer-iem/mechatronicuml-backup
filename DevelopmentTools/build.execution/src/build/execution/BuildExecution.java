@@ -33,7 +33,8 @@ public class BuildExecution {
 		try {
 			workspace.build(IncrementalProjectBuilder.FULL_BUILD, progressMonitor);
 		} catch (CoreException e) {
-			workspace.build(IncrementalProjectBuilder.INCREMENTAL_BUILD, progressMonitor);
+			workspace.build(IncrementalProjectBuilder.CLEAN_BUILD, progressMonitor);
+			workspace.build(IncrementalProjectBuilder.FULL_BUILD, progressMonitor);
 
 		}
 		System.out.println("Build Progress Successfully!");
