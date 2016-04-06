@@ -1,4 +1,4 @@
-package de.uni_paderborn.fujaba.graphviz.dot.xtext.tests
+package org.muml.graphviz.dot.xtext.tests
 
 import com.google.inject.Inject
 import com.google.inject.Provider

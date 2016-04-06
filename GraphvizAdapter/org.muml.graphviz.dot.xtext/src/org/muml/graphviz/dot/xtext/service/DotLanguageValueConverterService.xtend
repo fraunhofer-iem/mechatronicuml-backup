@@ -1,10 +1,10 @@
-package de.uni_paderborn.fujaba.graphviz.dot.xtext.service
+package org.muml.graphviz.dot.xtext.service
 
 import com.google.inject.Inject
 import org.eclipse.xtext.common.services.Ecore2XtextTerminalConverters
 import org.eclipse.xtext.conversion.IValueConverter
 import org.eclipse.xtext.conversion.ValueConverter
-import de.uni_paderborn.fujaba.graphviz.dot.xtext.conversion.DotIDValueConverter
+import org.muml.graphviz.dot.xtext.conversion.DotIDValueConverter
 
 class DotLanguageValueConverterService extends Ecore2XtextTerminalConverters {
 	@Inject

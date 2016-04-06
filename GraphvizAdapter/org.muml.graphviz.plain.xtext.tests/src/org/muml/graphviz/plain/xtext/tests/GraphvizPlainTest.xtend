@@ -1,9 +1,9 @@
-package de.uni_paderborn.fujaba.graphviz.plain.xtext.tests
+package org.muml.graphviz.plain.xtext.tests
 
 import com.google.inject.Inject
-import de.uni_paderborn.fujaba.graphviz.plain.PlainGraph
-import de.uni_paderborn.fujaba.graphviz.plain.PlainNode
-import de.uni_paderborn.fujaba.graphviz.plain.xtext.GraphvizPlainInjectorProvider
+import org.muml.graphviz.plain.PlainGraph
+import org.muml.graphviz.plain.PlainNode
+import org.muml.graphviz.plain.xtext.GraphvizPlainInjectorProvider
 import org.eclipse.xtext.junit4.InjectWith
 import org.eclipse.xtext.junit4.XtextRunner
 import org.eclipse.xtext.junit4.util.ParseHelper

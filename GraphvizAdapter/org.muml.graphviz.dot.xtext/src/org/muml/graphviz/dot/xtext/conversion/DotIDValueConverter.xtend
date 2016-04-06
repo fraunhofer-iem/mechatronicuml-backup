@@ -1,4 +1,4 @@
-package de.uni_paderborn.fujaba.graphviz.dot.xtext.conversion
+package org.muml.graphviz.dot.xtext.conversion
 
 import org.eclipse.xtext.conversion.IValueConverter
 import org.eclipse.xtext.nodemodel.INode

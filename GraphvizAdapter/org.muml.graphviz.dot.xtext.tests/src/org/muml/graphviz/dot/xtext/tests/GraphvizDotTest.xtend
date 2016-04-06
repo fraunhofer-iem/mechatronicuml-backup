@@ -1,18 +1,18 @@
-package de.uni_paderborn.fujaba.graphviz.dot.xtext.tests
+package org.muml.graphviz.dot.xtext.tests
 
 import com.google.inject.Inject
-import de.uni_paderborn.fujaba.graphviz.dot.DirectedDotEdge
-import de.uni_paderborn.fujaba.graphviz.dot.DotGraph
-import de.uni_paderborn.fujaba.graphviz.dot.DotNode
-import de.uni_paderborn.fujaba.graphviz.dot.UndirectedDotEdge
-import de.uni_paderborn.fujaba.graphviz.dot.xtext.DotLanguageInjectorProvider
+import org.muml.graphviz.dot.DirectedDotEdge
+import org.muml.graphviz.dot.DotGraph
+import org.muml.graphviz.dot.DotNode
+import org.muml.graphviz.dot.UndirectedDotEdge
+import org.muml.graphviz.dot.xtext.DotLanguageInjectorProvider
 import org.eclipse.xtext.junit4.InjectWith
 import org.eclipse.xtext.junit4.XtextRunner
 import org.junit.Test
 import org.junit.runner.RunWith
 
 import static org.junit.Assert.*
-import de.uni_paderborn.fujaba.graphviz.dot.DotFactory
+import org.muml.graphviz.dot.DotFactory
 
 @RunWith(typeof(XtextRunner))
 @InjectWith(typeof(DotLanguageInjectorProvider))
