@@ -1,17 +1,15 @@
 
-package org.muml.ape.properties.properties.editor;
+package org.muml.ape.properties.ape.editor;
 
 /**
  * @generated
  */
-public class CheckboxPropertyEditorEditor
-		extends
-			org.muml.ape.runtime.editors.ClassPropertyEditor {
+public class RadioPropertyEditorEditor extends org.muml.ape.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
 	 */
-	public CheckboxPropertyEditorEditor(String tab, org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
+	public RadioPropertyEditorEditor(String tab, org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
 		super(tab, adapterFactory, eClass);
 	}
@@ -23,7 +21,7 @@ public class CheckboxPropertyEditorEditor
 	protected void createProperties() {
 		if (tab == null) {
 
-		} else if ("de.uni_paderborn.fujaba.properties.tab.general".equals(tab)) { // Tab General
+		} else if ("org.muml.ape.tab.general".equals(tab)) { // Tab General
 
 		} else {
 		}
@@ -36,9 +34,9 @@ public class CheckboxPropertyEditorEditor
 	/**
 	 * @generated
 	 */
-	public CheckboxPropertyEditorEditor(String tab) {
+	public RadioPropertyEditorEditor(String tab) {
 		this(tab, org.muml.ape.properties.util.PropertiesUtil.INSTANCE.getAdapterFactory(),
-				org.muml.ape.PropertiesPackage.eINSTANCE.getCheckboxPropertyEditor());
+				org.muml.ape.PropertiesPackage.eINSTANCE.getRadioPropertyEditor());
 	}
 
 	/**
@@ -47,7 +45,7 @@ public class CheckboxPropertyEditorEditor
 	public static class Factory implements org.muml.ape.runtime.factory.IPropertyEditorFactory {
 		@Override
 		public org.muml.ape.runtime.editors.IPropertyEditor createPropertyEditor(String tab) {
-			return new CheckboxPropertyEditorEditor(tab);
+			return new RadioPropertyEditorEditor(tab);
 		}
 
 		@Override

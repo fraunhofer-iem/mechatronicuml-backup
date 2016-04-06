@@ -6,7 +6,7 @@
   <extension
          point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
     <propertyContributor
-          contributorId="de.uni_paderborn.fujaba.properties.contributor">
+          contributorId="org.muml.ape.contributor">
        <propertyCategory
              category="domain">
        </propertyCategory>
@@ -25,10 +25,10 @@
 
 
 <extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
-      <propertyTabs contributorId="de.uni_paderborn.fujaba.properties.contributor">
+      <propertyTabs contributorId="org.muml.ape.contributor">
           <propertyTab
              category="domain"
-             id="de.uni_paderborn.fujaba.properties.tab.general"
+             id="org.muml.ape.tab.general"
              label="General"/>
           
       </propertyTabs>
@@ -38,12 +38,12 @@
 
 
   <extension point="org.eclipse.ui.views.properties.tabbed.propertySections"> 
-      <propertySections contributorId="de.uni_paderborn.fujaba.properties.contributor">
+      <propertySections contributorId="org.muml.ape.contributor">
           <propertySection
-            class="de.uni_paderborn.fujaba.properties.runtime.sections.ObjectPropertySection"
-            filter="org.muml.ape.properties.tabs.De_uni_paderborn_fujaba_properties_tab_generalTabElementFilter"
-            id="de.uni_paderborn.fujaba.properties.tab.general"
-            tab="de.uni_paderborn.fujaba.properties.tab.general">
+            class="org.muml.ape.runtime.sections.ObjectPropertySection"
+            filter="org.muml.ape.properties.tabs.Org_muml_ape_tab_generalTabElementFilter"
+            id="org.muml.ape.tab.general"
+            tab="org.muml.ape.tab.general">
              <input
                type="org.eclipse.emf.ecore.EObject">
              </input>
@@ -58,113 +58,113 @@
     <propertyEditors>
     
        <propertyEditor
-             factory="org.muml.ape.properties.properties.editor.PropertyGeneratorEditor$Factory"
-             type="http://de.uni_paderborn.fujaba.properties/0.5.1#PropertyGenerator">
+             factory="org.muml.ape.properties.ape.editor.PropertyGeneratorEditor$Factory"
+             type="http://org.muml.ape/1.0.0#PropertyGenerator">
        </propertyEditor>
     
        <propertyEditor
-             factory="org.muml.ape.properties.properties.editor.ReconcilerEditor$Factory"
-             type="http://de.uni_paderborn.fujaba.properties/0.5.1#Reconciler">
+             factory="org.muml.ape.properties.ape.editor.ReconcilerEditor$Factory"
+             type="http://org.muml.ape/1.0.0#Reconciler">
        </propertyEditor>
     
        <propertyEditor
-             factory="org.muml.ape.properties.properties.editor.CustomTransformationEditor$Factory"
-             type="http://de.uni_paderborn.fujaba.properties/0.5.1#CustomTransformation">
+             factory="org.muml.ape.properties.ape.editor.CustomTransformationEditor$Factory"
+             type="http://org.muml.ape/1.0.0#CustomTransformation">
        </propertyEditor>
     
        <propertyEditor
-             factory="org.muml.ape.properties.properties.editor.PluginEditor$Factory"
-             type="http://de.uni_paderborn.fujaba.properties/0.5.1#Plugin">
+             factory="org.muml.ape.properties.ape.editor.PluginEditor$Factory"
+             type="http://org.muml.ape/1.0.0#Plugin">
        </propertyEditor>
     
        <propertyEditor
-             factory="org.muml.ape.properties.properties.editor.PropertyTabEditor$Factory"
-             type="http://de.uni_paderborn.fujaba.properties/0.5.1#PropertyTab">
+             factory="org.muml.ape.properties.ape.editor.PropertyTabEditor$Factory"
+             type="http://org.muml.ape/1.0.0#PropertyTab">
        </propertyEditor>
     
        <propertyEditor
-             factory="org.muml.ape.properties.properties.editor.PackageEditor$Factory"
-             type="http://de.uni_paderborn.fujaba.properties/0.5.1#Package">
+             factory="org.muml.ape.properties.ape.editor.PackageEditor$Factory"
+             type="http://org.muml.ape/1.0.0#Package">
        </propertyEditor>
     
        <propertyEditor
-             factory="org.muml.ape.properties.properties.editor.ClassEditor$Factory"
-             type="http://de.uni_paderborn.fujaba.properties/0.5.1#Class">
+             factory="org.muml.ape.properties.ape.editor.ClassEditor$Factory"
+             type="http://org.muml.ape/1.0.0#Class">
        </propertyEditor>
     
        <propertyEditor
-             factory="org.muml.ape.properties.properties.editor.PropertyEditor$Factory"
-             type="http://de.uni_paderborn.fujaba.properties/0.5.1#Property">
+             factory="org.muml.ape.properties.ape.editor.PropertyEditor$Factory"
+             type="http://org.muml.ape/1.0.0#Property">
        </propertyEditor>
     
        <propertyEditor
-             factory="org.muml.ape.properties.properties.editor.TextPropertyEditorEditor$Factory"
-             type="http://de.uni_paderborn.fujaba.properties/0.5.1#TextPropertyEditor">
+             factory="org.muml.ape.properties.ape.editor.TextPropertyEditorEditor$Factory"
+             type="http://org.muml.ape/1.0.0#TextPropertyEditor">
        </propertyEditor>
     
        <propertyEditor
-             factory="org.muml.ape.properties.properties.editor.SpinnerPropertyEditorEditor$Factory"
-             type="http://de.uni_paderborn.fujaba.properties/0.5.1#SpinnerPropertyEditor">
+             factory="org.muml.ape.properties.ape.editor.SpinnerPropertyEditorEditor$Factory"
+             type="http://org.muml.ape/1.0.0#SpinnerPropertyEditor">
        </propertyEditor>
     
        <propertyEditor
-             factory="org.muml.ape.properties.properties.editor.ComboBoxPropertyEditorEditor$Factory"
-             type="http://de.uni_paderborn.fujaba.properties/0.5.1#ComboBoxPropertyEditor">
+             factory="org.muml.ape.properties.ape.editor.ComboBoxPropertyEditorEditor$Factory"
+             type="http://org.muml.ape/1.0.0#ComboBoxPropertyEditor">
        </propertyEditor>
     
        <propertyEditor
-             factory="org.muml.ape.properties.properties.editor.CheckboxPropertyEditorEditor$Factory"
-             type="http://de.uni_paderborn.fujaba.properties/0.5.1#CheckboxPropertyEditor">
+             factory="org.muml.ape.properties.ape.editor.CheckboxPropertyEditorEditor$Factory"
+             type="http://org.muml.ape/1.0.0#CheckboxPropertyEditor">
        </propertyEditor>
     
        <propertyEditor
-             factory="org.muml.ape.properties.properties.editor.RadioPropertyEditorEditor$Factory"
-             type="http://de.uni_paderborn.fujaba.properties/0.5.1#RadioPropertyEditor">
+             factory="org.muml.ape.properties.ape.editor.RadioPropertyEditorEditor$Factory"
+             type="http://org.muml.ape/1.0.0#RadioPropertyEditor">
        </propertyEditor>
     
        <propertyEditor
-             factory="org.muml.ape.properties.properties.editor.ListPropertyEditorEditor$Factory"
-             type="http://de.uni_paderborn.fujaba.properties/0.5.1#ListPropertyEditor">
+             factory="org.muml.ape.properties.ape.editor.ListPropertyEditorEditor$Factory"
+             type="http://org.muml.ape/1.0.0#ListPropertyEditor">
        </propertyEditor>
     
        <propertyEditor
-             factory="org.muml.ape.properties.properties.editor.FlattenedListPropertyEditorEditor$Factory"
-             type="http://de.uni_paderborn.fujaba.properties/0.5.1#FlattenedListPropertyEditor">
+             factory="org.muml.ape.properties.ape.editor.FlattenedListPropertyEditorEditor$Factory"
+             type="http://org.muml.ape/1.0.0#FlattenedListPropertyEditor">
        </propertyEditor>
     
        <propertyEditor
-             factory="org.muml.ape.properties.properties.editor.ObjectPropertyEditorEditor$Factory"
-             type="http://de.uni_paderborn.fujaba.properties/0.5.1#ObjectPropertyEditor">
+             factory="org.muml.ape.properties.ape.editor.ObjectPropertyEditorEditor$Factory"
+             type="http://org.muml.ape/1.0.0#ObjectPropertyEditor">
        </propertyEditor>
     
        <propertyEditor
-             factory="org.muml.ape.properties.properties.editor.OCLPropertyEditorEditor$Factory"
-             type="http://de.uni_paderborn.fujaba.properties/0.5.1#OCLPropertyEditor">
+             factory="org.muml.ape.properties.ape.editor.OCLPropertyEditorEditor$Factory"
+             type="http://org.muml.ape/1.0.0#OCLPropertyEditor">
        </propertyEditor>
     
        <propertyEditor
-             factory="org.muml.ape.properties.properties.editor.CustomPropertyEditorEditor$Factory"
-             type="http://de.uni_paderborn.fujaba.properties/0.5.1#CustomPropertyEditor">
+             factory="org.muml.ape.properties.ape.editor.CustomPropertyEditorEditor$Factory"
+             type="http://org.muml.ape/1.0.0#CustomPropertyEditor">
        </propertyEditor>
     
        <propertyEditor
-             factory="org.muml.ape.properties.properties.editor.PropertyCategoryEditor$Factory"
-             type="http://de.uni_paderborn.fujaba.properties/0.5.1#PropertyCategory">
+             factory="org.muml.ape.properties.ape.editor.PropertyCategoryEditor$Factory"
+             type="http://org.muml.ape/1.0.0#PropertyCategory">
        </propertyEditor>
     
        <propertyEditor
-             factory="org.muml.ape.properties.properties.editor.OCLFilterEditor$Factory"
-             type="http://de.uni_paderborn.fujaba.properties/0.5.1#OCLFilter">
+             factory="org.muml.ape.properties.ape.editor.OCLFilterEditor$Factory"
+             type="http://org.muml.ape/1.0.0#OCLFilter">
        </propertyEditor>
     
        <propertyEditor
-             factory="org.muml.ape.properties.properties.editor.CreationConstraintEditor$Factory"
-             type="http://de.uni_paderborn.fujaba.properties/0.5.1#CreationConstraint">
+             factory="org.muml.ape.properties.ape.editor.CreationConstraintEditor$Factory"
+             type="http://org.muml.ape/1.0.0#CreationConstraint">
        </propertyEditor>
     
        <propertyEditor
-             factory="org.muml.ape.properties.properties.editor.BaseInsertPointEditor$Factory"
-             type="http://de.uni_paderborn.fujaba.properties/0.5.1#BaseInsertPoint">
+             factory="org.muml.ape.properties.ape.editor.BaseInsertPointEditor$Factory"
+             type="http://org.muml.ape/1.0.0#BaseInsertPoint">
        </propertyEditor>
     
     </propertyEditors>

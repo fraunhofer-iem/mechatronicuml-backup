@@ -1,5 +1,5 @@
 
-package org.muml.ape.properties.properties.editor;
+package org.muml.ape.properties.ape.editor;
 
 /**
  * @generated
@@ -21,27 +21,27 @@ public class BaseInsertPointEditor extends org.muml.ape.runtime.editors.ClassPro
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorBaseClass_de_uni_paderborn_fujaba_properties_tab_generalTab_Editor(), false);
+			addPropertyEditor(createEditorBaseClass_org_muml_ape_tab_generalTab_Editor(), false);
 
-		} else if ("de.uni_paderborn.fujaba.properties.tab.general".equals(tab)) { // Tab General
+		} else if ("org.muml.ape.tab.general".equals(tab)) { // Tab General
 
-			addPropertyEditor(createEditorBaseClass_de_uni_paderborn_fujaba_properties_tab_generalTab_Editor(), false);
+			addPropertyEditor(createEditorBaseClass_org_muml_ape_tab_generalTab_Editor(), false);
 
 		} else {
 		}
 	}
 
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorBaseClass_de_uni_paderborn_fujaba_properties_tab_generalTab;
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorBaseClass_de_uni_paderborn_fujaba_properties_tab_generalTab_Editor() {
-		if (this.editorBaseClass_de_uni_paderborn_fujaba_properties_tab_generalTab == null) {
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorBaseClass_org_muml_ape_tab_generalTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorBaseClass_org_muml_ape_tab_generalTab_Editor() {
+		if (this.editorBaseClass_org_muml_ape_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.ape.PropertiesPackage.eINSTANCE
 					.getBaseInsertPoint_BaseClass();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.ComboPropertyEditor(
 					adapterFactory, feature);
 
-			this.editorBaseClass_de_uni_paderborn_fujaba_properties_tab_generalTab = editor;
+			this.editorBaseClass_org_muml_ape_tab_generalTab = editor;
 		}
-		return this.editorBaseClass_de_uni_paderborn_fujaba_properties_tab_generalTab;
+		return this.editorBaseClass_org_muml_ape_tab_generalTab;
 	}
 
 	//
@@ -67,8 +67,9 @@ public class BaseInsertPointEditor extends org.muml.ape.runtime.editors.ClassPro
 
 		@Override
 		public boolean hasTab(java.lang.String tab) {
-			return java.util.Arrays.asList(new java.lang.String[]{"de.uni_paderborn.fujaba.properties.tab.general",
-					"de.uni_paderborn.fujaba.properties.tab.general"}).contains(tab);
+			return java.util.Arrays
+					.asList(new java.lang.String[]{"org.muml.ape.tab.general", "org.muml.ape.tab.general"})
+					.contains(tab);
 		}
 	}
 

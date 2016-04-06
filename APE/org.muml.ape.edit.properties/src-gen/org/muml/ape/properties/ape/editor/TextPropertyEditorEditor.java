@@ -1,5 +1,5 @@
 
-package org.muml.ape.properties.properties.editor;
+package org.muml.ape.properties.ape.editor;
 
 /**
  * @generated
@@ -21,27 +21,27 @@ public class TextPropertyEditorEditor extends org.muml.ape.runtime.editors.Class
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorMultiLine_de_uni_paderborn_fujaba_properties_tab_generalTab_Editor(), false);
+			addPropertyEditor(createEditorMultiLine_org_muml_ape_tab_generalTab_Editor(), false);
 
-		} else if ("de.uni_paderborn.fujaba.properties.tab.general".equals(tab)) { // Tab General
+		} else if ("org.muml.ape.tab.general".equals(tab)) { // Tab General
 
-			addPropertyEditor(createEditorMultiLine_de_uni_paderborn_fujaba_properties_tab_generalTab_Editor(), false);
+			addPropertyEditor(createEditorMultiLine_org_muml_ape_tab_generalTab_Editor(), false);
 
 		} else {
 		}
 	}
 
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorMultiLine_de_uni_paderborn_fujaba_properties_tab_generalTab;
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorMultiLine_de_uni_paderborn_fujaba_properties_tab_generalTab_Editor() {
-		if (this.editorMultiLine_de_uni_paderborn_fujaba_properties_tab_generalTab == null) {
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorMultiLine_org_muml_ape_tab_generalTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorMultiLine_org_muml_ape_tab_generalTab_Editor() {
+		if (this.editorMultiLine_org_muml_ape_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.ape.PropertiesPackage.eINSTANCE
 					.getTextPropertyEditor_MultiLine();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.CheckboxPropertyEditor(
 					adapterFactory, feature);
 
-			this.editorMultiLine_de_uni_paderborn_fujaba_properties_tab_generalTab = editor;
+			this.editorMultiLine_org_muml_ape_tab_generalTab = editor;
 		}
-		return this.editorMultiLine_de_uni_paderborn_fujaba_properties_tab_generalTab;
+		return this.editorMultiLine_org_muml_ape_tab_generalTab;
 	}
 
 	//
@@ -67,8 +67,7 @@ public class TextPropertyEditorEditor extends org.muml.ape.runtime.editors.Class
 
 		@Override
 		public boolean hasTab(java.lang.String tab) {
-			return java.util.Arrays.asList(new java.lang.String[]{"de.uni_paderborn.fujaba.properties.tab.general"})
-					.contains(tab);
+			return java.util.Arrays.asList(new java.lang.String[]{"org.muml.ape.tab.general"}).contains(tab);
 		}
 	}
 

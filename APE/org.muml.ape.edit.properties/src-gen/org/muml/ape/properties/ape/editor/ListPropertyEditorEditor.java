@@ -1,15 +1,15 @@
 
-package org.muml.ape.properties.properties.editor;
+package org.muml.ape.properties.ape.editor;
 
 /**
  * @generated
  */
-public class ObjectPropertyEditorEditor extends org.muml.ape.runtime.editors.ClassPropertyEditor {
+public class ListPropertyEditorEditor extends org.muml.ape.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
 	 */
-	public ObjectPropertyEditorEditor(String tab, org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
+	public ListPropertyEditorEditor(String tab, org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
 		super(tab, adapterFactory, eClass);
 	}
@@ -21,7 +21,7 @@ public class ObjectPropertyEditorEditor extends org.muml.ape.runtime.editors.Cla
 	protected void createProperties() {
 		if (tab == null) {
 
-		} else if ("de.uni_paderborn.fujaba.properties.tab.general".equals(tab)) { // Tab General
+		} else if ("org.muml.ape.tab.general".equals(tab)) { // Tab General
 
 		} else {
 		}
@@ -34,9 +34,9 @@ public class ObjectPropertyEditorEditor extends org.muml.ape.runtime.editors.Cla
 	/**
 	 * @generated
 	 */
-	public ObjectPropertyEditorEditor(String tab) {
+	public ListPropertyEditorEditor(String tab) {
 		this(tab, org.muml.ape.properties.util.PropertiesUtil.INSTANCE.getAdapterFactory(),
-				org.muml.ape.PropertiesPackage.eINSTANCE.getObjectPropertyEditor());
+				org.muml.ape.PropertiesPackage.eINSTANCE.getListPropertyEditor());
 	}
 
 	/**
@@ -45,7 +45,7 @@ public class ObjectPropertyEditorEditor extends org.muml.ape.runtime.editors.Cla
 	public static class Factory implements org.muml.ape.runtime.factory.IPropertyEditorFactory {
 		@Override
 		public org.muml.ape.runtime.editors.IPropertyEditor createPropertyEditor(String tab) {
-			return new ObjectPropertyEditorEditor(tab);
+			return new ListPropertyEditorEditor(tab);
 		}
 
 		@Override

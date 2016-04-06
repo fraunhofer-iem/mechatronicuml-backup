@@ -1,12 +1,10 @@
 
-package org.muml.ape.properties.properties.editor;
+package org.muml.ape.properties.ape.editor;
 
 /**
  * @generated
  */
-public abstract class OrderedElementEditor
-		extends
-			org.muml.ape.runtime.editors.ClassPropertyEditor {
+public abstract class OrderedElementEditor extends org.muml.ape.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
@@ -23,7 +21,7 @@ public abstract class OrderedElementEditor
 	protected void createProperties() {
 		if (tab == null) {
 
-		} else if ("de.uni_paderborn.fujaba.properties.tab.general".equals(tab)) { // Tab General
+		} else if ("org.muml.ape.tab.general".equals(tab)) { // Tab General
 
 		} else {
 		}

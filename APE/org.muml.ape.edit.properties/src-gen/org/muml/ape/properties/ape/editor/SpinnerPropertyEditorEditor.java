@@ -1,12 +1,10 @@
 
-package org.muml.ape.properties.properties.editor;
+package org.muml.ape.properties.ape.editor;
 
 /**
  * @generated
  */
-public class SpinnerPropertyEditorEditor
-		extends
-			org.muml.ape.runtime.editors.ClassPropertyEditor {
+public class SpinnerPropertyEditorEditor extends org.muml.ape.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
@@ -23,27 +21,27 @@ public class SpinnerPropertyEditorEditor
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorDigits_de_uni_paderborn_fujaba_properties_tab_generalTab_Editor(), false);
+			addPropertyEditor(createEditorDigits_org_muml_ape_tab_generalTab_Editor(), false);
 
-		} else if ("de.uni_paderborn.fujaba.properties.tab.general".equals(tab)) { // Tab General
+		} else if ("org.muml.ape.tab.general".equals(tab)) { // Tab General
 
-			addPropertyEditor(createEditorDigits_de_uni_paderborn_fujaba_properties_tab_generalTab_Editor(), false);
+			addPropertyEditor(createEditorDigits_org_muml_ape_tab_generalTab_Editor(), false);
 
 		} else {
 		}
 	}
 
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorDigits_de_uni_paderborn_fujaba_properties_tab_generalTab;
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorDigits_de_uni_paderborn_fujaba_properties_tab_generalTab_Editor() {
-		if (this.editorDigits_de_uni_paderborn_fujaba_properties_tab_generalTab == null) {
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorDigits_org_muml_ape_tab_generalTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorDigits_org_muml_ape_tab_generalTab_Editor() {
+		if (this.editorDigits_org_muml_ape_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.ape.PropertiesPackage.eINSTANCE
 					.getSpinnerPropertyEditor_Digits();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.SpinnerPropertyEditor(
 					adapterFactory, feature, 0);
 
-			this.editorDigits_de_uni_paderborn_fujaba_properties_tab_generalTab = editor;
+			this.editorDigits_org_muml_ape_tab_generalTab = editor;
 		}
-		return this.editorDigits_de_uni_paderborn_fujaba_properties_tab_generalTab;
+		return this.editorDigits_org_muml_ape_tab_generalTab;
 	}
 
 	//
@@ -69,8 +67,7 @@ public class SpinnerPropertyEditorEditor
 
 		@Override
 		public boolean hasTab(java.lang.String tab) {
-			return java.util.Arrays.asList(new java.lang.String[]{"de.uni_paderborn.fujaba.properties.tab.general"})
-					.contains(tab);
+			return java.util.Arrays.asList(new java.lang.String[]{"org.muml.ape.tab.general"}).contains(tab);
 		}
 	}
 
