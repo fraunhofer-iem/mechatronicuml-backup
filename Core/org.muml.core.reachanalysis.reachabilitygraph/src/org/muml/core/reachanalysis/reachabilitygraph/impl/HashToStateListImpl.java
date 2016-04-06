@@ -24,11 +24,11 @@ import org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraphState;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.core.reachanalysis.reachabilitygraph.impl.HashToStateListImpl#getHash <em>Hash</em>}</li>
  *   <li>{@link org.muml.core.reachanalysis.reachabilitygraph.impl.HashToStateListImpl#getStates <em>States</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

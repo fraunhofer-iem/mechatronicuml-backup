@@ -5,11 +5,9 @@
   <plugin xmi:id="_i_NKAOHNEeS5Putgio2lkg" id="org.muml.core.edit.properties" name="Core Properties" vendor="SDM" version="1.0.0.qualifier">
     <requiredBundles>org.eclipse.emf.ecore</requiredBundles>
     <requiredBundles>org.eclipse.core.runtime</requiredBundles>
-    <requiredBundles>org.storydriven.core.edit</requiredBundles>
     <requiredBundles>org.eclipse.emf.edit</requiredBundles>
     <requiredBundles>org.muml.ape.runtime</requiredBundles>
     <requiredBundles>org.eclipse.ui</requiredBundles>
-    <requiredBundles>org.storydriven.core</requiredBundles>
     <requiredBundles>org.muml.core</requiredBundles>
     <requiredBundles>org.muml.core.edit</requiredBundles>
   </plugin>
@@ -28,7 +26,7 @@
     <classes xmi:id="_i_PmQuHNEeS5Putgio2lkg">
       <genClass href="core.genmodel#//core/ExtendableElement"/>
       <orderedElements xsi:type="org.muml:Property" xmi:id="_i_PmQ-HNEeS5Putgio2lkg" tab="_i_OYIeHNEeS5Putgio2lkg" tooltip="" reconcile="false" initializeOCLExpression="">
-        <genFeature href="core.genmodel#//core/ExtendableElement/extension"/>
+        <genFeature href="core.genmodel#//core/ExtendableElement/extensions"/>
         <editor xsi:type="org.muml:FlattenedListPropertyEditor" xmi:id="_i_QNUOHNEeS5Putgio2lkg"/>
       </orderedElements>
     </classes>

@@ -29,6 +29,7 @@ import org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraphTransition
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.core.reachanalysis.reachabilitygraph.impl.ReachabilityGraphStateImpl#getHash <em>Hash</em>}</li>
  *   <li>{@link org.muml.core.reachanalysis.reachabilitygraph.impl.ReachabilityGraphStateImpl#getIncomingTransitions <em>Incoming Transitions</em>}</li>
@@ -36,7 +37,6 @@ import org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraphTransition
  *   <li>{@link org.muml.core.reachanalysis.reachabilitygraph.impl.ReachabilityGraphStateImpl#getReachabilityGraph <em>Reachability Graph</em>}</li>
  *   <li>{@link org.muml.core.reachanalysis.reachabilitygraph.impl.ReachabilityGraphStateImpl#getPathDepth <em>Path Depth</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

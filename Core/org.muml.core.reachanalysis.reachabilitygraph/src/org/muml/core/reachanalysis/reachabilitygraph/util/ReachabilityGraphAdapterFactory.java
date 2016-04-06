@@ -13,6 +13,7 @@ import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
 import org.muml.core.ExtendableElement;
+import org.muml.core.reachanalysis.reachabilitygraph.*;
 import org.muml.core.reachanalysis.reachabilitygraph.ActionTransition;
 import org.muml.core.reachanalysis.reachabilitygraph.HashToStateList;
 import org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraph;

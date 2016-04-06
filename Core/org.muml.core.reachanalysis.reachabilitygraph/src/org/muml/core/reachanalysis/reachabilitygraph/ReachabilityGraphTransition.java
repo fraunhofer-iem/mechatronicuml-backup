@@ -21,12 +21,12 @@ import org.muml.core.ExtendableElement;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraphTransition#getSource <em>Source</em>}</li>
  *   <li>{@link org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraphTransition#getTarget <em>Target</em>}</li>
  *   <li>{@link org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraphTransition#getReachabilityGraph <em>Reachability Graph</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraphPackage#getReachabilityGraphTransition()
  * @model abstract="true"

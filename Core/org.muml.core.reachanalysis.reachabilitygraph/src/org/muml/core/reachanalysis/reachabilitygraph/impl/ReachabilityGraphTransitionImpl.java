@@ -24,12 +24,12 @@ import org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraphTransition
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.core.reachanalysis.reachabilitygraph.impl.ReachabilityGraphTransitionImpl#getSource <em>Source</em>}</li>
  *   <li>{@link org.muml.core.reachanalysis.reachabilitygraph.impl.ReachabilityGraphTransitionImpl#getTarget <em>Target</em>}</li>
  *   <li>{@link org.muml.core.reachanalysis.reachabilitygraph.impl.ReachabilityGraphTransitionImpl#getReachabilityGraph <em>Reachability Graph</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

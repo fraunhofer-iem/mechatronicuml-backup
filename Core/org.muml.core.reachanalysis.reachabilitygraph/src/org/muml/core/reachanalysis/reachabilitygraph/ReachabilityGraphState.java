@@ -21,6 +21,7 @@ import org.muml.core.ExtendableElement;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraphState#getHash <em>Hash</em>}</li>
  *   <li>{@link org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraphState#getIncomingTransitions <em>Incoming Transitions</em>}</li>
@@ -28,7 +29,6 @@ import org.muml.core.ExtendableElement;
  *   <li>{@link org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraphState#getReachabilityGraph <em>Reachability Graph</em>}</li>
  *   <li>{@link org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraphState#getPathDepth <em>Path Depth</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraphPackage#getReachabilityGraphState()
  * @model abstract="true"

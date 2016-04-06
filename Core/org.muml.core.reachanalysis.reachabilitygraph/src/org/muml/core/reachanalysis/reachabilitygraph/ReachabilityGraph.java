@@ -24,13 +24,13 @@ import org.muml.core.ExtendableElement;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraph#getStates <em>States</em>}</li>
  *   <li>{@link org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraph#getTransitions <em>Transitions</em>}</li>
  *   <li>{@link org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraph#getStartState <em>Start State</em>}</li>
  *   <li>{@link org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraph#getStatesWithHash <em>States With Hash</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraphPackage#getReachabilityGraph()
  * @model
@@ -110,7 +110,7 @@ public interface ReachabilityGraph extends ExtendableElement {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>States With Hash</em>' map.
 	 * @see org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraphPackage#getReachabilityGraph_StatesWithHash()
-	 * @model mapType="de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.HashToStateListMapEntry<org.eclipse.emf.ecore.ELongObject, de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.HashToStateList>" transient="true"
+	 * @model mapType="org.muml.core.reachanalysis.reachabilitygraph.HashToStateListMapEntry<org.eclipse.emf.ecore.ELongObject, org.muml.core.reachanalysis.reachabilitygraph.HashToStateList>" transient="true"
 	 * @generated
 	 */
 	EMap<Long, HashToStateList> getStatesWithHash();

@@ -64,8 +64,8 @@ public class ExtendableElementItemProvider extends ItemProviderAdapter {
 			Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(CorePackage.Literals.EXTENDABLE_ELEMENT__ANNOTATION);
-			childrenFeatures.add(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION);
+			childrenFeatures.add(CorePackage.Literals.EXTENDABLE_ELEMENT__ANNOTATIONS);
+			childrenFeatures.add(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSIONS);
 		}
 		return childrenFeatures;
 	}
@@ -106,8 +106,8 @@ public class ExtendableElementItemProvider extends ItemProviderAdapter {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ExtendableElement.class)) {
-			case CorePackage.EXTENDABLE_ELEMENT__ANNOTATION:
-			case CorePackage.EXTENDABLE_ELEMENT__EXTENSION:
+			case CorePackage.EXTENDABLE_ELEMENT__ANNOTATIONS:
+			case CorePackage.EXTENDABLE_ELEMENT__EXTENSIONS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}

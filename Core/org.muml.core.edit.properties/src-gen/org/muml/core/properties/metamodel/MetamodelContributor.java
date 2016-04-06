@@ -1,9 +1,7 @@
 
 package org.muml.core.properties.metamodel;
 
-public class MetamodelContributor
-		implements
-			org.muml.ape.runtime.metamodel.IMetamodelContributor {
+public class MetamodelContributor implements org.muml.ape.runtime.metamodel.IMetamodelContributor {
 
 	/**
 	 * @generated
@@ -23,8 +21,7 @@ public class MetamodelContributor
 
 		factories.add(new org.muml.core.expressions.provider.ExpressionsItemProviderAdapterFactory());
 
-		factories.add(
-				new org.muml.core.expressions.common.provider.CommonExpressionsItemProviderAdapterFactory());
+		factories.add(new org.muml.core.expressions.common.provider.CommonExpressionsItemProviderAdapterFactory());
 
 	}
 

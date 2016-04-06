@@ -14,8 +14,6 @@ import org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraphPackage;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Action Transition</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */

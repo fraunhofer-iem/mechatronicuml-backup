@@ -34,7 +34,7 @@ public interface ReachabilityGraphPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNAME = "reachabilityGraph";
+	String eNAME = "reachabilitygraph";
 
 	/**
 	 * The package namespace URI.
@@ -42,7 +42,7 @@ public interface ReachabilityGraphPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.fujaba.de/reachabilityGraph/0.4.0";
+	String eNS_URI = "http://www.muml.org/core/reachabilitygraph/1.0.0";
 
 	/**
 	 * The package namespace name.
@@ -145,22 +145,22 @@ public interface ReachabilityGraphPackage extends EPackage {
 	int REACHABILITY_GRAPH = 2;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REACHABILITY_GRAPH__ANNOTATION = CorePackage.EXTENDABLE_ELEMENT__ANNOTATION;
+	int REACHABILITY_GRAPH__ANNOTATIONS = CorePackage.EXTENDABLE_ELEMENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REACHABILITY_GRAPH__EXTENSION = CorePackage.EXTENDABLE_ELEMENT__EXTENSION;
+	int REACHABILITY_GRAPH__EXTENSIONS = CorePackage.EXTENDABLE_ELEMENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>States</b></em>' containment reference list.
@@ -218,22 +218,22 @@ public interface ReachabilityGraphPackage extends EPackage {
 	int REACHABILITY_GRAPH_TRANSITION = 3;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REACHABILITY_GRAPH_TRANSITION__ANNOTATION = CorePackage.EXTENDABLE_ELEMENT__ANNOTATION;
+	int REACHABILITY_GRAPH_TRANSITION__ANNOTATIONS = CorePackage.EXTENDABLE_ELEMENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REACHABILITY_GRAPH_TRANSITION__EXTENSION = CorePackage.EXTENDABLE_ELEMENT__EXTENSION;
+	int REACHABILITY_GRAPH_TRANSITION__EXTENSIONS = CorePackage.EXTENDABLE_ELEMENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Source</b></em>' reference.
@@ -282,22 +282,22 @@ public interface ReachabilityGraphPackage extends EPackage {
 	int ACTION_TRANSITION = 4;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ACTION_TRANSITION__ANNOTATION = REACHABILITY_GRAPH_TRANSITION__ANNOTATION;
+	int ACTION_TRANSITION__ANNOTATIONS = REACHABILITY_GRAPH_TRANSITION__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ACTION_TRANSITION__EXTENSION = REACHABILITY_GRAPH_TRANSITION__EXTENSION;
+	int ACTION_TRANSITION__EXTENSIONS = REACHABILITY_GRAPH_TRANSITION__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Source</b></em>' reference.
@@ -346,22 +346,22 @@ public interface ReachabilityGraphPackage extends EPackage {
 	int REACHABILITY_GRAPH_STATE = 5;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REACHABILITY_GRAPH_STATE__ANNOTATION = CorePackage.EXTENDABLE_ELEMENT__ANNOTATION;
+	int REACHABILITY_GRAPH_STATE__ANNOTATIONS = CorePackage.EXTENDABLE_ELEMENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REACHABILITY_GRAPH_STATE__EXTENSION = CorePackage.EXTENDABLE_ELEMENT__EXTENSION;
+	int REACHABILITY_GRAPH_STATE__EXTENSIONS = CorePackage.EXTENDABLE_ELEMENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Hash</b></em>' attribute.
@@ -456,7 +456,7 @@ public interface ReachabilityGraphPackage extends EPackage {
 	 * @return the meta object for class '<em>Hash To State List Map Entry</em>'.
 	 * @see java.util.Map.Entry
 	 * @model keyDataType="org.eclipse.emf.ecore.ELongObject"
-	 *        valueType="de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.HashToStateList"
+	 *        valueType="org.muml.core.reachanalysis.reachabilitygraph.HashToStateList"
 	 * @generated
 	 */
 	EClass getHashToStateListMapEntry();

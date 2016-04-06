@@ -20,11 +20,11 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.core.reachanalysis.reachabilitygraph.HashToStateList#getHash <em>Hash</em>}</li>
  *   <li>{@link org.muml.core.reachanalysis.reachabilitygraph.HashToStateList#getStates <em>States</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraphPackage#getHashToStateList()
  * @model

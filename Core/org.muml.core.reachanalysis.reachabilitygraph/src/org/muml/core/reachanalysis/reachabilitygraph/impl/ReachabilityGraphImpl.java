@@ -33,13 +33,13 @@ import org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraphTransition
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.core.reachanalysis.reachabilitygraph.impl.ReachabilityGraphImpl#getStates <em>States</em>}</li>
  *   <li>{@link org.muml.core.reachanalysis.reachabilitygraph.impl.ReachabilityGraphImpl#getTransitions <em>Transitions</em>}</li>
  *   <li>{@link org.muml.core.reachanalysis.reachabilitygraph.impl.ReachabilityGraphImpl#getStartState <em>Start State</em>}</li>
  *   <li>{@link org.muml.core.reachanalysis.reachabilitygraph.impl.ReachabilityGraphImpl#getStatesWithHash <em>States With Hash</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

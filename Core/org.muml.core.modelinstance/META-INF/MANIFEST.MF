@@ -9,7 +9,7 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.eclipse.emf.ecore.xmi;visibility:=reexport,
- org.muml.core;bundle-version="1.0.0";visibility:=reexport,
+ org.muml.core;visibility:=reexport,
  org.muml.emm;bundle-version="0.1.0"
 Bundle-ActivationPolicy: lazy
 Bundle-Activator: org.muml.core.modelinstance.ModelInstancePlugin

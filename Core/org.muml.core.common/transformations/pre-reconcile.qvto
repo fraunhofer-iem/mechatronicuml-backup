@@ -1,6 +1,6 @@
 
 modeltype GMFGEN uses gmfgen('http://www.eclipse.org/gmf/2009/GenModel');
-modeltype propsheet uses properties('http://de.uni_paderborn.fujaba.properties/0.5.1');
+modeltype propsheet uses ape('http://www.muml.org/ape/1.0.0');
 
 transformation transform(inout gmfgenModel : GMFGEN);
 
