@@ -116,7 +116,7 @@ ruleDotGraph returns [EObject current=null]
        			$current, 
        			"id",
         		lv_id_3_0, 
-        		"DotID");
+        		"de.uni_paderborn.fujaba.graphviz.dot.xtext.DotLanguage.DotID");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -139,7 +139,7 @@ ruleDotGraph returns [EObject current=null]
        			$current, 
        			"id",
         		lv_id_5_0, 
-        		"DotID");
+        		"de.uni_paderborn.fujaba.graphviz.dot.xtext.DotLanguage.DotID");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -169,7 +169,7 @@ ruleDotGraph returns [EObject current=null]
        			$current, 
        			"graphSettings",
         		lv_graphSettings_9_0, 
-        		"Setting");
+        		"de.uni_paderborn.fujaba.graphviz.dot.xtext.DotLanguage.Setting");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -191,7 +191,7 @@ ruleDotGraph returns [EObject current=null]
        			$current, 
        			"graphSettings",
         		lv_graphSettings_11_0, 
-        		"Setting");
+        		"de.uni_paderborn.fujaba.graphviz.dot.xtext.DotLanguage.Setting");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -226,7 +226,7 @@ ruleDotGraph returns [EObject current=null]
        			$current, 
        			"nodeSettings",
         		lv_nodeSettings_16_0, 
-        		"Setting");
+        		"de.uni_paderborn.fujaba.graphviz.dot.xtext.DotLanguage.Setting");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -248,7 +248,7 @@ ruleDotGraph returns [EObject current=null]
        			$current, 
        			"nodeSettings",
         		lv_nodeSettings_18_0, 
-        		"Setting");
+        		"de.uni_paderborn.fujaba.graphviz.dot.xtext.DotLanguage.Setting");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -283,7 +283,7 @@ ruleDotGraph returns [EObject current=null]
        			$current, 
        			"edgeSettings",
         		lv_edgeSettings_23_0, 
-        		"Setting");
+        		"de.uni_paderborn.fujaba.graphviz.dot.xtext.DotLanguage.Setting");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -305,7 +305,7 @@ ruleDotGraph returns [EObject current=null]
        			$current, 
        			"edgeSettings",
         		lv_edgeSettings_25_0, 
-        		"Setting");
+        		"de.uni_paderborn.fujaba.graphviz.dot.xtext.DotLanguage.Setting");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -332,7 +332,7 @@ ruleDotGraph returns [EObject current=null]
        			$current, 
        			"subgraphs",
         		lv_subgraphs_28_0, 
-        		"DotGraph");
+        		"de.uni_paderborn.fujaba.graphviz.dot.xtext.DotLanguage.DotGraph");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -351,7 +351,7 @@ ruleDotGraph returns [EObject current=null]
        			$current, 
        			"nodes",
         		lv_nodes_29_0, 
-        		"DotNode");
+        		"de.uni_paderborn.fujaba.graphviz.dot.xtext.DotLanguage.DotNode");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -370,7 +370,7 @@ ruleDotGraph returns [EObject current=null]
        			$current, 
        			"edges",
         		lv_edges_30_0, 
-        		"DotEdge");
+        		"de.uni_paderborn.fujaba.graphviz.dot.xtext.DotLanguage.DotEdge");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -413,7 +413,7 @@ ruleDotNode returns [EObject current=null]
        			$current, 
        			"name",
         		lv_name_0_0, 
-        		"DotID");
+        		"de.uni_paderborn.fujaba.graphviz.dot.xtext.DotLanguage.DotID");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -435,7 +435,7 @@ ruleDotNode returns [EObject current=null]
        			$current, 
        			"settings",
         		lv_settings_2_0, 
-        		"Setting");
+        		"de.uni_paderborn.fujaba.graphviz.dot.xtext.DotLanguage.Setting");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -457,7 +457,7 @@ ruleDotNode returns [EObject current=null]
        			$current, 
        			"settings",
         		lv_settings_4_0, 
-        		"Setting");
+        		"de.uni_paderborn.fujaba.graphviz.dot.xtext.DotLanguage.Setting");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -582,7 +582,7 @@ ruleDirectedDotEdge returns [EObject current=null]
        			$current, 
        			"settings",
         		lv_settings_4_0, 
-        		"Setting");
+        		"de.uni_paderborn.fujaba.graphviz.dot.xtext.DotLanguage.Setting");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -604,7 +604,7 @@ ruleDirectedDotEdge returns [EObject current=null]
        			$current, 
        			"settings",
         		lv_settings_6_0, 
-        		"Setting");
+        		"de.uni_paderborn.fujaba.graphviz.dot.xtext.DotLanguage.Setting");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -689,7 +689,7 @@ ruleUndirectedDotEdge returns [EObject current=null]
        			$current, 
        			"settings",
         		lv_settings_4_0, 
-        		"Setting");
+        		"de.uni_paderborn.fujaba.graphviz.dot.xtext.DotLanguage.Setting");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -711,7 +711,7 @@ ruleUndirectedDotEdge returns [EObject current=null]
        			$current, 
        			"settings",
         		lv_settings_6_0, 
-        		"Setting");
+        		"de.uni_paderborn.fujaba.graphviz.dot.xtext.DotLanguage.Setting");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -758,7 +758,7 @@ ruleSetting returns [EObject current=null]
        			$current, 
        			"attribute",
         		lv_attribute_0_0, 
-        		"DotID");
+        		"de.uni_paderborn.fujaba.graphviz.dot.xtext.DotLanguage.DotID");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -780,7 +780,7 @@ ruleSetting returns [EObject current=null]
        			$current, 
        			"value",
         		lv_value_2_0, 
-        		"DotID");
+        		"de.uni_paderborn.fujaba.graphviz.dot.xtext.DotLanguage.DotID");
 	        afterParserOrEnumRuleCall();
 	    }
 

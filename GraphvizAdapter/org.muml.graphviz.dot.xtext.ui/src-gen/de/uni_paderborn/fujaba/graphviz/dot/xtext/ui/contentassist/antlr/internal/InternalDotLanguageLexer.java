@@ -50,15 +50,15 @@ public class InternalDotLanguageLexer extends Lexer {
         super(input,state);
 
     }
-    public String getGrammarFileName() { return "../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g"; }
+    public String getGrammarFileName() { return "InternalDotLanguage.g"; }
 
     // $ANTLR start "T__14"
     public final void mT__14() throws RecognitionException {
         try {
             int _type = T__14;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:11:7: ( 'graph' )
-            // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:11:9: 'graph'
+            // InternalDotLanguage.g:11:7: ( 'graph' )
+            // InternalDotLanguage.g:11:9: 'graph'
             {
             match("graph"); 
 
@@ -78,8 +78,8 @@ public class InternalDotLanguageLexer extends Lexer {
         try {
             int _type = T__15;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:12:7: ( '{' )
-            // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:12:9: '{'
+            // InternalDotLanguage.g:12:7: ( '{' )
+            // InternalDotLanguage.g:12:9: '{'
             {
             match('{'); 
 
@@ -98,8 +98,8 @@ public class InternalDotLanguageLexer extends Lexer {
         try {
             int _type = T__16;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:13:7: ( '}' )
-            // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:13:9: '}'
+            // InternalDotLanguage.g:13:7: ( '}' )
+            // InternalDotLanguage.g:13:9: '}'
             {
             match('}'); 
 
@@ -118,8 +118,8 @@ public class InternalDotLanguageLexer extends Lexer {
         try {
             int _type = T__17;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:14:7: ( 'subgraph' )
-            // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:14:9: 'subgraph'
+            // InternalDotLanguage.g:14:7: ( 'subgraph' )
+            // InternalDotLanguage.g:14:9: 'subgraph'
             {
             match("subgraph"); 
 
@@ -139,8 +139,8 @@ public class InternalDotLanguageLexer extends Lexer {
         try {
             int _type = T__18;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:15:7: ( '[' )
-            // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:15:9: '['
+            // InternalDotLanguage.g:15:7: ( '[' )
+            // InternalDotLanguage.g:15:9: '['
             {
             match('['); 
 
@@ -159,8 +159,8 @@ public class InternalDotLanguageLexer extends Lexer {
         try {
             int _type = T__19;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:16:7: ( ']' )
-            // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:16:9: ']'
+            // InternalDotLanguage.g:16:7: ( ']' )
+            // InternalDotLanguage.g:16:9: ']'
             {
             match(']'); 
 
@@ -179,8 +179,8 @@ public class InternalDotLanguageLexer extends Lexer {
         try {
             int _type = T__20;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:17:7: ( ';' )
-            // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:17:9: ';'
+            // InternalDotLanguage.g:17:7: ( ';' )
+            // InternalDotLanguage.g:17:9: ';'
             {
             match(';'); 
 
@@ -199,8 +199,8 @@ public class InternalDotLanguageLexer extends Lexer {
         try {
             int _type = T__21;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:18:7: ( ',' )
-            // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:18:9: ','
+            // InternalDotLanguage.g:18:7: ( ',' )
+            // InternalDotLanguage.g:18:9: ','
             {
             match(','); 
 
@@ -219,8 +219,8 @@ public class InternalDotLanguageLexer extends Lexer {
         try {
             int _type = T__22;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:19:7: ( 'node' )
-            // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:19:9: 'node'
+            // InternalDotLanguage.g:19:7: ( 'node' )
+            // InternalDotLanguage.g:19:9: 'node'
             {
             match("node"); 
 
@@ -240,8 +240,8 @@ public class InternalDotLanguageLexer extends Lexer {
         try {
             int _type = T__23;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:20:7: ( 'edge' )
-            // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:20:9: 'edge'
+            // InternalDotLanguage.g:20:7: ( 'edge' )
+            // InternalDotLanguage.g:20:9: 'edge'
             {
             match("edge"); 
 
@@ -261,8 +261,8 @@ public class InternalDotLanguageLexer extends Lexer {
         try {
             int _type = T__24;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:21:7: ( '->' )
-            // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:21:9: '->'
+            // InternalDotLanguage.g:21:7: ( '->' )
+            // InternalDotLanguage.g:21:9: '->'
             {
             match("->"); 
 
@@ -282,8 +282,8 @@ public class InternalDotLanguageLexer extends Lexer {
         try {
             int _type = T__25;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:22:7: ( '--' )
-            // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:22:9: '--'
+            // InternalDotLanguage.g:22:7: ( '--' )
+            // InternalDotLanguage.g:22:9: '--'
             {
             match("--"); 
 
@@ -303,8 +303,8 @@ public class InternalDotLanguageLexer extends Lexer {
         try {
             int _type = T__26;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:23:7: ( '=' )
-            // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:23:9: '='
+            // InternalDotLanguage.g:23:7: ( '=' )
+            // InternalDotLanguage.g:23:9: '='
             {
             match('='); 
 
@@ -323,8 +323,8 @@ public class InternalDotLanguageLexer extends Lexer {
         try {
             int _type = T__27;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:24:7: ( '-' )
-            // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:24:9: '-'
+            // InternalDotLanguage.g:24:7: ( '-' )
+            // InternalDotLanguage.g:24:9: '-'
             {
             match('-'); 
 
@@ -343,8 +343,8 @@ public class InternalDotLanguageLexer extends Lexer {
         try {
             int _type = T__28;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:25:7: ( 'digraph' )
-            // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:25:9: 'digraph'
+            // InternalDotLanguage.g:25:7: ( 'digraph' )
+            // InternalDotLanguage.g:25:9: 'digraph'
             {
             match("digraph"); 
 
@@ -364,8 +364,8 @@ public class InternalDotLanguageLexer extends Lexer {
         try {
             int _type = RULE_NUMPREFIXEDID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:3046:20: ( RULE_INT RULE_ID )
-            // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:3046:22: RULE_INT RULE_ID
+            // InternalDotLanguage.g:3046:20: ( RULE_INT RULE_ID )
+            // InternalDotLanguage.g:3046:22: RULE_INT RULE_ID
             {
             mRULE_INT(); 
             mRULE_ID(); 
@@ -385,11 +385,11 @@ public class InternalDotLanguageLexer extends Lexer {
         try {
             int _type = RULE_DOTSTRINGTERM;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:3048:20: ( '\"' (~ ( '\"' ) )* '\"' )
-            // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:3048:22: '\"' (~ ( '\"' ) )* '\"'
+            // InternalDotLanguage.g:3048:20: ( '\"' (~ ( '\"' ) )* '\"' )
+            // InternalDotLanguage.g:3048:22: '\"' (~ ( '\"' ) )* '\"'
             {
             match('\"'); 
-            // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:3048:26: (~ ( '\"' ) )*
+            // InternalDotLanguage.g:3048:26: (~ ( '\"' ) )*
             loop1:
             do {
                 int alt1=2;
@@ -402,7 +402,7 @@ public class InternalDotLanguageLexer extends Lexer {
 
                 switch (alt1) {
             	case 1 :
-            	    // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:3048:26: ~ ( '\"' )
+            	    // InternalDotLanguage.g:3048:26: ~ ( '\"' )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -439,10 +439,10 @@ public class InternalDotLanguageLexer extends Lexer {
         try {
             int _type = RULE_DOUBLE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:3050:13: ( ( RULE_INT )+ '.' ( RULE_INT )+ )
-            // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:3050:15: ( RULE_INT )+ '.' ( RULE_INT )+
+            // InternalDotLanguage.g:3050:13: ( ( RULE_INT )+ '.' ( RULE_INT )+ )
+            // InternalDotLanguage.g:3050:15: ( RULE_INT )+ '.' ( RULE_INT )+
             {
-            // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:3050:15: ( RULE_INT )+
+            // InternalDotLanguage.g:3050:15: ( RULE_INT )+
             int cnt2=0;
             loop2:
             do {
@@ -456,7 +456,7 @@ public class InternalDotLanguageLexer extends Lexer {
 
                 switch (alt2) {
             	case 1 :
-            	    // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:3050:15: RULE_INT
+            	    // InternalDotLanguage.g:3050:15: RULE_INT
             	    {
             	    mRULE_INT(); 
 
@@ -473,7 +473,7 @@ public class InternalDotLanguageLexer extends Lexer {
             } while (true);
 
             match('.'); 
-            // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:3050:29: ( RULE_INT )+
+            // InternalDotLanguage.g:3050:29: ( RULE_INT )+
             int cnt3=0;
             loop3:
             do {
@@ -487,7 +487,7 @@ public class InternalDotLanguageLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:3050:29: RULE_INT
+            	    // InternalDotLanguage.g:3050:29: RULE_INT
             	    {
             	    mRULE_INT(); 
 
@@ -519,10 +519,10 @@ public class InternalDotLanguageLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:3052:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:3052:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalDotLanguage.g:3052:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // InternalDotLanguage.g:3052:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:3052:11: ( '^' )?
+            // InternalDotLanguage.g:3052:11: ( '^' )?
             int alt4=2;
             int LA4_0 = input.LA(1);
 
@@ -531,7 +531,7 @@ public class InternalDotLanguageLexer extends Lexer {
             }
             switch (alt4) {
                 case 1 :
-                    // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:3052:11: '^'
+                    // InternalDotLanguage.g:3052:11: '^'
                     {
                     match('^'); 
 
@@ -549,7 +549,7 @@ public class InternalDotLanguageLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:3052:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalDotLanguage.g:3052:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop5:
             do {
                 int alt5=2;
@@ -562,7 +562,7 @@ public class InternalDotLanguageLexer extends Lexer {
 
                 switch (alt5) {
             	case 1 :
-            	    // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:
+            	    // InternalDotLanguage.g:
             	    {
             	    if ( (input.LA(1)>='0' && input.LA(1)<='9')||(input.LA(1)>='A' && input.LA(1)<='Z')||input.LA(1)=='_'||(input.LA(1)>='a' && input.LA(1)<='z') ) {
             	        input.consume();
@@ -598,10 +598,10 @@ public class InternalDotLanguageLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:3054:10: ( ( '0' .. '9' )+ )
-            // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:3054:12: ( '0' .. '9' )+
+            // InternalDotLanguage.g:3054:10: ( ( '0' .. '9' )+ )
+            // InternalDotLanguage.g:3054:12: ( '0' .. '9' )+
             {
-            // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:3054:12: ( '0' .. '9' )+
+            // InternalDotLanguage.g:3054:12: ( '0' .. '9' )+
             int cnt6=0;
             loop6:
             do {
@@ -615,7 +615,7 @@ public class InternalDotLanguageLexer extends Lexer {
 
                 switch (alt6) {
             	case 1 :
-            	    // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:3054:13: '0' .. '9'
+            	    // InternalDotLanguage.g:3054:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -647,10 +647,10 @@ public class InternalDotLanguageLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:3056:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:3056:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalDotLanguage.g:3056:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // InternalDotLanguage.g:3056:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:3056:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalDotLanguage.g:3056:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt9=2;
             int LA9_0 = input.LA(1);
 
@@ -668,10 +668,10 @@ public class InternalDotLanguageLexer extends Lexer {
             }
             switch (alt9) {
                 case 1 :
-                    // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:3056:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // InternalDotLanguage.g:3056:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:3056:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // InternalDotLanguage.g:3056:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop7:
                     do {
                         int alt7=3;
@@ -687,7 +687,7 @@ public class InternalDotLanguageLexer extends Lexer {
 
                         switch (alt7) {
                     	case 1 :
-                    	    // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:3056:21: '\\\\' .
+                    	    // InternalDotLanguage.g:3056:21: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -695,7 +695,7 @@ public class InternalDotLanguageLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:3056:28: ~ ( ( '\\\\' | '\"' ) )
+                    	    // InternalDotLanguage.g:3056:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -720,10 +720,10 @@ public class InternalDotLanguageLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:3056:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // InternalDotLanguage.g:3056:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:3056:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // InternalDotLanguage.g:3056:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop8:
                     do {
                         int alt8=3;
@@ -739,7 +739,7 @@ public class InternalDotLanguageLexer extends Lexer {
 
                         switch (alt8) {
                     	case 1 :
-                    	    // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:3056:54: '\\\\' .
+                    	    // InternalDotLanguage.g:3056:54: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -747,7 +747,7 @@ public class InternalDotLanguageLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:3056:61: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // InternalDotLanguage.g:3056:61: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -790,12 +790,12 @@ public class InternalDotLanguageLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:3058:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:3058:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // InternalDotLanguage.g:3058:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // InternalDotLanguage.g:3058:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:3058:24: ( options {greedy=false; } : . )*
+            // InternalDotLanguage.g:3058:24: ( options {greedy=false; } : . )*
             loop10:
             do {
                 int alt10=2;
@@ -820,7 +820,7 @@ public class InternalDotLanguageLexer extends Lexer {
 
                 switch (alt10) {
             	case 1 :
-            	    // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:3058:52: .
+            	    // InternalDotLanguage.g:3058:52: .
             	    {
             	    matchAny(); 
 
@@ -850,12 +850,12 @@ public class InternalDotLanguageLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:3060:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:3060:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // InternalDotLanguage.g:3060:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // InternalDotLanguage.g:3060:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:3060:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // InternalDotLanguage.g:3060:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop11:
             do {
                 int alt11=2;
@@ -868,7 +868,7 @@ public class InternalDotLanguageLexer extends Lexer {
 
                 switch (alt11) {
             	case 1 :
-            	    // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:3060:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // InternalDotLanguage.g:3060:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -888,7 +888,7 @@ public class InternalDotLanguageLexer extends Lexer {
                 }
             } while (true);
 
-            // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:3060:40: ( ( '\\r' )? '\\n' )?
+            // InternalDotLanguage.g:3060:40: ( ( '\\r' )? '\\n' )?
             int alt13=2;
             int LA13_0 = input.LA(1);
 
@@ -897,9 +897,9 @@ public class InternalDotLanguageLexer extends Lexer {
             }
             switch (alt13) {
                 case 1 :
-                    // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:3060:41: ( '\\r' )? '\\n'
+                    // InternalDotLanguage.g:3060:41: ( '\\r' )? '\\n'
                     {
-                    // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:3060:41: ( '\\r' )?
+                    // InternalDotLanguage.g:3060:41: ( '\\r' )?
                     int alt12=2;
                     int LA12_0 = input.LA(1);
 
@@ -908,7 +908,7 @@ public class InternalDotLanguageLexer extends Lexer {
                     }
                     switch (alt12) {
                         case 1 :
-                            // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:3060:41: '\\r'
+                            // InternalDotLanguage.g:3060:41: '\\r'
                             {
                             match('\r'); 
 
@@ -940,10 +940,10 @@ public class InternalDotLanguageLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:3062:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:3062:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalDotLanguage.g:3062:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // InternalDotLanguage.g:3062:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:3062:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalDotLanguage.g:3062:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt14=0;
             loop14:
             do {
@@ -957,7 +957,7 @@ public class InternalDotLanguageLexer extends Lexer {
 
                 switch (alt14) {
             	case 1 :
-            	    // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:
+            	    // InternalDotLanguage.g:
             	    {
             	    if ( (input.LA(1)>='\t' && input.LA(1)<='\n')||input.LA(1)=='\r'||input.LA(1)==' ' ) {
             	        input.consume();
@@ -997,8 +997,8 @@ public class InternalDotLanguageLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:3064:16: ( . )
-            // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:3064:18: .
+            // InternalDotLanguage.g:3064:16: ( . )
+            // InternalDotLanguage.g:3064:18: .
             {
             matchAny(); 
 
@@ -1013,180 +1013,180 @@ public class InternalDotLanguageLexer extends Lexer {
     // $ANTLR end "RULE_ANY_OTHER"
 
     public void mTokens() throws RecognitionException {
-        // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:1:8: ( T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | RULE_NUMPREFIXEDID | RULE_DOTSTRINGTERM | RULE_DOUBLE | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
+        // InternalDotLanguage.g:1:8: ( T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | RULE_NUMPREFIXEDID | RULE_DOTSTRINGTERM | RULE_DOUBLE | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
         int alt15=25;
         alt15 = dfa15.predict(input);
         switch (alt15) {
             case 1 :
-                // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:1:10: T__14
+                // InternalDotLanguage.g:1:10: T__14
                 {
                 mT__14(); 
 
                 }
                 break;
             case 2 :
-                // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:1:16: T__15
+                // InternalDotLanguage.g:1:16: T__15
                 {
                 mT__15(); 
 
                 }
                 break;
             case 3 :
-                // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:1:22: T__16
+                // InternalDotLanguage.g:1:22: T__16
                 {
                 mT__16(); 
 
                 }
                 break;
             case 4 :
-                // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:1:28: T__17
+                // InternalDotLanguage.g:1:28: T__17
                 {
                 mT__17(); 
 
                 }
                 break;
             case 5 :
-                // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:1:34: T__18
+                // InternalDotLanguage.g:1:34: T__18
                 {
                 mT__18(); 
 
                 }
                 break;
             case 6 :
-                // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:1:40: T__19
+                // InternalDotLanguage.g:1:40: T__19
                 {
                 mT__19(); 
 
                 }
                 break;
             case 7 :
-                // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:1:46: T__20
+                // InternalDotLanguage.g:1:46: T__20
                 {
                 mT__20(); 
 
                 }
                 break;
             case 8 :
-                // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:1:52: T__21
+                // InternalDotLanguage.g:1:52: T__21
                 {
                 mT__21(); 
 
                 }
                 break;
             case 9 :
-                // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:1:58: T__22
+                // InternalDotLanguage.g:1:58: T__22
                 {
                 mT__22(); 
 
                 }
                 break;
             case 10 :
-                // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:1:64: T__23
+                // InternalDotLanguage.g:1:64: T__23
                 {
                 mT__23(); 
 
                 }
                 break;
             case 11 :
-                // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:1:70: T__24
+                // InternalDotLanguage.g:1:70: T__24
                 {
                 mT__24(); 
 
                 }
                 break;
             case 12 :
-                // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:1:76: T__25
+                // InternalDotLanguage.g:1:76: T__25
                 {
                 mT__25(); 
 
                 }
                 break;
             case 13 :
-                // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:1:82: T__26
+                // InternalDotLanguage.g:1:82: T__26
                 {
                 mT__26(); 
 
                 }
                 break;
             case 14 :
-                // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:1:88: T__27
+                // InternalDotLanguage.g:1:88: T__27
                 {
                 mT__27(); 
 
                 }
                 break;
             case 15 :
-                // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:1:94: T__28
+                // InternalDotLanguage.g:1:94: T__28
                 {
                 mT__28(); 
 
                 }
                 break;
             case 16 :
-                // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:1:100: RULE_NUMPREFIXEDID
+                // InternalDotLanguage.g:1:100: RULE_NUMPREFIXEDID
                 {
                 mRULE_NUMPREFIXEDID(); 
 
                 }
                 break;
             case 17 :
-                // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:1:119: RULE_DOTSTRINGTERM
+                // InternalDotLanguage.g:1:119: RULE_DOTSTRINGTERM
                 {
                 mRULE_DOTSTRINGTERM(); 
 
                 }
                 break;
             case 18 :
-                // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:1:138: RULE_DOUBLE
+                // InternalDotLanguage.g:1:138: RULE_DOUBLE
                 {
                 mRULE_DOUBLE(); 
 
                 }
                 break;
             case 19 :
-                // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:1:150: RULE_ID
+                // InternalDotLanguage.g:1:150: RULE_ID
                 {
                 mRULE_ID(); 
 
                 }
                 break;
             case 20 :
-                // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:1:158: RULE_INT
+                // InternalDotLanguage.g:1:158: RULE_INT
                 {
                 mRULE_INT(); 
 
                 }
                 break;
             case 21 :
-                // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:1:167: RULE_STRING
+                // InternalDotLanguage.g:1:167: RULE_STRING
                 {
                 mRULE_STRING(); 
 
                 }
                 break;
             case 22 :
-                // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:1:179: RULE_ML_COMMENT
+                // InternalDotLanguage.g:1:179: RULE_ML_COMMENT
                 {
                 mRULE_ML_COMMENT(); 
 
                 }
                 break;
             case 23 :
-                // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:1:195: RULE_SL_COMMENT
+                // InternalDotLanguage.g:1:195: RULE_SL_COMMENT
                 {
                 mRULE_SL_COMMENT(); 
 
                 }
                 break;
             case 24 :
-                // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:1:211: RULE_WS
+                // InternalDotLanguage.g:1:211: RULE_WS
                 {
                 mRULE_WS(); 
 
                 }
                 break;
             case 25 :
-                // ../org.muml.graphviz.dot.xtext.ui/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/ui/contentassist/antlr/internal/InternalDotLanguage.g:1:219: RULE_ANY_OTHER
+                // InternalDotLanguage.g:1:219: RULE_ANY_OTHER
                 {
                 mRULE_ANY_OTHER(); 
 

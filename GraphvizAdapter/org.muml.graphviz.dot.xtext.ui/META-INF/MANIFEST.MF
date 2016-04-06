@@ -23,5 +23,6 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: de.uni_paderborn.fujaba.graphviz.dot.xtext.ui.quickfix,
  de.uni_paderborn.fujaba.graphviz.dot.xtext.ui.contentassist,
  de.uni_paderborn.fujaba.graphviz.dot.xtext.ui.contentassist.antlr,
- de.uni_paderborn.fujaba.graphviz.dot.xtext.ui.internal
+ de.uni_paderborn.fujaba.graphviz.dot.xtext.ui.internal,
+ de.uni_paderborn.fujaba.graphviz.dot.xtext.ui.contentassist.antlr.internal
 Bundle-Activator: de.uni_paderborn.fujaba.graphviz.dot.xtext.ui.internal.DotLanguageActivator

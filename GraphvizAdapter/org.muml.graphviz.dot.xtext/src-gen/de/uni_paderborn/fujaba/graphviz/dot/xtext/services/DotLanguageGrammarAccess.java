@@ -19,7 +19,7 @@ public class DotLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	
 	
 	public class DotGraphElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "DotGraph");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.uni_paderborn.fujaba.graphviz.dot.xtext.DotLanguage.DotGraph");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cDotGraphAction_0 = (Action)cGroup.eContents().get(0);
 		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
@@ -80,38 +80,40 @@ public class DotLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		////import "http://www.storydriven.org/core/0.3.1" as core
 		////import "platform:/resource/de.uni_paderborn.fujaba.graphviz/model/graphviz.ecore#//dot" as dot
 		////import "platform:/resource/de.uni_paderborn.fujaba.graphviz/model/graphviz.ecore#//common" as common
-		//DotGraph returns dot::DotGraph:
-		//	{dot::DotGraph} ((directedGraph?="digraph" | "graph") id=DotID? | "subgraph" id=DotID?) "{" ("graph" "["
-		//	graphSettings+=Setting ("," graphSettings+=Setting)* "]" ";"? | "node" "[" nodeSettings+=Setting (","
-		//	nodeSettings+=Setting)* "]" ";"? | "edge" "[" edgeSettings+=Setting ("," edgeSettings+=Setting)* "]" ";"? |
-		//	subgraphs+=DotGraph | nodes+=DotNode | edges+=DotEdge)* "}";
+		//DotGraph dot::DotGraph:
+		//	{dot::DotGraph} ((directedGraph?='digraph' | 'graph') id=DotID?
+		//	| 'subgraph' id=DotID?)
+		//	'{' ('graph' '[' graphSettings+=Setting (',' graphSettings+=Setting)* ']' ';'? | 'node' '[' nodeSettings+=Setting (','
+		//	nodeSettings+=Setting)* ']' ';'? | 'edge' '[' edgeSettings+=Setting (',' edgeSettings+=Setting)* ']' ';'? |
+		//	subgraphs+=DotGraph | nodes+=DotNode | edges+=DotEdge)*
+		//	'}'
 		@Override public ParserRule getRule() { return rule; }
 
-		//{dot::DotGraph} ((directedGraph?="digraph" | "graph") id=DotID? | "subgraph" id=DotID?) "{" ("graph" "["
-		//graphSettings+=Setting ("," graphSettings+=Setting)* "]" ";"? | "node" "[" nodeSettings+=Setting (","
-		//nodeSettings+=Setting)* "]" ";"? | "edge" "[" edgeSettings+=Setting ("," edgeSettings+=Setting)* "]" ";"? |
-		//subgraphs+=DotGraph | nodes+=DotNode | edges+=DotEdge)* "}"
+		//{dot::DotGraph} ((directedGraph?='digraph' | 'graph') id=DotID? | 'subgraph' id=DotID?) '{' ('graph' '['
+		//graphSettings+=Setting (',' graphSettings+=Setting)* ']' ';'? | 'node' '[' nodeSettings+=Setting (','
+		//nodeSettings+=Setting)* ']' ';'? | 'edge' '[' edgeSettings+=Setting (',' edgeSettings+=Setting)* ']' ';'? |
+		//subgraphs+=DotGraph | nodes+=DotNode | edges+=DotEdge)* '}'
 		public Group getGroup() { return cGroup; }
 
 		//{dot::DotGraph}
 		public Action getDotGraphAction_0() { return cDotGraphAction_0; }
 
-		//(directedGraph?="digraph" | "graph") id=DotID? | "subgraph" id=DotID?
+		//((directedGraph?='digraph' | 'graph') id=DotID? | 'subgraph' id=DotID?)
 		public Alternatives getAlternatives_1() { return cAlternatives_1; }
 
-		//(directedGraph?="digraph" | "graph") id=DotID?
+		//(directedGraph?='digraph' | 'graph') id=DotID?
 		public Group getGroup_1_0() { return cGroup_1_0; }
 
-		//directedGraph?="digraph" | "graph"
+		//(directedGraph?='digraph' | 'graph')
 		public Alternatives getAlternatives_1_0_0() { return cAlternatives_1_0_0; }
 
-		//directedGraph?="digraph"
+		//directedGraph?='digraph'
 		public Assignment getDirectedGraphAssignment_1_0_0_0() { return cDirectedGraphAssignment_1_0_0_0; }
 
-		//"digraph"
+		//'digraph'
 		public Keyword getDirectedGraphDigraphKeyword_1_0_0_0_0() { return cDirectedGraphDigraphKeyword_1_0_0_0_0; }
 
-		//"graph"
+		//'graph'
 		public Keyword getGraphKeyword_1_0_0_1() { return cGraphKeyword_1_0_0_1; }
 
 		//id=DotID?
@@ -120,10 +122,10 @@ public class DotLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		//DotID
 		public RuleCall getIdDotIDParserRuleCall_1_0_1_0() { return cIdDotIDParserRuleCall_1_0_1_0; }
 
-		//"subgraph" id=DotID?
+		//'subgraph' id=DotID?
 		public Group getGroup_1_1() { return cGroup_1_1; }
 
-		//"subgraph"
+		//'subgraph'
 		public Keyword getSubgraphKeyword_1_1_0() { return cSubgraphKeyword_1_1_0; }
 
 		//id=DotID?
@@ -132,21 +134,21 @@ public class DotLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		//DotID
 		public RuleCall getIdDotIDParserRuleCall_1_1_1_0() { return cIdDotIDParserRuleCall_1_1_1_0; }
 
-		//"{"
+		//'{'
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 
-		//("graph" "[" graphSettings+=Setting ("," graphSettings+=Setting)* "]" ";"? | "node" "[" nodeSettings+=Setting (","
-		//nodeSettings+=Setting)* "]" ";"? | "edge" "[" edgeSettings+=Setting ("," edgeSettings+=Setting)* "]" ";"? |
+		//('graph' '[' graphSettings+=Setting (',' graphSettings+=Setting)* ']' ';'? | 'node' '[' nodeSettings+=Setting (','
+		//nodeSettings+=Setting)* ']' ';'? | 'edge' '[' edgeSettings+=Setting (',' edgeSettings+=Setting)* ']' ';'? |
 		//subgraphs+=DotGraph | nodes+=DotNode | edges+=DotEdge)*
 		public Alternatives getAlternatives_3() { return cAlternatives_3; }
 
-		//"graph" "[" graphSettings+=Setting ("," graphSettings+=Setting)* "]" ";"?
+		//'graph' '[' graphSettings+=Setting (',' graphSettings+=Setting)* ']' ';'?
 		public Group getGroup_3_0() { return cGroup_3_0; }
 
-		//"graph"
+		//'graph'
 		public Keyword getGraphKeyword_3_0_0() { return cGraphKeyword_3_0_0; }
 
-		//"["
+		//'['
 		public Keyword getLeftSquareBracketKeyword_3_0_1() { return cLeftSquareBracketKeyword_3_0_1; }
 
 		//graphSettings+=Setting
@@ -155,10 +157,10 @@ public class DotLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		//Setting
 		public RuleCall getGraphSettingsSettingParserRuleCall_3_0_2_0() { return cGraphSettingsSettingParserRuleCall_3_0_2_0; }
 
-		//("," graphSettings+=Setting)*
+		//(',' graphSettings+=Setting)*
 		public Group getGroup_3_0_3() { return cGroup_3_0_3; }
 
-		//","
+		//','
 		public Keyword getCommaKeyword_3_0_3_0() { return cCommaKeyword_3_0_3_0; }
 
 		//graphSettings+=Setting
@@ -167,19 +169,19 @@ public class DotLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		//Setting
 		public RuleCall getGraphSettingsSettingParserRuleCall_3_0_3_1_0() { return cGraphSettingsSettingParserRuleCall_3_0_3_1_0; }
 
-		//"]"
+		//']'
 		public Keyword getRightSquareBracketKeyword_3_0_4() { return cRightSquareBracketKeyword_3_0_4; }
 
-		//";"?
+		//';'?
 		public Keyword getSemicolonKeyword_3_0_5() { return cSemicolonKeyword_3_0_5; }
 
-		//"node" "[" nodeSettings+=Setting ("," nodeSettings+=Setting)* "]" ";"?
+		//'node' '[' nodeSettings+=Setting (',' nodeSettings+=Setting)* ']' ';'?
 		public Group getGroup_3_1() { return cGroup_3_1; }
 
-		//"node"
+		//'node'
 		public Keyword getNodeKeyword_3_1_0() { return cNodeKeyword_3_1_0; }
 
-		//"["
+		//'['
 		public Keyword getLeftSquareBracketKeyword_3_1_1() { return cLeftSquareBracketKeyword_3_1_1; }
 
 		//nodeSettings+=Setting
@@ -188,10 +190,10 @@ public class DotLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		//Setting
 		public RuleCall getNodeSettingsSettingParserRuleCall_3_1_2_0() { return cNodeSettingsSettingParserRuleCall_3_1_2_0; }
 
-		//("," nodeSettings+=Setting)*
+		//(',' nodeSettings+=Setting)*
 		public Group getGroup_3_1_3() { return cGroup_3_1_3; }
 
-		//","
+		//','
 		public Keyword getCommaKeyword_3_1_3_0() { return cCommaKeyword_3_1_3_0; }
 
 		//nodeSettings+=Setting
@@ -200,19 +202,19 @@ public class DotLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		//Setting
 		public RuleCall getNodeSettingsSettingParserRuleCall_3_1_3_1_0() { return cNodeSettingsSettingParserRuleCall_3_1_3_1_0; }
 
-		//"]"
+		//']'
 		public Keyword getRightSquareBracketKeyword_3_1_4() { return cRightSquareBracketKeyword_3_1_4; }
 
-		//";"?
+		//';'?
 		public Keyword getSemicolonKeyword_3_1_5() { return cSemicolonKeyword_3_1_5; }
 
-		//"edge" "[" edgeSettings+=Setting ("," edgeSettings+=Setting)* "]" ";"?
+		//'edge' '[' edgeSettings+=Setting (',' edgeSettings+=Setting)* ']' ';'?
 		public Group getGroup_3_2() { return cGroup_3_2; }
 
-		//"edge"
+		//'edge'
 		public Keyword getEdgeKeyword_3_2_0() { return cEdgeKeyword_3_2_0; }
 
-		//"["
+		//'['
 		public Keyword getLeftSquareBracketKeyword_3_2_1() { return cLeftSquareBracketKeyword_3_2_1; }
 
 		//edgeSettings+=Setting
@@ -221,10 +223,10 @@ public class DotLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		//Setting
 		public RuleCall getEdgeSettingsSettingParserRuleCall_3_2_2_0() { return cEdgeSettingsSettingParserRuleCall_3_2_2_0; }
 
-		//("," edgeSettings+=Setting)*
+		//(',' edgeSettings+=Setting)*
 		public Group getGroup_3_2_3() { return cGroup_3_2_3; }
 
-		//","
+		//','
 		public Keyword getCommaKeyword_3_2_3_0() { return cCommaKeyword_3_2_3_0; }
 
 		//edgeSettings+=Setting
@@ -233,10 +235,10 @@ public class DotLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		//Setting
 		public RuleCall getEdgeSettingsSettingParserRuleCall_3_2_3_1_0() { return cEdgeSettingsSettingParserRuleCall_3_2_3_1_0; }
 
-		//"]"
+		//']'
 		public Keyword getRightSquareBracketKeyword_3_2_4() { return cRightSquareBracketKeyword_3_2_4; }
 
-		//";"?
+		//';'?
 		public Keyword getSemicolonKeyword_3_2_5() { return cSemicolonKeyword_3_2_5; }
 
 		//subgraphs+=DotGraph
@@ -257,12 +259,12 @@ public class DotLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		//DotEdge
 		public RuleCall getEdgesDotEdgeParserRuleCall_3_5_0() { return cEdgesDotEdgeParserRuleCall_3_5_0; }
 
-		//"}"
+		//'}'
 		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
 	}
 
 	public class DotNodeElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "DotNode");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.uni_paderborn.fujaba.graphviz.dot.xtext.DotLanguage.DotNode");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cNameDotIDParserRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
@@ -277,11 +279,11 @@ public class DotLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightSquareBracketKeyword_1_3 = (Keyword)cGroup_1.eContents().get(3);
 		private final Keyword cSemicolonKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		
-		//DotNode returns dot::DotNode:
-		//	name=DotID ("[" settings+=Setting ("," settings+=Setting)* "]")? ";"?;
+		//DotNode dot::DotNode:
+		//	name=DotID ('[' settings+=Setting (',' settings+=Setting)* ']')? ';'?
 		@Override public ParserRule getRule() { return rule; }
 
-		//name=DotID ("[" settings+=Setting ("," settings+=Setting)* "]")? ";"?
+		//name=DotID ('[' settings+=Setting (',' settings+=Setting)* ']')? ';'?
 		public Group getGroup() { return cGroup; }
 
 		//name=DotID
@@ -290,10 +292,10 @@ public class DotLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		//DotID
 		public RuleCall getNameDotIDParserRuleCall_0_0() { return cNameDotIDParserRuleCall_0_0; }
 
-		//("[" settings+=Setting ("," settings+=Setting)* "]")?
+		//('[' settings+=Setting (',' settings+=Setting)* ']')?
 		public Group getGroup_1() { return cGroup_1; }
 
-		//"["
+		//'['
 		public Keyword getLeftSquareBracketKeyword_1_0() { return cLeftSquareBracketKeyword_1_0; }
 
 		//settings+=Setting
@@ -302,10 +304,10 @@ public class DotLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		//Setting
 		public RuleCall getSettingsSettingParserRuleCall_1_1_0() { return cSettingsSettingParserRuleCall_1_1_0; }
 
-		//("," settings+=Setting)*
+		//(',' settings+=Setting)*
 		public Group getGroup_1_2() { return cGroup_1_2; }
 
-		//","
+		//','
 		public Keyword getCommaKeyword_1_2_0() { return cCommaKeyword_1_2_0; }
 
 		//settings+=Setting
@@ -314,21 +316,21 @@ public class DotLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		//Setting
 		public RuleCall getSettingsSettingParserRuleCall_1_2_1_0() { return cSettingsSettingParserRuleCall_1_2_1_0; }
 
-		//"]"
+		//']'
 		public Keyword getRightSquareBracketKeyword_1_3() { return cRightSquareBracketKeyword_1_3; }
 
-		//";"?
+		//';'?
 		public Keyword getSemicolonKeyword_2() { return cSemicolonKeyword_2; }
 	}
 
 	public class DotEdgeElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "DotEdge");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.uni_paderborn.fujaba.graphviz.dot.xtext.DotLanguage.DotEdge");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cDirectedDotEdgeParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cUndirectedDotEdgeParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
-		//DotEdge returns dot::DotEdge:
-		//	DirectedDotEdge | UndirectedDotEdge;
+		//DotEdge dot::DotEdge:
+		//	DirectedDotEdge | UndirectedDotEdge
 		@Override public ParserRule getRule() { return rule; }
 
 		//DirectedDotEdge | UndirectedDotEdge
@@ -342,7 +344,7 @@ public class DotLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class DirectedDotEdgeElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "DirectedDotEdge");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.uni_paderborn.fujaba.graphviz.dot.xtext.DotLanguage.DirectedDotEdge");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cSourceAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final CrossReference cSourceDotNodeCrossReference_0_0 = (CrossReference)cSourceAssignment_0.eContents().get(0);
@@ -362,12 +364,12 @@ public class DotLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightSquareBracketKeyword_3_3 = (Keyword)cGroup_3.eContents().get(3);
 		private final Keyword cSemicolonKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
-		//DirectedDotEdge returns dot::DirectedDotEdge:
-		//	source=[dot::DotNode|DotID] "->" target=[dot::DotNode|DotID] ("[" settings+=Setting ("," settings+=Setting)* "]")?
-		//	";"?;
+		//DirectedDotEdge dot::DirectedDotEdge:
+		//	source=[dot::DotNode|DotID] '->' target=[dot::DotNode|DotID] ('[' settings+=Setting (',' settings+=Setting)* ']')?
+		//	';'?
 		@Override public ParserRule getRule() { return rule; }
 
-		//source=[dot::DotNode|DotID] "->" target=[dot::DotNode|DotID] ("[" settings+=Setting ("," settings+=Setting)* "]")? ";"?
+		//source=[dot::DotNode|DotID] '->' target=[dot::DotNode|DotID] ('[' settings+=Setting (',' settings+=Setting)* ']')? ';'?
 		public Group getGroup() { return cGroup; }
 
 		//source=[dot::DotNode|DotID]
@@ -379,7 +381,7 @@ public class DotLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		//DotID
 		public RuleCall getSourceDotNodeDotIDParserRuleCall_0_0_1() { return cSourceDotNodeDotIDParserRuleCall_0_0_1; }
 
-		//"->"
+		//'->'
 		public Keyword getHyphenMinusGreaterThanSignKeyword_1() { return cHyphenMinusGreaterThanSignKeyword_1; }
 
 		//target=[dot::DotNode|DotID]
@@ -391,10 +393,10 @@ public class DotLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		//DotID
 		public RuleCall getTargetDotNodeDotIDParserRuleCall_2_0_1() { return cTargetDotNodeDotIDParserRuleCall_2_0_1; }
 
-		//("[" settings+=Setting ("," settings+=Setting)* "]")?
+		//('[' settings+=Setting (',' settings+=Setting)* ']')?
 		public Group getGroup_3() { return cGroup_3; }
 
-		//"["
+		//'['
 		public Keyword getLeftSquareBracketKeyword_3_0() { return cLeftSquareBracketKeyword_3_0; }
 
 		//settings+=Setting
@@ -403,10 +405,10 @@ public class DotLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		//Setting
 		public RuleCall getSettingsSettingParserRuleCall_3_1_0() { return cSettingsSettingParserRuleCall_3_1_0; }
 
-		//("," settings+=Setting)*
+		//(',' settings+=Setting)*
 		public Group getGroup_3_2() { return cGroup_3_2; }
 
-		//","
+		//','
 		public Keyword getCommaKeyword_3_2_0() { return cCommaKeyword_3_2_0; }
 
 		//settings+=Setting
@@ -415,15 +417,15 @@ public class DotLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		//Setting
 		public RuleCall getSettingsSettingParserRuleCall_3_2_1_0() { return cSettingsSettingParserRuleCall_3_2_1_0; }
 
-		//"]"
+		//']'
 		public Keyword getRightSquareBracketKeyword_3_3() { return cRightSquareBracketKeyword_3_3; }
 
-		//";"?
+		//';'?
 		public Keyword getSemicolonKeyword_4() { return cSemicolonKeyword_4; }
 	}
 
 	public class UndirectedDotEdgeElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "UndirectedDotEdge");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.uni_paderborn.fujaba.graphviz.dot.xtext.DotLanguage.UndirectedDotEdge");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cSourceAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final CrossReference cSourceDotNodeCrossReference_0_0 = (CrossReference)cSourceAssignment_0.eContents().get(0);
@@ -443,12 +445,12 @@ public class DotLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightSquareBracketKeyword_3_3 = (Keyword)cGroup_3.eContents().get(3);
 		private final Keyword cSemicolonKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
-		//UndirectedDotEdge returns dot::UndirectedDotEdge:
-		//	source=[dot::DotNode|DotID] "--" target=[dot::DotNode|DotID] ("[" settings+=Setting ("," settings+=Setting)* "]")?
-		//	";"?;
+		//UndirectedDotEdge dot::UndirectedDotEdge:
+		//	source=[dot::DotNode|DotID] '--' target=[dot::DotNode|DotID] ('[' settings+=Setting (',' settings+=Setting)* ']')?
+		//	';'?
 		@Override public ParserRule getRule() { return rule; }
 
-		//source=[dot::DotNode|DotID] "--" target=[dot::DotNode|DotID] ("[" settings+=Setting ("," settings+=Setting)* "]")? ";"?
+		//source=[dot::DotNode|DotID] '--' target=[dot::DotNode|DotID] ('[' settings+=Setting (',' settings+=Setting)* ']')? ';'?
 		public Group getGroup() { return cGroup; }
 
 		//source=[dot::DotNode|DotID]
@@ -460,7 +462,7 @@ public class DotLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		//DotID
 		public RuleCall getSourceDotNodeDotIDParserRuleCall_0_0_1() { return cSourceDotNodeDotIDParserRuleCall_0_0_1; }
 
-		//"--"
+		//'--'
 		public Keyword getHyphenMinusHyphenMinusKeyword_1() { return cHyphenMinusHyphenMinusKeyword_1; }
 
 		//target=[dot::DotNode|DotID]
@@ -472,10 +474,10 @@ public class DotLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		//DotID
 		public RuleCall getTargetDotNodeDotIDParserRuleCall_2_0_1() { return cTargetDotNodeDotIDParserRuleCall_2_0_1; }
 
-		//("[" settings+=Setting ("," settings+=Setting)* "]")?
+		//('[' settings+=Setting (',' settings+=Setting)* ']')?
 		public Group getGroup_3() { return cGroup_3; }
 
-		//"["
+		//'['
 		public Keyword getLeftSquareBracketKeyword_3_0() { return cLeftSquareBracketKeyword_3_0; }
 
 		//settings+=Setting
@@ -484,10 +486,10 @@ public class DotLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		//Setting
 		public RuleCall getSettingsSettingParserRuleCall_3_1_0() { return cSettingsSettingParserRuleCall_3_1_0; }
 
-		//("," settings+=Setting)*
+		//(',' settings+=Setting)*
 		public Group getGroup_3_2() { return cGroup_3_2; }
 
-		//","
+		//','
 		public Keyword getCommaKeyword_3_2_0() { return cCommaKeyword_3_2_0; }
 
 		//settings+=Setting
@@ -496,15 +498,15 @@ public class DotLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		//Setting
 		public RuleCall getSettingsSettingParserRuleCall_3_2_1_0() { return cSettingsSettingParserRuleCall_3_2_1_0; }
 
-		//"]"
+		//']'
 		public Keyword getRightSquareBracketKeyword_3_3() { return cRightSquareBracketKeyword_3_3; }
 
-		//";"?
+		//';'?
 		public Keyword getSemicolonKeyword_4() { return cSemicolonKeyword_4; }
 	}
 
 	public class SettingElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Setting");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.uni_paderborn.fujaba.graphviz.dot.xtext.DotLanguage.Setting");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cAttributeAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cAttributeDotIDParserRuleCall_0_0 = (RuleCall)cAttributeAssignment_0.eContents().get(0);
@@ -512,11 +514,11 @@ public class DotLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cValueAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cValueDotIDParserRuleCall_2_0 = (RuleCall)cValueAssignment_2.eContents().get(0);
 		
-		//Setting returns dot::Setting:
-		//	attribute=DotID "=" value=DotID;
+		//Setting dot::Setting:
+		//	attribute=DotID '=' value=DotID
 		@Override public ParserRule getRule() { return rule; }
 
-		//attribute=DotID "=" value=DotID
+		//attribute=DotID '=' value=DotID
 		public Group getGroup() { return cGroup; }
 
 		//attribute=DotID
@@ -525,7 +527,7 @@ public class DotLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		//DotID
 		public RuleCall getAttributeDotIDParserRuleCall_0_0() { return cAttributeDotIDParserRuleCall_0_0; }
 
-		//"="
+		//'='
 		public Keyword getEqualsSignKeyword_1() { return cEqualsSignKeyword_1; }
 
 		//value=DotID
@@ -536,23 +538,21 @@ public class DotLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class DotIDElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "DotID");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.uni_paderborn.fujaba.graphviz.dot.xtext.DotLanguage.DotID");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cDOTSTRINGTERMTerminalRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cNUMPREFIXEDIDTerminalRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		private final RuleCall cNumberParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		private final RuleCall cIDTerminalRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
 		
-		//DotID returns ecore::EString: // TODO: implement correct id rules from the graphviz spec
-		//// (for instance, quotes can also be escaped using \" ...)
-		//	DOTSTRINGTERM | NUMPREFIXEDID | Number | // Number is a bit too coarse, but well...
-		//	ID;
+		//DotID:
+		//	DOTSTRINGTERM | NUMPREFIXEDID | Number | ID // Number is a bit too coarse, but well...
+		//;
 		@Override public ParserRule getRule() { return rule; }
 
 		//// TODO: implement correct id rules from the graphviz spec
 		//// (for instance, quotes can also be escaped using \" ...)
-		//DOTSTRINGTERM | NUMPREFIXEDID | Number | // Number is a bit too coarse, but well...
-		//ID
+		//DOTSTRINGTERM | NUMPREFIXEDID | Number | ID
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//// TODO: implement correct id rules from the graphviz spec
@@ -566,30 +566,29 @@ public class DotLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		//Number
 		public RuleCall getNumberParserRuleCall_2() { return cNumberParserRuleCall_2; }
 
-		//// Number is a bit too coarse, but well...
 		//ID
 		public RuleCall getIDTerminalRuleCall_3() { return cIDTerminalRuleCall_3; }
 	}
 
 	public class NumberElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Number");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.uni_paderborn.fujaba.graphviz.dot.xtext.DotLanguage.Number");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cHyphenMinusKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
 		private final RuleCall cDOUBLETerminalRuleCall_1_0 = (RuleCall)cAlternatives_1.eContents().get(0);
 		private final RuleCall cINTTerminalRuleCall_1_1 = (RuleCall)cAlternatives_1.eContents().get(1);
 		
-		//Number returns ecore::EDouble:
-		//	"-"? (DOUBLE | INT);
+		//Number ecore::EDouble:
+		//	'-'? (DOUBLE | INT)
 		@Override public ParserRule getRule() { return rule; }
 
-		//"-"? (DOUBLE | INT)
+		//'-'? (DOUBLE | INT)
 		public Group getGroup() { return cGroup; }
 
-		//"-"?
+		//'-'?
 		public Keyword getHyphenMinusKeyword_0() { return cHyphenMinusKeyword_0; }
 
-		//DOUBLE | INT
+		//(DOUBLE | INT)
 		public Alternatives getAlternatives_1() { return cAlternatives_1; }
 
 		//DOUBLE
@@ -628,10 +627,10 @@ public class DotLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		this.pUndirectedDotEdge = new UndirectedDotEdgeElements();
 		this.pSetting = new SettingElements();
 		this.pDotID = new DotIDElements();
-		this.tNUMPREFIXEDID = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "NUMPREFIXEDID");
-		this.tDOTSTRINGTERM = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "DOTSTRINGTERM");
+		this.tNUMPREFIXEDID = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "de.uni_paderborn.fujaba.graphviz.dot.xtext.DotLanguage.NUMPREFIXEDID");
+		this.tDOTSTRINGTERM = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "de.uni_paderborn.fujaba.graphviz.dot.xtext.DotLanguage.DOTSTRINGTERM");
 		this.pNumber = new NumberElements();
-		this.tDOUBLE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "DOUBLE");
+		this.tDOUBLE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "de.uni_paderborn.fujaba.graphviz.dot.xtext.DotLanguage.DOUBLE");
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -664,11 +663,13 @@ public class DotLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	////import "http://www.storydriven.org/core/0.3.1" as core
 	////import "platform:/resource/de.uni_paderborn.fujaba.graphviz/model/graphviz.ecore#//dot" as dot
 	////import "platform:/resource/de.uni_paderborn.fujaba.graphviz/model/graphviz.ecore#//common" as common
-	//DotGraph returns dot::DotGraph:
-	//	{dot::DotGraph} ((directedGraph?="digraph" | "graph") id=DotID? | "subgraph" id=DotID?) "{" ("graph" "["
-	//	graphSettings+=Setting ("," graphSettings+=Setting)* "]" ";"? | "node" "[" nodeSettings+=Setting (","
-	//	nodeSettings+=Setting)* "]" ";"? | "edge" "[" edgeSettings+=Setting ("," edgeSettings+=Setting)* "]" ";"? |
-	//	subgraphs+=DotGraph | nodes+=DotNode | edges+=DotEdge)* "}";
+	//DotGraph dot::DotGraph:
+	//	{dot::DotGraph} ((directedGraph?='digraph' | 'graph') id=DotID?
+	//	| 'subgraph' id=DotID?)
+	//	'{' ('graph' '[' graphSettings+=Setting (',' graphSettings+=Setting)* ']' ';'? | 'node' '[' nodeSettings+=Setting (','
+	//	nodeSettings+=Setting)* ']' ';'? | 'edge' '[' edgeSettings+=Setting (',' edgeSettings+=Setting)* ']' ';'? |
+	//	subgraphs+=DotGraph | nodes+=DotNode | edges+=DotEdge)*
+	//	'}'
 	public DotGraphElements getDotGraphAccess() {
 		return pDotGraph;
 	}
@@ -677,8 +678,8 @@ public class DotLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		return getDotGraphAccess().getRule();
 	}
 
-	//DotNode returns dot::DotNode:
-	//	name=DotID ("[" settings+=Setting ("," settings+=Setting)* "]")? ";"?;
+	//DotNode dot::DotNode:
+	//	name=DotID ('[' settings+=Setting (',' settings+=Setting)* ']')? ';'?
 	public DotNodeElements getDotNodeAccess() {
 		return pDotNode;
 	}
@@ -687,8 +688,8 @@ public class DotLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		return getDotNodeAccess().getRule();
 	}
 
-	//DotEdge returns dot::DotEdge:
-	//	DirectedDotEdge | UndirectedDotEdge;
+	//DotEdge dot::DotEdge:
+	//	DirectedDotEdge | UndirectedDotEdge
 	public DotEdgeElements getDotEdgeAccess() {
 		return pDotEdge;
 	}
@@ -697,9 +698,9 @@ public class DotLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		return getDotEdgeAccess().getRule();
 	}
 
-	//DirectedDotEdge returns dot::DirectedDotEdge:
-	//	source=[dot::DotNode|DotID] "->" target=[dot::DotNode|DotID] ("[" settings+=Setting ("," settings+=Setting)* "]")?
-	//	";"?;
+	//DirectedDotEdge dot::DirectedDotEdge:
+	//	source=[dot::DotNode|DotID] '->' target=[dot::DotNode|DotID] ('[' settings+=Setting (',' settings+=Setting)* ']')?
+	//	';'?
 	public DirectedDotEdgeElements getDirectedDotEdgeAccess() {
 		return pDirectedDotEdge;
 	}
@@ -708,9 +709,9 @@ public class DotLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		return getDirectedDotEdgeAccess().getRule();
 	}
 
-	//UndirectedDotEdge returns dot::UndirectedDotEdge:
-	//	source=[dot::DotNode|DotID] "--" target=[dot::DotNode|DotID] ("[" settings+=Setting ("," settings+=Setting)* "]")?
-	//	";"?;
+	//UndirectedDotEdge dot::UndirectedDotEdge:
+	//	source=[dot::DotNode|DotID] '--' target=[dot::DotNode|DotID] ('[' settings+=Setting (',' settings+=Setting)* ']')?
+	//	';'?
 	public UndirectedDotEdgeElements getUndirectedDotEdgeAccess() {
 		return pUndirectedDotEdge;
 	}
@@ -719,8 +720,8 @@ public class DotLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		return getUndirectedDotEdgeAccess().getRule();
 	}
 
-	//Setting returns dot::Setting:
-	//	attribute=DotID "=" value=DotID;
+	//Setting dot::Setting:
+	//	attribute=DotID '=' value=DotID
 	public SettingElements getSettingAccess() {
 		return pSetting;
 	}
@@ -729,10 +730,9 @@ public class DotLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		return getSettingAccess().getRule();
 	}
 
-	//DotID returns ecore::EString: // TODO: implement correct id rules from the graphviz spec
-	//// (for instance, quotes can also be escaped using \" ...)
-	//	DOTSTRINGTERM | NUMPREFIXEDID | Number | // Number is a bit too coarse, but well...
-	//	ID;
+	//DotID:
+	//	DOTSTRINGTERM | NUMPREFIXEDID | Number | ID // Number is a bit too coarse, but well...
+	//;
 	public DotIDElements getDotIDAccess() {
 		return pDotID;
 	}
@@ -748,13 +748,13 @@ public class DotLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	} 
 
 	//terminal DOTSTRINGTERM:
-	//	"\"" !"\""* "\"";
+	//	'"' !'"'* '"';
 	public TerminalRule getDOTSTRINGTERMRule() {
 		return tDOTSTRINGTERM;
 	} 
 
-	//Number returns ecore::EDouble:
-	//	"-"? (DOUBLE | INT);
+	//Number ecore::EDouble:
+	//	'-'? (DOUBLE | INT)
 	public NumberElements getNumberAccess() {
 		return pNumber;
 	}
@@ -764,44 +764,44 @@ public class DotLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//terminal DOUBLE returns ecore::EDouble:
-	//	INT+ "." INT+;
+	//	INT+ '.' INT+;
 	public TerminalRule getDOUBLERule() {
 		return tDOUBLE;
 	} 
 
 	//terminal ID:
-	//	"^"? ("a".."z" | "A".."Z" | "_") ("a".."z" | "A".."Z" | "_" | "0".."9")*;
+	//	'^'? ('a'..'z' | 'A'..'Z' | '_') ('a'..'z' | 'A'..'Z' | '_' | '0'..'9')*;
 	public TerminalRule getIDRule() {
 		return gaTerminals.getIDRule();
 	} 
 
 	//terminal INT returns ecore::EInt:
-	//	"0".."9"+;
+	//	'0'..'9'+;
 	public TerminalRule getINTRule() {
 		return gaTerminals.getINTRule();
 	} 
 
 	//terminal STRING:
-	//	"\"" ("\\" . / * 'b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\' * / | !("\\" | "\""))* "\"" | "\'" ("\\" .
-	//	/ * 'b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\' * / | !("\\" | "\'"))* "\'";
+	//	'"' ('\\' . | !('\\' | '"'))* '"' |
+	//	"'" ('\\' . | !('\\' | "'"))* "'";
 	public TerminalRule getSTRINGRule() {
 		return gaTerminals.getSTRINGRule();
 	} 
 
 	//terminal ML_COMMENT:
-	//	"/ *"->"* /";
+	//	'/ *'->'* /';
 	public TerminalRule getML_COMMENTRule() {
 		return gaTerminals.getML_COMMENTRule();
 	} 
 
 	//terminal SL_COMMENT:
-	//	"//" !("\n" | "\r")* ("\r"? "\n")?;
+	//	'//' !('\n' | '\r')* ('\r'? '\n')?;
 	public TerminalRule getSL_COMMENTRule() {
 		return gaTerminals.getSL_COMMENTRule();
 	} 
 
 	//terminal WS:
-	//	(" " | "\t" | "\r" | "\n")+;
+	//	' ' | '\t' | '\r' | '\n'+;
 	public TerminalRule getWSRule() {
 		return gaTerminals.getWSRule();
 	} 

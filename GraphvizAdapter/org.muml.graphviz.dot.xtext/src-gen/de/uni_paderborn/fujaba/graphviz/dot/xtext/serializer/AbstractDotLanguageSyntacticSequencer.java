@@ -53,19 +53,19 @@ public abstract class AbstractDotLanguageSyntacticSequencer extends AbstractSynt
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if(match_DirectedDotEdge_SemicolonKeyword_4_q.equals(syntax))
+			if (match_DirectedDotEdge_SemicolonKeyword_4_q.equals(syntax))
 				emit_DirectedDotEdge_SemicolonKeyword_4_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_DotGraph_GraphKeyword_1_0_0_1_or_SubgraphKeyword_1_1_0.equals(syntax))
+			else if (match_DotGraph_GraphKeyword_1_0_0_1_or_SubgraphKeyword_1_1_0.equals(syntax))
 				emit_DotGraph_GraphKeyword_1_0_0_1_or_SubgraphKeyword_1_1_0(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_DotGraph_SemicolonKeyword_3_0_5_q.equals(syntax))
+			else if (match_DotGraph_SemicolonKeyword_3_0_5_q.equals(syntax))
 				emit_DotGraph_SemicolonKeyword_3_0_5_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_DotGraph_SemicolonKeyword_3_1_5_q.equals(syntax))
+			else if (match_DotGraph_SemicolonKeyword_3_1_5_q.equals(syntax))
 				emit_DotGraph_SemicolonKeyword_3_1_5_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_DotGraph_SemicolonKeyword_3_2_5_q.equals(syntax))
+			else if (match_DotGraph_SemicolonKeyword_3_2_5_q.equals(syntax))
 				emit_DotGraph_SemicolonKeyword_3_2_5_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_DotNode_SemicolonKeyword_2_q.equals(syntax))
+			else if (match_DotNode_SemicolonKeyword_2_q.equals(syntax))
 				emit_DotNode_SemicolonKeyword_2_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_UndirectedDotEdge_SemicolonKeyword_4_q.equals(syntax))
+			else if (match_UndirectedDotEdge_SemicolonKeyword_4_q.equals(syntax))
 				emit_UndirectedDotEdge_SemicolonKeyword_4_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
