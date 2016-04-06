@@ -22,11 +22,11 @@ import org.muml.storydiagram.activities.Activity;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.GraphTransformationSystem#getActivities <em>Activities</em>}</li>
  *   <li>{@link org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.GraphTransformationSystem#getUnchangeableNodes <em>Unchangeable Nodes</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.SdmPackage#getGraphTransformationSystem()
  * @model

@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: org.muml.reconfigurationverification.timedstorydiagram.edit;singleton:=true
-Bundle-Version: 1.0.0
+Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
 Bundle-Activator: org.muml.reconfigurationverification.timedstorydiagram.provider.TimedStoryDiagramsEditPlugin$Implementation
 Bundle-Vendor: %providerName
@@ -16,6 +16,6 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.eclipse.emf.ecore.edit;visibility:=reexport,
  org.muml.storydiagram;visibility:=reexport,
- org.muml.reconfigurationverification.timedstorydiagram;bundle-version="1.0.0",
- org.muml.storydiagram.edit;bundle-version="1.0.0"
+ org.muml.reconfigurationverification.timedstorydiagram;bundle-version="1.0.0";visibility:=reexport,
+ org.muml.storydiagram.edit;bundle-version="1.0.0";visibility:=reexport
 Bundle-ActivationPolicy: lazy

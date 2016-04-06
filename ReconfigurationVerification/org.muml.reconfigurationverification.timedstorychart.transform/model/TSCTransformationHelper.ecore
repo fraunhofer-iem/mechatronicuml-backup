@@ -10,7 +10,7 @@
         eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//realtimestatechart/Transition"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TSCTransformationOutput">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="tgts" eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.timedstorydiagram/model/TimedStoryDiagrams.ecore#//TimedGraphTransformationSystem"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tgts" eType="ecore:EClass ../../org.muml.reconfigurationverification.timedstorydiagram/model/TimedStoryDiagrams.ecore#//TimedGraphTransformationSystem"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TransitionTuple">

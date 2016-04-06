@@ -29,13 +29,13 @@ import org.muml.storydiagram.activities.impl.ActivityImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.reconfigurationverification.timedstorydiagram.impl.TimedStoryDiagramImpl#getClockInstConstraint <em>Clock Inst Constraint</em>}</li>
  *   <li>{@link org.muml.reconfigurationverification.timedstorydiagram.impl.TimedStoryDiagramImpl#getResets <em>Resets</em>}</li>
  *   <li>{@link org.muml.reconfigurationverification.timedstorydiagram.impl.TimedStoryDiagramImpl#getMinDuration <em>Min Duration</em>}</li>
  *   <li>{@link org.muml.reconfigurationverification.timedstorydiagram.impl.TimedStoryDiagramImpl#getMaxDuration <em>Max Duration</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

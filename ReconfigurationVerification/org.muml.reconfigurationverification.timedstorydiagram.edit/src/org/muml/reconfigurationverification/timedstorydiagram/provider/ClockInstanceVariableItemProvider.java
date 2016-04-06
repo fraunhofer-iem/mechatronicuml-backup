@@ -31,13 +31,7 @@ import org.muml.storydiagram.patterns.provider.ObjectVariableItemProvider;
  * @generated
  */
 public class ClockInstanceVariableItemProvider
-	extends ObjectVariableItemProvider
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+	extends ObjectVariableItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

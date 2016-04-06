@@ -16,10 +16,10 @@ import org.muml.storydiagram.patterns.ObjectVariable;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.reconfigurationverification.timedstorydiagram.ClockInstanceVariable#getClockInstanceConstraints <em>Clock Instance Constraints</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.reconfigurationverification.timedstorydiagram.TimedstorydiagramPackage#getClockInstanceVariable()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL ClockInstanceVariableOnlyRefersToClockInstances='self.classifier = timedstorydiagram::ClockInstance' SetNameUponCreationOfClockInstance='if self.bindingOperator = storydiagrams::patterns::BindingOperator::CREATE then (self.attributeAssignment -> size() >= 1 and self.attributeAssignment -> select(attribute.name = \'name\') -> size() >= 1) else true endif'"

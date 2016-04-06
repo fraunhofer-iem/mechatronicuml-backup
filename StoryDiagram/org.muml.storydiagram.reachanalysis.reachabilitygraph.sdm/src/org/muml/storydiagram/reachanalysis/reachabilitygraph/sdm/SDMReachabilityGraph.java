@@ -17,11 +17,11 @@ import org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraph;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.SDMReachabilityGraph#getUnchangeableNodes <em>Unchangeable Nodes</em>}</li>
  *   <li>{@link org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.SDMReachabilityGraph#getContainedUnchangeableNodes <em>Contained Unchangeable Nodes</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.SdmPackage#getSDMReachabilityGraph()
  * @model

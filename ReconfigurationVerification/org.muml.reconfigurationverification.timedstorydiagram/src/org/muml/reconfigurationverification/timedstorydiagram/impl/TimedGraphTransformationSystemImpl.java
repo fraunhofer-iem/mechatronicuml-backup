@@ -30,6 +30,7 @@ import org.muml.storydiagram.activities.Activity;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.reconfigurationverification.timedstorydiagram.impl.TimedGraphTransformationSystemImpl#getRules <em>Rules</em>}</li>
  *   <li>{@link org.muml.reconfigurationverification.timedstorydiagram.impl.TimedGraphTransformationSystemImpl#getInvariants <em>Invariants</em>}</li>
@@ -39,7 +40,6 @@ import org.muml.storydiagram.activities.Activity;
  *   <li>{@link org.muml.reconfigurationverification.timedstorydiagram.impl.TimedGraphTransformationSystemImpl#getHelperStoryDiagrams <em>Helper Story Diagrams</em>}</li>
  *   <li>{@link org.muml.reconfigurationverification.timedstorydiagram.impl.TimedGraphTransformationSystemImpl#getTypeGraphObjects <em>Type Graph Objects</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -2,13 +2,4 @@
 <?eclipse version="3.0"?><!--
 --><plugin>
 
-
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated TimedSDMReachabilityAnalysis -->
-      <package
-            uri="http://de/uni_paderborn/fujaba/umlrt/reachanalysis/time/timedsdm/reachabilityGraph"
-            class="org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.timedsdm.ReachabilityGraphPackage"
-            genModel="model/TimedSDMReachabilityAnalysis.genmodel"/>
-   </extension>
-
 </plugin>

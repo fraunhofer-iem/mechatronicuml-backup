@@ -9,18 +9,26 @@ Bundle-Vendor: Software Engineering Group,
  University of Paderborn
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: org.muml.simulink.adapter.corrmodel.fujaba2simulink,
- org.muml.simulink.adapter.corrmodel.fujaba2simulink.behavior_model,
- org.muml.simulink.adapter.corrmodel.fujaba2simulink.behavior_model.impl,
- org.muml.simulink.adapter.corrmodel.fujaba2simulink.behavior_model.util,
- org.muml.simulink.adapter.corrmodel.fujaba2simulink.impl,
- org.muml.simulink.adapter.corrmodel.fujaba2simulink.util
+Export-Package: corrmodel,
+ corrmodel.behavior,
+ corrmodel.behavior.impl,
+ corrmodel.behavior.util,
+ corrmodel.impl,
+ corrmodel.util,
+ org.muml.simulink.adapter.corrmodel,
+ org.muml.simulink.adapter.corrmodel.behavior,
+ org.muml.simulink.adapter.corrmodel.behavior.impl,
+ org.muml.simulink.adapter.corrmodel.behavior.util,
+ org.muml.simulink.adapter.corrmodel.fujaba2simulink,
+ org.muml.simulink.adapter.corrmodel.impl,
+ org.muml.simulink.adapter.corrmodel.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.eclipse.emf.ecore.xmi;visibility:=reexport,
  org.muml.core;bundle-version="1.0.0";visibility:=reexport,
  org.muml.simulink.adapter.model;bundle-version="0.4.0";visibility:=reexport,
  org.eclipse.ui;bundle-version="3.7.0",
- org.muml.core.modelinstance;bundle-version="0.4.0",
- org.muml.pim;bundle-version="0.4.0"
+ org.muml.core.modelinstance;bundle-version="0.4.0";visibility:=reexport,
+ org.muml.pim;bundle-version="0.4.0";visibility:=reexport,
+ de.uni_paderborn.fujaba.simulink.model;visibility:=reexport
 Bundle-ActivationPolicy: lazy

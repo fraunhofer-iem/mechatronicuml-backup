@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="sdm" nsURI="http://www.fujaba.de/reachabilityGraph/sdm/0.4.0"
-    nsPrefix="de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.sdm">
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="sdm" nsURI="http://www.muml.org/storydiagram.reachanalysis.reachabilitygraph/sdm/1.0.0"
+    nsPrefix="reachabilitygraphsdm">
   <eClassifiers xsi:type="ecore:EClass" name="StepGraph" eSuperTypes="../../org.muml.core.reachanalysis.reachabilitygraph/model/ReachabilityAnalysisCore.ecore#//ReachabilityGraphState">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="The StepGraph contains all objects currently contained in the graph."/>

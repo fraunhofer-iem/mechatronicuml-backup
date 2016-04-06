@@ -22,10 +22,10 @@ import org.muml.storydiagram.activities.impl.ActivityImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.reconfigurationverification.timedstorydiagram.impl.InvariantStoryDiagramImpl#getClockInstConstraint <em>Clock Inst Constraint</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="timedstorydiagram" nsURI="http://www.fujaba.de/timedstorydiagram/0.1.0"
-    nsPrefix="de.uni_paderborn.fujaba.muml.timedstorydiagram">
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="timedstorydiagram" nsURI="http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0"
+    nsPrefix="timedstorydiagram">
   <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
     <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
     <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>

@@ -17,6 +17,7 @@ import org.muml.core.reachanalysis.reachabilitygraph.ActionTransition;
 import org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraph;
 import org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraphState;
 import org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraphTransition;
+import org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.*;
 import org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.GraphTransformationSystem;
 import org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.SDMReachabilityGraph;
 import org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.SDMTransition;

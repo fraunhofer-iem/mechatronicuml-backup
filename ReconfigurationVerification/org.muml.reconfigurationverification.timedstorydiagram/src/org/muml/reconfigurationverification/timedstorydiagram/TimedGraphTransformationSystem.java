@@ -25,6 +25,7 @@ import org.muml.storydiagram.activities.Activity;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.reconfigurationverification.timedstorydiagram.TimedGraphTransformationSystem#getRules <em>Rules</em>}</li>
  *   <li>{@link org.muml.reconfigurationverification.timedstorydiagram.TimedGraphTransformationSystem#getInvariants <em>Invariants</em>}</li>
@@ -34,7 +35,6 @@ import org.muml.storydiagram.activities.Activity;
  *   <li>{@link org.muml.reconfigurationverification.timedstorydiagram.TimedGraphTransformationSystem#getHelperStoryDiagrams <em>Helper Story Diagrams</em>}</li>
  *   <li>{@link org.muml.reconfigurationverification.timedstorydiagram.TimedGraphTransformationSystem#getTypeGraphObjects <em>Type Graph Objects</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.reconfigurationverification.timedstorydiagram.TimedstorydiagramPackage#getTimedGraphTransformationSystem()
  * @model

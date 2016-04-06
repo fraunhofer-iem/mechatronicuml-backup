@@ -10,13 +10,12 @@ import org.eclipse.emf.ecore.EClass;
 import org.muml.core.reachanalysis.reachabilitygraph.impl.ReachabilityGraphTransitionImpl;
 import org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.timedsdm.ReachabilityGraphPackage;
 import org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.timedsdm.TimedGTSDelayTransition;
+import org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.timedsdm.TimedsdmPackage;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Timed GTS Delay Transition</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */
@@ -37,7 +36,7 @@ public class TimedGTSDelayTransitionImpl extends ReachabilityGraphTransitionImpl
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ReachabilityGraphPackage.Literals.TIMED_GTS_DELAY_TRANSITION;
+		return TimedsdmPackage.Literals.TIMED_GTS_DELAY_TRANSITION;
 	}
 
 } //TimedGTSDelayTransitionImpl

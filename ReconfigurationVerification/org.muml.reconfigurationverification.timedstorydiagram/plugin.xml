@@ -6,11 +6,10 @@
  $Id$
 --><plugin>
 
-
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated TimedStoryDiagrams -->
       <package
-            uri="http://www.fujaba.de/timedstorydiagram/0.1.0"
+            uri="http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0"
             class="org.muml.reconfigurationverification.timedstorydiagram.TimedstorydiagramPackage"
             genModel="model/TimedStoryDiagrams.genmodel"/>
    </extension>

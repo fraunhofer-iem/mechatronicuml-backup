@@ -18,10 +18,10 @@ import org.muml.storydiagram.patterns.impl.StoryPatternImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.reconfigurationverification.timedstorydiagram.impl.TimedStoryPatternImpl#isNonModifyingStoryPattern <em>Non Modifying Story Pattern</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -16,13 +16,13 @@ import org.muml.storydiagram.activities.Activity;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.reconfigurationverification.timedstorydiagram.TimedStoryDiagram#getClockInstConstraint <em>Clock Inst Constraint</em>}</li>
  *   <li>{@link org.muml.reconfigurationverification.timedstorydiagram.TimedStoryDiagram#getResets <em>Resets</em>}</li>
  *   <li>{@link org.muml.reconfigurationverification.timedstorydiagram.TimedStoryDiagram#getMinDuration <em>Min Duration</em>}</li>
  *   <li>{@link org.muml.reconfigurationverification.timedstorydiagram.TimedStoryDiagram#getMaxDuration <em>Max Duration</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.reconfigurationverification.timedstorydiagram.TimedstorydiagramPackage#getTimedStoryDiagram()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL validDurations='self.minDuration >= 0 and self.minDuration <= self.maxDuration' OnlyContainsTimedActivityNodes='-- A TimedStoryDiagram may only contain an initial node, a final node, TimedActivityNodes, StatementNodes, and ActivityCallNodes --\r\nself.ownedActivityNode  -> select(v | v.oclIsTypeOf(timedstorydiagram::TimedActivityNode) or v.oclIsTypeOf(storydiagrams::activities::InitialNode) or v.oclIsTypeOf(storydiagrams::activities::ActivityFinalNode) or \r\nv.oclIsTypeOf(storydiagrams::activities::ActivityCallNode) or v.oclIsTypeOf(storydiagrams::activities::JunctionNode) or v.oclIsTypeOf(storydiagrams::activities::StatementNode)) -> size() = self.ownedActivityNode -> size()'"

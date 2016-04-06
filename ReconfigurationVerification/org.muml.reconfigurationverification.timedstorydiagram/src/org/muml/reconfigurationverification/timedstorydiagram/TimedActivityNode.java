@@ -15,10 +15,10 @@ import org.muml.storydiagram.activities.ModifyingStoryNode;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.reconfigurationverification.timedstorydiagram.TimedActivityNode#getOwnedTimedStoryPattern <em>Owned Timed Story Pattern</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.reconfigurationverification.timedstorydiagram.TimedstorydiagramPackage#getTimedActivityNode()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='TimedActivityNodeMayOnlyContainTimedStoryPattern'"

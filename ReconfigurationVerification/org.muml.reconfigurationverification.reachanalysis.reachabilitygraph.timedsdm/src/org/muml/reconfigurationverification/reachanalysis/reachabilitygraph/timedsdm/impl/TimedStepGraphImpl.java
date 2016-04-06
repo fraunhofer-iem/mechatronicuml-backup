@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectEList;
 import org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.timedsdm.ReachabilityGraphPackage;
 import org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.timedsdm.TimedStepGraph;
+import org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.timedsdm.TimedsdmPackage;
 import org.muml.reconfigurationverification.timedstorydiagram.ClockInstance;
 import org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.impl.StepGraphImpl;
 import org.muml.udbm.Federation;
@@ -25,11 +26,11 @@ import org.muml.udbm.Federation;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.timedsdm.impl.TimedStepGraphImpl#getClockInstances <em>Clock Instances</em>}</li>
  *   <li>{@link org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.timedsdm.impl.TimedStepGraphImpl#getFederation <em>Federation</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -52,7 +53,7 @@ public class TimedStepGraphImpl extends StepGraphImpl implements TimedStepGraph 
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Federation FEDERATION_EDEFAULT = null;
+	protected static final de.uni_paderborn.fujaba.udbm.Federation FEDERATION_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getFederation() <em>Federation</em>}' attribute.
@@ -62,7 +63,7 @@ public class TimedStepGraphImpl extends StepGraphImpl implements TimedStepGraph 
 	 * @generated
 	 * @ordered
 	 */
-	protected Federation federation = FEDERATION_EDEFAULT;
+	protected de.uni_paderborn.fujaba.udbm.Federation federation = FEDERATION_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -80,7 +81,7 @@ public class TimedStepGraphImpl extends StepGraphImpl implements TimedStepGraph 
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ReachabilityGraphPackage.Literals.TIMED_STEP_GRAPH;
+		return TimedsdmPackage.Literals.TIMED_STEP_GRAPH;
 	}
 
 	/**
@@ -88,7 +89,7 @@ public class TimedStepGraphImpl extends StepGraphImpl implements TimedStepGraph 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Federation getFederation() {
+	public de.uni_paderborn.fujaba.udbm.Federation getFederation() {
 		return federation;
 	}
 
@@ -97,11 +98,11 @@ public class TimedStepGraphImpl extends StepGraphImpl implements TimedStepGraph 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setFederation(Federation newFederation) {
-		Federation oldFederation = federation;
+	public void setFederation(de.uni_paderborn.fujaba.udbm.Federation newFederation) {
+		de.uni_paderborn.fujaba.udbm.Federation oldFederation = federation;
 		federation = newFederation;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ReachabilityGraphPackage.TIMED_STEP_GRAPH__FEDERATION, oldFederation, federation));
+			eNotify(new ENotificationImpl(this, Notification.SET, TimedsdmPackage.TIMED_STEP_GRAPH__FEDERATION, oldFederation, federation));
 	}
 
 	/**
@@ -111,7 +112,7 @@ public class TimedStepGraphImpl extends StepGraphImpl implements TimedStepGraph 
 	 */
 	public EList<ClockInstance> getClockInstances() {
 		if (clockInstances == null) {
-			clockInstances = new EObjectEList<ClockInstance>(ClockInstance.class, this, ReachabilityGraphPackage.TIMED_STEP_GRAPH__CLOCK_INSTANCES);
+			clockInstances = new EObjectEList<ClockInstance>(ClockInstance.class, this, TimedsdmPackage.TIMED_STEP_GRAPH__CLOCK_INSTANCES);
 		}
 		return clockInstances;
 	}
@@ -124,9 +125,9 @@ public class TimedStepGraphImpl extends StepGraphImpl implements TimedStepGraph 
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ReachabilityGraphPackage.TIMED_STEP_GRAPH__CLOCK_INSTANCES:
+			case TimedsdmPackage.TIMED_STEP_GRAPH__CLOCK_INSTANCES:
 				return getClockInstances();
-			case ReachabilityGraphPackage.TIMED_STEP_GRAPH__FEDERATION:
+			case TimedsdmPackage.TIMED_STEP_GRAPH__FEDERATION:
 				return getFederation();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -141,12 +142,12 @@ public class TimedStepGraphImpl extends StepGraphImpl implements TimedStepGraph 
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ReachabilityGraphPackage.TIMED_STEP_GRAPH__CLOCK_INSTANCES:
+			case TimedsdmPackage.TIMED_STEP_GRAPH__CLOCK_INSTANCES:
 				getClockInstances().clear();
 				getClockInstances().addAll((Collection<? extends ClockInstance>)newValue);
 				return;
-			case ReachabilityGraphPackage.TIMED_STEP_GRAPH__FEDERATION:
-				setFederation((Federation)newValue);
+			case TimedsdmPackage.TIMED_STEP_GRAPH__FEDERATION:
+				setFederation((de.uni_paderborn.fujaba.udbm.Federation)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -160,10 +161,10 @@ public class TimedStepGraphImpl extends StepGraphImpl implements TimedStepGraph 
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ReachabilityGraphPackage.TIMED_STEP_GRAPH__CLOCK_INSTANCES:
+			case TimedsdmPackage.TIMED_STEP_GRAPH__CLOCK_INSTANCES:
 				getClockInstances().clear();
 				return;
-			case ReachabilityGraphPackage.TIMED_STEP_GRAPH__FEDERATION:
+			case TimedsdmPackage.TIMED_STEP_GRAPH__FEDERATION:
 				setFederation(FEDERATION_EDEFAULT);
 				return;
 		}
@@ -178,9 +179,9 @@ public class TimedStepGraphImpl extends StepGraphImpl implements TimedStepGraph 
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ReachabilityGraphPackage.TIMED_STEP_GRAPH__CLOCK_INSTANCES:
+			case TimedsdmPackage.TIMED_STEP_GRAPH__CLOCK_INSTANCES:
 				return clockInstances != null && !clockInstances.isEmpty();
-			case ReachabilityGraphPackage.TIMED_STEP_GRAPH__FEDERATION:
+			case TimedsdmPackage.TIMED_STEP_GRAPH__FEDERATION:
 				return FEDERATION_EDEFAULT == null ? federation != null : !FEDERATION_EDEFAULT.equals(federation);
 		}
 		return super.eIsSet(featureID);

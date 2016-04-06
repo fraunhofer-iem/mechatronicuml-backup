@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
-    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/de.uni_paderborn.fujaba.simulink.corrmodel/src"
-    modelPluginID="de.uni_paderborn.fujaba.simulink.corrmodel" modelName="Fujaba2simulink"
-    importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" copyrightFields="false"
-    usedGenPackages="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../org.muml.core.modelinstance/model/modelinstance.genmodel#//modelinstance ../../org.muml.pim/model/pim.genmodel#//pim ../../de.uni_paderborn.fujaba.simulink.model/model/Simulink.genmodel#//model ../../org.muml.core/model/core.genmodel#//core">
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.muml.simulink.adapter.corrmodel/src" modelPluginID="org.muml.simulink.adapter.corrmodel"
+    modelName="Fujaba2simulink" importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0"
+    copyrightFields="false" usedGenPackages="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../org.muml.core.modelinstance/model/modelinstance.genmodel#//modelinstance ../../org.muml.pim/model/pim.genmodel#//pim ../../org.muml.simulink.adapter.model/model/Simulink.genmodel#//model ../../org.muml.core/model/core.genmodel#//core">
   <foreignModel>fujaba2simulink.ecore</foreignModel>
-  <genPackages prefix="Fujaba2simulink" resource="XML" disposableProviderFactory="true"
-      ecorePackage="fujaba2simulink.ecore#/">
+  <genPackages prefix="Fujaba2simulink" basePackage="org.muml.simulink.adapter" resource="XML"
+      disposableProviderFactory="true" ecorePackage="fujaba2simulink.ecore#/">
     <genClasses image="false" ecoreClass="fujaba2simulink.ecore#//AbstractContainerCorrespondenceNode">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference fujaba2simulink.ecore#//AbstractContainerCorrespondenceNode/childCorresp"/>
     </genClasses>
@@ -87,271 +86,270 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference fujaba2simulink.ecore#//Del2Line/DelegationInstance"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference fujaba2simulink.ecore#//Del2Line/Line"/>
     </genClasses>
-    <nestedGenPackages prefix="Behavior_model" basePackage="fujaba2simulink" resource="XML"
-        disposableProviderFactory="true" ecorePackage="fujaba2simulink.ecore#//behavior_model">
-      <genClasses ecoreClass="fujaba2simulink.ecore#//behavior_model/RtScCat2SfM">
+    <nestedGenPackages prefix="Behavior" disposableProviderFactory="true" ecorePackage="fujaba2simulink.ecore#//behavior">
+      <genClasses ecoreClass="fujaba2simulink.ecore#//behavior/RtScCat2SfM">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior_model/RtScCat2SfM/sfM"/>
+            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior/RtScCat2SfM/sfM"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior_model/RtScCat2SfM/rtScCat"/>
+            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior/RtScCat2SfM/rtScCat"/>
       </genClasses>
-      <genClasses ecoreClass="fujaba2simulink.ecore#//behavior_model/FRtSc2Chart">
+      <genClasses ecoreClass="fujaba2simulink.ecore#//behavior/FRtSc2Chart">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior_model/FRtSc2Chart/chart"/>
+            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior/FRtSc2Chart/chart"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior_model/FRtSc2Chart/fRtSc"/>
+            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior/FRtSc2Chart/fRtSc"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior_model/FRtSc2Chart/mt_par"/>
+            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior/FRtSc2Chart/mt_par"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior_model/FRtSc2Chart/sfChartState"/>
+            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior/FRtSc2Chart/sfChartState"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior_model/FRtSc2Chart/sfChartRegion"/>
+            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior/FRtSc2Chart/sfChartRegion"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior_model/FRtSc2Chart/sfQueueRegion"/>
+            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior/FRtSc2Chart/sfQueueRegion"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior_model/FRtSc2Chart/sfSelfTrans"/>
+            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior/FRtSc2Chart/sfSelfTrans"/>
       </genClasses>
-      <genClasses ecoreClass="fujaba2simulink.ecore#//behavior_model/ScState2SfState">
+      <genClasses ecoreClass="fujaba2simulink.ecore#//behavior/ScState2SfState">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior_model/ScState2SfState/scState"/>
+            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior/ScState2SfState/scState"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior_model/ScState2SfState/sfState"/>
+            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior/ScState2SfState/sfState"/>
       </genClasses>
-      <genClasses ecoreClass="fujaba2simulink.ecore#//behavior_model/ScTrans2SfTrans">
+      <genClasses ecoreClass="fujaba2simulink.ecore#//behavior/ScTrans2SfTrans">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior_model/ScTrans2SfTrans/scTrans"/>
+            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior/ScTrans2SfTrans/scTrans"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior_model/ScTrans2SfTrans/sfTrans"/>
+            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior/ScTrans2SfTrans/sfTrans"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior_model/ScTrans2SfTrans/scReg"/>
+            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior/ScTrans2SfTrans/scReg"/>
       </genClasses>
-      <genClasses ecoreClass="fujaba2simulink.ecore#//behavior_model/ScRegion2sfParallel">
+      <genClasses ecoreClass="fujaba2simulink.ecore#//behavior/ScRegion2sfParallel">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior_model/ScRegion2sfParallel/scRegion"/>
+            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior/ScRegion2sfParallel/scRegion"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior_model/ScRegion2sfParallel/sfParallelState"/>
+            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior/ScRegion2sfParallel/sfParallelState"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior_model/ScRegion2sfParallel/scRegRtsc"/>
+            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior/ScRegion2sfParallel/scRegRtsc"/>
       </genClasses>
-      <genClasses ecoreClass="fujaba2simulink.ecore#//behavior_model/ScEntry2sfEntry">
+      <genClasses ecoreClass="fujaba2simulink.ecore#//behavior/ScEntry2sfEntry">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior_model/ScEntry2sfEntry/scEntryEvent"/>
+            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior/ScEntry2sfEntry/scEntryEvent"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior_model/ScEntry2sfEntry/sfEntryAction"/>
+            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior/ScEntry2sfEntry/sfEntryAction"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior_model/ScEntry2sfEntry/scEntryAction"/>
+            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior/ScEntry2sfEntry/scEntryAction"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior_model/ScEntry2sfEntry/scExpr"/>
+            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior/ScEntry2sfEntry/scExpr"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior_model/ScEntry2sfEntry/scClock"/>
+            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior/ScEntry2sfEntry/scClock"/>
       </genClasses>
-      <genClasses ecoreClass="fujaba2simulink.ecore#//behavior_model/ScExit2sfExit">
+      <genClasses ecoreClass="fujaba2simulink.ecore#//behavior/ScExit2sfExit">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior_model/ScExit2sfExit/scExitEvent"/>
+            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior/ScExit2sfExit/scExitEvent"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior_model/ScExit2sfExit/scExitAction"/>
+            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior/ScExit2sfExit/scExitAction"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior_model/ScExit2sfExit/scExitExpr"/>
+            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior/ScExit2sfExit/scExitExpr"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior_model/ScExit2sfExit/sfExitAction"/>
+            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior/ScExit2sfExit/sfExitAction"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior_model/ScExit2sfExit/scClock"/>
+            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior/ScExit2sfExit/scClock"/>
       </genClasses>
-      <genClasses ecoreClass="fujaba2simulink.ecore#//behavior_model/ScStEnPoint2sfTrans">
+      <genClasses ecoreClass="fujaba2simulink.ecore#//behavior/ScStEnPoint2sfTrans">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior_model/ScStEnPoint2sfTrans/sfTrans"/>
+            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior/ScStEnPoint2sfTrans/sfTrans"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior_model/ScStEnPoint2sfTrans/scInTrans"/>
+            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior/ScStEnPoint2sfTrans/scInTrans"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior_model/ScStEnPoint2sfTrans/scOutTrans"/>
+            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior/ScStEnPoint2sfTrans/scOutTrans"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior_model/ScStEnPoint2sfTrans/scStateEntryP"/>
+            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior/ScStEnPoint2sfTrans/scStateEntryP"/>
       </genClasses>
-      <genClasses ecoreClass="fujaba2simulink.ecore#//behavior_model/ScStExPoint2sfTrans">
+      <genClasses ecoreClass="fujaba2simulink.ecore#//behavior/ScStExPoint2sfTrans">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior_model/ScStExPoint2sfTrans/sfTrans"/>
+            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior/ScStExPoint2sfTrans/sfTrans"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior_model/ScStExPoint2sfTrans/scOutTrans"/>
+            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior/ScStExPoint2sfTrans/scOutTrans"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior_model/ScStExPoint2sfTrans/scInTrans"/>
+            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior/ScStExPoint2sfTrans/scInTrans"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior_model/ScStExPoint2sfTrans/scStExPoint"/>
+            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior/ScStExPoint2sfTrans/scStExPoint"/>
       </genClasses>
-      <genClasses ecoreClass="fujaba2simulink.ecore#//behavior_model/ScSyncChannel2sfSignal">
+      <genClasses ecoreClass="fujaba2simulink.ecore#//behavior/ScSyncChannel2sfSignal">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior_model/ScSyncChannel2sfSignal/scSyncChannel"/>
+            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior/ScSyncChannel2sfSignal/scSyncChannel"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior_model/ScSyncChannel2sfSignal/sfSyncEvent"/>
+            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior/ScSyncChannel2sfSignal/sfSyncEvent"/>
       </genClasses>
-      <genClasses ecoreClass="fujaba2simulink.ecore#//behavior_model/ScSyncReceiveAction2sfAction">
+      <genClasses ecoreClass="fujaba2simulink.ecore#//behavior/ScSyncReceiveAction2sfAction">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior_model/ScSyncReceiveAction2sfAction/scAction"/>
+            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior/ScSyncReceiveAction2sfAction/scAction"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior_model/ScSyncReceiveAction2sfAction/scActionExpr"/>
+            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior/ScSyncReceiveAction2sfAction/scActionExpr"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior_model/ScSyncReceiveAction2sfAction/sfAction"/>
+            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior/ScSyncReceiveAction2sfAction/sfAction"/>
       </genClasses>
-      <genClasses ecoreClass="fujaba2simulink.ecore#//behavior_model/ScSyncReceive2sfSyncReceive">
+      <genClasses ecoreClass="fujaba2simulink.ecore#//behavior/ScSyncReceive2sfSyncReceive">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior_model/ScSyncReceive2sfSyncReceive/scSyncReceive"/>
+            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior/ScSyncReceive2sfSyncReceive/scSyncReceive"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior_model/ScSyncReceive2sfSyncReceive/sfEntryAction"/>
+            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior/ScSyncReceive2sfSyncReceive/sfEntryAction"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior_model/ScSyncReceive2sfSyncReceive/sfExitAction"/>
+            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior/ScSyncReceive2sfSyncReceive/sfExitAction"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior_model/ScSyncReceive2sfSyncReceive/sfTransEvent"/>
+            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior/ScSyncReceive2sfSyncReceive/sfTransEvent"/>
       </genClasses>
-      <genClasses ecoreClass="fujaba2simulink.ecore#//behavior_model/scSyncSend2sfSyncSend">
+      <genClasses ecoreClass="fujaba2simulink.ecore#//behavior/scSyncSend2sfSyncSend">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior_model/scSyncSend2sfSyncSend/sfGuard"/>
+            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior/scSyncSend2sfSyncSend/sfGuard"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior_model/scSyncSend2sfSyncSend/sfAssignment"/>
+            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior/scSyncSend2sfSyncSend/sfAssignment"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior_model/scSyncSend2sfSyncSend/scTransAnnotation"/>
+            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior/scSyncSend2sfSyncSend/scTransAnnotation"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior_model/scSyncSend2sfSyncSend/scAnnDetails"/>
+            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior/scSyncSend2sfSyncSend/scAnnDetails"/>
       </genClasses>
-      <genClasses ecoreClass="fujaba2simulink.ecore#//behavior_model/ScSyncPara2sfSyncParaData"/>
-      <genClasses ecoreClass="fujaba2simulink.ecore#//behavior_model/MT_Par2MTD">
+      <genClasses ecoreClass="fujaba2simulink.ecore#//behavior/ScSyncPara2sfSyncParaData"/>
+      <genClasses ecoreClass="fujaba2simulink.ecore#//behavior/MT_Par2MTD">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior_model/MT_Par2MTD/mt"/>
+            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior/MT_Par2MTD/mt"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior_model/MT_Par2MTD/par"/>
+            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior/MT_Par2MTD/par"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior_model/MT_Par2MTD/data"/>
+            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior/MT_Par2MTD/data"/>
       </genClasses>
-      <genClasses ecoreClass="fujaba2simulink.ecore#//behavior_model/scAttribute2sfData">
+      <genClasses ecoreClass="fujaba2simulink.ecore#//behavior/scAttribute2sfData">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior_model/scAttribute2sfData/scAttribute"/>
+            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior/scAttribute2sfData/scAttribute"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior_model/scAttribute2sfData/sfData"/>
+            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior/scAttribute2sfData/sfData"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior_model/scAttribute2sfData/scType"/>
+            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior/scAttribute2sfData/scType"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior_model/scAttribute2sfData/scAttrType"/>
+            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior/scAttribute2sfData/scAttrType"/>
       </genClasses>
-      <genClasses ecoreClass="fujaba2simulink.ecore#//behavior_model/scSendAsync2sfTransAction">
+      <genClasses ecoreClass="fujaba2simulink.ecore#//behavior/scSendAsync2sfTransAction">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior_model/scSendAsync2sfTransAction/sfSendAsync"/>
+            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior/scSendAsync2sfTransAction/sfSendAsync"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior_model/scSendAsync2sfTransAction/AsynchronousMessageEvent"/>
+            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior/scSendAsync2sfTransAction/AsynchronousMessageEvent"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior_model/scSendAsync2sfTransAction/Message"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fujaba2simulink.ecore#//behavior_model/scSendAsync2sfTransAction/ActionValue"/>
+            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior/scSendAsync2sfTransAction/Message"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fujaba2simulink.ecore#//behavior/scSendAsync2sfTransAction/ActionValue"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior_model/scSendAsync2sfTransAction/scPara"/>
+            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior/scSendAsync2sfTransAction/scPara"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior_model/scSendAsync2sfTransAction/parBind"/>
+            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior/scSendAsync2sfTransAction/parBind"/>
       </genClasses>
-      <genClasses ecoreClass="fujaba2simulink.ecore#//behavior_model/scSendParaBind2sfAction">
+      <genClasses ecoreClass="fujaba2simulink.ecore#//behavior/scSendParaBind2sfAction">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior_model/scSendParaBind2sfAction/sfParaBAction"/>
+            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior/scSendParaBind2sfAction/sfParaBAction"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior_model/scSendParaBind2sfAction/scAnnotation"/>
+            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior/scSendParaBind2sfAction/scAnnotation"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior_model/scSendParaBind2sfAction/scDetails"/>
+            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior/scSendParaBind2sfAction/scDetails"/>
       </genClasses>
-      <genClasses ecoreClass="fujaba2simulink.ecore#//behavior_model/scAsyncSend2sfAction">
+      <genClasses ecoreClass="fujaba2simulink.ecore#//behavior/scAsyncSend2sfAction">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior_model/scAsyncSend2sfAction/sfEnqAction"/>
+            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior/scAsyncSend2sfAction/sfEnqAction"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior_model/scAsyncSend2sfAction/AsynchronousMessageEvent"/>
+            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior/scAsyncSend2sfAction/AsynchronousMessageEvent"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior_model/scAsyncSend2sfAction/EAnnotation"/>
+            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior/scAsyncSend2sfAction/EAnnotation"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior_model/scAsyncSend2sfAction/EStringToStringMapEntry"/>
+            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior/scAsyncSend2sfAction/EStringToStringMapEntry"/>
       </genClasses>
-      <genClasses ecoreClass="fujaba2simulink.ecore#//behavior_model/scAsyncRec2sfAsyncGuard">
+      <genClasses ecoreClass="fujaba2simulink.ecore#//behavior/scAsyncRec2sfAsyncGuard">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior_model/scAsyncRec2sfAsyncGuard/guardAnnotation"/>
+            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior/scAsyncRec2sfAsyncGuard/guardAnnotation"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior_model/scAsyncRec2sfAsyncGuard/EAnnotation"/>
+            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior/scAsyncRec2sfAsyncGuard/EAnnotation"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior_model/scAsyncRec2sfAsyncGuard/AsynchronousMessageEvent"/>
+            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior/scAsyncRec2sfAsyncGuard/AsynchronousMessageEvent"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior_model/scAsyncRec2sfAsyncGuard/asyncRecGuard"/>
+            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior/scAsyncRec2sfAsyncGuard/asyncRecGuard"/>
       </genClasses>
-      <genClasses ecoreClass="fujaba2simulink.ecore#//behavior_model/scClock2sfData">
+      <genClasses ecoreClass="fujaba2simulink.ecore#//behavior/scClock2sfData">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior_model/scClock2sfData/scClock"/>
+            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior/scClock2sfData/scClock"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior_model/scClock2sfData/sfClockVariable"/>
+            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior/scClock2sfData/sfClockVariable"/>
       </genClasses>
-      <genClasses ecoreClass="fujaba2simulink.ecore#//behavior_model/scClockConstr2sfGuard">
+      <genClasses ecoreClass="fujaba2simulink.ecore#//behavior/scClockConstr2sfGuard">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior_model/scClockConstr2sfGuard/scClockConstr"/>
+            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior/scClockConstr2sfGuard/scClockConstr"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior_model/scClockConstr2sfGuard/scBound"/>
+            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior/scClockConstr2sfGuard/scBound"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior_model/scClockConstr2sfGuard/scClock"/>
+            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior/scClockConstr2sfGuard/scClock"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior_model/scClockConstr2sfGuard/sfClockGuard"/>
+            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior/scClockConstr2sfGuard/sfClockGuard"/>
       </genClasses>
-      <genClasses ecoreClass="fujaba2simulink.ecore#//behavior_model/clock2ClockReset">
+      <genClasses ecoreClass="fujaba2simulink.ecore#//behavior/clock2ClockReset">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior_model/clock2ClockReset/scClock"/>
+            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior/clock2ClockReset/scClock"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior_model/clock2ClockReset/sfClockReset"/>
+            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior/clock2ClockReset/sfClockReset"/>
       </genClasses>
-      <genClasses ecoreClass="fujaba2simulink.ecore#//behavior_model/scInvariant2sfInvError">
+      <genClasses ecoreClass="fujaba2simulink.ecore#//behavior/scInvariant2sfInvError">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior_model/scInvariant2sfInvError/scInvariant"/>
+            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior/scInvariant2sfInvError/scInvariant"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior_model/scInvariant2sfInvError/scBound"/>
+            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior/scInvariant2sfInvError/scBound"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior_model/scInvariant2sfInvError/scClock"/>
+            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior/scInvariant2sfInvError/scClock"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior_model/scInvariant2sfInvError/sfInvTrans"/>
+            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior/scInvariant2sfInvError/sfInvTrans"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior_model/scInvariant2sfInvError/sfInvGuard"/>
+            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior/scInvariant2sfInvError/sfInvGuard"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior_model/scInvariant2sfInvError/sfInvNode"/>
+            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior/scInvariant2sfInvError/sfInvNode"/>
       </genClasses>
-      <genClasses ecoreClass="fujaba2simulink.ecore#//behavior_model/scGuard2sfGuard">
+      <genClasses ecoreClass="fujaba2simulink.ecore#//behavior/scGuard2sfGuard">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior_model/scGuard2sfGuard/sfGuard"/>
+            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior/scGuard2sfGuard/sfGuard"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior_model/scGuard2sfGuard/scAnnotation"/>
+            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior/scGuard2sfGuard/scAnnotation"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior_model/scGuard2sfGuard/scDetails"/>
+            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior/scGuard2sfGuard/scDetails"/>
       </genClasses>
-      <genClasses ecoreClass="fujaba2simulink.ecore#//behavior_model/scAction2sfAction">
+      <genClasses ecoreClass="fujaba2simulink.ecore#//behavior/scAction2sfAction">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior_model/scAction2sfAction/scAction"/>
+            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior/scAction2sfAction/scAction"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior_model/scAction2sfAction/sfAction"/>
+            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior/scAction2sfAction/sfAction"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior_model/scAction2sfAction/scActionExpr"/>
+            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior/scAction2sfAction/scActionExpr"/>
       </genClasses>
-      <genClasses ecoreClass="fujaba2simulink.ecore#//behavior_model/scOp2sfEmbFunc">
+      <genClasses ecoreClass="fujaba2simulink.ecore#//behavior/scOp2sfEmbFunc">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior_model/scOp2sfEmbFunc/scOperation"/>
+            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior/scOp2sfEmbFunc/scOperation"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior_model/scOp2sfEmbFunc/sfEmbFunc"/>
+            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior/scOp2sfEmbFunc/sfEmbFunc"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior_model/scOp2sfEmbFunc/scAnnotation"/>
+            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior/scOp2sfEmbFunc/scAnnotation"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior_model/scOp2sfEmbFunc/scDetails"/>
+            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior/scOp2sfEmbFunc/scDetails"/>
       </genClasses>
-      <genClasses ecoreClass="fujaba2simulink.ecore#//behavior_model/scOpData2sfEmbFuncData">
+      <genClasses ecoreClass="fujaba2simulink.ecore#//behavior/scOpData2sfEmbFuncData">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior_model/scOpData2sfEmbFuncData/scParameter"/>
+            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior/scOpData2sfEmbFuncData/scParameter"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior_model/scOpData2sfEmbFuncData/sfData"/>
+            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior/scOpData2sfEmbFuncData/sfData"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior_model/scOpData2sfEmbFuncData/scParaType"/>
+            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior/scOpData2sfEmbFuncData/scParaType"/>
       </genClasses>
-      <genClasses ecoreClass="fujaba2simulink.ecore#//behavior_model/scAsyncRec2sfDequeue">
+      <genClasses ecoreClass="fujaba2simulink.ecore#//behavior/scAsyncRec2sfDequeue">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior_model/scAsyncRec2sfDequeue/scDetailsDequeue"/>
+            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior/scAsyncRec2sfDequeue/scDetailsDequeue"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior_model/scAsyncRec2sfDequeue/scAction"/>
+            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior/scAsyncRec2sfDequeue/scAction"/>
       </genClasses>
-      <genClasses ecoreClass="fujaba2simulink.ecore#//behavior_model/scActionSelfTrans2sfAction">
+      <genClasses ecoreClass="fujaba2simulink.ecore#//behavior/scActionSelfTrans2sfAction">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior_model/scActionSelfTrans2sfAction/scAction"/>
+            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior/scActionSelfTrans2sfAction/scAction"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior_model/scActionSelfTrans2sfAction/sfAction"/>
+            ecoreFeature="ecore:EReference fujaba2simulink.ecore#//behavior/scActionSelfTrans2sfAction/sfAction"/>
       </genClasses>
     </nestedGenPackages>
   </genPackages>

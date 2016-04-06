@@ -22,13 +22,13 @@ import org.muml.udbm.Federation;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.timedsdm.TimedStepGraph#getClockInstances <em>Clock Instances</em>}</li>
  *   <li>{@link org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.timedsdm.TimedStepGraph#getFederation <em>Federation</em>}</li>
  * </ul>
- * </p>
  *
- * @see org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.timedsdm.ReachabilityGraphPackage#getTimedStepGraph()
+ * @see org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.timedsdm.TimedsdmPackage#getTimedStepGraph()
  * @model
  * @generated
  */
@@ -43,7 +43,7 @@ public interface TimedStepGraph extends StepGraph {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Clock Instances</em>' reference list.
-	 * @see org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.timedsdm.ReachabilityGraphPackage#getTimedStepGraph_ClockInstances()
+	 * @see org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.timedsdm.TimedsdmPackage#getTimedStepGraph_ClockInstances()
 	 * @model resolveProxies="false"
 	 * @generated
 	 */
@@ -58,12 +58,12 @@ public interface TimedStepGraph extends StepGraph {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Federation</em>' attribute.
-	 * @see #setFederation(Federation)
-	 * @see org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.timedsdm.ReachabilityGraphPackage#getTimedStepGraph_Federation()
-	 * @model dataType="de.uni_paderborn.fujaba.umlrt.reachanalysis.time.timedsdm.reachabilityGraph.FederationObject" transient="true"
+	 * @see #setFederation(de.uni_paderborn.fujaba.udbm.Federation)
+	 * @see org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.timedsdm.TimedsdmPackage#getTimedStepGraph_Federation()
+	 * @model dataType="org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.timedsdm.FederationObject" transient="true"
 	 * @generated
 	 */
-	Federation getFederation();
+	de.uni_paderborn.fujaba.udbm.Federation getFederation();
 
 	/**
 	 * Sets the value of the '{@link org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.timedsdm.TimedStepGraph#getFederation <em>Federation</em>}' attribute.
@@ -73,6 +73,6 @@ public interface TimedStepGraph extends StepGraph {
 	 * @see #getFederation()
 	 * @generated
 	 */
-	void setFederation(Federation value);
+	void setFederation(de.uni_paderborn.fujaba.udbm.Federation value);
 
 } // TimedStepGraph

@@ -16,12 +16,12 @@ import org.muml.core.expressions.common.ComparingOperator;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.reconfigurationverification.timedstorydiagram.ClockInstanceConstraint#getClockInstanceVariable <em>Clock Instance Variable</em>}</li>
  *   <li>{@link org.muml.reconfigurationverification.timedstorydiagram.ClockInstanceConstraint#getOperator <em>Operator</em>}</li>
  *   <li>{@link org.muml.reconfigurationverification.timedstorydiagram.ClockInstanceConstraint#getValue <em>Value</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.reconfigurationverification.timedstorydiagram.TimedstorydiagramPackage#getClockInstanceConstraint()
  * @model

@@ -17,10 +17,10 @@ import org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.wrapper.Wrapper
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.wrapper.impl.BoolWrapperImpl#isBoolValue <em>Bool Value</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

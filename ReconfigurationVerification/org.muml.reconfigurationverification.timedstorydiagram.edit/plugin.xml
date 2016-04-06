@@ -11,8 +11,9 @@
 <plugin>
 
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <!-- @generated TimedStoryDiagrams -->
       <factory
-            uri="http:///de/uni_paderborn/fujaba/muml/timedstorydiagram"
+            uri="http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0"
             class="org.muml.reconfigurationverification.timedstorydiagram.provider.TimedstorydiagramItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider

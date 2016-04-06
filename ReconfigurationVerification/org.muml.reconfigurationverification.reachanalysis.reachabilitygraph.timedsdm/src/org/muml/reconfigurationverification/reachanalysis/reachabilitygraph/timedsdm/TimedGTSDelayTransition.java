@@ -14,7 +14,7 @@ import org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraphTransition
  * <!-- end-user-doc -->
  *
  *
- * @see org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.timedsdm.ReachabilityGraphPackage#getTimedGTSDelayTransition()
+ * @see org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.timedsdm.TimedsdmPackage#getTimedGTSDelayTransition()
  * @model
  * @generated
  */

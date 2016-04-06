@@ -15,10 +15,10 @@ import org.muml.storydiagram.patterns.StoryPattern;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.reconfigurationverification.timedstorydiagram.TimedStoryPattern#isNonModifyingStoryPattern <em>Non Modifying Story Pattern</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.reconfigurationverification.timedstorydiagram.TimedstorydiagramPackage#getTimedStoryPattern()
  * @model

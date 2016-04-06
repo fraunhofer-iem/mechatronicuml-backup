@@ -35,13 +35,7 @@ import org.muml.storydiagram.patterns.provider.StoryPatternItemProvider;
  * @generated
  */
 public class TimedStoryPatternItemProvider
-	extends StoryPatternItemProvider
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+	extends StoryPatternItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

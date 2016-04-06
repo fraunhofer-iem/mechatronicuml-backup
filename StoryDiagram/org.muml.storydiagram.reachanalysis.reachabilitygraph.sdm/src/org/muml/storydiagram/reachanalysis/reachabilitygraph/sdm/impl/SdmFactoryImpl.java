@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+import org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.*;
 import org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.GraphTransformationSystem;
 import org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.SDMReachabilityGraph;
 import org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.SDMTransition;

@@ -21,13 +21,13 @@ import org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraphState;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.StepGraph#getChangeableNodes <em>Changeable Nodes</em>}</li>
  *   <li>{@link org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.StepGraph#getContains <em>Contains</em>}</li>
  *   <li>{@link org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.StepGraph#getUnchangeableNodes <em>Unchangeable Nodes</em>}</li>
  *   <li>{@link org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.StepGraph#getContainedNodes <em>Contained Nodes</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.SdmPackage#getStepGraph()
  * @model

@@ -37,7 +37,7 @@ public interface WrapperPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.fujaba.de/reachabilityGraph/sdm/wrapper/0.4.0";
+	String eNS_URI = "http://www.muml.org/storydiagram/reachanalysis/reachabilitygraph/sdm/wrapper/1.0.0";
 
 	/**
 	 * The package namespace name.

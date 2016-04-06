@@ -13,6 +13,7 @@ import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.EObjectValidator;
+import org.muml.reconfigurationverification.timedstorydiagram.*;
 import org.muml.reconfigurationverification.timedstorydiagram.ClockInstance;
 import org.muml.reconfigurationverification.timedstorydiagram.ClockInstanceConstraint;
 import org.muml.reconfigurationverification.timedstorydiagram.ClockInstanceStoryDiagram;
@@ -48,7 +49,7 @@ public class TimedstorydiagramValidator extends EObjectValidator {
 	 * @see org.eclipse.emf.common.util.Diagnostic#getCode()
 	 * @generated
 	 */
-	public static final String DIAGNOSTIC_SOURCE = "de.uni_paderborn.fujaba.muml.timedstorydiagram";
+	public static final String DIAGNOSTIC_SOURCE = "org.muml.reconfigurationverification.timedstorydiagram";
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants.

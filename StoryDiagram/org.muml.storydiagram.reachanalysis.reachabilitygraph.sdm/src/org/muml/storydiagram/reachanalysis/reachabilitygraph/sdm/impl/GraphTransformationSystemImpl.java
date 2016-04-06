@@ -22,11 +22,11 @@ import org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.SdmPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.impl.GraphTransformationSystemImpl#getActivities <em>Activities</em>}</li>
  *   <li>{@link org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.impl.GraphTransformationSystemImpl#getUnchangeableNodes <em>Unchangeable Nodes</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

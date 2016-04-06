@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+import org.muml.reconfigurationverification.timedstorydiagram.*;
 import org.muml.reconfigurationverification.timedstorydiagram.ClockInstance;
 import org.muml.reconfigurationverification.timedstorydiagram.ClockInstanceConstraint;
 import org.muml.reconfigurationverification.timedstorydiagram.ClockInstanceStoryDiagram;

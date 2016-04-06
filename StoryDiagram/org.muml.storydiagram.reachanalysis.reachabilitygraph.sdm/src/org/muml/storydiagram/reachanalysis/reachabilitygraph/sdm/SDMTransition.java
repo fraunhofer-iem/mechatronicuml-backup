@@ -23,12 +23,12 @@ import org.muml.storydiagram.activities.Activity;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.SDMTransition#getIndex <em>Index</em>}</li>
  *   <li>{@link org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.SDMTransition#getAppliedActivity <em>Applied Activity</em>}</li>
  *   <li>{@link org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.SDMTransition#getMatching <em>Matching</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.SdmPackage#getSDMTransition()
  * @model
@@ -49,7 +49,7 @@ public interface SDMTransition extends ActionTransition {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Index</em>' map.
 	 * @see org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.SdmPackage#getSDMTransition_Index()
-	 * @model mapType="de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.sdm.IndexEntry<org.eclipse.emf.ecore.EObject, org.eclipse.emf.ecore.EObject>" transient="true"
+	 * @model mapType="org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.IndexEntry<org.eclipse.emf.ecore.EObject, org.eclipse.emf.ecore.EObject>" transient="true"
 	 * @generated
 	 */
 	EMap<EObject, EObject> getIndex();
@@ -90,7 +90,7 @@ public interface SDMTransition extends ActionTransition {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Matching</em>' map.
 	 * @see org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.SdmPackage#getSDMTransition_Matching()
-	 * @model mapType="de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.sdm.MatchingEntry<org.eclipse.emf.ecore.EString, org.eclipse.emf.ecore.EObject>"
+	 * @model mapType="org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.MatchingEntry<org.eclipse.emf.ecore.EString, org.eclipse.emf.ecore.EObject>"
 	 * @generated
 	 */
 	EMap<String, EObject> getMatching();

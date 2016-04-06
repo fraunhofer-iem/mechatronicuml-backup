@@ -15,10 +15,10 @@ import org.muml.storydiagram.activities.Activity;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.reconfigurationverification.timedstorydiagram.InvariantStoryDiagram#getClockInstConstraint <em>Clock Inst Constraint</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.reconfigurationverification.timedstorydiagram.TimedstorydiagramPackage#getInvariantStoryDiagram()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='NoModificationInInvariantRule OnlyContainsTimedActivityNodes'"

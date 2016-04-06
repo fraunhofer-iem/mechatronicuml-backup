@@ -36,13 +36,7 @@ import org.muml.storydiagram.activities.provider.ActivityItemProvider;
  * @generated
  */
 public class TimedStoryDiagramItemProvider
-	extends ActivityItemProvider
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+	extends ActivityItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

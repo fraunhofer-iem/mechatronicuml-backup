@@ -9,14 +9,17 @@ Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: org.muml.reconfigurationverification.reachanalysis.tsdm.transform.tsdmhelper,
  org.muml.reconfigurationverification.reachanalysis.tsdm.transform.tsdmhelper.impl,
- org.muml.reconfigurationverification.reachanalysis.tsdm.transform.tsdmhelper.util
+ org.muml.reconfigurationverification.reachanalysis.tsdm.transform.tsdmhelper.util,
+ de.uni_paderborn.fujaba.muml.reachanalysis.tsdm.tsdmhelper,
+ de.uni_paderborn.fujaba.muml.reachanalysis.tsdm.tsdmhelper.impl,
+ de.uni_paderborn.fujaba.muml.reachanalysis.tsdm.tsdmhelper.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.muml.reconfigurationverification.timedstorydiagram;visibility:=reexport,
  org.muml.core;visibility:=reexport,
  org.muml.storydiagram;visibility:=reexport,
  org.eclipse.m2m.qvt.oml;bundle-version="3.1.0",
- org.muml.pim;bundle-version="0.3.2"
+ org.muml.pim;bundle-version="0.3.2";visibility:=reexport
 Bundle-ActivationPolicy: lazy
 Import-Package: org.junit;version="4.8.2",
  org.junit.runner,

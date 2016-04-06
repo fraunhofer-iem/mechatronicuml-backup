@@ -17,11 +17,11 @@ import org.muml.core.NamedElement;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.reconfigurationverification.timedstorydiagram.ClockInstance#getId <em>Id</em>}</li>
  *   <li>{@link org.muml.reconfigurationverification.timedstorydiagram.ClockInstance#getHasNode <em>Has Node</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.reconfigurationverification.timedstorydiagram.TimedstorydiagramPackage#getClockInstance()
  * @model

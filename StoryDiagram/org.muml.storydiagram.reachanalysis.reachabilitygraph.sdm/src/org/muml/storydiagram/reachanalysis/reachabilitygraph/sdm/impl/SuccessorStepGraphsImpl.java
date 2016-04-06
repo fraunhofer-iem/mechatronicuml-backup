@@ -22,10 +22,10 @@ import org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.SuccessorStepGr
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.impl.SuccessorStepGraphsImpl#getSuccessors <em>Successors</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -23,12 +23,12 @@ import org.muml.reconfigurationverification.timedstorydiagram.TimedstorydiagramP
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.reconfigurationverification.timedstorydiagram.impl.ClockInstanceConstraintImpl#getClockInstanceVariable <em>Clock Instance Variable</em>}</li>
  *   <li>{@link org.muml.reconfigurationverification.timedstorydiagram.impl.ClockInstanceConstraintImpl#getOperator <em>Operator</em>}</li>
  *   <li>{@link org.muml.reconfigurationverification.timedstorydiagram.impl.ClockInstanceConstraintImpl#getValue <em>Value</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -17,10 +17,10 @@ import org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.wrapper.Wrapper
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.wrapper.impl.StringWrapperImpl#getStringValue <em>String Value</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

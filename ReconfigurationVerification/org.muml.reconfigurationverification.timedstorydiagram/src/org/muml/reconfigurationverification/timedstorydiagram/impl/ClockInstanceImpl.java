@@ -24,11 +24,11 @@ import org.muml.reconfigurationverification.timedstorydiagram.TimedstorydiagramP
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.reconfigurationverification.timedstorydiagram.impl.ClockInstanceImpl#getId <em>Id</em>}</li>
  *   <li>{@link org.muml.reconfigurationverification.timedstorydiagram.impl.ClockInstanceImpl#getHasNode <em>Has Node</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

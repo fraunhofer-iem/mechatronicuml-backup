@@ -11,29 +11,25 @@
 <plugin>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated fujaba2simulink -->
       <package
-            uri="http://de.uni_paderborn.fujaba2simulink"
-            class="org.muml.simulink.adapter.corrmodel.fujaba2simulink.Fujaba2simulinkPackage"
+            uri="http://www.muml.org/simulink/adapter/corrmodel/1.0.0"
+            class="org.muml.simulink.adapter.corrmodel.Fujaba2simulinkPackage"
             genModel="model/fujaba2simulink.genmodel"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.extension_parser">
+      <!-- @generated fujaba2simulink -->
       <parser
             type="fujaba2simulink"
-            class="org.muml.simulink.adapter.corrmodel.fujaba2simulink.util.Fujaba2simulinkResourceFactoryImpl"/>
+            class="org.muml.simulink.adapter.corrmodel.util.Fujaba2simulinkResourceFactoryImpl"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated fujaba2simulink -->
       <package
-            uri="http://de.uni_paderborn.fujaba2simulink.behavior"
-            class="org.muml.simulink.adapter.corrmodel.fujaba2simulink.behavior_model.Behavior_modelPackage"
+            uri="http://www.muml.org/simulink/adapter/corrmodel/behavior/1.0.0"
+            class="org.muml.simulink.adapter.corrmodel.behavior.BehaviorPackage"
             genModel="model/fujaba2simulink.genmodel"/>
    </extension>
-
-   <extension point="org.eclipse.emf.ecore.extension_parser">
-      <parser
-            type="behavior_model"
-            class="org.muml.simulink.adapter.corrmodel.fujaba2simulink.behavior_model.util.Behavior_modelResourceFactoryImpl"/>
-   </extension>
-
 </plugin>

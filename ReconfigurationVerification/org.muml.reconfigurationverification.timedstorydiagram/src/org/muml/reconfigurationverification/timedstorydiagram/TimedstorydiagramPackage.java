@@ -45,7 +45,7 @@ public interface TimedstorydiagramPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.fujaba.de/timedstorydiagram/0.1.0";
+	String eNS_URI = "http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0";
 
 	/**
 	 * The package namespace name.
@@ -53,7 +53,7 @@ public interface TimedstorydiagramPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_PREFIX = "de.uni_paderborn.fujaba.muml.timedstorydiagram";
+	String eNS_PREFIX = "timedstorydiagram";
 
 	/**
 	 * The singleton instance of the package.
@@ -74,22 +74,22 @@ public interface TimedstorydiagramPackage extends EPackage {
 	int TIMED_GRAPH_TRANSFORMATION_SYSTEM = 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TIMED_GRAPH_TRANSFORMATION_SYSTEM__ANNOTATION = CorePackage.NAMED_ELEMENT__ANNOTATION;
+	int TIMED_GRAPH_TRANSFORMATION_SYSTEM__ANNOTATIONS = CorePackage.NAMED_ELEMENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TIMED_GRAPH_TRANSFORMATION_SYSTEM__EXTENSION = CorePackage.NAMED_ELEMENT__EXTENSION;
+	int TIMED_GRAPH_TRANSFORMATION_SYSTEM__EXTENSIONS = CorePackage.NAMED_ELEMENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -183,22 +183,22 @@ public interface TimedstorydiagramPackage extends EPackage {
 	int TIMED_STORY_DIAGRAM = 1;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TIMED_STORY_DIAGRAM__ANNOTATION = ActivitiesPackage.ACTIVITY__ANNOTATION;
+	int TIMED_STORY_DIAGRAM__ANNOTATIONS = ActivitiesPackage.ACTIVITY__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TIMED_STORY_DIAGRAM__EXTENSION = ActivitiesPackage.ACTIVITY__EXTENSION;
+	int TIMED_STORY_DIAGRAM__EXTENSIONS = ActivitiesPackage.ACTIVITY__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -337,22 +337,22 @@ public interface TimedstorydiagramPackage extends EPackage {
 	int INVARIANT_STORY_DIAGRAM = 2;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INVARIANT_STORY_DIAGRAM__ANNOTATION = ActivitiesPackage.ACTIVITY__ANNOTATION;
+	int INVARIANT_STORY_DIAGRAM__ANNOTATIONS = ActivitiesPackage.ACTIVITY__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INVARIANT_STORY_DIAGRAM__EXTENSION = ActivitiesPackage.ACTIVITY__EXTENSION;
+	int INVARIANT_STORY_DIAGRAM__EXTENSIONS = ActivitiesPackage.ACTIVITY__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -464,22 +464,22 @@ public interface TimedstorydiagramPackage extends EPackage {
 	int CLOCK_INSTANCE_STORY_DIAGRAM = 3;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CLOCK_INSTANCE_STORY_DIAGRAM__ANNOTATION = ActivitiesPackage.ACTIVITY__ANNOTATION;
+	int CLOCK_INSTANCE_STORY_DIAGRAM__ANNOTATIONS = ActivitiesPackage.ACTIVITY__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CLOCK_INSTANCE_STORY_DIAGRAM__EXTENSION = ActivitiesPackage.ACTIVITY__EXTENSION;
+	int CLOCK_INSTANCE_STORY_DIAGRAM__EXTENSIONS = ActivitiesPackage.ACTIVITY__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -582,22 +582,22 @@ public interface TimedstorydiagramPackage extends EPackage {
 	int CLOCK_INSTANCE = 4;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CLOCK_INSTANCE__ANNOTATION = CorePackage.NAMED_ELEMENT__ANNOTATION;
+	int CLOCK_INSTANCE__ANNOTATIONS = CorePackage.NAMED_ELEMENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CLOCK_INSTANCE__EXTENSION = CorePackage.NAMED_ELEMENT__EXTENSION;
+	int CLOCK_INSTANCE__EXTENSIONS = CorePackage.NAMED_ELEMENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -692,22 +692,22 @@ public interface TimedstorydiagramPackage extends EPackage {
 	int CLOCK_INSTANCE_VARIABLE = 6;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CLOCK_INSTANCE_VARIABLE__ANNOTATION = PatternsPackage.OBJECT_VARIABLE__ANNOTATION;
+	int CLOCK_INSTANCE_VARIABLE__ANNOTATIONS = PatternsPackage.OBJECT_VARIABLE__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CLOCK_INSTANCE_VARIABLE__EXTENSION = PatternsPackage.OBJECT_VARIABLE__EXTENSION;
+	int CLOCK_INSTANCE_VARIABLE__EXTENSIONS = PatternsPackage.OBJECT_VARIABLE__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' reference.
@@ -874,22 +874,22 @@ public interface TimedstorydiagramPackage extends EPackage {
 	int TIMED_STORY_PATTERN = 7;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TIMED_STORY_PATTERN__ANNOTATION = PatternsPackage.STORY_PATTERN__ANNOTATION;
+	int TIMED_STORY_PATTERN__ANNOTATIONS = PatternsPackage.STORY_PATTERN__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TIMED_STORY_PATTERN__EXTENSION = PatternsPackage.STORY_PATTERN__EXTENSION;
+	int TIMED_STORY_PATTERN__EXTENSIONS = PatternsPackage.STORY_PATTERN__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -993,22 +993,22 @@ public interface TimedstorydiagramPackage extends EPackage {
 	int TIMED_ACTIVITY_NODE = 8;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TIMED_ACTIVITY_NODE__ANNOTATION = ActivitiesPackage.MODIFYING_STORY_NODE__ANNOTATION;
+	int TIMED_ACTIVITY_NODE__ANNOTATIONS = ActivitiesPackage.MODIFYING_STORY_NODE__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TIMED_ACTIVITY_NODE__EXTENSION = ActivitiesPackage.MODIFYING_STORY_NODE__EXTENSION;
+	int TIMED_ACTIVITY_NODE__EXTENSIONS = ActivitiesPackage.MODIFYING_STORY_NODE__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.

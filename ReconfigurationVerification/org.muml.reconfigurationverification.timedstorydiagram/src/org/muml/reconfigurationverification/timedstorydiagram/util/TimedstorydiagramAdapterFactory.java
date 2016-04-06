@@ -14,6 +14,7 @@ import org.muml.core.CommentableElement;
 import org.muml.core.ExtendableElement;
 import org.muml.core.NamedElement;
 import org.muml.core.TypedElement;
+import org.muml.reconfigurationverification.timedstorydiagram.*;
 import org.muml.reconfigurationverification.timedstorydiagram.ClockInstance;
 import org.muml.reconfigurationverification.timedstorydiagram.ClockInstanceConstraint;
 import org.muml.reconfigurationverification.timedstorydiagram.ClockInstanceStoryDiagram;

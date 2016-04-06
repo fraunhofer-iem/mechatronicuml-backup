@@ -19,10 +19,10 @@ import org.muml.storydiagram.activities.impl.ModifyingStoryNodeImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.reconfigurationverification.timedstorydiagram.impl.TimedActivityNodeImpl#getOwnedTimedStoryPattern <em>Owned Timed Story Pattern</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

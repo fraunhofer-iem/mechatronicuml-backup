@@ -28,13 +28,13 @@ import org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.StepGraph;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.impl.StepGraphImpl#getChangeableNodes <em>Changeable Nodes</em>}</li>
  *   <li>{@link org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.impl.StepGraphImpl#getContains <em>Contains</em>}</li>
  *   <li>{@link org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.impl.StepGraphImpl#getUnchangeableNodes <em>Unchangeable Nodes</em>}</li>
  *   <li>{@link org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.impl.StepGraphImpl#getContainedNodes <em>Contained Nodes</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

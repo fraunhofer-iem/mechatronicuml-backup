@@ -9,7 +9,7 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated SDMWrapper -->
       <package
-            uri="http://www.fujaba.de/reachabilityGraph/sdm/wrapper/0.4.0"
+            uri="http://www.muml.org/storydiagram/reachanalysis/reachabilitygraph/sdm/wrapper/1.0.0"
             class="org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.wrapper.WrapperPackage"
             genModel="model/SDMWrapper.genmodel"/>
    </extension>

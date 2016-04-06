@@ -27,12 +27,12 @@ import org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.SdmPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.impl.SDMTransitionImpl#getIndex <em>Index</em>}</li>
  *   <li>{@link org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.impl.SDMTransitionImpl#getAppliedActivity <em>Applied Activity</em>}</li>
  *   <li>{@link org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.impl.SDMTransitionImpl#getMatching <em>Matching</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -4,7 +4,7 @@
   <mapping sourceURI="http://www.fujaba.de/verification/timedstorychart/transform/helper/0.1.0" targetURI="platform:/resource/de.uni_paderborn.fujaba.muml.verification.timedstorychart.transform/model/TSCTransformationHelper.ecore"/>
   <mapping sourceURI="http://www.storydriven.org/storydiagrams/0.2.1" targetURI="platform:/resource/org.muml.storydiagram/model/storydiagrams.ecore"/>
   <mapping sourceURI="http://www.muml.org/pim/1.0.0" targetURI="platform:/resource/org.muml.pim/model/pim.ecore"/>
-  <mapping sourceURI="http://www.fujaba.de/timedstorydiagram/0.1.0" targetURI="platform:/resource/de.uni_paderborn.fujaba.muml.timedstorydiagram/model/TimedStoryDiagrams.ecore"/>
+  <mapping sourceURI="http://www.fujaba.de/timedstorydiagram/0.1.0" targetURI="platform:/resource/org.muml.reconfigurationverification.timedstorydiagram/model/TimedStoryDiagrams.ecore"/>
   <mapping sourceURI="http://www.muml.org/pim/actionlanguage/1.0.0" targetURI="platform:/resource/org.muml.pim.actionlanguage/model/actionlanguage.ecore"/>
   <mapping sourceURI="http://www.fujaba.de/muml/runtime/0.4.0" targetURI="platform:/resource/org.muml.verification.core.runtime/model/RuntimeModel.ecore"/>
   <mapping sourceURI="http://www.fujaba.de/muml/reconfiguration/0.3.18" targetURI="platform:/resource/org.muml.reconfiguration/model/MumlReconfiguration.ecore"/>

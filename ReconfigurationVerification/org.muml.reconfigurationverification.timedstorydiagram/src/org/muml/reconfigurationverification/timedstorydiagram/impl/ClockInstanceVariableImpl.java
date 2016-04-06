@@ -25,10 +25,10 @@ import org.muml.storydiagram.patterns.impl.ObjectVariableImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.reconfigurationverification.timedstorydiagram.impl.ClockInstanceVariableImpl#getClockInstanceConstraints <em>Clock Instance Constraints</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
