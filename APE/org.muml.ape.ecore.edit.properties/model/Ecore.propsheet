@@ -88,6 +88,7 @@
       <genClass href="Ecore.genmodel#//ecore/EFactory"/>
       <orderedElements xsi:type="org.muml:Property" xmi:id="_C730-swXEeSfkPntfQ2wPg" tab="_C71_wcwXEeSfkPntfQ2wPg">
         <genFeature href="Ecore.genmodel#//ecore/EFactory/ePackage"/>
+        <readOnlyFilters xsi:type="org.muml:OCLFilter" expression="true"/>
         <editor xsi:type="org.muml:ComboBoxPropertyEditor" xmi:id="_C730-8wXEeSfkPntfQ2wPg"/>
       </orderedElements>
     </classes>
