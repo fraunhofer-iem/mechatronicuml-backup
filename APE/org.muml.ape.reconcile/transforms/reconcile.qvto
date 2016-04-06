@@ -1,13 +1,13 @@
-transformation reconcile(inout properties : Properties);
+transformation reconcile(inout propsheet : ape);
 
 modeltype genmodel uses genmodel('http://www.eclipse.org/emf/2002/GenModel');
 modeltype ecore uses ecore ('http://www.eclipse.org/emf/2002/Ecore');
-modeltype Properties uses properties('http://de.uni_paderborn.fujaba.properties/0.5.1');
+modeltype ape uses ape('http://org.muml.ape/1.0.0');
 
 main() {
 	log("QVT-O Script \"reconcile.qvto\" started.");
 
-	properties.rootObjects()[PropertyGenerator]->forEach(generator) {
+	propsheet.rootObjects()[PropertyGenerator]->forEach(generator) {
 		generator->map generator();
 	}
 }

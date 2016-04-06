@@ -1,4 +1,4 @@
-«IMPORT properties»
+«IMPORT ape»
 «EXTENSION Metamodel»
 
 «DEFINE ClassEditor FOR Class»

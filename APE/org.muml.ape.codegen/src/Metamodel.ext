@@ -1,6 +1,6 @@
 import genmodel;
 import ecore;
-import properties;
+import ape;
 
 PropertyGenerator allGenerators(PropertyGenerator this) :
 	{ this }.union(referencedGenerators.allGenerators());
@@ -60,13 +60,13 @@ String propertyType(Property this) :
 String genPluginId(PropertyGenerator this) :
 	genModel.modelPluginID + '.properties';
 
-String genPackageName(properties::Package this) :
+String genPackageName(Package this) :
 	generator.genPluginId() + '.' + genPackage.ecorePackage.name;
 
-String genEditorName(properties::Class this) :
+String genEditorName(ape::Class this) :
 	genClass.ecoreClass.name.toString() + 'Editor';
 
-String genQualifiedEditorName(properties::Class this) :
+String genQualifiedEditorName(ape::Class this) :
 	package.genPackageName() + '.editor.' + genEditorName();
 
 String genCategoryKey(PropertyCategory this) :

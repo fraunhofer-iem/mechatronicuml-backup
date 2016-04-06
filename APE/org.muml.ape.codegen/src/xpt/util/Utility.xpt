@@ -1,7 +1,7 @@
-«IMPORT properties»
+«IMPORT ape»
 «EXTENSION Metamodel»
 
-«DEFINE TabElementFilter FOR properties::PropertyTab»
+«DEFINE TabElementFilter FOR ape::PropertyTab»
 public class «id.toString().replaceAll('\\.', '_').toFirstUpper()»TabElementFilter extends de.uni_paderborn.fujaba.properties.runtime.filter.ElementFilter {
 	public «id.toString().replaceAll('\\.', '_').toFirstUpper()»TabElementFilter() {
 		super("«id»");
