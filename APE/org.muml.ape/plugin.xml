@@ -11,7 +11,7 @@
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       
-      <package class="org.muml.ape.PropertiesPackage" genModel="model/properties.genmodel" uri="http://de.uni_paderborn.fujaba.properties/0.4.0"/>
+      <package class="org.muml.ape.PropertiesPackage" genModel="model/ape.genmodel" uri="http://de.uni_paderborn.fujaba.properties/0.4.0"/>
    </extension>
    
    
