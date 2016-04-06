@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="psm" nsURI="http://www.fujaba.de/muml/psm/0.4.0/" nsPrefix="psm">
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="psm" nsURI="http://www.muml.org/psm/1.0.0" nsPrefix="psm">
   <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
     <details key="documentation" value="This package provides all Classes for modeling a platform-specific model."/>
   </eAnnotations>
@@ -14,7 +14,7 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eSubpackages name="allocation" nsURI="http://www.fujaba.de/muml/psm/allocation/0.4.0/"
+  <eSubpackages name="allocation" nsURI="http://www.muml.org/psm/allocation/1.0.0"
       nsPrefix="allocation">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="This package provides the model elements to allocate a ComponentInstanceConfiguration to a HarwarePlatformInstanceConfiguration."/>
@@ -46,7 +46,7 @@
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="hpic" lowerBound="1"
-          eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwplatforminstance/HWPlatformInstanceConfiguration">
+          eType="ecore:EClass ../../org.muml.pm.hardware/model/hardware.ecore#//hwplatforminstance/HWPlatformInstanceConfiguration">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The allocated HardwarePlatformInstanceConfiguration."/>
         </eAnnotations>
@@ -70,7 +70,7 @@
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="resourceInstance" lowerBound="1"
-          eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwresourceinstance/StructuredResourceInstance">
+          eType="ecore:EClass ../../org.muml.pm.hardware/model/hardware.ecore#//hwresourceinstance/StructuredResourceInstance">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The allocated Resource Instance."/>
         </eAnnotations>
@@ -87,14 +87,14 @@
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="networkConnectorInstance"
-          eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwplatforminstance/NetworkConnectorInstance">
+          eType="ecore:EClass ../../org.muml.pm.hardware/model/hardware.ecore#//hwplatforminstance/NetworkConnectorInstance">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The network connector instance that is used by the assemblyConnector.connectorEndpointInstances&#xA;to communicate with each other. If this reference is null, the assemblyConnector.connectorEndpointInstances&#xA;communicate with each other by local means."/>
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
   </eSubpackages>
-  <eSubpackages name="properties" nsURI="http://www.fujaba.de/muml/psm/properties/0.4.0/"
+  <eSubpackages name="properties" nsURI="http://www.muml.org/psm/properties/1.0.0"
       nsPrefix="properties">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="This package provides classes to annotate component with non-functional requirements."/>
@@ -111,7 +111,7 @@
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="resourceInstance" lowerBound="1"
-          eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwresourceinstance/StructuredResourceInstance">
+          eType="ecore:EClass ../../org.muml.pm.hardware/model/hardware.ecore#//hwresourceinstance/StructuredResourceInstance">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The used Resource Instance."/>
         </eAnnotations>
@@ -122,14 +122,14 @@
         <details key="documentation" value="The amount of required memory of a Component Instance, if its allocated to a specific Resource Instance."/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="requiredMemory" lowerBound="1"
-          eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwvaluetype/DataSize"
+          eType="ecore:EClass ../../org.muml.pm.hardware/model/hardware.ecore#//hwvaluetype/DataSize"
           containment="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The required amount of memory."/>
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="resourceInstance" lowerBound="1"
-          eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwresourceinstance/StructuredResourceInstance">
+          eType="ecore:EClass ../../org.muml.pm.hardware/model/hardware.ecore#//hwresourceinstance/StructuredResourceInstance">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The used Resource Instance."/>
         </eAnnotations>
@@ -150,7 +150,7 @@
         <details key="documentation" value="Represents a general message frame."/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="size" lowerBound="1"
-          eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwvaluetype/DataSize"
+          eType="ecore:EClass ../../org.muml.pm.hardware/model/hardware.ecore#//hwvaluetype/DataSize"
           containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="period" lowerBound="1"
           eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//valuetype/TimeValue"
@@ -168,7 +168,7 @@
           containment="true"/>
     </eClassifiers>
   </eSubpackages>
-  <eSubpackages name="psm_realtimestatechart" nsURI="http://www.fujaba.de/muml/psm/realtimestatechart/0.4.0/"
+  <eSubpackages name="psm_realtimestatechart" nsURI="http://www.muml.org/psm/realtimestatechart/1.0.0"
       nsPrefix="psm_realtimestatechart">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="The package extends the realtimestatechart-package of muml. Here a statechart with parameters is introduced."/>
@@ -204,7 +204,7 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="apiCallSignature" lowerBound="1"
           eType="#//psm_realtimestatechart/realtimestatechartparameter/APICallParameter"/>
     </eClassifiers>
-    <eSubpackages name="realtimestatechartparameter" nsURI="http://www.fujaba.de/muml/psm/realtimestatechart/realtimestatechartparameter/0.1.0/"
+    <eSubpackages name="realtimestatechartparameter" nsURI="http://www.muml.org/psm/realtimestatechart/realtimestatechartparameter/1.0.0"
         nsPrefix="realtimestatechartparameter">
       <eClassifiers xsi:type="ecore:EClass" name="APICallParameter" eSuperTypes="#//psm_realtimestatechart/realtimestatechartparameter/RealtimeStatechartParameter ../../org.muml.pim/model/pim.ecore#//behavior/Operation">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -229,7 +229,7 @@
         </eStructuralFeatures>
       </eClassifiers>
     </eSubpackages>
-    <eSubpackages name="realtimestatechartparameterbinding" nsURI="http://www.fujaba.de/muml/psm/realtimestatechart/realtimestatechartparameterbinding/0.1.0/"
+    <eSubpackages name="realtimestatechartparameterbinding" nsURI="http://www.muml.org/psm/realtimestatechart/realtimestatechartparameterbinding/1.0.0"
         nsPrefix="realtimestatechartparameterbinding">
       <eClassifiers xsi:type="ecore:EClass" name="APICallParameterBinding" eSuperTypes="#//psm_realtimestatechart/realtimestatechartparameterbinding/RealtimeStatechartParameterBinding ../../org.muml.pim/model/pim.ecore#//behavior/Operation">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -275,7 +275,7 @@
       </eClassifiers>
     </eSubpackages>
   </eSubpackages>
-  <eSubpackages name="psm_instance" nsURI="http://www.fujaba.de/muml/psm/instance/0.4.0/"
+  <eSubpackages name="psm_instance" nsURI="http://www.muml.org/psm/instance/1.0.0"
       nsPrefix="psm_instance">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
@@ -299,7 +299,7 @@
       </eStructuralFeatures>
     </eClassifiers>
   </eSubpackages>
-  <eSubpackages name="portapimapping" nsURI="http://www.fujaba.de/muml/psm/portapimapping/0.4.0/"
+  <eSubpackages name="portapimapping" nsURI="http://www.muml.org/psm/portapimapping/1.0.0"
       nsPrefix="portapimapping">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="This package describes the informations that are needed to model a mapping from continuouse ports in MechatronicUML to api-commands. The ports of a continuourse component can be mapped to an expression, which can e.g. be a call of an api-command."/>
@@ -348,7 +348,7 @@
           eType="#//Import" containment="true"/>
     </eClassifiers>
   </eSubpackages>
-  <eSubpackages name="apiexpressions" nsURI="http://www.fujaba.de/muml/psm/apiexpressions/0.4.0/"
+  <eSubpackages name="apiexpressions" nsURI="http://www.muml.org/psm/apiexpressions/1.0.0"
       nsPrefix="apiexpressions">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="This package contains all expressions, which are used to model a call of an api-command with actual parameters."/>
@@ -363,7 +363,7 @@
         <details key="documentation" value="This class represents an api call. It has an actual parameter for each formal parameter of an api-command. Inside an actual parameter a concrete value will be mapped to the formal parameters of an api-command from the swplatform-package."/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="apiCommand" lowerBound="1"
-          eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.swplatform/model/swplatform.ecore#//APICommand">
+          eType="ecore:EClass ../../org.muml.pm.software.platform/model/swplatform.ecore#//APICommand">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The APICommand to which this expression belongs."/>
         </eAnnotations>
@@ -381,7 +381,7 @@
         <details key="documentation" value="This class represents an EnumerationValue at runtime. At runtime the Enumeration is bound to one of its possible values. This means, that a concrete EnumerationValue will be mapped to the Enumeration from the swplatform-package."/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="enumValue" lowerBound="1"
-          eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.swplatform/model/swplatform.ecore#//EnumerationValue">
+          eType="ecore:EClass ../../org.muml.pm.software.platform/model/swplatform.ecore#//EnumerationValue">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The EnumerationValue to which this expression belongs."/>
         </eAnnotations>
@@ -405,8 +405,7 @@
       </eStructuralFeatures>
     </eClassifiers>
   </eSubpackages>
-  <eSubpackages name="codegen" nsURI="http://www.fujaba.de/muml/psm/codegen/0.4.0/"
-      nsPrefix="codegen">
+  <eSubpackages name="codegen" nsURI="http://www.muml.org/psm/codegen/1.0.0" nsPrefix="codegen">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
       <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
@@ -427,7 +426,7 @@
       </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="RefinedStructuredResourceInstance"
-        eSuperTypes="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwresourceinstance/StructuredResourceInstance">
+        eSuperTypes="../../org.muml.pm.hardware/model/hardware.ecore#//hwresourceinstance/StructuredResourceInstance">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="This class represents a StructuredResourceInstance which knows all it's ComponentInstances."/>
       </eAnnotations>
@@ -443,7 +442,7 @@
         <details key="documentation" value="This class represents an allocation of a ComponentInstanceConfigratuion to a specific HardwarePlatformInstanceConfiguration on PSM-level."/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="hpic" lowerBound="1"
-          eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwplatforminstance/HWPlatformInstanceConfiguration"
+          eType="ecore:EClass ../../org.muml.pm.hardware/model/hardware.ecore#//hwplatforminstance/HWPlatformInstanceConfiguration"
           containment="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The used HardwarePlatformInstanceConfiguration on PSM-level."/>
@@ -471,7 +470,7 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="execCommand" eType="ecore:EClass ../../org.muml.core/model/core.ecore#//expressions/Expression"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="GenECU">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="ecu" lowerBound="1" eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwresourceinstance/StructuredResourceInstance"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="ecu" lowerBound="1" eType="ecore:EClass ../../org.muml.pm.hardware/model/hardware.ecore#//hwresourceinstance/StructuredResourceInstance"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="allocatedGenTasks" upperBound="-1"
           eType="#//codegen/GenTask" containment="true"/>
     </eClassifiers>
@@ -488,7 +487,7 @@
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="hpic" lowerBound="1"
-          eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwplatforminstance/HWPlatformInstanceConfiguration">
+          eType="ecore:EClass ../../org.muml.pm.hardware/model/hardware.ecore#//hwplatforminstance/HWPlatformInstanceConfiguration">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The used HardwarePlatformInstanceConfiguration on PSM-level."/>
         </eAnnotations>

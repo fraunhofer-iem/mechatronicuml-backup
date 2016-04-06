@@ -40,7 +40,7 @@ public interface PsmPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.fujaba.de/muml/psm/0.4.0/";
+	String eNS_URI = "http://www.muml.org/psm/1.0.0";
 
 	/**
 	 * The package namespace name.

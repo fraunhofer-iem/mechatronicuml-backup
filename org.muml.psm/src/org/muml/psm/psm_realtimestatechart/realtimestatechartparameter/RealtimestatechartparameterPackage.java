@@ -38,7 +38,7 @@ public interface RealtimestatechartparameterPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.fujaba.de/muml/psm/realtimestatechart/realtimestatechartparameter/0.1.0/";
+	String eNS_URI = "http://www.muml.org/psm/realtimestatechart/realtimestatechartparameter/1.0.0";
 
 	/**
 	 * The package namespace name.
@@ -67,22 +67,22 @@ public interface RealtimestatechartparameterPackage extends EPackage {
 	int REALTIME_STATECHART_PARAMETER = 2;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REALTIME_STATECHART_PARAMETER__ANNOTATION = CorePackage.NAMED_ELEMENT__ANNOTATION;
+	int REALTIME_STATECHART_PARAMETER__ANNOTATIONS = CorePackage.NAMED_ELEMENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REALTIME_STATECHART_PARAMETER__EXTENSION = CorePackage.NAMED_ELEMENT__EXTENSION;
+	int REALTIME_STATECHART_PARAMETER__EXTENSIONS = CorePackage.NAMED_ELEMENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -311,22 +311,22 @@ public interface RealtimestatechartparameterPackage extends EPackage {
 	int API_CALL_PARAMETER = 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int API_CALL_PARAMETER__ANNOTATION = REALTIME_STATECHART_PARAMETER__ANNOTATION;
+	int API_CALL_PARAMETER__ANNOTATIONS = REALTIME_STATECHART_PARAMETER__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int API_CALL_PARAMETER__EXTENSION = REALTIME_STATECHART_PARAMETER__EXTENSION;
+	int API_CALL_PARAMETER__EXTENSIONS = REALTIME_STATECHART_PARAMETER__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -582,22 +582,22 @@ public interface RealtimestatechartparameterPackage extends EPackage {
 	int TIME_PARAMETER = 1;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TIME_PARAMETER__ANNOTATION = REALTIME_STATECHART_PARAMETER__ANNOTATION;
+	int TIME_PARAMETER__ANNOTATIONS = REALTIME_STATECHART_PARAMETER__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TIME_PARAMETER__EXTENSION = REALTIME_STATECHART_PARAMETER__EXTENSION;
+	int TIME_PARAMETER__EXTENSIONS = REALTIME_STATECHART_PARAMETER__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.

@@ -207,8 +207,8 @@ public class APICallParameterBindingItemProvider extends RealtimeStatechartParam
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(CorePackage.Literals.EXTENDABLE_ELEMENT__ANNOTATION);
-			childrenFeatures.add(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION);
+			childrenFeatures.add(CorePackage.Literals.EXTENDABLE_ELEMENT__ANNOTATIONS);
+			childrenFeatures.add(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSIONS);
 			childrenFeatures.add(BehaviorPackage.Literals.OPERATION__IMPLEMENTATIONS);
 			childrenFeatures.add(BehaviorPackage.Literals.OPERATION__PARAMETERS);
 			childrenFeatures.add(RealtimestatechartparameterbindingPackage.Literals.API_CALL_PARAMETER_BINDING__EXPRESSION);
@@ -271,8 +271,8 @@ public class APICallParameterBindingItemProvider extends RealtimeStatechartParam
 			case RealtimestatechartparameterbindingPackage.API_CALL_PARAMETER_BINDING__COMMENT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case RealtimestatechartparameterbindingPackage.API_CALL_PARAMETER_BINDING__ANNOTATION:
-			case RealtimestatechartparameterbindingPackage.API_CALL_PARAMETER_BINDING__EXTENSION:
+			case RealtimestatechartparameterbindingPackage.API_CALL_PARAMETER_BINDING__ANNOTATIONS:
+			case RealtimestatechartparameterbindingPackage.API_CALL_PARAMETER_BINDING__EXTENSIONS:
 			case RealtimestatechartparameterbindingPackage.API_CALL_PARAMETER_BINDING__IMPLEMENTATIONS:
 			case RealtimestatechartparameterbindingPackage.API_CALL_PARAMETER_BINDING__PARAMETERS:
 			case RealtimestatechartparameterbindingPackage.API_CALL_PARAMETER_BINDING__EXPRESSION:
@@ -295,27 +295,27 @@ public class APICallParameterBindingItemProvider extends RealtimeStatechartParam
 
 		newChildDescriptors.add
 			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSIONS,
 				 PropertiesFactory.eINSTANCE.createWCET()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSIONS,
 				 PropertiesFactory.eINSTANCE.createRequiredMemory()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSIONS,
 				 PropertiesFactory.eINSTANCE.createScheduling()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSIONS,
 				 PropertiesFactory.eINSTANCE.createMessageFrame()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSIONS,
 				 PropertiesFactory.eINSTANCE.createCANMessageFrame()));
 
 		newChildDescriptors.add

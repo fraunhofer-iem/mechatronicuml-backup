@@ -21,55 +21,41 @@ public class Opt4jConfigurationEditor extends org.muml.ape.runtime.editors.Class
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(
-					createEditorPopulationSize_de_uni_paderborn_fujaba_muml_allocation_algorithm_ilp_opt4j_configTab_Editor(),
+			addPropertyEditor(createEditorPopulationSize_org_muml_allocation_algorithm_ilp_opt4j_configTab_Editor(),
 					false);
 
-			addPropertyEditor(
-					createEditorGenerations_de_uni_paderborn_fujaba_muml_allocation_algorithm_ilp_opt4j_configTab_Editor(),
+			addPropertyEditor(createEditorGenerations_org_muml_allocation_algorithm_ilp_opt4j_configTab_Editor(),
 					false);
 
-			addPropertyEditor(
-					createEditorParents_de_uni_paderborn_fujaba_muml_allocation_algorithm_ilp_opt4j_configTab_Editor(),
-					false);
+			addPropertyEditor(createEditorParents_org_muml_allocation_algorithm_ilp_opt4j_configTab_Editor(), false);
+
+			addPropertyEditor(createEditorOffspring_org_muml_allocation_algorithm_ilp_opt4j_configTab_Editor(), false);
 
 			addPropertyEditor(
-					createEditorOffspring_de_uni_paderborn_fujaba_muml_allocation_algorithm_ilp_opt4j_configTab_Editor(),
+					createEditorNoDominatedSolutions_org_muml_allocation_algorithm_ilp_opt4j_configTab_Editor(), false);
+
+		} else if ("org.muml.allocation.algorithm.ilp.opt4j.config".equals(tab)) { // Tab Opt4j Configuration
+
+			addPropertyEditor(createEditorPopulationSize_org_muml_allocation_algorithm_ilp_opt4j_configTab_Editor(),
 					false);
+
+			addPropertyEditor(createEditorGenerations_org_muml_allocation_algorithm_ilp_opt4j_configTab_Editor(),
+					false);
+
+			addPropertyEditor(createEditorParents_org_muml_allocation_algorithm_ilp_opt4j_configTab_Editor(), false);
+
+			addPropertyEditor(createEditorOffspring_org_muml_allocation_algorithm_ilp_opt4j_configTab_Editor(), false);
 
 			addPropertyEditor(
-					createEditorNoDominatedSolutions_de_uni_paderborn_fujaba_muml_allocation_algorithm_ilp_opt4j_configTab_Editor(),
-					false);
-
-		} else if ("de.uni_paderborn.fujaba.muml.allocation.algorithm.ilp.opt4j.config".equals(tab)) { // Tab Opt4j Configuration
-
-			addPropertyEditor(
-					createEditorPopulationSize_de_uni_paderborn_fujaba_muml_allocation_algorithm_ilp_opt4j_configTab_Editor(),
-					false);
-
-			addPropertyEditor(
-					createEditorGenerations_de_uni_paderborn_fujaba_muml_allocation_algorithm_ilp_opt4j_configTab_Editor(),
-					false);
-
-			addPropertyEditor(
-					createEditorParents_de_uni_paderborn_fujaba_muml_allocation_algorithm_ilp_opt4j_configTab_Editor(),
-					false);
-
-			addPropertyEditor(
-					createEditorOffspring_de_uni_paderborn_fujaba_muml_allocation_algorithm_ilp_opt4j_configTab_Editor(),
-					false);
-
-			addPropertyEditor(
-					createEditorNoDominatedSolutions_de_uni_paderborn_fujaba_muml_allocation_algorithm_ilp_opt4j_configTab_Editor(),
-					false);
+					createEditorNoDominatedSolutions_org_muml_allocation_algorithm_ilp_opt4j_configTab_Editor(), false);
 
 		} else {
 		}
 	}
 
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorPopulationSize_de_uni_paderborn_fujaba_muml_allocation_algorithm_ilp_opt4j_configTab;
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorPopulationSize_de_uni_paderborn_fujaba_muml_allocation_algorithm_ilp_opt4j_configTab_Editor() {
-		if (this.editorPopulationSize_de_uni_paderborn_fujaba_muml_allocation_algorithm_ilp_opt4j_configTab == null) {
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorPopulationSize_org_muml_allocation_algorithm_ilp_opt4j_configTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorPopulationSize_org_muml_allocation_algorithm_ilp_opt4j_configTab_Editor() {
+		if (this.editorPopulationSize_org_muml_allocation_algorithm_ilp_opt4j_configTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.psm.allocation.algorithm.ilp.opt4j.config.ConfigPackage.eINSTANCE
 					.getOpt4jConfiguration_PopulationSize();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.SpinnerPropertyEditor(
@@ -77,14 +63,14 @@ public class Opt4jConfigurationEditor extends org.muml.ape.runtime.editors.Class
 
 			editor.setTooltipMessage("The size of the EA population.");
 
-			this.editorPopulationSize_de_uni_paderborn_fujaba_muml_allocation_algorithm_ilp_opt4j_configTab = editor;
+			this.editorPopulationSize_org_muml_allocation_algorithm_ilp_opt4j_configTab = editor;
 		}
-		return this.editorPopulationSize_de_uni_paderborn_fujaba_muml_allocation_algorithm_ilp_opt4j_configTab;
+		return this.editorPopulationSize_org_muml_allocation_algorithm_ilp_opt4j_configTab;
 	}
 
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorGenerations_de_uni_paderborn_fujaba_muml_allocation_algorithm_ilp_opt4j_configTab;
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorGenerations_de_uni_paderborn_fujaba_muml_allocation_algorithm_ilp_opt4j_configTab_Editor() {
-		if (this.editorGenerations_de_uni_paderborn_fujaba_muml_allocation_algorithm_ilp_opt4j_configTab == null) {
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorGenerations_org_muml_allocation_algorithm_ilp_opt4j_configTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorGenerations_org_muml_allocation_algorithm_ilp_opt4j_configTab_Editor() {
+		if (this.editorGenerations_org_muml_allocation_algorithm_ilp_opt4j_configTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.psm.allocation.algorithm.ilp.opt4j.config.ConfigPackage.eINSTANCE
 					.getOpt4jConfiguration_Generations();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.SpinnerPropertyEditor(
@@ -92,14 +78,14 @@ public class Opt4jConfigurationEditor extends org.muml.ape.runtime.editors.Class
 
 			editor.setTooltipMessage("The number of generations (a.k.a. number of iterations).");
 
-			this.editorGenerations_de_uni_paderborn_fujaba_muml_allocation_algorithm_ilp_opt4j_configTab = editor;
+			this.editorGenerations_org_muml_allocation_algorithm_ilp_opt4j_configTab = editor;
 		}
-		return this.editorGenerations_de_uni_paderborn_fujaba_muml_allocation_algorithm_ilp_opt4j_configTab;
+		return this.editorGenerations_org_muml_allocation_algorithm_ilp_opt4j_configTab;
 	}
 
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorParents_de_uni_paderborn_fujaba_muml_allocation_algorithm_ilp_opt4j_configTab;
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorParents_de_uni_paderborn_fujaba_muml_allocation_algorithm_ilp_opt4j_configTab_Editor() {
-		if (this.editorParents_de_uni_paderborn_fujaba_muml_allocation_algorithm_ilp_opt4j_configTab == null) {
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorParents_org_muml_allocation_algorithm_ilp_opt4j_configTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorParents_org_muml_allocation_algorithm_ilp_opt4j_configTab_Editor() {
+		if (this.editorParents_org_muml_allocation_algorithm_ilp_opt4j_configTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.psm.allocation.algorithm.ilp.opt4j.config.ConfigPackage.eINSTANCE
 					.getOpt4jConfiguration_Parents();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.SpinnerPropertyEditor(
@@ -107,14 +93,14 @@ public class Opt4jConfigurationEditor extends org.muml.ape.runtime.editors.Class
 
 			editor.setTooltipMessage("The number of parents that are used for mating.");
 
-			this.editorParents_de_uni_paderborn_fujaba_muml_allocation_algorithm_ilp_opt4j_configTab = editor;
+			this.editorParents_org_muml_allocation_algorithm_ilp_opt4j_configTab = editor;
 		}
-		return this.editorParents_de_uni_paderborn_fujaba_muml_allocation_algorithm_ilp_opt4j_configTab;
+		return this.editorParents_org_muml_allocation_algorithm_ilp_opt4j_configTab;
 	}
 
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorOffspring_de_uni_paderborn_fujaba_muml_allocation_algorithm_ilp_opt4j_configTab;
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorOffspring_de_uni_paderborn_fujaba_muml_allocation_algorithm_ilp_opt4j_configTab_Editor() {
-		if (this.editorOffspring_de_uni_paderborn_fujaba_muml_allocation_algorithm_ilp_opt4j_configTab == null) {
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorOffspring_org_muml_allocation_algorithm_ilp_opt4j_configTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorOffspring_org_muml_allocation_algorithm_ilp_opt4j_configTab_Editor() {
+		if (this.editorOffspring_org_muml_allocation_algorithm_ilp_opt4j_configTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.psm.allocation.algorithm.ilp.opt4j.config.ConfigPackage.eINSTANCE
 					.getOpt4jConfiguration_Offspring();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.SpinnerPropertyEditor(
@@ -122,14 +108,14 @@ public class Opt4jConfigurationEditor extends org.muml.ape.runtime.editors.Class
 
 			editor.setTooltipMessage("The number of new individuals per generation.");
 
-			this.editorOffspring_de_uni_paderborn_fujaba_muml_allocation_algorithm_ilp_opt4j_configTab = editor;
+			this.editorOffspring_org_muml_allocation_algorithm_ilp_opt4j_configTab = editor;
 		}
-		return this.editorOffspring_de_uni_paderborn_fujaba_muml_allocation_algorithm_ilp_opt4j_configTab;
+		return this.editorOffspring_org_muml_allocation_algorithm_ilp_opt4j_configTab;
 	}
 
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorNoDominatedSolutions_de_uni_paderborn_fujaba_muml_allocation_algorithm_ilp_opt4j_configTab;
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorNoDominatedSolutions_de_uni_paderborn_fujaba_muml_allocation_algorithm_ilp_opt4j_configTab_Editor() {
-		if (this.editorNoDominatedSolutions_de_uni_paderborn_fujaba_muml_allocation_algorithm_ilp_opt4j_configTab == null) {
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorNoDominatedSolutions_org_muml_allocation_algorithm_ilp_opt4j_configTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorNoDominatedSolutions_org_muml_allocation_algorithm_ilp_opt4j_configTab_Editor() {
+		if (this.editorNoDominatedSolutions_org_muml_allocation_algorithm_ilp_opt4j_configTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.psm.allocation.algorithm.ilp.opt4j.config.ConfigPackage.eINSTANCE
 					.getOpt4jConfiguration_NoDominatedSolutions();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.CheckboxPropertyEditor(
@@ -138,9 +124,9 @@ public class Opt4jConfigurationEditor extends org.muml.ape.runtime.editors.Class
 			editor.setTooltipMessage(
 					"No solution is (weakly) dominated by another solution.\nThat is, each solution is optimal. Note: the objective function, which\nis defined in the allocation problem, is ignored.");
 
-			this.editorNoDominatedSolutions_de_uni_paderborn_fujaba_muml_allocation_algorithm_ilp_opt4j_configTab = editor;
+			this.editorNoDominatedSolutions_org_muml_allocation_algorithm_ilp_opt4j_configTab = editor;
 		}
-		return this.editorNoDominatedSolutions_de_uni_paderborn_fujaba_muml_allocation_algorithm_ilp_opt4j_configTab;
+		return this.editorNoDominatedSolutions_org_muml_allocation_algorithm_ilp_opt4j_configTab;
 	}
 
 	//
@@ -154,8 +140,7 @@ public class Opt4jConfigurationEditor extends org.muml.ape.runtime.editors.Class
 		this(tab,
 				org.muml.psm.allocation.algorithm.ilp.opt4j.config.properties.util.PropertiesUtil.INSTANCE
 						.getAdapterFactory(),
-				org.muml.psm.allocation.algorithm.ilp.opt4j.config.ConfigPackage.eINSTANCE
-						.getOpt4jConfiguration());
+				org.muml.psm.allocation.algorithm.ilp.opt4j.config.ConfigPackage.eINSTANCE.getOpt4jConfiguration());
 	}
 
 	/**
@@ -169,12 +154,9 @@ public class Opt4jConfigurationEditor extends org.muml.ape.runtime.editors.Class
 
 		@Override
 		public boolean hasTab(java.lang.String tab) {
-			return java.util.Arrays
-					.asList(new java.lang.String[]{"de.uni_paderborn.fujaba.muml.allocation.algorithm.ilp.opt4j.config",
-							"de.uni_paderborn.fujaba.muml.allocation.algorithm.ilp.opt4j.config",
-							"de.uni_paderborn.fujaba.muml.allocation.algorithm.ilp.opt4j.config",
-							"de.uni_paderborn.fujaba.muml.allocation.algorithm.ilp.opt4j.config",
-							"de.uni_paderborn.fujaba.muml.allocation.algorithm.ilp.opt4j.config"})
+			return java.util.Arrays.asList(new java.lang.String[]{"org.muml.allocation.algorithm.ilp.opt4j.config",
+					"org.muml.allocation.algorithm.ilp.opt4j.config", "org.muml.allocation.algorithm.ilp.opt4j.config",
+					"org.muml.allocation.algorithm.ilp.opt4j.config", "org.muml.allocation.algorithm.ilp.opt4j.config"})
 					.contains(tab);
 		}
 	}

@@ -4,9 +4,9 @@
   <semanticResources>http://www.eclipse.org/emf/2002/Ecore</semanticResources>
   <semanticResources>platform:/resource/org.storydriven.core/model/core.ecore</semanticResources>
   <semanticResources>platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore</semanticResources>
-  <semanticResources>platform:/resource/de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore</semanticResources>
+  <semanticResources>platform:/resource/org.muml.pm.hardware/model/hardware.ecore</semanticResources>
   <semanticResources>platform:/resource/de.uni_paderborn.fujaba.muml.actionlanguage/model/actionlanguage.ecore</semanticResources>
-  <semanticResources>platform:/resource/de.uni_paderborn.fujaba.muml.swplatform/model/swplatform.ecore</semanticResources>
+  <semanticResources>platform:/resource/org.muml.pm.software.platform/model/swplatform.ecore</semanticResources>
   <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_fKJNwIIPEeWbNLq5psUI7A">
     <ownedRepresentations xmi:type="diagram:DSemanticDiagram" xmi:id="_hOYWYIIPEeWbNLq5psUI7A" name="psm_realtimestatechart class diagram">
       <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_hOYWYYIPEeWbNLq5psUI7A" source="DANNOTATION_CUSTOMIZATION_KEY">

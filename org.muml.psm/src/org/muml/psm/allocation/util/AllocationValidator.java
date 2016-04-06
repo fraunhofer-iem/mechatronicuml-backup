@@ -38,7 +38,7 @@ public class AllocationValidator extends EObjectValidator {
 	 * @see org.eclipse.emf.common.util.Diagnostic#getCode()
 	 * @generated
 	 */
-	public static final String DIAGNOSTIC_SOURCE = "de.uni_paderborn.fujaba.muml.psm.allocation";
+	public static final String DIAGNOSTIC_SOURCE = "org.muml.psm.allocation";
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants.

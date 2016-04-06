@@ -41,7 +41,7 @@ public interface PropertiesPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.fujaba.de/muml/psm/properties/0.4.0/";
+	String eNS_URI = "http://www.muml.org/psm/properties/1.0.0";
 
 	/**
 	 * The package namespace name.
@@ -70,22 +70,22 @@ public interface PropertiesPackage extends EPackage {
 	int WCET = 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WCET__ANNOTATION = CorePackage.EXTENSION__ANNOTATION;
+	int WCET__ANNOTATIONS = CorePackage.EXTENSION__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WCET__EXTENSION = CorePackage.EXTENSION__EXTENSION;
+	int WCET__EXTENSIONS = CorePackage.EXTENSION__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Base</b></em>' reference.
@@ -341,22 +341,22 @@ public interface PropertiesPackage extends EPackage {
 	int REQUIRED_MEMORY = 1;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REQUIRED_MEMORY__ANNOTATION = CorePackage.EXTENSION__ANNOTATION;
+	int REQUIRED_MEMORY__ANNOTATIONS = CorePackage.EXTENSION__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REQUIRED_MEMORY__EXTENSION = CorePackage.EXTENSION__EXTENSION;
+	int REQUIRED_MEMORY__EXTENSIONS = CorePackage.EXTENSION__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Base</b></em>' reference.
@@ -612,22 +612,22 @@ public interface PropertiesPackage extends EPackage {
 	int SCHEDULING = 2;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SCHEDULING__ANNOTATION = CorePackage.EXTENSION__ANNOTATION;
+	int SCHEDULING__ANNOTATIONS = CorePackage.EXTENSION__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SCHEDULING__EXTENSION = CorePackage.EXTENSION__EXTENSION;
+	int SCHEDULING__EXTENSIONS = CorePackage.EXTENSION__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Base</b></em>' reference.
@@ -892,22 +892,22 @@ public interface PropertiesPackage extends EPackage {
 	int MESSAGE_FRAME = 3;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_FRAME__ANNOTATION = CorePackage.EXTENSION__ANNOTATION;
+	int MESSAGE_FRAME__ANNOTATIONS = CorePackage.EXTENSION__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_FRAME__EXTENSION = CorePackage.EXTENSION__EXTENSION;
+	int MESSAGE_FRAME__EXTENSIONS = CorePackage.EXTENSION__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Base</b></em>' reference.
@@ -1163,22 +1163,22 @@ public interface PropertiesPackage extends EPackage {
 	int CAN_MESSAGE_FRAME = 4;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CAN_MESSAGE_FRAME__ANNOTATION = MESSAGE_FRAME__ANNOTATION;
+	int CAN_MESSAGE_FRAME__ANNOTATIONS = MESSAGE_FRAME__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CAN_MESSAGE_FRAME__EXTENSION = MESSAGE_FRAME__EXTENSION;
+	int CAN_MESSAGE_FRAME__EXTENSIONS = MESSAGE_FRAME__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Base</b></em>' reference.

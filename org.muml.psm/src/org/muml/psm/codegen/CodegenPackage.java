@@ -43,7 +43,7 @@ public interface CodegenPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.fujaba.de/muml/psm/codegen/0.4.0/";
+	String eNS_URI = "http://www.muml.org/psm/codegen/1.0.0";
 
 	/**
 	 * The package namespace name.
@@ -72,22 +72,22 @@ public interface CodegenPackage extends EPackage {
 	int REFINED_ATOMIC_COMPONENT_INSTANCE = 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REFINED_ATOMIC_COMPONENT_INSTANCE__ANNOTATION = InstancePackage.ATOMIC_COMPONENT_INSTANCE__ANNOTATION;
+	int REFINED_ATOMIC_COMPONENT_INSTANCE__ANNOTATIONS = InstancePackage.ATOMIC_COMPONENT_INSTANCE__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REFINED_ATOMIC_COMPONENT_INSTANCE__EXTENSION = InstancePackage.ATOMIC_COMPONENT_INSTANCE__EXTENSION;
+	int REFINED_ATOMIC_COMPONENT_INSTANCE__EXTENSIONS = InstancePackage.ATOMIC_COMPONENT_INSTANCE__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -379,22 +379,22 @@ public interface CodegenPackage extends EPackage {
 	int REFINED_STRUCTURED_RESOURCE_INSTANCE = 1;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REFINED_STRUCTURED_RESOURCE_INSTANCE__ANNOTATION = HwresourceinstancePackage.STRUCTURED_RESOURCE_INSTANCE__ANNOTATION;
+	int REFINED_STRUCTURED_RESOURCE_INSTANCE__ANNOTATIONS = HwresourceinstancePackage.STRUCTURED_RESOURCE_INSTANCE__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REFINED_STRUCTURED_RESOURCE_INSTANCE__EXTENSION = HwresourceinstancePackage.STRUCTURED_RESOURCE_INSTANCE__EXTENSION;
+	int REFINED_STRUCTURED_RESOURCE_INSTANCE__EXTENSIONS = HwresourceinstancePackage.STRUCTURED_RESOURCE_INSTANCE__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.

@@ -14,7 +14,6 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.muml.core.expressions.impl.ExpressionImpl;
 import org.muml.pim.behavior.ParameterBinding;
-import org.muml.pm.software.platform.APICommand;
 import org.muml.psm.apiexpressions.APICallExpression;
 import org.muml.psm.apiexpressions.ApiexpressionsPackage;
 
@@ -41,7 +40,7 @@ public class APICallExpressionImpl extends ExpressionImpl implements APICallExpr
 	 * @generated
 	 * @ordered
 	 */
-	protected APICommand apiCommand;
+	protected platform.APICommand apiCommand;
 
 	/**
 	 * The cached value of the '{@link #getParameterBindings() <em>Parameter Bindings</em>}' containment reference list.
@@ -77,10 +76,10 @@ public class APICallExpressionImpl extends ExpressionImpl implements APICallExpr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public APICommand getApiCommand() {
+	public platform.APICommand getApiCommand() {
 		if (apiCommand != null && apiCommand.eIsProxy()) {
 			InternalEObject oldApiCommand = (InternalEObject)apiCommand;
-			apiCommand = (APICommand)eResolveProxy(oldApiCommand);
+			apiCommand = (platform.APICommand)eResolveProxy(oldApiCommand);
 			if (apiCommand != oldApiCommand) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ApiexpressionsPackage.API_CALL_EXPRESSION__API_COMMAND, oldApiCommand, apiCommand));
@@ -94,7 +93,7 @@ public class APICallExpressionImpl extends ExpressionImpl implements APICallExpr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public APICommand basicGetApiCommand() {
+	public platform.APICommand basicGetApiCommand() {
 		return apiCommand;
 	}
 
@@ -103,8 +102,8 @@ public class APICallExpressionImpl extends ExpressionImpl implements APICallExpr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setApiCommand(APICommand newApiCommand) {
-		APICommand oldApiCommand = apiCommand;
+	public void setApiCommand(platform.APICommand newApiCommand) {
+		platform.APICommand oldApiCommand = apiCommand;
 		apiCommand = newApiCommand;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ApiexpressionsPackage.API_CALL_EXPRESSION__API_COMMAND, oldApiCommand, apiCommand));
@@ -163,7 +162,7 @@ public class APICallExpressionImpl extends ExpressionImpl implements APICallExpr
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case ApiexpressionsPackage.API_CALL_EXPRESSION__API_COMMAND:
-				setApiCommand((APICommand)newValue);
+				setApiCommand((platform.APICommand)newValue);
 				return;
 			case ApiexpressionsPackage.API_CALL_EXPRESSION__PARAMETER_BINDINGS:
 				getParameterBindings().clear();
@@ -182,7 +181,7 @@ public class APICallExpressionImpl extends ExpressionImpl implements APICallExpr
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case ApiexpressionsPackage.API_CALL_EXPRESSION__API_COMMAND:
-				setApiCommand((APICommand)null);
+				setApiCommand((platform.APICommand)null);
 				return;
 			case ApiexpressionsPackage.API_CALL_EXPRESSION__PARAMETER_BINDINGS:
 				getParameterBindings().clear();
