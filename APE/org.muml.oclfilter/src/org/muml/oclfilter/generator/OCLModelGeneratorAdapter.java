@@ -72,7 +72,7 @@ public class OCLModelGeneratorAdapter extends GenModelGeneratorAdapter {
 		URI targetFile = targetDirectory.appendSegment("OCLItemPropertyDescriptor.java");
 
   		// Make sure src folder is added to build.properties for binary build!
-  		String descriptor = OCLFilterPlugin.readBundleResource("src/de/uni_paderborn/emf/codegen/oclfilter/descriptor/OCLItemPropertyDescriptor.java");
+  		String descriptor = OCLFilterPlugin.readBundleResource("src/org/muml/oclfilter/descriptor/OCLItemPropertyDescriptor.java");
   		descriptor = descriptor.replaceFirst("^package (.*);", "package ocl;");
   		writeFile(targetFile, descriptor);		
 	}
