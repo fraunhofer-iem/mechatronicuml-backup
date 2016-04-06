@@ -9,10 +9,6 @@
       %description
    </description>
 
-   <license url="">
-      
-   </license>
-
    <includes
          id="org.muml.oclfilter.feature"
          version="0.0.0"/>
