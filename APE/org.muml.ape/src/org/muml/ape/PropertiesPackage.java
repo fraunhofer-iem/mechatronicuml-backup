@@ -31,7 +31,7 @@ public interface PropertiesPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNAME = "properties";
+	String eNAME = "ape";
 
 	/**
 	 * The package namespace URI.
@@ -39,7 +39,7 @@ public interface PropertiesPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://de.uni_paderborn.fujaba.properties/0.5.1";
+	String eNS_URI = "http://org.muml.ape/1.0.0";
 
 	/**
 	 * The package namespace name.
@@ -47,7 +47,7 @@ public interface PropertiesPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_PREFIX = "de.uni_paderborn.fujaba";
+	String eNS_PREFIX = "org.muml";
 
 	/**
 	 * The singleton instance of the package.
