@@ -19,11 +19,11 @@ import org.muml.emm.release.ReleaseSet;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.emm.release.impl.ReleaseImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.muml.emm.release.impl.ReleaseImpl#getReleaseSet <em>Release Set</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

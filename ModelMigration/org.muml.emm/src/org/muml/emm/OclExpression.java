@@ -12,10 +12,10 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.emm.OclExpression#getOcl <em>Ocl</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.emm.MigrationPackage#getOclExpression()
  * @model abstract="true"

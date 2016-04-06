@@ -26,13 +26,13 @@ import org.muml.emm.release.Release;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.emm.impl.MigratorImpl#getSourcePackages <em>Source Packages</em>}</li>
  *   <li>{@link org.muml.emm.impl.MigratorImpl#getTargetPackages <em>Target Packages</em>}</li>
  *   <li>{@link org.muml.emm.impl.MigratorImpl#getMappings <em>Mappings</em>}</li>
  *   <li>{@link org.muml.emm.impl.MigratorImpl#getRelease <em>Release</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

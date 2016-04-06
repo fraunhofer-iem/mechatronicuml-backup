@@ -25,12 +25,12 @@ import org.muml.emm.MigrationPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.emm.impl.CreateClassImpl#getTargetClass <em>Target Class</em>}</li>
  *   <li>{@link org.muml.emm.impl.CreateClassImpl#getFeatureInitializers <em>Feature Initializers</em>}</li>
  *   <li>{@link org.muml.emm.impl.CreateClassImpl#getConstraints <em>Constraints</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

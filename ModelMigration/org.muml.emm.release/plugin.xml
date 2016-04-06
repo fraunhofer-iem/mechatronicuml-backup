@@ -9,7 +9,7 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated release -->
       <package
-            uri="http://migration/release/0.1"
+            uri="http://www.muml.org/emm/release/1.0.0"
             class="org.muml.emm.release.ReleasePackage"
             genModel="model/release.genmodel"/>
    </extension>

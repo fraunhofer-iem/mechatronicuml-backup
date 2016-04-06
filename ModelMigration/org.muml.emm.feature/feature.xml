@@ -9,12 +9,8 @@
       %description
    </description>
 
-   <copyright>
-      %copyright
-   </copyright>
-
-   <license url="%licenseURL">
-      %license
+   <license url="">
+      
    </license>
 
    <requires>
@@ -28,7 +24,7 @@
       <import plugin="org.eclipse.emf.edit.ui"/>
       <import plugin="org.eclipse.ui.ide"/>
       <import feature="org.eclipse.ocl"/>
-      <import feature="org.eclipse.emf.compare"/> 
+      <import feature="org.eclipse.emf.compare"/>
    </requires>
 
    <plugin

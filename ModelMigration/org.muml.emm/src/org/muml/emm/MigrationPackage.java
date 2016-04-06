@@ -32,7 +32,7 @@ public interface MigrationPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNAME = "migration";
+	String eNAME = "emm";
 
 	/**
 	 * The package namespace URI.
@@ -40,7 +40,7 @@ public interface MigrationPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://migration/0.1";
+	String eNS_URI = "http://www.muml.org/emm/1.0.0";
 
 	/**
 	 * The package namespace name.
@@ -48,7 +48,7 @@ public interface MigrationPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_PREFIX = "migration";
+	String eNS_PREFIX = "emm";
 
 	/**
 	 * The singleton instance of the package.

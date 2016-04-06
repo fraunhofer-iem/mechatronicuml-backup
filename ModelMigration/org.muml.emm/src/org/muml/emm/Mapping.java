@@ -11,11 +11,11 @@ import org.eclipse.emf.ecore.EClass;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.emm.Mapping#getSourceClass <em>Source Class</em>}</li>
  *   <li>{@link org.muml.emm.Mapping#getMigrator <em>Migrator</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.emm.MigrationPackage#getMapping()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='NoTargetForAbstractSourceAllowed'"

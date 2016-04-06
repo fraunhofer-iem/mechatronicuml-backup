@@ -38,7 +38,7 @@ public interface ReleasePackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://migration/release/0.1";
+	String eNS_URI = "http://www.muml.org/emm/release/1.0.0";
 
 	/**
 	 * The package namespace name.

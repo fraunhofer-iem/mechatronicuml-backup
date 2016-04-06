@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="migration" nsURI="http://migration/0.1" nsPrefix="migration">
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="emm" nsURI="http://www.muml.org/emm/1.0.0" nsPrefix="emm">
   <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
     <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
     <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
@@ -14,7 +14,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="mappings" upperBound="-1"
         eType="#//Mapping" containment="true" eOpposite="#//Mapping/migrator"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="release" lowerBound="1"
-        eType="ecore:EClass ../../de.uni_paderborn.fujaba.ecore.migration.release/model/release.ecore#//Release"/>
+        eType="ecore:EClass ../../org.muml.emm.release/model/release.ecore#//Release"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="OclExpression" abstract="true">
     <eOperations name="getContext" lowerBound="1" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EClass"/>

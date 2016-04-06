@@ -579,7 +579,7 @@ public class ReleaseEditor
 			BasicDiagnostic diagnostic =
 				new BasicDiagnostic
 					(Diagnostic.OK,
-					 "de.uni_paderborn.fujaba.ecore.migration.release.editor",
+					 "org.muml.emm.release.editor",
 					 0,
 					 null,
 					 new Object [] { editingDomain.getResourceSet() });
@@ -942,7 +942,7 @@ public class ReleaseEditor
 			BasicDiagnostic basicDiagnostic =
 				new BasicDiagnostic
 					(Diagnostic.ERROR,
-					 "de.uni_paderborn.fujaba.ecore.migration.release.editor",
+					 "org.muml.emm.release.editor",
 					 0,
 					 getString("_UI_CreateModelError_message", resource.getURI()),
 					 new Object [] { exception == null ? (Object)resource : exception });
@@ -953,7 +953,7 @@ public class ReleaseEditor
 			return
 				new BasicDiagnostic
 					(Diagnostic.ERROR,
-					 "de.uni_paderborn.fujaba.ecore.migration.release.editor",
+					 "org.muml.emm.release.editor",
 					 0,
 					 getString("_UI_CreateModelError_message", resource.getURI()),
 					 new Object[] { exception });

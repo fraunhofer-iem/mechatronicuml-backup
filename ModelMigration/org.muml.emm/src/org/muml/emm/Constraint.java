@@ -12,10 +12,10 @@ import org.eclipse.emf.ecore.EClass;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.emm.Constraint#getEmbeddingCreateClass <em>Embedding Create Class</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.emm.MigrationPackage#getConstraint()
  * @model

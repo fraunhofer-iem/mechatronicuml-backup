@@ -11,10 +11,10 @@ import org.eclipse.emf.ecore.EStructuralFeature;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.emm.IdentityFeatureInitializer#getSourceFeature <em>Source Feature</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.emm.MigrationPackage#getIdentityFeatureInitializer()
  * @model

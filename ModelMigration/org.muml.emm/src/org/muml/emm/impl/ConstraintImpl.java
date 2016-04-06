@@ -21,10 +21,10 @@ import org.muml.emm.MigrationPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.emm.impl.ConstraintImpl#getEmbeddingCreateClass <em>Embedding Create Class</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

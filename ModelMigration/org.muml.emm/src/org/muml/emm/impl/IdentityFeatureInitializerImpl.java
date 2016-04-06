@@ -16,10 +16,10 @@ import org.muml.emm.MigrationPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.emm.impl.IdentityFeatureInitializerImpl#getSourceFeature <em>Source Feature</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

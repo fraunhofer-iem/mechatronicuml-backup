@@ -18,10 +18,10 @@ import org.muml.emm.OclExpression;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.emm.impl.OclExpressionImpl#getOcl <em>Ocl</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

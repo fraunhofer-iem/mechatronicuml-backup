@@ -14,13 +14,13 @@ import org.muml.emm.release.Release;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.emm.Migrator#getSourcePackages <em>Source Packages</em>}</li>
  *   <li>{@link org.muml.emm.Migrator#getTargetPackages <em>Target Packages</em>}</li>
  *   <li>{@link org.muml.emm.Migrator#getMappings <em>Mappings</em>}</li>
  *   <li>{@link org.muml.emm.Migrator#getRelease <em>Release</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.emm.MigrationPackage#getMigrator()
  * @model

@@ -19,10 +19,10 @@ import org.muml.emm.SetFeatureInitializer;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.emm.impl.SetFeatureInitializerImpl#getOcl <em>Ocl</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

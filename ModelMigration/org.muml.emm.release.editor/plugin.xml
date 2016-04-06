@@ -12,7 +12,7 @@
             id="org.eclipse.emf.ecore.Wizard.category.ID"
             name="%_UI_Wizard_category"/>
       <wizard
-            id="de.uni_paderborn.fujaba.ecore.migration.release.presentation.ReleaseModelWizardID"
+            id="org.muml.emm.release.presentation.ReleaseModelWizardID"
             name="%_UI_ReleaseModelWizard_label"
             class="org.muml.emm.release.presentation.ReleaseModelWizard"
             category="org.eclipse.emf.ecore.Wizard.category.ID"
@@ -25,7 +25,7 @@
    <extension point="org.eclipse.ui.editors">
       <!-- @generated release -->
       <editor
-            id="de.uni_paderborn.fujaba.ecore.migration.release.presentation.ReleaseEditorID"
+            id="org.muml.emm.release.presentation.ReleaseEditorID"
             name="%_UI_ReleaseEditor_label"
             icon="icons/full/obj16/ReleaseModelFile.gif"
             extensions="release"

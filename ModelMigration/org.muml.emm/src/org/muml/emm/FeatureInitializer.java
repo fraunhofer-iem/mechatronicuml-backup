@@ -12,11 +12,11 @@ import org.eclipse.emf.ecore.EStructuralFeature;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.emm.FeatureInitializer#getEmbeddingCreateClass <em>Embedding Create Class</em>}</li>
  *   <li>{@link org.muml.emm.FeatureInitializer#getTargetFeature <em>Target Feature</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.emm.MigrationPackage#getFeatureInitializer()
  * @model abstract="true"

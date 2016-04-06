@@ -14,12 +14,12 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.emm.CreateClass#getTargetClass <em>Target Class</em>}</li>
  *   <li>{@link org.muml.emm.CreateClass#getFeatureInitializers <em>Feature Initializers</em>}</li>
  *   <li>{@link org.muml.emm.CreateClass#getConstraints <em>Constraints</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.emm.MigrationPackage#getCreateClass()
  * @model abstract="true"

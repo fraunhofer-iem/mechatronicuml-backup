@@ -18,11 +18,11 @@ import org.muml.emm.Migrator;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.emm.impl.MappingImpl#getSourceClass <em>Source Class</em>}</li>
  *   <li>{@link org.muml.emm.impl.MappingImpl#getMigrator <em>Migrator</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

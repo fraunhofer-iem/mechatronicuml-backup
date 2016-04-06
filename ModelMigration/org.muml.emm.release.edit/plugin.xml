@@ -9,7 +9,7 @@
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <!-- @generated release -->
       <factory
-            uri="http://migration/release/0.1"
+            uri="http://www.muml.org/emm/release/1.0.0"
             class="org.muml.emm.release.provider.ReleaseItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
