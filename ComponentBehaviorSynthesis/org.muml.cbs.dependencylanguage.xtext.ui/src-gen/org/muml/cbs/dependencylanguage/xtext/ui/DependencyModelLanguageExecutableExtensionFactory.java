@@ -22,7 +22,9 @@ public class DependencyModelLanguageExecutableExtensionFactory extends AbstractG
 	
 	@Override
 	protected Injector getInjector() {
-		return DependencyModelLanguageActivator.getInstance().getInjector(DependencyModelLanguageActivator.DE_UNI_PADERBORN_FUJABA_MUML_DEPENDENCYMODELLANGUAGE);
+		throw new RuntimeException();
+
+		//return DependencyModelLanguageActivator.getInstance().getInjector(DependencyModelLanguageActivator.DE_UNI_PADERBORN_FUJABA_MUML_DEPENDENCYMODELLANGUAGE);
 	}
 	
 }
