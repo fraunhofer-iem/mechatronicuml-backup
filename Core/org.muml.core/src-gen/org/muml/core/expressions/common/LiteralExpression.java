@@ -19,12 +19,12 @@ import org.muml.core.expressions.Expression;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.core.expressions.common.LiteralExpression#getValue <em>Value</em>}</li>
  * </ul>
- * </p>
  *
- * @see org.muml.core.expressions.common.CommonExpressionsPackage#getLiteralExpression()
+ * @see org.muml.core.expressions.common.CommonPackage#getLiteralExpression()
  * @model
  * @generated
  */
@@ -38,7 +38,7 @@ public interface LiteralExpression extends Expression {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Value</em>' attribute.
 	 * @see #setValue(String)
-	 * @see org.muml.core.expressions.common.CommonExpressionsPackage#getLiteralExpression_Value()
+	 * @see org.muml.core.expressions.common.CommonPackage#getLiteralExpression_Value()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */

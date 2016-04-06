@@ -48,7 +48,7 @@ public interface CorePackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.storydriven.org/core/0.3.1";
+	String eNS_URI = "http://www.muml.org/core/1.0.0";
 
 	/**
 	 * The package namespace name.
@@ -1511,22 +1511,22 @@ public interface CorePackage extends EPackage {
 	EClass getExtendableElement();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.muml.core.ExtendableElement#getAnnotations <em>Annotation</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.muml.core.ExtendableElement#getAnnotation <em>Annotation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Annotation</em>'.
-	 * @see org.muml.core.ExtendableElement#getAnnotations()
+	 * @see org.muml.core.ExtendableElement#getAnnotation()
 	 * @see #getExtendableElement()
 	 * @generated
 	 */
 	EReference getExtendableElement_Annotation();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.muml.core.ExtendableElement#getExtensions <em>Extension</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.muml.core.ExtendableElement#getExtension <em>Extension</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Extension</em>'.
-	 * @see org.muml.core.ExtendableElement#getExtensions()
+	 * @see org.muml.core.ExtendableElement#getExtension()
 	 * @see #getExtendableElement()
 	 * @generated
 	 */
@@ -1715,8 +1715,7 @@ public interface CorePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference TYPED_ELEMENT__GENERIC_TYPE = eINSTANCE
-				.getTypedElement_GenericType();
+		EReference TYPED_ELEMENT__GENERIC_TYPE = eINSTANCE.getTypedElement_GenericType();
 
 		/**
 		 * The meta object literal for the '{@link org.muml.core.impl.RepositoryImpl <em>Repository</em>}' class.
@@ -1744,8 +1743,7 @@ public interface CorePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference EXTENDABLE_ELEMENT__ANNOTATION = eINSTANCE
-				.getExtendableElement_Annotation();
+		EReference EXTENDABLE_ELEMENT__ANNOTATION = eINSTANCE.getExtendableElement_Annotation();
 
 		/**
 		 * The meta object literal for the '<em><b>Extension</b></em>' containment reference list feature.
@@ -1753,8 +1751,7 @@ public interface CorePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference EXTENDABLE_ELEMENT__EXTENSION = eINSTANCE
-				.getExtendableElement_Extension();
+		EReference EXTENDABLE_ELEMENT__EXTENSION = eINSTANCE.getExtendableElement_Extension();
 
 		/**
 		 * The meta object literal for the '<em><b>Get Extension</b></em>' operation.
@@ -1762,8 +1759,7 @@ public interface CorePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation EXTENDABLE_ELEMENT___GET_EXTENSION__ECLASS = eINSTANCE
-				.getExtendableElement__GetExtension__EClass();
+		EOperation EXTENDABLE_ELEMENT___GET_EXTENSION__ECLASS = eINSTANCE.getExtendableElement__GetExtension__EClass();
 
 		/**
 		 * The meta object literal for the '<em><b>Provide Extension</b></em>' operation.
@@ -1771,8 +1767,7 @@ public interface CorePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation EXTENDABLE_ELEMENT___PROVIDE_EXTENSION__ECLASS = eINSTANCE
-				.getExtendableElement__ProvideExtension__EClass();
+		EOperation EXTENDABLE_ELEMENT___PROVIDE_EXTENSION__ECLASS = eINSTANCE.getExtendableElement__ProvideExtension__EClass();
 
 		/**
 		 * The meta object literal for the '<em><b>Get Annotation</b></em>' operation.
@@ -1780,8 +1775,7 @@ public interface CorePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation EXTENDABLE_ELEMENT___GET_ANNOTATION__STRING = eINSTANCE
-				.getExtendableElement__GetAnnotation__String();
+		EOperation EXTENDABLE_ELEMENT___GET_ANNOTATION__STRING = eINSTANCE.getExtendableElement__GetAnnotation__String();
 
 		/**
 		 * The meta object literal for the '<em><b>Provide Annotation</b></em>' operation.
@@ -1789,8 +1783,7 @@ public interface CorePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation EXTENDABLE_ELEMENT___PROVIDE_ANNOTATION__STRING = eINSTANCE
-				.getExtendableElement__ProvideAnnotation__String();
+		EOperation EXTENDABLE_ELEMENT___PROVIDE_ANNOTATION__STRING = eINSTANCE.getExtendableElement__ProvideAnnotation__String();
 
 		/**
 		 * The meta object literal for the '{@link org.muml.core.impl.ExtensionImpl <em>Extension</em>}' class.
@@ -1824,8 +1817,7 @@ public interface CorePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference EXTENSION__OWNING_ANNOTATION = eINSTANCE
-				.getExtension_OwningAnnotation();
+		EReference EXTENSION__OWNING_ANNOTATION = eINSTANCE.getExtension_OwningAnnotation();
 
 		/**
 		 * The meta object literal for the '<em><b>Extendable Base</b></em>' container reference feature.
@@ -1833,8 +1825,7 @@ public interface CorePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference EXTENSION__EXTENDABLE_BASE = eINSTANCE
-				.getExtension_ExtendableBase();
+		EReference EXTENSION__EXTENDABLE_BASE = eINSTANCE.getExtension_ExtendableBase();
 
 		/**
 		 * The meta object literal for the '{@link org.muml.core.impl.CommentableElementImpl <em>Commentable Element</em>}' class.
@@ -1852,8 +1843,7 @@ public interface CorePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute COMMENTABLE_ELEMENT__COMMENT = eINSTANCE
-				.getCommentableElement_Comment();
+		EAttribute COMMENTABLE_ELEMENT__COMMENT = eINSTANCE.getCommentableElement_Comment();
 
 		/**
 		 * The meta object literal for the '{@link org.muml.core.impl.NamedElementImpl <em>Named Element</em>}' class.

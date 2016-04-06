@@ -15,8 +15,6 @@ import org.muml.core.impl.CommentableElementImpl;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Expression</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */

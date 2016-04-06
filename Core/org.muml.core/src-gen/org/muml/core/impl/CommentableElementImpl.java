@@ -18,10 +18,10 @@ import org.muml.core.CorePackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.core.impl.CommentableElementImpl#getComment <em>Comment</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -84,9 +84,7 @@ public abstract class CommentableElementImpl extends ExtendableElementImpl
 		String oldComment = comment;
 		comment = newComment;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					CorePackage.COMMENTABLE_ELEMENT__COMMENT, oldComment,
-					comment));
+			eNotify(new ENotificationImpl(this, Notification.SET, CorePackage.COMMENTABLE_ELEMENT__COMMENT, oldComment, comment));
 	}
 
 	/**
@@ -97,8 +95,8 @@ public abstract class CommentableElementImpl extends ExtendableElementImpl
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case CorePackage.COMMENTABLE_ELEMENT__COMMENT:
-			return getComment();
+			case CorePackage.COMMENTABLE_ELEMENT__COMMENT:
+				return getComment();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -111,9 +109,9 @@ public abstract class CommentableElementImpl extends ExtendableElementImpl
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case CorePackage.COMMENTABLE_ELEMENT__COMMENT:
-			setComment((String) newValue);
-			return;
+			case CorePackage.COMMENTABLE_ELEMENT__COMMENT:
+				setComment((String)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -126,9 +124,9 @@ public abstract class CommentableElementImpl extends ExtendableElementImpl
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case CorePackage.COMMENTABLE_ELEMENT__COMMENT:
-			setComment(COMMENT_EDEFAULT);
-			return;
+			case CorePackage.COMMENTABLE_ELEMENT__COMMENT:
+				setComment(COMMENT_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -141,9 +139,8 @@ public abstract class CommentableElementImpl extends ExtendableElementImpl
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case CorePackage.COMMENTABLE_ELEMENT__COMMENT:
-			return COMMENT_EDEFAULT == null ? comment != null
-					: !COMMENT_EDEFAULT.equals(comment);
+			case CorePackage.COMMENTABLE_ELEMENT__COMMENT:
+				return COMMENT_EDEFAULT == null ? comment != null : !COMMENT_EDEFAULT.equals(comment);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -155,8 +152,7 @@ public abstract class CommentableElementImpl extends ExtendableElementImpl
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy())
-			return super.toString();
+		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (comment: ");

@@ -8,12 +8,7 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.muml.core.CorePackage;
@@ -25,9 +20,7 @@ import org.muml.core.Repository;
  * <!-- end-user-doc -->
  * @generated
  */
-public class RepositoryItemProvider extends NamedElementItemProvider 
-implements IEditingDomainItemProvider, IStructuredItemContentProvider,
-ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class RepositoryItemProvider extends NamedElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -61,38 +54,19 @@ ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	 * @generated
 	 */
 	protected void addCommentPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_CommentableElement_comment_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_CommentableElement_comment_feature",
-						"_UI_CommentableElement_type"),
-				CorePackage.Literals.COMMENTABLE_ELEMENT__COMMENT, true, false,
-				false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
-	}
-
-	/**
-	 * This returns Repository.gif.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object getImage(Object object) {
-		return overlayImage(object,
-				getResourceLocator().getImage("full/obj16/Repository"));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected boolean shouldComposeCreationImage() {
-		return true;
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_CommentableElement_comment_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CommentableElement_comment_feature", "_UI_CommentableElement_type"),
+				 CorePackage.Literals.COMMENTABLE_ELEMENT__COMMENT,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -103,9 +77,10 @@ ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Repository) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_Repository_type")
-				: getString("_UI_Repository_type") + " " + label;
+		String label = ((Repository)object).getName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_Repository_type") :
+			getString("_UI_Repository_type") + " " + label;
 	}
 
 	/**
@@ -120,10 +95,9 @@ ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Repository.class)) {
-		case CorePackage.REPOSITORY__COMMENT:
-			fireNotifyChanged(new ViewerNotification(notification,
-					notification.getNotifier(), false, true));
-			return;
+			case CorePackage.REPOSITORY__COMMENT:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
 		}
 		super.notifyChanged(notification);
 	}

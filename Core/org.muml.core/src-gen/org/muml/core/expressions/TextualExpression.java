@@ -17,12 +17,12 @@ package org.muml.core.expressions;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.core.expressions.TextualExpression#getExpressionText <em>Expression Text</em>}</li>
  *   <li>{@link org.muml.core.expressions.TextualExpression#getLanguage <em>Language</em>}</li>
  *   <li>{@link org.muml.core.expressions.TextualExpression#getLanguageVersion <em>Language Version</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.core.expressions.ExpressionsPackage#getTextualExpression()
  * @model

@@ -12,7 +12,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.muml.core.expressions.Expression;
-import org.muml.core.expressions.common.CommonExpressionsPackage;
+import org.muml.core.expressions.common.CommonPackage;
 import org.muml.core.expressions.common.UnaryExpression;
 import org.muml.core.expressions.common.UnaryOperator;
 import org.muml.core.expressions.impl.ExpressionImpl;
@@ -23,11 +23,11 @@ import org.muml.core.expressions.impl.ExpressionImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.core.expressions.common.impl.UnaryExpressionImpl#getEnclosedExpression <em>Enclosed Expression</em>}</li>
  *   <li>{@link org.muml.core.expressions.common.impl.UnaryExpressionImpl#getOperator <em>Operator</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -78,7 +78,7 @@ public class UnaryExpressionImpl extends ExpressionImpl implements
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CommonExpressionsPackage.Literals.UNARY_EXPRESSION;
+		return CommonPackage.Literals.UNARY_EXPRESSION;
 	}
 
 	/**
@@ -87,44 +87,6 @@ public class UnaryExpressionImpl extends ExpressionImpl implements
 	 * @generated
 	 */
 	public Expression getEnclosedExpression() {
-		if (enclosedExpression != null && enclosedExpression.eIsProxy()) {
-			InternalEObject oldEnclosedExpression = (InternalEObject) enclosedExpression;
-			enclosedExpression = (Expression) eResolveProxy(oldEnclosedExpression);
-			if (enclosedExpression != oldEnclosedExpression) {
-				InternalEObject newEnclosedExpression = (InternalEObject) enclosedExpression;
-				NotificationChain msgs = oldEnclosedExpression
-						.eInverseRemove(
-								this,
-								EOPPOSITE_FEATURE_BASE
-										- CommonExpressionsPackage.UNARY_EXPRESSION__ENCLOSED_EXPRESSION,
-								null, null);
-				if (newEnclosedExpression.eInternalContainer() == null) {
-					msgs = newEnclosedExpression
-							.eInverseAdd(
-									this,
-									EOPPOSITE_FEATURE_BASE
-											- CommonExpressionsPackage.UNARY_EXPRESSION__ENCLOSED_EXPRESSION,
-									null, msgs);
-				}
-				if (msgs != null)
-					msgs.dispatch();
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(
-							this,
-							Notification.RESOLVE,
-							CommonExpressionsPackage.UNARY_EXPRESSION__ENCLOSED_EXPRESSION,
-							oldEnclosedExpression, enclosedExpression));
-			}
-		}
-		return enclosedExpression;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Expression basicGetEnclosedExpression() {
 		return enclosedExpression;
 	}
 
@@ -138,15 +100,8 @@ public class UnaryExpressionImpl extends ExpressionImpl implements
 		Expression oldEnclosedExpression = enclosedExpression;
 		enclosedExpression = newEnclosedExpression;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(
-					this,
-					Notification.SET,
-					CommonExpressionsPackage.UNARY_EXPRESSION__ENCLOSED_EXPRESSION,
-					oldEnclosedExpression, newEnclosedExpression);
-			if (msgs == null)
-				msgs = notification;
-			else
-				msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CommonPackage.UNARY_EXPRESSION__ENCLOSED_EXPRESSION, oldEnclosedExpression, newEnclosedExpression);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -160,28 +115,14 @@ public class UnaryExpressionImpl extends ExpressionImpl implements
 		if (newEnclosedExpression != enclosedExpression) {
 			NotificationChain msgs = null;
 			if (enclosedExpression != null)
-				msgs = ((InternalEObject) enclosedExpression)
-						.eInverseRemove(
-								this,
-								EOPPOSITE_FEATURE_BASE
-										- CommonExpressionsPackage.UNARY_EXPRESSION__ENCLOSED_EXPRESSION,
-								null, msgs);
+				msgs = ((InternalEObject)enclosedExpression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CommonPackage.UNARY_EXPRESSION__ENCLOSED_EXPRESSION, null, msgs);
 			if (newEnclosedExpression != null)
-				msgs = ((InternalEObject) newEnclosedExpression)
-						.eInverseAdd(
-								this,
-								EOPPOSITE_FEATURE_BASE
-										- CommonExpressionsPackage.UNARY_EXPRESSION__ENCLOSED_EXPRESSION,
-								null, msgs);
+				msgs = ((InternalEObject)newEnclosedExpression).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CommonPackage.UNARY_EXPRESSION__ENCLOSED_EXPRESSION, null, msgs);
 			msgs = basicSetEnclosedExpression(newEnclosedExpression, msgs);
-			if (msgs != null)
-				msgs.dispatch();
-		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(
-					this,
-					Notification.SET,
-					CommonExpressionsPackage.UNARY_EXPRESSION__ENCLOSED_EXPRESSION,
-					newEnclosedExpression, newEnclosedExpression));
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CommonPackage.UNARY_EXPRESSION__ENCLOSED_EXPRESSION, newEnclosedExpression, newEnclosedExpression));
 	}
 
 	/**
@@ -202,9 +143,7 @@ public class UnaryExpressionImpl extends ExpressionImpl implements
 		UnaryOperator oldOperator = operator;
 		operator = newOperator == null ? OPERATOR_EDEFAULT : newOperator;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					CommonExpressionsPackage.UNARY_EXPRESSION__OPERATOR,
-					oldOperator, operator));
+			eNotify(new ENotificationImpl(this, Notification.SET, CommonPackage.UNARY_EXPRESSION__OPERATOR, oldOperator, operator));
 	}
 
 	/**
@@ -216,8 +155,8 @@ public class UnaryExpressionImpl extends ExpressionImpl implements
 	public NotificationChain eInverseRemove(InternalEObject otherEnd,
 			int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case CommonExpressionsPackage.UNARY_EXPRESSION__ENCLOSED_EXPRESSION:
-			return basicSetEnclosedExpression(null, msgs);
+			case CommonPackage.UNARY_EXPRESSION__ENCLOSED_EXPRESSION:
+				return basicSetEnclosedExpression(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -230,12 +169,10 @@ public class UnaryExpressionImpl extends ExpressionImpl implements
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case CommonExpressionsPackage.UNARY_EXPRESSION__ENCLOSED_EXPRESSION:
-			if (resolve)
+			case CommonPackage.UNARY_EXPRESSION__ENCLOSED_EXPRESSION:
 				return getEnclosedExpression();
-			return basicGetEnclosedExpression();
-		case CommonExpressionsPackage.UNARY_EXPRESSION__OPERATOR:
-			return getOperator();
+			case CommonPackage.UNARY_EXPRESSION__OPERATOR:
+				return getOperator();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -248,12 +185,12 @@ public class UnaryExpressionImpl extends ExpressionImpl implements
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case CommonExpressionsPackage.UNARY_EXPRESSION__ENCLOSED_EXPRESSION:
-			setEnclosedExpression((Expression) newValue);
-			return;
-		case CommonExpressionsPackage.UNARY_EXPRESSION__OPERATOR:
-			setOperator((UnaryOperator) newValue);
-			return;
+			case CommonPackage.UNARY_EXPRESSION__ENCLOSED_EXPRESSION:
+				setEnclosedExpression((Expression)newValue);
+				return;
+			case CommonPackage.UNARY_EXPRESSION__OPERATOR:
+				setOperator((UnaryOperator)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -266,12 +203,12 @@ public class UnaryExpressionImpl extends ExpressionImpl implements
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case CommonExpressionsPackage.UNARY_EXPRESSION__ENCLOSED_EXPRESSION:
-			setEnclosedExpression((Expression) null);
-			return;
-		case CommonExpressionsPackage.UNARY_EXPRESSION__OPERATOR:
-			setOperator(OPERATOR_EDEFAULT);
-			return;
+			case CommonPackage.UNARY_EXPRESSION__ENCLOSED_EXPRESSION:
+				setEnclosedExpression((Expression)null);
+				return;
+			case CommonPackage.UNARY_EXPRESSION__OPERATOR:
+				setOperator(OPERATOR_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -284,10 +221,10 @@ public class UnaryExpressionImpl extends ExpressionImpl implements
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case CommonExpressionsPackage.UNARY_EXPRESSION__ENCLOSED_EXPRESSION:
-			return enclosedExpression != null;
-		case CommonExpressionsPackage.UNARY_EXPRESSION__OPERATOR:
-			return operator != OPERATOR_EDEFAULT;
+			case CommonPackage.UNARY_EXPRESSION__ENCLOSED_EXPRESSION:
+				return enclosedExpression != null;
+			case CommonPackage.UNARY_EXPRESSION__OPERATOR:
+				return operator != OPERATOR_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -299,8 +236,7 @@ public class UnaryExpressionImpl extends ExpressionImpl implements
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy())
-			return super.toString();
+		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (operator: ");

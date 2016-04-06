@@ -24,7 +24,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * left hand side of a ComparisonExpression with a regular expression contained in the 
  * right hand side of the ComparisonExpression.
  * <!-- end-model-doc -->
- * @see org.muml.core.expressions.common.CommonExpressionsPackage#getComparingOperator()
+ * @see org.muml.core.expressions.common.CommonPackage#getComparingOperator()
  * @model
  * @generated
  */
@@ -210,8 +210,14 @@ public enum ComparingOperator implements Enumerator {
 	 * @generated
 	 */
 	private static final ComparingOperator[] VALUES_ARRAY = new ComparingOperator[] {
-			LESS, LESS_OR_EQUAL, EQUAL, GREATER_OR_EQUAL, GREATER, UNEQUAL,
-			REGULAR_EXPRESSION, };
+			LESS,
+			LESS_OR_EQUAL,
+			EQUAL,
+			GREATER_OR_EQUAL,
+			GREATER,
+			UNEQUAL,
+			REGULAR_EXPRESSION,
+		};
 
 	/**
 	 * A public read-only list of all the '<em><b>Comparing Operator</b></em>' enumerators.
@@ -219,13 +225,14 @@ public enum ComparingOperator implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final List<ComparingOperator> VALUES = Collections
-			.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+	public static final List<ComparingOperator> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
 	/**
 	 * Returns the '<em><b>Comparing Operator</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @param literal the literal.
+	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static ComparingOperator get(String literal) {
@@ -242,6 +249,8 @@ public enum ComparingOperator implements Enumerator {
 	 * Returns the '<em><b>Comparing Operator</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @param name the name.
+	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static ComparingOperator getByName(String name) {
@@ -258,24 +267,19 @@ public enum ComparingOperator implements Enumerator {
 	 * Returns the '<em><b>Comparing Operator</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @param value the integer value.
+	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static ComparingOperator get(int value) {
 		switch (value) {
-		case LESS_VALUE:
-			return LESS;
-		case LESS_OR_EQUAL_VALUE:
-			return LESS_OR_EQUAL;
-		case EQUAL_VALUE:
-			return EQUAL;
-		case GREATER_OR_EQUAL_VALUE:
-			return GREATER_OR_EQUAL;
-		case GREATER_VALUE:
-			return GREATER;
-		case UNEQUAL_VALUE:
-			return UNEQUAL;
-		case REGULAR_EXPRESSION_VALUE:
-			return REGULAR_EXPRESSION;
+			case LESS_VALUE: return LESS;
+			case LESS_OR_EQUAL_VALUE: return LESS_OR_EQUAL;
+			case EQUAL_VALUE: return EQUAL;
+			case GREATER_OR_EQUAL_VALUE: return GREATER_OR_EQUAL;
+			case GREATER_VALUE: return GREATER;
+			case UNEQUAL_VALUE: return UNEQUAL;
+			case REGULAR_EXPRESSION_VALUE: return REGULAR_EXPRESSION;
 		}
 		return null;
 	}
@@ -319,7 +323,7 @@ public enum ComparingOperator implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-		return value;
+	  return value;
 	}
 
 	/**
@@ -328,7 +332,7 @@ public enum ComparingOperator implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-		return name;
+	  return name;
 	}
 
 	/**
@@ -337,7 +341,7 @@ public enum ComparingOperator implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-		return literal;
+	  return literal;
 	}
 
 	/**

@@ -22,11 +22,11 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
- * <ul>
- *   <li>{@link org.muml.core.ExtendableElement#getAnnotations <em>Annotation</em>}</li>
- *   <li>{@link org.muml.core.ExtendableElement#getExtensions <em>Extension</em>}</li>
- * </ul>
  * </p>
+ * <ul>
+ *   <li>{@link org.muml.core.ExtendableElement#getAnnotation <em>Annotation</em>}</li>
+ *   <li>{@link org.muml.core.ExtendableElement#getExtension <em>Extension</em>}</li>
+ * </ul>
  *
  * @see org.muml.core.CorePackage#getExtendableElement()
  * @model abstract="true"
@@ -37,39 +37,41 @@ public interface ExtendableElement extends EObject {
 	 * Returns the value of the '<em><b>Annotation</b></em>' containment reference list.
 	 * The list contents are of type {@link org.eclipse.emf.ecore.EAnnotation}.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Annotation</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Extendable Elements can be annotated by an EAnnotation
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Annotation</em>' containment reference list.
 	 * @see org.muml.core.CorePackage#getExtendableElement_Annotation()
-	 * @model containment="true" resolveProxies="true" ordered="false"
+	 * @model containment="true" ordered="false"
 	 * @generated
 	 */
-	EList<EAnnotation> getAnnotations();
+	EList<EAnnotation> getAnnotation();
 
 	/**
 	 * Returns the value of the '<em><b>Extension</b></em>' containment reference list.
 	 * The list contents are of type {@link org.muml.core.Extension}.
 	 * It is bidirectional and its opposite is '{@link org.muml.core.Extension#getExtendableBase <em>Extendable Base</em>}'.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Extension</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Extendable Elements can be extended by an Extension.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Extension</em>' containment reference list.
 	 * @see org.muml.core.CorePackage#getExtendableElement_Extension()
 	 * @see org.muml.core.Extension#getExtendableBase
-	 * @model opposite="extendableBase" containment="true" resolveProxies="true" ordered="false"
+	 * @model opposite="extendableBase" containment="true" ordered="false"
 	 * @generated
 	 */
-	EList<Extension> getExtensions();
+	EList<Extension> getExtension();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Finds the registered extension of the provided type.
+	 * @param type The type that identifies the Extension to return.
+	 * <!-- end-model-doc -->
 	 * @model required="true" ordered="false" typeRequired="true" typeOrdered="false"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return ExtendableElementOperations.getExtension(this, type);'"
 	 * @generated
@@ -79,6 +81,10 @@ public interface ExtendableElement extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Creates and registers a new Extension of the provided type.
+	 * @param type The type of the new Extension.
+	 * <!-- end-model-doc -->
 	 * @model required="true" ordered="false" typeRequired="true" typeOrdered="false"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return ExtendableElementOperations.provideExtension(this, type);'"
 	 * @generated
@@ -88,6 +94,10 @@ public interface ExtendableElement extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Finds the EAnnotation for the provided source.
+	 * @param source The source that identifies the EAnnotation to return.
+	 * <!-- end-model-doc -->
 	 * @model required="true" ordered="false" sourceRequired="true" sourceOrdered="false"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return ExtendableElementOperations.getAnnotation(this, source);'"
 	 * @generated
@@ -97,6 +107,10 @@ public interface ExtendableElement extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Creates and registers a new EAnnotation with the provided source.
+	 * @param source The source that identifies the EAnnotation to return.
+	 * <!-- end-model-doc -->
 	 * @model required="true" ordered="false" sourceRequired="true" sourceOrdered="false"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return ExtendableElementOperations.provideAnnotation(this, source);'"
 	 * @generated

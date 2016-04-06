@@ -17,12 +17,12 @@ package org.muml.core.expressions.common;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.core.expressions.common.ArithmeticExpression#getOperator <em>Operator</em>}</li>
  * </ul>
- * </p>
  *
- * @see org.muml.core.expressions.common.CommonExpressionsPackage#getArithmeticExpression()
+ * @see org.muml.core.expressions.common.CommonPackage#getArithmeticExpression()
  * @model
  * @generated
  */
@@ -38,7 +38,7 @@ public interface ArithmeticExpression extends BinaryExpression {
 	 * @return the value of the '<em>Operator</em>' attribute.
 	 * @see org.muml.core.expressions.common.ArithmeticOperator
 	 * @see #setOperator(ArithmeticOperator)
-	 * @see org.muml.core.expressions.common.CommonExpressionsPackage#getArithmeticExpression_Operator()
+	 * @see org.muml.core.expressions.common.CommonPackage#getArithmeticExpression_Operator()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */

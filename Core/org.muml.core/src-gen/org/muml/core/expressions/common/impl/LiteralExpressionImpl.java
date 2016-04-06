@@ -9,7 +9,7 @@ package org.muml.core.expressions.common.impl;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.muml.core.expressions.common.CommonExpressionsPackage;
+import org.muml.core.expressions.common.CommonPackage;
 import org.muml.core.expressions.common.LiteralExpression;
 import org.muml.core.expressions.impl.ExpressionImpl;
 
@@ -19,10 +19,10 @@ import org.muml.core.expressions.impl.ExpressionImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.core.expressions.common.impl.LiteralExpressionImpl#getValue <em>Value</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -64,7 +64,7 @@ public class LiteralExpressionImpl extends ExpressionImpl implements
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CommonExpressionsPackage.Literals.LITERAL_EXPRESSION;
+		return CommonPackage.Literals.LITERAL_EXPRESSION;
 	}
 
 	/**
@@ -85,9 +85,7 @@ public class LiteralExpressionImpl extends ExpressionImpl implements
 		String oldValue = value;
 		value = newValue;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					CommonExpressionsPackage.LITERAL_EXPRESSION__VALUE,
-					oldValue, value));
+			eNotify(new ENotificationImpl(this, Notification.SET, CommonPackage.LITERAL_EXPRESSION__VALUE, oldValue, value));
 	}
 
 	/**
@@ -98,8 +96,8 @@ public class LiteralExpressionImpl extends ExpressionImpl implements
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case CommonExpressionsPackage.LITERAL_EXPRESSION__VALUE:
-			return getValue();
+			case CommonPackage.LITERAL_EXPRESSION__VALUE:
+				return getValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -112,9 +110,9 @@ public class LiteralExpressionImpl extends ExpressionImpl implements
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case CommonExpressionsPackage.LITERAL_EXPRESSION__VALUE:
-			setValue((String) newValue);
-			return;
+			case CommonPackage.LITERAL_EXPRESSION__VALUE:
+				setValue((String)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -127,9 +125,9 @@ public class LiteralExpressionImpl extends ExpressionImpl implements
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case CommonExpressionsPackage.LITERAL_EXPRESSION__VALUE:
-			setValue(VALUE_EDEFAULT);
-			return;
+			case CommonPackage.LITERAL_EXPRESSION__VALUE:
+				setValue(VALUE_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -142,9 +140,8 @@ public class LiteralExpressionImpl extends ExpressionImpl implements
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case CommonExpressionsPackage.LITERAL_EXPRESSION__VALUE:
-			return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT
-					.equals(value);
+			case CommonPackage.LITERAL_EXPRESSION__VALUE:
+				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -156,8 +153,7 @@ public class LiteralExpressionImpl extends ExpressionImpl implements
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy())
-			return super.toString();
+		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (value: ");

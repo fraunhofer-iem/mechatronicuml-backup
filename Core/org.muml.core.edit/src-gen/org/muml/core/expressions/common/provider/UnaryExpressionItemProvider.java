@@ -14,12 +14,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.muml.core.expressions.ExpressionsFactory;
@@ -35,9 +30,7 @@ import org.muml.core.provider.CoreEditPlugin;
  * <!-- end-user-doc -->
  * @generated
  */
-public class UnaryExpressionItemProvider extends ExpressionItemProvider
-		implements IEditingDomainItemProvider, IStructuredItemContentProvider,
-		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class UnaryExpressionItemProvider extends ExpressionItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -71,17 +64,19 @@ public class UnaryExpressionItemProvider extends ExpressionItemProvider
 	 * @generated
 	 */
 	protected void addOperatorPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_UnaryExpression_operator_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_UnaryExpression_operator_feature",
-						"_UI_UnaryExpression_type"),
-				CommonExpressionsPackage.Literals.UNARY_EXPRESSION__OPERATOR,
-				true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				null, null));
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_UnaryExpression_operator_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UnaryExpression_operator_feature", "_UI_UnaryExpression_type"),
+				 CommonExpressionsPackage.Literals.UNARY_EXPRESSION__OPERATOR,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -97,8 +92,7 @@ public class UnaryExpressionItemProvider extends ExpressionItemProvider
 			Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures
-					.add(CommonExpressionsPackage.Literals.UNARY_EXPRESSION__ENCLOSED_EXPRESSION);
+			childrenFeatures.add(CommonExpressionsPackage.Literals.UNARY_EXPRESSION__ENCLOSED_EXPRESSION);
 		}
 		return childrenFeatures;
 	}
@@ -117,13 +111,14 @@ public class UnaryExpressionItemProvider extends ExpressionItemProvider
 	}
 
 	/**
+	 * This returns UnaryExpression.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	protected boolean shouldComposeCreationImage() {
-		return true;
+	public Object getImage(Object object) {
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/UnaryExpression"));
 	}
 
 	/**
@@ -134,9 +129,10 @@ public class UnaryExpressionItemProvider extends ExpressionItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((UnaryExpression) object).getComment();
-		return label == null || label.length() == 0 ? getString("_UI_UnaryExpression_type")
-				: getString("_UI_UnaryExpression_type") + " " + label;
+		String label = ((UnaryExpression)object).getComment();
+		return label == null || label.length() == 0 ?
+			getString("_UI_UnaryExpression_type") :
+			getString("_UI_UnaryExpression_type") + " " + label;
 	}
 
 	/**
@@ -151,14 +147,12 @@ public class UnaryExpressionItemProvider extends ExpressionItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(UnaryExpression.class)) {
-		case CommonExpressionsPackage.UNARY_EXPRESSION__OPERATOR:
-			fireNotifyChanged(new ViewerNotification(notification,
-					notification.getNotifier(), false, true));
-			return;
-		case CommonExpressionsPackage.UNARY_EXPRESSION__ENCLOSED_EXPRESSION:
-			fireNotifyChanged(new ViewerNotification(notification,
-					notification.getNotifier(), true, false));
-			return;
+			case CommonExpressionsPackage.UNARY_EXPRESSION__OPERATOR:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+			case CommonExpressionsPackage.UNARY_EXPRESSION__ENCLOSED_EXPRESSION:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+				return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -175,40 +169,35 @@ public class UnaryExpressionItemProvider extends ExpressionItemProvider
 			Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors
-				.add(createChildParameter(
-						CommonExpressionsPackage.Literals.UNARY_EXPRESSION__ENCLOSED_EXPRESSION,
-						CommonExpressionsFactory.eINSTANCE
-								.createUnaryExpression()));
+		newChildDescriptors.add
+			(createChildParameter
+				(CommonExpressionsPackage.Literals.UNARY_EXPRESSION__ENCLOSED_EXPRESSION,
+				 CommonExpressionsFactory.eINSTANCE.createUnaryExpression()));
 
-		newChildDescriptors
-				.add(createChildParameter(
-						CommonExpressionsPackage.Literals.UNARY_EXPRESSION__ENCLOSED_EXPRESSION,
-						CommonExpressionsFactory.eINSTANCE
-								.createComparisonExpression()));
+		newChildDescriptors.add
+			(createChildParameter
+				(CommonExpressionsPackage.Literals.UNARY_EXPRESSION__ENCLOSED_EXPRESSION,
+				 CommonExpressionsFactory.eINSTANCE.createComparisonExpression()));
 
-		newChildDescriptors
-				.add(createChildParameter(
-						CommonExpressionsPackage.Literals.UNARY_EXPRESSION__ENCLOSED_EXPRESSION,
-						CommonExpressionsFactory.eINSTANCE
-								.createArithmeticExpression()));
+		newChildDescriptors.add
+			(createChildParameter
+				(CommonExpressionsPackage.Literals.UNARY_EXPRESSION__ENCLOSED_EXPRESSION,
+				 CommonExpressionsFactory.eINSTANCE.createArithmeticExpression()));
 
-		newChildDescriptors
-				.add(createChildParameter(
-						CommonExpressionsPackage.Literals.UNARY_EXPRESSION__ENCLOSED_EXPRESSION,
-						CommonExpressionsFactory.eINSTANCE
-								.createLogicalExpression()));
+		newChildDescriptors.add
+			(createChildParameter
+				(CommonExpressionsPackage.Literals.UNARY_EXPRESSION__ENCLOSED_EXPRESSION,
+				 CommonExpressionsFactory.eINSTANCE.createLogicalExpression()));
 
-		newChildDescriptors
-				.add(createChildParameter(
-						CommonExpressionsPackage.Literals.UNARY_EXPRESSION__ENCLOSED_EXPRESSION,
-						CommonExpressionsFactory.eINSTANCE
-								.createLiteralExpression()));
+		newChildDescriptors.add
+			(createChildParameter
+				(CommonExpressionsPackage.Literals.UNARY_EXPRESSION__ENCLOSED_EXPRESSION,
+				 CommonExpressionsFactory.eINSTANCE.createLiteralExpression()));
 
-		newChildDescriptors
-				.add(createChildParameter(
-						CommonExpressionsPackage.Literals.UNARY_EXPRESSION__ENCLOSED_EXPRESSION,
-						ExpressionsFactory.eINSTANCE.createTextualExpression()));
+		newChildDescriptors.add
+			(createChildParameter
+				(CommonExpressionsPackage.Literals.UNARY_EXPRESSION__ENCLOSED_EXPRESSION,
+				 ExpressionsFactory.eINSTANCE.createTextualExpression()));
 	}
 
 	/**

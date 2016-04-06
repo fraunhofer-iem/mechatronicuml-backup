@@ -17,12 +17,12 @@ package org.muml.core.expressions.common;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.core.expressions.common.LogicalExpression#getOperator <em>Operator</em>}</li>
  * </ul>
- * </p>
  *
- * @see org.muml.core.expressions.common.CommonExpressionsPackage#getLogicalExpression()
+ * @see org.muml.core.expressions.common.CommonPackage#getLogicalExpression()
  * @model
  * @generated
  */
@@ -38,7 +38,7 @@ public interface LogicalExpression extends BinaryExpression {
 	 * @return the value of the '<em>Operator</em>' attribute.
 	 * @see org.muml.core.expressions.common.LogicOperator
 	 * @see #setOperator(LogicOperator)
-	 * @see org.muml.core.expressions.common.CommonExpressionsPackage#getLogicalExpression_Operator()
+	 * @see org.muml.core.expressions.common.CommonPackage#getLogicalExpression_Operator()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */

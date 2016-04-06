@@ -18,12 +18,12 @@ import org.muml.core.expressions.TextualExpression;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.core.expressions.impl.TextualExpressionImpl#getExpressionText <em>Expression Text</em>}</li>
  *   <li>{@link org.muml.core.expressions.impl.TextualExpressionImpl#getLanguage <em>Language</em>}</li>
  *   <li>{@link org.muml.core.expressions.impl.TextualExpressionImpl#getLanguageVersion <em>Language Version</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -126,9 +126,7 @@ public class TextualExpressionImpl extends ExpressionImpl implements
 		String oldExpressionText = expressionText;
 		expressionText = newExpressionText;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					ExpressionsPackage.TEXTUAL_EXPRESSION__EXPRESSION_TEXT,
-					oldExpressionText, expressionText));
+			eNotify(new ENotificationImpl(this, Notification.SET, ExpressionsPackage.TEXTUAL_EXPRESSION__EXPRESSION_TEXT, oldExpressionText, expressionText));
 	}
 
 	/**
@@ -149,9 +147,7 @@ public class TextualExpressionImpl extends ExpressionImpl implements
 		String oldLanguage = language;
 		language = newLanguage;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					ExpressionsPackage.TEXTUAL_EXPRESSION__LANGUAGE,
-					oldLanguage, language));
+			eNotify(new ENotificationImpl(this, Notification.SET, ExpressionsPackage.TEXTUAL_EXPRESSION__LANGUAGE, oldLanguage, language));
 	}
 
 	/**
@@ -172,9 +168,7 @@ public class TextualExpressionImpl extends ExpressionImpl implements
 		String oldLanguageVersion = languageVersion;
 		languageVersion = newLanguageVersion;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					ExpressionsPackage.TEXTUAL_EXPRESSION__LANGUAGE_VERSION,
-					oldLanguageVersion, languageVersion));
+			eNotify(new ENotificationImpl(this, Notification.SET, ExpressionsPackage.TEXTUAL_EXPRESSION__LANGUAGE_VERSION, oldLanguageVersion, languageVersion));
 	}
 
 	/**
@@ -185,12 +179,12 @@ public class TextualExpressionImpl extends ExpressionImpl implements
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case ExpressionsPackage.TEXTUAL_EXPRESSION__EXPRESSION_TEXT:
-			return getExpressionText();
-		case ExpressionsPackage.TEXTUAL_EXPRESSION__LANGUAGE:
-			return getLanguage();
-		case ExpressionsPackage.TEXTUAL_EXPRESSION__LANGUAGE_VERSION:
-			return getLanguageVersion();
+			case ExpressionsPackage.TEXTUAL_EXPRESSION__EXPRESSION_TEXT:
+				return getExpressionText();
+			case ExpressionsPackage.TEXTUAL_EXPRESSION__LANGUAGE:
+				return getLanguage();
+			case ExpressionsPackage.TEXTUAL_EXPRESSION__LANGUAGE_VERSION:
+				return getLanguageVersion();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -203,15 +197,15 @@ public class TextualExpressionImpl extends ExpressionImpl implements
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case ExpressionsPackage.TEXTUAL_EXPRESSION__EXPRESSION_TEXT:
-			setExpressionText((String) newValue);
-			return;
-		case ExpressionsPackage.TEXTUAL_EXPRESSION__LANGUAGE:
-			setLanguage((String) newValue);
-			return;
-		case ExpressionsPackage.TEXTUAL_EXPRESSION__LANGUAGE_VERSION:
-			setLanguageVersion((String) newValue);
-			return;
+			case ExpressionsPackage.TEXTUAL_EXPRESSION__EXPRESSION_TEXT:
+				setExpressionText((String)newValue);
+				return;
+			case ExpressionsPackage.TEXTUAL_EXPRESSION__LANGUAGE:
+				setLanguage((String)newValue);
+				return;
+			case ExpressionsPackage.TEXTUAL_EXPRESSION__LANGUAGE_VERSION:
+				setLanguageVersion((String)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -224,15 +218,15 @@ public class TextualExpressionImpl extends ExpressionImpl implements
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case ExpressionsPackage.TEXTUAL_EXPRESSION__EXPRESSION_TEXT:
-			setExpressionText(EXPRESSION_TEXT_EDEFAULT);
-			return;
-		case ExpressionsPackage.TEXTUAL_EXPRESSION__LANGUAGE:
-			setLanguage(LANGUAGE_EDEFAULT);
-			return;
-		case ExpressionsPackage.TEXTUAL_EXPRESSION__LANGUAGE_VERSION:
-			setLanguageVersion(LANGUAGE_VERSION_EDEFAULT);
-			return;
+			case ExpressionsPackage.TEXTUAL_EXPRESSION__EXPRESSION_TEXT:
+				setExpressionText(EXPRESSION_TEXT_EDEFAULT);
+				return;
+			case ExpressionsPackage.TEXTUAL_EXPRESSION__LANGUAGE:
+				setLanguage(LANGUAGE_EDEFAULT);
+				return;
+			case ExpressionsPackage.TEXTUAL_EXPRESSION__LANGUAGE_VERSION:
+				setLanguageVersion(LANGUAGE_VERSION_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -245,15 +239,12 @@ public class TextualExpressionImpl extends ExpressionImpl implements
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case ExpressionsPackage.TEXTUAL_EXPRESSION__EXPRESSION_TEXT:
-			return EXPRESSION_TEXT_EDEFAULT == null ? expressionText != null
-					: !EXPRESSION_TEXT_EDEFAULT.equals(expressionText);
-		case ExpressionsPackage.TEXTUAL_EXPRESSION__LANGUAGE:
-			return LANGUAGE_EDEFAULT == null ? language != null
-					: !LANGUAGE_EDEFAULT.equals(language);
-		case ExpressionsPackage.TEXTUAL_EXPRESSION__LANGUAGE_VERSION:
-			return LANGUAGE_VERSION_EDEFAULT == null ? languageVersion != null
-					: !LANGUAGE_VERSION_EDEFAULT.equals(languageVersion);
+			case ExpressionsPackage.TEXTUAL_EXPRESSION__EXPRESSION_TEXT:
+				return EXPRESSION_TEXT_EDEFAULT == null ? expressionText != null : !EXPRESSION_TEXT_EDEFAULT.equals(expressionText);
+			case ExpressionsPackage.TEXTUAL_EXPRESSION__LANGUAGE:
+				return LANGUAGE_EDEFAULT == null ? language != null : !LANGUAGE_EDEFAULT.equals(language);
+			case ExpressionsPackage.TEXTUAL_EXPRESSION__LANGUAGE_VERSION:
+				return LANGUAGE_VERSION_EDEFAULT == null ? languageVersion != null : !LANGUAGE_VERSION_EDEFAULT.equals(languageVersion);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -265,8 +256,7 @@ public class TextualExpressionImpl extends ExpressionImpl implements
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy())
-			return super.toString();
+		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (expressionText: ");

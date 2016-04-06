@@ -17,12 +17,12 @@ package org.muml.core.expressions.common;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.core.expressions.common.ComparisonExpression#getOperator <em>Operator</em>}</li>
  * </ul>
- * </p>
  *
- * @see org.muml.core.expressions.common.CommonExpressionsPackage#getComparisonExpression()
+ * @see org.muml.core.expressions.common.CommonPackage#getComparisonExpression()
  * @model
  * @generated
  */
@@ -38,7 +38,7 @@ public interface ComparisonExpression extends BinaryExpression {
 	 * @return the value of the '<em>Operator</em>' attribute.
 	 * @see org.muml.core.expressions.common.ComparingOperator
 	 * @see #setOperator(ComparingOperator)
-	 * @see org.muml.core.expressions.common.CommonExpressionsPackage#getComparisonExpression_Operator()
+	 * @see org.muml.core.expressions.common.CommonPackage#getComparisonExpression_Operator()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */

@@ -12,12 +12,7 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.muml.core.expressions.common.CommonExpressionsPackage;
@@ -30,9 +25,7 @@ import org.muml.core.expressions.common.ComparisonExpression;
  * @generated
  */
 public class ComparisonExpressionItemProvider extends
-		BinaryExpressionItemProvider implements IEditingDomainItemProvider,
-		IStructuredItemContentProvider, ITreeItemContentProvider,
-		IItemLabelProvider, IItemPropertySource {
+		BinaryExpressionItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -66,28 +59,30 @@ public class ComparisonExpressionItemProvider extends
 	 * @generated
 	 */
 	protected void addOperatorPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(
-						((ComposeableAdapterFactory) adapterFactory)
-								.getRootAdapterFactory(),
-						getResourceLocator(),
-						getString("_UI_ComparisonExpression_operator_feature"),
-						getString("_UI_PropertyDescriptor_description",
-								"_UI_ComparisonExpression_operator_feature",
-								"_UI_ComparisonExpression_type"),
-						CommonExpressionsPackage.Literals.COMPARISON_EXPRESSION__OPERATOR,
-						true, false, false,
-						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ComparisonExpression_operator_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ComparisonExpression_operator_feature", "_UI_ComparisonExpression_type"),
+				 CommonExpressionsPackage.Literals.COMPARISON_EXPRESSION__OPERATOR,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
+	 * This returns ComparisonExpression.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	protected boolean shouldComposeCreationImage() {
-		return true;
+	public Object getImage(Object object) {
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/ComparisonExpression"));
 	}
 
 	/**
@@ -98,9 +93,10 @@ public class ComparisonExpressionItemProvider extends
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ComparisonExpression) object).getComment();
-		return label == null || label.length() == 0 ? getString("_UI_ComparisonExpression_type")
-				: getString("_UI_ComparisonExpression_type") + " " + label;
+		String label = ((ComparisonExpression)object).getComment();
+		return label == null || label.length() == 0 ?
+			getString("_UI_ComparisonExpression_type") :
+			getString("_UI_ComparisonExpression_type") + " " + label;
 	}
 
 	/**
@@ -115,10 +111,9 @@ public class ComparisonExpressionItemProvider extends
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ComparisonExpression.class)) {
-		case CommonExpressionsPackage.COMPARISON_EXPRESSION__OPERATOR:
-			fireNotifyChanged(new ViewerNotification(notification,
-					notification.getNotifier(), false, true));
-			return;
+			case CommonExpressionsPackage.COMPARISON_EXPRESSION__OPERATOR:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -148,13 +143,14 @@ public class ComparisonExpressionItemProvider extends
 		Object childFeature = feature;
 		Object childObject = child;
 
-		boolean qualify = childFeature == CommonExpressionsPackage.Literals.BINARY_EXPRESSION__LEFT_EXPRESSION
-				|| childFeature == CommonExpressionsPackage.Literals.BINARY_EXPRESSION__RIGHT_EXPRESSION;
+		boolean qualify =
+			childFeature == CommonExpressionsPackage.Literals.BINARY_EXPRESSION__LEFT_EXPRESSION ||
+			childFeature == CommonExpressionsPackage.Literals.BINARY_EXPRESSION__RIGHT_EXPRESSION;
 
 		if (qualify) {
-			return getString("_UI_CreateChild_text2", new Object[] {
-					getTypeText(childObject), getFeatureText(childFeature),
-					getTypeText(owner) });
+			return getString
+				("_UI_CreateChild_text2",
+				 new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
 		}
 		return super.getCreateChildText(owner, feature, child, selection);
 	}

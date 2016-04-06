@@ -18,10 +18,10 @@ import org.muml.core.NamedElement;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.core.impl.NamedElementImpl#getName <em>Name</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -84,8 +84,7 @@ public abstract class NamedElementImpl extends ExtendableElementImpl implements
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					CorePackage.NAMED_ELEMENT__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, CorePackage.NAMED_ELEMENT__NAME, oldName, name));
 	}
 
 	/**
@@ -96,8 +95,8 @@ public abstract class NamedElementImpl extends ExtendableElementImpl implements
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case CorePackage.NAMED_ELEMENT__NAME:
-			return getName();
+			case CorePackage.NAMED_ELEMENT__NAME:
+				return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -110,9 +109,9 @@ public abstract class NamedElementImpl extends ExtendableElementImpl implements
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case CorePackage.NAMED_ELEMENT__NAME:
-			setName((String) newValue);
-			return;
+			case CorePackage.NAMED_ELEMENT__NAME:
+				setName((String)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -125,9 +124,9 @@ public abstract class NamedElementImpl extends ExtendableElementImpl implements
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case CorePackage.NAMED_ELEMENT__NAME:
-			setName(NAME_EDEFAULT);
-			return;
+			case CorePackage.NAMED_ELEMENT__NAME:
+				setName(NAME_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -140,9 +139,8 @@ public abstract class NamedElementImpl extends ExtendableElementImpl implements
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case CorePackage.NAMED_ELEMENT__NAME:
-			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT
-					.equals(name);
+			case CorePackage.NAMED_ELEMENT__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -154,8 +152,7 @@ public abstract class NamedElementImpl extends ExtendableElementImpl implements
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy())
-			return super.toString();
+		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");

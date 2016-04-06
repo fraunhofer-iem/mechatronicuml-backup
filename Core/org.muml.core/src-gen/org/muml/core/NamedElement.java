@@ -17,10 +17,10 @@ package org.muml.core;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.core.NamedElement#getName <em>Name</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.core.CorePackage#getNamedElement()
  * @model abstract="true"

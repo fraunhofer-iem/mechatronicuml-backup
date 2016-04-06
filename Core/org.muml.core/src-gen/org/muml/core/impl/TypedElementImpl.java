@@ -24,11 +24,11 @@ import org.muml.core.TypedElement;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.core.impl.TypedElementImpl#getType <em>Type</em>}</li>
  *   <li>{@link org.muml.core.impl.TypedElementImpl#getGenericType <em>Generic Type</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -79,8 +79,7 @@ public abstract class TypedElementImpl extends ExtendableElementImpl implements
 	 */
 	public EClassifier getType() {
 		EClassifier type = basicGetType();
-		return type != null && type.eIsProxy() ? (EClassifier) eResolveProxy((InternalEObject) type)
-				: type;
+		return type != null && type.eIsProxy() ? (EClassifier)eResolveProxy((InternalEObject)type) : type;
 	}
 
 	/**
@@ -89,7 +88,10 @@ public abstract class TypedElementImpl extends ExtendableElementImpl implements
 	 * @generated
 	 */
 	public EClassifier basicGetType() {
-		return null;
+		// TODO: implement this method to return the 'Type' reference
+		// -> do not perform proxy resolution
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -98,38 +100,6 @@ public abstract class TypedElementImpl extends ExtendableElementImpl implements
 	 * @generated
 	 */
 	public EGenericType getGenericType() {
-		if (genericType != null && genericType.eIsProxy()) {
-			InternalEObject oldGenericType = (InternalEObject) genericType;
-			genericType = (EGenericType) eResolveProxy(oldGenericType);
-			if (genericType != oldGenericType) {
-				InternalEObject newGenericType = (InternalEObject) genericType;
-				NotificationChain msgs = oldGenericType.eInverseRemove(this,
-						EOPPOSITE_FEATURE_BASE
-								- CorePackage.TYPED_ELEMENT__GENERIC_TYPE,
-						null, null);
-				if (newGenericType.eInternalContainer() == null) {
-					msgs = newGenericType.eInverseAdd(this,
-							EOPPOSITE_FEATURE_BASE
-									- CorePackage.TYPED_ELEMENT__GENERIC_TYPE,
-							null, msgs);
-				}
-				if (msgs != null)
-					msgs.dispatch();
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							CorePackage.TYPED_ELEMENT__GENERIC_TYPE,
-							oldGenericType, genericType));
-			}
-		}
-		return genericType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EGenericType basicGetGenericType() {
 		return genericType;
 	}
 
@@ -215,8 +185,8 @@ public abstract class TypedElementImpl extends ExtendableElementImpl implements
 	public NotificationChain eInverseRemove(InternalEObject otherEnd,
 			int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case CorePackage.TYPED_ELEMENT__GENERIC_TYPE:
-			return basicUnsetGenericType(msgs);
+			case CorePackage.TYPED_ELEMENT__GENERIC_TYPE:
+				return basicUnsetGenericType(msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -229,14 +199,11 @@ public abstract class TypedElementImpl extends ExtendableElementImpl implements
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case CorePackage.TYPED_ELEMENT__TYPE:
-			if (resolve)
-				return getType();
-			return basicGetType();
-		case CorePackage.TYPED_ELEMENT__GENERIC_TYPE:
-			if (resolve)
+			case CorePackage.TYPED_ELEMENT__TYPE:
+				if (resolve) return getType();
+				return basicGetType();
+			case CorePackage.TYPED_ELEMENT__GENERIC_TYPE:
 				return getGenericType();
-			return basicGetGenericType();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -249,9 +216,9 @@ public abstract class TypedElementImpl extends ExtendableElementImpl implements
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case CorePackage.TYPED_ELEMENT__GENERIC_TYPE:
-			setGenericType((EGenericType) newValue);
-			return;
+			case CorePackage.TYPED_ELEMENT__GENERIC_TYPE:
+				setGenericType((EGenericType)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -264,9 +231,9 @@ public abstract class TypedElementImpl extends ExtendableElementImpl implements
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case CorePackage.TYPED_ELEMENT__GENERIC_TYPE:
-			unsetGenericType();
-			return;
+			case CorePackage.TYPED_ELEMENT__GENERIC_TYPE:
+				unsetGenericType();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -279,21 +246,12 @@ public abstract class TypedElementImpl extends ExtendableElementImpl implements
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case CorePackage.TYPED_ELEMENT__TYPE:
-			return isSetType();
-		case CorePackage.TYPED_ELEMENT__GENERIC_TYPE:
-			return isSetGenericType();
+			case CorePackage.TYPED_ELEMENT__TYPE:
+				return basicGetType() != null;
+			case CorePackage.TYPED_ELEMENT__GENERIC_TYPE:
+				return isSetGenericType();
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean isSetType() {
-		return false;
 	}
 
 	/**

@@ -21,13 +21,13 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.core.Extension#getBase <em>Base</em>}</li>
  *   <li>{@link org.muml.core.Extension#getModelBase <em>Model Base</em>}</li>
  *   <li>{@link org.muml.core.Extension#getOwningAnnotation <em>Owning Annotation</em>}</li>
  *   <li>{@link org.muml.core.Extension#getExtendableBase <em>Extendable Base</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.core.CorePackage#getExtension()
  * @model abstract="true"
@@ -41,13 +41,15 @@ public interface Extension extends ExtendableElement {
 
 	/**
 	 * Returns the value of the '<em><b>Base</b></em>' reference.
-	 * This feature is a derived union.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Base</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The model element that embeds the owning annotation, or null.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Base</em>' reference.
 	 * @see org.muml.core.CorePackage#getExtension_Base()
 	 * @model required="true" transient="true" changeable="false" volatile="true" derived="true" ordered="false"
@@ -57,18 +59,15 @@ public interface Extension extends ExtendableElement {
 
 	/**
 	 * Returns the value of the '<em><b>Model Base</b></em>' reference.
-	 * <p>
-	 * This feature subsets the following features:
-	 * <ul>
-	 *   <li>'{@link org.muml.core.Extension#getBase() <em>Base</em>}'</li>
-	 * </ul>
-	 * </p>
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Model Base</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The model element that embeds the owning annotation, or null.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Model Base</em>' reference.
 	 * @see #isSetModelBase()
 	 * @see #unsetModelBase()
@@ -122,6 +121,9 @@ public interface Extension extends ExtendableElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The annotation with source "http://www.storydriven.org/core/extension" that embeds this extension, or null.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Owning Annotation</em>' reference.
 	 * @see #isSetOwningAnnotation()
 	 * @see #unsetOwningAnnotation()
@@ -169,23 +171,20 @@ public interface Extension extends ExtendableElement {
 
 	/**
 	 * Returns the value of the '<em><b>Extendable Base</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link org.muml.core.ExtendableElement#getExtensions <em>Extension</em>}'.
-	 * <p>
-	 * This feature subsets the following features:
-	 * <ul>
-	 *   <li>'{@link org.muml.core.Extension#getBase() <em>Base</em>}'</li>
-	 * </ul>
-	 * </p>
+	 * It is bidirectional and its opposite is '{@link org.muml.core.ExtendableElement#getExtension <em>Extension</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Extendable Base</em>' container reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The extendable element that is extended by this extension.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Extendable Base</em>' container reference.
 	 * @see #setExtendableBase(ExtendableElement)
 	 * @see org.muml.core.CorePackage#getExtension_ExtendableBase()
-	 * @see org.muml.core.ExtendableElement#getExtensions
+	 * @see org.muml.core.ExtendableElement#getExtension
 	 * @model opposite="extension" transient="false" ordered="false"
 	 * @generated
 	 */

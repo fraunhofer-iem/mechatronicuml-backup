@@ -17,10 +17,10 @@ import org.muml.core.Repository;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.core.impl.RepositoryImpl#getComment <em>Comment</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -83,8 +83,7 @@ public abstract class RepositoryImpl extends NamedElementImpl implements
 		String oldComment = comment;
 		comment = newComment;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					CorePackage.REPOSITORY__COMMENT, oldComment, comment));
+			eNotify(new ENotificationImpl(this, Notification.SET, CorePackage.REPOSITORY__COMMENT, oldComment, comment));
 	}
 
 	/**
@@ -95,8 +94,8 @@ public abstract class RepositoryImpl extends NamedElementImpl implements
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case CorePackage.REPOSITORY__COMMENT:
-			return getComment();
+			case CorePackage.REPOSITORY__COMMENT:
+				return getComment();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -109,9 +108,9 @@ public abstract class RepositoryImpl extends NamedElementImpl implements
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case CorePackage.REPOSITORY__COMMENT:
-			setComment((String) newValue);
-			return;
+			case CorePackage.REPOSITORY__COMMENT:
+				setComment((String)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -124,9 +123,9 @@ public abstract class RepositoryImpl extends NamedElementImpl implements
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case CorePackage.REPOSITORY__COMMENT:
-			setComment(COMMENT_EDEFAULT);
-			return;
+			case CorePackage.REPOSITORY__COMMENT:
+				setComment(COMMENT_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -139,9 +138,8 @@ public abstract class RepositoryImpl extends NamedElementImpl implements
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case CorePackage.REPOSITORY__COMMENT:
-			return COMMENT_EDEFAULT == null ? comment != null
-					: !COMMENT_EDEFAULT.equals(comment);
+			case CorePackage.REPOSITORY__COMMENT:
+				return COMMENT_EDEFAULT == null ? comment != null : !COMMENT_EDEFAULT.equals(comment);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -155,10 +153,8 @@ public abstract class RepositoryImpl extends NamedElementImpl implements
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == CommentableElement.class) {
 			switch (derivedFeatureID) {
-			case CorePackage.REPOSITORY__COMMENT:
-				return CorePackage.COMMENTABLE_ELEMENT__COMMENT;
-			default:
-				return -1;
+				case CorePackage.REPOSITORY__COMMENT: return CorePackage.COMMENTABLE_ELEMENT__COMMENT;
+				default: return -1;
 			}
 		}
 		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
@@ -173,10 +169,8 @@ public abstract class RepositoryImpl extends NamedElementImpl implements
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
 		if (baseClass == CommentableElement.class) {
 			switch (baseFeatureID) {
-			case CorePackage.COMMENTABLE_ELEMENT__COMMENT:
-				return CorePackage.REPOSITORY__COMMENT;
-			default:
-				return -1;
+				case CorePackage.COMMENTABLE_ELEMENT__COMMENT: return CorePackage.REPOSITORY__COMMENT;
+				default: return -1;
 			}
 		}
 		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
@@ -189,8 +183,7 @@ public abstract class RepositoryImpl extends NamedElementImpl implements
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy())
-			return super.toString();
+		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (comment: ");

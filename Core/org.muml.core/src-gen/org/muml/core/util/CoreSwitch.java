@@ -49,7 +49,7 @@ public class CoreSwitch<T> extends Switch<T> {
 	 * Checks whether this is a switch for the given package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @parameter ePackage the package in question.
+	 * @param ePackage the package in question.
 	 * @return whether this is a switch for the given package.
 	 * @generated
 	 */
@@ -68,64 +68,50 @@ public class CoreSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-		case CorePackage.COMMENTABLE_ELEMENT: {
-			CommentableElement commentableElement = (CommentableElement) theEObject;
-			T result = caseCommentableElement(commentableElement);
-			if (result == null)
-				result = caseExtendableElement(commentableElement);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case CorePackage.EXTENDABLE_ELEMENT: {
-			ExtendableElement extendableElement = (ExtendableElement) theEObject;
-			T result = caseExtendableElement(extendableElement);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case CorePackage.EXTENSION: {
-			Extension extension = (Extension) theEObject;
-			T result = caseExtension(extension);
-			if (result == null)
-				result = caseExtendableElement(extension);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case CorePackage.NAMED_ELEMENT: {
-			NamedElement namedElement = (NamedElement) theEObject;
-			T result = caseNamedElement(namedElement);
-			if (result == null)
-				result = caseExtendableElement(namedElement);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case CorePackage.TYPED_ELEMENT: {
-			TypedElement typedElement = (TypedElement) theEObject;
-			T result = caseTypedElement(typedElement);
-			if (result == null)
-				result = caseExtendableElement(typedElement);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case CorePackage.REPOSITORY: {
-			Repository repository = (Repository) theEObject;
-			T result = caseRepository(repository);
-			if (result == null)
-				result = caseNamedElement(repository);
-			if (result == null)
-				result = caseCommentableElement(repository);
-			if (result == null)
-				result = caseExtendableElement(repository);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		default:
-			return defaultCase(theEObject);
+			case CorePackage.COMMENTABLE_ELEMENT: {
+				CommentableElement commentableElement = (CommentableElement)theEObject;
+				T result = caseCommentableElement(commentableElement);
+				if (result == null) result = caseExtendableElement(commentableElement);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CorePackage.EXTENDABLE_ELEMENT: {
+				ExtendableElement extendableElement = (ExtendableElement)theEObject;
+				T result = caseExtendableElement(extendableElement);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CorePackage.EXTENSION: {
+				Extension extension = (Extension)theEObject;
+				T result = caseExtension(extension);
+				if (result == null) result = caseExtendableElement(extension);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CorePackage.NAMED_ELEMENT: {
+				NamedElement namedElement = (NamedElement)theEObject;
+				T result = caseNamedElement(namedElement);
+				if (result == null) result = caseExtendableElement(namedElement);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CorePackage.TYPED_ELEMENT: {
+				TypedElement typedElement = (TypedElement)theEObject;
+				T result = caseTypedElement(typedElement);
+				if (result == null) result = caseExtendableElement(typedElement);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CorePackage.REPOSITORY: {
+				Repository repository = (Repository)theEObject;
+				T result = caseRepository(repository);
+				if (result == null) result = caseNamedElement(repository);
+				if (result == null) result = caseCommentableElement(repository);
+				if (result == null) result = caseExtendableElement(repository);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			default: return defaultCase(theEObject);
 		}
 	}
 

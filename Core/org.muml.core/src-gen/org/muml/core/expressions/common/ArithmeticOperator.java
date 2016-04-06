@@ -20,7 +20,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * <!-- begin-model-doc -->
  * Defines the operators for arithmetic expressions.
  * <!-- end-model-doc -->
- * @see org.muml.core.expressions.common.CommonExpressionsPackage#getArithmeticOperator()
+ * @see org.muml.core.expressions.common.CommonPackage#getArithmeticOperator()
  * @model
  * @generated
  */
@@ -157,7 +157,12 @@ public enum ArithmeticOperator implements Enumerator {
 	 * @generated
 	 */
 	private static final ArithmeticOperator[] VALUES_ARRAY = new ArithmeticOperator[] {
-			PLUS, MINUS, TIMES, DIVIDE, MODULO, };
+			PLUS,
+			MINUS,
+			TIMES,
+			DIVIDE,
+			MODULO,
+		};
 
 	/**
 	 * A public read-only list of all the '<em><b>Arithmetic Operator</b></em>' enumerators.
@@ -165,13 +170,14 @@ public enum ArithmeticOperator implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final List<ArithmeticOperator> VALUES = Collections
-			.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+	public static final List<ArithmeticOperator> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
 	/**
 	 * Returns the '<em><b>Arithmetic Operator</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @param literal the literal.
+	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static ArithmeticOperator get(String literal) {
@@ -188,6 +194,8 @@ public enum ArithmeticOperator implements Enumerator {
 	 * Returns the '<em><b>Arithmetic Operator</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @param name the name.
+	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static ArithmeticOperator getByName(String name) {
@@ -204,20 +212,17 @@ public enum ArithmeticOperator implements Enumerator {
 	 * Returns the '<em><b>Arithmetic Operator</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @param value the integer value.
+	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static ArithmeticOperator get(int value) {
 		switch (value) {
-		case PLUS_VALUE:
-			return PLUS;
-		case MINUS_VALUE:
-			return MINUS;
-		case TIMES_VALUE:
-			return TIMES;
-		case DIVIDE_VALUE:
-			return DIVIDE;
-		case MODULO_VALUE:
-			return MODULO;
+			case PLUS_VALUE: return PLUS;
+			case MINUS_VALUE: return MINUS;
+			case TIMES_VALUE: return TIMES;
+			case DIVIDE_VALUE: return DIVIDE;
+			case MODULO_VALUE: return MODULO;
 		}
 		return null;
 	}
@@ -261,7 +266,7 @@ public enum ArithmeticOperator implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-		return value;
+	  return value;
 	}
 
 	/**
@@ -270,7 +275,7 @@ public enum ArithmeticOperator implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-		return name;
+	  return name;
 	}
 
 	/**
@@ -279,7 +284,7 @@ public enum ArithmeticOperator implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-		return literal;
+	  return literal;
 	}
 
 	/**

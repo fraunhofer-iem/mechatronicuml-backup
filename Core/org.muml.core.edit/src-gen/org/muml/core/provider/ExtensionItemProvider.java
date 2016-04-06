@@ -12,12 +12,7 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.muml.core.CorePackage;
 
 /**
@@ -26,9 +21,7 @@ import org.muml.core.CorePackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ExtensionItemProvider extends ExtendableElementItemProvider
-		implements IEditingDomainItemProvider, IStructuredItemContentProvider,
-		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class ExtensionItemProvider extends ExtendableElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -64,15 +57,19 @@ public class ExtensionItemProvider extends ExtendableElementItemProvider
 	 * @generated
 	 */
 	protected void addBasePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_Extension_base_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_Extension_base_feature", "_UI_Extension_type"),
-				CorePackage.Literals.EXTENSION__BASE, false, false, false,
-				null, null, null));
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Extension_base_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Extension_base_feature", "_UI_Extension_type"),
+				 CorePackage.Literals.EXTENSION__BASE,
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
@@ -82,17 +79,19 @@ public class ExtensionItemProvider extends ExtendableElementItemProvider
 	 * @generated
 	 */
 	protected void addModelBasePropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(
-						((ComposeableAdapterFactory) adapterFactory)
-								.getRootAdapterFactory(),
-						getResourceLocator(),
-						getString("_UI_Extension_modelBase_feature"),
-						getString("_UI_PropertyDescriptor_description",
-								"_UI_Extension_modelBase_feature",
-								"_UI_Extension_type"),
-						CorePackage.Literals.EXTENSION__MODEL_BASE, true,
-						false, true, null, null, null));
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Extension_modelBase_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Extension_modelBase_feature", "_UI_Extension_type"),
+				 CorePackage.Literals.EXTENSION__MODEL_BASE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
@@ -102,26 +101,19 @@ public class ExtensionItemProvider extends ExtendableElementItemProvider
 	 * @generated
 	 */
 	protected void addOwningAnnotationPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_Extension_owningAnnotation_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_Extension_owningAnnotation_feature",
-						"_UI_Extension_type"),
-				CorePackage.Literals.EXTENSION__OWNING_ANNOTATION, true, false,
-				true, null, null, null));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected boolean shouldComposeCreationImage() {
-		return true;
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Extension_owningAnnotation_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Extension_owningAnnotation_feature", "_UI_Extension_type"),
+				 CorePackage.Literals.EXTENSION__OWNING_ANNOTATION,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**

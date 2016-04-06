@@ -29,35 +29,35 @@ import org.muml.core.util.ExtendableElementOperations;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * <ul>
- *   <li>{@link org.muml.core.impl.ExtendableElementImpl#getAnnotations <em>Annotation</em>}</li>
- *   <li>{@link org.muml.core.impl.ExtendableElementImpl#getExtensions <em>Extension</em>}</li>
- * </ul>
  * </p>
+ * <ul>
+ *   <li>{@link org.muml.core.impl.ExtendableElementImpl#getAnnotation <em>Annotation</em>}</li>
+ *   <li>{@link org.muml.core.impl.ExtendableElementImpl#getExtension <em>Extension</em>}</li>
+ * </ul>
  *
  * @generated
  */
 public abstract class ExtendableElementImpl extends EObjectImpl implements
 		ExtendableElement {
 	/**
-	 * The cached value of the '{@link #getAnnotations() <em>Annotation</em>}' containment reference list.
+	 * The cached value of the '{@link #getAnnotation() <em>Annotation</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAnnotations()
+	 * @see #getAnnotation()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<EAnnotation> annotations;
+	protected EList<EAnnotation> annotation;
 
 	/**
-	 * The cached value of the '{@link #getExtensions() <em>Extension</em>}' containment reference list.
+	 * The cached value of the '{@link #getExtension() <em>Extension</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getExtensions()
+	 * @see #getExtension()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Extension> extensions;
+	protected EList<Extension> extension;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -83,13 +83,11 @@ public abstract class ExtendableElementImpl extends EObjectImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<EAnnotation> getAnnotations() {
-		if (annotations == null) {
-			annotations = new EObjectContainmentEList.Resolving<EAnnotation>(
-					EAnnotation.class, this,
-					CorePackage.EXTENDABLE_ELEMENT__ANNOTATION);
+	public EList<EAnnotation> getAnnotation() {
+		if (annotation == null) {
+			annotation = new EObjectContainmentEList<EAnnotation>(EAnnotation.class, this, CorePackage.EXTENDABLE_ELEMENT__ANNOTATION);
 		}
-		return annotations;
+		return annotation;
 	}
 
 	/**
@@ -97,14 +95,11 @@ public abstract class ExtendableElementImpl extends EObjectImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Extension> getExtensions() {
-		if (extensions == null) {
-			extensions = new EObjectContainmentWithInverseEList.Resolving<Extension>(
-					Extension.class, this,
-					CorePackage.EXTENDABLE_ELEMENT__EXTENSION,
-					CorePackage.EXTENSION__EXTENDABLE_BASE);
+	public EList<Extension> getExtension() {
+		if (extension == null) {
+			extension = new EObjectContainmentWithInverseEList<Extension>(Extension.class, this, CorePackage.EXTENDABLE_ELEMENT__EXTENSION, CorePackage.EXTENSION__EXTENDABLE_BASE);
 		}
-		return extensions;
+		return extension;
 	}
 
 	/**
@@ -153,9 +148,8 @@ public abstract class ExtendableElementImpl extends EObjectImpl implements
 	public NotificationChain eInverseAdd(InternalEObject otherEnd,
 			int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case CorePackage.EXTENDABLE_ELEMENT__EXTENSION:
-			return ((InternalEList<InternalEObject>) (InternalEList<?>) getExtensions())
-					.basicAdd(otherEnd, msgs);
+			case CorePackage.EXTENDABLE_ELEMENT__EXTENSION:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getExtension()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -169,12 +163,10 @@ public abstract class ExtendableElementImpl extends EObjectImpl implements
 	public NotificationChain eInverseRemove(InternalEObject otherEnd,
 			int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case CorePackage.EXTENDABLE_ELEMENT__ANNOTATION:
-			return ((InternalEList<?>) getAnnotations()).basicRemove(otherEnd,
-					msgs);
-		case CorePackage.EXTENDABLE_ELEMENT__EXTENSION:
-			return ((InternalEList<?>) getExtensions()).basicRemove(otherEnd,
-					msgs);
+			case CorePackage.EXTENDABLE_ELEMENT__ANNOTATION:
+				return ((InternalEList<?>)getAnnotation()).basicRemove(otherEnd, msgs);
+			case CorePackage.EXTENDABLE_ELEMENT__EXTENSION:
+				return ((InternalEList<?>)getExtension()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -187,10 +179,10 @@ public abstract class ExtendableElementImpl extends EObjectImpl implements
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case CorePackage.EXTENDABLE_ELEMENT__ANNOTATION:
-			return getAnnotations();
-		case CorePackage.EXTENDABLE_ELEMENT__EXTENSION:
-			return getExtensions();
+			case CorePackage.EXTENDABLE_ELEMENT__ANNOTATION:
+				return getAnnotation();
+			case CorePackage.EXTENDABLE_ELEMENT__EXTENSION:
+				return getExtension();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -204,15 +196,14 @@ public abstract class ExtendableElementImpl extends EObjectImpl implements
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case CorePackage.EXTENDABLE_ELEMENT__ANNOTATION:
-			getAnnotations().clear();
-			getAnnotations().addAll(
-					(Collection<? extends EAnnotation>) newValue);
-			return;
-		case CorePackage.EXTENDABLE_ELEMENT__EXTENSION:
-			getExtensions().clear();
-			getExtensions().addAll((Collection<? extends Extension>) newValue);
-			return;
+			case CorePackage.EXTENDABLE_ELEMENT__ANNOTATION:
+				getAnnotation().clear();
+				getAnnotation().addAll((Collection<? extends EAnnotation>)newValue);
+				return;
+			case CorePackage.EXTENDABLE_ELEMENT__EXTENSION:
+				getExtension().clear();
+				getExtension().addAll((Collection<? extends Extension>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -225,12 +216,12 @@ public abstract class ExtendableElementImpl extends EObjectImpl implements
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case CorePackage.EXTENDABLE_ELEMENT__ANNOTATION:
-			getAnnotations().clear();
-			return;
-		case CorePackage.EXTENDABLE_ELEMENT__EXTENSION:
-			getExtensions().clear();
-			return;
+			case CorePackage.EXTENDABLE_ELEMENT__ANNOTATION:
+				getAnnotation().clear();
+				return;
+			case CorePackage.EXTENDABLE_ELEMENT__EXTENSION:
+				getExtension().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -243,10 +234,10 @@ public abstract class ExtendableElementImpl extends EObjectImpl implements
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case CorePackage.EXTENDABLE_ELEMENT__ANNOTATION:
-			return annotations != null && !annotations.isEmpty();
-		case CorePackage.EXTENDABLE_ELEMENT__EXTENSION:
-			return extensions != null && !extensions.isEmpty();
+			case CorePackage.EXTENDABLE_ELEMENT__ANNOTATION:
+				return annotation != null && !annotation.isEmpty();
+			case CorePackage.EXTENDABLE_ELEMENT__EXTENSION:
+				return extension != null && !extension.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -260,14 +251,14 @@ public abstract class ExtendableElementImpl extends EObjectImpl implements
 	public Object eInvoke(int operationID, EList<?> arguments)
 			throws InvocationTargetException {
 		switch (operationID) {
-		case CorePackage.EXTENDABLE_ELEMENT___GET_EXTENSION__ECLASS:
-			return getExtension((EClass) arguments.get(0));
-		case CorePackage.EXTENDABLE_ELEMENT___PROVIDE_EXTENSION__ECLASS:
-			return provideExtension((EClass) arguments.get(0));
-		case CorePackage.EXTENDABLE_ELEMENT___GET_ANNOTATION__STRING:
-			return getAnnotation((String) arguments.get(0));
-		case CorePackage.EXTENDABLE_ELEMENT___PROVIDE_ANNOTATION__STRING:
-			return provideAnnotation((String) arguments.get(0));
+			case CorePackage.EXTENDABLE_ELEMENT___GET_EXTENSION__ECLASS:
+				return getExtension((EClass)arguments.get(0));
+			case CorePackage.EXTENDABLE_ELEMENT___PROVIDE_EXTENSION__ECLASS:
+				return provideExtension((EClass)arguments.get(0));
+			case CorePackage.EXTENDABLE_ELEMENT___GET_ANNOTATION__STRING:
+				return getAnnotation((String)arguments.get(0));
+			case CorePackage.EXTENDABLE_ELEMENT___PROVIDE_ANNOTATION__STRING:
+				return provideAnnotation((String)arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

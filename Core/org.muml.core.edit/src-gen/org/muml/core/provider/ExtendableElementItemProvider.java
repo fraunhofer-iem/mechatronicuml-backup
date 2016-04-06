@@ -13,14 +13,8 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.ecore.EcoreFactory;
-import org.eclipse.emf.ecore.provider.EObjectItemProvider;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.muml.core.CorePackage;
 import org.muml.core.ExtendableElement;
@@ -31,9 +25,7 @@ import org.muml.core.ExtendableElement;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ExtendableElementItemProvider extends EObjectItemProvider
-		implements IEditingDomainItemProvider, IStructuredItemContentProvider,
-		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class ExtendableElementItemProvider extends ItemProviderAdapter {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -72,10 +64,8 @@ public class ExtendableElementItemProvider extends EObjectItemProvider
 			Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures
-					.add(CorePackage.Literals.EXTENDABLE_ELEMENT__ANNOTATION);
-			childrenFeatures
-					.add(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION);
+			childrenFeatures.add(CorePackage.Literals.EXTENDABLE_ELEMENT__ANNOTATION);
+			childrenFeatures.add(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION);
 		}
 		return childrenFeatures;
 	}
@@ -91,16 +81,6 @@ public class ExtendableElementItemProvider extends EObjectItemProvider
 		// adding (see {@link AddCommand}) it as a child.
 
 		return super.getChildFeature(object, child);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected boolean shouldComposeCreationImage() {
-		return true;
 	}
 
 	/**
@@ -126,11 +106,10 @@ public class ExtendableElementItemProvider extends EObjectItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ExtendableElement.class)) {
-		case CorePackage.EXTENDABLE_ELEMENT__ANNOTATION:
-		case CorePackage.EXTENDABLE_ELEMENT__EXTENSION:
-			fireNotifyChanged(new ViewerNotification(notification,
-					notification.getNotifier(), true, false));
-			return;
+			case CorePackage.EXTENDABLE_ELEMENT__ANNOTATION:
+			case CorePackage.EXTENDABLE_ELEMENT__EXTENSION:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+				return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -146,10 +125,6 @@ public class ExtendableElementItemProvider extends EObjectItemProvider
 	protected void collectNewChildDescriptors(
 			Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add(createChildParameter(
-				CorePackage.Literals.EXTENDABLE_ELEMENT__ANNOTATION,
-				EcoreFactory.eINSTANCE.createEAnnotation()));
 	}
 
 	/**

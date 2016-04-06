@@ -20,11 +20,11 @@ import org.eclipse.emf.ecore.EGenericType;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.core.TypedElement#getType <em>Type</em>}</li>
  *   <li>{@link org.muml.core.TypedElement#getGenericType <em>Generic Type</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.core.CorePackage#getTypedElement()
  * @model abstract="true"
@@ -33,13 +33,15 @@ import org.eclipse.emf.ecore.EGenericType;
 public interface TypedElement extends ExtendableElement {
 	/**
 	 * Returns the value of the '<em><b>Type</b></em>' reference.
-	 * This feature is a derived union.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Type</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Not used currently - returns always null.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Type</em>' reference.
 	 * @see org.muml.core.CorePackage#getTypedElement_Type()
 	 * @model transient="true" changeable="false" volatile="true" derived="true" ordered="false"
@@ -55,12 +57,15 @@ public interface TypedElement extends ExtendableElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The EMF EGenericType that is used to type this typed element.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Generic Type</em>' containment reference.
 	 * @see #isSetGenericType()
 	 * @see #unsetGenericType()
 	 * @see #setGenericType(EGenericType)
 	 * @see org.muml.core.CorePackage#getTypedElement_GenericType()
-	 * @model containment="true" resolveProxies="true" unsettable="true" ordered="false"
+	 * @model containment="true" unsettable="true" ordered="false"
 	 * @generated
 	 */
 	EGenericType getGenericType();

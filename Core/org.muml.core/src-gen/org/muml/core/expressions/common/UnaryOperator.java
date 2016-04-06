@@ -17,7 +17,10 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>Unary Operator</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
- * @see org.muml.core.expressions.common.CommonExpressionsPackage#getUnaryOperator()
+ * <!-- begin-model-doc -->
+ * The operator type used to specify unary logic expressions.
+ * <!-- end-model-doc -->
+ * @see org.muml.core.expressions.common.CommonPackage#getUnaryOperator()
  * @model
  * @generated
  */
@@ -41,21 +44,21 @@ public enum UnaryOperator implements Enumerator {
 	 * @ordered
 	 */
 	MINUS(2, "MINUS", "MINUS"), /**
-								 * The '<em><b>INCREMENT</b></em>' literal object.
-								 * <!-- begin-user-doc -->
+	 * The '<em><b>INCREMENT</b></em>' literal object.
+	 * <!-- begin-user-doc -->
 								 * <!-- end-user-doc -->
-								 * @see #INCREMENT_VALUE
-								 * @generated
-								 * @ordered
-								 */
+	 * @see #INCREMENT_VALUE
+	 * @generated
+	 * @ordered
+	 */
 	INCREMENT(3, "INCREMENT", "INCREMENT"), /**
-											 * The '<em><b>DECREMENT</b></em>' literal object.
-											 * <!-- begin-user-doc -->
+	 * The '<em><b>DECREMENT</b></em>' literal object.
+	 * <!-- begin-user-doc -->
 											 * <!-- end-user-doc -->
-											 * @see #DECREMENT_VALUE
-											 * @generated
-											 * @ordered
-											 */
+	 * @see #DECREMENT_VALUE
+	 * @generated
+	 * @ordered
+	 */
 	DECREMENT(4, "DECREMENT", "DECREMENT");
 
 	/**
@@ -125,7 +128,11 @@ public enum UnaryOperator implements Enumerator {
 	 * @generated
 	 */
 	private static final UnaryOperator[] VALUES_ARRAY = new UnaryOperator[] {
-			NOT, MINUS, INCREMENT, DECREMENT, };
+			NOT,
+			MINUS,
+			INCREMENT,
+			DECREMENT,
+		};
 
 	/**
 	 * A public read-only list of all the '<em><b>Unary Operator</b></em>' enumerators.
@@ -133,13 +140,14 @@ public enum UnaryOperator implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final List<UnaryOperator> VALUES = Collections
-			.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+	public static final List<UnaryOperator> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
 	/**
 	 * Returns the '<em><b>Unary Operator</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @param literal the literal.
+	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static UnaryOperator get(String literal) {
@@ -156,6 +164,8 @@ public enum UnaryOperator implements Enumerator {
 	 * Returns the '<em><b>Unary Operator</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @param name the name.
+	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static UnaryOperator getByName(String name) {
@@ -172,18 +182,16 @@ public enum UnaryOperator implements Enumerator {
 	 * Returns the '<em><b>Unary Operator</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @param value the integer value.
+	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static UnaryOperator get(int value) {
 		switch (value) {
-		case NOT_VALUE:
-			return NOT;
-		case MINUS_VALUE:
-			return MINUS;
-		case INCREMENT_VALUE:
-			return INCREMENT;
-		case DECREMENT_VALUE:
-			return DECREMENT;
+			case NOT_VALUE: return NOT;
+			case MINUS_VALUE: return MINUS;
+			case INCREMENT_VALUE: return INCREMENT;
+			case DECREMENT_VALUE: return DECREMENT;
 		}
 		return null;
 	}
@@ -227,7 +235,7 @@ public enum UnaryOperator implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-		return value;
+	  return value;
 	}
 
 	/**
@@ -236,7 +244,7 @@ public enum UnaryOperator implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-		return name;
+	  return name;
 	}
 
 	/**
@@ -245,7 +253,7 @@ public enum UnaryOperator implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-		return literal;
+	  return literal;
 	}
 
 	/**

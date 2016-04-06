@@ -26,13 +26,13 @@ import org.muml.core.util.ExtensionOperations;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.core.impl.ExtensionImpl#getBase <em>Base</em>}</li>
  *   <li>{@link org.muml.core.impl.ExtensionImpl#getModelBase <em>Model Base</em>}</li>
  *   <li>{@link org.muml.core.impl.ExtensionImpl#getOwningAnnotation <em>Owning Annotation</em>}</li>
  *   <li>{@link org.muml.core.impl.ExtensionImpl#getExtendableBase <em>Extendable Base</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -64,8 +64,7 @@ public abstract class ExtensionImpl extends ExtendableElementImpl implements
 	 */
 	public EObject getBase() {
 		EObject base = basicGetBase();
-		return base != null && base.eIsProxy() ? eResolveProxy((InternalEObject) base)
-				: base;
+		return base != null && base.eIsProxy() ? eResolveProxy((InternalEObject)base) : base;
 	}
 
 	/**
@@ -74,14 +73,10 @@ public abstract class ExtensionImpl extends ExtendableElementImpl implements
 	 * @generated
 	 */
 	public EObject basicGetBase() {
-		if (isSetModelBase()) {
-			return basicGetModelBase();
-		}
-		ExtendableElement extendableBase = basicGetExtendableBase();
-		if (extendableBase != null) {
-			return extendableBase;
-		}
-		return null;
+		// TODO: implement this method to return the 'Base' reference
+		// -> do not perform proxy resolution
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -91,8 +86,7 @@ public abstract class ExtensionImpl extends ExtendableElementImpl implements
 	 */
 	public EModelElement getModelBase() {
 		EModelElement modelBase = basicGetModelBase();
-		return modelBase != null && modelBase.eIsProxy() ? (EModelElement) eResolveProxy((InternalEObject) modelBase)
-				: modelBase;
+		return modelBase != null && modelBase.eIsProxy() ? (EModelElement)eResolveProxy((InternalEObject)modelBase) : modelBase;
 	}
 
 	/**
@@ -138,8 +132,7 @@ public abstract class ExtensionImpl extends ExtendableElementImpl implements
 	 */
 	public EAnnotation getOwningAnnotation() {
 		EAnnotation owningAnnotation = basicGetOwningAnnotation();
-		return owningAnnotation != null && owningAnnotation.eIsProxy() ? (EAnnotation) eResolveProxy((InternalEObject) owningAnnotation)
-				: owningAnnotation;
+		return owningAnnotation != null && owningAnnotation.eIsProxy() ? (EAnnotation)eResolveProxy((InternalEObject)owningAnnotation) : owningAnnotation;
 	}
 
 	/**
@@ -184,20 +177,8 @@ public abstract class ExtensionImpl extends ExtendableElementImpl implements
 	 * @generated
 	 */
 	public ExtendableElement getExtendableBase() {
-		if (eContainerFeatureID() != CorePackage.EXTENSION__EXTENDABLE_BASE)
-			return null;
-		return (ExtendableElement) eContainer();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ExtendableElement basicGetExtendableBase() {
-		if (eContainerFeatureID() != CorePackage.EXTENSION__EXTENDABLE_BASE)
-			return null;
-		return (ExtendableElement) eInternalContainer();
+		if (eContainerFeatureID() != CorePackage.EXTENSION__EXTENDABLE_BASE) return null;
+		return (ExtendableElement)eInternalContainer();
 	}
 
 	/**
@@ -207,8 +188,7 @@ public abstract class ExtensionImpl extends ExtendableElementImpl implements
 	 */
 	public NotificationChain basicSetExtendableBase(
 			ExtendableElement newExtendableBase, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject) newExtendableBase,
-				CorePackage.EXTENSION__EXTENDABLE_BASE, msgs);
+		msgs = eBasicSetContainer((InternalEObject)newExtendableBase, CorePackage.EXTENSION__EXTENDABLE_BASE, msgs);
 		return msgs;
 	}
 
@@ -218,25 +198,19 @@ public abstract class ExtensionImpl extends ExtendableElementImpl implements
 	 * @generated
 	 */
 	public void setExtendableBase(ExtendableElement newExtendableBase) {
-		if (newExtendableBase != eInternalContainer()
-				|| (eContainerFeatureID() != CorePackage.EXTENSION__EXTENDABLE_BASE && newExtendableBase != null)) {
+		if (newExtendableBase != eInternalContainer() || (eContainerFeatureID() != CorePackage.EXTENSION__EXTENDABLE_BASE && newExtendableBase != null)) {
 			if (EcoreUtil.isAncestor(this, newExtendableBase))
-				throw new IllegalArgumentException(
-						"Recursive containment not allowed for " + toString());
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newExtendableBase != null)
-				msgs = ((InternalEObject) newExtendableBase).eInverseAdd(this,
-						CorePackage.EXTENDABLE_ELEMENT__EXTENSION,
-						ExtendableElement.class, msgs);
+				msgs = ((InternalEObject)newExtendableBase).eInverseAdd(this, CorePackage.EXTENDABLE_ELEMENT__EXTENSION, ExtendableElement.class, msgs);
 			msgs = basicSetExtendableBase(newExtendableBase, msgs);
-			if (msgs != null)
-				msgs.dispatch();
-		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					CorePackage.EXTENSION__EXTENDABLE_BASE, newExtendableBase,
-					newExtendableBase));
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CorePackage.EXTENSION__EXTENDABLE_BASE, newExtendableBase, newExtendableBase));
 	}
 
 	/**
@@ -248,10 +222,10 @@ public abstract class ExtensionImpl extends ExtendableElementImpl implements
 	public NotificationChain eInverseAdd(InternalEObject otherEnd,
 			int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case CorePackage.EXTENSION__EXTENDABLE_BASE:
-			if (eInternalContainer() != null)
-				msgs = eBasicRemoveFromContainer(msgs);
-			return basicSetExtendableBase((ExtendableElement) otherEnd, msgs);
+			case CorePackage.EXTENSION__EXTENDABLE_BASE:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetExtendableBase((ExtendableElement)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -265,8 +239,8 @@ public abstract class ExtensionImpl extends ExtendableElementImpl implements
 	public NotificationChain eInverseRemove(InternalEObject otherEnd,
 			int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case CorePackage.EXTENSION__EXTENDABLE_BASE:
-			return basicSetExtendableBase(null, msgs);
+			case CorePackage.EXTENSION__EXTENDABLE_BASE:
+				return basicSetExtendableBase(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -280,10 +254,8 @@ public abstract class ExtensionImpl extends ExtendableElementImpl implements
 	public NotificationChain eBasicRemoveFromContainerFeature(
 			NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
-		case CorePackage.EXTENSION__EXTENDABLE_BASE:
-			return eInternalContainer().eInverseRemove(this,
-					CorePackage.EXTENDABLE_ELEMENT__EXTENSION,
-					ExtendableElement.class, msgs);
+			case CorePackage.EXTENSION__EXTENDABLE_BASE:
+				return eInternalContainer().eInverseRemove(this, CorePackage.EXTENDABLE_ELEMENT__EXTENSION, ExtendableElement.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -296,22 +268,17 @@ public abstract class ExtensionImpl extends ExtendableElementImpl implements
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case CorePackage.EXTENSION__BASE:
-			if (resolve)
-				return getBase();
-			return basicGetBase();
-		case CorePackage.EXTENSION__MODEL_BASE:
-			if (resolve)
-				return getModelBase();
-			return basicGetModelBase();
-		case CorePackage.EXTENSION__OWNING_ANNOTATION:
-			if (resolve)
-				return getOwningAnnotation();
-			return basicGetOwningAnnotation();
-		case CorePackage.EXTENSION__EXTENDABLE_BASE:
-			if (resolve)
+			case CorePackage.EXTENSION__BASE:
+				if (resolve) return getBase();
+				return basicGetBase();
+			case CorePackage.EXTENSION__MODEL_BASE:
+				if (resolve) return getModelBase();
+				return basicGetModelBase();
+			case CorePackage.EXTENSION__OWNING_ANNOTATION:
+				if (resolve) return getOwningAnnotation();
+				return basicGetOwningAnnotation();
+			case CorePackage.EXTENSION__EXTENDABLE_BASE:
 				return getExtendableBase();
-			return basicGetExtendableBase();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -324,15 +291,15 @@ public abstract class ExtensionImpl extends ExtendableElementImpl implements
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case CorePackage.EXTENSION__MODEL_BASE:
-			setModelBase((EModelElement) newValue);
-			return;
-		case CorePackage.EXTENSION__OWNING_ANNOTATION:
-			setOwningAnnotation((EAnnotation) newValue);
-			return;
-		case CorePackage.EXTENSION__EXTENDABLE_BASE:
-			setExtendableBase((ExtendableElement) newValue);
-			return;
+			case CorePackage.EXTENSION__MODEL_BASE:
+				setModelBase((EModelElement)newValue);
+				return;
+			case CorePackage.EXTENSION__OWNING_ANNOTATION:
+				setOwningAnnotation((EAnnotation)newValue);
+				return;
+			case CorePackage.EXTENSION__EXTENDABLE_BASE:
+				setExtendableBase((ExtendableElement)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -345,15 +312,15 @@ public abstract class ExtensionImpl extends ExtendableElementImpl implements
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case CorePackage.EXTENSION__MODEL_BASE:
-			unsetModelBase();
-			return;
-		case CorePackage.EXTENSION__OWNING_ANNOTATION:
-			unsetOwningAnnotation();
-			return;
-		case CorePackage.EXTENSION__EXTENDABLE_BASE:
-			setExtendableBase((ExtendableElement) null);
-			return;
+			case CorePackage.EXTENSION__MODEL_BASE:
+				unsetModelBase();
+				return;
+			case CorePackage.EXTENSION__OWNING_ANNOTATION:
+				unsetOwningAnnotation();
+				return;
+			case CorePackage.EXTENSION__EXTENDABLE_BASE:
+				setExtendableBase((ExtendableElement)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -366,26 +333,16 @@ public abstract class ExtensionImpl extends ExtendableElementImpl implements
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case CorePackage.EXTENSION__BASE:
-			return isSetBase();
-		case CorePackage.EXTENSION__MODEL_BASE:
-			return isSetModelBase();
-		case CorePackage.EXTENSION__OWNING_ANNOTATION:
-			return isSetOwningAnnotation();
-		case CorePackage.EXTENSION__EXTENDABLE_BASE:
-			return basicGetExtendableBase() != null;
+			case CorePackage.EXTENSION__BASE:
+				return basicGetBase() != null;
+			case CorePackage.EXTENSION__MODEL_BASE:
+				return isSetModelBase();
+			case CorePackage.EXTENSION__OWNING_ANNOTATION:
+				return isSetOwningAnnotation();
+			case CorePackage.EXTENSION__EXTENDABLE_BASE:
+				return getExtendableBase() != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean isSetBase() {
-		return isSetModelBase()
-				|| eIsSet(CorePackage.EXTENSION__EXTENDABLE_BASE);
 	}
 
 } //ExtensionImpl
