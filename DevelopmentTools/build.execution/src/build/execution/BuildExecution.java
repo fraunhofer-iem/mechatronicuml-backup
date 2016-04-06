@@ -36,6 +36,9 @@ public class BuildExecution {
 			workspace.build(IncrementalProjectBuilder.INCREMENTAL_BUILD, progressMonitor);
 
 		}
+		System.out.println("Build Progress Successfully!");
+
+		
 		IMarker[] markers = null;
 		try {
 			markers = root.findMarkers(AcceleoMarkerUtils.PROBLEM_MARKER_ID, true, IResource.DEPTH_INFINITE);
@@ -43,8 +46,11 @@ public class BuildExecution {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
-
+		
 		workspace.save(true, progressMonitor);
+		
+		System.out.println("Save Progress Successfully!");
+		
 		return markers;
 	}
 
