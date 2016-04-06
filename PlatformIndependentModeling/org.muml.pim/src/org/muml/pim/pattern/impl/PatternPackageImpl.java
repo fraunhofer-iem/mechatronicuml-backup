@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.muml.core.CorePackage;
 import org.muml.core.modelinstance.ModelinstancePackage;
+import org.muml.pim.PimPackage;
 import org.muml.pim.behavior.BehaviorPackage;
 import org.muml.pim.behavior.impl.BehaviorPackageImpl;
 import org.muml.pim.component.ComponentPackage;
@@ -28,6 +29,7 @@ import org.muml.pim.connector.ConnectorPackage;
 import org.muml.pim.connector.impl.ConnectorPackageImpl;
 import org.muml.pim.constraint.ConstraintPackage;
 import org.muml.pim.constraint.impl.ConstraintPackageImpl;
+import org.muml.pim.impl.PimPackageImpl;
 import org.muml.pim.instance.InstancePackage;
 import org.muml.pim.instance.impl.InstancePackageImpl;
 import org.muml.pim.msgtype.MsgtypePackage;
@@ -143,6 +145,7 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 		ModelinstancePackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
+		PimPackageImpl thePimPackage = (PimPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(PimPackage.eNS_URI) instanceof PimPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PimPackage.eNS_URI) : PimPackage.eINSTANCE);
 		ConstraintPackageImpl theConstraintPackage = (ConstraintPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ConstraintPackage.eNS_URI) instanceof ConstraintPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ConstraintPackage.eNS_URI) : ConstraintPackage.eINSTANCE);
 		InstancePackageImpl theInstancePackage = (InstancePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(InstancePackage.eNS_URI) instanceof InstancePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(InstancePackage.eNS_URI) : InstancePackage.eINSTANCE);
 		ProtocolPackageImpl theProtocolPackage = (ProtocolPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ProtocolPackage.eNS_URI) instanceof ProtocolPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ProtocolPackage.eNS_URI) : ProtocolPackage.eINSTANCE);
@@ -157,6 +160,7 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 
 		// Create package meta-data objects
 		thePatternPackage.createPackageContents();
+		thePimPackage.createPackageContents();
 		theConstraintPackage.createPackageContents();
 		theInstancePackage.createPackageContents();
 		theProtocolPackage.createPackageContents();
@@ -171,6 +175,7 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 
 		// Initialize created meta-data
 		thePatternPackage.initializePackageContents();
+		thePimPackage.initializePackageContents();
 		theConstraintPackage.initializePackageContents();
 		theInstancePackage.initializePackageContents();
 		theProtocolPackage.initializePackageContents();
@@ -565,9 +570,6 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 		initEReference(getCoordinationPattern_AlternativePatterns(), this.getCoordinationPattern(), null, "alternativePatterns", null, 0, -1, CoordinationPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCoordinationPattern_DescriptionAspects(), this.getDescriptionAspects(), null, "descriptionAspects", null, 1, 1, CoordinationPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCoordinationPattern_PatternVariants(), this.getCoordinationPatternVariant(), this.getCoordinationPatternVariant_OriginalPattern(), "patternVariants", null, 0, -1, CoordinationPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		// Create resource
-		createResource(eNS_URI);
 
 		// Create annotations
 		// http://www.eclipse.org/emf/2002/Ecore

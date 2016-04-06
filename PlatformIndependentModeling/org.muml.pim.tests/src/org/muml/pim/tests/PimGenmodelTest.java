@@ -30,7 +30,7 @@ public class PimGenmodelTest extends GenmodelTest {
 	
 	@Parameters
 	public static Collection<Object[]> getGenmodelPaths() {
-		return Collections.singleton(new Object[] {"de.uni_paderborn.fujaba.muml/model/muml.genmodel"});
+		return Collections.singleton(new Object[] {"org.muml.pim/model/pim.genmodel"});
 	}
 
 }

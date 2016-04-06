@@ -39,7 +39,7 @@ public class MsgtypeValidator extends EObjectValidator {
 	 * @see org.eclipse.emf.common.util.Diagnostic#getCode()
 	 * @generated
 	 */
-	public static final String DIAGNOSTIC_SOURCE = "de.uni_paderborn.fujaba.muml.msgtype";
+	public static final String DIAGNOSTIC_SOURCE = "org.muml.pim.msgtype";
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants.

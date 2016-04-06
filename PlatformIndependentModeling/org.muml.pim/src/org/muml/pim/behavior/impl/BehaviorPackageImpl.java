@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.muml.core.CorePackage;
 import org.muml.core.expressions.ExpressionsPackage;
 import org.muml.core.modelinstance.ModelinstancePackage;
+import org.muml.pim.PimPackage;
 import org.muml.pim.behavior.Behavior;
 import org.muml.pim.behavior.BehaviorFactory;
 import org.muml.pim.behavior.BehaviorPackage;
@@ -32,6 +33,7 @@ import org.muml.pim.connector.ConnectorPackage;
 import org.muml.pim.connector.impl.ConnectorPackageImpl;
 import org.muml.pim.constraint.ConstraintPackage;
 import org.muml.pim.constraint.impl.ConstraintPackageImpl;
+import org.muml.pim.impl.PimPackageImpl;
 import org.muml.pim.instance.InstancePackage;
 import org.muml.pim.instance.impl.InstancePackageImpl;
 import org.muml.pim.msgtype.MsgtypePackage;
@@ -162,6 +164,7 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 		ModelinstancePackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
+		PimPackageImpl thePimPackage = (PimPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(PimPackage.eNS_URI) instanceof PimPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PimPackage.eNS_URI) : PimPackage.eINSTANCE);
 		ConstraintPackageImpl theConstraintPackage = (ConstraintPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ConstraintPackage.eNS_URI) instanceof ConstraintPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ConstraintPackage.eNS_URI) : ConstraintPackage.eINSTANCE);
 		InstancePackageImpl theInstancePackage = (InstancePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(InstancePackage.eNS_URI) instanceof InstancePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(InstancePackage.eNS_URI) : InstancePackage.eINSTANCE);
 		ProtocolPackageImpl theProtocolPackage = (ProtocolPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ProtocolPackage.eNS_URI) instanceof ProtocolPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ProtocolPackage.eNS_URI) : ProtocolPackage.eINSTANCE);
@@ -176,6 +179,7 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 
 		// Create package meta-data objects
 		theBehaviorPackage.createPackageContents();
+		thePimPackage.createPackageContents();
 		theConstraintPackage.createPackageContents();
 		theInstancePackage.createPackageContents();
 		theProtocolPackage.createPackageContents();
@@ -190,6 +194,7 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 
 		// Initialize created meta-data
 		theBehaviorPackage.initializePackageContents();
+		thePimPackage.initializePackageContents();
 		theConstraintPackage.initializePackageContents();
 		theInstancePackage.initializePackageContents();
 		theProtocolPackage.initializePackageContents();
@@ -539,9 +544,6 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 
 		initEClass(operationRepositoryEClass, OperationRepository.class, "OperationRepository", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getOperationRepository_Operations(), this.getOperation(), null, "operations", null, 0, -1, OperationRepository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		// Create resource
-		createResource(eNS_URI);
 
 		// Create annotations
 		// http://www.eclipse.org/emf/2002/Ecore

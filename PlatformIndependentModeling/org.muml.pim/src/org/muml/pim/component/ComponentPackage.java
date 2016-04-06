@@ -50,7 +50,7 @@ public interface ComponentPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.fujaba.de/muml/component/0.4.0";
+	String eNS_URI = "http://www.muml.org/pim/component/1.0.0";
 
 	/**
 	 * The package namespace name.
@@ -79,22 +79,22 @@ public interface ComponentPackage extends EPackage {
 	int COMPONENT = 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__ANNOTATION = CorePackage.NAMED_ELEMENT__ANNOTATION;
+	int COMPONENT__ANNOTATIONS = CorePackage.NAMED_ELEMENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__EXTENSION = CorePackage.NAMED_ELEMENT__EXTENSION;
+	int COMPONENT__EXTENSIONS = CorePackage.NAMED_ELEMENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -332,22 +332,22 @@ public interface ComponentPackage extends EPackage {
 	int PORT = 1;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PORT__ANNOTATION = ConnectorPackage.CONNECTOR_ENDPOINT__ANNOTATION;
+	int PORT__ANNOTATIONS = ConnectorPackage.CONNECTOR_ENDPOINT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PORT__EXTENSION = ConnectorPackage.CONNECTOR_ENDPOINT__EXTENSION;
+	int PORT__EXTENSIONS = ConnectorPackage.CONNECTOR_ENDPOINT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -594,22 +594,22 @@ public interface ComponentPackage extends EPackage {
 	int DIRECTED_TYPED_PORT = 13;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DIRECTED_TYPED_PORT__ANNOTATION = PORT__ANNOTATION;
+	int DIRECTED_TYPED_PORT__ANNOTATIONS = PORT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DIRECTED_TYPED_PORT__EXTENSION = PORT__EXTENSION;
+	int DIRECTED_TYPED_PORT__EXTENSIONS = PORT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -910,22 +910,22 @@ public interface ComponentPackage extends EPackage {
 	int CONTINUOUS_PORT = 2;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTINUOUS_PORT__ANNOTATION = DIRECTED_TYPED_PORT__ANNOTATION;
+	int CONTINUOUS_PORT__ANNOTATIONS = DIRECTED_TYPED_PORT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTINUOUS_PORT__EXTENSION = DIRECTED_TYPED_PORT__EXTENSION;
+	int CONTINUOUS_PORT__EXTENSIONS = DIRECTED_TYPED_PORT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -1226,22 +1226,22 @@ public interface ComponentPackage extends EPackage {
 	int DISCRETE_PORT = 3;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_PORT__ANNOTATION = PORT__ANNOTATION;
+	int DISCRETE_PORT__ANNOTATIONS = PORT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_PORT__EXTENSION = PORT__EXTENSION;
+	int DISCRETE_PORT__EXTENSIONS = PORT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -1614,22 +1614,22 @@ public interface ComponentPackage extends EPackage {
 	int COMPONENT_PART = 4;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_PART__ANNOTATION = CorePackage.NAMED_ELEMENT__ANNOTATION;
+	int COMPONENT_PART__ANNOTATIONS = CorePackage.NAMED_ELEMENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_PART__EXTENSION = CorePackage.NAMED_ELEMENT__EXTENSION;
+	int COMPONENT_PART__EXTENSIONS = CorePackage.NAMED_ELEMENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1894,22 +1894,22 @@ public interface ComponentPackage extends EPackage {
 	int STRUCTURED_COMPONENT = 11;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCTURED_COMPONENT__ANNOTATION = COMPONENT__ANNOTATION;
+	int STRUCTURED_COMPONENT__ANNOTATIONS = COMPONENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCTURED_COMPONENT__EXTENSION = COMPONENT__EXTENSION;
+	int STRUCTURED_COMPONENT__EXTENSIONS = COMPONENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2201,22 +2201,22 @@ public interface ComponentPackage extends EPackage {
 	int STATIC_STRUCTURED_COMPONENT = 5;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STATIC_STRUCTURED_COMPONENT__ANNOTATION = STRUCTURED_COMPONENT__ANNOTATION;
+	int STATIC_STRUCTURED_COMPONENT__ANNOTATIONS = STRUCTURED_COMPONENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STATIC_STRUCTURED_COMPONENT__EXTENSION = STRUCTURED_COMPONENT__EXTENSION;
+	int STATIC_STRUCTURED_COMPONENT__EXTENSIONS = STRUCTURED_COMPONENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2508,22 +2508,22 @@ public interface ComponentPackage extends EPackage {
 	int ATOMIC_COMPONENT = 6;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ATOMIC_COMPONENT__ANNOTATION = COMPONENT__ANNOTATION;
+	int ATOMIC_COMPONENT__ANNOTATIONS = COMPONENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ATOMIC_COMPONENT__EXTENSION = COMPONENT__EXTENSION;
+	int ATOMIC_COMPONENT__EXTENSIONS = COMPONENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2788,22 +2788,22 @@ public interface ComponentPackage extends EPackage {
 	int PORT_CONNECTOR = 9;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PORT_CONNECTOR__ANNOTATION = ConnectorPackage.CONNECTOR__ANNOTATION;
+	int PORT_CONNECTOR__ANNOTATIONS = ConnectorPackage.CONNECTOR__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PORT_CONNECTOR__EXTENSION = ConnectorPackage.CONNECTOR__EXTENSION;
+	int PORT_CONNECTOR__EXTENSIONS = ConnectorPackage.CONNECTOR__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -3041,22 +3041,22 @@ public interface ComponentPackage extends EPackage {
 	int ASSEMBLY_CONNECTOR = 7;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ASSEMBLY_CONNECTOR__ANNOTATION = PORT_CONNECTOR__ANNOTATION;
+	int ASSEMBLY_CONNECTOR__ANNOTATIONS = PORT_CONNECTOR__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ASSEMBLY_CONNECTOR__EXTENSION = PORT_CONNECTOR__EXTENSION;
+	int ASSEMBLY_CONNECTOR__EXTENSIONS = PORT_CONNECTOR__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -3312,22 +3312,22 @@ public interface ComponentPackage extends EPackage {
 	int DELEGATION_CONNECTOR = 8;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DELEGATION_CONNECTOR__ANNOTATION = PORT_CONNECTOR__ANNOTATION;
+	int DELEGATION_CONNECTOR__ANNOTATIONS = PORT_CONNECTOR__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DELEGATION_CONNECTOR__EXTENSION = PORT_CONNECTOR__EXTENSION;
+	int DELEGATION_CONNECTOR__EXTENSIONS = PORT_CONNECTOR__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -3583,22 +3583,22 @@ public interface ComponentPackage extends EPackage {
 	int HYBRID_PORT = 10;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HYBRID_PORT__ANNOTATION = DIRECTED_TYPED_PORT__ANNOTATION;
+	int HYBRID_PORT__ANNOTATIONS = DIRECTED_TYPED_PORT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HYBRID_PORT__EXTENSION = DIRECTED_TYPED_PORT__EXTENSION;
+	int HYBRID_PORT__EXTENSIONS = DIRECTED_TYPED_PORT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -3908,22 +3908,22 @@ public interface ComponentPackage extends EPackage {
 	int COORDINATION_PROTOCOL_PART = 12;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COORDINATION_PROTOCOL_PART__ANNOTATION = CorePackage.COMMENTABLE_ELEMENT__ANNOTATION;
+	int COORDINATION_PROTOCOL_PART__ANNOTATIONS = CorePackage.COMMENTABLE_ELEMENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COORDINATION_PROTOCOL_PART__EXTENSION = CorePackage.COMMENTABLE_ELEMENT__EXTENSION;
+	int COORDINATION_PROTOCOL_PART__EXTENSIONS = CorePackage.COMMENTABLE_ELEMENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -4152,22 +4152,22 @@ public interface ComponentPackage extends EPackage {
 	int PORT_PART = 14;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PORT_PART__ANNOTATION = ConnectorPackage.CONNECTOR_ENDPOINT__ANNOTATION;
+	int PORT_PART__ANNOTATIONS = ConnectorPackage.CONNECTOR_ENDPOINT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PORT_PART__EXTENSION = ConnectorPackage.CONNECTOR_ENDPOINT__EXTENSION;
+	int PORT_PART__EXTENSIONS = ConnectorPackage.CONNECTOR_ENDPOINT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -4432,22 +4432,22 @@ public interface ComponentPackage extends EPackage {
 	int STATIC_ATOMIC_COMPONENT = 15;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STATIC_ATOMIC_COMPONENT__ANNOTATION = ATOMIC_COMPONENT__ANNOTATION;
+	int STATIC_ATOMIC_COMPONENT__ANNOTATIONS = ATOMIC_COMPONENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STATIC_ATOMIC_COMPONENT__EXTENSION = ATOMIC_COMPONENT__EXTENSION;
+	int STATIC_ATOMIC_COMPONENT__EXTENSIONS = ATOMIC_COMPONENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -4712,22 +4712,22 @@ public interface ComponentPackage extends EPackage {
 	int STATIC_COMPONENT = 16;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STATIC_COMPONENT__ANNOTATION = COMPONENT__ANNOTATION;
+	int STATIC_COMPONENT__ANNOTATIONS = COMPONENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STATIC_COMPONENT__EXTENSION = COMPONENT__EXTENSION;
+	int STATIC_COMPONENT__EXTENSIONS = COMPONENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.

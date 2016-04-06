@@ -281,7 +281,7 @@ public class ComponentItemProvider
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return MumlEditPlugin.INSTANCE;
+		return org.muml.pim.provider.MumlEditPlugin.INSTANCE;
 	}
 
 	/**

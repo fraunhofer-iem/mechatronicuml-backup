@@ -31,7 +31,7 @@
         xsi:type="gmfgen:FigureViewmap"
         figureQualifiedClassName="org.eclipse.draw2d.FreeformLayer"/>
     <domainDiagramElement
-        href="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.genmodel#//modelinstance/ModelElementCategory"/>
+        href="../../org.muml.core.modelinstance/model/modelinstance.genmodel#//modelinstance/ModelElementCategory"/>
     <childNodes
         xsi:type="gmfgen:GenChildSideAffixedNode"
         visualID="3010"
@@ -65,41 +65,41 @@
           editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.opendiagram.OpenBehaviorDiagramEditPolicy"/>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/component/DiscretePort"/>
+            href="../../org.muml.pim/model/pim.genmodel#//pim/component/DiscretePort"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/component/Component/ports"/>
+            href="../../org.muml.pim/model/pim.genmodel#//pim/component/Component/ports"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/component/Component/ports"/>
+            href="../../org.muml.pim/model/pim.genmodel#//pim/component/Component/ports"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenReferenceNewElementSpec">
             <feature
-                href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/connector/DiscreteInteractionEndpoint/cardinality"/>
+                href="../../org.muml.pim/model/pim.genmodel#//pim/connector/DiscreteInteractionEndpoint/cardinality"/>
             <newElementInitializers>
               <initializers
                   xsi:type="gmfgen:GenReferenceNewElementSpec">
                 <feature
-                    href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/valuetype/Cardinality/lowerBound"/>
+                    href="../../org.muml.pim/model/pim.genmodel#//pim/valuetype/Cardinality/lowerBound"/>
                 <newElementInitializers>
                   <initializers
                       xsi:type="gmfgen:GenFeatureValueSpec"
                       value="//@expressionProviders/@providers.0/@expressions.0">
                     <feature
-                        href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/valuetype/NaturalNumber/value"/>
+                        href="../../org.muml.pim/model/pim.genmodel#//pim/valuetype/NaturalNumber/value"/>
                   </initializers>
                 </newElementInitializers>
               </initializers>
               <initializers
                   xsi:type="gmfgen:GenReferenceNewElementSpec">
                 <feature
-                    href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/valuetype/Cardinality/upperBound"/>
+                    href="../../org.muml.pim/model/pim.genmodel#//pim/valuetype/Cardinality/upperBound"/>
                 <newElementInitializers>
                   <initializers
                       xsi:type="gmfgen:GenFeatureValueSpec"
                       value="//@expressionProviders/@providers.0/@expressions.1">
                     <feature
-                        href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/valuetype/NaturalNumber/value"/>
+                        href="../../org.muml.pim/model/pim.genmodel#//pim/valuetype/NaturalNumber/value"/>
                   </initializers>
                 </newElementInitializers>
               </initializers>
@@ -109,7 +109,7 @@
               xsi:type="gmfgen:GenFeatureValueSpec"
               value="//@expressionProviders/@providers.0/@expressions.15">
             <feature
-                href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+                href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
           </initializers>
         </modelElementInitializer>
       </modelFacet>
@@ -127,7 +127,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+              href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
         </modelFacet>
       </labels>
       <labels
@@ -179,21 +179,21 @@
           editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.ports.PortTypeEditPolicy"/>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/component/ContinuousPort"/>
+            href="../../org.muml.pim/model/pim.genmodel#//pim/component/ContinuousPort"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/component/Component/ports"/>
+            href="../../org.muml.pim/model/pim.genmodel#//pim/component/Component/ports"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/component/Component/ports"/>
+            href="../../org.muml.pim/model/pim.genmodel#//pim/component/Component/ports"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
               value="//@expressionProviders/@providers.0/@expressions.16">
             <feature
-                href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+                href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
           </initializers>
           <elementClass
-              href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/component/ContinuousPort"/>
+              href="../../org.muml.pim/model/pim.genmodel#//pim/component/ContinuousPort"/>
         </modelElementInitializer>
       </modelFacet>
       <labels
@@ -210,7 +210,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+              href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -243,21 +243,21 @@
           editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.ports.PortTypeEditPolicy"/>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/component/HybridPort"/>
+            href="../../org.muml.pim/model/pim.genmodel#//pim/component/HybridPort"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/component/Component/ports"/>
+            href="../../org.muml.pim/model/pim.genmodel#//pim/component/Component/ports"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/component/Component/ports"/>
+            href="../../org.muml.pim/model/pim.genmodel#//pim/component/Component/ports"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
               value="//@expressionProviders/@providers.0/@expressions.17">
             <feature
-                href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+                href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
           </initializers>
           <elementClass
-              href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/component/HybridPort"/>
+              href="../../org.muml.pim/model/pim.genmodel#//pim/component/HybridPort"/>
         </modelElementInitializer>
       </modelFacet>
       <labels
@@ -308,41 +308,41 @@
           editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.component.ComponentColorEditPolicy"/>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/component/ComponentPart"/>
+            href="../../org.muml.pim/model/pim.genmodel#//pim/component/ComponentPart"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/component/StructuredComponent/embeddedComponentParts"/>
+            href="../../org.muml.pim/model/pim.genmodel#//pim/component/StructuredComponent/embeddedComponentParts"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/component/StructuredComponent/embeddedComponentParts"/>
+            href="../../org.muml.pim/model/pim.genmodel#//pim/component/StructuredComponent/embeddedComponentParts"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenReferenceNewElementSpec">
             <feature
-                href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/component/ComponentPart/cardinality"/>
+                href="../../org.muml.pim/model/pim.genmodel#//pim/component/ComponentPart/cardinality"/>
             <newElementInitializers>
               <initializers
                   xsi:type="gmfgen:GenReferenceNewElementSpec">
                 <feature
-                    href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/valuetype/Cardinality/lowerBound"/>
+                    href="../../org.muml.pim/model/pim.genmodel#//pim/valuetype/Cardinality/lowerBound"/>
                 <newElementInitializers>
                   <initializers
                       xsi:type="gmfgen:GenFeatureValueSpec"
                       value="//@expressionProviders/@providers.0/@expressions.5">
                     <feature
-                        href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/valuetype/NaturalNumber/value"/>
+                        href="../../org.muml.pim/model/pim.genmodel#//pim/valuetype/NaturalNumber/value"/>
                   </initializers>
                 </newElementInitializers>
               </initializers>
               <initializers
                   xsi:type="gmfgen:GenReferenceNewElementSpec">
                 <feature
-                    href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/valuetype/Cardinality/upperBound"/>
+                    href="../../org.muml.pim/model/pim.genmodel#//pim/valuetype/Cardinality/upperBound"/>
                 <newElementInitializers>
                   <initializers
                       xsi:type="gmfgen:GenFeatureValueSpec"
                       value="//@expressionProviders/@providers.0/@expressions.6">
                     <feature
-                        href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/valuetype/NaturalNumber/value"/>
+                        href="../../org.muml.pim/model/pim.genmodel#//pim/valuetype/NaturalNumber/value"/>
                   </initializers>
                 </newElementInitializers>
               </initializers>
@@ -352,7 +352,7 @@
               xsi:type="gmfgen:GenFeatureValueSpec"
               value="//@expressionProviders/@providers.0/@expressions.18">
             <feature
-                href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+                href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
           </initializers>
         </modelElementInitializer>
       </modelFacet>
@@ -405,11 +405,11 @@
           editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.ports.PortPartEditPolicy"/>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/component/PortPart"/>
+            href="../../org.muml.pim/model/pim.genmodel#//pim/component/PortPart"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/component/ComponentPart/portParts"/>
+            href="../../org.muml.pim/model/pim.genmodel#//pim/component/ComponentPart/portParts"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/component/ComponentPart/portParts"/>
+            href="../../org.muml.pim/model/pim.genmodel#//pim/component/ComponentPart/portParts"/>
       </modelFacet>
       <labels
           xsi:type="gmfgen:GenExternalNodeLabel"
@@ -426,7 +426,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/component/PortPart/name"/>
+              href="../../org.muml.pim/model/pim.genmodel#//pim/component/PortPart/name"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -453,11 +453,11 @@
       </viewmap>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/component/CoordinationProtocolPart"/>
+            href="../../org.muml.pim/model/pim.genmodel#//pim/component/CoordinationProtocolPart"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/component/StructuredComponent/coordinationProtocolParts"/>
+            href="../../org.muml.pim/model/pim.genmodel#//pim/component/StructuredComponent/coordinationProtocolParts"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/component/StructuredComponent/coordinationProtocolParts"/>
+            href="../../org.muml.pim/model/pim.genmodel#//pim/component/StructuredComponent/coordinationProtocolParts"/>
       </modelFacet>
       <labels
           visualID="5026"
@@ -511,21 +511,21 @@
           editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.component.ComponentColorEditPolicy"/>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/component/StaticAtomicComponent"/>
+            href="../../org.muml.pim/model/pim.genmodel#//pim/component/StaticAtomicComponent"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.genmodel#//modelinstance/ModelElementCategory/modelElements"/>
+            href="../../org.muml.core.modelinstance/model/modelinstance.genmodel#//modelinstance/ModelElementCategory/modelElements"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.genmodel#//modelinstance/ModelElementCategory/modelElements"/>
+            href="../../org.muml.core.modelinstance/model/modelinstance.genmodel#//modelinstance/ModelElementCategory/modelElements"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
               value="//@expressionProviders/@providers.0/@expressions.13">
             <feature
-                href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+                href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
           </initializers>
           <elementClass
-              href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/component/StaticAtomicComponent"/>
+              href="../../org.muml.pim/model/pim.genmodel#//pim/component/StaticAtomicComponent"/>
         </modelElementInitializer>
       </modelFacet>
       <labels
@@ -546,7 +546,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+              href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
         </modelFacet>
       </labels>
     </topLevelNodes>
@@ -579,21 +579,21 @@
           editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.component.ComponentColorEditPolicy"/>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/component/StaticStructuredComponent"/>
+            href="../../org.muml.pim/model/pim.genmodel#//pim/component/StaticStructuredComponent"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.genmodel#//modelinstance/ModelElementCategory/modelElements"/>
+            href="../../org.muml.core.modelinstance/model/modelinstance.genmodel#//modelinstance/ModelElementCategory/modelElements"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.genmodel#//modelinstance/ModelElementCategory/modelElements"/>
+            href="../../org.muml.core.modelinstance/model/modelinstance.genmodel#//modelinstance/ModelElementCategory/modelElements"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
               value="//@expressionProviders/@providers.0/@expressions.14">
             <feature
-                href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+                href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
           </initializers>
           <elementClass
-              href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/component/StaticStructuredComponent"/>
+              href="../../org.muml.pim/model/pim.genmodel#//pim/component/StaticStructuredComponent"/>
         </modelElementInitializer>
       </modelFacet>
       <labels
@@ -614,7 +614,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+              href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
         </modelFacet>
       </labels>
     </topLevelNodes>
@@ -636,15 +636,15 @@
       <modelFacet
           xsi:type="gmfgen:TypeLinkModelFacet">
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/component/AssemblyConnector"/>
+            href="../../org.muml.pim/model/pim.genmodel#//pim/component/AssemblyConnector"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/component/StructuredComponent/connectors"/>
+            href="../../org.muml.pim/model/pim.genmodel#//pim/component/StructuredComponent/connectors"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/component/StructuredComponent/connectors"/>
+            href="../../org.muml.pim/model/pim.genmodel#//pim/component/StructuredComponent/connectors"/>
         <sourceMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/connector/Connector/connectorEndpoints"/>
+            href="../../org.muml.pim/model/pim.genmodel#//pim/connector/Connector/connectorEndpoints"/>
         <targetMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/connector/Connector/connectorEndpoints"/>
+            href="../../org.muml.pim/model/pim.genmodel#//pim/connector/Connector/connectorEndpoints"/>
       </modelFacet>
       <creationConstraints
           sourceEnd="//@expressionProviders/@providers.0/@expressions.9"
@@ -668,15 +668,15 @@
       <modelFacet
           xsi:type="gmfgen:TypeLinkModelFacet">
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/component/DelegationConnector"/>
+            href="../../org.muml.pim/model/pim.genmodel#//pim/component/DelegationConnector"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/component/StructuredComponent/connectors"/>
+            href="../../org.muml.pim/model/pim.genmodel#//pim/component/StructuredComponent/connectors"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/component/StructuredComponent/connectors"/>
+            href="../../org.muml.pim/model/pim.genmodel#//pim/component/StructuredComponent/connectors"/>
         <sourceMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/connector/Connector/connectorEndpoints"/>
+            href="../../org.muml.pim/model/pim.genmodel#//pim/connector/Connector/connectorEndpoints"/>
         <targetMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/connector/Connector/connectorEndpoints"/>
+            href="../../org.muml.pim/model/pim.genmodel#//pim/connector/Connector/connectorEndpoints"/>
       </modelFacet>
       <creationConstraints
           sourceEnd="//@expressionProviders/@providers.0/@expressions.11"
@@ -699,7 +699,7 @@
       <modelFacet
           xsi:type="gmfgen:FeatureLinkModelFacet">
         <metaFeature
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/component/PortPart/coordinationProtocolPart"/>
+            href="../../org.muml.pim/model/pim.genmodel#//pim/component/PortPart/coordinationProtocolPart"/>
       </modelFacet>
     </links>
     <compartments
@@ -934,7 +934,7 @@
     </tabs>
   </propertySheet>
   <domainGenModel
-      href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#/"/>
+      href="../../org.muml.pim/model/pim.genmodel#/"/>
   <expressionProviders>
     <providers
         xsi:type="gmfgen:GenExpressionInterpreter">
@@ -993,7 +993,7 @@
         className="DiscretePortLabelExpressionLabelParser5025"
         viewExpression="//@expressionProviders/@providers.0/@expressions.2">
       <expressionContext
-          href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/component/DiscretePort"/>
+          href="../../org.muml.pim/model/pim.genmodel#//pim/component/DiscretePort"/>
     </implementations>
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
@@ -1002,7 +1002,7 @@
         viewExpression="//@expressionProviders/@providers.0/@expressions.3"
         editExpression="//@expressionProviders/@providers.0/@expressions.4">
       <expressionContext
-          href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/component/HybridPort"/>
+          href="../../org.muml.pim/model/pim.genmodel#//pim/component/HybridPort"/>
     </implementations>
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
@@ -1010,7 +1010,7 @@
         className="ComponentPartLabelExpressionLabelParser5017"
         viewExpression="//@expressionProviders/@providers.0/@expressions.7">
       <expressionContext
-          href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/component/ComponentPart"/>
+          href="../../org.muml.pim/model/pim.genmodel#//pim/component/ComponentPart"/>
     </implementations>
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
@@ -1018,7 +1018,7 @@
         className="CoordinationProtocolPartLabelExpressionLabelParser5026"
         viewExpression="//@expressionProviders/@providers.0/@expressions.8">
       <expressionContext
-          href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/component/CoordinationProtocolPart"/>
+          href="../../org.muml.pim/model/pim.genmodel#//pim/component/CoordinationProtocolPart"/>
     </implementations>
   </labelParsers>
   <contextMenus
@@ -1028,6 +1028,6 @@
   </contextMenus>
   <extensions>
     <rootInput
-        href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#_VZIdoMwbEeSjx7OWZCcdLw"/>
+        href="../../org.muml.pim/model/pim.propsheet#_VZIdoMwbEeSjx7OWZCcdLw"/>
   </extensions>
 </gmfgen:GenEditorGenerator>

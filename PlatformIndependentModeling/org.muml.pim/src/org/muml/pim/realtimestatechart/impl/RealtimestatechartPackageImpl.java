@@ -18,6 +18,7 @@ import org.muml.core.CorePackage;
 import org.muml.core.expressions.ExpressionsPackage;
 import org.muml.core.expressions.common.CommonExpressionsPackage;
 import org.muml.core.modelinstance.ModelinstancePackage;
+import org.muml.pim.PimPackage;
 import org.muml.pim.behavior.BehaviorPackage;
 import org.muml.pim.behavior.impl.BehaviorPackageImpl;
 import org.muml.pim.component.ComponentPackage;
@@ -26,6 +27,7 @@ import org.muml.pim.connector.ConnectorPackage;
 import org.muml.pim.connector.impl.ConnectorPackageImpl;
 import org.muml.pim.constraint.ConstraintPackage;
 import org.muml.pim.constraint.impl.ConstraintPackageImpl;
+import org.muml.pim.impl.PimPackageImpl;
 import org.muml.pim.instance.InstancePackage;
 import org.muml.pim.instance.impl.InstancePackageImpl;
 import org.muml.pim.msgtype.MsgtypePackage;
@@ -325,6 +327,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		ModelinstancePackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
+		PimPackageImpl thePimPackage = (PimPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(PimPackage.eNS_URI) instanceof PimPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PimPackage.eNS_URI) : PimPackage.eINSTANCE);
 		ConstraintPackageImpl theConstraintPackage = (ConstraintPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ConstraintPackage.eNS_URI) instanceof ConstraintPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ConstraintPackage.eNS_URI) : ConstraintPackage.eINSTANCE);
 		InstancePackageImpl theInstancePackage = (InstancePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(InstancePackage.eNS_URI) instanceof InstancePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(InstancePackage.eNS_URI) : InstancePackage.eINSTANCE);
 		ProtocolPackageImpl theProtocolPackage = (ProtocolPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ProtocolPackage.eNS_URI) instanceof ProtocolPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ProtocolPackage.eNS_URI) : ProtocolPackage.eINSTANCE);
@@ -339,6 +342,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 
 		// Create package meta-data objects
 		theRealtimestatechartPackage.createPackageContents();
+		thePimPackage.createPackageContents();
 		theConstraintPackage.createPackageContents();
 		theInstancePackage.createPackageContents();
 		theProtocolPackage.createPackageContents();
@@ -353,6 +357,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 
 		// Initialize created meta-data
 		theRealtimestatechartPackage.initializePackageContents();
+		thePimPackage.initializePackageContents();
 		theConstraintPackage.initializePackageContents();
 		theInstancePackage.initializePackageContents();
 		theProtocolPackage.initializePackageContents();
@@ -1779,9 +1784,6 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		initEEnum(eventKindEEnum, EventKind.class, "EventKind");
 		addEEnumLiteral(eventKindEEnum, EventKind.RAISE);
 		addEEnumLiteral(eventKindEEnum, EventKind.TRIGGER);
-
-		// Create resource
-		createResource(eNS_URI);
 
 		// Create annotations
 		// http://www.eclipse.org/emf/2002/Ecore

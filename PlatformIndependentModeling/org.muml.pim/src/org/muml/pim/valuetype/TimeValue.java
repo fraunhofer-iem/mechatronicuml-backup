@@ -80,7 +80,7 @@ public interface TimeValue extends ExtendableElement {
 	 * @see #unsetUnit()
 	 * @see #setUnit(TimeUnit)
 	 * @see org.muml.pim.valuetype.ValuetypePackage#getTimeValue_Unit()
-	 * @model default="MILLISECONDS" unsettable="true" dataType="de.uni_paderborn.fujaba.muml.valuetype.TimeUnit"
+	 * @model default="MILLISECONDS" unsettable="true" dataType="org.muml.pim.valuetype.TimeUnit"
 	 * @generated
 	 */
 	TimeUnit getUnit();

@@ -207,7 +207,7 @@ public class AbstractCoordinationPatternItemProvider extends AbstractCoordinatio
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return org.muml.pim.constraint.provider.MumlEditPlugin.INSTANCE;
+		return org.muml.pim.provider.MumlEditPlugin.INSTANCE;
 	}
 
 	/**

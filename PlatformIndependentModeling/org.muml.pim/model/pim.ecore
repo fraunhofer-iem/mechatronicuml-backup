@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="muml" nsURI="http://www.fujaba.de/muml/0.4.0" nsPrefix="muml">
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="pim" nsURI="http://www.muml.org/pim/1.0.0" nsPrefix="pim">
   <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel"/>
-  <eSubpackages name="constraint" nsURI="http://www.fujaba.de/muml/constraint/0.4.0"
+  <eClassifiers xsi:type="ecore:EClass" name="Test"/>
+  <eSubpackages name="constraint" nsURI="http://www.muml.org/pim/constraint/1.0.0"
       nsPrefix="constraint">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="This package provides abstract super classes for modeling different kinds of constraints that may be attached to verifiable elements of the MechatronicUML meta-model. "/>
@@ -13,13 +14,13 @@
       <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
     </eAnnotations>
     <eClassifiers xsi:type="ecore:EClass" name="VerificationConstraintRepository"
-        abstract="true" eSuperTypes="../../org.storydriven.core/model/core.ecore#//ExtendableElement">
+        abstract="true" eSuperTypes="../../org.muml.core/model/core.ecore#//ExtendableElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Represents a repository for verifiable constraints the element has to fulfill. A verifiable constraint may be an TCTL expression. Thus, the constraint may be the input for a model checker."/>
       </eAnnotations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="VerifiableElement" abstract="true"
-        eSuperTypes="../../org.storydriven.core/model/core.ecore#//ExtendableElement">
+        eSuperTypes="../../org.muml.core/model/core.ecore#//ExtendableElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Represents an element that may be verified by formal verification, e.g., model checking. Therefore, this class provides a repository to store verification constraints."/>
       </eAnnotations>
@@ -31,7 +32,7 @@
       </eStructuralFeatures>
     </eClassifiers>
   </eSubpackages>
-  <eSubpackages name="instance" nsURI="http://www.fujaba.de/muml/instance/0.4.0" nsPrefix="instance">
+  <eSubpackages name="instance" nsURI="http://www.muml.org/pim/instance/1.0.0" nsPrefix="instance">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
       <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
@@ -41,7 +42,7 @@
       <details key="documentation" value="The package instance contains all classes for building configurations of component instances.&#xD;&#xA;&#xD;&#xA;Component instances are built from component types and connected by connectors. The resulting structure is a component instance configuration."/>
     </eAnnotations>
     <eClassifiers xsi:type="ecore:EClass" name="ComponentInstance" abstract="true"
-        eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement">
+        eSuperTypes="../../org.muml.core/model/core.ecore#//NamedElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="This class represents a component instance. It is an instantiation of a component."/>
       </eAnnotations>
@@ -215,7 +216,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ComponentInstanceConfiguration" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement #//constraint/VerifiableElement">
+    <eClassifiers xsi:type="ecore:EClass" name="ComponentInstanceConfiguration" eSuperTypes="../../org.muml.core/model/core.ecore#//NamedElement ../../org.muml.core/model/core.ecore#//CommentableElement #//constraint/VerifiableElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="This class encapsules represents a configuration. It contains all component instances and connector instances that belong to a concrete configuration."/>
       </eAnnotations>
@@ -361,7 +362,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="CoordinationProtocolInstance" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement">
+    <eClassifiers xsi:type="ecore:EClass" name="CoordinationProtocolInstance" eSuperTypes="../../org.muml.core/model/core.ecore#//NamedElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="An instance of a coordination protocol. It may also reference a specific coordination protocol part. It specifies the behavior of discrete (single/multi) port instances that are connected with each other."/>
       </eAnnotations>
@@ -408,7 +409,7 @@
       </eAnnotations>
     </eClassifiers>
   </eSubpackages>
-  <eSubpackages name="protocol" nsURI="http://www.fujaba.de/muml/protocol/0.4.0" nsPrefix="protocol">
+  <eSubpackages name="protocol" nsURI="http://www.muml.org/pim/protocol/1.0.0" nsPrefix="protocol">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
       <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
@@ -418,7 +419,7 @@
       <details key="documentation" value="This package provides modeling support for coordination protocols including roles, role connectors, and quality of service assumptions."/>
     </eAnnotations>
     <eClassifiers xsi:type="ecore:EClass" name="AbstractCoordinationSpecification"
-        abstract="true" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement #//constraint/VerifiableElement">
+        abstract="true" eSuperTypes="../../org.muml.core/model/core.ecore#//NamedElement ../../org.muml.core/model/core.ecore#//CommentableElement #//constraint/VerifiableElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
         <details key="constraints" value="UniqueRoleNames RoleMessageTypesMustBeCompatible SingleRoleImpliesMultiRole"/>
       </eAnnotations>
@@ -602,7 +603,7 @@
       </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ConnectorQualityOfServiceAssumptions"
-        eSuperTypes="../../org.storydriven.core/model/core.ecore#//CommentableElement">
+        eSuperTypes="../../org.muml.core/model/core.ecore#//CommentableElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="The list of quality of service assumptions for this connector. A developer defines these properties before modeling the role statecharts, because the statecharts depend on these assumptions. Software layers under the MechatronicUML layer respectively the hardware itself have to ensure that these assumptions are correct."/>
       </eAnnotations>
@@ -627,7 +628,7 @@
       </eStructuralFeatures>
     </eClassifiers>
   </eSubpackages>
-  <eSubpackages name="realtimestatechart" nsURI="http://www.fujaba.de/muml/realtimestatechart/0.4.0"
+  <eSubpackages name="realtimestatechart" nsURI="http://www.muml.org/pim/realtimestatechart/1.0.0"
       nsPrefix="realtimestatechart">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
@@ -673,7 +674,7 @@
         <details key=""/>
       </eAnnotations>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Clock" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement">
+    <eClassifiers xsi:type="ecore:EClass" name="Clock" eSuperTypes="../../org.muml.core/model/core.ecore#//NamedElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="This class represents clocks of a realtime statechart."/>
       </eAnnotations>
@@ -684,7 +685,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Region" eSuperTypes="../../org.storydriven.core/model/core.ecore#//CommentableElement #//realtimestatechart/PrioritizedElement">
+    <eClassifiers xsi:type="ecore:EClass" name="Region" eSuperTypes="../../org.muml.core/model/core.ecore#//CommentableElement #//realtimestatechart/PrioritizedElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Regions enables hierarchy and parallelism. Each state can have zero, one or more regions."/>
       </eAnnotations>
@@ -847,7 +848,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Vertex" abstract="true" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement">
+    <eClassifiers xsi:type="ecore:EClass" name="Vertex" abstract="true" eSuperTypes="../../org.muml.core/model/core.ecore#//NamedElement ../../org.muml.core/model/core.ecore#//CommentableElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="This class represents a node in a realtime statechart that is connected with other nodes via transitions."/>
       </eAnnotations>
@@ -909,7 +910,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Transition" eSuperTypes="#//realtimestatechart/PrioritizedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement">
+    <eClassifiers xsi:type="ecore:EClass" name="Transition" eSuperTypes="#//realtimestatechart/PrioritizedElement ../../org.muml.core/model/core.ecore#//CommentableElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
         <details key="constraints" value="UsingAOneToManySchemaAtOneTransitionImpliesUsingSchemaAtAllTransitions LegalTransitionsOnly TriggerMessageEventsMustNotHaveAnOwnedParameterBinding ValidTriggerMessageEvents ValidRaiseMessageEvents StateConnectionPointIncomingTransitionsNoSideEffectsOrDeadlines StateConnectionPointOutgoingTransitionsNoConditions StateConnectionPointOutgoingTransitionsMustBeUrgent NoCombinationOfRelativeAndAbsoluteDeadlines NoCombinationOfReceivedSynchronizationAndTriggerMessage TransitionMustBeContainedByCorrectStatechart OutgoingTransitionOfUrgentStateMustBeUrgent NotMoreThanOneTriggerAndOneRaiseMessageEvent"/>
       </eAnnotations>
@@ -1010,7 +1011,7 @@
           <details key="documentation" value="Needed for failure propagation."/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="guard" eType="ecore:EClass ../../org.storydriven.core/model/core.ecore#//expressions/Expression"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="guard" eType="ecore:EClass ../../org.muml.core/model/core.ecore#//expressions/Expression"
           containment="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The guard of a transition is defined by an expression which should have return type boolean. Comparing clock values is not allowed (use clock constraints instead)."/>
@@ -1055,7 +1056,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ClockConstraint" eSuperTypes="../../org.storydriven.core/model/core.ecore#//ExtendableElement">
+    <eClassifiers xsi:type="ecore:EClass" name="ClockConstraint" eSuperTypes="../../org.muml.core/model/core.ecore#//ExtendableElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="This class represents an arbitrary time constraint that can either be used as an invariant constraint of a state or as a transition guard."/>
       </eAnnotations>
@@ -1072,19 +1073,19 @@
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" lowerBound="1"
-          eType="ecore:EEnum ../../org.storydriven.core/model/core.ecore#//expressions/common/ComparingOperator"
+          eType="ecore:EEnum ../../org.muml.core/model/core.ecore#//expressions/common/ComparingOperator"
           defaultValueLiteral="LESS_OR_EQUAL">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The operator that is used in this clock constraint."/>
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Action" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement">
+    <eClassifiers xsi:type="ecore:EClass" name="Action" eSuperTypes="../../org.muml.core/model/core.ecore#//NamedElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="An action is used as a side effect of a transition as well as within a state. Each transition can&#xD;&#xA;only define one action. A state can define up to three actions (one for state entry, one for state&#xD;&#xA;exit, one while dwelling within the state).&#xD;&#xA;"/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="expressions" lowerBound="1"
-          upperBound="-1" eType="ecore:EClass ../../org.storydriven.core/model/core.ecore#//expressions/Expression"
+          upperBound="-1" eType="ecore:EClass ../../org.muml.core/model/core.ecore#//expressions/Expression"
           containment="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="An action has a defined expression, which can be expressed in different languages."/>
@@ -1152,7 +1153,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="SynchronizationChannel" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement">
+    <eClassifiers xsi:type="ecore:EClass" name="SynchronizationChannel" eSuperTypes="../../org.muml.core/model/core.ecore#//NamedElement ../../org.muml.core/model/core.ecore#//CommentableElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Defines a type of a synchronization channel that can be used to synchronize&#xA;between statecharts contained as substatecharts in the same state.&#xA;Serves as a type for Synchronizations."/>
       </eAnnotations>
@@ -1174,7 +1175,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Synchronization" eSuperTypes="../../org.storydriven.core/model/core.ecore#//ExtendableElement">
+    <eClassifiers xsi:type="ecore:EClass" name="Synchronization" eSuperTypes="../../org.muml.core/model/core.ecore#//ExtendableElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Two transitions can synchron fire. One transition is the sender, the other the receiver. This means that both transitions (exactly one sender and one receiver) must be activated and has to fire at the same time. "/>
       </eAnnotations>
@@ -1196,7 +1197,7 @@
           <details key="documentation" value="Decides the kind: Is this a send or a reveive synchronization?"/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="selectorExpression" eType="ecore:EClass ../../org.storydriven.core/model/core.ecore#//expressions/Expression"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="selectorExpression" eType="ecore:EClass ../../org.muml.core/model/core.ecore#//expressions/Expression"
           containment="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="An expression that evaluates to a value which is used to select a particular counterpart for the synchronization."/>
@@ -1219,7 +1220,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="RealtimeStatechart" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement #//behavior/Behavior">
+    <eClassifiers xsi:type="ecore:EClass" name="RealtimeStatechart" eSuperTypes="../../org.muml.core/model/core.ecore#//NamedElement ../../org.muml.core/model/core.ecore#//CommentableElement #//behavior/Behavior">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="This class is a concrete statechart implementation of a real-time statechart."/>
       </eAnnotations>
@@ -1406,7 +1407,7 @@
         <details key="documentation" value="A StateEvent is an event that occurs within a state of a real-time statechart.&#xD;&#xA;StateEvents may only be trigger events."/>
       </eAnnotations>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Message" eSuperTypes="../../org.storydriven.core/model/core.ecore#//ExtendableElement">
+    <eClassifiers xsi:type="ecore:EClass" name="Message" eSuperTypes="../../org.muml.core/model/core.ecore#//ExtendableElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="The messages are exchanged between components in order to communicate&#xD;&#xA;asynchronously. A message is typed over a message type and provides a &#xD;&#xA;binding of all parameters defined by the message type to concrete values."/>
       </eAnnotations>
@@ -1495,7 +1496,7 @@
         <details key="AtMostOneConnectingRegionWithTriggerMessageEvents" value="-- There must be at most one region with transitions that have a trigger message event and connect (directly or indirectly) to the exit point&#xD;&#xA;&#xD;&#xA;let exitTransitions : Collection(Transition) = &#xD;&#xA;&#xD;&#xA;self.incomingTransitions->union(&#xD;&#xA;   self.incomingTransitions->closure(t | &#xD;&#xA;&#x9;if t.source.oclIsKindOf(ExitPoint)&#xD;&#xA;&#x9;then t.source.incomingTransitions&#xD;&#xA;&#x9;else Sequence{}&#xD;&#xA;&#x9;endif&#xD;&#xA;   )&#xD;&#xA;)&#xD;&#xA;&#xD;&#xA;in exitTransitions->forAll(t1 : Transition, t2: Transition | (t1 &lt;> t2 and (not t1.triggerMessageEvent.oclIsUndefined()) and (not t2.triggerMessageEvent.oclIsUndefined())) implies (t1.statechart = t2.statechart))"/>
       </eAnnotations>
     </eClassifiers>
-    <eSubpackages name="one_to_n_schemata" nsURI="http://www.fujaba.de/muml/one_to_n_schemata/0.4.0"
+    <eSubpackages name="one_to_n_schemata" nsURI="http://www.muml.org/pim/one_to_n_schemata/1.0.0"
         nsPrefix="one_to_n_schemata">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
         <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
@@ -1509,7 +1510,7 @@
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="An abstract class all communication schemata inherit from (at least indirectly)."/>
         </eAnnotations>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="condition" eType="ecore:EClass ../../org.storydriven.core/model/core.ecore#//expressions/Expression"
+        <eStructuralFeatures xsi:type="ecore:EReference" name="condition" eType="ecore:EClass ../../org.muml.core/model/core.ecore#//expressions/Expression"
             containment="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="A subrole only sends or receives a message if it satisfies this condition."/>
@@ -1544,7 +1545,7 @@
           <details key="documentation" value="The communication schema iterate allows for an iterative sending of a message."/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="terminationCondition"
-            eType="ecore:EClass ../../org.storydriven.core/model/core.ecore#//expressions/Expression"
+            eType="ecore:EClass ../../org.muml.core/model/core.ecore#//expressions/Expression"
             containment="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The condition under which the iteration terminates."/>
@@ -1625,7 +1626,7 @@
       </eClassifiers>
     </eSubpackages>
   </eSubpackages>
-  <eSubpackages name="msgtype" nsURI="http://www.fujaba.de/muml/msgtype/0.4.0" nsPrefix="msgtype">
+  <eSubpackages name="msgtype" nsURI="http://www.muml.org/pim/msgtype/1.0.0" nsPrefix="msgtype">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
       <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
@@ -1634,7 +1635,7 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="This package defines the message types that can be send and received via discrete interaction&#xD;&#xA;endpoints. Then, the real-time statecharts of the discrete interaction endpoints use the message&#xD;&#xA;types to type their asynchronous messages at their transitions. Message types may be grouped &#xD;&#xA;in message type repositories."/>
     </eAnnotations>
-    <eClassifiers xsi:type="ecore:EClass" name="MessageType" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement">
+    <eClassifiers xsi:type="ecore:EClass" name="MessageType" eSuperTypes="../../org.muml.core/model/core.ecore#//NamedElement ../../org.muml.core/model/core.ecore#//CommentableElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="A message type defines the signature of one event. That includes the name&#xD;&#xA;of the event as well as the ordered list of parameters. In addition, a message&#xD;&#xA;type is contained in a message type repository."/>
       </eAnnotations>
@@ -1658,7 +1659,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="MessageTypeRepository" eSuperTypes="../../org.storydriven.core/model/core.ecore#//Repository">
+    <eClassifiers xsi:type="ecore:EClass" name="MessageTypeRepository" eSuperTypes="../../org.muml.core/model/core.ecore#//Repository">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
         <details key="AtLeastOneMessageType" value="-- A MessageTypeRepository must contain at least one MessageType.&#xD;&#xA;self.messageTypes->notEmpty()"/>
       </eAnnotations>
@@ -1676,7 +1677,7 @@
       </eStructuralFeatures>
     </eClassifiers>
   </eSubpackages>
-  <eSubpackages name="types" nsURI="http://www.fujaba.de/muml/types/0.4.0" nsPrefix="types">
+  <eSubpackages name="types" nsURI="http://www.muml.org/pim/types/1.0.0" nsPrefix="types">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="This package provides modeling support for data types."/>
     </eAnnotations>
@@ -1713,7 +1714,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="DataType" abstract="true" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement">
+    <eClassifiers xsi:type="ecore:EClass" name="DataType" abstract="true" eSuperTypes="../../org.muml.core/model/core.ecore#//NamedElement ../../org.muml.core/model/core.ecore#//CommentableElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Abstract super class for all types that may be used for attributes, parameters, and operations."/>
       </eAnnotations>
@@ -1762,7 +1763,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Attribute" eSuperTypes="#//behavior/TypedNamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement">
+    <eClassifiers xsi:type="ecore:EClass" name="Attribute" eSuperTypes="#//behavior/TypedNamedElement ../../org.muml.core/model/core.ecore#//CommentableElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="An attribute is a field of a StructType. An attribute specifies a name and a data type. Eligable data types are primitive data types, array data types, and structure data types."/>
       </eAnnotations>
@@ -1774,8 +1775,7 @@
       </eAnnotations>
     </eClassifiers>
   </eSubpackages>
-  <eSubpackages name="connector" nsURI="http://www.fujaba.de/muml/connector/0.4.0"
-      nsPrefix="connector">
+  <eSubpackages name="connector" nsURI="http://www.muml.org/pim/connector/1.0.0" nsPrefix="connector">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
       <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
@@ -1785,7 +1785,7 @@
       <details key="documentation" value="This package defines a set of abstract classes that form the basis for all connectors&#xD;&#xA;that we use in our meta-model. They define the connectors, different types of &#xD;&#xA;endpoints that are connected by connectors, and their instances."/>
     </eAnnotations>
     <eClassifiers xsi:type="ecore:EClass" name="ConnectorEndpoint" abstract="true"
-        eSuperTypes="../../org.storydriven.core/model/core.ecore#//CommentableElement">
+        eSuperTypes="../../org.muml.core/model/core.ecore#//CommentableElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="An endpoint that may be connected to other endpoints via connectors."/>
       </eAnnotations>
@@ -1796,7 +1796,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Connector" abstract="true" eSuperTypes="../../org.storydriven.core/model/core.ecore#//CommentableElement">
+    <eClassifiers xsi:type="ecore:EClass" name="Connector" abstract="true" eSuperTypes="../../org.muml.core/model/core.ecore#//CommentableElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="A connector connects up to two connector endpoints. In case of a self-connector, there is only one endpoint."/>
       </eAnnotations>
@@ -1818,7 +1818,7 @@
       </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ConnectorEndpointInstance" abstract="true"
-        eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement">
+        eSuperTypes="../../org.muml.core/model/core.ecore#//NamedElement ../../org.muml.core/model/core.ecore#//CommentableElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="An instance of a particular connector endpoint."/>
       </eAnnotations>
@@ -1836,7 +1836,7 @@
       </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ConnectorInstance" abstract="true"
-        eSuperTypes="../../org.storydriven.core/model/core.ecore#//CommentableElement">
+        eSuperTypes="../../org.muml.core/model/core.ecore#//CommentableElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="An instance of a particular connector."/>
       </eAnnotations>
@@ -1854,7 +1854,7 @@
       </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="DiscreteInteractionEndpoint" abstract="true"
-        eSuperTypes="#//connector/ConnectorEndpoint #//behavior/BehavioralElement ../../org.storydriven.core/model/core.ecore#//NamedElement">
+        eSuperTypes="#//connector/ConnectorEndpoint #//behavior/BehavioralElement ../../org.muml.core/model/core.ecore#//NamedElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="An interaction point for discrete communication via asynchronous messages. This class generalizes concepts of classes DiscretePort and Role."/>
       </eAnnotations>
@@ -2008,7 +2008,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="MessageBuffer" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement">
+    <eClassifiers xsi:type="ecore:EClass" name="MessageBuffer" eSuperTypes="../../org.muml.core/model/core.ecore#//NamedElement ../../org.muml.core/model/core.ecore#//CommentableElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="A message buffer may contains message types. A message buffer has a specified size and is associtated to a role of a coordination protocol. Message types are always stored in FIFO order."/>
       </eAnnotations>
@@ -2069,8 +2069,7 @@
       </eLiterals>
     </eClassifiers>
   </eSubpackages>
-  <eSubpackages name="valuetype" nsURI="http://www.fujaba.de/muml/valuetype/0.4.0"
-      nsPrefix="valueType">
+  <eSubpackages name="valuetype" nsURI="http://www.muml.org/pim/valuetype/1.0.0" nsPrefix="valueType">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
       <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
@@ -2102,7 +2101,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="TimeValue" eSuperTypes="../../org.storydriven.core/model/core.ecore#//ExtendableElement">
+    <eClassifiers xsi:type="ecore:EClass" name="TimeValue" eSuperTypes="../../org.muml.core/model/core.ecore#//ExtendableElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="A time value defines a value concerning time and an optional time unit. The value is an expression and can therefore consist of various elements like variables, operators and literals."/>
       </eAnnotations>
@@ -2123,7 +2122,7 @@
         </eAnnotations>
       </eOperations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="value" lowerBound="1"
-          eType="ecore:EClass ../../org.storydriven.core/model/core.ecore#//expressions/Expression"
+          eType="ecore:EClass ../../org.muml.core/model/core.ecore#//expressions/Expression"
           containment="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The value concerning time must be an expression. Defining the value is mandatory."/>
@@ -2242,7 +2241,7 @@
       </eStructuralFeatures>
     </eClassifiers>
   </eSubpackages>
-  <eSubpackages name="behavior" nsURI="http://www.fujaba.de/muml/behavior/0.4.0" nsPrefix="behavior">
+  <eSubpackages name="behavior" nsURI="http://www.muml.org/pim/behavior/1.0.0" nsPrefix="behavior">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
       <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
@@ -2285,12 +2284,12 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Operation" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement">
+    <eClassifiers xsi:type="ecore:EClass" name="Operation" eSuperTypes="../../org.muml.core/model/core.ecore#//NamedElement ../../org.muml.core/model/core.ecore#//CommentableElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="An operation specifies a behavior that can be called with a list of concrete parameters and may return a return value."/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="implementations" upperBound="-1"
-          eType="ecore:EClass ../../org.storydriven.core/model/core.ecore#//expressions/Expression"
+          eType="ecore:EClass ../../org.muml.core/model/core.ecore#//expressions/Expression"
           containment="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The implementation for this operation. MechatronicUML supports the annotation of multiple implementations for an operation to support different target languages."/>
@@ -2309,12 +2308,12 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Parameter" eSuperTypes="#//behavior/TypedNamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement">
+    <eClassifiers xsi:type="ecore:EClass" name="Parameter" eSuperTypes="#//behavior/TypedNamedElement ../../org.muml.core/model/core.ecore#//CommentableElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="This is a general representation of a Parameter which is by all model elements&#xD;&#xA;that receive parameters. Examples include operations, message types, and synchronization channels.&#xD;&#xA;A parameter defines a data type."/>
       </eAnnotations>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ParameterBinding" eSuperTypes="../../org.storydriven.core/model/core.ecore#//ExtendableElement">
+    <eClassifiers xsi:type="ecore:EClass" name="ParameterBinding" eSuperTypes="../../org.muml.core/model/core.ecore#//ExtendableElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="A parameter binding associates a parameter with a concrete value which is bound to this parameter by an invocation. As an example, an operation defines a set of parameters. A call of this operation needs to provide concrete values for the parameters which are defined by a parameter binding. The value is represented by an expression."/>
       </eAnnotations>
@@ -2328,7 +2327,7 @@
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="value" lowerBound="1"
-          eType="ecore:EClass ../../org.storydriven.core/model/core.ecore#//expressions/Expression"
+          eType="ecore:EClass ../../org.muml.core/model/core.ecore#//expressions/Expression"
           containment="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The mandatory value which is associated with the parameter. The value is defined by an expression."/>
@@ -2336,7 +2335,7 @@
       </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="TypedNamedElement" abstract="true"
-        eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement">
+        eSuperTypes="../../org.muml.core/model/core.ecore#//NamedElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Abstract super class for all elements that have a name and a type."/>
       </eAnnotations>
@@ -2347,7 +2346,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Variable" eSuperTypes="#//behavior/TypedNamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement">
+    <eClassifiers xsi:type="ecore:EClass" name="Variable" eSuperTypes="#//behavior/TypedNamedElement ../../org.muml.core/model/core.ecore#//CommentableElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Implementation of a variable of a behavior which has a certain type. A variable has a type, a name, and is commentable."/>
       </eAnnotations>
@@ -2365,14 +2364,14 @@
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="initializeExpression"
-          eType="ecore:EClass ../../org.storydriven.core/model/core.ecore#//expressions/Expression"
+          eType="ecore:EClass ../../org.muml.core/model/core.ecore#//expressions/Expression"
           containment="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="A variable may have a value when it is initialized. The value is defined by an expression."/>
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="OperationRepository" eSuperTypes="../../org.storydriven.core/model/core.ecore#//Repository">
+    <eClassifiers xsi:type="ecore:EClass" name="OperationRepository" eSuperTypes="../../org.muml.core/model/core.ecore#//Repository">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="An OperationRepository groups a set of reusable Operations. Operations are not required to have an implementation."/>
       </eAnnotations>
@@ -2384,8 +2383,7 @@
       </eStructuralFeatures>
     </eClassifiers>
   </eSubpackages>
-  <eSubpackages name="component" nsURI="http://www.fujaba.de/muml/component/0.4.0"
-      nsPrefix="component">
+  <eSubpackages name="component" nsURI="http://www.muml.org/pim/component/1.0.0" nsPrefix="component">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
       <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
@@ -2394,7 +2392,7 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="The package components contains all classes for modeling atomic and structured components.&#xD;&#xA;Components are defined on the type level and may be instantiated in a component instance configuration."/>
     </eAnnotations>
-    <eClassifiers xsi:type="ecore:EClass" name="Component" abstract="true" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement #//types/DataType">
+    <eClassifiers xsi:type="ecore:EClass" name="Component" abstract="true" eSuperTypes="../../org.muml.core/model/core.ecore#//NamedElement ../../org.muml.core/model/core.ecore#//CommentableElement #//types/DataType">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="This abstract class is the super class of all classes representing a concrete component type such as a structured, atomic or a continuous component.&#xD;&#xA;&#xD;&#xA;Component types are implemented as a variation of the composite design pattern. Concerning the composite pattern this class represents the role &quot;component&quot;."/>
       </eAnnotations>
@@ -2523,7 +2521,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ComponentPart" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement #//types/DataType">
+    <eClassifiers xsi:type="ecore:EClass" name="ComponentPart" eSuperTypes="../../org.muml.core/model/core.ecore#//NamedElement ../../org.muml.core/model/core.ecore#//CommentableElement #//types/DataType">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
         <details key="constraints" value="CardinalityLowerBoundSet TypeNotEqualToParent CardinalityUpperBoundSet"/>
       </eAnnotations>
@@ -2800,7 +2798,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="CoordinationProtocolPart" eSuperTypes="../../org.storydriven.core/model/core.ecore#//CommentableElement">
+    <eClassifiers xsi:type="ecore:EClass" name="CoordinationProtocolPart" eSuperTypes="../../org.muml.core/model/core.ecore#//CommentableElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="A coordination protocol (pattern) can occur within a structured component. It defines the communication behavior of an assembly connection that connects discrete ports with each other."/>
       </eAnnotations>
@@ -2867,7 +2865,7 @@
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="initializeExpression"
-          eType="ecore:EClass ../../org.storydriven.core/model/core.ecore#//expressions/Expression"
+          eType="ecore:EClass ../../org.muml.core/model/core.ecore#//expressions/Expression"
           containment="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="A initialize expression specifies the initial value that is emitted by the port after&#xD;&#xA;it has been instantiated. Thus, we only provide initialize expressions for out-port."/>
@@ -2932,7 +2930,7 @@
       </eAnnotations>
     </eClassifiers>
   </eSubpackages>
-  <eSubpackages name="pattern" nsURI="http://www.fujaba.de/muml/pattern/0.3.18" nsPrefix="pattern">
+  <eSubpackages name="pattern" nsURI="http://www.muml.org/pim/pattern/1.0.0" nsPrefix="pattern">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="This package defines all modeling elements in order to define Real-Time Coordination Patterns."/>
     </eAnnotations>
@@ -3044,7 +3042,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="VerifiedConfiguration" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement">
+    <eClassifiers xsi:type="ecore:EClass" name="VerifiedConfiguration" eSuperTypes="../../org.muml.core/model/core.ecore#//NamedElement ../../org.muml.core/model/core.ecore#//CommentableElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="A Real-Time Coordination Pattern may define one or more verified configurations. It has a name and may be commented. In particular, it defines a concrete value for each parameter of the pattern."/>
       </eAnnotations>

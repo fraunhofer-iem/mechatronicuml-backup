@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.muml.core.CorePackage;
 import org.muml.core.modelinstance.ModelinstancePackage;
+import org.muml.pim.PimPackage;
 import org.muml.pim.behavior.BehaviorPackage;
 import org.muml.pim.behavior.impl.BehaviorPackageImpl;
 import org.muml.pim.component.ComponentPackage;
@@ -22,6 +23,7 @@ import org.muml.pim.connector.ConnectorPackage;
 import org.muml.pim.connector.impl.ConnectorPackageImpl;
 import org.muml.pim.constraint.ConstraintPackage;
 import org.muml.pim.constraint.impl.ConstraintPackageImpl;
+import org.muml.pim.impl.PimPackageImpl;
 import org.muml.pim.instance.InstancePackage;
 import org.muml.pim.instance.impl.InstancePackageImpl;
 import org.muml.pim.msgtype.MsgtypePackage;
@@ -137,6 +139,7 @@ public class ProtocolPackageImpl extends EPackageImpl implements ProtocolPackage
 		ModelinstancePackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
+		PimPackageImpl thePimPackage = (PimPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(PimPackage.eNS_URI) instanceof PimPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PimPackage.eNS_URI) : PimPackage.eINSTANCE);
 		ConstraintPackageImpl theConstraintPackage = (ConstraintPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ConstraintPackage.eNS_URI) instanceof ConstraintPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ConstraintPackage.eNS_URI) : ConstraintPackage.eINSTANCE);
 		InstancePackageImpl theInstancePackage = (InstancePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(InstancePackage.eNS_URI) instanceof InstancePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(InstancePackage.eNS_URI) : InstancePackage.eINSTANCE);
 		RealtimestatechartPackageImpl theRealtimestatechartPackage = (RealtimestatechartPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(RealtimestatechartPackage.eNS_URI) instanceof RealtimestatechartPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(RealtimestatechartPackage.eNS_URI) : RealtimestatechartPackage.eINSTANCE);
@@ -151,6 +154,7 @@ public class ProtocolPackageImpl extends EPackageImpl implements ProtocolPackage
 
 		// Create package meta-data objects
 		theProtocolPackage.createPackageContents();
+		thePimPackage.createPackageContents();
 		theConstraintPackage.createPackageContents();
 		theInstancePackage.createPackageContents();
 		theRealtimestatechartPackage.createPackageContents();
@@ -165,6 +169,7 @@ public class ProtocolPackageImpl extends EPackageImpl implements ProtocolPackage
 
 		// Initialize created meta-data
 		theProtocolPackage.initializePackageContents();
+		thePimPackage.initializePackageContents();
 		theConstraintPackage.initializePackageContents();
 		theInstancePackage.initializePackageContents();
 		theRealtimestatechartPackage.initializePackageContents();
@@ -499,9 +504,6 @@ public class ProtocolPackageImpl extends EPackageImpl implements ProtocolPackage
 		initEReference(getConnectorQualityOfServiceAssumptions_MinMessageDelay(), theValuetypePackage.getTimeValue(), null, "minMessageDelay", null, 1, 1, ConnectorQualityOfServiceAssumptions.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getConnectorQualityOfServiceAssumptions_MaxMessageDelay(), theValuetypePackage.getTimeValue(), null, "maxMessageDelay", null, 1, 1, ConnectorQualityOfServiceAssumptions.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getConnectorQualityOfServiceAssumptions_MessageLossPossible(), ecorePackage.getEBoolean(), "messageLossPossible", "false", 1, 1, ConnectorQualityOfServiceAssumptions.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		// Create resource
-		createResource(eNS_URI);
 
 		// Create annotations
 		// http://www.eclipse.org/emf/2002/Ecore

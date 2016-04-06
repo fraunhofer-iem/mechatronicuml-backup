@@ -53,7 +53,7 @@ public interface One_to_n_schemataPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.fujaba.de/muml/one_to_n_schemata/0.4.0";
+	String eNS_URI = "http://www.muml.org/pim/one_to_n_schemata/1.0.0";
 
 	/**
 	 * The package namespace name.

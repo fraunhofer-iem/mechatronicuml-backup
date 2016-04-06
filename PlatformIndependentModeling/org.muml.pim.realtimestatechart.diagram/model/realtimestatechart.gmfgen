@@ -31,7 +31,7 @@
         xsi:type="gmfgen:FigureViewmap"
         figureQualifiedClassName="org.eclipse.draw2d.FreeformLayer"/>
     <domainDiagramElement
-        href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/realtimestatechart/RealtimeStatechart"/>
+        href="../../org.muml.pim/model/pim.genmodel#//pim/realtimestatechart/RealtimeStatechart"/>
     <childNodes
         visualID="3032"
         editPartClassName="StateEditPart"
@@ -66,21 +66,21 @@
           editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.policies.statechart.StateColorEditPolicy"/>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/realtimestatechart/State"/>
+            href="../../org.muml.pim/model/pim.genmodel#//pim/realtimestatechart/State"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/realtimestatechart/RealtimeStatechart/states"/>
+            href="../../org.muml.pim/model/pim.genmodel#//pim/realtimestatechart/RealtimeStatechart/states"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/realtimestatechart/RealtimeStatechart/states"/>
+            href="../../org.muml.pim/model/pim.genmodel#//pim/realtimestatechart/RealtimeStatechart/states"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
               value="//@expressionProviders/@providers.0/@expressions.20">
             <feature
-                href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+                href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
           </initializers>
           <elementClass
-              href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/realtimestatechart/State"/>
+              href="../../org.muml.pim/model/pim.genmodel#//pim/realtimestatechart/State"/>
         </modelElementInitializer>
       </modelFacet>
       <labels
@@ -102,7 +102,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.6">
           <metaFeatures
-              href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+              href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -131,11 +131,11 @@
       </viewmap>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/realtimestatechart/EntryEvent"/>
+            href="../../org.muml.pim/model/pim.genmodel#//pim/realtimestatechart/EntryEvent"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/realtimestatechart/State/entryEvent"/>
+            href="../../org.muml.pim/model/pim.genmodel#//pim/realtimestatechart/State/entryEvent"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/realtimestatechart/State/entryEvent"/>
+            href="../../org.muml.pim/model/pim.genmodel#//pim/realtimestatechart/State/entryEvent"/>
       </modelFacet>
       <labels
           visualID="5050"
@@ -183,23 +183,23 @@
       </viewmap>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/realtimestatechart/DoEvent"/>
+            href="../../org.muml.pim/model/pim.genmodel#//pim/realtimestatechart/DoEvent"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/realtimestatechart/State/doEvent"/>
+            href="../../org.muml.pim/model/pim.genmodel#//pim/realtimestatechart/State/doEvent"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/realtimestatechart/State/doEvent"/>
+            href="../../org.muml.pim/model/pim.genmodel#//pim/realtimestatechart/State/doEvent"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenReferenceNewElementSpec">
             <feature
-                href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/realtimestatechart/DoEvent/action"/>
+                href="../../org.muml.pim/model/pim.genmodel#//pim/realtimestatechart/DoEvent/action"/>
             <newElementInitializers>
               <initializers
                   xsi:type="gmfgen:GenFeatureValueSpec"
                   value="//@expressionProviders/@providers.0/@expressions.1">
                 <feature
-                    href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+                    href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
               </initializers>
             </newElementInitializers>
           </initializers>
@@ -251,11 +251,11 @@
       </viewmap>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/realtimestatechart/ExitEvent"/>
+            href="../../org.muml.pim/model/pim.genmodel#//pim/realtimestatechart/ExitEvent"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/realtimestatechart/State/exitEvent"/>
+            href="../../org.muml.pim/model/pim.genmodel#//pim/realtimestatechart/State/exitEvent"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/realtimestatechart/State/exitEvent"/>
+            href="../../org.muml.pim/model/pim.genmodel#//pim/realtimestatechart/State/exitEvent"/>
       </modelFacet>
       <labels
           visualID="5052"
@@ -307,11 +307,11 @@
           editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.policies.statechart.TitleHelperEditPolicy"/>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/realtimestatechart/ClockConstraint"/>
+            href="../../org.muml.pim/model/pim.genmodel#//pim/realtimestatechart/ClockConstraint"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/realtimestatechart/State/invariants"/>
+            href="../../org.muml.pim/model/pim.genmodel#//pim/realtimestatechart/State/invariants"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/realtimestatechart/State/invariants"/>
+            href="../../org.muml.pim/model/pim.genmodel#//pim/realtimestatechart/State/invariants"/>
       </modelFacet>
       <labels
           visualID="5053"
@@ -363,21 +363,21 @@
           editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.policies.statechart.TitleHelperEditPolicy"/>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/realtimestatechart/SynchronizationChannel"/>
+            href="../../org.muml.pim/model/pim.genmodel#//pim/realtimestatechart/SynchronizationChannel"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/realtimestatechart/State/channels"/>
+            href="../../org.muml.pim/model/pim.genmodel#//pim/realtimestatechart/State/channels"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/realtimestatechart/State/channels"/>
+            href="../../org.muml.pim/model/pim.genmodel#//pim/realtimestatechart/State/channels"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
               value="//@expressionProviders/@providers.0/@expressions.21">
             <feature
-                href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+                href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
           </initializers>
           <elementClass
-              href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/realtimestatechart/SynchronizationChannel"/>
+              href="../../org.muml.pim/model/pim.genmodel#//pim/realtimestatechart/SynchronizationChannel"/>
         </modelElementInitializer>
       </modelFacet>
       <labels
@@ -426,46 +426,46 @@
       </viewmap>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/realtimestatechart/Region"/>
+            href="../../org.muml.pim/model/pim.genmodel#//pim/realtimestatechart/Region"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/realtimestatechart/State/embeddedRegions"/>
+            href="../../org.muml.pim/model/pim.genmodel#//pim/realtimestatechart/State/embeddedRegions"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/realtimestatechart/State/embeddedRegions"/>
+            href="../../org.muml.pim/model/pim.genmodel#//pim/realtimestatechart/State/embeddedRegions"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
               value="//@expressionProviders/@providers.0/@expressions.6">
             <feature
-                href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/realtimestatechart/PrioritizedElement/priority"/>
+                href="../../org.muml.pim/model/pim.genmodel#//pim/realtimestatechart/PrioritizedElement/priority"/>
           </initializers>
           <initializers
               xsi:type="gmfgen:GenReferenceNewElementSpec">
             <feature
-                href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/realtimestatechart/Region/embeddedStatechart"/>
+                href="../../org.muml.pim/model/pim.genmodel#//pim/realtimestatechart/Region/embeddedStatechart"/>
             <newElementInitializers>
               <initializers
                   xsi:type="gmfgen:GenFeatureValueSpec"
                   value="//@expressionProviders/@providers.0/@expressions.7">
                 <feature
-                    href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+                    href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
               </initializers>
               <initializers
                   xsi:type="gmfgen:GenReferenceNewElementSpec">
                 <feature
-                    href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/realtimestatechart/RealtimeStatechart/states"/>
+                    href="../../org.muml.pim/model/pim.genmodel#//pim/realtimestatechart/RealtimeStatechart/states"/>
                 <newElementInitializers>
                   <initializers
                       xsi:type="gmfgen:GenFeatureValueSpec"
                       value="//@expressionProviders/@providers.0/@expressions.8">
                     <feature
-                        href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+                        href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
                   </initializers>
                   <initializers
                       xsi:type="gmfgen:GenFeatureValueSpec"
                       value="//@expressionProviders/@providers.0/@expressions.9">
                     <feature
-                        href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/realtimestatechart/State/initial"/>
+                        href="../../org.muml.pim/model/pim.genmodel#//pim/realtimestatechart/State/initial"/>
                   </initializers>
                 </newElementInitializers>
               </initializers>
@@ -512,7 +512,7 @@
             parser="//@labelParsers/@implementations.6"
             viewPattern="">
           <metaFeatures
-              href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/realtimestatechart/PrioritizedElement/priority"/>
+              href="../../org.muml.pim/model/pim.genmodel#//pim/realtimestatechart/PrioritizedElement/priority"/>
         </modelFacet>
       </labels>
       <labels
@@ -553,29 +553,29 @@
           classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class InnerStatechartFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureStatechartContentsCompartment; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public InnerStatechartFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutThis = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutThis.numColumns = 1;&#xA;&#x9;layoutThis.makeColumnsEqualWidth = false;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;this.setFill(false);&#xA;this.setOutline(false);&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureStatechartContentsCompartment = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;fFigureStatechartContentsCompartment.setFill(false);&#xA;fFigureStatechartContentsCompartment.setOutline(false);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureStatechartContentsCompartment = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureStatechartContentsCompartment.verticalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintFFigureStatechartContentsCompartment.horizontalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintFFigureStatechartContentsCompartment.horizontalIndent = 0;&#xA;constraintFFigureStatechartContentsCompartment.horizontalSpan = 1;&#xA;constraintFFigureStatechartContentsCompartment.verticalSpan = 1;&#xA;constraintFFigureStatechartContentsCompartment.grabExcessHorizontalSpace = true;&#xA;constraintFFigureStatechartContentsCompartment.grabExcessVerticalSpace = true;&#xA;this.add(fFigureStatechartContentsCompartment, constraintFFigureStatechartContentsCompartment);&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureStatechartContentsCompartment() {&#xA;&#x9;&#x9;return fFigureStatechartContentsCompartment;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/realtimestatechart/RealtimeStatechart"/>
+            href="../../org.muml.pim/model/pim.genmodel#//pim/realtimestatechart/RealtimeStatechart"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/realtimestatechart/Region/embeddedStatechart"/>
+            href="../../org.muml.pim/model/pim.genmodel#//pim/realtimestatechart/Region/embeddedStatechart"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/realtimestatechart/Region/embeddedStatechart"/>
+            href="../../org.muml.pim/model/pim.genmodel#//pim/realtimestatechart/Region/embeddedStatechart"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenReferenceNewElementSpec">
             <feature
-                href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/realtimestatechart/RealtimeStatechart/states"/>
+                href="../../org.muml.pim/model/pim.genmodel#//pim/realtimestatechart/RealtimeStatechart/states"/>
             <newElementInitializers>
               <initializers
                   xsi:type="gmfgen:GenFeatureValueSpec"
                   value="//@expressionProviders/@providers.0/@expressions.10">
                 <feature
-                    href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+                    href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
               </initializers>
               <initializers
                   xsi:type="gmfgen:GenFeatureValueSpec"
                   value="//@expressionProviders/@providers.0/@expressions.11">
                 <feature
-                    href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/realtimestatechart/State/initial"/>
+                    href="../../org.muml.pim/model/pim.genmodel#//pim/realtimestatechart/State/initial"/>
               </initializers>
             </newElementInitializers>
           </initializers>
@@ -583,7 +583,7 @@
               xsi:type="gmfgen:GenFeatureValueSpec"
               value="//@expressionProviders/@providers.0/@expressions.22">
             <feature
-                href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+                href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
           </initializers>
         </modelElementInitializer>
       </modelFacet>
@@ -618,21 +618,21 @@
           editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.ports.ConnectionPointEditPolicy"/>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/realtimestatechart/EntryPoint"/>
+            href="../../org.muml.pim/model/pim.genmodel#//pim/realtimestatechart/EntryPoint"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/realtimestatechart/State/connectionPoints"/>
+            href="../../org.muml.pim/model/pim.genmodel#//pim/realtimestatechart/State/connectionPoints"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/realtimestatechart/State/connectionPoints"/>
+            href="../../org.muml.pim/model/pim.genmodel#//pim/realtimestatechart/State/connectionPoints"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
               value="//@expressionProviders/@providers.0/@expressions.23">
             <feature
-                href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+                href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
           </initializers>
           <elementClass
-              href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/realtimestatechart/EntryPoint"/>
+              href="../../org.muml.pim/model/pim.genmodel#//pim/realtimestatechart/EntryPoint"/>
         </modelElementInitializer>
       </modelFacet>
     </childNodes>
@@ -667,21 +667,21 @@
           editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.ports.ConnectionPointEditPolicy"/>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/realtimestatechart/ExitPoint"/>
+            href="../../org.muml.pim/model/pim.genmodel#//pim/realtimestatechart/ExitPoint"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/realtimestatechart/State/connectionPoints"/>
+            href="../../org.muml.pim/model/pim.genmodel#//pim/realtimestatechart/State/connectionPoints"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/realtimestatechart/State/connectionPoints"/>
+            href="../../org.muml.pim/model/pim.genmodel#//pim/realtimestatechart/State/connectionPoints"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
               value="//@expressionProviders/@providers.0/@expressions.24">
             <feature
-                href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+                href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
           </initializers>
           <elementClass
-              href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/realtimestatechart/ExitPoint"/>
+              href="../../org.muml.pim/model/pim.genmodel#//pim/realtimestatechart/ExitPoint"/>
         </modelElementInitializer>
       </modelFacet>
     </childNodes>
@@ -705,17 +705,17 @@
           classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class StatechartFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureStatechartNameLabel; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureStatechartVariablesLabel; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureStatechartContentsCompartment; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.Ellipse fFigureHistoryFigure; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public StatechartFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutThis = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutThis.numColumns = 1;&#xA;&#x9;layoutThis.makeColumnsEqualWidth = false;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure statechartTitleAreaFigure0 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;statechartTitleAreaFigure0.setFill(false);&#xA;statechartTitleAreaFigure0.setOutline(false);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintStatechartTitleAreaFigure0 = new org.eclipse.draw2d.GridData();&#xA;constraintStatechartTitleAreaFigure0.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintStatechartTitleAreaFigure0.horizontalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintStatechartTitleAreaFigure0.horizontalIndent = 0;&#xA;constraintStatechartTitleAreaFigure0.horizontalSpan = 1;&#xA;constraintStatechartTitleAreaFigure0.verticalSpan = 1;&#xA;constraintStatechartTitleAreaFigure0.grabExcessHorizontalSpace = true;&#xA;constraintStatechartTitleAreaFigure0.grabExcessVerticalSpace = false;&#xA;this.add(statechartTitleAreaFigure0, constraintStatechartTitleAreaFigure0);&#xA;&#xA;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutStatechartTitleAreaFigure0 = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutStatechartTitleAreaFigure0.numColumns = 3;&#xA;&#x9;layoutStatechartTitleAreaFigure0.makeColumnsEqualWidth = false;&#xA;&#x9;statechartTitleAreaFigure0.setLayoutManager(layoutStatechartTitleAreaFigure0);&#xA;&#xA;&#xA;&#xA;fFigureHistoryFigure = new org.eclipse.draw2d.Ellipse();&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureHistoryFigure = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureHistoryFigure.verticalAlignment = org.eclipse.draw2d.GridData.BEGINNING;&#xA;constraintFFigureHistoryFigure.horizontalAlignment = org.eclipse.draw2d.GridData.BEGINNING;&#xA;constraintFFigureHistoryFigure.horizontalIndent = 0;&#xA;constraintFFigureHistoryFigure.horizontalSpan = 1;&#xA;constraintFFigureHistoryFigure.verticalSpan = 1;&#xA;constraintFFigureHistoryFigure.grabExcessHorizontalSpace = false;&#xA;constraintFFigureHistoryFigure.grabExcessVerticalSpace = false;&#xA;statechartTitleAreaFigure0.add(fFigureHistoryFigure, constraintFFigureHistoryFigure);&#xA;&#xA;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutFFigureHistoryFigure = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutFFigureHistoryFigure.numColumns = 1;&#xA;&#x9;layoutFFigureHistoryFigure.makeColumnsEqualWidth = true;&#xA;&#x9;fFigureHistoryFigure.setLayoutManager(layoutFFigureHistoryFigure);&#xA;&#xA;&#xA;&#xA;org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel historyLabel2 = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;historyLabel2.setText(&quot; H &quot;);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintHistoryLabel2 = new org.eclipse.draw2d.GridData();&#xA;constraintHistoryLabel2.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintHistoryLabel2.horizontalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintHistoryLabel2.horizontalIndent = 0;&#xA;constraintHistoryLabel2.horizontalSpan = 1;&#xA;constraintHistoryLabel2.verticalSpan = 1;&#xA;constraintHistoryLabel2.grabExcessHorizontalSpace = true;&#xA;constraintHistoryLabel2.grabExcessVerticalSpace = true;&#xA;fFigureHistoryFigure.add(historyLabel2, constraintHistoryLabel2);&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;fFigureStatechartNameLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureStatechartNameLabel.setText(&quot;&quot;);&#xA;&#xA;fFigureStatechartNameLabel.setFont(FFIGURESTATECHARTNAMELABEL_FONT);&#xA;&#xA;&#xA;&#xA;statechartTitleAreaFigure0.add(fFigureStatechartNameLabel);&#xA;&#xA;&#xA;&#xA;fFigureStatechartVariablesLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureStatechartVariablesLabel.setText(&quot;&quot;);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureStatechartVariablesLabel = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureStatechartVariablesLabel.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureStatechartVariablesLabel.horizontalAlignment = org.eclipse.draw2d.GridData.END;&#xA;constraintFFigureStatechartVariablesLabel.horizontalIndent = 0;&#xA;constraintFFigureStatechartVariablesLabel.horizontalSpan = 1;&#xA;constraintFFigureStatechartVariablesLabel.verticalSpan = 1;&#xA;constraintFFigureStatechartVariablesLabel.grabExcessHorizontalSpace = true;&#xA;constraintFFigureStatechartVariablesLabel.grabExcessVerticalSpace = false;&#xA;statechartTitleAreaFigure0.add(fFigureStatechartVariablesLabel, constraintFFigureStatechartVariablesLabel);&#xA;&#xA;&#xA;&#xA;// Process FigureRef details&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;this.add(statechartTitleAreaFigure0);&#xA;&#xA;&#xA;&#xA;fFigureStatechartContentsCompartment = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;fFigureStatechartContentsCompartment.setFill(false);&#xA;fFigureStatechartContentsCompartment.setOutline(false);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureStatechartContentsCompartment = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureStatechartContentsCompartment.verticalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintFFigureStatechartContentsCompartment.horizontalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintFFigureStatechartContentsCompartment.horizontalIndent = 0;&#xA;constraintFFigureStatechartContentsCompartment.horizontalSpan = 1;&#xA;constraintFFigureStatechartContentsCompartment.verticalSpan = 1;&#xA;constraintFFigureStatechartContentsCompartment.grabExcessHorizontalSpace = true;&#xA;constraintFFigureStatechartContentsCompartment.grabExcessVerticalSpace = true;&#xA;this.add(fFigureStatechartContentsCompartment, constraintFFigureStatechartContentsCompartment);&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureStatechartNameLabel() {&#xA;&#x9;&#x9;return fFigureStatechartNameLabel;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureStatechartVariablesLabel() {&#xA;&#x9;&#x9;return fFigureStatechartVariablesLabel;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureStatechartContentsCompartment() {&#xA;&#x9;&#x9;return fFigureStatechartContentsCompartment;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.Ellipse getFigureHistoryFigure() {&#xA;&#x9;&#x9;return fFigureHistoryFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Font FFIGURESTATECHARTNAMELABEL_FONT = new org.eclipse.swt.graphics.Font(org.eclipse.swt.widgets.Display.getCurrent(), org.eclipse.swt.widgets.Display.getDefault().getSystemFont().getFontData()[0].getName(), 9, org.eclipse.swt.SWT.ITALIC);&#xA;&#xA;"/>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/realtimestatechart/RealtimeStatechart"/>
+            href="../../org.muml.pim/model/pim.genmodel#//pim/realtimestatechart/RealtimeStatechart"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
               value="//@expressionProviders/@providers.0/@expressions.19">
             <feature
-                href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+                href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
           </initializers>
           <elementClass
-              href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/realtimestatechart/RealtimeStatechart"/>
+              href="../../org.muml.pim/model/pim.genmodel#//pim/realtimestatechart/RealtimeStatechart"/>
         </modelElementInitializer>
       </modelFacet>
       <labels
@@ -737,7 +737,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.6">
           <metaFeatures
-              href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+              href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
         </modelFacet>
       </labels>
       <labels
@@ -780,24 +780,24 @@
       <modelFacet
           xsi:type="gmfgen:TypeLinkModelFacet">
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/realtimestatechart/Transition"/>
+            href="../../org.muml.pim/model/pim.genmodel#//pim/realtimestatechart/Transition"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/realtimestatechart/RealtimeStatechart/transitions"/>
+            href="../../org.muml.pim/model/pim.genmodel#//pim/realtimestatechart/RealtimeStatechart/transitions"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/realtimestatechart/RealtimeStatechart/transitions"/>
+            href="../../org.muml.pim/model/pim.genmodel#//pim/realtimestatechart/RealtimeStatechart/transitions"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
               value="//@expressionProviders/@providers.0/@expressions.15">
             <feature
-                href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/realtimestatechart/PrioritizedElement/priority"/>
+                href="../../org.muml.pim/model/pim.genmodel#//pim/realtimestatechart/PrioritizedElement/priority"/>
           </initializers>
         </modelElementInitializer>
         <sourceMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/realtimestatechart/Transition/source"/>
+            href="../../org.muml.pim/model/pim.genmodel#//pim/realtimestatechart/Transition/source"/>
         <targetMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/realtimestatechart/Transition/target"/>
+            href="../../org.muml.pim/model/pim.genmodel#//pim/realtimestatechart/Transition/target"/>
       </modelFacet>
       <labels
           visualID="6005"
@@ -1299,7 +1299,7 @@
     </tabs>
   </propertySheet>
   <domainGenModel
-      href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#/"/>
+      href="../../org.muml.pim/model/pim.genmodel#/"/>
   <expressionProviders>
     <providers
         xsi:type="gmfgen:GenExpressionInterpreter">
@@ -1364,7 +1364,7 @@
         className="EntryEventLabelExpressionLabelParser5050"
         viewExpression="//@expressionProviders/@providers.0/@expressions.0">
       <expressionContext
-          href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/realtimestatechart/EntryEvent"/>
+          href="../../org.muml.pim/model/pim.genmodel#//pim/realtimestatechart/EntryEvent"/>
     </implementations>
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
@@ -1372,7 +1372,7 @@
         className="DoEventLabelExpressionLabelParser5051"
         viewExpression="//@expressionProviders/@providers.0/@expressions.2">
       <expressionContext
-          href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/realtimestatechart/DoEvent"/>
+          href="../../org.muml.pim/model/pim.genmodel#//pim/realtimestatechart/DoEvent"/>
     </implementations>
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
@@ -1380,7 +1380,7 @@
         className="ExitEventLabelExpressionLabelParser5052"
         viewExpression="//@expressionProviders/@providers.0/@expressions.3">
       <expressionContext
-          href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/realtimestatechart/ExitEvent"/>
+          href="../../org.muml.pim/model/pim.genmodel#//pim/realtimestatechart/ExitEvent"/>
     </implementations>
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
@@ -1388,7 +1388,7 @@
         className="ClockConstraintLabelExpressionLabelParser5053"
         viewExpression="//@expressionProviders/@providers.0/@expressions.4">
       <expressionContext
-          href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/realtimestatechart/ClockConstraint"/>
+          href="../../org.muml.pim/model/pim.genmodel#//pim/realtimestatechart/ClockConstraint"/>
     </implementations>
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
@@ -1396,7 +1396,7 @@
         className="SynchronizationChannelLabelExpressionLabelParser5054"
         viewExpression="//@expressionProviders/@providers.0/@expressions.5">
       <expressionContext
-          href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/realtimestatechart/SynchronizationChannel"/>
+          href="../../org.muml.pim/model/pim.genmodel#//pim/realtimestatechart/SynchronizationChannel"/>
     </implementations>
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
@@ -1404,7 +1404,7 @@
         className="RegionLabelExpressionLabelParser5063"
         viewExpression="//@expressionProviders/@providers.0/@expressions.12">
       <expressionContext
-          href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/realtimestatechart/Region"/>
+          href="../../org.muml.pim/model/pim.genmodel#//pim/realtimestatechart/Region"/>
     </implementations>
     <implementations
         xsi:type="gmfgen:PredefinedParser"
@@ -1415,7 +1415,7 @@
         className="RegionLabelExpressionLabelParser5065"
         viewExpression="//@expressionProviders/@providers.0/@expressions.13">
       <expressionContext
-          href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/realtimestatechart/Region"/>
+          href="../../org.muml.pim/model/pim.genmodel#//pim/realtimestatechart/Region"/>
     </implementations>
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
@@ -1423,7 +1423,7 @@
         className="RealtimeStatechartLabelExpressionLabelParser5062"
         viewExpression="//@expressionProviders/@providers.0/@expressions.14">
       <expressionContext
-          href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/realtimestatechart/RealtimeStatechart"/>
+          href="../../org.muml.pim/model/pim.genmodel#//pim/realtimestatechart/RealtimeStatechart"/>
     </implementations>
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
@@ -1431,7 +1431,7 @@
         className="TransitionLabelExpressionLabelParser6005"
         viewExpression="//@expressionProviders/@providers.0/@expressions.16">
       <expressionContext
-          href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/realtimestatechart/Transition"/>
+          href="../../org.muml.pim/model/pim.genmodel#//pim/realtimestatechart/Transition"/>
     </implementations>
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
@@ -1439,7 +1439,7 @@
         className="TransitionLabelExpressionLabelParser6006"
         viewExpression="//@expressionProviders/@providers.0/@expressions.17">
       <expressionContext
-          href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/realtimestatechart/Transition"/>
+          href="../../org.muml.pim/model/pim.genmodel#//pim/realtimestatechart/Transition"/>
     </implementations>
   </labelParsers>
   <contextMenus
@@ -1449,6 +1449,6 @@
   </contextMenus>
   <extensions>
     <rootInput
-        href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#_VZIdoMwbEeSjx7OWZCcdLw"/>
+        href="../../org.muml.pim/model/pim.propsheet#_VZIdoMwbEeSjx7OWZCcdLw"/>
   </extensions>
 </gmfgen:GenEditorGenerator>

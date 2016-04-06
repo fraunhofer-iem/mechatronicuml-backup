@@ -6,7 +6,7 @@
   <extension
          point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
     <propertyContributor
-          contributorId="de.uni_paderborn.fujaba.muml.common.properties">
+          contributorId="org.muml.ape.contributor">
        <propertyCategory
              category="domain">
        </propertyCategory>

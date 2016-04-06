@@ -41,7 +41,7 @@ public class ProtocolValidator extends MumlValidator {
 	 * @see org.eclipse.emf.common.util.Diagnostic#getCode()
 	 * @generated
 	 */
-	public static final String DIAGNOSTIC_SOURCE = "de.uni_paderborn.fujaba.muml.protocol";
+	public static final String DIAGNOSTIC_SOURCE = "org.muml.pim.protocol";
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants.

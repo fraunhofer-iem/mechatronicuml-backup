@@ -48,7 +48,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.fujaba.de/muml/realtimestatechart/0.4.0";
+	String eNS_URI = "http://www.muml.org/pim/realtimestatechart/1.0.0";
 
 	/**
 	 * The package namespace name.
@@ -224,22 +224,22 @@ public interface RealtimestatechartPackage extends EPackage {
 	int CLOCK = 3;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CLOCK__ANNOTATION = CorePackage.NAMED_ELEMENT__ANNOTATION;
+	int CLOCK__ANNOTATIONS = CorePackage.NAMED_ELEMENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CLOCK__EXTENSION = CorePackage.NAMED_ELEMENT__EXTENSION;
+	int CLOCK__EXTENSIONS = CorePackage.NAMED_ELEMENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -459,6 +459,24 @@ public interface RealtimestatechartPackage extends EPackage {
 	int REGION = 4;
 
 	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGION__ANNOTATIONS = CorePackage.COMMENTABLE_ELEMENT__ANNOTATIONS;
+
+	/**
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGION__EXTENSIONS = CorePackage.COMMENTABLE_ELEMENT__EXTENSIONS;
+
+	/**
 	 * The meta object id for the '{@link org.muml.pim.realtimestatechart.impl.VertexImpl <em>Vertex</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -597,24 +615,6 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 */
 	int PRIORITIZED_ELEMENT = 15;
-
-	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REGION__ANNOTATION = CorePackage.COMMENTABLE_ELEMENT__ANNOTATION;
-
-	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REGION__EXTENSION = CorePackage.COMMENTABLE_ELEMENT__EXTENSION;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -851,22 +851,22 @@ public interface RealtimestatechartPackage extends EPackage {
 	int REGION_OPERATION_COUNT = CorePackage.COMMENTABLE_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VERTEX__ANNOTATION = CorePackage.NAMED_ELEMENT__ANNOTATION;
+	int VERTEX__ANNOTATIONS = CorePackage.NAMED_ELEMENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VERTEX__EXTENSION = CorePackage.NAMED_ELEMENT__EXTENSION;
+	int VERTEX__EXTENSIONS = CorePackage.NAMED_ELEMENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1130,22 +1130,22 @@ public interface RealtimestatechartPackage extends EPackage {
 	int VERTEX_OPERATION_COUNT = CorePackage.NAMED_ELEMENT_OPERATION_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STATE__ANNOTATION = VERTEX__ANNOTATION;
+	int STATE__ANNOTATIONS = VERTEX__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STATE__EXTENSION = VERTEX__EXTENSION;
+	int STATE__EXTENSIONS = VERTEX__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1589,22 +1589,22 @@ public interface RealtimestatechartPackage extends EPackage {
 	int TRANSITION__PRIORITY = PRIORITIZED_ELEMENT__PRIORITY;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__ANNOTATION = PRIORITIZED_ELEMENT_FEATURE_COUNT + 0;
+	int TRANSITION__ANNOTATIONS = PRIORITIZED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__EXTENSION = PRIORITIZED_ELEMENT_FEATURE_COUNT + 1;
+	int TRANSITION__EXTENSIONS = PRIORITIZED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -1958,22 +1958,22 @@ public interface RealtimestatechartPackage extends EPackage {
 	int TRANSITION_OPERATION_COUNT = PRIORITIZED_ELEMENT_OPERATION_COUNT + 19;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CLOCK_CONSTRAINT__ANNOTATION = CorePackage.EXTENDABLE_ELEMENT__ANNOTATION;
+	int CLOCK_CONSTRAINT__ANNOTATIONS = CorePackage.EXTENDABLE_ELEMENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CLOCK_CONSTRAINT__EXTENSION = CorePackage.EXTENDABLE_ELEMENT__EXTENSION;
+	int CLOCK_CONSTRAINT__EXTENSIONS = CorePackage.EXTENDABLE_ELEMENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Bound</b></em>' containment reference.
@@ -2192,22 +2192,22 @@ public interface RealtimestatechartPackage extends EPackage {
 	int CLOCK_CONSTRAINT_OPERATION_COUNT = CorePackage.EXTENDABLE_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ACTION__ANNOTATION = CorePackage.NAMED_ELEMENT__ANNOTATION;
+	int ACTION__ANNOTATIONS = CorePackage.NAMED_ELEMENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ACTION__EXTENSION = CorePackage.NAMED_ELEMENT__EXTENSION;
+	int ACTION__EXTENSIONS = CorePackage.NAMED_ELEMENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2633,22 +2633,22 @@ public interface RealtimestatechartPackage extends EPackage {
 	int ENTRY_OR_EXIT_EVENT_OPERATION_COUNT = STATE_EVENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SYNCHRONIZATION_CHANNEL__ANNOTATION = CorePackage.NAMED_ELEMENT__ANNOTATION;
+	int SYNCHRONIZATION_CHANNEL__ANNOTATIONS = CorePackage.NAMED_ELEMENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SYNCHRONIZATION_CHANNEL__EXTENSION = CorePackage.NAMED_ELEMENT__EXTENSION;
+	int SYNCHRONIZATION_CHANNEL__EXTENSIONS = CorePackage.NAMED_ELEMENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2876,22 +2876,22 @@ public interface RealtimestatechartPackage extends EPackage {
 	int SYNCHRONIZATION_CHANNEL_OPERATION_COUNT = CorePackage.NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SYNCHRONIZATION__ANNOTATION = CorePackage.EXTENDABLE_ELEMENT__ANNOTATION;
+	int SYNCHRONIZATION__ANNOTATIONS = CorePackage.EXTENDABLE_ELEMENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SYNCHRONIZATION__EXTENSION = CorePackage.EXTENDABLE_ELEMENT__EXTENSION;
+	int SYNCHRONIZATION__EXTENSIONS = CorePackage.EXTENDABLE_ELEMENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Sync Channel</b></em>' reference.
@@ -3120,22 +3120,22 @@ public interface RealtimestatechartPackage extends EPackage {
 	int REALTIME_STATECHART = 16;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REALTIME_STATECHART__ANNOTATION = CorePackage.NAMED_ELEMENT__ANNOTATION;
+	int REALTIME_STATECHART__ANNOTATIONS = CorePackage.NAMED_ELEMENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REALTIME_STATECHART__EXTENSION = CorePackage.NAMED_ELEMENT__EXTENSION;
+	int REALTIME_STATECHART__EXTENSIONS = CorePackage.NAMED_ELEMENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3535,22 +3535,22 @@ public interface RealtimestatechartPackage extends EPackage {
 	int MESSAGE = 20;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE__ANNOTATION = CorePackage.EXTENDABLE_ELEMENT__ANNOTATION;
+	int MESSAGE__ANNOTATIONS = CorePackage.EXTENDABLE_ELEMENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE__EXTENSION = CorePackage.EXTENDABLE_ELEMENT__EXTENSION;
+	int MESSAGE__EXTENSIONS = CorePackage.EXTENDABLE_ELEMENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Instance Of</b></em>' reference.
@@ -3880,22 +3880,22 @@ public interface RealtimestatechartPackage extends EPackage {
 	int STATE_CONNECTION_POINT = 23;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STATE_CONNECTION_POINT__ANNOTATION = VERTEX__ANNOTATION;
+	int STATE_CONNECTION_POINT__ANNOTATIONS = VERTEX__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STATE_CONNECTION_POINT__EXTENSION = VERTEX__EXTENSION;
+	int STATE_CONNECTION_POINT__EXTENSIONS = VERTEX__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -4178,22 +4178,22 @@ public interface RealtimestatechartPackage extends EPackage {
 	int ENTRY_POINT = 24;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENTRY_POINT__ANNOTATION = STATE_CONNECTION_POINT__ANNOTATION;
+	int ENTRY_POINT__ANNOTATIONS = STATE_CONNECTION_POINT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENTRY_POINT__EXTENSION = STATE_CONNECTION_POINT__EXTENSION;
+	int ENTRY_POINT__EXTENSIONS = STATE_CONNECTION_POINT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -4476,22 +4476,22 @@ public interface RealtimestatechartPackage extends EPackage {
 	int EXIT_POINT = 25;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXIT_POINT__ANNOTATION = STATE_CONNECTION_POINT__ANNOTATION;
+	int EXIT_POINT__ANNOTATIONS = STATE_CONNECTION_POINT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXIT_POINT__EXTENSION = STATE_CONNECTION_POINT__EXTENSION;
+	int EXIT_POINT__EXTENSIONS = STATE_CONNECTION_POINT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.

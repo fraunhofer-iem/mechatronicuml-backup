@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.muml.core.CorePackage;
 import org.muml.core.modelinstance.ModelinstancePackage;
+import org.muml.pim.PimPackage;
 import org.muml.pim.behavior.BehaviorPackage;
 import org.muml.pim.behavior.impl.BehaviorPackageImpl;
 import org.muml.pim.component.ComponentPackage;
@@ -28,6 +29,7 @@ import org.muml.pim.constraint.ConstraintFactory;
 import org.muml.pim.constraint.ConstraintPackage;
 import org.muml.pim.constraint.VerifiableElement;
 import org.muml.pim.constraint.VerificationConstraintRepository;
+import org.muml.pim.impl.PimPackageImpl;
 import org.muml.pim.instance.InstancePackage;
 import org.muml.pim.instance.impl.InstancePackageImpl;
 import org.muml.pim.msgtype.MsgtypePackage;
@@ -116,6 +118,7 @@ public class ConstraintPackageImpl extends EPackageImpl implements ConstraintPac
 		ModelinstancePackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
+		PimPackageImpl thePimPackage = (PimPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(PimPackage.eNS_URI) instanceof PimPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PimPackage.eNS_URI) : PimPackage.eINSTANCE);
 		InstancePackageImpl theInstancePackage = (InstancePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(InstancePackage.eNS_URI) instanceof InstancePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(InstancePackage.eNS_URI) : InstancePackage.eINSTANCE);
 		ProtocolPackageImpl theProtocolPackage = (ProtocolPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ProtocolPackage.eNS_URI) instanceof ProtocolPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ProtocolPackage.eNS_URI) : ProtocolPackage.eINSTANCE);
 		RealtimestatechartPackageImpl theRealtimestatechartPackage = (RealtimestatechartPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(RealtimestatechartPackage.eNS_URI) instanceof RealtimestatechartPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(RealtimestatechartPackage.eNS_URI) : RealtimestatechartPackage.eINSTANCE);
@@ -130,6 +133,7 @@ public class ConstraintPackageImpl extends EPackageImpl implements ConstraintPac
 
 		// Create package meta-data objects
 		theConstraintPackage.createPackageContents();
+		thePimPackage.createPackageContents();
 		theInstancePackage.createPackageContents();
 		theProtocolPackage.createPackageContents();
 		theRealtimestatechartPackage.createPackageContents();
@@ -144,6 +148,7 @@ public class ConstraintPackageImpl extends EPackageImpl implements ConstraintPac
 
 		// Initialize created meta-data
 		theConstraintPackage.initializePackageContents();
+		thePimPackage.initializePackageContents();
 		theInstancePackage.initializePackageContents();
 		theProtocolPackage.initializePackageContents();
 		theRealtimestatechartPackage.initializePackageContents();
@@ -265,9 +270,6 @@ public class ConstraintPackageImpl extends EPackageImpl implements ConstraintPac
 
 		initEClass(verifiableElementEClass, VerifiableElement.class, "VerifiableElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getVerifiableElement_VerificationConstraintRepositories(), this.getVerificationConstraintRepository(), null, "verificationConstraintRepositories", null, 0, -1, VerifiableElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		// Create resource
-		createResource(eNS_URI);
 
 		// Create annotations
 		// http://www.eclipse.org/emf/2002/Ecore

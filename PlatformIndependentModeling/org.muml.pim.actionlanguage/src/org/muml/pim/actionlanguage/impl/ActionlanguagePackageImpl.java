@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.muml.core.CorePackage;
 import org.muml.core.expressions.ExpressionsPackage;
+import org.muml.pim.PimPackage;
 import org.muml.pim.actionlanguage.ActionlanguageFactory;
 import org.muml.pim.actionlanguage.ActionlanguagePackage;
 import org.muml.pim.actionlanguage.ArrayIndexExpression;
@@ -284,17 +285,7 @@ public class ActionlanguagePackageImpl extends EPackageImpl implements Actionlan
 		isInited = true;
 
 		// Initialize simple dependencies
-		ConstraintPackage.eINSTANCE.eClass();
-		InstancePackage.eINSTANCE.eClass();
-		ProtocolPackage.eINSTANCE.eClass();
-		RealtimestatechartPackage.eINSTANCE.eClass();
-		MsgtypePackage.eINSTANCE.eClass();
-		TypesPackage.eINSTANCE.eClass();
-		ConnectorPackage.eINSTANCE.eClass();
-		ValuetypePackage.eINSTANCE.eClass();
-		BehaviorPackage.eINSTANCE.eClass();
-		ComponentPackage.eINSTANCE.eClass();
-		PatternPackage.eINSTANCE.eClass();
+		PimPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theActionlanguagePackage.createPackageContents();

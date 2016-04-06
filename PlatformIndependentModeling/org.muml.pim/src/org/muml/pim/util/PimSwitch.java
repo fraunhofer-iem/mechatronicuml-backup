@@ -9,7 +9,8 @@ package org.muml.pim.util;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
-import org.muml.pim.MumlPackage;
+import org.muml.pim.*;
+import org.muml.pim.PimPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,17 +22,17 @@ import org.muml.pim.MumlPackage;
  * until a non-null result is returned,
  * which is the result of the switch.
  * <!-- end-user-doc -->
- * @see org.muml.pim.MumlPackage
+ * @see org.muml.pim.PimPackage
  * @generated
  */
-public class MumlSwitch<T> extends Switch<T> {
+public class PimSwitch<T> extends Switch<T> {
 	/**
 	 * The cached model package
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static MumlPackage modelPackage;
+	protected static PimPackage modelPackage;
 
 	/**
 	 * Creates an instance of the switch.
@@ -39,9 +40,9 @@ public class MumlSwitch<T> extends Switch<T> {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MumlSwitch() {
+	public PimSwitch() {
 		if (modelPackage == null) {
-			modelPackage = MumlPackage.eINSTANCE;
+			modelPackage = PimPackage.eINSTANCE;
 		}
 	}
 
@@ -49,7 +50,7 @@ public class MumlSwitch<T> extends Switch<T> {
 	 * Checks whether this is a switch for the given package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @parameter ePackage the package in question.
+	 * @param ePackage the package in question.
 	 * @return whether this is a switch for the given package.
 	 * @generated
 	 */
@@ -68,6 +69,21 @@ public class MumlSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		return defaultCase(theEObject);
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Test</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Test</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTest(Test object) {
+		return null;
 	}
 
 	/**

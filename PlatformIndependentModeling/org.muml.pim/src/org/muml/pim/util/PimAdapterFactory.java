@@ -10,24 +10,25 @@ import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
-import org.muml.pim.MumlPackage;
+import org.muml.pim.*;
+import org.muml.pim.PimPackage;
 
 /**
  * <!-- begin-user-doc -->
  * The <b>Adapter Factory</b> for the model.
  * It provides an adapter <code>createXXX</code> method for each class of the model.
  * <!-- end-user-doc -->
- * @see org.muml.pim.MumlPackage
+ * @see org.muml.pim.PimPackage
  * @generated
  */
-public class MumlAdapterFactory extends AdapterFactoryImpl {
+public class PimAdapterFactory extends AdapterFactoryImpl {
 	/**
 	 * The cached model package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static MumlPackage modelPackage;
+	protected static PimPackage modelPackage;
 
 	/**
 	 * Creates an instance of the adapter factory.
@@ -35,9 +36,9 @@ public class MumlAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MumlAdapterFactory() {
+	public PimAdapterFactory() {
 		if (modelPackage == null) {
-			modelPackage = MumlPackage.eINSTANCE;
+			modelPackage = PimPackage.eINSTANCE;
 		}
 	}
 
@@ -66,8 +67,12 @@ public class MumlAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected MumlSwitch<Adapter> modelSwitch =
-		new MumlSwitch<Adapter>() {
+	protected PimSwitch<Adapter> modelSwitch =
+		new PimSwitch<Adapter>() {
+			@Override
+			public Adapter caseTest(Test object) {
+				return createTestAdapter();
+			}
 			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
@@ -88,6 +93,20 @@ public class MumlAdapterFactory extends AdapterFactoryImpl {
 	}
 
 
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.muml.pim.Test <em>Test</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.muml.pim.Test
+	 * @generated
+	 */
+	public Adapter createTestAdapter() {
+		return null;
+	}
 
 	/**
 	 * Creates a new adapter for the default case.

@@ -47,7 +47,7 @@ public class One_to_n_schemataValidator extends EObjectValidator {
 	 * @see org.eclipse.emf.common.util.Diagnostic#getCode()
 	 * @generated
 	 */
-	public static final String DIAGNOSTIC_SOURCE = "de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata";
+	public static final String DIAGNOSTIC_SOURCE = "org.muml.pim.realtimestatechart.one_to_n_schemata";
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants.

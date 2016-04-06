@@ -11,8 +11,9 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import org.muml.pim.MumlFactory;
-import org.muml.pim.MumlPackage;
+import org.muml.pim.*;
+import org.muml.pim.PimFactory;
+import org.muml.pim.PimPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -20,24 +21,24 @@ import org.muml.pim.MumlPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class MumlFactoryImpl extends EFactoryImpl implements MumlFactory {
+public class PimFactoryImpl extends EFactoryImpl implements PimFactory {
 	/**
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static MumlFactory init() {
+	public static PimFactory init() {
 		try {
-			MumlFactory theMumlFactory = (MumlFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/0.4.0"); 
-			if (theMumlFactory != null) {
-				return theMumlFactory;
+			PimFactory thePimFactory = (PimFactory)EPackage.Registry.INSTANCE.getEFactory(PimPackage.eNS_URI);
+			if (thePimFactory != null) {
+				return thePimFactory;
 			}
 		}
 		catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
-		return new MumlFactoryImpl();
+		return new PimFactoryImpl();
 	}
 
 	/**
@@ -46,7 +47,7 @@ public class MumlFactoryImpl extends EFactoryImpl implements MumlFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MumlFactoryImpl() {
+	public PimFactoryImpl() {
 		super();
 	}
 
@@ -66,8 +67,18 @@ public class MumlFactoryImpl extends EFactoryImpl implements MumlFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MumlPackage getMumlPackage() {
-		return (MumlPackage)getEPackage();
+	public Test createTest() {
+		TestImpl test = new TestImpl();
+		return test;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PimPackage getPimPackage() {
+		return (PimPackage)getEPackage();
 	}
 
 	/**
@@ -77,8 +88,8 @@ public class MumlFactoryImpl extends EFactoryImpl implements MumlFactory {
 	 * @generated
 	 */
 	@Deprecated
-	public static MumlPackage getPackage() {
-		return MumlPackage.eINSTANCE;
+	public static PimPackage getPackage() {
+		return PimPackage.eINSTANCE;
 	}
 
 } //MumlFactoryImpl

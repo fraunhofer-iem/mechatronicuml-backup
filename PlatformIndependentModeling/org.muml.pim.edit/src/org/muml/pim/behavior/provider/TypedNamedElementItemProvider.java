@@ -125,7 +125,7 @@ public class TypedNamedElementItemProvider
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return org.muml.pim.constraint.provider.MumlEditPlugin.INSTANCE;
+		return org.muml.pim.provider.MumlEditPlugin.INSTANCE;
 	}
 
 }

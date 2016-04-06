@@ -49,7 +49,7 @@ public interface InstancePackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.fujaba.de/muml/instance/0.4.0";
+	String eNS_URI = "http://www.muml.org/pim/instance/1.0.0";
 
 	/**
 	 * The package namespace name.
@@ -78,22 +78,22 @@ public interface InstancePackage extends EPackage {
 	int COMPONENT_INSTANCE = 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_INSTANCE__ANNOTATION = CorePackage.NAMED_ELEMENT__ANNOTATION;
+	int COMPONENT_INSTANCE__ANNOTATIONS = CorePackage.NAMED_ELEMENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_INSTANCE__EXTENSION = CorePackage.NAMED_ELEMENT__EXTENSION;
+	int COMPONENT_INSTANCE__EXTENSIONS = CorePackage.NAMED_ELEMENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -349,22 +349,22 @@ public interface InstancePackage extends EPackage {
 	int PORT_CONNECTOR_INSTANCE = 1;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PORT_CONNECTOR_INSTANCE__ANNOTATION = ConnectorPackage.CONNECTOR_INSTANCE__ANNOTATION;
+	int PORT_CONNECTOR_INSTANCE__ANNOTATIONS = ConnectorPackage.CONNECTOR_INSTANCE__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PORT_CONNECTOR_INSTANCE__EXTENSION = ConnectorPackage.CONNECTOR_INSTANCE__EXTENSION;
+	int PORT_CONNECTOR_INSTANCE__EXTENSIONS = ConnectorPackage.CONNECTOR_INSTANCE__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -611,22 +611,22 @@ public interface InstancePackage extends EPackage {
 	int PORT_INSTANCE = 2;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PORT_INSTANCE__ANNOTATION = ConnectorPackage.CONNECTOR_ENDPOINT_INSTANCE__ANNOTATION;
+	int PORT_INSTANCE__ANNOTATIONS = ConnectorPackage.CONNECTOR_ENDPOINT_INSTANCE__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PORT_INSTANCE__EXTENSION = ConnectorPackage.CONNECTOR_ENDPOINT_INSTANCE__EXTENSION;
+	int PORT_INSTANCE__EXTENSIONS = ConnectorPackage.CONNECTOR_ENDPOINT_INSTANCE__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -900,22 +900,22 @@ public interface InstancePackage extends EPackage {
 	int ASSEMBLY_CONNECTOR_INSTANCE = 3;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ASSEMBLY_CONNECTOR_INSTANCE__ANNOTATION = PORT_CONNECTOR_INSTANCE__ANNOTATION;
+	int ASSEMBLY_CONNECTOR_INSTANCE__ANNOTATIONS = PORT_CONNECTOR_INSTANCE__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ASSEMBLY_CONNECTOR_INSTANCE__EXTENSION = PORT_CONNECTOR_INSTANCE__EXTENSION;
+	int ASSEMBLY_CONNECTOR_INSTANCE__EXTENSIONS = PORT_CONNECTOR_INSTANCE__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -1171,22 +1171,22 @@ public interface InstancePackage extends EPackage {
 	int DELEGATION_CONNECTOR_INSTANCE = 4;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DELEGATION_CONNECTOR_INSTANCE__ANNOTATION = PORT_CONNECTOR_INSTANCE__ANNOTATION;
+	int DELEGATION_CONNECTOR_INSTANCE__ANNOTATIONS = PORT_CONNECTOR_INSTANCE__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DELEGATION_CONNECTOR_INSTANCE__EXTENSION = PORT_CONNECTOR_INSTANCE__EXTENSION;
+	int DELEGATION_CONNECTOR_INSTANCE__EXTENSIONS = PORT_CONNECTOR_INSTANCE__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -1442,22 +1442,22 @@ public interface InstancePackage extends EPackage {
 	int COMPONENT_INSTANCE_CONFIGURATION = 5;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_INSTANCE_CONFIGURATION__ANNOTATION = CorePackage.NAMED_ELEMENT__ANNOTATION;
+	int COMPONENT_INSTANCE_CONFIGURATION__ANNOTATIONS = CorePackage.NAMED_ELEMENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_INSTANCE_CONFIGURATION__EXTENSION = CorePackage.NAMED_ELEMENT__EXTENSION;
+	int COMPONENT_INSTANCE_CONFIGURATION__EXTENSIONS = CorePackage.NAMED_ELEMENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1732,22 +1732,22 @@ public interface InstancePackage extends EPackage {
 	int CONTINUOUS_PORT_INSTANCE = 6;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTINUOUS_PORT_INSTANCE__ANNOTATION = PORT_INSTANCE__ANNOTATION;
+	int CONTINUOUS_PORT_INSTANCE__ANNOTATIONS = PORT_INSTANCE__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTINUOUS_PORT_INSTANCE__EXTENSION = PORT_INSTANCE__EXTENSION;
+	int CONTINUOUS_PORT_INSTANCE__EXTENSIONS = PORT_INSTANCE__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2031,22 +2031,22 @@ public interface InstancePackage extends EPackage {
 	int HYBRID_PORT_INSTANCE = 7;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HYBRID_PORT_INSTANCE__ANNOTATION = PORT_INSTANCE__ANNOTATION;
+	int HYBRID_PORT_INSTANCE__ANNOTATIONS = PORT_INSTANCE__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HYBRID_PORT_INSTANCE__EXTENSION = PORT_INSTANCE__EXTENSION;
+	int HYBRID_PORT_INSTANCE__EXTENSIONS = PORT_INSTANCE__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2310,22 +2310,22 @@ public interface InstancePackage extends EPackage {
 	int HYBRID_PORT_INSTANCE_OPERATION_COUNT = PORT_INSTANCE_OPERATION_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_PORT_INSTANCE__ANNOTATION = PORT_INSTANCE__ANNOTATION;
+	int DISCRETE_PORT_INSTANCE__ANNOTATIONS = PORT_INSTANCE__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_PORT_INSTANCE__EXTENSION = PORT_INSTANCE__EXTENSION;
+	int DISCRETE_PORT_INSTANCE__EXTENSIONS = PORT_INSTANCE__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2635,22 +2635,22 @@ public interface InstancePackage extends EPackage {
 	int DISCRETE_SINGLE_PORT_INSTANCE = 9;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_SINGLE_PORT_INSTANCE__ANNOTATION = DISCRETE_PORT_INSTANCE__ANNOTATION;
+	int DISCRETE_SINGLE_PORT_INSTANCE__ANNOTATIONS = DISCRETE_PORT_INSTANCE__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_SINGLE_PORT_INSTANCE__EXTENSION = DISCRETE_PORT_INSTANCE__EXTENSION;
+	int DISCRETE_SINGLE_PORT_INSTANCE__EXTENSIONS = DISCRETE_PORT_INSTANCE__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3005,22 +3005,22 @@ public interface InstancePackage extends EPackage {
 	int DISCRETE_MULTI_PORT_INSTANCE = 10;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_MULTI_PORT_INSTANCE__ANNOTATION = DISCRETE_PORT_INSTANCE__ANNOTATION;
+	int DISCRETE_MULTI_PORT_INSTANCE__ANNOTATIONS = DISCRETE_PORT_INSTANCE__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_MULTI_PORT_INSTANCE__EXTENSION = DISCRETE_PORT_INSTANCE__EXTENSION;
+	int DISCRETE_MULTI_PORT_INSTANCE__EXTENSIONS = DISCRETE_PORT_INSTANCE__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3366,22 +3366,22 @@ public interface InstancePackage extends EPackage {
 	int COORDINATION_PROTOCOL_INSTANCE = 11;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COORDINATION_PROTOCOL_INSTANCE__ANNOTATION = CorePackage.NAMED_ELEMENT__ANNOTATION;
+	int COORDINATION_PROTOCOL_INSTANCE__ANNOTATIONS = CorePackage.NAMED_ELEMENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COORDINATION_PROTOCOL_INSTANCE__EXTENSION = CorePackage.NAMED_ELEMENT__EXTENSION;
+	int COORDINATION_PROTOCOL_INSTANCE__EXTENSIONS = CorePackage.NAMED_ELEMENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3619,22 +3619,22 @@ public interface InstancePackage extends EPackage {
 	int STRUCTURED_COMPONENT_INSTANCE = 12;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCTURED_COMPONENT_INSTANCE__ANNOTATION = COMPONENT_INSTANCE__ANNOTATION;
+	int STRUCTURED_COMPONENT_INSTANCE__ANNOTATIONS = COMPONENT_INSTANCE__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCTURED_COMPONENT_INSTANCE__EXTENSION = COMPONENT_INSTANCE__EXTENSION;
+	int STRUCTURED_COMPONENT_INSTANCE__EXTENSIONS = COMPONENT_INSTANCE__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3899,22 +3899,22 @@ public interface InstancePackage extends EPackage {
 	int ATOMIC_COMPONENT_INSTANCE = 13;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ATOMIC_COMPONENT_INSTANCE__ANNOTATION = COMPONENT_INSTANCE__ANNOTATION;
+	int ATOMIC_COMPONENT_INSTANCE__ANNOTATIONS = COMPONENT_INSTANCE__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ATOMIC_COMPONENT_INSTANCE__EXTENSION = COMPONENT_INSTANCE__EXTENSION;
+	int ATOMIC_COMPONENT_INSTANCE__EXTENSIONS = COMPONENT_INSTANCE__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.

@@ -13,17 +13,27 @@ import org.eclipse.emf.ecore.EFactory;
  * The <b>Factory</b> for the model.
  * It provides a create method for each non-abstract class of the model.
  * <!-- end-user-doc -->
- * @see org.muml.pim.MumlPackage
+ * @see org.muml.pim.PimPackage
  * @generated
  */
-public interface MumlFactory extends EFactory {
+public interface PimFactory extends EFactory {
 	/**
 	 * The singleton instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	MumlFactory eINSTANCE = org.muml.pim.impl.MumlFactoryImpl.init();
+	PimFactory eINSTANCE = org.muml.pim.impl.PimFactoryImpl.init();
+
+
+	/**
+	 * Returns a new object of class '<em>Test</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Test</em>'.
+	 * @generated
+	 */
+	Test createTest();
 
 
 	/**
@@ -33,6 +43,6 @@ public interface MumlFactory extends EFactory {
 	 * @return the package supported by this factory.
 	 * @generated
 	 */
-	MumlPackage getMumlPackage();
+	PimPackage getPimPackage();
 
 } //MumlFactory
