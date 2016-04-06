@@ -17,10 +17,10 @@ import org.muml.pim.realtimestatechart.State;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.cbs.dependencylanguage.impl.ForbiddenStateCombinationImpl#getStates <em>States</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

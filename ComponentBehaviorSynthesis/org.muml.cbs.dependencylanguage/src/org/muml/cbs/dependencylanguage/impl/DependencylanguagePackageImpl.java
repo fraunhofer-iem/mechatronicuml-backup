@@ -1650,15 +1650,15 @@ public class DependencylanguagePackageImpl extends EPackageImpl implements Depen
 		  (this, 
 		   source, 
 		   new String[] {
-			 "actionlanguage", "/resource/de.uni_paderborn.fujaba.muml.actionlanguage/model/actionlanguage.ecore#/",
-			 "core", "/resource/org.storydriven.core/model/core.ecore#/",
+			 "actionlanguage", "/resource/org.muml.pim.actionlanguage/model/actionlanguage.ecore#/",
+			 "core", "/resource/org.muml.core/model/core.ecore#/",
 			 "ecore", "http://www.eclipse.org/emf/2002/Ecore#/",
-			 "behavior", "/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//behavior",
-			 "component", "/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//component",
-			 "expr", "/resource/org.storydriven.core/model/core.ecore#//expressions",
-			 "realtimestatechart", "/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart",
-			 "valueType", "/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype",
-			 "sdcec", "/resource/org.storydriven.core/model/core.ecore#//expressions/common"
+			 "behavior", "/resource/org.muml.pim/model/pim.ecore#//behavior",
+			 "component", "/resource/org.muml.pim/model/pim.ecore#//component",
+			 "expr", "/resource/org.muml.core/model/core.ecore#//expressions",
+			 "realtimestatechart", "/resource/org.muml.pim/model/pim.ecore#//realtimestatechart",
+			 "valueType", "/resource/org.muml.pim/model/pim.ecore#//valuetype",
+			 "sdcec", "/resource/org.muml.core/model/core.ecore#//expressions/common"
 		   });
 	}
 

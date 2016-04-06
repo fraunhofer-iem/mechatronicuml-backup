@@ -19,12 +19,12 @@ import org.eclipse.emf.common.util.EList;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.cbs.dependencylanguage.ConditionalDependency#getEvent <em>Event</em>}</li>
  *   <li>{@link org.muml.cbs.dependencylanguage.ConditionalDependency#getCondition <em>Condition</em>}</li>
  *   <li>{@link org.muml.cbs.dependencylanguage.ConditionalDependency#getEffects <em>Effects</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.cbs.dependencylanguage.DependencylanguagePackage#getConditionalDependency()
  * @model

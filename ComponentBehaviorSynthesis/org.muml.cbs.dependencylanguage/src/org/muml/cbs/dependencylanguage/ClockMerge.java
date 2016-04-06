@@ -16,11 +16,11 @@ import org.muml.pim.realtimestatechart.Clock;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.cbs.dependencylanguage.ClockMerge#getClocks <em>Clocks</em>}</li>
  *   <li>{@link org.muml.cbs.dependencylanguage.ClockMerge#getClockName <em>Clock Name</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.cbs.dependencylanguage.DependencylanguagePackage#getClockMerge()
  * @model

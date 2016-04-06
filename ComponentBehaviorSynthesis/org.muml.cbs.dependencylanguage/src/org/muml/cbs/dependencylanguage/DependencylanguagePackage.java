@@ -31,7 +31,7 @@ import org.muml.pim.realtimestatechart.RealtimestatechartPackage;
  * <!-- end-model-doc -->
  * @see org.muml.cbs.dependencylanguage.DependencylanguageFactory
  * @model kind="package"
- *        annotation="http://www.eclipse.org/OCL/Import actionlanguage='/resource/de.uni_paderborn.fujaba.muml.actionlanguage/model/actionlanguage.ecore#/' core='/resource/org.storydriven.core/model/core.ecore#/' ecore='http://www.eclipse.org/emf/2002/Ecore#/' behavior='/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//behavior' component='/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//component' expr='/resource/org.storydriven.core/model/core.ecore#//expressions' realtimestatechart='/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart' valueType='/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype' sdcec='/resource/org.storydriven.core/model/core.ecore#//expressions/common'"
+ *        annotation="http://www.eclipse.org/OCL/Import actionlanguage='/resource/org.muml.pim.actionlanguage/model/actionlanguage.ecore#/' core='/resource/org.muml.core/model/core.ecore#/' ecore='http://www.eclipse.org/emf/2002/Ecore#/' behavior='/resource/org.muml.pim/model/pim.ecore#//behavior' component='/resource/org.muml.pim/model/pim.ecore#//component' expr='/resource/org.muml.core/model/core.ecore#//expressions' realtimestatechart='/resource/org.muml.pim/model/pim.ecore#//realtimestatechart' valueType='/resource/org.muml.pim/model/pim.ecore#//valuetype' sdcec='/resource/org.muml.core/model/core.ecore#//expressions/common'"
  *        annotation="http://www.eclipse.org/emf/2002/Ecore invocationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL' settingDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL' validationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL'"
  * @generated
  */
@@ -50,7 +50,7 @@ public interface DependencylanguagePackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.fujaba.de/muml/dependencylanguage/0.4.0";
+	String eNS_URI = "http://www.muml.org/cbs/dependencylanguage/1.0.0";
 
 	/**
 	 * The package namespace name.
@@ -79,22 +79,22 @@ public interface DependencylanguagePackage extends EPackage {
 	int SYNTHESIZABLE_BEHAVIOR = 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SYNTHESIZABLE_BEHAVIOR__ANNOTATION = CorePackage.EXTENSION__ANNOTATION;
+	int SYNTHESIZABLE_BEHAVIOR__ANNOTATIONS = CorePackage.EXTENSION__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SYNTHESIZABLE_BEHAVIOR__EXTENSION = CorePackage.EXTENSION__EXTENSION;
+	int SYNTHESIZABLE_BEHAVIOR__EXTENSIONS = CorePackage.EXTENSION__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Base</b></em>' reference.
@@ -359,22 +359,22 @@ public interface DependencylanguagePackage extends EPackage {
 	int DEPENDENCY_MODEL = 1;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DEPENDENCY_MODEL__ANNOTATION = CorePackage.COMMENTABLE_ELEMENT__ANNOTATION;
+	int DEPENDENCY_MODEL__ANNOTATIONS = CorePackage.COMMENTABLE_ELEMENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DEPENDENCY_MODEL__EXTENSION = CorePackage.COMMENTABLE_ELEMENT__EXTENSION;
+	int DEPENDENCY_MODEL__EXTENSIONS = CorePackage.COMMENTABLE_ELEMENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -594,22 +594,22 @@ public interface DependencylanguagePackage extends EPackage {
 	int DEPENDENCY = 2;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DEPENDENCY__ANNOTATION = CorePackage.COMMENTABLE_ELEMENT__ANNOTATION;
+	int DEPENDENCY__ANNOTATIONS = CorePackage.COMMENTABLE_ELEMENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DEPENDENCY__EXTENSION = CorePackage.COMMENTABLE_ELEMENT__EXTENSION;
+	int DEPENDENCY__EXTENSIONS = CorePackage.COMMENTABLE_ELEMENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -820,22 +820,22 @@ public interface DependencylanguagePackage extends EPackage {
 	int SYNCHRONIZATION = 3;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SYNCHRONIZATION__ANNOTATION = DEPENDENCY__ANNOTATION;
+	int SYNCHRONIZATION__ANNOTATIONS = DEPENDENCY__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SYNCHRONIZATION__EXTENSION = DEPENDENCY__EXTENSION;
+	int SYNCHRONIZATION__EXTENSIONS = DEPENDENCY__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -1091,22 +1091,22 @@ public interface DependencylanguagePackage extends EPackage {
 	int FORBIDDEN_STATE_COMBINATION = 4;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FORBIDDEN_STATE_COMBINATION__ANNOTATION = DEPENDENCY__ANNOTATION;
+	int FORBIDDEN_STATE_COMBINATION__ANNOTATIONS = DEPENDENCY__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FORBIDDEN_STATE_COMBINATION__EXTENSION = DEPENDENCY__EXTENSION;
+	int FORBIDDEN_STATE_COMBINATION__EXTENSIONS = DEPENDENCY__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -1326,22 +1326,22 @@ public interface DependencylanguagePackage extends EPackage {
 	int CLOCK_MERGE = 5;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CLOCK_MERGE__ANNOTATION = DEPENDENCY__ANNOTATION;
+	int CLOCK_MERGE__ANNOTATIONS = DEPENDENCY__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CLOCK_MERGE__EXTENSION = DEPENDENCY__EXTENSION;
+	int CLOCK_MERGE__EXTENSIONS = DEPENDENCY__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -1570,22 +1570,22 @@ public interface DependencylanguagePackage extends EPackage {
 	int DATA_MERGE = 6;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_MERGE__ANNOTATION = DEPENDENCY__ANNOTATION;
+	int DATA_MERGE__ANNOTATIONS = DEPENDENCY__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_MERGE__EXTENSION = DEPENDENCY__EXTENSION;
+	int DATA_MERGE__EXTENSIONS = DEPENDENCY__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -1823,22 +1823,22 @@ public interface DependencylanguagePackage extends EPackage {
 	int CONDITIONAL_DEPENDENCY = 7;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONDITIONAL_DEPENDENCY__ANNOTATION = DEPENDENCY__ANNOTATION;
+	int CONDITIONAL_DEPENDENCY__ANNOTATIONS = DEPENDENCY__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONDITIONAL_DEPENDENCY__EXTENSION = DEPENDENCY__EXTENSION;
+	int CONDITIONAL_DEPENDENCY__EXTENSIONS = DEPENDENCY__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -2592,22 +2592,22 @@ public interface DependencylanguagePackage extends EPackage {
 	int DATA_ASSIGNMENT_EFFECT = 11;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_ASSIGNMENT_EFFECT__ANNOTATION = EFFECT_FEATURE_COUNT + 0;
+	int DATA_ASSIGNMENT_EFFECT__ANNOTATIONS = EFFECT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_ASSIGNMENT_EFFECT__EXTENSION = EFFECT_FEATURE_COUNT + 1;
+	int DATA_ASSIGNMENT_EFFECT__EXTENSIONS = EFFECT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -2863,22 +2863,22 @@ public interface DependencylanguagePackage extends EPackage {
 	int BOUNDED_ACTIVE_STATE = 12;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BOUNDED_ACTIVE_STATE__ANNOTATION = DEPENDENCY__ANNOTATION;
+	int BOUNDED_ACTIVE_STATE__ANNOTATIONS = DEPENDENCY__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BOUNDED_ACTIVE_STATE__EXTENSION = DEPENDENCY__EXTENSION;
+	int BOUNDED_ACTIVE_STATE__EXTENSIONS = DEPENDENCY__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -4193,22 +4193,22 @@ public interface DependencylanguagePackage extends EPackage {
 	int BASIC_CLOCK_CONDITION = 19;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BASIC_CLOCK_CONDITION__ANNOTATION = RealtimestatechartPackage.CLOCK_CONSTRAINT__ANNOTATION;
+	int BASIC_CLOCK_CONDITION__ANNOTATIONS = RealtimestatechartPackage.CLOCK_CONSTRAINT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BASIC_CLOCK_CONDITION__EXTENSION = RealtimestatechartPackage.CLOCK_CONSTRAINT__EXTENSION;
+	int BASIC_CLOCK_CONDITION__EXTENSIONS = RealtimestatechartPackage.CLOCK_CONSTRAINT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Bound</b></em>' containment reference.
@@ -6582,22 +6582,22 @@ public interface DependencylanguagePackage extends EPackage {
 	int TRIGGER_MESSAGE = 32;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRIGGER_MESSAGE__ANNOTATION = DEPENDENCY__ANNOTATION;
+	int TRIGGER_MESSAGE__ANNOTATIONS = DEPENDENCY__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRIGGER_MESSAGE__EXTENSION = DEPENDENCY__EXTENSION;
+	int TRIGGER_MESSAGE__EXTENSIONS = DEPENDENCY__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.

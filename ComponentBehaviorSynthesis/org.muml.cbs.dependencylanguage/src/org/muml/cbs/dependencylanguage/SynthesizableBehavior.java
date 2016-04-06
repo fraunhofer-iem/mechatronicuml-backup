@@ -18,11 +18,11 @@ import org.muml.pim.behavior.BehavioralElement;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.cbs.dependencylanguage.SynthesizableBehavior#getDependencyModel <em>Dependency Model</em>}</li>
  *   <li>{@link org.muml.cbs.dependencylanguage.SynthesizableBehavior#getName <em>Name</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.cbs.dependencylanguage.DependencylanguagePackage#getSynthesizableBehavior()
  * @model

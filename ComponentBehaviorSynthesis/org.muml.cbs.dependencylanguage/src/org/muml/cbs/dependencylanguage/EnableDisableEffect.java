@@ -15,11 +15,11 @@ package org.muml.cbs.dependencylanguage;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.cbs.dependencylanguage.EnableDisableEffect#getEvent <em>Event</em>}</li>
  *   <li>{@link org.muml.cbs.dependencylanguage.EnableDisableEffect#isIsEnable <em>Is Enable</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.cbs.dependencylanguage.DependencylanguagePackage#getEnableDisableEffect()
  * @model

@@ -17,11 +17,11 @@ import org.muml.core.expressions.Expression;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.cbs.dependencylanguage.SynchronizationEvent#getSelectorExpression <em>Selector Expression</em>}</li>
  *   <li>{@link org.muml.cbs.dependencylanguage.SynchronizationEvent#getEvent <em>Event</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.cbs.dependencylanguage.DependencylanguagePackage#getSynchronizationEvent()
  * @model

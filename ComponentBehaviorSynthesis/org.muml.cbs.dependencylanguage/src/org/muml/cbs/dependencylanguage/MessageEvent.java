@@ -16,12 +16,12 @@ import org.muml.pim.msgtype.MessageType;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.cbs.dependencylanguage.MessageEvent#getKind <em>Kind</em>}</li>
  *   <li>{@link org.muml.cbs.dependencylanguage.MessageEvent#getType <em>Type</em>}</li>
  *   <li>{@link org.muml.cbs.dependencylanguage.MessageEvent#getPort <em>Port</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.cbs.dependencylanguage.DependencylanguagePackage#getMessageEvent()
  * @model

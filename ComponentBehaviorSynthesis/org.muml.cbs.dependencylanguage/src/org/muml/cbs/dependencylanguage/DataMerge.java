@@ -17,12 +17,12 @@ import org.muml.pim.component.HybridPort;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.cbs.dependencylanguage.DataMerge#getVariables <em>Variables</em>}</li>
  *   <li>{@link org.muml.cbs.dependencylanguage.DataMerge#getVariableName <em>Variable Name</em>}</li>
  *   <li>{@link org.muml.cbs.dependencylanguage.DataMerge#getPort <em>Port</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.cbs.dependencylanguage.DependencylanguagePackage#getDataMerge()
  * @model

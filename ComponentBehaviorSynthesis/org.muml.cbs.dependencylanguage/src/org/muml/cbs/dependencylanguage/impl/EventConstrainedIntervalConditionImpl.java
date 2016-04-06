@@ -17,13 +17,13 @@ import org.muml.cbs.dependencylanguage.EventConstrainedIntervalCondition;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.cbs.dependencylanguage.impl.EventConstrainedIntervalConditionImpl#getFromEvent <em>From Event</em>}</li>
  *   <li>{@link org.muml.cbs.dependencylanguage.impl.EventConstrainedIntervalConditionImpl#isInitialEnabled <em>Initial Enabled</em>}</li>
  *   <li>{@link org.muml.cbs.dependencylanguage.impl.EventConstrainedIntervalConditionImpl#getUntilEvent <em>Until Event</em>}</li>
  *   <li>{@link org.muml.cbs.dependencylanguage.impl.EventConstrainedIntervalConditionImpl#isEnabledInfite <em>Enabled Infite</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -18,12 +18,12 @@ import org.muml.pim.msgtype.MessageType;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.cbs.dependencylanguage.impl.MessageEventImpl#getKind <em>Kind</em>}</li>
  *   <li>{@link org.muml.cbs.dependencylanguage.impl.MessageEventImpl#getType <em>Type</em>}</li>
  *   <li>{@link org.muml.cbs.dependencylanguage.impl.MessageEventImpl#getPort <em>Port</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

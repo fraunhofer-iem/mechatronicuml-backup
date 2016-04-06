@@ -22,12 +22,12 @@ import org.muml.pim.behavior.BehavioralElement;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.cbs.dependencylanguage.impl.SynthesizableBehaviorImpl#getBehavior <em>Behavior</em>}</li>
  *   <li>{@link org.muml.cbs.dependencylanguage.impl.SynthesizableBehaviorImpl#getDependencyModel <em>Dependency Model</em>}</li>
  *   <li>{@link org.muml.cbs.dependencylanguage.impl.SynthesizableBehaviorImpl#getName <em>Name</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

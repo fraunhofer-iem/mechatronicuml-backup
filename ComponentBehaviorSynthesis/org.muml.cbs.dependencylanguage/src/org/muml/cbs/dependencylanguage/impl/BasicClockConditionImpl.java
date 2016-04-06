@@ -11,8 +11,6 @@ import org.muml.pim.realtimestatechart.impl.ClockConstraintImpl;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Basic Clock Condition</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */

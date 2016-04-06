@@ -36,9 +36,10 @@ import org.muml.pim.actionlanguage.TypedNamedElementExpression;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
- *   <li>{@link org.muml.cbs.dependencylanguage.impl.DataAssignmentEffectImpl#getAnnotations <em>Annotation</em>}</li>
- *   <li>{@link org.muml.cbs.dependencylanguage.impl.DataAssignmentEffectImpl#getExtensions <em>Extension</em>}</li>
+ *   <li>{@link org.muml.cbs.dependencylanguage.impl.DataAssignmentEffectImpl#getAnnotations <em>Annotations</em>}</li>
+ *   <li>{@link org.muml.cbs.dependencylanguage.impl.DataAssignmentEffectImpl#getExtensions <em>Extensions</em>}</li>
  *   <li>{@link org.muml.cbs.dependencylanguage.impl.DataAssignmentEffectImpl#getComment <em>Comment</em>}</li>
  *   <li>{@link org.muml.cbs.dependencylanguage.impl.DataAssignmentEffectImpl#getAssignOperator <em>Assign Operator</em>}</li>
  *   <li>{@link org.muml.cbs.dependencylanguage.impl.DataAssignmentEffectImpl#getRhs_assignExpression <em>Rhs assign Expression</em>}</li>
@@ -46,13 +47,12 @@ import org.muml.pim.actionlanguage.TypedNamedElementExpression;
  *   <li>{@link org.muml.cbs.dependencylanguage.impl.DataAssignmentEffectImpl#getLhs_typedNamedElementExpression <em>Lhs typed Named Element Expression</em>}</li>
  *   <li>{@link org.muml.cbs.dependencylanguage.impl.DataAssignmentEffectImpl#getDirection <em>Direction</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
 public class DataAssignmentEffectImpl extends EffectImpl implements DataAssignmentEffect {
 	/**
-	 * The cached value of the '{@link #getAnnotations() <em>Annotation</em>}' containment reference list.
+	 * The cached value of the '{@link #getAnnotations() <em>Annotations</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getAnnotations()
@@ -62,7 +62,7 @@ public class DataAssignmentEffectImpl extends EffectImpl implements DataAssignme
 	protected EList<EAnnotation> annotations;
 
 	/**
-	 * The cached value of the '{@link #getExtensions() <em>Extension</em>}' containment reference list.
+	 * The cached value of the '{@link #getExtensions() <em>Extensions</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getExtensions()
@@ -197,7 +197,7 @@ public class DataAssignmentEffectImpl extends EffectImpl implements DataAssignme
 	 */
 	public EList<EAnnotation> getAnnotations() {
 		if (annotations == null) {
-			annotations = new EObjectContainmentEList.Resolving<EAnnotation>(EAnnotation.class, this, DependencylanguagePackage.DATA_ASSIGNMENT_EFFECT__ANNOTATION);
+			annotations = new EObjectContainmentEList<EAnnotation>(EAnnotation.class, this, DependencylanguagePackage.DATA_ASSIGNMENT_EFFECT__ANNOTATIONS);
 		}
 		return annotations;
 	}
@@ -209,7 +209,7 @@ public class DataAssignmentEffectImpl extends EffectImpl implements DataAssignme
 	 */
 	public EList<Extension> getExtensions() {
 		if (extensions == null) {
-			extensions = new EObjectContainmentWithInverseEList.Resolving<Extension>(Extension.class, this, DependencylanguagePackage.DATA_ASSIGNMENT_EFFECT__EXTENSION, CorePackage.EXTENSION__EXTENDABLE_BASE);
+			extensions = new EObjectContainmentWithInverseEList<Extension>(Extension.class, this, DependencylanguagePackage.DATA_ASSIGNMENT_EFFECT__EXTENSIONS, CorePackage.EXTENSION__EXTENDABLE_BASE);
 		}
 		return extensions;
 	}
@@ -429,7 +429,7 @@ public class DataAssignmentEffectImpl extends EffectImpl implements DataAssignme
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case DependencylanguagePackage.DATA_ASSIGNMENT_EFFECT__EXTENSION:
+			case DependencylanguagePackage.DATA_ASSIGNMENT_EFFECT__EXTENSIONS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getExtensions()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
@@ -443,9 +443,9 @@ public class DataAssignmentEffectImpl extends EffectImpl implements DataAssignme
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case DependencylanguagePackage.DATA_ASSIGNMENT_EFFECT__ANNOTATION:
+			case DependencylanguagePackage.DATA_ASSIGNMENT_EFFECT__ANNOTATIONS:
 				return ((InternalEList<?>)getAnnotations()).basicRemove(otherEnd, msgs);
-			case DependencylanguagePackage.DATA_ASSIGNMENT_EFFECT__EXTENSION:
+			case DependencylanguagePackage.DATA_ASSIGNMENT_EFFECT__EXTENSIONS:
 				return ((InternalEList<?>)getExtensions()).basicRemove(otherEnd, msgs);
 			case DependencylanguagePackage.DATA_ASSIGNMENT_EFFECT__RHS_ASSIGN_EXPRESSION:
 				return basicSetRhs_assignExpression(null, msgs);
@@ -463,9 +463,9 @@ public class DataAssignmentEffectImpl extends EffectImpl implements DataAssignme
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case DependencylanguagePackage.DATA_ASSIGNMENT_EFFECT__ANNOTATION:
+			case DependencylanguagePackage.DATA_ASSIGNMENT_EFFECT__ANNOTATIONS:
 				return getAnnotations();
-			case DependencylanguagePackage.DATA_ASSIGNMENT_EFFECT__EXTENSION:
+			case DependencylanguagePackage.DATA_ASSIGNMENT_EFFECT__EXTENSIONS:
 				return getExtensions();
 			case DependencylanguagePackage.DATA_ASSIGNMENT_EFFECT__COMMENT:
 				return getComment();
@@ -492,11 +492,11 @@ public class DataAssignmentEffectImpl extends EffectImpl implements DataAssignme
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case DependencylanguagePackage.DATA_ASSIGNMENT_EFFECT__ANNOTATION:
+			case DependencylanguagePackage.DATA_ASSIGNMENT_EFFECT__ANNOTATIONS:
 				getAnnotations().clear();
 				getAnnotations().addAll((Collection<? extends EAnnotation>)newValue);
 				return;
-			case DependencylanguagePackage.DATA_ASSIGNMENT_EFFECT__EXTENSION:
+			case DependencylanguagePackage.DATA_ASSIGNMENT_EFFECT__EXTENSIONS:
 				getExtensions().clear();
 				getExtensions().addAll((Collection<? extends Extension>)newValue);
 				return;
@@ -530,10 +530,10 @@ public class DataAssignmentEffectImpl extends EffectImpl implements DataAssignme
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case DependencylanguagePackage.DATA_ASSIGNMENT_EFFECT__ANNOTATION:
+			case DependencylanguagePackage.DATA_ASSIGNMENT_EFFECT__ANNOTATIONS:
 				getAnnotations().clear();
 				return;
-			case DependencylanguagePackage.DATA_ASSIGNMENT_EFFECT__EXTENSION:
+			case DependencylanguagePackage.DATA_ASSIGNMENT_EFFECT__EXTENSIONS:
 				getExtensions().clear();
 				return;
 			case DependencylanguagePackage.DATA_ASSIGNMENT_EFFECT__COMMENT:
@@ -566,9 +566,9 @@ public class DataAssignmentEffectImpl extends EffectImpl implements DataAssignme
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case DependencylanguagePackage.DATA_ASSIGNMENT_EFFECT__ANNOTATION:
+			case DependencylanguagePackage.DATA_ASSIGNMENT_EFFECT__ANNOTATIONS:
 				return annotations != null && !annotations.isEmpty();
-			case DependencylanguagePackage.DATA_ASSIGNMENT_EFFECT__EXTENSION:
+			case DependencylanguagePackage.DATA_ASSIGNMENT_EFFECT__EXTENSIONS:
 				return extensions != null && !extensions.isEmpty();
 			case DependencylanguagePackage.DATA_ASSIGNMENT_EFFECT__COMMENT:
 				return COMMENT_EDEFAULT == null ? comment != null : !COMMENT_EDEFAULT.equals(comment);
@@ -595,8 +595,8 @@ public class DataAssignmentEffectImpl extends EffectImpl implements DataAssignme
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == ExtendableElement.class) {
 			switch (derivedFeatureID) {
-				case DependencylanguagePackage.DATA_ASSIGNMENT_EFFECT__ANNOTATION: return CorePackage.EXTENDABLE_ELEMENT__ANNOTATION;
-				case DependencylanguagePackage.DATA_ASSIGNMENT_EFFECT__EXTENSION: return CorePackage.EXTENDABLE_ELEMENT__EXTENSION;
+				case DependencylanguagePackage.DATA_ASSIGNMENT_EFFECT__ANNOTATIONS: return CorePackage.EXTENDABLE_ELEMENT__ANNOTATIONS;
+				case DependencylanguagePackage.DATA_ASSIGNMENT_EFFECT__EXTENSIONS: return CorePackage.EXTENDABLE_ELEMENT__EXTENSIONS;
 				default: return -1;
 			}
 		}
@@ -632,8 +632,8 @@ public class DataAssignmentEffectImpl extends EffectImpl implements DataAssignme
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
 		if (baseClass == ExtendableElement.class) {
 			switch (baseFeatureID) {
-				case CorePackage.EXTENDABLE_ELEMENT__ANNOTATION: return DependencylanguagePackage.DATA_ASSIGNMENT_EFFECT__ANNOTATION;
-				case CorePackage.EXTENDABLE_ELEMENT__EXTENSION: return DependencylanguagePackage.DATA_ASSIGNMENT_EFFECT__EXTENSION;
+				case CorePackage.EXTENDABLE_ELEMENT__ANNOTATIONS: return DependencylanguagePackage.DATA_ASSIGNMENT_EFFECT__ANNOTATIONS;
+				case CorePackage.EXTENDABLE_ELEMENT__EXTENSIONS: return DependencylanguagePackage.DATA_ASSIGNMENT_EFFECT__EXTENSIONS;
 				default: return -1;
 			}
 		}

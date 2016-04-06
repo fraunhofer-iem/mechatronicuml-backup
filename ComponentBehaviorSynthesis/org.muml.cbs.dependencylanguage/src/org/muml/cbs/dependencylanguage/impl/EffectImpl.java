@@ -11,8 +11,6 @@ import org.muml.cbs.dependencylanguage.Effect;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Effect</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */

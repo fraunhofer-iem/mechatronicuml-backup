@@ -15,10 +15,10 @@ import org.muml.pim.actionlanguage.Assignment;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.cbs.dependencylanguage.DataAssignmentEffect#getDirection <em>Direction</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.cbs.dependencylanguage.DependencylanguagePackage#getDataAssignmentEffect()
  * @model

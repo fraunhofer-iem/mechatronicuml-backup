@@ -11,11 +11,11 @@ import org.eclipse.emf.common.util.EList;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.cbs.dependencylanguage.TriggerMessage#getEffects <em>Effects</em>}</li>
  *   <li>{@link org.muml.cbs.dependencylanguage.TriggerMessage#getMessageEvent <em>Message Event</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.cbs.dependencylanguage.DependencylanguagePackage#getTriggerMessage()
  * @model

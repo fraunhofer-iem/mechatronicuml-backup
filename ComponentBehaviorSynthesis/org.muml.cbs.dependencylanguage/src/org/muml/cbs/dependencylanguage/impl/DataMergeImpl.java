@@ -21,12 +21,12 @@ import org.muml.pim.component.HybridPort;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.cbs.dependencylanguage.impl.DataMergeImpl#getVariables <em>Variables</em>}</li>
  *   <li>{@link org.muml.cbs.dependencylanguage.impl.DataMergeImpl#getVariableName <em>Variable Name</em>}</li>
  *   <li>{@link org.muml.cbs.dependencylanguage.impl.DataMergeImpl#getPort <em>Port</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -17,11 +17,11 @@ import org.muml.cbs.dependencylanguage.Event;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.cbs.dependencylanguage.impl.EnableDisableEffectImpl#getEvent <em>Event</em>}</li>
  *   <li>{@link org.muml.cbs.dependencylanguage.impl.EnableDisableEffectImpl#isIsEnable <em>Is Enable</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

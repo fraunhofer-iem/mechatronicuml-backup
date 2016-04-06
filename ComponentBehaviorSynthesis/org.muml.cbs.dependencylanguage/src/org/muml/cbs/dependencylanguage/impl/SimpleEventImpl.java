@@ -10,8 +10,6 @@ import org.muml.cbs.dependencylanguage.SimpleEvent;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Simple Event</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */

@@ -16,10 +16,10 @@ import org.muml.pim.realtimestatechart.Transition;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.cbs.dependencylanguage.TransitionEvent#getTransition <em>Transition</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.cbs.dependencylanguage.DependencylanguagePackage#getTransitionEvent()
  * @model

@@ -11,8 +11,6 @@ import org.muml.cbs.dependencylanguage.DependencylanguagePackage;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Condition</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */

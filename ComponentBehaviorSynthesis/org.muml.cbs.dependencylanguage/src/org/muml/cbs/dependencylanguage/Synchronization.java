@@ -19,6 +19,7 @@ import org.muml.pim.types.DataType;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.cbs.dependencylanguage.Synchronization#getSendingEvents <em>Sending Events</em>}</li>
  *   <li>{@link org.muml.cbs.dependencylanguage.Synchronization#getReceivingEvents <em>Receiving Events</em>}</li>
@@ -26,7 +27,6 @@ import org.muml.pim.types.DataType;
  *   <li>{@link org.muml.cbs.dependencylanguage.Synchronization#getSelectorType <em>Selector Type</em>}</li>
  *   <li>{@link org.muml.cbs.dependencylanguage.Synchronization#getGeneralSelectorExpression <em>General Selector Expression</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.cbs.dependencylanguage.DependencylanguagePackage#getSynchronization()
  * @model

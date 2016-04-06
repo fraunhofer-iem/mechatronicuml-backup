@@ -27,11 +27,11 @@ import org.muml.cbs.dependencylanguage.TriggerMessage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.cbs.dependencylanguage.impl.TriggerMessageImpl#getEffects <em>Effects</em>}</li>
  *   <li>{@link org.muml.cbs.dependencylanguage.impl.TriggerMessageImpl#getMessageEvent <em>Message Event</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

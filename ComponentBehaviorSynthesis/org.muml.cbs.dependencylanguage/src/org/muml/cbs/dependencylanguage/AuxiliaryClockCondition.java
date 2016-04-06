@@ -17,12 +17,12 @@ import org.muml.pim.valuetype.TimeValue;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.cbs.dependencylanguage.AuxiliaryClockCondition#getEvent <em>Event</em>}</li>
  *   <li>{@link org.muml.cbs.dependencylanguage.AuxiliaryClockCondition#getBound <em>Bound</em>}</li>
  *   <li>{@link org.muml.cbs.dependencylanguage.AuxiliaryClockCondition#getOperator <em>Operator</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.cbs.dependencylanguage.DependencylanguagePackage#getAuxiliaryClockCondition()
  * @model

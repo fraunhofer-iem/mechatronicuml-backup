@@ -12,13 +12,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
-
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.muml.cbs.dependencylanguage.DependencyModel;
 import org.muml.cbs.dependencylanguage.DependencylanguageFactory;
@@ -33,13 +27,7 @@ import org.muml.core.provider.CommentableElementItemProvider;
  * @generated
  */
 public class DependencyModelItemProvider
-	extends CommentableElementItemProvider
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+	extends CommentableElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -152,7 +140,7 @@ public class DependencyModelItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSIONS,
 				 DependencylanguageFactory.eINSTANCE.createSynthesizableBehavior()));
 
 		newChildDescriptors.add
@@ -184,6 +172,11 @@ public class DependencyModelItemProvider
 			(createChildParameter
 				(DependencylanguagePackage.Literals.DEPENDENCY_MODEL__DEPENDENCIES,
 				 DependencylanguageFactory.eINSTANCE.createBoundedActiveState()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DependencylanguagePackage.Literals.DEPENDENCY_MODEL__DEPENDENCIES,
+				 DependencylanguageFactory.eINSTANCE.createTriggerMessage()));
 	}
 
 	/**

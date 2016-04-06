@@ -16,12 +16,12 @@ import org.muml.core.expressions.common.LogicOperator;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.cbs.dependencylanguage.CompositionEvent#getLeftEvent <em>Left Event</em>}</li>
  *   <li>{@link org.muml.cbs.dependencylanguage.CompositionEvent#getKind <em>Kind</em>}</li>
  *   <li>{@link org.muml.cbs.dependencylanguage.CompositionEvent#getRightEvent <em>Right Event</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.cbs.dependencylanguage.DependencylanguagePackage#getCompositionEvent()
  * @model

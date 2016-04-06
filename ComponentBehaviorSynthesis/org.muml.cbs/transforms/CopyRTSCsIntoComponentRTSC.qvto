@@ -3,8 +3,8 @@ import transforms.lib.RTSC2RTSCdeepContainmentCopy;
 modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
 modeltype rtsc uses pim::realtimestatechart('http://www.muml.org/pim/1.0.0');
 modeltype component uses pim::component('http://www.muml.org/pim/1.0.0');
-modeltype dependencyLanguage uses 'http://www.fujaba.de/muml/dependencylanguage/0.4.0';
-modeltype modelinstance uses 'http://www.fujaba.de/modelinstance/0.4.0';
+modeltype depLang uses 'http://www.muml.org/cbs/dependencylanguage/1.0.0';
+modeltype modelinstance uses 'http://www.muml.org/core/modelinstance/1.0.0';
 
 transformation CopyRTSCsIntoComponentRTSC(inout input:modelinstance);
 
@@ -30,7 +30,7 @@ main() {
 	assert fatal (componentToSynthesize->notEmpty()) with log('There is no atomic component (Error-Code: NoComp1).');
 	
 	// Add inner behavior to the RTSCs which will be copied
-	componentToSynthesize.extension[SynthesizableBehavior]->forOne(synBeh){
+	componentToSynthesize.extensions[SynthesizableBehavior]->forOne(synBeh){
 		synBehavior := synBeh;	
 	};
 	
@@ -42,7 +42,7 @@ main() {
 	};
 	
 	// Add inner behavior to the RTSCs which will be copied
-	componentToSynthesize->first().extension[SynthesizableBehavior]->forOne(synBeh){
+	componentToSynthesize->first().extensions[SynthesizableBehavior]->forOne(synBeh){
 		synBehavior := synBeh;
 		if(not synBeh.behavior.oclIsUndefined() and synBeh.behavior.oclIsKindOf(RealtimeStatechart)) then {
 			listOfRTSCs += synBeh.behavior.oclAsType(RealtimeStatechart);

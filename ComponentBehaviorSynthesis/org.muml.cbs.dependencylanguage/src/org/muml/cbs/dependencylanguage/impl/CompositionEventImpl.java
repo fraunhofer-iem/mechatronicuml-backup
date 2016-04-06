@@ -18,12 +18,12 @@ import org.muml.core.expressions.common.LogicOperator;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.cbs.dependencylanguage.impl.CompositionEventImpl#getLeftEvent <em>Left Event</em>}</li>
  *   <li>{@link org.muml.cbs.dependencylanguage.impl.CompositionEventImpl#getKind <em>Kind</em>}</li>
  *   <li>{@link org.muml.cbs.dependencylanguage.impl.CompositionEventImpl#getRightEvent <em>Right Event</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

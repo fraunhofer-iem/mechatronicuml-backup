@@ -692,6 +692,29 @@ public class DependencylanguageItemProviderAdapterFactory extends Dependencylang
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.muml.cbs.dependencylanguage.TriggerMessage} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected TriggerMessageItemProvider triggerMessageItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.muml.cbs.dependencylanguage.TriggerMessage}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createTriggerMessageAdapter() {
+		if (triggerMessageItemProvider == null) {
+			triggerMessageItemProvider = new TriggerMessageItemProvider(this);
+		}
+
+		return triggerMessageItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -817,6 +840,7 @@ public class DependencylanguageItemProviderAdapterFactory extends Dependencylang
 		if (stateEventItemProvider != null) stateEventItemProvider.dispose();
 		if (stateCombinationEventItemProvider != null) stateCombinationEventItemProvider.dispose();
 		if (messageEventItemProvider != null) messageEventItemProvider.dispose();
+		if (triggerMessageItemProvider != null) triggerMessageItemProvider.dispose();
 	}
 
 }

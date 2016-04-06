@@ -17,10 +17,10 @@ import org.muml.pim.realtimestatechart.Clock;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.cbs.dependencylanguage.impl.ClockResetEffectImpl#getClocks <em>Clocks</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

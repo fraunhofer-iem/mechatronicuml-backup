@@ -16,10 +16,10 @@ import org.muml.pim.realtimestatechart.Clock;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.cbs.dependencylanguage.ClockResetEffect#getClocks <em>Clocks</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.cbs.dependencylanguage.DependencylanguagePackage#getClockResetEffect()
  * @model

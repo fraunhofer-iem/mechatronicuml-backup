@@ -17,11 +17,11 @@ import org.muml.pim.realtimestatechart.State;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.cbs.dependencylanguage.StateStatusCondition#getStates <em>States</em>}</li>
  *   <li>{@link org.muml.cbs.dependencylanguage.StateStatusCondition#getKind <em>Kind</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.cbs.dependencylanguage.DependencylanguagePackage#getStateStatusCondition()
  * @model

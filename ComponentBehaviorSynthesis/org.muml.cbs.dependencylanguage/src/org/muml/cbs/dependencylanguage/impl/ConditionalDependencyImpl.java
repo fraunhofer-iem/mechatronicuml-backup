@@ -24,12 +24,12 @@ import org.muml.cbs.dependencylanguage.Event;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.cbs.dependencylanguage.impl.ConditionalDependencyImpl#getEvent <em>Event</em>}</li>
  *   <li>{@link org.muml.cbs.dependencylanguage.impl.ConditionalDependencyImpl#getCondition <em>Condition</em>}</li>
  *   <li>{@link org.muml.cbs.dependencylanguage.impl.ConditionalDependencyImpl#getEffects <em>Effects</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

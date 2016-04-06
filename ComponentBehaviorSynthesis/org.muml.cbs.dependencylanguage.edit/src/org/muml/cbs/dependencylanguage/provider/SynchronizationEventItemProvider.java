@@ -10,13 +10,7 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
-
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.muml.cbs.dependencylanguage.DependencylanguageFactory;
 import org.muml.cbs.dependencylanguage.DependencylanguagePackage;
@@ -32,13 +26,7 @@ import org.muml.pim.actionlanguage.ActionlanguageFactory;
  * @generated
  */
 public class SynchronizationEventItemProvider
-	extends EventItemProvider
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+	extends EventItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -227,6 +215,26 @@ public class SynchronizationEventItemProvider
 			(createChildParameter
 				(DependencylanguagePackage.Literals.SYNCHRONIZATION_EVENT__SELECTOR_EXPRESSION,
 				 ActionlanguageFactory.eINSTANCE.createNondeterministicChoiceExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DependencylanguagePackage.Literals.SYNCHRONIZATION_EVENT__SELECTOR_EXPRESSION,
+				 ActionlanguageFactory.eINSTANCE.createTimeValueExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DependencylanguagePackage.Literals.SYNCHRONIZATION_EVENT__SELECTOR_EXPRESSION,
+				 ActionlanguageFactory.eINSTANCE.createTypeCastExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DependencylanguagePackage.Literals.SYNCHRONIZATION_EVENT__SELECTOR_EXPRESSION,
+				 ActionlanguageFactory.eINSTANCE.createArrayIndexExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DependencylanguagePackage.Literals.SYNCHRONIZATION_EVENT__SELECTOR_EXPRESSION,
+				 ActionlanguageFactory.eINSTANCE.createAttributeAccessorExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter

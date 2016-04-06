@@ -14,11 +14,11 @@ package org.muml.cbs.dependencylanguage;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.cbs.dependencylanguage.CountedEvent#getEvent <em>Event</em>}</li>
  *   <li>{@link org.muml.cbs.dependencylanguage.CountedEvent#getCounter <em>Counter</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.cbs.dependencylanguage.DependencylanguagePackage#getCountedEvent()
  * @model

@@ -18,11 +18,11 @@ import org.muml.pim.valuetype.TimeValue;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.cbs.dependencylanguage.impl.DelayedEventImpl#getDelay <em>Delay</em>}</li>
  *   <li>{@link org.muml.cbs.dependencylanguage.impl.DelayedEventImpl#getEvent <em>Event</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

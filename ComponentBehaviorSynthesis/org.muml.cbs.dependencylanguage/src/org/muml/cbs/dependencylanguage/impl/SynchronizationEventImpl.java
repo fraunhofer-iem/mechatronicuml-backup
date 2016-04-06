@@ -18,11 +18,11 @@ import org.muml.core.expressions.Expression;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.cbs.dependencylanguage.impl.SynchronizationEventImpl#getSelectorExpression <em>Selector Expression</em>}</li>
  *   <li>{@link org.muml.cbs.dependencylanguage.impl.SynchronizationEventImpl#getEvent <em>Event</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -16,10 +16,10 @@ import org.muml.pim.realtimestatechart.Transition;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.cbs.dependencylanguage.impl.TransitionEventImpl#getTransition <em>Transition</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

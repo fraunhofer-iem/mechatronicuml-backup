@@ -15,11 +15,11 @@ import org.muml.pim.realtimestatechart.State;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.cbs.dependencylanguage.StateEvent#getState <em>State</em>}</li>
  *   <li>{@link org.muml.cbs.dependencylanguage.StateEvent#getKind <em>Kind</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.cbs.dependencylanguage.DependencylanguagePackage#getStateEvent()
  * @model

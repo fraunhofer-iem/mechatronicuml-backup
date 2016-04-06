@@ -16,10 +16,10 @@ import org.muml.core.CommentableElement;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.cbs.dependencylanguage.DependencyModel#getDependencies <em>Dependencies</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.cbs.dependencylanguage.DependencylanguagePackage#getDependencyModel()
  * @model

@@ -16,11 +16,11 @@ import org.muml.pim.valuetype.TimeValue;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.cbs.dependencylanguage.DelayedEvent#getDelay <em>Delay</em>}</li>
  *   <li>{@link org.muml.cbs.dependencylanguage.DelayedEvent#getEvent <em>Event</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.cbs.dependencylanguage.DependencylanguagePackage#getDelayedEvent()
  * @model

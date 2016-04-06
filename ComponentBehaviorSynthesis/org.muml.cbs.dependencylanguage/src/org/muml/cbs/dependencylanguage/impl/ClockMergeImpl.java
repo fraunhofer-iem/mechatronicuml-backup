@@ -19,11 +19,11 @@ import org.muml.pim.realtimestatechart.Clock;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.cbs.dependencylanguage.impl.ClockMergeImpl#getClocks <em>Clocks</em>}</li>
  *   <li>{@link org.muml.cbs.dependencylanguage.impl.ClockMergeImpl#getClockName <em>Clock Name</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

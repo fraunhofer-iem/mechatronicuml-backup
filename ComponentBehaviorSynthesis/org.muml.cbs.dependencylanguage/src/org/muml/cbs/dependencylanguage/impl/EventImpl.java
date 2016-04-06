@@ -11,8 +11,6 @@ import org.muml.cbs.dependencylanguage.Event;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Event</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */

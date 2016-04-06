@@ -16,10 +16,10 @@ import org.muml.pim.realtimestatechart.State;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.cbs.dependencylanguage.ForbiddenStateCombination#getStates <em>States</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.cbs.dependencylanguage.DependencylanguagePackage#getForbiddenStateCombination()
  * @model

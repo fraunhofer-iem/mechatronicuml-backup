@@ -16,12 +16,12 @@ import org.muml.core.expressions.common.LogicOperator;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.cbs.dependencylanguage.CompositionCondition#getLeftCondition <em>Left Condition</em>}</li>
  *   <li>{@link org.muml.cbs.dependencylanguage.CompositionCondition#getKind <em>Kind</em>}</li>
  *   <li>{@link org.muml.cbs.dependencylanguage.CompositionCondition#getRightCondition <em>Right Condition</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.cbs.dependencylanguage.DependencylanguagePackage#getCompositionCondition()
  * @model

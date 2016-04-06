@@ -20,11 +20,11 @@ import org.muml.pim.realtimestatechart.State;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.cbs.dependencylanguage.impl.StateCombinationEventImpl#getStates <em>States</em>}</li>
  *   <li>{@link org.muml.cbs.dependencylanguage.impl.StateCombinationEventImpl#getKind <em>Kind</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

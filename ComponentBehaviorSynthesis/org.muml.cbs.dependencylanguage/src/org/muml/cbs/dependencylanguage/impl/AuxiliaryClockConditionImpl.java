@@ -19,12 +19,12 @@ import org.muml.pim.valuetype.TimeValue;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.cbs.dependencylanguage.impl.AuxiliaryClockConditionImpl#getEvent <em>Event</em>}</li>
  *   <li>{@link org.muml.cbs.dependencylanguage.impl.AuxiliaryClockConditionImpl#getBound <em>Bound</em>}</li>
  *   <li>{@link org.muml.cbs.dependencylanguage.impl.AuxiliaryClockConditionImpl#getOperator <em>Operator</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
