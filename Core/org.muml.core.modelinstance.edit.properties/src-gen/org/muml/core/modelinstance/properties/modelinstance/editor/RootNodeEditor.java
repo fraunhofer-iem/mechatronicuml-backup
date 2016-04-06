@@ -21,19 +21,17 @@ public class RootNodeEditor extends org.muml.ape.runtime.editors.ClassPropertyEd
 	protected void createProperties() {
 		if (tab == null) {
 
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists", "Lists", org.eclipse.swt.SWT.HORIZONTAL,
-					true);
+			addSubCategory("org.muml.ape.category.Lists", "Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
 
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					createEditorCategories_property_tab_generalTab_Editor(), false);
+			addEditorToCategory("org.muml.ape.category.Lists", createEditorCategories_property_tab_generalTab_Editor(),
+					false);
 
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists", "Lists", org.eclipse.swt.SWT.HORIZONTAL,
-					true);
+			addSubCategory("org.muml.ape.category.Lists", "Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
 
-			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					createEditorCategories_property_tab_generalTab_Editor(), false);
+			addEditorToCategory("org.muml.ape.category.Lists", createEditorCategories_property_tab_generalTab_Editor(),
+					false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
