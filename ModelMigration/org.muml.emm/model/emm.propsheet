@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ASCII"?>
 <de.uni_paderborn.fujaba:PropertyGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.uni_paderborn.fujaba="http://www.muml.org/ape/1.0.0" xmi:id="_rrUDwM1vEeSYMIUar8fgtA" defaultTab="_rrfp8M1vEeSYMIUar8fgtA" contributorId="">
   <reconciler xmi:id="_rrd0wM1vEeSYMIUar8fgtA"/>
-  <genModel href="migration.genmodel#/"/>
+  <genModel href="emm.genmodel#/"/>
   <plugin xmi:id="_rrfC4M1vEeSYMIUar8fgtA" id="de.uni_paderborn.fujaba.ecore.migration.edit.properties" name="Properties" vendor="ok" version="0.1">
     <requiredBundles>org.eclipse.emf.ecore</requiredBundles>
     <requiredBundles>org.eclipse.core.runtime</requiredBundles>
@@ -13,66 +13,66 @@
   </plugin>
   <tabs xmi:id="_rrfp8M1vEeSYMIUar8fgtA" id="migration" name="Migration" afterTab=""/>
   <packages xmi:id="_rrg4EM1vEeSYMIUar8fgtA">
-    <genPackage href="migration.genmodel#//migration"/>
+    <genPackage href="emm.genmodel#//emm"/>
     <classes xmi:id="_rrlJgM1vEeSYMIUar8fgtA">
-      <genClass href="migration.genmodel#//migration/Migrator"/>
+      <genClass href="emm.genmodel#//emm/Migrator"/>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_rrlJgc1vEeSYMIUar8fgtA" tab="_rrfp8M1vEeSYMIUar8fgtA">
-        <genFeature href="migration.genmodel#//migration/Migrator/sourcePackages"/>
+        <genFeature href="emm.genmodel#//emm/Migrator/sourcePackages"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor" xmi:id="_rrlwkM1vEeSYMIUar8fgtA"/>
       </orderedElements>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_rrlwkc1vEeSYMIUar8fgtA" tab="_rrfp8M1vEeSYMIUar8fgtA">
-        <genFeature href="migration.genmodel#//migration/Migrator/targetPackages"/>
+        <genFeature href="emm.genmodel#//emm/Migrator/targetPackages"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor" xmi:id="_rrlwks1vEeSYMIUar8fgtA"/>
       </orderedElements>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_rrlwk81vEeSYMIUar8fgtA" tab="_rrfp8M1vEeSYMIUar8fgtA">
-        <genFeature href="migration.genmodel#//migration/Migrator/release"/>
+        <genFeature href="emm.genmodel#//emm/Migrator/release"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor" xmi:id="_rrmXoM1vEeSYMIUar8fgtA"/>
       </orderedElements>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:PropertyCategory" xmi:id="_rrm-sM1vEeSYMIUar8fgtA" title="Lists" properties="_rrlJgc1vEeSYMIUar8fgtA _rrlwkc1vEeSYMIUar8fgtA"/>
     </classes>
     <classes xmi:id="_rrm-sc1vEeSYMIUar8fgtA">
-      <genClass href="migration.genmodel#//migration/OclExpression"/>
+      <genClass href="emm.genmodel#//emm/OclExpression"/>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_rrm-ss1vEeSYMIUar8fgtA" tab="_rrfp8M1vEeSYMIUar8fgtA" tooltip="" initializeOCLExpression="">
-        <genFeature href="migration.genmodel#//migration/OclExpression/ocl"/>
+        <genFeature href="emm.genmodel#//emm/OclExpression/ocl"/>
         <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
       </orderedElements>
     </classes>
     <classes xmi:id="_rrm-tM1vEeSYMIUar8fgtA">
-      <genClass href="migration.genmodel#//migration/CreateClass"/>
+      <genClass href="emm.genmodel#//emm/CreateClass"/>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_rrm-tc1vEeSYMIUar8fgtA" tab="_rrfp8M1vEeSYMIUar8fgtA">
-        <genFeature href="migration.genmodel#//migration/CreateClass/targetClass"/>
+        <genFeature href="emm.genmodel#//emm/CreateClass/targetClass"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor" xmi:id="_rrnlwM1vEeSYMIUar8fgtA"/>
       </orderedElements>
     </classes>
     <classes xmi:id="_rrnlwc1vEeSYMIUar8fgtA" superClasses="_rrm-tM1vEeSYMIUar8fgtA">
-      <genClass href="migration.genmodel#//migration/Mapping"/>
+      <genClass href="emm.genmodel#//emm/Mapping"/>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_rrnlws1vEeSYMIUar8fgtA" tab="_rrfp8M1vEeSYMIUar8fgtA">
-        <genFeature href="migration.genmodel#//migration/Mapping/sourceClass"/>
+        <genFeature href="emm.genmodel#//emm/Mapping/sourceClass"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor" xmi:id="_rrnlw81vEeSYMIUar8fgtA"/>
       </orderedElements>
     </classes>
     <classes xmi:id="_rrnlxM1vEeSYMIUar8fgtA">
-      <genClass href="migration.genmodel#//migration/FeatureInitializer"/>
+      <genClass href="emm.genmodel#//emm/FeatureInitializer"/>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_rrnlxc1vEeSYMIUar8fgtA" tab="_rrfp8M1vEeSYMIUar8fgtA">
-        <genFeature href="migration.genmodel#//migration/FeatureInitializer/targetFeature"/>
+        <genFeature href="emm.genmodel#//emm/FeatureInitializer/targetFeature"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor" xmi:id="_rrnlxs1vEeSYMIUar8fgtA"/>
       </orderedElements>
     </classes>
     <classes xmi:id="_rrnlx81vEeSYMIUar8fgtA" superClasses="_rrnlxM1vEeSYMIUar8fgtA">
-      <genClass href="migration.genmodel#//migration/IdentityFeatureInitializer"/>
+      <genClass href="emm.genmodel#//emm/IdentityFeatureInitializer"/>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_rrnlyM1vEeSYMIUar8fgtA" tab="_rrfp8M1vEeSYMIUar8fgtA">
-        <genFeature href="migration.genmodel#//migration/IdentityFeatureInitializer/sourceFeature"/>
+        <genFeature href="emm.genmodel#//emm/IdentityFeatureInitializer/sourceFeature"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor" xmi:id="_rroM0M1vEeSYMIUar8fgtA"/>
       </orderedElements>
     </classes>
     <classes xmi:id="_rroM0c1vEeSYMIUar8fgtA" superClasses="_rrm-sc1vEeSYMIUar8fgtA _rrnlxM1vEeSYMIUar8fgtA">
-      <genClass href="migration.genmodel#//migration/SetFeatureInitializer"/>
+      <genClass href="emm.genmodel#//emm/SetFeatureInitializer"/>
     </classes>
     <classes xmi:id="_rroM0s1vEeSYMIUar8fgtA" superClasses="_rrnlxM1vEeSYMIUar8fgtA _rrm-tM1vEeSYMIUar8fgtA">
-      <genClass href="migration.genmodel#//migration/CreateInitializer"/>
+      <genClass href="emm.genmodel#//emm/CreateInitializer"/>
     </classes>
     <classes xmi:id="_rroM081vEeSYMIUar8fgtA" superClasses="_rrm-sc1vEeSYMIUar8fgtA">
-      <genClass href="migration.genmodel#//migration/Constraint"/>
+      <genClass href="emm.genmodel#//emm/Constraint"/>
     </classes>
   </packages>
 </de.uni_paderborn.fujaba:PropertyGenerator>
