@@ -262,7 +262,7 @@ constructor OCLFilter::OCLFilter(_expression : String) {
 constructor Plugin::Plugin(genModel : GenModel) {
 	id := genModel.modelPluginID + ".edit.properties";
 	name := "Properties";
-	version := '0.1';
+	version := '0.1.0.qualifier';
 }
 
 constructor TextPropertyEditor::TextPropertyEditor(_multiLine : Boolean) {

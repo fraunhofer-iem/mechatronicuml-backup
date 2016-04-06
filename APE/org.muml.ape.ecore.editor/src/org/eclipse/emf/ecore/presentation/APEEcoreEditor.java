@@ -55,11 +55,11 @@ import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
 /**
  * This is an improved Ecore model editor.
  */
-public class ImprovedEcoreEditor extends
+public class APEEcoreEditor extends
 		org.eclipse.emf.ecore.presentation.EcoreEditor implements ITabbedPropertySheetPageContributor {
 
 	// BEGIN Tabbed Properties
-	public static final String PROPERTIES_CONTRIBUTOR = "org.eclipse.emf.ecore.editor.improved.contributor";
+	public static final String PROPERTIES_CONTRIBUTOR = "org.muml.ape.contributor";
 
 	protected TabbedPropertySheetPage propertySheetPage;
 
@@ -143,7 +143,7 @@ public class ImprovedEcoreEditor extends
 
 	private ToolBarManager toolBarManager;
 
-	public ImprovedEcoreEditor() {
+	public APEEcoreEditor() {
 		inheritanceContentProvider = new InheritanceContentProvider(
 				adapterFactory);
 		searchViewerFilter = new TreeViewerSearchFilter();
@@ -316,7 +316,7 @@ public class ImprovedEcoreEditor extends
 		final Label clear = new Label(parent, 0);
 		clear.setBackground(parent.getDisplay().getSystemColor(SWT.COLOR_WHITE));
 		clear.setLayoutData(new GridData(SWT.END, SWT.CENTER, false, false));
-		ImageDescriptor clearImageDescriptor = ImprovedEcoreEditorPlugin.getImageDescriptor("icons/clear.gif");
+		ImageDescriptor clearImageDescriptor = APEEcoreEditorPlugin.getImageDescriptor("icons/clear.gif");
 		clear.setImage(clearImageDescriptor.createImage());
 		clear.addMouseListener(new MouseAdapter() {
 			@Override
@@ -374,7 +374,7 @@ public class ImprovedEcoreEditor extends
 				setMarkAbstractClasses(isChecked());
 			}
 		};
-		actionMarkAbstract.setImageDescriptor(ImprovedEcoreEditorPlugin
+		actionMarkAbstract.setImageDescriptor(APEEcoreEditorPlugin
 				.getImageDescriptor("icons/abstract.gif"));
 		
 		// Show Annotations
@@ -384,7 +384,7 @@ public class ImprovedEcoreEditor extends
 				setShowAnnotations(isChecked());
 			}
 		};
-		actionShowAnnotations.setImageDescriptor(ImprovedEcoreEditorPlugin
+		actionShowAnnotations.setImageDescriptor(APEEcoreEditorPlugin
 				.getImageDescriptor("icons/annotation.gif"));
 
 		
@@ -396,7 +396,7 @@ public class ImprovedEcoreEditor extends
 
 			}
 		};
-		actionSort.setImageDescriptor(ImprovedEcoreEditorPlugin
+		actionSort.setImageDescriptor(APEEcoreEditorPlugin
 				.getImageDescriptor("icons/alphab_sort_co.gif"));
 
 		// Mark derived
@@ -407,7 +407,7 @@ public class ImprovedEcoreEditor extends
 				setMarkDerived(isChecked());
 			}
 		};
-		actionMarkDerived.setImageDescriptor(ImprovedEcoreEditorPlugin
+		actionMarkDerived.setImageDescriptor(APEEcoreEditorPlugin
 				.getImageDescriptor("icons/derived.gif"));
 
 		// Inheritance: NONE
@@ -420,7 +420,7 @@ public class ImprovedEcoreEditor extends
 				}
 			}
 		};
-		actionInheritanceNone.setImageDescriptor(ImprovedEcoreEditorPlugin
+		actionInheritanceNone.setImageDescriptor(APEEcoreEditorPlugin
 				.getImageDescriptor("icons/none.gif"));
 
 		// Inheritance: FEATURES
@@ -433,7 +433,7 @@ public class ImprovedEcoreEditor extends
 				}
 			}
 		};
-		actionInheritanceFeatures.setImageDescriptor(ImprovedEcoreEditorPlugin
+		actionInheritanceFeatures.setImageDescriptor(APEEcoreEditorPlugin
 				.getImageDescriptor("icons/features.gif"));
 
 		// Inheritance: HIERARCHY
@@ -446,12 +446,12 @@ public class ImprovedEcoreEditor extends
 				}
 			}
 		};
-		actionInheritanceHierarchy.setImageDescriptor(ImprovedEcoreEditorPlugin
+		actionInheritanceHierarchy.setImageDescriptor(APEEcoreEditorPlugin
 				.getImageDescriptor("icons/hierarchy.gif"));
 
 		// Expand all
 		actionExpandAll = new Action("Expand All",
-				ImprovedEcoreEditorPlugin
+				APEEcoreEditorPlugin
 						.getImageDescriptor("icons/expandall.gif")) {
 			@Override
 			public void run() {
@@ -461,7 +461,7 @@ public class ImprovedEcoreEditor extends
 
 		// Collapse all
 		Action actionCollapseAll = new Action("Collapse All",
-				ImprovedEcoreEditorPlugin
+				APEEcoreEditorPlugin
 						.getImageDescriptor("icons/collapseall.gif")) {
 			@Override
 			public void run() {
@@ -485,16 +485,16 @@ public class ImprovedEcoreEditor extends
 
 
 		// Read preferences
-		setShowAnnotations(Boolean.parseBoolean(ImprovedEcoreEditorPlugin
+		setShowAnnotations(Boolean.parseBoolean(APEEcoreEditorPlugin
 				.getPreferencesValue("showAnnotations", Boolean.TRUE.toString())));
-		activateSorter(Boolean.parseBoolean(ImprovedEcoreEditorPlugin
+		activateSorter(Boolean.parseBoolean(APEEcoreEditorPlugin
 				.getPreferencesValue("sort", Boolean.TRUE.toString())));
-		setMarkDerived(Boolean.parseBoolean(ImprovedEcoreEditorPlugin
+		setMarkDerived(Boolean.parseBoolean(APEEcoreEditorPlugin
 				.getPreferencesValue("markDerived", Boolean.TRUE.toString())));
-		setInheritanceMode(InheritanceMode.valueOf(ImprovedEcoreEditorPlugin
+		setInheritanceMode(InheritanceMode.valueOf(APEEcoreEditorPlugin
 				.getPreferencesValue("inheritanceMode",
 						InheritanceMode.NONE.toString())));
-		setMarkAbstractClasses(Boolean.parseBoolean(ImprovedEcoreEditorPlugin
+		setMarkAbstractClasses(Boolean.parseBoolean(APEEcoreEditorPlugin
 				.getPreferencesValue("markAbstractClasses", Boolean.TRUE.toString())));
 		
 		
@@ -534,7 +534,7 @@ public class ImprovedEcoreEditor extends
 			colorDisabled = defaultFont.getDevice().getSystemColor(
 					SWT.COLOR_GRAY);
 
-			ImageDescriptor descriptor = ImprovedEcoreEditorPlugin
+			ImageDescriptor descriptor = APEEcoreEditorPlugin
 					.getImageDescriptor("icons/supertype.gif");
 			if (descriptor != null) {
 				imageSuperType = descriptor.createImage();
@@ -628,7 +628,7 @@ public class ImprovedEcoreEditor extends
 		}
 		getSelectionViewer().refresh();
 
-		ImprovedEcoreEditorPlugin.setPreferencesValue("markDerived", Boolean
+		APEEcoreEditorPlugin.setPreferencesValue("markDerived", Boolean
 				.valueOf(markDerived).toString());
 	}
 
@@ -650,7 +650,7 @@ public class ImprovedEcoreEditor extends
 		}
 
 		// Set preference
-		ImprovedEcoreEditorPlugin.setPreferencesValue("sort",
+		APEEcoreEditorPlugin.setPreferencesValue("sort",
 				Boolean.valueOf(active).toString());
 	}
 
@@ -662,7 +662,7 @@ public class ImprovedEcoreEditor extends
 		selectionViewer.refresh();
 
 		// Set preference
-		ImprovedEcoreEditorPlugin.setPreferencesValue("markAbstractClasses",
+		APEEcoreEditorPlugin.setPreferencesValue("markAbstractClasses",
 				Boolean.valueOf(show).toString());
 	}
 	
@@ -684,7 +684,7 @@ public class ImprovedEcoreEditor extends
 		}
 
 		// Set preference
-		ImprovedEcoreEditorPlugin.setPreferencesValue("showAnnotations",
+		APEEcoreEditorPlugin.setPreferencesValue("showAnnotations",
 				Boolean.valueOf(show).toString());
 	}
 
@@ -706,7 +706,7 @@ public class ImprovedEcoreEditor extends
 		inheritanceContentProvider.setInheritanceMode(mode);
 		selectionViewer.refresh();
 
-		ImprovedEcoreEditorPlugin.setPreferencesValue("inheritanceMode",
+		APEEcoreEditorPlugin.setPreferencesValue("inheritanceMode",
 				mode.toString());
 	}
 

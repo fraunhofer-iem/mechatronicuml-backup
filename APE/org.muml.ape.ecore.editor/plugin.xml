@@ -7,7 +7,7 @@
             id="org.eclipse.emf.ecore.presentation.ImprovedEcoreEditorID"
             name="APE Ecore Model Editor"
             icon="icons/full/obj16/EcoreModelFile.gif"
-            class="org.eclipse.emf.ecore.presentation.ImprovedEcoreEditor"
+            class="org.eclipse.emf.ecore.presentation.APEEcoreEditor"
             contributorClass="org.eclipse.emf.ecore.presentation.EcoreActionBarContributor">
          <contentTypeBinding contentTypeId="org.eclipse.emf.ecore"/>
          <contentTypeBinding contentTypeId="org.eclipse.emf.emof"/>

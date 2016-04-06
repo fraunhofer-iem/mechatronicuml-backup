@@ -1,13 +1,3 @@
-/**
- * Copyright (c) 2004-2006 IBM Corporation and others.
- * All rights reserved.   This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- *
- * Contributors:
- *   IBM - Initial API and implementation
- */
 package org.eclipse.emf.ecore.presentation;
 
 
@@ -24,7 +14,7 @@ import org.eclipse.jface.resource.ImageDescriptor;
  * <!-- end-user-doc -->
  * @generated
  */
-public final class ImprovedEcoreEditorPlugin extends EMFPlugin
+public final class APEEcoreEditorPlugin extends EMFPlugin
 {
   /**
    * Keep track of the singleton.
@@ -32,7 +22,7 @@ public final class ImprovedEcoreEditorPlugin extends EMFPlugin
    * <!-- end-user-doc -->
    * @generated
    */
-  public static final ImprovedEcoreEditorPlugin INSTANCE = new ImprovedEcoreEditorPlugin();
+  public static final APEEcoreEditorPlugin INSTANCE = new APEEcoreEditorPlugin();
 
   /**
    * Keep track of the singleton.
@@ -48,7 +38,7 @@ public final class ImprovedEcoreEditorPlugin extends EMFPlugin
    * <!-- end-user-doc -->
    * @generated
    */
-  public ImprovedEcoreEditorPlugin()
+  public APEEcoreEditorPlugin()
   {
     super
       (new ResourceLocator [] 
