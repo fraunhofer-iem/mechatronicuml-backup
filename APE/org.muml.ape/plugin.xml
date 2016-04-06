@@ -11,7 +11,7 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated ape -->
       <package
-            uri="http://org.muml.ape/1.0.0"
+            uri="http://www.muml.org/ape/1.0.0"
             class="org.muml.ape.PropertiesPackage"
             genModel="model/ape.genmodel"/>
    </extension>

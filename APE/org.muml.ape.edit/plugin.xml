@@ -12,7 +12,7 @@
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <!-- @generated ape -->
       <factory
-            uri="http://org.muml.ape/1.0.0"
+            uri="http://www.muml.org/ape/1.0.0"
             class="org.muml.ape.provider.PropertiesItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider

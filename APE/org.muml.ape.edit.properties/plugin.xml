@@ -59,112 +59,112 @@
     
        <propertyEditor
              factory="org.muml.ape.properties.ape.editor.PropertyGeneratorEditor$Factory"
-             type="http://org.muml.ape/1.0.0#PropertyGenerator">
+             type="http://www.muml.org/ape/1.0.0#PropertyGenerator">
        </propertyEditor>
     
        <propertyEditor
              factory="org.muml.ape.properties.ape.editor.ReconcilerEditor$Factory"
-             type="http://org.muml.ape/1.0.0#Reconciler">
+             type="http://www.muml.org/ape/1.0.0#Reconciler">
        </propertyEditor>
     
        <propertyEditor
              factory="org.muml.ape.properties.ape.editor.CustomTransformationEditor$Factory"
-             type="http://org.muml.ape/1.0.0#CustomTransformation">
+             type="http://www.muml.org/ape/1.0.0#CustomTransformation">
        </propertyEditor>
     
        <propertyEditor
              factory="org.muml.ape.properties.ape.editor.PluginEditor$Factory"
-             type="http://org.muml.ape/1.0.0#Plugin">
+             type="http://www.muml.org/ape/1.0.0#Plugin">
        </propertyEditor>
     
        <propertyEditor
              factory="org.muml.ape.properties.ape.editor.PropertyTabEditor$Factory"
-             type="http://org.muml.ape/1.0.0#PropertyTab">
+             type="http://www.muml.org/ape/1.0.0#PropertyTab">
        </propertyEditor>
     
        <propertyEditor
              factory="org.muml.ape.properties.ape.editor.PackageEditor$Factory"
-             type="http://org.muml.ape/1.0.0#Package">
+             type="http://www.muml.org/ape/1.0.0#Package">
        </propertyEditor>
     
        <propertyEditor
              factory="org.muml.ape.properties.ape.editor.ClassEditor$Factory"
-             type="http://org.muml.ape/1.0.0#Class">
+             type="http://www.muml.org/ape/1.0.0#Class">
        </propertyEditor>
     
        <propertyEditor
              factory="org.muml.ape.properties.ape.editor.PropertyEditor$Factory"
-             type="http://org.muml.ape/1.0.0#Property">
+             type="http://www.muml.org/ape/1.0.0#Property">
        </propertyEditor>
     
        <propertyEditor
              factory="org.muml.ape.properties.ape.editor.TextPropertyEditorEditor$Factory"
-             type="http://org.muml.ape/1.0.0#TextPropertyEditor">
+             type="http://www.muml.org/ape/1.0.0#TextPropertyEditor">
        </propertyEditor>
     
        <propertyEditor
              factory="org.muml.ape.properties.ape.editor.SpinnerPropertyEditorEditor$Factory"
-             type="http://org.muml.ape/1.0.0#SpinnerPropertyEditor">
+             type="http://www.muml.org/ape/1.0.0#SpinnerPropertyEditor">
        </propertyEditor>
     
        <propertyEditor
              factory="org.muml.ape.properties.ape.editor.ComboBoxPropertyEditorEditor$Factory"
-             type="http://org.muml.ape/1.0.0#ComboBoxPropertyEditor">
+             type="http://www.muml.org/ape/1.0.0#ComboBoxPropertyEditor">
        </propertyEditor>
     
        <propertyEditor
              factory="org.muml.ape.properties.ape.editor.CheckboxPropertyEditorEditor$Factory"
-             type="http://org.muml.ape/1.0.0#CheckboxPropertyEditor">
+             type="http://www.muml.org/ape/1.0.0#CheckboxPropertyEditor">
        </propertyEditor>
     
        <propertyEditor
              factory="org.muml.ape.properties.ape.editor.RadioPropertyEditorEditor$Factory"
-             type="http://org.muml.ape/1.0.0#RadioPropertyEditor">
+             type="http://www.muml.org/ape/1.0.0#RadioPropertyEditor">
        </propertyEditor>
     
        <propertyEditor
              factory="org.muml.ape.properties.ape.editor.ListPropertyEditorEditor$Factory"
-             type="http://org.muml.ape/1.0.0#ListPropertyEditor">
+             type="http://www.muml.org/ape/1.0.0#ListPropertyEditor">
        </propertyEditor>
     
        <propertyEditor
              factory="org.muml.ape.properties.ape.editor.FlattenedListPropertyEditorEditor$Factory"
-             type="http://org.muml.ape/1.0.0#FlattenedListPropertyEditor">
+             type="http://www.muml.org/ape/1.0.0#FlattenedListPropertyEditor">
        </propertyEditor>
     
        <propertyEditor
              factory="org.muml.ape.properties.ape.editor.ObjectPropertyEditorEditor$Factory"
-             type="http://org.muml.ape/1.0.0#ObjectPropertyEditor">
+             type="http://www.muml.org/ape/1.0.0#ObjectPropertyEditor">
        </propertyEditor>
     
        <propertyEditor
              factory="org.muml.ape.properties.ape.editor.OCLPropertyEditorEditor$Factory"
-             type="http://org.muml.ape/1.0.0#OCLPropertyEditor">
+             type="http://www.muml.org/ape/1.0.0#OCLPropertyEditor">
        </propertyEditor>
     
        <propertyEditor
              factory="org.muml.ape.properties.ape.editor.CustomPropertyEditorEditor$Factory"
-             type="http://org.muml.ape/1.0.0#CustomPropertyEditor">
+             type="http://www.muml.org/ape/1.0.0#CustomPropertyEditor">
        </propertyEditor>
     
        <propertyEditor
              factory="org.muml.ape.properties.ape.editor.PropertyCategoryEditor$Factory"
-             type="http://org.muml.ape/1.0.0#PropertyCategory">
+             type="http://www.muml.org/ape/1.0.0#PropertyCategory">
        </propertyEditor>
     
        <propertyEditor
              factory="org.muml.ape.properties.ape.editor.OCLFilterEditor$Factory"
-             type="http://org.muml.ape/1.0.0#OCLFilter">
+             type="http://www.muml.org/ape/1.0.0#OCLFilter">
        </propertyEditor>
     
        <propertyEditor
              factory="org.muml.ape.properties.ape.editor.CreationConstraintEditor$Factory"
-             type="http://org.muml.ape/1.0.0#CreationConstraint">
+             type="http://www.muml.org/ape/1.0.0#CreationConstraint">
        </propertyEditor>
     
        <propertyEditor
              factory="org.muml.ape.properties.ape.editor.BaseInsertPointEditor$Factory"
-             type="http://org.muml.ape/1.0.0#BaseInsertPoint">
+             type="http://www.muml.org/ape/1.0.0#BaseInsertPoint">
        </propertyEditor>
     
     </propertyEditors>

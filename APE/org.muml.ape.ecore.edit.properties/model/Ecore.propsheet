@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ASCII"?>
-<org.muml:PropertyGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.muml="http://org.muml.ape/1.0.0" xmi:id="_C71YsMwXEeSfkPntfQ2wPg" defaultTab="_C71_wcwXEeSfkPntfQ2wPg" contributorId="org.muml.ape.contributor">
+<org.muml:PropertyGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.muml="http://www.muml.org/ape/1.0.0" xmi:id="_C71YsMwXEeSfkPntfQ2wPg" defaultTab="_C71_wcwXEeSfkPntfQ2wPg" contributorId="org.muml.ape.contributor">
   <reconciler xmi:id="_C71YscwXEeSfkPntfQ2wPg"/>
   <genModel href="Ecore.genmodel#/"/>
   <plugin xmi:id="_C71_wMwXEeSfkPntfQ2wPg" id="org.muml.ape.ecore.edit.properties" name="Ecore Editor-Support" vendor="University of Paderborn" version="1.0.0.qualifier">

@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="ASCII"?>
 <uriMap:MappingContainer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:uriMap="http:///www.eclipse.org/m2m/qvt/oml/MModelUriMap/1.0.0">
-  <mapping sourceURI="http://org.muml.ape/1.0.0" targetURI="platform:/resource/org.muml.ape/model/ape.ecore"/>
+  <mapping sourceURI="http://www.muml.org/ape/1.0.0" targetURI="platform:/resource/org.muml.ape/model/ape.ecore"/>
 </uriMap:MappingContainer>

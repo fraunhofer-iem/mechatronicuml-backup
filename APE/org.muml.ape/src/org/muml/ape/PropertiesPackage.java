@@ -39,7 +39,7 @@ public interface PropertiesPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://org.muml.ape/1.0.0";
+	String eNS_URI = "http://www.muml.org/ape/1.0.0";
 
 	/**
 	 * The package namespace name.

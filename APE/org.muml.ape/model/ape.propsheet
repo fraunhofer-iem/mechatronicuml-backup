@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ASCII"?>
-<org.muml.ape:PropertyGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.muml.ape="http://org.muml.ape/1.0.0" defaultTab="//@tabs.0" contributorId="org.muml.ape.contributor">
+<org.muml.ape:PropertyGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.muml.ape="http://www.muml.org/ape/1.0.0" defaultTab="//@tabs.0" contributorId="org.muml.ape.contributor">
   <reconciler/>
   <genModel href="ape.genmodel#/"/>
   <plugin id="org.muml.ape.edit.properties" name="APE Propsheet Editor-Support" vendor="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn" version="1.0.0.qualifier">

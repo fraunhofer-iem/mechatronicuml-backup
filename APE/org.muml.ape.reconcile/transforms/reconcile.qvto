@@ -2,7 +2,7 @@ transformation reconcile(inout propsheet : ape);
 
 modeltype genmodel uses genmodel('http://www.eclipse.org/emf/2002/GenModel');
 modeltype ecore uses ecore ('http://www.eclipse.org/emf/2002/Ecore');
-modeltype ape uses ape('http://org.muml.ape/1.0.0');
+modeltype ape uses ape('http://www.muml.org/ape/1.0.0');
 
 main() {
 	log("QVT-O Script \"reconcile.qvto\" started.");
