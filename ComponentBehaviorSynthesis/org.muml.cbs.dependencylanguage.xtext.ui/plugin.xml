@@ -6,7 +6,7 @@
     <extension
             point="org.eclipse.ui.editors">
         <editor
-            class="de.uni_paderborn.fujaba.muml.ui.DependencyModelLanguageExecutableExtensionFactory:org.eclipse.xtext.ui.editor.XtextEditor"
+            class="org.muml.cbs.dependencylanguage.xtext.ui.DependencyModelLanguageExecutableExtensionFactory:org.eclipse.xtext.ui.editor.XtextEditor"
             contributorClass="org.eclipse.ui.editors.text.TextEditorActionContributor"
             default="true"
             extensions="dependencymodel"
@@ -17,7 +17,7 @@
     <extension
         point="org.eclipse.ui.handlers">
         <handler
-            class="de.uni_paderborn.fujaba.muml.ui.DependencyModelLanguageExecutableExtensionFactory:org.eclipse.xtext.ui.editor.hyperlinking.OpenDeclarationHandler"
+            class="org.muml.cbs.dependencylanguage.xtext.ui.DependencyModelLanguageExecutableExtensionFactory:org.eclipse.xtext.ui.editor.hyperlinking.OpenDeclarationHandler"
             commandId="org.eclipse.xtext.ui.editor.hyperlinking.OpenDeclaration">
             <activeWhen>
                 <reference
@@ -26,7 +26,7 @@
             </activeWhen>
         </handler>
         <handler
-            class="de.uni_paderborn.fujaba.muml.ui.DependencyModelLanguageExecutableExtensionFactory:org.eclipse.xtext.ui.editor.handler.ValidateActionHandler"
+            class="org.muml.cbs.dependencylanguage.xtext.ui.DependencyModelLanguageExecutableExtensionFactory:org.eclipse.xtext.ui.editor.handler.ValidateActionHandler"
             commandId="de.uni_paderborn.fujaba.muml.DependencyModelLanguage.validate">
          <activeWhen>
             <reference
@@ -36,14 +36,14 @@
       	</handler>
       	<!-- copy qualified name -->
         <handler
-            class="de.uni_paderborn.fujaba.muml.ui.DependencyModelLanguageExecutableExtensionFactory:org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedNameHandler"
+            class="org.muml.cbs.dependencylanguage.xtext.ui.DependencyModelLanguageExecutableExtensionFactory:org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedNameHandler"
             commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedName">
             <activeWhen>
 				<reference definitionId="de.uni_paderborn.fujaba.muml.DependencyModelLanguage.Editor.opened" />
             </activeWhen>
         </handler>
         <handler
-            class="de.uni_paderborn.fujaba.muml.ui.DependencyModelLanguageExecutableExtensionFactory:org.eclipse.xtext.ui.editor.copyqualifiedname.OutlineCopyQualifiedNameHandler"
+            class="org.muml.cbs.dependencylanguage.xtext.ui.DependencyModelLanguageExecutableExtensionFactory:org.eclipse.xtext.ui.editor.copyqualifiedname.OutlineCopyQualifiedNameHandler"
             commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.OutlineCopyQualifiedName">
             <activeWhen>
             	<and>
@@ -80,21 +80,21 @@
     <extension
             point="org.eclipse.ui.preferencePages">
         <page
-            class="de.uni_paderborn.fujaba.muml.ui.DependencyModelLanguageExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
+            class="org.muml.cbs.dependencylanguage.xtext.ui.DependencyModelLanguageExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
             id="de.uni_paderborn.fujaba.muml.DependencyModelLanguage"
             name="DependencyModelLanguage">
             <keywordReference id="de.uni_paderborn.fujaba.muml.ui.keyword_DependencyModelLanguage"/>
         </page>
         <page
             category="de.uni_paderborn.fujaba.muml.DependencyModelLanguage"
-            class="de.uni_paderborn.fujaba.muml.ui.DependencyModelLanguageExecutableExtensionFactory:org.eclipse.xtext.ui.editor.syntaxcoloring.SyntaxColoringPreferencePage"
+            class="org.muml.cbs.dependencylanguage.xtext.ui.DependencyModelLanguageExecutableExtensionFactory:org.eclipse.xtext.ui.editor.syntaxcoloring.SyntaxColoringPreferencePage"
             id="de.uni_paderborn.fujaba.muml.DependencyModelLanguage.coloring"
             name="Syntax Coloring">
             <keywordReference id="de.uni_paderborn.fujaba.muml.ui.keyword_DependencyModelLanguage"/>
         </page>
         <page
             category="de.uni_paderborn.fujaba.muml.DependencyModelLanguage"
-            class="de.uni_paderborn.fujaba.muml.ui.DependencyModelLanguageExecutableExtensionFactory:org.eclipse.xtext.ui.editor.templates.XtextTemplatePreferencePage"
+            class="org.muml.cbs.dependencylanguage.xtext.ui.DependencyModelLanguageExecutableExtensionFactory:org.eclipse.xtext.ui.editor.templates.XtextTemplatePreferencePage"
             id="de.uni_paderborn.fujaba.muml.DependencyModelLanguage.templates"
             name="Templates">
             <keywordReference id="de.uni_paderborn.fujaba.muml.ui.keyword_DependencyModelLanguage"/>
@@ -103,7 +103,7 @@
     <extension
             point="org.eclipse.ui.propertyPages">
         <page
-            class="de.uni_paderborn.fujaba.muml.ui.DependencyModelLanguageExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
+            class="org.muml.cbs.dependencylanguage.xtext.ui.DependencyModelLanguageExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
             id="de.uni_paderborn.fujaba.muml.DependencyModelLanguage"
             name="DependencyModelLanguage">
             <keywordReference id="de.uni_paderborn.fujaba.muml.ui.keyword_DependencyModelLanguage"/>
@@ -197,7 +197,7 @@
 	</extension>
 	<extension point="org.eclipse.ui.handlers">
 	    <handler
-            class="de.uni_paderborn.fujaba.muml.ui.DependencyModelLanguageExecutableExtensionFactory:org.eclipse.xtext.ui.editor.findrefs.FindReferencesHandler"
+            class="org.muml.cbs.dependencylanguage.xtext.ui.DependencyModelLanguageExecutableExtensionFactory:org.eclipse.xtext.ui.editor.findrefs.FindReferencesHandler"
             commandId="org.eclipse.xtext.ui.editor.FindReferences">
             <activeWhen>
                 <reference
@@ -212,13 +212,13 @@
 	<extension
 		point="org.eclipse.emf.ecore.extension_parser">
 		<parser
-			class="de.uni_paderborn.fujaba.muml.ui.DependencyModelLanguageExecutableExtensionFactory:org.eclipse.xtext.resource.IResourceFactory"
+			class="org.muml.cbs.dependencylanguage.xtext.ui.DependencyModelLanguageExecutableExtensionFactory:org.eclipse.xtext.resource.IResourceFactory"
 			type="dependencymodel">
 		</parser>
 	</extension>
 	<extension point="org.eclipse.xtext.extension_resourceServiceProvider">
         <resourceServiceProvider
-            class="de.uni_paderborn.fujaba.muml.ui.DependencyModelLanguageExecutableExtensionFactory:org.eclipse.xtext.ui.resource.IResourceUIServiceProvider"
+            class="org.muml.cbs.dependencylanguage.xtext.ui.DependencyModelLanguageExecutableExtensionFactory:org.eclipse.xtext.ui.resource.IResourceUIServiceProvider"
             uriExtension="dependencymodel">
         </resourceServiceProvider>
     </extension>
@@ -250,14 +250,14 @@
    <extension
          point="org.eclipse.xtext.builder.participant">
       <participant
-            class="de.uni_paderborn.fujaba.muml.ui.DependencyModelLanguageExecutableExtensionFactory:org.eclipse.xtext.builder.IXtextBuilderParticipant">
+            class="org.muml.cbs.dependencylanguage.xtext.ui.DependencyModelLanguageExecutableExtensionFactory:org.eclipse.xtext.builder.IXtextBuilderParticipant">
       </participant>
    </extension>
    <extension
             point="org.eclipse.ui.preferencePages">
         <page
             category="de.uni_paderborn.fujaba.muml.DependencyModelLanguage"
-            class="de.uni_paderborn.fujaba.muml.ui.DependencyModelLanguageExecutableExtensionFactory:org.eclipse.xtext.builder.preferences.BuilderPreferencePage"
+            class="org.muml.cbs.dependencylanguage.xtext.ui.DependencyModelLanguageExecutableExtensionFactory:org.eclipse.xtext.builder.preferences.BuilderPreferencePage"
             id="de.uni_paderborn.fujaba.muml.DependencyModelLanguage.compiler.preferencePage"
             name="Compiler">
             <keywordReference id="de.uni_paderborn.fujaba.muml.ui.keyword_DependencyModelLanguage"/>
@@ -267,7 +267,7 @@
             point="org.eclipse.ui.propertyPages">
         <page
             category="de.uni_paderborn.fujaba.muml.DependencyModelLanguage"
-            class="de.uni_paderborn.fujaba.muml.ui.DependencyModelLanguageExecutableExtensionFactory:org.eclipse.xtext.builder.preferences.BuilderPreferencePage"
+            class="org.muml.cbs.dependencylanguage.xtext.ui.DependencyModelLanguageExecutableExtensionFactory:org.eclipse.xtext.builder.preferences.BuilderPreferencePage"
             id="de.uni_paderborn.fujaba.muml.DependencyModelLanguage.compiler.propertyPage"
             name="Compiler">
             <keywordReference id="de.uni_paderborn.fujaba.muml.ui.keyword_DependencyModelLanguage"/>
@@ -282,7 +282,7 @@
 	<extension
 		point="org.eclipse.ui.handlers">
 		<handler 
-			class="de.uni_paderborn.fujaba.muml.ui.DependencyModelLanguageExecutableExtensionFactory:org.eclipse.xtext.ui.editor.outline.quickoutline.ShowQuickOutlineActionHandler"
+			class="org.muml.cbs.dependencylanguage.xtext.ui.DependencyModelLanguageExecutableExtensionFactory:org.eclipse.xtext.ui.editor.outline.quickoutline.ShowQuickOutlineActionHandler"
 			commandId="org.eclipse.xtext.ui.editor.outline.QuickOutline">
 			<activeWhen>
 				<reference
@@ -315,7 +315,7 @@
     <extension
             point="org.eclipse.ui.ide.markerResolution">
         <markerResolutionGenerator
-            class="de.uni_paderborn.fujaba.muml.ui.DependencyModelLanguageExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
+            class="org.muml.cbs.dependencylanguage.xtext.ui.DependencyModelLanguageExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
             markerType="de.uni_paderborn.fujaba.muml.ui.dependencymodellanguage.check.fast">
             <attribute
                 name="FIXABLE_KEY"
@@ -323,7 +323,7 @@
             </attribute>
         </markerResolutionGenerator>
         <markerResolutionGenerator
-            class="de.uni_paderborn.fujaba.muml.ui.DependencyModelLanguageExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
+            class="org.muml.cbs.dependencylanguage.xtext.ui.DependencyModelLanguageExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
             markerType="de.uni_paderborn.fujaba.muml.ui.dependencymodellanguage.check.normal">
             <attribute
                 name="FIXABLE_KEY"
@@ -331,7 +331,7 @@
             </attribute>
         </markerResolutionGenerator>
         <markerResolutionGenerator
-            class="de.uni_paderborn.fujaba.muml.ui.DependencyModelLanguageExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
+            class="org.muml.cbs.dependencylanguage.xtext.ui.DependencyModelLanguageExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
             markerType="de.uni_paderborn.fujaba.muml.ui.dependencymodellanguage.check.expensive">
             <attribute
                 name="FIXABLE_KEY"
@@ -342,7 +342,7 @@
    	<!-- Rename Refactoring -->
 	<extension point="org.eclipse.ui.handlers">
 		<handler 
-			class="de.uni_paderborn.fujaba.muml.ui.DependencyModelLanguageExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.DefaultRenameElementHandler"
+			class="org.muml.cbs.dependencylanguage.xtext.ui.DependencyModelLanguageExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.DefaultRenameElementHandler"
 			commandId="org.eclipse.xtext.ui.refactoring.RenameElement">
 			<activeWhen>
 				<reference
@@ -367,7 +367,7 @@
    <extension point="org.eclipse.ui.preferencePages">
 	    <page
 	        category="de.uni_paderborn.fujaba.muml.DependencyModelLanguage"
-	        class="de.uni_paderborn.fujaba.muml.ui.DependencyModelLanguageExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.RefactoringPreferencePage"
+	        class="org.muml.cbs.dependencylanguage.xtext.ui.DependencyModelLanguageExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.RefactoringPreferencePage"
 	        id="de.uni_paderborn.fujaba.muml.DependencyModelLanguage.refactoring"
 	        name="Refactoring">
 	        <keywordReference id="de.uni_paderborn.fujaba.muml.ui.keyword_DependencyModelLanguage"/>
@@ -376,19 +376,19 @@
 
   <extension point="org.eclipse.compare.contentViewers">
     <viewer id="de.uni_paderborn.fujaba.muml.DependencyModelLanguage.compare.contentViewers"
-            class="de.uni_paderborn.fujaba.muml.ui.DependencyModelLanguageExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
+            class="org.muml.cbs.dependencylanguage.xtext.ui.DependencyModelLanguageExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
             extensions="dependencymodel">
     </viewer>
   </extension>
   <extension point="org.eclipse.compare.contentMergeViewers">
     <viewer id="de.uni_paderborn.fujaba.muml.DependencyModelLanguage.compare.contentMergeViewers"
-            class="de.uni_paderborn.fujaba.muml.ui.DependencyModelLanguageExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
+            class="org.muml.cbs.dependencylanguage.xtext.ui.DependencyModelLanguageExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
             extensions="dependencymodel" label="DependencyModelLanguage Compare">
      </viewer>
   </extension>
   <extension point="org.eclipse.ui.editors.documentProviders">
     <provider id="de.uni_paderborn.fujaba.muml.DependencyModelLanguage.editors.documentProviders"
-            class="de.uni_paderborn.fujaba.muml.ui.DependencyModelLanguageExecutableExtensionFactory:org.eclipse.xtext.ui.editor.model.XtextDocumentProvider"
+            class="org.muml.cbs.dependencylanguage.xtext.ui.DependencyModelLanguageExecutableExtensionFactory:org.eclipse.xtext.ui.editor.model.XtextDocumentProvider"
             extensions="dependencymodel">
     </provider>
   </extension>
