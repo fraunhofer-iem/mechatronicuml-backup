@@ -8,7 +8,7 @@ package «package.genPackageName()».editor;
 /**
  * @generated
  */
-public «IF genClass.ecoreClass.abstract»abstract«ENDIF» class «genEditorName()» extends de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
+public «IF genClass.ecoreClass.abstract»abstract«ENDIF» class «genEditorName()» extends org.muml.ape.runtime.editors.ClassPropertyEditor {
 	«EXPAND classBody»
 }
 «ENDFILE»
@@ -40,11 +40,11 @@ public «IF genClass.ecoreClass.abstract»abstract«ENDIF» class «genEditorNam
 	}
 	
 	«FOREACH { this }.union(allSuperClasses).properties.select(p | getHighestContainer(p) == p.clazz) AS this»
-		private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor «genField()»;
-		private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor «genCreator()»() {
+		private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor «genField()»;
+		private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor «genCreator()»() {
 			if (this.«genField()» == null) {
 				final org.eclipse.emf.ecore.EStructuralFeature feature = «genFeature.genFeatureLiteral()»;
-				final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = «IF editor == null»null;«ELSE»«EXPAND createEditor(this, "feature") FOR editor»«ENDIF»
+				final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = «IF editor == null»null;«ELSE»«EXPAND createEditor(this, "feature") FOR editor»«ENDIF»
 				«EXPAND addVisibilityFilter("editor", "feature") FOREACH visibilityFilters»
 				«EXPAND addReadOnlyFilter("editor", "feature") FOREACH readOnlyFilters»
 				«IF initializeOCLExpression != null && initializeOCLExpression.toString().length > 0»
@@ -80,9 +80,9 @@ public «IF genClass.ecoreClass.abstract»abstract«ENDIF» class «genEditorNam
 	/**
 	 * @generated
 	 */
-	public static class Factory implements de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
+	public static class Factory implements org.muml.ape.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(String tab) {
+		public org.muml.ape.runtime.editors.IPropertyEditor createPropertyEditor(String tab) {
 			return new «genEditorName()»(tab);
 		}
 		
@@ -139,40 +139,40 @@ ERROR: No codegen for «this.toString()»
 «ENDDEFINE»
 
 «DEFINE createEditor(Property property, String featureVar) FOR CheckboxPropertyEditor-»
-new de.uni_paderborn.fujaba.properties.runtime.editors.CheckboxPropertyEditor(adapterFactory, «featureVar»);
+new org.muml.ape.runtime.editors.CheckboxPropertyEditor(adapterFactory, «featureVar»);
 «ENDDEFINE»
 
 
 «DEFINE createEditor(Property property, String featureVar) FOR SpinnerPropertyEditor-»
-new de.uni_paderborn.fujaba.properties.runtime.editors.SpinnerPropertyEditor(adapterFactory, «featureVar», «digits»);
+new org.muml.ape.runtime.editors.SpinnerPropertyEditor(adapterFactory, «featureVar», «digits»);
 «ENDDEFINE»
 
 «DEFINE createEditor(Property property, String featureVar) FOR RadioPropertyEditor-»
-new de.uni_paderborn.fujaba.properties.runtime.editors.OptionPropertyEditor(adapterFactory, «featureVar»);
+new org.muml.ape.runtime.editors.OptionPropertyEditor(adapterFactory, «featureVar»);
 «ENDDEFINE»
 
 «DEFINE createEditor(Property property, String featureVar) FOR ComboBoxPropertyEditor-»
-new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(adapterFactory, «featureVar»);
+new org.muml.ape.runtime.editors.ComboPropertyEditor(adapterFactory, «featureVar»);
 «ENDDEFINE»
 
 «DEFINE createEditor(Property property, String featureVar) FOR TextPropertyEditor-»
-new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(adapterFactory, «featureVar», «multiLine»);
+new org.muml.ape.runtime.editors.TextPropertyEditor(adapterFactory, «featureVar», «multiLine»);
 «ENDDEFINE»
 
 «DEFINE createEditor(Property property, String featureVar) FOR ListPropertyEditor-»
-new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(adapterFactory, «featureVar»);
+new org.muml.ape.runtime.editors.ListPropertyEditor(adapterFactory, «featureVar»);
 «ENDDEFINE»
 
 «DEFINE createEditor(Property property, String featureVar) FOR FlattenedListPropertyEditor-»
-new de.uni_paderborn.fujaba.properties.runtime.editors.FlattenedListPropertyEditor(adapterFactory, «featureVar»);
+new org.muml.ape.runtime.editors.FlattenedListPropertyEditor(adapterFactory, «featureVar»);
 «ENDDEFINE»
 
 «DEFINE createEditor(Property property, String featureVar) FOR ObjectPropertyEditor-»
-new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(adapterFactory, «featureVar»);
+new org.muml.ape.runtime.editors.NavigationFeaturePropertyEditor(adapterFactory, «featureVar»);
 «ENDDEFINE»
 
 «DEFINE createEditor(Property property, String featureVar) FOR OCLPropertyEditor-»
-new de.uni_paderborn.fujaba.properties.runtime.editors.OCLPropertyEditor(adapterFactory, «featureVar»);
+new org.muml.ape.runtime.editors.OCLPropertyEditor(adapterFactory, «featureVar»);
 «ENDDEFINE»
 
 «DEFINE createEditor(Property property, String featureVar) FOR CustomPropertyEditor-»
@@ -183,7 +183,7 @@ new «fullyQualifiedClassName»(adapterFactory, «featureVar»);
 «DEFINE addVisibilityFilter(String editorVar, String featureVar) FOR Filter»«ENDDEFINE»
 «DEFINE addVisibilityFilter(String editorVar, String featureVar) FOR OCLFilter»
 	{
-		final org.eclipse.ocl.ecore.OCLExpression expression = de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin.createOCLExpression("«expression.escapeString()»", «featureVar», getEClass());
+		final org.eclipse.ocl.ecore.OCLExpression expression = org.muml.ape.runtime.RuntimePlugin.createOCLExpression("«expression.escapeString()»", «featureVar», getEClass());
 		«editorVar».setInput(input);
 		«editorVar».registerOCLAdapter(expression, new org.eclipse.emf.common.notify.impl.AdapterImpl() {
 			@Override
@@ -197,7 +197,7 @@ new «fullyQualifiedClassName»(adapterFactory, «featureVar»);
 				}
 			}
 		});
-		final org.eclipse.ocl.Query<org.eclipse.emf.ecore.EClassifier, ?, ?> query = de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin.OCL_ECORE.createQuery(expression);
+		final org.eclipse.ocl.Query<org.eclipse.emf.ecore.EClassifier, ?, ?> query = org.muml.ape.runtime.RuntimePlugin.OCL_ECORE.createQuery(expression);
 		org.eclipse.jface.viewers.IFilter filter = new org.eclipse.jface.viewers.IFilter() {
 
 			@Override
@@ -216,7 +216,7 @@ new «fullyQualifiedClassName»(adapterFactory, «featureVar»);
 «DEFINE addReadOnlyFilter(String editorVar, String featureVar) FOR Filter»«ENDDEFINE»
 «DEFINE addReadOnlyFilter(String editorVar, String featureVar) FOR OCLFilter»
 	{
-		final org.eclipse.ocl.ecore.OCLExpression expression = de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin.createOCLExpression("«expression.escapeString()»", «featureVar», getEClass());
+		final org.eclipse.ocl.ecore.OCLExpression expression = org.muml.ape.runtime.RuntimePlugin.createOCLExpression("«expression.escapeString()»", «featureVar», getEClass());
 		«editorVar».setInput(input);
 		«editorVar».registerOCLAdapter(expression, new org.eclipse.emf.common.notify.impl.AdapterImpl() {
 			@Override
@@ -230,7 +230,7 @@ new «fullyQualifiedClassName»(adapterFactory, «featureVar»);
 				}
 			}
 		});
-		final org.eclipse.ocl.Query<org.eclipse.emf.ecore.EClassifier, ?, ?> query = de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin.OCL_ECORE.createQuery(expression);
+		final org.eclipse.ocl.Query<org.eclipse.emf.ecore.EClassifier, ?, ?> query = org.muml.ape.runtime.RuntimePlugin.OCL_ECORE.createQuery(expression);
 		org.eclipse.jface.viewers.IFilter filter = new org.eclipse.jface.viewers.IFilter() {
 
 			@Override
@@ -247,8 +247,8 @@ new «fullyQualifiedClassName»(adapterFactory, «featureVar»);
 
 «DEFINE setInitializeOCLExpression(String editorVar, String featureVar) FOR Property»
 	{
-		final org.eclipse.ocl.ecore.OCLExpression initExpression = de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin.createOCLExpression("«initializeOCLExpression.toString().escapeString()»", «featureVar», getEClass());
-		final org.eclipse.ocl.Query<org.eclipse.emf.ecore.EClassifier, ?, ?> query = de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin.OCL_ECORE.createQuery(initExpression);
+		final org.eclipse.ocl.ecore.OCLExpression initExpression = org.muml.ape.runtime.RuntimePlugin.createOCLExpression("«initializeOCLExpression.toString().escapeString()»", «featureVar», getEClass());
+		final org.eclipse.ocl.Query<org.eclipse.emf.ecore.EClassifier, ?, ?> query = org.muml.ape.runtime.RuntimePlugin.OCL_ECORE.createQuery(initExpression);
 		if (query != null) {
 			«editorVar».setInitializeQuery(query);
 		}
@@ -259,10 +259,10 @@ new «fullyQualifiedClassName»(adapterFactory, «featureVar»);
 
 «DEFINE addCreationConstraintFilter(String editorVar, String featureVar) FOR OCLFilter»
 	{
-		final org.eclipse.ocl.ecore.OCLExpression expression = de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin.createOCLExpression("«expression.escapeString()»", «featureVar», getEClass());
-		final org.eclipse.ocl.Query<org.eclipse.emf.ecore.EClassifier, ?, ?> query = de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin.OCL_ECORE.createQuery(expression);
+		final org.eclipse.ocl.ecore.OCLExpression expression = org.muml.ape.runtime.RuntimePlugin.createOCLExpression("«expression.escapeString()»", «featureVar», getEClass());
+		final org.eclipse.ocl.Query<org.eclipse.emf.ecore.EClassifier, ?, ?> query = org.muml.ape.runtime.RuntimePlugin.OCL_ECORE.createQuery(expression);
 		query.getEvaluationEnvironment().add("eclass", null);
-		de.uni_paderborn.fujaba.properties.runtime.filter.ICreationFilter filter = new de.uni_paderborn.fujaba.properties.runtime.filter.ICreationFilter() {
+		org.muml.ape.runtime.filter.ICreationFilter filter = new org.muml.ape.runtime.filter.ICreationFilter() {
 
 			@Override
 			public boolean select(Object object, org.eclipse.emf.ecore.EClass eClass) {

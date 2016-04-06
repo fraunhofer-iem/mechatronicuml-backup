@@ -5,7 +5,7 @@
 «DEFINE Constraint FOR PropertyGenerator»
 
 public class CreationConstraintContributor
-	extends de.uni_paderborn.fujaba.properties.runtime.constraint.DefaultCreationConstraintContributor {
+	extends org.muml.ape.runtime.constraint.DefaultCreationConstraintContributor {
 	
 	public CreationConstraintContributor() {
 		«FOREACH packages.classes.orderedElements.typeSelect(Property) AS property»
@@ -25,10 +25,10 @@ public class CreationConstraintContributor
 		final org.eclipse.emf.ecore.EClass myClass = «getGenClassifier(concreteClass, { generator }.union(generator.referencedGenerators).genModel).genClassLiteral()»;
 		final org.eclipse.emf.ecore.EReference opposite = «getGenFeature(reference.eOpposite, { generator }.union(generator.referencedGenerators).genModel).genFeatureLiteral()»;
 		final org.eclipse.emf.ecore.EClass oppositeClass = «getGenClassifier(reference.eOpposite.eContainingClass, { generator }.union(generator.referencedGenerators).genModel).genClassLiteral()»;
-		final org.eclipse.ocl.ecore.OCLExpression expression = de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin.createOCLExpression("«expression»", opposite, oppositeClass);
+		final org.eclipse.ocl.ecore.OCLExpression expression = org.muml.ape.runtime.RuntimePlugin.createOCLExpression("«expression»", opposite, oppositeClass);
 		if (expression != null) {
-			final org.eclipse.ocl.Query<org.eclipse.emf.ecore.EClassifier, ?, ?> query = de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin.OCL_ECORE.createQuery(expression);
-			de.uni_paderborn.fujaba.properties.runtime.filter.ICreationFilter filter = new de.uni_paderborn.fujaba.properties.runtime.filter.ICreationFilter() {
+			final org.eclipse.ocl.Query<org.eclipse.emf.ecore.EClassifier, ?, ?> query = org.muml.ape.runtime.RuntimePlugin.OCL_ECORE.createQuery(expression);
+			org.muml.ape.runtime.filter.ICreationFilter filter = new org.muml.ape.runtime.filter.ICreationFilter() {
 	
 				@Override
 				public boolean select(Object object, org.eclipse.emf.ecore.EClass eClass) {

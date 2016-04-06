@@ -70,7 +70,7 @@ String genQualifiedEditorName(ape::Class this) :
 	package.genPackageName() + '.editor.' + genEditorName();
 
 String genCategoryKey(PropertyCategory this) :
-	"de.uni_paderborn.fujaba.properties.category." + /*clazz.genClass.ecoreClass.name.toString() + "." +*/ title; // Reuse categories from super classes!
+	"org.muml.ape.category." + /*clazz.genClass.ecoreClass.name.toString() + "." +*/ title; // Reuse categories from super classes!
 
 String genCreator(Property this) :
 	'create' + genField().toFirstUpper() + "_Editor";	

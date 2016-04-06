@@ -73,7 +73,7 @@
                   
                </documentation>
                <appinfo>
-                  <meta.attribute kind="java" basedOn=":de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory"/>
+                  <meta.attribute kind="java" basedOn=":org.muml.ape.runtime.factory.IPropertyEditorFactory"/>
                </appinfo>
             </annotation>
          </attribute>

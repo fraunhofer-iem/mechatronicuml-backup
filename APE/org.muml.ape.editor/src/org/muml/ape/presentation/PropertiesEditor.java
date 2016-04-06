@@ -136,7 +136,7 @@ public class PropertiesEditor extends MultiPageEditorPart implements
 	/**
 	 * @generated NOT
 	 */
-	public static final String PROPERTIES_CONTRIBUTOR = "de.uni_paderborn.fujaba.properties.contributor";
+	public static final String PROPERTIES_CONTRIBUTOR = "org.muml.ape.contributor";
 
 	/**
 	 * This keeps track of the editing domain that is used to track all changes
@@ -573,7 +573,7 @@ public class PropertiesEditor extends MultiPageEditorPart implements
 	protected void updateProblemIndication() {
 		if (updateProblemIndication) {
 			BasicDiagnostic diagnostic = new BasicDiagnostic(Diagnostic.OK,
-					"de.uni_paderborn.fujaba.properties.editor", 0, null,
+					"org.muml.ape.editor", 0, null,
 					new Object[] { editingDomain.getResourceSet() });
 			for (Diagnostic childDiagnostic : resourceToDiagnosticMap.values()) {
 				if (childDiagnostic.getSeverity() != Diagnostic.OK) {
@@ -954,7 +954,7 @@ public class PropertiesEditor extends MultiPageEditorPart implements
 				|| !resource.getWarnings().isEmpty()) {
 			BasicDiagnostic basicDiagnostic = new BasicDiagnostic(
 					Diagnostic.ERROR,
-					"de.uni_paderborn.fujaba.properties.editor",
+					"org.muml.ape.editor",
 					0,
 					getString("_UI_CreateModelError_message", resource.getURI()),
 					new Object[] { exception == null ? (Object) resource
@@ -963,7 +963,7 @@ public class PropertiesEditor extends MultiPageEditorPart implements
 			return basicDiagnostic;
 		} else if (exception != null) {
 			return new BasicDiagnostic(Diagnostic.ERROR,
-					"de.uni_paderborn.fujaba.properties.editor", 0, getString(
+					"org.muml.ape.editor", 0, getString(
 							"_UI_CreateModelError_message", resource.getURI()),
 					new Object[] { exception });
 		} else {

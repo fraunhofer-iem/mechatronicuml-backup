@@ -3,7 +3,7 @@
 
 «DEFINE Metamodel FOR PropertyGenerator»
 
-public class MetamodelContributor implements de.uni_paderborn.fujaba.properties.runtime.metamodel.IMetamodelContributor {
+public class MetamodelContributor implements org.muml.ape.runtime.metamodel.IMetamodelContributor {
 
 	/**
 	 * @generated

@@ -55,7 +55,7 @@
                   
                </documentation>
                <appinfo>
-                  <meta.attribute kind="java" basedOn=":de.uni_paderborn.fujaba.properties.runtime.metamodel.IMetamodelContributor"/>
+                  <meta.attribute kind="java" basedOn=":org.muml.ape.runtime.metamodel.IMetamodelContributor"/>
                </appinfo>
             </annotation>
          </attribute>

@@ -20,7 +20,7 @@
       <wizard
             id="properties.presentation.PropertiesModelWizardID"
             name="%_UI_PropertiesModelWizard_label"
-            class="de.uni_paderborn.fujaba.properties.presentation.PropertiesModelWizard"
+            class="org.muml.ape.presentation.PropertiesModelWizard"
             category="org.eclipse.emf.ecore.Wizard.category.ID"
             icon="icons/full/obj16/PropertiesModelFile.gif">
          <description>%_UI_PropertiesModelWizard_description</description>
@@ -43,7 +43,7 @@
     <extension
         point="org.eclipse.core.expressions.definitions">
      <definition
-           id="de.uni_paderborn.fujaba.properties.expression.genmodelfile">
+           id="org.muml.ape.expression.genmodelfile">
 	    <iterate
            ifEmpty="false"
            operator="and">
@@ -58,7 +58,7 @@
         <extension
         point="org.eclipse.core.expressions.definitions">
      <definition
-           id="de.uni_paderborn.fujaba.properties.expression.propsheetfile">
+           id="org.muml.ape.expression.propsheetfile">
 	    <iterate
            ifEmpty="false"
            operator="and">
@@ -74,15 +74,15 @@
 	   <menuContribution
 	          locationURI="popup:org.eclipse.ui.popup.any?after=additions">
        <command
-             commandId="de.uni_paderborn.fujaba.properties.initializePropsheet"
+             commandId="org.muml.ape.initializePropsheet"
              icon="icons/full/obj16/PropertiesModelFile.gif"
-             id="de.uni_paderborn.fujaba.properties.initializePropsheet"
+             id="org.muml.ape.initializePropsheet"
              label="Initialize Propsheet Model"
              style="push">
           <visibleWhen
                 checkEnabled="false">
              <reference
-                   definitionId="de.uni_paderborn.fujaba.properties.expression.genmodelfile">
+                   definitionId="org.muml.ape.expression.genmodelfile">
              </reference>
           </visibleWhen>
        </command>
@@ -93,15 +93,15 @@
 	   <menuContribution
 	          locationURI="popup:org.eclipse.ui.popup.any?after=additions">
        <command
-             commandId="de.uni_paderborn.fujaba.properties.generateProperties"
+             commandId="org.muml.ape.generateProperties"
              icon="icons/full/obj16/Generate.gif"
-             id="de.uni_paderborn.fujaba.properties.generateProperties"
+             id="org.muml.ape.generateProperties"
              label="Generate Properties"
              style="push">
           <visibleWhen
                 checkEnabled="false">
              <reference
-                   definitionId="de.uni_paderborn.fujaba.properties.expression.propsheetfile">
+                   definitionId="org.muml.ape.expression.propsheetfile">
              </reference>
           </visibleWhen>
        </command>
@@ -112,7 +112,7 @@
 		<command
 			description="Initialize Propsheet"
 			defaultHandler="org.muml.ape.presentation.InitializePropsheetHandler"
-			id="de.uni_paderborn.fujaba.properties.initializePropsheet"
+			id="org.muml.ape.initializePropsheet"
 			name="%initDiagramActionLabel">
 		</command>
 	</extension>
@@ -122,7 +122,7 @@
 		<command
 			description="Generate Propsheet"
 			defaultHandler="org.muml.ape.presentation.GeneratePropertiesHandler"
-			id="de.uni_paderborn.fujaba.properties.generateProperties"
+			id="org.muml.ape.generateProperties"
 			name="%initDiagramActionLabel">
 		</command>
 	</extension>

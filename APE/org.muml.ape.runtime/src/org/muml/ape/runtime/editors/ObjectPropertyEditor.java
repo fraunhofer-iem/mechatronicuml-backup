@@ -16,7 +16,7 @@ import org.muml.ape.runtime.factory.IPropertyEditorFactory;
 /**
  * Category property editor which automatically adds subeditors based on the
  * input object (one for each subclass) which is set using the extension point
- * "de.uni_paderborn.fujaba.properties.runtime.propertyeditor".
+ * "org.muml.ape.runtime.propertyeditor".
  * 
  * @author bingo
  * 
