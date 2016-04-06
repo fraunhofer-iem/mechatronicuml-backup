@@ -5,7 +5,7 @@
   <plugin xmi:id="_C71_wMwXEeSfkPntfQ2wPg" id="org.muml.ape.ecore.edit.properties" name="Ecore Editor-Support" vendor="University of Paderborn" version="1.0.0.qualifier">
     <requiredBundles>org.eclipse.emf.ecore</requiredBundles>
     <requiredBundles>org.eclipse.core.runtime</requiredBundles>
-    <requiredBundles>de.uni_paderborn.fujaba.properties.runtime</requiredBundles>
+    <requiredBundles>org.muml.ape.runtime</requiredBundles>
     <requiredBundles>org.eclipse.emf.edit</requiredBundles>
     <requiredBundles>org.eclipse.ui</requiredBundles>
     <requiredBundles>org.eclipse.emf.ecore.edit</requiredBundles>
