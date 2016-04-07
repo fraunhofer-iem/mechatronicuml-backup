@@ -15,12 +15,12 @@ import org.eclipse.emf.cdo.CDOObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.simulink.Parameter#getName <em>Name</em>}</li>
  *   <li>{@link org.muml.simulink.Parameter#getValue <em>Value</em>}</li>
  *   <li>{@link org.muml.simulink.Parameter#getType <em>Type</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.simulink.SimulinkPackage#getParameter()
  * @model
@@ -92,7 +92,7 @@ public interface Parameter extends CDOObject {
 	 * @return the value of the '<em>Type</em>' attribute.
 	 * @see #setType(Object)
 	 * @see org.muml.simulink.SimulinkPackage#getParameter_Type()
-	 * @model default="" dataType="de.uni_paderborn.fujaba.simulink.model.ParameterType"
+	 * @model default="" dataType="org.muml.simulink.ParameterType"
 	 * @generated
 	 */
 	Object getType();

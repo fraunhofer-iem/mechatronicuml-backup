@@ -29,12 +29,12 @@ import org.muml.simulink.stateflow.Transition;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.simulink.stateflow.impl.NodeImpl#getParent <em>Parent</em>}</li>
  *   <li>{@link org.muml.simulink.stateflow.impl.NodeImpl#getIncoming <em>Incoming</em>}</li>
  *   <li>{@link org.muml.simulink.stateflow.impl.NodeImpl#getOutgoing <em>Outgoing</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

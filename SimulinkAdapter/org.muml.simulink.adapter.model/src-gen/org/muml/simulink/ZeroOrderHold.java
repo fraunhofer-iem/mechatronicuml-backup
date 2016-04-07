@@ -14,10 +14,10 @@ package org.muml.simulink;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.simulink.ZeroOrderHold#getSampleTime <em>Sample Time</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.simulink.SimulinkPackage#getZeroOrderHold()
  * @model

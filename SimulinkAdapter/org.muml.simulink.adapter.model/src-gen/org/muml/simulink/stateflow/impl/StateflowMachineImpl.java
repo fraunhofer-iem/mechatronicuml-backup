@@ -30,11 +30,11 @@ import org.muml.simulink.stateflow.StateflowPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.simulink.stateflow.impl.StateflowMachineImpl#getCharts <em>Charts</em>}</li>
  *   <li>{@link org.muml.simulink.stateflow.impl.StateflowMachineImpl#getModel <em>Model</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

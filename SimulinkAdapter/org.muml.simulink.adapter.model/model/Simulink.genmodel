@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
-    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/de.uni_paderborn.fujaba.simulink.model/src-gen"
-    modelPluginID="de.uni_paderborn.fujaba.simulink.model" modelName="Simulink" rootExtendsInterface="org.eclipse.emf.cdo.CDOObject"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.muml.simulink/src-gen"
+    modelPluginID="org.muml.simulink" modelName="Simulink" rootExtendsInterface="org.eclipse.emf.cdo.CDOObject"
     rootExtendsClass="org.eclipse.emf.internal.cdo.CDOObjectImpl" booleanFlagsField=""
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" copyrightFields="false"
     interfaceNamePattern="" classNamePattern="" operationReflection="true">
   <foreignModel>Simulink.ecore</foreignModel>
   <modelPluginVariables>CDO=org.eclipse.emf.cdo</modelPluginVariables>
-  <genPackages prefix="Simulink" basePackage="de.uni_paderborn.fujaba.simulink" disposableProviderFactory="true"
+  <genPackages prefix="Simulink" basePackage="org.muml" disposableProviderFactory="true"
       ecorePackage="Simulink.ecore#/">
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="Simulink.ecore#//DataType">
       <genEnumLiterals ecoreEnumLiteral="Simulink.ecore#//DataType/INHERIT"/>
@@ -131,7 +131,7 @@
     <genClasses ecoreClass="Simulink.ecore#//ZeroOrderHold">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Simulink.ecore#//ZeroOrderHold/sampleTime"/>
     </genClasses>
-    <nestedGenPackages prefix="Stateflow" basePackage="de.uni_paderborn.fujaba.simulink.model"
+    <nestedGenPackages prefix="Stateflow" basePackage="org.muml.simulink"
         disposableProviderFactory="true" ecorePackage="Simulink.ecore#//stateflow">
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="Simulink.ecore#//stateflow/SubStateType">
         <genEnumLiterals ecoreEnumLiteral="Simulink.ecore#//stateflow/SubStateType/EXCLUSIVE"/>
@@ -208,7 +208,7 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Simulink.ecore#//stateflow/Data/size"/>
       </genClasses>
     </nestedGenPackages>
-    <nestedGenPackages prefix="Msglib" basePackage="de.uni_paderborn.fujaba.simulink.model"
+    <nestedGenPackages prefix="Msglib" basePackage="org.muml.simulink"
         disposableProviderFactory="true" ecorePackage="Simulink.ecore#//msglib">
       <genClasses ecoreClass="Simulink.ecore#//msglib/CommunicationSwitch">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Simulink.ecore#//msglib/CommunicationSwitch/debug"/>
@@ -223,7 +223,7 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Simulink.ecore#//msglib/LinkLayer/sourceBufferSize"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Simulink.ecore#//msglib/LinkLayer/messageMapping"/>
       </genClasses>
-      <nestedGenPackages prefix="Buffer" basePackage="de.uni_paderborn.fujaba.simulink.model.msglib"
+      <nestedGenPackages prefix="Buffer" basePackage="org.muml.simulink.msglib"
           disposableProviderFactory="true" ecorePackage="Simulink.ecore#//msglib/buffer">
         <genClasses ecoreClass="Simulink.ecore#//msglib/buffer/Enqueue"/>
         <genClasses ecoreClass="Simulink.ecore#//msglib/buffer/Dequeue"/>
@@ -236,7 +236,7 @@
         </genClasses>
       </nestedGenPackages>
     </nestedGenPackages>
-    <nestedGenPackages prefix="Reconfiguration" basePackage="de.uni_paderborn.fujaba.simulink.model"
+    <nestedGenPackages prefix="Reconfiguration" basePackage="org.muml.simulink"
         resource="XML" disposableProviderFactory="true" ecorePackage="Simulink.ecore#//reconfiguration">
       <genClasses ecoreClass="Simulink.ecore#//reconfiguration/MultiTargetControl"/>
       <genClasses ecoreClass="Simulink.ecore#//reconfiguration/MultiSourceControl"/>

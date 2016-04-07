@@ -16,6 +16,7 @@ import org.eclipse.emf.common.util.EList;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.simulink.stateflow.EmbeddedFunction#getName <em>Name</em>}</li>
  *   <li>{@link org.muml.simulink.stateflow.EmbeddedFunction#getCode <em>Code</em>}</li>
@@ -24,7 +25,6 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link org.muml.simulink.stateflow.EmbeddedFunction#getLocal <em>Local</em>}</li>
  *   <li>{@link org.muml.simulink.stateflow.EmbeddedFunction#getConstant <em>Constant</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.simulink.stateflow.StateflowPackage#getEmbeddedFunction()
  * @model

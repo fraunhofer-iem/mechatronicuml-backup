@@ -16,11 +16,11 @@ import org.muml.simulink.SimulinkFile;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.simulink.stateflow.StateflowMachine#getCharts <em>Charts</em>}</li>
  *   <li>{@link org.muml.simulink.stateflow.StateflowMachine#getModel <em>Model</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.simulink.stateflow.StateflowPackage#getStateflowMachine()
  * @model

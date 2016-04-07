@@ -26,6 +26,7 @@ import org.muml.simulink.stateflow.StateflowPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.simulink.stateflow.impl.EmbeddedFunctionImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.muml.simulink.stateflow.impl.EmbeddedFunctionImpl#getCode <em>Code</em>}</li>
@@ -34,7 +35,6 @@ import org.muml.simulink.stateflow.StateflowPackage;
  *   <li>{@link org.muml.simulink.stateflow.impl.EmbeddedFunctionImpl#getLocal <em>Local</em>}</li>
  *   <li>{@link org.muml.simulink.stateflow.impl.EmbeddedFunctionImpl#getConstant <em>Constant</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

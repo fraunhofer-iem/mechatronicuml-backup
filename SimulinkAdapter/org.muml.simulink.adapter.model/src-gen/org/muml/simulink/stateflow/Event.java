@@ -13,10 +13,10 @@ package org.muml.simulink.stateflow;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.simulink.stateflow.Event#getName <em>Name</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.simulink.stateflow.StateflowPackage#getEvent()
  * @model

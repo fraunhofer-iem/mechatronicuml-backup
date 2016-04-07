@@ -18,10 +18,10 @@ import org.muml.simulink.stateflow.StateflowPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.simulink.stateflow.impl.EventImpl#getName <em>Name</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

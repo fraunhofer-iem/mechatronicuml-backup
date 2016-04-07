@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
 import org.muml.simulink.Block;
 import org.muml.simulink.Element;
+import org.muml.simulink.msglib.*;
 import org.muml.simulink.msglib.CommunicationSwitch;
 import org.muml.simulink.msglib.LinkLayer;
 import org.muml.simulink.msglib.MsglibPackage;
@@ -53,7 +54,7 @@ public class MsglibSwitch<T> extends Switch<T> {
 	 * Checks whether this is a switch for the given package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @parameter ePackage the package in question.
+	 * @param ePackage the package in question.
 	 * @return whether this is a switch for the given package.
 	 * @generated
 	 */

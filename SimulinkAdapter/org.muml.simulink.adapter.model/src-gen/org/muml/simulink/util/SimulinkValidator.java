@@ -14,6 +14,7 @@ import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.EObjectValidator;
+import org.muml.simulink.*;
 import org.muml.simulink.Block;
 import org.muml.simulink.Bus;
 import org.muml.simulink.BusCreator;
@@ -68,7 +69,7 @@ public class SimulinkValidator extends EObjectValidator {
 	 * @see org.eclipse.emf.common.util.Diagnostic#getCode()
 	 * @generated
 	 */
-	public static final String DIAGNOSTIC_SOURCE = "de.uni_paderborn.fujaba.simulink.model";
+	public static final String DIAGNOSTIC_SOURCE = "org.muml.simulink";
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants.

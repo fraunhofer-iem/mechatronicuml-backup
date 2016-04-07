@@ -16,11 +16,11 @@ import org.muml.simulink.stateflow.StateflowMachine;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.simulink.SimulinkFile#getStateflowMachine <em>Stateflow Machine</em>}</li>
  *   <li>{@link org.muml.simulink.SimulinkFile#getBuses <em>Buses</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.simulink.SimulinkPackage#getSimulinkFile()
  * @model abstract="true"

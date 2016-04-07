@@ -15,12 +15,12 @@ import org.eclipse.emf.common.util.EList;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.simulink.stateflow.Node#getParent <em>Parent</em>}</li>
  *   <li>{@link org.muml.simulink.stateflow.Node#getIncoming <em>Incoming</em>}</li>
  *   <li>{@link org.muml.simulink.stateflow.Node#getOutgoing <em>Outgoing</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.simulink.stateflow.StateflowPackage#getNode()
  * @model abstract="true"

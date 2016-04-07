@@ -11,6 +11,7 @@ import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
 import org.muml.simulink.Element;
+import org.muml.simulink.msglib.buffer.*;
 import org.muml.simulink.msglib.buffer.BufferFunction;
 import org.muml.simulink.msglib.buffer.BufferPackage;
 import org.muml.simulink.msglib.buffer.CheckQueue;

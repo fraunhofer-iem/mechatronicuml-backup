@@ -14,8 +14,6 @@ import org.muml.simulink.stateflow.StateflowPackage;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>History</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */

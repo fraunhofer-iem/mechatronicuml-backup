@@ -14,8 +14,6 @@ import org.muml.simulink.msglib.buffer.Enqueue;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Enqueue</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */

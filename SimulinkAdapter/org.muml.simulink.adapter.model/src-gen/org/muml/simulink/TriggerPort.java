@@ -14,10 +14,10 @@ package org.muml.simulink;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.simulink.TriggerPort#getTriggerInput <em>Trigger Input</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.simulink.SimulinkPackage#getTriggerPort()
  * @model

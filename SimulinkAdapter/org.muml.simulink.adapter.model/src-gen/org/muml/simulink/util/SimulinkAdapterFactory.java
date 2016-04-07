@@ -10,6 +10,7 @@ import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
+import org.muml.simulink.*;
 import org.muml.simulink.Block;
 import org.muml.simulink.Bus;
 import org.muml.simulink.BusCreator;

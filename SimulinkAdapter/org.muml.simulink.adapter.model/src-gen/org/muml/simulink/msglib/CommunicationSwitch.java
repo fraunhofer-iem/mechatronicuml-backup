@@ -15,10 +15,10 @@ import org.muml.simulink.Block;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.simulink.msglib.CommunicationSwitch#getDebug <em>Debug</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.simulink.msglib.MsglibPackage#getCommunicationSwitch()
  * @model

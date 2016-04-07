@@ -18,10 +18,10 @@ import org.muml.simulink.SimulinkPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.simulink.impl.MiscBlockImpl#getType <em>Type</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -11,8 +11,6 @@ import org.muml.simulink.reconfiguration.ReconfigurationPackage;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Multi Source Control</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */

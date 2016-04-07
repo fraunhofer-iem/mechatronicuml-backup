@@ -9,13 +9,7 @@ Bundle-Vendor: Software Engineering Group,
  University of Paderborn
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Require-Bundle: org.eclipse.core.runtime,
- org.eclipse.emf.ecore;visibility:=reexport,
- org.eclipse.emf.cdo;visibility:=reexport,
- org.eclipse.emf.ecore.xmi;visibility:=reexport,
- org.eclipse.ocl.ecore;bundle-version="3.0.2"
-Export-Package: de.uni_paderborn.fujaba.simulink.model.test,
- org.muml.simulink;uses:="org.eclipse.emf.cdo,org.eclipse.emf.ecore,org.eclipse.emf.common.util",
+Export-Package: org.muml.simulink,
  org.muml.simulink.impl,
  org.muml.simulink.msglib,
  org.muml.simulink.msglib.buffer,
@@ -30,4 +24,9 @@ Export-Package: de.uni_paderborn.fujaba.simulink.model.test,
  org.muml.simulink.stateflow.impl,
  org.muml.simulink.stateflow.util,
  org.muml.simulink.util
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.emf.ecore;visibility:=reexport,
+ org.eclipse.emf.cdo;visibility:=reexport,
+ org.eclipse.emf.ecore.xmi;visibility:=reexport,
+ org.eclipse.ocl.ecore;bundle-version="3.0.2"
 Bundle-ActivationPolicy: lazy

@@ -14,8 +14,6 @@ import org.muml.simulink.UnitDelay;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Unit Delay</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */

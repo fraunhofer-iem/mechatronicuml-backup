@@ -19,6 +19,7 @@ import org.muml.simulink.msglib.MsglibPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.simulink.msglib.impl.LinkLayerImpl#getDelayMin <em>Delay Min</em>}</li>
  *   <li>{@link org.muml.simulink.msglib.impl.LinkLayerImpl#getDelayMax <em>Delay Max</em>}</li>
@@ -29,7 +30,6 @@ import org.muml.simulink.msglib.MsglibPackage;
  *   <li>{@link org.muml.simulink.msglib.impl.LinkLayerImpl#getSourceBufferSize <em>Source Buffer Size</em>}</li>
  *   <li>{@link org.muml.simulink.msglib.impl.LinkLayerImpl#getMessageMapping <em>Message Mapping</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

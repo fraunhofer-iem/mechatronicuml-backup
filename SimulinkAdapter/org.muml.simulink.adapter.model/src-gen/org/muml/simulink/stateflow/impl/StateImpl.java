@@ -37,6 +37,7 @@ import org.muml.simulink.stateflow.Transition;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.simulink.stateflow.impl.StateImpl#getSubStateType <em>Sub State Type</em>}</li>
  *   <li>{@link org.muml.simulink.stateflow.impl.StateImpl#getNodes <em>Nodes</em>}</li>
@@ -53,7 +54,6 @@ import org.muml.simulink.stateflow.Transition;
  *   <li>{@link org.muml.simulink.stateflow.impl.StateImpl#getConstant <em>Constant</em>}</li>
  *   <li>{@link org.muml.simulink.stateflow.impl.StateImpl#getInitial_guard <em>Initial guard</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

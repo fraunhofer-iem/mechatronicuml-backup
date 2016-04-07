@@ -15,13 +15,13 @@ import org.eclipse.emf.cdo.CDOObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.simulink.BusElement#getName <em>Name</em>}</li>
  *   <li>{@link org.muml.simulink.BusElement#getDimensions <em>Dimensions</em>}</li>
  *   <li>{@link org.muml.simulink.BusElement#getType <em>Type</em>}</li>
  *   <li>{@link org.muml.simulink.BusElement#getBus <em>Bus</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.simulink.SimulinkPackage#getBusElement()
  * @model

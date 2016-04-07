@@ -254,7 +254,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="sampleTime" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eSubpackages name="stateflow" nsURI="de.uni_paderborn.fujaba.simulink.model.stateflow"
+  <eSubpackages name="stateflow" nsURI="http://www.muml.org/simulink/stateflow/1.0.0"
       nsPrefix="stateflow">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
@@ -375,8 +375,7 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="size" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eClassifiers>
   </eSubpackages>
-  <eSubpackages name="msglib" nsURI="de.uni_paderborn.fujaba.simulink.model.msglib"
-      nsPrefix="msglib">
+  <eSubpackages name="msglib" nsURI="http://www.muml.org/simulink/msglib/1.0.0" nsPrefix="msglib">
     <eClassifiers xsi:type="ecore:EClass" name="CommunicationSwitch" eSuperTypes="#//Block">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="debug" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" defaultValueLiteral="0"/>
@@ -442,7 +441,7 @@
       </eClassifiers>
     </eSubpackages>
   </eSubpackages>
-  <eSubpackages name="reconfiguration" nsURI="de.uni_paderborn.fujaba.simulink.model.reconfiguration"
+  <eSubpackages name="reconfiguration" nsURI="http://www.muml.org/simulink/reconfiguration/1.0.0"
       nsPrefix="reconfiguration">
     <eClassifiers xsi:type="ecore:EClass" name="MultiTargetControl" eSuperTypes="#//Block"/>
     <eClassifiers xsi:type="ecore:EClass" name="MultiSourceControl" eSuperTypes="#//Block"/>

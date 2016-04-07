@@ -16,6 +16,7 @@ import org.eclipse.emf.common.util.EList;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.simulink.stateflow.Transition#getSource <em>Source</em>}</li>
  *   <li>{@link org.muml.simulink.stateflow.Transition#getTarget <em>Target</em>}</li>
@@ -24,7 +25,6 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link org.muml.simulink.stateflow.Transition#getGuard <em>Guard</em>}</li>
  *   <li>{@link org.muml.simulink.stateflow.Transition#getAction <em>Action</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.simulink.stateflow.StateflowPackage#getTransition()
  * @model

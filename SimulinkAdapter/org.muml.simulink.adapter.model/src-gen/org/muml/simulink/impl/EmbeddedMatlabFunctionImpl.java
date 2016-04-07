@@ -18,10 +18,10 @@ import org.muml.simulink.SimulinkPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.simulink.impl.EmbeddedMatlabFunctionImpl#getCode <em>Code</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

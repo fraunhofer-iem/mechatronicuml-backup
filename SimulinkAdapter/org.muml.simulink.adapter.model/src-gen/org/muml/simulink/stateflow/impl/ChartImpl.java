@@ -31,13 +31,13 @@ import org.muml.simulink.stateflow.StateflowPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.simulink.stateflow.impl.ChartImpl#getMachine <em>Machine</em>}</li>
  *   <li>{@link org.muml.simulink.stateflow.impl.ChartImpl#getOutput <em>Output</em>}</li>
  *   <li>{@link org.muml.simulink.stateflow.impl.ChartImpl#getInput <em>Input</em>}</li>
  *   <li>{@link org.muml.simulink.stateflow.impl.ChartImpl#getBlock <em>Block</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -15,6 +15,7 @@ import org.eclipse.emf.common.util.EList;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.simulink.stateflow.State#getSubStateType <em>Sub State Type</em>}</li>
  *   <li>{@link org.muml.simulink.stateflow.State#getNodes <em>Nodes</em>}</li>
@@ -31,7 +32,6 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link org.muml.simulink.stateflow.State#getConstant <em>Constant</em>}</li>
  *   <li>{@link org.muml.simulink.stateflow.State#getInitial_guard <em>Initial guard</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.simulink.stateflow.StateflowPackage#getState()
  * @model

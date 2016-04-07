@@ -16,11 +16,11 @@ import org.eclipse.emf.common.util.EList;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.simulink.Element#getParameters <em>Parameters</em>}</li>
  *   <li>{@link org.muml.simulink.Element#getId <em>Id</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.simulink.SimulinkPackage#getElement()
  * @model abstract="true"

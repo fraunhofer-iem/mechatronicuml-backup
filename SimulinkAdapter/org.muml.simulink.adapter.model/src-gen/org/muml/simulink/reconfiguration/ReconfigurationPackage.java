@@ -38,7 +38,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "de.uni_paderborn.fujaba.simulink.model.reconfiguration";
+	String eNS_URI = "http://www.muml.org/simulink/reconfiguration/1.0.0";
 
 	/**
 	 * The package namespace name.

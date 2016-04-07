@@ -7,6 +7,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+import org.muml.simulink.reconfiguration.*;
 import org.muml.simulink.reconfiguration.FadingComponent;
 import org.muml.simulink.reconfiguration.MultiSourceControl;
 import org.muml.simulink.reconfiguration.MultiTargetControl;

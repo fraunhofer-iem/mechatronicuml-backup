@@ -19,10 +19,10 @@ import org.muml.simulink.stateflow.impl.EmbeddedFunctionImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.simulink.msglib.buffer.impl.BufferFunctionImpl#getBufferSize <em>Buffer Size</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

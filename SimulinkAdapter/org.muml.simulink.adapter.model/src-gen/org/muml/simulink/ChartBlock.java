@@ -15,10 +15,10 @@ import org.muml.simulink.stateflow.Chart;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.simulink.ChartBlock#getChart <em>Chart</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.simulink.SimulinkPackage#getChartBlock()
  * @model

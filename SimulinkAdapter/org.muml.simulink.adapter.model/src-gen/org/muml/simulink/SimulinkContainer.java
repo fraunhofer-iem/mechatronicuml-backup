@@ -15,11 +15,11 @@ import org.eclipse.emf.common.util.EList;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.simulink.SimulinkContainer#getModels <em>Models</em>}</li>
  *   <li>{@link org.muml.simulink.SimulinkContainer#getLibraries <em>Libraries</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.simulink.SimulinkPackage#getSimulinkContainer()
  * @model

@@ -18,10 +18,10 @@ import org.muml.simulink.ZeroOrderHold;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.simulink.impl.ZeroOrderHoldImpl#getSampleTime <em>Sample Time</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

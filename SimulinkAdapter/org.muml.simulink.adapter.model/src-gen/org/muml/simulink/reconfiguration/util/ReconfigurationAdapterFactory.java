@@ -8,6 +8,7 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
 import org.muml.simulink.Block;
 import org.muml.simulink.Element;
+import org.muml.simulink.reconfiguration.*;
 import org.muml.simulink.reconfiguration.FadingComponent;
 import org.muml.simulink.reconfiguration.MultiSourceControl;
 import org.muml.simulink.reconfiguration.MultiTargetControl;

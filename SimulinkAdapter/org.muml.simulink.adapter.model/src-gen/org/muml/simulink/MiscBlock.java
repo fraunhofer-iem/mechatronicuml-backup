@@ -14,10 +14,10 @@ package org.muml.simulink;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.simulink.MiscBlock#getType <em>Type</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.simulink.SimulinkPackage#getMiscBlock()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='mustHaveType'"

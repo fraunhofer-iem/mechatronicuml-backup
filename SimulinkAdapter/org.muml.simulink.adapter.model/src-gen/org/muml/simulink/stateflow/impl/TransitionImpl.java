@@ -29,6 +29,7 @@ import org.muml.simulink.stateflow.Transition;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.simulink.stateflow.impl.TransitionImpl#getSource <em>Source</em>}</li>
  *   <li>{@link org.muml.simulink.stateflow.impl.TransitionImpl#getTarget <em>Target</em>}</li>
@@ -37,7 +38,6 @@ import org.muml.simulink.stateflow.Transition;
  *   <li>{@link org.muml.simulink.stateflow.impl.TransitionImpl#getGuard <em>Guard</em>}</li>
  *   <li>{@link org.muml.simulink.stateflow.impl.TransitionImpl#getAction <em>Action</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

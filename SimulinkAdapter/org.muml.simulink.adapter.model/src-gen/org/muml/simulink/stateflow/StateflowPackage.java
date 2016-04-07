@@ -46,7 +46,7 @@ public interface StateflowPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "de.uni_paderborn.fujaba.simulink.model.stateflow";
+	String eNS_URI = "http://www.muml.org/simulink/stateflow/1.0.0";
 
 	/**
 	 * The package namespace name.

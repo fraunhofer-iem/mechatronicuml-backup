@@ -10,29 +10,41 @@
 <plugin>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
-      <?emfgen generated="true"?>
-      <package class="org.muml.simulink.SimulinkPackage" genModel="model/Simulink.genmodel" uri="de.uni_paderborn.fujaba.simulink"/>
-   </extension>
-
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <?emfgen generated="true"?>
-      <package class="org.muml.simulink.stateflow.StateflowPackage" genModel="model/Simulink.genmodel" uri="de.uni_paderborn.fujaba.simulink.model.stateflow"/>
-   </extension>
-
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <?emfgen generated="true"?>
-      <package class="org.muml.simulink.msglib.MsglibPackage" genModel="model/Simulink.genmodel" uri="de.uni_paderborn.fujaba.simulink.model.msglib"/>
-   </extension>
-
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <?emfgen generated="true"?>
-      <package class="org.muml.simulink.msglib.buffer.BufferPackage" genModel="model/Simulink.genmodel" uri="de.uni_paderborn.fujaba.simulink.model.msglib.buffer"/>
+      <!-- @generated Simulink -->
+      <package
+            uri="http://www.muml.org/simulink/1.0.0"
+            class="org.muml.simulink.SimulinkPackage"
+            genModel="model/Simulink.genmodel"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated Simulink -->
       <package
-            uri="de.uni_paderborn.fujaba.simulink.model.reconfiguration"
+            uri="http://www.muml.org/simulink/stateflow/1.0.0"
+            class="org.muml.simulink.stateflow.StateflowPackage"
+            genModel="model/Simulink.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Simulink -->
+      <package
+            uri="http://www.muml.org/simulink/msglib/1.0.0"
+            class="org.muml.simulink.msglib.MsglibPackage"
+            genModel="model/Simulink.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Simulink -->
+      <package
+            uri="de.uni_paderborn.fujaba.simulink.model.msglib.buffer"
+            class="org.muml.simulink.msglib.buffer.BufferPackage"
+            genModel="model/Simulink.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Simulink -->
+      <package
+            uri="http://www.muml.org/simulink/reconfiguration/1.0.0"
             class="org.muml.simulink.reconfiguration.ReconfigurationPackage"
             genModel="model/Simulink.genmodel"/>
    </extension>
@@ -43,5 +55,4 @@
             type="reconfiguration"
             class="org.muml.simulink.reconfiguration.util.ReconfigurationResourceFactoryImpl"/>
    </extension>
-
 </plugin>

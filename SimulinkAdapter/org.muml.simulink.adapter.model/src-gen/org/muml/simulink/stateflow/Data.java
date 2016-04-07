@@ -16,13 +16,13 @@ import org.muml.simulink.DataType;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.simulink.stateflow.Data#getName <em>Name</em>}</li>
  *   <li>{@link org.muml.simulink.stateflow.Data#getType <em>Type</em>}</li>
  *   <li>{@link org.muml.simulink.stateflow.Data#getValue <em>Value</em>}</li>
  *   <li>{@link org.muml.simulink.stateflow.Data#getSize <em>Size</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.simulink.stateflow.StateflowPackage#getData()
  * @model

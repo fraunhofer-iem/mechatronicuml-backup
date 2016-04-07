@@ -14,8 +14,6 @@ import org.muml.simulink.msglib.buffer.CheckQueue;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Check Queue</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */

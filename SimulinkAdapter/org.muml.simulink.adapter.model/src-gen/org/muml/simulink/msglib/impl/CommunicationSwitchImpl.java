@@ -19,10 +19,10 @@ import org.muml.simulink.msglib.MsglibPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.simulink.msglib.impl.CommunicationSwitchImpl#getDebug <em>Debug</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

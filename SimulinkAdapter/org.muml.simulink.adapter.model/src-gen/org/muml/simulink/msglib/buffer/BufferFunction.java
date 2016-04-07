@@ -15,10 +15,10 @@ import org.muml.simulink.stateflow.EmbeddedFunction;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.simulink.msglib.buffer.BufferFunction#getBufferSize <em>Buffer Size</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.simulink.msglib.buffer.BufferPackage#getBufferFunction()
  * @model

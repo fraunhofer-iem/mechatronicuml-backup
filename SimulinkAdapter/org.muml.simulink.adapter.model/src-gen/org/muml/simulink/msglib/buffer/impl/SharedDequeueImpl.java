@@ -14,8 +14,6 @@ import org.muml.simulink.msglib.buffer.SharedDequeue;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Shared Dequeue</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */

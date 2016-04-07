@@ -16,13 +16,13 @@ import org.muml.simulink.ChartBlock;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.simulink.stateflow.Chart#getMachine <em>Machine</em>}</li>
  *   <li>{@link org.muml.simulink.stateflow.Chart#getOutput <em>Output</em>}</li>
  *   <li>{@link org.muml.simulink.stateflow.Chart#getInput <em>Input</em>}</li>
  *   <li>{@link org.muml.simulink.stateflow.Chart#getBlock <em>Block</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.simulink.stateflow.StateflowPackage#getChart()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='chartBlockPortSync'"

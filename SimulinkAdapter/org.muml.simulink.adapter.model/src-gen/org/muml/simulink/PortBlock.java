@@ -13,12 +13,12 @@ package org.muml.simulink;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.simulink.PortBlock#getDimensions <em>Dimensions</em>}</li>
  *   <li>{@link org.muml.simulink.PortBlock#getType <em>Type</em>}</li>
  *   <li>{@link org.muml.simulink.PortBlock#getInitialCondition <em>Initial Condition</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.simulink.SimulinkPackage#getPortBlock()
  * @model

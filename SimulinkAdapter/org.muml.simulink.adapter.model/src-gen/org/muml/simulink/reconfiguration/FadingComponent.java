@@ -12,10 +12,10 @@ import org.muml.simulink.Block;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.simulink.reconfiguration.FadingComponent#getTime <em>Time</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.simulink.reconfiguration.ReconfigurationPackage#getFadingComponent()
  * @model

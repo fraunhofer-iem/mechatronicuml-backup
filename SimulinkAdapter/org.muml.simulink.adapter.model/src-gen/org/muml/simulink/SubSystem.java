@@ -15,13 +15,13 @@ import org.eclipse.emf.common.util.EList;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.simulink.SubSystem#getLines <em>Lines</em>}</li>
  *   <li>{@link org.muml.simulink.SubSystem#getBlocks <em>Blocks</em>}</li>
  *   <li>{@link org.muml.simulink.SubSystem#getSubSystems <em>Sub Systems</em>}</li>
  *   <li>{@link org.muml.simulink.SubSystem#getAllBlocks <em>All Blocks</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.simulink.SimulinkPackage#getSubSystem()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='NoPortsInBlocks InPortInSubSystemNeedsOutPort OutPortInSubSystemNeedsInPort onlySingleTriggerPort onlySingleEnablePort'"

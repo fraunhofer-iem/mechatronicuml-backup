@@ -14,10 +14,10 @@ package org.muml.simulink;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.simulink.DigitalClock#getSampleTime <em>Sample Time</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.simulink.SimulinkPackage#getDigitalClock()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='digitalClockNeedsExactlyOneOutport'"

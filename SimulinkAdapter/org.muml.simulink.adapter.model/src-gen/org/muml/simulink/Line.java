@@ -14,6 +14,7 @@ package org.muml.simulink;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.simulink.Line#getSourcePort <em>Source Port</em>}</li>
  *   <li>{@link org.muml.simulink.Line#getTargetPort <em>Target Port</em>}</li>
@@ -21,7 +22,6 @@ package org.muml.simulink;
  *   <li>{@link org.muml.simulink.Line#getTargetBlock <em>Target Block</em>}</li>
  *   <li>{@link org.muml.simulink.Line#getBus <em>Bus</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.simulink.SimulinkPackage#getLine()
  * @model

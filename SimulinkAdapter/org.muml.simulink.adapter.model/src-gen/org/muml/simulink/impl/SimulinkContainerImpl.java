@@ -26,11 +26,11 @@ import org.muml.simulink.SimulinkPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.simulink.impl.SimulinkContainerImpl#getModels <em>Models</em>}</li>
  *   <li>{@link org.muml.simulink.impl.SimulinkContainerImpl#getLibraries <em>Libraries</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

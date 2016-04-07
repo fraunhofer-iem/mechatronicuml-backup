@@ -15,6 +15,7 @@ import org.eclipse.emf.common.util.EList;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.simulink.Block#getParent <em>Parent</em>}</li>
  *   <li>{@link org.muml.simulink.Block#getName <em>Name</em>}</li>
@@ -23,7 +24,6 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link org.muml.simulink.Block#getIncomingLines <em>Incoming Lines</em>}</li>
  *   <li>{@link org.muml.simulink.Block#getOutgoingLines <em>Outgoing Lines</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.simulink.SimulinkPackage#getBlock()
  * @model abstract="true"

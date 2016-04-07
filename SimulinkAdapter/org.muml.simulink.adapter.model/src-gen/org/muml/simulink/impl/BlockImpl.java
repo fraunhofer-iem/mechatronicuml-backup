@@ -35,6 +35,7 @@ import org.muml.simulink.SubSystem;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.simulink.impl.BlockImpl#getParent <em>Parent</em>}</li>
  *   <li>{@link org.muml.simulink.impl.BlockImpl#getName <em>Name</em>}</li>
@@ -43,7 +44,6 @@ import org.muml.simulink.SubSystem;
  *   <li>{@link org.muml.simulink.impl.BlockImpl#getIncomingLines <em>Incoming Lines</em>}</li>
  *   <li>{@link org.muml.simulink.impl.BlockImpl#getOutgoingLines <em>Outgoing Lines</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

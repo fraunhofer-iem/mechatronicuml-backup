@@ -34,6 +34,7 @@ import org.muml.simulink.Block;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.simulink.msglib.LinkLayer#getDelayMin <em>Delay Min</em>}</li>
  *   <li>{@link org.muml.simulink.msglib.LinkLayer#getDelayMax <em>Delay Max</em>}</li>
@@ -44,7 +45,6 @@ import org.muml.simulink.Block;
  *   <li>{@link org.muml.simulink.msglib.LinkLayer#getSourceBufferSize <em>Source Buffer Size</em>}</li>
  *   <li>{@link org.muml.simulink.msglib.LinkLayer#getMessageMapping <em>Message Mapping</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.simulink.msglib.MsglibPackage#getLinkLayer()
  * @model

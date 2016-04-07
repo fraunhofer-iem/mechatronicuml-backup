@@ -38,7 +38,7 @@ public interface SimulinkPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNAME = "model";
+	String eNAME = "simulink";
 
 	/**
 	 * The package namespace URI.
@@ -46,7 +46,7 @@ public interface SimulinkPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "de.uni_paderborn.fujaba.simulink";
+	String eNS_URI = "http://www.muml.org/simulink/1.0.0";
 
 	/**
 	 * The package namespace name.
@@ -54,7 +54,7 @@ public interface SimulinkPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_PREFIX = "model";
+	String eNS_PREFIX = "simulink";
 
 	/**
 	 * The singleton instance of the package.
