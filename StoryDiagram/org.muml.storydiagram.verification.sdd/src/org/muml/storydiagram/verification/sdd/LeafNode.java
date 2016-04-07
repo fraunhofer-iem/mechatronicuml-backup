@@ -14,10 +14,10 @@ package org.muml.storydiagram.verification.sdd;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.storydiagram.verification.sdd.LeafNode#isValue <em>Value</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.storydiagram.verification.sdd.SDDPackage#getLeafNode()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='noOutgoingEdge'"

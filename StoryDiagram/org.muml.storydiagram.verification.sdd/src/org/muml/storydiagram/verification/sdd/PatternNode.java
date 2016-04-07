@@ -15,10 +15,10 @@ import org.muml.core.NamedElement;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.storydiagram.verification.sdd.PatternNode#getType <em>Type</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.storydiagram.verification.sdd.SDDPackage#getPatternNode()
  * @model abstract="true"

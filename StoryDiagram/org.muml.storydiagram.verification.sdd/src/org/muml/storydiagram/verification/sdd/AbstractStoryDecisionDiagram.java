@@ -12,11 +12,11 @@ import org.muml.core.NamedElement;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.storydiagram.verification.sdd.AbstractStoryDecisionDiagram#getNodes <em>Nodes</em>}</li>
  *   <li>{@link org.muml.storydiagram.verification.sdd.AbstractStoryDecisionDiagram#getEdges <em>Edges</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.storydiagram.verification.sdd.SDDPackage#getAbstractStoryDecisionDiagram()
  * @model abstract="true"

@@ -16,11 +16,11 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.storydiagram.verification.sdd.Node#getOutgoingEdges <em>Outgoing Edges</em>}</li>
  *   <li>{@link org.muml.storydiagram.verification.sdd.Node#getIncomingEdges <em>Incoming Edges</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.storydiagram.verification.sdd.SDDPackage#getNode()
  * @model abstract="true"

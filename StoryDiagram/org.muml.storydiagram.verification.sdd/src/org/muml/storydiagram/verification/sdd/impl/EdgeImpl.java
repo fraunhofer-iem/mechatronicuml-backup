@@ -23,12 +23,12 @@ import org.muml.storydiagram.verification.sdd.SDDPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.storydiagram.verification.sdd.impl.EdgeImpl#getSourceNode <em>Source Node</em>}</li>
  *   <li>{@link org.muml.storydiagram.verification.sdd.impl.EdgeImpl#getTargetNode <em>Target Node</em>}</li>
  *   <li>{@link org.muml.storydiagram.verification.sdd.impl.EdgeImpl#getType <em>Type</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

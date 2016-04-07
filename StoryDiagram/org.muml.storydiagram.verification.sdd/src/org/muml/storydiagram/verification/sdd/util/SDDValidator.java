@@ -39,7 +39,7 @@ public class SDDValidator extends EObjectValidator {
 	 * @see org.eclipse.emf.common.util.Diagnostic#getCode()
 	 * @generated
 	 */
-	public static final String DIAGNOSTIC_SOURCE = "de.uni_paderborn.fujaba.muml.verification.sdd";
+	public static final String DIAGNOSTIC_SOURCE = "org.muml.storydiagram.verification.sdd";
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants.

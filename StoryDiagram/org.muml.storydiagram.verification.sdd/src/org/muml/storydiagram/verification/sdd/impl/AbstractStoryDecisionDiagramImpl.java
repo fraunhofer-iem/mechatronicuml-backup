@@ -22,11 +22,11 @@ import org.muml.storydiagram.verification.sdd.SDDPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.storydiagram.verification.sdd.impl.AbstractStoryDecisionDiagramImpl#getNodes <em>Nodes</em>}</li>
  *   <li>{@link org.muml.storydiagram.verification.sdd.impl.AbstractStoryDecisionDiagramImpl#getEdges <em>Edges</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

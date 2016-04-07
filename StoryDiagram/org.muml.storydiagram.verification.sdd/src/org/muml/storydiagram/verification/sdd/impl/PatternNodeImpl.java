@@ -37,19 +37,19 @@ import java.lang.reflect.InvocationTargetException;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
- *   <li>{@link org.muml.storydiagram.verification.sdd.impl.PatternNodeImpl#getAnnotations <em>Annotation</em>}</li>
- *   <li>{@link org.muml.storydiagram.verification.sdd.impl.PatternNodeImpl#getExtensions <em>Extension</em>}</li>
+ *   <li>{@link org.muml.storydiagram.verification.sdd.impl.PatternNodeImpl#getAnnotations <em>Annotations</em>}</li>
+ *   <li>{@link org.muml.storydiagram.verification.sdd.impl.PatternNodeImpl#getExtensions <em>Extensions</em>}</li>
  *   <li>{@link org.muml.storydiagram.verification.sdd.impl.PatternNodeImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.muml.storydiagram.verification.sdd.impl.PatternNodeImpl#getType <em>Type</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
 public abstract class PatternNodeImpl extends NodeImpl implements PatternNode {
 	/**
-	 * The cached value of the '{@link #getAnnotations() <em>Annotation</em>}' containment reference list.
+	 * The cached value of the '{@link #getAnnotations() <em>Annotations</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getAnnotations()
@@ -59,7 +59,7 @@ public abstract class PatternNodeImpl extends NodeImpl implements PatternNode {
 	protected EList<EAnnotation> annotations;
 
 	/**
-	 * The cached value of the '{@link #getExtensions() <em>Extension</em>}' containment reference list.
+	 * The cached value of the '{@link #getExtensions() <em>Extensions</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getExtensions()
@@ -134,7 +134,7 @@ public abstract class PatternNodeImpl extends NodeImpl implements PatternNode {
 	 */
 	public EList<EAnnotation> getAnnotations() {
 		if (annotations == null) {
-			annotations = new EObjectContainmentEList.Resolving<EAnnotation>(EAnnotation.class, this, SDDPackage.PATTERN_NODE__ANNOTATION);
+			annotations = new EObjectContainmentEList<EAnnotation>(EAnnotation.class, this, SDDPackage.PATTERN_NODE__ANNOTATIONS);
 		}
 		return annotations;
 	}
@@ -146,7 +146,7 @@ public abstract class PatternNodeImpl extends NodeImpl implements PatternNode {
 	 */
 	public EList<Extension> getExtensions() {
 		if (extensions == null) {
-			extensions = new EObjectContainmentWithInverseEList.Resolving<Extension>(Extension.class, this, SDDPackage.PATTERN_NODE__EXTENSION, CorePackage.EXTENSION__EXTENDABLE_BASE);
+			extensions = new EObjectContainmentWithInverseEList<Extension>(Extension.class, this, SDDPackage.PATTERN_NODE__EXTENSIONS, CorePackage.EXTENSION__EXTENDABLE_BASE);
 		}
 		return extensions;
 	}
@@ -238,7 +238,7 @@ public abstract class PatternNodeImpl extends NodeImpl implements PatternNode {
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case SDDPackage.PATTERN_NODE__EXTENSION:
+			case SDDPackage.PATTERN_NODE__EXTENSIONS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getExtensions()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
@@ -252,9 +252,9 @@ public abstract class PatternNodeImpl extends NodeImpl implements PatternNode {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case SDDPackage.PATTERN_NODE__ANNOTATION:
+			case SDDPackage.PATTERN_NODE__ANNOTATIONS:
 				return ((InternalEList<?>)getAnnotations()).basicRemove(otherEnd, msgs);
-			case SDDPackage.PATTERN_NODE__EXTENSION:
+			case SDDPackage.PATTERN_NODE__EXTENSIONS:
 				return ((InternalEList<?>)getExtensions()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -268,9 +268,9 @@ public abstract class PatternNodeImpl extends NodeImpl implements PatternNode {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case SDDPackage.PATTERN_NODE__ANNOTATION:
+			case SDDPackage.PATTERN_NODE__ANNOTATIONS:
 				return getAnnotations();
-			case SDDPackage.PATTERN_NODE__EXTENSION:
+			case SDDPackage.PATTERN_NODE__EXTENSIONS:
 				return getExtensions();
 			case SDDPackage.PATTERN_NODE__NAME:
 				return getName();
@@ -289,11 +289,11 @@ public abstract class PatternNodeImpl extends NodeImpl implements PatternNode {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case SDDPackage.PATTERN_NODE__ANNOTATION:
+			case SDDPackage.PATTERN_NODE__ANNOTATIONS:
 				getAnnotations().clear();
 				getAnnotations().addAll((Collection<? extends EAnnotation>)newValue);
 				return;
-			case SDDPackage.PATTERN_NODE__EXTENSION:
+			case SDDPackage.PATTERN_NODE__EXTENSIONS:
 				getExtensions().clear();
 				getExtensions().addAll((Collection<? extends Extension>)newValue);
 				return;
@@ -315,10 +315,10 @@ public abstract class PatternNodeImpl extends NodeImpl implements PatternNode {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case SDDPackage.PATTERN_NODE__ANNOTATION:
+			case SDDPackage.PATTERN_NODE__ANNOTATIONS:
 				getAnnotations().clear();
 				return;
-			case SDDPackage.PATTERN_NODE__EXTENSION:
+			case SDDPackage.PATTERN_NODE__EXTENSIONS:
 				getExtensions().clear();
 				return;
 			case SDDPackage.PATTERN_NODE__NAME:
@@ -339,9 +339,9 @@ public abstract class PatternNodeImpl extends NodeImpl implements PatternNode {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case SDDPackage.PATTERN_NODE__ANNOTATION:
+			case SDDPackage.PATTERN_NODE__ANNOTATIONS:
 				return annotations != null && !annotations.isEmpty();
-			case SDDPackage.PATTERN_NODE__EXTENSION:
+			case SDDPackage.PATTERN_NODE__EXTENSIONS:
 				return extensions != null && !extensions.isEmpty();
 			case SDDPackage.PATTERN_NODE__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
@@ -365,8 +365,8 @@ public abstract class PatternNodeImpl extends NodeImpl implements PatternNode {
 		}
 		if (baseClass == ExtendableElement.class) {
 			switch (derivedFeatureID) {
-				case SDDPackage.PATTERN_NODE__ANNOTATION: return CorePackage.EXTENDABLE_ELEMENT__ANNOTATION;
-				case SDDPackage.PATTERN_NODE__EXTENSION: return CorePackage.EXTENDABLE_ELEMENT__EXTENSION;
+				case SDDPackage.PATTERN_NODE__ANNOTATIONS: return CorePackage.EXTENDABLE_ELEMENT__ANNOTATIONS;
+				case SDDPackage.PATTERN_NODE__EXTENSIONS: return CorePackage.EXTENDABLE_ELEMENT__EXTENSIONS;
 				default: return -1;
 			}
 		}
@@ -393,8 +393,8 @@ public abstract class PatternNodeImpl extends NodeImpl implements PatternNode {
 		}
 		if (baseClass == ExtendableElement.class) {
 			switch (baseFeatureID) {
-				case CorePackage.EXTENDABLE_ELEMENT__ANNOTATION: return SDDPackage.PATTERN_NODE__ANNOTATION;
-				case CorePackage.EXTENDABLE_ELEMENT__EXTENSION: return SDDPackage.PATTERN_NODE__EXTENSION;
+				case CorePackage.EXTENDABLE_ELEMENT__ANNOTATIONS: return SDDPackage.PATTERN_NODE__ANNOTATIONS;
+				case CorePackage.EXTENDABLE_ELEMENT__EXTENSIONS: return SDDPackage.PATTERN_NODE__EXTENSIONS;
 				default: return -1;
 			}
 		}

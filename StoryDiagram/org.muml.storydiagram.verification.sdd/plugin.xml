@@ -14,7 +14,7 @@
       <!-- @generated sdd -->
       <package
             uri="http://www.muml.org/storydiagram/verification/sdd/1.0.0"
-            class="org.muml.storydiagram.verification.sdd.sdd.SDDPackage"
+            class="org.muml.storydiagram.verification.sdd.SDDPackage"
             genModel="model/sdd.genmodel"/>
    </extension>
 

@@ -44,7 +44,7 @@ public interface SDDPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.fujaba.de/muml/verification/sdd/0.4.0";
+	String eNS_URI = "http://www.muml.org/storydiagram/verification/sdd/1.0.0";
 
 	/**
 	 * The package namespace name.
@@ -73,22 +73,22 @@ public interface SDDPackage extends EPackage {
 	int ABSTRACT_STORY_DECISION_DIAGRAM = 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_STORY_DECISION_DIAGRAM__ANNOTATION = CorePackage.NAMED_ELEMENT__ANNOTATION;
+	int ABSTRACT_STORY_DECISION_DIAGRAM__ANNOTATIONS = CorePackage.NAMED_ELEMENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_STORY_DECISION_DIAGRAM__EXTENSION = CorePackage.NAMED_ELEMENT__EXTENSION;
+	int ABSTRACT_STORY_DECISION_DIAGRAM__EXTENSIONS = CorePackage.NAMED_ELEMENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -491,22 +491,22 @@ public interface SDDPackage extends EPackage {
 	int PATTERN_NODE__INCOMING_EDGES = NODE__INCOMING_EDGES;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PATTERN_NODE__ANNOTATION = NODE_FEATURE_COUNT + 0;
+	int PATTERN_NODE__ANNOTATIONS = NODE_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PATTERN_NODE__EXTENSION = NODE_FEATURE_COUNT + 1;
+	int PATTERN_NODE__EXTENSIONS = NODE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.

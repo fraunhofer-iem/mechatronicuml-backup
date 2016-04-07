@@ -9,7 +9,7 @@
     editorPluginID="org.muml.storydiagram.verification.sdd.editor" usedGenPackages="../../org.muml.core/model/core.genmodel#//core"
     operationReflection="true">
   <foreignModel>sdd.ecore</foreignModel>
-  <genPackages prefix="SDD" basePackage="org.muml.storydiagram.verification.sdd" disposableProviderFactory="true"
+  <genPackages prefix="SDD" basePackage="org.muml.storydiagram.verification" disposableProviderFactory="true"
       ecorePackage="sdd.ecore#/">
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="sdd.ecore#//EdgeType">
       <genEnumLiterals ecoreEnumLiteral="sdd.ecore#//EdgeType/High"/>

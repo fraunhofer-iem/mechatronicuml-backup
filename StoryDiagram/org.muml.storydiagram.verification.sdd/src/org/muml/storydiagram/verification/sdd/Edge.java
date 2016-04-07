@@ -15,12 +15,12 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.storydiagram.verification.sdd.Edge#getSourceNode <em>Source Node</em>}</li>
  *   <li>{@link org.muml.storydiagram.verification.sdd.Edge#getTargetNode <em>Target Node</em>}</li>
  *   <li>{@link org.muml.storydiagram.verification.sdd.Edge#getType <em>Type</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.storydiagram.verification.sdd.SDDPackage#getEdge()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='noSelfEdge'"
