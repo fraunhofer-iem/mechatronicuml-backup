@@ -23,28 +23,28 @@ typedef int int_t;
 /**
  * @brief Type to specify a signed Integer (8 bit)
  */
-typedef signed char int8_T;
+typedef short int8_T;
 /**
  * @brief Type to specify a signed Integer (16 bit)
  */
-typedef signed short int16_T;
+typedef int int16_T;
 /**
  * @brief Type to specify a signed Integer (32 bit)
  */
-typedef signed long int32_T;
+typedef long int32_T;
 /**
  * @brief Type to specify a signed Integer (64 bit)
  */
-typedef signed long long int64_T;
+typedef long long int64_T;
 
 /**
  * @brief Type to specify an unsigned Integer (8 bit)
  */
-typedef unsigned char uint8_T;
+typedef unsigned short uint8_T;
 /**
  * @brief Type to specify an unsigned Integer (16 bit)
  */
-typedef unsigned short uint16_T;
+typedef unsigned int uint16_T;
 /**
  * @brief Type to specify an unsigned Integer (32 bit)
  */

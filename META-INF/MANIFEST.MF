@@ -24,9 +24,9 @@ Require-Bundle: org.eclipse.core.runtime,
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
 Eclipse-LazyStart: true
-Export-Package: org.muml.codegen.c.actionlanguage,
- org.muml.codegen.c.files,
- org.muml.codegen.c.queries,
+Export-Package: org.muml.codegen.componenttype.c.actionlanguage,
+ org.muml.codegen.componenttype.c.files,
+ org.muml.codegen.componenttype.c.queries,
  org.muml.codegen.componenttype.c;uses:="org.osgi.framework,org.eclipse.core.runtime",
  org.muml.codegen.componenttype.c.helper;uses:="org.eclipse.emf.ecore,de.uni_paderborn.fujaba.muml.valuetype,de.uni_paderborn.fujaba.muml.common.naming",
  org.muml.codegen.componenttype.c.main;
