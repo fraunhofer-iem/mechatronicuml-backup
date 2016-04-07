@@ -7,8 +7,8 @@
 package org.muml.reconfiguration.expression;
 
 import org.muml.core.expressions.Expression;
-import org.storydriven.storydiagrams.activities.Activity;
-import org.storydriven.storydiagrams.calls.Invocation;
+import org.muml.storydiagram.activities.Activity;
+import org.muml.storydiagram.calls.Invocation;
 
 /**
  * <!-- begin-user-doc -->

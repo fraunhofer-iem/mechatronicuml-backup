@@ -68,7 +68,7 @@ import org.muml.reconfiguration.reconfInstance.impl.ReconfInstancePackageImpl;
 import org.muml.reconfiguration.structdatatype.StructdatatypePackage;
 import org.muml.reconfiguration.structdatatype.impl.StructdatatypePackageImpl;
 import org.muml.reconfiguration.util.ReconfigurationValidator;
-import org.storydriven.storydiagrams.StorydiagramsPackage;
+import org.muml.storydiagram.StorydiagramPackage;
 
 /**
  * <!-- begin-user-doc -->

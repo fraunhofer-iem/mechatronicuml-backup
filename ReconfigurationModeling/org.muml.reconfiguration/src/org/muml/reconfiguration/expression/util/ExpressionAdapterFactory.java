@@ -13,12 +13,11 @@ import org.eclipse.emf.ecore.EObject;
 import org.muml.core.CommentableElement;
 import org.muml.core.ExtendableElement;
 import org.muml.core.expressions.Expression;
-import org.muml.reconfiguration.expression.*;
-import org.storydriven.storydiagrams.calls.Invocation;
 import org.muml.reconfiguration.expression.ActivityCallExpression;
 import org.muml.reconfiguration.expression.EvaluateStructuralConditionExpression;
 import org.muml.reconfiguration.expression.ExpressionPackage;
 import org.muml.reconfiguration.expression.ReconfigurationRuleCallExpression;
+import org.muml.storydiagram.calls.Invocation;
 
 /**
  * <!-- begin-user-doc -->
@@ -209,13 +208,13 @@ public class ExpressionAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.storydriven.storydiagrams.calls.Invocation <em>Invocation</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.muml.storydiagram.calls.Invocation <em>Invocation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.storydriven.storydiagrams.calls.Invocation
+	 * @see org.muml.storydiagram.calls.Invocation
 	 * @generated
 	 */
 	public Adapter createInvocationAdapter() {

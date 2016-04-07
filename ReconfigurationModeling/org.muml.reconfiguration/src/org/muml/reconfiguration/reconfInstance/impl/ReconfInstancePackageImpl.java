@@ -32,7 +32,7 @@ import org.muml.reconfiguration.reconfInstance.ReconfigurationPortInstance;
 import org.muml.reconfiguration.reconfInstance.RuleBasedReconfigurationControllerInstance;
 import org.muml.reconfiguration.structdatatype.StructdatatypePackage;
 import org.muml.reconfiguration.structdatatype.impl.StructdatatypePackageImpl;
-import org.storydriven.storydiagrams.StorydiagramsPackage;
+import org.muml.storydiagram.StorydiagramPackage;
 
 /**
  * <!-- begin-user-doc -->

@@ -20,8 +20,8 @@ import org.muml.pim.component.provider.ComponentItemProvider;
 import org.muml.reconfiguration.ReconfigurableComponent;
 import org.muml.reconfiguration.ReconfigurationFactory;
 import org.muml.reconfiguration.protocolinstantiation.ProtocolinstantiationFactory;
-import org.storydriven.storydiagrams.activities.ActivitiesFactory;
-import org.storydriven.storydiagrams.calls.CallsFactory;
+import org.muml.storydiagram.activities.ActivitiesFactory;
+import org.muml.storydiagram.calls.CallsFactory;
 
 /**
  * This is the item provider adapter for a {@link org.muml.reconfiguration.ReconfigurableComponent} object.

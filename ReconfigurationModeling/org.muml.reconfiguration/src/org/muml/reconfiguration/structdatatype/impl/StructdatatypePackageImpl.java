@@ -26,7 +26,7 @@ import org.muml.reconfiguration.structdatatype.Reference;
 import org.muml.reconfiguration.structdatatype.StructType;
 import org.muml.reconfiguration.structdatatype.StructdatatypeFactory;
 import org.muml.reconfiguration.structdatatype.StructdatatypePackage;
-import org.storydriven.storydiagrams.StorydiagramsPackage;
+import org.muml.storydiagram.StorydiagramPackage;
 
 /**
  * <!-- begin-user-doc -->

@@ -12,7 +12,32 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import org.muml.reconfiguration.*;
+import org.muml.reconfiguration.ExecutionTimingSpecificationSinglePhase;
+import org.muml.reconfiguration.ExecutionTimingSpecificationThreePhase;
+import org.muml.reconfiguration.Executor;
+import org.muml.reconfiguration.ExecutorSpecificationEntry;
+import org.muml.reconfiguration.FadingComponent;
+import org.muml.reconfiguration.FadingFunction;
+import org.muml.reconfiguration.HybridPortMapping;
+import org.muml.reconfiguration.InternalReconfigurationCommunicationPort;
+import org.muml.reconfiguration.Manager;
+import org.muml.reconfiguration.ManagerSpecificationEntry;
+import org.muml.reconfiguration.ReconfigurableAtomicComponent;
+import org.muml.reconfiguration.ReconfigurableStructuredComponent;
+import org.muml.reconfiguration.ReconfigurationExecutionPort;
+import org.muml.reconfiguration.ReconfigurationExecutionPortInterfaceEntry;
+import org.muml.reconfiguration.ReconfigurationExecutionSpecificationEntry;
+import org.muml.reconfiguration.ReconfigurationFactory;
+import org.muml.reconfiguration.ReconfigurationManagementSpecificationEntry;
+import org.muml.reconfiguration.ReconfigurationMessagePort;
+import org.muml.reconfiguration.ReconfigurationMessagePortInterfaceEntry;
+import org.muml.reconfiguration.ReconfigurationMessageTypeEnum;
+import org.muml.reconfiguration.ReconfigurationPackage;
+import org.muml.reconfiguration.ReconfigurationPortAssemblyConnector;
+import org.muml.reconfiguration.ReconfigurationPortDelegationConnector;
+import org.muml.reconfiguration.ReconfigurationPortInterfaceEntry;
+import org.muml.reconfiguration.RuleBasedReconfigurationController;
+import org.muml.reconfiguration.Signature;
 
 /**
  * <!-- begin-user-doc -->

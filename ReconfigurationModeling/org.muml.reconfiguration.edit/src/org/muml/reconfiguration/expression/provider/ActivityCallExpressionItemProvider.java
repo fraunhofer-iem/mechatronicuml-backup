@@ -22,9 +22,6 @@ import org.muml.core.expressions.provider.ExpressionItemProvider;
 import org.muml.reconfiguration.expression.ActivityCallExpression;
 import org.muml.reconfiguration.expression.ExpressionPackage;
 import org.muml.reconfiguration.provider.MumlReconfigurationEditPlugin;
-import org.storydriven.storydiagrams.activities.ActivitiesFactory;
-import org.storydriven.storydiagrams.calls.CallsFactory;
-import org.storydriven.storydiagrams.calls.CallsPackage;
 
 /**
  * This is the item provider adapter for a {@link org.muml.reconfiguration.expression.ActivityCallExpression} object.
@@ -74,7 +71,7 @@ public class ActivityCallExpressionItemProvider
 				 getResourceLocator(),
 				 getString("_UI_Invocation_callee_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Invocation_callee_feature", "_UI_Invocation_type"),
-				 CallsPackage.Literals.INVOCATION__CALLEE,
+				 org.muml.storydiagram.calls.CallsPackage.Literals.INVOCATION__CALLEE,
 				 true,
 				 false,
 				 true,
@@ -117,7 +114,7 @@ public class ActivityCallExpressionItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(CallsPackage.Literals.INVOCATION__OWNED_PARAMETER_BINDINGS);
+			childrenFeatures.add(org.muml.storydiagram.calls.CallsPackage.Literals.INVOCATION__OWNED_PARAMETER_BINDINGS);
 		}
 		return childrenFeatures;
 	}
@@ -193,17 +190,17 @@ public class ActivityCallExpressionItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSIONS,
-				 ActivitiesFactory.eINSTANCE.createOperationExtension()));
+				 org.muml.storydiagram.activities.ActivitiesFactory.eINSTANCE.createOperationExtension()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSIONS,
-				 CallsFactory.eINSTANCE.createParameterExtension()));
+				 org.muml.storydiagram.calls.CallsFactory.eINSTANCE.createParameterExtension()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(CallsPackage.Literals.INVOCATION__OWNED_PARAMETER_BINDINGS,
-				 CallsFactory.eINSTANCE.createParameterBinding()));
+				(org.muml.storydiagram.calls.CallsPackage.Literals.INVOCATION__OWNED_PARAMETER_BINDINGS,
+				 org.muml.storydiagram.calls.CallsFactory.eINSTANCE.createParameterBinding()));
 	}
 
 	/**

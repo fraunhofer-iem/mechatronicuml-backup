@@ -20,8 +20,6 @@ import org.muml.pim.realtimestatechart.RealtimestatechartFactory;
 import org.muml.pim.types.provider.DataTypeItemProvider;
 import org.muml.reconfiguration.ReconfigurationManagementSpecificationEntry;
 import org.muml.reconfiguration.ReconfigurationPackage;
-import org.storydriven.storydiagrams.activities.ActivitiesFactory;
-import org.storydriven.storydiagrams.calls.CallsFactory;
 
 /**
  * This is the item provider adapter for a {@link org.muml.reconfiguration.ReconfigurationManagementSpecificationEntry} object.
@@ -146,12 +144,12 @@ public class ReconfigurationManagementSpecificationEntryItemProvider extends Dat
 		newChildDescriptors.add
 			(createChildParameter
 				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSIONS,
-				 ActivitiesFactory.eINSTANCE.createOperationExtension()));
+				 org.muml.storydiagram.activities.ActivitiesFactory.eINSTANCE.createOperationExtension()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSIONS,
-				 CallsFactory.eINSTANCE.createParameterExtension()));
+				 org.muml.storydiagram.calls.CallsFactory.eINSTANCE.createParameterExtension()));
 
 		newChildDescriptors.add
 			(createChildParameter

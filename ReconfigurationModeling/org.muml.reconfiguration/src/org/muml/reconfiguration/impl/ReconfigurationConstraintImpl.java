@@ -3,7 +3,6 @@
 package org.muml.reconfiguration.impl;
 
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 import org.muml.reconfiguration.ReconfigurationConstraint;
 import org.muml.reconfiguration.ReconfigurationPackage;

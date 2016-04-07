@@ -15,8 +15,6 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.muml.core.CorePackage;
 import org.muml.core.provider.ExtendableElementItemProvider;
 import org.muml.reconfiguration.provider.MumlReconfigurationEditPlugin;
-import org.storydriven.storydiagrams.activities.ActivitiesFactory;
-import org.storydriven.storydiagrams.calls.CallsFactory;
 
 /**
  * This is the item provider adapter for a {@link org.muml.reconfiguration.reconfInstance.ControllerInstance} object.
@@ -89,12 +87,12 @@ public class ControllerInstanceItemProvider extends ExtendableElementItemProvide
 		newChildDescriptors.add
 			(createChildParameter
 				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSIONS,
-				 ActivitiesFactory.eINSTANCE.createOperationExtension()));
+				 org.muml.storydiagram.activities.ActivitiesFactory.eINSTANCE.createOperationExtension()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSIONS,
-				 CallsFactory.eINSTANCE.createParameterExtension()));
+				 org.muml.storydiagram.calls.CallsFactory.eINSTANCE.createParameterExtension()));
 	}
 
 	/**
