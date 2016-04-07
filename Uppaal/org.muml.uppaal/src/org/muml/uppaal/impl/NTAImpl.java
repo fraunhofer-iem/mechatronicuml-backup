@@ -28,6 +28,7 @@ import org.muml.uppaal.types.PredefinedType;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.uppaal.impl.NTAImpl#getComment <em>Comment</em>}</li>
  *   <li>{@link org.muml.uppaal.impl.NTAImpl#getGlobalDeclarations <em>Global Declarations</em>}</li>
@@ -39,7 +40,6 @@ import org.muml.uppaal.types.PredefinedType;
  *   <li>{@link org.muml.uppaal.impl.NTAImpl#getChan <em>Chan</em>}</li>
  *   <li>{@link org.muml.uppaal.impl.NTAImpl#getVoid <em>Void</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -18,9 +18,9 @@ import org.eclipse.xtext.scoping.IScope;
 import org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext;
 import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor;
 import org.muml.uppaal.adapter.mtctl.MtctlFactory;
-import org.muml.uppaal.adapter.mtctl.Predicates.PredicatesFactory;
-import org.muml.uppaal.adapter.mtctl.Predicates.PredicatesPackage;
-import org.muml.uppaal.adapter.mtctl.Quantifiers.TemporalQuantifierExpr;
+import org.muml.uppaal.adapter.mtctl.predicates.PredicatesFactory;
+import org.muml.uppaal.adapter.mtctl.predicates.PredicatesPackage;
+import org.muml.uppaal.adapter.mtctl.quantifiers.TemporalQuantifierExpr;
 import org.muml.uppaal.adapter.mtctl.xtext.services.MtctlGrammarAccess;
 
 import com.google.common.base.Function;

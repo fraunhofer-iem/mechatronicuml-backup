@@ -15,11 +15,11 @@ import org.muml.uppaal.declarations.VariableContainer;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.uppaal.expressions.QuantificationExpression#getQuantifier <em>Quantifier</em>}</li>
  *   <li>{@link org.muml.uppaal.expressions.QuantificationExpression#getExpression <em>Expression</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.uppaal.expressions.ExpressionsPackage#getQuantificationExpression()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL SingleVariable='self.variable->size() <= 1'"

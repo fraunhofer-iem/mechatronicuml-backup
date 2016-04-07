@@ -28,6 +28,7 @@ import org.muml.uppaal.visuals.VisualsPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.uppaal.templates.impl.LocationImpl#getComment <em>Comment</em>}</li>
  *   <li>{@link org.muml.uppaal.templates.impl.LocationImpl#getPosition <em>Position</em>}</li>
@@ -37,7 +38,6 @@ import org.muml.uppaal.visuals.VisualsPackage;
  *   <li>{@link org.muml.uppaal.templates.impl.LocationImpl#getInvariant <em>Invariant</em>}</li>
  *   <li>{@link org.muml.uppaal.templates.impl.LocationImpl#getLocationTimeKind <em>Location Time Kind</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

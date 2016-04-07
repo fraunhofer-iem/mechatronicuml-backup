@@ -18,10 +18,10 @@ import org.muml.uppaal.visuals.VisualsPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.uppaal.visuals.impl.PlanarElementImpl#getPosition <em>Position</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -14,11 +14,11 @@ package org.muml.uppaal.expressions;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.uppaal.expressions.ScopedIdentifierExpression#getScope <em>Scope</em>}</li>
  *   <li>{@link org.muml.uppaal.expressions.ScopedIdentifierExpression#getIdentifier <em>Identifier</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.uppaal.expressions.ExpressionsPackage#getScopedIdentifierExpression()
  * @model

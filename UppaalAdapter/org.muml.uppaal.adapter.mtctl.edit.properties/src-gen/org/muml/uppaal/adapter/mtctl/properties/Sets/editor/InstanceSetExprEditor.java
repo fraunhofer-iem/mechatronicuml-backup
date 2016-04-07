@@ -38,7 +38,7 @@ public class InstanceSetExprEditor extends org.muml.ape.runtime.editors.ClassPro
 		this(tab,
 				org.muml.uppaal.adapter.mtctl.properties.util.PropertiesUtil.INSTANCE
 						.getAdapterFactory(),
-				org.muml.uppaal.adapter.mtctl.Sets.SetsPackage.eINSTANCE.getInstanceSetExpr());
+				org.muml.uppaal.adapter.mtctl.sets.SetsPackage.eINSTANCE.getInstanceSetExpr());
 	}
 
 	/**

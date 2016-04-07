@@ -16,13 +16,13 @@ import org.muml.uppaal.declarations.LocalDeclarations;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.uppaal.templates.Template#getDeclarations <em>Declarations</em>}</li>
  *   <li>{@link org.muml.uppaal.templates.Template#getLocation <em>Location</em>}</li>
  *   <li>{@link org.muml.uppaal.templates.Template#getEdge <em>Edge</em>}</li>
  *   <li>{@link org.muml.uppaal.templates.Template#getInit <em>Init</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.uppaal.templates.TemplatesPackage#getTemplate()
  * @model extendedMetaData="name='Template' kind='elementOnly'"

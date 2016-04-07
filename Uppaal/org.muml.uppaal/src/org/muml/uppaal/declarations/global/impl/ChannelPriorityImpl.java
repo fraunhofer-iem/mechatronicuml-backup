@@ -21,10 +21,10 @@ import org.muml.uppaal.declarations.global.GlobalPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.uppaal.declarations.global.impl.ChannelPriorityImpl#getItem <em>Item</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

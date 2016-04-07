@@ -14,10 +14,10 @@ import org.muml.uppaal.expressions.LiteralExpression;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.uppaal.expressions.impl.LiteralExpressionImpl#getText <em>Text</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

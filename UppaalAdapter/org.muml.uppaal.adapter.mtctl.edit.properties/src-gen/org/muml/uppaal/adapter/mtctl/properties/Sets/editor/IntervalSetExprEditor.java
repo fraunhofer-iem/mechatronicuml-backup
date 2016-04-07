@@ -38,7 +38,7 @@ public class IntervalSetExprEditor extends org.muml.ape.runtime.editors.ClassPro
 		this(tab,
 				org.muml.uppaal.adapter.mtctl.properties.util.PropertiesUtil.INSTANCE
 						.getAdapterFactory(),
-				org.muml.uppaal.adapter.mtctl.Sets.SetsPackage.eINSTANCE.getIntervalSetExpr());
+				org.muml.uppaal.adapter.mtctl.sets.SetsPackage.eINSTANCE.getIntervalSetExpr());
 	}
 
 	/**

@@ -15,11 +15,11 @@ import org.muml.uppaal.declarations.system.TemplateDeclaration;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.uppaal.templates.RedefinedTemplate#getReferredTemplate <em>Referred Template</em>}</li>
  *   <li>{@link org.muml.uppaal.templates.RedefinedTemplate#getDeclaration <em>Declaration</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.uppaal.templates.TemplatesPackage#getRedefinedTemplate()
  * @model

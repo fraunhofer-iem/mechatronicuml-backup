@@ -16,11 +16,11 @@ import org.muml.uppaal.declarations.Function;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.uppaal.expressions.FunctionCallExpression#getFunction <em>Function</em>}</li>
  *   <li>{@link org.muml.uppaal.expressions.FunctionCallExpression#getArgument <em>Argument</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.uppaal.expressions.ExpressionsPackage#getFunctionCallExpression()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL NumberOfArgumentsMatchesDeclaration='(not self.function.oclIsUndefined())\r\nimplies\r\nself.argument->size() = self.function.parameter->size()'"

@@ -20,11 +20,11 @@ import org.muml.uppaal.templates.TemplatesPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.uppaal.templates.impl.RedefinedTemplateImpl#getReferredTemplate <em>Referred Template</em>}</li>
  *   <li>{@link org.muml.uppaal.templates.impl.RedefinedTemplateImpl#getDeclaration <em>Declaration</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

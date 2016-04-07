@@ -38,7 +38,7 @@ public class BoundVariableEditor extends org.muml.ape.runtime.editors.ClassPrope
 		this(tab,
 				org.muml.uppaal.adapter.mtctl.properties.util.PropertiesUtil.INSTANCE
 						.getAdapterFactory(),
-				org.muml.uppaal.adapter.mtctl.Quantifiers.QuantifiersPackage.eINSTANCE
+				org.muml.uppaal.adapter.mtctl.quantifiers.QuantifiersPackage.eINSTANCE
 						.getBoundVariable());
 	}
 

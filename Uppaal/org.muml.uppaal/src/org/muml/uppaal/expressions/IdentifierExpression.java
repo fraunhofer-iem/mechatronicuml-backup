@@ -16,11 +16,11 @@ import org.muml.uppaal.core.NamedElement;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.uppaal.expressions.IdentifierExpression#getIdentifier <em>Identifier</em>}</li>
  *   <li>{@link org.muml.uppaal.expressions.IdentifierExpression#getIndex <em>Index</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.uppaal.expressions.ExpressionsPackage#getIdentifierExpression()
  * @model

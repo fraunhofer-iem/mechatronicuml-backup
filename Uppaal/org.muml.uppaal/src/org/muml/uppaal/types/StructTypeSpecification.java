@@ -16,10 +16,10 @@ import org.muml.uppaal.declarations.DataVariableDeclaration;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.uppaal.types.StructTypeSpecification#getDeclaration <em>Declaration</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.uppaal.types.TypesPackage#getStructTypeSpecification()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL UniqueFieldNames='self.declaration->collect(variable)->isUnique(name)'"

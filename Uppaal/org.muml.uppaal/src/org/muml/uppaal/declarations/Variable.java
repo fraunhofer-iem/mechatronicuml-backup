@@ -17,13 +17,13 @@ import org.muml.uppaal.types.TypeDefinition;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.uppaal.declarations.Variable#getIndex <em>Index</em>}</li>
  *   <li>{@link org.muml.uppaal.declarations.Variable#getContainer <em>Container</em>}</li>
  *   <li>{@link org.muml.uppaal.declarations.Variable#getTypeDefinition <em>Type Definition</em>}</li>
  *   <li>{@link org.muml.uppaal.declarations.Variable#getInitializer <em>Initializer</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.uppaal.declarations.DeclarationsPackage#getVariable()
  * @model extendedMetaData="name='Variable' kind='empty'"

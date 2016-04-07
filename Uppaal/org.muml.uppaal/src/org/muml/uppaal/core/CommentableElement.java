@@ -15,10 +15,10 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.uppaal.core.CommentableElement#getComment <em>Comment</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.uppaal.core.CorePackage#getCommentableElement()
  * @model abstract="true"

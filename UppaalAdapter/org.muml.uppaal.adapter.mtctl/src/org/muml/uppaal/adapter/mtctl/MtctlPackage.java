@@ -40,7 +40,7 @@ public interface MtctlPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl";
+	String eNS_URI = "http://www.muml.org/uppaal/adapter/mtctl/1.0.0";
 
 	/**
 	 * The package namespace name.
@@ -69,22 +69,22 @@ public interface MtctlPackage extends EPackage {
 	int PROPERTY_REPOSITORY = 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY_REPOSITORY__ANNOTATION = ConstraintPackage.VERIFICATION_CONSTRAINT_REPOSITORY__ANNOTATION;
+	int PROPERTY_REPOSITORY__ANNOTATIONS = ConstraintPackage.VERIFICATION_CONSTRAINT_REPOSITORY__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY_REPOSITORY__EXTENSION = ConstraintPackage.VERIFICATION_CONSTRAINT_REPOSITORY__EXTENSION;
+	int PROPERTY_REPOSITORY__EXTENSIONS = ConstraintPackage.VERIFICATION_CONSTRAINT_REPOSITORY__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Properties</b></em>' containment reference list.
@@ -295,22 +295,22 @@ public interface MtctlPackage extends EPackage {
 	int PROPERTY = 1;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY__ANNOTATION = CorePackage.COMMENTABLE_ELEMENT__ANNOTATION;
+	int PROPERTY__ANNOTATIONS = CorePackage.COMMENTABLE_ELEMENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY__EXTENSION = CorePackage.COMMENTABLE_ELEMENT__EXTENSION;
+	int PROPERTY__EXTENSIONS = CorePackage.COMMENTABLE_ELEMENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.

@@ -22,10 +22,10 @@ import org.muml.core.Extension;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.uppaal.adapter.extension.verificationextension.ClockBindingsExtension#getClockBindings <em>Clock Bindings</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.uppaal.adapter.extension.verificationextension.VerificationExtensionPackage#getClockBindingsExtension()
  * @model

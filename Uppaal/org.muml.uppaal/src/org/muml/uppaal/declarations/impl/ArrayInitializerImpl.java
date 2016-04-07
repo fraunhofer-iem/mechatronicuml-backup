@@ -20,10 +20,10 @@ import org.muml.uppaal.declarations.Initializer;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.uppaal.declarations.impl.ArrayInitializerImpl#getInitializer <em>Initializer</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

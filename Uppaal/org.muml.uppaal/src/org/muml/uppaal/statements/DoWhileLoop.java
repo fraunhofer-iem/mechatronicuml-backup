@@ -15,11 +15,11 @@ import org.muml.uppaal.expressions.Expression;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.uppaal.statements.DoWhileLoop#getStatement <em>Statement</em>}</li>
  *   <li>{@link org.muml.uppaal.statements.DoWhileLoop#getExpression <em>Expression</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.uppaal.statements.StatementsPackage#getDoWhileLoop()
  * @model

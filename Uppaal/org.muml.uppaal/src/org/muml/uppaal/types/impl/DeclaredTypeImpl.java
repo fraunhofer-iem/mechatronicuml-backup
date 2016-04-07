@@ -21,11 +21,11 @@ import org.muml.uppaal.types.TypesPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.uppaal.types.impl.DeclaredTypeImpl#getTypeDeclaration <em>Type Declaration</em>}</li>
  *   <li>{@link org.muml.uppaal.types.impl.DeclaredTypeImpl#getTypeDefinition <em>Type Definition</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

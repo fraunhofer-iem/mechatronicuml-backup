@@ -16,10 +16,10 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.uppaal.declarations.global.ChannelPriority#getItem <em>Item</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.uppaal.declarations.global.GlobalPackage#getChannelPriority()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL AtMostOneDefaultItem='self.item->select(oclIsKindOf(DefaultChannelPriority))->size() <= 1' EachChannelContainedAtMostOnce='self.item->select(oclIsKindOf(ChannelList)).oclAsType(ChannelList)->collect(channelExpression)->isUnique(variable)'"

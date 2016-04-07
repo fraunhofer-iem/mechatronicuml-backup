@@ -21,6 +21,7 @@ import org.muml.uppaal.types.PredefinedType;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.uppaal.NTA#getGlobalDeclarations <em>Global Declarations</em>}</li>
  *   <li>{@link org.muml.uppaal.NTA#getTemplate <em>Template</em>}</li>
@@ -31,7 +32,6 @@ import org.muml.uppaal.types.PredefinedType;
  *   <li>{@link org.muml.uppaal.NTA#getChan <em>Chan</em>}</li>
  *   <li>{@link org.muml.uppaal.NTA#getVoid <em>Void</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.uppaal.UppaalPackage#getNTA()
  * @model extendedMetaData="name='NTA' kind='elementOnly'"

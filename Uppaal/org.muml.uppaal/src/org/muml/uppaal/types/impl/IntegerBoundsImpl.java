@@ -18,11 +18,11 @@ import org.muml.uppaal.types.TypesPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.uppaal.types.impl.IntegerBoundsImpl#getLowerBound <em>Lower Bound</em>}</li>
  *   <li>{@link org.muml.uppaal.types.impl.IntegerBoundsImpl#getUpperBound <em>Upper Bound</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

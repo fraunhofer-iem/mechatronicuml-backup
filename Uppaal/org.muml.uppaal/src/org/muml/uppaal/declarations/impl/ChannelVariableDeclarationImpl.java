@@ -14,11 +14,11 @@ import org.muml.uppaal.declarations.DeclarationsPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.uppaal.declarations.impl.ChannelVariableDeclarationImpl#isUrgent <em>Urgent</em>}</li>
  *   <li>{@link org.muml.uppaal.declarations.impl.ChannelVariableDeclarationImpl#isBroadcast <em>Broadcast</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

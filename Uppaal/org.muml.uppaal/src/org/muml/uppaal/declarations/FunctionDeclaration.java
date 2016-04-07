@@ -14,10 +14,10 @@ package org.muml.uppaal.declarations;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.uppaal.declarations.FunctionDeclaration#getFunction <em>Function</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.uppaal.declarations.DeclarationsPackage#getFunctionDeclaration()
  * @model

@@ -38,7 +38,7 @@ public class TargetStateExprEditor extends org.muml.ape.runtime.editors.ClassPro
 		this(tab,
 				org.muml.uppaal.adapter.mtctl.properties.util.PropertiesUtil.INSTANCE
 						.getAdapterFactory(),
-				org.muml.uppaal.adapter.mtctl.Comparables.ComparablesPackage.eINSTANCE
+				org.muml.uppaal.adapter.mtctl.comparables.ComparablesPackage.eINSTANCE
 						.getTargetStateExpr());
 	}
 

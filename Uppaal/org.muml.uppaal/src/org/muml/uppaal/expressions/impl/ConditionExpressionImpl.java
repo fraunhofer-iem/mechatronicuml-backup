@@ -17,12 +17,12 @@ import org.muml.uppaal.expressions.ExpressionsPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.uppaal.expressions.impl.ConditionExpressionImpl#getIfExpression <em>If Expression</em>}</li>
  *   <li>{@link org.muml.uppaal.expressions.impl.ConditionExpressionImpl#getThenExpression <em>Then Expression</em>}</li>
  *   <li>{@link org.muml.uppaal.expressions.impl.ConditionExpressionImpl#getElseExpression <em>Else Expression</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

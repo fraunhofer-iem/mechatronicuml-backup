@@ -38,7 +38,7 @@ public class PredicateExprEditor extends org.muml.ape.runtime.editors.ClassPrope
 		this(tab,
 				org.muml.uppaal.adapter.mtctl.properties.util.PropertiesUtil.INSTANCE
 						.getAdapterFactory(),
-				org.muml.uppaal.adapter.mtctl.Predicates.PredicatesPackage.eINSTANCE
+				org.muml.uppaal.adapter.mtctl.predicates.PredicatesPackage.eINSTANCE
 						.getPredicateExpr());
 	}
 

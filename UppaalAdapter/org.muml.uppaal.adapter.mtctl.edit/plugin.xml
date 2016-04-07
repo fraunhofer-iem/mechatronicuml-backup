@@ -6,10 +6,11 @@
 
 <plugin>
 
+
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <!-- @generated Mtctl -->
       <factory
-            uri="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl"
+            uri="http://www.muml.org/uppaal/adapter/mtctl/1.0.0"
             class="org.muml.uppaal.adapter.mtctl.provider.MtctlItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
@@ -22,8 +23,8 @@
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <!-- @generated Mtctl -->
       <factory
-            uri="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Quantifiers"
-            class="org.muml.uppaal.adapter.mtctl.Quantifiers.provider.QuantifiersItemProviderAdapterFactory"
+            uri="http://www.muml.org/uppaal/adapter/mtctl/quantifiers/1.0.0"
+            class="org.muml.uppaal.adapter.mtctl.quantifiers.provider.QuantifiersItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider
@@ -35,8 +36,8 @@
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <!-- @generated Mtctl -->
       <factory
-            uri="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Predicates"
-            class="org.muml.uppaal.adapter.mtctl.Predicates.provider.PredicatesItemProviderAdapterFactory"
+            uri="http://www.muml.org/uppaal/adapter/mtctl/predicates/1.0.0"
+            class="org.muml.uppaal.adapter.mtctl.predicates.provider.PredicatesItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider
@@ -48,8 +49,8 @@
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <!-- @generated Mtctl -->
       <factory
-            uri="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Sets"
-            class="org.muml.uppaal.adapter.mtctl.Sets.provider.SetsItemProviderAdapterFactory"
+            uri="http://www.muml.org/uppaal/adapter/mtctl/sets/1.0.0"
+            class="org.muml.uppaal.adapter.mtctl.sets.provider.SetsItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider
@@ -61,8 +62,8 @@
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <!-- @generated Mtctl -->
       <factory
-            uri="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/BooleanLogic"
-            class="org.muml.uppaal.adapter.mtctl.BooleanLogic.provider.BooleanLogicItemProviderAdapterFactory"
+            uri="http://www.muml.org/uppaal/adapter/mtctl/booleanlogic/1.0.0"
+            class="org.muml.uppaal.adapter.mtctl.booleanlogic.provider.BooleanlogicItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider
@@ -74,8 +75,8 @@
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <!-- @generated Mtctl -->
       <factory
-            uri="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Comparables"
-            class="org.muml.uppaal.adapter.mtctl.Comparables.provider.ComparablesItemProviderAdapterFactory"
+            uri="http://www.muml.org/uppaal/adapter/mtctl/comparables/1.0.0"
+            class="org.muml.uppaal.adapter.mtctl.comparables.provider.ComparablesItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider

@@ -33,6 +33,7 @@ import org.muml.uppaal.visuals.impl.LinearElementImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.uppaal.templates.impl.EdgeImpl#getComment <em>Comment</em>}</li>
  *   <li>{@link org.muml.uppaal.templates.impl.EdgeImpl#getColor <em>Color</em>}</li>
@@ -45,7 +46,6 @@ import org.muml.uppaal.visuals.impl.LinearElementImpl;
  *   <li>{@link org.muml.uppaal.templates.impl.EdgeImpl#getSynchronization <em>Synchronization</em>}</li>
  *   <li>{@link org.muml.uppaal.templates.impl.EdgeImpl#getSelection <em>Selection</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

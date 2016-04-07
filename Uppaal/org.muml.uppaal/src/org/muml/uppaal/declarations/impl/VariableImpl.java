@@ -28,13 +28,13 @@ import org.muml.uppaal.types.TypeDefinition;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.uppaal.declarations.impl.VariableImpl#getIndex <em>Index</em>}</li>
  *   <li>{@link org.muml.uppaal.declarations.impl.VariableImpl#getContainer <em>Container</em>}</li>
  *   <li>{@link org.muml.uppaal.declarations.impl.VariableImpl#getTypeDefinition <em>Type Definition</em>}</li>
  *   <li>{@link org.muml.uppaal.declarations.impl.VariableImpl#getInitializer <em>Initializer</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

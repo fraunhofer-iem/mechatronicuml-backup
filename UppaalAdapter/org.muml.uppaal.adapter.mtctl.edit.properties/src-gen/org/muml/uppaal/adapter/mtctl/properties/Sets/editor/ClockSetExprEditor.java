@@ -38,7 +38,7 @@ public class ClockSetExprEditor extends org.muml.ape.runtime.editors.ClassProper
 		this(tab,
 				org.muml.uppaal.adapter.mtctl.properties.util.PropertiesUtil.INSTANCE
 						.getAdapterFactory(),
-				org.muml.uppaal.adapter.mtctl.Sets.SetsPackage.eINSTANCE.getClockSetExpr());
+				org.muml.uppaal.adapter.mtctl.sets.SetsPackage.eINSTANCE.getClockSetExpr());
 	}
 
 	/**

@@ -10,8 +10,6 @@ import org.muml.uppaal.types.TypesPackage;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Type Specification</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */

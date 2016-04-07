@@ -15,13 +15,13 @@ import org.muml.uppaal.expressions.Expression;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.uppaal.statements.ForLoop#getInitialization <em>Initialization</em>}</li>
  *   <li>{@link org.muml.uppaal.statements.ForLoop#getCondition <em>Condition</em>}</li>
  *   <li>{@link org.muml.uppaal.statements.ForLoop#getIteration <em>Iteration</em>}</li>
  *   <li>{@link org.muml.uppaal.statements.ForLoop#getStatement <em>Statement</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.uppaal.statements.StatementsPackage#getForLoop()
  * @model

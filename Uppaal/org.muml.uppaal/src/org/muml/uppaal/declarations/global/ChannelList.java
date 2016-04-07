@@ -16,10 +16,10 @@ import org.muml.uppaal.expressions.IdentifierExpression;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.uppaal.declarations.global.ChannelList#getChannelExpression <em>Channel Expression</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.uppaal.declarations.global.GlobalPackage#getChannelList()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL ChannelVariablesOnly='self.channelExpression->forAll(\r\n\t(not identifier.typeDefinition.oclIsUndefined()) implies identifier.typeDefinition.baseType = types::BuiltInType::CHAN\r\n)'"

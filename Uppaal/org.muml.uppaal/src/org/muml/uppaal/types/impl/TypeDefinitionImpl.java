@@ -16,11 +16,11 @@ import org.muml.uppaal.types.TypesPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.uppaal.types.impl.TypeDefinitionImpl#getBaseType <em>Base Type</em>}</li>
  *   <li>{@link org.muml.uppaal.types.impl.TypeDefinitionImpl#getTypeSpecification <em>Type Specification</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

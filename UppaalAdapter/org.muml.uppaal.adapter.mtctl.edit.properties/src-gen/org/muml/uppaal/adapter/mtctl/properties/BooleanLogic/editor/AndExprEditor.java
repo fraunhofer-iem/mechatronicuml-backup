@@ -38,7 +38,7 @@ public class AndExprEditor extends org.muml.ape.runtime.editors.ClassPropertyEdi
 		this(tab,
 				org.muml.uppaal.adapter.mtctl.properties.util.PropertiesUtil.INSTANCE
 						.getAdapterFactory(),
-				org.muml.uppaal.adapter.mtctl.BooleanLogic.BooleanLogicPackage.eINSTANCE
+				org.muml.uppaal.adapter.mtctl.booleanlogic.BooleanLogicPackage.eINSTANCE
 						.getAndExpr());
 	}
 

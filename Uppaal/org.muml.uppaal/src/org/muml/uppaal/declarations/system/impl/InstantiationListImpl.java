@@ -18,10 +18,10 @@ import org.muml.uppaal.templates.AbstractTemplate;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.uppaal.declarations.system.impl.InstantiationListImpl#getTemplate <em>Template</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

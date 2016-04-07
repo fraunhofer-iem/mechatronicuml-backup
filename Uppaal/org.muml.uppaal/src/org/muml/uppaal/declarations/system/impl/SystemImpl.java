@@ -20,10 +20,10 @@ import org.muml.uppaal.declarations.system.SystemPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.uppaal.declarations.system.impl.SystemImpl#getInstantiationList <em>Instantiation List</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

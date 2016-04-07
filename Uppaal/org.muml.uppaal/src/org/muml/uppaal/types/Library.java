@@ -12,10 +12,10 @@ import org.eclipse.emf.ecore.EPackage;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.uppaal.types.Library#getTypes <em>Types</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.uppaal.types.TypesPackage#getLibrary()
  * @model

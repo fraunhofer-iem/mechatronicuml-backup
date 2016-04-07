@@ -4,7 +4,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.muml.pim.common.naming.MumlQualifiedNameProvider;
 import org.muml.pim.common.naming.QualifiedName;
 import org.muml.pim.common.naming.QualifiedNameProvider;
-import org.muml.uppaal.adapter.mtctl.Quantifiers.BoundVariable;
+import org.muml.uppaal.adapter.mtctl.quantifiers.BoundVariable;
 
 /**
  * A {@link QualifiedNameProvider} for MTCTL.<br>

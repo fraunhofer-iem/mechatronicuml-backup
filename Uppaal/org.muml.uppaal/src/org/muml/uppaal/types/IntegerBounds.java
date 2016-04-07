@@ -16,11 +16,11 @@ import org.muml.uppaal.expressions.Expression;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.uppaal.types.IntegerBounds#getLowerBound <em>Lower Bound</em>}</li>
  *   <li>{@link org.muml.uppaal.types.IntegerBounds#getUpperBound <em>Upper Bound</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.uppaal.types.TypesPackage#getIntegerBounds()
  * @model extendedMetaData="name='IntegerBounds' kind='empty'"

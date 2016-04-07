@@ -8,8 +8,8 @@ import org.muml.pim.connector.MessageBuffer;
 import org.muml.pim.constraint.VerifiableElement;
 import org.muml.pim.msgtype.MessageType;
 import org.muml.pim.realtimestatechart.RealtimeStatechart;
-import org.muml.uppaal.adapter.mtctl.Comparables.MumlElemExpr;
 import org.muml.uppaal.adapter.mtctl.common.MtctlModelElementProvider;
+import org.muml.uppaal.adapter.mtctl.comparables.MumlElemExpr;
 
 public class MtctlLibrary {
 	private MtctlModelElementProvider elementProvider = null; //cached provider (check if its root is correct before using)

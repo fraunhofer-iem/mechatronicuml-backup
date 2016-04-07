@@ -16,7 +16,6 @@ import org.eclipse.emf.common.EMFPlugin;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.muml.core.provider.CoreEditPlugin;
-import org.muml.pim.constraint.provider.MumlEditPlugin;
 
 /**
  * This is the central singleton for the VerificationExtension edit plugin.
@@ -51,7 +50,7 @@ public final class VerificationExtensionEditPlugin extends EMFPlugin {
 		super
 		  (new ResourceLocator [] {
 		     CoreEditPlugin.INSTANCE,
-		     MumlEditPlugin.INSTANCE,
+		     org.muml.pim.provider.MumlEditPlugin.INSTANCE,
 		   });
 	}
 

@@ -17,11 +17,11 @@ import org.muml.uppaal.types.TypeDefinition;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.uppaal.declarations.VariableContainer#getTypeDefinition <em>Type Definition</em>}</li>
  *   <li>{@link org.muml.uppaal.declarations.VariableContainer#getVariable <em>Variable</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.uppaal.declarations.DeclarationsPackage#getVariableContainer()
  * @model abstract="true"

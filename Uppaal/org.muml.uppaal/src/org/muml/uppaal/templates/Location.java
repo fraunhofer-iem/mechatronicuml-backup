@@ -19,12 +19,12 @@ import org.muml.uppaal.visuals.PlanarElement;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.uppaal.templates.Location#getParentTemplate <em>Parent Template</em>}</li>
  *   <li>{@link org.muml.uppaal.templates.Location#getInvariant <em>Invariant</em>}</li>
  *   <li>{@link org.muml.uppaal.templates.Location#getLocationTimeKind <em>Location Time Kind</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.uppaal.templates.TemplatesPackage#getLocation()
  * @model extendedMetaData="name='Location' kind='empty'"

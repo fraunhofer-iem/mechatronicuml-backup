@@ -18,12 +18,12 @@ import org.muml.uppaal.declarations.Index;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.uppaal.types.Type#getIndex <em>Index</em>}</li>
  *   <li>{@link org.muml.uppaal.types.Type#getBaseType <em>Base Type</em>}</li>
  *   <li>{@link org.muml.uppaal.types.Type#getTypeSpecification <em>Type Specification</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.uppaal.types.TypesPackage#getType()
  * @model abstract="true"

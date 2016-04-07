@@ -38,7 +38,7 @@ public class OrExprEditor extends org.muml.ape.runtime.editors.ClassPropertyEdit
 		this(tab,
 				org.muml.uppaal.adapter.mtctl.properties.util.PropertiesUtil.INSTANCE
 						.getAdapterFactory(),
-				org.muml.uppaal.adapter.mtctl.BooleanLogic.BooleanLogicPackage.eINSTANCE
+				org.muml.uppaal.adapter.mtctl.booleanlogic.BooleanLogicPackage.eINSTANCE
 						.getOrExpr());
 	}
 

@@ -24,11 +24,11 @@ import org.muml.uppaal.types.TypeDefinition;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.uppaal.declarations.impl.VariableDeclarationImpl#getTypeDefinition <em>Type Definition</em>}</li>
  *   <li>{@link org.muml.uppaal.declarations.impl.VariableDeclarationImpl#getVariable <em>Variable</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

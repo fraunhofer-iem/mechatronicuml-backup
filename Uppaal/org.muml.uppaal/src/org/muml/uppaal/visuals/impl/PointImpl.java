@@ -15,11 +15,11 @@ import org.muml.uppaal.visuals.VisualsPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.uppaal.visuals.impl.PointImpl#getX <em>X</em>}</li>
  *   <li>{@link org.muml.uppaal.visuals.impl.PointImpl#getY <em>Y</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

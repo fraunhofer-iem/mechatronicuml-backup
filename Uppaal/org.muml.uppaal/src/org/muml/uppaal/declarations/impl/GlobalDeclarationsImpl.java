@@ -17,10 +17,10 @@ import org.muml.uppaal.declarations.global.ChannelPriority;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.uppaal.declarations.impl.GlobalDeclarationsImpl#getChannelPriority <em>Channel Priority</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

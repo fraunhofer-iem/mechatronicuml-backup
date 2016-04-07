@@ -16,11 +16,11 @@ import org.muml.uppaal.declarations.LocalDeclarations;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.uppaal.statements.Block#getDeclarations <em>Declarations</em>}</li>
  *   <li>{@link org.muml.uppaal.statements.Block#getStatement <em>Statement</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.uppaal.statements.StatementsPackage#getBlock()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL DataVariableDeclarationsOnly='(not self.declarations.oclIsUndefined())\r\nimplies\r\n(self.declarations.declaration->forAll(oclIsKindOf(declarations::DataVariableDeclaration)))'"

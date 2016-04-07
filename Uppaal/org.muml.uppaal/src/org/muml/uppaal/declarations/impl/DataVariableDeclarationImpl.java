@@ -15,10 +15,10 @@ import org.muml.uppaal.declarations.DeclarationsPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.uppaal.declarations.impl.DataVariableDeclarationImpl#getPrefix <em>Prefix</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

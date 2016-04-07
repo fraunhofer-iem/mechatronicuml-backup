@@ -15,11 +15,11 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.uppaal.visuals.ColoredElement#getColor <em>Color</em>}</li>
  *   <li>{@link org.muml.uppaal.visuals.ColoredElement#getColorCode <em>Color Code</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.uppaal.visuals.VisualsPackage#getColoredElement()
  * @model abstract="true"

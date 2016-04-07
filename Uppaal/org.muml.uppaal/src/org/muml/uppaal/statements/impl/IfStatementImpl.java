@@ -18,12 +18,12 @@ import org.muml.uppaal.statements.StatementsPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.uppaal.statements.impl.IfStatementImpl#getIfExpression <em>If Expression</em>}</li>
  *   <li>{@link org.muml.uppaal.statements.impl.IfStatementImpl#getThenStatement <em>Then Statement</em>}</li>
  *   <li>{@link org.muml.uppaal.statements.impl.IfStatementImpl#getElseStatement <em>Else Statement</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

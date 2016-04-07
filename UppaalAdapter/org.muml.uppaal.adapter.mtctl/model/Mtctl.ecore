@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="mtctl" nsURI="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="mtctl" nsURI="http://www.muml.org/uppaal/adapter/mtctl/1.0.0"
     nsPrefix="mtctl">
   <eClassifiers xsi:type="ecore:EClass" name="PropertyRepository" eSuperTypes="../../org.muml.pim/model/pim.ecore#//constraint/VerificationConstraintRepository">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -18,50 +18,50 @@
       <details key="documentation" value="Common superclass of all elements of the language (except Property and PropertyRepository)"/>
     </eAnnotations>
   </eClassifiers>
-  <eSubpackages name="Quantifiers" nsURI="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Quantifiers"
-      nsPrefix="Quantifiers">
-    <eClassifiers xsi:type="ecore:EClass" name="AFExpr" eSuperTypes="#//Quantifiers/TemporalQuantifierExpr">
+  <eSubpackages name="quantifiers" nsURI="http://www.muml.org/uppaal/adapter/mtctl/quantifiers/1.0.0"
+      nsPrefix="mtctlquantifiers">
+    <eClassifiers xsi:type="ecore:EClass" name="AFExpr" eSuperTypes="#//quantifiers/TemporalQuantifierExpr">
       <eStructuralFeatures xsi:type="ecore:EReference" name="expr" eType="#//Expression"
           containment="true"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="AGExpr" eSuperTypes="#//Quantifiers/TemporalQuantifierExpr">
+    <eClassifiers xsi:type="ecore:EClass" name="AGExpr" eSuperTypes="#//quantifiers/TemporalQuantifierExpr">
       <eStructuralFeatures xsi:type="ecore:EReference" name="expr" eType="#//Expression"
           containment="true"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="EFExpr" eSuperTypes="#//Quantifiers/TemporalQuantifierExpr">
+    <eClassifiers xsi:type="ecore:EClass" name="EFExpr" eSuperTypes="#//quantifiers/TemporalQuantifierExpr">
       <eStructuralFeatures xsi:type="ecore:EReference" name="expr" eType="#//Expression"
           containment="true"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="EGExpr" eSuperTypes="#//Quantifiers/TemporalQuantifierExpr">
+    <eClassifiers xsi:type="ecore:EClass" name="EGExpr" eSuperTypes="#//quantifiers/TemporalQuantifierExpr">
       <eStructuralFeatures xsi:type="ecore:EReference" name="expr" eType="#//Expression"
           containment="true"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ExistenceQuantExpr" eSuperTypes="#//Quantifiers/QuantifierExpr"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ExistenceQuantExpr" eSuperTypes="#//quantifiers/QuantifierExpr"/>
     <eClassifiers xsi:type="ecore:EClass" name="QuantifierExpr" abstract="true" eSuperTypes="#//Expression">
       <eStructuralFeatures xsi:type="ecore:EReference" name="formula" eType="#//Expression"
           containment="true"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="var" eType="#//Quantifiers/BoundVariable"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="var" eType="#//quantifiers/BoundVariable"
           containment="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="BoundVariable" eSuperTypes="#//Expression">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="set" eType="#//Sets/SetExpr"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="set" eType="#//sets/SetExpr"
           containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="TemporalQuantifierExpr" abstract="true"
         eSuperTypes="#//Expression"/>
-    <eClassifiers xsi:type="ecore:EClass" name="UniversalQuantExpr" eSuperTypes="#//Quantifiers/QuantifierExpr"/>
-    <eClassifiers xsi:type="ecore:EClass" name="LeadsToExpr" eSuperTypes="#//Quantifiers/TemporalQuantifierExpr">
+    <eClassifiers xsi:type="ecore:EClass" name="UniversalQuantExpr" eSuperTypes="#//quantifiers/QuantifierExpr"/>
+    <eClassifiers xsi:type="ecore:EClass" name="LeadsToExpr" eSuperTypes="#//quantifiers/TemporalQuantifierExpr">
       <eStructuralFeatures xsi:type="ecore:EReference" name="leftOpd" eType="#//Expression"
           containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="rightOpd" eType="#//Expression"
           containment="true"/>
     </eClassifiers>
   </eSubpackages>
-  <eSubpackages name="Predicates" nsURI="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Predicates"
-      nsPrefix="Predicates">
-    <eClassifiers xsi:type="ecore:EClass" name="DeadlockExpr" eSuperTypes="#//Predicates/DynamicPredicateExpr">
+  <eSubpackages name="predicates" nsURI="http://www.muml.org/uppaal/adapter/mtctl/predicates/1.0.0"
+      nsPrefix="mtctlpredicates">
+    <eClassifiers xsi:type="ecore:EClass" name="DeadlockExpr" eSuperTypes="#//predicates/DynamicPredicateExpr">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="true iff the snapshot is in a deadlock (i.e. no further transition can fire at any future point in time)"/>
       </eAnnotations>
@@ -74,58 +74,58 @@
       <eLiterals name="LESS_OR_EQUAL" value="4" literal="&lt;="/>
       <eLiterals name="NOT_EQUAL" value="5" literal="!="/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ConnectorOverflowExpr" eSuperTypes="#//Predicates/DynamicPredicateExpr">
+    <eClassifiers xsi:type="ecore:EClass" name="ConnectorOverflowExpr" eSuperTypes="#//predicates/DynamicPredicateExpr">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="true iff at any point before the snapshot's time, a buffer overflow has occured"/>
       </eAnnotations>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ComparisonExpr" eSuperTypes="#//Predicates/PredicateExpr">
+    <eClassifiers xsi:type="ecore:EClass" name="ComparisonExpr" eSuperTypes="#//predicates/PredicateExpr">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Compares two values. Is evaluated either dynamically or statically "/>
       </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="lhs" eType="#//Comparables/MapExpr"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="lhs" eType="#//comparables/MapExpr"
           containment="true"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="op" eType="#//Predicates/ComparisonOp"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="rhs" eType="#//Comparables/MapExpr"
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="op" eType="#//predicates/ComparisonOp"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="rhs" eType="#//comparables/MapExpr"
           containment="true"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="MessageInBufferExpr" eSuperTypes="#//Predicates/DynamicPredicateExpr">
+    <eClassifiers xsi:type="ecore:EClass" name="MessageInBufferExpr" eSuperTypes="#//predicates/DynamicPredicateExpr">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Evaluates to true iff in the snapshot, there is a message of the specified type in one of the buffers of the specified role"/>
       </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="buffer" eType="#//Comparables/MapExpr"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="buffer" eType="#//comparables/MapExpr"
           containment="true"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="message" eType="#//Comparables/MapExpr"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="message" eType="#//comparables/MapExpr"
           containment="true"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="MessageInTransitExpr" eSuperTypes="#//Predicates/DynamicPredicateExpr">
+    <eClassifiers xsi:type="ecore:EClass" name="MessageInTransitExpr" eSuperTypes="#//predicates/DynamicPredicateExpr">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Evaluates to true iff a message of the specified type is currently being sent but has not arrived yet"/>
       </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="message" eType="#//Comparables/MapExpr"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="message" eType="#//comparables/MapExpr"
           containment="true"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="StateActiveExpr" eSuperTypes="#//Predicates/DynamicPredicateExpr">
+    <eClassifiers xsi:type="ecore:EClass" name="StateActiveExpr" eSuperTypes="#//predicates/DynamicPredicateExpr">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Evaluates to true iff the specified state is active in the snapshot"/>
       </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="state" eType="#//Comparables/MapExpr"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="state" eType="#//comparables/MapExpr"
           containment="true"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="SubstateOfExpr" eSuperTypes="#//Predicates/StaticPredicateExpr">
+    <eClassifiers xsi:type="ecore:EClass" name="SubstateOfExpr" eSuperTypes="#//predicates/StaticPredicateExpr">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="True iff state is a substate of superstate"/>
       </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="superstate" eType="#//Comparables/MapExpr"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="superstate" eType="#//comparables/MapExpr"
           containment="true"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="state" eType="#//Comparables/MapExpr"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="state" eType="#//comparables/MapExpr"
           containment="true"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="TransitionFiringExpr" eSuperTypes="#//Predicates/DynamicPredicateExpr">
+    <eClassifiers xsi:type="ecore:EClass" name="TransitionFiringExpr" eSuperTypes="#//predicates/DynamicPredicateExpr">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="True iff the specified transition is currently firing in the snapshot"/>
       </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="transition" eType="#//Comparables/MapExpr"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="transition" eType="#//comparables/MapExpr"
           containment="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="PredicateExpr" eSuperTypes="#//Expression">
@@ -134,83 +134,83 @@
       </eAnnotations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="DynamicPredicateExpr" abstract="true"
-        eSuperTypes="#//Predicates/PredicateExpr">
+        eSuperTypes="#//predicates/PredicateExpr">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Predicates that are evaluated at verification time (i.e. they say something about a state (snapshot) of a system)"/>
       </eAnnotations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="StaticPredicateExpr" abstract="true"
-        eSuperTypes="#//Predicates/PredicateExpr">
+        eSuperTypes="#//predicates/PredicateExpr">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Predicates that are evaluated statically (i.e. they say something about the static structure of a model)"/>
       </eAnnotations>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="TrueExpr" eSuperTypes="#//Predicates/StaticPredicateExpr"/>
-    <eClassifiers xsi:type="ecore:EClass" name="FalseExpr" eSuperTypes="#//Predicates/StaticPredicateExpr"/>
-    <eClassifiers xsi:type="ecore:EClass" name="StateInStatechartExpr" eSuperTypes="#//Predicates/StaticPredicateExpr">
+    <eClassifiers xsi:type="ecore:EClass" name="TrueExpr" eSuperTypes="#//predicates/StaticPredicateExpr"/>
+    <eClassifiers xsi:type="ecore:EClass" name="FalseExpr" eSuperTypes="#//predicates/StaticPredicateExpr"/>
+    <eClassifiers xsi:type="ecore:EClass" name="StateInStatechartExpr" eSuperTypes="#//predicates/StaticPredicateExpr">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="true iff a state is indirectly embedded in a statechart"/>
       </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="state" eType="#//Comparables/MapExpr"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="state" eType="#//comparables/MapExpr"
           containment="true"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="statechart" eType="#//Comparables/MapExpr"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="statechart" eType="#//comparables/MapExpr"
           containment="true"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="MessageDiscardedExpr" eSuperTypes="#//Predicates/DynamicPredicateExpr">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="buffer" eType="#//Comparables/MapExpr"
+    <eClassifiers xsi:type="ecore:EClass" name="MessageDiscardedExpr" eSuperTypes="#//predicates/DynamicPredicateExpr">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="buffer" eType="#//comparables/MapExpr"
           containment="true"/>
     </eClassifiers>
   </eSubpackages>
-  <eSubpackages name="Sets" nsURI="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Sets"
-      nsPrefix="Sets">
+  <eSubpackages name="sets" nsURI="http://www.muml.org/uppaal/adapter/mtctl/sets/1.0.0"
+      nsPrefix="mtctlsets">
     <eClassifiers xsi:type="ecore:EClass" name="SetExpr" abstract="true" eSuperTypes="#//Expression">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Common supertype of all SetExpressions"/>
       </eAnnotations>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ClockSetExpr" eSuperTypes="#//Sets/SetExpr">
+    <eClassifiers xsi:type="ecore:EClass" name="ClockSetExpr" eSuperTypes="#//sets/SetExpr">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Set of all clocks in the model"/>
       </eAnnotations>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="IntervalSetExpr" eSuperTypes="#//Sets/SetExpr">
+    <eClassifiers xsi:type="ecore:EClass" name="IntervalSetExpr" eSuperTypes="#//sets/SetExpr">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Set integers between lowerVal and upperVal"/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="lowerVal" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="upperVal" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="MessageSetExpr" eSuperTypes="#//Sets/SetExpr">
+    <eClassifiers xsi:type="ecore:EClass" name="MessageSetExpr" eSuperTypes="#//sets/SetExpr">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Set of all messages in the model"/>
       </eAnnotations>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="StateSetExpr" eSuperTypes="#//Sets/SetExpr">
+    <eClassifiers xsi:type="ecore:EClass" name="StateSetExpr" eSuperTypes="#//sets/SetExpr">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Set of all states in the model"/>
       </eAnnotations>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="TransitionSetExpr" eSuperTypes="#//Sets/SetExpr">
+    <eClassifiers xsi:type="ecore:EClass" name="TransitionSetExpr" eSuperTypes="#//sets/SetExpr">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Set of all transitions in the model"/>
       </eAnnotations>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="BufferSetExpr" eSuperTypes="#//Sets/SetExpr"/>
-    <eClassifiers xsi:type="ecore:EClass" name="InstanceSetExpr" eSuperTypes="#//Sets/SetExpr">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//Comparables/MumlElemExpr"
+    <eClassifiers xsi:type="ecore:EClass" name="BufferSetExpr" eSuperTypes="#//sets/SetExpr"/>
+    <eClassifiers xsi:type="ecore:EClass" name="InstanceSetExpr" eSuperTypes="#//sets/SetExpr">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//comparables/MumlElemExpr"
           containment="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The type of all elements in the set (e.g., a ConnectorEndpoint or a Component)"/>
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="SubinstanceSetExpr" eSuperTypes="#//Sets/SetExpr">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//Comparables/MumlElemExpr"
+    <eClassifiers xsi:type="ecore:EClass" name="SubinstanceSetExpr" eSuperTypes="#//sets/SetExpr">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//comparables/MumlElemExpr"
           containment="true"/>
     </eClassifiers>
   </eSubpackages>
-  <eSubpackages name="BooleanLogic" nsURI="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/BooleanLogic"
-      nsPrefix="BooleanLogic">
+  <eSubpackages name="booleanlogic" nsURI="http://www.muml.org/uppaal/adapter/mtctl/booleanlogic/1.0.0"
+      nsPrefix="mtctlbooleanlogic">
     <eClassifiers xsi:type="ecore:EClass" name="AndExpr" eSuperTypes="#//Expression">
       <eStructuralFeatures xsi:type="ecore:EReference" name="leftOpd" eType="#//Expression"
           containment="true"/>
@@ -234,19 +234,19 @@
           containment="true"/>
     </eClassifiers>
   </eSubpackages>
-  <eSubpackages name="Comparables" nsURI="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Comparables"
-      nsPrefix="Comparables">
+  <eSubpackages name="comparables" nsURI="http://www.muml.org/uppaal/adapter/mtctl/comparables/1.0.0"
+      nsPrefix="mtctlcomparables">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Contains expressions that can be used in a ComparisonExpr"/>
     </eAnnotations>
-    <eClassifiers xsi:type="ecore:EClass" name="BufferMsgCountExpr" eSuperTypes="#//Comparables/MapExpr">
+    <eClassifiers xsi:type="ecore:EClass" name="BufferMsgCountExpr" eSuperTypes="#//comparables/MapExpr">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Evaluates to the current number of elements in the buffer"/>
       </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="buffer" eType="#//Comparables/MapExpr"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="buffer" eType="#//comparables/MapExpr"
           containment="true"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ConstExpr" eSuperTypes="#//Comparables/MapExpr">
+    <eClassifiers xsi:type="ecore:EClass" name="ConstExpr" eSuperTypes="#//comparables/MapExpr">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="An integer constant"/>
       </eAnnotations>
@@ -262,7 +262,7 @@
         <details key="documentation" value="Superclass for expressions that evaluate to some value"/>
       </eAnnotations>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="MumlElemExpr" eSuperTypes="#//Comparables/MapExpr">
+    <eClassifiers xsi:type="ecore:EClass" name="MumlElemExpr" eSuperTypes="#//comparables/MapExpr">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="A reference to an element or expression that evaluates (at least indirectly) to some element of the underlying model (e.g., State, MapExpr, Clock,...)"/>
       </eAnnotations>
@@ -277,19 +277,19 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="TransitionMap" abstract="true" eSuperTypes="#//Comparables/MapExpr">
+    <eClassifiers xsi:type="ecore:EClass" name="TransitionMap" abstract="true" eSuperTypes="#//comparables/MapExpr">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Common abstract superclass of maps with transition pre-image"/>
       </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="transition" eType="#//Comparables/MapExpr"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="transition" eType="#//comparables/MapExpr"
           containment="true"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="SourceStateExpr" eSuperTypes="#//Comparables/TransitionMap">
+    <eClassifiers xsi:type="ecore:EClass" name="SourceStateExpr" eSuperTypes="#//comparables/TransitionMap">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Maps a transition to its source state"/>
       </eAnnotations>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="TargetStateExpr" eSuperTypes="#//Comparables/TransitionMap">
+    <eClassifiers xsi:type="ecore:EClass" name="TargetStateExpr" eSuperTypes="#//comparables/TransitionMap">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Maps a transition to its target state"/>
       </eAnnotations>

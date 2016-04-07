@@ -14,11 +14,11 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.muml.core.provider.CommentableElementItemProvider;
 import org.muml.uppaal.adapter.mtctl.MtctlPackage;
 import org.muml.uppaal.adapter.mtctl.Property;
-import org.muml.uppaal.adapter.mtctl.BooleanLogic.BooleanLogicFactory;
-import org.muml.uppaal.adapter.mtctl.Comparables.ComparablesFactory;
-import org.muml.uppaal.adapter.mtctl.Predicates.PredicatesFactory;
-import org.muml.uppaal.adapter.mtctl.Quantifiers.QuantifiersFactory;
-import org.muml.uppaal.adapter.mtctl.Sets.SetsFactory;
+import org.muml.uppaal.adapter.mtctl.booleanlogic.BooleanlogicFactory;
+import org.muml.uppaal.adapter.mtctl.comparables.ComparablesFactory;
+import org.muml.uppaal.adapter.mtctl.predicates.PredicatesFactory;
+import org.muml.uppaal.adapter.mtctl.quantifiers.QuantifiersFactory;
+import org.muml.uppaal.adapter.mtctl.sets.SetsFactory;
 
 /**
  * This is the item provider adapter for a {@link org.muml.uppaal.adapter.mtctl.Property} object.
@@ -296,22 +296,22 @@ public class PropertyItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(MtctlPackage.Literals.PROPERTY__EXPRESSION,
-				 BooleanLogicFactory.eINSTANCE.createAndExpr()));
+				 BooleanlogicFactory.eINSTANCE.createAndExpr()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(MtctlPackage.Literals.PROPERTY__EXPRESSION,
-				 BooleanLogicFactory.eINSTANCE.createImplyExpr()));
+				 BooleanlogicFactory.eINSTANCE.createImplyExpr()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(MtctlPackage.Literals.PROPERTY__EXPRESSION,
-				 BooleanLogicFactory.eINSTANCE.createNotExpr()));
+				 BooleanlogicFactory.eINSTANCE.createNotExpr()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(MtctlPackage.Literals.PROPERTY__EXPRESSION,
-				 BooleanLogicFactory.eINSTANCE.createOrExpr()));
+				 BooleanlogicFactory.eINSTANCE.createOrExpr()));
 
 		newChildDescriptors.add
 			(createChildParameter

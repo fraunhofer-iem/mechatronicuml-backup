@@ -38,7 +38,7 @@ public class LeadsToExprEditor extends org.muml.ape.runtime.editors.ClassPropert
 		this(tab,
 				org.muml.uppaal.adapter.mtctl.properties.util.PropertiesUtil.INSTANCE
 						.getAdapterFactory(),
-				org.muml.uppaal.adapter.mtctl.Quantifiers.QuantifiersPackage.eINSTANCE
+				org.muml.uppaal.adapter.mtctl.quantifiers.QuantifiersPackage.eINSTANCE
 						.getLeadsToExpr());
 	}
 

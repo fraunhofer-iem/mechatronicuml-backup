@@ -18,11 +18,11 @@ import org.muml.uppaal.templates.RedefinedTemplate;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.uppaal.declarations.system.TemplateDeclaration#getDeclaredTemplate <em>Declared Template</em>}</li>
  *   <li>{@link org.muml.uppaal.declarations.system.TemplateDeclaration#getArgument <em>Argument</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.uppaal.declarations.system.SystemPackage#getTemplateDeclaration()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL NumberOfArgumentsMatchesDeclaration='(not self.declaredTemplate.oclIsUndefined() and not self.declaredTemplate.referredTemplate.oclIsUndefined())\r\nimplies\r\nself.argument->size() = self.declaredTemplate.referredTemplate.parameter->size()'"

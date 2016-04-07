@@ -14,11 +14,11 @@ package org.muml.uppaal.expressions;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.uppaal.expressions.BinaryExpression#getFirstExpr <em>First Expr</em>}</li>
  *   <li>{@link org.muml.uppaal.expressions.BinaryExpression#getSecondExpr <em>Second Expr</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.uppaal.expressions.ExpressionsPackage#getBinaryExpression()
  * @model abstract="true"

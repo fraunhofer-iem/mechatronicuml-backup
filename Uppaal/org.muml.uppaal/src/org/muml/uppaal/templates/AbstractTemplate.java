@@ -18,10 +18,10 @@ import org.muml.uppaal.declarations.Parameter;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.uppaal.templates.AbstractTemplate#getParameter <em>Parameter</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.uppaal.templates.TemplatesPackage#getAbstractTemplate()
  * @model abstract="true"

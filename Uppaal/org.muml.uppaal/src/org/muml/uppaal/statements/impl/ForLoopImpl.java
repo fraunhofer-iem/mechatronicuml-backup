@@ -18,13 +18,13 @@ import org.muml.uppaal.statements.StatementsPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.uppaal.statements.impl.ForLoopImpl#getInitialization <em>Initialization</em>}</li>
  *   <li>{@link org.muml.uppaal.statements.impl.ForLoopImpl#getCondition <em>Condition</em>}</li>
  *   <li>{@link org.muml.uppaal.statements.impl.ForLoopImpl#getIteration <em>Iteration</em>}</li>
  *   <li>{@link org.muml.uppaal.statements.impl.ForLoopImpl#getStatement <em>Statement</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

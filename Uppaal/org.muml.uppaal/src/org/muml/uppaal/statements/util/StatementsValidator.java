@@ -36,7 +36,7 @@ public class StatementsValidator extends EObjectValidator {
 	 * @see org.eclipse.emf.common.util.Diagnostic#getCode()
 	 * @generated
 	 */
-	public static final String DIAGNOSTIC_SOURCE = "de.uni_paderborn.uppaal.statements";
+	public static final String DIAGNOSTIC_SOURCE = "org.muml.uppaal.statements";
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants.

@@ -11,8 +11,6 @@ import org.muml.uppaal.templates.TemplatesPackage;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Selection</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */

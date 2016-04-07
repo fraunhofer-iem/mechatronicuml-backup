@@ -17,10 +17,10 @@ import org.muml.uppaal.expressions.NegationExpression;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.uppaal.expressions.impl.NegationExpressionImpl#getNegatedExpression <em>Negated Expression</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

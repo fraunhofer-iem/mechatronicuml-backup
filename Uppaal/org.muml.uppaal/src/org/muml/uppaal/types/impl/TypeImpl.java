@@ -25,12 +25,12 @@ import org.muml.uppaal.types.TypesPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.uppaal.types.impl.TypeImpl#getIndex <em>Index</em>}</li>
  *   <li>{@link org.muml.uppaal.types.impl.TypeImpl#getBaseType <em>Base Type</em>}</li>
  *   <li>{@link org.muml.uppaal.types.impl.TypeImpl#getTypeSpecification <em>Type Specification</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

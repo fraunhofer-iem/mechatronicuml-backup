@@ -16,11 +16,11 @@ import org.muml.uppaal.visuals.VisualsPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.uppaal.visuals.impl.ColoredElementImpl#getColor <em>Color</em>}</li>
  *   <li>{@link org.muml.uppaal.visuals.impl.ColoredElementImpl#getColorCode <em>Color Code</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

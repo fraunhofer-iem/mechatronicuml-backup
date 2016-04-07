@@ -27,13 +27,13 @@ import org.muml.uppaal.types.TypeDefinition;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.uppaal.expressions.impl.QuantificationExpressionImpl#getTypeDefinition <em>Type Definition</em>}</li>
  *   <li>{@link org.muml.uppaal.expressions.impl.QuantificationExpressionImpl#getVariable <em>Variable</em>}</li>
  *   <li>{@link org.muml.uppaal.expressions.impl.QuantificationExpressionImpl#getQuantifier <em>Quantifier</em>}</li>
  *   <li>{@link org.muml.uppaal.expressions.impl.QuantificationExpressionImpl#getExpression <em>Expression</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

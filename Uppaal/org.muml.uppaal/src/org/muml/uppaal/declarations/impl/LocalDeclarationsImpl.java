@@ -10,8 +10,6 @@ import org.muml.uppaal.declarations.LocalDeclarations;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Local Declarations</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */

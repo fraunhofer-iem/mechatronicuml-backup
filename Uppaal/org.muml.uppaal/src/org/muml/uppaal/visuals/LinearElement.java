@@ -16,10 +16,10 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.uppaal.visuals.LinearElement#getBendPoint <em>Bend Point</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.uppaal.visuals.VisualsPackage#getLinearElement()
  * @model abstract="true"

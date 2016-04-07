@@ -19,12 +19,12 @@ import org.muml.uppaal.expressions.IncrementDecrementPosition;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.uppaal.expressions.impl.IncrementDecrementExpressionImpl#getExpression <em>Expression</em>}</li>
  *   <li>{@link org.muml.uppaal.expressions.impl.IncrementDecrementExpressionImpl#getPosition <em>Position</em>}</li>
  *   <li>{@link org.muml.uppaal.expressions.impl.IncrementDecrementExpressionImpl#getOperator <em>Operator</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -17,10 +17,10 @@ import org.muml.uppaal.expressions.Expression;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.uppaal.declarations.system.ProgressMeasure#getExpression <em>Expression</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.uppaal.declarations.system.SystemPackage#getProgressMeasure()
  * @model

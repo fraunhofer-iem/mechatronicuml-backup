@@ -15,10 +15,10 @@ import org.muml.uppaal.expressions.Expression;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.uppaal.statements.ExpressionStatement#getExpression <em>Expression</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.uppaal.statements.StatementsPackage#getExpressionStatement()
  * @model

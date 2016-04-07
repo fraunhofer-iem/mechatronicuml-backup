@@ -21,7 +21,7 @@ import org.muml.uppaal.adapter.extension.verificationextension.VerificationExten
 import org.muml.uppaal.adapter.job.interfaces.VerificationOptionsProvider;
 import org.muml.uppaal.adapter.job.interfaces.VerificationPropertyChoiceProvider;
 import org.muml.uppaal.adapter.mtctl.Property;
-import org.muml.uppaal.adapter.mtctl.Quantifiers.TemporalQuantifierExpr;
+import org.muml.uppaal.adapter.mtctl.quantifiers.TemporalQuantifierExpr;
 import org.muml.uppaal.options.Options;
 import org.muml.verification.core.reachanalysis.reachabilitygraph.rtsc.ZoneGraph;
 

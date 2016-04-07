@@ -26,12 +26,12 @@ import org.muml.uppaal.types.TypeDefinition;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.uppaal.statements.impl.IterationImpl#getTypeDefinition <em>Type Definition</em>}</li>
  *   <li>{@link org.muml.uppaal.statements.impl.IterationImpl#getVariable <em>Variable</em>}</li>
  *   <li>{@link org.muml.uppaal.statements.impl.IterationImpl#getStatement <em>Statement</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

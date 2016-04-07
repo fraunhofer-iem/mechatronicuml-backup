@@ -15,11 +15,11 @@ import org.muml.uppaal.declarations.TypeDeclaration;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.uppaal.types.DeclaredType#getTypeDeclaration <em>Type Declaration</em>}</li>
  *   <li>{@link org.muml.uppaal.types.DeclaredType#getTypeDefinition <em>Type Definition</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.uppaal.types.TypesPackage#getDeclaredType()
  * @model

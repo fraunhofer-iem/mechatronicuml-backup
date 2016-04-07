@@ -34,10 +34,10 @@ import org.muml.uppaal.adapter.extension.verificationextension.VerificationExten
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.uppaal.adapter.extension.verificationextension.impl.ClockBindingsExtensionImpl#getClockBindings <em>Clock Bindings</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -15,10 +15,10 @@ import org.eclipse.emf.common.util.EList;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.uppaal.declarations.ArrayInitializer#getInitializer <em>Initializer</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.uppaal.declarations.DeclarationsPackage#getArrayInitializer()
  * @model

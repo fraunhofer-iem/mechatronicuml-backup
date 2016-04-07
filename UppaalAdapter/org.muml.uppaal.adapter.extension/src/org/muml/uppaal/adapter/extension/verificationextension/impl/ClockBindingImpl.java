@@ -29,11 +29,11 @@ import org.muml.uppaal.adapter.extension.verificationextension.VerificationExten
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.uppaal.adapter.extension.verificationextension.impl.ClockBindingImpl#getClock <em>Clock</em>}</li>
  *   <li>{@link org.muml.uppaal.adapter.extension.verificationextension.impl.ClockBindingImpl#getValue <em>Value</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

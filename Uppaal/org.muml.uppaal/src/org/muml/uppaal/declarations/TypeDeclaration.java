@@ -17,11 +17,11 @@ import org.muml.uppaal.types.TypeDefinition;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.uppaal.declarations.TypeDeclaration#getType <em>Type</em>}</li>
  *   <li>{@link org.muml.uppaal.declarations.TypeDeclaration#getTypeDefinition <em>Type Definition</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.uppaal.declarations.DeclarationsPackage#getTypeDeclaration()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL UniqueTypeNames='self.type->isUnique(name)'"

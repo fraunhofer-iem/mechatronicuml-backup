@@ -18,11 +18,11 @@ import org.muml.uppaal.statements.WhileLoop;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.uppaal.statements.impl.WhileLoopImpl#getExpression <em>Expression</em>}</li>
  *   <li>{@link org.muml.uppaal.statements.impl.WhileLoopImpl#getStatement <em>Statement</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

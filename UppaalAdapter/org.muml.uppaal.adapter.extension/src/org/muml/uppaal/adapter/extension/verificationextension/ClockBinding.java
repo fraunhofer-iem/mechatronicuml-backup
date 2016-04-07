@@ -22,11 +22,11 @@ import org.muml.pim.realtimestatechart.Clock;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.uppaal.adapter.extension.verificationextension.ClockBinding#getClock <em>Clock</em>}</li>
  *   <li>{@link org.muml.uppaal.adapter.extension.verificationextension.ClockBinding#getValue <em>Value</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.uppaal.adapter.extension.verificationextension.VerificationExtensionPackage#getClockBinding()
  * @model

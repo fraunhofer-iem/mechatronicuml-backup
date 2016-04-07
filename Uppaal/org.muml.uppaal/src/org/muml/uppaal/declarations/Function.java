@@ -18,12 +18,12 @@ import org.muml.uppaal.types.TypeDefinition;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.uppaal.declarations.Function#getReturnType <em>Return Type</em>}</li>
  *   <li>{@link org.muml.uppaal.declarations.Function#getBlock <em>Block</em>}</li>
  *   <li>{@link org.muml.uppaal.declarations.Function#getParameter <em>Parameter</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.uppaal.declarations.DeclarationsPackage#getFunction()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL ValidReturnType='(not returnType.oclIsUndefined())\r\nimplies\r\n(returnType.baseType = types::BuiltInType::VOID or\r\n returnType.baseType = types::BuiltInType::INT or\r\n returnType.baseType = types::BuiltInType::BOOL)' UniqueParameterNames='self.parameter->collect(variableDeclaration)->collect(variable)->isUnique(name)'"

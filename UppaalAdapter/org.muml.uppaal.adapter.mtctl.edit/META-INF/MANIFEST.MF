@@ -8,12 +8,12 @@ Bundle-Activator: org.muml.uppaal.adapter.mtctl.provider.MtctlEditPlugin$Impleme
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: org.muml.uppaal.adapter.mtctl.BooleanLogic.provider,
- org.muml.uppaal.adapter.mtctl.Comparables.provider,
- org.muml.uppaal.adapter.mtctl.Predicates.provider,
- org.muml.uppaal.adapter.mtctl.Quantifiers.provider,
- org.muml.uppaal.adapter.mtctl.Sets.provider,
- org.muml.uppaal.adapter.mtctl.provider
+Export-Package: org.muml.uppaal.adapter.mtctl.booleanlogic.provider,
+ org.muml.uppaal.adapter.mtctl.comparables.provider,
+ org.muml.uppaal.adapter.mtctl.predicates.provider,
+ org.muml.uppaal.adapter.mtctl.provider,
+ org.muml.uppaal.adapter.mtctl.quantifiers.provider,
+ org.muml.uppaal.adapter.mtctl.sets.provider
 Require-Bundle: org.eclipse.core.runtime,
  org.muml.uppaal.adapter.mtctl;visibility:=reexport,
  org.eclipse.emf.edit;visibility:=reexport,

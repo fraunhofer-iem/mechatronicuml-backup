@@ -34,7 +34,7 @@ public class ConstExprEditor extends org.muml.ape.runtime.editors.ClassPropertyE
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorTimeUnit_MtctlTab;
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorTimeUnit_MtctlTab_Editor() {
 		if (this.editorTimeUnit_MtctlTab == null) {
-			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.uppaal.adapter.mtctl.Comparables.ComparablesPackage.eINSTANCE
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.uppaal.adapter.mtctl.comparables.ComparablesPackage.eINSTANCE
 					.getConstExpr_TimeUnit();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.ComboPropertyEditor(
 					adapterFactory, feature);
@@ -55,7 +55,7 @@ public class ConstExprEditor extends org.muml.ape.runtime.editors.ClassPropertyE
 		this(tab,
 				org.muml.uppaal.adapter.mtctl.properties.util.PropertiesUtil.INSTANCE
 						.getAdapterFactory(),
-				org.muml.uppaal.adapter.mtctl.Comparables.ComparablesPackage.eINSTANCE
+				org.muml.uppaal.adapter.mtctl.comparables.ComparablesPackage.eINSTANCE
 						.getConstExpr());
 	}
 

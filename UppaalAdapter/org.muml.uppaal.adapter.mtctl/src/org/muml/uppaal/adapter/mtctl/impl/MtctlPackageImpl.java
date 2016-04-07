@@ -7,32 +7,23 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.muml.core.CorePackage;
-import org.muml.pim.behavior.BehaviorPackage;
-import org.muml.pim.component.ComponentPackage;
-import org.muml.pim.connector.ConnectorPackage;
+import org.muml.pim.PimPackage;
 import org.muml.pim.constraint.ConstraintPackage;
-import org.muml.pim.instance.InstancePackage;
-import org.muml.pim.msgtype.MsgtypePackage;
-import org.muml.pim.pattern.PatternPackage;
-import org.muml.pim.protocol.ProtocolPackage;
-import org.muml.pim.realtimestatechart.RealtimestatechartPackage;
-import org.muml.pim.types.TypesPackage;
-import org.muml.pim.valuetype.ValuetypePackage;
 import org.muml.uppaal.adapter.mtctl.Expression;
 import org.muml.uppaal.adapter.mtctl.MtctlFactory;
 import org.muml.uppaal.adapter.mtctl.MtctlPackage;
 import org.muml.uppaal.adapter.mtctl.Property;
 import org.muml.uppaal.adapter.mtctl.PropertyRepository;
-import org.muml.uppaal.adapter.mtctl.BooleanLogic.BooleanLogicPackage;
-import org.muml.uppaal.adapter.mtctl.BooleanLogic.impl.BooleanLogicPackageImpl;
-import org.muml.uppaal.adapter.mtctl.Comparables.ComparablesPackage;
-import org.muml.uppaal.adapter.mtctl.Comparables.impl.ComparablesPackageImpl;
-import org.muml.uppaal.adapter.mtctl.Predicates.PredicatesPackage;
-import org.muml.uppaal.adapter.mtctl.Predicates.impl.PredicatesPackageImpl;
-import org.muml.uppaal.adapter.mtctl.Quantifiers.QuantifiersPackage;
-import org.muml.uppaal.adapter.mtctl.Quantifiers.impl.QuantifiersPackageImpl;
-import org.muml.uppaal.adapter.mtctl.Sets.SetsPackage;
-import org.muml.uppaal.adapter.mtctl.Sets.impl.SetsPackageImpl;
+import org.muml.uppaal.adapter.mtctl.booleanlogic.BooleanlogicPackage;
+import org.muml.uppaal.adapter.mtctl.booleanlogic.impl.BooleanlogicPackageImpl;
+import org.muml.uppaal.adapter.mtctl.comparables.ComparablesPackage;
+import org.muml.uppaal.adapter.mtctl.comparables.impl.ComparablesPackageImpl;
+import org.muml.uppaal.adapter.mtctl.predicates.PredicatesPackage;
+import org.muml.uppaal.adapter.mtctl.predicates.impl.PredicatesPackageImpl;
+import org.muml.uppaal.adapter.mtctl.quantifiers.QuantifiersPackage;
+import org.muml.uppaal.adapter.mtctl.quantifiers.impl.QuantifiersPackageImpl;
+import org.muml.uppaal.adapter.mtctl.sets.SetsPackage;
+import org.muml.uppaal.adapter.mtctl.sets.impl.SetsPackageImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -109,23 +100,13 @@ public class MtctlPackageImpl extends EPackageImpl implements MtctlPackage {
 		isInited = true;
 
 		// Initialize simple dependencies
-		ComponentPackage.eINSTANCE.eClass();
-		ConstraintPackage.eINSTANCE.eClass();
-		InstancePackage.eINSTANCE.eClass();
-		ProtocolPackage.eINSTANCE.eClass();
-		RealtimestatechartPackage.eINSTANCE.eClass();
-		MsgtypePackage.eINSTANCE.eClass();
-		TypesPackage.eINSTANCE.eClass();
-		ConnectorPackage.eINSTANCE.eClass();
-		ValuetypePackage.eINSTANCE.eClass();
-		BehaviorPackage.eINSTANCE.eClass();
-		PatternPackage.eINSTANCE.eClass();
+		PimPackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
 		QuantifiersPackageImpl theQuantifiersPackage = (QuantifiersPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(QuantifiersPackage.eNS_URI) instanceof QuantifiersPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(QuantifiersPackage.eNS_URI) : QuantifiersPackage.eINSTANCE);
 		PredicatesPackageImpl thePredicatesPackage = (PredicatesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(PredicatesPackage.eNS_URI) instanceof PredicatesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PredicatesPackage.eNS_URI) : PredicatesPackage.eINSTANCE);
 		SetsPackageImpl theSetsPackage = (SetsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(SetsPackage.eNS_URI) instanceof SetsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(SetsPackage.eNS_URI) : SetsPackage.eINSTANCE);
-		BooleanLogicPackageImpl theBooleanLogicPackage = (BooleanLogicPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(BooleanLogicPackage.eNS_URI) instanceof BooleanLogicPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(BooleanLogicPackage.eNS_URI) : BooleanLogicPackage.eINSTANCE);
+		BooleanlogicPackageImpl theBooleanlogicPackage = (BooleanlogicPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(BooleanlogicPackage.eNS_URI) instanceof BooleanlogicPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(BooleanlogicPackage.eNS_URI) : BooleanlogicPackage.eINSTANCE);
 		ComparablesPackageImpl theComparablesPackage = (ComparablesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ComparablesPackage.eNS_URI) instanceof ComparablesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ComparablesPackage.eNS_URI) : ComparablesPackage.eINSTANCE);
 
 		// Create package meta-data objects
@@ -133,7 +114,7 @@ public class MtctlPackageImpl extends EPackageImpl implements MtctlPackage {
 		theQuantifiersPackage.createPackageContents();
 		thePredicatesPackage.createPackageContents();
 		theSetsPackage.createPackageContents();
-		theBooleanLogicPackage.createPackageContents();
+		theBooleanlogicPackage.createPackageContents();
 		theComparablesPackage.createPackageContents();
 
 		// Initialize created meta-data
@@ -141,7 +122,7 @@ public class MtctlPackageImpl extends EPackageImpl implements MtctlPackage {
 		theQuantifiersPackage.initializePackageContents();
 		thePredicatesPackage.initializePackageContents();
 		theSetsPackage.initializePackageContents();
-		theBooleanLogicPackage.initializePackageContents();
+		theBooleanlogicPackage.initializePackageContents();
 		theComparablesPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
@@ -262,7 +243,7 @@ public class MtctlPackageImpl extends EPackageImpl implements MtctlPackage {
 		QuantifiersPackage theQuantifiersPackage = (QuantifiersPackage)EPackage.Registry.INSTANCE.getEPackage(QuantifiersPackage.eNS_URI);
 		PredicatesPackage thePredicatesPackage = (PredicatesPackage)EPackage.Registry.INSTANCE.getEPackage(PredicatesPackage.eNS_URI);
 		SetsPackage theSetsPackage = (SetsPackage)EPackage.Registry.INSTANCE.getEPackage(SetsPackage.eNS_URI);
-		BooleanLogicPackage theBooleanLogicPackage = (BooleanLogicPackage)EPackage.Registry.INSTANCE.getEPackage(BooleanLogicPackage.eNS_URI);
+		BooleanlogicPackage theBooleanlogicPackage = (BooleanlogicPackage)EPackage.Registry.INSTANCE.getEPackage(BooleanlogicPackage.eNS_URI);
 		ComparablesPackage theComparablesPackage = (ComparablesPackage)EPackage.Registry.INSTANCE.getEPackage(ComparablesPackage.eNS_URI);
 		ConstraintPackage theConstraintPackage = (ConstraintPackage)EPackage.Registry.INSTANCE.getEPackage(ConstraintPackage.eNS_URI);
 		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
@@ -271,7 +252,7 @@ public class MtctlPackageImpl extends EPackageImpl implements MtctlPackage {
 		getESubpackages().add(theQuantifiersPackage);
 		getESubpackages().add(thePredicatesPackage);
 		getESubpackages().add(theSetsPackage);
-		getESubpackages().add(theBooleanLogicPackage);
+		getESubpackages().add(theBooleanlogicPackage);
 		getESubpackages().add(theComparablesPackage);
 
 		// Create type parameters

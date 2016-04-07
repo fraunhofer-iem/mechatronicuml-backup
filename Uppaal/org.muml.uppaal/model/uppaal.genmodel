@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
-    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/de.uni_paderborn.uppaal/src" editDirectory="/de.uni_paderborn.uppaal.edit/src"
-    editorDirectory="/de.uni_paderborn.uppaal.editor/src" modelPluginID="de.uni_paderborn.uppaal"
-    modelName="Uppaal" importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0"
-    copyrightFields="false" editPluginID="de.uni_paderborn.uppaal.edit" editorPluginID="de.uni_paderborn.uppaal.editor">
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.muml.uppaal/src" editDirectory="/org.muml.uppaal.edit/src"
+	modelPluginID="org.muml.uppaal" modelName="Uppaal" importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0"
+    copyrightFields="false">
   <foreignModel>uppaal.ecore</foreignModel>
-  <genPackages prefix="Uppaal" basePackage="de.uni_paderborn" resource="XML" disposableProviderFactory="true"
+  <genPackages prefix="Uppaal" basePackage="org.muml" resource="XML" disposableProviderFactory="true"
       ecorePackage="uppaal.ecore#/">
     <genClasses ecoreClass="uppaal.ecore#//NTA">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference uppaal.ecore#//NTA/globalDeclarations"/>
@@ -17,7 +16,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference uppaal.ecore#//NTA/chan"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference uppaal.ecore#//NTA/void"/>
     </genClasses>
-    <nestedGenPackages prefix="Core" basePackage="de.uni_paderborn.uppaal" disposableProviderFactory="true"
+    <nestedGenPackages prefix="Core" basePackage="org.muml.uppaal" disposableProviderFactory="true"
         ecorePackage="uppaal.ecore#//core">
       <genClasses image="false" ecoreClass="uppaal.ecore#//core/NamedElement">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uppaal.ecore#//core/NamedElement/name"/>
@@ -26,7 +25,7 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uppaal.ecore#//core/CommentableElement/comment"/>
       </genClasses>
     </nestedGenPackages>
-    <nestedGenPackages prefix="Types" basePackage="de.uni_paderborn.uppaal" resource="XML"
+    <nestedGenPackages prefix="Types" basePackage="org.muml.uppaal" resource="XML"
         disposableProviderFactory="true" ecorePackage="uppaal.ecore#//types">
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="uppaal.ecore#//types/BuiltInType">
         <genEnumLiterals ecoreEnumLiteral="uppaal.ecore#//types/BuiltInType/INT"/>
@@ -73,7 +72,7 @@
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference uppaal.ecore#//types/Library/types"/>
       </genClasses>
     </nestedGenPackages>
-    <nestedGenPackages prefix="Declarations" basePackage="de.uni_paderborn.uppaal"
+    <nestedGenPackages prefix="Declarations" basePackage="org.muml.uppaal"
         resource="XML" disposableProviderFactory="true" ecorePackage="uppaal.ecore#//declarations">
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="uppaal.ecore#//declarations/DataVariablePrefix">
         <genEnumLiterals ecoreEnumLiteral="uppaal.ecore#//declarations/DataVariablePrefix/NONE"/>
@@ -146,7 +145,7 @@
       <genClasses ecoreClass="uppaal.ecore#//declarations/ArrayInitializer">
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference uppaal.ecore#//declarations/ArrayInitializer/initializer"/>
       </genClasses>
-      <nestedGenPackages prefix="Global" basePackage="de.uni_paderborn.uppaal.declarations"
+      <nestedGenPackages prefix="Global" basePackage="org.muml.uppaal.declarations"
           resource="XML" disposableProviderFactory="true" ecorePackage="uppaal.ecore#//declarations/global">
         <genClasses ecoreClass="uppaal.ecore#//declarations/global/ChannelPriority">
           <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference uppaal.ecore#//declarations/global/ChannelPriority/item"/>
@@ -157,7 +156,7 @@
         </genClasses>
         <genClasses ecoreClass="uppaal.ecore#//declarations/global/DefaultChannelPriority"/>
       </nestedGenPackages>
-      <nestedGenPackages prefix="System" basePackage="de.uni_paderborn.uppaal.declarations"
+      <nestedGenPackages prefix="System" basePackage="org.muml.uppaal.declarations"
           resource="XML" disposableProviderFactory="true" ecorePackage="uppaal.ecore#//declarations/system">
         <genClasses ecoreClass="uppaal.ecore#//declarations/system/TemplateDeclaration">
           <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference uppaal.ecore#//declarations/system/TemplateDeclaration/declaredTemplate"/>
@@ -175,7 +174,7 @@
         </genClasses>
       </nestedGenPackages>
     </nestedGenPackages>
-    <nestedGenPackages prefix="Templates" basePackage="de.uni_paderborn.uppaal" resource="XML"
+    <nestedGenPackages prefix="Templates" basePackage="org.muml.uppaal" resource="XML"
         disposableProviderFactory="true" ecorePackage="uppaal.ecore#//templates">
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="uppaal.ecore#//templates/LocationKind">
         <genEnumLiterals ecoreEnumLiteral="uppaal.ecore#//templates/LocationKind/NORMAL"/>
@@ -222,7 +221,7 @@
       </genClasses>
       <genClasses ecoreClass="uppaal.ecore#//templates/Selection"/>
     </nestedGenPackages>
-    <nestedGenPackages prefix="Statements" basePackage="de.uni_paderborn.uppaal" resource="XML"
+    <nestedGenPackages prefix="Statements" basePackage="org.muml.uppaal" resource="XML"
         disposableProviderFactory="true" ecorePackage="uppaal.ecore#//statements">
       <genClasses image="false" ecoreClass="uppaal.ecore#//statements/Statement"/>
       <genClasses ecoreClass="uppaal.ecore#//statements/Block">
@@ -259,7 +258,7 @@
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference uppaal.ecore#//statements/ExpressionStatement/expression"/>
       </genClasses>
     </nestedGenPackages>
-    <nestedGenPackages prefix="Expressions" basePackage="de.uni_paderborn.uppaal"
+    <nestedGenPackages prefix="Expressions" basePackage="org.muml.uppaal"
         resource="XML" disposableProviderFactory="true" ecorePackage="uppaal.ecore#//expressions">
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="uppaal.ecore#//expressions/AssignmentOperator">
         <genEnumLiterals ecoreEnumLiteral="uppaal.ecore#//expressions/AssignmentOperator/EQUAL"/>
@@ -386,7 +385,7 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uppaal.ecore#//expressions/BitwiseExpression/operator"/>
       </genClasses>
     </nestedGenPackages>
-    <nestedGenPackages prefix="Visuals" basePackage="de.uni_paderborn.uppaal" disposableProviderFactory="true"
+    <nestedGenPackages prefix="Visuals" basePackage="org.muml.uppaal" disposableProviderFactory="true"
         ecorePackage="uppaal.ecore#//visuals">
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="uppaal.ecore#//visuals/ColorKind">
         <genEnumLiterals ecoreEnumLiteral="uppaal.ecore#//visuals/ColorKind/DEFAULT"/>

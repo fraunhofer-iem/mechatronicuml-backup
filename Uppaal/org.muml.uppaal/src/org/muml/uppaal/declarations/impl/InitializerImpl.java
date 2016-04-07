@@ -11,8 +11,6 @@ import org.muml.uppaal.declarations.Initializer;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Initializer</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */

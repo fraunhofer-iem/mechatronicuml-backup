@@ -14,10 +14,10 @@ package org.muml.uppaal.types;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.uppaal.types.PredefinedType#getType <em>Type</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.uppaal.types.TypesPackage#getPredefinedType()
  * @model

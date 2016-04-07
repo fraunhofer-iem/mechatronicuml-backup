@@ -15,12 +15,12 @@ import org.muml.uppaal.expressions.Expression;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.uppaal.statements.IfStatement#getIfExpression <em>If Expression</em>}</li>
  *   <li>{@link org.muml.uppaal.statements.IfStatement#getThenStatement <em>Then Statement</em>}</li>
  *   <li>{@link org.muml.uppaal.statements.IfStatement#getElseStatement <em>Else Statement</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.uppaal.statements.StatementsPackage#getIfStatement()
  * @model

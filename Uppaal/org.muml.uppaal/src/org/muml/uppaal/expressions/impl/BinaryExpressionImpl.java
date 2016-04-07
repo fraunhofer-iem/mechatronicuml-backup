@@ -17,11 +17,11 @@ import org.muml.uppaal.expressions.ExpressionsPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.uppaal.expressions.impl.BinaryExpressionImpl#getFirstExpr <em>First Expr</em>}</li>
  *   <li>{@link org.muml.uppaal.expressions.impl.BinaryExpressionImpl#getSecondExpr <em>Second Expr</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

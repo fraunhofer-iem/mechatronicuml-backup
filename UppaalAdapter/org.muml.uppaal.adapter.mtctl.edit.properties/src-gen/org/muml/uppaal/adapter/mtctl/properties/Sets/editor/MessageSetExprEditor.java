@@ -38,7 +38,7 @@ public class MessageSetExprEditor extends org.muml.ape.runtime.editors.ClassProp
 		this(tab,
 				org.muml.uppaal.adapter.mtctl.properties.util.PropertiesUtil.INSTANCE
 						.getAdapterFactory(),
-				org.muml.uppaal.adapter.mtctl.Sets.SetsPackage.eINSTANCE.getMessageSetExpr());
+				org.muml.uppaal.adapter.mtctl.sets.SetsPackage.eINSTANCE.getMessageSetExpr());
 	}
 
 	/**

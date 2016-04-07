@@ -38,7 +38,7 @@ public class SubinstanceSetExprEditor extends org.muml.ape.runtime.editors.Class
 		this(tab,
 				org.muml.uppaal.adapter.mtctl.properties.util.PropertiesUtil.INSTANCE
 						.getAdapterFactory(),
-				org.muml.uppaal.adapter.mtctl.Sets.SetsPackage.eINSTANCE
+				org.muml.uppaal.adapter.mtctl.sets.SetsPackage.eINSTANCE
 						.getSubinstanceSetExpr());
 	}
 

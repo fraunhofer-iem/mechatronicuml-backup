@@ -16,11 +16,11 @@ import org.muml.uppaal.expressions.IdentifierExpression;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.uppaal.templates.Synchronization#getChannelExpression <em>Channel Expression</em>}</li>
  *   <li>{@link org.muml.uppaal.templates.Synchronization#getKind <em>Kind</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.uppaal.templates.TemplatesPackage#getSynchronization()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL ChannelVariablesOnly='(not self.channelExpression.oclIsUndefined())\r\nand\r\n(not self.channelExpression.identifier.oclIsUndefined())\r\nand\r\n(self.channelExpression.identifier.oclIsKindOf(declarations::Variable))\r\nand\r\n(not self.channelExpression.identifier.oclAsType(declarations::Variable).typeDefinition.oclIsUndefined())\r\nimplies\r\nself.channelExpression.identifier.oclAsType(declarations::Variable).typeDefinition.baseType = types::BuiltInType::CHAN'"

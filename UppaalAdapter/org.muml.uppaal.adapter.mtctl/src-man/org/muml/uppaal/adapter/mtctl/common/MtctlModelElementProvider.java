@@ -35,8 +35,8 @@ import org.muml.pim.realtimestatechart.Region;
 import org.muml.pim.realtimestatechart.State;
 import org.muml.pim.realtimestatechart.Transition;
 import org.muml.uppaal.adapter.mtctl.Expression;
-import org.muml.uppaal.adapter.mtctl.Quantifiers.BoundVariable;
-import org.muml.uppaal.adapter.mtctl.Sets.InstanceSetExpr;
+import org.muml.uppaal.adapter.mtctl.quantifiers.BoundVariable;
+import org.muml.uppaal.adapter.mtctl.sets.InstanceSetExpr;
 
 public class MtctlModelElementProvider {
 	protected VerifiableElement root;

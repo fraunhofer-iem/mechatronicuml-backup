@@ -20,10 +20,10 @@ import org.muml.uppaal.expressions.IdentifierExpression;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.uppaal.declarations.global.impl.ChannelListImpl#getChannelExpression <em>Channel Expression</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

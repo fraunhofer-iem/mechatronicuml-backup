@@ -17,11 +17,11 @@ import org.muml.uppaal.declarations.system.ProgressMeasure;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.uppaal.declarations.impl.SystemDeclarationsImpl#getSystem <em>System</em>}</li>
  *   <li>{@link org.muml.uppaal.declarations.impl.SystemDeclarationsImpl#getProgressMeasure <em>Progress Measure</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

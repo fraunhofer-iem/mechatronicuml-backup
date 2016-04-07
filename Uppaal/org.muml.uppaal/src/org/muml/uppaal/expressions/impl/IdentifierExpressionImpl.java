@@ -23,11 +23,11 @@ import org.muml.uppaal.expressions.IdentifierExpression;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.uppaal.expressions.impl.IdentifierExpressionImpl#getIdentifier <em>Identifier</em>}</li>
  *   <li>{@link org.muml.uppaal.expressions.impl.IdentifierExpressionImpl#getIndex <em>Index</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

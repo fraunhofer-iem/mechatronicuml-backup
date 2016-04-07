@@ -19,11 +19,11 @@ import org.muml.uppaal.declarations.VariableDeclaration;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.uppaal.declarations.impl.ParameterImpl#getVariableDeclaration <em>Variable Declaration</em>}</li>
  *   <li>{@link org.muml.uppaal.declarations.impl.ParameterImpl#getCallType <em>Call Type</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

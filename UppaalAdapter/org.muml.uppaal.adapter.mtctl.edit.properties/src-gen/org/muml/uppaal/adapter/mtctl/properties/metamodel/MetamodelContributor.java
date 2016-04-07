@@ -20,22 +20,22 @@ public class MetamodelContributor
 	protected void fillItemProviderFactories(java.util.List<org.eclipse.emf.common.notify.AdapterFactory> factories) {
 
 		factories.add(
-				new org.muml.uppaal.adapter.mtctl.BooleanLogic.provider.BooleanLogicItemProviderAdapterFactory());
+				new org.muml.uppaal.adapter.mtctl.booleanlogic.provider.BooleanLogicItemProviderAdapterFactory());
 
 		factories.add(
-				new org.muml.uppaal.adapter.mtctl.Predicates.provider.PredicatesItemProviderAdapterFactory());
+				new org.muml.uppaal.adapter.mtctl.predicates.provider.PredicatesItemProviderAdapterFactory());
 
 		factories.add(
-				new org.muml.uppaal.adapter.mtctl.Quantifiers.provider.QuantifiersItemProviderAdapterFactory());
+				new org.muml.uppaal.adapter.mtctl.quantifiers.provider.QuantifiersItemProviderAdapterFactory());
 
 		factories.add(
 				new org.muml.uppaal.adapter.mtctl.provider.MtctlItemProviderAdapterFactory());
 
 		factories.add(
-				new org.muml.uppaal.adapter.mtctl.Comparables.provider.ComparablesItemProviderAdapterFactory());
+				new org.muml.uppaal.adapter.mtctl.comparables.provider.ComparablesItemProviderAdapterFactory());
 
 		factories.add(
-				new org.muml.uppaal.adapter.mtctl.Sets.provider.SetsItemProviderAdapterFactory());
+				new org.muml.uppaal.adapter.mtctl.sets.provider.SetsItemProviderAdapterFactory());
 
 	}
 

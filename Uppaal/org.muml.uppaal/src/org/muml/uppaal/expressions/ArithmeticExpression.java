@@ -14,10 +14,10 @@ package org.muml.uppaal.expressions;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.uppaal.expressions.ArithmeticExpression#getOperator <em>Operator</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.uppaal.expressions.ExpressionsPackage#getArithmeticExpression()
  * @model

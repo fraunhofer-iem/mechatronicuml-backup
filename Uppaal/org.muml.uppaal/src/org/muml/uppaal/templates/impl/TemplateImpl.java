@@ -24,13 +24,13 @@ import org.muml.uppaal.templates.TemplatesPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.uppaal.templates.impl.TemplateImpl#getDeclarations <em>Declarations</em>}</li>
  *   <li>{@link org.muml.uppaal.templates.impl.TemplateImpl#getLocation <em>Location</em>}</li>
  *   <li>{@link org.muml.uppaal.templates.impl.TemplateImpl#getEdge <em>Edge</em>}</li>
  *   <li>{@link org.muml.uppaal.templates.impl.TemplateImpl#getInit <em>Init</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -21,10 +21,10 @@ import org.muml.uppaal.visuals.VisualsPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.uppaal.visuals.impl.LinearElementImpl#getBendPoint <em>Bend Point</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

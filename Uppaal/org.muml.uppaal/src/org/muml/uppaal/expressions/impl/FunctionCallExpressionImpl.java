@@ -23,11 +23,11 @@ import org.muml.uppaal.expressions.FunctionCallExpression;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.uppaal.expressions.impl.FunctionCallExpressionImpl#getFunction <em>Function</em>}</li>
  *   <li>{@link org.muml.uppaal.expressions.impl.FunctionCallExpressionImpl#getArgument <em>Argument</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

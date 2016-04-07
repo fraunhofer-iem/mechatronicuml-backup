@@ -14,11 +14,11 @@ package org.muml.uppaal.declarations;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.uppaal.declarations.ChannelVariableDeclaration#isUrgent <em>Urgent</em>}</li>
  *   <li>{@link org.muml.uppaal.declarations.ChannelVariableDeclaration#isBroadcast <em>Broadcast</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.uppaal.declarations.DeclarationsPackage#getChannelVariableDeclaration()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL MatchingType='(not self.typeDefinition.oclIsUndefined())\r\nimplies\r\nself.typeDefinition.baseType = types::BuiltInType::CHAN'"

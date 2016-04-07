@@ -17,10 +17,10 @@ import org.muml.uppaal.expressions.Expression;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.uppaal.declarations.impl.ValueIndexImpl#getSizeExpression <em>Size Expression</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

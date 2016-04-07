@@ -11,8 +11,6 @@ import org.muml.uppaal.declarations.global.GlobalPackage;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Channel Priority Item</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */

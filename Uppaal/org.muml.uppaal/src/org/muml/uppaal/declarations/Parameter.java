@@ -15,11 +15,11 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.uppaal.declarations.Parameter#getVariableDeclaration <em>Variable Declaration</em>}</li>
  *   <li>{@link org.muml.uppaal.declarations.Parameter#getCallType <em>Call Type</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.uppaal.declarations.DeclarationsPackage#getParameter()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL SingleVariable='(not self.variableDeclaration.oclIsUndefined())\r\nimplies\r\nself.variableDeclaration.variable->size() <= 1'"

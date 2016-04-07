@@ -15,10 +15,10 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.uppaal.core.NamedElement#getName <em>Name</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.uppaal.core.CorePackage#getNamedElement()
  * @model abstract="true"

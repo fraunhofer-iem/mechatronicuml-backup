@@ -15,11 +15,11 @@ import org.muml.uppaal.declarations.system.ProgressMeasure;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.uppaal.declarations.SystemDeclarations#getSystem <em>System</em>}</li>
  *   <li>{@link org.muml.uppaal.declarations.SystemDeclarations#getProgressMeasure <em>Progress Measure</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.uppaal.declarations.DeclarationsPackage#getSystemDeclarations()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL UniqueTemplateNames='self.declaration->select(oclIsKindOf(system::TemplateDeclaration)).oclAsType(system::TemplateDeclaration)->collect(declaredTemplate)->isUnique(name)' NoChannelDeclarations='not self.declaration->exists(oclIsKindOf(ChannelVariableDeclaration))'"

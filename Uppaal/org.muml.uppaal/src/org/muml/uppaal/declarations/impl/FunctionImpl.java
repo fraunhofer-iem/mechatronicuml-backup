@@ -25,12 +25,12 @@ import org.muml.uppaal.types.TypeDefinition;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.uppaal.declarations.impl.FunctionImpl#getReturnType <em>Return Type</em>}</li>
  *   <li>{@link org.muml.uppaal.declarations.impl.FunctionImpl#getBlock <em>Block</em>}</li>
  *   <li>{@link org.muml.uppaal.declarations.impl.FunctionImpl#getParameter <em>Parameter</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

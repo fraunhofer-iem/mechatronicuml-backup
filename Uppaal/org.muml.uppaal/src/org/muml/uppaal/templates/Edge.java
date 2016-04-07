@@ -19,6 +19,7 @@ import org.muml.uppaal.visuals.LinearElement;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.uppaal.templates.Edge#getSource <em>Source</em>}</li>
  *   <li>{@link org.muml.uppaal.templates.Edge#getTarget <em>Target</em>}</li>
@@ -28,7 +29,6 @@ import org.muml.uppaal.visuals.LinearElement;
  *   <li>{@link org.muml.uppaal.templates.Edge#getSynchronization <em>Synchronization</em>}</li>
  *   <li>{@link org.muml.uppaal.templates.Edge#getSelection <em>Selection</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.uppaal.templates.TemplatesPackage#getEdge()
  * @model extendedMetaData="name='Edge' kind='empty'"

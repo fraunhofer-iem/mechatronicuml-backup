@@ -38,7 +38,7 @@ public class StateSetExprEditor extends org.muml.ape.runtime.editors.ClassProper
 		this(tab,
 				org.muml.uppaal.adapter.mtctl.properties.util.PropertiesUtil.INSTANCE
 						.getAdapterFactory(),
-				org.muml.uppaal.adapter.mtctl.Sets.SetsPackage.eINSTANCE.getStateSetExpr());
+				org.muml.uppaal.adapter.mtctl.sets.SetsPackage.eINSTANCE.getStateSetExpr());
 	}
 
 	/**

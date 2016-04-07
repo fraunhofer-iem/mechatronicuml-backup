@@ -41,7 +41,7 @@ public interface VerificationExtensionPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNAME = "verificationExtension";
+	String eNAME = "verificationextension";
 
 	/**
 	 * The package namespace URI.
@@ -49,7 +49,7 @@ public interface VerificationExtensionPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.fujaba.de/muml/verification/extension/0.4.0";
+	String eNS_URI = "http://www.muml.org/uppaal/adapter/extension/verificationextension/1.0.0";
 
 	/**
 	 * The package namespace name.
@@ -57,7 +57,7 @@ public interface VerificationExtensionPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_PREFIX = "verificationExtension";
+	String eNS_PREFIX = "verificationextension";
 
 	/**
 	 * The singleton instance of the package.
@@ -78,22 +78,22 @@ public interface VerificationExtensionPackage extends EPackage {
 	int COMMITTED_EXTENSION = 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMMITTED_EXTENSION__ANNOTATION = CorePackage.EXTENSION__ANNOTATION;
+	int COMMITTED_EXTENSION__ANNOTATIONS = CorePackage.EXTENSION__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMMITTED_EXTENSION__EXTENSION = CorePackage.EXTENSION__EXTENSION;
+	int COMMITTED_EXTENSION__EXTENSIONS = CorePackage.EXTENSION__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Base</b></em>' reference.
@@ -331,22 +331,22 @@ public interface VerificationExtensionPackage extends EPackage {
 	int CLOCK_BINDINGS_EXTENSION = 1;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CLOCK_BINDINGS_EXTENSION__ANNOTATION = CorePackage.EXTENSION__ANNOTATION;
+	int CLOCK_BINDINGS_EXTENSION__ANNOTATIONS = CorePackage.EXTENSION__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CLOCK_BINDINGS_EXTENSION__EXTENSION = CorePackage.EXTENSION__EXTENSION;
+	int CLOCK_BINDINGS_EXTENSION__EXTENSIONS = CorePackage.EXTENSION__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Base</b></em>' reference.
@@ -640,22 +640,22 @@ public interface VerificationExtensionPackage extends EPackage {
 	int ELEMENT_TO_VERIFY_EXTENSION = 3;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_TO_VERIFY_EXTENSION__ANNOTATION = CorePackage.EXTENSION__ANNOTATION;
+	int ELEMENT_TO_VERIFY_EXTENSION__ANNOTATIONS = CorePackage.EXTENSION__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_TO_VERIFY_EXTENSION__EXTENSION = CorePackage.EXTENSION__EXTENSION;
+	int ELEMENT_TO_VERIFY_EXTENSION__EXTENSIONS = CorePackage.EXTENSION__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Base</b></em>' reference.

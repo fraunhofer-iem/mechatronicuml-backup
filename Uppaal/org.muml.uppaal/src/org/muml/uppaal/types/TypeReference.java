@@ -14,10 +14,10 @@ package org.muml.uppaal.types;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.uppaal.types.TypeReference#getReferredType <em>Referred Type</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.uppaal.types.TypesPackage#getTypeReference()
  * @model

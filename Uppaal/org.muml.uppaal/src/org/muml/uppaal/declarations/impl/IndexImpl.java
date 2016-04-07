@@ -11,8 +11,6 @@ import org.muml.uppaal.declarations.Index;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Index</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */

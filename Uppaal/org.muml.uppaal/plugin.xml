@@ -6,6 +6,17 @@
 
 <plugin>
 
+   <extension point="org.eclipse.emf.ecore.uri_mapping">
+     <mapping
+           source="http://www.uni-paderborn.de/uppaal/stdlib/0.4.0"
+           target="platform:/plugin/org.muml.uppaal/model/stdlib.xmi">
+     </mapping>
+  </extension>
+  
+  <extension point="org.eclipse.emf.ecore.dynamic_package">
+		<resource location="model/stdlib.xmi" uri="http://www.uni-paderborn.de/uppaal/stdlib/0.4.0"/>		 	
+  </extension>
+
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated uppaal -->
       <package
@@ -141,16 +152,4 @@
             class="org.muml.uppaal.visuals.VisualsPackage"
             genModel="model/uppaal.genmodel"/>
    </extension>
-   
-   <extension point="org.eclipse.emf.ecore.uri_mapping">
-     <mapping
-           source="http://www.uni-paderborn.de/uppaal/stdlib/0.4.0"
-           target="platform:/plugin/org.muml.uppaal/model/stdlib.xmi">
-     </mapping>
-  </extension>
-  
-  <extension point="org.eclipse.emf.ecore.dynamic_package">
-		<resource location="model/stdlib.xmi" uri="http://www.uni-paderborn.de/uppaal/stdlib/0.4.0"/>		 	
-  </extension>
-
 </plugin>

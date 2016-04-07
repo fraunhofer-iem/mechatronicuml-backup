@@ -19,16 +19,8 @@ import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.muml.core.CorePackage;
-import org.muml.pim.behavior.BehaviorPackage;
-import org.muml.pim.component.ComponentPackage;
-import org.muml.pim.connector.ConnectorPackage;
-import org.muml.pim.constraint.ConstraintPackage;
-import org.muml.pim.instance.InstancePackage;
-import org.muml.pim.msgtype.MsgtypePackage;
-import org.muml.pim.protocol.ProtocolPackage;
+import org.muml.pim.PimPackage;
 import org.muml.pim.realtimestatechart.RealtimestatechartPackage;
-import org.muml.pim.types.TypesPackage;
-import org.muml.pim.valuetype.ValuetypePackage;
 import org.muml.uppaal.adapter.extension.verificationextension.ClockBinding;
 import org.muml.uppaal.adapter.extension.verificationextension.ClockBindingsExtension;
 import org.muml.uppaal.adapter.extension.verificationextension.CommittedExtension;
@@ -118,16 +110,7 @@ public class VerificationExtensionPackageImpl extends EPackageImpl implements Ve
 		isInited = true;
 
 		// Initialize simple dependencies
-		ComponentPackage.eINSTANCE.eClass();
-		ConstraintPackage.eINSTANCE.eClass();
-		InstancePackage.eINSTANCE.eClass();
-		ProtocolPackage.eINSTANCE.eClass();
-		RealtimestatechartPackage.eINSTANCE.eClass();
-		MsgtypePackage.eINSTANCE.eClass();
-		TypesPackage.eINSTANCE.eClass();
-		ConnectorPackage.eINSTANCE.eClass();
-		ValuetypePackage.eINSTANCE.eClass();
-		BehaviorPackage.eINSTANCE.eClass();
+		PimPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theVerificationExtensionPackage.createPackageContents();

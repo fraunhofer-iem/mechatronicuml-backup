@@ -14,12 +14,12 @@ package org.muml.uppaal.expressions;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.uppaal.expressions.IncrementDecrementExpression#getExpression <em>Expression</em>}</li>
  *   <li>{@link org.muml.uppaal.expressions.IncrementDecrementExpression#getPosition <em>Position</em>}</li>
  *   <li>{@link org.muml.uppaal.expressions.IncrementDecrementExpression#getOperator <em>Operator</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.uppaal.expressions.ExpressionsPackage#getIncrementDecrementExpression()
  * @model
