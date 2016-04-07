@@ -2,48 +2,17 @@
  */
 package org.muml.testlanguage.specification.impl;
 
-import java.io.ByteArrayInputStream;
-import java.io.OutputStreamWriter;
 import java.lang.reflect.InvocationTargetException;
-import java.nio.charset.StandardCharsets;
 import java.util.Map;
-
-import org.eclipse.core.runtime.IStatus;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.util.EcoreUtil.Copier;
-import org.eclipse.m2m.qvt.oml.BasicModelExtent;
-import org.eclipse.m2m.qvt.oml.ExecutionContextImpl;
-import org.eclipse.m2m.qvt.oml.TransformationExecutor;
-import org.eclipse.m2m.qvt.oml.util.Log;
-import org.eclipse.m2m.qvt.oml.util.WriterLog;
-import org.eclipse.xtext.resource.XtextResource;
-import org.eclipse.xtext.resource.XtextResourceSet;
-import org.muml.core.ExtendableElement;
-import org.muml.core.modelinstance.ModelElementCategory;
-import org.muml.core.modelinstance.RootNode;
-import org.muml.pim.protocol.CoordinationProtocol;
 import org.muml.testlanguage.specification.CheckMTCTL;
 import org.muml.testlanguage.specification.NodeSpecification;
 import org.muml.testlanguage.specification.PortType;
 import org.muml.testlanguage.specification.SpecificationPackage;
 import org.muml.testlanguage.specification.custom.ExecutionException;
-import org.muml.uppaal.adapter.mtctl.PropertyRepository;
-import org.muml.uppaal.adapter.mtctl.xtext.MtctlRuntimeModule;
-import org.muml.uppaal.adapter.mtctl.xtext.scoping.MtctlScopeProvider;
-import org.muml.uppaal.options.CoordinationProtocolOptions;
-import org.muml.uppaal.options.OptionsFactory;
-import org.muml.uppaal.options.TraceOptions;
-
-import com.google.inject.Guice;
-import com.google.inject.Inject;
-import com.google.inject.Injector;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '
@@ -146,99 +115,147 @@ public class CheckMTCTLImpl extends NodeSpecificationImpl implements CheckMTCTL 
 		}
 
 		// Copy the MUML model so we do not destroy it.
-		Copier copier = new Copier();
-		RootNode muml = (RootNode) copier.copy((RootNode) inputs.get("muml"));
+		// Copier copier = new Copier();
+
+		org.muml.core.modelinstance.RootNode muml = null;
+		org.muml.pim.protocol.CoordinationProtocol protocol = null;
+
+		org.muml.core.Extension extension = null;
+
+		org.muml.core.modelinstance.RootNode rootNode = null;
+		// EObject rootNode = null;
+
+		if (inputs.get("muml") instanceof org.muml.core.modelinstance.RootNode) {
+			rootNode = (org.muml.core.modelinstance.RootNode) inputs.get("muml");
+		} else if (inputs.get("muml") instanceof org.muml.pim.protocol.CoordinationProtocol) {
+
+			protocol = (org.muml.pim.protocol.CoordinationProtocol) inputs.get("muml");
+
+			// rootNode = (RootNode)((CoordinationProtocol)
+			// inputs.get("muml")).eContainer().eContainer();
+
+			if ((org.eclipse.emf.ecore.util.EcoreUtil
+					.getRootContainer(protocol) instanceof org.muml.core.modelinstance.RootNode)) {
+				rootNode = (org.muml.core.modelinstance.RootNode) org.eclipse.emf.ecore.util.EcoreUtil
+						.getRootContainer(protocol);
+			} else {
+				throw new ExecutionException("The coordination protocol doesn't have correct RootContainer");
+			}
+
+			extension = protocol.getExtension(
+					org.muml.uppaal.adapter.extension.verificationextension.VerificationExtensionPackage.eINSTANCE
+							.getElementToVerifyExtension());
+			if (extension == null) {
+				extension = org.muml.uppaal.adapter.extension.verificationextension.VerificationExtensionFactory.eINSTANCE
+						.createElementToVerifyExtension();
+				protocol.getExtensions().add(extension);
+			}
+		} else {
+			throw new ExecutionException("Coordination protocol is not specified.");
+		}
+
+		// Copy the MUML model so we do not destroy it.
+		org.eclipse.emf.ecore.util.EcoreUtil.Copier copier = new org.eclipse.emf.ecore.util.EcoreUtil.Copier();
+		muml = (org.muml.core.modelinstance.RootNode) copier.copy(rootNode);
 		copier.copyReferences();
 
 		// Get the CoordinationProtocol category.
-		ModelElementCategory category = null;
-		for (ModelElementCategory cur : muml.getCategories()) {
+		org.muml.core.modelinstance.ModelElementCategory category = null;
+		for (org.muml.core.modelinstance.ModelElementCategory cur : muml.getCategories()) {
 			if (cur.getKey().equals("de.uni_paderborn.fujaba.muml.protocol.category")) {
 				category = cur;
 				break;
 			}
 		}
+
 		if (category == null) {
 			throw new ExecutionException("Model does not contain a CoordinationProtocol category.");
 		}
 
 		// Look for a CoordinationProtocol that asks for a verification,
 		// otherwise just choose any.
-		CoordinationProtocol protocol = null;
-		for (ExtendableElement cur : category.getModelElements()) {
-			protocol = (CoordinationProtocol) cur;
+
+		for (org.muml.core.ExtendableElement cur : category.getModelElements()) {
+			protocol = (org.muml.pim.protocol.CoordinationProtocol) cur;
 
 			if (protocol.getExtension(
 					org.muml.uppaal.adapter.extension.verificationextension.VerificationExtensionPackage.eINSTANCE
 							.getElementToVerifyExtension()) != null) {
 				break;
 			}
+			// In case there is no protocol with extension,
+			// the last coordination protocol is used
 		}
 		if (protocol == null) {
 			throw new ExecutionException("Model does not contain a CoordinationProtocol.");
 		}
 
+		org.eclipse.emf.ecore.resource.ResourceSet resourceSet = new org.eclipse.emf.ecore.resource.impl.ResourceSetImpl();
+		resourceSet.getLoadOptions().put(org.eclipse.xtext.resource.XtextResource.OPTION_RESOLVE_ALL, Boolean.TRUE);
+		org.muml.uppaal.adapter.mtctl.xtext.scoping.MtctlScopeProvider.getInstance().setScopeForEObject(protocol);
+		org.eclipse.emf.ecore.resource.Resource resource = resourceSet
+				.createResource(org.eclipse.emf.common.util.URI.createURI("dummy:/dummy.mtctl"));
+		resource.load(new java.io.ByteArrayInputStream(properties.getBytes(java.nio.charset.StandardCharsets.UTF_8)),
+				resourceSet.getLoadOptions());
+
 		// Parse the PropertyRepository we have in the context of the protocol.
-		PropertyRepository propertyRepository = (PropertyRepository) new Object() {
-
-			@Inject
-			private XtextResourceSet resourceSet;
-
-			public EObject parse(CoordinationProtocol protocol, String properties) throws Exception {
-				// Source: http://davehofmann.de/blog/?p=101
-				Injector injector = Guice.createInjector(new MtctlRuntimeModule());
-				injector.injectMembers(this);
-				this.resourceSet.addLoadOption(XtextResource.OPTION_RESOLVE_ALL, Boolean.TRUE);
-
-				// Parse the given properties and return it.
-				MtctlScopeProvider.getInstance().setScopeForEObject(protocol);
-				Resource resource = resourceSet.createResource(URI.createURI("dummy:/dummy.mtctl"));
-				resource.load(new ByteArrayInputStream(properties.getBytes(StandardCharsets.UTF_8)),
-						resourceSet.getLoadOptions());
-				return resource.getContents().get(0);
-			}
-		}.parse(protocol, this.getProperties());
+		org.muml.uppaal.requirements.PropertyRepository propertyRepository = (org.muml.uppaal.requirements.PropertyRepository) resource
+				.getContents().get(0);
 
 		// Replace all existing PropertyRepositories by the one we just created.
 		protocol.getVerificationConstraintRepositories().clear();
-		protocol.getVerificationConstraintRepositories().add(propertyRepository);
+		protocol.getVerificationConstraintRepositories()
+				.add((org.muml.pim.constraint.VerificationConstraintRepository) propertyRepository);
 
 		// Verify for results (= apply the transformation by the MTCTL people).
-		URI realURI = URI.createURI(
+		org.eclipse.emf.common.util.URI realURI = org.eclipse.emf.common.util.URI.createURI(
 				"platform:/plugin/org.muml.uppaal.adapter.transformation/transforms/VerifiableElement2Results.qvto");
-		TransformationExecutor executor = new TransformationExecutor(realURI);
-		ExecutionContextImpl context;
-		IStatus status;
-		status = BasicDiagnostic.toIStatus(executor.loadTransformation());
+		org.eclipse.m2m.qvt.oml.TransformationExecutor executor = new org.eclipse.m2m.qvt.oml.TransformationExecutor(
+				realURI);
+		org.eclipse.m2m.qvt.oml.ExecutionContextImpl context;
+		org.eclipse.core.runtime.IStatus status;
+		status = org.eclipse.emf.common.util.BasicDiagnostic.toIStatus(executor.loadTransformation());
 		if (!status.isOK()) {
 			throw new ExecutionException(status.getMessage());
 		}
-		context = new ExecutionContextImpl();
+		context = new org.eclipse.m2m.qvt.oml.ExecutionContextImpl();
 
 		// Check if we have custom options or use the default ones.
-		CoordinationProtocolOptions options;
+		org.muml.uppaal.options.CoordinationProtocolOptions options;
 		if (inputs.containsKey("options") && inputs.get("options") != null) {
-			options = (CoordinationProtocolOptions) inputs.get("options");
+			options = (org.muml.uppaal.options.CoordinationProtocolOptions) inputs.get("options");
 		} else {
-			options = OptionsFactory.eINSTANCE.createCoordinationProtocolOptions();
-			options.setTraceOptions(TraceOptions.NONE);
+			options = org.muml.uppaal.options.OptionsFactory.eINSTANCE.createCoordinationProtocolOptions();
+			options.setTraceOptions(org.muml.uppaal.options.TraceOptions.NONE);
 		}
 
 		// Create the extents.
-		BasicModelExtent mumlExtent = new BasicModelExtent();
+		org.eclipse.m2m.qvt.oml.BasicModelExtent mumlExtent = new org.eclipse.m2m.qvt.oml.BasicModelExtent();
 		mumlExtent.add(muml);
-		BasicModelExtent optionsExtent = new BasicModelExtent();
+		org.eclipse.m2m.qvt.oml.BasicModelExtent optionsExtent = new org.eclipse.m2m.qvt.oml.BasicModelExtent();
 		optionsExtent.add(options);
-		BasicModelExtent resultExtent = new BasicModelExtent();
+		org.eclipse.m2m.qvt.oml.BasicModelExtent resultExtent = new org.eclipse.m2m.qvt.oml.BasicModelExtent();
 
 		// Execute the transformation.
-		OutputStreamWriter outStream = new OutputStreamWriter(System.out);
-		Log log = new WriterLog(outStream);
+		java.io.OutputStreamWriter outStream = new java.io.OutputStreamWriter(System.out);
+		org.eclipse.m2m.qvt.oml.util.Log log = new org.eclipse.m2m.qvt.oml.util.WriterLog(outStream);
 		context.setLog(log);
-		executor.execute(context, mumlExtent, optionsExtent, resultExtent);
+		org.eclipse.m2m.qvt.oml.ExecutionDiagnostic dia = executor.execute(context, mumlExtent, optionsExtent,
+				resultExtent);
+
+		if (extension != null) {
+			extension = null; // Is this enoguh or I should remove the extension
+								// from the list of protocol's extensions?
+		}
+
+		// Check if we succeeded.
+		if (dia.getSeverity() != org.eclipse.m2m.qvt.oml.ExecutionDiagnostic.OK) {
+			throw new ExecutionException(dia.getMessage());
+		}
 
 		// Get the output.
 		outputs.put("results", resultExtent.getContents().get(0));
+
 	}
 
 	/**

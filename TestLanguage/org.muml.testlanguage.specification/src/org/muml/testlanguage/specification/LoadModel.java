@@ -68,7 +68,7 @@ public interface LoadModel extends NodeSpecification {
 	 * @model exceptions=
 	 *        "org.muml.testlanguage.specification.ExecutionException org.muml.testlanguage.specification.DefaultException"
 	 *        inputsRequired="true" outputsRequired="true" annotation=
-	 *        "http://www.eclipse.org/emf/2002/GenModel body='\t\t// Setup the URI.\r\n\t\tURI realURI = URIConversion.convert(URI.createURI(this.getUri()));\r\n\r\n\t\t// Load the model.\r\n\t\tResourceSet resSet = new ResourceSetImpl();\r\n\t\tResource resource = resSet.getResource(realURI.trimFragment(), true);\r\n\t\tEObject result = null;\r\n\r\n\t\tif (realURI.hasFragment()) {\r\n\t\t\tresult = resource.getEObject(realURI.fragment());\r\n\t\t} else {\r\n\t\t\tresult = resource.getContents().get(0);\r\n\t\t}\r\n\r\n\t\t// Put the loaded model onto the output.\r\n\t\toutputs.put(\"model\", result);\r\n\r\n\t\treturn;'"
+	 *        "http://www.eclipse.org/emf/2002/GenModel body='// Cancel if no uri was set.\nif (this.getUri() == null || \"\".equals(this.getUri())) {\n\tthrow new ExecutionException(\"No model URI set!\");\n}\n\n// Setup the URI.\nURI realURI = URIConversion.convert(URI.createURI(this.getUri()));\n\n// Load the model.\nResourceSet resSet = new ResourceSetImpl();\nResource resource = resSet.getResource(realURI.trimFragment(), true);\n\nEObject result = null;\n\nif (realURI.hasFragment()) {\n\tresult = resource.getEObject(realURI.fragment());\n} else {\n\tresult = resource.getContents().get(0);\n}\n\n// Put the loaded model onto the output.\noutputs.put(\"model\", result);\nSystem.out.println(outputs);\nreturn;'"
 	 * @generated
 	 */
 	void execute(Map<String, Object> inputs, Map<String, Object> outputs) throws ExecutionException, Exception;

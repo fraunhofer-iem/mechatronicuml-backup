@@ -111,12 +111,18 @@ public class LoadModelImpl extends NodeSpecificationImpl implements LoadModel {
 	 */
 	public void execute(final Map<String, Object> inputs, final Map<String, Object> outputs)
 			throws ExecutionException, Exception {
+		// Cancel if no uri was set.
+		if (this.getUri() == null || "".equals(this.getUri())) {
+			throw new ExecutionException("No model URI set!");
+		}
+
 		// Setup the URI.
 		URI realURI = URIConversion.convert(URI.createURI(this.getUri()));
 
 		// Load the model.
 		ResourceSet resSet = new ResourceSetImpl();
 		Resource resource = resSet.getResource(realURI.trimFragment(), true);
+
 		EObject result = null;
 
 		if (realURI.hasFragment()) {
@@ -127,7 +133,7 @@ public class LoadModelImpl extends NodeSpecificationImpl implements LoadModel {
 
 		// Put the loaded model onto the output.
 		outputs.put("model", result);
-
+		System.out.println(outputs);
 		return;
 	}
 
