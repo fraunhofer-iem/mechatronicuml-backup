@@ -14,11 +14,11 @@ package org.muml.storydiagram.expressions.common.expressions;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.storydiagram.expressions.common.expressions.Less#getLeft <em>Left</em>}</li>
  *   <li>{@link org.muml.storydiagram.expressions.common.expressions.Less#getRight <em>Right</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.storydiagram.expressions.common.expressions.ExpressionsPackage#getLess()
  * @model
@@ -27,55 +27,55 @@ package org.muml.storydiagram.expressions.common.expressions;
 public interface Less extends CExpression
 {
   /**
-   * Returns the value of the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Left</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Left</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Left</em>' containment reference.
-   * @see #setLeft(SomeValue)
-   * @see org.muml.storydiagram.expressions.common.expressions.ExpressionsPackage#getLess_Left()
-   * @model containment="true"
-   * @generated
-   */
+	 * @return the value of the '<em>Left</em>' containment reference.
+	 * @see #setLeft(SomeValue)
+	 * @see org.muml.storydiagram.expressions.common.expressions.ExpressionsPackage#getLess_Left()
+	 * @model containment="true"
+	 * @generated
+	 */
   SomeValue getLeft();
 
   /**
-   * Sets the value of the '{@link org.muml.storydiagram.expressions.common.expressions.Less#getLeft <em>Left</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link org.muml.storydiagram.expressions.common.expressions.Less#getLeft <em>Left</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Left</em>' containment reference.
-   * @see #getLeft()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Left</em>' containment reference.
+	 * @see #getLeft()
+	 * @generated
+	 */
   void setLeft(SomeValue value);
 
   /**
-   * Returns the value of the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Right</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Right</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Right</em>' containment reference.
-   * @see #setRight(SomeValue)
-   * @see org.muml.storydiagram.expressions.common.expressions.ExpressionsPackage#getLess_Right()
-   * @model containment="true"
-   * @generated
-   */
+	 * @return the value of the '<em>Right</em>' containment reference.
+	 * @see #setRight(SomeValue)
+	 * @see org.muml.storydiagram.expressions.common.expressions.ExpressionsPackage#getLess_Right()
+	 * @model containment="true"
+	 * @generated
+	 */
   SomeValue getRight();
 
   /**
-   * Sets the value of the '{@link org.muml.storydiagram.expressions.common.expressions.Less#getRight <em>Right</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link org.muml.storydiagram.expressions.common.expressions.Less#getRight <em>Right</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Right</em>' containment reference.
-   * @see #getRight()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Right</em>' containment reference.
+	 * @see #getRight()
+	 * @generated
+	 */
   void setRight(SomeValue value);
 
 } // Less

@@ -42,7 +42,7 @@ public interface PathbridgePackage extends EPackage
     * <!-- end-user-doc -->
 	 * @generated
 	 */
-   String eNS_URI = "http://www.storydriven.org/patterns/expressions/pathbridge";
+   String eNS_URI = "http://www.muml.org/storydiagram/patterns/expressions/pathbridge/1.0";
 
    /**
 	 * The package namespace name.
@@ -71,24 +71,24 @@ public interface PathbridgePackage extends EPackage
    int PATH_EXPRESSION_BRIDGE = 0;
 
    /**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-   int PATH_EXPRESSION_BRIDGE__ANNOTATION = ExpressionsPackage.EXPRESSION__ANNOTATION;
+	int PATH_EXPRESSION_BRIDGE__ANNOTATIONS = ExpressionsPackage.EXPRESSION__ANNOTATIONS;
 
-   /**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+			/**
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-   int PATH_EXPRESSION_BRIDGE__EXTENSION = ExpressionsPackage.EXPRESSION__EXTENSION;
+	int PATH_EXPRESSION_BRIDGE__EXTENSIONS = ExpressionsPackage.EXPRESSION__EXTENSIONS;
 
-   /**
+			/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
 	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->

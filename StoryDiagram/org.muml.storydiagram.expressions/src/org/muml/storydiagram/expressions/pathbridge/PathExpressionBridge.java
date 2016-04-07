@@ -16,10 +16,10 @@ import org.storydriven.storydiagrams.expressions.pathExpressions.PathExpression;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.storydiagram.expressions.pathbridge.PathExpressionBridge#getPathExpression <em>Path Expression</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.storydiagram.expressions.pathbridge.PathbridgePackage#getPathExpressionBridge()
  * @model

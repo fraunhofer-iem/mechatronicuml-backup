@@ -9,6 +9,7 @@ package org.muml.storydiagram.expressions.pathbridge.impl;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.muml.core.CorePackage;
 import org.muml.core.expressions.ExpressionsPackage;
@@ -82,6 +83,7 @@ public class PathbridgePackageImpl extends EPackageImpl implements PathbridgePac
 
 		// Initialize simple dependencies
 		CorePackage.eINSTANCE.eClass();
+		EcorePackage.eINSTANCE.eClass();
 		PathExpressionsPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects

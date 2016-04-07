@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+import org.muml.storydiagram.expressions.pathbridge.*;
 import org.muml.storydiagram.expressions.pathbridge.PathExpressionBridge;
 import org.muml.storydiagram.expressions.pathbridge.PathbridgeFactory;
 import org.muml.storydiagram.expressions.pathbridge.PathbridgePackage;
@@ -32,7 +33,7 @@ public class PathbridgeFactoryImpl extends EFactoryImpl implements PathbridgeFac
    public static PathbridgeFactory init()
    {
 		try {
-			PathbridgeFactory thePathbridgeFactory = (PathbridgeFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.storydriven.org/patterns/expressions/pathbridge"); 
+			PathbridgeFactory thePathbridgeFactory = (PathbridgeFactory)EPackage.Registry.INSTANCE.getEFactory(PathbridgePackage.eNS_URI);
 			if (thePathbridgeFactory != null) {
 				return thePathbridgeFactory;
 			}

@@ -3,16 +3,13 @@
 
 <plugin>
 
-  <extension point="org.eclipse.emf.ecore.generated_package">
-    <package 
-       uri = "http://www.storydriven.org/modeling/expressions/common/Expressions" 
-       class = "org.muml.storydiagram.expressions.common.expressions.ExpressionsPackage"
-       genModel = "org/storydriven/modeling/expressions/common/Expressions.genmodel" /> 
-	
-  </extension>
 
-
-
-
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Expressions -->
+      <package
+            uri="http://www.muml.org/storydiagram/expressions/common/expressions/1.0"
+            class="org.muml.storydiagram.expressions.common.expressions.ExpressionsPackage"
+            genModel="src-gen/org/muml/storydiagram/expressions/common/Expressions.genmodel"/>
+   </extension>
 
 </plugin>

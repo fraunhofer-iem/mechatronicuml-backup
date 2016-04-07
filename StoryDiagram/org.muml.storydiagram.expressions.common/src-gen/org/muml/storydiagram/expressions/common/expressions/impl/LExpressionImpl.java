@@ -15,32 +15,30 @@ import org.muml.storydiagram.expressions.common.expressions.LExpression;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>LExpression</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */
 public class LExpressionImpl extends MinimalEObjectImpl.Container implements LExpression
 {
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected LExpressionImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return ExpressionsPackage.Literals.LEXPRESSION;
-  }
+		return ExpressionsPackage.Literals.LEXPRESSION;
+	}
 
 } //LExpressionImpl

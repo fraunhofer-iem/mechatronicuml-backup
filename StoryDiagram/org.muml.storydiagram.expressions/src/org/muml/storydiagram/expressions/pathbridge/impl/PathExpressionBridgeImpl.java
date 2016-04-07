@@ -22,10 +22,10 @@ import org.storydriven.storydiagrams.expressions.pathExpressions.PathExpression;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.storydiagram.expressions.pathbridge.impl.PathExpressionBridgeImpl#getPathExpression <em>Path Expression</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

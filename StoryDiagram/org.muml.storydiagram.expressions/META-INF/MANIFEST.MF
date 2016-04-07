@@ -1,11 +1,16 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: SDM Expressions
-Bundle-Vendor: storydriven.org
+Bundle-Name: %pluginName
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
 Bundle-Version: 1.0.0.qualifier
+Bundle-ClassPath: .
 Bundle-SymbolicName: org.muml.storydiagram.expressions;singleton:=true
 Bundle-ActivationPolicy: lazy
-Require-Bundle: org.muml.core;bundle-version="[1.0.0,2.0.0)";visibility:=reexport,
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.emf.ecore;visibility:=reexport,
+ org.muml.core;bundle-version="[1.0.0,2.0.0)";visibility:=reexport,
+ org.storydriven.storydiagrams.expressions;visibility:=reexport,
  org.muml.storydiagram;bundle-version="[1.0.0,2.0.0)",
  org.antlr.runtime;bundle-version="[3.2.0,4.0.0)";visibility:=reexport,
  org.eclipse.emf.mwe2.launch;bundle-version="[2.0.0,3.0.0)";resolution:=optional,
@@ -16,6 +21,8 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: org.muml.storydiagram.expressions,
  org.muml.storydiagram.expressions.formatting,
  org.muml.storydiagram.expressions.pathbridge,
+ org.muml.storydiagram.expressions.pathbridge.impl,
+ org.muml.storydiagram.expressions.pathbridge.util,
  org.muml.storydiagram.expressions.scoping,
  org.muml.storydiagram.expressions.validation,
  org.storydriven.storydiagrams.expressions.parseTreeConstruction,

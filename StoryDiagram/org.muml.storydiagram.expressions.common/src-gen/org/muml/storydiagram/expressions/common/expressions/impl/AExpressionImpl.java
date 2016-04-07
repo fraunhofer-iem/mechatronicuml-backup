@@ -14,32 +14,30 @@ import org.muml.storydiagram.expressions.common.expressions.ExpressionsPackage;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>AExpression</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */
 public class AExpressionImpl extends SomeValueImpl implements AExpression
 {
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected AExpressionImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return ExpressionsPackage.Literals.AEXPRESSION;
-  }
+		return ExpressionsPackage.Literals.AEXPRESSION;
+	}
 
 } //AExpressionImpl

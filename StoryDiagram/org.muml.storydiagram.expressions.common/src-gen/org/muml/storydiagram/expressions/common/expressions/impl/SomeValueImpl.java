@@ -14,32 +14,30 @@ import org.muml.storydiagram.expressions.common.expressions.SomeValue;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Some Value</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */
 public class SomeValueImpl extends CExpressionImpl implements SomeValue
 {
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected SomeValueImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return ExpressionsPackage.Literals.SOME_VALUE;
-  }
+		return ExpressionsPackage.Literals.SOME_VALUE;
+	}
 
 } //SomeValueImpl
