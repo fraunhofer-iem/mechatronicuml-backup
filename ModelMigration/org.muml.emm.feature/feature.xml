@@ -9,10 +9,6 @@
       %description
    </description>
 
-   <license url="">
-      
-   </license>
-
    <requires>
       <import plugin="org.eclipse.core.runtime"/>
       <import plugin="org.eclipse.emf.ecore"/>
