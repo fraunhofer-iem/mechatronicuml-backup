@@ -38,7 +38,7 @@ public class PSMMetamodelTest extends MetamodelTest {
 		// "org.storydriven.core/model/core.ecore");
 
 		Resource mumlModel = TestUtilities.loadResource(resourceSet,
-				"de.uni_paderborn.fujaba.muml.psm/model/psm.ecore");
+				"org.muml.psm/model/psm.ecore");
 
 		EcoreUtil.resolveAll(resourceSet);
 

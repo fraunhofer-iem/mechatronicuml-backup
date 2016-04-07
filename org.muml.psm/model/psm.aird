@@ -2,10 +2,10 @@
 <viewpoint:DAnalysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style" xmi:id="_fGh5EIIPEeWbNLq5psUI7A" selectedViews="_fKJNwIIPEeWbNLq5psUI7A _fKP7cIIPEeWbNLq5psUI7A _fKQigIIPEeWbNLq5psUI7A _fKWCEIIPEeWbNLq5psUI7A" version="10.0.0.201505222000">
   <semanticResources>psm.ecore</semanticResources>
   <semanticResources>http://www.eclipse.org/emf/2002/Ecore</semanticResources>
-  <semanticResources>platform:/resource/org.storydriven.core/model/core.ecore</semanticResources>
-  <semanticResources>platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore</semanticResources>
+  <semanticResources>platform:/resource/org.muml.core/model/core.ecore</semanticResources>
+  <semanticResources>platform:/resource/org.muml.pim/model/pim.ecore</semanticResources>
   <semanticResources>platform:/resource/org.muml.pm.hardware/model/hardware.ecore</semanticResources>
-  <semanticResources>platform:/resource/de.uni_paderborn.fujaba.muml.actionlanguage/model/actionlanguage.ecore</semanticResources>
+  <semanticResources>platform:/resource/org.muml.pim.actionlanguage/model/actionlanguage.ecore</semanticResources>
   <semanticResources>platform:/resource/org.muml.pm.software.platform/model/swplatform.ecore</semanticResources>
   <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_fKJNwIIPEeWbNLq5psUI7A">
     <ownedRepresentations xmi:type="diagram:DSemanticDiagram" xmi:id="_hOYWYIIPEeWbNLq5psUI7A" name="psm_realtimestatechart class diagram">
@@ -122,8 +122,8 @@
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
       </ownedDiagramElements>
       <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_oqSHQIIPEeWbNLq5psUI7A" name="RealtimeStatechart" tooltipText="" incomingEdges="_oq050IIPEeWbNLq5psUI7A" width="12" height="10">
-        <target xmi:type="ecore:EClass" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/RealtimeStatechart"/>
-        <semanticElements xmi:type="ecore:EClass" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/RealtimeStatechart"/>
+        <target xmi:type="ecore:EClass" href="platform:/resource/org.muml.pim/model/pim.ecore#//realtimestatechart/RealtimeStatechart"/>
+        <semanticElements xmi:type="ecore:EClass" href="platform:/resource/org.muml.pim/model/pim.ecore#//realtimestatechart/RealtimeStatechart"/>
         <decorations xmi:type="viewpoint:Decoration" xmi:id="_oquzMIIPEeWbNLq5psUI7A">
           <description xmi:type="description:SemanticBasedDecoration" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='External']"/>
         </decorations>
@@ -135,43 +135,43 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
         <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_oqjNAIIPEeWbNLq5psUI7A" name="/flat : EBoolean = false" tooltipText="">
-          <target xmi:type="ecore:EAttribute" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/RealtimeStatechart/flat"/>
-          <semanticElements xmi:type="ecore:EAttribute" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/RealtimeStatechart/flat"/>
+          <target xmi:type="ecore:EAttribute" href="platform:/resource/org.muml.pim/model/pim.ecore#//realtimestatechart/RealtimeStatechart/flat"/>
+          <semanticElements xmi:type="ecore:EAttribute" href="platform:/resource/org.muml.pim/model/pim.ecore#//realtimestatechart/RealtimeStatechart/flat"/>
           <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_oqm3YIIPEeWbNLq5psUI7A" labelColor="39,76,114" labelAlignment="LEFT" description="_oqlCMIIPEeWbNLq5psUI7A"/>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
         </ownedElements>
         <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_oqnecIIPEeWbNLq5psUI7A" name="/embedded : EBoolean = false" tooltipText="">
-          <target xmi:type="ecore:EAttribute" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/RealtimeStatechart/embedded"/>
-          <semanticElements xmi:type="ecore:EAttribute" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/RealtimeStatechart/embedded"/>
+          <target xmi:type="ecore:EAttribute" href="platform:/resource/org.muml.pim/model/pim.ecore#//realtimestatechart/RealtimeStatechart/embedded"/>
+          <semanticElements xmi:type="ecore:EAttribute" href="platform:/resource/org.muml.pim/model/pim.ecore#//realtimestatechart/RealtimeStatechart/embedded"/>
           <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_oqoFgIIPEeWbNLq5psUI7A" labelColor="39,76,114" labelAlignment="LEFT" description="_oqlCMIIPEeWbNLq5psUI7A"/>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
         </ownedElements>
         <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_oqoFgYIPEeWbNLq5psUI7A" name="/usesOneToManyCommunicationSchemata : EBoolean = false" tooltipText="">
-          <target xmi:type="ecore:EAttribute" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/RealtimeStatechart/usesOneToManyCommunicationSchemata"/>
-          <semanticElements xmi:type="ecore:EAttribute" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/RealtimeStatechart/usesOneToManyCommunicationSchemata"/>
+          <target xmi:type="ecore:EAttribute" href="platform:/resource/org.muml.pim/model/pim.ecore#//realtimestatechart/RealtimeStatechart/usesOneToManyCommunicationSchemata"/>
+          <semanticElements xmi:type="ecore:EAttribute" href="platform:/resource/org.muml.pim/model/pim.ecore#//realtimestatechart/RealtimeStatechart/usesOneToManyCommunicationSchemata"/>
           <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_oqoskIIPEeWbNLq5psUI7A" labelColor="39,76,114" labelAlignment="LEFT" description="_oqlCMIIPEeWbNLq5psUI7A"/>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
         </ownedElements>
         <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_oqpToIIPEeWbNLq5psUI7A" name="isSuperStatechartOf(statechart RealtimeStatechart) : EBoolean" tooltipText="isSuperStatechartOf(statechart) : EBoolean">
-          <target xmi:type="ecore:EOperation" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/RealtimeStatechart/isSuperStatechartOf"/>
-          <semanticElements xmi:type="ecore:EOperation" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/RealtimeStatechart/isSuperStatechartOf"/>
-          <semanticElements xmi:type="ecore:EParameter" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/RealtimeStatechart/isSuperStatechartOf/statechart"/>
+          <target xmi:type="ecore:EOperation" href="platform:/resource/org.muml.pim/model/pim.ecore#//realtimestatechart/RealtimeStatechart/isSuperStatechartOf"/>
+          <semanticElements xmi:type="ecore:EOperation" href="platform:/resource/org.muml.pim/model/pim.ecore#//realtimestatechart/RealtimeStatechart/isSuperStatechartOf"/>
+          <semanticElements xmi:type="ecore:EParameter" href="platform:/resource/org.muml.pim/model/pim.ecore#//realtimestatechart/RealtimeStatechart/isSuperStatechartOf/statechart"/>
           <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_oqrI0IIPEeWbNLq5psUI7A" labelAlignment="LEFT">
             <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='Operation']/@style"/>
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='Operation']"/>
         </ownedElements>
         <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_oqsW8IIPEeWbNLq5psUI7A" name="getHighestParentStatechart() : RealtimeStatechart" tooltipText="getHighestParentStatechart() : RealtimeStatechart">
-          <target xmi:type="ecore:EOperation" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/RealtimeStatechart/getHighestParentStatechart"/>
-          <semanticElements xmi:type="ecore:EOperation" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/RealtimeStatechart/getHighestParentStatechart"/>
+          <target xmi:type="ecore:EOperation" href="platform:/resource/org.muml.pim/model/pim.ecore#//realtimestatechart/RealtimeStatechart/getHighestParentStatechart"/>
+          <semanticElements xmi:type="ecore:EOperation" href="platform:/resource/org.muml.pim/model/pim.ecore#//realtimestatechart/RealtimeStatechart/getHighestParentStatechart"/>
           <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_oqs-AIIPEeWbNLq5psUI7A" labelAlignment="LEFT">
             <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='Operation']/@style"/>
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='Operation']"/>
         </ownedElements>
         <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_oqs-AYIPEeWbNLq5psUI7A" name="getPortOrRoleStatechart() : RealtimeStatechart" tooltipText="getPortOrRoleStatechart() : RealtimeStatechart">
-          <target xmi:type="ecore:EOperation" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/RealtimeStatechart/getPortOrRoleStatechart"/>
-          <semanticElements xmi:type="ecore:EOperation" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/RealtimeStatechart/getPortOrRoleStatechart"/>
+          <target xmi:type="ecore:EOperation" href="platform:/resource/org.muml.pim/model/pim.ecore#//realtimestatechart/RealtimeStatechart/getPortOrRoleStatechart"/>
+          <semanticElements xmi:type="ecore:EOperation" href="platform:/resource/org.muml.pim/model/pim.ecore#//realtimestatechart/RealtimeStatechart/getPortOrRoleStatechart"/>
           <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_oqtlEIIPEeWbNLq5psUI7A" labelAlignment="LEFT">
             <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='Operation']/@style"/>
           </ownedStyle>
@@ -191,8 +191,8 @@
         <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC%20ESupertypes']"/>
       </ownedDiagramElements>
       <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_tPEhEIIPEeWbNLq5psUI7A" name="Parameter" tooltipText="" width="12" height="10">
-        <target xmi:type="ecore:EClass" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//behavior/Parameter"/>
-        <semanticElements xmi:type="ecore:EClass" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//behavior/Parameter"/>
+        <target xmi:type="ecore:EClass" href="platform:/resource/org.muml.pim/model/pim.ecore#//behavior/Parameter"/>
+        <semanticElements xmi:type="ecore:EClass" href="platform:/resource/org.muml.pim/model/pim.ecore#//behavior/Parameter"/>
         <decorations xmi:type="viewpoint:Decoration" xmi:id="_tPNrAIIPEeWbNLq5psUI7A">
           <description xmi:type="description:SemanticBasedDecoration" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='External']"/>
         </decorations>
