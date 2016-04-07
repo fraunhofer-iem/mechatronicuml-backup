@@ -9,7 +9,6 @@ Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: org.muml.reconfiguration.expression.provider,
- org.muml.reconfiguration.instance.provider,
  org.muml.reconfiguration.protocolinstantiation.provider,
  org.muml.reconfiguration.provider,
  org.muml.reconfiguration.reconfInstance.provider,

@@ -18,6 +18,8 @@ import org.muml.core.provider.NamedElementItemProvider;
 import org.muml.reconfiguration.provider.MumlReconfigurationEditPlugin;
 import org.muml.reconfiguration.reconfInstance.ExecutorInstance;
 import org.muml.reconfiguration.reconfInstance.ReconfInstancePackage;
+import org.muml.storydiagram.activities.ActivitiesFactory;
+import org.muml.storydiagram.calls.CallsFactory;
 
 /**
  * This is the item provider adapter for a {@link org.muml.reconfiguration.reconfInstance.ExecutorInstance} object.
@@ -150,12 +152,12 @@ public class ExecutorInstanceItemProvider extends NamedElementItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSIONS,
-				 org.muml.storydiagram.activities.ActivitiesFactory.eINSTANCE.createOperationExtension()));
+				 ActivitiesFactory.eINSTANCE.createOperationExtension()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSIONS,
-				 org.muml.storydiagram.calls.CallsFactory.eINSTANCE.createParameterExtension()));
+				 CallsFactory.eINSTANCE.createParameterExtension()));
 	}
 
 	/**

@@ -23,11 +23,11 @@ public abstract class CallableEditor extends org.muml.ape.runtime.editors.ClassP
 
 			addSubCategory("org.muml.ape.category.Lists", "Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
 
-			addEditorToCategory("org.muml.ape.category.Lists", createEditorInParameter_property_tab_generalTab_Editor(),
-					false);
+			addEditorToCategory("org.muml.ape.category.Lists",
+					createEditorInParameters_property_tab_generalTab_Editor(), false);
 
 			addEditorToCategory("org.muml.ape.category.Lists",
-					createEditorOutParameter_property_tab_generalTab_Editor(), false);
+					createEditorOutParameters_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
@@ -49,11 +49,11 @@ public abstract class CallableEditor extends org.muml.ape.runtime.editors.ClassP
 
 			addSubCategory("org.muml.ape.category.Lists", "Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
 
-			addEditorToCategory("org.muml.ape.category.Lists", createEditorInParameter_property_tab_generalTab_Editor(),
-					false);
+			addEditorToCategory("org.muml.ape.category.Lists",
+					createEditorInParameters_property_tab_generalTab_Editor(), false);
 
 			addEditorToCategory("org.muml.ape.category.Lists",
-					createEditorOutParameter_property_tab_generalTab_Editor(), false);
+					createEditorOutParameters_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
@@ -63,36 +63,36 @@ public abstract class CallableEditor extends org.muml.ape.runtime.editors.ClassP
 		}
 	}
 
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorInParameter_property_tab_generalTab;
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorInParameter_property_tab_generalTab_Editor() {
-		if (this.editorInParameter_property_tab_generalTab == null) {
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorInParameters_property_tab_generalTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorInParameters_property_tab_generalTab_Editor() {
+		if (this.editorInParameters_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.storydiagram.calls.CallsPackage.eINSTANCE
-					.getCallable_InParameter();
+					.getCallable_InParameters();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.ListPropertyEditor(
 					adapterFactory, feature);
 
 			editor.setTooltipMessage(
 					"The ordered set of in parameters of this Callable. The parameters will not be contained in this reference, if parameters have to be contained in the callable, they also have to be added to the containedParameters reference.");
 
-			this.editorInParameter_property_tab_generalTab = editor;
+			this.editorInParameters_property_tab_generalTab = editor;
 		}
-		return this.editorInParameter_property_tab_generalTab;
+		return this.editorInParameters_property_tab_generalTab;
 	}
 
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorOutParameter_property_tab_generalTab;
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorOutParameter_property_tab_generalTab_Editor() {
-		if (this.editorOutParameter_property_tab_generalTab == null) {
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorOutParameters_property_tab_generalTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorOutParameters_property_tab_generalTab_Editor() {
+		if (this.editorOutParameters_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.storydiagram.calls.CallsPackage.eINSTANCE
-					.getCallable_OutParameter();
+					.getCallable_OutParameters();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.ListPropertyEditor(
 					adapterFactory, feature);
 
 			editor.setTooltipMessage(
 					"The ordered set of out parameters of this Callable. The parameters will not be contained in this reference, if parameters have to be contained in the callable, they also have to be added to the containedParameters reference.");
 
-			this.editorOutParameter_property_tab_generalTab = editor;
+			this.editorOutParameters_property_tab_generalTab = editor;
 		}
-		return this.editorOutParameter_property_tab_generalTab;
+		return this.editorOutParameters_property_tab_generalTab;
 	}
 
 }

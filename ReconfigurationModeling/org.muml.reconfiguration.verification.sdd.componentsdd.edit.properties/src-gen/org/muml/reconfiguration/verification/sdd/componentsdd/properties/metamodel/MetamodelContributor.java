@@ -18,7 +18,7 @@ public class MetamodelContributor implements org.muml.ape.runtime.metamodel.IMet
 	protected void fillItemProviderFactories(java.util.List<org.eclipse.emf.common.notify.AdapterFactory> factories) {
 
 		factories.add(
-				new org.muml.reconfiguration.verification.sdd.componentsdd.componentsdd.provider.ComponentsddItemProviderAdapterFactory());
+				new org.muml.reconfiguration.verification.sdd.componentsdd.provider.ComponentsddItemProviderAdapterFactory());
 
 	}
 

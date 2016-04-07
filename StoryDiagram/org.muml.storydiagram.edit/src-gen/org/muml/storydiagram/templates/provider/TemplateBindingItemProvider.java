@@ -21,7 +21,10 @@ import org.muml.core.expressions.ExpressionsFactory;
 import org.muml.core.expressions.common.CommonExpressionsFactory;
 import org.muml.core.provider.ExtendableElementItemProvider;
 import org.muml.storydiagram.activities.ActivitiesFactory;
+import org.muml.storydiagram.activities.expressions.ActivitiesExpressionsFactory;
 import org.muml.storydiagram.calls.CallsFactory;
+import org.muml.storydiagram.calls.expressions.CallsExpressionsFactory;
+import org.muml.storydiagram.patterns.expressions.PatternsExpressionsFactory;
 import org.muml.storydiagram.provider.StorydiagramsEditPlugin;
 import org.muml.storydiagram.templates.TemplateBinding;
 import org.muml.storydiagram.templates.TemplatesFactory;
@@ -121,7 +124,7 @@ public class TemplateBindingItemProvider extends ExtendableElementItemProvider {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(TemplatesPackage.Literals.TEMPLATE_BINDING__BINDING_EXPRESSION);
-			childrenFeatures.add(TemplatesPackage.Literals.TEMPLATE_BINDING__PROPERTY_BINDING);
+			childrenFeatures.add(TemplatesPackage.Literals.TEMPLATE_BINDING__PROPERTY_BINDINGS);
 		}
 		return childrenFeatures;
 	}
@@ -150,7 +153,7 @@ public class TemplateBindingItemProvider extends ExtendableElementItemProvider {
 
 		switch (notification.getFeatureID(TemplateBinding.class)) {
 			case TemplatesPackage.TEMPLATE_BINDING__BINDING_EXPRESSION:
-			case TemplatesPackage.TEMPLATE_BINDING__PROPERTY_BINDING:
+			case TemplatesPackage.TEMPLATE_BINDING__PROPERTY_BINDINGS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -195,37 +198,37 @@ public class TemplateBindingItemProvider extends ExtendableElementItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(TemplatesPackage.Literals.TEMPLATE_BINDING__BINDING_EXPRESSION,
-				 org.muml.storydiagram.activities.expressions.ExpressionsFactory.eINSTANCE.createExceptionVariableExpression()));
+				 ActivitiesExpressionsFactory.eINSTANCE.createExceptionVariableExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(TemplatesPackage.Literals.TEMPLATE_BINDING__BINDING_EXPRESSION,
-				 org.muml.storydiagram.calls.expressions.ExpressionsFactory.eINSTANCE.createMethodCallExpression()));
+				 CallsExpressionsFactory.eINSTANCE.createMethodCallExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(TemplatesPackage.Literals.TEMPLATE_BINDING__BINDING_EXPRESSION,
-				 org.muml.storydiagram.calls.expressions.ExpressionsFactory.eINSTANCE.createParameterExpression()));
+				 CallsExpressionsFactory.eINSTANCE.createParameterExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(TemplatesPackage.Literals.TEMPLATE_BINDING__BINDING_EXPRESSION,
-				 org.muml.storydiagram.patterns.expressions.ExpressionsFactory.eINSTANCE.createAttributeValueExpression()));
+				 PatternsExpressionsFactory.eINSTANCE.createAttributeValueExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(TemplatesPackage.Literals.TEMPLATE_BINDING__BINDING_EXPRESSION,
-				 org.muml.storydiagram.patterns.expressions.ExpressionsFactory.eINSTANCE.createObjectVariableExpression()));
+				 PatternsExpressionsFactory.eINSTANCE.createObjectVariableExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(TemplatesPackage.Literals.TEMPLATE_BINDING__BINDING_EXPRESSION,
-				 org.muml.storydiagram.patterns.expressions.ExpressionsFactory.eINSTANCE.createCollectionSizeExpression()));
+				 PatternsExpressionsFactory.eINSTANCE.createCollectionSizeExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(TemplatesPackage.Literals.TEMPLATE_BINDING__BINDING_EXPRESSION,
-				 org.muml.storydiagram.patterns.expressions.ExpressionsFactory.eINSTANCE.createPrimitiveVariableExpression()));
+				 PatternsExpressionsFactory.eINSTANCE.createPrimitiveVariableExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -259,7 +262,7 @@ public class TemplateBindingItemProvider extends ExtendableElementItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(TemplatesPackage.Literals.TEMPLATE_BINDING__PROPERTY_BINDING,
+				(TemplatesPackage.Literals.TEMPLATE_BINDING__PROPERTY_BINDINGS,
 				 TemplatesFactory.eINSTANCE.createPropertyBinding()));
 	}
 

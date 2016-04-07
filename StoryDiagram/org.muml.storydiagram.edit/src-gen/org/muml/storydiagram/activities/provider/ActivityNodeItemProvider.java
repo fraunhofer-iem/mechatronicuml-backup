@@ -53,8 +53,8 @@ public class ActivityNodeItemProvider extends NamedElementItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addCommentPropertyDescriptor(object);
-			addOutgoingPropertyDescriptor(object);
-			addIncomingPropertyDescriptor(object);
+			addOutgoingsPropertyDescriptor(object);
+			addIncomingsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -82,19 +82,19 @@ public class ActivityNodeItemProvider extends NamedElementItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Outgoing feature.
+	 * This adds a property descriptor for the Outgoings feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addOutgoingPropertyDescriptor(Object object) {
+	protected void addOutgoingsPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ActivityNode_outgoing_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ActivityNode_outgoing_feature", "_UI_ActivityNode_type"),
-				 ActivitiesPackage.Literals.ACTIVITY_NODE__OUTGOING,
+				 getString("_UI_ActivityNode_outgoings_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ActivityNode_outgoings_feature", "_UI_ActivityNode_type"),
+				 ActivitiesPackage.Literals.ACTIVITY_NODE__OUTGOINGS,
 				 true,
 				 false,
 				 true,
@@ -104,19 +104,19 @@ public class ActivityNodeItemProvider extends NamedElementItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Incoming feature.
+	 * This adds a property descriptor for the Incomings feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addIncomingPropertyDescriptor(Object object) {
+	protected void addIncomingsPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ActivityNode_incoming_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ActivityNode_incoming_feature", "_UI_ActivityNode_type"),
-				 ActivitiesPackage.Literals.ACTIVITY_NODE__INCOMING,
+				 getString("_UI_ActivityNode_incomings_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ActivityNode_incomings_feature", "_UI_ActivityNode_type"),
+				 ActivitiesPackage.Literals.ACTIVITY_NODE__INCOMINGS,
 				 true,
 				 false,
 				 true,

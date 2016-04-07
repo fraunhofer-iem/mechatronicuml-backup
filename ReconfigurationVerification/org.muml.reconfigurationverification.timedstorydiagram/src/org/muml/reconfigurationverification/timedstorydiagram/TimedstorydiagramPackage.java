@@ -210,22 +210,22 @@ public interface TimedstorydiagramPackage extends EPackage {
 	int TIMED_STORY_DIAGRAM__COMMENT = ActivitiesPackage.ACTIVITY__COMMENT;
 
 	/**
-	 * The feature id for the '<em><b>In Parameter</b></em>' reference list.
+	 * The feature id for the '<em><b>In Parameters</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TIMED_STORY_DIAGRAM__IN_PARAMETER = ActivitiesPackage.ACTIVITY__IN_PARAMETER;
+	int TIMED_STORY_DIAGRAM__IN_PARAMETERS = ActivitiesPackage.ACTIVITY__IN_PARAMETERS;
 
 	/**
-	 * The feature id for the '<em><b>Out Parameter</b></em>' reference list.
+	 * The feature id for the '<em><b>Out Parameters</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TIMED_STORY_DIAGRAM__OUT_PARAMETER = ActivitiesPackage.ACTIVITY__OUT_PARAMETER;
+	int TIMED_STORY_DIAGRAM__OUT_PARAMETERS = ActivitiesPackage.ACTIVITY__OUT_PARAMETERS;
 
 	/**
 	 * The feature id for the '<em><b>Contained Parameters</b></em>' containment reference list.
@@ -255,13 +255,13 @@ public interface TimedstorydiagramPackage extends EPackage {
 	int TIMED_STORY_DIAGRAM__OWNING_OPERATION = ActivitiesPackage.ACTIVITY__OWNING_OPERATION;
 
 	/**
-	 * The feature id for the '<em><b>Owned Activity Edge</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Owned Activity Edges</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TIMED_STORY_DIAGRAM__OWNED_ACTIVITY_EDGE = ActivitiesPackage.ACTIVITY__OWNED_ACTIVITY_EDGE;
+	int TIMED_STORY_DIAGRAM__OWNED_ACTIVITY_EDGES = ActivitiesPackage.ACTIVITY__OWNED_ACTIVITY_EDGES;
 
 	/**
 	 * The feature id for the '<em><b>Precondition</b></em>' reference.
@@ -273,13 +273,13 @@ public interface TimedstorydiagramPackage extends EPackage {
 	int TIMED_STORY_DIAGRAM__PRECONDITION = ActivitiesPackage.ACTIVITY__PRECONDITION;
 
 	/**
-	 * The feature id for the '<em><b>Owned Activity Node</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Owned Activity Nodes</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TIMED_STORY_DIAGRAM__OWNED_ACTIVITY_NODE = ActivitiesPackage.ACTIVITY__OWNED_ACTIVITY_NODE;
+	int TIMED_STORY_DIAGRAM__OWNED_ACTIVITY_NODES = ActivitiesPackage.ACTIVITY__OWNED_ACTIVITY_NODES;
 
 	/**
 	 * The feature id for the '<em><b>Clock Inst Constraint</b></em>' containment reference list.
@@ -364,22 +364,22 @@ public interface TimedstorydiagramPackage extends EPackage {
 	int INVARIANT_STORY_DIAGRAM__COMMENT = ActivitiesPackage.ACTIVITY__COMMENT;
 
 	/**
-	 * The feature id for the '<em><b>In Parameter</b></em>' reference list.
+	 * The feature id for the '<em><b>In Parameters</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INVARIANT_STORY_DIAGRAM__IN_PARAMETER = ActivitiesPackage.ACTIVITY__IN_PARAMETER;
+	int INVARIANT_STORY_DIAGRAM__IN_PARAMETERS = ActivitiesPackage.ACTIVITY__IN_PARAMETERS;
 
 	/**
-	 * The feature id for the '<em><b>Out Parameter</b></em>' reference list.
+	 * The feature id for the '<em><b>Out Parameters</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INVARIANT_STORY_DIAGRAM__OUT_PARAMETER = ActivitiesPackage.ACTIVITY__OUT_PARAMETER;
+	int INVARIANT_STORY_DIAGRAM__OUT_PARAMETERS = ActivitiesPackage.ACTIVITY__OUT_PARAMETERS;
 
 	/**
 	 * The feature id for the '<em><b>Contained Parameters</b></em>' containment reference list.
@@ -409,13 +409,13 @@ public interface TimedstorydiagramPackage extends EPackage {
 	int INVARIANT_STORY_DIAGRAM__OWNING_OPERATION = ActivitiesPackage.ACTIVITY__OWNING_OPERATION;
 
 	/**
-	 * The feature id for the '<em><b>Owned Activity Edge</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Owned Activity Edges</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INVARIANT_STORY_DIAGRAM__OWNED_ACTIVITY_EDGE = ActivitiesPackage.ACTIVITY__OWNED_ACTIVITY_EDGE;
+	int INVARIANT_STORY_DIAGRAM__OWNED_ACTIVITY_EDGES = ActivitiesPackage.ACTIVITY__OWNED_ACTIVITY_EDGES;
 
 	/**
 	 * The feature id for the '<em><b>Precondition</b></em>' reference.
@@ -427,13 +427,13 @@ public interface TimedstorydiagramPackage extends EPackage {
 	int INVARIANT_STORY_DIAGRAM__PRECONDITION = ActivitiesPackage.ACTIVITY__PRECONDITION;
 
 	/**
-	 * The feature id for the '<em><b>Owned Activity Node</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Owned Activity Nodes</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INVARIANT_STORY_DIAGRAM__OWNED_ACTIVITY_NODE = ActivitiesPackage.ACTIVITY__OWNED_ACTIVITY_NODE;
+	int INVARIANT_STORY_DIAGRAM__OWNED_ACTIVITY_NODES = ActivitiesPackage.ACTIVITY__OWNED_ACTIVITY_NODES;
 
 	/**
 	 * The feature id for the '<em><b>Clock Inst Constraint</b></em>' containment reference.
@@ -491,22 +491,22 @@ public interface TimedstorydiagramPackage extends EPackage {
 	int CLOCK_INSTANCE_STORY_DIAGRAM__COMMENT = ActivitiesPackage.ACTIVITY__COMMENT;
 
 	/**
-	 * The feature id for the '<em><b>In Parameter</b></em>' reference list.
+	 * The feature id for the '<em><b>In Parameters</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CLOCK_INSTANCE_STORY_DIAGRAM__IN_PARAMETER = ActivitiesPackage.ACTIVITY__IN_PARAMETER;
+	int CLOCK_INSTANCE_STORY_DIAGRAM__IN_PARAMETERS = ActivitiesPackage.ACTIVITY__IN_PARAMETERS;
 
 	/**
-	 * The feature id for the '<em><b>Out Parameter</b></em>' reference list.
+	 * The feature id for the '<em><b>Out Parameters</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CLOCK_INSTANCE_STORY_DIAGRAM__OUT_PARAMETER = ActivitiesPackage.ACTIVITY__OUT_PARAMETER;
+	int CLOCK_INSTANCE_STORY_DIAGRAM__OUT_PARAMETERS = ActivitiesPackage.ACTIVITY__OUT_PARAMETERS;
 
 	/**
 	 * The feature id for the '<em><b>Contained Parameters</b></em>' containment reference list.
@@ -536,13 +536,13 @@ public interface TimedstorydiagramPackage extends EPackage {
 	int CLOCK_INSTANCE_STORY_DIAGRAM__OWNING_OPERATION = ActivitiesPackage.ACTIVITY__OWNING_OPERATION;
 
 	/**
-	 * The feature id for the '<em><b>Owned Activity Edge</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Owned Activity Edges</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CLOCK_INSTANCE_STORY_DIAGRAM__OWNED_ACTIVITY_EDGE = ActivitiesPackage.ACTIVITY__OWNED_ACTIVITY_EDGE;
+	int CLOCK_INSTANCE_STORY_DIAGRAM__OWNED_ACTIVITY_EDGES = ActivitiesPackage.ACTIVITY__OWNED_ACTIVITY_EDGES;
 
 	/**
 	 * The feature id for the '<em><b>Precondition</b></em>' reference.
@@ -554,13 +554,13 @@ public interface TimedstorydiagramPackage extends EPackage {
 	int CLOCK_INSTANCE_STORY_DIAGRAM__PRECONDITION = ActivitiesPackage.ACTIVITY__PRECONDITION;
 
 	/**
-	 * The feature id for the '<em><b>Owned Activity Node</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Owned Activity Nodes</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CLOCK_INSTANCE_STORY_DIAGRAM__OWNED_ACTIVITY_NODE = ActivitiesPackage.ACTIVITY__OWNED_ACTIVITY_NODE;
+	int CLOCK_INSTANCE_STORY_DIAGRAM__OWNED_ACTIVITY_NODES = ActivitiesPackage.ACTIVITY__OWNED_ACTIVITY_NODES;
 
 	/**
 	 * The number of structural features of the '<em>Clock Instance Story Diagram</em>' class.
@@ -773,22 +773,22 @@ public interface TimedstorydiagramPackage extends EPackage {
 	int CLOCK_INSTANCE_VARIABLE__BINDING_EXPRESSION = PatternsPackage.OBJECT_VARIABLE__BINDING_EXPRESSION;
 
 	/**
-	 * The feature id for the '<em><b>Constraint</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Constraints</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CLOCK_INSTANCE_VARIABLE__CONSTRAINT = PatternsPackage.OBJECT_VARIABLE__CONSTRAINT;
+	int CLOCK_INSTANCE_VARIABLE__CONSTRAINTS = PatternsPackage.OBJECT_VARIABLE__CONSTRAINTS;
 
 	/**
-	 * The feature id for the '<em><b>Incoming Link</b></em>' reference list.
+	 * The feature id for the '<em><b>Incoming Links</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CLOCK_INSTANCE_VARIABLE__INCOMING_LINK = PatternsPackage.OBJECT_VARIABLE__INCOMING_LINK;
+	int CLOCK_INSTANCE_VARIABLE__INCOMING_LINKS = PatternsPackage.OBJECT_VARIABLE__INCOMING_LINKS;
 
 	/**
 	 * The feature id for the '<em><b>Outgoing Link</b></em>' reference list.
@@ -827,13 +827,13 @@ public interface TimedstorydiagramPackage extends EPackage {
 	int CLOCK_INSTANCE_VARIABLE__BINDING_OPERATOR = PatternsPackage.OBJECT_VARIABLE__BINDING_OPERATOR;
 
 	/**
-	 * The feature id for the '<em><b>Attribute Assignment</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Attribute Assignments</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CLOCK_INSTANCE_VARIABLE__ATTRIBUTE_ASSIGNMENT = PatternsPackage.OBJECT_VARIABLE__ATTRIBUTE_ASSIGNMENT;
+	int CLOCK_INSTANCE_VARIABLE__ATTRIBUTE_ASSIGNMENTS = PatternsPackage.OBJECT_VARIABLE__ATTRIBUTE_ASSIGNMENTS;
 
 	/**
 	 * The feature id for the '<em><b>Classifier</b></em>' reference.
@@ -901,31 +901,31 @@ public interface TimedstorydiagramPackage extends EPackage {
 	int TIMED_STORY_PATTERN__COMMENT = PatternsPackage.STORY_PATTERN__COMMENT;
 
 	/**
-	 * The feature id for the '<em><b>Variable</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Variables</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TIMED_STORY_PATTERN__VARIABLE = PatternsPackage.STORY_PATTERN__VARIABLE;
+	int TIMED_STORY_PATTERN__VARIABLES = PatternsPackage.STORY_PATTERN__VARIABLES;
 
 	/**
-	 * The feature id for the '<em><b>Constraint</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Constraints</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TIMED_STORY_PATTERN__CONSTRAINT = PatternsPackage.STORY_PATTERN__CONSTRAINT;
+	int TIMED_STORY_PATTERN__CONSTRAINTS = PatternsPackage.STORY_PATTERN__CONSTRAINTS;
 
 	/**
-	 * The feature id for the '<em><b>Link Variable</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Link Variables</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TIMED_STORY_PATTERN__LINK_VARIABLE = PatternsPackage.STORY_PATTERN__LINK_VARIABLE;
+	int TIMED_STORY_PATTERN__LINK_VARIABLES = PatternsPackage.STORY_PATTERN__LINK_VARIABLES;
 
 	/**
 	 * The feature id for the '<em><b>Parent Pattern</b></em>' container reference.
@@ -937,13 +937,13 @@ public interface TimedstorydiagramPackage extends EPackage {
 	int TIMED_STORY_PATTERN__PARENT_PATTERN = PatternsPackage.STORY_PATTERN__PARENT_PATTERN;
 
 	/**
-	 * The feature id for the '<em><b>Contained Pattern</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Contained Patterns</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TIMED_STORY_PATTERN__CONTAINED_PATTERN = PatternsPackage.STORY_PATTERN__CONTAINED_PATTERN;
+	int TIMED_STORY_PATTERN__CONTAINED_PATTERNS = PatternsPackage.STORY_PATTERN__CONTAINED_PATTERNS;
 
 	/**
 	 * The feature id for the '<em><b>Binding Semantics</b></em>' attribute.
@@ -1029,13 +1029,13 @@ public interface TimedstorydiagramPackage extends EPackage {
 	int TIMED_ACTIVITY_NODE__COMMENT = ActivitiesPackage.MODIFYING_STORY_NODE__COMMENT;
 
 	/**
-	 * The feature id for the '<em><b>Outgoing</b></em>' reference list.
+	 * The feature id for the '<em><b>Outgoings</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TIMED_ACTIVITY_NODE__OUTGOING = ActivitiesPackage.MODIFYING_STORY_NODE__OUTGOING;
+	int TIMED_ACTIVITY_NODE__OUTGOINGS = ActivitiesPackage.MODIFYING_STORY_NODE__OUTGOINGS;
 
 	/**
 	 * The feature id for the '<em><b>Owning Activity</b></em>' container reference.
@@ -1056,13 +1056,13 @@ public interface TimedstorydiagramPackage extends EPackage {
 	int TIMED_ACTIVITY_NODE__OWNING_ACTIVITY_NODE = ActivitiesPackage.MODIFYING_STORY_NODE__OWNING_ACTIVITY_NODE;
 
 	/**
-	 * The feature id for the '<em><b>Incoming</b></em>' reference list.
+	 * The feature id for the '<em><b>Incomings</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TIMED_ACTIVITY_NODE__INCOMING = ActivitiesPackage.MODIFYING_STORY_NODE__INCOMING;
+	int TIMED_ACTIVITY_NODE__INCOMINGS = ActivitiesPackage.MODIFYING_STORY_NODE__INCOMINGS;
 
 	/**
 	 * The feature id for the '<em><b>For Each</b></em>' attribute.

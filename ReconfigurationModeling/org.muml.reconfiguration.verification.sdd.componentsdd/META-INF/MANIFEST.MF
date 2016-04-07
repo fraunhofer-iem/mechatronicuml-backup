@@ -9,10 +9,7 @@ Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: org.muml.reconfiguration.verification.sdd.componentsdd,
  org.muml.reconfiguration.verification.sdd.componentsdd.impl,
- org.muml.reconfiguration.verification.sdd.componentsdd.util,
- org.muml.reconfiguration.verification.sdd.componentsdd.componentsdd,
- org.muml.reconfiguration.verification.sdd.componentsdd.componentsdd.impl,
- org.muml.reconfiguration.verification.sdd.componentsdd.componentsdd.util
+ org.muml.reconfiguration.verification.sdd.componentsdd.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.muml.reconfiguration.componentstorypattern;visibility:=reexport,

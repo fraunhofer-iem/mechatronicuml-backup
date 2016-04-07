@@ -18,8 +18,8 @@ import org.muml.core.CorePackage;
 import org.muml.core.expressions.provider.ExpressionItemProvider;
 import org.muml.storydiagram.activities.ActivitiesFactory;
 import org.muml.storydiagram.calls.CallsFactory;
-import org.muml.storydiagram.patterns.expressions.ExpressionsPackage;
 import org.muml.storydiagram.patterns.expressions.ObjectVariableExpression;
+import org.muml.storydiagram.patterns.expressions.PatternsExpressionsPackage;
 import org.muml.storydiagram.provider.StorydiagramsEditPlugin;
 
 /**
@@ -69,7 +69,7 @@ public class ObjectVariableExpressionItemProvider extends
 				 getResourceLocator(),
 				 getString("_UI_ObjectVariableExpression_object_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ObjectVariableExpression_object_feature", "_UI_ObjectVariableExpression_type"),
-				 ExpressionsPackage.Literals.OBJECT_VARIABLE_EXPRESSION__OBJECT,
+				 PatternsExpressionsPackage.Literals.OBJECT_VARIABLE_EXPRESSION__OBJECT,
 				 true,
 				 false,
 				 true,

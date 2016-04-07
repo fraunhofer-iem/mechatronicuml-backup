@@ -377,13 +377,13 @@ public interface ComponentstorydiagramPackage extends EPackage {
 	int COMPONENT_STORY_NODE__COMMENT = ActivitiesPackage.ACTIVITY_NODE__COMMENT;
 
 	/**
-	 * The feature id for the '<em><b>Outgoing</b></em>' reference list.
+	 * The feature id for the '<em><b>Outgoings</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_STORY_NODE__OUTGOING = ActivitiesPackage.ACTIVITY_NODE__OUTGOING;
+	int COMPONENT_STORY_NODE__OUTGOINGS = ActivitiesPackage.ACTIVITY_NODE__OUTGOINGS;
 
 	/**
 	 * The feature id for the '<em><b>Owning Activity</b></em>' container reference.
@@ -404,13 +404,13 @@ public interface ComponentstorydiagramPackage extends EPackage {
 	int COMPONENT_STORY_NODE__OWNING_ACTIVITY_NODE = ActivitiesPackage.ACTIVITY_NODE__OWNING_ACTIVITY_NODE;
 
 	/**
-	 * The feature id for the '<em><b>Incoming</b></em>' reference list.
+	 * The feature id for the '<em><b>Incomings</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_STORY_NODE__INCOMING = ActivitiesPackage.ACTIVITY_NODE__INCOMING;
+	int COMPONENT_STORY_NODE__INCOMINGS = ActivitiesPackage.ACTIVITY_NODE__INCOMINGS;
 
 	/**
 	 * The feature id for the '<em><b>Component Story Pattern</b></em>' containment reference.
@@ -666,13 +666,13 @@ public interface ComponentstorydiagramPackage extends EPackage {
 	int CONTROLLER_EXCHANGE_NODE__COMMENT = ActivitiesPackage.ACTIVITY_NODE__COMMENT;
 
 	/**
-	 * The feature id for the '<em><b>Outgoing</b></em>' reference list.
+	 * The feature id for the '<em><b>Outgoings</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROLLER_EXCHANGE_NODE__OUTGOING = ActivitiesPackage.ACTIVITY_NODE__OUTGOING;
+	int CONTROLLER_EXCHANGE_NODE__OUTGOINGS = ActivitiesPackage.ACTIVITY_NODE__OUTGOINGS;
 
 	/**
 	 * The feature id for the '<em><b>Owning Activity</b></em>' container reference.
@@ -693,13 +693,13 @@ public interface ComponentstorydiagramPackage extends EPackage {
 	int CONTROLLER_EXCHANGE_NODE__OWNING_ACTIVITY_NODE = ActivitiesPackage.ACTIVITY_NODE__OWNING_ACTIVITY_NODE;
 
 	/**
-	 * The feature id for the '<em><b>Incoming</b></em>' reference list.
+	 * The feature id for the '<em><b>Incomings</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROLLER_EXCHANGE_NODE__INCOMING = ActivitiesPackage.ACTIVITY_NODE__INCOMING;
+	int CONTROLLER_EXCHANGE_NODE__INCOMINGS = ActivitiesPackage.ACTIVITY_NODE__INCOMINGS;
 
 	/**
 	 * The feature id for the '<em><b>Deadline</b></em>' containment reference.

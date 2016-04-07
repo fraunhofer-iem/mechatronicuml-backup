@@ -120,10 +120,10 @@ public class StoryPatternItemProvider extends CommentableElementItemProvider {
 			Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(PatternsPackage.Literals.STORY_PATTERN__VARIABLE);
-			childrenFeatures.add(PatternsPackage.Literals.STORY_PATTERN__CONSTRAINT);
-			childrenFeatures.add(PatternsPackage.Literals.STORY_PATTERN__LINK_VARIABLE);
-			childrenFeatures.add(PatternsPackage.Literals.STORY_PATTERN__CONTAINED_PATTERN);
+			childrenFeatures.add(PatternsPackage.Literals.STORY_PATTERN__VARIABLES);
+			childrenFeatures.add(PatternsPackage.Literals.STORY_PATTERN__CONSTRAINTS);
+			childrenFeatures.add(PatternsPackage.Literals.STORY_PATTERN__LINK_VARIABLES);
+			childrenFeatures.add(PatternsPackage.Literals.STORY_PATTERN__CONTAINED_PATTERNS);
 			childrenFeatures.add(PatternsPackage.Literals.STORY_PATTERN__TEMPLATE_SIGNATURE);
 		}
 		return childrenFeatures;
@@ -158,10 +158,10 @@ public class StoryPatternItemProvider extends CommentableElementItemProvider {
 			case PatternsPackage.STORY_PATTERN__BINDING_SEMANTICS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case PatternsPackage.STORY_PATTERN__VARIABLE:
-			case PatternsPackage.STORY_PATTERN__CONSTRAINT:
-			case PatternsPackage.STORY_PATTERN__LINK_VARIABLE:
-			case PatternsPackage.STORY_PATTERN__CONTAINED_PATTERN:
+			case PatternsPackage.STORY_PATTERN__VARIABLES:
+			case PatternsPackage.STORY_PATTERN__CONSTRAINTS:
+			case PatternsPackage.STORY_PATTERN__LINK_VARIABLES:
+			case PatternsPackage.STORY_PATTERN__CONTAINED_PATTERNS:
 			case PatternsPackage.STORY_PATTERN__TEMPLATE_SIGNATURE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
@@ -206,52 +206,52 @@ public class StoryPatternItemProvider extends CommentableElementItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(PatternsPackage.Literals.STORY_PATTERN__VARIABLE,
+				(PatternsPackage.Literals.STORY_PATTERN__VARIABLES,
 				 PatternsFactory.eINSTANCE.createObjectVariable()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(PatternsPackage.Literals.STORY_PATTERN__VARIABLE,
+				(PatternsPackage.Literals.STORY_PATTERN__VARIABLES,
 				 PatternsFactory.eINSTANCE.createCollectionVariable()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(PatternsPackage.Literals.STORY_PATTERN__VARIABLE,
+				(PatternsPackage.Literals.STORY_PATTERN__VARIABLES,
 				 PatternsFactory.eINSTANCE.createPrimitiveVariable()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(PatternsPackage.Literals.STORY_PATTERN__CONSTRAINT,
+				(PatternsPackage.Literals.STORY_PATTERN__CONSTRAINTS,
 				 PatternsFactory.eINSTANCE.createConstraint()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(PatternsPackage.Literals.STORY_PATTERN__LINK_VARIABLE,
+				(PatternsPackage.Literals.STORY_PATTERN__LINK_VARIABLES,
 				 PatternsFactory.eINSTANCE.createPath()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(PatternsPackage.Literals.STORY_PATTERN__LINK_VARIABLE,
+				(PatternsPackage.Literals.STORY_PATTERN__LINK_VARIABLES,
 				 PatternsFactory.eINSTANCE.createLinkVariable()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(PatternsPackage.Literals.STORY_PATTERN__LINK_VARIABLE,
+				(PatternsPackage.Literals.STORY_PATTERN__LINK_VARIABLES,
 				 PatternsFactory.eINSTANCE.createInclusionLink()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(PatternsPackage.Literals.STORY_PATTERN__LINK_VARIABLE,
+				(PatternsPackage.Literals.STORY_PATTERN__LINK_VARIABLES,
 				 PatternsFactory.eINSTANCE.createMaybeLink()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(PatternsPackage.Literals.STORY_PATTERN__CONTAINED_PATTERN,
+				(PatternsPackage.Literals.STORY_PATTERN__CONTAINED_PATTERNS,
 				 PatternsFactory.eINSTANCE.createStoryPattern()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(PatternsPackage.Literals.STORY_PATTERN__CONTAINED_PATTERN,
+				(PatternsPackage.Literals.STORY_PATTERN__CONTAINED_PATTERNS,
 				 PatternsFactory.eINSTANCE.createMatchingPattern()));
 
 		newChildDescriptors.add

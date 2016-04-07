@@ -72,7 +72,7 @@ public class ComponentStoryDecisionDiagramEditor extends org.muml.ape.runtime.ed
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorInvariantSDD_property_tab_generalTab;
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorInvariantSDD_property_tab_generalTab_Editor() {
 		if (this.editorInvariantSDD_property_tab_generalTab == null) {
-			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.reconfiguration.verification.sdd.componentsdd.componentsdd.ComponentsddPackage.eINSTANCE
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.reconfiguration.verification.sdd.componentsdd.ComponentsddPackage.eINSTANCE
 					.getComponentStoryDecisionDiagram_InvariantSDD();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.CheckboxPropertyEditor(
 					adapterFactory, feature);
@@ -151,7 +151,7 @@ public class ComponentStoryDecisionDiagramEditor extends org.muml.ape.runtime.ed
 		this(tab,
 				org.muml.reconfiguration.verification.sdd.componentsdd.properties.util.PropertiesUtil.INSTANCE
 						.getAdapterFactory(),
-				org.muml.reconfiguration.verification.sdd.componentsdd.componentsdd.ComponentsddPackage.eINSTANCE
+				org.muml.reconfiguration.verification.sdd.componentsdd.ComponentsddPackage.eINSTANCE
 						.getComponentStoryDecisionDiagram());
 	}
 

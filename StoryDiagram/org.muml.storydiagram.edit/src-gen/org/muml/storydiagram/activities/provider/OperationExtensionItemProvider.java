@@ -56,8 +56,8 @@ public class OperationExtensionItemProvider extends ExtensionItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addCommentPropertyDescriptor(object);
-			addInParameterPropertyDescriptor(object);
-			addOutParameterPropertyDescriptor(object);
+			addInParametersPropertyDescriptor(object);
+			addOutParametersPropertyDescriptor(object);
 			addOperationPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -86,19 +86,19 @@ public class OperationExtensionItemProvider extends ExtensionItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the In Parameter feature.
+	 * This adds a property descriptor for the In Parameters feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addInParameterPropertyDescriptor(Object object) {
+	protected void addInParametersPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Callable_inParameter_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Callable_inParameter_feature", "_UI_Callable_type"),
-				 CallsPackage.Literals.CALLABLE__IN_PARAMETER,
+				 getString("_UI_Callable_inParameters_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Callable_inParameters_feature", "_UI_Callable_type"),
+				 CallsPackage.Literals.CALLABLE__IN_PARAMETERS,
 				 true,
 				 false,
 				 true,
@@ -108,19 +108,19 @@ public class OperationExtensionItemProvider extends ExtensionItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Out Parameter feature.
+	 * This adds a property descriptor for the Out Parameters feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addOutParameterPropertyDescriptor(Object object) {
+	protected void addOutParametersPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Callable_outParameter_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Callable_outParameter_feature", "_UI_Callable_type"),
-				 CallsPackage.Literals.CALLABLE__OUT_PARAMETER,
+				 getString("_UI_Callable_outParameters_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Callable_outParameters_feature", "_UI_Callable_type"),
+				 CallsPackage.Literals.CALLABLE__OUT_PARAMETERS,
 				 true,
 				 false,
 				 true,

@@ -27,12 +27,14 @@ public class MetamodelContributor implements org.muml.ape.runtime.metamodel.IMet
 
 		factories.add(new org.muml.storydiagram.templates.provider.TemplatesItemProviderAdapterFactory());
 
-		factories.add(new org.muml.storydiagram.calls.expressions.provider.ExpressionsItemProviderAdapterFactory());
-
-		factories.add(new org.muml.storydiagram.patterns.expressions.provider.ExpressionsItemProviderAdapterFactory());
-
 		factories
-				.add(new org.muml.storydiagram.activities.expressions.provider.ExpressionsItemProviderAdapterFactory());
+				.add(new org.muml.storydiagram.calls.expressions.provider.CallsExpressionsItemProviderAdapterFactory());
+
+		factories.add(
+				new org.muml.storydiagram.patterns.expressions.provider.PatternsExpressionsItemProviderAdapterFactory());
+
+		factories.add(
+				new org.muml.storydiagram.activities.expressions.provider.ActivitiesExpressionsItemProviderAdapterFactory());
 
 	}
 

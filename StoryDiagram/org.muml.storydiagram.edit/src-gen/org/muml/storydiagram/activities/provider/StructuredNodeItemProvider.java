@@ -63,7 +63,7 @@ public class StructuredNodeItemProvider extends ActivityNodeItemProvider {
 			Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ActivitiesPackage.Literals.STRUCTURED_NODE__OWNED_ACTIVITY_NODE);
+			childrenFeatures.add(ActivitiesPackage.Literals.STRUCTURED_NODE__OWNED_ACTIVITY_NODES);
 		}
 		return childrenFeatures;
 	}
@@ -108,7 +108,7 @@ public class StructuredNodeItemProvider extends ActivityNodeItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(StructuredNode.class)) {
-			case ActivitiesPackage.STRUCTURED_NODE__OWNED_ACTIVITY_NODE:
+			case ActivitiesPackage.STRUCTURED_NODE__OWNED_ACTIVITY_NODES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -142,47 +142,47 @@ public class StructuredNodeItemProvider extends ActivityNodeItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActivitiesPackage.Literals.STRUCTURED_NODE__OWNED_ACTIVITY_NODE,
+				(ActivitiesPackage.Literals.STRUCTURED_NODE__OWNED_ACTIVITY_NODES,
 				 ActivitiesFactory.eINSTANCE.createMatchingStoryNode()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActivitiesPackage.Literals.STRUCTURED_NODE__OWNED_ACTIVITY_NODE,
+				(ActivitiesPackage.Literals.STRUCTURED_NODE__OWNED_ACTIVITY_NODES,
 				 ActivitiesFactory.eINSTANCE.createStructuredNode()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActivitiesPackage.Literals.STRUCTURED_NODE__OWNED_ACTIVITY_NODE,
+				(ActivitiesPackage.Literals.STRUCTURED_NODE__OWNED_ACTIVITY_NODES,
 				 ActivitiesFactory.eINSTANCE.createJunctionNode()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActivitiesPackage.Literals.STRUCTURED_NODE__OWNED_ACTIVITY_NODE,
+				(ActivitiesPackage.Literals.STRUCTURED_NODE__OWNED_ACTIVITY_NODES,
 				 ActivitiesFactory.eINSTANCE.createInitialNode()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActivitiesPackage.Literals.STRUCTURED_NODE__OWNED_ACTIVITY_NODE,
+				(ActivitiesPackage.Literals.STRUCTURED_NODE__OWNED_ACTIVITY_NODES,
 				 ActivitiesFactory.eINSTANCE.createStatementNode()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActivitiesPackage.Literals.STRUCTURED_NODE__OWNED_ACTIVITY_NODE,
+				(ActivitiesPackage.Literals.STRUCTURED_NODE__OWNED_ACTIVITY_NODES,
 				 ActivitiesFactory.eINSTANCE.createActivityFinalNode()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActivitiesPackage.Literals.STRUCTURED_NODE__OWNED_ACTIVITY_NODE,
+				(ActivitiesPackage.Literals.STRUCTURED_NODE__OWNED_ACTIVITY_NODES,
 				 ActivitiesFactory.eINSTANCE.createActivityCallNode()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActivitiesPackage.Literals.STRUCTURED_NODE__OWNED_ACTIVITY_NODE,
+				(ActivitiesPackage.Literals.STRUCTURED_NODE__OWNED_ACTIVITY_NODES,
 				 ActivitiesFactory.eINSTANCE.createModifyingStoryNode()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActivitiesPackage.Literals.STRUCTURED_NODE__OWNED_ACTIVITY_NODE,
+				(ActivitiesPackage.Literals.STRUCTURED_NODE__OWNED_ACTIVITY_NODES,
 				 ActivitiesFactory.eINSTANCE.createFlowFinalNode()));
 	}
 

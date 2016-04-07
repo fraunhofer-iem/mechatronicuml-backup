@@ -19,7 +19,7 @@ import org.muml.core.expressions.provider.ExpressionItemProvider;
 import org.muml.storydiagram.activities.ActivitiesFactory;
 import org.muml.storydiagram.calls.CallsFactory;
 import org.muml.storydiagram.patterns.expressions.AttributeValueExpression;
-import org.muml.storydiagram.patterns.expressions.ExpressionsPackage;
+import org.muml.storydiagram.patterns.expressions.PatternsExpressionsPackage;
 import org.muml.storydiagram.provider.StorydiagramsEditPlugin;
 
 /**
@@ -70,7 +70,7 @@ public class AttributeValueExpressionItemProvider extends
 				 getResourceLocator(),
 				 getString("_UI_AttributeValueExpression_object_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_AttributeValueExpression_object_feature", "_UI_AttributeValueExpression_type"),
-				 ExpressionsPackage.Literals.ATTRIBUTE_VALUE_EXPRESSION__OBJECT,
+				 PatternsExpressionsPackage.Literals.ATTRIBUTE_VALUE_EXPRESSION__OBJECT,
 				 true,
 				 false,
 				 true,
@@ -92,7 +92,7 @@ public class AttributeValueExpressionItemProvider extends
 				 getResourceLocator(),
 				 getString("_UI_AttributeValueExpression_attribute_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_AttributeValueExpression_attribute_feature", "_UI_AttributeValueExpression_type"),
-				 ExpressionsPackage.Literals.ATTRIBUTE_VALUE_EXPRESSION__ATTRIBUTE,
+				 PatternsExpressionsPackage.Literals.ATTRIBUTE_VALUE_EXPRESSION__ATTRIBUTE,
 				 true,
 				 false,
 				 true,

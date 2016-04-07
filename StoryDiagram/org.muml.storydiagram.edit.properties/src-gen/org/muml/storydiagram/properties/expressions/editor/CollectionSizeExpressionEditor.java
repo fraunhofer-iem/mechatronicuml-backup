@@ -54,7 +54,7 @@ public class CollectionSizeExpressionEditor extends org.muml.ape.runtime.editors
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorSet_property_tab_generalTab;
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorSet_property_tab_generalTab_Editor() {
 		if (this.editorSet_property_tab_generalTab == null) {
-			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.storydiagram.patterns.expressions.ExpressionsPackage.eINSTANCE
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.storydiagram.patterns.expressions.PatternsExpressionsPackage.eINSTANCE
 					.getCollectionSizeExpression_Set();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.ComboPropertyEditor(
 					adapterFactory, feature);
@@ -76,7 +76,8 @@ public class CollectionSizeExpressionEditor extends org.muml.ape.runtime.editors
 	 */
 	public CollectionSizeExpressionEditor(String tab) {
 		this(tab, org.muml.storydiagram.properties.util.PropertiesUtil.INSTANCE.getAdapterFactory(),
-				org.muml.storydiagram.patterns.expressions.ExpressionsPackage.eINSTANCE.getCollectionSizeExpression());
+				org.muml.storydiagram.patterns.expressions.PatternsExpressionsPackage.eINSTANCE
+						.getCollectionSizeExpression());
 	}
 
 	/**

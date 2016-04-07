@@ -55,8 +55,8 @@ public class AbstractLinkVariableItemProvider extends NamedElementItemProvider {
 			addBindingSemanticsPropertyDescriptor(object);
 			addBindingOperatorPropertyDescriptor(object);
 			addSourcePropertyDescriptor(object);
-			addSecondLinkConstraintPropertyDescriptor(object);
-			addFirstLinkConstraintPropertyDescriptor(object);
+			addSecondLinkConstraintsPropertyDescriptor(object);
+			addFirstLinkConstraintsPropertyDescriptor(object);
 			addTargetPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -129,19 +129,19 @@ public class AbstractLinkVariableItemProvider extends NamedElementItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Second Link Constraint feature.
+	 * This adds a property descriptor for the Second Link Constraints feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addSecondLinkConstraintPropertyDescriptor(Object object) {
+	protected void addSecondLinkConstraintsPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_AbstractLinkVariable_secondLinkConstraint_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_AbstractLinkVariable_secondLinkConstraint_feature", "_UI_AbstractLinkVariable_type"),
-				 PatternsPackage.Literals.ABSTRACT_LINK_VARIABLE__SECOND_LINK_CONSTRAINT,
+				 getString("_UI_AbstractLinkVariable_secondLinkConstraints_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_AbstractLinkVariable_secondLinkConstraints_feature", "_UI_AbstractLinkVariable_type"),
+				 PatternsPackage.Literals.ABSTRACT_LINK_VARIABLE__SECOND_LINK_CONSTRAINTS,
 				 true,
 				 false,
 				 true,
@@ -151,19 +151,19 @@ public class AbstractLinkVariableItemProvider extends NamedElementItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the First Link Constraint feature.
+	 * This adds a property descriptor for the First Link Constraints feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addFirstLinkConstraintPropertyDescriptor(Object object) {
+	protected void addFirstLinkConstraintsPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_AbstractLinkVariable_firstLinkConstraint_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_AbstractLinkVariable_firstLinkConstraint_feature", "_UI_AbstractLinkVariable_type"),
-				 PatternsPackage.Literals.ABSTRACT_LINK_VARIABLE__FIRST_LINK_CONSTRAINT,
+				 getString("_UI_AbstractLinkVariable_firstLinkConstraints_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_AbstractLinkVariable_firstLinkConstraints_feature", "_UI_AbstractLinkVariable_type"),
+				 PatternsPackage.Literals.ABSTRACT_LINK_VARIABLE__FIRST_LINK_CONSTRAINTS,
 				 true,
 				 false,
 				 true,

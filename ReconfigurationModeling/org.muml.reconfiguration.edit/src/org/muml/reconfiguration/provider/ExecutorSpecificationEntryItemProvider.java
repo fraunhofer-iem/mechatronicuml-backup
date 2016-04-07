@@ -23,6 +23,8 @@ import org.muml.core.provider.ExtendableElementItemProvider;
 import org.muml.pim.valuetype.ValuetypeFactory;
 import org.muml.reconfiguration.ExecutorSpecificationEntry;
 import org.muml.reconfiguration.ReconfigurationPackage;
+import org.muml.storydiagram.activities.ActivitiesFactory;
+import org.muml.storydiagram.calls.CallsFactory;
 
 /**
  * This is the item provider adapter for a {@link org.muml.reconfiguration.ExecutorSpecificationEntry} object.
@@ -192,12 +194,12 @@ public class ExecutorSpecificationEntryItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSIONS,
-				 org.muml.storydiagram.activities.ActivitiesFactory.eINSTANCE.createOperationExtension()));
+				 ActivitiesFactory.eINSTANCE.createOperationExtension()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSIONS,
-				 org.muml.storydiagram.calls.CallsFactory.eINSTANCE.createParameterExtension()));
+				 CallsFactory.eINSTANCE.createParameterExtension()));
 
 		newChildDescriptors.add
 			(createChildParameter

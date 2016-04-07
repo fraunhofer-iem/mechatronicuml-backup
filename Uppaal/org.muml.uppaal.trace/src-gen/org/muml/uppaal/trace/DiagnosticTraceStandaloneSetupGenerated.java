@@ -29,8 +29,8 @@ public class DiagnosticTraceStandaloneSetupGenerated implements ISetup {
 	}
 	
 	public void register(Injector injector) {
-	if (!EPackage.Registry.INSTANCE.containsKey("http://www.uni-paderborn.de/uppaal/trace/0.4.0")) {
-		EPackage.Registry.INSTANCE.put("http://www.uni-paderborn.de/uppaal/trace/0.4.0", org.muml.uppaal.trace.diagnosticTrace.DiagnosticTracePackage.eINSTANCE);
+	if (!EPackage.Registry.INSTANCE.containsKey("http://www.muml.org/uppaal/trace/1.0.0")) {
+		EPackage.Registry.INSTANCE.put("http://www.muml.org/uppaal/trace/1.0.0", org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.eINSTANCE);
 	}
 
 		org.eclipse.xtext.resource.IResourceFactory resourceFactory = injector.getInstance(org.eclipse.xtext.resource.IResourceFactory.class);

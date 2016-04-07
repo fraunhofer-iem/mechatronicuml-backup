@@ -19,7 +19,7 @@ import org.muml.core.expressions.provider.ExpressionItemProvider;
 import org.muml.storydiagram.activities.ActivitiesFactory;
 import org.muml.storydiagram.calls.CallsFactory;
 import org.muml.storydiagram.patterns.expressions.CollectionSizeExpression;
-import org.muml.storydiagram.patterns.expressions.ExpressionsPackage;
+import org.muml.storydiagram.patterns.expressions.PatternsExpressionsPackage;
 import org.muml.storydiagram.provider.StorydiagramsEditPlugin;
 
 /**
@@ -69,7 +69,7 @@ public class CollectionSizeExpressionItemProvider extends
 				 getResourceLocator(),
 				 getString("_UI_CollectionSizeExpression_set_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionSizeExpression_set_feature", "_UI_CollectionSizeExpression_type"),
-				 ExpressionsPackage.Literals.COLLECTION_SIZE_EXPRESSION__SET,
+				 PatternsExpressionsPackage.Literals.COLLECTION_SIZE_EXPRESSION__SET,
 				 true,
 				 false,
 				 true,

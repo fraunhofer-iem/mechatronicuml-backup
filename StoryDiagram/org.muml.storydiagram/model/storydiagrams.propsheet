@@ -34,12 +34,12 @@
         <editor xsi:type="org.muml:TextPropertyEditor"/>
       </orderedElements>
       <orderedElements xsi:type="org.muml:Property">
-        <genFeature href="storydiagrams.genmodel#//storydiagram/activities/ExceptionVariable/exceptionType"/>
+        <genFeature href="storydiagrams.genmodel#//storydiagram/activities/ExceptionVariable/exceptionTypes"/>
         <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="org.muml:ListPropertyEditor"/>
       </orderedElements>
       <orderedElements xsi:type="org.muml:Property">
-        <genFeature href="storydiagrams.genmodel#//storydiagram/activities/ExceptionVariable/genericExceptionType"/>
+        <genFeature href="storydiagrams.genmodel#//storydiagram/activities/ExceptionVariable/genericExceptionTypes"/>
         <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="org.muml:ListPropertyEditor"/>
       </orderedElements>
@@ -66,12 +66,12 @@
     <classes>
       <genClass href="storydiagrams.genmodel#//storydiagram/activities/ActivityNode"/>
       <orderedElements xsi:type="org.muml:Property">
-        <genFeature href="storydiagrams.genmodel#//storydiagram/activities/ActivityNode/outgoing"/>
+        <genFeature href="storydiagrams.genmodel#//storydiagram/activities/ActivityNode/outgoings"/>
         <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="org.muml:ListPropertyEditor"/>
       </orderedElements>
       <orderedElements xsi:type="org.muml:Property">
-        <genFeature href="storydiagrams.genmodel#//storydiagram/activities/ActivityNode/incoming"/>
+        <genFeature href="storydiagrams.genmodel#//storydiagram/activities/ActivityNode/incomings"/>
         <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="org.muml:ListPropertyEditor"/>
       </orderedElements>
@@ -122,7 +122,7 @@
     <classes superClasses="//@packages.1/@classes.2 //@packages.2/@classes.0">
       <genClass href="storydiagrams.genmodel#//storydiagram/activities/ActivityCallNode"/>
       <orderedElements xsi:type="org.muml:Property">
-        <genFeature href="storydiagrams.genmodel#//storydiagram/activities/ActivityCallNode/calledActivity"/>
+        <genFeature href="storydiagrams.genmodel#//storydiagram/activities/ActivityCallNode/calledActivities"/>
         <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="org.muml:ListPropertyEditor"/>
       </orderedElements>
@@ -166,12 +166,12 @@
     <classes>
       <genClass href="storydiagrams.genmodel#//storydiagram/calls/Callable"/>
       <orderedElements xsi:type="org.muml:Property">
-        <genFeature href="storydiagrams.genmodel#//storydiagram/calls/Callable/inParameter"/>
+        <genFeature href="storydiagrams.genmodel#//storydiagram/calls/Callable/inParameters"/>
         <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="org.muml:ListPropertyEditor"/>
       </orderedElements>
       <orderedElements xsi:type="org.muml:Property">
-        <genFeature href="storydiagrams.genmodel#//storydiagram/calls/Callable/outParameter"/>
+        <genFeature href="storydiagrams.genmodel#//storydiagram/calls/Callable/outParameters"/>
         <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="org.muml:ListPropertyEditor"/>
       </orderedElements>
@@ -211,7 +211,7 @@
         <editor xsi:type="org.muml:RadioPropertyEditor"/>
       </orderedElements>
       <orderedElements xsi:type="org.muml:Property">
-        <genFeature href="storydiagrams.genmodel#//storydiagram/patterns/AbstractVariable/incomingLink"/>
+        <genFeature href="storydiagrams.genmodel#//storydiagram/patterns/AbstractVariable/incomingLinks"/>
         <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="org.muml:ListPropertyEditor"/>
       </orderedElements>
@@ -237,12 +237,12 @@
         <editor xsi:type="org.muml:ComboBoxPropertyEditor"/>
       </orderedElements>
       <orderedElements xsi:type="org.muml:Property">
-        <genFeature href="storydiagrams.genmodel#//storydiagram/patterns/AbstractLinkVariable/secondLinkConstraint"/>
+        <genFeature href="storydiagrams.genmodel#//storydiagram/patterns/AbstractLinkVariable/secondLinkConstraints"/>
         <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="org.muml:ListPropertyEditor"/>
       </orderedElements>
       <orderedElements xsi:type="org.muml:Property">
-        <genFeature href="storydiagrams.genmodel#//storydiagram/patterns/AbstractLinkVariable/firstLinkConstraint"/>
+        <genFeature href="storydiagrams.genmodel#//storydiagram/patterns/AbstractLinkVariable/firstLinkConstraints"/>
         <tab href="../../org.muml.core/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="org.muml:ListPropertyEditor"/>
       </orderedElements>

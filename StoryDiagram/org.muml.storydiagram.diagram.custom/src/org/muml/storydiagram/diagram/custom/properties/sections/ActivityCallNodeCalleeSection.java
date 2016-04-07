@@ -52,7 +52,7 @@ public class ActivityCallNodeCalleeSection extends AbstractComboSection<Callable
 
 				Command command = SetCommand.create(getEditingDomain(), owner, feature, call);
 
-				feature = ActivitiesPackage.Literals.ACTIVITY_CALL_NODE__CALLED_ACTIVITY;
+				feature = ActivitiesPackage.Literals.ACTIVITY_CALL_NODE__CALLED_ACTIVITIES;
 				command.chain(RemoveCommand.create(getEditingDomain(), owner, feature, owner.getCalledActivities()));
 				command.chain(AddCommand.create(getEditingDomain(), owner, feature, call));
 

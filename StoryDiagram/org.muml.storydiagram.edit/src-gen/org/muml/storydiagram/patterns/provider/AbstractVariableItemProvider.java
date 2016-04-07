@@ -20,9 +20,12 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.muml.core.CorePackage;
 import org.muml.core.expressions.ExpressionsFactory;
 import org.muml.core.expressions.common.CommonExpressionsFactory;
+import org.muml.storydiagram.activities.expressions.ActivitiesExpressionsFactory;
+import org.muml.storydiagram.calls.expressions.CallsExpressionsFactory;
 import org.muml.storydiagram.patterns.AbstractVariable;
 import org.muml.storydiagram.patterns.PatternsFactory;
 import org.muml.storydiagram.patterns.PatternsPackage;
+import org.muml.storydiagram.patterns.expressions.PatternsExpressionsFactory;
 import org.muml.storydiagram.provider.StorydiagramsEditPlugin;
 import org.muml.storydiagram.provider.VariableItemProvider;
 
@@ -56,7 +59,7 @@ public class AbstractVariableItemProvider extends VariableItemProvider {
 
 			addNamePropertyDescriptor(object);
 			addBindingStatePropertyDescriptor(object);
-			addIncomingLinkPropertyDescriptor(object);
+			addIncomingLinksPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -106,19 +109,19 @@ public class AbstractVariableItemProvider extends VariableItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Incoming Link feature.
+	 * This adds a property descriptor for the Incoming Links feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addIncomingLinkPropertyDescriptor(Object object) {
+	protected void addIncomingLinksPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_AbstractVariable_incomingLink_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_AbstractVariable_incomingLink_feature", "_UI_AbstractVariable_type"),
-				 PatternsPackage.Literals.ABSTRACT_VARIABLE__INCOMING_LINK,
+				 getString("_UI_AbstractVariable_incomingLinks_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_AbstractVariable_incomingLinks_feature", "_UI_AbstractVariable_type"),
+				 PatternsPackage.Literals.ABSTRACT_VARIABLE__INCOMING_LINKS,
 				 true,
 				 false,
 				 true,
@@ -152,7 +155,7 @@ public class AbstractVariableItemProvider extends VariableItemProvider {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(PatternsPackage.Literals.ABSTRACT_VARIABLE__BINDING_EXPRESSION);
-			childrenFeatures.add(PatternsPackage.Literals.ABSTRACT_VARIABLE__CONSTRAINT);
+			childrenFeatures.add(PatternsPackage.Literals.ABSTRACT_VARIABLE__CONSTRAINTS);
 		}
 		return childrenFeatures;
 	}
@@ -188,7 +191,7 @@ public class AbstractVariableItemProvider extends VariableItemProvider {
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case PatternsPackage.ABSTRACT_VARIABLE__BINDING_EXPRESSION:
-			case PatternsPackage.ABSTRACT_VARIABLE__CONSTRAINT:
+			case PatternsPackage.ABSTRACT_VARIABLE__CONSTRAINTS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -223,37 +226,37 @@ public class AbstractVariableItemProvider extends VariableItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(PatternsPackage.Literals.ABSTRACT_VARIABLE__BINDING_EXPRESSION,
-				 org.muml.storydiagram.activities.expressions.ExpressionsFactory.eINSTANCE.createExceptionVariableExpression()));
+				 ActivitiesExpressionsFactory.eINSTANCE.createExceptionVariableExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(PatternsPackage.Literals.ABSTRACT_VARIABLE__BINDING_EXPRESSION,
-				 org.muml.storydiagram.calls.expressions.ExpressionsFactory.eINSTANCE.createMethodCallExpression()));
+				 CallsExpressionsFactory.eINSTANCE.createMethodCallExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(PatternsPackage.Literals.ABSTRACT_VARIABLE__BINDING_EXPRESSION,
-				 org.muml.storydiagram.calls.expressions.ExpressionsFactory.eINSTANCE.createParameterExpression()));
+				 CallsExpressionsFactory.eINSTANCE.createParameterExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(PatternsPackage.Literals.ABSTRACT_VARIABLE__BINDING_EXPRESSION,
-				 org.muml.storydiagram.patterns.expressions.ExpressionsFactory.eINSTANCE.createAttributeValueExpression()));
+				 PatternsExpressionsFactory.eINSTANCE.createAttributeValueExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(PatternsPackage.Literals.ABSTRACT_VARIABLE__BINDING_EXPRESSION,
-				 org.muml.storydiagram.patterns.expressions.ExpressionsFactory.eINSTANCE.createObjectVariableExpression()));
+				 PatternsExpressionsFactory.eINSTANCE.createObjectVariableExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(PatternsPackage.Literals.ABSTRACT_VARIABLE__BINDING_EXPRESSION,
-				 org.muml.storydiagram.patterns.expressions.ExpressionsFactory.eINSTANCE.createCollectionSizeExpression()));
+				 PatternsExpressionsFactory.eINSTANCE.createCollectionSizeExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(PatternsPackage.Literals.ABSTRACT_VARIABLE__BINDING_EXPRESSION,
-				 org.muml.storydiagram.patterns.expressions.ExpressionsFactory.eINSTANCE.createPrimitiveVariableExpression()));
+				 PatternsExpressionsFactory.eINSTANCE.createPrimitiveVariableExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -287,7 +290,7 @@ public class AbstractVariableItemProvider extends VariableItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(PatternsPackage.Literals.ABSTRACT_VARIABLE__CONSTRAINT,
+				(PatternsPackage.Literals.ABSTRACT_VARIABLE__CONSTRAINTS,
 				 PatternsFactory.eINSTANCE.createConstraint()));
 	}
 

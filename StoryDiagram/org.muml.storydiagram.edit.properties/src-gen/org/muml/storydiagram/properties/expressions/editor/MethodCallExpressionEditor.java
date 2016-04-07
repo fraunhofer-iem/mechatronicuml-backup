@@ -73,7 +73,7 @@ public class MethodCallExpressionEditor extends org.muml.ape.runtime.editors.Cla
 	 */
 	public MethodCallExpressionEditor(String tab) {
 		this(tab, org.muml.storydiagram.properties.util.PropertiesUtil.INSTANCE.getAdapterFactory(),
-				org.muml.storydiagram.calls.expressions.ExpressionsPackage.eINSTANCE.getMethodCallExpression());
+				org.muml.storydiagram.calls.expressions.CallsExpressionsPackage.eINSTANCE.getMethodCallExpression());
 	}
 
 	/**

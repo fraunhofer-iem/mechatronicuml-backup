@@ -23,10 +23,10 @@ public class StatementNodeEditor extends org.muml.ape.runtime.editors.ClassPrope
 
 			addSubCategory("org.muml.ape.category.Lists", "Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
 
-			addEditorToCategory("org.muml.ape.category.Lists", createEditorOutgoing_property_tab_generalTab_Editor(),
+			addEditorToCategory("org.muml.ape.category.Lists", createEditorOutgoings_property_tab_generalTab_Editor(),
 					false);
 
-			addEditorToCategory("org.muml.ape.category.Lists", createEditorIncoming_property_tab_generalTab_Editor(),
+			addEditorToCategory("org.muml.ape.category.Lists", createEditorIncomings_property_tab_generalTab_Editor(),
 					false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
@@ -49,10 +49,10 @@ public class StatementNodeEditor extends org.muml.ape.runtime.editors.ClassPrope
 
 			addSubCategory("org.muml.ape.category.Lists", "Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
 
-			addEditorToCategory("org.muml.ape.category.Lists", createEditorOutgoing_property_tab_generalTab_Editor(),
+			addEditorToCategory("org.muml.ape.category.Lists", createEditorOutgoings_property_tab_generalTab_Editor(),
 					false);
 
-			addEditorToCategory("org.muml.ape.category.Lists", createEditorIncoming_property_tab_generalTab_Editor(),
+			addEditorToCategory("org.muml.ape.category.Lists", createEditorIncomings_property_tab_generalTab_Editor(),
 					false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
@@ -63,35 +63,35 @@ public class StatementNodeEditor extends org.muml.ape.runtime.editors.ClassPrope
 		}
 	}
 
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorOutgoing_property_tab_generalTab;
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorOutgoing_property_tab_generalTab_Editor() {
-		if (this.editorOutgoing_property_tab_generalTab == null) {
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorOutgoings_property_tab_generalTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorOutgoings_property_tab_generalTab_Editor() {
+		if (this.editorOutgoings_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.storydiagram.activities.ActivitiesPackage.eINSTANCE
-					.getActivityNode_Outgoing();
+					.getActivityNode_Outgoings();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.ListPropertyEditor(
 					adapterFactory, feature);
 
 			editor.setTooltipMessage(
 					"All ActivityEdges that leave this activity node. The guards of the outgoing activity edges must be exclusive in order to obtain a well-defined activity.");
 
-			this.editorOutgoing_property_tab_generalTab = editor;
+			this.editorOutgoings_property_tab_generalTab = editor;
 		}
-		return this.editorOutgoing_property_tab_generalTab;
+		return this.editorOutgoings_property_tab_generalTab;
 	}
 
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorIncoming_property_tab_generalTab;
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorIncoming_property_tab_generalTab_Editor() {
-		if (this.editorIncoming_property_tab_generalTab == null) {
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorIncomings_property_tab_generalTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorIncomings_property_tab_generalTab_Editor() {
+		if (this.editorIncomings_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.storydiagram.activities.ActivitiesPackage.eINSTANCE
-					.getActivityNode_Incoming();
+					.getActivityNode_Incomings();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.ListPropertyEditor(
 					adapterFactory, feature);
 
 			editor.setTooltipMessage("All ActivityEdges entering this activity node.");
 
-			this.editorIncoming_property_tab_generalTab = editor;
+			this.editorIncomings_property_tab_generalTab = editor;
 		}
-		return this.editorIncoming_property_tab_generalTab;
+		return this.editorIncomings_property_tab_generalTab;
 	}
 
 	//

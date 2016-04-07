@@ -21,9 +21,12 @@ import org.muml.core.expressions.ExpressionsFactory;
 import org.muml.core.expressions.common.CommonExpressionsFactory;
 import org.muml.core.provider.CommentableElementItemProvider;
 import org.muml.storydiagram.activities.ActivitiesFactory;
+import org.muml.storydiagram.activities.expressions.ActivitiesExpressionsFactory;
 import org.muml.storydiagram.calls.CallsFactory;
 import org.muml.storydiagram.calls.CallsPackage;
 import org.muml.storydiagram.calls.ParameterBinding;
+import org.muml.storydiagram.calls.expressions.CallsExpressionsFactory;
+import org.muml.storydiagram.patterns.expressions.PatternsExpressionsFactory;
 import org.muml.storydiagram.provider.StorydiagramsEditPlugin;
 
 /**
@@ -196,37 +199,37 @@ public class ParameterBindingItemProvider extends
 		newChildDescriptors.add
 			(createChildParameter
 				(CallsPackage.Literals.PARAMETER_BINDING__VALUE_EXPRESSION,
-				 org.muml.storydiagram.activities.expressions.ExpressionsFactory.eINSTANCE.createExceptionVariableExpression()));
+				 ActivitiesExpressionsFactory.eINSTANCE.createExceptionVariableExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(CallsPackage.Literals.PARAMETER_BINDING__VALUE_EXPRESSION,
-				 org.muml.storydiagram.calls.expressions.ExpressionsFactory.eINSTANCE.createMethodCallExpression()));
+				 CallsExpressionsFactory.eINSTANCE.createMethodCallExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(CallsPackage.Literals.PARAMETER_BINDING__VALUE_EXPRESSION,
-				 org.muml.storydiagram.calls.expressions.ExpressionsFactory.eINSTANCE.createParameterExpression()));
+				 CallsExpressionsFactory.eINSTANCE.createParameterExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(CallsPackage.Literals.PARAMETER_BINDING__VALUE_EXPRESSION,
-				 org.muml.storydiagram.patterns.expressions.ExpressionsFactory.eINSTANCE.createAttributeValueExpression()));
+				 PatternsExpressionsFactory.eINSTANCE.createAttributeValueExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(CallsPackage.Literals.PARAMETER_BINDING__VALUE_EXPRESSION,
-				 org.muml.storydiagram.patterns.expressions.ExpressionsFactory.eINSTANCE.createObjectVariableExpression()));
+				 PatternsExpressionsFactory.eINSTANCE.createObjectVariableExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(CallsPackage.Literals.PARAMETER_BINDING__VALUE_EXPRESSION,
-				 org.muml.storydiagram.patterns.expressions.ExpressionsFactory.eINSTANCE.createCollectionSizeExpression()));
+				 PatternsExpressionsFactory.eINSTANCE.createCollectionSizeExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(CallsPackage.Literals.PARAMETER_BINDING__VALUE_EXPRESSION,
-				 org.muml.storydiagram.patterns.expressions.ExpressionsFactory.eINSTANCE.createPrimitiveVariableExpression()));
+				 PatternsExpressionsFactory.eINSTANCE.createPrimitiveVariableExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter

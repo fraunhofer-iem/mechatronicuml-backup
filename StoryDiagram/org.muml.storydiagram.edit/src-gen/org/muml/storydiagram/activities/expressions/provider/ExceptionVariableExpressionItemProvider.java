@@ -17,8 +17,8 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.muml.core.CorePackage;
 import org.muml.core.expressions.provider.ExpressionItemProvider;
 import org.muml.storydiagram.activities.ActivitiesFactory;
+import org.muml.storydiagram.activities.expressions.ActivitiesExpressionsPackage;
 import org.muml.storydiagram.activities.expressions.ExceptionVariableExpression;
-import org.muml.storydiagram.activities.expressions.ExpressionsPackage;
 import org.muml.storydiagram.calls.CallsFactory;
 import org.muml.storydiagram.provider.StorydiagramsEditPlugin;
 
@@ -69,7 +69,7 @@ public class ExceptionVariableExpressionItemProvider extends
 				 getResourceLocator(),
 				 getString("_UI_ExceptionVariableExpression_exceptionVariable_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ExceptionVariableExpression_exceptionVariable_feature", "_UI_ExceptionVariableExpression_type"),
-				 ExpressionsPackage.Literals.EXCEPTION_VARIABLE_EXPRESSION__EXCEPTION_VARIABLE,
+				 ActivitiesExpressionsPackage.Literals.EXCEPTION_VARIABLE_EXPRESSION__EXCEPTION_VARIABLE,
 				 true,
 				 false,
 				 true,

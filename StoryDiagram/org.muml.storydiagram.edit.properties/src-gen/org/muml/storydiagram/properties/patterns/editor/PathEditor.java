@@ -32,10 +32,10 @@ public class PathEditor extends org.muml.ape.runtime.editors.ClassPropertyEditor
 			addSubCategory("org.muml.ape.category.Lists", "Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
 
 			addEditorToCategory("org.muml.ape.category.Lists",
-					createEditorSecondLinkConstraint_property_tab_generalTab_Editor(), false);
+					createEditorSecondLinkConstraints_property_tab_generalTab_Editor(), false);
 
 			addEditorToCategory("org.muml.ape.category.Lists",
-					createEditorFirstLinkConstraint_property_tab_generalTab_Editor(), false);
+					createEditorFirstLinkConstraints_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
@@ -66,10 +66,10 @@ public class PathEditor extends org.muml.ape.runtime.editors.ClassPropertyEditor
 			addSubCategory("org.muml.ape.category.Lists", "Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
 
 			addEditorToCategory("org.muml.ape.category.Lists",
-					createEditorSecondLinkConstraint_property_tab_generalTab_Editor(), false);
+					createEditorSecondLinkConstraints_property_tab_generalTab_Editor(), false);
 
 			addEditorToCategory("org.muml.ape.category.Lists",
-					createEditorFirstLinkConstraint_property_tab_generalTab_Editor(), false);
+					createEditorFirstLinkConstraints_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
@@ -124,30 +124,30 @@ public class PathEditor extends org.muml.ape.runtime.editors.ClassPropertyEditor
 		return this.editorSource_property_tab_generalTab;
 	}
 
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorSecondLinkConstraint_property_tab_generalTab;
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorSecondLinkConstraint_property_tab_generalTab_Editor() {
-		if (this.editorSecondLinkConstraint_property_tab_generalTab == null) {
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorSecondLinkConstraints_property_tab_generalTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorSecondLinkConstraints_property_tab_generalTab_Editor() {
+		if (this.editorSecondLinkConstraints_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.storydiagram.patterns.PatternsPackage.eINSTANCE
-					.getAbstractLinkVariable_SecondLinkConstraint();
+					.getAbstractLinkVariable_SecondLinkConstraints();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.ListPropertyEditor(
 					adapterFactory, feature);
 
-			this.editorSecondLinkConstraint_property_tab_generalTab = editor;
+			this.editorSecondLinkConstraints_property_tab_generalTab = editor;
 		}
-		return this.editorSecondLinkConstraint_property_tab_generalTab;
+		return this.editorSecondLinkConstraints_property_tab_generalTab;
 	}
 
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorFirstLinkConstraint_property_tab_generalTab;
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorFirstLinkConstraint_property_tab_generalTab_Editor() {
-		if (this.editorFirstLinkConstraint_property_tab_generalTab == null) {
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorFirstLinkConstraints_property_tab_generalTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorFirstLinkConstraints_property_tab_generalTab_Editor() {
+		if (this.editorFirstLinkConstraints_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.storydiagram.patterns.PatternsPackage.eINSTANCE
-					.getAbstractLinkVariable_FirstLinkConstraint();
+					.getAbstractLinkVariable_FirstLinkConstraints();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.ListPropertyEditor(
 					adapterFactory, feature);
 
-			this.editorFirstLinkConstraint_property_tab_generalTab = editor;
+			this.editorFirstLinkConstraints_property_tab_generalTab = editor;
 		}
-		return this.editorFirstLinkConstraint_property_tab_generalTab;
+		return this.editorFirstLinkConstraints_property_tab_generalTab;
 	}
 
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorTarget_property_tab_generalTab;

@@ -25,7 +25,10 @@ import org.muml.storydiagram.activities.ActivitiesFactory;
 import org.muml.storydiagram.activities.ActivitiesPackage;
 import org.muml.storydiagram.activities.ActivityEdge;
 import org.muml.storydiagram.activities.EdgeGuard;
+import org.muml.storydiagram.activities.expressions.ActivitiesExpressionsFactory;
 import org.muml.storydiagram.calls.CallsFactory;
+import org.muml.storydiagram.calls.expressions.CallsExpressionsFactory;
+import org.muml.storydiagram.patterns.expressions.PatternsExpressionsFactory;
 import org.muml.storydiagram.provider.StorydiagramsEditPlugin;
 
 /**
@@ -154,7 +157,7 @@ public class ActivityEdgeItemProvider extends ExtendableElementItemProvider {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(ActivitiesPackage.Literals.ACTIVITY_EDGE__GUARD_EXPRESSION);
-			childrenFeatures.add(ActivitiesPackage.Literals.ACTIVITY_EDGE__GUARD_EXCEPTION);
+			childrenFeatures.add(ActivitiesPackage.Literals.ACTIVITY_EDGE__GUARD_EXCEPTIONS);
 		}
 		return childrenFeatures;
 	}
@@ -190,7 +193,7 @@ public class ActivityEdgeItemProvider extends ExtendableElementItemProvider {
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case ActivitiesPackage.ACTIVITY_EDGE__GUARD_EXPRESSION:
-			case ActivitiesPackage.ACTIVITY_EDGE__GUARD_EXCEPTION:
+			case ActivitiesPackage.ACTIVITY_EDGE__GUARD_EXCEPTIONS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -246,37 +249,37 @@ public class ActivityEdgeItemProvider extends ExtendableElementItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(ActivitiesPackage.Literals.ACTIVITY_EDGE__GUARD_EXPRESSION,
-				 org.muml.storydiagram.activities.expressions.ExpressionsFactory.eINSTANCE.createExceptionVariableExpression()));
+				 ActivitiesExpressionsFactory.eINSTANCE.createExceptionVariableExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(ActivitiesPackage.Literals.ACTIVITY_EDGE__GUARD_EXPRESSION,
-				 org.muml.storydiagram.calls.expressions.ExpressionsFactory.eINSTANCE.createMethodCallExpression()));
+				 CallsExpressionsFactory.eINSTANCE.createMethodCallExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(ActivitiesPackage.Literals.ACTIVITY_EDGE__GUARD_EXPRESSION,
-				 org.muml.storydiagram.calls.expressions.ExpressionsFactory.eINSTANCE.createParameterExpression()));
+				 CallsExpressionsFactory.eINSTANCE.createParameterExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(ActivitiesPackage.Literals.ACTIVITY_EDGE__GUARD_EXPRESSION,
-				 org.muml.storydiagram.patterns.expressions.ExpressionsFactory.eINSTANCE.createAttributeValueExpression()));
+				 PatternsExpressionsFactory.eINSTANCE.createAttributeValueExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(ActivitiesPackage.Literals.ACTIVITY_EDGE__GUARD_EXPRESSION,
-				 org.muml.storydiagram.patterns.expressions.ExpressionsFactory.eINSTANCE.createObjectVariableExpression()));
+				 PatternsExpressionsFactory.eINSTANCE.createObjectVariableExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(ActivitiesPackage.Literals.ACTIVITY_EDGE__GUARD_EXPRESSION,
-				 org.muml.storydiagram.patterns.expressions.ExpressionsFactory.eINSTANCE.createCollectionSizeExpression()));
+				 PatternsExpressionsFactory.eINSTANCE.createCollectionSizeExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(ActivitiesPackage.Literals.ACTIVITY_EDGE__GUARD_EXPRESSION,
-				 org.muml.storydiagram.patterns.expressions.ExpressionsFactory.eINSTANCE.createPrimitiveVariableExpression()));
+				 PatternsExpressionsFactory.eINSTANCE.createPrimitiveVariableExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -310,7 +313,7 @@ public class ActivityEdgeItemProvider extends ExtendableElementItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActivitiesPackage.Literals.ACTIVITY_EDGE__GUARD_EXCEPTION,
+				(ActivitiesPackage.Literals.ACTIVITY_EDGE__GUARD_EXCEPTIONS,
 				 ActivitiesFactory.eINSTANCE.createExceptionVariable()));
 	}
 

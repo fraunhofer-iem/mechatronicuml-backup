@@ -26,10 +26,10 @@ public class ExceptionVariableEditor extends org.muml.ape.runtime.editors.ClassP
 			addSubCategory("org.muml.ape.category.Lists", "Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
 
 			addEditorToCategory("org.muml.ape.category.Lists",
-					createEditorExceptionType_property_tab_generalTab_Editor(), false);
+					createEditorExceptionTypes_property_tab_generalTab_Editor(), false);
 
 			addEditorToCategory("org.muml.ape.category.Lists",
-					createEditorGenericExceptionType_property_tab_generalTab_Editor(), false);
+					createEditorGenericExceptionTypes_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
@@ -54,10 +54,10 @@ public class ExceptionVariableEditor extends org.muml.ape.runtime.editors.ClassP
 			addSubCategory("org.muml.ape.category.Lists", "Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
 
 			addEditorToCategory("org.muml.ape.category.Lists",
-					createEditorExceptionType_property_tab_generalTab_Editor(), false);
+					createEditorExceptionTypes_property_tab_generalTab_Editor(), false);
 
 			addEditorToCategory("org.muml.ape.category.Lists",
-					createEditorGenericExceptionType_property_tab_generalTab_Editor(), false);
+					createEditorGenericExceptionTypes_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
@@ -82,32 +82,32 @@ public class ExceptionVariableEditor extends org.muml.ape.runtime.editors.ClassP
 		return this.editorName_property_tab_generalTab;
 	}
 
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorExceptionType_property_tab_generalTab;
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorExceptionType_property_tab_generalTab_Editor() {
-		if (this.editorExceptionType_property_tab_generalTab == null) {
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorExceptionTypes_property_tab_generalTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorExceptionTypes_property_tab_generalTab_Editor() {
+		if (this.editorExceptionTypes_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.storydiagram.activities.ActivitiesPackage.eINSTANCE
-					.getExceptionVariable_ExceptionType();
+					.getExceptionVariable_ExceptionTypes();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.ListPropertyEditor(
 					adapterFactory, feature);
 
 			editor.setTooltipMessage("Specifies the type of the declared exception variable.");
 
-			this.editorExceptionType_property_tab_generalTab = editor;
+			this.editorExceptionTypes_property_tab_generalTab = editor;
 		}
-		return this.editorExceptionType_property_tab_generalTab;
+		return this.editorExceptionTypes_property_tab_generalTab;
 	}
 
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorGenericExceptionType_property_tab_generalTab;
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorGenericExceptionType_property_tab_generalTab_Editor() {
-		if (this.editorGenericExceptionType_property_tab_generalTab == null) {
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorGenericExceptionTypes_property_tab_generalTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorGenericExceptionTypes_property_tab_generalTab_Editor() {
+		if (this.editorGenericExceptionTypes_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.storydiagram.activities.ActivitiesPackage.eINSTANCE
-					.getExceptionVariable_GenericExceptionType();
+					.getExceptionVariable_GenericExceptionTypes();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.ListPropertyEditor(
 					adapterFactory, feature);
 
-			this.editorGenericExceptionType_property_tab_generalTab = editor;
+			this.editorGenericExceptionTypes_property_tab_generalTab = editor;
 		}
-		return this.editorGenericExceptionType_property_tab_generalTab;
+		return this.editorGenericExceptionTypes_property_tab_generalTab;
 	}
 
 	//

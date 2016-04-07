@@ -147,7 +147,7 @@ public class InvariantStoryDiagramItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActivitiesPackage.Literals.ACTIVITY__OWNED_ACTIVITY_NODE,
+				(ActivitiesPackage.Literals.ACTIVITY__OWNED_ACTIVITY_NODES,
 				 TimedstorydiagramFactory.eINSTANCE.createTimedActivityNode()));
 
 		newChildDescriptors.add

@@ -140,8 +140,8 @@ public class ActivityItemProvider extends CallableItemProvider {
 			Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ActivitiesPackage.Literals.ACTIVITY__OWNED_ACTIVITY_EDGE);
-			childrenFeatures.add(ActivitiesPackage.Literals.ACTIVITY__OWNED_ACTIVITY_NODE);
+			childrenFeatures.add(ActivitiesPackage.Literals.ACTIVITY__OWNED_ACTIVITY_EDGES);
+			childrenFeatures.add(ActivitiesPackage.Literals.ACTIVITY__OWNED_ACTIVITY_NODES);
 		}
 		return childrenFeatures;
 	}
@@ -175,8 +175,8 @@ public class ActivityItemProvider extends CallableItemProvider {
 			case ActivitiesPackage.ACTIVITY__NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case ActivitiesPackage.ACTIVITY__OWNED_ACTIVITY_EDGE:
-			case ActivitiesPackage.ACTIVITY__OWNED_ACTIVITY_NODE:
+			case ActivitiesPackage.ACTIVITY__OWNED_ACTIVITY_EDGES:
+			case ActivitiesPackage.ACTIVITY__OWNED_ACTIVITY_NODES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -210,52 +210,52 @@ public class ActivityItemProvider extends CallableItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActivitiesPackage.Literals.ACTIVITY__OWNED_ACTIVITY_EDGE,
+				(ActivitiesPackage.Literals.ACTIVITY__OWNED_ACTIVITY_EDGES,
 				 ActivitiesFactory.eINSTANCE.createActivityEdge()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActivitiesPackage.Literals.ACTIVITY__OWNED_ACTIVITY_NODE,
+				(ActivitiesPackage.Literals.ACTIVITY__OWNED_ACTIVITY_NODES,
 				 ActivitiesFactory.eINSTANCE.createMatchingStoryNode()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActivitiesPackage.Literals.ACTIVITY__OWNED_ACTIVITY_NODE,
+				(ActivitiesPackage.Literals.ACTIVITY__OWNED_ACTIVITY_NODES,
 				 ActivitiesFactory.eINSTANCE.createStructuredNode()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActivitiesPackage.Literals.ACTIVITY__OWNED_ACTIVITY_NODE,
+				(ActivitiesPackage.Literals.ACTIVITY__OWNED_ACTIVITY_NODES,
 				 ActivitiesFactory.eINSTANCE.createJunctionNode()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActivitiesPackage.Literals.ACTIVITY__OWNED_ACTIVITY_NODE,
+				(ActivitiesPackage.Literals.ACTIVITY__OWNED_ACTIVITY_NODES,
 				 ActivitiesFactory.eINSTANCE.createInitialNode()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActivitiesPackage.Literals.ACTIVITY__OWNED_ACTIVITY_NODE,
+				(ActivitiesPackage.Literals.ACTIVITY__OWNED_ACTIVITY_NODES,
 				 ActivitiesFactory.eINSTANCE.createStatementNode()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActivitiesPackage.Literals.ACTIVITY__OWNED_ACTIVITY_NODE,
+				(ActivitiesPackage.Literals.ACTIVITY__OWNED_ACTIVITY_NODES,
 				 ActivitiesFactory.eINSTANCE.createActivityFinalNode()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActivitiesPackage.Literals.ACTIVITY__OWNED_ACTIVITY_NODE,
+				(ActivitiesPackage.Literals.ACTIVITY__OWNED_ACTIVITY_NODES,
 				 ActivitiesFactory.eINSTANCE.createActivityCallNode()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActivitiesPackage.Literals.ACTIVITY__OWNED_ACTIVITY_NODE,
+				(ActivitiesPackage.Literals.ACTIVITY__OWNED_ACTIVITY_NODES,
 				 ActivitiesFactory.eINSTANCE.createModifyingStoryNode()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActivitiesPackage.Literals.ACTIVITY__OWNED_ACTIVITY_NODE,
+				(ActivitiesPackage.Literals.ACTIVITY__OWNED_ACTIVITY_NODES,
 				 ActivitiesFactory.eINSTANCE.createFlowFinalNode()));
 	}
 

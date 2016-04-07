@@ -72,7 +72,7 @@ public class EvaluateComponentSDDExpressionEditor extends org.muml.ape.runtime.e
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorComponentSDD_property_tab_generalTab;
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorComponentSDD_property_tab_generalTab_Editor() {
 		if (this.editorComponentSDD_property_tab_generalTab == null) {
-			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.reconfiguration.verification.sdd.componentsdd.componentsdd.ComponentsddPackage.eINSTANCE
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.reconfiguration.verification.sdd.componentsdd.ComponentsddPackage.eINSTANCE
 					.getEvaluateComponentSDDExpression_ComponentSDD();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.ComboPropertyEditor(
 					adapterFactory, feature);
@@ -85,7 +85,7 @@ public class EvaluateComponentSDDExpressionEditor extends org.muml.ape.runtime.e
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorParameterBindings_property_tab_generalTab;
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorParameterBindings_property_tab_generalTab_Editor() {
 		if (this.editorParameterBindings_property_tab_generalTab == null) {
-			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.reconfiguration.verification.sdd.componentsdd.componentsdd.ComponentsddPackage.eINSTANCE
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.reconfiguration.verification.sdd.componentsdd.ComponentsddPackage.eINSTANCE
 					.getEvaluateComponentSDDExpression_ParameterBindings();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.ListPropertyEditor(
 					adapterFactory, feature);
@@ -137,7 +137,7 @@ public class EvaluateComponentSDDExpressionEditor extends org.muml.ape.runtime.e
 		this(tab,
 				org.muml.reconfiguration.verification.sdd.componentsdd.properties.util.PropertiesUtil.INSTANCE
 						.getAdapterFactory(),
-				org.muml.reconfiguration.verification.sdd.componentsdd.componentsdd.ComponentsddPackage.eINSTANCE
+				org.muml.reconfiguration.verification.sdd.componentsdd.ComponentsddPackage.eINSTANCE
 						.getEvaluateComponentSDDExpression());
 	}
 

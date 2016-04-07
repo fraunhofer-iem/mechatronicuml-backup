@@ -18,6 +18,9 @@ import org.muml.core.expressions.ExpressionsFactory;
 import org.muml.core.expressions.common.CommonExpressionsFactory;
 import org.muml.storydiagram.activities.ActivitiesPackage;
 import org.muml.storydiagram.activities.StatementNode;
+import org.muml.storydiagram.activities.expressions.ActivitiesExpressionsFactory;
+import org.muml.storydiagram.calls.expressions.CallsExpressionsFactory;
+import org.muml.storydiagram.patterns.expressions.PatternsExpressionsFactory;
 
 /**
  * This is the item provider adapter for a {@link org.muml.storydiagram.activities.StatementNode} object.
@@ -144,37 +147,37 @@ public class StatementNodeItemProvider extends ActivityNodeItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(ActivitiesPackage.Literals.STATEMENT_NODE__STATEMENT_EXPRESSION,
-				 org.muml.storydiagram.activities.expressions.ExpressionsFactory.eINSTANCE.createExceptionVariableExpression()));
+				 ActivitiesExpressionsFactory.eINSTANCE.createExceptionVariableExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(ActivitiesPackage.Literals.STATEMENT_NODE__STATEMENT_EXPRESSION,
-				 org.muml.storydiagram.calls.expressions.ExpressionsFactory.eINSTANCE.createMethodCallExpression()));
+				 CallsExpressionsFactory.eINSTANCE.createMethodCallExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(ActivitiesPackage.Literals.STATEMENT_NODE__STATEMENT_EXPRESSION,
-				 org.muml.storydiagram.calls.expressions.ExpressionsFactory.eINSTANCE.createParameterExpression()));
+				 CallsExpressionsFactory.eINSTANCE.createParameterExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(ActivitiesPackage.Literals.STATEMENT_NODE__STATEMENT_EXPRESSION,
-				 org.muml.storydiagram.patterns.expressions.ExpressionsFactory.eINSTANCE.createAttributeValueExpression()));
+				 PatternsExpressionsFactory.eINSTANCE.createAttributeValueExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(ActivitiesPackage.Literals.STATEMENT_NODE__STATEMENT_EXPRESSION,
-				 org.muml.storydiagram.patterns.expressions.ExpressionsFactory.eINSTANCE.createObjectVariableExpression()));
+				 PatternsExpressionsFactory.eINSTANCE.createObjectVariableExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(ActivitiesPackage.Literals.STATEMENT_NODE__STATEMENT_EXPRESSION,
-				 org.muml.storydiagram.patterns.expressions.ExpressionsFactory.eINSTANCE.createCollectionSizeExpression()));
+				 PatternsExpressionsFactory.eINSTANCE.createCollectionSizeExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(ActivitiesPackage.Literals.STATEMENT_NODE__STATEMENT_EXPRESSION,
-				 org.muml.storydiagram.patterns.expressions.ExpressionsFactory.eINSTANCE.createPrimitiveVariableExpression()));
+				 PatternsExpressionsFactory.eINSTANCE.createPrimitiveVariableExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter

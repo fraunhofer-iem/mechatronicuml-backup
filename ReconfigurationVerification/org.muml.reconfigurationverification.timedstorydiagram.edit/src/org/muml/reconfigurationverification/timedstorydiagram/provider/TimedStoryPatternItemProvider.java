@@ -141,12 +141,12 @@ public class TimedStoryPatternItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(PatternsPackage.Literals.STORY_PATTERN__VARIABLE,
+				(PatternsPackage.Literals.STORY_PATTERN__VARIABLES,
 				 TimedstorydiagramFactory.eINSTANCE.createClockInstanceVariable()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(PatternsPackage.Literals.STORY_PATTERN__CONTAINED_PATTERN,
+				(PatternsPackage.Literals.STORY_PATTERN__CONTAINED_PATTERNS,
 				 TimedstorydiagramFactory.eINSTANCE.createTimedStoryPattern()));
 	}
 

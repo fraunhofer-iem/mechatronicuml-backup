@@ -22,6 +22,8 @@ import org.muml.reconfiguration.provider.MumlReconfigurationEditPlugin;
 import org.muml.reconfiguration.structdatatype.StructType;
 import org.muml.reconfiguration.structdatatype.StructdatatypeFactory;
 import org.muml.reconfiguration.structdatatype.StructdatatypePackage;
+import org.muml.storydiagram.activities.ActivitiesFactory;
+import org.muml.storydiagram.calls.CallsFactory;
 
 /**
  * This is the item provider adapter for a {@link org.muml.reconfiguration.structdatatype.StructType} object.
@@ -144,12 +146,12 @@ public class StructTypeItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSIONS,
-				 org.muml.storydiagram.activities.ActivitiesFactory.eINSTANCE.createOperationExtension()));
+				 ActivitiesFactory.eINSTANCE.createOperationExtension()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSIONS,
-				 org.muml.storydiagram.calls.CallsFactory.eINSTANCE.createParameterExtension()));
+				 CallsFactory.eINSTANCE.createParameterExtension()));
 
 		newChildDescriptors.add
 			(createChildParameter

@@ -49,7 +49,7 @@ public class ActivityCallNodeItemProvider extends ActivityNodeItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addCalleePropertyDescriptor(object);
-			addCalledActivityPropertyDescriptor(object);
+			addCalledActivitiesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -77,19 +77,19 @@ public class ActivityCallNodeItemProvider extends ActivityNodeItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Called Activity feature.
+	 * This adds a property descriptor for the Called Activities feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addCalledActivityPropertyDescriptor(Object object) {
+	protected void addCalledActivitiesPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ActivityCallNode_calledActivity_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ActivityCallNode_calledActivity_feature", "_UI_ActivityCallNode_type"),
-				 ActivitiesPackage.Literals.ACTIVITY_CALL_NODE__CALLED_ACTIVITY,
+				 getString("_UI_ActivityCallNode_calledActivities_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ActivityCallNode_calledActivities_feature", "_UI_ActivityCallNode_type"),
+				 ActivitiesPackage.Literals.ACTIVITY_CALL_NODE__CALLED_ACTIVITIES,
 				 true,
 				 false,
 				 true,

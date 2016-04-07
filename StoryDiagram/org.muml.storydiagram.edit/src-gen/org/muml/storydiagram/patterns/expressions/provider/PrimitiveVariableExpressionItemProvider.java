@@ -18,7 +18,7 @@ import org.muml.core.CorePackage;
 import org.muml.core.expressions.provider.ExpressionItemProvider;
 import org.muml.storydiagram.activities.ActivitiesFactory;
 import org.muml.storydiagram.calls.CallsFactory;
-import org.muml.storydiagram.patterns.expressions.ExpressionsPackage;
+import org.muml.storydiagram.patterns.expressions.PatternsExpressionsPackage;
 import org.muml.storydiagram.patterns.expressions.PrimitiveVariableExpression;
 import org.muml.storydiagram.provider.StorydiagramsEditPlugin;
 
@@ -69,7 +69,7 @@ public class PrimitiveVariableExpressionItemProvider extends
 				 getResourceLocator(),
 				 getString("_UI_PrimitiveVariableExpression_primitiveVariable_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_PrimitiveVariableExpression_primitiveVariable_feature", "_UI_PrimitiveVariableExpression_type"),
-				 ExpressionsPackage.Literals.PRIMITIVE_VARIABLE_EXPRESSION__PRIMITIVE_VARIABLE,
+				 PatternsExpressionsPackage.Literals.PRIMITIVE_VARIABLE_EXPRESSION__PRIMITIVE_VARIABLE,
 				 true,
 				 false,
 				 true,

@@ -54,7 +54,7 @@ public class ParameterExpressionEditor extends org.muml.ape.runtime.editors.Clas
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorParameter_property_tab_generalTab;
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorParameter_property_tab_generalTab_Editor() {
 		if (this.editorParameter_property_tab_generalTab == null) {
-			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.storydiagram.calls.expressions.ExpressionsPackage.eINSTANCE
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.storydiagram.calls.expressions.CallsExpressionsPackage.eINSTANCE
 					.getParameterExpression_Parameter();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.ComboPropertyEditor(
 					adapterFactory, feature);
@@ -73,7 +73,7 @@ public class ParameterExpressionEditor extends org.muml.ape.runtime.editors.Clas
 	 */
 	public ParameterExpressionEditor(String tab) {
 		this(tab, org.muml.storydiagram.properties.util.PropertiesUtil.INSTANCE.getAdapterFactory(),
-				org.muml.storydiagram.calls.expressions.ExpressionsPackage.eINSTANCE.getParameterExpression());
+				org.muml.storydiagram.calls.expressions.CallsExpressionsPackage.eINSTANCE.getParameterExpression());
 	}
 
 	/**

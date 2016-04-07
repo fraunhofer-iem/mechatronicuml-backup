@@ -11,6 +11,7 @@ import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.provider.EcoreEditPlugin;
 import org.muml.core.provider.CoreEditPlugin;
 import org.muml.pim.provider.MumlEditPlugin;
+import org.muml.storydiagram.provider.StorydiagramsEditPlugin;
 
 /**
  * This is the central singleton for the MumlReconfiguration edit plugin.
@@ -47,7 +48,7 @@ public final class MumlReconfigurationEditPlugin extends EMFPlugin {
 		     CoreEditPlugin.INSTANCE,
 		     EcoreEditPlugin.INSTANCE,
 		     MumlEditPlugin.INSTANCE,
-		     org.muml.storydiagram.provider.StorydiagramsEditPlugin.INSTANCE,
+		     StorydiagramsEditPlugin.INSTANCE,
 		   });
 	}
 

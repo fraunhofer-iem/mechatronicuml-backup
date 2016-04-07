@@ -77,7 +77,7 @@ public interface LabelingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ATOMIC_PROPOSITION_MAPPING__ANNOTATION = CorePackage.EXTENSION__ANNOTATION;
+	int ATOMIC_PROPOSITION_MAPPING__ANNOTATION = CorePackage.EXTENSION__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -86,7 +86,7 @@ public interface LabelingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ATOMIC_PROPOSITION_MAPPING__EXTENSION = CorePackage.EXTENSION__EXTENSION;
+	int ATOMIC_PROPOSITION_MAPPING__EXTENSION = CorePackage.EXTENSION__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Base</b></em>' reference.

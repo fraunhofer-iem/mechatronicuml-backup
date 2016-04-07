@@ -27,6 +27,9 @@ import org.muml.core.expressions.common.CommonExpressionsFactory;
 import org.muml.reconfiguration.HybridPortMapping;
 import org.muml.reconfiguration.ReconfigurationPackage;
 import org.muml.reconfiguration.expression.ExpressionFactory;
+import org.muml.storydiagram.activities.expressions.ActivitiesExpressionsFactory;
+import org.muml.storydiagram.calls.expressions.CallsExpressionsFactory;
+import org.muml.storydiagram.patterns.expressions.PatternsExpressionsFactory;
 
 /**
  * This is the item provider adapter for a {@link org.muml.reconfiguration.HybridPortMapping} object.
@@ -221,37 +224,37 @@ public class HybridPortMappingItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(ReconfigurationPackage.Literals.HYBRID_PORT_MAPPING__FUNCTION,
-				 org.muml.storydiagram.activities.expressions.ExpressionsFactory.eINSTANCE.createExceptionVariableExpression()));
+				 ActivitiesExpressionsFactory.eINSTANCE.createExceptionVariableExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(ReconfigurationPackage.Literals.HYBRID_PORT_MAPPING__FUNCTION,
-				 org.muml.storydiagram.calls.expressions.ExpressionsFactory.eINSTANCE.createMethodCallExpression()));
+				 CallsExpressionsFactory.eINSTANCE.createMethodCallExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(ReconfigurationPackage.Literals.HYBRID_PORT_MAPPING__FUNCTION,
-				 org.muml.storydiagram.calls.expressions.ExpressionsFactory.eINSTANCE.createParameterExpression()));
+				 CallsExpressionsFactory.eINSTANCE.createParameterExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(ReconfigurationPackage.Literals.HYBRID_PORT_MAPPING__FUNCTION,
-				 org.muml.storydiagram.patterns.expressions.ExpressionsFactory.eINSTANCE.createAttributeValueExpression()));
+				 PatternsExpressionsFactory.eINSTANCE.createAttributeValueExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(ReconfigurationPackage.Literals.HYBRID_PORT_MAPPING__FUNCTION,
-				 org.muml.storydiagram.patterns.expressions.ExpressionsFactory.eINSTANCE.createObjectVariableExpression()));
+				 PatternsExpressionsFactory.eINSTANCE.createObjectVariableExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(ReconfigurationPackage.Literals.HYBRID_PORT_MAPPING__FUNCTION,
-				 org.muml.storydiagram.patterns.expressions.ExpressionsFactory.eINSTANCE.createCollectionSizeExpression()));
+				 PatternsExpressionsFactory.eINSTANCE.createCollectionSizeExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(ReconfigurationPackage.Literals.HYBRID_PORT_MAPPING__FUNCTION,
-				 org.muml.storydiagram.patterns.expressions.ExpressionsFactory.eINSTANCE.createPrimitiveVariableExpression()));
+				 PatternsExpressionsFactory.eINSTANCE.createPrimitiveVariableExpression()));
 	}
 
 	/**

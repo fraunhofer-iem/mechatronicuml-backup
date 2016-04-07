@@ -23,6 +23,7 @@
     <requiredBundles>org.muml.pim.edit.properties</requiredBundles>
     <requiredBundles>org.muml.core.modelinstance.edit</requiredBundles>
     <requiredBundles>org.muml.core.modelinstance.edit.properties</requiredBundles>
+    <requiredBundles>org.muml.external.ontology.owlapi</requiredBundles>
   </plugin>
   <tabs xmi:id="_Rl8bMc1gEeSIgPDefa6ZBw" id="property.tab.ontology" name="Ontology" afterTab=""/>
   <packages xmi:id="_Rl8bMs1gEeSIgPDefa6ZBw">

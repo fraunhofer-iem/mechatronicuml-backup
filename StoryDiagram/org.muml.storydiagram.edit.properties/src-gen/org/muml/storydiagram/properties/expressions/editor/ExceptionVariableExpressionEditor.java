@@ -54,7 +54,7 @@ public class ExceptionVariableExpressionEditor extends org.muml.ape.runtime.edit
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorExceptionVariable_property_tab_generalTab;
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorExceptionVariable_property_tab_generalTab_Editor() {
 		if (this.editorExceptionVariable_property_tab_generalTab == null) {
-			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.storydiagram.activities.expressions.ExpressionsPackage.eINSTANCE
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.storydiagram.activities.expressions.ActivitiesExpressionsPackage.eINSTANCE
 					.getExceptionVariableExpression_ExceptionVariable();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.ComboPropertyEditor(
 					adapterFactory, feature);
@@ -76,7 +76,7 @@ public class ExceptionVariableExpressionEditor extends org.muml.ape.runtime.edit
 	 */
 	public ExceptionVariableExpressionEditor(String tab) {
 		this(tab, org.muml.storydiagram.properties.util.PropertiesUtil.INSTANCE.getAdapterFactory(),
-				org.muml.storydiagram.activities.expressions.ExpressionsPackage.eINSTANCE
+				org.muml.storydiagram.activities.expressions.ActivitiesExpressionsPackage.eINSTANCE
 						.getExceptionVariableExpression());
 	}
 

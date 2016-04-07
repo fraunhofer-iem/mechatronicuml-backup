@@ -43,7 +43,7 @@
       <!-- @generated storydiagrams -->
       <factory
             uri="http://www.muml.org/storydiagram/activities/expressions/1.0.0"
-            class="org.muml.storydiagram.activities.expressions.provider.ExpressionsItemProviderAdapterFactory"
+            class="org.muml.storydiagram.activities.expressions.provider.ActivitiesExpressionsItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider
@@ -69,7 +69,7 @@
       <!-- @generated storydiagrams -->
       <factory
             uri="http://www.muml.org/storydiagram/calls/expressions/1.0.0"
-            class="org.muml.storydiagram.calls.expressions.provider.ExpressionsItemProviderAdapterFactory"
+            class="org.muml.storydiagram.calls.expressions.provider.CallsExpressionsItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider
@@ -95,7 +95,7 @@
       <!-- @generated storydiagrams -->
       <factory
             uri="http://www.muml.org/storydiagram/patterns/expressions/1.0.0"
-            class="org.muml.storydiagram.patterns.expressions.provider.ExpressionsItemProviderAdapterFactory"
+            class="org.muml.storydiagram.patterns.expressions.provider.PatternsExpressionsItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider

@@ -18,7 +18,7 @@ import org.muml.core.CorePackage;
 import org.muml.core.expressions.provider.ExpressionItemProvider;
 import org.muml.storydiagram.activities.ActivitiesFactory;
 import org.muml.storydiagram.calls.CallsFactory;
-import org.muml.storydiagram.calls.expressions.ExpressionsPackage;
+import org.muml.storydiagram.calls.expressions.CallsExpressionsPackage;
 import org.muml.storydiagram.calls.expressions.ParameterExpression;
 import org.muml.storydiagram.provider.StorydiagramsEditPlugin;
 
@@ -68,7 +68,7 @@ public class ParameterExpressionItemProvider extends ExpressionItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_ParameterExpression_parameter_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ParameterExpression_parameter_feature", "_UI_ParameterExpression_type"),
-				 ExpressionsPackage.Literals.PARAMETER_EXPRESSION__PARAMETER,
+				 CallsExpressionsPackage.Literals.PARAMETER_EXPRESSION__PARAMETER,
 				 true,
 				 false,
 				 true,

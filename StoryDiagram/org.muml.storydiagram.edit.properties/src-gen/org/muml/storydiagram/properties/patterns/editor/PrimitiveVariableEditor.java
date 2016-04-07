@@ -23,7 +23,7 @@ public class PrimitiveVariableEditor extends org.muml.ape.runtime.editors.ClassP
 
 			addPropertyEditor(createEditorBindingState_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorIncomingLink_property_tab_generalTab_Editor(), false);
+			addPropertyEditor(createEditorIncomingLinks_property_tab_generalTab_Editor(), false);
 
 			addPropertyEditor(createEditorClassifier_property_tab_generalTab_Editor(), false);
 
@@ -47,7 +47,7 @@ public class PrimitiveVariableEditor extends org.muml.ape.runtime.editors.ClassP
 
 			addPropertyEditor(createEditorBindingState_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorIncomingLink_property_tab_generalTab_Editor(), false);
+			addPropertyEditor(createEditorIncomingLinks_property_tab_generalTab_Editor(), false);
 
 			addPropertyEditor(createEditorClassifier_property_tab_generalTab_Editor(), false);
 
@@ -90,17 +90,17 @@ public class PrimitiveVariableEditor extends org.muml.ape.runtime.editors.ClassP
 		return this.editorBindingState_property_tab_generalTab;
 	}
 
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorIncomingLink_property_tab_generalTab;
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorIncomingLink_property_tab_generalTab_Editor() {
-		if (this.editorIncomingLink_property_tab_generalTab == null) {
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorIncomingLinks_property_tab_generalTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorIncomingLinks_property_tab_generalTab_Editor() {
+		if (this.editorIncomingLinks_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.storydiagram.patterns.PatternsPackage.eINSTANCE
-					.getAbstractVariable_IncomingLink();
+					.getAbstractVariable_IncomingLinks();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.ListPropertyEditor(
 					adapterFactory, feature);
 
-			this.editorIncomingLink_property_tab_generalTab = editor;
+			this.editorIncomingLinks_property_tab_generalTab = editor;
 		}
-		return this.editorIncomingLink_property_tab_generalTab;
+		return this.editorIncomingLinks_property_tab_generalTab;
 	}
 
 	//

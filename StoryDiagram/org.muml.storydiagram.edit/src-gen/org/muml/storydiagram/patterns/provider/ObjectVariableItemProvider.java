@@ -158,7 +158,7 @@ public class ObjectVariableItemProvider extends AbstractVariableItemProvider {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(PatternsPackage.Literals.OBJECT_VARIABLE__LINK_ORDER_CONSTRAINT);
-			childrenFeatures.add(PatternsPackage.Literals.OBJECT_VARIABLE__ATTRIBUTE_ASSIGNMENT);
+			childrenFeatures.add(PatternsPackage.Literals.OBJECT_VARIABLE__ATTRIBUTE_ASSIGNMENTS);
 		}
 		return childrenFeatures;
 	}
@@ -208,7 +208,7 @@ public class ObjectVariableItemProvider extends AbstractVariableItemProvider {
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case PatternsPackage.OBJECT_VARIABLE__LINK_ORDER_CONSTRAINT:
-			case PatternsPackage.OBJECT_VARIABLE__ATTRIBUTE_ASSIGNMENT:
+			case PatternsPackage.OBJECT_VARIABLE__ATTRIBUTE_ASSIGNMENTS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -247,7 +247,7 @@ public class ObjectVariableItemProvider extends AbstractVariableItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(PatternsPackage.Literals.OBJECT_VARIABLE__ATTRIBUTE_ASSIGNMENT,
+				(PatternsPackage.Literals.OBJECT_VARIABLE__ATTRIBUTE_ASSIGNMENTS,
 				 PatternsFactory.eINSTANCE.createAttributeAssignment()));
 	}
 

@@ -99,8 +99,8 @@ public class TemplateSignatureItemProvider extends ItemProviderAdapter
 			Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(TemplatesPackage.Literals.TEMPLATE_SIGNATURE__TEMPLATE_BINDING);
-			childrenFeatures.add(TemplatesPackage.Literals.TEMPLATE_SIGNATURE__TYPE_PARAMETER);
+			childrenFeatures.add(TemplatesPackage.Literals.TEMPLATE_SIGNATURE__TEMPLATE_BINDINGS);
+			childrenFeatures.add(TemplatesPackage.Literals.TEMPLATE_SIGNATURE__TYPE_PARAMETERS);
 		}
 		return childrenFeatures;
 	}
@@ -128,8 +128,8 @@ public class TemplateSignatureItemProvider extends ItemProviderAdapter
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(TemplateSignature.class)) {
-			case TemplatesPackage.TEMPLATE_SIGNATURE__TEMPLATE_BINDING:
-			case TemplatesPackage.TEMPLATE_SIGNATURE__TYPE_PARAMETER:
+			case TemplatesPackage.TEMPLATE_SIGNATURE__TEMPLATE_BINDINGS:
+			case TemplatesPackage.TEMPLATE_SIGNATURE__TYPE_PARAMETERS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -163,22 +163,22 @@ public class TemplateSignatureItemProvider extends ItemProviderAdapter
 
 		newChildDescriptors.add
 			(createChildParameter
-				(TemplatesPackage.Literals.TEMPLATE_SIGNATURE__TEMPLATE_BINDING,
+				(TemplatesPackage.Literals.TEMPLATE_SIGNATURE__TEMPLATE_BINDINGS,
 				 TemplatesFactory.eINSTANCE.createTemplateBinding()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(TemplatesPackage.Literals.TEMPLATE_SIGNATURE__TYPE_PARAMETER,
+				(TemplatesPackage.Literals.TEMPLATE_SIGNATURE__TYPE_PARAMETERS,
 				 EcoreFactory.eINSTANCE.createEClass()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(TemplatesPackage.Literals.TEMPLATE_SIGNATURE__TYPE_PARAMETER,
+				(TemplatesPackage.Literals.TEMPLATE_SIGNATURE__TYPE_PARAMETERS,
 				 EcoreFactory.eINSTANCE.createEDataType()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(TemplatesPackage.Literals.TEMPLATE_SIGNATURE__TYPE_PARAMETER,
+				(TemplatesPackage.Literals.TEMPLATE_SIGNATURE__TYPE_PARAMETERS,
 				 EcoreFactory.eINSTANCE.createEEnum()));
 	}
 

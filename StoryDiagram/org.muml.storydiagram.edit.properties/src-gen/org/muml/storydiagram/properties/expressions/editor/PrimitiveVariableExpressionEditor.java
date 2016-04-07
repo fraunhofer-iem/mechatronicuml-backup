@@ -54,7 +54,7 @@ public class PrimitiveVariableExpressionEditor extends org.muml.ape.runtime.edit
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorPrimitiveVariable_property_tab_generalTab;
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorPrimitiveVariable_property_tab_generalTab_Editor() {
 		if (this.editorPrimitiveVariable_property_tab_generalTab == null) {
-			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.storydiagram.patterns.expressions.ExpressionsPackage.eINSTANCE
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.storydiagram.patterns.expressions.PatternsExpressionsPackage.eINSTANCE
 					.getPrimitiveVariableExpression_PrimitiveVariable();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.ComboPropertyEditor(
 					adapterFactory, feature);
@@ -73,7 +73,7 @@ public class PrimitiveVariableExpressionEditor extends org.muml.ape.runtime.edit
 	 */
 	public PrimitiveVariableExpressionEditor(String tab) {
 		this(tab, org.muml.storydiagram.properties.util.PropertiesUtil.INSTANCE.getAdapterFactory(),
-				org.muml.storydiagram.patterns.expressions.ExpressionsPackage.eINSTANCE
+				org.muml.storydiagram.patterns.expressions.PatternsExpressionsPackage.eINSTANCE
 						.getPrimitiveVariableExpression());
 	}
 
