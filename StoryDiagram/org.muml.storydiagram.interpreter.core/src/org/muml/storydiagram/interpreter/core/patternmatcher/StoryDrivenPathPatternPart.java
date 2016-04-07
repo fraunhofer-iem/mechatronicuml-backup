@@ -11,6 +11,15 @@ import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.muml.core.expressions.Expression;
+import org.muml.storydiagram.expressions.pathExpressions.ExplicitPathDescription;
+import org.muml.storydiagram.expressions.pathExpressions.ImplicitPathDescription;
+import org.muml.storydiagram.expressions.pathExpressions.ImplicitPathKind;
+import org.muml.storydiagram.expressions.pathExpressions.PathExpression;
+import org.muml.storydiagram.expressions.pathExpressions.PathSegment;
+import org.muml.storydiagram.expressions.pathExpressions.PathSegmentDescription;
+import org.muml.storydiagram.expressions.pathExpressions.RepeatOperator;
+import org.muml.storydiagram.expressions.pathExpressions.RestrictionList;
+import org.muml.storydiagram.expressions.pathExpressions.TypeRestriction;
 import org.muml.storydiagram.expressions.pathbridge.PathExpressionBridge;
 import org.muml.storydiagram.interpreter.core.mdelab.SDMException;
 import org.muml.storydiagram.interpreter.core.mdelab.patternmatcher.patternPartBased.ECheckResult;
@@ -22,15 +31,6 @@ import org.muml.storydiagram.interpreter.core.mdelab.variables.Variable;
 import org.muml.storydiagram.patterns.AbstractLinkVariable;
 import org.muml.storydiagram.patterns.AbstractVariable;
 import org.muml.storydiagram.patterns.Path;
-import org.storydriven.storydiagrams.expressions.pathExpressions.ExplicitPathDescription;
-import org.storydriven.storydiagrams.expressions.pathExpressions.ImplicitPathDescription;
-import org.storydriven.storydiagrams.expressions.pathExpressions.ImplicitPathKind;
-import org.storydriven.storydiagrams.expressions.pathExpressions.PathExpression;
-import org.storydriven.storydiagrams.expressions.pathExpressions.PathSegment;
-import org.storydriven.storydiagrams.expressions.pathExpressions.PathSegmentDescription;
-import org.storydriven.storydiagrams.expressions.pathExpressions.RepeatOperator;
-import org.storydriven.storydiagrams.expressions.pathExpressions.RestrictionList;
-import org.storydriven.storydiagrams.expressions.pathExpressions.TypeRestriction;
 
 public class StoryDrivenPathPatternPart extends
 		StoryDrivenPatternPart<AbstractVariable, Path> {
@@ -272,7 +272,7 @@ public class StoryDrivenPathPatternPart extends
 		final Path path = this.link;
 		final PathExpressionBridge bridge = (PathExpressionBridge) path.getPathExpression();
 		final PathExpression expr = bridge.getPathExpression();
-		for (final org.storydriven.storydiagrams.expressions.pathExpressions.Path pa : expr.getPathAlternatives()) {
+		for (final org.muml.storydiagram.expressions.pathExpressions.Path pa : expr.getPathAlternatives()) {
 			List<EObject> tmp = applySearchForPathAlternative(sourceObject, pa);
 			results.addAll(tmp);
 		}
@@ -282,7 +282,7 @@ public class StoryDrivenPathPatternPart extends
 
 	private List<EObject> applySearchForPathAlternative(
 			EObject sourceObject,
-			org.storydriven.storydiagrams.expressions.pathExpressions.Path pa) {
+			org.muml.storydiagram.expressions.pathExpressions.Path pa) {
 		
 	      final List<EObject> results = new LinkedList<EObject>();
 	      final List<EObject> visited = new LinkedList<EObject>();
@@ -290,7 +290,7 @@ public class StoryDrivenPathPatternPart extends
 	      List<EObject> reached = Collections.emptyList();
 	      
 	      queue.offer(sourceObject);
-	      for(final org.storydriven.storydiagrams.expressions.pathExpressions.PathSegment segment : pa.getSegments())
+	      for(final org.muml.storydiagram.expressions.pathExpressions.PathSegment segment : pa.getSegments())
 	      {
 	         //do this for every link segment and fill the queue with reached node from last iteration
 	         reached = checkNextSegment(visited, queue, segment);
@@ -309,7 +309,7 @@ public class StoryDrivenPathPatternPart extends
 	private List<EObject> checkNextSegment(
 			List<EObject> visited,
 			LinkedList<EObject> queue,
-			org.storydriven.storydiagrams.expressions.pathExpressions.PathSegment segment) {
+			org.muml.storydiagram.expressions.pathExpressions.PathSegment segment) {
 
 		final List<EObject> intermediateResult = new LinkedList<EObject>();
 		final RepeatOperator operator = segment.getRepeatOperator();

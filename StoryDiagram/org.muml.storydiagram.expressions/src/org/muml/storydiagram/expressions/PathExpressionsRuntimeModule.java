@@ -7,6 +7,6 @@ package org.muml.storydiagram.expressions;
 /**
  * Use this class to register components to be used at runtime / without the Equinox extension registry.
  */
-public class PathExpressionsRuntimeModule extends org.storydriven.storydiagrams.expressions.AbstractPathExpressionsRuntimeModule {
+public class PathExpressionsRuntimeModule extends org.muml.storydiagram.expressions.AbstractPathExpressionsRuntimeModule {
 
 }

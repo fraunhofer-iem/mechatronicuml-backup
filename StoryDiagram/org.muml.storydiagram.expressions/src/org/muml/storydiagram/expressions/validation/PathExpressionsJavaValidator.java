@@ -1,6 +1,6 @@
 package org.muml.storydiagram.expressions.validation;
 
-import org.storydriven.storydiagrams.expressions.validation.AbstractPathExpressionsJavaValidator;
+import org.muml.storydiagram.expressions.validation.AbstractPathExpressionsJavaValidator;
 
 public class PathExpressionsJavaValidator extends AbstractPathExpressionsJavaValidator {
 

@@ -12,9 +12,9 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.muml.core.expressions.impl.ExpressionImpl;
+import org.muml.storydiagram.expressions.pathExpressions.PathExpression;
 import org.muml.storydiagram.expressions.pathbridge.PathExpressionBridge;
 import org.muml.storydiagram.expressions.pathbridge.PathbridgePackage;
-import org.storydriven.storydiagrams.expressions.pathExpressions.PathExpression;
 
 /**
  * <!-- begin-user-doc -->

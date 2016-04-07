@@ -7,7 +7,7 @@
 package org.muml.storydiagram.expressions.pathbridge;
 
 import org.muml.core.expressions.Expression;
-import org.storydriven.storydiagrams.expressions.pathExpressions.PathExpression;
+import org.muml.storydiagram.expressions.pathExpressions.PathExpression;
 
 /**
  * <!-- begin-user-doc -->

@@ -9,7 +9,7 @@ import org.antlr.runtime.TokenStream;
 import org.eclipse.xtext.Grammar;
 import org.eclipse.xtext.ui.editor.contentassist.antlr.internal.AbstractInternalContentAssistParser;
 import org.eclipse.xtext.ui.editor.contentassist.antlr.internal.DFA;
-import org.storydriven.storydiagrams.expressions.services.PathExpressionsGrammarAccess;
+import org.muml.storydiagram.expressions.services.PathExpressionsGrammarAccess;
 
 @SuppressWarnings("all")
 public class InternalPathExpressionsParser extends AbstractInternalContentAssistParser {

@@ -1,7 +1,7 @@
 
 package org.muml.storydiagram.expressions;
 
-import org.storydriven.storydiagrams.expressions.PathExpressionsStandaloneSetupGenerated;
+import org.muml.storydiagram.expressions.PathExpressionsStandaloneSetupGenerated;
 
 /**
  * Initialization support for running Xtext languages 

@@ -13,10 +13,10 @@ import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.muml.core.CorePackage;
 import org.muml.core.expressions.ExpressionsPackage;
+import org.muml.storydiagram.expressions.pathExpressions.PathExpressionsPackage;
 import org.muml.storydiagram.expressions.pathbridge.PathExpressionBridge;
 import org.muml.storydiagram.expressions.pathbridge.PathbridgeFactory;
 import org.muml.storydiagram.expressions.pathbridge.PathbridgePackage;
-import org.storydriven.storydiagrams.expressions.pathExpressions.PathExpressionsPackage;
 
 /**
  * <!-- begin-user-doc -->
