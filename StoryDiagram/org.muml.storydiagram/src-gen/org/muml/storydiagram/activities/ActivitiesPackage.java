@@ -523,7 +523,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTIVITY_EDGE___EGET__ESTRUCTURALFEATURE = CorePackage.EXTENDABLE_ELEMENT___EGET__ESTRUCTURALFEATURE_1;
+	int ACTIVITY_EDGE___EGET__ESTRUCTURALFEATURE = CorePackage.EXTENDABLE_ELEMENT___EGET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -532,7 +532,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTIVITY_EDGE___EGET__ESTRUCTURALFEATURE_BOOLEAN = CorePackage.EXTENDABLE_ELEMENT___EGET__ESTRUCTURALFEATURE_BOOLEAN_1;
+	int ACTIVITY_EDGE___EGET__ESTRUCTURALFEATURE_BOOLEAN = CorePackage.EXTENDABLE_ELEMENT___EGET__ESTRUCTURALFEATURE_BOOLEAN;
 
 	/**
 	 * The operation id for the '<em>ESet</em>' operation.
@@ -541,7 +541,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTIVITY_EDGE___ESET__ESTRUCTURALFEATURE_OBJECT = CorePackage.EXTENDABLE_ELEMENT___ESET__ESTRUCTURALFEATURE_OBJECT_1;
+	int ACTIVITY_EDGE___ESET__ESTRUCTURALFEATURE_OBJECT = CorePackage.EXTENDABLE_ELEMENT___ESET__ESTRUCTURALFEATURE_OBJECT;
 
 	/**
 	 * The operation id for the '<em>EIs Set</em>' operation.
@@ -550,7 +550,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTIVITY_EDGE___EIS_SET__ESTRUCTURALFEATURE = CorePackage.EXTENDABLE_ELEMENT___EIS_SET__ESTRUCTURALFEATURE_1;
+	int ACTIVITY_EDGE___EIS_SET__ESTRUCTURALFEATURE = CorePackage.EXTENDABLE_ELEMENT___EIS_SET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EUnset</em>' operation.
@@ -559,7 +559,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTIVITY_EDGE___EUNSET__ESTRUCTURALFEATURE = CorePackage.EXTENDABLE_ELEMENT___EUNSET__ESTRUCTURALFEATURE_1;
+	int ACTIVITY_EDGE___EUNSET__ESTRUCTURALFEATURE = CorePackage.EXTENDABLE_ELEMENT___EUNSET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EInvoke</em>' operation.
@@ -568,7 +568,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTIVITY_EDGE___EINVOKE__EOPERATION_ELIST = CorePackage.EXTENDABLE_ELEMENT___EINVOKE__EOPERATION_ELIST_1;
+	int ACTIVITY_EDGE___EINVOKE__EOPERATION_ELIST = CorePackage.EXTENDABLE_ELEMENT___EINVOKE__EOPERATION_ELIST;
 
 	/**
 	 * The operation id for the '<em>Get Extension</em>' operation.
@@ -794,7 +794,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTIVITY_NODE___EGET__ESTRUCTURALFEATURE = CorePackage.NAMED_ELEMENT___EGET__ESTRUCTURALFEATURE_1;
+	int ACTIVITY_NODE___EGET__ESTRUCTURALFEATURE = CorePackage.NAMED_ELEMENT___EGET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -803,7 +803,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTIVITY_NODE___EGET__ESTRUCTURALFEATURE_BOOLEAN = CorePackage.NAMED_ELEMENT___EGET__ESTRUCTURALFEATURE_BOOLEAN_1;
+	int ACTIVITY_NODE___EGET__ESTRUCTURALFEATURE_BOOLEAN = CorePackage.NAMED_ELEMENT___EGET__ESTRUCTURALFEATURE_BOOLEAN;
 
 	/**
 	 * The operation id for the '<em>ESet</em>' operation.
@@ -812,7 +812,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTIVITY_NODE___ESET__ESTRUCTURALFEATURE_OBJECT = CorePackage.NAMED_ELEMENT___ESET__ESTRUCTURALFEATURE_OBJECT_1;
+	int ACTIVITY_NODE___ESET__ESTRUCTURALFEATURE_OBJECT = CorePackage.NAMED_ELEMENT___ESET__ESTRUCTURALFEATURE_OBJECT;
 
 	/**
 	 * The operation id for the '<em>EIs Set</em>' operation.
@@ -821,7 +821,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTIVITY_NODE___EIS_SET__ESTRUCTURALFEATURE = CorePackage.NAMED_ELEMENT___EIS_SET__ESTRUCTURALFEATURE_1;
+	int ACTIVITY_NODE___EIS_SET__ESTRUCTURALFEATURE = CorePackage.NAMED_ELEMENT___EIS_SET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EUnset</em>' operation.
@@ -830,7 +830,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTIVITY_NODE___EUNSET__ESTRUCTURALFEATURE = CorePackage.NAMED_ELEMENT___EUNSET__ESTRUCTURALFEATURE_1;
+	int ACTIVITY_NODE___EUNSET__ESTRUCTURALFEATURE = CorePackage.NAMED_ELEMENT___EUNSET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EInvoke</em>' operation.
@@ -839,7 +839,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTIVITY_NODE___EINVOKE__EOPERATION_ELIST = CorePackage.NAMED_ELEMENT___EINVOKE__EOPERATION_ELIST_1;
+	int ACTIVITY_NODE___EINVOKE__EOPERATION_ELIST = CorePackage.NAMED_ELEMENT___EINVOKE__EOPERATION_ELIST;
 
 	/**
 	 * The operation id for the '<em>Get Extension</em>' operation.
@@ -1408,7 +1408,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATION_EXTENSION___EGET__ESTRUCTURALFEATURE = CorePackage.EXTENSION___EGET__ESTRUCTURALFEATURE_1;
+	int OPERATION_EXTENSION___EGET__ESTRUCTURALFEATURE = CorePackage.EXTENSION___EGET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -1417,7 +1417,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATION_EXTENSION___EGET__ESTRUCTURALFEATURE_BOOLEAN = CorePackage.EXTENSION___EGET__ESTRUCTURALFEATURE_BOOLEAN_1;
+	int OPERATION_EXTENSION___EGET__ESTRUCTURALFEATURE_BOOLEAN = CorePackage.EXTENSION___EGET__ESTRUCTURALFEATURE_BOOLEAN;
 
 	/**
 	 * The operation id for the '<em>ESet</em>' operation.
@@ -1426,7 +1426,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATION_EXTENSION___ESET__ESTRUCTURALFEATURE_OBJECT = CorePackage.EXTENSION___ESET__ESTRUCTURALFEATURE_OBJECT_1;
+	int OPERATION_EXTENSION___ESET__ESTRUCTURALFEATURE_OBJECT = CorePackage.EXTENSION___ESET__ESTRUCTURALFEATURE_OBJECT;
 
 	/**
 	 * The operation id for the '<em>EIs Set</em>' operation.
@@ -1435,7 +1435,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATION_EXTENSION___EIS_SET__ESTRUCTURALFEATURE = CorePackage.EXTENSION___EIS_SET__ESTRUCTURALFEATURE_1;
+	int OPERATION_EXTENSION___EIS_SET__ESTRUCTURALFEATURE = CorePackage.EXTENSION___EIS_SET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EUnset</em>' operation.
@@ -1444,7 +1444,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATION_EXTENSION___EUNSET__ESTRUCTURALFEATURE = CorePackage.EXTENSION___EUNSET__ESTRUCTURALFEATURE_1;
+	int OPERATION_EXTENSION___EUNSET__ESTRUCTURALFEATURE = CorePackage.EXTENSION___EUNSET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EInvoke</em>' operation.
@@ -1453,7 +1453,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATION_EXTENSION___EINVOKE__EOPERATION_ELIST = CorePackage.EXTENSION___EINVOKE__EOPERATION_ELIST_1;
+	int OPERATION_EXTENSION___EINVOKE__EOPERATION_ELIST = CorePackage.EXTENSION___EINVOKE__EOPERATION_ELIST;
 
 	/**
 	 * The operation id for the '<em>Get Extension</em>' operation.

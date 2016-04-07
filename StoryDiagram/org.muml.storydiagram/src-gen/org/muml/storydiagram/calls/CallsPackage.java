@@ -218,7 +218,7 @@ public interface CallsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INVOCATION___EGET__ESTRUCTURALFEATURE = CorePackage.COMMENTABLE_ELEMENT___EGET__ESTRUCTURALFEATURE_1;
+	int INVOCATION___EGET__ESTRUCTURALFEATURE = CorePackage.COMMENTABLE_ELEMENT___EGET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -227,7 +227,7 @@ public interface CallsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INVOCATION___EGET__ESTRUCTURALFEATURE_BOOLEAN = CorePackage.COMMENTABLE_ELEMENT___EGET__ESTRUCTURALFEATURE_BOOLEAN_1;
+	int INVOCATION___EGET__ESTRUCTURALFEATURE_BOOLEAN = CorePackage.COMMENTABLE_ELEMENT___EGET__ESTRUCTURALFEATURE_BOOLEAN;
 
 	/**
 	 * The operation id for the '<em>ESet</em>' operation.
@@ -236,7 +236,7 @@ public interface CallsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INVOCATION___ESET__ESTRUCTURALFEATURE_OBJECT = CorePackage.COMMENTABLE_ELEMENT___ESET__ESTRUCTURALFEATURE_OBJECT_1;
+	int INVOCATION___ESET__ESTRUCTURALFEATURE_OBJECT = CorePackage.COMMENTABLE_ELEMENT___ESET__ESTRUCTURALFEATURE_OBJECT;
 
 	/**
 	 * The operation id for the '<em>EIs Set</em>' operation.
@@ -245,7 +245,7 @@ public interface CallsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INVOCATION___EIS_SET__ESTRUCTURALFEATURE = CorePackage.COMMENTABLE_ELEMENT___EIS_SET__ESTRUCTURALFEATURE_1;
+	int INVOCATION___EIS_SET__ESTRUCTURALFEATURE = CorePackage.COMMENTABLE_ELEMENT___EIS_SET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EUnset</em>' operation.
@@ -254,7 +254,7 @@ public interface CallsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INVOCATION___EUNSET__ESTRUCTURALFEATURE = CorePackage.COMMENTABLE_ELEMENT___EUNSET__ESTRUCTURALFEATURE_1;
+	int INVOCATION___EUNSET__ESTRUCTURALFEATURE = CorePackage.COMMENTABLE_ELEMENT___EUNSET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EInvoke</em>' operation.
@@ -263,7 +263,7 @@ public interface CallsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INVOCATION___EINVOKE__EOPERATION_ELIST = CorePackage.COMMENTABLE_ELEMENT___EINVOKE__EOPERATION_ELIST_1;
+	int INVOCATION___EINVOKE__EOPERATION_ELIST = CorePackage.COMMENTABLE_ELEMENT___EINVOKE__EOPERATION_ELIST;
 
 	/**
 	 * The operation id for the '<em>Get Extension</em>' operation.
@@ -471,7 +471,7 @@ public interface CallsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_BINDING___EGET__ESTRUCTURALFEATURE = CorePackage.COMMENTABLE_ELEMENT___EGET__ESTRUCTURALFEATURE_1;
+	int PARAMETER_BINDING___EGET__ESTRUCTURALFEATURE = CorePackage.COMMENTABLE_ELEMENT___EGET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -480,7 +480,7 @@ public interface CallsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_BINDING___EGET__ESTRUCTURALFEATURE_BOOLEAN = CorePackage.COMMENTABLE_ELEMENT___EGET__ESTRUCTURALFEATURE_BOOLEAN_1;
+	int PARAMETER_BINDING___EGET__ESTRUCTURALFEATURE_BOOLEAN = CorePackage.COMMENTABLE_ELEMENT___EGET__ESTRUCTURALFEATURE_BOOLEAN;
 
 	/**
 	 * The operation id for the '<em>ESet</em>' operation.
@@ -489,7 +489,7 @@ public interface CallsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_BINDING___ESET__ESTRUCTURALFEATURE_OBJECT = CorePackage.COMMENTABLE_ELEMENT___ESET__ESTRUCTURALFEATURE_OBJECT_1;
+	int PARAMETER_BINDING___ESET__ESTRUCTURALFEATURE_OBJECT = CorePackage.COMMENTABLE_ELEMENT___ESET__ESTRUCTURALFEATURE_OBJECT;
 
 	/**
 	 * The operation id for the '<em>EIs Set</em>' operation.
@@ -498,7 +498,7 @@ public interface CallsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_BINDING___EIS_SET__ESTRUCTURALFEATURE = CorePackage.COMMENTABLE_ELEMENT___EIS_SET__ESTRUCTURALFEATURE_1;
+	int PARAMETER_BINDING___EIS_SET__ESTRUCTURALFEATURE = CorePackage.COMMENTABLE_ELEMENT___EIS_SET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EUnset</em>' operation.
@@ -507,7 +507,7 @@ public interface CallsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_BINDING___EUNSET__ESTRUCTURALFEATURE = CorePackage.COMMENTABLE_ELEMENT___EUNSET__ESTRUCTURALFEATURE_1;
+	int PARAMETER_BINDING___EUNSET__ESTRUCTURALFEATURE = CorePackage.COMMENTABLE_ELEMENT___EUNSET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EInvoke</em>' operation.
@@ -516,7 +516,7 @@ public interface CallsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_BINDING___EINVOKE__EOPERATION_ELIST = CorePackage.COMMENTABLE_ELEMENT___EINVOKE__EOPERATION_ELIST_1;
+	int PARAMETER_BINDING___EINVOKE__EOPERATION_ELIST = CorePackage.COMMENTABLE_ELEMENT___EINVOKE__EOPERATION_ELIST;
 
 	/**
 	 * The operation id for the '<em>Get Extension</em>' operation.
@@ -724,7 +724,7 @@ public interface CallsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CALLABLE___EGET__ESTRUCTURALFEATURE = CorePackage.COMMENTABLE_ELEMENT___EGET__ESTRUCTURALFEATURE_1;
+	int CALLABLE___EGET__ESTRUCTURALFEATURE = CorePackage.COMMENTABLE_ELEMENT___EGET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -733,7 +733,7 @@ public interface CallsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CALLABLE___EGET__ESTRUCTURALFEATURE_BOOLEAN = CorePackage.COMMENTABLE_ELEMENT___EGET__ESTRUCTURALFEATURE_BOOLEAN_1;
+	int CALLABLE___EGET__ESTRUCTURALFEATURE_BOOLEAN = CorePackage.COMMENTABLE_ELEMENT___EGET__ESTRUCTURALFEATURE_BOOLEAN;
 
 	/**
 	 * The operation id for the '<em>ESet</em>' operation.
@@ -742,7 +742,7 @@ public interface CallsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CALLABLE___ESET__ESTRUCTURALFEATURE_OBJECT = CorePackage.COMMENTABLE_ELEMENT___ESET__ESTRUCTURALFEATURE_OBJECT_1;
+	int CALLABLE___ESET__ESTRUCTURALFEATURE_OBJECT = CorePackage.COMMENTABLE_ELEMENT___ESET__ESTRUCTURALFEATURE_OBJECT;
 
 	/**
 	 * The operation id for the '<em>EIs Set</em>' operation.
@@ -751,7 +751,7 @@ public interface CallsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CALLABLE___EIS_SET__ESTRUCTURALFEATURE = CorePackage.COMMENTABLE_ELEMENT___EIS_SET__ESTRUCTURALFEATURE_1;
+	int CALLABLE___EIS_SET__ESTRUCTURALFEATURE = CorePackage.COMMENTABLE_ELEMENT___EIS_SET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EUnset</em>' operation.
@@ -760,7 +760,7 @@ public interface CallsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CALLABLE___EUNSET__ESTRUCTURALFEATURE = CorePackage.COMMENTABLE_ELEMENT___EUNSET__ESTRUCTURALFEATURE_1;
+	int CALLABLE___EUNSET__ESTRUCTURALFEATURE = CorePackage.COMMENTABLE_ELEMENT___EUNSET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EInvoke</em>' operation.
@@ -769,7 +769,7 @@ public interface CallsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CALLABLE___EINVOKE__EOPERATION_ELIST = CorePackage.COMMENTABLE_ELEMENT___EINVOKE__EOPERATION_ELIST_1;
+	int CALLABLE___EINVOKE__EOPERATION_ELIST = CorePackage.COMMENTABLE_ELEMENT___EINVOKE__EOPERATION_ELIST;
 
 	/**
 	 * The operation id for the '<em>Get Extension</em>' operation.

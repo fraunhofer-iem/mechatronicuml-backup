@@ -207,7 +207,7 @@ public interface ExpressionsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE_VALUE_EXPRESSION___EGET__ESTRUCTURALFEATURE = org.muml.core.expressions.ExpressionsPackage.EXPRESSION___EGET__ESTRUCTURALFEATURE_1;
+	int ATTRIBUTE_VALUE_EXPRESSION___EGET__ESTRUCTURALFEATURE = org.muml.core.expressions.ExpressionsPackage.EXPRESSION___EGET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -216,7 +216,7 @@ public interface ExpressionsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE_VALUE_EXPRESSION___EGET__ESTRUCTURALFEATURE_BOOLEAN = org.muml.core.expressions.ExpressionsPackage.EXPRESSION___EGET__ESTRUCTURALFEATURE_BOOLEAN_1;
+	int ATTRIBUTE_VALUE_EXPRESSION___EGET__ESTRUCTURALFEATURE_BOOLEAN = org.muml.core.expressions.ExpressionsPackage.EXPRESSION___EGET__ESTRUCTURALFEATURE_BOOLEAN;
 
 	/**
 	 * The operation id for the '<em>ESet</em>' operation.
@@ -225,7 +225,7 @@ public interface ExpressionsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE_VALUE_EXPRESSION___ESET__ESTRUCTURALFEATURE_OBJECT = org.muml.core.expressions.ExpressionsPackage.EXPRESSION___ESET__ESTRUCTURALFEATURE_OBJECT_1;
+	int ATTRIBUTE_VALUE_EXPRESSION___ESET__ESTRUCTURALFEATURE_OBJECT = org.muml.core.expressions.ExpressionsPackage.EXPRESSION___ESET__ESTRUCTURALFEATURE_OBJECT;
 
 	/**
 	 * The operation id for the '<em>EIs Set</em>' operation.
@@ -234,7 +234,7 @@ public interface ExpressionsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE_VALUE_EXPRESSION___EIS_SET__ESTRUCTURALFEATURE = org.muml.core.expressions.ExpressionsPackage.EXPRESSION___EIS_SET__ESTRUCTURALFEATURE_1;
+	int ATTRIBUTE_VALUE_EXPRESSION___EIS_SET__ESTRUCTURALFEATURE = org.muml.core.expressions.ExpressionsPackage.EXPRESSION___EIS_SET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EUnset</em>' operation.
@@ -243,7 +243,7 @@ public interface ExpressionsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE_VALUE_EXPRESSION___EUNSET__ESTRUCTURALFEATURE = org.muml.core.expressions.ExpressionsPackage.EXPRESSION___EUNSET__ESTRUCTURALFEATURE_1;
+	int ATTRIBUTE_VALUE_EXPRESSION___EUNSET__ESTRUCTURALFEATURE = org.muml.core.expressions.ExpressionsPackage.EXPRESSION___EUNSET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EInvoke</em>' operation.
@@ -252,7 +252,7 @@ public interface ExpressionsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE_VALUE_EXPRESSION___EINVOKE__EOPERATION_ELIST = org.muml.core.expressions.ExpressionsPackage.EXPRESSION___EINVOKE__EOPERATION_ELIST_1;
+	int ATTRIBUTE_VALUE_EXPRESSION___EINVOKE__EOPERATION_ELIST = org.muml.core.expressions.ExpressionsPackage.EXPRESSION___EINVOKE__EOPERATION_ELIST;
 
 	/**
 	 * The operation id for the '<em>Get Extension</em>' operation.
@@ -442,7 +442,7 @@ public interface ExpressionsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OBJECT_VARIABLE_EXPRESSION___EGET__ESTRUCTURALFEATURE = org.muml.core.expressions.ExpressionsPackage.EXPRESSION___EGET__ESTRUCTURALFEATURE_1;
+	int OBJECT_VARIABLE_EXPRESSION___EGET__ESTRUCTURALFEATURE = org.muml.core.expressions.ExpressionsPackage.EXPRESSION___EGET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -451,7 +451,7 @@ public interface ExpressionsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OBJECT_VARIABLE_EXPRESSION___EGET__ESTRUCTURALFEATURE_BOOLEAN = org.muml.core.expressions.ExpressionsPackage.EXPRESSION___EGET__ESTRUCTURALFEATURE_BOOLEAN_1;
+	int OBJECT_VARIABLE_EXPRESSION___EGET__ESTRUCTURALFEATURE_BOOLEAN = org.muml.core.expressions.ExpressionsPackage.EXPRESSION___EGET__ESTRUCTURALFEATURE_BOOLEAN;
 
 	/**
 	 * The operation id for the '<em>ESet</em>' operation.
@@ -460,7 +460,7 @@ public interface ExpressionsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OBJECT_VARIABLE_EXPRESSION___ESET__ESTRUCTURALFEATURE_OBJECT = org.muml.core.expressions.ExpressionsPackage.EXPRESSION___ESET__ESTRUCTURALFEATURE_OBJECT_1;
+	int OBJECT_VARIABLE_EXPRESSION___ESET__ESTRUCTURALFEATURE_OBJECT = org.muml.core.expressions.ExpressionsPackage.EXPRESSION___ESET__ESTRUCTURALFEATURE_OBJECT;
 
 	/**
 	 * The operation id for the '<em>EIs Set</em>' operation.
@@ -469,7 +469,7 @@ public interface ExpressionsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OBJECT_VARIABLE_EXPRESSION___EIS_SET__ESTRUCTURALFEATURE = org.muml.core.expressions.ExpressionsPackage.EXPRESSION___EIS_SET__ESTRUCTURALFEATURE_1;
+	int OBJECT_VARIABLE_EXPRESSION___EIS_SET__ESTRUCTURALFEATURE = org.muml.core.expressions.ExpressionsPackage.EXPRESSION___EIS_SET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EUnset</em>' operation.
@@ -478,7 +478,7 @@ public interface ExpressionsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OBJECT_VARIABLE_EXPRESSION___EUNSET__ESTRUCTURALFEATURE = org.muml.core.expressions.ExpressionsPackage.EXPRESSION___EUNSET__ESTRUCTURALFEATURE_1;
+	int OBJECT_VARIABLE_EXPRESSION___EUNSET__ESTRUCTURALFEATURE = org.muml.core.expressions.ExpressionsPackage.EXPRESSION___EUNSET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EInvoke</em>' operation.
@@ -487,7 +487,7 @@ public interface ExpressionsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OBJECT_VARIABLE_EXPRESSION___EINVOKE__EOPERATION_ELIST = org.muml.core.expressions.ExpressionsPackage.EXPRESSION___EINVOKE__EOPERATION_ELIST_1;
+	int OBJECT_VARIABLE_EXPRESSION___EINVOKE__EOPERATION_ELIST = org.muml.core.expressions.ExpressionsPackage.EXPRESSION___EINVOKE__EOPERATION_ELIST;
 
 	/**
 	 * The operation id for the '<em>Get Extension</em>' operation.
@@ -677,7 +677,7 @@ public interface ExpressionsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COLLECTION_SIZE_EXPRESSION___EGET__ESTRUCTURALFEATURE = org.muml.core.expressions.ExpressionsPackage.EXPRESSION___EGET__ESTRUCTURALFEATURE_1;
+	int COLLECTION_SIZE_EXPRESSION___EGET__ESTRUCTURALFEATURE = org.muml.core.expressions.ExpressionsPackage.EXPRESSION___EGET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -686,7 +686,7 @@ public interface ExpressionsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COLLECTION_SIZE_EXPRESSION___EGET__ESTRUCTURALFEATURE_BOOLEAN = org.muml.core.expressions.ExpressionsPackage.EXPRESSION___EGET__ESTRUCTURALFEATURE_BOOLEAN_1;
+	int COLLECTION_SIZE_EXPRESSION___EGET__ESTRUCTURALFEATURE_BOOLEAN = org.muml.core.expressions.ExpressionsPackage.EXPRESSION___EGET__ESTRUCTURALFEATURE_BOOLEAN;
 
 	/**
 	 * The operation id for the '<em>ESet</em>' operation.
@@ -695,7 +695,7 @@ public interface ExpressionsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COLLECTION_SIZE_EXPRESSION___ESET__ESTRUCTURALFEATURE_OBJECT = org.muml.core.expressions.ExpressionsPackage.EXPRESSION___ESET__ESTRUCTURALFEATURE_OBJECT_1;
+	int COLLECTION_SIZE_EXPRESSION___ESET__ESTRUCTURALFEATURE_OBJECT = org.muml.core.expressions.ExpressionsPackage.EXPRESSION___ESET__ESTRUCTURALFEATURE_OBJECT;
 
 	/**
 	 * The operation id for the '<em>EIs Set</em>' operation.
@@ -704,7 +704,7 @@ public interface ExpressionsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COLLECTION_SIZE_EXPRESSION___EIS_SET__ESTRUCTURALFEATURE = org.muml.core.expressions.ExpressionsPackage.EXPRESSION___EIS_SET__ESTRUCTURALFEATURE_1;
+	int COLLECTION_SIZE_EXPRESSION___EIS_SET__ESTRUCTURALFEATURE = org.muml.core.expressions.ExpressionsPackage.EXPRESSION___EIS_SET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EUnset</em>' operation.
@@ -713,7 +713,7 @@ public interface ExpressionsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COLLECTION_SIZE_EXPRESSION___EUNSET__ESTRUCTURALFEATURE = org.muml.core.expressions.ExpressionsPackage.EXPRESSION___EUNSET__ESTRUCTURALFEATURE_1;
+	int COLLECTION_SIZE_EXPRESSION___EUNSET__ESTRUCTURALFEATURE = org.muml.core.expressions.ExpressionsPackage.EXPRESSION___EUNSET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EInvoke</em>' operation.
@@ -722,7 +722,7 @@ public interface ExpressionsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COLLECTION_SIZE_EXPRESSION___EINVOKE__EOPERATION_ELIST = org.muml.core.expressions.ExpressionsPackage.EXPRESSION___EINVOKE__EOPERATION_ELIST_1;
+	int COLLECTION_SIZE_EXPRESSION___EINVOKE__EOPERATION_ELIST = org.muml.core.expressions.ExpressionsPackage.EXPRESSION___EINVOKE__EOPERATION_ELIST;
 
 	/**
 	 * The operation id for the '<em>Get Extension</em>' operation.
@@ -912,7 +912,7 @@ public interface ExpressionsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRIMITIVE_VARIABLE_EXPRESSION___EGET__ESTRUCTURALFEATURE = org.muml.core.expressions.ExpressionsPackage.EXPRESSION___EGET__ESTRUCTURALFEATURE_1;
+	int PRIMITIVE_VARIABLE_EXPRESSION___EGET__ESTRUCTURALFEATURE = org.muml.core.expressions.ExpressionsPackage.EXPRESSION___EGET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -921,7 +921,7 @@ public interface ExpressionsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRIMITIVE_VARIABLE_EXPRESSION___EGET__ESTRUCTURALFEATURE_BOOLEAN = org.muml.core.expressions.ExpressionsPackage.EXPRESSION___EGET__ESTRUCTURALFEATURE_BOOLEAN_1;
+	int PRIMITIVE_VARIABLE_EXPRESSION___EGET__ESTRUCTURALFEATURE_BOOLEAN = org.muml.core.expressions.ExpressionsPackage.EXPRESSION___EGET__ESTRUCTURALFEATURE_BOOLEAN;
 
 	/**
 	 * The operation id for the '<em>ESet</em>' operation.
@@ -930,7 +930,7 @@ public interface ExpressionsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRIMITIVE_VARIABLE_EXPRESSION___ESET__ESTRUCTURALFEATURE_OBJECT = org.muml.core.expressions.ExpressionsPackage.EXPRESSION___ESET__ESTRUCTURALFEATURE_OBJECT_1;
+	int PRIMITIVE_VARIABLE_EXPRESSION___ESET__ESTRUCTURALFEATURE_OBJECT = org.muml.core.expressions.ExpressionsPackage.EXPRESSION___ESET__ESTRUCTURALFEATURE_OBJECT;
 
 	/**
 	 * The operation id for the '<em>EIs Set</em>' operation.
@@ -939,7 +939,7 @@ public interface ExpressionsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRIMITIVE_VARIABLE_EXPRESSION___EIS_SET__ESTRUCTURALFEATURE = org.muml.core.expressions.ExpressionsPackage.EXPRESSION___EIS_SET__ESTRUCTURALFEATURE_1;
+	int PRIMITIVE_VARIABLE_EXPRESSION___EIS_SET__ESTRUCTURALFEATURE = org.muml.core.expressions.ExpressionsPackage.EXPRESSION___EIS_SET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EUnset</em>' operation.
@@ -948,7 +948,7 @@ public interface ExpressionsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRIMITIVE_VARIABLE_EXPRESSION___EUNSET__ESTRUCTURALFEATURE = org.muml.core.expressions.ExpressionsPackage.EXPRESSION___EUNSET__ESTRUCTURALFEATURE_1;
+	int PRIMITIVE_VARIABLE_EXPRESSION___EUNSET__ESTRUCTURALFEATURE = org.muml.core.expressions.ExpressionsPackage.EXPRESSION___EUNSET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EInvoke</em>' operation.
@@ -957,7 +957,7 @@ public interface ExpressionsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRIMITIVE_VARIABLE_EXPRESSION___EINVOKE__EOPERATION_ELIST = org.muml.core.expressions.ExpressionsPackage.EXPRESSION___EINVOKE__EOPERATION_ELIST_1;
+	int PRIMITIVE_VARIABLE_EXPRESSION___EINVOKE__EOPERATION_ELIST = org.muml.core.expressions.ExpressionsPackage.EXPRESSION___EINVOKE__EOPERATION_ELIST;
 
 	/**
 	 * The operation id for the '<em>Get Extension</em>' operation.

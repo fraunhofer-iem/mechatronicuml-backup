@@ -220,7 +220,7 @@ public interface TemplatesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEMPLATE_BINDING___EGET__ESTRUCTURALFEATURE = CorePackage.EXTENDABLE_ELEMENT___EGET__ESTRUCTURALFEATURE_1;
+	int TEMPLATE_BINDING___EGET__ESTRUCTURALFEATURE = CorePackage.EXTENDABLE_ELEMENT___EGET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -229,7 +229,7 @@ public interface TemplatesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEMPLATE_BINDING___EGET__ESTRUCTURALFEATURE_BOOLEAN = CorePackage.EXTENDABLE_ELEMENT___EGET__ESTRUCTURALFEATURE_BOOLEAN_1;
+	int TEMPLATE_BINDING___EGET__ESTRUCTURALFEATURE_BOOLEAN = CorePackage.EXTENDABLE_ELEMENT___EGET__ESTRUCTURALFEATURE_BOOLEAN;
 
 	/**
 	 * The operation id for the '<em>ESet</em>' operation.
@@ -238,7 +238,7 @@ public interface TemplatesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEMPLATE_BINDING___ESET__ESTRUCTURALFEATURE_OBJECT = CorePackage.EXTENDABLE_ELEMENT___ESET__ESTRUCTURALFEATURE_OBJECT_1;
+	int TEMPLATE_BINDING___ESET__ESTRUCTURALFEATURE_OBJECT = CorePackage.EXTENDABLE_ELEMENT___ESET__ESTRUCTURALFEATURE_OBJECT;
 
 	/**
 	 * The operation id for the '<em>EIs Set</em>' operation.
@@ -247,7 +247,7 @@ public interface TemplatesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEMPLATE_BINDING___EIS_SET__ESTRUCTURALFEATURE = CorePackage.EXTENDABLE_ELEMENT___EIS_SET__ESTRUCTURALFEATURE_1;
+	int TEMPLATE_BINDING___EIS_SET__ESTRUCTURALFEATURE = CorePackage.EXTENDABLE_ELEMENT___EIS_SET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EUnset</em>' operation.
@@ -256,7 +256,7 @@ public interface TemplatesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEMPLATE_BINDING___EUNSET__ESTRUCTURALFEATURE = CorePackage.EXTENDABLE_ELEMENT___EUNSET__ESTRUCTURALFEATURE_1;
+	int TEMPLATE_BINDING___EUNSET__ESTRUCTURALFEATURE = CorePackage.EXTENDABLE_ELEMENT___EUNSET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EInvoke</em>' operation.
@@ -265,7 +265,7 @@ public interface TemplatesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEMPLATE_BINDING___EINVOKE__EOPERATION_ELIST = CorePackage.EXTENDABLE_ELEMENT___EINVOKE__EOPERATION_ELIST_1;
+	int TEMPLATE_BINDING___EINVOKE__EOPERATION_ELIST = CorePackage.EXTENDABLE_ELEMENT___EINVOKE__EOPERATION_ELIST;
 
 	/**
 	 * The operation id for the '<em>Get Extension</em>' operation.
@@ -464,7 +464,7 @@ public interface TemplatesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY_BINDING___EGET__ESTRUCTURALFEATURE = CorePackage.EXTENDABLE_ELEMENT___EGET__ESTRUCTURALFEATURE_1;
+	int PROPERTY_BINDING___EGET__ESTRUCTURALFEATURE = CorePackage.EXTENDABLE_ELEMENT___EGET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -473,7 +473,7 @@ public interface TemplatesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY_BINDING___EGET__ESTRUCTURALFEATURE_BOOLEAN = CorePackage.EXTENDABLE_ELEMENT___EGET__ESTRUCTURALFEATURE_BOOLEAN_1;
+	int PROPERTY_BINDING___EGET__ESTRUCTURALFEATURE_BOOLEAN = CorePackage.EXTENDABLE_ELEMENT___EGET__ESTRUCTURALFEATURE_BOOLEAN;
 
 	/**
 	 * The operation id for the '<em>ESet</em>' operation.
@@ -482,7 +482,7 @@ public interface TemplatesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY_BINDING___ESET__ESTRUCTURALFEATURE_OBJECT = CorePackage.EXTENDABLE_ELEMENT___ESET__ESTRUCTURALFEATURE_OBJECT_1;
+	int PROPERTY_BINDING___ESET__ESTRUCTURALFEATURE_OBJECT = CorePackage.EXTENDABLE_ELEMENT___ESET__ESTRUCTURALFEATURE_OBJECT;
 
 	/**
 	 * The operation id for the '<em>EIs Set</em>' operation.
@@ -491,7 +491,7 @@ public interface TemplatesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY_BINDING___EIS_SET__ESTRUCTURALFEATURE = CorePackage.EXTENDABLE_ELEMENT___EIS_SET__ESTRUCTURALFEATURE_1;
+	int PROPERTY_BINDING___EIS_SET__ESTRUCTURALFEATURE = CorePackage.EXTENDABLE_ELEMENT___EIS_SET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EUnset</em>' operation.
@@ -500,7 +500,7 @@ public interface TemplatesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY_BINDING___EUNSET__ESTRUCTURALFEATURE = CorePackage.EXTENDABLE_ELEMENT___EUNSET__ESTRUCTURALFEATURE_1;
+	int PROPERTY_BINDING___EUNSET__ESTRUCTURALFEATURE = CorePackage.EXTENDABLE_ELEMENT___EUNSET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EInvoke</em>' operation.
@@ -509,7 +509,7 @@ public interface TemplatesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY_BINDING___EINVOKE__EOPERATION_ELIST = CorePackage.EXTENDABLE_ELEMENT___EINVOKE__EOPERATION_ELIST_1;
+	int PROPERTY_BINDING___EINVOKE__EOPERATION_ELIST = CorePackage.EXTENDABLE_ELEMENT___EINVOKE__EOPERATION_ELIST;
 
 	/**
 	 * The operation id for the '<em>Get Extension</em>' operation.

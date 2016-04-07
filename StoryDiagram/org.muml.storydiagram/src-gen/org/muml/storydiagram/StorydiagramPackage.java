@@ -214,7 +214,7 @@ public interface StorydiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VARIABLE___EGET__ESTRUCTURALFEATURE = CorePackage.TYPED_ELEMENT___EGET__ESTRUCTURALFEATURE_1;
+	int VARIABLE___EGET__ESTRUCTURALFEATURE = CorePackage.TYPED_ELEMENT___EGET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -223,7 +223,7 @@ public interface StorydiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VARIABLE___EGET__ESTRUCTURALFEATURE_BOOLEAN = CorePackage.TYPED_ELEMENT___EGET__ESTRUCTURALFEATURE_BOOLEAN_1;
+	int VARIABLE___EGET__ESTRUCTURALFEATURE_BOOLEAN = CorePackage.TYPED_ELEMENT___EGET__ESTRUCTURALFEATURE_BOOLEAN;
 
 	/**
 	 * The operation id for the '<em>ESet</em>' operation.
@@ -232,7 +232,7 @@ public interface StorydiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VARIABLE___ESET__ESTRUCTURALFEATURE_OBJECT = CorePackage.TYPED_ELEMENT___ESET__ESTRUCTURALFEATURE_OBJECT_1;
+	int VARIABLE___ESET__ESTRUCTURALFEATURE_OBJECT = CorePackage.TYPED_ELEMENT___ESET__ESTRUCTURALFEATURE_OBJECT;
 
 	/**
 	 * The operation id for the '<em>EIs Set</em>' operation.
@@ -241,7 +241,7 @@ public interface StorydiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VARIABLE___EIS_SET__ESTRUCTURALFEATURE = CorePackage.TYPED_ELEMENT___EIS_SET__ESTRUCTURALFEATURE_1;
+	int VARIABLE___EIS_SET__ESTRUCTURALFEATURE = CorePackage.TYPED_ELEMENT___EIS_SET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EUnset</em>' operation.
@@ -250,7 +250,7 @@ public interface StorydiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VARIABLE___EUNSET__ESTRUCTURALFEATURE = CorePackage.TYPED_ELEMENT___EUNSET__ESTRUCTURALFEATURE_1;
+	int VARIABLE___EUNSET__ESTRUCTURALFEATURE = CorePackage.TYPED_ELEMENT___EUNSET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EInvoke</em>' operation.
@@ -259,7 +259,7 @@ public interface StorydiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VARIABLE___EINVOKE__EOPERATION_ELIST = CorePackage.TYPED_ELEMENT___EINVOKE__EOPERATION_ELIST_1;
+	int VARIABLE___EINVOKE__EOPERATION_ELIST = CorePackage.TYPED_ELEMENT___EINVOKE__EOPERATION_ELIST;
 
 	/**
 	 * The operation id for the '<em>Get Extension</em>' operation.
