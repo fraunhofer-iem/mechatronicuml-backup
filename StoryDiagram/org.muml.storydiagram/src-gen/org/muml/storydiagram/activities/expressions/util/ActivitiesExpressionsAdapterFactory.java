@@ -58,7 +58,7 @@ public class ActivitiesExpressionsAdapterFactory extends AdapterFactoryImpl {
 			return true;
 		}
 		if (object instanceof EObject) {
-			return ((EObject) object).eClass().getEPackage() == modelPackage;
+			return ((EObject)object).eClass().getEPackage() == modelPackage;
 		}
 		return false;
 	}
@@ -70,32 +70,27 @@ public class ActivitiesExpressionsAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	protected ActivitiesExpressionsSwitch<Adapter> modelSwitch = new ActivitiesExpressionsSwitch<Adapter>() {
-		@Override
-		public Adapter caseExceptionVariableExpression(
-				ExceptionVariableExpression object) {
-			return createExceptionVariableExpressionAdapter();
-		}
-
-		@Override
-		public Adapter caseExtendableElement(ExtendableElement object) {
-			return createExtendableElementAdapter();
-		}
-
-		@Override
-		public Adapter caseCommentableElement(CommentableElement object) {
-			return createCommentableElementAdapter();
-		}
-
-		@Override
-		public Adapter caseExpression(Expression object) {
-			return createExpressionAdapter();
-		}
-
-		@Override
-		public Adapter defaultCase(EObject object) {
-			return createEObjectAdapter();
-		}
-	};
+			@Override
+			public Adapter caseExceptionVariableExpression(ExceptionVariableExpression object) {
+				return createExceptionVariableExpressionAdapter();
+			}
+			@Override
+			public Adapter caseExtendableElement(ExtendableElement object) {
+				return createExtendableElementAdapter();
+			}
+			@Override
+			public Adapter caseCommentableElement(CommentableElement object) {
+				return createCommentableElementAdapter();
+			}
+			@Override
+			public Adapter caseExpression(Expression object) {
+				return createExpressionAdapter();
+			}
+			@Override
+			public Adapter defaultCase(EObject object) {
+				return createEObjectAdapter();
+			}
+		};
 
 	/**
 	 * Creates an adapter for the <code>target</code>.
@@ -107,7 +102,7 @@ public class ActivitiesExpressionsAdapterFactory extends AdapterFactoryImpl {
 	 */
 	@Override
 	public Adapter createAdapter(Notifier target) {
-		return modelSwitch.doSwitch((EObject) target);
+		return modelSwitch.doSwitch((EObject)target);
 	}
 
 	/**

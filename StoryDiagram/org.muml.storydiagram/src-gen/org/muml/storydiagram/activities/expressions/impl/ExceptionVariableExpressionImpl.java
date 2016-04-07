@@ -12,8 +12,8 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.muml.core.expressions.impl.ExpressionImpl;
 import org.muml.storydiagram.activities.ExceptionVariable;
+import org.muml.storydiagram.activities.expressions.ActivitiesExpressionsPackage;
 import org.muml.storydiagram.activities.expressions.ExceptionVariableExpression;
-import org.muml.storydiagram.activities.expressions.ExpressionsPackage;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '<em><b>Exception Variable Expression</b></em>'. <!-- end-user-doc -->
@@ -51,7 +51,7 @@ public class ExceptionVariableExpressionImpl extends ExpressionImpl implements
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ExpressionsPackage.Literals.EXCEPTION_VARIABLE_EXPRESSION;
+		return ActivitiesExpressionsPackage.Literals.EXCEPTION_VARIABLE_EXPRESSION;
 	}
 
 	/**
@@ -64,7 +64,7 @@ public class ExceptionVariableExpressionImpl extends ExpressionImpl implements
 			exceptionVariable = (ExceptionVariable)eResolveProxy(oldExceptionVariable);
 			if (exceptionVariable != oldExceptionVariable) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ExpressionsPackage.EXCEPTION_VARIABLE_EXPRESSION__EXCEPTION_VARIABLE, oldExceptionVariable, exceptionVariable));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ActivitiesExpressionsPackage.EXCEPTION_VARIABLE_EXPRESSION__EXCEPTION_VARIABLE, oldExceptionVariable, exceptionVariable));
 			}
 		}
 		return exceptionVariable;
@@ -86,7 +86,7 @@ public class ExceptionVariableExpressionImpl extends ExpressionImpl implements
 		ExceptionVariable oldExceptionVariable = exceptionVariable;
 		exceptionVariable = newExceptionVariable;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ExpressionsPackage.EXCEPTION_VARIABLE_EXPRESSION__EXCEPTION_VARIABLE, oldExceptionVariable, exceptionVariable));
+			eNotify(new ENotificationImpl(this, Notification.SET, ActivitiesExpressionsPackage.EXCEPTION_VARIABLE_EXPRESSION__EXCEPTION_VARIABLE, oldExceptionVariable, exceptionVariable));
 	}
 
 	/**
@@ -96,7 +96,7 @@ public class ExceptionVariableExpressionImpl extends ExpressionImpl implements
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ExpressionsPackage.EXCEPTION_VARIABLE_EXPRESSION__EXCEPTION_VARIABLE:
+			case ActivitiesExpressionsPackage.EXCEPTION_VARIABLE_EXPRESSION__EXCEPTION_VARIABLE:
 				if (resolve) return getExceptionVariable();
 				return basicGetExceptionVariable();
 		}
@@ -110,7 +110,7 @@ public class ExceptionVariableExpressionImpl extends ExpressionImpl implements
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ExpressionsPackage.EXCEPTION_VARIABLE_EXPRESSION__EXCEPTION_VARIABLE:
+			case ActivitiesExpressionsPackage.EXCEPTION_VARIABLE_EXPRESSION__EXCEPTION_VARIABLE:
 				setExceptionVariable((ExceptionVariable)newValue);
 				return;
 		}
@@ -124,7 +124,7 @@ public class ExceptionVariableExpressionImpl extends ExpressionImpl implements
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ExpressionsPackage.EXCEPTION_VARIABLE_EXPRESSION__EXCEPTION_VARIABLE:
+			case ActivitiesExpressionsPackage.EXCEPTION_VARIABLE_EXPRESSION__EXCEPTION_VARIABLE:
 				setExceptionVariable((ExceptionVariable)null);
 				return;
 		}
@@ -138,7 +138,7 @@ public class ExceptionVariableExpressionImpl extends ExpressionImpl implements
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ExpressionsPackage.EXCEPTION_VARIABLE_EXPRESSION__EXCEPTION_VARIABLE:
+			case ActivitiesExpressionsPackage.EXCEPTION_VARIABLE_EXPRESSION__EXCEPTION_VARIABLE:
 				return exceptionVariable != null;
 		}
 		return super.eIsSet(featureID);

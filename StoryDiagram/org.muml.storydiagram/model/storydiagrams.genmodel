@@ -27,9 +27,9 @@
         <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference storydiagrams.ecore#//activities/ExceptionVariable/activityEdge"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute storydiagrams.ecore#//activities/ExceptionVariable/name"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference storydiagrams.ecore#//activities/ExceptionVariable/exceptionType"/>
+            ecoreFeature="ecore:EReference storydiagrams.ecore#//activities/ExceptionVariable/exceptionTypes"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference storydiagrams.ecore#//activities/ExceptionVariable/genericExceptionType"/>
+            ecoreFeature="ecore:EReference storydiagrams.ecore#//activities/ExceptionVariable/genericExceptionTypes"/>
       </genClasses>
       <genClasses ecoreClass="storydiagrams.ecore#//activities/ActivityEdge">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
@@ -39,22 +39,22 @@
         <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference storydiagrams.ecore#//activities/ActivityEdge/owningActivity"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute storydiagrams.ecore#//activities/ActivityEdge/guard"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//activities/ActivityEdge/guardExpression"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//activities/ActivityEdge/guardException"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//activities/ActivityEdge/guardExceptions"/>
       </genClasses>
       <genClasses image="false" ecoreClass="storydiagrams.ecore#//activities/ActivityNode">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference storydiagrams.ecore#//activities/ActivityNode/outgoing"/>
+            ecoreFeature="ecore:EReference storydiagrams.ecore#//activities/ActivityNode/outgoings"/>
         <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference storydiagrams.ecore#//activities/ActivityNode/owningActivity"/>
         <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference storydiagrams.ecore#//activities/ActivityNode/owningActivityNode"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference storydiagrams.ecore#//activities/ActivityNode/incoming"/>
+            ecoreFeature="ecore:EReference storydiagrams.ecore#//activities/ActivityNode/incomings"/>
       </genClasses>
       <genClasses ecoreClass="storydiagrams.ecore#//activities/Activity">
         <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference storydiagrams.ecore#//activities/Activity/owningOperation"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//activities/Activity/ownedActivityEdge"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//activities/Activity/ownedActivityEdges"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference storydiagrams.ecore#//activities/Activity/precondition"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//activities/Activity/ownedActivityNode"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//activities/Activity/ownedActivityNodes"/>
       </genClasses>
       <genClasses ecoreClass="storydiagrams.ecore#//activities/OperationExtension">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
@@ -74,7 +74,7 @@
         <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference storydiagrams.ecore#//activities/StoryNode/storyPattern"/>
       </genClasses>
       <genClasses ecoreClass="storydiagrams.ecore#//activities/StructuredNode">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//activities/StructuredNode/ownedActivityNode"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//activities/StructuredNode/ownedActivityNodes"/>
       </genClasses>
       <genClasses ecoreClass="storydiagrams.ecore#//activities/JunctionNode"/>
       <genClasses ecoreClass="storydiagrams.ecore#//activities/InitialNode"/>
@@ -88,13 +88,14 @@
       </genClasses>
       <genClasses ecoreClass="storydiagrams.ecore#//activities/ActivityCallNode">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference storydiagrams.ecore#//activities/ActivityCallNode/calledActivity"/>
+            ecoreFeature="ecore:EReference storydiagrams.ecore#//activities/ActivityCallNode/calledActivities"/>
       </genClasses>
       <genClasses ecoreClass="storydiagrams.ecore#//activities/ModifyingStoryNode">
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//activities/ModifyingStoryNode/ownedRule"/>
       </genClasses>
       <genClasses ecoreClass="storydiagrams.ecore#//activities/FlowFinalNode"/>
-      <nestedGenPackages prefix="Expressions" disposableProviderFactory="true" ecorePackage="storydiagrams.ecore#//activities/expressions">
+      <nestedGenPackages prefix="ActivitiesExpressions" disposableProviderFactory="true"
+          ecorePackage="storydiagrams.ecore#//activities/expressions">
         <genClasses ecoreClass="storydiagrams.ecore#//activities/expressions/ExceptionVariableExpression">
           <genFeatures notify="false" createChild="false" propertySortChoices="true"
               ecoreFeature="ecore:EReference storydiagrams.ecore#//activities/expressions/ExceptionVariableExpression/exceptionVariable"/>
@@ -127,12 +128,13 @@
       </genClasses>
       <genClasses image="false" ecoreClass="storydiagrams.ecore#//calls/Callable">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference storydiagrams.ecore#//calls/Callable/inParameter"/>
+            ecoreFeature="ecore:EReference storydiagrams.ecore#//calls/Callable/inParameters"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference storydiagrams.ecore#//calls/Callable/outParameter"/>
+            ecoreFeature="ecore:EReference storydiagrams.ecore#//calls/Callable/outParameters"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//calls/Callable/containedParameters"/>
       </genClasses>
-      <nestedGenPackages prefix="Expressions" disposableProviderFactory="true" ecorePackage="storydiagrams.ecore#//calls/expressions">
+      <nestedGenPackages prefix="CallsExpressions" disposableProviderFactory="true"
+          ecorePackage="storydiagrams.ecore#//calls/expressions">
         <genClasses ecoreClass="storydiagrams.ecore#//calls/expressions/MethodCallExpression">
           <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//calls/expressions/MethodCallExpression/target"/>
           <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//calls/expressions/MethodCallExpression/opaqueCallable"/>
@@ -172,7 +174,7 @@
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//patterns/ObjectVariable/linkOrderConstraint"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute storydiagrams.ecore#//patterns/ObjectVariable/bindingSemantics"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute storydiagrams.ecore#//patterns/ObjectVariable/bindingOperator"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//patterns/ObjectVariable/attributeAssignment"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//patterns/ObjectVariable/attributeAssignments"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference storydiagrams.ecore#//patterns/ObjectVariable/classifier"/>
       </genClasses>
@@ -180,9 +182,9 @@
         <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference storydiagrams.ecore#//patterns/AbstractVariable/pattern"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute storydiagrams.ecore#//patterns/AbstractVariable/bindingState"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//patterns/AbstractVariable/bindingExpression"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//patterns/AbstractVariable/constraint"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//patterns/AbstractVariable/constraints"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference storydiagrams.ecore#//patterns/AbstractVariable/incomingLink"/>
+            ecoreFeature="ecore:EReference storydiagrams.ecore#//patterns/AbstractVariable/incomingLinks"/>
       </genClasses>
       <genClasses ecoreClass="storydiagrams.ecore#//patterns/Constraint">
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//patterns/Constraint/constraintExpression"/>
@@ -195,9 +197,9 @@
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference storydiagrams.ecore#//patterns/AbstractLinkVariable/source"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference storydiagrams.ecore#//patterns/AbstractLinkVariable/secondLinkConstraint"/>
+            ecoreFeature="ecore:EReference storydiagrams.ecore#//patterns/AbstractLinkVariable/secondLinkConstraints"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference storydiagrams.ecore#//patterns/AbstractLinkVariable/firstLinkConstraint"/>
+            ecoreFeature="ecore:EReference storydiagrams.ecore#//patterns/AbstractLinkVariable/firstLinkConstraints"/>
         <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference storydiagrams.ecore#//patterns/AbstractLinkVariable/pattern"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference storydiagrams.ecore#//patterns/AbstractLinkVariable/target"/>
@@ -245,15 +247,16 @@
       </genClasses>
       <genClasses ecoreClass="storydiagrams.ecore#//patterns/MaybeLink"/>
       <genClasses ecoreClass="storydiagrams.ecore#//patterns/StoryPattern">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//patterns/StoryPattern/variable"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//patterns/StoryPattern/constraint"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//patterns/StoryPattern/linkVariable"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//patterns/StoryPattern/variables"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//patterns/StoryPattern/constraints"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//patterns/StoryPattern/linkVariables"/>
         <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference storydiagrams.ecore#//patterns/StoryPattern/parentPattern"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//patterns/StoryPattern/containedPattern"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//patterns/StoryPattern/containedPatterns"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute storydiagrams.ecore#//patterns/StoryPattern/bindingSemantics"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//patterns/StoryPattern/templateSignature"/>
       </genClasses>
-      <nestedGenPackages prefix="Expressions" disposableProviderFactory="true" ecorePackage="storydiagrams.ecore#//patterns/expressions">
+      <nestedGenPackages prefix="PatternsExpressions" disposableProviderFactory="true"
+          ecorePackage="storydiagrams.ecore#//patterns/expressions">
         <genClasses ecoreClass="storydiagrams.ecore#//patterns/expressions/AttributeValueExpression">
           <genFeatures notify="false" createChild="false" propertySortChoices="true"
               ecoreFeature="ecore:EReference storydiagrams.ecore#//patterns/expressions/AttributeValueExpression/object"/>
@@ -280,7 +283,7 @@
             ecoreFeature="ecore:EReference storydiagrams.ecore#//templates/TemplateBinding/boundParameter"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//templates/TemplateBinding/bindingExpression"/>
         <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference storydiagrams.ecore#//templates/TemplateBinding/template"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//templates/TemplateBinding/propertyBinding"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//templates/TemplateBinding/propertyBindings"/>
       </genClasses>
       <genClasses ecoreClass="storydiagrams.ecore#//templates/PropertyBinding">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
@@ -289,8 +292,8 @@
         <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference storydiagrams.ecore#//templates/PropertyBinding/templateBinding"/>
       </genClasses>
       <genClasses ecoreClass="storydiagrams.ecore#//templates/TemplateSignature">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//templates/TemplateSignature/templateBinding"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//templates/TemplateSignature/typeParameter"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//templates/TemplateSignature/templateBindings"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//templates/TemplateSignature/typeParameters"/>
         <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference storydiagrams.ecore#//templates/TemplateSignature/pattern"/>
       </genClasses>
     </nestedGenPackages>

@@ -131,7 +131,7 @@ public class ConstraintImpl extends MinimalEObjectImpl.Container implements Cons
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newPattern != null)
-				msgs = ((InternalEObject)newPattern).eInverseAdd(this, PatternsPackage.STORY_PATTERN__CONSTRAINT, StoryPattern.class, msgs);
+				msgs = ((InternalEObject)newPattern).eInverseAdd(this, PatternsPackage.STORY_PATTERN__CONSTRAINTS, StoryPattern.class, msgs);
 			msgs = basicSetPattern(newPattern, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -172,7 +172,7 @@ public class ConstraintImpl extends MinimalEObjectImpl.Container implements Cons
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newObjectVariable != null)
-				msgs = ((InternalEObject)newObjectVariable).eInverseAdd(this, PatternsPackage.ABSTRACT_VARIABLE__CONSTRAINT, AbstractVariable.class, msgs);
+				msgs = ((InternalEObject)newObjectVariable).eInverseAdd(this, PatternsPackage.ABSTRACT_VARIABLE__CONSTRAINTS, AbstractVariable.class, msgs);
 			msgs = basicSetObjectVariable(newObjectVariable, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -227,9 +227,9 @@ public class ConstraintImpl extends MinimalEObjectImpl.Container implements Cons
 			NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
 			case PatternsPackage.CONSTRAINT__PATTERN:
-				return eInternalContainer().eInverseRemove(this, PatternsPackage.STORY_PATTERN__CONSTRAINT, StoryPattern.class, msgs);
+				return eInternalContainer().eInverseRemove(this, PatternsPackage.STORY_PATTERN__CONSTRAINTS, StoryPattern.class, msgs);
 			case PatternsPackage.CONSTRAINT__OBJECT_VARIABLE:
-				return eInternalContainer().eInverseRemove(this, PatternsPackage.ABSTRACT_VARIABLE__CONSTRAINT, AbstractVariable.class, msgs);
+				return eInternalContainer().eInverseRemove(this, PatternsPackage.ABSTRACT_VARIABLE__CONSTRAINTS, AbstractVariable.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}

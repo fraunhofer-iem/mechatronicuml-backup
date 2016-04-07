@@ -16,7 +16,6 @@ import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.muml.core.util.GenericTypeListHandler;
 import org.muml.storydiagram.activities.ActivitiesPackage;
@@ -32,8 +31,8 @@ import org.muml.storydiagram.impl.VariableImpl;
  * <ul>
  *   <li>{@link org.muml.storydiagram.activities.impl.ExceptionVariableImpl#getActivityEdge <em>Activity Edge</em>}</li>
  *   <li>{@link org.muml.storydiagram.activities.impl.ExceptionVariableImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.muml.storydiagram.activities.impl.ExceptionVariableImpl#getExceptionType <em>Exception Type</em>}</li>
- *   <li>{@link org.muml.storydiagram.activities.impl.ExceptionVariableImpl#getGenericExceptionType <em>Generic Exception Type</em>}</li>
+ *   <li>{@link org.muml.storydiagram.activities.impl.ExceptionVariableImpl#getExceptionTypes <em>Exception Types</em>}</li>
+ *   <li>{@link org.muml.storydiagram.activities.impl.ExceptionVariableImpl#getGenericExceptionTypes <em>Generic Exception Types</em>}</li>
  * </ul>
  *
  * @generated
@@ -59,24 +58,24 @@ public class ExceptionVariableImpl extends VariableImpl implements
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getExceptionType() <em>Exception Type</em>}' reference list.
+	 * The cached value of the '{@link #getExceptionTypes() <em>Exception Types</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getExceptionType()
+	 * @see #getExceptionTypes()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<EClassifier> exceptionType;
+	protected EList<EClassifier> exceptionTypes;
 
 	/**
-	 * The cached value of the '{@link #getGenericExceptionType() <em>Generic Exception Type</em>}' reference list.
+	 * The cached value of the '{@link #getGenericExceptionTypes() <em>Generic Exception Types</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getGenericExceptionType()
+	 * @see #getGenericExceptionTypes()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<EGenericType> genericExceptionType;
+	protected EList<EGenericType> genericExceptionTypes;
 
 	protected GenericTypeListHandler.EClassifiers exceptionTypesHandler;
 
@@ -117,30 +116,6 @@ public class ExceptionVariableImpl extends VariableImpl implements
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<EClassifier> getExceptionType() {
-		if (exceptionType == null) {
-			exceptionType = new EObjectResolvingEList<EClassifier>(EClassifier.class, this, ActivitiesPackage.EXCEPTION_VARIABLE__EXCEPTION_TYPE);
-		}
-		return exceptionType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<EGenericType> getGenericExceptionType() {
-		if (genericExceptionType == null) {
-			genericExceptionType = new EObjectResolvingEList<EGenericType>(EGenericType.class, this, ActivitiesPackage.EXCEPTION_VARIABLE__GENERIC_EXCEPTION_TYPE);
-		}
-		return genericExceptionType;
-	}
-
-	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated NOT
@@ -150,8 +125,8 @@ public class ExceptionVariableImpl extends VariableImpl implements
 			if (this.exceptionTypesHandler == null) {
 				this.exceptionTypesHandler = new GenericTypeListHandler.EClassifiers(
 						this,
-						ActivitiesPackage.Literals.EXCEPTION_VARIABLE__EXCEPTION_TYPE,
-						ActivitiesPackage.Literals.EXCEPTION_VARIABLE__GENERIC_EXCEPTION_TYPE);
+						ActivitiesPackage.Literals.EXCEPTION_VARIABLE__EXCEPTION_TYPES,
+						ActivitiesPackage.Literals.EXCEPTION_VARIABLE__GENERIC_EXCEPTION_TYPES);
 			}
 			this.exceptionTypes = this.exceptionTypesHandler.getRawTypes();
 		}
@@ -168,8 +143,8 @@ public class ExceptionVariableImpl extends VariableImpl implements
 			if (this.exceptionTypesHandler == null) {
 				this.exceptionTypesHandler = new GenericTypeListHandler.EClassifiers(
 						this,
-						ActivitiesPackage.Literals.EXCEPTION_VARIABLE__EXCEPTION_TYPE,
-						ActivitiesPackage.Literals.EXCEPTION_VARIABLE__GENERIC_EXCEPTION_TYPE);
+						ActivitiesPackage.Literals.EXCEPTION_VARIABLE__EXCEPTION_TYPES,
+						ActivitiesPackage.Literals.EXCEPTION_VARIABLE__GENERIC_EXCEPTION_TYPES);
 			}
 			this.genericExceptionTypes = this.exceptionTypesHandler
 					.getGenericTypes();
@@ -184,16 +159,6 @@ public class ExceptionVariableImpl extends VariableImpl implements
 			return types.size() == 1 ? types.get(0) : null;
 		}
 		return super.basicGetType();
-	}
-
-	@Override
-	public EGenericType basicGetGenericType() {
-		if (this.exceptionTypesHandler != null) {
-			EList<EGenericType> types = this.exceptionTypesHandler
-					.getGenericTypes();
-			return types.size() == 1 ? types.get(0) : null;
-		}
-		return super.basicGetGenericType();
 	}
 
 	/**
@@ -227,7 +192,7 @@ public class ExceptionVariableImpl extends VariableImpl implements
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newActivityEdge != null)
-				msgs = ((InternalEObject)newActivityEdge).eInverseAdd(this, ActivitiesPackage.ACTIVITY_EDGE__GUARD_EXCEPTION, ActivityEdge.class, msgs);
+				msgs = ((InternalEObject)newActivityEdge).eInverseAdd(this, ActivitiesPackage.ACTIVITY_EDGE__GUARD_EXCEPTIONS, ActivityEdge.class, msgs);
 			msgs = basicSetActivityEdge(newActivityEdge, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -274,7 +239,7 @@ public class ExceptionVariableImpl extends VariableImpl implements
 			NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
 			case ActivitiesPackage.EXCEPTION_VARIABLE__ACTIVITY_EDGE:
-				return eInternalContainer().eInverseRemove(this, ActivitiesPackage.ACTIVITY_EDGE__GUARD_EXCEPTION, ActivityEdge.class, msgs);
+				return eInternalContainer().eInverseRemove(this, ActivitiesPackage.ACTIVITY_EDGE__GUARD_EXCEPTIONS, ActivityEdge.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -290,10 +255,10 @@ public class ExceptionVariableImpl extends VariableImpl implements
 				return getActivityEdge();
 			case ActivitiesPackage.EXCEPTION_VARIABLE__NAME:
 				return getName();
-			case ActivitiesPackage.EXCEPTION_VARIABLE__EXCEPTION_TYPE:
-				return getExceptionType();
-			case ActivitiesPackage.EXCEPTION_VARIABLE__GENERIC_EXCEPTION_TYPE:
-				return getGenericExceptionType();
+			case ActivitiesPackage.EXCEPTION_VARIABLE__EXCEPTION_TYPES:
+				return getExceptionTypes();
+			case ActivitiesPackage.EXCEPTION_VARIABLE__GENERIC_EXCEPTION_TYPES:
+				return getGenericExceptionTypes();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -312,13 +277,13 @@ public class ExceptionVariableImpl extends VariableImpl implements
 			case ActivitiesPackage.EXCEPTION_VARIABLE__NAME:
 				setName((String)newValue);
 				return;
-			case ActivitiesPackage.EXCEPTION_VARIABLE__EXCEPTION_TYPE:
-				getExceptionType().clear();
-				getExceptionType().addAll((Collection<? extends EClassifier>)newValue);
+			case ActivitiesPackage.EXCEPTION_VARIABLE__EXCEPTION_TYPES:
+				getExceptionTypes().clear();
+				getExceptionTypes().addAll((Collection<? extends EClassifier>)newValue);
 				return;
-			case ActivitiesPackage.EXCEPTION_VARIABLE__GENERIC_EXCEPTION_TYPE:
-				getGenericExceptionType().clear();
-				getGenericExceptionType().addAll((Collection<? extends EGenericType>)newValue);
+			case ActivitiesPackage.EXCEPTION_VARIABLE__GENERIC_EXCEPTION_TYPES:
+				getGenericExceptionTypes().clear();
+				getGenericExceptionTypes().addAll((Collection<? extends EGenericType>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -337,11 +302,11 @@ public class ExceptionVariableImpl extends VariableImpl implements
 			case ActivitiesPackage.EXCEPTION_VARIABLE__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case ActivitiesPackage.EXCEPTION_VARIABLE__EXCEPTION_TYPE:
-				getExceptionType().clear();
+			case ActivitiesPackage.EXCEPTION_VARIABLE__EXCEPTION_TYPES:
+				getExceptionTypes().clear();
 				return;
-			case ActivitiesPackage.EXCEPTION_VARIABLE__GENERIC_EXCEPTION_TYPE:
-				getGenericExceptionType().clear();
+			case ActivitiesPackage.EXCEPTION_VARIABLE__GENERIC_EXCEPTION_TYPES:
+				getGenericExceptionTypes().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -358,10 +323,10 @@ public class ExceptionVariableImpl extends VariableImpl implements
 				return getActivityEdge() != null;
 			case ActivitiesPackage.EXCEPTION_VARIABLE__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case ActivitiesPackage.EXCEPTION_VARIABLE__EXCEPTION_TYPE:
-				return exceptionType != null && !exceptionType.isEmpty();
-			case ActivitiesPackage.EXCEPTION_VARIABLE__GENERIC_EXCEPTION_TYPE:
-				return genericExceptionType != null && !genericExceptionType.isEmpty();
+			case ActivitiesPackage.EXCEPTION_VARIABLE__EXCEPTION_TYPES:
+				return exceptionTypes != null && !exceptionTypes.isEmpty();
+			case ActivitiesPackage.EXCEPTION_VARIABLE__GENERIC_EXCEPTION_TYPES:
+				return genericExceptionTypes != null && !genericExceptionTypes.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

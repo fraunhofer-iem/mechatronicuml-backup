@@ -83,7 +83,7 @@ public interface PropertyBinding extends ExtendableElement {
 
 	/**
 	 * Returns the value of the '<em><b>Template Binding</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link org.muml.storydiagram.templates.TemplateBinding#getPropertyBinding <em>Property Binding</em>}'.
+	 * It is bidirectional and its opposite is '{@link org.muml.storydiagram.templates.TemplateBinding#getPropertyBindings <em>Property Bindings</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Template Binding</em>' container reference isn't clear,
@@ -93,8 +93,8 @@ public interface PropertyBinding extends ExtendableElement {
 	 * @return the value of the '<em>Template Binding</em>' container reference.
 	 * @see #setTemplateBinding(TemplateBinding)
 	 * @see org.muml.storydiagram.templates.TemplatesPackage#getPropertyBinding_TemplateBinding()
-	 * @see org.muml.storydiagram.templates.TemplateBinding#getPropertyBinding
-	 * @model opposite="propertyBinding" required="true" transient="false" ordered="false"
+	 * @see org.muml.storydiagram.templates.TemplateBinding#getPropertyBindings
+	 * @model opposite="propertyBindings" required="true" transient="false" ordered="false"
 	 * @generated
 	 */
 	TemplateBinding getTemplateBinding();

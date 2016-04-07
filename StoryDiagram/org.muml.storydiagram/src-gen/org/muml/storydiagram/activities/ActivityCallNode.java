@@ -23,7 +23,7 @@ import org.muml.storydiagram.calls.Invocation;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.muml.storydiagram.activities.ActivityCallNode#getCalledActivity <em>Called Activity</em>}</li>
+ *   <li>{@link org.muml.storydiagram.activities.ActivityCallNode#getCalledActivities <em>Called Activities</em>}</li>
  * </ul>
  *
  * @see org.muml.storydiagram.activities.ActivitiesPackage#getActivityCallNode()
@@ -32,18 +32,18 @@ import org.muml.storydiagram.calls.Invocation;
  */
 public interface ActivityCallNode extends ActivityNode, Invocation {
 	/**
-	 * Returns the value of the '<em><b>Called Activity</b></em>' reference list.
+	 * Returns the value of the '<em><b>Called Activities</b></em>' reference list.
 	 * The list contents are of type {@link org.muml.storydiagram.activities.Activity}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * References all activities that are to be considered for the polymorphic dispatching of the call. All activities must have the same call signature.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Called Activity</em>' reference list.
-	 * @see org.muml.storydiagram.activities.ActivitiesPackage#getActivityCallNode_CalledActivity()
+	 * @return the value of the '<em>Called Activities</em>' reference list.
+	 * @see org.muml.storydiagram.activities.ActivitiesPackage#getActivityCallNode_CalledActivities()
 	 * @model required="true"
 	 * @generated
 	 */
-	EList<Activity> getCalledActivity();
+	EList<Activity> getCalledActivities();
 
 } // ActivityCallNode

@@ -16,12 +16,14 @@ import org.muml.storydiagram.StorydiagramFactory;
 import org.muml.storydiagram.StorydiagramPackage;
 import org.muml.storydiagram.Variable;
 import org.muml.storydiagram.activities.ActivitiesPackage;
-import org.muml.storydiagram.activities.expressions.ExpressionsPackage;
-import org.muml.storydiagram.activities.expressions.impl.ExpressionsPackageImpl;
+import org.muml.storydiagram.activities.expressions.ActivitiesExpressionsPackage;
+import org.muml.storydiagram.activities.expressions.impl.ActivitiesExpressionsPackageImpl;
 import org.muml.storydiagram.activities.impl.ActivitiesPackageImpl;
 import org.muml.storydiagram.calls.CallsPackage;
 import org.muml.storydiagram.calls.impl.CallsPackageImpl;
 import org.muml.storydiagram.patterns.PatternsPackage;
+import org.muml.storydiagram.patterns.expressions.PatternsExpressionsPackage;
+import org.muml.storydiagram.patterns.expressions.impl.PatternsExpressionsPackageImpl;
 import org.muml.storydiagram.patterns.impl.PatternsPackageImpl;
 import org.muml.storydiagram.templates.TemplatesPackage;
 import org.muml.storydiagram.templates.impl.TemplatesPackageImpl;
@@ -93,31 +95,31 @@ public class StorydiagramPackageImpl extends EPackageImpl implements
 
 		// Obtain or create and register interdependencies
 		ActivitiesPackageImpl theActivitiesPackage = (ActivitiesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ActivitiesPackage.eNS_URI) instanceof ActivitiesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ActivitiesPackage.eNS_URI) : ActivitiesPackage.eINSTANCE);
-		ExpressionsPackageImpl theExpressionsPackage = (ExpressionsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ExpressionsPackage.eNS_URI) instanceof ExpressionsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ExpressionsPackage.eNS_URI) : ExpressionsPackage.eINSTANCE);
+		ActivitiesExpressionsPackageImpl theActivitiesExpressionsPackage = (ActivitiesExpressionsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ActivitiesExpressionsPackage.eNS_URI) instanceof ActivitiesExpressionsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ActivitiesExpressionsPackage.eNS_URI) : ActivitiesExpressionsPackage.eINSTANCE);
 		CallsPackageImpl theCallsPackage = (CallsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CallsPackage.eNS_URI) instanceof CallsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CallsPackage.eNS_URI) : CallsPackage.eINSTANCE);
-		org.muml.storydiagram.calls.expressions.impl.ExpressionsPackageImpl theExpressionsPackage_1 = (org.muml.storydiagram.calls.expressions.impl.ExpressionsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(org.muml.storydiagram.calls.expressions.ExpressionsPackage.eNS_URI) instanceof org.muml.storydiagram.calls.expressions.impl.ExpressionsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(org.muml.storydiagram.calls.expressions.ExpressionsPackage.eNS_URI) : org.muml.storydiagram.calls.expressions.ExpressionsPackage.eINSTANCE);
+		org.muml.storydiagram.calls.expressions.impl.CallsExpressionsPackageImpl theCallsExpressionsPackage = (org.muml.storydiagram.calls.expressions.impl.CallsExpressionsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(org.muml.storydiagram.calls.expressions.CallsExpressionsPackage.eNS_URI) instanceof org.muml.storydiagram.calls.expressions.impl.CallsExpressionsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(org.muml.storydiagram.calls.expressions.CallsExpressionsPackage.eNS_URI) : org.muml.storydiagram.calls.expressions.CallsExpressionsPackage.eINSTANCE);
 		PatternsPackageImpl thePatternsPackage = (PatternsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(PatternsPackage.eNS_URI) instanceof PatternsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PatternsPackage.eNS_URI) : PatternsPackage.eINSTANCE);
-		org.muml.storydiagram.patterns.expressions.impl.ExpressionsPackageImpl theExpressionsPackage_2 = (org.muml.storydiagram.patterns.expressions.impl.ExpressionsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(org.muml.storydiagram.patterns.expressions.ExpressionsPackage.eNS_URI) instanceof org.muml.storydiagram.patterns.expressions.impl.ExpressionsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(org.muml.storydiagram.patterns.expressions.ExpressionsPackage.eNS_URI) : org.muml.storydiagram.patterns.expressions.ExpressionsPackage.eINSTANCE);
+		PatternsExpressionsPackageImpl thePatternsExpressionsPackage = (PatternsExpressionsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(PatternsExpressionsPackage.eNS_URI) instanceof PatternsExpressionsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PatternsExpressionsPackage.eNS_URI) : PatternsExpressionsPackage.eINSTANCE);
 		TemplatesPackageImpl theTemplatesPackage = (TemplatesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(TemplatesPackage.eNS_URI) instanceof TemplatesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(TemplatesPackage.eNS_URI) : TemplatesPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theStorydiagramPackage.createPackageContents();
 		theActivitiesPackage.createPackageContents();
-		theExpressionsPackage.createPackageContents();
+		theActivitiesExpressionsPackage.createPackageContents();
 		theCallsPackage.createPackageContents();
-		theExpressionsPackage_1.createPackageContents();
+		theCallsExpressionsPackage.createPackageContents();
 		thePatternsPackage.createPackageContents();
-		theExpressionsPackage_2.createPackageContents();
+		thePatternsExpressionsPackage.createPackageContents();
 		theTemplatesPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theStorydiagramPackage.initializePackageContents();
 		theActivitiesPackage.initializePackageContents();
-		theExpressionsPackage.initializePackageContents();
+		theActivitiesExpressionsPackage.initializePackageContents();
 		theCallsPackage.initializePackageContents();
-		theExpressionsPackage_1.initializePackageContents();
+		theCallsExpressionsPackage.initializePackageContents();
 		thePatternsPackage.initializePackageContents();
-		theExpressionsPackage_2.initializePackageContents();
+		thePatternsExpressionsPackage.initializePackageContents();
 		theTemplatesPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed

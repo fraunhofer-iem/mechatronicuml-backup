@@ -20,8 +20,8 @@ import org.muml.storydiagram.patterns.StoryPattern;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.muml.storydiagram.templates.TemplateSignature#getTemplateBinding <em>Template Binding</em>}</li>
- *   <li>{@link org.muml.storydiagram.templates.TemplateSignature#getTypeParameter <em>Type Parameter</em>}</li>
+ *   <li>{@link org.muml.storydiagram.templates.TemplateSignature#getTemplateBindings <em>Template Bindings</em>}</li>
+ *   <li>{@link org.muml.storydiagram.templates.TemplateSignature#getTypeParameters <em>Type Parameters</em>}</li>
  *   <li>{@link org.muml.storydiagram.templates.TemplateSignature#getPattern <em>Pattern</em>}</li>
  * </ul>
  *
@@ -31,38 +31,38 @@ import org.muml.storydiagram.patterns.StoryPattern;
  */
 public interface TemplateSignature extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Template Binding</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Template Bindings</b></em>' containment reference list.
 	 * The list contents are of type {@link org.muml.storydiagram.templates.TemplateBinding}.
 	 * It is bidirectional and its opposite is '{@link org.muml.storydiagram.templates.TemplateBinding#getTemplate <em>Template</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Template Binding</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Template Bindings</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Template Binding</em>' containment reference list.
-	 * @see org.muml.storydiagram.templates.TemplatesPackage#getTemplateSignature_TemplateBinding()
+	 * @return the value of the '<em>Template Bindings</em>' containment reference list.
+	 * @see org.muml.storydiagram.templates.TemplatesPackage#getTemplateSignature_TemplateBindings()
 	 * @see org.muml.storydiagram.templates.TemplateBinding#getTemplate
 	 * @model opposite="template" containment="true" ordered="false"
 	 * @generated
 	 */
-	EList<TemplateBinding> getTemplateBinding();
+	EList<TemplateBinding> getTemplateBindings();
 
 	/**
-	 * Returns the value of the '<em><b>Type Parameter</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Type Parameters</b></em>' containment reference list.
 	 * The list contents are of type {@link org.eclipse.emf.ecore.EClassifier}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Type Parameter</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Type Parameters</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Type Parameter</em>' containment reference list.
-	 * @see org.muml.storydiagram.templates.TemplatesPackage#getTemplateSignature_TypeParameter()
+	 * @return the value of the '<em>Type Parameters</em>' containment reference list.
+	 * @see org.muml.storydiagram.templates.TemplatesPackage#getTemplateSignature_TypeParameters()
 	 * @model containment="true" ordered="false"
 	 * @generated
 	 */
-	EList<EClassifier> getTypeParameter();
+	EList<EClassifier> getTypeParameters();
 
 	/**
 	 * Returns the value of the '<em><b>Pattern</b></em>' container reference.

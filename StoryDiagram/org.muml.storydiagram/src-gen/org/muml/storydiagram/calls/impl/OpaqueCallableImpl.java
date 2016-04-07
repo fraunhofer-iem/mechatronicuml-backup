@@ -23,7 +23,7 @@ import org.eclipse.emf.ecore.util.EObjectValidator;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.muml.storydiagram.calls.CallsPackage;
 import org.muml.storydiagram.calls.OpaqueCallable;
-import org.muml.storydiagram.calls.expressions.ExpressionsPackage;
+import org.muml.storydiagram.calls.expressions.CallsExpressionsPackage;
 import org.muml.storydiagram.calls.expressions.MethodCallExpression;
 import org.muml.storydiagram.calls.util.CallsValidator;
 
@@ -124,7 +124,7 @@ public class OpaqueCallableImpl extends CallableImpl implements OpaqueCallable {
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newCallExpression != null)
-				msgs = ((InternalEObject)newCallExpression).eInverseAdd(this, ExpressionsPackage.METHOD_CALL_EXPRESSION__OPAQUE_CALLABLE, MethodCallExpression.class, msgs);
+				msgs = ((InternalEObject)newCallExpression).eInverseAdd(this, CallsExpressionsPackage.METHOD_CALL_EXPRESSION__OPAQUE_CALLABLE, MethodCallExpression.class, msgs);
 			msgs = basicSetCallExpression(newCallExpression, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -196,7 +196,7 @@ public class OpaqueCallableImpl extends CallableImpl implements OpaqueCallable {
 			NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
 			case CallsPackage.OPAQUE_CALLABLE__CALL_EXPRESSION:
-				return eInternalContainer().eInverseRemove(this, ExpressionsPackage.METHOD_CALL_EXPRESSION__OPAQUE_CALLABLE, MethodCallExpression.class, msgs);
+				return eInternalContainer().eInverseRemove(this, CallsExpressionsPackage.METHOD_CALL_EXPRESSION__OPAQUE_CALLABLE, MethodCallExpression.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}

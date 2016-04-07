@@ -38,12 +38,15 @@ import org.muml.storydiagram.activities.OperationExtension;
 import org.muml.storydiagram.activities.StatementNode;
 import org.muml.storydiagram.activities.StoryNode;
 import org.muml.storydiagram.activities.StructuredNode;
-import org.muml.storydiagram.activities.expressions.impl.ExpressionsPackageImpl;
+import org.muml.storydiagram.activities.expressions.ActivitiesExpressionsPackage;
+import org.muml.storydiagram.activities.expressions.impl.ActivitiesExpressionsPackageImpl;
 import org.muml.storydiagram.activities.util.ActivitiesValidator;
 import org.muml.storydiagram.calls.CallsPackage;
 import org.muml.storydiagram.calls.impl.CallsPackageImpl;
 import org.muml.storydiagram.impl.StorydiagramPackageImpl;
 import org.muml.storydiagram.patterns.PatternsPackage;
+import org.muml.storydiagram.patterns.expressions.PatternsExpressionsPackage;
+import org.muml.storydiagram.patterns.expressions.impl.PatternsExpressionsPackageImpl;
 import org.muml.storydiagram.patterns.impl.PatternsPackageImpl;
 import org.muml.storydiagram.templates.TemplatesPackage;
 import org.muml.storydiagram.templates.impl.TemplatesPackageImpl;
@@ -220,31 +223,31 @@ public class ActivitiesPackageImpl extends EPackageImpl implements
 
 		// Obtain or create and register interdependencies
 		StorydiagramPackageImpl theStorydiagramPackage = (StorydiagramPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(StorydiagramPackage.eNS_URI) instanceof StorydiagramPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(StorydiagramPackage.eNS_URI) : StorydiagramPackage.eINSTANCE);
-		ExpressionsPackageImpl theExpressionsPackage = (ExpressionsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(org.muml.storydiagram.activities.expressions.ExpressionsPackage.eNS_URI) instanceof ExpressionsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(org.muml.storydiagram.activities.expressions.ExpressionsPackage.eNS_URI) : org.muml.storydiagram.activities.expressions.ExpressionsPackage.eINSTANCE);
+		ActivitiesExpressionsPackageImpl theActivitiesExpressionsPackage = (ActivitiesExpressionsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ActivitiesExpressionsPackage.eNS_URI) instanceof ActivitiesExpressionsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ActivitiesExpressionsPackage.eNS_URI) : ActivitiesExpressionsPackage.eINSTANCE);
 		CallsPackageImpl theCallsPackage = (CallsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CallsPackage.eNS_URI) instanceof CallsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CallsPackage.eNS_URI) : CallsPackage.eINSTANCE);
-		org.muml.storydiagram.calls.expressions.impl.ExpressionsPackageImpl theExpressionsPackage_1 = (org.muml.storydiagram.calls.expressions.impl.ExpressionsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(org.muml.storydiagram.calls.expressions.ExpressionsPackage.eNS_URI) instanceof org.muml.storydiagram.calls.expressions.impl.ExpressionsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(org.muml.storydiagram.calls.expressions.ExpressionsPackage.eNS_URI) : org.muml.storydiagram.calls.expressions.ExpressionsPackage.eINSTANCE);
+		org.muml.storydiagram.calls.expressions.impl.CallsExpressionsPackageImpl theCallsExpressionsPackage = (org.muml.storydiagram.calls.expressions.impl.CallsExpressionsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(org.muml.storydiagram.calls.expressions.CallsExpressionsPackage.eNS_URI) instanceof org.muml.storydiagram.calls.expressions.impl.CallsExpressionsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(org.muml.storydiagram.calls.expressions.CallsExpressionsPackage.eNS_URI) : org.muml.storydiagram.calls.expressions.CallsExpressionsPackage.eINSTANCE);
 		PatternsPackageImpl thePatternsPackage = (PatternsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(PatternsPackage.eNS_URI) instanceof PatternsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PatternsPackage.eNS_URI) : PatternsPackage.eINSTANCE);
-		org.muml.storydiagram.patterns.expressions.impl.ExpressionsPackageImpl theExpressionsPackage_2 = (org.muml.storydiagram.patterns.expressions.impl.ExpressionsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(org.muml.storydiagram.patterns.expressions.ExpressionsPackage.eNS_URI) instanceof org.muml.storydiagram.patterns.expressions.impl.ExpressionsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(org.muml.storydiagram.patterns.expressions.ExpressionsPackage.eNS_URI) : org.muml.storydiagram.patterns.expressions.ExpressionsPackage.eINSTANCE);
+		PatternsExpressionsPackageImpl thePatternsExpressionsPackage = (PatternsExpressionsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(PatternsExpressionsPackage.eNS_URI) instanceof PatternsExpressionsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PatternsExpressionsPackage.eNS_URI) : PatternsExpressionsPackage.eINSTANCE);
 		TemplatesPackageImpl theTemplatesPackage = (TemplatesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(TemplatesPackage.eNS_URI) instanceof TemplatesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(TemplatesPackage.eNS_URI) : TemplatesPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theActivitiesPackage.createPackageContents();
 		theStorydiagramPackage.createPackageContents();
-		theExpressionsPackage.createPackageContents();
+		theActivitiesExpressionsPackage.createPackageContents();
 		theCallsPackage.createPackageContents();
-		theExpressionsPackage_1.createPackageContents();
+		theCallsExpressionsPackage.createPackageContents();
 		thePatternsPackage.createPackageContents();
-		theExpressionsPackage_2.createPackageContents();
+		thePatternsExpressionsPackage.createPackageContents();
 		theTemplatesPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theActivitiesPackage.initializePackageContents();
 		theStorydiagramPackage.initializePackageContents();
-		theExpressionsPackage.initializePackageContents();
+		theActivitiesExpressionsPackage.initializePackageContents();
 		theCallsPackage.initializePackageContents();
-		theExpressionsPackage_1.initializePackageContents();
+		theCallsExpressionsPackage.initializePackageContents();
 		thePatternsPackage.initializePackageContents();
-		theExpressionsPackage_2.initializePackageContents();
+		thePatternsExpressionsPackage.initializePackageContents();
 		theTemplatesPackage.initializePackageContents();
 
 		// Register package validator
@@ -297,7 +300,7 @@ public class ActivitiesPackageImpl extends EPackageImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getExceptionVariable_ExceptionType() {
+	public EReference getExceptionVariable_ExceptionTypes() {
 		return (EReference)exceptionVariableEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -306,7 +309,7 @@ public class ActivitiesPackageImpl extends EPackageImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getExceptionVariable_GenericExceptionType() {
+	public EReference getExceptionVariable_GenericExceptionTypes() {
 		return (EReference)exceptionVariableEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -369,7 +372,7 @@ public class ActivitiesPackageImpl extends EPackageImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getActivityEdge_GuardException() {
+	public EReference getActivityEdge_GuardExceptions() {
 		return (EReference)activityEdgeEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -387,7 +390,7 @@ public class ActivitiesPackageImpl extends EPackageImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getActivityNode_Outgoing() {
+	public EReference getActivityNode_Outgoings() {
 		return (EReference)activityNodeEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -414,7 +417,7 @@ public class ActivitiesPackageImpl extends EPackageImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getActivityNode_Incoming() {
+	public EReference getActivityNode_Incomings() {
 		return (EReference)activityNodeEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -441,7 +444,7 @@ public class ActivitiesPackageImpl extends EPackageImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getActivity_OwnedActivityEdge() {
+	public EReference getActivity_OwnedActivityEdges() {
 		return (EReference)activityEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -459,7 +462,7 @@ public class ActivitiesPackageImpl extends EPackageImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getActivity_OwnedActivityNode() {
+	public EReference getActivity_OwnedActivityNodes() {
 		return (EReference)activityEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -567,7 +570,7 @@ public class ActivitiesPackageImpl extends EPackageImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getStructuredNode_OwnedActivityNode() {
+	public EReference getStructuredNode_OwnedActivityNodes() {
 		return (EReference)structuredNodeEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -657,7 +660,7 @@ public class ActivitiesPackageImpl extends EPackageImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getActivityCallNode_CalledActivity() {
+	public EReference getActivityCallNode_CalledActivities() {
 		return (EReference)activityCallNodeEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -728,8 +731,8 @@ public class ActivitiesPackageImpl extends EPackageImpl implements
 		exceptionVariableEClass = createEClass(EXCEPTION_VARIABLE);
 		createEReference(exceptionVariableEClass, EXCEPTION_VARIABLE__ACTIVITY_EDGE);
 		createEAttribute(exceptionVariableEClass, EXCEPTION_VARIABLE__NAME);
-		createEReference(exceptionVariableEClass, EXCEPTION_VARIABLE__EXCEPTION_TYPE);
-		createEReference(exceptionVariableEClass, EXCEPTION_VARIABLE__GENERIC_EXCEPTION_TYPE);
+		createEReference(exceptionVariableEClass, EXCEPTION_VARIABLE__EXCEPTION_TYPES);
+		createEReference(exceptionVariableEClass, EXCEPTION_VARIABLE__GENERIC_EXCEPTION_TYPES);
 
 		activityEdgeEClass = createEClass(ACTIVITY_EDGE);
 		createEReference(activityEdgeEClass, ACTIVITY_EDGE__TARGET);
@@ -737,19 +740,19 @@ public class ActivitiesPackageImpl extends EPackageImpl implements
 		createEReference(activityEdgeEClass, ACTIVITY_EDGE__OWNING_ACTIVITY);
 		createEAttribute(activityEdgeEClass, ACTIVITY_EDGE__GUARD);
 		createEReference(activityEdgeEClass, ACTIVITY_EDGE__GUARD_EXPRESSION);
-		createEReference(activityEdgeEClass, ACTIVITY_EDGE__GUARD_EXCEPTION);
+		createEReference(activityEdgeEClass, ACTIVITY_EDGE__GUARD_EXCEPTIONS);
 
 		activityNodeEClass = createEClass(ACTIVITY_NODE);
-		createEReference(activityNodeEClass, ACTIVITY_NODE__OUTGOING);
+		createEReference(activityNodeEClass, ACTIVITY_NODE__OUTGOINGS);
 		createEReference(activityNodeEClass, ACTIVITY_NODE__OWNING_ACTIVITY);
 		createEReference(activityNodeEClass, ACTIVITY_NODE__OWNING_ACTIVITY_NODE);
-		createEReference(activityNodeEClass, ACTIVITY_NODE__INCOMING);
+		createEReference(activityNodeEClass, ACTIVITY_NODE__INCOMINGS);
 
 		activityEClass = createEClass(ACTIVITY);
 		createEReference(activityEClass, ACTIVITY__OWNING_OPERATION);
-		createEReference(activityEClass, ACTIVITY__OWNED_ACTIVITY_EDGE);
+		createEReference(activityEClass, ACTIVITY__OWNED_ACTIVITY_EDGES);
 		createEReference(activityEClass, ACTIVITY__PRECONDITION);
-		createEReference(activityEClass, ACTIVITY__OWNED_ACTIVITY_NODE);
+		createEReference(activityEClass, ACTIVITY__OWNED_ACTIVITY_NODES);
 
 		operationExtensionEClass = createEClass(OPERATION_EXTENSION);
 		createEReference(operationExtensionEClass, OPERATION_EXTENSION__OPERATION);
@@ -765,7 +768,7 @@ public class ActivitiesPackageImpl extends EPackageImpl implements
 		createEReference(storyNodeEClass, STORY_NODE__STORY_PATTERN);
 
 		structuredNodeEClass = createEClass(STRUCTURED_NODE);
-		createEReference(structuredNodeEClass, STRUCTURED_NODE__OWNED_ACTIVITY_NODE);
+		createEReference(structuredNodeEClass, STRUCTURED_NODE__OWNED_ACTIVITY_NODES);
 
 		junctionNodeEClass = createEClass(JUNCTION_NODE);
 
@@ -780,7 +783,7 @@ public class ActivitiesPackageImpl extends EPackageImpl implements
 		createEAttribute(activityFinalNodeEClass, ACTIVITY_FINAL_NODE__SUCCESS);
 
 		activityCallNodeEClass = createEClass(ACTIVITY_CALL_NODE);
-		createEReference(activityCallNodeEClass, ACTIVITY_CALL_NODE__CALLED_ACTIVITY);
+		createEReference(activityCallNodeEClass, ACTIVITY_CALL_NODE__CALLED_ACTIVITIES);
 
 		modifyingStoryNodeEClass = createEClass(MODIFYING_STORY_NODE);
 		createEReference(modifyingStoryNodeEClass, MODIFYING_STORY_NODE__OWNED_RULE);
@@ -815,16 +818,16 @@ public class ActivitiesPackageImpl extends EPackageImpl implements
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		org.muml.storydiagram.activities.expressions.ExpressionsPackage theExpressionsPackage = (org.muml.storydiagram.activities.expressions.ExpressionsPackage)EPackage.Registry.INSTANCE.getEPackage(org.muml.storydiagram.activities.expressions.ExpressionsPackage.eNS_URI);
+		ActivitiesExpressionsPackage theActivitiesExpressionsPackage = (ActivitiesExpressionsPackage)EPackage.Registry.INSTANCE.getEPackage(ActivitiesExpressionsPackage.eNS_URI);
 		StorydiagramPackage theStorydiagramPackage = (StorydiagramPackage)EPackage.Registry.INSTANCE.getEPackage(StorydiagramPackage.eNS_URI);
 		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
 		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
-		ExpressionsPackage theExpressionsPackage_3 = (ExpressionsPackage)EPackage.Registry.INSTANCE.getEPackage(ExpressionsPackage.eNS_URI);
+		ExpressionsPackage theExpressionsPackage = (ExpressionsPackage)EPackage.Registry.INSTANCE.getEPackage(ExpressionsPackage.eNS_URI);
 		CallsPackage theCallsPackage = (CallsPackage)EPackage.Registry.INSTANCE.getEPackage(CallsPackage.eNS_URI);
 		PatternsPackage thePatternsPackage = (PatternsPackage)EPackage.Registry.INSTANCE.getEPackage(PatternsPackage.eNS_URI);
 
 		// Add subpackages
-		getESubpackages().add(theExpressionsPackage);
+		getESubpackages().add(theActivitiesExpressionsPackage);
 
 		// Create type parameters
 
@@ -853,30 +856,30 @@ public class ActivitiesPackageImpl extends EPackageImpl implements
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(exceptionVariableEClass, ExceptionVariable.class, "ExceptionVariable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getExceptionVariable_ActivityEdge(), this.getActivityEdge(), this.getActivityEdge_GuardException(), "activityEdge", null, 1, 1, ExceptionVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getExceptionVariable_ActivityEdge(), this.getActivityEdge(), this.getActivityEdge_GuardExceptions(), "activityEdge", null, 1, 1, ExceptionVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getExceptionVariable_Name(), ecorePackage.getEString(), "name", null, 1, 1, ExceptionVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getExceptionVariable_ExceptionType(), theEcorePackage.getEClassifier(), null, "exceptionType", null, 0, -1, ExceptionVariable.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getExceptionVariable_GenericExceptionType(), theEcorePackage.getEGenericType(), null, "genericExceptionType", null, 0, -1, ExceptionVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getExceptionVariable_ExceptionTypes(), theEcorePackage.getEClassifier(), null, "exceptionTypes", null, 0, -1, ExceptionVariable.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getExceptionVariable_GenericExceptionTypes(), theEcorePackage.getEGenericType(), null, "genericExceptionTypes", null, 0, -1, ExceptionVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(activityEdgeEClass, ActivityEdge.class, "ActivityEdge", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getActivityEdge_Target(), this.getActivityNode(), this.getActivityNode_Incoming(), "target", null, 1, 1, ActivityEdge.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getActivityEdge_Source(), this.getActivityNode(), this.getActivityNode_Outgoing(), "source", null, 1, 1, ActivityEdge.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getActivityEdge_OwningActivity(), this.getActivity(), this.getActivity_OwnedActivityEdge(), "owningActivity", null, 1, 1, ActivityEdge.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getActivityEdge_Target(), this.getActivityNode(), this.getActivityNode_Incomings(), "target", null, 1, 1, ActivityEdge.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getActivityEdge_Source(), this.getActivityNode(), this.getActivityNode_Outgoings(), "source", null, 1, 1, ActivityEdge.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getActivityEdge_OwningActivity(), this.getActivity(), this.getActivity_OwnedActivityEdges(), "owningActivity", null, 1, 1, ActivityEdge.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getActivityEdge_Guard(), this.getEdgeGuard(), "guard", "NONE", 1, 1, ActivityEdge.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getActivityEdge_GuardExpression(), theExpressionsPackage_3.getExpression(), null, "guardExpression", null, 0, 1, ActivityEdge.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getActivityEdge_GuardException(), this.getExceptionVariable(), this.getExceptionVariable_ActivityEdge(), "guardException", null, 0, -1, ActivityEdge.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getActivityEdge_GuardExpression(), theExpressionsPackage.getExpression(), null, "guardExpression", null, 0, 1, ActivityEdge.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getActivityEdge_GuardExceptions(), this.getExceptionVariable(), this.getExceptionVariable_ActivityEdge(), "guardExceptions", null, 0, -1, ActivityEdge.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(activityNodeEClass, ActivityNode.class, "ActivityNode", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getActivityNode_Outgoing(), this.getActivityEdge(), this.getActivityEdge_Source(), "outgoing", null, 0, -1, ActivityNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getActivityNode_OwningActivity(), this.getActivity(), this.getActivity_OwnedActivityNode(), "owningActivity", null, 0, 1, ActivityNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getActivityNode_OwningActivityNode(), this.getStructuredNode(), this.getStructuredNode_OwnedActivityNode(), "owningActivityNode", null, 0, 1, ActivityNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getActivityNode_Incoming(), this.getActivityEdge(), this.getActivityEdge_Target(), "incoming", null, 0, -1, ActivityNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getActivityNode_Outgoings(), this.getActivityEdge(), this.getActivityEdge_Source(), "outgoings", null, 0, -1, ActivityNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getActivityNode_OwningActivity(), this.getActivity(), this.getActivity_OwnedActivityNodes(), "owningActivity", null, 0, 1, ActivityNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getActivityNode_OwningActivityNode(), this.getStructuredNode(), this.getStructuredNode_OwnedActivityNodes(), "owningActivityNode", null, 0, 1, ActivityNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getActivityNode_Incomings(), this.getActivityEdge(), this.getActivityEdge_Target(), "incomings", null, 0, -1, ActivityNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(activityEClass, Activity.class, "Activity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getActivity_OwningOperation(), this.getOperationExtension(), this.getOperationExtension_OwnedActivity(), "owningOperation", null, 0, 1, Activity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getActivity_OwnedActivityEdge(), this.getActivityEdge(), this.getActivityEdge_OwningActivity(), "ownedActivityEdge", null, 0, -1, Activity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getActivity_OwnedActivityEdges(), this.getActivityEdge(), this.getActivityEdge_OwningActivity(), "ownedActivityEdges", null, 0, -1, Activity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getActivity_Precondition(), this.getMatchingStoryNode(), null, "precondition", null, 0, 1, Activity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getActivity_OwnedActivityNode(), this.getActivityNode(), this.getActivityNode_OwningActivity(), "ownedActivityNode", null, 0, -1, Activity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getActivity_OwnedActivityNodes(), this.getActivityNode(), this.getActivityNode_OwningActivity(), "ownedActivityNodes", null, 0, -1, Activity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(operationExtensionEClass, OperationExtension.class, "OperationExtension", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getOperationExtension_Operation(), theEcorePackage.getEOperation(), null, "operation", null, 0, 1, OperationExtension.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
@@ -900,22 +903,22 @@ public class ActivitiesPackageImpl extends EPackageImpl implements
 		initEReference(getStoryNode_StoryPattern(), thePatternsPackage.getStoryPattern(), null, "storyPattern", null, 1, 1, StoryNode.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
 
 		initEClass(structuredNodeEClass, StructuredNode.class, "StructuredNode", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getStructuredNode_OwnedActivityNode(), this.getActivityNode(), this.getActivityNode_OwningActivityNode(), "ownedActivityNode", null, 0, -1, StructuredNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getStructuredNode_OwnedActivityNodes(), this.getActivityNode(), this.getActivityNode_OwningActivityNode(), "ownedActivityNodes", null, 0, -1, StructuredNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(junctionNodeEClass, JunctionNode.class, "JunctionNode", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(initialNodeEClass, InitialNode.class, "InitialNode", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(statementNodeEClass, StatementNode.class, "StatementNode", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getStatementNode_StatementExpression(), theExpressionsPackage_3.getExpression(), null, "statementExpression", null, 1, 1, StatementNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getStatementNode_StatementExpression(), theExpressionsPackage.getExpression(), null, "statementExpression", null, 1, 1, StatementNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(activityFinalNodeEClass, ActivityFinalNode.class, "ActivityFinalNode", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getActivityFinalNode_ReturnValue(), theExpressionsPackage_3.getExpression(), null, "returnValue", null, 0, 1, ActivityFinalNode.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
-		initEReference(getActivityFinalNode_ReturnValues(), theExpressionsPackage_3.getExpression(), null, "returnValues", null, 0, -1, ActivityFinalNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getActivityFinalNode_ReturnValue(), theExpressionsPackage.getExpression(), null, "returnValue", null, 0, 1, ActivityFinalNode.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
+		initEReference(getActivityFinalNode_ReturnValues(), theExpressionsPackage.getExpression(), null, "returnValues", null, 0, -1, ActivityFinalNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getActivityFinalNode_Success(), ecorePackage.getEBoolean(), "success", "true", 1, 1, ActivityFinalNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(activityCallNodeEClass, ActivityCallNode.class, "ActivityCallNode", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getActivityCallNode_CalledActivity(), this.getActivity(), null, "calledActivity", null, 1, -1, ActivityCallNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getActivityCallNode_CalledActivities(), this.getActivity(), null, "calledActivities", null, 1, -1, ActivityCallNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(modifyingStoryNodeEClass, ModifyingStoryNode.class, "ModifyingStoryNode", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getModifyingStoryNode_OwnedRule(), thePatternsPackage.getStoryPattern(), null, "ownedRule", null, 1, 1, ModifyingStoryNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);

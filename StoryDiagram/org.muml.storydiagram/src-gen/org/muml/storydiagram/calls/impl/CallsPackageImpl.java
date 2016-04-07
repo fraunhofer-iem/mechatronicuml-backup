@@ -20,7 +20,8 @@ import org.muml.core.CorePackage;
 import org.muml.core.expressions.ExpressionsPackage;
 import org.muml.storydiagram.StorydiagramPackage;
 import org.muml.storydiagram.activities.ActivitiesPackage;
-import org.muml.storydiagram.activities.expressions.impl.ExpressionsPackageImpl;
+import org.muml.storydiagram.activities.expressions.ActivitiesExpressionsPackage;
+import org.muml.storydiagram.activities.expressions.impl.ActivitiesExpressionsPackageImpl;
 import org.muml.storydiagram.activities.impl.ActivitiesPackageImpl;
 import org.muml.storydiagram.calls.Callable;
 import org.muml.storydiagram.calls.CallsFactory;
@@ -32,6 +33,8 @@ import org.muml.storydiagram.calls.ParameterExtension;
 import org.muml.storydiagram.calls.util.CallsValidator;
 import org.muml.storydiagram.impl.StorydiagramPackageImpl;
 import org.muml.storydiagram.patterns.PatternsPackage;
+import org.muml.storydiagram.patterns.expressions.PatternsExpressionsPackage;
+import org.muml.storydiagram.patterns.expressions.impl.PatternsExpressionsPackageImpl;
 import org.muml.storydiagram.patterns.impl.PatternsPackageImpl;
 import org.muml.storydiagram.templates.TemplatesPackage;
 import org.muml.storydiagram.templates.impl.TemplatesPackageImpl;
@@ -131,30 +134,30 @@ public class CallsPackageImpl extends EPackageImpl implements CallsPackage {
 		// Obtain or create and register interdependencies
 		StorydiagramPackageImpl theStorydiagramPackage = (StorydiagramPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(StorydiagramPackage.eNS_URI) instanceof StorydiagramPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(StorydiagramPackage.eNS_URI) : StorydiagramPackage.eINSTANCE);
 		ActivitiesPackageImpl theActivitiesPackage = (ActivitiesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ActivitiesPackage.eNS_URI) instanceof ActivitiesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ActivitiesPackage.eNS_URI) : ActivitiesPackage.eINSTANCE);
-		ExpressionsPackageImpl theExpressionsPackage = (ExpressionsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(org.muml.storydiagram.activities.expressions.ExpressionsPackage.eNS_URI) instanceof ExpressionsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(org.muml.storydiagram.activities.expressions.ExpressionsPackage.eNS_URI) : org.muml.storydiagram.activities.expressions.ExpressionsPackage.eINSTANCE);
-		org.muml.storydiagram.calls.expressions.impl.ExpressionsPackageImpl theExpressionsPackage_1 = (org.muml.storydiagram.calls.expressions.impl.ExpressionsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(org.muml.storydiagram.calls.expressions.ExpressionsPackage.eNS_URI) instanceof org.muml.storydiagram.calls.expressions.impl.ExpressionsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(org.muml.storydiagram.calls.expressions.ExpressionsPackage.eNS_URI) : org.muml.storydiagram.calls.expressions.ExpressionsPackage.eINSTANCE);
+		ActivitiesExpressionsPackageImpl theActivitiesExpressionsPackage = (ActivitiesExpressionsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ActivitiesExpressionsPackage.eNS_URI) instanceof ActivitiesExpressionsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ActivitiesExpressionsPackage.eNS_URI) : ActivitiesExpressionsPackage.eINSTANCE);
+		org.muml.storydiagram.calls.expressions.impl.CallsExpressionsPackageImpl theCallsExpressionsPackage = (org.muml.storydiagram.calls.expressions.impl.CallsExpressionsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(org.muml.storydiagram.calls.expressions.CallsExpressionsPackage.eNS_URI) instanceof org.muml.storydiagram.calls.expressions.impl.CallsExpressionsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(org.muml.storydiagram.calls.expressions.CallsExpressionsPackage.eNS_URI) : org.muml.storydiagram.calls.expressions.CallsExpressionsPackage.eINSTANCE);
 		PatternsPackageImpl thePatternsPackage = (PatternsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(PatternsPackage.eNS_URI) instanceof PatternsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PatternsPackage.eNS_URI) : PatternsPackage.eINSTANCE);
-		org.muml.storydiagram.patterns.expressions.impl.ExpressionsPackageImpl theExpressionsPackage_2 = (org.muml.storydiagram.patterns.expressions.impl.ExpressionsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(org.muml.storydiagram.patterns.expressions.ExpressionsPackage.eNS_URI) instanceof org.muml.storydiagram.patterns.expressions.impl.ExpressionsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(org.muml.storydiagram.patterns.expressions.ExpressionsPackage.eNS_URI) : org.muml.storydiagram.patterns.expressions.ExpressionsPackage.eINSTANCE);
+		PatternsExpressionsPackageImpl thePatternsExpressionsPackage = (PatternsExpressionsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(PatternsExpressionsPackage.eNS_URI) instanceof PatternsExpressionsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PatternsExpressionsPackage.eNS_URI) : PatternsExpressionsPackage.eINSTANCE);
 		TemplatesPackageImpl theTemplatesPackage = (TemplatesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(TemplatesPackage.eNS_URI) instanceof TemplatesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(TemplatesPackage.eNS_URI) : TemplatesPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theCallsPackage.createPackageContents();
 		theStorydiagramPackage.createPackageContents();
 		theActivitiesPackage.createPackageContents();
-		theExpressionsPackage.createPackageContents();
-		theExpressionsPackage_1.createPackageContents();
+		theActivitiesExpressionsPackage.createPackageContents();
+		theCallsExpressionsPackage.createPackageContents();
 		thePatternsPackage.createPackageContents();
-		theExpressionsPackage_2.createPackageContents();
+		thePatternsExpressionsPackage.createPackageContents();
 		theTemplatesPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theCallsPackage.initializePackageContents();
 		theStorydiagramPackage.initializePackageContents();
 		theActivitiesPackage.initializePackageContents();
-		theExpressionsPackage.initializePackageContents();
-		theExpressionsPackage_1.initializePackageContents();
+		theActivitiesExpressionsPackage.initializePackageContents();
+		theCallsExpressionsPackage.initializePackageContents();
 		thePatternsPackage.initializePackageContents();
-		theExpressionsPackage_2.initializePackageContents();
+		thePatternsExpressionsPackage.initializePackageContents();
 		theTemplatesPackage.initializePackageContents();
 
 		// Register package validator
@@ -306,7 +309,7 @@ public class CallsPackageImpl extends EPackageImpl implements CallsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getCallable_InParameter() {
+	public EReference getCallable_InParameters() {
 		return (EReference)callableEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -315,7 +318,7 @@ public class CallsPackageImpl extends EPackageImpl implements CallsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getCallable_OutParameter() {
+	public EReference getCallable_OutParameters() {
 		return (EReference)callableEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -374,8 +377,8 @@ public class CallsPackageImpl extends EPackageImpl implements CallsPackage {
 		createEReference(parameterExtensionEClass, PARAMETER_EXTENSION__PARAMETER);
 
 		callableEClass = createEClass(CALLABLE);
-		createEReference(callableEClass, CALLABLE__IN_PARAMETER);
-		createEReference(callableEClass, CALLABLE__OUT_PARAMETER);
+		createEReference(callableEClass, CALLABLE__IN_PARAMETERS);
+		createEReference(callableEClass, CALLABLE__OUT_PARAMETERS);
 		createEReference(callableEClass, CALLABLE__CONTAINED_PARAMETERS);
 	}
 
@@ -403,14 +406,14 @@ public class CallsPackageImpl extends EPackageImpl implements CallsPackage {
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		org.muml.storydiagram.calls.expressions.ExpressionsPackage theExpressionsPackage_1 = (org.muml.storydiagram.calls.expressions.ExpressionsPackage)EPackage.Registry.INSTANCE.getEPackage(org.muml.storydiagram.calls.expressions.ExpressionsPackage.eNS_URI);
+		org.muml.storydiagram.calls.expressions.CallsExpressionsPackage theCallsExpressionsPackage = (org.muml.storydiagram.calls.expressions.CallsExpressionsPackage)EPackage.Registry.INSTANCE.getEPackage(org.muml.storydiagram.calls.expressions.CallsExpressionsPackage.eNS_URI);
 		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
-		ExpressionsPackage theExpressionsPackage_3 = (ExpressionsPackage)EPackage.Registry.INSTANCE.getEPackage(ExpressionsPackage.eNS_URI);
+		ExpressionsPackage theExpressionsPackage = (ExpressionsPackage)EPackage.Registry.INSTANCE.getEPackage(ExpressionsPackage.eNS_URI);
 		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
 		StorydiagramPackage theStorydiagramPackage = (StorydiagramPackage)EPackage.Registry.INSTANCE.getEPackage(StorydiagramPackage.eNS_URI);
 
 		// Add subpackages
-		getESubpackages().add(theExpressionsPackage_1);
+		getESubpackages().add(theCallsExpressionsPackage);
 
 		// Create type parameters
 
@@ -430,13 +433,13 @@ public class CallsPackageImpl extends EPackageImpl implements CallsPackage {
 		initEReference(getInvocation_Callee(), this.getCallable(), null, "callee", null, 0, 1, Invocation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(parameterBindingEClass, ParameterBinding.class, "ParameterBinding", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getParameterBinding_ValueExpression(), theExpressionsPackage_3.getExpression(), null, "valueExpression", null, 1, 1, ParameterBinding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getParameterBinding_ValueExpression(), theExpressionsPackage.getExpression(), null, "valueExpression", null, 1, 1, ParameterBinding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getParameterBinding_Parameter(), theEcorePackage.getEParameter(), null, "parameter", null, 0, 1, ParameterBinding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getParameterBinding_Invocation(), this.getInvocation(), this.getInvocation_OwnedParameterBindings(), "invocation", null, 1, 1, ParameterBinding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(opaqueCallableEClass, OpaqueCallable.class, "OpaqueCallable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getOpaqueCallable_Name(), ecorePackage.getEString(), "name", null, 1, 1, OpaqueCallable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getOpaqueCallable_CallExpression(), theExpressionsPackage_1.getMethodCallExpression(), theExpressionsPackage_1.getMethodCallExpression_OpaqueCallable(), "callExpression", null, 1, 1, OpaqueCallable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getOpaqueCallable_CallExpression(), theCallsExpressionsPackage.getMethodCallExpression(), theCallsExpressionsPackage.getMethodCallExpression_OpaqueCallable(), "callExpression", null, 1, 1, OpaqueCallable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		EOperation op = initEOperation(getOpaqueCallable__NumberOfOutParams__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "NumberOfOutParams", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -451,8 +454,8 @@ public class CallsPackageImpl extends EPackageImpl implements CallsPackage {
 		initEReference(getParameterExtension_Parameter(), theEcorePackage.getEParameter(), null, "parameter", null, 0, 1, ParameterExtension.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
 
 		initEClass(callableEClass, Callable.class, "Callable", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getCallable_InParameter(), theEcorePackage.getEParameter(), null, "inParameter", null, 0, -1, Callable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getCallable_OutParameter(), theEcorePackage.getEParameter(), null, "outParameter", null, 0, -1, Callable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCallable_InParameters(), theEcorePackage.getEParameter(), null, "inParameters", null, 0, -1, Callable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCallable_OutParameters(), theEcorePackage.getEParameter(), null, "outParameters", null, 0, -1, Callable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCallable_ContainedParameters(), theEcorePackage.getEParameter(), null, "containedParameters", null, 0, -1, Callable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create annotations

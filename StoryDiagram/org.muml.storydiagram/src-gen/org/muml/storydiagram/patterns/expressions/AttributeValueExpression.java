@@ -27,7 +27,7 @@ import org.muml.storydiagram.patterns.ObjectVariable;
  *   <li>{@link org.muml.storydiagram.patterns.expressions.AttributeValueExpression#getAttribute <em>Attribute</em>}</li>
  * </ul>
  *
- * @see org.muml.storydiagram.patterns.expressions.ExpressionsPackage#getAttributeValueExpression()
+ * @see org.muml.storydiagram.patterns.expressions.PatternsExpressionsPackage#getAttributeValueExpression()
  * @model
  * @generated
  */
@@ -41,7 +41,7 @@ public interface AttributeValueExpression extends Expression {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Object</em>' reference.
 	 * @see #setObject(ObjectVariable)
-	 * @see org.muml.storydiagram.patterns.expressions.ExpressionsPackage#getAttributeValueExpression_Object()
+	 * @see org.muml.storydiagram.patterns.expressions.PatternsExpressionsPackage#getAttributeValueExpression_Object()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
@@ -66,7 +66,7 @@ public interface AttributeValueExpression extends Expression {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Attribute</em>' reference.
 	 * @see #setAttribute(EAttribute)
-	 * @see org.muml.storydiagram.patterns.expressions.ExpressionsPackage#getAttributeValueExpression_Attribute()
+	 * @see org.muml.storydiagram.patterns.expressions.PatternsExpressionsPackage#getAttributeValueExpression_Attribute()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */

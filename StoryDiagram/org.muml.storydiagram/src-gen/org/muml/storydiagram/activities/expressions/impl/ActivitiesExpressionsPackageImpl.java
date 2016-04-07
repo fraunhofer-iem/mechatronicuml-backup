@@ -9,10 +9,11 @@ package org.muml.storydiagram.activities.expressions.impl;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.muml.core.CorePackage;
 import org.muml.core.expressions.ExpressionsPackage;
-import org.muml.storydiagram.StorydiagramsPackage;
+import org.muml.storydiagram.StorydiagramPackage;
 import org.muml.storydiagram.activities.ActivitiesPackage;
 import org.muml.storydiagram.activities.expressions.ActivitiesExpressionsFactory;
 import org.muml.storydiagram.activities.expressions.ActivitiesExpressionsPackage;
@@ -22,7 +23,7 @@ import org.muml.storydiagram.calls.CallsPackage;
 import org.muml.storydiagram.calls.expressions.CallsExpressionsPackage;
 import org.muml.storydiagram.calls.expressions.impl.CallsExpressionsPackageImpl;
 import org.muml.storydiagram.calls.impl.CallsPackageImpl;
-import org.muml.storydiagram.impl.StorydiagramsPackageImpl;
+import org.muml.storydiagram.impl.StorydiagramPackageImpl;
 import org.muml.storydiagram.patterns.PatternsPackage;
 import org.muml.storydiagram.patterns.expressions.PatternsExpressionsPackage;
 import org.muml.storydiagram.patterns.expressions.impl.PatternsExpressionsPackageImpl;
@@ -84,52 +85,29 @@ public class ActivitiesExpressionsPackageImpl extends EPackageImpl implements
 	 * @generated
 	 */
 	public static ActivitiesExpressionsPackage init() {
-		if (isInited)
-			return (ActivitiesExpressionsPackage) EPackage.Registry.INSTANCE
-					.getEPackage(ActivitiesExpressionsPackage.eNS_URI);
+		if (isInited) return (ActivitiesExpressionsPackage)EPackage.Registry.INSTANCE.getEPackage(ActivitiesExpressionsPackage.eNS_URI);
 
 		// Obtain or create and register package
-		ActivitiesExpressionsPackageImpl theActivitiesExpressionsPackage = (ActivitiesExpressionsPackageImpl) (EPackage.Registry.INSTANCE
-				.get(eNS_URI) instanceof ActivitiesExpressionsPackageImpl ? EPackage.Registry.INSTANCE
-				.get(eNS_URI) : new ActivitiesExpressionsPackageImpl());
+		ActivitiesExpressionsPackageImpl theActivitiesExpressionsPackage = (ActivitiesExpressionsPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof ActivitiesExpressionsPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new ActivitiesExpressionsPackageImpl());
 
 		isInited = true;
 
 		// Initialize simple dependencies
 		CorePackage.eINSTANCE.eClass();
+		EcorePackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
-		StorydiagramsPackageImpl theStorydiagramsPackage = (StorydiagramsPackageImpl) (EPackage.Registry.INSTANCE
-				.getEPackage(StorydiagramsPackage.eNS_URI) instanceof StorydiagramsPackageImpl ? EPackage.Registry.INSTANCE
-				.getEPackage(StorydiagramsPackage.eNS_URI)
-				: StorydiagramsPackage.eINSTANCE);
-		ActivitiesPackageImpl theActivitiesPackage = (ActivitiesPackageImpl) (EPackage.Registry.INSTANCE
-				.getEPackage(ActivitiesPackage.eNS_URI) instanceof ActivitiesPackageImpl ? EPackage.Registry.INSTANCE
-				.getEPackage(ActivitiesPackage.eNS_URI)
-				: ActivitiesPackage.eINSTANCE);
-		CallsPackageImpl theCallsPackage = (CallsPackageImpl) (EPackage.Registry.INSTANCE
-				.getEPackage(CallsPackage.eNS_URI) instanceof CallsPackageImpl ? EPackage.Registry.INSTANCE
-				.getEPackage(CallsPackage.eNS_URI) : CallsPackage.eINSTANCE);
-		CallsExpressionsPackageImpl theCallsExpressionsPackage = (CallsExpressionsPackageImpl) (EPackage.Registry.INSTANCE
-				.getEPackage(CallsExpressionsPackage.eNS_URI) instanceof CallsExpressionsPackageImpl ? EPackage.Registry.INSTANCE
-				.getEPackage(CallsExpressionsPackage.eNS_URI)
-				: CallsExpressionsPackage.eINSTANCE);
-		PatternsPackageImpl thePatternsPackage = (PatternsPackageImpl) (EPackage.Registry.INSTANCE
-				.getEPackage(PatternsPackage.eNS_URI) instanceof PatternsPackageImpl ? EPackage.Registry.INSTANCE
-				.getEPackage(PatternsPackage.eNS_URI)
-				: PatternsPackage.eINSTANCE);
-		PatternsExpressionsPackageImpl thePatternsExpressionsPackage = (PatternsExpressionsPackageImpl) (EPackage.Registry.INSTANCE
-				.getEPackage(PatternsExpressionsPackage.eNS_URI) instanceof PatternsExpressionsPackageImpl ? EPackage.Registry.INSTANCE
-				.getEPackage(PatternsExpressionsPackage.eNS_URI)
-				: PatternsExpressionsPackage.eINSTANCE);
-		TemplatesPackageImpl theTemplatesPackage = (TemplatesPackageImpl) (EPackage.Registry.INSTANCE
-				.getEPackage(TemplatesPackage.eNS_URI) instanceof TemplatesPackageImpl ? EPackage.Registry.INSTANCE
-				.getEPackage(TemplatesPackage.eNS_URI)
-				: TemplatesPackage.eINSTANCE);
+		StorydiagramPackageImpl theStorydiagramPackage = (StorydiagramPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(StorydiagramPackage.eNS_URI) instanceof StorydiagramPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(StorydiagramPackage.eNS_URI) : StorydiagramPackage.eINSTANCE);
+		ActivitiesPackageImpl theActivitiesPackage = (ActivitiesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ActivitiesPackage.eNS_URI) instanceof ActivitiesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ActivitiesPackage.eNS_URI) : ActivitiesPackage.eINSTANCE);
+		CallsPackageImpl theCallsPackage = (CallsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CallsPackage.eNS_URI) instanceof CallsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CallsPackage.eNS_URI) : CallsPackage.eINSTANCE);
+		CallsExpressionsPackageImpl theCallsExpressionsPackage = (CallsExpressionsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CallsExpressionsPackage.eNS_URI) instanceof CallsExpressionsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CallsExpressionsPackage.eNS_URI) : CallsExpressionsPackage.eINSTANCE);
+		PatternsPackageImpl thePatternsPackage = (PatternsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(PatternsPackage.eNS_URI) instanceof PatternsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PatternsPackage.eNS_URI) : PatternsPackage.eINSTANCE);
+		PatternsExpressionsPackageImpl thePatternsExpressionsPackage = (PatternsExpressionsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(PatternsExpressionsPackage.eNS_URI) instanceof PatternsExpressionsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PatternsExpressionsPackage.eNS_URI) : PatternsExpressionsPackage.eINSTANCE);
+		TemplatesPackageImpl theTemplatesPackage = (TemplatesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(TemplatesPackage.eNS_URI) instanceof TemplatesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(TemplatesPackage.eNS_URI) : TemplatesPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theActivitiesExpressionsPackage.createPackageContents();
-		theStorydiagramsPackage.createPackageContents();
+		theStorydiagramPackage.createPackageContents();
 		theActivitiesPackage.createPackageContents();
 		theCallsPackage.createPackageContents();
 		theCallsExpressionsPackage.createPackageContents();
@@ -139,7 +117,7 @@ public class ActivitiesExpressionsPackageImpl extends EPackageImpl implements
 
 		// Initialize created meta-data
 		theActivitiesExpressionsPackage.initializePackageContents();
-		theStorydiagramsPackage.initializePackageContents();
+		theStorydiagramPackage.initializePackageContents();
 		theActivitiesPackage.initializePackageContents();
 		theCallsPackage.initializePackageContents();
 		theCallsExpressionsPackage.initializePackageContents();
@@ -150,9 +128,9 @@ public class ActivitiesExpressionsPackageImpl extends EPackageImpl implements
 		// Mark meta-data to indicate it can't be changed
 		theActivitiesExpressionsPackage.freeze();
 
+  
 		// Update the registry and return the package
-		EPackage.Registry.INSTANCE.put(ActivitiesExpressionsPackage.eNS_URI,
-				theActivitiesExpressionsPackage);
+		EPackage.Registry.INSTANCE.put(ActivitiesExpressionsPackage.eNS_URI, theActivitiesExpressionsPackage);
 		return theActivitiesExpressionsPackage;
 	}
 
@@ -171,8 +149,7 @@ public class ActivitiesExpressionsPackageImpl extends EPackageImpl implements
 	 * @generated
 	 */
 	public EReference getExceptionVariableExpression_ExceptionVariable() {
-		return (EReference) exceptionVariableExpressionEClass
-				.getEStructuralFeatures().get(0);
+		return (EReference)exceptionVariableExpressionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -181,7 +158,7 @@ public class ActivitiesExpressionsPackageImpl extends EPackageImpl implements
 	 * @generated
 	 */
 	public ActivitiesExpressionsFactory getActivitiesExpressionsFactory() {
-		return (ActivitiesExpressionsFactory) getEFactoryInstance();
+		return (ActivitiesExpressionsFactory)getEFactoryInstance();
 	}
 
 	/**
@@ -199,14 +176,12 @@ public class ActivitiesExpressionsPackageImpl extends EPackageImpl implements
 	 * @generated
 	 */
 	public void createPackageContents() {
-		if (isCreated)
-			return;
+		if (isCreated) return;
 		isCreated = true;
 
 		// Create classes and their features
 		exceptionVariableExpressionEClass = createEClass(EXCEPTION_VARIABLE_EXPRESSION);
-		createEReference(exceptionVariableExpressionEClass,
-				EXCEPTION_VARIABLE_EXPRESSION__EXCEPTION_VARIABLE);
+		createEReference(exceptionVariableExpressionEClass, EXCEPTION_VARIABLE_EXPRESSION__EXCEPTION_VARIABLE);
 	}
 
 	/**
@@ -224,8 +199,7 @@ public class ActivitiesExpressionsPackageImpl extends EPackageImpl implements
 	 * @generated
 	 */
 	public void initializePackageContents() {
-		if (isInitialized)
-			return;
+		if (isInitialized) return;
 		isInitialized = true;
 
 		// Initialize package
@@ -234,56 +208,19 @@ public class ActivitiesExpressionsPackageImpl extends EPackageImpl implements
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		ExpressionsPackage theExpressionsPackage = (ExpressionsPackage) EPackage.Registry.INSTANCE
-				.getEPackage(ExpressionsPackage.eNS_URI);
-		ActivitiesPackage theActivitiesPackage = (ActivitiesPackage) EPackage.Registry.INSTANCE
-				.getEPackage(ActivitiesPackage.eNS_URI);
+		ExpressionsPackage theExpressionsPackage = (ExpressionsPackage)EPackage.Registry.INSTANCE.getEPackage(ExpressionsPackage.eNS_URI);
+		ActivitiesPackage theActivitiesPackage = (ActivitiesPackage)EPackage.Registry.INSTANCE.getEPackage(ActivitiesPackage.eNS_URI);
 
 		// Create type parameters
 
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		exceptionVariableExpressionEClass.getESuperTypes().add(
-				theExpressionsPackage.getExpression());
+		exceptionVariableExpressionEClass.getESuperTypes().add(theExpressionsPackage.getExpression());
 
 		// Initialize classes, features, and operations; add parameters
-		initEClass(exceptionVariableExpressionEClass,
-				ExceptionVariableExpression.class,
-				"ExceptionVariableExpression", !IS_ABSTRACT, !IS_INTERFACE,
-				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getExceptionVariableExpression_ExceptionVariable(),
-				theActivitiesPackage.getExceptionVariable(), null,
-				"exceptionVariable", null, 1, 1,
-				ExceptionVariableExpression.class, !IS_TRANSIENT, !IS_VOLATILE,
-				IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-
-		// Create annotations
-		// http://www.eclipse.org/emf/2002/GenModel
-		createGenModelAnnotations();
-	}
-
-	/**
-	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/GenModel</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createGenModelAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/GenModel";
-		addAnnotation(
-				exceptionVariableExpressionEClass,
-				source,
-				new String[] {
-						"documentation",
-						"Represents the value of an exception variable declared as a transition guard (the guard of an activity edge)." });
-		addAnnotation(
-				getExceptionVariableExpression_ExceptionVariable(),
-				source,
-				new String[] {
-						"documentation",
-						"Specifies the exception variable that this expression refers to. If you have an activity edge that catches an exception e, then this expression can represent the reference e." });
+		initEClass(exceptionVariableExpressionEClass, ExceptionVariableExpression.class, "ExceptionVariableExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getExceptionVariableExpression_ExceptionVariable(), theActivitiesPackage.getExceptionVariable(), null, "exceptionVariable", null, 1, 1, ExceptionVariableExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 	}
 
 } //ActivitiesExpressionsPackageImpl

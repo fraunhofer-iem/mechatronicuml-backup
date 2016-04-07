@@ -27,7 +27,7 @@ import org.muml.storydiagram.calls.OpaqueCallable;
  *   <li>{@link org.muml.storydiagram.calls.expressions.MethodCallExpression#getOpaqueCallable <em>Opaque Callable</em>}</li>
  * </ul>
  *
- * @see org.muml.storydiagram.calls.expressions.ExpressionsPackage#getMethodCallExpression()
+ * @see org.muml.storydiagram.calls.expressions.CallsExpressionsPackage#getMethodCallExpression()
  * @model
  * @generated
  */
@@ -41,7 +41,7 @@ public interface MethodCallExpression extends Expression, Invocation {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Target</em>' containment reference.
 	 * @see #setTarget(Expression)
-	 * @see org.muml.storydiagram.calls.expressions.ExpressionsPackage#getMethodCallExpression_Target()
+	 * @see org.muml.storydiagram.calls.expressions.CallsExpressionsPackage#getMethodCallExpression_Target()
 	 * @model containment="true" ordered="false"
 	 * @generated
 	 */
@@ -67,7 +67,7 @@ public interface MethodCallExpression extends Expression, Invocation {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Opaque Callable</em>' containment reference.
 	 * @see #setOpaqueCallable(OpaqueCallable)
-	 * @see org.muml.storydiagram.calls.expressions.ExpressionsPackage#getMethodCallExpression_OpaqueCallable()
+	 * @see org.muml.storydiagram.calls.expressions.CallsExpressionsPackage#getMethodCallExpression_OpaqueCallable()
 	 * @see org.muml.storydiagram.calls.OpaqueCallable#getCallExpression
 	 * @model opposite="callExpression" containment="true" ordered="false"
 	 * @generated

@@ -12,7 +12,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.muml.core.expressions.impl.ExpressionImpl;
 import org.muml.storydiagram.calls.ParameterExtension;
-import org.muml.storydiagram.calls.expressions.ExpressionsPackage;
+import org.muml.storydiagram.calls.expressions.CallsExpressionsPackage;
 import org.muml.storydiagram.calls.expressions.ParameterExpression;
 
 /**
@@ -56,7 +56,7 @@ public class ParameterExpressionImpl extends ExpressionImpl implements
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ExpressionsPackage.Literals.PARAMETER_EXPRESSION;
+		return CallsExpressionsPackage.Literals.PARAMETER_EXPRESSION;
 	}
 
 	/**
@@ -70,7 +70,7 @@ public class ParameterExpressionImpl extends ExpressionImpl implements
 			parameter = (ParameterExtension)eResolveProxy(oldParameter);
 			if (parameter != oldParameter) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ExpressionsPackage.PARAMETER_EXPRESSION__PARAMETER, oldParameter, parameter));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CallsExpressionsPackage.PARAMETER_EXPRESSION__PARAMETER, oldParameter, parameter));
 			}
 		}
 		return parameter;
@@ -94,7 +94,7 @@ public class ParameterExpressionImpl extends ExpressionImpl implements
 		ParameterExtension oldParameter = parameter;
 		parameter = newParameter;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ExpressionsPackage.PARAMETER_EXPRESSION__PARAMETER, oldParameter, parameter));
+			eNotify(new ENotificationImpl(this, Notification.SET, CallsExpressionsPackage.PARAMETER_EXPRESSION__PARAMETER, oldParameter, parameter));
 	}
 
 	/**
@@ -105,7 +105,7 @@ public class ParameterExpressionImpl extends ExpressionImpl implements
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ExpressionsPackage.PARAMETER_EXPRESSION__PARAMETER:
+			case CallsExpressionsPackage.PARAMETER_EXPRESSION__PARAMETER:
 				if (resolve) return getParameter();
 				return basicGetParameter();
 		}
@@ -120,7 +120,7 @@ public class ParameterExpressionImpl extends ExpressionImpl implements
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ExpressionsPackage.PARAMETER_EXPRESSION__PARAMETER:
+			case CallsExpressionsPackage.PARAMETER_EXPRESSION__PARAMETER:
 				setParameter((ParameterExtension)newValue);
 				return;
 		}
@@ -135,7 +135,7 @@ public class ParameterExpressionImpl extends ExpressionImpl implements
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ExpressionsPackage.PARAMETER_EXPRESSION__PARAMETER:
+			case CallsExpressionsPackage.PARAMETER_EXPRESSION__PARAMETER:
 				setParameter((ParameterExtension)null);
 				return;
 		}
@@ -150,7 +150,7 @@ public class ParameterExpressionImpl extends ExpressionImpl implements
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ExpressionsPackage.PARAMETER_EXPRESSION__PARAMETER:
+			case CallsExpressionsPackage.PARAMETER_EXPRESSION__PARAMETER:
 				return parameter != null;
 		}
 		return super.eIsSet(featureID);

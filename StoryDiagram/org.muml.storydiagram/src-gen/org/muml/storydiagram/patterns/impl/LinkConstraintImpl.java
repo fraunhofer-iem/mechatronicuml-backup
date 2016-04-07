@@ -252,9 +252,9 @@ public class LinkConstraintImpl extends ExtendableElementImpl implements
 		if (newFirstLink != firstLink) {
 			NotificationChain msgs = null;
 			if (firstLink != null)
-				msgs = ((InternalEObject)firstLink).eInverseRemove(this, PatternsPackage.ABSTRACT_LINK_VARIABLE__FIRST_LINK_CONSTRAINT, AbstractLinkVariable.class, msgs);
+				msgs = ((InternalEObject)firstLink).eInverseRemove(this, PatternsPackage.ABSTRACT_LINK_VARIABLE__FIRST_LINK_CONSTRAINTS, AbstractLinkVariable.class, msgs);
 			if (newFirstLink != null)
-				msgs = ((InternalEObject)newFirstLink).eInverseAdd(this, PatternsPackage.ABSTRACT_LINK_VARIABLE__FIRST_LINK_CONSTRAINT, AbstractLinkVariable.class, msgs);
+				msgs = ((InternalEObject)newFirstLink).eInverseAdd(this, PatternsPackage.ABSTRACT_LINK_VARIABLE__FIRST_LINK_CONSTRAINTS, AbstractLinkVariable.class, msgs);
 			msgs = basicSetFirstLink(newFirstLink, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -355,9 +355,9 @@ public class LinkConstraintImpl extends ExtendableElementImpl implements
 		if (newSecondLink != secondLink) {
 			NotificationChain msgs = null;
 			if (secondLink != null)
-				msgs = ((InternalEObject)secondLink).eInverseRemove(this, PatternsPackage.ABSTRACT_LINK_VARIABLE__SECOND_LINK_CONSTRAINT, AbstractLinkVariable.class, msgs);
+				msgs = ((InternalEObject)secondLink).eInverseRemove(this, PatternsPackage.ABSTRACT_LINK_VARIABLE__SECOND_LINK_CONSTRAINTS, AbstractLinkVariable.class, msgs);
 			if (newSecondLink != null)
-				msgs = ((InternalEObject)newSecondLink).eInverseAdd(this, PatternsPackage.ABSTRACT_LINK_VARIABLE__SECOND_LINK_CONSTRAINT, AbstractLinkVariable.class, msgs);
+				msgs = ((InternalEObject)newSecondLink).eInverseAdd(this, PatternsPackage.ABSTRACT_LINK_VARIABLE__SECOND_LINK_CONSTRAINTS, AbstractLinkVariable.class, msgs);
 			msgs = basicSetSecondLink(newSecondLink, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -376,7 +376,7 @@ public class LinkConstraintImpl extends ExtendableElementImpl implements
 		switch (featureID) {
 			case PatternsPackage.LINK_CONSTRAINT__FIRST_LINK:
 				if (firstLink != null)
-					msgs = ((InternalEObject)firstLink).eInverseRemove(this, PatternsPackage.ABSTRACT_LINK_VARIABLE__FIRST_LINK_CONSTRAINT, AbstractLinkVariable.class, msgs);
+					msgs = ((InternalEObject)firstLink).eInverseRemove(this, PatternsPackage.ABSTRACT_LINK_VARIABLE__FIRST_LINK_CONSTRAINTS, AbstractLinkVariable.class, msgs);
 				return basicSetFirstLink((AbstractLinkVariable)otherEnd, msgs);
 			case PatternsPackage.LINK_CONSTRAINT__REFERENCING_OBJECT:
 				if (eInternalContainer() != null)
@@ -384,7 +384,7 @@ public class LinkConstraintImpl extends ExtendableElementImpl implements
 				return basicSetReferencingObject((ObjectVariable)otherEnd, msgs);
 			case PatternsPackage.LINK_CONSTRAINT__SECOND_LINK:
 				if (secondLink != null)
-					msgs = ((InternalEObject)secondLink).eInverseRemove(this, PatternsPackage.ABSTRACT_LINK_VARIABLE__SECOND_LINK_CONSTRAINT, AbstractLinkVariable.class, msgs);
+					msgs = ((InternalEObject)secondLink).eInverseRemove(this, PatternsPackage.ABSTRACT_LINK_VARIABLE__SECOND_LINK_CONSTRAINTS, AbstractLinkVariable.class, msgs);
 				return basicSetSecondLink((AbstractLinkVariable)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);

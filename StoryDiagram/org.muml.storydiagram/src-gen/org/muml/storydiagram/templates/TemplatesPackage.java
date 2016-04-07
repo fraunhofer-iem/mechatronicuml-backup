@@ -115,13 +115,13 @@ public interface TemplatesPackage extends EPackage {
 	int TEMPLATE_BINDING__TEMPLATE = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Property Binding</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Property Bindings</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TEMPLATE_BINDING__PROPERTY_BINDING = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 3;
+	int TEMPLATE_BINDING__PROPERTY_BINDINGS = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Template Binding</em>' class.
@@ -567,22 +567,22 @@ public interface TemplatesPackage extends EPackage {
 	int TEMPLATE_SIGNATURE = 2;
 
 	/**
-	 * The feature id for the '<em><b>Template Binding</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Template Bindings</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TEMPLATE_SIGNATURE__TEMPLATE_BINDING = 0;
+	int TEMPLATE_SIGNATURE__TEMPLATE_BINDINGS = 0;
 
 	/**
-	 * The feature id for the '<em><b>Type Parameter</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Type Parameters</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TEMPLATE_SIGNATURE__TYPE_PARAMETER = 1;
+	int TEMPLATE_SIGNATURE__TYPE_PARAMETERS = 1;
 
 	/**
 	 * The feature id for the '<em><b>Pattern</b></em>' container reference.
@@ -655,15 +655,15 @@ public interface TemplatesPackage extends EPackage {
 	EReference getTemplateBinding_Template();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.muml.storydiagram.templates.TemplateBinding#getPropertyBinding <em>Property Binding</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.muml.storydiagram.templates.TemplateBinding#getPropertyBindings <em>Property Bindings</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Property Binding</em>'.
-	 * @see org.muml.storydiagram.templates.TemplateBinding#getPropertyBinding()
+	 * @return the meta object for the containment reference list '<em>Property Bindings</em>'.
+	 * @see org.muml.storydiagram.templates.TemplateBinding#getPropertyBindings()
 	 * @see #getTemplateBinding()
 	 * @generated
 	 */
-	EReference getTemplateBinding_PropertyBinding();
+	EReference getTemplateBinding_PropertyBindings();
 
 	/**
 	 * Returns the meta object for class '{@link org.muml.storydiagram.templates.PropertyBinding <em>Property Binding</em>}'.
@@ -719,26 +719,26 @@ public interface TemplatesPackage extends EPackage {
 	EClass getTemplateSignature();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.muml.storydiagram.templates.TemplateSignature#getTemplateBinding <em>Template Binding</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.muml.storydiagram.templates.TemplateSignature#getTemplateBindings <em>Template Bindings</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Template Binding</em>'.
-	 * @see org.muml.storydiagram.templates.TemplateSignature#getTemplateBinding()
+	 * @return the meta object for the containment reference list '<em>Template Bindings</em>'.
+	 * @see org.muml.storydiagram.templates.TemplateSignature#getTemplateBindings()
 	 * @see #getTemplateSignature()
 	 * @generated
 	 */
-	EReference getTemplateSignature_TemplateBinding();
+	EReference getTemplateSignature_TemplateBindings();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.muml.storydiagram.templates.TemplateSignature#getTypeParameter <em>Type Parameter</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.muml.storydiagram.templates.TemplateSignature#getTypeParameters <em>Type Parameters</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Type Parameter</em>'.
-	 * @see org.muml.storydiagram.templates.TemplateSignature#getTypeParameter()
+	 * @return the meta object for the containment reference list '<em>Type Parameters</em>'.
+	 * @see org.muml.storydiagram.templates.TemplateSignature#getTypeParameters()
 	 * @see #getTemplateSignature()
 	 * @generated
 	 */
-	EReference getTemplateSignature_TypeParameter();
+	EReference getTemplateSignature_TypeParameters();
 
 	/**
 	 * Returns the meta object for the container reference '{@link org.muml.storydiagram.templates.TemplateSignature#getPattern <em>Pattern</em>}'.
@@ -808,12 +808,12 @@ public interface TemplatesPackage extends EPackage {
 		EReference TEMPLATE_BINDING__TEMPLATE = eINSTANCE.getTemplateBinding_Template();
 
 		/**
-		 * The meta object literal for the '<em><b>Property Binding</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Property Bindings</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference TEMPLATE_BINDING__PROPERTY_BINDING = eINSTANCE.getTemplateBinding_PropertyBinding();
+		EReference TEMPLATE_BINDING__PROPERTY_BINDINGS = eINSTANCE.getTemplateBinding_PropertyBindings();
 
 		/**
 		 * The meta object literal for the '{@link org.muml.storydiagram.templates.impl.PropertyBindingImpl <em>Property Binding</em>}' class.
@@ -860,20 +860,20 @@ public interface TemplatesPackage extends EPackage {
 		EClass TEMPLATE_SIGNATURE = eINSTANCE.getTemplateSignature();
 
 		/**
-		 * The meta object literal for the '<em><b>Template Binding</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Template Bindings</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference TEMPLATE_SIGNATURE__TEMPLATE_BINDING = eINSTANCE.getTemplateSignature_TemplateBinding();
+		EReference TEMPLATE_SIGNATURE__TEMPLATE_BINDINGS = eINSTANCE.getTemplateSignature_TemplateBindings();
 
 		/**
-		 * The meta object literal for the '<em><b>Type Parameter</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Type Parameters</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference TEMPLATE_SIGNATURE__TYPE_PARAMETER = eINSTANCE.getTemplateSignature_TypeParameter();
+		EReference TEMPLATE_SIGNATURE__TYPE_PARAMETERS = eINSTANCE.getTemplateSignature_TypeParameters();
 
 		/**
 		 * The meta object literal for the '<em><b>Pattern</b></em>' container reference feature.

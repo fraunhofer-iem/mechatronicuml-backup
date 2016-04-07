@@ -34,7 +34,7 @@ import org.muml.storydiagram.templates.TemplatesPackage;
  *   <li>{@link org.muml.storydiagram.templates.impl.TemplateBindingImpl#getBoundParameter <em>Bound Parameter</em>}</li>
  *   <li>{@link org.muml.storydiagram.templates.impl.TemplateBindingImpl#getBindingExpression <em>Binding Expression</em>}</li>
  *   <li>{@link org.muml.storydiagram.templates.impl.TemplateBindingImpl#getTemplate <em>Template</em>}</li>
- *   <li>{@link org.muml.storydiagram.templates.impl.TemplateBindingImpl#getPropertyBinding <em>Property Binding</em>}</li>
+ *   <li>{@link org.muml.storydiagram.templates.impl.TemplateBindingImpl#getPropertyBindings <em>Property Bindings</em>}</li>
  * </ul>
  *
  * @generated
@@ -60,14 +60,14 @@ public class TemplateBindingImpl extends ExtendableElementImpl implements
 	protected Expression bindingExpression;
 
 	/**
-	 * The cached value of the '{@link #getPropertyBinding() <em>Property Binding</em>}' containment reference list.
+	 * The cached value of the '{@link #getPropertyBindings() <em>Property Bindings</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getPropertyBinding()
+	 * @see #getPropertyBindings()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<PropertyBinding> propertyBinding;
+	protected EList<PropertyBinding> propertyBindings;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -193,7 +193,7 @@ public class TemplateBindingImpl extends ExtendableElementImpl implements
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newTemplate != null)
-				msgs = ((InternalEObject)newTemplate).eInverseAdd(this, TemplatesPackage.TEMPLATE_SIGNATURE__TEMPLATE_BINDING, TemplateSignature.class, msgs);
+				msgs = ((InternalEObject)newTemplate).eInverseAdd(this, TemplatesPackage.TEMPLATE_SIGNATURE__TEMPLATE_BINDINGS, TemplateSignature.class, msgs);
 			msgs = basicSetTemplate(newTemplate, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -206,11 +206,11 @@ public class TemplateBindingImpl extends ExtendableElementImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<PropertyBinding> getPropertyBinding() {
-		if (propertyBinding == null) {
-			propertyBinding = new EObjectContainmentWithInverseEList<PropertyBinding>(PropertyBinding.class, this, TemplatesPackage.TEMPLATE_BINDING__PROPERTY_BINDING, TemplatesPackage.PROPERTY_BINDING__TEMPLATE_BINDING);
+	public EList<PropertyBinding> getPropertyBindings() {
+		if (propertyBindings == null) {
+			propertyBindings = new EObjectContainmentWithInverseEList<PropertyBinding>(PropertyBinding.class, this, TemplatesPackage.TEMPLATE_BINDING__PROPERTY_BINDINGS, TemplatesPackage.PROPERTY_BINDING__TEMPLATE_BINDING);
 		}
-		return propertyBinding;
+		return propertyBindings;
 	}
 
 	/**
@@ -226,8 +226,8 @@ public class TemplateBindingImpl extends ExtendableElementImpl implements
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetTemplate((TemplateSignature)otherEnd, msgs);
-			case TemplatesPackage.TEMPLATE_BINDING__PROPERTY_BINDING:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getPropertyBinding()).basicAdd(otherEnd, msgs);
+			case TemplatesPackage.TEMPLATE_BINDING__PROPERTY_BINDINGS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getPropertyBindings()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -244,8 +244,8 @@ public class TemplateBindingImpl extends ExtendableElementImpl implements
 				return basicSetBindingExpression(null, msgs);
 			case TemplatesPackage.TEMPLATE_BINDING__TEMPLATE:
 				return basicSetTemplate(null, msgs);
-			case TemplatesPackage.TEMPLATE_BINDING__PROPERTY_BINDING:
-				return ((InternalEList<?>)getPropertyBinding()).basicRemove(otherEnd, msgs);
+			case TemplatesPackage.TEMPLATE_BINDING__PROPERTY_BINDINGS:
+				return ((InternalEList<?>)getPropertyBindings()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -259,7 +259,7 @@ public class TemplateBindingImpl extends ExtendableElementImpl implements
 			NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
 			case TemplatesPackage.TEMPLATE_BINDING__TEMPLATE:
-				return eInternalContainer().eInverseRemove(this, TemplatesPackage.TEMPLATE_SIGNATURE__TEMPLATE_BINDING, TemplateSignature.class, msgs);
+				return eInternalContainer().eInverseRemove(this, TemplatesPackage.TEMPLATE_SIGNATURE__TEMPLATE_BINDINGS, TemplateSignature.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -278,8 +278,8 @@ public class TemplateBindingImpl extends ExtendableElementImpl implements
 				return getBindingExpression();
 			case TemplatesPackage.TEMPLATE_BINDING__TEMPLATE:
 				return getTemplate();
-			case TemplatesPackage.TEMPLATE_BINDING__PROPERTY_BINDING:
-				return getPropertyBinding();
+			case TemplatesPackage.TEMPLATE_BINDING__PROPERTY_BINDINGS:
+				return getPropertyBindings();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -301,9 +301,9 @@ public class TemplateBindingImpl extends ExtendableElementImpl implements
 			case TemplatesPackage.TEMPLATE_BINDING__TEMPLATE:
 				setTemplate((TemplateSignature)newValue);
 				return;
-			case TemplatesPackage.TEMPLATE_BINDING__PROPERTY_BINDING:
-				getPropertyBinding().clear();
-				getPropertyBinding().addAll((Collection<? extends PropertyBinding>)newValue);
+			case TemplatesPackage.TEMPLATE_BINDING__PROPERTY_BINDINGS:
+				getPropertyBindings().clear();
+				getPropertyBindings().addAll((Collection<? extends PropertyBinding>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -325,8 +325,8 @@ public class TemplateBindingImpl extends ExtendableElementImpl implements
 			case TemplatesPackage.TEMPLATE_BINDING__TEMPLATE:
 				setTemplate((TemplateSignature)null);
 				return;
-			case TemplatesPackage.TEMPLATE_BINDING__PROPERTY_BINDING:
-				getPropertyBinding().clear();
+			case TemplatesPackage.TEMPLATE_BINDING__PROPERTY_BINDINGS:
+				getPropertyBindings().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -345,8 +345,8 @@ public class TemplateBindingImpl extends ExtendableElementImpl implements
 				return bindingExpression != null;
 			case TemplatesPackage.TEMPLATE_BINDING__TEMPLATE:
 				return getTemplate() != null;
-			case TemplatesPackage.TEMPLATE_BINDING__PROPERTY_BINDING:
-				return propertyBinding != null && !propertyBinding.isEmpty();
+			case TemplatesPackage.TEMPLATE_BINDING__PROPERTY_BINDINGS:
+				return propertyBindings != null && !propertyBindings.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

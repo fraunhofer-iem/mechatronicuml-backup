@@ -29,12 +29,12 @@ public class CallsExpressionsFactoryImpl extends EFactoryImpl implements
 	 */
 	public static CallsExpressionsFactory init() {
 		try {
-			CallsExpressionsFactory theCallsExpressionsFactory = (CallsExpressionsFactory) EPackage.Registry.INSTANCE
-					.getEFactory(CallsExpressionsPackage.eNS_URI);
+			CallsExpressionsFactory theCallsExpressionsFactory = (CallsExpressionsFactory)EPackage.Registry.INSTANCE.getEFactory(CallsExpressionsPackage.eNS_URI);
 			if (theCallsExpressionsFactory != null) {
 				return theCallsExpressionsFactory;
 			}
-		} catch (Exception exception) {
+		}
+		catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new CallsExpressionsFactoryImpl();
@@ -58,13 +58,10 @@ public class CallsExpressionsFactoryImpl extends EFactoryImpl implements
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-		case CallsExpressionsPackage.METHOD_CALL_EXPRESSION:
-			return createMethodCallExpression();
-		case CallsExpressionsPackage.PARAMETER_EXPRESSION:
-			return createParameterExpression();
-		default:
-			throw new IllegalArgumentException("The class '" + eClass.getName()
-					+ "' is not a valid classifier");
+			case CallsExpressionsPackage.METHOD_CALL_EXPRESSION: return createMethodCallExpression();
+			case CallsExpressionsPackage.PARAMETER_EXPRESSION: return createParameterExpression();
+			default:
+				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 
@@ -94,7 +91,7 @@ public class CallsExpressionsFactoryImpl extends EFactoryImpl implements
 	 * @generated
 	 */
 	public CallsExpressionsPackage getCallsExpressionsPackage() {
-		return (CallsExpressionsPackage) getEPackage();
+		return (CallsExpressionsPackage)getEPackage();
 	}
 
 	/**

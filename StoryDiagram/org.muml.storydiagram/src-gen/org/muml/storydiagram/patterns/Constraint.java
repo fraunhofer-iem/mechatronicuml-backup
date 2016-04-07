@@ -59,7 +59,7 @@ public interface Constraint extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Pattern</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link org.muml.storydiagram.patterns.StoryPattern#getConstraint <em>Constraint</em>}'.
+	 * It is bidirectional and its opposite is '{@link org.muml.storydiagram.patterns.StoryPattern#getConstraints <em>Constraints</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -68,8 +68,8 @@ public interface Constraint extends EObject {
 	 * @return the value of the '<em>Pattern</em>' container reference.
 	 * @see #setPattern(StoryPattern)
 	 * @see org.muml.storydiagram.patterns.PatternsPackage#getConstraint_Pattern()
-	 * @see org.muml.storydiagram.patterns.StoryPattern#getConstraint
-	 * @model opposite="constraint" transient="false" ordered="false"
+	 * @see org.muml.storydiagram.patterns.StoryPattern#getConstraints
+	 * @model opposite="constraints" transient="false" ordered="false"
 	 * @generated
 	 */
 	StoryPattern getPattern();
@@ -86,7 +86,7 @@ public interface Constraint extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Object Variable</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link org.muml.storydiagram.patterns.AbstractVariable#getConstraint <em>Constraint</em>}'.
+	 * It is bidirectional and its opposite is '{@link org.muml.storydiagram.patterns.AbstractVariable#getConstraints <em>Constraints</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -95,8 +95,8 @@ public interface Constraint extends EObject {
 	 * @return the value of the '<em>Object Variable</em>' container reference.
 	 * @see #setObjectVariable(AbstractVariable)
 	 * @see org.muml.storydiagram.patterns.PatternsPackage#getConstraint_ObjectVariable()
-	 * @see org.muml.storydiagram.patterns.AbstractVariable#getConstraint
-	 * @model opposite="constraint" transient="false" ordered="false"
+	 * @see org.muml.storydiagram.patterns.AbstractVariable#getConstraints
+	 * @model opposite="constraints" transient="false" ordered="false"
 	 * @generated
 	 */
 	AbstractVariable getObjectVariable();

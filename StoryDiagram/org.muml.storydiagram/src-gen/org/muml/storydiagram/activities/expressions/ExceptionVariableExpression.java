@@ -25,7 +25,7 @@ import org.muml.storydiagram.activities.ExceptionVariable;
  *   <li>{@link org.muml.storydiagram.activities.expressions.ExceptionVariableExpression#getExceptionVariable <em>Exception Variable</em>}</li>
  * </ul>
  *
- * @see org.muml.storydiagram.activities.expressions.ExpressionsPackage#getExceptionVariableExpression()
+ * @see org.muml.storydiagram.activities.expressions.ActivitiesExpressionsPackage#getExceptionVariableExpression()
  * @model
  * @generated
  */
@@ -39,7 +39,7 @@ public interface ExceptionVariableExpression extends Expression {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Exception Variable</em>' reference.
 	 * @see #setExceptionVariable(ExceptionVariable)
-	 * @see org.muml.storydiagram.activities.expressions.ExpressionsPackage#getExceptionVariableExpression_ExceptionVariable()
+	 * @see org.muml.storydiagram.activities.expressions.ActivitiesExpressionsPackage#getExceptionVariableExpression_ExceptionVariable()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */

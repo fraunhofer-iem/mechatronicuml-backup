@@ -23,10 +23,10 @@ import org.muml.core.NamedElement;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.muml.storydiagram.activities.ActivityNode#getOutgoing <em>Outgoing</em>}</li>
+ *   <li>{@link org.muml.storydiagram.activities.ActivityNode#getOutgoings <em>Outgoings</em>}</li>
  *   <li>{@link org.muml.storydiagram.activities.ActivityNode#getOwningActivity <em>Owning Activity</em>}</li>
  *   <li>{@link org.muml.storydiagram.activities.ActivityNode#getOwningActivityNode <em>Owning Activity Node</em>}</li>
- *   <li>{@link org.muml.storydiagram.activities.ActivityNode#getIncoming <em>Incoming</em>}</li>
+ *   <li>{@link org.muml.storydiagram.activities.ActivityNode#getIncomings <em>Incomings</em>}</li>
  * </ul>
  *
  * @see org.muml.storydiagram.activities.ActivitiesPackage#getActivityNode()
@@ -35,7 +35,7 @@ import org.muml.core.NamedElement;
  */
 public interface ActivityNode extends NamedElement, CommentableElement {
 	/**
-	 * Returns the value of the '<em><b>Outgoing</b></em>' reference list.
+	 * Returns the value of the '<em><b>Outgoings</b></em>' reference list.
 	 * The list contents are of type {@link org.muml.storydiagram.activities.ActivityEdge}.
 	 * It is bidirectional and its opposite is '{@link org.muml.storydiagram.activities.ActivityEdge#getSource <em>Source</em>}'.
 	 * <!-- begin-user-doc -->
@@ -43,17 +43,17 @@ public interface ActivityNode extends NamedElement, CommentableElement {
 	 * <!-- begin-model-doc -->
 	 * All ActivityEdges that leave this activity node. The guards of the outgoing activity edges must be exclusive in order to obtain a well-defined activity.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Outgoing</em>' reference list.
-	 * @see org.muml.storydiagram.activities.ActivitiesPackage#getActivityNode_Outgoing()
+	 * @return the value of the '<em>Outgoings</em>' reference list.
+	 * @see org.muml.storydiagram.activities.ActivitiesPackage#getActivityNode_Outgoings()
 	 * @see org.muml.storydiagram.activities.ActivityEdge#getSource
 	 * @model opposite="source" ordered="false"
 	 * @generated
 	 */
-	EList<ActivityEdge> getOutgoing();
+	EList<ActivityEdge> getOutgoings();
 
 	/**
 	 * Returns the value of the '<em><b>Owning Activity</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link org.muml.storydiagram.activities.Activity#getOwnedActivityNode <em>Owned Activity Node</em>}'.
+	 * It is bidirectional and its opposite is '{@link org.muml.storydiagram.activities.Activity#getOwnedActivityNodes <em>Owned Activity Nodes</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -62,8 +62,8 @@ public interface ActivityNode extends NamedElement, CommentableElement {
 	 * @return the value of the '<em>Owning Activity</em>' container reference.
 	 * @see #setOwningActivity(Activity)
 	 * @see org.muml.storydiagram.activities.ActivitiesPackage#getActivityNode_OwningActivity()
-	 * @see org.muml.storydiagram.activities.Activity#getOwnedActivityNode
-	 * @model opposite="ownedActivityNode" transient="false" ordered="false"
+	 * @see org.muml.storydiagram.activities.Activity#getOwnedActivityNodes
+	 * @model opposite="ownedActivityNodes" transient="false" ordered="false"
 	 * @generated
 	 */
 	Activity getOwningActivity();
@@ -80,7 +80,7 @@ public interface ActivityNode extends NamedElement, CommentableElement {
 
 	/**
 	 * Returns the value of the '<em><b>Owning Activity Node</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link org.muml.storydiagram.activities.StructuredNode#getOwnedActivityNode <em>Owned Activity Node</em>}'.
+	 * It is bidirectional and its opposite is '{@link org.muml.storydiagram.activities.StructuredNode#getOwnedActivityNodes <em>Owned Activity Nodes</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -89,8 +89,8 @@ public interface ActivityNode extends NamedElement, CommentableElement {
 	 * @return the value of the '<em>Owning Activity Node</em>' container reference.
 	 * @see #setOwningActivityNode(StructuredNode)
 	 * @see org.muml.storydiagram.activities.ActivitiesPackage#getActivityNode_OwningActivityNode()
-	 * @see org.muml.storydiagram.activities.StructuredNode#getOwnedActivityNode
-	 * @model opposite="ownedActivityNode" transient="false" ordered="false"
+	 * @see org.muml.storydiagram.activities.StructuredNode#getOwnedActivityNodes
+	 * @model opposite="ownedActivityNodes" transient="false" ordered="false"
 	 * @generated
 	 */
 	StructuredNode getOwningActivityNode();
@@ -106,7 +106,7 @@ public interface ActivityNode extends NamedElement, CommentableElement {
 	void setOwningActivityNode(StructuredNode value);
 
 	/**
-	 * Returns the value of the '<em><b>Incoming</b></em>' reference list.
+	 * Returns the value of the '<em><b>Incomings</b></em>' reference list.
 	 * The list contents are of type {@link org.muml.storydiagram.activities.ActivityEdge}.
 	 * It is bidirectional and its opposite is '{@link org.muml.storydiagram.activities.ActivityEdge#getTarget <em>Target</em>}'.
 	 * <!-- begin-user-doc -->
@@ -114,12 +114,12 @@ public interface ActivityNode extends NamedElement, CommentableElement {
 	 * <!-- begin-model-doc -->
 	 * All ActivityEdges entering this activity node.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Incoming</em>' reference list.
-	 * @see org.muml.storydiagram.activities.ActivitiesPackage#getActivityNode_Incoming()
+	 * @return the value of the '<em>Incomings</em>' reference list.
+	 * @see org.muml.storydiagram.activities.ActivitiesPackage#getActivityNode_Incomings()
 	 * @see org.muml.storydiagram.activities.ActivityEdge#getTarget
 	 * @model opposite="target" ordered="false"
 	 * @generated
 	 */
-	EList<ActivityEdge> getIncoming();
+	EList<ActivityEdge> getIncomings();
 
 } // ActivityNode

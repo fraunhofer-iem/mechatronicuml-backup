@@ -601,22 +601,22 @@ public interface CallsPackage extends EPackage {
 	int CALLABLE__COMMENT = CorePackage.COMMENTABLE_ELEMENT__COMMENT;
 
 	/**
-	 * The feature id for the '<em><b>In Parameter</b></em>' reference list.
+	 * The feature id for the '<em><b>In Parameters</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CALLABLE__IN_PARAMETER = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 0;
+	int CALLABLE__IN_PARAMETERS = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Out Parameter</b></em>' reference list.
+	 * The feature id for the '<em><b>Out Parameters</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CALLABLE__OUT_PARAMETER = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 1;
+	int CALLABLE__OUT_PARAMETERS = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Contained Parameters</b></em>' containment reference list.
@@ -854,22 +854,22 @@ public interface CallsPackage extends EPackage {
 	int OPAQUE_CALLABLE__COMMENT = CALLABLE__COMMENT;
 
 	/**
-	 * The feature id for the '<em><b>In Parameter</b></em>' reference list.
+	 * The feature id for the '<em><b>In Parameters</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OPAQUE_CALLABLE__IN_PARAMETER = CALLABLE__IN_PARAMETER;
+	int OPAQUE_CALLABLE__IN_PARAMETERS = CALLABLE__IN_PARAMETERS;
 
 	/**
-	 * The feature id for the '<em><b>Out Parameter</b></em>' reference list.
+	 * The feature id for the '<em><b>Out Parameters</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OPAQUE_CALLABLE__OUT_PARAMETER = CALLABLE__OUT_PARAMETER;
+	int OPAQUE_CALLABLE__OUT_PARAMETERS = CALLABLE__OUT_PARAMETERS;
 
 	/**
 	 * The feature id for the '<em><b>Contained Parameters</b></em>' containment reference list.
@@ -1534,26 +1534,26 @@ public interface CallsPackage extends EPackage {
 	EClass getCallable();
 
 	/**
-	 * Returns the meta object for the reference list '{@link org.muml.storydiagram.calls.Callable#getInParameter <em>In Parameter</em>}'.
+	 * Returns the meta object for the reference list '{@link org.muml.storydiagram.calls.Callable#getInParameters <em>In Parameters</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>In Parameter</em>'.
-	 * @see org.muml.storydiagram.calls.Callable#getInParameter()
+	 * @return the meta object for the reference list '<em>In Parameters</em>'.
+	 * @see org.muml.storydiagram.calls.Callable#getInParameters()
 	 * @see #getCallable()
 	 * @generated
 	 */
-	EReference getCallable_InParameter();
+	EReference getCallable_InParameters();
 
 	/**
-	 * Returns the meta object for the reference list '{@link org.muml.storydiagram.calls.Callable#getOutParameter <em>Out Parameter</em>}'.
+	 * Returns the meta object for the reference list '{@link org.muml.storydiagram.calls.Callable#getOutParameters <em>Out Parameters</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Out Parameter</em>'.
-	 * @see org.muml.storydiagram.calls.Callable#getOutParameter()
+	 * @return the meta object for the reference list '<em>Out Parameters</em>'.
+	 * @see org.muml.storydiagram.calls.Callable#getOutParameters()
 	 * @see #getCallable()
 	 * @generated
 	 */
-	EReference getCallable_OutParameter();
+	EReference getCallable_OutParameters();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link org.muml.storydiagram.calls.Callable#getContainedParameters <em>Contained Parameters</em>}'.
@@ -1711,20 +1711,20 @@ public interface CallsPackage extends EPackage {
 		EClass CALLABLE = eINSTANCE.getCallable();
 
 		/**
-		 * The meta object literal for the '<em><b>In Parameter</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>In Parameters</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference CALLABLE__IN_PARAMETER = eINSTANCE.getCallable_InParameter();
+		EReference CALLABLE__IN_PARAMETERS = eINSTANCE.getCallable_InParameters();
 
 		/**
-		 * The meta object literal for the '<em><b>Out Parameter</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Out Parameters</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference CALLABLE__OUT_PARAMETER = eINSTANCE.getCallable_OutParameter();
+		EReference CALLABLE__OUT_PARAMETERS = eINSTANCE.getCallable_OutParameters();
 
 		/**
 		 * The meta object literal for the '<em><b>Contained Parameters</b></em>' containment reference list feature.

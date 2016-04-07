@@ -37,7 +37,7 @@ import org.muml.storydiagram.activities.ExceptionVariable;
  *   <li>{@link org.muml.storydiagram.activities.impl.ActivityEdgeImpl#getOwningActivity <em>Owning Activity</em>}</li>
  *   <li>{@link org.muml.storydiagram.activities.impl.ActivityEdgeImpl#getGuard <em>Guard</em>}</li>
  *   <li>{@link org.muml.storydiagram.activities.impl.ActivityEdgeImpl#getGuardExpression <em>Guard Expression</em>}</li>
- *   <li>{@link org.muml.storydiagram.activities.impl.ActivityEdgeImpl#getGuardException <em>Guard Exception</em>}</li>
+ *   <li>{@link org.muml.storydiagram.activities.impl.ActivityEdgeImpl#getGuardExceptions <em>Guard Exceptions</em>}</li>
  * </ul>
  *
  * @generated
@@ -92,14 +92,14 @@ public class ActivityEdgeImpl extends ExtendableElementImpl implements
 	protected Expression guardExpression;
 
 	/**
-	 * The cached value of the '{@link #getGuardException() <em>Guard Exception</em>}' containment reference list.
+	 * The cached value of the '{@link #getGuardExceptions() <em>Guard Exceptions</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getGuardException()
+	 * @see #getGuardExceptions()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<ExceptionVariable> guardException;
+	protected EList<ExceptionVariable> guardExceptions;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -165,9 +165,9 @@ public class ActivityEdgeImpl extends ExtendableElementImpl implements
 		if (newSource != source) {
 			NotificationChain msgs = null;
 			if (source != null)
-				msgs = ((InternalEObject)source).eInverseRemove(this, ActivitiesPackage.ACTIVITY_NODE__OUTGOING, ActivityNode.class, msgs);
+				msgs = ((InternalEObject)source).eInverseRemove(this, ActivitiesPackage.ACTIVITY_NODE__OUTGOINGS, ActivityNode.class, msgs);
 			if (newSource != null)
-				msgs = ((InternalEObject)newSource).eInverseAdd(this, ActivitiesPackage.ACTIVITY_NODE__OUTGOING, ActivityNode.class, msgs);
+				msgs = ((InternalEObject)newSource).eInverseAdd(this, ActivitiesPackage.ACTIVITY_NODE__OUTGOINGS, ActivityNode.class, msgs);
 			msgs = basicSetSource(newSource, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -221,11 +221,11 @@ public class ActivityEdgeImpl extends ExtendableElementImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<ExceptionVariable> getGuardException() {
-		if (guardException == null) {
-			guardException = new EObjectContainmentWithInverseEList<ExceptionVariable>(ExceptionVariable.class, this, ActivitiesPackage.ACTIVITY_EDGE__GUARD_EXCEPTION, ActivitiesPackage.EXCEPTION_VARIABLE__ACTIVITY_EDGE);
+	public EList<ExceptionVariable> getGuardExceptions() {
+		if (guardExceptions == null) {
+			guardExceptions = new EObjectContainmentWithInverseEList<ExceptionVariable>(ExceptionVariable.class, this, ActivitiesPackage.ACTIVITY_EDGE__GUARD_EXCEPTIONS, ActivitiesPackage.EXCEPTION_VARIABLE__ACTIVITY_EDGE);
 		}
-		return guardException;
+		return guardExceptions;
 	}
 
 	/**
@@ -259,7 +259,7 @@ public class ActivityEdgeImpl extends ExtendableElementImpl implements
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newOwningActivity != null)
-				msgs = ((InternalEObject)newOwningActivity).eInverseAdd(this, ActivitiesPackage.ACTIVITY__OWNED_ACTIVITY_EDGE, Activity.class, msgs);
+				msgs = ((InternalEObject)newOwningActivity).eInverseAdd(this, ActivitiesPackage.ACTIVITY__OWNED_ACTIVITY_EDGES, Activity.class, msgs);
 			msgs = basicSetOwningActivity(newOwningActivity, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -335,9 +335,9 @@ public class ActivityEdgeImpl extends ExtendableElementImpl implements
 		if (newTarget != target) {
 			NotificationChain msgs = null;
 			if (target != null)
-				msgs = ((InternalEObject)target).eInverseRemove(this, ActivitiesPackage.ACTIVITY_NODE__INCOMING, ActivityNode.class, msgs);
+				msgs = ((InternalEObject)target).eInverseRemove(this, ActivitiesPackage.ACTIVITY_NODE__INCOMINGS, ActivityNode.class, msgs);
 			if (newTarget != null)
-				msgs = ((InternalEObject)newTarget).eInverseAdd(this, ActivitiesPackage.ACTIVITY_NODE__INCOMING, ActivityNode.class, msgs);
+				msgs = ((InternalEObject)newTarget).eInverseAdd(this, ActivitiesPackage.ACTIVITY_NODE__INCOMINGS, ActivityNode.class, msgs);
 			msgs = basicSetTarget(newTarget, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -356,18 +356,18 @@ public class ActivityEdgeImpl extends ExtendableElementImpl implements
 		switch (featureID) {
 			case ActivitiesPackage.ACTIVITY_EDGE__TARGET:
 				if (target != null)
-					msgs = ((InternalEObject)target).eInverseRemove(this, ActivitiesPackage.ACTIVITY_NODE__INCOMING, ActivityNode.class, msgs);
+					msgs = ((InternalEObject)target).eInverseRemove(this, ActivitiesPackage.ACTIVITY_NODE__INCOMINGS, ActivityNode.class, msgs);
 				return basicSetTarget((ActivityNode)otherEnd, msgs);
 			case ActivitiesPackage.ACTIVITY_EDGE__SOURCE:
 				if (source != null)
-					msgs = ((InternalEObject)source).eInverseRemove(this, ActivitiesPackage.ACTIVITY_NODE__OUTGOING, ActivityNode.class, msgs);
+					msgs = ((InternalEObject)source).eInverseRemove(this, ActivitiesPackage.ACTIVITY_NODE__OUTGOINGS, ActivityNode.class, msgs);
 				return basicSetSource((ActivityNode)otherEnd, msgs);
 			case ActivitiesPackage.ACTIVITY_EDGE__OWNING_ACTIVITY:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetOwningActivity((Activity)otherEnd, msgs);
-			case ActivitiesPackage.ACTIVITY_EDGE__GUARD_EXCEPTION:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getGuardException()).basicAdd(otherEnd, msgs);
+			case ActivitiesPackage.ACTIVITY_EDGE__GUARD_EXCEPTIONS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getGuardExceptions()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -388,8 +388,8 @@ public class ActivityEdgeImpl extends ExtendableElementImpl implements
 				return basicSetOwningActivity(null, msgs);
 			case ActivitiesPackage.ACTIVITY_EDGE__GUARD_EXPRESSION:
 				return basicSetGuardExpression(null, msgs);
-			case ActivitiesPackage.ACTIVITY_EDGE__GUARD_EXCEPTION:
-				return ((InternalEList<?>)getGuardException()).basicRemove(otherEnd, msgs);
+			case ActivitiesPackage.ACTIVITY_EDGE__GUARD_EXCEPTIONS:
+				return ((InternalEList<?>)getGuardExceptions()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -403,7 +403,7 @@ public class ActivityEdgeImpl extends ExtendableElementImpl implements
 			NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
 			case ActivitiesPackage.ACTIVITY_EDGE__OWNING_ACTIVITY:
-				return eInternalContainer().eInverseRemove(this, ActivitiesPackage.ACTIVITY__OWNED_ACTIVITY_EDGE, Activity.class, msgs);
+				return eInternalContainer().eInverseRemove(this, ActivitiesPackage.ACTIVITY__OWNED_ACTIVITY_EDGES, Activity.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -427,8 +427,8 @@ public class ActivityEdgeImpl extends ExtendableElementImpl implements
 				return getGuard();
 			case ActivitiesPackage.ACTIVITY_EDGE__GUARD_EXPRESSION:
 				return getGuardExpression();
-			case ActivitiesPackage.ACTIVITY_EDGE__GUARD_EXCEPTION:
-				return getGuardException();
+			case ActivitiesPackage.ACTIVITY_EDGE__GUARD_EXCEPTIONS:
+				return getGuardExceptions();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -456,9 +456,9 @@ public class ActivityEdgeImpl extends ExtendableElementImpl implements
 			case ActivitiesPackage.ACTIVITY_EDGE__GUARD_EXPRESSION:
 				setGuardExpression((Expression)newValue);
 				return;
-			case ActivitiesPackage.ACTIVITY_EDGE__GUARD_EXCEPTION:
-				getGuardException().clear();
-				getGuardException().addAll((Collection<? extends ExceptionVariable>)newValue);
+			case ActivitiesPackage.ACTIVITY_EDGE__GUARD_EXCEPTIONS:
+				getGuardExceptions().clear();
+				getGuardExceptions().addAll((Collection<? extends ExceptionVariable>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -486,8 +486,8 @@ public class ActivityEdgeImpl extends ExtendableElementImpl implements
 			case ActivitiesPackage.ACTIVITY_EDGE__GUARD_EXPRESSION:
 				setGuardExpression((Expression)null);
 				return;
-			case ActivitiesPackage.ACTIVITY_EDGE__GUARD_EXCEPTION:
-				getGuardException().clear();
+			case ActivitiesPackage.ACTIVITY_EDGE__GUARD_EXCEPTIONS:
+				getGuardExceptions().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -510,8 +510,8 @@ public class ActivityEdgeImpl extends ExtendableElementImpl implements
 				return guard != GUARD_EDEFAULT;
 			case ActivitiesPackage.ACTIVITY_EDGE__GUARD_EXPRESSION:
 				return guardExpression != null;
-			case ActivitiesPackage.ACTIVITY_EDGE__GUARD_EXCEPTION:
-				return guardException != null && !guardException.isEmpty();
+			case ActivitiesPackage.ACTIVITY_EDGE__GUARD_EXCEPTIONS:
+				return guardExceptions != null && !guardExceptions.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

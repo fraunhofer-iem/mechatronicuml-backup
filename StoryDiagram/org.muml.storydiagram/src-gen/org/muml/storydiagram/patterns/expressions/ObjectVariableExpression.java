@@ -25,7 +25,7 @@ import org.muml.storydiagram.patterns.ObjectVariable;
  *   <li>{@link org.muml.storydiagram.patterns.expressions.ObjectVariableExpression#getObject <em>Object</em>}</li>
  * </ul>
  *
- * @see org.muml.storydiagram.patterns.expressions.ExpressionsPackage#getObjectVariableExpression()
+ * @see org.muml.storydiagram.patterns.expressions.PatternsExpressionsPackage#getObjectVariableExpression()
  * @model
  * @generated
  */
@@ -39,7 +39,7 @@ public interface ObjectVariableExpression extends Expression {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Object</em>' reference.
 	 * @see #setObject(ObjectVariable)
-	 * @see org.muml.storydiagram.patterns.expressions.ExpressionsPackage#getObjectVariableExpression_Object()
+	 * @see org.muml.storydiagram.patterns.expressions.PatternsExpressionsPackage#getObjectVariableExpression_Object()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */

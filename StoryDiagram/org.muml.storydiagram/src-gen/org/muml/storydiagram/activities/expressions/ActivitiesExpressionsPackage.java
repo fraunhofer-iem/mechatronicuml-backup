@@ -41,7 +41,7 @@ public interface ActivitiesExpressionsPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.storydriven.org/storydiagrams/activities/expressions/0.2.0";
+	String eNS_URI = "http://www.muml.org/storydiagram/activities/expressions/1.0.0";
 
 	/**
 	 * The package namespace name.
@@ -57,8 +57,7 @@ public interface ActivitiesExpressionsPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	ActivitiesExpressionsPackage eINSTANCE = org.muml.storydiagram.activities.expressions.impl.ActivitiesExpressionsPackageImpl
-			.init();
+	ActivitiesExpressionsPackage eINSTANCE = org.muml.storydiagram.activities.expressions.impl.ActivitiesExpressionsPackageImpl.init();
 
 	/**
 	 * The meta object id for the '{@link org.muml.storydiagram.activities.expressions.impl.ExceptionVariableExpressionImpl <em>Exception Variable Expression</em>}' class.
@@ -71,22 +70,22 @@ public interface ActivitiesExpressionsPackage extends EPackage {
 	int EXCEPTION_VARIABLE_EXPRESSION = 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXCEPTION_VARIABLE_EXPRESSION__ANNOTATION = ExpressionsPackage.EXPRESSION__ANNOTATION;
+	int EXCEPTION_VARIABLE_EXPRESSION__ANNOTATIONS = ExpressionsPackage.EXPRESSION__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXCEPTION_VARIABLE_EXPRESSION__EXTENSION = ExpressionsPackage.EXPRESSION__EXTENSION;
+	int EXCEPTION_VARIABLE_EXPRESSION__EXTENSIONS = ExpressionsPackage.EXPRESSION__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -346,8 +345,7 @@ public interface ActivitiesExpressionsPackage extends EPackage {
 		 * @see org.muml.storydiagram.activities.expressions.impl.ActivitiesExpressionsPackageImpl#getExceptionVariableExpression()
 		 * @generated
 		 */
-		EClass EXCEPTION_VARIABLE_EXPRESSION = eINSTANCE
-				.getExceptionVariableExpression();
+		EClass EXCEPTION_VARIABLE_EXPRESSION = eINSTANCE.getExceptionVariableExpression();
 
 		/**
 		 * The meta object literal for the '<em><b>Exception Variable</b></em>' reference feature.
@@ -355,8 +353,7 @@ public interface ActivitiesExpressionsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference EXCEPTION_VARIABLE_EXPRESSION__EXCEPTION_VARIABLE = eINSTANCE
-				.getExceptionVariableExpression_ExceptionVariable();
+		EReference EXCEPTION_VARIABLE_EXPRESSION__EXCEPTION_VARIABLE = eINSTANCE.getExceptionVariableExpression_ExceptionVariable();
 
 	}
 

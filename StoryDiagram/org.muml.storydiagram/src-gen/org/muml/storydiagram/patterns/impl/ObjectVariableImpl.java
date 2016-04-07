@@ -37,7 +37,7 @@ import org.muml.storydiagram.patterns.PatternsPackage;
  *   <li>{@link org.muml.storydiagram.patterns.impl.ObjectVariableImpl#getLinkOrderConstraint <em>Link Order Constraint</em>}</li>
  *   <li>{@link org.muml.storydiagram.patterns.impl.ObjectVariableImpl#getBindingSemantics <em>Binding Semantics</em>}</li>
  *   <li>{@link org.muml.storydiagram.patterns.impl.ObjectVariableImpl#getBindingOperator <em>Binding Operator</em>}</li>
- *   <li>{@link org.muml.storydiagram.patterns.impl.ObjectVariableImpl#getAttributeAssignment <em>Attribute Assignment</em>}</li>
+ *   <li>{@link org.muml.storydiagram.patterns.impl.ObjectVariableImpl#getAttributeAssignments <em>Attribute Assignments</em>}</li>
  *   <li>{@link org.muml.storydiagram.patterns.impl.ObjectVariableImpl#getClassifier <em>Classifier</em>}</li>
  * </ul>
  *
@@ -96,14 +96,14 @@ public class ObjectVariableImpl extends AbstractVariableImpl implements
 	 */
 	protected BindingOperator bindingOperator = BINDING_OPERATOR_EDEFAULT;
 	/**
-	 * The cached value of the '{@link #getAttributeAssignment() <em>Attribute Assignment</em>}' containment reference list.
+	 * The cached value of the '{@link #getAttributeAssignments() <em>Attribute Assignments</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAttributeAssignment()
+	 * @see #getAttributeAssignments()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<AttributeAssignment> attributeAssignment;
+	protected EList<AttributeAssignment> attributeAssignments;
 	/**
 	 * The cached value of the '{@link #getClassifier() <em>Classifier</em>}' reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -197,11 +197,11 @@ public class ObjectVariableImpl extends AbstractVariableImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<AttributeAssignment> getAttributeAssignment() {
-		if (attributeAssignment == null) {
-			attributeAssignment = new EObjectContainmentWithInverseEList<AttributeAssignment>(AttributeAssignment.class, this, PatternsPackage.OBJECT_VARIABLE__ATTRIBUTE_ASSIGNMENT, PatternsPackage.ATTRIBUTE_ASSIGNMENT__OBJECT_VARIABLE);
+	public EList<AttributeAssignment> getAttributeAssignments() {
+		if (attributeAssignments == null) {
+			attributeAssignments = new EObjectContainmentWithInverseEList<AttributeAssignment>(AttributeAssignment.class, this, PatternsPackage.OBJECT_VARIABLE__ATTRIBUTE_ASSIGNMENTS, PatternsPackage.ATTRIBUTE_ASSIGNMENT__OBJECT_VARIABLE);
 		}
-		return attributeAssignment;
+		return attributeAssignments;
 	}
 
 	/**
@@ -257,8 +257,8 @@ public class ObjectVariableImpl extends AbstractVariableImpl implements
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getOutgoingLink()).basicAdd(otherEnd, msgs);
 			case PatternsPackage.OBJECT_VARIABLE__LINK_ORDER_CONSTRAINT:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getLinkOrderConstraint()).basicAdd(otherEnd, msgs);
-			case PatternsPackage.OBJECT_VARIABLE__ATTRIBUTE_ASSIGNMENT:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getAttributeAssignment()).basicAdd(otherEnd, msgs);
+			case PatternsPackage.OBJECT_VARIABLE__ATTRIBUTE_ASSIGNMENTS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getAttributeAssignments()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -275,8 +275,8 @@ public class ObjectVariableImpl extends AbstractVariableImpl implements
 				return ((InternalEList<?>)getOutgoingLink()).basicRemove(otherEnd, msgs);
 			case PatternsPackage.OBJECT_VARIABLE__LINK_ORDER_CONSTRAINT:
 				return ((InternalEList<?>)getLinkOrderConstraint()).basicRemove(otherEnd, msgs);
-			case PatternsPackage.OBJECT_VARIABLE__ATTRIBUTE_ASSIGNMENT:
-				return ((InternalEList<?>)getAttributeAssignment()).basicRemove(otherEnd, msgs);
+			case PatternsPackage.OBJECT_VARIABLE__ATTRIBUTE_ASSIGNMENTS:
+				return ((InternalEList<?>)getAttributeAssignments()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -296,8 +296,8 @@ public class ObjectVariableImpl extends AbstractVariableImpl implements
 				return getBindingSemantics();
 			case PatternsPackage.OBJECT_VARIABLE__BINDING_OPERATOR:
 				return getBindingOperator();
-			case PatternsPackage.OBJECT_VARIABLE__ATTRIBUTE_ASSIGNMENT:
-				return getAttributeAssignment();
+			case PatternsPackage.OBJECT_VARIABLE__ATTRIBUTE_ASSIGNMENTS:
+				return getAttributeAssignments();
 			case PatternsPackage.OBJECT_VARIABLE__CLASSIFIER:
 				if (resolve) return getClassifier();
 				return basicGetClassifier();
@@ -327,9 +327,9 @@ public class ObjectVariableImpl extends AbstractVariableImpl implements
 			case PatternsPackage.OBJECT_VARIABLE__BINDING_OPERATOR:
 				setBindingOperator((BindingOperator)newValue);
 				return;
-			case PatternsPackage.OBJECT_VARIABLE__ATTRIBUTE_ASSIGNMENT:
-				getAttributeAssignment().clear();
-				getAttributeAssignment().addAll((Collection<? extends AttributeAssignment>)newValue);
+			case PatternsPackage.OBJECT_VARIABLE__ATTRIBUTE_ASSIGNMENTS:
+				getAttributeAssignments().clear();
+				getAttributeAssignments().addAll((Collection<? extends AttributeAssignment>)newValue);
 				return;
 			case PatternsPackage.OBJECT_VARIABLE__CLASSIFIER:
 				setClassifier((EClass)newValue);
@@ -357,8 +357,8 @@ public class ObjectVariableImpl extends AbstractVariableImpl implements
 			case PatternsPackage.OBJECT_VARIABLE__BINDING_OPERATOR:
 				setBindingOperator(BINDING_OPERATOR_EDEFAULT);
 				return;
-			case PatternsPackage.OBJECT_VARIABLE__ATTRIBUTE_ASSIGNMENT:
-				getAttributeAssignment().clear();
+			case PatternsPackage.OBJECT_VARIABLE__ATTRIBUTE_ASSIGNMENTS:
+				getAttributeAssignments().clear();
 				return;
 			case PatternsPackage.OBJECT_VARIABLE__CLASSIFIER:
 				setClassifier((EClass)null);
@@ -382,8 +382,8 @@ public class ObjectVariableImpl extends AbstractVariableImpl implements
 				return bindingSemantics != BINDING_SEMANTICS_EDEFAULT;
 			case PatternsPackage.OBJECT_VARIABLE__BINDING_OPERATOR:
 				return bindingOperator != BINDING_OPERATOR_EDEFAULT;
-			case PatternsPackage.OBJECT_VARIABLE__ATTRIBUTE_ASSIGNMENT:
-				return attributeAssignment != null && !attributeAssignment.isEmpty();
+			case PatternsPackage.OBJECT_VARIABLE__ATTRIBUTE_ASSIGNMENTS:
+				return attributeAssignments != null && !attributeAssignments.isEmpty();
 			case PatternsPackage.OBJECT_VARIABLE__CLASSIFIER:
 				return classifier != null;
 		}

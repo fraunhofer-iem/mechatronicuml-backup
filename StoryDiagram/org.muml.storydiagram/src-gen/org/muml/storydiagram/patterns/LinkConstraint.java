@@ -115,7 +115,7 @@ public interface LinkConstraint extends ExtendableElement {
 
 	/**
 	 * Returns the value of the '<em><b>First Link</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link org.muml.storydiagram.patterns.AbstractLinkVariable#getFirstLinkConstraint <em>First Link Constraint</em>}'.
+	 * It is bidirectional and its opposite is '{@link org.muml.storydiagram.patterns.AbstractLinkVariable#getFirstLinkConstraints <em>First Link Constraints</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>First Link</em>' reference isn't clear,
@@ -125,8 +125,8 @@ public interface LinkConstraint extends ExtendableElement {
 	 * @return the value of the '<em>First Link</em>' reference.
 	 * @see #setFirstLink(AbstractLinkVariable)
 	 * @see org.muml.storydiagram.patterns.PatternsPackage#getLinkConstraint_FirstLink()
-	 * @see org.muml.storydiagram.patterns.AbstractLinkVariable#getFirstLinkConstraint
-	 * @model opposite="firstLinkConstraint" required="true" ordered="false"
+	 * @see org.muml.storydiagram.patterns.AbstractLinkVariable#getFirstLinkConstraints
+	 * @model opposite="firstLinkConstraints" required="true" ordered="false"
 	 * @generated
 	 */
 	AbstractLinkVariable getFirstLink();
@@ -171,7 +171,7 @@ public interface LinkConstraint extends ExtendableElement {
 
 	/**
 	 * Returns the value of the '<em><b>Second Link</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link org.muml.storydiagram.patterns.AbstractLinkVariable#getSecondLinkConstraint <em>Second Link Constraint</em>}'.
+	 * It is bidirectional and its opposite is '{@link org.muml.storydiagram.patterns.AbstractLinkVariable#getSecondLinkConstraints <em>Second Link Constraints</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Second Link</em>' reference isn't clear,
@@ -181,8 +181,8 @@ public interface LinkConstraint extends ExtendableElement {
 	 * @return the value of the '<em>Second Link</em>' reference.
 	 * @see #setSecondLink(AbstractLinkVariable)
 	 * @see org.muml.storydiagram.patterns.PatternsPackage#getLinkConstraint_SecondLink()
-	 * @see org.muml.storydiagram.patterns.AbstractLinkVariable#getSecondLinkConstraint
-	 * @model opposite="secondLinkConstraint" ordered="false"
+	 * @see org.muml.storydiagram.patterns.AbstractLinkVariable#getSecondLinkConstraints
+	 * @model opposite="secondLinkConstraints" ordered="false"
 	 * @generated
 	 */
 	AbstractLinkVariable getSecondLink();

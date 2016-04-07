@@ -26,7 +26,7 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.muml.storydiagram.patterns.ObjectVariable#getLinkOrderConstraint <em>Link Order Constraint</em>}</li>
  *   <li>{@link org.muml.storydiagram.patterns.ObjectVariable#getBindingSemantics <em>Binding Semantics</em>}</li>
  *   <li>{@link org.muml.storydiagram.patterns.ObjectVariable#getBindingOperator <em>Binding Operator</em>}</li>
- *   <li>{@link org.muml.storydiagram.patterns.ObjectVariable#getAttributeAssignment <em>Attribute Assignment</em>}</li>
+ *   <li>{@link org.muml.storydiagram.patterns.ObjectVariable#getAttributeAssignments <em>Attribute Assignments</em>}</li>
  *   <li>{@link org.muml.storydiagram.patterns.ObjectVariable#getClassifier <em>Classifier</em>}</li>
  * </ul>
  *
@@ -130,22 +130,22 @@ public interface ObjectVariable extends AbstractVariable {
 	void setBindingOperator(BindingOperator value);
 
 	/**
-	 * Returns the value of the '<em><b>Attribute Assignment</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Attribute Assignments</b></em>' containment reference list.
 	 * The list contents are of type {@link org.muml.storydiagram.patterns.AttributeAssignment}.
 	 * It is bidirectional and its opposite is '{@link org.muml.storydiagram.patterns.AttributeAssignment#getObjectVariable <em>Object Variable</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Attribute Assignment</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Attribute Assignments</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Attribute Assignment</em>' containment reference list.
-	 * @see org.muml.storydiagram.patterns.PatternsPackage#getObjectVariable_AttributeAssignment()
+	 * @return the value of the '<em>Attribute Assignments</em>' containment reference list.
+	 * @see org.muml.storydiagram.patterns.PatternsPackage#getObjectVariable_AttributeAssignments()
 	 * @see org.muml.storydiagram.patterns.AttributeAssignment#getObjectVariable
 	 * @model opposite="objectVariable" containment="true"
 	 * @generated
 	 */
-	EList<AttributeAssignment> getAttributeAssignment();
+	EList<AttributeAssignment> getAttributeAssignments();
 
 	/**
 	 * Returns the value of the '<em><b>Classifier</b></em>' reference.

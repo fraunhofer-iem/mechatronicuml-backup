@@ -23,8 +23,8 @@ import org.muml.core.CommentableElement;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.muml.storydiagram.calls.Callable#getInParameter <em>In Parameter</em>}</li>
- *   <li>{@link org.muml.storydiagram.calls.Callable#getOutParameter <em>Out Parameter</em>}</li>
+ *   <li>{@link org.muml.storydiagram.calls.Callable#getInParameters <em>In Parameters</em>}</li>
+ *   <li>{@link org.muml.storydiagram.calls.Callable#getOutParameters <em>Out Parameters</em>}</li>
  *   <li>{@link org.muml.storydiagram.calls.Callable#getContainedParameters <em>Contained Parameters</em>}</li>
  * </ul>
  *
@@ -34,34 +34,34 @@ import org.muml.core.CommentableElement;
  */
 public interface Callable extends CommentableElement {
 	/**
-	 * Returns the value of the '<em><b>In Parameter</b></em>' reference list.
+	 * Returns the value of the '<em><b>In Parameters</b></em>' reference list.
 	 * The list contents are of type {@link org.eclipse.emf.ecore.EParameter}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The ordered set of in parameters of this Callable. The parameters will not be contained in this reference, if parameters have to be contained in the callable, they also have to be added to the containedParameters reference.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>In Parameter</em>' reference list.
-	 * @see org.muml.storydiagram.calls.CallsPackage#getCallable_InParameter()
+	 * @return the value of the '<em>In Parameters</em>' reference list.
+	 * @see org.muml.storydiagram.calls.CallsPackage#getCallable_InParameters()
 	 * @model
 	 * @generated
 	 */
-	EList<EParameter> getInParameter();
+	EList<EParameter> getInParameters();
 
 	/**
-	 * Returns the value of the '<em><b>Out Parameter</b></em>' reference list.
+	 * Returns the value of the '<em><b>Out Parameters</b></em>' reference list.
 	 * The list contents are of type {@link org.eclipse.emf.ecore.EParameter}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The ordered set of out parameters of this Callable. The parameters will not be contained in this reference, if parameters have to be contained in the callable, they also have to be added to the containedParameters reference.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Out Parameter</em>' reference list.
-	 * @see org.muml.storydiagram.calls.CallsPackage#getCallable_OutParameter()
+	 * @return the value of the '<em>Out Parameters</em>' reference list.
+	 * @see org.muml.storydiagram.calls.CallsPackage#getCallable_OutParameters()
 	 * @model
 	 * @generated
 	 */
-	EList<EParameter> getOutParameter();
+	EList<EParameter> getOutParameters();
 
 	/**
 	 * Returns the value of the '<em><b>Contained Parameters</b></em>' containment reference list.

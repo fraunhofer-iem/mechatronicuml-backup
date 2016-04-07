@@ -41,7 +41,7 @@ public interface CallsExpressionsPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.storydriven.org/storydiagrams/calls/expressions/0.2.0";
+	String eNS_URI = "http://www.muml.org/storydiagram/calls/expressions/1.0.0";
 
 	/**
 	 * The package namespace name.
@@ -57,8 +57,7 @@ public interface CallsExpressionsPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	CallsExpressionsPackage eINSTANCE = org.muml.storydiagram.calls.expressions.impl.CallsExpressionsPackageImpl
-			.init();
+	CallsExpressionsPackage eINSTANCE = org.muml.storydiagram.calls.expressions.impl.CallsExpressionsPackageImpl.init();
 
 	/**
 	 * The meta object id for the '{@link org.muml.storydiagram.calls.expressions.impl.MethodCallExpressionImpl <em>Method Call Expression</em>}' class.
@@ -71,22 +70,22 @@ public interface CallsExpressionsPackage extends EPackage {
 	int METHOD_CALL_EXPRESSION = 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int METHOD_CALL_EXPRESSION__ANNOTATION = ExpressionsPackage.EXPRESSION__ANNOTATION;
+	int METHOD_CALL_EXPRESSION__ANNOTATIONS = ExpressionsPackage.EXPRESSION__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int METHOD_CALL_EXPRESSION__EXTENSION = ExpressionsPackage.EXPRESSION__EXTENSION;
+	int METHOD_CALL_EXPRESSION__EXTENSIONS = ExpressionsPackage.EXPRESSION__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -333,22 +332,22 @@ public interface CallsExpressionsPackage extends EPackage {
 	int PARAMETER_EXPRESSION = 1;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_EXPRESSION__ANNOTATION = ExpressionsPackage.EXPRESSION__ANNOTATION;
+	int PARAMETER_EXPRESSION__ANNOTATIONS = ExpressionsPackage.EXPRESSION__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_EXPRESSION__EXTENSION = ExpressionsPackage.EXPRESSION__EXTENSION;
+	int PARAMETER_EXPRESSION__EXTENSIONS = ExpressionsPackage.EXPRESSION__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -648,8 +647,7 @@ public interface CallsExpressionsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference METHOD_CALL_EXPRESSION__TARGET = eINSTANCE
-				.getMethodCallExpression_Target();
+		EReference METHOD_CALL_EXPRESSION__TARGET = eINSTANCE.getMethodCallExpression_Target();
 
 		/**
 		 * The meta object literal for the '<em><b>Opaque Callable</b></em>' containment reference feature.
@@ -657,8 +655,7 @@ public interface CallsExpressionsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference METHOD_CALL_EXPRESSION__OPAQUE_CALLABLE = eINSTANCE
-				.getMethodCallExpression_OpaqueCallable();
+		EReference METHOD_CALL_EXPRESSION__OPAQUE_CALLABLE = eINSTANCE.getMethodCallExpression_OpaqueCallable();
 
 		/**
 		 * The meta object literal for the '{@link org.muml.storydiagram.calls.expressions.impl.ParameterExpressionImpl <em>Parameter Expression</em>}' class.
@@ -676,8 +673,7 @@ public interface CallsExpressionsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PARAMETER_EXPRESSION__PARAMETER = eINSTANCE
-				.getParameterExpression_Parameter();
+		EReference PARAMETER_EXPRESSION__PARAMETER = eINSTANCE.getParameterExpression_Parameter();
 
 	}
 

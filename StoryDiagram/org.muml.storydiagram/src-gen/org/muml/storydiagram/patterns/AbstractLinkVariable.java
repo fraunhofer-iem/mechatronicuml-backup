@@ -25,8 +25,8 @@ import org.muml.core.NamedElement;
  *   <li>{@link org.muml.storydiagram.patterns.AbstractLinkVariable#getBindingSemantics <em>Binding Semantics</em>}</li>
  *   <li>{@link org.muml.storydiagram.patterns.AbstractLinkVariable#getBindingOperator <em>Binding Operator</em>}</li>
  *   <li>{@link org.muml.storydiagram.patterns.AbstractLinkVariable#getSource <em>Source</em>}</li>
- *   <li>{@link org.muml.storydiagram.patterns.AbstractLinkVariable#getSecondLinkConstraint <em>Second Link Constraint</em>}</li>
- *   <li>{@link org.muml.storydiagram.patterns.AbstractLinkVariable#getFirstLinkConstraint <em>First Link Constraint</em>}</li>
+ *   <li>{@link org.muml.storydiagram.patterns.AbstractLinkVariable#getSecondLinkConstraints <em>Second Link Constraints</em>}</li>
+ *   <li>{@link org.muml.storydiagram.patterns.AbstractLinkVariable#getFirstLinkConstraints <em>First Link Constraints</em>}</li>
  *   <li>{@link org.muml.storydiagram.patterns.AbstractLinkVariable#getPattern <em>Pattern</em>}</li>
  *   <li>{@link org.muml.storydiagram.patterns.AbstractLinkVariable#getTarget <em>Target</em>}</li>
  * </ul>
@@ -123,44 +123,44 @@ public interface AbstractLinkVariable extends NamedElement {
 	void setSource(ObjectVariable value);
 
 	/**
-	 * Returns the value of the '<em><b>Second Link Constraint</b></em>' reference list.
+	 * Returns the value of the '<em><b>Second Link Constraints</b></em>' reference list.
 	 * The list contents are of type {@link org.muml.storydiagram.patterns.LinkConstraint}.
 	 * It is bidirectional and its opposite is '{@link org.muml.storydiagram.patterns.LinkConstraint#getSecondLink <em>Second Link</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Second Link Constraint</em>' reference list isn't clear,
+	 * If the meaning of the '<em>Second Link Constraints</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Second Link Constraint</em>' reference list.
-	 * @see org.muml.storydiagram.patterns.PatternsPackage#getAbstractLinkVariable_SecondLinkConstraint()
+	 * @return the value of the '<em>Second Link Constraints</em>' reference list.
+	 * @see org.muml.storydiagram.patterns.PatternsPackage#getAbstractLinkVariable_SecondLinkConstraints()
 	 * @see org.muml.storydiagram.patterns.LinkConstraint#getSecondLink
 	 * @model opposite="secondLink" ordered="false"
 	 * @generated
 	 */
-	EList<LinkConstraint> getSecondLinkConstraint();
+	EList<LinkConstraint> getSecondLinkConstraints();
 
 	/**
-	 * Returns the value of the '<em><b>First Link Constraint</b></em>' reference list.
+	 * Returns the value of the '<em><b>First Link Constraints</b></em>' reference list.
 	 * The list contents are of type {@link org.muml.storydiagram.patterns.LinkConstraint}.
 	 * It is bidirectional and its opposite is '{@link org.muml.storydiagram.patterns.LinkConstraint#getFirstLink <em>First Link</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>First Link Constraint</em>' reference list isn't clear,
+	 * If the meaning of the '<em>First Link Constraints</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>First Link Constraint</em>' reference list.
-	 * @see org.muml.storydiagram.patterns.PatternsPackage#getAbstractLinkVariable_FirstLinkConstraint()
+	 * @return the value of the '<em>First Link Constraints</em>' reference list.
+	 * @see org.muml.storydiagram.patterns.PatternsPackage#getAbstractLinkVariable_FirstLinkConstraints()
 	 * @see org.muml.storydiagram.patterns.LinkConstraint#getFirstLink
 	 * @model opposite="firstLink" ordered="false"
 	 * @generated
 	 */
-	EList<LinkConstraint> getFirstLinkConstraint();
+	EList<LinkConstraint> getFirstLinkConstraints();
 
 	/**
 	 * Returns the value of the '<em><b>Pattern</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link org.muml.storydiagram.patterns.StoryPattern#getLinkVariable <em>Link Variable</em>}'.
+	 * It is bidirectional and its opposite is '{@link org.muml.storydiagram.patterns.StoryPattern#getLinkVariables <em>Link Variables</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Pattern</em>' container reference isn't clear,
@@ -170,8 +170,8 @@ public interface AbstractLinkVariable extends NamedElement {
 	 * @return the value of the '<em>Pattern</em>' container reference.
 	 * @see #setPattern(StoryPattern)
 	 * @see org.muml.storydiagram.patterns.PatternsPackage#getAbstractLinkVariable_Pattern()
-	 * @see org.muml.storydiagram.patterns.StoryPattern#getLinkVariable
-	 * @model opposite="linkVariable" required="true" transient="false" ordered="false"
+	 * @see org.muml.storydiagram.patterns.StoryPattern#getLinkVariables
+	 * @model opposite="linkVariables" required="true" transient="false" ordered="false"
 	 * @generated
 	 */
 	StoryPattern getPattern();
@@ -188,7 +188,7 @@ public interface AbstractLinkVariable extends NamedElement {
 
 	/**
 	 * Returns the value of the '<em><b>Target</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link org.muml.storydiagram.patterns.AbstractVariable#getIncomingLink <em>Incoming Link</em>}'.
+	 * It is bidirectional and its opposite is '{@link org.muml.storydiagram.patterns.AbstractVariable#getIncomingLinks <em>Incoming Links</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Target</em>' reference isn't clear,
@@ -198,8 +198,8 @@ public interface AbstractLinkVariable extends NamedElement {
 	 * @return the value of the '<em>Target</em>' reference.
 	 * @see #setTarget(AbstractVariable)
 	 * @see org.muml.storydiagram.patterns.PatternsPackage#getAbstractLinkVariable_Target()
-	 * @see org.muml.storydiagram.patterns.AbstractVariable#getIncomingLink
-	 * @model opposite="incomingLink" required="true" ordered="false"
+	 * @see org.muml.storydiagram.patterns.AbstractVariable#getIncomingLinks
+	 * @model opposite="incomingLinks" required="true" ordered="false"
 	 * @generated
 	 */
 	AbstractVariable getTarget();

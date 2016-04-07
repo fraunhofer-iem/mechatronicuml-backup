@@ -24,7 +24,7 @@ import org.muml.storydiagram.activities.StructuredNode;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.muml.storydiagram.activities.impl.StructuredNodeImpl#getOwnedActivityNode <em>Owned Activity Node</em>}</li>
+ *   <li>{@link org.muml.storydiagram.activities.impl.StructuredNodeImpl#getOwnedActivityNodes <em>Owned Activity Nodes</em>}</li>
  * </ul>
  *
  * @generated
@@ -32,14 +32,14 @@ import org.muml.storydiagram.activities.StructuredNode;
 public class StructuredNodeImpl extends ActivityNodeImpl implements
 		StructuredNode {
 	/**
-	 * The cached value of the '{@link #getOwnedActivityNode() <em>Owned Activity Node</em>}' containment reference list.
+	 * The cached value of the '{@link #getOwnedActivityNodes() <em>Owned Activity Nodes</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getOwnedActivityNode()
+	 * @see #getOwnedActivityNodes()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<ActivityNode> ownedActivityNode;
+	protected EList<ActivityNode> ownedActivityNodes;
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
@@ -62,11 +62,11 @@ public class StructuredNodeImpl extends ActivityNodeImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<ActivityNode> getOwnedActivityNode() {
-		if (ownedActivityNode == null) {
-			ownedActivityNode = new EObjectContainmentWithInverseEList<ActivityNode>(ActivityNode.class, this, ActivitiesPackage.STRUCTURED_NODE__OWNED_ACTIVITY_NODE, ActivitiesPackage.ACTIVITY_NODE__OWNING_ACTIVITY_NODE);
+	public EList<ActivityNode> getOwnedActivityNodes() {
+		if (ownedActivityNodes == null) {
+			ownedActivityNodes = new EObjectContainmentWithInverseEList<ActivityNode>(ActivityNode.class, this, ActivitiesPackage.STRUCTURED_NODE__OWNED_ACTIVITY_NODES, ActivitiesPackage.ACTIVITY_NODE__OWNING_ACTIVITY_NODE);
 		}
-		return ownedActivityNode;
+		return ownedActivityNodes;
 	}
 
 	/**
@@ -78,8 +78,8 @@ public class StructuredNodeImpl extends ActivityNodeImpl implements
 	public NotificationChain eInverseAdd(InternalEObject otherEnd,
 			int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ActivitiesPackage.STRUCTURED_NODE__OWNED_ACTIVITY_NODE:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getOwnedActivityNode()).basicAdd(otherEnd, msgs);
+			case ActivitiesPackage.STRUCTURED_NODE__OWNED_ACTIVITY_NODES:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getOwnedActivityNodes()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -92,8 +92,8 @@ public class StructuredNodeImpl extends ActivityNodeImpl implements
 	public NotificationChain eInverseRemove(InternalEObject otherEnd,
 			int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ActivitiesPackage.STRUCTURED_NODE__OWNED_ACTIVITY_NODE:
-				return ((InternalEList<?>)getOwnedActivityNode()).basicRemove(otherEnd, msgs);
+			case ActivitiesPackage.STRUCTURED_NODE__OWNED_ACTIVITY_NODES:
+				return ((InternalEList<?>)getOwnedActivityNodes()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -105,8 +105,8 @@ public class StructuredNodeImpl extends ActivityNodeImpl implements
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ActivitiesPackage.STRUCTURED_NODE__OWNED_ACTIVITY_NODE:
-				return getOwnedActivityNode();
+			case ActivitiesPackage.STRUCTURED_NODE__OWNED_ACTIVITY_NODES:
+				return getOwnedActivityNodes();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -119,9 +119,9 @@ public class StructuredNodeImpl extends ActivityNodeImpl implements
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ActivitiesPackage.STRUCTURED_NODE__OWNED_ACTIVITY_NODE:
-				getOwnedActivityNode().clear();
-				getOwnedActivityNode().addAll((Collection<? extends ActivityNode>)newValue);
+			case ActivitiesPackage.STRUCTURED_NODE__OWNED_ACTIVITY_NODES:
+				getOwnedActivityNodes().clear();
+				getOwnedActivityNodes().addAll((Collection<? extends ActivityNode>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -134,8 +134,8 @@ public class StructuredNodeImpl extends ActivityNodeImpl implements
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ActivitiesPackage.STRUCTURED_NODE__OWNED_ACTIVITY_NODE:
-				getOwnedActivityNode().clear();
+			case ActivitiesPackage.STRUCTURED_NODE__OWNED_ACTIVITY_NODES:
+				getOwnedActivityNodes().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -148,8 +148,8 @@ public class StructuredNodeImpl extends ActivityNodeImpl implements
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ActivitiesPackage.STRUCTURED_NODE__OWNED_ACTIVITY_NODE:
-				return ownedActivityNode != null && !ownedActivityNode.isEmpty();
+			case ActivitiesPackage.STRUCTURED_NODE__OWNED_ACTIVITY_NODES:
+				return ownedActivityNodes != null && !ownedActivityNodes.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

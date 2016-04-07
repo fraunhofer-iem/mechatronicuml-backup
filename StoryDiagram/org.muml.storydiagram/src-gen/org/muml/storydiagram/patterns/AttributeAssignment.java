@@ -85,7 +85,7 @@ public interface AttributeAssignment extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Object Variable</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link org.muml.storydiagram.patterns.ObjectVariable#getAttributeAssignment <em>Attribute Assignment</em>}'.
+	 * It is bidirectional and its opposite is '{@link org.muml.storydiagram.patterns.ObjectVariable#getAttributeAssignments <em>Attribute Assignments</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Object Variable</em>' container reference isn't clear,
@@ -95,8 +95,8 @@ public interface AttributeAssignment extends EObject {
 	 * @return the value of the '<em>Object Variable</em>' container reference.
 	 * @see #setObjectVariable(ObjectVariable)
 	 * @see org.muml.storydiagram.patterns.PatternsPackage#getAttributeAssignment_ObjectVariable()
-	 * @see org.muml.storydiagram.patterns.ObjectVariable#getAttributeAssignment
-	 * @model opposite="attributeAssignment" required="true" transient="false" ordered="false"
+	 * @see org.muml.storydiagram.patterns.ObjectVariable#getAttributeAssignments
+	 * @model opposite="attributeAssignments" required="true" transient="false" ordered="false"
 	 * @generated
 	 */
 	ObjectVariable getObjectVariable();

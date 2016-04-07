@@ -176,7 +176,7 @@ public class PropertyBindingImpl extends ExtendableElementImpl implements
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newTemplateBinding != null)
-				msgs = ((InternalEObject)newTemplateBinding).eInverseAdd(this, TemplatesPackage.TEMPLATE_BINDING__PROPERTY_BINDING, TemplateBinding.class, msgs);
+				msgs = ((InternalEObject)newTemplateBinding).eInverseAdd(this, TemplatesPackage.TEMPLATE_BINDING__PROPERTY_BINDINGS, TemplateBinding.class, msgs);
 			msgs = basicSetTemplateBinding(newTemplateBinding, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -225,7 +225,7 @@ public class PropertyBindingImpl extends ExtendableElementImpl implements
 			NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
 			case TemplatesPackage.PROPERTY_BINDING__TEMPLATE_BINDING:
-				return eInternalContainer().eInverseRemove(this, TemplatesPackage.TEMPLATE_BINDING__PROPERTY_BINDING, TemplateBinding.class, msgs);
+				return eInternalContainer().eInverseRemove(this, TemplatesPackage.TEMPLATE_BINDING__PROPERTY_BINDINGS, TemplateBinding.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}

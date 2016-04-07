@@ -52,7 +52,7 @@ public class ActivitiesExpressionsSwitch<T> extends Switch<T> {
 	 * Checks whether this is a switch for the given package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @parameter ePackage the package in question.
+	 * @param ePackage the package in question.
 	 * @return whether this is a switch for the given package.
 	 * @generated
 	 */
@@ -71,21 +71,16 @@ public class ActivitiesExpressionsSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-		case ActivitiesExpressionsPackage.EXCEPTION_VARIABLE_EXPRESSION: {
-			ExceptionVariableExpression exceptionVariableExpression = (ExceptionVariableExpression) theEObject;
-			T result = caseExceptionVariableExpression(exceptionVariableExpression);
-			if (result == null)
-				result = caseExpression(exceptionVariableExpression);
-			if (result == null)
-				result = caseCommentableElement(exceptionVariableExpression);
-			if (result == null)
-				result = caseExtendableElement(exceptionVariableExpression);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		default:
-			return defaultCase(theEObject);
+			case ActivitiesExpressionsPackage.EXCEPTION_VARIABLE_EXPRESSION: {
+				ExceptionVariableExpression exceptionVariableExpression = (ExceptionVariableExpression)theEObject;
+				T result = caseExceptionVariableExpression(exceptionVariableExpression);
+				if (result == null) result = caseExpression(exceptionVariableExpression);
+				if (result == null) result = caseCommentableElement(exceptionVariableExpression);
+				if (result == null) result = caseExtendableElement(exceptionVariableExpression);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			default: return defaultCase(theEObject);
 		}
 	}
 

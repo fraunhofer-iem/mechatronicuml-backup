@@ -29,12 +29,12 @@ public class ActivitiesExpressionsFactoryImpl extends EFactoryImpl implements
 	 */
 	public static ActivitiesExpressionsFactory init() {
 		try {
-			ActivitiesExpressionsFactory theActivitiesExpressionsFactory = (ActivitiesExpressionsFactory) EPackage.Registry.INSTANCE
-					.getEFactory(ActivitiesExpressionsPackage.eNS_URI);
+			ActivitiesExpressionsFactory theActivitiesExpressionsFactory = (ActivitiesExpressionsFactory)EPackage.Registry.INSTANCE.getEFactory(ActivitiesExpressionsPackage.eNS_URI);
 			if (theActivitiesExpressionsFactory != null) {
 				return theActivitiesExpressionsFactory;
 			}
-		} catch (Exception exception) {
+		}
+		catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new ActivitiesExpressionsFactoryImpl();
@@ -58,11 +58,9 @@ public class ActivitiesExpressionsFactoryImpl extends EFactoryImpl implements
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-		case ActivitiesExpressionsPackage.EXCEPTION_VARIABLE_EXPRESSION:
-			return createExceptionVariableExpression();
-		default:
-			throw new IllegalArgumentException("The class '" + eClass.getName()
-					+ "' is not a valid classifier");
+			case ActivitiesExpressionsPackage.EXCEPTION_VARIABLE_EXPRESSION: return createExceptionVariableExpression();
+			default:
+				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 
@@ -82,7 +80,7 @@ public class ActivitiesExpressionsFactoryImpl extends EFactoryImpl implements
 	 * @generated
 	 */
 	public ActivitiesExpressionsPackage getActivitiesExpressionsPackage() {
-		return (ActivitiesExpressionsPackage) getEPackage();
+		return (ActivitiesExpressionsPackage)getEPackage();
 	}
 
 	/**

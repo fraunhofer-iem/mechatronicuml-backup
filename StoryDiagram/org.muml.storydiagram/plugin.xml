@@ -33,7 +33,7 @@
       <!-- @generated storydiagrams -->
       <package
             uri="http://www.muml.org/storydiagram/activities/expressions/1.0.0"
-            class="org.muml.storydiagram.activities.expressions.ExpressionsPackage"
+            class="org.muml.storydiagram.activities.expressions.ActivitiesExpressionsPackage"
             genModel="model/storydiagrams.genmodel"/>
    </extension>
 
@@ -49,7 +49,7 @@
       <!-- @generated storydiagrams -->
       <package
             uri="http://www.muml.org/storydiagram/calls/expressions/1.0.0"
-            class="org.muml.storydiagram.calls.expressions.ExpressionsPackage"
+            class="org.muml.storydiagram.calls.expressions.CallsExpressionsPackage"
             genModel="model/storydiagrams.genmodel"/>
    </extension>
 
@@ -65,7 +65,7 @@
       <!-- @generated storydiagrams -->
       <package
             uri="http://www.muml.org/storydiagram/patterns/expressions/1.0.0"
-            class="org.muml.storydiagram.patterns.expressions.ExpressionsPackage"
+            class="org.muml.storydiagram.patterns.expressions.PatternsExpressionsPackage"
             genModel="model/storydiagrams.genmodel"/>
    </extension>
 

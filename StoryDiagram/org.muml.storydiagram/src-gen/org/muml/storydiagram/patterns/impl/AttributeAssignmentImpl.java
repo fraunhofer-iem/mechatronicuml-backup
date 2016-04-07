@@ -100,7 +100,7 @@ public class AttributeAssignmentImpl extends MinimalEObjectImpl.Container implem
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newObjectVariable != null)
-				msgs = ((InternalEObject)newObjectVariable).eInverseAdd(this, PatternsPackage.OBJECT_VARIABLE__ATTRIBUTE_ASSIGNMENT, ObjectVariable.class, msgs);
+				msgs = ((InternalEObject)newObjectVariable).eInverseAdd(this, PatternsPackage.OBJECT_VARIABLE__ATTRIBUTE_ASSIGNMENTS, ObjectVariable.class, msgs);
 			msgs = basicSetObjectVariable(newObjectVariable, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -225,7 +225,7 @@ public class AttributeAssignmentImpl extends MinimalEObjectImpl.Container implem
 			NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
 			case PatternsPackage.ATTRIBUTE_ASSIGNMENT__OBJECT_VARIABLE:
-				return eInternalContainer().eInverseRemove(this, PatternsPackage.OBJECT_VARIABLE__ATTRIBUTE_ASSIGNMENT, ObjectVariable.class, msgs);
+				return eInternalContainer().eInverseRemove(this, PatternsPackage.OBJECT_VARIABLE__ATTRIBUTE_ASSIGNMENTS, ObjectVariable.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}

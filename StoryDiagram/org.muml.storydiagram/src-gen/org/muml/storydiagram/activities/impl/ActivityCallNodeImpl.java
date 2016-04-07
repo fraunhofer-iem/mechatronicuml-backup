@@ -33,7 +33,7 @@ import org.muml.storydiagram.calls.ParameterBinding;
  * <ul>
  *   <li>{@link org.muml.storydiagram.activities.impl.ActivityCallNodeImpl#getOwnedParameterBindings <em>Owned Parameter Bindings</em>}</li>
  *   <li>{@link org.muml.storydiagram.activities.impl.ActivityCallNodeImpl#getCallee <em>Callee</em>}</li>
- *   <li>{@link org.muml.storydiagram.activities.impl.ActivityCallNodeImpl#getCalledActivity <em>Called Activity</em>}</li>
+ *   <li>{@link org.muml.storydiagram.activities.impl.ActivityCallNodeImpl#getCalledActivities <em>Called Activities</em>}</li>
  * </ul>
  *
  * @generated
@@ -59,14 +59,14 @@ public class ActivityCallNodeImpl extends ActivityNodeImpl implements
 	protected Callable callee;
 
 	/**
-	 * The cached value of the '{@link #getCalledActivity() <em>Called Activity</em>}' reference list.
+	 * The cached value of the '{@link #getCalledActivities() <em>Called Activities</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getCalledActivity()
+	 * @see #getCalledActivities()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Activity> calledActivity;
+	protected EList<Activity> calledActivities;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -136,11 +136,11 @@ public class ActivityCallNodeImpl extends ActivityNodeImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Activity> getCalledActivity() {
-		if (calledActivity == null) {
-			calledActivity = new EObjectResolvingEList<Activity>(Activity.class, this, ActivitiesPackage.ACTIVITY_CALL_NODE__CALLED_ACTIVITY);
+	public EList<Activity> getCalledActivities() {
+		if (calledActivities == null) {
+			calledActivities = new EObjectResolvingEList<Activity>(Activity.class, this, ActivitiesPackage.ACTIVITY_CALL_NODE__CALLED_ACTIVITIES);
 		}
-		return calledActivity;
+		return calledActivities;
 	}
 
 	/**
@@ -184,8 +184,8 @@ public class ActivityCallNodeImpl extends ActivityNodeImpl implements
 			case ActivitiesPackage.ACTIVITY_CALL_NODE__CALLEE:
 				if (resolve) return getCallee();
 				return basicGetCallee();
-			case ActivitiesPackage.ACTIVITY_CALL_NODE__CALLED_ACTIVITY:
-				return getCalledActivity();
+			case ActivitiesPackage.ACTIVITY_CALL_NODE__CALLED_ACTIVITIES:
+				return getCalledActivities();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -205,9 +205,9 @@ public class ActivityCallNodeImpl extends ActivityNodeImpl implements
 			case ActivitiesPackage.ACTIVITY_CALL_NODE__CALLEE:
 				setCallee((Callable)newValue);
 				return;
-			case ActivitiesPackage.ACTIVITY_CALL_NODE__CALLED_ACTIVITY:
-				getCalledActivity().clear();
-				getCalledActivity().addAll((Collection<? extends Activity>)newValue);
+			case ActivitiesPackage.ACTIVITY_CALL_NODE__CALLED_ACTIVITIES:
+				getCalledActivities().clear();
+				getCalledActivities().addAll((Collection<? extends Activity>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -226,8 +226,8 @@ public class ActivityCallNodeImpl extends ActivityNodeImpl implements
 			case ActivitiesPackage.ACTIVITY_CALL_NODE__CALLEE:
 				setCallee((Callable)null);
 				return;
-			case ActivitiesPackage.ACTIVITY_CALL_NODE__CALLED_ACTIVITY:
-				getCalledActivity().clear();
+			case ActivitiesPackage.ACTIVITY_CALL_NODE__CALLED_ACTIVITIES:
+				getCalledActivities().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -244,8 +244,8 @@ public class ActivityCallNodeImpl extends ActivityNodeImpl implements
 				return ownedParameterBindings != null && !ownedParameterBindings.isEmpty();
 			case ActivitiesPackage.ACTIVITY_CALL_NODE__CALLEE:
 				return callee != null;
-			case ActivitiesPackage.ACTIVITY_CALL_NODE__CALLED_ACTIVITY:
-				return calledActivity != null && !calledActivity.isEmpty();
+			case ActivitiesPackage.ACTIVITY_CALL_NODE__CALLED_ACTIVITIES:
+				return calledActivities != null && !calledActivities.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

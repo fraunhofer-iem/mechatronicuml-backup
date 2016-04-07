@@ -23,8 +23,7 @@ public interface PatternsExpressionsFactory extends EFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	PatternsExpressionsFactory eINSTANCE = org.muml.storydiagram.patterns.expressions.impl.PatternsExpressionsFactoryImpl
-			.init();
+	PatternsExpressionsFactory eINSTANCE = org.muml.storydiagram.patterns.expressions.impl.PatternsExpressionsFactoryImpl.init();
 
 	/**
 	 * Returns a new object of class '<em>Attribute Value Expression</em>'.

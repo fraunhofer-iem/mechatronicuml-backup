@@ -27,8 +27,8 @@ import org.muml.storydiagram.Variable;
  *   <li>{@link org.muml.storydiagram.patterns.AbstractVariable#getPattern <em>Pattern</em>}</li>
  *   <li>{@link org.muml.storydiagram.patterns.AbstractVariable#getBindingState <em>Binding State</em>}</li>
  *   <li>{@link org.muml.storydiagram.patterns.AbstractVariable#getBindingExpression <em>Binding Expression</em>}</li>
- *   <li>{@link org.muml.storydiagram.patterns.AbstractVariable#getConstraint <em>Constraint</em>}</li>
- *   <li>{@link org.muml.storydiagram.patterns.AbstractVariable#getIncomingLink <em>Incoming Link</em>}</li>
+ *   <li>{@link org.muml.storydiagram.patterns.AbstractVariable#getConstraints <em>Constraints</em>}</li>
+ *   <li>{@link org.muml.storydiagram.patterns.AbstractVariable#getIncomingLinks <em>Incoming Links</em>}</li>
  * </ul>
  *
  * @see org.muml.storydiagram.patterns.PatternsPackage#getAbstractVariable()
@@ -38,7 +38,7 @@ import org.muml.storydiagram.Variable;
 public interface AbstractVariable extends Variable, NamedElement {
 	/**
 	 * Returns the value of the '<em><b>Pattern</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link org.muml.storydiagram.patterns.StoryPattern#getVariable <em>Variable</em>}'.
+	 * It is bidirectional and its opposite is '{@link org.muml.storydiagram.patterns.StoryPattern#getVariables <em>Variables</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Pattern</em>' container reference isn't clear,
@@ -48,8 +48,8 @@ public interface AbstractVariable extends Variable, NamedElement {
 	 * @return the value of the '<em>Pattern</em>' container reference.
 	 * @see #setPattern(StoryPattern)
 	 * @see org.muml.storydiagram.patterns.PatternsPackage#getAbstractVariable_Pattern()
-	 * @see org.muml.storydiagram.patterns.StoryPattern#getVariable
-	 * @model opposite="variable" required="true" transient="false" ordered="false"
+	 * @see org.muml.storydiagram.patterns.StoryPattern#getVariables
+	 * @model opposite="variables" required="true" transient="false" ordered="false"
 	 * @generated
 	 */
 	StoryPattern getPattern();
@@ -119,7 +119,7 @@ public interface AbstractVariable extends Variable, NamedElement {
 	void setBindingExpression(Expression value);
 
 	/**
-	 * Returns the value of the '<em><b>Constraint</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Constraints</b></em>' containment reference list.
 	 * The list contents are of type {@link org.muml.storydiagram.patterns.Constraint}.
 	 * It is bidirectional and its opposite is '{@link org.muml.storydiagram.patterns.Constraint#getObjectVariable <em>Object Variable</em>}'.
 	 * <!-- begin-user-doc -->
@@ -127,30 +127,30 @@ public interface AbstractVariable extends Variable, NamedElement {
 	 * <!-- begin-model-doc -->
 	 * All constraints which are defined for this variable. For a successful matching, all constraints for this variable must evaluate to true.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Constraint</em>' containment reference list.
-	 * @see org.muml.storydiagram.patterns.PatternsPackage#getAbstractVariable_Constraint()
+	 * @return the value of the '<em>Constraints</em>' containment reference list.
+	 * @see org.muml.storydiagram.patterns.PatternsPackage#getAbstractVariable_Constraints()
 	 * @see org.muml.storydiagram.patterns.Constraint#getObjectVariable
 	 * @model opposite="objectVariable" containment="true"
 	 * @generated
 	 */
-	EList<Constraint> getConstraint();
+	EList<Constraint> getConstraints();
 
 	/**
-	 * Returns the value of the '<em><b>Incoming Link</b></em>' reference list.
+	 * Returns the value of the '<em><b>Incoming Links</b></em>' reference list.
 	 * The list contents are of type {@link org.muml.storydiagram.patterns.AbstractLinkVariable}.
 	 * It is bidirectional and its opposite is '{@link org.muml.storydiagram.patterns.AbstractLinkVariable#getTarget <em>Target</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Incoming Link</em>' reference list isn't clear,
+	 * If the meaning of the '<em>Incoming Links</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Incoming Link</em>' reference list.
-	 * @see org.muml.storydiagram.patterns.PatternsPackage#getAbstractVariable_IncomingLink()
+	 * @return the value of the '<em>Incoming Links</em>' reference list.
+	 * @see org.muml.storydiagram.patterns.PatternsPackage#getAbstractVariable_IncomingLinks()
 	 * @see org.muml.storydiagram.patterns.AbstractLinkVariable#getTarget
 	 * @model opposite="target" ordered="false"
 	 * @generated
 	 */
-	EList<AbstractLinkVariable> getIncomingLink();
+	EList<AbstractLinkVariable> getIncomingLinks();
 
 } // AbstractVariable

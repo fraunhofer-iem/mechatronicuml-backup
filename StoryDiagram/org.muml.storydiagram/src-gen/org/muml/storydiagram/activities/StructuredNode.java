@@ -21,7 +21,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.muml.storydiagram.activities.StructuredNode#getOwnedActivityNode <em>Owned Activity Node</em>}</li>
+ *   <li>{@link org.muml.storydiagram.activities.StructuredNode#getOwnedActivityNodes <em>Owned Activity Nodes</em>}</li>
  * </ul>
  *
  * @see org.muml.storydiagram.activities.ActivitiesPackage#getStructuredNode()
@@ -30,7 +30,7 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface StructuredNode extends ActivityNode {
 	/**
-	 * Returns the value of the '<em><b>Owned Activity Node</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Owned Activity Nodes</b></em>' containment reference list.
 	 * The list contents are of type {@link org.muml.storydiagram.activities.ActivityNode}.
 	 * It is bidirectional and its opposite is '{@link org.muml.storydiagram.activities.ActivityNode#getOwningActivityNode <em>Owning Activity Node</em>}'.
 	 * <!-- begin-user-doc -->
@@ -38,12 +38,12 @@ public interface StructuredNode extends ActivityNode {
 	 * <!-- begin-model-doc -->
 	 * All subnodes which are contained in this structured node.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Owned Activity Node</em>' containment reference list.
-	 * @see org.muml.storydiagram.activities.ActivitiesPackage#getStructuredNode_OwnedActivityNode()
+	 * @return the value of the '<em>Owned Activity Nodes</em>' containment reference list.
+	 * @see org.muml.storydiagram.activities.ActivitiesPackage#getStructuredNode_OwnedActivityNodes()
 	 * @see org.muml.storydiagram.activities.ActivityNode#getOwningActivityNode
 	 * @model opposite="owningActivityNode" containment="true" ordered="false"
 	 * @generated
 	 */
-	EList<ActivityNode> getOwnedActivityNode();
+	EList<ActivityNode> getOwnedActivityNodes();
 
 } // StructuredNode

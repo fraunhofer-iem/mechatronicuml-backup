@@ -25,7 +25,7 @@ import org.muml.storydiagram.calls.ParameterExtension;
  *   <li>{@link org.muml.storydiagram.calls.expressions.ParameterExpression#getParameter <em>Parameter</em>}</li>
  * </ul>
  *
- * @see org.muml.storydiagram.calls.expressions.ExpressionsPackage#getParameterExpression()
+ * @see org.muml.storydiagram.calls.expressions.CallsExpressionsPackage#getParameterExpression()
  * @model
  * @generated
  */
@@ -40,7 +40,7 @@ public interface ParameterExpression extends Expression {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Parameter</em>' reference.
 	 * @see #setParameter(ParameterExtension)
-	 * @see org.muml.storydiagram.calls.expressions.ExpressionsPackage#getParameterExpression_Parameter()
+	 * @see org.muml.storydiagram.calls.expressions.CallsExpressionsPackage#getParameterExpression_Parameter()
 	 * @model ordered="false"
 	 * @generated
 	 */

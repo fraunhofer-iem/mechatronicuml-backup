@@ -39,8 +39,8 @@ import org.muml.storydiagram.patterns.StoryPattern;
  *   <li>{@link org.muml.storydiagram.patterns.impl.AbstractVariableImpl#getPattern <em>Pattern</em>}</li>
  *   <li>{@link org.muml.storydiagram.patterns.impl.AbstractVariableImpl#getBindingState <em>Binding State</em>}</li>
  *   <li>{@link org.muml.storydiagram.patterns.impl.AbstractVariableImpl#getBindingExpression <em>Binding Expression</em>}</li>
- *   <li>{@link org.muml.storydiagram.patterns.impl.AbstractVariableImpl#getConstraint <em>Constraint</em>}</li>
- *   <li>{@link org.muml.storydiagram.patterns.impl.AbstractVariableImpl#getIncomingLink <em>Incoming Link</em>}</li>
+ *   <li>{@link org.muml.storydiagram.patterns.impl.AbstractVariableImpl#getConstraints <em>Constraints</em>}</li>
+ *   <li>{@link org.muml.storydiagram.patterns.impl.AbstractVariableImpl#getIncomingLinks <em>Incoming Links</em>}</li>
  * </ul>
  *
  * @generated
@@ -93,24 +93,24 @@ public abstract class AbstractVariableImpl extends VariableImpl implements
 	protected Expression bindingExpression;
 
 	/**
-	 * The cached value of the '{@link #getConstraint() <em>Constraint</em>}' containment reference list.
+	 * The cached value of the '{@link #getConstraints() <em>Constraints</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getConstraint()
+	 * @see #getConstraints()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Constraint> constraint;
+	protected EList<Constraint> constraints;
 
 	/**
-	 * The cached value of the '{@link #getIncomingLink() <em>Incoming Link</em>}' reference list.
+	 * The cached value of the '{@link #getIncomingLinks() <em>Incoming Links</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getIncomingLink()
+	 * @see #getIncomingLinks()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<AbstractLinkVariable> incomingLink;
+	protected EList<AbstractLinkVariable> incomingLinks;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -179,7 +179,7 @@ public abstract class AbstractVariableImpl extends VariableImpl implements
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newPattern != null)
-				msgs = ((InternalEObject)newPattern).eInverseAdd(this, PatternsPackage.STORY_PATTERN__VARIABLE, StoryPattern.class, msgs);
+				msgs = ((InternalEObject)newPattern).eInverseAdd(this, PatternsPackage.STORY_PATTERN__VARIABLES, StoryPattern.class, msgs);
 			msgs = basicSetPattern(newPattern, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -252,11 +252,11 @@ public abstract class AbstractVariableImpl extends VariableImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Constraint> getConstraint() {
-		if (constraint == null) {
-			constraint = new EObjectContainmentWithInverseEList<Constraint>(Constraint.class, this, PatternsPackage.ABSTRACT_VARIABLE__CONSTRAINT, PatternsPackage.CONSTRAINT__OBJECT_VARIABLE);
+	public EList<Constraint> getConstraints() {
+		if (constraints == null) {
+			constraints = new EObjectContainmentWithInverseEList<Constraint>(Constraint.class, this, PatternsPackage.ABSTRACT_VARIABLE__CONSTRAINTS, PatternsPackage.CONSTRAINT__OBJECT_VARIABLE);
 		}
-		return constraint;
+		return constraints;
 	}
 
 	/**
@@ -264,11 +264,11 @@ public abstract class AbstractVariableImpl extends VariableImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<AbstractLinkVariable> getIncomingLink() {
-		if (incomingLink == null) {
-			incomingLink = new EObjectWithInverseResolvingEList<AbstractLinkVariable>(AbstractLinkVariable.class, this, PatternsPackage.ABSTRACT_VARIABLE__INCOMING_LINK, PatternsPackage.ABSTRACT_LINK_VARIABLE__TARGET);
+	public EList<AbstractLinkVariable> getIncomingLinks() {
+		if (incomingLinks == null) {
+			incomingLinks = new EObjectWithInverseResolvingEList<AbstractLinkVariable>(AbstractLinkVariable.class, this, PatternsPackage.ABSTRACT_VARIABLE__INCOMING_LINKS, PatternsPackage.ABSTRACT_LINK_VARIABLE__TARGET);
 		}
-		return incomingLink;
+		return incomingLinks;
 	}
 
 	/**
@@ -284,10 +284,10 @@ public abstract class AbstractVariableImpl extends VariableImpl implements
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetPattern((StoryPattern)otherEnd, msgs);
-			case PatternsPackage.ABSTRACT_VARIABLE__CONSTRAINT:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getConstraint()).basicAdd(otherEnd, msgs);
-			case PatternsPackage.ABSTRACT_VARIABLE__INCOMING_LINK:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getIncomingLink()).basicAdd(otherEnd, msgs);
+			case PatternsPackage.ABSTRACT_VARIABLE__CONSTRAINTS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getConstraints()).basicAdd(otherEnd, msgs);
+			case PatternsPackage.ABSTRACT_VARIABLE__INCOMING_LINKS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getIncomingLinks()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -304,10 +304,10 @@ public abstract class AbstractVariableImpl extends VariableImpl implements
 				return basicSetPattern(null, msgs);
 			case PatternsPackage.ABSTRACT_VARIABLE__BINDING_EXPRESSION:
 				return basicSetBindingExpression(null, msgs);
-			case PatternsPackage.ABSTRACT_VARIABLE__CONSTRAINT:
-				return ((InternalEList<?>)getConstraint()).basicRemove(otherEnd, msgs);
-			case PatternsPackage.ABSTRACT_VARIABLE__INCOMING_LINK:
-				return ((InternalEList<?>)getIncomingLink()).basicRemove(otherEnd, msgs);
+			case PatternsPackage.ABSTRACT_VARIABLE__CONSTRAINTS:
+				return ((InternalEList<?>)getConstraints()).basicRemove(otherEnd, msgs);
+			case PatternsPackage.ABSTRACT_VARIABLE__INCOMING_LINKS:
+				return ((InternalEList<?>)getIncomingLinks()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -321,7 +321,7 @@ public abstract class AbstractVariableImpl extends VariableImpl implements
 			NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
 			case PatternsPackage.ABSTRACT_VARIABLE__PATTERN:
-				return eInternalContainer().eInverseRemove(this, PatternsPackage.STORY_PATTERN__VARIABLE, StoryPattern.class, msgs);
+				return eInternalContainer().eInverseRemove(this, PatternsPackage.STORY_PATTERN__VARIABLES, StoryPattern.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -341,10 +341,10 @@ public abstract class AbstractVariableImpl extends VariableImpl implements
 				return getBindingState();
 			case PatternsPackage.ABSTRACT_VARIABLE__BINDING_EXPRESSION:
 				return getBindingExpression();
-			case PatternsPackage.ABSTRACT_VARIABLE__CONSTRAINT:
-				return getConstraint();
-			case PatternsPackage.ABSTRACT_VARIABLE__INCOMING_LINK:
-				return getIncomingLink();
+			case PatternsPackage.ABSTRACT_VARIABLE__CONSTRAINTS:
+				return getConstraints();
+			case PatternsPackage.ABSTRACT_VARIABLE__INCOMING_LINKS:
+				return getIncomingLinks();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -369,13 +369,13 @@ public abstract class AbstractVariableImpl extends VariableImpl implements
 			case PatternsPackage.ABSTRACT_VARIABLE__BINDING_EXPRESSION:
 				setBindingExpression((Expression)newValue);
 				return;
-			case PatternsPackage.ABSTRACT_VARIABLE__CONSTRAINT:
-				getConstraint().clear();
-				getConstraint().addAll((Collection<? extends Constraint>)newValue);
+			case PatternsPackage.ABSTRACT_VARIABLE__CONSTRAINTS:
+				getConstraints().clear();
+				getConstraints().addAll((Collection<? extends Constraint>)newValue);
 				return;
-			case PatternsPackage.ABSTRACT_VARIABLE__INCOMING_LINK:
-				getIncomingLink().clear();
-				getIncomingLink().addAll((Collection<? extends AbstractLinkVariable>)newValue);
+			case PatternsPackage.ABSTRACT_VARIABLE__INCOMING_LINKS:
+				getIncomingLinks().clear();
+				getIncomingLinks().addAll((Collection<? extends AbstractLinkVariable>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -400,11 +400,11 @@ public abstract class AbstractVariableImpl extends VariableImpl implements
 			case PatternsPackage.ABSTRACT_VARIABLE__BINDING_EXPRESSION:
 				setBindingExpression((Expression)null);
 				return;
-			case PatternsPackage.ABSTRACT_VARIABLE__CONSTRAINT:
-				getConstraint().clear();
+			case PatternsPackage.ABSTRACT_VARIABLE__CONSTRAINTS:
+				getConstraints().clear();
 				return;
-			case PatternsPackage.ABSTRACT_VARIABLE__INCOMING_LINK:
-				getIncomingLink().clear();
+			case PatternsPackage.ABSTRACT_VARIABLE__INCOMING_LINKS:
+				getIncomingLinks().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -425,10 +425,10 @@ public abstract class AbstractVariableImpl extends VariableImpl implements
 				return bindingState != BINDING_STATE_EDEFAULT;
 			case PatternsPackage.ABSTRACT_VARIABLE__BINDING_EXPRESSION:
 				return bindingExpression != null;
-			case PatternsPackage.ABSTRACT_VARIABLE__CONSTRAINT:
-				return constraint != null && !constraint.isEmpty();
-			case PatternsPackage.ABSTRACT_VARIABLE__INCOMING_LINK:
-				return incomingLink != null && !incomingLink.isEmpty();
+			case PatternsPackage.ABSTRACT_VARIABLE__CONSTRAINTS:
+				return constraints != null && !constraints.isEmpty();
+			case PatternsPackage.ABSTRACT_VARIABLE__INCOMING_LINKS:
+				return incomingLinks != null && !incomingLinks.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

@@ -41,7 +41,7 @@ public interface PatternsExpressionsPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.storydriven.org/storydiagrams/patterns/expressions/0.2.1";
+	String eNS_URI = "http://www.muml.org/storydiagram/patterns/expressions/1.0.0";
 
 	/**
 	 * The package namespace name.
@@ -57,8 +57,7 @@ public interface PatternsExpressionsPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	PatternsExpressionsPackage eINSTANCE = org.muml.storydiagram.patterns.expressions.impl.PatternsExpressionsPackageImpl
-			.init();
+	PatternsExpressionsPackage eINSTANCE = org.muml.storydiagram.patterns.expressions.impl.PatternsExpressionsPackageImpl.init();
 
 	/**
 	 * The meta object id for the '{@link org.muml.storydiagram.patterns.expressions.impl.AttributeValueExpressionImpl <em>Attribute Value Expression</em>}' class.
@@ -71,22 +70,22 @@ public interface PatternsExpressionsPackage extends EPackage {
 	int ATTRIBUTE_VALUE_EXPRESSION = 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE_VALUE_EXPRESSION__ANNOTATION = ExpressionsPackage.EXPRESSION__ANNOTATION;
+	int ATTRIBUTE_VALUE_EXPRESSION__ANNOTATIONS = ExpressionsPackage.EXPRESSION__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE_VALUE_EXPRESSION__EXTENSION = ExpressionsPackage.EXPRESSION__EXTENSION;
+	int ATTRIBUTE_VALUE_EXPRESSION__EXTENSIONS = ExpressionsPackage.EXPRESSION__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -315,22 +314,22 @@ public interface PatternsExpressionsPackage extends EPackage {
 	int OBJECT_VARIABLE_EXPRESSION = 1;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OBJECT_VARIABLE_EXPRESSION__ANNOTATION = ExpressionsPackage.EXPRESSION__ANNOTATION;
+	int OBJECT_VARIABLE_EXPRESSION__ANNOTATIONS = ExpressionsPackage.EXPRESSION__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OBJECT_VARIABLE_EXPRESSION__EXTENSION = ExpressionsPackage.EXPRESSION__EXTENSION;
+	int OBJECT_VARIABLE_EXPRESSION__EXTENSIONS = ExpressionsPackage.EXPRESSION__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -550,22 +549,22 @@ public interface PatternsExpressionsPackage extends EPackage {
 	int COLLECTION_SIZE_EXPRESSION = 2;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COLLECTION_SIZE_EXPRESSION__ANNOTATION = ExpressionsPackage.EXPRESSION__ANNOTATION;
+	int COLLECTION_SIZE_EXPRESSION__ANNOTATIONS = ExpressionsPackage.EXPRESSION__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COLLECTION_SIZE_EXPRESSION__EXTENSION = ExpressionsPackage.EXPRESSION__EXTENSION;
+	int COLLECTION_SIZE_EXPRESSION__EXTENSIONS = ExpressionsPackage.EXPRESSION__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -785,22 +784,22 @@ public interface PatternsExpressionsPackage extends EPackage {
 	int PRIMITIVE_VARIABLE_EXPRESSION = 3;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PRIMITIVE_VARIABLE_EXPRESSION__ANNOTATION = ExpressionsPackage.EXPRESSION__ANNOTATION;
+	int PRIMITIVE_VARIABLE_EXPRESSION__ANNOTATIONS = ExpressionsPackage.EXPRESSION__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PRIMITIVE_VARIABLE_EXPRESSION__EXTENSION = ExpressionsPackage.EXPRESSION__EXTENSION;
+	int PRIMITIVE_VARIABLE_EXPRESSION__EXTENSIONS = ExpressionsPackage.EXPRESSION__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -1134,8 +1133,7 @@ public interface PatternsExpressionsPackage extends EPackage {
 		 * @see org.muml.storydiagram.patterns.expressions.impl.PatternsExpressionsPackageImpl#getAttributeValueExpression()
 		 * @generated
 		 */
-		EClass ATTRIBUTE_VALUE_EXPRESSION = eINSTANCE
-				.getAttributeValueExpression();
+		EClass ATTRIBUTE_VALUE_EXPRESSION = eINSTANCE.getAttributeValueExpression();
 
 		/**
 		 * The meta object literal for the '<em><b>Object</b></em>' reference feature.
@@ -1143,8 +1141,7 @@ public interface PatternsExpressionsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ATTRIBUTE_VALUE_EXPRESSION__OBJECT = eINSTANCE
-				.getAttributeValueExpression_Object();
+		EReference ATTRIBUTE_VALUE_EXPRESSION__OBJECT = eINSTANCE.getAttributeValueExpression_Object();
 
 		/**
 		 * The meta object literal for the '<em><b>Attribute</b></em>' reference feature.
@@ -1152,8 +1149,7 @@ public interface PatternsExpressionsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ATTRIBUTE_VALUE_EXPRESSION__ATTRIBUTE = eINSTANCE
-				.getAttributeValueExpression_Attribute();
+		EReference ATTRIBUTE_VALUE_EXPRESSION__ATTRIBUTE = eINSTANCE.getAttributeValueExpression_Attribute();
 
 		/**
 		 * The meta object literal for the '{@link org.muml.storydiagram.patterns.expressions.impl.ObjectVariableExpressionImpl <em>Object Variable Expression</em>}' class.
@@ -1163,8 +1159,7 @@ public interface PatternsExpressionsPackage extends EPackage {
 		 * @see org.muml.storydiagram.patterns.expressions.impl.PatternsExpressionsPackageImpl#getObjectVariableExpression()
 		 * @generated
 		 */
-		EClass OBJECT_VARIABLE_EXPRESSION = eINSTANCE
-				.getObjectVariableExpression();
+		EClass OBJECT_VARIABLE_EXPRESSION = eINSTANCE.getObjectVariableExpression();
 
 		/**
 		 * The meta object literal for the '<em><b>Object</b></em>' reference feature.
@@ -1172,8 +1167,7 @@ public interface PatternsExpressionsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference OBJECT_VARIABLE_EXPRESSION__OBJECT = eINSTANCE
-				.getObjectVariableExpression_Object();
+		EReference OBJECT_VARIABLE_EXPRESSION__OBJECT = eINSTANCE.getObjectVariableExpression_Object();
 
 		/**
 		 * The meta object literal for the '{@link org.muml.storydiagram.patterns.expressions.impl.CollectionSizeExpressionImpl <em>Collection Size Expression</em>}' class.
@@ -1183,8 +1177,7 @@ public interface PatternsExpressionsPackage extends EPackage {
 		 * @see org.muml.storydiagram.patterns.expressions.impl.PatternsExpressionsPackageImpl#getCollectionSizeExpression()
 		 * @generated
 		 */
-		EClass COLLECTION_SIZE_EXPRESSION = eINSTANCE
-				.getCollectionSizeExpression();
+		EClass COLLECTION_SIZE_EXPRESSION = eINSTANCE.getCollectionSizeExpression();
 
 		/**
 		 * The meta object literal for the '<em><b>Set</b></em>' reference feature.
@@ -1192,8 +1185,7 @@ public interface PatternsExpressionsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference COLLECTION_SIZE_EXPRESSION__SET = eINSTANCE
-				.getCollectionSizeExpression_Set();
+		EReference COLLECTION_SIZE_EXPRESSION__SET = eINSTANCE.getCollectionSizeExpression_Set();
 
 		/**
 		 * The meta object literal for the '{@link org.muml.storydiagram.patterns.expressions.impl.PrimitiveVariableExpressionImpl <em>Primitive Variable Expression</em>}' class.
@@ -1203,8 +1195,7 @@ public interface PatternsExpressionsPackage extends EPackage {
 		 * @see org.muml.storydiagram.patterns.expressions.impl.PatternsExpressionsPackageImpl#getPrimitiveVariableExpression()
 		 * @generated
 		 */
-		EClass PRIMITIVE_VARIABLE_EXPRESSION = eINSTANCE
-				.getPrimitiveVariableExpression();
+		EClass PRIMITIVE_VARIABLE_EXPRESSION = eINSTANCE.getPrimitiveVariableExpression();
 
 		/**
 		 * The meta object literal for the '<em><b>Primitive Variable</b></em>' reference feature.
@@ -1212,8 +1203,7 @@ public interface PatternsExpressionsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PRIMITIVE_VARIABLE_EXPRESSION__PRIMITIVE_VARIABLE = eINSTANCE
-				.getPrimitiveVariableExpression_PrimitiveVariable();
+		EReference PRIMITIVE_VARIABLE_EXPRESSION__PRIMITIVE_VARIABLE = eINSTANCE.getPrimitiveVariableExpression_PrimitiveVariable();
 
 	}
 

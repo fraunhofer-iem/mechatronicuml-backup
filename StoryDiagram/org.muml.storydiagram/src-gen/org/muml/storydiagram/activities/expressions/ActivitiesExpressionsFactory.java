@@ -23,8 +23,7 @@ public interface ActivitiesExpressionsFactory extends EFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	ActivitiesExpressionsFactory eINSTANCE = org.muml.storydiagram.activities.expressions.impl.ActivitiesExpressionsFactoryImpl
-			.init();
+	ActivitiesExpressionsFactory eINSTANCE = org.muml.storydiagram.activities.expressions.impl.ActivitiesExpressionsFactoryImpl.init();
 
 	/**
 	 * Returns a new object of class '<em>Exception Variable Expression</em>'.

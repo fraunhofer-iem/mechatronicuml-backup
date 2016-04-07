@@ -24,9 +24,9 @@ import org.muml.storydiagram.calls.Callable;
  * </p>
  * <ul>
  *   <li>{@link org.muml.storydiagram.activities.Activity#getOwningOperation <em>Owning Operation</em>}</li>
- *   <li>{@link org.muml.storydiagram.activities.Activity#getOwnedActivityEdge <em>Owned Activity Edge</em>}</li>
+ *   <li>{@link org.muml.storydiagram.activities.Activity#getOwnedActivityEdges <em>Owned Activity Edges</em>}</li>
  *   <li>{@link org.muml.storydiagram.activities.Activity#getPrecondition <em>Precondition</em>}</li>
- *   <li>{@link org.muml.storydiagram.activities.Activity#getOwnedActivityNode <em>Owned Activity Node</em>}</li>
+ *   <li>{@link org.muml.storydiagram.activities.Activity#getOwnedActivityNodes <em>Owned Activity Nodes</em>}</li>
  * </ul>
  *
  * @see org.muml.storydiagram.activities.ActivitiesPackage#getActivity()
@@ -63,7 +63,7 @@ public interface Activity extends Callable, NamedElement {
 	void setOwningOperation(OperationExtension value);
 
 	/**
-	 * Returns the value of the '<em><b>Owned Activity Edge</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Owned Activity Edges</b></em>' containment reference list.
 	 * The list contents are of type {@link org.muml.storydiagram.activities.ActivityEdge}.
 	 * It is bidirectional and its opposite is '{@link org.muml.storydiagram.activities.ActivityEdge#getOwningActivity <em>Owning Activity</em>}'.
 	 * <!-- begin-user-doc -->
@@ -71,13 +71,13 @@ public interface Activity extends Callable, NamedElement {
 	 * <!-- begin-model-doc -->
 	 * All ActivityEdges that are contained in this activity.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Owned Activity Edge</em>' containment reference list.
-	 * @see org.muml.storydiagram.activities.ActivitiesPackage#getActivity_OwnedActivityEdge()
+	 * @return the value of the '<em>Owned Activity Edges</em>' containment reference list.
+	 * @see org.muml.storydiagram.activities.ActivitiesPackage#getActivity_OwnedActivityEdges()
 	 * @see org.muml.storydiagram.activities.ActivityEdge#getOwningActivity
 	 * @model opposite="owningActivity" containment="true"
 	 * @generated
 	 */
-	EList<ActivityEdge> getOwnedActivityEdge();
+	EList<ActivityEdge> getOwnedActivityEdges();
 
 	/**
 	 * Returns the value of the '<em><b>Precondition</b></em>' reference.
@@ -105,7 +105,7 @@ public interface Activity extends Callable, NamedElement {
 	void setPrecondition(MatchingStoryNode value);
 
 	/**
-	 * Returns the value of the '<em><b>Owned Activity Node</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Owned Activity Nodes</b></em>' containment reference list.
 	 * The list contents are of type {@link org.muml.storydiagram.activities.ActivityNode}.
 	 * It is bidirectional and its opposite is '{@link org.muml.storydiagram.activities.ActivityNode#getOwningActivity <em>Owning Activity</em>}'.
 	 * <!-- begin-user-doc -->
@@ -113,12 +113,12 @@ public interface Activity extends Callable, NamedElement {
 	 * <!-- begin-model-doc -->
 	 * The activity contains all activity nodes via this reference.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Owned Activity Node</em>' containment reference list.
-	 * @see org.muml.storydiagram.activities.ActivitiesPackage#getActivity_OwnedActivityNode()
+	 * @return the value of the '<em>Owned Activity Nodes</em>' containment reference list.
+	 * @see org.muml.storydiagram.activities.ActivitiesPackage#getActivity_OwnedActivityNodes()
 	 * @see org.muml.storydiagram.activities.ActivityNode#getOwningActivity
 	 * @model opposite="owningActivity" containment="true" ordered="false"
 	 * @generated
 	 */
-	EList<ActivityNode> getOwnedActivityNode();
+	EList<ActivityNode> getOwnedActivityNodes();
 
 } // Activity

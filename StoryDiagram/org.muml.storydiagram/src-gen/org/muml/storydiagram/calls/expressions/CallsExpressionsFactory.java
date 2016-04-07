@@ -23,8 +23,7 @@ public interface CallsExpressionsFactory extends EFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	CallsExpressionsFactory eINSTANCE = org.muml.storydiagram.calls.expressions.impl.CallsExpressionsFactoryImpl
-			.init();
+	CallsExpressionsFactory eINSTANCE = org.muml.storydiagram.calls.expressions.impl.CallsExpressionsFactoryImpl.init();
 
 	/**
 	 * Returns a new object of class '<em>Method Call Expression</em>'.
