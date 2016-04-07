@@ -70,7 +70,7 @@ public abstract class PatternNodeEditor extends org.muml.ape.runtime.editors.Cla
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorType_property_tab_generalTab;
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorType_property_tab_generalTab_Editor() {
 		if (this.editorType_property_tab_generalTab == null) {
-			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.storydiagram.verification.sdd.sdd.SDDPackage.eINSTANCE
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.storydiagram.verification.sdd.SDDPackage.eINSTANCE
 					.getPatternNode_Type();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.OptionPropertyEditor(
 					adapterFactory, feature);
@@ -83,7 +83,7 @@ public abstract class PatternNodeEditor extends org.muml.ape.runtime.editors.Cla
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorOutgoingEdges_property_tab_generalTab;
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorOutgoingEdges_property_tab_generalTab_Editor() {
 		if (this.editorOutgoingEdges_property_tab_generalTab == null) {
-			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.storydiagram.verification.sdd.sdd.SDDPackage.eINSTANCE
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.storydiagram.verification.sdd.SDDPackage.eINSTANCE
 					.getNode_OutgoingEdges();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.ListPropertyEditor(
 					adapterFactory, feature);
@@ -96,7 +96,7 @@ public abstract class PatternNodeEditor extends org.muml.ape.runtime.editors.Cla
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorIncomingEdges_property_tab_generalTab;
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorIncomingEdges_property_tab_generalTab_Editor() {
 		if (this.editorIncomingEdges_property_tab_generalTab == null) {
-			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.storydiagram.verification.sdd.sdd.SDDPackage.eINSTANCE
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.storydiagram.verification.sdd.SDDPackage.eINSTANCE
 					.getNode_IncomingEdges();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.ListPropertyEditor(
 					adapterFactory, feature);

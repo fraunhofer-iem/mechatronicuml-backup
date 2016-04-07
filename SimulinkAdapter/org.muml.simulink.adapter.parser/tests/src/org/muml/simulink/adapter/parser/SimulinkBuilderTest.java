@@ -1,6 +1,11 @@
 package org.muml.simulink.adapter.parser;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -38,12 +43,10 @@ import org.muml.simulink.TriggerEvent;
 import org.muml.simulink.TriggerPort;
 import org.muml.simulink.UnitDelay;
 import org.muml.simulink.ZeroOrderHold;
-import org.muml.simulink.adapter.parser.SimulinkBuilder;
-import org.muml.simulink.adapter.parser.SimulinkBuilderException;
 import org.muml.simulink.stateflow.Chart;
 import org.muml.simulink.stateflow.Data;
+import org.muml.simulink.test.TestBase;
 
-import de.uni_paderborn.fujaba.simulink.model.test.TestBase;
 import edu.tum.cs.commons.logging.SimpleLogger;
 import edu.tum.cs.simulink.builder.SimulinkModelBuilder;
 

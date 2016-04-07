@@ -797,7 +797,7 @@ public interface TimedstorydiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLOCK_INSTANCE_VARIABLE__OUTGOING_LINK = PatternsPackage.OBJECT_VARIABLE__OUTGOING_LINK;
+	int CLOCK_INSTANCE_VARIABLE__OUTGOING_LINK = PatternsPackage.OBJECT_VARIABLE__OUTGOING_LINKS;
 
 	/**
 	 * The feature id for the '<em><b>Link Order Constraint</b></em>' containment reference list.
@@ -806,7 +806,7 @@ public interface TimedstorydiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLOCK_INSTANCE_VARIABLE__LINK_ORDER_CONSTRAINT = PatternsPackage.OBJECT_VARIABLE__LINK_ORDER_CONSTRAINT;
+	int CLOCK_INSTANCE_VARIABLE__LINK_ORDER_CONSTRAINT = PatternsPackage.OBJECT_VARIABLE__LINK_ORDER_CONSTRAINTS;
 
 	/**
 	 * The feature id for the '<em><b>Binding Semantics</b></em>' attribute.

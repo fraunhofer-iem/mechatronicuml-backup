@@ -475,22 +475,22 @@ public interface PatternsPackage extends EPackage {
 	int OBJECT_VARIABLE__INCOMING_LINKS = ABSTRACT_VARIABLE__INCOMING_LINKS;
 
 	/**
-	 * The feature id for the '<em><b>Outgoing Link</b></em>' reference list.
+	 * The feature id for the '<em><b>Outgoing Links</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OBJECT_VARIABLE__OUTGOING_LINK = ABSTRACT_VARIABLE_FEATURE_COUNT + 0;
+	int OBJECT_VARIABLE__OUTGOING_LINKS = ABSTRACT_VARIABLE_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Link Order Constraint</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Link Order Constraints</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OBJECT_VARIABLE__LINK_ORDER_CONSTRAINT = ABSTRACT_VARIABLE_FEATURE_COUNT + 1;
+	int OBJECT_VARIABLE__LINK_ORDER_CONSTRAINTS = ABSTRACT_VARIABLE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Binding Semantics</b></em>' attribute.
@@ -1497,22 +1497,22 @@ public interface PatternsPackage extends EPackage {
 	int COLLECTION_VARIABLE__INCOMING_LINKS = OBJECT_VARIABLE__INCOMING_LINKS;
 
 	/**
-	 * The feature id for the '<em><b>Outgoing Link</b></em>' reference list.
+	 * The feature id for the '<em><b>Outgoing Links</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COLLECTION_VARIABLE__OUTGOING_LINK = OBJECT_VARIABLE__OUTGOING_LINK;
+	int COLLECTION_VARIABLE__OUTGOING_LINKS = OBJECT_VARIABLE__OUTGOING_LINKS;
 
 	/**
-	 * The feature id for the '<em><b>Link Order Constraint</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Link Order Constraints</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COLLECTION_VARIABLE__LINK_ORDER_CONSTRAINT = OBJECT_VARIABLE__LINK_ORDER_CONSTRAINT;
+	int COLLECTION_VARIABLE__LINK_ORDER_CONSTRAINTS = OBJECT_VARIABLE__LINK_ORDER_CONSTRAINTS;
 
 	/**
 	 * The feature id for the '<em><b>Binding Semantics</b></em>' attribute.
@@ -3894,26 +3894,26 @@ public interface PatternsPackage extends EPackage {
 	EClass getObjectVariable();
 
 	/**
-	 * Returns the meta object for the reference list '{@link org.muml.storydiagram.patterns.ObjectVariable#getOutgoingLink <em>Outgoing Link</em>}'.
+	 * Returns the meta object for the reference list '{@link org.muml.storydiagram.patterns.ObjectVariable#getOutgoingLinks <em>Outgoing Links</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Outgoing Link</em>'.
-	 * @see org.muml.storydiagram.patterns.ObjectVariable#getOutgoingLink()
+	 * @return the meta object for the reference list '<em>Outgoing Links</em>'.
+	 * @see org.muml.storydiagram.patterns.ObjectVariable#getOutgoingLinks()
 	 * @see #getObjectVariable()
 	 * @generated
 	 */
-	EReference getObjectVariable_OutgoingLink();
+	EReference getObjectVariable_OutgoingLinks();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.muml.storydiagram.patterns.ObjectVariable#getLinkOrderConstraint <em>Link Order Constraint</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.muml.storydiagram.patterns.ObjectVariable#getLinkOrderConstraints <em>Link Order Constraints</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Link Order Constraint</em>'.
-	 * @see org.muml.storydiagram.patterns.ObjectVariable#getLinkOrderConstraint()
+	 * @return the meta object for the containment reference list '<em>Link Order Constraints</em>'.
+	 * @see org.muml.storydiagram.patterns.ObjectVariable#getLinkOrderConstraints()
 	 * @see #getObjectVariable()
 	 * @generated
 	 */
-	EReference getObjectVariable_LinkOrderConstraint();
+	EReference getObjectVariable_LinkOrderConstraints();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.muml.storydiagram.patterns.ObjectVariable#getBindingSemantics <em>Binding Semantics</em>}'.
@@ -4590,20 +4590,20 @@ public interface PatternsPackage extends EPackage {
 		EClass OBJECT_VARIABLE = eINSTANCE.getObjectVariable();
 
 		/**
-		 * The meta object literal for the '<em><b>Outgoing Link</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Outgoing Links</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference OBJECT_VARIABLE__OUTGOING_LINK = eINSTANCE.getObjectVariable_OutgoingLink();
+		EReference OBJECT_VARIABLE__OUTGOING_LINKS = eINSTANCE.getObjectVariable_OutgoingLinks();
 
 		/**
-		 * The meta object literal for the '<em><b>Link Order Constraint</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Link Order Constraints</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference OBJECT_VARIABLE__LINK_ORDER_CONSTRAINT = eINSTANCE.getObjectVariable_LinkOrderConstraint();
+		EReference OBJECT_VARIABLE__LINK_ORDER_CONSTRAINTS = eINSTANCE.getObjectVariable_LinkOrderConstraints();
 
 		/**
 		 * The meta object literal for the '<em><b>Binding Semantics</b></em>' attribute feature.

@@ -48,7 +48,7 @@ public class CollectionVariableCollectionVariableConstraintsCompartmentCanonical
 	 * @generated
 	 */
 	protected EStructuralFeature getFeatureToSynchronize() {
-		return PatternsPackage.eINSTANCE.getAbstractVariable_Constraint();
+		return PatternsPackage.eINSTANCE.getAbstractVariable_Constraints();
 	}
 
 	/**

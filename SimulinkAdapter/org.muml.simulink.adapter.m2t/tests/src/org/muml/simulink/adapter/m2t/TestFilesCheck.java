@@ -1,6 +1,6 @@
 package org.muml.simulink.adapter.m2t;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.fail;
 
 import java.io.File;
 import java.io.FilenameFilter;
@@ -21,8 +21,7 @@ import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 import org.muml.simulink.SimulinkContainer;
 import org.muml.simulink.SimulinkPackage;
-
-import de.uni_paderborn.fujaba.simulink.model.test.TestBase;
+import org.muml.simulink.test.TestBase;
 
 @RunWith(Parameterized.class)
 public class TestFilesCheck extends TestBase

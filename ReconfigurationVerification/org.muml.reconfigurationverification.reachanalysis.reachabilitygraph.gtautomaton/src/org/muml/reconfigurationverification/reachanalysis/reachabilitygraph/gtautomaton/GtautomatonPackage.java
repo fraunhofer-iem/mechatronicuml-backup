@@ -87,7 +87,7 @@ public interface GtautomatonPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GT_STEP_GRAPH__ANNOTATION = SdmPackage.STEP_GRAPH__ANNOTATION;
+	int GT_STEP_GRAPH__ANNOTATION = SdmPackage.STEP_GRAPH__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -96,7 +96,7 @@ public interface GtautomatonPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GT_STEP_GRAPH__EXTENSION = SdmPackage.STEP_GRAPH__EXTENSION;
+	int GT_STEP_GRAPH__EXTENSION = SdmPackage.STEP_GRAPH__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Hash</b></em>' attribute.
@@ -353,7 +353,7 @@ public interface GtautomatonPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GT_AUTOMATON_TRANSITION__ANNOTATION = SdmPackage.SDM_TRANSITION__ANNOTATION;
+	int GT_AUTOMATON_TRANSITION__ANNOTATION = SdmPackage.SDM_TRANSITION__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -362,7 +362,7 @@ public interface GtautomatonPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GT_AUTOMATON_TRANSITION__EXTENSION = SdmPackage.SDM_TRANSITION__EXTENSION;
+	int GT_AUTOMATON_TRANSITION__EXTENSION = SdmPackage.SDM_TRANSITION__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Source</b></em>' reference.
@@ -498,7 +498,7 @@ public interface GtautomatonPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GT_AUTOMATON__ANNOTATION = SdmPackage.SDM_REACHABILITY_GRAPH__ANNOTATION;
+	int GT_AUTOMATON__ANNOTATION = SdmPackage.SDM_REACHABILITY_GRAPH__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -507,7 +507,7 @@ public interface GtautomatonPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GT_AUTOMATON__EXTENSION = SdmPackage.SDM_REACHABILITY_GRAPH__EXTENSION;
+	int GT_AUTOMATON__EXTENSION = SdmPackage.SDM_REACHABILITY_GRAPH__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>States</b></em>' containment reference list.

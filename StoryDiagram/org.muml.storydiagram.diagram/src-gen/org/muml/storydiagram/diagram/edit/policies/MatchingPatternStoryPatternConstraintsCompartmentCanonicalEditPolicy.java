@@ -48,7 +48,7 @@ public class MatchingPatternStoryPatternConstraintsCompartmentCanonicalEditPolic
 	 * @generated
 	 */
 	protected EStructuralFeature getFeatureToSynchronize() {
-		return PatternsPackage.eINSTANCE.getStoryPattern_Constraint();
+		return PatternsPackage.eINSTANCE.getStoryPattern_Constraints();
 	}
 
 	/**

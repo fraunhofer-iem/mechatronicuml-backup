@@ -21,6 +21,8 @@ public class OptionsEditor extends org.muml.ape.runtime.editors.ClassPropertyEdi
 	protected void createProperties() {
 		if (tab == null) {
 
+			addPropertyEditor(createEditorExtensions_property_tab_extensionsTab_Editor(), false);
+
 			addPropertyEditor(createEditorConnectorOutBufferSize_optionsTab_Editor(), false);
 
 			addPropertyEditor(createEditorHashTableSize_optionsTab_Editor(), false);
@@ -38,6 +40,14 @@ public class OptionsEditor extends org.muml.ape.runtime.editors.ClassPropertyEdi
 			addPropertyEditor(createEditorStateSpaceReduction_optionsTab_Editor(), false);
 
 			addPropertyEditor(createEditorTraceOptions_optionsTab_Editor(), false);
+
+		} else if ("property.tab.general".equals(tab)) { // Tab General
+
+		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
+
+		} else if ("property.tab.extensions".equals(tab)) { // Tab Extensions
+
+			addPropertyEditor(createEditorExtensions_property_tab_extensionsTab_Editor(), false);
 
 		} else {
 		}
@@ -79,7 +89,7 @@ public class OptionsEditor extends org.muml.ape.runtime.editors.ClassPropertyEdi
 					}
 
 				};
-				if (filter != null) {
+				if (filter != null && expression != null) {
 					editor.addVisibilityFilter(filter);
 				}
 			}
@@ -127,7 +137,7 @@ public class OptionsEditor extends org.muml.ape.runtime.editors.ClassPropertyEdi
 					}
 
 				};
-				if (filter != null) {
+				if (filter != null && expression != null) {
 					editor.addVisibilityFilter(filter);
 				}
 			}
@@ -175,7 +185,7 @@ public class OptionsEditor extends org.muml.ape.runtime.editors.ClassPropertyEdi
 					}
 
 				};
-				if (filter != null) {
+				if (filter != null && expression != null) {
 					editor.addVisibilityFilter(filter);
 				}
 			}
@@ -223,7 +233,7 @@ public class OptionsEditor extends org.muml.ape.runtime.editors.ClassPropertyEdi
 					}
 
 				};
-				if (filter != null) {
+				if (filter != null && expression != null) {
 					editor.addVisibilityFilter(filter);
 				}
 			}
@@ -235,6 +245,21 @@ public class OptionsEditor extends org.muml.ape.runtime.editors.ClassPropertyEdi
 		return this.editorTraceOptions_optionsTab;
 	}
 
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorExtensions_property_tab_extensionsTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorExtensions_property_tab_extensionsTab_Editor() {
+		if (this.editorExtensions_property_tab_extensionsTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.core.CorePackage.eINSTANCE
+					.getExtendableElement_Extensions();
+			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.FlattenedListPropertyEditor(
+					adapterFactory, feature);
+
+			editor.setTooltipMessage("Extendable Elements can be extended by an Extension.");
+
+			this.editorExtensions_property_tab_extensionsTab = editor;
+		}
+		return this.editorExtensions_property_tab_extensionsTab;
+	}
+
 	//
 	// instantiation
 	//
@@ -243,9 +268,7 @@ public class OptionsEditor extends org.muml.ape.runtime.editors.ClassPropertyEdi
 	 * @generated
 	 */
 	public OptionsEditor(String tab) {
-		this(tab,
-				org.muml.uppaal.options.properties.util.PropertiesUtil.INSTANCE
-						.getAdapterFactory(),
+		this(tab, org.muml.uppaal.options.properties.util.PropertiesUtil.INSTANCE.getAdapterFactory(),
 				org.muml.uppaal.options.OptionsPackage.eINSTANCE.getOptions());
 	}
 
@@ -260,7 +283,8 @@ public class OptionsEditor extends org.muml.ape.runtime.editors.ClassPropertyEdi
 
 		@Override
 		public boolean hasTab(java.lang.String tab) {
-			return java.util.Arrays.asList(new java.lang.String[]{"options", "options", "options", "options"})
+			return java.util.Arrays.asList(
+					new java.lang.String[]{"options", "options", "options", "options", "property.tab.extensions"})
 					.contains(tab);
 		}
 	}

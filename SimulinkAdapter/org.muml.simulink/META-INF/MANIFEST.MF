@@ -23,6 +23,7 @@ Export-Package: org.muml.simulink,
  org.muml.simulink.stateflow,
  org.muml.simulink.stateflow.impl,
  org.muml.simulink.stateflow.util,
+ org.muml.simulink.test,
  org.muml.simulink.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,

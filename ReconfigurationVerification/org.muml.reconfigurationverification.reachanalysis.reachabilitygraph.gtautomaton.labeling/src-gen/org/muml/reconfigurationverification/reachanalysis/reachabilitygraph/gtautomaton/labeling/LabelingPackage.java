@@ -42,7 +42,7 @@ public interface LabelingPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.fujaba.de/reachabilityGraph/gtautomaton/labeling/0.1.0";
+	String eNS_URI = "http://www.muml.org/reconfigurationverification/reachanalysis/reachabilitygraph/gtautomaton/labeling/1.0.0";
 
 	/**
 	 * The package namespace name.
@@ -50,7 +50,7 @@ public interface LabelingPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_PREFIX = "de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.gtautomaton.labeling";
+	String eNS_PREFIX = "gtautomatonlabeling";
 
 	/**
 	 * The singleton instance of the package.
@@ -71,22 +71,22 @@ public interface LabelingPackage extends EPackage {
 	int ATOMIC_PROPOSITION_MAPPING = 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ATOMIC_PROPOSITION_MAPPING__ANNOTATION = CorePackage.EXTENSION__ANNOTATIONS;
+	int ATOMIC_PROPOSITION_MAPPING__ANNOTATIONS = CorePackage.EXTENSION__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ATOMIC_PROPOSITION_MAPPING__EXTENSION = CorePackage.EXTENSION__EXTENSIONS;
+	int ATOMIC_PROPOSITION_MAPPING__EXTENSIONS = CorePackage.EXTENSION__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Base</b></em>' reference.

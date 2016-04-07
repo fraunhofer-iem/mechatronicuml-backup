@@ -54,7 +54,7 @@ public class StoryPatternStoryPatternConstraintsCompartmentCanonicalEditPolicy
 	 * @generated
 	 */
 	protected EStructuralFeature getFeatureToSynchronize() {
-		return PatternsPackage.eINSTANCE.getStoryPattern_Constraint();
+		return PatternsPackage.eINSTANCE.getStoryPattern_Constraints();
 	}
 
 	/**

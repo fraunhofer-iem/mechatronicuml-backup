@@ -173,8 +173,8 @@
       </genEnums>
       <genClasses ecoreClass="storydiagrams.ecore#//patterns/ObjectVariable">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference storydiagrams.ecore#//patterns/ObjectVariable/outgoingLink"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//patterns/ObjectVariable/linkOrderConstraint"/>
+            ecoreFeature="ecore:EReference storydiagrams.ecore#//patterns/ObjectVariable/outgoingLinks"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//patterns/ObjectVariable/linkOrderConstraints"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute storydiagrams.ecore#//patterns/ObjectVariable/bindingSemantics"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute storydiagrams.ecore#//patterns/ObjectVariable/bindingOperator"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//patterns/ObjectVariable/attributeAssignments"/>

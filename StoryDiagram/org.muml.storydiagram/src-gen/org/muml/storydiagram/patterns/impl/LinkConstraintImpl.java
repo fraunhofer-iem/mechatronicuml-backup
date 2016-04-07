@@ -296,7 +296,7 @@ public class LinkConstraintImpl extends ExtendableElementImpl implements
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newReferencingObject != null)
-				msgs = ((InternalEObject)newReferencingObject).eInverseAdd(this, PatternsPackage.OBJECT_VARIABLE__LINK_ORDER_CONSTRAINT, ObjectVariable.class, msgs);
+				msgs = ((InternalEObject)newReferencingObject).eInverseAdd(this, PatternsPackage.OBJECT_VARIABLE__LINK_ORDER_CONSTRAINTS, ObjectVariable.class, msgs);
 			msgs = basicSetReferencingObject(newReferencingObject, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -419,7 +419,7 @@ public class LinkConstraintImpl extends ExtendableElementImpl implements
 			NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
 			case PatternsPackage.LINK_CONSTRAINT__REFERENCING_OBJECT:
-				return eInternalContainer().eInverseRemove(this, PatternsPackage.OBJECT_VARIABLE__LINK_ORDER_CONSTRAINT, ObjectVariable.class, msgs);
+				return eInternalContainer().eInverseRemove(this, PatternsPackage.OBJECT_VARIABLE__LINK_ORDER_CONSTRAINTS, ObjectVariable.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}

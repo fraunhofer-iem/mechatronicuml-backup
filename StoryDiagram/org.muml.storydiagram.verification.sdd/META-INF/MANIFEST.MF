@@ -9,10 +9,7 @@ Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: org.muml.storydiagram.verification.sdd,
  org.muml.storydiagram.verification.sdd.impl,
- org.muml.storydiagram.verification.sdd.util,
- org.muml.storydiagram.verification.sdd.sdd,
- org.muml.storydiagram.verification.sdd.sdd.impl,
- org.muml.storydiagram.verification.sdd.sdd.util
+ org.muml.storydiagram.verification.sdd.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.muml.core;bundle-version="1.0.0";visibility:=reexport,

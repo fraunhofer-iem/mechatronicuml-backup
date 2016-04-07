@@ -1,9 +1,7 @@
 
 package org.muml.uppaal.options.properties.metamodel;
 
-public class MetamodelContributor
-		implements
-			org.muml.ape.runtime.metamodel.IMetamodelContributor {
+public class MetamodelContributor implements org.muml.ape.runtime.metamodel.IMetamodelContributor {
 
 	/**
 	 * @generated
@@ -19,8 +17,7 @@ public class MetamodelContributor
 	 */
 	protected void fillItemProviderFactories(java.util.List<org.eclipse.emf.common.notify.AdapterFactory> factories) {
 
-		factories.add(
-				new org.muml.uppaal.options.provider.OptionsItemProviderAdapterFactory());
+		factories.add(new org.muml.uppaal.options.provider.OptionsItemProviderAdapterFactory());
 
 	}
 

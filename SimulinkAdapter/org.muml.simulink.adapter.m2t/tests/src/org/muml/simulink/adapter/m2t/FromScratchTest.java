@@ -1,6 +1,9 @@
 package org.muml.simulink.adapter.m2t;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
 
 import java.io.File;
 import java.io.IOException;
@@ -10,8 +13,31 @@ import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TemporaryFolder;
-import org.muml.simulink.*;
-import org.muml.simulink.adapter.m2t.SimulinkWriter;
+import org.muml.simulink.Block;
+import org.muml.simulink.Bus;
+import org.muml.simulink.BusCreator;
+import org.muml.simulink.BusElement;
+import org.muml.simulink.BusSelector;
+import org.muml.simulink.ChartBlock;
+import org.muml.simulink.Constant;
+import org.muml.simulink.DataType;
+import org.muml.simulink.DigitalClock;
+import org.muml.simulink.EmbeddedMatlabFunction;
+import org.muml.simulink.EnablePort;
+import org.muml.simulink.InPortBlock;
+import org.muml.simulink.LibraryReference;
+import org.muml.simulink.Line;
+import org.muml.simulink.MiscBlock;
+import org.muml.simulink.OutPortBlock;
+import org.muml.simulink.Parameter;
+import org.muml.simulink.SimulinkContainer;
+import org.muml.simulink.SimulinkFactory;
+import org.muml.simulink.SimulinkLibrary;
+import org.muml.simulink.SimulinkModel;
+import org.muml.simulink.SubSystem;
+import org.muml.simulink.TriggerPort;
+import org.muml.simulink.UnitDelay;
+import org.muml.simulink.ZeroOrderHold;
 import org.muml.simulink.adapter.parser.SimulinkBuilder;
 import org.muml.simulink.adapter.parser.SimulinkBuilderException;
 import org.muml.simulink.stateflow.Action;
@@ -21,8 +47,7 @@ import org.muml.simulink.stateflow.State;
 import org.muml.simulink.stateflow.StateflowFactory;
 import org.muml.simulink.stateflow.StateflowMachine;
 import org.muml.simulink.stateflow.Transition;
-
-import de.uni_paderborn.fujaba.simulink.model.test.TestBase;
+import org.muml.simulink.test.TestBase;
 
 public class FromScratchTest extends TestBase
 {

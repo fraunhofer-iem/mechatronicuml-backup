@@ -96,7 +96,7 @@ public interface AbstractLinkVariable extends NamedElement {
 
 	/**
 	 * Returns the value of the '<em><b>Source</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link org.muml.storydiagram.patterns.ObjectVariable#getOutgoingLink <em>Outgoing Link</em>}'.
+	 * It is bidirectional and its opposite is '{@link org.muml.storydiagram.patterns.ObjectVariable#getOutgoingLinks <em>Outgoing Links</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Source</em>' reference isn't clear,
@@ -106,8 +106,8 @@ public interface AbstractLinkVariable extends NamedElement {
 	 * @return the value of the '<em>Source</em>' reference.
 	 * @see #setSource(ObjectVariable)
 	 * @see org.muml.storydiagram.patterns.PatternsPackage#getAbstractLinkVariable_Source()
-	 * @see org.muml.storydiagram.patterns.ObjectVariable#getOutgoingLink
-	 * @model opposite="outgoingLink" required="true" ordered="false"
+	 * @see org.muml.storydiagram.patterns.ObjectVariable#getOutgoingLinks
+	 * @model opposite="outgoingLinks" required="true" ordered="false"
 	 * @generated
 	 */
 	ObjectVariable getSource();

@@ -22,8 +22,8 @@ import org.eclipse.emf.ecore.EClass;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.muml.storydiagram.patterns.ObjectVariable#getOutgoingLink <em>Outgoing Link</em>}</li>
- *   <li>{@link org.muml.storydiagram.patterns.ObjectVariable#getLinkOrderConstraint <em>Link Order Constraint</em>}</li>
+ *   <li>{@link org.muml.storydiagram.patterns.ObjectVariable#getOutgoingLinks <em>Outgoing Links</em>}</li>
+ *   <li>{@link org.muml.storydiagram.patterns.ObjectVariable#getLinkOrderConstraints <em>Link Order Constraints</em>}</li>
  *   <li>{@link org.muml.storydiagram.patterns.ObjectVariable#getBindingSemantics <em>Binding Semantics</em>}</li>
  *   <li>{@link org.muml.storydiagram.patterns.ObjectVariable#getBindingOperator <em>Binding Operator</em>}</li>
  *   <li>{@link org.muml.storydiagram.patterns.ObjectVariable#getAttributeAssignments <em>Attribute Assignments</em>}</li>
@@ -36,40 +36,40 @@ import org.eclipse.emf.ecore.EClass;
  */
 public interface ObjectVariable extends AbstractVariable {
 	/**
-	 * Returns the value of the '<em><b>Outgoing Link</b></em>' reference list.
+	 * Returns the value of the '<em><b>Outgoing Links</b></em>' reference list.
 	 * The list contents are of type {@link org.muml.storydiagram.patterns.AbstractLinkVariable}.
 	 * It is bidirectional and its opposite is '{@link org.muml.storydiagram.patterns.AbstractLinkVariable#getSource <em>Source</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Outgoing Link</em>' reference list isn't clear,
+	 * If the meaning of the '<em>Outgoing Links</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Outgoing Link</em>' reference list.
-	 * @see org.muml.storydiagram.patterns.PatternsPackage#getObjectVariable_OutgoingLink()
+	 * @return the value of the '<em>Outgoing Links</em>' reference list.
+	 * @see org.muml.storydiagram.patterns.PatternsPackage#getObjectVariable_OutgoingLinks()
 	 * @see org.muml.storydiagram.patterns.AbstractLinkVariable#getSource
 	 * @model opposite="source" ordered="false"
 	 * @generated
 	 */
-	EList<AbstractLinkVariable> getOutgoingLink();
+	EList<AbstractLinkVariable> getOutgoingLinks();
 
 	/**
-	 * Returns the value of the '<em><b>Link Order Constraint</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Link Order Constraints</b></em>' containment reference list.
 	 * The list contents are of type {@link org.muml.storydiagram.patterns.LinkConstraint}.
 	 * It is bidirectional and its opposite is '{@link org.muml.storydiagram.patterns.LinkConstraint#getReferencingObject <em>Referencing Object</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Link Order Constraint</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Link Order Constraints</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Link Order Constraint</em>' containment reference list.
-	 * @see org.muml.storydiagram.patterns.PatternsPackage#getObjectVariable_LinkOrderConstraint()
+	 * @return the value of the '<em>Link Order Constraints</em>' containment reference list.
+	 * @see org.muml.storydiagram.patterns.PatternsPackage#getObjectVariable_LinkOrderConstraints()
 	 * @see org.muml.storydiagram.patterns.LinkConstraint#getReferencingObject
 	 * @model opposite="referencingObject" containment="true"
 	 * @generated
 	 */
-	EList<LinkConstraint> getLinkOrderConstraint();
+	EList<LinkConstraint> getLinkOrderConstraints();
 
 	/**
 	 * Returns the value of the '<em><b>Binding Semantics</b></em>' attribute.

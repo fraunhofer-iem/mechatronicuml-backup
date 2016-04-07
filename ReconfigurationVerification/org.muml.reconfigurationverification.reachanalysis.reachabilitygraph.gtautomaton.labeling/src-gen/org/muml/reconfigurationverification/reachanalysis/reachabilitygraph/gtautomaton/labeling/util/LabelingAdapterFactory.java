@@ -12,6 +12,7 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
 import org.muml.core.ExtendableElement;
 import org.muml.core.Extension;
+import org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.labeling.*;
 import org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.labeling.AtomicPropositionMapping;
 import org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.labeling.LabelingPackage;
 import org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.labeling.computation.*;

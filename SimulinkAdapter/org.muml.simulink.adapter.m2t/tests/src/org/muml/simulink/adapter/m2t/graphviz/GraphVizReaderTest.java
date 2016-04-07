@@ -1,6 +1,8 @@
 package org.muml.simulink.adapter.m2t.graphviz;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -10,8 +12,6 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.ComparisonFailure;
 import org.junit.Test;
-import org.muml.simulink.adapter.m2t.graphviz.GraphVizReader;
-import org.muml.simulink.adapter.m2t.graphviz.GraphVizReaderException;
 import org.muml.simulink.stateflow.Chart;
 import org.muml.simulink.stateflow.EmbeddedFunction;
 import org.muml.simulink.stateflow.Junction;

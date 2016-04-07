@@ -2,34 +2,20 @@
  */
 package org.muml.simulink.adapter.corrmodel.behavior.impl;
 
-import de.uni_paderborn.fujaba.simulink.model.SimulinkPackage;
-
-import de.uni_paderborn.fujaba.simulink.model.stateflow.StateflowPackage;
-
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EcorePackage;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
 import org.muml.core.expressions.ExpressionsPackage;
-
 import org.muml.core.modelinstance.ModelinstancePackage;
-
 import org.muml.pim.PimPackage;
-
 import org.muml.pim.msgtype.MsgtypePackage;
-
 import org.muml.pim.realtimestatechart.RealtimestatechartPackage;
-
 import org.muml.pim.types.TypesPackage;
-
 import org.muml.pim.valuetype.ValuetypePackage;
-
 import org.muml.simulink.adapter.corrmodel.Fujaba2simulinkPackage;
-
 import org.muml.simulink.adapter.corrmodel.behavior.BehaviorFactory;
 import org.muml.simulink.adapter.corrmodel.behavior.BehaviorPackage;
 import org.muml.simulink.adapter.corrmodel.behavior.FRtSc2Chart;
@@ -62,7 +48,6 @@ import org.muml.simulink.adapter.corrmodel.behavior.scOpData2sfEmbFuncData;
 import org.muml.simulink.adapter.corrmodel.behavior.scSendAsync2sfTransAction;
 import org.muml.simulink.adapter.corrmodel.behavior.scSendParaBind2sfAction;
 import org.muml.simulink.adapter.corrmodel.behavior.scSyncSend2sfSyncSend;
-
 import org.muml.simulink.adapter.corrmodel.impl.Fujaba2simulinkPackageImpl;
 
 /**

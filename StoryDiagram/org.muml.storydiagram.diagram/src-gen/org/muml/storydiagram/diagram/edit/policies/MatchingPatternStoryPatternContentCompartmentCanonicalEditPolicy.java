@@ -49,7 +49,7 @@ public class MatchingPatternStoryPatternContentCompartmentCanonicalEditPolicy
 	 * @generated
 	 */
 	protected EStructuralFeature getFeatureToSynchronize() {
-		return PatternsPackage.eINSTANCE.getStoryPattern_Variable();
+		return PatternsPackage.eINSTANCE.getStoryPattern_Variables();
 	}
 
 	/**

@@ -143,7 +143,7 @@ public interface LinkConstraint extends ExtendableElement {
 
 	/**
 	 * Returns the value of the '<em><b>Referencing Object</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link org.muml.storydiagram.patterns.ObjectVariable#getLinkOrderConstraint <em>Link Order Constraint</em>}'.
+	 * It is bidirectional and its opposite is '{@link org.muml.storydiagram.patterns.ObjectVariable#getLinkOrderConstraints <em>Link Order Constraints</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Referencing Object</em>' container reference isn't clear,
@@ -153,8 +153,8 @@ public interface LinkConstraint extends ExtendableElement {
 	 * @return the value of the '<em>Referencing Object</em>' container reference.
 	 * @see #setReferencingObject(ObjectVariable)
 	 * @see org.muml.storydiagram.patterns.PatternsPackage#getLinkConstraint_ReferencingObject()
-	 * @see org.muml.storydiagram.patterns.ObjectVariable#getLinkOrderConstraint
-	 * @model opposite="linkOrderConstraint" required="true" transient="false" ordered="false"
+	 * @see org.muml.storydiagram.patterns.ObjectVariable#getLinkOrderConstraints
+	 * @model opposite="linkOrderConstraints" required="true" transient="false" ordered="false"
 	 * @generated
 	 */
 	ObjectVariable getReferencingObject();

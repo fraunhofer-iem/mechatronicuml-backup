@@ -34,6 +34,6 @@ public class CustomStoryPatternConstraintsCompartmentEditPart extends
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, new CompartmentEditPolicy(
-				PatternsPackage.Literals.STORY_PATTERN__CONSTRAINT));
+				PatternsPackage.Literals.STORY_PATTERN__CONSTRAINTS));
 	}
 }

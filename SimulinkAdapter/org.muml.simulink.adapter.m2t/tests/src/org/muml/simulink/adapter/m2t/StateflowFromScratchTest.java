@@ -1,6 +1,8 @@
 package org.muml.simulink.adapter.m2t;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 import java.io.File;
 import java.io.IOException;
@@ -15,7 +17,6 @@ import org.muml.simulink.DataType;
 import org.muml.simulink.SimulinkContainer;
 import org.muml.simulink.SimulinkFactory;
 import org.muml.simulink.SimulinkModel;
-import org.muml.simulink.adapter.m2t.SimulinkWriter;
 import org.muml.simulink.adapter.parser.SimulinkBuilder;
 import org.muml.simulink.adapter.parser.SimulinkBuilderException;
 import org.muml.simulink.stateflow.Chart;
@@ -29,8 +30,7 @@ import org.muml.simulink.stateflow.StateflowFactory;
 import org.muml.simulink.stateflow.StateflowMachine;
 import org.muml.simulink.stateflow.SubStateType;
 import org.muml.simulink.stateflow.Transition;
-
-import de.uni_paderborn.fujaba.simulink.model.test.TestBase;
+import org.muml.simulink.test.TestBase;
 
 public class StateflowFromScratchTest extends TestBase 
 {

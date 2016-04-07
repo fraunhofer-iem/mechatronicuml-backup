@@ -17,8 +17,7 @@ import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.muml.simulink.SimulinkContainer;
 import org.muml.simulink.SimulinkPackage;
 import org.muml.simulink.stateflow.StateflowMachine;
-
-import de.uni_paderborn.fujaba.simulink.model.test.TestBase;
+import org.muml.simulink.test.TestBase;
 
 public class GraphVizTestBase extends TestBase
 {

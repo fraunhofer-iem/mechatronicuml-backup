@@ -48,7 +48,7 @@ public class ObjectVariableItemProvider extends AbstractVariableItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addOutgoingLinkPropertyDescriptor(object);
+			addOutgoingLinksPropertyDescriptor(object);
 			addBindingSemanticsPropertyDescriptor(object);
 			addBindingOperatorPropertyDescriptor(object);
 			addClassifierPropertyDescriptor(object);
@@ -57,19 +57,19 @@ public class ObjectVariableItemProvider extends AbstractVariableItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Outgoing Link feature.
+	 * This adds a property descriptor for the Outgoing Links feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addOutgoingLinkPropertyDescriptor(Object object) {
+	protected void addOutgoingLinksPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ObjectVariable_outgoingLink_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ObjectVariable_outgoingLink_feature", "_UI_ObjectVariable_type"),
-				 PatternsPackage.Literals.OBJECT_VARIABLE__OUTGOING_LINK,
+				 getString("_UI_ObjectVariable_outgoingLinks_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ObjectVariable_outgoingLinks_feature", "_UI_ObjectVariable_type"),
+				 PatternsPackage.Literals.OBJECT_VARIABLE__OUTGOING_LINKS,
 				 true,
 				 false,
 				 true,
@@ -157,7 +157,7 @@ public class ObjectVariableItemProvider extends AbstractVariableItemProvider {
 			Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(PatternsPackage.Literals.OBJECT_VARIABLE__LINK_ORDER_CONSTRAINT);
+			childrenFeatures.add(PatternsPackage.Literals.OBJECT_VARIABLE__LINK_ORDER_CONSTRAINTS);
 			childrenFeatures.add(PatternsPackage.Literals.OBJECT_VARIABLE__ATTRIBUTE_ASSIGNMENTS);
 		}
 		return childrenFeatures;
@@ -207,7 +207,7 @@ public class ObjectVariableItemProvider extends AbstractVariableItemProvider {
 			case PatternsPackage.OBJECT_VARIABLE__BINDING_OPERATOR:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case PatternsPackage.OBJECT_VARIABLE__LINK_ORDER_CONSTRAINT:
+			case PatternsPackage.OBJECT_VARIABLE__LINK_ORDER_CONSTRAINTS:
 			case PatternsPackage.OBJECT_VARIABLE__ATTRIBUTE_ASSIGNMENTS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
@@ -242,7 +242,7 @@ public class ObjectVariableItemProvider extends AbstractVariableItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(PatternsPackage.Literals.OBJECT_VARIABLE__LINK_ORDER_CONSTRAINT,
+				(PatternsPackage.Literals.OBJECT_VARIABLE__LINK_ORDER_CONSTRAINTS,
 				 PatternsFactory.eINSTANCE.createLinkConstraint()));
 
 		newChildDescriptors.add

@@ -16,6 +16,7 @@ Require-Bundle: org.eclipse.emf.ecore,
  org.muml.storydiagram.verification.sdd.edit
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: org.muml.storydiagram.verification.sdd.properties.metamodel, org.muml.storydiagram.verification.sdd.properties.constraint,
+Export-Package: org.muml.storydiagram.verification.sdd.properties.metamodel,
+ org.muml.storydiagram.verification.sdd.properties.constraint,
  org.muml.storydiagram.verification.sdd.properties.sdd.editor
 Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn

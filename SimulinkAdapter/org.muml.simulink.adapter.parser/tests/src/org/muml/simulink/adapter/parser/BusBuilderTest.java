@@ -1,6 +1,7 @@
 package org.muml.simulink.adapter.parser;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 
 import java.io.FileNotFoundException;
 
@@ -10,10 +11,8 @@ import org.junit.Test;
 import org.muml.simulink.Bus;
 import org.muml.simulink.BusElement;
 import org.muml.simulink.DataType;
-import org.muml.simulink.adapter.parser.BusBuilder;
-import org.muml.simulink.adapter.parser.BusBuilderException;
+import org.muml.simulink.test.TestBase;
 
-import de.uni_paderborn.fujaba.simulink.model.test.TestBase;
 
 public class BusBuilderTest extends TestBase
 {

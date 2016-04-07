@@ -1,4 +1,4 @@
-«IMPORT model»
+«IMPORT simulink»
 «IMPORT model::stateflow»
 
 «EXTENSION extensions::stateflow::Node»

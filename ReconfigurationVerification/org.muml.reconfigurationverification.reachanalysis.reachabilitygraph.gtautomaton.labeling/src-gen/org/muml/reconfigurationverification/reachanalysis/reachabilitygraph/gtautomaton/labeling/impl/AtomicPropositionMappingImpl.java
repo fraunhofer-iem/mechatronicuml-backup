@@ -25,11 +25,11 @@ import org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.StepGraph;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.labeling.impl.AtomicPropositionMappingImpl#getPropositions <em>Propositions</em>}</li>
  *   <li>{@link org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.labeling.impl.AtomicPropositionMappingImpl#getStepGraph <em>Step Graph</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

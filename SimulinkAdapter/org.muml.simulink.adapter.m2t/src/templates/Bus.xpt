@@ -1,4 +1,4 @@
-«IMPORT model»
+«IMPORT simulink»
 
 «DEFINE busFile FOR Bus-»
 «FILE this.name + "Generator.m"-»

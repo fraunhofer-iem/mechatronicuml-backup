@@ -25,13 +25,15 @@ public class CollectionVariableEditor extends org.muml.ape.runtime.editors.Class
 
 			addPropertyEditor(createEditorIncomingLinks_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorOutgoingLink_property_tab_generalTab_Editor(), false);
+			addPropertyEditor(createEditorLinkOrderConstraints_property_tab_generalTab_Editor(), false);
 
 			addPropertyEditor(createEditorBindingSemantics_property_tab_generalTab_Editor(), false);
 
 			addPropertyEditor(createEditorBindingOperator_property_tab_generalTab_Editor(), false);
 
 			addPropertyEditor(createEditorClassifier_property_tab_generalTab_Editor(), false);
+
+			addPropertyEditor(createEditorOutgoingLinks_property_tab_generalTab_Editor(), false);
 
 			addSubCategory("org.muml.ape.category.Booleans", "Booleans", org.eclipse.swt.SWT.HORIZONTAL, true);
 
@@ -63,13 +65,15 @@ public class CollectionVariableEditor extends org.muml.ape.runtime.editors.Class
 
 			addPropertyEditor(createEditorIncomingLinks_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createEditorOutgoingLink_property_tab_generalTab_Editor(), false);
+			addPropertyEditor(createEditorLinkOrderConstraints_property_tab_generalTab_Editor(), false);
 
 			addPropertyEditor(createEditorBindingSemantics_property_tab_generalTab_Editor(), false);
 
 			addPropertyEditor(createEditorBindingOperator_property_tab_generalTab_Editor(), false);
 
 			addPropertyEditor(createEditorClassifier_property_tab_generalTab_Editor(), false);
+
+			addPropertyEditor(createEditorOutgoingLinks_property_tab_generalTab_Editor(), false);
 
 			addSubCategory("org.muml.ape.category.Booleans", "Booleans", org.eclipse.swt.SWT.HORIZONTAL, true);
 
@@ -113,17 +117,17 @@ public class CollectionVariableEditor extends org.muml.ape.runtime.editors.Class
 		return this.editorUnique_property_tab_generalTab;
 	}
 
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorOutgoingLink_property_tab_generalTab;
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorOutgoingLink_property_tab_generalTab_Editor() {
-		if (this.editorOutgoingLink_property_tab_generalTab == null) {
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorLinkOrderConstraints_property_tab_generalTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorLinkOrderConstraints_property_tab_generalTab_Editor() {
+		if (this.editorLinkOrderConstraints_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.storydiagram.patterns.PatternsPackage.eINSTANCE
-					.getObjectVariable_OutgoingLink();
-			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.ListPropertyEditor(
+					.getObjectVariable_LinkOrderConstraints();
+			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.OptionPropertyEditor(
 					adapterFactory, feature);
 
-			this.editorOutgoingLink_property_tab_generalTab = editor;
+			this.editorLinkOrderConstraints_property_tab_generalTab = editor;
 		}
-		return this.editorOutgoingLink_property_tab_generalTab;
+		return this.editorLinkOrderConstraints_property_tab_generalTab;
 	}
 
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorBindingSemantics_property_tab_generalTab;
@@ -171,6 +175,19 @@ public class CollectionVariableEditor extends org.muml.ape.runtime.editors.Class
 			this.editorClassifier_property_tab_generalTab = editor;
 		}
 		return this.editorClassifier_property_tab_generalTab;
+	}
+
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorOutgoingLinks_property_tab_generalTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorOutgoingLinks_property_tab_generalTab_Editor() {
+		if (this.editorOutgoingLinks_property_tab_generalTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.storydiagram.patterns.PatternsPackage.eINSTANCE
+					.getObjectVariable_OutgoingLinks();
+			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.ListPropertyEditor(
+					adapterFactory, feature);
+
+			this.editorOutgoingLinks_property_tab_generalTab = editor;
+		}
+		return this.editorOutgoingLinks_property_tab_generalTab;
 	}
 
 	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorBindingState_property_tab_generalTab;
@@ -227,7 +244,7 @@ public class CollectionVariableEditor extends org.muml.ape.runtime.editors.Class
 		public boolean hasTab(java.lang.String tab) {
 			return java.util.Arrays.asList(new java.lang.String[]{"property.tab.general", "property.tab.general",
 					"property.tab.general", "property.tab.general", "property.tab.general", "property.tab.general",
-					"property.tab.general", "property.tab.general"}).contains(tab);
+					"property.tab.general", "property.tab.general", "property.tab.general"}).contains(tab);
 		}
 	}
 

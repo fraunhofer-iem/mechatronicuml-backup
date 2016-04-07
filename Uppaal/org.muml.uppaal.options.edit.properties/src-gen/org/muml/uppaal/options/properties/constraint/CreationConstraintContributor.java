@@ -11,7 +11,7 @@ public class CreationConstraintContributor
 			final org.eclipse.emf.ecore.EClass myClass = org.muml.uppaal.options.OptionsPackage.eINSTANCE
 					.getHideOptionExtension();
 			final org.eclipse.emf.ecore.EReference opposite = org.muml.core.CorePackage.eINSTANCE
-					.getExtendableElement_Extension();
+					.getExtendableElement_Extensions();
 			final org.eclipse.emf.ecore.EClass oppositeClass = org.muml.core.CorePackage.eINSTANCE
 					.getExtendableElement();
 			final org.eclipse.ocl.ecore.OCLExpression expression = org.muml.ape.runtime.RuntimePlugin

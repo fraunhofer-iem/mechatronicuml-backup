@@ -1,11 +1,11 @@
 package org.muml.simulink.adapter.parser;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.muml.simulink.adapter.parser.StateLabelParser;
 import org.muml.simulink.adapter.parser.StateLabelParser.LabelString;
 
 public class StateLabelParserTest 

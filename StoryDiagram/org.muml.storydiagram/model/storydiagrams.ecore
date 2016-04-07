@@ -485,9 +485,9 @@
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="An ObjectVariable holds a value of a complex type which is defined by an EClass. "/>
       </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="outgoingLink" ordered="false"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="outgoingLinks" ordered="false"
           upperBound="-1" eType="#//patterns/AbstractLinkVariable" eOpposite="#//patterns/AbstractLinkVariable/source"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="linkOrderConstraint"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="linkOrderConstraints"
           upperBound="-1" eType="#//patterns/LinkConstraint" containment="true" eOpposite="#//patterns/LinkConstraint/referencingObject"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="bindingSemantics" ordered="false"
           lowerBound="1" eType="#//patterns/BindingSemantics" defaultValueLiteral="MANDATORY">
@@ -603,7 +603,7 @@
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="source" ordered="false"
-          lowerBound="1" eType="#//patterns/ObjectVariable" eOpposite="#//patterns/ObjectVariable/outgoingLink"/>
+          lowerBound="1" eType="#//patterns/ObjectVariable" eOpposite="#//patterns/ObjectVariable/outgoingLinks"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="secondLinkConstraints"
           ordered="false" upperBound="-1" eType="#//patterns/LinkConstraint" eOpposite="#//patterns/LinkConstraint/secondLink"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="firstLinkConstraints"
@@ -678,7 +678,7 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="firstLink" ordered="false"
           lowerBound="1" eType="#//patterns/AbstractLinkVariable" eOpposite="#//patterns/AbstractLinkVariable/firstLinkConstraints"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="referencingObject" ordered="false"
-          lowerBound="1" eType="#//patterns/ObjectVariable" eOpposite="#//patterns/ObjectVariable/linkOrderConstraint"/>
+          lowerBound="1" eType="#//patterns/ObjectVariable" eOpposite="#//patterns/ObjectVariable/linkOrderConstraints"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="secondLink" ordered="false"
           eType="#//patterns/AbstractLinkVariable" eOpposite="#//patterns/AbstractLinkVariable/secondLinkConstraints"/>
     </eClassifiers>

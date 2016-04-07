@@ -55,7 +55,7 @@ public class ObjectVariableObjectVariableAttributeAssignmentsCompartmentCanonica
 	 */
 	protected EStructuralFeature getFeatureToSynchronize() {
 		return PatternsPackage.eINSTANCE
-				.getObjectVariable_AttributeAssignment();
+				.getObjectVariable_AttributeAssignments();
 	}
 
 	/**

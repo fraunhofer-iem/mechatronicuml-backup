@@ -300,7 +300,7 @@ public class PatternsPackageImpl extends EPackageImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getObjectVariable_OutgoingLink() {
+	public EReference getObjectVariable_OutgoingLinks() {
 		return (EReference)objectVariableEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -309,7 +309,7 @@ public class PatternsPackageImpl extends EPackageImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getObjectVariable_LinkOrderConstraint() {
+	public EReference getObjectVariable_LinkOrderConstraints() {
 		return (EReference)objectVariableEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -882,8 +882,8 @@ public class PatternsPackageImpl extends EPackageImpl implements
 
 		// Create classes and their features
 		objectVariableEClass = createEClass(OBJECT_VARIABLE);
-		createEReference(objectVariableEClass, OBJECT_VARIABLE__OUTGOING_LINK);
-		createEReference(objectVariableEClass, OBJECT_VARIABLE__LINK_ORDER_CONSTRAINT);
+		createEReference(objectVariableEClass, OBJECT_VARIABLE__OUTGOING_LINKS);
+		createEReference(objectVariableEClass, OBJECT_VARIABLE__LINK_ORDER_CONSTRAINTS);
 		createEAttribute(objectVariableEClass, OBJECT_VARIABLE__BINDING_SEMANTICS);
 		createEAttribute(objectVariableEClass, OBJECT_VARIABLE__BINDING_OPERATOR);
 		createEReference(objectVariableEClass, OBJECT_VARIABLE__ATTRIBUTE_ASSIGNMENTS);
@@ -1016,8 +1016,8 @@ public class PatternsPackageImpl extends EPackageImpl implements
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(objectVariableEClass, ObjectVariable.class, "ObjectVariable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getObjectVariable_OutgoingLink(), this.getAbstractLinkVariable(), this.getAbstractLinkVariable_Source(), "outgoingLink", null, 0, -1, ObjectVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getObjectVariable_LinkOrderConstraint(), this.getLinkConstraint(), this.getLinkConstraint_ReferencingObject(), "linkOrderConstraint", null, 0, -1, ObjectVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getObjectVariable_OutgoingLinks(), this.getAbstractLinkVariable(), this.getAbstractLinkVariable_Source(), "outgoingLinks", null, 0, -1, ObjectVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getObjectVariable_LinkOrderConstraints(), this.getLinkConstraint(), this.getLinkConstraint_ReferencingObject(), "linkOrderConstraints", null, 0, -1, ObjectVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getObjectVariable_BindingSemantics(), this.getBindingSemantics(), "bindingSemantics", "MANDATORY", 1, 1, ObjectVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getObjectVariable_BindingOperator(), this.getBindingOperator(), "bindingOperator", "CHECK_ONLY", 1, 1, ObjectVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getObjectVariable_AttributeAssignments(), this.getAttributeAssignment(), this.getAttributeAssignment_ObjectVariable(), "attributeAssignments", null, 0, -1, ObjectVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1038,7 +1038,7 @@ public class PatternsPackageImpl extends EPackageImpl implements
 		initEClass(abstractLinkVariableEClass, AbstractLinkVariable.class, "AbstractLinkVariable", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAbstractLinkVariable_BindingSemantics(), this.getBindingSemantics(), "bindingSemantics", "MANDATORY", 1, 1, AbstractLinkVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getAbstractLinkVariable_BindingOperator(), this.getBindingOperator(), "bindingOperator", "CHECK_ONLY", 1, 1, AbstractLinkVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getAbstractLinkVariable_Source(), this.getObjectVariable(), this.getObjectVariable_OutgoingLink(), "source", null, 1, 1, AbstractLinkVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getAbstractLinkVariable_Source(), this.getObjectVariable(), this.getObjectVariable_OutgoingLinks(), "source", null, 1, 1, AbstractLinkVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getAbstractLinkVariable_SecondLinkConstraints(), this.getLinkConstraint(), this.getLinkConstraint_SecondLink(), "secondLinkConstraints", null, 0, -1, AbstractLinkVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getAbstractLinkVariable_FirstLinkConstraints(), this.getLinkConstraint(), this.getLinkConstraint_FirstLink(), "firstLinkConstraints", null, 0, -1, AbstractLinkVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getAbstractLinkVariable_Pattern(), this.getStoryPattern(), this.getStoryPattern_LinkVariables(), "pattern", null, 1, 1, AbstractLinkVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -1049,7 +1049,7 @@ public class PatternsPackageImpl extends EPackageImpl implements
 		initEAttribute(getLinkConstraint_ConstraintType(), this.getLinkConstraintType(), "constraintType", "NEXT", 1, 1, LinkConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getLinkConstraint_Negative(), ecorePackage.getEBoolean(), "negative", null, 1, 1, LinkConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getLinkConstraint_FirstLink(), this.getAbstractLinkVariable(), this.getAbstractLinkVariable_FirstLinkConstraints(), "firstLink", null, 1, 1, LinkConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getLinkConstraint_ReferencingObject(), this.getObjectVariable(), this.getObjectVariable_LinkOrderConstraint(), "referencingObject", null, 1, 1, LinkConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getLinkConstraint_ReferencingObject(), this.getObjectVariable(), this.getObjectVariable_LinkOrderConstraints(), "referencingObject", null, 1, 1, LinkConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getLinkConstraint_SecondLink(), this.getAbstractLinkVariable(), this.getAbstractLinkVariable_SecondLinkConstraints(), "secondLink", null, 0, 1, LinkConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(attributeAssignmentEClass, AttributeAssignment.class, "AttributeAssignment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

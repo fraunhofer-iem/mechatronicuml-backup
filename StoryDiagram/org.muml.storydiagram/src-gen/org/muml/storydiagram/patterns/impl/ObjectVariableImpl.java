@@ -33,8 +33,8 @@ import org.muml.storydiagram.patterns.PatternsPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.muml.storydiagram.patterns.impl.ObjectVariableImpl#getOutgoingLink <em>Outgoing Link</em>}</li>
- *   <li>{@link org.muml.storydiagram.patterns.impl.ObjectVariableImpl#getLinkOrderConstraint <em>Link Order Constraint</em>}</li>
+ *   <li>{@link org.muml.storydiagram.patterns.impl.ObjectVariableImpl#getOutgoingLinks <em>Outgoing Links</em>}</li>
+ *   <li>{@link org.muml.storydiagram.patterns.impl.ObjectVariableImpl#getLinkOrderConstraints <em>Link Order Constraints</em>}</li>
  *   <li>{@link org.muml.storydiagram.patterns.impl.ObjectVariableImpl#getBindingSemantics <em>Binding Semantics</em>}</li>
  *   <li>{@link org.muml.storydiagram.patterns.impl.ObjectVariableImpl#getBindingOperator <em>Binding Operator</em>}</li>
  *   <li>{@link org.muml.storydiagram.patterns.impl.ObjectVariableImpl#getAttributeAssignments <em>Attribute Assignments</em>}</li>
@@ -46,23 +46,23 @@ import org.muml.storydiagram.patterns.PatternsPackage;
 public class ObjectVariableImpl extends AbstractVariableImpl implements
 		ObjectVariable {
 	/**
-	 * The cached value of the '{@link #getOutgoingLink() <em>Outgoing Link</em>}' reference list.
+	 * The cached value of the '{@link #getOutgoingLinks() <em>Outgoing Links</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getOutgoingLink()
+	 * @see #getOutgoingLinks()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<AbstractLinkVariable> outgoingLink;
+	protected EList<AbstractLinkVariable> outgoingLinks;
 	/**
-	 * The cached value of the '{@link #getLinkOrderConstraint() <em>Link Order Constraint</em>}' containment reference list.
+	 * The cached value of the '{@link #getLinkOrderConstraints() <em>Link Order Constraints</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getLinkOrderConstraint()
+	 * @see #getLinkOrderConstraints()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<LinkConstraint> linkOrderConstraint;
+	protected EList<LinkConstraint> linkOrderConstraints;
 	/**
 	 * The default value of the '{@link #getBindingSemantics() <em>Binding Semantics</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -135,11 +135,11 @@ public class ObjectVariableImpl extends AbstractVariableImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<AbstractLinkVariable> getOutgoingLink() {
-		if (outgoingLink == null) {
-			outgoingLink = new EObjectWithInverseResolvingEList<AbstractLinkVariable>(AbstractLinkVariable.class, this, PatternsPackage.OBJECT_VARIABLE__OUTGOING_LINK, PatternsPackage.ABSTRACT_LINK_VARIABLE__SOURCE);
+	public EList<AbstractLinkVariable> getOutgoingLinks() {
+		if (outgoingLinks == null) {
+			outgoingLinks = new EObjectWithInverseResolvingEList<AbstractLinkVariable>(AbstractLinkVariable.class, this, PatternsPackage.OBJECT_VARIABLE__OUTGOING_LINKS, PatternsPackage.ABSTRACT_LINK_VARIABLE__SOURCE);
 		}
-		return outgoingLink;
+		return outgoingLinks;
 	}
 
 	/**
@@ -147,11 +147,11 @@ public class ObjectVariableImpl extends AbstractVariableImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<LinkConstraint> getLinkOrderConstraint() {
-		if (linkOrderConstraint == null) {
-			linkOrderConstraint = new EObjectContainmentWithInverseEList<LinkConstraint>(LinkConstraint.class, this, PatternsPackage.OBJECT_VARIABLE__LINK_ORDER_CONSTRAINT, PatternsPackage.LINK_CONSTRAINT__REFERENCING_OBJECT);
+	public EList<LinkConstraint> getLinkOrderConstraints() {
+		if (linkOrderConstraints == null) {
+			linkOrderConstraints = new EObjectContainmentWithInverseEList<LinkConstraint>(LinkConstraint.class, this, PatternsPackage.OBJECT_VARIABLE__LINK_ORDER_CONSTRAINTS, PatternsPackage.LINK_CONSTRAINT__REFERENCING_OBJECT);
 		}
-		return linkOrderConstraint;
+		return linkOrderConstraints;
 	}
 
 	/**
@@ -253,10 +253,10 @@ public class ObjectVariableImpl extends AbstractVariableImpl implements
 	public NotificationChain eInverseAdd(InternalEObject otherEnd,
 			int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case PatternsPackage.OBJECT_VARIABLE__OUTGOING_LINK:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getOutgoingLink()).basicAdd(otherEnd, msgs);
-			case PatternsPackage.OBJECT_VARIABLE__LINK_ORDER_CONSTRAINT:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getLinkOrderConstraint()).basicAdd(otherEnd, msgs);
+			case PatternsPackage.OBJECT_VARIABLE__OUTGOING_LINKS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getOutgoingLinks()).basicAdd(otherEnd, msgs);
+			case PatternsPackage.OBJECT_VARIABLE__LINK_ORDER_CONSTRAINTS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getLinkOrderConstraints()).basicAdd(otherEnd, msgs);
 			case PatternsPackage.OBJECT_VARIABLE__ATTRIBUTE_ASSIGNMENTS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getAttributeAssignments()).basicAdd(otherEnd, msgs);
 		}
@@ -271,10 +271,10 @@ public class ObjectVariableImpl extends AbstractVariableImpl implements
 	public NotificationChain eInverseRemove(InternalEObject otherEnd,
 			int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case PatternsPackage.OBJECT_VARIABLE__OUTGOING_LINK:
-				return ((InternalEList<?>)getOutgoingLink()).basicRemove(otherEnd, msgs);
-			case PatternsPackage.OBJECT_VARIABLE__LINK_ORDER_CONSTRAINT:
-				return ((InternalEList<?>)getLinkOrderConstraint()).basicRemove(otherEnd, msgs);
+			case PatternsPackage.OBJECT_VARIABLE__OUTGOING_LINKS:
+				return ((InternalEList<?>)getOutgoingLinks()).basicRemove(otherEnd, msgs);
+			case PatternsPackage.OBJECT_VARIABLE__LINK_ORDER_CONSTRAINTS:
+				return ((InternalEList<?>)getLinkOrderConstraints()).basicRemove(otherEnd, msgs);
 			case PatternsPackage.OBJECT_VARIABLE__ATTRIBUTE_ASSIGNMENTS:
 				return ((InternalEList<?>)getAttributeAssignments()).basicRemove(otherEnd, msgs);
 		}
@@ -288,10 +288,10 @@ public class ObjectVariableImpl extends AbstractVariableImpl implements
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PatternsPackage.OBJECT_VARIABLE__OUTGOING_LINK:
-				return getOutgoingLink();
-			case PatternsPackage.OBJECT_VARIABLE__LINK_ORDER_CONSTRAINT:
-				return getLinkOrderConstraint();
+			case PatternsPackage.OBJECT_VARIABLE__OUTGOING_LINKS:
+				return getOutgoingLinks();
+			case PatternsPackage.OBJECT_VARIABLE__LINK_ORDER_CONSTRAINTS:
+				return getLinkOrderConstraints();
 			case PatternsPackage.OBJECT_VARIABLE__BINDING_SEMANTICS:
 				return getBindingSemantics();
 			case PatternsPackage.OBJECT_VARIABLE__BINDING_OPERATOR:
@@ -313,13 +313,13 @@ public class ObjectVariableImpl extends AbstractVariableImpl implements
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PatternsPackage.OBJECT_VARIABLE__OUTGOING_LINK:
-				getOutgoingLink().clear();
-				getOutgoingLink().addAll((Collection<? extends AbstractLinkVariable>)newValue);
+			case PatternsPackage.OBJECT_VARIABLE__OUTGOING_LINKS:
+				getOutgoingLinks().clear();
+				getOutgoingLinks().addAll((Collection<? extends AbstractLinkVariable>)newValue);
 				return;
-			case PatternsPackage.OBJECT_VARIABLE__LINK_ORDER_CONSTRAINT:
-				getLinkOrderConstraint().clear();
-				getLinkOrderConstraint().addAll((Collection<? extends LinkConstraint>)newValue);
+			case PatternsPackage.OBJECT_VARIABLE__LINK_ORDER_CONSTRAINTS:
+				getLinkOrderConstraints().clear();
+				getLinkOrderConstraints().addAll((Collection<? extends LinkConstraint>)newValue);
 				return;
 			case PatternsPackage.OBJECT_VARIABLE__BINDING_SEMANTICS:
 				setBindingSemantics((BindingSemantics)newValue);
@@ -345,11 +345,11 @@ public class ObjectVariableImpl extends AbstractVariableImpl implements
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PatternsPackage.OBJECT_VARIABLE__OUTGOING_LINK:
-				getOutgoingLink().clear();
+			case PatternsPackage.OBJECT_VARIABLE__OUTGOING_LINKS:
+				getOutgoingLinks().clear();
 				return;
-			case PatternsPackage.OBJECT_VARIABLE__LINK_ORDER_CONSTRAINT:
-				getLinkOrderConstraint().clear();
+			case PatternsPackage.OBJECT_VARIABLE__LINK_ORDER_CONSTRAINTS:
+				getLinkOrderConstraints().clear();
 				return;
 			case PatternsPackage.OBJECT_VARIABLE__BINDING_SEMANTICS:
 				setBindingSemantics(BINDING_SEMANTICS_EDEFAULT);
@@ -374,10 +374,10 @@ public class ObjectVariableImpl extends AbstractVariableImpl implements
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PatternsPackage.OBJECT_VARIABLE__OUTGOING_LINK:
-				return outgoingLink != null && !outgoingLink.isEmpty();
-			case PatternsPackage.OBJECT_VARIABLE__LINK_ORDER_CONSTRAINT:
-				return linkOrderConstraint != null && !linkOrderConstraint.isEmpty();
+			case PatternsPackage.OBJECT_VARIABLE__OUTGOING_LINKS:
+				return outgoingLinks != null && !outgoingLinks.isEmpty();
+			case PatternsPackage.OBJECT_VARIABLE__LINK_ORDER_CONSTRAINTS:
+				return linkOrderConstraints != null && !linkOrderConstraints.isEmpty();
 			case PatternsPackage.OBJECT_VARIABLE__BINDING_SEMANTICS:
 				return bindingSemantics != BINDING_SEMANTICS_EDEFAULT;
 			case PatternsPackage.OBJECT_VARIABLE__BINDING_OPERATOR:

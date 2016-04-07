@@ -17,11 +17,11 @@ import org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.StepGraph;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.labeling.AtomicPropositionMapping#getPropositions <em>Propositions</em>}</li>
  *   <li>{@link org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.labeling.AtomicPropositionMapping#getStepGraph <em>Step Graph</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.labeling.LabelingPackage#getAtomicPropositionMapping()
  * @model

@@ -1,4 +1,4 @@
-«IMPORT model»
+«IMPORT simulink»
 
 «DEFINE raw(String dataType, String outDataType, String outScaling, String outDataTypeStr, String outDataTypeMode) FOR DataType»
 «IF dataType!= null-»

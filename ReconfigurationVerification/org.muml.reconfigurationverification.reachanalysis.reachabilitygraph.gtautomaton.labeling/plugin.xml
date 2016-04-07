@@ -11,8 +11,9 @@
 <plugin>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Labeling -->
       <package
-            uri="http://www.fujaba.de/reachabilityGraph/gtautomaton/labeling/0.1.0"
+            uri="http://www.muml.org/reconfigurationverification/reachanalysis/reachabilitygraph/gtautomaton/labeling/1.0.0"
             class="org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.labeling.LabelingPackage"
             genModel="model/Labeling.genmodel"/>
    </extension>

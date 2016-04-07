@@ -1,4 +1,4 @@
-«IMPORT model»
+«IMPORT simulink»
 «IMPORT model::stateflow»
 «IMPORT model::msglib»
 «IMPORT model::msglib::buffer»

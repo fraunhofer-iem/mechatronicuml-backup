@@ -1,6 +1,8 @@
 package org.muml.simulink.adapter.parser;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -11,10 +13,7 @@ import org.muml.simulink.SimulinkContainer;
 import org.muml.simulink.SimulinkLibrary;
 import org.muml.simulink.SimulinkModel;
 import org.muml.simulink.SubSystem;
-import org.muml.simulink.adapter.parser.SimulinkBuilder;
-import org.muml.simulink.adapter.parser.SimulinkBuilderException;
-
-import de.uni_paderborn.fujaba.simulink.model.test.TestBase;
+import org.muml.simulink.test.TestBase;
 
 public class RailCabTest extends TestBase {
 	

@@ -40,7 +40,7 @@
   <extension point="org.eclipse.ui.views.properties.tabbed.propertySections"> 
       <propertySections contributorId="">
           <propertySection
-            class="de.uni_paderborn.fujaba.properties.runtime.sections.ObjectPropertySection"
+            class="org.muml.ape.runtime.sections.ObjectPropertySection"
             filter="org.muml.uppaal.options.properties.tabs.OptionsTabElementFilter"
             id="options"
             tab="options">
@@ -59,17 +59,17 @@
     
        <propertyEditor
              factory="org.muml.uppaal.options.properties.options.editor.OptionsEditor$Factory"
-             type="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/options#Options">
+             type="http://www.muml.org/uppaal/options/1.0.0#Options">
        </propertyEditor>
     
        <propertyEditor
              factory="org.muml.uppaal.options.properties.options.editor.CoordinationProtocolOptionsEditor$Factory"
-             type="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/options#CoordinationProtocolOptions">
+             type="http://www.muml.org/uppaal/options/1.0.0#CoordinationProtocolOptions">
        </propertyEditor>
     
        <propertyEditor
              factory="org.muml.uppaal.options.properties.options.editor.HideOptionExtensionEditor$Factory"
-             type="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/options#HideOptionExtension">
+             type="http://www.muml.org/uppaal/options/1.0.0#HideOptionExtension">
        </propertyEditor>
     
     </propertyEditors>

@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+import org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.labeling.*;
 import org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.labeling.AtomicPropositionMapping;
 import org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.labeling.LabelingFactory;
 import org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.gtautomaton.labeling.LabelingPackage;
@@ -31,7 +32,7 @@ public class LabelingFactoryImpl extends EFactoryImpl implements LabelingFactory
 	 */
 	public static LabelingFactory init() {
 		try {
-			LabelingFactory theLabelingFactory = (LabelingFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/reachabilityGraph/gtautomaton/labeling/0.1.0"); 
+			LabelingFactory theLabelingFactory = (LabelingFactory)EPackage.Registry.INSTANCE.getEFactory(LabelingPackage.eNS_URI);
 			if (theLabelingFactory != null) {
 				return theLabelingFactory;
 			}

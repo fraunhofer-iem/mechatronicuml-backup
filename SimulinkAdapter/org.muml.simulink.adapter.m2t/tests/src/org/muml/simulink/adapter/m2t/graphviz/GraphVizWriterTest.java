@@ -1,15 +1,15 @@
 package org.muml.simulink.adapter.m2t.graphviz;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.StringWriter;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
-import org.muml.simulink.adapter.m2t.graphviz.GraphVizWriter;
 import org.muml.simulink.stateflow.Chart;
 import org.muml.simulink.stateflow.StateflowFactory;
 import org.muml.simulink.stateflow.StateflowMachine;

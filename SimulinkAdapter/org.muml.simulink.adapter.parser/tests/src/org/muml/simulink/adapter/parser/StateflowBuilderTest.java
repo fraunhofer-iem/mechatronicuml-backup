@@ -1,6 +1,10 @@
 package org.muml.simulink.adapter.parser;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 import java.io.File;
 
@@ -8,8 +12,6 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.muml.simulink.DataType;
-import org.muml.simulink.adapter.parser.StateflowBuilder;
-import org.muml.simulink.adapter.parser.StateflowBuilderException;
 import org.muml.simulink.stateflow.Chart;
 import org.muml.simulink.stateflow.Data;
 import org.muml.simulink.stateflow.EmbeddedFunction;
@@ -19,8 +21,8 @@ import org.muml.simulink.stateflow.State;
 import org.muml.simulink.stateflow.StateflowMachine;
 import org.muml.simulink.stateflow.SubStateType;
 import org.muml.simulink.stateflow.Transition;
+import org.muml.simulink.test.TestBase;
 
-import de.uni_paderborn.fujaba.simulink.model.test.TestBase;
 import edu.tum.cs.commons.logging.SimpleLogger;
 import edu.tum.cs.simulink.builder.SimulinkModelBuilder;
 

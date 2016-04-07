@@ -53,7 +53,7 @@ public class ActivityActivityCompartmentCanonicalEditPolicy extends
 	 * @generated
 	 */
 	protected EStructuralFeature getFeatureToSynchronize() {
-		return ActivitiesPackage.eINSTANCE.getActivity_OwnedActivityNode();
+		return ActivitiesPackage.eINSTANCE.getActivity_OwnedActivityNodes();
 	}
 
 	/**

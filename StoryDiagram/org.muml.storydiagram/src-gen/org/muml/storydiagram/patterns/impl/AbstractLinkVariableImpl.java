@@ -320,9 +320,9 @@ public abstract class AbstractLinkVariableImpl extends NamedElementImpl
 		if (newSource != source) {
 			NotificationChain msgs = null;
 			if (source != null)
-				msgs = ((InternalEObject)source).eInverseRemove(this, PatternsPackage.OBJECT_VARIABLE__OUTGOING_LINK, ObjectVariable.class, msgs);
+				msgs = ((InternalEObject)source).eInverseRemove(this, PatternsPackage.OBJECT_VARIABLE__OUTGOING_LINKS, ObjectVariable.class, msgs);
 			if (newSource != null)
-				msgs = ((InternalEObject)newSource).eInverseAdd(this, PatternsPackage.OBJECT_VARIABLE__OUTGOING_LINK, ObjectVariable.class, msgs);
+				msgs = ((InternalEObject)newSource).eInverseAdd(this, PatternsPackage.OBJECT_VARIABLE__OUTGOING_LINKS, ObjectVariable.class, msgs);
 			msgs = basicSetSource(newSource, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -365,7 +365,7 @@ public abstract class AbstractLinkVariableImpl extends NamedElementImpl
 		switch (featureID) {
 			case PatternsPackage.ABSTRACT_LINK_VARIABLE__SOURCE:
 				if (source != null)
-					msgs = ((InternalEObject)source).eInverseRemove(this, PatternsPackage.OBJECT_VARIABLE__OUTGOING_LINK, ObjectVariable.class, msgs);
+					msgs = ((InternalEObject)source).eInverseRemove(this, PatternsPackage.OBJECT_VARIABLE__OUTGOING_LINKS, ObjectVariable.class, msgs);
 				return basicSetSource((ObjectVariable)otherEnd, msgs);
 			case PatternsPackage.ABSTRACT_LINK_VARIABLE__SECOND_LINK_CONSTRAINTS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getSecondLinkConstraints()).basicAdd(otherEnd, msgs);

@@ -1,4 +1,4 @@
-«IMPORT model»
+«IMPORT simulink»
 
 «DEFINE stateflowParameter FOR Parameter-»
 «IF {'created','description', 'name', 'labelString'}.contains(this.name)-»

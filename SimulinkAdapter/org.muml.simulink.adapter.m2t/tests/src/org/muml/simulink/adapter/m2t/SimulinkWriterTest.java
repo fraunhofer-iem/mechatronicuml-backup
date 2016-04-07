@@ -1,6 +1,7 @@
 package org.muml.simulink.adapter.m2t;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
 
 import java.io.File;
 import java.io.IOException;
@@ -10,18 +11,16 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TemporaryFolder;
-import org.muml.simulink.*;
-import org.muml.simulink.adapter.m2t.SimulinkWriter;
+import org.muml.simulink.SimulinkContainer;
+import org.muml.simulink.SimulinkPackage;
 import org.muml.simulink.adapter.parser.SimulinkBuilder;
 import org.muml.simulink.adapter.parser.SimulinkBuilderException;
-
-import de.uni_paderborn.fujaba.simulink.model.test.TestBase;
+import org.muml.simulink.test.TestBase;
 
 
 public class SimulinkWriterTest extends TestBase
