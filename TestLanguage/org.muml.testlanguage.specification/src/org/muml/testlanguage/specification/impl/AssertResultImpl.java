@@ -49,7 +49,7 @@ public class AssertResultImpl extends AssertBoolImpl implements AssertResult {
 	public void initialize() {
 		this.setLabel("Assert Result");
 		this.addPortSpecification(PortType.IN, "property_result_repository", false,
-				de.uni_paderborn.fujaba.muml.verification.uppaal.results.PropertyResultRepository.class);
+				org.muml.uppaal.adapter.results.PropertyResultRepository.class);
 	}
 
 	/**

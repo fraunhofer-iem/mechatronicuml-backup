@@ -21,7 +21,7 @@ public interface AssertDiagnosticTrace extends AssertBool {
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @model annotation=
-	 *        "http://www.eclipse.org/emf/2002/GenModel body='\t\tthis.setLabel(\"Assert DiagnosticTrace\");\r\n\t\tthis.addPortSpecification(\r\n\t\t\t\tPortType.IN,\r\n\t\t\t\t\"trace_repository\",\r\n\t\t\t\tfalse,\r\n\t\t\t\tde.uni_paderborn.uppaal.trace.diagnosticTrace.TraceRepository.class);'"
+	 *        "http://www.eclipse.org/emf/2002/GenModel body='\t\tthis.setLabel(\"Assert DiagnosticTrace\");\r\n\t\tthis.addPortSpecification(\r\n\t\t\t\tPortType.IN,\r\n\t\t\t\t\"trace_repository\",\r\n\t\t\t\tfalse,\r\n\t\t\t\torg.muml.uppaal.trace.diagnostictrace.TraceRepository.class);'"
 	 * @generated
 	 */
 	void initialize();

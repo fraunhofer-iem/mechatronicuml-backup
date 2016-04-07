@@ -127,9 +127,8 @@ public class CheckMTCTLImpl extends NodeSpecificationImpl implements CheckMTCTL 
 	 */
 	public void initialize() {
 		this.setLabel("Check MTCTL");
-		this.addPortSpecification(PortType.IN, "muml", false, de.uni_paderborn.fujaba.modelinstance.RootNode.class);
-		this.addPortSpecification(PortType.IN, "options", true,
-				de.uni_paderborn.fujaba.muml.verification.uppaal.options.Options.class);
+		this.addPortSpecification(PortType.IN, "muml", false, org.muml.core.modelinstance.RootNode.class);
+		this.addPortSpecification(PortType.IN, "options", true, org.muml.uppaal.options.Options.class);
 		this.addPortSpecification(PortType.OUT, "results", false);
 	}
 

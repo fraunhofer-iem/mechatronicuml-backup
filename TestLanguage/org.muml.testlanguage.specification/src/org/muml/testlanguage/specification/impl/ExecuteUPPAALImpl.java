@@ -52,11 +52,10 @@ public class ExecuteUPPAALImpl extends NodeSpecificationImpl implements ExecuteU
 	 */
 	public void initialize() {
 		this.setLabel("Check UPPAAL");
-		this.addPortSpecification(PortType.IN, "nta", false, de.uni_paderborn.uppaal.NTA.class);
+		this.addPortSpecification(PortType.IN, "nta", false, org.muml.uppaal.NTA.class);
 		this.addPortSpecification(PortType.IN, "property_repository", false,
-				de.uni_paderborn.uppaal.requirements.PropertyRepository.class);
-		this.addPortSpecification(PortType.IN, "options", true,
-				de.uni_paderborn.fujaba.muml.verification.uppaal.options.Options.class);
+				org.muml.uppaal.requirements.PropertyRepository.class);
+		this.addPortSpecification(PortType.IN, "options", true, org.muml.uppaal.options.Options.class);
 		this.addPortSpecification(PortType.OUT, "trace_repository", false);
 	}
 

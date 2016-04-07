@@ -21,7 +21,7 @@ public interface AssertResult extends AssertBool {
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @model annotation=
-	 *        "http://www.eclipse.org/emf/2002/GenModel body='\t\tthis.setLabel(\"Assert Result\");\r\n\t\tthis.addPortSpecification(\r\n\t\t\t\tPortType.IN,\r\n\t\t\t\t\"property_result_repository\",\r\n\t\t\t\tfalse,\r\n\t\t\t\tde.uni_paderborn.fujaba.muml.verification.uppaal.results.PropertyResultRepository.class);'"
+	 *        "http://www.eclipse.org/emf/2002/GenModel body='\t\tthis.setLabel(\"Assert Result\");\r\n\t\tthis.addPortSpecification(\r\n\t\t\t\tPortType.IN,\r\n\t\t\t\t\"property_result_repository\",\r\n\t\t\t\tfalse,\r\n\t\t\t\torg.muml.uppaal.adapter.results.PropertyResultRepository.class);'"
 	 * @generated
 	 */
 	void initialize();

@@ -50,7 +50,7 @@ public class AssertDiagnosticTraceImpl extends AssertBoolImpl implements AssertD
 	public void initialize() {
 		this.setLabel("Assert DiagnosticTrace");
 		this.addPortSpecification(PortType.IN, "trace_repository", false,
-				de.uni_paderborn.uppaal.trace.diagnosticTrace.TraceRepository.class);
+				org.muml.uppaal.trace.diagnostictrace.TraceRepository.class);
 	}
 
 	/**

@@ -2765,8 +2765,7 @@ public interface SpecificationPackage extends EPackage {
 		 * The meta object literal for the '<em>Execution Exception</em>' data
 		 * type. <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * 
-		 * @see de.uni_paderborn.fujaba.muml.testlanguage.specification.custom.
-		 *      ExecutionException
+		 * @see org.muml.testlanguage.specification.custom.ExecutionException
 		 * @see org.muml.testlanguage.specification.impl.SpecificationPackageImpl#getExecutionException()
 		 * @generated
 		 */
