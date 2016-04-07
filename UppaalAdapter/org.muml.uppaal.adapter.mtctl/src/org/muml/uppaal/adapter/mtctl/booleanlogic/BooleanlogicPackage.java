@@ -47,7 +47,7 @@ public interface BooleanlogicPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_PREFIX = "mtctlbooleanlogic";
+	String eNS_PREFIX = "BooleanLogic";
 
 	/**
 	 * The singleton instance of the package.

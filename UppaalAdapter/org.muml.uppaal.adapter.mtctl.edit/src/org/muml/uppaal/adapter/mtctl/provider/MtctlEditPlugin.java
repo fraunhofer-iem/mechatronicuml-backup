@@ -7,6 +7,7 @@ import org.eclipse.emf.common.EMFPlugin;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.muml.core.modelinstance.provider.ModelinstanceEditPlugin;
 import org.muml.core.provider.CoreEditPlugin;
+import org.muml.pim.provider.MumlEditPlugin;
 
 /**
  * This is the central singleton for the Mtctl edit plugin.
@@ -42,7 +43,7 @@ public final class MtctlEditPlugin extends EMFPlugin {
 		  (new ResourceLocator [] {
 		     CoreEditPlugin.INSTANCE,
 		     ModelinstanceEditPlugin.INSTANCE,
-		     org.muml.pim.provider.MumlEditPlugin.INSTANCE,
+		     MumlEditPlugin.INSTANCE,
 		   });
 	}
 

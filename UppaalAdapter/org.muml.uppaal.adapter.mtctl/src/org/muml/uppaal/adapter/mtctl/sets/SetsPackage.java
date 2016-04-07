@@ -47,7 +47,7 @@ public interface SetsPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_PREFIX = "mtctlsets";
+	String eNS_PREFIX = "Sets";
 
 	/**
 	 * The singleton instance of the package.

@@ -48,7 +48,7 @@ public interface PredicatesPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_PREFIX = "mtctlpredicates";
+	String eNS_PREFIX = "Predicates";
 
 	/**
 	 * The singleton instance of the package.

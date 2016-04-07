@@ -47,7 +47,7 @@ public interface QuantifiersPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_PREFIX = "mtctlquantifiers";
+	String eNS_PREFIX = "Quantifiers";
 
 	/**
 	 * The singleton instance of the package.

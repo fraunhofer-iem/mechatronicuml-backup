@@ -50,7 +50,7 @@ public interface ComparablesPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_PREFIX = "mtctlcomparables";
+	String eNS_PREFIX = "Comparables";
 
 	/**
 	 * The singleton instance of the package.
