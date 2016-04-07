@@ -18,6 +18,7 @@ import org.muml.testlanguage.specification.custom.ExecutionException;
  * @generated
  */
 public class DefaultImpl extends NodeSpecificationImpl implements Default {
+
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -51,8 +52,8 @@ public class DefaultImpl extends NodeSpecificationImpl implements Default {
 	 * 
 	 * @generated
 	 */
-	public void execute(final Map<String, Object> inputs, final Map<String, Object> outputs) throws ExecutionException,
-			Exception, de.uni_paderborn.fujaba.muml.testlanguage.specification.custom.ExecutionException {
+	public void execute(final Map<String, Object> inputs, final Map<String, Object> outputs)
+			throws ExecutionException, Exception {
 		throw new ExecutionException("Default node should not be executed.");
 	}
 
@@ -98,5 +99,4 @@ public class DefaultImpl extends NodeSpecificationImpl implements Default {
 		}
 		return super.eInvoke(operationID, arguments);
 	}
-
 } // DefaultImpl

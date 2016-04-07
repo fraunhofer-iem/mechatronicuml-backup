@@ -19,6 +19,7 @@ import org.muml.testlanguage.specification.*;
  * @generated
  */
 public class SpecificationAdapterFactory extends AdapterFactoryImpl {
+
 	/**
 	 * The cached model package. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -386,5 +387,4 @@ public class SpecificationAdapterFactory extends AdapterFactoryImpl {
 	public Adapter createEObjectAdapter() {
 		return null;
 	}
-
 } // SpecificationAdapterFactory

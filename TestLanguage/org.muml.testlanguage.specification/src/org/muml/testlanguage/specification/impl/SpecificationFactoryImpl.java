@@ -19,6 +19,7 @@ import org.muml.testlanguage.specification.*;
  * @generated
  */
 public class SpecificationFactoryImpl extends EFactoryImpl implements SpecificationFactory {
+
 	/**
 	 * Creates the default factory implementation. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->

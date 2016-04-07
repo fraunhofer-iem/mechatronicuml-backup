@@ -38,6 +38,7 @@ import org.muml.testlanguage.specification.custom.ExecutionException;
  * @generated
  */
 public class CompareModelsImpl extends NodeSpecificationImpl implements CompareModels {
+
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -74,8 +75,8 @@ public class CompareModelsImpl extends NodeSpecificationImpl implements CompareM
 	 * 
 	 * @generated
 	 */
-	public void execute(final Map<String, Object> inputs, final Map<String, Object> outputs) throws ExecutionException,
-			Exception, de.uni_paderborn.fujaba.muml.testlanguage.specification.custom.ExecutionException {
+	public void execute(final Map<String, Object> inputs, final Map<String, Object> outputs)
+			throws ExecutionException, Exception {
 		// Local variable to carry the result.
 		boolean result = false;
 
@@ -179,5 +180,4 @@ public class CompareModelsImpl extends NodeSpecificationImpl implements CompareM
 		}
 		return super.eInvoke(operationID, arguments);
 	}
-
 } // CompareModelsImpl

@@ -23,6 +23,7 @@ import org.muml.testlanguage.specification.custom.ExecutionException;
  * @generated
  */
 public interface PrimitiveString extends NodeSpecification {
+
 	/**
 	 * Returns the value of the '<em><b>Value</b></em>' attribute. The default
 	 * value is <code>""</code>. <!-- begin-user-doc -->
@@ -70,7 +71,6 @@ public interface PrimitiveString extends NodeSpecification {
 	 *        "http://www.eclipse.org/emf/2002/GenModel body='\t\t// Put the wrapped string onto the output.\r\n\t\toutputs.put(\"string\", this.getValue());\r\n\r\n\t\treturn;'"
 	 * @generated
 	 */
-	void execute(Map<String, Object> inputs, Map<String, Object> outputs) throws ExecutionException, Exception,
-			de.uni_paderborn.fujaba.muml.testlanguage.specification.custom.ExecutionException;
+	void execute(Map<String, Object> inputs, Map<String, Object> outputs) throws ExecutionException, Exception;
 
 } // PrimitiveString

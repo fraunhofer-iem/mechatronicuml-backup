@@ -4,7 +4,6 @@ package org.muml.testlanguage.specification.impl;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.Map;
-
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
@@ -26,6 +25,7 @@ import org.muml.uppaal.requirements.PropertyRepository;
  * @generated
  */
 public class ExecuteUPPAALImpl extends NodeSpecificationImpl implements ExecuteUPPAAL {
+
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -64,8 +64,8 @@ public class ExecuteUPPAALImpl extends NodeSpecificationImpl implements ExecuteU
 	 * 
 	 * @generated
 	 */
-	public void execute(final Map<String, Object> inputs, final Map<String, Object> outputs) throws ExecutionException,
-			Exception, de.uni_paderborn.fujaba.muml.testlanguage.specification.custom.ExecutionException {
+	public void execute(final Map<String, Object> inputs, final Map<String, Object> outputs)
+			throws ExecutionException, Exception {
 		// Check if we have custom options or use the default ones.
 		CoordinationProtocolOptions options;
 		if (inputs.containsKey("options") && inputs.get("options") != null) {
@@ -76,18 +76,12 @@ public class ExecuteUPPAALImpl extends NodeSpecificationImpl implements ExecuteU
 		}
 
 		// Start the job that serialized and then verifies the NTA.
-		VerifyTAJob job = new VerifyTAJob((NTA) inputs.get("nta"),
-				(PropertyRepository) inputs.get("property_repository"), options);
-		IStatus status = job.execute(new NullProgressMonitor());
-
-		// Throw an exception if something went wrong.
-		if (!status.isOK()) {
-			throw new ExecutionException(status.getMessage());
-		}
+		org.muml.uppaal.job.VerifyTAOperation operation = new org.muml.uppaal.job.VerifyTAOperation(
+				(NTA) inputs.get("nta"), (PropertyRepository) inputs.get("property_repository"), options);
+		operation.run(new NullProgressMonitor());
 
 		// Put the traces on the output port and return.
-		outputs.put("trace_repository", job.getTraceRepository());
-		return;
+		outputs.put("trace_repository", operation.getTraceRepository());
 	}
 
 	/**

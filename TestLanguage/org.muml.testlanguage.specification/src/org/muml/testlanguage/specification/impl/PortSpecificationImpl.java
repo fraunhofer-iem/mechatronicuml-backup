@@ -36,6 +36,7 @@ import org.muml.testlanguage.specification.SpecificationPackage;
  * @generated
  */
 public class PortSpecificationImpl extends MinimalEObjectImpl.Container implements PortSpecification {
+
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -45,7 +46,6 @@ public class PortSpecificationImpl extends MinimalEObjectImpl.Container implemen
 	 * @ordered
 	 */
 	protected static final String NAME_EDEFAULT = null;
-
 	/**
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -55,7 +55,6 @@ public class PortSpecificationImpl extends MinimalEObjectImpl.Container implemen
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #isOptional() <em>Optional</em>}'
 	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -65,7 +64,6 @@ public class PortSpecificationImpl extends MinimalEObjectImpl.Container implemen
 	 * @ordered
 	 */
 	protected static final boolean OPTIONAL_EDEFAULT = false;
-
 	/**
 	 * The cached value of the '{@link #isOptional() <em>Optional</em>}'
 	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -75,7 +73,6 @@ public class PortSpecificationImpl extends MinimalEObjectImpl.Container implemen
 	 * @ordered
 	 */
 	protected boolean optional = OPTIONAL_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getType() <em>Type</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -85,7 +82,6 @@ public class PortSpecificationImpl extends MinimalEObjectImpl.Container implemen
 	 * @ordered
 	 */
 	protected static final PortType TYPE_EDEFAULT = PortType.IN;
-
 	/**
 	 * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -95,7 +91,6 @@ public class PortSpecificationImpl extends MinimalEObjectImpl.Container implemen
 	 * @ordered
 	 */
 	protected PortType type = TYPE_EDEFAULT;
-
 	/**
 	 * The cached value of the '{@link #getDataType() <em>Data Type</em>}'
 	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->

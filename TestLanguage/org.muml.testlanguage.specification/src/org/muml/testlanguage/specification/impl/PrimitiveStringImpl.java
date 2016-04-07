@@ -29,6 +29,7 @@ import org.muml.testlanguage.specification.custom.ExecutionException;
  * @generated
  */
 public class PrimitiveStringImpl extends NodeSpecificationImpl implements PrimitiveString {
+
 	/**
 	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -38,7 +39,6 @@ public class PrimitiveStringImpl extends NodeSpecificationImpl implements Primit
 	 * @ordered
 	 */
 	protected static final String VALUE_EDEFAULT = "";
-
 	/**
 	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -105,8 +105,8 @@ public class PrimitiveStringImpl extends NodeSpecificationImpl implements Primit
 	 * 
 	 * @generated
 	 */
-	public void execute(final Map<String, Object> inputs, final Map<String, Object> outputs) throws ExecutionException,
-			Exception, de.uni_paderborn.fujaba.muml.testlanguage.specification.custom.ExecutionException {
+	public void execute(final Map<String, Object> inputs, final Map<String, Object> outputs)
+			throws ExecutionException, Exception {
 		// Put the wrapped string onto the output.
 		outputs.put("string", this.getValue());
 

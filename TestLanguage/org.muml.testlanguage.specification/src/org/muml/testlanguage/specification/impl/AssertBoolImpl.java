@@ -29,6 +29,7 @@ import org.muml.testlanguage.specification.custom.ExecutionException;
  * @generated
  */
 public class AssertBoolImpl extends NodeSpecificationImpl implements AssertBool {
+
 	/**
 	 * The default value of the '{@link #isAssertion() <em>Assertion</em>}'
 	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -38,7 +39,6 @@ public class AssertBoolImpl extends NodeSpecificationImpl implements AssertBool 
 	 * @ordered
 	 */
 	protected static final boolean ASSERTION_EDEFAULT = true;
-
 	/**
 	 * The cached value of the '{@link #isAssertion() <em>Assertion</em>}'
 	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -105,8 +105,8 @@ public class AssertBoolImpl extends NodeSpecificationImpl implements AssertBool 
 	 * 
 	 * @generated
 	 */
-	public void execute(final Map<String, Object> inputs, final Map<String, Object> outputs) throws ExecutionException,
-			Exception, de.uni_paderborn.fujaba.muml.testlanguage.specification.custom.ExecutionException {
+	public void execute(final Map<String, Object> inputs, final Map<String, Object> outputs)
+			throws ExecutionException, Exception {
 		// Get the boolean value.
 		boolean bool = ((Boolean) inputs.get("bool")).booleanValue();
 
@@ -234,5 +234,4 @@ public class AssertBoolImpl extends NodeSpecificationImpl implements AssertBool 
 		result.append(')');
 		return result.toString();
 	}
-
 } // AssertBoolImpl

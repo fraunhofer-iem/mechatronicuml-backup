@@ -29,6 +29,7 @@ import org.muml.testlanguage.specification.custom.ExecutionException;
  * @generated
  */
 public interface Transformation extends NodeSpecification {
+
 	/**
 	 * Returns the value of the '<em><b>Uri</b></em>' attribute. <!--
 	 * begin-user-doc -->
@@ -111,8 +112,7 @@ public interface Transformation extends NodeSpecification {
 	 *        "http://www.eclipse.org/emf/2002/GenModel body='\t\tURI realURI = URIConversion.convert(URI.createURI(this.getUri()));\r\n\t\tTransformationExecutor executor = new TransformationExecutor(realURI);\r\n\r\n\t\tExecutionContextImpl context;\r\n\t\tIStatus status;\r\n\r\n\t\tstatus = BasicDiagnostic.toIStatus(executor.loadTransformation());\r\n\r\n\t\tif (!status.isOK()) {\r\n\t\t\tthrow new ExecutionException(status.getMessage());\r\n\t\t}\r\n\r\n\t\tcontext = new ExecutionContextImpl();\r\n\r\n\t\t// Set extents, i.e. the model parameters.\r\n\t\tBasicModelExtent[] extents = new BasicModelExtent[this\r\n\t\t\t\t.getParameterOrder().size()];\r\n\t\tint i = 0;\r\n\t\tfor (PortSpecification port : this.getParameterOrder()) {\r\n\t\t\tBasicModelExtent extent = new BasicModelExtent();\r\n\r\n\t\t\tif (port.getType() == PortType.IN) {\r\n\t\t\t\textent.add((EObject) inputs.get(port.getName()));\r\n\t\t\t} else if (port.getType() == PortType.INOUT) {\r\n\t\t\t\t// Copy the EObject to avoid side effects.\r\n\t\t\t\tCopier copier = new Copier();\r\n\t\t\t\tEObject result = copier.copy((EObject) inputs.get(port.getName()));\r\n\t\t\t\tcopier.copyReferences();\r\n\t\t\t\textent.add(result);\r\n\t\t\t}\r\n\r\n\t\t\textents[i] = extent;\r\n\r\n\t\t\ti++;\r\n\t\t}\r\n\r\n\t\t// Set configuration properties. They arrive in an EObject wrapper\r\n\t\t// as a string, they are parsed by QVTo.\r\n\t\tfor (String property : this.getConfigProperties()) {\r\n\t\t\tif (inputs.containsKey(property)) {\r\n\t\t\t\tcontext.setConfigProperty(property,\r\n\t\t\t\t\t\t(String) inputs.get(property));\r\n\t\t\t}\r\n\t\t}\r\n\r\n\t\t// Execute the transformation.\r\n\t\tOutputStreamWriter outStream = new OutputStreamWriter(System.out);\r\n\t\tLog log = new WriterLog(outStream);\r\n\t\tcontext.setLog(log);\r\n\t\tExecutionDiagnostic diagnostic = executor.execute(context, extents);\r\n\r\n\t\t// Check if everything went fine.\r\n\t\tif (diagnostic.getSeverity() == Diagnostic.ERROR) {\r\n\t\t\tthrow new ExecutionException(\"Transformation failed: \"\r\n\t\t\t\t\t+ diagnostic.getMessage());\r\n\t\t}\r\n\r\n\t\t// Get the output.\r\n\t\ti = 0;\r\n\t\tfor (PortSpecification port : this.getParameterOrder()) {\r\n\t\t\t// System.out.println(i + \" \" + port.getName() + \" (\"\r\n\t\t\t// + port.getType() + \"): \"\r\n\t\t\t// + extents[i].getContents().get(0));\r\n\t\t\tif (port.getType() == PortType.OUT\r\n\t\t\t\t\t|| port.getType() == PortType.INOUT) {\r\n\t\t\t\toutputs.put(port.getName(), extents[i].getContents().get(0));\r\n\t\t\t}\r\n\r\n\t\t\ti++;\r\n\t\t}\r\n\r\n\t\treturn;'"
 	 * @generated
 	 */
-	void execute(Map<String, Object> inputs, Map<String, Object> outputs) throws ExecutionException, Exception,
-			de.uni_paderborn.fujaba.muml.testlanguage.specification.custom.ExecutionException;
+	void execute(Map<String, Object> inputs, Map<String, Object> outputs) throws ExecutionException, Exception;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->

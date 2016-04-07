@@ -37,6 +37,7 @@ import org.muml.testlanguage.specification.custom.URIConversion;
  * @generated
  */
 public class SaveModelImpl extends NodeSpecificationImpl implements SaveModel {
+
 	/**
 	 * The default value of the '{@link #getUri() <em>Uri</em>}' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
@@ -46,7 +47,6 @@ public class SaveModelImpl extends NodeSpecificationImpl implements SaveModel {
 	 * @ordered
 	 */
 	protected static final String URI_EDEFAULT = null;
-
 	/**
 	 * The cached value of the '{@link #getUri() <em>Uri</em>}' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
@@ -112,8 +112,8 @@ public class SaveModelImpl extends NodeSpecificationImpl implements SaveModel {
 	 * 
 	 * @generated
 	 */
-	public void execute(final Map<String, Object> inputs, final Map<String, Object> outputs) throws ExecutionException,
-			Exception, de.uni_paderborn.fujaba.muml.testlanguage.specification.custom.ExecutionException {
+	public void execute(final Map<String, Object> inputs, final Map<String, Object> outputs)
+			throws ExecutionException, Exception {
 		// Create the URI.
 		URI realURI = URIConversion.convert(URI.createURI(this.getUri()));
 

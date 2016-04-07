@@ -23,6 +23,7 @@ import org.muml.uppaal.trace.diagnostictrace.TraceRepository;
  * @generated
  */
 public class AssertDiagnosticTraceImpl extends AssertBoolImpl implements AssertDiagnosticTrace {
+
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -58,8 +59,8 @@ public class AssertDiagnosticTraceImpl extends AssertBoolImpl implements AssertD
 	 * 
 	 * @generated
 	 */
-	public void execute(final Map<String, Object> inputs, final Map<String, Object> outputs) throws ExecutionException,
-			Exception, de.uni_paderborn.fujaba.muml.testlanguage.specification.custom.ExecutionException {
+	public void execute(final Map<String, Object> inputs, final Map<String, Object> outputs)
+			throws ExecutionException, Exception {
 		// Get the repository.
 		TraceRepository repo = (TraceRepository) inputs.get("trace_repository");
 
@@ -142,5 +143,4 @@ public class AssertDiagnosticTraceImpl extends AssertBoolImpl implements AssertD
 		}
 		return super.eInvoke(operationID, arguments);
 	}
-
 } // AssertDiagnosticTraceImpl

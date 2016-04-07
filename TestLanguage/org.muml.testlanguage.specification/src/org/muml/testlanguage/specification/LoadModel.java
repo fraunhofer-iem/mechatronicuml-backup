@@ -23,6 +23,7 @@ import org.muml.testlanguage.specification.custom.ExecutionException;
  * @generated
  */
 public interface LoadModel extends NodeSpecification {
+
 	/**
 	 * Returns the value of the '<em><b>Uri</b></em>' attribute. The default
 	 * value is <code>""</code>. <!-- begin-user-doc -->
@@ -70,7 +71,6 @@ public interface LoadModel extends NodeSpecification {
 	 *        "http://www.eclipse.org/emf/2002/GenModel body='\t\t// Setup the URI.\r\n\t\tURI realURI = URIConversion.convert(URI.createURI(this.getUri()));\r\n\r\n\t\t// Load the model.\r\n\t\tResourceSet resSet = new ResourceSetImpl();\r\n\t\tResource resource = resSet.getResource(realURI.trimFragment(), true);\r\n\t\tEObject result = null;\r\n\r\n\t\tif (realURI.hasFragment()) {\r\n\t\t\tresult = resource.getEObject(realURI.fragment());\r\n\t\t} else {\r\n\t\t\tresult = resource.getContents().get(0);\r\n\t\t}\r\n\r\n\t\t// Put the loaded model onto the output.\r\n\t\toutputs.put(\"model\", result);\r\n\r\n\t\treturn;'"
 	 * @generated
 	 */
-	void execute(Map<String, Object> inputs, Map<String, Object> outputs) throws ExecutionException, Exception,
-			de.uni_paderborn.fujaba.muml.testlanguage.specification.custom.ExecutionException;
+	void execute(Map<String, Object> inputs, Map<String, Object> outputs) throws ExecutionException, Exception;
 
 } // LoadModel

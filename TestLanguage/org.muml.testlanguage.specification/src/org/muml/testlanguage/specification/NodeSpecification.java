@@ -29,6 +29,7 @@ import org.muml.testlanguage.specification.custom.ExecutionException;
  * @generated
  */
 public interface NodeSpecification extends EObject {
+
 	/**
 	 * Returns the value of the '<em><b>Port Specifications</b></em>'
 	 * containment reference list. The list contents are of type
@@ -94,8 +95,7 @@ public interface NodeSpecification extends EObject {
 	 *        inputsRequired="true" outputsRequired="true"
 	 * @generated
 	 */
-	void execute(Map<String, Object> inputs, Map<String, Object> outputs) throws ExecutionException, Exception,
-			de.uni_paderborn.fujaba.muml.testlanguage.specification.custom.ExecutionException;
+	void execute(Map<String, Object> inputs, Map<String, Object> outputs) throws ExecutionException, Exception;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->

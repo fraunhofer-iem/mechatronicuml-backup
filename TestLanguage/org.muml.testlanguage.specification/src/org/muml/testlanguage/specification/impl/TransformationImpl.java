@@ -62,6 +62,7 @@ import org.muml.testlanguage.specification.custom.URIConversion;
  */
 @SuppressWarnings("restriction")
 public class TransformationImpl extends NodeSpecificationImpl implements Transformation {
+
 	/**
 	 * The default value of the '{@link #getUri() <em>Uri</em>}' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
@@ -71,7 +72,6 @@ public class TransformationImpl extends NodeSpecificationImpl implements Transfo
 	 * @ordered
 	 */
 	protected static final String URI_EDEFAULT = null;
-
 	/**
 	 * The cached value of the '{@link #getUri() <em>Uri</em>}' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
@@ -81,7 +81,6 @@ public class TransformationImpl extends NodeSpecificationImpl implements Transfo
 	 * @ordered
 	 */
 	protected String uri = URI_EDEFAULT;
-
 	/**
 	 * The cached value of the '{@link #getParameterOrder()
 	 * <em>Parameter Order</em>}' reference list. <!-- begin-user-doc --> <!--
@@ -92,7 +91,6 @@ public class TransformationImpl extends NodeSpecificationImpl implements Transfo
 	 * @ordered
 	 */
 	protected EList<PortSpecification> parameterOrder;
-
 	/**
 	 * The cached value of the '{@link #getConfigProperties()
 	 * <em>Config Properties</em>}' attribute list. <!-- begin-user-doc --> <!--
@@ -185,8 +183,8 @@ public class TransformationImpl extends NodeSpecificationImpl implements Transfo
 	 * 
 	 * @generated
 	 */
-	public void execute(final Map<String, Object> inputs, final Map<String, Object> outputs) throws ExecutionException,
-			Exception, de.uni_paderborn.fujaba.muml.testlanguage.specification.custom.ExecutionException {
+	public void execute(final Map<String, Object> inputs, final Map<String, Object> outputs)
+			throws ExecutionException, Exception {
 		URI realURI = URIConversion.convert(URI.createURI(this.getUri()));
 		TransformationExecutor executor = new TransformationExecutor(realURI);
 

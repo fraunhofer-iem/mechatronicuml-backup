@@ -22,6 +22,7 @@ import org.muml.uppaal.adapter.results.PropertyResultRepository;
  * @generated
  */
 public class AssertResultImpl extends AssertBoolImpl implements AssertResult {
+
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -57,8 +58,8 @@ public class AssertResultImpl extends AssertBoolImpl implements AssertResult {
 	 * 
 	 * @generated
 	 */
-	public void execute(final Map<String, Object> inputs, final Map<String, Object> outputs) throws ExecutionException,
-			Exception, de.uni_paderborn.fujaba.muml.testlanguage.specification.custom.ExecutionException {
+	public void execute(final Map<String, Object> inputs, final Map<String, Object> outputs)
+			throws ExecutionException, Exception {
 		// Get the repository of the results.
 		PropertyResultRepository repo = (PropertyResultRepository) inputs.get("property_result_repository");
 
@@ -138,5 +139,4 @@ public class AssertResultImpl extends AssertBoolImpl implements AssertResult {
 		}
 		return super.eInvoke(operationID, arguments);
 	}
-
 } // AssertResultImpl

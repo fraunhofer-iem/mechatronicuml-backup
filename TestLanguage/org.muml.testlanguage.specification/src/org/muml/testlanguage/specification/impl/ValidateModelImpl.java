@@ -22,6 +22,7 @@ import org.muml.testlanguage.specification.custom.ExecutionException;
  * @generated
  */
 public class ValidateModelImpl extends NodeSpecificationImpl implements ValidateModel {
+
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -57,8 +58,8 @@ public class ValidateModelImpl extends NodeSpecificationImpl implements Validate
 	 * 
 	 * @generated
 	 */
-	public void execute(final Map<String, Object> inputs, final Map<String, Object> outputs) throws ExecutionException,
-			Exception, de.uni_paderborn.fujaba.muml.testlanguage.specification.custom.ExecutionException {
+	public void execute(final Map<String, Object> inputs, final Map<String, Object> outputs)
+			throws ExecutionException, Exception {
 		// TODO Maybe also get a BatchValidator, see ValidateAction.
 		// Validate using a Diagnostic instance.
 		Diagnostic diagnostic = Diagnostician.INSTANCE.validate((EObject) inputs.get("model"));

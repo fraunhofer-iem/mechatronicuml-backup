@@ -23,6 +23,7 @@ import org.muml.testlanguage.specification.custom.ExecutionException;
  * @generated
  */
 public interface AssertBool extends NodeSpecification {
+
 	/**
 	 * Returns the value of the '<em><b>Assertion</b></em>' attribute. The
 	 * default value is <code>"true"</code>. <!-- begin-user-doc -->
@@ -71,7 +72,6 @@ public interface AssertBool extends NodeSpecification {
 	 *        "http://www.eclipse.org/emf/2002/GenModel body='\t\t// Get the boolean value.\r\n\t\tboolean bool = ((Boolean) inputs.get(\"bool\")).booleanValue();\r\n\r\n\t\t// Throw an exception if it does not match the assertion.\r\n\t\tif (bool != this.assertion) {\r\n\t\t\tthrow new ExecutionException(\"Expected \"\r\n\t\t\t\t\t+ Boolean.toString(this.assertion) + \", but got \"\r\n\t\t\t\t\t+ Boolean.toString(bool));\r\n\t\t}'"
 	 * @generated
 	 */
-	void execute(Map<String, Object> inputs, Map<String, Object> outputs) throws ExecutionException, Exception,
-			de.uni_paderborn.fujaba.muml.testlanguage.specification.custom.ExecutionException;
+	void execute(Map<String, Object> inputs, Map<String, Object> outputs) throws ExecutionException, Exception;
 
 } // AssertBool

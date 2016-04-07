@@ -39,6 +39,7 @@ import org.muml.testlanguage.specification.custom.ExecutionException;
  * @generated
  */
 public abstract class NodeSpecificationImpl extends MinimalEObjectImpl.Container implements NodeSpecification {
+
 	/**
 	 * The cached value of the '{@link #getPortSpecifications()
 	 * <em>Port Specifications</em>}' containment reference list. <!--
@@ -49,7 +50,6 @@ public abstract class NodeSpecificationImpl extends MinimalEObjectImpl.Container
 	 * @ordered
 	 */
 	protected EList<PortSpecification> portSpecifications;
-
 	/**
 	 * The default value of the '{@link #getLabel() <em>Label</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -59,7 +59,6 @@ public abstract class NodeSpecificationImpl extends MinimalEObjectImpl.Container
 	 * @ordered
 	 */
 	protected static final String LABEL_EDEFAULT = "Node";
-
 	/**
 	 * The cached value of the '{@link #getLabel() <em>Label</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -138,8 +137,7 @@ public abstract class NodeSpecificationImpl extends MinimalEObjectImpl.Container
 	 * 
 	 * @generated
 	 */
-	public void execute(Map<String, Object> inputs, Map<String, Object> outputs) throws ExecutionException, Exception,
-			de.uni_paderborn.fujaba.muml.testlanguage.specification.custom.ExecutionException {
+	public void execute(Map<String, Object> inputs, Map<String, Object> outputs) throws ExecutionException, Exception {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

@@ -16,6 +16,7 @@ import org.muml.testlanguage.specification.custom.ExecutionException;
  * @generated
  */
 public interface Default extends NodeSpecification {
+
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -34,7 +35,6 @@ public interface Default extends NodeSpecification {
 	 *        "http://www.eclipse.org/emf/2002/GenModel body='throw new ExecutionException(\"Default node should not be executed.\");'"
 	 * @generated
 	 */
-	void execute(Map<String, Object> inputs, Map<String, Object> outputs) throws ExecutionException, Exception,
-			de.uni_paderborn.fujaba.muml.testlanguage.specification.custom.ExecutionException;
+	void execute(Map<String, Object> inputs, Map<String, Object> outputs) throws ExecutionException, Exception;
 
 } // Default

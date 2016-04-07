@@ -28,6 +28,7 @@ import org.muml.testlanguage.specification.SpecificationFactory;
 import org.muml.testlanguage.specification.SpecificationPackage;
 import org.muml.testlanguage.specification.Transformation;
 import org.muml.testlanguage.specification.ValidateModel;
+import org.muml.testlanguage.specification.custom.ExecutionException;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Package</b>. <!--
@@ -36,118 +37,103 @@ import org.muml.testlanguage.specification.ValidateModel;
  * @generated
  */
 public class SpecificationPackageImpl extends EPackageImpl implements SpecificationPackage {
+
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
 	private EClass nodeSpecificationEClass = null;
-
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
 	private EClass portSpecificationEClass = null;
-
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
 	private EClass defaultEClass = null;
-
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
 	private EClass loadModelEClass = null;
-
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
 	private EClass compareModelsEClass = null;
-
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
 	private EClass validateModelEClass = null;
-
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
 	private EClass saveModelEClass = null;
-
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
 	private EClass transformationEClass = null;
-
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
 	private EClass executeUPPAALEClass = null;
-
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
 	private EClass primitiveStringEClass = null;
-
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
 	private EClass assertBoolEClass = null;
-
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
 	private EClass assertDiagnosticTraceEClass = null;
-
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
 	private EClass assertResultEClass = null;
-
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
 	private EClass checkMTCTLEClass = null;
-
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
 	private EEnum portTypeEEnum = null;
-
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
 	private EDataType executionExceptionEDataType = null;
-
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -1269,8 +1255,8 @@ public class SpecificationPackageImpl extends EPackageImpl implements Specificat
 		addEEnumLiteral(portTypeEEnum, PortType.INOUT);
 
 		// Initialize data types
-		initEDataType(executionExceptionEDataType, org.muml.testlanguage.specification.custom.ExecutionException.class,
-				"ExecutionException", !IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(executionExceptionEDataType, ExecutionException.class, "ExecutionException", !IS_SERIALIZABLE,
+				!IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(defaultExceptionEDataType, Exception.class, "DefaultException", !IS_SERIALIZABLE,
 				!IS_GENERATED_INSTANCE_CLASS);
 
@@ -1326,7 +1312,7 @@ public class SpecificationPackageImpl extends EPackageImpl implements Specificat
 		addAnnotation(getExecuteUPPAAL__Initialize(), source, new String[] { "body",
 				"\t\tthis.setLabel(\"Check UPPAAL\");\r\n\t\tthis.addPortSpecification(PortType.IN, \"nta\", false,\r\n\t\t\t\torg.muml.uppaal.NTA.class);\r\n\t\tthis.addPortSpecification(PortType.IN, \"property_repository\", false,\r\n\t\t\t\torg.muml.uppaal.requirements.PropertyRepository.class);\r\n\t\tthis.addPortSpecification(\r\n\t\t\t\tPortType.IN,\r\n\t\t\t\t\"options\",\r\n\t\t\t\ttrue,\r\n\t\t\t\torg.muml.uppaal.options.Options.class);\r\n\t\tthis.addPortSpecification(PortType.OUT, \"trace_repository\", false);" });
 		addAnnotation(getExecuteUPPAAL__Execute__Map_Map(), source, new String[] { "body",
-				"\t\t// Check if we have custom options or use the default ones.\r\n\t\tCoordinationProtocolOptions options;\r\n\t\tif (inputs.containsKey(\"options\") && inputs.get(\"options\") != null) {\r\n\t\t\toptions = (CoordinationProtocolOptions) inputs.get(\"options\");\r\n\t\t} else {\r\n\t\t\toptions = OptionsFactory.eINSTANCE\r\n\t\t\t\t\t.createCoordinationProtocolOptions();\r\n\t\t\toptions.setTraceOptions(TraceOptions.NONE);\r\n\t\t}\r\n\r\n\t\t// Start the job that serialized and then verifies the NTA.\r\n\t\tVerifyTAJob job = new VerifyTAJob((NTA) inputs.get(\"nta\"),\r\n\t\t\t\t(PropertyRepository) inputs.get(\"property_repository\"), options);\r\n\t\tIStatus status = job.execute(new NullProgressMonitor());\r\n\r\n\t\t// Throw an exception if something went wrong.\r\n\t\tif (!status.isOK()) {\r\n\t\t\tthrow new ExecutionException(status.getMessage());\r\n\t\t}\r\n\r\n\t\t// Put the traces on the output port and return.\r\n\t\toutputs.put(\"trace_repository\", job.getTraceRepository());\r\n\t\treturn;" });
+				"// Check if we have custom options or use the default ones.\nCoordinationProtocolOptions options;\nif (inputs.containsKey(\"options\") && inputs.get(\"options\") != null) {\n\toptions = (CoordinationProtocolOptions) inputs.get(\"options\");\n} else {\n\toptions = OptionsFactory.eINSTANCE\n\t\t\t.createCoordinationProtocolOptions();\n\toptions.setTraceOptions(TraceOptions.NONE);\n}\n\n// Start the job that serialized and then verifies the NTA.\norg.muml.uppaal.job.VerifyTAOperation operation = new org.muml.uppaal.job.VerifyTAOperation((NTA) inputs.get(\"nta\"),\n\t\t(PropertyRepository) inputs.get(\"property_repository\"), options);\noperation.run(new NullProgressMonitor());\n\n// Put the traces on the output port and return.\noutputs.put(\"trace_repository\", operation.getTraceRepository());" });
 		addAnnotation(getPrimitiveString__Initialize(), source, new String[] { "body",
 				"this.setLabel(\"Primitive String\");\r\nthis.addPortSpecification(PortType.OUT, \"string\", false);" });
 		addAnnotation(getPrimitiveString__Execute__Map_Map(), source, new String[] { "body",
