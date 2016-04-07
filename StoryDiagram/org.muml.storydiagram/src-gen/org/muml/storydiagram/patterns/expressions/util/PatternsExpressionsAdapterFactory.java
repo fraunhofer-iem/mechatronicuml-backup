@@ -58,7 +58,7 @@ public class PatternsExpressionsAdapterFactory extends AdapterFactoryImpl {
 			return true;
 		}
 		if (object instanceof EObject) {
-			return ((EObject) object).eClass().getEPackage() == modelPackage;
+			return ((EObject)object).eClass().getEPackage() == modelPackage;
 		}
 		return false;
 	}
@@ -70,50 +70,39 @@ public class PatternsExpressionsAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	protected PatternsExpressionsSwitch<Adapter> modelSwitch = new PatternsExpressionsSwitch<Adapter>() {
-		@Override
-		public Adapter caseAttributeValueExpression(
-				AttributeValueExpression object) {
-			return createAttributeValueExpressionAdapter();
-		}
-
-		@Override
-		public Adapter caseObjectVariableExpression(
-				ObjectVariableExpression object) {
-			return createObjectVariableExpressionAdapter();
-		}
-
-		@Override
-		public Adapter caseCollectionSizeExpression(
-				CollectionSizeExpression object) {
-			return createCollectionSizeExpressionAdapter();
-		}
-
-		@Override
-		public Adapter casePrimitiveVariableExpression(
-				PrimitiveVariableExpression object) {
-			return createPrimitiveVariableExpressionAdapter();
-		}
-
-		@Override
-		public Adapter caseExtendableElement(ExtendableElement object) {
-			return createExtendableElementAdapter();
-		}
-
-		@Override
-		public Adapter caseCommentableElement(CommentableElement object) {
-			return createCommentableElementAdapter();
-		}
-
-		@Override
-		public Adapter caseExpression(Expression object) {
-			return createExpressionAdapter();
-		}
-
-		@Override
-		public Adapter defaultCase(EObject object) {
-			return createEObjectAdapter();
-		}
-	};
+			@Override
+			public Adapter caseAttributeValueExpression(AttributeValueExpression object) {
+				return createAttributeValueExpressionAdapter();
+			}
+			@Override
+			public Adapter caseObjectVariableExpression(ObjectVariableExpression object) {
+				return createObjectVariableExpressionAdapter();
+			}
+			@Override
+			public Adapter caseCollectionSizeExpression(CollectionSizeExpression object) {
+				return createCollectionSizeExpressionAdapter();
+			}
+			@Override
+			public Adapter casePrimitiveVariableExpression(PrimitiveVariableExpression object) {
+				return createPrimitiveVariableExpressionAdapter();
+			}
+			@Override
+			public Adapter caseExtendableElement(ExtendableElement object) {
+				return createExtendableElementAdapter();
+			}
+			@Override
+			public Adapter caseCommentableElement(CommentableElement object) {
+				return createCommentableElementAdapter();
+			}
+			@Override
+			public Adapter caseExpression(Expression object) {
+				return createExpressionAdapter();
+			}
+			@Override
+			public Adapter defaultCase(EObject object) {
+				return createEObjectAdapter();
+			}
+		};
 
 	/**
 	 * Creates an adapter for the <code>target</code>.
@@ -125,7 +114,7 @@ public class PatternsExpressionsAdapterFactory extends AdapterFactoryImpl {
 	 */
 	@Override
 	public Adapter createAdapter(Notifier target) {
-		return modelSwitch.doSwitch((EObject) target);
+		return modelSwitch.doSwitch((EObject)target);
 	}
 
 	/**

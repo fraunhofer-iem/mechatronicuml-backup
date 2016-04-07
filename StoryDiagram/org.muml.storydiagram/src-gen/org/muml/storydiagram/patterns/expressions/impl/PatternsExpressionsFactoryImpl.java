@@ -29,12 +29,12 @@ public class PatternsExpressionsFactoryImpl extends EFactoryImpl implements
 	 */
 	public static PatternsExpressionsFactory init() {
 		try {
-			PatternsExpressionsFactory thePatternsExpressionsFactory = (PatternsExpressionsFactory) EPackage.Registry.INSTANCE
-					.getEFactory(PatternsExpressionsPackage.eNS_URI);
+			PatternsExpressionsFactory thePatternsExpressionsFactory = (PatternsExpressionsFactory)EPackage.Registry.INSTANCE.getEFactory(PatternsExpressionsPackage.eNS_URI);
 			if (thePatternsExpressionsFactory != null) {
 				return thePatternsExpressionsFactory;
 			}
-		} catch (Exception exception) {
+		}
+		catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new PatternsExpressionsFactoryImpl();
@@ -58,17 +58,12 @@ public class PatternsExpressionsFactoryImpl extends EFactoryImpl implements
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-		case PatternsExpressionsPackage.ATTRIBUTE_VALUE_EXPRESSION:
-			return createAttributeValueExpression();
-		case PatternsExpressionsPackage.OBJECT_VARIABLE_EXPRESSION:
-			return createObjectVariableExpression();
-		case PatternsExpressionsPackage.COLLECTION_SIZE_EXPRESSION:
-			return createCollectionSizeExpression();
-		case PatternsExpressionsPackage.PRIMITIVE_VARIABLE_EXPRESSION:
-			return createPrimitiveVariableExpression();
-		default:
-			throw new IllegalArgumentException("The class '" + eClass.getName()
-					+ "' is not a valid classifier");
+			case PatternsExpressionsPackage.ATTRIBUTE_VALUE_EXPRESSION: return createAttributeValueExpression();
+			case PatternsExpressionsPackage.OBJECT_VARIABLE_EXPRESSION: return createObjectVariableExpression();
+			case PatternsExpressionsPackage.COLLECTION_SIZE_EXPRESSION: return createCollectionSizeExpression();
+			case PatternsExpressionsPackage.PRIMITIVE_VARIABLE_EXPRESSION: return createPrimitiveVariableExpression();
+			default:
+				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 
@@ -118,7 +113,7 @@ public class PatternsExpressionsFactoryImpl extends EFactoryImpl implements
 	 * @generated
 	 */
 	public PatternsExpressionsPackage getPatternsExpressionsPackage() {
-		return (PatternsExpressionsPackage) getEPackage();
+		return (PatternsExpressionsPackage)getEPackage();
 	}
 
 	/**

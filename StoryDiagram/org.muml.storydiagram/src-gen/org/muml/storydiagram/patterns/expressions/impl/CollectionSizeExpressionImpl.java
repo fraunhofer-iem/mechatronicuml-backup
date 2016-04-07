@@ -13,7 +13,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.muml.core.expressions.impl.ExpressionImpl;
 import org.muml.storydiagram.patterns.CollectionVariable;
 import org.muml.storydiagram.patterns.expressions.CollectionSizeExpression;
-import org.muml.storydiagram.patterns.expressions.ExpressionsPackage;
+import org.muml.storydiagram.patterns.expressions.PatternsExpressionsPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -56,7 +56,7 @@ public class CollectionSizeExpressionImpl extends ExpressionImpl implements
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ExpressionsPackage.Literals.COLLECTION_SIZE_EXPRESSION;
+		return PatternsExpressionsPackage.Literals.COLLECTION_SIZE_EXPRESSION;
 	}
 
 	/**
@@ -70,7 +70,7 @@ public class CollectionSizeExpressionImpl extends ExpressionImpl implements
 			set = (CollectionVariable)eResolveProxy(oldSet);
 			if (set != oldSet) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ExpressionsPackage.COLLECTION_SIZE_EXPRESSION__SET, oldSet, set));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PatternsExpressionsPackage.COLLECTION_SIZE_EXPRESSION__SET, oldSet, set));
 			}
 		}
 		return set;
@@ -94,7 +94,7 @@ public class CollectionSizeExpressionImpl extends ExpressionImpl implements
 		CollectionVariable oldSet = set;
 		set = newSet;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ExpressionsPackage.COLLECTION_SIZE_EXPRESSION__SET, oldSet, set));
+			eNotify(new ENotificationImpl(this, Notification.SET, PatternsExpressionsPackage.COLLECTION_SIZE_EXPRESSION__SET, oldSet, set));
 	}
 
 	/**
@@ -105,7 +105,7 @@ public class CollectionSizeExpressionImpl extends ExpressionImpl implements
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ExpressionsPackage.COLLECTION_SIZE_EXPRESSION__SET:
+			case PatternsExpressionsPackage.COLLECTION_SIZE_EXPRESSION__SET:
 				if (resolve) return getSet();
 				return basicGetSet();
 		}
@@ -120,7 +120,7 @@ public class CollectionSizeExpressionImpl extends ExpressionImpl implements
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ExpressionsPackage.COLLECTION_SIZE_EXPRESSION__SET:
+			case PatternsExpressionsPackage.COLLECTION_SIZE_EXPRESSION__SET:
 				setSet((CollectionVariable)newValue);
 				return;
 		}
@@ -135,7 +135,7 @@ public class CollectionSizeExpressionImpl extends ExpressionImpl implements
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ExpressionsPackage.COLLECTION_SIZE_EXPRESSION__SET:
+			case PatternsExpressionsPackage.COLLECTION_SIZE_EXPRESSION__SET:
 				setSet((CollectionVariable)null);
 				return;
 		}
@@ -150,7 +150,7 @@ public class CollectionSizeExpressionImpl extends ExpressionImpl implements
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ExpressionsPackage.COLLECTION_SIZE_EXPRESSION__SET:
+			case PatternsExpressionsPackage.COLLECTION_SIZE_EXPRESSION__SET:
 				return set != null;
 		}
 		return super.eIsSet(featureID);

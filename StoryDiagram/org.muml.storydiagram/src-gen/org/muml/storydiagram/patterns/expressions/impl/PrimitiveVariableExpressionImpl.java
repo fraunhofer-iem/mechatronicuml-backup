@@ -12,7 +12,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.muml.core.expressions.impl.ExpressionImpl;
 import org.muml.storydiagram.patterns.PrimitiveVariable;
-import org.muml.storydiagram.patterns.expressions.ExpressionsPackage;
+import org.muml.storydiagram.patterns.expressions.PatternsExpressionsPackage;
 import org.muml.storydiagram.patterns.expressions.PrimitiveVariableExpression;
 
 /**
@@ -56,7 +56,7 @@ public class PrimitiveVariableExpressionImpl extends ExpressionImpl implements
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ExpressionsPackage.Literals.PRIMITIVE_VARIABLE_EXPRESSION;
+		return PatternsExpressionsPackage.Literals.PRIMITIVE_VARIABLE_EXPRESSION;
 	}
 
 	/**
@@ -70,7 +70,7 @@ public class PrimitiveVariableExpressionImpl extends ExpressionImpl implements
 			primitiveVariable = (PrimitiveVariable)eResolveProxy(oldPrimitiveVariable);
 			if (primitiveVariable != oldPrimitiveVariable) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ExpressionsPackage.PRIMITIVE_VARIABLE_EXPRESSION__PRIMITIVE_VARIABLE, oldPrimitiveVariable, primitiveVariable));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PatternsExpressionsPackage.PRIMITIVE_VARIABLE_EXPRESSION__PRIMITIVE_VARIABLE, oldPrimitiveVariable, primitiveVariable));
 			}
 		}
 		return primitiveVariable;
@@ -94,7 +94,7 @@ public class PrimitiveVariableExpressionImpl extends ExpressionImpl implements
 		PrimitiveVariable oldPrimitiveVariable = primitiveVariable;
 		primitiveVariable = newPrimitiveVariable;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ExpressionsPackage.PRIMITIVE_VARIABLE_EXPRESSION__PRIMITIVE_VARIABLE, oldPrimitiveVariable, primitiveVariable));
+			eNotify(new ENotificationImpl(this, Notification.SET, PatternsExpressionsPackage.PRIMITIVE_VARIABLE_EXPRESSION__PRIMITIVE_VARIABLE, oldPrimitiveVariable, primitiveVariable));
 	}
 
 	/**
@@ -105,7 +105,7 @@ public class PrimitiveVariableExpressionImpl extends ExpressionImpl implements
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ExpressionsPackage.PRIMITIVE_VARIABLE_EXPRESSION__PRIMITIVE_VARIABLE:
+			case PatternsExpressionsPackage.PRIMITIVE_VARIABLE_EXPRESSION__PRIMITIVE_VARIABLE:
 				if (resolve) return getPrimitiveVariable();
 				return basicGetPrimitiveVariable();
 		}
@@ -120,7 +120,7 @@ public class PrimitiveVariableExpressionImpl extends ExpressionImpl implements
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ExpressionsPackage.PRIMITIVE_VARIABLE_EXPRESSION__PRIMITIVE_VARIABLE:
+			case PatternsExpressionsPackage.PRIMITIVE_VARIABLE_EXPRESSION__PRIMITIVE_VARIABLE:
 				setPrimitiveVariable((PrimitiveVariable)newValue);
 				return;
 		}
@@ -135,7 +135,7 @@ public class PrimitiveVariableExpressionImpl extends ExpressionImpl implements
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ExpressionsPackage.PRIMITIVE_VARIABLE_EXPRESSION__PRIMITIVE_VARIABLE:
+			case PatternsExpressionsPackage.PRIMITIVE_VARIABLE_EXPRESSION__PRIMITIVE_VARIABLE:
 				setPrimitiveVariable((PrimitiveVariable)null);
 				return;
 		}
@@ -150,7 +150,7 @@ public class PrimitiveVariableExpressionImpl extends ExpressionImpl implements
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ExpressionsPackage.PRIMITIVE_VARIABLE_EXPRESSION__PRIMITIVE_VARIABLE:
+			case PatternsExpressionsPackage.PRIMITIVE_VARIABLE_EXPRESSION__PRIMITIVE_VARIABLE:
 				return primitiveVariable != null;
 		}
 		return super.eIsSet(featureID);
