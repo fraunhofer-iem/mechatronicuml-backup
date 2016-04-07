@@ -28,9 +28,8 @@ import org.muml.testlanguage.TestLanguagePackage;
 import org.muml.testlanguage.specification.SpecificationFactory;
 
 /**
- * This is the item provider adapter for a
- * {@link org.muml.testlanguage.Node} object. <!--
- * begin-user-doc --> <!-- end-user-doc -->
+ * This is the item provider adapter for a {@link org.muml.testlanguage.Node}
+ * object. <!-- begin-user-doc --> <!-- end-user-doc -->
  * 
  * @generated
  */

@@ -38,7 +38,7 @@ public interface TestLanguagePackage extends EPackage {
 	 * 
 	 * @generated
 	 */
-	String eNS_URI = "http://de/uni_paderborn/fujaba/muml/testlanguage";
+	String eNS_URI = "http://www.muml.org/testlanguage/1.0";
 
 	/**
 	 * The package namespace name. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -56,8 +56,7 @@ public interface TestLanguagePackage extends EPackage {
 	TestLanguagePackage eINSTANCE = org.muml.testlanguage.impl.TestLanguagePackageImpl.init();
 
 	/**
-	 * The meta object id for the '
-	 * {@link org.muml.testlanguage.impl.NodeImpl
+	 * The meta object id for the '{@link org.muml.testlanguage.impl.NodeImpl
 	 * <em>Node</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @see org.muml.testlanguage.impl.NodeImpl
@@ -175,8 +174,7 @@ public interface TestLanguagePackage extends EPackage {
 	int NODE_OPERATION_COUNT = 3;
 
 	/**
-	 * The meta object id for the '
-	 * {@link org.muml.testlanguage.impl.PortImpl
+	 * The meta object id for the '{@link org.muml.testlanguage.impl.PortImpl
 	 * <em>Port</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @see org.muml.testlanguage.impl.PortImpl
@@ -222,8 +220,7 @@ public interface TestLanguagePackage extends EPackage {
 	int PORT_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '
-	 * {@link org.muml.testlanguage.impl.InputImpl
+	 * The meta object id for the '{@link org.muml.testlanguage.impl.InputImpl
 	 * <em>Input</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @see org.muml.testlanguage.impl.InputImpl
@@ -314,8 +311,7 @@ public interface TestLanguagePackage extends EPackage {
 	int INPUT_OPERATION_COUNT = PORT_OPERATION_COUNT + 1;
 
 	/**
-	 * The meta object id for the '
-	 * {@link org.muml.testlanguage.impl.OutputImpl
+	 * The meta object id for the '{@link org.muml.testlanguage.impl.OutputImpl
 	 * <em>Output</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @see org.muml.testlanguage.impl.OutputImpl
@@ -389,8 +385,8 @@ public interface TestLanguagePackage extends EPackage {
 
 	/**
 	 * The meta object id for the '
-	 * {@link org.muml.testlanguage.impl.TestCaseImpl
-	 * <em>Test Case</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * {@link org.muml.testlanguage.impl.TestCaseImpl <em>Test Case</em>}'
+	 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @see org.muml.testlanguage.impl.TestCaseImpl
 	 * @see org.muml.testlanguage.impl.TestLanguagePackageImpl#getTestCase()
@@ -426,9 +422,8 @@ public interface TestLanguagePackage extends EPackage {
 	int TEST_CASE_OPERATION_COUNT = 0;
 
 	/**
-	 * Returns the meta object for class '
-	 * {@link org.muml.testlanguage.Node <em>Node</em>}'.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Returns the meta object for class '{@link org.muml.testlanguage.Node
+	 * <em>Node</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the meta object for class '<em>Node</em>'.
 	 * @see org.muml.testlanguage.Node
@@ -438,8 +433,8 @@ public interface TestLanguagePackage extends EPackage {
 
 	/**
 	 * Returns the meta object for the containment reference list '
-	 * {@link org.muml.testlanguage.Node#getInputs
-	 * <em>Inputs</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * {@link org.muml.testlanguage.Node#getInputs <em>Inputs</em>}'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the meta object for the containment reference list '
 	 *         <em>Inputs</em>'.
@@ -451,8 +446,8 @@ public interface TestLanguagePackage extends EPackage {
 
 	/**
 	 * Returns the meta object for the containment reference list '
-	 * {@link org.muml.testlanguage.Node#getOutputs
-	 * <em>Outputs</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * {@link org.muml.testlanguage.Node#getOutputs <em>Outputs</em>}'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the meta object for the containment reference list '
 	 *         <em>Outputs</em>'.
@@ -464,8 +459,8 @@ public interface TestLanguagePackage extends EPackage {
 
 	/**
 	 * Returns the meta object for the attribute '
-	 * {@link org.muml.testlanguage.Node#getLabel
-	 * <em>Label</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * {@link org.muml.testlanguage.Node#getLabel <em>Label</em>}'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the meta object for the attribute '<em>Label</em>'.
 	 * @see org.muml.testlanguage.Node#getLabel()
@@ -476,8 +471,8 @@ public interface TestLanguagePackage extends EPackage {
 
 	/**
 	 * Returns the meta object for the containment reference '
-	 * {@link org.muml.testlanguage.Node#getSpecification
-	 * <em>Specification</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * {@link org.muml.testlanguage.Node#getSpecification <em>Specification</em>
+	 * }'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the meta object for the containment reference '
 	 *         <em>Specification</em>'.
@@ -503,8 +498,8 @@ public interface TestLanguagePackage extends EPackage {
 
 	/**
 	 * Returns the meta object for the attribute '
-	 * {@link org.muml.testlanguage.Node#getInputCache
-	 * <em>Input Cache</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * {@link org.muml.testlanguage.Node#getInputCache <em>Input Cache</em>}'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the meta object for the attribute '<em>Input Cache</em>'.
 	 * @see org.muml.testlanguage.Node#getInputCache()
@@ -515,8 +510,8 @@ public interface TestLanguagePackage extends EPackage {
 
 	/**
 	 * Returns the meta object for the attribute '
-	 * {@link org.muml.testlanguage.Node#getOutputCache
-	 * <em>Output Cache</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * {@link org.muml.testlanguage.Node#getOutputCache <em>Output Cache</em>}'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the meta object for the attribute '<em>Output Cache</em>'.
 	 * @see org.muml.testlanguage.Node#getOutputCache()
@@ -540,9 +535,8 @@ public interface TestLanguagePackage extends EPackage {
 
 	/**
 	 * Returns the meta object for the '
-	 * {@link org.muml.testlanguage.Node#execute()
-	 * <em>Execute</em>}' operation. <!-- begin-user-doc --> <!-- end-user-doc
-	 * -->
+	 * {@link org.muml.testlanguage.Node#execute() <em>Execute</em>}' operation.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the meta object for the '<em>Execute</em>' operation.
 	 * @see org.muml.testlanguage.Node#execute()
@@ -564,9 +558,8 @@ public interface TestLanguagePackage extends EPackage {
 	EOperation getNode__CreateSpecification();
 
 	/**
-	 * Returns the meta object for class '
-	 * {@link org.muml.testlanguage.Input <em>Input</em>}'.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Returns the meta object for class '{@link org.muml.testlanguage.Input
+	 * <em>Input</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the meta object for class '<em>Input</em>'.
 	 * @see org.muml.testlanguage.Input
@@ -576,8 +569,8 @@ public interface TestLanguagePackage extends EPackage {
 
 	/**
 	 * Returns the meta object for the reference '
-	 * {@link org.muml.testlanguage.Input#getSource
-	 * <em>Source</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * {@link org.muml.testlanguage.Input#getSource <em>Source</em>}'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the meta object for the reference '<em>Source</em>'.
 	 * @see org.muml.testlanguage.Input#getSource()
@@ -588,8 +581,8 @@ public interface TestLanguagePackage extends EPackage {
 
 	/**
 	 * Returns the meta object for the container reference '
-	 * {@link org.muml.testlanguage.Input#getNode
-	 * <em>Node</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * {@link org.muml.testlanguage.Input#getNode <em>Node</em>}'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the meta object for the container reference '<em>Node</em>'.
 	 * @see org.muml.testlanguage.Input#getNode()
@@ -600,8 +593,8 @@ public interface TestLanguagePackage extends EPackage {
 
 	/**
 	 * Returns the meta object for the attribute '
-	 * {@link org.muml.testlanguage.Input#isOptional
-	 * <em>Optional</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * {@link org.muml.testlanguage.Input#isOptional <em>Optional</em>}'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the meta object for the attribute '<em>Optional</em>'.
 	 * @see org.muml.testlanguage.Input#isOptional()
@@ -612,8 +605,8 @@ public interface TestLanguagePackage extends EPackage {
 
 	/**
 	 * Returns the meta object for the attribute '
-	 * {@link org.muml.testlanguage.Input#getDataType
-	 * <em>Data Type</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * {@link org.muml.testlanguage.Input#getDataType <em>Data Type</em>}'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the meta object for the attribute '<em>Data Type</em>'.
 	 * @see org.muml.testlanguage.Input#getDataType()
@@ -624,9 +617,8 @@ public interface TestLanguagePackage extends EPackage {
 
 	/**
 	 * Returns the meta object for the '
-	 * {@link org.muml.testlanguage.Input#getData()
-	 * <em>Get Data</em>}' operation. <!-- begin-user-doc --> <!-- end-user-doc
-	 * -->
+	 * {@link org.muml.testlanguage.Input#getData() <em>Get Data</em>}'
+	 * operation. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the meta object for the '<em>Get Data</em>' operation.
 	 * @see org.muml.testlanguage.Input#getData()
@@ -635,9 +627,8 @@ public interface TestLanguagePackage extends EPackage {
 	EOperation getInput__GetData();
 
 	/**
-	 * Returns the meta object for class '
-	 * {@link org.muml.testlanguage.Output <em>Output</em>}
-	 * '. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Returns the meta object for class '{@link org.muml.testlanguage.Output
+	 * <em>Output</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the meta object for class '<em>Output</em>'.
 	 * @see org.muml.testlanguage.Output
@@ -647,8 +638,8 @@ public interface TestLanguagePackage extends EPackage {
 
 	/**
 	 * Returns the meta object for the reference list '
-	 * {@link org.muml.testlanguage.Output#getTargets
-	 * <em>Targets</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * {@link org.muml.testlanguage.Output#getTargets <em>Targets</em>}'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the meta object for the reference list '<em>Targets</em>'.
 	 * @see org.muml.testlanguage.Output#getTargets()
@@ -659,8 +650,8 @@ public interface TestLanguagePackage extends EPackage {
 
 	/**
 	 * Returns the meta object for the container reference '
-	 * {@link org.muml.testlanguage.Output#getNode
-	 * <em>Node</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * {@link org.muml.testlanguage.Output#getNode <em>Node</em>}'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the meta object for the container reference '<em>Node</em>'.
 	 * @see org.muml.testlanguage.Output#getNode()
@@ -671,9 +662,8 @@ public interface TestLanguagePackage extends EPackage {
 
 	/**
 	 * Returns the meta object for the '
-	 * {@link org.muml.testlanguage.Output#getData()
-	 * <em>Get Data</em>}' operation. <!-- begin-user-doc --> <!-- end-user-doc
-	 * -->
+	 * {@link org.muml.testlanguage.Output#getData() <em>Get Data</em>}'
+	 * operation. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the meta object for the '<em>Get Data</em>' operation.
 	 * @see org.muml.testlanguage.Output#getData()
@@ -682,9 +672,8 @@ public interface TestLanguagePackage extends EPackage {
 	EOperation getOutput__GetData();
 
 	/**
-	 * Returns the meta object for class '
-	 * {@link org.muml.testlanguage.Port <em>Port</em>}'.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Returns the meta object for class '{@link org.muml.testlanguage.Port
+	 * <em>Port</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the meta object for class '<em>Port</em>'.
 	 * @see org.muml.testlanguage.Port
@@ -694,8 +683,8 @@ public interface TestLanguagePackage extends EPackage {
 
 	/**
 	 * Returns the meta object for the attribute '
-	 * {@link org.muml.testlanguage.Port#getName
-	 * <em>Name</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * {@link org.muml.testlanguage.Port#getName <em>Name</em>}'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the meta object for the attribute '<em>Name</em>'.
 	 * @see org.muml.testlanguage.Port#getName()
@@ -706,8 +695,8 @@ public interface TestLanguagePackage extends EPackage {
 
 	/**
 	 * Returns the meta object for the attribute '
-	 * {@link org.muml.testlanguage.Port#isInOut
-	 * <em>In Out</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * {@link org.muml.testlanguage.Port#isInOut <em>In Out</em>}'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the meta object for the attribute '<em>In Out</em>'.
 	 * @see org.muml.testlanguage.Port#isInOut()
@@ -717,8 +706,7 @@ public interface TestLanguagePackage extends EPackage {
 	EAttribute getPort_InOut();
 
 	/**
-	 * Returns the meta object for class '
-	 * {@link org.muml.testlanguage.TestCase
+	 * Returns the meta object for class '{@link org.muml.testlanguage.TestCase
 	 * <em>Test Case</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the meta object for class '<em>Test Case</em>'.
@@ -729,8 +717,8 @@ public interface TestLanguagePackage extends EPackage {
 
 	/**
 	 * Returns the meta object for the containment reference list '
-	 * {@link org.muml.testlanguage.TestCase#getNodes
-	 * <em>Nodes</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * {@link org.muml.testlanguage.TestCase#getNodes <em>Nodes</em>}'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the meta object for the containment reference list '
 	 *         <em>Nodes</em>'.
@@ -766,8 +754,8 @@ public interface TestLanguagePackage extends EPackage {
 	interface Literals {
 		/**
 		 * The meta object literal for the '
-		 * {@link org.muml.testlanguage.impl.NodeImpl
-		 * <em>Node</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * {@link org.muml.testlanguage.impl.NodeImpl <em>Node</em>}' class.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * 
 		 * @see org.muml.testlanguage.impl.NodeImpl
 		 * @see org.muml.testlanguage.impl.TestLanguagePackageImpl#getNode()
@@ -860,8 +848,8 @@ public interface TestLanguagePackage extends EPackage {
 
 		/**
 		 * The meta object literal for the '
-		 * {@link org.muml.testlanguage.impl.InputImpl
-		 * <em>Input</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * {@link org.muml.testlanguage.impl.InputImpl <em>Input</em>}' class.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * 
 		 * @see org.muml.testlanguage.impl.InputImpl
 		 * @see org.muml.testlanguage.impl.TestLanguagePackageImpl#getInput()
@@ -911,9 +899,8 @@ public interface TestLanguagePackage extends EPackage {
 
 		/**
 		 * The meta object literal for the '
-		 * {@link org.muml.testlanguage.impl.OutputImpl
-		 * <em>Output</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc
-		 * -->
+		 * {@link org.muml.testlanguage.impl.OutputImpl <em>Output</em>}' class.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * 
 		 * @see org.muml.testlanguage.impl.OutputImpl
 		 * @see org.muml.testlanguage.impl.TestLanguagePackageImpl#getOutput()
@@ -947,8 +934,8 @@ public interface TestLanguagePackage extends EPackage {
 
 		/**
 		 * The meta object literal for the '
-		 * {@link org.muml.testlanguage.impl.PortImpl
-		 * <em>Port</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * {@link org.muml.testlanguage.impl.PortImpl <em>Port</em>}' class.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * 
 		 * @see org.muml.testlanguage.impl.PortImpl
 		 * @see org.muml.testlanguage.impl.TestLanguagePackageImpl#getPort()
@@ -974,9 +961,8 @@ public interface TestLanguagePackage extends EPackage {
 
 		/**
 		 * The meta object literal for the '
-		 * {@link org.muml.testlanguage.impl.TestCaseImpl
-		 * <em>Test Case</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc
-		 * -->
+		 * {@link org.muml.testlanguage.impl.TestCaseImpl <em>Test Case</em>}'
+		 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * 
 		 * @see org.muml.testlanguage.impl.TestCaseImpl
 		 * @see org.muml.testlanguage.impl.TestLanguagePackageImpl#getTestCase()

@@ -17,8 +17,8 @@ import org.muml.testlanguage.specification.SpecificationPackage;
 
 /**
  * This is the item provider adapter for a
- * {@link org.muml.testlanguage.specification.PrimitiveString}
- * object. <!-- begin-user-doc --> <!-- end-user-doc -->
+ * {@link org.muml.testlanguage.specification.PrimitiveString} object. <!--
+ * begin-user-doc --> <!-- end-user-doc -->
  * 
  * @generated
  */
@@ -56,17 +56,13 @@ public class PrimitiveStringItemProvider extends NodeSpecificationItemProvider {
 	 * @generated
 	 */
 	protected void addValuePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_PrimitiveString_value_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_PrimitiveString_value_feature",
-						"_UI_PrimitiveString_type"),
-				SpecificationPackage.Literals.PRIMITIVE_STRING__VALUE, true,
-				false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
-				null));
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_PrimitiveString_value_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_PrimitiveString_value_feature",
+								"_UI_PrimitiveString_type"),
+						SpecificationPackage.Literals.PRIMITIVE_STRING__VALUE, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -77,8 +73,7 @@ public class PrimitiveStringItemProvider extends NodeSpecificationItemProvider {
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object,
-				getResourceLocator().getImage("full/obj16/PrimitiveString"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/PrimitiveString"));
 	}
 
 	/**
@@ -108,8 +103,7 @@ public class PrimitiveStringItemProvider extends NodeSpecificationItemProvider {
 
 		switch (notification.getFeatureID(PrimitiveString.class)) {
 		case SpecificationPackage.PRIMITIVE_STRING__VALUE:
-			fireNotifyChanged(new ViewerNotification(notification,
-					notification.getNotifier(), false, true));
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}
 		super.notifyChanged(notification);
@@ -123,8 +117,7 @@ public class PrimitiveStringItemProvider extends NodeSpecificationItemProvider {
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(
-			Collection<Object> newChildDescriptors, Object object) {
+	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 	}
 

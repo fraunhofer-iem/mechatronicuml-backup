@@ -22,15 +22,12 @@ import org.muml.testlanguage.TestLanguagePackage;
  * The following features are implemented:
  * </p>
  * <ul>
- * <li>{@link org.muml.testlanguage.impl.InputImpl#getSource
- * <em>Source</em>}</li>
- * <li>{@link org.muml.testlanguage.impl.InputImpl#getNode
- * <em>Node</em>}</li>
- * <li>
- * {@link org.muml.testlanguage.impl.InputImpl#isOptional
- * <em>Optional</em>}</li>
- * <li>
- * {@link org.muml.testlanguage.impl.InputImpl#getDataType
+ * <li>{@link org.muml.testlanguage.impl.InputImpl#getSource <em>Source</em>}
+ * </li>
+ * <li>{@link org.muml.testlanguage.impl.InputImpl#getNode <em>Node</em>}</li>
+ * <li>{@link org.muml.testlanguage.impl.InputImpl#isOptional <em>Optional</em>}
+ * </li>
+ * <li>{@link org.muml.testlanguage.impl.InputImpl#getDataType
  * <em>Data Type</em>}</li>
  * </ul>
  *

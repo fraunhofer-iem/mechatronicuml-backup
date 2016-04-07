@@ -46,9 +46,9 @@ import org.muml.testlanguage.specification.custom.URIConversion;
  * <em><b>Transformation</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
- * <li>
- * {@link org.muml.testlanguage.specification.impl.TransformationImpl#getUri
+ * <li>{@link org.muml.testlanguage.specification.impl.TransformationImpl#getUri
  * <em>Uri</em>}</li>
  * <li>
  * {@link org.muml.testlanguage.specification.impl.TransformationImpl#getParameterOrder
@@ -57,13 +57,11 @@ import org.muml.testlanguage.specification.custom.URIConversion;
  * {@link org.muml.testlanguage.specification.impl.TransformationImpl#getConfigProperties
  * <em>Config Properties</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
 @SuppressWarnings("restriction")
-public class TransformationImpl extends NodeSpecificationImpl implements
-		Transformation {
+public class TransformationImpl extends NodeSpecificationImpl implements Transformation {
 	/**
 	 * The default value of the '{@link #getUri() <em>Uri</em>}' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
@@ -143,8 +141,8 @@ public class TransformationImpl extends NodeSpecificationImpl implements
 		String oldUri = uri;
 		uri = newUri;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					SpecificationPackage.TRANSFORMATION__URI, oldUri, uri));
+			eNotify(new ENotificationImpl(this, Notification.SET, SpecificationPackage.TRANSFORMATION__URI, oldUri,
+					uri));
 	}
 
 	/**
@@ -154,8 +152,7 @@ public class TransformationImpl extends NodeSpecificationImpl implements
 	 */
 	public EList<PortSpecification> getParameterOrder() {
 		if (parameterOrder == null) {
-			parameterOrder = new EObjectResolvingEList<PortSpecification>(
-					PortSpecification.class, this,
+			parameterOrder = new EObjectResolvingEList<PortSpecification>(PortSpecification.class, this,
 					SpecificationPackage.TRANSFORMATION__PARAMETER_ORDER);
 		}
 		return parameterOrder;
@@ -168,8 +165,7 @@ public class TransformationImpl extends NodeSpecificationImpl implements
 	 */
 	public EList<String> getConfigProperties() {
 		if (configProperties == null) {
-			configProperties = new EDataTypeUniqueEList<String>(String.class,
-					this,
+			configProperties = new EDataTypeUniqueEList<String>(String.class, this,
 					SpecificationPackage.TRANSFORMATION__CONFIG_PROPERTIES);
 		}
 		return configProperties;
@@ -189,9 +185,8 @@ public class TransformationImpl extends NodeSpecificationImpl implements
 	 * 
 	 * @generated
 	 */
-	public void execute(final Map<String, Object> inputs,
-			final Map<String, Object> outputs) throws ExecutionException,
-			Exception {
+	public void execute(final Map<String, Object> inputs, final Map<String, Object> outputs) throws ExecutionException,
+			Exception, de.uni_paderborn.fujaba.muml.testlanguage.specification.custom.ExecutionException {
 		URI realURI = URIConversion.convert(URI.createURI(this.getUri()));
 		TransformationExecutor executor = new TransformationExecutor(realURI);
 
@@ -207,8 +202,7 @@ public class TransformationImpl extends NodeSpecificationImpl implements
 		context = new ExecutionContextImpl();
 
 		// Set extents, i.e. the model parameters.
-		BasicModelExtent[] extents = new BasicModelExtent[this
-				.getParameterOrder().size()];
+		BasicModelExtent[] extents = new BasicModelExtent[this.getParameterOrder().size()];
 		int i = 0;
 		for (PortSpecification port : this.getParameterOrder()) {
 			BasicModelExtent extent = new BasicModelExtent();
@@ -218,8 +212,7 @@ public class TransformationImpl extends NodeSpecificationImpl implements
 			} else if (port.getType() == PortType.INOUT) {
 				// Copy the EObject to avoid side effects.
 				Copier copier = new Copier();
-				EObject result = copier.copy((EObject) inputs.get(port
-						.getName()));
+				EObject result = copier.copy((EObject) inputs.get(port.getName()));
 				copier.copyReferences();
 				extent.add(result);
 			}
@@ -233,8 +226,7 @@ public class TransformationImpl extends NodeSpecificationImpl implements
 		// as a string, they are parsed by QVTo.
 		for (String property : this.getConfigProperties()) {
 			if (inputs.containsKey(property)) {
-				context.setConfigProperty(property,
-						(String) inputs.get(property));
+				context.setConfigProperty(property, (String) inputs.get(property));
 			}
 		}
 
@@ -246,8 +238,7 @@ public class TransformationImpl extends NodeSpecificationImpl implements
 
 		// Check if everything went fine.
 		if (diagnostic.getSeverity() == Diagnostic.ERROR) {
-			throw new ExecutionException("Transformation failed: "
-					+ diagnostic.getMessage());
+			throw new ExecutionException("Transformation failed: " + diagnostic.getMessage());
 		}
 
 		// Get the output.
@@ -256,8 +247,7 @@ public class TransformationImpl extends NodeSpecificationImpl implements
 			// System.out.println(i + " " + port.getName() + " ("
 			// + port.getType() + "): "
 			// + extents[i].getContents().get(0));
-			if (port.getType() == PortType.OUT
-					|| port.getType() == PortType.INOUT) {
+			if (port.getType() == PortType.OUT || port.getType() == PortType.INOUT) {
 				outputs.put(port.getName(), extents[i].getContents().get(0));
 			}
 
@@ -286,8 +276,7 @@ public class TransformationImpl extends NodeSpecificationImpl implements
 				// required. (http://www.eclipse.org/forums/index.php/t/478345/)
 				URI realURI = URI.createURI(this.uri);
 				ResourceSet resSet = new ResourceSetImpl();
-				Resource resource = resSet.getResource(realURI.trimFragment(),
-						true);
+				Resource resource = resSet.getResource(realURI.trimFragment(), true);
 				EObject result = null;
 
 				if (realURI.hasFragment()) {
@@ -306,8 +295,7 @@ public class TransformationImpl extends NodeSpecificationImpl implements
 					} else if (param.getKind() == DirectionKind.INOUT) {
 						type = PortType.INOUT;
 					}
-					PortSpecification spec = this.addPortSpecification(type,
-							param.getName(), false,
+					PortSpecification spec = this.addPortSpecification(type, param.getName(), false,
 							org.eclipse.emf.ecore.EObject.class);
 					this.getParameterOrder().add(spec);
 				}
@@ -316,8 +304,7 @@ public class TransformationImpl extends NodeSpecificationImpl implements
 				this.getConfigProperties().clear();
 				EList<EStructuralFeature> props = trans.getConfigProperty();
 				for (EStructuralFeature feature : props) {
-					this.addPortSpecification(PortType.IN, feature.getName(),
-							true, java.lang.String.class);
+					this.addPortSpecification(PortType.IN, feature.getName(), true, java.lang.String.class);
 					this.getConfigProperties().add(feature.getName());
 				}
 
@@ -364,13 +351,11 @@ public class TransformationImpl extends NodeSpecificationImpl implements
 			return;
 		case SpecificationPackage.TRANSFORMATION__PARAMETER_ORDER:
 			getParameterOrder().clear();
-			getParameterOrder().addAll(
-					(Collection<? extends PortSpecification>) newValue);
+			getParameterOrder().addAll((Collection<? extends PortSpecification>) newValue);
 			return;
 		case SpecificationPackage.TRANSFORMATION__CONFIG_PROPERTIES:
 			getConfigProperties().clear();
-			getConfigProperties().addAll(
-					(Collection<? extends String>) newValue);
+			getConfigProperties().addAll((Collection<? extends String>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -406,8 +391,7 @@ public class TransformationImpl extends NodeSpecificationImpl implements
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 		case SpecificationPackage.TRANSFORMATION__URI:
-			return URI_EDEFAULT == null ? uri != null : !URI_EDEFAULT
-					.equals(uri);
+			return URI_EDEFAULT == null ? uri != null : !URI_EDEFAULT.equals(uri);
 		case SpecificationPackage.TRANSFORMATION__PARAMETER_ORDER:
 			return parameterOrder != null && !parameterOrder.isEmpty();
 		case SpecificationPackage.TRANSFORMATION__CONFIG_PROPERTIES:
@@ -445,16 +429,14 @@ public class TransformationImpl extends NodeSpecificationImpl implements
 	 */
 	@Override
 	@SuppressWarnings("unchecked")
-	public Object eInvoke(int operationID, EList<?> arguments)
-			throws InvocationTargetException {
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
 		case SpecificationPackage.TRANSFORMATION___INITIALIZE:
 			initialize();
 			return null;
 		case SpecificationPackage.TRANSFORMATION___EXECUTE__MAP_MAP:
 			try {
-				execute((Map<String, Object>) arguments.get(0),
-						(Map<String, Object>) arguments.get(1));
+				execute((Map<String, Object>) arguments.get(0), (Map<String, Object>) arguments.get(1));
 				return null;
 			} catch (Throwable throwable) {
 				throw new InvocationTargetException(throwable);

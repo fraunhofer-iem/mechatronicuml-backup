@@ -595,6 +595,7 @@ public class TestLanguagePackageImpl extends EPackageImpl implements TestLanguag
 				"-- Nodes may not be part of a cycle or be dependent on a node that is part of a cycle.\r\nself.outputs.targets.node->asSet()->closure(outputs.targets.node)->excludes(self)" });
 		addAnnotation(inputEClass, source, new String[] { "mandatoryInputMustBeConnected",
 				"-- Inputs that are mandatory (= not optional) must have a connection.\r\nself.source.oclIsUndefined() implies self.optional" });
+		addAnnotation(outputEClass, source, new String[] { "ifInputTypeIsInOutThenItIsTheOnlyOne", null });
 	}
 
 	/**

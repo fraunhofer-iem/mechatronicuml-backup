@@ -15,15 +15,14 @@ import org.muml.testlanguage.specification.custom.ExecutionException;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  * <li>
  * {@link org.muml.testlanguage.specification.NodeSpecification#getPortSpecifications
  * <em>Port Specifications</em>}</li>
- * <li>
- * {@link org.muml.testlanguage.specification.NodeSpecification#getLabel
+ * <li>{@link org.muml.testlanguage.specification.NodeSpecification#getLabel
  * <em>Label</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.testlanguage.specification.SpecificationPackage#getNodeSpecification()
  * @model abstract="true"
@@ -33,8 +32,8 @@ public interface NodeSpecification extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Port Specifications</b></em>'
 	 * containment reference list. The list contents are of type
-	 * {@link org.muml.testlanguage.specification.PortSpecification}
-	 * . <!-- begin-user-doc -->
+	 * {@link org.muml.testlanguage.specification.PortSpecification}. <!--
+	 * begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Port Specifications</em>' containment
 	 * reference list isn't clear, there really should be more of a description
@@ -91,12 +90,12 @@ public interface NodeSpecification extends EObject {
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @model exceptions=
-	 *        "de.uni_paderborn.fujaba.muml.testlanguage.specification.ExecutionException de.uni_paderborn.fujaba.muml.testlanguage.specification.DefaultException"
+	 *        "org.muml.testlanguage.specification.ExecutionException org.muml.testlanguage.specification.DefaultException"
 	 *        inputsRequired="true" outputsRequired="true"
 	 * @generated
 	 */
-	void execute(Map<String, Object> inputs, Map<String, Object> outputs)
-			throws ExecutionException, Exception;
+	void execute(Map<String, Object> inputs, Map<String, Object> outputs) throws ExecutionException, Exception,
+			de.uni_paderborn.fujaba.muml.testlanguage.specification.custom.ExecutionException;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -114,8 +113,7 @@ public interface NodeSpecification extends EObject {
 	 *        "http://www.eclipse.org/emf/2002/GenModel body='return this.addPortSpecification(type, name, optional, null);'"
 	 * @generated
 	 */
-	PortSpecification addPortSpecification(PortType type, String name,
-			boolean optional);
+	PortSpecification addPortSpecification(PortType type, String name, boolean optional);
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -124,7 +122,6 @@ public interface NodeSpecification extends EObject {
 	 *        "http://www.eclipse.org/emf/2002/GenModel body='PortSpecification spec = SpecificationFactory.eINSTANCE.createPortSpecification();\r\nspec.setType(type);\r\nspec.setName(name);\r\nspec.setOptional(optional);\r\nspec.setDataType(dataType);\r\nthis.getPortSpecifications().add(spec);\r\nreturn spec;'"
 	 * @generated
 	 */
-	PortSpecification addPortSpecification(PortType type, String name,
-			boolean optional, Class<?> dataType);
+	PortSpecification addPortSpecification(PortType type, String name, boolean optional, Class<?> dataType);
 
 } // NodeSpecification

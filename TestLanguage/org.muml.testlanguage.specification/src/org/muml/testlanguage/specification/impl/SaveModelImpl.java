@@ -28,12 +28,11 @@ import org.muml.testlanguage.specification.custom.URIConversion;
  * <em><b>Save Model</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
- * <li>
- * {@link org.muml.testlanguage.specification.impl.SaveModelImpl#getUri
+ * <li>{@link org.muml.testlanguage.specification.impl.SaveModelImpl#getUri
  * <em>Uri</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -95,8 +94,7 @@ public class SaveModelImpl extends NodeSpecificationImpl implements SaveModel {
 		String oldUri = uri;
 		uri = newUri;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					SpecificationPackage.SAVE_MODEL__URI, oldUri, uri));
+			eNotify(new ENotificationImpl(this, Notification.SET, SpecificationPackage.SAVE_MODEL__URI, oldUri, uri));
 	}
 
 	/**
@@ -106,8 +104,7 @@ public class SaveModelImpl extends NodeSpecificationImpl implements SaveModel {
 	 */
 	public void initialize() {
 		this.setLabel("Save Model");
-		this.addPortSpecification(PortType.IN, "model", false,
-				org.eclipse.emf.ecore.EObject.class);
+		this.addPortSpecification(PortType.IN, "model", false, org.eclipse.emf.ecore.EObject.class);
 	}
 
 	/**
@@ -115,9 +112,8 @@ public class SaveModelImpl extends NodeSpecificationImpl implements SaveModel {
 	 * 
 	 * @generated
 	 */
-	public void execute(final Map<String, Object> inputs,
-			final Map<String, Object> outputs) throws ExecutionException,
-			Exception {
+	public void execute(final Map<String, Object> inputs, final Map<String, Object> outputs) throws ExecutionException,
+			Exception, de.uni_paderborn.fujaba.muml.testlanguage.specification.custom.ExecutionException {
 		// Create the URI.
 		URI realURI = URIConversion.convert(URI.createURI(this.getUri()));
 
@@ -197,8 +193,7 @@ public class SaveModelImpl extends NodeSpecificationImpl implements SaveModel {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 		case SpecificationPackage.SAVE_MODEL__URI:
-			return URI_EDEFAULT == null ? uri != null : !URI_EDEFAULT
-					.equals(uri);
+			return URI_EDEFAULT == null ? uri != null : !URI_EDEFAULT.equals(uri);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -230,16 +225,14 @@ public class SaveModelImpl extends NodeSpecificationImpl implements SaveModel {
 	 */
 	@Override
 	@SuppressWarnings("unchecked")
-	public Object eInvoke(int operationID, EList<?> arguments)
-			throws InvocationTargetException {
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
 		case SpecificationPackage.SAVE_MODEL___INITIALIZE:
 			initialize();
 			return null;
 		case SpecificationPackage.SAVE_MODEL___EXECUTE__MAP_MAP:
 			try {
-				execute((Map<String, Object>) arguments.get(0),
-						(Map<String, Object>) arguments.get(1));
+				execute((Map<String, Object>) arguments.get(0), (Map<String, Object>) arguments.get(1));
 				return null;
 			} catch (Throwable throwable) {
 				throw new InvocationTargetException(throwable);

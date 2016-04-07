@@ -11,8 +11,8 @@ import org.muml.testlanguage.specification.Default;
 
 /**
  * This is the item provider adapter for a
- * {@link org.muml.testlanguage.specification.Default}
- * object. <!-- begin-user-doc --> <!-- end-user-doc -->
+ * {@link org.muml.testlanguage.specification.Default} object. <!--
+ * begin-user-doc --> <!-- end-user-doc -->
  * 
  * @generated
  */
@@ -49,8 +49,7 @@ public class DefaultItemProvider extends NodeSpecificationItemProvider {
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object,
-				getResourceLocator().getImage("full/obj16/Default"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Default"));
 	}
 
 	/**
@@ -88,8 +87,7 @@ public class DefaultItemProvider extends NodeSpecificationItemProvider {
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(
-			Collection<Object> newChildDescriptors, Object object) {
+	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 	}
 

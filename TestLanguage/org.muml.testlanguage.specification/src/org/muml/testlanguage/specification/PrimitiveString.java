@@ -12,12 +12,11 @@ import org.muml.testlanguage.specification.custom.ExecutionException;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
- * <li>
- * {@link org.muml.testlanguage.specification.PrimitiveString#getValue
+ * <li>{@link org.muml.testlanguage.specification.PrimitiveString#getValue
  * <em>Value</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.testlanguage.specification.SpecificationPackage#getPrimitiveString()
  * @model
@@ -66,12 +65,12 @@ public interface PrimitiveString extends NodeSpecification {
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @model exceptions=
-	 *        "de.uni_paderborn.fujaba.muml.testlanguage.specification.ExecutionException de.uni_paderborn.fujaba.muml.testlanguage.specification.DefaultException"
+	 *        "org.muml.testlanguage.specification.ExecutionException org.muml.testlanguage.specification.DefaultException"
 	 *        inputsRequired="true" outputsRequired="true" annotation=
 	 *        "http://www.eclipse.org/emf/2002/GenModel body='\t\t// Put the wrapped string onto the output.\r\n\t\toutputs.put(\"string\", this.getValue());\r\n\r\n\t\treturn;'"
 	 * @generated
 	 */
-	void execute(Map<String, Object> inputs, Map<String, Object> outputs)
-			throws ExecutionException, Exception;
+	void execute(Map<String, Object> inputs, Map<String, Object> outputs) throws ExecutionException, Exception,
+			de.uni_paderborn.fujaba.muml.testlanguage.specification.custom.ExecutionException;
 
 } // PrimitiveString

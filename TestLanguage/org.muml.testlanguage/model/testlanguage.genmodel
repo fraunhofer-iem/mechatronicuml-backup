@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
-    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/de.uni_paderborn.fujaba.muml.testlanguage/src"
-    modelPluginID="de.uni_paderborn.fujaba.muml.testlanguage" modelName="TestLanguage"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.muml.testlanguage/src"
+    modelPluginID="org.muml.testlanguage" modelName="TestLanguage"
     rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" codeFormatting="true"
     commentFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="7.0"
-    suppressGenModelAnnotations="false" copyrightFields="false" language="" usedGenPackages="../../de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.genmodel#//specification"
+    suppressGenModelAnnotations="false" copyrightFields="false" language="" usedGenPackages="../../org.muml.testlanguage.specification/model/specification.genmodel#//specification"
     operationReflection="true" importOrganizing="true" decoration="Manual">
   <foreignModel>testlanguage.ecore</foreignModel>
-  <genPackages prefix="TestLanguage" basePackage="de.uni_paderborn.fujaba.muml" disposableProviderFactory="true"
+  <genPackages prefix="TestLanguage" basePackage="org.muml" disposableProviderFactory="true"
       ecorePackage="testlanguage.ecore#/">
     <genClasses ecoreClass="testlanguage.ecore#//Node">
       <genFeatures property="Readonly" children="true" createChild="true" propertyCategory="Ports"

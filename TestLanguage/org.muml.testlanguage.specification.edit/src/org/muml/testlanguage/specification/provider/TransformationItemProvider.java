@@ -17,8 +17,8 @@ import org.muml.testlanguage.specification.Transformation;
 
 /**
  * This is the item provider adapter for a
- * {@link org.muml.testlanguage.specification.Transformation}
- * object. <!-- begin-user-doc --> <!-- end-user-doc -->
+ * {@link org.muml.testlanguage.specification.Transformation} object. <!--
+ * begin-user-doc --> <!-- end-user-doc -->
  * 
  * @generated
  */
@@ -58,16 +58,13 @@ public class TransformationItemProvider extends NodeSpecificationItemProvider {
 	 * @generated
 	 */
 	protected void addUriPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_Transformation_uri_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_Transformation_uri_feature",
-						"_UI_Transformation_type"),
-				SpecificationPackage.Literals.TRANSFORMATION__URI, true, false,
-				false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Transformation_uri_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Transformation_uri_feature",
+								"_UI_Transformation_type"),
+						SpecificationPackage.Literals.TRANSFORMATION__URI, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -78,15 +75,11 @@ public class TransformationItemProvider extends NodeSpecificationItemProvider {
 	 */
 	protected void addParameterOrderPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-				getResourceLocator(),
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
 				getString("_UI_Transformation_parameterOrder_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_Transformation_parameterOrder_feature",
+				getString("_UI_PropertyDescriptor_description", "_UI_Transformation_parameterOrder_feature",
 						"_UI_Transformation_type"),
-				SpecificationPackage.Literals.TRANSFORMATION__PARAMETER_ORDER,
-				false, false, true, null,
+				SpecificationPackage.Literals.TRANSFORMATION__PARAMETER_ORDER, false, false, true, null,
 				getString("_UI_InternalPropertyCategory"), null));
 	}
 
@@ -98,18 +91,12 @@ public class TransformationItemProvider extends NodeSpecificationItemProvider {
 	 */
 	protected void addConfigPropertiesPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(
-						((ComposeableAdapterFactory) adapterFactory)
-								.getRootAdapterFactory(),
-						getResourceLocator(),
-						getString("_UI_Transformation_configProperties_feature"),
-						getString("_UI_PropertyDescriptor_description",
-								"_UI_Transformation_configProperties_feature",
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Transformation_configProperties_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Transformation_configProperties_feature",
 								"_UI_Transformation_type"),
-						SpecificationPackage.Literals.TRANSFORMATION__CONFIG_PROPERTIES,
-						false, false, false,
-						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-						getString("_UI_InternalPropertyCategory"), null));
+				SpecificationPackage.Literals.TRANSFORMATION__CONFIG_PROPERTIES, false, false, false,
+				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, getString("_UI_InternalPropertyCategory"), null));
 	}
 
 	/**
@@ -120,8 +107,7 @@ public class TransformationItemProvider extends NodeSpecificationItemProvider {
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object,
-				getResourceLocator().getImage("full/obj16/Transformation"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Transformation"));
 	}
 
 	/**
@@ -152,8 +138,7 @@ public class TransformationItemProvider extends NodeSpecificationItemProvider {
 		switch (notification.getFeatureID(Transformation.class)) {
 		case SpecificationPackage.TRANSFORMATION__URI:
 		case SpecificationPackage.TRANSFORMATION__CONFIG_PROPERTIES:
-			fireNotifyChanged(new ViewerNotification(notification,
-					notification.getNotifier(), false, true));
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}
 		super.notifyChanged(notification);
@@ -167,8 +152,7 @@ public class TransformationItemProvider extends NodeSpecificationItemProvider {
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(
-			Collection<Object> newChildDescriptors, Object object) {
+	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 	}
 

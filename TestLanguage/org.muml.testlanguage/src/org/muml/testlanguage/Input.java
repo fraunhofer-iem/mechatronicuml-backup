@@ -10,14 +10,10 @@ package org.muml.testlanguage;
  * The following features are supported:
  * </p>
  * <ul>
- * <li>{@link org.muml.testlanguage.Input#getSource
- * <em>Source</em>}</li>
- * <li>{@link org.muml.testlanguage.Input#getNode
- * <em>Node</em>}</li>
- * <li>{@link org.muml.testlanguage.Input#isOptional
- * <em>Optional</em>}</li>
- * <li>{@link org.muml.testlanguage.Input#getDataType
- * <em>Data Type</em>}</li>
+ * <li>{@link org.muml.testlanguage.Input#getSource <em>Source</em>}</li>
+ * <li>{@link org.muml.testlanguage.Input#getNode <em>Node</em>}</li>
+ * <li>{@link org.muml.testlanguage.Input#isOptional <em>Optional</em>}</li>
+ * <li>{@link org.muml.testlanguage.Input#getDataType <em>Data Type</em>}</li>
  * </ul>
  *
  * @see org.muml.testlanguage.TestLanguagePackage#getInput()
@@ -31,8 +27,8 @@ public interface Input extends Port {
 	/**
 	 * Returns the value of the '<em><b>Source</b></em>' reference. It is
 	 * bidirectional and its opposite is '
-	 * {@link org.muml.testlanguage.Output#getTargets
-	 * <em>Targets</em>}'. <!-- begin-user-doc -->
+	 * {@link org.muml.testlanguage.Output#getTargets <em>Targets</em>}'. <!--
+	 * begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Source</em>' reference isn't clear, there
 	 * really should be more of a description here...
@@ -49,8 +45,7 @@ public interface Input extends Port {
 	Output getSource();
 
 	/**
-	 * Sets the value of the '
-	 * {@link org.muml.testlanguage.Input#getSource
+	 * Sets the value of the ' {@link org.muml.testlanguage.Input#getSource
 	 * <em>Source</em>}' reference. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
 	 * 
@@ -64,8 +59,8 @@ public interface Input extends Port {
 	/**
 	 * Returns the value of the '<em><b>Node</b></em>' container reference. It
 	 * is bidirectional and its opposite is '
-	 * {@link org.muml.testlanguage.Node#getInputs
-	 * <em>Inputs</em>}'. <!-- begin-user-doc -->
+	 * {@link org.muml.testlanguage.Node#getInputs <em>Inputs</em>}'. <!--
+	 * begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Node</em>' container reference isn't clear,
 	 * there really should be more of a description here...
@@ -82,8 +77,7 @@ public interface Input extends Port {
 	Node getNode();
 
 	/**
-	 * Sets the value of the '
-	 * {@link org.muml.testlanguage.Input#getNode
+	 * Sets the value of the '{@link org.muml.testlanguage.Input#getNode
 	 * <em>Node</em>}' container reference. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
 	 * 
@@ -112,8 +106,7 @@ public interface Input extends Port {
 	boolean isOptional();
 
 	/**
-	 * Sets the value of the '
-	 * {@link org.muml.testlanguage.Input#isOptional
+	 * Sets the value of the ' {@link org.muml.testlanguage.Input#isOptional
 	 * <em>Optional</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
 	 * 
@@ -142,8 +135,7 @@ public interface Input extends Port {
 	Class<?> getDataType();
 
 	/**
-	 * Sets the value of the '
-	 * {@link org.muml.testlanguage.Input#getDataType
+	 * Sets the value of the ' {@link org.muml.testlanguage.Input#getDataType
 	 * <em>Data Type</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
 	 * 

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="testlanguage" nsURI="http://de/uni_paderborn/fujaba/muml/testlanguage"
-    nsPrefix="de.uni_paderborn.fujaba.muml.testlanguage">
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="testlanguage" nsURI="http://www.muml.org/testlanguage/1.0" nsPrefix="de.uni_paderborn.fujaba.muml.testlanguage">
   <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
     <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
   </eAnnotations>
@@ -18,7 +17,7 @@
         <details key="documentation" value="Performs a setup routine for the specific node, i.e. it sets the label and ports according to the NodeSpecification."/>
       </eAnnotations>
     </eOperations>
-    <eOperations name="execute" lowerBound="1" eExceptions="ecore:EDataType ../../de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//ExecutionException">
+    <eOperations name="execute" lowerBound="1" eExceptions="ecore:EDataType ../../org.muml.testlanguage.specification/model/specification.ecore#//ExecutionException">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="body" value="&#x9;&#x9;// FIXME Hack to disable notifications so that the transactional editing&#xD;&#xA;&#x9;&#x9;// domain won't complain about me modifying the domain element.&#xD;&#xA;&#x9;&#x9;this.eSetDeliver(false);&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;// Initialize caches if needed.&#xD;&#xA;&#x9;&#x9;if (this.getInputCache() == null) {&#xD;&#xA;&#x9;&#x9;&#x9;this.setInputCache(new HashMap&lt;String, Object>());&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;if (this.getOutputCache() == null) {&#xD;&#xA;&#x9;&#x9;&#x9;this.setOutputCache(new HashMap&lt;String, Object>());&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;// Refresh the input cache.&#xD;&#xA;&#x9;&#x9;for (Input input : this.getInputs()) {&#xD;&#xA;&#x9;&#x9;&#x9;if (input.getSource() == null) {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;this.getInputCache().remove(input.getName());&#xD;&#xA;&#x9;&#x9;&#x9;} else {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;this.getInputCache().put(input.getName(), input.getData());&#xD;&#xA;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;// Clear the output cache.&#xD;&#xA;&#x9;&#x9;this.getOutputCache().clear();&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;// NOTE A check whether all non-optional ports actually get data is not&#xD;&#xA;&#x9;&#x9;// necessary, as previous constraints already took care of this.&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;try {&#xD;&#xA;&#x9;&#x9;&#x9;// Execute the behavior that is written in the specification.&#xD;&#xA;&#x9;&#x9;&#x9;this.specification.execute(this.getInputCache(),&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.getOutputCache());&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;&#x9;return;&#xD;&#xA;&#x9;&#x9;} catch (Exception e) {&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;&#x9;// Clear the output cache.&#xD;&#xA;&#x9;&#x9;&#x9;this.getOutputCache().clear();&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;&#x9;throw new ExecutionException(e);&#xD;&#xA;&#x9;&#x9;} finally {&#xD;&#xA;&#x9;&#x9;&#x9;this.eSetDeliver(true);&#xD;&#xA;&#x9;&#x9;}"/>
         <details key="documentation" value="Executes the node. It basically just delegates to the execute()-method of the NodeSpecification, but also does some maintenance.&#xD;&#xA;&#xD;&#xA;@throws ExecutionException if an error occurs during execution, containing an error message."/>
@@ -36,7 +35,7 @@
         eType="#//Output" containment="true" eOpposite="#//Output/node" eKeys="#//Port/name"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         defaultValueLiteral="node"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="specification" eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="specification" eType="ecore:EClass ../../org.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="specificationClassName"
         lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"

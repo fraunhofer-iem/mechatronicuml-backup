@@ -39,14 +39,14 @@ public interface SpecificationPackage extends EPackage {
 	 * 
 	 * @generated
 	 */
-	String eNS_URI = "http://de/uni_paderborn/fujaba/muml/testlanguage/specification";
+	String eNS_URI = "http://www.muml.org/testlanguage/specification/1.0";
 
 	/**
 	 * The package namespace name. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
-	String eNS_PREFIX = "de.uni_paderborn.fujaba.muml.testlanguage.specification";
+	String eNS_PREFIX = "testlanguagespec";
 
 	/**
 	 * The singleton instance of the package. <!-- begin-user-doc --> <!--
@@ -54,8 +54,7 @@ public interface SpecificationPackage extends EPackage {
 	 * 
 	 * @generated
 	 */
-	SpecificationPackage eINSTANCE = org.muml.testlanguage.specification.impl.SpecificationPackageImpl
-			.init();
+	SpecificationPackage eINSTANCE = org.muml.testlanguage.specification.impl.SpecificationPackageImpl.init();
 
 	/**
 	 * The meta object id for the '
@@ -1424,8 +1423,8 @@ public interface SpecificationPackage extends EPackage {
 
 	/**
 	 * The meta object id for the '
-	 * {@link org.muml.testlanguage.specification.PortType
-	 * <em>Port Type</em>}' enum. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * {@link org.muml.testlanguage.specification.PortType <em>Port Type</em>}'
+	 * enum. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @see org.muml.testlanguage.specification.PortType
 	 * @see org.muml.testlanguage.specification.impl.SpecificationPackageImpl#getPortType()
@@ -1618,8 +1617,8 @@ public interface SpecificationPackage extends EPackage {
 
 	/**
 	 * Returns the meta object for class '
-	 * {@link org.muml.testlanguage.specification.Default
-	 * <em>Default</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * {@link org.muml.testlanguage.specification.Default <em>Default</em>}'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the meta object for class '<em>Default</em>'.
 	 * @see org.muml.testlanguage.specification.Default
@@ -1654,8 +1653,8 @@ public interface SpecificationPackage extends EPackage {
 
 	/**
 	 * Returns the meta object for class '
-	 * {@link org.muml.testlanguage.specification.LoadModel
-	 * <em>Load Model</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * {@link org.muml.testlanguage.specification.LoadModel <em>Load Model</em>}
+	 * '. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the meta object for class '<em>Load Model</em>'.
 	 * @see org.muml.testlanguage.specification.LoadModel
@@ -1665,8 +1664,8 @@ public interface SpecificationPackage extends EPackage {
 
 	/**
 	 * Returns the meta object for the attribute '
-	 * {@link org.muml.testlanguage.specification.LoadModel#getUri
-	 * <em>Uri</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * {@link org.muml.testlanguage.specification.LoadModel#getUri <em>Uri</em>}
+	 * '. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the meta object for the attribute '<em>Uri</em>'.
 	 * @see org.muml.testlanguage.specification.LoadModel#getUri()
@@ -1774,8 +1773,8 @@ public interface SpecificationPackage extends EPackage {
 
 	/**
 	 * Returns the meta object for class '
-	 * {@link org.muml.testlanguage.specification.SaveModel
-	 * <em>Save Model</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * {@link org.muml.testlanguage.specification.SaveModel <em>Save Model</em>}
+	 * '. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the meta object for class '<em>Save Model</em>'.
 	 * @see org.muml.testlanguage.specification.SaveModel
@@ -1785,8 +1784,8 @@ public interface SpecificationPackage extends EPackage {
 
 	/**
 	 * Returns the meta object for the attribute '
-	 * {@link org.muml.testlanguage.specification.SaveModel#getUri
-	 * <em>Uri</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * {@link org.muml.testlanguage.specification.SaveModel#getUri <em>Uri</em>}
+	 * '. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the meta object for the attribute '<em>Uri</em>'.
 	 * @see org.muml.testlanguage.specification.SaveModel#getUri()
@@ -2163,8 +2162,8 @@ public interface SpecificationPackage extends EPackage {
 
 	/**
 	 * Returns the meta object for enum '
-	 * {@link org.muml.testlanguage.specification.PortType
-	 * <em>Port Type</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * {@link org.muml.testlanguage.specification.PortType <em>Port Type</em>}'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the meta object for enum '<em>Port Type</em>'.
 	 * @see org.muml.testlanguage.specification.PortType
@@ -2242,8 +2241,7 @@ public interface SpecificationPackage extends EPackage {
 		 * 
 		 * @generated
 		 */
-		EReference NODE_SPECIFICATION__PORT_SPECIFICATIONS = eINSTANCE
-				.getNodeSpecification_PortSpecifications();
+		EReference NODE_SPECIFICATION__PORT_SPECIFICATIONS = eINSTANCE.getNodeSpecification_PortSpecifications();
 
 		/**
 		 * The meta object literal for the '<em><b>Label</b></em>' attribute
@@ -2251,8 +2249,7 @@ public interface SpecificationPackage extends EPackage {
 		 * 
 		 * @generated
 		 */
-		EAttribute NODE_SPECIFICATION__LABEL = eINSTANCE
-				.getNodeSpecification_Label();
+		EAttribute NODE_SPECIFICATION__LABEL = eINSTANCE.getNodeSpecification_Label();
 
 		/**
 		 * The meta object literal for the '<em><b>Initialize</b></em>'
@@ -2260,8 +2257,7 @@ public interface SpecificationPackage extends EPackage {
 		 * 
 		 * @generated
 		 */
-		EOperation NODE_SPECIFICATION___INITIALIZE = eINSTANCE
-				.getNodeSpecification__Initialize();
+		EOperation NODE_SPECIFICATION___INITIALIZE = eINSTANCE.getNodeSpecification__Initialize();
 
 		/**
 		 * The meta object literal for the '<em><b>Execute</b></em>' operation.
@@ -2269,8 +2265,7 @@ public interface SpecificationPackage extends EPackage {
 		 * 
 		 * @generated
 		 */
-		EOperation NODE_SPECIFICATION___EXECUTE__MAP_MAP = eINSTANCE
-				.getNodeSpecification__Execute__Map_Map();
+		EOperation NODE_SPECIFICATION___EXECUTE__MAP_MAP = eINSTANCE.getNodeSpecification__Execute__Map_Map();
 
 		/**
 		 * The meta object literal for the '<em><b>Notify Changed</b></em>'
@@ -2319,8 +2314,7 @@ public interface SpecificationPackage extends EPackage {
 		 * 
 		 * @generated
 		 */
-		EAttribute PORT_SPECIFICATION__NAME = eINSTANCE
-				.getPortSpecification_Name();
+		EAttribute PORT_SPECIFICATION__NAME = eINSTANCE.getPortSpecification_Name();
 
 		/**
 		 * The meta object literal for the '<em><b>Optional</b></em>' attribute
@@ -2328,8 +2322,7 @@ public interface SpecificationPackage extends EPackage {
 		 * 
 		 * @generated
 		 */
-		EAttribute PORT_SPECIFICATION__OPTIONAL = eINSTANCE
-				.getPortSpecification_Optional();
+		EAttribute PORT_SPECIFICATION__OPTIONAL = eINSTANCE.getPortSpecification_Optional();
 
 		/**
 		 * The meta object literal for the '<em><b>Type</b></em>' attribute
@@ -2337,8 +2330,7 @@ public interface SpecificationPackage extends EPackage {
 		 * 
 		 * @generated
 		 */
-		EAttribute PORT_SPECIFICATION__TYPE = eINSTANCE
-				.getPortSpecification_Type();
+		EAttribute PORT_SPECIFICATION__TYPE = eINSTANCE.getPortSpecification_Type();
 
 		/**
 		 * The meta object literal for the '<em><b>Data Type</b></em>' attribute
@@ -2346,8 +2338,7 @@ public interface SpecificationPackage extends EPackage {
 		 * 
 		 * @generated
 		 */
-		EAttribute PORT_SPECIFICATION__DATA_TYPE = eINSTANCE
-				.getPortSpecification_DataType();
+		EAttribute PORT_SPECIFICATION__DATA_TYPE = eINSTANCE.getPortSpecification_DataType();
 
 		/**
 		 * The meta object literal for the '
@@ -2375,8 +2366,7 @@ public interface SpecificationPackage extends EPackage {
 		 * 
 		 * @generated
 		 */
-		EOperation DEFAULT___EXECUTE__MAP_MAP = eINSTANCE
-				.getDefault__Execute__Map_Map();
+		EOperation DEFAULT___EXECUTE__MAP_MAP = eINSTANCE.getDefault__Execute__Map_Map();
 
 		/**
 		 * The meta object literal for the '
@@ -2404,8 +2394,7 @@ public interface SpecificationPackage extends EPackage {
 		 * 
 		 * @generated
 		 */
-		EOperation LOAD_MODEL___INITIALIZE = eINSTANCE
-				.getLoadModel__Initialize();
+		EOperation LOAD_MODEL___INITIALIZE = eINSTANCE.getLoadModel__Initialize();
 
 		/**
 		 * The meta object literal for the '<em><b>Execute</b></em>' operation.
@@ -2413,8 +2402,7 @@ public interface SpecificationPackage extends EPackage {
 		 * 
 		 * @generated
 		 */
-		EOperation LOAD_MODEL___EXECUTE__MAP_MAP = eINSTANCE
-				.getLoadModel__Execute__Map_Map();
+		EOperation LOAD_MODEL___EXECUTE__MAP_MAP = eINSTANCE.getLoadModel__Execute__Map_Map();
 
 		/**
 		 * The meta object literal for the '
@@ -2434,8 +2422,7 @@ public interface SpecificationPackage extends EPackage {
 		 * 
 		 * @generated
 		 */
-		EOperation COMPARE_MODELS___INITIALIZE = eINSTANCE
-				.getCompareModels__Initialize();
+		EOperation COMPARE_MODELS___INITIALIZE = eINSTANCE.getCompareModels__Initialize();
 
 		/**
 		 * The meta object literal for the '<em><b>Execute</b></em>' operation.
@@ -2443,8 +2430,7 @@ public interface SpecificationPackage extends EPackage {
 		 * 
 		 * @generated
 		 */
-		EOperation COMPARE_MODELS___EXECUTE__MAP_MAP = eINSTANCE
-				.getCompareModels__Execute__Map_Map();
+		EOperation COMPARE_MODELS___EXECUTE__MAP_MAP = eINSTANCE.getCompareModels__Execute__Map_Map();
 
 		/**
 		 * The meta object literal for the '
@@ -2464,8 +2450,7 @@ public interface SpecificationPackage extends EPackage {
 		 * 
 		 * @generated
 		 */
-		EOperation VALIDATE_MODEL___INITIALIZE = eINSTANCE
-				.getValidateModel__Initialize();
+		EOperation VALIDATE_MODEL___INITIALIZE = eINSTANCE.getValidateModel__Initialize();
 
 		/**
 		 * The meta object literal for the '<em><b>Execute</b></em>' operation.
@@ -2473,8 +2458,7 @@ public interface SpecificationPackage extends EPackage {
 		 * 
 		 * @generated
 		 */
-		EOperation VALIDATE_MODEL___EXECUTE__MAP_MAP = eINSTANCE
-				.getValidateModel__Execute__Map_Map();
+		EOperation VALIDATE_MODEL___EXECUTE__MAP_MAP = eINSTANCE.getValidateModel__Execute__Map_Map();
 
 		/**
 		 * The meta object literal for the '
@@ -2502,8 +2486,7 @@ public interface SpecificationPackage extends EPackage {
 		 * 
 		 * @generated
 		 */
-		EOperation SAVE_MODEL___INITIALIZE = eINSTANCE
-				.getSaveModel__Initialize();
+		EOperation SAVE_MODEL___INITIALIZE = eINSTANCE.getSaveModel__Initialize();
 
 		/**
 		 * The meta object literal for the '<em><b>Execute</b></em>' operation.
@@ -2511,8 +2494,7 @@ public interface SpecificationPackage extends EPackage {
 		 * 
 		 * @generated
 		 */
-		EOperation SAVE_MODEL___EXECUTE__MAP_MAP = eINSTANCE
-				.getSaveModel__Execute__Map_Map();
+		EOperation SAVE_MODEL___EXECUTE__MAP_MAP = eINSTANCE.getSaveModel__Execute__Map_Map();
 
 		/**
 		 * The meta object literal for the '
@@ -2540,8 +2522,7 @@ public interface SpecificationPackage extends EPackage {
 		 * 
 		 * @generated
 		 */
-		EReference TRANSFORMATION__PARAMETER_ORDER = eINSTANCE
-				.getTransformation_ParameterOrder();
+		EReference TRANSFORMATION__PARAMETER_ORDER = eINSTANCE.getTransformation_ParameterOrder();
 
 		/**
 		 * The meta object literal for the '<em><b>Config Properties</b></em>'
@@ -2549,8 +2530,7 @@ public interface SpecificationPackage extends EPackage {
 		 * 
 		 * @generated
 		 */
-		EAttribute TRANSFORMATION__CONFIG_PROPERTIES = eINSTANCE
-				.getTransformation_ConfigProperties();
+		EAttribute TRANSFORMATION__CONFIG_PROPERTIES = eINSTANCE.getTransformation_ConfigProperties();
 
 		/**
 		 * The meta object literal for the '<em><b>Initialize</b></em>'
@@ -2558,8 +2538,7 @@ public interface SpecificationPackage extends EPackage {
 		 * 
 		 * @generated
 		 */
-		EOperation TRANSFORMATION___INITIALIZE = eINSTANCE
-				.getTransformation__Initialize();
+		EOperation TRANSFORMATION___INITIALIZE = eINSTANCE.getTransformation__Initialize();
 
 		/**
 		 * The meta object literal for the '<em><b>Execute</b></em>' operation.
@@ -2567,8 +2546,7 @@ public interface SpecificationPackage extends EPackage {
 		 * 
 		 * @generated
 		 */
-		EOperation TRANSFORMATION___EXECUTE__MAP_MAP = eINSTANCE
-				.getTransformation__Execute__Map_Map();
+		EOperation TRANSFORMATION___EXECUTE__MAP_MAP = eINSTANCE.getTransformation__Execute__Map_Map();
 
 		/**
 		 * The meta object literal for the '<em><b>Notify Changed</b></em>'
@@ -2576,8 +2554,7 @@ public interface SpecificationPackage extends EPackage {
 		 * 
 		 * @generated
 		 */
-		EOperation TRANSFORMATION___NOTIFY_CHANGED__OBJECT = eINSTANCE
-				.getTransformation__NotifyChanged__Object();
+		EOperation TRANSFORMATION___NOTIFY_CHANGED__OBJECT = eINSTANCE.getTransformation__NotifyChanged__Object();
 
 		/**
 		 * The meta object literal for the '
@@ -2597,8 +2574,7 @@ public interface SpecificationPackage extends EPackage {
 		 * 
 		 * @generated
 		 */
-		EOperation EXECUTE_UPPAAL___INITIALIZE = eINSTANCE
-				.getExecuteUPPAAL__Initialize();
+		EOperation EXECUTE_UPPAAL___INITIALIZE = eINSTANCE.getExecuteUPPAAL__Initialize();
 
 		/**
 		 * The meta object literal for the '<em><b>Execute</b></em>' operation.
@@ -2606,8 +2582,7 @@ public interface SpecificationPackage extends EPackage {
 		 * 
 		 * @generated
 		 */
-		EOperation EXECUTE_UPPAAL___EXECUTE__MAP_MAP = eINSTANCE
-				.getExecuteUPPAAL__Execute__Map_Map();
+		EOperation EXECUTE_UPPAAL___EXECUTE__MAP_MAP = eINSTANCE.getExecuteUPPAAL__Execute__Map_Map();
 
 		/**
 		 * The meta object literal for the '
@@ -2627,8 +2602,7 @@ public interface SpecificationPackage extends EPackage {
 		 * 
 		 * @generated
 		 */
-		EAttribute PRIMITIVE_STRING__VALUE = eINSTANCE
-				.getPrimitiveString_Value();
+		EAttribute PRIMITIVE_STRING__VALUE = eINSTANCE.getPrimitiveString_Value();
 
 		/**
 		 * The meta object literal for the '<em><b>Initialize</b></em>'
@@ -2636,8 +2610,7 @@ public interface SpecificationPackage extends EPackage {
 		 * 
 		 * @generated
 		 */
-		EOperation PRIMITIVE_STRING___INITIALIZE = eINSTANCE
-				.getPrimitiveString__Initialize();
+		EOperation PRIMITIVE_STRING___INITIALIZE = eINSTANCE.getPrimitiveString__Initialize();
 
 		/**
 		 * The meta object literal for the '<em><b>Execute</b></em>' operation.
@@ -2645,8 +2618,7 @@ public interface SpecificationPackage extends EPackage {
 		 * 
 		 * @generated
 		 */
-		EOperation PRIMITIVE_STRING___EXECUTE__MAP_MAP = eINSTANCE
-				.getPrimitiveString__Execute__Map_Map();
+		EOperation PRIMITIVE_STRING___EXECUTE__MAP_MAP = eINSTANCE.getPrimitiveString__Execute__Map_Map();
 
 		/**
 		 * The meta object literal for the '
@@ -2674,8 +2646,7 @@ public interface SpecificationPackage extends EPackage {
 		 * 
 		 * @generated
 		 */
-		EOperation ASSERT_BOOL___INITIALIZE = eINSTANCE
-				.getAssertBool__Initialize();
+		EOperation ASSERT_BOOL___INITIALIZE = eINSTANCE.getAssertBool__Initialize();
 
 		/**
 		 * The meta object literal for the '<em><b>Execute</b></em>' operation.
@@ -2683,8 +2654,7 @@ public interface SpecificationPackage extends EPackage {
 		 * 
 		 * @generated
 		 */
-		EOperation ASSERT_BOOL___EXECUTE__MAP_MAP = eINSTANCE
-				.getAssertBool__Execute__Map_Map();
+		EOperation ASSERT_BOOL___EXECUTE__MAP_MAP = eINSTANCE.getAssertBool__Execute__Map_Map();
 
 		/**
 		 * The meta object literal for the '
@@ -2692,7 +2662,8 @@ public interface SpecificationPackage extends EPackage {
 		 * <em>Assert Diagnostic Trace</em>}' class. <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * 
-		 * @see org.muml.testlanguage.specification.impl.AssertDiagnosticTraceImpl
+		 * @see org.muml.testlanguage.specification.impl.
+		 *      AssertDiagnosticTraceImpl
 		 * @see org.muml.testlanguage.specification.impl.SpecificationPackageImpl#getAssertDiagnosticTrace()
 		 * @generated
 		 */
@@ -2704,8 +2675,7 @@ public interface SpecificationPackage extends EPackage {
 		 * 
 		 * @generated
 		 */
-		EOperation ASSERT_DIAGNOSTIC_TRACE___INITIALIZE = eINSTANCE
-				.getAssertDiagnosticTrace__Initialize();
+		EOperation ASSERT_DIAGNOSTIC_TRACE___INITIALIZE = eINSTANCE.getAssertDiagnosticTrace__Initialize();
 
 		/**
 		 * The meta object literal for the '<em><b>Execute</b></em>' operation.
@@ -2713,8 +2683,7 @@ public interface SpecificationPackage extends EPackage {
 		 * 
 		 * @generated
 		 */
-		EOperation ASSERT_DIAGNOSTIC_TRACE___EXECUTE__MAP_MAP = eINSTANCE
-				.getAssertDiagnosticTrace__Execute__Map_Map();
+		EOperation ASSERT_DIAGNOSTIC_TRACE___EXECUTE__MAP_MAP = eINSTANCE.getAssertDiagnosticTrace__Execute__Map_Map();
 
 		/**
 		 * The meta object literal for the '
@@ -2734,8 +2703,7 @@ public interface SpecificationPackage extends EPackage {
 		 * 
 		 * @generated
 		 */
-		EOperation ASSERT_RESULT___INITIALIZE = eINSTANCE
-				.getAssertResult__Initialize();
+		EOperation ASSERT_RESULT___INITIALIZE = eINSTANCE.getAssertResult__Initialize();
 
 		/**
 		 * The meta object literal for the '<em><b>Execute</b></em>' operation.
@@ -2743,8 +2711,7 @@ public interface SpecificationPackage extends EPackage {
 		 * 
 		 * @generated
 		 */
-		EOperation ASSERT_RESULT___EXECUTE__MAP_MAP = eINSTANCE
-				.getAssertResult__Execute__Map_Map();
+		EOperation ASSERT_RESULT___EXECUTE__MAP_MAP = eINSTANCE.getAssertResult__Execute__Map_Map();
 
 		/**
 		 * The meta object literal for the '
@@ -2764,8 +2731,7 @@ public interface SpecificationPackage extends EPackage {
 		 * 
 		 * @generated
 		 */
-		EAttribute CHECK_MTCTL__PROPERTIES = eINSTANCE
-				.getCheckMTCTL_Properties();
+		EAttribute CHECK_MTCTL__PROPERTIES = eINSTANCE.getCheckMTCTL_Properties();
 
 		/**
 		 * The meta object literal for the '<em><b>Initialize</b></em>'
@@ -2773,8 +2739,7 @@ public interface SpecificationPackage extends EPackage {
 		 * 
 		 * @generated
 		 */
-		EOperation CHECK_MTCTL___INITIALIZE = eINSTANCE
-				.getCheckMTCTL__Initialize();
+		EOperation CHECK_MTCTL___INITIALIZE = eINSTANCE.getCheckMTCTL__Initialize();
 
 		/**
 		 * The meta object literal for the '<em><b>Execute</b></em>' operation.
@@ -2782,8 +2747,7 @@ public interface SpecificationPackage extends EPackage {
 		 * 
 		 * @generated
 		 */
-		EOperation CHECK_MTCTL___EXECUTE__MAP_MAP = eINSTANCE
-				.getCheckMTCTL__Execute__Map_Map();
+		EOperation CHECK_MTCTL___EXECUTE__MAP_MAP = eINSTANCE.getCheckMTCTL__Execute__Map_Map();
 
 		/**
 		 * The meta object literal for the '
@@ -2801,7 +2765,8 @@ public interface SpecificationPackage extends EPackage {
 		 * The meta object literal for the '<em>Execution Exception</em>' data
 		 * type. <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * 
-		 * @see org.muml.testlanguage.specification.custom.ExecutionException
+		 * @see de.uni_paderborn.fujaba.muml.testlanguage.specification.custom.
+		 *      ExecutionException
 		 * @see org.muml.testlanguage.specification.impl.SpecificationPackageImpl#getExecutionException()
 		 * @generated
 		 */

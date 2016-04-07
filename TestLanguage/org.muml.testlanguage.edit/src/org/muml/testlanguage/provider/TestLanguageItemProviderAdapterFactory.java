@@ -76,16 +76,15 @@ public class TestLanguageItemProviderAdapterFactory extends TestLanguageAdapterF
 
 	/**
 	 * This keeps track of the one adapter used for all
-	 * {@link org.muml.testlanguage.Node} instances. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
+	 * {@link org.muml.testlanguage.Node} instances. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
 	protected NodeItemProvider nodeItemProvider;
 
 	/**
-	 * This creates an adapter for a
-	 * {@link org.muml.testlanguage.Node}. <!--
+	 * This creates an adapter for a {@link org.muml.testlanguage.Node}. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
@@ -101,16 +100,15 @@ public class TestLanguageItemProviderAdapterFactory extends TestLanguageAdapterF
 
 	/**
 	 * This keeps track of the one adapter used for all
-	 * {@link org.muml.testlanguage.Input} instances. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
+	 * {@link org.muml.testlanguage.Input} instances. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
 	protected InputItemProvider inputItemProvider;
 
 	/**
-	 * This creates an adapter for a
-	 * {@link org.muml.testlanguage.Input}. <!--
+	 * This creates an adapter for a {@link org.muml.testlanguage.Input}. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
@@ -126,16 +124,15 @@ public class TestLanguageItemProviderAdapterFactory extends TestLanguageAdapterF
 
 	/**
 	 * This keeps track of the one adapter used for all
-	 * {@link org.muml.testlanguage.Output} instances. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
+	 * {@link org.muml.testlanguage.Output} instances. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
 	protected OutputItemProvider outputItemProvider;
 
 	/**
-	 * This creates an adapter for a
-	 * {@link org.muml.testlanguage.Output}. <!--
+	 * This creates an adapter for a {@link org.muml.testlanguage.Output}. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
@@ -151,17 +148,16 @@ public class TestLanguageItemProviderAdapterFactory extends TestLanguageAdapterF
 
 	/**
 	 * This keeps track of the one adapter used for all
-	 * {@link org.muml.testlanguage.TestCase} instances.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * {@link org.muml.testlanguage.TestCase} instances. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
 	protected TestCaseItemProvider testCaseItemProvider;
 
 	/**
-	 * This creates an adapter for a
-	 * {@link org.muml.testlanguage.TestCase}. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
+	 * This creates an adapter for a {@link org.muml.testlanguage.TestCase}.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */

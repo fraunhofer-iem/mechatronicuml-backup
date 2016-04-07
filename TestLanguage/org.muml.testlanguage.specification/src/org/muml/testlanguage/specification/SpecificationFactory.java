@@ -18,8 +18,7 @@ public interface SpecificationFactory extends EFactory {
 	 * 
 	 * @generated
 	 */
-	SpecificationFactory eINSTANCE = org.muml.testlanguage.specification.impl.SpecificationFactoryImpl
-			.init();
+	SpecificationFactory eINSTANCE = org.muml.testlanguage.specification.impl.SpecificationFactoryImpl.init();
 
 	/**
 	 * Returns a new object of class '<em>Port Specification</em>'. <!--

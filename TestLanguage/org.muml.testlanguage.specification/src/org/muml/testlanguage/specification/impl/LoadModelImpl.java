@@ -25,12 +25,11 @@ import org.muml.testlanguage.specification.custom.URIConversion;
  * <em><b>Load Model</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
- * <li>
- * {@link org.muml.testlanguage.specification.impl.LoadModelImpl#getUri
+ * <li>{@link org.muml.testlanguage.specification.impl.LoadModelImpl#getUri
  * <em>Uri</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -92,8 +91,7 @@ public class LoadModelImpl extends NodeSpecificationImpl implements LoadModel {
 		String oldUri = uri;
 		uri = newUri;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					SpecificationPackage.LOAD_MODEL__URI, oldUri, uri));
+			eNotify(new ENotificationImpl(this, Notification.SET, SpecificationPackage.LOAD_MODEL__URI, oldUri, uri));
 	}
 
 	/**
@@ -111,23 +109,21 @@ public class LoadModelImpl extends NodeSpecificationImpl implements LoadModel {
 	 * 
 	 * @generated NOT
 	 */
-	public void execute(final Map<String, Object> inputs,
-			final Map<String, Object> outputs) throws ExecutionException,
-			Exception {
-		
+	public void execute(final Map<String, Object> inputs, final Map<String, Object> outputs)
+			throws ExecutionException, Exception {
+
 		// Cancel if no uri was set.
-		if (this.getUri() == null || "".equals(this.getUri()))
-		{
+		if (this.getUri() == null || "".equals(this.getUri())) {
 			throw new ExecutionException("No model URI set!");
 		}
-		
+
 		// Setup the URI.
 		URI realURI = URIConversion.convert(URI.createURI(this.getUri()));
 
 		// Load the model.
 		ResourceSet resSet = new ResourceSetImpl();
 		Resource resource = resSet.getResource(realURI.trimFragment(), true);
-		
+
 		EObject result = null;
 
 		if (realURI.hasFragment()) {
@@ -195,8 +191,7 @@ public class LoadModelImpl extends NodeSpecificationImpl implements LoadModel {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 		case SpecificationPackage.LOAD_MODEL__URI:
-			return URI_EDEFAULT == null ? uri != null : !URI_EDEFAULT
-					.equals(uri);
+			return URI_EDEFAULT == null ? uri != null : !URI_EDEFAULT.equals(uri);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -228,16 +223,14 @@ public class LoadModelImpl extends NodeSpecificationImpl implements LoadModel {
 	 */
 	@Override
 	@SuppressWarnings("unchecked")
-	public Object eInvoke(int operationID, EList<?> arguments)
-			throws InvocationTargetException {
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
 		case SpecificationPackage.LOAD_MODEL___INITIALIZE:
 			initialize();
 			return null;
 		case SpecificationPackage.LOAD_MODEL___EXECUTE__MAP_MAP:
 			try {
-				execute((Map<String, Object>) arguments.get(0),
-						(Map<String, Object>) arguments.get(1));
+				execute((Map<String, Object>) arguments.get(0), (Map<String, Object>) arguments.get(1));
 				return null;
 			} catch (Throwable throwable) {
 				throw new InvocationTargetException(throwable);

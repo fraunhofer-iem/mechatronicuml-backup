@@ -19,12 +19,12 @@ import org.muml.testlanguage.specification.custom.ExecutionException;
  * <em><b>Assert Bool</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  * <li>
  * {@link org.muml.testlanguage.specification.impl.AssertBoolImpl#isAssertion
  * <em>Assertion</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -86,9 +86,8 @@ public class AssertBoolImpl extends NodeSpecificationImpl implements AssertBool 
 		boolean oldAssertion = assertion;
 		assertion = newAssertion;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					SpecificationPackage.ASSERT_BOOL__ASSERTION, oldAssertion,
-					assertion));
+			eNotify(new ENotificationImpl(this, Notification.SET, SpecificationPackage.ASSERT_BOOL__ASSERTION,
+					oldAssertion, assertion));
 	}
 
 	/**
@@ -98,8 +97,7 @@ public class AssertBoolImpl extends NodeSpecificationImpl implements AssertBool 
 	 */
 	public void initialize() {
 		this.setLabel("Assert Bool");
-		this.addPortSpecification(PortType.IN, "bool", false,
-				java.lang.Boolean.class);
+		this.addPortSpecification(PortType.IN, "bool", false, java.lang.Boolean.class);
 	}
 
 	/**
@@ -107,17 +105,15 @@ public class AssertBoolImpl extends NodeSpecificationImpl implements AssertBool 
 	 * 
 	 * @generated
 	 */
-	public void execute(final Map<String, Object> inputs,
-			final Map<String, Object> outputs) throws ExecutionException,
-			Exception {
+	public void execute(final Map<String, Object> inputs, final Map<String, Object> outputs) throws ExecutionException,
+			Exception, de.uni_paderborn.fujaba.muml.testlanguage.specification.custom.ExecutionException {
 		// Get the boolean value.
 		boolean bool = ((Boolean) inputs.get("bool")).booleanValue();
 
 		// Throw an exception if it does not match the assertion.
 		if (bool != this.assertion) {
-			throw new ExecutionException("Expected "
-					+ Boolean.toString(this.assertion) + ", but got "
-					+ Boolean.toString(bool));
+			throw new ExecutionException(
+					"Expected " + Boolean.toString(this.assertion) + ", but got " + Boolean.toString(bool));
 		}
 	}
 
@@ -206,16 +202,14 @@ public class AssertBoolImpl extends NodeSpecificationImpl implements AssertBool 
 	 */
 	@Override
 	@SuppressWarnings("unchecked")
-	public Object eInvoke(int operationID, EList<?> arguments)
-			throws InvocationTargetException {
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
 		case SpecificationPackage.ASSERT_BOOL___INITIALIZE:
 			initialize();
 			return null;
 		case SpecificationPackage.ASSERT_BOOL___EXECUTE__MAP_MAP:
 			try {
-				execute((Map<String, Object>) arguments.get(0),
-						(Map<String, Object>) arguments.get(1));
+				execute((Map<String, Object>) arguments.get(0), (Map<String, Object>) arguments.get(1));
 				return null;
 			} catch (Throwable throwable) {
 				throw new InvocationTargetException(throwable);

@@ -13,8 +13,8 @@ import org.muml.testlanguage.specification.AssertResult;
 
 /**
  * This is the item provider adapter for a
- * {@link org.muml.testlanguage.specification.AssertResult}
- * object. <!-- begin-user-doc --> <!-- end-user-doc -->
+ * {@link org.muml.testlanguage.specification.AssertResult} object. <!--
+ * begin-user-doc --> <!-- end-user-doc -->
  * 
  * @generated
  */
@@ -52,8 +52,7 @@ public class AssertResultItemProvider extends AssertBoolItemProvider {
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object,
-				getResourceLocator().getImage("full/obj16/AssertResult"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/AssertResult"));
 	}
 
 	/**
@@ -91,8 +90,7 @@ public class AssertResultItemProvider extends AssertBoolItemProvider {
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(
-			Collection<Object> newChildDescriptors, Object object) {
+	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 	}
 

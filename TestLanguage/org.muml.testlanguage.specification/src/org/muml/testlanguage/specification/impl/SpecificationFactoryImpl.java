@@ -18,8 +18,7 @@ import org.muml.testlanguage.specification.*;
  * 
  * @generated
  */
-public class SpecificationFactoryImpl extends EFactoryImpl implements
-		SpecificationFactory {
+public class SpecificationFactoryImpl extends EFactoryImpl implements SpecificationFactory {
 	/**
 	 * Creates the default factory implementation. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
@@ -84,8 +83,7 @@ public class SpecificationFactoryImpl extends EFactoryImpl implements
 		case SpecificationPackage.CHECK_MTCTL:
 			return createCheckMTCTL();
 		default:
-			throw new IllegalArgumentException("The class '" + eClass.getName()
-					+ "' is not a valid classifier");
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 
@@ -100,8 +98,7 @@ public class SpecificationFactoryImpl extends EFactoryImpl implements
 		case SpecificationPackage.PORT_TYPE:
 			return createPortTypeFromString(eDataType, initialValue);
 		default:
-			throw new IllegalArgumentException("The datatype '"
-					+ eDataType.getName() + "' is not a valid classifier");
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
@@ -116,8 +113,7 @@ public class SpecificationFactoryImpl extends EFactoryImpl implements
 		case SpecificationPackage.PORT_TYPE:
 			return convertPortTypeToString(eDataType, instanceValue);
 		default:
-			throw new IllegalArgumentException("The datatype '"
-					+ eDataType.getName() + "' is not a valid classifier");
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
@@ -256,13 +252,11 @@ public class SpecificationFactoryImpl extends EFactoryImpl implements
 	 * 
 	 * @generated
 	 */
-	public PortType createPortTypeFromString(EDataType eDataType,
-			String initialValue) {
+	public PortType createPortTypeFromString(EDataType eDataType, String initialValue) {
 		PortType result = PortType.get(initialValue);
 		if (result == null)
-			throw new IllegalArgumentException("The value '" + initialValue
-					+ "' is not a valid enumerator of '" + eDataType.getName()
-					+ "'");
+			throw new IllegalArgumentException(
+					"The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
 		return result;
 	}
 
@@ -271,8 +265,7 @@ public class SpecificationFactoryImpl extends EFactoryImpl implements
 	 * 
 	 * @generated
 	 */
-	public String convertPortTypeToString(EDataType eDataType,
-			Object instanceValue) {
+	public String convertPortTypeToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

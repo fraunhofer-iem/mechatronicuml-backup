@@ -26,6 +26,7 @@ import org.muml.testlanguage.specification.custom.ExecutionException;
  * <em><b>Node Specification</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  * <li>
  * {@link org.muml.testlanguage.specification.impl.NodeSpecificationImpl#getPortSpecifications
@@ -34,12 +35,10 @@ import org.muml.testlanguage.specification.custom.ExecutionException;
  * {@link org.muml.testlanguage.specification.impl.NodeSpecificationImpl#getLabel
  * <em>Label</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
-public abstract class NodeSpecificationImpl extends
-		MinimalEObjectImpl.Container implements NodeSpecification {
+public abstract class NodeSpecificationImpl extends MinimalEObjectImpl.Container implements NodeSpecification {
 	/**
 	 * The cached value of the '{@link #getPortSpecifications()
 	 * <em>Port Specifications</em>}' containment reference list. <!--
@@ -97,9 +96,7 @@ public abstract class NodeSpecificationImpl extends
 	 */
 	public EList<PortSpecification> getPortSpecifications() {
 		if (portSpecifications == null) {
-			portSpecifications = new EObjectContainmentEList<PortSpecification>(
-					PortSpecification.class,
-					this,
+			portSpecifications = new EObjectContainmentEList<PortSpecification>(PortSpecification.class, this,
 					SpecificationPackage.NODE_SPECIFICATION__PORT_SPECIFICATIONS);
 		}
 		return portSpecifications;
@@ -123,9 +120,8 @@ public abstract class NodeSpecificationImpl extends
 		String oldLabel = label;
 		label = newLabel;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					SpecificationPackage.NODE_SPECIFICATION__LABEL, oldLabel,
-					label));
+			eNotify(new ENotificationImpl(this, Notification.SET, SpecificationPackage.NODE_SPECIFICATION__LABEL,
+					oldLabel, label));
 	}
 
 	/**
@@ -142,8 +138,8 @@ public abstract class NodeSpecificationImpl extends
 	 * 
 	 * @generated
 	 */
-	public void execute(Map<String, Object> inputs, Map<String, Object> outputs)
-			throws ExecutionException, Exception {
+	public void execute(Map<String, Object> inputs, Map<String, Object> outputs) throws ExecutionException, Exception,
+			de.uni_paderborn.fujaba.muml.testlanguage.specification.custom.ExecutionException {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -163,8 +159,7 @@ public abstract class NodeSpecificationImpl extends
 	 * 
 	 * @generated
 	 */
-	public PortSpecification addPortSpecification(final PortType type,
-			final String name, final boolean optional) {
+	public PortSpecification addPortSpecification(final PortType type, final String name, final boolean optional) {
 		return this.addPortSpecification(type, name, optional, null);
 	}
 
@@ -173,10 +168,9 @@ public abstract class NodeSpecificationImpl extends
 	 * 
 	 * @generated
 	 */
-	public PortSpecification addPortSpecification(final PortType type,
-			final String name, final boolean optional, final Class<?> dataType) {
-		PortSpecification spec = SpecificationFactory.eINSTANCE
-				.createPortSpecification();
+	public PortSpecification addPortSpecification(final PortType type, final String name, final boolean optional,
+			final Class<?> dataType) {
+		PortSpecification spec = SpecificationFactory.eINSTANCE.createPortSpecification();
 		spec.setType(type);
 		spec.setName(name);
 		spec.setOptional(optional);
@@ -191,12 +185,10 @@ public abstract class NodeSpecificationImpl extends
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd,
-			int featureID, NotificationChain msgs) {
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case SpecificationPackage.NODE_SPECIFICATION__PORT_SPECIFICATIONS:
-			return ((InternalEList<?>) getPortSpecifications()).basicRemove(
-					otherEnd, msgs);
+			return ((InternalEList<?>) getPortSpecifications()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -228,8 +220,7 @@ public abstract class NodeSpecificationImpl extends
 		switch (featureID) {
 		case SpecificationPackage.NODE_SPECIFICATION__PORT_SPECIFICATIONS:
 			getPortSpecifications().clear();
-			getPortSpecifications().addAll(
-					(Collection<? extends PortSpecification>) newValue);
+			getPortSpecifications().addAll((Collection<? extends PortSpecification>) newValue);
 			return;
 		case SpecificationPackage.NODE_SPECIFICATION__LABEL:
 			setLabel((String) newValue);
@@ -267,8 +258,7 @@ public abstract class NodeSpecificationImpl extends
 		case SpecificationPackage.NODE_SPECIFICATION__PORT_SPECIFICATIONS:
 			return portSpecifications != null && !portSpecifications.isEmpty();
 		case SpecificationPackage.NODE_SPECIFICATION__LABEL:
-			return LABEL_EDEFAULT == null ? label != null : !LABEL_EDEFAULT
-					.equals(label);
+			return LABEL_EDEFAULT == null ? label != null : !LABEL_EDEFAULT.equals(label);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -280,16 +270,14 @@ public abstract class NodeSpecificationImpl extends
 	 */
 	@Override
 	@SuppressWarnings("unchecked")
-	public Object eInvoke(int operationID, EList<?> arguments)
-			throws InvocationTargetException {
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
 		case SpecificationPackage.NODE_SPECIFICATION___INITIALIZE:
 			initialize();
 			return null;
 		case SpecificationPackage.NODE_SPECIFICATION___EXECUTE__MAP_MAP:
 			try {
-				execute((Map<String, Object>) arguments.get(0),
-						(Map<String, Object>) arguments.get(1));
+				execute((Map<String, Object>) arguments.get(0), (Map<String, Object>) arguments.get(1));
 				return null;
 			} catch (Throwable throwable) {
 				throw new InvocationTargetException(throwable);
@@ -297,12 +285,11 @@ public abstract class NodeSpecificationImpl extends
 		case SpecificationPackage.NODE_SPECIFICATION___NOTIFY_CHANGED__OBJECT:
 			return notifyChanged(arguments.get(0));
 		case SpecificationPackage.NODE_SPECIFICATION___ADD_PORT_SPECIFICATION__PORTTYPE_STRING_BOOLEAN:
-			return addPortSpecification((PortType) arguments.get(0),
-					(String) arguments.get(1), (Boolean) arguments.get(2));
+			return addPortSpecification((PortType) arguments.get(0), (String) arguments.get(1),
+					(Boolean) arguments.get(2));
 		case SpecificationPackage.NODE_SPECIFICATION___ADD_PORT_SPECIFICATION__PORTTYPE_STRING_BOOLEAN_CLASS:
-			return addPortSpecification((PortType) arguments.get(0),
-					(String) arguments.get(1), (Boolean) arguments.get(2),
-					(Class<?>) arguments.get(3));
+			return addPortSpecification((PortType) arguments.get(0), (String) arguments.get(1),
+					(Boolean) arguments.get(2), (Class<?>) arguments.get(3));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

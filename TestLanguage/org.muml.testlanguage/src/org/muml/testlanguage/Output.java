@@ -12,25 +12,24 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- * <li>{@link org.muml.testlanguage.Output#getTargets
- * <em>Targets</em>}</li>
- * <li>{@link org.muml.testlanguage.Output#getNode
- * <em>Node</em>}</li>
+ * <li>{@link org.muml.testlanguage.Output#getTargets <em>Targets</em>}</li>
+ * <li>{@link org.muml.testlanguage.Output#getNode <em>Node</em>}</li>
  * </ul>
  *
  * @see org.muml.testlanguage.TestLanguagePackage#getOutput()
  * @model annotation=
  *        "http://www.eclipse.org/emf/2002/Ecore documentation='This class represents a specific type of port that is used as an output.'"
+ *        annotation=
+ *        "http://www.eclipse.org/emf/2002/Ecore/OCL ifInputTypeIsInOutThenItIsTheOnlyOne='null'"
  * @generated
  */
 public interface Output extends Port {
 	/**
 	 * Returns the value of the '<em><b>Targets</b></em>' reference list. The
-	 * list contents are of type
-	 * {@link org.muml.testlanguage.Input}. It is
+	 * list contents are of type {@link org.muml.testlanguage.Input}. It is
 	 * bidirectional and its opposite is '
-	 * {@link org.muml.testlanguage.Input#getSource
-	 * <em>Source</em>}'. <!-- begin-user-doc -->
+	 * {@link org.muml.testlanguage.Input#getSource <em>Source</em>}'. <!--
+	 * begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Targets</em>' reference list isn't clear,
 	 * there really should be more of a description here...
@@ -48,8 +47,8 @@ public interface Output extends Port {
 	/**
 	 * Returns the value of the '<em><b>Node</b></em>' container reference. It
 	 * is bidirectional and its opposite is '
-	 * {@link org.muml.testlanguage.Node#getOutputs
-	 * <em>Outputs</em>}'. <!-- begin-user-doc -->
+	 * {@link org.muml.testlanguage.Node#getOutputs <em>Outputs</em>}'. <!--
+	 * begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Node</em>' container reference isn't clear,
 	 * there really should be more of a description here...
@@ -66,8 +65,7 @@ public interface Output extends Port {
 	Node getNode();
 
 	/**
-	 * Sets the value of the '
-	 * {@link org.muml.testlanguage.Output#getNode
+	 * Sets the value of the '{@link org.muml.testlanguage.Output#getNode
 	 * <em>Node</em>}' container reference. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
 	 * 

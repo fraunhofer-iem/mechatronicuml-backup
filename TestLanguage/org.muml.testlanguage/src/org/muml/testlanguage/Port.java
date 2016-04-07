@@ -12,10 +12,8 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- * <li>{@link org.muml.testlanguage.Port#getName
- * <em>Name</em>}</li>
- * <li>{@link org.muml.testlanguage.Port#isInOut
- * <em>In Out</em>}</li>
+ * <li>{@link org.muml.testlanguage.Port#getName <em>Name</em>}</li>
+ * <li>{@link org.muml.testlanguage.Port#isInOut <em>In Out</em>}</li>
  * </ul>
  *
  * @see org.muml.testlanguage.TestLanguagePackage#getPort()
@@ -42,8 +40,7 @@ public interface Port extends EObject {
 	String getName();
 
 	/**
-	 * Sets the value of the '
-	 * {@link org.muml.testlanguage.Port#getName
+	 * Sets the value of the '{@link org.muml.testlanguage.Port#getName
 	 * <em>Name</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @param value
@@ -71,8 +68,7 @@ public interface Port extends EObject {
 	boolean isInOut();
 
 	/**
-	 * Sets the value of the '
-	 * {@link org.muml.testlanguage.Port#isInOut
+	 * Sets the value of the ' {@link org.muml.testlanguage.Port#isInOut
 	 * <em>In Out</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
 	 * 

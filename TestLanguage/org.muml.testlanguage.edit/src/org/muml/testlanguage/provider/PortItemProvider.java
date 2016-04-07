@@ -24,9 +24,8 @@ import org.muml.testlanguage.Port;
 import org.muml.testlanguage.TestLanguagePackage;
 
 /**
- * This is the item provider adapter for a
- * {@link org.muml.testlanguage.Port} object. <!--
- * begin-user-doc --> <!-- end-user-doc -->
+ * This is the item provider adapter for a {@link org.muml.testlanguage.Port}
+ * object. <!-- begin-user-doc --> <!-- end-user-doc -->
  * 
  * @generated
  */

@@ -19,13 +19,10 @@ import org.muml.uppaal.trace.diagnosticTrace.TraceRepository;
 /**
  * <!-- begin-user-doc --> An implementation of the model object '
  * <em><b>Assert Diagnostic Trace</b></em>'. <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */
-public class AssertDiagnosticTraceImpl extends AssertBoolImpl implements
-		AssertDiagnosticTrace {
+public class AssertDiagnosticTraceImpl extends AssertBoolImpl implements AssertDiagnosticTrace {
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -52,11 +49,8 @@ public class AssertDiagnosticTraceImpl extends AssertBoolImpl implements
 	 */
 	public void initialize() {
 		this.setLabel("Assert DiagnosticTrace");
-		this.addPortSpecification(
-				PortType.IN,
-				"trace_repository",
-				false,
-				org.muml.uppaal.trace.diagnosticTrace.TraceRepository.class);
+		this.addPortSpecification(PortType.IN, "trace_repository", false,
+				de.uni_paderborn.uppaal.trace.diagnosticTrace.TraceRepository.class);
 	}
 
 	/**
@@ -64,9 +58,8 @@ public class AssertDiagnosticTraceImpl extends AssertBoolImpl implements
 	 * 
 	 * @generated
 	 */
-	public void execute(final Map<String, Object> inputs,
-			final Map<String, Object> outputs) throws ExecutionException,
-			Exception {
+	public void execute(final Map<String, Object> inputs, final Map<String, Object> outputs) throws ExecutionException,
+			Exception, de.uni_paderborn.fujaba.muml.testlanguage.specification.custom.ExecutionException {
 		// Get the repository.
 		TraceRepository repo = (TraceRepository) inputs.get("trace_repository");
 
@@ -87,15 +80,13 @@ public class AssertDiagnosticTraceImpl extends AssertBoolImpl implements
 		String error = "";
 		for (Trace item : repo.getTraces()) {
 			if (!item.getResult().equals(expected)) {
-				error += "[Property " + item.getProperty() + " at line "
-						+ item.getLine() + "] ";
+				error += "[Property " + item.getProperty() + " at line " + item.getLine() + "] ";
 			}
 		}
 
 		// Throw an exception if errors occurred.
 		if (!error.equals("")) {
-			throw new ExecutionException("Expected " + alpha + ", but got "
-					+ beta + " on " + error);
+			throw new ExecutionException("Expected " + alpha + ", but got " + beta + " on " + error);
 		}
 	}
 
@@ -136,16 +127,14 @@ public class AssertDiagnosticTraceImpl extends AssertBoolImpl implements
 	 */
 	@Override
 	@SuppressWarnings("unchecked")
-	public Object eInvoke(int operationID, EList<?> arguments)
-			throws InvocationTargetException {
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
 		case SpecificationPackage.ASSERT_DIAGNOSTIC_TRACE___INITIALIZE:
 			initialize();
 			return null;
 		case SpecificationPackage.ASSERT_DIAGNOSTIC_TRACE___EXECUTE__MAP_MAP:
 			try {
-				execute((Map<String, Object>) arguments.get(0),
-						(Map<String, Object>) arguments.get(1));
+				execute((Map<String, Object>) arguments.get(0), (Map<String, Object>) arguments.get(1));
 				return null;
 			} catch (Throwable throwable) {
 				throw new InvocationTargetException(throwable);

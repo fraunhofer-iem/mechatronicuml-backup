@@ -14,8 +14,6 @@ import org.muml.testlanguage.specification.custom.ExecutionException;
 /**
  * <!-- begin-user-doc --> An implementation of the model object '
  * <em><b>Default</b></em>'. <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */
@@ -53,9 +51,8 @@ public class DefaultImpl extends NodeSpecificationImpl implements Default {
 	 * 
 	 * @generated
 	 */
-	public void execute(final Map<String, Object> inputs,
-			final Map<String, Object> outputs) throws ExecutionException,
-			Exception {
+	public void execute(final Map<String, Object> inputs, final Map<String, Object> outputs) throws ExecutionException,
+			Exception, de.uni_paderborn.fujaba.muml.testlanguage.specification.custom.ExecutionException {
 		throw new ExecutionException("Default node should not be executed.");
 	}
 
@@ -86,16 +83,14 @@ public class DefaultImpl extends NodeSpecificationImpl implements Default {
 	 */
 	@Override
 	@SuppressWarnings("unchecked")
-	public Object eInvoke(int operationID, EList<?> arguments)
-			throws InvocationTargetException {
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
 		case SpecificationPackage.DEFAULT___INITIALIZE:
 			initialize();
 			return null;
 		case SpecificationPackage.DEFAULT___EXECUTE__MAP_MAP:
 			try {
-				execute((Map<String, Object>) arguments.get(0),
-						(Map<String, Object>) arguments.get(1));
+				execute((Map<String, Object>) arguments.get(0), (Map<String, Object>) arguments.get(1));
 				return null;
 			} catch (Throwable throwable) {
 				throw new InvocationTargetException(throwable);

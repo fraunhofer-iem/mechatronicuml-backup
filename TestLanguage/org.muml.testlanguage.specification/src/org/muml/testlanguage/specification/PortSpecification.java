@@ -10,21 +10,17 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
- * <li>
- * {@link org.muml.testlanguage.specification.PortSpecification#getName
+ * <li>{@link org.muml.testlanguage.specification.PortSpecification#getName
  * <em>Name</em>}</li>
- * <li>
- * {@link org.muml.testlanguage.specification.PortSpecification#isOptional
+ * <li>{@link org.muml.testlanguage.specification.PortSpecification#isOptional
  * <em>Optional</em>}</li>
- * <li>
- * {@link org.muml.testlanguage.specification.PortSpecification#getType
+ * <li>{@link org.muml.testlanguage.specification.PortSpecification#getType
  * <em>Type</em>}</li>
- * <li>
- * {@link org.muml.testlanguage.specification.PortSpecification#getDataType
+ * <li>{@link org.muml.testlanguage.specification.PortSpecification#getDataType
  * <em>Data Type</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.testlanguage.specification.SpecificationPackage#getPortSpecification()
  * @model
@@ -93,8 +89,8 @@ public interface PortSpecification extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Type</b></em>' attribute. The default
 	 * value is <code>"IN"</code>. The literals are from the enumeration
-	 * {@link org.muml.testlanguage.specification.PortType}.
-	 * <!-- begin-user-doc -->
+	 * {@link org.muml.testlanguage.specification.PortType}. <!-- begin-user-doc
+	 * -->
 	 * <p>
 	 * If the meaning of the '<em>Type</em>' attribute isn't clear, there really
 	 * should be more of a description here...

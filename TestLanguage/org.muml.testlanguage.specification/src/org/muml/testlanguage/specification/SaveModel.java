@@ -12,12 +12,11 @@ import org.muml.testlanguage.specification.custom.ExecutionException;
  *
  * <p>
  * The following features are supported:
- * <ul>
- * <li>
- * {@link org.muml.testlanguage.specification.SaveModel#getUri
- * <em>Uri</em>}</li>
- * </ul>
  * </p>
+ * <ul>
+ * <li>{@link org.muml.testlanguage.specification.SaveModel#getUri <em>Uri</em>}
+ * </li>
+ * </ul>
  *
  * @see org.muml.testlanguage.specification.SpecificationPackage#getSaveModel()
  * @model
@@ -43,8 +42,8 @@ public interface SaveModel extends NodeSpecification {
 
 	/**
 	 * Sets the value of the '
-	 * {@link org.muml.testlanguage.specification.SaveModel#getUri
-	 * <em>Uri</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * {@link org.muml.testlanguage.specification.SaveModel#getUri <em>Uri</em>}
+	 * ' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @param value
 	 *            the new value of the '<em>Uri</em>' attribute.
@@ -66,12 +65,12 @@ public interface SaveModel extends NodeSpecification {
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @model exceptions=
-	 *        "de.uni_paderborn.fujaba.muml.testlanguage.specification.ExecutionException de.uni_paderborn.fujaba.muml.testlanguage.specification.DefaultException"
+	 *        "org.muml.testlanguage.specification.ExecutionException org.muml.testlanguage.specification.DefaultException"
 	 *        inputsRequired="true" outputsRequired="true" annotation=
 	 *        "http://www.eclipse.org/emf/2002/GenModel body='\t\t// Create the URI.\r\n\t\tURI realURI = URIConversion.convert(URI.createURI(this.getUri()));\r\n\r\n\t\t// Only write to resource links.\r\n\t\tif (!realURI.isPlatformResource()) {\r\n\t\t\treturn;\r\n\t\t}\r\n\r\n\t\t// Create a XMIResourceFactory for the extension.\r\n\t\tif (realURI.fileExtension() != null) {\r\n\t\t\tResource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;\r\n\t\t\tMap<String, Object> m = reg.getExtensionToFactoryMap();\r\n\t\t\tm.put(realURI.fileExtension(), new XMIResourceFactoryImpl());\r\n\t\t}\r\n\r\n\t\t// Create a resource set.\r\n\t\tResourceSet resSet = new ResourceSetImpl();\r\n\t\tResource resource = resSet.createResource(realURI.trimFragment());\r\n\t\tresource.getContents().add((EObject) inputs.get(\"model\"));\r\n\r\n\t\t// Save the model.\r\n\t\tresource.save(Collections.EMPTY_MAP);\r\n\r\n\t\treturn;'"
 	 * @generated
 	 */
-	void execute(Map<String, Object> inputs, Map<String, Object> outputs)
-			throws ExecutionException, Exception;
+	void execute(Map<String, Object> inputs, Map<String, Object> outputs) throws ExecutionException, Exception,
+			de.uni_paderborn.fujaba.muml.testlanguage.specification.custom.ExecutionException;
 
 } // SaveModel

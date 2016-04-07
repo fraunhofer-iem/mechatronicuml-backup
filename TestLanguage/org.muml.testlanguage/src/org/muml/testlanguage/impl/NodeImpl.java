@@ -38,23 +38,18 @@ import org.muml.testlanguage.specification.custom.ExecutionException;
  * The following features are implemented:
  * </p>
  * <ul>
- * <li>{@link org.muml.testlanguage.impl.NodeImpl#getInputs
- * <em>Inputs</em>}</li>
- * <li>{@link org.muml.testlanguage.impl.NodeImpl#getOutputs
- * <em>Outputs</em>}</li>
- * <li>{@link org.muml.testlanguage.impl.NodeImpl#getLabel
- * <em>Label</em>}</li>
- * <li>
- * {@link org.muml.testlanguage.impl.NodeImpl#getSpecification
+ * <li>{@link org.muml.testlanguage.impl.NodeImpl#getInputs <em>Inputs</em>}
+ * </li>
+ * <li>{@link org.muml.testlanguage.impl.NodeImpl#getOutputs <em>Outputs</em>}
+ * </li>
+ * <li>{@link org.muml.testlanguage.impl.NodeImpl#getLabel <em>Label</em>}</li>
+ * <li>{@link org.muml.testlanguage.impl.NodeImpl#getSpecification
  * <em>Specification</em>}</li>
- * <li>
- * {@link org.muml.testlanguage.impl.NodeImpl#getSpecificationClassName
+ * <li>{@link org.muml.testlanguage.impl.NodeImpl#getSpecificationClassName
  * <em>Specification Class Name</em>}</li>
- * <li>
- * {@link org.muml.testlanguage.impl.NodeImpl#getInputCache
+ * <li>{@link org.muml.testlanguage.impl.NodeImpl#getInputCache
  * <em>Input Cache</em>}</li>
- * <li>
- * {@link org.muml.testlanguage.impl.NodeImpl#getOutputCache
+ * <li>{@link org.muml.testlanguage.impl.NodeImpl#getOutputCache
  * <em>Output Cache</em>}</li>
  * </ul>
  *
@@ -434,7 +429,8 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node {
 	 * 
 	 * @generated
 	 */
-	public void execute() throws ExecutionException {
+	public void execute() throws ExecutionException,
+			de.uni_paderborn.fujaba.muml.testlanguage.specification.custom.ExecutionException {
 		// FIXME Hack to disable notifications so that the transactional editing
 		// domain won't complain about me modifying the domain element.
 		this.eSetDeliver(false);
@@ -485,7 +481,7 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node {
 	 */
 	public void createSpecification() {
 		try {
-			SpecificationFactory fac = org.muml.testlanguage.specification.SpecificationFactory.eINSTANCE;
+			SpecificationFactory fac = de.uni_paderborn.fujaba.muml.testlanguage.specification.SpecificationFactory.eINSTANCE;
 			java.lang.reflect.Method creator = fac.getClass().getMethod("create" + this.specificationClassName);
 
 			this.setSpecification((NodeSpecification) creator.invoke(fac));

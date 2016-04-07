@@ -4,7 +4,7 @@
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <!-- @generated testlanguage -->
       <factory
-            uri="http://de/uni_paderborn/fujaba/muml/testlanguage"
+            uri="http://www.muml.org/testlanguage/1.0"
             class="org.muml.testlanguage.provider.TestLanguageItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider

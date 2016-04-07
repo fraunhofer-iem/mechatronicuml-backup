@@ -18,10 +18,8 @@ import org.muml.testlanguage.TestLanguagePackage;
  * The following features are implemented:
  * </p>
  * <ul>
- * <li>{@link org.muml.testlanguage.impl.PortImpl#getName
- * <em>Name</em>}</li>
- * <li>{@link org.muml.testlanguage.impl.PortImpl#isInOut
- * <em>In Out</em>}</li>
+ * <li>{@link org.muml.testlanguage.impl.PortImpl#getName <em>Name</em>}</li>
+ * <li>{@link org.muml.testlanguage.impl.PortImpl#isInOut <em>In Out</em>}</li>
  * </ul>
  *
  * @generated

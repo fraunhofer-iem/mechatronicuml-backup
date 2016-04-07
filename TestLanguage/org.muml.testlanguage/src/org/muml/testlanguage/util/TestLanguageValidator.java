@@ -38,7 +38,7 @@ public class TestLanguageValidator extends EObjectValidator {
 	 * @see org.eclipse.emf.common.util.Diagnostic#getCode()
 	 * @generated
 	 */
-	public static final String DIAGNOSTIC_SOURCE = "de.uni_paderborn.fujaba.muml.testlanguage";
+	public static final String DIAGNOSTIC_SOURCE = "org.muml.testlanguage";
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for

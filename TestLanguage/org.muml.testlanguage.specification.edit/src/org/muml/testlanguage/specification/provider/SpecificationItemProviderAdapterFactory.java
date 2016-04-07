@@ -32,9 +32,8 @@ import org.muml.testlanguage.specification.util.SpecificationAdapterFactory;
  * 
  * @generated
  */
-public class SpecificationItemProviderAdapterFactory extends
-		SpecificationAdapterFactory implements ComposeableAdapterFactory,
-		IChangeNotifier, IDisposable {
+public class SpecificationItemProviderAdapterFactory extends SpecificationAdapterFactory
+		implements ComposeableAdapterFactory, IChangeNotifier, IDisposable {
 	/**
 	 * This keeps track of the root adapter factory that delegates to this
 	 * adapter factory. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -77,8 +76,8 @@ public class SpecificationItemProviderAdapterFactory extends
 
 	/**
 	 * This keeps track of the one adapter used for all
-	 * {@link org.muml.testlanguage.specification.PortSpecification}
-	 * instances. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * {@link org.muml.testlanguage.specification.PortSpecification} instances.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
@@ -86,16 +85,15 @@ public class SpecificationItemProviderAdapterFactory extends
 
 	/**
 	 * This creates an adapter for a
-	 * {@link org.muml.testlanguage.specification.PortSpecification}
-	 * . <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * {@link org.muml.testlanguage.specification.PortSpecification}. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
 	@Override
 	public Adapter createPortSpecificationAdapter() {
 		if (portSpecificationItemProvider == null) {
-			portSpecificationItemProvider = new PortSpecificationItemProvider(
-					this);
+			portSpecificationItemProvider = new PortSpecificationItemProvider(this);
 		}
 
 		return portSpecificationItemProvider;
@@ -103,8 +101,8 @@ public class SpecificationItemProviderAdapterFactory extends
 
 	/**
 	 * This keeps track of the one adapter used for all
-	 * {@link org.muml.testlanguage.specification.Default}
-	 * instances. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * {@link org.muml.testlanguage.specification.Default} instances. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
@@ -112,8 +110,8 @@ public class SpecificationItemProviderAdapterFactory extends
 
 	/**
 	 * This creates an adapter for a
-	 * {@link org.muml.testlanguage.specification.Default}.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * {@link org.muml.testlanguage.specification.Default}. <!-- begin-user-doc
+	 * --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
@@ -128,8 +126,8 @@ public class SpecificationItemProviderAdapterFactory extends
 
 	/**
 	 * This keeps track of the one adapter used for all
-	 * {@link org.muml.testlanguage.specification.LoadModel}
-	 * instances. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * {@link org.muml.testlanguage.specification.LoadModel} instances. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
@@ -137,8 +135,8 @@ public class SpecificationItemProviderAdapterFactory extends
 
 	/**
 	 * This creates an adapter for a
-	 * {@link org.muml.testlanguage.specification.LoadModel}
-	 * . <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * {@link org.muml.testlanguage.specification.LoadModel}. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
@@ -153,8 +151,8 @@ public class SpecificationItemProviderAdapterFactory extends
 
 	/**
 	 * This keeps track of the one adapter used for all
-	 * {@link org.muml.testlanguage.specification.CompareModels}
-	 * instances. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * {@link org.muml.testlanguage.specification.CompareModels} instances. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
@@ -162,8 +160,8 @@ public class SpecificationItemProviderAdapterFactory extends
 
 	/**
 	 * This creates an adapter for a
-	 * {@link org.muml.testlanguage.specification.CompareModels}
-	 * . <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * {@link org.muml.testlanguage.specification.CompareModels}. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
@@ -178,8 +176,8 @@ public class SpecificationItemProviderAdapterFactory extends
 
 	/**
 	 * This keeps track of the one adapter used for all
-	 * {@link org.muml.testlanguage.specification.ValidateModel}
-	 * instances. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * {@link org.muml.testlanguage.specification.ValidateModel} instances. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
@@ -187,8 +185,8 @@ public class SpecificationItemProviderAdapterFactory extends
 
 	/**
 	 * This creates an adapter for a
-	 * {@link org.muml.testlanguage.specification.ValidateModel}
-	 * . <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * {@link org.muml.testlanguage.specification.ValidateModel}. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
@@ -203,8 +201,8 @@ public class SpecificationItemProviderAdapterFactory extends
 
 	/**
 	 * This keeps track of the one adapter used for all
-	 * {@link org.muml.testlanguage.specification.SaveModel}
-	 * instances. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * {@link org.muml.testlanguage.specification.SaveModel} instances. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
@@ -212,8 +210,8 @@ public class SpecificationItemProviderAdapterFactory extends
 
 	/**
 	 * This creates an adapter for a
-	 * {@link org.muml.testlanguage.specification.SaveModel}
-	 * . <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * {@link org.muml.testlanguage.specification.SaveModel}. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
@@ -228,8 +226,8 @@ public class SpecificationItemProviderAdapterFactory extends
 
 	/**
 	 * This keeps track of the one adapter used for all
-	 * {@link org.muml.testlanguage.specification.Transformation}
-	 * instances. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * {@link org.muml.testlanguage.specification.Transformation} instances.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
@@ -237,8 +235,8 @@ public class SpecificationItemProviderAdapterFactory extends
 
 	/**
 	 * This creates an adapter for a
-	 * {@link org.muml.testlanguage.specification.Transformation}
-	 * . <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * {@link org.muml.testlanguage.specification.Transformation}. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
@@ -253,8 +251,8 @@ public class SpecificationItemProviderAdapterFactory extends
 
 	/**
 	 * This keeps track of the one adapter used for all
-	 * {@link org.muml.testlanguage.specification.ExecuteUPPAAL}
-	 * instances. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * {@link org.muml.testlanguage.specification.ExecuteUPPAAL} instances. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
@@ -262,8 +260,8 @@ public class SpecificationItemProviderAdapterFactory extends
 
 	/**
 	 * This creates an adapter for a
-	 * {@link org.muml.testlanguage.specification.ExecuteUPPAAL}
-	 * . <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * {@link org.muml.testlanguage.specification.ExecuteUPPAAL}. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
@@ -278,8 +276,8 @@ public class SpecificationItemProviderAdapterFactory extends
 
 	/**
 	 * This keeps track of the one adapter used for all
-	 * {@link org.muml.testlanguage.specification.PrimitiveString}
-	 * instances. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * {@link org.muml.testlanguage.specification.PrimitiveString} instances.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
@@ -287,8 +285,8 @@ public class SpecificationItemProviderAdapterFactory extends
 
 	/**
 	 * This creates an adapter for a
-	 * {@link org.muml.testlanguage.specification.PrimitiveString}
-	 * . <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * {@link org.muml.testlanguage.specification.PrimitiveString}. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
@@ -303,8 +301,8 @@ public class SpecificationItemProviderAdapterFactory extends
 
 	/**
 	 * This keeps track of the one adapter used for all
-	 * {@link org.muml.testlanguage.specification.AssertBool}
-	 * instances. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * {@link org.muml.testlanguage.specification.AssertBool} instances. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
@@ -312,8 +310,8 @@ public class SpecificationItemProviderAdapterFactory extends
 
 	/**
 	 * This creates an adapter for a
-	 * {@link org.muml.testlanguage.specification.AssertBool}
-	 * . <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * {@link org.muml.testlanguage.specification.AssertBool}. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
@@ -337,16 +335,15 @@ public class SpecificationItemProviderAdapterFactory extends
 
 	/**
 	 * This creates an adapter for a
-	 * {@link org.muml.testlanguage.specification.AssertDiagnosticTrace}
-	 * . <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * {@link org.muml.testlanguage.specification.AssertDiagnosticTrace}. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
 	@Override
 	public Adapter createAssertDiagnosticTraceAdapter() {
 		if (assertDiagnosticTraceItemProvider == null) {
-			assertDiagnosticTraceItemProvider = new AssertDiagnosticTraceItemProvider(
-					this);
+			assertDiagnosticTraceItemProvider = new AssertDiagnosticTraceItemProvider(this);
 		}
 
 		return assertDiagnosticTraceItemProvider;
@@ -354,8 +351,8 @@ public class SpecificationItemProviderAdapterFactory extends
 
 	/**
 	 * This keeps track of the one adapter used for all
-	 * {@link org.muml.testlanguage.specification.AssertResult}
-	 * instances. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * {@link org.muml.testlanguage.specification.AssertResult} instances. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
@@ -363,8 +360,8 @@ public class SpecificationItemProviderAdapterFactory extends
 
 	/**
 	 * This creates an adapter for a
-	 * {@link org.muml.testlanguage.specification.AssertResult}
-	 * . <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * {@link org.muml.testlanguage.specification.AssertResult}. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
@@ -379,8 +376,8 @@ public class SpecificationItemProviderAdapterFactory extends
 
 	/**
 	 * This keeps track of the one adapter used for all
-	 * {@link org.muml.testlanguage.specification.CheckMTCTL}
-	 * instances. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * {@link org.muml.testlanguage.specification.CheckMTCTL} instances. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
@@ -388,8 +385,8 @@ public class SpecificationItemProviderAdapterFactory extends
 
 	/**
 	 * This creates an adapter for a
-	 * {@link org.muml.testlanguage.specification.CheckMTCTL}
-	 * . <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * {@link org.muml.testlanguage.specification.CheckMTCTL}. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
@@ -409,8 +406,7 @@ public class SpecificationItemProviderAdapterFactory extends
 	 * @generated
 	 */
 	public ComposeableAdapterFactory getRootAdapterFactory() {
-		return parentAdapterFactory == null ? this : parentAdapterFactory
-				.getRootAdapterFactory();
+		return parentAdapterFactory == null ? this : parentAdapterFactory.getRootAdapterFactory();
 	}
 
 	/**
@@ -419,8 +415,7 @@ public class SpecificationItemProviderAdapterFactory extends
 	 * 
 	 * @generated
 	 */
-	public void setParentAdapterFactory(
-			ComposedAdapterFactory parentAdapterFactory) {
+	public void setParentAdapterFactory(ComposedAdapterFactory parentAdapterFactory) {
 		this.parentAdapterFactory = parentAdapterFactory;
 	}
 
@@ -454,8 +449,7 @@ public class SpecificationItemProviderAdapterFactory extends
 	public Object adapt(Object object, Object type) {
 		if (isFactoryForType(type)) {
 			Object adapter = super.adapt(object, type);
-			if (!(type instanceof Class<?>)
-					|| (((Class<?>) type).isInstance(adapter))) {
+			if (!(type instanceof Class<?>) || (((Class<?>) type).isInstance(adapter))) {
 				return adapter;
 			}
 		}

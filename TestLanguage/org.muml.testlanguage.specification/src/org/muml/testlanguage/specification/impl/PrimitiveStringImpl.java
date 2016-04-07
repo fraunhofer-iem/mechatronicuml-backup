@@ -19,17 +19,16 @@ import org.muml.testlanguage.specification.custom.ExecutionException;
  * <em><b>Primitive String</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  * <li>
  * {@link org.muml.testlanguage.specification.impl.PrimitiveStringImpl#getValue
  * <em>Value</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
-public class PrimitiveStringImpl extends NodeSpecificationImpl implements
-		PrimitiveString {
+public class PrimitiveStringImpl extends NodeSpecificationImpl implements PrimitiveString {
 	/**
 	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -87,9 +86,8 @@ public class PrimitiveStringImpl extends NodeSpecificationImpl implements
 		String oldValue = value;
 		value = newValue;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					SpecificationPackage.PRIMITIVE_STRING__VALUE, oldValue,
-					value));
+			eNotify(new ENotificationImpl(this, Notification.SET, SpecificationPackage.PRIMITIVE_STRING__VALUE,
+					oldValue, value));
 	}
 
 	/**
@@ -107,9 +105,8 @@ public class PrimitiveStringImpl extends NodeSpecificationImpl implements
 	 * 
 	 * @generated
 	 */
-	public void execute(final Map<String, Object> inputs,
-			final Map<String, Object> outputs) throws ExecutionException,
-			Exception {
+	public void execute(final Map<String, Object> inputs, final Map<String, Object> outputs) throws ExecutionException,
+			Exception, de.uni_paderborn.fujaba.muml.testlanguage.specification.custom.ExecutionException {
 		// Put the wrapped string onto the output.
 		outputs.put("string", this.getValue());
 
@@ -169,8 +166,7 @@ public class PrimitiveStringImpl extends NodeSpecificationImpl implements
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 		case SpecificationPackage.PRIMITIVE_STRING__VALUE:
-			return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT
-					.equals(value);
+			return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -202,16 +198,14 @@ public class PrimitiveStringImpl extends NodeSpecificationImpl implements
 	 */
 	@Override
 	@SuppressWarnings("unchecked")
-	public Object eInvoke(int operationID, EList<?> arguments)
-			throws InvocationTargetException {
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
 		case SpecificationPackage.PRIMITIVE_STRING___INITIALIZE:
 			initialize();
 			return null;
 		case SpecificationPackage.PRIMITIVE_STRING___EXECUTE__MAP_MAP:
 			try {
-				execute((Map<String, Object>) arguments.get(0),
-						(Map<String, Object>) arguments.get(1));
+				execute((Map<String, Object>) arguments.get(0), (Map<String, Object>) arguments.get(1));
 				return null;
 			} catch (Throwable throwable) {
 				throw new InvocationTargetException(throwable);

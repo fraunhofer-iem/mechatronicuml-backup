@@ -14,8 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- * <li>{@link org.muml.testlanguage.TestCase#getNodes
- * <em>Nodes</em>}</li>
+ * <li>{@link org.muml.testlanguage.TestCase#getNodes <em>Nodes</em>}</li>
  * </ul>
  *
  * @see org.muml.testlanguage.TestLanguagePackage#getTestCase()
@@ -26,9 +25,8 @@ import org.eclipse.emf.ecore.EObject;
 public interface TestCase extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Nodes</b></em>' containment reference
-	 * list. The list contents are of type
-	 * {@link org.muml.testlanguage.Node}. <!--
-	 * begin-user-doc -->
+	 * list. The list contents are of type {@link org.muml.testlanguage.Node}.
+	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Nodes</em>' containment reference list isn't
 	 * clear, there really should be more of a description here...

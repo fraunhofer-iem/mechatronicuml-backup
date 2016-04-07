@@ -26,9 +26,8 @@ import org.muml.testlanguage.TestLanguagePackage;
  * The following features are implemented:
  * </p>
  * <ul>
- * <li>
- * {@link org.muml.testlanguage.impl.TestCaseImpl#getNodes
- * <em>Nodes</em>}</li>
+ * <li>{@link org.muml.testlanguage.impl.TestCaseImpl#getNodes <em>Nodes</em>}
+ * </li>
  * </ul>
  *
  * @generated

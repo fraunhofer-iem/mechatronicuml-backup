@@ -14,9 +14,8 @@ import org.muml.testlanguage.Output;
 import org.muml.testlanguage.TestLanguagePackage;
 
 /**
- * This is the item provider adapter for a
- * {@link org.muml.testlanguage.Output} object. <!--
- * begin-user-doc --> <!-- end-user-doc -->
+ * This is the item provider adapter for a {@link org.muml.testlanguage.Output}
+ * object. <!-- begin-user-doc --> <!-- end-user-doc -->
  * 
  * @generated
  */

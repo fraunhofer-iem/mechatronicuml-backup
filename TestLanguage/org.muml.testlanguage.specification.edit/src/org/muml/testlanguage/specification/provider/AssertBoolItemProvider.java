@@ -17,8 +17,8 @@ import org.muml.testlanguage.specification.SpecificationPackage;
 
 /**
  * This is the item provider adapter for a
- * {@link org.muml.testlanguage.specification.AssertBool}
- * object. <!-- begin-user-doc --> <!-- end-user-doc -->
+ * {@link org.muml.testlanguage.specification.AssertBool} object. <!--
+ * begin-user-doc --> <!-- end-user-doc -->
  * 
  * @generated
  */
@@ -56,17 +56,13 @@ public class AssertBoolItemProvider extends NodeSpecificationItemProvider {
 	 * @generated
 	 */
 	protected void addAssertionPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_AssertBool_assertion_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_AssertBool_assertion_feature",
-						"_UI_AssertBool_type"),
-				SpecificationPackage.Literals.ASSERT_BOOL__ASSERTION, true,
-				false, false, ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null,
-				null));
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_AssertBool_assertion_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_AssertBool_assertion_feature",
+								"_UI_AssertBool_type"),
+						SpecificationPackage.Literals.ASSERT_BOOL__ASSERTION, true, false, false,
+						ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -77,8 +73,7 @@ public class AssertBoolItemProvider extends NodeSpecificationItemProvider {
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object,
-				getResourceLocator().getImage("full/obj16/AssertBool"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/AssertBool"));
 	}
 
 	/**
@@ -108,8 +103,7 @@ public class AssertBoolItemProvider extends NodeSpecificationItemProvider {
 
 		switch (notification.getFeatureID(AssertBool.class)) {
 		case SpecificationPackage.ASSERT_BOOL__ASSERTION:
-			fireNotifyChanged(new ViewerNotification(notification,
-					notification.getNotifier(), false, true));
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}
 		super.notifyChanged(notification);
@@ -123,8 +117,7 @@ public class AssertBoolItemProvider extends NodeSpecificationItemProvider {
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(
-			Collection<Object> newChildDescriptors, Object object) {
+	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 	}
 

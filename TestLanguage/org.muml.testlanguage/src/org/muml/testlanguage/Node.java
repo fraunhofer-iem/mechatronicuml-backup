@@ -18,21 +18,17 @@ import org.muml.testlanguage.specification.custom.ExecutionException;
  * The following features are supported:
  * </p>
  * <ul>
- * <li>{@link org.muml.testlanguage.Node#getInputs
- * <em>Inputs</em>}</li>
- * <li>{@link org.muml.testlanguage.Node#getOutputs
- * <em>Outputs</em>}</li>
- * <li>{@link org.muml.testlanguage.Node#getLabel
- * <em>Label</em>}</li>
- * <li>{@link org.muml.testlanguage.Node#getSpecification
- * <em>Specification</em>}</li>
- * <li>
- * {@link org.muml.testlanguage.Node#getSpecificationClassName
+ * <li>{@link org.muml.testlanguage.Node#getInputs <em>Inputs</em>}</li>
+ * <li>{@link org.muml.testlanguage.Node#getOutputs <em>Outputs</em>}</li>
+ * <li>{@link org.muml.testlanguage.Node#getLabel <em>Label</em>}</li>
+ * <li>{@link org.muml.testlanguage.Node#getSpecification <em>Specification</em>
+ * }</li>
+ * <li>{@link org.muml.testlanguage.Node#getSpecificationClassName
  * <em>Specification Class Name</em>}</li>
- * <li>{@link org.muml.testlanguage.Node#getInputCache
- * <em>Input Cache</em>}</li>
- * <li>{@link org.muml.testlanguage.Node#getOutputCache
- * <em>Output Cache</em>}</li>
+ * <li>{@link org.muml.testlanguage.Node#getInputCache <em>Input Cache</em>}
+ * </li>
+ * <li>{@link org.muml.testlanguage.Node#getOutputCache <em>Output Cache</em>}
+ * </li>
  * </ul>
  *
  * @see org.muml.testlanguage.TestLanguagePackage#getNode()
@@ -45,11 +41,10 @@ import org.muml.testlanguage.specification.custom.ExecutionException;
 public interface Node extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Inputs</b></em>' containment reference
-	 * list. The list contents are of type
-	 * {@link org.muml.testlanguage.Input}. It is
-	 * bidirectional and its opposite is '
-	 * {@link org.muml.testlanguage.Input#getNode
-	 * <em>Node</em>}'. <!-- begin-user-doc -->
+	 * list. The list contents are of type {@link org.muml.testlanguage.Input}.
+	 * It is bidirectional and its opposite is '
+	 * {@link org.muml.testlanguage.Input#getNode <em>Node</em>}'. <!--
+	 * begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Inputs</em>' containment reference list isn't
 	 * clear, there really should be more of a description here...
@@ -66,11 +61,10 @@ public interface Node extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Outputs</b></em>' containment reference
-	 * list. The list contents are of type
-	 * {@link org.muml.testlanguage.Output}. It is
-	 * bidirectional and its opposite is '
-	 * {@link org.muml.testlanguage.Output#getNode
-	 * <em>Node</em>}'. <!-- begin-user-doc -->
+	 * list. The list contents are of type {@link org.muml.testlanguage.Output}.
+	 * It is bidirectional and its opposite is '
+	 * {@link org.muml.testlanguage.Output#getNode <em>Node</em>}'. <!--
+	 * begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Outputs</em>' containment reference list isn't
 	 * clear, there really should be more of a description here...
@@ -103,8 +97,7 @@ public interface Node extends EObject {
 	String getLabel();
 
 	/**
-	 * Sets the value of the '
-	 * {@link org.muml.testlanguage.Node#getLabel
+	 * Sets the value of the '{@link org.muml.testlanguage.Node#getLabel
 	 * <em>Label</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @param value
@@ -132,8 +125,7 @@ public interface Node extends EObject {
 	NodeSpecification getSpecification();
 
 	/**
-	 * Sets the value of the '
-	 * {@link org.muml.testlanguage.Node#getSpecification
+	 * Sets the value of the '{@link org.muml.testlanguage.Node#getSpecification
 	 * <em>Specification</em>}' containment reference. <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * 
@@ -195,8 +187,7 @@ public interface Node extends EObject {
 	Map<String, Object> getInputCache();
 
 	/**
-	 * Sets the value of the '
-	 * {@link org.muml.testlanguage.Node#getInputCache
+	 * Sets the value of the '{@link org.muml.testlanguage.Node#getInputCache
 	 * <em>Input Cache</em>}' attribute. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
 	 * 
@@ -225,8 +216,7 @@ public interface Node extends EObject {
 	Map<String, Object> getOutputCache();
 
 	/**
-	 * Sets the value of the '
-	 * {@link org.muml.testlanguage.Node#getOutputCache
+	 * Sets the value of the '{@link org.muml.testlanguage.Node#getOutputCache
 	 * <em>Output Cache</em>}' attribute. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
 	 * 
@@ -262,7 +252,8 @@ public interface Node extends EObject {
 	 *        "http://www.eclipse.org/emf/2002/GenModel body='\t\t// FIXME Hack to disable notifications so that the transactional editing\r\n\t\t// domain won\'t complain about me modifying the domain element.\r\n\t\tthis.eSetDeliver(false);\r\n\r\n\t\t// Initialize caches if needed.\r\n\t\tif (this.getInputCache() == null) {\r\n\t\t\tthis.setInputCache(new HashMap<String, Object>());\r\n\t\t}\r\n\t\tif (this.getOutputCache() == null) {\r\n\t\t\tthis.setOutputCache(new HashMap<String, Object>());\r\n\t\t}\r\n\r\n\t\t// Refresh the input cache.\r\n\t\tfor (Input input : this.getInputs()) {\r\n\t\t\tif (input.getSource() == null) {\r\n\t\t\t\tthis.getInputCache().remove(input.getName());\r\n\t\t\t} else {\r\n\t\t\t\tthis.getInputCache().put(input.getName(), input.getData());\r\n\t\t\t}\r\n\t\t}\r\n\r\n\t\t// Clear the output cache.\r\n\t\tthis.getOutputCache().clear();\r\n\r\n\t\t// NOTE A check whether all non-optional ports actually get data is not\r\n\t\t// necessary, as previous constraints already took care of this.\r\n\r\n\t\ttry {\r\n\t\t\t// Execute the behavior that is written in the specification.\r\n\t\t\tthis.specification.execute(this.getInputCache(),\r\n\t\t\t\t\tthis.getOutputCache());\r\n\r\n\t\t\treturn;\r\n\t\t} catch (Exception e) {\r\n\r\n\t\t\t// Clear the output cache.\r\n\t\t\tthis.getOutputCache().clear();\r\n\r\n\t\t\tthrow new ExecutionException(e);\r\n\t\t} finally {\r\n\t\t\tthis.eSetDeliver(true);\r\n\t\t}'"
 	 * @generated
 	 */
-	void execute() throws ExecutionException;
+	void execute() throws ExecutionException,
+			de.uni_paderborn.fujaba.muml.testlanguage.specification.custom.ExecutionException;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc --> <!-- begin-model-doc -->

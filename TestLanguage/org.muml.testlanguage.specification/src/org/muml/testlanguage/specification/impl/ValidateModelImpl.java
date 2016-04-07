@@ -18,13 +18,10 @@ import org.muml.testlanguage.specification.custom.ExecutionException;
 /**
  * <!-- begin-user-doc --> An implementation of the model object '
  * <em><b>Validate Model</b></em>'. <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */
-public class ValidateModelImpl extends NodeSpecificationImpl implements
-		ValidateModel {
+public class ValidateModelImpl extends NodeSpecificationImpl implements ValidateModel {
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -51,10 +48,8 @@ public class ValidateModelImpl extends NodeSpecificationImpl implements
 	 */
 	public void initialize() {
 		this.setLabel("Validate Model");
-		this.addPortSpecification(PortType.IN, "model", false,
-				org.eclipse.emf.ecore.EObject.class);
-		this.addPortSpecification(PortType.OUT, "bool", false,
-				java.lang.Boolean.class);
+		this.addPortSpecification(PortType.IN, "model", false, org.eclipse.emf.ecore.EObject.class);
+		this.addPortSpecification(PortType.OUT, "bool", false, java.lang.Boolean.class);
 	}
 
 	/**
@@ -62,13 +57,11 @@ public class ValidateModelImpl extends NodeSpecificationImpl implements
 	 * 
 	 * @generated
 	 */
-	public void execute(final Map<String, Object> inputs,
-			final Map<String, Object> outputs) throws ExecutionException,
-			Exception {
+	public void execute(final Map<String, Object> inputs, final Map<String, Object> outputs) throws ExecutionException,
+			Exception, de.uni_paderborn.fujaba.muml.testlanguage.specification.custom.ExecutionException {
 		// TODO Maybe also get a BatchValidator, see ValidateAction.
 		// Validate using a Diagnostic instance.
-		Diagnostic diagnostic = Diagnostician.INSTANCE
-				.validate((EObject) inputs.get("model"));
+		Diagnostic diagnostic = Diagnostician.INSTANCE.validate((EObject) inputs.get("model"));
 
 		boolean result = true;
 		if (diagnostic.getSeverity() == Diagnostic.ERROR) {
@@ -108,16 +101,14 @@ public class ValidateModelImpl extends NodeSpecificationImpl implements
 	 */
 	@Override
 	@SuppressWarnings("unchecked")
-	public Object eInvoke(int operationID, EList<?> arguments)
-			throws InvocationTargetException {
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
 		case SpecificationPackage.VALIDATE_MODEL___INITIALIZE:
 			initialize();
 			return null;
 		case SpecificationPackage.VALIDATE_MODEL___EXECUTE__MAP_MAP:
 			try {
-				execute((Map<String, Object>) arguments.get(0),
-						(Map<String, Object>) arguments.get(1));
+				execute((Map<String, Object>) arguments.get(0), (Map<String, Object>) arguments.get(1));
 				return null;
 			} catch (Throwable throwable) {
 				throw new InvocationTargetException(throwable);

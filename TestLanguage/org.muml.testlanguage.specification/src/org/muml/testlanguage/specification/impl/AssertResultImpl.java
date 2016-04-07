@@ -18,8 +18,6 @@ import org.muml.uppaal.adapter.results.PropertyResultRepository;
 /**
  * <!-- begin-user-doc --> An implementation of the model object '
  * <em><b>Assert Result</b></em>'. <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */
@@ -50,11 +48,8 @@ public class AssertResultImpl extends AssertBoolImpl implements AssertResult {
 	 */
 	public void initialize() {
 		this.setLabel("Assert Result");
-		this.addPortSpecification(
-				PortType.IN,
-				"property_result_repository",
-				false,
-				org.muml.uppaal.adapter.results.PropertyResultRepository.class);
+		this.addPortSpecification(PortType.IN, "property_result_repository", false,
+				de.uni_paderborn.fujaba.muml.verification.uppaal.results.PropertyResultRepository.class);
 	}
 
 	/**
@@ -62,12 +57,10 @@ public class AssertResultImpl extends AssertBoolImpl implements AssertResult {
 	 * 
 	 * @generated
 	 */
-	public void execute(final Map<String, Object> inputs,
-			final Map<String, Object> outputs) throws ExecutionException,
-			Exception {
+	public void execute(final Map<String, Object> inputs, final Map<String, Object> outputs) throws ExecutionException,
+			Exception, de.uni_paderborn.fujaba.muml.testlanguage.specification.custom.ExecutionException {
 		// Get the repository of the results.
-		PropertyResultRepository repo = (PropertyResultRepository) inputs
-				.get("property_result_repository");
+		PropertyResultRepository repo = (PropertyResultRepository) inputs.get("property_result_repository");
 
 		// Make sure we know if we want all the properties to verify or not.
 		String alpha, beta;
@@ -89,8 +82,7 @@ public class AssertResultImpl extends AssertBoolImpl implements AssertResult {
 
 		// Throw an exception if errors occurred.
 		if (!error.equals("")) {
-			throw new ExecutionException("Expected " + alpha + ", but got "
-					+ beta + " on " + error);
+			throw new ExecutionException("Expected " + alpha + ", but got " + beta + " on " + error);
 		}
 	}
 
@@ -131,16 +123,14 @@ public class AssertResultImpl extends AssertBoolImpl implements AssertResult {
 	 */
 	@Override
 	@SuppressWarnings("unchecked")
-	public Object eInvoke(int operationID, EList<?> arguments)
-			throws InvocationTargetException {
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
 		case SpecificationPackage.ASSERT_RESULT___INITIALIZE:
 			initialize();
 			return null;
 		case SpecificationPackage.ASSERT_RESULT___EXECUTE__MAP_MAP:
 			try {
-				execute((Map<String, Object>) arguments.get(0),
-						(Map<String, Object>) arguments.get(1));
+				execute((Map<String, Object>) arguments.get(0), (Map<String, Object>) arguments.get(1));
 				return null;
 			} catch (Throwable throwable) {
 				throw new InvocationTargetException(throwable);

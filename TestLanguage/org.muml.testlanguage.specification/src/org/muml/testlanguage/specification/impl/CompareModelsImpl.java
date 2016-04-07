@@ -34,13 +34,10 @@ import org.muml.testlanguage.specification.custom.ExecutionException;
 /**
  * <!-- begin-user-doc --> An implementation of the model object '
  * <em><b>Compare Models</b></em>'. <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */
-public class CompareModelsImpl extends NodeSpecificationImpl implements
-		CompareModels {
+public class CompareModelsImpl extends NodeSpecificationImpl implements CompareModels {
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -67,10 +64,8 @@ public class CompareModelsImpl extends NodeSpecificationImpl implements
 	 */
 	public void initialize() {
 		this.setLabel("Compare Models");
-		this.addPortSpecification(PortType.IN, "model_1", false,
-				org.eclipse.emf.common.notify.Notifier.class);
-		this.addPortSpecification(PortType.IN, "model_2", false,
-				org.eclipse.emf.common.notify.Notifier.class);
+		this.addPortSpecification(PortType.IN, "model_1", false, org.eclipse.emf.common.notify.Notifier.class);
+		this.addPortSpecification(PortType.IN, "model_2", false, org.eclipse.emf.common.notify.Notifier.class);
 		this.addPortSpecification(PortType.OUT, "bool", false);
 	}
 
@@ -79,9 +74,8 @@ public class CompareModelsImpl extends NodeSpecificationImpl implements
 	 * 
 	 * @generated
 	 */
-	public void execute(final Map<String, Object> inputs,
-			final Map<String, Object> outputs) throws ExecutionException,
-			Exception {
+	public void execute(final Map<String, Object> inputs, final Map<String, Object> outputs) throws ExecutionException,
+			Exception, de.uni_paderborn.fujaba.muml.testlanguage.specification.custom.ExecutionException {
 		// Local variable to carry the result.
 		boolean result = false;
 
@@ -91,12 +85,10 @@ public class CompareModelsImpl extends NodeSpecificationImpl implements
 		} else {
 
 			// Setup the matching engine.
-			IMatchEngine.Factory factory = new MatchEngineFactoryImpl(
-					UseIdentifiers.NEVER);
+			IMatchEngine.Factory factory = new MatchEngineFactoryImpl(UseIdentifiers.NEVER);
 			IMatchEngine.Factory.Registry matchEngineRegistry = new MatchEngineFactoryRegistryImpl();
 			matchEngineRegistry.add(factory);
-			IComparisonScope scope = new DefaultComparisonScope(
-					(Notifier) inputs.get("model_1"),
+			IComparisonScope scope = new DefaultComparisonScope((Notifier) inputs.get("model_1"),
 					(Notifier) inputs.get("model_2"), null);
 
 			// Avoid order checking for unordered containments.
@@ -106,16 +98,14 @@ public class CompareModelsImpl extends NodeSpecificationImpl implements
 				protected FeatureFilter createFeatureFilter() {
 					return new FeatureFilter() {
 						@Override
-						public boolean checkForOrderingChanges(
-								EStructuralFeature feature) {
+						public boolean checkForOrderingChanges(EStructuralFeature feature) {
 							return feature.isMany() && feature.isOrdered();
 						}
 					};
 				}
 			};
 
-			Comparison comparison = EMFCompare.builder()
-					.setMatchEngineFactoryRegistry(matchEngineRegistry)
+			Comparison comparison = EMFCompare.builder().setMatchEngineFactoryRegistry(matchEngineRegistry)
 					.setDiffEngine(diffEngine).build().compare(scope);
 
 			OutputStream stream = new OutputStream() {
@@ -134,8 +124,7 @@ public class CompareModelsImpl extends NodeSpecificationImpl implements
 
 			};
 
-			EMFComparePrettyPrinter.printDifferences(comparison,
-					new PrintStream(stream));
+			EMFComparePrettyPrinter.printDifferences(comparison, new PrintStream(stream));
 
 			if (comparison.getDifferences().isEmpty()) {
 				result = true;
@@ -175,16 +164,14 @@ public class CompareModelsImpl extends NodeSpecificationImpl implements
 	 */
 	@Override
 	@SuppressWarnings("unchecked")
-	public Object eInvoke(int operationID, EList<?> arguments)
-			throws InvocationTargetException {
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
 		case SpecificationPackage.COMPARE_MODELS___INITIALIZE:
 			initialize();
 			return null;
 		case SpecificationPackage.COMPARE_MODELS___EXECUTE__MAP_MAP:
 			try {
-				execute((Map<String, Object>) arguments.get(0),
-						(Map<String, Object>) arguments.get(1));
+				execute((Map<String, Object>) arguments.get(0), (Map<String, Object>) arguments.get(1));
 				return null;
 			} catch (Throwable throwable) {
 				throw new InvocationTargetException(throwable);

@@ -17,6 +17,7 @@ import org.muml.testlanguage.specification.SpecificationPackage;
  * <em><b>Port Specification</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  * <li>
  * {@link org.muml.testlanguage.specification.impl.PortSpecificationImpl#getName
@@ -31,12 +32,10 @@ import org.muml.testlanguage.specification.SpecificationPackage;
  * {@link org.muml.testlanguage.specification.impl.PortSpecificationImpl#getDataType
  * <em>Data Type</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
-public class PortSpecificationImpl extends MinimalEObjectImpl.Container
-		implements PortSpecification {
+public class PortSpecificationImpl extends MinimalEObjectImpl.Container implements PortSpecification {
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -144,9 +143,8 @@ public class PortSpecificationImpl extends MinimalEObjectImpl.Container
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					SpecificationPackage.PORT_SPECIFICATION__NAME, oldName,
-					name));
+			eNotify(new ENotificationImpl(this, Notification.SET, SpecificationPackage.PORT_SPECIFICATION__NAME,
+					oldName, name));
 	}
 
 	/**
@@ -167,8 +165,7 @@ public class PortSpecificationImpl extends MinimalEObjectImpl.Container
 		boolean oldOptional = optional;
 		optional = newOptional;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					SpecificationPackage.PORT_SPECIFICATION__OPTIONAL,
+			eNotify(new ENotificationImpl(this, Notification.SET, SpecificationPackage.PORT_SPECIFICATION__OPTIONAL,
 					oldOptional, optional));
 	}
 
@@ -190,9 +187,8 @@ public class PortSpecificationImpl extends MinimalEObjectImpl.Container
 		PortType oldType = type;
 		type = newType == null ? TYPE_EDEFAULT : newType;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					SpecificationPackage.PORT_SPECIFICATION__TYPE, oldType,
-					type));
+			eNotify(new ENotificationImpl(this, Notification.SET, SpecificationPackage.PORT_SPECIFICATION__TYPE,
+					oldType, type));
 	}
 
 	/**
@@ -213,8 +209,7 @@ public class PortSpecificationImpl extends MinimalEObjectImpl.Container
 		Class<?> oldDataType = dataType;
 		dataType = newDataType;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					SpecificationPackage.PORT_SPECIFICATION__DATA_TYPE,
+			eNotify(new ENotificationImpl(this, Notification.SET, SpecificationPackage.PORT_SPECIFICATION__DATA_TYPE,
 					oldDataType, dataType));
 	}
 
@@ -295,8 +290,7 @@ public class PortSpecificationImpl extends MinimalEObjectImpl.Container
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 		case SpecificationPackage.PORT_SPECIFICATION__NAME:
-			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT
-					.equals(name);
+			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		case SpecificationPackage.PORT_SPECIFICATION__OPTIONAL:
 			return optional != OPTIONAL_EDEFAULT;
 		case SpecificationPackage.PORT_SPECIFICATION__TYPE:

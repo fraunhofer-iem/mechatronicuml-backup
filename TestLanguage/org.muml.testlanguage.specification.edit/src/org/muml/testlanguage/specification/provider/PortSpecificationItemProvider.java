@@ -25,14 +25,13 @@ import org.muml.testlanguage.specification.SpecificationPackage;
 
 /**
  * This is the item provider adapter for a
- * {@link org.muml.testlanguage.specification.PortSpecification}
- * object. <!-- begin-user-doc --> <!-- end-user-doc -->
+ * {@link org.muml.testlanguage.specification.PortSpecification} object. <!--
+ * begin-user-doc --> <!-- end-user-doc -->
  * 
  * @generated
  */
-public class PortSpecificationItemProvider extends ItemProviderAdapter
-		implements IEditingDomainItemProvider, IStructuredItemContentProvider,
-		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class PortSpecificationItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
+		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
@@ -69,17 +68,13 @@ public class PortSpecificationItemProvider extends ItemProviderAdapter
 	 * @generated
 	 */
 	protected void addNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_PortSpecification_name_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_PortSpecification_name_feature",
-						"_UI_PortSpecification_type"),
-				SpecificationPackage.Literals.PORT_SPECIFICATION__NAME, false,
-				false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				getString("_UI_InternalPropertyCategory"), null));
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_PortSpecification_name_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_PortSpecification_name_feature",
+								"_UI_PortSpecification_type"),
+						SpecificationPackage.Literals.PORT_SPECIFICATION__NAME, false, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, getString("_UI_InternalPropertyCategory"), null));
 	}
 
 	/**
@@ -89,18 +84,13 @@ public class PortSpecificationItemProvider extends ItemProviderAdapter
 	 * @generated
 	 */
 	protected void addOptionalPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_PortSpecification_optional_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_PortSpecification_optional_feature",
-						"_UI_PortSpecification_type"),
-				SpecificationPackage.Literals.PORT_SPECIFICATION__OPTIONAL,
-				false, false, false,
-				ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				getString("_UI_InternalPropertyCategory"), null));
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_PortSpecification_optional_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_PortSpecification_optional_feature",
+								"_UI_PortSpecification_type"),
+				SpecificationPackage.Literals.PORT_SPECIFICATION__OPTIONAL, false, false, false,
+				ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, getString("_UI_InternalPropertyCategory"), null));
 	}
 
 	/**
@@ -110,17 +100,13 @@ public class PortSpecificationItemProvider extends ItemProviderAdapter
 	 * @generated
 	 */
 	protected void addTypePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_PortSpecification_type_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_PortSpecification_type_feature",
-						"_UI_PortSpecification_type"),
-				SpecificationPackage.Literals.PORT_SPECIFICATION__TYPE, false,
-				false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				getString("_UI_InternalPropertyCategory"), null));
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_PortSpecification_type_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_PortSpecification_type_feature",
+								"_UI_PortSpecification_type"),
+						SpecificationPackage.Literals.PORT_SPECIFICATION__TYPE, false, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, getString("_UI_InternalPropertyCategory"), null));
 	}
 
 	/**
@@ -131,16 +117,12 @@ public class PortSpecificationItemProvider extends ItemProviderAdapter
 	 */
 	protected void addDataTypePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-				getResourceLocator(),
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
 				getString("_UI_PortSpecification_dataType_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_PortSpecification_dataType_feature",
+				getString("_UI_PropertyDescriptor_description", "_UI_PortSpecification_dataType_feature",
 						"_UI_PortSpecification_type"),
-				SpecificationPackage.Literals.PORT_SPECIFICATION__DATA_TYPE,
-				true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				null, null));
+				SpecificationPackage.Literals.PORT_SPECIFICATION__DATA_TYPE, true, false, false,
+				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -151,8 +133,7 @@ public class PortSpecificationItemProvider extends ItemProviderAdapter
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object,
-				getResourceLocator().getImage("full/obj16/PortSpecification"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/PortSpecification"));
 	}
 
 	/**
@@ -185,8 +166,7 @@ public class PortSpecificationItemProvider extends ItemProviderAdapter
 		case SpecificationPackage.PORT_SPECIFICATION__OPTIONAL:
 		case SpecificationPackage.PORT_SPECIFICATION__TYPE:
 		case SpecificationPackage.PORT_SPECIFICATION__DATA_TYPE:
-			fireNotifyChanged(new ViewerNotification(notification,
-					notification.getNotifier(), false, true));
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}
 		super.notifyChanged(notification);
@@ -200,8 +180,7 @@ public class PortSpecificationItemProvider extends ItemProviderAdapter
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(
-			Collection<Object> newChildDescriptors, Object object) {
+	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 	}
 

@@ -17,8 +17,8 @@ import org.muml.testlanguage.specification.SpecificationPackage;
 
 /**
  * This is the item provider adapter for a
- * {@link org.muml.testlanguage.specification.CheckMTCTL}
- * object. <!-- begin-user-doc --> <!-- end-user-doc -->
+ * {@link org.muml.testlanguage.specification.CheckMTCTL} object. <!--
+ * begin-user-doc --> <!-- end-user-doc -->
  * 
  * @generated
  */
@@ -56,17 +56,13 @@ public class CheckMTCTLItemProvider extends NodeSpecificationItemProvider {
 	 * @generated
 	 */
 	protected void addPropertiesPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_CheckMTCTL_properties_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_CheckMTCTL_properties_feature",
-						"_UI_CheckMTCTL_type"),
-				SpecificationPackage.Literals.CHECK_MTCTL__PROPERTIES, true,
-				true, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
-				null));
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_CheckMTCTL_properties_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_CheckMTCTL_properties_feature",
+								"_UI_CheckMTCTL_type"),
+						SpecificationPackage.Literals.CHECK_MTCTL__PROPERTIES, true, true, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -77,8 +73,7 @@ public class CheckMTCTLItemProvider extends NodeSpecificationItemProvider {
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object,
-				getResourceLocator().getImage("full/obj16/CheckMTCTL"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/CheckMTCTL"));
 	}
 
 	/**
@@ -108,8 +103,7 @@ public class CheckMTCTLItemProvider extends NodeSpecificationItemProvider {
 
 		switch (notification.getFeatureID(CheckMTCTL.class)) {
 		case SpecificationPackage.CHECK_MTCTL__PROPERTIES:
-			fireNotifyChanged(new ViewerNotification(notification,
-					notification.getNotifier(), false, true));
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}
 		super.notifyChanged(notification);
@@ -123,8 +117,7 @@ public class CheckMTCTLItemProvider extends NodeSpecificationItemProvider {
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(
-			Collection<Object> newChildDescriptors, Object object) {
+	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 	}
 

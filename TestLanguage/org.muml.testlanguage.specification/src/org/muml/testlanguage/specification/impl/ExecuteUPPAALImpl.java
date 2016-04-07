@@ -14,7 +14,6 @@ import org.muml.testlanguage.specification.PortType;
 import org.muml.testlanguage.specification.SpecificationPackage;
 import org.muml.testlanguage.specification.custom.ExecutionException;
 import org.muml.uppaal.NTA;
-import org.muml.uppaal.job.VerifyTAOperation;
 import org.muml.uppaal.options.CoordinationProtocolOptions;
 import org.muml.uppaal.options.OptionsFactory;
 import org.muml.uppaal.options.TraceOptions;
@@ -23,13 +22,10 @@ import org.muml.uppaal.requirements.PropertyRepository;
 /**
  * <!-- begin-user-doc --> An implementation of the model object '
  * <em><b>Execute UPPAAL</b></em>'. <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */
-public class ExecuteUPPAALImpl extends NodeSpecificationImpl implements
-		ExecuteUPPAAL {
+public class ExecuteUPPAALImpl extends NodeSpecificationImpl implements ExecuteUPPAAL {
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -56,15 +52,11 @@ public class ExecuteUPPAALImpl extends NodeSpecificationImpl implements
 	 */
 	public void initialize() {
 		this.setLabel("Check UPPAAL");
-		this.addPortSpecification(PortType.IN, "nta", false,
-				org.muml.uppaal.NTA.class);
+		this.addPortSpecification(PortType.IN, "nta", false, de.uni_paderborn.uppaal.NTA.class);
 		this.addPortSpecification(PortType.IN, "property_repository", false,
-				org.muml.uppaal.requirements.PropertyRepository.class);
-		this.addPortSpecification(
-				PortType.IN,
-				"options",
-				true,
-				org.muml.uppaal.options.Options.class);
+				de.uni_paderborn.uppaal.requirements.PropertyRepository.class);
+		this.addPortSpecification(PortType.IN, "options", true,
+				de.uni_paderborn.fujaba.muml.verification.uppaal.options.Options.class);
 		this.addPortSpecification(PortType.OUT, "trace_repository", false);
 	}
 
@@ -73,26 +65,29 @@ public class ExecuteUPPAALImpl extends NodeSpecificationImpl implements
 	 * 
 	 * @generated
 	 */
-	public void execute(final Map<String, Object> inputs,
-			final Map<String, Object> outputs) throws ExecutionException,
-			Exception {
+	public void execute(final Map<String, Object> inputs, final Map<String, Object> outputs) throws ExecutionException,
+			Exception, de.uni_paderborn.fujaba.muml.testlanguage.specification.custom.ExecutionException {
 		// Check if we have custom options or use the default ones.
 		CoordinationProtocolOptions options;
 		if (inputs.containsKey("options") && inputs.get("options") != null) {
 			options = (CoordinationProtocolOptions) inputs.get("options");
 		} else {
-			options = OptionsFactory.eINSTANCE
-					.createCoordinationProtocolOptions();
+			options = OptionsFactory.eINSTANCE.createCoordinationProtocolOptions();
 			options.setTraceOptions(TraceOptions.NONE);
 		}
 
 		// Start the job that serialized and then verifies the NTA.
-		VerifyTAOperation operation = new VerifyTAOperation((NTA) inputs.get("nta"),
+		VerifyTAJob job = new VerifyTAJob((NTA) inputs.get("nta"),
 				(PropertyRepository) inputs.get("property_repository"), options);
-		operation.run(new NullProgressMonitor());
+		IStatus status = job.execute(new NullProgressMonitor());
+
+		// Throw an exception if something went wrong.
+		if (!status.isOK()) {
+			throw new ExecutionException(status.getMessage());
+		}
 
 		// Put the traces on the output port and return.
-		outputs.put("trace_repository", operation.getTraceRepository());
+		outputs.put("trace_repository", job.getTraceRepository());
 		return;
 	}
 
@@ -123,16 +118,14 @@ public class ExecuteUPPAALImpl extends NodeSpecificationImpl implements
 	 */
 	@Override
 	@SuppressWarnings("unchecked")
-	public Object eInvoke(int operationID, EList<?> arguments)
-			throws InvocationTargetException {
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
 		case SpecificationPackage.EXECUTE_UPPAAL___INITIALIZE:
 			initialize();
 			return null;
 		case SpecificationPackage.EXECUTE_UPPAAL___EXECUTE__MAP_MAP:
 			try {
-				execute((Map<String, Object>) arguments.get(0),
-						(Map<String, Object>) arguments.get(1));
+				execute((Map<String, Object>) arguments.get(0), (Map<String, Object>) arguments.get(1));
 				return null;
 			} catch (Throwable throwable) {
 				throw new InvocationTargetException(throwable);

@@ -2,6 +2,7 @@
  */
 package org.muml.testlanguage.specification.impl;
 
+import de.uni_paderborn.fujaba.muml.testlanguage.specification.custom.ExecutionException;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
@@ -28,7 +29,6 @@ import org.muml.testlanguage.specification.SpecificationFactory;
 import org.muml.testlanguage.specification.SpecificationPackage;
 import org.muml.testlanguage.specification.Transformation;
 import org.muml.testlanguage.specification.ValidateModel;
-import org.muml.testlanguage.specification.custom.ExecutionException;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Package</b>. <!--
@@ -36,8 +36,7 @@ import org.muml.testlanguage.specification.custom.ExecutionException;
  * 
  * @generated
  */
-public class SpecificationPackageImpl extends EPackageImpl implements
-		SpecificationPackage {
+public class SpecificationPackageImpl extends EPackageImpl implements SpecificationPackage {
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -200,13 +199,12 @@ public class SpecificationPackageImpl extends EPackageImpl implements
 	 */
 	public static SpecificationPackage init() {
 		if (isInited)
-			return (SpecificationPackage) EPackage.Registry.INSTANCE
-					.getEPackage(SpecificationPackage.eNS_URI);
+			return (SpecificationPackage) EPackage.Registry.INSTANCE.getEPackage(SpecificationPackage.eNS_URI);
 
 		// Obtain or create and register package
 		SpecificationPackageImpl theSpecificationPackage = (SpecificationPackageImpl) (EPackage.Registry.INSTANCE
-				.get(eNS_URI) instanceof SpecificationPackageImpl ? EPackage.Registry.INSTANCE
-				.get(eNS_URI) : new SpecificationPackageImpl());
+				.get(eNS_URI) instanceof SpecificationPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI)
+						: new SpecificationPackageImpl());
 
 		isInited = true;
 
@@ -220,8 +218,7 @@ public class SpecificationPackageImpl extends EPackageImpl implements
 		theSpecificationPackage.freeze();
 
 		// Update the registry and return the package
-		EPackage.Registry.INSTANCE.put(SpecificationPackage.eNS_URI,
-				theSpecificationPackage);
+		EPackage.Registry.INSTANCE.put(SpecificationPackage.eNS_URI, theSpecificationPackage);
 		return theSpecificationPackage;
 	}
 
@@ -240,8 +237,7 @@ public class SpecificationPackageImpl extends EPackageImpl implements
 	 * @generated
 	 */
 	public EReference getNodeSpecification_PortSpecifications() {
-		return (EReference) nodeSpecificationEClass.getEStructuralFeatures()
-				.get(0);
+		return (EReference) nodeSpecificationEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -250,8 +246,7 @@ public class SpecificationPackageImpl extends EPackageImpl implements
 	 * @generated
 	 */
 	public EAttribute getNodeSpecification_Label() {
-		return (EAttribute) nodeSpecificationEClass.getEStructuralFeatures()
-				.get(1);
+		return (EAttribute) nodeSpecificationEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -314,8 +309,7 @@ public class SpecificationPackageImpl extends EPackageImpl implements
 	 * @generated
 	 */
 	public EAttribute getPortSpecification_Name() {
-		return (EAttribute) portSpecificationEClass.getEStructuralFeatures()
-				.get(0);
+		return (EAttribute) portSpecificationEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -324,8 +318,7 @@ public class SpecificationPackageImpl extends EPackageImpl implements
 	 * @generated
 	 */
 	public EAttribute getPortSpecification_Optional() {
-		return (EAttribute) portSpecificationEClass.getEStructuralFeatures()
-				.get(1);
+		return (EAttribute) portSpecificationEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -334,8 +327,7 @@ public class SpecificationPackageImpl extends EPackageImpl implements
 	 * @generated
 	 */
 	public EAttribute getPortSpecification_Type() {
-		return (EAttribute) portSpecificationEClass.getEStructuralFeatures()
-				.get(2);
+		return (EAttribute) portSpecificationEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -344,8 +336,7 @@ public class SpecificationPackageImpl extends EPackageImpl implements
 	 * @generated
 	 */
 	public EAttribute getPortSpecification_DataType() {
-		return (EAttribute) portSpecificationEClass.getEStructuralFeatures()
-				.get(3);
+		return (EAttribute) portSpecificationEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -516,8 +507,7 @@ public class SpecificationPackageImpl extends EPackageImpl implements
 	 * @generated
 	 */
 	public EAttribute getTransformation_Uri() {
-		return (EAttribute) transformationEClass.getEStructuralFeatures()
-				.get(0);
+		return (EAttribute) transformationEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -526,8 +516,7 @@ public class SpecificationPackageImpl extends EPackageImpl implements
 	 * @generated
 	 */
 	public EReference getTransformation_ParameterOrder() {
-		return (EReference) transformationEClass.getEStructuralFeatures()
-				.get(1);
+		return (EReference) transformationEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -536,8 +525,7 @@ public class SpecificationPackageImpl extends EPackageImpl implements
 	 * @generated
 	 */
 	public EAttribute getTransformation_ConfigProperties() {
-		return (EAttribute) transformationEClass.getEStructuralFeatures()
-				.get(2);
+		return (EAttribute) transformationEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -609,8 +597,7 @@ public class SpecificationPackageImpl extends EPackageImpl implements
 	 * @generated
 	 */
 	public EAttribute getPrimitiveString_Value() {
-		return (EAttribute) primitiveStringEClass.getEStructuralFeatures().get(
-				0);
+		return (EAttribute) primitiveStringEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -814,17 +801,12 @@ public class SpecificationPackageImpl extends EPackageImpl implements
 
 		// Create classes and their features
 		nodeSpecificationEClass = createEClass(NODE_SPECIFICATION);
-		createEReference(nodeSpecificationEClass,
-				NODE_SPECIFICATION__PORT_SPECIFICATIONS);
+		createEReference(nodeSpecificationEClass, NODE_SPECIFICATION__PORT_SPECIFICATIONS);
 		createEAttribute(nodeSpecificationEClass, NODE_SPECIFICATION__LABEL);
-		createEOperation(nodeSpecificationEClass,
-				NODE_SPECIFICATION___INITIALIZE);
-		createEOperation(nodeSpecificationEClass,
-				NODE_SPECIFICATION___EXECUTE__MAP_MAP);
-		createEOperation(nodeSpecificationEClass,
-				NODE_SPECIFICATION___NOTIFY_CHANGED__OBJECT);
-		createEOperation(nodeSpecificationEClass,
-				NODE_SPECIFICATION___ADD_PORT_SPECIFICATION__PORTTYPE_STRING_BOOLEAN);
+		createEOperation(nodeSpecificationEClass, NODE_SPECIFICATION___INITIALIZE);
+		createEOperation(nodeSpecificationEClass, NODE_SPECIFICATION___EXECUTE__MAP_MAP);
+		createEOperation(nodeSpecificationEClass, NODE_SPECIFICATION___NOTIFY_CHANGED__OBJECT);
+		createEOperation(nodeSpecificationEClass, NODE_SPECIFICATION___ADD_PORT_SPECIFICATION__PORTTYPE_STRING_BOOLEAN);
 		createEOperation(nodeSpecificationEClass,
 				NODE_SPECIFICATION___ADD_PORT_SPECIFICATION__PORTTYPE_STRING_BOOLEAN_CLASS);
 
@@ -859,13 +841,10 @@ public class SpecificationPackageImpl extends EPackageImpl implements
 		transformationEClass = createEClass(TRANSFORMATION);
 		createEAttribute(transformationEClass, TRANSFORMATION__URI);
 		createEReference(transformationEClass, TRANSFORMATION__PARAMETER_ORDER);
-		createEAttribute(transformationEClass,
-				TRANSFORMATION__CONFIG_PROPERTIES);
+		createEAttribute(transformationEClass, TRANSFORMATION__CONFIG_PROPERTIES);
 		createEOperation(transformationEClass, TRANSFORMATION___INITIALIZE);
-		createEOperation(transformationEClass,
-				TRANSFORMATION___EXECUTE__MAP_MAP);
-		createEOperation(transformationEClass,
-				TRANSFORMATION___NOTIFY_CHANGED__OBJECT);
+		createEOperation(transformationEClass, TRANSFORMATION___EXECUTE__MAP_MAP);
+		createEOperation(transformationEClass, TRANSFORMATION___NOTIFY_CHANGED__OBJECT);
 
 		executeUPPAALEClass = createEClass(EXECUTE_UPPAAL);
 		createEOperation(executeUPPAALEClass, EXECUTE_UPPAAL___INITIALIZE);
@@ -874,8 +853,7 @@ public class SpecificationPackageImpl extends EPackageImpl implements
 		primitiveStringEClass = createEClass(PRIMITIVE_STRING);
 		createEAttribute(primitiveStringEClass, PRIMITIVE_STRING__VALUE);
 		createEOperation(primitiveStringEClass, PRIMITIVE_STRING___INITIALIZE);
-		createEOperation(primitiveStringEClass,
-				PRIMITIVE_STRING___EXECUTE__MAP_MAP);
+		createEOperation(primitiveStringEClass, PRIMITIVE_STRING___EXECUTE__MAP_MAP);
 
 		assertBoolEClass = createEClass(ASSERT_BOOL);
 		createEAttribute(assertBoolEClass, ASSERT_BOOL__ASSERTION);
@@ -883,10 +861,8 @@ public class SpecificationPackageImpl extends EPackageImpl implements
 		createEOperation(assertBoolEClass, ASSERT_BOOL___EXECUTE__MAP_MAP);
 
 		assertDiagnosticTraceEClass = createEClass(ASSERT_DIAGNOSTIC_TRACE);
-		createEOperation(assertDiagnosticTraceEClass,
-				ASSERT_DIAGNOSTIC_TRACE___INITIALIZE);
-		createEOperation(assertDiagnosticTraceEClass,
-				ASSERT_DIAGNOSTIC_TRACE___EXECUTE__MAP_MAP);
+		createEOperation(assertDiagnosticTraceEClass, ASSERT_DIAGNOSTIC_TRACE___INITIALIZE);
+		createEOperation(assertDiagnosticTraceEClass, ASSERT_DIAGNOSTIC_TRACE___EXECUTE__MAP_MAP);
 
 		assertResultEClass = createEClass(ASSERT_RESULT);
 		createEOperation(assertResultEClass, ASSERT_RESULT___INITIALIZE);
@@ -948,25 +924,19 @@ public class SpecificationPackageImpl extends EPackageImpl implements
 		checkMTCTLEClass.getESuperTypes().add(this.getNodeSpecification());
 
 		// Initialize classes, features, and operations; add parameters
-		initEClass(nodeSpecificationEClass, NodeSpecification.class,
-				"NodeSpecification", IS_ABSTRACT, !IS_INTERFACE,
+		initEClass(nodeSpecificationEClass, NodeSpecification.class, "NodeSpecification", IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getNodeSpecification_PortSpecifications(),
-				this.getPortSpecification(), null, "portSpecifications", null,
-				0, -1, NodeSpecification.class, !IS_TRANSIENT, !IS_VOLATILE,
-				IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getNodeSpecification_Label(), ecorePackage.getEString(),
-				"label", "Node", 1, 1, NodeSpecification.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+		initEReference(getNodeSpecification_PortSpecifications(), this.getPortSpecification(), null,
+				"portSpecifications", null, 0, -1, NodeSpecification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getNodeSpecification_Label(), ecorePackage.getEString(), "label", "Node", 1, 1,
+				NodeSpecification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
 
-		initEOperation(getNodeSpecification__Initialize(), null, "initialize",
-				1, 1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getNodeSpecification__Initialize(), null, "initialize", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		EOperation op = initEOperation(
-				getNodeSpecification__Execute__Map_Map(), null, "execute", 1,
-				1, IS_UNIQUE, IS_ORDERED);
+		EOperation op = initEOperation(getNodeSpecification__Execute__Map_Map(), null, "execute", 1, 1, IS_UNIQUE,
+				IS_ORDERED);
 		EGenericType g1 = createEGenericType(ecorePackage.getEMap());
 		EGenericType g2 = createEGenericType(ecorePackage.getEString());
 		g1.getETypeArguments().add(g2);
@@ -982,70 +952,47 @@ public class SpecificationPackageImpl extends EPackageImpl implements
 		addEException(op, this.getExecutionException());
 		addEException(op, this.getDefaultException());
 
-		op = initEOperation(getNodeSpecification__NotifyChanged__Object(),
-				ecorePackage.getEBoolean(), "notifyChanged", 1, 1, IS_UNIQUE,
-				IS_ORDERED);
-		addEParameter(op, ecorePackage.getEJavaObject(), "notification", 0, 1,
-				IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getNodeSpecification__NotifyChanged__Object(), ecorePackage.getEBoolean(), "notifyChanged",
+				1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEJavaObject(), "notification", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(
-				getNodeSpecification__AddPortSpecification__PortType_String_boolean(),
-				this.getPortSpecification(), "addPortSpecification", 1, 1,
-				IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, this.getPortType(), "type", 0, 1, IS_UNIQUE,
-				IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "name", 0, 1, IS_UNIQUE,
-				IS_ORDERED);
-		addEParameter(op, ecorePackage.getEBoolean(), "optional", 0, 1,
-				IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getNodeSpecification__AddPortSpecification__PortType_String_boolean(),
+				this.getPortSpecification(), "addPortSpecification", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getPortType(), "type", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "name", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEBoolean(), "optional", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(
-				getNodeSpecification__AddPortSpecification__PortType_String_boolean_Class(),
-				this.getPortSpecification(), "addPortSpecification", 1, 1,
-				IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, this.getPortType(), "type", 0, 1, IS_UNIQUE,
-				IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "name", 0, 1, IS_UNIQUE,
-				IS_ORDERED);
-		addEParameter(op, ecorePackage.getEBoolean(), "optional", 0, 1,
-				IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getNodeSpecification__AddPortSpecification__PortType_String_boolean_Class(),
+				this.getPortSpecification(), "addPortSpecification", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getPortType(), "type", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "name", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEBoolean(), "optional", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEJavaClass());
 		g2 = createEGenericType();
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "dataType", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		initEClass(portSpecificationEClass, PortSpecification.class,
-				"PortSpecification", !IS_ABSTRACT, !IS_INTERFACE,
+		initEClass(portSpecificationEClass, PortSpecification.class, "PortSpecification", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getPortSpecification_Name(), ecorePackage.getEString(),
-				"name", null, 1, 1, PortSpecification.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+		initEAttribute(getPortSpecification_Name(), ecorePackage.getEString(), "name", null, 1, 1,
+				PortSpecification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPortSpecification_Optional(),
-				ecorePackage.getEBoolean(), "optional", null, 1, 1,
-				PortSpecification.class, !IS_TRANSIENT, !IS_VOLATILE,
-				IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
-		initEAttribute(getPortSpecification_Type(), this.getPortType(), "type",
-				"IN", 1, 1, PortSpecification.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+		initEAttribute(getPortSpecification_Optional(), ecorePackage.getEBoolean(), "optional", null, 1, 1,
+				PortSpecification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPortSpecification_Type(), this.getPortType(), "type", "IN", 1, 1, PortSpecification.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEJavaClass());
 		g2 = createEGenericType();
 		g1.getETypeArguments().add(g2);
-		initEAttribute(getPortSpecification_DataType(), g1, "dataType", null,
-				0, 1, PortSpecification.class, !IS_TRANSIENT, !IS_VOLATILE,
-				IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
+		initEAttribute(getPortSpecification_DataType(), g1, "dataType", null, 0, 1, PortSpecification.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(defaultEClass, Default.class, "Default", !IS_ABSTRACT,
-				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(defaultEClass, Default.class, "Default", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEOperation(getDefault__Initialize(), null, "initialize", 1, 1,
-				IS_UNIQUE, IS_ORDERED);
+		initEOperation(getDefault__Initialize(), null, "initialize", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getDefault__Execute__Map_Map(), null, "execute", 1,
-				1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getDefault__Execute__Map_Map(), null, "execute", 1, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEString());
 		g1.getETypeArguments().add(g2);
@@ -1061,237 +1008,133 @@ public class SpecificationPackageImpl extends EPackageImpl implements
 		addEException(op, this.getExecutionException());
 		addEException(op, this.getDefaultException());
 
-		initEClass(loadModelEClass, LoadModel.class, "LoadModel", !IS_ABSTRACT,
-				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getLoadModel_Uri(), ecorePackage.getEString(), "uri",
-				"", 1, 1, LoadModel.class, !IS_TRANSIENT, !IS_VOLATILE,
-				IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
-
-		initEOperation(getLoadModel__Initialize(), null, "initialize", 1, 1,
-				IS_UNIQUE, IS_ORDERED);
-
-		op = initEOperation(getLoadModel__Execute__Map_Map(), null, "execute",
-				1, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEString());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "inputs", 1, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEString());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "outputs", 1, 1, IS_UNIQUE, IS_ORDERED);
-		addEException(op, this.getExecutionException());
-		addEException(op, this.getDefaultException());
-
-		initEClass(compareModelsEClass, CompareModels.class, "CompareModels",
-				!IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEOperation(getCompareModels__Initialize(), null, "initialize", 1,
-				1, IS_UNIQUE, IS_ORDERED);
-
-		op = initEOperation(getCompareModels__Execute__Map_Map(), null,
-				"execute", 1, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEString());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "inputs", 1, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEString());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "outputs", 1, 1, IS_UNIQUE, IS_ORDERED);
-		addEException(op, this.getExecutionException());
-		addEException(op, this.getDefaultException());
-
-		initEClass(validateModelEClass, ValidateModel.class, "ValidateModel",
-				!IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEOperation(getValidateModel__Initialize(), null, "initialize", 1,
-				1, IS_UNIQUE, IS_ORDERED);
-
-		op = initEOperation(getValidateModel__Execute__Map_Map(), null,
-				"execute", 1, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEString());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "inputs", 1, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEString());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "outputs", 1, 1, IS_UNIQUE, IS_ORDERED);
-		addEException(op, this.getExecutionException());
-		addEException(op, this.getDefaultException());
-
-		initEClass(saveModelEClass, SaveModel.class, "SaveModel", !IS_ABSTRACT,
-				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getSaveModel_Uri(), ecorePackage.getEString(), "uri",
-				null, 0, 1, SaveModel.class, !IS_TRANSIENT, !IS_VOLATILE,
-				IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
-
-		initEOperation(getSaveModel__Initialize(), null, "initialize", 1, 1,
-				IS_UNIQUE, IS_ORDERED);
-
-		op = initEOperation(getSaveModel__Execute__Map_Map(), null, "execute",
-				1, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEString());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "inputs", 1, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEString());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "outputs", 1, 1, IS_UNIQUE, IS_ORDERED);
-		addEException(op, this.getExecutionException());
-		addEException(op, this.getDefaultException());
-
-		initEClass(transformationEClass, Transformation.class,
-				"Transformation", !IS_ABSTRACT, !IS_INTERFACE,
+		initEClass(loadModelEClass, LoadModel.class, "LoadModel", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getTransformation_Uri(), ecorePackage.getEString(),
-				"uri", null, 0, 1, Transformation.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
-				!IS_DERIVED, IS_ORDERED);
-		initEReference(getTransformation_ParameterOrder(),
-				this.getPortSpecification(), null, "parameterOrder", null, 0,
-				-1, Transformation.class, !IS_TRANSIENT, !IS_VOLATILE,
-				IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+		initEAttribute(getLoadModel_Uri(), ecorePackage.getEString(), "uri", "", 1, 1, LoadModel.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEOperation(getLoadModel__Initialize(), null, "initialize", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getLoadModel__Execute__Map_Map(), null, "execute", 1, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEString());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "inputs", 1, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEString());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "outputs", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, this.getExecutionException());
+		addEException(op, this.getDefaultException());
+
+		initEClass(compareModelsEClass, CompareModels.class, "CompareModels", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+
+		initEOperation(getCompareModels__Initialize(), null, "initialize", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getCompareModels__Execute__Map_Map(), null, "execute", 1, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEString());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "inputs", 1, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEString());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "outputs", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, this.getExecutionException());
+		addEException(op, this.getDefaultException());
+
+		initEClass(validateModelEClass, ValidateModel.class, "ValidateModel", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+
+		initEOperation(getValidateModel__Initialize(), null, "initialize", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getValidateModel__Execute__Map_Map(), null, "execute", 1, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEString());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "inputs", 1, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEString());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "outputs", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, this.getExecutionException());
+		addEException(op, this.getDefaultException());
+
+		initEClass(saveModelEClass, SaveModel.class, "SaveModel", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getSaveModel_Uri(), ecorePackage.getEString(), "uri", null, 0, 1, SaveModel.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEOperation(getSaveModel__Initialize(), null, "initialize", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getSaveModel__Execute__Map_Map(), null, "execute", 1, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEString());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "inputs", 1, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEString());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "outputs", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, this.getExecutionException());
+		addEException(op, this.getDefaultException());
+
+		initEClass(transformationEClass, Transformation.class, "Transformation", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getTransformation_Uri(), ecorePackage.getEString(), "uri", null, 0, 1, Transformation.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTransformation_ParameterOrder(), this.getPortSpecification(), null, "parameterOrder", null, 0,
+				-1, Transformation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTransformation_ConfigProperties(),
-				ecorePackage.getEString(), "configProperties", null, 0, -1,
-				Transformation.class, !IS_TRANSIENT, !IS_VOLATILE,
-				IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
-
-		initEOperation(getTransformation__Initialize(), null, "initialize", 1,
-				1, IS_UNIQUE, IS_ORDERED);
-
-		op = initEOperation(getTransformation__Execute__Map_Map(), null,
-				"execute", 1, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEString());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "inputs", 1, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEString());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "outputs", 1, 1, IS_UNIQUE, IS_ORDERED);
-		addEException(op, this.getExecutionException());
-		addEException(op, this.getDefaultException());
-
-		op = initEOperation(getTransformation__NotifyChanged__Object(),
-				ecorePackage.getEBoolean(), "notifyChanged", 0, 1, IS_UNIQUE,
-				IS_ORDERED);
-		addEParameter(op, ecorePackage.getEJavaObject(), "notification", 0, 1,
-				IS_UNIQUE, IS_ORDERED);
-
-		initEClass(executeUPPAALEClass, ExecuteUPPAAL.class, "ExecuteUPPAAL",
-				!IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEOperation(getExecuteUPPAAL__Initialize(), null, "initialize", 1,
-				1, IS_UNIQUE, IS_ORDERED);
-
-		op = initEOperation(getExecuteUPPAAL__Execute__Map_Map(), null,
-				"execute", 1, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEString());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "inputs", 1, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEString());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "outputs", 1, 1, IS_UNIQUE, IS_ORDERED);
-		addEException(op, this.getExecutionException());
-		addEException(op, this.getDefaultException());
-
-		initEClass(primitiveStringEClass, PrimitiveString.class,
-				"PrimitiveString", !IS_ABSTRACT, !IS_INTERFACE,
-				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getPrimitiveString_Value(), ecorePackage.getEString(),
-				"value", "", 1, 1, PrimitiveString.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+		initEAttribute(getTransformation_ConfigProperties(), ecorePackage.getEString(), "configProperties", null, 0, -1,
+				Transformation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
 
-		initEOperation(getPrimitiveString__Initialize(), null, "initialize", 1,
+		initEOperation(getTransformation__Initialize(), null, "initialize", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getTransformation__Execute__Map_Map(), null, "execute", 1, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEString());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "inputs", 1, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEString());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "outputs", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, this.getExecutionException());
+		addEException(op, this.getDefaultException());
+
+		op = initEOperation(getTransformation__NotifyChanged__Object(), ecorePackage.getEBoolean(), "notifyChanged", 0,
 				1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEJavaObject(), "notification", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getPrimitiveString__Execute__Map_Map(), null,
-				"execute", 1, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEString());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "inputs", 1, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEString());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "outputs", 1, 1, IS_UNIQUE, IS_ORDERED);
-		addEException(op, this.getExecutionException());
-		addEException(op, this.getDefaultException());
-
-		initEClass(assertBoolEClass, AssertBool.class, "AssertBool",
-				!IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getAssertBool_Assertion(), ecorePackage.getEBoolean(),
-				"assertion", "true", 0, 1, AssertBool.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
-				!IS_DERIVED, IS_ORDERED);
-
-		initEOperation(getAssertBool__Initialize(), null, "initialize", 1, 1,
-				IS_UNIQUE, IS_ORDERED);
-
-		op = initEOperation(getAssertBool__Execute__Map_Map(), null, "execute",
-				1, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEString());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "inputs", 1, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEString());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "outputs", 1, 1, IS_UNIQUE, IS_ORDERED);
-		addEException(op, this.getExecutionException());
-		addEException(op, this.getDefaultException());
-
-		initEClass(assertDiagnosticTraceEClass, AssertDiagnosticTrace.class,
-				"AssertDiagnosticTrace", !IS_ABSTRACT, !IS_INTERFACE,
+		initEClass(executeUPPAALEClass, ExecuteUPPAAL.class, "ExecuteUPPAAL", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
 
-		initEOperation(getAssertDiagnosticTrace__Initialize(), null,
-				"initialize", 1, 1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getExecuteUPPAAL__Initialize(), null, "initialize", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getAssertDiagnosticTrace__Execute__Map_Map(), null,
-				"execute", 1, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getExecuteUPPAAL__Execute__Map_Map(), null, "execute", 1, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEString());
 		g1.getETypeArguments().add(g2);
@@ -1307,14 +1150,14 @@ public class SpecificationPackageImpl extends EPackageImpl implements
 		addEException(op, this.getExecutionException());
 		addEException(op, this.getDefaultException());
 
-		initEClass(assertResultEClass, AssertResult.class, "AssertResult",
-				!IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(primitiveStringEClass, PrimitiveString.class, "PrimitiveString", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getPrimitiveString_Value(), ecorePackage.getEString(), "value", "", 1, 1, PrimitiveString.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEOperation(getAssertResult__Initialize(), null, "initialize", 1, 1,
-				IS_UNIQUE, IS_ORDERED);
+		initEOperation(getPrimitiveString__Initialize(), null, "initialize", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getAssertResult__Execute__Map_Map(), null,
-				"execute", 1, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getPrimitiveString__Execute__Map_Map(), null, "execute", 1, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEString());
 		g1.getETypeArguments().add(g2);
@@ -1330,18 +1173,81 @@ public class SpecificationPackageImpl extends EPackageImpl implements
 		addEException(op, this.getExecutionException());
 		addEException(op, this.getDefaultException());
 
-		initEClass(checkMTCTLEClass, CheckMTCTL.class, "CheckMTCTL",
-				!IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getCheckMTCTL_Properties(), ecorePackage.getEString(),
-				"properties", null, 0, 1, CheckMTCTL.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+		initEClass(assertBoolEClass, AssertBool.class, "AssertBool", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getAssertBool_Assertion(), ecorePackage.getEBoolean(), "assertion", "true", 0, 1,
+				AssertBool.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
 
-		initEOperation(getCheckMTCTL__Initialize(), null, "initialize", 1, 1,
-				IS_UNIQUE, IS_ORDERED);
+		initEOperation(getAssertBool__Initialize(), null, "initialize", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getCheckMTCTL__Execute__Map_Map(), null, "execute",
-				1, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getAssertBool__Execute__Map_Map(), null, "execute", 1, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEString());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "inputs", 1, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEString());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "outputs", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, this.getExecutionException());
+		addEException(op, this.getDefaultException());
+
+		initEClass(assertDiagnosticTraceEClass, AssertDiagnosticTrace.class, "AssertDiagnosticTrace", !IS_ABSTRACT,
+				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEOperation(getAssertDiagnosticTrace__Initialize(), null, "initialize", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getAssertDiagnosticTrace__Execute__Map_Map(), null, "execute", 1, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEString());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "inputs", 1, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEString());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "outputs", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, this.getExecutionException());
+		addEException(op, this.getDefaultException());
+
+		initEClass(assertResultEClass, AssertResult.class, "AssertResult", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+
+		initEOperation(getAssertResult__Initialize(), null, "initialize", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getAssertResult__Execute__Map_Map(), null, "execute", 1, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEString());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "inputs", 1, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEString());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "outputs", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, this.getExecutionException());
+		addEException(op, this.getDefaultException());
+
+		initEClass(checkMTCTLEClass, CheckMTCTL.class, "CheckMTCTL", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getCheckMTCTL_Properties(), ecorePackage.getEString(), "properties", null, 0, 1,
+				CheckMTCTL.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+
+		initEOperation(getCheckMTCTL__Initialize(), null, "initialize", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getCheckMTCTL__Execute__Map_Map(), null, "execute", 1, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEString());
 		g1.getETypeArguments().add(g2);
@@ -1364,11 +1270,9 @@ public class SpecificationPackageImpl extends EPackageImpl implements
 		addEEnumLiteral(portTypeEEnum, PortType.INOUT);
 
 		// Initialize data types
-		initEDataType(executionExceptionEDataType, ExecutionException.class,
-				"ExecutionException", !IS_SERIALIZABLE,
+		initEDataType(executionExceptionEDataType, ExecutionException.class, "ExecutionException", !IS_SERIALIZABLE,
 				!IS_GENERATED_INSTANCE_CLASS);
-		initEDataType(defaultExceptionEDataType, Exception.class,
-				"DefaultException", !IS_SERIALIZABLE,
+		initEDataType(defaultExceptionEDataType, Exception.class, "DefaultException", !IS_SERIALIZABLE,
 				!IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
@@ -1388,162 +1292,62 @@ public class SpecificationPackageImpl extends EPackageImpl implements
 	 */
 	protected void createGenModelAnnotations() {
 		String source = "http://www.eclipse.org/emf/2002/GenModel";
-		addAnnotation(getNodeSpecification__Initialize(), source, new String[] {
-				"body", "" });
-		addAnnotation(getNodeSpecification__NotifyChanged__Object(), source,
-				new String[] { "body", "return false;" });
-		addAnnotation(
-				getNodeSpecification__AddPortSpecification__PortType_String_boolean(),
-				source,
+		addAnnotation(getNodeSpecification__Initialize(), source, new String[] { "body", "" });
+		addAnnotation(getNodeSpecification__NotifyChanged__Object(), source, new String[] { "body", "return false;" });
+		addAnnotation(getNodeSpecification__AddPortSpecification__PortType_String_boolean(), source,
+				new String[] { "body", "return this.addPortSpecification(type, name, optional, null);" });
+		addAnnotation(getNodeSpecification__AddPortSpecification__PortType_String_boolean_Class(), source,
 				new String[] { "body",
-						"return this.addPortSpecification(type, name, optional, null);" });
-		addAnnotation(
-				getNodeSpecification__AddPortSpecification__PortType_String_boolean_Class(),
-				source,
-				new String[] {
-						"body",
 						"PortSpecification spec = SpecificationFactory.eINSTANCE.createPortSpecification();\r\nspec.setType(type);\r\nspec.setName(name);\r\nspec.setOptional(optional);\r\nspec.setDataType(dataType);\r\nthis.getPortSpecifications().add(spec);\r\nreturn spec;" });
-		addAnnotation(getDefault__Initialize(), source, new String[] { "body",
-				"this.setLabel(\"Default\");" });
-		addAnnotation(
-				getDefault__Execute__Map_Map(),
-				source,
-				new String[] { "body",
-						"throw new ExecutionException(\"Default node should not be executed.\");" });
-		addAnnotation(
-				getLoadModel__Initialize(),
-				source,
-				new String[] {
-						"body",
-						"this.setLabel(\"Load Model\"); \r\nthis.addPortSpecification(PortType.OUT, \"model\", true);" });
-		addAnnotation(
-				getLoadModel__Execute__Map_Map(),
-				source,
-				new String[] {
-						"body",
-						"\t\t// Setup the URI.\r\n\t\tURI realURI = URIConversion.convert(URI.createURI(this.getUri()));\r\n\r\n\t\t// Load the model.\r\n\t\tResourceSet resSet = new ResourceSetImpl();\r\n\t\tResource resource = resSet.getResource(realURI.trimFragment(), true);\r\n\t\tEObject result = null;\r\n\r\n\t\tif (realURI.hasFragment()) {\r\n\t\t\tresult = resource.getEObject(realURI.fragment());\r\n\t\t} else {\r\n\t\t\tresult = resource.getContents().get(0);\r\n\t\t}\r\n\r\n\t\t// Put the loaded model onto the output.\r\n\t\toutputs.put(\"model\", result);\r\n\r\n\t\treturn;" });
-		addAnnotation(
-				getCompareModels__Initialize(),
-				source,
-				new String[] {
-						"body",
-						"\t\tthis.setLabel(\"Compare Models\");\r\n\t\tthis.addPortSpecification(PortType.IN, \"model_1\", false, org.eclipse.emf.common.notify.Notifier.class);\r\n\t\tthis.addPortSpecification(PortType.IN, \"model_2\", false, org.eclipse.emf.common.notify.Notifier.class);\r\n\t\tthis.addPortSpecification(PortType.OUT, \"bool\", false);" });
-		addAnnotation(
-				getCompareModels__Execute__Map_Map(),
-				source,
-				new String[] {
-						"body",
-						"\t\t// Local variable to carry the result.\r\n\t\tboolean result = false;\r\n\r\n\t\t// Check if the given models are actually the same model.\r\n\t\tif (inputs.get(\"model_1\") == inputs.get(\"model_2\")) {\r\n\t\t\tresult = true;\r\n\t\t} else {\r\n\r\n\t\t\t// Setup the matching engine.\r\n\t\t\tIMatchEngine.Factory factory = new MatchEngineFactoryImpl(\r\n\t\t\t\t\tUseIdentifiers.NEVER);\r\n\t\t\tIMatchEngine.Factory.Registry matchEngineRegistry = new MatchEngineFactoryRegistryImpl();\r\n\t\t\tmatchEngineRegistry.add(factory);\r\n\t\t\tIComparisonScope scope = new DefaultComparisonScope(\r\n\t\t\t\t\t(Notifier) inputs.get(\"model_1\"), (Notifier) inputs.get(\"model_2\"), null);\r\n\r\n\t\t\t// Avoid order checking for unordered containments.\r\n\t\t\tIDiffProcessor diffProcessor = new DiffBuilder();\r\n\t\t\tIDiffEngine diffEngine = new DefaultDiffEngine(diffProcessor) {\r\n\t\t\t\t@Override\r\n\t\t\t\tprotected FeatureFilter createFeatureFilter() {\r\n\t\t\t\t\treturn new FeatureFilter() {\r\n\t\t\t\t\t\t@Override\r\n\t\t\t\t\t\tpublic boolean checkForOrderingChanges(\r\n\t\t\t\t\t\t\t\tEStructuralFeature feature) {\r\n\t\t\t\t\t\t\treturn feature.isMany() && feature.isOrdered();\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t};\r\n\t\t\t\t}\r\n\t\t\t};\r\n\r\n\t\t\tComparison comparison = EMFCompare.builder()\r\n\t\t\t\t\t.setMatchEngineFactoryRegistry(matchEngineRegistry)\r\n\t\t\t\t\t.setDiffEngine(diffEngine).build().compare(scope);\r\n\r\n\t\t\tOutputStream stream = new OutputStream() {\r\n\r\n\t\t\t\tprivate StringBuilder builder = new StringBuilder();\r\n\r\n\t\t\t\t@Override\r\n\t\t\t\tpublic void write(int b) throws IOException {\r\n\t\t\t\t\tbuilder.append((char) b);\r\n\t\t\t\t}\r\n\r\n\t\t\t\t@Override\r\n\t\t\t\tpublic String toString() {\r\n\t\t\t\t\treturn builder.toString();\r\n\t\t\t\t}\r\n\r\n\t\t\t};\r\n\r\n\t\t\tEMFComparePrettyPrinter.printDifferences(comparison,\r\n\t\t\t\t\tnew PrintStream(stream));\r\n\r\n\t\t\tif (comparison.getDifferences().isEmpty()) {\r\n\t\t\t\tresult = true;\r\n\t\t\t}\r\n\t\t}\r\n\r\n\t\t// Wrap the result up and put it on the output port.\r\n\t\toutputs.put(\"bool\", new Boolean(result));\r\n\r\n\t\treturn;" });
-		addAnnotation(
-				getValidateModel__Initialize(),
-				source,
-				new String[] {
-						"body",
-						"\t\tthis.setLabel(\"Validate Model\");\r\n\t\tthis.addPortSpecification(PortType.IN, \"model\", false,\r\n\t\t\t\torg.eclipse.emf.ecore.EObject.class);\r\n\t\tthis.addPortSpecification(PortType.OUT, \"bool\", false,\r\n\t\t\t\tjava.lang.Boolean.class);" });
-		addAnnotation(
-				getValidateModel__Execute__Map_Map(),
-				source,
-				new String[] {
-						"body",
-						"\t\t// TODO Maybe also get a BatchValidator, see ValidateAction.\r\n\t\t// Validate using a Diagnostic instance.\r\n\t\tDiagnostic diagnostic = Diagnostician.INSTANCE\r\n\t\t\t\t.validate((EObject) inputs.get(\"model\"));\r\n\r\n\t\tboolean result = true;\r\n\t\tif (diagnostic.getSeverity() == Diagnostic.ERROR) {\r\n\t\t\tresult = false;\r\n\t\t}\r\n\r\n\t\t// Wrap the result up and put it on the output port.\r\n\t\toutputs.put(\"bool\", new Boolean(result));\r\n\r\n\t\treturn;" });
-		addAnnotation(
-				getSaveModel__Initialize(),
-				source,
-				new String[] {
-						"body",
-						"\t\tthis.setLabel(\"Save Model\");\r\n\t\tthis.addPortSpecification(PortType.IN, \"model\", false, org.eclipse.emf.ecore.EObject.class);" });
-		addAnnotation(
-				getSaveModel__Execute__Map_Map(),
-				source,
-				new String[] {
-						"body",
-						"\t\t// Create the URI.\r\n\t\tURI realURI = URIConversion.convert(URI.createURI(this.getUri()));\r\n\r\n\t\t// Only write to resource links.\r\n\t\tif (!realURI.isPlatformResource()) {\r\n\t\t\treturn;\r\n\t\t}\r\n\r\n\t\t// Create a XMIResourceFactory for the extension.\r\n\t\tif (realURI.fileExtension() != null) {\r\n\t\t\tResource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;\r\n\t\t\tMap<String, Object> m = reg.getExtensionToFactoryMap();\r\n\t\t\tm.put(realURI.fileExtension(), new XMIResourceFactoryImpl());\r\n\t\t}\r\n\r\n\t\t// Create a resource set.\r\n\t\tResourceSet resSet = new ResourceSetImpl();\r\n\t\tResource resource = resSet.createResource(realURI.trimFragment());\r\n\t\tresource.getContents().add((EObject) inputs.get(\"model\"));\r\n\r\n\t\t// Save the model.\r\n\t\tresource.save(Collections.EMPTY_MAP);\r\n\r\n\t\treturn;" });
-		addAnnotation(getTransformation__Initialize(), source, new String[] {
-				"body", "this.setLabel(\"Transformation\");" });
-		addAnnotation(
-				getTransformation__Execute__Map_Map(),
-				source,
-				new String[] {
-						"body",
-						"\t\tURI realURI = URIConversion.convert(URI.createURI(this.getUri()));\r\n\t\tTransformationExecutor executor = new TransformationExecutor(realURI);\r\n\r\n\t\tExecutionContextImpl context;\r\n\t\tIStatus status;\r\n\r\n\t\tstatus = BasicDiagnostic.toIStatus(executor.loadTransformation());\r\n\r\n\t\tif (!status.isOK()) {\r\n\t\t\tthrow new ExecutionException(status.getMessage());\r\n\t\t}\r\n\r\n\t\tcontext = new ExecutionContextImpl();\r\n\r\n\t\t// Set extents, i.e. the model parameters.\r\n\t\tBasicModelExtent[] extents = new BasicModelExtent[this\r\n\t\t\t\t.getParameterOrder().size()];\r\n\t\tint i = 0;\r\n\t\tfor (PortSpecification port : this.getParameterOrder()) {\r\n\t\t\tBasicModelExtent extent = new BasicModelExtent();\r\n\r\n\t\t\tif (port.getType() == PortType.IN) {\r\n\t\t\t\textent.add((EObject) inputs.get(port.getName()));\r\n\t\t\t} else if (port.getType() == PortType.INOUT) {\r\n\t\t\t\t// Copy the EObject to avoid side effects.\r\n\t\t\t\tCopier copier = new Copier();\r\n\t\t\t\tEObject result = copier.copy((EObject) inputs.get(port.getName()));\r\n\t\t\t\tcopier.copyReferences();\r\n\t\t\t\textent.add(result);\r\n\t\t\t}\r\n\r\n\t\t\textents[i] = extent;\r\n\r\n\t\t\ti++;\r\n\t\t}\r\n\r\n\t\t// Set configuration properties. They arrive in an EObject wrapper\r\n\t\t// as a string, they are parsed by QVTo.\r\n\t\tfor (String property : this.getConfigProperties()) {\r\n\t\t\tif (inputs.containsKey(property)) {\r\n\t\t\t\tcontext.setConfigProperty(property,\r\n\t\t\t\t\t\t(String) inputs.get(property));\r\n\t\t\t}\r\n\t\t}\r\n\r\n\t\t// Execute the transformation.\r\n\t\tOutputStreamWriter outStream = new OutputStreamWriter(System.out);\r\n\t\tLog log = new WriterLog(outStream);\r\n\t\tcontext.setLog(log);\r\n\t\tExecutionDiagnostic diagnostic = executor.execute(context, extents);\r\n\r\n\t\t// Check if everything went fine.\r\n\t\tif (diagnostic.getSeverity() == Diagnostic.ERROR) {\r\n\t\t\tthrow new ExecutionException(\"Transformation failed: \"\r\n\t\t\t\t\t+ diagnostic.getMessage());\r\n\t\t}\r\n\r\n\t\t// Get the output.\r\n\t\ti = 0;\r\n\t\tfor (PortSpecification port : this.getParameterOrder()) {\r\n\t\t\t// System.out.println(i + \" \" + port.getName() + \" (\"\r\n\t\t\t// + port.getType() + \"): \"\r\n\t\t\t// + extents[i].getContents().get(0));\r\n\t\t\tif (port.getType() == PortType.OUT\r\n\t\t\t\t\t|| port.getType() == PortType.INOUT) {\r\n\t\t\t\toutputs.put(port.getName(), extents[i].getContents().get(0));\r\n\t\t\t}\r\n\r\n\t\t\ti++;\r\n\t\t}\r\n\r\n\t\treturn;" });
-		addAnnotation(
-				getTransformation__NotifyChanged__Object(),
-				source,
-				new String[] {
-						"body",
-						"\t\ttry {\r\n\t\t\tNotification n = (Notification) notification;\r\n\t\t\tEAttribute attr = (EAttribute) n.getFeature();\r\n\r\n\t\t\tif (n.getEventType() == Notification.SET && attr.getName() == \"uri\") {\r\n\t\t\t\tthis.getPortSpecifications().clear();\r\n\t\t\t\tthis.getParameterOrder().clear();\r\n\t\t\t\tthis.getConfigProperties().clear();\r\n\r\n\t\t\t\t// Load transformation Ecore in order to get the port count\r\n\t\t\t\t// required. (http://www.eclipse.org/forums/index.php/t/478345/)\r\n\t\t\t\tURI realURI = URI.createURI(this.uri);\r\n\t\t\t\tResourceSet resSet = new ResourceSetImpl();\r\n\t\t\t\tResource resource = resSet.getResource(realURI.trimFragment(),\r\n\t\t\t\t\t\ttrue);\r\n\t\t\t\tEObject result = null;\r\n\r\n\t\t\t\tif (realURI.hasFragment()) {\r\n\t\t\t\t\tresult = resource.getEObject(realURI.fragment());\r\n\t\t\t\t}\r\n\r\n\t\t\t\tOperationalTransformation trans = (OperationalTransformation) (result != null ? result\r\n\t\t\t\t\t\t: resource.getContents().get(0));\r\n\r\n\t\t\t\tEList<ModelParameter> params = trans.getModelParameter();\r\n\r\n\t\t\t\tfor (ModelParameter param : params) {\r\n\t\t\t\t\tPortType type = PortType.IN;\r\n\t\t\t\t\tif (param.getKind() == DirectionKind.OUT) {\r\n\t\t\t\t\t\ttype = PortType.OUT;\r\n\t\t\t\t\t} else if (param.getKind() == DirectionKind.INOUT) {\r\n\t\t\t\t\t\ttype = PortType.INOUT;\r\n\t\t\t\t\t}\r\n\t\t\t\t\tPortSpecification spec = this.addPortSpecification(type,\r\n\t\t\t\t\t\t\tparam.getName(), false, org.eclipse.emf.ecore.EObject.class);\r\n\t\t\t\t\tthis.getParameterOrder().add(spec);\r\n\t\t\t\t}\r\n\r\n\t\t\t\t// Add configuration properties.\r\n\t\t\t\tthis.getConfigProperties().clear();\r\n\t\t\t\tEList<EStructuralFeature> props = trans.getConfigProperty();\r\n\t\t\t\tfor (EStructuralFeature feature : props) {\r\n\t\t\t\t\tthis.addPortSpecification(PortType.IN, feature.getName(),\r\n\t\t\t\t\t\t\ttrue, java.lang.String.class);\r\n\t\t\t\t\tthis.getConfigProperties().add(feature.getName());\r\n\t\t\t\t}\r\n\r\n\t\t\t\t// Return true to signal that the ports changed and need to\r\n\t\t\t\t// be rebuilt.\r\n\t\t\t\treturn true;\r\n\t\t\t}\r\n\t\t} catch (Exception e) {\r\n\t\t\te.printStackTrace();\r\n\t\t}\r\n\r\n\t\treturn false;" });
-		addAnnotation(
-				getExecuteUPPAAL__Initialize(),
-				source,
-				new String[] {
-						"body",
-						"\t\tthis.setLabel(\"Check UPPAAL\");\r\n\t\tthis.addPortSpecification(PortType.IN, \"nta\", false,\r\n\t\t\t\tde.uni_paderborn.uppaal.NTA.class);\r\n\t\tthis.addPortSpecification(PortType.IN, \"property_repository\", false,\r\n\t\t\t\tde.uni_paderborn.uppaal.requirements.PropertyRepository.class);\r\n\t\tthis.addPortSpecification(\r\n\t\t\t\tPortType.IN,\r\n\t\t\t\t\"options\",\r\n\t\t\t\ttrue,\r\n\t\t\t\tde.uni_paderborn.fujaba.muml.verification.uppaal.options.Options.class);\r\n\t\tthis.addPortSpecification(PortType.OUT, \"trace_repository\", false);" });
-		addAnnotation(
-				getExecuteUPPAAL__Execute__Map_Map(),
-				source,
-				new String[] {
-						"body",
-						"\t\t// Check if we have custom options or use the default ones.\r\n\t\tCoordinationProtocolOptions options;\r\n\t\tif (inputs.containsKey(\"options\") && inputs.get(\"options\") != null) {\r\n\t\t\toptions = (CoordinationProtocolOptions) inputs.get(\"options\");\r\n\t\t} else {\r\n\t\t\toptions = OptionsFactory.eINSTANCE\r\n\t\t\t\t\t.createCoordinationProtocolOptions();\r\n\t\t\toptions.setTraceOptions(TraceOptions.NONE);\r\n\t\t}\r\n\r\n\t\t// Start the job that serialized and then verifies the NTA.\r\n\t\tVerifyTAJob job = new VerifyTAJob((NTA) inputs.get(\"nta\"),\r\n\t\t\t\t(PropertyRepository) inputs.get(\"property_repository\"), options);\r\n\t\tIStatus status = job.execute(new NullProgressMonitor());\r\n\r\n\t\t// Throw an exception if something went wrong.\r\n\t\tif (!status.isOK()) {\r\n\t\t\tthrow new ExecutionException(status.getMessage());\r\n\t\t}\r\n\r\n\t\t// Put the traces on the output port and return.\r\n\t\toutputs.put(\"trace_repository\", job.getTraceRepository());\r\n\t\treturn;" });
-		addAnnotation(
-				getPrimitiveString__Initialize(),
-				source,
-				new String[] {
-						"body",
-						"this.setLabel(\"Primitive String\");\r\nthis.addPortSpecification(PortType.OUT, \"string\", false);" });
-		addAnnotation(
-				getPrimitiveString__Execute__Map_Map(),
-				source,
-				new String[] {
-						"body",
-						"\t\t// Put the wrapped string onto the output.\r\n\t\toutputs.put(\"string\", this.getValue());\r\n\r\n\t\treturn;" });
-		addAnnotation(
-				getAssertBool__Initialize(),
-				source,
-				new String[] {
-						"body",
-						"\t\tthis.setLabel(\"Assert Bool\");\r\n\t\tthis.addPortSpecification(PortType.IN, \"bool\", false,\r\n\t\t\t\tjava.lang.Boolean.class);" });
-		addAnnotation(
-				getAssertBool__Execute__Map_Map(),
-				source,
-				new String[] {
-						"body",
-						"\t\t// Get the boolean value.\r\n\t\tboolean bool = ((Boolean) inputs.get(\"bool\")).booleanValue();\r\n\r\n\t\t// Throw an exception if it does not match the assertion.\r\n\t\tif (bool != this.assertion) {\r\n\t\t\tthrow new ExecutionException(\"Expected \"\r\n\t\t\t\t\t+ Boolean.toString(this.assertion) + \", but got \"\r\n\t\t\t\t\t+ Boolean.toString(bool));\r\n\t\t}" });
-		addAnnotation(
-				getAssertDiagnosticTrace__Initialize(),
-				source,
-				new String[] {
-						"body",
-						"\t\tthis.setLabel(\"Assert DiagnosticTrace\");\r\n\t\tthis.addPortSpecification(\r\n\t\t\t\tPortType.IN,\r\n\t\t\t\t\"trace_repository\",\r\n\t\t\t\tfalse,\r\n\t\t\t\tde.uni_paderborn.uppaal.trace.diagnosticTrace.TraceRepository.class);" });
-		addAnnotation(
-				getAssertDiagnosticTrace__Execute__Map_Map(),
-				source,
-				new String[] {
-						"body",
-						"\t\t// Get the repository.\r\n\t\tTraceRepository repo = (TraceRepository) inputs.get(\"trace_repository\");\r\n\r\n\t\t// Make sure we know if we want all the properties to verify or not.\r\n\t\tResult expected;\r\n\t\tString alpha, beta;\r\n\t\tif (this.assertion) {\r\n\t\t\texpected = Result.SUCCESS;\r\n\t\t\talpha = \"SUCCESS\";\r\n\t\t\tbeta = \"FAILURE\";\r\n\t\t} else {\r\n\t\t\texpected = Result.FAILURE;\r\n\t\t\talpha = \"FAILURE\";\r\n\t\t\tbeta = \"SUCCESS\";\r\n\t\t}\r\n\r\n\t\t// Check each property.\r\n\t\tString error = \"\";\r\n\t\tfor (Trace item : repo.getTraces()) {\r\n\t\t\tif (!item.getResult().equals(expected)) {\r\n\t\t\t\terror += \"[Property \" + item.getProperty() + \" at line \"\r\n\t\t\t\t\t\t+ item.getLine() + \"] \";\r\n\t\t\t}\r\n\t\t}\r\n\r\n\t\t// Throw an exception if errors occurred.\r\n\t\tif (!error.equals(\"\")) {\r\n\t\t\tthrow new ExecutionException(\"Expected \" + alpha + \", but got \"\r\n\t\t\t\t\t+ beta + \" on \" + error);\r\n\t\t}" });
-		addAnnotation(
-				getAssertResult__Initialize(),
-				source,
-				new String[] {
-						"body",
-						"\t\tthis.setLabel(\"Assert Result\");\r\n\t\tthis.addPortSpecification(\r\n\t\t\t\tPortType.IN,\r\n\t\t\t\t\"property_result_repository\",\r\n\t\t\t\tfalse,\r\n\t\t\t\tde.uni_paderborn.fujaba.muml.verification.uppaal.results.PropertyResultRepository.class);" });
-		addAnnotation(
-				getAssertResult__Execute__Map_Map(),
-				source,
-				new String[] {
-						"body",
-						"\t\t// Get the repository of the results.\r\n\t\tPropertyResultRepository repo = (PropertyResultRepository) inputs\r\n\t\t\t\t.get(\"property_result_repository\");\r\n\r\n\t\t// Make sure we know if we want all the properties to verify or not.\r\n\t\tString alpha, beta;\r\n\t\tif (this.assertion) {\r\n\t\t\talpha = \"FULFILLED\";\r\n\t\t\tbeta = \"NOT FULFILLED\";\r\n\t\t} else {\r\n\t\t\talpha = \"NOT FULFILLED\";\r\n\t\t\tbeta = \"FULFILLED\";\r\n\t\t}\r\n\r\n\t\t// Check each property.\r\n\t\tString error = \"\";\r\n\t\tfor (PropertyResult result : repo.getResults()) {\r\n\t\t\tif (result.isFulfilled() != this.assertion) {\r\n\t\t\t\terror += \"[Comment \" + result.getProperty().getComment() + \"] \";\r\n\t\t\t}\r\n\t\t}\r\n\r\n\t\t// Throw an exception if errors occurred.\r\n\t\tif (!error.equals(\"\")) {\r\n\t\t\tthrow new ExecutionException(\"Expected \" + alpha + \", but got \"\r\n\t\t\t\t\t+ beta + \" on \" + error);\r\n\t\t}" });
-		addAnnotation(
-				getCheckMTCTL__Initialize(),
-				source,
-				new String[] {
-						"body",
-						"\t\tthis.setLabel(\"Check MTCTL\");\r\n\t\tthis.addPortSpecification(PortType.IN, \"muml\", false,\r\n\t\t\t\tde.uni_paderborn.fujaba.modelinstance.RootNode.class);\r\n\t\tthis.addPortSpecification(\r\n\t\t\t\tPortType.IN,\r\n\t\t\t\t\"options\",\r\n\t\t\t\ttrue,\r\n\t\t\t\tde.uni_paderborn.fujaba.muml.verification.uppaal.options.Options.class);\r\n\t\tthis.addPortSpecification(PortType.OUT, \"results\", false);" });
-		addAnnotation(
-				getCheckMTCTL__Execute__Map_Map(),
-				source,
-				new String[] {
-						"body",
-						"\t\t// Do we even have properties to verify?\r\n\t\tif (\"\".equals(this.getProperties())) {\r\n\t\t\tthrow new ExecutionException(\"No properties to verify.\");\r\n\t\t}\r\n\r\n\t\t// Copy the MUML model so we do not destroy it.\r\n\t\tCopier copier = new Copier();\r\n\t\tRootNode muml = (RootNode) copier.copy((RootNode) inputs.get(\"muml\"));\r\n\t\tcopier.copyReferences();\r\n\r\n\t\t// Get the CoordinationProtocol category.\r\n\t\tModelElementCategory category = null;\r\n\t\tfor (ModelElementCategory cur : muml.getCategories()) {\r\n\t\t\tif (cur.getKey().equals(\r\n\t\t\t\t\t\"de.uni_paderborn.fujaba.muml.protocol.category\")) {\r\n\t\t\t\tcategory = cur;\r\n\t\t\t\tbreak;\r\n\t\t\t}\r\n\t\t}\r\n\t\tif (category == null) {\r\n\t\t\tthrow new ExecutionException(\r\n\t\t\t\t\t\"Model does not contain a CoordinationProtocol category.\");\r\n\t\t}\r\n\r\n\t\t// Look for a CoordinationProtocol that asks for a verification,\r\n\t\t// otherwise just choose any.\r\n\t\tCoordinationProtocol protocol = null;\r\n\t\tfor (ExtendableElement cur : category.getModelElements()) {\r\n\t\t\tprotocol = (CoordinationProtocol) cur;\r\n\r\n\t\t\tif (protocol\r\n\t\t\t\t\t.getExtension(de.uni_paderborn.fujaba.muml.verification.verificationExtension.VerificationExtensionPackage.eINSTANCE\r\n\t\t\t\t\t\t\t.getElementToVerifyExtension()) != null) {\r\n\t\t\t\tbreak;\r\n\t\t\t}\r\n\t\t}\r\n\t\tif (protocol == null) {\r\n\t\t\tthrow new ExecutionException(\r\n\t\t\t\t\t\"Model does not contain a CoordinationProtocol.\");\r\n\t\t}\r\n\r\n\t\t// Parse the PropertyRepository we have in the context of the protocol.\r\n\t\tPropertyRepository propertyRepository = (PropertyRepository) new Object() {\r\n\r\n\t\t\t@Inject\r\n\t\t\tprivate XtextResourceSet resourceSet;\r\n\r\n\t\t\tpublic EObject parse(CoordinationProtocol protocol,\r\n\t\t\t\t\tString properties) throws Exception {\r\n\t\t\t\t// Source: http://davehofmann.de/blog/?p=101\r\n\t\t\t\tInjector injector = Guice\r\n\t\t\t\t\t\t.createInjector(new MtctlRuntimeModule());\r\n\t\t\t\tinjector.injectMembers(this);\r\n\t\t\t\tthis.resourceSet.addLoadOption(\r\n\t\t\t\t\t\tXtextResource.OPTION_RESOLVE_ALL, Boolean.TRUE);\r\n\r\n\t\t\t\t// Parse the given properties and return it.\r\n\t\t\t\tMtctlScopeProvider.getInstance().setScopeForEObject(protocol);\r\n\t\t\t\tResource resource = resourceSet.createResource(URI\r\n\t\t\t\t\t\t.createURI(\"dummy:/dummy.mtctl\"));\r\n\t\t\t\tresource.load(\r\n\t\t\t\t\t\tnew ByteArrayInputStream(properties\r\n\t\t\t\t\t\t\t\t.getBytes(StandardCharsets.UTF_8)), resourceSet\r\n\t\t\t\t\t\t\t\t.getLoadOptions());\r\n\t\t\t\treturn resource.getContents().get(0);\r\n\t\t\t}\r\n\t\t}.parse(protocol, this.getProperties());\r\n\r\n\t\t// Replace all existing PropertyRepositories by the one we just created.\r\n\t\tprotocol.getVerificationConstraintRepositories().clear();\r\n\t\tprotocol.getVerificationConstraintRepositories()\r\n\t\t\t\t.add(propertyRepository);\r\n\r\n\t\t// Verify for results (= apply the transformation by the MTCTL people).\r\n\t\tURI realURI = URI\r\n\t\t\t\t.createURI(\"platform:/plugin/de.uni_paderborn.fujaba.muml.verification.uppaal.transformation/transforms/VerifiableElement2Results.qvto\");\r\n\t\tTransformationExecutor executor = new TransformationExecutor(realURI);\r\n\t\tExecutionContextImpl context;\r\n\t\tIStatus status;\r\n\t\tstatus = BasicDiagnostic.toIStatus(executor.loadTransformation());\r\n\t\tif (!status.isOK()) {\r\n\t\t\tthrow new ExecutionException(status.getMessage());\r\n\t\t}\r\n\t\tcontext = new ExecutionContextImpl();\r\n\r\n\t\t// Check if we have custom options or use the default ones.\r\n\t\tCoordinationProtocolOptions options;\r\n\t\tif (inputs.containsKey(\"options\") && inputs.get(\"options\") != null) {\r\n\t\t\toptions = (CoordinationProtocolOptions) inputs.get(\"options\");\r\n\t\t} else {\r\n\t\t\toptions = OptionsFactory.eINSTANCE\r\n\t\t\t\t\t.createCoordinationProtocolOptions();\r\n\t\t\toptions.setTraceOptions(TraceOptions.NONE);\r\n\t\t}\r\n\r\n\t\t// Create the extents.\r\n\t\tBasicModelExtent mumlExtent = new BasicModelExtent();\r\n\t\tmumlExtent.add(muml);\r\n\t\tBasicModelExtent optionsExtent = new BasicModelExtent();\r\n\t\toptionsExtent.add(options);\r\n\t\tBasicModelExtent resultExtent = new BasicModelExtent();\r\n\r\n\t\t// Execute the transformation.\r\n\t\tOutputStreamWriter outStream = new OutputStreamWriter(System.out);\r\n\t\tLog log = new WriterLog(outStream);\r\n\t\tcontext.setLog(log);\r\n\t\texecutor.execute(context, mumlExtent, optionsExtent, resultExtent);\r\n\r\n\t\t// Get the output.\r\n\t\toutputs.put(\"results\", resultExtent.getContents().get(0));" });
+		addAnnotation(getDefault__Initialize(), source, new String[] { "body", "this.setLabel(\"Default\");" });
+		addAnnotation(getDefault__Execute__Map_Map(), source,
+				new String[] { "body", "throw new ExecutionException(\"Default node should not be executed.\");" });
+		addAnnotation(getLoadModel__Initialize(), source, new String[] { "body",
+				"this.setLabel(\"Load Model\"); \r\nthis.addPortSpecification(PortType.OUT, \"model\", true);" });
+		addAnnotation(getLoadModel__Execute__Map_Map(), source, new String[] { "body",
+				"\t\t// Setup the URI.\r\n\t\tURI realURI = URIConversion.convert(URI.createURI(this.getUri()));\r\n\r\n\t\t// Load the model.\r\n\t\tResourceSet resSet = new ResourceSetImpl();\r\n\t\tResource resource = resSet.getResource(realURI.trimFragment(), true);\r\n\t\tEObject result = null;\r\n\r\n\t\tif (realURI.hasFragment()) {\r\n\t\t\tresult = resource.getEObject(realURI.fragment());\r\n\t\t} else {\r\n\t\t\tresult = resource.getContents().get(0);\r\n\t\t}\r\n\r\n\t\t// Put the loaded model onto the output.\r\n\t\toutputs.put(\"model\", result);\r\n\r\n\t\treturn;" });
+		addAnnotation(getCompareModels__Initialize(), source, new String[] { "body",
+				"\t\tthis.setLabel(\"Compare Models\");\r\n\t\tthis.addPortSpecification(PortType.IN, \"model_1\", false, org.eclipse.emf.common.notify.Notifier.class);\r\n\t\tthis.addPortSpecification(PortType.IN, \"model_2\", false, org.eclipse.emf.common.notify.Notifier.class);\r\n\t\tthis.addPortSpecification(PortType.OUT, \"bool\", false);" });
+		addAnnotation(getCompareModels__Execute__Map_Map(), source, new String[] { "body",
+				"\t\t// Local variable to carry the result.\r\n\t\tboolean result = false;\r\n\r\n\t\t// Check if the given models are actually the same model.\r\n\t\tif (inputs.get(\"model_1\") == inputs.get(\"model_2\")) {\r\n\t\t\tresult = true;\r\n\t\t} else {\r\n\r\n\t\t\t// Setup the matching engine.\r\n\t\t\tIMatchEngine.Factory factory = new MatchEngineFactoryImpl(\r\n\t\t\t\t\tUseIdentifiers.NEVER);\r\n\t\t\tIMatchEngine.Factory.Registry matchEngineRegistry = new MatchEngineFactoryRegistryImpl();\r\n\t\t\tmatchEngineRegistry.add(factory);\r\n\t\t\tIComparisonScope scope = new DefaultComparisonScope(\r\n\t\t\t\t\t(Notifier) inputs.get(\"model_1\"), (Notifier) inputs.get(\"model_2\"), null);\r\n\r\n\t\t\t// Avoid order checking for unordered containments.\r\n\t\t\tIDiffProcessor diffProcessor = new DiffBuilder();\r\n\t\t\tIDiffEngine diffEngine = new DefaultDiffEngine(diffProcessor) {\r\n\t\t\t\t@Override\r\n\t\t\t\tprotected FeatureFilter createFeatureFilter() {\r\n\t\t\t\t\treturn new FeatureFilter() {\r\n\t\t\t\t\t\t@Override\r\n\t\t\t\t\t\tpublic boolean checkForOrderingChanges(\r\n\t\t\t\t\t\t\t\tEStructuralFeature feature) {\r\n\t\t\t\t\t\t\treturn feature.isMany() && feature.isOrdered();\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t};\r\n\t\t\t\t}\r\n\t\t\t};\r\n\r\n\t\t\tComparison comparison = EMFCompare.builder()\r\n\t\t\t\t\t.setMatchEngineFactoryRegistry(matchEngineRegistry)\r\n\t\t\t\t\t.setDiffEngine(diffEngine).build().compare(scope);\r\n\r\n\t\t\tOutputStream stream = new OutputStream() {\r\n\r\n\t\t\t\tprivate StringBuilder builder = new StringBuilder();\r\n\r\n\t\t\t\t@Override\r\n\t\t\t\tpublic void write(int b) throws IOException {\r\n\t\t\t\t\tbuilder.append((char) b);\r\n\t\t\t\t}\r\n\r\n\t\t\t\t@Override\r\n\t\t\t\tpublic String toString() {\r\n\t\t\t\t\treturn builder.toString();\r\n\t\t\t\t}\r\n\r\n\t\t\t};\r\n\r\n\t\t\tEMFComparePrettyPrinter.printDifferences(comparison,\r\n\t\t\t\t\tnew PrintStream(stream));\r\n\r\n\t\t\tif (comparison.getDifferences().isEmpty()) {\r\n\t\t\t\tresult = true;\r\n\t\t\t}\r\n\t\t}\r\n\r\n\t\t// Wrap the result up and put it on the output port.\r\n\t\toutputs.put(\"bool\", new Boolean(result));\r\n\r\n\t\treturn;" });
+		addAnnotation(getValidateModel__Initialize(), source, new String[] { "body",
+				"\t\tthis.setLabel(\"Validate Model\");\r\n\t\tthis.addPortSpecification(PortType.IN, \"model\", false,\r\n\t\t\t\torg.eclipse.emf.ecore.EObject.class);\r\n\t\tthis.addPortSpecification(PortType.OUT, \"bool\", false,\r\n\t\t\t\tjava.lang.Boolean.class);" });
+		addAnnotation(getValidateModel__Execute__Map_Map(), source, new String[] { "body",
+				"\t\t// TODO Maybe also get a BatchValidator, see ValidateAction.\r\n\t\t// Validate using a Diagnostic instance.\r\n\t\tDiagnostic diagnostic = Diagnostician.INSTANCE\r\n\t\t\t\t.validate((EObject) inputs.get(\"model\"));\r\n\r\n\t\tboolean result = true;\r\n\t\tif (diagnostic.getSeverity() == Diagnostic.ERROR) {\r\n\t\t\tresult = false;\r\n\t\t}\r\n\r\n\t\t// Wrap the result up and put it on the output port.\r\n\t\toutputs.put(\"bool\", new Boolean(result));\r\n\r\n\t\treturn;" });
+		addAnnotation(getSaveModel__Initialize(), source, new String[] { "body",
+				"\t\tthis.setLabel(\"Save Model\");\r\n\t\tthis.addPortSpecification(PortType.IN, \"model\", false, org.eclipse.emf.ecore.EObject.class);" });
+		addAnnotation(getSaveModel__Execute__Map_Map(), source, new String[] { "body",
+				"\t\t// Create the URI.\r\n\t\tURI realURI = URIConversion.convert(URI.createURI(this.getUri()));\r\n\r\n\t\t// Only write to resource links.\r\n\t\tif (!realURI.isPlatformResource()) {\r\n\t\t\treturn;\r\n\t\t}\r\n\r\n\t\t// Create a XMIResourceFactory for the extension.\r\n\t\tif (realURI.fileExtension() != null) {\r\n\t\t\tResource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;\r\n\t\t\tMap<String, Object> m = reg.getExtensionToFactoryMap();\r\n\t\t\tm.put(realURI.fileExtension(), new XMIResourceFactoryImpl());\r\n\t\t}\r\n\r\n\t\t// Create a resource set.\r\n\t\tResourceSet resSet = new ResourceSetImpl();\r\n\t\tResource resource = resSet.createResource(realURI.trimFragment());\r\n\t\tresource.getContents().add((EObject) inputs.get(\"model\"));\r\n\r\n\t\t// Save the model.\r\n\t\tresource.save(Collections.EMPTY_MAP);\r\n\r\n\t\treturn;" });
+		addAnnotation(getTransformation__Initialize(), source,
+				new String[] { "body", "this.setLabel(\"Transformation\");" });
+		addAnnotation(getTransformation__Execute__Map_Map(), source, new String[] { "body",
+				"\t\tURI realURI = URIConversion.convert(URI.createURI(this.getUri()));\r\n\t\tTransformationExecutor executor = new TransformationExecutor(realURI);\r\n\r\n\t\tExecutionContextImpl context;\r\n\t\tIStatus status;\r\n\r\n\t\tstatus = BasicDiagnostic.toIStatus(executor.loadTransformation());\r\n\r\n\t\tif (!status.isOK()) {\r\n\t\t\tthrow new ExecutionException(status.getMessage());\r\n\t\t}\r\n\r\n\t\tcontext = new ExecutionContextImpl();\r\n\r\n\t\t// Set extents, i.e. the model parameters.\r\n\t\tBasicModelExtent[] extents = new BasicModelExtent[this\r\n\t\t\t\t.getParameterOrder().size()];\r\n\t\tint i = 0;\r\n\t\tfor (PortSpecification port : this.getParameterOrder()) {\r\n\t\t\tBasicModelExtent extent = new BasicModelExtent();\r\n\r\n\t\t\tif (port.getType() == PortType.IN) {\r\n\t\t\t\textent.add((EObject) inputs.get(port.getName()));\r\n\t\t\t} else if (port.getType() == PortType.INOUT) {\r\n\t\t\t\t// Copy the EObject to avoid side effects.\r\n\t\t\t\tCopier copier = new Copier();\r\n\t\t\t\tEObject result = copier.copy((EObject) inputs.get(port.getName()));\r\n\t\t\t\tcopier.copyReferences();\r\n\t\t\t\textent.add(result);\r\n\t\t\t}\r\n\r\n\t\t\textents[i] = extent;\r\n\r\n\t\t\ti++;\r\n\t\t}\r\n\r\n\t\t// Set configuration properties. They arrive in an EObject wrapper\r\n\t\t// as a string, they are parsed by QVTo.\r\n\t\tfor (String property : this.getConfigProperties()) {\r\n\t\t\tif (inputs.containsKey(property)) {\r\n\t\t\t\tcontext.setConfigProperty(property,\r\n\t\t\t\t\t\t(String) inputs.get(property));\r\n\t\t\t}\r\n\t\t}\r\n\r\n\t\t// Execute the transformation.\r\n\t\tOutputStreamWriter outStream = new OutputStreamWriter(System.out);\r\n\t\tLog log = new WriterLog(outStream);\r\n\t\tcontext.setLog(log);\r\n\t\tExecutionDiagnostic diagnostic = executor.execute(context, extents);\r\n\r\n\t\t// Check if everything went fine.\r\n\t\tif (diagnostic.getSeverity() == Diagnostic.ERROR) {\r\n\t\t\tthrow new ExecutionException(\"Transformation failed: \"\r\n\t\t\t\t\t+ diagnostic.getMessage());\r\n\t\t}\r\n\r\n\t\t// Get the output.\r\n\t\ti = 0;\r\n\t\tfor (PortSpecification port : this.getParameterOrder()) {\r\n\t\t\t// System.out.println(i + \" \" + port.getName() + \" (\"\r\n\t\t\t// + port.getType() + \"): \"\r\n\t\t\t// + extents[i].getContents().get(0));\r\n\t\t\tif (port.getType() == PortType.OUT\r\n\t\t\t\t\t|| port.getType() == PortType.INOUT) {\r\n\t\t\t\toutputs.put(port.getName(), extents[i].getContents().get(0));\r\n\t\t\t}\r\n\r\n\t\t\ti++;\r\n\t\t}\r\n\r\n\t\treturn;" });
+		addAnnotation(getTransformation__NotifyChanged__Object(), source, new String[] { "body",
+				"\t\ttry {\r\n\t\t\tNotification n = (Notification) notification;\r\n\t\t\tEAttribute attr = (EAttribute) n.getFeature();\r\n\r\n\t\t\tif (n.getEventType() == Notification.SET && attr.getName() == \"uri\") {\r\n\t\t\t\tthis.getPortSpecifications().clear();\r\n\t\t\t\tthis.getParameterOrder().clear();\r\n\t\t\t\tthis.getConfigProperties().clear();\r\n\r\n\t\t\t\t// Load transformation Ecore in order to get the port count\r\n\t\t\t\t// required. (http://www.eclipse.org/forums/index.php/t/478345/)\r\n\t\t\t\tURI realURI = URI.createURI(this.uri);\r\n\t\t\t\tResourceSet resSet = new ResourceSetImpl();\r\n\t\t\t\tResource resource = resSet.getResource(realURI.trimFragment(),\r\n\t\t\t\t\t\ttrue);\r\n\t\t\t\tEObject result = null;\r\n\r\n\t\t\t\tif (realURI.hasFragment()) {\r\n\t\t\t\t\tresult = resource.getEObject(realURI.fragment());\r\n\t\t\t\t}\r\n\r\n\t\t\t\tOperationalTransformation trans = (OperationalTransformation) (result != null ? result\r\n\t\t\t\t\t\t: resource.getContents().get(0));\r\n\r\n\t\t\t\tEList<ModelParameter> params = trans.getModelParameter();\r\n\r\n\t\t\t\tfor (ModelParameter param : params) {\r\n\t\t\t\t\tPortType type = PortType.IN;\r\n\t\t\t\t\tif (param.getKind() == DirectionKind.OUT) {\r\n\t\t\t\t\t\ttype = PortType.OUT;\r\n\t\t\t\t\t} else if (param.getKind() == DirectionKind.INOUT) {\r\n\t\t\t\t\t\ttype = PortType.INOUT;\r\n\t\t\t\t\t}\r\n\t\t\t\t\tPortSpecification spec = this.addPortSpecification(type,\r\n\t\t\t\t\t\t\tparam.getName(), false, org.eclipse.emf.ecore.EObject.class);\r\n\t\t\t\t\tthis.getParameterOrder().add(spec);\r\n\t\t\t\t}\r\n\r\n\t\t\t\t// Add configuration properties.\r\n\t\t\t\tthis.getConfigProperties().clear();\r\n\t\t\t\tEList<EStructuralFeature> props = trans.getConfigProperty();\r\n\t\t\t\tfor (EStructuralFeature feature : props) {\r\n\t\t\t\t\tthis.addPortSpecification(PortType.IN, feature.getName(),\r\n\t\t\t\t\t\t\ttrue, java.lang.String.class);\r\n\t\t\t\t\tthis.getConfigProperties().add(feature.getName());\r\n\t\t\t\t}\r\n\r\n\t\t\t\t// Return true to signal that the ports changed and need to\r\n\t\t\t\t// be rebuilt.\r\n\t\t\t\treturn true;\r\n\t\t\t}\r\n\t\t} catch (Exception e) {\r\n\t\t\te.printStackTrace();\r\n\t\t}\r\n\r\n\t\treturn false;" });
+		addAnnotation(getExecuteUPPAAL__Initialize(), source, new String[] { "body",
+				"\t\tthis.setLabel(\"Check UPPAAL\");\r\n\t\tthis.addPortSpecification(PortType.IN, \"nta\", false,\r\n\t\t\t\tde.uni_paderborn.uppaal.NTA.class);\r\n\t\tthis.addPortSpecification(PortType.IN, \"property_repository\", false,\r\n\t\t\t\tde.uni_paderborn.uppaal.requirements.PropertyRepository.class);\r\n\t\tthis.addPortSpecification(\r\n\t\t\t\tPortType.IN,\r\n\t\t\t\t\"options\",\r\n\t\t\t\ttrue,\r\n\t\t\t\tde.uni_paderborn.fujaba.muml.verification.uppaal.options.Options.class);\r\n\t\tthis.addPortSpecification(PortType.OUT, \"trace_repository\", false);" });
+		addAnnotation(getExecuteUPPAAL__Execute__Map_Map(), source, new String[] { "body",
+				"\t\t// Check if we have custom options or use the default ones.\r\n\t\tCoordinationProtocolOptions options;\r\n\t\tif (inputs.containsKey(\"options\") && inputs.get(\"options\") != null) {\r\n\t\t\toptions = (CoordinationProtocolOptions) inputs.get(\"options\");\r\n\t\t} else {\r\n\t\t\toptions = OptionsFactory.eINSTANCE\r\n\t\t\t\t\t.createCoordinationProtocolOptions();\r\n\t\t\toptions.setTraceOptions(TraceOptions.NONE);\r\n\t\t}\r\n\r\n\t\t// Start the job that serialized and then verifies the NTA.\r\n\t\tVerifyTAJob job = new VerifyTAJob((NTA) inputs.get(\"nta\"),\r\n\t\t\t\t(PropertyRepository) inputs.get(\"property_repository\"), options);\r\n\t\tIStatus status = job.execute(new NullProgressMonitor());\r\n\r\n\t\t// Throw an exception if something went wrong.\r\n\t\tif (!status.isOK()) {\r\n\t\t\tthrow new ExecutionException(status.getMessage());\r\n\t\t}\r\n\r\n\t\t// Put the traces on the output port and return.\r\n\t\toutputs.put(\"trace_repository\", job.getTraceRepository());\r\n\t\treturn;" });
+		addAnnotation(getPrimitiveString__Initialize(), source, new String[] { "body",
+				"this.setLabel(\"Primitive String\");\r\nthis.addPortSpecification(PortType.OUT, \"string\", false);" });
+		addAnnotation(getPrimitiveString__Execute__Map_Map(), source, new String[] { "body",
+				"\t\t// Put the wrapped string onto the output.\r\n\t\toutputs.put(\"string\", this.getValue());\r\n\r\n\t\treturn;" });
+		addAnnotation(getAssertBool__Initialize(), source, new String[] { "body",
+				"\t\tthis.setLabel(\"Assert Bool\");\r\n\t\tthis.addPortSpecification(PortType.IN, \"bool\", false,\r\n\t\t\t\tjava.lang.Boolean.class);" });
+		addAnnotation(getAssertBool__Execute__Map_Map(), source, new String[] { "body",
+				"\t\t// Get the boolean value.\r\n\t\tboolean bool = ((Boolean) inputs.get(\"bool\")).booleanValue();\r\n\r\n\t\t// Throw an exception if it does not match the assertion.\r\n\t\tif (bool != this.assertion) {\r\n\t\t\tthrow new ExecutionException(\"Expected \"\r\n\t\t\t\t\t+ Boolean.toString(this.assertion) + \", but got \"\r\n\t\t\t\t\t+ Boolean.toString(bool));\r\n\t\t}" });
+		addAnnotation(getAssertDiagnosticTrace__Initialize(), source, new String[] { "body",
+				"\t\tthis.setLabel(\"Assert DiagnosticTrace\");\r\n\t\tthis.addPortSpecification(\r\n\t\t\t\tPortType.IN,\r\n\t\t\t\t\"trace_repository\",\r\n\t\t\t\tfalse,\r\n\t\t\t\tde.uni_paderborn.uppaal.trace.diagnosticTrace.TraceRepository.class);" });
+		addAnnotation(getAssertDiagnosticTrace__Execute__Map_Map(), source, new String[] { "body",
+				"\t\t// Get the repository.\r\n\t\tTraceRepository repo = (TraceRepository) inputs.get(\"trace_repository\");\r\n\r\n\t\t// Make sure we know if we want all the properties to verify or not.\r\n\t\tResult expected;\r\n\t\tString alpha, beta;\r\n\t\tif (this.assertion) {\r\n\t\t\texpected = Result.SUCCESS;\r\n\t\t\talpha = \"SUCCESS\";\r\n\t\t\tbeta = \"FAILURE\";\r\n\t\t} else {\r\n\t\t\texpected = Result.FAILURE;\r\n\t\t\talpha = \"FAILURE\";\r\n\t\t\tbeta = \"SUCCESS\";\r\n\t\t}\r\n\r\n\t\t// Check each property.\r\n\t\tString error = \"\";\r\n\t\tfor (Trace item : repo.getTraces()) {\r\n\t\t\tif (!item.getResult().equals(expected)) {\r\n\t\t\t\terror += \"[Property \" + item.getProperty() + \" at line \"\r\n\t\t\t\t\t\t+ item.getLine() + \"] \";\r\n\t\t\t}\r\n\t\t}\r\n\r\n\t\t// Throw an exception if errors occurred.\r\n\t\tif (!error.equals(\"\")) {\r\n\t\t\tthrow new ExecutionException(\"Expected \" + alpha + \", but got \"\r\n\t\t\t\t\t+ beta + \" on \" + error);\r\n\t\t}" });
+		addAnnotation(getAssertResult__Initialize(), source, new String[] { "body",
+				"\t\tthis.setLabel(\"Assert Result\");\r\n\t\tthis.addPortSpecification(\r\n\t\t\t\tPortType.IN,\r\n\t\t\t\t\"property_result_repository\",\r\n\t\t\t\tfalse,\r\n\t\t\t\tde.uni_paderborn.fujaba.muml.verification.uppaal.results.PropertyResultRepository.class);" });
+		addAnnotation(getAssertResult__Execute__Map_Map(), source, new String[] { "body",
+				"\t\t// Get the repository of the results.\r\n\t\tPropertyResultRepository repo = (PropertyResultRepository) inputs\r\n\t\t\t\t.get(\"property_result_repository\");\r\n\r\n\t\t// Make sure we know if we want all the properties to verify or not.\r\n\t\tString alpha, beta;\r\n\t\tif (this.assertion) {\r\n\t\t\talpha = \"FULFILLED\";\r\n\t\t\tbeta = \"NOT FULFILLED\";\r\n\t\t} else {\r\n\t\t\talpha = \"NOT FULFILLED\";\r\n\t\t\tbeta = \"FULFILLED\";\r\n\t\t}\r\n\r\n\t\t// Check each property.\r\n\t\tString error = \"\";\r\n\t\tfor (PropertyResult result : repo.getResults()) {\r\n\t\t\tif (result.isFulfilled() != this.assertion) {\r\n\t\t\t\terror += \"[Comment \" + result.getProperty().getComment() + \"] \";\r\n\t\t\t}\r\n\t\t}\r\n\r\n\t\t// Throw an exception if errors occurred.\r\n\t\tif (!error.equals(\"\")) {\r\n\t\t\tthrow new ExecutionException(\"Expected \" + alpha + \", but got \"\r\n\t\t\t\t\t+ beta + \" on \" + error);\r\n\t\t}" });
+		addAnnotation(getCheckMTCTL__Initialize(), source, new String[] { "body",
+				"\t\tthis.setLabel(\"Check MTCTL\");\r\n\t\tthis.addPortSpecification(PortType.IN, \"muml\", false,\r\n\t\t\t\tde.uni_paderborn.fujaba.modelinstance.RootNode.class);\r\n\t\tthis.addPortSpecification(\r\n\t\t\t\tPortType.IN,\r\n\t\t\t\t\"options\",\r\n\t\t\t\ttrue,\r\n\t\t\t\tde.uni_paderborn.fujaba.muml.verification.uppaal.options.Options.class);\r\n\t\tthis.addPortSpecification(PortType.OUT, \"results\", false);" });
+		addAnnotation(getCheckMTCTL__Execute__Map_Map(), source, new String[] { "body",
+				"\t\t// Do we even have properties to verify?\r\n\t\tif (\"\".equals(this.getProperties())) {\r\n\t\t\tthrow new ExecutionException(\"No properties to verify.\");\r\n\t\t}\r\n\r\n\t\t// Copy the MUML model so we do not destroy it.\r\n\t\tCopier copier = new Copier();\r\n\t\tRootNode muml = (RootNode) copier.copy((RootNode) inputs.get(\"muml\"));\r\n\t\tcopier.copyReferences();\r\n\r\n\t\t// Get the CoordinationProtocol category.\r\n\t\tModelElementCategory category = null;\r\n\t\tfor (ModelElementCategory cur : muml.getCategories()) {\r\n\t\t\tif (cur.getKey().equals(\r\n\t\t\t\t\t\"de.uni_paderborn.fujaba.muml.protocol.category\")) {\r\n\t\t\t\tcategory = cur;\r\n\t\t\t\tbreak;\r\n\t\t\t}\r\n\t\t}\r\n\t\tif (category == null) {\r\n\t\t\tthrow new ExecutionException(\r\n\t\t\t\t\t\"Model does not contain a CoordinationProtocol category.\");\r\n\t\t}\r\n\r\n\t\t// Look for a CoordinationProtocol that asks for a verification,\r\n\t\t// otherwise just choose any.\r\n\t\tCoordinationProtocol protocol = null;\r\n\t\tfor (ExtendableElement cur : category.getModelElements()) {\r\n\t\t\tprotocol = (CoordinationProtocol) cur;\r\n\r\n\t\t\tif (protocol\r\n\t\t\t\t\t.getExtension(de.uni_paderborn.fujaba.muml.verification.verificationExtension.VerificationExtensionPackage.eINSTANCE\r\n\t\t\t\t\t\t\t.getElementToVerifyExtension()) != null) {\r\n\t\t\t\tbreak;\r\n\t\t\t}\r\n\t\t}\r\n\t\tif (protocol == null) {\r\n\t\t\tthrow new ExecutionException(\r\n\t\t\t\t\t\"Model does not contain a CoordinationProtocol.\");\r\n\t\t}\r\n\r\n\t\t// Parse the PropertyRepository we have in the context of the protocol.\r\n\t\tPropertyRepository propertyRepository = (PropertyRepository) new Object() {\r\n\r\n\t\t\t@Inject\r\n\t\t\tprivate XtextResourceSet resourceSet;\r\n\r\n\t\t\tpublic EObject parse(CoordinationProtocol protocol,\r\n\t\t\t\t\tString properties) throws Exception {\r\n\t\t\t\t// Source: http://davehofmann.de/blog/?p=101\r\n\t\t\t\tInjector injector = Guice\r\n\t\t\t\t\t\t.createInjector(new MtctlRuntimeModule());\r\n\t\t\t\tinjector.injectMembers(this);\r\n\t\t\t\tthis.resourceSet.addLoadOption(\r\n\t\t\t\t\t\tXtextResource.OPTION_RESOLVE_ALL, Boolean.TRUE);\r\n\r\n\t\t\t\t// Parse the given properties and return it.\r\n\t\t\t\tMtctlScopeProvider.getInstance().setScopeForEObject(protocol);\r\n\t\t\t\tResource resource = resourceSet.createResource(URI\r\n\t\t\t\t\t\t.createURI(\"dummy:/dummy.mtctl\"));\r\n\t\t\t\tresource.load(\r\n\t\t\t\t\t\tnew ByteArrayInputStream(properties\r\n\t\t\t\t\t\t\t\t.getBytes(StandardCharsets.UTF_8)), resourceSet\r\n\t\t\t\t\t\t\t\t.getLoadOptions());\r\n\t\t\t\treturn resource.getContents().get(0);\r\n\t\t\t}\r\n\t\t}.parse(protocol, this.getProperties());\r\n\r\n\t\t// Replace all existing PropertyRepositories by the one we just created.\r\n\t\tprotocol.getVerificationConstraintRepositories().clear();\r\n\t\tprotocol.getVerificationConstraintRepositories()\r\n\t\t\t\t.add(propertyRepository);\r\n\r\n\t\t// Verify for results (= apply the transformation by the MTCTL people).\r\n\t\tURI realURI = URI\r\n\t\t\t\t.createURI(\"platform:/plugin/de.uni_paderborn.fujaba.muml.verification.uppaal.transformation/transforms/VerifiableElement2Results.qvto\");\r\n\t\tTransformationExecutor executor = new TransformationExecutor(realURI);\r\n\t\tExecutionContextImpl context;\r\n\t\tIStatus status;\r\n\t\tstatus = BasicDiagnostic.toIStatus(executor.loadTransformation());\r\n\t\tif (!status.isOK()) {\r\n\t\t\tthrow new ExecutionException(status.getMessage());\r\n\t\t}\r\n\t\tcontext = new ExecutionContextImpl();\r\n\r\n\t\t// Check if we have custom options or use the default ones.\r\n\t\tCoordinationProtocolOptions options;\r\n\t\tif (inputs.containsKey(\"options\") && inputs.get(\"options\") != null) {\r\n\t\t\toptions = (CoordinationProtocolOptions) inputs.get(\"options\");\r\n\t\t} else {\r\n\t\t\toptions = OptionsFactory.eINSTANCE\r\n\t\t\t\t\t.createCoordinationProtocolOptions();\r\n\t\t\toptions.setTraceOptions(TraceOptions.NONE);\r\n\t\t}\r\n\r\n\t\t// Create the extents.\r\n\t\tBasicModelExtent mumlExtent = new BasicModelExtent();\r\n\t\tmumlExtent.add(muml);\r\n\t\tBasicModelExtent optionsExtent = new BasicModelExtent();\r\n\t\toptionsExtent.add(options);\r\n\t\tBasicModelExtent resultExtent = new BasicModelExtent();\r\n\r\n\t\t// Execute the transformation.\r\n\t\tOutputStreamWriter outStream = new OutputStreamWriter(System.out);\r\n\t\tLog log = new WriterLog(outStream);\r\n\t\tcontext.setLog(log);\r\n\t\texecutor.execute(context, mumlExtent, optionsExtent, resultExtent);\r\n\r\n\t\t// Get the output.\r\n\t\toutputs.put(\"results\", resultExtent.getContents().get(0));" });
 	}
 
 } // SpecificationPackageImpl

@@ -28,14 +28,13 @@ import org.muml.testlanguage.specification.SpecificationPackage;
 
 /**
  * This is the item provider adapter for a
- * {@link org.muml.testlanguage.specification.NodeSpecification}
- * object. <!-- begin-user-doc --> <!-- end-user-doc -->
+ * {@link org.muml.testlanguage.specification.NodeSpecification} object. <!--
+ * begin-user-doc --> <!-- end-user-doc -->
  * 
  * @generated
  */
-public class NodeSpecificationItemProvider extends ItemProviderAdapter
-		implements IEditingDomainItemProvider, IStructuredItemContentProvider,
-		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class NodeSpecificationItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
+		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
@@ -69,17 +68,14 @@ public class NodeSpecificationItemProvider extends ItemProviderAdapter
 	 * @generated
 	 */
 	protected void addLabelPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_NodeSpecification_label_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_NodeSpecification_label_feature",
-						"_UI_NodeSpecification_type"),
-				SpecificationPackage.Literals.NODE_SPECIFICATION__LABEL, false,
-				false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				getString("_UI_PresetPropertiesPropertyCategory"), null));
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_NodeSpecification_label_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_NodeSpecification_label_feature",
+								"_UI_NodeSpecification_type"),
+						SpecificationPackage.Literals.NODE_SPECIFICATION__LABEL, false, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, getString("_UI_PresetPropertiesPropertyCategory"),
+						null));
 	}
 
 	/**
@@ -93,12 +89,10 @@ public class NodeSpecificationItemProvider extends ItemProviderAdapter
 	 * @generated
 	 */
 	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(
-			Object object) {
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures
-					.add(SpecificationPackage.Literals.NODE_SPECIFICATION__PORT_SPECIFICATIONS);
+			childrenFeatures.add(SpecificationPackage.Literals.NODE_SPECIFICATION__PORT_SPECIFICATIONS);
 		}
 		return childrenFeatures;
 	}
@@ -125,8 +119,7 @@ public class NodeSpecificationItemProvider extends ItemProviderAdapter
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object,
-				getResourceLocator().getImage("full/obj16/NodeSpecification"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/NodeSpecification"));
 	}
 
 	/**
@@ -156,12 +149,10 @@ public class NodeSpecificationItemProvider extends ItemProviderAdapter
 
 		switch (notification.getFeatureID(NodeSpecification.class)) {
 		case SpecificationPackage.NODE_SPECIFICATION__LABEL:
-			fireNotifyChanged(new ViewerNotification(notification,
-					notification.getNotifier(), false, true));
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		case SpecificationPackage.NODE_SPECIFICATION__PORT_SPECIFICATIONS:
-			fireNotifyChanged(new ViewerNotification(notification,
-					notification.getNotifier(), true, false));
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
 		super.notifyChanged(notification);
@@ -175,15 +166,12 @@ public class NodeSpecificationItemProvider extends ItemProviderAdapter
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(
-			Collection<Object> newChildDescriptors, Object object) {
+	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
 		newChildDescriptors
-				.add(createChildParameter(
-						SpecificationPackage.Literals.NODE_SPECIFICATION__PORT_SPECIFICATIONS,
-						SpecificationFactory.eINSTANCE
-								.createPortSpecification()));
+				.add(createChildParameter(SpecificationPackage.Literals.NODE_SPECIFICATION__PORT_SPECIFICATIONS,
+						SpecificationFactory.eINSTANCE.createPortSpecification()));
 	}
 
 	/**

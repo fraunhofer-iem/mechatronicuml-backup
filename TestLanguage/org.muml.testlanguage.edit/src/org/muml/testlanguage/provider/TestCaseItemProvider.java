@@ -26,8 +26,8 @@ import org.muml.testlanguage.TestLanguagePackage;
 
 /**
  * This is the item provider adapter for a
- * {@link org.muml.testlanguage.TestCase} object. <!--
- * begin-user-doc --> <!-- end-user-doc -->
+ * {@link org.muml.testlanguage.TestCase} object. <!-- begin-user-doc --> <!--
+ * end-user-doc -->
  * 
  * @generated
  */
