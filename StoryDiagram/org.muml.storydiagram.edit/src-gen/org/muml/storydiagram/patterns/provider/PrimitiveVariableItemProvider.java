@@ -12,12 +12,7 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.muml.storydiagram.patterns.PatternsPackage;
 import org.muml.storydiagram.patterns.PrimitiveVariable;
 
@@ -27,9 +22,7 @@ import org.muml.storydiagram.patterns.PrimitiveVariable;
  * <!-- end-user-doc -->
  * @generated
  */
-public class PrimitiveVariableItemProvider extends AbstractVariableItemProvider
-		implements IEditingDomainItemProvider, IStructuredItemContentProvider,
-		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class PrimitiveVariableItemProvider extends AbstractVariableItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -63,16 +56,19 @@ public class PrimitiveVariableItemProvider extends AbstractVariableItemProvider
 	 * @generated
 	 */
 	protected void addClassifierPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_PrimitiveVariable_classifier_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_PrimitiveVariable_classifier_feature",
-						"_UI_PrimitiveVariable_type"),
-				PatternsPackage.Literals.PRIMITIVE_VARIABLE__CLASSIFIER, true,
-				false, true, null, null, null));
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_PrimitiveVariable_classifier_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_PrimitiveVariable_classifier_feature", "_UI_PrimitiveVariable_type"),
+				 PatternsPackage.Literals.PRIMITIVE_VARIABLE__CLASSIFIER,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
@@ -90,16 +86,6 @@ public class PrimitiveVariableItemProvider extends AbstractVariableItemProvider
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected boolean shouldComposeCreationImage() {
-		return true;
-	}
-
-	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -107,9 +93,10 @@ public class PrimitiveVariableItemProvider extends AbstractVariableItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((PrimitiveVariable) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_PrimitiveVariable_type")
-				: getString("_UI_PrimitiveVariable_type") + " " + label;
+		String label = ((PrimitiveVariable)object).getName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_PrimitiveVariable_type") :
+			getString("_UI_PrimitiveVariable_type") + " " + label;
 	}
 
 	/**

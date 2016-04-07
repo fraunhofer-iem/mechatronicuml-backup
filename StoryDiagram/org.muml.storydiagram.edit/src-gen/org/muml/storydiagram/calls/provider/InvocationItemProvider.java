@@ -14,12 +14,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.muml.core.CorePackage;
 import org.muml.core.provider.CommentableElementItemProvider;
@@ -35,9 +30,7 @@ import org.muml.storydiagram.provider.StorydiagramsEditPlugin;
  * <!-- end-user-doc -->
  * @generated
  */
-public class InvocationItemProvider extends CommentableElementItemProvider
-		implements IEditingDomainItemProvider, IStructuredItemContentProvider,
-		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class InvocationItemProvider extends CommentableElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -71,17 +64,19 @@ public class InvocationItemProvider extends CommentableElementItemProvider
 	 * @generated
 	 */
 	protected void addCalleePropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(
-						((ComposeableAdapterFactory) adapterFactory)
-								.getRootAdapterFactory(),
-						getResourceLocator(),
-						getString("_UI_Invocation_callee_feature"),
-						getString("_UI_PropertyDescriptor_description",
-								"_UI_Invocation_callee_feature",
-								"_UI_Invocation_type"),
-						CallsPackage.Literals.INVOCATION__CALLEE, true, false,
-						true, null, null, null));
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Invocation_callee_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Invocation_callee_feature", "_UI_Invocation_type"),
+				 CallsPackage.Literals.INVOCATION__CALLEE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
@@ -108,8 +103,7 @@ public class InvocationItemProvider extends CommentableElementItemProvider
 			Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures
-					.add(CallsPackage.Literals.INVOCATION__OWNED_PARAMETER_BINDINGS);
+			childrenFeatures.add(CallsPackage.Literals.INVOCATION__OWNED_PARAMETER_BINDINGS);
 		}
 		return childrenFeatures;
 	}
@@ -122,9 +116,10 @@ public class InvocationItemProvider extends CommentableElementItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Invocation) object).getComment();
-		return label == null || label.length() == 0 ? getString("_UI_Invocation_type")
-				: getString("_UI_Invocation_type") + " " + label;
+		String label = ((Invocation)object).getComment();
+		return label == null || label.length() == 0 ?
+			getString("_UI_Invocation_type") :
+			getString("_UI_Invocation_type") + " " + label;
 	}
 
 	/**
@@ -139,10 +134,9 @@ public class InvocationItemProvider extends CommentableElementItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Invocation.class)) {
-		case CallsPackage.INVOCATION__OWNED_PARAMETER_BINDINGS:
-			fireNotifyChanged(new ViewerNotification(notification,
-					notification.getNotifier(), true, false));
-			return;
+			case CallsPackage.INVOCATION__OWNED_PARAMETER_BINDINGS:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+				return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -161,16 +155,6 @@ public class InvocationItemProvider extends CommentableElementItemProvider
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected boolean shouldComposeCreationImage() {
-		return true;
-	}
-
-	/**
 	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
@@ -182,17 +166,20 @@ public class InvocationItemProvider extends CommentableElementItemProvider
 			Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(
-				CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
-				CallsFactory.eINSTANCE.createParameterExtension()));
+		newChildDescriptors.add
+			(createChildParameter
+				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSIONS,
+				 CallsFactory.eINSTANCE.createParameterExtension()));
 
-		newChildDescriptors.add(createChildParameter(
-				CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
-				ActivitiesFactory.eINSTANCE.createOperationExtension()));
+		newChildDescriptors.add
+			(createChildParameter
+				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSIONS,
+				 ActivitiesFactory.eINSTANCE.createOperationExtension()));
 
-		newChildDescriptors.add(createChildParameter(
-				CallsPackage.Literals.INVOCATION__OWNED_PARAMETER_BINDINGS,
-				CallsFactory.eINSTANCE.createParameterBinding()));
+		newChildDescriptors.add
+			(createChildParameter
+				(CallsPackage.Literals.INVOCATION__OWNED_PARAMETER_BINDINGS,
+				 CallsFactory.eINSTANCE.createParameterBinding()));
 	}
 
 }

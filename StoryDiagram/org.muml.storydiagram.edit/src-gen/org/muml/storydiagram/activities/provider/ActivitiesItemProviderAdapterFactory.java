@@ -177,8 +177,7 @@ public class ActivitiesItemProviderAdapterFactory extends
 	public Object adapt(Object object, Object type) {
 		if (isFactoryForType(type)) {
 			Object adapter = super.adapt(object, type);
-			if (!(type instanceof Class<?>)
-					|| (((Class<?>) type).isInstance(adapter))) {
+			if (!(type instanceof Class<?>) || (((Class<?>)type).isInstance(adapter))) {
 				return adapter;
 			}
 		}
@@ -431,8 +430,7 @@ public class ActivitiesItemProviderAdapterFactory extends
 	 * @generated
 	 */
 	public ComposeableAdapterFactory getRootAdapterFactory() {
-		return parentAdapterFactory == null ? this : parentAdapterFactory
-				.getRootAdapterFactory();
+		return parentAdapterFactory == null ? this : parentAdapterFactory.getRootAdapterFactory();
 	}
 
 	/**
@@ -498,32 +496,19 @@ public class ActivitiesItemProviderAdapterFactory extends
 	 * @generated
 	 */
 	public void dispose() {
-		if (exceptionVariableItemProvider != null)
-			exceptionVariableItemProvider.dispose();
-		if (activityEdgeItemProvider != null)
-			activityEdgeItemProvider.dispose();
-		if (activityItemProvider != null)
-			activityItemProvider.dispose();
-		if (operationExtensionItemProvider != null)
-			operationExtensionItemProvider.dispose();
-		if (matchingStoryNodeItemProvider != null)
-			matchingStoryNodeItemProvider.dispose();
-		if (structuredNodeItemProvider != null)
-			structuredNodeItemProvider.dispose();
-		if (junctionNodeItemProvider != null)
-			junctionNodeItemProvider.dispose();
-		if (initialNodeItemProvider != null)
-			initialNodeItemProvider.dispose();
-		if (statementNodeItemProvider != null)
-			statementNodeItemProvider.dispose();
-		if (activityFinalNodeItemProvider != null)
-			activityFinalNodeItemProvider.dispose();
-		if (activityCallNodeItemProvider != null)
-			activityCallNodeItemProvider.dispose();
-		if (modifyingStoryNodeItemProvider != null)
-			modifyingStoryNodeItemProvider.dispose();
-		if (flowFinalNodeItemProvider != null)
-			flowFinalNodeItemProvider.dispose();
+		if (exceptionVariableItemProvider != null) exceptionVariableItemProvider.dispose();
+		if (activityEdgeItemProvider != null) activityEdgeItemProvider.dispose();
+		if (activityItemProvider != null) activityItemProvider.dispose();
+		if (operationExtensionItemProvider != null) operationExtensionItemProvider.dispose();
+		if (matchingStoryNodeItemProvider != null) matchingStoryNodeItemProvider.dispose();
+		if (structuredNodeItemProvider != null) structuredNodeItemProvider.dispose();
+		if (junctionNodeItemProvider != null) junctionNodeItemProvider.dispose();
+		if (initialNodeItemProvider != null) initialNodeItemProvider.dispose();
+		if (statementNodeItemProvider != null) statementNodeItemProvider.dispose();
+		if (activityFinalNodeItemProvider != null) activityFinalNodeItemProvider.dispose();
+		if (activityCallNodeItemProvider != null) activityCallNodeItemProvider.dispose();
+		if (modifyingStoryNodeItemProvider != null) modifyingStoryNodeItemProvider.dispose();
+		if (flowFinalNodeItemProvider != null) flowFinalNodeItemProvider.dispose();
 	}
 
 }

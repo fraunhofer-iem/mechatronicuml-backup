@@ -13,12 +13,7 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.muml.storydiagram.activities.ActivitiesPackage;
 import org.muml.storydiagram.activities.ActivityCallNode;
@@ -31,9 +26,7 @@ import org.muml.storydiagram.calls.CallsPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ActivityCallNodeItemProvider extends ActivityNodeItemProvider
-		implements IEditingDomainItemProvider, IStructuredItemContentProvider,
-		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class ActivityCallNodeItemProvider extends ActivityNodeItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -68,17 +61,19 @@ public class ActivityCallNodeItemProvider extends ActivityNodeItemProvider
 	 * @generated
 	 */
 	protected void addCalleePropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(
-						((ComposeableAdapterFactory) adapterFactory)
-								.getRootAdapterFactory(),
-						getResourceLocator(),
-						getString("_UI_Invocation_callee_feature"),
-						getString("_UI_PropertyDescriptor_description",
-								"_UI_Invocation_callee_feature",
-								"_UI_Invocation_type"),
-						CallsPackage.Literals.INVOCATION__CALLEE, true, false,
-						true, null, null, null));
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Invocation_callee_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Invocation_callee_feature", "_UI_Invocation_type"),
+				 CallsPackage.Literals.INVOCATION__CALLEE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
@@ -88,16 +83,19 @@ public class ActivityCallNodeItemProvider extends ActivityNodeItemProvider
 	 * @generated
 	 */
 	protected void addCalledActivityPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_ActivityCallNode_calledActivity_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_ActivityCallNode_calledActivity_feature",
-						"_UI_ActivityCallNode_type"),
-				ActivitiesPackage.Literals.ACTIVITY_CALL_NODE__CALLED_ACTIVITY,
-				true, false, true, null, null, null));
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ActivityCallNode_calledActivity_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ActivityCallNode_calledActivity_feature", "_UI_ActivityCallNode_type"),
+				 ActivitiesPackage.Literals.ACTIVITY_CALL_NODE__CALLED_ACTIVITY,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
@@ -113,8 +111,7 @@ public class ActivityCallNodeItemProvider extends ActivityNodeItemProvider
 			Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures
-					.add(CallsPackage.Literals.INVOCATION__OWNED_PARAMETER_BINDINGS);
+			childrenFeatures.add(CallsPackage.Literals.INVOCATION__OWNED_PARAMETER_BINDINGS);
 		}
 		return childrenFeatures;
 	}
@@ -134,16 +131,6 @@ public class ActivityCallNodeItemProvider extends ActivityNodeItemProvider
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected boolean shouldComposeCreationImage() {
-		return true;
-	}
-
-	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -151,9 +138,10 @@ public class ActivityCallNodeItemProvider extends ActivityNodeItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ActivityCallNode) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_ActivityCallNode_type")
-				: getString("_UI_ActivityCallNode_type") + " " + label;
+		String label = ((ActivityCallNode)object).getName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_ActivityCallNode_type") :
+			getString("_UI_ActivityCallNode_type") + " " + label;
 	}
 
 	/**
@@ -168,10 +156,9 @@ public class ActivityCallNodeItemProvider extends ActivityNodeItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ActivityCallNode.class)) {
-		case ActivitiesPackage.ACTIVITY_CALL_NODE__OWNED_PARAMETER_BINDINGS:
-			fireNotifyChanged(new ViewerNotification(notification,
-					notification.getNotifier(), true, false));
-			return;
+			case ActivitiesPackage.ACTIVITY_CALL_NODE__OWNED_PARAMETER_BINDINGS:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+				return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -201,9 +188,10 @@ public class ActivityCallNodeItemProvider extends ActivityNodeItemProvider
 			Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(
-				CallsPackage.Literals.INVOCATION__OWNED_PARAMETER_BINDINGS,
-				CallsFactory.eINSTANCE.createParameterBinding()));
+		newChildDescriptors.add
+			(createChildParameter
+				(CallsPackage.Literals.INVOCATION__OWNED_PARAMETER_BINDINGS,
+				 CallsFactory.eINSTANCE.createParameterBinding()));
 	}
 
 }

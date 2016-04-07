@@ -111,8 +111,7 @@ public class TemplatesItemProviderAdapterFactory extends
 	public Object adapt(Object object, Object type) {
 		if (isFactoryForType(type)) {
 			Object adapter = super.adapt(object, type);
-			if (!(type instanceof Class<?>)
-					|| (((Class<?>) type).isInstance(adapter))) {
+			if (!(type instanceof Class<?>) || (((Class<?>)type).isInstance(adapter))) {
 				return adapter;
 			}
 		}
@@ -185,8 +184,7 @@ public class TemplatesItemProviderAdapterFactory extends
 	 * @generated
 	 */
 	public ComposeableAdapterFactory getRootAdapterFactory() {
-		return parentAdapterFactory == null ? this : parentAdapterFactory
-				.getRootAdapterFactory();
+		return parentAdapterFactory == null ? this : parentAdapterFactory.getRootAdapterFactory();
 	}
 
 	/**
@@ -252,12 +250,9 @@ public class TemplatesItemProviderAdapterFactory extends
 	 * @generated
 	 */
 	public void dispose() {
-		if (templateBindingItemProvider != null)
-			templateBindingItemProvider.dispose();
-		if (propertyBindingItemProvider != null)
-			propertyBindingItemProvider.dispose();
-		if (templateSignatureItemProvider != null)
-			templateSignatureItemProvider.dispose();
+		if (templateBindingItemProvider != null) templateBindingItemProvider.dispose();
+		if (propertyBindingItemProvider != null) propertyBindingItemProvider.dispose();
+		if (templateSignatureItemProvider != null) templateSignatureItemProvider.dispose();
 	}
 
 }

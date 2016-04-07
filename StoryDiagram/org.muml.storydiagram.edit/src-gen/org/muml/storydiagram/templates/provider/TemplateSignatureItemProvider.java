@@ -61,16 +61,6 @@ public class TemplateSignatureItemProvider extends ItemProviderAdapter
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected boolean shouldComposeCreationImage() {
-		return true;
-	}
-
-	/**
 	 * Return the resource locator for this item provider's resources.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -109,10 +99,8 @@ public class TemplateSignatureItemProvider extends ItemProviderAdapter
 			Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures
-					.add(TemplatesPackage.Literals.TEMPLATE_SIGNATURE__TEMPLATE_BINDING);
-			childrenFeatures
-					.add(TemplatesPackage.Literals.TEMPLATE_SIGNATURE__TYPE_PARAMETER);
+			childrenFeatures.add(TemplatesPackage.Literals.TEMPLATE_SIGNATURE__TEMPLATE_BINDING);
+			childrenFeatures.add(TemplatesPackage.Literals.TEMPLATE_SIGNATURE__TYPE_PARAMETER);
 		}
 		return childrenFeatures;
 	}
@@ -140,11 +128,10 @@ public class TemplateSignatureItemProvider extends ItemProviderAdapter
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(TemplateSignature.class)) {
-		case TemplatesPackage.TEMPLATE_SIGNATURE__TEMPLATE_BINDING:
-		case TemplatesPackage.TEMPLATE_SIGNATURE__TYPE_PARAMETER:
-			fireNotifyChanged(new ViewerNotification(notification,
-					notification.getNotifier(), true, false));
-			return;
+			case TemplatesPackage.TEMPLATE_SIGNATURE__TEMPLATE_BINDING:
+			case TemplatesPackage.TEMPLATE_SIGNATURE__TYPE_PARAMETER:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+				return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -174,21 +161,25 @@ public class TemplateSignatureItemProvider extends ItemProviderAdapter
 			Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(
-				TemplatesPackage.Literals.TEMPLATE_SIGNATURE__TEMPLATE_BINDING,
-				TemplatesFactory.eINSTANCE.createTemplateBinding()));
+		newChildDescriptors.add
+			(createChildParameter
+				(TemplatesPackage.Literals.TEMPLATE_SIGNATURE__TEMPLATE_BINDING,
+				 TemplatesFactory.eINSTANCE.createTemplateBinding()));
 
-		newChildDescriptors.add(createChildParameter(
-				TemplatesPackage.Literals.TEMPLATE_SIGNATURE__TYPE_PARAMETER,
-				EcoreFactory.eINSTANCE.createEClass()));
+		newChildDescriptors.add
+			(createChildParameter
+				(TemplatesPackage.Literals.TEMPLATE_SIGNATURE__TYPE_PARAMETER,
+				 EcoreFactory.eINSTANCE.createEClass()));
 
-		newChildDescriptors.add(createChildParameter(
-				TemplatesPackage.Literals.TEMPLATE_SIGNATURE__TYPE_PARAMETER,
-				EcoreFactory.eINSTANCE.createEDataType()));
+		newChildDescriptors.add
+			(createChildParameter
+				(TemplatesPackage.Literals.TEMPLATE_SIGNATURE__TYPE_PARAMETER,
+				 EcoreFactory.eINSTANCE.createEDataType()));
 
-		newChildDescriptors.add(createChildParameter(
-				TemplatesPackage.Literals.TEMPLATE_SIGNATURE__TYPE_PARAMETER,
-				EcoreFactory.eINSTANCE.createEEnum()));
+		newChildDescriptors.add
+			(createChildParameter
+				(TemplatesPackage.Literals.TEMPLATE_SIGNATURE__TYPE_PARAMETER,
+				 EcoreFactory.eINSTANCE.createEEnum()));
 	}
 
 }

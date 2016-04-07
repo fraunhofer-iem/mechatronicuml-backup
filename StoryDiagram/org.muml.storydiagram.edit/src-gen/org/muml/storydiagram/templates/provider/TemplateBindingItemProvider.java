@@ -14,22 +14,14 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.muml.core.CorePackage;
 import org.muml.core.expressions.ExpressionsFactory;
 import org.muml.core.expressions.common.CommonExpressionsFactory;
 import org.muml.core.provider.ExtendableElementItemProvider;
 import org.muml.storydiagram.activities.ActivitiesFactory;
-import org.muml.storydiagram.activities.expressions.ActivitiesExpressionsFactory;
 import org.muml.storydiagram.calls.CallsFactory;
-import org.muml.storydiagram.calls.expressions.CallsExpressionsFactory;
-import org.muml.storydiagram.patterns.expressions.PatternsExpressionsFactory;
 import org.muml.storydiagram.provider.StorydiagramsEditPlugin;
 import org.muml.storydiagram.templates.TemplateBinding;
 import org.muml.storydiagram.templates.TemplatesFactory;
@@ -41,9 +33,7 @@ import org.muml.storydiagram.templates.TemplatesPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class TemplateBindingItemProvider extends ExtendableElementItemProvider
-		implements IEditingDomainItemProvider, IStructuredItemContentProvider,
-		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class TemplateBindingItemProvider extends ExtendableElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -77,16 +67,19 @@ public class TemplateBindingItemProvider extends ExtendableElementItemProvider
 	 * @generated
 	 */
 	protected void addBoundParameterPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_TemplateBinding_boundParameter_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_TemplateBinding_boundParameter_feature",
-						"_UI_TemplateBinding_type"),
-				TemplatesPackage.Literals.TEMPLATE_BINDING__BOUND_PARAMETER,
-				true, false, true, null, null, null));
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_TemplateBinding_boundParameter_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_TemplateBinding_boundParameter_feature", "_UI_TemplateBinding_type"),
+				 TemplatesPackage.Literals.TEMPLATE_BINDING__BOUND_PARAMETER,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
@@ -101,16 +94,6 @@ public class TemplateBindingItemProvider extends ExtendableElementItemProvider
 				object,
 				getResourceLocator().getImage(
 						"elements/templates/TemplateBinding.png"));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected boolean shouldComposeCreationImage() {
-		return true;
 	}
 
 	/**
@@ -137,10 +120,8 @@ public class TemplateBindingItemProvider extends ExtendableElementItemProvider
 			Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures
-					.add(TemplatesPackage.Literals.TEMPLATE_BINDING__BINDING_EXPRESSION);
-			childrenFeatures
-					.add(TemplatesPackage.Literals.TEMPLATE_BINDING__PROPERTY_BINDING);
+			childrenFeatures.add(TemplatesPackage.Literals.TEMPLATE_BINDING__BINDING_EXPRESSION);
+			childrenFeatures.add(TemplatesPackage.Literals.TEMPLATE_BINDING__PROPERTY_BINDING);
 		}
 		return childrenFeatures;
 	}
@@ -168,11 +149,10 @@ public class TemplateBindingItemProvider extends ExtendableElementItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(TemplateBinding.class)) {
-		case TemplatesPackage.TEMPLATE_BINDING__BINDING_EXPRESSION:
-		case TemplatesPackage.TEMPLATE_BINDING__PROPERTY_BINDING:
-			fireNotifyChanged(new ViewerNotification(notification,
-					notification.getNotifier(), true, false));
-			return;
+			case TemplatesPackage.TEMPLATE_BINDING__BINDING_EXPRESSION:
+			case TemplatesPackage.TEMPLATE_BINDING__PROPERTY_BINDING:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+				return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -202,80 +182,85 @@ public class TemplateBindingItemProvider extends ExtendableElementItemProvider
 			Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(
-				CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
-				ActivitiesFactory.eINSTANCE.createOperationExtension()));
+		newChildDescriptors.add
+			(createChildParameter
+				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSIONS,
+				 ActivitiesFactory.eINSTANCE.createOperationExtension()));
 
-		newChildDescriptors.add(createChildParameter(
-				CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
-				CallsFactory.eINSTANCE.createParameterExtension()));
+		newChildDescriptors.add
+			(createChildParameter
+				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSIONS,
+				 CallsFactory.eINSTANCE.createParameterExtension()));
 
-		newChildDescriptors.add(createChildParameter(
-				TemplatesPackage.Literals.TEMPLATE_BINDING__BINDING_EXPRESSION,
-				ActivitiesExpressionsFactory.eINSTANCE
-						.createExceptionVariableExpression()));
+		newChildDescriptors.add
+			(createChildParameter
+				(TemplatesPackage.Literals.TEMPLATE_BINDING__BINDING_EXPRESSION,
+				 org.muml.storydiagram.activities.expressions.ExpressionsFactory.eINSTANCE.createExceptionVariableExpression()));
 
-		newChildDescriptors
-				.add(createChildParameter(
-						TemplatesPackage.Literals.TEMPLATE_BINDING__BINDING_EXPRESSION,
-						CallsExpressionsFactory.eINSTANCE
-								.createMethodCallExpression()));
+		newChildDescriptors.add
+			(createChildParameter
+				(TemplatesPackage.Literals.TEMPLATE_BINDING__BINDING_EXPRESSION,
+				 org.muml.storydiagram.calls.expressions.ExpressionsFactory.eINSTANCE.createMethodCallExpression()));
 
-		newChildDescriptors.add(createChildParameter(
-				TemplatesPackage.Literals.TEMPLATE_BINDING__BINDING_EXPRESSION,
-				CallsExpressionsFactory.eINSTANCE.createParameterExpression()));
+		newChildDescriptors.add
+			(createChildParameter
+				(TemplatesPackage.Literals.TEMPLATE_BINDING__BINDING_EXPRESSION,
+				 org.muml.storydiagram.calls.expressions.ExpressionsFactory.eINSTANCE.createParameterExpression()));
 
-		newChildDescriptors.add(createChildParameter(
-				TemplatesPackage.Literals.TEMPLATE_BINDING__BINDING_EXPRESSION,
-				PatternsExpressionsFactory.eINSTANCE
-						.createAttributeValueExpression()));
+		newChildDescriptors.add
+			(createChildParameter
+				(TemplatesPackage.Literals.TEMPLATE_BINDING__BINDING_EXPRESSION,
+				 org.muml.storydiagram.patterns.expressions.ExpressionsFactory.eINSTANCE.createAttributeValueExpression()));
 
-		newChildDescriptors.add(createChildParameter(
-				TemplatesPackage.Literals.TEMPLATE_BINDING__BINDING_EXPRESSION,
-				PatternsExpressionsFactory.eINSTANCE
-						.createObjectVariableExpression()));
+		newChildDescriptors.add
+			(createChildParameter
+				(TemplatesPackage.Literals.TEMPLATE_BINDING__BINDING_EXPRESSION,
+				 org.muml.storydiagram.patterns.expressions.ExpressionsFactory.eINSTANCE.createObjectVariableExpression()));
 
-		newChildDescriptors.add(createChildParameter(
-				TemplatesPackage.Literals.TEMPLATE_BINDING__BINDING_EXPRESSION,
-				PatternsExpressionsFactory.eINSTANCE
-						.createCollectionSizeExpression()));
+		newChildDescriptors.add
+			(createChildParameter
+				(TemplatesPackage.Literals.TEMPLATE_BINDING__BINDING_EXPRESSION,
+				 org.muml.storydiagram.patterns.expressions.ExpressionsFactory.eINSTANCE.createCollectionSizeExpression()));
 
-		newChildDescriptors.add(createChildParameter(
-				TemplatesPackage.Literals.TEMPLATE_BINDING__BINDING_EXPRESSION,
-				PatternsExpressionsFactory.eINSTANCE
-						.createPrimitiveVariableExpression()));
+		newChildDescriptors.add
+			(createChildParameter
+				(TemplatesPackage.Literals.TEMPLATE_BINDING__BINDING_EXPRESSION,
+				 org.muml.storydiagram.patterns.expressions.ExpressionsFactory.eINSTANCE.createPrimitiveVariableExpression()));
 
-		newChildDescriptors.add(createChildParameter(
-				TemplatesPackage.Literals.TEMPLATE_BINDING__BINDING_EXPRESSION,
-				ExpressionsFactory.eINSTANCE.createTextualExpression()));
+		newChildDescriptors.add
+			(createChildParameter
+				(TemplatesPackage.Literals.TEMPLATE_BINDING__BINDING_EXPRESSION,
+				 ExpressionsFactory.eINSTANCE.createTextualExpression()));
 
-		newChildDescriptors.add(createChildParameter(
-				TemplatesPackage.Literals.TEMPLATE_BINDING__BINDING_EXPRESSION,
-				CommonExpressionsFactory.eINSTANCE.createUnaryExpression()));
+		newChildDescriptors.add
+			(createChildParameter
+				(TemplatesPackage.Literals.TEMPLATE_BINDING__BINDING_EXPRESSION,
+				 CommonExpressionsFactory.eINSTANCE.createUnaryExpression()));
 
-		newChildDescriptors
-				.add(createChildParameter(
-						TemplatesPackage.Literals.TEMPLATE_BINDING__BINDING_EXPRESSION,
-						CommonExpressionsFactory.eINSTANCE
-								.createComparisonExpression()));
+		newChildDescriptors.add
+			(createChildParameter
+				(TemplatesPackage.Literals.TEMPLATE_BINDING__BINDING_EXPRESSION,
+				 CommonExpressionsFactory.eINSTANCE.createComparisonExpression()));
 
-		newChildDescriptors
-				.add(createChildParameter(
-						TemplatesPackage.Literals.TEMPLATE_BINDING__BINDING_EXPRESSION,
-						CommonExpressionsFactory.eINSTANCE
-								.createArithmeticExpression()));
+		newChildDescriptors.add
+			(createChildParameter
+				(TemplatesPackage.Literals.TEMPLATE_BINDING__BINDING_EXPRESSION,
+				 CommonExpressionsFactory.eINSTANCE.createArithmeticExpression()));
 
-		newChildDescriptors.add(createChildParameter(
-				TemplatesPackage.Literals.TEMPLATE_BINDING__BINDING_EXPRESSION,
-				CommonExpressionsFactory.eINSTANCE.createLogicalExpression()));
+		newChildDescriptors.add
+			(createChildParameter
+				(TemplatesPackage.Literals.TEMPLATE_BINDING__BINDING_EXPRESSION,
+				 CommonExpressionsFactory.eINSTANCE.createLogicalExpression()));
 
-		newChildDescriptors.add(createChildParameter(
-				TemplatesPackage.Literals.TEMPLATE_BINDING__BINDING_EXPRESSION,
-				CommonExpressionsFactory.eINSTANCE.createLiteralExpression()));
+		newChildDescriptors.add
+			(createChildParameter
+				(TemplatesPackage.Literals.TEMPLATE_BINDING__BINDING_EXPRESSION,
+				 CommonExpressionsFactory.eINSTANCE.createLiteralExpression()));
 
-		newChildDescriptors.add(createChildParameter(
-				TemplatesPackage.Literals.TEMPLATE_BINDING__PROPERTY_BINDING,
-				TemplatesFactory.eINSTANCE.createPropertyBinding()));
+		newChildDescriptors.add
+			(createChildParameter
+				(TemplatesPackage.Literals.TEMPLATE_BINDING__PROPERTY_BINDING,
+				 TemplatesFactory.eINSTANCE.createPropertyBinding()));
 	}
 
 }

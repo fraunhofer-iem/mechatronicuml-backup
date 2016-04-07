@@ -12,20 +12,12 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.muml.core.expressions.ExpressionsFactory;
 import org.muml.core.expressions.common.CommonExpressionsFactory;
 import org.muml.storydiagram.activities.ActivitiesPackage;
 import org.muml.storydiagram.activities.StatementNode;
-import org.muml.storydiagram.activities.expressions.ActivitiesExpressionsFactory;
-import org.muml.storydiagram.calls.expressions.CallsExpressionsFactory;
-import org.muml.storydiagram.patterns.expressions.PatternsExpressionsFactory;
 
 /**
  * This is the item provider adapter for a {@link org.muml.storydiagram.activities.StatementNode} object.
@@ -33,9 +25,7 @@ import org.muml.storydiagram.patterns.expressions.PatternsExpressionsFactory;
  * <!-- end-user-doc -->
  * @generated
  */
-public class StatementNodeItemProvider extends ActivityNodeItemProvider
-		implements IEditingDomainItemProvider, IStructuredItemContentProvider,
-		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class StatementNodeItemProvider extends ActivityNodeItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -74,8 +64,7 @@ public class StatementNodeItemProvider extends ActivityNodeItemProvider
 			Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures
-					.add(ActivitiesPackage.Literals.STATEMENT_NODE__STATEMENT_EXPRESSION);
+			childrenFeatures.add(ActivitiesPackage.Literals.STATEMENT_NODE__STATEMENT_EXPRESSION);
 		}
 		return childrenFeatures;
 	}
@@ -95,16 +84,6 @@ public class StatementNodeItemProvider extends ActivityNodeItemProvider
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected boolean shouldComposeCreationImage() {
-		return true;
-	}
-
-	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -112,9 +91,10 @@ public class StatementNodeItemProvider extends ActivityNodeItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((StatementNode) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_StatementNode_type")
-				: getString("_UI_StatementNode_type") + " " + label;
+		String label = ((StatementNode)object).getName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_StatementNode_type") :
+			getString("_UI_StatementNode_type") + " " + label;
 	}
 
 	/**
@@ -129,10 +109,9 @@ public class StatementNodeItemProvider extends ActivityNodeItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(StatementNode.class)) {
-		case ActivitiesPackage.STATEMENT_NODE__STATEMENT_EXPRESSION:
-			fireNotifyChanged(new ViewerNotification(notification,
-					notification.getNotifier(), true, false));
-			return;
+			case ActivitiesPackage.STATEMENT_NODE__STATEMENT_EXPRESSION:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+				return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -162,82 +141,70 @@ public class StatementNodeItemProvider extends ActivityNodeItemProvider
 			Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors
-				.add(createChildParameter(
-						ActivitiesPackage.Literals.STATEMENT_NODE__STATEMENT_EXPRESSION,
-						ActivitiesExpressionsFactory.eINSTANCE
-								.createExceptionVariableExpression()));
+		newChildDescriptors.add
+			(createChildParameter
+				(ActivitiesPackage.Literals.STATEMENT_NODE__STATEMENT_EXPRESSION,
+				 org.muml.storydiagram.activities.expressions.ExpressionsFactory.eINSTANCE.createExceptionVariableExpression()));
 
-		newChildDescriptors
-				.add(createChildParameter(
-						ActivitiesPackage.Literals.STATEMENT_NODE__STATEMENT_EXPRESSION,
-						CallsExpressionsFactory.eINSTANCE
-								.createMethodCallExpression()));
+		newChildDescriptors.add
+			(createChildParameter
+				(ActivitiesPackage.Literals.STATEMENT_NODE__STATEMENT_EXPRESSION,
+				 org.muml.storydiagram.calls.expressions.ExpressionsFactory.eINSTANCE.createMethodCallExpression()));
 
-		newChildDescriptors
-				.add(createChildParameter(
-						ActivitiesPackage.Literals.STATEMENT_NODE__STATEMENT_EXPRESSION,
-						CallsExpressionsFactory.eINSTANCE
-								.createParameterExpression()));
+		newChildDescriptors.add
+			(createChildParameter
+				(ActivitiesPackage.Literals.STATEMENT_NODE__STATEMENT_EXPRESSION,
+				 org.muml.storydiagram.calls.expressions.ExpressionsFactory.eINSTANCE.createParameterExpression()));
 
-		newChildDescriptors
-				.add(createChildParameter(
-						ActivitiesPackage.Literals.STATEMENT_NODE__STATEMENT_EXPRESSION,
-						PatternsExpressionsFactory.eINSTANCE
-								.createAttributeValueExpression()));
+		newChildDescriptors.add
+			(createChildParameter
+				(ActivitiesPackage.Literals.STATEMENT_NODE__STATEMENT_EXPRESSION,
+				 org.muml.storydiagram.patterns.expressions.ExpressionsFactory.eINSTANCE.createAttributeValueExpression()));
 
-		newChildDescriptors
-				.add(createChildParameter(
-						ActivitiesPackage.Literals.STATEMENT_NODE__STATEMENT_EXPRESSION,
-						PatternsExpressionsFactory.eINSTANCE
-								.createObjectVariableExpression()));
+		newChildDescriptors.add
+			(createChildParameter
+				(ActivitiesPackage.Literals.STATEMENT_NODE__STATEMENT_EXPRESSION,
+				 org.muml.storydiagram.patterns.expressions.ExpressionsFactory.eINSTANCE.createObjectVariableExpression()));
 
-		newChildDescriptors
-				.add(createChildParameter(
-						ActivitiesPackage.Literals.STATEMENT_NODE__STATEMENT_EXPRESSION,
-						PatternsExpressionsFactory.eINSTANCE
-								.createCollectionSizeExpression()));
+		newChildDescriptors.add
+			(createChildParameter
+				(ActivitiesPackage.Literals.STATEMENT_NODE__STATEMENT_EXPRESSION,
+				 org.muml.storydiagram.patterns.expressions.ExpressionsFactory.eINSTANCE.createCollectionSizeExpression()));
 
-		newChildDescriptors
-				.add(createChildParameter(
-						ActivitiesPackage.Literals.STATEMENT_NODE__STATEMENT_EXPRESSION,
-						PatternsExpressionsFactory.eINSTANCE
-								.createPrimitiveVariableExpression()));
+		newChildDescriptors.add
+			(createChildParameter
+				(ActivitiesPackage.Literals.STATEMENT_NODE__STATEMENT_EXPRESSION,
+				 org.muml.storydiagram.patterns.expressions.ExpressionsFactory.eINSTANCE.createPrimitiveVariableExpression()));
 
-		newChildDescriptors
-				.add(createChildParameter(
-						ActivitiesPackage.Literals.STATEMENT_NODE__STATEMENT_EXPRESSION,
-						ExpressionsFactory.eINSTANCE.createTextualExpression()));
+		newChildDescriptors.add
+			(createChildParameter
+				(ActivitiesPackage.Literals.STATEMENT_NODE__STATEMENT_EXPRESSION,
+				 ExpressionsFactory.eINSTANCE.createTextualExpression()));
 
-		newChildDescriptors
-				.add(createChildParameter(
-						ActivitiesPackage.Literals.STATEMENT_NODE__STATEMENT_EXPRESSION,
-						CommonExpressionsFactory.eINSTANCE
-								.createUnaryExpression()));
+		newChildDescriptors.add
+			(createChildParameter
+				(ActivitiesPackage.Literals.STATEMENT_NODE__STATEMENT_EXPRESSION,
+				 CommonExpressionsFactory.eINSTANCE.createUnaryExpression()));
 
-		newChildDescriptors
-				.add(createChildParameter(
-						ActivitiesPackage.Literals.STATEMENT_NODE__STATEMENT_EXPRESSION,
-						CommonExpressionsFactory.eINSTANCE
-								.createComparisonExpression()));
+		newChildDescriptors.add
+			(createChildParameter
+				(ActivitiesPackage.Literals.STATEMENT_NODE__STATEMENT_EXPRESSION,
+				 CommonExpressionsFactory.eINSTANCE.createComparisonExpression()));
 
-		newChildDescriptors
-				.add(createChildParameter(
-						ActivitiesPackage.Literals.STATEMENT_NODE__STATEMENT_EXPRESSION,
-						CommonExpressionsFactory.eINSTANCE
-								.createArithmeticExpression()));
+		newChildDescriptors.add
+			(createChildParameter
+				(ActivitiesPackage.Literals.STATEMENT_NODE__STATEMENT_EXPRESSION,
+				 CommonExpressionsFactory.eINSTANCE.createArithmeticExpression()));
 
-		newChildDescriptors
-				.add(createChildParameter(
-						ActivitiesPackage.Literals.STATEMENT_NODE__STATEMENT_EXPRESSION,
-						CommonExpressionsFactory.eINSTANCE
-								.createLogicalExpression()));
+		newChildDescriptors.add
+			(createChildParameter
+				(ActivitiesPackage.Literals.STATEMENT_NODE__STATEMENT_EXPRESSION,
+				 CommonExpressionsFactory.eINSTANCE.createLogicalExpression()));
 
-		newChildDescriptors
-				.add(createChildParameter(
-						ActivitiesPackage.Literals.STATEMENT_NODE__STATEMENT_EXPRESSION,
-						CommonExpressionsFactory.eINSTANCE
-								.createLiteralExpression()));
+		newChildDescriptors.add
+			(createChildParameter
+				(ActivitiesPackage.Literals.STATEMENT_NODE__STATEMENT_EXPRESSION,
+				 CommonExpressionsFactory.eINSTANCE.createLiteralExpression()));
 	}
 
 }

@@ -11,12 +11,7 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.muml.storydiagram.activities.FlowFinalNode;
 
 /**
@@ -25,9 +20,7 @@ import org.muml.storydiagram.activities.FlowFinalNode;
  * <!-- end-user-doc -->
  * @generated
  */
-public class FlowFinalNodeItemProvider extends ActivityFinalNodeItemProvider
-		implements IEditingDomainItemProvider, IStructuredItemContentProvider,
-		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class FlowFinalNodeItemProvider extends ActivityFinalNodeItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -68,16 +61,6 @@ public class FlowFinalNodeItemProvider extends ActivityFinalNodeItemProvider
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected boolean shouldComposeCreationImage() {
-		return true;
-	}
-
-	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -85,9 +68,10 @@ public class FlowFinalNodeItemProvider extends ActivityFinalNodeItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((FlowFinalNode) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_FlowFinalNode_type")
-				: getString("_UI_FlowFinalNode_type") + " " + label;
+		String label = ((FlowFinalNode)object).getName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_FlowFinalNode_type") :
+			getString("_UI_FlowFinalNode_type") + " " + label;
 	}
 
 	/**

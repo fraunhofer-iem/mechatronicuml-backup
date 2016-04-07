@@ -13,17 +13,12 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.muml.core.CorePackage;
 import org.muml.core.expressions.provider.ExpressionItemProvider;
 import org.muml.storydiagram.activities.ActivitiesFactory;
 import org.muml.storydiagram.calls.CallsFactory;
-import org.muml.storydiagram.calls.expressions.CallsExpressionsPackage;
+import org.muml.storydiagram.calls.expressions.ExpressionsPackage;
 import org.muml.storydiagram.calls.expressions.ParameterExpression;
 import org.muml.storydiagram.provider.StorydiagramsEditPlugin;
 
@@ -33,9 +28,7 @@ import org.muml.storydiagram.provider.StorydiagramsEditPlugin;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ParameterExpressionItemProvider extends ExpressionItemProvider
-		implements IEditingDomainItemProvider, IStructuredItemContentProvider,
-		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class ParameterExpressionItemProvider extends ExpressionItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -69,17 +62,19 @@ public class ParameterExpressionItemProvider extends ExpressionItemProvider
 	 * @generated
 	 */
 	protected void addParameterPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(
-						((ComposeableAdapterFactory) adapterFactory)
-								.getRootAdapterFactory(),
-						getResourceLocator(),
-						getString("_UI_ParameterExpression_parameter_feature"),
-						getString("_UI_PropertyDescriptor_description",
-								"_UI_ParameterExpression_parameter_feature",
-								"_UI_ParameterExpression_type"),
-						CallsExpressionsPackage.Literals.PARAMETER_EXPRESSION__PARAMETER,
-						true, false, true, null, null, null));
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ParameterExpression_parameter_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ParameterExpression_parameter_feature", "_UI_ParameterExpression_type"),
+				 ExpressionsPackage.Literals.PARAMETER_EXPRESSION__PARAMETER,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
@@ -94,16 +89,6 @@ public class ParameterExpressionItemProvider extends ExpressionItemProvider
 				object,
 				getResourceLocator().getImage(
 						"elements/expressions/ParameterExpression.png"));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected boolean shouldComposeCreationImage() {
-		return true;
 	}
 
 	/**
@@ -125,9 +110,10 @@ public class ParameterExpressionItemProvider extends ExpressionItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ParameterExpression) object).getComment();
-		return label == null || label.length() == 0 ? getString("_UI_ParameterExpression_type")
-				: getString("_UI_ParameterExpression_type") + " " + label;
+		String label = ((ParameterExpression)object).getComment();
+		return label == null || label.length() == 0 ?
+			getString("_UI_ParameterExpression_type") :
+			getString("_UI_ParameterExpression_type") + " " + label;
 	}
 
 	/**
@@ -155,13 +141,15 @@ public class ParameterExpressionItemProvider extends ExpressionItemProvider
 			Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(
-				CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
-				ActivitiesFactory.eINSTANCE.createOperationExtension()));
+		newChildDescriptors.add
+			(createChildParameter
+				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSIONS,
+				 ActivitiesFactory.eINSTANCE.createOperationExtension()));
 
-		newChildDescriptors.add(createChildParameter(
-				CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
-				CallsFactory.eINSTANCE.createParameterExtension()));
+		newChildDescriptors.add
+			(createChildParameter
+				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSIONS,
+				 CallsFactory.eINSTANCE.createParameterExtension()));
 	}
 
 }

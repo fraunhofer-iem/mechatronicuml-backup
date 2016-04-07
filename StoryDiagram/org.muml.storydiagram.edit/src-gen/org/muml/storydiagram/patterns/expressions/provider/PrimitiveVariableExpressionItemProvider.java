@@ -13,17 +13,12 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.muml.core.CorePackage;
 import org.muml.core.expressions.provider.ExpressionItemProvider;
 import org.muml.storydiagram.activities.ActivitiesFactory;
 import org.muml.storydiagram.calls.CallsFactory;
-import org.muml.storydiagram.patterns.expressions.PatternsExpressionsPackage;
+import org.muml.storydiagram.patterns.expressions.ExpressionsPackage;
 import org.muml.storydiagram.patterns.expressions.PrimitiveVariableExpression;
 import org.muml.storydiagram.provider.StorydiagramsEditPlugin;
 
@@ -34,9 +29,7 @@ import org.muml.storydiagram.provider.StorydiagramsEditPlugin;
  * @generated
  */
 public class PrimitiveVariableExpressionItemProvider extends
-		ExpressionItemProvider implements IEditingDomainItemProvider,
-		IStructuredItemContentProvider, ITreeItemContentProvider,
-		IItemLabelProvider, IItemPropertySource {
+		ExpressionItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -70,18 +63,19 @@ public class PrimitiveVariableExpressionItemProvider extends
 	 * @generated
 	 */
 	protected void addPrimitiveVariablePropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(
-						((ComposeableAdapterFactory) adapterFactory)
-								.getRootAdapterFactory(),
-						getResourceLocator(),
-						getString("_UI_PrimitiveVariableExpression_primitiveVariable_feature"),
-						getString(
-								"_UI_PropertyDescriptor_description",
-								"_UI_PrimitiveVariableExpression_primitiveVariable_feature",
-								"_UI_PrimitiveVariableExpression_type"),
-						PatternsExpressionsPackage.Literals.PRIMITIVE_VARIABLE_EXPRESSION__PRIMITIVE_VARIABLE,
-						true, false, true, null, null, null));
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_PrimitiveVariableExpression_primitiveVariable_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_PrimitiveVariableExpression_primitiveVariable_feature", "_UI_PrimitiveVariableExpression_type"),
+				 ExpressionsPackage.Literals.PRIMITIVE_VARIABLE_EXPRESSION__PRIMITIVE_VARIABLE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
@@ -96,16 +90,6 @@ public class PrimitiveVariableExpressionItemProvider extends
 				object,
 				getResourceLocator().getImage(
 						"elements/expressions/PrimitiveVariableExpression.png"));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected boolean shouldComposeCreationImage() {
-		return true;
 	}
 
 	/**
@@ -127,10 +111,10 @@ public class PrimitiveVariableExpressionItemProvider extends
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((PrimitiveVariableExpression) object).getComment();
-		return label == null || label.length() == 0 ? getString("_UI_PrimitiveVariableExpression_type")
-				: getString("_UI_PrimitiveVariableExpression_type") + " "
-						+ label;
+		String label = ((PrimitiveVariableExpression)object).getComment();
+		return label == null || label.length() == 0 ?
+			getString("_UI_PrimitiveVariableExpression_type") :
+			getString("_UI_PrimitiveVariableExpression_type") + " " + label;
 	}
 
 	/**
@@ -158,13 +142,15 @@ public class PrimitiveVariableExpressionItemProvider extends
 			Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(
-				CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
-				ActivitiesFactory.eINSTANCE.createOperationExtension()));
+		newChildDescriptors.add
+			(createChildParameter
+				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSIONS,
+				 ActivitiesFactory.eINSTANCE.createOperationExtension()));
 
-		newChildDescriptors.add(createChildParameter(
-				CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
-				CallsFactory.eINSTANCE.createParameterExtension()));
+		newChildDescriptors.add
+			(createChildParameter
+				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSIONS,
+				 CallsFactory.eINSTANCE.createParameterExtension()));
 	}
 
 }

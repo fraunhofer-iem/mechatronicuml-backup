@@ -24,11 +24,8 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.muml.core.expressions.ExpressionsFactory;
 import org.muml.core.expressions.common.CommonExpressionsFactory;
-import org.muml.storydiagram.activities.expressions.ActivitiesExpressionsFactory;
-import org.muml.storydiagram.calls.expressions.CallsExpressionsFactory;
 import org.muml.storydiagram.patterns.AttributeAssignment;
 import org.muml.storydiagram.patterns.PatternsPackage;
-import org.muml.storydiagram.patterns.expressions.PatternsExpressionsFactory;
 import org.muml.storydiagram.provider.StorydiagramsEditPlugin;
 
 /**
@@ -73,16 +70,19 @@ public class AttributeAssignmentItemProvider extends ItemProviderAdapter
 	 * @generated
 	 */
 	protected void addAttributePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_AttributeAssignment_attribute_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_AttributeAssignment_attribute_feature",
-						"_UI_AttributeAssignment_type"),
-				PatternsPackage.Literals.ATTRIBUTE_ASSIGNMENT__ATTRIBUTE, true,
-				false, true, null, null, null));
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_AttributeAssignment_attribute_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_AttributeAssignment_attribute_feature", "_UI_AttributeAssignment_type"),
+				 PatternsPackage.Literals.ATTRIBUTE_ASSIGNMENT__ATTRIBUTE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
@@ -97,16 +97,6 @@ public class AttributeAssignmentItemProvider extends ItemProviderAdapter
 				object,
 				getResourceLocator().getImage(
 						"elements/patterns/AttributeAssignment.png"));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected boolean shouldComposeCreationImage() {
-		return true;
 	}
 
 	/**
@@ -133,8 +123,7 @@ public class AttributeAssignmentItemProvider extends ItemProviderAdapter
 			Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures
-					.add(PatternsPackage.Literals.ATTRIBUTE_ASSIGNMENT__VALUE_EXPRESSION);
+			childrenFeatures.add(PatternsPackage.Literals.ATTRIBUTE_ASSIGNMENT__VALUE_EXPRESSION);
 		}
 		return childrenFeatures;
 	}
@@ -162,10 +151,9 @@ public class AttributeAssignmentItemProvider extends ItemProviderAdapter
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(AttributeAssignment.class)) {
-		case PatternsPackage.ATTRIBUTE_ASSIGNMENT__VALUE_EXPRESSION:
-			fireNotifyChanged(new ViewerNotification(notification,
-					notification.getNotifier(), true, false));
-			return;
+			case PatternsPackage.ATTRIBUTE_ASSIGNMENT__VALUE_EXPRESSION:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+				return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -195,82 +183,70 @@ public class AttributeAssignmentItemProvider extends ItemProviderAdapter
 			Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors
-				.add(createChildParameter(
-						PatternsPackage.Literals.ATTRIBUTE_ASSIGNMENT__VALUE_EXPRESSION,
-						ActivitiesExpressionsFactory.eINSTANCE
-								.createExceptionVariableExpression()));
+		newChildDescriptors.add
+			(createChildParameter
+				(PatternsPackage.Literals.ATTRIBUTE_ASSIGNMENT__VALUE_EXPRESSION,
+				 org.muml.storydiagram.activities.expressions.ExpressionsFactory.eINSTANCE.createExceptionVariableExpression()));
 
-		newChildDescriptors
-				.add(createChildParameter(
-						PatternsPackage.Literals.ATTRIBUTE_ASSIGNMENT__VALUE_EXPRESSION,
-						CallsExpressionsFactory.eINSTANCE
-								.createMethodCallExpression()));
+		newChildDescriptors.add
+			(createChildParameter
+				(PatternsPackage.Literals.ATTRIBUTE_ASSIGNMENT__VALUE_EXPRESSION,
+				 org.muml.storydiagram.calls.expressions.ExpressionsFactory.eINSTANCE.createMethodCallExpression()));
 
-		newChildDescriptors
-				.add(createChildParameter(
-						PatternsPackage.Literals.ATTRIBUTE_ASSIGNMENT__VALUE_EXPRESSION,
-						CallsExpressionsFactory.eINSTANCE
-								.createParameterExpression()));
+		newChildDescriptors.add
+			(createChildParameter
+				(PatternsPackage.Literals.ATTRIBUTE_ASSIGNMENT__VALUE_EXPRESSION,
+				 org.muml.storydiagram.calls.expressions.ExpressionsFactory.eINSTANCE.createParameterExpression()));
 
-		newChildDescriptors
-				.add(createChildParameter(
-						PatternsPackage.Literals.ATTRIBUTE_ASSIGNMENT__VALUE_EXPRESSION,
-						PatternsExpressionsFactory.eINSTANCE
-								.createAttributeValueExpression()));
+		newChildDescriptors.add
+			(createChildParameter
+				(PatternsPackage.Literals.ATTRIBUTE_ASSIGNMENT__VALUE_EXPRESSION,
+				 org.muml.storydiagram.patterns.expressions.ExpressionsFactory.eINSTANCE.createAttributeValueExpression()));
 
-		newChildDescriptors
-				.add(createChildParameter(
-						PatternsPackage.Literals.ATTRIBUTE_ASSIGNMENT__VALUE_EXPRESSION,
-						PatternsExpressionsFactory.eINSTANCE
-								.createObjectVariableExpression()));
+		newChildDescriptors.add
+			(createChildParameter
+				(PatternsPackage.Literals.ATTRIBUTE_ASSIGNMENT__VALUE_EXPRESSION,
+				 org.muml.storydiagram.patterns.expressions.ExpressionsFactory.eINSTANCE.createObjectVariableExpression()));
 
-		newChildDescriptors
-				.add(createChildParameter(
-						PatternsPackage.Literals.ATTRIBUTE_ASSIGNMENT__VALUE_EXPRESSION,
-						PatternsExpressionsFactory.eINSTANCE
-								.createCollectionSizeExpression()));
+		newChildDescriptors.add
+			(createChildParameter
+				(PatternsPackage.Literals.ATTRIBUTE_ASSIGNMENT__VALUE_EXPRESSION,
+				 org.muml.storydiagram.patterns.expressions.ExpressionsFactory.eINSTANCE.createCollectionSizeExpression()));
 
-		newChildDescriptors
-				.add(createChildParameter(
-						PatternsPackage.Literals.ATTRIBUTE_ASSIGNMENT__VALUE_EXPRESSION,
-						PatternsExpressionsFactory.eINSTANCE
-								.createPrimitiveVariableExpression()));
+		newChildDescriptors.add
+			(createChildParameter
+				(PatternsPackage.Literals.ATTRIBUTE_ASSIGNMENT__VALUE_EXPRESSION,
+				 org.muml.storydiagram.patterns.expressions.ExpressionsFactory.eINSTANCE.createPrimitiveVariableExpression()));
 
-		newChildDescriptors
-				.add(createChildParameter(
-						PatternsPackage.Literals.ATTRIBUTE_ASSIGNMENT__VALUE_EXPRESSION,
-						ExpressionsFactory.eINSTANCE.createTextualExpression()));
+		newChildDescriptors.add
+			(createChildParameter
+				(PatternsPackage.Literals.ATTRIBUTE_ASSIGNMENT__VALUE_EXPRESSION,
+				 ExpressionsFactory.eINSTANCE.createTextualExpression()));
 
-		newChildDescriptors
-				.add(createChildParameter(
-						PatternsPackage.Literals.ATTRIBUTE_ASSIGNMENT__VALUE_EXPRESSION,
-						CommonExpressionsFactory.eINSTANCE
-								.createUnaryExpression()));
+		newChildDescriptors.add
+			(createChildParameter
+				(PatternsPackage.Literals.ATTRIBUTE_ASSIGNMENT__VALUE_EXPRESSION,
+				 CommonExpressionsFactory.eINSTANCE.createUnaryExpression()));
 
-		newChildDescriptors
-				.add(createChildParameter(
-						PatternsPackage.Literals.ATTRIBUTE_ASSIGNMENT__VALUE_EXPRESSION,
-						CommonExpressionsFactory.eINSTANCE
-								.createComparisonExpression()));
+		newChildDescriptors.add
+			(createChildParameter
+				(PatternsPackage.Literals.ATTRIBUTE_ASSIGNMENT__VALUE_EXPRESSION,
+				 CommonExpressionsFactory.eINSTANCE.createComparisonExpression()));
 
-		newChildDescriptors
-				.add(createChildParameter(
-						PatternsPackage.Literals.ATTRIBUTE_ASSIGNMENT__VALUE_EXPRESSION,
-						CommonExpressionsFactory.eINSTANCE
-								.createArithmeticExpression()));
+		newChildDescriptors.add
+			(createChildParameter
+				(PatternsPackage.Literals.ATTRIBUTE_ASSIGNMENT__VALUE_EXPRESSION,
+				 CommonExpressionsFactory.eINSTANCE.createArithmeticExpression()));
 
-		newChildDescriptors
-				.add(createChildParameter(
-						PatternsPackage.Literals.ATTRIBUTE_ASSIGNMENT__VALUE_EXPRESSION,
-						CommonExpressionsFactory.eINSTANCE
-								.createLogicalExpression()));
+		newChildDescriptors.add
+			(createChildParameter
+				(PatternsPackage.Literals.ATTRIBUTE_ASSIGNMENT__VALUE_EXPRESSION,
+				 CommonExpressionsFactory.eINSTANCE.createLogicalExpression()));
 
-		newChildDescriptors
-				.add(createChildParameter(
-						PatternsPackage.Literals.ATTRIBUTE_ASSIGNMENT__VALUE_EXPRESSION,
-						CommonExpressionsFactory.eINSTANCE
-								.createLiteralExpression()));
+		newChildDescriptors.add
+			(createChildParameter
+				(PatternsPackage.Literals.ATTRIBUTE_ASSIGNMENT__VALUE_EXPRESSION,
+				 CommonExpressionsFactory.eINSTANCE.createLiteralExpression()));
 	}
 
 }

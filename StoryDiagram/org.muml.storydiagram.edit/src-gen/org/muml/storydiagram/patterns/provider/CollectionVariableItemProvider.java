@@ -12,12 +12,7 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.muml.storydiagram.patterns.CollectionVariable;
@@ -29,9 +24,7 @@ import org.muml.storydiagram.patterns.PatternsPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class CollectionVariableItemProvider extends ObjectVariableItemProvider
-		implements IEditingDomainItemProvider, IStructuredItemContentProvider,
-		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class CollectionVariableItemProvider extends ObjectVariableItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -66,17 +59,19 @@ public class CollectionVariableItemProvider extends ObjectVariableItemProvider
 	 * @generated
 	 */
 	protected void addAtLeastOnePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_CollectionVariable_atLeastOne_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_CollectionVariable_atLeastOne_feature",
-						"_UI_CollectionVariable_type"),
-				PatternsPackage.Literals.COLLECTION_VARIABLE__AT_LEAST_ONE,
-				true, false, false, ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				null, null));
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_CollectionVariable_atLeastOne_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionVariable_atLeastOne_feature", "_UI_CollectionVariable_type"),
+				 PatternsPackage.Literals.COLLECTION_VARIABLE__AT_LEAST_ONE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -86,17 +81,19 @@ public class CollectionVariableItemProvider extends ObjectVariableItemProvider
 	 * @generated
 	 */
 	protected void addUniquePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_CollectionVariable_unique_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_CollectionVariable_unique_feature",
-						"_UI_CollectionVariable_type"),
-				PatternsPackage.Literals.COLLECTION_VARIABLE__UNIQUE, true,
-				false, false, ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null,
-				null));
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_CollectionVariable_unique_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionVariable_unique_feature", "_UI_CollectionVariable_type"),
+				 PatternsPackage.Literals.COLLECTION_VARIABLE__UNIQUE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -114,16 +111,6 @@ public class CollectionVariableItemProvider extends ObjectVariableItemProvider
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected boolean shouldComposeCreationImage() {
-		return true;
-	}
-
-	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -131,9 +118,10 @@ public class CollectionVariableItemProvider extends ObjectVariableItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((CollectionVariable) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_CollectionVariable_type")
-				: getString("_UI_CollectionVariable_type") + " " + label;
+		String label = ((CollectionVariable)object).getName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_CollectionVariable_type") :
+			getString("_UI_CollectionVariable_type") + " " + label;
 	}
 
 	/**
@@ -148,11 +136,10 @@ public class CollectionVariableItemProvider extends ObjectVariableItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(CollectionVariable.class)) {
-		case PatternsPackage.COLLECTION_VARIABLE__AT_LEAST_ONE:
-		case PatternsPackage.COLLECTION_VARIABLE__UNIQUE:
-			fireNotifyChanged(new ViewerNotification(notification,
-					notification.getNotifier(), false, true));
-			return;
+			case PatternsPackage.COLLECTION_VARIABLE__AT_LEAST_ONE:
+			case PatternsPackage.COLLECTION_VARIABLE__UNIQUE:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
 		}
 		super.notifyChanged(notification);
 	}

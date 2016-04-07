@@ -11,12 +11,7 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.muml.storydiagram.patterns.MatchingPattern;
 
 /**
@@ -25,9 +20,7 @@ import org.muml.storydiagram.patterns.MatchingPattern;
  * <!-- end-user-doc -->
  * @generated
  */
-public class MatchingPatternItemProvider extends StoryPatternItemProvider
-		implements IEditingDomainItemProvider, IStructuredItemContentProvider,
-		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class MatchingPatternItemProvider extends StoryPatternItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -68,16 +61,6 @@ public class MatchingPatternItemProvider extends StoryPatternItemProvider
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected boolean shouldComposeCreationImage() {
-		return true;
-	}
-
-	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -85,9 +68,10 @@ public class MatchingPatternItemProvider extends StoryPatternItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((MatchingPattern) object).getComment();
-		return label == null || label.length() == 0 ? getString("_UI_MatchingPattern_type")
-				: getString("_UI_MatchingPattern_type") + " " + label;
+		String label = ((MatchingPattern)object).getComment();
+		return label == null || label.length() == 0 ?
+			getString("_UI_MatchingPattern_type") :
+			getString("_UI_MatchingPattern_type") + " " + label;
 	}
 
 	/**

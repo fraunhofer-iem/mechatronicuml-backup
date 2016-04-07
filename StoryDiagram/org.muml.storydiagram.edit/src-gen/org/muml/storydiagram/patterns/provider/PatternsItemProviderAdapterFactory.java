@@ -167,8 +167,7 @@ public class PatternsItemProviderAdapterFactory extends PatternsAdapterFactory
 	public Object adapt(Object object, Object type) {
 		if (isFactoryForType(type)) {
 			Object adapter = super.adapt(object, type);
-			if (!(type instanceof Class<?>)
-					|| (((Class<?>) type).isInstance(adapter))) {
+			if (!(type instanceof Class<?>) || (((Class<?>)type).isInstance(adapter))) {
 				return adapter;
 			}
 		}
@@ -404,8 +403,7 @@ public class PatternsItemProviderAdapterFactory extends PatternsAdapterFactory
 	 * @generated
 	 */
 	public ComposeableAdapterFactory getRootAdapterFactory() {
-		return parentAdapterFactory == null ? this : parentAdapterFactory
-				.getRootAdapterFactory();
+		return parentAdapterFactory == null ? this : parentAdapterFactory.getRootAdapterFactory();
 	}
 
 	/**
@@ -471,30 +469,18 @@ public class PatternsItemProviderAdapterFactory extends PatternsAdapterFactory
 	 * @generated
 	 */
 	public void dispose() {
-		if (objectVariableItemProvider != null)
-			objectVariableItemProvider.dispose();
-		if (constraintItemProvider != null)
-			constraintItemProvider.dispose();
-		if (linkConstraintItemProvider != null)
-			linkConstraintItemProvider.dispose();
-		if (attributeAssignmentItemProvider != null)
-			attributeAssignmentItemProvider.dispose();
-		if (collectionVariableItemProvider != null)
-			collectionVariableItemProvider.dispose();
-		if (primitiveVariableItemProvider != null)
-			primitiveVariableItemProvider.dispose();
-		if (pathItemProvider != null)
-			pathItemProvider.dispose();
-		if (linkVariableItemProvider != null)
-			linkVariableItemProvider.dispose();
-		if (inclusionLinkItemProvider != null)
-			inclusionLinkItemProvider.dispose();
-		if (matchingPatternItemProvider != null)
-			matchingPatternItemProvider.dispose();
-		if (maybeLinkItemProvider != null)
-			maybeLinkItemProvider.dispose();
-		if (storyPatternItemProvider != null)
-			storyPatternItemProvider.dispose();
+		if (objectVariableItemProvider != null) objectVariableItemProvider.dispose();
+		if (constraintItemProvider != null) constraintItemProvider.dispose();
+		if (linkConstraintItemProvider != null) linkConstraintItemProvider.dispose();
+		if (attributeAssignmentItemProvider != null) attributeAssignmentItemProvider.dispose();
+		if (collectionVariableItemProvider != null) collectionVariableItemProvider.dispose();
+		if (primitiveVariableItemProvider != null) primitiveVariableItemProvider.dispose();
+		if (pathItemProvider != null) pathItemProvider.dispose();
+		if (linkVariableItemProvider != null) linkVariableItemProvider.dispose();
+		if (inclusionLinkItemProvider != null) inclusionLinkItemProvider.dispose();
+		if (matchingPatternItemProvider != null) matchingPatternItemProvider.dispose();
+		if (maybeLinkItemProvider != null) maybeLinkItemProvider.dispose();
+		if (storyPatternItemProvider != null) storyPatternItemProvider.dispose();
 	}
 
 }

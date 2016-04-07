@@ -13,21 +13,13 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.muml.core.expressions.ExpressionsFactory;
 import org.muml.core.expressions.common.CommonExpressionsFactory;
 import org.muml.storydiagram.activities.ActivitiesPackage;
 import org.muml.storydiagram.activities.ActivityFinalNode;
-import org.muml.storydiagram.activities.expressions.ActivitiesExpressionsFactory;
-import org.muml.storydiagram.calls.expressions.CallsExpressionsFactory;
-import org.muml.storydiagram.patterns.expressions.PatternsExpressionsFactory;
 
 /**
  * This is the item provider adapter for a {@link org.muml.storydiagram.activities.ActivityFinalNode} object.
@@ -35,9 +27,7 @@ import org.muml.storydiagram.patterns.expressions.PatternsExpressionsFactory;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ActivityFinalNodeItemProvider extends ActivityNodeItemProvider
-		implements IEditingDomainItemProvider, IStructuredItemContentProvider,
-		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class ActivityFinalNodeItemProvider extends ActivityNodeItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -72,16 +62,19 @@ public class ActivityFinalNodeItemProvider extends ActivityNodeItemProvider
 	 * @generated
 	 */
 	protected void addReturnValuePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_ActivityFinalNode_returnValue_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_ActivityFinalNode_returnValue_feature",
-						"_UI_ActivityFinalNode_type"),
-				ActivitiesPackage.Literals.ACTIVITY_FINAL_NODE__RETURN_VALUE,
-				false, false, false, null, null, null));
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ActivityFinalNode_returnValue_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ActivityFinalNode_returnValue_feature", "_UI_ActivityFinalNode_type"),
+				 ActivitiesPackage.Literals.ACTIVITY_FINAL_NODE__RETURN_VALUE,
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
@@ -91,17 +84,19 @@ public class ActivityFinalNodeItemProvider extends ActivityNodeItemProvider
 	 * @generated
 	 */
 	protected void addSuccessPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_ActivityFinalNode_success_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_ActivityFinalNode_success_feature",
-						"_UI_ActivityFinalNode_type"),
-				ActivitiesPackage.Literals.ACTIVITY_FINAL_NODE__SUCCESS, true,
-				false, false, ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null,
-				null));
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ActivityFinalNode_success_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ActivityFinalNode_success_feature", "_UI_ActivityFinalNode_type"),
+				 ActivitiesPackage.Literals.ACTIVITY_FINAL_NODE__SUCCESS,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -117,8 +112,7 @@ public class ActivityFinalNodeItemProvider extends ActivityNodeItemProvider
 			Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures
-					.add(ActivitiesPackage.Literals.ACTIVITY_FINAL_NODE__RETURN_VALUES);
+			childrenFeatures.add(ActivitiesPackage.Literals.ACTIVITY_FINAL_NODE__RETURN_VALUES);
 		}
 		return childrenFeatures;
 	}
@@ -151,16 +145,6 @@ public class ActivityFinalNodeItemProvider extends ActivityNodeItemProvider
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected boolean shouldComposeCreationImage() {
-		return true;
-	}
-
-	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -168,9 +152,10 @@ public class ActivityFinalNodeItemProvider extends ActivityNodeItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ActivityFinalNode) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_ActivityFinalNode_type")
-				: getString("_UI_ActivityFinalNode_type") + " " + label;
+		String label = ((ActivityFinalNode)object).getName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_ActivityFinalNode_type") :
+			getString("_UI_ActivityFinalNode_type") + " " + label;
 	}
 
 	/**
@@ -185,14 +170,12 @@ public class ActivityFinalNodeItemProvider extends ActivityNodeItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ActivityFinalNode.class)) {
-		case ActivitiesPackage.ACTIVITY_FINAL_NODE__SUCCESS:
-			fireNotifyChanged(new ViewerNotification(notification,
-					notification.getNotifier(), false, true));
-			return;
-		case ActivitiesPackage.ACTIVITY_FINAL_NODE__RETURN_VALUES:
-			fireNotifyChanged(new ViewerNotification(notification,
-					notification.getNotifier(), true, false));
-			return;
+			case ActivitiesPackage.ACTIVITY_FINAL_NODE__SUCCESS:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+			case ActivitiesPackage.ACTIVITY_FINAL_NODE__RETURN_VALUES:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+				return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -209,68 +192,70 @@ public class ActivityFinalNodeItemProvider extends ActivityNodeItemProvider
 			Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(
-				ActivitiesPackage.Literals.ACTIVITY_FINAL_NODE__RETURN_VALUES,
-				ActivitiesExpressionsFactory.eINSTANCE
-						.createExceptionVariableExpression()));
+		newChildDescriptors.add
+			(createChildParameter
+				(ActivitiesPackage.Literals.ACTIVITY_FINAL_NODE__RETURN_VALUES,
+				 org.muml.storydiagram.activities.expressions.ExpressionsFactory.eINSTANCE.createExceptionVariableExpression()));
 
-		newChildDescriptors
-				.add(createChildParameter(
-						ActivitiesPackage.Literals.ACTIVITY_FINAL_NODE__RETURN_VALUES,
-						CallsExpressionsFactory.eINSTANCE
-								.createMethodCallExpression()));
+		newChildDescriptors.add
+			(createChildParameter
+				(ActivitiesPackage.Literals.ACTIVITY_FINAL_NODE__RETURN_VALUES,
+				 org.muml.storydiagram.calls.expressions.ExpressionsFactory.eINSTANCE.createMethodCallExpression()));
 
-		newChildDescriptors.add(createChildParameter(
-				ActivitiesPackage.Literals.ACTIVITY_FINAL_NODE__RETURN_VALUES,
-				CallsExpressionsFactory.eINSTANCE.createParameterExpression()));
+		newChildDescriptors.add
+			(createChildParameter
+				(ActivitiesPackage.Literals.ACTIVITY_FINAL_NODE__RETURN_VALUES,
+				 org.muml.storydiagram.calls.expressions.ExpressionsFactory.eINSTANCE.createParameterExpression()));
 
-		newChildDescriptors.add(createChildParameter(
-				ActivitiesPackage.Literals.ACTIVITY_FINAL_NODE__RETURN_VALUES,
-				PatternsExpressionsFactory.eINSTANCE
-						.createAttributeValueExpression()));
+		newChildDescriptors.add
+			(createChildParameter
+				(ActivitiesPackage.Literals.ACTIVITY_FINAL_NODE__RETURN_VALUES,
+				 org.muml.storydiagram.patterns.expressions.ExpressionsFactory.eINSTANCE.createAttributeValueExpression()));
 
-		newChildDescriptors.add(createChildParameter(
-				ActivitiesPackage.Literals.ACTIVITY_FINAL_NODE__RETURN_VALUES,
-				PatternsExpressionsFactory.eINSTANCE
-						.createObjectVariableExpression()));
+		newChildDescriptors.add
+			(createChildParameter
+				(ActivitiesPackage.Literals.ACTIVITY_FINAL_NODE__RETURN_VALUES,
+				 org.muml.storydiagram.patterns.expressions.ExpressionsFactory.eINSTANCE.createObjectVariableExpression()));
 
-		newChildDescriptors.add(createChildParameter(
-				ActivitiesPackage.Literals.ACTIVITY_FINAL_NODE__RETURN_VALUES,
-				PatternsExpressionsFactory.eINSTANCE
-						.createCollectionSizeExpression()));
+		newChildDescriptors.add
+			(createChildParameter
+				(ActivitiesPackage.Literals.ACTIVITY_FINAL_NODE__RETURN_VALUES,
+				 org.muml.storydiagram.patterns.expressions.ExpressionsFactory.eINSTANCE.createCollectionSizeExpression()));
 
-		newChildDescriptors.add(createChildParameter(
-				ActivitiesPackage.Literals.ACTIVITY_FINAL_NODE__RETURN_VALUES,
-				PatternsExpressionsFactory.eINSTANCE
-						.createPrimitiveVariableExpression()));
+		newChildDescriptors.add
+			(createChildParameter
+				(ActivitiesPackage.Literals.ACTIVITY_FINAL_NODE__RETURN_VALUES,
+				 org.muml.storydiagram.patterns.expressions.ExpressionsFactory.eINSTANCE.createPrimitiveVariableExpression()));
 
-		newChildDescriptors.add(createChildParameter(
-				ActivitiesPackage.Literals.ACTIVITY_FINAL_NODE__RETURN_VALUES,
-				ExpressionsFactory.eINSTANCE.createTextualExpression()));
+		newChildDescriptors.add
+			(createChildParameter
+				(ActivitiesPackage.Literals.ACTIVITY_FINAL_NODE__RETURN_VALUES,
+				 ExpressionsFactory.eINSTANCE.createTextualExpression()));
 
-		newChildDescriptors.add(createChildParameter(
-				ActivitiesPackage.Literals.ACTIVITY_FINAL_NODE__RETURN_VALUES,
-				CommonExpressionsFactory.eINSTANCE.createUnaryExpression()));
+		newChildDescriptors.add
+			(createChildParameter
+				(ActivitiesPackage.Literals.ACTIVITY_FINAL_NODE__RETURN_VALUES,
+				 CommonExpressionsFactory.eINSTANCE.createUnaryExpression()));
 
-		newChildDescriptors
-				.add(createChildParameter(
-						ActivitiesPackage.Literals.ACTIVITY_FINAL_NODE__RETURN_VALUES,
-						CommonExpressionsFactory.eINSTANCE
-								.createComparisonExpression()));
+		newChildDescriptors.add
+			(createChildParameter
+				(ActivitiesPackage.Literals.ACTIVITY_FINAL_NODE__RETURN_VALUES,
+				 CommonExpressionsFactory.eINSTANCE.createComparisonExpression()));
 
-		newChildDescriptors
-				.add(createChildParameter(
-						ActivitiesPackage.Literals.ACTIVITY_FINAL_NODE__RETURN_VALUES,
-						CommonExpressionsFactory.eINSTANCE
-								.createArithmeticExpression()));
+		newChildDescriptors.add
+			(createChildParameter
+				(ActivitiesPackage.Literals.ACTIVITY_FINAL_NODE__RETURN_VALUES,
+				 CommonExpressionsFactory.eINSTANCE.createArithmeticExpression()));
 
-		newChildDescriptors.add(createChildParameter(
-				ActivitiesPackage.Literals.ACTIVITY_FINAL_NODE__RETURN_VALUES,
-				CommonExpressionsFactory.eINSTANCE.createLogicalExpression()));
+		newChildDescriptors.add
+			(createChildParameter
+				(ActivitiesPackage.Literals.ACTIVITY_FINAL_NODE__RETURN_VALUES,
+				 CommonExpressionsFactory.eINSTANCE.createLogicalExpression()));
 
-		newChildDescriptors.add(createChildParameter(
-				ActivitiesPackage.Literals.ACTIVITY_FINAL_NODE__RETURN_VALUES,
-				CommonExpressionsFactory.eINSTANCE.createLiteralExpression()));
+		newChildDescriptors.add
+			(createChildParameter
+				(ActivitiesPackage.Literals.ACTIVITY_FINAL_NODE__RETURN_VALUES,
+				 CommonExpressionsFactory.eINSTANCE.createLiteralExpression()));
 	}
 
 }

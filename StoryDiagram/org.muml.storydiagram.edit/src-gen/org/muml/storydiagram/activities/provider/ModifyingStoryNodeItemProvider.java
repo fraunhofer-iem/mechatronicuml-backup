@@ -12,12 +12,7 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.muml.storydiagram.activities.ActivitiesPackage;
 import org.muml.storydiagram.activities.ModifyingStoryNode;
@@ -29,9 +24,7 @@ import org.muml.storydiagram.patterns.PatternsFactory;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ModifyingStoryNodeItemProvider extends StoryNodeItemProvider
-		implements IEditingDomainItemProvider, IStructuredItemContentProvider,
-		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class ModifyingStoryNodeItemProvider extends StoryNodeItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -70,8 +63,7 @@ public class ModifyingStoryNodeItemProvider extends StoryNodeItemProvider
 			Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures
-					.add(ActivitiesPackage.Literals.MODIFYING_STORY_NODE__OWNED_RULE);
+			childrenFeatures.add(ActivitiesPackage.Literals.MODIFYING_STORY_NODE__OWNED_RULE);
 		}
 		return childrenFeatures;
 	}
@@ -100,16 +92,6 @@ public class ModifyingStoryNodeItemProvider extends StoryNodeItemProvider
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected boolean shouldComposeCreationImage() {
-		return true;
-	}
-
-	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -117,9 +99,10 @@ public class ModifyingStoryNodeItemProvider extends StoryNodeItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ModifyingStoryNode) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_ModifyingStoryNode_type")
-				: getString("_UI_ModifyingStoryNode_type") + " " + label;
+		String label = ((ModifyingStoryNode)object).getName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_ModifyingStoryNode_type") :
+			getString("_UI_ModifyingStoryNode_type") + " " + label;
 	}
 
 	/**
@@ -134,10 +117,9 @@ public class ModifyingStoryNodeItemProvider extends StoryNodeItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ModifyingStoryNode.class)) {
-		case ActivitiesPackage.MODIFYING_STORY_NODE__OWNED_RULE:
-			fireNotifyChanged(new ViewerNotification(notification,
-					notification.getNotifier(), true, false));
-			return;
+			case ActivitiesPackage.MODIFYING_STORY_NODE__OWNED_RULE:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+				return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -167,13 +149,15 @@ public class ModifyingStoryNodeItemProvider extends StoryNodeItemProvider
 			Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(
-				ActivitiesPackage.Literals.MODIFYING_STORY_NODE__OWNED_RULE,
-				PatternsFactory.eINSTANCE.createStoryPattern()));
+		newChildDescriptors.add
+			(createChildParameter
+				(ActivitiesPackage.Literals.MODIFYING_STORY_NODE__OWNED_RULE,
+				 PatternsFactory.eINSTANCE.createStoryPattern()));
 
-		newChildDescriptors.add(createChildParameter(
-				ActivitiesPackage.Literals.MODIFYING_STORY_NODE__OWNED_RULE,
-				PatternsFactory.eINSTANCE.createMatchingPattern()));
+		newChildDescriptors.add
+			(createChildParameter
+				(ActivitiesPackage.Literals.MODIFYING_STORY_NODE__OWNED_RULE,
+				 PatternsFactory.eINSTANCE.createMatchingPattern()));
 	}
 
 }
