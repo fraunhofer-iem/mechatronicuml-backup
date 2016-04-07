@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--muml metamodel version 0.3.2 (r2996)-->
 <modelinstance:RootNode xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:actionlanguage="http://www.fujaba.de/muml/actionlanguage/0.4.0" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.4.0" xmlns:msgtype="http://www.fujaba.de/muml/msgtype/0.4.0" xmlns:protocol="http://www.fujaba.de/muml/protocol/0.4.0" xmlns:realtimestatechart="http://www.fujaba.de/muml/realtimestatechart/0.4.0" xmlns:sdcec="http://www.storydriven.org/core/expressions/common/0.3.1" xmlns:types="http://www.fujaba.de/muml/types/0.4.0" xmi:id="_JXA_gMb0EeOcjtx1ReUZug">
-  <categories xmi:id="_JXA_gcb0EeOcjtx1ReUZug" key="de.uni_paderborn.fujaba.muml.types.category" name="types">
+  <categories xmi:id="_JXA_gcb0EeOcjtx1ReUZug" key="org.muml.types.category" name="types">
     <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_JXA_gsb0EeOcjtx1ReUZug" name="VOID"/>
     <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_JXA_g8b0EeOcjtx1ReUZug" name="BOOLEAN" primitiveType="BOOLEAN"/>
     <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_JXA_hMb0EeOcjtx1ReUZug" name="BYTE" primitiveType="BYTE"/>
@@ -22,7 +22,7 @@
       </messageTypes>
     </modelElements>
   </categories>
-  <categories xmi:id="_eZ7YoMb0EeOcjtx1ReUZug" key="de.uni_paderborn.fujaba.muml.realtimestatechart.category" name="realtimestatechart">
+  <categories xmi:id="_eZ7YoMb0EeOcjtx1ReUZug" key="org.muml.realtimestatechart.category" name="realtimestatechart">
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_eZ7Yocb0EeOcjtx1ReUZug" name="sender" behavioralElement="_9aj_IMb0EeOcjtx1ReUZug">
       <variables xmi:id="_ggL6gMb0EeOcjtx1ReUZug" name="p1Source" dataType="_JXA_hsb0EeOcjtx1ReUZug">
         <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_jTK_gMb0EeOcjtx1ReUZug" value="42"/>

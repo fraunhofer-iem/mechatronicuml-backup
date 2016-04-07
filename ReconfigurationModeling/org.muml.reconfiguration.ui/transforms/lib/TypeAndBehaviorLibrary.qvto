@@ -79,7 +79,7 @@ helper RootNode::createAffectedComponentsType() : StructType {
 
 -- returns the model element category for real-time statecharts.
 query RootNode::getTypesCategory() : ModelElementCategory {
-	return self.categories -> select(c : ModelElementCategory | c.key = 'de.uni_paderborn.fujaba.muml.types.category') -> any(true);
+	return self.categories -> select(c : ModelElementCategory | c.key = 'org.muml.types.category') -> any(true);
 }
 
 -- return the primitive type with the given name which is contained in the types category of the rootNode

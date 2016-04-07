@@ -1558,7 +1558,7 @@ public class ReconfigurationMUMLAnalysis {
 	public static boolean modelContainsArrayVariables(RootNode model){
 		
 		for (ModelElementCategory cat : model.getCategories()){			
-			if(cat.getKey().equals("de.uni_paderborn.fujaba.muml.realtimestatechart.category"))
+			if(cat.getKey().equals("org.muml.realtimestatechart.category"))
 			{
 				for(ExtendableElement rtsc : cat.getModelElements()){					
 						TreeIterator<EObject> it = EcoreUtil.getAllContents(rtsc, true);

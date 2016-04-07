@@ -11,7 +11,7 @@
   </categories>
   <categories xmi:id="_Dwx8iRx3EeSKP_lLzmbIVg" key="de.uni_paderborn.fujaba.muml.protocol.category" name="protocol"/>
   <categories xmi:id="_Dwx8ihx3EeSKP_lLzmbIVg" key="de.uni_paderborn.fujaba.muml.messagetype.category" name="msgtype"/>
-  <categories xmi:id="_Dwx8ixx3EeSKP_lLzmbIVg" key="de.uni_paderborn.fujaba.muml.realtimestatechart.category" name="realtimestatechart">
+  <categories xmi:id="_Dwx8ixx3EeSKP_lLzmbIVg" key="org.muml.realtimestatechart.category" name="realtimestatechart">
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_hmH0kBx3EeSKP_lLzmbIVg" name="simpleStatechart" behavioralElement="_LTjxcBx3EeSKP_lLzmbIVg">
       <variables xmi:id="_GEa9oBx4EeSKP_lLzmbIVg" name="myVariable">
         <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>
@@ -67,5 +67,5 @@
       </states>
     </modelElements>
   </categories>
-  <categories xmi:id="_8rhogNi1EeWxo7TBPzv5sQ" key="de.uni_paderborn.fujaba.muml.types.category" name="types"/>
+  <categories xmi:id="_8rhogNi1EeWxo7TBPzv5sQ" key="org.muml.types.category" name="types"/>
 </modelinstance:RootNode>

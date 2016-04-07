@@ -54,7 +54,7 @@ main()
 	rootOfNewModel := new RootNode();
 	
 	theRootNode.categories->forEach(cat) {
-	 if(cat.key.oclAsType(String).matches('de.uni_paderborn.fujaba.muml.types.category') or cat.key.oclAsType(String).matches('de.uni_paderborn.fujaba.muml.messagetype.category') ) {
+	 if(cat.key.oclAsType(String).matches('org.muml.types.category') or cat.key.oclAsType(String).matches('de.uni_paderborn.fujaba.muml.messagetype.category') ) {
 	 	rootOfNewModel.categories += cat.map transform().oclAsType(ModelElementCategory);
 	 	}
 	 	else {

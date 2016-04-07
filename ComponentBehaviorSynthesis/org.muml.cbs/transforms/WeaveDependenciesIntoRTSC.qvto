@@ -1,7 +1,7 @@
 import transforms.lib.RTSC2RTSCdeepContainmentCopy;	
 
 // SD: unneeded?
-//import de.uni_paderborn.fujaba.muml.dependencylanguage.synthesis.qvtoblackbox.XTextSerializerLibUnit;
+//import org.muml.cbs.qvtoblackbox.XTextSerializerLibUnit;
 
 modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
 modeltype rtsc uses pim::realtimestatechart('http://www.muml.org/pim/1.0.0');
@@ -1609,7 +1609,7 @@ query getInvertComparingOperator(op:ComparingOperator):ComparingOperator{
 }
 
 query getDataType(pType:PrimitiveTypes):DataType{
-	return getModelElementCategory(componentToSynthesize->first(),'de.uni_paderborn.fujaba.muml.types.category')
+	return getModelElementCategory(componentToSynthesize->first(),'org.muml.types.category')
 		.modelElements[PrimitiveDataType]->any(type:PrimitiveDataType|type.primitiveType=(pType));
 }
 

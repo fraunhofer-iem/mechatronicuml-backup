@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--muml metamodel version 0.3.2 (r15221)-->
 <modelinstance:RootNode xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:actionlanguage="http://www.fujaba.de/muml/actionlanguage/0.4.0" xmlns:component="http://www.fujaba.de/muml/component/0.4.0" xmlns:instance="http://www.fujaba.de/muml/instance/0.4.0" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.4.0" xmlns:realtimestatechart="http://www.fujaba.de/muml/realtimestatechart/0.4.0" xmlns:sdcec="http://www.storydriven.org/core/expressions/common/0.3.1" xmlns:types="http://www.fujaba.de/muml/types/0.4.0" xmi:id="_w_ysIB4KEeSKP_lLzmbIVg">
-  <categories xmi:id="_w_ysIR4KEeSKP_lLzmbIVg" key="de.uni_paderborn.fujaba.muml.types.category" name="types">
+  <categories xmi:id="_w_ysIR4KEeSKP_lLzmbIVg" key="org.muml.types.category" name="types">
     <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_w_ysIh4KEeSKP_lLzmbIVg" name="void"/>
     <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_w_ysIx4KEeSKP_lLzmbIVg" name="boolean" primitiveType="BOOLEAN"/>
     <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_w_zTMB4KEeSKP_lLzmbIVg" name="int8" primitiveType="INT8"/>
@@ -20,7 +20,7 @@
   </categories>
   <categories xmi:id="_w_z6Rh4KEeSKP_lLzmbIVg" key="de.uni_paderborn.fujaba.muml.protocol.category" name="protocol"/>
   <categories xmi:id="_w_0hUB4KEeSKP_lLzmbIVg" key="de.uni_paderborn.fujaba.muml.messagetype.category" name="msgtype"/>
-  <categories xmi:id="_w_0hUR4KEeSKP_lLzmbIVg" key="de.uni_paderborn.fujaba.muml.realtimestatechart.category" name="realtimestatechart">
+  <categories xmi:id="_w_0hUR4KEeSKP_lLzmbIVg" key="org.muml.realtimestatechart.category" name="realtimestatechart">
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_UCEjIB4LEeSKP_lLzmbIVg" name="Behavior" behavioralElement="_sapbEB4MEeSKP_lLzmbIVg">
       <variables xmi:id="_MnfygB4MEeSKP_lLzmbIVg" name="i" dataType="_w_z6QR4KEeSKP_lLzmbIVg"/>
       <states xmi:id="_UCEjIR4LEeSKP_lLzmbIVg" name="init" initial="true">

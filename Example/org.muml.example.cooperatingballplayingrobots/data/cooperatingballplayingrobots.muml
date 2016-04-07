@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--muml metamodel version 0.3.2 (r15221)-->
 <modelinstance:RootNode xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:BooleanLogic="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/BooleanLogic" xmlns:Comparables="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Comparables" xmlns:Predicates="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Predicates" xmlns:Quantifiers="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Quantifiers" xmlns:Sets="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Sets" xmlns:actionlanguage="http://www.fujaba.de/muml/actionlanguage/0.4.0" xmlns:component="http://www.fujaba.de/muml/component/0.4.0" xmlns:instance="http://www.fujaba.de/muml/instance/0.4.0" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.4.0" xmlns:msgtype="http://www.fujaba.de/muml/msgtype/0.4.0" xmlns:mtctl="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl" xmlns:protocol="http://www.fujaba.de/muml/protocol/0.4.0" xmlns:realtimestatechart="http://www.fujaba.de/muml/realtimestatechart/0.4.0" xmlns:sdcec="http://www.storydriven.org/core/expressions/common/0.3.1" xmlns:types="http://www.fujaba.de/muml/types/0.4.0" xmi:id="_fKvPIJe3EeKIIefjcfllxA">
-  <categories xmi:id="_fLD_QJe3EeKIIefjcfllxA" key="de.uni_paderborn.fujaba.muml.types.category" name="types">
+  <categories xmi:id="_fLD_QJe3EeKIIefjcfllxA" key="org.muml.types.category" name="types">
     <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_fLFNYJe3EeKIIefjcfllxA" name="void"/>
     <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_fLFNYZe3EeKIIefjcfllxA" name="boolean" primitiveType="BOOLEAN"/>
     <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_fLFNYpe3EeKIIefjcfllxA" name="int8" primitiveType="INT8"/>
@@ -181,7 +181,7 @@
       <ports xsi:type="component:ContinuousPort" xmi:id="_ER3c0KK7EeKHT8i8WqTL9g" name="stopPlayingR2" dataType="_fLFNYZe3EeKIIefjcfllxA" kind="OUT"/>
     </modelElements>
   </categories>
-  <categories xmi:id="_Dj8iEZvEEeKe1dmyo6HznA" key="de.uni_paderborn.fujaba.muml.realtimestatechart.category" name="realtimestatechart">
+  <categories xmi:id="_Dj8iEZvEEeKe1dmyo6HznA" key="org.muml.realtimestatechart.category" name="realtimestatechart">
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_ObmBEJvEEeKe1dmyo6HznA" name="MainProcessing" behavioralElement="_S4NmMJe6EeKVX6r_GEFobQ">
       <variables xmi:id="_0cF8YJ0nEeKe1dmyo6HznA" name="posXReceivedBySP" dataType="_fLF0cZe3EeKIIefjcfllxA"/>
       <variables xmi:id="_7B06QJ0nEeKe1dmyo6HznA" name="posXReceivedByRobot" dataType="_fLF0cZe3EeKIIefjcfllxA"/>

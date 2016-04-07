@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--muml metamodel version 0.3.2 (r15221)-->
 <modelinstance:RootNode xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:actionlanguage="http://www.fujaba.de/muml/actionlanguage/0.4.0" xmlns:component="http://www.fujaba.de/muml/component/0.4.0" xmlns:instance="http://www.fujaba.de/muml/instance/0.4.0" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.4.0" xmlns:realtimestatechart="http://www.fujaba.de/muml/realtimestatechart/0.4.0" xmlns:sdcec="http://www.storydriven.org/core/expressions/common/0.3.1" xmlns:types="http://www.fujaba.de/muml/types/0.4.0" xmi:id="_5GPkEByEEeSKP_lLzmbIVg">
-  <categories xmi:id="_5GPkERyEEeSKP_lLzmbIVg" key="de.uni_paderborn.fujaba.muml.types.category" name="types"/>
+  <categories xmi:id="_5GPkERyEEeSKP_lLzmbIVg" key="org.muml.types.category" name="types"/>
   <categories xmi:id="_5GPkGRyEEeSKP_lLzmbIVg" key="de.uni_paderborn.fujaba.muml.instance.category" name="instance">
     <modelElements xsi:type="instance:ComponentInstanceConfiguration" xmi:id="_z8b8MByFEeSKP_lLzmbIVg" name="root-cic">
       <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_0R2ykByFEeSKP_lLzmbIVg" name="A1" componentType="_AHpxUByFEeSKP_lLzmbIVg"/>
@@ -12,7 +12,7 @@
   </categories>
   <categories xmi:id="_5GPkGxyEEeSKP_lLzmbIVg" key="de.uni_paderborn.fujaba.muml.protocol.category" name="protocol"/>
   <categories xmi:id="_5GPkHByEEeSKP_lLzmbIVg" key="de.uni_paderborn.fujaba.muml.messagetype.category" name="msgtype"/>
-  <categories xmi:id="_5GQLIByEEeSKP_lLzmbIVg" key="de.uni_paderborn.fujaba.muml.realtimestatechart.category" name="realtimestatechart">
+  <categories xmi:id="_5GQLIByEEeSKP_lLzmbIVg" key="org.muml.realtimestatechart.category" name="realtimestatechart">
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_-baR8ByEEeSKP_lLzmbIVg" name="testSync" behavioralElement="_AHpxUByFEeSKP_lLzmbIVg">
       <variables xmi:id="_XVVY4ByFEeSKP_lLzmbIVg" name="var1">
         <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#int32"/>

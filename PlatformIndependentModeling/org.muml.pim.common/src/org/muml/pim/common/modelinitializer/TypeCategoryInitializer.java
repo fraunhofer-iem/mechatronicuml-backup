@@ -10,7 +10,7 @@ import org.muml.pim.types.PrimitiveTypes;
 import org.muml.pim.types.TypesFactory;
 
 public class TypeCategoryInitializer implements IModelInitializer {
-	private static final String TYPES_CATEGORY_KEY = "de.uni_paderborn.fujaba.muml.types.category";
+	private static final String TYPES_CATEGORY_KEY = "org.muml.types.category";
 	private static final String TYPES_CATEGORY_NAME = "types";
 
 	@Override

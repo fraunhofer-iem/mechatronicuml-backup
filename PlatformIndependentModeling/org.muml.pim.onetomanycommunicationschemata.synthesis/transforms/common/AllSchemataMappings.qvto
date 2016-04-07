@@ -48,7 +48,7 @@ mapping Transition::Schema2BooleanVariable(varName : String): Variable
 }
 
 query getBooleanPrimitiveDataType(theRootNode : RootNode) : PrimitiveDataType {
-	var types2 : ModelElementCategory := theRootNode.categories -> select(c : ModelElementCategory | c.key = 'de.uni_paderborn.fujaba.muml.types.category') -> any(true);
+	var types2 : ModelElementCategory := theRootNode.categories -> select(c : ModelElementCategory | c.key = 'org.muml.types.category') -> any(true);
 	if(types2.oclIsUndefined()) {
 		return BOOLEAN;
 	};	

@@ -134,7 +134,7 @@ public class RtscTestExporter {
 								.createModelElementCategory();
 						rtscCategory.setName("realtimestatechart");
 						rtscCategory
-								.setKey("de.uni_paderborn.fujaba.muml.realtimestatechart.category");
+								.setKey("org.muml.realtimestatechart.category");
 						((RootNode) o).getCategories().add(rtscCategory);
 					}
 					break;

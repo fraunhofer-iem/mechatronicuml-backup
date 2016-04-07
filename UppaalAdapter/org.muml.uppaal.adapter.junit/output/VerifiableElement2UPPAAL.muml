@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <modelinstance:RootNode xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:BooleanLogic="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/BooleanLogic" xmlns:Comparables="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Comparables" xmlns:Predicates="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Predicates" xmlns:Quantifiers="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Quantifiers" xmlns:component="http://www.fujaba.de/muml/component/0.4.0" xmlns:instance="http://www.fujaba.de/muml/instance/0.4.0" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.4.0" xmlns:msgtype="http://www.fujaba.de/muml/msgtype/0.4.0" xmlns:mtctl="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl" xmlns:protocol="http://www.fujaba.de/muml/protocol/0.4.0" xmlns:realtimestatechart="http://www.fujaba.de/muml/realtimestatechart/0.4.0" xmlns:sdcec="http://www.storydriven.org/core/expressions/common/0.3.1" xmlns:types="http://www.fujaba.de/muml/types/0.4.0" xmlns:verificationExtension="http://www.fujaba.de/muml/verification/extension/0.4.0">
-  <categories key="de.uni_paderborn.fujaba.muml.types.category" name="types">
+  <categories key="org.muml.types.category" name="types">
     <modelElements xsi:type="types:PrimitiveDataType" name="VOID"/>
     <modelElements xsi:type="types:PrimitiveDataType" name="BOOLEAN" primitiveType="BOOLEAN"/>
     <modelElements xsi:type="types:PrimitiveDataType" name="BYTE" primitiveType="BYTE"/>
@@ -207,7 +207,7 @@
       <messageTypes name="frei"/>
     </modelElements>
   </categories>
-  <categories key="de.uni_paderborn.fujaba.muml.realtimestatechart.category" name="realtimestatechart">
+  <categories key="org.muml.realtimestatechart.category" name="realtimestatechart">
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" name="RolleParksystem" behavioralElement="//@categories.3/@modelElements.0/@roles.0">
       <transitions priority="1" target="//@categories.5/@modelElements.0/@states.1" source="//@categories.5/@modelElements.0/@states.0" clockResets="//@categories.5/@modelElements.0/@clocks.0" urgent="false">
         <events xsi:type="realtimestatechart:AsynchronousMessageEvent">

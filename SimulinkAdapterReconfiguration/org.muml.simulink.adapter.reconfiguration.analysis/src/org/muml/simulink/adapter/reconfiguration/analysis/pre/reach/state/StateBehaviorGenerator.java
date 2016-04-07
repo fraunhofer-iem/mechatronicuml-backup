@@ -31,7 +31,7 @@ import org.muml.pim.types.PrimitiveTypes;
  */
 public class StateBehaviorGenerator 
 {	
-	static final String CATEGORY_TYPES = "de.uni_paderborn.fujaba.muml.types.category";
+	static final String CATEGORY_TYPES = "org.muml.types.category";
 	static final String CATEGORY_MSGTYPE = "de.uni_paderborn.fujaba.muml.messagetype.category";
 	
 	static final String LANG_MATLAB = "embedded_matlab";

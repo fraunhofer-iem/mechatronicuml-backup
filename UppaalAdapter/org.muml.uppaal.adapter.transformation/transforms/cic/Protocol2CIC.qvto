@@ -50,7 +50,7 @@ property componentCategoryKey : String = "de.uni_paderborn.fujaba.muml.component
 property componentCategoryName : String ="component";
 property componentInstanceCategoryKey : String = "de.uni_paderborn.fujaba.muml.instance.category";
 property componentInstanceCategoryName : String = "instance";
-property rtscCategoryKey : String = "de.uni_paderborn.fujaba.muml.realtimestatechart.category";
+property rtscCategoryKey : String = "org.muml.realtimestatechart.category";
 property rtscCategoryName : String = "realtimestatechart";
 
 

@@ -14,7 +14,7 @@ modeltype TRANSFORM uses transform('http://www.fujaba.de/modelica/m2t/transform/
 library Util
 	access Naming;
 	
-property KEY : String = "de.uni_paderborn.fujaba.muml.types.category";
+property KEY : String = "org.muml.types.category";
 property BOOL : String = "boolean";
 property INT : String = "int32";
 property INIT : String = "generatedInitState";

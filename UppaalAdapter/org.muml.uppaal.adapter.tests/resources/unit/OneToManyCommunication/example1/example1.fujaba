@@ -16,7 +16,7 @@
     xmi:id="_W8MzUNUMEeOzB5sVHdJ6ng">
   <categories
       xmi:id="_W8MzUdUMEeOzB5sVHdJ6ng"
-      key="de.uni_paderborn.fujaba.muml.types.category"
+      key="org.muml.types.category"
       name="types">
     <modelElements
         xsi:type="types:PrimitiveDataType"
@@ -163,7 +163,7 @@
   </categories>
   <categories
       xmi:id="_W8MzXdUMEeOzB5sVHdJ6ng"
-      key="de.uni_paderborn.fujaba.muml.realtimestatechart.category"
+      key="org.muml.realtimestatechart.category"
       name="realtimestatechart">
     <modelElements
         xsi:type="realtimestatechart:RealtimeStatechart"

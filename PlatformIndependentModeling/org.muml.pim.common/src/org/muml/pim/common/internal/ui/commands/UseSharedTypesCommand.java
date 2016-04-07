@@ -37,7 +37,7 @@ import org.muml.pim.types.PrimitiveDataType;
 
 public class UseSharedTypesCommand extends AbstractHandler {
 
-	private static final String TYPES_CATEGORY_KEY = "de.uni_paderborn.fujaba.muml.types.category";
+	private static final String TYPES_CATEGORY_KEY = "org.muml.types.category";
 
 	public UseSharedTypesCommand() {
 	}

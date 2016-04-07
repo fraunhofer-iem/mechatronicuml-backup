@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--muml metamodel version 0.3.2 (r2996)-->
 <modelinstance:RootNode xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:actionlanguage="http://www.fujaba.de/muml/actionlanguage/0.4.0" xmlns:component="http://www.fujaba.de/muml/component/0.4.0" xmlns:dependencylanguage="http://www.fujaba.de/muml/dependencylanguage/0.4.0" xmlns:instance="http://www.fujaba.de/muml/instance/0.4.0" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.4.0" xmlns:msgtype="http://www.fujaba.de/muml/msgtype/0.4.0" xmlns:protocol="http://www.fujaba.de/muml/protocol/0.4.0" xmlns:realtimestatechart="http://www.fujaba.de/muml/realtimestatechart/0.4.0" xmlns:sdcec="http://www.storydriven.org/core/expressions/common/0.3.1" xmlns:types="http://www.fujaba.de/muml/types/0.4.0" xmi:id="_CwOdsMOmEeKt4K__LJLJ8w">
-  <categories xmi:id="_CwOdscOmEeKt4K__LJLJ8w" key="de.uni_paderborn.fujaba.muml.types.category" name="types">
+  <categories xmi:id="_CwOdscOmEeKt4K__LJLJ8w" key="org.muml.types.category" name="types">
     <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_CwOdssOmEeKt4K__LJLJ8w" name="VOID"/>
     <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_CwOds8OmEeKt4K__LJLJ8w" name="BOOLEAN" primitiveType="BOOLEAN"/>
     <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_CwOdtMOmEeKt4K__LJLJ8w" name="INT8" primitiveType="INT8"/>
@@ -90,7 +90,7 @@
       </messageTypes>
     </modelElements>
   </categories>
-  <categories xmi:id="_YPvEgMOsEeKtesZp-51dtg" key="de.uni_paderborn.fujaba.muml.realtimestatechart.category" name="realtimestatechart">
+  <categories xmi:id="_YPvEgMOsEeKtesZp-51dtg" key="org.muml.realtimestatechart.category" name="realtimestatechart">
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_YPyu4MOsEeKtesZp-51dtg" name="railcab_role" behavioralElement="_JgQnEMOmEeKt4K__LJLJ8w">
       <transitions xmi:id="_G51nUMO6EeKtesZp-51dtg" priority="1" target="__EFzEMO5EeKtesZp-51dtg" source="_YPyu4cOsEeKtesZp-51dtg" clockResets="_OZ_mEMO6EeKtesZp-51dtg">
         <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_L0Gh4MO6EeKtesZp-51dtg" kind="TRIGGER">

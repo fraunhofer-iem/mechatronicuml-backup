@@ -70,7 +70,7 @@ helper disassembleDiscreteInteractionPointRTSC(inputRTSC : RealtimeStatechart) :
 }
 
 query getRealtimeStatechartCategory(theRootNode : RootNode) : ModelElementCategory {
-	return theRootNode.categories -> select(c : ModelElementCategory | c.key = 'de.uni_paderborn.fujaba.muml.realtimestatechart.category') -> any(true);
+	return theRootNode.categories -> select(c : ModelElementCategory | c.key = 'org.muml.realtimestatechart.category') -> any(true);
 }
 
 query getRealtimeStatechartCategory(): ModelElementCategory

@@ -40,7 +40,7 @@ public class ReachAnalysis
 	
 	final static String CATEGORY_ACTIVITIES = "org.storydriven.storydiagrams.category";
 	final static String CATEGORY_COMPONENTS = "de.uni_paderborn.fujaba.muml.components.category";
-	static final String CATEGORY_RTSC = "de.uni_paderborn.fujaba.muml.realtimestatechart.category";
+	static final String CATEGORY_RTSC = "org.muml.realtimestatechart.category";
 	static final String CATEGORY_MSGTYPE = "de.uni_paderborn.fujaba.muml.messagetype.category";
 	
 	public ReachAnalysis(RootNode model, ComponentInstanceConfiguration cic)

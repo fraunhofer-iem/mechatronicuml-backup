@@ -1,3 +1,4 @@
+
 package org.muml.cbs.dependencylanguage.properties.constraint;
 
 public class CreationConstraintContributor

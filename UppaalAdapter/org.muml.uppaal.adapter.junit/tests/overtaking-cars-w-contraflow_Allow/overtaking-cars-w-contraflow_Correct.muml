@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--muml metamodel version 0.3.2 (r14616)-->
 <modelinstance:RootNode xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:BooleanLogic="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/BooleanLogic" xmlns:Comparables="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Comparables" xmlns:Predicates="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Predicates" xmlns:Quantifiers="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Quantifiers" xmlns:Sets="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Sets" xmlns:actionlanguage="http://www.fujaba.de/muml/actionlanguage/0.4.0" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.4.0" xmlns:msgtype="http://www.fujaba.de/muml/msgtype/0.4.0" xmlns:mtctl="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl" xmlns:protocol="http://www.fujaba.de/muml/protocol/0.4.0" xmlns:realtimestatechart="http://www.fujaba.de/muml/realtimestatechart/0.4.0" xmlns:sdcec="http://www.storydriven.org/core/expressions/common/0.3.1" xmlns:types="http://www.fujaba.de/muml/types/0.4.0" xmi:id="_FB0TQJJ7EeSSMde45fnrcg">
-  <categories xmi:id="_FB0TQZJ7EeSSMde45fnrcg" key="de.uni_paderborn.fujaba.muml.types.category" name="types">
+  <categories xmi:id="_FB0TQZJ7EeSSMde45fnrcg" key="org.muml.types.category" name="types">
     <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_FB0TQpJ7EeSSMde45fnrcg" name="VOID"/>
     <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_FB0TQ5J7EeSSMde45fnrcg" name="BOOLEAN" primitiveType="BOOLEAN"/>
     <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_FB0TRJJ7EeSSMde45fnrcg" name="INT8" primitiveType="INT8"/>
@@ -10,7 +10,7 @@
     <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_FB0TR5J7EeSSMde45fnrcg" name="INT64" primitiveType="INT64"/>
     <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_FB0TSJJ7EeSSMde45fnrcg" name="DOUBLE" primitiveType="DOUBLE"/>
   </categories>
-  <categories xmi:id="_FB0TSZJ7EeSSMde45fnrcg" key="de.uni_paderborn.fujaba.muml.realtimestatechart.category" name="realtimestatechart">
+  <categories xmi:id="_FB0TSZJ7EeSSMde45fnrcg" key="org.muml.realtimestatechart.category" name="realtimestatechart">
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_17zEoJKhEeSSMde45fnrcg" name="overtakeeRoleRTSC" behavioralElement="_V7ls8JKgEeSSMde45fnrcg">
       <variables xmi:id="__fWvgKL9EeSbmbyTJYAEVw" name="constVelFast" dataType="_FB0TRpJ7EeSSMde45fnrcg" constant="true">
         <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_BHz7EKL-EeSbmbyTJYAEVw" value="18"/>

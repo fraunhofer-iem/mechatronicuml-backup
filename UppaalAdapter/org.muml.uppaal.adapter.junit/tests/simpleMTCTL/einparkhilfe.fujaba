@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--muml metamodel version 0.3.2 (r2996)-->
 <modelinstance:RootNode xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.4.0" xmlns:msgtype="http://www.fujaba.de/muml/msgtype/0.4.0" xmlns:mtctl="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl" xmlns:protocol="http://www.fujaba.de/muml/protocol/0.4.0" xmlns:realtimestatechart="http://www.fujaba.de/muml/realtimestatechart/0.4.0" xmlns:sda="http://www.storydriven.org/storydiagrams/activities/0.2.1" xmlns:sdcec="http://www.storydriven.org/core/expressions/common/0.3.1" xmlns:types="http://www.fujaba.de/muml/types/0.4.0" xmi:id="_M7u6YAUkEeSJTqo7jlVMjA">
-  <categories xmi:id="_M7u6YQUkEeSJTqo7jlVMjA" key="de.uni_paderborn.fujaba.muml.types.category" name="types">
+  <categories xmi:id="_M7u6YQUkEeSJTqo7jlVMjA" key="org.muml.types.category" name="types">
     <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_M7u6YgUkEeSJTqo7jlVMjA" name="VOID"/>
     <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_M7u6YwUkEeSJTqo7jlVMjA" name="BOOLEAN" primitiveType="BOOLEAN"/>
     <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_M7u6ZAUkEeSJTqo7jlVMjA" name="BYTE" primitiveType="BYTE"/>
@@ -60,7 +60,7 @@
       <messageTypes xmi:id="_AltGUCyLEeSYk6MjS_5mTw" name="akzeptiereStop"/>
     </modelElements>
   </categories>
-  <categories xmi:id="_M7u6bQUkEeSJTqo7jlVMjA" key="de.uni_paderborn.fujaba.muml.realtimestatechart.category" name="realtimestatechart">
+  <categories xmi:id="_M7u6bQUkEeSJTqo7jlVMjA" key="org.muml.realtimestatechart.category" name="realtimestatechart">
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_cjkVcAUlEeSJTqo7jlVMjA" name="RolleParksystem" behavioralElement="_5mnqYAUkEeSJTqo7jlVMjA">
       <transitions xmi:id="_t7DlsAUlEeSJTqo7jlVMjA" priority="1" target="_oZuEEAUlEeSJTqo7jlVMjA" source="_cjkVcQUlEeSJTqo7jlVMjA" clockResets="_kj8sYAUlEeSJTqo7jlVMjA" urgent="false">
         <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_6IvDgAUlEeSJTqo7jlVMjA">

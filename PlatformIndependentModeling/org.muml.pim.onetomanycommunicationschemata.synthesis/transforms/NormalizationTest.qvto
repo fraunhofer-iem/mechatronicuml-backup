@@ -17,7 +17,7 @@ transformation NormalizationTest(inout input : modelinstance);
 
 main() {
 	var root : RootNode := input.rootObjects()[RootNode]->any(true);
-	var rtscCategory : ModelElementCategory := root.categories-> select(c : ModelElementCategory | c.key = 'de.uni_paderborn.fujaba.muml.realtimestatechart.category')-> any(true);
+	var rtscCategory : ModelElementCategory := root.categories-> select(c : ModelElementCategory | c.key = 'org.muml.realtimestatechart.category')-> any(true);
 	var current : RealtimeStatechart :=  	rtscCategory.modelElements->at(1).oclAsType(RealtimeStatechart);
 
 	normalize(current);

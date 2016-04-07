@@ -30,7 +30,7 @@ import org.muml.pim.common.modelinitializer.TypeCategoryInitializer;
 
 public class OpenTypeDialogCommand extends AbstractHandler {
 
-	private static final String TYPES_CATEGORY_KEY = "de.uni_paderborn.fujaba.muml.types.category";
+	private static final String TYPES_CATEGORY_KEY = "org.muml.types.category";
 
 	public OpenTypeDialogCommand() {
 	}

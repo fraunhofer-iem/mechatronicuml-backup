@@ -28,7 +28,7 @@ import org.muml.core.modelinstance.categories.ModelElementCategoryRegistry;
 
 public class StoringExecuteQvtoTransformationCommand extends
 		ExecuteQvtoTransformationCommand {
-	private static final String TYPES_CATEGORY_KEY = "de.uni_paderborn.fujaba.muml.types.category";
+	private static final String TYPES_CATEGORY_KEY = "org.muml.types.category";
 
 	private ModelExtent inputExtent;
 	private ModelExtent outputExtent;

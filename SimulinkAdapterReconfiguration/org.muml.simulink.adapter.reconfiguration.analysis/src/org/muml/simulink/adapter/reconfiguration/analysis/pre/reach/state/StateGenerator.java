@@ -27,7 +27,7 @@ import org.muml.reconfiguration.ReconfigurableStructuredComponent;
 public class StateGenerator 
 {	
 	final static String CATEGORY_COMPONENTS = "de.uni_paderborn.fujaba.muml.components.category";
-	static final String CATEGORY_RTSC = "de.uni_paderborn.fujaba.muml.realtimestatechart.category";
+	static final String CATEGORY_RTSC = "org.muml.realtimestatechart.category";
 	static final String CATEGORY_MSGTYPE = "de.uni_paderborn.fujaba.muml.messagetype.category";
 	
 	static final String BASERECONFIGURATIONMESSAGETYPEREPOSITORY = "_BaseReconfigurationMessageTypeRepo";

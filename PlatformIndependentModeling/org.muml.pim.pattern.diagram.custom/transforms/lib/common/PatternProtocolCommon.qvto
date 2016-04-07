@@ -18,7 +18,7 @@ modeltype actionLanguage uses 'http://www.muml.org/pim/actionlanguage/1.0.0';
 configuration property timeStamp : String;
 
 query getRealtimeStatechartCategory(theRootNode : RootNode) : ModelElementCategory {
-	return theRootNode.categories -> select(c : ModelElementCategory | c.key = 'de.uni_paderborn.fujaba.muml.realtimestatechart.category') -> any(true);
+	return theRootNode.categories -> select(c : ModelElementCategory | c.key = 'org.muml.realtimestatechart.category') -> any(true);
 }
 query getProtocolCategory(theRootNode : RootNode) : ModelElementCategory {
 	return theRootNode.categories -> select(c : ModelElementCategory | c.key = 'de.uni_paderborn.fujaba.muml.protocol.category') -> any(true);
@@ -32,7 +32,7 @@ query getMsgTypeCategory(theRootNode : RootNode) : ModelElementCategory {
 }
 
 query getTypesCategory(theRootNode : RootNode) : ModelElementCategory {
-	return theRootNode.categories -> select(c : ModelElementCategory | c.key = 'de.uni_paderborn.fujaba.muml.types.category') -> any(true);
+	return theRootNode.categories -> select(c : ModelElementCategory | c.key = 'org.muml.types.category') -> any(true);
 }
 
 

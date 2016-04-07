@@ -46,7 +46,7 @@ public class CreateTypesFileCommand extends AbstractCreateFileCommand {
 						.createModelElementCategory();
 
 				// Let extensions initialize the model
-				category.setKey("de.uni_paderborn.fujaba.muml.types.category");
+				category.setKey("org.muml.types.category");
 				category.setName("types");
 				ModelinstanceUiPlugin.getDefault().initializeModel(category);
 

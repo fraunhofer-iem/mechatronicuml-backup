@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--muml metamodel version 0.3.2 (r14616)-->
 <modelinstance:RootNode xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:BooleanLogic="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/BooleanLogic" xmlns:Comparables="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Comparables" xmlns:Predicates="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Predicates" xmlns:Quantifiers="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Quantifiers" xmlns:actionlanguage="http://www.fujaba.de/muml/actionlanguage/0.4.0" xmlns:component="http://www.fujaba.de/muml/component/0.4.0" xmlns:dependencylanguage="http://www.fujaba.de/muml/dependencylanguage/0.4.0" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.4.0" xmlns:msgtype="http://www.fujaba.de/muml/msgtype/0.4.0" xmlns:mtctl="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl" xmlns:protocol="http://www.fujaba.de/muml/protocol/0.4.0" xmlns:realtimestatechart="http://www.fujaba.de/muml/realtimestatechart/0.4.0" xmlns:sdcec="http://www.storydriven.org/core/expressions/common/0.3.1" xmlns:types="http://www.fujaba.de/muml/types/0.4.0" xmi:id="_hjT_4IS6EeKrXO1iCP2aTw">
-  <categories xmi:id="_ZOIrYIS_EeKO9r0VL65xcg" key="de.uni_paderborn.fujaba.muml.realtimestatechart.category" name="realtimestatechart">
+  <categories xmi:id="_ZOIrYIS_EeKO9r0VL65xcg" key="org.muml.realtimestatechart.category" name="realtimestatechart">
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_ZOLusIS_EeKO9r0VL65xcg" name="Overtaker_Role" behavioralElement="_GQwUAITCEeKO9r0VL65xcg">
       <variables xmi:id="_jPg6wAdvEeScEaYFsu5sEQ" name="mySpeed" dataType="_Byc_tCqlEeOmGPWtq6tuHA"/>
       <transitions xmi:id="_yXwJQITBEeKO9r0VL65xcg" priority="3" target="_p05XYITBEeKO9r0VL65xcg" source="_YbeQgCngEeOLOOFBfu_IMg"/>
@@ -354,7 +354,7 @@
       </roleConnector>
     </modelElements>
   </categories>
-  <categories xmi:id="_O_7KwCqeEeO22YgZcbz7_A" key="de.uni_paderborn.fujaba.muml.types.category" name="types">
+  <categories xmi:id="_O_7KwCqeEeO22YgZcbz7_A" key="org.muml.types.category" name="types">
     <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_Byc_sCqlEeOmGPWtq6tuHA" name="VOID"/>
     <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_Byc_sSqlEeOmGPWtq6tuHA" name="BOOLEAN" primitiveType="BOOLEAN"/>
     <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_Byc_siqlEeOmGPWtq6tuHA" name="INT8"/>

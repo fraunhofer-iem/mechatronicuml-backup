@@ -105,7 +105,7 @@
   <extension
           point="org.muml.core.modelinstance.modelelementcategory">
       <category
-              key="de.uni_paderborn.fujaba.muml.types.category"
+              key="org.muml.types.category"
               name="types">
           <child
               class="DataType"

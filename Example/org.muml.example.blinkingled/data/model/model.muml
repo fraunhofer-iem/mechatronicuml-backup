@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--muml metamodel version 0.3.2 (r15221)-->
 <modelinstance:RootNode xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:actionlanguage="http://www.fujaba.de/muml/actionlanguage/0.4.0" xmlns:component="http://www.fujaba.de/muml/component/0.4.0" xmlns:instance="http://www.fujaba.de/muml/instance/0.4.0" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.4.0" xmlns:realtimestatechart="http://www.fujaba.de/muml/realtimestatechart/0.4.0" xmlns:sdcec="http://www.storydriven.org/core/expressions/common/0.3.1" xmlns:types="http://www.fujaba.de/muml/types/0.4.0" xmi:id="_yGfsoFL0EeWl58eUwm1Yvw">
-  <categories xmi:id="_yGfsoVL0EeWl58eUwm1Yvw" key="de.uni_paderborn.fujaba.muml.types.category" name="types"/>
-  <categories xmi:id="_yGgTu1L0EeWl58eUwm1Yvw" key="de.uni_paderborn.fujaba.muml.realtimestatechart.category" name="realtimestatechart">
+  <categories xmi:id="_yGfsoVL0EeWl58eUwm1Yvw" key="org.muml.types.category" name="types"/>
+  <categories xmi:id="_yGgTu1L0EeWl58eUwm1Yvw" key="org.muml.realtimestatechart.category" name="realtimestatechart">
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_QbiYcFL1EeWl58eUwm1Yvw" name="rootRTSC" behavioralElement="_2sZgwFL0EeWl58eUwm1Yvw">
       <states xmi:id="_QbiYcVL1EeWl58eUwm1Yvw" name="init" initial="true">
         <embeddedRegions xmi:id="_5KHq8FL1EeWl58eUwm1Yvw" priority="1">

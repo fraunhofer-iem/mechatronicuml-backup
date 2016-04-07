@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--muml metamodel version 0.3.2 (r2996)-->
 <modelinstance:RootNode xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:actionlanguage="http://www.fujaba.de/muml/actionlanguage/0.4.0" xmlns:component="http://www.fujaba.de/muml/component/0.4.0" xmlns:instance="http://www.fujaba.de/muml/instance/0.4.0" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.4.0" xmlns:realtimestatechart="http://www.fujaba.de/muml/realtimestatechart/0.4.0" xmlns:sdcec="http://www.storydriven.org/core/expressions/common/0.3.1" xmlns:types="http://www.fujaba.de/muml/types/0.4.0" xmi:id="_EqAR4PxqEeOgTKCYN32qOw">
-  <categories xmi:id="_EqA48PxqEeOgTKCYN32qOw" key="de.uni_paderborn.fujaba.muml.types.category" name="types">
+  <categories xmi:id="_EqA48PxqEeOgTKCYN32qOw" key="org.muml.types.category" name="types">
     <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_EqA48fxqEeOgTKCYN32qOw" name="VOID"/>
     <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_EqA48vxqEeOgTKCYN32qOw" name="BOOLEAN" primitiveType="BOOLEAN"/>
     <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_EqA48_xqEeOgTKCYN32qOw" name="BYTE" primitiveType="BYTE"/>
@@ -20,7 +20,7 @@
   </categories>
   <categories xmi:id="_EqA4-vxqEeOgTKCYN32qOw" key="de.uni_paderborn.fujaba.muml.protocol.category" name="protocol"/>
   <categories xmi:id="_EqA4-_xqEeOgTKCYN32qOw" key="de.uni_paderborn.fujaba.muml.messagetype.category" name="msgtype"/>
-  <categories xmi:id="_EqA4_PxqEeOgTKCYN32qOw" key="de.uni_paderborn.fujaba.muml.realtimestatechart.category" name="realtimestatechart">
+  <categories xmi:id="_EqA4_PxqEeOgTKCYN32qOw" key="org.muml.realtimestatechart.category" name="realtimestatechart">
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_Kj5dcPxqEeOgTKCYN32qOw" name="rootrtsc" behavioralElement="_IJZw8PxqEeOgTKCYN32qOw">
       <variables xmi:id="_cJYGYPxqEeOgTKCYN32qOw" name="cnt" dataType="_EqA49fxqEeOgTKCYN32qOw"/>
       <variables xmi:id="_fHYvoPxqEeOgTKCYN32qOw" name="x" dataType="_EqA49fxqEeOgTKCYN32qOw"/>

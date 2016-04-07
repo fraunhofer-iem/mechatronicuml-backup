@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--muml metamodel version 0.3.2 (r2996)-->
 <modelinstance:RootNode xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Comparables="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Comparables" xmlns:Predicates="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Predicates" xmlns:Quantifiers="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Quantifiers" xmlns:actionlanguage="http://www.fujaba.de/muml/actionlanguage/0.4.0" xmlns:component="http://www.fujaba.de/muml/component/0.4.0" xmlns:instance="http://www.fujaba.de/muml/instance/0.4.0" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.4.0" xmlns:msgtype="http://www.fujaba.de/muml/msgtype/0.4.0" xmlns:mtctl="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl" xmlns:protocol="http://www.fujaba.de/muml/protocol/0.4.0" xmlns:realtimestatechart="http://www.fujaba.de/muml/realtimestatechart/0.4.0" xmlns:sdcec="http://www.storydriven.org/core/expressions/common/0.3.1" xmlns:types="http://www.fujaba.de/muml/types/0.4.0" xmi:id="_Jo3JIAdNEeS1buZSll3L6Q">
-  <categories xmi:id="_Jo3JIQdNEeS1buZSll3L6Q" key="de.uni_paderborn.fujaba.muml.types.category" name="types">
+  <categories xmi:id="_Jo3JIQdNEeS1buZSll3L6Q" key="org.muml.types.category" name="types">
     <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_Jo3JIgdNEeS1buZSll3L6Q" name="VOID"/>
     <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_Jo3JIwdNEeS1buZSll3L6Q" name="BOOLEAN" primitiveType="BOOLEAN"/>
     <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_Jo3JJAdNEeS1buZSll3L6Q" name="BYTE" primitiveType="BYTE"/>
@@ -52,7 +52,7 @@
       </roleConnector>
     </modelElements>
   </categories>
-  <categories xmi:id="_Jo3JQwdNEeS1buZSll3L6Q" key="de.uni_paderborn.fujaba.muml.realtimestatechart.category" name="realtimestatechart">
+  <categories xmi:id="_Jo3JQwdNEeS1buZSll3L6Q" key="org.muml.realtimestatechart.category" name="realtimestatechart">
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_Jo3JRAdNEeS1buZSll3L6Q" name="role1" behavioralElement="_Jo3JMQdNEeS1buZSll3L6Q">
       <variables xmi:id="_Jo3JRQdNEeS1buZSll3L6Q" name="error" dataType="_Jo3JIwdNEeS1buZSll3L6Q">
         <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_Jo3JRgdNEeS1buZSll3L6Q" value="false"/>

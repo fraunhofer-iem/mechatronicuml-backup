@@ -25,10 +25,10 @@ public class DefaultCategoriesInitializer implements IModelInitializer {
 		
 		Map<String, String> map = new HashMap<String, String>();
 		// we have a dedicated initializer for the type category
-		// map.put("de.uni_paderborn.fujaba.muml.types.category", "types");
+		// map.put("org.muml.types.category", "types");
 		map.put("de.uni_paderborn.fujaba.muml.protocol.category", "protocol");
 		map.put("de.uni_paderborn.fujaba.muml.components.category", "component");
-		map.put("de.uni_paderborn.fujaba.muml.realtimestatechart.category", "realtimestatechart");
+		map.put("org.muml.realtimestatechart.category", "realtimestatechart");
 		map.put("de.uni_paderborn.fujaba.muml.messagetype.category", "msgtype");
 		map.put("de.uni_paderborn.fujaba.muml.instance.category", "instance");
 		map.put("de.uni_paderborn.fujaba.muml.pattern.category", "pattern");

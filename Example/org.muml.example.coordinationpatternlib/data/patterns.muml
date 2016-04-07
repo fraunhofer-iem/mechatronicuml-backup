@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--muml metamodel version 0.3.2 (r15221)-->
 <modelinstance:RootNode xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:BooleanLogic="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/BooleanLogic" xmlns:Comparables="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Comparables" xmlns:Predicates="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Predicates" xmlns:Quantifiers="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Quantifiers" xmlns:Sets="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Sets" xmlns:actionlanguage="http://www.fujaba.de/muml/actionlanguage/0.4.0" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.4.0" xmlns:msgtype="http://www.fujaba.de/muml/msgtype/0.4.0" xmlns:mtctl="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl" xmlns:pattern="http://www.fujaba.de/muml/pattern/0.3.18" xmlns:realtimestatechart="http://www.fujaba.de/muml/realtimestatechart/0.4.0" xmlns:sdcec="http://www.storydriven.org/core/expressions/common/0.3.1" xmlns:types="http://www.fujaba.de/muml/types/0.4.0" xmi:id="_t0EUUOdrEeSmgcfWtmVOuw">
-  <categories xmi:id="_t0E7YOdrEeSmgcfWtmVOuw" key="de.uni_paderborn.fujaba.muml.types.category" name="types"/>
-  <categories xmi:id="_t0Ily-drEeSmgcfWtmVOuw" key="de.uni_paderborn.fujaba.muml.realtimestatechart.category" name="realtimestatechart">
+  <categories xmi:id="_t0E7YOdrEeSmgcfWtmVOuw" key="org.muml.types.category" name="types"/>
+  <categories xmi:id="_t0Ily-drEeSmgcfWtmVOuw" key="org.muml.realtimestatechart.category" name="realtimestatechart">
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_n9tyoOg0EeSrL7p2IXXVVg" name="AssurerAARoleRTSC" behavioralElement="_JDtAEOgJEeSrL7p2IXXVVg">
       <transitions xmi:id="_-0LJoOp8EeSdp6KdWPaGDw" priority="1" target="_yYZlcOp8EeSdp6KdWPaGDw" source="_nTo3gOp8EeSdp6KdWPaGDw" urgent="false"/>
       <transitions xmi:id="_AVa58Op9EeSdp6KdWPaGDw" priority="1" target="_nTo3gOp8EeSdp6KdWPaGDw" source="_yrPo8Op8EeSdp6KdWPaGDw"/>

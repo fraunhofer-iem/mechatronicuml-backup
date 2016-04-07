@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <modelinstance:RootNode xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:types="http://www.fujaba.de/muml/types/0.4.0" xmlns:expr="http://www.storydriven.org/core/expressions/0.3.1" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.4.0" xmlns:sda="http://www.storydriven.org/storydiagrams/activities/0.2.1" xmlns:sdp="http://www.storydriven.org/storydiagrams/patterns/0.2.1" xmi:id="_vcVl8APpEeK6h-t5wiM1Gg">
-  <categories xmi:id="_vcVl8QPpEeK6h-t5wiM1Gg" key="de.uni_paderborn.fujaba.muml.types.category" name="types">
+  <categories xmi:id="_vcVl8QPpEeK6h-t5wiM1Gg" key="org.muml.types.category" name="types">
     <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_vcVl8gPpEeK6h-t5wiM1Gg" name="VOID"/>
     <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_vcVl8wPpEeK6h-t5wiM1Gg" name="BOOLEAN" primitiveType="BOOLEAN"/>
     <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_vcVl9APpEeK6h-t5wiM1Gg" name="BYTE" primitiveType="INT8"/>

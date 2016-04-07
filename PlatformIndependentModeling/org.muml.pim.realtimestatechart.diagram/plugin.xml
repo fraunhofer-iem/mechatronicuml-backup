@@ -788,7 +788,7 @@
          point="org.muml.core.modelinstance.modelelementcategory">
       <?gmfgen generated="true"?>  
       <category
-            key="de.uni_paderborn.fujaba.muml.realtimestatechart.category"
+            key="org.muml.realtimestatechart.category"
             name="realtimestatechart">
          
          <child
@@ -807,7 +807,7 @@
             editorId="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorID"
             editorName="Real-Time Statechart Editor"
             fileExtension="realtimestatechart_diagram"
-            modelElementCategoryKey="de.uni_paderborn.fujaba.muml.realtimestatechart.category"
+            modelElementCategoryKey="org.muml.realtimestatechart.category"
             modelId="Real-Time Statechart">
          <diagramElement
                packageNsURI="http://www.fujaba.de/muml/realtimestatechart/0.4.0"

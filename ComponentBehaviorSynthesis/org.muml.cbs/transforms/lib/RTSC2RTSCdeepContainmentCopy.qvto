@@ -1,5 +1,5 @@
 /*
- * Reused many mappings from Christopher Gerking's de.uni_paderborn.fujaba.muml.verification.uppaal.transformation/transforms/lib/MUML2MUML.qvto
+ * Reused many mappings from Christopher Gerking's org.muml.uppaal.adapter.transformation/transforms/lib/MUML2MUML.qvto
  * 
  * The additional context element. Enables create multiple copies of the same element for different contexts.
  */

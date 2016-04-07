@@ -27,9 +27,9 @@ library RTSCBaseLibrary;
 
 -- returns the model element category for real-time statecharts.
 helper getOrCreateRTSCCategory(inout rootNode : RootNode) : ModelElementCategory {
-	var rtscCategory := rootNode.categories -> select(c : ModelElementCategory | c.key = 'de.uni_paderborn.fujaba.muml.realtimestatechart.category') -> any(true);
+	var rtscCategory := rootNode.categories -> select(c : ModelElementCategory | c.key = 'org.muml.realtimestatechart.category') -> any(true);
 	if(rtscCategory.oclIsUndefined()){
-		rtscCategory := new ModelElementCategory('de.uni_paderborn.fujaba.muml.realtimestatechart.category', 'realtimestatechart');
+		rtscCategory := new ModelElementCategory('org.muml.realtimestatechart.category', 'realtimestatechart');
 		rootNode.categories += rtscCategory;
 	};
 	return rtscCategory;

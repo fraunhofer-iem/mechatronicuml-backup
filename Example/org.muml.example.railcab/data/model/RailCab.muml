@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--muml metamodel version 0.3.2 (r15221)-->
 <modelinstance:RootNode xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:actionlanguage="http://www.fujaba.de/muml/actionlanguage/0.4.0" xmlns:component="http://www.fujaba.de/muml/component/0.4.0" xmlns:componentsdd="http://www.fujaba.de/muml/verification/sdd/componentsdd/0.4.0" xmlns:componentstorydiagram="http://www.fujaba.de/muml/componentstorydiagram/0.4.0" xmlns:componentstorypattern="http://www.fujaba.de/muml/componentstorypattern/0.4.0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:expr="http://www.storydriven.org/core/expressions/0.3.1" xmlns:expression="http://www.fujaba.de/muml/reconfiguration/expression/0.3.7" xmlns:instance="http://www.fujaba.de/muml/instance/0.4.0" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.4.0" xmlns:msgtype="http://www.fujaba.de/muml/msgtype/0.4.0" xmlns:protocol="http://www.fujaba.de/muml/protocol/0.4.0" xmlns:protocolinstantiation="http://www.fujaba.de/muml/reconfiguration/protocolinstantiation/0.4.0" xmlns:realtimestatechart="http://www.fujaba.de/muml/realtimestatechart/0.4.0" xmlns:reconfInstance="http://www.fujaba.de/muml/reconfiguration/reconfInstance/0.4.0" xmlns:reconfiguration="http://www.fujaba.de/muml/reconfiguration/0.3.18" xmlns:sda="http://www.storydriven.org/storydiagrams/activities/0.2.1" xmlns:sdcec="http://www.storydriven.org/core/expressions/common/0.3.1" xmlns:sdd="http://www.fujaba.de/muml/verification/sdd/0.4.0" xmlns:sdp="http://www.storydriven.org/storydiagrams/patterns/0.2.1" xmlns:structdatatype="http://www.fujaba.de/muml/reconfiguration/structdatatype/0.3.18" xmlns:types="http://www.fujaba.de/muml/types/0.4.0" xmi:id="_hm9EULiwEeKp46K0r5yxrg">
-  <categories xmi:id="_hm9EUbiwEeKp46K0r5yxrg" key="de.uni_paderborn.fujaba.muml.types.category" name="types">
+  <categories xmi:id="_hm9EUbiwEeKp46K0r5yxrg" key="org.muml.types.category" name="types">
     <modelElements xsi:type="structdatatype:StructType" xmi:id="_Xl73APSAEeOKmIQk3FL8KA" name="Profile"/>
     <modelElements xsi:type="structdatatype:StructType" xmi:id="_Xl73AfSAEeOKmIQk3FL8KA" name="ProfileStore">
       <references xmi:id="_Xl73AvSAEeOKmIQk3FL8KA" name="roleProfiles" type="_Xl73EPSAEeOKmIQk3FL8KA">
@@ -587,7 +587,7 @@
       </roleConnector>
     </modelElements>
   </categories>
-  <categories xmi:id="_RTDXcHavEeOh__JNCv2_1A" key="de.uni_paderborn.fujaba.muml.realtimestatechart.category" name="realtimestatechart">
+  <categories xmi:id="_RTDXcHavEeOh__JNCv2_1A" key="org.muml.realtimestatechart.category" name="realtimestatechart">
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_RTDXcXavEeOh__JNCv2_1A" name="peer" behavioralElement="_jk3pUHasEeOh__JNCv2_1A">
       <variables xmi:id="_lAtN0HavEeOh__JNCv2_1A" name="masterPossible">
         <dataType xsi:type="types:PrimitiveDataType" href="platform:/plugin/de.uni_paderborn.fujaba.muml.types/model/predefined.mumltypes#boolean"/>

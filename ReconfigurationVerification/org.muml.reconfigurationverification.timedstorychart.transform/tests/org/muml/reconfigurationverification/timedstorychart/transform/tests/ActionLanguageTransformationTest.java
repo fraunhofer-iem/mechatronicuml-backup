@@ -98,7 +98,7 @@ public class ActionLanguageTransformationTest {
 //	@Before
 //	public void setUp() throws Exception {
 //		typesCategory = ModelinstanceFactory.eINSTANCE.createModelElementCategory();
-//		typesCategory.setKey("de.uni_paderborn.fujaba.muml.types.category");
+//		typesCategory.setKey("org.muml.types.category");
 //		rtsc = RealtimestatechartFactory.eINSTANCE.createRealtimeStatechart();
 //		State state = RealtimestatechartFactory.eINSTANCE.createState();
 //		action = RealtimestatechartFactory.eINSTANCE.createAction();
@@ -109,7 +109,7 @@ public class ActionLanguageTransformationTest {
 //		state.setParentStatechart(rtsc);
 //		ModelElementCategory modelElementCategory = ModelinstanceFactory.eINSTANCE.createModelElementCategory();
 //		modelElementCategory.getModelElements().add(rtsc);
-//		modelElementCategory.setKey("de.uni_paderborn.fujaba.muml.realtimestatechart.category");
+//		modelElementCategory.setKey("org.muml.realtimestatechart.category");
 //		RootNode rootNode = ModelinstanceFactory.eINSTANCE.createRootNode();
 //		rootNode.getCategories().add(modelElementCategory);
 //		rootNode.getCategories().add(typesCategory);

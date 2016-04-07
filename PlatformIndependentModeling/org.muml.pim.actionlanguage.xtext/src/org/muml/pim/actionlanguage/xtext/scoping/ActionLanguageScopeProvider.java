@@ -69,7 +69,7 @@ public class ActionLanguageScopeProvider extends AbstractDeclarativeScopeProvide
 	private List<TimeValue> timeValueList;
 
 	// TODO: make this string public in class TypeCategoryInitializer
-	private static final String TYPES_CATEGORY_KEY = "de.uni_paderborn.fujaba.muml.types.category";
+	private static final String TYPES_CATEGORY_KEY = "org.muml.types.category";
 
 	@Inject
 	private IQualifiedNameProvider nameProvider;

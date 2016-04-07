@@ -39,7 +39,7 @@ mapping updateReferencesToComponent(inout rootNode : RootNode, in oldComp : Comp
 	map updateComponentStoryDiagrams(activityCategory, oldComp, newComp);
 	
 	-- update references of struct data types
-	var typeCategory := rootNode.categories -> select(c : ModelElementCategory | c.key = 'de.uni_paderborn.fujaba.muml.types.category') -> any(true);
+	var typeCategory := rootNode.categories -> select(c : ModelElementCategory | c.key = 'org.muml.types.category') -> any(true);
 	map updateStructTypes(typeCategory, oldComp, newComp);
 }
 

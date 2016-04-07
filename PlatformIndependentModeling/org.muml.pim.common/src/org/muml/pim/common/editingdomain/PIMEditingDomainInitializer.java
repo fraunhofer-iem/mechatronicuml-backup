@@ -13,7 +13,7 @@ public class PIMEditingDomainInitializer implements IEditingDomainInitializer {
 				if (rootNode instanceof org.muml.core.modelinstance.RootNode) {
 					for (org.muml.core.modelinstance.ModelElementCategory category : ((org.muml.core.modelinstance.RootNode) rootNode)
 							.getCategories()) {
-						if ("de.uni_paderborn.fujaba.muml.types.category".equals(category.getKey())) {
+						if ("org.muml.types.category".equals(category.getKey())) {
 							for (Object modelElement : category.getModelElements()) {
 								if (modelElement instanceof PrimitiveDataType) {
 									return true;

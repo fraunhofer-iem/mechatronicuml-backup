@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--muml metamodel version 0.3.2 (r2996)-->
 <modelinstance:RootNode xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.4.0" xmlns:msgtype="http://www.fujaba.de/muml/msgtype/0.4.0" xmlns:protocol="http://www.fujaba.de/muml/protocol/0.4.0" xmlns:realtimestatechart="http://www.fujaba.de/muml/realtimestatechart/0.4.0" xmlns:sdcec="http://www.storydriven.org/core/expressions/common/0.3.1" xmlns:types="http://www.fujaba.de/muml/types/0.4.0" xmi:id="_JNurgNQ4EeO5qLADvSb61w">
-  <categories xmi:id="_JNvSkNQ4EeO5qLADvSb61w" key="de.uni_paderborn.fujaba.muml.types.category" name="types">
+  <categories xmi:id="_JNvSkNQ4EeO5qLADvSb61w" key="org.muml.types.category" name="types">
     <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_JNvSkdQ4EeO5qLADvSb61w" name="VOID"/>
     <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_JNvSktQ4EeO5qLADvSb61w" name="BOOLEAN" primitiveType="BOOLEAN"/>
     <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_JNvSk9Q4EeO5qLADvSb61w" name="BYTE" primitiveType="BYTE"/>
@@ -46,7 +46,7 @@
       <messageTypes xmi:id="_NuNNENQ4EeO5qLADvSb61w" name="messagetype1"/>
     </modelElements>
   </categories>
-  <categories xmi:id="_JNvSnNQ4EeO5qLADvSb61w" key="de.uni_paderborn.fujaba.muml.realtimestatechart.category" name="realtimestatechart">
+  <categories xmi:id="_JNvSnNQ4EeO5qLADvSb61w" key="org.muml.realtimestatechart.category" name="realtimestatechart">
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_SvFF8NQ4EeO5qLADvSb61w" name="sender" behavioralElement="_PtWaUNQ4EeO5qLADvSb61w">
       <transitions xmi:id="_0EnHQNQ4EeO5qLADvSb61w" priority="1" target="_SvFF8dQ4EeO5qLADvSb61w" source="_SvFF8dQ4EeO5qLADvSb61w" urgent="false">
         <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_1Tlb0NQ4EeO5qLADvSb61w">
