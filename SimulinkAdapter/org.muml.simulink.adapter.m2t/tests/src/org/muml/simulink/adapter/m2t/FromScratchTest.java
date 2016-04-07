@@ -10,17 +10,17 @@ import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TemporaryFolder;
+import org.muml.simulink.*;
 import org.muml.simulink.adapter.m2t.SimulinkWriter;
-import org.muml.simulink.adapter.model.*;
-import org.muml.simulink.adapter.model.stateflow.Action;
-import org.muml.simulink.adapter.model.stateflow.Chart;
-import org.muml.simulink.adapter.model.stateflow.Event;
-import org.muml.simulink.adapter.model.stateflow.State;
-import org.muml.simulink.adapter.model.stateflow.StateflowFactory;
-import org.muml.simulink.adapter.model.stateflow.StateflowMachine;
-import org.muml.simulink.adapter.model.stateflow.Transition;
 import org.muml.simulink.adapter.parser.SimulinkBuilder;
 import org.muml.simulink.adapter.parser.SimulinkBuilderException;
+import org.muml.simulink.stateflow.Action;
+import org.muml.simulink.stateflow.Chart;
+import org.muml.simulink.stateflow.Event;
+import org.muml.simulink.stateflow.State;
+import org.muml.simulink.stateflow.StateflowFactory;
+import org.muml.simulink.stateflow.StateflowMachine;
+import org.muml.simulink.stateflow.Transition;
 
 import de.uni_paderborn.fujaba.simulink.model.test.TestBase;
 

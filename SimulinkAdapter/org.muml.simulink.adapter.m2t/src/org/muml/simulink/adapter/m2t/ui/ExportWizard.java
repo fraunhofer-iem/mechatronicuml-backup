@@ -19,13 +19,13 @@ import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.ui.IExportWizard;
 import org.eclipse.ui.IWorkbench;
+import org.muml.simulink.SimulinkContainer;
+import org.muml.simulink.SimulinkLibrary;
+import org.muml.simulink.SimulinkModel;
 import org.muml.simulink.adapter.m2t.SimulinkWriter;
 import org.muml.simulink.adapter.m2t.graphviz.GraphVizStateflowLayouter;
-import org.muml.simulink.adapter.model.SimulinkContainer;
-import org.muml.simulink.adapter.model.SimulinkLibrary;
-import org.muml.simulink.adapter.model.SimulinkModel;
-import org.muml.simulink.adapter.model.stateflow.Chart;
-import org.muml.simulink.adapter.model.stateflow.StateflowMachine;
+import org.muml.simulink.stateflow.Chart;
+import org.muml.simulink.stateflow.StateflowMachine;
 
 
 public class ExportWizard extends Wizard implements IExportWizard 

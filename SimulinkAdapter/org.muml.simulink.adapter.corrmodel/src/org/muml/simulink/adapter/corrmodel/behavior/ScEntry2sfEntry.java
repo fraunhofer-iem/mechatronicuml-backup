@@ -10,7 +10,7 @@ import org.muml.core.expressions.Expression;
 import org.muml.pim.realtimestatechart.Clock;
 import org.muml.pim.realtimestatechart.EntryEvent;
 import org.muml.simulink.adapter.corrmodel.AbstractContainerCorrespondenceNode;
-import org.muml.simulink.adapter.model.stateflow.Action;
+import org.muml.simulink.stateflow.Action;
 
 /**
  * <!-- begin-user-doc -->

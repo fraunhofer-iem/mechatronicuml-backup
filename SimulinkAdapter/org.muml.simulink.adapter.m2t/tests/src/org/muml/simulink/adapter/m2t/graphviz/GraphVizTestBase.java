@@ -14,9 +14,9 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
-import org.muml.simulink.adapter.model.SimulinkContainer;
-import org.muml.simulink.adapter.model.SimulinkPackage;
-import org.muml.simulink.adapter.model.stateflow.StateflowMachine;
+import org.muml.simulink.SimulinkContainer;
+import org.muml.simulink.SimulinkPackage;
+import org.muml.simulink.stateflow.StateflowMachine;
 
 import de.uni_paderborn.fujaba.simulink.model.test.TestBase;
 

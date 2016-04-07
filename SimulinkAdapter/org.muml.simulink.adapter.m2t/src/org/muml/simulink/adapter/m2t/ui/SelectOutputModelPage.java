@@ -15,8 +15,8 @@ import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.dialogs.WizardNewFileCreationPage;
-import org.muml.simulink.adapter.model.SimulinkContainer;
-import org.muml.simulink.adapter.model.SimulinkPackage;
+import org.muml.simulink.SimulinkContainer;
+import org.muml.simulink.SimulinkPackage;
 
 
 public class SelectOutputModelPage extends WizardNewFileCreationPage {

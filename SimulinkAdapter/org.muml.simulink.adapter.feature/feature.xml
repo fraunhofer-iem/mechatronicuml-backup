@@ -47,7 +47,7 @@
       <import feature="de.upb.swt.qvt.tgg.interpreter" version="0.5.2" match="greaterOrEqual"/>
       <import feature="org.muml.pim.feature" version="0.5.0.qualifier"/>
       <import plugin="org.muml.core" version="1.0.1" match="greaterOrEqual"/>
-      <import plugin="org.muml.simulink.adapter.model" version="0.4.0" match="greaterOrEqual"/>
+      <import plugin="org.muml.simulink" version="0.4.0" match="greaterOrEqual"/>
       <import plugin="org.muml.core.modelinstance" version="0.4.0" match="greaterOrEqual"/>
       <import plugin="org.muml.pim" version="0.4.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.core.runtime" version="3.6.0" match="greaterOrEqual"/>
@@ -73,7 +73,7 @@
          unpack="false"/>
 
    <plugin
-         id="org.muml.simulink.adapter.model"
+         id="org.muml.simulink"
          download-size="0"
          install-size="0"
          version="0.0.0"

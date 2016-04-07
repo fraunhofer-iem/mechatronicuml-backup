@@ -8,7 +8,7 @@ package org.muml.simulink.adapter.corrmodel.behavior;
 
 import org.muml.pim.realtimestatechart.SynchronizationChannel;
 import org.muml.simulink.adapter.corrmodel.AbstractContainerCorrespondenceNode;
-import org.muml.simulink.adapter.model.stateflow.Event;
+import org.muml.simulink.stateflow.Event;
 
 /**
  * <!-- begin-user-doc -->

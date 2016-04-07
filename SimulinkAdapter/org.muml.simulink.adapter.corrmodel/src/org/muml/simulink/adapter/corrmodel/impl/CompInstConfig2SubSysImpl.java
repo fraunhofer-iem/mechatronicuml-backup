@@ -12,14 +12,14 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.muml.pim.instance.ComponentInstanceConfiguration;
+import org.muml.simulink.BusCreator;
+import org.muml.simulink.BusSelector;
+import org.muml.simulink.InPortBlock;
+import org.muml.simulink.Line;
+import org.muml.simulink.OutPortBlock;
+import org.muml.simulink.SubSystem;
 import org.muml.simulink.adapter.corrmodel.CompInstConfig2SubSys;
 import org.muml.simulink.adapter.corrmodel.Fujaba2simulinkPackage;
-import org.muml.simulink.adapter.model.BusCreator;
-import org.muml.simulink.adapter.model.BusSelector;
-import org.muml.simulink.adapter.model.InPortBlock;
-import org.muml.simulink.adapter.model.Line;
-import org.muml.simulink.adapter.model.OutPortBlock;
-import org.muml.simulink.adapter.model.SubSystem;
 
 /**
  * <!-- begin-user-doc -->

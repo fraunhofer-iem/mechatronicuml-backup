@@ -19,7 +19,7 @@ import org.muml.simulink.adapter.corrmodel.behavior.BehaviorPackage;
 import org.muml.simulink.adapter.corrmodel.behavior.Behavior_modelPackage;
 import org.muml.simulink.adapter.corrmodel.behavior.scAsyncSend2sfAction;
 import org.muml.simulink.adapter.corrmodel.impl.AbstractContainerCorrespondenceNodeImpl;
-import org.muml.simulink.adapter.model.stateflow.Action;
+import org.muml.simulink.stateflow.Action;
 
 /**
  * <!-- begin-user-doc -->

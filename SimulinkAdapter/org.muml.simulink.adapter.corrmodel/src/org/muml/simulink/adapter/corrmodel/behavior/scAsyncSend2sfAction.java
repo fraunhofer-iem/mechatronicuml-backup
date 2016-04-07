@@ -11,7 +11,7 @@ import java.util.Map;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.muml.pim.realtimestatechart.AsynchronousMessageEvent;
 import org.muml.simulink.adapter.corrmodel.AbstractContainerCorrespondenceNode;
-import org.muml.simulink.adapter.model.stateflow.Action;
+import org.muml.simulink.stateflow.Action;
 
 /**
  * <!-- begin-user-doc -->

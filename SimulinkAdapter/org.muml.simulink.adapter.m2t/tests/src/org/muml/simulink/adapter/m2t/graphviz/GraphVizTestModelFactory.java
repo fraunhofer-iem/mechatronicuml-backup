@@ -1,12 +1,12 @@
 package org.muml.simulink.adapter.m2t.graphviz;
 
-import org.muml.simulink.adapter.model.stateflow.Action;
-import org.muml.simulink.adapter.model.stateflow.Chart;
-import org.muml.simulink.adapter.model.stateflow.EmbeddedFunction;
-import org.muml.simulink.adapter.model.stateflow.Junction;
-import org.muml.simulink.adapter.model.stateflow.State;
-import org.muml.simulink.adapter.model.stateflow.StateflowFactory;
-import org.muml.simulink.adapter.model.stateflow.Transition;
+import org.muml.simulink.stateflow.Action;
+import org.muml.simulink.stateflow.Chart;
+import org.muml.simulink.stateflow.EmbeddedFunction;
+import org.muml.simulink.stateflow.Junction;
+import org.muml.simulink.stateflow.State;
+import org.muml.simulink.stateflow.StateflowFactory;
+import org.muml.simulink.stateflow.Transition;
 
 public class GraphVizTestModelFactory 
 {

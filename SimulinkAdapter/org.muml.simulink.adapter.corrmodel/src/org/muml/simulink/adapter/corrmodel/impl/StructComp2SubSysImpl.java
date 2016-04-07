@@ -14,16 +14,16 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.muml.pim.component.Component;
 import org.muml.pim.instance.ComponentInstance;
 import org.muml.pim.instance.ComponentInstanceConfiguration;
+import org.muml.simulink.BusCreator;
+import org.muml.simulink.BusSelector;
+import org.muml.simulink.InPortBlock;
+import org.muml.simulink.LibraryReference;
+import org.muml.simulink.Line;
+import org.muml.simulink.OutPortBlock;
+import org.muml.simulink.SubSystem;
 import org.muml.simulink.adapter.corrmodel.CompInstConfig2SubSys;
 import org.muml.simulink.adapter.corrmodel.Fujaba2simulinkPackage;
 import org.muml.simulink.adapter.corrmodel.StructComp2SubSys;
-import org.muml.simulink.adapter.model.BusCreator;
-import org.muml.simulink.adapter.model.BusSelector;
-import org.muml.simulink.adapter.model.InPortBlock;
-import org.muml.simulink.adapter.model.LibraryReference;
-import org.muml.simulink.adapter.model.Line;
-import org.muml.simulink.adapter.model.OutPortBlock;
-import org.muml.simulink.adapter.model.SubSystem;
 
 /**
  * <!-- begin-user-doc -->

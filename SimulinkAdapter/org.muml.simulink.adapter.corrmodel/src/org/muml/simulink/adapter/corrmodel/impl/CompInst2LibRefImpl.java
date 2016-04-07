@@ -12,9 +12,9 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.muml.pim.instance.ComponentInstance;
+import org.muml.simulink.LibraryReference;
 import org.muml.simulink.adapter.corrmodel.CompInst2LibRef;
 import org.muml.simulink.adapter.corrmodel.Fujaba2simulinkPackage;
-import org.muml.simulink.adapter.model.LibraryReference;
 
 /**
  * <!-- begin-user-doc -->

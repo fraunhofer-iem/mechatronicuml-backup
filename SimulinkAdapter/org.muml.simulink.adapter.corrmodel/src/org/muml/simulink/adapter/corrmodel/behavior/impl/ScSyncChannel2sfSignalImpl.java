@@ -16,7 +16,7 @@ import org.muml.simulink.adapter.corrmodel.behavior.BehaviorPackage;
 import org.muml.simulink.adapter.corrmodel.behavior.Behavior_modelPackage;
 import org.muml.simulink.adapter.corrmodel.behavior.ScSyncChannel2sfSignal;
 import org.muml.simulink.adapter.corrmodel.impl.AbstractContainerCorrespondenceNodeImpl;
-import org.muml.simulink.adapter.model.stateflow.Event;
+import org.muml.simulink.stateflow.Event;
 
 /**
  * <!-- begin-user-doc -->

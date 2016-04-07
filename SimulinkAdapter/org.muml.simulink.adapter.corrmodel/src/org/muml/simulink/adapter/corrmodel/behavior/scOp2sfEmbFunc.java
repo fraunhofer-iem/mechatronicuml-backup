@@ -11,7 +11,7 @@ import java.util.Map;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.muml.pim.behavior.Operation;
 import org.muml.simulink.adapter.corrmodel.AbstractContainerCorrespondenceNode;
-import org.muml.simulink.adapter.model.stateflow.EmbeddedFunction;
+import org.muml.simulink.stateflow.EmbeddedFunction;
 
 /**
  * <!-- begin-user-doc -->

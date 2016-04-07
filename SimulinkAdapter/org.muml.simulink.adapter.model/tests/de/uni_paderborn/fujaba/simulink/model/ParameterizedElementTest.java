@@ -7,9 +7,9 @@ import static org.junit.Assert.assertNull;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.muml.simulink.adapter.model.Element;
-import org.muml.simulink.adapter.model.Parameter;
-import org.muml.simulink.adapter.model.SimulinkFactory;
+import org.muml.simulink.Element;
+import org.muml.simulink.Parameter;
+import org.muml.simulink.SimulinkFactory;
 
 import de.uni_paderborn.fujaba.simulink.model.test.TestBase;
 

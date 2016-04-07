@@ -12,11 +12,11 @@ import org.muml.pim.instance.DiscreteMultiPortInstance;
 import org.muml.pim.instance.PortInstance;
 import org.muml.pim.msgtype.MessageTypeRepository;
 import org.muml.pim.types.DataType;
-import org.muml.simulink.adapter.model.Constant;
-import org.muml.simulink.adapter.model.InPortBlock;
-import org.muml.simulink.adapter.model.Line;
-import org.muml.simulink.adapter.model.OutPortBlock;
-import org.muml.simulink.adapter.model.msglib.LinkLayer;
+import org.muml.simulink.Constant;
+import org.muml.simulink.InPortBlock;
+import org.muml.simulink.Line;
+import org.muml.simulink.OutPortBlock;
+import org.muml.simulink.msglib.LinkLayer;
 
 /**
  * <!-- begin-user-doc -->

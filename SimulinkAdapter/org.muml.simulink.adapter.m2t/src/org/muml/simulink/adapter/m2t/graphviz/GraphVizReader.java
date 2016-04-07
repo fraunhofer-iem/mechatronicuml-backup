@@ -7,16 +7,16 @@ import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import org.muml.simulink.adapter.model.Element;
-import org.muml.simulink.adapter.model.Parameter;
-import org.muml.simulink.adapter.model.SimulinkFactory;
-import org.muml.simulink.adapter.model.stateflow.Action;
-import org.muml.simulink.adapter.model.stateflow.Chart;
-import org.muml.simulink.adapter.model.stateflow.History;
-import org.muml.simulink.adapter.model.stateflow.Junction;
-import org.muml.simulink.adapter.model.stateflow.Node;
-import org.muml.simulink.adapter.model.stateflow.State;
-import org.muml.simulink.adapter.model.stateflow.Transition;
+import org.muml.simulink.Element;
+import org.muml.simulink.Parameter;
+import org.muml.simulink.SimulinkFactory;
+import org.muml.simulink.stateflow.Action;
+import org.muml.simulink.stateflow.Chart;
+import org.muml.simulink.stateflow.History;
+import org.muml.simulink.stateflow.Junction;
+import org.muml.simulink.stateflow.Node;
+import org.muml.simulink.stateflow.State;
+import org.muml.simulink.stateflow.Transition;
 
 public class GraphVizReader 
 {

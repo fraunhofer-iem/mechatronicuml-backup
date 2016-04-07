@@ -1,21 +1,21 @@
 package org.muml.simulink.adapter.m2t.xtend;
 
-import org.muml.simulink.adapter.model.Block;
-import org.muml.simulink.adapter.model.Bus;
-import org.muml.simulink.adapter.model.DataType;
-import org.muml.simulink.adapter.model.InPortBlock;
-import org.muml.simulink.adapter.model.Line;
-import org.muml.simulink.adapter.model.OutPortBlock;
-import org.muml.simulink.adapter.model.Parameter;
-import org.muml.simulink.adapter.model.SimulinkFactory;
-import org.muml.simulink.adapter.model.SimulinkFile;
-import org.muml.simulink.adapter.model.stateflow.Action;
-import org.muml.simulink.adapter.model.stateflow.Chart;
-import org.muml.simulink.adapter.model.stateflow.Data;
-import org.muml.simulink.adapter.model.stateflow.EmbeddedFunction;
-import org.muml.simulink.adapter.model.stateflow.Junction;
-import org.muml.simulink.adapter.model.stateflow.StateflowFactory;
-import org.muml.simulink.adapter.model.stateflow.Transition;
+import org.muml.simulink.Block;
+import org.muml.simulink.Bus;
+import org.muml.simulink.DataType;
+import org.muml.simulink.InPortBlock;
+import org.muml.simulink.Line;
+import org.muml.simulink.OutPortBlock;
+import org.muml.simulink.Parameter;
+import org.muml.simulink.SimulinkFactory;
+import org.muml.simulink.SimulinkFile;
+import org.muml.simulink.stateflow.Action;
+import org.muml.simulink.stateflow.Chart;
+import org.muml.simulink.stateflow.Data;
+import org.muml.simulink.stateflow.EmbeddedFunction;
+import org.muml.simulink.stateflow.Junction;
+import org.muml.simulink.stateflow.StateflowFactory;
+import org.muml.simulink.stateflow.Transition;
 
 public class EmbeddedMatlabFunction 
 {
@@ -26,7 +26,7 @@ public class EmbeddedMatlabFunction
 	 *  instead stored in a separate Stateflow chart. This method generates all needed
 	 *  elements and adds it to the model.
 	 */
-	public static int generateAdditionalModelElements(org.muml.simulink.adapter.model.EmbeddedMatlabFunction emf)
+	public static int generateAdditionalModelElements(org.muml.simulink.EmbeddedMatlabFunction emf)
 	{
 		SimulinkFile root = getRoot(emf);
 		

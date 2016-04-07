@@ -8,7 +8,7 @@ package org.muml.simulink.adapter.corrmodel;
 
 import org.muml.pim.component.Component;
 import org.muml.pim.instance.ComponentInstance;
-import org.muml.simulink.adapter.model.LibraryReference;
+import org.muml.simulink.LibraryReference;
 
 /**
  * <!-- begin-user-doc -->

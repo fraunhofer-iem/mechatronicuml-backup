@@ -17,28 +17,28 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
-import org.muml.simulink.adapter.model.Block;
-import org.muml.simulink.adapter.model.BusCreator;
-import org.muml.simulink.adapter.model.BusSelector;
-import org.muml.simulink.adapter.model.ChartBlock;
-import org.muml.simulink.adapter.model.InPortBlock;
-import org.muml.simulink.adapter.model.LibraryReference;
-import org.muml.simulink.adapter.model.Line;
-import org.muml.simulink.adapter.model.OutPortBlock;
-import org.muml.simulink.adapter.model.Parameter;
-import org.muml.simulink.adapter.model.SimulinkContainer;
-import org.muml.simulink.adapter.model.SimulinkFactory;
-import org.muml.simulink.adapter.model.SimulinkLibrary;
-import org.muml.simulink.adapter.model.SimulinkModel;
-import org.muml.simulink.adapter.model.SubSystem;
-import org.muml.simulink.adapter.model.ZeroOrderHold;
-import org.muml.simulink.adapter.model.msglib.CommunicationSwitch;
-import org.muml.simulink.adapter.model.msglib.LinkLayer;
-import org.muml.simulink.adapter.model.stateflow.Action;
-import org.muml.simulink.adapter.model.stateflow.Chart;
-import org.muml.simulink.adapter.model.stateflow.StateflowFactory;
-import org.muml.simulink.adapter.model.stateflow.StateflowPackage;
-import org.muml.simulink.adapter.model.stateflow.Transition;
+import org.muml.simulink.Block;
+import org.muml.simulink.BusCreator;
+import org.muml.simulink.BusSelector;
+import org.muml.simulink.ChartBlock;
+import org.muml.simulink.InPortBlock;
+import org.muml.simulink.LibraryReference;
+import org.muml.simulink.Line;
+import org.muml.simulink.OutPortBlock;
+import org.muml.simulink.Parameter;
+import org.muml.simulink.SimulinkContainer;
+import org.muml.simulink.SimulinkFactory;
+import org.muml.simulink.SimulinkLibrary;
+import org.muml.simulink.SimulinkModel;
+import org.muml.simulink.SubSystem;
+import org.muml.simulink.ZeroOrderHold;
+import org.muml.simulink.msglib.CommunicationSwitch;
+import org.muml.simulink.msglib.LinkLayer;
+import org.muml.simulink.stateflow.Action;
+import org.muml.simulink.stateflow.Chart;
+import org.muml.simulink.stateflow.StateflowFactory;
+import org.muml.simulink.stateflow.StateflowPackage;
+import org.muml.simulink.stateflow.Transition;
 
 public class PostTransformationModification {
 
@@ -93,8 +93,8 @@ public class PostTransformationModification {
 
 	HashMap<Block, int[]> blockPositions = new HashMap<Block, int[]>();
 
-	SimulinkFactory simulinkFactory = org.muml.simulink.adapter.model.SimulinkFactory.eINSTANCE;
-	StateflowFactory stateflowFactory = org.muml.simulink.adapter.model.stateflow.StateflowFactory.eINSTANCE;
+	SimulinkFactory simulinkFactory = org.muml.simulink.SimulinkFactory.eINSTANCE;
+	StateflowFactory stateflowFactory = org.muml.simulink.stateflow.StateflowFactory.eINSTANCE;
 
 	public void modify(String simu_file) {
 

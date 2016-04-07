@@ -9,9 +9,9 @@ package org.muml.simulink.adapter.corrmodel.behavior;
 import org.eclipse.emf.common.util.EList;
 import org.muml.pim.realtimestatechart.RealtimeStatechart;
 import org.muml.simulink.adapter.corrmodel.AbstractContainerCorrespondenceNode;
-import org.muml.simulink.adapter.model.stateflow.Chart;
-import org.muml.simulink.adapter.model.stateflow.State;
-import org.muml.simulink.adapter.model.stateflow.Transition;
+import org.muml.simulink.stateflow.Chart;
+import org.muml.simulink.stateflow.State;
+import org.muml.simulink.stateflow.Transition;
 
 /**
  * <!-- begin-user-doc -->

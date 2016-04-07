@@ -19,8 +19,8 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
-import org.muml.simulink.adapter.model.SimulinkContainer;
-import org.muml.simulink.adapter.model.SimulinkPackage;
+import org.muml.simulink.SimulinkContainer;
+import org.muml.simulink.SimulinkPackage;
 
 import de.uni_paderborn.fujaba.simulink.model.test.TestBase;
 

@@ -10,7 +10,7 @@ import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.ui.IImportWizard;
 import org.eclipse.ui.IWorkbench;
-import org.muml.simulink.adapter.model.SimulinkContainer;
+import org.muml.simulink.SimulinkContainer;
 
 public class ImportWizard extends Wizard implements IImportWizard {
 	

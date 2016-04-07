@@ -8,7 +8,7 @@ package org.muml.simulink.adapter.corrmodel;
 
 import org.eclipse.emf.common.util.EList;
 import org.muml.pim.instance.DelegationConnectorInstance;
-import org.muml.simulink.adapter.model.Line;
+import org.muml.simulink.Line;
 
 /**
  * <!-- begin-user-doc -->

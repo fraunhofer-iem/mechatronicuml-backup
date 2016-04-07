@@ -77,8 +77,8 @@ import org.muml.pim.types.ArrayDataType;
 import org.muml.pim.types.DataType;
 import org.muml.pim.valuetype.TimeValue;
 import org.muml.simulink.adapter.actionlanguage.matlab.generator.ExpressionTransformation;
-import org.muml.simulink.adapter.model.msglib.LinkLayer;
-import org.muml.simulink.adapter.model.msglib.MsglibFactory;
+import org.muml.simulink.msglib.LinkLayer;
+import org.muml.simulink.msglib.MsglibFactory;
 
 
 public class MUMLAnalysis {

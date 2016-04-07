@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: MATLAB/Simulink SimulinkEMF Model
-Bundle-SymbolicName: org.muml.simulink.adapter.model;singleton:=true
+Bundle-SymbolicName: org.muml.simulink;singleton:=true
 Bundle-Version: 0.5.0.qualifier
 Bundle-ClassPath: .
 Bundle-Vendor: Software Engineering Group,
@@ -15,19 +15,19 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore.xmi;visibility:=reexport,
  org.eclipse.ocl.ecore;bundle-version="3.0.2"
 Export-Package: de.uni_paderborn.fujaba.simulink.model.test,
- org.muml.simulink.adapter.model;uses:="org.eclipse.emf.cdo,org.eclipse.emf.ecore,org.eclipse.emf.common.util",
- org.muml.simulink.adapter.model.impl,
- org.muml.simulink.adapter.model.msglib,
- org.muml.simulink.adapter.model.msglib.buffer,
- org.muml.simulink.adapter.model.msglib.buffer.impl,
- org.muml.simulink.adapter.model.msglib.buffer.util,
- org.muml.simulink.adapter.model.msglib.impl,
- org.muml.simulink.adapter.model.msglib.util,
- org.muml.simulink.adapter.model.reconfiguration,
- org.muml.simulink.adapter.model.reconfiguration.impl,
- org.muml.simulink.adapter.model.reconfiguration.util,
- org.muml.simulink.adapter.model.stateflow,
- org.muml.simulink.adapter.model.stateflow.impl,
- org.muml.simulink.adapter.model.stateflow.util,
- org.muml.simulink.adapter.model.util
+ org.muml.simulink;uses:="org.eclipse.emf.cdo,org.eclipse.emf.ecore,org.eclipse.emf.common.util",
+ org.muml.simulink.impl,
+ org.muml.simulink.msglib,
+ org.muml.simulink.msglib.buffer,
+ org.muml.simulink.msglib.buffer.impl,
+ org.muml.simulink.msglib.buffer.util,
+ org.muml.simulink.msglib.impl,
+ org.muml.simulink.msglib.util,
+ org.muml.simulink.reconfiguration,
+ org.muml.simulink.reconfiguration.impl,
+ org.muml.simulink.reconfiguration.util,
+ org.muml.simulink.stateflow,
+ org.muml.simulink.stateflow.impl,
+ org.muml.simulink.stateflow.util,
+ org.muml.simulink.util
 Bundle-ActivationPolicy: lazy

@@ -15,9 +15,9 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.muml.pim.instance.AssemblyConnectorInstance;
+import org.muml.simulink.Line;
 import org.muml.simulink.adapter.corrmodel.AssemblyInst2Line;
 import org.muml.simulink.adapter.corrmodel.Fujaba2simulinkPackage;
-import org.muml.simulink.adapter.model.Line;
 
 /**
  * <!-- begin-user-doc -->

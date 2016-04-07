@@ -12,11 +12,11 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.muml.pim.component.Component;
+import org.muml.simulink.InPortBlock;
+import org.muml.simulink.SubSystem;
 import org.muml.simulink.adapter.corrmodel.AtomComp2AtomSys;
 import org.muml.simulink.adapter.corrmodel.Fujaba2simulinkPackage;
-import org.muml.simulink.adapter.model.InPortBlock;
-import org.muml.simulink.adapter.model.SubSystem;
-import org.muml.simulink.adapter.model.stateflow.Chart;
+import org.muml.simulink.stateflow.Chart;
 
 /**
  * <!-- begin-user-doc -->

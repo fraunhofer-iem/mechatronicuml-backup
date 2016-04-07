@@ -8,7 +8,7 @@ package org.muml.simulink.adapter.corrmodel.behavior;
 
 import org.muml.core.modelinstance.ModelElementCategory;
 import org.muml.simulink.adapter.corrmodel.AbstractContainerCorrespondenceNode;
-import org.muml.simulink.adapter.model.stateflow.StateflowMachine;
+import org.muml.simulink.stateflow.StateflowMachine;
 
 /**
  * <!-- begin-user-doc -->

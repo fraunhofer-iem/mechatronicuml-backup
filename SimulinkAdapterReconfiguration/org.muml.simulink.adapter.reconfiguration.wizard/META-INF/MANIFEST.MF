@@ -8,7 +8,7 @@ Require-Bundle: org.eclipse.ui,
  org.muml.simulink.adapter.wizard;bundle-version="0.3.2",
  org.muml.simulink.adapter.m2t;bundle-version="0.3.1",
  org.muml.simulink.adapter.reconfiguration.m2m;bundle-version="1.0.0",
- org.muml.simulink.adapter.model;bundle-version="0.4.0",
+ org.muml.simulink;bundle-version="0.4.0",
  org.muml.core.reachanalysis.core;bundle-version="0.4.0",
  org.muml.simulink.adapter.reconfiguration.analysis;bundle-version="1.0.0"
 Import-Package: org.eclipse.core.resources,

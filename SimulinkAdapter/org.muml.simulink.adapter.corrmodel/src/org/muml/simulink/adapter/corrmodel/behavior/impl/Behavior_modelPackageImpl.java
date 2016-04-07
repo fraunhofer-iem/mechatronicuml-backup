@@ -24,6 +24,7 @@ import org.muml.pim.protocol.ProtocolPackage;
 import org.muml.pim.realtimestatechart.RealtimestatechartPackage;
 import org.muml.pim.types.TypesPackage;
 import org.muml.pim.valuetype.ValuetypePackage;
+import org.muml.simulink.SimulinkPackage;
 import org.muml.simulink.adapter.corrmodel.Fujaba2simulinkPackage;
 import org.muml.simulink.adapter.corrmodel.behavior.Behavior_modelFactory;
 import org.muml.simulink.adapter.corrmodel.behavior.Behavior_modelPackage;
@@ -58,8 +59,7 @@ import org.muml.simulink.adapter.corrmodel.behavior.scSendAsync2sfTransAction;
 import org.muml.simulink.adapter.corrmodel.behavior.scSendParaBind2sfAction;
 import org.muml.simulink.adapter.corrmodel.behavior.scSyncSend2sfSyncSend;
 import org.muml.simulink.adapter.corrmodel.impl.Fujaba2simulinkPackageImpl;
-import org.muml.simulink.adapter.model.SimulinkPackage;
-import org.muml.simulink.adapter.model.stateflow.StateflowPackage;
+import org.muml.simulink.stateflow.StateflowPackage;
 
 /**
  * <!-- begin-user-doc -->

@@ -24,6 +24,7 @@ import org.muml.pim.protocol.ProtocolPackage;
 import org.muml.pim.realtimestatechart.RealtimestatechartPackage;
 import org.muml.pim.types.TypesPackage;
 import org.muml.pim.valuetype.ValuetypePackage;
+import org.muml.simulink.SimulinkPackage;
 import org.muml.simulink.adapter.corrmodel.AbstractContainerCorrespondenceNode;
 import org.muml.simulink.adapter.corrmodel.AssemblyInst2Line;
 import org.muml.simulink.adapter.corrmodel.AtomComp2AtomSys;
@@ -40,9 +41,8 @@ import org.muml.simulink.adapter.corrmodel.StructComp2SubSys;
 import org.muml.simulink.adapter.corrmodel.behavior.Behavior_modelPackage;
 import org.muml.simulink.adapter.corrmodel.behavior.impl.BehaviorPackageImpl;
 import org.muml.simulink.adapter.corrmodel.behavior.impl.Behavior_modelPackageImpl;
-import org.muml.simulink.adapter.model.SimulinkPackage;
-import org.muml.simulink.adapter.model.msglib.MsglibPackage;
-import org.muml.simulink.adapter.model.stateflow.StateflowPackage;
+import org.muml.simulink.msglib.MsglibPackage;
+import org.muml.simulink.stateflow.StateflowPackage;
 
 /**
  * <!-- begin-user-doc -->

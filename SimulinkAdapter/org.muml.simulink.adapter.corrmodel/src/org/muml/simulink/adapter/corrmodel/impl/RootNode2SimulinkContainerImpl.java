@@ -16,12 +16,12 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.muml.core.modelinstance.RootNode;
+import org.muml.simulink.Bus;
+import org.muml.simulink.SimulinkContainer;
+import org.muml.simulink.SimulinkLibrary;
 import org.muml.simulink.adapter.corrmodel.CompInstConfig2SubSys;
 import org.muml.simulink.adapter.corrmodel.Fujaba2simulinkPackage;
 import org.muml.simulink.adapter.corrmodel.RootNode2SimulinkContainer;
-import org.muml.simulink.adapter.model.Bus;
-import org.muml.simulink.adapter.model.SimulinkContainer;
-import org.muml.simulink.adapter.model.SimulinkLibrary;
 
 /**
  * <!-- begin-user-doc -->

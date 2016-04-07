@@ -2,7 +2,7 @@
 <genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.muml.simulink.adapter.corrmodel/src" modelPluginID="org.muml.simulink.adapter.corrmodel"
     modelName="Fujaba2simulink" importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0"
-    copyrightFields="false" usedGenPackages="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../org.muml.core.modelinstance/model/modelinstance.genmodel#//modelinstance ../../org.muml.pim/model/pim.genmodel#//pim ../../org.muml.simulink.adapter.model/model/Simulink.genmodel#//model ../../org.muml.core/model/core.genmodel#//core">
+    copyrightFields="false" usedGenPackages="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../org.muml.core.modelinstance/model/modelinstance.genmodel#//modelinstance ../../org.muml.pim/model/pim.genmodel#//pim ../../org.muml.simulink/model/Simulink.genmodel#//model ../../org.muml.core/model/core.genmodel#//core">
   <foreignModel>fujaba2simulink.ecore</foreignModel>
   <genPackages prefix="Fujaba2simulink" basePackage="org.muml.simulink.adapter" resource="XML"
       disposableProviderFactory="true" ecorePackage="fujaba2simulink.ecore#/">

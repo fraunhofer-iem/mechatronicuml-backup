@@ -21,9 +21,9 @@ import org.muml.simulink.adapter.corrmodel.behavior.Behavior_modelPackage;
 import org.muml.simulink.adapter.corrmodel.behavior.FRtSc2Chart;
 import org.muml.simulink.adapter.corrmodel.behavior.MT_Par2MTD;
 import org.muml.simulink.adapter.corrmodel.impl.AbstractContainerCorrespondenceNodeImpl;
-import org.muml.simulink.adapter.model.stateflow.Chart;
-import org.muml.simulink.adapter.model.stateflow.State;
-import org.muml.simulink.adapter.model.stateflow.Transition;
+import org.muml.simulink.stateflow.Chart;
+import org.muml.simulink.stateflow.State;
+import org.muml.simulink.stateflow.Transition;
 
 /**
  * <!-- begin-user-doc -->

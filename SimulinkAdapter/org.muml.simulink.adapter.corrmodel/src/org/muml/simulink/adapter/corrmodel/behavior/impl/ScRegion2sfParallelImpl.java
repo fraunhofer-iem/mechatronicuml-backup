@@ -17,7 +17,7 @@ import org.muml.simulink.adapter.corrmodel.behavior.BehaviorPackage;
 import org.muml.simulink.adapter.corrmodel.behavior.Behavior_modelPackage;
 import org.muml.simulink.adapter.corrmodel.behavior.ScRegion2sfParallel;
 import org.muml.simulink.adapter.corrmodel.impl.AbstractContainerCorrespondenceNodeImpl;
-import org.muml.simulink.adapter.model.stateflow.State;
+import org.muml.simulink.stateflow.State;
 
 /**
  * <!-- begin-user-doc -->

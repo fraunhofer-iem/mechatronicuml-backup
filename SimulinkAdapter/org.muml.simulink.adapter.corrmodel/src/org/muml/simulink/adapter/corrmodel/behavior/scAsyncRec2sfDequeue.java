@@ -9,7 +9,7 @@ package org.muml.simulink.adapter.corrmodel.behavior;
 import java.util.Map;
 
 import org.muml.simulink.adapter.corrmodel.AbstractContainerCorrespondenceNode;
-import org.muml.simulink.adapter.model.stateflow.Action;
+import org.muml.simulink.stateflow.Action;
 
 /**
  * <!-- begin-user-doc -->

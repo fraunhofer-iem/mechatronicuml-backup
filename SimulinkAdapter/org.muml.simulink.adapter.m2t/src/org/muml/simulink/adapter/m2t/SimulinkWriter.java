@@ -26,8 +26,8 @@ import org.eclipse.xpand2.output.Output;
 import org.eclipse.xpand2.output.OutputImpl;
 import org.eclipse.xtend.expression.Variable;
 import org.eclipse.xtend.typesystem.emf.EmfRegistryMetaModel;
-import org.muml.simulink.adapter.model.SimulinkContainer;
-import org.muml.simulink.adapter.model.SimulinkPackage;
+import org.muml.simulink.SimulinkContainer;
+import org.muml.simulink.SimulinkPackage;
 
 public class SimulinkWriter 
 {

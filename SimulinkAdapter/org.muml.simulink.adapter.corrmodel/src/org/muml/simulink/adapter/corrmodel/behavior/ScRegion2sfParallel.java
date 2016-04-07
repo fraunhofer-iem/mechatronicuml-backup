@@ -9,7 +9,7 @@ package org.muml.simulink.adapter.corrmodel.behavior;
 import org.muml.pim.realtimestatechart.RealtimeStatechart;
 import org.muml.pim.realtimestatechart.Region;
 import org.muml.simulink.adapter.corrmodel.AbstractContainerCorrespondenceNode;
-import org.muml.simulink.adapter.model.stateflow.State;
+import org.muml.simulink.stateflow.State;
 
 /**
  * <!-- begin-user-doc -->

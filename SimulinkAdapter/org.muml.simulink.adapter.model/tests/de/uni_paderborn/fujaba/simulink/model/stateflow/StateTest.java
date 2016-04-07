@@ -6,8 +6,8 @@ import static org.junit.Assert.assertNull;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.muml.simulink.adapter.model.stateflow.State;
-import org.muml.simulink.adapter.model.stateflow.StateflowFactory;
+import org.muml.simulink.stateflow.State;
+import org.muml.simulink.stateflow.StateflowFactory;
 
 import de.uni_paderborn.fujaba.simulink.model.test.TestBase;
 

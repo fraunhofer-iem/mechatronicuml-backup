@@ -15,9 +15,9 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.muml.core.modelinstance.ModelElementCategory;
+import org.muml.simulink.SimulinkLibrary;
 import org.muml.simulink.adapter.corrmodel.Fujaba2simulinkPackage;
 import org.muml.simulink.adapter.corrmodel.ModElCat2SimLib;
-import org.muml.simulink.adapter.model.SimulinkLibrary;
 
 /**
  * <!-- begin-user-doc -->

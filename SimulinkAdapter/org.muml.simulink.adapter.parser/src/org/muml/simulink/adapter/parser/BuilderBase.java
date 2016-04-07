@@ -1,8 +1,8 @@
 package org.muml.simulink.adapter.parser;
 
-import org.muml.simulink.adapter.model.Element;
-import org.muml.simulink.adapter.model.Parameter;
-import org.muml.simulink.adapter.model.SimulinkFactory;
+import org.muml.simulink.Element;
+import org.muml.simulink.Parameter;
+import org.muml.simulink.SimulinkFactory;
 
 public abstract class BuilderBase 
 {

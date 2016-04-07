@@ -19,7 +19,7 @@ import org.muml.simulink.adapter.corrmodel.behavior.BehaviorPackage;
 import org.muml.simulink.adapter.corrmodel.behavior.Behavior_modelPackage;
 import org.muml.simulink.adapter.corrmodel.behavior.scOp2sfEmbFunc;
 import org.muml.simulink.adapter.corrmodel.impl.AbstractContainerCorrespondenceNodeImpl;
-import org.muml.simulink.adapter.model.stateflow.EmbeddedFunction;
+import org.muml.simulink.stateflow.EmbeddedFunction;
 
 /**
  * <!-- begin-user-doc -->

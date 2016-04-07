@@ -5,10 +5,10 @@ import static org.junit.Assert.assertEquals;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.muml.simulink.adapter.model.MiscBlock;
-import org.muml.simulink.adapter.model.SimulinkFactory;
-import org.muml.simulink.adapter.model.SimulinkModel;
-import org.muml.simulink.adapter.model.SubSystem;
+import org.muml.simulink.MiscBlock;
+import org.muml.simulink.SimulinkFactory;
+import org.muml.simulink.SimulinkModel;
+import org.muml.simulink.SubSystem;
 
 import de.uni_paderborn.fujaba.simulink.model.test.TestBase;
 

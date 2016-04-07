@@ -2,12 +2,12 @@ package org.muml.simulink.adapter.m2t.graphviz;
 
 import java.io.PrintWriter;
 
-import org.muml.simulink.adapter.model.stateflow.Action;
-import org.muml.simulink.adapter.model.stateflow.Chart;
-import org.muml.simulink.adapter.model.stateflow.EmbeddedFunction;
-import org.muml.simulink.adapter.model.stateflow.Node;
-import org.muml.simulink.adapter.model.stateflow.State;
-import org.muml.simulink.adapter.model.stateflow.Transition;
+import org.muml.simulink.stateflow.Action;
+import org.muml.simulink.stateflow.Chart;
+import org.muml.simulink.stateflow.EmbeddedFunction;
+import org.muml.simulink.stateflow.Node;
+import org.muml.simulink.stateflow.State;
+import org.muml.simulink.stateflow.Transition;
 
 /**
  * Generates dot files (GraphViz) from a given StateflowMachine

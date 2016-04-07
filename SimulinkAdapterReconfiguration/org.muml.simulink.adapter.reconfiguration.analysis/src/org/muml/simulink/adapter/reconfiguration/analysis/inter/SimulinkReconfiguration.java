@@ -5,27 +5,27 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map.Entry;
 
-import org.muml.simulink.adapter.model.Block;
-import org.muml.simulink.adapter.model.ChartBlock;
-import org.muml.simulink.adapter.model.DataType;
-import org.muml.simulink.adapter.model.EnablePort;
-import org.muml.simulink.adapter.model.InPortBlock;
-import org.muml.simulink.adapter.model.LibraryReference;
-import org.muml.simulink.adapter.model.Line;
-import org.muml.simulink.adapter.model.OutPortBlock;
-import org.muml.simulink.adapter.model.Parameter;
-import org.muml.simulink.adapter.model.PortBlock;
-import org.muml.simulink.adapter.model.SimulinkContainer;
-import org.muml.simulink.adapter.model.SimulinkFactory;
-import org.muml.simulink.adapter.model.SimulinkFile;
-import org.muml.simulink.adapter.model.SimulinkLibrary;
-import org.muml.simulink.adapter.model.SimulinkModel;
-import org.muml.simulink.adapter.model.SubSystem;
-import org.muml.simulink.adapter.model.reconfiguration.MultiSourceControl;
-import org.muml.simulink.adapter.model.reconfiguration.MultiTargetControl;
-import org.muml.simulink.adapter.model.reconfiguration.ReconfigurationFactory;
-import org.muml.simulink.adapter.model.stateflow.Data;
-import org.muml.simulink.adapter.model.stateflow.StateflowFactory;
+import org.muml.simulink.Block;
+import org.muml.simulink.ChartBlock;
+import org.muml.simulink.DataType;
+import org.muml.simulink.EnablePort;
+import org.muml.simulink.InPortBlock;
+import org.muml.simulink.LibraryReference;
+import org.muml.simulink.Line;
+import org.muml.simulink.OutPortBlock;
+import org.muml.simulink.Parameter;
+import org.muml.simulink.PortBlock;
+import org.muml.simulink.SimulinkContainer;
+import org.muml.simulink.SimulinkFactory;
+import org.muml.simulink.SimulinkFile;
+import org.muml.simulink.SimulinkLibrary;
+import org.muml.simulink.SimulinkModel;
+import org.muml.simulink.SubSystem;
+import org.muml.simulink.reconfiguration.MultiSourceControl;
+import org.muml.simulink.reconfiguration.MultiTargetControl;
+import org.muml.simulink.reconfiguration.ReconfigurationFactory;
+import org.muml.simulink.stateflow.Data;
+import org.muml.simulink.stateflow.StateflowFactory;
 
 /**
  * Modify the Simulink model:

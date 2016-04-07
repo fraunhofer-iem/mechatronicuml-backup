@@ -10,10 +10,10 @@ import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import org.muml.simulink.adapter.model.Bus;
-import org.muml.simulink.adapter.model.BusElement;
-import org.muml.simulink.adapter.model.DataType;
-import org.muml.simulink.adapter.model.SimulinkFactory;
+import org.muml.simulink.Bus;
+import org.muml.simulink.BusElement;
+import org.muml.simulink.DataType;
+import org.muml.simulink.SimulinkFactory;
 
 public class BusBuilder 
 {

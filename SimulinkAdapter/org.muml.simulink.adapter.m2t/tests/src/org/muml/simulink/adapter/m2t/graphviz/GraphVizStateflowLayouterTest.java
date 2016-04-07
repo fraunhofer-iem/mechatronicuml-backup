@@ -5,7 +5,7 @@ import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
 import org.muml.simulink.adapter.m2t.graphviz.GraphVizStateflowLayouter;
-import org.muml.simulink.adapter.model.stateflow.StateflowMachine;
+import org.muml.simulink.stateflow.StateflowMachine;
 
 public class GraphVizStateflowLayouterTest extends GraphVizTestBase
 {

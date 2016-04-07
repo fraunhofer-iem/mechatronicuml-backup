@@ -16,7 +16,7 @@ import org.muml.simulink.adapter.corrmodel.behavior.BehaviorPackage;
 import org.muml.simulink.adapter.corrmodel.behavior.Behavior_modelPackage;
 import org.muml.simulink.adapter.corrmodel.behavior.RtScCat2SfM;
 import org.muml.simulink.adapter.corrmodel.impl.AbstractContainerCorrespondenceNodeImpl;
-import org.muml.simulink.adapter.model.stateflow.StateflowMachine;
+import org.muml.simulink.stateflow.StateflowMachine;
 
 /**
  * <!-- begin-user-doc -->

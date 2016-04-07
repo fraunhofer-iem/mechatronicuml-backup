@@ -11,7 +11,7 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.muml.core.modelinstance.RootNode;
-import org.muml.simulink.adapter.model.SimulinkContainer;
+import org.muml.simulink.SimulinkContainer;
 
 import de.upb.swt.qvt.qvtbase.TypedModel;
 import de.upb.swt.qvt.tgg.TripleGraphGrammar;

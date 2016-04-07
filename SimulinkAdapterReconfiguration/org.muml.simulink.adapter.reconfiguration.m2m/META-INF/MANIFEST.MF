@@ -15,7 +15,7 @@ Import-Package: de.upb.swt.qvt.qvtbase,
  org.muml.core,
  org.muml.core.modelinstance,
  org.muml.pim.instance,
- org.muml.simulink.adapter.model,
+ org.muml.simulink,
  org.muml.storydiagram.activities,
  org.muml.storydiagram.reachanalysis.sdm
 Require-Bundle: de.upb.swt.qvt.tgg.interpreter,

@@ -16,8 +16,8 @@ import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TemporaryFolder;
+import org.muml.simulink.*;
 import org.muml.simulink.adapter.m2t.SimulinkWriter;
-import org.muml.simulink.adapter.model.*;
 import org.muml.simulink.adapter.parser.SimulinkBuilder;
 import org.muml.simulink.adapter.parser.SimulinkBuilderException;
 

@@ -8,7 +8,7 @@ package org.muml.simulink.adapter.corrmodel.behavior;
 
 import org.muml.pim.realtimestatechart.ExitPoint;
 import org.muml.simulink.adapter.corrmodel.AbstractContainerCorrespondenceNode;
-import org.muml.simulink.adapter.model.stateflow.Transition;
+import org.muml.simulink.stateflow.Transition;
 
 /**
  * <!-- begin-user-doc -->

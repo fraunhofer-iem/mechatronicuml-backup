@@ -7,9 +7,9 @@ import java.io.FileNotFoundException;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.muml.simulink.adapter.model.Bus;
-import org.muml.simulink.adapter.model.BusElement;
-import org.muml.simulink.adapter.model.DataType;
+import org.muml.simulink.Bus;
+import org.muml.simulink.BusElement;
+import org.muml.simulink.DataType;
 import org.muml.simulink.adapter.parser.BusBuilder;
 import org.muml.simulink.adapter.parser.BusBuilderException;
 

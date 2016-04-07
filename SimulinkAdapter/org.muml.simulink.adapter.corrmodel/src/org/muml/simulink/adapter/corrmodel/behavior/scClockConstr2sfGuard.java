@@ -10,7 +10,7 @@ import org.muml.pim.realtimestatechart.Clock;
 import org.muml.pim.realtimestatechart.ClockConstraint;
 import org.muml.pim.valuetype.TimeValue;
 import org.muml.simulink.adapter.corrmodel.AbstractContainerCorrespondenceNode;
-import org.muml.simulink.adapter.model.stateflow.Action;
+import org.muml.simulink.stateflow.Action;
 
 /**
  * <!-- begin-user-doc -->

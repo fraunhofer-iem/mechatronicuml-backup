@@ -8,7 +8,7 @@ package org.muml.simulink.adapter.corrmodel;
 
 import org.eclipse.emf.common.util.EList;
 import org.muml.core.modelinstance.ModelElementCategory;
-import org.muml.simulink.adapter.model.SimulinkLibrary;
+import org.muml.simulink.SimulinkLibrary;
 
 /**
  * <!-- begin-user-doc -->

@@ -7,12 +7,12 @@
 package org.muml.simulink.adapter.corrmodel;
 
 import org.muml.pim.instance.ComponentInstanceConfiguration;
-import org.muml.simulink.adapter.model.BusCreator;
-import org.muml.simulink.adapter.model.BusSelector;
-import org.muml.simulink.adapter.model.InPortBlock;
-import org.muml.simulink.adapter.model.Line;
-import org.muml.simulink.adapter.model.OutPortBlock;
-import org.muml.simulink.adapter.model.SubSystem;
+import org.muml.simulink.BusCreator;
+import org.muml.simulink.BusSelector;
+import org.muml.simulink.InPortBlock;
+import org.muml.simulink.Line;
+import org.muml.simulink.OutPortBlock;
+import org.muml.simulink.SubSystem;
 
 /**
  * <!-- begin-user-doc -->

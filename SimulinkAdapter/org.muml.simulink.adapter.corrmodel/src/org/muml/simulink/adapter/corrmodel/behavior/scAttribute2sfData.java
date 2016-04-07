@@ -9,7 +9,7 @@ package org.muml.simulink.adapter.corrmodel.behavior;
 import org.muml.pim.behavior.Variable;
 import org.muml.pim.types.DataType;
 import org.muml.simulink.adapter.corrmodel.AbstractContainerCorrespondenceNode;
-import org.muml.simulink.adapter.model.stateflow.Data;
+import org.muml.simulink.stateflow.Data;
 
 /**
  * <!-- begin-user-doc -->

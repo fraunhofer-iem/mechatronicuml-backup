@@ -9,11 +9,11 @@ import org.eclipse.emf.mwe.core.WorkflowContext;
 import org.eclipse.emf.mwe.core.issues.Issues;
 import org.eclipse.emf.mwe.core.lib.AbstractWorkflowComponent;
 import org.eclipse.emf.mwe.core.monitor.ProgressMonitor;
+import org.muml.simulink.SimulinkContainer;
+import org.muml.simulink.SimulinkLibrary;
+import org.muml.simulink.SimulinkModel;
 import org.muml.simulink.adapter.m2t.graphviz.GraphVizStateflowLayouter;
-import org.muml.simulink.adapter.model.SimulinkContainer;
-import org.muml.simulink.adapter.model.SimulinkLibrary;
-import org.muml.simulink.adapter.model.SimulinkModel;
-import org.muml.simulink.adapter.model.stateflow.StateflowMachine;
+import org.muml.simulink.stateflow.StateflowMachine;
 
 public class LayoutComponent extends AbstractWorkflowComponent {
 

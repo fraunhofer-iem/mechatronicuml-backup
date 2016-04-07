@@ -1,9 +1,9 @@
 package org.muml.simulink.adapter.m2t.xtend;
 
-import org.muml.simulink.adapter.model.Bus;
-import org.muml.simulink.adapter.model.BusElement;
-import org.muml.simulink.adapter.model.DataType;
-import org.muml.simulink.adapter.model.SimulinkFactory;
+import org.muml.simulink.Bus;
+import org.muml.simulink.BusElement;
+import org.muml.simulink.DataType;
+import org.muml.simulink.SimulinkFactory;
 
 public class CommunicationSwitch {
 		
@@ -11,7 +11,7 @@ public class CommunicationSwitch {
 	 * Generate a Bus for the internals of the CommunicationSwitch
 	 * The Bus contains one element for every input of the CommunicationSwitch
 	 */
-	public Bus generateBus(org.muml.simulink.adapter.model.msglib.CommunicationSwitch communicationSwitch, Integer size)
+	public Bus generateBus(org.muml.simulink.msglib.CommunicationSwitch communicationSwitch, Integer size)
 	{
 		//We fake the PacketBus since we don't have access to it atm
 		// But it doesn't matter since we only need the name, not its content

@@ -7,9 +7,9 @@
 package org.muml.simulink.adapter.corrmodel;
 
 import org.muml.pim.component.Component;
-import org.muml.simulink.adapter.model.InPortBlock;
-import org.muml.simulink.adapter.model.SubSystem;
-import org.muml.simulink.adapter.model.stateflow.Chart;
+import org.muml.simulink.InPortBlock;
+import org.muml.simulink.SubSystem;
+import org.muml.simulink.stateflow.Chart;
 
 /**
  * <!-- begin-user-doc -->
