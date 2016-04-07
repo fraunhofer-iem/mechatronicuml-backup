@@ -27,8 +27,6 @@
     <requiredBundles>org.muml.pim.edit.properties</requiredBundles>
     <requiredBundles>org.muml.reconfiguration.edit</requiredBundles>
     <requiredBundles>org.muml.reconfiguration.edit.properties</requiredBundles>
-    <requiredBundles>de.uni_paderborn.fujaba.muml.verification.sdd.edit</requiredBundles>
-    <requiredBundles>de.uni_paderborn.fujaba.muml.verification.sdd.edit.properties</requiredBundles>
     <requiredBundles>org.muml.storydiagram.verification.sdd.basicsdd.edit</requiredBundles>
     <requiredBundles>org.muml.storydiagram.verification.sdd.basicsdd.edit.properties</requiredBundles>
     <requiredBundles>org.muml.storydiagram.verification.sdd.edit</requiredBundles>

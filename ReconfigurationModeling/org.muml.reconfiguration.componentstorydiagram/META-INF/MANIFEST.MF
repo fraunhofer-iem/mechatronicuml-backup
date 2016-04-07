@@ -12,7 +12,6 @@ Export-Package: org.muml.reconfiguration.componentstorydiagram,
  org.muml.reconfiguration.componentstorydiagram.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
- de.uni_paderborn.fujaba.muml.componentstorypattern;visibility:=reexport,
  org.muml.core;visibility:=reexport,
  org.muml.pim;visibility:=reexport,
  org.muml.reconfiguration;visibility:=reexport,

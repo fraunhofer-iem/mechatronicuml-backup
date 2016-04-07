@@ -13,12 +13,12 @@
     <requiredBundles>org.muml.storydiagram.verification.sdd.basicsdd</requiredBundles>
     <requiredBundles>org.muml.storydiagram.verification.sdd.basicsdd.edit</requiredBundles>
     <requiredBundles>org.muml.ape.runtime</requiredBundles>
-    <requiredBundles>de.uni_paderborn.fujaba.muml.verification.sdd.edit</requiredBundles>
-    <requiredBundles>de.uni_paderborn.fujaba.muml.verification.sdd.edit.properties</requiredBundles>
     <requiredBundles>org.muml.pim.edit</requiredBundles>
     <requiredBundles>org.muml.pim.edit.properties</requiredBundles>
     <requiredBundles>org.muml.core.edit</requiredBundles>
     <requiredBundles>org.muml.core.edit.properties</requiredBundles>
+    <requiredBundles>org.muml.storydiagram.verification.sdd.edit</requiredBundles>
+    <requiredBundles>org.muml.storydiagram.verification.sdd.edit.properties</requiredBundles>
   </plugin>
   <packages xmi:id="_RmyIsc1gEeSIgPDefa6ZBw">
     <genPackage href="BasicSDD.genmodel#//basicsdd"/>

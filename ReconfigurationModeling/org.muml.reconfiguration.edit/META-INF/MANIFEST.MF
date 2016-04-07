@@ -24,8 +24,6 @@ Require-Bundle: org.eclipse.ocl.ecore,
  org.eclipse.emf.ecore.edit;visibility:=reexport,
  org.muml.pim;visibility:=reexport,
  org.muml.pim.edit;visibility:=reexport,
- org.storydriven.storydiagrams;visibility:=reexport,
- org.storydriven.storydiagrams.edit;visibility:=reexport,
  org.muml.storydiagram;visibility:=reexport,
  org.muml.storydiagram.edit;visibility:=reexport
 Bundle-ActivationPolicy: lazy
