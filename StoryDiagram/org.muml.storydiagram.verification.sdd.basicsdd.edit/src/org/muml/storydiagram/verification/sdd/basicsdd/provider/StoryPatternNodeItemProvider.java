@@ -35,7 +35,7 @@ import org.muml.storydiagram.verification.sdd.provider.PatternNodeItemProvider;
  * @generated
  */
 public class StoryPatternNodeItemProvider
-	extends de.uni_paderborn.fujaba.muml.verification.sdd.provider.PatternNodeItemProvider {
+	extends PatternNodeItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

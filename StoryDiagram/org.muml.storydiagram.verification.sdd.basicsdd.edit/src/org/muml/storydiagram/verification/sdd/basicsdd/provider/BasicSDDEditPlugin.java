@@ -45,7 +45,7 @@ public final class BasicSDDEditPlugin extends EMFPlugin {
 		  (new ResourceLocator [] {
 		     CoreEditPlugin.INSTANCE,
 		     EcoreEditPlugin.INSTANCE,
-		     de.uni_paderborn.fujaba.muml.verification.sdd.provider.SDDEditPlugin.INSTANCE,
+		     SDDEditPlugin.INSTANCE,
 		     StorydiagramsEditPlugin.INSTANCE,
 		   });
 	}
