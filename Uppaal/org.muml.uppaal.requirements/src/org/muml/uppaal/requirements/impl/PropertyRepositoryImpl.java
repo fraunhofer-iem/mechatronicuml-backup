@@ -25,10 +25,10 @@ import org.muml.uppaal.requirements.RequirementsPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.uppaal.requirements.impl.PropertyRepositoryImpl#getProperties <em>Properties</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

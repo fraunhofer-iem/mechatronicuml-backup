@@ -24,13 +24,7 @@ import org.muml.uppaal.requirements.RequirementsPackage;
  * @generated
  */
 public class LeadsToPropertyItemProvider
-	extends BinaryPropertyItemProvider
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+	extends BinaryPropertyItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

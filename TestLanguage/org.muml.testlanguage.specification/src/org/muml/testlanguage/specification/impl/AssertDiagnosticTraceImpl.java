@@ -12,9 +12,9 @@ import org.muml.testlanguage.specification.NodeSpecification;
 import org.muml.testlanguage.specification.PortType;
 import org.muml.testlanguage.specification.SpecificationPackage;
 import org.muml.testlanguage.specification.custom.ExecutionException;
-import org.muml.uppaal.trace.diagnosticTrace.Result;
-import org.muml.uppaal.trace.diagnosticTrace.Trace;
-import org.muml.uppaal.trace.diagnosticTrace.TraceRepository;
+import org.muml.uppaal.trace.diagnostictrace.Result;
+import org.muml.uppaal.trace.diagnostictrace.Trace;
+import org.muml.uppaal.trace.diagnostictrace.TraceRepository;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '

@@ -18,12 +18,12 @@ import org.muml.verification.core.runtime.RealtimeStatechartInstance;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.verification.core.reachanalysis.reachabilitygraph.rtsc.ZoneGraphState#getFederation <em>Federation</em>}</li>
  *   <li>{@link org.muml.verification.core.reachanalysis.reachabilitygraph.rtsc.ZoneGraphState#getLocations <em>Locations</em>}</li>
  *   <li>{@link org.muml.verification.core.reachanalysis.reachabilitygraph.rtsc.ZoneGraphState#getContainedToplevelStatechartInstances <em>Contained Toplevel Statechart Instances</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.verification.core.reachanalysis.reachabilitygraph.rtsc.RtscPackage#getZoneGraphState()
  * @model
@@ -69,12 +69,12 @@ public interface ZoneGraphState extends ReachabilityGraphState {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Federation</em>' attribute.
-	 * @see #setFederation(Federation)
+	 * @see #setFederation(de.uni_paderborn.fujaba.udbm.Federation)
 	 * @see org.muml.verification.core.reachanalysis.reachabilitygraph.rtsc.RtscPackage#getZoneGraphState_Federation()
-	 * @model dataType="de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.rtsc.FederationObject" transient="true"
+	 * @model dataType="org.muml.verification.core.reachanalysis.reachabilitygraph.rtsc.FederationObject" transient="true"
 	 * @generated
 	 */
-	Federation getFederation();
+	de.uni_paderborn.fujaba.udbm.Federation getFederation();
 
 	/**
 	 * Sets the value of the '{@link org.muml.verification.core.reachanalysis.reachabilitygraph.rtsc.ZoneGraphState#getFederation <em>Federation</em>}' attribute.
@@ -84,7 +84,7 @@ public interface ZoneGraphState extends ReachabilityGraphState {
 	 * @see #getFederation()
 	 * @generated
 	 */
-	void setFederation(Federation value);
+	void setFederation(de.uni_paderborn.fujaba.udbm.Federation value);
 
 	/**
 	 * <!-- begin-user-doc -->

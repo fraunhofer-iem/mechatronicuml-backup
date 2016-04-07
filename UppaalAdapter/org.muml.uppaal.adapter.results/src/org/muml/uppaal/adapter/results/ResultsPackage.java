@@ -38,7 +38,7 @@ public interface ResultsPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/results";
+	String eNS_URI = "http://www.muml.org/uppaal/adapter/results/1.0.0";
 
 	/**
 	 * The package namespace name.

@@ -4,12 +4,20 @@ Bundle-Name: MechatronicUML ReachabilityAnalysis ReachabilityGraph RTSC
 Bundle-SymbolicName: org.muml.verification.core.reachanalysis.reachabilitygraph.rtsc;singleton:=true
 Bundle-Version: 0.5.0.qualifier
 Bundle-ClassPath: .
-Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn
+Bundle-Vendor: Software Engineering Group,
+ Heinz Nixdorf Institute,
+ University of Paderborn
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: org.muml.verification.core.reachanalysis.reachabilitygraph.rtsc,
- org.muml.verification.core.reachanalysis.reachabilitygraph.rtsc.impl
+ org.muml.verification.core.reachanalysis.reachabilitygraph.rtsc.impl,
+ org.muml.verification.core.reachanalysis.reachabilitygraph.rtsc.util
 Require-Bundle: org.muml.core.reachanalysis.reachabilitygraph;visibility:=reexport,
- org.muml.verification.core.runtime;bundle-version="0.3.1",
+ org.eclipse.core.runtime,
+ org.eclipse.emf.ecore;visibility:=reexport,
+ org.muml.core;visibility:=reexport,
+ org.muml.pim;visibility:=reexport,
+ de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph;visibility:=reexport,
+ org.muml.verification.core.runtime;bundle-version="0.3.1";visibility:=reexport,
  org.muml.udbm;bundle-version="0.3.0"
 Bundle-ActivationPolicy: lazy

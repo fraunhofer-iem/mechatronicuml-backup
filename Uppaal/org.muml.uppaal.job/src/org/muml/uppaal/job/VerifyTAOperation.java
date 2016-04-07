@@ -45,7 +45,7 @@ import org.muml.uppaal.cmd.options.tuning.SpaceConsumptionOption.SpaceConsumptio
 import org.muml.uppaal.options.Options;
 import org.muml.uppaal.requirements.PropertyRepository;
 import org.muml.uppaal.trace.DiagnosticTraceStandaloneSetup;
-import org.muml.uppaal.trace.diagnosticTrace.TraceRepository;
+import org.muml.uppaal.trace.diagnostictrace.TraceRepository;
 import org.muml.uppaal.trace.scoping.DiagnosticTraceScopeProviderSingleton;
 
 import com.google.inject.Injector;

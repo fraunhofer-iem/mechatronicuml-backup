@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="rtsc" nsURI="http://www.fujaba.de/reachabilityGraph/rtsc/0.4.0"
-    nsPrefix="de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.rtsc">
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="rtsc" nsURI="http://www.muml.org/verification/core/reachanalysis/reachabilitygraph/rtsc/1.0.0"
+    nsPrefix="reachabilitygraphrtsc">
   <eClassifiers xsi:type="ecore:EClass" name="ZoneGraph" eSuperTypes="../../org.muml.core.reachanalysis.reachabilitygraph/model/ReachabilityAnalysisCore.ecore#//ReachabilityGraph">
     <eStructuralFeatures xsi:type="ecore:EReference" name="clocks" ordered="false"
         upperBound="-1" eType="ecore:EClass ../../org.muml.pim/model/pim.ecore#//realtimestatechart/Clock"/>

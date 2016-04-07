@@ -41,7 +41,7 @@ public interface RequirementsPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.uni-paderborn.de/requirements/0.4.0";
+	String eNS_URI = "http://www.muml.org/uppaal/requirements/1.0.0";
 
 	/**
 	 * The package namespace name.

@@ -12,8 +12,6 @@ import org.muml.uppaal.requirements.RequirementsPackage;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Property</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */

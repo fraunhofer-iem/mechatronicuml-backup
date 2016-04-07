@@ -17,11 +17,11 @@ import org.muml.uppaal.requirements.RequirementsPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.uppaal.requirements.impl.BinaryPropertyImpl#getLeftExpression <em>Left Expression</em>}</li>
  *   <li>{@link org.muml.uppaal.requirements.impl.BinaryPropertyImpl#getRightExpression <em>Right Expression</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

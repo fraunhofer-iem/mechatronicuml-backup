@@ -47,7 +47,7 @@ public interface CicPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.fujaba.de/reachabilityGraph/cic/0.4.0";
+	String eNS_URI = "http://www.muml.org/verification/core/reachanalysis/reachabilitygraph/cic/1.0.0";
 
 	/**
 	 * The package namespace name.
@@ -55,7 +55,7 @@ public interface CicPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_PREFIX = "de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.cic";
+	String eNS_PREFIX = "reachabilitygraphcic";
 
 	/**
 	 * The singleton instance of the package.
@@ -76,22 +76,22 @@ public interface CicPackage extends EPackage {
 	int CIC_ZONE_GRAPH_STATE = 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CIC_ZONE_GRAPH_STATE__ANNOTATION = RtscPackage.ZONE_GRAPH_STATE__ANNOTATION;
+	int CIC_ZONE_GRAPH_STATE__ANNOTATIONS = RtscPackage.ZONE_GRAPH_STATE__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CIC_ZONE_GRAPH_STATE__EXTENSION = RtscPackage.ZONE_GRAPH_STATE__EXTENSION;
+	int CIC_ZONE_GRAPH_STATE__EXTENSIONS = RtscPackage.ZONE_GRAPH_STATE__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Hash</b></em>' attribute.

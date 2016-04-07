@@ -9,7 +9,7 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated results -->
       <package
-            uri="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/results"
+            uri="http://www.muml.org/uppaal/adapter/results/1.0.0"
             class="org.muml.uppaal.adapter.results.ResultsPackage"
             genModel="model/results.genmodel"/>
    </extension>

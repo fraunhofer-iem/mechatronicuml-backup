@@ -11,12 +11,12 @@ import org.muml.uppaal.expressions.Expression;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.uppaal.requirements.UnaryProperty#getExpression <em>Expression</em>}</li>
  *   <li>{@link org.muml.uppaal.requirements.UnaryProperty#getQuantifier <em>Quantifier</em>}</li>
  *   <li>{@link org.muml.uppaal.requirements.UnaryProperty#getOperator <em>Operator</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.uppaal.requirements.RequirementsPackage#getUnaryProperty()
  * @model

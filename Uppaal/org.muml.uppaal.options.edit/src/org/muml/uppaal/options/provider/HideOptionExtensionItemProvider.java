@@ -144,7 +144,7 @@ public class HideOptionExtensionItemProvider extends ExtensionItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSIONS,
 				 OptionsFactory.eINSTANCE.createHideOptionExtension()));
 	}
 

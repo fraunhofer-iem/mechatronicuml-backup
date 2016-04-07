@@ -27,12 +27,12 @@ import org.muml.uppaal.adapter.results.ResultsPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.uppaal.adapter.results.impl.PropertyResultImpl#getProperty <em>Property</em>}</li>
  *   <li>{@link org.muml.uppaal.adapter.results.impl.PropertyResultImpl#isFulfilled <em>Fulfilled</em>}</li>
  *   <li>{@link org.muml.uppaal.adapter.results.impl.PropertyResultImpl#getSubPropertyResults <em>Sub Property Results</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

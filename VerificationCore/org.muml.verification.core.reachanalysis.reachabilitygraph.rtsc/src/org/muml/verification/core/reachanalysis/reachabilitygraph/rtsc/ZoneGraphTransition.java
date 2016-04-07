@@ -17,10 +17,10 @@ import org.muml.pim.realtimestatechart.Transition;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.verification.core.reachanalysis.reachabilitygraph.rtsc.ZoneGraphTransition#getFiredRTSCTransitions <em>Fired RTSC Transitions</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.verification.core.reachanalysis.reachabilitygraph.rtsc.RtscPackage#getZoneGraphTransition()
  * @model

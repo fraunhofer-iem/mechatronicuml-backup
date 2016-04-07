@@ -31,13 +31,7 @@ import org.muml.uppaal.requirements.UnaryProperty;
  * @generated
  */
 public class UnaryPropertyItemProvider
-	extends PropertyItemProvider
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+	extends PropertyItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

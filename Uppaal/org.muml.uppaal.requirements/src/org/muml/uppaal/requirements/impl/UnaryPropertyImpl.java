@@ -19,12 +19,12 @@ import org.muml.uppaal.requirements.UnaryProperty;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.uppaal.requirements.impl.UnaryPropertyImpl#getExpression <em>Expression</em>}</li>
  *   <li>{@link org.muml.uppaal.requirements.impl.UnaryPropertyImpl#getQuantifier <em>Quantifier</em>}</li>
  *   <li>{@link org.muml.uppaal.requirements.impl.UnaryPropertyImpl#getOperator <em>Operator</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

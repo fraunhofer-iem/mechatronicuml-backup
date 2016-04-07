@@ -9,7 +9,7 @@
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <!-- @generated results -->
       <factory
-            uri="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/results"
+            uri="http://www.muml.org/uppaal/adapter/results/1.0.0"
             class="org.muml.uppaal.adapter.results.provider.ResultsItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider

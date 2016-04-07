@@ -17,10 +17,10 @@ import org.muml.pim.realtimestatechart.Clock;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.verification.core.reachanalysis.reachabilitygraph.rtsc.ZoneGraph#getClocks <em>Clocks</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.verification.core.reachanalysis.reachabilitygraph.rtsc.RtscPackage#getZoneGraph()
  * @model

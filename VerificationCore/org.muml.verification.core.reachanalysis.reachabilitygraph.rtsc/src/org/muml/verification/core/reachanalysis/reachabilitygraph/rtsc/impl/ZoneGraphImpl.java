@@ -22,10 +22,10 @@ import org.muml.verification.core.reachanalysis.reachabilitygraph.rtsc.ZoneGraph
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.verification.core.reachanalysis.reachabilitygraph.rtsc.impl.ZoneGraphImpl#getClocks <em>Clocks</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

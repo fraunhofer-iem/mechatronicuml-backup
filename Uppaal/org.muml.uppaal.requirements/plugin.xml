@@ -9,7 +9,7 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated requirements -->
       <package
-            uri="http://www.uni-paderborn.de/requirements/0.4.0"
+            uri="http://www.muml.org/uppaal/requirements/1.0.0"
             class="org.muml.uppaal.requirements.RequirementsPackage"
             genModel="model/requirements.genmodel"/>
    </extension>

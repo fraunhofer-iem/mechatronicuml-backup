@@ -25,10 +25,10 @@ import org.muml.uppaal.adapter.results.ResultsPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.uppaal.adapter.results.impl.PropertyResultRepositoryImpl#getResults <em>Results</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

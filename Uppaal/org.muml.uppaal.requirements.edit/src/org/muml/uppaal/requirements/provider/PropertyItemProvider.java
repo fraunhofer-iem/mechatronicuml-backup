@@ -26,13 +26,7 @@ import org.muml.uppaal.requirements.Property;
  * @generated
  */
 public class PropertyItemProvider
-	extends CommentableElementItemProvider
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+	extends CommentableElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

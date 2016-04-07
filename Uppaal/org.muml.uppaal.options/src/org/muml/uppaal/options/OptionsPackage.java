@@ -39,7 +39,7 @@ public interface OptionsPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/options";
+	String eNS_URI = "http://www.muml.org/uppaal/options/1.0.0";
 
 	/**
 	 * The package namespace name.
@@ -68,22 +68,22 @@ public interface OptionsPackage extends EPackage {
 	int OPTIONS = 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OPTIONS__ANNOTATION = CorePackage.EXTENDABLE_ELEMENT__ANNOTATION;
+	int OPTIONS__ANNOTATIONS = CorePackage.EXTENDABLE_ELEMENT__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OPTIONS__EXTENSION = CorePackage.EXTENDABLE_ELEMENT__EXTENSION;
+	int OPTIONS__EXTENSIONS = CorePackage.EXTENDABLE_ELEMENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Connector Out Buffer Size</b></em>' attribute.
@@ -321,22 +321,22 @@ public interface OptionsPackage extends EPackage {
 	int COORDINATION_PROTOCOL_OPTIONS = 1;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COORDINATION_PROTOCOL_OPTIONS__ANNOTATION = OPTIONS__ANNOTATION;
+	int COORDINATION_PROTOCOL_OPTIONS__ANNOTATIONS = OPTIONS__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COORDINATION_PROTOCOL_OPTIONS__EXTENSION = OPTIONS__EXTENSION;
+	int COORDINATION_PROTOCOL_OPTIONS__EXTENSIONS = OPTIONS__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Connector Out Buffer Size</b></em>' attribute.
@@ -583,22 +583,22 @@ public interface OptionsPackage extends EPackage {
 	int HIDE_OPTION_EXTENSION = 2;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HIDE_OPTION_EXTENSION__ANNOTATION = CorePackage.EXTENSION__ANNOTATION;
+	int HIDE_OPTION_EXTENSION__ANNOTATIONS = CorePackage.EXTENSION__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HIDE_OPTION_EXTENSION__EXTENSION = CorePackage.EXTENSION__EXTENSION;
+	int HIDE_OPTION_EXTENSION__EXTENSIONS = CorePackage.EXTENSION__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Base</b></em>' reference.

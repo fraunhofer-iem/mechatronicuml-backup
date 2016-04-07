@@ -22,10 +22,10 @@ import org.muml.verification.core.reachanalysis.reachabilitygraph.rtsc.ZoneGraph
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.verification.core.reachanalysis.reachabilitygraph.cic.CICZoneGraphState#getCic <em>Cic</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.verification.core.reachanalysis.reachabilitygraph.cic.CicPackage#getCICZoneGraphState()
  * @model

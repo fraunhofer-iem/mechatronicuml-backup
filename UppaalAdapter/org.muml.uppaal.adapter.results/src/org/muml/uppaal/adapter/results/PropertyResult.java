@@ -14,12 +14,12 @@ import org.muml.uppaal.adapter.mtctl.Property;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.uppaal.adapter.results.PropertyResult#getProperty <em>Property</em>}</li>
  *   <li>{@link org.muml.uppaal.adapter.results.PropertyResult#isFulfilled <em>Fulfilled</em>}</li>
  *   <li>{@link org.muml.uppaal.adapter.results.PropertyResult#getSubPropertyResults <em>Sub Property Results</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.uppaal.adapter.results.ResultsPackage#getPropertyResult()
  * @model

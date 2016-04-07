@@ -43,7 +43,7 @@ public interface RtscPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.fujaba.de/reachabilityGraph/rtsc/0.4.0";
+	String eNS_URI = "http://www.muml.org/verification/core/reachanalysis/reachabilitygraph/rtsc/1.0.0";
 
 	/**
 	 * The package namespace name.
@@ -51,7 +51,7 @@ public interface RtscPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_PREFIX = "de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.rtsc";
+	String eNS_PREFIX = "reachabilitygraphrtsc";
 
 	/**
 	 * The singleton instance of the package.
@@ -72,22 +72,22 @@ public interface RtscPackage extends EPackage {
 	int ZONE_GRAPH = 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ZONE_GRAPH__ANNOTATION = ReachabilityGraphPackage.REACHABILITY_GRAPH__ANNOTATION;
+	int ZONE_GRAPH__ANNOTATIONS = ReachabilityGraphPackage.REACHABILITY_GRAPH__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ZONE_GRAPH__EXTENSION = ReachabilityGraphPackage.REACHABILITY_GRAPH__EXTENSION;
+	int ZONE_GRAPH__EXTENSIONS = ReachabilityGraphPackage.REACHABILITY_GRAPH__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>States</b></em>' containment reference list.
@@ -154,22 +154,22 @@ public interface RtscPackage extends EPackage {
 	int ZONE_GRAPH_STATE = 1;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ZONE_GRAPH_STATE__ANNOTATION = ReachabilityGraphPackage.REACHABILITY_GRAPH_STATE__ANNOTATION;
+	int ZONE_GRAPH_STATE__ANNOTATIONS = ReachabilityGraphPackage.REACHABILITY_GRAPH_STATE__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ZONE_GRAPH_STATE__EXTENSION = ReachabilityGraphPackage.REACHABILITY_GRAPH_STATE__EXTENSION;
+	int ZONE_GRAPH_STATE__EXTENSIONS = ReachabilityGraphPackage.REACHABILITY_GRAPH_STATE__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Hash</b></em>' attribute.
@@ -263,22 +263,22 @@ public interface RtscPackage extends EPackage {
 	int ZONE_GRAPH_TRANSITION = 2;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ZONE_GRAPH_TRANSITION__ANNOTATION = ReachabilityGraphPackage.ACTION_TRANSITION__ANNOTATION;
+	int ZONE_GRAPH_TRANSITION__ANNOTATIONS = ReachabilityGraphPackage.ACTION_TRANSITION__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ZONE_GRAPH_TRANSITION__EXTENSION = ReachabilityGraphPackage.ACTION_TRANSITION__EXTENSION;
+	int ZONE_GRAPH_TRANSITION__EXTENSIONS = ReachabilityGraphPackage.ACTION_TRANSITION__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Source</b></em>' reference.
@@ -336,22 +336,22 @@ public interface RtscPackage extends EPackage {
 	int DELAY_TRANSITION = 3;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DELAY_TRANSITION__ANNOTATION = ReachabilityGraphPackage.REACHABILITY_GRAPH_TRANSITION__ANNOTATION;
+	int DELAY_TRANSITION__ANNOTATIONS = ReachabilityGraphPackage.REACHABILITY_GRAPH_TRANSITION__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DELAY_TRANSITION__EXTENSION = ReachabilityGraphPackage.REACHABILITY_GRAPH_TRANSITION__EXTENSION;
+	int DELAY_TRANSITION__EXTENSIONS = ReachabilityGraphPackage.REACHABILITY_GRAPH_TRANSITION__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Source</b></em>' reference.
@@ -394,7 +394,7 @@ public interface RtscPackage extends EPackage {
 	 * The meta object id for the '<em>Federation Object</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.muml.udbm.Federation
+	 * @see de.uni_paderborn.fujaba.udbm.Federation
 	 * @see org.muml.verification.core.reachanalysis.reachabilitygraph.rtsc.impl.RtscPackageImpl#getFederationObject()
 	 * @generated
 	 */
@@ -497,11 +497,11 @@ public interface RtscPackage extends EPackage {
 	EClass getDelayTransition();
 
 	/**
-	 * Returns the meta object for data type '{@link org.muml.udbm.Federation <em>Federation Object</em>}'.
+	 * Returns the meta object for data type '{@link de.uni_paderborn.fujaba.udbm.Federation <em>Federation Object</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for data type '<em>Federation Object</em>'.
-	 * @see org.muml.udbm.Federation
+	 * @see de.uni_paderborn.fujaba.udbm.Federation
 	 * @model instanceClass="de.uni_paderborn.fujaba.udbm.Federation" serializeable="false"
 	 * @generated
 	 */
@@ -613,7 +613,7 @@ public interface RtscPackage extends EPackage {
 		 * The meta object literal for the '<em>Federation Object</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.muml.udbm.Federation
+		 * @see de.uni_paderborn.fujaba.udbm.Federation
 		 * @see org.muml.verification.core.reachanalysis.reachabilitygraph.rtsc.impl.RtscPackageImpl#getFederationObject()
 		 * @generated
 		 */

@@ -6,7 +6,6 @@ import org.eclipse.emf.common.EMFPlugin;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.muml.core.provider.CoreEditPlugin;
-import org.muml.pim.component.provider.MumlEditPlugin;
 import org.muml.uppaal.adapter.mtctl.provider.MtctlEditPlugin;
 
 /**
@@ -43,7 +42,7 @@ public final class ResultsEditPlugin extends EMFPlugin {
 		  (new ResourceLocator [] {
 		     CoreEditPlugin.INSTANCE,
 		     MtctlEditPlugin.INSTANCE,
-		     MumlEditPlugin.INSTANCE,
+		     org.muml.pim.provider.MumlEditPlugin.INSTANCE,
 		   });
 	}
 

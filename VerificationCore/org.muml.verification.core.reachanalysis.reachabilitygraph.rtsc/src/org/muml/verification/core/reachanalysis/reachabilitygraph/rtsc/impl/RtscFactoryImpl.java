@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+import org.muml.verification.core.reachanalysis.reachabilitygraph.rtsc.*;
 import org.muml.verification.core.reachanalysis.reachabilitygraph.rtsc.DelayTransition;
 import org.muml.verification.core.reachanalysis.reachabilitygraph.rtsc.RtscFactory;
 import org.muml.verification.core.reachanalysis.reachabilitygraph.rtsc.RtscPackage;
@@ -34,7 +35,7 @@ public class RtscFactoryImpl extends EFactoryImpl implements RtscFactory {
 	 */
 	public static RtscFactory init() {
 		try {
-			RtscFactory theRtscFactory = (RtscFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/reachabilityGraph/rtsc/0.4.0"); 
+			RtscFactory theRtscFactory = (RtscFactory)EPackage.Registry.INSTANCE.getEFactory(RtscPackage.eNS_URI);
 			if (theRtscFactory != null) {
 				return theRtscFactory;
 			}

@@ -30,10 +30,10 @@ import org.muml.verification.core.reachanalysis.reachabilitygraph.rtsc.impl.Zone
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.verification.core.reachanalysis.reachabilitygraph.cic.impl.CICZoneGraphStateImpl#getCic <em>Cic</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

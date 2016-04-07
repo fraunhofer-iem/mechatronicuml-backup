@@ -11,11 +11,11 @@ import org.muml.uppaal.expressions.Expression;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.uppaal.requirements.BinaryProperty#getLeftExpression <em>Left Expression</em>}</li>
  *   <li>{@link org.muml.uppaal.requirements.BinaryProperty#getRightExpression <em>Right Expression</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.uppaal.requirements.RequirementsPackage#getBinaryProperty()
  * @model abstract="true"

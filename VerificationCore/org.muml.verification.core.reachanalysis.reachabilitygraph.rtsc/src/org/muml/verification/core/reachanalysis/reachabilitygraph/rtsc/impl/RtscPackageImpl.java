@@ -113,6 +113,7 @@ public class RtscPackageImpl extends EPackageImpl implements RtscPackage {
 		isInited = true;
 
 		// Initialize simple dependencies
+		EcorePackage.eINSTANCE.eClass();
 		ReachabilityGraphPackage.eINSTANCE.eClass();
 		RuntimePackage.eINSTANCE.eClass();
 
@@ -324,7 +325,7 @@ public class RtscPackageImpl extends EPackageImpl implements RtscPackage {
 		initEClass(delayTransitionEClass, DelayTransition.class, "DelayTransition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Initialize data types
-		initEDataType(federationObjectEDataType, Federation.class, "FederationObject", !IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(federationObjectEDataType, de.uni_paderborn.fujaba.udbm.Federation.class, "FederationObject", !IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

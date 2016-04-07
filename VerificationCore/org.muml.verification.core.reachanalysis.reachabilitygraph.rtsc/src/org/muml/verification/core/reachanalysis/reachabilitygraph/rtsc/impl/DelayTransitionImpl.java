@@ -15,8 +15,6 @@ import org.muml.verification.core.reachanalysis.reachabilitygraph.rtsc.RtscPacka
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Delay Transition</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */
