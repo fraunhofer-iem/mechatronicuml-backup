@@ -12,7 +12,7 @@ public class AbstractDotLanguageValidator extends org.eclipse.xtext.validation.A
 	@Override
 	protected List<EPackage> getEPackages() {
 	    List<EPackage> result = new ArrayList<EPackage>();
-	    result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.fujaba.de/graphviz/dot/0.1.0"));
+	    result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.muml.org/graphviz/dot/1.0.0"));
 		return result;
 	}
 }

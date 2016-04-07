@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workflow>
 	<!-- Paths to metamodels -->
-	<property name="dependencylanguage" value="de.uni_paderborn.fujaba.muml.dependencylanguage/model/dependencylanguage.ecore" />
+	<property name="dependencylanguage" value="org.muml.cbs.dependencylanguage/model/dependencylanguage.ecore" />
 
 
 	<!-- set up EMF for standalone execution -->

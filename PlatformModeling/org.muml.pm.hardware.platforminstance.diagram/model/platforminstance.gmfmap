@@ -287,10 +287,10 @@
         href="../../de.uni_paderborn.fujaba.muml.hardware.platform.diagram/model/platform.gmfgraph#Link"/>
     <sourceMetaFeature
         xsi:type="ecore:EReference"
-        href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/ConnectorInstance/connectorEndpointInstances"/>
+        href="../../org.muml.pim/model/pim.ecore#//connector/ConnectorInstance/connectorEndpointInstances"/>
     <linkMetaFeature
         xsi:type="ecore:EReference"
-        href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/ConnectorInstance/connectorEndpointInstances"/>
+        href="../../org.muml.pim/model/pim.ecore#//connector/ConnectorInstance/connectorEndpointInstances"/>
   </links>
   <diagram>
     <diagramCanvas

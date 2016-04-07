@@ -3,8 +3,8 @@ import transforms.plain2rtscAnnotation;
 import transforms.GraphvizPlainLayouterTransformation;
 import transforms.util;
 
-modeltype DOT uses dot("http://www.fujaba.de/graphviz/dot/0.1.0");
-modeltype PLAIN uses plain("http://www.fujaba.de/graphviz/plain/0.1.0");
+modeltype DOT uses dot("http://www.muml.org/graphviz/dot/1.0.0");
+modeltype PLAIN uses plain("http://www.muml.org/graphviz/plain/1.0.0");
 modeltype RTSC uses muml::realtimestatechart("http://www.fujaba.de/muml/0.4.0");
 
 transformation layout(inout rtscModel : RTSC)

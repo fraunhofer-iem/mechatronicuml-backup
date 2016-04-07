@@ -92,13 +92,13 @@
                     xsi:type="gmfmap:ReferenceNewElementSpec">
                   <feature
                       xsi:type="ecore:EReference"
-                      href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype/Cardinality/lowerBound"/>
+                      href="../../org.muml.pim/model/pim.ecore#//valuetype/Cardinality/lowerBound"/>
                   <newElementInitializers>
                     <initializers
                         xsi:type="gmfmap:FeatureValueSpec">
                       <feature
                           xsi:type="ecore:EAttribute"
-                          href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype/NaturalNumber/value"/>
+                          href="../../org.muml.pim/model/pim.ecore#//valuetype/NaturalNumber/value"/>
                       <value
                           body="0"/>
                     </initializers>
@@ -108,13 +108,13 @@
                     xsi:type="gmfmap:ReferenceNewElementSpec">
                   <feature
                       xsi:type="ecore:EReference"
-                      href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype/Cardinality/upperBound"/>
+                      href="../../org.muml.pim/model/pim.ecore#//valuetype/Cardinality/upperBound"/>
                   <newElementInitializers>
                     <initializers
                         xsi:type="gmfmap:FeatureValueSpec">
                       <feature
                           xsi:type="ecore:EAttribute"
-                          href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype/NaturalNumber/value"/>
+                          href="../../org.muml.pim/model/pim.ecore#//valuetype/NaturalNumber/value"/>
                       <value
                           body="1"/>
                     </initializers>
@@ -193,13 +193,13 @@
                     xsi:type="gmfmap:ReferenceNewElementSpec">
                   <feature
                       xsi:type="ecore:EReference"
-                      href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype/Cardinality/lowerBound"/>
+                      href="../../org.muml.pim/model/pim.ecore#//valuetype/Cardinality/lowerBound"/>
                   <newElementInitializers>
                     <initializers
                         xsi:type="gmfmap:FeatureValueSpec">
                       <feature
                           xsi:type="ecore:EAttribute"
-                          href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype/NaturalNumber/value"/>
+                          href="../../org.muml.pim/model/pim.ecore#//valuetype/NaturalNumber/value"/>
                       <value
                           body="0"/>
                     </initializers>
@@ -209,13 +209,13 @@
                     xsi:type="gmfmap:ReferenceNewElementSpec">
                   <feature
                       xsi:type="ecore:EReference"
-                      href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype/Cardinality/upperBound"/>
+                      href="../../org.muml.pim/model/pim.ecore#//valuetype/Cardinality/upperBound"/>
                   <newElementInitializers>
                     <initializers
                         xsi:type="gmfmap:FeatureValueSpec">
                       <feature
                           xsi:type="ecore:EAttribute"
-                          href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype/NaturalNumber/value"/>
+                          href="../../org.muml.pim/model/pim.ecore#//valuetype/NaturalNumber/value"/>
                       <value
                           body="1"/>
                     </initializers>
@@ -310,10 +310,10 @@
         href="platform.gmfgraph#toBus"/>
     <sourceMetaFeature
         xsi:type="ecore:EReference"
-        href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/Connector/connectorEndpoints"/>
+        href="../../org.muml.pim/model/pim.ecore#//connector/Connector/connectorEndpoints"/>
     <linkMetaFeature
         xsi:type="ecore:EReference"
-        href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/Connector/connectorEndpoints"/>
+        href="../../org.muml.pim/model/pim.ecore#//connector/Connector/connectorEndpoints"/>
   </links>
   <diagram>
     <diagramCanvas

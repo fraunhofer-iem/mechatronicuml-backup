@@ -717,7 +717,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_OUbhE5EEEeO2KtO0eWa78g"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_OUZE0ZEEEeO2KtO0eWa78g" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="16777147" lineColor="8421504"/>
-    <element xmi:type="ecore:EClass" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//behavior/BehavioralElement"/>
+    <element xmi:type="ecore:EClass" href="platform:/resource/org.muml.pim/model/pim.ecore#//behavior/BehavioralElement"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_OUZE0pEEEeO2KtO0eWa78g" x="105" y="140" width="126" height="60"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_SPExsZEEEeO2KtO0eWa78g" type="1001">
@@ -738,7 +738,7 @@
       <layoutConstraint xmi:type="notation:Ratio" xmi:id="_2tNgsZEaEeO4IfUtKoRpvA" value="0.20689655172413793"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_SPExs5EEEeO2KtO0eWa78g" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="16777147" lineColor="8421504"/>
-    <element xmi:type="ecore:EClass" href="platform:/resource/org.storydriven.core/model/core.ecore#//Extension"/>
+    <element xmi:type="ecore:EClass" href="platform:/resource/org.muml.core/model/core.ecore#//Extension"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SPExtJEEEeO2KtO0eWa78g" x="255" y="140" width="102" height="60"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_kDb2EZECEeO2KtO0eWa78g"/>

@@ -10,10 +10,10 @@
                class="org.muml.graphviz.blackbox.GraphvizPlainLayouter"
                name="GraphvizPlainLayouterBlackbox">
             <metamodel
-                  nsURI="http://www.fujaba.de/graphviz/dot/0.1.0">
+                  nsURI="http://www.muml.org/graphviz/dot/1.0.0">
             </metamodel>
             <metamodel
-                  nsURI="http://www.fujaba.de/graphviz/plain/0.1.0">
+                  nsURI="http://www.muml.org/graphviz/plain/1.0.0">
             </metamodel>
          </library>
       </unit>
@@ -24,7 +24,7 @@
                class="org.muml.graphviz.blackbox.GraphvizDotLayouter"
                name="GraphvizDotLayouterBlackbox">
             <metamodel
-                  nsURI="http://www.fujaba.de/graphviz/dot/0.1.0">
+                  nsURI="http://www.muml.org/graphviz/dot/1.0.0">
             </metamodel>
          </library>
       </unit>

@@ -125,7 +125,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_lQ5midv7EeOBxdZ1QJfccw"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_lQ5mf9v7EeOBxdZ1QJfccw" fontColor="4210752" fontName="Segoe UI" fontHeight="10" lineColor="8421504"/>
-    <element xmi:type="ecore:EClass" href="platform:/resource/org.storydriven.core/model/core.ecore#//NamedElement"/>
+    <element xmi:type="ecore:EClass" href="platform:/resource/org.muml.core/model/core.ecore#//NamedElement"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_lQ5mgNv7EeOBxdZ1QJfccw" x="45" y="145" width="148"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_mR6XgNv7EeOBxdZ1QJfccw" type="1001">

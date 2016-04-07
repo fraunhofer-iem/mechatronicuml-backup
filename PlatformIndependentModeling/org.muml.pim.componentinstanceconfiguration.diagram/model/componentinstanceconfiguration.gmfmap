@@ -8,10 +8,10 @@
     xmlns:gmftool="http://www.eclipse.org/gmf/2005/ToolDefinition">
   <nodes>
     <containmentFeature
-        href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/ComponentInstanceConfiguration/parentPortInstances"/>
+        href="../../org.muml.pim/model/pim.ecore#//instance/ComponentInstanceConfiguration/parentPortInstances"/>
     <ownedChild>
       <domainMetaElement
-          href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/HybridPortInstance"/>
+          href="../../org.muml.pim/model/pim.ecore#//instance/HybridPortInstance"/>
       <labelMappings
           xsi:type="gmfmap:ExpressionLabelMapping"
           readOnly="true">
@@ -29,10 +29,10 @@
   </nodes>
   <nodes>
     <containmentFeature
-        href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/ComponentInstanceConfiguration/parentPortInstances"/>
+        href="../../org.muml.pim/model/pim.ecore#//instance/ComponentInstanceConfiguration/parentPortInstances"/>
     <ownedChild>
       <domainMetaElement
-          href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/DiscreteSinglePortInstance"/>
+          href="../../org.muml.pim/model/pim.ecore#//instance/DiscreteSinglePortInstance"/>
       <domainSpecialization
           body="self.multiInteractionEndpointInstance.oclIsUndefined()"/>
       <labelMappings
@@ -60,10 +60,10 @@
   </nodes>
   <nodes>
     <containmentFeature
-        href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/ComponentInstanceConfiguration/parentPortInstances"/>
+        href="../../org.muml.pim/model/pim.ecore#//instance/ComponentInstanceConfiguration/parentPortInstances"/>
     <ownedChild>
       <domainMetaElement
-          href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/DiscreteMultiPortInstance"/>
+          href="../../org.muml.pim/model/pim.ecore#//instance/DiscreteMultiPortInstance"/>
       <labelMappings
           xsi:type="gmfmap:ExpressionLabelMapping"
           readOnly="true">
@@ -88,17 +88,17 @@
       <children
           compartment="//@nodes.2/@ownedChild/@compartments.0">
         <containmentFeature
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/DiscreteMultiPortInstance/gmfSubPortInstances"/>
+            href="../../org.muml.pim/model/pim.ecore#//instance/DiscreteMultiPortInstance/gmfSubPortInstances"/>
         <ownedChild>
           <domainMetaElement
-              href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/DiscreteSinglePortInstance"/>
+              href="../../org.muml.pim/model/pim.ecore#//instance/DiscreteSinglePortInstance"/>
           <domainInitializer
               xsi:type="gmfmap:FeatureSeqInitializer">
             <initializers
                 xsi:type="gmfmap:FeatureValueSpec">
               <feature
                   xsi:type="ecore:EReference"
-                  href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/PortInstance/componentInstance"/>
+                  href="../../org.muml.pim/model/pim.ecore#//instance/PortInstance/componentInstance"/>
               <value
                   body="if self.multiInteractionEndpointInstance.oclIsUndefined() then&#xA;&#x9;null&#xA;else&#xA;&#x9;if  self.multiInteractionEndpointInstance.oclIsKindOf(DiscreteMultiPortInstance) then&#xA;&#x9;&#x9;self.multiInteractionEndpointInstance.oclAsType(DiscreteMultiPortInstance).componentInstance&#xA;&#x9;else&#xA;&#x9;&#x9;null&#xA;&#x9;endif&#xA;endif"/>
             </initializers>
@@ -119,10 +119,10 @@
   </nodes>
   <nodes>
     <containmentFeature
-        href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/ComponentInstanceConfiguration/parentPortInstances"/>
+        href="../../org.muml.pim/model/pim.ecore#//instance/ComponentInstanceConfiguration/parentPortInstances"/>
     <ownedChild>
       <domainMetaElement
-          href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/ContinuousPortInstance"/>
+          href="../../org.muml.pim/model/pim.ecore#//instance/ContinuousPortInstance"/>
       <labelMappings
           xsi:type="gmfmap:ExpressionLabelMapping"
           readOnly="true">
@@ -140,10 +140,10 @@
   </nodes>
   <nodes>
     <containmentFeature
-        href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/ComponentInstanceConfiguration/componentInstances"/>
+        href="../../org.muml.pim/model/pim.ecore#//instance/ComponentInstanceConfiguration/componentInstances"/>
     <ownedChild>
       <domainMetaElement
-          href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/AtomicComponentInstance"/>
+          href="../../org.muml.pim/model/pim.ecore#//instance/AtomicComponentInstance"/>
       <labelMappings
           xsi:type="gmfmap:ExpressionLabelMapping">
         <diagramLabel
@@ -159,38 +159,38 @@
       <children
           referencedChild="//@nodes.0/@ownedChild">
         <containmentFeature
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/ComponentInstance/portInstances"/>
+            href="../../org.muml.pim/model/pim.ecore#//instance/ComponentInstance/portInstances"/>
       </children>
       <children
           referencedChild="//@nodes.1/@ownedChild">
         <containmentFeature
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/ComponentInstance/portInstances"/>
+            href="../../org.muml.pim/model/pim.ecore#//instance/ComponentInstance/portInstances"/>
       </children>
       <children
           referencedChild="//@nodes.2/@ownedChild">
         <containmentFeature
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/ComponentInstance/portInstances"/>
+            href="../../org.muml.pim/model/pim.ecore#//instance/ComponentInstance/portInstances"/>
       </children>
       <children
           referencedChild="//@nodes.3/@ownedChild">
         <containmentFeature
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/ComponentInstance/portInstances"/>
+            href="../../org.muml.pim/model/pim.ecore#//instance/ComponentInstance/portInstances"/>
       </children>
     </ownedChild>
   </nodes>
   <nodes>
     <containmentFeature
-        href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/ComponentInstanceConfiguration/componentInstances"/>
+        href="../../org.muml.pim/model/pim.ecore#//instance/ComponentInstanceConfiguration/componentInstances"/>
     <ownedChild>
       <domainMetaElement
-          href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/StructuredComponentInstance"/>
+          href="../../org.muml.pim/model/pim.ecore#//instance/StructuredComponentInstance"/>
       <domainInitializer
           xsi:type="gmfmap:FeatureSeqInitializer">
         <initializers
             xsi:type="gmfmap:ReferenceNewElementSpec">
           <feature
               xsi:type="ecore:EReference"
-              href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/StructuredComponentInstance/embeddedCIC"/>
+              href="../../org.muml.pim/model/pim.ecore#//instance/StructuredComponentInstance/embeddedCIC"/>
           <newElementInitializers>
             <initializers
                 xsi:type="gmfmap:FeatureValueSpec">
@@ -218,49 +218,49 @@
       <children
           referencedChild="//@nodes.0/@ownedChild">
         <containmentFeature
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/ComponentInstance/portInstances"/>
+            href="../../org.muml.pim/model/pim.ecore#//instance/ComponentInstance/portInstances"/>
       </children>
       <children
           referencedChild="//@nodes.1/@ownedChild">
         <containmentFeature
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/ComponentInstance/portInstances"/>
+            href="../../org.muml.pim/model/pim.ecore#//instance/ComponentInstance/portInstances"/>
       </children>
       <children
           referencedChild="//@nodes.2/@ownedChild">
         <containmentFeature
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/ComponentInstance/portInstances"/>
+            href="../../org.muml.pim/model/pim.ecore#//instance/ComponentInstance/portInstances"/>
       </children>
       <children
           referencedChild="//@nodes.3/@ownedChild">
         <containmentFeature
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/ComponentInstance/portInstances"/>
+            href="../../org.muml.pim/model/pim.ecore#//instance/ComponentInstance/portInstances"/>
       </children>
       <children
           compartment="//@nodes.5/@ownedChild/@compartments.0">
         <containmentFeature
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/StructuredComponentInstance/embeddedCIC"/>
+            href="../../org.muml.pim/model/pim.ecore#//instance/StructuredComponentInstance/embeddedCIC"/>
         <ownedChild>
           <domainMetaElement
-              href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/ComponentInstanceConfiguration"/>
+              href="../../org.muml.pim/model/pim.ecore#//instance/ComponentInstanceConfiguration"/>
           <diagramNode
               href="componentinstanceconfiguration.gmfgraph#ComponentInstanceConfiguration"/>
           <children
               compartment="//@nodes.5/@ownedChild/@children.4/@ownedChild/@compartments.0"
               referencedChild="//@nodes.4/@ownedChild">
             <containmentFeature
-                href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/ComponentInstanceConfiguration/componentInstances"/>
+                href="../../org.muml.pim/model/pim.ecore#//instance/ComponentInstanceConfiguration/componentInstances"/>
           </children>
           <children
               compartment="//@nodes.5/@ownedChild/@children.4/@ownedChild/@compartments.0"
               referencedChild="//@nodes.5/@ownedChild">
             <containmentFeature
-                href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/ComponentInstanceConfiguration/componentInstances"/>
+                href="../../org.muml.pim/model/pim.ecore#//instance/ComponentInstanceConfiguration/componentInstances"/>
           </children>
           <children
               compartment="//@nodes.5/@ownedChild/@children.4/@ownedChild/@compartments.0"
               referencedChild="//@nodes.6/@ownedChild">
             <containmentFeature
-                href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/ComponentInstanceConfiguration/coordinationProtocolInstances"/>
+                href="../../org.muml.pim/model/pim.ecore#//instance/ComponentInstanceConfiguration/coordinationProtocolInstances"/>
           </children>
           <compartments
               children="//@nodes.5/@ownedChild/@children.4/@ownedChild/@children.0 //@nodes.5/@ownedChild/@children.4/@ownedChild/@children.1 //@nodes.5/@ownedChild/@children.4/@ownedChild/@children.2">
@@ -278,10 +278,10 @@
   </nodes>
   <nodes>
     <containmentFeature
-        href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/ComponentInstanceConfiguration/coordinationProtocolInstances"/>
+        href="../../org.muml.pim/model/pim.ecore#//instance/ComponentInstanceConfiguration/coordinationProtocolInstances"/>
     <ownedChild>
       <domainMetaElement
-          href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/CoordinationProtocolInstance"/>
+          href="../../org.muml.pim/model/pim.ecore#//instance/CoordinationProtocolInstance"/>
       <labelMappings
           xsi:type="gmfmap:ExpressionLabelMapping"
           readOnly="true">
@@ -296,11 +296,11 @@
   </nodes>
   <links>
     <domainMetaElement
-        href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/AssemblyConnectorInstance"/>
+        href="../../org.muml.pim/model/pim.ecore#//instance/AssemblyConnectorInstance"/>
     <domainSpecialization
         body="not self.oclIsTypeOf(DelegationConnectorInstance)"/>
     <containmentFeature
-        href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/ComponentInstanceConfiguration/portConnectorInstances"/>
+        href="../../org.muml.pim/model/pim.ecore#//instance/ComponentInstanceConfiguration/portConnectorInstances"/>
     <tool
         xsi:type="gmftool:CreationTool"
         href="componentinstanceconfiguration.gmftool#//@palette/@tools.0/@tools.2"/>
@@ -308,18 +308,18 @@
         href="componentinstanceconfiguration.gmfgraph#Assembly"/>
     <sourceMetaFeature
         xsi:type="ecore:EReference"
-        href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/ConnectorInstance/connectorEndpointInstances"/>
+        href="../../org.muml.pim/model/pim.ecore#//connector/ConnectorInstance/connectorEndpointInstances"/>
     <linkMetaFeature
         xsi:type="ecore:EReference"
-        href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/ConnectorInstance/connectorEndpointInstances"/>
+        href="../../org.muml.pim/model/pim.ecore#//connector/ConnectorInstance/connectorEndpointInstances"/>
   </links>
   <links>
     <domainMetaElement
-        href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/DelegationConnectorInstance"/>
+        href="../../org.muml.pim/model/pim.ecore#//instance/DelegationConnectorInstance"/>
     <domainSpecialization
         body="not self.oclIsTypeOf(AssemblyConnectorInstance)"/>
     <containmentFeature
-        href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/ComponentInstanceConfiguration/portConnectorInstances"/>
+        href="../../org.muml.pim/model/pim.ecore#//instance/ComponentInstanceConfiguration/portConnectorInstances"/>
     <tool
         xsi:type="gmftool:CreationTool"
         href="componentinstanceconfiguration.gmftool#//@palette/@tools.0/@tools.3"/>
@@ -327,25 +327,25 @@
         href="componentinstanceconfiguration.gmfgraph#Delegation"/>
     <sourceMetaFeature
         xsi:type="ecore:EReference"
-        href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/ConnectorInstance/connectorEndpointInstances"/>
+        href="../../org.muml.pim/model/pim.ecore#//connector/ConnectorInstance/connectorEndpointInstances"/>
     <linkMetaFeature
         xsi:type="ecore:EReference"
-        href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/ConnectorInstance/connectorEndpointInstances"/>
+        href="../../org.muml.pim/model/pim.ecore#//connector/ConnectorInstance/connectorEndpointInstances"/>
   </links>
   <links>
     <diagramLink
         href="../../de.uni_paderborn.fujaba.muml.coordinationspecification.common/model/coordinationspecification.gmfgraph#RolePattern"/>
     <linkMetaFeature
         xsi:type="ecore:EReference"
-        href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/CoordinationProtocolInstance/portInstances"/>
+        href="../../org.muml.pim/model/pim.ecore#//instance/CoordinationProtocolInstance/portInstances"/>
   </links>
   <diagram>
     <diagramCanvas
         href="componentinstanceconfiguration.gmfgraph#componentinstanceconfiguration"/>
     <domainModel
-        href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance"/>
+        href="../../org.muml.pim/model/pim.ecore#//instance"/>
     <domainMetaElement
-        href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/ComponentInstanceConfiguration"/>
+        href="../../org.muml.pim/model/pim.ecore#//instance/ComponentInstanceConfiguration"/>
     <palette
         href="componentinstanceconfiguration.gmftool#//@palette"/>
   </diagram>

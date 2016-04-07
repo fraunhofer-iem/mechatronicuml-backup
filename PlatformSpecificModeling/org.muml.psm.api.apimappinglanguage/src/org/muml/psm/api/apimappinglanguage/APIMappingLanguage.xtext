@@ -2,31 +2,31 @@
 grammar de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage.APIMappingLanguage with de.uni_paderborn.fujaba.muml.ActionLanguage
 
 import "http://www.eclipse.org/emf/2002/Ecore" as ecore
-import "platform:/resource/org.storydriven.core/model/core.ecore" as core
-import "platform:/resource/org.storydriven.core/model/core.ecore#//expressions" as expressions
-import "platform:/resource/org.storydriven.core/model/core.ecore#//expressions/common" as common
+import "platform:/resource/org.muml.core/model/core.ecore" as core
+import "platform:/resource/org.muml.core/model/core.ecore#//expressions" as expressions
+import "platform:/resource/org.muml.core/model/core.ecore#//expressions/common" as common
 import "platform:/resource/org.muml.core.modelinstance/model/modelinstance.ecore" as modelinstance
 
-import "platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart" as realtimestatechart
-import "platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//types" as types
-import "platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//behavior" as behavior
-import "platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//component" as component
-import "platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype" as valuetype
-import "platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//msgtype" as msgtype
-import "platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//protocol" as protocol
-import "platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance" as instance
+import "platform:/resource/org.muml.pim/model/pim.ecore#//realtimestatechart" as realtimestatechart
+import "platform:/resource/org.muml.pim/model/pim.ecore#//types" as types
+import "platform:/resource/org.muml.pim/model/pim.ecore#//behavior" as behavior
+import "platform:/resource/org.muml.pim/model/pim.ecore#//component" as component
+import "platform:/resource/org.muml.pim/model/pim.ecore#//valuetype" as valuetype
+import "platform:/resource/org.muml.pim/model/pim.ecore#//msgtype" as msgtype
+import "platform:/resource/org.muml.pim/model/pim.ecore#//protocol" as protocol
+import "platform:/resource/org.muml.pim/model/pim.ecore#//instance" as instance
 
-import "platform:/resource/de.uni_paderborn.fujaba.muml.actionlanguage/model/actionlanguage.ecore" as actionlanguage
-import "platform:/resource/de.uni_paderborn.fujaba.muml.psm/model/psm.ecore" as psm
+import "platform:/resource/org.muml.pim.actionlanguage/model/actionlanguage.ecore" as actionlanguage
+import "platform:/resource/org.muml.psm/model/psm.ecore" as psm
 
-import "platform:/resource/de.uni_paderborn.fujaba.muml.psm/model/psm.ecore#//psm_instance" as psminstance
-import "platform:/resource/de.uni_paderborn.fujaba.muml.psm/model/psm.ecore#//psm_realtimestatechart/realtimestatechartparameterbinding" as realtimestatechartparameterbinding
-import "platform:/resource/de.uni_paderborn.fujaba.muml.psm/model/psm.ecore#//psm_realtimestatechart/realtimestatechartparameter" as realtimestatechartparameter
+import "platform:/resource/org.muml.psm/model/psm.ecore#//psm_instance" as psminstance
+import "platform:/resource/org.muml.psm/model/psm.ecore#//psm_realtimestatechart/realtimestatechartparameterbinding" as realtimestatechartparameterbinding
+import "platform:/resource/org.muml.psm/model/psm.ecore#//psm_realtimestatechart/realtimestatechartparameter" as realtimestatechartparameter
 import "platform:/resource/org.muml.pm.software.platform/model/swplatform.ecore" as swplatform
-import "platform:/resource/de.uni_paderborn.fujaba.muml.psm/model/psm.ecore#//portapimapping" as portapimapping
-import "platform:/resource/de.uni_paderborn.fujaba.muml.psm/model/psm.ecore#//properties" as properties
-import "platform:/resource/de.uni_paderborn.fujaba.muml.psm/model/psm.ecore#//apiexpressions" as apiexpressions
-import "platform:/resource/de.uni_paderborn.fujaba.muml.psm/model/psm.ecore#//allocation" as allocation
+import "platform:/resource/org.muml.psm/model/psm.ecore#//portapimapping" as portapimapping
+import "platform:/resource/org.muml.psm/model/psm.ecore#//properties" as properties
+import "platform:/resource/org.muml.psm/model/psm.ecore#//apiexpressions" as apiexpressions
+import "platform:/resource/org.muml.psm/model/psm.ecore#//allocation" as allocation
 
 
 

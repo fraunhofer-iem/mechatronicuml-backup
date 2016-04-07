@@ -34,7 +34,7 @@ public class PimMetamodelTest extends MetamodelTest {
 
 		
 		Resource mumlModel = TestUtilities.loadResource(resourceSet,
-				"de.uni_paderborn.fujaba.muml/model/muml.ecore");
+				"org.muml.pim/model/pim.ecore");
 
 
 		

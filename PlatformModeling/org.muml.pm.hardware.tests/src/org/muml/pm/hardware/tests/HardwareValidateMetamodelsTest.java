@@ -20,8 +20,8 @@ public class HardwareValidateMetamodelsTest extends ValidateMetamodelsTest {
 	public static Collection<Object[]> getResourcePaths() {
 		return new ArrayList<Object[]>(Arrays.asList(new Object[][] {
 //				new Object[] {"org.storydriven.core/model/core.ecore"},
-//				new Object[] {"de.uni_paderborn.fujaba.muml/model/muml.ecore"},
-//				new Object[] {"de.uni_paderborn.fujaba.muml.actionlanguage/model/actionlanguage.ecore"},
+//				new Object[] {"org.muml.pim/model/pim.ecore"},
+//				new Object[] {"org.muml.pim.actionlanguage/model/actionlanguage.ecore"},
 				new Object[] {"org.muml.pm.hardware/model/hardware.ecore"}
 		}));
 	}

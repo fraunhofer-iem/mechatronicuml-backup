@@ -252,8 +252,8 @@
       <sourceFeature xsi:type="ecore:EAttribute" href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
     </featureInitializers>
     <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
-      <targetFeature xsi:type="ecore:EReference" href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/ConnectorEndpointInstance/type"/>
-      <sourceFeature xsi:type="ecore:EReference" href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/ConnectorEndpointInstance/type"/>
+      <targetFeature xsi:type="ecore:EReference" href="../../org.muml.pim/model/pim.ecore#//connector/ConnectorEndpointInstance/type"/>
+      <sourceFeature xsi:type="ecore:EReference" href="../../org.muml.pim/model/pim.ecore#//connector/ConnectorEndpointInstance/type"/>
     </featureInitializers>
     <sourceClass href="hardware-1.0.ecore#//hwplatforminstance/DelegationHWPortInstance"/>
   </mappings>
@@ -272,8 +272,8 @@
       <sourceFeature xsi:type="ecore:EAttribute" href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
     </featureInitializers>
     <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
-      <targetFeature xsi:type="ecore:EReference" href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/ConnectorEndpointInstance/type"/>
-      <sourceFeature xsi:type="ecore:EReference" href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/ConnectorEndpointInstance/type"/>
+      <targetFeature xsi:type="ecore:EReference" href="../../org.muml.pim/model/pim.ecore#//connector/ConnectorEndpointInstance/type"/>
+      <sourceFeature xsi:type="ecore:EReference" href="../../org.muml.pim/model/pim.ecore#//connector/ConnectorEndpointInstance/type"/>
     </featureInitializers>
     <sourceClass href="hardware-1.0.ecore#//hwplatforminstance/BusInstance"/>
   </mappings>
@@ -615,56 +615,56 @@
   <mappings>
     <targetClass href="hardware-1.1.ecore#//hwplatform/NetworkConnector"/>
     <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
-      <targetFeature xsi:type="ecore:EReference" href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/Connector/connectorEndpoints"/>
-      <sourceFeature xsi:type="ecore:EReference" href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/Connector/connectorEndpoints"/>
+      <targetFeature xsi:type="ecore:EReference" href="../../org.muml.pim/model/pim.ecore#//connector/Connector/connectorEndpoints"/>
+      <sourceFeature xsi:type="ecore:EReference" href="../../org.muml.pim/model/pim.ecore#//connector/Connector/connectorEndpoints"/>
     </featureInitializers>
     <sourceClass href="hardware-1.0.ecore#//hwplatform/Delegation"/>
   </mappings>
   <mappings>
     <targetClass href="hardware-1.1.ecore#//hwplatform/NetworkConnector"/>
     <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
-      <targetFeature xsi:type="ecore:EReference" href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/Connector/connectorEndpoints"/>
-      <sourceFeature xsi:type="ecore:EReference" href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/Connector/connectorEndpoints"/>
+      <targetFeature xsi:type="ecore:EReference" href="../../org.muml.pim/model/pim.ecore#//connector/Connector/connectorEndpoints"/>
+      <sourceFeature xsi:type="ecore:EReference" href="../../org.muml.pim/model/pim.ecore#//connector/Connector/connectorEndpoints"/>
     </featureInitializers>
     <sourceClass href="hardware-1.0.ecore#//hwplatform/LinkPart"/>
   </mappings>
   <mappings>
     <targetClass href="hardware-1.1.ecore#//hwplatform/NetworkConnector"/>
     <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
-      <targetFeature xsi:type="ecore:EReference" href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/Connector/connectorEndpoints"/>
-      <sourceFeature xsi:type="ecore:EReference" href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/Connector/connectorEndpoints"/>
+      <targetFeature xsi:type="ecore:EReference" href="../../org.muml.pim/model/pim.ecore#//connector/Connector/connectorEndpoints"/>
+      <sourceFeature xsi:type="ecore:EReference" href="../../org.muml.pim/model/pim.ecore#//connector/Connector/connectorEndpoints"/>
     </featureInitializers>
     <sourceClass href="hardware-1.0.ecore#//hwplatform/BusConnector"/>
   </mappings>
   <mappings>
     <targetClass href="hardware-1.1.ecore#//hwplatform/Bus"/>
     <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
-      <targetFeature xsi:type="ecore:EReference" href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/ConnectorEndpoint/connectors"/>
-      <sourceFeature xsi:type="ecore:EReference" href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/ConnectorEndpoint/connectors"/>
+      <targetFeature xsi:type="ecore:EReference" href="../../org.muml.pim/model/pim.ecore#//connector/ConnectorEndpoint/connectors"/>
+      <sourceFeature xsi:type="ecore:EReference" href="../../org.muml.pim/model/pim.ecore#//connector/ConnectorEndpoint/connectors"/>
     </featureInitializers>
     <sourceClass href="hardware-1.0.ecore#//hwplatform/BusPart"/>
   </mappings>
   <mappings>
     <targetClass href="hardware-1.1.ecore#//hwplatforminstance/NetworkConnectorInstance"/>
     <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
-      <targetFeature xsi:type="ecore:EReference" href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/ConnectorInstance/connectorEndpointInstances"/>
-      <sourceFeature xsi:type="ecore:EReference" href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/ConnectorInstance/connectorEndpointInstances"/>
+      <targetFeature xsi:type="ecore:EReference" href="../../org.muml.pim/model/pim.ecore#//connector/ConnectorInstance/connectorEndpointInstances"/>
+      <sourceFeature xsi:type="ecore:EReference" href="../../org.muml.pim/model/pim.ecore#//connector/ConnectorInstance/connectorEndpointInstances"/>
     </featureInitializers>
     <sourceClass href="hardware-1.0.ecore#//hwplatforminstance/DelegationInstance"/>
   </mappings>
   <mappings>
     <targetClass href="hardware-1.1.ecore#//hwplatforminstance/NetworkConnectorInstance"/>
     <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
-      <targetFeature xsi:type="ecore:EReference" href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/ConnectorInstance/connectorEndpointInstances"/>
-      <sourceFeature xsi:type="ecore:EReference" href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/ConnectorInstance/connectorEndpointInstances"/>
+      <targetFeature xsi:type="ecore:EReference" href="../../org.muml.pim/model/pim.ecore#//connector/ConnectorInstance/connectorEndpointInstances"/>
+      <sourceFeature xsi:type="ecore:EReference" href="../../org.muml.pim/model/pim.ecore#//connector/ConnectorInstance/connectorEndpointInstances"/>
     </featureInitializers>
     <sourceClass href="hardware-1.0.ecore#//hwplatforminstance/BusConnectorInstance"/>
   </mappings>
   <mappings>
     <targetClass href="hardware-1.1.ecore#//hwplatforminstance/NetworkConnectorInstance"/>
     <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
-      <targetFeature xsi:type="ecore:EReference" href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/ConnectorInstance/connectorEndpointInstances"/>
-      <sourceFeature xsi:type="ecore:EReference" href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/ConnectorInstance/connectorEndpointInstances"/>
+      <targetFeature xsi:type="ecore:EReference" href="../../org.muml.pim/model/pim.ecore#//connector/ConnectorInstance/connectorEndpointInstances"/>
+      <sourceFeature xsi:type="ecore:EReference" href="../../org.muml.pim/model/pim.ecore#//connector/ConnectorInstance/connectorEndpointInstances"/>
     </featureInitializers>
     <sourceClass href="hardware-1.0.ecore#//hwplatforminstance/LinkInstance"/>
   </mappings>

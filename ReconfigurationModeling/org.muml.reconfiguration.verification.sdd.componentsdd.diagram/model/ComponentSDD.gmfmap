@@ -305,10 +305,10 @@
         href="../../de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram/model/ComponentStoryDiagram.gmfgraph#AssemblyVariable"/>
     <sourceMetaFeature
         xsi:type="ecore:EReference"
-        href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/Connector/connectorEndpoints"/>
+        href="../../org.muml.pim/model/pim.ecore#//connector/Connector/connectorEndpoints"/>
     <linkMetaFeature
         xsi:type="ecore:EReference"
-        href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/Connector/connectorEndpoints"/>
+        href="../../org.muml.pim/model/pim.ecore#//connector/Connector/connectorEndpoints"/>
     <creationConstraints>
       <sourceEnd
           body="--Create AssemblyVariable between PortVariables of PartVariables&#xD;&#xA;not self.oclAsType(ecore::EObject).eContainer().eContainer().eContainer().eContainer().eContainer().eContainer().eContainer().oclIsUndefined()"/>
@@ -348,10 +348,10 @@
         href="../../de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram/model/ComponentStoryDiagram.gmfgraph#DelegationVariable"/>
     <sourceMetaFeature
         xsi:type="ecore:EReference"
-        href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/Connector/connectorEndpoints"/>
+        href="../../org.muml.pim/model/pim.ecore#//connector/Connector/connectorEndpoints"/>
     <linkMetaFeature
         xsi:type="ecore:EReference"
-        href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/Connector/connectorEndpoints"/>
+        href="../../org.muml.pim/model/pim.ecore#//connector/Connector/connectorEndpoints"/>
     <creationConstraints>
       <sourceEnd
           body="--Start creation of DelegationVariable at PortVariable of ComponentVariable&#xD;&#xA;self.oclAsType(ecore::EObject).eContainer().eContainer().eContainer().eContainer().eContainer().eContainer().eContainer().eContainer().oclIsUndefined()"/>

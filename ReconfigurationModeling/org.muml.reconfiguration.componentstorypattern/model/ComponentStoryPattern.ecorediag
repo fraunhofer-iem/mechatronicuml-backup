@@ -204,7 +204,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_j2xx64XEEeOP4JyqZkDXBA"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_j2xx4YXEEeOP4JyqZkDXBA" fontColor="4210752" fontName="Segoe UI" fontHeight="10" lineColor="8421504"/>
-    <element xmi:type="ecore:EClass" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//component/Port"/>
+    <element xmi:type="ecore:EClass" href="platform:/resource/org.muml.pim/model/pim.ecore#//component/Port"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_j2xx4oXEEeOP4JyqZkDXBA" x="940" y="10"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_j2xx7oXEEeOP4JyqZkDXBA" type="1001">
@@ -223,7 +223,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_j2xx-YXEEeOP4JyqZkDXBA"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_j2xx74XEEeOP4JyqZkDXBA" fontColor="4210752" fontName="Segoe UI" fontHeight="10" lineColor="8421504"/>
-    <element xmi:type="ecore:EClass" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/ConnectorEndpoint"/>
+    <element xmi:type="ecore:EClass" href="platform:/resource/org.muml.pim/model/pim.ecore#//connector/ConnectorEndpoint"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_j2xx8IXEEeOP4JyqZkDXBA" x="770" y="10" width="153"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_k_OnsIXEEeOP4JyqZkDXBA" type="1001">
@@ -242,7 +242,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_k_Onu4XEEeOP4JyqZkDXBA"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_k_OnsYXEEeOP4JyqZkDXBA" fontColor="4210752" fontName="Segoe UI" fontHeight="10" lineColor="8421504"/>
-    <element xmi:type="ecore:EClass" href="platform:/resource/org.storydriven.core/model/core.ecore#//NamedElement"/>
+    <element xmi:type="ecore:EClass" href="platform:/resource/org.muml.core/model/core.ecore#//NamedElement"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k_OnsoXEEeOP4JyqZkDXBA" x="415" y="5" width="135"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_k_OnvoXEEeOP4JyqZkDXBA" type="1001">
@@ -261,7 +261,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_k_OnyYXEEeOP4JyqZkDXBA"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_k_Onv4XEEeOP4JyqZkDXBA" fontColor="4210752" fontName="Segoe UI" fontHeight="10" lineColor="8421504"/>
-    <element xmi:type="ecore:EClass" href="platform:/resource/org.storydriven.core/model/core.ecore#//CommentableElement"/>
+    <element xmi:type="ecore:EClass" href="platform:/resource/org.muml.core/model/core.ecore#//CommentableElement"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k_OnwIXEEeOP4JyqZkDXBA" x="575" y="5" width="173"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_pCsdIIXEEeOP4JyqZkDXBA" type="1001">
@@ -280,7 +280,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_pCsdK4XEEeOP4JyqZkDXBA"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_pCsdIYXEEeOP4JyqZkDXBA" fontColor="4210752" fontName="Segoe UI" fontHeight="10" lineColor="8421504"/>
-    <element xmi:type="ecore:EClass" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//component/AssemblyConnector"/>
+    <element xmi:type="ecore:EClass" href="platform:/resource/org.muml.pim/model/pim.ecore#//component/AssemblyConnector"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_pCsdIoXEEeOP4JyqZkDXBA" x="100" y="420" width="173"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_prm3QIXEEeOP4JyqZkDXBA" type="1001">
@@ -299,7 +299,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_prm3S4XEEeOP4JyqZkDXBA"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_prm3QYXEEeOP4JyqZkDXBA" fontColor="4210752" fontName="Segoe UI" fontHeight="10" lineColor="8421504"/>
-    <element xmi:type="ecore:EClass" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//component/DelegationConnector"/>
+    <element xmi:type="ecore:EClass" href="platform:/resource/org.muml.pim/model/pim.ecore#//component/DelegationConnector"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_prm3QoXEEeOP4JyqZkDXBA" x="100" y="80" width="178"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_79tVoIXEEeOP4JyqZkDXBA" type="1001">
@@ -318,7 +318,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_792fmIXEEeOP4JyqZkDXBA"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_79tVoYXEEeOP4JyqZkDXBA" fontColor="4210752" fontName="Segoe UI" fontHeight="10" lineColor="8421504"/>
-    <element xmi:type="ecore:EClass" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/Connector"/>
+    <element xmi:type="ecore:EClass" href="platform:/resource/org.muml.pim/model/pim.ecore#//connector/Connector"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_79tVooXEEeOP4JyqZkDXBA" x="215" y="5" width="183"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_wquooJyFEeOoWavo8xLtNw" type="1001">
