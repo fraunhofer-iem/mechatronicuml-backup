@@ -21,142 +21,127 @@ import org.muml.uppaal.trace.diagnosticTrace.TraceRepository;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * <ul>
- *   <li>{@link org.muml.uppaal.trace.diagnosticTrace.impl.TraceRepositoryImpl#getTraces <em>Traces</em>}</li>
- * </ul>
  * </p>
+ * <ul>
+ *   <li>{@link org.muml.uppaal.trace.diagnostictrace.impl.TraceRepositoryImpl#getTraces <em>Traces</em>}</li>
+ * </ul>
  *
  * @generated
  */
-public class TraceRepositoryImpl extends MinimalEObjectImpl.Container implements TraceRepository
-{
-  /**
-   * The cached value of the '{@link #getTraces() <em>Traces</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getTraces()
-   * @generated
-   * @ordered
-   */
-  protected EList<Trace> traces;
+public class TraceRepositoryImpl extends MinimalEObjectImpl.Container implements org.muml.uppaal.trace.diagnostictrace.TraceRepository {
+	/**
+	 * The cached value of the '{@link #getTraces() <em>Traces</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTraces()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<org.muml.uppaal.trace.diagnostictrace.Trace> traces;
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected TraceRepositoryImpl()
-  {
-    super();
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected TraceRepositoryImpl() {
+		super();
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  protected EClass eStaticClass()
-  {
-    return DiagnosticTracePackage.Literals.TRACE_REPOSITORY;
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.Literals.TRACE_REPOSITORY;
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EList<Trace> getTraces()
-  {
-    if (traces == null)
-    {
-      traces = new EObjectContainmentEList<Trace>(Trace.class, this, DiagnosticTracePackage.TRACE_REPOSITORY__TRACES);
-    }
-    return traces;
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<org.muml.uppaal.trace.diagnostictrace.Trace> getTraces() {
+		if (traces == null) {
+			traces = new EObjectContainmentEList<org.muml.uppaal.trace.diagnostictrace.Trace>(org.muml.uppaal.trace.diagnostictrace.Trace.class, this, org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.TRACE_REPOSITORY__TRACES);
+		}
+		return traces;
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-  {
-    switch (featureID)
-    {
-      case DiagnosticTracePackage.TRACE_REPOSITORY__TRACES:
-        return ((InternalEList<?>)getTraces()).basicRemove(otherEnd, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.TRACE_REPOSITORY__TRACES:
+				return ((InternalEList<?>)getTraces()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Object eGet(int featureID, boolean resolve, boolean coreType)
-  {
-    switch (featureID)
-    {
-      case DiagnosticTracePackage.TRACE_REPOSITORY__TRACES:
-        return getTraces();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
+			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.TRACE_REPOSITORY__TRACES:
+				return getTraces();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @SuppressWarnings("unchecked")
-  @Override
-  public void eSet(int featureID, Object newValue)
-  {
-    switch (featureID)
-    {
-      case DiagnosticTracePackage.TRACE_REPOSITORY__TRACES:
-        getTraces().clear();
-        getTraces().addAll((Collection<? extends Trace>)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public void eSet(int featureID, Object newValue) {
+		switch (featureID) {
+			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.TRACE_REPOSITORY__TRACES:
+				getTraces().clear();
+				getTraces().addAll((Collection<? extends org.muml.uppaal.trace.diagnostictrace.Trace>)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void eUnset(int featureID)
-  {
-    switch (featureID)
-    {
-      case DiagnosticTracePackage.TRACE_REPOSITORY__TRACES:
-        getTraces().clear();
-        return;
-    }
-    super.eUnset(featureID);
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+		switch (featureID) {
+			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.TRACE_REPOSITORY__TRACES:
+				getTraces().clear();
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public boolean eIsSet(int featureID)
-  {
-    switch (featureID)
-    {
-      case DiagnosticTracePackage.TRACE_REPOSITORY__TRACES:
-        return traces != null && !traces.isEmpty();
-    }
-    return super.eIsSet(featureID);
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
+			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.TRACE_REPOSITORY__TRACES:
+				return traces != null && !traces.isEmpty();
+		}
+		return super.eIsSet(featureID);
+	}
 
 } //TraceRepositoryImpl

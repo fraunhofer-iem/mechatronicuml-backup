@@ -12,115 +12,114 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
- * <ul>
- *   <li>{@link org.muml.uppaal.trace.diagnosticTrace.Trace#getProperty <em>Property</em>}</li>
- *   <li>{@link org.muml.uppaal.trace.diagnosticTrace.Trace#getLine <em>Line</em>}</li>
- *   <li>{@link org.muml.uppaal.trace.diagnosticTrace.Trace#getResult <em>Result</em>}</li>
- *   <li>{@link org.muml.uppaal.trace.diagnosticTrace.Trace#getTraceItems <em>Trace Items</em>}</li>
- * </ul>
  * </p>
+ * <ul>
+ *   <li>{@link org.muml.uppaal.trace.diagnostictrace.Trace#getProperty <em>Property</em>}</li>
+ *   <li>{@link org.muml.uppaal.trace.diagnostictrace.Trace#getLine <em>Line</em>}</li>
+ *   <li>{@link org.muml.uppaal.trace.diagnostictrace.Trace#getResult <em>Result</em>}</li>
+ *   <li>{@link org.muml.uppaal.trace.diagnostictrace.Trace#getTraceItems <em>Trace Items</em>}</li>
+ * </ul>
  *
- * @see org.muml.uppaal.trace.diagnosticTrace.DiagnosticTracePackage#getTrace()
+ * @see org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage#getTrace()
  * @model
  * @generated
  */
-public interface Trace extends EObject
-{
-  /**
-   * Returns the value of the '<em><b>Property</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Property</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Property</em>' attribute.
-   * @see #setProperty(int)
-   * @see org.muml.uppaal.trace.diagnosticTrace.DiagnosticTracePackage#getTrace_Property()
-   * @model
-   * @generated
-   */
-  int getProperty();
+public interface Trace extends EObject {
+	/**
+	 * Returns the value of the '<em><b>Property</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Property</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Property</em>' attribute.
+	 * @see #setProperty(int)
+	 * @see org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage#getTrace_Property()
+	 * @model
+	 * @generated
+	 */
+	int getProperty();
 
-  /**
-   * Sets the value of the '{@link org.muml.uppaal.trace.diagnosticTrace.Trace#getProperty <em>Property</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Property</em>' attribute.
-   * @see #getProperty()
-   * @generated
-   */
-  void setProperty(int value);
+	/**
+	 * Sets the value of the '{@link org.muml.uppaal.trace.diagnostictrace.Trace#getProperty <em>Property</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Property</em>' attribute.
+	 * @see #getProperty()
+	 * @generated
+	 */
+	void setProperty(int value);
 
-  /**
-   * Returns the value of the '<em><b>Line</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Line</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Line</em>' attribute.
-   * @see #setLine(int)
-   * @see org.muml.uppaal.trace.diagnosticTrace.DiagnosticTracePackage#getTrace_Line()
-   * @model
-   * @generated
-   */
-  int getLine();
+	/**
+	 * Returns the value of the '<em><b>Line</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Line</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Line</em>' attribute.
+	 * @see #setLine(int)
+	 * @see org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage#getTrace_Line()
+	 * @model
+	 * @generated
+	 */
+	int getLine();
 
-  /**
-   * Sets the value of the '{@link org.muml.uppaal.trace.diagnosticTrace.Trace#getLine <em>Line</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Line</em>' attribute.
-   * @see #getLine()
-   * @generated
-   */
-  void setLine(int value);
+	/**
+	 * Sets the value of the '{@link org.muml.uppaal.trace.diagnostictrace.Trace#getLine <em>Line</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Line</em>' attribute.
+	 * @see #getLine()
+	 * @generated
+	 */
+	void setLine(int value);
 
-  /**
-   * Returns the value of the '<em><b>Result</b></em>' attribute.
-   * The literals are from the enumeration {@link org.muml.uppaal.trace.diagnosticTrace.Result}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Result</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Result</em>' attribute.
-   * @see org.muml.uppaal.trace.diagnosticTrace.Result
-   * @see #setResult(Result)
-   * @see org.muml.uppaal.trace.diagnosticTrace.DiagnosticTracePackage#getTrace_Result()
-   * @model
-   * @generated
-   */
-  Result getResult();
+	/**
+	 * Returns the value of the '<em><b>Result</b></em>' attribute.
+	 * The literals are from the enumeration {@link org.muml.uppaal.trace.diagnostictrace.Result}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Result</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Result</em>' attribute.
+	 * @see org.muml.uppaal.trace.diagnostictrace.Result
+	 * @see #setResult(Result)
+	 * @see org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage#getTrace_Result()
+	 * @model
+	 * @generated
+	 */
+	Result getResult();
 
-  /**
-   * Sets the value of the '{@link org.muml.uppaal.trace.diagnosticTrace.Trace#getResult <em>Result</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Result</em>' attribute.
-   * @see org.muml.uppaal.trace.diagnosticTrace.Result
-   * @see #getResult()
-   * @generated
-   */
-  void setResult(Result value);
+	/**
+	 * Sets the value of the '{@link org.muml.uppaal.trace.diagnostictrace.Trace#getResult <em>Result</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Result</em>' attribute.
+	 * @see org.muml.uppaal.trace.diagnostictrace.Result
+	 * @see #getResult()
+	 * @generated
+	 */
+	void setResult(Result value);
 
-  /**
-   * Returns the value of the '<em><b>Trace Items</b></em>' containment reference list.
-   * The list contents are of type {@link org.muml.uppaal.trace.diagnosticTrace.TraceItem}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Trace Items</em>' containment reference list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Trace Items</em>' containment reference list.
-   * @see org.muml.uppaal.trace.diagnosticTrace.DiagnosticTracePackage#getTrace_TraceItems()
-   * @model containment="true"
-   * @generated
-   */
-  EList<TraceItem> getTraceItems();
+	/**
+	 * Returns the value of the '<em><b>Trace Items</b></em>' containment reference list.
+	 * The list contents are of type {@link org.muml.uppaal.trace.diagnostictrace.TraceItem}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Trace Items</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Trace Items</em>' containment reference list.
+	 * @see org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage#getTrace_TraceItems()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<TraceItem> getTraceItems();
 
 } // Trace

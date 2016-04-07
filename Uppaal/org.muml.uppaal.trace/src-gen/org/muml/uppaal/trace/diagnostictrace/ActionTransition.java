@@ -11,31 +11,30 @@ import org.eclipse.emf.common.util.EList;
  *
  * <p>
  * The following features are supported:
- * <ul>
- *   <li>{@link org.muml.uppaal.trace.diagnosticTrace.ActionTransition#getEdgeActivities <em>Edge Activities</em>}</li>
- * </ul>
  * </p>
+ * <ul>
+ *   <li>{@link org.muml.uppaal.trace.diagnostictrace.ActionTransition#getEdgeActivities <em>Edge Activities</em>}</li>
+ * </ul>
  *
- * @see org.muml.uppaal.trace.diagnosticTrace.DiagnosticTracePackage#getActionTransition()
+ * @see org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage#getActionTransition()
  * @model
  * @generated
  */
-public interface ActionTransition extends Transition
-{
-  /**
-   * Returns the value of the '<em><b>Edge Activities</b></em>' containment reference list.
-   * The list contents are of type {@link org.muml.uppaal.trace.diagnosticTrace.EdgeActivity}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Edge Activities</em>' containment reference list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Edge Activities</em>' containment reference list.
-   * @see org.muml.uppaal.trace.diagnosticTrace.DiagnosticTracePackage#getActionTransition_EdgeActivities()
-   * @model containment="true"
-   * @generated
-   */
-  EList<EdgeActivity> getEdgeActivities();
+public interface ActionTransition extends Transition {
+	/**
+	 * Returns the value of the '<em><b>Edge Activities</b></em>' containment reference list.
+	 * The list contents are of type {@link org.muml.uppaal.trace.diagnostictrace.EdgeActivity}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Edge Activities</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Edge Activities</em>' containment reference list.
+	 * @see org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage#getActionTransition_EdgeActivities()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<EdgeActivity> getEdgeActivities();
 
 } // ActionTransition

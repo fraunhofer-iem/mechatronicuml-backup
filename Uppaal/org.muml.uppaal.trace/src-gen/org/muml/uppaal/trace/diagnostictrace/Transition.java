@@ -9,10 +9,9 @@ package org.muml.uppaal.trace.diagnosticTrace;
  * <!-- end-user-doc -->
  *
  *
- * @see org.muml.uppaal.trace.diagnosticTrace.DiagnosticTracePackage#getTransition()
+ * @see org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage#getTransition()
  * @model
  * @generated
  */
-public interface Transition extends TraceItem
-{
+public interface Transition extends TraceItem {
 } // Transition

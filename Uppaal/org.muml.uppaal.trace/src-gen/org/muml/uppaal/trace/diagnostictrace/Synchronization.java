@@ -10,10 +10,9 @@ import org.eclipse.emf.ecore.EObject;
  * <!-- end-user-doc -->
  *
  *
- * @see org.muml.uppaal.trace.diagnosticTrace.DiagnosticTracePackage#getSynchronization()
+ * @see org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage#getSynchronization()
  * @model
  * @generated
  */
-public interface Synchronization extends EObject
-{
+public interface Synchronization extends EObject {
 } // Synchronization

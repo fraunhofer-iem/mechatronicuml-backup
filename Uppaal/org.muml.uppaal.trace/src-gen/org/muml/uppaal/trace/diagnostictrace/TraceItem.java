@@ -10,10 +10,9 @@ import org.eclipse.emf.ecore.EObject;
  * <!-- end-user-doc -->
  *
  *
- * @see org.muml.uppaal.trace.diagnosticTrace.DiagnosticTracePackage#getTraceItem()
+ * @see org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage#getTraceItem()
  * @model
  * @generated
  */
-public interface TraceItem extends EObject
-{
+public interface TraceItem extends EObject {
 } // TraceItem

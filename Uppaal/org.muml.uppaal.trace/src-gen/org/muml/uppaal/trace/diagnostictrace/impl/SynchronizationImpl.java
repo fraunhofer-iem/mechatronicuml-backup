@@ -11,32 +11,27 @@ import org.muml.uppaal.trace.diagnosticTrace.Synchronization;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Synchronization</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */
-public class SynchronizationImpl extends MinimalEObjectImpl.Container implements Synchronization
-{
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected SynchronizationImpl()
-  {
-    super();
-  }
+public class SynchronizationImpl extends MinimalEObjectImpl.Container implements org.muml.uppaal.trace.diagnostictrace.Synchronization {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected SynchronizationImpl() {
+		super();
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  protected EClass eStaticClass()
-  {
-    return DiagnosticTracePackage.Literals.SYNCHRONIZATION;
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.Literals.SYNCHRONIZATION;
+	}
 
 } //SynchronizationImpl
