@@ -26,6 +26,7 @@
     <requiredBundles>org.muml.core.modelinstance.edit.properties</requiredBundles>
     <requiredBundles>org.muml.pm.hardware.edit</requiredBundles>
     <requiredBundles>org.muml.pm.hardware.edit.properties</requiredBundles>
+    <requiredBundles>org.muml.pim.actionlanguage.xtext.ui</requiredBundles>
   </plugin>
   <tabs xmi:id="_Rl8bMc1gEeSIgPDefa6ZBw" id="property.tab.psm" name="PSM" afterTab=""/>
   <packages>
