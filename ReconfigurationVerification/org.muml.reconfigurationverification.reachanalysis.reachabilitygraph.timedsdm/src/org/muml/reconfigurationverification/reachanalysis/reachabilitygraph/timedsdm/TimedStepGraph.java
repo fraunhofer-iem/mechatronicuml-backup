@@ -58,12 +58,12 @@ public interface TimedStepGraph extends StepGraph {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Federation</em>' attribute.
-	 * @see #setFederation(de.uni_paderborn.fujaba.udbm.Federation)
+	 * @see #setFederation(Federation)
 	 * @see org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.timedsdm.TimedsdmPackage#getTimedStepGraph_Federation()
 	 * @model dataType="org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.timedsdm.FederationObject" transient="true"
 	 * @generated
 	 */
-	de.uni_paderborn.fujaba.udbm.Federation getFederation();
+	Federation getFederation();
 
 	/**
 	 * Sets the value of the '{@link org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.timedsdm.TimedStepGraph#getFederation <em>Federation</em>}' attribute.
@@ -73,6 +73,6 @@ public interface TimedStepGraph extends StepGraph {
 	 * @see #getFederation()
 	 * @generated
 	 */
-	void setFederation(de.uni_paderborn.fujaba.udbm.Federation value);
+	void setFederation(Federation value);
 
 } // TimedStepGraph

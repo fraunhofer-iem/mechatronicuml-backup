@@ -69,12 +69,12 @@ public interface ZoneGraphState extends ReachabilityGraphState {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Federation</em>' attribute.
-	 * @see #setFederation(de.uni_paderborn.fujaba.udbm.Federation)
+	 * @see #setFederation(Federation)
 	 * @see org.muml.verification.core.reachanalysis.reachabilitygraph.rtsc.RtscPackage#getZoneGraphState_Federation()
 	 * @model dataType="org.muml.verification.core.reachanalysis.reachabilitygraph.rtsc.FederationObject" transient="true"
 	 * @generated
 	 */
-	de.uni_paderborn.fujaba.udbm.Federation getFederation();
+	Federation getFederation();
 
 	/**
 	 * Sets the value of the '{@link org.muml.verification.core.reachanalysis.reachabilitygraph.rtsc.ZoneGraphState#getFederation <em>Federation</em>}' attribute.
@@ -84,7 +84,7 @@ public interface ZoneGraphState extends ReachabilityGraphState {
 	 * @see #getFederation()
 	 * @generated
 	 */
-	void setFederation(de.uni_paderborn.fujaba.udbm.Federation value);
+	void setFederation(Federation value);
 
 	/**
 	 * <!-- begin-user-doc -->

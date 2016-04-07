@@ -49,7 +49,7 @@ public class ZoneGraphStateImpl extends ReachabilityGraphStateImpl implements Zo
 	 * @generated
 	 * @ordered
 	 */
-	protected static final de.uni_paderborn.fujaba.udbm.Federation FEDERATION_EDEFAULT = null;
+	protected static final Federation FEDERATION_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getFederation() <em>Federation</em>}' attribute.
@@ -59,7 +59,7 @@ public class ZoneGraphStateImpl extends ReachabilityGraphStateImpl implements Zo
 	 * @generated
 	 * @ordered
 	 */
-	protected de.uni_paderborn.fujaba.udbm.Federation federation = FEDERATION_EDEFAULT;
+	protected Federation federation = FEDERATION_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getLocations() <em>Locations</em>}' reference list.
@@ -105,7 +105,7 @@ public class ZoneGraphStateImpl extends ReachabilityGraphStateImpl implements Zo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.udbm.Federation getFederation() {
+	public Federation getFederation() {
 		return federation;
 	}
 
@@ -114,8 +114,8 @@ public class ZoneGraphStateImpl extends ReachabilityGraphStateImpl implements Zo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setFederation(de.uni_paderborn.fujaba.udbm.Federation newFederation) {
-		de.uni_paderborn.fujaba.udbm.Federation oldFederation = federation;
+	public void setFederation(Federation newFederation) {
+		Federation oldFederation = federation;
 		federation = newFederation;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RtscPackage.ZONE_GRAPH_STATE__FEDERATION, oldFederation, federation));
@@ -212,7 +212,7 @@ public class ZoneGraphStateImpl extends ReachabilityGraphStateImpl implements Zo
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case RtscPackage.ZONE_GRAPH_STATE__FEDERATION:
-				setFederation((de.uni_paderborn.fujaba.udbm.Federation)newValue);
+				setFederation((Federation)newValue);
 				return;
 			case RtscPackage.ZONE_GRAPH_STATE__LOCATIONS:
 				getLocations().clear();

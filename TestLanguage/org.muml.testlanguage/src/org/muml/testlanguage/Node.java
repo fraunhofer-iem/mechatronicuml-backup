@@ -247,13 +247,12 @@ public interface Node extends EObject {
 	 *             if an error occurs during execution, containing an error
 	 *             message. <!-- end-model-doc -->
 	 * @model exceptions=
-	 *        "de.uni_paderborn.fujaba.muml.testlanguage.specification.ExecutionException"
+	 *        "org.muml.testlanguage.specification.ExecutionException"
 	 *        annotation=
 	 *        "http://www.eclipse.org/emf/2002/GenModel body='\t\t// FIXME Hack to disable notifications so that the transactional editing\r\n\t\t// domain won\'t complain about me modifying the domain element.\r\n\t\tthis.eSetDeliver(false);\r\n\r\n\t\t// Initialize caches if needed.\r\n\t\tif (this.getInputCache() == null) {\r\n\t\t\tthis.setInputCache(new HashMap<String, Object>());\r\n\t\t}\r\n\t\tif (this.getOutputCache() == null) {\r\n\t\t\tthis.setOutputCache(new HashMap<String, Object>());\r\n\t\t}\r\n\r\n\t\t// Refresh the input cache.\r\n\t\tfor (Input input : this.getInputs()) {\r\n\t\t\tif (input.getSource() == null) {\r\n\t\t\t\tthis.getInputCache().remove(input.getName());\r\n\t\t\t} else {\r\n\t\t\t\tthis.getInputCache().put(input.getName(), input.getData());\r\n\t\t\t}\r\n\t\t}\r\n\r\n\t\t// Clear the output cache.\r\n\t\tthis.getOutputCache().clear();\r\n\r\n\t\t// NOTE A check whether all non-optional ports actually get data is not\r\n\t\t// necessary, as previous constraints already took care of this.\r\n\r\n\t\ttry {\r\n\t\t\t// Execute the behavior that is written in the specification.\r\n\t\t\tthis.specification.execute(this.getInputCache(),\r\n\t\t\t\t\tthis.getOutputCache());\r\n\r\n\t\t\treturn;\r\n\t\t} catch (Exception e) {\r\n\r\n\t\t\t// Clear the output cache.\r\n\t\t\tthis.getOutputCache().clear();\r\n\r\n\t\t\tthrow new ExecutionException(e);\r\n\t\t} finally {\r\n\t\t\tthis.eSetDeliver(true);\r\n\t\t}'"
 	 * @generated
 	 */
-	void execute() throws ExecutionException,
-			de.uni_paderborn.fujaba.muml.testlanguage.specification.custom.ExecutionException;
+	void execute() throws ExecutionException;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc --> <!-- begin-model-doc -->

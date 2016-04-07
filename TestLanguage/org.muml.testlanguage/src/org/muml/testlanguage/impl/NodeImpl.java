@@ -429,8 +429,7 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node {
 	 * 
 	 * @generated
 	 */
-	public void execute() throws ExecutionException,
-			de.uni_paderborn.fujaba.muml.testlanguage.specification.custom.ExecutionException {
+	public void execute() throws ExecutionException {
 		// FIXME Hack to disable notifications so that the transactional editing
 		// domain won't complain about me modifying the domain element.
 		this.eSetDeliver(false);
@@ -481,7 +480,7 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node {
 	 */
 	public void createSpecification() {
 		try {
-			SpecificationFactory fac = de.uni_paderborn.fujaba.muml.testlanguage.specification.SpecificationFactory.eINSTANCE;
+			SpecificationFactory fac = org.muml.testlanguage.specification.SpecificationFactory.eINSTANCE;
 			java.lang.reflect.Method creator = fac.getClass().getMethod("create" + this.specificationClassName);
 
 			this.setSpecification((NodeSpecification) creator.invoke(fac));

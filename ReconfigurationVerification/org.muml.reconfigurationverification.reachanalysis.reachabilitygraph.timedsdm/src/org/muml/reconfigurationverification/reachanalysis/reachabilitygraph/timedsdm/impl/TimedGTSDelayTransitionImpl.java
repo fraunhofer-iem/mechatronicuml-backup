@@ -8,7 +8,6 @@ package org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.tim
 
 import org.eclipse.emf.ecore.EClass;
 import org.muml.core.reachanalysis.reachabilitygraph.impl.ReachabilityGraphTransitionImpl;
-import org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.timedsdm.ReachabilityGraphPackage;
 import org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.timedsdm.TimedGTSDelayTransition;
 import org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.timedsdm.TimedsdmPackage;
 

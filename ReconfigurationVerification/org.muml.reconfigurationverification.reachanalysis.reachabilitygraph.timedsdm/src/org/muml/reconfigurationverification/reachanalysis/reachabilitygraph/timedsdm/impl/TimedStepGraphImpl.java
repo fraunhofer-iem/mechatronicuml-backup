@@ -13,7 +13,6 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectEList;
-import org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.timedsdm.ReachabilityGraphPackage;
 import org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.timedsdm.TimedStepGraph;
 import org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.timedsdm.TimedsdmPackage;
 import org.muml.reconfigurationverification.timedstorydiagram.ClockInstance;
@@ -53,7 +52,7 @@ public class TimedStepGraphImpl extends StepGraphImpl implements TimedStepGraph 
 	 * @generated
 	 * @ordered
 	 */
-	protected static final de.uni_paderborn.fujaba.udbm.Federation FEDERATION_EDEFAULT = null;
+	protected static final Federation FEDERATION_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getFederation() <em>Federation</em>}' attribute.
@@ -63,7 +62,7 @@ public class TimedStepGraphImpl extends StepGraphImpl implements TimedStepGraph 
 	 * @generated
 	 * @ordered
 	 */
-	protected de.uni_paderborn.fujaba.udbm.Federation federation = FEDERATION_EDEFAULT;
+	protected Federation federation = FEDERATION_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -89,7 +88,7 @@ public class TimedStepGraphImpl extends StepGraphImpl implements TimedStepGraph 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.udbm.Federation getFederation() {
+	public Federation getFederation() {
 		return federation;
 	}
 
@@ -98,8 +97,8 @@ public class TimedStepGraphImpl extends StepGraphImpl implements TimedStepGraph 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setFederation(de.uni_paderborn.fujaba.udbm.Federation newFederation) {
-		de.uni_paderborn.fujaba.udbm.Federation oldFederation = federation;
+	public void setFederation(Federation newFederation) {
+		Federation oldFederation = federation;
 		federation = newFederation;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TimedsdmPackage.TIMED_STEP_GRAPH__FEDERATION, oldFederation, federation));
@@ -147,7 +146,7 @@ public class TimedStepGraphImpl extends StepGraphImpl implements TimedStepGraph 
 				getClockInstances().addAll((Collection<? extends ClockInstance>)newValue);
 				return;
 			case TimedsdmPackage.TIMED_STEP_GRAPH__FEDERATION:
-				setFederation((de.uni_paderborn.fujaba.udbm.Federation)newValue);
+				setFederation((Federation)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);

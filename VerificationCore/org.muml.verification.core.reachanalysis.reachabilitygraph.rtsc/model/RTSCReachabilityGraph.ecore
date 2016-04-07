@@ -42,6 +42,6 @@
       <details key="documentation" value="Represents a transition in a reachability graph that resulted from a delay in a timed&#xD;&#xA;reachability computation. Will only occur if Uppaal semantics are used."/>
     </eAnnotations>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EDataType" name="FederationObject" instanceClassName="de.uni_paderborn.fujaba.udbm.Federation"
+  <eClassifiers xsi:type="ecore:EDataType" name="FederationObject" instanceClassName="org.muml.udbm.Federation"
       serializable="false"/>
 </ecore:EPackage>

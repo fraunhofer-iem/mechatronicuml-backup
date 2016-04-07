@@ -45,7 +45,7 @@ public interface TestLanguagePackage extends EPackage {
 	 * 
 	 * @generated
 	 */
-	String eNS_PREFIX = "de.uni_paderborn.fujaba.muml.testlanguage";
+	String eNS_PREFIX = "testlanguage";
 
 	/**
 	 * The singleton instance of the package. <!-- begin-user-doc --> <!--

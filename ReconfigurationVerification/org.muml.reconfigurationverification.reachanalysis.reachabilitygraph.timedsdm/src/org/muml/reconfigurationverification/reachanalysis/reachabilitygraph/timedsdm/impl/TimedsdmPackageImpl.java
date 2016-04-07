@@ -2,25 +2,18 @@
  */
 package org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.timedsdm.impl;
 
-import de.uni_paderborn.fujaba.udbm.Federation;
-
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
 import org.muml.core.reachanalysis.reachabilitygraph.ReachabilityGraphPackage;
-
 import org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.timedsdm.TimedGTSDelayTransition;
 import org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.timedsdm.TimedStepGraph;
 import org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.timedsdm.TimedsdmFactory;
 import org.muml.reconfigurationverification.reachanalysis.reachabilitygraph.timedsdm.TimedsdmPackage;
-
 import org.muml.reconfigurationverification.timedstorydiagram.TimedstorydiagramPackage;
-
 import org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm.SdmPackage;
 
 /**
@@ -243,7 +236,7 @@ public class TimedsdmPackageImpl extends EPackageImpl implements TimedsdmPackage
 		initEClass(timedGTSDelayTransitionEClass, TimedGTSDelayTransition.class, "TimedGTSDelayTransition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Initialize data types
-		initEDataType(federationObjectEDataType, Federation.class, "FederationObject", !IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(federationObjectEDataType, org.muml.udbm.Federation.class, "FederationObject", !IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="testlanguage" nsURI="http://www.muml.org/testlanguage/1.0" nsPrefix="de.uni_paderborn.fujaba.muml.testlanguage">
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="testlanguage" nsURI="http://www.muml.org/testlanguage/1.0" nsPrefix="testlanguage">
   <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
     <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
   </eAnnotations>
@@ -25,7 +25,7 @@
     </eOperations>
     <eOperations name="createSpecification" lowerBound="1">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="body" value="try {&#xD;&#xA;&#x9;SpecificationFactory fac = de.uni_paderborn.fujaba.muml.testlanguage.specification.SpecificationFactory.eINSTANCE;&#xD;&#xA;&#x9;java.lang.reflect.Method creator = fac.getClass().getMethod(&quot;create&quot;+this.specificationClassName);&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;this.setSpecification((NodeSpecification) creator.invoke(fac));&#xD;&#xA;&#x9;this.specification.initialize();&#xD;&#xA;} catch (NoSuchMethodException e) {&#xD;&#xA;&#x9;// The desired NodeSpecification does not exist.&#xD;&#xA;&#x9;e.printStackTrace();&#xD;&#xA;} catch (InvocationTargetException e) {&#xD;&#xA;&#x9;e.printStackTrace();&#xD;&#xA;} catch (IllegalAccessException e) {&#xD;&#xA;&#x9;e.printStackTrace();&#xD;&#xA;} catch (Exception e) {&#xD;&#xA;&#x9;e.printStackTrace();&#xD;&#xA;}"/>
+        <details key="body" value="try {&#xD;&#xA;&#x9;SpecificationFactory fac = org.muml.testlanguage.specification.SpecificationFactory.eINSTANCE;&#xD;&#xA;&#x9;java.lang.reflect.Method creator = fac.getClass().getMethod(&quot;create&quot;+this.specificationClassName);&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;this.setSpecification((NodeSpecification) creator.invoke(fac));&#xD;&#xA;&#x9;this.specification.initialize();&#xD;&#xA;} catch (NoSuchMethodException e) {&#xD;&#xA;&#x9;// The desired NodeSpecification does not exist.&#xD;&#xA;&#x9;e.printStackTrace();&#xD;&#xA;} catch (InvocationTargetException e) {&#xD;&#xA;&#x9;e.printStackTrace();&#xD;&#xA;} catch (IllegalAccessException e) {&#xD;&#xA;&#x9;e.printStackTrace();&#xD;&#xA;} catch (Exception e) {&#xD;&#xA;&#x9;e.printStackTrace();&#xD;&#xA;}"/>
         <details key="documentation" value="Reflectively creates the underlying NodeSpecification by looking into the field specificationClassName and searching a class of that name."/>
       </eAnnotations>
     </eOperations>
