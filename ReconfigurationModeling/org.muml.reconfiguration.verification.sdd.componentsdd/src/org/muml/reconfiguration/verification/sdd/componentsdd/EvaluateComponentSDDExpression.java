@@ -13,11 +13,11 @@ import org.muml.reconfiguration.componentstorypattern.TriggerEmbeddedComponentEx
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.reconfiguration.verification.sdd.componentsdd.EvaluateComponentSDDExpression#getComponentSDD <em>Component SDD</em>}</li>
  *   <li>{@link org.muml.reconfiguration.verification.sdd.componentsdd.EvaluateComponentSDDExpression#getParameterBindings <em>Parameter Bindings</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.reconfiguration.verification.sdd.componentsdd.ComponentsddPackage#getEvaluateComponentSDDExpression()
  * @model

@@ -12,10 +12,10 @@ import org.muml.storydiagram.verification.sdd.PatternNode;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.reconfiguration.verification.sdd.componentsdd.ComponentStoryPatternNode#getPattern <em>Pattern</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.reconfiguration.verification.sdd.componentsdd.ComponentsddPackage#getComponentStoryPatternNode()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='noNegativeVariables noVariableModifications'"

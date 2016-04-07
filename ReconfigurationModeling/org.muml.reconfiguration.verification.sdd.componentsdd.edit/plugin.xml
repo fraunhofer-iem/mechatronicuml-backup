@@ -10,7 +10,7 @@
       <!-- @generated ComponentSDD -->
       <factory
             uri="http://www.muml.org/reconfiguration/verification/sdd/componentsdd/1.0.0"
-            class="org.muml.reconfiguration.verification.sdd.componentsdd.componentsdd.provider.ComponentsddItemProviderAdapterFactory"
+            class="org.muml.reconfiguration.verification.sdd.componentsdd.provider.ComponentsddItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider

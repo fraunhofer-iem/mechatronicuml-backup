@@ -28,13 +28,13 @@ import org.muml.storydiagram.verification.sdd.impl.AbstractStoryDecisionDiagramI
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.reconfiguration.verification.sdd.componentsdd.impl.ComponentStoryDecisionDiagramImpl#getComment <em>Comment</em>}</li>
  *   <li>{@link org.muml.reconfiguration.verification.sdd.componentsdd.impl.ComponentStoryDecisionDiagramImpl#getParameters <em>Parameters</em>}</li>
  *   <li>{@link org.muml.reconfiguration.verification.sdd.componentsdd.impl.ComponentStoryDecisionDiagramImpl#getReconfigurableComponent <em>Reconfigurable Component</em>}</li>
  *   <li>{@link org.muml.reconfiguration.verification.sdd.componentsdd.impl.ComponentStoryDecisionDiagramImpl#isInvariantSDD <em>Invariant SDD</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

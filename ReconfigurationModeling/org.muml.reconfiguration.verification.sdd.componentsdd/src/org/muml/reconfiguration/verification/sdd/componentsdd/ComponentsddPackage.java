@@ -40,7 +40,7 @@ public interface ComponentsddPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.fujaba.de/muml/verification/sdd/componentsdd/0.4.0";
+	String eNS_URI = "http://www.muml.org/reconfiguration/verification/sdd/componentsdd/1.0.0";
 
 	/**
 	 * The package namespace name.
@@ -69,22 +69,22 @@ public interface ComponentsddPackage extends EPackage {
 	int COMPONENT_STORY_DECISION_DIAGRAM = 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_STORY_DECISION_DIAGRAM__ANNOTATION = SDDPackage.ABSTRACT_STORY_DECISION_DIAGRAM__ANNOTATION;
+	int COMPONENT_STORY_DECISION_DIAGRAM__ANNOTATIONS = SDDPackage.ABSTRACT_STORY_DECISION_DIAGRAM__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_STORY_DECISION_DIAGRAM__EXTENSION = SDDPackage.ABSTRACT_STORY_DECISION_DIAGRAM__EXTENSION;
+	int COMPONENT_STORY_DECISION_DIAGRAM__EXTENSIONS = SDDPackage.ABSTRACT_STORY_DECISION_DIAGRAM__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -367,22 +367,22 @@ public interface ComponentsddPackage extends EPackage {
 	int COMPONENT_STORY_PATTERN_NODE__INCOMING_EDGES = SDDPackage.PATTERN_NODE__INCOMING_EDGES;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_STORY_PATTERN_NODE__ANNOTATION = SDDPackage.PATTERN_NODE__ANNOTATION;
+	int COMPONENT_STORY_PATTERN_NODE__ANNOTATIONS = SDDPackage.PATTERN_NODE__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_STORY_PATTERN_NODE__EXTENSION = SDDPackage.PATTERN_NODE__EXTENSION;
+	int COMPONENT_STORY_PATTERN_NODE__EXTENSIONS = SDDPackage.PATTERN_NODE__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -611,22 +611,22 @@ public interface ComponentsddPackage extends EPackage {
 	int EVALUATE_COMPONENT_SDD_EXPRESSION = 2;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EVALUATE_COMPONENT_SDD_EXPRESSION__ANNOTATION = ComponentstorypatternPackage.TRIGGER_EMBEDDED_COMPONENT_EXPRESSION__ANNOTATION;
+	int EVALUATE_COMPONENT_SDD_EXPRESSION__ANNOTATIONS = ComponentstorypatternPackage.TRIGGER_EMBEDDED_COMPONENT_EXPRESSION__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EVALUATE_COMPONENT_SDD_EXPRESSION__EXTENSION = ComponentstorypatternPackage.TRIGGER_EMBEDDED_COMPONENT_EXPRESSION__EXTENSION;
+	int EVALUATE_COMPONENT_SDD_EXPRESSION__EXTENSIONS = ComponentstorypatternPackage.TRIGGER_EMBEDDED_COMPONENT_EXPRESSION__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.

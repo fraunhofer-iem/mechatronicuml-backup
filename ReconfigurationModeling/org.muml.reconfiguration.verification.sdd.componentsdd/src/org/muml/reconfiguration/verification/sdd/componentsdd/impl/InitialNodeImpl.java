@@ -21,8 +21,6 @@ import org.muml.storydiagram.verification.sdd.impl.NodeImpl;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Initial Node</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */

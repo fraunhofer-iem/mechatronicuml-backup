@@ -6,7 +6,7 @@
     copyrightFields="false" usedGenPackages="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern ../../org.muml.core/model/core.genmodel#//core platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../org.muml.pim/model/pim.genmodel#//pim ../../org.muml.reconfiguration/model/MumlReconfiguration.genmodel#//reconfiguration ../../org.muml.storydiagram.verification.sdd/model/sdd.genmodel#//sdd ../../org.muml.storydiagram/model/storydiagrams.genmodel#//storydiagram"
     operationReflection="true">
   <foreignModel>ComponentSDD.ecore</foreignModel>
-  <genPackages prefix="Componentsdd" basePackage="org.muml.reconfiguration.verification.sdd.componentsdd"
+  <genPackages prefix="Componentsdd" basePackage="org.muml.reconfiguration.verification.sdd"
       disposableProviderFactory="true" ecorePackage="ComponentSDD.ecore#/">
     <genClasses ecoreClass="ComponentSDD.ecore#//ComponentStoryDecisionDiagram">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ComponentSDD.ecore#//ComponentStoryDecisionDiagram/invariantSDD"/>

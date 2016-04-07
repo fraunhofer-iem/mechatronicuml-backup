@@ -24,11 +24,11 @@ import org.muml.reconfiguration.verification.sdd.componentsdd.EvaluateComponentS
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.reconfiguration.verification.sdd.componentsdd.impl.EvaluateComponentSDDExpressionImpl#getComponentSDD <em>Component SDD</em>}</li>
  *   <li>{@link org.muml.reconfiguration.verification.sdd.componentsdd.impl.EvaluateComponentSDDExpressionImpl#getParameterBindings <em>Parameter Bindings</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

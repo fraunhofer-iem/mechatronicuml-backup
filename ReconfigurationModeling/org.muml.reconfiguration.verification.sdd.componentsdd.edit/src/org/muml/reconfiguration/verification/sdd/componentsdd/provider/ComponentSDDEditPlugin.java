@@ -47,7 +47,7 @@ public final class ComponentSDDEditPlugin extends EMFPlugin {
 		     ComponentStoryPatternEditPlugin.INSTANCE,
 		     CoreEditPlugin.INSTANCE,
 		     EcoreEditPlugin.INSTANCE,
-		     MumlEditPlugin.INSTANCE,
+		     org.muml.pim.provider.MumlEditPlugin.INSTANCE,
 		     MumlReconfigurationEditPlugin.INSTANCE,
 		     SDDEditPlugin.INSTANCE,
 		     StorydiagramsEditPlugin.INSTANCE,

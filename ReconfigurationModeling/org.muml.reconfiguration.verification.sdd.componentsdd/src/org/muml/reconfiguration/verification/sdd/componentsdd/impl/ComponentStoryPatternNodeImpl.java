@@ -18,10 +18,10 @@ import org.muml.storydiagram.verification.sdd.impl.PatternNodeImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.reconfiguration.verification.sdd.componentsdd.impl.ComponentStoryPatternNodeImpl#getPattern <em>Pattern</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

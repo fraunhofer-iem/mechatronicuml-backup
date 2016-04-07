@@ -48,7 +48,7 @@ public class ComponentsddValidator extends EObjectValidator {
 	 * @see org.eclipse.emf.common.util.Diagnostic#getCode()
 	 * @generated
 	 */
-	public static final String DIAGNOSTIC_SOURCE = "de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd";
+	public static final String DIAGNOSTIC_SOURCE = "org.muml.reconfiguration.verification.sdd.componentsdd";
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants.

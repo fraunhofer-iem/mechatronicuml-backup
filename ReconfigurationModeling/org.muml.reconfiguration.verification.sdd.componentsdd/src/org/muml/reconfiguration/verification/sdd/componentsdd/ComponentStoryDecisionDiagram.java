@@ -12,10 +12,10 @@ import org.muml.storydiagram.verification.sdd.AbstractStoryDecisionDiagram;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.muml.reconfiguration.verification.sdd.componentsdd.ComponentStoryDecisionDiagram#isInvariantSDD <em>Invariant SDD</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.muml.reconfiguration.verification.sdd.componentsdd.ComponentsddPackage#getComponentStoryDecisionDiagram()
  * @model
