@@ -11,7 +11,6 @@ import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
 import org.muml.simulink.Element;
-import org.muml.simulink.stateflow.*;
 import org.muml.simulink.stateflow.Action;
 import org.muml.simulink.stateflow.Chart;
 import org.muml.simulink.stateflow.Data;

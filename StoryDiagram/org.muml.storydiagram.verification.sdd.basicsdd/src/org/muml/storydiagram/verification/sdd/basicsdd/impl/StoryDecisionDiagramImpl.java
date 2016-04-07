@@ -14,7 +14,7 @@ import org.muml.storydiagram.verification.sdd.impl.AbstractStoryDecisionDiagramI
  *
  * @generated
  */
-public class StoryDecisionDiagramImpl extends de.uni_paderborn.fujaba.muml.verification.sdd.impl.AbstractStoryDecisionDiagramImpl implements StoryDecisionDiagram {
+public class StoryDecisionDiagramImpl extends AbstractStoryDecisionDiagramImpl implements StoryDecisionDiagram {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

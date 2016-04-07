@@ -1,4 +1,4 @@
-package de.uni_paderborn.fujaba.simulink.model.stateflow;
+package org.muml.simulink.stateflow;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
@@ -6,10 +6,7 @@ import static org.junit.Assert.assertNull;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.muml.simulink.stateflow.State;
-import org.muml.simulink.stateflow.StateflowFactory;
-
-import de.uni_paderborn.fujaba.simulink.model.test.TestBase;
+import org.muml.simulink.test.TestBase;
 
 public class StateTest extends TestBase 
 {

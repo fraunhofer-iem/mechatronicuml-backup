@@ -1,6 +1,6 @@
 /**
  */
-package org.muml.uppaal.trace.diagnosticTrace.impl;
+package org.muml.uppaal.trace.diagnostictrace.impl;
 
 import java.util.Collection;
 
@@ -10,10 +10,10 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-import org.muml.uppaal.trace.diagnosticTrace.DiagnosticTracePackage;
-import org.muml.uppaal.trace.diagnosticTrace.LocationActivity;
-import org.muml.uppaal.trace.diagnosticTrace.State;
-import org.muml.uppaal.trace.diagnosticTrace.VariableValue;
+import org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage;
+import org.muml.uppaal.trace.diagnostictrace.LocationActivity;
+import org.muml.uppaal.trace.diagnostictrace.State;
+import org.muml.uppaal.trace.diagnostictrace.VariableValue;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,7 +29,7 @@ import org.muml.uppaal.trace.diagnosticTrace.VariableValue;
  *
  * @generated
  */
-public class StateImpl extends TraceItemImpl implements org.muml.uppaal.trace.diagnostictrace.State {
+public class StateImpl extends TraceItemImpl implements State {
 	/**
 	 * The cached value of the '{@link #getLocationActivities() <em>Location Activities</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -38,7 +38,7 @@ public class StateImpl extends TraceItemImpl implements org.muml.uppaal.trace.di
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<org.muml.uppaal.trace.diagnostictrace.LocationActivity> locationActivities;
+	protected EList<LocationActivity> locationActivities;
 
 	/**
 	 * The cached value of the '{@link #getVariableValues() <em>Variable Values</em>}' containment reference list.
@@ -48,7 +48,7 @@ public class StateImpl extends TraceItemImpl implements org.muml.uppaal.trace.di
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<org.muml.uppaal.trace.diagnostictrace.VariableValue> variableValues;
+	protected EList<VariableValue> variableValues;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -66,7 +66,7 @@ public class StateImpl extends TraceItemImpl implements org.muml.uppaal.trace.di
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.Literals.STATE;
+		return DiagnosticTracePackage.Literals.STATE;
 	}
 
 	/**
@@ -74,9 +74,9 @@ public class StateImpl extends TraceItemImpl implements org.muml.uppaal.trace.di
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<org.muml.uppaal.trace.diagnostictrace.LocationActivity> getLocationActivities() {
+	public EList<LocationActivity> getLocationActivities() {
 		if (locationActivities == null) {
-			locationActivities = new EObjectContainmentEList<org.muml.uppaal.trace.diagnostictrace.LocationActivity>(org.muml.uppaal.trace.diagnostictrace.LocationActivity.class, this, org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.STATE__LOCATION_ACTIVITIES);
+			locationActivities = new EObjectContainmentEList<LocationActivity>(LocationActivity.class, this, DiagnosticTracePackage.STATE__LOCATION_ACTIVITIES);
 		}
 		return locationActivities;
 	}
@@ -86,9 +86,9 @@ public class StateImpl extends TraceItemImpl implements org.muml.uppaal.trace.di
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<org.muml.uppaal.trace.diagnostictrace.VariableValue> getVariableValues() {
+	public EList<VariableValue> getVariableValues() {
 		if (variableValues == null) {
-			variableValues = new EObjectContainmentEList<org.muml.uppaal.trace.diagnostictrace.VariableValue>(org.muml.uppaal.trace.diagnostictrace.VariableValue.class, this, org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.STATE__VARIABLE_VALUES);
+			variableValues = new EObjectContainmentEList<VariableValue>(VariableValue.class, this, DiagnosticTracePackage.STATE__VARIABLE_VALUES);
 		}
 		return variableValues;
 	}
@@ -101,9 +101,9 @@ public class StateImpl extends TraceItemImpl implements org.muml.uppaal.trace.di
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.STATE__LOCATION_ACTIVITIES:
+			case DiagnosticTracePackage.STATE__LOCATION_ACTIVITIES:
 				return ((InternalEList<?>)getLocationActivities()).basicRemove(otherEnd, msgs);
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.STATE__VARIABLE_VALUES:
+			case DiagnosticTracePackage.STATE__VARIABLE_VALUES:
 				return ((InternalEList<?>)getVariableValues()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -117,9 +117,9 @@ public class StateImpl extends TraceItemImpl implements org.muml.uppaal.trace.di
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.STATE__LOCATION_ACTIVITIES:
+			case DiagnosticTracePackage.STATE__LOCATION_ACTIVITIES:
 				return getLocationActivities();
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.STATE__VARIABLE_VALUES:
+			case DiagnosticTracePackage.STATE__VARIABLE_VALUES:
 				return getVariableValues();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -134,13 +134,13 @@ public class StateImpl extends TraceItemImpl implements org.muml.uppaal.trace.di
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.STATE__LOCATION_ACTIVITIES:
+			case DiagnosticTracePackage.STATE__LOCATION_ACTIVITIES:
 				getLocationActivities().clear();
-				getLocationActivities().addAll((Collection<? extends org.muml.uppaal.trace.diagnostictrace.LocationActivity>)newValue);
+				getLocationActivities().addAll((Collection<? extends LocationActivity>)newValue);
 				return;
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.STATE__VARIABLE_VALUES:
+			case DiagnosticTracePackage.STATE__VARIABLE_VALUES:
 				getVariableValues().clear();
-				getVariableValues().addAll((Collection<? extends org.muml.uppaal.trace.diagnostictrace.VariableValue>)newValue);
+				getVariableValues().addAll((Collection<? extends VariableValue>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -154,10 +154,10 @@ public class StateImpl extends TraceItemImpl implements org.muml.uppaal.trace.di
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.STATE__LOCATION_ACTIVITIES:
+			case DiagnosticTracePackage.STATE__LOCATION_ACTIVITIES:
 				getLocationActivities().clear();
 				return;
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.STATE__VARIABLE_VALUES:
+			case DiagnosticTracePackage.STATE__VARIABLE_VALUES:
 				getVariableValues().clear();
 				return;
 		}
@@ -172,9 +172,9 @@ public class StateImpl extends TraceItemImpl implements org.muml.uppaal.trace.di
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.STATE__LOCATION_ACTIVITIES:
+			case DiagnosticTracePackage.STATE__LOCATION_ACTIVITIES:
 				return locationActivities != null && !locationActivities.isEmpty();
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.STATE__VARIABLE_VALUES:
+			case DiagnosticTracePackage.STATE__VARIABLE_VALUES:
 				return variableValues != null && !variableValues.isEmpty();
 		}
 		return super.eIsSet(featureID);

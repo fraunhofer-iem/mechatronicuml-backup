@@ -1,6 +1,6 @@
 /**
  */
-package org.muml.uppaal.trace.diagnosticTrace.impl;
+package org.muml.uppaal.trace.diagnostictrace.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -8,10 +8,10 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-import org.muml.uppaal.trace.diagnosticTrace.CompareOperator;
-import org.muml.uppaal.trace.diagnosticTrace.DiagnosticTracePackage;
-import org.muml.uppaal.trace.diagnosticTrace.NamedElementReference;
-import org.muml.uppaal.trace.diagnosticTrace.VariableValue;
+import org.muml.uppaal.trace.diagnostictrace.CompareOperator;
+import org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage;
+import org.muml.uppaal.trace.diagnostictrace.NamedElementReference;
+import org.muml.uppaal.trace.diagnostictrace.VariableValue;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,7 +29,7 @@ import org.muml.uppaal.trace.diagnosticTrace.VariableValue;
  *
  * @generated
  */
-public class VariableValueImpl extends MinimalEObjectImpl.Container implements org.muml.uppaal.trace.diagnostictrace.VariableValue {
+public class VariableValueImpl extends MinimalEObjectImpl.Container implements VariableValue {
 	/**
 	 * The cached value of the '{@link #getFirstNamedElementReference() <em>First Named Element Reference</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -38,7 +38,7 @@ public class VariableValueImpl extends MinimalEObjectImpl.Container implements o
 	 * @generated
 	 * @ordered
 	 */
-	protected org.muml.uppaal.trace.diagnostictrace.NamedElementReference firstNamedElementReference;
+	protected NamedElementReference firstNamedElementReference;
 
 	/**
 	 * The cached value of the '{@link #getSecondNamedElementReference() <em>Second Named Element Reference</em>}' containment reference.
@@ -48,7 +48,7 @@ public class VariableValueImpl extends MinimalEObjectImpl.Container implements o
 	 * @generated
 	 * @ordered
 	 */
-	protected org.muml.uppaal.trace.diagnostictrace.NamedElementReference secondNamedElementReference;
+	protected NamedElementReference secondNamedElementReference;
 
 	/**
 	 * The default value of the '{@link #getOperator() <em>Operator</em>}' attribute.
@@ -58,7 +58,7 @@ public class VariableValueImpl extends MinimalEObjectImpl.Container implements o
 	 * @generated
 	 * @ordered
 	 */
-	protected static final org.muml.uppaal.trace.diagnostictrace.CompareOperator OPERATOR_EDEFAULT = org.muml.uppaal.trace.diagnostictrace.CompareOperator.EQ;
+	protected static final CompareOperator OPERATOR_EDEFAULT = CompareOperator.EQ;
 
 	/**
 	 * The cached value of the '{@link #getOperator() <em>Operator</em>}' attribute.
@@ -68,7 +68,7 @@ public class VariableValueImpl extends MinimalEObjectImpl.Container implements o
 	 * @generated
 	 * @ordered
 	 */
-	protected org.muml.uppaal.trace.diagnostictrace.CompareOperator operator = OPERATOR_EDEFAULT;
+	protected CompareOperator operator = OPERATOR_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
@@ -106,7 +106,7 @@ public class VariableValueImpl extends MinimalEObjectImpl.Container implements o
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.Literals.VARIABLE_VALUE;
+		return DiagnosticTracePackage.Literals.VARIABLE_VALUE;
 	}
 
 	/**
@@ -114,7 +114,7 @@ public class VariableValueImpl extends MinimalEObjectImpl.Container implements o
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public org.muml.uppaal.trace.diagnostictrace.NamedElementReference getFirstNamedElementReference() {
+	public NamedElementReference getFirstNamedElementReference() {
 		return firstNamedElementReference;
 	}
 
@@ -123,11 +123,11 @@ public class VariableValueImpl extends MinimalEObjectImpl.Container implements o
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetFirstNamedElementReference(org.muml.uppaal.trace.diagnostictrace.NamedElementReference newFirstNamedElementReference, NotificationChain msgs) {
-		org.muml.uppaal.trace.diagnostictrace.NamedElementReference oldFirstNamedElementReference = firstNamedElementReference;
+	public NotificationChain basicSetFirstNamedElementReference(NamedElementReference newFirstNamedElementReference, NotificationChain msgs) {
+		NamedElementReference oldFirstNamedElementReference = firstNamedElementReference;
 		firstNamedElementReference = newFirstNamedElementReference;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.VARIABLE_VALUE__FIRST_NAMED_ELEMENT_REFERENCE, oldFirstNamedElementReference, newFirstNamedElementReference);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DiagnosticTracePackage.VARIABLE_VALUE__FIRST_NAMED_ELEMENT_REFERENCE, oldFirstNamedElementReference, newFirstNamedElementReference);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -138,18 +138,18 @@ public class VariableValueImpl extends MinimalEObjectImpl.Container implements o
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setFirstNamedElementReference(org.muml.uppaal.trace.diagnostictrace.NamedElementReference newFirstNamedElementReference) {
+	public void setFirstNamedElementReference(NamedElementReference newFirstNamedElementReference) {
 		if (newFirstNamedElementReference != firstNamedElementReference) {
 			NotificationChain msgs = null;
 			if (firstNamedElementReference != null)
-				msgs = ((InternalEObject)firstNamedElementReference).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.VARIABLE_VALUE__FIRST_NAMED_ELEMENT_REFERENCE, null, msgs);
+				msgs = ((InternalEObject)firstNamedElementReference).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DiagnosticTracePackage.VARIABLE_VALUE__FIRST_NAMED_ELEMENT_REFERENCE, null, msgs);
 			if (newFirstNamedElementReference != null)
-				msgs = ((InternalEObject)newFirstNamedElementReference).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.VARIABLE_VALUE__FIRST_NAMED_ELEMENT_REFERENCE, null, msgs);
+				msgs = ((InternalEObject)newFirstNamedElementReference).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DiagnosticTracePackage.VARIABLE_VALUE__FIRST_NAMED_ELEMENT_REFERENCE, null, msgs);
 			msgs = basicSetFirstNamedElementReference(newFirstNamedElementReference, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.VARIABLE_VALUE__FIRST_NAMED_ELEMENT_REFERENCE, newFirstNamedElementReference, newFirstNamedElementReference));
+			eNotify(new ENotificationImpl(this, Notification.SET, DiagnosticTracePackage.VARIABLE_VALUE__FIRST_NAMED_ELEMENT_REFERENCE, newFirstNamedElementReference, newFirstNamedElementReference));
 	}
 
 	/**
@@ -157,7 +157,7 @@ public class VariableValueImpl extends MinimalEObjectImpl.Container implements o
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public org.muml.uppaal.trace.diagnostictrace.NamedElementReference getSecondNamedElementReference() {
+	public NamedElementReference getSecondNamedElementReference() {
 		return secondNamedElementReference;
 	}
 
@@ -166,11 +166,11 @@ public class VariableValueImpl extends MinimalEObjectImpl.Container implements o
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetSecondNamedElementReference(org.muml.uppaal.trace.diagnostictrace.NamedElementReference newSecondNamedElementReference, NotificationChain msgs) {
-		org.muml.uppaal.trace.diagnostictrace.NamedElementReference oldSecondNamedElementReference = secondNamedElementReference;
+	public NotificationChain basicSetSecondNamedElementReference(NamedElementReference newSecondNamedElementReference, NotificationChain msgs) {
+		NamedElementReference oldSecondNamedElementReference = secondNamedElementReference;
 		secondNamedElementReference = newSecondNamedElementReference;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.VARIABLE_VALUE__SECOND_NAMED_ELEMENT_REFERENCE, oldSecondNamedElementReference, newSecondNamedElementReference);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DiagnosticTracePackage.VARIABLE_VALUE__SECOND_NAMED_ELEMENT_REFERENCE, oldSecondNamedElementReference, newSecondNamedElementReference);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -181,18 +181,18 @@ public class VariableValueImpl extends MinimalEObjectImpl.Container implements o
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSecondNamedElementReference(org.muml.uppaal.trace.diagnostictrace.NamedElementReference newSecondNamedElementReference) {
+	public void setSecondNamedElementReference(NamedElementReference newSecondNamedElementReference) {
 		if (newSecondNamedElementReference != secondNamedElementReference) {
 			NotificationChain msgs = null;
 			if (secondNamedElementReference != null)
-				msgs = ((InternalEObject)secondNamedElementReference).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.VARIABLE_VALUE__SECOND_NAMED_ELEMENT_REFERENCE, null, msgs);
+				msgs = ((InternalEObject)secondNamedElementReference).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DiagnosticTracePackage.VARIABLE_VALUE__SECOND_NAMED_ELEMENT_REFERENCE, null, msgs);
 			if (newSecondNamedElementReference != null)
-				msgs = ((InternalEObject)newSecondNamedElementReference).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.VARIABLE_VALUE__SECOND_NAMED_ELEMENT_REFERENCE, null, msgs);
+				msgs = ((InternalEObject)newSecondNamedElementReference).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DiagnosticTracePackage.VARIABLE_VALUE__SECOND_NAMED_ELEMENT_REFERENCE, null, msgs);
 			msgs = basicSetSecondNamedElementReference(newSecondNamedElementReference, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.VARIABLE_VALUE__SECOND_NAMED_ELEMENT_REFERENCE, newSecondNamedElementReference, newSecondNamedElementReference));
+			eNotify(new ENotificationImpl(this, Notification.SET, DiagnosticTracePackage.VARIABLE_VALUE__SECOND_NAMED_ELEMENT_REFERENCE, newSecondNamedElementReference, newSecondNamedElementReference));
 	}
 
 	/**
@@ -200,7 +200,7 @@ public class VariableValueImpl extends MinimalEObjectImpl.Container implements o
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public org.muml.uppaal.trace.diagnostictrace.CompareOperator getOperator() {
+	public CompareOperator getOperator() {
 		return operator;
 	}
 
@@ -209,11 +209,11 @@ public class VariableValueImpl extends MinimalEObjectImpl.Container implements o
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setOperator(org.muml.uppaal.trace.diagnostictrace.CompareOperator newOperator) {
-		org.muml.uppaal.trace.diagnostictrace.CompareOperator oldOperator = operator;
+	public void setOperator(CompareOperator newOperator) {
+		CompareOperator oldOperator = operator;
 		operator = newOperator == null ? OPERATOR_EDEFAULT : newOperator;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.VARIABLE_VALUE__OPERATOR, oldOperator, operator));
+			eNotify(new ENotificationImpl(this, Notification.SET, DiagnosticTracePackage.VARIABLE_VALUE__OPERATOR, oldOperator, operator));
 	}
 
 	/**
@@ -234,7 +234,7 @@ public class VariableValueImpl extends MinimalEObjectImpl.Container implements o
 		int oldValue = value;
 		value = newValue;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.VARIABLE_VALUE__VALUE, oldValue, value));
+			eNotify(new ENotificationImpl(this, Notification.SET, DiagnosticTracePackage.VARIABLE_VALUE__VALUE, oldValue, value));
 	}
 
 	/**
@@ -245,9 +245,9 @@ public class VariableValueImpl extends MinimalEObjectImpl.Container implements o
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.VARIABLE_VALUE__FIRST_NAMED_ELEMENT_REFERENCE:
+			case DiagnosticTracePackage.VARIABLE_VALUE__FIRST_NAMED_ELEMENT_REFERENCE:
 				return basicSetFirstNamedElementReference(null, msgs);
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.VARIABLE_VALUE__SECOND_NAMED_ELEMENT_REFERENCE:
+			case DiagnosticTracePackage.VARIABLE_VALUE__SECOND_NAMED_ELEMENT_REFERENCE:
 				return basicSetSecondNamedElementReference(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -261,13 +261,13 @@ public class VariableValueImpl extends MinimalEObjectImpl.Container implements o
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.VARIABLE_VALUE__FIRST_NAMED_ELEMENT_REFERENCE:
+			case DiagnosticTracePackage.VARIABLE_VALUE__FIRST_NAMED_ELEMENT_REFERENCE:
 				return getFirstNamedElementReference();
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.VARIABLE_VALUE__SECOND_NAMED_ELEMENT_REFERENCE:
+			case DiagnosticTracePackage.VARIABLE_VALUE__SECOND_NAMED_ELEMENT_REFERENCE:
 				return getSecondNamedElementReference();
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.VARIABLE_VALUE__OPERATOR:
+			case DiagnosticTracePackage.VARIABLE_VALUE__OPERATOR:
 				return getOperator();
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.VARIABLE_VALUE__VALUE:
+			case DiagnosticTracePackage.VARIABLE_VALUE__VALUE:
 				return getValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -281,16 +281,16 @@ public class VariableValueImpl extends MinimalEObjectImpl.Container implements o
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.VARIABLE_VALUE__FIRST_NAMED_ELEMENT_REFERENCE:
-				setFirstNamedElementReference((org.muml.uppaal.trace.diagnostictrace.NamedElementReference)newValue);
+			case DiagnosticTracePackage.VARIABLE_VALUE__FIRST_NAMED_ELEMENT_REFERENCE:
+				setFirstNamedElementReference((NamedElementReference)newValue);
 				return;
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.VARIABLE_VALUE__SECOND_NAMED_ELEMENT_REFERENCE:
-				setSecondNamedElementReference((org.muml.uppaal.trace.diagnostictrace.NamedElementReference)newValue);
+			case DiagnosticTracePackage.VARIABLE_VALUE__SECOND_NAMED_ELEMENT_REFERENCE:
+				setSecondNamedElementReference((NamedElementReference)newValue);
 				return;
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.VARIABLE_VALUE__OPERATOR:
-				setOperator((org.muml.uppaal.trace.diagnostictrace.CompareOperator)newValue);
+			case DiagnosticTracePackage.VARIABLE_VALUE__OPERATOR:
+				setOperator((CompareOperator)newValue);
 				return;
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.VARIABLE_VALUE__VALUE:
+			case DiagnosticTracePackage.VARIABLE_VALUE__VALUE:
 				setValue((Integer)newValue);
 				return;
 		}
@@ -305,16 +305,16 @@ public class VariableValueImpl extends MinimalEObjectImpl.Container implements o
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.VARIABLE_VALUE__FIRST_NAMED_ELEMENT_REFERENCE:
-				setFirstNamedElementReference((org.muml.uppaal.trace.diagnostictrace.NamedElementReference)null);
+			case DiagnosticTracePackage.VARIABLE_VALUE__FIRST_NAMED_ELEMENT_REFERENCE:
+				setFirstNamedElementReference((NamedElementReference)null);
 				return;
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.VARIABLE_VALUE__SECOND_NAMED_ELEMENT_REFERENCE:
-				setSecondNamedElementReference((org.muml.uppaal.trace.diagnostictrace.NamedElementReference)null);
+			case DiagnosticTracePackage.VARIABLE_VALUE__SECOND_NAMED_ELEMENT_REFERENCE:
+				setSecondNamedElementReference((NamedElementReference)null);
 				return;
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.VARIABLE_VALUE__OPERATOR:
+			case DiagnosticTracePackage.VARIABLE_VALUE__OPERATOR:
 				setOperator(OPERATOR_EDEFAULT);
 				return;
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.VARIABLE_VALUE__VALUE:
+			case DiagnosticTracePackage.VARIABLE_VALUE__VALUE:
 				setValue(VALUE_EDEFAULT);
 				return;
 		}
@@ -329,13 +329,13 @@ public class VariableValueImpl extends MinimalEObjectImpl.Container implements o
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.VARIABLE_VALUE__FIRST_NAMED_ELEMENT_REFERENCE:
+			case DiagnosticTracePackage.VARIABLE_VALUE__FIRST_NAMED_ELEMENT_REFERENCE:
 				return firstNamedElementReference != null;
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.VARIABLE_VALUE__SECOND_NAMED_ELEMENT_REFERENCE:
+			case DiagnosticTracePackage.VARIABLE_VALUE__SECOND_NAMED_ELEMENT_REFERENCE:
 				return secondNamedElementReference != null;
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.VARIABLE_VALUE__OPERATOR:
+			case DiagnosticTracePackage.VARIABLE_VALUE__OPERATOR:
 				return operator != OPERATOR_EDEFAULT;
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.VARIABLE_VALUE__VALUE:
+			case DiagnosticTracePackage.VARIABLE_VALUE__VALUE:
 				return value != VALUE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);

@@ -1,6 +1,6 @@
 /**
  */
-package org.muml.uppaal.trace.diagnosticTrace.impl;
+package org.muml.uppaal.trace.diagnostictrace.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -8,9 +8,9 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-import org.muml.uppaal.trace.diagnosticTrace.DiagnosticTracePackage;
-import org.muml.uppaal.trace.diagnosticTrace.EdgeActivity;
-import org.muml.uppaal.trace.diagnosticTrace.LocationActivity;
+import org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage;
+import org.muml.uppaal.trace.diagnostictrace.EdgeActivity;
+import org.muml.uppaal.trace.diagnostictrace.LocationActivity;
 
 /**
  * <!-- begin-user-doc -->
@@ -27,7 +27,7 @@ import org.muml.uppaal.trace.diagnosticTrace.LocationActivity;
  *
  * @generated
  */
-public class EdgeActivityImpl extends MinimalEObjectImpl.Container implements org.muml.uppaal.trace.diagnostictrace.EdgeActivity {
+public class EdgeActivityImpl extends MinimalEObjectImpl.Container implements EdgeActivity {
 	/**
 	 * The cached value of the '{@link #getSource() <em>Source</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -36,7 +36,7 @@ public class EdgeActivityImpl extends MinimalEObjectImpl.Container implements or
 	 * @generated
 	 * @ordered
 	 */
-	protected org.muml.uppaal.trace.diagnostictrace.LocationActivity source;
+	protected LocationActivity source;
 
 	/**
 	 * The cached value of the '{@link #getTarget() <em>Target</em>}' containment reference.
@@ -46,7 +46,7 @@ public class EdgeActivityImpl extends MinimalEObjectImpl.Container implements or
 	 * @generated
 	 * @ordered
 	 */
-	protected org.muml.uppaal.trace.diagnostictrace.LocationActivity target;
+	protected LocationActivity target;
 
 	/**
 	 * The default value of the '{@link #getDetails() <em>Details</em>}' attribute.
@@ -84,7 +84,7 @@ public class EdgeActivityImpl extends MinimalEObjectImpl.Container implements or
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.Literals.EDGE_ACTIVITY;
+		return DiagnosticTracePackage.Literals.EDGE_ACTIVITY;
 	}
 
 	/**
@@ -92,7 +92,7 @@ public class EdgeActivityImpl extends MinimalEObjectImpl.Container implements or
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public org.muml.uppaal.trace.diagnostictrace.LocationActivity getSource() {
+	public LocationActivity getSource() {
 		return source;
 	}
 
@@ -101,11 +101,11 @@ public class EdgeActivityImpl extends MinimalEObjectImpl.Container implements or
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetSource(org.muml.uppaal.trace.diagnostictrace.LocationActivity newSource, NotificationChain msgs) {
-		org.muml.uppaal.trace.diagnostictrace.LocationActivity oldSource = source;
+	public NotificationChain basicSetSource(LocationActivity newSource, NotificationChain msgs) {
+		LocationActivity oldSource = source;
 		source = newSource;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.EDGE_ACTIVITY__SOURCE, oldSource, newSource);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DiagnosticTracePackage.EDGE_ACTIVITY__SOURCE, oldSource, newSource);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -116,18 +116,18 @@ public class EdgeActivityImpl extends MinimalEObjectImpl.Container implements or
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSource(org.muml.uppaal.trace.diagnostictrace.LocationActivity newSource) {
+	public void setSource(LocationActivity newSource) {
 		if (newSource != source) {
 			NotificationChain msgs = null;
 			if (source != null)
-				msgs = ((InternalEObject)source).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.EDGE_ACTIVITY__SOURCE, null, msgs);
+				msgs = ((InternalEObject)source).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DiagnosticTracePackage.EDGE_ACTIVITY__SOURCE, null, msgs);
 			if (newSource != null)
-				msgs = ((InternalEObject)newSource).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.EDGE_ACTIVITY__SOURCE, null, msgs);
+				msgs = ((InternalEObject)newSource).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DiagnosticTracePackage.EDGE_ACTIVITY__SOURCE, null, msgs);
 			msgs = basicSetSource(newSource, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.EDGE_ACTIVITY__SOURCE, newSource, newSource));
+			eNotify(new ENotificationImpl(this, Notification.SET, DiagnosticTracePackage.EDGE_ACTIVITY__SOURCE, newSource, newSource));
 	}
 
 	/**
@@ -135,7 +135,7 @@ public class EdgeActivityImpl extends MinimalEObjectImpl.Container implements or
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public org.muml.uppaal.trace.diagnostictrace.LocationActivity getTarget() {
+	public LocationActivity getTarget() {
 		return target;
 	}
 
@@ -144,11 +144,11 @@ public class EdgeActivityImpl extends MinimalEObjectImpl.Container implements or
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetTarget(org.muml.uppaal.trace.diagnostictrace.LocationActivity newTarget, NotificationChain msgs) {
-		org.muml.uppaal.trace.diagnostictrace.LocationActivity oldTarget = target;
+	public NotificationChain basicSetTarget(LocationActivity newTarget, NotificationChain msgs) {
+		LocationActivity oldTarget = target;
 		target = newTarget;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.EDGE_ACTIVITY__TARGET, oldTarget, newTarget);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DiagnosticTracePackage.EDGE_ACTIVITY__TARGET, oldTarget, newTarget);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -159,18 +159,18 @@ public class EdgeActivityImpl extends MinimalEObjectImpl.Container implements or
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setTarget(org.muml.uppaal.trace.diagnostictrace.LocationActivity newTarget) {
+	public void setTarget(LocationActivity newTarget) {
 		if (newTarget != target) {
 			NotificationChain msgs = null;
 			if (target != null)
-				msgs = ((InternalEObject)target).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.EDGE_ACTIVITY__TARGET, null, msgs);
+				msgs = ((InternalEObject)target).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DiagnosticTracePackage.EDGE_ACTIVITY__TARGET, null, msgs);
 			if (newTarget != null)
-				msgs = ((InternalEObject)newTarget).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.EDGE_ACTIVITY__TARGET, null, msgs);
+				msgs = ((InternalEObject)newTarget).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DiagnosticTracePackage.EDGE_ACTIVITY__TARGET, null, msgs);
 			msgs = basicSetTarget(newTarget, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.EDGE_ACTIVITY__TARGET, newTarget, newTarget));
+			eNotify(new ENotificationImpl(this, Notification.SET, DiagnosticTracePackage.EDGE_ACTIVITY__TARGET, newTarget, newTarget));
 	}
 
 	/**
@@ -191,7 +191,7 @@ public class EdgeActivityImpl extends MinimalEObjectImpl.Container implements or
 		String oldDetails = details;
 		details = newDetails;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.EDGE_ACTIVITY__DETAILS, oldDetails, details));
+			eNotify(new ENotificationImpl(this, Notification.SET, DiagnosticTracePackage.EDGE_ACTIVITY__DETAILS, oldDetails, details));
 	}
 
 	/**
@@ -202,9 +202,9 @@ public class EdgeActivityImpl extends MinimalEObjectImpl.Container implements or
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.EDGE_ACTIVITY__SOURCE:
+			case DiagnosticTracePackage.EDGE_ACTIVITY__SOURCE:
 				return basicSetSource(null, msgs);
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.EDGE_ACTIVITY__TARGET:
+			case DiagnosticTracePackage.EDGE_ACTIVITY__TARGET:
 				return basicSetTarget(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -218,11 +218,11 @@ public class EdgeActivityImpl extends MinimalEObjectImpl.Container implements or
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.EDGE_ACTIVITY__SOURCE:
+			case DiagnosticTracePackage.EDGE_ACTIVITY__SOURCE:
 				return getSource();
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.EDGE_ACTIVITY__TARGET:
+			case DiagnosticTracePackage.EDGE_ACTIVITY__TARGET:
 				return getTarget();
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.EDGE_ACTIVITY__DETAILS:
+			case DiagnosticTracePackage.EDGE_ACTIVITY__DETAILS:
 				return getDetails();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -236,13 +236,13 @@ public class EdgeActivityImpl extends MinimalEObjectImpl.Container implements or
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.EDGE_ACTIVITY__SOURCE:
-				setSource((org.muml.uppaal.trace.diagnostictrace.LocationActivity)newValue);
+			case DiagnosticTracePackage.EDGE_ACTIVITY__SOURCE:
+				setSource((LocationActivity)newValue);
 				return;
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.EDGE_ACTIVITY__TARGET:
-				setTarget((org.muml.uppaal.trace.diagnostictrace.LocationActivity)newValue);
+			case DiagnosticTracePackage.EDGE_ACTIVITY__TARGET:
+				setTarget((LocationActivity)newValue);
 				return;
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.EDGE_ACTIVITY__DETAILS:
+			case DiagnosticTracePackage.EDGE_ACTIVITY__DETAILS:
 				setDetails((String)newValue);
 				return;
 		}
@@ -257,13 +257,13 @@ public class EdgeActivityImpl extends MinimalEObjectImpl.Container implements or
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.EDGE_ACTIVITY__SOURCE:
-				setSource((org.muml.uppaal.trace.diagnostictrace.LocationActivity)null);
+			case DiagnosticTracePackage.EDGE_ACTIVITY__SOURCE:
+				setSource((LocationActivity)null);
 				return;
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.EDGE_ACTIVITY__TARGET:
-				setTarget((org.muml.uppaal.trace.diagnostictrace.LocationActivity)null);
+			case DiagnosticTracePackage.EDGE_ACTIVITY__TARGET:
+				setTarget((LocationActivity)null);
 				return;
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.EDGE_ACTIVITY__DETAILS:
+			case DiagnosticTracePackage.EDGE_ACTIVITY__DETAILS:
 				setDetails(DETAILS_EDEFAULT);
 				return;
 		}
@@ -278,11 +278,11 @@ public class EdgeActivityImpl extends MinimalEObjectImpl.Container implements or
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.EDGE_ACTIVITY__SOURCE:
+			case DiagnosticTracePackage.EDGE_ACTIVITY__SOURCE:
 				return source != null;
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.EDGE_ACTIVITY__TARGET:
+			case DiagnosticTracePackage.EDGE_ACTIVITY__TARGET:
 				return target != null;
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.EDGE_ACTIVITY__DETAILS:
+			case DiagnosticTracePackage.EDGE_ACTIVITY__DETAILS:
 				return DETAILS_EDEFAULT == null ? details != null : !DETAILS_EDEFAULT.equals(details);
 		}
 		return super.eIsSet(featureID);

@@ -1,6 +1,6 @@
 /**
  */
-package org.muml.uppaal.trace.diagnosticTrace;
+package org.muml.uppaal.trace.diagnostictrace;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;

@@ -1,6 +1,6 @@
 /**
  */
-package org.muml.uppaal.trace.diagnosticTrace.impl;
+package org.muml.uppaal.trace.diagnostictrace.impl;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -13,25 +13,25 @@ import org.muml.uppaal.declarations.DeclarationsPackage;
 import org.muml.uppaal.expressions.ExpressionsPackage;
 import org.muml.uppaal.statements.StatementsPackage;
 import org.muml.uppaal.templates.TemplatesPackage;
-import org.muml.uppaal.trace.diagnosticTrace.ActionTransition;
-import org.muml.uppaal.trace.diagnosticTrace.ChannelSynchronization;
-import org.muml.uppaal.trace.diagnosticTrace.CompareOperator;
-import org.muml.uppaal.trace.diagnosticTrace.DelayTransition;
-import org.muml.uppaal.trace.diagnosticTrace.DiagnosticTraceFactory;
-import org.muml.uppaal.trace.diagnosticTrace.DiagnosticTracePackage;
-import org.muml.uppaal.trace.diagnosticTrace.EdgeActivity;
-import org.muml.uppaal.trace.diagnosticTrace.LocationActivity;
-import org.muml.uppaal.trace.diagnosticTrace.NamedElementReference;
-import org.muml.uppaal.trace.diagnosticTrace.ProcessIdentifier;
-import org.muml.uppaal.trace.diagnosticTrace.Result;
-import org.muml.uppaal.trace.diagnosticTrace.SingleNamedElementReference;
-import org.muml.uppaal.trace.diagnosticTrace.State;
-import org.muml.uppaal.trace.diagnosticTrace.Synchronization;
-import org.muml.uppaal.trace.diagnosticTrace.Trace;
-import org.muml.uppaal.trace.diagnosticTrace.TraceItem;
-import org.muml.uppaal.trace.diagnosticTrace.TraceRepository;
-import org.muml.uppaal.trace.diagnosticTrace.Transition;
-import org.muml.uppaal.trace.diagnosticTrace.VariableValue;
+import org.muml.uppaal.trace.diagnostictrace.ActionTransition;
+import org.muml.uppaal.trace.diagnostictrace.ChannelSynchronization;
+import org.muml.uppaal.trace.diagnostictrace.CompareOperator;
+import org.muml.uppaal.trace.diagnostictrace.DelayTransition;
+import org.muml.uppaal.trace.diagnostictrace.DiagnosticTraceFactory;
+import org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage;
+import org.muml.uppaal.trace.diagnostictrace.EdgeActivity;
+import org.muml.uppaal.trace.diagnostictrace.LocationActivity;
+import org.muml.uppaal.trace.diagnostictrace.NamedElementReference;
+import org.muml.uppaal.trace.diagnostictrace.ProcessIdentifier;
+import org.muml.uppaal.trace.diagnostictrace.Result;
+import org.muml.uppaal.trace.diagnostictrace.SingleNamedElementReference;
+import org.muml.uppaal.trace.diagnostictrace.State;
+import org.muml.uppaal.trace.diagnostictrace.Synchronization;
+import org.muml.uppaal.trace.diagnostictrace.Trace;
+import org.muml.uppaal.trace.diagnostictrace.TraceItem;
+import org.muml.uppaal.trace.diagnostictrace.TraceRepository;
+import org.muml.uppaal.trace.diagnostictrace.Transition;
+import org.muml.uppaal.trace.diagnostictrace.VariableValue;
 import org.muml.uppaal.types.TypesPackage;
 import org.muml.uppaal.visuals.VisualsPackage;
 
@@ -41,7 +41,7 @@ import org.muml.uppaal.visuals.VisualsPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class DiagnosticTracePackageImpl extends EPackageImpl implements org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage {
+public class DiagnosticTracePackageImpl extends EPackageImpl implements DiagnosticTracePackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -177,7 +177,7 @@ public class DiagnosticTracePackageImpl extends EPackageImpl implements org.muml
 	 * @generated
 	 */
 	private DiagnosticTracePackageImpl() {
-		super(eNS_URI, org.muml.uppaal.trace.diagnostictrace.DiagnosticTraceFactory.eINSTANCE);
+		super(eNS_URI, DiagnosticTraceFactory.eINSTANCE);
 	}
 
 	/**
@@ -190,7 +190,7 @@ public class DiagnosticTracePackageImpl extends EPackageImpl implements org.muml
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
 	 * 
-	 * <p>This method is used to initialize {@link org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage#eINSTANCE} when that field is accessed.
+	 * <p>This method is used to initialize {@link DiagnosticTracePackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -199,8 +199,8 @@ public class DiagnosticTracePackageImpl extends EPackageImpl implements org.muml
 	 * @see #initializePackageContents()
 	 * @generated
 	 */
-	public static org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage init() {
-		if (isInited) return (org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage)EPackage.Registry.INSTANCE.getEPackage(org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.eNS_URI);
+	public static DiagnosticTracePackage init() {
+		if (isInited) return (DiagnosticTracePackage)EPackage.Registry.INSTANCE.getEPackage(DiagnosticTracePackage.eNS_URI);
 
 		// Obtain or create and register package
 		DiagnosticTracePackageImpl theDiagnosticTracePackage = (DiagnosticTracePackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof DiagnosticTracePackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new DiagnosticTracePackageImpl());
@@ -227,7 +227,7 @@ public class DiagnosticTracePackageImpl extends EPackageImpl implements org.muml
 
   
 		// Update the registry and return the package
-		EPackage.Registry.INSTANCE.put(org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.eNS_URI, theDiagnosticTracePackage);
+		EPackage.Registry.INSTANCE.put(DiagnosticTracePackage.eNS_URI, theDiagnosticTracePackage);
 		return theDiagnosticTracePackage;
 	}
 
@@ -623,8 +623,8 @@ public class DiagnosticTracePackageImpl extends EPackageImpl implements org.muml
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public org.muml.uppaal.trace.diagnostictrace.DiagnosticTraceFactory getDiagnosticTraceFactory() {
-		return (org.muml.uppaal.trace.diagnostictrace.DiagnosticTraceFactory)getEFactoryInstance();
+	public DiagnosticTraceFactory getDiagnosticTraceFactory() {
+		return (DiagnosticTraceFactory)getEFactoryInstance();
 	}
 
 	/**
@@ -747,71 +747,71 @@ public class DiagnosticTracePackageImpl extends EPackageImpl implements org.muml
 		transitionEClass.getESuperTypes().add(this.getTraceItem());
 
 		// Initialize classes and features; add operations and parameters
-		initEClass(traceRepositoryEClass, org.muml.uppaal.trace.diagnostictrace.TraceRepository.class, "TraceRepository", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getTraceRepository_Traces(), this.getTrace(), null, "traces", null, 0, -1, org.muml.uppaal.trace.diagnostictrace.TraceRepository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(traceRepositoryEClass, TraceRepository.class, "TraceRepository", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getTraceRepository_Traces(), this.getTrace(), null, "traces", null, 0, -1, TraceRepository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(traceEClass, org.muml.uppaal.trace.diagnostictrace.Trace.class, "Trace", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getTrace_Property(), ecorePackage.getEInt(), "property", null, 0, 1, org.muml.uppaal.trace.diagnostictrace.Trace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTrace_Line(), ecorePackage.getEInt(), "line", null, 0, 1, org.muml.uppaal.trace.diagnostictrace.Trace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTrace_Result(), this.getResult(), "result", null, 0, 1, org.muml.uppaal.trace.diagnostictrace.Trace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTrace_TraceItems(), this.getTraceItem(), null, "traceItems", null, 0, -1, org.muml.uppaal.trace.diagnostictrace.Trace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(traceEClass, Trace.class, "Trace", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getTrace_Property(), ecorePackage.getEInt(), "property", null, 0, 1, Trace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTrace_Line(), ecorePackage.getEInt(), "line", null, 0, 1, Trace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTrace_Result(), this.getResult(), "result", null, 0, 1, Trace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTrace_TraceItems(), this.getTraceItem(), null, "traceItems", null, 0, -1, Trace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(processIdentifierEClass, org.muml.uppaal.trace.diagnostictrace.ProcessIdentifier.class, "ProcessIdentifier", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getProcessIdentifier_Template(), theTemplatesPackage.getAbstractTemplate(), null, "template", null, 0, 1, org.muml.uppaal.trace.diagnostictrace.ProcessIdentifier.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getProcessIdentifier_Arguments(), ecorePackage.getEInt(), "arguments", null, 0, -1, org.muml.uppaal.trace.diagnostictrace.ProcessIdentifier.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(processIdentifierEClass, ProcessIdentifier.class, "ProcessIdentifier", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getProcessIdentifier_Template(), theTemplatesPackage.getAbstractTemplate(), null, "template", null, 0, 1, ProcessIdentifier.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getProcessIdentifier_Arguments(), ecorePackage.getEInt(), "arguments", null, 0, -1, ProcessIdentifier.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(locationActivityEClass, org.muml.uppaal.trace.diagnostictrace.LocationActivity.class, "LocationActivity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getLocationActivity_Process(), this.getProcessIdentifier(), null, "process", null, 0, 1, org.muml.uppaal.trace.diagnostictrace.LocationActivity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getLocationActivity_Location(), theTemplatesPackage.getLocation(), null, "location", null, 0, 1, org.muml.uppaal.trace.diagnostictrace.LocationActivity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(locationActivityEClass, LocationActivity.class, "LocationActivity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getLocationActivity_Process(), this.getProcessIdentifier(), null, "process", null, 0, 1, LocationActivity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getLocationActivity_Location(), theTemplatesPackage.getLocation(), null, "location", null, 0, 1, LocationActivity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(variableValueEClass, org.muml.uppaal.trace.diagnostictrace.VariableValue.class, "VariableValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getVariableValue_FirstNamedElementReference(), this.getNamedElementReference(), null, "firstNamedElementReference", null, 0, 1, org.muml.uppaal.trace.diagnostictrace.VariableValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getVariableValue_SecondNamedElementReference(), this.getNamedElementReference(), null, "secondNamedElementReference", null, 0, 1, org.muml.uppaal.trace.diagnostictrace.VariableValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getVariableValue_Operator(), this.getCompareOperator(), "operator", null, 0, 1, org.muml.uppaal.trace.diagnostictrace.VariableValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getVariableValue_Value(), ecorePackage.getEInt(), "value", null, 0, 1, org.muml.uppaal.trace.diagnostictrace.VariableValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(variableValueEClass, VariableValue.class, "VariableValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getVariableValue_FirstNamedElementReference(), this.getNamedElementReference(), null, "firstNamedElementReference", null, 0, 1, VariableValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getVariableValue_SecondNamedElementReference(), this.getNamedElementReference(), null, "secondNamedElementReference", null, 0, 1, VariableValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getVariableValue_Operator(), this.getCompareOperator(), "operator", null, 0, 1, VariableValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getVariableValue_Value(), ecorePackage.getEInt(), "value", null, 0, 1, VariableValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(singleNamedElementReferenceEClass, org.muml.uppaal.trace.diagnostictrace.SingleNamedElementReference.class, "SingleNamedElementReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getSingleNamedElementReference_NamedElement(), theCorePackage.getNamedElement(), null, "namedElement", null, 0, 1, org.muml.uppaal.trace.diagnostictrace.SingleNamedElementReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSingleNamedElementReference_Indexes(), ecorePackage.getEInt(), "indexes", null, 0, -1, org.muml.uppaal.trace.diagnostictrace.SingleNamedElementReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(singleNamedElementReferenceEClass, SingleNamedElementReference.class, "SingleNamedElementReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getSingleNamedElementReference_NamedElement(), theCorePackage.getNamedElement(), null, "namedElement", null, 0, 1, SingleNamedElementReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSingleNamedElementReference_Indexes(), ecorePackage.getEInt(), "indexes", null, 0, -1, SingleNamedElementReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(namedElementReferenceEClass, org.muml.uppaal.trace.diagnostictrace.NamedElementReference.class, "NamedElementReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getNamedElementReference_SingleNamedElementReference(), this.getSingleNamedElementReference(), null, "singleNamedElementReference", null, 0, 1, org.muml.uppaal.trace.diagnostictrace.NamedElementReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getNamedElementReference_NamedElementReference(), this.getNamedElementReference(), null, "namedElementReference", null, 0, 1, org.muml.uppaal.trace.diagnostictrace.NamedElementReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(namedElementReferenceEClass, NamedElementReference.class, "NamedElementReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getNamedElementReference_SingleNamedElementReference(), this.getSingleNamedElementReference(), null, "singleNamedElementReference", null, 0, 1, NamedElementReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getNamedElementReference_NamedElementReference(), this.getNamedElementReference(), null, "namedElementReference", null, 0, 1, NamedElementReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(traceItemEClass, org.muml.uppaal.trace.diagnostictrace.TraceItem.class, "TraceItem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(traceItemEClass, TraceItem.class, "TraceItem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(stateEClass, org.muml.uppaal.trace.diagnostictrace.State.class, "State", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getState_LocationActivities(), this.getLocationActivity(), null, "locationActivities", null, 0, -1, org.muml.uppaal.trace.diagnostictrace.State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getState_VariableValues(), this.getVariableValue(), null, "variableValues", null, 0, -1, org.muml.uppaal.trace.diagnostictrace.State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(stateEClass, State.class, "State", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getState_LocationActivities(), this.getLocationActivity(), null, "locationActivities", null, 0, -1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getState_VariableValues(), this.getVariableValue(), null, "variableValues", null, 0, -1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(edgeActivityEClass, org.muml.uppaal.trace.diagnostictrace.EdgeActivity.class, "EdgeActivity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getEdgeActivity_Source(), this.getLocationActivity(), null, "source", null, 0, 1, org.muml.uppaal.trace.diagnostictrace.EdgeActivity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getEdgeActivity_Target(), this.getLocationActivity(), null, "target", null, 0, 1, org.muml.uppaal.trace.diagnostictrace.EdgeActivity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEdgeActivity_Details(), ecorePackage.getEString(), "details", null, 0, 1, org.muml.uppaal.trace.diagnostictrace.EdgeActivity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(edgeActivityEClass, EdgeActivity.class, "EdgeActivity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getEdgeActivity_Source(), this.getLocationActivity(), null, "source", null, 0, 1, EdgeActivity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEdgeActivity_Target(), this.getLocationActivity(), null, "target", null, 0, 1, EdgeActivity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEdgeActivity_Details(), ecorePackage.getEString(), "details", null, 0, 1, EdgeActivity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(synchronizationEClass, org.muml.uppaal.trace.diagnostictrace.Synchronization.class, "Synchronization", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(synchronizationEClass, Synchronization.class, "Synchronization", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(channelSynchronizationEClass, org.muml.uppaal.trace.diagnostictrace.ChannelSynchronization.class, "ChannelSynchronization", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getChannelSynchronization_Channel(), theDeclarationsPackage.getVariable(), null, "channel", null, 0, 1, org.muml.uppaal.trace.diagnostictrace.ChannelSynchronization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getChannelSynchronization_Kind(), theTemplatesPackage.getSynchronizationKind(), "kind", null, 0, 1, org.muml.uppaal.trace.diagnostictrace.ChannelSynchronization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(channelSynchronizationEClass, ChannelSynchronization.class, "ChannelSynchronization", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getChannelSynchronization_Channel(), theDeclarationsPackage.getVariable(), null, "channel", null, 0, 1, ChannelSynchronization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getChannelSynchronization_Kind(), theTemplatesPackage.getSynchronizationKind(), "kind", null, 0, 1, ChannelSynchronization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(delayTransitionEClass, org.muml.uppaal.trace.diagnostictrace.DelayTransition.class, "DelayTransition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getDelayTransition_Duration(), ecorePackage.getEInt(), "duration", null, 0, 1, org.muml.uppaal.trace.diagnostictrace.DelayTransition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(delayTransitionEClass, DelayTransition.class, "DelayTransition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getDelayTransition_Duration(), ecorePackage.getEInt(), "duration", null, 0, 1, DelayTransition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(actionTransitionEClass, org.muml.uppaal.trace.diagnostictrace.ActionTransition.class, "ActionTransition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getActionTransition_EdgeActivities(), this.getEdgeActivity(), null, "edgeActivities", null, 0, -1, org.muml.uppaal.trace.diagnostictrace.ActionTransition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(actionTransitionEClass, ActionTransition.class, "ActionTransition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getActionTransition_EdgeActivities(), this.getEdgeActivity(), null, "edgeActivities", null, 0, -1, ActionTransition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(transitionEClass, org.muml.uppaal.trace.diagnostictrace.Transition.class, "Transition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(transitionEClass, Transition.class, "Transition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Initialize enums and add enum literals
-		initEEnum(resultEEnum, org.muml.uppaal.trace.diagnostictrace.Result.class, "Result");
-		addEEnumLiteral(resultEEnum, org.muml.uppaal.trace.diagnostictrace.Result.SUCCESS);
-		addEEnumLiteral(resultEEnum, org.muml.uppaal.trace.diagnostictrace.Result.FAILURE);
+		initEEnum(resultEEnum, Result.class, "Result");
+		addEEnumLiteral(resultEEnum, Result.SUCCESS);
+		addEEnumLiteral(resultEEnum, Result.FAILURE);
 
-		initEEnum(compareOperatorEEnum, org.muml.uppaal.trace.diagnostictrace.CompareOperator.class, "CompareOperator");
-		addEEnumLiteral(compareOperatorEEnum, org.muml.uppaal.trace.diagnostictrace.CompareOperator.EQ);
-		addEEnumLiteral(compareOperatorEEnum, org.muml.uppaal.trace.diagnostictrace.CompareOperator.LEQ);
-		addEEnumLiteral(compareOperatorEEnum, org.muml.uppaal.trace.diagnostictrace.CompareOperator.GEQ);
+		initEEnum(compareOperatorEEnum, CompareOperator.class, "CompareOperator");
+		addEEnumLiteral(compareOperatorEEnum, CompareOperator.EQ);
+		addEEnumLiteral(compareOperatorEEnum, CompareOperator.LEQ);
+		addEEnumLiteral(compareOperatorEEnum, CompareOperator.GEQ);
 
 		// Create resource
 		createResource(eNS_URI);

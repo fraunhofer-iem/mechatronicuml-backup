@@ -11,7 +11,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import org.muml.simulink.msglib.buffer.*;
 import org.muml.simulink.msglib.buffer.BufferFactory;
 import org.muml.simulink.msglib.buffer.BufferFunction;
 import org.muml.simulink.msglib.buffer.BufferPackage;

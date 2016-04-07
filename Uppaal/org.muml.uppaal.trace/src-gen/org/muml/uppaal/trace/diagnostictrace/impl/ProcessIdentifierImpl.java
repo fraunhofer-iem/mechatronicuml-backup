@@ -1,6 +1,6 @@
 /**
  */
-package org.muml.uppaal.trace.diagnosticTrace.impl;
+package org.muml.uppaal.trace.diagnostictrace.impl;
 
 import java.util.Collection;
 
@@ -12,8 +12,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EDataTypeEList;
 import org.muml.uppaal.templates.AbstractTemplate;
-import org.muml.uppaal.trace.diagnosticTrace.DiagnosticTracePackage;
-import org.muml.uppaal.trace.diagnosticTrace.ProcessIdentifier;
+import org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage;
+import org.muml.uppaal.trace.diagnostictrace.ProcessIdentifier;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,7 +29,7 @@ import org.muml.uppaal.trace.diagnosticTrace.ProcessIdentifier;
  *
  * @generated
  */
-public class ProcessIdentifierImpl extends MinimalEObjectImpl.Container implements org.muml.uppaal.trace.diagnostictrace.ProcessIdentifier {
+public class ProcessIdentifierImpl extends MinimalEObjectImpl.Container implements ProcessIdentifier {
 	/**
 	 * The cached value of the '{@link #getTemplate() <em>Template</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -66,7 +66,7 @@ public class ProcessIdentifierImpl extends MinimalEObjectImpl.Container implemen
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.Literals.PROCESS_IDENTIFIER;
+		return DiagnosticTracePackage.Literals.PROCESS_IDENTIFIER;
 	}
 
 	/**
@@ -80,7 +80,7 @@ public class ProcessIdentifierImpl extends MinimalEObjectImpl.Container implemen
 			template = (AbstractTemplate)eResolveProxy(oldTemplate);
 			if (template != oldTemplate) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.PROCESS_IDENTIFIER__TEMPLATE, oldTemplate, template));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DiagnosticTracePackage.PROCESS_IDENTIFIER__TEMPLATE, oldTemplate, template));
 			}
 		}
 		return template;
@@ -104,7 +104,7 @@ public class ProcessIdentifierImpl extends MinimalEObjectImpl.Container implemen
 		AbstractTemplate oldTemplate = template;
 		template = newTemplate;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.PROCESS_IDENTIFIER__TEMPLATE, oldTemplate, template));
+			eNotify(new ENotificationImpl(this, Notification.SET, DiagnosticTracePackage.PROCESS_IDENTIFIER__TEMPLATE, oldTemplate, template));
 	}
 
 	/**
@@ -114,7 +114,7 @@ public class ProcessIdentifierImpl extends MinimalEObjectImpl.Container implemen
 	 */
 	public EList<Integer> getArguments() {
 		if (arguments == null) {
-			arguments = new EDataTypeEList<Integer>(Integer.class, this, org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.PROCESS_IDENTIFIER__ARGUMENTS);
+			arguments = new EDataTypeEList<Integer>(Integer.class, this, DiagnosticTracePackage.PROCESS_IDENTIFIER__ARGUMENTS);
 		}
 		return arguments;
 	}
@@ -127,10 +127,10 @@ public class ProcessIdentifierImpl extends MinimalEObjectImpl.Container implemen
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.PROCESS_IDENTIFIER__TEMPLATE:
+			case DiagnosticTracePackage.PROCESS_IDENTIFIER__TEMPLATE:
 				if (resolve) return getTemplate();
 				return basicGetTemplate();
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.PROCESS_IDENTIFIER__ARGUMENTS:
+			case DiagnosticTracePackage.PROCESS_IDENTIFIER__ARGUMENTS:
 				return getArguments();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -145,10 +145,10 @@ public class ProcessIdentifierImpl extends MinimalEObjectImpl.Container implemen
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.PROCESS_IDENTIFIER__TEMPLATE:
+			case DiagnosticTracePackage.PROCESS_IDENTIFIER__TEMPLATE:
 				setTemplate((AbstractTemplate)newValue);
 				return;
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.PROCESS_IDENTIFIER__ARGUMENTS:
+			case DiagnosticTracePackage.PROCESS_IDENTIFIER__ARGUMENTS:
 				getArguments().clear();
 				getArguments().addAll((Collection<? extends Integer>)newValue);
 				return;
@@ -164,10 +164,10 @@ public class ProcessIdentifierImpl extends MinimalEObjectImpl.Container implemen
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.PROCESS_IDENTIFIER__TEMPLATE:
+			case DiagnosticTracePackage.PROCESS_IDENTIFIER__TEMPLATE:
 				setTemplate((AbstractTemplate)null);
 				return;
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.PROCESS_IDENTIFIER__ARGUMENTS:
+			case DiagnosticTracePackage.PROCESS_IDENTIFIER__ARGUMENTS:
 				getArguments().clear();
 				return;
 		}
@@ -182,9 +182,9 @@ public class ProcessIdentifierImpl extends MinimalEObjectImpl.Container implemen
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.PROCESS_IDENTIFIER__TEMPLATE:
+			case DiagnosticTracePackage.PROCESS_IDENTIFIER__TEMPLATE:
 				return template != null;
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.PROCESS_IDENTIFIER__ARGUMENTS:
+			case DiagnosticTracePackage.PROCESS_IDENTIFIER__ARGUMENTS:
 				return arguments != null && !arguments.isEmpty();
 		}
 		return super.eIsSet(featureID);

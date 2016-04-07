@@ -10,7 +10,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
 import org.muml.simulink.Element;
-import org.muml.simulink.msglib.buffer.*;
 import org.muml.simulink.msglib.buffer.BufferFunction;
 import org.muml.simulink.msglib.buffer.BufferPackage;
 import org.muml.simulink.msglib.buffer.CheckQueue;

@@ -1,6 +1,6 @@
 /**
  */
-package org.muml.uppaal.trace.diagnosticTrace.impl;
+package org.muml.uppaal.trace.diagnostictrace.impl;
 
 import java.util.Collection;
 
@@ -11,9 +11,9 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-import org.muml.uppaal.trace.diagnosticTrace.DiagnosticTracePackage;
-import org.muml.uppaal.trace.diagnosticTrace.Trace;
-import org.muml.uppaal.trace.diagnosticTrace.TraceRepository;
+import org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage;
+import org.muml.uppaal.trace.diagnostictrace.Trace;
+import org.muml.uppaal.trace.diagnostictrace.TraceRepository;
 
 /**
  * <!-- begin-user-doc -->
@@ -28,7 +28,7 @@ import org.muml.uppaal.trace.diagnosticTrace.TraceRepository;
  *
  * @generated
  */
-public class TraceRepositoryImpl extends MinimalEObjectImpl.Container implements org.muml.uppaal.trace.diagnostictrace.TraceRepository {
+public class TraceRepositoryImpl extends MinimalEObjectImpl.Container implements TraceRepository {
 	/**
 	 * The cached value of the '{@link #getTraces() <em>Traces</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -37,7 +37,7 @@ public class TraceRepositoryImpl extends MinimalEObjectImpl.Container implements
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<org.muml.uppaal.trace.diagnostictrace.Trace> traces;
+	protected EList<Trace> traces;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -55,7 +55,7 @@ public class TraceRepositoryImpl extends MinimalEObjectImpl.Container implements
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.Literals.TRACE_REPOSITORY;
+		return DiagnosticTracePackage.Literals.TRACE_REPOSITORY;
 	}
 
 	/**
@@ -63,9 +63,9 @@ public class TraceRepositoryImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<org.muml.uppaal.trace.diagnostictrace.Trace> getTraces() {
+	public EList<Trace> getTraces() {
 		if (traces == null) {
-			traces = new EObjectContainmentEList<org.muml.uppaal.trace.diagnostictrace.Trace>(org.muml.uppaal.trace.diagnostictrace.Trace.class, this, org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.TRACE_REPOSITORY__TRACES);
+			traces = new EObjectContainmentEList<Trace>(Trace.class, this, DiagnosticTracePackage.TRACE_REPOSITORY__TRACES);
 		}
 		return traces;
 	}
@@ -78,7 +78,7 @@ public class TraceRepositoryImpl extends MinimalEObjectImpl.Container implements
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.TRACE_REPOSITORY__TRACES:
+			case DiagnosticTracePackage.TRACE_REPOSITORY__TRACES:
 				return ((InternalEList<?>)getTraces()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -92,7 +92,7 @@ public class TraceRepositoryImpl extends MinimalEObjectImpl.Container implements
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.TRACE_REPOSITORY__TRACES:
+			case DiagnosticTracePackage.TRACE_REPOSITORY__TRACES:
 				return getTraces();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -107,9 +107,9 @@ public class TraceRepositoryImpl extends MinimalEObjectImpl.Container implements
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.TRACE_REPOSITORY__TRACES:
+			case DiagnosticTracePackage.TRACE_REPOSITORY__TRACES:
 				getTraces().clear();
-				getTraces().addAll((Collection<? extends org.muml.uppaal.trace.diagnostictrace.Trace>)newValue);
+				getTraces().addAll((Collection<? extends Trace>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -123,7 +123,7 @@ public class TraceRepositoryImpl extends MinimalEObjectImpl.Container implements
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.TRACE_REPOSITORY__TRACES:
+			case DiagnosticTracePackage.TRACE_REPOSITORY__TRACES:
 				getTraces().clear();
 				return;
 		}
@@ -138,7 +138,7 @@ public class TraceRepositoryImpl extends MinimalEObjectImpl.Container implements
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.TRACE_REPOSITORY__TRACES:
+			case DiagnosticTracePackage.TRACE_REPOSITORY__TRACES:
 				return traces != null && !traces.isEmpty();
 		}
 		return super.eIsSet(featureID);

@@ -1,6 +1,6 @@
 /**
  */
-package org.muml.uppaal.trace.diagnosticTrace;
+package org.muml.uppaal.trace.diagnostictrace;
 
 import java.util.Arrays;
 import java.util.Collections;

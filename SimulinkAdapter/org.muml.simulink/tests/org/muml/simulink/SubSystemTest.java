@@ -1,4 +1,4 @@
-package de.uni_paderborn.fujaba.simulink.model;
+package org.muml.simulink;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
@@ -6,15 +6,7 @@ import static org.junit.Assert.fail;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.muml.simulink.Block;
-import org.muml.simulink.InPortBlock;
-import org.muml.simulink.MiscBlock;
-import org.muml.simulink.OutPortBlock;
-import org.muml.simulink.SimulinkFactory;
-import org.muml.simulink.SimulinkModel;
-import org.muml.simulink.SubSystem;
-
-import de.uni_paderborn.fujaba.simulink.model.test.TestBase;
+import org.muml.simulink.test.TestBase;
 
 public class SubSystemTest extends TestBase
 {

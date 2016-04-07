@@ -1,6 +1,6 @@
 /**
  */
-package org.muml.uppaal.trace.diagnosticTrace.impl;
+package org.muml.uppaal.trace.diagnostictrace.impl;
 
 import java.util.Collection;
 
@@ -12,8 +12,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EDataTypeEList;
 import org.muml.uppaal.core.NamedElement;
-import org.muml.uppaal.trace.diagnosticTrace.DiagnosticTracePackage;
-import org.muml.uppaal.trace.diagnosticTrace.SingleNamedElementReference;
+import org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage;
+import org.muml.uppaal.trace.diagnostictrace.SingleNamedElementReference;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,7 +29,7 @@ import org.muml.uppaal.trace.diagnosticTrace.SingleNamedElementReference;
  *
  * @generated
  */
-public class SingleNamedElementReferenceImpl extends MinimalEObjectImpl.Container implements org.muml.uppaal.trace.diagnostictrace.SingleNamedElementReference {
+public class SingleNamedElementReferenceImpl extends MinimalEObjectImpl.Container implements SingleNamedElementReference {
 	/**
 	 * The cached value of the '{@link #getNamedElement() <em>Named Element</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -66,7 +66,7 @@ public class SingleNamedElementReferenceImpl extends MinimalEObjectImpl.Containe
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.Literals.SINGLE_NAMED_ELEMENT_REFERENCE;
+		return DiagnosticTracePackage.Literals.SINGLE_NAMED_ELEMENT_REFERENCE;
 	}
 
 	/**
@@ -80,7 +80,7 @@ public class SingleNamedElementReferenceImpl extends MinimalEObjectImpl.Containe
 			namedElement = (NamedElement)eResolveProxy(oldNamedElement);
 			if (namedElement != oldNamedElement) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.SINGLE_NAMED_ELEMENT_REFERENCE__NAMED_ELEMENT, oldNamedElement, namedElement));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DiagnosticTracePackage.SINGLE_NAMED_ELEMENT_REFERENCE__NAMED_ELEMENT, oldNamedElement, namedElement));
 			}
 		}
 		return namedElement;
@@ -104,7 +104,7 @@ public class SingleNamedElementReferenceImpl extends MinimalEObjectImpl.Containe
 		NamedElement oldNamedElement = namedElement;
 		namedElement = newNamedElement;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.SINGLE_NAMED_ELEMENT_REFERENCE__NAMED_ELEMENT, oldNamedElement, namedElement));
+			eNotify(new ENotificationImpl(this, Notification.SET, DiagnosticTracePackage.SINGLE_NAMED_ELEMENT_REFERENCE__NAMED_ELEMENT, oldNamedElement, namedElement));
 	}
 
 	/**
@@ -114,7 +114,7 @@ public class SingleNamedElementReferenceImpl extends MinimalEObjectImpl.Containe
 	 */
 	public EList<Integer> getIndexes() {
 		if (indexes == null) {
-			indexes = new EDataTypeEList<Integer>(Integer.class, this, org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.SINGLE_NAMED_ELEMENT_REFERENCE__INDEXES);
+			indexes = new EDataTypeEList<Integer>(Integer.class, this, DiagnosticTracePackage.SINGLE_NAMED_ELEMENT_REFERENCE__INDEXES);
 		}
 		return indexes;
 	}
@@ -127,10 +127,10 @@ public class SingleNamedElementReferenceImpl extends MinimalEObjectImpl.Containe
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.SINGLE_NAMED_ELEMENT_REFERENCE__NAMED_ELEMENT:
+			case DiagnosticTracePackage.SINGLE_NAMED_ELEMENT_REFERENCE__NAMED_ELEMENT:
 				if (resolve) return getNamedElement();
 				return basicGetNamedElement();
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.SINGLE_NAMED_ELEMENT_REFERENCE__INDEXES:
+			case DiagnosticTracePackage.SINGLE_NAMED_ELEMENT_REFERENCE__INDEXES:
 				return getIndexes();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -145,10 +145,10 @@ public class SingleNamedElementReferenceImpl extends MinimalEObjectImpl.Containe
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.SINGLE_NAMED_ELEMENT_REFERENCE__NAMED_ELEMENT:
+			case DiagnosticTracePackage.SINGLE_NAMED_ELEMENT_REFERENCE__NAMED_ELEMENT:
 				setNamedElement((NamedElement)newValue);
 				return;
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.SINGLE_NAMED_ELEMENT_REFERENCE__INDEXES:
+			case DiagnosticTracePackage.SINGLE_NAMED_ELEMENT_REFERENCE__INDEXES:
 				getIndexes().clear();
 				getIndexes().addAll((Collection<? extends Integer>)newValue);
 				return;
@@ -164,10 +164,10 @@ public class SingleNamedElementReferenceImpl extends MinimalEObjectImpl.Containe
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.SINGLE_NAMED_ELEMENT_REFERENCE__NAMED_ELEMENT:
+			case DiagnosticTracePackage.SINGLE_NAMED_ELEMENT_REFERENCE__NAMED_ELEMENT:
 				setNamedElement((NamedElement)null);
 				return;
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.SINGLE_NAMED_ELEMENT_REFERENCE__INDEXES:
+			case DiagnosticTracePackage.SINGLE_NAMED_ELEMENT_REFERENCE__INDEXES:
 				getIndexes().clear();
 				return;
 		}
@@ -182,9 +182,9 @@ public class SingleNamedElementReferenceImpl extends MinimalEObjectImpl.Containe
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.SINGLE_NAMED_ELEMENT_REFERENCE__NAMED_ELEMENT:
+			case DiagnosticTracePackage.SINGLE_NAMED_ELEMENT_REFERENCE__NAMED_ELEMENT:
 				return namedElement != null;
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.SINGLE_NAMED_ELEMENT_REFERENCE__INDEXES:
+			case DiagnosticTracePackage.SINGLE_NAMED_ELEMENT_REFERENCE__INDEXES:
 				return indexes != null && !indexes.isEmpty();
 		}
 		return super.eIsSet(featureID);

@@ -1,10 +1,10 @@
 /**
  */
-package org.muml.uppaal.trace.diagnosticTrace.impl;
+package org.muml.uppaal.trace.diagnostictrace.impl;
 
 import org.eclipse.emf.ecore.EClass;
-import org.muml.uppaal.trace.diagnosticTrace.DiagnosticTracePackage;
-import org.muml.uppaal.trace.diagnosticTrace.Transition;
+import org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage;
+import org.muml.uppaal.trace.diagnostictrace.Transition;
 
 /**
  * <!-- begin-user-doc -->
@@ -13,7 +13,7 @@ import org.muml.uppaal.trace.diagnosticTrace.Transition;
  *
  * @generated
  */
-public class TransitionImpl extends TraceItemImpl implements org.muml.uppaal.trace.diagnostictrace.Transition {
+public class TransitionImpl extends TraceItemImpl implements Transition {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -30,7 +30,7 @@ public class TransitionImpl extends TraceItemImpl implements org.muml.uppaal.tra
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.Literals.TRANSITION;
+		return DiagnosticTracePackage.Literals.TRANSITION;
 	}
 
 } //TransitionImpl

@@ -1,12 +1,9 @@
-package de.uni_paderborn.fujaba.simulink.model;
+package org.muml.simulink;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.muml.simulink.Bus;
-import org.muml.simulink.SimulinkFactory;
-
-import de.uni_paderborn.fujaba.simulink.model.test.TestBase;
+import org.muml.simulink.test.TestBase;
 
 public class BusTest extends TestBase
 {

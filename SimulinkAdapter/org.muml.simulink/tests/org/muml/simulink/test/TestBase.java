@@ -1,4 +1,4 @@
-package de.uni_paderborn.fujaba.simulink.model.test;
+package org.muml.simulink.test;
 
 import static org.junit.Assert.fail;
 

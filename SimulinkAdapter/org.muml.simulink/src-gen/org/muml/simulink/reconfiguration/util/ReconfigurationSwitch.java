@@ -7,7 +7,6 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
 import org.muml.simulink.Block;
 import org.muml.simulink.Element;
-import org.muml.simulink.reconfiguration.*;
 import org.muml.simulink.reconfiguration.FadingComponent;
 import org.muml.simulink.reconfiguration.MultiSourceControl;
 import org.muml.simulink.reconfiguration.MultiTargetControl;

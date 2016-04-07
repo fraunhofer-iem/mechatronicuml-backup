@@ -1,12 +1,12 @@
 /**
  */
-package org.muml.uppaal.trace.diagnosticTrace.impl;
+package org.muml.uppaal.trace.diagnostictrace.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.muml.uppaal.trace.diagnosticTrace.DelayTransition;
-import org.muml.uppaal.trace.diagnosticTrace.DiagnosticTracePackage;
+import org.muml.uppaal.trace.diagnostictrace.DelayTransition;
+import org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,7 +21,7 @@ import org.muml.uppaal.trace.diagnosticTrace.DiagnosticTracePackage;
  *
  * @generated
  */
-public class DelayTransitionImpl extends TransitionImpl implements org.muml.uppaal.trace.diagnostictrace.DelayTransition {
+public class DelayTransitionImpl extends TransitionImpl implements DelayTransition {
 	/**
 	 * The default value of the '{@link #getDuration() <em>Duration</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -58,7 +58,7 @@ public class DelayTransitionImpl extends TransitionImpl implements org.muml.uppa
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.Literals.DELAY_TRANSITION;
+		return DiagnosticTracePackage.Literals.DELAY_TRANSITION;
 	}
 
 	/**
@@ -79,7 +79,7 @@ public class DelayTransitionImpl extends TransitionImpl implements org.muml.uppa
 		int oldDuration = duration;
 		duration = newDuration;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.DELAY_TRANSITION__DURATION, oldDuration, duration));
+			eNotify(new ENotificationImpl(this, Notification.SET, DiagnosticTracePackage.DELAY_TRANSITION__DURATION, oldDuration, duration));
 	}
 
 	/**
@@ -90,7 +90,7 @@ public class DelayTransitionImpl extends TransitionImpl implements org.muml.uppa
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.DELAY_TRANSITION__DURATION:
+			case DiagnosticTracePackage.DELAY_TRANSITION__DURATION:
 				return getDuration();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -104,7 +104,7 @@ public class DelayTransitionImpl extends TransitionImpl implements org.muml.uppa
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.DELAY_TRANSITION__DURATION:
+			case DiagnosticTracePackage.DELAY_TRANSITION__DURATION:
 				setDuration((Integer)newValue);
 				return;
 		}
@@ -119,7 +119,7 @@ public class DelayTransitionImpl extends TransitionImpl implements org.muml.uppa
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.DELAY_TRANSITION__DURATION:
+			case DiagnosticTracePackage.DELAY_TRANSITION__DURATION:
 				setDuration(DURATION_EDEFAULT);
 				return;
 		}
@@ -134,7 +134,7 @@ public class DelayTransitionImpl extends TransitionImpl implements org.muml.uppa
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.DELAY_TRANSITION__DURATION:
+			case DiagnosticTracePackage.DELAY_TRANSITION__DURATION:
 				return duration != DURATION_EDEFAULT;
 		}
 		return super.eIsSet(featureID);

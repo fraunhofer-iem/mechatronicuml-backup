@@ -1,10 +1,7 @@
-package de.uni_paderborn.fujaba.simulink.model;
+package org.muml.simulink;
 
 import org.junit.Test;
-import org.muml.simulink.DigitalClock;
-import org.muml.simulink.SimulinkFactory;
-
-import de.uni_paderborn.fujaba.simulink.model.test.TestBase;
+import org.muml.simulink.test.TestBase;
 
 public class DigitalClockTest extends TestBase {
 	

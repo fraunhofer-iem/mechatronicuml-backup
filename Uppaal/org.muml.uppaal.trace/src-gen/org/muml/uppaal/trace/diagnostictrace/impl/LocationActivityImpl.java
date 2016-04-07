@@ -1,6 +1,6 @@
 /**
  */
-package org.muml.uppaal.trace.diagnosticTrace.impl;
+package org.muml.uppaal.trace.diagnostictrace.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -9,9 +9,9 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.muml.uppaal.templates.Location;
-import org.muml.uppaal.trace.diagnosticTrace.DiagnosticTracePackage;
-import org.muml.uppaal.trace.diagnosticTrace.LocationActivity;
-import org.muml.uppaal.trace.diagnosticTrace.ProcessIdentifier;
+import org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage;
+import org.muml.uppaal.trace.diagnostictrace.LocationActivity;
+import org.muml.uppaal.trace.diagnostictrace.ProcessIdentifier;
 
 /**
  * <!-- begin-user-doc -->
@@ -27,7 +27,7 @@ import org.muml.uppaal.trace.diagnosticTrace.ProcessIdentifier;
  *
  * @generated
  */
-public class LocationActivityImpl extends MinimalEObjectImpl.Container implements org.muml.uppaal.trace.diagnostictrace.LocationActivity {
+public class LocationActivityImpl extends MinimalEObjectImpl.Container implements LocationActivity {
 	/**
 	 * The cached value of the '{@link #getProcess() <em>Process</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -36,7 +36,7 @@ public class LocationActivityImpl extends MinimalEObjectImpl.Container implement
 	 * @generated
 	 * @ordered
 	 */
-	protected org.muml.uppaal.trace.diagnostictrace.ProcessIdentifier process;
+	protected ProcessIdentifier process;
 
 	/**
 	 * The cached value of the '{@link #getLocation() <em>Location</em>}' reference.
@@ -64,7 +64,7 @@ public class LocationActivityImpl extends MinimalEObjectImpl.Container implement
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.Literals.LOCATION_ACTIVITY;
+		return DiagnosticTracePackage.Literals.LOCATION_ACTIVITY;
 	}
 
 	/**
@@ -72,7 +72,7 @@ public class LocationActivityImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public org.muml.uppaal.trace.diagnostictrace.ProcessIdentifier getProcess() {
+	public ProcessIdentifier getProcess() {
 		return process;
 	}
 
@@ -81,11 +81,11 @@ public class LocationActivityImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetProcess(org.muml.uppaal.trace.diagnostictrace.ProcessIdentifier newProcess, NotificationChain msgs) {
-		org.muml.uppaal.trace.diagnostictrace.ProcessIdentifier oldProcess = process;
+	public NotificationChain basicSetProcess(ProcessIdentifier newProcess, NotificationChain msgs) {
+		ProcessIdentifier oldProcess = process;
 		process = newProcess;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.LOCATION_ACTIVITY__PROCESS, oldProcess, newProcess);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DiagnosticTracePackage.LOCATION_ACTIVITY__PROCESS, oldProcess, newProcess);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -96,18 +96,18 @@ public class LocationActivityImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setProcess(org.muml.uppaal.trace.diagnostictrace.ProcessIdentifier newProcess) {
+	public void setProcess(ProcessIdentifier newProcess) {
 		if (newProcess != process) {
 			NotificationChain msgs = null;
 			if (process != null)
-				msgs = ((InternalEObject)process).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.LOCATION_ACTIVITY__PROCESS, null, msgs);
+				msgs = ((InternalEObject)process).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DiagnosticTracePackage.LOCATION_ACTIVITY__PROCESS, null, msgs);
 			if (newProcess != null)
-				msgs = ((InternalEObject)newProcess).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.LOCATION_ACTIVITY__PROCESS, null, msgs);
+				msgs = ((InternalEObject)newProcess).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DiagnosticTracePackage.LOCATION_ACTIVITY__PROCESS, null, msgs);
 			msgs = basicSetProcess(newProcess, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.LOCATION_ACTIVITY__PROCESS, newProcess, newProcess));
+			eNotify(new ENotificationImpl(this, Notification.SET, DiagnosticTracePackage.LOCATION_ACTIVITY__PROCESS, newProcess, newProcess));
 	}
 
 	/**
@@ -121,7 +121,7 @@ public class LocationActivityImpl extends MinimalEObjectImpl.Container implement
 			location = (Location)eResolveProxy(oldLocation);
 			if (location != oldLocation) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.LOCATION_ACTIVITY__LOCATION, oldLocation, location));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DiagnosticTracePackage.LOCATION_ACTIVITY__LOCATION, oldLocation, location));
 			}
 		}
 		return location;
@@ -145,7 +145,7 @@ public class LocationActivityImpl extends MinimalEObjectImpl.Container implement
 		Location oldLocation = location;
 		location = newLocation;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.LOCATION_ACTIVITY__LOCATION, oldLocation, location));
+			eNotify(new ENotificationImpl(this, Notification.SET, DiagnosticTracePackage.LOCATION_ACTIVITY__LOCATION, oldLocation, location));
 	}
 
 	/**
@@ -156,7 +156,7 @@ public class LocationActivityImpl extends MinimalEObjectImpl.Container implement
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.LOCATION_ACTIVITY__PROCESS:
+			case DiagnosticTracePackage.LOCATION_ACTIVITY__PROCESS:
 				return basicSetProcess(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -170,9 +170,9 @@ public class LocationActivityImpl extends MinimalEObjectImpl.Container implement
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.LOCATION_ACTIVITY__PROCESS:
+			case DiagnosticTracePackage.LOCATION_ACTIVITY__PROCESS:
 				return getProcess();
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.LOCATION_ACTIVITY__LOCATION:
+			case DiagnosticTracePackage.LOCATION_ACTIVITY__LOCATION:
 				if (resolve) return getLocation();
 				return basicGetLocation();
 		}
@@ -187,10 +187,10 @@ public class LocationActivityImpl extends MinimalEObjectImpl.Container implement
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.LOCATION_ACTIVITY__PROCESS:
-				setProcess((org.muml.uppaal.trace.diagnostictrace.ProcessIdentifier)newValue);
+			case DiagnosticTracePackage.LOCATION_ACTIVITY__PROCESS:
+				setProcess((ProcessIdentifier)newValue);
 				return;
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.LOCATION_ACTIVITY__LOCATION:
+			case DiagnosticTracePackage.LOCATION_ACTIVITY__LOCATION:
 				setLocation((Location)newValue);
 				return;
 		}
@@ -205,10 +205,10 @@ public class LocationActivityImpl extends MinimalEObjectImpl.Container implement
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.LOCATION_ACTIVITY__PROCESS:
-				setProcess((org.muml.uppaal.trace.diagnostictrace.ProcessIdentifier)null);
+			case DiagnosticTracePackage.LOCATION_ACTIVITY__PROCESS:
+				setProcess((ProcessIdentifier)null);
 				return;
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.LOCATION_ACTIVITY__LOCATION:
+			case DiagnosticTracePackage.LOCATION_ACTIVITY__LOCATION:
 				setLocation((Location)null);
 				return;
 		}
@@ -223,9 +223,9 @@ public class LocationActivityImpl extends MinimalEObjectImpl.Container implement
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.LOCATION_ACTIVITY__PROCESS:
+			case DiagnosticTracePackage.LOCATION_ACTIVITY__PROCESS:
 				return process != null;
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.LOCATION_ACTIVITY__LOCATION:
+			case DiagnosticTracePackage.LOCATION_ACTIVITY__LOCATION:
 				return location != null;
 		}
 		return super.eIsSet(featureID);

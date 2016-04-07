@@ -1,27 +1,11 @@
 /**
  */
-package org.muml.uppaal.trace.diagnosticTrace.util;
+package org.muml.uppaal.trace.diagnostictrace.util;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
-import org.muml.uppaal.trace.diagnosticTrace.ActionTransition;
-import org.muml.uppaal.trace.diagnosticTrace.ChannelSynchronization;
-import org.muml.uppaal.trace.diagnosticTrace.DelayTransition;
-import org.muml.uppaal.trace.diagnosticTrace.DiagnosticTracePackage;
-import org.muml.uppaal.trace.diagnosticTrace.EdgeActivity;
-import org.muml.uppaal.trace.diagnosticTrace.LocationActivity;
-import org.muml.uppaal.trace.diagnosticTrace.NamedElementReference;
-import org.muml.uppaal.trace.diagnosticTrace.ProcessIdentifier;
-import org.muml.uppaal.trace.diagnosticTrace.SingleNamedElementReference;
-import org.muml.uppaal.trace.diagnosticTrace.State;
-import org.muml.uppaal.trace.diagnosticTrace.Synchronization;
-import org.muml.uppaal.trace.diagnosticTrace.Trace;
-import org.muml.uppaal.trace.diagnosticTrace.TraceItem;
-import org.muml.uppaal.trace.diagnosticTrace.TraceRepository;
-import org.muml.uppaal.trace.diagnosticTrace.Transition;
-import org.muml.uppaal.trace.diagnosticTrace.VariableValue;
 import org.muml.uppaal.trace.diagnostictrace.*;
 
 /**
@@ -39,7 +23,7 @@ public class DiagnosticTraceAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage modelPackage;
+	protected static DiagnosticTracePackage modelPackage;
 
 	/**
 	 * Creates an instance of the adapter factory.
@@ -49,7 +33,7 @@ public class DiagnosticTraceAdapterFactory extends AdapterFactoryImpl {
 	 */
 	public DiagnosticTraceAdapterFactory() {
 		if (modelPackage == null) {
-			modelPackage = org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.eINSTANCE;
+			modelPackage = DiagnosticTracePackage.eINSTANCE;
 		}
 	}
 
@@ -81,63 +65,63 @@ public class DiagnosticTraceAdapterFactory extends AdapterFactoryImpl {
 	protected DiagnosticTraceSwitch<Adapter> modelSwitch =
 		new DiagnosticTraceSwitch<Adapter>() {
 			@Override
-			public Adapter caseTraceRepository(org.muml.uppaal.trace.diagnostictrace.TraceRepository object) {
+			public Adapter caseTraceRepository(TraceRepository object) {
 				return createTraceRepositoryAdapter();
 			}
 			@Override
-			public Adapter caseTrace(org.muml.uppaal.trace.diagnostictrace.Trace object) {
+			public Adapter caseTrace(Trace object) {
 				return createTraceAdapter();
 			}
 			@Override
-			public Adapter caseProcessIdentifier(org.muml.uppaal.trace.diagnostictrace.ProcessIdentifier object) {
+			public Adapter caseProcessIdentifier(ProcessIdentifier object) {
 				return createProcessIdentifierAdapter();
 			}
 			@Override
-			public Adapter caseLocationActivity(org.muml.uppaal.trace.diagnostictrace.LocationActivity object) {
+			public Adapter caseLocationActivity(LocationActivity object) {
 				return createLocationActivityAdapter();
 			}
 			@Override
-			public Adapter caseVariableValue(org.muml.uppaal.trace.diagnostictrace.VariableValue object) {
+			public Adapter caseVariableValue(VariableValue object) {
 				return createVariableValueAdapter();
 			}
 			@Override
-			public Adapter caseSingleNamedElementReference(org.muml.uppaal.trace.diagnostictrace.SingleNamedElementReference object) {
+			public Adapter caseSingleNamedElementReference(SingleNamedElementReference object) {
 				return createSingleNamedElementReferenceAdapter();
 			}
 			@Override
-			public Adapter caseNamedElementReference(org.muml.uppaal.trace.diagnostictrace.NamedElementReference object) {
+			public Adapter caseNamedElementReference(NamedElementReference object) {
 				return createNamedElementReferenceAdapter();
 			}
 			@Override
-			public Adapter caseTraceItem(org.muml.uppaal.trace.diagnostictrace.TraceItem object) {
+			public Adapter caseTraceItem(TraceItem object) {
 				return createTraceItemAdapter();
 			}
 			@Override
-			public Adapter caseState(org.muml.uppaal.trace.diagnostictrace.State object) {
+			public Adapter caseState(State object) {
 				return createStateAdapter();
 			}
 			@Override
-			public Adapter caseEdgeActivity(org.muml.uppaal.trace.diagnostictrace.EdgeActivity object) {
+			public Adapter caseEdgeActivity(EdgeActivity object) {
 				return createEdgeActivityAdapter();
 			}
 			@Override
-			public Adapter caseSynchronization(org.muml.uppaal.trace.diagnostictrace.Synchronization object) {
+			public Adapter caseSynchronization(Synchronization object) {
 				return createSynchronizationAdapter();
 			}
 			@Override
-			public Adapter caseChannelSynchronization(org.muml.uppaal.trace.diagnostictrace.ChannelSynchronization object) {
+			public Adapter caseChannelSynchronization(ChannelSynchronization object) {
 				return createChannelSynchronizationAdapter();
 			}
 			@Override
-			public Adapter caseDelayTransition(org.muml.uppaal.trace.diagnostictrace.DelayTransition object) {
+			public Adapter caseDelayTransition(DelayTransition object) {
 				return createDelayTransitionAdapter();
 			}
 			@Override
-			public Adapter caseActionTransition(org.muml.uppaal.trace.diagnostictrace.ActionTransition object) {
+			public Adapter caseActionTransition(ActionTransition object) {
 				return createActionTransitionAdapter();
 			}
 			@Override
-			public Adapter caseTransition(org.muml.uppaal.trace.diagnostictrace.Transition object) {
+			public Adapter caseTransition(Transition object) {
 				return createTransitionAdapter();
 			}
 			@Override

@@ -14,7 +14,6 @@ import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.EObjectValidator;
-import org.muml.simulink.*;
 import org.muml.simulink.Block;
 import org.muml.simulink.Bus;
 import org.muml.simulink.BusCreator;

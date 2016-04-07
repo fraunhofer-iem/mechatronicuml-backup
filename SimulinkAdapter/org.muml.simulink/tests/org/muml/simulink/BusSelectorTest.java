@@ -1,14 +1,9 @@
-package de.uni_paderborn.fujaba.simulink.model;
+package org.muml.simulink;
 
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
-import org.muml.simulink.Bus;
-import org.muml.simulink.BusSelector;
-import org.muml.simulink.Line;
-import org.muml.simulink.SimulinkFactory;
-
-import de.uni_paderborn.fujaba.simulink.model.test.TestBase;
+import org.muml.simulink.test.TestBase;
 
 public class BusSelectorTest extends TestBase 
 {

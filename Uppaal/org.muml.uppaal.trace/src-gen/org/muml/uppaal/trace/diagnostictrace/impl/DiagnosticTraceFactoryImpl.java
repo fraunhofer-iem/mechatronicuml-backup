@@ -1,6 +1,6 @@
 /**
  */
-package org.muml.uppaal.trace.diagnosticTrace.impl;
+package org.muml.uppaal.trace.diagnostictrace.impl;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
@@ -8,26 +8,8 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import org.muml.uppaal.trace.diagnosticTrace.ActionTransition;
-import org.muml.uppaal.trace.diagnosticTrace.ChannelSynchronization;
-import org.muml.uppaal.trace.diagnosticTrace.CompareOperator;
-import org.muml.uppaal.trace.diagnosticTrace.DelayTransition;
-import org.muml.uppaal.trace.diagnosticTrace.DiagnosticTraceFactory;
-import org.muml.uppaal.trace.diagnosticTrace.DiagnosticTracePackage;
-import org.muml.uppaal.trace.diagnosticTrace.EdgeActivity;
-import org.muml.uppaal.trace.diagnosticTrace.LocationActivity;
-import org.muml.uppaal.trace.diagnosticTrace.NamedElementReference;
-import org.muml.uppaal.trace.diagnosticTrace.ProcessIdentifier;
-import org.muml.uppaal.trace.diagnosticTrace.Result;
-import org.muml.uppaal.trace.diagnosticTrace.SingleNamedElementReference;
-import org.muml.uppaal.trace.diagnosticTrace.State;
-import org.muml.uppaal.trace.diagnosticTrace.Synchronization;
-import org.muml.uppaal.trace.diagnosticTrace.Trace;
-import org.muml.uppaal.trace.diagnosticTrace.TraceItem;
-import org.muml.uppaal.trace.diagnosticTrace.TraceRepository;
-import org.muml.uppaal.trace.diagnosticTrace.Transition;
-import org.muml.uppaal.trace.diagnosticTrace.VariableValue;
 import org.muml.uppaal.trace.diagnostictrace.*;
+import org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -35,16 +17,16 @@ import org.muml.uppaal.trace.diagnostictrace.*;
  * <!-- end-user-doc -->
  * @generated
  */
-public class DiagnosticTraceFactoryImpl extends EFactoryImpl implements org.muml.uppaal.trace.diagnostictrace.DiagnosticTraceFactory {
+public class DiagnosticTraceFactoryImpl extends EFactoryImpl implements DiagnosticTraceFactory {
 	/**
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static org.muml.uppaal.trace.diagnostictrace.DiagnosticTraceFactory init() {
+	public static DiagnosticTraceFactory init() {
 		try {
-			org.muml.uppaal.trace.diagnostictrace.DiagnosticTraceFactory theDiagnosticTraceFactory = (org.muml.uppaal.trace.diagnostictrace.DiagnosticTraceFactory)EPackage.Registry.INSTANCE.getEFactory(DiagnosticTracePackage.eNS_URI);
+			DiagnosticTraceFactory theDiagnosticTraceFactory = (DiagnosticTraceFactory)EPackage.Registry.INSTANCE.getEFactory(DiagnosticTracePackage.eNS_URI);
 			if (theDiagnosticTraceFactory != null) {
 				return theDiagnosticTraceFactory;
 			}
@@ -73,21 +55,21 @@ public class DiagnosticTraceFactoryImpl extends EFactoryImpl implements org.muml
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.TRACE_REPOSITORY: return createTraceRepository();
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.TRACE: return createTrace();
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.PROCESS_IDENTIFIER: return createProcessIdentifier();
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.LOCATION_ACTIVITY: return createLocationActivity();
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.VARIABLE_VALUE: return createVariableValue();
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.SINGLE_NAMED_ELEMENT_REFERENCE: return createSingleNamedElementReference();
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.NAMED_ELEMENT_REFERENCE: return createNamedElementReference();
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.TRACE_ITEM: return createTraceItem();
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.STATE: return createState();
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.EDGE_ACTIVITY: return createEdgeActivity();
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.SYNCHRONIZATION: return createSynchronization();
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.CHANNEL_SYNCHRONIZATION: return createChannelSynchronization();
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.DELAY_TRANSITION: return createDelayTransition();
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.ACTION_TRANSITION: return createActionTransition();
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.TRANSITION: return createTransition();
+			case DiagnosticTracePackage.TRACE_REPOSITORY: return createTraceRepository();
+			case DiagnosticTracePackage.TRACE: return createTrace();
+			case DiagnosticTracePackage.PROCESS_IDENTIFIER: return createProcessIdentifier();
+			case DiagnosticTracePackage.LOCATION_ACTIVITY: return createLocationActivity();
+			case DiagnosticTracePackage.VARIABLE_VALUE: return createVariableValue();
+			case DiagnosticTracePackage.SINGLE_NAMED_ELEMENT_REFERENCE: return createSingleNamedElementReference();
+			case DiagnosticTracePackage.NAMED_ELEMENT_REFERENCE: return createNamedElementReference();
+			case DiagnosticTracePackage.TRACE_ITEM: return createTraceItem();
+			case DiagnosticTracePackage.STATE: return createState();
+			case DiagnosticTracePackage.EDGE_ACTIVITY: return createEdgeActivity();
+			case DiagnosticTracePackage.SYNCHRONIZATION: return createSynchronization();
+			case DiagnosticTracePackage.CHANNEL_SYNCHRONIZATION: return createChannelSynchronization();
+			case DiagnosticTracePackage.DELAY_TRANSITION: return createDelayTransition();
+			case DiagnosticTracePackage.ACTION_TRANSITION: return createActionTransition();
+			case DiagnosticTracePackage.TRANSITION: return createTransition();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -101,9 +83,9 @@ public class DiagnosticTraceFactoryImpl extends EFactoryImpl implements org.muml
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.RESULT:
+			case DiagnosticTracePackage.RESULT:
 				return createResultFromString(eDataType, initialValue);
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.COMPARE_OPERATOR:
+			case DiagnosticTracePackage.COMPARE_OPERATOR:
 				return createCompareOperatorFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
@@ -118,9 +100,9 @@ public class DiagnosticTraceFactoryImpl extends EFactoryImpl implements org.muml
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.RESULT:
+			case DiagnosticTracePackage.RESULT:
 				return convertResultToString(eDataType, instanceValue);
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.COMPARE_OPERATOR:
+			case DiagnosticTracePackage.COMPARE_OPERATOR:
 				return convertCompareOperatorToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
@@ -132,7 +114,7 @@ public class DiagnosticTraceFactoryImpl extends EFactoryImpl implements org.muml
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public org.muml.uppaal.trace.diagnostictrace.TraceRepository createTraceRepository() {
+	public TraceRepository createTraceRepository() {
 		TraceRepositoryImpl traceRepository = new TraceRepositoryImpl();
 		return traceRepository;
 	}
@@ -142,7 +124,7 @@ public class DiagnosticTraceFactoryImpl extends EFactoryImpl implements org.muml
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public org.muml.uppaal.trace.diagnostictrace.Trace createTrace() {
+	public Trace createTrace() {
 		TraceImpl trace = new TraceImpl();
 		return trace;
 	}
@@ -152,7 +134,7 @@ public class DiagnosticTraceFactoryImpl extends EFactoryImpl implements org.muml
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public org.muml.uppaal.trace.diagnostictrace.ProcessIdentifier createProcessIdentifier() {
+	public ProcessIdentifier createProcessIdentifier() {
 		ProcessIdentifierImpl processIdentifier = new ProcessIdentifierImpl();
 		return processIdentifier;
 	}
@@ -162,7 +144,7 @@ public class DiagnosticTraceFactoryImpl extends EFactoryImpl implements org.muml
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public org.muml.uppaal.trace.diagnostictrace.LocationActivity createLocationActivity() {
+	public LocationActivity createLocationActivity() {
 		LocationActivityImpl locationActivity = new LocationActivityImpl();
 		return locationActivity;
 	}
@@ -172,7 +154,7 @@ public class DiagnosticTraceFactoryImpl extends EFactoryImpl implements org.muml
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public org.muml.uppaal.trace.diagnostictrace.VariableValue createVariableValue() {
+	public VariableValue createVariableValue() {
 		VariableValueImpl variableValue = new VariableValueImpl();
 		return variableValue;
 	}
@@ -182,7 +164,7 @@ public class DiagnosticTraceFactoryImpl extends EFactoryImpl implements org.muml
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public org.muml.uppaal.trace.diagnostictrace.SingleNamedElementReference createSingleNamedElementReference() {
+	public SingleNamedElementReference createSingleNamedElementReference() {
 		SingleNamedElementReferenceImpl singleNamedElementReference = new SingleNamedElementReferenceImpl();
 		return singleNamedElementReference;
 	}
@@ -192,7 +174,7 @@ public class DiagnosticTraceFactoryImpl extends EFactoryImpl implements org.muml
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public org.muml.uppaal.trace.diagnostictrace.NamedElementReference createNamedElementReference() {
+	public NamedElementReference createNamedElementReference() {
 		NamedElementReferenceImpl namedElementReference = new NamedElementReferenceImpl();
 		return namedElementReference;
 	}
@@ -202,7 +184,7 @@ public class DiagnosticTraceFactoryImpl extends EFactoryImpl implements org.muml
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public org.muml.uppaal.trace.diagnostictrace.TraceItem createTraceItem() {
+	public TraceItem createTraceItem() {
 		TraceItemImpl traceItem = new TraceItemImpl();
 		return traceItem;
 	}
@@ -212,7 +194,7 @@ public class DiagnosticTraceFactoryImpl extends EFactoryImpl implements org.muml
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public org.muml.uppaal.trace.diagnostictrace.State createState() {
+	public State createState() {
 		StateImpl state = new StateImpl();
 		return state;
 	}
@@ -222,7 +204,7 @@ public class DiagnosticTraceFactoryImpl extends EFactoryImpl implements org.muml
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public org.muml.uppaal.trace.diagnostictrace.EdgeActivity createEdgeActivity() {
+	public EdgeActivity createEdgeActivity() {
 		EdgeActivityImpl edgeActivity = new EdgeActivityImpl();
 		return edgeActivity;
 	}
@@ -232,7 +214,7 @@ public class DiagnosticTraceFactoryImpl extends EFactoryImpl implements org.muml
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public org.muml.uppaal.trace.diagnostictrace.Synchronization createSynchronization() {
+	public Synchronization createSynchronization() {
 		SynchronizationImpl synchronization = new SynchronizationImpl();
 		return synchronization;
 	}
@@ -242,7 +224,7 @@ public class DiagnosticTraceFactoryImpl extends EFactoryImpl implements org.muml
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public org.muml.uppaal.trace.diagnostictrace.ChannelSynchronization createChannelSynchronization() {
+	public ChannelSynchronization createChannelSynchronization() {
 		ChannelSynchronizationImpl channelSynchronization = new ChannelSynchronizationImpl();
 		return channelSynchronization;
 	}
@@ -252,7 +234,7 @@ public class DiagnosticTraceFactoryImpl extends EFactoryImpl implements org.muml
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public org.muml.uppaal.trace.diagnostictrace.DelayTransition createDelayTransition() {
+	public DelayTransition createDelayTransition() {
 		DelayTransitionImpl delayTransition = new DelayTransitionImpl();
 		return delayTransition;
 	}
@@ -262,7 +244,7 @@ public class DiagnosticTraceFactoryImpl extends EFactoryImpl implements org.muml
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public org.muml.uppaal.trace.diagnostictrace.ActionTransition createActionTransition() {
+	public ActionTransition createActionTransition() {
 		ActionTransitionImpl actionTransition = new ActionTransitionImpl();
 		return actionTransition;
 	}
@@ -272,7 +254,7 @@ public class DiagnosticTraceFactoryImpl extends EFactoryImpl implements org.muml
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public org.muml.uppaal.trace.diagnostictrace.Transition createTransition() {
+	public Transition createTransition() {
 		TransitionImpl transition = new TransitionImpl();
 		return transition;
 	}
@@ -282,8 +264,8 @@ public class DiagnosticTraceFactoryImpl extends EFactoryImpl implements org.muml
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public org.muml.uppaal.trace.diagnostictrace.Result createResultFromString(EDataType eDataType, String initialValue) {
-		org.muml.uppaal.trace.diagnostictrace.Result result = org.muml.uppaal.trace.diagnostictrace.Result.get(initialValue);
+	public Result createResultFromString(EDataType eDataType, String initialValue) {
+		Result result = Result.get(initialValue);
 		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
 		return result;
 	}
@@ -302,8 +284,8 @@ public class DiagnosticTraceFactoryImpl extends EFactoryImpl implements org.muml
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public org.muml.uppaal.trace.diagnostictrace.CompareOperator createCompareOperatorFromString(EDataType eDataType, String initialValue) {
-		org.muml.uppaal.trace.diagnostictrace.CompareOperator result = org.muml.uppaal.trace.diagnostictrace.CompareOperator.get(initialValue);
+	public CompareOperator createCompareOperatorFromString(EDataType eDataType, String initialValue) {
+		CompareOperator result = CompareOperator.get(initialValue);
 		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
 		return result;
 	}
@@ -322,8 +304,8 @@ public class DiagnosticTraceFactoryImpl extends EFactoryImpl implements org.muml
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage getDiagnosticTracePackage() {
-		return (org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage)getEPackage();
+	public DiagnosticTracePackage getDiagnosticTracePackage() {
+		return (DiagnosticTracePackage)getEPackage();
 	}
 
 	/**
@@ -333,8 +315,8 @@ public class DiagnosticTraceFactoryImpl extends EFactoryImpl implements org.muml
 	 * @generated
 	 */
 	@Deprecated
-	public static org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage getPackage() {
-		return org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.eINSTANCE;
+	public static DiagnosticTracePackage getPackage() {
+		return DiagnosticTracePackage.eINSTANCE;
 	}
 
 } //DiagnosticTraceFactoryImpl

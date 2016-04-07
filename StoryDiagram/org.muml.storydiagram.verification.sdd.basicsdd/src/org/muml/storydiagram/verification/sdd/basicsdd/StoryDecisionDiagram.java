@@ -14,5 +14,5 @@ import org.muml.storydiagram.verification.sdd.AbstractStoryDecisionDiagram;
  * @model
  * @generated
  */
-public interface StoryDecisionDiagram extends de.uni_paderborn.fujaba.muml.verification.sdd.AbstractStoryDecisionDiagram {
+public interface StoryDecisionDiagram extends AbstractStoryDecisionDiagram {
 } // StoryDecisionDiagram

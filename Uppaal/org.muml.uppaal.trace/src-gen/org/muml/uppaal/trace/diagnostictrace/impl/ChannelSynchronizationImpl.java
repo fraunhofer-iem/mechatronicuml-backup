@@ -1,6 +1,6 @@
 /**
  */
-package org.muml.uppaal.trace.diagnosticTrace.impl;
+package org.muml.uppaal.trace.diagnostictrace.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
@@ -8,8 +8,8 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.muml.uppaal.declarations.Variable;
 import org.muml.uppaal.templates.SynchronizationKind;
-import org.muml.uppaal.trace.diagnosticTrace.ChannelSynchronization;
-import org.muml.uppaal.trace.diagnosticTrace.DiagnosticTracePackage;
+import org.muml.uppaal.trace.diagnostictrace.ChannelSynchronization;
+import org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,7 +25,7 @@ import org.muml.uppaal.trace.diagnosticTrace.DiagnosticTracePackage;
  *
  * @generated
  */
-public class ChannelSynchronizationImpl extends SynchronizationImpl implements org.muml.uppaal.trace.diagnostictrace.ChannelSynchronization {
+public class ChannelSynchronizationImpl extends SynchronizationImpl implements ChannelSynchronization {
 	/**
 	 * The cached value of the '{@link #getChannel() <em>Channel</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -72,7 +72,7 @@ public class ChannelSynchronizationImpl extends SynchronizationImpl implements o
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.Literals.CHANNEL_SYNCHRONIZATION;
+		return DiagnosticTracePackage.Literals.CHANNEL_SYNCHRONIZATION;
 	}
 
 	/**
@@ -86,7 +86,7 @@ public class ChannelSynchronizationImpl extends SynchronizationImpl implements o
 			channel = (Variable)eResolveProxy(oldChannel);
 			if (channel != oldChannel) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.CHANNEL_SYNCHRONIZATION__CHANNEL, oldChannel, channel));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DiagnosticTracePackage.CHANNEL_SYNCHRONIZATION__CHANNEL, oldChannel, channel));
 			}
 		}
 		return channel;
@@ -110,7 +110,7 @@ public class ChannelSynchronizationImpl extends SynchronizationImpl implements o
 		Variable oldChannel = channel;
 		channel = newChannel;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.CHANNEL_SYNCHRONIZATION__CHANNEL, oldChannel, channel));
+			eNotify(new ENotificationImpl(this, Notification.SET, DiagnosticTracePackage.CHANNEL_SYNCHRONIZATION__CHANNEL, oldChannel, channel));
 	}
 
 	/**
@@ -131,7 +131,7 @@ public class ChannelSynchronizationImpl extends SynchronizationImpl implements o
 		SynchronizationKind oldKind = kind;
 		kind = newKind == null ? KIND_EDEFAULT : newKind;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.CHANNEL_SYNCHRONIZATION__KIND, oldKind, kind));
+			eNotify(new ENotificationImpl(this, Notification.SET, DiagnosticTracePackage.CHANNEL_SYNCHRONIZATION__KIND, oldKind, kind));
 	}
 
 	/**
@@ -142,10 +142,10 @@ public class ChannelSynchronizationImpl extends SynchronizationImpl implements o
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.CHANNEL_SYNCHRONIZATION__CHANNEL:
+			case DiagnosticTracePackage.CHANNEL_SYNCHRONIZATION__CHANNEL:
 				if (resolve) return getChannel();
 				return basicGetChannel();
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.CHANNEL_SYNCHRONIZATION__KIND:
+			case DiagnosticTracePackage.CHANNEL_SYNCHRONIZATION__KIND:
 				return getKind();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -159,10 +159,10 @@ public class ChannelSynchronizationImpl extends SynchronizationImpl implements o
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.CHANNEL_SYNCHRONIZATION__CHANNEL:
+			case DiagnosticTracePackage.CHANNEL_SYNCHRONIZATION__CHANNEL:
 				setChannel((Variable)newValue);
 				return;
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.CHANNEL_SYNCHRONIZATION__KIND:
+			case DiagnosticTracePackage.CHANNEL_SYNCHRONIZATION__KIND:
 				setKind((SynchronizationKind)newValue);
 				return;
 		}
@@ -177,10 +177,10 @@ public class ChannelSynchronizationImpl extends SynchronizationImpl implements o
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.CHANNEL_SYNCHRONIZATION__CHANNEL:
+			case DiagnosticTracePackage.CHANNEL_SYNCHRONIZATION__CHANNEL:
 				setChannel((Variable)null);
 				return;
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.CHANNEL_SYNCHRONIZATION__KIND:
+			case DiagnosticTracePackage.CHANNEL_SYNCHRONIZATION__KIND:
 				setKind(KIND_EDEFAULT);
 				return;
 		}
@@ -195,9 +195,9 @@ public class ChannelSynchronizationImpl extends SynchronizationImpl implements o
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.CHANNEL_SYNCHRONIZATION__CHANNEL:
+			case DiagnosticTracePackage.CHANNEL_SYNCHRONIZATION__CHANNEL:
 				return channel != null;
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.CHANNEL_SYNCHRONIZATION__KIND:
+			case DiagnosticTracePackage.CHANNEL_SYNCHRONIZATION__KIND:
 				return kind != KIND_EDEFAULT;
 		}
 		return super.eIsSet(featureID);

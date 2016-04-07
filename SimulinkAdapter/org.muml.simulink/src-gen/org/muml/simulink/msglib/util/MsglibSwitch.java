@@ -11,7 +11,6 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
 import org.muml.simulink.Block;
 import org.muml.simulink.Element;
-import org.muml.simulink.msglib.*;
 import org.muml.simulink.msglib.CommunicationSwitch;
 import org.muml.simulink.msglib.LinkLayer;
 import org.muml.simulink.msglib.MsglibPackage;

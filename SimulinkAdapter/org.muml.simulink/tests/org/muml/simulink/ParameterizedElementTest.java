@@ -1,4 +1,4 @@
-package de.uni_paderborn.fujaba.simulink.model;
+package org.muml.simulink;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
@@ -7,11 +7,7 @@ import static org.junit.Assert.assertNull;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.muml.simulink.Element;
-import org.muml.simulink.Parameter;
-import org.muml.simulink.SimulinkFactory;
-
-import de.uni_paderborn.fujaba.simulink.model.test.TestBase;
+import org.muml.simulink.test.TestBase;
 
 public class ParameterizedElementTest extends TestBase
 {

@@ -62,7 +62,7 @@ public class BasicSDDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.verification.sdd.util.SDDValidator sddValidator;
+	protected SDDValidator sddValidator;
 
 	/**
 	 * Creates an instance of the switch.
@@ -72,7 +72,7 @@ public class BasicSDDValidator extends EObjectValidator {
 	 */
 	public BasicSDDValidator() {
 		super();
-		sddValidator = de.uni_paderborn.fujaba.muml.verification.sdd.util.SDDValidator.INSTANCE;
+		sddValidator = SDDValidator.INSTANCE;
 	}
 
 	/**

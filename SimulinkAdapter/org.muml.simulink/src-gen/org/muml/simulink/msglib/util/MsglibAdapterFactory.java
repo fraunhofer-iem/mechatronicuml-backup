@@ -12,7 +12,6 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
 import org.muml.simulink.Block;
 import org.muml.simulink.Element;
-import org.muml.simulink.msglib.*;
 import org.muml.simulink.msglib.CommunicationSwitch;
 import org.muml.simulink.msglib.LinkLayer;
 import org.muml.simulink.msglib.MsglibPackage;

@@ -1,6 +1,6 @@
 /**
  */
-package org.muml.uppaal.trace.diagnosticTrace.impl;
+package org.muml.uppaal.trace.diagnostictrace.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -8,9 +8,9 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-import org.muml.uppaal.trace.diagnosticTrace.DiagnosticTracePackage;
-import org.muml.uppaal.trace.diagnosticTrace.NamedElementReference;
-import org.muml.uppaal.trace.diagnosticTrace.SingleNamedElementReference;
+import org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage;
+import org.muml.uppaal.trace.diagnostictrace.NamedElementReference;
+import org.muml.uppaal.trace.diagnostictrace.SingleNamedElementReference;
 
 /**
  * <!-- begin-user-doc -->
@@ -26,7 +26,7 @@ import org.muml.uppaal.trace.diagnosticTrace.SingleNamedElementReference;
  *
  * @generated
  */
-public class NamedElementReferenceImpl extends MinimalEObjectImpl.Container implements org.muml.uppaal.trace.diagnostictrace.NamedElementReference {
+public class NamedElementReferenceImpl extends MinimalEObjectImpl.Container implements NamedElementReference {
 	/**
 	 * The cached value of the '{@link #getSingleNamedElementReference() <em>Single Named Element Reference</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -35,7 +35,7 @@ public class NamedElementReferenceImpl extends MinimalEObjectImpl.Container impl
 	 * @generated
 	 * @ordered
 	 */
-	protected org.muml.uppaal.trace.diagnostictrace.SingleNamedElementReference singleNamedElementReference;
+	protected SingleNamedElementReference singleNamedElementReference;
 
 	/**
 	 * The cached value of the '{@link #getNamedElementReference() <em>Named Element Reference</em>}' containment reference.
@@ -45,7 +45,7 @@ public class NamedElementReferenceImpl extends MinimalEObjectImpl.Container impl
 	 * @generated
 	 * @ordered
 	 */
-	protected org.muml.uppaal.trace.diagnostictrace.NamedElementReference namedElementReference;
+	protected NamedElementReference namedElementReference;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -63,7 +63,7 @@ public class NamedElementReferenceImpl extends MinimalEObjectImpl.Container impl
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.Literals.NAMED_ELEMENT_REFERENCE;
+		return DiagnosticTracePackage.Literals.NAMED_ELEMENT_REFERENCE;
 	}
 
 	/**
@@ -71,7 +71,7 @@ public class NamedElementReferenceImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public org.muml.uppaal.trace.diagnostictrace.SingleNamedElementReference getSingleNamedElementReference() {
+	public SingleNamedElementReference getSingleNamedElementReference() {
 		return singleNamedElementReference;
 	}
 
@@ -80,11 +80,11 @@ public class NamedElementReferenceImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetSingleNamedElementReference(org.muml.uppaal.trace.diagnostictrace.SingleNamedElementReference newSingleNamedElementReference, NotificationChain msgs) {
-		org.muml.uppaal.trace.diagnostictrace.SingleNamedElementReference oldSingleNamedElementReference = singleNamedElementReference;
+	public NotificationChain basicSetSingleNamedElementReference(SingleNamedElementReference newSingleNamedElementReference, NotificationChain msgs) {
+		SingleNamedElementReference oldSingleNamedElementReference = singleNamedElementReference;
 		singleNamedElementReference = newSingleNamedElementReference;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.NAMED_ELEMENT_REFERENCE__SINGLE_NAMED_ELEMENT_REFERENCE, oldSingleNamedElementReference, newSingleNamedElementReference);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DiagnosticTracePackage.NAMED_ELEMENT_REFERENCE__SINGLE_NAMED_ELEMENT_REFERENCE, oldSingleNamedElementReference, newSingleNamedElementReference);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -95,18 +95,18 @@ public class NamedElementReferenceImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSingleNamedElementReference(org.muml.uppaal.trace.diagnostictrace.SingleNamedElementReference newSingleNamedElementReference) {
+	public void setSingleNamedElementReference(SingleNamedElementReference newSingleNamedElementReference) {
 		if (newSingleNamedElementReference != singleNamedElementReference) {
 			NotificationChain msgs = null;
 			if (singleNamedElementReference != null)
-				msgs = ((InternalEObject)singleNamedElementReference).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.NAMED_ELEMENT_REFERENCE__SINGLE_NAMED_ELEMENT_REFERENCE, null, msgs);
+				msgs = ((InternalEObject)singleNamedElementReference).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DiagnosticTracePackage.NAMED_ELEMENT_REFERENCE__SINGLE_NAMED_ELEMENT_REFERENCE, null, msgs);
 			if (newSingleNamedElementReference != null)
-				msgs = ((InternalEObject)newSingleNamedElementReference).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.NAMED_ELEMENT_REFERENCE__SINGLE_NAMED_ELEMENT_REFERENCE, null, msgs);
+				msgs = ((InternalEObject)newSingleNamedElementReference).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DiagnosticTracePackage.NAMED_ELEMENT_REFERENCE__SINGLE_NAMED_ELEMENT_REFERENCE, null, msgs);
 			msgs = basicSetSingleNamedElementReference(newSingleNamedElementReference, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.NAMED_ELEMENT_REFERENCE__SINGLE_NAMED_ELEMENT_REFERENCE, newSingleNamedElementReference, newSingleNamedElementReference));
+			eNotify(new ENotificationImpl(this, Notification.SET, DiagnosticTracePackage.NAMED_ELEMENT_REFERENCE__SINGLE_NAMED_ELEMENT_REFERENCE, newSingleNamedElementReference, newSingleNamedElementReference));
 	}
 
 	/**
@@ -114,7 +114,7 @@ public class NamedElementReferenceImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public org.muml.uppaal.trace.diagnostictrace.NamedElementReference getNamedElementReference() {
+	public NamedElementReference getNamedElementReference() {
 		return namedElementReference;
 	}
 
@@ -123,11 +123,11 @@ public class NamedElementReferenceImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetNamedElementReference(org.muml.uppaal.trace.diagnostictrace.NamedElementReference newNamedElementReference, NotificationChain msgs) {
-		org.muml.uppaal.trace.diagnostictrace.NamedElementReference oldNamedElementReference = namedElementReference;
+	public NotificationChain basicSetNamedElementReference(NamedElementReference newNamedElementReference, NotificationChain msgs) {
+		NamedElementReference oldNamedElementReference = namedElementReference;
 		namedElementReference = newNamedElementReference;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.NAMED_ELEMENT_REFERENCE__NAMED_ELEMENT_REFERENCE, oldNamedElementReference, newNamedElementReference);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DiagnosticTracePackage.NAMED_ELEMENT_REFERENCE__NAMED_ELEMENT_REFERENCE, oldNamedElementReference, newNamedElementReference);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -138,18 +138,18 @@ public class NamedElementReferenceImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setNamedElementReference(org.muml.uppaal.trace.diagnostictrace.NamedElementReference newNamedElementReference) {
+	public void setNamedElementReference(NamedElementReference newNamedElementReference) {
 		if (newNamedElementReference != namedElementReference) {
 			NotificationChain msgs = null;
 			if (namedElementReference != null)
-				msgs = ((InternalEObject)namedElementReference).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.NAMED_ELEMENT_REFERENCE__NAMED_ELEMENT_REFERENCE, null, msgs);
+				msgs = ((InternalEObject)namedElementReference).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DiagnosticTracePackage.NAMED_ELEMENT_REFERENCE__NAMED_ELEMENT_REFERENCE, null, msgs);
 			if (newNamedElementReference != null)
-				msgs = ((InternalEObject)newNamedElementReference).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.NAMED_ELEMENT_REFERENCE__NAMED_ELEMENT_REFERENCE, null, msgs);
+				msgs = ((InternalEObject)newNamedElementReference).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DiagnosticTracePackage.NAMED_ELEMENT_REFERENCE__NAMED_ELEMENT_REFERENCE, null, msgs);
 			msgs = basicSetNamedElementReference(newNamedElementReference, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.NAMED_ELEMENT_REFERENCE__NAMED_ELEMENT_REFERENCE, newNamedElementReference, newNamedElementReference));
+			eNotify(new ENotificationImpl(this, Notification.SET, DiagnosticTracePackage.NAMED_ELEMENT_REFERENCE__NAMED_ELEMENT_REFERENCE, newNamedElementReference, newNamedElementReference));
 	}
 
 	/**
@@ -160,9 +160,9 @@ public class NamedElementReferenceImpl extends MinimalEObjectImpl.Container impl
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.NAMED_ELEMENT_REFERENCE__SINGLE_NAMED_ELEMENT_REFERENCE:
+			case DiagnosticTracePackage.NAMED_ELEMENT_REFERENCE__SINGLE_NAMED_ELEMENT_REFERENCE:
 				return basicSetSingleNamedElementReference(null, msgs);
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.NAMED_ELEMENT_REFERENCE__NAMED_ELEMENT_REFERENCE:
+			case DiagnosticTracePackage.NAMED_ELEMENT_REFERENCE__NAMED_ELEMENT_REFERENCE:
 				return basicSetNamedElementReference(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -176,9 +176,9 @@ public class NamedElementReferenceImpl extends MinimalEObjectImpl.Container impl
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.NAMED_ELEMENT_REFERENCE__SINGLE_NAMED_ELEMENT_REFERENCE:
+			case DiagnosticTracePackage.NAMED_ELEMENT_REFERENCE__SINGLE_NAMED_ELEMENT_REFERENCE:
 				return getSingleNamedElementReference();
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.NAMED_ELEMENT_REFERENCE__NAMED_ELEMENT_REFERENCE:
+			case DiagnosticTracePackage.NAMED_ELEMENT_REFERENCE__NAMED_ELEMENT_REFERENCE:
 				return getNamedElementReference();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -192,11 +192,11 @@ public class NamedElementReferenceImpl extends MinimalEObjectImpl.Container impl
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.NAMED_ELEMENT_REFERENCE__SINGLE_NAMED_ELEMENT_REFERENCE:
-				setSingleNamedElementReference((org.muml.uppaal.trace.diagnostictrace.SingleNamedElementReference)newValue);
+			case DiagnosticTracePackage.NAMED_ELEMENT_REFERENCE__SINGLE_NAMED_ELEMENT_REFERENCE:
+				setSingleNamedElementReference((SingleNamedElementReference)newValue);
 				return;
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.NAMED_ELEMENT_REFERENCE__NAMED_ELEMENT_REFERENCE:
-				setNamedElementReference((org.muml.uppaal.trace.diagnostictrace.NamedElementReference)newValue);
+			case DiagnosticTracePackage.NAMED_ELEMENT_REFERENCE__NAMED_ELEMENT_REFERENCE:
+				setNamedElementReference((NamedElementReference)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -210,11 +210,11 @@ public class NamedElementReferenceImpl extends MinimalEObjectImpl.Container impl
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.NAMED_ELEMENT_REFERENCE__SINGLE_NAMED_ELEMENT_REFERENCE:
-				setSingleNamedElementReference((org.muml.uppaal.trace.diagnostictrace.SingleNamedElementReference)null);
+			case DiagnosticTracePackage.NAMED_ELEMENT_REFERENCE__SINGLE_NAMED_ELEMENT_REFERENCE:
+				setSingleNamedElementReference((SingleNamedElementReference)null);
 				return;
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.NAMED_ELEMENT_REFERENCE__NAMED_ELEMENT_REFERENCE:
-				setNamedElementReference((org.muml.uppaal.trace.diagnostictrace.NamedElementReference)null);
+			case DiagnosticTracePackage.NAMED_ELEMENT_REFERENCE__NAMED_ELEMENT_REFERENCE:
+				setNamedElementReference((NamedElementReference)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -228,9 +228,9 @@ public class NamedElementReferenceImpl extends MinimalEObjectImpl.Container impl
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.NAMED_ELEMENT_REFERENCE__SINGLE_NAMED_ELEMENT_REFERENCE:
+			case DiagnosticTracePackage.NAMED_ELEMENT_REFERENCE__SINGLE_NAMED_ELEMENT_REFERENCE:
 				return singleNamedElementReference != null;
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.NAMED_ELEMENT_REFERENCE__NAMED_ELEMENT_REFERENCE:
+			case DiagnosticTracePackage.NAMED_ELEMENT_REFERENCE__NAMED_ELEMENT_REFERENCE:
 				return namedElementReference != null;
 		}
 		return super.eIsSet(featureID);

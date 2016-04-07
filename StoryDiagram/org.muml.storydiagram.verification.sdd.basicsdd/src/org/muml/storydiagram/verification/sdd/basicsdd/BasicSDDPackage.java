@@ -73,7 +73,7 @@ public interface BasicSDDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STORY_DECISION_DIAGRAM__ANNOTATIONS = de.uni_paderborn.fujaba.muml.verification.sdd.SDDPackage.ABSTRACT_STORY_DECISION_DIAGRAM__ANNOTATIONS;
+	int STORY_DECISION_DIAGRAM__ANNOTATIONS = SDDPackage.ABSTRACT_STORY_DECISION_DIAGRAM__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
@@ -82,7 +82,7 @@ public interface BasicSDDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STORY_DECISION_DIAGRAM__EXTENSIONS = de.uni_paderborn.fujaba.muml.verification.sdd.SDDPackage.ABSTRACT_STORY_DECISION_DIAGRAM__EXTENSIONS;
+	int STORY_DECISION_DIAGRAM__EXTENSIONS = SDDPackage.ABSTRACT_STORY_DECISION_DIAGRAM__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -91,7 +91,7 @@ public interface BasicSDDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STORY_DECISION_DIAGRAM__NAME = de.uni_paderborn.fujaba.muml.verification.sdd.SDDPackage.ABSTRACT_STORY_DECISION_DIAGRAM__NAME;
+	int STORY_DECISION_DIAGRAM__NAME = SDDPackage.ABSTRACT_STORY_DECISION_DIAGRAM__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Nodes</b></em>' containment reference list.
@@ -100,7 +100,7 @@ public interface BasicSDDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STORY_DECISION_DIAGRAM__NODES = de.uni_paderborn.fujaba.muml.verification.sdd.SDDPackage.ABSTRACT_STORY_DECISION_DIAGRAM__NODES;
+	int STORY_DECISION_DIAGRAM__NODES = SDDPackage.ABSTRACT_STORY_DECISION_DIAGRAM__NODES;
 
 	/**
 	 * The feature id for the '<em><b>Edges</b></em>' containment reference list.
@@ -109,7 +109,7 @@ public interface BasicSDDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STORY_DECISION_DIAGRAM__EDGES = de.uni_paderborn.fujaba.muml.verification.sdd.SDDPackage.ABSTRACT_STORY_DECISION_DIAGRAM__EDGES;
+	int STORY_DECISION_DIAGRAM__EDGES = SDDPackage.ABSTRACT_STORY_DECISION_DIAGRAM__EDGES;
 
 	/**
 	 * The number of structural features of the '<em>Story Decision Diagram</em>' class.
@@ -118,7 +118,7 @@ public interface BasicSDDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STORY_DECISION_DIAGRAM_FEATURE_COUNT = de.uni_paderborn.fujaba.muml.verification.sdd.SDDPackage.ABSTRACT_STORY_DECISION_DIAGRAM_FEATURE_COUNT + 0;
+	int STORY_DECISION_DIAGRAM_FEATURE_COUNT = SDDPackage.ABSTRACT_STORY_DECISION_DIAGRAM_FEATURE_COUNT + 0;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -127,7 +127,7 @@ public interface BasicSDDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STORY_DECISION_DIAGRAM___ECLASS = de.uni_paderborn.fujaba.muml.verification.sdd.SDDPackage.ABSTRACT_STORY_DECISION_DIAGRAM___ECLASS;
+	int STORY_DECISION_DIAGRAM___ECLASS = SDDPackage.ABSTRACT_STORY_DECISION_DIAGRAM___ECLASS;
 
 	/**
 	 * The operation id for the '<em>EIs Proxy</em>' operation.
@@ -136,7 +136,7 @@ public interface BasicSDDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STORY_DECISION_DIAGRAM___EIS_PROXY = de.uni_paderborn.fujaba.muml.verification.sdd.SDDPackage.ABSTRACT_STORY_DECISION_DIAGRAM___EIS_PROXY;
+	int STORY_DECISION_DIAGRAM___EIS_PROXY = SDDPackage.ABSTRACT_STORY_DECISION_DIAGRAM___EIS_PROXY;
 
 	/**
 	 * The operation id for the '<em>EResource</em>' operation.
@@ -145,7 +145,7 @@ public interface BasicSDDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STORY_DECISION_DIAGRAM___ERESOURCE = de.uni_paderborn.fujaba.muml.verification.sdd.SDDPackage.ABSTRACT_STORY_DECISION_DIAGRAM___ERESOURCE;
+	int STORY_DECISION_DIAGRAM___ERESOURCE = SDDPackage.ABSTRACT_STORY_DECISION_DIAGRAM___ERESOURCE;
 
 	/**
 	 * The operation id for the '<em>EContainer</em>' operation.
@@ -154,7 +154,7 @@ public interface BasicSDDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STORY_DECISION_DIAGRAM___ECONTAINER = de.uni_paderborn.fujaba.muml.verification.sdd.SDDPackage.ABSTRACT_STORY_DECISION_DIAGRAM___ECONTAINER;
+	int STORY_DECISION_DIAGRAM___ECONTAINER = SDDPackage.ABSTRACT_STORY_DECISION_DIAGRAM___ECONTAINER;
 
 	/**
 	 * The operation id for the '<em>EContaining Feature</em>' operation.
@@ -163,7 +163,7 @@ public interface BasicSDDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STORY_DECISION_DIAGRAM___ECONTAINING_FEATURE = de.uni_paderborn.fujaba.muml.verification.sdd.SDDPackage.ABSTRACT_STORY_DECISION_DIAGRAM___ECONTAINING_FEATURE;
+	int STORY_DECISION_DIAGRAM___ECONTAINING_FEATURE = SDDPackage.ABSTRACT_STORY_DECISION_DIAGRAM___ECONTAINING_FEATURE;
 
 	/**
 	 * The operation id for the '<em>EContainment Feature</em>' operation.
@@ -172,7 +172,7 @@ public interface BasicSDDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STORY_DECISION_DIAGRAM___ECONTAINMENT_FEATURE = de.uni_paderborn.fujaba.muml.verification.sdd.SDDPackage.ABSTRACT_STORY_DECISION_DIAGRAM___ECONTAINMENT_FEATURE;
+	int STORY_DECISION_DIAGRAM___ECONTAINMENT_FEATURE = SDDPackage.ABSTRACT_STORY_DECISION_DIAGRAM___ECONTAINMENT_FEATURE;
 
 	/**
 	 * The operation id for the '<em>EContents</em>' operation.
@@ -181,7 +181,7 @@ public interface BasicSDDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STORY_DECISION_DIAGRAM___ECONTENTS = de.uni_paderborn.fujaba.muml.verification.sdd.SDDPackage.ABSTRACT_STORY_DECISION_DIAGRAM___ECONTENTS;
+	int STORY_DECISION_DIAGRAM___ECONTENTS = SDDPackage.ABSTRACT_STORY_DECISION_DIAGRAM___ECONTENTS;
 
 	/**
 	 * The operation id for the '<em>EAll Contents</em>' operation.
@@ -190,7 +190,7 @@ public interface BasicSDDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STORY_DECISION_DIAGRAM___EALL_CONTENTS = de.uni_paderborn.fujaba.muml.verification.sdd.SDDPackage.ABSTRACT_STORY_DECISION_DIAGRAM___EALL_CONTENTS;
+	int STORY_DECISION_DIAGRAM___EALL_CONTENTS = SDDPackage.ABSTRACT_STORY_DECISION_DIAGRAM___EALL_CONTENTS;
 
 	/**
 	 * The operation id for the '<em>ECross References</em>' operation.
@@ -199,7 +199,7 @@ public interface BasicSDDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STORY_DECISION_DIAGRAM___ECROSS_REFERENCES = de.uni_paderborn.fujaba.muml.verification.sdd.SDDPackage.ABSTRACT_STORY_DECISION_DIAGRAM___ECROSS_REFERENCES;
+	int STORY_DECISION_DIAGRAM___ECROSS_REFERENCES = SDDPackage.ABSTRACT_STORY_DECISION_DIAGRAM___ECROSS_REFERENCES;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -208,7 +208,7 @@ public interface BasicSDDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STORY_DECISION_DIAGRAM___EGET__ESTRUCTURALFEATURE = de.uni_paderborn.fujaba.muml.verification.sdd.SDDPackage.ABSTRACT_STORY_DECISION_DIAGRAM___EGET__ESTRUCTURALFEATURE;
+	int STORY_DECISION_DIAGRAM___EGET__ESTRUCTURALFEATURE = SDDPackage.ABSTRACT_STORY_DECISION_DIAGRAM___EGET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -217,7 +217,7 @@ public interface BasicSDDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STORY_DECISION_DIAGRAM___EGET__ESTRUCTURALFEATURE_BOOLEAN = de.uni_paderborn.fujaba.muml.verification.sdd.SDDPackage.ABSTRACT_STORY_DECISION_DIAGRAM___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+	int STORY_DECISION_DIAGRAM___EGET__ESTRUCTURALFEATURE_BOOLEAN = SDDPackage.ABSTRACT_STORY_DECISION_DIAGRAM___EGET__ESTRUCTURALFEATURE_BOOLEAN;
 
 	/**
 	 * The operation id for the '<em>ESet</em>' operation.
@@ -226,7 +226,7 @@ public interface BasicSDDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STORY_DECISION_DIAGRAM___ESET__ESTRUCTURALFEATURE_OBJECT = de.uni_paderborn.fujaba.muml.verification.sdd.SDDPackage.ABSTRACT_STORY_DECISION_DIAGRAM___ESET__ESTRUCTURALFEATURE_OBJECT;
+	int STORY_DECISION_DIAGRAM___ESET__ESTRUCTURALFEATURE_OBJECT = SDDPackage.ABSTRACT_STORY_DECISION_DIAGRAM___ESET__ESTRUCTURALFEATURE_OBJECT;
 
 	/**
 	 * The operation id for the '<em>EIs Set</em>' operation.
@@ -235,7 +235,7 @@ public interface BasicSDDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STORY_DECISION_DIAGRAM___EIS_SET__ESTRUCTURALFEATURE = de.uni_paderborn.fujaba.muml.verification.sdd.SDDPackage.ABSTRACT_STORY_DECISION_DIAGRAM___EIS_SET__ESTRUCTURALFEATURE;
+	int STORY_DECISION_DIAGRAM___EIS_SET__ESTRUCTURALFEATURE = SDDPackage.ABSTRACT_STORY_DECISION_DIAGRAM___EIS_SET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EUnset</em>' operation.
@@ -244,7 +244,7 @@ public interface BasicSDDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STORY_DECISION_DIAGRAM___EUNSET__ESTRUCTURALFEATURE = de.uni_paderborn.fujaba.muml.verification.sdd.SDDPackage.ABSTRACT_STORY_DECISION_DIAGRAM___EUNSET__ESTRUCTURALFEATURE;
+	int STORY_DECISION_DIAGRAM___EUNSET__ESTRUCTURALFEATURE = SDDPackage.ABSTRACT_STORY_DECISION_DIAGRAM___EUNSET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EInvoke</em>' operation.
@@ -253,7 +253,7 @@ public interface BasicSDDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STORY_DECISION_DIAGRAM___EINVOKE__EOPERATION_ELIST = de.uni_paderborn.fujaba.muml.verification.sdd.SDDPackage.ABSTRACT_STORY_DECISION_DIAGRAM___EINVOKE__EOPERATION_ELIST;
+	int STORY_DECISION_DIAGRAM___EINVOKE__EOPERATION_ELIST = SDDPackage.ABSTRACT_STORY_DECISION_DIAGRAM___EINVOKE__EOPERATION_ELIST;
 
 	/**
 	 * The operation id for the '<em>Get Extension</em>' operation.
@@ -262,7 +262,7 @@ public interface BasicSDDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STORY_DECISION_DIAGRAM___GET_EXTENSION__ECLASS = de.uni_paderborn.fujaba.muml.verification.sdd.SDDPackage.ABSTRACT_STORY_DECISION_DIAGRAM___GET_EXTENSION__ECLASS;
+	int STORY_DECISION_DIAGRAM___GET_EXTENSION__ECLASS = SDDPackage.ABSTRACT_STORY_DECISION_DIAGRAM___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Provide Extension</em>' operation.
@@ -271,7 +271,7 @@ public interface BasicSDDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STORY_DECISION_DIAGRAM___PROVIDE_EXTENSION__ECLASS = de.uni_paderborn.fujaba.muml.verification.sdd.SDDPackage.ABSTRACT_STORY_DECISION_DIAGRAM___PROVIDE_EXTENSION__ECLASS;
+	int STORY_DECISION_DIAGRAM___PROVIDE_EXTENSION__ECLASS = SDDPackage.ABSTRACT_STORY_DECISION_DIAGRAM___PROVIDE_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Annotation</em>' operation.
@@ -280,7 +280,7 @@ public interface BasicSDDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STORY_DECISION_DIAGRAM___GET_ANNOTATION__STRING = de.uni_paderborn.fujaba.muml.verification.sdd.SDDPackage.ABSTRACT_STORY_DECISION_DIAGRAM___GET_ANNOTATION__STRING;
+	int STORY_DECISION_DIAGRAM___GET_ANNOTATION__STRING = SDDPackage.ABSTRACT_STORY_DECISION_DIAGRAM___GET_ANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Provide Annotation</em>' operation.
@@ -289,7 +289,7 @@ public interface BasicSDDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STORY_DECISION_DIAGRAM___PROVIDE_ANNOTATION__STRING = de.uni_paderborn.fujaba.muml.verification.sdd.SDDPackage.ABSTRACT_STORY_DECISION_DIAGRAM___PROVIDE_ANNOTATION__STRING;
+	int STORY_DECISION_DIAGRAM___PROVIDE_ANNOTATION__STRING = SDDPackage.ABSTRACT_STORY_DECISION_DIAGRAM___PROVIDE_ANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Story Decision Diagram</em>' class.
@@ -298,7 +298,7 @@ public interface BasicSDDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STORY_DECISION_DIAGRAM_OPERATION_COUNT = de.uni_paderborn.fujaba.muml.verification.sdd.SDDPackage.ABSTRACT_STORY_DECISION_DIAGRAM_OPERATION_COUNT + 0;
+	int STORY_DECISION_DIAGRAM_OPERATION_COUNT = SDDPackage.ABSTRACT_STORY_DECISION_DIAGRAM_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.muml.storydiagram.verification.sdd.basicsdd.impl.StoryPatternNodeImpl <em>Story Pattern Node</em>}' class.
@@ -317,7 +317,7 @@ public interface BasicSDDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STORY_PATTERN_NODE__OUTGOING_EDGES = de.uni_paderborn.fujaba.muml.verification.sdd.SDDPackage.PATTERN_NODE__OUTGOING_EDGES;
+	int STORY_PATTERN_NODE__OUTGOING_EDGES = SDDPackage.PATTERN_NODE__OUTGOING_EDGES;
 
 	/**
 	 * The feature id for the '<em><b>Incoming Edges</b></em>' reference list.
@@ -326,7 +326,7 @@ public interface BasicSDDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STORY_PATTERN_NODE__INCOMING_EDGES = de.uni_paderborn.fujaba.muml.verification.sdd.SDDPackage.PATTERN_NODE__INCOMING_EDGES;
+	int STORY_PATTERN_NODE__INCOMING_EDGES = SDDPackage.PATTERN_NODE__INCOMING_EDGES;
 
 	/**
 	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
@@ -335,7 +335,7 @@ public interface BasicSDDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STORY_PATTERN_NODE__ANNOTATIONS = de.uni_paderborn.fujaba.muml.verification.sdd.SDDPackage.PATTERN_NODE__ANNOTATIONS;
+	int STORY_PATTERN_NODE__ANNOTATIONS = SDDPackage.PATTERN_NODE__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
@@ -344,7 +344,7 @@ public interface BasicSDDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STORY_PATTERN_NODE__EXTENSIONS = de.uni_paderborn.fujaba.muml.verification.sdd.SDDPackage.PATTERN_NODE__EXTENSIONS;
+	int STORY_PATTERN_NODE__EXTENSIONS = SDDPackage.PATTERN_NODE__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -353,7 +353,7 @@ public interface BasicSDDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STORY_PATTERN_NODE__NAME = de.uni_paderborn.fujaba.muml.verification.sdd.SDDPackage.PATTERN_NODE__NAME;
+	int STORY_PATTERN_NODE__NAME = SDDPackage.PATTERN_NODE__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -362,7 +362,7 @@ public interface BasicSDDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STORY_PATTERN_NODE__TYPE = de.uni_paderborn.fujaba.muml.verification.sdd.SDDPackage.PATTERN_NODE__TYPE;
+	int STORY_PATTERN_NODE__TYPE = SDDPackage.PATTERN_NODE__TYPE;
 
 	/**
 	 * The feature id for the '<em><b>Pattern</b></em>' containment reference.
@@ -371,7 +371,7 @@ public interface BasicSDDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STORY_PATTERN_NODE__PATTERN = de.uni_paderborn.fujaba.muml.verification.sdd.SDDPackage.PATTERN_NODE_FEATURE_COUNT + 0;
+	int STORY_PATTERN_NODE__PATTERN = SDDPackage.PATTERN_NODE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Story Pattern Node</em>' class.
@@ -380,7 +380,7 @@ public interface BasicSDDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STORY_PATTERN_NODE_FEATURE_COUNT = de.uni_paderborn.fujaba.muml.verification.sdd.SDDPackage.PATTERN_NODE_FEATURE_COUNT + 1;
+	int STORY_PATTERN_NODE_FEATURE_COUNT = SDDPackage.PATTERN_NODE_FEATURE_COUNT + 1;
 
 
 	/**
@@ -390,7 +390,7 @@ public interface BasicSDDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STORY_PATTERN_NODE___ECLASS = de.uni_paderborn.fujaba.muml.verification.sdd.SDDPackage.PATTERN_NODE___ECLASS;
+	int STORY_PATTERN_NODE___ECLASS = SDDPackage.PATTERN_NODE___ECLASS;
 
 	/**
 	 * The operation id for the '<em>EIs Proxy</em>' operation.
@@ -399,7 +399,7 @@ public interface BasicSDDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STORY_PATTERN_NODE___EIS_PROXY = de.uni_paderborn.fujaba.muml.verification.sdd.SDDPackage.PATTERN_NODE___EIS_PROXY;
+	int STORY_PATTERN_NODE___EIS_PROXY = SDDPackage.PATTERN_NODE___EIS_PROXY;
 
 	/**
 	 * The operation id for the '<em>EResource</em>' operation.
@@ -408,7 +408,7 @@ public interface BasicSDDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STORY_PATTERN_NODE___ERESOURCE = de.uni_paderborn.fujaba.muml.verification.sdd.SDDPackage.PATTERN_NODE___ERESOURCE;
+	int STORY_PATTERN_NODE___ERESOURCE = SDDPackage.PATTERN_NODE___ERESOURCE;
 
 	/**
 	 * The operation id for the '<em>EContainer</em>' operation.
@@ -417,7 +417,7 @@ public interface BasicSDDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STORY_PATTERN_NODE___ECONTAINER = de.uni_paderborn.fujaba.muml.verification.sdd.SDDPackage.PATTERN_NODE___ECONTAINER;
+	int STORY_PATTERN_NODE___ECONTAINER = SDDPackage.PATTERN_NODE___ECONTAINER;
 
 	/**
 	 * The operation id for the '<em>EContaining Feature</em>' operation.
@@ -426,7 +426,7 @@ public interface BasicSDDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STORY_PATTERN_NODE___ECONTAINING_FEATURE = de.uni_paderborn.fujaba.muml.verification.sdd.SDDPackage.PATTERN_NODE___ECONTAINING_FEATURE;
+	int STORY_PATTERN_NODE___ECONTAINING_FEATURE = SDDPackage.PATTERN_NODE___ECONTAINING_FEATURE;
 
 	/**
 	 * The operation id for the '<em>EContainment Feature</em>' operation.
@@ -435,7 +435,7 @@ public interface BasicSDDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STORY_PATTERN_NODE___ECONTAINMENT_FEATURE = de.uni_paderborn.fujaba.muml.verification.sdd.SDDPackage.PATTERN_NODE___ECONTAINMENT_FEATURE;
+	int STORY_PATTERN_NODE___ECONTAINMENT_FEATURE = SDDPackage.PATTERN_NODE___ECONTAINMENT_FEATURE;
 
 	/**
 	 * The operation id for the '<em>EContents</em>' operation.
@@ -444,7 +444,7 @@ public interface BasicSDDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STORY_PATTERN_NODE___ECONTENTS = de.uni_paderborn.fujaba.muml.verification.sdd.SDDPackage.PATTERN_NODE___ECONTENTS;
+	int STORY_PATTERN_NODE___ECONTENTS = SDDPackage.PATTERN_NODE___ECONTENTS;
 
 	/**
 	 * The operation id for the '<em>EAll Contents</em>' operation.
@@ -453,7 +453,7 @@ public interface BasicSDDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STORY_PATTERN_NODE___EALL_CONTENTS = de.uni_paderborn.fujaba.muml.verification.sdd.SDDPackage.PATTERN_NODE___EALL_CONTENTS;
+	int STORY_PATTERN_NODE___EALL_CONTENTS = SDDPackage.PATTERN_NODE___EALL_CONTENTS;
 
 	/**
 	 * The operation id for the '<em>ECross References</em>' operation.
@@ -462,7 +462,7 @@ public interface BasicSDDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STORY_PATTERN_NODE___ECROSS_REFERENCES = de.uni_paderborn.fujaba.muml.verification.sdd.SDDPackage.PATTERN_NODE___ECROSS_REFERENCES;
+	int STORY_PATTERN_NODE___ECROSS_REFERENCES = SDDPackage.PATTERN_NODE___ECROSS_REFERENCES;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -471,7 +471,7 @@ public interface BasicSDDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STORY_PATTERN_NODE___EGET__ESTRUCTURALFEATURE = de.uni_paderborn.fujaba.muml.verification.sdd.SDDPackage.PATTERN_NODE___EGET__ESTRUCTURALFEATURE;
+	int STORY_PATTERN_NODE___EGET__ESTRUCTURALFEATURE = SDDPackage.PATTERN_NODE___EGET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -480,7 +480,7 @@ public interface BasicSDDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STORY_PATTERN_NODE___EGET__ESTRUCTURALFEATURE_BOOLEAN = de.uni_paderborn.fujaba.muml.verification.sdd.SDDPackage.PATTERN_NODE___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+	int STORY_PATTERN_NODE___EGET__ESTRUCTURALFEATURE_BOOLEAN = SDDPackage.PATTERN_NODE___EGET__ESTRUCTURALFEATURE_BOOLEAN;
 
 	/**
 	 * The operation id for the '<em>ESet</em>' operation.
@@ -489,7 +489,7 @@ public interface BasicSDDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STORY_PATTERN_NODE___ESET__ESTRUCTURALFEATURE_OBJECT = de.uni_paderborn.fujaba.muml.verification.sdd.SDDPackage.PATTERN_NODE___ESET__ESTRUCTURALFEATURE_OBJECT;
+	int STORY_PATTERN_NODE___ESET__ESTRUCTURALFEATURE_OBJECT = SDDPackage.PATTERN_NODE___ESET__ESTRUCTURALFEATURE_OBJECT;
 
 	/**
 	 * The operation id for the '<em>EIs Set</em>' operation.
@@ -498,7 +498,7 @@ public interface BasicSDDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STORY_PATTERN_NODE___EIS_SET__ESTRUCTURALFEATURE = de.uni_paderborn.fujaba.muml.verification.sdd.SDDPackage.PATTERN_NODE___EIS_SET__ESTRUCTURALFEATURE;
+	int STORY_PATTERN_NODE___EIS_SET__ESTRUCTURALFEATURE = SDDPackage.PATTERN_NODE___EIS_SET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EUnset</em>' operation.
@@ -507,7 +507,7 @@ public interface BasicSDDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STORY_PATTERN_NODE___EUNSET__ESTRUCTURALFEATURE = de.uni_paderborn.fujaba.muml.verification.sdd.SDDPackage.PATTERN_NODE___EUNSET__ESTRUCTURALFEATURE;
+	int STORY_PATTERN_NODE___EUNSET__ESTRUCTURALFEATURE = SDDPackage.PATTERN_NODE___EUNSET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EInvoke</em>' operation.
@@ -516,7 +516,7 @@ public interface BasicSDDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STORY_PATTERN_NODE___EINVOKE__EOPERATION_ELIST = de.uni_paderborn.fujaba.muml.verification.sdd.SDDPackage.PATTERN_NODE___EINVOKE__EOPERATION_ELIST;
+	int STORY_PATTERN_NODE___EINVOKE__EOPERATION_ELIST = SDDPackage.PATTERN_NODE___EINVOKE__EOPERATION_ELIST;
 
 	/**
 	 * The operation id for the '<em>Get Extension</em>' operation.
@@ -525,7 +525,7 @@ public interface BasicSDDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STORY_PATTERN_NODE___GET_EXTENSION__ECLASS = de.uni_paderborn.fujaba.muml.verification.sdd.SDDPackage.PATTERN_NODE___GET_EXTENSION__ECLASS;
+	int STORY_PATTERN_NODE___GET_EXTENSION__ECLASS = SDDPackage.PATTERN_NODE___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Provide Extension</em>' operation.
@@ -534,7 +534,7 @@ public interface BasicSDDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STORY_PATTERN_NODE___PROVIDE_EXTENSION__ECLASS = de.uni_paderborn.fujaba.muml.verification.sdd.SDDPackage.PATTERN_NODE___PROVIDE_EXTENSION__ECLASS;
+	int STORY_PATTERN_NODE___PROVIDE_EXTENSION__ECLASS = SDDPackage.PATTERN_NODE___PROVIDE_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Annotation</em>' operation.
@@ -543,7 +543,7 @@ public interface BasicSDDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STORY_PATTERN_NODE___GET_ANNOTATION__STRING = de.uni_paderborn.fujaba.muml.verification.sdd.SDDPackage.PATTERN_NODE___GET_ANNOTATION__STRING;
+	int STORY_PATTERN_NODE___GET_ANNOTATION__STRING = SDDPackage.PATTERN_NODE___GET_ANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Provide Annotation</em>' operation.
@@ -552,7 +552,7 @@ public interface BasicSDDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STORY_PATTERN_NODE___PROVIDE_ANNOTATION__STRING = de.uni_paderborn.fujaba.muml.verification.sdd.SDDPackage.PATTERN_NODE___PROVIDE_ANNOTATION__STRING;
+	int STORY_PATTERN_NODE___PROVIDE_ANNOTATION__STRING = SDDPackage.PATTERN_NODE___PROVIDE_ANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Story Pattern Node</em>' class.
@@ -561,7 +561,7 @@ public interface BasicSDDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STORY_PATTERN_NODE_OPERATION_COUNT = de.uni_paderborn.fujaba.muml.verification.sdd.SDDPackage.PATTERN_NODE_OPERATION_COUNT + 0;
+	int STORY_PATTERN_NODE_OPERATION_COUNT = SDDPackage.PATTERN_NODE_OPERATION_COUNT + 0;
 
 
 	/**

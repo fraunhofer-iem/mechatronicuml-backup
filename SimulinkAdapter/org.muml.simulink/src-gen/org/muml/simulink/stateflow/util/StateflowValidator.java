@@ -14,7 +14,6 @@ import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.EObjectValidator;
-import org.muml.simulink.stateflow.*;
 import org.muml.simulink.stateflow.Action;
 import org.muml.simulink.stateflow.Chart;
 import org.muml.simulink.stateflow.Data;

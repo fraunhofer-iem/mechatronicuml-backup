@@ -1,6 +1,6 @@
 /**
  */
-package org.muml.uppaal.trace.diagnosticTrace.impl;
+package org.muml.uppaal.trace.diagnostictrace.impl;
 
 import java.util.Collection;
 
@@ -13,10 +13,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-import org.muml.uppaal.trace.diagnosticTrace.DiagnosticTracePackage;
-import org.muml.uppaal.trace.diagnosticTrace.Result;
-import org.muml.uppaal.trace.diagnosticTrace.Trace;
-import org.muml.uppaal.trace.diagnosticTrace.TraceItem;
+import org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage;
+import org.muml.uppaal.trace.diagnostictrace.Result;
+import org.muml.uppaal.trace.diagnostictrace.Trace;
+import org.muml.uppaal.trace.diagnostictrace.TraceItem;
 
 /**
  * <!-- begin-user-doc -->
@@ -34,7 +34,7 @@ import org.muml.uppaal.trace.diagnosticTrace.TraceItem;
  *
  * @generated
  */
-public class TraceImpl extends MinimalEObjectImpl.Container implements org.muml.uppaal.trace.diagnostictrace.Trace {
+public class TraceImpl extends MinimalEObjectImpl.Container implements Trace {
 	/**
 	 * The default value of the '{@link #getProperty() <em>Property</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -83,7 +83,7 @@ public class TraceImpl extends MinimalEObjectImpl.Container implements org.muml.
 	 * @generated
 	 * @ordered
 	 */
-	protected static final org.muml.uppaal.trace.diagnostictrace.Result RESULT_EDEFAULT = org.muml.uppaal.trace.diagnostictrace.Result.SUCCESS;
+	protected static final Result RESULT_EDEFAULT = Result.SUCCESS;
 
 	/**
 	 * The cached value of the '{@link #getResult() <em>Result</em>}' attribute.
@@ -93,7 +93,7 @@ public class TraceImpl extends MinimalEObjectImpl.Container implements org.muml.
 	 * @generated
 	 * @ordered
 	 */
-	protected org.muml.uppaal.trace.diagnostictrace.Result result = RESULT_EDEFAULT;
+	protected Result result = RESULT_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getTraceItems() <em>Trace Items</em>}' containment reference list.
@@ -103,7 +103,7 @@ public class TraceImpl extends MinimalEObjectImpl.Container implements org.muml.
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<org.muml.uppaal.trace.diagnostictrace.TraceItem> traceItems;
+	protected EList<TraceItem> traceItems;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -121,7 +121,7 @@ public class TraceImpl extends MinimalEObjectImpl.Container implements org.muml.
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.Literals.TRACE;
+		return DiagnosticTracePackage.Literals.TRACE;
 	}
 
 	/**
@@ -142,7 +142,7 @@ public class TraceImpl extends MinimalEObjectImpl.Container implements org.muml.
 		int oldProperty = property;
 		property = newProperty;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.TRACE__PROPERTY, oldProperty, property));
+			eNotify(new ENotificationImpl(this, Notification.SET, DiagnosticTracePackage.TRACE__PROPERTY, oldProperty, property));
 	}
 
 	/**
@@ -163,7 +163,7 @@ public class TraceImpl extends MinimalEObjectImpl.Container implements org.muml.
 		int oldLine = line;
 		line = newLine;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.TRACE__LINE, oldLine, line));
+			eNotify(new ENotificationImpl(this, Notification.SET, DiagnosticTracePackage.TRACE__LINE, oldLine, line));
 	}
 
 	/**
@@ -171,7 +171,7 @@ public class TraceImpl extends MinimalEObjectImpl.Container implements org.muml.
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public org.muml.uppaal.trace.diagnostictrace.Result getResult() {
+	public Result getResult() {
 		return result;
 	}
 
@@ -180,11 +180,11 @@ public class TraceImpl extends MinimalEObjectImpl.Container implements org.muml.
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setResult(org.muml.uppaal.trace.diagnostictrace.Result newResult) {
-		org.muml.uppaal.trace.diagnostictrace.Result oldResult = result;
+	public void setResult(Result newResult) {
+		Result oldResult = result;
 		result = newResult == null ? RESULT_EDEFAULT : newResult;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.TRACE__RESULT, oldResult, result));
+			eNotify(new ENotificationImpl(this, Notification.SET, DiagnosticTracePackage.TRACE__RESULT, oldResult, result));
 	}
 
 	/**
@@ -192,9 +192,9 @@ public class TraceImpl extends MinimalEObjectImpl.Container implements org.muml.
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<org.muml.uppaal.trace.diagnostictrace.TraceItem> getTraceItems() {
+	public EList<TraceItem> getTraceItems() {
 		if (traceItems == null) {
-			traceItems = new EObjectContainmentEList<org.muml.uppaal.trace.diagnostictrace.TraceItem>(org.muml.uppaal.trace.diagnostictrace.TraceItem.class, this, org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.TRACE__TRACE_ITEMS);
+			traceItems = new EObjectContainmentEList<TraceItem>(TraceItem.class, this, DiagnosticTracePackage.TRACE__TRACE_ITEMS);
 		}
 		return traceItems;
 	}
@@ -207,7 +207,7 @@ public class TraceImpl extends MinimalEObjectImpl.Container implements org.muml.
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.TRACE__TRACE_ITEMS:
+			case DiagnosticTracePackage.TRACE__TRACE_ITEMS:
 				return ((InternalEList<?>)getTraceItems()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -221,13 +221,13 @@ public class TraceImpl extends MinimalEObjectImpl.Container implements org.muml.
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.TRACE__PROPERTY:
+			case DiagnosticTracePackage.TRACE__PROPERTY:
 				return getProperty();
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.TRACE__LINE:
+			case DiagnosticTracePackage.TRACE__LINE:
 				return getLine();
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.TRACE__RESULT:
+			case DiagnosticTracePackage.TRACE__RESULT:
 				return getResult();
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.TRACE__TRACE_ITEMS:
+			case DiagnosticTracePackage.TRACE__TRACE_ITEMS:
 				return getTraceItems();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -242,18 +242,18 @@ public class TraceImpl extends MinimalEObjectImpl.Container implements org.muml.
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.TRACE__PROPERTY:
+			case DiagnosticTracePackage.TRACE__PROPERTY:
 				setProperty((Integer)newValue);
 				return;
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.TRACE__LINE:
+			case DiagnosticTracePackage.TRACE__LINE:
 				setLine((Integer)newValue);
 				return;
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.TRACE__RESULT:
-				setResult((org.muml.uppaal.trace.diagnostictrace.Result)newValue);
+			case DiagnosticTracePackage.TRACE__RESULT:
+				setResult((Result)newValue);
 				return;
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.TRACE__TRACE_ITEMS:
+			case DiagnosticTracePackage.TRACE__TRACE_ITEMS:
 				getTraceItems().clear();
-				getTraceItems().addAll((Collection<? extends org.muml.uppaal.trace.diagnostictrace.TraceItem>)newValue);
+				getTraceItems().addAll((Collection<? extends TraceItem>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -267,16 +267,16 @@ public class TraceImpl extends MinimalEObjectImpl.Container implements org.muml.
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.TRACE__PROPERTY:
+			case DiagnosticTracePackage.TRACE__PROPERTY:
 				setProperty(PROPERTY_EDEFAULT);
 				return;
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.TRACE__LINE:
+			case DiagnosticTracePackage.TRACE__LINE:
 				setLine(LINE_EDEFAULT);
 				return;
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.TRACE__RESULT:
+			case DiagnosticTracePackage.TRACE__RESULT:
 				setResult(RESULT_EDEFAULT);
 				return;
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.TRACE__TRACE_ITEMS:
+			case DiagnosticTracePackage.TRACE__TRACE_ITEMS:
 				getTraceItems().clear();
 				return;
 		}
@@ -291,13 +291,13 @@ public class TraceImpl extends MinimalEObjectImpl.Container implements org.muml.
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.TRACE__PROPERTY:
+			case DiagnosticTracePackage.TRACE__PROPERTY:
 				return property != PROPERTY_EDEFAULT;
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.TRACE__LINE:
+			case DiagnosticTracePackage.TRACE__LINE:
 				return line != LINE_EDEFAULT;
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.TRACE__RESULT:
+			case DiagnosticTracePackage.TRACE__RESULT:
 				return result != RESULT_EDEFAULT;
-			case org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.TRACE__TRACE_ITEMS:
+			case DiagnosticTracePackage.TRACE__TRACE_ITEMS:
 				return traceItems != null && !traceItems.isEmpty();
 		}
 		return super.eIsSet(featureID);

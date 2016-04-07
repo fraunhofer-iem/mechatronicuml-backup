@@ -1,17 +1,11 @@
-package de.uni_paderborn.fujaba.simulink.model;
+package org.muml.simulink;
 
 import static org.junit.Assert.assertEquals;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.muml.simulink.InPortBlock;
-import org.muml.simulink.LibraryReference;
-import org.muml.simulink.OutPortBlock;
-import org.muml.simulink.SimulinkFactory;
-import org.muml.simulink.SubSystem;
-
-import de.uni_paderborn.fujaba.simulink.model.test.TestBase;
+import org.muml.simulink.test.TestBase;
 
 public class ReferenceTest extends TestBase
 {

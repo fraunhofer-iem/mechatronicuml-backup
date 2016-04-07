@@ -1,11 +1,11 @@
 /**
  */
-package org.muml.uppaal.trace.diagnosticTrace.impl;
+package org.muml.uppaal.trace.diagnostictrace.impl;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-import org.muml.uppaal.trace.diagnosticTrace.DiagnosticTracePackage;
-import org.muml.uppaal.trace.diagnosticTrace.Synchronization;
+import org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage;
+import org.muml.uppaal.trace.diagnostictrace.Synchronization;
 
 /**
  * <!-- begin-user-doc -->
@@ -14,7 +14,7 @@ import org.muml.uppaal.trace.diagnosticTrace.Synchronization;
  *
  * @generated
  */
-public class SynchronizationImpl extends MinimalEObjectImpl.Container implements org.muml.uppaal.trace.diagnostictrace.Synchronization {
+public class SynchronizationImpl extends MinimalEObjectImpl.Container implements Synchronization {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -31,7 +31,7 @@ public class SynchronizationImpl extends MinimalEObjectImpl.Container implements
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.Literals.SYNCHRONIZATION;
+		return DiagnosticTracePackage.Literals.SYNCHRONIZATION;
 	}
 
 } //SynchronizationImpl

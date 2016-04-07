@@ -12,7 +12,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import org.muml.simulink.stateflow.*;
 import org.muml.simulink.stateflow.Action;
 import org.muml.simulink.stateflow.Chart;
 import org.muml.simulink.stateflow.Data;

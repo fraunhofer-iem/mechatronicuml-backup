@@ -1,11 +1,11 @@
 /**
  */
-package org.muml.uppaal.trace.diagnosticTrace.impl;
+package org.muml.uppaal.trace.diagnostictrace.impl;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-import org.muml.uppaal.trace.diagnosticTrace.DiagnosticTracePackage;
-import org.muml.uppaal.trace.diagnosticTrace.TraceItem;
+import org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage;
+import org.muml.uppaal.trace.diagnostictrace.TraceItem;
 
 /**
  * <!-- begin-user-doc -->
@@ -14,7 +14,7 @@ import org.muml.uppaal.trace.diagnosticTrace.TraceItem;
  *
  * @generated
  */
-public class TraceItemImpl extends MinimalEObjectImpl.Container implements org.muml.uppaal.trace.diagnostictrace.TraceItem {
+public class TraceItemImpl extends MinimalEObjectImpl.Container implements TraceItem {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -31,7 +31,7 @@ public class TraceItemImpl extends MinimalEObjectImpl.Container implements org.m
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return org.muml.uppaal.trace.diagnostictrace.DiagnosticTracePackage.Literals.TRACE_ITEM;
+		return DiagnosticTracePackage.Literals.TRACE_ITEM;
 	}
 
 } //TraceItemImpl

@@ -1,4 +1,4 @@
-package de.uni_paderborn.fujaba.simulink.model.stateflow;
+package org.muml.simulink.stateflow;
 
 import org.junit.After;
 import org.junit.Before;
@@ -8,12 +8,7 @@ import org.muml.simulink.InPortBlock;
 import org.muml.simulink.OutPortBlock;
 import org.muml.simulink.SimulinkFactory;
 import org.muml.simulink.SimulinkModel;
-import org.muml.simulink.stateflow.Chart;
-import org.muml.simulink.stateflow.Data;
-import org.muml.simulink.stateflow.StateflowFactory;
-import org.muml.simulink.stateflow.StateflowMachine;
-
-import de.uni_paderborn.fujaba.simulink.model.test.TestBase;
+import org.muml.simulink.test.TestBase;
 
 public class ChartTest extends TestBase 
 {

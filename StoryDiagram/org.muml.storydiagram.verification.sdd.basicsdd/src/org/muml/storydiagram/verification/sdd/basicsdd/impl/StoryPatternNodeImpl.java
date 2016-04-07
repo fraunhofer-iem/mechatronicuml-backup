@@ -27,7 +27,7 @@ import org.muml.storydiagram.verification.sdd.impl.PatternNodeImpl;
  *
  * @generated
  */
-public class StoryPatternNodeImpl extends de.uni_paderborn.fujaba.muml.verification.sdd.impl.PatternNodeImpl implements StoryPatternNode {
+public class StoryPatternNodeImpl extends PatternNodeImpl implements StoryPatternNode {
 	/**
 	 * The cached value of the '{@link #getPattern() <em>Pattern</em>}' containment reference.
 	 * <!-- begin-user-doc -->
