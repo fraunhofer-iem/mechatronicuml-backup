@@ -1,16 +1,15 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: ComponentStoryDecisionDiagram Tabbed Properties
-Bundle-SymbolicName: org.muml.reconfiguration.verification.sdd.componentsdd.edit.properties;singleton:=true
-Bundle-Version: 0.5.0.qualifier
+Bundle-SymbolicName: org.muml.reconfiguration.verification.sdd.componentsdd.edit.properties; singleton:=true
+Bundle-Version: 1.0.0.qualifier
 Require-Bundle: org.eclipse.emf.ecore,
  org.eclipse.ui,
  org.eclipse.core.runtime,
- org.muml.ape.runtime,
- org.muml.reconfiguration.verification.sdd.componentsdd,
- org.muml.reconfiguration.verification.sdd.componentsdd.edit,
  org.eclipse.emf.edit,
- org.muml.reconfiguration.componentstorypattern,
+ org.muml.reconfiguration.verification.sdd.componentsdd,
+ org.muml.ape.runtime,
+ org.muml.reconfiguration.verification.sdd.componentsdd.edit,
  org.muml.core.edit,
  org.muml.core.edit.properties,
  org.muml.reconfiguration.componentstorypattern.edit,
@@ -19,14 +18,15 @@ Require-Bundle: org.eclipse.emf.ecore,
  org.muml.pim.edit.properties,
  org.muml.reconfiguration.edit,
  org.muml.reconfiguration.edit.properties,
- org.muml.storydiagram.verification.sdd.edit,
- org.muml.storydiagram.verification.sdd.edit.properties,
+ de.uni_paderborn.fujaba.muml.verification.sdd.edit,
+ de.uni_paderborn.fujaba.muml.verification.sdd.edit.properties,
  org.muml.storydiagram.verification.sdd.basicsdd.edit,
- org.muml.storydiagram.verification.sdd.basicsdd.edit.properties
+ org.muml.storydiagram.verification.sdd.basicsdd.edit.properties,
+ org.muml.storydiagram.verification.sdd.edit,
+ org.muml.storydiagram.verification.sdd.edit.properties
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: org.muml.reconfiguration.verification.sdd.componentsdd.properties.componentsdd.editor,
- org.muml.reconfiguration.verification.sdd.componentsdd.properties.constraint,
- org.muml.reconfiguration.verification.sdd.componentsdd.properties.metamodel,
+Export-Package: org.muml.reconfiguration.verification.sdd.componentsdd.properties.metamodel, org.muml.reconfiguration.verification.sdd.componentsdd.properties.constraint,
+ org.muml.reconfiguration.verification.sdd.componentsdd.properties.componentsdd.editor,
  org.muml.reconfiguration.verification.sdd.componentsdd.properties.tabs
 Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn

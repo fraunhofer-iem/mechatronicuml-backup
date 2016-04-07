@@ -1,17 +1,15 @@
+
 package org.muml.reconfiguration.verification.sdd.componentsdd.properties.componentsdd.editor;
 
 /**
  * @generated
  */
-public class ComponentStoryPatternNodeEditor
-		extends
-			org.muml.ape.runtime.editors.ClassPropertyEditor {
+public class ComponentStoryPatternNodeEditor extends org.muml.ape.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
 	 */
-	public ComponentStoryPatternNodeEditor(String tab,
-			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
+	public ComponentStoryPatternNodeEditor(String tab, org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
 		super(tab, adapterFactory, eClass);
 	}
@@ -23,137 +21,137 @@ public class ComponentStoryPatternNodeEditor
 	protected void createProperties() {
 		if (tab == null) {
 
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
+			addPropertyEditor(createEditorOutgoingEdges_property_tab_generalTab_Editor(), false);
 
-			addEditorToCategory(
-					"de.uni_paderborn.fujaba.properties.category.Lists",
-					createExtension_ExtensionsTab_Editor(), false);
+			addPropertyEditor(createEditorIncomingEdges_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createName_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorExtensions_property_tab_extensionsTab_Editor(), false);
 
-			addPropertyEditor(createOutgoingEdges_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorName_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createIncomingEdges_GeneralTab_Editor(), false);
-
-			addPropertyEditor(createType_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorType_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
-
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
 
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
+			addPropertyEditor(createEditorOutgoingEdges_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createName_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorIncomingEdges_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createOutgoingEdges_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorName_property_tab_generalTab_Editor(), false);
 
-			addPropertyEditor(createIncomingEdges_GeneralTab_Editor(), false);
-
-			addPropertyEditor(createType_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorType_property_tab_generalTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
-
 		} else if ("property.tab.extensions".equals(tab)) { // Tab Extensions
 
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
-
-			addEditorToCategory(
-					"de.uni_paderborn.fujaba.properties.category.Lists",
-					createExtension_ExtensionsTab_Editor(), false);
+			addPropertyEditor(createEditorExtensions_property_tab_extensionsTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
+		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
+		} else if ("property.tab.descriptionAspects".equals(tab)) { // Tab Description Aspects
 
-		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
+		} else if ("property.tab.condition".equals(tab)) { // Tab Condition
 
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
+		} else if ("property.tab.effect".equals(tab)) { // Tab Effect
+
+		} else if ("property.tab.deadline".equals(tab)) { // Tab Deadline
+
+		} else if ("property.tab.sampling".equals(tab)) { // Tab Sampling
+
+		} else if ("property.tab.message".equals(tab)) { // Tab Message
+
+		} else if ("property.tab.behavior".equals(tab)) { // Tab Behavior
 
 		} else {
 		}
 	}
 
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorType_GeneralTab;
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createType_GeneralTab_Editor() {
-		if (this.editorType_GeneralTab == null) {
-			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.storydiagram.verification.sdd.SDDPackage.eINSTANCE
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorType_property_tab_generalTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorType_property_tab_generalTab_Editor() {
+		if (this.editorType_property_tab_generalTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.storydiagram.verification.sdd.sdd.SDDPackage.eINSTANCE
 					.getPatternNode_Type();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.OptionPropertyEditor(
 					adapterFactory, feature);
 
-			this.editorType_GeneralTab = editor;
+			this.editorType_property_tab_generalTab = editor;
 		}
-		return this.editorType_GeneralTab;
+		return this.editorType_property_tab_generalTab;
 	}
 
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorName_GeneralTab;
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createName_GeneralTab_Editor() {
-		if (this.editorName_GeneralTab == null) {
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorOutgoingEdges_property_tab_generalTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorOutgoingEdges_property_tab_generalTab_Editor() {
+		if (this.editorOutgoingEdges_property_tab_generalTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.storydiagram.verification.sdd.sdd.SDDPackage.eINSTANCE
+					.getNode_OutgoingEdges();
+			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.ListPropertyEditor(
+					adapterFactory, feature);
+
+			this.editorOutgoingEdges_property_tab_generalTab = editor;
+		}
+		return this.editorOutgoingEdges_property_tab_generalTab;
+	}
+
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorIncomingEdges_property_tab_generalTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorIncomingEdges_property_tab_generalTab_Editor() {
+		if (this.editorIncomingEdges_property_tab_generalTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.storydiagram.verification.sdd.sdd.SDDPackage.eINSTANCE
+					.getNode_IncomingEdges();
+			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.ListPropertyEditor(
+					adapterFactory, feature);
+
+			this.editorIncomingEdges_property_tab_generalTab = editor;
+		}
+		return this.editorIncomingEdges_property_tab_generalTab;
+	}
+
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorName_property_tab_generalTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorName_property_tab_generalTab_Editor() {
+		if (this.editorName_property_tab_generalTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.core.CorePackage.eINSTANCE
 					.getNamedElement_Name();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.TextPropertyEditor(
 					adapterFactory, feature, false);
 
+			{
+				final org.eclipse.ocl.ecore.OCLExpression initExpression = org.muml.ape.runtime.RuntimePlugin
+						.createOCLExpression(
+								"let prefix : String = self.oclAsType(ecore::EObject).eClass().name.substring(1, 1) in\nlet number : String = OrderedSet { 1 }->closure(e | \n	let provisionalName : String = prefix.concat(e.toString()) in\n	if self.oclAsType(ecore::EObject).eContainer().eContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then\n		e + 1\n	else\n		e\n	endif\n)->sortedBy(e | e)->last().toString() in prefix.concat(number)",
+								feature, getEClass());
+				final org.eclipse.ocl.Query<org.eclipse.emf.ecore.EClassifier, ?, ?> query = org.muml.ape.runtime.RuntimePlugin.OCL_ECORE
+						.createQuery(initExpression);
+				if (query != null) {
+					editor.setInitializeQuery(query);
+				}
+			}
+
 			editor.setTooltipMessage("The name attribute of a meta-model element.");
 
-			this.editorName_GeneralTab = editor;
+			this.editorName_property_tab_generalTab = editor;
 		}
-		return this.editorName_GeneralTab;
+		return this.editorName_property_tab_generalTab;
 	}
 
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorExtension_ExtensionsTab;
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createExtension_ExtensionsTab_Editor() {
-		if (this.editorExtension_ExtensionsTab == null) {
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorExtensions_property_tab_extensionsTab;
+	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorExtensions_property_tab_extensionsTab_Editor() {
+		if (this.editorExtensions_property_tab_extensionsTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.core.CorePackage.eINSTANCE
-					.getExtendableElement_Extension();
+					.getExtendableElement_Extensions();
 			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.FlattenedListPropertyEditor(
 					adapterFactory, feature);
 
-			this.editorExtension_ExtensionsTab = editor;
+			editor.setTooltipMessage("Extendable Elements can be extended by an Extension.");
+
+			this.editorExtensions_property_tab_extensionsTab = editor;
 		}
-		return this.editorExtension_ExtensionsTab;
-	}
-
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorOutgoingEdges_GeneralTab;
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createOutgoingEdges_GeneralTab_Editor() {
-		if (this.editorOutgoingEdges_GeneralTab == null) {
-			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.storydiagram.verification.sdd.SDDPackage.eINSTANCE
-					.getNode_OutgoingEdges();
-			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.ListPropertyEditor(
-					adapterFactory, feature);
-
-			this.editorOutgoingEdges_GeneralTab = editor;
-		}
-		return this.editorOutgoingEdges_GeneralTab;
-	}
-
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editorIncomingEdges_GeneralTab;
-	private org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor createIncomingEdges_GeneralTab_Editor() {
-		if (this.editorIncomingEdges_GeneralTab == null) {
-			final org.eclipse.emf.ecore.EStructuralFeature feature = org.muml.storydiagram.verification.sdd.SDDPackage.eINSTANCE
-					.getNode_IncomingEdges();
-			final org.muml.ape.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.muml.ape.runtime.editors.ListPropertyEditor(
-					adapterFactory, feature);
-
-			this.editorIncomingEdges_GeneralTab = editor;
-		}
-		return this.editorIncomingEdges_GeneralTab;
+		return this.editorExtensions_property_tab_extensionsTab;
 	}
 
 	//
@@ -164,33 +162,26 @@ public class ComponentStoryPatternNodeEditor
 	 * @generated
 	 */
 	public ComponentStoryPatternNodeEditor(String tab) {
-		this(
-				tab,
+		this(tab,
 				org.muml.reconfiguration.verification.sdd.componentsdd.properties.util.PropertiesUtil.INSTANCE
 						.getAdapterFactory(),
-				org.muml.reconfiguration.verification.sdd.componentsdd.ComponentsddPackage.eINSTANCE
+				org.muml.reconfiguration.verification.sdd.componentsdd.componentsdd.ComponentsddPackage.eINSTANCE
 						.getComponentStoryPatternNode());
 	}
 
 	/**
 	 * @generated
 	 */
-	public static class Factory
-			implements
-				org.muml.ape.runtime.factory.IPropertyEditorFactory {
+	public static class Factory implements org.muml.ape.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public org.muml.ape.runtime.editors.IPropertyEditor createPropertyEditor(
-				String tab) {
+		public org.muml.ape.runtime.editors.IPropertyEditor createPropertyEditor(String tab) {
 			return new ComponentStoryPatternNodeEditor(tab);
 		}
 
 		@Override
 		public boolean hasTab(java.lang.String tab) {
-			return java.util.Arrays.asList(
-					new java.lang.String[]{"property.tab.general",
-							"property.tab.general", "property.tab.general",
-							"property.tab.extensions", "property.tab.general",
-							"property.tab.general"}).contains(tab);
+			return java.util.Arrays.asList(new java.lang.String[]{"property.tab.general", "property.tab.general",
+					"property.tab.general", "property.tab.general", "property.tab.extensions"}).contains(tab);
 		}
 	}
 
