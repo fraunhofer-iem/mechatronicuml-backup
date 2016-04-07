@@ -9,20 +9,10 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemColorProvider;
-import org.eclipse.emf.edit.provider.IItemFontProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITableItemColorProvider;
-import org.eclipse.emf.edit.provider.ITableItemFontProvider;
-import org.eclipse.emf.edit.provider.ITableItemLabelProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.muml.storydiagram.interpreter.core.executiontrace.ActivityEdgeTraversal;
-import org.muml.storydiagram.interpreter.core.executiontrace.ExecutionTracePackage;
+import org.muml.storydiagram.interpreter.core.executiontrace.ExecutiontracePackage;
 
 /**
  * This is the item provider adapter for a {@link org.muml.storydiagram.interpreter.core.executiontrace.ActivityEdgeTraversal} object.
@@ -30,18 +20,14 @@ import org.muml.storydiagram.interpreter.core.executiontrace.ExecutionTracePacka
  * <!-- end-user-doc -->
  * @generated
  */
-public class ActivityEdgeTraversalItemProvider extends ExecutionItemProvider implements IEditingDomainItemProvider,
-		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider,
-		ITableItemColorProvider, ITableItemFontProvider, IItemColorProvider, IItemFontProvider
-{
+public class ActivityEdgeTraversalItemProvider extends ExecutionItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ActivityEdgeTraversalItemProvider(AdapterFactory adapterFactory)
-	{
+	public ActivityEdgeTraversalItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -52,10 +38,8 @@ public class ActivityEdgeTraversalItemProvider extends ExecutionItemProvider imp
 	 * @generated
 	 */
 	@Override
-	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object)
-	{
-		if (itemPropertyDescriptors == null)
-		{
+	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 			addActivityEdgePropertyDescriptor(object);
@@ -69,15 +53,20 @@ public class ActivityEdgeTraversalItemProvider extends ExecutionItemProvider imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addActivityEdgePropertyDescriptor(Object object)
-	{
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_ActivityEdgeTraversal_activityEdge_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_ActivityEdgeTraversal_activityEdge_feature",
-						"_UI_ActivityEdgeTraversal_type"), ExecutionTracePackage.Literals.ACTIVITY_EDGE_TRAVERSAL__ACTIVITY_EDGE, true,
-				false, true, null, null, null));
+	protected void addActivityEdgePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ActivityEdgeTraversal_activityEdge_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ActivityEdgeTraversal_activityEdge_feature", "_UI_ActivityEdgeTraversal_type"),
+				 ExecutiontracePackage.Literals.ACTIVITY_EDGE_TRAVERSAL__ACTIVITY_EDGE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
@@ -87,8 +76,7 @@ public class ActivityEdgeTraversalItemProvider extends ExecutionItemProvider imp
 	 * @generated
 	 */
 	@Override
-	public Object getImage(Object object)
-	{
+	public Object getImage(Object object) {
 		return overlayImage(object, getResourceLocator().getImage("full/obj16/ActivityEdgeTraversal"));
 	}
 
@@ -99,9 +87,8 @@ public class ActivityEdgeTraversalItemProvider extends ExecutionItemProvider imp
 	 * @generated
 	 */
 	@Override
-	public String getText(Object object)
-	{
-		ActivityEdgeTraversal<?> activityEdgeTraversal = (ActivityEdgeTraversal<?>) object;
+	public String getText(Object object) {
+		ActivityEdgeTraversal<?> activityEdgeTraversal = (ActivityEdgeTraversal<?>)object;
 		return getString("_UI_ActivityEdgeTraversal_type") + " " + activityEdgeTraversal.getExecutionStartedTimeStamp();
 	}
 
@@ -113,13 +100,11 @@ public class ActivityEdgeTraversalItemProvider extends ExecutionItemProvider imp
 	 * @generated
 	 */
 	@Override
-	public void notifyChanged(Notification notification)
-	{
+	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(ActivityEdgeTraversal.class))
-		{
-			case ExecutionTracePackage.ACTIVITY_EDGE_TRAVERSAL__ACTIVITY_EDGE:
+		switch (notification.getFeatureID(ActivityEdgeTraversal.class)) {
+			case ExecutiontracePackage.ACTIVITY_EDGE_TRAVERSAL__ACTIVITY_EDGE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}
@@ -134,8 +119,7 @@ public class ActivityEdgeTraversalItemProvider extends ExecutionItemProvider imp
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object)
-	{
+	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 	}
 

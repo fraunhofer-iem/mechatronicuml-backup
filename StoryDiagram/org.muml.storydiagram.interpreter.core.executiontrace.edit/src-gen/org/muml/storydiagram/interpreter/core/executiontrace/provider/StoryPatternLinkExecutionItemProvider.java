@@ -9,20 +9,10 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemColorProvider;
-import org.eclipse.emf.edit.provider.IItemFontProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITableItemColorProvider;
-import org.eclipse.emf.edit.provider.ITableItemFontProvider;
-import org.eclipse.emf.edit.provider.ITableItemLabelProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import org.muml.storydiagram.interpreter.core.executiontrace.ExecutionTracePackage;
+import org.muml.storydiagram.interpreter.core.executiontrace.ExecutiontracePackage;
 import org.muml.storydiagram.interpreter.core.executiontrace.StoryPatternLinkExecution;
 
 /**
@@ -31,18 +21,14 @@ import org.muml.storydiagram.interpreter.core.executiontrace.StoryPatternLinkExe
  * <!-- end-user-doc -->
  * @generated
  */
-public class StoryPatternLinkExecutionItemProvider extends ExecutionItemProvider implements IEditingDomainItemProvider,
-		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider,
-		ITableItemColorProvider, ITableItemFontProvider, IItemColorProvider, IItemFontProvider
-{
+public class StoryPatternLinkExecutionItemProvider extends ExecutionItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public StoryPatternLinkExecutionItemProvider(AdapterFactory adapterFactory)
-	{
+	public StoryPatternLinkExecutionItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -53,10 +39,8 @@ public class StoryPatternLinkExecutionItemProvider extends ExecutionItemProvider
 	 * @generated
 	 */
 	@Override
-	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object)
-	{
-		if (itemPropertyDescriptors == null)
-		{
+	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 			addStoryPatternLinkPropertyDescriptor(object);
@@ -73,15 +57,20 @@ public class StoryPatternLinkExecutionItemProvider extends ExecutionItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addStoryPatternLinkPropertyDescriptor(Object object)
-	{
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_StoryPatternLinkExecution_storyPatternLink_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_StoryPatternLinkExecution_storyPatternLink_feature",
-						"_UI_StoryPatternLinkExecution_type"),
-				ExecutionTracePackage.Literals.STORY_PATTERN_LINK_EXECUTION__STORY_PATTERN_LINK, true, false, true, null, null, null));
+	protected void addStoryPatternLinkPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_StoryPatternLinkExecution_storyPatternLink_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_StoryPatternLinkExecution_storyPatternLink_feature", "_UI_StoryPatternLinkExecution_type"),
+				 ExecutiontracePackage.Literals.STORY_PATTERN_LINK_EXECUTION__STORY_PATTERN_LINK,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
@@ -90,16 +79,20 @@ public class StoryPatternLinkExecutionItemProvider extends ExecutionItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addSourceStoryPatternObjectPropertyDescriptor(Object object)
-	{
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_StoryPatternLinkExecution_sourceStoryPatternObject_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_StoryPatternLinkExecution_sourceStoryPatternObject_feature",
-						"_UI_StoryPatternLinkExecution_type"),
-				ExecutionTracePackage.Literals.STORY_PATTERN_LINK_EXECUTION__SOURCE_STORY_PATTERN_OBJECT, true, false, true, null, null,
-				null));
+	protected void addSourceStoryPatternObjectPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_StoryPatternLinkExecution_sourceStoryPatternObject_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_StoryPatternLinkExecution_sourceStoryPatternObject_feature", "_UI_StoryPatternLinkExecution_type"),
+				 ExecutiontracePackage.Literals.STORY_PATTERN_LINK_EXECUTION__SOURCE_STORY_PATTERN_OBJECT,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
@@ -108,16 +101,20 @@ public class StoryPatternLinkExecutionItemProvider extends ExecutionItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addTargetStoryPatternObjectPropertyDescriptor(Object object)
-	{
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_StoryPatternLinkExecution_targetStoryPatternObject_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_StoryPatternLinkExecution_targetStoryPatternObject_feature",
-						"_UI_StoryPatternLinkExecution_type"),
-				ExecutionTracePackage.Literals.STORY_PATTERN_LINK_EXECUTION__TARGET_STORY_PATTERN_OBJECT, true, false, true, null, null,
-				null));
+	protected void addTargetStoryPatternObjectPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_StoryPatternLinkExecution_targetStoryPatternObject_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_StoryPatternLinkExecution_targetStoryPatternObject_feature", "_UI_StoryPatternLinkExecution_type"),
+				 ExecutiontracePackage.Literals.STORY_PATTERN_LINK_EXECUTION__TARGET_STORY_PATTERN_OBJECT,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
@@ -126,15 +123,20 @@ public class StoryPatternLinkExecutionItemProvider extends ExecutionItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addSourceObjectPropertyDescriptor(Object object)
-	{
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_StoryPatternLinkExecution_sourceObject_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_StoryPatternLinkExecution_sourceObject_feature",
-						"_UI_StoryPatternLinkExecution_type"), ExecutionTracePackage.Literals.STORY_PATTERN_LINK_EXECUTION__SOURCE_OBJECT,
-				true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	protected void addSourceObjectPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_StoryPatternLinkExecution_sourceObject_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_StoryPatternLinkExecution_sourceObject_feature", "_UI_StoryPatternLinkExecution_type"),
+				 ExecutiontracePackage.Literals.STORY_PATTERN_LINK_EXECUTION__SOURCE_OBJECT,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -144,9 +146,8 @@ public class StoryPatternLinkExecutionItemProvider extends ExecutionItemProvider
 	 * @generated
 	 */
 	@Override
-	public String getText(Object object)
-	{
-		StoryPatternLinkExecution<?, ?> storyPatternLinkExecution = (StoryPatternLinkExecution<?, ?>) object;
+	public String getText(Object object) {
+		StoryPatternLinkExecution<?, ?> storyPatternLinkExecution = (StoryPatternLinkExecution<?, ?>)object;
 		return getString("_UI_StoryPatternLinkExecution_type") + " " + storyPatternLinkExecution.getExecutionStartedTimeStamp();
 	}
 
@@ -158,16 +159,14 @@ public class StoryPatternLinkExecutionItemProvider extends ExecutionItemProvider
 	 * @generated
 	 */
 	@Override
-	public void notifyChanged(Notification notification)
-	{
+	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(StoryPatternLinkExecution.class))
-		{
-			case ExecutionTracePackage.STORY_PATTERN_LINK_EXECUTION__STORY_PATTERN_LINK:
-			case ExecutionTracePackage.STORY_PATTERN_LINK_EXECUTION__SOURCE_STORY_PATTERN_OBJECT:
-			case ExecutionTracePackage.STORY_PATTERN_LINK_EXECUTION__TARGET_STORY_PATTERN_OBJECT:
-			case ExecutionTracePackage.STORY_PATTERN_LINK_EXECUTION__SOURCE_OBJECT:
+		switch (notification.getFeatureID(StoryPatternLinkExecution.class)) {
+			case ExecutiontracePackage.STORY_PATTERN_LINK_EXECUTION__STORY_PATTERN_LINK:
+			case ExecutiontracePackage.STORY_PATTERN_LINK_EXECUTION__SOURCE_STORY_PATTERN_OBJECT:
+			case ExecutiontracePackage.STORY_PATTERN_LINK_EXECUTION__TARGET_STORY_PATTERN_OBJECT:
+			case ExecutiontracePackage.STORY_PATTERN_LINK_EXECUTION__SOURCE_OBJECT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}
@@ -182,8 +181,7 @@ public class StoryPatternLinkExecutionItemProvider extends ExecutionItemProvider
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object)
-	{
+	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 	}
 

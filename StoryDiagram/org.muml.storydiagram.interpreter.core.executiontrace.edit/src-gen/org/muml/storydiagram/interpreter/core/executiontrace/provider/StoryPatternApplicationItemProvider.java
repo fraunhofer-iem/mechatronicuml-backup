@@ -7,18 +7,7 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemColorProvider;
-import org.eclipse.emf.edit.provider.IItemFontProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITableItemColorProvider;
-import org.eclipse.emf.edit.provider.ITableItemFontProvider;
-import org.eclipse.emf.edit.provider.ITableItemLabelProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.muml.storydiagram.interpreter.core.executiontrace.StoryPatternApplication;
 
 /**
@@ -27,18 +16,14 @@ import org.muml.storydiagram.interpreter.core.executiontrace.StoryPatternApplica
  * <!-- end-user-doc -->
  * @generated
  */
-public class StoryPatternApplicationItemProvider extends StoryPatternExecutionItemProvider implements IEditingDomainItemProvider,
-		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider,
-		ITableItemColorProvider, ITableItemFontProvider, IItemColorProvider, IItemFontProvider
-{
+public class StoryPatternApplicationItemProvider extends StoryPatternExecutionItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public StoryPatternApplicationItemProvider(AdapterFactory adapterFactory)
-	{
+	public StoryPatternApplicationItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -49,10 +34,8 @@ public class StoryPatternApplicationItemProvider extends StoryPatternExecutionIt
 	 * @generated
 	 */
 	@Override
-	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object)
-	{
-		if (itemPropertyDescriptors == null)
-		{
+	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 		}
@@ -66,8 +49,7 @@ public class StoryPatternApplicationItemProvider extends StoryPatternExecutionIt
 	 * @generated
 	 */
 	@Override
-	public Object getImage(Object object)
-	{
+	public Object getImage(Object object) {
 		return overlayImage(object, getResourceLocator().getImage("full/obj16/StoryPatternApplication"));
 	}
 
@@ -78,9 +60,8 @@ public class StoryPatternApplicationItemProvider extends StoryPatternExecutionIt
 	 * @generated
 	 */
 	@Override
-	public String getText(Object object)
-	{
-		StoryPatternApplication<?> storyPatternApplication = (StoryPatternApplication<?>) object;
+	public String getText(Object object) {
+		StoryPatternApplication<?> storyPatternApplication = (StoryPatternApplication<?>)object;
 		return getString("_UI_StoryPatternApplication_type") + " " + storyPatternApplication.getExecutionStartedTimeStamp();
 	}
 
@@ -92,8 +73,7 @@ public class StoryPatternApplicationItemProvider extends StoryPatternExecutionIt
 	 * @generated
 	 */
 	@Override
-	public void notifyChanged(Notification notification)
-	{
+	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 		super.notifyChanged(notification);
 	}
@@ -106,8 +86,7 @@ public class StoryPatternApplicationItemProvider extends StoryPatternExecutionIt
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object)
-	{
+	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 	}
 

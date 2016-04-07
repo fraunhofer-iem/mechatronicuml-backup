@@ -15,8 +15,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="ExecutionTrace">
     <eStructuralFeatures xsi:type="ecore:EReference" name="executions" upperBound="-1"
         eType="#//Execution" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="totalExecutionTime" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//ELong"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="totalExecutionTime" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//ELong"
         changeable="false" volatile="true" transient="true" defaultValueLiteral="0"
         derived="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -24,7 +24,7 @@
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="totalExecutionTimeMsec"
-        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//ELong"
+        eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//ELong"
         changeable="false" volatile="true" transient="true" defaultValueLiteral="0"
         derived="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -34,19 +34,19 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Execution" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="executionStartedTimeStamp"
-        lowerBound="1" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//ELong"
+        lowerBound="1" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//ELong"
         defaultValueLiteral="0"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="executionFinishedTimeStamp"
-        lowerBound="1" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//ELong"
+        lowerBound="1" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//ELong"
         defaultValueLiteral="0"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="executionTime" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//ELong"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="executionTime" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//ELong"
         changeable="false" volatile="true" transient="true" defaultValueLiteral="0"
         derived="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="The execution time in nanoseconds. Convert this to other time units using the&#xD;&#xA;utility functions in TimeUnits.NANOTIME."/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="executionTimeMsec" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//ELong"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="executionTimeMsec" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//ELong"
         changeable="false" volatile="true" transient="true" defaultValueLiteral="0"
         derived="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
@@ -62,15 +62,15 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="inParameterValues" upperBound="-1"
         containment="true">
       <eGenericType eClassifier="#//MapEntry">
-        <eTypeArguments eClassifier="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
-        <eTypeArguments eClassifier="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+        <eTypeArguments eClassifier="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+        <eTypeArguments eClassifier="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
       </eGenericType>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="outParameterValues" upperBound="-1"
         containment="true">
       <eGenericType eClassifier="#//MapEntry">
-        <eTypeArguments eClassifier="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
-        <eTypeArguments eClassifier="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+        <eTypeArguments eClassifier="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+        <eTypeArguments eClassifier="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
       </eGenericType>
     </eStructuralFeatures>
   </eClassifiers>
@@ -101,7 +101,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="StoryPatternMatching">
     <eTypeParameters name="StoryPatternType"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="successful" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="successful" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
     <eGenericSuperTypes eClassifier="#//StoryPatternExecution">
       <eTypeArguments eTypeParameter="#//StoryPatternMatching/StoryPatternType"/>
     </eGenericSuperTypes>
@@ -121,7 +121,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="StoryPatternObjectBound">
     <eTypeParameters name="StoryPatternObjectType"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
     <eGenericSuperTypes eClassifier="#//StoryPatternObjectExecution">
       <eTypeArguments eTypeParameter="#//StoryPatternObjectBound/StoryPatternObjectType"/>
     </eGenericSuperTypes>
@@ -135,7 +135,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="StoryPatternObjectBindingRevoked">
     <eTypeParameters name="StoryPatternObjectType"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="previousValue" lowerBound="1"
-        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+        eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
     <eGenericSuperTypes eClassifier="#//StoryPatternObjectExecution">
       <eTypeArguments eTypeParameter="#//StoryPatternObjectBindingRevoked/StoryPatternObjectType"/>
     </eGenericSuperTypes>
@@ -156,7 +156,7 @@
       <eGenericType eTypeParameter="#//StoryPatternLinkExecution/StoryPatternObjectType"/>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="sourceObject" lowerBound="1"
-        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+        eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TraversingLink">
     <eTypeParameters name="StoryPatternLinkType"/>
@@ -169,7 +169,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="LinkCheck" abstract="true">
     <eTypeParameters name="StoryPatternLinkType"/>
     <eTypeParameters name="StoryPatternObjectType"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="targetObject" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="targetObject" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
     <eGenericSuperTypes eClassifier="#//StoryPatternLinkExecution">
       <eTypeArguments eTypeParameter="#//LinkCheck/StoryPatternLinkType"/>
       <eTypeArguments eTypeParameter="#//LinkCheck/StoryPatternObjectType"/>
@@ -197,7 +197,7 @@
       <eGenericType eTypeParameter="#//ExpressionEvaluation/ExpressionType"/>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="result" lowerBound="1"
-        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+        eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="InstanceObjectModification" abstract="true"
       eSuperTypes="#//Execution">
@@ -206,7 +206,7 @@
       <eGenericType eTypeParameter="#//InstanceObjectModification/StoryPatternObjectType"/>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceObject" lowerBound="1"
-        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+        eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="InstanceObjectCreation">
     <eTypeParameters name="StoryPatternObjectType"/>
@@ -236,9 +236,9 @@
       <eGenericType eTypeParameter="#//InstanceLinkModification/StoryPatternObjectType"/>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="sourceInstanceObject" lowerBound="1"
-        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+        eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="targetInstanceObject" lowerBound="1"
-        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+        eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="InstanceLinkCreation">
     <eTypeParameters name="StoryPatternLinkType"/>
@@ -266,19 +266,19 @@
       <eGenericType eTypeParameter="#//AttributeValueSet/FeatureType"/>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceObject" lowerBound="1"
-        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+        eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="newValue" lowerBound="1"
-        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+        eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="VariableModification" abstract="true"
       eSuperTypes="#//Execution">
     <eTypeParameters name="ClassifierType"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="variableName" lowerBound="1"
-        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+        eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="classifier" lowerBound="1">
       <eGenericType eTypeParameter="#//VariableModification/ClassifierType"/>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="VariableCreated">
     <eTypeParameters name="ClassifierType"/>
@@ -295,7 +295,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="VariableChanged">
     <eTypeParameters name="ClassifierType"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="oldValue" lowerBound="1"
-        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+        eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
     <eGenericSuperTypes eClassifier="#//VariableModification">
       <eTypeArguments eTypeParameter="#//VariableChanged/ClassifierType"/>
     </eGenericSuperTypes>

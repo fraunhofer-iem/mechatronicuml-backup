@@ -13,24 +13,18 @@ import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EStructuralFeature;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
-import org.eclipse.emf.edit.provider.IChildCreationExtender;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemColorProvider;
-import org.eclipse.emf.edit.provider.IItemFontProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITableItemColorProvider;
-import org.eclipse.emf.edit.provider.ITableItemFontProvider;
-import org.eclipse.emf.edit.provider.ITableItemLabelProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.muml.storydiagram.interpreter.core.executiontrace.ExecutionTrace;
-import org.muml.storydiagram.interpreter.core.executiontrace.ExecutionTraceFactory;
-import org.muml.storydiagram.interpreter.core.executiontrace.ExecutionTracePackage;
+import org.muml.storydiagram.interpreter.core.executiontrace.ExecutiontraceFactory;
+import org.muml.storydiagram.interpreter.core.executiontrace.ExecutiontracePackage;
 
 /**
  * This is the item provider adapter for a {@link org.muml.storydiagram.interpreter.core.executiontrace.ExecutionTrace} object.
@@ -38,18 +32,15 @@ import org.muml.storydiagram.interpreter.core.executiontrace.ExecutionTracePacka
  * <!-- end-user-doc -->
  * @generated
  */
-public class ExecutionTraceItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider,
-		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider, ITableItemColorProvider,
-		ITableItemFontProvider, IItemColorProvider, IItemFontProvider
-{
+public class ExecutionTraceItemProvider extends ItemProviderAdapter
+		implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ExecutionTraceItemProvider(AdapterFactory adapterFactory)
-	{
+	public ExecutionTraceItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -60,10 +51,8 @@ public class ExecutionTraceItemProvider extends ItemProviderAdapter implements I
 	 * @generated
 	 */
 	@Override
-	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object)
-	{
-		if (itemPropertyDescriptors == null)
-		{
+	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 			addDescriptionPropertyDescriptor(object);
@@ -79,13 +68,20 @@ public class ExecutionTraceItemProvider extends ItemProviderAdapter implements I
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addDescriptionPropertyDescriptor(Object object)
-	{
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(), getString("_UI_ExecutionTrace_description_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_ExecutionTrace_description_feature", "_UI_ExecutionTrace_type"),
-				ExecutionTracePackage.Literals.EXECUTION_TRACE__DESCRIPTION, true, false, false,
-				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	protected void addDescriptionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ExecutionTrace_description_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ExecutionTrace_description_feature", "_UI_ExecutionTrace_type"),
+				 ExecutiontracePackage.Literals.EXECUTION_TRACE__DESCRIPTION,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -94,16 +90,20 @@ public class ExecutionTraceItemProvider extends ItemProviderAdapter implements I
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addTotalExecutionTimePropertyDescriptor(Object object)
-	{
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(
-						((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(),
-						getString("_UI_ExecutionTrace_totalExecutionTime_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_ExecutionTrace_totalExecutionTime_feature",
-								"_UI_ExecutionTrace_type"), ExecutionTracePackage.Literals.EXECUTION_TRACE__TOTAL_EXECUTION_TIME, true,
-						false, false, ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null, null));
+	protected void addTotalExecutionTimePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ExecutionTrace_totalExecutionTime_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ExecutionTrace_totalExecutionTime_feature", "_UI_ExecutionTrace_type"),
+				 ExecutiontracePackage.Literals.EXECUTION_TRACE__TOTAL_EXECUTION_TIME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -112,15 +112,20 @@ public class ExecutionTraceItemProvider extends ItemProviderAdapter implements I
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addTotalExecutionTimeMsecPropertyDescriptor(Object object)
-	{
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_ExecutionTrace_totalExecutionTimeMsec_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_ExecutionTrace_totalExecutionTimeMsec_feature",
-						"_UI_ExecutionTrace_type"), ExecutionTracePackage.Literals.EXECUTION_TRACE__TOTAL_EXECUTION_TIME_MSEC, false,
-				false, false, ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null, null));
+	protected void addTotalExecutionTimeMsecPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ExecutionTrace_totalExecutionTimeMsec_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ExecutionTrace_totalExecutionTimeMsec_feature", "_UI_ExecutionTrace_type"),
+				 ExecutiontracePackage.Literals.EXECUTION_TRACE__TOTAL_EXECUTION_TIME_MSEC,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -132,12 +137,10 @@ public class ExecutionTraceItemProvider extends ItemProviderAdapter implements I
 	 * @generated
 	 */
 	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object)
-	{
-		if (childrenFeatures == null)
-		{
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ExecutionTracePackage.Literals.EXECUTION_TRACE__EXECUTIONS);
+			childrenFeatures.add(ExecutiontracePackage.Literals.EXECUTION_TRACE__EXECUTIONS);
 		}
 		return childrenFeatures;
 	}
@@ -148,23 +151,11 @@ public class ExecutionTraceItemProvider extends ItemProviderAdapter implements I
 	 * @generated
 	 */
 	@Override
-	protected EStructuralFeature getChildFeature(Object object, Object child)
-	{
+	protected EStructuralFeature getChildFeature(Object object, Object child) {
 		// Check the type of the specified child object and return the proper feature to use for
 		// adding (see {@link AddCommand}) it as a child.
 
 		return super.getChildFeature(object, child);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean hasChildren(Object object)
-	{
-		return hasChildren(object, true);
 	}
 
 	/**
@@ -174,8 +165,7 @@ public class ExecutionTraceItemProvider extends ItemProviderAdapter implements I
 	 * @generated
 	 */
 	@Override
-	public Object getImage(Object object)
-	{
+	public Object getImage(Object object) {
 		return overlayImage(object, getResourceLocator().getImage("full/obj16/ExecutionTrace"));
 	}
 
@@ -186,11 +176,11 @@ public class ExecutionTraceItemProvider extends ItemProviderAdapter implements I
 	 * @generated
 	 */
 	@Override
-	public String getText(Object object)
-	{
-		String label = ((ExecutionTrace) object).getDescription();
-		return label == null || label.length() == 0 ? getString("_UI_ExecutionTrace_type") : getString("_UI_ExecutionTrace_type") + " "
-				+ label;
+	public String getText(Object object) {
+		String label = ((ExecutionTrace)object).getDescription();
+		return label == null || label.length() == 0 ?
+			getString("_UI_ExecutionTrace_type") :
+			getString("_UI_ExecutionTrace_type") + " " + label;
 	}
 
 	/**
@@ -201,18 +191,16 @@ public class ExecutionTraceItemProvider extends ItemProviderAdapter implements I
 	 * @generated
 	 */
 	@Override
-	public void notifyChanged(Notification notification)
-	{
+	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(ExecutionTrace.class))
-		{
-			case ExecutionTracePackage.EXECUTION_TRACE__DESCRIPTION:
-			case ExecutionTracePackage.EXECUTION_TRACE__TOTAL_EXECUTION_TIME:
-			case ExecutionTracePackage.EXECUTION_TRACE__TOTAL_EXECUTION_TIME_MSEC:
+		switch (notification.getFeatureID(ExecutionTrace.class)) {
+			case ExecutiontracePackage.EXECUTION_TRACE__DESCRIPTION:
+			case ExecutiontracePackage.EXECUTION_TRACE__TOTAL_EXECUTION_TIME:
+			case ExecutiontracePackage.EXECUTION_TRACE__TOTAL_EXECUTION_TIME_MSEC:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case ExecutionTracePackage.EXECUTION_TRACE__EXECUTIONS:
+			case ExecutiontracePackage.EXECUTION_TRACE__EXECUTIONS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -227,84 +215,133 @@ public class ExecutionTraceItemProvider extends ItemProviderAdapter implements I
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object)
-	{
+	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(ExecutionTracePackage.Literals.EXECUTION_TRACE__EXECUTIONS,
-				ExecutionTraceFactory.eINSTANCE.createActivityExecution()));
+		newChildDescriptors.add
+			(createChildParameter
+				(ExecutiontracePackage.Literals.EXECUTION_TRACE__EXECUTIONS,
+				 ExecutiontraceFactory.eINSTANCE.createActivityExecution()));
 
-		newChildDescriptors.add(createChildParameter(ExecutionTracePackage.Literals.EXECUTION_TRACE__EXECUTIONS,
-				ExecutionTraceFactory.eINSTANCE.createActivityNodeExecution()));
+		newChildDescriptors.add
+			(createChildParameter
+				(ExecutiontracePackage.Literals.EXECUTION_TRACE__EXECUTIONS,
+				 ExecutiontraceFactory.eINSTANCE.createActivityNodeExecution()));
 
-		newChildDescriptors.add(createChildParameter(ExecutionTracePackage.Literals.EXECUTION_TRACE__EXECUTIONS,
-				ExecutionTraceFactory.eINSTANCE.createActivityEdgeTraversal()));
+		newChildDescriptors.add
+			(createChildParameter
+				(ExecutiontracePackage.Literals.EXECUTION_TRACE__EXECUTIONS,
+				 ExecutiontraceFactory.eINSTANCE.createActivityEdgeTraversal()));
 
-		newChildDescriptors.add(createChildParameter(ExecutionTracePackage.Literals.EXECUTION_TRACE__EXECUTIONS,
-				ExecutionTraceFactory.eINSTANCE.createStoryPatternInitialization()));
+		newChildDescriptors.add
+			(createChildParameter
+				(ExecutiontracePackage.Literals.EXECUTION_TRACE__EXECUTIONS,
+				 ExecutiontraceFactory.eINSTANCE.createStoryPatternInitialization()));
 
-		newChildDescriptors.add(createChildParameter(ExecutionTracePackage.Literals.EXECUTION_TRACE__EXECUTIONS,
-				ExecutionTraceFactory.eINSTANCE.createStoryPatternMatching()));
+		newChildDescriptors.add
+			(createChildParameter
+				(ExecutiontracePackage.Literals.EXECUTION_TRACE__EXECUTIONS,
+				 ExecutiontraceFactory.eINSTANCE.createStoryPatternMatching()));
 
-		newChildDescriptors.add(createChildParameter(ExecutionTracePackage.Literals.EXECUTION_TRACE__EXECUTIONS,
-				ExecutionTraceFactory.eINSTANCE.createStoryPatternApplication()));
+		newChildDescriptors.add
+			(createChildParameter
+				(ExecutiontracePackage.Literals.EXECUTION_TRACE__EXECUTIONS,
+				 ExecutiontraceFactory.eINSTANCE.createStoryPatternApplication()));
 
-		newChildDescriptors.add(createChildParameter(ExecutionTracePackage.Literals.EXECUTION_TRACE__EXECUTIONS,
-				ExecutionTraceFactory.eINSTANCE.createStoryPatternObjectBound()));
+		newChildDescriptors.add
+			(createChildParameter
+				(ExecutiontracePackage.Literals.EXECUTION_TRACE__EXECUTIONS,
+				 ExecutiontraceFactory.eINSTANCE.createStoryPatternObjectBound()));
 
-		newChildDescriptors.add(createChildParameter(ExecutionTracePackage.Literals.EXECUTION_TRACE__EXECUTIONS,
-				ExecutionTraceFactory.eINSTANCE.createStoryPatternObjectNotBound()));
+		newChildDescriptors.add
+			(createChildParameter
+				(ExecutiontracePackage.Literals.EXECUTION_TRACE__EXECUTIONS,
+				 ExecutiontraceFactory.eINSTANCE.createStoryPatternObjectNotBound()));
 
-		newChildDescriptors.add(createChildParameter(ExecutionTracePackage.Literals.EXECUTION_TRACE__EXECUTIONS,
-				ExecutionTraceFactory.eINSTANCE.createStoryPatternObjectBindingRevoked()));
+		newChildDescriptors.add
+			(createChildParameter
+				(ExecutiontracePackage.Literals.EXECUTION_TRACE__EXECUTIONS,
+				 ExecutiontraceFactory.eINSTANCE.createStoryPatternObjectBindingRevoked()));
 
-		newChildDescriptors.add(createChildParameter(ExecutionTracePackage.Literals.EXECUTION_TRACE__EXECUTIONS,
-				ExecutionTraceFactory.eINSTANCE.createTraversingLink()));
+		newChildDescriptors.add
+			(createChildParameter
+				(ExecutiontracePackage.Literals.EXECUTION_TRACE__EXECUTIONS,
+				 ExecutiontraceFactory.eINSTANCE.createTraversingLink()));
 
-		newChildDescriptors.add(createChildParameter(ExecutionTracePackage.Literals.EXECUTION_TRACE__EXECUTIONS,
-				ExecutionTraceFactory.eINSTANCE.createLinkCheckSuccessful()));
+		newChildDescriptors.add
+			(createChildParameter
+				(ExecutiontracePackage.Literals.EXECUTION_TRACE__EXECUTIONS,
+				 ExecutiontraceFactory.eINSTANCE.createLinkCheckSuccessful()));
 
-		newChildDescriptors.add(createChildParameter(ExecutionTracePackage.Literals.EXECUTION_TRACE__EXECUTIONS,
-				ExecutionTraceFactory.eINSTANCE.createLinkCheckFailed()));
+		newChildDescriptors.add
+			(createChildParameter
+				(ExecutiontracePackage.Literals.EXECUTION_TRACE__EXECUTIONS,
+				 ExecutiontraceFactory.eINSTANCE.createLinkCheckFailed()));
 
-		newChildDescriptors.add(createChildParameter(ExecutionTracePackage.Literals.EXECUTION_TRACE__EXECUTIONS,
-				ExecutionTraceFactory.eINSTANCE.createExpressionEvaluation()));
+		newChildDescriptors.add
+			(createChildParameter
+				(ExecutiontracePackage.Literals.EXECUTION_TRACE__EXECUTIONS,
+				 ExecutiontraceFactory.eINSTANCE.createExpressionEvaluation()));
 
-		newChildDescriptors.add(createChildParameter(ExecutionTracePackage.Literals.EXECUTION_TRACE__EXECUTIONS,
-				ExecutionTraceFactory.eINSTANCE.createInstanceObjectCreation()));
+		newChildDescriptors.add
+			(createChildParameter
+				(ExecutiontracePackage.Literals.EXECUTION_TRACE__EXECUTIONS,
+				 ExecutiontraceFactory.eINSTANCE.createInstanceObjectCreation()));
 
-		newChildDescriptors.add(createChildParameter(ExecutionTracePackage.Literals.EXECUTION_TRACE__EXECUTIONS,
-				ExecutionTraceFactory.eINSTANCE.createInstanceObjectDeletion()));
+		newChildDescriptors.add
+			(createChildParameter
+				(ExecutiontracePackage.Literals.EXECUTION_TRACE__EXECUTIONS,
+				 ExecutiontraceFactory.eINSTANCE.createInstanceObjectDeletion()));
 
-		newChildDescriptors.add(createChildParameter(ExecutionTracePackage.Literals.EXECUTION_TRACE__EXECUTIONS,
-				ExecutionTraceFactory.eINSTANCE.createInstanceLinkCreation()));
+		newChildDescriptors.add
+			(createChildParameter
+				(ExecutiontracePackage.Literals.EXECUTION_TRACE__EXECUTIONS,
+				 ExecutiontraceFactory.eINSTANCE.createInstanceLinkCreation()));
 
-		newChildDescriptors.add(createChildParameter(ExecutionTracePackage.Literals.EXECUTION_TRACE__EXECUTIONS,
-				ExecutionTraceFactory.eINSTANCE.createInstanceLinkDeletion()));
+		newChildDescriptors.add
+			(createChildParameter
+				(ExecutiontracePackage.Literals.EXECUTION_TRACE__EXECUTIONS,
+				 ExecutiontraceFactory.eINSTANCE.createInstanceLinkDeletion()));
 
-		newChildDescriptors.add(createChildParameter(ExecutionTracePackage.Literals.EXECUTION_TRACE__EXECUTIONS,
-				ExecutionTraceFactory.eINSTANCE.createAttributeValueSet()));
+		newChildDescriptors.add
+			(createChildParameter
+				(ExecutiontracePackage.Literals.EXECUTION_TRACE__EXECUTIONS,
+				 ExecutiontraceFactory.eINSTANCE.createAttributeValueSet()));
 
-		newChildDescriptors.add(createChildParameter(ExecutionTracePackage.Literals.EXECUTION_TRACE__EXECUTIONS,
-				ExecutionTraceFactory.eINSTANCE.createVariableCreated()));
+		newChildDescriptors.add
+			(createChildParameter
+				(ExecutiontracePackage.Literals.EXECUTION_TRACE__EXECUTIONS,
+				 ExecutiontraceFactory.eINSTANCE.createVariableCreated()));
 
-		newChildDescriptors.add(createChildParameter(ExecutionTracePackage.Literals.EXECUTION_TRACE__EXECUTIONS,
-				ExecutionTraceFactory.eINSTANCE.createVariableDeleted()));
+		newChildDescriptors.add
+			(createChildParameter
+				(ExecutiontracePackage.Literals.EXECUTION_TRACE__EXECUTIONS,
+				 ExecutiontraceFactory.eINSTANCE.createVariableDeleted()));
 
-		newChildDescriptors.add(createChildParameter(ExecutionTracePackage.Literals.EXECUTION_TRACE__EXECUTIONS,
-				ExecutionTraceFactory.eINSTANCE.createVariableChanged()));
+		newChildDescriptors.add
+			(createChildParameter
+				(ExecutiontracePackage.Literals.EXECUTION_TRACE__EXECUTIONS,
+				 ExecutiontraceFactory.eINSTANCE.createVariableChanged()));
 
-		newChildDescriptors.add(createChildParameter(ExecutionTracePackage.Literals.EXECUTION_TRACE__EXECUTIONS,
-				ExecutionTraceFactory.eINSTANCE.createStoryPatternObjectConstraintHolds()));
+		newChildDescriptors.add
+			(createChildParameter
+				(ExecutiontracePackage.Literals.EXECUTION_TRACE__EXECUTIONS,
+				 ExecutiontraceFactory.eINSTANCE.createStoryPatternObjectConstraintHolds()));
 
-		newChildDescriptors.add(createChildParameter(ExecutionTracePackage.Literals.EXECUTION_TRACE__EXECUTIONS,
-				ExecutionTraceFactory.eINSTANCE.createStoryPatternObjectConstraintViolated()));
+		newChildDescriptors.add
+			(createChildParameter
+				(ExecutiontracePackage.Literals.EXECUTION_TRACE__EXECUTIONS,
+				 ExecutiontraceFactory.eINSTANCE.createStoryPatternObjectConstraintViolated()));
 
-		newChildDescriptors.add(createChildParameter(ExecutionTracePackage.Literals.EXECUTION_TRACE__EXECUTIONS,
-				ExecutionTraceFactory.eINSTANCE.createStoryPatternConstraintHolds()));
+		newChildDescriptors.add
+			(createChildParameter
+				(ExecutiontracePackage.Literals.EXECUTION_TRACE__EXECUTIONS,
+				 ExecutiontraceFactory.eINSTANCE.createStoryPatternConstraintHolds()));
 
-		newChildDescriptors.add(createChildParameter(ExecutionTracePackage.Literals.EXECUTION_TRACE__EXECUTIONS,
-				ExecutionTraceFactory.eINSTANCE.createStoryPatternConstraintViolated()));
+		newChildDescriptors.add
+			(createChildParameter
+				(ExecutiontracePackage.Literals.EXECUTION_TRACE__EXECUTIONS,
+				 ExecutiontraceFactory.eINSTANCE.createStoryPatternConstraintViolated()));
 	}
 
 	/**
@@ -314,9 +351,8 @@ public class ExecutionTraceItemProvider extends ItemProviderAdapter implements I
 	 * @generated
 	 */
 	@Override
-	public ResourceLocator getResourceLocator()
-	{
-		return ((IChildCreationExtender) adapterFactory).getResourceLocator();
+	public ResourceLocator getResourceLocator() {
+		return ExecutionTraceEditPlugin.INSTANCE;
 	}
 
 }

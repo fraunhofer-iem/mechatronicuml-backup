@@ -8,29 +8,26 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.muml.storydiagram.interpreter.core.executiontrace.ActivityEdgeTraversal;
-import org.muml.storydiagram.interpreter.core.executiontrace.ExecutionTracePackage;
+import org.muml.storydiagram.interpreter.core.executiontrace.ExecutiontracePackage;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '
  * <em><b>Activity Edge Traversal</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * <ul>
- * <li>
- * {@link org.muml.storydiagram.interpreter.core.executiontrace.impl.ActivityEdgeTraversalImpl#getActivityEdge
- * <em>Activity Edge</em>}</li>
- * </ul>
  * </p>
- * 
+ * <ul>
+ *   <li>{@link org.muml.storydiagram.interpreter.core.executiontrace.impl.ActivityEdgeTraversalImpl#getActivityEdge <em>Activity Edge</em>}</li>
+ * </ul>
+ *
  * @generated
  */
 public class ActivityEdgeTraversalImpl<ActivityEdgeType> extends ExecutionImpl implements ActivityEdgeTraversal<ActivityEdgeType>
 {
 	/**
-	 * The cached value of the '{@link #getActivityEdge()
-	 * <em>Activity Edge</em>}' reference. <!-- begin-user-doc --> <!--
+	 * The cached value of the '{@link #getActivityEdge() <em>Activity Edge</em>}' reference.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @see #getActivityEdge()
 	 * @generated
 	 * @ordered
@@ -39,7 +36,6 @@ public class ActivityEdgeTraversalImpl<ActivityEdgeType> extends ExecutionImpl i
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected ActivityEdgeTraversalImpl()
@@ -49,100 +45,81 @@ public class ActivityEdgeTraversalImpl<ActivityEdgeType> extends ExecutionImpl i
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	protected EClass eStaticClass()
 	{
-		return ExecutionTracePackage.Literals.ACTIVITY_EDGE_TRAVERSAL;
+		return ExecutiontracePackage.Literals.ACTIVITY_EDGE_TRAVERSAL;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	@SuppressWarnings("unchecked")
 	public ActivityEdgeType getActivityEdge()
 	{
-		if ((this.activityEdge != null) && ((EObject) this.activityEdge).eIsProxy())
-		{
-			final InternalEObject oldActivityEdge = (InternalEObject) this.activityEdge;
-			this.activityEdge = (ActivityEdgeType) this.eResolveProxy(oldActivityEdge);
-			if (this.activityEdge != oldActivityEdge)
-			{
-				if (this.eNotificationRequired())
-				{
-					this.eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							ExecutionTracePackage.ACTIVITY_EDGE_TRAVERSAL__ACTIVITY_EDGE, oldActivityEdge, this.activityEdge));
-				}
+		if (activityEdge != null && ((EObject)activityEdge).eIsProxy()) {
+			InternalEObject oldActivityEdge = (InternalEObject)activityEdge;
+			activityEdge = (ActivityEdgeType)eResolveProxy(oldActivityEdge);
+			if (activityEdge != oldActivityEdge) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ExecutiontracePackage.ACTIVITY_EDGE_TRAVERSAL__ACTIVITY_EDGE, oldActivityEdge, activityEdge));
 			}
 		}
-		return this.activityEdge;
+		return activityEdge;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public ActivityEdgeType basicGetActivityEdge()
 	{
-		return this.activityEdge;
+		return activityEdge;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
-	public void setActivityEdge(final ActivityEdgeType newActivityEdge)
+	public void setActivityEdge(ActivityEdgeType newActivityEdge)
 	{
-		final ActivityEdgeType oldActivityEdge = this.activityEdge;
-		this.activityEdge = newActivityEdge;
-		if (this.eNotificationRequired())
-		{
-			this.eNotify(new ENotificationImpl(this, Notification.SET, ExecutionTracePackage.ACTIVITY_EDGE_TRAVERSAL__ACTIVITY_EDGE,
-					oldActivityEdge, this.activityEdge));
-		}
+		ActivityEdgeType oldActivityEdge = activityEdge;
+		activityEdge = newActivityEdge;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ExecutiontracePackage.ACTIVITY_EDGE_TRAVERSAL__ACTIVITY_EDGE, oldActivityEdge, activityEdge));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
-	public Object eGet(final int featureID, final boolean resolve, final boolean coreType)
+	public Object eGet(int featureID, boolean resolve, boolean coreType)
 	{
-		switch (featureID)
-		{
-			case ExecutionTracePackage.ACTIVITY_EDGE_TRAVERSAL__ACTIVITY_EDGE:
-				if (resolve)
-				{
-					return this.getActivityEdge();
-				}
-				return this.basicGetActivityEdge();
+		switch (featureID) {
+			case ExecutiontracePackage.ACTIVITY_EDGE_TRAVERSAL__ACTIVITY_EDGE:
+				if (resolve) return getActivityEdge();
+				return basicGetActivityEdge();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public void eSet(final int featureID, final Object newValue)
+	public void eSet(int featureID, Object newValue)
 	{
-		switch (featureID)
-		{
-			case ExecutionTracePackage.ACTIVITY_EDGE_TRAVERSAL__ACTIVITY_EDGE:
-				this.setActivityEdge((ActivityEdgeType) newValue);
+		switch (featureID) {
+			case ExecutiontracePackage.ACTIVITY_EDGE_TRAVERSAL__ACTIVITY_EDGE:
+				setActivityEdge((ActivityEdgeType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -150,16 +127,14 @@ public class ActivityEdgeTraversalImpl<ActivityEdgeType> extends ExecutionImpl i
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
-	public void eUnset(final int featureID)
+	public void eUnset(int featureID)
 	{
-		switch (featureID)
-		{
-			case ExecutionTracePackage.ACTIVITY_EDGE_TRAVERSAL__ACTIVITY_EDGE:
-				this.setActivityEdge((ActivityEdgeType) null);
+		switch (featureID) {
+			case ExecutiontracePackage.ACTIVITY_EDGE_TRAVERSAL__ACTIVITY_EDGE:
+				setActivityEdge((ActivityEdgeType)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -167,16 +142,14 @@ public class ActivityEdgeTraversalImpl<ActivityEdgeType> extends ExecutionImpl i
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
-	public boolean eIsSet(final int featureID)
+	public boolean eIsSet(int featureID)
 	{
-		switch (featureID)
-		{
-			case ExecutionTracePackage.ACTIVITY_EDGE_TRAVERSAL__ACTIVITY_EDGE:
-				return this.activityEdge != null;
+		switch (featureID) {
+			case ExecutiontracePackage.ACTIVITY_EDGE_TRAVERSAL__ACTIVITY_EDGE:
+				return activityEdge != null;
 		}
 		return super.eIsSet(featureID);
 	}

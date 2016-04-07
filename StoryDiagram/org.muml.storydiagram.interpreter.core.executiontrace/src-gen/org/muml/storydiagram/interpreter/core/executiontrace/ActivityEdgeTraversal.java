@@ -5,17 +5,15 @@ package org.muml.storydiagram.interpreter.core.executiontrace;
 /**
  * <!-- begin-user-doc --> A representation of the model object '
  * <em><b>Activity Edge Traversal</b></em>'. <!-- end-user-doc -->
- * 
+ *
  * <p>
  * The following features are supported:
- * <ul>
- * <li>
- * {@link org.muml.storydiagram.interpreter.core.executiontrace.ActivityEdgeTraversal#getActivityEdge
- * <em>Activity Edge</em>}</li>
- * </ul>
  * </p>
- * 
- * @see org.muml.storydiagram.interpreter.core.executiontrace.ExecutionTracePackage#getActivityEdgeTraversal()
+ * <ul>
+ *   <li>{@link org.muml.storydiagram.interpreter.core.executiontrace.ActivityEdgeTraversal#getActivityEdge <em>Activity Edge</em>}</li>
+ * </ul>
+ *
+ * @see org.muml.storydiagram.interpreter.core.executiontrace.ExecutiontracePackage#getActivityEdgeTraversal()
  * @model
  * @generated
  */
@@ -39,13 +37,10 @@ public interface ActivityEdgeTraversal<ActivityEdgeType> extends Execution
 	ActivityEdgeType getActivityEdge();
 
 	/**
-	 * Sets the value of the '
-	 * {@link org.muml.storydiagram.interpreter.core.executiontrace.ActivityEdgeTraversal#getActivityEdge
-	 * <em>Activity Edge</em>}' reference. <!-- begin-user-doc --> <!--
+	 * Sets the value of the '{@link org.muml.storydiagram.interpreter.core.executiontrace.ActivityEdgeTraversal#getActivityEdge <em>Activity Edge</em>}' reference.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
-	 * @param value
-	 *            the new value of the '<em>Activity Edge</em>' reference.
+	 * @param value the new value of the '<em>Activity Edge</em>' reference.
 	 * @see #getActivityEdge()
 	 * @generated
 	 */

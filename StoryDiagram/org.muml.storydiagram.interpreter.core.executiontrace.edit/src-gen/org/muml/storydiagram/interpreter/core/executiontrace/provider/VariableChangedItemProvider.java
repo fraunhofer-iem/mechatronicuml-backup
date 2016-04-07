@@ -9,20 +9,10 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemColorProvider;
-import org.eclipse.emf.edit.provider.IItemFontProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITableItemColorProvider;
-import org.eclipse.emf.edit.provider.ITableItemFontProvider;
-import org.eclipse.emf.edit.provider.ITableItemLabelProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import org.muml.storydiagram.interpreter.core.executiontrace.ExecutionTracePackage;
+import org.muml.storydiagram.interpreter.core.executiontrace.ExecutiontracePackage;
 import org.muml.storydiagram.interpreter.core.executiontrace.VariableChanged;
 
 /**
@@ -31,18 +21,14 @@ import org.muml.storydiagram.interpreter.core.executiontrace.VariableChanged;
  * <!-- end-user-doc -->
  * @generated
  */
-public class VariableChangedItemProvider extends VariableModificationItemProvider implements IEditingDomainItemProvider,
-		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider,
-		ITableItemColorProvider, ITableItemFontProvider, IItemColorProvider, IItemFontProvider
-{
+public class VariableChangedItemProvider extends VariableModificationItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public VariableChangedItemProvider(AdapterFactory adapterFactory)
-	{
+	public VariableChangedItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -53,10 +39,8 @@ public class VariableChangedItemProvider extends VariableModificationItemProvide
 	 * @generated
 	 */
 	@Override
-	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object)
-	{
-		if (itemPropertyDescriptors == null)
-		{
+	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 			addOldValuePropertyDescriptor(object);
@@ -70,13 +54,20 @@ public class VariableChangedItemProvider extends VariableModificationItemProvide
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addOldValuePropertyDescriptor(Object object)
-	{
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(), getString("_UI_VariableChanged_oldValue_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_VariableChanged_oldValue_feature", "_UI_VariableChanged_type"),
-				ExecutionTracePackage.Literals.VARIABLE_CHANGED__OLD_VALUE, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				null, null));
+	protected void addOldValuePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_VariableChanged_oldValue_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_VariableChanged_oldValue_feature", "_UI_VariableChanged_type"),
+				 ExecutiontracePackage.Literals.VARIABLE_CHANGED__OLD_VALUE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -86,8 +77,7 @@ public class VariableChangedItemProvider extends VariableModificationItemProvide
 	 * @generated
 	 */
 	@Override
-	public Object getImage(Object object)
-	{
+	public Object getImage(Object object) {
 		return overlayImage(object, getResourceLocator().getImage("full/obj16/VariableChanged"));
 	}
 
@@ -98,11 +88,11 @@ public class VariableChangedItemProvider extends VariableModificationItemProvide
 	 * @generated
 	 */
 	@Override
-	public String getText(Object object)
-	{
-		String label = ((VariableChanged<?>) object).getVariableName();
-		return label == null || label.length() == 0 ? getString("_UI_VariableChanged_type") : getString("_UI_VariableChanged_type") + " "
-				+ label;
+	public String getText(Object object) {
+		String label = ((VariableChanged<?>)object).getVariableName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_VariableChanged_type") :
+			getString("_UI_VariableChanged_type") + " " + label;
 	}
 
 	/**
@@ -113,13 +103,11 @@ public class VariableChangedItemProvider extends VariableModificationItemProvide
 	 * @generated
 	 */
 	@Override
-	public void notifyChanged(Notification notification)
-	{
+	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(VariableChanged.class))
-		{
-			case ExecutionTracePackage.VARIABLE_CHANGED__OLD_VALUE:
+		switch (notification.getFeatureID(VariableChanged.class)) {
+			case ExecutiontracePackage.VARIABLE_CHANGED__OLD_VALUE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}
@@ -134,8 +122,7 @@ public class VariableChangedItemProvider extends VariableModificationItemProvide
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object)
-	{
+	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 	}
 

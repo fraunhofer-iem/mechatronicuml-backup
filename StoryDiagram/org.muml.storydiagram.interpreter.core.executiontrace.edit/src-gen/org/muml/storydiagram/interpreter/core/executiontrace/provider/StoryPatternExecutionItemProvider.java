@@ -9,19 +9,9 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemColorProvider;
-import org.eclipse.emf.edit.provider.IItemFontProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITableItemColorProvider;
-import org.eclipse.emf.edit.provider.ITableItemFontProvider;
-import org.eclipse.emf.edit.provider.ITableItemLabelProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import org.muml.storydiagram.interpreter.core.executiontrace.ExecutionTracePackage;
+import org.muml.storydiagram.interpreter.core.executiontrace.ExecutiontracePackage;
 import org.muml.storydiagram.interpreter.core.executiontrace.StoryPatternExecution;
 
 /**
@@ -30,18 +20,14 @@ import org.muml.storydiagram.interpreter.core.executiontrace.StoryPatternExecuti
  * <!-- end-user-doc -->
  * @generated
  */
-public class StoryPatternExecutionItemProvider extends ExecutionItemProvider implements IEditingDomainItemProvider,
-		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider,
-		ITableItemColorProvider, ITableItemFontProvider, IItemColorProvider, IItemFontProvider
-{
+public class StoryPatternExecutionItemProvider extends ExecutionItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public StoryPatternExecutionItemProvider(AdapterFactory adapterFactory)
-	{
+	public StoryPatternExecutionItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -52,10 +38,8 @@ public class StoryPatternExecutionItemProvider extends ExecutionItemProvider imp
 	 * @generated
 	 */
 	@Override
-	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object)
-	{
-		if (itemPropertyDescriptors == null)
-		{
+	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 			addStoryPatternPropertyDescriptor(object);
@@ -69,15 +53,20 @@ public class StoryPatternExecutionItemProvider extends ExecutionItemProvider imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addStoryPatternPropertyDescriptor(Object object)
-	{
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_StoryPatternExecution_storyPattern_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_StoryPatternExecution_storyPattern_feature",
-						"_UI_StoryPatternExecution_type"), ExecutionTracePackage.Literals.STORY_PATTERN_EXECUTION__STORY_PATTERN, true,
-				false, true, null, null, null));
+	protected void addStoryPatternPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_StoryPatternExecution_storyPattern_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_StoryPatternExecution_storyPattern_feature", "_UI_StoryPatternExecution_type"),
+				 ExecutiontracePackage.Literals.STORY_PATTERN_EXECUTION__STORY_PATTERN,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
@@ -87,9 +76,8 @@ public class StoryPatternExecutionItemProvider extends ExecutionItemProvider imp
 	 * @generated
 	 */
 	@Override
-	public String getText(Object object)
-	{
-		StoryPatternExecution<?> storyPatternExecution = (StoryPatternExecution<?>) object;
+	public String getText(Object object) {
+		StoryPatternExecution<?> storyPatternExecution = (StoryPatternExecution<?>)object;
 		return getString("_UI_StoryPatternExecution_type") + " " + storyPatternExecution.getExecutionStartedTimeStamp();
 	}
 
@@ -101,13 +89,11 @@ public class StoryPatternExecutionItemProvider extends ExecutionItemProvider imp
 	 * @generated
 	 */
 	@Override
-	public void notifyChanged(Notification notification)
-	{
+	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(StoryPatternExecution.class))
-		{
-			case ExecutionTracePackage.STORY_PATTERN_EXECUTION__STORY_PATTERN:
+		switch (notification.getFeatureID(StoryPatternExecution.class)) {
+			case ExecutiontracePackage.STORY_PATTERN_EXECUTION__STORY_PATTERN:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}
@@ -122,8 +108,7 @@ public class StoryPatternExecutionItemProvider extends ExecutionItemProvider imp
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object)
-	{
+	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 	}
 

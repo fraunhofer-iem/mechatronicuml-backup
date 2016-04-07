@@ -8,39 +8,30 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.muml.storydiagram.interpreter.core.executiontrace.AttributeValueSet;
-import org.muml.storydiagram.interpreter.core.executiontrace.ExecutionTracePackage;
+import org.muml.storydiagram.interpreter.core.executiontrace.ExecutiontracePackage;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '
  * <em><b>Attribute Value Set</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * <ul>
- * <li>
- * {@link org.muml.storydiagram.interpreter.core.executiontrace.impl.AttributeValueSetImpl#getStoryPatternObject
- * <em>Story Pattern Object</em>}</li>
- * <li>
- * {@link org.muml.storydiagram.interpreter.core.executiontrace.impl.AttributeValueSetImpl#getFeature
- * <em>Feature</em>}</li>
- * <li>
- * {@link org.muml.storydiagram.interpreter.core.executiontrace.impl.AttributeValueSetImpl#getInstanceObject
- * <em>Instance Object</em>}</li>
- * <li>
- * {@link org.muml.storydiagram.interpreter.core.executiontrace.impl.AttributeValueSetImpl#getNewValue
- * <em>New Value</em>}</li>
- * </ul>
  * </p>
- * 
+ * <ul>
+ *   <li>{@link org.muml.storydiagram.interpreter.core.executiontrace.impl.AttributeValueSetImpl#getStoryPatternObject <em>Story Pattern Object</em>}</li>
+ *   <li>{@link org.muml.storydiagram.interpreter.core.executiontrace.impl.AttributeValueSetImpl#getFeature <em>Feature</em>}</li>
+ *   <li>{@link org.muml.storydiagram.interpreter.core.executiontrace.impl.AttributeValueSetImpl#getInstanceObject <em>Instance Object</em>}</li>
+ *   <li>{@link org.muml.storydiagram.interpreter.core.executiontrace.impl.AttributeValueSetImpl#getNewValue <em>New Value</em>}</li>
+ * </ul>
+ *
  * @generated
  */
 public class AttributeValueSetImpl<StoryPatternObjectType, FeatureType> extends ExecutionImpl implements
 		AttributeValueSet<StoryPatternObjectType, FeatureType>
 {
 	/**
-	 * The cached value of the '{@link #getStoryPatternObject()
-	 * <em>Story Pattern Object</em>}' reference. <!-- begin-user-doc --> <!--
+	 * The cached value of the '{@link #getStoryPatternObject() <em>Story Pattern Object</em>}' reference.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @see #getStoryPatternObject()
 	 * @generated
 	 * @ordered
@@ -48,9 +39,8 @@ public class AttributeValueSetImpl<StoryPatternObjectType, FeatureType> extends 
 	protected StoryPatternObjectType	storyPatternObject;
 
 	/**
-	 * The cached value of the '{@link #getFeature() <em>Feature</em>}'
-	 * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The cached value of the '{@link #getFeature() <em>Feature</em>}' reference.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getFeature()
 	 * @generated
 	 * @ordered
@@ -58,10 +48,9 @@ public class AttributeValueSetImpl<StoryPatternObjectType, FeatureType> extends 
 	protected FeatureType				feature;
 
 	/**
-	 * The default value of the '{@link #getInstanceObject()
-	 * <em>Instance Object</em>}' attribute. <!-- begin-user-doc --> <!--
+	 * The default value of the '{@link #getInstanceObject() <em>Instance Object</em>}' attribute.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @see #getInstanceObject()
 	 * @generated
 	 * @ordered
@@ -69,20 +58,18 @@ public class AttributeValueSetImpl<StoryPatternObjectType, FeatureType> extends 
 	protected static final String		INSTANCE_OBJECT_EDEFAULT	= null;
 
 	/**
-	 * The cached value of the '{@link #getInstanceObject()
-	 * <em>Instance Object</em>}' attribute. <!-- begin-user-doc --> <!--
+	 * The cached value of the '{@link #getInstanceObject() <em>Instance Object</em>}' attribute.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @see #getInstanceObject()
 	 * @generated
 	 * @ordered
 	 */
-	protected String					instanceObject				= AttributeValueSetImpl.INSTANCE_OBJECT_EDEFAULT;
+	protected String					instanceObject				= INSTANCE_OBJECT_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getNewValue() <em>New Value</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The default value of the '{@link #getNewValue() <em>New Value</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getNewValue()
 	 * @generated
 	 * @ordered
@@ -90,18 +77,16 @@ public class AttributeValueSetImpl<StoryPatternObjectType, FeatureType> extends 
 	protected static final String		NEW_VALUE_EDEFAULT			= null;
 
 	/**
-	 * The cached value of the '{@link #getNewValue() <em>New Value</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The cached value of the '{@link #getNewValue() <em>New Value</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getNewValue()
 	 * @generated
 	 * @ordered
 	 */
-	protected String					newValue					= AttributeValueSetImpl.NEW_VALUE_EDEFAULT;
+	protected String					newValue					= NEW_VALUE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected AttributeValueSetImpl()
@@ -111,227 +96,184 @@ public class AttributeValueSetImpl<StoryPatternObjectType, FeatureType> extends 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	protected EClass eStaticClass()
 	{
-		return ExecutionTracePackage.Literals.ATTRIBUTE_VALUE_SET;
+		return ExecutiontracePackage.Literals.ATTRIBUTE_VALUE_SET;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	@SuppressWarnings("unchecked")
 	public StoryPatternObjectType getStoryPatternObject()
 	{
-		if ((this.storyPatternObject != null) && ((EObject) this.storyPatternObject).eIsProxy())
-		{
-			final InternalEObject oldStoryPatternObject = (InternalEObject) this.storyPatternObject;
-			this.storyPatternObject = (StoryPatternObjectType) this.eResolveProxy(oldStoryPatternObject);
-			if (this.storyPatternObject != oldStoryPatternObject)
-			{
-				if (this.eNotificationRequired())
-				{
-					this.eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							ExecutionTracePackage.ATTRIBUTE_VALUE_SET__STORY_PATTERN_OBJECT, oldStoryPatternObject, this.storyPatternObject));
-				}
+		if (storyPatternObject != null && ((EObject)storyPatternObject).eIsProxy()) {
+			InternalEObject oldStoryPatternObject = (InternalEObject)storyPatternObject;
+			storyPatternObject = (StoryPatternObjectType)eResolveProxy(oldStoryPatternObject);
+			if (storyPatternObject != oldStoryPatternObject) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ExecutiontracePackage.ATTRIBUTE_VALUE_SET__STORY_PATTERN_OBJECT, oldStoryPatternObject, storyPatternObject));
 			}
 		}
-		return this.storyPatternObject;
+		return storyPatternObject;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public StoryPatternObjectType basicGetStoryPatternObject()
 	{
-		return this.storyPatternObject;
+		return storyPatternObject;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
-	public void setStoryPatternObject(final StoryPatternObjectType newStoryPatternObject)
+	public void setStoryPatternObject(StoryPatternObjectType newStoryPatternObject)
 	{
-		final StoryPatternObjectType oldStoryPatternObject = this.storyPatternObject;
-		this.storyPatternObject = newStoryPatternObject;
-		if (this.eNotificationRequired())
-		{
-			this.eNotify(new ENotificationImpl(this, Notification.SET, ExecutionTracePackage.ATTRIBUTE_VALUE_SET__STORY_PATTERN_OBJECT,
-					oldStoryPatternObject, this.storyPatternObject));
-		}
+		StoryPatternObjectType oldStoryPatternObject = storyPatternObject;
+		storyPatternObject = newStoryPatternObject;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ExecutiontracePackage.ATTRIBUTE_VALUE_SET__STORY_PATTERN_OBJECT, oldStoryPatternObject, storyPatternObject));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	@SuppressWarnings("unchecked")
 	public FeatureType getFeature()
 	{
-		if ((this.feature != null) && ((EObject) this.feature).eIsProxy())
-		{
-			final InternalEObject oldFeature = (InternalEObject) this.feature;
-			this.feature = (FeatureType) this.eResolveProxy(oldFeature);
-			if (this.feature != oldFeature)
-			{
-				if (this.eNotificationRequired())
-				{
-					this.eNotify(new ENotificationImpl(this, Notification.RESOLVE, ExecutionTracePackage.ATTRIBUTE_VALUE_SET__FEATURE,
-							oldFeature, this.feature));
-				}
+		if (feature != null && ((EObject)feature).eIsProxy()) {
+			InternalEObject oldFeature = (InternalEObject)feature;
+			feature = (FeatureType)eResolveProxy(oldFeature);
+			if (feature != oldFeature) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ExecutiontracePackage.ATTRIBUTE_VALUE_SET__FEATURE, oldFeature, feature));
 			}
 		}
-		return this.feature;
+		return feature;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public FeatureType basicGetFeature()
 	{
-		return this.feature;
+		return feature;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
-	public void setFeature(final FeatureType newFeature)
+	public void setFeature(FeatureType newFeature)
 	{
-		final FeatureType oldFeature = this.feature;
-		this.feature = newFeature;
-		if (this.eNotificationRequired())
-		{
-			this.eNotify(new ENotificationImpl(this, Notification.SET, ExecutionTracePackage.ATTRIBUTE_VALUE_SET__FEATURE, oldFeature,
-					this.feature));
-		}
+		FeatureType oldFeature = feature;
+		feature = newFeature;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ExecutiontracePackage.ATTRIBUTE_VALUE_SET__FEATURE, oldFeature, feature));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public String getInstanceObject()
 	{
-		return this.instanceObject;
+		return instanceObject;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
-	public void setInstanceObject(final String newInstanceObject)
+	public void setInstanceObject(String newInstanceObject)
 	{
-		final String oldInstanceObject = this.instanceObject;
-		this.instanceObject = newInstanceObject;
-		if (this.eNotificationRequired())
-		{
-			this.eNotify(new ENotificationImpl(this, Notification.SET, ExecutionTracePackage.ATTRIBUTE_VALUE_SET__INSTANCE_OBJECT,
-					oldInstanceObject, this.instanceObject));
-		}
+		String oldInstanceObject = instanceObject;
+		instanceObject = newInstanceObject;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ExecutiontracePackage.ATTRIBUTE_VALUE_SET__INSTANCE_OBJECT, oldInstanceObject, instanceObject));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public String getNewValue()
 	{
-		return this.newValue;
+		return newValue;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
-	public void setNewValue(final String newNewValue)
+	public void setNewValue(String newNewValue)
 	{
-		final String oldNewValue = this.newValue;
-		this.newValue = newNewValue;
-		if (this.eNotificationRequired())
-		{
-			this.eNotify(new ENotificationImpl(this, Notification.SET, ExecutionTracePackage.ATTRIBUTE_VALUE_SET__NEW_VALUE, oldNewValue,
-					this.newValue));
-		}
+		String oldNewValue = newValue;
+		newValue = newNewValue;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ExecutiontracePackage.ATTRIBUTE_VALUE_SET__NEW_VALUE, oldNewValue, newValue));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
-	public Object eGet(final int featureID, final boolean resolve, final boolean coreType)
+	public Object eGet(int featureID, boolean resolve, boolean coreType)
 	{
-		switch (featureID)
-		{
-			case ExecutionTracePackage.ATTRIBUTE_VALUE_SET__STORY_PATTERN_OBJECT:
-				if (resolve)
-				{
-					return this.getStoryPatternObject();
-				}
-				return this.basicGetStoryPatternObject();
-			case ExecutionTracePackage.ATTRIBUTE_VALUE_SET__FEATURE:
-				if (resolve)
-				{
-					return this.getFeature();
-				}
-				return this.basicGetFeature();
-			case ExecutionTracePackage.ATTRIBUTE_VALUE_SET__INSTANCE_OBJECT:
-				return this.getInstanceObject();
-			case ExecutionTracePackage.ATTRIBUTE_VALUE_SET__NEW_VALUE:
-				return this.getNewValue();
+		switch (featureID) {
+			case ExecutiontracePackage.ATTRIBUTE_VALUE_SET__STORY_PATTERN_OBJECT:
+				if (resolve) return getStoryPatternObject();
+				return basicGetStoryPatternObject();
+			case ExecutiontracePackage.ATTRIBUTE_VALUE_SET__FEATURE:
+				if (resolve) return getFeature();
+				return basicGetFeature();
+			case ExecutiontracePackage.ATTRIBUTE_VALUE_SET__INSTANCE_OBJECT:
+				return getInstanceObject();
+			case ExecutiontracePackage.ATTRIBUTE_VALUE_SET__NEW_VALUE:
+				return getNewValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public void eSet(final int featureID, final Object newValue)
+	public void eSet(int featureID, Object newValue)
 	{
-		switch (featureID)
-		{
-			case ExecutionTracePackage.ATTRIBUTE_VALUE_SET__STORY_PATTERN_OBJECT:
-				this.setStoryPatternObject((StoryPatternObjectType) newValue);
+		switch (featureID) {
+			case ExecutiontracePackage.ATTRIBUTE_VALUE_SET__STORY_PATTERN_OBJECT:
+				setStoryPatternObject((StoryPatternObjectType)newValue);
 				return;
-			case ExecutionTracePackage.ATTRIBUTE_VALUE_SET__FEATURE:
-				this.setFeature((FeatureType) newValue);
+			case ExecutiontracePackage.ATTRIBUTE_VALUE_SET__FEATURE:
+				setFeature((FeatureType)newValue);
 				return;
-			case ExecutionTracePackage.ATTRIBUTE_VALUE_SET__INSTANCE_OBJECT:
-				this.setInstanceObject((String) newValue);
+			case ExecutiontracePackage.ATTRIBUTE_VALUE_SET__INSTANCE_OBJECT:
+				setInstanceObject((String)newValue);
 				return;
-			case ExecutionTracePackage.ATTRIBUTE_VALUE_SET__NEW_VALUE:
-				this.setNewValue((String) newValue);
+			case ExecutiontracePackage.ATTRIBUTE_VALUE_SET__NEW_VALUE:
+				setNewValue((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -339,25 +281,23 @@ public class AttributeValueSetImpl<StoryPatternObjectType, FeatureType> extends 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
-	public void eUnset(final int featureID)
+	public void eUnset(int featureID)
 	{
-		switch (featureID)
-		{
-			case ExecutionTracePackage.ATTRIBUTE_VALUE_SET__STORY_PATTERN_OBJECT:
-				this.setStoryPatternObject((StoryPatternObjectType) null);
+		switch (featureID) {
+			case ExecutiontracePackage.ATTRIBUTE_VALUE_SET__STORY_PATTERN_OBJECT:
+				setStoryPatternObject((StoryPatternObjectType)null);
 				return;
-			case ExecutionTracePackage.ATTRIBUTE_VALUE_SET__FEATURE:
-				this.setFeature((FeatureType) null);
+			case ExecutiontracePackage.ATTRIBUTE_VALUE_SET__FEATURE:
+				setFeature((FeatureType)null);
 				return;
-			case ExecutionTracePackage.ATTRIBUTE_VALUE_SET__INSTANCE_OBJECT:
-				this.setInstanceObject(AttributeValueSetImpl.INSTANCE_OBJECT_EDEFAULT);
+			case ExecutiontracePackage.ATTRIBUTE_VALUE_SET__INSTANCE_OBJECT:
+				setInstanceObject(INSTANCE_OBJECT_EDEFAULT);
 				return;
-			case ExecutionTracePackage.ATTRIBUTE_VALUE_SET__NEW_VALUE:
-				this.setNewValue(AttributeValueSetImpl.NEW_VALUE_EDEFAULT);
+			case ExecutiontracePackage.ATTRIBUTE_VALUE_SET__NEW_VALUE:
+				setNewValue(NEW_VALUE_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -365,46 +305,38 @@ public class AttributeValueSetImpl<StoryPatternObjectType, FeatureType> extends 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
-	public boolean eIsSet(final int featureID)
+	public boolean eIsSet(int featureID)
 	{
-		switch (featureID)
-		{
-			case ExecutionTracePackage.ATTRIBUTE_VALUE_SET__STORY_PATTERN_OBJECT:
-				return this.storyPatternObject != null;
-			case ExecutionTracePackage.ATTRIBUTE_VALUE_SET__FEATURE:
-				return this.feature != null;
-			case ExecutionTracePackage.ATTRIBUTE_VALUE_SET__INSTANCE_OBJECT:
-				return AttributeValueSetImpl.INSTANCE_OBJECT_EDEFAULT == null ? this.instanceObject != null
-						: !AttributeValueSetImpl.INSTANCE_OBJECT_EDEFAULT.equals(this.instanceObject);
-			case ExecutionTracePackage.ATTRIBUTE_VALUE_SET__NEW_VALUE:
-				return AttributeValueSetImpl.NEW_VALUE_EDEFAULT == null ? this.newValue != null : !AttributeValueSetImpl.NEW_VALUE_EDEFAULT
-						.equals(this.newValue);
+		switch (featureID) {
+			case ExecutiontracePackage.ATTRIBUTE_VALUE_SET__STORY_PATTERN_OBJECT:
+				return storyPatternObject != null;
+			case ExecutiontracePackage.ATTRIBUTE_VALUE_SET__FEATURE:
+				return feature != null;
+			case ExecutiontracePackage.ATTRIBUTE_VALUE_SET__INSTANCE_OBJECT:
+				return INSTANCE_OBJECT_EDEFAULT == null ? instanceObject != null : !INSTANCE_OBJECT_EDEFAULT.equals(instanceObject);
+			case ExecutiontracePackage.ATTRIBUTE_VALUE_SET__NEW_VALUE:
+				return NEW_VALUE_EDEFAULT == null ? newValue != null : !NEW_VALUE_EDEFAULT.equals(newValue);
 		}
 		return super.eIsSet(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString()
 	{
-		if (this.eIsProxy())
-		{
-			return super.toString();
-		}
+		if (eIsProxy()) return super.toString();
 
-		final StringBuffer result = new StringBuffer(super.toString());
+		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (instanceObject: ");
-		result.append(this.instanceObject);
+		result.append(instanceObject);
 		result.append(", newValue: ");
-		result.append(this.newValue);
+		result.append(newValue);
 		result.append(')');
 		return result.toString();
 	}

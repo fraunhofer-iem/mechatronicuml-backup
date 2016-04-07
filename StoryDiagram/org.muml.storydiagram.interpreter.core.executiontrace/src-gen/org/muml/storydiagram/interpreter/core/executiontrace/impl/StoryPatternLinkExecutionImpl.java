@@ -7,7 +7,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.muml.storydiagram.interpreter.core.executiontrace.ExecutionTracePackage;
+import org.muml.storydiagram.interpreter.core.executiontrace.ExecutiontracePackage;
 import org.muml.storydiagram.interpreter.core.executiontrace.StoryPatternLinkExecution;
 
 /**
@@ -15,32 +15,23 @@ import org.muml.storydiagram.interpreter.core.executiontrace.StoryPatternLinkExe
  * <em><b>Story Pattern Link Execution</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * <ul>
- * <li>
- * {@link org.muml.storydiagram.interpreter.core.executiontrace.impl.StoryPatternLinkExecutionImpl#getStoryPatternLink
- * <em>Story Pattern Link</em>}</li>
- * <li>
- * {@link org.muml.storydiagram.interpreter.core.executiontrace.impl.StoryPatternLinkExecutionImpl#getSourceStoryPatternObject
- * <em>Source Story Pattern Object</em>}</li>
- * <li>
- * {@link org.muml.storydiagram.interpreter.core.executiontrace.impl.StoryPatternLinkExecutionImpl#getTargetStoryPatternObject
- * <em>Target Story Pattern Object</em>}</li>
- * <li>
- * {@link org.muml.storydiagram.interpreter.core.executiontrace.impl.StoryPatternLinkExecutionImpl#getSourceObject
- * <em>Source Object</em>}</li>
- * </ul>
  * </p>
- * 
+ * <ul>
+ *   <li>{@link org.muml.storydiagram.interpreter.core.executiontrace.impl.StoryPatternLinkExecutionImpl#getStoryPatternLink <em>Story Pattern Link</em>}</li>
+ *   <li>{@link org.muml.storydiagram.interpreter.core.executiontrace.impl.StoryPatternLinkExecutionImpl#getSourceStoryPatternObject <em>Source Story Pattern Object</em>}</li>
+ *   <li>{@link org.muml.storydiagram.interpreter.core.executiontrace.impl.StoryPatternLinkExecutionImpl#getTargetStoryPatternObject <em>Target Story Pattern Object</em>}</li>
+ *   <li>{@link org.muml.storydiagram.interpreter.core.executiontrace.impl.StoryPatternLinkExecutionImpl#getSourceObject <em>Source Object</em>}</li>
+ * </ul>
+ *
  * @generated
  */
 public abstract class StoryPatternLinkExecutionImpl<StoryPatternLinkType, StoryPatternObjectType> extends ExecutionImpl implements
 		StoryPatternLinkExecution<StoryPatternLinkType, StoryPatternObjectType>
 {
 	/**
-	 * The cached value of the '{@link #getStoryPatternLink()
-	 * <em>Story Pattern Link</em>}' reference. <!-- begin-user-doc --> <!--
+	 * The cached value of the '{@link #getStoryPatternLink() <em>Story Pattern Link</em>}' reference.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @see #getStoryPatternLink()
 	 * @generated
 	 * @ordered
@@ -48,10 +39,9 @@ public abstract class StoryPatternLinkExecutionImpl<StoryPatternLinkType, StoryP
 	protected StoryPatternLinkType		storyPatternLink;
 
 	/**
-	 * The cached value of the '{@link #getSourceStoryPatternObject()
-	 * <em>Source Story Pattern Object</em>}' reference. <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getSourceStoryPatternObject() <em>Source Story Pattern Object</em>}' reference.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #getSourceStoryPatternObject()
 	 * @generated
 	 * @ordered
@@ -59,10 +49,9 @@ public abstract class StoryPatternLinkExecutionImpl<StoryPatternLinkType, StoryP
 	protected StoryPatternObjectType	sourceStoryPatternObject;
 
 	/**
-	 * The cached value of the '{@link #getTargetStoryPatternObject()
-	 * <em>Target Story Pattern Object</em>}' reference. <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getTargetStoryPatternObject() <em>Target Story Pattern Object</em>}' reference.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #getTargetStoryPatternObject()
 	 * @generated
 	 * @ordered
@@ -70,10 +59,9 @@ public abstract class StoryPatternLinkExecutionImpl<StoryPatternLinkType, StoryP
 	protected StoryPatternObjectType	targetStoryPatternObject;
 
 	/**
-	 * The default value of the '{@link #getSourceObject()
-	 * <em>Source Object</em>}' attribute. <!-- begin-user-doc --> <!--
+	 * The default value of the '{@link #getSourceObject() <em>Source Object</em>}' attribute.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @see #getSourceObject()
 	 * @generated
 	 * @ordered
@@ -81,19 +69,17 @@ public abstract class StoryPatternLinkExecutionImpl<StoryPatternLinkType, StoryP
 	protected static final String		SOURCE_OBJECT_EDEFAULT	= null;
 
 	/**
-	 * The cached value of the '{@link #getSourceObject()
-	 * <em>Source Object</em>}' attribute. <!-- begin-user-doc --> <!--
+	 * The cached value of the '{@link #getSourceObject() <em>Source Object</em>}' attribute.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @see #getSourceObject()
 	 * @generated
 	 * @ordered
 	 */
-	protected String					sourceObject			= StoryPatternLinkExecutionImpl.SOURCE_OBJECT_EDEFAULT;
+	protected String					sourceObject			= SOURCE_OBJECT_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected StoryPatternLinkExecutionImpl()
@@ -103,260 +89,203 @@ public abstract class StoryPatternLinkExecutionImpl<StoryPatternLinkType, StoryP
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	protected EClass eStaticClass()
 	{
-		return ExecutionTracePackage.Literals.STORY_PATTERN_LINK_EXECUTION;
+		return ExecutiontracePackage.Literals.STORY_PATTERN_LINK_EXECUTION;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	@SuppressWarnings("unchecked")
 	public StoryPatternLinkType getStoryPatternLink()
 	{
-		if ((this.storyPatternLink != null) && ((EObject) this.storyPatternLink).eIsProxy())
-		{
-			final InternalEObject oldStoryPatternLink = (InternalEObject) this.storyPatternLink;
-			this.storyPatternLink = (StoryPatternLinkType) this.eResolveProxy(oldStoryPatternLink);
-			if (this.storyPatternLink != oldStoryPatternLink)
-			{
-				if (this.eNotificationRequired())
-				{
-					this.eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							ExecutionTracePackage.STORY_PATTERN_LINK_EXECUTION__STORY_PATTERN_LINK, oldStoryPatternLink,
-							this.storyPatternLink));
-				}
+		if (storyPatternLink != null && ((EObject)storyPatternLink).eIsProxy()) {
+			InternalEObject oldStoryPatternLink = (InternalEObject)storyPatternLink;
+			storyPatternLink = (StoryPatternLinkType)eResolveProxy(oldStoryPatternLink);
+			if (storyPatternLink != oldStoryPatternLink) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ExecutiontracePackage.STORY_PATTERN_LINK_EXECUTION__STORY_PATTERN_LINK, oldStoryPatternLink, storyPatternLink));
 			}
 		}
-		return this.storyPatternLink;
+		return storyPatternLink;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public StoryPatternLinkType basicGetStoryPatternLink()
 	{
-		return this.storyPatternLink;
+		return storyPatternLink;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
-	public void setStoryPatternLink(final StoryPatternLinkType newStoryPatternLink)
+	public void setStoryPatternLink(StoryPatternLinkType newStoryPatternLink)
 	{
-		final StoryPatternLinkType oldStoryPatternLink = this.storyPatternLink;
-		this.storyPatternLink = newStoryPatternLink;
-		if (this.eNotificationRequired())
-		{
-			this.eNotify(new ENotificationImpl(this, Notification.SET,
-					ExecutionTracePackage.STORY_PATTERN_LINK_EXECUTION__STORY_PATTERN_LINK, oldStoryPatternLink, this.storyPatternLink));
-		}
+		StoryPatternLinkType oldStoryPatternLink = storyPatternLink;
+		storyPatternLink = newStoryPatternLink;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ExecutiontracePackage.STORY_PATTERN_LINK_EXECUTION__STORY_PATTERN_LINK, oldStoryPatternLink, storyPatternLink));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	@SuppressWarnings("unchecked")
 	public StoryPatternObjectType getSourceStoryPatternObject()
 	{
-		if ((this.sourceStoryPatternObject != null) && ((EObject) this.sourceStoryPatternObject).eIsProxy())
-		{
-			final InternalEObject oldSourceStoryPatternObject = (InternalEObject) this.sourceStoryPatternObject;
-			this.sourceStoryPatternObject = (StoryPatternObjectType) this.eResolveProxy(oldSourceStoryPatternObject);
-			if (this.sourceStoryPatternObject != oldSourceStoryPatternObject)
-			{
-				if (this.eNotificationRequired())
-				{
-					this.eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							ExecutionTracePackage.STORY_PATTERN_LINK_EXECUTION__SOURCE_STORY_PATTERN_OBJECT, oldSourceStoryPatternObject,
-							this.sourceStoryPatternObject));
-				}
+		if (sourceStoryPatternObject != null && ((EObject)sourceStoryPatternObject).eIsProxy()) {
+			InternalEObject oldSourceStoryPatternObject = (InternalEObject)sourceStoryPatternObject;
+			sourceStoryPatternObject = (StoryPatternObjectType)eResolveProxy(oldSourceStoryPatternObject);
+			if (sourceStoryPatternObject != oldSourceStoryPatternObject) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ExecutiontracePackage.STORY_PATTERN_LINK_EXECUTION__SOURCE_STORY_PATTERN_OBJECT, oldSourceStoryPatternObject, sourceStoryPatternObject));
 			}
 		}
-		return this.sourceStoryPatternObject;
+		return sourceStoryPatternObject;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public StoryPatternObjectType basicGetSourceStoryPatternObject()
 	{
-		return this.sourceStoryPatternObject;
+		return sourceStoryPatternObject;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
-	public void setSourceStoryPatternObject(final StoryPatternObjectType newSourceStoryPatternObject)
+	public void setSourceStoryPatternObject(StoryPatternObjectType newSourceStoryPatternObject)
 	{
-		final StoryPatternObjectType oldSourceStoryPatternObject = this.sourceStoryPatternObject;
-		this.sourceStoryPatternObject = newSourceStoryPatternObject;
-		if (this.eNotificationRequired())
-		{
-			this.eNotify(new ENotificationImpl(this, Notification.SET,
-					ExecutionTracePackage.STORY_PATTERN_LINK_EXECUTION__SOURCE_STORY_PATTERN_OBJECT, oldSourceStoryPatternObject,
-					this.sourceStoryPatternObject));
-		}
+		StoryPatternObjectType oldSourceStoryPatternObject = sourceStoryPatternObject;
+		sourceStoryPatternObject = newSourceStoryPatternObject;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ExecutiontracePackage.STORY_PATTERN_LINK_EXECUTION__SOURCE_STORY_PATTERN_OBJECT, oldSourceStoryPatternObject, sourceStoryPatternObject));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	@SuppressWarnings("unchecked")
 	public StoryPatternObjectType getTargetStoryPatternObject()
 	{
-		if ((this.targetStoryPatternObject != null) && ((EObject) this.targetStoryPatternObject).eIsProxy())
-		{
-			final InternalEObject oldTargetStoryPatternObject = (InternalEObject) this.targetStoryPatternObject;
-			this.targetStoryPatternObject = (StoryPatternObjectType) this.eResolveProxy(oldTargetStoryPatternObject);
-			if (this.targetStoryPatternObject != oldTargetStoryPatternObject)
-			{
-				if (this.eNotificationRequired())
-				{
-					this.eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							ExecutionTracePackage.STORY_PATTERN_LINK_EXECUTION__TARGET_STORY_PATTERN_OBJECT, oldTargetStoryPatternObject,
-							this.targetStoryPatternObject));
-				}
+		if (targetStoryPatternObject != null && ((EObject)targetStoryPatternObject).eIsProxy()) {
+			InternalEObject oldTargetStoryPatternObject = (InternalEObject)targetStoryPatternObject;
+			targetStoryPatternObject = (StoryPatternObjectType)eResolveProxy(oldTargetStoryPatternObject);
+			if (targetStoryPatternObject != oldTargetStoryPatternObject) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ExecutiontracePackage.STORY_PATTERN_LINK_EXECUTION__TARGET_STORY_PATTERN_OBJECT, oldTargetStoryPatternObject, targetStoryPatternObject));
 			}
 		}
-		return this.targetStoryPatternObject;
+		return targetStoryPatternObject;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public StoryPatternObjectType basicGetTargetStoryPatternObject()
 	{
-		return this.targetStoryPatternObject;
+		return targetStoryPatternObject;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
-	public void setTargetStoryPatternObject(final StoryPatternObjectType newTargetStoryPatternObject)
+	public void setTargetStoryPatternObject(StoryPatternObjectType newTargetStoryPatternObject)
 	{
-		final StoryPatternObjectType oldTargetStoryPatternObject = this.targetStoryPatternObject;
-		this.targetStoryPatternObject = newTargetStoryPatternObject;
-		if (this.eNotificationRequired())
-		{
-			this.eNotify(new ENotificationImpl(this, Notification.SET,
-					ExecutionTracePackage.STORY_PATTERN_LINK_EXECUTION__TARGET_STORY_PATTERN_OBJECT, oldTargetStoryPatternObject,
-					this.targetStoryPatternObject));
-		}
+		StoryPatternObjectType oldTargetStoryPatternObject = targetStoryPatternObject;
+		targetStoryPatternObject = newTargetStoryPatternObject;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ExecutiontracePackage.STORY_PATTERN_LINK_EXECUTION__TARGET_STORY_PATTERN_OBJECT, oldTargetStoryPatternObject, targetStoryPatternObject));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public String getSourceObject()
 	{
-		return this.sourceObject;
+		return sourceObject;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
-	public void setSourceObject(final String newSourceObject)
+	public void setSourceObject(String newSourceObject)
 	{
-		final String oldSourceObject = this.sourceObject;
-		this.sourceObject = newSourceObject;
-		if (this.eNotificationRequired())
-		{
-			this.eNotify(new ENotificationImpl(this, Notification.SET, ExecutionTracePackage.STORY_PATTERN_LINK_EXECUTION__SOURCE_OBJECT,
-					oldSourceObject, this.sourceObject));
-		}
+		String oldSourceObject = sourceObject;
+		sourceObject = newSourceObject;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ExecutiontracePackage.STORY_PATTERN_LINK_EXECUTION__SOURCE_OBJECT, oldSourceObject, sourceObject));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
-	public Object eGet(final int featureID, final boolean resolve, final boolean coreType)
+	public Object eGet(int featureID, boolean resolve, boolean coreType)
 	{
-		switch (featureID)
-		{
-			case ExecutionTracePackage.STORY_PATTERN_LINK_EXECUTION__STORY_PATTERN_LINK:
-				if (resolve)
-				{
-					return this.getStoryPatternLink();
-				}
-				return this.basicGetStoryPatternLink();
-			case ExecutionTracePackage.STORY_PATTERN_LINK_EXECUTION__SOURCE_STORY_PATTERN_OBJECT:
-				if (resolve)
-				{
-					return this.getSourceStoryPatternObject();
-				}
-				return this.basicGetSourceStoryPatternObject();
-			case ExecutionTracePackage.STORY_PATTERN_LINK_EXECUTION__TARGET_STORY_PATTERN_OBJECT:
-				if (resolve)
-				{
-					return this.getTargetStoryPatternObject();
-				}
-				return this.basicGetTargetStoryPatternObject();
-			case ExecutionTracePackage.STORY_PATTERN_LINK_EXECUTION__SOURCE_OBJECT:
-				return this.getSourceObject();
+		switch (featureID) {
+			case ExecutiontracePackage.STORY_PATTERN_LINK_EXECUTION__STORY_PATTERN_LINK:
+				if (resolve) return getStoryPatternLink();
+				return basicGetStoryPatternLink();
+			case ExecutiontracePackage.STORY_PATTERN_LINK_EXECUTION__SOURCE_STORY_PATTERN_OBJECT:
+				if (resolve) return getSourceStoryPatternObject();
+				return basicGetSourceStoryPatternObject();
+			case ExecutiontracePackage.STORY_PATTERN_LINK_EXECUTION__TARGET_STORY_PATTERN_OBJECT:
+				if (resolve) return getTargetStoryPatternObject();
+				return basicGetTargetStoryPatternObject();
+			case ExecutiontracePackage.STORY_PATTERN_LINK_EXECUTION__SOURCE_OBJECT:
+				return getSourceObject();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public void eSet(final int featureID, final Object newValue)
+	public void eSet(int featureID, Object newValue)
 	{
-		switch (featureID)
-		{
-			case ExecutionTracePackage.STORY_PATTERN_LINK_EXECUTION__STORY_PATTERN_LINK:
-				this.setStoryPatternLink((StoryPatternLinkType) newValue);
+		switch (featureID) {
+			case ExecutiontracePackage.STORY_PATTERN_LINK_EXECUTION__STORY_PATTERN_LINK:
+				setStoryPatternLink((StoryPatternLinkType)newValue);
 				return;
-			case ExecutionTracePackage.STORY_PATTERN_LINK_EXECUTION__SOURCE_STORY_PATTERN_OBJECT:
-				this.setSourceStoryPatternObject((StoryPatternObjectType) newValue);
+			case ExecutiontracePackage.STORY_PATTERN_LINK_EXECUTION__SOURCE_STORY_PATTERN_OBJECT:
+				setSourceStoryPatternObject((StoryPatternObjectType)newValue);
 				return;
-			case ExecutionTracePackage.STORY_PATTERN_LINK_EXECUTION__TARGET_STORY_PATTERN_OBJECT:
-				this.setTargetStoryPatternObject((StoryPatternObjectType) newValue);
+			case ExecutiontracePackage.STORY_PATTERN_LINK_EXECUTION__TARGET_STORY_PATTERN_OBJECT:
+				setTargetStoryPatternObject((StoryPatternObjectType)newValue);
 				return;
-			case ExecutionTracePackage.STORY_PATTERN_LINK_EXECUTION__SOURCE_OBJECT:
-				this.setSourceObject((String) newValue);
+			case ExecutiontracePackage.STORY_PATTERN_LINK_EXECUTION__SOURCE_OBJECT:
+				setSourceObject((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -364,25 +293,23 @@ public abstract class StoryPatternLinkExecutionImpl<StoryPatternLinkType, StoryP
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
-	public void eUnset(final int featureID)
+	public void eUnset(int featureID)
 	{
-		switch (featureID)
-		{
-			case ExecutionTracePackage.STORY_PATTERN_LINK_EXECUTION__STORY_PATTERN_LINK:
-				this.setStoryPatternLink((StoryPatternLinkType) null);
+		switch (featureID) {
+			case ExecutiontracePackage.STORY_PATTERN_LINK_EXECUTION__STORY_PATTERN_LINK:
+				setStoryPatternLink((StoryPatternLinkType)null);
 				return;
-			case ExecutionTracePackage.STORY_PATTERN_LINK_EXECUTION__SOURCE_STORY_PATTERN_OBJECT:
-				this.setSourceStoryPatternObject((StoryPatternObjectType) null);
+			case ExecutiontracePackage.STORY_PATTERN_LINK_EXECUTION__SOURCE_STORY_PATTERN_OBJECT:
+				setSourceStoryPatternObject((StoryPatternObjectType)null);
 				return;
-			case ExecutionTracePackage.STORY_PATTERN_LINK_EXECUTION__TARGET_STORY_PATTERN_OBJECT:
-				this.setTargetStoryPatternObject((StoryPatternObjectType) null);
+			case ExecutiontracePackage.STORY_PATTERN_LINK_EXECUTION__TARGET_STORY_PATTERN_OBJECT:
+				setTargetStoryPatternObject((StoryPatternObjectType)null);
 				return;
-			case ExecutionTracePackage.STORY_PATTERN_LINK_EXECUTION__SOURCE_OBJECT:
-				this.setSourceObject(StoryPatternLinkExecutionImpl.SOURCE_OBJECT_EDEFAULT);
+			case ExecutiontracePackage.STORY_PATTERN_LINK_EXECUTION__SOURCE_OBJECT:
+				setSourceObject(SOURCE_OBJECT_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -390,43 +317,36 @@ public abstract class StoryPatternLinkExecutionImpl<StoryPatternLinkType, StoryP
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
-	public boolean eIsSet(final int featureID)
+	public boolean eIsSet(int featureID)
 	{
-		switch (featureID)
-		{
-			case ExecutionTracePackage.STORY_PATTERN_LINK_EXECUTION__STORY_PATTERN_LINK:
-				return this.storyPatternLink != null;
-			case ExecutionTracePackage.STORY_PATTERN_LINK_EXECUTION__SOURCE_STORY_PATTERN_OBJECT:
-				return this.sourceStoryPatternObject != null;
-			case ExecutionTracePackage.STORY_PATTERN_LINK_EXECUTION__TARGET_STORY_PATTERN_OBJECT:
-				return this.targetStoryPatternObject != null;
-			case ExecutionTracePackage.STORY_PATTERN_LINK_EXECUTION__SOURCE_OBJECT:
-				return StoryPatternLinkExecutionImpl.SOURCE_OBJECT_EDEFAULT == null ? this.sourceObject != null
-						: !StoryPatternLinkExecutionImpl.SOURCE_OBJECT_EDEFAULT.equals(this.sourceObject);
+		switch (featureID) {
+			case ExecutiontracePackage.STORY_PATTERN_LINK_EXECUTION__STORY_PATTERN_LINK:
+				return storyPatternLink != null;
+			case ExecutiontracePackage.STORY_PATTERN_LINK_EXECUTION__SOURCE_STORY_PATTERN_OBJECT:
+				return sourceStoryPatternObject != null;
+			case ExecutiontracePackage.STORY_PATTERN_LINK_EXECUTION__TARGET_STORY_PATTERN_OBJECT:
+				return targetStoryPatternObject != null;
+			case ExecutiontracePackage.STORY_PATTERN_LINK_EXECUTION__SOURCE_OBJECT:
+				return SOURCE_OBJECT_EDEFAULT == null ? sourceObject != null : !SOURCE_OBJECT_EDEFAULT.equals(sourceObject);
 		}
 		return super.eIsSet(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString()
 	{
-		if (this.eIsProxy())
-		{
-			return super.toString();
-		}
+		if (eIsProxy()) return super.toString();
 
-		final StringBuffer result = new StringBuffer(super.toString());
+		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (sourceObject: ");
-		result.append(this.sourceObject);
+		result.append(sourceObject);
 		result.append(')');
 		return result.toString();
 	}

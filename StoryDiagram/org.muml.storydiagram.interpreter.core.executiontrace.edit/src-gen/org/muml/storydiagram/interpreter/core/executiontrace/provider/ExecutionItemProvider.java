@@ -13,24 +13,18 @@ import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EStructuralFeature;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
-import org.eclipse.emf.edit.provider.IChildCreationExtender;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemColorProvider;
-import org.eclipse.emf.edit.provider.IItemFontProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITableItemColorProvider;
-import org.eclipse.emf.edit.provider.ITableItemFontProvider;
-import org.eclipse.emf.edit.provider.ITableItemLabelProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.muml.storydiagram.interpreter.core.executiontrace.Execution;
-import org.muml.storydiagram.interpreter.core.executiontrace.ExecutionTraceFactory;
-import org.muml.storydiagram.interpreter.core.executiontrace.ExecutionTracePackage;
+import org.muml.storydiagram.interpreter.core.executiontrace.ExecutiontraceFactory;
+import org.muml.storydiagram.interpreter.core.executiontrace.ExecutiontracePackage;
 
 /**
  * This is the item provider adapter for a {@link org.muml.storydiagram.interpreter.core.executiontrace.Execution} object.
@@ -38,18 +32,15 @@ import org.muml.storydiagram.interpreter.core.executiontrace.ExecutionTracePacka
  * <!-- end-user-doc -->
  * @generated
  */
-public class ExecutionItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider,
-		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider, ITableItemColorProvider,
-		ITableItemFontProvider, IItemColorProvider, IItemFontProvider
-{
+public class ExecutionItemProvider extends ItemProviderAdapter
+		implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ExecutionItemProvider(AdapterFactory adapterFactory)
-	{
+	public ExecutionItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -60,10 +51,8 @@ public class ExecutionItemProvider extends ItemProviderAdapter implements IEditi
 	 * @generated
 	 */
 	@Override
-	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object)
-	{
-		if (itemPropertyDescriptors == null)
-		{
+	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 			addExecutionStartedTimeStampPropertyDescriptor(object);
@@ -80,13 +69,20 @@ public class ExecutionItemProvider extends ItemProviderAdapter implements IEditi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addExecutionStartedTimeStampPropertyDescriptor(Object object)
-	{
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(), getString("_UI_Execution_executionStartedTimeStamp_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_Execution_executionStartedTimeStamp_feature", "_UI_Execution_type"),
-				ExecutionTracePackage.Literals.EXECUTION__EXECUTION_STARTED_TIME_STAMP, true, false, false,
-				ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null, null));
+	protected void addExecutionStartedTimeStampPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Execution_executionStartedTimeStamp_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Execution_executionStartedTimeStamp_feature", "_UI_Execution_type"),
+				 ExecutiontracePackage.Literals.EXECUTION__EXECUTION_STARTED_TIME_STAMP,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -95,13 +91,20 @@ public class ExecutionItemProvider extends ItemProviderAdapter implements IEditi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addExecutionFinishedTimeStampPropertyDescriptor(Object object)
-	{
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(), getString("_UI_Execution_executionFinishedTimeStamp_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_Execution_executionFinishedTimeStamp_feature", "_UI_Execution_type"),
-				ExecutionTracePackage.Literals.EXECUTION__EXECUTION_FINISHED_TIME_STAMP, true, false, false,
-				ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null, null));
+	protected void addExecutionFinishedTimeStampPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Execution_executionFinishedTimeStamp_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Execution_executionFinishedTimeStamp_feature", "_UI_Execution_type"),
+				 ExecutiontracePackage.Literals.EXECUTION__EXECUTION_FINISHED_TIME_STAMP,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -110,13 +113,20 @@ public class ExecutionItemProvider extends ItemProviderAdapter implements IEditi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addExecutionTimePropertyDescriptor(Object object)
-	{
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(), getString("_UI_Execution_executionTime_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_Execution_executionTime_feature", "_UI_Execution_type"),
-				ExecutionTracePackage.Literals.EXECUTION__EXECUTION_TIME, false, false, false, ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
-				null, null));
+	protected void addExecutionTimePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Execution_executionTime_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Execution_executionTime_feature", "_UI_Execution_type"),
+				 ExecutiontracePackage.Literals.EXECUTION__EXECUTION_TIME,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -125,13 +135,20 @@ public class ExecutionItemProvider extends ItemProviderAdapter implements IEditi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addExecutionTimeMsecPropertyDescriptor(Object object)
-	{
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(), getString("_UI_Execution_executionTimeMsec_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_Execution_executionTimeMsec_feature", "_UI_Execution_type"),
-				ExecutionTracePackage.Literals.EXECUTION__EXECUTION_TIME_MSEC, false, false, false,
-				ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null, null));
+	protected void addExecutionTimeMsecPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Execution_executionTimeMsec_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Execution_executionTimeMsec_feature", "_UI_Execution_type"),
+				 ExecutiontracePackage.Literals.EXECUTION__EXECUTION_TIME_MSEC,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -143,12 +160,10 @@ public class ExecutionItemProvider extends ItemProviderAdapter implements IEditi
 	 * @generated
 	 */
 	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object)
-	{
-		if (childrenFeatures == null)
-		{
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ExecutionTracePackage.Literals.EXECUTION__ELEMENTS);
+			childrenFeatures.add(ExecutiontracePackage.Literals.EXECUTION__ELEMENTS);
 		}
 		return childrenFeatures;
 	}
@@ -159,23 +174,11 @@ public class ExecutionItemProvider extends ItemProviderAdapter implements IEditi
 	 * @generated
 	 */
 	@Override
-	protected EStructuralFeature getChildFeature(Object object, Object child)
-	{
+	protected EStructuralFeature getChildFeature(Object object, Object child) {
 		// Check the type of the specified child object and return the proper feature to use for
 		// adding (see {@link AddCommand}) it as a child.
 
 		return super.getChildFeature(object, child);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean hasChildren(Object object)
-	{
-		return hasChildren(object, true);
 	}
 
 	/**
@@ -185,9 +188,8 @@ public class ExecutionItemProvider extends ItemProviderAdapter implements IEditi
 	 * @generated
 	 */
 	@Override
-	public String getText(Object object)
-	{
-		Execution execution = (Execution) object;
+	public String getText(Object object) {
+		Execution execution = (Execution)object;
 		return getString("_UI_Execution_type") + " " + execution.getExecutionStartedTimeStamp();
 	}
 
@@ -199,20 +201,18 @@ public class ExecutionItemProvider extends ItemProviderAdapter implements IEditi
 	 * @generated
 	 */
 	@Override
-	public void notifyChanged(Notification notification)
-	{
+	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Execution.class))
-		{
-			case ExecutionTracePackage.EXECUTION__EXECUTION_STARTED_TIME_STAMP:
-			case ExecutionTracePackage.EXECUTION__EXECUTION_FINISHED_TIME_STAMP:
-			case ExecutionTracePackage.EXECUTION__EXECUTION_TIME:
-			case ExecutionTracePackage.EXECUTION__EXECUTION_TIME_MSEC:
-			case ExecutionTracePackage.EXECUTION__CONTAINER:
+		switch (notification.getFeatureID(Execution.class)) {
+			case ExecutiontracePackage.EXECUTION__EXECUTION_STARTED_TIME_STAMP:
+			case ExecutiontracePackage.EXECUTION__EXECUTION_FINISHED_TIME_STAMP:
+			case ExecutiontracePackage.EXECUTION__EXECUTION_TIME:
+			case ExecutiontracePackage.EXECUTION__EXECUTION_TIME_MSEC:
+			case ExecutiontracePackage.EXECUTION__CONTAINER:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case ExecutionTracePackage.EXECUTION__ELEMENTS:
+			case ExecutiontracePackage.EXECUTION__ELEMENTS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -227,84 +227,133 @@ public class ExecutionItemProvider extends ItemProviderAdapter implements IEditi
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object)
-	{
+	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(ExecutionTracePackage.Literals.EXECUTION__ELEMENTS,
-				ExecutionTraceFactory.eINSTANCE.createActivityExecution()));
+		newChildDescriptors.add
+			(createChildParameter
+				(ExecutiontracePackage.Literals.EXECUTION__ELEMENTS,
+				 ExecutiontraceFactory.eINSTANCE.createActivityExecution()));
 
-		newChildDescriptors.add(createChildParameter(ExecutionTracePackage.Literals.EXECUTION__ELEMENTS,
-				ExecutionTraceFactory.eINSTANCE.createActivityNodeExecution()));
+		newChildDescriptors.add
+			(createChildParameter
+				(ExecutiontracePackage.Literals.EXECUTION__ELEMENTS,
+				 ExecutiontraceFactory.eINSTANCE.createActivityNodeExecution()));
 
-		newChildDescriptors.add(createChildParameter(ExecutionTracePackage.Literals.EXECUTION__ELEMENTS,
-				ExecutionTraceFactory.eINSTANCE.createActivityEdgeTraversal()));
+		newChildDescriptors.add
+			(createChildParameter
+				(ExecutiontracePackage.Literals.EXECUTION__ELEMENTS,
+				 ExecutiontraceFactory.eINSTANCE.createActivityEdgeTraversal()));
 
-		newChildDescriptors.add(createChildParameter(ExecutionTracePackage.Literals.EXECUTION__ELEMENTS,
-				ExecutionTraceFactory.eINSTANCE.createStoryPatternInitialization()));
+		newChildDescriptors.add
+			(createChildParameter
+				(ExecutiontracePackage.Literals.EXECUTION__ELEMENTS,
+				 ExecutiontraceFactory.eINSTANCE.createStoryPatternInitialization()));
 
-		newChildDescriptors.add(createChildParameter(ExecutionTracePackage.Literals.EXECUTION__ELEMENTS,
-				ExecutionTraceFactory.eINSTANCE.createStoryPatternMatching()));
+		newChildDescriptors.add
+			(createChildParameter
+				(ExecutiontracePackage.Literals.EXECUTION__ELEMENTS,
+				 ExecutiontraceFactory.eINSTANCE.createStoryPatternMatching()));
 
-		newChildDescriptors.add(createChildParameter(ExecutionTracePackage.Literals.EXECUTION__ELEMENTS,
-				ExecutionTraceFactory.eINSTANCE.createStoryPatternApplication()));
+		newChildDescriptors.add
+			(createChildParameter
+				(ExecutiontracePackage.Literals.EXECUTION__ELEMENTS,
+				 ExecutiontraceFactory.eINSTANCE.createStoryPatternApplication()));
 
-		newChildDescriptors.add(createChildParameter(ExecutionTracePackage.Literals.EXECUTION__ELEMENTS,
-				ExecutionTraceFactory.eINSTANCE.createStoryPatternObjectBound()));
+		newChildDescriptors.add
+			(createChildParameter
+				(ExecutiontracePackage.Literals.EXECUTION__ELEMENTS,
+				 ExecutiontraceFactory.eINSTANCE.createStoryPatternObjectBound()));
 
-		newChildDescriptors.add(createChildParameter(ExecutionTracePackage.Literals.EXECUTION__ELEMENTS,
-				ExecutionTraceFactory.eINSTANCE.createStoryPatternObjectNotBound()));
+		newChildDescriptors.add
+			(createChildParameter
+				(ExecutiontracePackage.Literals.EXECUTION__ELEMENTS,
+				 ExecutiontraceFactory.eINSTANCE.createStoryPatternObjectNotBound()));
 
-		newChildDescriptors.add(createChildParameter(ExecutionTracePackage.Literals.EXECUTION__ELEMENTS,
-				ExecutionTraceFactory.eINSTANCE.createStoryPatternObjectBindingRevoked()));
+		newChildDescriptors.add
+			(createChildParameter
+				(ExecutiontracePackage.Literals.EXECUTION__ELEMENTS,
+				 ExecutiontraceFactory.eINSTANCE.createStoryPatternObjectBindingRevoked()));
 
-		newChildDescriptors.add(createChildParameter(ExecutionTracePackage.Literals.EXECUTION__ELEMENTS,
-				ExecutionTraceFactory.eINSTANCE.createTraversingLink()));
+		newChildDescriptors.add
+			(createChildParameter
+				(ExecutiontracePackage.Literals.EXECUTION__ELEMENTS,
+				 ExecutiontraceFactory.eINSTANCE.createTraversingLink()));
 
-		newChildDescriptors.add(createChildParameter(ExecutionTracePackage.Literals.EXECUTION__ELEMENTS,
-				ExecutionTraceFactory.eINSTANCE.createLinkCheckSuccessful()));
+		newChildDescriptors.add
+			(createChildParameter
+				(ExecutiontracePackage.Literals.EXECUTION__ELEMENTS,
+				 ExecutiontraceFactory.eINSTANCE.createLinkCheckSuccessful()));
 
-		newChildDescriptors.add(createChildParameter(ExecutionTracePackage.Literals.EXECUTION__ELEMENTS,
-				ExecutionTraceFactory.eINSTANCE.createLinkCheckFailed()));
+		newChildDescriptors.add
+			(createChildParameter
+				(ExecutiontracePackage.Literals.EXECUTION__ELEMENTS,
+				 ExecutiontraceFactory.eINSTANCE.createLinkCheckFailed()));
 
-		newChildDescriptors.add(createChildParameter(ExecutionTracePackage.Literals.EXECUTION__ELEMENTS,
-				ExecutionTraceFactory.eINSTANCE.createExpressionEvaluation()));
+		newChildDescriptors.add
+			(createChildParameter
+				(ExecutiontracePackage.Literals.EXECUTION__ELEMENTS,
+				 ExecutiontraceFactory.eINSTANCE.createExpressionEvaluation()));
 
-		newChildDescriptors.add(createChildParameter(ExecutionTracePackage.Literals.EXECUTION__ELEMENTS,
-				ExecutionTraceFactory.eINSTANCE.createInstanceObjectCreation()));
+		newChildDescriptors.add
+			(createChildParameter
+				(ExecutiontracePackage.Literals.EXECUTION__ELEMENTS,
+				 ExecutiontraceFactory.eINSTANCE.createInstanceObjectCreation()));
 
-		newChildDescriptors.add(createChildParameter(ExecutionTracePackage.Literals.EXECUTION__ELEMENTS,
-				ExecutionTraceFactory.eINSTANCE.createInstanceObjectDeletion()));
+		newChildDescriptors.add
+			(createChildParameter
+				(ExecutiontracePackage.Literals.EXECUTION__ELEMENTS,
+				 ExecutiontraceFactory.eINSTANCE.createInstanceObjectDeletion()));
 
-		newChildDescriptors.add(createChildParameter(ExecutionTracePackage.Literals.EXECUTION__ELEMENTS,
-				ExecutionTraceFactory.eINSTANCE.createInstanceLinkCreation()));
+		newChildDescriptors.add
+			(createChildParameter
+				(ExecutiontracePackage.Literals.EXECUTION__ELEMENTS,
+				 ExecutiontraceFactory.eINSTANCE.createInstanceLinkCreation()));
 
-		newChildDescriptors.add(createChildParameter(ExecutionTracePackage.Literals.EXECUTION__ELEMENTS,
-				ExecutionTraceFactory.eINSTANCE.createInstanceLinkDeletion()));
+		newChildDescriptors.add
+			(createChildParameter
+				(ExecutiontracePackage.Literals.EXECUTION__ELEMENTS,
+				 ExecutiontraceFactory.eINSTANCE.createInstanceLinkDeletion()));
 
-		newChildDescriptors.add(createChildParameter(ExecutionTracePackage.Literals.EXECUTION__ELEMENTS,
-				ExecutionTraceFactory.eINSTANCE.createAttributeValueSet()));
+		newChildDescriptors.add
+			(createChildParameter
+				(ExecutiontracePackage.Literals.EXECUTION__ELEMENTS,
+				 ExecutiontraceFactory.eINSTANCE.createAttributeValueSet()));
 
-		newChildDescriptors.add(createChildParameter(ExecutionTracePackage.Literals.EXECUTION__ELEMENTS,
-				ExecutionTraceFactory.eINSTANCE.createVariableCreated()));
+		newChildDescriptors.add
+			(createChildParameter
+				(ExecutiontracePackage.Literals.EXECUTION__ELEMENTS,
+				 ExecutiontraceFactory.eINSTANCE.createVariableCreated()));
 
-		newChildDescriptors.add(createChildParameter(ExecutionTracePackage.Literals.EXECUTION__ELEMENTS,
-				ExecutionTraceFactory.eINSTANCE.createVariableDeleted()));
+		newChildDescriptors.add
+			(createChildParameter
+				(ExecutiontracePackage.Literals.EXECUTION__ELEMENTS,
+				 ExecutiontraceFactory.eINSTANCE.createVariableDeleted()));
 
-		newChildDescriptors.add(createChildParameter(ExecutionTracePackage.Literals.EXECUTION__ELEMENTS,
-				ExecutionTraceFactory.eINSTANCE.createVariableChanged()));
+		newChildDescriptors.add
+			(createChildParameter
+				(ExecutiontracePackage.Literals.EXECUTION__ELEMENTS,
+				 ExecutiontraceFactory.eINSTANCE.createVariableChanged()));
 
-		newChildDescriptors.add(createChildParameter(ExecutionTracePackage.Literals.EXECUTION__ELEMENTS,
-				ExecutionTraceFactory.eINSTANCE.createStoryPatternObjectConstraintHolds()));
+		newChildDescriptors.add
+			(createChildParameter
+				(ExecutiontracePackage.Literals.EXECUTION__ELEMENTS,
+				 ExecutiontraceFactory.eINSTANCE.createStoryPatternObjectConstraintHolds()));
 
-		newChildDescriptors.add(createChildParameter(ExecutionTracePackage.Literals.EXECUTION__ELEMENTS,
-				ExecutionTraceFactory.eINSTANCE.createStoryPatternObjectConstraintViolated()));
+		newChildDescriptors.add
+			(createChildParameter
+				(ExecutiontracePackage.Literals.EXECUTION__ELEMENTS,
+				 ExecutiontraceFactory.eINSTANCE.createStoryPatternObjectConstraintViolated()));
 
-		newChildDescriptors.add(createChildParameter(ExecutionTracePackage.Literals.EXECUTION__ELEMENTS,
-				ExecutionTraceFactory.eINSTANCE.createStoryPatternConstraintHolds()));
+		newChildDescriptors.add
+			(createChildParameter
+				(ExecutiontracePackage.Literals.EXECUTION__ELEMENTS,
+				 ExecutiontraceFactory.eINSTANCE.createStoryPatternConstraintHolds()));
 
-		newChildDescriptors.add(createChildParameter(ExecutionTracePackage.Literals.EXECUTION__ELEMENTS,
-				ExecutionTraceFactory.eINSTANCE.createStoryPatternConstraintViolated()));
+		newChildDescriptors.add
+			(createChildParameter
+				(ExecutiontracePackage.Literals.EXECUTION__ELEMENTS,
+				 ExecutiontraceFactory.eINSTANCE.createStoryPatternConstraintViolated()));
 	}
 
 	/**
@@ -314,9 +363,8 @@ public class ExecutionItemProvider extends ItemProviderAdapter implements IEditi
 	 * @generated
 	 */
 	@Override
-	public ResourceLocator getResourceLocator()
-	{
-		return ((IChildCreationExtender) adapterFactory).getResourceLocator();
+	public ResourceLocator getResourceLocator() {
+		return ExecutionTraceEditPlugin.INSTANCE;
 	}
 
 }

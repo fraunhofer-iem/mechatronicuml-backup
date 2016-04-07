@@ -7,7 +7,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.muml.storydiagram.interpreter.core.executiontrace.ExecutionTracePackage;
+import org.muml.storydiagram.interpreter.core.executiontrace.ExecutiontracePackage;
 import org.muml.storydiagram.interpreter.core.executiontrace.ExpressionEvaluation;
 
 /**
@@ -15,24 +15,19 @@ import org.muml.storydiagram.interpreter.core.executiontrace.ExpressionEvaluatio
  * <em><b>Expression Evaluation</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * <ul>
- * <li>
- * {@link org.muml.storydiagram.interpreter.core.executiontrace.impl.ExpressionEvaluationImpl#getExpression
- * <em>Expression</em>}</li>
- * <li>
- * {@link org.muml.storydiagram.interpreter.core.executiontrace.impl.ExpressionEvaluationImpl#getResult
- * <em>Result</em>}</li>
- * </ul>
  * </p>
- * 
+ * <ul>
+ *   <li>{@link org.muml.storydiagram.interpreter.core.executiontrace.impl.ExpressionEvaluationImpl#getExpression <em>Expression</em>}</li>
+ *   <li>{@link org.muml.storydiagram.interpreter.core.executiontrace.impl.ExpressionEvaluationImpl#getResult <em>Result</em>}</li>
+ * </ul>
+ *
  * @generated
  */
 public class ExpressionEvaluationImpl<ExpressionType> extends ExecutionImpl implements ExpressionEvaluation<ExpressionType>
 {
 	/**
-	 * The cached value of the '{@link #getExpression() <em>Expression</em>}'
-	 * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The cached value of the '{@link #getExpression() <em>Expression</em>}' reference.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getExpression()
 	 * @generated
 	 * @ordered
@@ -40,9 +35,8 @@ public class ExpressionEvaluationImpl<ExpressionType> extends ExecutionImpl impl
 	protected ExpressionType		expression;
 
 	/**
-	 * The default value of the '{@link #getResult() <em>Result</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The default value of the '{@link #getResult() <em>Result</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getResult()
 	 * @generated
 	 * @ordered
@@ -52,16 +46,14 @@ public class ExpressionEvaluationImpl<ExpressionType> extends ExecutionImpl impl
 	/**
 	 * The cached value of the '{@link #getResult() <em>Result</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @see #getResult()
 	 * @generated
 	 * @ordered
 	 */
-	protected String				result			= ExpressionEvaluationImpl.RESULT_EDEFAULT;
+	protected String				result			= RESULT_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected ExpressionEvaluationImpl()
@@ -71,133 +63,109 @@ public class ExpressionEvaluationImpl<ExpressionType> extends ExecutionImpl impl
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	protected EClass eStaticClass()
 	{
-		return ExecutionTracePackage.Literals.EXPRESSION_EVALUATION;
+		return ExecutiontracePackage.Literals.EXPRESSION_EVALUATION;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	@SuppressWarnings("unchecked")
 	public ExpressionType getExpression()
 	{
-		if ((this.expression != null) && ((EObject) this.expression).eIsProxy())
-		{
-			final InternalEObject oldExpression = (InternalEObject) this.expression;
-			this.expression = (ExpressionType) this.eResolveProxy(oldExpression);
-			if (this.expression != oldExpression)
-			{
-				if (this.eNotificationRequired())
-				{
-					this.eNotify(new ENotificationImpl(this, Notification.RESOLVE, ExecutionTracePackage.EXPRESSION_EVALUATION__EXPRESSION,
-							oldExpression, this.expression));
-				}
+		if (expression != null && ((EObject)expression).eIsProxy()) {
+			InternalEObject oldExpression = (InternalEObject)expression;
+			expression = (ExpressionType)eResolveProxy(oldExpression);
+			if (expression != oldExpression) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ExecutiontracePackage.EXPRESSION_EVALUATION__EXPRESSION, oldExpression, expression));
 			}
 		}
-		return this.expression;
+		return expression;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public ExpressionType basicGetExpression()
 	{
-		return this.expression;
+		return expression;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
-	public void setExpression(final ExpressionType newExpression)
+	public void setExpression(ExpressionType newExpression)
 	{
-		final ExpressionType oldExpression = this.expression;
-		this.expression = newExpression;
-		if (this.eNotificationRequired())
-		{
-			this.eNotify(new ENotificationImpl(this, Notification.SET, ExecutionTracePackage.EXPRESSION_EVALUATION__EXPRESSION,
-					oldExpression, this.expression));
-		}
+		ExpressionType oldExpression = expression;
+		expression = newExpression;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ExecutiontracePackage.EXPRESSION_EVALUATION__EXPRESSION, oldExpression, expression));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public String getResult()
 	{
-		return this.result;
+		return result;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
-	public void setResult(final String newResult)
+	public void setResult(String newResult)
 	{
-		final String oldResult = this.result;
-		this.result = newResult;
-		if (this.eNotificationRequired())
-		{
-			this.eNotify(new ENotificationImpl(this, Notification.SET, ExecutionTracePackage.EXPRESSION_EVALUATION__RESULT, oldResult,
-					this.result));
-		}
+		String oldResult = result;
+		result = newResult;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ExecutiontracePackage.EXPRESSION_EVALUATION__RESULT, oldResult, result));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
-	public Object eGet(final int featureID, final boolean resolve, final boolean coreType)
+	public Object eGet(int featureID, boolean resolve, boolean coreType)
 	{
-		switch (featureID)
-		{
-			case ExecutionTracePackage.EXPRESSION_EVALUATION__EXPRESSION:
-				if (resolve)
-				{
-					return this.getExpression();
-				}
-				return this.basicGetExpression();
-			case ExecutionTracePackage.EXPRESSION_EVALUATION__RESULT:
-				return this.getResult();
+		switch (featureID) {
+			case ExecutiontracePackage.EXPRESSION_EVALUATION__EXPRESSION:
+				if (resolve) return getExpression();
+				return basicGetExpression();
+			case ExecutiontracePackage.EXPRESSION_EVALUATION__RESULT:
+				return getResult();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public void eSet(final int featureID, final Object newValue)
+	public void eSet(int featureID, Object newValue)
 	{
-		switch (featureID)
-		{
-			case ExecutionTracePackage.EXPRESSION_EVALUATION__EXPRESSION:
-				this.setExpression((ExpressionType) newValue);
+		switch (featureID) {
+			case ExecutiontracePackage.EXPRESSION_EVALUATION__EXPRESSION:
+				setExpression((ExpressionType)newValue);
 				return;
-			case ExecutionTracePackage.EXPRESSION_EVALUATION__RESULT:
-				this.setResult((String) newValue);
+			case ExecutiontracePackage.EXPRESSION_EVALUATION__RESULT:
+				setResult((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -205,19 +173,17 @@ public class ExpressionEvaluationImpl<ExpressionType> extends ExecutionImpl impl
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
-	public void eUnset(final int featureID)
+	public void eUnset(int featureID)
 	{
-		switch (featureID)
-		{
-			case ExecutionTracePackage.EXPRESSION_EVALUATION__EXPRESSION:
-				this.setExpression((ExpressionType) null);
+		switch (featureID) {
+			case ExecutiontracePackage.EXPRESSION_EVALUATION__EXPRESSION:
+				setExpression((ExpressionType)null);
 				return;
-			case ExecutionTracePackage.EXPRESSION_EVALUATION__RESULT:
-				this.setResult(ExpressionEvaluationImpl.RESULT_EDEFAULT);
+			case ExecutiontracePackage.EXPRESSION_EVALUATION__RESULT:
+				setResult(RESULT_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -225,37 +191,30 @@ public class ExpressionEvaluationImpl<ExpressionType> extends ExecutionImpl impl
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
-	public boolean eIsSet(final int featureID)
+	public boolean eIsSet(int featureID)
 	{
-		switch (featureID)
-		{
-			case ExecutionTracePackage.EXPRESSION_EVALUATION__EXPRESSION:
-				return this.expression != null;
-			case ExecutionTracePackage.EXPRESSION_EVALUATION__RESULT:
-				return ExpressionEvaluationImpl.RESULT_EDEFAULT == null ? this.result != null : !ExpressionEvaluationImpl.RESULT_EDEFAULT
-						.equals(this.result);
+		switch (featureID) {
+			case ExecutiontracePackage.EXPRESSION_EVALUATION__EXPRESSION:
+				return expression != null;
+			case ExecutiontracePackage.EXPRESSION_EVALUATION__RESULT:
+				return RESULT_EDEFAULT == null ? result != null : !RESULT_EDEFAULT.equals(result);
 		}
 		return super.eIsSet(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString()
 	{
-		if (this.eIsProxy())
-		{
-			return super.toString();
-		}
+		if (eIsProxy()) return super.toString();
 
-		final StringBuffer result = new StringBuffer(super.toString());
+		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (result: ");
 		result.append(result);
 		result.append(')');

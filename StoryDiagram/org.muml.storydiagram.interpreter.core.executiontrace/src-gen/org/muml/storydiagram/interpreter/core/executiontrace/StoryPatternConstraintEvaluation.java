@@ -5,17 +5,15 @@ package org.muml.storydiagram.interpreter.core.executiontrace;
 /**
  * <!-- begin-user-doc --> A representation of the model object '
  * <em><b>Story Pattern Constraint Evaluation</b></em>'. <!-- end-user-doc -->
- * 
+ *
  * <p>
  * The following features are supported:
- * <ul>
- * <li>
- * {@link org.muml.storydiagram.interpreter.core.executiontrace.StoryPatternConstraintEvaluation#getConstraint
- * <em>Constraint</em>}</li>
- * </ul>
  * </p>
- * 
- * @see org.muml.storydiagram.interpreter.core.executiontrace.ExecutionTracePackage#getStoryPatternConstraintEvaluation()
+ * <ul>
+ *   <li>{@link org.muml.storydiagram.interpreter.core.executiontrace.StoryPatternConstraintEvaluation#getConstraint <em>Constraint</em>}</li>
+ * </ul>
+ *
+ * @see org.muml.storydiagram.interpreter.core.executiontrace.ExecutiontracePackage#getStoryPatternConstraintEvaluation()
  * @model abstract="true"
  * @generated
  */
@@ -39,13 +37,10 @@ public interface StoryPatternConstraintEvaluation<StoryPatternType, ExpressionTy
 	ExpressionType getConstraint();
 
 	/**
-	 * Sets the value of the '
-	 * {@link org.muml.storydiagram.interpreter.core.executiontrace.StoryPatternConstraintEvaluation#getConstraint
-	 * <em>Constraint</em>}' reference. <!-- begin-user-doc --> <!--
+	 * Sets the value of the '{@link org.muml.storydiagram.interpreter.core.executiontrace.StoryPatternConstraintEvaluation#getConstraint <em>Constraint</em>}' reference.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
-	 * @param value
-	 *            the new value of the '<em>Constraint</em>' reference.
+	 * @param value the new value of the '<em>Constraint</em>' reference.
 	 * @see #getConstraint()
 	 * @generated
 	 */

@@ -5,57 +5,44 @@ package org.muml.storydiagram.interpreter.core.executiontrace;
 /**
  * <!-- begin-user-doc --> A representation of the model object '
  * <em><b>Attribute Value Set</b></em>'. <!-- end-user-doc -->
- * 
+ *
  * <p>
  * The following features are supported:
- * <ul>
- * <li>
- * {@link org.muml.storydiagram.interpreter.core.executiontrace.AttributeValueSet#getStoryPatternObject
- * <em>Story Pattern Object</em>}</li>
- * <li>
- * {@link org.muml.storydiagram.interpreter.core.executiontrace.AttributeValueSet#getFeature
- * <em>Feature</em>}</li>
- * <li>
- * {@link org.muml.storydiagram.interpreter.core.executiontrace.AttributeValueSet#getInstanceObject
- * <em>Instance Object</em>}</li>
- * <li>
- * {@link org.muml.storydiagram.interpreter.core.executiontrace.AttributeValueSet#getNewValue
- * <em>New Value</em>}</li>
- * </ul>
  * </p>
- * 
- * @see org.muml.storydiagram.interpreter.core.executiontrace.ExecutionTracePackage#getAttributeValueSet()
+ * <ul>
+ *   <li>{@link org.muml.storydiagram.interpreter.core.executiontrace.AttributeValueSet#getStoryPatternObject <em>Story Pattern Object</em>}</li>
+ *   <li>{@link org.muml.storydiagram.interpreter.core.executiontrace.AttributeValueSet#getFeature <em>Feature</em>}</li>
+ *   <li>{@link org.muml.storydiagram.interpreter.core.executiontrace.AttributeValueSet#getInstanceObject <em>Instance Object</em>}</li>
+ *   <li>{@link org.muml.storydiagram.interpreter.core.executiontrace.AttributeValueSet#getNewValue <em>New Value</em>}</li>
+ * </ul>
+ *
+ * @see org.muml.storydiagram.interpreter.core.executiontrace.ExecutiontracePackage#getAttributeValueSet()
  * @model
  * @generated
  */
 public interface AttributeValueSet<StoryPatternObjectType, FeatureType> extends Execution
 {
 	/**
-	 * Returns the value of the '<em><b>Story Pattern Object</b></em>'
-	 * reference. <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Story Pattern Object</b></em>' reference.
+	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Story Pattern Object</em>' reference isn't
 	 * clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the value of the '<em>Story Pattern Object</em>' reference.
 	 * @see #setStoryPatternObject(Object)
-	 * @see org.muml.storydiagram.interpreter.core.executiontrace.ExecutionTracePackage#getAttributeValueSet_StoryPatternObject()
+	 * @see org.muml.storydiagram.interpreter.core.executiontrace.ExecutiontracePackage#getAttributeValueSet_StoryPatternObject()
 	 * @model kind="reference" required="true"
 	 * @generated
 	 */
 	StoryPatternObjectType getStoryPatternObject();
 
 	/**
-	 * Sets the value of the '
-	 * {@link org.muml.storydiagram.interpreter.core.executiontrace.AttributeValueSet#getStoryPatternObject
-	 * <em>Story Pattern Object</em>}' reference. <!-- begin-user-doc --> <!--
+	 * Sets the value of the '{@link org.muml.storydiagram.interpreter.core.executiontrace.AttributeValueSet#getStoryPatternObject <em>Story Pattern Object</em>}' reference.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
-	 * @param value
-	 *            the new value of the '<em>Story Pattern Object</em>'
-	 *            reference.
+	 * @param value the new value of the '<em>Story Pattern Object</em>' reference.
 	 * @see #getStoryPatternObject()
 	 * @generated
 	 */
@@ -99,23 +86,19 @@ public interface AttributeValueSet<StoryPatternObjectType, FeatureType> extends 
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the value of the '<em>Instance Object</em>' attribute.
 	 * @see #setInstanceObject(String)
-	 * @see org.muml.storydiagram.interpreter.core.executiontrace.ExecutionTracePackage#getAttributeValueSet_InstanceObject()
+	 * @see org.muml.storydiagram.interpreter.core.executiontrace.ExecutiontracePackage#getAttributeValueSet_InstanceObject()
 	 * @model required="true"
 	 * @generated
 	 */
 	String getInstanceObject();
 
 	/**
-	 * Sets the value of the '
-	 * {@link org.muml.storydiagram.interpreter.core.executiontrace.AttributeValueSet#getInstanceObject
-	 * <em>Instance Object</em>}' attribute. <!-- begin-user-doc --> <!--
+	 * Sets the value of the '{@link org.muml.storydiagram.interpreter.core.executiontrace.AttributeValueSet#getInstanceObject <em>Instance Object</em>}' attribute.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
-	 * @param value
-	 *            the new value of the '<em>Instance Object</em>' attribute.
+	 * @param value the new value of the '<em>Instance Object</em>' attribute.
 	 * @see #getInstanceObject()
 	 * @generated
 	 */

@@ -12,22 +12,16 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
-import org.eclipse.emf.edit.provider.IChildCreationExtender;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemColorProvider;
-import org.eclipse.emf.edit.provider.IItemFontProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITableItemColorProvider;
-import org.eclipse.emf.edit.provider.ITableItemFontProvider;
-import org.eclipse.emf.edit.provider.ITableItemLabelProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import org.muml.storydiagram.interpreter.core.executiontrace.ExecutionTracePackage;
+import org.muml.storydiagram.interpreter.core.executiontrace.ExecutiontracePackage;
 
 /**
  * This is the item provider adapter for a {@link java.util.Map.Entry} object.
@@ -35,18 +29,15 @@ import org.muml.storydiagram.interpreter.core.executiontrace.ExecutionTracePacka
  * <!-- end-user-doc -->
  * @generated
  */
-public class MapEntryItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider,
-		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider, ITableItemColorProvider,
-		ITableItemFontProvider, IItemColorProvider, IItemFontProvider
-{
+public class MapEntryItemProvider extends ItemProviderAdapter
+		implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MapEntryItemProvider(AdapterFactory adapterFactory)
-	{
+	public MapEntryItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -57,10 +48,8 @@ public class MapEntryItemProvider extends ItemProviderAdapter implements IEditin
 	 * @generated
 	 */
 	@Override
-	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object)
-	{
-		if (itemPropertyDescriptors == null)
-		{
+	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 			addKeyPropertyDescriptor(object);
@@ -75,12 +64,20 @@ public class MapEntryItemProvider extends ItemProviderAdapter implements IEditin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addKeyPropertyDescriptor(Object object)
-	{
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(), getString("_UI_MapEntry_key_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_MapEntry_key_feature", "_UI_MapEntry_type"),
-				ExecutionTracePackage.Literals.MAP_ENTRY__KEY, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	protected void addKeyPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_MapEntry_key_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_MapEntry_key_feature", "_UI_MapEntry_type"),
+				 ExecutiontracePackage.Literals.MAP_ENTRY__KEY,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -89,25 +86,20 @@ public class MapEntryItemProvider extends ItemProviderAdapter implements IEditin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addValuePropertyDescriptor(Object object)
-	{
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_MapEntry_value_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_MapEntry_value_feature", "_UI_MapEntry_type"),
-						ExecutionTracePackage.Literals.MAP_ENTRY__VALUE, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-						null, null));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean hasChildren(Object object)
-	{
-		return hasChildren(object, true);
+	protected void addValuePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_MapEntry_value_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_MapEntry_value_feature", "_UI_MapEntry_type"),
+				 ExecutiontracePackage.Literals.MAP_ENTRY__VALUE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -117,8 +109,7 @@ public class MapEntryItemProvider extends ItemProviderAdapter implements IEditin
 	 * @generated
 	 */
 	@Override
-	public Object getImage(Object object)
-	{
+	public Object getImage(Object object) {
 		return overlayImage(object, getResourceLocator().getImage("full/obj16/MapEntry"));
 	}
 
@@ -129,9 +120,8 @@ public class MapEntryItemProvider extends ItemProviderAdapter implements IEditin
 	 * @generated
 	 */
 	@Override
-	public String getText(Object object)
-	{
-		Map.Entry<?, ?> mapEntry = (Map.Entry<?, ?>) object;
+	public String getText(Object object) {
+		Map.Entry<?, ?> mapEntry = (Map.Entry<?, ?>)object;
 		return "" + mapEntry.getKey() + " -> " + mapEntry.getValue();
 	}
 
@@ -143,14 +133,12 @@ public class MapEntryItemProvider extends ItemProviderAdapter implements IEditin
 	 * @generated
 	 */
 	@Override
-	public void notifyChanged(Notification notification)
-	{
+	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Map.Entry.class))
-		{
-			case ExecutionTracePackage.MAP_ENTRY__KEY:
-			case ExecutionTracePackage.MAP_ENTRY__VALUE:
+		switch (notification.getFeatureID(Map.Entry.class)) {
+			case ExecutiontracePackage.MAP_ENTRY__KEY:
+			case ExecutiontracePackage.MAP_ENTRY__VALUE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}
@@ -165,8 +153,7 @@ public class MapEntryItemProvider extends ItemProviderAdapter implements IEditin
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object)
-	{
+	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 	}
 
@@ -177,9 +164,8 @@ public class MapEntryItemProvider extends ItemProviderAdapter implements IEditin
 	 * @generated
 	 */
 	@Override
-	public ResourceLocator getResourceLocator()
-	{
-		return ((IChildCreationExtender) adapterFactory).getResourceLocator();
+	public ResourceLocator getResourceLocator() {
+		return ExecutionTraceEditPlugin.INSTANCE;
 	}
 
 }

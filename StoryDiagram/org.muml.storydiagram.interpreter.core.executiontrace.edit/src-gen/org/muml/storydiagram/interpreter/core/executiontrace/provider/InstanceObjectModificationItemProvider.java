@@ -9,20 +9,10 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemColorProvider;
-import org.eclipse.emf.edit.provider.IItemFontProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITableItemColorProvider;
-import org.eclipse.emf.edit.provider.ITableItemFontProvider;
-import org.eclipse.emf.edit.provider.ITableItemLabelProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import org.muml.storydiagram.interpreter.core.executiontrace.ExecutionTracePackage;
+import org.muml.storydiagram.interpreter.core.executiontrace.ExecutiontracePackage;
 import org.muml.storydiagram.interpreter.core.executiontrace.InstanceObjectModification;
 
 /**
@@ -31,18 +21,14 @@ import org.muml.storydiagram.interpreter.core.executiontrace.InstanceObjectModif
  * <!-- end-user-doc -->
  * @generated
  */
-public class InstanceObjectModificationItemProvider extends ExecutionItemProvider implements IEditingDomainItemProvider,
-		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider,
-		ITableItemColorProvider, ITableItemFontProvider, IItemColorProvider, IItemFontProvider
-{
+public class InstanceObjectModificationItemProvider extends ExecutionItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public InstanceObjectModificationItemProvider(AdapterFactory adapterFactory)
-	{
+	public InstanceObjectModificationItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -53,10 +39,8 @@ public class InstanceObjectModificationItemProvider extends ExecutionItemProvide
 	 * @generated
 	 */
 	@Override
-	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object)
-	{
-		if (itemPropertyDescriptors == null)
-		{
+	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 			addStoryPatternObjectPropertyDescriptor(object);
@@ -71,15 +55,20 @@ public class InstanceObjectModificationItemProvider extends ExecutionItemProvide
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addStoryPatternObjectPropertyDescriptor(Object object)
-	{
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_InstanceObjectModification_storyPatternObject_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_InstanceObjectModification_storyPatternObject_feature",
-						"_UI_InstanceObjectModification_type"),
-				ExecutionTracePackage.Literals.INSTANCE_OBJECT_MODIFICATION__STORY_PATTERN_OBJECT, true, false, true, null, null, null));
+	protected void addStoryPatternObjectPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_InstanceObjectModification_storyPatternObject_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_InstanceObjectModification_storyPatternObject_feature", "_UI_InstanceObjectModification_type"),
+				 ExecutiontracePackage.Literals.INSTANCE_OBJECT_MODIFICATION__STORY_PATTERN_OBJECT,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
@@ -88,16 +77,20 @@ public class InstanceObjectModificationItemProvider extends ExecutionItemProvide
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addInstanceObjectPropertyDescriptor(Object object)
-	{
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_InstanceObjectModification_instanceObject_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_InstanceObjectModification_instanceObject_feature",
-						"_UI_InstanceObjectModification_type"),
-				ExecutionTracePackage.Literals.INSTANCE_OBJECT_MODIFICATION__INSTANCE_OBJECT, true, false, false,
-				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	protected void addInstanceObjectPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_InstanceObjectModification_instanceObject_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_InstanceObjectModification_instanceObject_feature", "_UI_InstanceObjectModification_type"),
+				 ExecutiontracePackage.Literals.INSTANCE_OBJECT_MODIFICATION__INSTANCE_OBJECT,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -107,9 +100,8 @@ public class InstanceObjectModificationItemProvider extends ExecutionItemProvide
 	 * @generated
 	 */
 	@Override
-	public String getText(Object object)
-	{
-		InstanceObjectModification<?> instanceObjectModification = (InstanceObjectModification<?>) object;
+	public String getText(Object object) {
+		InstanceObjectModification<?> instanceObjectModification = (InstanceObjectModification<?>)object;
 		return getString("_UI_InstanceObjectModification_type") + " " + instanceObjectModification.getExecutionStartedTimeStamp();
 	}
 
@@ -121,14 +113,12 @@ public class InstanceObjectModificationItemProvider extends ExecutionItemProvide
 	 * @generated
 	 */
 	@Override
-	public void notifyChanged(Notification notification)
-	{
+	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(InstanceObjectModification.class))
-		{
-			case ExecutionTracePackage.INSTANCE_OBJECT_MODIFICATION__STORY_PATTERN_OBJECT:
-			case ExecutionTracePackage.INSTANCE_OBJECT_MODIFICATION__INSTANCE_OBJECT:
+		switch (notification.getFeatureID(InstanceObjectModification.class)) {
+			case ExecutiontracePackage.INSTANCE_OBJECT_MODIFICATION__STORY_PATTERN_OBJECT:
+			case ExecutiontracePackage.INSTANCE_OBJECT_MODIFICATION__INSTANCE_OBJECT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}
@@ -143,8 +133,7 @@ public class InstanceObjectModificationItemProvider extends ExecutionItemProvide
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object)
-	{
+	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 	}
 

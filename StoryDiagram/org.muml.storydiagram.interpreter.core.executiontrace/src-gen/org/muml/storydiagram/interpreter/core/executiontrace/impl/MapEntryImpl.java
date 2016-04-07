@@ -8,32 +8,27 @@ import org.eclipse.emf.common.util.EMap;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.EObjectImpl;
-import org.muml.storydiagram.interpreter.core.executiontrace.ExecutionTracePackage;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.muml.storydiagram.interpreter.core.executiontrace.ExecutiontracePackage;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '
  * <em><b>Map Entry</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * <ul>
- * <li>
- * {@link org.muml.storydiagram.interpreter.core.executiontrace.impl.MapEntryImpl#getTypedKey
- * <em>Key</em>}</li>
- * <li>
- * {@link org.muml.storydiagram.interpreter.core.executiontrace.impl.MapEntryImpl#getTypedValue
- * <em>Value</em>}</li>
- * </ul>
  * </p>
- * 
+ * <ul>
+ *   <li>{@link org.muml.storydiagram.interpreter.core.executiontrace.impl.MapEntryImpl#getTypedKey <em>Key</em>}</li>
+ *   <li>{@link org.muml.storydiagram.interpreter.core.executiontrace.impl.MapEntryImpl#getTypedValue <em>Value</em>}</li>
+ * </ul>
+ *
  * @generated
  */
-public class MapEntryImpl<KeyType, ValueType> extends EObjectImpl implements BasicEMap.Entry<KeyType, ValueType>
+public class MapEntryImpl<KeyType, ValueType> extends MinimalEObjectImpl.Container implements BasicEMap.Entry<KeyType,ValueType>
 {
 	/**
 	 * The cached value of the '{@link #getTypedKey() <em>Key</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @see #getTypedKey()
 	 * @generated
 	 * @ordered
@@ -41,9 +36,8 @@ public class MapEntryImpl<KeyType, ValueType> extends EObjectImpl implements Bas
 	protected KeyType	key;
 
 	/**
-	 * The cached value of the '{@link #getTypedValue() <em>Value</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The cached value of the '{@link #getTypedValue() <em>Value</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getTypedValue()
 	 * @generated
 	 * @ordered
@@ -52,7 +46,6 @@ public class MapEntryImpl<KeyType, ValueType> extends EObjectImpl implements Bas
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected MapEntryImpl()
@@ -62,99 +55,86 @@ public class MapEntryImpl<KeyType, ValueType> extends EObjectImpl implements Bas
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	protected EClass eStaticClass()
 	{
-		return ExecutionTracePackage.Literals.MAP_ENTRY;
+		return ExecutiontracePackage.Literals.MAP_ENTRY;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public KeyType getTypedKey()
 	{
-		return this.key;
+		return key;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
-	public void setTypedKey(final KeyType newKey)
+	public void setTypedKey(KeyType newKey)
 	{
-		final KeyType oldKey = this.key;
-		this.key = newKey;
-		if (this.eNotificationRequired())
-		{
-			this.eNotify(new ENotificationImpl(this, Notification.SET, ExecutionTracePackage.MAP_ENTRY__KEY, oldKey, this.key));
-		}
+		KeyType oldKey = key;
+		key = newKey;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ExecutiontracePackage.MAP_ENTRY__KEY, oldKey, key));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public ValueType getTypedValue()
 	{
-		return this.value;
+		return value;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
-	public void setTypedValue(final ValueType newValue)
+	public void setTypedValue(ValueType newValue)
 	{
-		final ValueType oldValue = this.value;
-		this.value = newValue;
-		if (this.eNotificationRequired())
-		{
-			this.eNotify(new ENotificationImpl(this, Notification.SET, ExecutionTracePackage.MAP_ENTRY__VALUE, oldValue, this.value));
-		}
+		ValueType oldValue = value;
+		value = newValue;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ExecutiontracePackage.MAP_ENTRY__VALUE, oldValue, value));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
-	public Object eGet(final int featureID, final boolean resolve, final boolean coreType)
+	public Object eGet(int featureID, boolean resolve, boolean coreType)
 	{
-		switch (featureID)
-		{
-			case ExecutionTracePackage.MAP_ENTRY__KEY:
-				return this.getTypedKey();
-			case ExecutionTracePackage.MAP_ENTRY__VALUE:
-				return this.getTypedValue();
+		switch (featureID) {
+			case ExecutiontracePackage.MAP_ENTRY__KEY:
+				return getTypedKey();
+			case ExecutiontracePackage.MAP_ENTRY__VALUE:
+				return getTypedValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public void eSet(final int featureID, final Object newValue)
+	public void eSet(int featureID, Object newValue)
 	{
-		switch (featureID)
-		{
-			case ExecutionTracePackage.MAP_ENTRY__KEY:
-				this.setTypedKey((KeyType) newValue);
+		switch (featureID) {
+			case ExecutiontracePackage.MAP_ENTRY__KEY:
+				setTypedKey((KeyType)newValue);
 				return;
-			case ExecutionTracePackage.MAP_ENTRY__VALUE:
-				this.setTypedValue((ValueType) newValue);
+			case ExecutiontracePackage.MAP_ENTRY__VALUE:
+				setTypedValue((ValueType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -162,19 +142,17 @@ public class MapEntryImpl<KeyType, ValueType> extends EObjectImpl implements Bas
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
-	public void eUnset(final int featureID)
+	public void eUnset(int featureID)
 	{
-		switch (featureID)
-		{
-			case ExecutionTracePackage.MAP_ENTRY__KEY:
-				this.setTypedKey((KeyType) null);
+		switch (featureID) {
+			case ExecutiontracePackage.MAP_ENTRY__KEY:
+				setTypedKey((KeyType)null);
 				return;
-			case ExecutionTracePackage.MAP_ENTRY__VALUE:
-				this.setTypedValue((ValueType) null);
+			case ExecutiontracePackage.MAP_ENTRY__VALUE:
+				setTypedValue((ValueType)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -182,134 +160,119 @@ public class MapEntryImpl<KeyType, ValueType> extends EObjectImpl implements Bas
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
-	public boolean eIsSet(final int featureID)
+	public boolean eIsSet(int featureID)
 	{
-		switch (featureID)
-		{
-			case ExecutionTracePackage.MAP_ENTRY__KEY:
-				return this.key != null;
-			case ExecutionTracePackage.MAP_ENTRY__VALUE:
-				return this.value != null;
+		switch (featureID) {
+			case ExecutiontracePackage.MAP_ENTRY__KEY:
+				return key != null;
+			case ExecutiontracePackage.MAP_ENTRY__VALUE:
+				return value != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString()
 	{
-		if (this.eIsProxy())
-		{
-			return super.toString();
-		}
+		if (eIsProxy()) return super.toString();
 
-		final StringBuffer result = new StringBuffer(super.toString());
+		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (key: ");
-		result.append(this.key);
+		result.append(key);
 		result.append(", value: ");
-		result.append(this.value);
+		result.append(value);
 		result.append(')');
 		return result.toString();
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected int	hash	= -1;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public int getHash()
 	{
-		if (this.hash == -1)
-		{
-			final Object theKey = this.getKey();
-			this.hash = (theKey == null ? 0 : theKey.hashCode());
+		if (hash == -1) {
+			Object theKey = getKey();
+			hash = (theKey == null ? 0 : theKey.hashCode());
 		}
-		return this.hash;
+		return hash;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
-	public void setHash(final int hash)
+	public void setHash(int hash)
 	{
 		this.hash = hash;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public KeyType getKey()
 	{
-		return this.getTypedKey();
+		return getTypedKey();
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
-	public void setKey(final KeyType key)
+	public void setKey(KeyType key)
 	{
-		this.setTypedKey(key);
+		setTypedKey(key);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public ValueType getValue()
 	{
-		return this.getTypedValue();
+		return getTypedValue();
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
-	public ValueType setValue(final ValueType value)
+	public ValueType setValue(ValueType value)
 	{
-		final ValueType oldValue = this.getValue();
-		this.setTypedValue(value);
+		ValueType oldValue = getValue();
+		setTypedValue(value);
 		return oldValue;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	public EMap<KeyType, ValueType> getEMap()
 	{
-		final EObject container = this.eContainer();
-		return container == null ? null : (EMap<KeyType, ValueType>) container.eGet(this.eContainmentFeature());
+		EObject container = eContainer();
+		return container == null ? null : (EMap<KeyType, ValueType>)container.eGet(eContainmentFeature());
 	}
 
 } // MapEntryImpl

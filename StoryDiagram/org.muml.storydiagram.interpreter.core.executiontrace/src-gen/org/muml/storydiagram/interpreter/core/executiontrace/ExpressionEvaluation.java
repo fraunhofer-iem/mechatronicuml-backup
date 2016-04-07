@@ -5,20 +5,16 @@ package org.muml.storydiagram.interpreter.core.executiontrace;
 /**
  * <!-- begin-user-doc --> A representation of the model object '
  * <em><b>Expression Evaluation</b></em>'. <!-- end-user-doc -->
- * 
+ *
  * <p>
  * The following features are supported:
- * <ul>
- * <li>
- * {@link org.muml.storydiagram.interpreter.core.executiontrace.ExpressionEvaluation#getExpression
- * <em>Expression</em>}</li>
- * <li>
- * {@link org.muml.storydiagram.interpreter.core.executiontrace.ExpressionEvaluation#getResult
- * <em>Result</em>}</li>
- * </ul>
  * </p>
- * 
- * @see org.muml.storydiagram.interpreter.core.executiontrace.ExecutionTracePackage#getExpressionEvaluation()
+ * <ul>
+ *   <li>{@link org.muml.storydiagram.interpreter.core.executiontrace.ExpressionEvaluation#getExpression <em>Expression</em>}</li>
+ *   <li>{@link org.muml.storydiagram.interpreter.core.executiontrace.ExpressionEvaluation#getResult <em>Result</em>}</li>
+ * </ul>
+ *
+ * @see org.muml.storydiagram.interpreter.core.executiontrace.ExecutiontracePackage#getExpressionEvaluation()
  * @model
  * @generated
  */
@@ -42,13 +38,10 @@ public interface ExpressionEvaluation<ExpressionType> extends Execution
 	ExpressionType getExpression();
 
 	/**
-	 * Sets the value of the '
-	 * {@link org.muml.storydiagram.interpreter.core.executiontrace.ExpressionEvaluation#getExpression
-	 * <em>Expression</em>}' reference. <!-- begin-user-doc --> <!--
+	 * Sets the value of the '{@link org.muml.storydiagram.interpreter.core.executiontrace.ExpressionEvaluation#getExpression <em>Expression</em>}' reference.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
-	 * @param value
-	 *            the new value of the '<em>Expression</em>' reference.
+	 * @param value the new value of the '<em>Expression</em>' reference.
 	 * @see #getExpression()
 	 * @generated
 	 */

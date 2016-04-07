@@ -9,38 +9,23 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.EMFEditPlugin;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemColorProvider;
-import org.eclipse.emf.edit.provider.IItemFontProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITableItemColorProvider;
-import org.eclipse.emf.edit.provider.ITableItemFontProvider;
-import org.eclipse.emf.edit.provider.ITableItemLabelProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.muml.storydiagram.interpreter.core.executiontrace.TraversingLink;
 
 /**
- * This is the item provider adapter for a
- * {@link org.muml.storydiagram.interpreter.core.executiontrace.TraversingLink} object.
+ * This is the item provider adapter for a {@link org.muml.storydiagram.interpreter.core.executiontrace.TraversingLink} object.
  * <!-- begin-user-doc --> <!-- end-user-doc -->
- * 
  * @generated
  */
-public class TraversingLinkItemProvider extends StoryPatternLinkExecutionItemProvider implements IEditingDomainItemProvider,
-		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider,
-		ITableItemColorProvider, ITableItemFontProvider, IItemColorProvider, IItemFontProvider
-{
+public class TraversingLinkItemProvider extends StoryPatternLinkExecutionItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
-	public TraversingLinkItemProvider(final AdapterFactory adapterFactory)
-	{
+	public TraversingLinkItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -51,26 +36,23 @@ public class TraversingLinkItemProvider extends StoryPatternLinkExecutionItemPro
 	 * @generated
 	 */
 	@Override
-	public List<IItemPropertyDescriptor> getPropertyDescriptors(final Object object)
-	{
-		if (this.itemPropertyDescriptors == null)
-		{
+	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 		}
-		return this.itemPropertyDescriptors;
+		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This returns TraversingLink.gif. <!-- begin-user-doc --> <!--
+	 * This returns TraversingLink.gif.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
-	public Object getImage(final Object object)
-	{
-		return this.overlayImage(object, this.getResourceLocator().getImage("full/obj16/TraversingLink"));
+	public Object getImage(Object object) {
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/TraversingLink"));
 	}
 
 	/**
@@ -80,21 +62,18 @@ public class TraversingLinkItemProvider extends StoryPatternLinkExecutionItemPro
 	 * @generated not
 	 */
 	@Override
-	public String getText(final Object object)
-	{
+	public String getText(final Object object) {
 		String label = this.getString("_UI_TraversingLink_type") + " ";
 
 		final TraversingLink<?, ?> traversingLink = (TraversingLink<?, ?>) object;
 
-		final ComposedAdapterFactory factory = new ComposedAdapterFactory(EMFEditPlugin.getComposedAdapterFactoryDescriptorRegistry());
+		final ComposedAdapterFactory factory = new ComposedAdapterFactory(
+				EMFEditPlugin.getComposedAdapterFactoryDescriptorRegistry());
 
-		if (traversingLink.getStoryPatternLink() != null)
-		{
-			label += ((IItemLabelProvider) factory.adapt(traversingLink.getStoryPatternLink(), IItemLabelProvider.class))
-					.getText(traversingLink.getStoryPatternLink());
-		}
-		else
-		{
+		if (traversingLink.getStoryPatternLink() != null) {
+			label += ((IItemLabelProvider) factory.adapt(traversingLink.getStoryPatternLink(),
+					IItemLabelProvider.class)).getText(traversingLink.getStoryPatternLink());
+		} else {
 			label += "[null]";
 		}
 
@@ -102,17 +81,15 @@ public class TraversingLinkItemProvider extends StoryPatternLinkExecutionItemPro
 	}
 
 	/**
-	 * This handles model notifications by calling {@link #updateChildren} to
-	 * update any cached children and by creating a viewer notification, which
-	 * it passes to {@link #fireNotifyChanged}. <!-- begin-user-doc --> <!--
+	 * This handles model notifications by calling {@link #updateChildren} to update any cached
+	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
-	public void notifyChanged(final Notification notification)
-	{
-		this.updateChildren(notification);
+	public void notifyChanged(Notification notification) {
+		updateChildren(notification);
 		super.notifyChanged(notification);
 	}
 
@@ -124,8 +101,7 @@ public class TraversingLinkItemProvider extends StoryPatternLinkExecutionItemPro
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(final Collection<Object> newChildDescriptors, final Object object)
-	{
+	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 	}
 

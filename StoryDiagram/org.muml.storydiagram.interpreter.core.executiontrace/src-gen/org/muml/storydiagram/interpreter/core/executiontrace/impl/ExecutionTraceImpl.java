@@ -11,42 +11,33 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.EObjectImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.muml.storydiagram.interpreter.core.executiontrace.Execution;
 import org.muml.storydiagram.interpreter.core.executiontrace.ExecutionTrace;
-import org.muml.storydiagram.interpreter.core.executiontrace.ExecutionTracePackage;
+import org.muml.storydiagram.interpreter.core.executiontrace.ExecutiontracePackage;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '
  * <em><b>Execution Trace</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * <ul>
- * <li>
- * {@link org.muml.storydiagram.interpreter.core.executiontrace.impl.ExecutionTraceImpl#getExecutions
- * <em>Executions</em>}</li>
- * <li>
- * {@link org.muml.storydiagram.interpreter.core.executiontrace.impl.ExecutionTraceImpl#getDescription
- * <em>Description</em>}</li>
- * <li>
- * {@link org.muml.storydiagram.interpreter.core.executiontrace.impl.ExecutionTraceImpl#getTotalExecutionTime
- * <em>Total Execution Time</em>}</li>
- * <li>
- * {@link org.muml.storydiagram.interpreter.core.executiontrace.impl.ExecutionTraceImpl#getTotalExecutionTimeMsec
- * <em>Total Execution Time Msec</em>}</li>
- * </ul>
  * </p>
- * 
+ * <ul>
+ *   <li>{@link org.muml.storydiagram.interpreter.core.executiontrace.impl.ExecutionTraceImpl#getExecutions <em>Executions</em>}</li>
+ *   <li>{@link org.muml.storydiagram.interpreter.core.executiontrace.impl.ExecutionTraceImpl#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.muml.storydiagram.interpreter.core.executiontrace.impl.ExecutionTraceImpl#getTotalExecutionTime <em>Total Execution Time</em>}</li>
+ *   <li>{@link org.muml.storydiagram.interpreter.core.executiontrace.impl.ExecutionTraceImpl#getTotalExecutionTimeMsec <em>Total Execution Time Msec</em>}</li>
+ * </ul>
+ *
  * @generated
  */
-public class ExecutionTraceImpl extends EObjectImpl implements ExecutionTrace
+public class ExecutionTraceImpl extends MinimalEObjectImpl.Container implements ExecutionTrace
 {
 	/**
-	 * The cached value of the '{@link #getExecutions() <em>Executions</em>}'
-	 * containment reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The cached value of the '{@link #getExecutions() <em>Executions</em>}' containment reference list.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getExecutions()
 	 * @generated
 	 * @ordered
@@ -54,9 +45,8 @@ public class ExecutionTraceImpl extends EObjectImpl implements ExecutionTrace
 	protected EList<Execution>		executions;
 
 	/**
-	 * The default value of the '{@link #getDescription() <em>Description</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -64,20 +54,18 @@ public class ExecutionTraceImpl extends EObjectImpl implements ExecutionTrace
 	protected static final String	DESCRIPTION_EDEFAULT				= null;
 
 	/**
-	 * The cached value of the '{@link #getDescription() <em>Description</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
 	 */
-	protected String				description							= ExecutionTraceImpl.DESCRIPTION_EDEFAULT;
+	protected String				description							= DESCRIPTION_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getTotalExecutionTime()
-	 * <em>Total Execution Time</em>}' attribute. <!-- begin-user-doc --> <!--
+	 * The default value of the '{@link #getTotalExecutionTime() <em>Total Execution Time</em>}' attribute.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @see #getTotalExecutionTime()
 	 * @generated
 	 * @ordered
@@ -85,10 +73,9 @@ public class ExecutionTraceImpl extends EObjectImpl implements ExecutionTrace
 	protected static final long		TOTAL_EXECUTION_TIME_EDEFAULT		= 0L;
 
 	/**
-	 * The default value of the '{@link #getTotalExecutionTimeMsec()
-	 * <em>Total Execution Time Msec</em>}' attribute. <!-- begin-user-doc -->
+	 * The default value of the '{@link #getTotalExecutionTimeMsec() <em>Total Execution Time Msec</em>}' attribute.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #getTotalExecutionTimeMsec()
 	 * @generated
 	 * @ordered
@@ -97,7 +84,6 @@ public class ExecutionTraceImpl extends EObjectImpl implements ExecutionTrace
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected ExecutionTraceImpl()
@@ -107,57 +93,48 @@ public class ExecutionTraceImpl extends EObjectImpl implements ExecutionTrace
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	protected EClass eStaticClass()
 	{
-		return ExecutionTracePackage.Literals.EXECUTION_TRACE;
+		return ExecutiontracePackage.Literals.EXECUTION_TRACE;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public EList<Execution> getExecutions()
 	{
-		if (this.executions == null)
-		{
-			this.executions = new EObjectContainmentEList<Execution>(Execution.class, this,
-					ExecutionTracePackage.EXECUTION_TRACE__EXECUTIONS);
+		if (executions == null) {
+			executions = new EObjectContainmentEList<Execution>(Execution.class, this, ExecutiontracePackage.EXECUTION_TRACE__EXECUTIONS);
 		}
-		return this.executions;
+		return executions;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public String getDescription()
 	{
-		return this.description;
+		return description;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
-	public void setDescription(final String newDescription)
+	public void setDescription(String newDescription)
 	{
-		final String oldDescription = this.description;
-		this.description = newDescription;
-		if (this.eNotificationRequired())
-		{
-			this.eNotify(new ENotificationImpl(this, Notification.SET, ExecutionTracePackage.EXECUTION_TRACE__DESCRIPTION, oldDescription,
-					this.description));
-		}
+		String oldDescription = description;
+		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ExecutiontracePackage.EXECUTION_TRACE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -191,59 +168,53 @@ public class ExecutionTraceImpl extends EObjectImpl implements ExecutionTrace
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseRemove(final InternalEObject otherEnd, final int featureID, final NotificationChain msgs)
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
 	{
-		switch (featureID)
-		{
-			case ExecutionTracePackage.EXECUTION_TRACE__EXECUTIONS:
-				return ((InternalEList<?>) this.getExecutions()).basicRemove(otherEnd, msgs);
+		switch (featureID) {
+			case ExecutiontracePackage.EXECUTION_TRACE__EXECUTIONS:
+				return ((InternalEList<?>)getExecutions()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
-	public Object eGet(final int featureID, final boolean resolve, final boolean coreType)
+	public Object eGet(int featureID, boolean resolve, boolean coreType)
 	{
-		switch (featureID)
-		{
-			case ExecutionTracePackage.EXECUTION_TRACE__EXECUTIONS:
-				return this.getExecutions();
-			case ExecutionTracePackage.EXECUTION_TRACE__DESCRIPTION:
-				return this.getDescription();
-			case ExecutionTracePackage.EXECUTION_TRACE__TOTAL_EXECUTION_TIME:
-				return this.getTotalExecutionTime();
-			case ExecutionTracePackage.EXECUTION_TRACE__TOTAL_EXECUTION_TIME_MSEC:
-				return this.getTotalExecutionTimeMsec();
+		switch (featureID) {
+			case ExecutiontracePackage.EXECUTION_TRACE__EXECUTIONS:
+				return getExecutions();
+			case ExecutiontracePackage.EXECUTION_TRACE__DESCRIPTION:
+				return getDescription();
+			case ExecutiontracePackage.EXECUTION_TRACE__TOTAL_EXECUTION_TIME:
+				return getTotalExecutionTime();
+			case ExecutiontracePackage.EXECUTION_TRACE__TOTAL_EXECUTION_TIME_MSEC:
+				return getTotalExecutionTimeMsec();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public void eSet(final int featureID, final Object newValue)
+	public void eSet(int featureID, Object newValue)
 	{
-		switch (featureID)
-		{
-			case ExecutionTracePackage.EXECUTION_TRACE__EXECUTIONS:
-				this.getExecutions().clear();
-				this.getExecutions().addAll((Collection<? extends Execution>) newValue);
+		switch (featureID) {
+			case ExecutiontracePackage.EXECUTION_TRACE__EXECUTIONS:
+				getExecutions().clear();
+				getExecutions().addAll((Collection<? extends Execution>)newValue);
 				return;
-			case ExecutionTracePackage.EXECUTION_TRACE__DESCRIPTION:
-				this.setDescription((String) newValue);
+			case ExecutiontracePackage.EXECUTION_TRACE__DESCRIPTION:
+				setDescription((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -251,19 +222,17 @@ public class ExecutionTraceImpl extends EObjectImpl implements ExecutionTrace
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
-	public void eUnset(final int featureID)
+	public void eUnset(int featureID)
 	{
-		switch (featureID)
-		{
-			case ExecutionTracePackage.EXECUTION_TRACE__EXECUTIONS:
-				this.getExecutions().clear();
+		switch (featureID) {
+			case ExecutiontracePackage.EXECUTION_TRACE__EXECUTIONS:
+				getExecutions().clear();
 				return;
-			case ExecutionTracePackage.EXECUTION_TRACE__DESCRIPTION:
-				this.setDescription(ExecutionTraceImpl.DESCRIPTION_EDEFAULT);
+			case ExecutiontracePackage.EXECUTION_TRACE__DESCRIPTION:
+				setDescription(DESCRIPTION_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -271,43 +240,36 @@ public class ExecutionTraceImpl extends EObjectImpl implements ExecutionTrace
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
-	public boolean eIsSet(final int featureID)
+	public boolean eIsSet(int featureID)
 	{
-		switch (featureID)
-		{
-			case ExecutionTracePackage.EXECUTION_TRACE__EXECUTIONS:
-				return (this.executions != null) && !this.executions.isEmpty();
-			case ExecutionTracePackage.EXECUTION_TRACE__DESCRIPTION:
-				return ExecutionTraceImpl.DESCRIPTION_EDEFAULT == null ? this.description != null
-						: !ExecutionTraceImpl.DESCRIPTION_EDEFAULT.equals(this.description);
-			case ExecutionTracePackage.EXECUTION_TRACE__TOTAL_EXECUTION_TIME:
-				return this.getTotalExecutionTime() != ExecutionTraceImpl.TOTAL_EXECUTION_TIME_EDEFAULT;
-			case ExecutionTracePackage.EXECUTION_TRACE__TOTAL_EXECUTION_TIME_MSEC:
-				return this.getTotalExecutionTimeMsec() != ExecutionTraceImpl.TOTAL_EXECUTION_TIME_MSEC_EDEFAULT;
+		switch (featureID) {
+			case ExecutiontracePackage.EXECUTION_TRACE__EXECUTIONS:
+				return executions != null && !executions.isEmpty();
+			case ExecutiontracePackage.EXECUTION_TRACE__DESCRIPTION:
+				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
+			case ExecutiontracePackage.EXECUTION_TRACE__TOTAL_EXECUTION_TIME:
+				return getTotalExecutionTime() != TOTAL_EXECUTION_TIME_EDEFAULT;
+			case ExecutiontracePackage.EXECUTION_TRACE__TOTAL_EXECUTION_TIME_MSEC:
+				return getTotalExecutionTimeMsec() != TOTAL_EXECUTION_TIME_MSEC_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString()
 	{
-		if (this.eIsProxy())
-		{
-			return super.toString();
-		}
+		if (eIsProxy()) return super.toString();
 
-		final StringBuffer result = new StringBuffer(super.toString());
+		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (description: ");
-		result.append(this.description);
+		result.append(description);
 		result.append(')');
 		return result.toString();
 	}

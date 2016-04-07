@@ -5,7 +5,7 @@ package org.muml.storydiagram.interpreter.core.executiontrace.impl;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.muml.storydiagram.interpreter.core.executiontrace.ExecutionTracePackage;
+import org.muml.storydiagram.interpreter.core.executiontrace.ExecutiontracePackage;
 import org.muml.storydiagram.interpreter.core.executiontrace.StoryPatternObjectBound;
 
 /**
@@ -13,13 +13,11 @@ import org.muml.storydiagram.interpreter.core.executiontrace.StoryPatternObjectB
  * <em><b>Story Pattern Object Bound</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * <ul>
- * <li>
- * {@link org.muml.storydiagram.interpreter.core.executiontrace.impl.StoryPatternObjectBoundImpl#getValue
- * <em>Value</em>}</li>
- * </ul>
  * </p>
- * 
+ * <ul>
+ *   <li>{@link org.muml.storydiagram.interpreter.core.executiontrace.impl.StoryPatternObjectBoundImpl#getValue <em>Value</em>}</li>
+ * </ul>
+ *
  * @generated
  */
 public class StoryPatternObjectBoundImpl<StoryPatternObjectType> extends StoryPatternObjectExecutionImpl<StoryPatternObjectType> implements
@@ -28,7 +26,6 @@ public class StoryPatternObjectBoundImpl<StoryPatternObjectType> extends StoryPa
 	/**
 	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @see #getValue()
 	 * @generated
 	 * @ordered
@@ -38,16 +35,14 @@ public class StoryPatternObjectBoundImpl<StoryPatternObjectType> extends StoryPa
 	/**
 	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @see #getValue()
 	 * @generated
 	 * @ordered
 	 */
-	protected String				value			= StoryPatternObjectBoundImpl.VALUE_EDEFAULT;
+	protected String				value			= VALUE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected StoryPatternObjectBoundImpl()
@@ -57,71 +52,72 @@ public class StoryPatternObjectBoundImpl<StoryPatternObjectType> extends StoryPa
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	protected EClass eStaticClass()
 	{
-		return ExecutionTracePackage.Literals.STORY_PATTERN_OBJECT_BOUND;
+		return ExecutiontracePackage.Literals.STORY_PATTERN_OBJECT_BOUND;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * This is specialized for the more specific type known in this context.
+	 * @generated
+	 */
+	@Override
+	public void setStoryPatternObject(StoryPatternObjectType newStoryPatternObject) {
+		super.setStoryPatternObject(newStoryPatternObject);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public String getValue()
 	{
-		return this.value;
+		return value;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
-	public void setValue(final String newValue)
+	public void setValue(String newValue)
 	{
-		final String oldValue = this.value;
-		this.value = newValue;
-		if (this.eNotificationRequired())
-		{
-			this.eNotify(new ENotificationImpl(this, Notification.SET, ExecutionTracePackage.STORY_PATTERN_OBJECT_BOUND__VALUE, oldValue,
-					this.value));
-		}
+		String oldValue = value;
+		value = newValue;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ExecutiontracePackage.STORY_PATTERN_OBJECT_BOUND__VALUE, oldValue, value));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
-	public Object eGet(final int featureID, final boolean resolve, final boolean coreType)
+	public Object eGet(int featureID, boolean resolve, boolean coreType)
 	{
-		switch (featureID)
-		{
-			case ExecutionTracePackage.STORY_PATTERN_OBJECT_BOUND__VALUE:
-				return this.getValue();
+		switch (featureID) {
+			case ExecutiontracePackage.STORY_PATTERN_OBJECT_BOUND__VALUE:
+				return getValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
-	public void eSet(final int featureID, final Object newValue)
+	public void eSet(int featureID, Object newValue)
 	{
-		switch (featureID)
-		{
-			case ExecutionTracePackage.STORY_PATTERN_OBJECT_BOUND__VALUE:
-				this.setValue((String) newValue);
+		switch (featureID) {
+			case ExecutiontracePackage.STORY_PATTERN_OBJECT_BOUND__VALUE:
+				setValue((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -129,16 +125,14 @@ public class StoryPatternObjectBoundImpl<StoryPatternObjectType> extends StoryPa
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
-	public void eUnset(final int featureID)
+	public void eUnset(int featureID)
 	{
-		switch (featureID)
-		{
-			case ExecutionTracePackage.STORY_PATTERN_OBJECT_BOUND__VALUE:
-				this.setValue(StoryPatternObjectBoundImpl.VALUE_EDEFAULT);
+		switch (featureID) {
+			case ExecutiontracePackage.STORY_PATTERN_OBJECT_BOUND__VALUE:
+				setValue(VALUE_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -146,37 +140,30 @@ public class StoryPatternObjectBoundImpl<StoryPatternObjectType> extends StoryPa
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
-	public boolean eIsSet(final int featureID)
+	public boolean eIsSet(int featureID)
 	{
-		switch (featureID)
-		{
-			case ExecutionTracePackage.STORY_PATTERN_OBJECT_BOUND__VALUE:
-				return StoryPatternObjectBoundImpl.VALUE_EDEFAULT == null ? this.value != null
-						: !StoryPatternObjectBoundImpl.VALUE_EDEFAULT.equals(this.value);
+		switch (featureID) {
+			case ExecutiontracePackage.STORY_PATTERN_OBJECT_BOUND__VALUE:
+				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
 		}
 		return super.eIsSet(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString()
 	{
-		if (this.eIsProxy())
-		{
-			return super.toString();
-		}
+		if (eIsProxy()) return super.toString();
 
-		final StringBuffer result = new StringBuffer(super.toString());
+		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (value: ");
-		result.append(this.value);
+		result.append(value);
 		result.append(')');
 		return result.toString();
 	}

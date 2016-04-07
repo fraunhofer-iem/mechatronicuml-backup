@@ -8,26 +8,18 @@ import org.eclipse.emf.ecore.EObject;
 /**
  * <!-- begin-user-doc --> A representation of the model object '
  * <em><b>Execution Trace</b></em>'. <!-- end-user-doc -->
- * 
+ *
  * <p>
  * The following features are supported:
- * <ul>
- * <li>
- * {@link org.muml.storydiagram.interpreter.core.executiontrace.ExecutionTrace#getExecutions
- * <em>Executions</em>}</li>
- * <li>
- * {@link org.muml.storydiagram.interpreter.core.executiontrace.ExecutionTrace#getDescription
- * <em>Description</em>}</li>
- * <li>
- * {@link org.muml.storydiagram.interpreter.core.executiontrace.ExecutionTrace#getTotalExecutionTime
- * <em>Total Execution Time</em>}</li>
- * <li>
- * {@link org.muml.storydiagram.interpreter.core.executiontrace.ExecutionTrace#getTotalExecutionTimeMsec
- * <em>Total Execution Time Msec</em>}</li>
- * </ul>
  * </p>
- * 
- * @see org.muml.storydiagram.interpreter.core.executiontrace.ExecutionTracePackage#getExecutionTrace()
+ * <ul>
+ *   <li>{@link org.muml.storydiagram.interpreter.core.executiontrace.ExecutionTrace#getExecutions <em>Executions</em>}</li>
+ *   <li>{@link org.muml.storydiagram.interpreter.core.executiontrace.ExecutionTrace#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.muml.storydiagram.interpreter.core.executiontrace.ExecutionTrace#getTotalExecutionTime <em>Total Execution Time</em>}</li>
+ *   <li>{@link org.muml.storydiagram.interpreter.core.executiontrace.ExecutionTrace#getTotalExecutionTimeMsec <em>Total Execution Time Msec</em>}</li>
+ * </ul>
+ *
+ * @see org.muml.storydiagram.interpreter.core.executiontrace.ExecutiontracePackage#getExecutionTrace()
  * @model
  * @generated
  */
@@ -70,13 +62,10 @@ public interface ExecutionTrace extends EObject
 	String getDescription();
 
 	/**
-	 * Sets the value of the '
-	 * {@link org.muml.storydiagram.interpreter.core.executiontrace.ExecutionTrace#getDescription
-	 * <em>Description</em>}' attribute. <!-- begin-user-doc --> <!--
+	 * Sets the value of the '{@link org.muml.storydiagram.interpreter.core.executiontrace.ExecutionTrace#getDescription <em>Description</em>}' attribute.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
-	 * @param value
-	 *            the new value of the '<em>Description</em>' attribute.
+	 * @param value the new value of the '<em>Description</em>' attribute.
 	 * @see #getDescription()
 	 * @generated
 	 */

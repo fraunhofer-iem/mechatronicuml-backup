@@ -5,17 +5,15 @@ package org.muml.storydiagram.interpreter.core.executiontrace;
 /**
  * <!-- begin-user-doc --> A representation of the model object '
  * <em><b>Link Check</b></em>'. <!-- end-user-doc -->
- * 
+ *
  * <p>
  * The following features are supported:
- * <ul>
- * <li>
- * {@link org.muml.storydiagram.interpreter.core.executiontrace.LinkCheck#getTargetObject
- * <em>Target Object</em>}</li>
- * </ul>
  * </p>
- * 
- * @see org.muml.storydiagram.interpreter.core.executiontrace.ExecutionTracePackage#getLinkCheck()
+ * <ul>
+ *   <li>{@link org.muml.storydiagram.interpreter.core.executiontrace.LinkCheck#getTargetObject <em>Target Object</em>}</li>
+ * </ul>
+ *
+ * @see org.muml.storydiagram.interpreter.core.executiontrace.ExecutiontracePackage#getLinkCheck()
  * @model abstract="true"
  * @generated
  */
@@ -40,13 +38,10 @@ public interface LinkCheck<StoryPatternLinkType, StoryPatternObjectType> extends
 	String getTargetObject();
 
 	/**
-	 * Sets the value of the '
-	 * {@link org.muml.storydiagram.interpreter.core.executiontrace.LinkCheck#getTargetObject
-	 * <em>Target Object</em>}' attribute. <!-- begin-user-doc --> <!--
+	 * Sets the value of the '{@link org.muml.storydiagram.interpreter.core.executiontrace.LinkCheck#getTargetObject <em>Target Object</em>}' attribute.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
-	 * @param value
-	 *            the new value of the '<em>Target Object</em>' attribute.
+	 * @param value the new value of the '<em>Target Object</em>' attribute.
 	 * @see #getTargetObject()
 	 * @generated
 	 */

@@ -44,16 +44,15 @@ import org.muml.storydiagram.interpreter.core.executiontrace.util.ExecutionTrace
  * <!-- end-user-doc -->
  * @generated
  */
-public class ExecutionTraceItemProviderAdapterFactory extends ExecutionTraceAdapterFactory implements ComposeableAdapterFactory,
-		IChangeNotifier, IDisposable, IChildCreationExtender
-{
+public class ExecutionTraceItemProviderAdapterFactory extends ExecutionTraceAdapterFactory
+		implements ComposeableAdapterFactory, IChangeNotifier, IDisposable, IChildCreationExtender {
 	/**
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ComposedAdapterFactory		parentAdapterFactory;
+	protected ComposedAdapterFactory parentAdapterFactory;
 
 	/**
 	 * This is used to implement {@link org.eclipse.emf.edit.provider.IChangeNotifier}.
@@ -61,7 +60,7 @@ public class ExecutionTraceItemProviderAdapterFactory extends ExecutionTraceAdap
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected IChangeNotifier				changeNotifier					= new ChangeNotifier();
+	protected IChangeNotifier changeNotifier = new ChangeNotifier();
 
 	/**
 	 * This helps manage the child creation extenders.
@@ -69,9 +68,8 @@ public class ExecutionTraceItemProviderAdapterFactory extends ExecutionTraceAdap
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ChildCreationExtenderManager	childCreationExtenderManager	= new ChildCreationExtenderManager(
-																					ExecutionTraceEditPlugin.INSTANCE,
-																					ExecutionTracePackage.eNS_URI);
+	protected ChildCreationExtenderManager childCreationExtenderManager = new ChildCreationExtenderManager(
+			ExecutionTraceEditPlugin.INSTANCE, ExecutionTracePackage.eNS_URI);
 
 	/**
 	 * This keeps track of all the supported types checked by {@link #isFactoryForType isFactoryForType}.
@@ -79,7 +77,7 @@ public class ExecutionTraceItemProviderAdapterFactory extends ExecutionTraceAdap
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected Collection<Object>			supportedTypes					= new ArrayList<Object>();
+	protected Collection<Object> supportedTypes = new ArrayList<Object>();
 
 	/**
 	 * This constructs an instance.
@@ -87,8 +85,7 @@ public class ExecutionTraceItemProviderAdapterFactory extends ExecutionTraceAdap
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ExecutionTraceItemProviderAdapterFactory()
-	{
+	public ExecutionTraceItemProviderAdapterFactory() {
 		supportedTypes.add(IEditingDomainItemProvider.class);
 		supportedTypes.add(IStructuredItemContentProvider.class);
 		supportedTypes.add(ITreeItemContentProvider.class);
@@ -107,7 +104,7 @@ public class ExecutionTraceItemProviderAdapterFactory extends ExecutionTraceAdap
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected MapEntryItemProvider	mapEntryItemProvider;
+	protected MapEntryItemProvider mapEntryItemProvider;
 
 	/**
 	 * This creates an adapter for a {@link java.util.Map.Entry}.
@@ -116,10 +113,8 @@ public class ExecutionTraceItemProviderAdapterFactory extends ExecutionTraceAdap
 	 * @generated
 	 */
 	@Override
-	public Adapter createMapEntryAdapter()
-	{
-		if (mapEntryItemProvider == null)
-		{
+	public Adapter createMapEntryAdapter() {
+		if (mapEntryItemProvider == null) {
 			mapEntryItemProvider = new MapEntryItemProvider(this);
 		}
 
@@ -132,7 +127,7 @@ public class ExecutionTraceItemProviderAdapterFactory extends ExecutionTraceAdap
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ExecutionTraceItemProvider	executionTraceItemProvider;
+	protected ExecutionTraceItemProvider executionTraceItemProvider;
 
 	/**
 	 * This creates an adapter for a {@link org.muml.storydiagram.interpreter.core.executiontrace.ExecutionTrace}.
@@ -141,10 +136,8 @@ public class ExecutionTraceItemProviderAdapterFactory extends ExecutionTraceAdap
 	 * @generated
 	 */
 	@Override
-	public Adapter createExecutionTraceAdapter()
-	{
-		if (executionTraceItemProvider == null)
-		{
+	public Adapter createExecutionTraceAdapter() {
+		if (executionTraceItemProvider == null) {
 			executionTraceItemProvider = new ExecutionTraceItemProvider(this);
 		}
 
@@ -157,7 +150,7 @@ public class ExecutionTraceItemProviderAdapterFactory extends ExecutionTraceAdap
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ActivityExecutionItemProvider	activityExecutionItemProvider;
+	protected ActivityExecutionItemProvider activityExecutionItemProvider;
 
 	/**
 	 * This creates an adapter for a {@link org.muml.storydiagram.interpreter.core.executiontrace.ActivityExecution}.
@@ -166,10 +159,8 @@ public class ExecutionTraceItemProviderAdapterFactory extends ExecutionTraceAdap
 	 * @generated
 	 */
 	@Override
-	public Adapter createActivityExecutionAdapter()
-	{
-		if (activityExecutionItemProvider == null)
-		{
+	public Adapter createActivityExecutionAdapter() {
+		if (activityExecutionItemProvider == null) {
 			activityExecutionItemProvider = new ActivityExecutionItemProvider(this);
 		}
 
@@ -182,7 +173,7 @@ public class ExecutionTraceItemProviderAdapterFactory extends ExecutionTraceAdap
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ActivityNodeExecutionItemProvider	activityNodeExecutionItemProvider;
+	protected ActivityNodeExecutionItemProvider activityNodeExecutionItemProvider;
 
 	/**
 	 * This creates an adapter for a {@link org.muml.storydiagram.interpreter.core.executiontrace.ActivityNodeExecution}.
@@ -191,10 +182,8 @@ public class ExecutionTraceItemProviderAdapterFactory extends ExecutionTraceAdap
 	 * @generated
 	 */
 	@Override
-	public Adapter createActivityNodeExecutionAdapter()
-	{
-		if (activityNodeExecutionItemProvider == null)
-		{
+	public Adapter createActivityNodeExecutionAdapter() {
+		if (activityNodeExecutionItemProvider == null) {
 			activityNodeExecutionItemProvider = new ActivityNodeExecutionItemProvider(this);
 		}
 
@@ -207,7 +196,7 @@ public class ExecutionTraceItemProviderAdapterFactory extends ExecutionTraceAdap
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ActivityEdgeTraversalItemProvider	activityEdgeTraversalItemProvider;
+	protected ActivityEdgeTraversalItemProvider activityEdgeTraversalItemProvider;
 
 	/**
 	 * This creates an adapter for a {@link org.muml.storydiagram.interpreter.core.executiontrace.ActivityEdgeTraversal}.
@@ -216,10 +205,8 @@ public class ExecutionTraceItemProviderAdapterFactory extends ExecutionTraceAdap
 	 * @generated
 	 */
 	@Override
-	public Adapter createActivityEdgeTraversalAdapter()
-	{
-		if (activityEdgeTraversalItemProvider == null)
-		{
+	public Adapter createActivityEdgeTraversalAdapter() {
+		if (activityEdgeTraversalItemProvider == null) {
 			activityEdgeTraversalItemProvider = new ActivityEdgeTraversalItemProvider(this);
 		}
 
@@ -232,7 +219,7 @@ public class ExecutionTraceItemProviderAdapterFactory extends ExecutionTraceAdap
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected StoryPatternInitializationItemProvider	storyPatternInitializationItemProvider;
+	protected StoryPatternInitializationItemProvider storyPatternInitializationItemProvider;
 
 	/**
 	 * This creates an adapter for a {@link org.muml.storydiagram.interpreter.core.executiontrace.StoryPatternInitialization}.
@@ -241,10 +228,8 @@ public class ExecutionTraceItemProviderAdapterFactory extends ExecutionTraceAdap
 	 * @generated
 	 */
 	@Override
-	public Adapter createStoryPatternInitializationAdapter()
-	{
-		if (storyPatternInitializationItemProvider == null)
-		{
+	public Adapter createStoryPatternInitializationAdapter() {
+		if (storyPatternInitializationItemProvider == null) {
 			storyPatternInitializationItemProvider = new StoryPatternInitializationItemProvider(this);
 		}
 
@@ -257,7 +242,7 @@ public class ExecutionTraceItemProviderAdapterFactory extends ExecutionTraceAdap
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected StoryPatternMatchingItemProvider	storyPatternMatchingItemProvider;
+	protected StoryPatternMatchingItemProvider storyPatternMatchingItemProvider;
 
 	/**
 	 * This creates an adapter for a {@link org.muml.storydiagram.interpreter.core.executiontrace.StoryPatternMatching}.
@@ -266,10 +251,8 @@ public class ExecutionTraceItemProviderAdapterFactory extends ExecutionTraceAdap
 	 * @generated
 	 */
 	@Override
-	public Adapter createStoryPatternMatchingAdapter()
-	{
-		if (storyPatternMatchingItemProvider == null)
-		{
+	public Adapter createStoryPatternMatchingAdapter() {
+		if (storyPatternMatchingItemProvider == null) {
 			storyPatternMatchingItemProvider = new StoryPatternMatchingItemProvider(this);
 		}
 
@@ -282,7 +265,7 @@ public class ExecutionTraceItemProviderAdapterFactory extends ExecutionTraceAdap
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected StoryPatternApplicationItemProvider	storyPatternApplicationItemProvider;
+	protected StoryPatternApplicationItemProvider storyPatternApplicationItemProvider;
 
 	/**
 	 * This creates an adapter for a {@link org.muml.storydiagram.interpreter.core.executiontrace.StoryPatternApplication}.
@@ -291,10 +274,8 @@ public class ExecutionTraceItemProviderAdapterFactory extends ExecutionTraceAdap
 	 * @generated
 	 */
 	@Override
-	public Adapter createStoryPatternApplicationAdapter()
-	{
-		if (storyPatternApplicationItemProvider == null)
-		{
+	public Adapter createStoryPatternApplicationAdapter() {
+		if (storyPatternApplicationItemProvider == null) {
 			storyPatternApplicationItemProvider = new StoryPatternApplicationItemProvider(this);
 		}
 
@@ -307,7 +288,7 @@ public class ExecutionTraceItemProviderAdapterFactory extends ExecutionTraceAdap
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected StoryPatternObjectBoundItemProvider	storyPatternObjectBoundItemProvider;
+	protected StoryPatternObjectBoundItemProvider storyPatternObjectBoundItemProvider;
 
 	/**
 	 * This creates an adapter for a {@link org.muml.storydiagram.interpreter.core.executiontrace.StoryPatternObjectBound}.
@@ -316,10 +297,8 @@ public class ExecutionTraceItemProviderAdapterFactory extends ExecutionTraceAdap
 	 * @generated
 	 */
 	@Override
-	public Adapter createStoryPatternObjectBoundAdapter()
-	{
-		if (storyPatternObjectBoundItemProvider == null)
-		{
+	public Adapter createStoryPatternObjectBoundAdapter() {
+		if (storyPatternObjectBoundItemProvider == null) {
 			storyPatternObjectBoundItemProvider = new StoryPatternObjectBoundItemProvider(this);
 		}
 
@@ -332,7 +311,7 @@ public class ExecutionTraceItemProviderAdapterFactory extends ExecutionTraceAdap
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected StoryPatternObjectNotBoundItemProvider	storyPatternObjectNotBoundItemProvider;
+	protected StoryPatternObjectNotBoundItemProvider storyPatternObjectNotBoundItemProvider;
 
 	/**
 	 * This creates an adapter for a {@link org.muml.storydiagram.interpreter.core.executiontrace.StoryPatternObjectNotBound}.
@@ -341,10 +320,8 @@ public class ExecutionTraceItemProviderAdapterFactory extends ExecutionTraceAdap
 	 * @generated
 	 */
 	@Override
-	public Adapter createStoryPatternObjectNotBoundAdapter()
-	{
-		if (storyPatternObjectNotBoundItemProvider == null)
-		{
+	public Adapter createStoryPatternObjectNotBoundAdapter() {
+		if (storyPatternObjectNotBoundItemProvider == null) {
 			storyPatternObjectNotBoundItemProvider = new StoryPatternObjectNotBoundItemProvider(this);
 		}
 
@@ -357,7 +334,7 @@ public class ExecutionTraceItemProviderAdapterFactory extends ExecutionTraceAdap
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected StoryPatternObjectBindingRevokedItemProvider	storyPatternObjectBindingRevokedItemProvider;
+	protected StoryPatternObjectBindingRevokedItemProvider storyPatternObjectBindingRevokedItemProvider;
 
 	/**
 	 * This creates an adapter for a {@link org.muml.storydiagram.interpreter.core.executiontrace.StoryPatternObjectBindingRevoked}.
@@ -366,10 +343,8 @@ public class ExecutionTraceItemProviderAdapterFactory extends ExecutionTraceAdap
 	 * @generated
 	 */
 	@Override
-	public Adapter createStoryPatternObjectBindingRevokedAdapter()
-	{
-		if (storyPatternObjectBindingRevokedItemProvider == null)
-		{
+	public Adapter createStoryPatternObjectBindingRevokedAdapter() {
+		if (storyPatternObjectBindingRevokedItemProvider == null) {
 			storyPatternObjectBindingRevokedItemProvider = new StoryPatternObjectBindingRevokedItemProvider(this);
 		}
 
@@ -382,7 +357,7 @@ public class ExecutionTraceItemProviderAdapterFactory extends ExecutionTraceAdap
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected TraversingLinkItemProvider	traversingLinkItemProvider;
+	protected TraversingLinkItemProvider traversingLinkItemProvider;
 
 	/**
 	 * This creates an adapter for a {@link org.muml.storydiagram.interpreter.core.executiontrace.TraversingLink}.
@@ -391,10 +366,8 @@ public class ExecutionTraceItemProviderAdapterFactory extends ExecutionTraceAdap
 	 * @generated
 	 */
 	@Override
-	public Adapter createTraversingLinkAdapter()
-	{
-		if (traversingLinkItemProvider == null)
-		{
+	public Adapter createTraversingLinkAdapter() {
+		if (traversingLinkItemProvider == null) {
 			traversingLinkItemProvider = new TraversingLinkItemProvider(this);
 		}
 
@@ -407,7 +380,7 @@ public class ExecutionTraceItemProviderAdapterFactory extends ExecutionTraceAdap
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected LinkCheckSuccessfulItemProvider	linkCheckSuccessfulItemProvider;
+	protected LinkCheckSuccessfulItemProvider linkCheckSuccessfulItemProvider;
 
 	/**
 	 * This creates an adapter for a {@link org.muml.storydiagram.interpreter.core.executiontrace.LinkCheckSuccessful}.
@@ -416,10 +389,8 @@ public class ExecutionTraceItemProviderAdapterFactory extends ExecutionTraceAdap
 	 * @generated
 	 */
 	@Override
-	public Adapter createLinkCheckSuccessfulAdapter()
-	{
-		if (linkCheckSuccessfulItemProvider == null)
-		{
+	public Adapter createLinkCheckSuccessfulAdapter() {
+		if (linkCheckSuccessfulItemProvider == null) {
 			linkCheckSuccessfulItemProvider = new LinkCheckSuccessfulItemProvider(this);
 		}
 
@@ -432,7 +403,7 @@ public class ExecutionTraceItemProviderAdapterFactory extends ExecutionTraceAdap
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected LinkCheckFailedItemProvider	linkCheckFailedItemProvider;
+	protected LinkCheckFailedItemProvider linkCheckFailedItemProvider;
 
 	/**
 	 * This creates an adapter for a {@link org.muml.storydiagram.interpreter.core.executiontrace.LinkCheckFailed}.
@@ -441,10 +412,8 @@ public class ExecutionTraceItemProviderAdapterFactory extends ExecutionTraceAdap
 	 * @generated
 	 */
 	@Override
-	public Adapter createLinkCheckFailedAdapter()
-	{
-		if (linkCheckFailedItemProvider == null)
-		{
+	public Adapter createLinkCheckFailedAdapter() {
+		if (linkCheckFailedItemProvider == null) {
 			linkCheckFailedItemProvider = new LinkCheckFailedItemProvider(this);
 		}
 
@@ -457,7 +426,7 @@ public class ExecutionTraceItemProviderAdapterFactory extends ExecutionTraceAdap
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ExpressionEvaluationItemProvider	expressionEvaluationItemProvider;
+	protected ExpressionEvaluationItemProvider expressionEvaluationItemProvider;
 
 	/**
 	 * This creates an adapter for a {@link org.muml.storydiagram.interpreter.core.executiontrace.ExpressionEvaluation}.
@@ -466,10 +435,8 @@ public class ExecutionTraceItemProviderAdapterFactory extends ExecutionTraceAdap
 	 * @generated
 	 */
 	@Override
-	public Adapter createExpressionEvaluationAdapter()
-	{
-		if (expressionEvaluationItemProvider == null)
-		{
+	public Adapter createExpressionEvaluationAdapter() {
+		if (expressionEvaluationItemProvider == null) {
 			expressionEvaluationItemProvider = new ExpressionEvaluationItemProvider(this);
 		}
 
@@ -482,7 +449,7 @@ public class ExecutionTraceItemProviderAdapterFactory extends ExecutionTraceAdap
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected InstanceObjectCreationItemProvider	instanceObjectCreationItemProvider;
+	protected InstanceObjectCreationItemProvider instanceObjectCreationItemProvider;
 
 	/**
 	 * This creates an adapter for a {@link org.muml.storydiagram.interpreter.core.executiontrace.InstanceObjectCreation}.
@@ -491,10 +458,8 @@ public class ExecutionTraceItemProviderAdapterFactory extends ExecutionTraceAdap
 	 * @generated
 	 */
 	@Override
-	public Adapter createInstanceObjectCreationAdapter()
-	{
-		if (instanceObjectCreationItemProvider == null)
-		{
+	public Adapter createInstanceObjectCreationAdapter() {
+		if (instanceObjectCreationItemProvider == null) {
 			instanceObjectCreationItemProvider = new InstanceObjectCreationItemProvider(this);
 		}
 
@@ -507,7 +472,7 @@ public class ExecutionTraceItemProviderAdapterFactory extends ExecutionTraceAdap
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected InstanceObjectDeletionItemProvider	instanceObjectDeletionItemProvider;
+	protected InstanceObjectDeletionItemProvider instanceObjectDeletionItemProvider;
 
 	/**
 	 * This creates an adapter for a {@link org.muml.storydiagram.interpreter.core.executiontrace.InstanceObjectDeletion}.
@@ -516,10 +481,8 @@ public class ExecutionTraceItemProviderAdapterFactory extends ExecutionTraceAdap
 	 * @generated
 	 */
 	@Override
-	public Adapter createInstanceObjectDeletionAdapter()
-	{
-		if (instanceObjectDeletionItemProvider == null)
-		{
+	public Adapter createInstanceObjectDeletionAdapter() {
+		if (instanceObjectDeletionItemProvider == null) {
 			instanceObjectDeletionItemProvider = new InstanceObjectDeletionItemProvider(this);
 		}
 
@@ -532,7 +495,7 @@ public class ExecutionTraceItemProviderAdapterFactory extends ExecutionTraceAdap
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected InstanceLinkCreationItemProvider	instanceLinkCreationItemProvider;
+	protected InstanceLinkCreationItemProvider instanceLinkCreationItemProvider;
 
 	/**
 	 * This creates an adapter for a {@link org.muml.storydiagram.interpreter.core.executiontrace.InstanceLinkCreation}.
@@ -541,10 +504,8 @@ public class ExecutionTraceItemProviderAdapterFactory extends ExecutionTraceAdap
 	 * @generated
 	 */
 	@Override
-	public Adapter createInstanceLinkCreationAdapter()
-	{
-		if (instanceLinkCreationItemProvider == null)
-		{
+	public Adapter createInstanceLinkCreationAdapter() {
+		if (instanceLinkCreationItemProvider == null) {
 			instanceLinkCreationItemProvider = new InstanceLinkCreationItemProvider(this);
 		}
 
@@ -557,7 +518,7 @@ public class ExecutionTraceItemProviderAdapterFactory extends ExecutionTraceAdap
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected InstanceLinkDeletionItemProvider	instanceLinkDeletionItemProvider;
+	protected InstanceLinkDeletionItemProvider instanceLinkDeletionItemProvider;
 
 	/**
 	 * This creates an adapter for a {@link org.muml.storydiagram.interpreter.core.executiontrace.InstanceLinkDeletion}.
@@ -566,10 +527,8 @@ public class ExecutionTraceItemProviderAdapterFactory extends ExecutionTraceAdap
 	 * @generated
 	 */
 	@Override
-	public Adapter createInstanceLinkDeletionAdapter()
-	{
-		if (instanceLinkDeletionItemProvider == null)
-		{
+	public Adapter createInstanceLinkDeletionAdapter() {
+		if (instanceLinkDeletionItemProvider == null) {
 			instanceLinkDeletionItemProvider = new InstanceLinkDeletionItemProvider(this);
 		}
 
@@ -582,7 +541,7 @@ public class ExecutionTraceItemProviderAdapterFactory extends ExecutionTraceAdap
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected AttributeValueSetItemProvider	attributeValueSetItemProvider;
+	protected AttributeValueSetItemProvider attributeValueSetItemProvider;
 
 	/**
 	 * This creates an adapter for a {@link org.muml.storydiagram.interpreter.core.executiontrace.AttributeValueSet}.
@@ -591,10 +550,8 @@ public class ExecutionTraceItemProviderAdapterFactory extends ExecutionTraceAdap
 	 * @generated
 	 */
 	@Override
-	public Adapter createAttributeValueSetAdapter()
-	{
-		if (attributeValueSetItemProvider == null)
-		{
+	public Adapter createAttributeValueSetAdapter() {
+		if (attributeValueSetItemProvider == null) {
 			attributeValueSetItemProvider = new AttributeValueSetItemProvider(this);
 		}
 
@@ -607,7 +564,7 @@ public class ExecutionTraceItemProviderAdapterFactory extends ExecutionTraceAdap
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected VariableCreatedItemProvider	variableCreatedItemProvider;
+	protected VariableCreatedItemProvider variableCreatedItemProvider;
 
 	/**
 	 * This creates an adapter for a {@link org.muml.storydiagram.interpreter.core.executiontrace.VariableCreated}.
@@ -616,10 +573,8 @@ public class ExecutionTraceItemProviderAdapterFactory extends ExecutionTraceAdap
 	 * @generated
 	 */
 	@Override
-	public Adapter createVariableCreatedAdapter()
-	{
-		if (variableCreatedItemProvider == null)
-		{
+	public Adapter createVariableCreatedAdapter() {
+		if (variableCreatedItemProvider == null) {
 			variableCreatedItemProvider = new VariableCreatedItemProvider(this);
 		}
 
@@ -632,7 +587,7 @@ public class ExecutionTraceItemProviderAdapterFactory extends ExecutionTraceAdap
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected VariableDeletedItemProvider	variableDeletedItemProvider;
+	protected VariableDeletedItemProvider variableDeletedItemProvider;
 
 	/**
 	 * This creates an adapter for a {@link org.muml.storydiagram.interpreter.core.executiontrace.VariableDeleted}.
@@ -641,10 +596,8 @@ public class ExecutionTraceItemProviderAdapterFactory extends ExecutionTraceAdap
 	 * @generated
 	 */
 	@Override
-	public Adapter createVariableDeletedAdapter()
-	{
-		if (variableDeletedItemProvider == null)
-		{
+	public Adapter createVariableDeletedAdapter() {
+		if (variableDeletedItemProvider == null) {
 			variableDeletedItemProvider = new VariableDeletedItemProvider(this);
 		}
 
@@ -657,7 +610,7 @@ public class ExecutionTraceItemProviderAdapterFactory extends ExecutionTraceAdap
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected VariableChangedItemProvider	variableChangedItemProvider;
+	protected VariableChangedItemProvider variableChangedItemProvider;
 
 	/**
 	 * This creates an adapter for a {@link org.muml.storydiagram.interpreter.core.executiontrace.VariableChanged}.
@@ -666,10 +619,8 @@ public class ExecutionTraceItemProviderAdapterFactory extends ExecutionTraceAdap
 	 * @generated
 	 */
 	@Override
-	public Adapter createVariableChangedAdapter()
-	{
-		if (variableChangedItemProvider == null)
-		{
+	public Adapter createVariableChangedAdapter() {
+		if (variableChangedItemProvider == null) {
 			variableChangedItemProvider = new VariableChangedItemProvider(this);
 		}
 
@@ -682,7 +633,7 @@ public class ExecutionTraceItemProviderAdapterFactory extends ExecutionTraceAdap
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected StoryPatternObjectConstraintHoldsItemProvider	storyPatternObjectConstraintHoldsItemProvider;
+	protected StoryPatternObjectConstraintHoldsItemProvider storyPatternObjectConstraintHoldsItemProvider;
 
 	/**
 	 * This creates an adapter for a {@link org.muml.storydiagram.interpreter.core.executiontrace.StoryPatternObjectConstraintHolds}.
@@ -691,10 +642,8 @@ public class ExecutionTraceItemProviderAdapterFactory extends ExecutionTraceAdap
 	 * @generated
 	 */
 	@Override
-	public Adapter createStoryPatternObjectConstraintHoldsAdapter()
-	{
-		if (storyPatternObjectConstraintHoldsItemProvider == null)
-		{
+	public Adapter createStoryPatternObjectConstraintHoldsAdapter() {
+		if (storyPatternObjectConstraintHoldsItemProvider == null) {
 			storyPatternObjectConstraintHoldsItemProvider = new StoryPatternObjectConstraintHoldsItemProvider(this);
 		}
 
@@ -707,7 +656,7 @@ public class ExecutionTraceItemProviderAdapterFactory extends ExecutionTraceAdap
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected StoryPatternObjectConstraintViolatedItemProvider	storyPatternObjectConstraintViolatedItemProvider;
+	protected StoryPatternObjectConstraintViolatedItemProvider storyPatternObjectConstraintViolatedItemProvider;
 
 	/**
 	 * This creates an adapter for a {@link org.muml.storydiagram.interpreter.core.executiontrace.StoryPatternObjectConstraintViolated}.
@@ -716,11 +665,10 @@ public class ExecutionTraceItemProviderAdapterFactory extends ExecutionTraceAdap
 	 * @generated
 	 */
 	@Override
-	public Adapter createStoryPatternObjectConstraintViolatedAdapter()
-	{
-		if (storyPatternObjectConstraintViolatedItemProvider == null)
-		{
-			storyPatternObjectConstraintViolatedItemProvider = new StoryPatternObjectConstraintViolatedItemProvider(this);
+	public Adapter createStoryPatternObjectConstraintViolatedAdapter() {
+		if (storyPatternObjectConstraintViolatedItemProvider == null) {
+			storyPatternObjectConstraintViolatedItemProvider = new StoryPatternObjectConstraintViolatedItemProvider(
+					this);
 		}
 
 		return storyPatternObjectConstraintViolatedItemProvider;
@@ -732,7 +680,7 @@ public class ExecutionTraceItemProviderAdapterFactory extends ExecutionTraceAdap
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected StoryPatternConstraintHoldsItemProvider	storyPatternConstraintHoldsItemProvider;
+	protected StoryPatternConstraintHoldsItemProvider storyPatternConstraintHoldsItemProvider;
 
 	/**
 	 * This creates an adapter for a {@link org.muml.storydiagram.interpreter.core.executiontrace.StoryPatternConstraintHolds}.
@@ -741,10 +689,8 @@ public class ExecutionTraceItemProviderAdapterFactory extends ExecutionTraceAdap
 	 * @generated
 	 */
 	@Override
-	public Adapter createStoryPatternConstraintHoldsAdapter()
-	{
-		if (storyPatternConstraintHoldsItemProvider == null)
-		{
+	public Adapter createStoryPatternConstraintHoldsAdapter() {
+		if (storyPatternConstraintHoldsItemProvider == null) {
 			storyPatternConstraintHoldsItemProvider = new StoryPatternConstraintHoldsItemProvider(this);
 		}
 
@@ -757,7 +703,7 @@ public class ExecutionTraceItemProviderAdapterFactory extends ExecutionTraceAdap
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected StoryPatternConstraintViolatedItemProvider	storyPatternConstraintViolatedItemProvider;
+	protected StoryPatternConstraintViolatedItemProvider storyPatternConstraintViolatedItemProvider;
 
 	/**
 	 * This creates an adapter for a {@link org.muml.storydiagram.interpreter.core.executiontrace.StoryPatternConstraintViolated}.
@@ -766,10 +712,8 @@ public class ExecutionTraceItemProviderAdapterFactory extends ExecutionTraceAdap
 	 * @generated
 	 */
 	@Override
-	public Adapter createStoryPatternConstraintViolatedAdapter()
-	{
-		if (storyPatternConstraintViolatedItemProvider == null)
-		{
+	public Adapter createStoryPatternConstraintViolatedAdapter() {
+		if (storyPatternConstraintViolatedItemProvider == null) {
 			storyPatternConstraintViolatedItemProvider = new StoryPatternConstraintViolatedItemProvider(this);
 		}
 
@@ -782,8 +726,7 @@ public class ExecutionTraceItemProviderAdapterFactory extends ExecutionTraceAdap
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ComposeableAdapterFactory getRootAdapterFactory()
-	{
+	public ComposeableAdapterFactory getRootAdapterFactory() {
 		return parentAdapterFactory == null ? this : parentAdapterFactory.getRootAdapterFactory();
 	}
 
@@ -793,8 +736,7 @@ public class ExecutionTraceItemProviderAdapterFactory extends ExecutionTraceAdap
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setParentAdapterFactory(ComposedAdapterFactory parentAdapterFactory)
-	{
+	public void setParentAdapterFactory(ComposedAdapterFactory parentAdapterFactory) {
 		this.parentAdapterFactory = parentAdapterFactory;
 	}
 
@@ -804,8 +746,7 @@ public class ExecutionTraceItemProviderAdapterFactory extends ExecutionTraceAdap
 	 * @generated
 	 */
 	@Override
-	public boolean isFactoryForType(Object type)
-	{
+	public boolean isFactoryForType(Object type) {
 		return supportedTypes.contains(type) || super.isFactoryForType(type);
 	}
 
@@ -816,8 +757,7 @@ public class ExecutionTraceItemProviderAdapterFactory extends ExecutionTraceAdap
 	 * @generated
 	 */
 	@Override
-	public Adapter adapt(Notifier notifier, Object type)
-	{
+	public Adapter adapt(Notifier notifier, Object type) {
 		return super.adapt(notifier, this);
 	}
 
@@ -827,13 +767,10 @@ public class ExecutionTraceItemProviderAdapterFactory extends ExecutionTraceAdap
 	 * @generated
 	 */
 	@Override
-	public Object adapt(Object object, Object type)
-	{
-		if (isFactoryForType(type))
-		{
+	public Object adapt(Object object, Object type) {
+		if (isFactoryForType(type)) {
 			Object adapter = super.adapt(object, type);
-			if (!(type instanceof Class<?>) || (((Class<?>) type).isInstance(adapter)))
-			{
+			if (!(type instanceof Class<?>) || (((Class<?>) type).isInstance(adapter))) {
 				return adapter;
 			}
 		}
@@ -846,8 +783,7 @@ public class ExecutionTraceItemProviderAdapterFactory extends ExecutionTraceAdap
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public List<IChildCreationExtender> getChildCreationExtenders()
-	{
+	public List<IChildCreationExtender> getChildCreationExtenders() {
 		return childCreationExtenderManager.getChildCreationExtenders();
 	}
 
@@ -856,8 +792,7 @@ public class ExecutionTraceItemProviderAdapterFactory extends ExecutionTraceAdap
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Collection<?> getNewChildDescriptors(Object object, EditingDomain editingDomain)
-	{
+	public Collection<?> getNewChildDescriptors(Object object, EditingDomain editingDomain) {
 		return childCreationExtenderManager.getNewChildDescriptors(object, editingDomain);
 	}
 
@@ -866,8 +801,7 @@ public class ExecutionTraceItemProviderAdapterFactory extends ExecutionTraceAdap
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ResourceLocator getResourceLocator()
-	{
+	public ResourceLocator getResourceLocator() {
 		return childCreationExtenderManager;
 	}
 
@@ -877,8 +811,7 @@ public class ExecutionTraceItemProviderAdapterFactory extends ExecutionTraceAdap
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void addListener(INotifyChangedListener notifyChangedListener)
-	{
+	public void addListener(INotifyChangedListener notifyChangedListener) {
 		changeNotifier.addListener(notifyChangedListener);
 	}
 
@@ -888,8 +821,7 @@ public class ExecutionTraceItemProviderAdapterFactory extends ExecutionTraceAdap
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void removeListener(INotifyChangedListener notifyChangedListener)
-	{
+	public void removeListener(INotifyChangedListener notifyChangedListener) {
 		changeNotifier.removeListener(notifyChangedListener);
 	}
 
@@ -899,12 +831,10 @@ public class ExecutionTraceItemProviderAdapterFactory extends ExecutionTraceAdap
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void fireNotifyChanged(Notification notification)
-	{
+	public void fireNotifyChanged(Notification notification) {
 		changeNotifier.fireNotifyChanged(notification);
 
-		if (parentAdapterFactory != null)
-		{
+		if (parentAdapterFactory != null) {
 			parentAdapterFactory.fireNotifyChanged(notification);
 		}
 	}
@@ -915,8 +845,7 @@ public class ExecutionTraceItemProviderAdapterFactory extends ExecutionTraceAdap
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void dispose()
-	{
+	public void dispose() {
 		if (mapEntryItemProvider != null)
 			mapEntryItemProvider.dispose();
 		if (executionTraceItemProvider != null)

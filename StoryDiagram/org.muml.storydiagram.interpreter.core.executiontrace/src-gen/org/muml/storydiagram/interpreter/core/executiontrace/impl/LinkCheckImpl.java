@@ -5,7 +5,7 @@ package org.muml.storydiagram.interpreter.core.executiontrace.impl;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.muml.storydiagram.interpreter.core.executiontrace.ExecutionTracePackage;
+import org.muml.storydiagram.interpreter.core.executiontrace.ExecutiontracePackage;
 import org.muml.storydiagram.interpreter.core.executiontrace.LinkCheck;
 
 /**
@@ -13,13 +13,11 @@ import org.muml.storydiagram.interpreter.core.executiontrace.LinkCheck;
  * <em><b>Link Check</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * <ul>
- * <li>
- * {@link org.muml.storydiagram.interpreter.core.executiontrace.impl.LinkCheckImpl#getTargetObject
- * <em>Target Object</em>}</li>
- * </ul>
  * </p>
- * 
+ * <ul>
+ *   <li>{@link org.muml.storydiagram.interpreter.core.executiontrace.impl.LinkCheckImpl#getTargetObject <em>Target Object</em>}</li>
+ * </ul>
+ *
  * @generated
  */
 public abstract class LinkCheckImpl<StoryPatternLinkType, StoryPatternObjectType> extends
@@ -27,10 +25,9 @@ public abstract class LinkCheckImpl<StoryPatternLinkType, StoryPatternObjectType
 		LinkCheck<StoryPatternLinkType, StoryPatternObjectType>
 {
 	/**
-	 * The default value of the '{@link #getTargetObject()
-	 * <em>Target Object</em>}' attribute. <!-- begin-user-doc --> <!--
+	 * The default value of the '{@link #getTargetObject() <em>Target Object</em>}' attribute.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @see #getTargetObject()
 	 * @generated
 	 * @ordered
@@ -38,19 +35,17 @@ public abstract class LinkCheckImpl<StoryPatternLinkType, StoryPatternObjectType
 	protected static final String	TARGET_OBJECT_EDEFAULT	= null;
 
 	/**
-	 * The cached value of the '{@link #getTargetObject()
-	 * <em>Target Object</em>}' attribute. <!-- begin-user-doc --> <!--
+	 * The cached value of the '{@link #getTargetObject() <em>Target Object</em>}' attribute.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @see #getTargetObject()
 	 * @generated
 	 * @ordered
 	 */
-	protected String				targetObject			= LinkCheckImpl.TARGET_OBJECT_EDEFAULT;
+	protected String				targetObject			= TARGET_OBJECT_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected LinkCheckImpl()
@@ -60,71 +55,94 @@ public abstract class LinkCheckImpl<StoryPatternLinkType, StoryPatternObjectType
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	protected EClass eStaticClass()
 	{
-		return ExecutionTracePackage.Literals.LINK_CHECK;
+		return ExecutiontracePackage.Literals.LINK_CHECK;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * This is specialized for the more specific type known in this context.
+	 * @generated
+	 */
+	@Override
+	public void setStoryPatternLink(StoryPatternLinkType newStoryPatternLink) {
+		super.setStoryPatternLink(newStoryPatternLink);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * This is specialized for the more specific type known in this context.
+	 * @generated
+	 */
+	@Override
+	public void setSourceStoryPatternObject(StoryPatternObjectType newSourceStoryPatternObject) {
+		super.setSourceStoryPatternObject(newSourceStoryPatternObject);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * This is specialized for the more specific type known in this context.
+	 * @generated
+	 */
+	@Override
+	public void setTargetStoryPatternObject(StoryPatternObjectType newTargetStoryPatternObject) {
+		super.setTargetStoryPatternObject(newTargetStoryPatternObject);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public String getTargetObject()
 	{
-		return this.targetObject;
+		return targetObject;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
-	public void setTargetObject(final String newTargetObject)
+	public void setTargetObject(String newTargetObject)
 	{
-		final String oldTargetObject = this.targetObject;
-		this.targetObject = newTargetObject;
-		if (this.eNotificationRequired())
-		{
-			this.eNotify(new ENotificationImpl(this, Notification.SET, ExecutionTracePackage.LINK_CHECK__TARGET_OBJECT, oldTargetObject,
-					this.targetObject));
-		}
+		String oldTargetObject = targetObject;
+		targetObject = newTargetObject;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ExecutiontracePackage.LINK_CHECK__TARGET_OBJECT, oldTargetObject, targetObject));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
-	public Object eGet(final int featureID, final boolean resolve, final boolean coreType)
+	public Object eGet(int featureID, boolean resolve, boolean coreType)
 	{
-		switch (featureID)
-		{
-			case ExecutionTracePackage.LINK_CHECK__TARGET_OBJECT:
-				return this.getTargetObject();
+		switch (featureID) {
+			case ExecutiontracePackage.LINK_CHECK__TARGET_OBJECT:
+				return getTargetObject();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
-	public void eSet(final int featureID, final Object newValue)
+	public void eSet(int featureID, Object newValue)
 	{
-		switch (featureID)
-		{
-			case ExecutionTracePackage.LINK_CHECK__TARGET_OBJECT:
-				this.setTargetObject((String) newValue);
+		switch (featureID) {
+			case ExecutiontracePackage.LINK_CHECK__TARGET_OBJECT:
+				setTargetObject((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -132,16 +150,14 @@ public abstract class LinkCheckImpl<StoryPatternLinkType, StoryPatternObjectType
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
-	public void eUnset(final int featureID)
+	public void eUnset(int featureID)
 	{
-		switch (featureID)
-		{
-			case ExecutionTracePackage.LINK_CHECK__TARGET_OBJECT:
-				this.setTargetObject(LinkCheckImpl.TARGET_OBJECT_EDEFAULT);
+		switch (featureID) {
+			case ExecutiontracePackage.LINK_CHECK__TARGET_OBJECT:
+				setTargetObject(TARGET_OBJECT_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -149,37 +165,30 @@ public abstract class LinkCheckImpl<StoryPatternLinkType, StoryPatternObjectType
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
-	public boolean eIsSet(final int featureID)
+	public boolean eIsSet(int featureID)
 	{
-		switch (featureID)
-		{
-			case ExecutionTracePackage.LINK_CHECK__TARGET_OBJECT:
-				return LinkCheckImpl.TARGET_OBJECT_EDEFAULT == null ? this.targetObject != null : !LinkCheckImpl.TARGET_OBJECT_EDEFAULT
-						.equals(this.targetObject);
+		switch (featureID) {
+			case ExecutiontracePackage.LINK_CHECK__TARGET_OBJECT:
+				return TARGET_OBJECT_EDEFAULT == null ? targetObject != null : !TARGET_OBJECT_EDEFAULT.equals(targetObject);
 		}
 		return super.eIsSet(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString()
 	{
-		if (this.eIsProxy())
-		{
-			return super.toString();
-		}
+		if (eIsProxy()) return super.toString();
 
-		final StringBuffer result = new StringBuffer(super.toString());
+		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (targetObject: ");
-		result.append(this.targetObject);
+		result.append(targetObject);
 		result.append(')');
 		return result.toString();
 	}

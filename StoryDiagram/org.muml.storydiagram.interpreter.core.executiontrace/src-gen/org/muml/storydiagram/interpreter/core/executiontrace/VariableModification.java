@@ -5,23 +5,17 @@ package org.muml.storydiagram.interpreter.core.executiontrace;
 /**
  * <!-- begin-user-doc --> A representation of the model object '
  * <em><b>Variable Modification</b></em>'. <!-- end-user-doc -->
- * 
+ *
  * <p>
  * The following features are supported:
- * <ul>
- * <li>
- * {@link org.muml.storydiagram.interpreter.core.executiontrace.VariableModification#getVariableName
- * <em>Variable Name</em>}</li>
- * <li>
- * {@link org.muml.storydiagram.interpreter.core.executiontrace.VariableModification#getClassifier
- * <em>Classifier</em>}</li>
- * <li>
- * {@link org.muml.storydiagram.interpreter.core.executiontrace.VariableModification#getValue
- * <em>Value</em>}</li>
- * </ul>
  * </p>
- * 
- * @see org.muml.storydiagram.interpreter.core.executiontrace.ExecutionTracePackage#getVariableModification()
+ * <ul>
+ *   <li>{@link org.muml.storydiagram.interpreter.core.executiontrace.VariableModification#getVariableName <em>Variable Name</em>}</li>
+ *   <li>{@link org.muml.storydiagram.interpreter.core.executiontrace.VariableModification#getClassifier <em>Classifier</em>}</li>
+ *   <li>{@link org.muml.storydiagram.interpreter.core.executiontrace.VariableModification#getValue <em>Value</em>}</li>
+ * </ul>
+ *
+ * @see org.muml.storydiagram.interpreter.core.executiontrace.ExecutiontracePackage#getVariableModification()
  * @model abstract="true"
  * @generated
  */
@@ -45,13 +39,10 @@ public interface VariableModification<ClassifierType> extends Execution
 	String getVariableName();
 
 	/**
-	 * Sets the value of the '
-	 * {@link org.muml.storydiagram.interpreter.core.executiontrace.VariableModification#getVariableName
-	 * <em>Variable Name</em>}' attribute. <!-- begin-user-doc --> <!--
+	 * Sets the value of the '{@link org.muml.storydiagram.interpreter.core.executiontrace.VariableModification#getVariableName <em>Variable Name</em>}' attribute.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
-	 * @param value
-	 *            the new value of the '<em>Variable Name</em>' attribute.
+	 * @param value the new value of the '<em>Variable Name</em>' attribute.
 	 * @see #getVariableName()
 	 * @generated
 	 */
@@ -75,13 +66,10 @@ public interface VariableModification<ClassifierType> extends Execution
 	ClassifierType getClassifier();
 
 	/**
-	 * Sets the value of the '
-	 * {@link org.muml.storydiagram.interpreter.core.executiontrace.VariableModification#getClassifier
-	 * <em>Classifier</em>}' reference. <!-- begin-user-doc --> <!--
+	 * Sets the value of the '{@link org.muml.storydiagram.interpreter.core.executiontrace.VariableModification#getClassifier <em>Classifier</em>}' reference.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
-	 * @param value
-	 *            the new value of the '<em>Classifier</em>' reference.
+	 * @param value the new value of the '<em>Classifier</em>' reference.
 	 * @see #getClassifier()
 	 * @generated
 	 */
@@ -105,12 +93,9 @@ public interface VariableModification<ClassifierType> extends Execution
 	String getValue();
 
 	/**
-	 * Sets the value of the '
-	 * {@link org.muml.storydiagram.interpreter.core.executiontrace.VariableModification#getValue
-	 * <em>Value</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @param value
-	 *            the new value of the '<em>Value</em>' attribute.
+	 * Sets the value of the '{@link org.muml.storydiagram.interpreter.core.executiontrace.VariableModification#getValue <em>Value</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Value</em>' attribute.
 	 * @see #getValue()
 	 * @generated
 	 */

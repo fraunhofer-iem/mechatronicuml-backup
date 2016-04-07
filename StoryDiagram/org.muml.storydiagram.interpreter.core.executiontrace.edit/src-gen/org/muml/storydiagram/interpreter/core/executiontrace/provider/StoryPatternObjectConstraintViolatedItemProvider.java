@@ -10,38 +10,24 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.edit.EMFEditPlugin;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemColorProvider;
-import org.eclipse.emf.edit.provider.IItemFontProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITableItemColorProvider;
-import org.eclipse.emf.edit.provider.ITableItemFontProvider;
-import org.eclipse.emf.edit.provider.ITableItemLabelProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.muml.storydiagram.interpreter.core.executiontrace.StoryPatternObjectConstraintViolated;
 
 /**
- * This is the item provider adapter for a
- * {@link org.muml.storydiagram.interpreter.core.executiontrace.StoryPatternObjectConstraintViolated}
- * object. <!-- begin-user-doc --> <!-- end-user-doc -->
- * 
+ * This is the item provider adapter for a {@link org.muml.storydiagram.interpreter.core.executiontrace.StoryPatternObjectConstraintViolated} object.
+ * <!-- begin-user-doc --> <!-- end-user-doc -->
  * @generated
  */
-public class StoryPatternObjectConstraintViolatedItemProvider extends StoryPatternObjectConstraintEvaluationItemProvider implements
-		IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource,
-		ITableItemLabelProvider, ITableItemColorProvider, ITableItemFontProvider, IItemColorProvider, IItemFontProvider
-{
+public class StoryPatternObjectConstraintViolatedItemProvider
+		extends StoryPatternObjectConstraintEvaluationItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
-	public StoryPatternObjectConstraintViolatedItemProvider(final AdapterFactory adapterFactory)
-	{
+	public StoryPatternObjectConstraintViolatedItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -52,14 +38,12 @@ public class StoryPatternObjectConstraintViolatedItemProvider extends StoryPatte
 	 * @generated
 	 */
 	@Override
-	public List<IItemPropertyDescriptor> getPropertyDescriptors(final Object object)
-	{
-		if (this.itemPropertyDescriptors == null)
-		{
+	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 		}
-		return this.itemPropertyDescriptors;
+		return itemPropertyDescriptors;
 	}
 
 	/**
@@ -69,9 +53,8 @@ public class StoryPatternObjectConstraintViolatedItemProvider extends StoryPatte
 	 * @generated
 	 */
 	@Override
-	public Object getImage(final Object object)
-	{
-		return this.overlayImage(object, this.getResourceLocator().getImage("full/obj16/StoryPatternObjectConstraintViolated"));
+	public Object getImage(Object object) {
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/StoryPatternObjectConstraintViolated"));
 	}
 
 	/**
@@ -81,47 +64,35 @@ public class StoryPatternObjectConstraintViolatedItemProvider extends StoryPatte
 	 * @generated not
 	 */
 	@Override
-	public String getText(final Object object)
-	{
+	public String getText(final Object object) {
 		String label = this.getString("_UI_StoryPatternObjectConstraintViolated_type") + " ";
 		final StoryPatternObjectConstraintViolated<?, ?> storyPatternObjectConstraintViolated = (StoryPatternObjectConstraintViolated<?, ?>) object;
 
-		final ComposedAdapterFactory factory = new ComposedAdapterFactory(EMFEditPlugin.getComposedAdapterFactoryDescriptorRegistry());
+		final ComposedAdapterFactory factory = new ComposedAdapterFactory(
+				EMFEditPlugin.getComposedAdapterFactoryDescriptorRegistry());
 
-		if (storyPatternObjectConstraintViolated.getConstraint() != null)
-		{
-			if (storyPatternObjectConstraintViolated.getConstraint() instanceof EObject)
-			{
-				label += ((IItemLabelProvider) factory
-						.adapt(storyPatternObjectConstraintViolated.getConstraint(), IItemLabelProvider.class))
-						.getText(storyPatternObjectConstraintViolated.getConstraint());
-			}
-			else
-			{
+		if (storyPatternObjectConstraintViolated.getConstraint() != null) {
+			if (storyPatternObjectConstraintViolated.getConstraint() instanceof EObject) {
+				label += ((IItemLabelProvider) factory.adapt(storyPatternObjectConstraintViolated.getConstraint(),
+						IItemLabelProvider.class)).getText(storyPatternObjectConstraintViolated.getConstraint());
+			} else {
 				label += storyPatternObjectConstraintViolated.getConstraint().toString();
 			}
-		}
-		else
-		{
+		} else {
 			label += "[null]";
 		}
 
 		label += " on ";
 
-		if (storyPatternObjectConstraintViolated.getStoryPatternObject() != null)
-		{
-			if (storyPatternObjectConstraintViolated.getStoryPatternObject() instanceof EObject)
-			{
-				label += ((IItemLabelProvider) factory.adapt(storyPatternObjectConstraintViolated.getStoryPatternObject(),
-						IItemLabelProvider.class)).getText(storyPatternObjectConstraintViolated.getStoryPatternObject());
-			}
-			else
-			{
+		if (storyPatternObjectConstraintViolated.getStoryPatternObject() != null) {
+			if (storyPatternObjectConstraintViolated.getStoryPatternObject() instanceof EObject) {
+				label += ((IItemLabelProvider) factory
+						.adapt(storyPatternObjectConstraintViolated.getStoryPatternObject(), IItemLabelProvider.class))
+								.getText(storyPatternObjectConstraintViolated.getStoryPatternObject());
+			} else {
 				label += storyPatternObjectConstraintViolated.getStoryPatternObject().toString();
 			}
-		}
-		else
-		{
+		} else {
 			label += "[null]";
 		}
 
@@ -129,17 +100,15 @@ public class StoryPatternObjectConstraintViolatedItemProvider extends StoryPatte
 	}
 
 	/**
-	 * This handles model notifications by calling {@link #updateChildren} to
-	 * update any cached children and by creating a viewer notification, which
-	 * it passes to {@link #fireNotifyChanged}. <!-- begin-user-doc --> <!--
+	 * This handles model notifications by calling {@link #updateChildren} to update any cached
+	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
-	public void notifyChanged(final Notification notification)
-	{
-		this.updateChildren(notification);
+	public void notifyChanged(Notification notification) {
+		updateChildren(notification);
 		super.notifyChanged(notification);
 	}
 
@@ -151,8 +120,7 @@ public class StoryPatternObjectConstraintViolatedItemProvider extends StoryPatte
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(final Collection<Object> newChildDescriptors, final Object object)
-	{
+	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 	}
 

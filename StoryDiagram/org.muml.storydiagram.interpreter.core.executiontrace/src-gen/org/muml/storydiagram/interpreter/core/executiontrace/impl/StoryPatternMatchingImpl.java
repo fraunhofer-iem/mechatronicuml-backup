@@ -5,7 +5,7 @@ package org.muml.storydiagram.interpreter.core.executiontrace.impl;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.muml.storydiagram.interpreter.core.executiontrace.ExecutionTracePackage;
+import org.muml.storydiagram.interpreter.core.executiontrace.ExecutiontracePackage;
 import org.muml.storydiagram.interpreter.core.executiontrace.StoryPatternMatching;
 
 /**
@@ -13,22 +13,19 @@ import org.muml.storydiagram.interpreter.core.executiontrace.StoryPatternMatchin
  * <em><b>Story Pattern Matching</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * <ul>
- * <li>
- * {@link org.muml.storydiagram.interpreter.core.executiontrace.impl.StoryPatternMatchingImpl#isSuccessful
- * <em>Successful</em>}</li>
- * </ul>
  * </p>
- * 
+ * <ul>
+ *   <li>{@link org.muml.storydiagram.interpreter.core.executiontrace.impl.StoryPatternMatchingImpl#isSuccessful <em>Successful</em>}</li>
+ * </ul>
+ *
  * @generated
  */
 public class StoryPatternMatchingImpl<StoryPatternType> extends StoryPatternExecutionImpl<StoryPatternType> implements
 		StoryPatternMatching<StoryPatternType>
 {
 	/**
-	 * The default value of the '{@link #isSuccessful() <em>Successful</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The default value of the '{@link #isSuccessful() <em>Successful</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #isSuccessful()
 	 * @generated
 	 * @ordered
@@ -36,18 +33,16 @@ public class StoryPatternMatchingImpl<StoryPatternType> extends StoryPatternExec
 	protected static final boolean	SUCCESSFUL_EDEFAULT	= false;
 
 	/**
-	 * The cached value of the '{@link #isSuccessful() <em>Successful</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The cached value of the '{@link #isSuccessful() <em>Successful</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #isSuccessful()
 	 * @generated
 	 * @ordered
 	 */
-	protected boolean				successful			= StoryPatternMatchingImpl.SUCCESSFUL_EDEFAULT;
+	protected boolean				successful			= SUCCESSFUL_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected StoryPatternMatchingImpl()
@@ -57,71 +52,72 @@ public class StoryPatternMatchingImpl<StoryPatternType> extends StoryPatternExec
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	protected EClass eStaticClass()
 	{
-		return ExecutionTracePackage.Literals.STORY_PATTERN_MATCHING;
+		return ExecutiontracePackage.Literals.STORY_PATTERN_MATCHING;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * This is specialized for the more specific type known in this context.
+	 * @generated
+	 */
+	@Override
+	public void setStoryPattern(StoryPatternType newStoryPattern) {
+		super.setStoryPattern(newStoryPattern);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean isSuccessful()
 	{
-		return this.successful;
+		return successful;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
-	public void setSuccessful(final boolean newSuccessful)
+	public void setSuccessful(boolean newSuccessful)
 	{
-		final boolean oldSuccessful = this.successful;
-		this.successful = newSuccessful;
-		if (this.eNotificationRequired())
-		{
-			this.eNotify(new ENotificationImpl(this, Notification.SET, ExecutionTracePackage.STORY_PATTERN_MATCHING__SUCCESSFUL,
-					oldSuccessful, this.successful));
-		}
+		boolean oldSuccessful = successful;
+		successful = newSuccessful;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ExecutiontracePackage.STORY_PATTERN_MATCHING__SUCCESSFUL, oldSuccessful, successful));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
-	public Object eGet(final int featureID, final boolean resolve, final boolean coreType)
+	public Object eGet(int featureID, boolean resolve, boolean coreType)
 	{
-		switch (featureID)
-		{
-			case ExecutionTracePackage.STORY_PATTERN_MATCHING__SUCCESSFUL:
-				return this.isSuccessful();
+		switch (featureID) {
+			case ExecutiontracePackage.STORY_PATTERN_MATCHING__SUCCESSFUL:
+				return isSuccessful();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
-	public void eSet(final int featureID, final Object newValue)
+	public void eSet(int featureID, Object newValue)
 	{
-		switch (featureID)
-		{
-			case ExecutionTracePackage.STORY_PATTERN_MATCHING__SUCCESSFUL:
-				this.setSuccessful((Boolean) newValue);
+		switch (featureID) {
+			case ExecutiontracePackage.STORY_PATTERN_MATCHING__SUCCESSFUL:
+				setSuccessful((Boolean)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -129,16 +125,14 @@ public class StoryPatternMatchingImpl<StoryPatternType> extends StoryPatternExec
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
-	public void eUnset(final int featureID)
+	public void eUnset(int featureID)
 	{
-		switch (featureID)
-		{
-			case ExecutionTracePackage.STORY_PATTERN_MATCHING__SUCCESSFUL:
-				this.setSuccessful(StoryPatternMatchingImpl.SUCCESSFUL_EDEFAULT);
+		switch (featureID) {
+			case ExecutiontracePackage.STORY_PATTERN_MATCHING__SUCCESSFUL:
+				setSuccessful(SUCCESSFUL_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -146,36 +140,30 @@ public class StoryPatternMatchingImpl<StoryPatternType> extends StoryPatternExec
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
-	public boolean eIsSet(final int featureID)
+	public boolean eIsSet(int featureID)
 	{
-		switch (featureID)
-		{
-			case ExecutionTracePackage.STORY_PATTERN_MATCHING__SUCCESSFUL:
-				return this.successful != StoryPatternMatchingImpl.SUCCESSFUL_EDEFAULT;
+		switch (featureID) {
+			case ExecutiontracePackage.STORY_PATTERN_MATCHING__SUCCESSFUL:
+				return successful != SUCCESSFUL_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString()
 	{
-		if (this.eIsProxy())
-		{
-			return super.toString();
-		}
+		if (eIsProxy()) return super.toString();
 
-		final StringBuffer result = new StringBuffer(super.toString());
+		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (successful: ");
-		result.append(this.successful);
+		result.append(successful);
 		result.append(')');
 		return result.toString();
 	}

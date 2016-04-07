@@ -5,9 +5,9 @@ package org.muml.storydiagram.interpreter.core.executiontrace;
 /**
  * <!-- begin-user-doc --> A representation of the model object '
  * <em><b>Story Pattern Constraint Violated</b></em>'. <!-- end-user-doc -->
- * 
- * 
- * @see org.muml.storydiagram.interpreter.core.executiontrace.ExecutionTracePackage#getStoryPatternConstraintViolated()
+ *
+ *
+ * @see org.muml.storydiagram.interpreter.core.executiontrace.ExecutiontracePackage#getStoryPatternConstraintViolated()
  * @model
  * @generated
  */

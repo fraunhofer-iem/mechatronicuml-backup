@@ -9,20 +9,10 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemColorProvider;
-import org.eclipse.emf.edit.provider.IItemFontProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITableItemColorProvider;
-import org.eclipse.emf.edit.provider.ITableItemFontProvider;
-import org.eclipse.emf.edit.provider.ITableItemLabelProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import org.muml.storydiagram.interpreter.core.executiontrace.ExecutionTracePackage;
+import org.muml.storydiagram.interpreter.core.executiontrace.ExecutiontracePackage;
 import org.muml.storydiagram.interpreter.core.executiontrace.StoryPatternMatching;
 
 /**
@@ -31,18 +21,14 @@ import org.muml.storydiagram.interpreter.core.executiontrace.StoryPatternMatchin
  * <!-- end-user-doc -->
  * @generated
  */
-public class StoryPatternMatchingItemProvider extends StoryPatternExecutionItemProvider implements IEditingDomainItemProvider,
-		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider,
-		ITableItemColorProvider, ITableItemFontProvider, IItemColorProvider, IItemFontProvider
-{
+public class StoryPatternMatchingItemProvider extends StoryPatternExecutionItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public StoryPatternMatchingItemProvider(AdapterFactory adapterFactory)
-	{
+	public StoryPatternMatchingItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -53,10 +39,8 @@ public class StoryPatternMatchingItemProvider extends StoryPatternExecutionItemP
 	 * @generated
 	 */
 	@Override
-	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object)
-	{
-		if (itemPropertyDescriptors == null)
-		{
+	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 			addSuccessfulPropertyDescriptor(object);
@@ -70,15 +54,20 @@ public class StoryPatternMatchingItemProvider extends StoryPatternExecutionItemP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addSuccessfulPropertyDescriptor(Object object)
-	{
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_StoryPatternMatching_successful_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_StoryPatternMatching_successful_feature",
-						"_UI_StoryPatternMatching_type"), ExecutionTracePackage.Literals.STORY_PATTERN_MATCHING__SUCCESSFUL, true, false,
-				false, ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
+	protected void addSuccessfulPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_StoryPatternMatching_successful_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_StoryPatternMatching_successful_feature", "_UI_StoryPatternMatching_type"),
+				 ExecutiontracePackage.Literals.STORY_PATTERN_MATCHING__SUCCESSFUL,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -88,8 +77,7 @@ public class StoryPatternMatchingItemProvider extends StoryPatternExecutionItemP
 	 * @generated
 	 */
 	@Override
-	public Object getImage(Object object)
-	{
+	public Object getImage(Object object) {
 		return overlayImage(object, getResourceLocator().getImage("full/obj16/StoryPatternMatching"));
 	}
 
@@ -100,9 +88,8 @@ public class StoryPatternMatchingItemProvider extends StoryPatternExecutionItemP
 	 * @generated
 	 */
 	@Override
-	public String getText(Object object)
-	{
-		StoryPatternMatching<?> storyPatternMatching = (StoryPatternMatching<?>) object;
+	public String getText(Object object) {
+		StoryPatternMatching<?> storyPatternMatching = (StoryPatternMatching<?>)object;
 		return getString("_UI_StoryPatternMatching_type") + " " + storyPatternMatching.getExecutionStartedTimeStamp();
 	}
 
@@ -114,13 +101,11 @@ public class StoryPatternMatchingItemProvider extends StoryPatternExecutionItemP
 	 * @generated
 	 */
 	@Override
-	public void notifyChanged(Notification notification)
-	{
+	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(StoryPatternMatching.class))
-		{
-			case ExecutionTracePackage.STORY_PATTERN_MATCHING__SUCCESSFUL:
+		switch (notification.getFeatureID(StoryPatternMatching.class)) {
+			case ExecutiontracePackage.STORY_PATTERN_MATCHING__SUCCESSFUL:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}
@@ -135,8 +120,7 @@ public class StoryPatternMatchingItemProvider extends StoryPatternExecutionItemP
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object)
-	{
+	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 	}
 

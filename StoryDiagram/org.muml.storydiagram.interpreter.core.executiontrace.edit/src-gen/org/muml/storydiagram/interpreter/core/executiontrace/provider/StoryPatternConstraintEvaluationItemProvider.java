@@ -9,19 +9,9 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemColorProvider;
-import org.eclipse.emf.edit.provider.IItemFontProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITableItemColorProvider;
-import org.eclipse.emf.edit.provider.ITableItemFontProvider;
-import org.eclipse.emf.edit.provider.ITableItemLabelProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import org.muml.storydiagram.interpreter.core.executiontrace.ExecutionTracePackage;
+import org.muml.storydiagram.interpreter.core.executiontrace.ExecutiontracePackage;
 import org.muml.storydiagram.interpreter.core.executiontrace.StoryPatternConstraintEvaluation;
 
 /**
@@ -30,18 +20,14 @@ import org.muml.storydiagram.interpreter.core.executiontrace.StoryPatternConstra
  * <!-- end-user-doc -->
  * @generated
  */
-public class StoryPatternConstraintEvaluationItemProvider extends StoryPatternExecutionItemProvider implements IEditingDomainItemProvider,
-		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider,
-		ITableItemColorProvider, ITableItemFontProvider, IItemColorProvider, IItemFontProvider
-{
+public class StoryPatternConstraintEvaluationItemProvider extends StoryPatternExecutionItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public StoryPatternConstraintEvaluationItemProvider(AdapterFactory adapterFactory)
-	{
+	public StoryPatternConstraintEvaluationItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -52,10 +38,8 @@ public class StoryPatternConstraintEvaluationItemProvider extends StoryPatternEx
 	 * @generated
 	 */
 	@Override
-	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object)
-	{
-		if (itemPropertyDescriptors == null)
-		{
+	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 			addConstraintPropertyDescriptor(object);
@@ -69,15 +53,20 @@ public class StoryPatternConstraintEvaluationItemProvider extends StoryPatternEx
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addConstraintPropertyDescriptor(Object object)
-	{
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_StoryPatternConstraintEvaluation_constraint_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_StoryPatternConstraintEvaluation_constraint_feature",
-						"_UI_StoryPatternConstraintEvaluation_type"),
-				ExecutionTracePackage.Literals.STORY_PATTERN_CONSTRAINT_EVALUATION__CONSTRAINT, true, false, true, null, null, null));
+	protected void addConstraintPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_StoryPatternConstraintEvaluation_constraint_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_StoryPatternConstraintEvaluation_constraint_feature", "_UI_StoryPatternConstraintEvaluation_type"),
+				 ExecutiontracePackage.Literals.STORY_PATTERN_CONSTRAINT_EVALUATION__CONSTRAINT,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
@@ -87,11 +76,9 @@ public class StoryPatternConstraintEvaluationItemProvider extends StoryPatternEx
 	 * @generated
 	 */
 	@Override
-	public String getText(Object object)
-	{
-		StoryPatternConstraintEvaluation<?, ?> storyPatternConstraintEvaluation = (StoryPatternConstraintEvaluation<?, ?>) object;
-		return getString("_UI_StoryPatternConstraintEvaluation_type") + " "
-				+ storyPatternConstraintEvaluation.getExecutionStartedTimeStamp();
+	public String getText(Object object) {
+		StoryPatternConstraintEvaluation<?, ?> storyPatternConstraintEvaluation = (StoryPatternConstraintEvaluation<?, ?>)object;
+		return getString("_UI_StoryPatternConstraintEvaluation_type") + " " + storyPatternConstraintEvaluation.getExecutionStartedTimeStamp();
 	}
 
 	/**
@@ -102,13 +89,11 @@ public class StoryPatternConstraintEvaluationItemProvider extends StoryPatternEx
 	 * @generated
 	 */
 	@Override
-	public void notifyChanged(Notification notification)
-	{
+	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(StoryPatternConstraintEvaluation.class))
-		{
-			case ExecutionTracePackage.STORY_PATTERN_CONSTRAINT_EVALUATION__CONSTRAINT:
+		switch (notification.getFeatureID(StoryPatternConstraintEvaluation.class)) {
+			case ExecutiontracePackage.STORY_PATTERN_CONSTRAINT_EVALUATION__CONSTRAINT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}
@@ -123,8 +108,7 @@ public class StoryPatternConstraintEvaluationItemProvider extends StoryPatternEx
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object)
-	{
+	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 	}
 

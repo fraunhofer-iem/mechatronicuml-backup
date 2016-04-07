@@ -7,18 +7,7 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemColorProvider;
-import org.eclipse.emf.edit.provider.IItemFontProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITableItemColorProvider;
-import org.eclipse.emf.edit.provider.ITableItemFontProvider;
-import org.eclipse.emf.edit.provider.ITableItemLabelProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.muml.storydiagram.interpreter.core.executiontrace.VariableCreated;
 
 /**
@@ -27,18 +16,14 @@ import org.muml.storydiagram.interpreter.core.executiontrace.VariableCreated;
  * <!-- end-user-doc -->
  * @generated
  */
-public class VariableCreatedItemProvider extends VariableModificationItemProvider implements IEditingDomainItemProvider,
-		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider,
-		ITableItemColorProvider, ITableItemFontProvider, IItemColorProvider, IItemFontProvider
-{
+public class VariableCreatedItemProvider extends VariableModificationItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public VariableCreatedItemProvider(AdapterFactory adapterFactory)
-	{
+	public VariableCreatedItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -49,10 +34,8 @@ public class VariableCreatedItemProvider extends VariableModificationItemProvide
 	 * @generated
 	 */
 	@Override
-	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object)
-	{
-		if (itemPropertyDescriptors == null)
-		{
+	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 		}
@@ -66,8 +49,7 @@ public class VariableCreatedItemProvider extends VariableModificationItemProvide
 	 * @generated
 	 */
 	@Override
-	public Object getImage(Object object)
-	{
+	public Object getImage(Object object) {
 		return overlayImage(object, getResourceLocator().getImage("full/obj16/VariableCreated"));
 	}
 
@@ -78,11 +60,11 @@ public class VariableCreatedItemProvider extends VariableModificationItemProvide
 	 * @generated
 	 */
 	@Override
-	public String getText(Object object)
-	{
-		String label = ((VariableCreated<?>) object).getVariableName();
-		return label == null || label.length() == 0 ? getString("_UI_VariableCreated_type") : getString("_UI_VariableCreated_type") + " "
-				+ label;
+	public String getText(Object object) {
+		String label = ((VariableCreated<?>)object).getVariableName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_VariableCreated_type") :
+			getString("_UI_VariableCreated_type") + " " + label;
 	}
 
 	/**
@@ -93,8 +75,7 @@ public class VariableCreatedItemProvider extends VariableModificationItemProvide
 	 * @generated
 	 */
 	@Override
-	public void notifyChanged(Notification notification)
-	{
+	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 		super.notifyChanged(notification);
 	}
@@ -107,8 +88,7 @@ public class VariableCreatedItemProvider extends VariableModificationItemProvide
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object)
-	{
+	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 	}
 

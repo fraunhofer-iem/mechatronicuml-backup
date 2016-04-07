@@ -7,7 +7,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.muml.storydiagram.interpreter.core.executiontrace.ExecutionTracePackage;
+import org.muml.storydiagram.interpreter.core.executiontrace.ExecutiontracePackage;
 import org.muml.storydiagram.interpreter.core.executiontrace.StoryPatternObjectConstraintEvaluation;
 
 /**
@@ -16,13 +16,11 @@ import org.muml.storydiagram.interpreter.core.executiontrace.StoryPatternObjectC
  * end-user-doc -->
  * <p>
  * The following features are implemented:
- * <ul>
- * <li>
- * {@link org.muml.storydiagram.interpreter.core.executiontrace.impl.StoryPatternObjectConstraintEvaluationImpl#getConstraint
- * <em>Constraint</em>}</li>
- * </ul>
  * </p>
- * 
+ * <ul>
+ *   <li>{@link org.muml.storydiagram.interpreter.core.executiontrace.impl.StoryPatternObjectConstraintEvaluationImpl#getConstraint <em>Constraint</em>}</li>
+ * </ul>
+ *
  * @generated
  */
 public abstract class StoryPatternObjectConstraintEvaluationImpl<StoryPatternObjectType, ExpressionType> extends
@@ -30,9 +28,8 @@ public abstract class StoryPatternObjectConstraintEvaluationImpl<StoryPatternObj
 		StoryPatternObjectConstraintEvaluation<StoryPatternObjectType, ExpressionType>
 {
 	/**
-	 * The cached value of the '{@link #getConstraint() <em>Constraint</em>}'
-	 * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The cached value of the '{@link #getConstraint() <em>Constraint</em>}' reference.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getConstraint()
 	 * @generated
 	 * @ordered
@@ -41,7 +38,6 @@ public abstract class StoryPatternObjectConstraintEvaluationImpl<StoryPatternObj
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected StoryPatternObjectConstraintEvaluationImpl()
@@ -51,100 +47,92 @@ public abstract class StoryPatternObjectConstraintEvaluationImpl<StoryPatternObj
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	protected EClass eStaticClass()
 	{
-		return ExecutionTracePackage.Literals.STORY_PATTERN_OBJECT_CONSTRAINT_EVALUATION;
+		return ExecutiontracePackage.Literals.STORY_PATTERN_OBJECT_CONSTRAINT_EVALUATION;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * This is specialized for the more specific type known in this context.
+	 * @generated
+	 */
+	@Override
+	public void setStoryPatternObject(StoryPatternObjectType newStoryPatternObject) {
+		super.setStoryPatternObject(newStoryPatternObject);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	@SuppressWarnings("unchecked")
 	public ExpressionType getConstraint()
 	{
-		if ((this.constraint != null) && ((EObject) this.constraint).eIsProxy())
-		{
-			final InternalEObject oldConstraint = (InternalEObject) this.constraint;
-			this.constraint = (ExpressionType) this.eResolveProxy(oldConstraint);
-			if (this.constraint != oldConstraint)
-			{
-				if (this.eNotificationRequired())
-				{
-					this.eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							ExecutionTracePackage.STORY_PATTERN_OBJECT_CONSTRAINT_EVALUATION__CONSTRAINT, oldConstraint, this.constraint));
-				}
+		if (constraint != null && ((EObject)constraint).eIsProxy()) {
+			InternalEObject oldConstraint = (InternalEObject)constraint;
+			constraint = (ExpressionType)eResolveProxy(oldConstraint);
+			if (constraint != oldConstraint) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ExecutiontracePackage.STORY_PATTERN_OBJECT_CONSTRAINT_EVALUATION__CONSTRAINT, oldConstraint, constraint));
 			}
 		}
-		return this.constraint;
+		return constraint;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public ExpressionType basicGetConstraint()
 	{
-		return this.constraint;
+		return constraint;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
-	public void setConstraint(final ExpressionType newConstraint)
+	public void setConstraint(ExpressionType newConstraint)
 	{
-		final ExpressionType oldConstraint = this.constraint;
-		this.constraint = newConstraint;
-		if (this.eNotificationRequired())
-		{
-			this.eNotify(new ENotificationImpl(this, Notification.SET,
-					ExecutionTracePackage.STORY_PATTERN_OBJECT_CONSTRAINT_EVALUATION__CONSTRAINT, oldConstraint, this.constraint));
-		}
+		ExpressionType oldConstraint = constraint;
+		constraint = newConstraint;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ExecutiontracePackage.STORY_PATTERN_OBJECT_CONSTRAINT_EVALUATION__CONSTRAINT, oldConstraint, constraint));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
-	public Object eGet(final int featureID, final boolean resolve, final boolean coreType)
+	public Object eGet(int featureID, boolean resolve, boolean coreType)
 	{
-		switch (featureID)
-		{
-			case ExecutionTracePackage.STORY_PATTERN_OBJECT_CONSTRAINT_EVALUATION__CONSTRAINT:
-				if (resolve)
-				{
-					return this.getConstraint();
-				}
-				return this.basicGetConstraint();
+		switch (featureID) {
+			case ExecutiontracePackage.STORY_PATTERN_OBJECT_CONSTRAINT_EVALUATION__CONSTRAINT:
+				if (resolve) return getConstraint();
+				return basicGetConstraint();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public void eSet(final int featureID, final Object newValue)
+	public void eSet(int featureID, Object newValue)
 	{
-		switch (featureID)
-		{
-			case ExecutionTracePackage.STORY_PATTERN_OBJECT_CONSTRAINT_EVALUATION__CONSTRAINT:
-				this.setConstraint((ExpressionType) newValue);
+		switch (featureID) {
+			case ExecutiontracePackage.STORY_PATTERN_OBJECT_CONSTRAINT_EVALUATION__CONSTRAINT:
+				setConstraint((ExpressionType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -152,16 +140,14 @@ public abstract class StoryPatternObjectConstraintEvaluationImpl<StoryPatternObj
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
-	public void eUnset(final int featureID)
+	public void eUnset(int featureID)
 	{
-		switch (featureID)
-		{
-			case ExecutionTracePackage.STORY_PATTERN_OBJECT_CONSTRAINT_EVALUATION__CONSTRAINT:
-				this.setConstraint((ExpressionType) null);
+		switch (featureID) {
+			case ExecutiontracePackage.STORY_PATTERN_OBJECT_CONSTRAINT_EVALUATION__CONSTRAINT:
+				setConstraint((ExpressionType)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -169,16 +155,14 @@ public abstract class StoryPatternObjectConstraintEvaluationImpl<StoryPatternObj
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
-	public boolean eIsSet(final int featureID)
+	public boolean eIsSet(int featureID)
 	{
-		switch (featureID)
-		{
-			case ExecutionTracePackage.STORY_PATTERN_OBJECT_CONSTRAINT_EVALUATION__CONSTRAINT:
-				return this.constraint != null;
+		switch (featureID) {
+			case ExecutiontracePackage.STORY_PATTERN_OBJECT_CONSTRAINT_EVALUATION__CONSTRAINT:
+				return constraint != null;
 		}
 		return super.eIsSet(featureID);
 	}

@@ -5,17 +5,15 @@ package org.muml.storydiagram.interpreter.core.executiontrace;
 /**
  * <!-- begin-user-doc --> A representation of the model object '
  * <em><b>Variable Changed</b></em>'. <!-- end-user-doc -->
- * 
+ *
  * <p>
  * The following features are supported:
- * <ul>
- * <li>
- * {@link org.muml.storydiagram.interpreter.core.executiontrace.VariableChanged#getOldValue
- * <em>Old Value</em>}</li>
- * </ul>
  * </p>
- * 
- * @see org.muml.storydiagram.interpreter.core.executiontrace.ExecutionTracePackage#getVariableChanged()
+ * <ul>
+ *   <li>{@link org.muml.storydiagram.interpreter.core.executiontrace.VariableChanged#getOldValue <em>Old Value</em>}</li>
+ * </ul>
+ *
+ * @see org.muml.storydiagram.interpreter.core.executiontrace.ExecutiontracePackage#getVariableChanged()
  * @model
  * @generated
  */

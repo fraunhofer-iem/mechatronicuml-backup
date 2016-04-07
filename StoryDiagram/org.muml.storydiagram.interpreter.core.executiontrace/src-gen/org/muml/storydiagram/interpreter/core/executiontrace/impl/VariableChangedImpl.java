@@ -5,7 +5,7 @@ package org.muml.storydiagram.interpreter.core.executiontrace.impl;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.muml.storydiagram.interpreter.core.executiontrace.ExecutionTracePackage;
+import org.muml.storydiagram.interpreter.core.executiontrace.ExecutiontracePackage;
 import org.muml.storydiagram.interpreter.core.executiontrace.VariableChanged;
 
 /**
@@ -13,22 +13,19 @@ import org.muml.storydiagram.interpreter.core.executiontrace.VariableChanged;
  * <em><b>Variable Changed</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * <ul>
- * <li>
- * {@link org.muml.storydiagram.interpreter.core.executiontrace.impl.VariableChangedImpl#getOldValue
- * <em>Old Value</em>}</li>
- * </ul>
  * </p>
- * 
+ * <ul>
+ *   <li>{@link org.muml.storydiagram.interpreter.core.executiontrace.impl.VariableChangedImpl#getOldValue <em>Old Value</em>}</li>
+ * </ul>
+ *
  * @generated
  */
 public class VariableChangedImpl<ClassifierType> extends VariableModificationImpl<ClassifierType> implements
 		VariableChanged<ClassifierType>
 {
 	/**
-	 * The default value of the '{@link #getOldValue() <em>Old Value</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The default value of the '{@link #getOldValue() <em>Old Value</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getOldValue()
 	 * @generated
 	 * @ordered
@@ -36,18 +33,16 @@ public class VariableChangedImpl<ClassifierType> extends VariableModificationImp
 	protected static final String	OLD_VALUE_EDEFAULT	= null;
 
 	/**
-	 * The cached value of the '{@link #getOldValue() <em>Old Value</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The cached value of the '{@link #getOldValue() <em>Old Value</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getOldValue()
 	 * @generated
 	 * @ordered
 	 */
-	protected String				oldValue			= VariableChangedImpl.OLD_VALUE_EDEFAULT;
+	protected String				oldValue			= OLD_VALUE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected VariableChangedImpl()
@@ -57,71 +52,72 @@ public class VariableChangedImpl<ClassifierType> extends VariableModificationImp
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	protected EClass eStaticClass()
 	{
-		return ExecutionTracePackage.Literals.VARIABLE_CHANGED;
+		return ExecutiontracePackage.Literals.VARIABLE_CHANGED;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * This is specialized for the more specific type known in this context.
+	 * @generated
+	 */
+	@Override
+	public void setClassifier(ClassifierType newClassifier) {
+		super.setClassifier(newClassifier);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public String getOldValue()
 	{
-		return this.oldValue;
+		return oldValue;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
-	public void setOldValue(final String newOldValue)
+	public void setOldValue(String newOldValue)
 	{
-		final String oldOldValue = this.oldValue;
-		this.oldValue = newOldValue;
-		if (this.eNotificationRequired())
-		{
-			this.eNotify(new ENotificationImpl(this, Notification.SET, ExecutionTracePackage.VARIABLE_CHANGED__OLD_VALUE, oldOldValue,
-					this.oldValue));
-		}
+		String oldOldValue = oldValue;
+		oldValue = newOldValue;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ExecutiontracePackage.VARIABLE_CHANGED__OLD_VALUE, oldOldValue, oldValue));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
-	public Object eGet(final int featureID, final boolean resolve, final boolean coreType)
+	public Object eGet(int featureID, boolean resolve, boolean coreType)
 	{
-		switch (featureID)
-		{
-			case ExecutionTracePackage.VARIABLE_CHANGED__OLD_VALUE:
-				return this.getOldValue();
+		switch (featureID) {
+			case ExecutiontracePackage.VARIABLE_CHANGED__OLD_VALUE:
+				return getOldValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
-	public void eSet(final int featureID, final Object newValue)
+	public void eSet(int featureID, Object newValue)
 	{
-		switch (featureID)
-		{
-			case ExecutionTracePackage.VARIABLE_CHANGED__OLD_VALUE:
-				this.setOldValue((String) newValue);
+		switch (featureID) {
+			case ExecutiontracePackage.VARIABLE_CHANGED__OLD_VALUE:
+				setOldValue((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -129,16 +125,14 @@ public class VariableChangedImpl<ClassifierType> extends VariableModificationImp
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
-	public void eUnset(final int featureID)
+	public void eUnset(int featureID)
 	{
-		switch (featureID)
-		{
-			case ExecutionTracePackage.VARIABLE_CHANGED__OLD_VALUE:
-				this.setOldValue(VariableChangedImpl.OLD_VALUE_EDEFAULT);
+		switch (featureID) {
+			case ExecutiontracePackage.VARIABLE_CHANGED__OLD_VALUE:
+				setOldValue(OLD_VALUE_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -146,37 +140,30 @@ public class VariableChangedImpl<ClassifierType> extends VariableModificationImp
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
-	public boolean eIsSet(final int featureID)
+	public boolean eIsSet(int featureID)
 	{
-		switch (featureID)
-		{
-			case ExecutionTracePackage.VARIABLE_CHANGED__OLD_VALUE:
-				return VariableChangedImpl.OLD_VALUE_EDEFAULT == null ? this.oldValue != null : !VariableChangedImpl.OLD_VALUE_EDEFAULT
-						.equals(this.oldValue);
+		switch (featureID) {
+			case ExecutiontracePackage.VARIABLE_CHANGED__OLD_VALUE:
+				return OLD_VALUE_EDEFAULT == null ? oldValue != null : !OLD_VALUE_EDEFAULT.equals(oldValue);
 		}
 		return super.eIsSet(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString()
 	{
-		if (this.eIsProxy())
-		{
-			return super.toString();
-		}
+		if (eIsProxy()) return super.toString();
 
-		final StringBuffer result = new StringBuffer(super.toString());
+		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (oldValue: ");
-		result.append(this.oldValue);
+		result.append(oldValue);
 		result.append(')');
 		return result.toString();
 	}

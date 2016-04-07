@@ -7,7 +7,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.muml.storydiagram.interpreter.core.executiontrace.ExecutionTracePackage;
+import org.muml.storydiagram.interpreter.core.executiontrace.ExecutiontracePackage;
 import org.muml.storydiagram.interpreter.core.executiontrace.InstanceLinkModification;
 
 /**
@@ -15,35 +15,24 @@ import org.muml.storydiagram.interpreter.core.executiontrace.InstanceLinkModific
  * <em><b>Instance Link Modification</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * <ul>
- * <li>
- * {@link org.muml.storydiagram.interpreter.core.executiontrace.impl.InstanceLinkModificationImpl#getStoryPatternLink
- * <em>Story Pattern Link</em>}</li>
- * <li>
- * {@link org.muml.storydiagram.interpreter.core.executiontrace.impl.InstanceLinkModificationImpl#getSourceStoryPatternObject
- * <em>Source Story Pattern Object</em>}</li>
- * <li>
- * {@link org.muml.storydiagram.interpreter.core.executiontrace.impl.InstanceLinkModificationImpl#getTargetStoryPatternObject
- * <em>Target Story Pattern Object</em>}</li>
- * <li>
- * {@link org.muml.storydiagram.interpreter.core.executiontrace.impl.InstanceLinkModificationImpl#getSourceInstanceObject
- * <em>Source Instance Object</em>}</li>
- * <li>
- * {@link org.muml.storydiagram.interpreter.core.executiontrace.impl.InstanceLinkModificationImpl#getTargetInstanceObject
- * <em>Target Instance Object</em>}</li>
- * </ul>
  * </p>
- * 
+ * <ul>
+ *   <li>{@link org.muml.storydiagram.interpreter.core.executiontrace.impl.InstanceLinkModificationImpl#getStoryPatternLink <em>Story Pattern Link</em>}</li>
+ *   <li>{@link org.muml.storydiagram.interpreter.core.executiontrace.impl.InstanceLinkModificationImpl#getSourceStoryPatternObject <em>Source Story Pattern Object</em>}</li>
+ *   <li>{@link org.muml.storydiagram.interpreter.core.executiontrace.impl.InstanceLinkModificationImpl#getTargetStoryPatternObject <em>Target Story Pattern Object</em>}</li>
+ *   <li>{@link org.muml.storydiagram.interpreter.core.executiontrace.impl.InstanceLinkModificationImpl#getSourceInstanceObject <em>Source Instance Object</em>}</li>
+ *   <li>{@link org.muml.storydiagram.interpreter.core.executiontrace.impl.InstanceLinkModificationImpl#getTargetInstanceObject <em>Target Instance Object</em>}</li>
+ * </ul>
+ *
  * @generated
  */
 public abstract class InstanceLinkModificationImpl<StoryPatternLinkType, StoryPatternObjectType> extends ExecutionImpl implements
 		InstanceLinkModification<StoryPatternLinkType, StoryPatternObjectType>
 {
 	/**
-	 * The cached value of the '{@link #getStoryPatternLink()
-	 * <em>Story Pattern Link</em>}' reference. <!-- begin-user-doc --> <!--
+	 * The cached value of the '{@link #getStoryPatternLink() <em>Story Pattern Link</em>}' reference.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @see #getStoryPatternLink()
 	 * @generated
 	 * @ordered
@@ -51,10 +40,9 @@ public abstract class InstanceLinkModificationImpl<StoryPatternLinkType, StoryPa
 	protected StoryPatternLinkType		storyPatternLink;
 
 	/**
-	 * The cached value of the '{@link #getSourceStoryPatternObject()
-	 * <em>Source Story Pattern Object</em>}' reference. <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getSourceStoryPatternObject() <em>Source Story Pattern Object</em>}' reference.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #getSourceStoryPatternObject()
 	 * @generated
 	 * @ordered
@@ -62,10 +50,9 @@ public abstract class InstanceLinkModificationImpl<StoryPatternLinkType, StoryPa
 	protected StoryPatternObjectType	sourceStoryPatternObject;
 
 	/**
-	 * The cached value of the '{@link #getTargetStoryPatternObject()
-	 * <em>Target Story Pattern Object</em>}' reference. <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getTargetStoryPatternObject() <em>Target Story Pattern Object</em>}' reference.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #getTargetStoryPatternObject()
 	 * @generated
 	 * @ordered
@@ -73,10 +60,9 @@ public abstract class InstanceLinkModificationImpl<StoryPatternLinkType, StoryPa
 	protected StoryPatternObjectType	targetStoryPatternObject;
 
 	/**
-	 * The default value of the '{@link #getSourceInstanceObject()
-	 * <em>Source Instance Object</em>}' attribute. <!-- begin-user-doc --> <!--
+	 * The default value of the '{@link #getSourceInstanceObject() <em>Source Instance Object</em>}' attribute.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @see #getSourceInstanceObject()
 	 * @generated
 	 * @ordered
@@ -84,21 +70,19 @@ public abstract class InstanceLinkModificationImpl<StoryPatternLinkType, StoryPa
 	protected static final String		SOURCE_INSTANCE_OBJECT_EDEFAULT	= null;
 
 	/**
-	 * The cached value of the '{@link #getSourceInstanceObject()
-	 * <em>Source Instance Object</em>}' attribute. <!-- begin-user-doc --> <!--
+	 * The cached value of the '{@link #getSourceInstanceObject() <em>Source Instance Object</em>}' attribute.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @see #getSourceInstanceObject()
 	 * @generated
 	 * @ordered
 	 */
-	protected String					sourceInstanceObject			= InstanceLinkModificationImpl.SOURCE_INSTANCE_OBJECT_EDEFAULT;
+	protected String					sourceInstanceObject			= SOURCE_INSTANCE_OBJECT_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getTargetInstanceObject()
-	 * <em>Target Instance Object</em>}' attribute. <!-- begin-user-doc --> <!--
+	 * The default value of the '{@link #getTargetInstanceObject() <em>Target Instance Object</em>}' attribute.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @see #getTargetInstanceObject()
 	 * @generated
 	 * @ordered
@@ -106,19 +90,17 @@ public abstract class InstanceLinkModificationImpl<StoryPatternLinkType, StoryPa
 	protected static final String		TARGET_INSTANCE_OBJECT_EDEFAULT	= null;
 
 	/**
-	 * The cached value of the '{@link #getTargetInstanceObject()
-	 * <em>Target Instance Object</em>}' attribute. <!-- begin-user-doc --> <!--
+	 * The cached value of the '{@link #getTargetInstanceObject() <em>Target Instance Object</em>}' attribute.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @see #getTargetInstanceObject()
 	 * @generated
 	 * @ordered
 	 */
-	protected String					targetInstanceObject			= InstanceLinkModificationImpl.TARGET_INSTANCE_OBJECT_EDEFAULT;
+	protected String					targetInstanceObject			= TARGET_INSTANCE_OBJECT_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected InstanceLinkModificationImpl()
@@ -128,295 +110,231 @@ public abstract class InstanceLinkModificationImpl<StoryPatternLinkType, StoryPa
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	protected EClass eStaticClass()
 	{
-		return ExecutionTracePackage.Literals.INSTANCE_LINK_MODIFICATION;
+		return ExecutiontracePackage.Literals.INSTANCE_LINK_MODIFICATION;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	@SuppressWarnings("unchecked")
 	public StoryPatternLinkType getStoryPatternLink()
 	{
-		if ((this.storyPatternLink != null) && ((EObject) this.storyPatternLink).eIsProxy())
-		{
-			final InternalEObject oldStoryPatternLink = (InternalEObject) this.storyPatternLink;
-			this.storyPatternLink = (StoryPatternLinkType) this.eResolveProxy(oldStoryPatternLink);
-			if (this.storyPatternLink != oldStoryPatternLink)
-			{
-				if (this.eNotificationRequired())
-				{
-					this.eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							ExecutionTracePackage.INSTANCE_LINK_MODIFICATION__STORY_PATTERN_LINK, oldStoryPatternLink,
-							this.storyPatternLink));
-				}
+		if (storyPatternLink != null && ((EObject)storyPatternLink).eIsProxy()) {
+			InternalEObject oldStoryPatternLink = (InternalEObject)storyPatternLink;
+			storyPatternLink = (StoryPatternLinkType)eResolveProxy(oldStoryPatternLink);
+			if (storyPatternLink != oldStoryPatternLink) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ExecutiontracePackage.INSTANCE_LINK_MODIFICATION__STORY_PATTERN_LINK, oldStoryPatternLink, storyPatternLink));
 			}
 		}
-		return this.storyPatternLink;
+		return storyPatternLink;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public StoryPatternLinkType basicGetStoryPatternLink()
 	{
-		return this.storyPatternLink;
+		return storyPatternLink;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
-	public void setStoryPatternLink(final StoryPatternLinkType newStoryPatternLink)
+	public void setStoryPatternLink(StoryPatternLinkType newStoryPatternLink)
 	{
-		final StoryPatternLinkType oldStoryPatternLink = this.storyPatternLink;
-		this.storyPatternLink = newStoryPatternLink;
-		if (this.eNotificationRequired())
-		{
-			this.eNotify(new ENotificationImpl(this, Notification.SET,
-					ExecutionTracePackage.INSTANCE_LINK_MODIFICATION__STORY_PATTERN_LINK, oldStoryPatternLink, this.storyPatternLink));
-		}
+		StoryPatternLinkType oldStoryPatternLink = storyPatternLink;
+		storyPatternLink = newStoryPatternLink;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ExecutiontracePackage.INSTANCE_LINK_MODIFICATION__STORY_PATTERN_LINK, oldStoryPatternLink, storyPatternLink));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	@SuppressWarnings("unchecked")
 	public StoryPatternObjectType getSourceStoryPatternObject()
 	{
-		if ((this.sourceStoryPatternObject != null) && ((EObject) this.sourceStoryPatternObject).eIsProxy())
-		{
-			final InternalEObject oldSourceStoryPatternObject = (InternalEObject) this.sourceStoryPatternObject;
-			this.sourceStoryPatternObject = (StoryPatternObjectType) this.eResolveProxy(oldSourceStoryPatternObject);
-			if (this.sourceStoryPatternObject != oldSourceStoryPatternObject)
-			{
-				if (this.eNotificationRequired())
-				{
-					this.eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							ExecutionTracePackage.INSTANCE_LINK_MODIFICATION__SOURCE_STORY_PATTERN_OBJECT, oldSourceStoryPatternObject,
-							this.sourceStoryPatternObject));
-				}
+		if (sourceStoryPatternObject != null && ((EObject)sourceStoryPatternObject).eIsProxy()) {
+			InternalEObject oldSourceStoryPatternObject = (InternalEObject)sourceStoryPatternObject;
+			sourceStoryPatternObject = (StoryPatternObjectType)eResolveProxy(oldSourceStoryPatternObject);
+			if (sourceStoryPatternObject != oldSourceStoryPatternObject) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ExecutiontracePackage.INSTANCE_LINK_MODIFICATION__SOURCE_STORY_PATTERN_OBJECT, oldSourceStoryPatternObject, sourceStoryPatternObject));
 			}
 		}
-		return this.sourceStoryPatternObject;
+		return sourceStoryPatternObject;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public StoryPatternObjectType basicGetSourceStoryPatternObject()
 	{
-		return this.sourceStoryPatternObject;
+		return sourceStoryPatternObject;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
-	public void setSourceStoryPatternObject(final StoryPatternObjectType newSourceStoryPatternObject)
+	public void setSourceStoryPatternObject(StoryPatternObjectType newSourceStoryPatternObject)
 	{
-		final StoryPatternObjectType oldSourceStoryPatternObject = this.sourceStoryPatternObject;
-		this.sourceStoryPatternObject = newSourceStoryPatternObject;
-		if (this.eNotificationRequired())
-		{
-			this.eNotify(new ENotificationImpl(this, Notification.SET,
-					ExecutionTracePackage.INSTANCE_LINK_MODIFICATION__SOURCE_STORY_PATTERN_OBJECT, oldSourceStoryPatternObject,
-					this.sourceStoryPatternObject));
-		}
+		StoryPatternObjectType oldSourceStoryPatternObject = sourceStoryPatternObject;
+		sourceStoryPatternObject = newSourceStoryPatternObject;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ExecutiontracePackage.INSTANCE_LINK_MODIFICATION__SOURCE_STORY_PATTERN_OBJECT, oldSourceStoryPatternObject, sourceStoryPatternObject));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	@SuppressWarnings("unchecked")
 	public StoryPatternObjectType getTargetStoryPatternObject()
 	{
-		if ((this.targetStoryPatternObject != null) && ((EObject) this.targetStoryPatternObject).eIsProxy())
-		{
-			final InternalEObject oldTargetStoryPatternObject = (InternalEObject) this.targetStoryPatternObject;
-			this.targetStoryPatternObject = (StoryPatternObjectType) this.eResolveProxy(oldTargetStoryPatternObject);
-			if (this.targetStoryPatternObject != oldTargetStoryPatternObject)
-			{
-				if (this.eNotificationRequired())
-				{
-					this.eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							ExecutionTracePackage.INSTANCE_LINK_MODIFICATION__TARGET_STORY_PATTERN_OBJECT, oldTargetStoryPatternObject,
-							this.targetStoryPatternObject));
-				}
+		if (targetStoryPatternObject != null && ((EObject)targetStoryPatternObject).eIsProxy()) {
+			InternalEObject oldTargetStoryPatternObject = (InternalEObject)targetStoryPatternObject;
+			targetStoryPatternObject = (StoryPatternObjectType)eResolveProxy(oldTargetStoryPatternObject);
+			if (targetStoryPatternObject != oldTargetStoryPatternObject) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ExecutiontracePackage.INSTANCE_LINK_MODIFICATION__TARGET_STORY_PATTERN_OBJECT, oldTargetStoryPatternObject, targetStoryPatternObject));
 			}
 		}
-		return this.targetStoryPatternObject;
+		return targetStoryPatternObject;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public StoryPatternObjectType basicGetTargetStoryPatternObject()
 	{
-		return this.targetStoryPatternObject;
+		return targetStoryPatternObject;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
-	public void setTargetStoryPatternObject(final StoryPatternObjectType newTargetStoryPatternObject)
+	public void setTargetStoryPatternObject(StoryPatternObjectType newTargetStoryPatternObject)
 	{
-		final StoryPatternObjectType oldTargetStoryPatternObject = this.targetStoryPatternObject;
-		this.targetStoryPatternObject = newTargetStoryPatternObject;
-		if (this.eNotificationRequired())
-		{
-			this.eNotify(new ENotificationImpl(this, Notification.SET,
-					ExecutionTracePackage.INSTANCE_LINK_MODIFICATION__TARGET_STORY_PATTERN_OBJECT, oldTargetStoryPatternObject,
-					this.targetStoryPatternObject));
-		}
+		StoryPatternObjectType oldTargetStoryPatternObject = targetStoryPatternObject;
+		targetStoryPatternObject = newTargetStoryPatternObject;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ExecutiontracePackage.INSTANCE_LINK_MODIFICATION__TARGET_STORY_PATTERN_OBJECT, oldTargetStoryPatternObject, targetStoryPatternObject));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public String getSourceInstanceObject()
 	{
-		return this.sourceInstanceObject;
+		return sourceInstanceObject;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
-	public void setSourceInstanceObject(final String newSourceInstanceObject)
+	public void setSourceInstanceObject(String newSourceInstanceObject)
 	{
-		final String oldSourceInstanceObject = this.sourceInstanceObject;
-		this.sourceInstanceObject = newSourceInstanceObject;
-		if (this.eNotificationRequired())
-		{
-			this.eNotify(new ENotificationImpl(this, Notification.SET,
-					ExecutionTracePackage.INSTANCE_LINK_MODIFICATION__SOURCE_INSTANCE_OBJECT, oldSourceInstanceObject,
-					this.sourceInstanceObject));
-		}
+		String oldSourceInstanceObject = sourceInstanceObject;
+		sourceInstanceObject = newSourceInstanceObject;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ExecutiontracePackage.INSTANCE_LINK_MODIFICATION__SOURCE_INSTANCE_OBJECT, oldSourceInstanceObject, sourceInstanceObject));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public String getTargetInstanceObject()
 	{
-		return this.targetInstanceObject;
+		return targetInstanceObject;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
-	public void setTargetInstanceObject(final String newTargetInstanceObject)
+	public void setTargetInstanceObject(String newTargetInstanceObject)
 	{
-		final String oldTargetInstanceObject = this.targetInstanceObject;
-		this.targetInstanceObject = newTargetInstanceObject;
-		if (this.eNotificationRequired())
-		{
-			this.eNotify(new ENotificationImpl(this, Notification.SET,
-					ExecutionTracePackage.INSTANCE_LINK_MODIFICATION__TARGET_INSTANCE_OBJECT, oldTargetInstanceObject,
-					this.targetInstanceObject));
-		}
+		String oldTargetInstanceObject = targetInstanceObject;
+		targetInstanceObject = newTargetInstanceObject;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ExecutiontracePackage.INSTANCE_LINK_MODIFICATION__TARGET_INSTANCE_OBJECT, oldTargetInstanceObject, targetInstanceObject));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
-	public Object eGet(final int featureID, final boolean resolve, final boolean coreType)
+	public Object eGet(int featureID, boolean resolve, boolean coreType)
 	{
-		switch (featureID)
-		{
-			case ExecutionTracePackage.INSTANCE_LINK_MODIFICATION__STORY_PATTERN_LINK:
-				if (resolve)
-				{
-					return this.getStoryPatternLink();
-				}
-				return this.basicGetStoryPatternLink();
-			case ExecutionTracePackage.INSTANCE_LINK_MODIFICATION__SOURCE_STORY_PATTERN_OBJECT:
-				if (resolve)
-				{
-					return this.getSourceStoryPatternObject();
-				}
-				return this.basicGetSourceStoryPatternObject();
-			case ExecutionTracePackage.INSTANCE_LINK_MODIFICATION__TARGET_STORY_PATTERN_OBJECT:
-				if (resolve)
-				{
-					return this.getTargetStoryPatternObject();
-				}
-				return this.basicGetTargetStoryPatternObject();
-			case ExecutionTracePackage.INSTANCE_LINK_MODIFICATION__SOURCE_INSTANCE_OBJECT:
-				return this.getSourceInstanceObject();
-			case ExecutionTracePackage.INSTANCE_LINK_MODIFICATION__TARGET_INSTANCE_OBJECT:
-				return this.getTargetInstanceObject();
+		switch (featureID) {
+			case ExecutiontracePackage.INSTANCE_LINK_MODIFICATION__STORY_PATTERN_LINK:
+				if (resolve) return getStoryPatternLink();
+				return basicGetStoryPatternLink();
+			case ExecutiontracePackage.INSTANCE_LINK_MODIFICATION__SOURCE_STORY_PATTERN_OBJECT:
+				if (resolve) return getSourceStoryPatternObject();
+				return basicGetSourceStoryPatternObject();
+			case ExecutiontracePackage.INSTANCE_LINK_MODIFICATION__TARGET_STORY_PATTERN_OBJECT:
+				if (resolve) return getTargetStoryPatternObject();
+				return basicGetTargetStoryPatternObject();
+			case ExecutiontracePackage.INSTANCE_LINK_MODIFICATION__SOURCE_INSTANCE_OBJECT:
+				return getSourceInstanceObject();
+			case ExecutiontracePackage.INSTANCE_LINK_MODIFICATION__TARGET_INSTANCE_OBJECT:
+				return getTargetInstanceObject();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public void eSet(final int featureID, final Object newValue)
+	public void eSet(int featureID, Object newValue)
 	{
-		switch (featureID)
-		{
-			case ExecutionTracePackage.INSTANCE_LINK_MODIFICATION__STORY_PATTERN_LINK:
-				this.setStoryPatternLink((StoryPatternLinkType) newValue);
+		switch (featureID) {
+			case ExecutiontracePackage.INSTANCE_LINK_MODIFICATION__STORY_PATTERN_LINK:
+				setStoryPatternLink((StoryPatternLinkType)newValue);
 				return;
-			case ExecutionTracePackage.INSTANCE_LINK_MODIFICATION__SOURCE_STORY_PATTERN_OBJECT:
-				this.setSourceStoryPatternObject((StoryPatternObjectType) newValue);
+			case ExecutiontracePackage.INSTANCE_LINK_MODIFICATION__SOURCE_STORY_PATTERN_OBJECT:
+				setSourceStoryPatternObject((StoryPatternObjectType)newValue);
 				return;
-			case ExecutionTracePackage.INSTANCE_LINK_MODIFICATION__TARGET_STORY_PATTERN_OBJECT:
-				this.setTargetStoryPatternObject((StoryPatternObjectType) newValue);
+			case ExecutiontracePackage.INSTANCE_LINK_MODIFICATION__TARGET_STORY_PATTERN_OBJECT:
+				setTargetStoryPatternObject((StoryPatternObjectType)newValue);
 				return;
-			case ExecutionTracePackage.INSTANCE_LINK_MODIFICATION__SOURCE_INSTANCE_OBJECT:
-				this.setSourceInstanceObject((String) newValue);
+			case ExecutiontracePackage.INSTANCE_LINK_MODIFICATION__SOURCE_INSTANCE_OBJECT:
+				setSourceInstanceObject((String)newValue);
 				return;
-			case ExecutionTracePackage.INSTANCE_LINK_MODIFICATION__TARGET_INSTANCE_OBJECT:
-				this.setTargetInstanceObject((String) newValue);
+			case ExecutiontracePackage.INSTANCE_LINK_MODIFICATION__TARGET_INSTANCE_OBJECT:
+				setTargetInstanceObject((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -424,28 +342,26 @@ public abstract class InstanceLinkModificationImpl<StoryPatternLinkType, StoryPa
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
-	public void eUnset(final int featureID)
+	public void eUnset(int featureID)
 	{
-		switch (featureID)
-		{
-			case ExecutionTracePackage.INSTANCE_LINK_MODIFICATION__STORY_PATTERN_LINK:
-				this.setStoryPatternLink((StoryPatternLinkType) null);
+		switch (featureID) {
+			case ExecutiontracePackage.INSTANCE_LINK_MODIFICATION__STORY_PATTERN_LINK:
+				setStoryPatternLink((StoryPatternLinkType)null);
 				return;
-			case ExecutionTracePackage.INSTANCE_LINK_MODIFICATION__SOURCE_STORY_PATTERN_OBJECT:
-				this.setSourceStoryPatternObject((StoryPatternObjectType) null);
+			case ExecutiontracePackage.INSTANCE_LINK_MODIFICATION__SOURCE_STORY_PATTERN_OBJECT:
+				setSourceStoryPatternObject((StoryPatternObjectType)null);
 				return;
-			case ExecutionTracePackage.INSTANCE_LINK_MODIFICATION__TARGET_STORY_PATTERN_OBJECT:
-				this.setTargetStoryPatternObject((StoryPatternObjectType) null);
+			case ExecutiontracePackage.INSTANCE_LINK_MODIFICATION__TARGET_STORY_PATTERN_OBJECT:
+				setTargetStoryPatternObject((StoryPatternObjectType)null);
 				return;
-			case ExecutionTracePackage.INSTANCE_LINK_MODIFICATION__SOURCE_INSTANCE_OBJECT:
-				this.setSourceInstanceObject(InstanceLinkModificationImpl.SOURCE_INSTANCE_OBJECT_EDEFAULT);
+			case ExecutiontracePackage.INSTANCE_LINK_MODIFICATION__SOURCE_INSTANCE_OBJECT:
+				setSourceInstanceObject(SOURCE_INSTANCE_OBJECT_EDEFAULT);
 				return;
-			case ExecutionTracePackage.INSTANCE_LINK_MODIFICATION__TARGET_INSTANCE_OBJECT:
-				this.setTargetInstanceObject(InstanceLinkModificationImpl.TARGET_INSTANCE_OBJECT_EDEFAULT);
+			case ExecutiontracePackage.INSTANCE_LINK_MODIFICATION__TARGET_INSTANCE_OBJECT:
+				setTargetInstanceObject(TARGET_INSTANCE_OBJECT_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -453,48 +369,40 @@ public abstract class InstanceLinkModificationImpl<StoryPatternLinkType, StoryPa
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
-	public boolean eIsSet(final int featureID)
+	public boolean eIsSet(int featureID)
 	{
-		switch (featureID)
-		{
-			case ExecutionTracePackage.INSTANCE_LINK_MODIFICATION__STORY_PATTERN_LINK:
-				return this.storyPatternLink != null;
-			case ExecutionTracePackage.INSTANCE_LINK_MODIFICATION__SOURCE_STORY_PATTERN_OBJECT:
-				return this.sourceStoryPatternObject != null;
-			case ExecutionTracePackage.INSTANCE_LINK_MODIFICATION__TARGET_STORY_PATTERN_OBJECT:
-				return this.targetStoryPatternObject != null;
-			case ExecutionTracePackage.INSTANCE_LINK_MODIFICATION__SOURCE_INSTANCE_OBJECT:
-				return InstanceLinkModificationImpl.SOURCE_INSTANCE_OBJECT_EDEFAULT == null ? this.sourceInstanceObject != null
-						: !InstanceLinkModificationImpl.SOURCE_INSTANCE_OBJECT_EDEFAULT.equals(this.sourceInstanceObject);
-			case ExecutionTracePackage.INSTANCE_LINK_MODIFICATION__TARGET_INSTANCE_OBJECT:
-				return InstanceLinkModificationImpl.TARGET_INSTANCE_OBJECT_EDEFAULT == null ? this.targetInstanceObject != null
-						: !InstanceLinkModificationImpl.TARGET_INSTANCE_OBJECT_EDEFAULT.equals(this.targetInstanceObject);
+		switch (featureID) {
+			case ExecutiontracePackage.INSTANCE_LINK_MODIFICATION__STORY_PATTERN_LINK:
+				return storyPatternLink != null;
+			case ExecutiontracePackage.INSTANCE_LINK_MODIFICATION__SOURCE_STORY_PATTERN_OBJECT:
+				return sourceStoryPatternObject != null;
+			case ExecutiontracePackage.INSTANCE_LINK_MODIFICATION__TARGET_STORY_PATTERN_OBJECT:
+				return targetStoryPatternObject != null;
+			case ExecutiontracePackage.INSTANCE_LINK_MODIFICATION__SOURCE_INSTANCE_OBJECT:
+				return SOURCE_INSTANCE_OBJECT_EDEFAULT == null ? sourceInstanceObject != null : !SOURCE_INSTANCE_OBJECT_EDEFAULT.equals(sourceInstanceObject);
+			case ExecutiontracePackage.INSTANCE_LINK_MODIFICATION__TARGET_INSTANCE_OBJECT:
+				return TARGET_INSTANCE_OBJECT_EDEFAULT == null ? targetInstanceObject != null : !TARGET_INSTANCE_OBJECT_EDEFAULT.equals(targetInstanceObject);
 		}
 		return super.eIsSet(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString()
 	{
-		if (this.eIsProxy())
-		{
-			return super.toString();
-		}
+		if (eIsProxy()) return super.toString();
 
-		final StringBuffer result = new StringBuffer(super.toString());
+		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (sourceInstanceObject: ");
-		result.append(this.sourceInstanceObject);
+		result.append(sourceInstanceObject);
 		result.append(", targetInstanceObject: ");
-		result.append(this.targetInstanceObject);
+		result.append(targetInstanceObject);
 		result.append(')');
 		return result.toString();
 	}

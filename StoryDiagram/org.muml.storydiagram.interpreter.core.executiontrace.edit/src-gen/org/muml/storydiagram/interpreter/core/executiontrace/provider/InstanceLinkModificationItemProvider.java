@@ -9,20 +9,10 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemColorProvider;
-import org.eclipse.emf.edit.provider.IItemFontProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITableItemColorProvider;
-import org.eclipse.emf.edit.provider.ITableItemFontProvider;
-import org.eclipse.emf.edit.provider.ITableItemLabelProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import org.muml.storydiagram.interpreter.core.executiontrace.ExecutionTracePackage;
+import org.muml.storydiagram.interpreter.core.executiontrace.ExecutiontracePackage;
 import org.muml.storydiagram.interpreter.core.executiontrace.InstanceLinkModification;
 
 /**
@@ -31,18 +21,14 @@ import org.muml.storydiagram.interpreter.core.executiontrace.InstanceLinkModific
  * <!-- end-user-doc -->
  * @generated
  */
-public class InstanceLinkModificationItemProvider extends ExecutionItemProvider implements IEditingDomainItemProvider,
-		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider,
-		ITableItemColorProvider, ITableItemFontProvider, IItemColorProvider, IItemFontProvider
-{
+public class InstanceLinkModificationItemProvider extends ExecutionItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public InstanceLinkModificationItemProvider(AdapterFactory adapterFactory)
-	{
+	public InstanceLinkModificationItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -53,10 +39,8 @@ public class InstanceLinkModificationItemProvider extends ExecutionItemProvider 
 	 * @generated
 	 */
 	@Override
-	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object)
-	{
-		if (itemPropertyDescriptors == null)
-		{
+	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 			addStoryPatternLinkPropertyDescriptor(object);
@@ -74,15 +58,20 @@ public class InstanceLinkModificationItemProvider extends ExecutionItemProvider 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addStoryPatternLinkPropertyDescriptor(Object object)
-	{
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_InstanceLinkModification_storyPatternLink_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_InstanceLinkModification_storyPatternLink_feature",
-						"_UI_InstanceLinkModification_type"),
-				ExecutionTracePackage.Literals.INSTANCE_LINK_MODIFICATION__STORY_PATTERN_LINK, true, false, true, null, null, null));
+	protected void addStoryPatternLinkPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_InstanceLinkModification_storyPatternLink_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_InstanceLinkModification_storyPatternLink_feature", "_UI_InstanceLinkModification_type"),
+				 ExecutiontracePackage.Literals.INSTANCE_LINK_MODIFICATION__STORY_PATTERN_LINK,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
@@ -91,17 +80,20 @@ public class InstanceLinkModificationItemProvider extends ExecutionItemProvider 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addSourceStoryPatternObjectPropertyDescriptor(Object object)
-	{
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(
-						((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(),
-						getString("_UI_InstanceLinkModification_sourceStoryPatternObject_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_InstanceLinkModification_sourceStoryPatternObject_feature",
-								"_UI_InstanceLinkModification_type"),
-						ExecutionTracePackage.Literals.INSTANCE_LINK_MODIFICATION__SOURCE_STORY_PATTERN_OBJECT, true, false, true, null,
-						null, null));
+	protected void addSourceStoryPatternObjectPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_InstanceLinkModification_sourceStoryPatternObject_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_InstanceLinkModification_sourceStoryPatternObject_feature", "_UI_InstanceLinkModification_type"),
+				 ExecutiontracePackage.Literals.INSTANCE_LINK_MODIFICATION__SOURCE_STORY_PATTERN_OBJECT,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
@@ -110,17 +102,20 @@ public class InstanceLinkModificationItemProvider extends ExecutionItemProvider 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addTargetStoryPatternObjectPropertyDescriptor(Object object)
-	{
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(
-						((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(),
-						getString("_UI_InstanceLinkModification_targetStoryPatternObject_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_InstanceLinkModification_targetStoryPatternObject_feature",
-								"_UI_InstanceLinkModification_type"),
-						ExecutionTracePackage.Literals.INSTANCE_LINK_MODIFICATION__TARGET_STORY_PATTERN_OBJECT, true, false, true, null,
-						null, null));
+	protected void addTargetStoryPatternObjectPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_InstanceLinkModification_targetStoryPatternObject_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_InstanceLinkModification_targetStoryPatternObject_feature", "_UI_InstanceLinkModification_type"),
+				 ExecutiontracePackage.Literals.INSTANCE_LINK_MODIFICATION__TARGET_STORY_PATTERN_OBJECT,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
@@ -129,16 +124,20 @@ public class InstanceLinkModificationItemProvider extends ExecutionItemProvider 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addSourceInstanceObjectPropertyDescriptor(Object object)
-	{
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_InstanceLinkModification_sourceInstanceObject_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_InstanceLinkModification_sourceInstanceObject_feature",
-						"_UI_InstanceLinkModification_type"),
-				ExecutionTracePackage.Literals.INSTANCE_LINK_MODIFICATION__SOURCE_INSTANCE_OBJECT, true, false, false,
-				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	protected void addSourceInstanceObjectPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_InstanceLinkModification_sourceInstanceObject_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_InstanceLinkModification_sourceInstanceObject_feature", "_UI_InstanceLinkModification_type"),
+				 ExecutiontracePackage.Literals.INSTANCE_LINK_MODIFICATION__SOURCE_INSTANCE_OBJECT,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -147,16 +146,20 @@ public class InstanceLinkModificationItemProvider extends ExecutionItemProvider 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addTargetInstanceObjectPropertyDescriptor(Object object)
-	{
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_InstanceLinkModification_targetInstanceObject_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_InstanceLinkModification_targetInstanceObject_feature",
-						"_UI_InstanceLinkModification_type"),
-				ExecutionTracePackage.Literals.INSTANCE_LINK_MODIFICATION__TARGET_INSTANCE_OBJECT, true, false, false,
-				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	protected void addTargetInstanceObjectPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_InstanceLinkModification_targetInstanceObject_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_InstanceLinkModification_targetInstanceObject_feature", "_UI_InstanceLinkModification_type"),
+				 ExecutiontracePackage.Literals.INSTANCE_LINK_MODIFICATION__TARGET_INSTANCE_OBJECT,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -166,9 +169,8 @@ public class InstanceLinkModificationItemProvider extends ExecutionItemProvider 
 	 * @generated
 	 */
 	@Override
-	public String getText(Object object)
-	{
-		InstanceLinkModification<?, ?> instanceLinkModification = (InstanceLinkModification<?, ?>) object;
+	public String getText(Object object) {
+		InstanceLinkModification<?, ?> instanceLinkModification = (InstanceLinkModification<?, ?>)object;
 		return getString("_UI_InstanceLinkModification_type") + " " + instanceLinkModification.getExecutionStartedTimeStamp();
 	}
 
@@ -180,17 +182,15 @@ public class InstanceLinkModificationItemProvider extends ExecutionItemProvider 
 	 * @generated
 	 */
 	@Override
-	public void notifyChanged(Notification notification)
-	{
+	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(InstanceLinkModification.class))
-		{
-			case ExecutionTracePackage.INSTANCE_LINK_MODIFICATION__STORY_PATTERN_LINK:
-			case ExecutionTracePackage.INSTANCE_LINK_MODIFICATION__SOURCE_STORY_PATTERN_OBJECT:
-			case ExecutionTracePackage.INSTANCE_LINK_MODIFICATION__TARGET_STORY_PATTERN_OBJECT:
-			case ExecutionTracePackage.INSTANCE_LINK_MODIFICATION__SOURCE_INSTANCE_OBJECT:
-			case ExecutionTracePackage.INSTANCE_LINK_MODIFICATION__TARGET_INSTANCE_OBJECT:
+		switch (notification.getFeatureID(InstanceLinkModification.class)) {
+			case ExecutiontracePackage.INSTANCE_LINK_MODIFICATION__STORY_PATTERN_LINK:
+			case ExecutiontracePackage.INSTANCE_LINK_MODIFICATION__SOURCE_STORY_PATTERN_OBJECT:
+			case ExecutiontracePackage.INSTANCE_LINK_MODIFICATION__TARGET_STORY_PATTERN_OBJECT:
+			case ExecutiontracePackage.INSTANCE_LINK_MODIFICATION__SOURCE_INSTANCE_OBJECT:
+			case ExecutiontracePackage.INSTANCE_LINK_MODIFICATION__TARGET_INSTANCE_OBJECT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}
@@ -205,8 +205,7 @@ public class InstanceLinkModificationItemProvider extends ExecutionItemProvider 
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object)
-	{
+	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 	}
 

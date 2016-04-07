@@ -7,7 +7,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.muml.storydiagram.interpreter.core.executiontrace.ExecutionTracePackage;
+import org.muml.storydiagram.interpreter.core.executiontrace.ExecutiontracePackage;
 import org.muml.storydiagram.interpreter.core.executiontrace.VariableModification;
 
 /**
@@ -15,28 +15,21 @@ import org.muml.storydiagram.interpreter.core.executiontrace.VariableModificatio
  * <em><b>Variable Modification</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * <ul>
- * <li>
- * {@link org.muml.storydiagram.interpreter.core.executiontrace.impl.VariableModificationImpl#getVariableName
- * <em>Variable Name</em>}</li>
- * <li>
- * {@link org.muml.storydiagram.interpreter.core.executiontrace.impl.VariableModificationImpl#getClassifier
- * <em>Classifier</em>}</li>
- * <li>
- * {@link org.muml.storydiagram.interpreter.core.executiontrace.impl.VariableModificationImpl#getValue
- * <em>Value</em>}</li>
- * </ul>
  * </p>
- * 
+ * <ul>
+ *   <li>{@link org.muml.storydiagram.interpreter.core.executiontrace.impl.VariableModificationImpl#getVariableName <em>Variable Name</em>}</li>
+ *   <li>{@link org.muml.storydiagram.interpreter.core.executiontrace.impl.VariableModificationImpl#getClassifier <em>Classifier</em>}</li>
+ *   <li>{@link org.muml.storydiagram.interpreter.core.executiontrace.impl.VariableModificationImpl#getValue <em>Value</em>}</li>
+ * </ul>
+ *
  * @generated
  */
 public abstract class VariableModificationImpl<ClassifierType> extends ExecutionImpl implements VariableModification<ClassifierType>
 {
 	/**
-	 * The default value of the '{@link #getVariableName()
-	 * <em>Variable Name</em>}' attribute. <!-- begin-user-doc --> <!--
+	 * The default value of the '{@link #getVariableName() <em>Variable Name</em>}' attribute.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @see #getVariableName()
 	 * @generated
 	 * @ordered
@@ -44,20 +37,18 @@ public abstract class VariableModificationImpl<ClassifierType> extends Execution
 	protected static final String	VARIABLE_NAME_EDEFAULT	= null;
 
 	/**
-	 * The cached value of the '{@link #getVariableName()
-	 * <em>Variable Name</em>}' attribute. <!-- begin-user-doc --> <!--
+	 * The cached value of the '{@link #getVariableName() <em>Variable Name</em>}' attribute.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @see #getVariableName()
 	 * @generated
 	 * @ordered
 	 */
-	protected String				variableName			= VariableModificationImpl.VARIABLE_NAME_EDEFAULT;
+	protected String				variableName			= VARIABLE_NAME_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getClassifier() <em>Classifier</em>}'
-	 * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The cached value of the '{@link #getClassifier() <em>Classifier</em>}' reference.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getClassifier()
 	 * @generated
 	 * @ordered
@@ -67,7 +58,6 @@ public abstract class VariableModificationImpl<ClassifierType> extends Execution
 	/**
 	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @see #getValue()
 	 * @generated
 	 * @ordered
@@ -77,16 +67,14 @@ public abstract class VariableModificationImpl<ClassifierType> extends Execution
 	/**
 	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @see #getValue()
 	 * @generated
 	 * @ordered
 	 */
-	protected String				value					= VariableModificationImpl.VALUE_EDEFAULT;
+	protected String				value					= VALUE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected VariableModificationImpl()
@@ -96,166 +84,137 @@ public abstract class VariableModificationImpl<ClassifierType> extends Execution
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	protected EClass eStaticClass()
 	{
-		return ExecutionTracePackage.Literals.VARIABLE_MODIFICATION;
+		return ExecutiontracePackage.Literals.VARIABLE_MODIFICATION;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public String getVariableName()
 	{
-		return this.variableName;
+		return variableName;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
-	public void setVariableName(final String newVariableName)
+	public void setVariableName(String newVariableName)
 	{
-		final String oldVariableName = this.variableName;
-		this.variableName = newVariableName;
-		if (this.eNotificationRequired())
-		{
-			this.eNotify(new ENotificationImpl(this, Notification.SET, ExecutionTracePackage.VARIABLE_MODIFICATION__VARIABLE_NAME,
-					oldVariableName, this.variableName));
-		}
+		String oldVariableName = variableName;
+		variableName = newVariableName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ExecutiontracePackage.VARIABLE_MODIFICATION__VARIABLE_NAME, oldVariableName, variableName));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	@SuppressWarnings("unchecked")
 	public ClassifierType getClassifier()
 	{
-		if ((this.classifier != null) && ((EObject) this.classifier).eIsProxy())
-		{
-			final InternalEObject oldClassifier = (InternalEObject) this.classifier;
-			this.classifier = (ClassifierType) this.eResolveProxy(oldClassifier);
-			if (this.classifier != oldClassifier)
-			{
-				if (this.eNotificationRequired())
-				{
-					this.eNotify(new ENotificationImpl(this, Notification.RESOLVE, ExecutionTracePackage.VARIABLE_MODIFICATION__CLASSIFIER,
-							oldClassifier, this.classifier));
-				}
+		if (classifier != null && ((EObject)classifier).eIsProxy()) {
+			InternalEObject oldClassifier = (InternalEObject)classifier;
+			classifier = (ClassifierType)eResolveProxy(oldClassifier);
+			if (classifier != oldClassifier) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ExecutiontracePackage.VARIABLE_MODIFICATION__CLASSIFIER, oldClassifier, classifier));
 			}
 		}
-		return this.classifier;
+		return classifier;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public ClassifierType basicGetClassifier()
 	{
-		return this.classifier;
+		return classifier;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
-	public void setClassifier(final ClassifierType newClassifier)
+	public void setClassifier(ClassifierType newClassifier)
 	{
-		final ClassifierType oldClassifier = this.classifier;
-		this.classifier = newClassifier;
-		if (this.eNotificationRequired())
-		{
-			this.eNotify(new ENotificationImpl(this, Notification.SET, ExecutionTracePackage.VARIABLE_MODIFICATION__CLASSIFIER,
-					oldClassifier, this.classifier));
-		}
+		ClassifierType oldClassifier = classifier;
+		classifier = newClassifier;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ExecutiontracePackage.VARIABLE_MODIFICATION__CLASSIFIER, oldClassifier, classifier));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public String getValue()
 	{
-		return this.value;
+		return value;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
-	public void setValue(final String newValue)
+	public void setValue(String newValue)
 	{
-		final String oldValue = this.value;
-		this.value = newValue;
-		if (this.eNotificationRequired())
-		{
-			this.eNotify(new ENotificationImpl(this, Notification.SET, ExecutionTracePackage.VARIABLE_MODIFICATION__VALUE, oldValue,
-					this.value));
-		}
+		String oldValue = value;
+		value = newValue;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ExecutiontracePackage.VARIABLE_MODIFICATION__VALUE, oldValue, value));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
-	public Object eGet(final int featureID, final boolean resolve, final boolean coreType)
+	public Object eGet(int featureID, boolean resolve, boolean coreType)
 	{
-		switch (featureID)
-		{
-			case ExecutionTracePackage.VARIABLE_MODIFICATION__VARIABLE_NAME:
-				return this.getVariableName();
-			case ExecutionTracePackage.VARIABLE_MODIFICATION__CLASSIFIER:
-				if (resolve)
-				{
-					return this.getClassifier();
-				}
-				return this.basicGetClassifier();
-			case ExecutionTracePackage.VARIABLE_MODIFICATION__VALUE:
-				return this.getValue();
+		switch (featureID) {
+			case ExecutiontracePackage.VARIABLE_MODIFICATION__VARIABLE_NAME:
+				return getVariableName();
+			case ExecutiontracePackage.VARIABLE_MODIFICATION__CLASSIFIER:
+				if (resolve) return getClassifier();
+				return basicGetClassifier();
+			case ExecutiontracePackage.VARIABLE_MODIFICATION__VALUE:
+				return getValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public void eSet(final int featureID, final Object newValue)
+	public void eSet(int featureID, Object newValue)
 	{
-		switch (featureID)
-		{
-			case ExecutionTracePackage.VARIABLE_MODIFICATION__VARIABLE_NAME:
-				this.setVariableName((String) newValue);
+		switch (featureID) {
+			case ExecutiontracePackage.VARIABLE_MODIFICATION__VARIABLE_NAME:
+				setVariableName((String)newValue);
 				return;
-			case ExecutionTracePackage.VARIABLE_MODIFICATION__CLASSIFIER:
-				this.setClassifier((ClassifierType) newValue);
+			case ExecutiontracePackage.VARIABLE_MODIFICATION__CLASSIFIER:
+				setClassifier((ClassifierType)newValue);
 				return;
-			case ExecutionTracePackage.VARIABLE_MODIFICATION__VALUE:
-				this.setValue((String) newValue);
+			case ExecutiontracePackage.VARIABLE_MODIFICATION__VALUE:
+				setValue((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -263,22 +222,20 @@ public abstract class VariableModificationImpl<ClassifierType> extends Execution
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
-	public void eUnset(final int featureID)
+	public void eUnset(int featureID)
 	{
-		switch (featureID)
-		{
-			case ExecutionTracePackage.VARIABLE_MODIFICATION__VARIABLE_NAME:
-				this.setVariableName(VariableModificationImpl.VARIABLE_NAME_EDEFAULT);
+		switch (featureID) {
+			case ExecutiontracePackage.VARIABLE_MODIFICATION__VARIABLE_NAME:
+				setVariableName(VARIABLE_NAME_EDEFAULT);
 				return;
-			case ExecutionTracePackage.VARIABLE_MODIFICATION__CLASSIFIER:
-				this.setClassifier((ClassifierType) null);
+			case ExecutiontracePackage.VARIABLE_MODIFICATION__CLASSIFIER:
+				setClassifier((ClassifierType)null);
 				return;
-			case ExecutionTracePackage.VARIABLE_MODIFICATION__VALUE:
-				this.setValue(VariableModificationImpl.VALUE_EDEFAULT);
+			case ExecutiontracePackage.VARIABLE_MODIFICATION__VALUE:
+				setValue(VALUE_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -286,44 +243,36 @@ public abstract class VariableModificationImpl<ClassifierType> extends Execution
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
-	public boolean eIsSet(final int featureID)
+	public boolean eIsSet(int featureID)
 	{
-		switch (featureID)
-		{
-			case ExecutionTracePackage.VARIABLE_MODIFICATION__VARIABLE_NAME:
-				return VariableModificationImpl.VARIABLE_NAME_EDEFAULT == null ? this.variableName != null
-						: !VariableModificationImpl.VARIABLE_NAME_EDEFAULT.equals(this.variableName);
-			case ExecutionTracePackage.VARIABLE_MODIFICATION__CLASSIFIER:
-				return this.classifier != null;
-			case ExecutionTracePackage.VARIABLE_MODIFICATION__VALUE:
-				return VariableModificationImpl.VALUE_EDEFAULT == null ? this.value != null : !VariableModificationImpl.VALUE_EDEFAULT
-						.equals(this.value);
+		switch (featureID) {
+			case ExecutiontracePackage.VARIABLE_MODIFICATION__VARIABLE_NAME:
+				return VARIABLE_NAME_EDEFAULT == null ? variableName != null : !VARIABLE_NAME_EDEFAULT.equals(variableName);
+			case ExecutiontracePackage.VARIABLE_MODIFICATION__CLASSIFIER:
+				return classifier != null;
+			case ExecutiontracePackage.VARIABLE_MODIFICATION__VALUE:
+				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
 		}
 		return super.eIsSet(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString()
 	{
-		if (this.eIsProxy())
-		{
-			return super.toString();
-		}
+		if (eIsProxy()) return super.toString();
 
-		final StringBuffer result = new StringBuffer(super.toString());
+		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (variableName: ");
-		result.append(this.variableName);
+		result.append(variableName);
 		result.append(", value: ");
-		result.append(this.value);
+		result.append(value);
 		result.append(')');
 		return result.toString();
 	}

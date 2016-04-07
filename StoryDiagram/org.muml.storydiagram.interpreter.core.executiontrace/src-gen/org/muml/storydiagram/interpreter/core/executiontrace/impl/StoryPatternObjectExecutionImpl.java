@@ -7,7 +7,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.muml.storydiagram.interpreter.core.executiontrace.ExecutionTracePackage;
+import org.muml.storydiagram.interpreter.core.executiontrace.ExecutiontracePackage;
 import org.muml.storydiagram.interpreter.core.executiontrace.StoryPatternObjectExecution;
 
 /**
@@ -15,23 +15,20 @@ import org.muml.storydiagram.interpreter.core.executiontrace.StoryPatternObjectE
  * <em><b>Story Pattern Object Execution</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * <ul>
- * <li>
- * {@link org.muml.storydiagram.interpreter.core.executiontrace.impl.StoryPatternObjectExecutionImpl#getStoryPatternObject
- * <em>Story Pattern Object</em>}</li>
- * </ul>
  * </p>
- * 
+ * <ul>
+ *   <li>{@link org.muml.storydiagram.interpreter.core.executiontrace.impl.StoryPatternObjectExecutionImpl#getStoryPatternObject <em>Story Pattern Object</em>}</li>
+ * </ul>
+ *
  * @generated
  */
 public abstract class StoryPatternObjectExecutionImpl<StoryPatternObjectType> extends ExecutionImpl implements
 		StoryPatternObjectExecution<StoryPatternObjectType>
 {
 	/**
-	 * The cached value of the '{@link #getStoryPatternObject()
-	 * <em>Story Pattern Object</em>}' reference. <!-- begin-user-doc --> <!--
+	 * The cached value of the '{@link #getStoryPatternObject() <em>Story Pattern Object</em>}' reference.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @see #getStoryPatternObject()
 	 * @generated
 	 * @ordered
@@ -40,7 +37,6 @@ public abstract class StoryPatternObjectExecutionImpl<StoryPatternObjectType> ex
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected StoryPatternObjectExecutionImpl()
@@ -50,102 +46,81 @@ public abstract class StoryPatternObjectExecutionImpl<StoryPatternObjectType> ex
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	protected EClass eStaticClass()
 	{
-		return ExecutionTracePackage.Literals.STORY_PATTERN_OBJECT_EXECUTION;
+		return ExecutiontracePackage.Literals.STORY_PATTERN_OBJECT_EXECUTION;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	@SuppressWarnings("unchecked")
 	public StoryPatternObjectType getStoryPatternObject()
 	{
-		if ((this.storyPatternObject != null) && ((EObject) this.storyPatternObject).eIsProxy())
-		{
-			final InternalEObject oldStoryPatternObject = (InternalEObject) this.storyPatternObject;
-			this.storyPatternObject = (StoryPatternObjectType) this.eResolveProxy(oldStoryPatternObject);
-			if (this.storyPatternObject != oldStoryPatternObject)
-			{
-				if (this.eNotificationRequired())
-				{
-					this.eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							ExecutionTracePackage.STORY_PATTERN_OBJECT_EXECUTION__STORY_PATTERN_OBJECT, oldStoryPatternObject,
-							this.storyPatternObject));
-				}
+		if (storyPatternObject != null && ((EObject)storyPatternObject).eIsProxy()) {
+			InternalEObject oldStoryPatternObject = (InternalEObject)storyPatternObject;
+			storyPatternObject = (StoryPatternObjectType)eResolveProxy(oldStoryPatternObject);
+			if (storyPatternObject != oldStoryPatternObject) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ExecutiontracePackage.STORY_PATTERN_OBJECT_EXECUTION__STORY_PATTERN_OBJECT, oldStoryPatternObject, storyPatternObject));
 			}
 		}
-		return this.storyPatternObject;
+		return storyPatternObject;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public StoryPatternObjectType basicGetStoryPatternObject()
 	{
-		return this.storyPatternObject;
+		return storyPatternObject;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
-	public void setStoryPatternObject(final StoryPatternObjectType newStoryPatternObject)
+	public void setStoryPatternObject(StoryPatternObjectType newStoryPatternObject)
 	{
-		final StoryPatternObjectType oldStoryPatternObject = this.storyPatternObject;
-		this.storyPatternObject = newStoryPatternObject;
-		if (this.eNotificationRequired())
-		{
-			this.eNotify(new ENotificationImpl(this, Notification.SET,
-					ExecutionTracePackage.STORY_PATTERN_OBJECT_EXECUTION__STORY_PATTERN_OBJECT, oldStoryPatternObject,
-					this.storyPatternObject));
-		}
+		StoryPatternObjectType oldStoryPatternObject = storyPatternObject;
+		storyPatternObject = newStoryPatternObject;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ExecutiontracePackage.STORY_PATTERN_OBJECT_EXECUTION__STORY_PATTERN_OBJECT, oldStoryPatternObject, storyPatternObject));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
-	public Object eGet(final int featureID, final boolean resolve, final boolean coreType)
+	public Object eGet(int featureID, boolean resolve, boolean coreType)
 	{
-		switch (featureID)
-		{
-			case ExecutionTracePackage.STORY_PATTERN_OBJECT_EXECUTION__STORY_PATTERN_OBJECT:
-				if (resolve)
-				{
-					return this.getStoryPatternObject();
-				}
-				return this.basicGetStoryPatternObject();
+		switch (featureID) {
+			case ExecutiontracePackage.STORY_PATTERN_OBJECT_EXECUTION__STORY_PATTERN_OBJECT:
+				if (resolve) return getStoryPatternObject();
+				return basicGetStoryPatternObject();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public void eSet(final int featureID, final Object newValue)
+	public void eSet(int featureID, Object newValue)
 	{
-		switch (featureID)
-		{
-			case ExecutionTracePackage.STORY_PATTERN_OBJECT_EXECUTION__STORY_PATTERN_OBJECT:
-				this.setStoryPatternObject((StoryPatternObjectType) newValue);
+		switch (featureID) {
+			case ExecutiontracePackage.STORY_PATTERN_OBJECT_EXECUTION__STORY_PATTERN_OBJECT:
+				setStoryPatternObject((StoryPatternObjectType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -153,16 +128,14 @@ public abstract class StoryPatternObjectExecutionImpl<StoryPatternObjectType> ex
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
-	public void eUnset(final int featureID)
+	public void eUnset(int featureID)
 	{
-		switch (featureID)
-		{
-			case ExecutionTracePackage.STORY_PATTERN_OBJECT_EXECUTION__STORY_PATTERN_OBJECT:
-				this.setStoryPatternObject((StoryPatternObjectType) null);
+		switch (featureID) {
+			case ExecutiontracePackage.STORY_PATTERN_OBJECT_EXECUTION__STORY_PATTERN_OBJECT:
+				setStoryPatternObject((StoryPatternObjectType)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -170,16 +143,14 @@ public abstract class StoryPatternObjectExecutionImpl<StoryPatternObjectType> ex
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
-	public boolean eIsSet(final int featureID)
+	public boolean eIsSet(int featureID)
 	{
-		switch (featureID)
-		{
-			case ExecutionTracePackage.STORY_PATTERN_OBJECT_EXECUTION__STORY_PATTERN_OBJECT:
-				return this.storyPatternObject != null;
+		switch (featureID) {
+			case ExecutiontracePackage.STORY_PATTERN_OBJECT_EXECUTION__STORY_PATTERN_OBJECT:
+				return storyPatternObject != null;
 		}
 		return super.eIsSet(featureID);
 	}
