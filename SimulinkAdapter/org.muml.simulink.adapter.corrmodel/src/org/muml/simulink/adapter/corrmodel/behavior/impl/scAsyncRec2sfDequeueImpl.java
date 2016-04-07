@@ -52,7 +52,7 @@ public class scAsyncRec2sfDequeueImpl extends AbstractContainerCorrespondenceNod
 	 * @generated
 	 * @ordered
 	 */
-	protected de.uni_paderborn.fujaba.simulink.model.stateflow.Action scAction;
+	protected Action scAction;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -117,10 +117,10 @@ public class scAsyncRec2sfDequeueImpl extends AbstractContainerCorrespondenceNod
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.simulink.model.stateflow.Action getScAction() {
+	public Action getScAction() {
 		if (scAction != null && ((EObject)scAction).eIsProxy()) {
 			InternalEObject oldScAction = (InternalEObject)scAction;
-			scAction = (de.uni_paderborn.fujaba.simulink.model.stateflow.Action)eResolveProxy(oldScAction);
+			scAction = (Action)eResolveProxy(oldScAction);
 			if (scAction != oldScAction) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BehaviorPackage.SC_ASYNC_REC2SF_DEQUEUE__SC_ACTION, oldScAction, scAction));
@@ -134,7 +134,7 @@ public class scAsyncRec2sfDequeueImpl extends AbstractContainerCorrespondenceNod
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.simulink.model.stateflow.Action basicGetScAction() {
+	public Action basicGetScAction() {
 		return scAction;
 	}
 
@@ -143,8 +143,8 @@ public class scAsyncRec2sfDequeueImpl extends AbstractContainerCorrespondenceNod
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setScAction(de.uni_paderborn.fujaba.simulink.model.stateflow.Action newScAction) {
-		de.uni_paderborn.fujaba.simulink.model.stateflow.Action oldScAction = scAction;
+	public void setScAction(Action newScAction) {
+		Action oldScAction = scAction;
 		scAction = newScAction;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BehaviorPackage.SC_ASYNC_REC2SF_DEQUEUE__SC_ACTION, oldScAction, scAction));
@@ -181,7 +181,7 @@ public class scAsyncRec2sfDequeueImpl extends AbstractContainerCorrespondenceNod
 				setScDetailsDequeue((Map.Entry<String, String>)newValue);
 				return;
 			case BehaviorPackage.SC_ASYNC_REC2SF_DEQUEUE__SC_ACTION:
-				setScAction((de.uni_paderborn.fujaba.simulink.model.stateflow.Action)newValue);
+				setScAction((Action)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -199,7 +199,7 @@ public class scAsyncRec2sfDequeueImpl extends AbstractContainerCorrespondenceNod
 				setScDetailsDequeue((Map.Entry<String, String>)null);
 				return;
 			case BehaviorPackage.SC_ASYNC_REC2SF_DEQUEUE__SC_ACTION:
-				setScAction((de.uni_paderborn.fujaba.simulink.model.stateflow.Action)null);
+				setScAction((Action)null);
 				return;
 		}
 		super.eUnset(featureID);

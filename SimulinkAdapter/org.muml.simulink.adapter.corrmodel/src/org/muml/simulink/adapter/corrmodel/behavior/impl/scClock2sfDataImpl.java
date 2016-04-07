@@ -51,7 +51,7 @@ public class scClock2sfDataImpl extends AbstractContainerCorrespondenceNodeImpl 
 	 * @generated
 	 * @ordered
 	 */
-	protected de.uni_paderborn.fujaba.simulink.model.stateflow.Data sfClockVariable;
+	protected Data sfClockVariable;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -115,10 +115,10 @@ public class scClock2sfDataImpl extends AbstractContainerCorrespondenceNodeImpl 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.simulink.model.stateflow.Data getSfClockVariable() {
+	public Data getSfClockVariable() {
 		if (sfClockVariable != null && ((EObject)sfClockVariable).eIsProxy()) {
 			InternalEObject oldSfClockVariable = (InternalEObject)sfClockVariable;
-			sfClockVariable = (de.uni_paderborn.fujaba.simulink.model.stateflow.Data)eResolveProxy(oldSfClockVariable);
+			sfClockVariable = (Data)eResolveProxy(oldSfClockVariable);
 			if (sfClockVariable != oldSfClockVariable) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BehaviorPackage.SC_CLOCK2SF_DATA__SF_CLOCK_VARIABLE, oldSfClockVariable, sfClockVariable));
@@ -132,7 +132,7 @@ public class scClock2sfDataImpl extends AbstractContainerCorrespondenceNodeImpl 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.simulink.model.stateflow.Data basicGetSfClockVariable() {
+	public Data basicGetSfClockVariable() {
 		return sfClockVariable;
 	}
 
@@ -141,8 +141,8 @@ public class scClock2sfDataImpl extends AbstractContainerCorrespondenceNodeImpl 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSfClockVariable(de.uni_paderborn.fujaba.simulink.model.stateflow.Data newSfClockVariable) {
-		de.uni_paderborn.fujaba.simulink.model.stateflow.Data oldSfClockVariable = sfClockVariable;
+	public void setSfClockVariable(Data newSfClockVariable) {
+		Data oldSfClockVariable = sfClockVariable;
 		sfClockVariable = newSfClockVariable;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BehaviorPackage.SC_CLOCK2SF_DATA__SF_CLOCK_VARIABLE, oldSfClockVariable, sfClockVariable));
@@ -178,7 +178,7 @@ public class scClock2sfDataImpl extends AbstractContainerCorrespondenceNodeImpl 
 				setScClock((Clock)newValue);
 				return;
 			case BehaviorPackage.SC_CLOCK2SF_DATA__SF_CLOCK_VARIABLE:
-				setSfClockVariable((de.uni_paderborn.fujaba.simulink.model.stateflow.Data)newValue);
+				setSfClockVariable((Data)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -196,7 +196,7 @@ public class scClock2sfDataImpl extends AbstractContainerCorrespondenceNodeImpl 
 				setScClock((Clock)null);
 				return;
 			case BehaviorPackage.SC_CLOCK2SF_DATA__SF_CLOCK_VARIABLE:
-				setSfClockVariable((de.uni_paderborn.fujaba.simulink.model.stateflow.Data)null);
+				setSfClockVariable((Data)null);
 				return;
 		}
 		super.eUnset(featureID);

@@ -54,7 +54,7 @@ public class scAttribute2sfDataImpl extends AbstractContainerCorrespondenceNodeI
 	 * @generated
 	 * @ordered
 	 */
-	protected de.uni_paderborn.fujaba.simulink.model.stateflow.Data sfData;
+	protected Data sfData;
 
 	/**
 	 * The cached value of the '{@link #getScType() <em>Sc Type</em>}' reference.
@@ -138,10 +138,10 @@ public class scAttribute2sfDataImpl extends AbstractContainerCorrespondenceNodeI
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.simulink.model.stateflow.Data getSfData() {
+	public Data getSfData() {
 		if (sfData != null && ((EObject)sfData).eIsProxy()) {
 			InternalEObject oldSfData = (InternalEObject)sfData;
-			sfData = (de.uni_paderborn.fujaba.simulink.model.stateflow.Data)eResolveProxy(oldSfData);
+			sfData = (Data)eResolveProxy(oldSfData);
 			if (sfData != oldSfData) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BehaviorPackage.SC_ATTRIBUTE2SF_DATA__SF_DATA, oldSfData, sfData));
@@ -155,7 +155,7 @@ public class scAttribute2sfDataImpl extends AbstractContainerCorrespondenceNodeI
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.simulink.model.stateflow.Data basicGetSfData() {
+	public Data basicGetSfData() {
 		return sfData;
 	}
 
@@ -164,8 +164,8 @@ public class scAttribute2sfDataImpl extends AbstractContainerCorrespondenceNodeI
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSfData(de.uni_paderborn.fujaba.simulink.model.stateflow.Data newSfData) {
-		de.uni_paderborn.fujaba.simulink.model.stateflow.Data oldSfData = sfData;
+	public void setSfData(Data newSfData) {
+		Data oldSfData = sfData;
 		sfData = newSfData;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BehaviorPackage.SC_ATTRIBUTE2SF_DATA__SF_DATA, oldSfData, sfData));
@@ -283,7 +283,7 @@ public class scAttribute2sfDataImpl extends AbstractContainerCorrespondenceNodeI
 				setScAttribute((Variable)newValue);
 				return;
 			case BehaviorPackage.SC_ATTRIBUTE2SF_DATA__SF_DATA:
-				setSfData((de.uni_paderborn.fujaba.simulink.model.stateflow.Data)newValue);
+				setSfData((Data)newValue);
 				return;
 			case BehaviorPackage.SC_ATTRIBUTE2SF_DATA__SC_TYPE:
 				setScType((DataType)newValue);
@@ -307,7 +307,7 @@ public class scAttribute2sfDataImpl extends AbstractContainerCorrespondenceNodeI
 				setScAttribute((Variable)null);
 				return;
 			case BehaviorPackage.SC_ATTRIBUTE2SF_DATA__SF_DATA:
-				setSfData((de.uni_paderborn.fujaba.simulink.model.stateflow.Data)null);
+				setSfData((Data)null);
 				return;
 			case BehaviorPackage.SC_ATTRIBUTE2SF_DATA__SC_TYPE:
 				setScType((DataType)null);

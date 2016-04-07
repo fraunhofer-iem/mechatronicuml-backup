@@ -76,7 +76,7 @@ public class scAsyncRec2sfAsyncGuardImpl extends AbstractContainerCorrespondence
 	 * @generated
 	 * @ordered
 	 */
-	protected de.uni_paderborn.fujaba.simulink.model.stateflow.Action asyncRecGuard;
+	protected Action asyncRecGuard;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -217,10 +217,10 @@ public class scAsyncRec2sfAsyncGuardImpl extends AbstractContainerCorrespondence
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.simulink.model.stateflow.Action getAsyncRecGuard() {
+	public Action getAsyncRecGuard() {
 		if (asyncRecGuard != null && ((EObject)asyncRecGuard).eIsProxy()) {
 			InternalEObject oldAsyncRecGuard = (InternalEObject)asyncRecGuard;
-			asyncRecGuard = (de.uni_paderborn.fujaba.simulink.model.stateflow.Action)eResolveProxy(oldAsyncRecGuard);
+			asyncRecGuard = (Action)eResolveProxy(oldAsyncRecGuard);
 			if (asyncRecGuard != oldAsyncRecGuard) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BehaviorPackage.SC_ASYNC_REC2SF_ASYNC_GUARD__ASYNC_REC_GUARD, oldAsyncRecGuard, asyncRecGuard));
@@ -234,7 +234,7 @@ public class scAsyncRec2sfAsyncGuardImpl extends AbstractContainerCorrespondence
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.simulink.model.stateflow.Action basicGetAsyncRecGuard() {
+	public Action basicGetAsyncRecGuard() {
 		return asyncRecGuard;
 	}
 
@@ -243,8 +243,8 @@ public class scAsyncRec2sfAsyncGuardImpl extends AbstractContainerCorrespondence
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setAsyncRecGuard(de.uni_paderborn.fujaba.simulink.model.stateflow.Action newAsyncRecGuard) {
-		de.uni_paderborn.fujaba.simulink.model.stateflow.Action oldAsyncRecGuard = asyncRecGuard;
+	public void setAsyncRecGuard(Action newAsyncRecGuard) {
+		Action oldAsyncRecGuard = asyncRecGuard;
 		asyncRecGuard = newAsyncRecGuard;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BehaviorPackage.SC_ASYNC_REC2SF_ASYNC_GUARD__ASYNC_REC_GUARD, oldAsyncRecGuard, asyncRecGuard));
@@ -293,7 +293,7 @@ public class scAsyncRec2sfAsyncGuardImpl extends AbstractContainerCorrespondence
 				setAsynchronousMessageEvent((AsynchronousMessageEvent)newValue);
 				return;
 			case BehaviorPackage.SC_ASYNC_REC2SF_ASYNC_GUARD__ASYNC_REC_GUARD:
-				setAsyncRecGuard((de.uni_paderborn.fujaba.simulink.model.stateflow.Action)newValue);
+				setAsyncRecGuard((Action)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -317,7 +317,7 @@ public class scAsyncRec2sfAsyncGuardImpl extends AbstractContainerCorrespondence
 				setAsynchronousMessageEvent((AsynchronousMessageEvent)null);
 				return;
 			case BehaviorPackage.SC_ASYNC_REC2SF_ASYNC_GUARD__ASYNC_REC_GUARD:
-				setAsyncRecGuard((de.uni_paderborn.fujaba.simulink.model.stateflow.Action)null);
+				setAsyncRecGuard((Action)null);
 				return;
 		}
 		super.eUnset(featureID);

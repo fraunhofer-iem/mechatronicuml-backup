@@ -90,12 +90,12 @@ public interface ScSyncReceiveAction2sfAction extends AbstractContainerCorrespon
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Sf Action</em>' reference.
-	 * @see #setSfAction(de.uni_paderborn.fujaba.simulink.model.stateflow.Action)
+	 * @see #setSfAction(org.muml.simulink.stateflow.Action)
 	 * @see org.muml.simulink.adapter.corrmodel.behavior.BehaviorPackage#getScSyncReceiveAction2sfAction_SfAction()
 	 * @model
 	 * @generated
 	 */
-	de.uni_paderborn.fujaba.simulink.model.stateflow.Action getSfAction();
+	org.muml.simulink.stateflow.Action getSfAction();
 
 	/**
 	 * Sets the value of the '{@link org.muml.simulink.adapter.corrmodel.behavior.ScSyncReceiveAction2sfAction#getSfAction <em>Sf Action</em>}' reference.
@@ -105,6 +105,6 @@ public interface ScSyncReceiveAction2sfAction extends AbstractContainerCorrespon
 	 * @see #getSfAction()
 	 * @generated
 	 */
-	void setSfAction(de.uni_paderborn.fujaba.simulink.model.stateflow.Action value);
+	void setSfAction(org.muml.simulink.stateflow.Action value);
 
 } // ScSyncReceiveAction2sfAction

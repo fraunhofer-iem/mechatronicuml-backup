@@ -50,7 +50,7 @@ public class ScState2SfStateImpl extends AbstractContainerCorrespondenceNodeImpl
 	 * @generated
 	 * @ordered
 	 */
-	protected de.uni_paderborn.fujaba.simulink.model.stateflow.State sfState;
+	protected org.muml.simulink.stateflow.State sfState;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -114,10 +114,10 @@ public class ScState2SfStateImpl extends AbstractContainerCorrespondenceNodeImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.simulink.model.stateflow.State getSfState() {
+	public org.muml.simulink.stateflow.State getSfState() {
 		if (sfState != null && ((EObject)sfState).eIsProxy()) {
 			InternalEObject oldSfState = (InternalEObject)sfState;
-			sfState = (de.uni_paderborn.fujaba.simulink.model.stateflow.State)eResolveProxy(oldSfState);
+			sfState = (org.muml.simulink.stateflow.State)eResolveProxy(oldSfState);
 			if (sfState != oldSfState) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BehaviorPackage.SC_STATE2_SF_STATE__SF_STATE, oldSfState, sfState));
@@ -131,7 +131,7 @@ public class ScState2SfStateImpl extends AbstractContainerCorrespondenceNodeImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.simulink.model.stateflow.State basicGetSfState() {
+	public org.muml.simulink.stateflow.State basicGetSfState() {
 		return sfState;
 	}
 
@@ -140,8 +140,8 @@ public class ScState2SfStateImpl extends AbstractContainerCorrespondenceNodeImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSfState(de.uni_paderborn.fujaba.simulink.model.stateflow.State newSfState) {
-		de.uni_paderborn.fujaba.simulink.model.stateflow.State oldSfState = sfState;
+	public void setSfState(org.muml.simulink.stateflow.State newSfState) {
+		org.muml.simulink.stateflow.State oldSfState = sfState;
 		sfState = newSfState;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BehaviorPackage.SC_STATE2_SF_STATE__SF_STATE, oldSfState, sfState));
@@ -177,7 +177,7 @@ public class ScState2SfStateImpl extends AbstractContainerCorrespondenceNodeImpl
 				setScState((State)newValue);
 				return;
 			case BehaviorPackage.SC_STATE2_SF_STATE__SF_STATE:
-				setSfState((de.uni_paderborn.fujaba.simulink.model.stateflow.State)newValue);
+				setSfState((org.muml.simulink.stateflow.State)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -195,7 +195,7 @@ public class ScState2SfStateImpl extends AbstractContainerCorrespondenceNodeImpl
 				setScState((State)null);
 				return;
 			case BehaviorPackage.SC_STATE2_SF_STATE__SF_STATE:
-				setSfState((de.uni_paderborn.fujaba.simulink.model.stateflow.State)null);
+				setSfState((org.muml.simulink.stateflow.State)null);
 				return;
 		}
 		super.eUnset(featureID);

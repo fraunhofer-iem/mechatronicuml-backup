@@ -65,12 +65,12 @@ public interface ScRegion2sfParallel extends AbstractContainerCorrespondenceNode
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Sf Parallel State</em>' reference.
-	 * @see #setSfParallelState(de.uni_paderborn.fujaba.simulink.model.stateflow.State)
+	 * @see #setSfParallelState(State)
 	 * @see org.muml.simulink.adapter.corrmodel.behavior.BehaviorPackage#getScRegion2sfParallel_SfParallelState()
 	 * @model
 	 * @generated
 	 */
-	de.uni_paderborn.fujaba.simulink.model.stateflow.State getSfParallelState();
+	State getSfParallelState();
 
 	/**
 	 * Sets the value of the '{@link org.muml.simulink.adapter.corrmodel.behavior.ScRegion2sfParallel#getSfParallelState <em>Sf Parallel State</em>}' reference.
@@ -80,7 +80,7 @@ public interface ScRegion2sfParallel extends AbstractContainerCorrespondenceNode
 	 * @see #getSfParallelState()
 	 * @generated
 	 */
-	void setSfParallelState(de.uni_paderborn.fujaba.simulink.model.stateflow.State value);
+	void setSfParallelState(State value);
 
 	/**
 	 * Returns the value of the '<em><b>Sc Reg Rtsc</b></em>' reference.

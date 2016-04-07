@@ -56,7 +56,7 @@ public interface ModElCat2SimLib extends AbstractContainerCorrespondenceNode {
 
 	/**
 	 * Returns the value of the '<em><b>Sim Lib</b></em>' reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.simulink.model.SimulinkLibrary}.
+	 * The list contents are of type {@link org.muml.simulink.SimulinkLibrary}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Sim Lib</em>' reference list isn't clear,
@@ -68,6 +68,6 @@ public interface ModElCat2SimLib extends AbstractContainerCorrespondenceNode {
 	 * @model
 	 * @generated
 	 */
-	EList<de.uni_paderborn.fujaba.simulink.model.SimulinkLibrary> getSimLib();
+	EList<SimulinkLibrary> getSimLib();
 
 } // ModElCat2SimLib

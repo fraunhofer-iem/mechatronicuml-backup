@@ -60,7 +60,7 @@ public class RootNode2SimulinkContainerImpl extends AbstractContainerCorresponde
 	 * @generated
 	 * @ordered
 	 */
-	protected de.uni_paderborn.fujaba.simulink.model.SimulinkContainer simulinkContainer;
+	protected SimulinkContainer simulinkContainer;
 
 	/**
 	 * The cached value of the '{@link #getPacketBus() <em>Packet Bus</em>}' reference.
@@ -70,7 +70,7 @@ public class RootNode2SimulinkContainerImpl extends AbstractContainerCorresponde
 	 * @generated
 	 * @ordered
 	 */
-	protected de.uni_paderborn.fujaba.simulink.model.Bus packetBus;
+	protected Bus packetBus;
 
 	/**
 	 * The cached value of the '{@link #getBusOfBusses() <em>Bus Of Busses</em>}' reference.
@@ -80,7 +80,7 @@ public class RootNode2SimulinkContainerImpl extends AbstractContainerCorresponde
 	 * @generated
 	 * @ordered
 	 */
-	protected de.uni_paderborn.fujaba.simulink.model.Bus busOfBusses;
+	protected Bus busOfBusses;
 
 	/**
 	 * The cached value of the '{@link #getCic2ss() <em>Cic2ss</em>}' reference list.
@@ -100,7 +100,7 @@ public class RootNode2SimulinkContainerImpl extends AbstractContainerCorresponde
 	 * @generated
 	 * @ordered
 	 */
-	protected de.uni_paderborn.fujaba.simulink.model.SimulinkLibrary atomCompLib;
+	protected SimulinkLibrary atomCompLib;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -164,10 +164,10 @@ public class RootNode2SimulinkContainerImpl extends AbstractContainerCorresponde
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.simulink.model.SimulinkContainer getSimulinkContainer() {
+	public SimulinkContainer getSimulinkContainer() {
 		if (simulinkContainer != null && ((EObject)simulinkContainer).eIsProxy()) {
 			InternalEObject oldSimulinkContainer = (InternalEObject)simulinkContainer;
-			simulinkContainer = (de.uni_paderborn.fujaba.simulink.model.SimulinkContainer)eResolveProxy(oldSimulinkContainer);
+			simulinkContainer = (SimulinkContainer)eResolveProxy(oldSimulinkContainer);
 			if (simulinkContainer != oldSimulinkContainer) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Fujaba2simulinkPackage.ROOT_NODE2_SIMULINK_CONTAINER__SIMULINK_CONTAINER, oldSimulinkContainer, simulinkContainer));
@@ -181,7 +181,7 @@ public class RootNode2SimulinkContainerImpl extends AbstractContainerCorresponde
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.simulink.model.SimulinkContainer basicGetSimulinkContainer() {
+	public SimulinkContainer basicGetSimulinkContainer() {
 		return simulinkContainer;
 	}
 
@@ -190,8 +190,8 @@ public class RootNode2SimulinkContainerImpl extends AbstractContainerCorresponde
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSimulinkContainer(de.uni_paderborn.fujaba.simulink.model.SimulinkContainer newSimulinkContainer) {
-		de.uni_paderborn.fujaba.simulink.model.SimulinkContainer oldSimulinkContainer = simulinkContainer;
+	public void setSimulinkContainer(SimulinkContainer newSimulinkContainer) {
+		SimulinkContainer oldSimulinkContainer = simulinkContainer;
 		simulinkContainer = newSimulinkContainer;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Fujaba2simulinkPackage.ROOT_NODE2_SIMULINK_CONTAINER__SIMULINK_CONTAINER, oldSimulinkContainer, simulinkContainer));
@@ -202,10 +202,10 @@ public class RootNode2SimulinkContainerImpl extends AbstractContainerCorresponde
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.simulink.model.Bus getPacketBus() {
+	public Bus getPacketBus() {
 		if (packetBus != null && ((EObject)packetBus).eIsProxy()) {
 			InternalEObject oldPacketBus = (InternalEObject)packetBus;
-			packetBus = (de.uni_paderborn.fujaba.simulink.model.Bus)eResolveProxy(oldPacketBus);
+			packetBus = (Bus)eResolveProxy(oldPacketBus);
 			if (packetBus != oldPacketBus) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Fujaba2simulinkPackage.ROOT_NODE2_SIMULINK_CONTAINER__PACKET_BUS, oldPacketBus, packetBus));
@@ -219,7 +219,7 @@ public class RootNode2SimulinkContainerImpl extends AbstractContainerCorresponde
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.simulink.model.Bus basicGetPacketBus() {
+	public Bus basicGetPacketBus() {
 		return packetBus;
 	}
 
@@ -228,8 +228,8 @@ public class RootNode2SimulinkContainerImpl extends AbstractContainerCorresponde
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setPacketBus(de.uni_paderborn.fujaba.simulink.model.Bus newPacketBus) {
-		de.uni_paderborn.fujaba.simulink.model.Bus oldPacketBus = packetBus;
+	public void setPacketBus(Bus newPacketBus) {
+		Bus oldPacketBus = packetBus;
 		packetBus = newPacketBus;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Fujaba2simulinkPackage.ROOT_NODE2_SIMULINK_CONTAINER__PACKET_BUS, oldPacketBus, packetBus));
@@ -240,10 +240,10 @@ public class RootNode2SimulinkContainerImpl extends AbstractContainerCorresponde
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.simulink.model.Bus getBusOfBusses() {
+	public Bus getBusOfBusses() {
 		if (busOfBusses != null && ((EObject)busOfBusses).eIsProxy()) {
 			InternalEObject oldBusOfBusses = (InternalEObject)busOfBusses;
-			busOfBusses = (de.uni_paderborn.fujaba.simulink.model.Bus)eResolveProxy(oldBusOfBusses);
+			busOfBusses = (Bus)eResolveProxy(oldBusOfBusses);
 			if (busOfBusses != oldBusOfBusses) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Fujaba2simulinkPackage.ROOT_NODE2_SIMULINK_CONTAINER__BUS_OF_BUSSES, oldBusOfBusses, busOfBusses));
@@ -257,7 +257,7 @@ public class RootNode2SimulinkContainerImpl extends AbstractContainerCorresponde
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.simulink.model.Bus basicGetBusOfBusses() {
+	public Bus basicGetBusOfBusses() {
 		return busOfBusses;
 	}
 
@@ -266,8 +266,8 @@ public class RootNode2SimulinkContainerImpl extends AbstractContainerCorresponde
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setBusOfBusses(de.uni_paderborn.fujaba.simulink.model.Bus newBusOfBusses) {
-		de.uni_paderborn.fujaba.simulink.model.Bus oldBusOfBusses = busOfBusses;
+	public void setBusOfBusses(Bus newBusOfBusses) {
+		Bus oldBusOfBusses = busOfBusses;
 		busOfBusses = newBusOfBusses;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Fujaba2simulinkPackage.ROOT_NODE2_SIMULINK_CONTAINER__BUS_OF_BUSSES, oldBusOfBusses, busOfBusses));
@@ -290,10 +290,10 @@ public class RootNode2SimulinkContainerImpl extends AbstractContainerCorresponde
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.simulink.model.SimulinkLibrary getAtomCompLib() {
+	public SimulinkLibrary getAtomCompLib() {
 		if (atomCompLib != null && ((EObject)atomCompLib).eIsProxy()) {
 			InternalEObject oldAtomCompLib = (InternalEObject)atomCompLib;
-			atomCompLib = (de.uni_paderborn.fujaba.simulink.model.SimulinkLibrary)eResolveProxy(oldAtomCompLib);
+			atomCompLib = (SimulinkLibrary)eResolveProxy(oldAtomCompLib);
 			if (atomCompLib != oldAtomCompLib) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Fujaba2simulinkPackage.ROOT_NODE2_SIMULINK_CONTAINER__ATOM_COMP_LIB, oldAtomCompLib, atomCompLib));
@@ -307,7 +307,7 @@ public class RootNode2SimulinkContainerImpl extends AbstractContainerCorresponde
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.simulink.model.SimulinkLibrary basicGetAtomCompLib() {
+	public SimulinkLibrary basicGetAtomCompLib() {
 		return atomCompLib;
 	}
 
@@ -316,8 +316,8 @@ public class RootNode2SimulinkContainerImpl extends AbstractContainerCorresponde
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setAtomCompLib(de.uni_paderborn.fujaba.simulink.model.SimulinkLibrary newAtomCompLib) {
-		de.uni_paderborn.fujaba.simulink.model.SimulinkLibrary oldAtomCompLib = atomCompLib;
+	public void setAtomCompLib(SimulinkLibrary newAtomCompLib) {
+		SimulinkLibrary oldAtomCompLib = atomCompLib;
 		atomCompLib = newAtomCompLib;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Fujaba2simulinkPackage.ROOT_NODE2_SIMULINK_CONTAINER__ATOM_COMP_LIB, oldAtomCompLib, atomCompLib));
@@ -365,20 +365,20 @@ public class RootNode2SimulinkContainerImpl extends AbstractContainerCorresponde
 				setRootNode((RootNode)newValue);
 				return;
 			case Fujaba2simulinkPackage.ROOT_NODE2_SIMULINK_CONTAINER__SIMULINK_CONTAINER:
-				setSimulinkContainer((de.uni_paderborn.fujaba.simulink.model.SimulinkContainer)newValue);
+				setSimulinkContainer((SimulinkContainer)newValue);
 				return;
 			case Fujaba2simulinkPackage.ROOT_NODE2_SIMULINK_CONTAINER__PACKET_BUS:
-				setPacketBus((de.uni_paderborn.fujaba.simulink.model.Bus)newValue);
+				setPacketBus((Bus)newValue);
 				return;
 			case Fujaba2simulinkPackage.ROOT_NODE2_SIMULINK_CONTAINER__BUS_OF_BUSSES:
-				setBusOfBusses((de.uni_paderborn.fujaba.simulink.model.Bus)newValue);
+				setBusOfBusses((Bus)newValue);
 				return;
 			case Fujaba2simulinkPackage.ROOT_NODE2_SIMULINK_CONTAINER__CIC2SS:
 				getCic2ss().clear();
 				getCic2ss().addAll((Collection<? extends CompInstConfig2SubSys>)newValue);
 				return;
 			case Fujaba2simulinkPackage.ROOT_NODE2_SIMULINK_CONTAINER__ATOM_COMP_LIB:
-				setAtomCompLib((de.uni_paderborn.fujaba.simulink.model.SimulinkLibrary)newValue);
+				setAtomCompLib((SimulinkLibrary)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -396,19 +396,19 @@ public class RootNode2SimulinkContainerImpl extends AbstractContainerCorresponde
 				setRootNode((RootNode)null);
 				return;
 			case Fujaba2simulinkPackage.ROOT_NODE2_SIMULINK_CONTAINER__SIMULINK_CONTAINER:
-				setSimulinkContainer((de.uni_paderborn.fujaba.simulink.model.SimulinkContainer)null);
+				setSimulinkContainer((SimulinkContainer)null);
 				return;
 			case Fujaba2simulinkPackage.ROOT_NODE2_SIMULINK_CONTAINER__PACKET_BUS:
-				setPacketBus((de.uni_paderborn.fujaba.simulink.model.Bus)null);
+				setPacketBus((Bus)null);
 				return;
 			case Fujaba2simulinkPackage.ROOT_NODE2_SIMULINK_CONTAINER__BUS_OF_BUSSES:
-				setBusOfBusses((de.uni_paderborn.fujaba.simulink.model.Bus)null);
+				setBusOfBusses((Bus)null);
 				return;
 			case Fujaba2simulinkPackage.ROOT_NODE2_SIMULINK_CONTAINER__CIC2SS:
 				getCic2ss().clear();
 				return;
 			case Fujaba2simulinkPackage.ROOT_NODE2_SIMULINK_CONTAINER__ATOM_COMP_LIB:
-				setAtomCompLib((de.uni_paderborn.fujaba.simulink.model.SimulinkLibrary)null);
+				setAtomCompLib((SimulinkLibrary)null);
 				return;
 		}
 		super.eUnset(featureID);

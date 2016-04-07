@@ -63,12 +63,12 @@ public interface ScSyncChannel2sfSignal extends AbstractContainerCorrespondenceN
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Sf Sync Event</em>' reference.
-	 * @see #setSfSyncEvent(de.uni_paderborn.fujaba.simulink.model.stateflow.Event)
+	 * @see #setSfSyncEvent(Event)
 	 * @see org.muml.simulink.adapter.corrmodel.behavior.BehaviorPackage#getScSyncChannel2sfSignal_SfSyncEvent()
 	 * @model
 	 * @generated
 	 */
-	de.uni_paderborn.fujaba.simulink.model.stateflow.Event getSfSyncEvent();
+	Event getSfSyncEvent();
 
 	/**
 	 * Sets the value of the '{@link org.muml.simulink.adapter.corrmodel.behavior.ScSyncChannel2sfSignal#getSfSyncEvent <em>Sf Sync Event</em>}' reference.
@@ -78,6 +78,6 @@ public interface ScSyncChannel2sfSignal extends AbstractContainerCorrespondenceN
 	 * @see #getSfSyncEvent()
 	 * @generated
 	 */
-	void setSfSyncEvent(de.uni_paderborn.fujaba.simulink.model.stateflow.Event value);
+	void setSfSyncEvent(Event value);
 
 } // ScSyncChannel2sfSignal

@@ -43,7 +43,7 @@ public class AtomComp2AtomSysImpl extends AbstractContainerCorrespondenceNodeImp
 	 * @generated
 	 * @ordered
 	 */
-	protected de.uni_paderborn.fujaba.simulink.model.InPortBlock clockSignal;
+	protected InPortBlock clockSignal;
 
 	/**
 	 * The cached value of the '{@link #getChart() <em>Chart</em>}' reference.
@@ -53,7 +53,7 @@ public class AtomComp2AtomSysImpl extends AbstractContainerCorrespondenceNodeImp
 	 * @generated
 	 * @ordered
 	 */
-	protected de.uni_paderborn.fujaba.simulink.model.stateflow.Chart chart;
+	protected Chart chart;
 
 	/**
 	 * The cached value of the '{@link #getComp() <em>Comp</em>}' reference.
@@ -73,7 +73,7 @@ public class AtomComp2AtomSysImpl extends AbstractContainerCorrespondenceNodeImp
 	 * @generated
 	 * @ordered
 	 */
-	protected de.uni_paderborn.fujaba.simulink.model.SubSystem sys;
+	protected SubSystem sys;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -99,10 +99,10 @@ public class AtomComp2AtomSysImpl extends AbstractContainerCorrespondenceNodeImp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.simulink.model.InPortBlock getClockSignal() {
+	public InPortBlock getClockSignal() {
 		if (clockSignal != null && ((EObject)clockSignal).eIsProxy()) {
 			InternalEObject oldClockSignal = (InternalEObject)clockSignal;
-			clockSignal = (de.uni_paderborn.fujaba.simulink.model.InPortBlock)eResolveProxy(oldClockSignal);
+			clockSignal = (InPortBlock)eResolveProxy(oldClockSignal);
 			if (clockSignal != oldClockSignal) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Fujaba2simulinkPackage.ATOM_COMP2_ATOM_SYS__CLOCK_SIGNAL, oldClockSignal, clockSignal));
@@ -116,7 +116,7 @@ public class AtomComp2AtomSysImpl extends AbstractContainerCorrespondenceNodeImp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.simulink.model.InPortBlock basicGetClockSignal() {
+	public InPortBlock basicGetClockSignal() {
 		return clockSignal;
 	}
 
@@ -125,8 +125,8 @@ public class AtomComp2AtomSysImpl extends AbstractContainerCorrespondenceNodeImp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setClockSignal(de.uni_paderborn.fujaba.simulink.model.InPortBlock newClockSignal) {
-		de.uni_paderborn.fujaba.simulink.model.InPortBlock oldClockSignal = clockSignal;
+	public void setClockSignal(InPortBlock newClockSignal) {
+		InPortBlock oldClockSignal = clockSignal;
 		clockSignal = newClockSignal;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Fujaba2simulinkPackage.ATOM_COMP2_ATOM_SYS__CLOCK_SIGNAL, oldClockSignal, clockSignal));
@@ -137,10 +137,10 @@ public class AtomComp2AtomSysImpl extends AbstractContainerCorrespondenceNodeImp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.simulink.model.stateflow.Chart getChart() {
+	public Chart getChart() {
 		if (chart != null && ((EObject)chart).eIsProxy()) {
 			InternalEObject oldChart = (InternalEObject)chart;
-			chart = (de.uni_paderborn.fujaba.simulink.model.stateflow.Chart)eResolveProxy(oldChart);
+			chart = (Chart)eResolveProxy(oldChart);
 			if (chart != oldChart) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Fujaba2simulinkPackage.ATOM_COMP2_ATOM_SYS__CHART, oldChart, chart));
@@ -154,7 +154,7 @@ public class AtomComp2AtomSysImpl extends AbstractContainerCorrespondenceNodeImp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.simulink.model.stateflow.Chart basicGetChart() {
+	public Chart basicGetChart() {
 		return chart;
 	}
 
@@ -163,8 +163,8 @@ public class AtomComp2AtomSysImpl extends AbstractContainerCorrespondenceNodeImp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setChart(de.uni_paderborn.fujaba.simulink.model.stateflow.Chart newChart) {
-		de.uni_paderborn.fujaba.simulink.model.stateflow.Chart oldChart = chart;
+	public void setChart(Chart newChart) {
+		Chart oldChart = chart;
 		chart = newChart;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Fujaba2simulinkPackage.ATOM_COMP2_ATOM_SYS__CHART, oldChart, chart));
@@ -213,10 +213,10 @@ public class AtomComp2AtomSysImpl extends AbstractContainerCorrespondenceNodeImp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.simulink.model.SubSystem getSys() {
+	public SubSystem getSys() {
 		if (sys != null && ((EObject)sys).eIsProxy()) {
 			InternalEObject oldSys = (InternalEObject)sys;
-			sys = (de.uni_paderborn.fujaba.simulink.model.SubSystem)eResolveProxy(oldSys);
+			sys = (SubSystem)eResolveProxy(oldSys);
 			if (sys != oldSys) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Fujaba2simulinkPackage.ATOM_COMP2_ATOM_SYS__SYS, oldSys, sys));
@@ -230,7 +230,7 @@ public class AtomComp2AtomSysImpl extends AbstractContainerCorrespondenceNodeImp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.simulink.model.SubSystem basicGetSys() {
+	public SubSystem basicGetSys() {
 		return sys;
 	}
 
@@ -239,8 +239,8 @@ public class AtomComp2AtomSysImpl extends AbstractContainerCorrespondenceNodeImp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSys(de.uni_paderborn.fujaba.simulink.model.SubSystem newSys) {
-		de.uni_paderborn.fujaba.simulink.model.SubSystem oldSys = sys;
+	public void setSys(SubSystem newSys) {
+		SubSystem oldSys = sys;
 		sys = newSys;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Fujaba2simulinkPackage.ATOM_COMP2_ATOM_SYS__SYS, oldSys, sys));
@@ -279,16 +279,16 @@ public class AtomComp2AtomSysImpl extends AbstractContainerCorrespondenceNodeImp
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Fujaba2simulinkPackage.ATOM_COMP2_ATOM_SYS__CLOCK_SIGNAL:
-				setClockSignal((de.uni_paderborn.fujaba.simulink.model.InPortBlock)newValue);
+				setClockSignal((InPortBlock)newValue);
 				return;
 			case Fujaba2simulinkPackage.ATOM_COMP2_ATOM_SYS__CHART:
-				setChart((de.uni_paderborn.fujaba.simulink.model.stateflow.Chart)newValue);
+				setChart((Chart)newValue);
 				return;
 			case Fujaba2simulinkPackage.ATOM_COMP2_ATOM_SYS__COMP:
 				setComp((Component)newValue);
 				return;
 			case Fujaba2simulinkPackage.ATOM_COMP2_ATOM_SYS__SYS:
-				setSys((de.uni_paderborn.fujaba.simulink.model.SubSystem)newValue);
+				setSys((SubSystem)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -303,16 +303,16 @@ public class AtomComp2AtomSysImpl extends AbstractContainerCorrespondenceNodeImp
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case Fujaba2simulinkPackage.ATOM_COMP2_ATOM_SYS__CLOCK_SIGNAL:
-				setClockSignal((de.uni_paderborn.fujaba.simulink.model.InPortBlock)null);
+				setClockSignal((InPortBlock)null);
 				return;
 			case Fujaba2simulinkPackage.ATOM_COMP2_ATOM_SYS__CHART:
-				setChart((de.uni_paderborn.fujaba.simulink.model.stateflow.Chart)null);
+				setChart((Chart)null);
 				return;
 			case Fujaba2simulinkPackage.ATOM_COMP2_ATOM_SYS__COMP:
 				setComp((Component)null);
 				return;
 			case Fujaba2simulinkPackage.ATOM_COMP2_ATOM_SYS__SYS:
-				setSys((de.uni_paderborn.fujaba.simulink.model.SubSystem)null);
+				setSys((SubSystem)null);
 				return;
 		}
 		super.eUnset(featureID);

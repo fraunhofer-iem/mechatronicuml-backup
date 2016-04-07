@@ -43,7 +43,7 @@ public class ScStExPoint2sfTransImpl extends AbstractContainerCorrespondenceNode
 	 * @generated
 	 * @ordered
 	 */
-	protected de.uni_paderborn.fujaba.simulink.model.stateflow.Transition sfTrans;
+	protected Transition sfTrans;
 
 	/**
 	 * The cached value of the '{@link #getScOutTrans() <em>Sc Out Trans</em>}' reference.
@@ -99,10 +99,10 @@ public class ScStExPoint2sfTransImpl extends AbstractContainerCorrespondenceNode
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.simulink.model.stateflow.Transition getSfTrans() {
+	public Transition getSfTrans() {
 		if (sfTrans != null && ((EObject)sfTrans).eIsProxy()) {
 			InternalEObject oldSfTrans = (InternalEObject)sfTrans;
-			sfTrans = (de.uni_paderborn.fujaba.simulink.model.stateflow.Transition)eResolveProxy(oldSfTrans);
+			sfTrans = (Transition)eResolveProxy(oldSfTrans);
 			if (sfTrans != oldSfTrans) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BehaviorPackage.SC_ST_EX_POINT2SF_TRANS__SF_TRANS, oldSfTrans, sfTrans));
@@ -116,7 +116,7 @@ public class ScStExPoint2sfTransImpl extends AbstractContainerCorrespondenceNode
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.simulink.model.stateflow.Transition basicGetSfTrans() {
+	public Transition basicGetSfTrans() {
 		return sfTrans;
 	}
 
@@ -125,8 +125,8 @@ public class ScStExPoint2sfTransImpl extends AbstractContainerCorrespondenceNode
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSfTrans(de.uni_paderborn.fujaba.simulink.model.stateflow.Transition newSfTrans) {
-		de.uni_paderborn.fujaba.simulink.model.stateflow.Transition oldSfTrans = sfTrans;
+	public void setSfTrans(Transition newSfTrans) {
+		Transition oldSfTrans = sfTrans;
 		sfTrans = newSfTrans;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BehaviorPackage.SC_ST_EX_POINT2SF_TRANS__SF_TRANS, oldSfTrans, sfTrans));
@@ -279,7 +279,7 @@ public class ScStExPoint2sfTransImpl extends AbstractContainerCorrespondenceNode
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case BehaviorPackage.SC_ST_EX_POINT2SF_TRANS__SF_TRANS:
-				setSfTrans((de.uni_paderborn.fujaba.simulink.model.stateflow.Transition)newValue);
+				setSfTrans((Transition)newValue);
 				return;
 			case BehaviorPackage.SC_ST_EX_POINT2SF_TRANS__SC_OUT_TRANS:
 				setScOutTrans((org.muml.pim.realtimestatechart.Transition)newValue);
@@ -303,7 +303,7 @@ public class ScStExPoint2sfTransImpl extends AbstractContainerCorrespondenceNode
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case BehaviorPackage.SC_ST_EX_POINT2SF_TRANS__SF_TRANS:
-				setSfTrans((de.uni_paderborn.fujaba.simulink.model.stateflow.Transition)null);
+				setSfTrans((Transition)null);
 				return;
 			case BehaviorPackage.SC_ST_EX_POINT2SF_TRANS__SC_OUT_TRANS:
 				setScOutTrans((org.muml.pim.realtimestatechart.Transition)null);

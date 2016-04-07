@@ -64,12 +64,12 @@ public interface StructComp2SubSys extends AbstractContainerCorrespondenceNode, 
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Library Reference</em>' reference.
-	 * @see #setLibraryReference(de.uni_paderborn.fujaba.simulink.model.LibraryReference)
+	 * @see #setLibraryReference(LibraryReference)
 	 * @see org.muml.simulink.adapter.corrmodel.Fujaba2simulinkPackage#getStructComp2SubSys_LibraryReference()
 	 * @model
 	 * @generated
 	 */
-	de.uni_paderborn.fujaba.simulink.model.LibraryReference getLibraryReference();
+	LibraryReference getLibraryReference();
 
 	/**
 	 * Sets the value of the '{@link org.muml.simulink.adapter.corrmodel.StructComp2SubSys#getLibraryReference <em>Library Reference</em>}' reference.
@@ -79,7 +79,7 @@ public interface StructComp2SubSys extends AbstractContainerCorrespondenceNode, 
 	 * @see #getLibraryReference()
 	 * @generated
 	 */
-	void setLibraryReference(de.uni_paderborn.fujaba.simulink.model.LibraryReference value);
+	void setLibraryReference(LibraryReference value);
 
 	/**
 	 * Returns the value of the '<em><b>Comp</b></em>' reference.

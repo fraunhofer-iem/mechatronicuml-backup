@@ -75,7 +75,7 @@ public class scClockConstr2sfGuardImpl extends AbstractContainerCorrespondenceNo
 	 * @generated
 	 * @ordered
 	 */
-	protected de.uni_paderborn.fujaba.simulink.model.stateflow.Action sfClockGuard;
+	protected Action sfClockGuard;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -215,10 +215,10 @@ public class scClockConstr2sfGuardImpl extends AbstractContainerCorrespondenceNo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.simulink.model.stateflow.Action getSfClockGuard() {
+	public Action getSfClockGuard() {
 		if (sfClockGuard != null && ((EObject)sfClockGuard).eIsProxy()) {
 			InternalEObject oldSfClockGuard = (InternalEObject)sfClockGuard;
-			sfClockGuard = (de.uni_paderborn.fujaba.simulink.model.stateflow.Action)eResolveProxy(oldSfClockGuard);
+			sfClockGuard = (Action)eResolveProxy(oldSfClockGuard);
 			if (sfClockGuard != oldSfClockGuard) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BehaviorPackage.SC_CLOCK_CONSTR2SF_GUARD__SF_CLOCK_GUARD, oldSfClockGuard, sfClockGuard));
@@ -232,7 +232,7 @@ public class scClockConstr2sfGuardImpl extends AbstractContainerCorrespondenceNo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.simulink.model.stateflow.Action basicGetSfClockGuard() {
+	public Action basicGetSfClockGuard() {
 		return sfClockGuard;
 	}
 
@@ -241,8 +241,8 @@ public class scClockConstr2sfGuardImpl extends AbstractContainerCorrespondenceNo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSfClockGuard(de.uni_paderborn.fujaba.simulink.model.stateflow.Action newSfClockGuard) {
-		de.uni_paderborn.fujaba.simulink.model.stateflow.Action oldSfClockGuard = sfClockGuard;
+	public void setSfClockGuard(Action newSfClockGuard) {
+		Action oldSfClockGuard = sfClockGuard;
 		sfClockGuard = newSfClockGuard;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BehaviorPackage.SC_CLOCK_CONSTR2SF_GUARD__SF_CLOCK_GUARD, oldSfClockGuard, sfClockGuard));
@@ -290,7 +290,7 @@ public class scClockConstr2sfGuardImpl extends AbstractContainerCorrespondenceNo
 				setScClock((Clock)newValue);
 				return;
 			case BehaviorPackage.SC_CLOCK_CONSTR2SF_GUARD__SF_CLOCK_GUARD:
-				setSfClockGuard((de.uni_paderborn.fujaba.simulink.model.stateflow.Action)newValue);
+				setSfClockGuard((Action)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -314,7 +314,7 @@ public class scClockConstr2sfGuardImpl extends AbstractContainerCorrespondenceNo
 				setScClock((Clock)null);
 				return;
 			case BehaviorPackage.SC_CLOCK_CONSTR2SF_GUARD__SF_CLOCK_GUARD:
-				setSfClockGuard((de.uni_paderborn.fujaba.simulink.model.stateflow.Action)null);
+				setSfClockGuard((Action)null);
 				return;
 		}
 		super.eUnset(featureID);

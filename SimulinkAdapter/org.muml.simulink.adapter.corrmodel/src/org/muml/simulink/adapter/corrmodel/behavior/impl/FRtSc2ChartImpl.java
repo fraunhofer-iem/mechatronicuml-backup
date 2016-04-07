@@ -53,7 +53,7 @@ public class FRtSc2ChartImpl extends AbstractContainerCorrespondenceNodeImpl imp
 	 * @generated
 	 * @ordered
 	 */
-	protected de.uni_paderborn.fujaba.simulink.model.stateflow.Chart chart;
+	protected Chart chart;
 
 	/**
 	 * The cached value of the '{@link #getFRtSc() <em>FRt Sc</em>}' reference.
@@ -83,7 +83,7 @@ public class FRtSc2ChartImpl extends AbstractContainerCorrespondenceNodeImpl imp
 	 * @generated
 	 * @ordered
 	 */
-	protected de.uni_paderborn.fujaba.simulink.model.stateflow.State sfChartState;
+	protected State sfChartState;
 
 	/**
 	 * The cached value of the '{@link #getSfChartRegion() <em>Sf Chart Region</em>}' reference.
@@ -93,7 +93,7 @@ public class FRtSc2ChartImpl extends AbstractContainerCorrespondenceNodeImpl imp
 	 * @generated
 	 * @ordered
 	 */
-	protected de.uni_paderborn.fujaba.simulink.model.stateflow.State sfChartRegion;
+	protected State sfChartRegion;
 
 	/**
 	 * The cached value of the '{@link #getSfQueueRegion() <em>Sf Queue Region</em>}' reference.
@@ -103,7 +103,7 @@ public class FRtSc2ChartImpl extends AbstractContainerCorrespondenceNodeImpl imp
 	 * @generated
 	 * @ordered
 	 */
-	protected de.uni_paderborn.fujaba.simulink.model.stateflow.State sfQueueRegion;
+	protected State sfQueueRegion;
 
 	/**
 	 * The cached value of the '{@link #getSfSelfTrans() <em>Sf Self Trans</em>}' reference.
@@ -113,7 +113,7 @@ public class FRtSc2ChartImpl extends AbstractContainerCorrespondenceNodeImpl imp
 	 * @generated
 	 * @ordered
 	 */
-	protected de.uni_paderborn.fujaba.simulink.model.stateflow.Transition sfSelfTrans;
+	protected Transition sfSelfTrans;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -139,10 +139,10 @@ public class FRtSc2ChartImpl extends AbstractContainerCorrespondenceNodeImpl imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.simulink.model.stateflow.Chart getChart() {
+	public Chart getChart() {
 		if (chart != null && ((EObject)chart).eIsProxy()) {
 			InternalEObject oldChart = (InternalEObject)chart;
-			chart = (de.uni_paderborn.fujaba.simulink.model.stateflow.Chart)eResolveProxy(oldChart);
+			chart = (Chart)eResolveProxy(oldChart);
 			if (chart != oldChart) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BehaviorPackage.FRT_SC2_CHART__CHART, oldChart, chart));
@@ -156,7 +156,7 @@ public class FRtSc2ChartImpl extends AbstractContainerCorrespondenceNodeImpl imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.simulink.model.stateflow.Chart basicGetChart() {
+	public Chart basicGetChart() {
 		return chart;
 	}
 
@@ -165,8 +165,8 @@ public class FRtSc2ChartImpl extends AbstractContainerCorrespondenceNodeImpl imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setChart(de.uni_paderborn.fujaba.simulink.model.stateflow.Chart newChart) {
-		de.uni_paderborn.fujaba.simulink.model.stateflow.Chart oldChart = chart;
+	public void setChart(Chart newChart) {
+		Chart oldChart = chart;
 		chart = newChart;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BehaviorPackage.FRT_SC2_CHART__CHART, oldChart, chart));
@@ -227,10 +227,10 @@ public class FRtSc2ChartImpl extends AbstractContainerCorrespondenceNodeImpl imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.simulink.model.stateflow.State getSfChartState() {
+	public State getSfChartState() {
 		if (sfChartState != null && ((EObject)sfChartState).eIsProxy()) {
 			InternalEObject oldSfChartState = (InternalEObject)sfChartState;
-			sfChartState = (de.uni_paderborn.fujaba.simulink.model.stateflow.State)eResolveProxy(oldSfChartState);
+			sfChartState = (State)eResolveProxy(oldSfChartState);
 			if (sfChartState != oldSfChartState) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BehaviorPackage.FRT_SC2_CHART__SF_CHART_STATE, oldSfChartState, sfChartState));
@@ -244,7 +244,7 @@ public class FRtSc2ChartImpl extends AbstractContainerCorrespondenceNodeImpl imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.simulink.model.stateflow.State basicGetSfChartState() {
+	public State basicGetSfChartState() {
 		return sfChartState;
 	}
 
@@ -253,8 +253,8 @@ public class FRtSc2ChartImpl extends AbstractContainerCorrespondenceNodeImpl imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSfChartState(de.uni_paderborn.fujaba.simulink.model.stateflow.State newSfChartState) {
-		de.uni_paderborn.fujaba.simulink.model.stateflow.State oldSfChartState = sfChartState;
+	public void setSfChartState(State newSfChartState) {
+		State oldSfChartState = sfChartState;
 		sfChartState = newSfChartState;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BehaviorPackage.FRT_SC2_CHART__SF_CHART_STATE, oldSfChartState, sfChartState));
@@ -265,10 +265,10 @@ public class FRtSc2ChartImpl extends AbstractContainerCorrespondenceNodeImpl imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.simulink.model.stateflow.State getSfChartRegion() {
+	public State getSfChartRegion() {
 		if (sfChartRegion != null && ((EObject)sfChartRegion).eIsProxy()) {
 			InternalEObject oldSfChartRegion = (InternalEObject)sfChartRegion;
-			sfChartRegion = (de.uni_paderborn.fujaba.simulink.model.stateflow.State)eResolveProxy(oldSfChartRegion);
+			sfChartRegion = (State)eResolveProxy(oldSfChartRegion);
 			if (sfChartRegion != oldSfChartRegion) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BehaviorPackage.FRT_SC2_CHART__SF_CHART_REGION, oldSfChartRegion, sfChartRegion));
@@ -282,7 +282,7 @@ public class FRtSc2ChartImpl extends AbstractContainerCorrespondenceNodeImpl imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.simulink.model.stateflow.State basicGetSfChartRegion() {
+	public State basicGetSfChartRegion() {
 		return sfChartRegion;
 	}
 
@@ -291,8 +291,8 @@ public class FRtSc2ChartImpl extends AbstractContainerCorrespondenceNodeImpl imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSfChartRegion(de.uni_paderborn.fujaba.simulink.model.stateflow.State newSfChartRegion) {
-		de.uni_paderborn.fujaba.simulink.model.stateflow.State oldSfChartRegion = sfChartRegion;
+	public void setSfChartRegion(State newSfChartRegion) {
+		State oldSfChartRegion = sfChartRegion;
 		sfChartRegion = newSfChartRegion;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BehaviorPackage.FRT_SC2_CHART__SF_CHART_REGION, oldSfChartRegion, sfChartRegion));
@@ -303,10 +303,10 @@ public class FRtSc2ChartImpl extends AbstractContainerCorrespondenceNodeImpl imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.simulink.model.stateflow.State getSfQueueRegion() {
+	public State getSfQueueRegion() {
 		if (sfQueueRegion != null && ((EObject)sfQueueRegion).eIsProxy()) {
 			InternalEObject oldSfQueueRegion = (InternalEObject)sfQueueRegion;
-			sfQueueRegion = (de.uni_paderborn.fujaba.simulink.model.stateflow.State)eResolveProxy(oldSfQueueRegion);
+			sfQueueRegion = (State)eResolveProxy(oldSfQueueRegion);
 			if (sfQueueRegion != oldSfQueueRegion) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BehaviorPackage.FRT_SC2_CHART__SF_QUEUE_REGION, oldSfQueueRegion, sfQueueRegion));
@@ -320,7 +320,7 @@ public class FRtSc2ChartImpl extends AbstractContainerCorrespondenceNodeImpl imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.simulink.model.stateflow.State basicGetSfQueueRegion() {
+	public State basicGetSfQueueRegion() {
 		return sfQueueRegion;
 	}
 
@@ -329,8 +329,8 @@ public class FRtSc2ChartImpl extends AbstractContainerCorrespondenceNodeImpl imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSfQueueRegion(de.uni_paderborn.fujaba.simulink.model.stateflow.State newSfQueueRegion) {
-		de.uni_paderborn.fujaba.simulink.model.stateflow.State oldSfQueueRegion = sfQueueRegion;
+	public void setSfQueueRegion(State newSfQueueRegion) {
+		State oldSfQueueRegion = sfQueueRegion;
 		sfQueueRegion = newSfQueueRegion;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BehaviorPackage.FRT_SC2_CHART__SF_QUEUE_REGION, oldSfQueueRegion, sfQueueRegion));
@@ -341,10 +341,10 @@ public class FRtSc2ChartImpl extends AbstractContainerCorrespondenceNodeImpl imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.simulink.model.stateflow.Transition getSfSelfTrans() {
+	public Transition getSfSelfTrans() {
 		if (sfSelfTrans != null && ((EObject)sfSelfTrans).eIsProxy()) {
 			InternalEObject oldSfSelfTrans = (InternalEObject)sfSelfTrans;
-			sfSelfTrans = (de.uni_paderborn.fujaba.simulink.model.stateflow.Transition)eResolveProxy(oldSfSelfTrans);
+			sfSelfTrans = (Transition)eResolveProxy(oldSfSelfTrans);
 			if (sfSelfTrans != oldSfSelfTrans) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BehaviorPackage.FRT_SC2_CHART__SF_SELF_TRANS, oldSfSelfTrans, sfSelfTrans));
@@ -358,7 +358,7 @@ public class FRtSc2ChartImpl extends AbstractContainerCorrespondenceNodeImpl imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.simulink.model.stateflow.Transition basicGetSfSelfTrans() {
+	public Transition basicGetSfSelfTrans() {
 		return sfSelfTrans;
 	}
 
@@ -367,8 +367,8 @@ public class FRtSc2ChartImpl extends AbstractContainerCorrespondenceNodeImpl imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSfSelfTrans(de.uni_paderborn.fujaba.simulink.model.stateflow.Transition newSfSelfTrans) {
-		de.uni_paderborn.fujaba.simulink.model.stateflow.Transition oldSfSelfTrans = sfSelfTrans;
+	public void setSfSelfTrans(Transition newSfSelfTrans) {
+		Transition oldSfSelfTrans = sfSelfTrans;
 		sfSelfTrans = newSfSelfTrans;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BehaviorPackage.FRT_SC2_CHART__SF_SELF_TRANS, oldSfSelfTrans, sfSelfTrans));
@@ -416,7 +416,7 @@ public class FRtSc2ChartImpl extends AbstractContainerCorrespondenceNodeImpl imp
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case BehaviorPackage.FRT_SC2_CHART__CHART:
-				setChart((de.uni_paderborn.fujaba.simulink.model.stateflow.Chart)newValue);
+				setChart((Chart)newValue);
 				return;
 			case BehaviorPackage.FRT_SC2_CHART__FRT_SC:
 				setFRtSc((RealtimeStatechart)newValue);
@@ -426,16 +426,16 @@ public class FRtSc2ChartImpl extends AbstractContainerCorrespondenceNodeImpl imp
 				getMt_par().addAll((Collection<? extends MT_Par2MTD>)newValue);
 				return;
 			case BehaviorPackage.FRT_SC2_CHART__SF_CHART_STATE:
-				setSfChartState((de.uni_paderborn.fujaba.simulink.model.stateflow.State)newValue);
+				setSfChartState((State)newValue);
 				return;
 			case BehaviorPackage.FRT_SC2_CHART__SF_CHART_REGION:
-				setSfChartRegion((de.uni_paderborn.fujaba.simulink.model.stateflow.State)newValue);
+				setSfChartRegion((State)newValue);
 				return;
 			case BehaviorPackage.FRT_SC2_CHART__SF_QUEUE_REGION:
-				setSfQueueRegion((de.uni_paderborn.fujaba.simulink.model.stateflow.State)newValue);
+				setSfQueueRegion((State)newValue);
 				return;
 			case BehaviorPackage.FRT_SC2_CHART__SF_SELF_TRANS:
-				setSfSelfTrans((de.uni_paderborn.fujaba.simulink.model.stateflow.Transition)newValue);
+				setSfSelfTrans((Transition)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -450,7 +450,7 @@ public class FRtSc2ChartImpl extends AbstractContainerCorrespondenceNodeImpl imp
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case BehaviorPackage.FRT_SC2_CHART__CHART:
-				setChart((de.uni_paderborn.fujaba.simulink.model.stateflow.Chart)null);
+				setChart((Chart)null);
 				return;
 			case BehaviorPackage.FRT_SC2_CHART__FRT_SC:
 				setFRtSc((RealtimeStatechart)null);
@@ -459,16 +459,16 @@ public class FRtSc2ChartImpl extends AbstractContainerCorrespondenceNodeImpl imp
 				getMt_par().clear();
 				return;
 			case BehaviorPackage.FRT_SC2_CHART__SF_CHART_STATE:
-				setSfChartState((de.uni_paderborn.fujaba.simulink.model.stateflow.State)null);
+				setSfChartState((State)null);
 				return;
 			case BehaviorPackage.FRT_SC2_CHART__SF_CHART_REGION:
-				setSfChartRegion((de.uni_paderborn.fujaba.simulink.model.stateflow.State)null);
+				setSfChartRegion((State)null);
 				return;
 			case BehaviorPackage.FRT_SC2_CHART__SF_QUEUE_REGION:
-				setSfQueueRegion((de.uni_paderborn.fujaba.simulink.model.stateflow.State)null);
+				setSfQueueRegion((State)null);
 				return;
 			case BehaviorPackage.FRT_SC2_CHART__SF_SELF_TRANS:
-				setSfSelfTrans((de.uni_paderborn.fujaba.simulink.model.stateflow.Transition)null);
+				setSfSelfTrans((Transition)null);
 				return;
 		}
 		super.eUnset(featureID);

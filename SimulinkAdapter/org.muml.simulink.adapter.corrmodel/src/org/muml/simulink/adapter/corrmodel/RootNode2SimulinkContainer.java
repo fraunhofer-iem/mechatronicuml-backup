@@ -69,12 +69,12 @@ public interface RootNode2SimulinkContainer extends AbstractContainerCorresponde
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Simulink Container</em>' reference.
-	 * @see #setSimulinkContainer(de.uni_paderborn.fujaba.simulink.model.SimulinkContainer)
+	 * @see #setSimulinkContainer(SimulinkContainer)
 	 * @see org.muml.simulink.adapter.corrmodel.Fujaba2simulinkPackage#getRootNode2SimulinkContainer_SimulinkContainer()
 	 * @model
 	 * @generated
 	 */
-	de.uni_paderborn.fujaba.simulink.model.SimulinkContainer getSimulinkContainer();
+	SimulinkContainer getSimulinkContainer();
 
 	/**
 	 * Sets the value of the '{@link org.muml.simulink.adapter.corrmodel.RootNode2SimulinkContainer#getSimulinkContainer <em>Simulink Container</em>}' reference.
@@ -84,7 +84,7 @@ public interface RootNode2SimulinkContainer extends AbstractContainerCorresponde
 	 * @see #getSimulinkContainer()
 	 * @generated
 	 */
-	void setSimulinkContainer(de.uni_paderborn.fujaba.simulink.model.SimulinkContainer value);
+	void setSimulinkContainer(SimulinkContainer value);
 
 	/**
 	 * Returns the value of the '<em><b>Packet Bus</b></em>' reference.
@@ -95,12 +95,12 @@ public interface RootNode2SimulinkContainer extends AbstractContainerCorresponde
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Packet Bus</em>' reference.
-	 * @see #setPacketBus(de.uni_paderborn.fujaba.simulink.model.Bus)
+	 * @see #setPacketBus(Bus)
 	 * @see org.muml.simulink.adapter.corrmodel.Fujaba2simulinkPackage#getRootNode2SimulinkContainer_PacketBus()
 	 * @model
 	 * @generated
 	 */
-	de.uni_paderborn.fujaba.simulink.model.Bus getPacketBus();
+	Bus getPacketBus();
 
 	/**
 	 * Sets the value of the '{@link org.muml.simulink.adapter.corrmodel.RootNode2SimulinkContainer#getPacketBus <em>Packet Bus</em>}' reference.
@@ -110,7 +110,7 @@ public interface RootNode2SimulinkContainer extends AbstractContainerCorresponde
 	 * @see #getPacketBus()
 	 * @generated
 	 */
-	void setPacketBus(de.uni_paderborn.fujaba.simulink.model.Bus value);
+	void setPacketBus(Bus value);
 
 	/**
 	 * Returns the value of the '<em><b>Bus Of Busses</b></em>' reference.
@@ -121,12 +121,12 @@ public interface RootNode2SimulinkContainer extends AbstractContainerCorresponde
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Bus Of Busses</em>' reference.
-	 * @see #setBusOfBusses(de.uni_paderborn.fujaba.simulink.model.Bus)
+	 * @see #setBusOfBusses(Bus)
 	 * @see org.muml.simulink.adapter.corrmodel.Fujaba2simulinkPackage#getRootNode2SimulinkContainer_BusOfBusses()
 	 * @model
 	 * @generated
 	 */
-	de.uni_paderborn.fujaba.simulink.model.Bus getBusOfBusses();
+	Bus getBusOfBusses();
 
 	/**
 	 * Sets the value of the '{@link org.muml.simulink.adapter.corrmodel.RootNode2SimulinkContainer#getBusOfBusses <em>Bus Of Busses</em>}' reference.
@@ -136,7 +136,7 @@ public interface RootNode2SimulinkContainer extends AbstractContainerCorresponde
 	 * @see #getBusOfBusses()
 	 * @generated
 	 */
-	void setBusOfBusses(de.uni_paderborn.fujaba.simulink.model.Bus value);
+	void setBusOfBusses(Bus value);
 
 	/**
 	 * Returns the value of the '<em><b>Cic2ss</b></em>' reference list.
@@ -163,12 +163,12 @@ public interface RootNode2SimulinkContainer extends AbstractContainerCorresponde
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Atom Comp Lib</em>' reference.
-	 * @see #setAtomCompLib(de.uni_paderborn.fujaba.simulink.model.SimulinkLibrary)
+	 * @see #setAtomCompLib(SimulinkLibrary)
 	 * @see org.muml.simulink.adapter.corrmodel.Fujaba2simulinkPackage#getRootNode2SimulinkContainer_AtomCompLib()
 	 * @model
 	 * @generated
 	 */
-	de.uni_paderborn.fujaba.simulink.model.SimulinkLibrary getAtomCompLib();
+	SimulinkLibrary getAtomCompLib();
 
 	/**
 	 * Sets the value of the '{@link org.muml.simulink.adapter.corrmodel.RootNode2SimulinkContainer#getAtomCompLib <em>Atom Comp Lib</em>}' reference.
@@ -178,6 +178,6 @@ public interface RootNode2SimulinkContainer extends AbstractContainerCorresponde
 	 * @see #getAtomCompLib()
 	 * @generated
 	 */
-	void setAtomCompLib(de.uni_paderborn.fujaba.simulink.model.SimulinkLibrary value);
+	void setAtomCompLib(SimulinkLibrary value);
 
 } // RootNode2SimulinkContainer

@@ -51,7 +51,7 @@ public class ScSyncChannel2sfSignalImpl extends AbstractContainerCorrespondenceN
 	 * @generated
 	 * @ordered
 	 */
-	protected de.uni_paderborn.fujaba.simulink.model.stateflow.Event sfSyncEvent;
+	protected Event sfSyncEvent;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -115,10 +115,10 @@ public class ScSyncChannel2sfSignalImpl extends AbstractContainerCorrespondenceN
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.simulink.model.stateflow.Event getSfSyncEvent() {
+	public Event getSfSyncEvent() {
 		if (sfSyncEvent != null && ((EObject)sfSyncEvent).eIsProxy()) {
 			InternalEObject oldSfSyncEvent = (InternalEObject)sfSyncEvent;
-			sfSyncEvent = (de.uni_paderborn.fujaba.simulink.model.stateflow.Event)eResolveProxy(oldSfSyncEvent);
+			sfSyncEvent = (Event)eResolveProxy(oldSfSyncEvent);
 			if (sfSyncEvent != oldSfSyncEvent) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BehaviorPackage.SC_SYNC_CHANNEL2SF_SIGNAL__SF_SYNC_EVENT, oldSfSyncEvent, sfSyncEvent));
@@ -132,7 +132,7 @@ public class ScSyncChannel2sfSignalImpl extends AbstractContainerCorrespondenceN
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.simulink.model.stateflow.Event basicGetSfSyncEvent() {
+	public Event basicGetSfSyncEvent() {
 		return sfSyncEvent;
 	}
 
@@ -141,8 +141,8 @@ public class ScSyncChannel2sfSignalImpl extends AbstractContainerCorrespondenceN
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSfSyncEvent(de.uni_paderborn.fujaba.simulink.model.stateflow.Event newSfSyncEvent) {
-		de.uni_paderborn.fujaba.simulink.model.stateflow.Event oldSfSyncEvent = sfSyncEvent;
+	public void setSfSyncEvent(Event newSfSyncEvent) {
+		Event oldSfSyncEvent = sfSyncEvent;
 		sfSyncEvent = newSfSyncEvent;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BehaviorPackage.SC_SYNC_CHANNEL2SF_SIGNAL__SF_SYNC_EVENT, oldSfSyncEvent, sfSyncEvent));
@@ -178,7 +178,7 @@ public class ScSyncChannel2sfSignalImpl extends AbstractContainerCorrespondenceN
 				setScSyncChannel((SynchronizationChannel)newValue);
 				return;
 			case BehaviorPackage.SC_SYNC_CHANNEL2SF_SIGNAL__SF_SYNC_EVENT:
-				setSfSyncEvent((de.uni_paderborn.fujaba.simulink.model.stateflow.Event)newValue);
+				setSfSyncEvent((Event)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -196,7 +196,7 @@ public class ScSyncChannel2sfSignalImpl extends AbstractContainerCorrespondenceN
 				setScSyncChannel((SynchronizationChannel)null);
 				return;
 			case BehaviorPackage.SC_SYNC_CHANNEL2SF_SIGNAL__SF_SYNC_EVENT:
-				setSfSyncEvent((de.uni_paderborn.fujaba.simulink.model.stateflow.Event)null);
+				setSfSyncEvent((Event)null);
 				return;
 		}
 		super.eUnset(featureID);

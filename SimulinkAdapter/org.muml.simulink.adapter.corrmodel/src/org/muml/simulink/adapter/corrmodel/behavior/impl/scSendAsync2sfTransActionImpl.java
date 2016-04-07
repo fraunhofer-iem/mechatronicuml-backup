@@ -48,7 +48,7 @@ public class scSendAsync2sfTransActionImpl extends AbstractContainerCorresponden
 	 * @generated
 	 * @ordered
 	 */
-	protected de.uni_paderborn.fujaba.simulink.model.stateflow.Action sfSendAsync;
+	protected Action sfSendAsync;
 
 	/**
 	 * The cached value of the '{@link #getAsynchronousMessageEvent() <em>Asynchronous Message Event</em>}' reference.
@@ -134,10 +134,10 @@ public class scSendAsync2sfTransActionImpl extends AbstractContainerCorresponden
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.simulink.model.stateflow.Action getSfSendAsync() {
+	public Action getSfSendAsync() {
 		if (sfSendAsync != null && ((EObject)sfSendAsync).eIsProxy()) {
 			InternalEObject oldSfSendAsync = (InternalEObject)sfSendAsync;
-			sfSendAsync = (de.uni_paderborn.fujaba.simulink.model.stateflow.Action)eResolveProxy(oldSfSendAsync);
+			sfSendAsync = (Action)eResolveProxy(oldSfSendAsync);
 			if (sfSendAsync != oldSfSendAsync) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BehaviorPackage.SC_SEND_ASYNC2SF_TRANS_ACTION__SF_SEND_ASYNC, oldSfSendAsync, sfSendAsync));
@@ -151,7 +151,7 @@ public class scSendAsync2sfTransActionImpl extends AbstractContainerCorresponden
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.simulink.model.stateflow.Action basicGetSfSendAsync() {
+	public Action basicGetSfSendAsync() {
 		return sfSendAsync;
 	}
 
@@ -160,8 +160,8 @@ public class scSendAsync2sfTransActionImpl extends AbstractContainerCorresponden
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSfSendAsync(de.uni_paderborn.fujaba.simulink.model.stateflow.Action newSfSendAsync) {
-		de.uni_paderborn.fujaba.simulink.model.stateflow.Action oldSfSendAsync = sfSendAsync;
+	public void setSfSendAsync(Action newSfSendAsync) {
+		Action oldSfSendAsync = sfSendAsync;
 		sfSendAsync = newSfSendAsync;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BehaviorPackage.SC_SEND_ASYNC2SF_TRANS_ACTION__SF_SEND_ASYNC, oldSfSendAsync, sfSendAsync));
@@ -378,7 +378,7 @@ public class scSendAsync2sfTransActionImpl extends AbstractContainerCorresponden
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case BehaviorPackage.SC_SEND_ASYNC2SF_TRANS_ACTION__SF_SEND_ASYNC:
-				setSfSendAsync((de.uni_paderborn.fujaba.simulink.model.stateflow.Action)newValue);
+				setSfSendAsync((Action)newValue);
 				return;
 			case BehaviorPackage.SC_SEND_ASYNC2SF_TRANS_ACTION__ASYNCHRONOUS_MESSAGE_EVENT:
 				setAsynchronousMessageEvent((AsynchronousMessageEvent)newValue);
@@ -408,7 +408,7 @@ public class scSendAsync2sfTransActionImpl extends AbstractContainerCorresponden
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case BehaviorPackage.SC_SEND_ASYNC2SF_TRANS_ACTION__SF_SEND_ASYNC:
-				setSfSendAsync((de.uni_paderborn.fujaba.simulink.model.stateflow.Action)null);
+				setSfSendAsync((Action)null);
 				return;
 			case BehaviorPackage.SC_SEND_ASYNC2SF_TRANS_ACTION__ASYNCHRONOUS_MESSAGE_EVENT:
 				setAsynchronousMessageEvent((AsynchronousMessageEvent)null);

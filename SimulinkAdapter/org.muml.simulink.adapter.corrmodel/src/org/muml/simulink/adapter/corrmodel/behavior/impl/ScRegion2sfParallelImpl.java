@@ -53,7 +53,7 @@ public class ScRegion2sfParallelImpl extends AbstractContainerCorrespondenceNode
 	 * @generated
 	 * @ordered
 	 */
-	protected de.uni_paderborn.fujaba.simulink.model.stateflow.State sfParallelState;
+	protected State sfParallelState;
 
 	/**
 	 * The cached value of the '{@link #getScRegRtsc() <em>Sc Reg Rtsc</em>}' reference.
@@ -127,10 +127,10 @@ public class ScRegion2sfParallelImpl extends AbstractContainerCorrespondenceNode
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.simulink.model.stateflow.State getSfParallelState() {
+	public State getSfParallelState() {
 		if (sfParallelState != null && ((EObject)sfParallelState).eIsProxy()) {
 			InternalEObject oldSfParallelState = (InternalEObject)sfParallelState;
-			sfParallelState = (de.uni_paderborn.fujaba.simulink.model.stateflow.State)eResolveProxy(oldSfParallelState);
+			sfParallelState = (State)eResolveProxy(oldSfParallelState);
 			if (sfParallelState != oldSfParallelState) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BehaviorPackage.SC_REGION2SF_PARALLEL__SF_PARALLEL_STATE, oldSfParallelState, sfParallelState));
@@ -144,7 +144,7 @@ public class ScRegion2sfParallelImpl extends AbstractContainerCorrespondenceNode
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.simulink.model.stateflow.State basicGetSfParallelState() {
+	public State basicGetSfParallelState() {
 		return sfParallelState;
 	}
 
@@ -153,8 +153,8 @@ public class ScRegion2sfParallelImpl extends AbstractContainerCorrespondenceNode
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSfParallelState(de.uni_paderborn.fujaba.simulink.model.stateflow.State newSfParallelState) {
-		de.uni_paderborn.fujaba.simulink.model.stateflow.State oldSfParallelState = sfParallelState;
+	public void setSfParallelState(State newSfParallelState) {
+		State oldSfParallelState = sfParallelState;
 		sfParallelState = newSfParallelState;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BehaviorPackage.SC_REGION2SF_PARALLEL__SF_PARALLEL_STATE, oldSfParallelState, sfParallelState));
@@ -231,7 +231,7 @@ public class ScRegion2sfParallelImpl extends AbstractContainerCorrespondenceNode
 				setScRegion((Region)newValue);
 				return;
 			case BehaviorPackage.SC_REGION2SF_PARALLEL__SF_PARALLEL_STATE:
-				setSfParallelState((de.uni_paderborn.fujaba.simulink.model.stateflow.State)newValue);
+				setSfParallelState((State)newValue);
 				return;
 			case BehaviorPackage.SC_REGION2SF_PARALLEL__SC_REG_RTSC:
 				setScRegRtsc((RealtimeStatechart)newValue);
@@ -252,7 +252,7 @@ public class ScRegion2sfParallelImpl extends AbstractContainerCorrespondenceNode
 				setScRegion((Region)null);
 				return;
 			case BehaviorPackage.SC_REGION2SF_PARALLEL__SF_PARALLEL_STATE:
-				setSfParallelState((de.uni_paderborn.fujaba.simulink.model.stateflow.State)null);
+				setSfParallelState((State)null);
 				return;
 			case BehaviorPackage.SC_REGION2SF_PARALLEL__SC_REG_RTSC:
 				setScRegRtsc((RealtimeStatechart)null);

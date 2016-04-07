@@ -68,12 +68,12 @@ public interface scOp2sfEmbFunc extends AbstractContainerCorrespondenceNode {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Sf Emb Func</em>' reference.
-	 * @see #setSfEmbFunc(de.uni_paderborn.fujaba.simulink.model.stateflow.EmbeddedFunction)
+	 * @see #setSfEmbFunc(EmbeddedFunction)
 	 * @see org.muml.simulink.adapter.corrmodel.behavior.BehaviorPackage#getscOp2sfEmbFunc_SfEmbFunc()
 	 * @model
 	 * @generated
 	 */
-	de.uni_paderborn.fujaba.simulink.model.stateflow.EmbeddedFunction getSfEmbFunc();
+	EmbeddedFunction getSfEmbFunc();
 
 	/**
 	 * Sets the value of the '{@link org.muml.simulink.adapter.corrmodel.behavior.scOp2sfEmbFunc#getSfEmbFunc <em>Sf Emb Func</em>}' reference.
@@ -83,7 +83,7 @@ public interface scOp2sfEmbFunc extends AbstractContainerCorrespondenceNode {
 	 * @see #getSfEmbFunc()
 	 * @generated
 	 */
-	void setSfEmbFunc(de.uni_paderborn.fujaba.simulink.model.stateflow.EmbeddedFunction value);
+	void setSfEmbFunc(EmbeddedFunction value);
 
 	/**
 	 * Returns the value of the '<em><b>Sc Annotation</b></em>' reference.

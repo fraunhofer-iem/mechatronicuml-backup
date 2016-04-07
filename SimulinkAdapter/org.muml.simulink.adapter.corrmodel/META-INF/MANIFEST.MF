@@ -9,17 +9,10 @@ Bundle-Vendor: Software Engineering Group,
  University of Paderborn
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: corrmodel,
- corrmodel.behavior,
- corrmodel.behavior.impl,
- corrmodel.behavior.util,
- corrmodel.impl,
- corrmodel.util,
- org.muml.simulink.adapter.corrmodel,
+Export-Package: org.muml.simulink.adapter.corrmodel,
  org.muml.simulink.adapter.corrmodel.behavior,
  org.muml.simulink.adapter.corrmodel.behavior.impl,
  org.muml.simulink.adapter.corrmodel.behavior.util,
- org.muml.simulink.adapter.corrmodel.fujaba2simulink,
  org.muml.simulink.adapter.corrmodel.impl,
  org.muml.simulink.adapter.corrmodel.util
 Require-Bundle: org.eclipse.core.runtime,

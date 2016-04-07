@@ -52,7 +52,7 @@ public class scAction2sfActionImpl extends AbstractContainerCorrespondenceNodeIm
 	 * @generated
 	 * @ordered
 	 */
-	protected de.uni_paderborn.fujaba.simulink.model.stateflow.Action sfAction;
+	protected org.muml.simulink.stateflow.Action sfAction;
 
 	/**
 	 * The cached value of the '{@link #getScActionExpr() <em>Sc Action Expr</em>}' reference.
@@ -126,10 +126,10 @@ public class scAction2sfActionImpl extends AbstractContainerCorrespondenceNodeIm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.simulink.model.stateflow.Action getSfAction() {
+	public org.muml.simulink.stateflow.Action getSfAction() {
 		if (sfAction != null && ((EObject)sfAction).eIsProxy()) {
 			InternalEObject oldSfAction = (InternalEObject)sfAction;
-			sfAction = (de.uni_paderborn.fujaba.simulink.model.stateflow.Action)eResolveProxy(oldSfAction);
+			sfAction = (org.muml.simulink.stateflow.Action)eResolveProxy(oldSfAction);
 			if (sfAction != oldSfAction) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BehaviorPackage.SC_ACTION2SF_ACTION__SF_ACTION, oldSfAction, sfAction));
@@ -143,7 +143,7 @@ public class scAction2sfActionImpl extends AbstractContainerCorrespondenceNodeIm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.simulink.model.stateflow.Action basicGetSfAction() {
+	public org.muml.simulink.stateflow.Action basicGetSfAction() {
 		return sfAction;
 	}
 
@@ -152,8 +152,8 @@ public class scAction2sfActionImpl extends AbstractContainerCorrespondenceNodeIm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSfAction(de.uni_paderborn.fujaba.simulink.model.stateflow.Action newSfAction) {
-		de.uni_paderborn.fujaba.simulink.model.stateflow.Action oldSfAction = sfAction;
+	public void setSfAction(org.muml.simulink.stateflow.Action newSfAction) {
+		org.muml.simulink.stateflow.Action oldSfAction = sfAction;
 		sfAction = newSfAction;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BehaviorPackage.SC_ACTION2SF_ACTION__SF_ACTION, oldSfAction, sfAction));
@@ -230,7 +230,7 @@ public class scAction2sfActionImpl extends AbstractContainerCorrespondenceNodeIm
 				setScAction((Action)newValue);
 				return;
 			case BehaviorPackage.SC_ACTION2SF_ACTION__SF_ACTION:
-				setSfAction((de.uni_paderborn.fujaba.simulink.model.stateflow.Action)newValue);
+				setSfAction((org.muml.simulink.stateflow.Action)newValue);
 				return;
 			case BehaviorPackage.SC_ACTION2SF_ACTION__SC_ACTION_EXPR:
 				setScActionExpr((Expression)newValue);
@@ -251,7 +251,7 @@ public class scAction2sfActionImpl extends AbstractContainerCorrespondenceNodeIm
 				setScAction((Action)null);
 				return;
 			case BehaviorPackage.SC_ACTION2SF_ACTION__SF_ACTION:
-				setSfAction((de.uni_paderborn.fujaba.simulink.model.stateflow.Action)null);
+				setSfAction((org.muml.simulink.stateflow.Action)null);
 				return;
 			case BehaviorPackage.SC_ACTION2SF_ACTION__SC_ACTION_EXPR:
 				setScActionExpr((Expression)null);

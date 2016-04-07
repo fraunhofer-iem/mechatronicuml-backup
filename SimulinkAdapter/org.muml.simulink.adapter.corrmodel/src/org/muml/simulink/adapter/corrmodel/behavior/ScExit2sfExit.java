@@ -120,12 +120,12 @@ public interface ScExit2sfExit extends AbstractContainerCorrespondenceNode {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Sf Exit Action</em>' reference.
-	 * @see #setSfExitAction(de.uni_paderborn.fujaba.simulink.model.stateflow.Action)
+	 * @see #setSfExitAction(org.muml.simulink.stateflow.Action)
 	 * @see org.muml.simulink.adapter.corrmodel.behavior.BehaviorPackage#getScExit2sfExit_SfExitAction()
 	 * @model
 	 * @generated
 	 */
-	de.uni_paderborn.fujaba.simulink.model.stateflow.Action getSfExitAction();
+	org.muml.simulink.stateflow.Action getSfExitAction();
 
 	/**
 	 * Sets the value of the '{@link org.muml.simulink.adapter.corrmodel.behavior.ScExit2sfExit#getSfExitAction <em>Sf Exit Action</em>}' reference.
@@ -135,7 +135,7 @@ public interface ScExit2sfExit extends AbstractContainerCorrespondenceNode {
 	 * @see #getSfExitAction()
 	 * @generated
 	 */
-	void setSfExitAction(de.uni_paderborn.fujaba.simulink.model.stateflow.Action value);
+	void setSfExitAction(org.muml.simulink.stateflow.Action value);
 
 	/**
 	 * Returns the value of the '<em><b>Sc Clock</b></em>' reference.

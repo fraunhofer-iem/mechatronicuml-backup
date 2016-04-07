@@ -63,7 +63,7 @@ public class MT_Par2MTDImpl extends AbstractContainerCorrespondenceNodeImpl impl
 	 * @generated
 	 * @ordered
 	 */
-	protected de.uni_paderborn.fujaba.simulink.model.stateflow.Data data;
+	protected Data data;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -165,10 +165,10 @@ public class MT_Par2MTDImpl extends AbstractContainerCorrespondenceNodeImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.simulink.model.stateflow.Data getData() {
+	public Data getData() {
 		if (data != null && ((EObject)data).eIsProxy()) {
 			InternalEObject oldData = (InternalEObject)data;
-			data = (de.uni_paderborn.fujaba.simulink.model.stateflow.Data)eResolveProxy(oldData);
+			data = (Data)eResolveProxy(oldData);
 			if (data != oldData) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BehaviorPackage.MT_PAR2_MTD__DATA, oldData, data));
@@ -182,7 +182,7 @@ public class MT_Par2MTDImpl extends AbstractContainerCorrespondenceNodeImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.simulink.model.stateflow.Data basicGetData() {
+	public Data basicGetData() {
 		return data;
 	}
 
@@ -191,8 +191,8 @@ public class MT_Par2MTDImpl extends AbstractContainerCorrespondenceNodeImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setData(de.uni_paderborn.fujaba.simulink.model.stateflow.Data newData) {
-		de.uni_paderborn.fujaba.simulink.model.stateflow.Data oldData = data;
+	public void setData(Data newData) {
+		Data oldData = data;
 		data = newData;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BehaviorPackage.MT_PAR2_MTD__DATA, oldData, data));
@@ -234,7 +234,7 @@ public class MT_Par2MTDImpl extends AbstractContainerCorrespondenceNodeImpl impl
 				setPar((Parameter)newValue);
 				return;
 			case BehaviorPackage.MT_PAR2_MTD__DATA:
-				setData((de.uni_paderborn.fujaba.simulink.model.stateflow.Data)newValue);
+				setData((Data)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -255,7 +255,7 @@ public class MT_Par2MTDImpl extends AbstractContainerCorrespondenceNodeImpl impl
 				setPar((Parameter)null);
 				return;
 			case BehaviorPackage.MT_PAR2_MTD__DATA:
-				setData((de.uni_paderborn.fujaba.simulink.model.stateflow.Data)null);
+				setData((Data)null);
 				return;
 		}
 		super.eUnset(featureID);

@@ -177,7 +177,7 @@ public class Fujaba2simulinkPackageImpl extends EPackageImpl implements Fujaba2s
 		// Initialize simple dependencies
 		EcorePackage.eINSTANCE.eClass();
 		PimPackage.eINSTANCE.eClass();
-		de.uni_paderborn.fujaba.simulink.model.SimulinkPackage.eINSTANCE.eClass();
+		SimulinkPackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
 		BehaviorPackageImpl theBehaviorPackage = (BehaviorPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(org.muml.simulink.adapter.corrmodel.behavior.BehaviorPackage.eNS_URI) instanceof BehaviorPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(org.muml.simulink.adapter.corrmodel.behavior.BehaviorPackage.eNS_URI) : org.muml.simulink.adapter.corrmodel.behavior.BehaviorPackage.eINSTANCE);
@@ -955,14 +955,14 @@ public class Fujaba2simulinkPackageImpl extends EPackageImpl implements Fujaba2s
 		// Obtain other dependent packages
 		org.muml.simulink.adapter.corrmodel.behavior.BehaviorPackage theBehaviorPackage = (org.muml.simulink.adapter.corrmodel.behavior.BehaviorPackage)EPackage.Registry.INSTANCE.getEPackage(org.muml.simulink.adapter.corrmodel.behavior.BehaviorPackage.eNS_URI);
 		ModelinstancePackage theModelinstancePackage = (ModelinstancePackage)EPackage.Registry.INSTANCE.getEPackage(ModelinstancePackage.eNS_URI);
-		de.uni_paderborn.fujaba.simulink.model.SimulinkPackage theSimulinkPackage = (de.uni_paderborn.fujaba.simulink.model.SimulinkPackage)EPackage.Registry.INSTANCE.getEPackage(de.uni_paderborn.fujaba.simulink.model.SimulinkPackage.eNS_URI);
+		SimulinkPackage theSimulinkPackage = (SimulinkPackage)EPackage.Registry.INSTANCE.getEPackage(SimulinkPackage.eNS_URI);
 		InstancePackage theInstancePackage = (InstancePackage)EPackage.Registry.INSTANCE.getEPackage(InstancePackage.eNS_URI);
 		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
-		de.uni_paderborn.fujaba.simulink.model.stateflow.StateflowPackage theStateflowPackage = (de.uni_paderborn.fujaba.simulink.model.stateflow.StateflowPackage)EPackage.Registry.INSTANCE.getEPackage(de.uni_paderborn.fujaba.simulink.model.stateflow.StateflowPackage.eNS_URI);
+		StateflowPackage theStateflowPackage = (StateflowPackage)EPackage.Registry.INSTANCE.getEPackage(StateflowPackage.eNS_URI);
 		ComponentPackage theComponentPackage = (ComponentPackage)EPackage.Registry.INSTANCE.getEPackage(ComponentPackage.eNS_URI);
 		MsgtypePackage theMsgtypePackage = (MsgtypePackage)EPackage.Registry.INSTANCE.getEPackage(MsgtypePackage.eNS_URI);
 		TypesPackage theTypesPackage = (TypesPackage)EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI);
-		de.uni_paderborn.fujaba.simulink.model.msglib.MsglibPackage theMsglibPackage = (de.uni_paderborn.fujaba.simulink.model.msglib.MsglibPackage)EPackage.Registry.INSTANCE.getEPackage(de.uni_paderborn.fujaba.simulink.model.msglib.MsglibPackage.eNS_URI);
+		MsglibPackage theMsglibPackage = (MsglibPackage)EPackage.Registry.INSTANCE.getEPackage(MsglibPackage.eNS_URI);
 
 		// Add subpackages
 		getESubpackages().add(theBehaviorPackage);

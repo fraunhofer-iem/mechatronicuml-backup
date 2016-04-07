@@ -49,7 +49,7 @@ public class CompInst2LibRefImpl extends AbstractContainerCorrespondenceNodeImpl
 	 * @generated
 	 * @ordered
 	 */
-	protected de.uni_paderborn.fujaba.simulink.model.LibraryReference libRef;
+	protected LibraryReference libRef;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -113,10 +113,10 @@ public class CompInst2LibRefImpl extends AbstractContainerCorrespondenceNodeImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.simulink.model.LibraryReference getLibRef() {
+	public LibraryReference getLibRef() {
 		if (libRef != null && ((EObject)libRef).eIsProxy()) {
 			InternalEObject oldLibRef = (InternalEObject)libRef;
-			libRef = (de.uni_paderborn.fujaba.simulink.model.LibraryReference)eResolveProxy(oldLibRef);
+			libRef = (LibraryReference)eResolveProxy(oldLibRef);
 			if (libRef != oldLibRef) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Fujaba2simulinkPackage.COMP_INST2_LIB_REF__LIB_REF, oldLibRef, libRef));
@@ -130,7 +130,7 @@ public class CompInst2LibRefImpl extends AbstractContainerCorrespondenceNodeImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.simulink.model.LibraryReference basicGetLibRef() {
+	public LibraryReference basicGetLibRef() {
 		return libRef;
 	}
 
@@ -139,8 +139,8 @@ public class CompInst2LibRefImpl extends AbstractContainerCorrespondenceNodeImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setLibRef(de.uni_paderborn.fujaba.simulink.model.LibraryReference newLibRef) {
-		de.uni_paderborn.fujaba.simulink.model.LibraryReference oldLibRef = libRef;
+	public void setLibRef(LibraryReference newLibRef) {
+		LibraryReference oldLibRef = libRef;
 		libRef = newLibRef;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Fujaba2simulinkPackage.COMP_INST2_LIB_REF__LIB_REF, oldLibRef, libRef));
@@ -176,7 +176,7 @@ public class CompInst2LibRefImpl extends AbstractContainerCorrespondenceNodeImpl
 				setCompInst((ComponentInstance)newValue);
 				return;
 			case Fujaba2simulinkPackage.COMP_INST2_LIB_REF__LIB_REF:
-				setLibRef((de.uni_paderborn.fujaba.simulink.model.LibraryReference)newValue);
+				setLibRef((LibraryReference)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -194,7 +194,7 @@ public class CompInst2LibRefImpl extends AbstractContainerCorrespondenceNodeImpl
 				setCompInst((ComponentInstance)null);
 				return;
 			case Fujaba2simulinkPackage.COMP_INST2_LIB_REF__LIB_REF:
-				setLibRef((de.uni_paderborn.fujaba.simulink.model.LibraryReference)null);
+				setLibRef((LibraryReference)null);
 				return;
 		}
 		super.eUnset(featureID);

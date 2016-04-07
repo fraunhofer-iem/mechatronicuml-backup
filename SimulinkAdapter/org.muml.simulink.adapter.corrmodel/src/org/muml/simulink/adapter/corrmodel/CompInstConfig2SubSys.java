@@ -76,12 +76,12 @@ public interface CompInstConfig2SubSys extends AbstractContainerCorrespondenceNo
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Sub Sys</em>' reference.
-	 * @see #setSubSys(de.uni_paderborn.fujaba.simulink.model.SubSystem)
+	 * @see #setSubSys(SubSystem)
 	 * @see org.muml.simulink.adapter.corrmodel.Fujaba2simulinkPackage#getCompInstConfig2SubSys_SubSys()
 	 * @model
 	 * @generated
 	 */
-	de.uni_paderborn.fujaba.simulink.model.SubSystem getSubSys();
+	SubSystem getSubSys();
 
 	/**
 	 * Sets the value of the '{@link org.muml.simulink.adapter.corrmodel.CompInstConfig2SubSys#getSubSys <em>Sub Sys</em>}' reference.
@@ -91,7 +91,7 @@ public interface CompInstConfig2SubSys extends AbstractContainerCorrespondenceNo
 	 * @see #getSubSys()
 	 * @generated
 	 */
-	void setSubSys(de.uni_paderborn.fujaba.simulink.model.SubSystem value);
+	void setSubSys(SubSystem value);
 
 	/**
 	 * Returns the value of the '<em><b>Communication Switch</b></em>' reference.
@@ -102,12 +102,12 @@ public interface CompInstConfig2SubSys extends AbstractContainerCorrespondenceNo
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Communication Switch</em>' reference.
-	 * @see #setCommunicationSwitch(de.uni_paderborn.fujaba.simulink.model.SubSystem)
+	 * @see #setCommunicationSwitch(SubSystem)
 	 * @see org.muml.simulink.adapter.corrmodel.Fujaba2simulinkPackage#getCompInstConfig2SubSys_CommunicationSwitch()
 	 * @model
 	 * @generated
 	 */
-	de.uni_paderborn.fujaba.simulink.model.SubSystem getCommunicationSwitch();
+	SubSystem getCommunicationSwitch();
 
 	/**
 	 * Sets the value of the '{@link org.muml.simulink.adapter.corrmodel.CompInstConfig2SubSys#getCommunicationSwitch <em>Communication Switch</em>}' reference.
@@ -117,7 +117,7 @@ public interface CompInstConfig2SubSys extends AbstractContainerCorrespondenceNo
 	 * @see #getCommunicationSwitch()
 	 * @generated
 	 */
-	void setCommunicationSwitch(de.uni_paderborn.fujaba.simulink.model.SubSystem value);
+	void setCommunicationSwitch(SubSystem value);
 
 	/**
 	 * Returns the value of the '<em><b>Bus Creator</b></em>' reference.
@@ -128,12 +128,12 @@ public interface CompInstConfig2SubSys extends AbstractContainerCorrespondenceNo
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Bus Creator</em>' reference.
-	 * @see #setBusCreator(de.uni_paderborn.fujaba.simulink.model.BusCreator)
+	 * @see #setBusCreator(BusCreator)
 	 * @see org.muml.simulink.adapter.corrmodel.Fujaba2simulinkPackage#getCompInstConfig2SubSys_BusCreator()
 	 * @model
 	 * @generated
 	 */
-	de.uni_paderborn.fujaba.simulink.model.BusCreator getBusCreator();
+	BusCreator getBusCreator();
 
 	/**
 	 * Sets the value of the '{@link org.muml.simulink.adapter.corrmodel.CompInstConfig2SubSys#getBusCreator <em>Bus Creator</em>}' reference.
@@ -143,7 +143,7 @@ public interface CompInstConfig2SubSys extends AbstractContainerCorrespondenceNo
 	 * @see #getBusCreator()
 	 * @generated
 	 */
-	void setBusCreator(de.uni_paderborn.fujaba.simulink.model.BusCreator value);
+	void setBusCreator(BusCreator value);
 
 	/**
 	 * Returns the value of the '<em><b>Bus Selector</b></em>' reference.
@@ -154,12 +154,12 @@ public interface CompInstConfig2SubSys extends AbstractContainerCorrespondenceNo
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Bus Selector</em>' reference.
-	 * @see #setBusSelector(de.uni_paderborn.fujaba.simulink.model.BusSelector)
+	 * @see #setBusSelector(BusSelector)
 	 * @see org.muml.simulink.adapter.corrmodel.Fujaba2simulinkPackage#getCompInstConfig2SubSys_BusSelector()
 	 * @model
 	 * @generated
 	 */
-	de.uni_paderborn.fujaba.simulink.model.BusSelector getBusSelector();
+	BusSelector getBusSelector();
 
 	/**
 	 * Sets the value of the '{@link org.muml.simulink.adapter.corrmodel.CompInstConfig2SubSys#getBusSelector <em>Bus Selector</em>}' reference.
@@ -169,7 +169,7 @@ public interface CompInstConfig2SubSys extends AbstractContainerCorrespondenceNo
 	 * @see #getBusSelector()
 	 * @generated
 	 */
-	void setBusSelector(de.uni_paderborn.fujaba.simulink.model.BusSelector value);
+	void setBusSelector(BusSelector value);
 
 	/**
 	 * Returns the value of the '<em><b>Bus Creator Out Port</b></em>' reference.
@@ -180,12 +180,12 @@ public interface CompInstConfig2SubSys extends AbstractContainerCorrespondenceNo
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Bus Creator Out Port</em>' reference.
-	 * @see #setBusCreatorOutPort(de.uni_paderborn.fujaba.simulink.model.OutPortBlock)
+	 * @see #setBusCreatorOutPort(OutPortBlock)
 	 * @see org.muml.simulink.adapter.corrmodel.Fujaba2simulinkPackage#getCompInstConfig2SubSys_BusCreatorOutPort()
 	 * @model
 	 * @generated
 	 */
-	de.uni_paderborn.fujaba.simulink.model.OutPortBlock getBusCreatorOutPort();
+	OutPortBlock getBusCreatorOutPort();
 
 	/**
 	 * Sets the value of the '{@link org.muml.simulink.adapter.corrmodel.CompInstConfig2SubSys#getBusCreatorOutPort <em>Bus Creator Out Port</em>}' reference.
@@ -195,7 +195,7 @@ public interface CompInstConfig2SubSys extends AbstractContainerCorrespondenceNo
 	 * @see #getBusCreatorOutPort()
 	 * @generated
 	 */
-	void setBusCreatorOutPort(de.uni_paderborn.fujaba.simulink.model.OutPortBlock value);
+	void setBusCreatorOutPort(OutPortBlock value);
 
 	/**
 	 * Returns the value of the '<em><b>Bus Selector In Port</b></em>' reference.
@@ -206,12 +206,12 @@ public interface CompInstConfig2SubSys extends AbstractContainerCorrespondenceNo
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Bus Selector In Port</em>' reference.
-	 * @see #setBusSelectorInPort(de.uni_paderborn.fujaba.simulink.model.InPortBlock)
+	 * @see #setBusSelectorInPort(InPortBlock)
 	 * @see org.muml.simulink.adapter.corrmodel.Fujaba2simulinkPackage#getCompInstConfig2SubSys_BusSelectorInPort()
 	 * @model
 	 * @generated
 	 */
-	de.uni_paderborn.fujaba.simulink.model.InPortBlock getBusSelectorInPort();
+	InPortBlock getBusSelectorInPort();
 
 	/**
 	 * Sets the value of the '{@link org.muml.simulink.adapter.corrmodel.CompInstConfig2SubSys#getBusSelectorInPort <em>Bus Selector In Port</em>}' reference.
@@ -221,7 +221,7 @@ public interface CompInstConfig2SubSys extends AbstractContainerCorrespondenceNo
 	 * @see #getBusSelectorInPort()
 	 * @generated
 	 */
-	void setBusSelectorInPort(de.uni_paderborn.fujaba.simulink.model.InPortBlock value);
+	void setBusSelectorInPort(InPortBlock value);
 
 	/**
 	 * Returns the value of the '<em><b>Bus Of Busses</b></em>' reference.
@@ -232,12 +232,12 @@ public interface CompInstConfig2SubSys extends AbstractContainerCorrespondenceNo
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Bus Of Busses</em>' reference.
-	 * @see #setBusOfBusses(de.uni_paderborn.fujaba.simulink.model.Line)
+	 * @see #setBusOfBusses(Line)
 	 * @see org.muml.simulink.adapter.corrmodel.Fujaba2simulinkPackage#getCompInstConfig2SubSys_BusOfBusses()
 	 * @model
 	 * @generated
 	 */
-	de.uni_paderborn.fujaba.simulink.model.Line getBusOfBusses();
+	Line getBusOfBusses();
 
 	/**
 	 * Sets the value of the '{@link org.muml.simulink.adapter.corrmodel.CompInstConfig2SubSys#getBusOfBusses <em>Bus Of Busses</em>}' reference.
@@ -247,7 +247,7 @@ public interface CompInstConfig2SubSys extends AbstractContainerCorrespondenceNo
 	 * @see #getBusOfBusses()
 	 * @generated
 	 */
-	void setBusOfBusses(de.uni_paderborn.fujaba.simulink.model.Line value);
+	void setBusOfBusses(Line value);
 
 	/**
 	 * Returns the value of the '<em><b>CS in Port</b></em>' reference.
@@ -258,12 +258,12 @@ public interface CompInstConfig2SubSys extends AbstractContainerCorrespondenceNo
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>CS in Port</em>' reference.
-	 * @see #setCS_inPort(de.uni_paderborn.fujaba.simulink.model.InPortBlock)
+	 * @see #setCS_inPort(InPortBlock)
 	 * @see org.muml.simulink.adapter.corrmodel.Fujaba2simulinkPackage#getCompInstConfig2SubSys_CS_inPort()
 	 * @model
 	 * @generated
 	 */
-	de.uni_paderborn.fujaba.simulink.model.InPortBlock getCS_inPort();
+	InPortBlock getCS_inPort();
 
 	/**
 	 * Sets the value of the '{@link org.muml.simulink.adapter.corrmodel.CompInstConfig2SubSys#getCS_inPort <em>CS in Port</em>}' reference.
@@ -273,7 +273,7 @@ public interface CompInstConfig2SubSys extends AbstractContainerCorrespondenceNo
 	 * @see #getCS_inPort()
 	 * @generated
 	 */
-	void setCS_inPort(de.uni_paderborn.fujaba.simulink.model.InPortBlock value);
+	void setCS_inPort(InPortBlock value);
 
 	/**
 	 * Returns the value of the '<em><b>CS out Port</b></em>' reference.
@@ -284,12 +284,12 @@ public interface CompInstConfig2SubSys extends AbstractContainerCorrespondenceNo
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>CS out Port</em>' reference.
-	 * @see #setCS_outPort(de.uni_paderborn.fujaba.simulink.model.OutPortBlock)
+	 * @see #setCS_outPort(OutPortBlock)
 	 * @see org.muml.simulink.adapter.corrmodel.Fujaba2simulinkPackage#getCompInstConfig2SubSys_CS_outPort()
 	 * @model
 	 * @generated
 	 */
-	de.uni_paderborn.fujaba.simulink.model.OutPortBlock getCS_outPort();
+	OutPortBlock getCS_outPort();
 
 	/**
 	 * Sets the value of the '{@link org.muml.simulink.adapter.corrmodel.CompInstConfig2SubSys#getCS_outPort <em>CS out Port</em>}' reference.
@@ -299,7 +299,7 @@ public interface CompInstConfig2SubSys extends AbstractContainerCorrespondenceNo
 	 * @see #getCS_outPort()
 	 * @generated
 	 */
-	void setCS_outPort(de.uni_paderborn.fujaba.simulink.model.OutPortBlock value);
+	void setCS_outPort(OutPortBlock value);
 
 	/**
 	 * Returns the value of the '<em><b>Comp Inst Name</b></em>' attribute.

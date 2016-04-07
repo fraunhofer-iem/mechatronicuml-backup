@@ -120,12 +120,12 @@ public interface scAsyncRec2sfAsyncGuard extends AbstractContainerCorrespondence
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Async Rec Guard</em>' reference.
-	 * @see #setAsyncRecGuard(de.uni_paderborn.fujaba.simulink.model.stateflow.Action)
+	 * @see #setAsyncRecGuard(Action)
 	 * @see org.muml.simulink.adapter.corrmodel.behavior.BehaviorPackage#getscAsyncRec2sfAsyncGuard_AsyncRecGuard()
 	 * @model
 	 * @generated
 	 */
-	de.uni_paderborn.fujaba.simulink.model.stateflow.Action getAsyncRecGuard();
+	Action getAsyncRecGuard();
 
 	/**
 	 * Sets the value of the '{@link org.muml.simulink.adapter.corrmodel.behavior.scAsyncRec2sfAsyncGuard#getAsyncRecGuard <em>Async Rec Guard</em>}' reference.
@@ -135,6 +135,6 @@ public interface scAsyncRec2sfAsyncGuard extends AbstractContainerCorrespondence
 	 * @see #getAsyncRecGuard()
 	 * @generated
 	 */
-	void setAsyncRecGuard(de.uni_paderborn.fujaba.simulink.model.stateflow.Action value);
+	void setAsyncRecGuard(Action value);
 
 } // scAsyncRec2sfAsyncGuard

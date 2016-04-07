@@ -70,7 +70,7 @@ public class StructComp2SubSysImpl extends AbstractContainerCorrespondenceNodeIm
 	 * @generated
 	 * @ordered
 	 */
-	protected de.uni_paderborn.fujaba.simulink.model.SubSystem subSys;
+	protected SubSystem subSys;
 
 	/**
 	 * The cached value of the '{@link #getCommunicationSwitch() <em>Communication Switch</em>}' reference.
@@ -80,7 +80,7 @@ public class StructComp2SubSysImpl extends AbstractContainerCorrespondenceNodeIm
 	 * @generated
 	 * @ordered
 	 */
-	protected de.uni_paderborn.fujaba.simulink.model.SubSystem communicationSwitch;
+	protected SubSystem communicationSwitch;
 
 	/**
 	 * The cached value of the '{@link #getBusCreator() <em>Bus Creator</em>}' reference.
@@ -90,7 +90,7 @@ public class StructComp2SubSysImpl extends AbstractContainerCorrespondenceNodeIm
 	 * @generated
 	 * @ordered
 	 */
-	protected de.uni_paderborn.fujaba.simulink.model.BusCreator busCreator;
+	protected BusCreator busCreator;
 
 	/**
 	 * The cached value of the '{@link #getBusSelector() <em>Bus Selector</em>}' reference.
@@ -100,7 +100,7 @@ public class StructComp2SubSysImpl extends AbstractContainerCorrespondenceNodeIm
 	 * @generated
 	 * @ordered
 	 */
-	protected de.uni_paderborn.fujaba.simulink.model.BusSelector busSelector;
+	protected BusSelector busSelector;
 
 	/**
 	 * The cached value of the '{@link #getBusCreatorOutPort() <em>Bus Creator Out Port</em>}' reference.
@@ -110,7 +110,7 @@ public class StructComp2SubSysImpl extends AbstractContainerCorrespondenceNodeIm
 	 * @generated
 	 * @ordered
 	 */
-	protected de.uni_paderborn.fujaba.simulink.model.OutPortBlock busCreatorOutPort;
+	protected OutPortBlock busCreatorOutPort;
 
 	/**
 	 * The cached value of the '{@link #getBusSelectorInPort() <em>Bus Selector In Port</em>}' reference.
@@ -120,7 +120,7 @@ public class StructComp2SubSysImpl extends AbstractContainerCorrespondenceNodeIm
 	 * @generated
 	 * @ordered
 	 */
-	protected de.uni_paderborn.fujaba.simulink.model.InPortBlock busSelectorInPort;
+	protected InPortBlock busSelectorInPort;
 
 	/**
 	 * The cached value of the '{@link #getBusOfBusses() <em>Bus Of Busses</em>}' reference.
@@ -130,7 +130,7 @@ public class StructComp2SubSysImpl extends AbstractContainerCorrespondenceNodeIm
 	 * @generated
 	 * @ordered
 	 */
-	protected de.uni_paderborn.fujaba.simulink.model.Line busOfBusses;
+	protected Line busOfBusses;
 
 	/**
 	 * The cached value of the '{@link #getCS_inPort() <em>CS in Port</em>}' reference.
@@ -140,7 +140,7 @@ public class StructComp2SubSysImpl extends AbstractContainerCorrespondenceNodeIm
 	 * @generated
 	 * @ordered
 	 */
-	protected de.uni_paderborn.fujaba.simulink.model.InPortBlock cS_inPort;
+	protected InPortBlock cS_inPort;
 
 	/**
 	 * The cached value of the '{@link #getCS_outPort() <em>CS out Port</em>}' reference.
@@ -150,7 +150,7 @@ public class StructComp2SubSysImpl extends AbstractContainerCorrespondenceNodeIm
 	 * @generated
 	 * @ordered
 	 */
-	protected de.uni_paderborn.fujaba.simulink.model.OutPortBlock cS_outPort;
+	protected OutPortBlock cS_outPort;
 
 	/**
 	 * The default value of the '{@link #getCompInstName() <em>Comp Inst Name</em>}' attribute.
@@ -190,7 +190,7 @@ public class StructComp2SubSysImpl extends AbstractContainerCorrespondenceNodeIm
 	 * @generated
 	 * @ordered
 	 */
-	protected de.uni_paderborn.fujaba.simulink.model.LibraryReference libraryReference;
+	protected LibraryReference libraryReference;
 
 	/**
 	 * The cached value of the '{@link #getComp() <em>Comp</em>}' reference.
@@ -264,10 +264,10 @@ public class StructComp2SubSysImpl extends AbstractContainerCorrespondenceNodeIm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.simulink.model.SubSystem getSubSys() {
+	public SubSystem getSubSys() {
 		if (subSys != null && ((EObject)subSys).eIsProxy()) {
 			InternalEObject oldSubSys = (InternalEObject)subSys;
-			subSys = (de.uni_paderborn.fujaba.simulink.model.SubSystem)eResolveProxy(oldSubSys);
+			subSys = (SubSystem)eResolveProxy(oldSubSys);
 			if (subSys != oldSubSys) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Fujaba2simulinkPackage.STRUCT_COMP2_SUB_SYS__SUB_SYS, oldSubSys, subSys));
@@ -281,7 +281,7 @@ public class StructComp2SubSysImpl extends AbstractContainerCorrespondenceNodeIm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.simulink.model.SubSystem basicGetSubSys() {
+	public SubSystem basicGetSubSys() {
 		return subSys;
 	}
 
@@ -290,8 +290,8 @@ public class StructComp2SubSysImpl extends AbstractContainerCorrespondenceNodeIm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSubSys(de.uni_paderborn.fujaba.simulink.model.SubSystem newSubSys) {
-		de.uni_paderborn.fujaba.simulink.model.SubSystem oldSubSys = subSys;
+	public void setSubSys(SubSystem newSubSys) {
+		SubSystem oldSubSys = subSys;
 		subSys = newSubSys;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Fujaba2simulinkPackage.STRUCT_COMP2_SUB_SYS__SUB_SYS, oldSubSys, subSys));
@@ -302,10 +302,10 @@ public class StructComp2SubSysImpl extends AbstractContainerCorrespondenceNodeIm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.simulink.model.SubSystem getCommunicationSwitch() {
+	public SubSystem getCommunicationSwitch() {
 		if (communicationSwitch != null && ((EObject)communicationSwitch).eIsProxy()) {
 			InternalEObject oldCommunicationSwitch = (InternalEObject)communicationSwitch;
-			communicationSwitch = (de.uni_paderborn.fujaba.simulink.model.SubSystem)eResolveProxy(oldCommunicationSwitch);
+			communicationSwitch = (SubSystem)eResolveProxy(oldCommunicationSwitch);
 			if (communicationSwitch != oldCommunicationSwitch) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Fujaba2simulinkPackage.STRUCT_COMP2_SUB_SYS__COMMUNICATION_SWITCH, oldCommunicationSwitch, communicationSwitch));
@@ -319,7 +319,7 @@ public class StructComp2SubSysImpl extends AbstractContainerCorrespondenceNodeIm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.simulink.model.SubSystem basicGetCommunicationSwitch() {
+	public SubSystem basicGetCommunicationSwitch() {
 		return communicationSwitch;
 	}
 
@@ -328,8 +328,8 @@ public class StructComp2SubSysImpl extends AbstractContainerCorrespondenceNodeIm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setCommunicationSwitch(de.uni_paderborn.fujaba.simulink.model.SubSystem newCommunicationSwitch) {
-		de.uni_paderborn.fujaba.simulink.model.SubSystem oldCommunicationSwitch = communicationSwitch;
+	public void setCommunicationSwitch(SubSystem newCommunicationSwitch) {
+		SubSystem oldCommunicationSwitch = communicationSwitch;
 		communicationSwitch = newCommunicationSwitch;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Fujaba2simulinkPackage.STRUCT_COMP2_SUB_SYS__COMMUNICATION_SWITCH, oldCommunicationSwitch, communicationSwitch));
@@ -340,10 +340,10 @@ public class StructComp2SubSysImpl extends AbstractContainerCorrespondenceNodeIm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.simulink.model.BusCreator getBusCreator() {
+	public BusCreator getBusCreator() {
 		if (busCreator != null && ((EObject)busCreator).eIsProxy()) {
 			InternalEObject oldBusCreator = (InternalEObject)busCreator;
-			busCreator = (de.uni_paderborn.fujaba.simulink.model.BusCreator)eResolveProxy(oldBusCreator);
+			busCreator = (BusCreator)eResolveProxy(oldBusCreator);
 			if (busCreator != oldBusCreator) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Fujaba2simulinkPackage.STRUCT_COMP2_SUB_SYS__BUS_CREATOR, oldBusCreator, busCreator));
@@ -357,7 +357,7 @@ public class StructComp2SubSysImpl extends AbstractContainerCorrespondenceNodeIm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.simulink.model.BusCreator basicGetBusCreator() {
+	public BusCreator basicGetBusCreator() {
 		return busCreator;
 	}
 
@@ -366,8 +366,8 @@ public class StructComp2SubSysImpl extends AbstractContainerCorrespondenceNodeIm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setBusCreator(de.uni_paderborn.fujaba.simulink.model.BusCreator newBusCreator) {
-		de.uni_paderborn.fujaba.simulink.model.BusCreator oldBusCreator = busCreator;
+	public void setBusCreator(BusCreator newBusCreator) {
+		BusCreator oldBusCreator = busCreator;
 		busCreator = newBusCreator;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Fujaba2simulinkPackage.STRUCT_COMP2_SUB_SYS__BUS_CREATOR, oldBusCreator, busCreator));
@@ -378,10 +378,10 @@ public class StructComp2SubSysImpl extends AbstractContainerCorrespondenceNodeIm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.simulink.model.BusSelector getBusSelector() {
+	public BusSelector getBusSelector() {
 		if (busSelector != null && ((EObject)busSelector).eIsProxy()) {
 			InternalEObject oldBusSelector = (InternalEObject)busSelector;
-			busSelector = (de.uni_paderborn.fujaba.simulink.model.BusSelector)eResolveProxy(oldBusSelector);
+			busSelector = (BusSelector)eResolveProxy(oldBusSelector);
 			if (busSelector != oldBusSelector) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Fujaba2simulinkPackage.STRUCT_COMP2_SUB_SYS__BUS_SELECTOR, oldBusSelector, busSelector));
@@ -395,7 +395,7 @@ public class StructComp2SubSysImpl extends AbstractContainerCorrespondenceNodeIm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.simulink.model.BusSelector basicGetBusSelector() {
+	public BusSelector basicGetBusSelector() {
 		return busSelector;
 	}
 
@@ -404,8 +404,8 @@ public class StructComp2SubSysImpl extends AbstractContainerCorrespondenceNodeIm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setBusSelector(de.uni_paderborn.fujaba.simulink.model.BusSelector newBusSelector) {
-		de.uni_paderborn.fujaba.simulink.model.BusSelector oldBusSelector = busSelector;
+	public void setBusSelector(BusSelector newBusSelector) {
+		BusSelector oldBusSelector = busSelector;
 		busSelector = newBusSelector;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Fujaba2simulinkPackage.STRUCT_COMP2_SUB_SYS__BUS_SELECTOR, oldBusSelector, busSelector));
@@ -416,10 +416,10 @@ public class StructComp2SubSysImpl extends AbstractContainerCorrespondenceNodeIm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.simulink.model.OutPortBlock getBusCreatorOutPort() {
+	public OutPortBlock getBusCreatorOutPort() {
 		if (busCreatorOutPort != null && ((EObject)busCreatorOutPort).eIsProxy()) {
 			InternalEObject oldBusCreatorOutPort = (InternalEObject)busCreatorOutPort;
-			busCreatorOutPort = (de.uni_paderborn.fujaba.simulink.model.OutPortBlock)eResolveProxy(oldBusCreatorOutPort);
+			busCreatorOutPort = (OutPortBlock)eResolveProxy(oldBusCreatorOutPort);
 			if (busCreatorOutPort != oldBusCreatorOutPort) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Fujaba2simulinkPackage.STRUCT_COMP2_SUB_SYS__BUS_CREATOR_OUT_PORT, oldBusCreatorOutPort, busCreatorOutPort));
@@ -433,7 +433,7 @@ public class StructComp2SubSysImpl extends AbstractContainerCorrespondenceNodeIm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.simulink.model.OutPortBlock basicGetBusCreatorOutPort() {
+	public OutPortBlock basicGetBusCreatorOutPort() {
 		return busCreatorOutPort;
 	}
 
@@ -442,8 +442,8 @@ public class StructComp2SubSysImpl extends AbstractContainerCorrespondenceNodeIm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setBusCreatorOutPort(de.uni_paderborn.fujaba.simulink.model.OutPortBlock newBusCreatorOutPort) {
-		de.uni_paderborn.fujaba.simulink.model.OutPortBlock oldBusCreatorOutPort = busCreatorOutPort;
+	public void setBusCreatorOutPort(OutPortBlock newBusCreatorOutPort) {
+		OutPortBlock oldBusCreatorOutPort = busCreatorOutPort;
 		busCreatorOutPort = newBusCreatorOutPort;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Fujaba2simulinkPackage.STRUCT_COMP2_SUB_SYS__BUS_CREATOR_OUT_PORT, oldBusCreatorOutPort, busCreatorOutPort));
@@ -454,10 +454,10 @@ public class StructComp2SubSysImpl extends AbstractContainerCorrespondenceNodeIm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.simulink.model.InPortBlock getBusSelectorInPort() {
+	public InPortBlock getBusSelectorInPort() {
 		if (busSelectorInPort != null && ((EObject)busSelectorInPort).eIsProxy()) {
 			InternalEObject oldBusSelectorInPort = (InternalEObject)busSelectorInPort;
-			busSelectorInPort = (de.uni_paderborn.fujaba.simulink.model.InPortBlock)eResolveProxy(oldBusSelectorInPort);
+			busSelectorInPort = (InPortBlock)eResolveProxy(oldBusSelectorInPort);
 			if (busSelectorInPort != oldBusSelectorInPort) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Fujaba2simulinkPackage.STRUCT_COMP2_SUB_SYS__BUS_SELECTOR_IN_PORT, oldBusSelectorInPort, busSelectorInPort));
@@ -471,7 +471,7 @@ public class StructComp2SubSysImpl extends AbstractContainerCorrespondenceNodeIm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.simulink.model.InPortBlock basicGetBusSelectorInPort() {
+	public InPortBlock basicGetBusSelectorInPort() {
 		return busSelectorInPort;
 	}
 
@@ -480,8 +480,8 @@ public class StructComp2SubSysImpl extends AbstractContainerCorrespondenceNodeIm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setBusSelectorInPort(de.uni_paderborn.fujaba.simulink.model.InPortBlock newBusSelectorInPort) {
-		de.uni_paderborn.fujaba.simulink.model.InPortBlock oldBusSelectorInPort = busSelectorInPort;
+	public void setBusSelectorInPort(InPortBlock newBusSelectorInPort) {
+		InPortBlock oldBusSelectorInPort = busSelectorInPort;
 		busSelectorInPort = newBusSelectorInPort;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Fujaba2simulinkPackage.STRUCT_COMP2_SUB_SYS__BUS_SELECTOR_IN_PORT, oldBusSelectorInPort, busSelectorInPort));
@@ -492,10 +492,10 @@ public class StructComp2SubSysImpl extends AbstractContainerCorrespondenceNodeIm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.simulink.model.Line getBusOfBusses() {
+	public Line getBusOfBusses() {
 		if (busOfBusses != null && ((EObject)busOfBusses).eIsProxy()) {
 			InternalEObject oldBusOfBusses = (InternalEObject)busOfBusses;
-			busOfBusses = (de.uni_paderborn.fujaba.simulink.model.Line)eResolveProxy(oldBusOfBusses);
+			busOfBusses = (Line)eResolveProxy(oldBusOfBusses);
 			if (busOfBusses != oldBusOfBusses) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Fujaba2simulinkPackage.STRUCT_COMP2_SUB_SYS__BUS_OF_BUSSES, oldBusOfBusses, busOfBusses));
@@ -509,7 +509,7 @@ public class StructComp2SubSysImpl extends AbstractContainerCorrespondenceNodeIm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.simulink.model.Line basicGetBusOfBusses() {
+	public Line basicGetBusOfBusses() {
 		return busOfBusses;
 	}
 
@@ -518,8 +518,8 @@ public class StructComp2SubSysImpl extends AbstractContainerCorrespondenceNodeIm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setBusOfBusses(de.uni_paderborn.fujaba.simulink.model.Line newBusOfBusses) {
-		de.uni_paderborn.fujaba.simulink.model.Line oldBusOfBusses = busOfBusses;
+	public void setBusOfBusses(Line newBusOfBusses) {
+		Line oldBusOfBusses = busOfBusses;
 		busOfBusses = newBusOfBusses;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Fujaba2simulinkPackage.STRUCT_COMP2_SUB_SYS__BUS_OF_BUSSES, oldBusOfBusses, busOfBusses));
@@ -530,10 +530,10 @@ public class StructComp2SubSysImpl extends AbstractContainerCorrespondenceNodeIm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.simulink.model.InPortBlock getCS_inPort() {
+	public InPortBlock getCS_inPort() {
 		if (cS_inPort != null && ((EObject)cS_inPort).eIsProxy()) {
 			InternalEObject oldCS_inPort = (InternalEObject)cS_inPort;
-			cS_inPort = (de.uni_paderborn.fujaba.simulink.model.InPortBlock)eResolveProxy(oldCS_inPort);
+			cS_inPort = (InPortBlock)eResolveProxy(oldCS_inPort);
 			if (cS_inPort != oldCS_inPort) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Fujaba2simulinkPackage.STRUCT_COMP2_SUB_SYS__CS_IN_PORT, oldCS_inPort, cS_inPort));
@@ -547,7 +547,7 @@ public class StructComp2SubSysImpl extends AbstractContainerCorrespondenceNodeIm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.simulink.model.InPortBlock basicGetCS_inPort() {
+	public InPortBlock basicGetCS_inPort() {
 		return cS_inPort;
 	}
 
@@ -556,8 +556,8 @@ public class StructComp2SubSysImpl extends AbstractContainerCorrespondenceNodeIm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setCS_inPort(de.uni_paderborn.fujaba.simulink.model.InPortBlock newCS_inPort) {
-		de.uni_paderborn.fujaba.simulink.model.InPortBlock oldCS_inPort = cS_inPort;
+	public void setCS_inPort(InPortBlock newCS_inPort) {
+		InPortBlock oldCS_inPort = cS_inPort;
 		cS_inPort = newCS_inPort;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Fujaba2simulinkPackage.STRUCT_COMP2_SUB_SYS__CS_IN_PORT, oldCS_inPort, cS_inPort));
@@ -568,10 +568,10 @@ public class StructComp2SubSysImpl extends AbstractContainerCorrespondenceNodeIm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.simulink.model.OutPortBlock getCS_outPort() {
+	public OutPortBlock getCS_outPort() {
 		if (cS_outPort != null && ((EObject)cS_outPort).eIsProxy()) {
 			InternalEObject oldCS_outPort = (InternalEObject)cS_outPort;
-			cS_outPort = (de.uni_paderborn.fujaba.simulink.model.OutPortBlock)eResolveProxy(oldCS_outPort);
+			cS_outPort = (OutPortBlock)eResolveProxy(oldCS_outPort);
 			if (cS_outPort != oldCS_outPort) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Fujaba2simulinkPackage.STRUCT_COMP2_SUB_SYS__CS_OUT_PORT, oldCS_outPort, cS_outPort));
@@ -585,7 +585,7 @@ public class StructComp2SubSysImpl extends AbstractContainerCorrespondenceNodeIm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.simulink.model.OutPortBlock basicGetCS_outPort() {
+	public OutPortBlock basicGetCS_outPort() {
 		return cS_outPort;
 	}
 
@@ -594,8 +594,8 @@ public class StructComp2SubSysImpl extends AbstractContainerCorrespondenceNodeIm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setCS_outPort(de.uni_paderborn.fujaba.simulink.model.OutPortBlock newCS_outPort) {
-		de.uni_paderborn.fujaba.simulink.model.OutPortBlock oldCS_outPort = cS_outPort;
+	public void setCS_outPort(OutPortBlock newCS_outPort) {
+		OutPortBlock oldCS_outPort = cS_outPort;
 		cS_outPort = newCS_outPort;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Fujaba2simulinkPackage.STRUCT_COMP2_SUB_SYS__CS_OUT_PORT, oldCS_outPort, cS_outPort));
@@ -665,10 +665,10 @@ public class StructComp2SubSysImpl extends AbstractContainerCorrespondenceNodeIm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.simulink.model.LibraryReference getLibraryReference() {
+	public LibraryReference getLibraryReference() {
 		if (libraryReference != null && ((EObject)libraryReference).eIsProxy()) {
 			InternalEObject oldLibraryReference = (InternalEObject)libraryReference;
-			libraryReference = (de.uni_paderborn.fujaba.simulink.model.LibraryReference)eResolveProxy(oldLibraryReference);
+			libraryReference = (LibraryReference)eResolveProxy(oldLibraryReference);
 			if (libraryReference != oldLibraryReference) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Fujaba2simulinkPackage.STRUCT_COMP2_SUB_SYS__LIBRARY_REFERENCE, oldLibraryReference, libraryReference));
@@ -682,7 +682,7 @@ public class StructComp2SubSysImpl extends AbstractContainerCorrespondenceNodeIm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.simulink.model.LibraryReference basicGetLibraryReference() {
+	public LibraryReference basicGetLibraryReference() {
 		return libraryReference;
 	}
 
@@ -691,8 +691,8 @@ public class StructComp2SubSysImpl extends AbstractContainerCorrespondenceNodeIm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setLibraryReference(de.uni_paderborn.fujaba.simulink.model.LibraryReference newLibraryReference) {
-		de.uni_paderborn.fujaba.simulink.model.LibraryReference oldLibraryReference = libraryReference;
+	public void setLibraryReference(LibraryReference newLibraryReference) {
+		LibraryReference oldLibraryReference = libraryReference;
 		libraryReference = newLibraryReference;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Fujaba2simulinkPackage.STRUCT_COMP2_SUB_SYS__LIBRARY_REFERENCE, oldLibraryReference, libraryReference));
@@ -801,31 +801,31 @@ public class StructComp2SubSysImpl extends AbstractContainerCorrespondenceNodeIm
 				setInstConfig((ComponentInstanceConfiguration)newValue);
 				return;
 			case Fujaba2simulinkPackage.STRUCT_COMP2_SUB_SYS__SUB_SYS:
-				setSubSys((de.uni_paderborn.fujaba.simulink.model.SubSystem)newValue);
+				setSubSys((SubSystem)newValue);
 				return;
 			case Fujaba2simulinkPackage.STRUCT_COMP2_SUB_SYS__COMMUNICATION_SWITCH:
-				setCommunicationSwitch((de.uni_paderborn.fujaba.simulink.model.SubSystem)newValue);
+				setCommunicationSwitch((SubSystem)newValue);
 				return;
 			case Fujaba2simulinkPackage.STRUCT_COMP2_SUB_SYS__BUS_CREATOR:
-				setBusCreator((de.uni_paderborn.fujaba.simulink.model.BusCreator)newValue);
+				setBusCreator((BusCreator)newValue);
 				return;
 			case Fujaba2simulinkPackage.STRUCT_COMP2_SUB_SYS__BUS_SELECTOR:
-				setBusSelector((de.uni_paderborn.fujaba.simulink.model.BusSelector)newValue);
+				setBusSelector((BusSelector)newValue);
 				return;
 			case Fujaba2simulinkPackage.STRUCT_COMP2_SUB_SYS__BUS_CREATOR_OUT_PORT:
-				setBusCreatorOutPort((de.uni_paderborn.fujaba.simulink.model.OutPortBlock)newValue);
+				setBusCreatorOutPort((OutPortBlock)newValue);
 				return;
 			case Fujaba2simulinkPackage.STRUCT_COMP2_SUB_SYS__BUS_SELECTOR_IN_PORT:
-				setBusSelectorInPort((de.uni_paderborn.fujaba.simulink.model.InPortBlock)newValue);
+				setBusSelectorInPort((InPortBlock)newValue);
 				return;
 			case Fujaba2simulinkPackage.STRUCT_COMP2_SUB_SYS__BUS_OF_BUSSES:
-				setBusOfBusses((de.uni_paderborn.fujaba.simulink.model.Line)newValue);
+				setBusOfBusses((Line)newValue);
 				return;
 			case Fujaba2simulinkPackage.STRUCT_COMP2_SUB_SYS__CS_IN_PORT:
-				setCS_inPort((de.uni_paderborn.fujaba.simulink.model.InPortBlock)newValue);
+				setCS_inPort((InPortBlock)newValue);
 				return;
 			case Fujaba2simulinkPackage.STRUCT_COMP2_SUB_SYS__CS_OUT_PORT:
-				setCS_outPort((de.uni_paderborn.fujaba.simulink.model.OutPortBlock)newValue);
+				setCS_outPort((OutPortBlock)newValue);
 				return;
 			case Fujaba2simulinkPackage.STRUCT_COMP2_SUB_SYS__COMP_INST_NAME:
 				setCompInstName((String)newValue);
@@ -834,7 +834,7 @@ public class StructComp2SubSysImpl extends AbstractContainerCorrespondenceNodeIm
 				setComponentInstance((ComponentInstance)newValue);
 				return;
 			case Fujaba2simulinkPackage.STRUCT_COMP2_SUB_SYS__LIBRARY_REFERENCE:
-				setLibraryReference((de.uni_paderborn.fujaba.simulink.model.LibraryReference)newValue);
+				setLibraryReference((LibraryReference)newValue);
 				return;
 			case Fujaba2simulinkPackage.STRUCT_COMP2_SUB_SYS__COMP:
 				setComp((Component)newValue);
@@ -855,31 +855,31 @@ public class StructComp2SubSysImpl extends AbstractContainerCorrespondenceNodeIm
 				setInstConfig((ComponentInstanceConfiguration)null);
 				return;
 			case Fujaba2simulinkPackage.STRUCT_COMP2_SUB_SYS__SUB_SYS:
-				setSubSys((de.uni_paderborn.fujaba.simulink.model.SubSystem)null);
+				setSubSys((SubSystem)null);
 				return;
 			case Fujaba2simulinkPackage.STRUCT_COMP2_SUB_SYS__COMMUNICATION_SWITCH:
-				setCommunicationSwitch((de.uni_paderborn.fujaba.simulink.model.SubSystem)null);
+				setCommunicationSwitch((SubSystem)null);
 				return;
 			case Fujaba2simulinkPackage.STRUCT_COMP2_SUB_SYS__BUS_CREATOR:
-				setBusCreator((de.uni_paderborn.fujaba.simulink.model.BusCreator)null);
+				setBusCreator((BusCreator)null);
 				return;
 			case Fujaba2simulinkPackage.STRUCT_COMP2_SUB_SYS__BUS_SELECTOR:
-				setBusSelector((de.uni_paderborn.fujaba.simulink.model.BusSelector)null);
+				setBusSelector((BusSelector)null);
 				return;
 			case Fujaba2simulinkPackage.STRUCT_COMP2_SUB_SYS__BUS_CREATOR_OUT_PORT:
-				setBusCreatorOutPort((de.uni_paderborn.fujaba.simulink.model.OutPortBlock)null);
+				setBusCreatorOutPort((OutPortBlock)null);
 				return;
 			case Fujaba2simulinkPackage.STRUCT_COMP2_SUB_SYS__BUS_SELECTOR_IN_PORT:
-				setBusSelectorInPort((de.uni_paderborn.fujaba.simulink.model.InPortBlock)null);
+				setBusSelectorInPort((InPortBlock)null);
 				return;
 			case Fujaba2simulinkPackage.STRUCT_COMP2_SUB_SYS__BUS_OF_BUSSES:
-				setBusOfBusses((de.uni_paderborn.fujaba.simulink.model.Line)null);
+				setBusOfBusses((Line)null);
 				return;
 			case Fujaba2simulinkPackage.STRUCT_COMP2_SUB_SYS__CS_IN_PORT:
-				setCS_inPort((de.uni_paderborn.fujaba.simulink.model.InPortBlock)null);
+				setCS_inPort((InPortBlock)null);
 				return;
 			case Fujaba2simulinkPackage.STRUCT_COMP2_SUB_SYS__CS_OUT_PORT:
-				setCS_outPort((de.uni_paderborn.fujaba.simulink.model.OutPortBlock)null);
+				setCS_outPort((OutPortBlock)null);
 				return;
 			case Fujaba2simulinkPackage.STRUCT_COMP2_SUB_SYS__COMP_INST_NAME:
 				setCompInstName(COMP_INST_NAME_EDEFAULT);
@@ -888,7 +888,7 @@ public class StructComp2SubSysImpl extends AbstractContainerCorrespondenceNodeIm
 				setComponentInstance((ComponentInstance)null);
 				return;
 			case Fujaba2simulinkPackage.STRUCT_COMP2_SUB_SYS__LIBRARY_REFERENCE:
-				setLibraryReference((de.uni_paderborn.fujaba.simulink.model.LibraryReference)null);
+				setLibraryReference((LibraryReference)null);
 				return;
 			case Fujaba2simulinkPackage.STRUCT_COMP2_SUB_SYS__COMP:
 				setComp((Component)null);

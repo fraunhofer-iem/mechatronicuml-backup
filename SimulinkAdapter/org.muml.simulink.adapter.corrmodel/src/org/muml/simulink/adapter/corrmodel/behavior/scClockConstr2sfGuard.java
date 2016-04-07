@@ -119,12 +119,12 @@ public interface scClockConstr2sfGuard extends AbstractContainerCorrespondenceNo
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Sf Clock Guard</em>' reference.
-	 * @see #setSfClockGuard(de.uni_paderborn.fujaba.simulink.model.stateflow.Action)
+	 * @see #setSfClockGuard(Action)
 	 * @see org.muml.simulink.adapter.corrmodel.behavior.BehaviorPackage#getscClockConstr2sfGuard_SfClockGuard()
 	 * @model
 	 * @generated
 	 */
-	de.uni_paderborn.fujaba.simulink.model.stateflow.Action getSfClockGuard();
+	Action getSfClockGuard();
 
 	/**
 	 * Sets the value of the '{@link org.muml.simulink.adapter.corrmodel.behavior.scClockConstr2sfGuard#getSfClockGuard <em>Sf Clock Guard</em>}' reference.
@@ -134,6 +134,6 @@ public interface scClockConstr2sfGuard extends AbstractContainerCorrespondenceNo
 	 * @see #getSfClockGuard()
 	 * @generated
 	 */
-	void setSfClockGuard(de.uni_paderborn.fujaba.simulink.model.stateflow.Action value);
+	void setSfClockGuard(Action value);
 
 } // scClockConstr2sfGuard

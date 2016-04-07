@@ -39,12 +39,12 @@ public interface ScStEnPoint2sfTrans extends AbstractContainerCorrespondenceNode
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Sf Trans</em>' reference.
-	 * @see #setSfTrans(de.uni_paderborn.fujaba.simulink.model.stateflow.Transition)
+	 * @see #setSfTrans(Transition)
 	 * @see org.muml.simulink.adapter.corrmodel.behavior.BehaviorPackage#getScStEnPoint2sfTrans_SfTrans()
 	 * @model
 	 * @generated
 	 */
-	de.uni_paderborn.fujaba.simulink.model.stateflow.Transition getSfTrans();
+	Transition getSfTrans();
 
 	/**
 	 * Sets the value of the '{@link org.muml.simulink.adapter.corrmodel.behavior.ScStEnPoint2sfTrans#getSfTrans <em>Sf Trans</em>}' reference.
@@ -54,7 +54,7 @@ public interface ScStEnPoint2sfTrans extends AbstractContainerCorrespondenceNode
 	 * @see #getSfTrans()
 	 * @generated
 	 */
-	void setSfTrans(de.uni_paderborn.fujaba.simulink.model.stateflow.Transition value);
+	void setSfTrans(Transition value);
 
 	/**
 	 * Returns the value of the '<em><b>Sc In Trans</b></em>' reference.

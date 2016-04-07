@@ -54,7 +54,7 @@ public class ScSyncReceive2sfSyncReceiveImpl extends AbstractContainerCorrespond
 	 * @generated
 	 * @ordered
 	 */
-	protected de.uni_paderborn.fujaba.simulink.model.stateflow.Action sfEntryAction;
+	protected Action sfEntryAction;
 
 	/**
 	 * The cached value of the '{@link #getSfExitAction() <em>Sf Exit Action</em>}' reference.
@@ -64,7 +64,7 @@ public class ScSyncReceive2sfSyncReceiveImpl extends AbstractContainerCorrespond
 	 * @generated
 	 * @ordered
 	 */
-	protected de.uni_paderborn.fujaba.simulink.model.stateflow.Action sfExitAction;
+	protected Action sfExitAction;
 
 	/**
 	 * The cached value of the '{@link #getSfTransEvent() <em>Sf Trans Event</em>}' reference.
@@ -74,7 +74,7 @@ public class ScSyncReceive2sfSyncReceiveImpl extends AbstractContainerCorrespond
 	 * @generated
 	 * @ordered
 	 */
-	protected de.uni_paderborn.fujaba.simulink.model.stateflow.Event sfTransEvent;
+	protected Event sfTransEvent;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -138,10 +138,10 @@ public class ScSyncReceive2sfSyncReceiveImpl extends AbstractContainerCorrespond
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.simulink.model.stateflow.Action getSfEntryAction() {
+	public Action getSfEntryAction() {
 		if (sfEntryAction != null && ((EObject)sfEntryAction).eIsProxy()) {
 			InternalEObject oldSfEntryAction = (InternalEObject)sfEntryAction;
-			sfEntryAction = (de.uni_paderborn.fujaba.simulink.model.stateflow.Action)eResolveProxy(oldSfEntryAction);
+			sfEntryAction = (Action)eResolveProxy(oldSfEntryAction);
 			if (sfEntryAction != oldSfEntryAction) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BehaviorPackage.SC_SYNC_RECEIVE2SF_SYNC_RECEIVE__SF_ENTRY_ACTION, oldSfEntryAction, sfEntryAction));
@@ -155,7 +155,7 @@ public class ScSyncReceive2sfSyncReceiveImpl extends AbstractContainerCorrespond
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.simulink.model.stateflow.Action basicGetSfEntryAction() {
+	public Action basicGetSfEntryAction() {
 		return sfEntryAction;
 	}
 
@@ -164,8 +164,8 @@ public class ScSyncReceive2sfSyncReceiveImpl extends AbstractContainerCorrespond
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSfEntryAction(de.uni_paderborn.fujaba.simulink.model.stateflow.Action newSfEntryAction) {
-		de.uni_paderborn.fujaba.simulink.model.stateflow.Action oldSfEntryAction = sfEntryAction;
+	public void setSfEntryAction(Action newSfEntryAction) {
+		Action oldSfEntryAction = sfEntryAction;
 		sfEntryAction = newSfEntryAction;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BehaviorPackage.SC_SYNC_RECEIVE2SF_SYNC_RECEIVE__SF_ENTRY_ACTION, oldSfEntryAction, sfEntryAction));
@@ -176,10 +176,10 @@ public class ScSyncReceive2sfSyncReceiveImpl extends AbstractContainerCorrespond
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.simulink.model.stateflow.Action getSfExitAction() {
+	public Action getSfExitAction() {
 		if (sfExitAction != null && ((EObject)sfExitAction).eIsProxy()) {
 			InternalEObject oldSfExitAction = (InternalEObject)sfExitAction;
-			sfExitAction = (de.uni_paderborn.fujaba.simulink.model.stateflow.Action)eResolveProxy(oldSfExitAction);
+			sfExitAction = (Action)eResolveProxy(oldSfExitAction);
 			if (sfExitAction != oldSfExitAction) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BehaviorPackage.SC_SYNC_RECEIVE2SF_SYNC_RECEIVE__SF_EXIT_ACTION, oldSfExitAction, sfExitAction));
@@ -193,7 +193,7 @@ public class ScSyncReceive2sfSyncReceiveImpl extends AbstractContainerCorrespond
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.simulink.model.stateflow.Action basicGetSfExitAction() {
+	public Action basicGetSfExitAction() {
 		return sfExitAction;
 	}
 
@@ -202,8 +202,8 @@ public class ScSyncReceive2sfSyncReceiveImpl extends AbstractContainerCorrespond
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSfExitAction(de.uni_paderborn.fujaba.simulink.model.stateflow.Action newSfExitAction) {
-		de.uni_paderborn.fujaba.simulink.model.stateflow.Action oldSfExitAction = sfExitAction;
+	public void setSfExitAction(Action newSfExitAction) {
+		Action oldSfExitAction = sfExitAction;
 		sfExitAction = newSfExitAction;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BehaviorPackage.SC_SYNC_RECEIVE2SF_SYNC_RECEIVE__SF_EXIT_ACTION, oldSfExitAction, sfExitAction));
@@ -214,10 +214,10 @@ public class ScSyncReceive2sfSyncReceiveImpl extends AbstractContainerCorrespond
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.simulink.model.stateflow.Event getSfTransEvent() {
+	public Event getSfTransEvent() {
 		if (sfTransEvent != null && ((EObject)sfTransEvent).eIsProxy()) {
 			InternalEObject oldSfTransEvent = (InternalEObject)sfTransEvent;
-			sfTransEvent = (de.uni_paderborn.fujaba.simulink.model.stateflow.Event)eResolveProxy(oldSfTransEvent);
+			sfTransEvent = (Event)eResolveProxy(oldSfTransEvent);
 			if (sfTransEvent != oldSfTransEvent) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BehaviorPackage.SC_SYNC_RECEIVE2SF_SYNC_RECEIVE__SF_TRANS_EVENT, oldSfTransEvent, sfTransEvent));
@@ -231,7 +231,7 @@ public class ScSyncReceive2sfSyncReceiveImpl extends AbstractContainerCorrespond
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.simulink.model.stateflow.Event basicGetSfTransEvent() {
+	public Event basicGetSfTransEvent() {
 		return sfTransEvent;
 	}
 
@@ -240,8 +240,8 @@ public class ScSyncReceive2sfSyncReceiveImpl extends AbstractContainerCorrespond
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSfTransEvent(de.uni_paderborn.fujaba.simulink.model.stateflow.Event newSfTransEvent) {
-		de.uni_paderborn.fujaba.simulink.model.stateflow.Event oldSfTransEvent = sfTransEvent;
+	public void setSfTransEvent(Event newSfTransEvent) {
+		Event oldSfTransEvent = sfTransEvent;
 		sfTransEvent = newSfTransEvent;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BehaviorPackage.SC_SYNC_RECEIVE2SF_SYNC_RECEIVE__SF_TRANS_EVENT, oldSfTransEvent, sfTransEvent));
@@ -283,13 +283,13 @@ public class ScSyncReceive2sfSyncReceiveImpl extends AbstractContainerCorrespond
 				setScSyncReceive((Synchronization)newValue);
 				return;
 			case BehaviorPackage.SC_SYNC_RECEIVE2SF_SYNC_RECEIVE__SF_ENTRY_ACTION:
-				setSfEntryAction((de.uni_paderborn.fujaba.simulink.model.stateflow.Action)newValue);
+				setSfEntryAction((Action)newValue);
 				return;
 			case BehaviorPackage.SC_SYNC_RECEIVE2SF_SYNC_RECEIVE__SF_EXIT_ACTION:
-				setSfExitAction((de.uni_paderborn.fujaba.simulink.model.stateflow.Action)newValue);
+				setSfExitAction((Action)newValue);
 				return;
 			case BehaviorPackage.SC_SYNC_RECEIVE2SF_SYNC_RECEIVE__SF_TRANS_EVENT:
-				setSfTransEvent((de.uni_paderborn.fujaba.simulink.model.stateflow.Event)newValue);
+				setSfTransEvent((Event)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -307,13 +307,13 @@ public class ScSyncReceive2sfSyncReceiveImpl extends AbstractContainerCorrespond
 				setScSyncReceive((Synchronization)null);
 				return;
 			case BehaviorPackage.SC_SYNC_RECEIVE2SF_SYNC_RECEIVE__SF_ENTRY_ACTION:
-				setSfEntryAction((de.uni_paderborn.fujaba.simulink.model.stateflow.Action)null);
+				setSfEntryAction((Action)null);
 				return;
 			case BehaviorPackage.SC_SYNC_RECEIVE2SF_SYNC_RECEIVE__SF_EXIT_ACTION:
-				setSfExitAction((de.uni_paderborn.fujaba.simulink.model.stateflow.Action)null);
+				setSfExitAction((Action)null);
 				return;
 			case BehaviorPackage.SC_SYNC_RECEIVE2SF_SYNC_RECEIVE__SF_TRANS_EVENT:
-				setSfTransEvent((de.uni_paderborn.fujaba.simulink.model.stateflow.Event)null);
+				setSfTransEvent((Event)null);
 				return;
 		}
 		super.eUnset(featureID);

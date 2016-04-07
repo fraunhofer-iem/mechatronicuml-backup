@@ -42,12 +42,12 @@ public interface scAsyncSend2sfAction extends AbstractContainerCorrespondenceNod
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Sf Enq Action</em>' reference.
-	 * @see #setSfEnqAction(de.uni_paderborn.fujaba.simulink.model.stateflow.Action)
+	 * @see #setSfEnqAction(Action)
 	 * @see org.muml.simulink.adapter.corrmodel.behavior.BehaviorPackage#getscAsyncSend2sfAction_SfEnqAction()
 	 * @model
 	 * @generated
 	 */
-	de.uni_paderborn.fujaba.simulink.model.stateflow.Action getSfEnqAction();
+	Action getSfEnqAction();
 
 	/**
 	 * Sets the value of the '{@link org.muml.simulink.adapter.corrmodel.behavior.scAsyncSend2sfAction#getSfEnqAction <em>Sf Enq Action</em>}' reference.
@@ -57,7 +57,7 @@ public interface scAsyncSend2sfAction extends AbstractContainerCorrespondenceNod
 	 * @see #getSfEnqAction()
 	 * @generated
 	 */
-	void setSfEnqAction(de.uni_paderborn.fujaba.simulink.model.stateflow.Action value);
+	void setSfEnqAction(Action value);
 
 	/**
 	 * Returns the value of the '<em><b>Asynchronous Message Event</b></em>' reference.

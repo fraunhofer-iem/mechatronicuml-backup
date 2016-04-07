@@ -52,7 +52,7 @@ public class ScTrans2SfTransImpl extends AbstractContainerCorrespondenceNodeImpl
 	 * @generated
 	 * @ordered
 	 */
-	protected de.uni_paderborn.fujaba.simulink.model.stateflow.Transition sfTrans;
+	protected org.muml.simulink.stateflow.Transition sfTrans;
 
 	/**
 	 * The cached value of the '{@link #getScReg() <em>Sc Reg</em>}' reference.
@@ -126,10 +126,10 @@ public class ScTrans2SfTransImpl extends AbstractContainerCorrespondenceNodeImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.simulink.model.stateflow.Transition getSfTrans() {
+	public org.muml.simulink.stateflow.Transition getSfTrans() {
 		if (sfTrans != null && ((EObject)sfTrans).eIsProxy()) {
 			InternalEObject oldSfTrans = (InternalEObject)sfTrans;
-			sfTrans = (de.uni_paderborn.fujaba.simulink.model.stateflow.Transition)eResolveProxy(oldSfTrans);
+			sfTrans = (org.muml.simulink.stateflow.Transition)eResolveProxy(oldSfTrans);
 			if (sfTrans != oldSfTrans) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BehaviorPackage.SC_TRANS2_SF_TRANS__SF_TRANS, oldSfTrans, sfTrans));
@@ -143,7 +143,7 @@ public class ScTrans2SfTransImpl extends AbstractContainerCorrespondenceNodeImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.simulink.model.stateflow.Transition basicGetSfTrans() {
+	public org.muml.simulink.stateflow.Transition basicGetSfTrans() {
 		return sfTrans;
 	}
 
@@ -152,8 +152,8 @@ public class ScTrans2SfTransImpl extends AbstractContainerCorrespondenceNodeImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSfTrans(de.uni_paderborn.fujaba.simulink.model.stateflow.Transition newSfTrans) {
-		de.uni_paderborn.fujaba.simulink.model.stateflow.Transition oldSfTrans = sfTrans;
+	public void setSfTrans(org.muml.simulink.stateflow.Transition newSfTrans) {
+		org.muml.simulink.stateflow.Transition oldSfTrans = sfTrans;
 		sfTrans = newSfTrans;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BehaviorPackage.SC_TRANS2_SF_TRANS__SF_TRANS, oldSfTrans, sfTrans));
@@ -230,7 +230,7 @@ public class ScTrans2SfTransImpl extends AbstractContainerCorrespondenceNodeImpl
 				setScTrans((Transition)newValue);
 				return;
 			case BehaviorPackage.SC_TRANS2_SF_TRANS__SF_TRANS:
-				setSfTrans((de.uni_paderborn.fujaba.simulink.model.stateflow.Transition)newValue);
+				setSfTrans((org.muml.simulink.stateflow.Transition)newValue);
 				return;
 			case BehaviorPackage.SC_TRANS2_SF_TRANS__SC_REG:
 				setScReg((Region)newValue);
@@ -251,7 +251,7 @@ public class ScTrans2SfTransImpl extends AbstractContainerCorrespondenceNodeImpl
 				setScTrans((Transition)null);
 				return;
 			case BehaviorPackage.SC_TRANS2_SF_TRANS__SF_TRANS:
-				setSfTrans((de.uni_paderborn.fujaba.simulink.model.stateflow.Transition)null);
+				setSfTrans((org.muml.simulink.stateflow.Transition)null);
 				return;
 			case BehaviorPackage.SC_TRANS2_SF_TRANS__SC_REG:
 				setScReg((Region)null);

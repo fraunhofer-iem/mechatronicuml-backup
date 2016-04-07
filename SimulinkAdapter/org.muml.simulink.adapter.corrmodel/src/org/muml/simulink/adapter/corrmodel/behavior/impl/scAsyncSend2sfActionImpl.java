@@ -46,7 +46,7 @@ public class scAsyncSend2sfActionImpl extends AbstractContainerCorrespondenceNod
 	 * @generated
 	 * @ordered
 	 */
-	protected de.uni_paderborn.fujaba.simulink.model.stateflow.Action sfEnqAction;
+	protected Action sfEnqAction;
 
 	/**
 	 * The cached value of the '{@link #getAsynchronousMessageEvent() <em>Asynchronous Message Event</em>}' reference.
@@ -102,10 +102,10 @@ public class scAsyncSend2sfActionImpl extends AbstractContainerCorrespondenceNod
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.simulink.model.stateflow.Action getSfEnqAction() {
+	public Action getSfEnqAction() {
 		if (sfEnqAction != null && ((EObject)sfEnqAction).eIsProxy()) {
 			InternalEObject oldSfEnqAction = (InternalEObject)sfEnqAction;
-			sfEnqAction = (de.uni_paderborn.fujaba.simulink.model.stateflow.Action)eResolveProxy(oldSfEnqAction);
+			sfEnqAction = (Action)eResolveProxy(oldSfEnqAction);
 			if (sfEnqAction != oldSfEnqAction) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BehaviorPackage.SC_ASYNC_SEND2SF_ACTION__SF_ENQ_ACTION, oldSfEnqAction, sfEnqAction));
@@ -119,7 +119,7 @@ public class scAsyncSend2sfActionImpl extends AbstractContainerCorrespondenceNod
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.simulink.model.stateflow.Action basicGetSfEnqAction() {
+	public Action basicGetSfEnqAction() {
 		return sfEnqAction;
 	}
 
@@ -128,8 +128,8 @@ public class scAsyncSend2sfActionImpl extends AbstractContainerCorrespondenceNod
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSfEnqAction(de.uni_paderborn.fujaba.simulink.model.stateflow.Action newSfEnqAction) {
-		de.uni_paderborn.fujaba.simulink.model.stateflow.Action oldSfEnqAction = sfEnqAction;
+	public void setSfEnqAction(Action newSfEnqAction) {
+		Action oldSfEnqAction = sfEnqAction;
 		sfEnqAction = newSfEnqAction;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BehaviorPackage.SC_ASYNC_SEND2SF_ACTION__SF_ENQ_ACTION, oldSfEnqAction, sfEnqAction));
@@ -284,7 +284,7 @@ public class scAsyncSend2sfActionImpl extends AbstractContainerCorrespondenceNod
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case BehaviorPackage.SC_ASYNC_SEND2SF_ACTION__SF_ENQ_ACTION:
-				setSfEnqAction((de.uni_paderborn.fujaba.simulink.model.stateflow.Action)newValue);
+				setSfEnqAction((Action)newValue);
 				return;
 			case BehaviorPackage.SC_ASYNC_SEND2SF_ACTION__ASYNCHRONOUS_MESSAGE_EVENT:
 				setAsynchronousMessageEvent((AsynchronousMessageEvent)newValue);
@@ -308,7 +308,7 @@ public class scAsyncSend2sfActionImpl extends AbstractContainerCorrespondenceNod
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case BehaviorPackage.SC_ASYNC_SEND2SF_ACTION__SF_ENQ_ACTION:
-				setSfEnqAction((de.uni_paderborn.fujaba.simulink.model.stateflow.Action)null);
+				setSfEnqAction((Action)null);
 				return;
 			case BehaviorPackage.SC_ASYNC_SEND2SF_ACTION__ASYNCHRONOUS_MESSAGE_EVENT:
 				setAsynchronousMessageEvent((AsynchronousMessageEvent)null);

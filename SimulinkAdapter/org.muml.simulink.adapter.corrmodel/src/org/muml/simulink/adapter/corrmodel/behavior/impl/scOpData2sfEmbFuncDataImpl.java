@@ -53,7 +53,7 @@ public class scOpData2sfEmbFuncDataImpl extends AbstractContainerCorrespondenceN
 	 * @generated
 	 * @ordered
 	 */
-	protected de.uni_paderborn.fujaba.simulink.model.stateflow.Data sfData;
+	protected Data sfData;
 
 	/**
 	 * The cached value of the '{@link #getScParaType() <em>Sc Para Type</em>}' reference.
@@ -127,10 +127,10 @@ public class scOpData2sfEmbFuncDataImpl extends AbstractContainerCorrespondenceN
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.simulink.model.stateflow.Data getSfData() {
+	public Data getSfData() {
 		if (sfData != null && ((EObject)sfData).eIsProxy()) {
 			InternalEObject oldSfData = (InternalEObject)sfData;
-			sfData = (de.uni_paderborn.fujaba.simulink.model.stateflow.Data)eResolveProxy(oldSfData);
+			sfData = (Data)eResolveProxy(oldSfData);
 			if (sfData != oldSfData) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BehaviorPackage.SC_OP_DATA2SF_EMB_FUNC_DATA__SF_DATA, oldSfData, sfData));
@@ -144,7 +144,7 @@ public class scOpData2sfEmbFuncDataImpl extends AbstractContainerCorrespondenceN
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.simulink.model.stateflow.Data basicGetSfData() {
+	public Data basicGetSfData() {
 		return sfData;
 	}
 
@@ -153,8 +153,8 @@ public class scOpData2sfEmbFuncDataImpl extends AbstractContainerCorrespondenceN
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSfData(de.uni_paderborn.fujaba.simulink.model.stateflow.Data newSfData) {
-		de.uni_paderborn.fujaba.simulink.model.stateflow.Data oldSfData = sfData;
+	public void setSfData(Data newSfData) {
+		Data oldSfData = sfData;
 		sfData = newSfData;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BehaviorPackage.SC_OP_DATA2SF_EMB_FUNC_DATA__SF_DATA, oldSfData, sfData));
@@ -231,7 +231,7 @@ public class scOpData2sfEmbFuncDataImpl extends AbstractContainerCorrespondenceN
 				setScParameter((Parameter)newValue);
 				return;
 			case BehaviorPackage.SC_OP_DATA2SF_EMB_FUNC_DATA__SF_DATA:
-				setSfData((de.uni_paderborn.fujaba.simulink.model.stateflow.Data)newValue);
+				setSfData((Data)newValue);
 				return;
 			case BehaviorPackage.SC_OP_DATA2SF_EMB_FUNC_DATA__SC_PARA_TYPE:
 				setScParaType((PrimitiveDataType)newValue);
@@ -252,7 +252,7 @@ public class scOpData2sfEmbFuncDataImpl extends AbstractContainerCorrespondenceN
 				setScParameter((Parameter)null);
 				return;
 			case BehaviorPackage.SC_OP_DATA2SF_EMB_FUNC_DATA__SF_DATA:
-				setSfData((de.uni_paderborn.fujaba.simulink.model.stateflow.Data)null);
+				setSfData((Data)null);
 				return;
 			case BehaviorPackage.SC_OP_DATA2SF_EMB_FUNC_DATA__SC_PARA_TYPE:
 				setScParaType((PrimitiveDataType)null);

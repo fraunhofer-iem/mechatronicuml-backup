@@ -56,7 +56,7 @@ public interface AssemblyInst2Line extends AbstractContainerCorrespondenceNode {
 
 	/**
 	 * Returns the value of the '<em><b>Line</b></em>' reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.simulink.model.Line}.
+	 * The list contents are of type {@link org.muml.simulink.Line}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Line</em>' reference isn't clear,
@@ -68,6 +68,6 @@ public interface AssemblyInst2Line extends AbstractContainerCorrespondenceNode {
 	 * @model
 	 * @generated
 	 */
-	EList<de.uni_paderborn.fujaba.simulink.model.Line> getLine();
+	EList<Line> getLine();
 
 } // AssemblyInst2Line

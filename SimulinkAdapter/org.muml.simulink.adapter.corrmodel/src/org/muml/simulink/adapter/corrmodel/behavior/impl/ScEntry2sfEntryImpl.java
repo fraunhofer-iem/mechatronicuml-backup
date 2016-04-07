@@ -56,7 +56,7 @@ public class ScEntry2sfEntryImpl extends AbstractContainerCorrespondenceNodeImpl
 	 * @generated
 	 * @ordered
 	 */
-	protected de.uni_paderborn.fujaba.simulink.model.stateflow.Action sfEntryAction;
+	protected Action sfEntryAction;
 
 	/**
 	 * The cached value of the '{@link #getScEntryAction() <em>Sc Entry Action</em>}' reference.
@@ -150,10 +150,10 @@ public class ScEntry2sfEntryImpl extends AbstractContainerCorrespondenceNodeImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.simulink.model.stateflow.Action getSfEntryAction() {
+	public Action getSfEntryAction() {
 		if (sfEntryAction != null && ((EObject)sfEntryAction).eIsProxy()) {
 			InternalEObject oldSfEntryAction = (InternalEObject)sfEntryAction;
-			sfEntryAction = (de.uni_paderborn.fujaba.simulink.model.stateflow.Action)eResolveProxy(oldSfEntryAction);
+			sfEntryAction = (Action)eResolveProxy(oldSfEntryAction);
 			if (sfEntryAction != oldSfEntryAction) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BehaviorPackage.SC_ENTRY2SF_ENTRY__SF_ENTRY_ACTION, oldSfEntryAction, sfEntryAction));
@@ -167,7 +167,7 @@ public class ScEntry2sfEntryImpl extends AbstractContainerCorrespondenceNodeImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.simulink.model.stateflow.Action basicGetSfEntryAction() {
+	public Action basicGetSfEntryAction() {
 		return sfEntryAction;
 	}
 
@@ -176,8 +176,8 @@ public class ScEntry2sfEntryImpl extends AbstractContainerCorrespondenceNodeImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSfEntryAction(de.uni_paderborn.fujaba.simulink.model.stateflow.Action newSfEntryAction) {
-		de.uni_paderborn.fujaba.simulink.model.stateflow.Action oldSfEntryAction = sfEntryAction;
+	public void setSfEntryAction(Action newSfEntryAction) {
+		Action oldSfEntryAction = sfEntryAction;
 		sfEntryAction = newSfEntryAction;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BehaviorPackage.SC_ENTRY2SF_ENTRY__SF_ENTRY_ACTION, oldSfEntryAction, sfEntryAction));
@@ -336,7 +336,7 @@ public class ScEntry2sfEntryImpl extends AbstractContainerCorrespondenceNodeImpl
 				setScEntryEvent((EntryEvent)newValue);
 				return;
 			case BehaviorPackage.SC_ENTRY2SF_ENTRY__SF_ENTRY_ACTION:
-				setSfEntryAction((de.uni_paderborn.fujaba.simulink.model.stateflow.Action)newValue);
+				setSfEntryAction((Action)newValue);
 				return;
 			case BehaviorPackage.SC_ENTRY2SF_ENTRY__SC_ENTRY_ACTION:
 				setScEntryAction((org.muml.pim.realtimestatechart.Action)newValue);
@@ -363,7 +363,7 @@ public class ScEntry2sfEntryImpl extends AbstractContainerCorrespondenceNodeImpl
 				setScEntryEvent((EntryEvent)null);
 				return;
 			case BehaviorPackage.SC_ENTRY2SF_ENTRY__SF_ENTRY_ACTION:
-				setSfEntryAction((de.uni_paderborn.fujaba.simulink.model.stateflow.Action)null);
+				setSfEntryAction((Action)null);
 				return;
 			case BehaviorPackage.SC_ENTRY2SF_ENTRY__SC_ENTRY_ACTION:
 				setScEntryAction((org.muml.pim.realtimestatechart.Action)null);

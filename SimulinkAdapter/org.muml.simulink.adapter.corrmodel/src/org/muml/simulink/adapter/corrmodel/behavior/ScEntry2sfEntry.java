@@ -68,12 +68,12 @@ public interface ScEntry2sfEntry extends AbstractContainerCorrespondenceNode {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Sf Entry Action</em>' reference.
-	 * @see #setSfEntryAction(de.uni_paderborn.fujaba.simulink.model.stateflow.Action)
+	 * @see #setSfEntryAction(Action)
 	 * @see org.muml.simulink.adapter.corrmodel.behavior.BehaviorPackage#getScEntry2sfEntry_SfEntryAction()
 	 * @model
 	 * @generated
 	 */
-	de.uni_paderborn.fujaba.simulink.model.stateflow.Action getSfEntryAction();
+	Action getSfEntryAction();
 
 	/**
 	 * Sets the value of the '{@link org.muml.simulink.adapter.corrmodel.behavior.ScEntry2sfEntry#getSfEntryAction <em>Sf Entry Action</em>}' reference.
@@ -83,7 +83,7 @@ public interface ScEntry2sfEntry extends AbstractContainerCorrespondenceNode {
 	 * @see #getSfEntryAction()
 	 * @generated
 	 */
-	void setSfEntryAction(de.uni_paderborn.fujaba.simulink.model.stateflow.Action value);
+	void setSfEntryAction(Action value);
 
 	/**
 	 * Returns the value of the '<em><b>Sc Entry Action</b></em>' reference.

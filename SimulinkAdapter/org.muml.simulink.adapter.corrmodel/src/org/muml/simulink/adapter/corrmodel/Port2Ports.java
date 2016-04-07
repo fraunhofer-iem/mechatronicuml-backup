@@ -67,12 +67,12 @@ public interface Port2Ports extends AbstractContainerCorrespondenceNode {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>In Port</em>' reference.
-	 * @see #setInPort(de.uni_paderborn.fujaba.simulink.model.InPortBlock)
+	 * @see #setInPort(InPortBlock)
 	 * @see org.muml.simulink.adapter.corrmodel.Fujaba2simulinkPackage#getPort2Ports_InPort()
 	 * @model
 	 * @generated
 	 */
-	de.uni_paderborn.fujaba.simulink.model.InPortBlock getInPort();
+	InPortBlock getInPort();
 
 	/**
 	 * Sets the value of the '{@link org.muml.simulink.adapter.corrmodel.Port2Ports#getInPort <em>In Port</em>}' reference.
@@ -82,7 +82,7 @@ public interface Port2Ports extends AbstractContainerCorrespondenceNode {
 	 * @see #getInPort()
 	 * @generated
 	 */
-	void setInPort(de.uni_paderborn.fujaba.simulink.model.InPortBlock value);
+	void setInPort(InPortBlock value);
 
 	/**
 	 * Returns the value of the '<em><b>Out Port</b></em>' reference.
@@ -93,12 +93,12 @@ public interface Port2Ports extends AbstractContainerCorrespondenceNode {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Out Port</em>' reference.
-	 * @see #setOutPort(de.uni_paderborn.fujaba.simulink.model.OutPortBlock)
+	 * @see #setOutPort(OutPortBlock)
 	 * @see org.muml.simulink.adapter.corrmodel.Fujaba2simulinkPackage#getPort2Ports_OutPort()
 	 * @model
 	 * @generated
 	 */
-	de.uni_paderborn.fujaba.simulink.model.OutPortBlock getOutPort();
+	OutPortBlock getOutPort();
 
 	/**
 	 * Sets the value of the '{@link org.muml.simulink.adapter.corrmodel.Port2Ports#getOutPort <em>Out Port</em>}' reference.
@@ -108,7 +108,7 @@ public interface Port2Ports extends AbstractContainerCorrespondenceNode {
 	 * @see #getOutPort()
 	 * @generated
 	 */
-	void setOutPort(de.uni_paderborn.fujaba.simulink.model.OutPortBlock value);
+	void setOutPort(OutPortBlock value);
 
 	/**
 	 * Returns the value of the '<em><b>Port</b></em>' reference.
@@ -145,12 +145,12 @@ public interface Port2Ports extends AbstractContainerCorrespondenceNode {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Help in Port</em>' reference.
-	 * @see #setHelp_inPort(de.uni_paderborn.fujaba.simulink.model.InPortBlock)
+	 * @see #setHelp_inPort(InPortBlock)
 	 * @see org.muml.simulink.adapter.corrmodel.Fujaba2simulinkPackage#getPort2Ports_Help_inPort()
 	 * @model
 	 * @generated
 	 */
-	de.uni_paderborn.fujaba.simulink.model.InPortBlock getHelp_inPort();
+	InPortBlock getHelp_inPort();
 
 	/**
 	 * Sets the value of the '{@link org.muml.simulink.adapter.corrmodel.Port2Ports#getHelp_inPort <em>Help in Port</em>}' reference.
@@ -160,7 +160,7 @@ public interface Port2Ports extends AbstractContainerCorrespondenceNode {
 	 * @see #getHelp_inPort()
 	 * @generated
 	 */
-	void setHelp_inPort(de.uni_paderborn.fujaba.simulink.model.InPortBlock value);
+	void setHelp_inPort(InPortBlock value);
 
 	/**
 	 * Returns the value of the '<em><b>Help out Port</b></em>' reference.
@@ -171,12 +171,12 @@ public interface Port2Ports extends AbstractContainerCorrespondenceNode {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Help out Port</em>' reference.
-	 * @see #setHelp_outPort(de.uni_paderborn.fujaba.simulink.model.OutPortBlock)
+	 * @see #setHelp_outPort(OutPortBlock)
 	 * @see org.muml.simulink.adapter.corrmodel.Fujaba2simulinkPackage#getPort2Ports_Help_outPort()
 	 * @model
 	 * @generated
 	 */
-	de.uni_paderborn.fujaba.simulink.model.OutPortBlock getHelp_outPort();
+	OutPortBlock getHelp_outPort();
 
 	/**
 	 * Sets the value of the '{@link org.muml.simulink.adapter.corrmodel.Port2Ports#getHelp_outPort <em>Help out Port</em>}' reference.
@@ -186,7 +186,7 @@ public interface Port2Ports extends AbstractContainerCorrespondenceNode {
 	 * @see #getHelp_outPort()
 	 * @generated
 	 */
-	void setHelp_outPort(de.uni_paderborn.fujaba.simulink.model.OutPortBlock value);
+	void setHelp_outPort(OutPortBlock value);
 
 	/**
 	 * Returns the value of the '<em><b>Port Inst</b></em>' reference.
@@ -275,12 +275,12 @@ public interface Port2Ports extends AbstractContainerCorrespondenceNode {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Sc Read In</em>' reference.
-	 * @see #setSc_ReadIn(de.uni_paderborn.fujaba.simulink.model.InPortBlock)
+	 * @see #setSc_ReadIn(InPortBlock)
 	 * @see org.muml.simulink.adapter.corrmodel.Fujaba2simulinkPackage#getPort2Ports_Sc_ReadIn()
 	 * @model
 	 * @generated
 	 */
-	de.uni_paderborn.fujaba.simulink.model.InPortBlock getSc_ReadIn();
+	InPortBlock getSc_ReadIn();
 
 	/**
 	 * Sets the value of the '{@link org.muml.simulink.adapter.corrmodel.Port2Ports#getSc_ReadIn <em>Sc Read In</em>}' reference.
@@ -290,7 +290,7 @@ public interface Port2Ports extends AbstractContainerCorrespondenceNode {
 	 * @see #getSc_ReadIn()
 	 * @generated
 	 */
-	void setSc_ReadIn(de.uni_paderborn.fujaba.simulink.model.InPortBlock value);
+	void setSc_ReadIn(InPortBlock value);
 
 	/**
 	 * Returns the value of the '<em><b>Sc Read Out</b></em>' reference.
@@ -301,12 +301,12 @@ public interface Port2Ports extends AbstractContainerCorrespondenceNode {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Sc Read Out</em>' reference.
-	 * @see #setSc_ReadOut(de.uni_paderborn.fujaba.simulink.model.OutPortBlock)
+	 * @see #setSc_ReadOut(OutPortBlock)
 	 * @see org.muml.simulink.adapter.corrmodel.Fujaba2simulinkPackage#getPort2Ports_Sc_ReadOut()
 	 * @model
 	 * @generated
 	 */
-	de.uni_paderborn.fujaba.simulink.model.OutPortBlock getSc_ReadOut();
+	OutPortBlock getSc_ReadOut();
 
 	/**
 	 * Sets the value of the '{@link org.muml.simulink.adapter.corrmodel.Port2Ports#getSc_ReadOut <em>Sc Read Out</em>}' reference.
@@ -316,7 +316,7 @@ public interface Port2Ports extends AbstractContainerCorrespondenceNode {
 	 * @see #getSc_ReadOut()
 	 * @generated
 	 */
-	void setSc_ReadOut(de.uni_paderborn.fujaba.simulink.model.OutPortBlock value);
+	void setSc_ReadOut(OutPortBlock value);
 
 	/**
 	 * Returns the value of the '<em><b>Sc Write In</b></em>' reference.
@@ -327,12 +327,12 @@ public interface Port2Ports extends AbstractContainerCorrespondenceNode {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Sc Write In</em>' reference.
-	 * @see #setSc_WriteIn(de.uni_paderborn.fujaba.simulink.model.InPortBlock)
+	 * @see #setSc_WriteIn(InPortBlock)
 	 * @see org.muml.simulink.adapter.corrmodel.Fujaba2simulinkPackage#getPort2Ports_Sc_WriteIn()
 	 * @model
 	 * @generated
 	 */
-	de.uni_paderborn.fujaba.simulink.model.InPortBlock getSc_WriteIn();
+	InPortBlock getSc_WriteIn();
 
 	/**
 	 * Sets the value of the '{@link org.muml.simulink.adapter.corrmodel.Port2Ports#getSc_WriteIn <em>Sc Write In</em>}' reference.
@@ -342,7 +342,7 @@ public interface Port2Ports extends AbstractContainerCorrespondenceNode {
 	 * @see #getSc_WriteIn()
 	 * @generated
 	 */
-	void setSc_WriteIn(de.uni_paderborn.fujaba.simulink.model.InPortBlock value);
+	void setSc_WriteIn(InPortBlock value);
 
 	/**
 	 * Returns the value of the '<em><b>Sc Write Out</b></em>' reference.
@@ -353,12 +353,12 @@ public interface Port2Ports extends AbstractContainerCorrespondenceNode {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Sc Write Out</em>' reference.
-	 * @see #setSc_WriteOut(de.uni_paderborn.fujaba.simulink.model.OutPortBlock)
+	 * @see #setSc_WriteOut(OutPortBlock)
 	 * @see org.muml.simulink.adapter.corrmodel.Fujaba2simulinkPackage#getPort2Ports_Sc_WriteOut()
 	 * @model
 	 * @generated
 	 */
-	de.uni_paderborn.fujaba.simulink.model.OutPortBlock getSc_WriteOut();
+	OutPortBlock getSc_WriteOut();
 
 	/**
 	 * Sets the value of the '{@link org.muml.simulink.adapter.corrmodel.Port2Ports#getSc_WriteOut <em>Sc Write Out</em>}' reference.
@@ -368,7 +368,7 @@ public interface Port2Ports extends AbstractContainerCorrespondenceNode {
 	 * @see #getSc_WriteOut()
 	 * @generated
 	 */
-	void setSc_WriteOut(de.uni_paderborn.fujaba.simulink.model.OutPortBlock value);
+	void setSc_WriteOut(OutPortBlock value);
 
 	/**
 	 * Returns the value of the '<em><b>Sc help Read In</b></em>' reference.
@@ -379,12 +379,12 @@ public interface Port2Ports extends AbstractContainerCorrespondenceNode {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Sc help Read In</em>' reference.
-	 * @see #setSc_help_ReadIn(de.uni_paderborn.fujaba.simulink.model.OutPortBlock)
+	 * @see #setSc_help_ReadIn(OutPortBlock)
 	 * @see org.muml.simulink.adapter.corrmodel.Fujaba2simulinkPackage#getPort2Ports_Sc_help_ReadIn()
 	 * @model
 	 * @generated
 	 */
-	de.uni_paderborn.fujaba.simulink.model.OutPortBlock getSc_help_ReadIn();
+	OutPortBlock getSc_help_ReadIn();
 
 	/**
 	 * Sets the value of the '{@link org.muml.simulink.adapter.corrmodel.Port2Ports#getSc_help_ReadIn <em>Sc help Read In</em>}' reference.
@@ -394,7 +394,7 @@ public interface Port2Ports extends AbstractContainerCorrespondenceNode {
 	 * @see #getSc_help_ReadIn()
 	 * @generated
 	 */
-	void setSc_help_ReadIn(de.uni_paderborn.fujaba.simulink.model.OutPortBlock value);
+	void setSc_help_ReadIn(OutPortBlock value);
 
 	/**
 	 * Returns the value of the '<em><b>Sc help Read Out</b></em>' reference.
@@ -405,12 +405,12 @@ public interface Port2Ports extends AbstractContainerCorrespondenceNode {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Sc help Read Out</em>' reference.
-	 * @see #setSc_help_ReadOut(de.uni_paderborn.fujaba.simulink.model.InPortBlock)
+	 * @see #setSc_help_ReadOut(InPortBlock)
 	 * @see org.muml.simulink.adapter.corrmodel.Fujaba2simulinkPackage#getPort2Ports_Sc_help_ReadOut()
 	 * @model
 	 * @generated
 	 */
-	de.uni_paderborn.fujaba.simulink.model.InPortBlock getSc_help_ReadOut();
+	InPortBlock getSc_help_ReadOut();
 
 	/**
 	 * Sets the value of the '{@link org.muml.simulink.adapter.corrmodel.Port2Ports#getSc_help_ReadOut <em>Sc help Read Out</em>}' reference.
@@ -420,7 +420,7 @@ public interface Port2Ports extends AbstractContainerCorrespondenceNode {
 	 * @see #getSc_help_ReadOut()
 	 * @generated
 	 */
-	void setSc_help_ReadOut(de.uni_paderborn.fujaba.simulink.model.InPortBlock value);
+	void setSc_help_ReadOut(InPortBlock value);
 
 	/**
 	 * Returns the value of the '<em><b>Sc help Write In</b></em>' reference.
@@ -431,12 +431,12 @@ public interface Port2Ports extends AbstractContainerCorrespondenceNode {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Sc help Write In</em>' reference.
-	 * @see #setSc_help_WriteIn(de.uni_paderborn.fujaba.simulink.model.OutPortBlock)
+	 * @see #setSc_help_WriteIn(OutPortBlock)
 	 * @see org.muml.simulink.adapter.corrmodel.Fujaba2simulinkPackage#getPort2Ports_Sc_help_WriteIn()
 	 * @model
 	 * @generated
 	 */
-	de.uni_paderborn.fujaba.simulink.model.OutPortBlock getSc_help_WriteIn();
+	OutPortBlock getSc_help_WriteIn();
 
 	/**
 	 * Sets the value of the '{@link org.muml.simulink.adapter.corrmodel.Port2Ports#getSc_help_WriteIn <em>Sc help Write In</em>}' reference.
@@ -446,7 +446,7 @@ public interface Port2Ports extends AbstractContainerCorrespondenceNode {
 	 * @see #getSc_help_WriteIn()
 	 * @generated
 	 */
-	void setSc_help_WriteIn(de.uni_paderborn.fujaba.simulink.model.OutPortBlock value);
+	void setSc_help_WriteIn(OutPortBlock value);
 
 	/**
 	 * Returns the value of the '<em><b>Sc help Write Out</b></em>' reference.
@@ -457,12 +457,12 @@ public interface Port2Ports extends AbstractContainerCorrespondenceNode {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Sc help Write Out</em>' reference.
-	 * @see #setSc_help_WriteOut(de.uni_paderborn.fujaba.simulink.model.InPortBlock)
+	 * @see #setSc_help_WriteOut(InPortBlock)
 	 * @see org.muml.simulink.adapter.corrmodel.Fujaba2simulinkPackage#getPort2Ports_Sc_help_WriteOut()
 	 * @model
 	 * @generated
 	 */
-	de.uni_paderborn.fujaba.simulink.model.InPortBlock getSc_help_WriteOut();
+	InPortBlock getSc_help_WriteOut();
 
 	/**
 	 * Sets the value of the '{@link org.muml.simulink.adapter.corrmodel.Port2Ports#getSc_help_WriteOut <em>Sc help Write Out</em>}' reference.
@@ -472,7 +472,7 @@ public interface Port2Ports extends AbstractContainerCorrespondenceNode {
 	 * @see #getSc_help_WriteOut()
 	 * @generated
 	 */
-	void setSc_help_WriteOut(de.uni_paderborn.fujaba.simulink.model.InPortBlock value);
+	void setSc_help_WriteOut(InPortBlock value);
 
 	/**
 	 * Returns the value of the '<em><b>Mi</b></em>' reference.
@@ -509,12 +509,12 @@ public interface Port2Ports extends AbstractContainerCorrespondenceNode {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Net address in Port</em>' reference.
-	 * @see #setNet_address_inPort(de.uni_paderborn.fujaba.simulink.model.InPortBlock)
+	 * @see #setNet_address_inPort(InPortBlock)
 	 * @see org.muml.simulink.adapter.corrmodel.Fujaba2simulinkPackage#getPort2Ports_Net_address_inPort()
 	 * @model
 	 * @generated
 	 */
-	de.uni_paderborn.fujaba.simulink.model.InPortBlock getNet_address_inPort();
+	InPortBlock getNet_address_inPort();
 
 	/**
 	 * Sets the value of the '{@link org.muml.simulink.adapter.corrmodel.Port2Ports#getNet_address_inPort <em>Net address in Port</em>}' reference.
@@ -524,7 +524,7 @@ public interface Port2Ports extends AbstractContainerCorrespondenceNode {
 	 * @see #getNet_address_inPort()
 	 * @generated
 	 */
-	void setNet_address_inPort(de.uni_paderborn.fujaba.simulink.model.InPortBlock value);
+	void setNet_address_inPort(InPortBlock value);
 
 	/**
 	 * Returns the value of the '<em><b>Receiver net address in Port</b></em>' reference.
@@ -535,12 +535,12 @@ public interface Port2Ports extends AbstractContainerCorrespondenceNode {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Receiver net address in Port</em>' reference.
-	 * @see #setReceiver_net_address_inPort(de.uni_paderborn.fujaba.simulink.model.InPortBlock)
+	 * @see #setReceiver_net_address_inPort(InPortBlock)
 	 * @see org.muml.simulink.adapter.corrmodel.Fujaba2simulinkPackage#getPort2Ports_Receiver_net_address_inPort()
 	 * @model
 	 * @generated
 	 */
-	de.uni_paderborn.fujaba.simulink.model.InPortBlock getReceiver_net_address_inPort();
+	InPortBlock getReceiver_net_address_inPort();
 
 	/**
 	 * Sets the value of the '{@link org.muml.simulink.adapter.corrmodel.Port2Ports#getReceiver_net_address_inPort <em>Receiver net address in Port</em>}' reference.
@@ -550,7 +550,7 @@ public interface Port2Ports extends AbstractContainerCorrespondenceNode {
 	 * @see #getReceiver_net_address_inPort()
 	 * @generated
 	 */
-	void setReceiver_net_address_inPort(de.uni_paderborn.fujaba.simulink.model.InPortBlock value);
+	void setReceiver_net_address_inPort(InPortBlock value);
 
 	/**
 	 * Returns the value of the '<em><b>Constant</b></em>' reference.
@@ -561,12 +561,12 @@ public interface Port2Ports extends AbstractContainerCorrespondenceNode {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Constant</em>' reference.
-	 * @see #setConstant(de.uni_paderborn.fujaba.simulink.model.Constant)
+	 * @see #setConstant(Constant)
 	 * @see org.muml.simulink.adapter.corrmodel.Fujaba2simulinkPackage#getPort2Ports_Constant()
 	 * @model
 	 * @generated
 	 */
-	de.uni_paderborn.fujaba.simulink.model.Constant getConstant();
+	Constant getConstant();
 
 	/**
 	 * Sets the value of the '{@link org.muml.simulink.adapter.corrmodel.Port2Ports#getConstant <em>Constant</em>}' reference.
@@ -576,7 +576,7 @@ public interface Port2Ports extends AbstractContainerCorrespondenceNode {
 	 * @see #getConstant()
 	 * @generated
 	 */
-	void setConstant(de.uni_paderborn.fujaba.simulink.model.Constant value);
+	void setConstant(Constant value);
 
 	/**
 	 * Returns the value of the '<em><b>Port Type</b></em>' reference.
@@ -613,12 +613,12 @@ public interface Port2Ports extends AbstractContainerCorrespondenceNode {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Line From Read Out</em>' reference.
-	 * @see #setLineFromReadOut(de.uni_paderborn.fujaba.simulink.model.Line)
+	 * @see #setLineFromReadOut(Line)
 	 * @see org.muml.simulink.adapter.corrmodel.Fujaba2simulinkPackage#getPort2Ports_LineFromReadOut()
 	 * @model
 	 * @generated
 	 */
-	de.uni_paderborn.fujaba.simulink.model.Line getLineFromReadOut();
+	Line getLineFromReadOut();
 
 	/**
 	 * Sets the value of the '{@link org.muml.simulink.adapter.corrmodel.Port2Ports#getLineFromReadOut <em>Line From Read Out</em>}' reference.
@@ -628,7 +628,7 @@ public interface Port2Ports extends AbstractContainerCorrespondenceNode {
 	 * @see #getLineFromReadOut()
 	 * @generated
 	 */
-	void setLineFromReadOut(de.uni_paderborn.fujaba.simulink.model.Line value);
+	void setLineFromReadOut(Line value);
 
 	/**
 	 * Returns the value of the '<em><b>Line To Read In</b></em>' reference.
@@ -639,12 +639,12 @@ public interface Port2Ports extends AbstractContainerCorrespondenceNode {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Line To Read In</em>' reference.
-	 * @see #setLineToReadIn(de.uni_paderborn.fujaba.simulink.model.Line)
+	 * @see #setLineToReadIn(Line)
 	 * @see org.muml.simulink.adapter.corrmodel.Fujaba2simulinkPackage#getPort2Ports_LineToReadIn()
 	 * @model
 	 * @generated
 	 */
-	de.uni_paderborn.fujaba.simulink.model.Line getLineToReadIn();
+	Line getLineToReadIn();
 
 	/**
 	 * Sets the value of the '{@link org.muml.simulink.adapter.corrmodel.Port2Ports#getLineToReadIn <em>Line To Read In</em>}' reference.
@@ -654,7 +654,7 @@ public interface Port2Ports extends AbstractContainerCorrespondenceNode {
 	 * @see #getLineToReadIn()
 	 * @generated
 	 */
-	void setLineToReadIn(de.uni_paderborn.fujaba.simulink.model.Line value);
+	void setLineToReadIn(Line value);
 
 	/**
 	 * Returns the value of the '<em><b>Link Layer</b></em>' reference.
@@ -665,12 +665,12 @@ public interface Port2Ports extends AbstractContainerCorrespondenceNode {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Link Layer</em>' reference.
-	 * @see #setLinkLayer(de.uni_paderborn.fujaba.simulink.model.msglib.LinkLayer)
+	 * @see #setLinkLayer(LinkLayer)
 	 * @see org.muml.simulink.adapter.corrmodel.Fujaba2simulinkPackage#getPort2Ports_LinkLayer()
 	 * @model
 	 * @generated
 	 */
-	de.uni_paderborn.fujaba.simulink.model.msglib.LinkLayer getLinkLayer();
+	LinkLayer getLinkLayer();
 
 	/**
 	 * Sets the value of the '{@link org.muml.simulink.adapter.corrmodel.Port2Ports#getLinkLayer <em>Link Layer</em>}' reference.
@@ -680,6 +680,6 @@ public interface Port2Ports extends AbstractContainerCorrespondenceNode {
 	 * @see #getLinkLayer()
 	 * @generated
 	 */
-	void setLinkLayer(de.uni_paderborn.fujaba.simulink.model.msglib.LinkLayer value);
+	void setLinkLayer(LinkLayer value);
 
 } // Port2Ports

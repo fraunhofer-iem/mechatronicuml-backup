@@ -64,12 +64,12 @@ public interface scAsyncRec2sfDequeue extends AbstractContainerCorrespondenceNod
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Sc Action</em>' reference.
-	 * @see #setScAction(de.uni_paderborn.fujaba.simulink.model.stateflow.Action)
+	 * @see #setScAction(Action)
 	 * @see org.muml.simulink.adapter.corrmodel.behavior.BehaviorPackage#getscAsyncRec2sfDequeue_ScAction()
 	 * @model
 	 * @generated
 	 */
-	de.uni_paderborn.fujaba.simulink.model.stateflow.Action getScAction();
+	Action getScAction();
 
 	/**
 	 * Sets the value of the '{@link org.muml.simulink.adapter.corrmodel.behavior.scAsyncRec2sfDequeue#getScAction <em>Sc Action</em>}' reference.
@@ -79,6 +79,6 @@ public interface scAsyncRec2sfDequeue extends AbstractContainerCorrespondenceNod
 	 * @see #getScAction()
 	 * @generated
 	 */
-	void setScAction(de.uni_paderborn.fujaba.simulink.model.stateflow.Action value);
+	void setScAction(Action value);
 
 } // scAsyncRec2sfDequeue

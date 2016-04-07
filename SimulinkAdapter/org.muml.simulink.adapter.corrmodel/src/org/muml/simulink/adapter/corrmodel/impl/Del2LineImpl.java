@@ -52,7 +52,7 @@ public class Del2LineImpl extends AbstractContainerCorrespondenceNodeImpl implem
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<de.uni_paderborn.fujaba.simulink.model.Line> line;
+	protected EList<Line> line;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -116,9 +116,9 @@ public class Del2LineImpl extends AbstractContainerCorrespondenceNodeImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<de.uni_paderborn.fujaba.simulink.model.Line> getLine() {
+	public EList<Line> getLine() {
 		if (line == null) {
-			line = new EObjectResolvingEList<de.uni_paderborn.fujaba.simulink.model.Line>(de.uni_paderborn.fujaba.simulink.model.Line.class, this, Fujaba2simulinkPackage.DEL2_LINE__LINE);
+			line = new EObjectResolvingEList<Line>(Line.class, this, Fujaba2simulinkPackage.DEL2_LINE__LINE);
 		}
 		return line;
 	}
@@ -154,7 +154,7 @@ public class Del2LineImpl extends AbstractContainerCorrespondenceNodeImpl implem
 				return;
 			case Fujaba2simulinkPackage.DEL2_LINE__LINE:
 				getLine().clear();
-				getLine().addAll((Collection<? extends de.uni_paderborn.fujaba.simulink.model.Line>)newValue);
+				getLine().addAll((Collection<? extends Line>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);

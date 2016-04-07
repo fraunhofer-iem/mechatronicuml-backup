@@ -62,12 +62,12 @@ public interface CompInst2LibRef extends AbstractContainerCorrespondenceNode {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Lib Ref</em>' reference.
-	 * @see #setLibRef(de.uni_paderborn.fujaba.simulink.model.LibraryReference)
+	 * @see #setLibRef(LibraryReference)
 	 * @see org.muml.simulink.adapter.corrmodel.Fujaba2simulinkPackage#getCompInst2LibRef_LibRef()
 	 * @model
 	 * @generated
 	 */
-	de.uni_paderborn.fujaba.simulink.model.LibraryReference getLibRef();
+	LibraryReference getLibRef();
 
 	/**
 	 * Sets the value of the '{@link org.muml.simulink.adapter.corrmodel.CompInst2LibRef#getLibRef <em>Lib Ref</em>}' reference.
@@ -77,6 +77,6 @@ public interface CompInst2LibRef extends AbstractContainerCorrespondenceNode {
 	 * @see #getLibRef()
 	 * @generated
 	 */
-	void setLibRef(de.uni_paderborn.fujaba.simulink.model.LibraryReference value);
+	void setLibRef(LibraryReference value);
 
 } // CompInst2LibRef

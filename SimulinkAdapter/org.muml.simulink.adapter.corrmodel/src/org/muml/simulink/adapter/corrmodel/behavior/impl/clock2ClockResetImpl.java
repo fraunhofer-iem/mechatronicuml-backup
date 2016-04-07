@@ -51,7 +51,7 @@ public class clock2ClockResetImpl extends AbstractContainerCorrespondenceNodeImp
 	 * @generated
 	 * @ordered
 	 */
-	protected de.uni_paderborn.fujaba.simulink.model.stateflow.Action sfClockReset;
+	protected Action sfClockReset;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -115,10 +115,10 @@ public class clock2ClockResetImpl extends AbstractContainerCorrespondenceNodeImp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.simulink.model.stateflow.Action getSfClockReset() {
+	public Action getSfClockReset() {
 		if (sfClockReset != null && ((EObject)sfClockReset).eIsProxy()) {
 			InternalEObject oldSfClockReset = (InternalEObject)sfClockReset;
-			sfClockReset = (de.uni_paderborn.fujaba.simulink.model.stateflow.Action)eResolveProxy(oldSfClockReset);
+			sfClockReset = (Action)eResolveProxy(oldSfClockReset);
 			if (sfClockReset != oldSfClockReset) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BehaviorPackage.CLOCK2_CLOCK_RESET__SF_CLOCK_RESET, oldSfClockReset, sfClockReset));
@@ -132,7 +132,7 @@ public class clock2ClockResetImpl extends AbstractContainerCorrespondenceNodeImp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.simulink.model.stateflow.Action basicGetSfClockReset() {
+	public Action basicGetSfClockReset() {
 		return sfClockReset;
 	}
 
@@ -141,8 +141,8 @@ public class clock2ClockResetImpl extends AbstractContainerCorrespondenceNodeImp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSfClockReset(de.uni_paderborn.fujaba.simulink.model.stateflow.Action newSfClockReset) {
-		de.uni_paderborn.fujaba.simulink.model.stateflow.Action oldSfClockReset = sfClockReset;
+	public void setSfClockReset(Action newSfClockReset) {
+		Action oldSfClockReset = sfClockReset;
 		sfClockReset = newSfClockReset;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BehaviorPackage.CLOCK2_CLOCK_RESET__SF_CLOCK_RESET, oldSfClockReset, sfClockReset));
@@ -178,7 +178,7 @@ public class clock2ClockResetImpl extends AbstractContainerCorrespondenceNodeImp
 				setScClock((Clock)newValue);
 				return;
 			case BehaviorPackage.CLOCK2_CLOCK_RESET__SF_CLOCK_RESET:
-				setSfClockReset((de.uni_paderborn.fujaba.simulink.model.stateflow.Action)newValue);
+				setSfClockReset((Action)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -196,7 +196,7 @@ public class clock2ClockResetImpl extends AbstractContainerCorrespondenceNodeImp
 				setScClock((Clock)null);
 				return;
 			case BehaviorPackage.CLOCK2_CLOCK_RESET__SF_CLOCK_RESET:
-				setSfClockReset((de.uni_paderborn.fujaba.simulink.model.stateflow.Action)null);
+				setSfClockReset((Action)null);
 				return;
 		}
 		super.eUnset(featureID);

@@ -56,7 +56,7 @@ public class scOp2sfEmbFuncImpl extends AbstractContainerCorrespondenceNodeImpl 
 	 * @generated
 	 * @ordered
 	 */
-	protected de.uni_paderborn.fujaba.simulink.model.stateflow.EmbeddedFunction sfEmbFunc;
+	protected EmbeddedFunction sfEmbFunc;
 
 	/**
 	 * The cached value of the '{@link #getScAnnotation() <em>Sc Annotation</em>}' reference.
@@ -140,10 +140,10 @@ public class scOp2sfEmbFuncImpl extends AbstractContainerCorrespondenceNodeImpl 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.simulink.model.stateflow.EmbeddedFunction getSfEmbFunc() {
+	public EmbeddedFunction getSfEmbFunc() {
 		if (sfEmbFunc != null && ((EObject)sfEmbFunc).eIsProxy()) {
 			InternalEObject oldSfEmbFunc = (InternalEObject)sfEmbFunc;
-			sfEmbFunc = (de.uni_paderborn.fujaba.simulink.model.stateflow.EmbeddedFunction)eResolveProxy(oldSfEmbFunc);
+			sfEmbFunc = (EmbeddedFunction)eResolveProxy(oldSfEmbFunc);
 			if (sfEmbFunc != oldSfEmbFunc) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BehaviorPackage.SC_OP2SF_EMB_FUNC__SF_EMB_FUNC, oldSfEmbFunc, sfEmbFunc));
@@ -157,7 +157,7 @@ public class scOp2sfEmbFuncImpl extends AbstractContainerCorrespondenceNodeImpl 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.simulink.model.stateflow.EmbeddedFunction basicGetSfEmbFunc() {
+	public EmbeddedFunction basicGetSfEmbFunc() {
 		return sfEmbFunc;
 	}
 
@@ -166,8 +166,8 @@ public class scOp2sfEmbFuncImpl extends AbstractContainerCorrespondenceNodeImpl 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSfEmbFunc(de.uni_paderborn.fujaba.simulink.model.stateflow.EmbeddedFunction newSfEmbFunc) {
-		de.uni_paderborn.fujaba.simulink.model.stateflow.EmbeddedFunction oldSfEmbFunc = sfEmbFunc;
+	public void setSfEmbFunc(EmbeddedFunction newSfEmbFunc) {
+		EmbeddedFunction oldSfEmbFunc = sfEmbFunc;
 		sfEmbFunc = newSfEmbFunc;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BehaviorPackage.SC_OP2SF_EMB_FUNC__SF_EMB_FUNC, oldSfEmbFunc, sfEmbFunc));
@@ -287,7 +287,7 @@ public class scOp2sfEmbFuncImpl extends AbstractContainerCorrespondenceNodeImpl 
 				setScOperation((Operation)newValue);
 				return;
 			case BehaviorPackage.SC_OP2SF_EMB_FUNC__SF_EMB_FUNC:
-				setSfEmbFunc((de.uni_paderborn.fujaba.simulink.model.stateflow.EmbeddedFunction)newValue);
+				setSfEmbFunc((EmbeddedFunction)newValue);
 				return;
 			case BehaviorPackage.SC_OP2SF_EMB_FUNC__SC_ANNOTATION:
 				setScAnnotation((EAnnotation)newValue);
@@ -311,7 +311,7 @@ public class scOp2sfEmbFuncImpl extends AbstractContainerCorrespondenceNodeImpl 
 				setScOperation((Operation)null);
 				return;
 			case BehaviorPackage.SC_OP2SF_EMB_FUNC__SF_EMB_FUNC:
-				setSfEmbFunc((de.uni_paderborn.fujaba.simulink.model.stateflow.EmbeddedFunction)null);
+				setSfEmbFunc((EmbeddedFunction)null);
 				return;
 			case BehaviorPackage.SC_OP2SF_EMB_FUNC__SC_ANNOTATION:
 				setScAnnotation((EAnnotation)null);

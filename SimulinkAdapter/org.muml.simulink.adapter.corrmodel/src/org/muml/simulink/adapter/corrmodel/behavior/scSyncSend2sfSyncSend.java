@@ -41,12 +41,12 @@ public interface scSyncSend2sfSyncSend extends AbstractContainerCorrespondenceNo
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Sf Guard</em>' reference.
-	 * @see #setSfGuard(de.uni_paderborn.fujaba.simulink.model.stateflow.Action)
+	 * @see #setSfGuard(Action)
 	 * @see org.muml.simulink.adapter.corrmodel.behavior.BehaviorPackage#getscSyncSend2sfSyncSend_SfGuard()
 	 * @model
 	 * @generated
 	 */
-	de.uni_paderborn.fujaba.simulink.model.stateflow.Action getSfGuard();
+	Action getSfGuard();
 
 	/**
 	 * Sets the value of the '{@link org.muml.simulink.adapter.corrmodel.behavior.scSyncSend2sfSyncSend#getSfGuard <em>Sf Guard</em>}' reference.
@@ -56,7 +56,7 @@ public interface scSyncSend2sfSyncSend extends AbstractContainerCorrespondenceNo
 	 * @see #getSfGuard()
 	 * @generated
 	 */
-	void setSfGuard(de.uni_paderborn.fujaba.simulink.model.stateflow.Action value);
+	void setSfGuard(Action value);
 
 	/**
 	 * Returns the value of the '<em><b>Sf Assignment</b></em>' reference.
@@ -67,12 +67,12 @@ public interface scSyncSend2sfSyncSend extends AbstractContainerCorrespondenceNo
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Sf Assignment</em>' reference.
-	 * @see #setSfAssignment(de.uni_paderborn.fujaba.simulink.model.stateflow.Action)
+	 * @see #setSfAssignment(Action)
 	 * @see org.muml.simulink.adapter.corrmodel.behavior.BehaviorPackage#getscSyncSend2sfSyncSend_SfAssignment()
 	 * @model
 	 * @generated
 	 */
-	de.uni_paderborn.fujaba.simulink.model.stateflow.Action getSfAssignment();
+	Action getSfAssignment();
 
 	/**
 	 * Sets the value of the '{@link org.muml.simulink.adapter.corrmodel.behavior.scSyncSend2sfSyncSend#getSfAssignment <em>Sf Assignment</em>}' reference.
@@ -82,7 +82,7 @@ public interface scSyncSend2sfSyncSend extends AbstractContainerCorrespondenceNo
 	 * @see #getSfAssignment()
 	 * @generated
 	 */
-	void setSfAssignment(de.uni_paderborn.fujaba.simulink.model.stateflow.Action value);
+	void setSfAssignment(Action value);
 
 	/**
 	 * Returns the value of the '<em><b>Sc Trans Annotation</b></em>' reference.

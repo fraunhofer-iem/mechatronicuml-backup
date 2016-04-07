@@ -64,12 +64,12 @@ public interface ScTrans2SfTrans extends AbstractContainerCorrespondenceNode {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Sf Trans</em>' reference.
-	 * @see #setSfTrans(de.uni_paderborn.fujaba.simulink.model.stateflow.Transition)
+	 * @see #setSfTrans(org.muml.simulink.stateflow.Transition)
 	 * @see org.muml.simulink.adapter.corrmodel.behavior.BehaviorPackage#getScTrans2SfTrans_SfTrans()
 	 * @model
 	 * @generated
 	 */
-	de.uni_paderborn.fujaba.simulink.model.stateflow.Transition getSfTrans();
+	org.muml.simulink.stateflow.Transition getSfTrans();
 
 	/**
 	 * Sets the value of the '{@link org.muml.simulink.adapter.corrmodel.behavior.ScTrans2SfTrans#getSfTrans <em>Sf Trans</em>}' reference.
@@ -79,7 +79,7 @@ public interface ScTrans2SfTrans extends AbstractContainerCorrespondenceNode {
 	 * @see #getSfTrans()
 	 * @generated
 	 */
-	void setSfTrans(de.uni_paderborn.fujaba.simulink.model.stateflow.Transition value);
+	void setSfTrans(org.muml.simulink.stateflow.Transition value);
 
 	/**
 	 * Returns the value of the '<em><b>Sc Reg</b></em>' reference.

@@ -41,7 +41,7 @@ public class RtScCat2SfMImpl extends AbstractContainerCorrespondenceNodeImpl imp
 	 * @generated
 	 * @ordered
 	 */
-	protected de.uni_paderborn.fujaba.simulink.model.stateflow.StateflowMachine sfM;
+	protected StateflowMachine sfM;
 
 	/**
 	 * The cached value of the '{@link #getRtScCat() <em>Rt Sc Cat</em>}' reference.
@@ -77,10 +77,10 @@ public class RtScCat2SfMImpl extends AbstractContainerCorrespondenceNodeImpl imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.simulink.model.stateflow.StateflowMachine getSfM() {
+	public StateflowMachine getSfM() {
 		if (sfM != null && ((EObject)sfM).eIsProxy()) {
 			InternalEObject oldSfM = (InternalEObject)sfM;
-			sfM = (de.uni_paderborn.fujaba.simulink.model.stateflow.StateflowMachine)eResolveProxy(oldSfM);
+			sfM = (StateflowMachine)eResolveProxy(oldSfM);
 			if (sfM != oldSfM) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BehaviorPackage.RT_SC_CAT2_SF_M__SF_M, oldSfM, sfM));
@@ -94,7 +94,7 @@ public class RtScCat2SfMImpl extends AbstractContainerCorrespondenceNodeImpl imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.simulink.model.stateflow.StateflowMachine basicGetSfM() {
+	public StateflowMachine basicGetSfM() {
 		return sfM;
 	}
 
@@ -103,8 +103,8 @@ public class RtScCat2SfMImpl extends AbstractContainerCorrespondenceNodeImpl imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSfM(de.uni_paderborn.fujaba.simulink.model.stateflow.StateflowMachine newSfM) {
-		de.uni_paderborn.fujaba.simulink.model.stateflow.StateflowMachine oldSfM = sfM;
+	public void setSfM(StateflowMachine newSfM) {
+		StateflowMachine oldSfM = sfM;
 		sfM = newSfM;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BehaviorPackage.RT_SC_CAT2_SF_M__SF_M, oldSfM, sfM));
@@ -175,7 +175,7 @@ public class RtScCat2SfMImpl extends AbstractContainerCorrespondenceNodeImpl imp
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case BehaviorPackage.RT_SC_CAT2_SF_M__SF_M:
-				setSfM((de.uni_paderborn.fujaba.simulink.model.stateflow.StateflowMachine)newValue);
+				setSfM((StateflowMachine)newValue);
 				return;
 			case BehaviorPackage.RT_SC_CAT2_SF_M__RT_SC_CAT:
 				setRtScCat((ModelElementCategory)newValue);
@@ -193,7 +193,7 @@ public class RtScCat2SfMImpl extends AbstractContainerCorrespondenceNodeImpl imp
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case BehaviorPackage.RT_SC_CAT2_SF_M__SF_M:
-				setSfM((de.uni_paderborn.fujaba.simulink.model.stateflow.StateflowMachine)null);
+				setSfM((StateflowMachine)null);
 				return;
 			case BehaviorPackage.RT_SC_CAT2_SF_M__RT_SC_CAT:
 				setRtScCat((ModelElementCategory)null);

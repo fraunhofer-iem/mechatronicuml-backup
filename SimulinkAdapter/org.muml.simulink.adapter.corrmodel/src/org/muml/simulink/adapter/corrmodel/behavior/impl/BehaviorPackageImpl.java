@@ -331,7 +331,7 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 		// Initialize simple dependencies
 		EcorePackage.eINSTANCE.eClass();
 		PimPackage.eINSTANCE.eClass();
-		SimulinkPackage.eINSTANCE.eClass();
+		org.muml.simulink.SimulinkPackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
 		Fujaba2simulinkPackageImpl theFujaba2simulinkPackage = (Fujaba2simulinkPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(Fujaba2simulinkPackage.eNS_URI) instanceof Fujaba2simulinkPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(Fujaba2simulinkPackage.eNS_URI) : Fujaba2simulinkPackage.eINSTANCE);
@@ -1767,7 +1767,7 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 
 		// Obtain other dependent packages
 		Fujaba2simulinkPackage theFujaba2simulinkPackage = (Fujaba2simulinkPackage)EPackage.Registry.INSTANCE.getEPackage(Fujaba2simulinkPackage.eNS_URI);
-		StateflowPackage theStateflowPackage = (StateflowPackage)EPackage.Registry.INSTANCE.getEPackage(StateflowPackage.eNS_URI);
+		org.muml.simulink.stateflow.StateflowPackage theStateflowPackage = (org.muml.simulink.stateflow.StateflowPackage)EPackage.Registry.INSTANCE.getEPackage(org.muml.simulink.stateflow.StateflowPackage.eNS_URI);
 		ModelinstancePackage theModelinstancePackage = (ModelinstancePackage)EPackage.Registry.INSTANCE.getEPackage(ModelinstancePackage.eNS_URI);
 		RealtimestatechartPackage theRealtimestatechartPackage = (RealtimestatechartPackage)EPackage.Registry.INSTANCE.getEPackage(RealtimestatechartPackage.eNS_URI);
 		ExpressionsPackage theExpressionsPackage = (ExpressionsPackage)EPackage.Registry.INSTANCE.getEPackage(ExpressionsPackage.eNS_URI);

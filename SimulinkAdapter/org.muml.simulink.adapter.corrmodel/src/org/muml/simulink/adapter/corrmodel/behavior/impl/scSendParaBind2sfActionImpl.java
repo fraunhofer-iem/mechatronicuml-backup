@@ -44,7 +44,7 @@ public class scSendParaBind2sfActionImpl extends AbstractContainerCorrespondence
 	 * @generated
 	 * @ordered
 	 */
-	protected de.uni_paderborn.fujaba.simulink.model.stateflow.Action sfParaBAction;
+	protected Action sfParaBAction;
 
 	/**
 	 * The cached value of the '{@link #getScAnnotation() <em>Sc Annotation</em>}' reference.
@@ -90,10 +90,10 @@ public class scSendParaBind2sfActionImpl extends AbstractContainerCorrespondence
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.simulink.model.stateflow.Action getSfParaBAction() {
+	public Action getSfParaBAction() {
 		if (sfParaBAction != null && ((EObject)sfParaBAction).eIsProxy()) {
 			InternalEObject oldSfParaBAction = (InternalEObject)sfParaBAction;
-			sfParaBAction = (de.uni_paderborn.fujaba.simulink.model.stateflow.Action)eResolveProxy(oldSfParaBAction);
+			sfParaBAction = (Action)eResolveProxy(oldSfParaBAction);
 			if (sfParaBAction != oldSfParaBAction) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BehaviorPackage.SC_SEND_PARA_BIND2SF_ACTION__SF_PARA_BACTION, oldSfParaBAction, sfParaBAction));
@@ -107,7 +107,7 @@ public class scSendParaBind2sfActionImpl extends AbstractContainerCorrespondence
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.simulink.model.stateflow.Action basicGetSfParaBAction() {
+	public Action basicGetSfParaBAction() {
 		return sfParaBAction;
 	}
 
@@ -116,8 +116,8 @@ public class scSendParaBind2sfActionImpl extends AbstractContainerCorrespondence
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSfParaBAction(de.uni_paderborn.fujaba.simulink.model.stateflow.Action newSfParaBAction) {
-		de.uni_paderborn.fujaba.simulink.model.stateflow.Action oldSfParaBAction = sfParaBAction;
+	public void setSfParaBAction(Action newSfParaBAction) {
+		Action oldSfParaBAction = sfParaBAction;
 		sfParaBAction = newSfParaBAction;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BehaviorPackage.SC_SEND_PARA_BIND2SF_ACTION__SF_PARA_BACTION, oldSfParaBAction, sfParaBAction));
@@ -231,7 +231,7 @@ public class scSendParaBind2sfActionImpl extends AbstractContainerCorrespondence
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case BehaviorPackage.SC_SEND_PARA_BIND2SF_ACTION__SF_PARA_BACTION:
-				setSfParaBAction((de.uni_paderborn.fujaba.simulink.model.stateflow.Action)newValue);
+				setSfParaBAction((Action)newValue);
 				return;
 			case BehaviorPackage.SC_SEND_PARA_BIND2SF_ACTION__SC_ANNOTATION:
 				setScAnnotation((EAnnotation)newValue);
@@ -252,7 +252,7 @@ public class scSendParaBind2sfActionImpl extends AbstractContainerCorrespondence
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case BehaviorPackage.SC_SEND_PARA_BIND2SF_ACTION__SF_PARA_BACTION:
-				setSfParaBAction((de.uni_paderborn.fujaba.simulink.model.stateflow.Action)null);
+				setSfParaBAction((Action)null);
 				return;
 			case BehaviorPackage.SC_SEND_PARA_BIND2SF_ACTION__SC_ANNOTATION:
 				setScAnnotation((EAnnotation)null);

@@ -65,12 +65,12 @@ public interface scOpData2sfEmbFuncData extends AbstractContainerCorrespondenceN
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Sf Data</em>' reference.
-	 * @see #setSfData(de.uni_paderborn.fujaba.simulink.model.stateflow.Data)
+	 * @see #setSfData(Data)
 	 * @see org.muml.simulink.adapter.corrmodel.behavior.BehaviorPackage#getscOpData2sfEmbFuncData_SfData()
 	 * @model
 	 * @generated
 	 */
-	de.uni_paderborn.fujaba.simulink.model.stateflow.Data getSfData();
+	Data getSfData();
 
 	/**
 	 * Sets the value of the '{@link org.muml.simulink.adapter.corrmodel.behavior.scOpData2sfEmbFuncData#getSfData <em>Sf Data</em>}' reference.
@@ -80,7 +80,7 @@ public interface scOpData2sfEmbFuncData extends AbstractContainerCorrespondenceN
 	 * @see #getSfData()
 	 * @generated
 	 */
-	void setSfData(de.uni_paderborn.fujaba.simulink.model.stateflow.Data value);
+	void setSfData(Data value);
 
 	/**
 	 * Returns the value of the '<em><b>Sc Para Type</b></em>' reference.

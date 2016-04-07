@@ -45,7 +45,7 @@ public class scSyncSend2sfSyncSendImpl extends AbstractContainerCorrespondenceNo
 	 * @generated
 	 * @ordered
 	 */
-	protected de.uni_paderborn.fujaba.simulink.model.stateflow.Action sfGuard;
+	protected Action sfGuard;
 
 	/**
 	 * The cached value of the '{@link #getSfAssignment() <em>Sf Assignment</em>}' reference.
@@ -55,7 +55,7 @@ public class scSyncSend2sfSyncSendImpl extends AbstractContainerCorrespondenceNo
 	 * @generated
 	 * @ordered
 	 */
-	protected de.uni_paderborn.fujaba.simulink.model.stateflow.Action sfAssignment;
+	protected Action sfAssignment;
 
 	/**
 	 * The cached value of the '{@link #getScTransAnnotation() <em>Sc Trans Annotation</em>}' reference.
@@ -101,10 +101,10 @@ public class scSyncSend2sfSyncSendImpl extends AbstractContainerCorrespondenceNo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.simulink.model.stateflow.Action getSfGuard() {
+	public Action getSfGuard() {
 		if (sfGuard != null && ((EObject)sfGuard).eIsProxy()) {
 			InternalEObject oldSfGuard = (InternalEObject)sfGuard;
-			sfGuard = (de.uni_paderborn.fujaba.simulink.model.stateflow.Action)eResolveProxy(oldSfGuard);
+			sfGuard = (Action)eResolveProxy(oldSfGuard);
 			if (sfGuard != oldSfGuard) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BehaviorPackage.SC_SYNC_SEND2SF_SYNC_SEND__SF_GUARD, oldSfGuard, sfGuard));
@@ -118,7 +118,7 @@ public class scSyncSend2sfSyncSendImpl extends AbstractContainerCorrespondenceNo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.simulink.model.stateflow.Action basicGetSfGuard() {
+	public Action basicGetSfGuard() {
 		return sfGuard;
 	}
 
@@ -127,8 +127,8 @@ public class scSyncSend2sfSyncSendImpl extends AbstractContainerCorrespondenceNo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSfGuard(de.uni_paderborn.fujaba.simulink.model.stateflow.Action newSfGuard) {
-		de.uni_paderborn.fujaba.simulink.model.stateflow.Action oldSfGuard = sfGuard;
+	public void setSfGuard(Action newSfGuard) {
+		Action oldSfGuard = sfGuard;
 		sfGuard = newSfGuard;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BehaviorPackage.SC_SYNC_SEND2SF_SYNC_SEND__SF_GUARD, oldSfGuard, sfGuard));
@@ -139,10 +139,10 @@ public class scSyncSend2sfSyncSendImpl extends AbstractContainerCorrespondenceNo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.simulink.model.stateflow.Action getSfAssignment() {
+	public Action getSfAssignment() {
 		if (sfAssignment != null && ((EObject)sfAssignment).eIsProxy()) {
 			InternalEObject oldSfAssignment = (InternalEObject)sfAssignment;
-			sfAssignment = (de.uni_paderborn.fujaba.simulink.model.stateflow.Action)eResolveProxy(oldSfAssignment);
+			sfAssignment = (Action)eResolveProxy(oldSfAssignment);
 			if (sfAssignment != oldSfAssignment) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BehaviorPackage.SC_SYNC_SEND2SF_SYNC_SEND__SF_ASSIGNMENT, oldSfAssignment, sfAssignment));
@@ -156,7 +156,7 @@ public class scSyncSend2sfSyncSendImpl extends AbstractContainerCorrespondenceNo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.simulink.model.stateflow.Action basicGetSfAssignment() {
+	public Action basicGetSfAssignment() {
 		return sfAssignment;
 	}
 
@@ -165,8 +165,8 @@ public class scSyncSend2sfSyncSendImpl extends AbstractContainerCorrespondenceNo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSfAssignment(de.uni_paderborn.fujaba.simulink.model.stateflow.Action newSfAssignment) {
-		de.uni_paderborn.fujaba.simulink.model.stateflow.Action oldSfAssignment = sfAssignment;
+	public void setSfAssignment(Action newSfAssignment) {
+		Action oldSfAssignment = sfAssignment;
 		sfAssignment = newSfAssignment;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BehaviorPackage.SC_SYNC_SEND2SF_SYNC_SEND__SF_ASSIGNMENT, oldSfAssignment, sfAssignment));
@@ -283,10 +283,10 @@ public class scSyncSend2sfSyncSendImpl extends AbstractContainerCorrespondenceNo
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case BehaviorPackage.SC_SYNC_SEND2SF_SYNC_SEND__SF_GUARD:
-				setSfGuard((de.uni_paderborn.fujaba.simulink.model.stateflow.Action)newValue);
+				setSfGuard((Action)newValue);
 				return;
 			case BehaviorPackage.SC_SYNC_SEND2SF_SYNC_SEND__SF_ASSIGNMENT:
-				setSfAssignment((de.uni_paderborn.fujaba.simulink.model.stateflow.Action)newValue);
+				setSfAssignment((Action)newValue);
 				return;
 			case BehaviorPackage.SC_SYNC_SEND2SF_SYNC_SEND__SC_TRANS_ANNOTATION:
 				setScTransAnnotation((EAnnotation)newValue);
@@ -307,10 +307,10 @@ public class scSyncSend2sfSyncSendImpl extends AbstractContainerCorrespondenceNo
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case BehaviorPackage.SC_SYNC_SEND2SF_SYNC_SEND__SF_GUARD:
-				setSfGuard((de.uni_paderborn.fujaba.simulink.model.stateflow.Action)null);
+				setSfGuard((Action)null);
 				return;
 			case BehaviorPackage.SC_SYNC_SEND2SF_SYNC_SEND__SF_ASSIGNMENT:
-				setSfAssignment((de.uni_paderborn.fujaba.simulink.model.stateflow.Action)null);
+				setSfAssignment((Action)null);
 				return;
 			case BehaviorPackage.SC_SYNC_SEND2SF_SYNC_SEND__SC_TRANS_ANNOTATION:
 				setScTransAnnotation((EAnnotation)null);

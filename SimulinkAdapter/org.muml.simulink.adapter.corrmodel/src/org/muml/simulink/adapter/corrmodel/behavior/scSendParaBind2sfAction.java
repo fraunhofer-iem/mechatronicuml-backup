@@ -40,12 +40,12 @@ public interface scSendParaBind2sfAction extends AbstractContainerCorrespondence
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Sf Para BAction</em>' reference.
-	 * @see #setSfParaBAction(de.uni_paderborn.fujaba.simulink.model.stateflow.Action)
+	 * @see #setSfParaBAction(Action)
 	 * @see org.muml.simulink.adapter.corrmodel.behavior.BehaviorPackage#getscSendParaBind2sfAction_SfParaBAction()
 	 * @model
 	 * @generated
 	 */
-	de.uni_paderborn.fujaba.simulink.model.stateflow.Action getSfParaBAction();
+	Action getSfParaBAction();
 
 	/**
 	 * Sets the value of the '{@link org.muml.simulink.adapter.corrmodel.behavior.scSendParaBind2sfAction#getSfParaBAction <em>Sf Para BAction</em>}' reference.
@@ -55,7 +55,7 @@ public interface scSendParaBind2sfAction extends AbstractContainerCorrespondence
 	 * @see #getSfParaBAction()
 	 * @generated
 	 */
-	void setSfParaBAction(de.uni_paderborn.fujaba.simulink.model.stateflow.Action value);
+	void setSfParaBAction(Action value);
 
 	/**
 	 * Returns the value of the '<em><b>Sc Annotation</b></em>' reference.

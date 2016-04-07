@@ -79,7 +79,7 @@ public class scInvariant2sfInvErrorImpl extends AbstractContainerCorrespondenceN
 	 * @generated
 	 * @ordered
 	 */
-	protected de.uni_paderborn.fujaba.simulink.model.stateflow.Transition sfInvTrans;
+	protected Transition sfInvTrans;
 
 	/**
 	 * The cached value of the '{@link #getSfInvGuard() <em>Sf Inv Guard</em>}' reference.
@@ -89,7 +89,7 @@ public class scInvariant2sfInvErrorImpl extends AbstractContainerCorrespondenceN
 	 * @generated
 	 * @ordered
 	 */
-	protected de.uni_paderborn.fujaba.simulink.model.stateflow.Action sfInvGuard;
+	protected Action sfInvGuard;
 
 	/**
 	 * The cached value of the '{@link #getSfInvNode() <em>Sf Inv Node</em>}' reference.
@@ -99,7 +99,7 @@ public class scInvariant2sfInvErrorImpl extends AbstractContainerCorrespondenceN
 	 * @generated
 	 * @ordered
 	 */
-	protected de.uni_paderborn.fujaba.simulink.model.stateflow.State sfInvNode;
+	protected State sfInvNode;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -239,10 +239,10 @@ public class scInvariant2sfInvErrorImpl extends AbstractContainerCorrespondenceN
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.simulink.model.stateflow.Transition getSfInvTrans() {
+	public Transition getSfInvTrans() {
 		if (sfInvTrans != null && ((EObject)sfInvTrans).eIsProxy()) {
 			InternalEObject oldSfInvTrans = (InternalEObject)sfInvTrans;
-			sfInvTrans = (de.uni_paderborn.fujaba.simulink.model.stateflow.Transition)eResolveProxy(oldSfInvTrans);
+			sfInvTrans = (Transition)eResolveProxy(oldSfInvTrans);
 			if (sfInvTrans != oldSfInvTrans) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BehaviorPackage.SC_INVARIANT2SF_INV_ERROR__SF_INV_TRANS, oldSfInvTrans, sfInvTrans));
@@ -256,7 +256,7 @@ public class scInvariant2sfInvErrorImpl extends AbstractContainerCorrespondenceN
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.simulink.model.stateflow.Transition basicGetSfInvTrans() {
+	public Transition basicGetSfInvTrans() {
 		return sfInvTrans;
 	}
 
@@ -265,8 +265,8 @@ public class scInvariant2sfInvErrorImpl extends AbstractContainerCorrespondenceN
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSfInvTrans(de.uni_paderborn.fujaba.simulink.model.stateflow.Transition newSfInvTrans) {
-		de.uni_paderborn.fujaba.simulink.model.stateflow.Transition oldSfInvTrans = sfInvTrans;
+	public void setSfInvTrans(Transition newSfInvTrans) {
+		Transition oldSfInvTrans = sfInvTrans;
 		sfInvTrans = newSfInvTrans;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BehaviorPackage.SC_INVARIANT2SF_INV_ERROR__SF_INV_TRANS, oldSfInvTrans, sfInvTrans));
@@ -277,10 +277,10 @@ public class scInvariant2sfInvErrorImpl extends AbstractContainerCorrespondenceN
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.simulink.model.stateflow.Action getSfInvGuard() {
+	public Action getSfInvGuard() {
 		if (sfInvGuard != null && ((EObject)sfInvGuard).eIsProxy()) {
 			InternalEObject oldSfInvGuard = (InternalEObject)sfInvGuard;
-			sfInvGuard = (de.uni_paderborn.fujaba.simulink.model.stateflow.Action)eResolveProxy(oldSfInvGuard);
+			sfInvGuard = (Action)eResolveProxy(oldSfInvGuard);
 			if (sfInvGuard != oldSfInvGuard) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BehaviorPackage.SC_INVARIANT2SF_INV_ERROR__SF_INV_GUARD, oldSfInvGuard, sfInvGuard));
@@ -294,7 +294,7 @@ public class scInvariant2sfInvErrorImpl extends AbstractContainerCorrespondenceN
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.simulink.model.stateflow.Action basicGetSfInvGuard() {
+	public Action basicGetSfInvGuard() {
 		return sfInvGuard;
 	}
 
@@ -303,8 +303,8 @@ public class scInvariant2sfInvErrorImpl extends AbstractContainerCorrespondenceN
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSfInvGuard(de.uni_paderborn.fujaba.simulink.model.stateflow.Action newSfInvGuard) {
-		de.uni_paderborn.fujaba.simulink.model.stateflow.Action oldSfInvGuard = sfInvGuard;
+	public void setSfInvGuard(Action newSfInvGuard) {
+		Action oldSfInvGuard = sfInvGuard;
 		sfInvGuard = newSfInvGuard;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BehaviorPackage.SC_INVARIANT2SF_INV_ERROR__SF_INV_GUARD, oldSfInvGuard, sfInvGuard));
@@ -315,10 +315,10 @@ public class scInvariant2sfInvErrorImpl extends AbstractContainerCorrespondenceN
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.simulink.model.stateflow.State getSfInvNode() {
+	public State getSfInvNode() {
 		if (sfInvNode != null && ((EObject)sfInvNode).eIsProxy()) {
 			InternalEObject oldSfInvNode = (InternalEObject)sfInvNode;
-			sfInvNode = (de.uni_paderborn.fujaba.simulink.model.stateflow.State)eResolveProxy(oldSfInvNode);
+			sfInvNode = (State)eResolveProxy(oldSfInvNode);
 			if (sfInvNode != oldSfInvNode) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BehaviorPackage.SC_INVARIANT2SF_INV_ERROR__SF_INV_NODE, oldSfInvNode, sfInvNode));
@@ -332,7 +332,7 @@ public class scInvariant2sfInvErrorImpl extends AbstractContainerCorrespondenceN
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.simulink.model.stateflow.State basicGetSfInvNode() {
+	public State basicGetSfInvNode() {
 		return sfInvNode;
 	}
 
@@ -341,8 +341,8 @@ public class scInvariant2sfInvErrorImpl extends AbstractContainerCorrespondenceN
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSfInvNode(de.uni_paderborn.fujaba.simulink.model.stateflow.State newSfInvNode) {
-		de.uni_paderborn.fujaba.simulink.model.stateflow.State oldSfInvNode = sfInvNode;
+	public void setSfInvNode(State newSfInvNode) {
+		State oldSfInvNode = sfInvNode;
 		sfInvNode = newSfInvNode;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BehaviorPackage.SC_INVARIANT2SF_INV_ERROR__SF_INV_NODE, oldSfInvNode, sfInvNode));
@@ -396,13 +396,13 @@ public class scInvariant2sfInvErrorImpl extends AbstractContainerCorrespondenceN
 				setScClock((Clock)newValue);
 				return;
 			case BehaviorPackage.SC_INVARIANT2SF_INV_ERROR__SF_INV_TRANS:
-				setSfInvTrans((de.uni_paderborn.fujaba.simulink.model.stateflow.Transition)newValue);
+				setSfInvTrans((Transition)newValue);
 				return;
 			case BehaviorPackage.SC_INVARIANT2SF_INV_ERROR__SF_INV_GUARD:
-				setSfInvGuard((de.uni_paderborn.fujaba.simulink.model.stateflow.Action)newValue);
+				setSfInvGuard((Action)newValue);
 				return;
 			case BehaviorPackage.SC_INVARIANT2SF_INV_ERROR__SF_INV_NODE:
-				setSfInvNode((de.uni_paderborn.fujaba.simulink.model.stateflow.State)newValue);
+				setSfInvNode((State)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -426,13 +426,13 @@ public class scInvariant2sfInvErrorImpl extends AbstractContainerCorrespondenceN
 				setScClock((Clock)null);
 				return;
 			case BehaviorPackage.SC_INVARIANT2SF_INV_ERROR__SF_INV_TRANS:
-				setSfInvTrans((de.uni_paderborn.fujaba.simulink.model.stateflow.Transition)null);
+				setSfInvTrans((Transition)null);
 				return;
 			case BehaviorPackage.SC_INVARIANT2SF_INV_ERROR__SF_INV_GUARD:
-				setSfInvGuard((de.uni_paderborn.fujaba.simulink.model.stateflow.Action)null);
+				setSfInvGuard((Action)null);
 				return;
 			case BehaviorPackage.SC_INVARIANT2SF_INV_ERROR__SF_INV_NODE:
-				setSfInvNode((de.uni_paderborn.fujaba.simulink.model.stateflow.State)null);
+				setSfInvNode((State)null);
 				return;
 		}
 		super.eUnset(featureID);

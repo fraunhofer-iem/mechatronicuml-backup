@@ -123,12 +123,12 @@ public interface scInvariant2sfInvError extends AbstractContainerCorrespondenceN
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Sf Inv Trans</em>' reference.
-	 * @see #setSfInvTrans(de.uni_paderborn.fujaba.simulink.model.stateflow.Transition)
+	 * @see #setSfInvTrans(Transition)
 	 * @see org.muml.simulink.adapter.corrmodel.behavior.BehaviorPackage#getscInvariant2sfInvError_SfInvTrans()
 	 * @model
 	 * @generated
 	 */
-	de.uni_paderborn.fujaba.simulink.model.stateflow.Transition getSfInvTrans();
+	Transition getSfInvTrans();
 
 	/**
 	 * Sets the value of the '{@link org.muml.simulink.adapter.corrmodel.behavior.scInvariant2sfInvError#getSfInvTrans <em>Sf Inv Trans</em>}' reference.
@@ -138,7 +138,7 @@ public interface scInvariant2sfInvError extends AbstractContainerCorrespondenceN
 	 * @see #getSfInvTrans()
 	 * @generated
 	 */
-	void setSfInvTrans(de.uni_paderborn.fujaba.simulink.model.stateflow.Transition value);
+	void setSfInvTrans(Transition value);
 
 	/**
 	 * Returns the value of the '<em><b>Sf Inv Guard</b></em>' reference.
@@ -149,12 +149,12 @@ public interface scInvariant2sfInvError extends AbstractContainerCorrespondenceN
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Sf Inv Guard</em>' reference.
-	 * @see #setSfInvGuard(de.uni_paderborn.fujaba.simulink.model.stateflow.Action)
+	 * @see #setSfInvGuard(Action)
 	 * @see org.muml.simulink.adapter.corrmodel.behavior.BehaviorPackage#getscInvariant2sfInvError_SfInvGuard()
 	 * @model
 	 * @generated
 	 */
-	de.uni_paderborn.fujaba.simulink.model.stateflow.Action getSfInvGuard();
+	Action getSfInvGuard();
 
 	/**
 	 * Sets the value of the '{@link org.muml.simulink.adapter.corrmodel.behavior.scInvariant2sfInvError#getSfInvGuard <em>Sf Inv Guard</em>}' reference.
@@ -164,7 +164,7 @@ public interface scInvariant2sfInvError extends AbstractContainerCorrespondenceN
 	 * @see #getSfInvGuard()
 	 * @generated
 	 */
-	void setSfInvGuard(de.uni_paderborn.fujaba.simulink.model.stateflow.Action value);
+	void setSfInvGuard(Action value);
 
 	/**
 	 * Returns the value of the '<em><b>Sf Inv Node</b></em>' reference.
@@ -175,12 +175,12 @@ public interface scInvariant2sfInvError extends AbstractContainerCorrespondenceN
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Sf Inv Node</em>' reference.
-	 * @see #setSfInvNode(de.uni_paderborn.fujaba.simulink.model.stateflow.State)
+	 * @see #setSfInvNode(State)
 	 * @see org.muml.simulink.adapter.corrmodel.behavior.BehaviorPackage#getscInvariant2sfInvError_SfInvNode()
 	 * @model
 	 * @generated
 	 */
-	de.uni_paderborn.fujaba.simulink.model.stateflow.State getSfInvNode();
+	State getSfInvNode();
 
 	/**
 	 * Sets the value of the '{@link org.muml.simulink.adapter.corrmodel.behavior.scInvariant2sfInvError#getSfInvNode <em>Sf Inv Node</em>}' reference.
@@ -190,6 +190,6 @@ public interface scInvariant2sfInvError extends AbstractContainerCorrespondenceN
 	 * @see #getSfInvNode()
 	 * @generated
 	 */
-	void setSfInvNode(de.uni_paderborn.fujaba.simulink.model.stateflow.State value);
+	void setSfInvNode(State value);
 
 } // scInvariant2sfInvError

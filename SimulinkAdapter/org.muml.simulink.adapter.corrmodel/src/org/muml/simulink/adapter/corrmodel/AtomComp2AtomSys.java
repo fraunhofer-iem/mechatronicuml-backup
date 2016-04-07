@@ -40,12 +40,12 @@ public interface AtomComp2AtomSys extends AbstractContainerCorrespondenceNode {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Clock Signal</em>' reference.
-	 * @see #setClockSignal(de.uni_paderborn.fujaba.simulink.model.InPortBlock)
+	 * @see #setClockSignal(InPortBlock)
 	 * @see org.muml.simulink.adapter.corrmodel.Fujaba2simulinkPackage#getAtomComp2AtomSys_ClockSignal()
 	 * @model
 	 * @generated
 	 */
-	de.uni_paderborn.fujaba.simulink.model.InPortBlock getClockSignal();
+	InPortBlock getClockSignal();
 
 	/**
 	 * Sets the value of the '{@link org.muml.simulink.adapter.corrmodel.AtomComp2AtomSys#getClockSignal <em>Clock Signal</em>}' reference.
@@ -55,7 +55,7 @@ public interface AtomComp2AtomSys extends AbstractContainerCorrespondenceNode {
 	 * @see #getClockSignal()
 	 * @generated
 	 */
-	void setClockSignal(de.uni_paderborn.fujaba.simulink.model.InPortBlock value);
+	void setClockSignal(InPortBlock value);
 
 	/**
 	 * Returns the value of the '<em><b>Chart</b></em>' reference.
@@ -66,12 +66,12 @@ public interface AtomComp2AtomSys extends AbstractContainerCorrespondenceNode {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Chart</em>' reference.
-	 * @see #setChart(de.uni_paderborn.fujaba.simulink.model.stateflow.Chart)
+	 * @see #setChart(Chart)
 	 * @see org.muml.simulink.adapter.corrmodel.Fujaba2simulinkPackage#getAtomComp2AtomSys_Chart()
 	 * @model
 	 * @generated
 	 */
-	de.uni_paderborn.fujaba.simulink.model.stateflow.Chart getChart();
+	Chart getChart();
 
 	/**
 	 * Sets the value of the '{@link org.muml.simulink.adapter.corrmodel.AtomComp2AtomSys#getChart <em>Chart</em>}' reference.
@@ -81,7 +81,7 @@ public interface AtomComp2AtomSys extends AbstractContainerCorrespondenceNode {
 	 * @see #getChart()
 	 * @generated
 	 */
-	void setChart(de.uni_paderborn.fujaba.simulink.model.stateflow.Chart value);
+	void setChart(Chart value);
 
 	/**
 	 * Returns the value of the '<em><b>Comp</b></em>' reference.
@@ -118,12 +118,12 @@ public interface AtomComp2AtomSys extends AbstractContainerCorrespondenceNode {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Sys</em>' reference.
-	 * @see #setSys(de.uni_paderborn.fujaba.simulink.model.SubSystem)
+	 * @see #setSys(SubSystem)
 	 * @see org.muml.simulink.adapter.corrmodel.Fujaba2simulinkPackage#getAtomComp2AtomSys_Sys()
 	 * @model
 	 * @generated
 	 */
-	de.uni_paderborn.fujaba.simulink.model.SubSystem getSys();
+	SubSystem getSys();
 
 	/**
 	 * Sets the value of the '{@link org.muml.simulink.adapter.corrmodel.AtomComp2AtomSys#getSys <em>Sys</em>}' reference.
@@ -133,6 +133,6 @@ public interface AtomComp2AtomSys extends AbstractContainerCorrespondenceNode {
 	 * @see #getSys()
 	 * @generated
 	 */
-	void setSys(de.uni_paderborn.fujaba.simulink.model.SubSystem value);
+	void setSys(SubSystem value);
 
 } // AtomComp2AtomSys

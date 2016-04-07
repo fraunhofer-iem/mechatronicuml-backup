@@ -76,7 +76,7 @@ public class ScExit2sfExitImpl extends AbstractContainerCorrespondenceNodeImpl i
 	 * @generated
 	 * @ordered
 	 */
-	protected de.uni_paderborn.fujaba.simulink.model.stateflow.Action sfExitAction;
+	protected org.muml.simulink.stateflow.Action sfExitAction;
 
 	/**
 	 * The cached value of the '{@link #getScClock() <em>Sc Clock</em>}' reference.
@@ -226,10 +226,10 @@ public class ScExit2sfExitImpl extends AbstractContainerCorrespondenceNodeImpl i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.simulink.model.stateflow.Action getSfExitAction() {
+	public org.muml.simulink.stateflow.Action getSfExitAction() {
 		if (sfExitAction != null && ((EObject)sfExitAction).eIsProxy()) {
 			InternalEObject oldSfExitAction = (InternalEObject)sfExitAction;
-			sfExitAction = (de.uni_paderborn.fujaba.simulink.model.stateflow.Action)eResolveProxy(oldSfExitAction);
+			sfExitAction = (org.muml.simulink.stateflow.Action)eResolveProxy(oldSfExitAction);
 			if (sfExitAction != oldSfExitAction) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BehaviorPackage.SC_EXIT2SF_EXIT__SF_EXIT_ACTION, oldSfExitAction, sfExitAction));
@@ -243,7 +243,7 @@ public class ScExit2sfExitImpl extends AbstractContainerCorrespondenceNodeImpl i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.simulink.model.stateflow.Action basicGetSfExitAction() {
+	public org.muml.simulink.stateflow.Action basicGetSfExitAction() {
 		return sfExitAction;
 	}
 
@@ -252,8 +252,8 @@ public class ScExit2sfExitImpl extends AbstractContainerCorrespondenceNodeImpl i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSfExitAction(de.uni_paderborn.fujaba.simulink.model.stateflow.Action newSfExitAction) {
-		de.uni_paderborn.fujaba.simulink.model.stateflow.Action oldSfExitAction = sfExitAction;
+	public void setSfExitAction(org.muml.simulink.stateflow.Action newSfExitAction) {
+		org.muml.simulink.stateflow.Action oldSfExitAction = sfExitAction;
 		sfExitAction = newSfExitAction;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BehaviorPackage.SC_EXIT2SF_EXIT__SF_EXIT_ACTION, oldSfExitAction, sfExitAction));
@@ -342,7 +342,7 @@ public class ScExit2sfExitImpl extends AbstractContainerCorrespondenceNodeImpl i
 				setScExitExpr((Expression)newValue);
 				return;
 			case BehaviorPackage.SC_EXIT2SF_EXIT__SF_EXIT_ACTION:
-				setSfExitAction((de.uni_paderborn.fujaba.simulink.model.stateflow.Action)newValue);
+				setSfExitAction((org.muml.simulink.stateflow.Action)newValue);
 				return;
 			case BehaviorPackage.SC_EXIT2SF_EXIT__SC_CLOCK:
 				setScClock((Clock)newValue);
@@ -369,7 +369,7 @@ public class ScExit2sfExitImpl extends AbstractContainerCorrespondenceNodeImpl i
 				setScExitExpr((Expression)null);
 				return;
 			case BehaviorPackage.SC_EXIT2SF_EXIT__SF_EXIT_ACTION:
-				setSfExitAction((de.uni_paderborn.fujaba.simulink.model.stateflow.Action)null);
+				setSfExitAction((org.muml.simulink.stateflow.Action)null);
 				return;
 			case BehaviorPackage.SC_EXIT2SF_EXIT__SC_CLOCK:
 				setScClock((Clock)null);

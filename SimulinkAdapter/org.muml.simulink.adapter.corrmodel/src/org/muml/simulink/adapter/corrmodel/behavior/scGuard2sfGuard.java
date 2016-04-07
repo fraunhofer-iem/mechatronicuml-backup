@@ -40,12 +40,12 @@ public interface scGuard2sfGuard extends AbstractContainerCorrespondenceNode {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Sf Guard</em>' reference.
-	 * @see #setSfGuard(de.uni_paderborn.fujaba.simulink.model.stateflow.Action)
+	 * @see #setSfGuard(Action)
 	 * @see org.muml.simulink.adapter.corrmodel.behavior.BehaviorPackage#getscGuard2sfGuard_SfGuard()
 	 * @model
 	 * @generated
 	 */
-	de.uni_paderborn.fujaba.simulink.model.stateflow.Action getSfGuard();
+	Action getSfGuard();
 
 	/**
 	 * Sets the value of the '{@link org.muml.simulink.adapter.corrmodel.behavior.scGuard2sfGuard#getSfGuard <em>Sf Guard</em>}' reference.
@@ -55,7 +55,7 @@ public interface scGuard2sfGuard extends AbstractContainerCorrespondenceNode {
 	 * @see #getSfGuard()
 	 * @generated
 	 */
-	void setSfGuard(de.uni_paderborn.fujaba.simulink.model.stateflow.Action value);
+	void setSfGuard(Action value);
 
 	/**
 	 * Returns the value of the '<em><b>Sc Annotation</b></em>' reference.

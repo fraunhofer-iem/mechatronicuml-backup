@@ -63,12 +63,12 @@ public interface scClock2sfData extends AbstractContainerCorrespondenceNode {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Sf Clock Variable</em>' reference.
-	 * @see #setSfClockVariable(de.uni_paderborn.fujaba.simulink.model.stateflow.Data)
+	 * @see #setSfClockVariable(Data)
 	 * @see org.muml.simulink.adapter.corrmodel.behavior.BehaviorPackage#getscClock2sfData_SfClockVariable()
 	 * @model
 	 * @generated
 	 */
-	de.uni_paderborn.fujaba.simulink.model.stateflow.Data getSfClockVariable();
+	Data getSfClockVariable();
 
 	/**
 	 * Sets the value of the '{@link org.muml.simulink.adapter.corrmodel.behavior.scClock2sfData#getSfClockVariable <em>Sf Clock Variable</em>}' reference.
@@ -78,6 +78,6 @@ public interface scClock2sfData extends AbstractContainerCorrespondenceNode {
 	 * @see #getSfClockVariable()
 	 * @generated
 	 */
-	void setSfClockVariable(de.uni_paderborn.fujaba.simulink.model.stateflow.Data value);
+	void setSfClockVariable(Data value);
 
 } // scClock2sfData

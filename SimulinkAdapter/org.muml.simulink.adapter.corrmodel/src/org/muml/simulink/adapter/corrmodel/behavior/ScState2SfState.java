@@ -62,12 +62,12 @@ public interface ScState2SfState extends AbstractContainerCorrespondenceNode {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Sf State</em>' reference.
-	 * @see #setSfState(de.uni_paderborn.fujaba.simulink.model.stateflow.State)
+	 * @see #setSfState(org.muml.simulink.stateflow.State)
 	 * @see org.muml.simulink.adapter.corrmodel.behavior.BehaviorPackage#getScState2SfState_SfState()
 	 * @model
 	 * @generated
 	 */
-	de.uni_paderborn.fujaba.simulink.model.stateflow.State getSfState();
+	org.muml.simulink.stateflow.State getSfState();
 
 	/**
 	 * Sets the value of the '{@link org.muml.simulink.adapter.corrmodel.behavior.ScState2SfState#getSfState <em>Sf State</em>}' reference.
@@ -77,6 +77,6 @@ public interface ScState2SfState extends AbstractContainerCorrespondenceNode {
 	 * @see #getSfState()
 	 * @generated
 	 */
-	void setSfState(de.uni_paderborn.fujaba.simulink.model.stateflow.State value);
+	void setSfState(org.muml.simulink.stateflow.State value);
 
 } // ScState2SfState

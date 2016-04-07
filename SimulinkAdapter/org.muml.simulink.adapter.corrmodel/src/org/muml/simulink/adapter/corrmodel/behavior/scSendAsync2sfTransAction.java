@@ -44,12 +44,12 @@ public interface scSendAsync2sfTransAction extends AbstractContainerCorresponden
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Sf Send Async</em>' reference.
-	 * @see #setSfSendAsync(de.uni_paderborn.fujaba.simulink.model.stateflow.Action)
+	 * @see #setSfSendAsync(Action)
 	 * @see org.muml.simulink.adapter.corrmodel.behavior.BehaviorPackage#getscSendAsync2sfTransAction_SfSendAsync()
 	 * @model
 	 * @generated
 	 */
-	de.uni_paderborn.fujaba.simulink.model.stateflow.Action getSfSendAsync();
+	Action getSfSendAsync();
 
 	/**
 	 * Sets the value of the '{@link org.muml.simulink.adapter.corrmodel.behavior.scSendAsync2sfTransAction#getSfSendAsync <em>Sf Send Async</em>}' reference.
@@ -59,7 +59,7 @@ public interface scSendAsync2sfTransAction extends AbstractContainerCorresponden
 	 * @see #getSfSendAsync()
 	 * @generated
 	 */
-	void setSfSendAsync(de.uni_paderborn.fujaba.simulink.model.stateflow.Action value);
+	void setSfSendAsync(Action value);
 
 	/**
 	 * Returns the value of the '<em><b>Asynchronous Message Event</b></em>' reference.

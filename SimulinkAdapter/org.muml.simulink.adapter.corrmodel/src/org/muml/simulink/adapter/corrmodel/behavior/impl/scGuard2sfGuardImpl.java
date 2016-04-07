@@ -44,7 +44,7 @@ public class scGuard2sfGuardImpl extends AbstractContainerCorrespondenceNodeImpl
 	 * @generated
 	 * @ordered
 	 */
-	protected de.uni_paderborn.fujaba.simulink.model.stateflow.Action sfGuard;
+	protected Action sfGuard;
 
 	/**
 	 * The cached value of the '{@link #getScAnnotation() <em>Sc Annotation</em>}' reference.
@@ -90,10 +90,10 @@ public class scGuard2sfGuardImpl extends AbstractContainerCorrespondenceNodeImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.simulink.model.stateflow.Action getSfGuard() {
+	public Action getSfGuard() {
 		if (sfGuard != null && ((EObject)sfGuard).eIsProxy()) {
 			InternalEObject oldSfGuard = (InternalEObject)sfGuard;
-			sfGuard = (de.uni_paderborn.fujaba.simulink.model.stateflow.Action)eResolveProxy(oldSfGuard);
+			sfGuard = (Action)eResolveProxy(oldSfGuard);
 			if (sfGuard != oldSfGuard) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BehaviorPackage.SC_GUARD2SF_GUARD__SF_GUARD, oldSfGuard, sfGuard));
@@ -107,7 +107,7 @@ public class scGuard2sfGuardImpl extends AbstractContainerCorrespondenceNodeImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.simulink.model.stateflow.Action basicGetSfGuard() {
+	public Action basicGetSfGuard() {
 		return sfGuard;
 	}
 
@@ -116,8 +116,8 @@ public class scGuard2sfGuardImpl extends AbstractContainerCorrespondenceNodeImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSfGuard(de.uni_paderborn.fujaba.simulink.model.stateflow.Action newSfGuard) {
-		de.uni_paderborn.fujaba.simulink.model.stateflow.Action oldSfGuard = sfGuard;
+	public void setSfGuard(Action newSfGuard) {
+		Action oldSfGuard = sfGuard;
 		sfGuard = newSfGuard;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BehaviorPackage.SC_GUARD2SF_GUARD__SF_GUARD, oldSfGuard, sfGuard));
@@ -231,7 +231,7 @@ public class scGuard2sfGuardImpl extends AbstractContainerCorrespondenceNodeImpl
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case BehaviorPackage.SC_GUARD2SF_GUARD__SF_GUARD:
-				setSfGuard((de.uni_paderborn.fujaba.simulink.model.stateflow.Action)newValue);
+				setSfGuard((Action)newValue);
 				return;
 			case BehaviorPackage.SC_GUARD2SF_GUARD__SC_ANNOTATION:
 				setScAnnotation((EAnnotation)newValue);
@@ -252,7 +252,7 @@ public class scGuard2sfGuardImpl extends AbstractContainerCorrespondenceNodeImpl
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case BehaviorPackage.SC_GUARD2SF_GUARD__SF_GUARD:
-				setSfGuard((de.uni_paderborn.fujaba.simulink.model.stateflow.Action)null);
+				setSfGuard((Action)null);
 				return;
 			case BehaviorPackage.SC_GUARD2SF_GUARD__SC_ANNOTATION:
 				setScAnnotation((EAnnotation)null);

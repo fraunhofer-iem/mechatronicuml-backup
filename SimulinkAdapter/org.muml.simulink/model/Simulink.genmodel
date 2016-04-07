@@ -28,7 +28,7 @@
       <genEnumLiterals ecoreEnumLiteral="Simulink.ecore#//TriggerEvent/Either"/>
     </genEnums>
     <genDataTypes ecoreDataType="Simulink.ecore#//ParameterType"/>
-    <genClasses image="false" ecoreClass="Simulink.ecore#//Block" labelFeature="#//model/Block/name">
+    <genClasses image="false" ecoreClass="Simulink.ecore#//Block" labelFeature="#//simulink/Block/name">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Simulink.ecore#//Block/parent"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Simulink.ecore#//Block/name"/>
       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference Simulink.ecore#//Block/outPorts"/>

@@ -45,12 +45,12 @@ public interface FRtSc2Chart extends AbstractContainerCorrespondenceNode {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Chart</em>' reference.
-	 * @see #setChart(de.uni_paderborn.fujaba.simulink.model.stateflow.Chart)
+	 * @see #setChart(Chart)
 	 * @see org.muml.simulink.adapter.corrmodel.behavior.BehaviorPackage#getFRtSc2Chart_Chart()
 	 * @model
 	 * @generated
 	 */
-	de.uni_paderborn.fujaba.simulink.model.stateflow.Chart getChart();
+	Chart getChart();
 
 	/**
 	 * Sets the value of the '{@link org.muml.simulink.adapter.corrmodel.behavior.FRtSc2Chart#getChart <em>Chart</em>}' reference.
@@ -60,7 +60,7 @@ public interface FRtSc2Chart extends AbstractContainerCorrespondenceNode {
 	 * @see #getChart()
 	 * @generated
 	 */
-	void setChart(de.uni_paderborn.fujaba.simulink.model.stateflow.Chart value);
+	void setChart(Chart value);
 
 	/**
 	 * Returns the value of the '<em><b>FRt Sc</b></em>' reference.
@@ -113,12 +113,12 @@ public interface FRtSc2Chart extends AbstractContainerCorrespondenceNode {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Sf Chart State</em>' reference.
-	 * @see #setSfChartState(de.uni_paderborn.fujaba.simulink.model.stateflow.State)
+	 * @see #setSfChartState(State)
 	 * @see org.muml.simulink.adapter.corrmodel.behavior.BehaviorPackage#getFRtSc2Chart_SfChartState()
 	 * @model
 	 * @generated
 	 */
-	de.uni_paderborn.fujaba.simulink.model.stateflow.State getSfChartState();
+	State getSfChartState();
 
 	/**
 	 * Sets the value of the '{@link org.muml.simulink.adapter.corrmodel.behavior.FRtSc2Chart#getSfChartState <em>Sf Chart State</em>}' reference.
@@ -128,7 +128,7 @@ public interface FRtSc2Chart extends AbstractContainerCorrespondenceNode {
 	 * @see #getSfChartState()
 	 * @generated
 	 */
-	void setSfChartState(de.uni_paderborn.fujaba.simulink.model.stateflow.State value);
+	void setSfChartState(State value);
 
 	/**
 	 * Returns the value of the '<em><b>Sf Chart Region</b></em>' reference.
@@ -139,12 +139,12 @@ public interface FRtSc2Chart extends AbstractContainerCorrespondenceNode {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Sf Chart Region</em>' reference.
-	 * @see #setSfChartRegion(de.uni_paderborn.fujaba.simulink.model.stateflow.State)
+	 * @see #setSfChartRegion(State)
 	 * @see org.muml.simulink.adapter.corrmodel.behavior.BehaviorPackage#getFRtSc2Chart_SfChartRegion()
 	 * @model
 	 * @generated
 	 */
-	de.uni_paderborn.fujaba.simulink.model.stateflow.State getSfChartRegion();
+	State getSfChartRegion();
 
 	/**
 	 * Sets the value of the '{@link org.muml.simulink.adapter.corrmodel.behavior.FRtSc2Chart#getSfChartRegion <em>Sf Chart Region</em>}' reference.
@@ -154,7 +154,7 @@ public interface FRtSc2Chart extends AbstractContainerCorrespondenceNode {
 	 * @see #getSfChartRegion()
 	 * @generated
 	 */
-	void setSfChartRegion(de.uni_paderborn.fujaba.simulink.model.stateflow.State value);
+	void setSfChartRegion(State value);
 
 	/**
 	 * Returns the value of the '<em><b>Sf Queue Region</b></em>' reference.
@@ -165,12 +165,12 @@ public interface FRtSc2Chart extends AbstractContainerCorrespondenceNode {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Sf Queue Region</em>' reference.
-	 * @see #setSfQueueRegion(de.uni_paderborn.fujaba.simulink.model.stateflow.State)
+	 * @see #setSfQueueRegion(State)
 	 * @see org.muml.simulink.adapter.corrmodel.behavior.BehaviorPackage#getFRtSc2Chart_SfQueueRegion()
 	 * @model
 	 * @generated
 	 */
-	de.uni_paderborn.fujaba.simulink.model.stateflow.State getSfQueueRegion();
+	State getSfQueueRegion();
 
 	/**
 	 * Sets the value of the '{@link org.muml.simulink.adapter.corrmodel.behavior.FRtSc2Chart#getSfQueueRegion <em>Sf Queue Region</em>}' reference.
@@ -180,7 +180,7 @@ public interface FRtSc2Chart extends AbstractContainerCorrespondenceNode {
 	 * @see #getSfQueueRegion()
 	 * @generated
 	 */
-	void setSfQueueRegion(de.uni_paderborn.fujaba.simulink.model.stateflow.State value);
+	void setSfQueueRegion(State value);
 
 	/**
 	 * Returns the value of the '<em><b>Sf Self Trans</b></em>' reference.
@@ -191,12 +191,12 @@ public interface FRtSc2Chart extends AbstractContainerCorrespondenceNode {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Sf Self Trans</em>' reference.
-	 * @see #setSfSelfTrans(de.uni_paderborn.fujaba.simulink.model.stateflow.Transition)
+	 * @see #setSfSelfTrans(Transition)
 	 * @see org.muml.simulink.adapter.corrmodel.behavior.BehaviorPackage#getFRtSc2Chart_SfSelfTrans()
 	 * @model
 	 * @generated
 	 */
-	de.uni_paderborn.fujaba.simulink.model.stateflow.Transition getSfSelfTrans();
+	Transition getSfSelfTrans();
 
 	/**
 	 * Sets the value of the '{@link org.muml.simulink.adapter.corrmodel.behavior.FRtSc2Chart#getSfSelfTrans <em>Sf Self Trans</em>}' reference.
@@ -206,6 +206,6 @@ public interface FRtSc2Chart extends AbstractContainerCorrespondenceNode {
 	 * @see #getSfSelfTrans()
 	 * @generated
 	 */
-	void setSfSelfTrans(de.uni_paderborn.fujaba.simulink.model.stateflow.Transition value);
+	void setSfSelfTrans(Transition value);
 
 } // FRtSc2Chart

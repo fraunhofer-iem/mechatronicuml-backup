@@ -66,12 +66,12 @@ public interface ScSyncReceive2sfSyncReceive extends AbstractContainerCorrespond
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Sf Entry Action</em>' reference.
-	 * @see #setSfEntryAction(de.uni_paderborn.fujaba.simulink.model.stateflow.Action)
+	 * @see #setSfEntryAction(Action)
 	 * @see org.muml.simulink.adapter.corrmodel.behavior.BehaviorPackage#getScSyncReceive2sfSyncReceive_SfEntryAction()
 	 * @model
 	 * @generated
 	 */
-	de.uni_paderborn.fujaba.simulink.model.stateflow.Action getSfEntryAction();
+	Action getSfEntryAction();
 
 	/**
 	 * Sets the value of the '{@link org.muml.simulink.adapter.corrmodel.behavior.ScSyncReceive2sfSyncReceive#getSfEntryAction <em>Sf Entry Action</em>}' reference.
@@ -81,7 +81,7 @@ public interface ScSyncReceive2sfSyncReceive extends AbstractContainerCorrespond
 	 * @see #getSfEntryAction()
 	 * @generated
 	 */
-	void setSfEntryAction(de.uni_paderborn.fujaba.simulink.model.stateflow.Action value);
+	void setSfEntryAction(Action value);
 
 	/**
 	 * Returns the value of the '<em><b>Sf Exit Action</b></em>' reference.
@@ -92,12 +92,12 @@ public interface ScSyncReceive2sfSyncReceive extends AbstractContainerCorrespond
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Sf Exit Action</em>' reference.
-	 * @see #setSfExitAction(de.uni_paderborn.fujaba.simulink.model.stateflow.Action)
+	 * @see #setSfExitAction(Action)
 	 * @see org.muml.simulink.adapter.corrmodel.behavior.BehaviorPackage#getScSyncReceive2sfSyncReceive_SfExitAction()
 	 * @model
 	 * @generated
 	 */
-	de.uni_paderborn.fujaba.simulink.model.stateflow.Action getSfExitAction();
+	Action getSfExitAction();
 
 	/**
 	 * Sets the value of the '{@link org.muml.simulink.adapter.corrmodel.behavior.ScSyncReceive2sfSyncReceive#getSfExitAction <em>Sf Exit Action</em>}' reference.
@@ -107,7 +107,7 @@ public interface ScSyncReceive2sfSyncReceive extends AbstractContainerCorrespond
 	 * @see #getSfExitAction()
 	 * @generated
 	 */
-	void setSfExitAction(de.uni_paderborn.fujaba.simulink.model.stateflow.Action value);
+	void setSfExitAction(Action value);
 
 	/**
 	 * Returns the value of the '<em><b>Sf Trans Event</b></em>' reference.
@@ -118,12 +118,12 @@ public interface ScSyncReceive2sfSyncReceive extends AbstractContainerCorrespond
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Sf Trans Event</em>' reference.
-	 * @see #setSfTransEvent(de.uni_paderborn.fujaba.simulink.model.stateflow.Event)
+	 * @see #setSfTransEvent(Event)
 	 * @see org.muml.simulink.adapter.corrmodel.behavior.BehaviorPackage#getScSyncReceive2sfSyncReceive_SfTransEvent()
 	 * @model
 	 * @generated
 	 */
-	de.uni_paderborn.fujaba.simulink.model.stateflow.Event getSfTransEvent();
+	Event getSfTransEvent();
 
 	/**
 	 * Sets the value of the '{@link org.muml.simulink.adapter.corrmodel.behavior.ScSyncReceive2sfSyncReceive#getSfTransEvent <em>Sf Trans Event</em>}' reference.
@@ -133,6 +133,6 @@ public interface ScSyncReceive2sfSyncReceive extends AbstractContainerCorrespond
 	 * @see #getSfTransEvent()
 	 * @generated
 	 */
-	void setSfTransEvent(de.uni_paderborn.fujaba.simulink.model.stateflow.Event value);
+	void setSfTransEvent(Event value);
 
 } // ScSyncReceive2sfSyncReceive

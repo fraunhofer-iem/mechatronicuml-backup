@@ -91,12 +91,12 @@ public interface MT_Par2MTD extends AbstractContainerCorrespondenceNode {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Data</em>' reference.
-	 * @see #setData(de.uni_paderborn.fujaba.simulink.model.stateflow.Data)
+	 * @see #setData(Data)
 	 * @see org.muml.simulink.adapter.corrmodel.behavior.BehaviorPackage#getMT_Par2MTD_Data()
 	 * @model
 	 * @generated
 	 */
-	de.uni_paderborn.fujaba.simulink.model.stateflow.Data getData();
+	Data getData();
 
 	/**
 	 * Sets the value of the '{@link org.muml.simulink.adapter.corrmodel.behavior.MT_Par2MTD#getData <em>Data</em>}' reference.
@@ -106,6 +106,6 @@ public interface MT_Par2MTD extends AbstractContainerCorrespondenceNode {
 	 * @see #getData()
 	 * @generated
 	 */
-	void setData(de.uni_paderborn.fujaba.simulink.model.stateflow.Data value);
+	void setData(Data value);
 
 } // MT_Par2MTD

@@ -52,7 +52,7 @@ public class ModElCat2SimLibImpl extends AbstractContainerCorrespondenceNodeImpl
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<de.uni_paderborn.fujaba.simulink.model.SimulinkLibrary> simLib;
+	protected EList<SimulinkLibrary> simLib;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -116,9 +116,9 @@ public class ModElCat2SimLibImpl extends AbstractContainerCorrespondenceNodeImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<de.uni_paderborn.fujaba.simulink.model.SimulinkLibrary> getSimLib() {
+	public EList<SimulinkLibrary> getSimLib() {
 		if (simLib == null) {
-			simLib = new EObjectResolvingEList<de.uni_paderborn.fujaba.simulink.model.SimulinkLibrary>(de.uni_paderborn.fujaba.simulink.model.SimulinkLibrary.class, this, Fujaba2simulinkPackage.MOD_EL_CAT2_SIM_LIB__SIM_LIB);
+			simLib = new EObjectResolvingEList<SimulinkLibrary>(SimulinkLibrary.class, this, Fujaba2simulinkPackage.MOD_EL_CAT2_SIM_LIB__SIM_LIB);
 		}
 		return simLib;
 	}
@@ -154,7 +154,7 @@ public class ModElCat2SimLibImpl extends AbstractContainerCorrespondenceNodeImpl
 				return;
 			case Fujaba2simulinkPackage.MOD_EL_CAT2_SIM_LIB__SIM_LIB:
 				getSimLib().clear();
-				getSimLib().addAll((Collection<? extends de.uni_paderborn.fujaba.simulink.model.SimulinkLibrary>)newValue);
+				getSimLib().addAll((Collection<? extends SimulinkLibrary>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);

@@ -37,12 +37,12 @@ public interface RtScCat2SfM extends AbstractContainerCorrespondenceNode {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Sf M</em>' reference.
-	 * @see #setSfM(de.uni_paderborn.fujaba.simulink.model.stateflow.StateflowMachine)
+	 * @see #setSfM(StateflowMachine)
 	 * @see org.muml.simulink.adapter.corrmodel.behavior.BehaviorPackage#getRtScCat2SfM_SfM()
 	 * @model
 	 * @generated
 	 */
-	de.uni_paderborn.fujaba.simulink.model.stateflow.StateflowMachine getSfM();
+	StateflowMachine getSfM();
 
 	/**
 	 * Sets the value of the '{@link org.muml.simulink.adapter.corrmodel.behavior.RtScCat2SfM#getSfM <em>Sf M</em>}' reference.
@@ -52,7 +52,7 @@ public interface RtScCat2SfM extends AbstractContainerCorrespondenceNode {
 	 * @see #getSfM()
 	 * @generated
 	 */
-	void setSfM(de.uni_paderborn.fujaba.simulink.model.stateflow.StateflowMachine value);
+	void setSfM(StateflowMachine value);
 
 	/**
 	 * Returns the value of the '<em><b>Rt Sc Cat</b></em>' reference.

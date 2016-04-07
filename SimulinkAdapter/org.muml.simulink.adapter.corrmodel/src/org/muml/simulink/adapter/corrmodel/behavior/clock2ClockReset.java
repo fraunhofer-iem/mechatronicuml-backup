@@ -63,12 +63,12 @@ public interface clock2ClockReset extends AbstractContainerCorrespondenceNode {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Sf Clock Reset</em>' reference.
-	 * @see #setSfClockReset(de.uni_paderborn.fujaba.simulink.model.stateflow.Action)
+	 * @see #setSfClockReset(Action)
 	 * @see org.muml.simulink.adapter.corrmodel.behavior.BehaviorPackage#getclock2ClockReset_SfClockReset()
 	 * @model
 	 * @generated
 	 */
-	de.uni_paderborn.fujaba.simulink.model.stateflow.Action getSfClockReset();
+	Action getSfClockReset();
 
 	/**
 	 * Sets the value of the '{@link org.muml.simulink.adapter.corrmodel.behavior.clock2ClockReset#getSfClockReset <em>Sf Clock Reset</em>}' reference.
@@ -78,6 +78,6 @@ public interface clock2ClockReset extends AbstractContainerCorrespondenceNode {
 	 * @see #getSfClockReset()
 	 * @generated
 	 */
-	void setSfClockReset(de.uni_paderborn.fujaba.simulink.model.stateflow.Action value);
+	void setSfClockReset(Action value);
 
 } // clock2ClockReset
