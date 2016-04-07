@@ -20,6 +20,9 @@
 [import org::muml::codegen::componenttype::c::actionlanguage::operation_queries/]
 
 
+[import org::muml::codegen::componenttype::c::queries::ContainerQueries/]
+
+
 [**
  * Generates the implementation file for a given realtime statechart
  * @param component the component which is embedding the statechart

@@ -22,7 +22,7 @@
  * The documentation of the template generateElement.
  * @param anOclAny
  */]
-[template public generate_RTSCHeader(comp: Component, rtsc : RealtimeStatechart, path : String, useSubDir: Boolean) post(trim())]
+[template public generate_RTSCHeader(comp: Component, rtsc : RealtimeStatechart, useSubDir: Boolean) post(trim())]
 
 /**
  * @file 

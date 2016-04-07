@@ -23,7 +23,7 @@
  * Generates file, which contains typedefs for every Message-Struct, which is generated
  * by Protobuf. Therefore, you can use the name of the message without 'struct' in front.
  */]
-[template public generateProtobufNewHeader_New(components : Collection(Component), path : String, useSubDir: Boolean)]
+[template public generateMessageHeader(components : Collection(Component), path : String, useSubDir: Boolean)]
 
 [comment protobuf files/]
 [file (path+getFileName4MessageTypes(useSubDir), false, 'UTF-8')]

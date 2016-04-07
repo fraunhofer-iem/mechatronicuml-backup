@@ -11,13 +11,16 @@
 				'http://www.muml.org/modelinstance/1.0.0',
 				'http://www.muml.org/pim/component/1.0.0',
 				'http://www.muml.org/pim/instance/1.0.0',
-				'http://www.muml.org/pim/realtimestatechart/1.0.0')/]
+				'http://www.muml.org/pim/realtimestatechart/1.0.0',
+				'http://www.muml.org/psm/1.0.0')/]
 [import org::muml::codegen::componenttype::c::queries::stringQueries/]
 [import org::muml::codegen::componenttype::c::queries::modelQueries/]
 [import org::muml::codegen::componenttype::c::actionlanguage::expression/]
 [import org::muml::codegen::componenttype::c::actionlanguage::operation_queries/]
-[import org::muml::codegen::componenttype::c::files::RealtimeStatechart/]
 
+[import org::muml::codegen::componenttype::c::queries::ContainerQueries/]
+[import org::muml::codegen::componenttype::c::component::componentHeader/]
+[import org::muml::codegen::componenttype::c::rtsc::RealtimeStatechartHeader/]
 
 [template public generate_ComponentInterface(component : Component, path : String, useSubDir : Boolean)]
 	[file (path+getFileName(component, true, useSubDir), false, 'UTF-8')]
@@ -46,19 +49,18 @@
  			 *  Component Functions
  			 *
  			 */
-			[generate_ComponentHeader_New(component, useSubDir)/]
+			[generate_ComponentHeader(component, useSubDir)/]
 		
-			[initialize(component)/]
+
 	
-[if ((component.componentKind = ComponentKind::SOFTWARE_COMPONENT) or (component.componentKind = ComponentKind::HYBRID_COMPONENT))]
+[if ((component.componentKind = ComponentKind::SOFTWARE_COMPONENT) or (component.componentKind = ComponentKind::HYBRID_COMPONENT) and component.oclIsTypeOf(AtomicComponent))]
 	
 			/*****
  			 *
  			 *  RealtimeStatechart Functions
  			 *
- */
-
-			[generate_RTSCHeader_New(component, component.behavior.oclAsType(RealtimeStatechart), useSubDir)/]
+ 			 */
+			[generate_RTSCHeader(component, component.oclAsType(AtomicComponent).behavior.oclAsType(RealtimeStatechart), useSubDir)/]
 [/if]
 
 

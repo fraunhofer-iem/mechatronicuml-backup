@@ -17,7 +17,6 @@
 [import org::muml::codegen::componenttype::c::queries::stringQueries/]
 [import org::muml::codegen::componenttype::c::queries::modelQueries/]
 [import org::muml::codegen::componenttype::c::actionlanguage::expression/]
-[import org::muml::codegen::componenttype::c::files::RealtimeStatechart/]
 
 
 [**

@@ -52,6 +52,11 @@ msgT.getName() + msgT.repository.getName() +'Message'/]
 [query public getName(oRep : OperationRepository) : String = 
 oRep.getQualifiedName() /]
 
+[query public getMessageType(msgType : MessageType) : String = 
+	msgType.getName() +'_'+ msgType.repository.getName() +'_Message'
+/]
+
+
 
 [query public getBufferName (mb : MessageBuffer, pi : DiscretePortInstance) : String = 
 getName(mb.name) +pi.getName()+ pi.componentInstance.getName() /]
@@ -248,6 +253,27 @@ else
 endif
 
 /]
+
+
+[query public getFileNameComponentInterface(component : Component, useSubDir : Boolean) : String = 
+if (component.oclIsUndefined()) then
+'#error null value '
+else
+	if useSubDir then 'components/' else '' endif + 
+		getClassName(component).toLowerFirst()+'_Interface.h'
+endif
+
+/]
+
+
+[**
+ * @param component
+*/]
+[query public getHeaderDefineComponentInterface(component : Component) : String = 
+	getClassName(component).toUpper()+'_Interface_H_'
+/]
+
+
 
 [**
  * @param component

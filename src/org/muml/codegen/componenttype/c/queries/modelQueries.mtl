@@ -20,6 +20,8 @@
 	comp.behavior.oclAsType(RealtimeStatechart)
 /]
 
+
+
 [query public getTargetPortInstance(dpi : DiscretePortInstance) : DiscretePortInstance =
 if (dpi.portConnectorInstances.connectorEndpointInstances->at(1) = dpi) then
 	if (dpi.portConnectorInstances.connectorEndpointInstances->at(2).connectorInstances->size()>1) then
