@@ -262,21 +262,21 @@
         <containmentFeature
             href="../../org.muml.pim/model/pim.ecore#//protocol/AbstractCoordinationSpecification/roles"/>
         <referencedChild
-            href="../../de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram/model/coordinationprotocol.gmfmap#//@nodes.0/@ownedChild/@children.1/@ownedChild"/>
+            href="../../org.muml.pim.coordinationprotocol.diagram/model/coordinationprotocol.gmfmap#//@nodes.0/@ownedChild/@children.1/@ownedChild"/>
       </children>
       <children
           compartment="//@nodes.0/@ownedChild/@compartments.0">
         <containmentFeature
             href="../../org.muml.pim/model/pim.ecore#//protocol/AbstractCoordinationSpecification/gmfMessageBuffers"/>
         <referencedChild
-            href="../../de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram/model/coordinationprotocol.gmfmap#//@nodes.0/@ownedChild/@children.2/@ownedChild"/>
+            href="../../org.muml.pim.coordinationprotocol.diagram/model/coordinationprotocol.gmfmap#//@nodes.0/@ownedChild/@children.2/@ownedChild"/>
       </children>
       <children
           compartment="//@nodes.0/@ownedChild/@compartments.0">
         <containmentFeature
             href="../../org.muml.pim/model/pim.ecore#//protocol/AbstractCoordinationSpecification/gmfConnectorQualityOfServiceAssumptions"/>
         <referencedChild
-            href="../../de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram/model/coordinationprotocol.gmfmap#//@nodes.0/@ownedChild/@children.3/@ownedChild"/>
+            href="../../org.muml.pim.coordinationprotocol.diagram/model/coordinationprotocol.gmfmap#//@nodes.0/@ownedChild/@children.3/@ownedChild"/>
       </children>
       <compartments
           children="//@nodes.0/@ownedChild/@children.0 //@nodes.0/@ownedChild/@children.1 //@nodes.0/@ownedChild/@children.2 //@nodes.0/@ownedChild/@children.3">
@@ -541,21 +541,21 @@
         <containmentFeature
             href="../../org.muml.pim/model/pim.ecore#//protocol/AbstractCoordinationSpecification/roles"/>
         <referencedChild
-            href="../../de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram/model/coordinationprotocol.gmfmap#//@nodes.0/@ownedChild/@children.1/@ownedChild"/>
+            href="../../org.muml.pim.coordinationprotocol.diagram/model/coordinationprotocol.gmfmap#//@nodes.0/@ownedChild/@children.1/@ownedChild"/>
       </children>
       <children
           compartment="//@nodes.1/@ownedChild/@compartments.0">
         <containmentFeature
             href="../../org.muml.pim/model/pim.ecore#//protocol/AbstractCoordinationSpecification/gmfMessageBuffers"/>
         <referencedChild
-            href="../../de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram/model/coordinationprotocol.gmfmap#//@nodes.0/@ownedChild/@children.2/@ownedChild"/>
+            href="../../org.muml.pim.coordinationprotocol.diagram/model/coordinationprotocol.gmfmap#//@nodes.0/@ownedChild/@children.2/@ownedChild"/>
       </children>
       <children
           compartment="//@nodes.1/@ownedChild/@compartments.0">
         <containmentFeature
             href="../../org.muml.pim/model/pim.ecore#//protocol/AbstractCoordinationSpecification/gmfConnectorQualityOfServiceAssumptions"/>
         <referencedChild
-            href="../../de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram/model/coordinationprotocol.gmfmap#//@nodes.0/@ownedChild/@children.3/@ownedChild"/>
+            href="../../org.muml.pim.coordinationprotocol.diagram/model/coordinationprotocol.gmfmap#//@nodes.0/@ownedChild/@children.3/@ownedChild"/>
       </children>
       <compartments
           children="//@nodes.1/@ownedChild/@children.0 //@nodes.1/@ownedChild/@children.1 //@nodes.1/@ownedChild/@children.2 //@nodes.1/@ownedChild/@children.3">
