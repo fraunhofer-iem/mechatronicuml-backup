@@ -11,7 +11,7 @@
         href="../../org.muml.storydiagram.verification.sdd/model/sdd.ecore#//AbstractStoryDecisionDiagram/nodes"/>
     <ownedChild>
       <domainMetaElement
-          href="../../de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd/model/BasicSDD.ecore#//StoryPatternNode"/>
+          href="../../org.muml.storydiagram.verification.sdd.basicsdd/model/BasicSDD.ecore#//StoryPatternNode"/>
       <domainInitializer
           xsi:type="gmfmap:FeatureSeqInitializer">
         <initializers
@@ -27,7 +27,7 @@
             xsi:type="gmfmap:ReferenceNewElementSpec">
           <feature
               xsi:type="ecore:EReference"
-              href="../../de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd/model/BasicSDD.ecore#//StoryPatternNode/pattern"/>
+              href="../../org.muml.storydiagram.verification.sdd.basicsdd/model/BasicSDD.ecore#//StoryPatternNode/pattern"/>
           <newElementInitializers>
             <initializers
                 xsi:type="gmfmap:FeatureValueSpec">
@@ -70,7 +70,7 @@
       <children
           compartment="//@nodes.0/@ownedChild/@compartments.0">
         <containmentFeature
-            href="../../de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd/model/BasicSDD.ecore#//StoryPatternNode/pattern"/>
+            href="../../org.muml.storydiagram.verification.sdd.basicsdd/model/BasicSDD.ecore#//StoryPatternNode/pattern"/>
         <referencedChild
             href="../../org.muml.storydiagram/model/storydiagrams.gmfmap#//@nodes.2/@ownedChild/@children.0/@ownedChild"/>
       </children>
@@ -115,7 +115,7 @@
     <domainMetaElement
         href="../../org.muml.storydiagram/model/storydiagrams.ecore#//patterns/LinkVariable"/>
     <containmentFeature
-        href="../../org.muml.storydiagram/model/storydiagrams.ecore#//patterns/StoryPattern/linkVariable"/>
+        href="../../org.muml.storydiagram/model/storydiagrams.ecore#//patterns/StoryPattern/linkVariables"/>
     <tool
         xsi:type="gmftool:CreationTool"
         href="../../org.muml.storydiagram/model/storydiagrams.gmftool#//@palette/@tools.1/@tools.3"/>
@@ -132,9 +132,9 @@
     <diagramCanvas
         href="sdd.gmfgraph#sdd"/>
     <domainModel
-        href="../../de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd/model/BasicSDD.ecore#/"/>
+        href="../../org.muml.storydiagram.verification.sdd.basicsdd/model/BasicSDD.ecore#/"/>
     <domainMetaElement
-        href="../../de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd/model/BasicSDD.ecore#//StoryDecisionDiagram"/>
+        href="../../org.muml.storydiagram.verification.sdd.basicsdd/model/BasicSDD.ecore#//StoryDecisionDiagram"/>
     <palette
         href="sdd.gmftool#//@palette"/>
   </diagram>

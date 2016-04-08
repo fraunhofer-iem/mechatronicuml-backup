@@ -28,7 +28,7 @@
         xsi:type="gmfgen:FigureViewmap"
         figureQualifiedClassName="org.eclipse.draw2d.FreeformLayer"/>
     <domainDiagramElement
-        href="../../de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd/model/BasicSDD.genmodel#//basicSDD/StoryDecisionDiagram"/>
+        href="../../org.muml.storydiagram.verification.sdd.basicsdd/model/BasicSDD.genmodel#//basicSDD/StoryDecisionDiagram"/>
     <childNodes
         visualID="3011"
         editPartClassName="StoryPatternEditPart"
@@ -52,9 +52,9 @@
         <metaClass
             href="../../org.muml.storydiagram/model/storydiagrams.genmodel#//storydiagram/patterns/StoryPattern"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd/model/BasicSDD.genmodel#//basicSDD/StoryPatternNode/pattern"/>
+            href="../../org.muml.storydiagram.verification.sdd.basicsdd/model/BasicSDD.genmodel#//basicSDD/StoryPatternNode/pattern"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd/model/BasicSDD.genmodel#//basicSDD/StoryPatternNode/pattern"/>
+            href="../../org.muml.storydiagram.verification.sdd.basicsdd/model/BasicSDD.genmodel#//basicSDD/StoryPatternNode/pattern"/>
       </modelFacet>
     </childNodes>
     <childNodes
@@ -352,7 +352,7 @@
       </viewmap>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd/model/BasicSDD.genmodel#//basicSDD/StoryPatternNode"/>
+            href="../../org.muml.storydiagram.verification.sdd.basicsdd/model/BasicSDD.genmodel#//basicSDD/StoryPatternNode"/>
         <containmentMetaFeature
             href="../../org.muml.storydiagram.verification.sdd/model/sdd.genmodel#//sdd/AbstractStoryDecisionDiagram/nodes"/>
         <childMetaFeature
@@ -368,7 +368,7 @@
           <initializers
               xsi:type="gmfgen:GenReferenceNewElementSpec">
             <feature
-                href="../../de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd/model/BasicSDD.genmodel#//basicSDD/StoryPatternNode/pattern"/>
+                href="../../org.muml.storydiagram.verification.sdd.basicsdd/model/BasicSDD.genmodel#//basicSDD/StoryPatternNode/pattern"/>
             <newElementInitializers>
               <initializers
                   xsi:type="gmfgen:GenFeatureValueSpec"
@@ -911,7 +911,7 @@
     </tabs>
   </propertySheet>
   <domainGenModel
-      href="../../de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd/model/BasicSDD.genmodel#/"/>
+      href="../../org.muml.storydiagram.verification.sdd.basicsdd/model/BasicSDD.genmodel#/"/>
   <expressionProviders>
     <providers
         xsi:type="gmfgen:GenLiteralExpressionProvider">
