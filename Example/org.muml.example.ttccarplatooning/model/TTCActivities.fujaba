@@ -12,7 +12,7 @@
   <categories xmi:id="__6vSEAPpEeK6h-t5wiM1Gg" key="org.storydriven.storydiagrams.category" name="storydiagrams">
     <modelElements xsi:type="sda:Activity" xmi:id="__6vSEQPpEeK6h-t5wiM1Gg" name="Create Car Process">
       <annotation xmi:id="_Q4OG4APqEeK6h-t5wiM1Gg" source="http://www.storydriven.org/storydiagrams/types">
-        <details xmi:id="_Q4XQ0APqEeK6h-t5wiM1Gg" key="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0" value="true"/>
+        <details xmi:id="_Q4XQ0APqEeK6h-t5wiM1Gg" key="http://www.muml.org/example/ttccarplatooning/1.1.0" value="true"/>
       </annotation>
       <ownedActivityEdge xmi:id="_Fall8APqEeK6h-t5wiM1Gg" target="_Df2XkAPqEeK6h-t5wiM1Gg" source="_CgnvMAPqEeK6h-t5wiM1Gg"/>
       <ownedActivityEdge xmi:id="_GIGzQAPqEeK6h-t5wiM1Gg" target="_C-YCMAPqEeK6h-t5wiM1Gg" source="_Df2XkAPqEeK6h-t5wiM1Gg"/>
@@ -23,22 +23,22 @@
       <ownedActivityNode xsi:type="sda:ModifyingStoryNode" xmi:id="_Df2XkAPqEeK6h-t5wiM1Gg" name="create car process" outgoing="_GIGzQAPqEeK6h-t5wiM1Gg" incoming="_Fall8APqEeK6h-t5wiM1Gg">
         <ownedRule xmi:id="_Df2XkQPqEeK6h-t5wiM1Gg" comment="">
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_M5MFgAPqEeK6h-t5wiM1Gg" name="env" bindingState="BOUND" outgoingLink="_P0MBkAPrEeK6h-t5wiM1Gg">
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Environment"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Environment"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_Sh_hEAPqEeK6h-t5wiM1Gg" name="sc" bindingState="BOUND" incomingLink="_NDvTMAPrEeK6h-t5wiM1Gg _VU7GQAPrEeK6h-t5wiM1Gg" outgoingLink="_C7PZMAPrEeK6h-t5wiM1Gg">
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Statechart"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Statechart"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_rSmT8APqEeK6h-t5wiM1Gg" name="car" incomingLink="_P0MBkAPrEeK6h-t5wiM1Gg" outgoingLink="_OlxtsAPrEeK6h-t5wiM1Gg _RIilYAPrEeK6h-t5wiM1Gg _VU7GQAPrEeK6h-t5wiM1Gg" bindingOperator="CREATE">
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Carprocess"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Carprocess"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_4i9WwAPqEeK6h-t5wiM1Gg" name="queue" incomingLink="_RIilYAPrEeK6h-t5wiM1Gg" bindingOperator="CREATE">
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//MessageQueue"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//MessageQueue"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_9SUB0APqEeK6h-t5wiM1Gg" name="as" incomingLink="_OlxtsAPrEeK6h-t5wiM1Gg" outgoingLink="_KwKHAAPrEeK6h-t5wiM1Gg _NDvTMAPrEeK6h-t5wiM1Gg" bindingOperator="CREATE">
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//ActiveState"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//ActiveState"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_AVNLEAPrEeK6h-t5wiM1Gg" name="state" incomingLink="_C7PZMAPrEeK6h-t5wiM1Gg _KwKHAAPrEeK6h-t5wiM1Gg">
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//State"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//State"/>
           </variable>
           <constraint xmi:id="_cjBEoAPrEeK6h-t5wiM1Gg">
             <constraintExpression xsi:type="expr:TextualExpression" xmi:id="_eLnaIAPrEeK6h-t5wiM1Gg" expressionText="env.cars -> size() &lt; env.maxNumOfCars" language="OCL" languageVersion="1.0"/>
@@ -47,32 +47,32 @@
             <constraintExpression xsi:type="expr:TextualExpression" xmi:id="_nNecMAPrEeK6h-t5wiM1Gg" expressionText="state.name = 'fa'" language="OCL" languageVersion="1.0"/>
           </constraint>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_C7PZMAPrEeK6h-t5wiM1Gg" name="sc2state" source="_Sh_hEAPqEeK6h-t5wiM1Gg" target="_AVNLEAPrEeK6h-t5wiM1Gg">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Statechart/states"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Statechart/states"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_KwKHAAPrEeK6h-t5wiM1Gg" name="as2state" bindingOperator="CREATE" source="_9SUB0APqEeK6h-t5wiM1Gg" target="_AVNLEAPrEeK6h-t5wiM1Gg">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//ActiveState/active"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//ActiveState/active"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_NDvTMAPrEeK6h-t5wiM1Gg" name="as2sc" bindingOperator="CREATE" source="_9SUB0APqEeK6h-t5wiM1Gg" target="_Sh_hEAPqEeK6h-t5wiM1Gg">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//ActiveState/in"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//ActiveState/in"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_OlxtsAPrEeK6h-t5wiM1Gg" name="car2as" bindingOperator="CREATE" source="_rSmT8APqEeK6h-t5wiM1Gg" target="_9SUB0APqEeK6h-t5wiM1Gg">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Carprocess/curState"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Carprocess/curState"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_P0MBkAPrEeK6h-t5wiM1Gg" name="env2car" bindingOperator="CREATE" source="_M5MFgAPqEeK6h-t5wiM1Gg" target="_rSmT8APqEeK6h-t5wiM1Gg">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Environment/cars"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Environment/cars"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_RIilYAPrEeK6h-t5wiM1Gg" name="car2queue" bindingOperator="CREATE" source="_rSmT8APqEeK6h-t5wiM1Gg" target="_4i9WwAPqEeK6h-t5wiM1Gg">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Carprocess/queue"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Carprocess/queue"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_VU7GQAPrEeK6h-t5wiM1Gg" name="car2sc" bindingOperator="CREATE" source="_rSmT8APqEeK6h-t5wiM1Gg" target="_Sh_hEAPqEeK6h-t5wiM1Gg">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Carprocess/statechart"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Carprocess/statechart"/>
           </linkVariable>
         </ownedRule>
       </ownedActivityNode>
     </modelElements>
     <modelElements xsi:type="sda:Activity" xmi:id="_muzDYAfhEeKNJoIdO-E-NA" name="StartPlatoon">
       <annotation xmi:id="_AVoToAfiEeKNJoIdO-E-NA" source="http://www.storydriven.org/storydiagrams/types">
-        <details xmi:id="_AVoToQfiEeKNJoIdO-E-NA" key="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0" value="true"/>
+        <details xmi:id="_AVoToQfiEeKNJoIdO-E-NA" key="http://www.muml.org/example/ttccarplatooning/1.1.0" value="true"/>
       </annotation>
       <ownedActivityEdge xmi:id="_5KSHQAfhEeKNJoIdO-E-NA" target="_vTCVUAfhEeKNJoIdO-E-NA" source="_unmLoAfhEeKNJoIdO-E-NA"/>
       <ownedActivityEdge xmi:id="_53DtsAfhEeKNJoIdO-E-NA" target="_3qUwYAfhEeKNJoIdO-E-NA" source="_vTCVUAfhEeKNJoIdO-E-NA"/>
@@ -80,38 +80,38 @@
       <ownedActivityNode xsi:type="sda:ModifyingStoryNode" xmi:id="_vTCVUAfhEeKNJoIdO-E-NA" name="Create ca msg for a free agent in order to create a platoon or join existing platoon, generate only for empty queue" outgoing="_53DtsAfhEeKNJoIdO-E-NA" incoming="_5KSHQAfhEeKNJoIdO-E-NA">
         <ownedRule xmi:id="_vTLfQAfhEeKNJoIdO-E-NA" comment="">
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_BGIjgAfiEeKNJoIdO-E-NA" name="car1" bindingState="BOUND" outgoingLink="_Q8ibgAfiEeKNJoIdO-E-NA _zgk3UAfiEeKNJoIdO-E-NA">
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Carprocess"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Carprocess"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_DtzJUAfiEeKNJoIdO-E-NA" name="car2" bindingState="BOUND" incomingLink="_d8cyEAfjEeKNJoIdO-E-NA" outgoingLink="_Tk1TcAfiEeKNJoIdO-E-NA _0jYYIAfiEeKNJoIdO-E-NA">
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Carprocess"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Carprocess"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_J1tiwAfiEeKNJoIdO-E-NA" name="as1" incomingLink="_Q8ibgAfiEeKNJoIdO-E-NA" outgoingLink="_Sl3JwAfiEeKNJoIdO-E-NA">
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//ActiveState"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//ActiveState"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_LdtbUAfiEeKNJoIdO-E-NA" name="as2" incomingLink="_Tk1TcAfiEeKNJoIdO-E-NA">
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//ActiveState"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//ActiveState"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_M9z8IAfiEeKNJoIdO-E-NA" name="s1" incomingLink="_Sl3JwAfiEeKNJoIdO-E-NA">
             <constraint xmi:id="_1a5RwA7vEeKgPKTB3PTVSw">
               <constraintExpression xsi:type="expr:TextualExpression" xmi:id="_2HhuQA7vEeKgPKTB3PTVSw" expressionText="name = 'fa'" language="OCL" languageVersion="1.0"/>
             </constraint>
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//State"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//State"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_vsvZUAfiEeKNJoIdO-E-NA" name="queue1" incomingLink="_zgk3UAfiEeKNJoIdO-E-NA" outgoingLink="_XUuQIAfjEeKNJoIdO-E-NA">
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//MessageQueue"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//MessageQueue"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_xgfO4AfiEeKNJoIdO-E-NA" name="queue2" incomingLink="_0jYYIAfiEeKNJoIdO-E-NA">
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//MessageQueue"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//MessageQueue"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_P22JUAfjEeKNJoIdO-E-NA" name="caMsg" incomingLink="_XUuQIAfjEeKNJoIdO-E-NA" outgoingLink="_clkesAfjEeKNJoIdO-E-NA" bindingOperator="CREATE">
             <attributeAssignment xmi:id="_SqkOIAfjEeKNJoIdO-E-NA">
-              <attribute href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Message/name"/>
+              <attribute href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Message/name"/>
               <valueExpression xsi:type="expr:TextualExpression" xmi:id="_THlhUAfjEeKNJoIdO-E-NA" expressionText="'ca'" language="OCL" languageVersion="1.0"/>
             </attributeAssignment>
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Message"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Message"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_aLkhcAfjEeKNJoIdO-E-NA" name="param" incomingLink="_clkesAfjEeKNJoIdO-E-NA" outgoingLink="_d8cyEAfjEeKNJoIdO-E-NA" bindingOperator="CREATE">
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//CarParameter"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//CarParameter"/>
           </variable>
           <constraint xmi:id="_pG674AfiEeKNJoIdO-E-NA">
             <constraintExpression xsi:type="expr:TextualExpression" xmi:id="_p7wSIAfiEeKNJoIdO-E-NA" expressionText="as2.active.name = 'fa' or as2.active.name = 'ld'" language="OCL" languageVersion="1.0"/>
@@ -123,28 +123,28 @@
             <constraintExpression xsi:type="expr:TextualExpression" xmi:id="_GW5z0CwkEeK5_oGyK5-NCw" expressionText="car1.carParameter -> size() = 0" language="OCL" languageVersion="1.0"/>
           </constraint>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_Q8ibgAfiEeKNJoIdO-E-NA" name="car1_2_as1" source="_BGIjgAfiEeKNJoIdO-E-NA" target="_J1tiwAfiEeKNJoIdO-E-NA">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Carprocess/curState"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Carprocess/curState"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_Sl3JwAfiEeKNJoIdO-E-NA" name="as1_2_s1" source="_J1tiwAfiEeKNJoIdO-E-NA" target="_M9z8IAfiEeKNJoIdO-E-NA">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//ActiveState/active"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//ActiveState/active"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_Tk1TcAfiEeKNJoIdO-E-NA" name="car2_2_as2" source="_DtzJUAfiEeKNJoIdO-E-NA" target="_LdtbUAfiEeKNJoIdO-E-NA">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Carprocess/curState"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Carprocess/curState"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_zgk3UAfiEeKNJoIdO-E-NA" name="car1_2_queue1" source="_BGIjgAfiEeKNJoIdO-E-NA" target="_vsvZUAfiEeKNJoIdO-E-NA">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Carprocess/queue"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Carprocess/queue"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_0jYYIAfiEeKNJoIdO-E-NA" name="car2_2_queue2" source="_DtzJUAfiEeKNJoIdO-E-NA" target="_xgfO4AfiEeKNJoIdO-E-NA">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Carprocess/queue"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Carprocess/queue"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_XUuQIAfjEeKNJoIdO-E-NA" name="queue1_2_caMsg" bindingOperator="CREATE" source="_vsvZUAfiEeKNJoIdO-E-NA" target="_P22JUAfjEeKNJoIdO-E-NA">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//MessageQueue/messages"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//MessageQueue/messages"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_clkesAfjEeKNJoIdO-E-NA" name="caMsg_2_param" bindingOperator="CREATE" source="_P22JUAfjEeKNJoIdO-E-NA" target="_aLkhcAfjEeKNJoIdO-E-NA">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Message/parameters"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Message/parameters"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_d8cyEAfjEeKNJoIdO-E-NA" name="param_2_car2" bindingOperator="CREATE" source="_aLkhcAfjEeKNJoIdO-E-NA" target="_DtzJUAfiEeKNJoIdO-E-NA">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//CarParameter/car"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//CarParameter/car"/>
           </linkVariable>
         </ownedRule>
       </ownedActivityNode>
@@ -154,7 +154,7 @@
     </modelElements>
     <modelElements xsi:type="sda:Activity" xmi:id="_NdI-gAl5EeKyrbhYJrJ6qQ" name="Transition_fa_hon">
       <annotation xmi:id="_W44gMAl5EeKyrbhYJrJ6qQ" source="http://www.storydriven.org/storydiagrams/types">
-        <details xmi:id="_W5CRMAl5EeKyrbhYJrJ6qQ" key="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0" value="true"/>
+        <details xmi:id="_W5CRMAl5EeKyrbhYJrJ6qQ" key="http://www.muml.org/example/ttccarplatooning/1.1.0" value="true"/>
       </annotation>
       <ownedActivityEdge xmi:id="_R5J20Al5EeKyrbhYJrJ6qQ" target="_PKfRIAl5EeKyrbhYJrJ6qQ" source="_ORqLsAl5EeKyrbhYJrJ6qQ"/>
       <ownedActivityEdge xmi:id="_SeyTcAl5EeKyrbhYJrJ6qQ" target="_RGkjUAl5EeKyrbhYJrJ6qQ" source="_PKfRIAl5EeKyrbhYJrJ6qQ"/>
@@ -162,86 +162,86 @@
       <ownedActivityNode xsi:type="sda:ModifyingStoryNode" xmi:id="_PKfRIAl5EeKyrbhYJrJ6qQ" name="Execute transition from fa to hon" outgoing="_SeyTcAl5EeKyrbhYJrJ6qQ" incoming="_R5J20Al5EeKyrbhYJrJ6qQ">
         <ownedRule xmi:id="_PLYpAAl5EeKyrbhYJrJ6qQ" comment="">
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_euGI8Al5EeKyrbhYJrJ6qQ" name="car" bindingState="BOUND" incomingLink="_H4OSgAl7EeKyrbhYJrJ6qQ" outgoingLink="_sh1loAl5EeKyrbhYJrJ6qQ _CM2gkAl6EeKyrbhYJrJ6qQ _etJ4UAl6EeKyrbhYJrJ6qQ">
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Carprocess"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Carprocess"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_gxnf4Al5EeKyrbhYJrJ6qQ" name="source" incomingLink="_t5Kk8Al5EeKyrbhYJrJ6qQ">
             <constraint xmi:id="_xRoVkAl5EeKyrbhYJrJ6qQ">
               <constraintExpression xsi:type="expr:TextualExpression" xmi:id="_yZf8kAl5EeKyrbhYJrJ6qQ" expressionText="name = 'fa'" language="OCL" languageVersion="1.0"/>
             </constraint>
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//State"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//State"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_qxzycAl5EeKyrbhYJrJ6qQ" name="as" incomingLink="_sh1loAl5EeKyrbhYJrJ6qQ" outgoingLink="_t5Kk8Al5EeKyrbhYJrJ6qQ _N7IFkAl6EeKyrbhYJrJ6qQ">
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//ActiveState"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//ActiveState"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_2GEU8Al5EeKyrbhYJrJ6qQ" name="queue" incomingLink="_CM2gkAl6EeKyrbhYJrJ6qQ" outgoingLink="_DYRx4Al6EeKyrbhYJrJ6qQ">
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//MessageQueue"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//MessageQueue"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_8QRNYAl5EeKyrbhYJrJ6qQ" name="caMsg" incomingLink="_DYRx4Al6EeKyrbhYJrJ6qQ" outgoingLink="_V41jAAl6EeKyrbhYJrJ6qQ" bindingOperator="DESTROY">
             <constraint xmi:id="_-Qgm0Al5EeKyrbhYJrJ6qQ">
               <constraintExpression xsi:type="expr:TextualExpression" xmi:id="_-_ho8Al5EeKyrbhYJrJ6qQ" expressionText="name = 'ca'" language="OCL" languageVersion="1.0"/>
             </constraint>
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Message"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Message"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_L2RR4Al6EeKyrbhYJrJ6qQ" name="target" bindingState="BOUND" incomingLink="_N7IFkAl6EeKyrbhYJrJ6qQ">
             <constraint xmi:id="_PWB9UAl6EeKyrbhYJrJ6qQ">
               <constraintExpression xsi:type="expr:TextualExpression" xmi:id="_P1ReEAl6EeKyrbhYJrJ6qQ" expressionText="name = 'hon'" language="OCL" languageVersion="1.0"/>
             </constraint>
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//State"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//State"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_T45EgAl6EeKyrbhYJrJ6qQ" name="param" incomingLink="_V41jAAl6EeKyrbhYJrJ6qQ" outgoingLink="_bOvQsAl6EeKyrbhYJrJ6qQ" bindingOperator="DESTROY">
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//CarParameter"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//CarParameter"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_ZZMEUAl6EeKyrbhYJrJ6qQ" name="leader" incomingLink="_bOvQsAl6EeKyrbhYJrJ6qQ _etJ4UAl6EeKyrbhYJrJ6qQ" outgoingLink="_kAy8MAl6EeKyrbhYJrJ6qQ">
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Carprocess"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Carprocess"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_g-Dj8Al6EeKyrbhYJrJ6qQ" name="ldQueue" incomingLink="_kAy8MAl6EeKyrbhYJrJ6qQ" outgoingLink="_rwz74Al6EeKyrbhYJrJ6qQ">
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//MessageQueue"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//MessageQueue"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_mY2YsAl6EeKyrbhYJrJ6qQ" name="reqMsg" incomingLink="_rwz74Al6EeKyrbhYJrJ6qQ" outgoingLink="_G_GSIAl7EeKyrbhYJrJ6qQ" bindingOperator="CREATE">
             <attributeAssignment xmi:id="_oz3poAl6EeKyrbhYJrJ6qQ">
-              <attribute href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Message/name"/>
+              <attribute href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Message/name"/>
               <valueExpression xsi:type="expr:TextualExpression" xmi:id="_o06LcAl6EeKyrbhYJrJ6qQ" expressionText="'req'" language="OCL" languageVersion="1.0"/>
             </attributeAssignment>
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Message"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Message"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_-4U_UAl6EeKyrbhYJrJ6qQ" name="param2" incomingLink="_G_GSIAl7EeKyrbhYJrJ6qQ" outgoingLink="_H4OSgAl7EeKyrbhYJrJ6qQ" bindingOperator="CREATE">
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//CarParameter"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//CarParameter"/>
           </variable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_sh1loAl5EeKyrbhYJrJ6qQ" name="car_2_as" source="_euGI8Al5EeKyrbhYJrJ6qQ" target="_qxzycAl5EeKyrbhYJrJ6qQ">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Carprocess/curState"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Carprocess/curState"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_t5Kk8Al5EeKyrbhYJrJ6qQ" name="as_2_source" bindingOperator="DESTROY" source="_qxzycAl5EeKyrbhYJrJ6qQ" target="_gxnf4Al5EeKyrbhYJrJ6qQ">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//ActiveState/active"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//ActiveState/active"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_CM2gkAl6EeKyrbhYJrJ6qQ" name="car_2_queue" source="_euGI8Al5EeKyrbhYJrJ6qQ" target="_2GEU8Al5EeKyrbhYJrJ6qQ">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Carprocess/queue"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Carprocess/queue"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_DYRx4Al6EeKyrbhYJrJ6qQ" name="queue_2_caMsg" bindingOperator="DESTROY" source="_2GEU8Al5EeKyrbhYJrJ6qQ" target="_8QRNYAl5EeKyrbhYJrJ6qQ">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//MessageQueue/messages"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//MessageQueue/messages"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_N7IFkAl6EeKyrbhYJrJ6qQ" name="as_2_target" bindingOperator="CREATE" source="_qxzycAl5EeKyrbhYJrJ6qQ" target="_L2RR4Al6EeKyrbhYJrJ6qQ">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//ActiveState/active"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//ActiveState/active"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_V41jAAl6EeKyrbhYJrJ6qQ" name="caMsg_2_param" bindingOperator="DESTROY" source="_8QRNYAl5EeKyrbhYJrJ6qQ" target="_T45EgAl6EeKyrbhYJrJ6qQ">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Message/parameters"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Message/parameters"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_bOvQsAl6EeKyrbhYJrJ6qQ" name="param_2_leader" source="_T45EgAl6EeKyrbhYJrJ6qQ" target="_ZZMEUAl6EeKyrbhYJrJ6qQ">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//CarParameter/car"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//CarParameter/car"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_etJ4UAl6EeKyrbhYJrJ6qQ" name="car_2_leader" bindingOperator="CREATE" source="_euGI8Al5EeKyrbhYJrJ6qQ" target="_ZZMEUAl6EeKyrbhYJrJ6qQ">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Carprocess/leader"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Carprocess/leader"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_kAy8MAl6EeKyrbhYJrJ6qQ" name="leader_2_ldQueue" source="_ZZMEUAl6EeKyrbhYJrJ6qQ" target="_g-Dj8Al6EeKyrbhYJrJ6qQ">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Carprocess/queue"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Carprocess/queue"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_rwz74Al6EeKyrbhYJrJ6qQ" name="reqMsg_2_ldQueue" bindingOperator="CREATE" source="_g-Dj8Al6EeKyrbhYJrJ6qQ" target="_mY2YsAl6EeKyrbhYJrJ6qQ">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//MessageQueue/messages"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//MessageQueue/messages"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_G_GSIAl7EeKyrbhYJrJ6qQ" name="reqMsg_2_param2" bindingOperator="CREATE" source="_mY2YsAl6EeKyrbhYJrJ6qQ" target="_-4U_UAl6EeKyrbhYJrJ6qQ">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Message/parameters"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Message/parameters"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_H4OSgAl7EeKyrbhYJrJ6qQ" name="param2_2_car" bindingOperator="CREATE" source="_-4U_UAl6EeKyrbhYJrJ6qQ" target="_euGI8Al5EeKyrbhYJrJ6qQ">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//CarParameter/car"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//CarParameter/car"/>
           </linkVariable>
         </ownedRule>
       </ownedActivityNode>
@@ -251,7 +251,7 @@
     </modelElements>
     <modelElements xsi:type="sda:Activity" xmi:id="_QDw7IAl8EeKUoIbbBsScPQ" name="Transition_fa_ldb">
       <annotation xmi:id="_jD5kMAl8EeKUoIbbBsScPQ" source="http://www.storydriven.org/storydiagrams/types">
-        <details xmi:id="_jD5kMQl8EeKUoIbbBsScPQ" key="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0" value="true"/>
+        <details xmi:id="_jD5kMQl8EeKUoIbbBsScPQ" key="http://www.muml.org/example/ttccarplatooning/1.1.0" value="true"/>
       </annotation>
       <ownedActivityEdge xmi:id="_UEPuAAl8EeKUoIbbBsScPQ" target="_RmGQkAl8EeKUoIbbBsScPQ" source="_Q--mMAl8EeKUoIbbBsScPQ"/>
       <ownedActivityEdge xmi:id="_Uek5kAl8EeKUoIbbBsScPQ" target="_TlmqMAl8EeKUoIbbBsScPQ" source="_RmGQkAl8EeKUoIbbBsScPQ"/>
@@ -259,77 +259,77 @@
       <ownedActivityNode xsi:type="sda:ModifyingStoryNode" xmi:id="_RmGQkAl8EeKUoIbbBsScPQ" name="Execute Transition from fa to ldb" outgoing="_Uek5kAl8EeKUoIbbBsScPQ" incoming="_UEPuAAl8EeKUoIbbBsScPQ">
         <ownedRule xmi:id="_RmGQkQl8EeKUoIbbBsScPQ" comment="">
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_gds-AAl8EeKUoIbbBsScPQ" name="car" bindingState="BOUND" outgoingLink="_nbAuYAl8EeKUoIbbBsScPQ _8s-3MAl8EeKUoIbbBsScPQ _XnYBEAl9EeKUoIbbBsScPQ">
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Carprocess"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Carprocess"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_lseI8Al8EeKUoIbbBsScPQ" name="as" incomingLink="_nbAuYAl8EeKUoIbbBsScPQ" outgoingLink="_wqk1QAl8EeKUoIbbBsScPQ _08UXQAl8EeKUoIbbBsScPQ">
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//ActiveState"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//ActiveState"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_vGvD8Al8EeKUoIbbBsScPQ" name="source" incomingLink="_wqk1QAl8EeKUoIbbBsScPQ">
             <constraint xmi:id="_2xjakAl8EeKUoIbbBsScPQ">
               <constraintExpression xsi:type="expr:TextualExpression" xmi:id="_3K_OQAl8EeKUoIbbBsScPQ" expressionText="name = 'fa'" language="OCL" languageVersion="1.0"/>
             </constraint>
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//State"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//State"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_ylUDoAl8EeKUoIbbBsScPQ" name="target" bindingState="BOUND" incomingLink="_08UXQAl8EeKUoIbbBsScPQ">
             <constraint xmi:id="_4ctU0Al8EeKUoIbbBsScPQ">
               <constraintExpression xsi:type="expr:TextualExpression" xmi:id="_453K4Al8EeKUoIbbBsScPQ" expressionText="name = 'ldb'" language="OCL" languageVersion="1.0"/>
             </constraint>
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//State"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//State"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_7PGj8Al8EeKUoIbbBsScPQ" name="queue" incomingLink="_8s-3MAl8EeKUoIbbBsScPQ" outgoingLink="_ATcAgAl9EeKUoIbbBsScPQ">
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//MessageQueue"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//MessageQueue"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_-WBRkAl8EeKUoIbbBsScPQ" name="reqMsg" incomingLink="_ATcAgAl9EeKUoIbbBsScPQ" outgoingLink="_QZSpwAl9EeKUoIbbBsScPQ" bindingOperator="DESTROY">
             <constraint xmi:id="_A_nxEAl9EeKUoIbbBsScPQ">
               <constraintExpression xsi:type="expr:TextualExpression" xmi:id="_C44YwAl9EeKUoIbbBsScPQ" expressionText="name = 'req'" language="OCL" languageVersion="1.0"/>
             </constraint>
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Message"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Message"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_NHXmAAl9EeKUoIbbBsScPQ" name="param" incomingLink="_QZSpwAl9EeKUoIbbBsScPQ" outgoingLink="_UVmuUAl9EeKUoIbbBsScPQ" bindingOperator="DESTROY">
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//CarParameter"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//CarParameter"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_Sh24wAl9EeKUoIbbBsScPQ" name="follower" incomingLink="_UVmuUAl9EeKUoIbbBsScPQ _XnYBEAl9EeKUoIbbBsScPQ" outgoingLink="_eYnrYAl9EeKUoIbbBsScPQ">
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Carprocess"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Carprocess"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_cUXUoAl9EeKUoIbbBsScPQ" name="flwQueue" incomingLink="_eYnrYAl9EeKUoIbbBsScPQ" outgoingLink="_oYDI8Al9EeKUoIbbBsScPQ">
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//MessageQueue"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//MessageQueue"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_h5H9sAl9EeKUoIbbBsScPQ" name="ackMsg" incomingLink="_oYDI8Al9EeKUoIbbBsScPQ" bindingOperator="CREATE">
             <attributeAssignment xmi:id="_jvGn4Al9EeKUoIbbBsScPQ">
-              <attribute href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Message/name"/>
+              <attribute href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Message/name"/>
               <valueExpression xsi:type="expr:TextualExpression" xmi:id="_jv2OwAl9EeKUoIbbBsScPQ" expressionText="'ack'" language="OCL" languageVersion="1.0"/>
             </attributeAssignment>
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Message"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Message"/>
           </variable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_nbAuYAl8EeKUoIbbBsScPQ" name="car_2_as" source="_gds-AAl8EeKUoIbbBsScPQ" target="_lseI8Al8EeKUoIbbBsScPQ">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Carprocess/curState"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Carprocess/curState"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_wqk1QAl8EeKUoIbbBsScPQ" name="as_2_source" bindingOperator="DESTROY" source="_lseI8Al8EeKUoIbbBsScPQ" target="_vGvD8Al8EeKUoIbbBsScPQ">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//ActiveState/active"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//ActiveState/active"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_08UXQAl8EeKUoIbbBsScPQ" name="as_2_target" bindingOperator="CREATE" source="_lseI8Al8EeKUoIbbBsScPQ" target="_ylUDoAl8EeKUoIbbBsScPQ">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//ActiveState/active"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//ActiveState/active"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_8s-3MAl8EeKUoIbbBsScPQ" name="car_2_queue" source="_gds-AAl8EeKUoIbbBsScPQ" target="_7PGj8Al8EeKUoIbbBsScPQ">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Carprocess/queue"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Carprocess/queue"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_ATcAgAl9EeKUoIbbBsScPQ" name="queue_2_reqMsg" bindingOperator="DESTROY" source="_7PGj8Al8EeKUoIbbBsScPQ" target="_-WBRkAl8EeKUoIbbBsScPQ">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//MessageQueue/messages"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//MessageQueue/messages"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_QZSpwAl9EeKUoIbbBsScPQ" name="reqMsg_2_param" bindingOperator="DESTROY" source="_-WBRkAl8EeKUoIbbBsScPQ" target="_NHXmAAl9EeKUoIbbBsScPQ">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Message/parameters"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Message/parameters"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_UVmuUAl9EeKUoIbbBsScPQ" name="param_2_follower" bindingOperator="DESTROY" source="_NHXmAAl9EeKUoIbbBsScPQ" target="_Sh24wAl9EeKUoIbbBsScPQ">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//CarParameter/car"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//CarParameter/car"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_XnYBEAl9EeKUoIbbBsScPQ" name="car_2_follower" bindingOperator="CREATE" source="_gds-AAl8EeKUoIbbBsScPQ" target="_Sh24wAl9EeKUoIbbBsScPQ">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Carprocess/follower"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Carprocess/follower"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_eYnrYAl9EeKUoIbbBsScPQ" name="follower_2_flwQueue" source="_Sh24wAl9EeKUoIbbBsScPQ" target="_cUXUoAl9EeKUoIbbBsScPQ">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Carprocess/queue"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Carprocess/queue"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_oYDI8Al9EeKUoIbbBsScPQ" name="flwQueue_2_ackMsg" bindingOperator="CREATE" source="_cUXUoAl9EeKUoIbbBsScPQ" target="_h5H9sAl9EeKUoIbbBsScPQ">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//MessageQueue/messages"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//MessageQueue/messages"/>
           </linkVariable>
         </ownedRule>
       </ownedActivityNode>
@@ -339,7 +339,7 @@
     </modelElements>
     <modelElements xsi:type="sda:Activity" xmi:id="_Zbpo0AmCEeKCtOf9e1_z0Q" name="Transition_hon_flw">
       <annotation xmi:id="_jVuFQAmCEeKCtOf9e1_z0Q" source="http://www.storydriven.org/storydiagrams/types">
-        <details xmi:id="_jV32QAmCEeKCtOf9e1_z0Q" key="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0" value="true"/>
+        <details xmi:id="_jV32QAmCEeKCtOf9e1_z0Q" key="http://www.muml.org/example/ttccarplatooning/1.1.0" value="true"/>
       </annotation>
       <ownedActivityEdge xmi:id="_fDDWMAmCEeKCtOf9e1_z0Q" target="_cGal8AmCEeKCtOf9e1_z0Q" source="_bTrhcAmCEeKCtOf9e1_z0Q"/>
       <ownedActivityEdge xmi:id="_fqLnoAmCEeKCtOf9e1_z0Q" target="_eioJsAmCEeKCtOf9e1_z0Q" source="_cGal8AmCEeKCtOf9e1_z0Q"/>
@@ -347,68 +347,68 @@
       <ownedActivityNode xsi:type="sda:ModifyingStoryNode" xmi:id="_cGal8AmCEeKCtOf9e1_z0Q" name="Execute Transition hon -> flw" outgoing="_fqLnoAmCEeKCtOf9e1_z0Q" incoming="_fDDWMAmCEeKCtOf9e1_z0Q">
         <ownedRule xmi:id="_cGal8QmCEeKCtOf9e1_z0Q" comment="">
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_j8ZqwAmCEeKCtOf9e1_z0Q" name="car" bindingState="BOUND" outgoingLink="_seaIEAmCEeKCtOf9e1_z0Q _x46B4AmCEeKCtOf9e1_z0Q _JFPloAmDEeKCtOf9e1_z0Q">
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Carprocess"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Carprocess"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_l1zcYAmCEeKCtOf9e1_z0Q" name="as" incomingLink="_seaIEAmCEeKCtOf9e1_z0Q" outgoingLink="_tXGDkAmCEeKCtOf9e1_z0Q _AGrvMAmDEeKCtOf9e1_z0Q">
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//ActiveState"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//ActiveState"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_nmuAYAmCEeKCtOf9e1_z0Q" name="source" incomingLink="_tXGDkAmCEeKCtOf9e1_z0Q">
             <constraint xmi:id="_qNf1YAmCEeKCtOf9e1_z0Q">
               <constraintExpression xsi:type="expr:TextualExpression" xmi:id="_qpKdsAmCEeKCtOf9e1_z0Q" expressionText="name = 'hon'" language="OCL" languageVersion="1.0"/>
             </constraint>
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//State"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//State"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_wF5zMAmCEeKCtOf9e1_z0Q" name="queue" incomingLink="_x46B4AmCEeKCtOf9e1_z0Q" outgoingLink="_2G7hgAmCEeKCtOf9e1_z0Q">
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//MessageQueue"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//MessageQueue"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_0dAWUAmCEeKCtOf9e1_z0Q" name="ackMsg" incomingLink="_2G7hgAmCEeKCtOf9e1_z0Q" bindingOperator="DESTROY">
             <constraint xmi:id="_22_FcAmCEeKCtOf9e1_z0Q">
               <constraintExpression xsi:type="expr:TextualExpression" xmi:id="_3Sgj0AmCEeKCtOf9e1_z0Q" expressionText="name = 'ack'" language="OCL" languageVersion="1.0"/>
             </constraint>
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Message"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Message"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_79aMsAmCEeKCtOf9e1_z0Q" name="target" bindingState="BOUND" incomingLink="_AGrvMAmDEeKCtOf9e1_z0Q">
             <constraint xmi:id="_-ACLwAmCEeKCtOf9e1_z0Q">
               <constraintExpression xsi:type="expr:TextualExpression" xmi:id="_-ZU1gAmCEeKCtOf9e1_z0Q" expressionText="name = 'flw'" language="OCL" languageVersion="1.0"/>
             </constraint>
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//State"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//State"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_H2140AmDEeKCtOf9e1_z0Q" name="leader" incomingLink="_JFPloAmDEeKCtOf9e1_z0Q" outgoingLink="_Mpw1QAmDEeKCtOf9e1_z0Q">
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Carprocess"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Carprocess"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_LZIT0AmDEeKCtOf9e1_z0Q" name="ldQueue" incomingLink="_Mpw1QAmDEeKCtOf9e1_z0Q" outgoingLink="_Svv8EAmDEeKCtOf9e1_z0Q">
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//MessageQueue"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//MessageQueue"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_OgCaYAmDEeKCtOf9e1_z0Q" name="ackMsg2" incomingLink="_Svv8EAmDEeKCtOf9e1_z0Q" bindingOperator="CREATE">
             <attributeAssignment xmi:id="_QMzeMAmDEeKCtOf9e1_z0Q">
-              <attribute href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Message/name"/>
+              <attribute href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Message/name"/>
               <valueExpression xsi:type="expr:TextualExpression" xmi:id="_Q9MZUAmDEeKCtOf9e1_z0Q" expressionText="'ack'" language="OCL" languageVersion="1.0"/>
             </attributeAssignment>
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Message"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Message"/>
           </variable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_seaIEAmCEeKCtOf9e1_z0Q" name="car_2_as" source="_j8ZqwAmCEeKCtOf9e1_z0Q" target="_l1zcYAmCEeKCtOf9e1_z0Q">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Carprocess/curState"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Carprocess/curState"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_tXGDkAmCEeKCtOf9e1_z0Q" name="as_2_source" bindingOperator="DESTROY" source="_l1zcYAmCEeKCtOf9e1_z0Q" target="_nmuAYAmCEeKCtOf9e1_z0Q">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//ActiveState/active"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//ActiveState/active"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_x46B4AmCEeKCtOf9e1_z0Q" name="car_2_queue" source="_j8ZqwAmCEeKCtOf9e1_z0Q" target="_wF5zMAmCEeKCtOf9e1_z0Q">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Carprocess/queue"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Carprocess/queue"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_2G7hgAmCEeKCtOf9e1_z0Q" name="queue_2_ackMsg" bindingOperator="DESTROY" source="_wF5zMAmCEeKCtOf9e1_z0Q" target="_0dAWUAmCEeKCtOf9e1_z0Q">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//MessageQueue/messages"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//MessageQueue/messages"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_AGrvMAmDEeKCtOf9e1_z0Q" name="as_2_target" bindingOperator="CREATE" source="_l1zcYAmCEeKCtOf9e1_z0Q" target="_79aMsAmCEeKCtOf9e1_z0Q">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//ActiveState/active"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//ActiveState/active"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_JFPloAmDEeKCtOf9e1_z0Q" name="car_2_leader" source="_j8ZqwAmCEeKCtOf9e1_z0Q" target="_H2140AmDEeKCtOf9e1_z0Q">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Carprocess/leader"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Carprocess/leader"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_Mpw1QAmDEeKCtOf9e1_z0Q" name="leader_2_ldQueue" source="_H2140AmDEeKCtOf9e1_z0Q" target="_LZIT0AmDEeKCtOf9e1_z0Q">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Carprocess/queue"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Carprocess/queue"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_Svv8EAmDEeKCtOf9e1_z0Q" name="ldQueue_2_ackMsg2" bindingOperator="CREATE" source="_LZIT0AmDEeKCtOf9e1_z0Q" target="_OgCaYAmDEeKCtOf9e1_z0Q">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//MessageQueue/messages"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//MessageQueue/messages"/>
           </linkVariable>
         </ownedRule>
       </ownedActivityNode>
@@ -418,7 +418,7 @@
     </modelElements>
     <modelElements xsi:type="sda:Activity" xmi:id="_QsCicAmEEeKBNe4XKSP3vw" name="Transition_ldb_ld">
       <annotation xmi:id="_ZpKOcAmEEeKBNe4XKSP3vw" source="http://www.storydriven.org/storydiagrams/types">
-        <details xmi:id="_ZpT_cAmEEeKBNe4XKSP3vw" key="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0" value="true"/>
+        <details xmi:id="_ZpT_cAmEEeKBNe4XKSP3vw" key="http://www.muml.org/example/ttccarplatooning/1.1.0" value="true"/>
       </annotation>
       <ownedActivityEdge xmi:id="_WsfpAAmEEeKBNe4XKSP3vw" target="_UhP5cAmEEeKBNe4XKSP3vw" source="_TGo8oAmEEeKBNe4XKSP3vw"/>
       <ownedActivityEdge xmi:id="_XJXLMAmEEeKBNe4XKSP3vw" target="_jY2qoCwlEeK5_oGyK5-NCw" source="_UhP5cAmEEeKBNe4XKSP3vw" guard="SUCCESS"/>
@@ -428,46 +428,46 @@
       <ownedActivityNode xsi:type="sda:ModifyingStoryNode" xmi:id="_UhP5cAmEEeKBNe4XKSP3vw" name="Execute Transition ldb -> ld" outgoing="_XJXLMAmEEeKBNe4XKSP3vw _00gpMCwlEeK5_oGyK5-NCw" incoming="_WsfpAAmEEeKBNe4XKSP3vw">
         <ownedRule xmi:id="_UhP5cQmEEeKBNe4XKSP3vw" comment="">
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_ahlEMAmEEeKBNe4XKSP3vw" name="car" bindingState="BOUND" outgoingLink="_qxDjgAmEEeKBNe4XKSP3vw _xrSxwAmEEeKBNe4XKSP3vw">
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Carprocess"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Carprocess"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_cn7FoAmEEeKBNe4XKSP3vw" name="as" incomingLink="_qxDjgAmEEeKBNe4XKSP3vw" outgoingLink="_rjftEAmEEeKBNe4XKSP3vw _BGdfQAmFEeKBNe4XKSP3vw">
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//ActiveState"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//ActiveState"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_eXzH0AmEEeKBNe4XKSP3vw" name="source" incomingLink="_rjftEAmEEeKBNe4XKSP3vw">
             <constraint xmi:id="_s5oZkAmEEeKBNe4XKSP3vw">
               <constraintExpression xsi:type="expr:TextualExpression" xmi:id="_tYbOYAmEEeKBNe4XKSP3vw" expressionText="name = 'ldb'" language="OCL" languageVersion="1.0"/>
             </constraint>
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//State"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//State"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_v2XQcAmEEeKBNe4XKSP3vw" name="queue" incomingLink="_xrSxwAmEEeKBNe4XKSP3vw" outgoingLink="_3822cAmEEeKBNe4XKSP3vw">
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//MessageQueue"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//MessageQueue"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_y6vncAmEEeKBNe4XKSP3vw" name="ackMsg" incomingLink="_3822cAmEEeKBNe4XKSP3vw" bindingOperator="DESTROY">
             <constraint xmi:id="_1rVfwAmEEeKBNe4XKSP3vw">
               <constraintExpression xsi:type="expr:TextualExpression" xmi:id="_2LniUAmEEeKBNe4XKSP3vw" expressionText="name = 'ack'" language="OCL" languageVersion="1.0"/>
             </constraint>
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Message"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Message"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_7vW3sAmEEeKBNe4XKSP3vw" name="target" bindingState="BOUND" incomingLink="_BGdfQAmFEeKBNe4XKSP3vw">
             <constraint xmi:id="__GWBoAmEEeKBNe4XKSP3vw">
               <constraintExpression xsi:type="expr:TextualExpression" xmi:id="__iUL8AmEEeKBNe4XKSP3vw" expressionText="name = 'ld'" language="OCL" languageVersion="1.0"/>
             </constraint>
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//State"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//State"/>
           </variable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_qxDjgAmEEeKBNe4XKSP3vw" name="car_2_as" source="_ahlEMAmEEeKBNe4XKSP3vw" target="_cn7FoAmEEeKBNe4XKSP3vw">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Carprocess/curState"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Carprocess/curState"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_rjftEAmEEeKBNe4XKSP3vw" name="as_2_source" bindingOperator="DESTROY" source="_cn7FoAmEEeKBNe4XKSP3vw" target="_eXzH0AmEEeKBNe4XKSP3vw">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//ActiveState/active"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//ActiveState/active"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_xrSxwAmEEeKBNe4XKSP3vw" name="car_2_queue" source="_ahlEMAmEEeKBNe4XKSP3vw" target="_v2XQcAmEEeKBNe4XKSP3vw">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Carprocess/queue"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Carprocess/queue"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_3822cAmEEeKBNe4XKSP3vw" name="queue_2_ackMsg" bindingOperator="DESTROY" source="_v2XQcAmEEeKBNe4XKSP3vw" target="_y6vncAmEEeKBNe4XKSP3vw">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//MessageQueue/messages"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//MessageQueue/messages"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_BGdfQAmFEeKBNe4XKSP3vw" name="as_2_target" bindingOperator="CREATE" source="_cn7FoAmEEeKBNe4XKSP3vw" target="_7vW3sAmEEeKBNe4XKSP3vw">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//ActiveState/active"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//ActiveState/active"/>
           </linkVariable>
         </ownedRule>
       </ownedActivityNode>
@@ -477,20 +477,20 @@
       <ownedActivityNode xsi:type="sda:ModifyingStoryNode" xmi:id="_jY2qoCwlEeK5_oGyK5-NCw" name="Optionally delete bldr reference" outgoing="_x1xnMCwlEeK5_oGyK5-NCw" incoming="_XJXLMAmEEeKBNe4XKSP3vw">
         <ownedRule xmi:id="_jZwCgCwlEeK5_oGyK5-NCw" comment="">
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_rkYhoCwlEeK5_oGyK5-NCw" name="car" bindingState="BOUND" outgoingLink="_vovH4CwlEeK5_oGyK5-NCw">
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Carprocess"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Carprocess"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_tlYJACwlEeK5_oGyK5-NCw" name="bldr" incomingLink="_vovH4CwlEeK5_oGyK5-NCw">
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Carprocess"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Carprocess"/>
           </variable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_vovH4CwlEeK5_oGyK5-NCw" name="car_2_bldr" bindingOperator="DESTROY" source="_rkYhoCwlEeK5_oGyK5-NCw" target="_tlYJACwlEeK5_oGyK5-NCw">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Carprocess/bldr"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Carprocess/bldr"/>
           </linkVariable>
         </ownedRule>
       </ownedActivityNode>
     </modelElements>
     <modelElements xsi:type="sda:Activity" xmi:id="_MnoTkA7vEeKgPKTB3PTVSw" name="MergePlatoons">
       <annotation xmi:id="_ecrCgA7vEeKgPKTB3PTVSw" source="http://www.storydriven.org/storydiagrams/types">
-        <details xmi:id="_ecrCgQ7vEeKgPKTB3PTVSw" key="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0" value="true"/>
+        <details xmi:id="_ecrCgQ7vEeKgPKTB3PTVSw" key="http://www.muml.org/example/ttccarplatooning/1.1.0" value="true"/>
       </annotation>
       <ownedActivityEdge xmi:id="_RxwPEA7vEeKgPKTB3PTVSw" target="_OIx9QA7vEeKgPKTB3PTVSw" source="_NfkoMA7vEeKgPKTB3PTVSw"/>
       <ownedActivityEdge xmi:id="_SPNnIA7vEeKgPKTB3PTVSw" target="_RSXkYA7vEeKgPKTB3PTVSw" source="_OIx9QA7vEeKgPKTB3PTVSw"/>
@@ -498,38 +498,38 @@
       <ownedActivityNode xsi:type="sda:ModifyingStoryNode" xmi:id="_OIx9QA7vEeKgPKTB3PTVSw" name="Merge Platoons: if more than one platoon exists, combine them" outgoing="_SPNnIA7vEeKgPKTB3PTVSw" incoming="_RxwPEA7vEeKgPKTB3PTVSw">
         <ownedRule xmi:id="_OIx9QQ7vEeKgPKTB3PTVSw" comment="">
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_WOhVUA7vEeKgPKTB3PTVSw" name="leader1" bindingState="BOUND" outgoingLink="_qhjJoA7vEeKgPKTB3PTVSw _BYfFIA7wEeKgPKTB3PTVSw">
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Carprocess"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Carprocess"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_gWENEA7vEeKgPKTB3PTVSw" name="leader2" bindingState="BOUND" incomingLink="_mwJfIA7wEeKgPKTB3PTVSw" outgoingLink="_rXjkkA7vEeKgPKTB3PTVSw _CIF9IA7wEeKgPKTB3PTVSw">
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Carprocess"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Carprocess"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_mKJrkA7vEeKgPKTB3PTVSw" name="queue1" incomingLink="_qhjJoA7vEeKgPKTB3PTVSw" outgoingLink="_kvJ3wA7wEeKgPKTB3PTVSw">
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//MessageQueue"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//MessageQueue"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_oj1fwA7vEeKgPKTB3PTVSw" name="queue2" incomingLink="_rXjkkA7vEeKgPKTB3PTVSw">
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//MessageQueue"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//MessageQueue"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_-X0wgA7vEeKgPKTB3PTVSw" name="as1" incomingLink="_BYfFIA7wEeKgPKTB3PTVSw" outgoingLink="_LoCpYA7wEeKgPKTB3PTVSw">
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//ActiveState"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//ActiveState"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="__-oWQA7vEeKgPKTB3PTVSw" name="as2" incomingLink="_CIF9IA7wEeKgPKTB3PTVSw" outgoingLink="_L-W3oA7wEeKgPKTB3PTVSw">
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//ActiveState"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//ActiveState"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_GY_xoA7wEeKgPKTB3PTVSw" name="state1" incomingLink="_LoCpYA7wEeKgPKTB3PTVSw _L-W3oA7wEeKgPKTB3PTVSw">
             <constraint xmi:id="_I7wCQA7wEeKgPKTB3PTVSw">
               <constraintExpression xsi:type="expr:TextualExpression" xmi:id="_JgpfEA7wEeKgPKTB3PTVSw" expressionText="name = 'ld'" language="OCL" languageVersion="1.0"/>
             </constraint>
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//State"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//State"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_ZfEqoA7wEeKgPKTB3PTVSw" name="caMsg" incomingLink="_kvJ3wA7wEeKgPKTB3PTVSw" outgoingLink="_hUUIkA7wEeKgPKTB3PTVSw" bindingOperator="CREATE">
             <attributeAssignment xmi:id="_cDK_EA7wEeKgPKTB3PTVSw">
-              <attribute href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Message/name"/>
+              <attribute href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Message/name"/>
               <valueExpression xsi:type="expr:TextualExpression" xmi:id="_cdOd0A7wEeKgPKTB3PTVSw" expressionText="'ca'" language="OCL" languageVersion="1.0"/>
             </attributeAssignment>
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Message"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Message"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_eeNeIA7wEeKgPKTB3PTVSw" name="param" incomingLink="_hUUIkA7wEeKgPKTB3PTVSw" outgoingLink="_mwJfIA7wEeKgPKTB3PTVSw" bindingOperator="CREATE">
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//CarParameter"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//CarParameter"/>
           </variable>
           <constraint xmi:id="_swXxoA7vEeKgPKTB3PTVSw">
             <constraintExpression xsi:type="expr:TextualExpression" xmi:id="_tWBcYA7vEeKgPKTB3PTVSw" expressionText="queue1.messages -> size() = 0 and queue2.messages -> size() = 0" language="OCL" languageVersion="1.0"/>
@@ -538,31 +538,31 @@
             <constraintExpression xsi:type="expr:TextualExpression" xmi:id="_DQj5cCzeEeKIqsdrVWp8Iw" expressionText="leader1.carParameter -> size() = 0" language="OCL" languageVersion="1.0"/>
           </constraint>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_qhjJoA7vEeKgPKTB3PTVSw" name="leader1_2_queue1" source="_WOhVUA7vEeKgPKTB3PTVSw" target="_mKJrkA7vEeKgPKTB3PTVSw">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Carprocess/queue"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Carprocess/queue"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_rXjkkA7vEeKgPKTB3PTVSw" name="leader2_2_queue2" source="_gWENEA7vEeKgPKTB3PTVSw" target="_oj1fwA7vEeKgPKTB3PTVSw">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Carprocess/queue"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Carprocess/queue"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_BYfFIA7wEeKgPKTB3PTVSw" name="leader1_2_as1" source="_WOhVUA7vEeKgPKTB3PTVSw" target="_-X0wgA7vEeKgPKTB3PTVSw">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Carprocess/curState"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Carprocess/curState"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_CIF9IA7wEeKgPKTB3PTVSw" name="leader2_2_as2" source="_gWENEA7vEeKgPKTB3PTVSw" target="__-oWQA7vEeKgPKTB3PTVSw">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Carprocess/curState"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Carprocess/curState"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_LoCpYA7wEeKgPKTB3PTVSw" name="as1_2_state1" source="_-X0wgA7vEeKgPKTB3PTVSw" target="_GY_xoA7wEeKgPKTB3PTVSw">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//ActiveState/active"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//ActiveState/active"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_L-W3oA7wEeKgPKTB3PTVSw" name="as2_2_state1" source="__-oWQA7vEeKgPKTB3PTVSw" target="_GY_xoA7wEeKgPKTB3PTVSw">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//ActiveState/active"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//ActiveState/active"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_hUUIkA7wEeKgPKTB3PTVSw" name="caMsg_2_param" bindingOperator="CREATE" source="_ZfEqoA7wEeKgPKTB3PTVSw" target="_eeNeIA7wEeKgPKTB3PTVSw">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Message/parameters"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Message/parameters"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_kvJ3wA7wEeKgPKTB3PTVSw" name="queue1_2_caMsg" bindingOperator="CREATE" source="_mKJrkA7vEeKgPKTB3PTVSw" target="_ZfEqoA7wEeKgPKTB3PTVSw">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//MessageQueue/messages"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//MessageQueue/messages"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_mwJfIA7wEeKgPKTB3PTVSw" name="param_2_leader2" bindingOperator="CREATE" source="_eeNeIA7wEeKgPKTB3PTVSw" target="_gWENEA7vEeKgPKTB3PTVSw">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//CarParameter/car"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//CarParameter/car"/>
           </linkVariable>
         </ownedRule>
       </ownedActivityNode>
@@ -572,7 +572,7 @@
     </modelElements>
     <modelElements xsi:type="sda:Activity" xmi:id="_HKWgoA7xEeKgPKTB3PTVSw" name="Transition_ld_ho">
       <annotation xmi:id="_OFH6YA7xEeKgPKTB3PTVSw" source="http://www.storydriven.org/storydiagrams/types">
-        <details xmi:id="_OFH6YQ7xEeKgPKTB3PTVSw" key="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0" value="true"/>
+        <details xmi:id="_OFH6YQ7xEeKgPKTB3PTVSw" key="http://www.muml.org/example/ttccarplatooning/1.1.0" value="true"/>
       </annotation>
       <ownedActivityEdge xmi:id="_KrvjwA7xEeKgPKTB3PTVSw" target="_IbbuAA7xEeKgPKTB3PTVSw" source="_Hv1zUA7xEeKgPKTB3PTVSw"/>
       <ownedActivityEdge xmi:id="_LORCAA7xEeKgPKTB3PTVSw" target="_KCZEwA7xEeKgPKTB3PTVSw" source="_IbbuAA7xEeKgPKTB3PTVSw"/>
@@ -580,86 +580,86 @@
       <ownedActivityNode xsi:type="sda:ModifyingStoryNode" xmi:id="_IbbuAA7xEeKgPKTB3PTVSw" name="Transition ld -> ho" outgoing="_LORCAA7xEeKgPKTB3PTVSw" incoming="_KrvjwA7xEeKgPKTB3PTVSw">
         <ownedRule xmi:id="_IbbuAQ7xEeKgPKTB3PTVSw" comment="">
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_O9XJ8A7xEeKgPKTB3PTVSw" name="car" bindingState="BOUND" incomingLink="_j9VuYA7yEeKgPKTB3PTVSw" outgoingLink="_hmavwA7xEeKgPKTB3PTVSw _jrIZgA7xEeKgPKTB3PTVSw _JLmKMA7yEeKgPKTB3PTVSw">
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Carprocess"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Carprocess"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_RLvGAA7xEeKgPKTB3PTVSw" name="queue" incomingLink="_jrIZgA7xEeKgPKTB3PTVSw" outgoingLink="_kz4KQA7xEeKgPKTB3PTVSw">
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//MessageQueue"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//MessageQueue"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_UGvekA7xEeKgPKTB3PTVSw" name="caMsg" incomingLink="_kz4KQA7xEeKgPKTB3PTVSw" outgoingLink="_3WDsAA7xEeKgPKTB3PTVSw" bindingOperator="DESTROY">
             <constraint xmi:id="_XJVs4A7xEeKgPKTB3PTVSw">
               <constraintExpression xsi:type="expr:TextualExpression" xmi:id="_Xo4IkA7xEeKgPKTB3PTVSw" expressionText="name = 'ca'" language="OCL" languageVersion="1.0"/>
             </constraint>
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Message"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Message"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_ZidgYA7xEeKgPKTB3PTVSw" name="as" incomingLink="_hmavwA7xEeKgPKTB3PTVSw" outgoingLink="_ioxkoA7xEeKgPKTB3PTVSw _raGQUA7xEeKgPKTB3PTVSw">
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//ActiveState"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//ActiveState"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_c3p6kA7xEeKgPKTB3PTVSw" name="source" incomingLink="_ioxkoA7xEeKgPKTB3PTVSw">
             <constraint xmi:id="_fOqOMA7xEeKgPKTB3PTVSw">
               <constraintExpression xsi:type="expr:TextualExpression" xmi:id="_f5NnEA7xEeKgPKTB3PTVSw" expressionText="name = 'ld'" language="OCL" languageVersion="1.0"/>
             </constraint>
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//State"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//State"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_p0VMYA7xEeKgPKTB3PTVSw" name="target" bindingState="BOUND" incomingLink="_raGQUA7xEeKgPKTB3PTVSw">
             <constraint xmi:id="_si_yEA7xEeKgPKTB3PTVSw">
               <constraintExpression xsi:type="expr:TextualExpression" xmi:id="_tCFh0A7xEeKgPKTB3PTVSw" expressionText="name = 'ho'" language="OCL" languageVersion="1.0"/>
             </constraint>
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//State"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//State"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_15XrkA7xEeKgPKTB3PTVSw" name="param" incomingLink="_3WDsAA7xEeKgPKTB3PTVSw" outgoingLink="_7S0cgA7xEeKgPKTB3PTVSw" bindingOperator="DESTROY">
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//CarParameter"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//CarParameter"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_5XVnQA7xEeKgPKTB3PTVSw" name="leader" incomingLink="_7S0cgA7xEeKgPKTB3PTVSw _JLmKMA7yEeKgPKTB3PTVSw" outgoingLink="_AGow0A7yEeKgPKTB3PTVSw">
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Carprocess"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Carprocess"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_9p1XMA7xEeKgPKTB3PTVSw" name="ldQueue" incomingLink="_AGow0A7yEeKgPKTB3PTVSw" outgoingLink="_StcT4A7yEeKgPKTB3PTVSw">
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//MessageQueue"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//MessageQueue"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_LqoYcA7yEeKgPKTB3PTVSw" name="req" incomingLink="_StcT4A7yEeKgPKTB3PTVSw" outgoingLink="_gaddgA7yEeKgPKTB3PTVSw" bindingOperator="CREATE">
             <attributeAssignment xmi:id="_Nl-DwA7yEeKgPKTB3PTVSw">
-              <attribute href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Message/name"/>
+              <attribute href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Message/name"/>
               <valueExpression xsi:type="expr:TextualExpression" xmi:id="_OCGmIA7yEeKgPKTB3PTVSw" expressionText="'req'" language="OCL" languageVersion="1.0"/>
             </attributeAssignment>
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Message"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Message"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_cUK9kA7yEeKgPKTB3PTVSw" name="param2" incomingLink="_gaddgA7yEeKgPKTB3PTVSw" outgoingLink="_j9VuYA7yEeKgPKTB3PTVSw" bindingOperator="CREATE">
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//CarParameter"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//CarParameter"/>
           </variable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_hmavwA7xEeKgPKTB3PTVSw" name="car_2_as" source="_O9XJ8A7xEeKgPKTB3PTVSw" target="_ZidgYA7xEeKgPKTB3PTVSw">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Carprocess/curState"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Carprocess/curState"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_ioxkoA7xEeKgPKTB3PTVSw" name="as_2_source" bindingOperator="DESTROY" source="_ZidgYA7xEeKgPKTB3PTVSw" target="_c3p6kA7xEeKgPKTB3PTVSw">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//ActiveState/active"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//ActiveState/active"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_jrIZgA7xEeKgPKTB3PTVSw" name="car_2_queue" source="_O9XJ8A7xEeKgPKTB3PTVSw" target="_RLvGAA7xEeKgPKTB3PTVSw">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Carprocess/queue"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Carprocess/queue"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_kz4KQA7xEeKgPKTB3PTVSw" name="queue_2_caMsg" bindingOperator="DESTROY" source="_RLvGAA7xEeKgPKTB3PTVSw" target="_UGvekA7xEeKgPKTB3PTVSw">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//MessageQueue/messages"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//MessageQueue/messages"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_raGQUA7xEeKgPKTB3PTVSw" name="as_2_target" bindingOperator="CREATE" source="_ZidgYA7xEeKgPKTB3PTVSw" target="_p0VMYA7xEeKgPKTB3PTVSw">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//ActiveState/active"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//ActiveState/active"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_3WDsAA7xEeKgPKTB3PTVSw" name="caMsg_2_param" bindingOperator="DESTROY" source="_UGvekA7xEeKgPKTB3PTVSw" target="_15XrkA7xEeKgPKTB3PTVSw">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Message/parameters"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Message/parameters"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_7S0cgA7xEeKgPKTB3PTVSw" name="param_2_leader" source="_15XrkA7xEeKgPKTB3PTVSw" target="_5XVnQA7xEeKgPKTB3PTVSw">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//CarParameter/car"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//CarParameter/car"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_AGow0A7yEeKgPKTB3PTVSw" name="leader_2_ldQueue" source="_5XVnQA7xEeKgPKTB3PTVSw" target="_9p1XMA7xEeKgPKTB3PTVSw">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Carprocess/queue"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Carprocess/queue"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_JLmKMA7yEeKgPKTB3PTVSw" name="car_2_leader" bindingOperator="CREATE" source="_O9XJ8A7xEeKgPKTB3PTVSw" target="_5XVnQA7xEeKgPKTB3PTVSw">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Carprocess/leader"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Carprocess/leader"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_StcT4A7yEeKgPKTB3PTVSw" name="ldQueue_2_req" bindingOperator="CREATE" source="_9p1XMA7xEeKgPKTB3PTVSw" target="_LqoYcA7yEeKgPKTB3PTVSw">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//MessageQueue/messages"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//MessageQueue/messages"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_gaddgA7yEeKgPKTB3PTVSw" name="req_2_param2" bindingOperator="CREATE" source="_LqoYcA7yEeKgPKTB3PTVSw" target="_cUK9kA7yEeKgPKTB3PTVSw">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Message/parameters"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Message/parameters"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_j9VuYA7yEeKgPKTB3PTVSw" name="param2_2_car" bindingOperator="CREATE" source="_cUK9kA7yEeKgPKTB3PTVSw" target="_O9XJ8A7xEeKgPKTB3PTVSw">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//CarParameter/car"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//CarParameter/car"/>
           </linkVariable>
         </ownedRule>
       </ownedActivityNode>
@@ -669,7 +669,7 @@
     </modelElements>
     <modelElements xsi:type="sda:Activity" xmi:id="_ozJ6sCwmEeK5_oGyK5-NCw" name="Transition_ld_ldb">
       <annotation xmi:id="_Z6SzkCwnEeKek9NZdRumlw" source="http://www.storydriven.org/storydiagrams/types">
-        <details xmi:id="_Z6SzkSwnEeKek9NZdRumlw" key="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0" value="true"/>
+        <details xmi:id="_Z6SzkSwnEeKek9NZdRumlw" key="http://www.muml.org/example/ttccarplatooning/1.1.0" value="true"/>
       </annotation>
       <ownedActivityEdge xmi:id="_tPdt8CwmEeK5_oGyK5-NCw" target="_qZg0gCwmEeK5_oGyK5-NCw" source="_pzR68CwmEeK5_oGyK5-NCw"/>
       <ownedActivityEdge xmi:id="_tqYvYCwmEeK5_oGyK5-NCw" target="_r7_68CwmEeK5_oGyK5-NCw" source="_qZg0gCwmEeK5_oGyK5-NCw"/>
@@ -677,80 +677,80 @@
       <ownedActivityNode xsi:type="sda:ModifyingStoryNode" xmi:id="_qZg0gCwmEeK5_oGyK5-NCw" name="Transition ld -> ldb" outgoing="_tqYvYCwmEeK5_oGyK5-NCw" incoming="_tPdt8CwmEeK5_oGyK5-NCw">
         <ownedRule xmi:id="_qZg0gSwmEeK5_oGyK5-NCw" comment="">
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_cwsY8CwnEeKek9NZdRumlw" name="car" bindingState="BOUND" outgoingLink="_rFnQECwnEeKek9NZdRumlw _vhVNcCwnEeKek9NZdRumlw _ZKrfECwoEeKek9NZdRumlw _a8yV4CwoEeKek9NZdRumlw">
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Carprocess"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Carprocess"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_hq5pICwnEeKek9NZdRumlw" name="as" incomingLink="_rFnQECwnEeKek9NZdRumlw" outgoingLink="_qWmN8CwnEeKek9NZdRumlw _CXfbICwoEeKek9NZdRumlw">
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//ActiveState"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//ActiveState"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_lR8oUCwnEeKek9NZdRumlw" name="source" incomingLink="_qWmN8CwnEeKek9NZdRumlw">
             <constraint xmi:id="_nhzyICwnEeKek9NZdRumlw">
               <constraintExpression xsi:type="expr:TextualExpression" xmi:id="_oDSHgCwnEeKek9NZdRumlw" expressionText="name = 'ld'" language="OCL" languageVersion="1.0"/>
             </constraint>
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//State"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//State"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_tnev4CwnEeKek9NZdRumlw" name="queue" incomingLink="_vhVNcCwnEeKek9NZdRumlw" outgoingLink="_1j5M0CwnEeKek9NZdRumlw">
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//MessageQueue"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//MessageQueue"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_xH1RMCwnEeKek9NZdRumlw" name="reqMsg" incomingLink="_1j5M0CwnEeKek9NZdRumlw" outgoingLink="_NdmM4CwoEeKek9NZdRumlw" bindingOperator="DESTROY">
             <constraint xmi:id="_y1DoACwnEeKek9NZdRumlw">
               <constraintExpression xsi:type="expr:TextualExpression" xmi:id="_zp4-QCwnEeKek9NZdRumlw" expressionText="name = 'req'" language="OCL" languageVersion="1.0"/>
             </constraint>
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Message"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Message"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_4ffbQCwnEeKek9NZdRumlw" name="target" bindingState="BOUND" incomingLink="_CXfbICwoEeKek9NZdRumlw">
             <constraint xmi:id="_6s-mgCwnEeKek9NZdRumlw">
               <constraintExpression xsi:type="expr:TextualExpression" xmi:id="_7JimsCwnEeKek9NZdRumlw" expressionText="name = 'ldb'" language="OCL" languageVersion="1.0"/>
             </constraint>
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//State"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//State"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_L2pdMCwoEeKek9NZdRumlw" name="param" incomingLink="_NdmM4CwoEeKek9NZdRumlw" outgoingLink="_RGSK0CwoEeKek9NZdRumlw" bindingOperator="DESTROY">
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//CarParameter"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//CarParameter"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_Pe4vMCwoEeKek9NZdRumlw" name="follower" incomingLink="_RGSK0CwoEeKek9NZdRumlw _ZKrfECwoEeKek9NZdRumlw _a8yV4CwoEeKek9NZdRumlw" outgoingLink="_WiHhYCwoEeKek9NZdRumlw">
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Carprocess"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Carprocess"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_UTu-QCwoEeKek9NZdRumlw" name="flwQueue" incomingLink="_WiHhYCwoEeKek9NZdRumlw" outgoingLink="_mANAACwoEeKek9NZdRumlw">
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//MessageQueue"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//MessageQueue"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_ekk78CwoEeKek9NZdRumlw" name="ackMsg" incomingLink="_mANAACwoEeKek9NZdRumlw" bindingOperator="CREATE">
             <attributeAssignment xmi:id="_iGHJACwoEeKek9NZdRumlw">
-              <attribute href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Message/name"/>
+              <attribute href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Message/name"/>
               <valueExpression xsi:type="expr:TextualExpression" xmi:id="_iH5RsCwoEeKek9NZdRumlw" expressionText="'ack'" language="OCL" languageVersion="1.0"/>
             </attributeAssignment>
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Message"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Message"/>
           </variable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_qWmN8CwnEeKek9NZdRumlw" name="as_2_source" bindingOperator="DESTROY" source="_hq5pICwnEeKek9NZdRumlw" target="_lR8oUCwnEeKek9NZdRumlw">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//ActiveState/active"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//ActiveState/active"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_rFnQECwnEeKek9NZdRumlw" name="car_2_as" source="_cwsY8CwnEeKek9NZdRumlw" target="_hq5pICwnEeKek9NZdRumlw">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Carprocess/curState"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Carprocess/curState"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_vhVNcCwnEeKek9NZdRumlw" name="car_2_queue" source="_cwsY8CwnEeKek9NZdRumlw" target="_tnev4CwnEeKek9NZdRumlw">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Carprocess/queue"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Carprocess/queue"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_1j5M0CwnEeKek9NZdRumlw" name="queue_2_reqMsg" bindingOperator="DESTROY" source="_tnev4CwnEeKek9NZdRumlw" target="_xH1RMCwnEeKek9NZdRumlw">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//MessageQueue/messages"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//MessageQueue/messages"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_CXfbICwoEeKek9NZdRumlw" name="as_2_target" bindingOperator="CREATE" source="_hq5pICwnEeKek9NZdRumlw" target="_4ffbQCwnEeKek9NZdRumlw">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//ActiveState/active"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//ActiveState/active"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_NdmM4CwoEeKek9NZdRumlw" name="reqMsg_2_param" bindingOperator="DESTROY" source="_xH1RMCwnEeKek9NZdRumlw" target="_L2pdMCwoEeKek9NZdRumlw">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Message/parameters"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Message/parameters"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_RGSK0CwoEeKek9NZdRumlw" name="param_2_follower" bindingOperator="DESTROY" source="_L2pdMCwoEeKek9NZdRumlw" target="_Pe4vMCwoEeKek9NZdRumlw">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//CarParameter/car"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//CarParameter/car"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_WiHhYCwoEeKek9NZdRumlw" name="follower_2_flwQueue" source="_Pe4vMCwoEeKek9NZdRumlw" target="_UTu-QCwoEeKek9NZdRumlw">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Carprocess/queue"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Carprocess/queue"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_ZKrfECwoEeKek9NZdRumlw" name="car_2_follower" bindingOperator="CREATE" source="_cwsY8CwnEeKek9NZdRumlw" target="_Pe4vMCwoEeKek9NZdRumlw">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Carprocess/follower"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Carprocess/follower"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_a8yV4CwoEeKek9NZdRumlw" name="car_2_follower2" bindingOperator="CREATE" source="_cwsY8CwnEeKek9NZdRumlw" target="_Pe4vMCwoEeKek9NZdRumlw">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Carprocess/bldr"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Carprocess/bldr"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_mANAACwoEeKek9NZdRumlw" name="flwQueue_2_ackMsg" bindingOperator="CREATE" source="_UTu-QCwoEeKek9NZdRumlw" target="_ekk78CwoEeKek9NZdRumlw">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//MessageQueue/messages"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//MessageQueue/messages"/>
           </linkVariable>
         </ownedRule>
       </ownedActivityNode>
@@ -760,7 +760,7 @@
     </modelElements>
     <modelElements xsi:type="sda:Activity" xmi:id="_TL1soCwpEeKek9NZdRumlw" name="Transition_ho_hob">
       <annotation xmi:id="_awtzUCwpEeKek9NZdRumlw" source="http://www.storydriven.org/storydiagrams/types">
-        <details xmi:id="_awtzUSwpEeKek9NZdRumlw" key="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0" value="true"/>
+        <details xmi:id="_awtzUSwpEeKek9NZdRumlw" key="http://www.muml.org/example/ttccarplatooning/1.1.0" value="true"/>
       </annotation>
       <ownedActivityEdge xmi:id="_W9c9ECwpEeKek9NZdRumlw" target="_Uy7mQCwpEeKek9NZdRumlw" source="_UKBMICwpEeKek9NZdRumlw"/>
       <ownedActivityEdge xmi:id="_XY-bcCwpEeKek9NZdRumlw" target="_WGHFYCwpEeKek9NZdRumlw" source="_Uy7mQCwpEeKek9NZdRumlw"/>
@@ -768,46 +768,46 @@
       <ownedActivityNode xsi:type="sda:ModifyingStoryNode" xmi:id="_Uy7mQCwpEeKek9NZdRumlw" name="Transition ho -> hob" outgoing="_XY-bcCwpEeKek9NZdRumlw" incoming="_W9c9ECwpEeKek9NZdRumlw">
         <ownedRule xmi:id="_Uy7mQSwpEeKek9NZdRumlw" comment="">
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_uuZpwCwpEeKek9NZdRumlw" name="car" bindingState="BOUND" outgoingLink="_xkMyMCwpEeKek9NZdRumlw _4qJhMCwpEeKek9NZdRumlw">
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Carprocess"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Carprocess"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_wVzFYCwpEeKek9NZdRumlw" name="as" incomingLink="_xkMyMCwpEeKek9NZdRumlw" outgoingLink="_2FlSsCwpEeKek9NZdRumlw _FaNTUCwqEeKek9NZdRumlw">
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//ActiveState"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//ActiveState"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_ytGT8CwpEeKek9NZdRumlw" name="source" incomingLink="_2FlSsCwpEeKek9NZdRumlw">
             <constraint xmi:id="_0BJ80CwpEeKek9NZdRumlw">
               <constraintExpression xsi:type="expr:TextualExpression" xmi:id="_0hS1cCwpEeKek9NZdRumlw" expressionText="name = 'ho'" language="OCL" languageVersion="1.0"/>
             </constraint>
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//State"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//State"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_3YUF4CwpEeKek9NZdRumlw" name="queue" incomingLink="_4qJhMCwpEeKek9NZdRumlw" outgoingLink="_73m7sCwpEeKek9NZdRumlw">
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//MessageQueue"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//MessageQueue"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_5clDsCwpEeKek9NZdRumlw" name="ackMsg" incomingLink="_73m7sCwpEeKek9NZdRumlw" bindingOperator="DESTROY">
             <constraint xmi:id="_8zacoCwpEeKek9NZdRumlw">
               <constraintExpression xsi:type="expr:TextualExpression" xmi:id="_9PYm8CwpEeKek9NZdRumlw" expressionText="name = 'ack'" language="OCL" languageVersion="1.0"/>
             </constraint>
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Message"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Message"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_B6JF4CwqEeKek9NZdRumlw" name="target" bindingState="BOUND" incomingLink="_FaNTUCwqEeKek9NZdRumlw">
             <constraint xmi:id="_DjnlICwqEeKek9NZdRumlw">
               <constraintExpression xsi:type="expr:TextualExpression" xmi:id="_D5V9gCwqEeKek9NZdRumlw" expressionText="name = 'hob'" language="OCL" languageVersion="1.0"/>
             </constraint>
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//State"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//State"/>
           </variable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_xkMyMCwpEeKek9NZdRumlw" name="car_2_as" source="_uuZpwCwpEeKek9NZdRumlw" target="_wVzFYCwpEeKek9NZdRumlw">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Carprocess/curState"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Carprocess/curState"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_2FlSsCwpEeKek9NZdRumlw" name="as_2_source" bindingOperator="DESTROY" source="_wVzFYCwpEeKek9NZdRumlw" target="_ytGT8CwpEeKek9NZdRumlw">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//ActiveState/active"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//ActiveState/active"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_4qJhMCwpEeKek9NZdRumlw" name="car_2_queue" source="_uuZpwCwpEeKek9NZdRumlw" target="_3YUF4CwpEeKek9NZdRumlw">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Carprocess/queue"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Carprocess/queue"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_73m7sCwpEeKek9NZdRumlw" name="queue_2_ackMsg" bindingOperator="DESTROY" source="_3YUF4CwpEeKek9NZdRumlw" target="_5clDsCwpEeKek9NZdRumlw">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//MessageQueue/messages"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//MessageQueue/messages"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_FaNTUCwqEeKek9NZdRumlw" name="as_2_target" bindingOperator="CREATE" source="_wVzFYCwpEeKek9NZdRumlw" target="_B6JF4CwqEeKek9NZdRumlw">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//ActiveState/active"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//ActiveState/active"/>
           </linkVariable>
         </ownedRule>
       </ownedActivityNode>
@@ -817,7 +817,7 @@
     </modelElements>
     <modelElements xsi:type="sda:Activity" xmi:id="_U14A8Cz3EeKIqsdrVWp8Iw" name="Transition_hob_pass">
       <annotation xmi:id="_dVgfsCz3EeKIqsdrVWp8Iw" source="http://www.storydriven.org/storydiagrams/types">
-        <details xmi:id="_dVgfsSz3EeKIqsdrVWp8Iw" key="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0" value="true"/>
+        <details xmi:id="_dVgfsSz3EeKIqsdrVWp8Iw" key="http://www.muml.org/example/ttccarplatooning/1.1.0" value="true"/>
       </annotation>
       <ownedActivityEdge xmi:id="_ZNkZ8Cz3EeKIqsdrVWp8Iw" target="_W8qHQCz3EeKIqsdrVWp8Iw" source="_Wb7YwCz3EeKIqsdrVWp8Iw"/>
       <ownedActivityEdge xmi:id="_ZtsrgCz3EeKIqsdrVWp8Iw" target="_Vji_QCz3EeKIqsdrVWp8Iw" source="_W8qHQCz3EeKIqsdrVWp8Iw"/>
@@ -828,78 +828,78 @@
       <ownedActivityNode xsi:type="sda:ModifyingStoryNode" xmi:id="_W8qHQCz3EeKIqsdrVWp8Iw" name="Transition hob->pass" outgoing="_ZtsrgCz3EeKIqsdrVWp8Iw" incoming="_ZNkZ8Cz3EeKIqsdrVWp8Iw">
         <ownedRule xmi:id="_W8qHQSz3EeKIqsdrVWp8Iw" comment="">
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_iNVxUCz3EeKIqsdrVWp8Iw" name="car" bindingState="BOUND" outgoingLink="_looMcCz3EeKIqsdrVWp8Iw _usHmMCz3EeKIqsdrVWp8Iw _6z2NACz3EeKIqsdrVWp8Iw __krewCz3EeKIqsdrVWp8Iw">
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Carprocess"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Carprocess"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_kXG6MCz3EeKIqsdrVWp8Iw" name="as" incomingLink="_looMcCz3EeKIqsdrVWp8Iw" outgoingLink="_rFrD8Cz3EeKIqsdrVWp8Iw _1z1PwCz3EeKIqsdrVWp8Iw">
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//ActiveState"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//ActiveState"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_nbLvMCz3EeKIqsdrVWp8Iw" name="source" incomingLink="_rFrD8Cz3EeKIqsdrVWp8Iw">
             <constraint xmi:id="_ouWnQCz3EeKIqsdrVWp8Iw">
               <constraintExpression xsi:type="expr:TextualExpression" xmi:id="_pLgdUCz3EeKIqsdrVWp8Iw" expressionText="name = 'hob'" language="OCL" languageVersion="1.0"/>
             </constraint>
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//State"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//State"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_syuboCz3EeKIqsdrVWp8Iw" name="follower" incomingLink="_usHmMCz3EeKIqsdrVWp8Iw _6z2NACz3EeKIqsdrVWp8Iw _UpxCICz4EeKIqsdrVWp8Iw">
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Carprocess"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Carprocess"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_wwht8Cz3EeKIqsdrVWp8Iw" name="target" bindingState="BOUND" incomingLink="_1z1PwCz3EeKIqsdrVWp8Iw">
             <constraint xmi:id="_x82XICz3EeKIqsdrVWp8Iw">
               <constraintExpression xsi:type="expr:TextualExpression" xmi:id="_ydlFoCz3EeKIqsdrVWp8Iw" expressionText="name = 'pass'" language="OCL" languageVersion="1.0"/>
             </constraint>
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//State"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//State"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_8EVkgCz3EeKIqsdrVWp8Iw" name="leader" incomingLink="__krewCz3EeKIqsdrVWp8Iw" outgoingLink="_Fgze8Cz4EeKIqsdrVWp8Iw">
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Carprocess"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Carprocess"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_ENom4Cz4EeKIqsdrVWp8Iw" name="ldqueue" incomingLink="_Fgze8Cz4EeKIqsdrVWp8Iw" outgoingLink="_Os5bECz4EeKIqsdrVWp8Iw">
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//MessageQueue"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//MessageQueue"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_JbLp0Cz4EeKIqsdrVWp8Iw" name="newfMsg" incomingLink="_Os5bECz4EeKIqsdrVWp8Iw" outgoingLink="_SsyYECz4EeKIqsdrVWp8Iw" bindingOperator="CREATE">
             <attributeAssignment xmi:id="_K0mT0Cz4EeKIqsdrVWp8Iw">
-              <attribute href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Message/name"/>
+              <attribute href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Message/name"/>
               <valueExpression xsi:type="expr:TextualExpression" xmi:id="_K1V6sCz4EeKIqsdrVWp8Iw" expressionText="'newf'" language="OCL" languageVersion="1.0"/>
             </attributeAssignment>
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Message"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Message"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_Q5DJkCz4EeKIqsdrVWp8Iw" name="param" incomingLink="_SsyYECz4EeKIqsdrVWp8Iw" outgoingLink="_UpxCICz4EeKIqsdrVWp8Iw" bindingOperator="CREATE">
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//CarParameter"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//CarParameter"/>
           </variable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_looMcCz3EeKIqsdrVWp8Iw" name="car_2_as" source="_iNVxUCz3EeKIqsdrVWp8Iw" target="_kXG6MCz3EeKIqsdrVWp8Iw">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Carprocess/curState"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Carprocess/curState"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_rFrD8Cz3EeKIqsdrVWp8Iw" name="as_2_source" bindingOperator="DESTROY" source="_kXG6MCz3EeKIqsdrVWp8Iw" target="_nbLvMCz3EeKIqsdrVWp8Iw">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//ActiveState/active"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//ActiveState/active"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_usHmMCz3EeKIqsdrVWp8Iw" name="car_2_follower" source="_iNVxUCz3EeKIqsdrVWp8Iw" target="_syuboCz3EeKIqsdrVWp8Iw">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Carprocess/follower"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Carprocess/follower"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_1z1PwCz3EeKIqsdrVWp8Iw" name="as_2_target" bindingOperator="CREATE" source="_kXG6MCz3EeKIqsdrVWp8Iw" target="_wwht8Cz3EeKIqsdrVWp8Iw">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//ActiveState/active"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//ActiveState/active"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_6z2NACz3EeKIqsdrVWp8Iw" name="car_2_follower" bindingOperator="CREATE" source="_iNVxUCz3EeKIqsdrVWp8Iw" target="_syuboCz3EeKIqsdrVWp8Iw">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Carprocess/aux"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Carprocess/aux"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="__krewCz3EeKIqsdrVWp8Iw" name="car_2_leader" source="_iNVxUCz3EeKIqsdrVWp8Iw" target="_8EVkgCz3EeKIqsdrVWp8Iw">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Carprocess/leader"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Carprocess/leader"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_Fgze8Cz4EeKIqsdrVWp8Iw" name="leader_2_ldqueue" source="_8EVkgCz3EeKIqsdrVWp8Iw" target="_ENom4Cz4EeKIqsdrVWp8Iw">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Carprocess/queue"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Carprocess/queue"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_Os5bECz4EeKIqsdrVWp8Iw" name="ldqueue_2_newfMsg" bindingOperator="CREATE" source="_ENom4Cz4EeKIqsdrVWp8Iw" target="_JbLp0Cz4EeKIqsdrVWp8Iw">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//MessageQueue/messages"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//MessageQueue/messages"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_SsyYECz4EeKIqsdrVWp8Iw" name="newfMsg_2_param" bindingOperator="CREATE" source="_JbLp0Cz4EeKIqsdrVWp8Iw" target="_Q5DJkCz4EeKIqsdrVWp8Iw">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Message/parameters"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Message/parameters"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_UpxCICz4EeKIqsdrVWp8Iw" name="param_2_follower" bindingOperator="CREATE" source="_Q5DJkCz4EeKIqsdrVWp8Iw" target="_syuboCz3EeKIqsdrVWp8Iw">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//CarParameter/car"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//CarParameter/car"/>
           </linkVariable>
         </ownedRule>
       </ownedActivityNode>
     </modelElements>
     <modelElements xsi:type="sda:Activity" xmi:id="_oqoS8Cz5EeKIqsdrVWp8Iw" name="Transition_ldb_ann">
       <annotation xmi:id="_wJkJsCz5EeKIqsdrVWp8Iw" source="http://www.storydriven.org/storydiagrams/types">
-        <details xmi:id="_wJkJsSz5EeKIqsdrVWp8Iw" key="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0" value="true"/>
+        <details xmi:id="_wJkJsSz5EeKIqsdrVWp8Iw" key="http://www.muml.org/example/ttccarplatooning/1.1.0" value="true"/>
       </annotation>
       <ownedActivityEdge xmi:id="_rqG70Cz5EeKIqsdrVWp8Iw" target="_p1BpgCz5EeKIqsdrVWp8Iw" source="_pMGoUCz5EeKIqsdrVWp8Iw"/>
       <ownedActivityEdge xmi:id="_sI5woCz5EeKIqsdrVWp8Iw" target="_rM9FwCz5EeKIqsdrVWp8Iw" source="_p1BpgCz5EeKIqsdrVWp8Iw"/>
@@ -907,86 +907,86 @@
       <ownedActivityNode xsi:type="sda:ModifyingStoryNode" xmi:id="_p1BpgCz5EeKIqsdrVWp8Iw" name="Transition ldb->ann" outgoing="_sI5woCz5EeKIqsdrVWp8Iw" incoming="_rqG70Cz5EeKIqsdrVWp8Iw">
         <ownedRule xmi:id="_p1BpgSz5EeKIqsdrVWp8Iw" comment="">
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_0WZ9kCz5EeKIqsdrVWp8Iw" name="car" bindingState="BOUND" incomingLink="_yVy7QCz6EeKIqsdrVWp8Iw" outgoingLink="_3FD8MCz5EeKIqsdrVWp8Iw __b6SYCz5EeKIqsdrVWp8Iw _dwr4cCz6EeKIqsdrVWp8Iw">
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Carprocess"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Carprocess"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_2DdVQCz5EeKIqsdrVWp8Iw" name="as" incomingLink="_3FD8MCz5EeKIqsdrVWp8Iw" outgoingLink="_7tk_cCz5EeKIqsdrVWp8Iw _Nl0MUCz6EeKIqsdrVWp8Iw">
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//ActiveState"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//ActiveState"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_4c_YcCz5EeKIqsdrVWp8Iw" name="source" incomingLink="_7tk_cCz5EeKIqsdrVWp8Iw">
             <constraint xmi:id="_5txq4Cz5EeKIqsdrVWp8Iw">
               <constraintExpression xsi:type="expr:TextualExpression" xmi:id="_6GK8wCz5EeKIqsdrVWp8Iw" expressionText="name = 'ldb'" language="OCL" languageVersion="1.0"/>
             </constraint>
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//State"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//State"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_9_YC8Cz5EeKIqsdrVWp8Iw" name="queue" incomingLink="__b6SYCz5EeKIqsdrVWp8Iw" outgoingLink="_ERhWcCz6EeKIqsdrVWp8Iw">
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//MessageQueue"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//MessageQueue"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_AaQJ8Cz6EeKIqsdrVWp8Iw" name="newfMsg" incomingLink="_ERhWcCz6EeKIqsdrVWp8Iw" outgoingLink="_TO4toCz6EeKIqsdrVWp8Iw" bindingOperator="DESTROY">
             <constraint xmi:id="_CDupMCz6EeKIqsdrVWp8Iw">
               <constraintExpression xsi:type="expr:TextualExpression" xmi:id="_CzfSMCz6EeKIqsdrVWp8Iw" expressionText="name = 'newf'" language="OCL" languageVersion="1.0"/>
             </constraint>
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Message"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Message"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_JJys8Cz6EeKIqsdrVWp8Iw" name="target" bindingState="BOUND" incomingLink="_Nl0MUCz6EeKIqsdrVWp8Iw">
             <constraint xmi:id="_LfA34Cz6EeKIqsdrVWp8Iw">
               <constraintExpression xsi:type="expr:TextualExpression" xmi:id="_L6FqUCz6EeKIqsdrVWp8Iw" expressionText="name = 'ann'" language="OCL" languageVersion="1.0"/>
             </constraint>
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//State"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//State"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_Rork0Cz6EeKIqsdrVWp8Iw" name="param" incomingLink="_TO4toCz6EeKIqsdrVWp8Iw" outgoingLink="_W6PlECz6EeKIqsdrVWp8Iw" bindingOperator="DESTROY">
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//CarParameter"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//CarParameter"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_UxE5ICz6EeKIqsdrVWp8Iw" name="newFollower" incomingLink="_W6PlECz6EeKIqsdrVWp8Iw _dwr4cCz6EeKIqsdrVWp8Iw" outgoingLink="_axp7gCz6EeKIqsdrVWp8Iw">
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Carprocess"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Carprocess"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_Y67qcCz6EeKIqsdrVWp8Iw" name="flw_queue" incomingLink="_axp7gCz6EeKIqsdrVWp8Iw" outgoingLink="_mxntcCz6EeKIqsdrVWp8Iw">
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//MessageQueue"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//MessageQueue"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_gH_HACz6EeKIqsdrVWp8Iw" name="newlMsg" incomingLink="_mxntcCz6EeKIqsdrVWp8Iw" outgoingLink="_u_GFMCz6EeKIqsdrVWp8Iw" bindingOperator="CREATE">
             <attributeAssignment xmi:id="_iJH4UCz6EeKIqsdrVWp8Iw">
-              <attribute href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Message/name"/>
+              <attribute href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Message/name"/>
               <valueExpression xsi:type="expr:TextualExpression" xmi:id="_iJ3fMCz6EeKIqsdrVWp8Iw" expressionText="'newl'" language="OCL" languageVersion="1.0"/>
             </attributeAssignment>
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Message"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Message"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_sl288Cz6EeKIqsdrVWp8Iw" name="param2" incomingLink="_u_GFMCz6EeKIqsdrVWp8Iw" outgoingLink="_yVy7QCz6EeKIqsdrVWp8Iw" bindingOperator="CREATE">
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//CarParameter"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//CarParameter"/>
           </variable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_3FD8MCz5EeKIqsdrVWp8Iw" name="car_2_as" source="_0WZ9kCz5EeKIqsdrVWp8Iw" target="_2DdVQCz5EeKIqsdrVWp8Iw">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Carprocess/curState"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Carprocess/curState"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_7tk_cCz5EeKIqsdrVWp8Iw" name="as_2_source" bindingOperator="DESTROY" source="_2DdVQCz5EeKIqsdrVWp8Iw" target="_4c_YcCz5EeKIqsdrVWp8Iw">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//ActiveState/active"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//ActiveState/active"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="__b6SYCz5EeKIqsdrVWp8Iw" name="car_2_queue" source="_0WZ9kCz5EeKIqsdrVWp8Iw" target="_9_YC8Cz5EeKIqsdrVWp8Iw">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Carprocess/queue"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Carprocess/queue"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_ERhWcCz6EeKIqsdrVWp8Iw" name="queue_2_newfMsg" bindingOperator="DESTROY" source="_9_YC8Cz5EeKIqsdrVWp8Iw" target="_AaQJ8Cz6EeKIqsdrVWp8Iw">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//MessageQueue/messages"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//MessageQueue/messages"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_Nl0MUCz6EeKIqsdrVWp8Iw" name="as_2_target" bindingOperator="CREATE" source="_2DdVQCz5EeKIqsdrVWp8Iw" target="_JJys8Cz6EeKIqsdrVWp8Iw">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//ActiveState/active"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//ActiveState/active"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_TO4toCz6EeKIqsdrVWp8Iw" name="newfMsg_2_param" bindingOperator="DESTROY" source="_AaQJ8Cz6EeKIqsdrVWp8Iw" target="_Rork0Cz6EeKIqsdrVWp8Iw">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Message/parameters"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Message/parameters"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_W6PlECz6EeKIqsdrVWp8Iw" name="param_2_newFollower" bindingOperator="DESTROY" source="_Rork0Cz6EeKIqsdrVWp8Iw" target="_UxE5ICz6EeKIqsdrVWp8Iw">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//CarParameter/car"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//CarParameter/car"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_axp7gCz6EeKIqsdrVWp8Iw" name="newFollower_2_flw_queue" source="_UxE5ICz6EeKIqsdrVWp8Iw" target="_Y67qcCz6EeKIqsdrVWp8Iw">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Carprocess/queue"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Carprocess/queue"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_dwr4cCz6EeKIqsdrVWp8Iw" name="car_2_newFollower" bindingOperator="CREATE" source="_0WZ9kCz5EeKIqsdrVWp8Iw" target="_UxE5ICz6EeKIqsdrVWp8Iw">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Carprocess/aux"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Carprocess/aux"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_mxntcCz6EeKIqsdrVWp8Iw" name="flw_queue_2_newlMsg" bindingOperator="CREATE" source="_Y67qcCz6EeKIqsdrVWp8Iw" target="_gH_HACz6EeKIqsdrVWp8Iw">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//MessageQueue/messages"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//MessageQueue/messages"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_u_GFMCz6EeKIqsdrVWp8Iw" name="newlMsg_2_param2" bindingOperator="CREATE" source="_gH_HACz6EeKIqsdrVWp8Iw" target="_sl288Cz6EeKIqsdrVWp8Iw">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Message/parameters"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Message/parameters"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_yVy7QCz6EeKIqsdrVWp8Iw" name="param2_2_car" bindingOperator="CREATE" source="_sl288Cz6EeKIqsdrVWp8Iw" target="_0WZ9kCz5EeKIqsdrVWp8Iw">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//CarParameter/car"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//CarParameter/car"/>
           </linkVariable>
         </ownedRule>
       </ownedActivityNode>
@@ -996,7 +996,7 @@
     </modelElements>
     <modelElements xsi:type="sda:Activity" xmi:id="_QKc20Cz7EeKIqsdrVWp8Iw" name="Transition_flw_flw">
       <annotation xmi:id="_YcZe4Cz7EeKIqsdrVWp8Iw" source="http://www.storydriven.org/storydiagrams/types">
-        <details xmi:id="_YcZe4Sz7EeKIqsdrVWp8Iw" key="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0" value="true"/>
+        <details xmi:id="_YcZe4Sz7EeKIqsdrVWp8Iw" key="http://www.muml.org/example/ttccarplatooning/1.1.0" value="true"/>
       </annotation>
       <ownedActivityEdge xmi:id="_TtCMwCz7EeKIqsdrVWp8Iw" target="_Rp0X0Cz7EeKIqsdrVWp8Iw" source="_Q8JZgCz7EeKIqsdrVWp8Iw"/>
       <ownedActivityEdge xmi:id="_UJv98Cz7EeKIqsdrVWp8Iw" target="_TT5UACz7EeKIqsdrVWp8Iw" source="_Rp0X0Cz7EeKIqsdrVWp8Iw"/>
@@ -1004,74 +1004,74 @@
       <ownedActivityNode xsi:type="sda:ModifyingStoryNode" xmi:id="_Rp0X0Cz7EeKIqsdrVWp8Iw" name="Transition flw->flw (self)" outgoing="_UJv98Cz7EeKIqsdrVWp8Iw" incoming="_TtCMwCz7EeKIqsdrVWp8Iw">
         <ownedRule xmi:id="_Rp0X0Sz7EeKIqsdrVWp8Iw" comment="">
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_b9fnECz7EeKIqsdrVWp8Iw" name="car" bindingState="BOUND" outgoingLink="_ejEiMCz7EeKIqsdrVWp8Iw _mEE1gCz7EeKIqsdrVWp8Iw _6t-RsCz7EeKIqsdrVWp8Iw _8k2TwCz7EeKIqsdrVWp8Iw">
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Carprocess"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Carprocess"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_dIn9cCz7EeKIqsdrVWp8Iw" name="as" incomingLink="_ejEiMCz7EeKIqsdrVWp8Iw" outgoingLink="_hOdxcCz7EeKIqsdrVWp8Iw">
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//ActiveState"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//ActiveState"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_f4xJ0Cz7EeKIqsdrVWp8Iw" name="state" incomingLink="_hOdxcCz7EeKIqsdrVWp8Iw">
             <constraint xmi:id="_iXDxMCz7EeKIqsdrVWp8Iw">
               <constraintExpression xsi:type="expr:TextualExpression" xmi:id="_iwNRACz7EeKIqsdrVWp8Iw" expressionText="name = 'flw'" language="OCL" languageVersion="1.0"/>
             </constraint>
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//State"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//State"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_koSM8Cz7EeKIqsdrVWp8Iw" name="queue" incomingLink="_mEE1gCz7EeKIqsdrVWp8Iw" outgoingLink="_ohCAICz7EeKIqsdrVWp8Iw">
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//MessageQueue"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//MessageQueue"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_mvOEQCz7EeKIqsdrVWp8Iw" name="newlMsg" incomingLink="_ohCAICz7EeKIqsdrVWp8Iw" outgoingLink="_vbq3ACz7EeKIqsdrVWp8Iw" bindingOperator="DESTROY">
             <constraint xmi:id="_pn_oMCz7EeKIqsdrVWp8Iw">
               <constraintExpression xsi:type="expr:TextualExpression" xmi:id="_qFv7MCz7EeKIqsdrVWp8Iw" expressionText="name = 'newl'" language="OCL" languageVersion="1.0"/>
             </constraint>
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Message"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Message"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_tt4fgCz7EeKIqsdrVWp8Iw" name="param" incomingLink="_vbq3ACz7EeKIqsdrVWp8Iw" outgoingLink="_yUwkACz7EeKIqsdrVWp8Iw" bindingOperator="DESTROY">
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//CarParameter"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//CarParameter"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_xAsUECz7EeKIqsdrVWp8Iw" name="newLeader" incomingLink="_yUwkACz7EeKIqsdrVWp8Iw _8k2TwCz7EeKIqsdrVWp8Iw" outgoingLink="_2lmuICz7EeKIqsdrVWp8Iw">
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Carprocess"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Carprocess"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_0TzqoCz7EeKIqsdrVWp8Iw" name="ldQueue" incomingLink="_2lmuICz7EeKIqsdrVWp8Iw" outgoingLink="_CiJ_sCz8EeKIqsdrVWp8Iw">
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//MessageQueue"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//MessageQueue"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_5a9xsCz7EeKIqsdrVWp8Iw" name="oldLeader" incomingLink="_6t-RsCz7EeKIqsdrVWp8Iw">
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Carprocess"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Carprocess"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="__vVSwCz7EeKIqsdrVWp8Iw" name="ackMsg" incomingLink="_CiJ_sCz8EeKIqsdrVWp8Iw" bindingOperator="CREATE">
             <attributeAssignment xmi:id="_BEuYYCz8EeKIqsdrVWp8Iw">
-              <attribute href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Message/name"/>
+              <attribute href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Message/name"/>
               <valueExpression xsi:type="expr:TextualExpression" xmi:id="_BFLEUCz8EeKIqsdrVWp8Iw" expressionText="'ack'" language="OCL" languageVersion="1.0"/>
             </attributeAssignment>
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Message"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Message"/>
           </variable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_ejEiMCz7EeKIqsdrVWp8Iw" name="car_2_as" source="_b9fnECz7EeKIqsdrVWp8Iw" target="_dIn9cCz7EeKIqsdrVWp8Iw">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Carprocess/curState"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Carprocess/curState"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_hOdxcCz7EeKIqsdrVWp8Iw" name="as_2_state" source="_dIn9cCz7EeKIqsdrVWp8Iw" target="_f4xJ0Cz7EeKIqsdrVWp8Iw">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//ActiveState/active"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//ActiveState/active"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_mEE1gCz7EeKIqsdrVWp8Iw" name="car_2_queue" source="_b9fnECz7EeKIqsdrVWp8Iw" target="_koSM8Cz7EeKIqsdrVWp8Iw">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Carprocess/queue"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Carprocess/queue"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_ohCAICz7EeKIqsdrVWp8Iw" name="queue_2_newlMsg" bindingOperator="DESTROY" source="_koSM8Cz7EeKIqsdrVWp8Iw" target="_mvOEQCz7EeKIqsdrVWp8Iw">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//MessageQueue/messages"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//MessageQueue/messages"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_vbq3ACz7EeKIqsdrVWp8Iw" name="newlMsg_2_param" bindingOperator="DESTROY" source="_mvOEQCz7EeKIqsdrVWp8Iw" target="_tt4fgCz7EeKIqsdrVWp8Iw">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Message/parameters"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Message/parameters"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_yUwkACz7EeKIqsdrVWp8Iw" name="param_2_newLeader" bindingOperator="DESTROY" source="_tt4fgCz7EeKIqsdrVWp8Iw" target="_xAsUECz7EeKIqsdrVWp8Iw">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//CarParameter/car"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//CarParameter/car"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_2lmuICz7EeKIqsdrVWp8Iw" name="newLeader_2_ldQueue" source="_xAsUECz7EeKIqsdrVWp8Iw" target="_0TzqoCz7EeKIqsdrVWp8Iw">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Carprocess/queue"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Carprocess/queue"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_6t-RsCz7EeKIqsdrVWp8Iw" name="car_2_oldLeader" bindingOperator="DESTROY" source="_b9fnECz7EeKIqsdrVWp8Iw" target="_5a9xsCz7EeKIqsdrVWp8Iw">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Carprocess/leader"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Carprocess/leader"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_8k2TwCz7EeKIqsdrVWp8Iw" name="car_2_newLeader" bindingOperator="CREATE" source="_b9fnECz7EeKIqsdrVWp8Iw" target="_xAsUECz7EeKIqsdrVWp8Iw">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Carprocess/leader"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Carprocess/leader"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_CiJ_sCz8EeKIqsdrVWp8Iw" name="ldQueue_2_ackMsg" bindingOperator="CREATE" source="_0TzqoCz7EeKIqsdrVWp8Iw" target="__vVSwCz7EeKIqsdrVWp8Iw">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//MessageQueue/messages"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//MessageQueue/messages"/>
           </linkVariable>
         </ownedRule>
       </ownedActivityNode>
@@ -1081,7 +1081,7 @@
     </modelElements>
     <modelElements xsi:type="sda:Activity" xmi:id="_bgS4QCz8EeKIqsdrVWp8Iw" name="Transition_ann_ldb">
       <annotation xmi:id="_h5TBsCz8EeKIqsdrVWp8Iw" source="http://www.storydriven.org/storydiagrams/types">
-        <details xmi:id="_h5TBsSz8EeKIqsdrVWp8Iw" key="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0" value="true"/>
+        <details xmi:id="_h5TBsSz8EeKIqsdrVWp8Iw" key="http://www.muml.org/example/ttccarplatooning/1.1.0" value="true"/>
       </annotation>
       <ownedActivityEdge xmi:id="_ejyecCz8EeKIqsdrVWp8Iw" target="_cbzeQCz8EeKIqsdrVWp8Iw" source="_b7hbsCz8EeKIqsdrVWp8Iw"/>
       <ownedActivityEdge xmi:id="_e7vEYCz8EeKIqsdrVWp8Iw" target="_dzu6gCz8EeKIqsdrVWp8Iw" source="_cbzeQCz8EeKIqsdrVWp8Iw"/>
@@ -1089,77 +1089,77 @@
       <ownedActivityNode xsi:type="sda:ModifyingStoryNode" xmi:id="_cbzeQCz8EeKIqsdrVWp8Iw" name="Transition ann->ldb" outgoing="_e7vEYCz8EeKIqsdrVWp8Iw" incoming="_ejyecCz8EeKIqsdrVWp8Iw">
         <ownedRule xmi:id="_cbzeQSz8EeKIqsdrVWp8Iw" comment="">
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_lvFAcCz8EeKIqsdrVWp8Iw" name="car" bindingState="BOUND" outgoingLink="_ntFlQCz8EeKIqsdrVWp8Iw _tlpUECz8EeKIqsdrVWp8Iw _Ma370Cz9EeKIqsdrVWp8Iw _NrDxUCz9EeKIqsdrVWp8Iw _V8GacCz9EeKIqsdrVWp8Iw">
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Carprocess"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Carprocess"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_m4uJECz8EeKIqsdrVWp8Iw" name="as" incomingLink="_ntFlQCz8EeKIqsdrVWp8Iw" outgoingLink="_rBswoCz8EeKIqsdrVWp8Iw _2jpJ0Cz8EeKIqsdrVWp8Iw">
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//ActiveState"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//ActiveState"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_obp7cCz8EeKIqsdrVWp8Iw" name="source" incomingLink="_rBswoCz8EeKIqsdrVWp8Iw">
             <constraint xmi:id="_pg_L0Cz8EeKIqsdrVWp8Iw">
               <constraintExpression xsi:type="expr:TextualExpression" xmi:id="_p6R1kCz8EeKIqsdrVWp8Iw" expressionText="name = 'ann'" language="OCL" languageVersion="1.0"/>
             </constraint>
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//State"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//State"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_sWy7UCz8EeKIqsdrVWp8Iw" name="queue" incomingLink="_tlpUECz8EeKIqsdrVWp8Iw" outgoingLink="_v216oCz8EeKIqsdrVWp8Iw">
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//MessageQueue"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//MessageQueue"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_umNZMCz8EeKIqsdrVWp8Iw" name="ackMsg" incomingLink="_v216oCz8EeKIqsdrVWp8Iw" bindingOperator="DESTROY">
             <constraint xmi:id="_xCa88Cz8EeKIqsdrVWp8Iw">
               <constraintExpression xsi:type="expr:TextualExpression" xmi:id="_xaYJ8Cz8EeKIqsdrVWp8Iw" expressionText="name = 'ack'" language="OCL" languageVersion="1.0"/>
             </constraint>
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Message"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Message"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_0FMxcCz8EeKIqsdrVWp8Iw" name="target" bindingState="BOUND" incomingLink="_2jpJ0Cz8EeKIqsdrVWp8Iw">
             <constraint xmi:id="_4ALZQCz8EeKIqsdrVWp8Iw">
               <constraintExpression xsi:type="expr:TextualExpression" xmi:id="_4bHBwCz8EeKIqsdrVWp8Iw" expressionText="name = 'ldb'" language="OCL" languageVersion="1.0"/>
             </constraint>
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//State"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//State"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_Jt2U4Cz9EeKIqsdrVWp8Iw" name="newFollower" incomingLink="_Ma370Cz9EeKIqsdrVWp8Iw _NrDxUCz9EeKIqsdrVWp8Iw">
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Carprocess"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Carprocess"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_S1yJwCz9EeKIqsdrVWp8Iw" name="oldLeader" incomingLink="_V8GacCz9EeKIqsdrVWp8Iw" outgoingLink="_dfeFQCz9EeKIqsdrVWp8Iw">
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Carprocess"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Carprocess"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_cRqOUCz9EeKIqsdrVWp8Iw" name="oldQueue" incomingLink="_dfeFQCz9EeKIqsdrVWp8Iw" outgoingLink="_iakGQCz9EeKIqsdrVWp8Iw">
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//MessageQueue"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//MessageQueue"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_fJiaYCz9EeKIqsdrVWp8Iw" name="newAckMsg" incomingLink="_iakGQCz9EeKIqsdrVWp8Iw" bindingOperator="CREATE">
             <attributeAssignment xmi:id="_g-B20Cz9EeKIqsdrVWp8Iw">
-              <attribute href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Message/name"/>
+              <attribute href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Message/name"/>
               <valueExpression xsi:type="expr:TextualExpression" xmi:id="_g-oTwCz9EeKIqsdrVWp8Iw" expressionText="'ack'" language="OCL" languageVersion="1.0"/>
             </attributeAssignment>
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Message"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Message"/>
           </variable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_ntFlQCz8EeKIqsdrVWp8Iw" name="car_2_as" source="_lvFAcCz8EeKIqsdrVWp8Iw" target="_m4uJECz8EeKIqsdrVWp8Iw">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Carprocess/curState"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Carprocess/curState"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_rBswoCz8EeKIqsdrVWp8Iw" name="as_2_source" bindingOperator="DESTROY" source="_m4uJECz8EeKIqsdrVWp8Iw" target="_obp7cCz8EeKIqsdrVWp8Iw">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//ActiveState/active"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//ActiveState/active"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_tlpUECz8EeKIqsdrVWp8Iw" name="car_2_queue" source="_lvFAcCz8EeKIqsdrVWp8Iw" target="_sWy7UCz8EeKIqsdrVWp8Iw">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Carprocess/queue"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Carprocess/queue"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_v216oCz8EeKIqsdrVWp8Iw" name="queue_2_ackMsg" bindingOperator="DESTROY" source="_sWy7UCz8EeKIqsdrVWp8Iw" target="_umNZMCz8EeKIqsdrVWp8Iw">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//MessageQueue/messages"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//MessageQueue/messages"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_2jpJ0Cz8EeKIqsdrVWp8Iw" name="as_2_target" bindingOperator="CREATE" source="_m4uJECz8EeKIqsdrVWp8Iw" target="_0FMxcCz8EeKIqsdrVWp8Iw">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//ActiveState/active"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//ActiveState/active"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_Ma370Cz9EeKIqsdrVWp8Iw" name="car_2_newFollower" bindingOperator="DESTROY" source="_lvFAcCz8EeKIqsdrVWp8Iw" target="_Jt2U4Cz9EeKIqsdrVWp8Iw">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Carprocess/aux"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Carprocess/aux"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_NrDxUCz9EeKIqsdrVWp8Iw" name="car_2_newFollower2" bindingOperator="CREATE" source="_lvFAcCz8EeKIqsdrVWp8Iw" target="_Jt2U4Cz9EeKIqsdrVWp8Iw">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Carprocess/follower"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Carprocess/follower"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_V8GacCz9EeKIqsdrVWp8Iw" name="car_2_oldLeader" source="_lvFAcCz8EeKIqsdrVWp8Iw" target="_S1yJwCz9EeKIqsdrVWp8Iw">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Carprocess/bldr"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Carprocess/bldr"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_dfeFQCz9EeKIqsdrVWp8Iw" name="oldLeader_2_oldQueue" source="_S1yJwCz9EeKIqsdrVWp8Iw" target="_cRqOUCz9EeKIqsdrVWp8Iw">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Carprocess/queue"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Carprocess/queue"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_iakGQCz9EeKIqsdrVWp8Iw" name="oldQueue_2_newAckMsg" bindingOperator="CREATE" source="_cRqOUCz9EeKIqsdrVWp8Iw" target="_fJiaYCz9EeKIqsdrVWp8Iw">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//MessageQueue/messages"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//MessageQueue/messages"/>
           </linkVariable>
         </ownedRule>
       </ownedActivityNode>
@@ -1169,7 +1169,7 @@
     </modelElements>
     <modelElements xsi:type="sda:Activity" xmi:id="_8CNO0Cz9EeKIqsdrVWp8Iw" name="Transition_pass_hob">
       <annotation xmi:id="_DqqN8Cz-EeKIqsdrVWp8Iw" source="http://www.storydriven.org/storydiagrams/types">
-        <details xmi:id="_DqqN8Sz-EeKIqsdrVWp8Iw" key="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0" value="true"/>
+        <details xmi:id="_DqqN8Sz-EeKIqsdrVWp8Iw" key="http://www.muml.org/example/ttccarplatooning/1.1.0" value="true"/>
       </annotation>
       <ownedActivityEdge xmi:id="__xAb0Cz9EeKIqsdrVWp8Iw" target="_9GhLgCz9EeKIqsdrVWp8Iw" source="_8c_tYCz9EeKIqsdrVWp8Iw"/>
       <ownedActivityEdge xmi:id="_AIhj8Cz-EeKIqsdrVWp8Iw" target="__OfkoCz9EeKIqsdrVWp8Iw" source="_9GhLgCz9EeKIqsdrVWp8Iw"/>
@@ -1177,55 +1177,55 @@
       <ownedActivityNode xsi:type="sda:ModifyingStoryNode" xmi:id="_9GhLgCz9EeKIqsdrVWp8Iw" name="Transition pass->hob" outgoing="_AIhj8Cz-EeKIqsdrVWp8Iw" incoming="__xAb0Cz9EeKIqsdrVWp8Iw">
         <ownedRule xmi:id="_9GhLgSz9EeKIqsdrVWp8Iw" comment="">
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_G1SW4Cz-EeKIqsdrVWp8Iw" name="car" bindingState="BOUND" outgoingLink="_I80rICz-EeKIqsdrVWp8Iw _PNfX8Cz-EeKIqsdrVWp8Iw _f96oMCz-EeKIqsdrVWp8Iw _hxW7wCz-EeKIqsdrVWp8Iw">
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Carprocess"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Carprocess"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_IHj3ECz-EeKIqsdrVWp8Iw" name="as" incomingLink="_I80rICz-EeKIqsdrVWp8Iw" outgoingLink="_M9oOICz-EeKIqsdrVWp8Iw _bjhggCz-EeKIqsdrVWp8Iw">
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//ActiveState"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//ActiveState"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_KUTbcCz-EeKIqsdrVWp8Iw" name="source" incomingLink="_M9oOICz-EeKIqsdrVWp8Iw">
             <constraint xmi:id="_LWWuUCz-EeKIqsdrVWp8Iw">
               <constraintExpression xsi:type="expr:TextualExpression" xmi:id="_LyU4oCz-EeKIqsdrVWp8Iw" expressionText="name = 'pass'" language="OCL" languageVersion="1.0"/>
             </constraint>
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//State"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//State"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_OHkRsCz-EeKIqsdrVWp8Iw" name="queue" incomingLink="_PNfX8Cz-EeKIqsdrVWp8Iw" outgoingLink="_SV5TUCz-EeKIqsdrVWp8Iw">
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//MessageQueue"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//MessageQueue"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_P2_n8Cz-EeKIqsdrVWp8Iw" name="ackMsg" incomingLink="_SV5TUCz-EeKIqsdrVWp8Iw" bindingOperator="DESTROY">
             <constraint xmi:id="_Q7IlgCz-EeKIqsdrVWp8Iw">
               <constraintExpression xsi:type="expr:TextualExpression" xmi:id="_RZCpgCz-EeKIqsdrVWp8Iw" expressionText="name = 'ack'" language="OCL" languageVersion="1.0"/>
             </constraint>
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Message"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Message"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_WdrBACz-EeKIqsdrVWp8Iw" name="target" bindingState="BOUND" incomingLink="_bjhggCz-EeKIqsdrVWp8Iw">
             <constraint xmi:id="_YYQeYCz-EeKIqsdrVWp8Iw">
               <constraintExpression xsi:type="expr:TextualExpression" xmi:id="_ZTySgCz-EeKIqsdrVWp8Iw" expressionText="name = 'hob'" language="OCL" languageVersion="1.0"/>
             </constraint>
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//State"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//State"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_eZBuACz-EeKIqsdrVWp8Iw" name="newFollower" incomingLink="_f96oMCz-EeKIqsdrVWp8Iw _hxW7wCz-EeKIqsdrVWp8Iw">
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Carprocess"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Carprocess"/>
           </variable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_I80rICz-EeKIqsdrVWp8Iw" name="car_2_as" source="_G1SW4Cz-EeKIqsdrVWp8Iw" target="_IHj3ECz-EeKIqsdrVWp8Iw">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Carprocess/curState"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Carprocess/curState"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_M9oOICz-EeKIqsdrVWp8Iw" name="as_2_source" bindingOperator="DESTROY" source="_IHj3ECz-EeKIqsdrVWp8Iw" target="_KUTbcCz-EeKIqsdrVWp8Iw">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//ActiveState/active"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//ActiveState/active"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_PNfX8Cz-EeKIqsdrVWp8Iw" name="car_2_queue" source="_G1SW4Cz-EeKIqsdrVWp8Iw" target="_OHkRsCz-EeKIqsdrVWp8Iw">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Carprocess/queue"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Carprocess/queue"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_SV5TUCz-EeKIqsdrVWp8Iw" name="queue_2_ackMsg" bindingOperator="DESTROY" source="_OHkRsCz-EeKIqsdrVWp8Iw" target="_P2_n8Cz-EeKIqsdrVWp8Iw">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//MessageQueue/messages"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//MessageQueue/messages"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_bjhggCz-EeKIqsdrVWp8Iw" name="as_2_target" bindingOperator="CREATE" source="_IHj3ECz-EeKIqsdrVWp8Iw" target="_WdrBACz-EeKIqsdrVWp8Iw">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//ActiveState/active"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//ActiveState/active"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_f96oMCz-EeKIqsdrVWp8Iw" name="car_2_newFollower" bindingOperator="DESTROY" source="_G1SW4Cz-EeKIqsdrVWp8Iw" target="_eZBuACz-EeKIqsdrVWp8Iw">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Carprocess/follower"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Carprocess/follower"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_hxW7wCz-EeKIqsdrVWp8Iw" name="car_2_newFollower2" bindingOperator="DESTROY" source="_G1SW4Cz-EeKIqsdrVWp8Iw" target="_eZBuACz-EeKIqsdrVWp8Iw">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Carprocess/aux"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Carprocess/aux"/>
           </linkVariable>
         </ownedRule>
       </ownedActivityNode>
@@ -1235,7 +1235,7 @@
     </modelElements>
     <modelElements xsi:type="sda:Activity" xmi:id="_2nLgMC1jEeK_Rtp0gbISLw" name="Transition_hob_hod">
       <annotation xmi:id="_NCAHcC1kEeK_Rtp0gbISLw" source="http://www.storydriven.org/storydiagrams/types">
-        <details xmi:id="_NCAHcS1kEeK_Rtp0gbISLw" key="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0" value="true"/>
+        <details xmi:id="_NCAHcS1kEeK_Rtp0gbISLw" key="http://www.muml.org/example/ttccarplatooning/1.1.0" value="true"/>
       </annotation>
       <ownedActivityEdge xmi:id="_DPpckC1kEeK_Rtp0gbISLw" target="_9TYScC1jEeK_Rtp0gbISLw" source="_8gDYEC1jEeK_Rtp0gbISLw"/>
       <ownedActivityEdge xmi:id="_DzfwgC1kEeK_Rtp0gbISLw" target="_BvPZwC1kEeK_Rtp0gbISLw" source="_9TYScC1jEeK_Rtp0gbISLw"/>
@@ -1243,34 +1243,34 @@
       <ownedActivityNode xsi:type="sda:ModifyingStoryNode" xmi:id="_9TYScC1jEeK_Rtp0gbISLw" name="Transition hob->hod" outgoing="_DzfwgC1kEeK_Rtp0gbISLw" incoming="_DPpckC1kEeK_Rtp0gbISLw">
         <ownedRule xmi:id="_9UH5UC1jEeK_Rtp0gbISLw" comment="">
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_SluOsC1kEeK_Rtp0gbISLw" name="car" bindingState="BOUND" outgoingLink="_VrcCcC1kEeK_Rtp0gbISLw">
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Carprocess"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Carprocess"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_USU6cC1kEeK_Rtp0gbISLw" name="as" incomingLink="_VrcCcC1kEeK_Rtp0gbISLw" outgoingLink="_aR5QMC1kEeK_Rtp0gbISLw _kuDtEC1kEeK_Rtp0gbISLw">
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//ActiveState"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//ActiveState"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_W9kYsC1kEeK_Rtp0gbISLw" name="source" incomingLink="_aR5QMC1kEeK_Rtp0gbISLw">
             <constraint xmi:id="_YWsHwC1kEeK_Rtp0gbISLw">
               <constraintExpression xsi:type="expr:TextualExpression" xmi:id="_Y3HUQC1kEeK_Rtp0gbISLw" expressionText="name = 'hob'" language="OCL" languageVersion="1.0"/>
             </constraint>
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//State"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//State"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_gbkkMC1kEeK_Rtp0gbISLw" name="target" bindingState="BOUND" incomingLink="_kuDtEC1kEeK_Rtp0gbISLw">
             <constraint xmi:id="_oX5sIC1lEeK_Rtp0gbISLw">
               <constraintExpression xsi:type="expr:TextualExpression" xmi:id="_o63PQC1lEeK_Rtp0gbISLw" expressionText="name = 'hod'" language="OCL" languageVersion="1.0"/>
             </constraint>
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//State"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//State"/>
           </variable>
           <constraint xmi:id="_cga9QC1kEeK_Rtp0gbISLw">
             <constraintExpression xsi:type="expr:TextualExpression" xmi:id="_dImXkC1kEeK_Rtp0gbISLw" expressionText="car.follower -> size() = 0" language="OCL" languageVersion="1.0"/>
           </constraint>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_VrcCcC1kEeK_Rtp0gbISLw" name="car_2_as" source="_SluOsC1kEeK_Rtp0gbISLw" target="_USU6cC1kEeK_Rtp0gbISLw">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Carprocess/curState"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Carprocess/curState"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_aR5QMC1kEeK_Rtp0gbISLw" name="as_2_source" bindingOperator="DESTROY" source="_USU6cC1kEeK_Rtp0gbISLw" target="_W9kYsC1kEeK_Rtp0gbISLw">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//ActiveState/active"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//ActiveState/active"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_kuDtEC1kEeK_Rtp0gbISLw" name="as_2_target" bindingOperator="CREATE" source="_USU6cC1kEeK_Rtp0gbISLw" target="_gbkkMC1kEeK_Rtp0gbISLw">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//ActiveState/active"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//ActiveState/active"/>
           </linkVariable>
         </ownedRule>
       </ownedActivityNode>
@@ -1280,7 +1280,7 @@
     </modelElements>
     <modelElements xsi:type="sda:Activity" xmi:id="_0-TBYC1kEeK_Rtp0gbISLw" name="Transition_hod_flw">
       <annotation xmi:id="_8cAwIC1kEeK_Rtp0gbISLw" source="http://www.storydriven.org/storydiagrams/types">
-        <details xmi:id="_8cAwIS1kEeK_Rtp0gbISLw" key="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0" value="true"/>
+        <details xmi:id="_8cAwIS1kEeK_Rtp0gbISLw" key="http://www.muml.org/example/ttccarplatooning/1.1.0" value="true"/>
       </annotation>
       <ownedActivityEdge xmi:id="_4YZJsC1kEeK_Rtp0gbISLw" target="_2gCg8C1kEeK_Rtp0gbISLw" source="_12ra4C1kEeK_Rtp0gbISLw"/>
       <ownedActivityEdge xmi:id="_44YRUC1kEeK_Rtp0gbISLw" target="_35wF4C1kEeK_Rtp0gbISLw" source="_2gCg8C1kEeK_Rtp0gbISLw"/>
@@ -1288,53 +1288,53 @@
       <ownedActivityNode xsi:type="sda:ModifyingStoryNode" xmi:id="_2gCg8C1kEeK_Rtp0gbISLw" name="Transition hod->flw" outgoing="_44YRUC1kEeK_Rtp0gbISLw" incoming="_4YZJsC1kEeK_Rtp0gbISLw">
         <ownedRule xmi:id="_2gCg8S1kEeK_Rtp0gbISLw" comment="">
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_D12rgC1lEeK_Rtp0gbISLw" name="car" bindingState="BOUND" outgoingLink="_HXjQoC1lEeK_Rtp0gbISLw _ZUIK8C1lEeK_Rtp0gbISLw">
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Carprocess"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Carprocess"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_GI_y0C1lEeK_Rtp0gbISLw" name="as" incomingLink="_HXjQoC1lEeK_Rtp0gbISLw" outgoingLink="_L1pMkC1lEeK_Rtp0gbISLw _SlbeUC1lEeK_Rtp0gbISLw">
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//ActiveState"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//ActiveState"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_IiFKEC1lEeK_Rtp0gbISLw" name="source" incomingLink="_L1pMkC1lEeK_Rtp0gbISLw">
             <constraint xmi:id="_JzUIcC1lEeK_Rtp0gbISLw">
               <constraintExpression xsi:type="expr:TextualExpression" xmi:id="_KQB5oC1lEeK_Rtp0gbISLw" expressionText="name = 'hod'" language="OCL" languageVersion="1.0"/>
             </constraint>
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//State"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//State"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_N0jJQC1lEeK_Rtp0gbISLw" name="target" bindingState="BOUND" incomingLink="_SlbeUC1lEeK_Rtp0gbISLw">
             <constraint xmi:id="_PbM-AC1lEeK_Rtp0gbISLw">
               <constraintExpression xsi:type="expr:TextualExpression" xmi:id="_QQC7UC1lEeK_Rtp0gbISLw" expressionText="name = 'flw'" language="OCL" languageVersion="1.0"/>
             </constraint>
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//State"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//State"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_VxGJEC1lEeK_Rtp0gbISLw" name="leader" incomingLink="_ZUIK8C1lEeK_Rtp0gbISLw" outgoingLink="_cQLFUC1lEeK_Rtp0gbISLw">
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Carprocess"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Carprocess"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_a3W4QC1lEeK_Rtp0gbISLw" name="queue" incomingLink="_cQLFUC1lEeK_Rtp0gbISLw" outgoingLink="_iNL2UC1lEeK_Rtp0gbISLw">
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//MessageQueue"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//MessageQueue"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_efmKQC1lEeK_Rtp0gbISLw" name="ackMsg" incomingLink="_iNL2UC1lEeK_Rtp0gbISLw" bindingOperator="CREATE">
             <attributeAssignment xmi:id="_gICHsC1lEeK_Rtp0gbISLw">
-              <attribute href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Message/name"/>
+              <attribute href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Message/name"/>
               <valueExpression xsi:type="expr:TextualExpression" xmi:id="_gJ-BYC1lEeK_Rtp0gbISLw" expressionText="'ack'" language="OCL" languageVersion="1.0"/>
             </attributeAssignment>
-            <classifier href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Message"/>
+            <classifier href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Message"/>
           </variable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_HXjQoC1lEeK_Rtp0gbISLw" name="car_2_as" source="_D12rgC1lEeK_Rtp0gbISLw" target="_GI_y0C1lEeK_Rtp0gbISLw">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Carprocess/curState"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Carprocess/curState"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_L1pMkC1lEeK_Rtp0gbISLw" name="as_2_source" bindingOperator="DESTROY" source="_GI_y0C1lEeK_Rtp0gbISLw" target="_IiFKEC1lEeK_Rtp0gbISLw">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//ActiveState/active"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//ActiveState/active"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_SlbeUC1lEeK_Rtp0gbISLw" name="as_2_target" bindingOperator="CREATE" source="_GI_y0C1lEeK_Rtp0gbISLw" target="_N0jJQC1lEeK_Rtp0gbISLw">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//ActiveState/active"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//ActiveState/active"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_ZUIK8C1lEeK_Rtp0gbISLw" name="car_2_leader" source="_D12rgC1lEeK_Rtp0gbISLw" target="_VxGJEC1lEeK_Rtp0gbISLw">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Carprocess/leader"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Carprocess/leader"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_cQLFUC1lEeK_Rtp0gbISLw" name="leader_2_queue" source="_VxGJEC1lEeK_Rtp0gbISLw" target="_a3W4QC1lEeK_Rtp0gbISLw">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//Carprocess/queue"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//Carprocess/queue"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_iNL2UC1lEeK_Rtp0gbISLw" name="queue_2_ackMsg" bindingOperator="CREATE" source="_a3W4QC1lEeK_Rtp0gbISLw" target="_efmKQC1lEeK_Rtp0gbISLw">
-            <targetEnd href="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0#//MessageQueue/messages"/>
+            <targetEnd href="http://www.muml.org/example/ttccarplatooning/1.1.0#//MessageQueue/messages"/>
           </linkVariable>
         </ownedRule>
       </ownedActivityNode>
