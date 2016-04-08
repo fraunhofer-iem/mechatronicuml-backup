@@ -7,16 +7,16 @@
     <ownedActivityNode xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:TimedActivityNode" name="Register RailCab at TrackSection" outgoing="//@rules.0/@ownedActivityEdge.1" incoming="//@rules.0/@ownedActivityEdge.0">
       <ownedRule xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:TimedStoryPattern">
         <variable xsi:type="sdp:ObjectVariable" name="regR" bindingState="BOUND" outgoingLink="//@rules.0/@ownedActivityNode.1/@ownedRule/@linkVariable.0">
-          <classifier href="http://www.fujaba.de/muml/verification/test/railcab/0.1.0#//RailCab"/>
+          <classifier href="http://www.muml.org/example/railcab/1.0.0#//RailCab"/>
         </variable>
         <variable xsi:type="sdp:ObjectVariable" name="regS" bindingState="BOUND" incomingLink="//@rules.0/@ownedActivityNode.1/@ownedRule/@linkVariable.0">
-          <classifier href="http://www.fujaba.de/muml/verification/test/railcab/0.1.0#//SectionControl"/>
+          <classifier href="http://www.muml.org/example/railcab/1.0.0#//SectionControl"/>
         </variable>
         <constraint>
           <constraintExpression xsi:type="expr:TextualExpression" expressionText="regR.sectionControl.oclIsUndefined()" language="OCL" languageVersion="1.0"/>
         </constraint>
         <linkVariable xsi:type="sdp:LinkVariable" name="newSectionControl" bindingOperator="CREATE" source="//@rules.0/@ownedActivityNode.1/@ownedRule/@variable.0" target="//@rules.0/@ownedActivityNode.1/@ownedRule/@variable.1">
-          <targetEnd href="http://www.fujaba.de/muml/verification/test/railcab/0.1.0#//RailCab/sectionControl"/>
+          <targetEnd href="http://www.muml.org/example/railcab/1.0.0#//RailCab/sectionControl"/>
         </linkVariable>
       </ownedRule>
     </ownedActivityNode>
@@ -29,13 +29,13 @@
     <ownedActivityNode xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:TimedActivityNode" name="Unregister RailCab from TrackSection" outgoing="//@rules.1/@ownedActivityEdge.1" incoming="//@rules.1/@ownedActivityEdge.0">
       <ownedRule xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:TimedStoryPattern">
         <variable xsi:type="sdp:ObjectVariable" name="unregR" bindingState="BOUND" outgoingLink="//@rules.1/@ownedActivityNode.1/@ownedRule/@linkVariable.0">
-          <classifier href="http://www.fujaba.de/muml/verification/test/railcab/0.1.0#//RailCab"/>
+          <classifier href="http://www.muml.org/example/railcab/1.0.0#//RailCab"/>
         </variable>
         <variable xsi:type="sdp:ObjectVariable" name="unregS" bindingState="BOUND" incomingLink="//@rules.1/@ownedActivityNode.1/@ownedRule/@linkVariable.0">
-          <classifier href="http://www.fujaba.de/muml/verification/test/railcab/0.1.0#//SectionControl"/>
+          <classifier href="http://www.muml.org/example/railcab/1.0.0#//SectionControl"/>
         </variable>
         <linkVariable xsi:type="sdp:LinkVariable" name="sectionControl" bindingOperator="DESTROY" source="//@rules.1/@ownedActivityNode.1/@ownedRule/@variable.0" target="//@rules.1/@ownedActivityNode.1/@ownedRule/@variable.1">
-          <targetEnd href="http://www.fujaba.de/muml/verification/test/railcab/0.1.0#//RailCab/sectionControl"/>
+          <targetEnd href="http://www.muml.org/example/railcab/1.0.0#//RailCab/sectionControl"/>
         </linkVariable>
       </ownedRule>
     </ownedActivityNode>
@@ -49,16 +49,16 @@
       <ownedRule xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:TimedStoryPattern">
         <variable xsi:type="sdp:ObjectVariable" name="convR1" bindingState="BOUND" outgoingLink="//@rules.2/@ownedActivityNode.1/@ownedRule/@linkVariable.0 //@rules.2/@ownedActivityNode.1/@ownedRule/@linkVariable.2">
           <attributeAssignment>
-            <attribute href="http://www.fujaba.de/muml/verification/test/railcab/0.1.0#//RailCab/isLeader"/>
+            <attribute href="http://www.muml.org/example/railcab/1.0.0#//RailCab/isLeader"/>
             <valueExpression xsi:type="expr:TextualExpression" expressionText="true" language="OCL" languageVersion="1.0"/>
           </attributeAssignment>
-          <classifier href="http://www.fujaba.de/muml/verification/test/railcab/0.1.0#//RailCab"/>
+          <classifier href="http://www.muml.org/example/railcab/1.0.0#//RailCab"/>
         </variable>
         <variable xsi:type="sdp:ObjectVariable" name="convR2" bindingState="BOUND" incomingLink="//@rules.2/@ownedActivityNode.1/@ownedRule/@linkVariable.2" outgoingLink="//@rules.2/@ownedActivityNode.1/@ownedRule/@linkVariable.1 //@clockInstanceRules.0/@ownedActivityNode.1/@ownedRule/@linkVariable.2">
-          <classifier href="http://www.fujaba.de/muml/verification/test/railcab/0.1.0#//RailCab"/>
+          <classifier href="http://www.muml.org/example/railcab/1.0.0#//RailCab"/>
         </variable>
         <variable xsi:type="sdp:ObjectVariable" name="convS" bindingState="BOUND" incomingLink="//@rules.2/@ownedActivityNode.1/@ownedRule/@linkVariable.0 //@rules.2/@ownedActivityNode.1/@ownedRule/@linkVariable.1">
-          <classifier href="http://www.fujaba.de/muml/verification/test/railcab/0.1.0#//SectionControl"/>
+          <classifier href="http://www.muml.org/example/railcab/1.0.0#//SectionControl"/>
         </variable>
         <constraint>
           <constraintExpression xsi:type="expr:TextualExpression" expressionText="convR1.leader.oclIsUndefined()" language="OCL" languageVersion="1.0"/>
@@ -73,13 +73,13 @@
           <constraintExpression xsi:type="expr:TextualExpression" expressionText="not convR2.isLeader" language="OCL" languageVersion="1.0"/>
         </constraint>
         <linkVariable xsi:type="sdp:LinkVariable" name="R1sectionControl" source="//@rules.2/@ownedActivityNode.1/@ownedRule/@variable.0" target="//@rules.2/@ownedActivityNode.1/@ownedRule/@variable.2">
-          <targetEnd href="http://www.fujaba.de/muml/verification/test/railcab/0.1.0#//RailCab/sectionControl"/>
+          <targetEnd href="http://www.muml.org/example/railcab/1.0.0#//RailCab/sectionControl"/>
         </linkVariable>
         <linkVariable xsi:type="sdp:LinkVariable" name="R2sectionControl" source="//@rules.2/@ownedActivityNode.1/@ownedRule/@variable.1" target="//@rules.2/@ownedActivityNode.1/@ownedRule/@variable.2">
-          <targetEnd href="http://www.fujaba.de/muml/verification/test/railcab/0.1.0#//RailCab/sectionControl"/>
+          <targetEnd href="http://www.muml.org/example/railcab/1.0.0#//RailCab/sectionControl"/>
         </linkVariable>
         <linkVariable xsi:type="sdp:LinkVariable" name="member" bindingOperator="CREATE" source="//@rules.2/@ownedActivityNode.1/@ownedRule/@variable.0" target="//@rules.2/@ownedActivityNode.1/@ownedRule/@variable.1">
-          <targetEnd href="http://www.fujaba.de/muml/verification/test/railcab/0.1.0#//RailCab/member"/>
+          <targetEnd href="http://www.muml.org/example/railcab/1.0.0#//RailCab/member"/>
         </linkVariable>
       </ownedRule>
     </ownedActivityNode>
@@ -92,16 +92,16 @@
     <ownedActivityNode xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:TimedActivityNode" name="joinConvoy" outgoing="//@rules.3/@ownedActivityEdge.1" incoming="//@rules.3/@ownedActivityEdge.0">
       <ownedRule xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:TimedStoryPattern">
         <variable xsi:type="sdp:ObjectVariable" name="joinR1" bindingState="BOUND" outgoingLink="//@rules.3/@ownedActivityNode.1/@ownedRule/@linkVariable.0 //@rules.3/@ownedActivityNode.1/@ownedRule/@linkVariable.1 //@rules.3/@ownedActivityNode.1/@ownedRule/@linkVariable.2">
-          <classifier href="http://www.fujaba.de/muml/verification/test/railcab/0.1.0#//RailCab"/>
+          <classifier href="http://www.muml.org/example/railcab/1.0.0#//RailCab"/>
         </variable>
         <variable xsi:type="sdp:ObjectVariable" name="joinR2" bindingState="BOUND" incomingLink="//@rules.3/@ownedActivityNode.1/@ownedRule/@linkVariable.0" outgoingLink="//@rules.3/@ownedActivityNode.1/@ownedRule/@linkVariable.3">
-          <classifier href="http://www.fujaba.de/muml/verification/test/railcab/0.1.0#//RailCab"/>
+          <classifier href="http://www.muml.org/example/railcab/1.0.0#//RailCab"/>
         </variable>
         <variable xsi:type="sdp:ObjectVariable" name="joinR3" bindingState="BOUND" incomingLink="//@rules.3/@ownedActivityNode.1/@ownedRule/@linkVariable.1" outgoingLink="//@rules.3/@ownedActivityNode.1/@ownedRule/@linkVariable.4">
-          <classifier href="http://www.fujaba.de/muml/verification/test/railcab/0.1.0#//RailCab"/>
+          <classifier href="http://www.muml.org/example/railcab/1.0.0#//RailCab"/>
         </variable>
         <variable xsi:type="sdp:ObjectVariable" name="joinS" bindingState="BOUND" incomingLink="//@rules.3/@ownedActivityNode.1/@ownedRule/@linkVariable.2 //@rules.3/@ownedActivityNode.1/@ownedRule/@linkVariable.3 //@rules.3/@ownedActivityNode.1/@ownedRule/@linkVariable.4">
-          <classifier href="http://www.fujaba.de/muml/verification/test/railcab/0.1.0#//SectionControl"/>
+          <classifier href="http://www.muml.org/example/railcab/1.0.0#//SectionControl"/>
         </variable>
         <constraint>
           <constraintExpression xsi:type="expr:TextualExpression" expressionText="not joinR3.isLeader" language="OCL" languageVersion="1.0"/>
@@ -110,19 +110,19 @@
           <constraintExpression xsi:type="expr:TextualExpression" expressionText="joinR1.isLeader" language="OCL" languageVersion="1.0"/>
         </constraint>
         <linkVariable xsi:type="sdp:LinkVariable" name="memberR2" source="//@rules.3/@ownedActivityNode.1/@ownedRule/@variable.0" target="//@rules.3/@ownedActivityNode.1/@ownedRule/@variable.1">
-          <targetEnd href="http://www.fujaba.de/muml/verification/test/railcab/0.1.0#//RailCab/member"/>
+          <targetEnd href="http://www.muml.org/example/railcab/1.0.0#//RailCab/member"/>
         </linkVariable>
         <linkVariable xsi:type="sdp:LinkVariable" name="memberR3" bindingOperator="CREATE" source="//@rules.3/@ownedActivityNode.1/@ownedRule/@variable.0" target="//@rules.3/@ownedActivityNode.1/@ownedRule/@variable.2">
-          <targetEnd href="http://www.fujaba.de/muml/verification/test/railcab/0.1.0#//RailCab/member"/>
+          <targetEnd href="http://www.muml.org/example/railcab/1.0.0#//RailCab/member"/>
         </linkVariable>
         <linkVariable xsi:type="sdp:LinkVariable" name="R1sectionControl" source="//@rules.3/@ownedActivityNode.1/@ownedRule/@variable.0" target="//@rules.3/@ownedActivityNode.1/@ownedRule/@variable.3">
-          <targetEnd href="http://www.fujaba.de/muml/verification/test/railcab/0.1.0#//RailCab/sectionControl"/>
+          <targetEnd href="http://www.muml.org/example/railcab/1.0.0#//RailCab/sectionControl"/>
         </linkVariable>
         <linkVariable xsi:type="sdp:LinkVariable" name="R2sectionControl" source="//@rules.3/@ownedActivityNode.1/@ownedRule/@variable.1" target="//@rules.3/@ownedActivityNode.1/@ownedRule/@variable.3">
-          <targetEnd href="http://www.fujaba.de/muml/verification/test/railcab/0.1.0#//RailCab/sectionControl"/>
+          <targetEnd href="http://www.muml.org/example/railcab/1.0.0#//RailCab/sectionControl"/>
         </linkVariable>
         <linkVariable xsi:type="sdp:LinkVariable" name="R3sectionControl" source="//@rules.3/@ownedActivityNode.1/@ownedRule/@variable.2" target="//@rules.3/@ownedActivityNode.1/@ownedRule/@variable.3">
-          <targetEnd href="http://www.fujaba.de/muml/verification/test/railcab/0.1.0#//RailCab/sectionControl"/>
+          <targetEnd href="http://www.muml.org/example/railcab/1.0.0#//RailCab/sectionControl"/>
         </linkVariable>
       </ownedRule>
     </ownedActivityNode>
@@ -135,10 +135,10 @@
     <ownedActivityNode xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:TimedActivityNode" name="leaveConvoy" outgoing="//@rules.4/@ownedActivityEdge.1" incoming="//@rules.4/@ownedActivityEdge.0">
       <ownedRule xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:TimedStoryPattern">
         <variable xsi:type="sdp:ObjectVariable" name="leaveR1" bindingState="BOUND" incomingLink="//@rules.4/@ownedActivityNode.1/@ownedRule/@linkVariable.0" outgoingLink="//@rules.4/@ownedActivityNode.1/@ownedRule/@linkVariable.2">
-          <classifier href="http://www.fujaba.de/muml/verification/test/railcab/0.1.0#//RailCab"/>
+          <classifier href="http://www.muml.org/example/railcab/1.0.0#//RailCab"/>
         </variable>
         <variable xsi:type="sdp:ObjectVariable" name="leaveR2" bindingState="BOUND" incomingLink="//@rules.4/@ownedActivityNode.1/@ownedRule/@linkVariable.2 //@rules.4/@ownedActivityNode.1/@ownedRule/@linkVariable.1">
-          <classifier href="http://www.fujaba.de/muml/verification/test/railcab/0.1.0#//RailCab"/>
+          <classifier href="http://www.muml.org/example/railcab/1.0.0#//RailCab"/>
         </variable>
         <variable xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:ClockInstanceVariable" name="leaveCI" outgoingLink="//@rules.4/@ownedActivityNode.1/@ownedRule/@linkVariable.0 //@rules.4/@ownedActivityNode.1/@ownedRule/@linkVariable.1" clockInstanceConstraints="//@rules.4/@clockInstConstraint.0">
           <classifier href="http://www.fujaba.de/timedstorydiagram/0.1.0#//ClockInstance"/>
@@ -153,7 +153,7 @@
           <targetEnd href="http://www.fujaba.de/timedstorydiagram/0.1.0#//ClockInstance/hasNode"/>
         </linkVariable>
         <linkVariable xsi:type="sdp:LinkVariable" name="member" bindingOperator="DESTROY" source="//@rules.4/@ownedActivityNode.1/@ownedRule/@variable.0" target="//@rules.4/@ownedActivityNode.1/@ownedRule/@variable.1">
-          <targetEnd href="http://www.fujaba.de/muml/verification/test/railcab/0.1.0#//RailCab/member"/>
+          <targetEnd href="http://www.muml.org/example/railcab/1.0.0#//RailCab/member"/>
         </linkVariable>
       </ownedRule>
     </ownedActivityNode>
@@ -167,16 +167,16 @@
     <ownedActivityNode xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:TimedActivityNode" name="InvariantRule1" outgoing="//@invariants.0/@ownedActivityEdge.1" incoming="//@invariants.0/@ownedActivityEdge.0">
       <ownedRule xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:TimedStoryPattern">
         <variable xsi:type="sdp:ObjectVariable" name="invR1" bindingState="BOUND" incomingLink="//@invariants.0/@ownedActivityNode.1/@ownedRule/@linkVariable.1" outgoingLink="//@invariants.0/@ownedActivityNode.1/@ownedRule/@linkVariable.0">
-          <classifier href="http://www.fujaba.de/muml/verification/test/railcab/0.1.0#//RailCab"/>
+          <classifier href="http://www.muml.org/example/railcab/1.0.0#//RailCab"/>
         </variable>
         <variable xsi:type="sdp:ObjectVariable" name="invR2" bindingState="BOUND" incomingLink="//@invariants.0/@ownedActivityNode.1/@ownedRule/@linkVariable.0 //@invariants.0/@ownedActivityNode.1/@ownedRule/@linkVariable.2">
-          <classifier href="http://www.fujaba.de/muml/verification/test/railcab/0.1.0#//RailCab"/>
+          <classifier href="http://www.muml.org/example/railcab/1.0.0#//RailCab"/>
         </variable>
         <variable xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:ClockInstanceVariable" name="invRuleClockInstanceVar" bindingState="BOUND" outgoingLink="//@invariants.0/@ownedActivityNode.1/@ownedRule/@linkVariable.1 //@invariants.0/@ownedActivityNode.1/@ownedRule/@linkVariable.2" clockInstanceConstraints="//@invariants.0/@clockInstConstraint">
           <classifier href="http://www.fujaba.de/timedstorydiagram/0.1.0#//ClockInstance"/>
         </variable>
         <linkVariable xsi:type="sdp:LinkVariable" name="member" source="//@invariants.0/@ownedActivityNode.1/@ownedRule/@variable.0" target="//@invariants.0/@ownedActivityNode.1/@ownedRule/@variable.1">
-          <targetEnd href="http://www.fujaba.de/muml/verification/test/railcab/0.1.0#//RailCab/member"/>
+          <targetEnd href="http://www.muml.org/example/railcab/1.0.0#//RailCab/member"/>
         </linkVariable>
         <linkVariable xsi:type="sdp:LinkVariable" name="invR1ClockInst" source="//@invariants.0/@ownedActivityNode.1/@ownedRule/@variable.2" target="//@invariants.0/@ownedActivityNode.1/@ownedRule/@variable.0">
           <targetEnd href="http://www.fujaba.de/timedstorydiagram/0.1.0#//ClockInstance/hasNode"/>
@@ -206,13 +206,13 @@
           <classifier href="http://www.fujaba.de/timedstorydiagram/0.1.0#//ClockInstance"/>
         </variable>
         <variable xsi:type="sdp:ObjectVariable" name="cIRuleR1" incomingLink="//@clockInstanceRules.0/@ownedActivityNode.1/@ownedRule/@linkVariable.3 //@clockInstanceRules.0/@ownedActivityNode.1/@ownedRule/@linkVariable.5" outgoingLink="//@clockInstanceRules.0/@ownedActivityNode.1/@ownedRule/@linkVariable.0 //@clockInstanceRules.0/@ownedActivityNode.1/@ownedRule/@linkVariable.1">
-          <classifier href="http://www.fujaba.de/muml/verification/test/railcab/0.1.0#//RailCab"/>
+          <classifier href="http://www.muml.org/example/railcab/1.0.0#//RailCab"/>
         </variable>
         <variable xsi:type="sdp:ObjectVariable" name="cIRuleR2" incomingLink="//@clockInstanceRules.0/@ownedActivityNode.1/@ownedRule/@linkVariable.0 //@clockInstanceRules.0/@ownedActivityNode.1/@ownedRule/@linkVariable.4 //@clockInstanceRules.0/@ownedActivityNode.1/@ownedRule/@linkVariable.6">
-          <classifier href="http://www.fujaba.de/muml/verification/test/railcab/0.1.0#//RailCab"/>
+          <classifier href="http://www.muml.org/example/railcab/1.0.0#//RailCab"/>
         </variable>
         <variable xsi:type="sdp:ObjectVariable" name="cIRuleS" bindingState="BOUND" incomingLink="//@clockInstanceRules.0/@ownedActivityNode.1/@ownedRule/@linkVariable.1 //@clockInstanceRules.0/@ownedActivityNode.1/@ownedRule/@linkVariable.2">
-          <classifier href="http://www.fujaba.de/muml/verification/test/railcab/0.1.0#//SectionControl"/>
+          <classifier href="http://www.muml.org/example/railcab/1.0.0#//SectionControl"/>
         </variable>
         <constraint>
           <constraintExpression xsi:type="expr:TextualExpression" expressionText="cIRuleS.name='s0'" language="OCL" languageVersion="1.0"/>
@@ -221,13 +221,13 @@
           <constraintExpression xsi:type="expr:TextualExpression" expressionText="NoSuchcIRuleClockInst.name='convoyclock'" language="OCL" languageVersion="1.0"/>
         </constraint>
         <linkVariable xsi:type="sdp:LinkVariable" name="member" source="//@clockInstanceRules.0/@ownedActivityNode.1/@ownedRule/@variable.2" target="//@clockInstanceRules.0/@ownedActivityNode.1/@ownedRule/@variable.3">
-          <targetEnd href="http://www.fujaba.de/muml/verification/test/railcab/0.1.0#//RailCab/member"/>
+          <targetEnd href="http://www.muml.org/example/railcab/1.0.0#//RailCab/member"/>
         </linkVariable>
         <linkVariable xsi:type="sdp:LinkVariable" name="sectionControl" source="//@clockInstanceRules.0/@ownedActivityNode.1/@ownedRule/@variable.2" target="//@clockInstanceRules.0/@ownedActivityNode.1/@ownedRule/@variable.4">
-          <targetEnd href="http://www.fujaba.de/muml/verification/test/railcab/0.1.0#//RailCab/sectionControl"/>
+          <targetEnd href="http://www.muml.org/example/railcab/1.0.0#//RailCab/sectionControl"/>
         </linkVariable>
         <linkVariable xsi:type="sdp:LinkVariable" name="sectionControl" source="//@rules.2/@ownedActivityNode.1/@ownedRule/@variable.1" target="//@clockInstanceRules.0/@ownedActivityNode.1/@ownedRule/@variable.4">
-          <targetEnd href="http://www.fujaba.de/muml/verification/test/railcab/0.1.0#//RailCab/sectionControl"/>
+          <targetEnd href="http://www.muml.org/example/railcab/1.0.0#//RailCab/sectionControl"/>
         </linkVariable>
         <linkVariable xsi:type="sdp:LinkVariable" name="cIRuleR1ClockInst" bindingOperator="CREATE" source="//@clockInstanceRules.0/@ownedActivityNode.1/@ownedRule/@variable.0" target="//@clockInstanceRules.0/@ownedActivityNode.1/@ownedRule/@variable.2">
           <targetEnd href="http://www.fujaba.de/timedstorydiagram/0.1.0#//ClockInstance/hasNode"/>
