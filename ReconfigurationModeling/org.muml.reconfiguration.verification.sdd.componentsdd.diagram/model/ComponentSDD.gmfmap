@@ -251,7 +251,7 @@
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="../../org.storydriven.storydiagrams/model/storydiagrams.gmftool#//@palette/@tools.0/@tools.7"/>
+          href="../../org.muml.storydiagram/model/storydiagrams.gmftool#//@palette/@tools.0/@tools.7"/>
       <diagramNode
           href="ComponentSDD.gmfgraph#CSDDInitialNode"/>
     </ownedChild>

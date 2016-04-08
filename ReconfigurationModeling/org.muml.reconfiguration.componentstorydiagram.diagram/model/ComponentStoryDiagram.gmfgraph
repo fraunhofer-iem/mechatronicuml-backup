@@ -488,13 +488,13 @@
   </figures>
   <nodes name="Activity" figure="ActivityFigure"/>
   <nodes name="InitialNode">
-    <figure href="../../org.storydriven.storydiagrams/model/storydiagrams.gmfgraph#InitialNodeFigure"/>
+    <figure href="../../org.muml.storydiagram/model/storydiagrams.gmfgraph#InitialNodeFigure"/>
   </nodes>
   <nodes name="JunctionNode">
-    <figure href="../../org.storydriven.storydiagrams/model/storydiagrams.gmfgraph#JunctionNodeFigure"/>
+    <figure href="../../org.muml.storydiagram/model/storydiagrams.gmfgraph#JunctionNodeFigure"/>
   </nodes>
   <nodes name="ActivityFinalNode">
-    <figure href="../../org.storydriven.storydiagrams/model/storydiagrams.gmfgraph#ActivityFinalNodeFigureDescriptor"/>
+    <figure href="../../org.muml.storydiagram/model/storydiagrams.gmfgraph#ActivityFinalNodeFigureDescriptor"/>
   </nodes>
   <nodes name="ComponentStoryNode" figure="ComponentStoryNodeRoundedFigureForEach"/>
   <nodes name="ComponentStoryPattern" figure="ComponentStoryPatternFigure"/>
@@ -543,8 +543,8 @@
   <labels name="ActivityNameLabel" figure="ActivityFigure" elementIcon="false" accessor="//@figures.0/@descriptors.0/@accessors.1"/>
   <labels name="ComponentStoryNodeLabel" figure="ComponentStoryNodeRoundedFigure" elementIcon="false" accessor="//@figures.0/@descriptors.1/@accessors.0"/>
   <labels name="ActivityFinalNodeLabel">
-    <figure href="../../org.storydriven.storydiagrams/model/storydiagrams.gmfgraph#ActivityFinalNodeFigureDescriptor"/>
-    <accessor href="../../org.storydriven.storydiagrams/model/storydiagrams.gmfgraph#//@figures.0/@descriptors.6/@accessors.0"/>
+    <figure href="../../org.muml.storydiagram/model/storydiagrams.gmfgraph#ActivityFinalNodeFigureDescriptor"/>
+    <accessor href="../../org.muml.storydiagram/model/storydiagrams.gmfgraph#//@figures.0/@descriptors.6/@accessors.0"/>
   </labels>
   <labels name="ComponentNameLabel" figure="ComponentVariableFigure" elementIcon="false" accessor="//@figures.0/@descriptors.3/@accessors.0"/>
   <labels name="ComponentOperatorLabel" figure="ComponentVariableOperatorFigure" elementIcon="false"/>

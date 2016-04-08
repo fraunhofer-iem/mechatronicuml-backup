@@ -72,7 +72,7 @@
         <containmentFeature
             href="../../de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd/model/BasicSDD.ecore#//StoryPatternNode/pattern"/>
         <referencedChild
-            href="../../org.storydriven.storydiagrams/model/storydiagrams.gmfmap#//@nodes.2/@ownedChild/@children.0/@ownedChild"/>
+            href="../../org.muml.storydiagram/model/storydiagrams.gmfmap#//@nodes.2/@ownedChild/@children.0/@ownedChild"/>
       </children>
       <compartments
           children="//@nodes.0/@ownedChild/@children.0">
@@ -118,9 +118,9 @@
         href="../../org.muml.storydiagram/model/storydiagrams.ecore#//patterns/StoryPattern/linkVariable"/>
     <tool
         xsi:type="gmftool:CreationTool"
-        href="../../org.storydriven.storydiagrams/model/storydiagrams.gmftool#//@palette/@tools.1/@tools.3"/>
+        href="../../org.muml.storydiagram/model/storydiagrams.gmftool#//@palette/@tools.1/@tools.3"/>
     <diagramLink
-        href="../../org.storydriven.storydiagrams/model/storydiagrams.gmfgraph#LinkVariableConnection"/>
+        href="../../org.muml.storydiagram/model/storydiagrams.gmfgraph#LinkVariableConnection"/>
     <sourceMetaFeature
         xsi:type="ecore:EReference"
         href="../../org.muml.storydiagram/model/storydiagrams.ecore#//patterns/AbstractLinkVariable/source"/>

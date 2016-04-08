@@ -374,7 +374,7 @@
           <labelMappings
               readOnly="true">
             <diagramLabel
-                href="../../org.storydriven.storydiagrams/model/storydiagrams.gmfgraph#ActivityFinalNodeLabel"/>
+                href="../../org.muml.storydiagram/model/storydiagrams.gmfgraph#ActivityFinalNodeLabel"/>
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
