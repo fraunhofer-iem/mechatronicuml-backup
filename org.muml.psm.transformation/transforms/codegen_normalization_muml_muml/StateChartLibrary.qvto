@@ -18,7 +18,7 @@ modeltype BehaviorPackage uses pim::behavior('http://www.muml.org/pim/1.0.0');
 modeltype RTSCPackage uses pim::realtimestatechart('http://www.muml.org/pim/1.0.0');
 modeltype TypesPackage uses pim::types('http://www.muml.org/pim/1.0.0');
 
-modeltype Actionlanguage uses actionlanguage('http://www.fujaba.de/muml/actionlanguage/0.4.0');
+modeltype Actionlanguage uses actionlanguage('http://www.muml.org/pim/actionlanguage/1.0.0');
 
 modeltype PSM uses psm('http://www.fujaba.de/muml/psm/0.4.0/');
 modeltype Allocation uses psm::allocation('http://www.fujaba.de/muml/psm/0.4.0/');

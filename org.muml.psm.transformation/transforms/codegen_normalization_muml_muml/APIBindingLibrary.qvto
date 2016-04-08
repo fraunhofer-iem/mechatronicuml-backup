@@ -17,7 +17,7 @@ modeltype Modelinstance uses modelinstance('http://www.muml.org/core/modelinstan
 modeltype Muml uses muml('http://www.muml.org/pim/1.0.0');
 modeltype InstancePacakge uses muml::instance('http://www.muml.org/pim/1.0.0');
 modeltype ComponentPackage uses pim::component('http://www.muml.org/pim/1.0.0');
-modeltype Actionlanguage uses actionlanguage('http://www.fujaba.de/muml/actionlanguage/0.4.0');
+modeltype Actionlanguage uses actionlanguage('http://www.muml.org/pim/actionlanguage/1.0.0');
 modeltype Core uses core('http://www.storydriven.org/core/0.3.1');
 modeltype Ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
 
