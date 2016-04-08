@@ -10,7 +10,6 @@ Bundle-ActivationPolicy: lazy
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.muml.core;bundle-version="[1.0.0,2.0.0)";visibility:=reexport,
- org.muml.storydiagram.expressions;visibility:=reexport,
  org.muml.storydiagram;bundle-version="[1.0.0,2.0.0)",
  org.antlr.runtime;bundle-version="[3.2.0,4.0.0)";visibility:=reexport,
  org.eclipse.emf.mwe2.launch;bundle-version="[2.0.0,3.0.0)";resolution:=optional,
