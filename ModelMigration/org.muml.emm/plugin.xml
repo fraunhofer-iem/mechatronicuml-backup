@@ -6,7 +6,7 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated migration -->
       <package
-            uri="http://migration/0.1"
+            uri="http://www.muml.org/emm/1.0.0"
             class="org.muml.emm.MigrationPackage"
             genModel="model/emm.genmodel"/>
    </extension>
