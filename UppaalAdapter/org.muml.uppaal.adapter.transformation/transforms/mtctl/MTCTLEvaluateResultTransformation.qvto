@@ -14,7 +14,7 @@ modeltype mtctlBooleanLogic uses mtctl::BooleanLogic('http://www.uni_paderborn.d
 modeltype mtctlComparables uses mtctl::Comparables('http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl');
 modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
 
-modeltype extension uses 'http://www.fujaba.de/muml/verification/extension/0.4.0';
+modeltype extension uses 'http://www.muml.org/uppaal/adapter/extension/verificationextension/1.0.0';
 
 transformation MTCTLEvaluateResultTransformation(in original: muml_model, in statically_normalized_model : muml_model, in split_model: muml_model, in trace: uppaal_trace, out output: result_model) access MTCTLStaticNormalization;
 

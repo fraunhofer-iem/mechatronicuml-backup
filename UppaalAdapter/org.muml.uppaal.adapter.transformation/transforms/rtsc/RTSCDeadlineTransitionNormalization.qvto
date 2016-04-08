@@ -20,7 +20,7 @@ modeltype muml_types uses pim::types('http://www.muml.org/pim/1.0.0');
 modeltype muml_valuetype uses pim::valuetype('http://www.muml.org/pim/1.0.0');
 modeltype storydriven_core_expressions_common uses core::expressions::common('http://www.muml.org/core/1.0.0');
 modeltype storydriven_core_expressions uses core::expressions('http://www.muml.org/core/1.0.0');
-modeltype extension uses 'http://www.fujaba.de/muml/verification/extension/0.4.0';
+modeltype extension uses 'http://www.muml.org/uppaal/adapter/extension/verificationextension/1.0.0';
 modeltype modelinstance uses 'http://www.muml.org/core/modelinstance/1.0.0';
 modeltype mtctlQuantifiers uses mtctl::Quantifiers('http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl');
 modeltype mtctlPredicates uses mtctl::Predicates('http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl');

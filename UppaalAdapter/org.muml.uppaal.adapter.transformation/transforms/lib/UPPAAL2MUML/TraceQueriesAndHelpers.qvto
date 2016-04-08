@@ -29,7 +29,7 @@ modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
 modeltype actionLanguage uses 'http://www.muml.org/pim/actionlanguage/1.0.0';
 modeltype uppaal_types uses uppaal::types('http://www.muml.org/uppaal/1.0.0');
 modeltype reachability_cic uses 'http://www.muml.org/verification/core/reachanalysis/reachabilitygraph/cic/1.0.0';
-modeltype verification_extension uses 'http://www.fujaba.de/muml/verification/extension/0.4.0';
+modeltype verification_extension uses 'http://www.muml.org/uppaal/adapter/extension/verificationextension/1.0.0';
 modeltype storydriven uses 'http://www.muml.org/core/1.0.0';
 
 property inputVertices : OrderedSet(muml_rtsc::Vertex);

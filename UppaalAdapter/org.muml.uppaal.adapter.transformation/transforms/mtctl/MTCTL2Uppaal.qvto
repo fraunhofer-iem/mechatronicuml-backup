@@ -24,7 +24,7 @@ modeltype mtctlBooleanLogic uses mtctl::BooleanLogic('http://www.uni_paderborn.d
 modeltype mtctlComparables uses mtctl::Comparables('http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl');
 
 modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
-modeltype extension uses 'http://www.fujaba.de/muml/verification/extension/0.4.0';
+modeltype extension uses 'http://www.muml.org/uppaal/adapter/extension/verificationextension/1.0.0';
 
 modeltype uppaal uses 'http://www.muml.org/uppaal/1.0.0';
 modeltype uppaal_expressions uses uppaal::expressions('http://www.muml.org/uppaal/1.0.0');

@@ -6,7 +6,7 @@ import de.uni_paderborn.fujaba.muml.verification.uppaal._blackbox.ProgressUnit;
 modeltype muml_constraint uses muml::constraint('http://www.muml.org/pim/1.0.0');
 modeltype muml_protocol uses pim::protocol('http://www.muml.org/pim/1.0.0');
 modeltype muml_instance uses muml::instance('http://www.muml.org/pim/1.0.0');
-modeltype verification_extension uses 'http://www.fujaba.de/muml/verification/extension/0.4.0';
+modeltype verification_extension uses 'http://www.muml.org/uppaal/adapter/extension/verificationextension/1.0.0';
 modeltype muml uses 'http://www.muml.org/pim/1.0.0';
 modeltype verification_options uses 'http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/options';
 

@@ -5,7 +5,7 @@ modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
 modeltype muml_instance uses muml::instance('http://www.muml.org/pim/1.0.0');
 modeltype muml uses muml('http://www.muml.org/pim/1.0.0');
 modeltype constraintModel uses 'http://www.muml.org/pim/constraint/1.0.0';
-modeltype verificationExtension uses 'http://www.fujaba.de/muml/verification/extension/0.4.0';
+modeltype verificationExtension uses 'http://www.muml.org/uppaal/adapter/extension/verificationextension/1.0.0';
 modeltype storydriven uses 'http://www.muml.org/core/1.0.0';
 
 //Clones input and marks the only element in the element_to_verify extent with an ElementToVerifyExtension
