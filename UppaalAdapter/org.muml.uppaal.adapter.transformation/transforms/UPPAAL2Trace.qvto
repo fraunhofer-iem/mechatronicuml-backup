@@ -4,7 +4,7 @@ transformation UPPAAL2Trace(in input:uppaal, in inputReq:uppaal_requirements, in
 import de.uni_paderborn.fujaba.muml.verification.uppaal._blackbox.TraceLibUnit;
 import de.uni_paderborn.fujaba.muml.verification.uppaal._blackbox.ProgressUnit;
 
-modeltype verification_options uses 'http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/options';
+modeltype verification_options uses 'http://www.muml.org/uppaal/options/1.0.0';
 
 modeltype uppaal uses 'http://www.muml.org/uppaal/1.0.0';
 modeltype uppaal_requirements uses 'http://www.uni-paderborn.de/requirements/0.4.0';

@@ -11,7 +11,7 @@
             nsURI="http://www.uni-paderborn.de/requirements/0.4.0">
       </metamodel>
       <metamodel
-            nsURI="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/options">
+            nsURI="http://www.muml.org/uppaal/options/1.0.0">
       </metamodel>
     </library>
     </unit>
