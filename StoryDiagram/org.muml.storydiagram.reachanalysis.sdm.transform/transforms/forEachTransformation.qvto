@@ -8,7 +8,7 @@ modeltype calls uses storydiagrams::calls('http://www.muml.org/storydiagram/1.0.
 modeltype callsExpressions uses storydiagrams::calls::expressions('http://www.muml.org/storydiagram/1.0.0');
 
 //reachanalysis
-modeltype reach_sdm uses sdm ('http://www.fujaba.de/reachabilityGraph/sdm/0.4.0');
+modeltype reach_sdm uses sdm ('http://www.muml.org/storydiagram.reachanalysis.reachabilitygraph/sdm/1.0.0');
 modeltype reach_core uses reachabilityGraph ('http://www.muml.org/core/reachabilitygraph/1.0.0');
 //others
 modeltype ecore uses ecore;
