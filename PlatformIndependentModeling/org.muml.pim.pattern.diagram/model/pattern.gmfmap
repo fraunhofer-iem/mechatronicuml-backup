@@ -235,7 +235,7 @@
           xsi:type="gmftool:CreationTool"
           href="pattern.gmftool#//@palette/@tools.0/@tools.0"/>
       <diagramNode
-          href="../../de.uni_paderborn.fujaba.muml.coordinationspecification.common/model/coordinationspecification.gmfgraph#CoordinationProtocolContainer"/>
+          href="../../org.muml.pim.coordinationspecification.common/model/coordinationspecification.gmfgraph#CoordinationProtocolContainer"/>
       <children
           compartment="//@nodes.0/@ownedChild/@compartments.0">
         <containmentFeature
@@ -281,7 +281,7 @@
       <compartments
           children="//@nodes.0/@ownedChild/@children.0 //@nodes.0/@ownedChild/@children.1 //@nodes.0/@ownedChild/@children.2 //@nodes.0/@ownedChild/@children.3">
         <compartment
-            href="../../de.uni_paderborn.fujaba.muml.coordinationspecification.common/model/coordinationspecification.gmfgraph#CoordinationProtocolContainerCompartment"/>
+            href="../../org.muml.pim.coordinationspecification.common/model/coordinationspecification.gmfgraph#CoordinationProtocolContainerCompartment"/>
       </compartments>
     </ownedChild>
   </nodes>
@@ -514,7 +514,7 @@
           xsi:type="gmftool:CreationTool"
           href="pattern.gmftool#//@palette/@tools.0/@tools.2"/>
       <diagramNode
-          href="../../de.uni_paderborn.fujaba.muml.coordinationspecification.common/model/coordinationspecification.gmfgraph#CoordinationProtocolContainer"/>
+          href="../../org.muml.pim.coordinationspecification.common/model/coordinationspecification.gmfgraph#CoordinationProtocolContainer"/>
       <children
           compartment="//@nodes.1/@ownedChild/@compartments.0">
         <containmentFeature
@@ -560,13 +560,13 @@
       <compartments
           children="//@nodes.1/@ownedChild/@children.0 //@nodes.1/@ownedChild/@children.1 //@nodes.1/@ownedChild/@children.2 //@nodes.1/@ownedChild/@children.3">
         <compartment
-            href="../../de.uni_paderborn.fujaba.muml.coordinationspecification.common/model/coordinationspecification.gmfgraph#CoordinationProtocolContainerCompartment"/>
+            href="../../org.muml.pim.coordinationspecification.common/model/coordinationspecification.gmfgraph#CoordinationProtocolContainerCompartment"/>
       </compartments>
     </ownedChild>
   </nodes>
   <links>
     <diagramLink
-        href="../../de.uni_paderborn.fujaba.muml.coordinationspecification.common/model/coordinationspecification.gmfgraph#RolePattern"/>
+        href="../../org.muml.pim.coordinationspecification.common/model/coordinationspecification.gmfgraph#RolePattern"/>
     <linkMetaFeature
         xsi:type="ecore:EReference"
         href="../../org.muml.pim/model/pim.ecore#//protocol/AbstractCoordinationSpecification/roles"/>
@@ -669,7 +669,7 @@
         xsi:type="gmftool:CreationTool"
         href="pattern.gmftool#//@palette/@tools.0/@tools.1"/>
     <diagramLink
-        href="../../de.uni_paderborn.fujaba.muml.coordinationspecification.common/model/coordinationspecification.gmfgraph#RoleConnector"/>
+        href="../../org.muml.pim.coordinationspecification.common/model/coordinationspecification.gmfgraph#RoleConnector"/>
     <sourceMetaFeature
         xsi:type="ecore:EReference"
         href="../../org.muml.pim/model/pim.ecore#//connector/Connector/connectorEndpoints"/>
@@ -683,14 +683,14 @@
   </links>
   <links>
     <diagramLink
-        href="../../de.uni_paderborn.fujaba.muml.coordinationspecification.common/model/coordinationspecification.gmfgraph#RoleMessageBufferConnection"/>
+        href="../../org.muml.pim.coordinationspecification.common/model/coordinationspecification.gmfgraph#RoleMessageBufferConnection"/>
     <linkMetaFeature
         xsi:type="ecore:EReference"
         href="../../org.muml.pim/model/pim.ecore#//connector/DiscreteInteractionEndpoint/receiverMessageBuffer"/>
   </links>
   <links>
     <diagramLink
-        href="../../de.uni_paderborn.fujaba.muml.coordinationspecification.common/model/coordinationspecification.gmfgraph#RoleConnectorQoSAConnectorConnection"/>
+        href="../../org.muml.pim.coordinationspecification.common/model/coordinationspecification.gmfgraph#RoleConnectorQoSAConnectorConnection"/>
     <linkMetaFeature
         xsi:type="ecore:EReference"
         href="../../org.muml.pim/model/pim.ecore#//protocol/RoleConnector/connectorQualityOfServiceAssumptions"/>

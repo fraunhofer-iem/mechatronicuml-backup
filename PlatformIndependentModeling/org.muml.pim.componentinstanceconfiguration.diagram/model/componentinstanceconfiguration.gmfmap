@@ -286,12 +286,12 @@
           xsi:type="gmfmap:ExpressionLabelMapping"
           readOnly="true">
         <diagramLabel
-            href="../../de.uni_paderborn.fujaba.muml.coordinationspecification.common/model/coordinationspecification.gmfgraph#CoordinationProtocolName"/>
+            href="../../org.muml.pim.coordinationspecification.common/model/coordinationspecification.gmfgraph#CoordinationProtocolName"/>
         <viewExpression
             body="self.name + ':' + if (self.coordinationProtocol.oclIsUndefined()) then&#xA;&#x9;' '&#xA;else&#xA;&#x9;self.coordinationProtocol.name&#xA;endif"/>
       </labelMappings>
       <diagramNode
-          href="../../de.uni_paderborn.fujaba.muml.coordinationspecification.common/model/coordinationspecification.gmfgraph#CoordinationProtocol"/>
+          href="../../org.muml.pim.coordinationspecification.common/model/coordinationspecification.gmfgraph#CoordinationProtocol"/>
     </ownedChild>
   </nodes>
   <links>
@@ -334,7 +334,7 @@
   </links>
   <links>
     <diagramLink
-        href="../../de.uni_paderborn.fujaba.muml.coordinationspecification.common/model/coordinationspecification.gmfgraph#RolePattern"/>
+        href="../../org.muml.pim.coordinationspecification.common/model/coordinationspecification.gmfgraph#RolePattern"/>
     <linkMetaFeature
         xsi:type="ecore:EReference"
         href="../../org.muml.pim/model/pim.ecore#//instance/CoordinationProtocolInstance/portInstances"/>

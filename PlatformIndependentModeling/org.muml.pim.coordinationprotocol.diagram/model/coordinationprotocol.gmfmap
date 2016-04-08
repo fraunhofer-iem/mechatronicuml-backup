@@ -235,7 +235,7 @@
           xsi:type="gmftool:CreationTool"
           href="coordinationprotocol.gmftool#//@palette/@tools.0/@tools.0"/>
       <diagramNode
-          href="../../de.uni_paderborn.fujaba.muml.coordinationspecification.common/model/coordinationspecification.gmfgraph#CoordinationProtocolContainer"/>
+          href="../../org.muml.pim.coordinationspecification.common/model/coordinationspecification.gmfgraph#CoordinationProtocolContainer"/>
       <children
           compartment="//@nodes.0/@ownedChild/@compartments.0">
         <containmentFeature
@@ -249,12 +249,12 @@
               editorPattern=""
               editPattern="">
             <diagramLabel
-                href="../../de.uni_paderborn.fujaba.muml.coordinationspecification.common/model/coordinationspecification.gmfgraph#CoordinationProtocolName"/>
+                href="../../org.muml.pim.coordinationspecification.common/model/coordinationspecification.gmfgraph#CoordinationProtocolName"/>
             <features
                 href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
           </labelMappings>
           <diagramNode
-              href="../../de.uni_paderborn.fujaba.muml.coordinationspecification.common/model/coordinationspecification.gmfgraph#CoordinationProtocol"/>
+              href="../../org.muml.pim.coordinationspecification.common/model/coordinationspecification.gmfgraph#CoordinationProtocol"/>
         </ownedChild>
       </children>
       <children
@@ -313,15 +313,15 @@
               xsi:type="gmfmap:FeatureLabelMapping"
               editPattern="">
             <diagramLabel
-                href="../../de.uni_paderborn.fujaba.muml.coordinationspecification.common/model/coordinationspecification.gmfgraph#RoleName"/>
+                href="../../org.muml.pim.coordinationspecification.common/model/coordinationspecification.gmfgraph#RoleName"/>
             <features
                 href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="../../de.uni_paderborn.fujaba.muml.coordinationspecification.common/model/coordinationspecification.gmftool#//@palette/@tools.0"/>
+              href="../../org.muml.pim.coordinationspecification.common/model/coordinationspecification.gmftool#//@palette/@tools.0"/>
           <diagramNode
-              href="../../de.uni_paderborn.fujaba.muml.coordinationspecification.common/model/coordinationspecification.gmfgraph#Role"/>
+              href="../../org.muml.pim.coordinationspecification.common/model/coordinationspecification.gmfgraph#Role"/>
         </ownedChild>
       </children>
       <children
@@ -334,26 +334,26 @@
           <labelMappings
               xsi:type="gmfmap:ExpressionLabelMapping">
             <diagramLabel
-                href="../../de.uni_paderborn.fujaba.muml.coordinationspecification.common/model/coordinationspecification.gmfgraph#MessageBufferSizeLabel"/>
+                href="../../org.muml.pim.coordinationspecification.common/model/coordinationspecification.gmfgraph#MessageBufferSizeLabel"/>
             <viewExpression
                 body="'Size: '.concat(if(self.bufferSize.oclIsUndefined()) &#xD;&#xA;then 'null' else self.bufferSize.toString() endif)"/>
           </labelMappings>
           <labelMappings
               xsi:type="gmfmap:ExpressionLabelMapping">
             <diagramLabel
-                href="../../de.uni_paderborn.fujaba.muml.coordinationspecification.common/model/coordinationspecification.gmfgraph#MessageBufferOverflowAvoidanceStrategyLabel"/>
+                href="../../org.muml.pim.coordinationspecification.common/model/coordinationspecification.gmfgraph#MessageBufferOverflowAvoidanceStrategyLabel"/>
             <viewExpression
                 body="'Discard: '.concat(if (self.bufferOverflowAvoidanceStrategy = BufferOverflowAvoidanceStrategy::DISCARD_INCOMING_MESSAGE)&#xD;&#xA;then 'Incoming Msgs' else 'Oldest Msgs' endif)"/>
           </labelMappings>
           <labelMappings
               xsi:type="gmfmap:ExpressionLabelMapping">
             <diagramLabel
-                href="../../de.uni_paderborn.fujaba.muml.coordinationspecification.common/model/coordinationspecification.gmfgraph#MessageBufferDiagramLabel"/>
+                href="../../org.muml.pim.coordinationspecification.common/model/coordinationspecification.gmfgraph#MessageBufferDiagramLabel"/>
             <viewExpression
                 body="'Incoming Buffer: '.concat(&#xD;&#xA;&#x9;if (self.name.oclIsUndefined()) then&#xD;&#xA;&#x9;&#x9;''&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;self.name&#xD;&#xA;&#x9;endif&#xD;&#xA;)"/>
           </labelMappings>
           <diagramNode
-              href="../../de.uni_paderborn.fujaba.muml.coordinationspecification.common/model/coordinationspecification.gmfgraph#MessageBuffferNode"/>
+              href="../../org.muml.pim.coordinationspecification.common/model/coordinationspecification.gmfgraph#MessageBuffferNode"/>
           <children
               compartment="//@nodes.0/@ownedChild/@children.2/@ownedChild/@compartments.0">
             <containmentFeature
@@ -400,7 +400,7 @@
           <compartments
               children="//@nodes.0/@ownedChild/@children.2/@ownedChild/@children.0">
             <compartment
-                href="../../de.uni_paderborn.fujaba.muml.coordinationspecification.common/model/coordinationspecification.gmfgraph#MessageBufferCompartment"/>
+                href="../../org.muml.pim.coordinationspecification.common/model/coordinationspecification.gmfgraph#MessageBufferCompartment"/>
           </compartments>
         </ownedChild>
       </children>
@@ -414,7 +414,7 @@
           <labelMappings
               xsi:type="gmfmap:ExpressionLabelMapping">
             <diagramLabel
-                href="../../de.uni_paderborn.fujaba.muml.coordinationspecification.common/model/coordinationspecification.gmfgraph#MsgLossLabel"/>
+                href="../../org.muml.pim.coordinationspecification.common/model/coordinationspecification.gmfgraph#MsgLossLabel"/>
             <viewExpression
                 body="'Reliable: '.concat((not self.messageLossPossible).toString())"/>
           </labelMappings>
@@ -422,24 +422,24 @@
               xsi:type="gmfmap:ExpressionLabelMapping"
               readOnly="true">
             <diagramLabel
-                href="../../de.uni_paderborn.fujaba.muml.coordinationspecification.common/model/coordinationspecification.gmfgraph#MaxDelayLabel"/>
+                href="../../org.muml.pim.coordinationspecification.common/model/coordinationspecification.gmfgraph#MaxDelayLabel"/>
             <viewExpression
                 body="''"/>
           </labelMappings>
           <diagramNode
-              href="../../de.uni_paderborn.fujaba.muml.coordinationspecification.common/model/coordinationspecification.gmfgraph#QualityOfServiceAssumptionsNode"/>
+              href="../../org.muml.pim.coordinationspecification.common/model/coordinationspecification.gmfgraph#QualityOfServiceAssumptionsNode"/>
         </ownedChild>
       </children>
       <compartments
           children="//@nodes.0/@ownedChild/@children.0 //@nodes.0/@ownedChild/@children.1 //@nodes.0/@ownedChild/@children.2 //@nodes.0/@ownedChild/@children.3">
         <compartment
-            href="../../de.uni_paderborn.fujaba.muml.coordinationspecification.common/model/coordinationspecification.gmfgraph#CoordinationProtocolContainerCompartment"/>
+            href="../../org.muml.pim.coordinationspecification.common/model/coordinationspecification.gmfgraph#CoordinationProtocolContainerCompartment"/>
       </compartments>
     </ownedChild>
   </nodes>
   <links>
     <diagramLink
-        href="../../de.uni_paderborn.fujaba.muml.coordinationspecification.common/model/coordinationspecification.gmfgraph#RolePattern"/>
+        href="../../org.muml.pim.coordinationspecification.common/model/coordinationspecification.gmfgraph#RolePattern"/>
     <linkMetaFeature
         xsi:type="ecore:EReference"
         href="../../org.muml.pim/model/pim.ecore#//protocol/AbstractCoordinationSpecification/roles"/>
@@ -542,7 +542,7 @@
         xsi:type="gmftool:CreationTool"
         href="coordinationprotocol.gmftool#//@palette/@tools.0/@tools.1"/>
     <diagramLink
-        href="../../de.uni_paderborn.fujaba.muml.coordinationspecification.common/model/coordinationspecification.gmfgraph#RoleConnector"/>
+        href="../../org.muml.pim.coordinationspecification.common/model/coordinationspecification.gmfgraph#RoleConnector"/>
     <sourceMetaFeature
         xsi:type="ecore:EReference"
         href="../../org.muml.pim/model/pim.ecore#//connector/Connector/connectorEndpoints"/>
@@ -556,21 +556,21 @@
   </links>
   <links>
     <diagramLink
-        href="../../de.uni_paderborn.fujaba.muml.coordinationspecification.common/model/coordinationspecification.gmfgraph#RoleMessageBufferConnection"/>
+        href="../../org.muml.pim.coordinationspecification.common/model/coordinationspecification.gmfgraph#RoleMessageBufferConnection"/>
     <linkMetaFeature
         xsi:type="ecore:EReference"
         href="../../org.muml.pim/model/pim.ecore#//connector/DiscreteInteractionEndpoint/receiverMessageBuffer"/>
   </links>
   <links>
     <diagramLink
-        href="../../de.uni_paderborn.fujaba.muml.coordinationspecification.common/model/coordinationspecification.gmfgraph#RoleConnectorQoSAConnectorConnection"/>
+        href="../../org.muml.pim.coordinationspecification.common/model/coordinationspecification.gmfgraph#RoleConnectorQoSAConnectorConnection"/>
     <linkMetaFeature
         xsi:type="ecore:EReference"
         href="../../org.muml.pim/model/pim.ecore#//protocol/RoleConnector/connectorQualityOfServiceAssumptions"/>
   </links>
   <diagram>
     <diagramCanvas
-        href="../../de.uni_paderborn.fujaba.muml.coordinationspecification.common/model/coordinationspecification.gmfgraph#protocoleditor"/>
+        href="../../org.muml.pim.coordinationspecification.common/model/coordinationspecification.gmfgraph#protocoleditor"/>
     <domainModel
         href="../../org.muml.pim/model/pim.ecore#//protocol"/>
     <domainMetaElement
