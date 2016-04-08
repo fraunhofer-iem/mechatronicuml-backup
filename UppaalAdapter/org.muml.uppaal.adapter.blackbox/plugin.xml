@@ -5,7 +5,7 @@
    	<unit name="TraceLibUnit" namespace="de.uni_paderborn.fujaba.muml.verification.uppaal._blackbox">
     <library name="TraceLib" 
              class="org.muml.uppaal.adapter.blackbox.TraceLibrary">
-      <metamodel nsURI="http://www.uni-paderborn.de/uppaal/0.4.0"/>       
+      <metamodel nsURI="http://www.muml.org/uppaal/1.0.0"/>       
       <metamodel nsURI="http://www.uni-paderborn.de/uppaal/trace/0.4.0"/>
       <metamodel
             nsURI="http://www.uni-paderborn.de/requirements/0.4.0">

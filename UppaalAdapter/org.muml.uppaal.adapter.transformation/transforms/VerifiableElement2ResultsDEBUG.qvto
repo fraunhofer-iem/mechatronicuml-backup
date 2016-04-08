@@ -14,7 +14,7 @@ modeltype result_model uses 'http://www.muml.org/uppaal/adapter/results/1.0.0';
 modeltype verification_options uses 'http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/options';
 modeltype verification_extension uses 'http://www.fujaba.de/muml/verification/extension/0.4.0';
 
-modeltype uppaal uses 'http://www.uni-paderborn.de/uppaal/0.4.0';
+modeltype uppaal uses 'http://www.muml.org/uppaal/1.0.0';
 modeltype uppaal_requirements uses 'http://www.uni-paderborn.de/requirements/0.4.0';
 modeltype uppaal_trace uses 'http://www.uni-paderborn.de/uppaal/trace/0.4.0';
 

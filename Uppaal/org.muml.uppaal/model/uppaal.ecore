@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="uppaal" nsURI="http://www.uni-paderborn.de/uppaal/0.4.0" nsPrefix="uppaal">
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="uppaal" nsURI="http://www.muml.org/uppaal/1.0.0" nsPrefix="uppaal">
   <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
     <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
     <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
@@ -89,7 +89,7 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eSubpackages name="core" nsURI="http://www.uni-paderborn.de/uppaal/core/0.4.0"
+  <eSubpackages name="core" nsURI="http://www.muml.org/uppaal/core/1.0.0"
       nsPrefix="core">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
@@ -128,7 +128,7 @@
       </eStructuralFeatures>
     </eClassifiers>
   </eSubpackages>
-  <eSubpackages name="types" nsURI="http://www.uni-paderborn.de/uppaal/types/0.4.0"
+  <eSubpackages name="types" nsURI="http://www.muml.org/uppaal/types/1.0.0"
       nsPrefix="types">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
@@ -311,7 +311,7 @@
           containment="true"/>
     </eClassifiers>
   </eSubpackages>
-  <eSubpackages name="declarations" nsURI="http://www.uni-paderborn.de/uppaal/declarations/0.4.0"
+  <eSubpackages name="declarations" nsURI="http://www.muml.org/uppaal/declarations/1.0.0"
       nsPrefix="declarations">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
@@ -698,7 +698,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eSubpackages name="global" nsURI="http://www.uni-paderborn.de/uppaal/declarations/global"
+    <eSubpackages name="global" nsURI="http://www.muml.org/uppaal/declarations/global/1.0.0"
         nsPrefix="global">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
         <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
@@ -755,7 +755,7 @@
         </eAnnotations>
       </eClassifiers>
     </eSubpackages>
-    <eSubpackages name="system" nsURI="http://www.uni-paderborn.de/uppaal/declarations/system"
+    <eSubpackages name="system" nsURI="http://www.muml.org/uppaal/declarations/system/1.0.0"
         nsPrefix="system">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
         <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
@@ -840,7 +840,7 @@
       </eClassifiers>
     </eSubpackages>
   </eSubpackages>
-  <eSubpackages name="templates" nsURI="http://www.uni-paderborn.de/uppaal/templates/0.4.0"
+  <eSubpackages name="templates" nsURI="http://www.muml.org/uppaal/templates/1.0.0"
       nsPrefix="templates">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
@@ -1083,7 +1083,7 @@
       </eAnnotations>
     </eClassifiers>
   </eSubpackages>
-  <eSubpackages name="statements" nsURI="http://www.uni-paderborn.de/uppaal/statements/0.4.0"
+  <eSubpackages name="statements" nsURI="http://www.muml.org/uppaal/statements/1.0.0"
       nsPrefix="statements">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
@@ -1252,7 +1252,7 @@
       </eStructuralFeatures>
     </eClassifiers>
   </eSubpackages>
-  <eSubpackages name="expressions" nsURI="http://www.uni-paderborn.de/uppaal/expressions/0.4.0"
+  <eSubpackages name="expressions" nsURI="http://www.muml.org/uppaal/expressions/1.0.0"
       nsPrefix="expressions">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
@@ -1614,7 +1614,7 @@
       <eLiterals name="OR" value="2" literal="|"/>
     </eClassifiers>
   </eSubpackages>
-  <eSubpackages name="visuals" nsURI="http://www.uni-paderborn.de/uppaal/visuals/0.4.0"
+  <eSubpackages name="visuals" nsURI="http://www.muml.org/uppaal/visuals/1.0.0"
       nsPrefix="visuals">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>

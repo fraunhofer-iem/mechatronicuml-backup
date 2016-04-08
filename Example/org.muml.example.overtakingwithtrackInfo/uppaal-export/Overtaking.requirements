@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ASCII"?>
-<requirements:PropertyRepository xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:declarations="http://www.uni-paderborn.de/uppaal/declarations/0.4.0" xmlns:expressions="http://www.uni-paderborn.de/uppaal/expressions/0.4.0" xmlns:requirements="http://www.uni-paderborn.de/requirements/0.4.0" xmlns:templates="http://www.uni-paderborn.de/uppaal/templates/0.4.0">
+<requirements:PropertyRepository xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:declarations="http://www.muml.org/uppaal/declarations/1.0.0" xmlns:expressions="http://www.muml.org/uppaal/expressions/1.0.0" xmlns:requirements="http://www.uni-paderborn.de/requirements/0.4.0" xmlns:templates="http://www.muml.org/uppaal/templates/1.0.0">
   <properties xsi:type="requirements:UnaryProperty" comment="&quot;no comment provided&quot;" quantifier="A" operator="[]">
     <expression xsi:type="expressions:NegationExpression">
       <negatedExpression xsi:type="expressions:IdentifierExpression">

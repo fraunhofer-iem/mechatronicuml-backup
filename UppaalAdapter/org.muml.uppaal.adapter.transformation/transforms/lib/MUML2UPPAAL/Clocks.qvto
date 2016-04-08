@@ -11,11 +11,11 @@ library Clocks;
 modeltype muml_rtsc uses pim::realtimestatechart('http://www.muml.org/pim/1.0.0');
 modeltype muml_behavior uses pim::behavior('http://www.muml.org/pim/1.0.0');
 modeltype muml_valuetype uses pim::valuetype('http://www.muml.org/pim/1.0.0');
-modeltype uppaal uses 'http://www.uni-paderborn.de/uppaal/0.4.0';
-modeltype uppaal_declarations uses uppaal::declarations('http://www.uni-paderborn.de/uppaal/0.4.0');
-modeltype uppaal_expressions uses uppaal::expressions('http://www.uni-paderborn.de/uppaal/0.4.0');
-modeltype uppaal_types uses uppaal::types('http://www.uni-paderborn.de/uppaal/0.4.0');
-modeltype uppaal_templates uses uppaal::templates('http://www.uni-paderborn.de/uppaal/0.4.0');
+modeltype uppaal uses 'http://www.muml.org/uppaal/1.0.0';
+modeltype uppaal_declarations uses uppaal::declarations('http://www.muml.org/uppaal/1.0.0');
+modeltype uppaal_expressions uses uppaal::expressions('http://www.muml.org/uppaal/1.0.0');
+modeltype uppaal_types uses uppaal::types('http://www.muml.org/uppaal/1.0.0');
+modeltype uppaal_templates uses uppaal::templates('http://www.muml.org/uppaal/1.0.0');
 	
 	query Clock :: belongsToSubrole() : Boolean {
 		return assert fatal (false) with log('Should never be reached.') 

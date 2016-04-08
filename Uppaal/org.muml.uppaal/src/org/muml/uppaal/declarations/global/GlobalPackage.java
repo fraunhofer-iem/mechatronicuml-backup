@@ -40,7 +40,7 @@ public interface GlobalPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.uni-paderborn.de/uppaal/declarations/global";
+	String eNS_URI = "http://www.muml.org/uppaal/declarations/global/1.0.0";
 
 	/**
 	 * The package namespace name.

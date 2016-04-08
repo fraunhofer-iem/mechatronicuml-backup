@@ -20,7 +20,7 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated uppaal -->
       <package
-            uri="http://www.uni-paderborn.de/uppaal/0.4.0"
+            uri="http://www.muml.org/uppaal/1.0.0"
             class="org.muml.uppaal.UppaalPackage"
             genModel="model/uppaal.genmodel"/>
    </extension>
@@ -35,7 +35,7 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated uppaal -->
       <package
-            uri="http://www.uni-paderborn.de/uppaal/core/0.4.0"
+            uri="http://www.muml.org/uppaal/core/1.0.0"
             class="org.muml.uppaal.core.CorePackage"
             genModel="model/uppaal.genmodel"/>
    </extension>
@@ -43,7 +43,7 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated uppaal -->
       <package
-            uri="http://www.uni-paderborn.de/uppaal/types/0.4.0"
+            uri="http://www.muml.org/uppaal/types/1.0.0"
             class="org.muml.uppaal.types.TypesPackage"
             genModel="model/uppaal.genmodel"/>
    </extension>
@@ -58,7 +58,7 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated uppaal -->
       <package
-            uri="http://www.uni-paderborn.de/uppaal/declarations/0.4.0"
+            uri="http://www.muml.org/uppaal/declarations/1.0.0"
             class="org.muml.uppaal.declarations.DeclarationsPackage"
             genModel="model/uppaal.genmodel"/>
    </extension>
@@ -73,7 +73,7 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated uppaal -->
       <package
-            uri="http://www.uni-paderborn.de/uppaal/declarations/global"
+            uri="http://www.muml.org/uppaal/declarations/global/1.0.0"
             class="org.muml.uppaal.declarations.global.GlobalPackage"
             genModel="model/uppaal.genmodel"/>
    </extension>
@@ -88,7 +88,7 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated uppaal -->
       <package
-            uri="http://www.uni-paderborn.de/uppaal/declarations/system"
+            uri="http://www.muml.org/uppaal/declarations/system/1.0.0"
             class="org.muml.uppaal.declarations.system.SystemPackage"
             genModel="model/uppaal.genmodel"/>
    </extension>
@@ -103,7 +103,7 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated uppaal -->
       <package
-            uri="http://www.uni-paderborn.de/uppaal/templates/0.4.0"
+            uri="http://www.muml.org/uppaal/templates/1.0.0"
             class="org.muml.uppaal.templates.TemplatesPackage"
             genModel="model/uppaal.genmodel"/>
    </extension>
@@ -118,7 +118,7 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated uppaal -->
       <package
-            uri="http://www.uni-paderborn.de/uppaal/statements/0.4.0"
+            uri="http://www.muml.org/uppaal/statements/1.0.0"
             class="org.muml.uppaal.statements.StatementsPackage"
             genModel="model/uppaal.genmodel"/>
    </extension>
@@ -133,7 +133,7 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated uppaal -->
       <package
-            uri="http://www.uni-paderborn.de/uppaal/expressions/0.4.0"
+            uri="http://www.muml.org/uppaal/expressions/1.0.0"
             class="org.muml.uppaal.expressions.ExpressionsPackage"
             genModel="model/uppaal.genmodel"/>
    </extension>
@@ -148,7 +148,7 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated uppaal -->
       <package
-            uri="http://www.uni-paderborn.de/uppaal/visuals/0.4.0"
+            uri="http://www.muml.org/uppaal/visuals/1.0.0"
             class="org.muml.uppaal.visuals.VisualsPackage"
             genModel="model/uppaal.genmodel"/>
    </extension>

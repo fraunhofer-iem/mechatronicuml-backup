@@ -17,10 +17,10 @@ modeltype muml_rtsc uses pim::realtimestatechart('http://www.muml.org/pim/1.0.0'
 modeltype storydriven_core uses 'http://www.muml.org/core/1.0.0';
 modeltype storydriven_expressions uses core::expressions('http://www.muml.org/core/1.0.0');
 modeltype storydriven_expressions_common uses core::expressions::common('http://www.muml.org/core/1.0.0');
-modeltype uppaal_expressions uses uppaal::expressions('http://www.uni-paderborn.de/uppaal/0.4.0');
-modeltype uppaal_statements uses uppaal::statements('http://www.uni-paderborn.de/uppaal/0.4.0');
-modeltype uppaal_types uses uppaal::types('http://www.uni-paderborn.de/uppaal/0.4.0');
-modeltype uppaal_declarations uses uppaal::declarations('http://www.uni-paderborn.de/uppaal/0.4.0');
+modeltype uppaal_expressions uses uppaal::expressions('http://www.muml.org/uppaal/1.0.0');
+modeltype uppaal_statements uses uppaal::statements('http://www.muml.org/uppaal/1.0.0');
+modeltype uppaal_types uses uppaal::types('http://www.muml.org/uppaal/1.0.0');
+modeltype uppaal_declarations uses uppaal::declarations('http://www.muml.org/uppaal/1.0.0');
 	
 	query muml_behavior::Variable :: belongsToSubrole() : Boolean {
 		return assert fatal (false) with log("Should be overridden")

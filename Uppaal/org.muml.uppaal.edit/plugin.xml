@@ -9,7 +9,7 @@
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <!-- @generated uppaal -->
       <factory
-            uri="http://www.uni-paderborn.de/uppaal/0.4.0"
+            uri="http://www.muml.org/uppaal/1.0.0"
             class="org.muml.uppaal.provider.UppaalItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
@@ -22,7 +22,7 @@
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <!-- @generated uppaal -->
       <factory
-            uri="http://www.uni-paderborn.de/uppaal/core/0.4.0"
+            uri="http://www.muml.org/uppaal/core/1.0.0"
             class="org.muml.uppaal.core.provider.CoreItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
@@ -35,7 +35,7 @@
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <!-- @generated uppaal -->
       <factory
-            uri="http://www.uni-paderborn.de/uppaal/types/0.4.0"
+            uri="http://www.muml.org/uppaal/types/1.0.0"
             class="org.muml.uppaal.types.provider.TypesItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
@@ -48,7 +48,7 @@
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <!-- @generated uppaal -->
       <factory
-            uri="http://www.uni-paderborn.de/uppaal/declarations/0.4.0"
+            uri="http://www.muml.org/uppaal/declarations/1.0.0"
             class="org.muml.uppaal.declarations.provider.DeclarationsItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
@@ -61,7 +61,7 @@
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <!-- @generated uppaal -->
       <factory
-            uri="http://www.uni-paderborn.de/uppaal/declarations/global"
+            uri="http://www.muml.org/uppaal/declarations/global/1.0.0"
             class="org.muml.uppaal.declarations.global.provider.GlobalItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
@@ -74,7 +74,7 @@
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <!-- @generated uppaal -->
       <factory
-            uri="http://www.uni-paderborn.de/uppaal/declarations/system"
+            uri="http://www.muml.org/uppaal/declarations/system/1.0.0"
             class="org.muml.uppaal.declarations.system.provider.SystemItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
@@ -87,7 +87,7 @@
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <!-- @generated uppaal -->
       <factory
-            uri="http://www.uni-paderborn.de/uppaal/templates/0.4.0"
+            uri="http://www.muml.org/uppaal/templates/1.0.0"
             class="org.muml.uppaal.templates.provider.TemplatesItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
@@ -100,7 +100,7 @@
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <!-- @generated uppaal -->
       <factory
-            uri="http://www.uni-paderborn.de/uppaal/statements/0.4.0"
+            uri="http://www.muml.org/uppaal/statements/1.0.0"
             class="org.muml.uppaal.statements.provider.StatementsItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
@@ -113,7 +113,7 @@
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <!-- @generated uppaal -->
       <factory
-            uri="http://www.uni-paderborn.de/uppaal/expressions/0.4.0"
+            uri="http://www.muml.org/uppaal/expressions/1.0.0"
             class="org.muml.uppaal.expressions.provider.ExpressionsItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
@@ -126,7 +126,7 @@
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <!-- @generated uppaal -->
       <factory
-            uri="http://www.uni-paderborn.de/uppaal/visuals/0.4.0"
+            uri="http://www.muml.org/uppaal/visuals/1.0.0"
             class="org.muml.uppaal.visuals.provider.VisualsItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider

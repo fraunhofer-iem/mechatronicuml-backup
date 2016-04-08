@@ -44,7 +44,7 @@ public interface TypesPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.uni-paderborn.de/uppaal/types/0.4.0";
+	String eNS_URI = "http://www.muml.org/uppaal/types/1.0.0";
 
 	/**
 	 * The package namespace name.

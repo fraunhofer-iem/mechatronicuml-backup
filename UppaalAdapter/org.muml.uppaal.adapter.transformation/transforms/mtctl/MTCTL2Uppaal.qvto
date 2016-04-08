@@ -26,16 +26,16 @@ modeltype mtctlComparables uses mtctl::Comparables('http://www.uni_paderborn.de/
 modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
 modeltype extension uses 'http://www.fujaba.de/muml/verification/extension/0.4.0';
 
-modeltype uppaal uses 'http://www.uni-paderborn.de/uppaal/0.4.0';
-modeltype uppaal_expressions uses uppaal::expressions('http://www.uni-paderborn.de/uppaal/0.4.0');
-modeltype uppaal_types uses uppaal::types('http://www.uni-paderborn.de/uppaal/0.4.0');
-modeltype uppaal_templates uses uppaal::templates('http://www.uni-paderborn.de/uppaal/0.4.0');
-modeltype uppaal_declarations uses uppaal::declarations('http://www.uni-paderborn.de/uppaal/0.4.0');
-modeltype uppaal_core uses uppaal::core('http://www.uni-paderborn.de/uppaal/0.4.0');
-modeltype uppaal_system uses uppaal::declarations::system('http://www.uni-paderborn.de/uppaal/0.4.0');
+modeltype uppaal uses 'http://www.muml.org/uppaal/1.0.0';
+modeltype uppaal_expressions uses uppaal::expressions('http://www.muml.org/uppaal/1.0.0');
+modeltype uppaal_types uses uppaal::types('http://www.muml.org/uppaal/1.0.0');
+modeltype uppaal_templates uses uppaal::templates('http://www.muml.org/uppaal/1.0.0');
+modeltype uppaal_declarations uses uppaal::declarations('http://www.muml.org/uppaal/1.0.0');
+modeltype uppaal_core uses uppaal::core('http://www.muml.org/uppaal/1.0.0');
+modeltype uppaal_system uses uppaal::declarations::system('http://www.muml.org/uppaal/1.0.0');
 
 modeltype uppaalReq uses 'http://www.uni-paderborn.de/requirements/0.4.0';
-modeltype uppaalExpr uses uppaal::expressions('http://www.uni-paderborn.de/uppaal/0.4.0');
+modeltype uppaalExpr uses uppaal::expressions('http://www.muml.org/uppaal/1.0.0');
 
 //Maps a set of (normalized) MTCTL properties to uppaal properties. Assumes normalized MTCTL and direct access to MUML2Uppaal traces (i.e. it should be the directly previous transformation)
 transformation MTCTL2Uppaal(in input:muml_protocol, out output:uppaalReq) access Functions, Util, Clocks, Expressions, Variables; //NOT IDs

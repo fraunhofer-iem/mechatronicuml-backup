@@ -5,9 +5,9 @@ import transforms.lib.ExternalizedStrings;
 
 library Variables;
 
-modeltype uppaal_declarations uses uppaal::declarations('http://www.uni-paderborn.de/uppaal/0.4.0');
-modeltype uppaal_expressions uses uppaal::expressions('http://www.uni-paderborn.de/uppaal/0.4.0');
-modeltype uppaal_types uses uppaal::types('http://www.uni-paderborn.de/uppaal/0.4.0');
+modeltype uppaal_declarations uses uppaal::declarations('http://www.muml.org/uppaal/1.0.0');
+modeltype uppaal_expressions uses uppaal::expressions('http://www.muml.org/uppaal/1.0.0');
+modeltype uppaal_types uses uppaal::types('http://www.muml.org/uppaal/1.0.0');
 modeltype msgtype uses muml::msgtype('http://www.muml.org/pim/1.0.0');
 modeltype protocol uses pim::protocol('http://www.muml.org/pim/1.0.0');
 modeltype connector uses pim::connector('http://www.muml.org/pim/1.0.0');

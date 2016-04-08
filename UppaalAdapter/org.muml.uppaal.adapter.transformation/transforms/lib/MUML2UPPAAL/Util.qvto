@@ -1,8 +1,8 @@
 library Util;
 
 modeltype muml_valuetype uses pim::valuetype('http://www.muml.org/pim/1.0.0');
-modeltype uppaal_expressions uses uppaal::expressions('http://www.uni-paderborn.de/uppaal/0.4.0');
-modeltype uppaal_declarations uses uppaal::declarations('http://www.uni-paderborn.de/uppaal/0.4.0');
+modeltype uppaal_expressions uses uppaal::expressions('http://www.muml.org/uppaal/1.0.0');
+modeltype uppaal_declarations uses uppaal::declarations('http://www.muml.org/uppaal/1.0.0');
 modeltype core_expressions uses core::expressions('http://www.muml.org/core/1.0.0');
 modeltype core_expressions_common uses core::expressions::common('http://www.muml.org/core/1.0.0');
 modeltype muml_protocol uses pim::protocol('http://www.muml.org/pim/1.0.0');

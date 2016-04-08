@@ -5,11 +5,11 @@ import transforms.lib.MUML2UPPAAL.Expressions;
 
 library Sync;
 
-modeltype uppaal uses 'http://www.uni-paderborn.de/uppaal/0.4.0';
-modeltype uppaal_templates uses uppaal::templates('http://www.uni-paderborn.de/uppaal/0.4.0');
-modeltype uppaal_expressions uses uppaal::expressions('http://www.uni-paderborn.de/uppaal/0.4.0');
-modeltype uppaal_types uses uppaal::types('http://www.uni-paderborn.de/uppaal/0.4.0');
-modeltype uppaal_declarations uses uppaal::declarations('http://www.uni-paderborn.de/uppaal/0.4.0');
+modeltype uppaal uses 'http://www.muml.org/uppaal/1.0.0';
+modeltype uppaal_templates uses uppaal::templates('http://www.muml.org/uppaal/1.0.0');
+modeltype uppaal_expressions uses uppaal::expressions('http://www.muml.org/uppaal/1.0.0');
+modeltype uppaal_types uses uppaal::types('http://www.muml.org/uppaal/1.0.0');
+modeltype uppaal_declarations uses uppaal::declarations('http://www.muml.org/uppaal/1.0.0');
 modeltype rtsc uses pim::realtimestatechart('http://www.muml.org/pim/1.0.0');
 modeltype component uses pim::component('http://www.muml.org/pim/1.0.0');
 modeltype storydriven_expressions uses core::expressions('http://www.muml.org/core/1.0.0');

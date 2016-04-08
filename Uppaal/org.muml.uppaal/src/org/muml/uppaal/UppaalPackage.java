@@ -41,7 +41,7 @@ public interface UppaalPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.uni-paderborn.de/uppaal/0.4.0";
+	String eNS_URI = "http://www.muml.org/uppaal/1.0.0";
 
 	/**
 	 * The package namespace name.

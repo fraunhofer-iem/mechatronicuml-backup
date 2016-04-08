@@ -43,7 +43,7 @@ public interface DeclarationsPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.uni-paderborn.de/uppaal/declarations/0.4.0";
+	String eNS_URI = "http://www.muml.org/uppaal/declarations/1.0.0";
 
 	/**
 	 * The package namespace name.

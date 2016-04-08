@@ -40,7 +40,7 @@ public interface StatementsPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.uni-paderborn.de/uppaal/statements/0.4.0";
+	String eNS_URI = "http://www.muml.org/uppaal/statements/1.0.0";
 
 	/**
 	 * The package namespace name.

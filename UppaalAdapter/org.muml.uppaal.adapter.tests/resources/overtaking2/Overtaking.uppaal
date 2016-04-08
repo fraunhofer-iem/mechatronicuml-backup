@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ASCII"?>
-<uppaal:NTA xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:declarations="http://www.uni-paderborn.de/uppaal/declarations/0.4.0" xmlns:expressions="http://www.uni-paderborn.de/uppaal/expressions/0.4.0" xmlns:statements="http://www.uni-paderborn.de/uppaal/statements/0.4.0" xmlns:system="http://www.uni-paderborn.de/uppaal/declarations/system" xmlns:types="http://www.uni-paderborn.de/uppaal/types/0.4.0" xmlns:uppaal="http://www.uni-paderborn.de/uppaal/0.4.0" name="Overtaking">
+<uppaal:NTA xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:declarations="http://www.muml.org/uppaal/declarations/1.0.0" xmlns:expressions="http://www.muml.org/uppaal/expressions/1.0.0" xmlns:statements="http://www.muml.org/uppaal/statements/1.0.0" xmlns:system="http://www.muml.org/uppaal/declarations/system/1.0.0" xmlns:types="http://www.muml.org/uppaal/types/1.0.0" xmlns:uppaal="http://www.muml.org/uppaal/1.0.0" name="Overtaking">
   <globalDeclarations>
     <declaration xsi:type="declarations:ChannelVariableDeclaration" urgent="true">
       <typeDefinition xsi:type="types:TypeReference" referredType="//@chan"/>

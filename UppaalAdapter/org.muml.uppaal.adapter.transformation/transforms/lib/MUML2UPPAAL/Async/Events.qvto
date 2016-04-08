@@ -5,8 +5,8 @@ import transforms.lib.MUML2UPPAAL.Async.Variables;
 
 library Events;
 
-modeltype uppaal_declarations uses uppaal::declarations('http://www.uni-paderborn.de/uppaal/0.4.0');
-modeltype uppaal_expressions uses uppaal::expressions('http://www.uni-paderborn.de/uppaal/0.4.0');
+modeltype uppaal_declarations uses uppaal::declarations('http://www.muml.org/uppaal/1.0.0');
+modeltype uppaal_expressions uses uppaal::expressions('http://www.muml.org/uppaal/1.0.0');
 modeltype rtsc uses pim::realtimestatechart('http://www.muml.org/pim/1.0.0');
 modeltype protocol uses pim::protocol('http://www.muml.org/pim/1.0.0');
 modeltype component uses pim::component('http://www.muml.org/pim/1.0.0');

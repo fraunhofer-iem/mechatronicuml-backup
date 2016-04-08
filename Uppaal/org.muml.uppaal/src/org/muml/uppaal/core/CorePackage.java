@@ -40,7 +40,7 @@ public interface CorePackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.uni-paderborn.de/uppaal/core/0.4.0";
+	String eNS_URI = "http://www.muml.org/uppaal/core/1.0.0";
 
 	/**
 	 * The package namespace name.
