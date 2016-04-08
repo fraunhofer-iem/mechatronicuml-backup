@@ -2,7 +2,7 @@
 <ecore:EPackage xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="behavior_model"
-    nsURI="http://de.uni_paderborn.fujaba2simulink.behavior" nsPrefix="behavior_model">
+    nsURI="http://www.muml.org/simulink/adapter/corrmodel/behavior/1.0.0" nsPrefix="behavior_model">
   <eClassifiers xsi:type="ecore:EClass" name="RtScCat2SfM" eSuperTypes="../fujaba2simulink.ecore#//AbstractContainerCorrespondenceNode">
     <eStructuralFeatures xsi:type="ecore:EReference" name="sfM" eType="ecore:EClass ../../../org.muml.simulink/model/Simulink.ecore#//stateflow/StateflowMachine"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="rtScCat" eType="ecore:EClass ../../../de.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory"/>

@@ -42,7 +42,7 @@ public interface Behavior_modelPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://de.uni_paderborn.fujaba2simulink.behavior";
+	String eNS_URI = "http://www.muml.org/simulink/adapter/corrmodel/behavior/1.0.0";
 
 	/**
 	 * The package namespace name.

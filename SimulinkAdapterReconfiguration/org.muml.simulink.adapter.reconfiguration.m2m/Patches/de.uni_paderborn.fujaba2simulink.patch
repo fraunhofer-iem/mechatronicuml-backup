@@ -16,7 +16,7 @@ Index: tgg/fujaba2simulink.tgg
 +    <usedPackage href="de.uni_paderborn.fujaba.simulink.model.reconfiguration#/"/>
    </modelParameter>
    <modelParameter xmi:id="_NYLIYJzXEeCxo-rGjpVr5g" name="fujaba2simulink">
-     <usedPackage href="http://de.uni_paderborn.fujaba2simulink#/"/>
+     <usedPackage href="http://www.muml.org/simulink/adapter/corrmodel/1.0.0#/"/>
 @@ -9061,4 +9063,5 @@
      <domain xsi:type="de.upb.swt.qvt.tgg:DomainGraphPattern" xmi:id="_896no6N2EeKatOJLdR2mGA" typedModel="_NYLIYJzXEeCxo-rGjpVr5g" node="_896npKN2EeKatOJLdR2mGA _896npaN2EeKatOJLdR2mGA _896np6N2EeKatOJLdR2mGA _896nqqN2EeKatOJLdR2mGA _896nrKN2EeKatOJLdR2mGA"/>
    </rule>
