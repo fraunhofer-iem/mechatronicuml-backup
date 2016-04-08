@@ -1,7 +1,7 @@
 grammar org.storydriven.storydiagrams.expressions.common.Expressions with org.eclipse.xtext.common.Terminals
 
 import "http://www.eclipse.org/emf/2002/Ecore"
-generate expressions "http://www.storydriven.org/modeling/expressions/common/Expressions"
+generate expressions "http://www.muml.org/storydiagram/expressions/common/expressions/1.0"
 
 // Boolean Logic Layer    ------------------------------------------------
 LExpression:

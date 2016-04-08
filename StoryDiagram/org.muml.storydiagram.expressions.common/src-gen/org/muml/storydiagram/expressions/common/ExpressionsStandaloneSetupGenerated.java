@@ -27,8 +27,8 @@ public class ExpressionsStandaloneSetupGenerated implements ISetup {
 	}
 	
 	public void register(Injector injector) {
-	if (!EPackage.Registry.INSTANCE.containsKey("http://www.storydriven.org/modeling/expressions/common/Expressions")) {
-		EPackage.Registry.INSTANCE.put("http://www.storydriven.org/modeling/expressions/common/Expressions", org.muml.storydiagram.expressions.common.expressions.ExpressionsPackage.eINSTANCE);
+	if (!EPackage.Registry.INSTANCE.containsKey("http://www.muml.org/storydiagram/expressions/common/expressions/1.0")) {
+		EPackage.Registry.INSTANCE.put("http://www.muml.org/storydiagram/expressions/common/expressions/1.0", org.muml.storydiagram.expressions.common.expressions.ExpressionsPackage.eINSTANCE);
 	}
 
 		org.eclipse.xtext.resource.IResourceFactory resourceFactory = injector.getInstance(org.eclipse.xtext.resource.IResourceFactory.class);
