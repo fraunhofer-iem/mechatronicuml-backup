@@ -81,10 +81,10 @@ public class BasicSDDNavigatorLabelProvider extends LabelProvider implements
 				.getVisualID(view)) {
 		case org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryDecisionDiagramEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Diagram?http://www.fujaba.de/muml/verification/sdd/basicSDD/0.4.0?StoryDecisionDiagram", org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.BasicSDDElementTypes.StoryDecisionDiagram_1000); //$NON-NLS-1$
+					"Navigator?Diagram?http://www.muml.org/storydiagram/verification/sdd/basicsdd/1.0.0?StoryDecisionDiagram", org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.BasicSDDElementTypes.StoryDecisionDiagram_1000); //$NON-NLS-1$
 		case org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryPatternNodeEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?TopLevelNode?http://www.fujaba.de/muml/verification/sdd/basicSDD/0.4.0?StoryPatternNode", org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.BasicSDDElementTypes.StoryPatternNode_2003); //$NON-NLS-1$
+					"Navigator?TopLevelNode?http://www.muml.org/storydiagram/verification/sdd/basicsdd/1.0.0?StoryPatternNode", org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.BasicSDDElementTypes.StoryPatternNode_2003); //$NON-NLS-1$
 		case org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.LeafNodeEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?TopLevelNode?http://www.fujaba.de/muml/verification/sdd/0.4.0?LeafNode", org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.BasicSDDElementTypes.LeafNode_2004); //$NON-NLS-1$

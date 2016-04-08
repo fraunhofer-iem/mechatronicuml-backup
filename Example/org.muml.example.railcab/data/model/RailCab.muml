@@ -14727,7 +14727,7 @@
       <annotation xmi:id="_uuWp_fSTEeOKmIQk3FL8KA" source="http://www.storydriven.org/storydiagrams/types">
         <details xmi:id="_uuWp_vSTEeOKmIQk3FL8KA" key="http://www.muml.org/examples/profiles/1.0.0" value="true"/>
         <details xmi:id="_uuWp__STEeOKmIQk3FL8KA" key="http://www.muml.org/verification/core/runtime/1.0.0" value="true"/>
-        <details xmi:id="_uuWqAPSTEeOKmIQk3FL8KA" key="http://www.fujaba.de/reachabilityGraph/sdm/wrapper/0.4.0" value="true"/>
+        <details xmi:id="_uuWqAPSTEeOKmIQk3FL8KA" key="http://www.muml.org/storydiagram/reachanalysis/reachabilitygraph/sdm/wrapper/1.0.0" value="true"/>
       </annotation>
       <containedParameters xmi:id="_uuWqAfSTEeOKmIQk3FL8KA" name="numberOfProfilesObject">
         <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>
@@ -14754,10 +14754,10 @@
               <constraintExpression xsi:type="expr:TextualExpression" xmi:id="_uuWqEfSTEeOKmIQk3FL8KA" expressionText="intValue > 0" language="OCL" languageVersion="1.0"/>
             </constraint>
             <attributeAssignment xmi:id="_uuWqEvSTEeOKmIQk3FL8KA">
-              <attribute href="http://www.fujaba.de/reachabilityGraph/sdm/wrapper/0.4.0#//IntWrapper/intValue"/>
+              <attribute href="http://www.muml.org/storydiagram/reachanalysis/reachabilitygraph/sdm/wrapper/1.0.0#//IntWrapper/intValue"/>
               <valueExpression xsi:type="expr:TextualExpression" xmi:id="_uuWqE_STEeOKmIQk3FL8KA" expressionText="intValue - 1" language="OCL" languageVersion="1.0"/>
             </attributeAssignment>
-            <classifier href="http://www.fujaba.de/reachabilityGraph/sdm/wrapper/0.4.0#//IntWrapper"/>
+            <classifier href="http://www.muml.org/storydiagram/reachanalysis/reachabilitygraph/sdm/wrapper/1.0.0#//IntWrapper"/>
           </variable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_uuWqFPSTEeOKmIQk3FL8KA" name="profileList_2_p" bindingOperator="CREATE" source="_uuWqDfSTEeOKmIQk3FL8KA" target="_uuWqDvSTEeOKmIQk3FL8KA">
             <targetEnd href="http://www.muml.org/examples/profiles/1.0.0#//ProfileList/profiles"/>
@@ -14774,17 +14774,17 @@
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_uuWqGvSTEeOKmIQk3FL8KA" name="numberOfProfilesWrapper" bindingOperator="CREATE">
             <attributeAssignment xmi:id="_uuWqG_STEeOKmIQk3FL8KA">
-              <attribute href="http://www.fujaba.de/reachabilityGraph/sdm/wrapper/0.4.0#//IntWrapper/intValue"/>
+              <attribute href="http://www.muml.org/storydiagram/reachanalysis/reachabilitygraph/sdm/wrapper/1.0.0#//IntWrapper/intValue"/>
               <valueExpression xsi:type="expr:TextualExpression" xmi:id="_uuWqHPSTEeOKmIQk3FL8KA" expressionText="numberOfProfilesObject" language="OCL" languageVersion="1.0"/>
             </attributeAssignment>
-            <classifier href="http://www.fujaba.de/reachabilityGraph/sdm/wrapper/0.4.0#//IntWrapper"/>
+            <classifier href="http://www.muml.org/storydiagram/reachanalysis/reachabilitygraph/sdm/wrapper/1.0.0#//IntWrapper"/>
           </variable>
         </ownedRule>
       </ownedActivityNode>
       <ownedActivityNode xsi:type="sda:ModifyingStoryNode" xmi:id="_uuWqHfSTEeOKmIQk3FL8KA" name="Delete Int Wrapper" outgoing="_uuWqCfSTEeOKmIQk3FL8KA" incoming="_uuWqB_STEeOKmIQk3FL8KA">
         <ownedRule xmi:id="_uuWqHvSTEeOKmIQk3FL8KA" comment="">
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_uuWqH_STEeOKmIQk3FL8KA" name="numberOfProfilesWrapper" bindingState="BOUND" bindingOperator="DESTROY">
-            <classifier href="http://www.fujaba.de/reachabilityGraph/sdm/wrapper/0.4.0#//IntWrapper"/>
+            <classifier href="http://www.muml.org/storydiagram/reachanalysis/reachabilitygraph/sdm/wrapper/1.0.0#//IntWrapper"/>
           </variable>
         </ownedRule>
       </ownedActivityNode>
@@ -14921,13 +14921,13 @@
     <modelElements xsi:type="sda:Activity" xmi:id="_uuWqV_STEeOKmIQk3FL8KA" inParameter="_uuWqW_STEeOKmIQk3FL8KA" outParameter="_uuWqXfSTEeOKmIQk3FL8KA" name="hasFurtherProfile">
       <annotation xmi:id="_uuWqWPSTEeOKmIQk3FL8KA" source="http://www.storydriven.org/storydiagrams/types">
         <details xmi:id="_uuWqWfSTEeOKmIQk3FL8KA" key="http://www.muml.org/examples/profiles/1.0.0" value="true"/>
-        <details xmi:id="_uuWqWvSTEeOKmIQk3FL8KA" key="http://www.fujaba.de/reachabilityGraph/sdm/wrapper/0.4.0" value="true"/>
+        <details xmi:id="_uuWqWvSTEeOKmIQk3FL8KA" key="http://www.muml.org/storydiagram/reachanalysis/reachabilitygraph/sdm/wrapper/1.0.0" value="true"/>
       </annotation>
       <containedParameters xmi:id="_uuWqW_STEeOKmIQk3FL8KA" name="iterator">
         <eType xsi:type="ecore:EClass" href="http://www.muml.org/examples/profiles/1.0.0#//ProfileIterator"/>
       </containedParameters>
       <containedParameters xmi:id="_uuWqXfSTEeOKmIQk3FL8KA" name="result">
-        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/reachabilityGraph/sdm/wrapper/0.4.0#//BoolWrapper"/>
+        <eType xsi:type="ecore:EClass" href="http://www.muml.org/storydiagram/reachanalysis/reachabilitygraph/sdm/wrapper/1.0.0#//BoolWrapper"/>
       </containedParameters>
       <ownedActivityEdge xmi:id="_uuWqX_STEeOKmIQk3FL8KA" target="_uuWqc_STEeOKmIQk3FL8KA" source="_uuWqZPSTEeOKmIQk3FL8KA"/>
       <ownedActivityEdge xmi:id="_uuWqYPSTEeOKmIQk3FL8KA" target="_uuWqavSTEeOKmIQk3FL8KA" source="_uuWqc_STEeOKmIQk3FL8KA" guard="SUCCESS"/>
@@ -14939,10 +14939,10 @@
         <ownedRule xmi:id="_uuWqZvSTEeOKmIQk3FL8KA" comment="">
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_uuWqZ_STEeOKmIQk3FL8KA" name="result" bindingOperator="CREATE">
             <attributeAssignment xmi:id="_uuWqaPSTEeOKmIQk3FL8KA">
-              <attribute href="http://www.fujaba.de/reachabilityGraph/sdm/wrapper/0.4.0#//BoolWrapper/boolValue"/>
+              <attribute href="http://www.muml.org/storydiagram/reachanalysis/reachabilitygraph/sdm/wrapper/1.0.0#//BoolWrapper/boolValue"/>
               <valueExpression xsi:type="expr:TextualExpression" xmi:id="_uuWqafSTEeOKmIQk3FL8KA" expressionText="false" language="OCL" languageVersion="1.0"/>
             </attributeAssignment>
-            <classifier href="http://www.fujaba.de/reachabilityGraph/sdm/wrapper/0.4.0#//BoolWrapper"/>
+            <classifier href="http://www.muml.org/storydiagram/reachanalysis/reachabilitygraph/sdm/wrapper/1.0.0#//BoolWrapper"/>
           </variable>
         </ownedRule>
       </ownedActivityNode>
@@ -14950,10 +14950,10 @@
         <ownedRule xmi:id="_uuWqa_STEeOKmIQk3FL8KA" comment="">
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_uuWqbPSTEeOKmIQk3FL8KA" name="result" bindingOperator="CREATE">
             <attributeAssignment xmi:id="_uuWqbfSTEeOKmIQk3FL8KA">
-              <attribute href="http://www.fujaba.de/reachabilityGraph/sdm/wrapper/0.4.0#//BoolWrapper/boolValue"/>
+              <attribute href="http://www.muml.org/storydiagram/reachanalysis/reachabilitygraph/sdm/wrapper/1.0.0#//BoolWrapper/boolValue"/>
               <valueExpression xsi:type="expr:TextualExpression" xmi:id="_uuWqbvSTEeOKmIQk3FL8KA" expressionText="true" language="OCL" languageVersion="1.0"/>
             </attributeAssignment>
-            <classifier href="http://www.fujaba.de/reachabilityGraph/sdm/wrapper/0.4.0#//BoolWrapper"/>
+            <classifier href="http://www.muml.org/storydiagram/reachanalysis/reachabilitygraph/sdm/wrapper/1.0.0#//BoolWrapper"/>
           </variable>
         </ownedRule>
       </ownedActivityNode>

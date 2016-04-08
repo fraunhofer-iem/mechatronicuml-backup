@@ -15,7 +15,7 @@ modeltype mumlbehavior uses pim::behavior('http://www.muml.org/pim/1.0.0');
 modeltype realtimestatechart uses pim::realtimestatechart('http://www.muml.org/pim/1.0.0');
 modeltype mumlconnector uses muml::connector("http://www.muml.org/pim/1.0.0");
 
-modeltype wrapper uses wrapper('http://www.fujaba.de/reachabilityGraph/sdm/wrapper/0.4.0');
+modeltype wrapper uses wrapper('http://www.muml.org/storydiagram/reachanalysis/reachabilitygraph/sdm/wrapper/1.0.0');
 
 modeltype exp uses reconfiguration::expression('http://www.fujaba.de/muml/reconfiguration/0.3.18');
 

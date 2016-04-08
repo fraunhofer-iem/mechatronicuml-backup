@@ -345,7 +345,7 @@
 
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
       <?gmfgen generated="true"?>
-      <metamodel nsURI="http://www.fujaba.de/muml/verification/sdd/basicSDD/0.4.0">
+      <metamodel nsURI="http://www.muml.org/storydiagram/verification/sdd/basicsdd/1.0.0">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd.diagram.StoryDecisionDiagram_1000"
                name="%metatype.name.StoryDecisionDiagram_1000"
@@ -355,7 +355,7 @@
             <param name="semanticHint" value="1000"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/verification/sdd/basicSDD/0.4.0">
+      <metamodel nsURI="http://www.muml.org/storydiagram/verification/sdd/basicsdd/1.0.0">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd.diagram.StoryPatternNode_2003"
                name="%metatype.name.StoryPatternNode_2003"
@@ -673,7 +673,7 @@
          
          <child
                class="StoryDecisionDiagram"
-               packageNsUri="http://www.fujaba.de/muml/verification/sdd/basicSDD/0.4.0">
+               packageNsUri="http://www.muml.org/storydiagram/verification/sdd/basicsdd/1.0.0">
          </child>
          
       </category>
@@ -690,7 +690,7 @@
             modelElementCategoryKey="de.uni_paderborn.fujaba.muml.verification.sdd.basicSDD.category"
             modelId="BasicSDD">
          <diagramElement
-               packageNsURI="http://www.fujaba.de/muml/verification/sdd/basicSDD/0.4.0"
+               packageNsURI="http://www.muml.org/storydiagram/verification/sdd/basicsdd/1.0.0"
                className="StoryDecisionDiagram">
          </diagramElement>
          
