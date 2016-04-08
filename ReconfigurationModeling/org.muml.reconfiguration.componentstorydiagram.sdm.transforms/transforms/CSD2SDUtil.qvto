@@ -10,7 +10,7 @@ modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
 
 modeltype reconfiguration uses 'http://www.fujaba.de/muml/reconfiguration/0.3.18';
 
-modeltype csp uses 'http://www.fujaba.de/muml/componentstorypattern/0.4.0';
+modeltype csp uses 'http://www.muml.org/reconfiguration/componentstorypattern/1.0.0';
 
 modeltype componentModel uses pim::component('http://www.muml.org/pim/1.0.0');
 

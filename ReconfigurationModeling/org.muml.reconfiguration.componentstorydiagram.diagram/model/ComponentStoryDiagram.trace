@@ -38,14 +38,14 @@
   </childNodeTraces>
   <childNodeTraces
       visualID="3011"
-      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/componentstorypattern/0.4.0' and _eClass_.name = 'ComponentStoryPattern') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/reconfiguration/componentstorydiagram/1.0.0' and _eClass_.name = 'ComponentStoryNode') and _containmentMF_.name = 'componentStoryPattern')">
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/reconfiguration/componentstorypattern/1.0.0' and _eClass_.name = 'ComponentStoryPattern') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/reconfiguration/componentstorydiagram/1.0.0' and _eClass_.name = 'ComponentStoryNode') and _containmentMF_.name = 'componentStoryPattern')">
     <compartmentTraces
         visualID="7005"
         queryText="true"/>
   </childNodeTraces>
   <childNodeTraces
       visualID="3012"
-      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/componentstorypattern/0.4.0' and _eClass_.name = 'ComponentVariable') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/componentstorypattern/0.4.0' and _eClass_.name = 'ComponentStoryPattern') and _containmentMF_.name = 'thisVariable')">
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/reconfiguration/componentstorypattern/1.0.0' and _eClass_.name = 'ComponentVariable') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/reconfiguration/componentstorypattern/1.0.0' and _eClass_.name = 'ComponentStoryPattern') and _containmentMF_.name = 'thisVariable')">
     <nodeLabelTraces
         visualID="5019"
         queryText="true"/>
@@ -58,7 +58,7 @@
   </childNodeTraces>
   <childNodeTraces
       visualID="3014"
-      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/componentstorypattern/0.4.0' and _eClass_.name = 'ComponentPartVariable') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/componentstorypattern/0.4.0' and _eClass_.name = 'ComponentVariable') and _containmentMF_.name = 'partVariables')">
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/reconfiguration/componentstorypattern/1.0.0' and _eClass_.name = 'ComponentPartVariable') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/reconfiguration/componentstorypattern/1.0.0' and _eClass_.name = 'ComponentVariable') and _containmentMF_.name = 'partVariables')">
     <nodeLabelTraces
         visualID="5017"
         queryText="true"/>
@@ -71,7 +71,7 @@
   </childNodeTraces>
   <childNodeTraces
       visualID="3016"
-      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/componentstorypattern/0.4.0' and _eClass_.name = 'MultiPortVariable') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/componentstorypattern/0.4.0' and _eClass_.name = 'PartVariable') and _containmentMF_.name = 'portVariables')">
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/reconfiguration/componentstorypattern/1.0.0' and _eClass_.name = 'MultiPortVariable') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/reconfiguration/componentstorypattern/1.0.0' and _eClass_.name = 'PartVariable') and _containmentMF_.name = 'portVariables')">
     <nodeLabelTraces
         visualID="5021"
         queryText="true"/>
@@ -87,10 +87,10 @@
   </childNodeTraces>
   <childNodeTraces
       visualID="3017"
-      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/componentstorypattern/0.4.0' and _eClass_.name = 'SinglePortVariable') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/componentstorypattern/0.4.0' and _eClass_.name = 'MultiPortVariable') and _containmentMF_.name = 'gmfSubPortVariables')"/>
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/reconfiguration/componentstorypattern/1.0.0' and _eClass_.name = 'SinglePortVariable') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/reconfiguration/componentstorypattern/1.0.0' and _eClass_.name = 'MultiPortVariable') and _containmentMF_.name = 'gmfSubPortVariables')"/>
   <childNodeTraces
       visualID="3018"
-      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/componentstorypattern/0.4.0' and _eClass_.name = 'SinglePortVariable') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/componentstorypattern/0.4.0' and _eClass_.name = 'PartVariable') and _containmentMF_.name = 'portVariables')">
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/reconfiguration/componentstorypattern/1.0.0' and _eClass_.name = 'SinglePortVariable') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/reconfiguration/componentstorypattern/1.0.0' and _eClass_.name = 'PartVariable') and _containmentMF_.name = 'portVariables')">
     <nodeLabelTraces
         visualID="5023"
         queryText="true"/>
@@ -103,7 +103,7 @@
   </childNodeTraces>
   <childNodeTraces
       visualID="3019"
-      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/componentstorypattern/0.4.0' and _eClass_.name = 'MultiPortVariable') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/componentstorypattern/0.4.0' and _eClass_.name = 'ComponentVariable') and _containmentMF_.name = 'portVariables')">
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/reconfiguration/componentstorypattern/1.0.0' and _eClass_.name = 'MultiPortVariable') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/reconfiguration/componentstorypattern/1.0.0' and _eClass_.name = 'ComponentVariable') and _containmentMF_.name = 'portVariables')">
     <nodeLabelTraces
         visualID="5025"
         queryText="true"/>
@@ -119,7 +119,7 @@
   </childNodeTraces>
   <childNodeTraces
       visualID="3020"
-      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/componentstorypattern/0.4.0' and _eClass_.name = 'SinglePortVariable') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/componentstorypattern/0.4.0' and _eClass_.name = 'ComponentVariable') and _containmentMF_.name = 'portVariables')">
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/reconfiguration/componentstorypattern/1.0.0' and _eClass_.name = 'SinglePortVariable') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/reconfiguration/componentstorypattern/1.0.0' and _eClass_.name = 'ComponentVariable') and _containmentMF_.name = 'portVariables')">
     <nodeLabelTraces
         visualID="5027"
         queryText="true"/>
@@ -145,14 +145,14 @@
   </childNodeTraces>
   <childNodeTraces
       visualID="3022"
-      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/componentstorypattern/0.4.0' and _eClass_.name = 'ComponentStoryPattern') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/reconfiguration/componentstorydiagram/1.0.0' and _eClass_.name = 'ControllerExchangeNode') and _containmentMF_.name = 'componentStoryPattern')">
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/reconfiguration/componentstorypattern/1.0.0' and _eClass_.name = 'ComponentStoryPattern') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/reconfiguration/componentstorydiagram/1.0.0' and _eClass_.name = 'ControllerExchangeNode') and _containmentMF_.name = 'componentStoryPattern')">
     <compartmentTraces
         visualID="7012"
         queryText="true"/>
   </childNodeTraces>
   <childNodeTraces
       visualID="3023"
-      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/componentstorypattern/0.4.0' and _eClass_.name = 'ComponentVariable') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/componentstorypattern/0.4.0' and _eClass_.name = 'ComponentStoryPattern') and _containmentMF_.name = 'thisVariable')">
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/reconfiguration/componentstorypattern/1.0.0' and _eClass_.name = 'ComponentVariable') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/reconfiguration/componentstorypattern/1.0.0' and _eClass_.name = 'ComponentStoryPattern') and _containmentMF_.name = 'thisVariable')">
     <nodeLabelTraces
         visualID="5052"
         queryText="true"/>
@@ -165,7 +165,7 @@
   </childNodeTraces>
   <childNodeTraces
       visualID="3024"
-      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/componentstorypattern/0.4.0' and _eClass_.name = 'FadingComponentPartVariable') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/componentstorypattern/0.4.0' and _eClass_.name = 'ComponentVariable') and _containmentMF_.name = 'partVariables')">
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/reconfiguration/componentstorypattern/1.0.0' and _eClass_.name = 'FadingComponentPartVariable') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/reconfiguration/componentstorypattern/1.0.0' and _eClass_.name = 'ComponentVariable') and _containmentMF_.name = 'partVariables')">
     <nodeLabelTraces
         visualID="5054"
         queryText="true"/>
@@ -185,21 +185,21 @@
   </linkTraces>
   <linkTraces
       visualID="4004"
-      queryText="modelFacet.oclIsKindOf(gmfgen::TypeLinkModelFacet) and (let _eClass_:ecore::EClass = modelFacet.oclAsType(gmfgen::TypeLinkModelFacet).metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/componentstorypattern/0.4.0' and _eClass_.name = 'AssemblyVariable')">
+      queryText="modelFacet.oclIsKindOf(gmfgen::TypeLinkModelFacet) and (let _eClass_:ecore::EClass = modelFacet.oclAsType(gmfgen::TypeLinkModelFacet).metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/reconfiguration/componentstorypattern/1.0.0' and _eClass_.name = 'AssemblyVariable')">
     <linkLabelTraces
         visualID="6004"
         queryText="true"/>
   </linkTraces>
   <linkTraces
       visualID="4005"
-      queryText="modelFacet.oclIsKindOf(gmfgen::TypeLinkModelFacet) and (let _eClass_:ecore::EClass = modelFacet.oclAsType(gmfgen::TypeLinkModelFacet).metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/componentstorypattern/0.4.0' and _eClass_.name = 'DelegationVariable')">
+      queryText="modelFacet.oclIsKindOf(gmfgen::TypeLinkModelFacet) and (let _eClass_:ecore::EClass = modelFacet.oclAsType(gmfgen::TypeLinkModelFacet).metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/reconfiguration/componentstorypattern/1.0.0' and _eClass_.name = 'DelegationVariable')">
     <linkLabelTraces
         visualID="6005"
         queryText="true"/>
   </linkTraces>
   <linkTraces
       visualID="4006"
-      queryText="modelFacet.oclIsKindOf(gmfgen::TypeLinkModelFacet) and (let _eClass_:ecore::EClass = modelFacet.oclAsType(gmfgen::TypeLinkModelFacet).metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/componentstorypattern/0.4.0' and _eClass_.name = 'MultiPortOrderConstraint')">
+      queryText="modelFacet.oclIsKindOf(gmfgen::TypeLinkModelFacet) and (let _eClass_:ecore::EClass = modelFacet.oclAsType(gmfgen::TypeLinkModelFacet).metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/reconfiguration/componentstorypattern/1.0.0' and _eClass_.name = 'MultiPortOrderConstraint')">
     <linkLabelTraces
         visualID="6006"
         queryText="true"/>

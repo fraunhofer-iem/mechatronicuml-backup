@@ -103,43 +103,43 @@ public class ComponentSDDNavigatorLabelProvider extends LabelProvider implements
 					"Navigator?TopLevelNode?http://www.fujaba.de/muml/verification/sdd/componentsdd/0.4.0?InitialNode", org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.InitialNode_2004); //$NON-NLS-1$
 		case org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.ComponentStoryPatternEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Node?http://www.fujaba.de/muml/componentstorypattern/0.4.0?ComponentStoryPattern", org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.ComponentStoryPattern_3001); //$NON-NLS-1$
+					"Navigator?Node?http://www.muml.org/reconfiguration/componentstorypattern/1.0.0?ComponentStoryPattern", org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.ComponentStoryPattern_3001); //$NON-NLS-1$
 		case org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.ComponentVariableEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Node?http://www.fujaba.de/muml/componentstorypattern/0.4.0?ComponentVariable", org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.ComponentVariable_3002); //$NON-NLS-1$
+					"Navigator?Node?http://www.muml.org/reconfiguration/componentstorypattern/1.0.0?ComponentVariable", org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.ComponentVariable_3002); //$NON-NLS-1$
 		case org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.ComponentPartVariableEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Node?http://www.fujaba.de/muml/componentstorypattern/0.4.0?ComponentPartVariable", org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.ComponentPartVariable_3003); //$NON-NLS-1$
+					"Navigator?Node?http://www.muml.org/reconfiguration/componentstorypattern/1.0.0?ComponentPartVariable", org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.ComponentPartVariable_3003); //$NON-NLS-1$
 		case org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.MultiPortVariableEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Node?http://www.fujaba.de/muml/componentstorypattern/0.4.0?MultiPortVariable", org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.MultiPortVariable_3004); //$NON-NLS-1$
+					"Navigator?Node?http://www.muml.org/reconfiguration/componentstorypattern/1.0.0?MultiPortVariable", org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.MultiPortVariable_3004); //$NON-NLS-1$
 		case org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.SinglePortVariableEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Node?http://www.fujaba.de/muml/componentstorypattern/0.4.0?SinglePortVariable", org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.SinglePortVariable_3005); //$NON-NLS-1$
+					"Navigator?Node?http://www.muml.org/reconfiguration/componentstorypattern/1.0.0?SinglePortVariable", org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.SinglePortVariable_3005); //$NON-NLS-1$
 		case org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.SinglePortVariable2EditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Node?http://www.fujaba.de/muml/componentstorypattern/0.4.0?SinglePortVariable", org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.SinglePortVariable_3006); //$NON-NLS-1$
+					"Navigator?Node?http://www.muml.org/reconfiguration/componentstorypattern/1.0.0?SinglePortVariable", org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.SinglePortVariable_3006); //$NON-NLS-1$
 		case org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.MultiPortVariable2EditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Node?http://www.fujaba.de/muml/componentstorypattern/0.4.0?MultiPortVariable", org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.MultiPortVariable_3007); //$NON-NLS-1$
+					"Navigator?Node?http://www.muml.org/reconfiguration/componentstorypattern/1.0.0?MultiPortVariable", org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.MultiPortVariable_3007); //$NON-NLS-1$
 		case org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.SinglePortVariable3EditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Node?http://www.fujaba.de/muml/componentstorypattern/0.4.0?SinglePortVariable", org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.SinglePortVariable_3008); //$NON-NLS-1$
+					"Navigator?Node?http://www.muml.org/reconfiguration/componentstorypattern/1.0.0?SinglePortVariable", org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.SinglePortVariable_3008); //$NON-NLS-1$
 		case org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.FadingComponentPartVariableEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Node?http://www.fujaba.de/muml/componentstorypattern/0.4.0?FadingComponentPartVariable", org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.FadingComponentPartVariable_3009); //$NON-NLS-1$
+					"Navigator?Node?http://www.muml.org/reconfiguration/componentstorypattern/1.0.0?FadingComponentPartVariable", org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.FadingComponentPartVariable_3009); //$NON-NLS-1$
 		case org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.EdgeEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?Link?http://www.fujaba.de/muml/verification/sdd/0.4.0?Edge", org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.Edge_4001); //$NON-NLS-1$
 		case org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.AssemblyVariableEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Link?http://www.fujaba.de/muml/componentstorypattern/0.4.0?AssemblyVariable", org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.AssemblyVariable_4002); //$NON-NLS-1$
+					"Navigator?Link?http://www.muml.org/reconfiguration/componentstorypattern/1.0.0?AssemblyVariable", org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.AssemblyVariable_4002); //$NON-NLS-1$
 		case org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.DelegationVariableEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Link?http://www.fujaba.de/muml/componentstorypattern/0.4.0?DelegationVariable", org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.DelegationVariable_4003); //$NON-NLS-1$
+					"Navigator?Link?http://www.muml.org/reconfiguration/componentstorypattern/1.0.0?DelegationVariable", org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.DelegationVariable_4003); //$NON-NLS-1$
 		case org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.MultiPortOrderConstraintEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Link?http://www.fujaba.de/muml/componentstorypattern/0.4.0?MultiPortOrderConstraint", org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.MultiPortOrderConstraint_4004); //$NON-NLS-1$
+					"Navigator?Link?http://www.muml.org/reconfiguration/componentstorypattern/1.0.0?MultiPortOrderConstraint", org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.MultiPortOrderConstraint_4004); //$NON-NLS-1$
 		}
 		return getImage("Navigator?UnknownElement", null); //$NON-NLS-1$
 	}

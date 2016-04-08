@@ -4,7 +4,7 @@ import Queries;
 library Patterns;
 
 modeltype csd uses 'http://www.muml.org/reconfiguration/componentstorydiagram/1.0.0';
-modeltype csp uses 'http://www.fujaba.de/muml/componentstorypattern/0.4.0';
+modeltype csp uses 'http://www.muml.org/reconfiguration/componentstorypattern/1.0.0';
 
 modeltype sd uses 'http://www.muml.org/storydiagram/1.0.0';
 modeltype sdActivities uses storydiagrams::activities('http://www.muml.org/storydiagram/1.0.0');

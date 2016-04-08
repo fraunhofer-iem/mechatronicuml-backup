@@ -25,7 +25,7 @@
    <extension
          point="org.eclipse.gmf.runtime.emf.type.core.elementTypes">
       <metamodel
-            nsURI="http://www.fujaba.de/muml/componentstorypattern/0.4.0">
+            nsURI="http://www.muml.org/reconfiguration/componentstorypattern/1.0.0">
          <adviceBinding
                class="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.custom.edit.helper.SinglePortVariableEditHelperAdvice"
                id="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.SinglePortVariable_3005Advice"
