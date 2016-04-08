@@ -36,7 +36,7 @@
       <children
           compartment="//@nodes.0/@ownedChild/@compartments.0">
         <containmentFeature
-            href="../../org.muml.storydiagram/model/storydiagrams.ecore#//activities/Activity/ownedActivityNode"/>
+            href="../../org.muml.storydiagram/model/storydiagrams.ecore#//activities/Activity/ownedActivityNodes"/>
         <ownedChild>
           <domainMetaElement
               href="../../org.muml.reconfiguration.componentstorydiagram/model/ComponentStoryDiagram.ecore#//ComponentStoryNode"/>
@@ -76,7 +76,7 @@
                           xsi:type="ecore:EAttribute"
                           href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.ecore#//ComponentStoryPatternVariable/bindingState"/>
                       <value
-                          body="storydiagrams::patterns::BindingState::BOUND"/>
+                          body="storydiagram::patterns::BindingState::BOUND"/>
                     </initializers>
                     <initializers
                         xsi:type="gmfmap:FeatureValueSpec">
@@ -84,7 +84,7 @@
                           xsi:type="ecore:EAttribute"
                           href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.ecore#//ComponentStoryPatternVariable/bindingSemantics"/>
                       <value
-                          body="storydiagrams::patterns::BindingSemantics::MANDATORY"/>
+                          body="storydiagram::patterns::BindingSemantics::MANDATORY"/>
                     </initializers>
                     <initializers
                         xsi:type="gmfmap:FeatureValueSpec">
@@ -173,7 +173,7 @@
                         <diagramLabel
                             href="ComponentStoryDiagram.gmfgraph#PartVariableNameLabel"/>
                         <viewExpression
-                            body="let compName : String = if self.componentPartType.componentType.name.oclIsUndefined() then 'null' else&#x9; self.componentPartType.componentType.name endif in&#xD;&#xA;let partName : String = if self.componentPartType.name.oclIsUndefined() then ' ' else&#x9;' / '.concat(self.componentPartType.name) endif in&#xD;&#xA;let selfName : String = if self.name.oclIsUndefined() then 'null' else self.name endif in&#xD;&#xA;if bindingState = storydiagrams::patterns::BindingState::BOUND then&#xD;&#xA;selfName&#xD;&#xA;else&#xD;&#xA;selfName.concat(partName.concat(' : '.concat(compName)))&#xD;&#xA;endif"/>
+                            body="let compName : String = if self.componentPartType.componentType.name.oclIsUndefined() then 'null' else&#x9; self.componentPartType.componentType.name endif in&#xD;&#xA;let partName : String = if self.componentPartType.name.oclIsUndefined() then ' ' else&#x9;' / '.concat(self.componentPartType.name) endif in&#xD;&#xA;let selfName : String = if self.name.oclIsUndefined() then 'null' else self.name endif in&#xD;&#xA;if bindingState = storydiagram::patterns::BindingState::BOUND then&#xD;&#xA;selfName&#xD;&#xA;else&#xD;&#xA;selfName.concat(partName.concat(' : '.concat(compName)))&#xD;&#xA;endif"/>
                       </labelMappings>
                       <tool
                           xsi:type="gmftool:CreationTool"
@@ -217,7 +217,7 @@
                         <diagramLabel
                             href="ComponentStoryDiagram.gmfgraph#PortVariableTypeLabel"/>
                         <viewExpression
-                            body="if&#xD;&#xA;&#x9;self.bindingState = storydiagrams::patterns::BindingState::BOUND&#xD;&#xA;then&#xD;&#xA;&#x9;''&#xD;&#xA;else&#xD;&#xA;&#x9;':'+self.dataType.name&#xD;&#xA;endif"/>
+                            body="if&#xD;&#xA;&#x9;self.bindingState = storydiagram::patterns::BindingState::BOUND&#xD;&#xA;then&#xD;&#xA;&#x9;''&#xD;&#xA;else&#xD;&#xA;&#x9;':'+self.dataType.name&#xD;&#xA;endif"/>
                       </labelMappings>
                       <tool
                           xsi:type="gmftool:CreationTool"
@@ -273,7 +273,7 @@
                         <diagramLabel
                             href="ComponentStoryDiagram.gmfgraph#PortVariableTypeLabel"/>
                         <viewExpression
-                            body="if&#xD;&#xA;&#x9;self.bindingState = storydiagrams::patterns::BindingState::BOUND&#xD;&#xA;then&#xD;&#xA;&#x9;''&#xD;&#xA;else&#xD;&#xA;&#x9;':'+self.dataType.name&#xD;&#xA;endif"/>
+                            body="if&#xD;&#xA;&#x9;self.bindingState = storydiagram::patterns::BindingState::BOUND&#xD;&#xA;then&#xD;&#xA;&#x9;''&#xD;&#xA;else&#xD;&#xA;&#x9;':'+self.dataType.name&#xD;&#xA;endif"/>
                       </labelMappings>
                       <tool
                           xsi:type="gmftool:CreationTool"
@@ -306,7 +306,7 @@
       <children
           compartment="//@nodes.0/@ownedChild/@compartments.0">
         <containmentFeature
-            href="../../org.muml.storydiagram/model/storydiagrams.ecore#//activities/Activity/ownedActivityNode"/>
+            href="../../org.muml.storydiagram/model/storydiagrams.ecore#//activities/Activity/ownedActivityNodes"/>
         <ownedChild>
           <domainMetaElement
               href="../../org.muml.storydiagram/model/storydiagrams.ecore#//activities/InitialNode"/>
@@ -331,7 +331,7 @@
       <children
           compartment="//@nodes.0/@ownedChild/@compartments.0">
         <containmentFeature
-            href="../../org.muml.storydiagram/model/storydiagrams.ecore#//activities/Activity/ownedActivityNode"/>
+            href="../../org.muml.storydiagram/model/storydiagrams.ecore#//activities/Activity/ownedActivityNodes"/>
         <ownedChild>
           <domainMetaElement
               href="../../org.muml.storydiagram/model/storydiagrams.ecore#//activities/JunctionNode"/>
@@ -356,7 +356,7 @@
       <children
           compartment="//@nodes.0/@ownedChild/@compartments.0">
         <containmentFeature
-            href="../../org.muml.storydiagram/model/storydiagrams.ecore#//activities/Activity/ownedActivityNode"/>
+            href="../../org.muml.storydiagram/model/storydiagrams.ecore#//activities/Activity/ownedActivityNodes"/>
         <ownedChild>
           <domainMetaElement
               href="../../org.muml.storydiagram/model/storydiagrams.ecore#//activities/ActivityFinalNode"/>
@@ -386,7 +386,7 @@
       <children
           compartment="//@nodes.0/@ownedChild/@compartments.0">
         <containmentFeature
-            href="../../org.muml.storydiagram/model/storydiagrams.ecore#//activities/Activity/ownedActivityNode"/>
+            href="../../org.muml.storydiagram/model/storydiagrams.ecore#//activities/Activity/ownedActivityNodes"/>
         <ownedChild>
           <domainMetaElement
               href="../../org.muml.reconfiguration.componentstorydiagram/model/ComponentStoryDiagram.ecore#//ControllerExchangeNode"/>
@@ -426,7 +426,7 @@
                           xsi:type="ecore:EAttribute"
                           href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.ecore#//ComponentStoryPatternVariable/bindingState"/>
                       <value
-                          body="storydiagrams::patterns::BindingState::BOUND"/>
+                          body="storydiagram::patterns::BindingState::BOUND"/>
                     </initializers>
                     <initializers
                         xsi:type="gmfmap:FeatureValueSpec">
@@ -434,7 +434,7 @@
                           xsi:type="ecore:EAttribute"
                           href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.ecore#//ComponentStoryPatternVariable/bindingSemantics"/>
                       <value
-                          body="storydiagrams::patterns::BindingSemantics::MANDATORY"/>
+                          body="storydiagram::patterns::BindingSemantics::MANDATORY"/>
                     </initializers>
                     <initializers
                         xsi:type="gmfmap:ReferenceNewElementSpec">
@@ -448,7 +448,7 @@
                               xsi:type="ecore:EAttribute"
                               href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.ecore#//ComponentStoryPatternVariable/bindingOperator"/>
                           <value
-                              body="storydiagrams::patterns::BindingOperator::DESTROY"/>
+                              body="storydiagram::patterns::BindingOperator::DESTROY"/>
                         </initializers>
                         <elementClass
                             href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.ecore#//ComponentPartVariable"/>
@@ -460,7 +460,7 @@
                               xsi:type="ecore:EAttribute"
                               href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.ecore#//ComponentStoryPatternVariable/bindingOperator"/>
                           <value
-                              body="storydiagrams::patterns::BindingOperator::CREATE"/>
+                              body="storydiagram::patterns::BindingOperator::CREATE"/>
                         </initializers>
                         <elementClass
                             href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.ecore#//ComponentPartVariable"/>
@@ -500,7 +500,7 @@
             <diagramLabel
                 href="ComponentStoryDiagram.gmfgraph#DeadlineLabel"/>
             <viewExpression
-                body="if self.deadline.oclIsUndefined() then ''&#xD;&#xA;else&#xD;&#xA;let lowerBound: String = self.deadline.oclAsType(muml::realtimestatechart::Deadline).lowerBound.oclAsType(muml::valuetype::TimeValue).toString(), &#xD;&#xA;&#x9;upperBound: String = self.deadline.oclAsType(muml::realtimestatechart::Deadline).upperBound.oclAsType(muml::valuetype::TimeValue).toString() in&#xD;&#xA;'['+lowerBound+'; '+upperBound+']'&#xD;&#xA;endif"/>
+                body="if self.deadline.oclIsUndefined() then ''&#xD;&#xA;else&#xD;&#xA;let lowerBound: String = self.deadline.oclAsType(pim::realtimestatechart::Deadline).lowerBound.oclAsType(pim::valuetype::TimeValue).toString(), &#xD;&#xA;&#x9;upperBound: String = self.deadline.oclAsType(pim::realtimestatechart::Deadline).upperBound.oclAsType(pim::valuetype::TimeValue).toString() in&#xD;&#xA;'['+lowerBound+'; '+upperBound+']'&#xD;&#xA;endif"/>
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
@@ -564,7 +564,7 @@
                         <diagramLabel
                             href="ComponentStoryDiagram.gmfgraph#FadingComponentVariableNameLabel"/>
                         <viewExpression
-                            body="let compName : String = if self.componentPartType.componentType.name.oclIsUndefined() then 'null' else&#x9;self.componentPartType.componentType.name endif in&#xD;&#xA;let partName : String = if self.componentPartType.name.oclIsUndefined() then ' ' else&#x9;' / '.concat(self.componentPartType.name) endif in&#xD;&#xA;let selfName : String = if self.name.oclIsUndefined() then 'null' else self.name endif in&#xD;&#xA;if bindingState = storydiagrams::patterns::BindingState::BOUND then&#xD;&#xA;selfName&#xD;&#xA;else&#xD;&#xA;selfName.concat(partName.concat(' : '.concat(compName)))&#xD;&#xA;endif"/>
+                            body="let compName : String = if self.componentPartType.componentType.name.oclIsUndefined() then 'null' else&#x9;self.componentPartType.componentType.name endif in&#xD;&#xA;let partName : String = if self.componentPartType.name.oclIsUndefined() then ' ' else&#x9;' / '.concat(self.componentPartType.name) endif in&#xD;&#xA;let selfName : String = if self.name.oclIsUndefined() then 'null' else self.name endif in&#xD;&#xA;if bindingState = storydiagram::patterns::BindingState::BOUND then&#xD;&#xA;selfName&#xD;&#xA;else&#xD;&#xA;selfName.concat(partName.concat(' : '.concat(compName)))&#xD;&#xA;endif"/>
                       </labelMappings>
                       <labelMappings
                           readOnly="true">
@@ -632,7 +632,7 @@
           href="ComponentStoryDiagram.gmfgraph#ActivityEdgeLabel"/>
     </labelMappings>
     <containmentFeature
-        href="../../org.muml.storydiagram/model/storydiagrams.ecore#//activities/Activity/ownedActivityEdge"/>
+        href="../../org.muml.storydiagram/model/storydiagrams.ecore#//activities/Activity/ownedActivityEdges"/>
     <tool
         xsi:type="gmftool:CreationTool"
         href="ComponentStoryDiagram.gmftool#//@palette/@tools.0/@tools.3"/>
@@ -656,7 +656,7 @@
             xsi:type="ecore:EReference"
             href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.ecore#//AssemblyVariable/type"/>
         <value
-            body="let this : componentstorypattern::ComponentVariable = self.eContainer().oclAsType(ComponentVariable),&#xD;&#xA;&#x9;assemblyConnectors : Collection(muml::connector::Connector) = this.type.oclAsType(muml::component::StructuredComponent).connectors->select(oclIsTypeOf(muml::component::AssemblyConnector)),&#xD;&#xA;&#x9;portVariableTypes: Collection(muml::component::Port) = self.portVariables.portType->excluding(null),&#xD;&#xA;&#x9;connector : muml::component::AssemblyConnector = assemblyConnectors->select(aC | portVariableTypes->forAll(p | aC.oclAsType(muml::component::AssemblyConnector).portParts.portType->includes(p)))->any(true).oclAsType(muml::component::AssemblyConnector)&#xD;&#xA;in&#xD;&#xA;&#x9;if&#xD;&#xA;&#x9;&#x9;not connector.oclIsUndefined()&#xD;&#xA;&#x9;then&#xD;&#xA;&#x9;&#x9;connector&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;null&#xD;&#xA;&#x9;endif"/>
+            body="let this : componentstorypattern::ComponentVariable = self.eContainer().oclAsType(ComponentVariable),&#xD;&#xA;&#x9;assemblyConnectors : Collection(pim::connector::Connector) = this.type.oclAsType(pim::component::StructuredComponent).connectors->select(oclIsTypeOf(pim::component::AssemblyConnector)),&#xD;&#xA;&#x9;portVariableTypes: Collection(pim::component::Port) = self.portVariables.portType->excluding(null),&#xD;&#xA;&#x9;connector : pim::component::AssemblyConnector = assemblyConnectors->select(aC | portVariableTypes->forAll(p | aC.oclAsType(pim::component::AssemblyConnector).portParts.portType->includes(p)))->any(true).oclAsType(pim::component::AssemblyConnector)&#xD;&#xA;in&#xD;&#xA;&#x9;if&#xD;&#xA;&#x9;&#x9;not connector.oclIsUndefined()&#xD;&#xA;&#x9;then&#xD;&#xA;&#x9;&#x9;connector&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;null&#xD;&#xA;&#x9;endif"/>
       </initializers>
     </domainInitializer>
     <labelMappings
@@ -699,7 +699,7 @@
             xsi:type="ecore:EReference"
             href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.ecore#//DelegationVariable/type"/>
         <value
-            body="let outerPort : muml::component::Port = self.portVariables->select(eContainer().oclIsTypeOf(ComponentVariable))->at(1).portType,&#xD;&#xA;&#x9;innerPort : muml::component::Port = self.portVariables.portType->excluding(outerPort)->at(1),&#xD;&#xA;&#x9;delegationConnectorsOuter : OrderedSet(muml::connector::Connector) = outerPort.connectors->select(oclIsTypeOf(muml::component::DelegationConnector))&#xD;&#xA;in&#xD;&#xA;&#x9;delegationConnectorsOuter->select(dC | dC.oclAsType(muml::component::DelegationConnector).portPart.portType = innerPort)->any(true).oclAsType(muml::component::DelegationConnector)"/>
+            body="let outerPort : pim::component::Port = self.portVariables->select(eContainer().oclIsTypeOf(ComponentVariable))->at(1).portType,&#xD;&#xA;&#x9;innerPort : pim::component::Port = self.portVariables.portType->excluding(outerPort)->at(1),&#xD;&#xA;&#x9;delegationConnectorsOuter : OrderedSet(pim::connector::Connector) = outerPort.connectors->select(oclIsTypeOf(pim::component::DelegationConnector))&#xD;&#xA;in&#xD;&#xA;&#x9;delegationConnectorsOuter->select(dC | dC.oclAsType(pim::component::DelegationConnector).portPart.portType = innerPort)->any(true).oclAsType(pim::component::DelegationConnector)"/>
       </initializers>
     </domainInitializer>
     <labelMappings
