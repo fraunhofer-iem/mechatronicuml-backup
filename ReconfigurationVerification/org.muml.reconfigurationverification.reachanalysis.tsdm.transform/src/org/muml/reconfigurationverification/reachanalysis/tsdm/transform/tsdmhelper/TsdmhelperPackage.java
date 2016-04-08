@@ -40,7 +40,7 @@ public interface TsdmhelperPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.fujaba.de/reachAnalysis/tsdm/helper/0.1.0";
+	String eNS_URI = "http://www.muml.org/reconfigurationverification.reachanalysis.tsdm.transform/helper/1.0.0";
 
 	/**
 	 * The package namespace name.

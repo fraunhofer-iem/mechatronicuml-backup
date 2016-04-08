@@ -30,7 +30,7 @@ public class TsdmhelperFactoryImpl extends EFactoryImpl implements TsdmhelperFac
 	 */
 	public static TsdmhelperFactory init() {
 		try {
-			TsdmhelperFactory theTsdmhelperFactory = (TsdmhelperFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/reachAnalysis/tsdm/helper/0.1.0"); 
+			TsdmhelperFactory theTsdmhelperFactory = (TsdmhelperFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.muml.org/reconfigurationverification.reachanalysis.tsdm.transform/helper/1.0.0"); 
 			if (theTsdmhelperFactory != null) {
 				return theTsdmhelperFactory;
 			}

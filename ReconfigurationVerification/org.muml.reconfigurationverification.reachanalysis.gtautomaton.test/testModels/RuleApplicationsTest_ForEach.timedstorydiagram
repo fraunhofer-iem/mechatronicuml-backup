@@ -636,7 +636,7 @@
       <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//StepGraph"/>
     </containedParameters>
     <containedParameters name="boundClockInstances">
-      <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/reachAnalysis/tsdm/helper/0.1.0#//BoundClockInstances"/>
+      <eType xsi:type="ecore:EClass" href="http://www.muml.org/reconfigurationverification.reachanalysis.tsdm.transform/helper/1.0.0#//BoundClockInstances"/>
     </containedParameters>
     <ownedActivityEdge target="//@invariants.0/@ownedActivityNode.2" source="//@invariants.0/@ownedActivityNode.0"/>
     <ownedActivityEdge target="//@invariants.0/@ownedActivityNode.1" source="//@invariants.0/@ownedActivityNode.2" guard="END"/>
@@ -655,7 +655,7 @@
           <classifier href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//StepGraph"/>
         </variable>
         <variable xsi:type="sdp:ObjectVariable" name="result" bindingState="BOUND" outgoingLink="//@invariants.0/@ownedActivityNode.2/@ownedRule/@linkVariable.3">
-          <classifier href="http://www.fujaba.de/reachAnalysis/tsdm/helper/0.1.0#//BoundClockInstances"/>
+          <classifier href="http://www.muml.org/reconfigurationverification.reachanalysis.tsdm.transform/helper/1.0.0#//BoundClockInstances"/>
         </variable>
         <linkVariable xsi:type="sdp:LinkVariable" name="hasNode" source="//@invariants.0/@ownedActivityNode.2/@ownedRule/@variable.1" target="//@invariants.0/@ownedActivityNode.2/@ownedRule/@variable.0">
           <targetEnd href="http://www.fujaba.de/timedstorydiagram/0.1.0#//ClockInstance/hasNode"/>
@@ -667,7 +667,7 @@
           <targetEnd href="http://www.fujaba.de/reachabilityGraph/gtautomaton/0.1.0#//GtStepGraph/clockInstances"/>
         </linkVariable>
         <linkVariable xsi:type="sdp:LinkVariable" name="boundClockInstanceReference" bindingOperator="CREATE" source="//@invariants.0/@ownedActivityNode.2/@ownedRule/@variable.3" target="//@invariants.0/@ownedActivityNode.2/@ownedRule/@variable.1">
-          <targetEnd href="http://www.fujaba.de/reachAnalysis/tsdm/helper/0.1.0#//BoundClockInstances/clockInstances"/>
+          <targetEnd href="http://www.muml.org/reconfigurationverification.reachanalysis.tsdm.transform/helper/1.0.0#//BoundClockInstances/clockInstances"/>
         </linkVariable>
       </ownedRule>
     </ownedActivityNode>
