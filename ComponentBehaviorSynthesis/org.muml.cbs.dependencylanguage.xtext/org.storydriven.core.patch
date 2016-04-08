@@ -83,7 +83,7 @@ Index: model/core.ecore
 +        eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EGenericType"
          unsettable="true" containment="true"/>
    </eClassifiers>
-   <eSubpackages name="expressions" nsURI="http://www.storydriven.org/core/expressions/0.3.1"
+   <eSubpackages name="expressions" nsURI="http://www.muml.org/core/expressions/1.0.0"
 Index: model/core.uml.genmodel
 ===================================================================
 --- model/core.uml.genmodel	(revision 842)

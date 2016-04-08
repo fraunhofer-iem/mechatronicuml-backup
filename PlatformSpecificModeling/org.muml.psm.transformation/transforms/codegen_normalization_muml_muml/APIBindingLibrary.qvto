@@ -18,7 +18,7 @@ modeltype Muml uses muml('http://www.muml.org/pim/1.0.0');
 modeltype InstancePacakge uses muml::instance('http://www.muml.org/pim/1.0.0');
 modeltype ComponentPackage uses pim::component('http://www.muml.org/pim/1.0.0');
 modeltype Actionlanguage uses actionlanguage('http://www.muml.org/pim/actionlanguage/1.0.0');
-modeltype Core uses core('http://www.storydriven.org/core/0.3.1');
+modeltype Core uses core('http://www.muml.org/core/1.0.0');
 modeltype Ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
 
 property initApiName : String = "InitApi";

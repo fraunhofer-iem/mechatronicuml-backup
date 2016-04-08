@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ASCII"?>
-<realtimestatechart:Action xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:actionLanguage="http://www.fujaba.de/muml/actionlanguage/0.2.0" xmlns:expr="http://www.storydriven.org/core/expressions/0.3.1" xmlns:realtimestatechart="http://www.fujaba.de/muml/model/realtimestatechart/0.3.1">
+<realtimestatechart:Action xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:actionLanguage="http://www.fujaba.de/muml/actionlanguage/0.2.0" xmlns:expr="http://www.muml.org/core/expressions/1.0.0" xmlns:realtimestatechart="http://www.fujaba.de/muml/model/realtimestatechart/0.3.1">
   <expressions xsi:type="actionLanguage:Block">
     <expressions xsi:type="actionLanguage:Assignment"/>
     <expressions xsi:type="actionLanguage:IfStatement">

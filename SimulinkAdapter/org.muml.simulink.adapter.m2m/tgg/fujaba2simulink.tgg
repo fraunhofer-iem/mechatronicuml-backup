@@ -13,10 +13,10 @@
     <usedPackage href="http://www.muml.org/pim/valuetype/1.0.0#/"/>
     <usedPackage href="http://www.muml.org/pim/valuetype/1.0.0#/"/>
     <usedPackage href="http://www.muml.org/pim/1.0.0#/"/>
-    <usedPackage href="http://www.storydriven.org/core/0.3.1#/"/>
-    <usedPackage href="http://www.storydriven.org/core/0.3.1#//expressions"/>
+    <usedPackage href="http://www.muml.org/core/1.0.0#/"/>
+    <usedPackage href="http://www.muml.org/core/1.0.0#//expressions"/>
     <usedPackage href="http://www.muml.org/modelinstance/1.0.0#/"/>
-    <usedPackage href="http://www.storydriven.org/core/0.3.1#//expressions/common"/>
+    <usedPackage href="http://www.muml.org/core/1.0.0#//expressions/common"/>
     <usedPackage href="http://www.muml.org/storydiagram/1.0.0#//calls"/>
     <usedPackage href="http://www.muml.org/storydiagram/1.0.0#//calls/expressions"/>
     <usedPackage href="http://www.muml.org/storydiagram/1.0.0#//activities/expressions"/>
@@ -346,10 +346,10 @@
     </node>
     <node xmi:id="_OLhqoMXZEeCl0_SfQxol4w" name="fRtSc" incomingEdge="_OLhqpsXZEeCl0_SfQxol4w _N-W5wBzrEeGD3LoVeQTVJg" graphPattern="_GHWY0cXZEeCl0_SfQxol4w _GHWY08XZEeCl0_SfQxol4w">
       <outgoingEdge xmi:id="__KHUUAGiEeKkXYz3LDzSRw" targetNode="__G194AGiEeKkXYz3LDzSRw" graphPattern="_GHWY0cXZEeCl0_SfQxol4w">
-        <typeReference href="http://www.storydriven.org/core/0.3.1#//ExtendableElement/annotation"/>
+        <typeReference href="http://www.muml.org/core/1.0.0#//ExtendableElement/annotation"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_x1O4ANmlEeKyMMMOLxiRkw" targetNode="_xyFdYNmlEeKyMMMOLxiRkw" graphPattern="_GHWY0cXZEeCl0_SfQxol4w">
-        <typeReference href="http://www.storydriven.org/core/0.3.1#//ExtendableElement/annotation"/>
+        <typeReference href="http://www.muml.org/core/1.0.0#//ExtendableElement/annotation"/>
       </outgoingEdge>
       <eType href="http://www.muml.org/pim/realtimestatechart/1.0.0#//RealtimeStatechart"/>
     </node>
@@ -482,7 +482,7 @@
       <slotAttribute href="http://www.muml.org/simulink/1.0.0#//stateflow/State/name"/>
     </constraint>
     <constraint xsi:type="de.upb.swt.qvt.tgg:OCLConstraint" xmi:id="_38omMCTFEeG3wN0LeqOAPQ" slotNode="_OLhqoMXZEeCl0_SfQxol4w" expression="chart.name">
-      <slotAttribute href="http://www.storydriven.org/core/0.3.1#//NamedElement/name"/>
+      <slotAttribute href="http://www.muml.org/core/1.0.0#//NamedElement/name"/>
     </constraint>
     <constraint xsi:type="de.upb.swt.qvt.tgg:OCLConstraint" xmi:id="_jgA1cEsvEeGUj8OML9Dnzg" slotNode="_cIq0cEsvEeGUj8OML9Dnzg" expression="stateflow::SubStateType::PARALLEL">
       <slotAttribute href="http://www.muml.org/simulink/1.0.0#//stateflow/State/subStateType"/>
@@ -586,7 +586,7 @@
     </node>
     <node xmi:id="_5afLIBLREeKKNKjmTLsGMA" incomingEdge="_5akDoBLREeKKNKjmTLsGMA" graphPattern="_nWKm4BLNEeKKNKjmTLsGMA _nWJ_0BLNEeKKNKjmTLsGMA _nWKm4hLNEeKKNKjmTLsGMA">
       <outgoingEdge xmi:id="_-ei64BLREeKKNKjmTLsGMA" targetNode="_-dDtIBLREeKKNKjmTLsGMA">
-        <typeReference href="http://www.storydriven.org/core/0.3.1#//ExtendableElement/annotation"/>
+        <typeReference href="http://www.muml.org/core/1.0.0#//ExtendableElement/annotation"/>
       </outgoingEdge>
       <eType href="http://www.muml.org/pim/realtimestatechart/1.0.0#//RealtimeStatechart"/>
     </node>
@@ -644,7 +644,7 @@
     </node>
     <node xmi:id="_2XfSUSnJEeKFetXe1Hftng" incomingEdge="_2XpDUSnJEeKFetXe1Hftng" graphPattern="_2XX9kCnJEeKFetXe1Hftng _2XYkoCnJEeKFetXe1Hftng _2XYkoinJEeKFetXe1Hftng">
       <outgoingEdge xmi:id="_2XpqYCnJEeKFetXe1Hftng" targetNode="_2Xf5YCnJEeKFetXe1Hftng">
-        <typeReference href="http://www.storydriven.org/core/0.3.1#//ExtendableElement/annotation"/>
+        <typeReference href="http://www.muml.org/core/1.0.0#//ExtendableElement/annotation"/>
       </outgoingEdge>
       <eType href="http://www.muml.org/pim/realtimestatechart/1.0.0#//RealtimeStatechart"/>
     </node>
@@ -859,7 +859,7 @@
       <slotAttribute href="http://www.muml.org/modelinstance/1.0.0#//ModelElementCategory/key"/>
     </constraint>
     <constraint xsi:type="de.upb.swt.qvt.tgg:OCLConstraint" xmi:id="_Ys2oIaA5EeCfbLuZZ68Xtg" slotNode="_qMhBAJzYEeCxo-rGjpVr5g" expression="atomSys.name">
-      <slotAttribute href="http://www.storydriven.org/core/0.3.1#//NamedElement/name"/>
+      <slotAttribute href="http://www.muml.org/core/1.0.0#//NamedElement/name"/>
     </constraint>
     <constraint xsi:type="de.upb.swt.qvt.tgg:OCLConstraint" xmi:id="_L3RpIKWlEeCn_NGV1J09-Q" slotNode="_sWWbUJzYEeCxo-rGjpVr5g" expression="atomComp.name">
       <slotAttribute href="http://www.muml.org/simulink/1.0.0#//Block/name"/>
@@ -959,7 +959,7 @@
       <slotAttribute href="http://www.muml.org/modelinstance/1.0.0#//ModelElementCategory/key"/>
     </constraint>
     <constraint xsi:type="de.upb.swt.qvt.tgg:OCLConstraint" xmi:id="_43hBVissEeG2hJjL7HcD9A" slotNode="_43fMIyssEeG2hJjL7HcD9A" expression="atomSys.name">
-      <slotAttribute href="http://www.storydriven.org/core/0.3.1#//NamedElement/name"/>
+      <slotAttribute href="http://www.muml.org/core/1.0.0#//NamedElement/name"/>
     </constraint>
     <constraint xsi:type="de.upb.swt.qvt.tgg:OCLConstraint" xmi:id="_43hBVyssEeG2hJjL7HcD9A" slotNode="_43fMJCssEeG2hJjL7HcD9A" expression="atomComp.name">
       <slotAttribute href="http://www.muml.org/simulink/1.0.0#//Block/name"/>
@@ -1035,7 +1035,7 @@
     </node>
     <node xmi:id="_CUO-4KC-EeCnWpMK39eFTA" name="instConfig" incomingEdge="_CUO-5qC-EeCnWpMK39eFTA _ZYjx86DFEeCnWpMK39eFTA" graphPattern="_jHdqAqAyEeC04985_I7g0A _jHdqBaAyEeC04985_I7g0A">
       <outgoingEdge xmi:id="_Xs6EEA7dEeK3S7a8oiJw3A" targetNode="_XiC34A7dEeK3S7a8oiJw3A" graphPattern="_jHdqAqAyEeC04985_I7g0A">
-        <typeReference href="http://www.storydriven.org/core/0.3.1#//ExtendableElement/annotation"/>
+        <typeReference href="http://www.muml.org/core/1.0.0#//ExtendableElement/annotation"/>
       </outgoingEdge>
       <eType href="http://www.muml.org/pim/instance/1.0.0#//ComponentInstanceConfiguration"/>
     </node>
@@ -1147,7 +1147,7 @@
     </node>
     <node xmi:id="_SRApQx0ZEeKSio6gBw7LGQ" name="instConfig" incomingEdge="_SRFhwB0ZEeKSio6gBw7LGQ _SRFhwx0ZEeKSio6gBw7LGQ" graphPattern="_SRACMR0ZEeKSio6gBw7LGQ _SRACMh0ZEeKSio6gBw7LGQ">
       <outgoingEdge xmi:id="_SRTkMB0ZEeKSio6gBw7LGQ" targetNode="_SRE6sB0ZEeKSio6gBw7LGQ" graphPattern="_SRACMR0ZEeKSio6gBw7LGQ">
-        <typeReference href="http://www.storydriven.org/core/0.3.1#//ExtendableElement/annotation"/>
+        <typeReference href="http://www.muml.org/core/1.0.0#//ExtendableElement/annotation"/>
       </outgoingEdge>
       <eType href="http://www.muml.org/pim/instance/1.0.0#//ComponentInstanceConfiguration"/>
     </node>
@@ -1256,7 +1256,7 @@
     </node>
     <node xmi:id="_xgiLINVVEeClDszfD2CezA" name="instConfig" incomingEdge="_xgrVFdVVEeClDszfD2CezA _IeYm8NVWEeClDszfD2CezA" graphPattern="_OqkR0tVVEeClDszfD2CezA _OqkR1dVVEeClDszfD2CezA">
       <outgoingEdge xmi:id="_G1Q2MGV8EeKeTMk7s4_BRA" targetNode="_G1Eo8GV8EeKeTMk7s4_BRA" graphPattern="_OqkR0tVVEeClDszfD2CezA">
-        <typeReference href="http://www.storydriven.org/core/0.3.1#//ExtendableElement/annotation"/>
+        <typeReference href="http://www.muml.org/core/1.0.0#//ExtendableElement/annotation"/>
       </outgoingEdge>
       <eType href="http://www.muml.org/pim/instance/1.0.0#//ComponentInstanceConfiguration"/>
     </node>
@@ -1365,7 +1365,7 @@
     <domain xsi:type="de.upb.swt.qvt.tgg:DomainGraphPattern" xmi:id="_OqkR1NVVEeClDszfD2CezA" typedModel="_NYLIYJzXEeCxo-rGjpVr5g" node="_OquC09VVEeClDszfD2CezA _EcllcNVWEeClDszfD2CezA _yRZt4Ni3EeCP2sffFp4Trw _6SsDwNi3EeCP2sffFp4Trw _WsLmEA60EeGnr7hzqE9llg"/>
     <domain xsi:type="de.upb.swt.qvt.tgg:DomainGraphPattern" xmi:id="_OqkR1dVVEeClDszfD2CezA" typedModel="_M439QJzXEeCxo-rGjpVr5g" node="_OqkR19VVEeClDszfD2CezA _bxXI8NVVEeClDszfD2CezA _gwiYsNVVEeClDszfD2CezA _xgiLINVVEeClDszfD2CezA _M_yVcNlPEeClStyXL6p2fw _G1Eo8GV8EeKeTMk7s4_BRA _XCWBcGV_EeKeTMk7s4_BRA"/>
     <constraint xsi:type="de.upb.swt.qvt.tgg:OCLConstraint" xmi:id="_DjoDcNYiEeC20LDW8Mn_Ng" slotNode="_gwiYsNVVEeClDszfD2CezA" expression="libRef.name">
-      <slotAttribute href="http://www.storydriven.org/core/0.3.1#//NamedElement/name"/>
+      <slotAttribute href="http://www.muml.org/core/1.0.0#//NamedElement/name"/>
     </constraint>
     <constraint xsi:type="de.upb.swt.qvt.tgg:OCLConstraint" xmi:id="_GROSINYiEeC20LDW8Mn_Ng" slotNode="__E0PgNVVEeClDszfD2CezA" expression="compInst.name">
       <slotAttribute href="http://www.muml.org/simulink/1.0.0#//Block/name"/>
@@ -1431,7 +1431,7 @@
     </node>
     <node xmi:id="_rlKPAh3SEeKBH6tGJTY7Ow" name="instConfig" incomingEdge="_rlPHgR3SEeKBH6tGJTY7Ow _rlQVoB3SEeKBH6tGJTY7Ow" graphPattern="_rlJA4R3SEeKBH6tGJTY7Ow _rlJA4x3SEeKBH6tGJTY7Ow">
       <outgoingEdge xmi:id="_tykQ8GV_EeKeTMk7s4_BRA" targetNode="_tyaf8GV_EeKeTMk7s4_BRA" graphPattern="_rlJA4R3SEeKBH6tGJTY7Ow">
-        <typeReference href="http://www.storydriven.org/core/0.3.1#//ExtendableElement/annotation"/>
+        <typeReference href="http://www.muml.org/core/1.0.0#//ExtendableElement/annotation"/>
       </outgoingEdge>
       <eType href="http://www.muml.org/pim/instance/1.0.0#//ComponentInstanceConfiguration"/>
     </node>
@@ -1534,7 +1534,7 @@
     <domain xsi:type="de.upb.swt.qvt.tgg:DomainGraphPattern" xmi:id="_rlJA4x3SEeKBH6tGJTY7Ow" typedModel="_M439QJzXEeCxo-rGjpVr5g" node="_rlJn8x3SEeKBH6tGJTY7Ow _rlKPAB3SEeKBH6tGJTY7Ow _rlKPAR3SEeKBH6tGJTY7Ow _rlKPAh3SEeKBH6tGJTY7Ow _rlK2Ex3SEeKBH6tGJTY7Ow _tyaf8GV_EeKeTMk7s4_BRA _yrFfEGV_EeKeTMk7s4_BRA"/>
     <domain xsi:type="de.upb.swt.qvt.tgg:DomainGraphPattern" xmi:id="_rlJn8B3SEeKBH6tGJTY7Ow" typedModel="_NYLIYJzXEeCxo-rGjpVr5g" node="_rlJn8h3SEeKBH6tGJTY7Ow _rlK2EB3SEeKBH6tGJTY7Ow _rlK2ER3SEeKBH6tGJTY7Ow _rlK2Eh3SEeKBH6tGJTY7Ow _rlLdJB3SEeKBH6tGJTY7Ow"/>
     <constraint xsi:type="de.upb.swt.qvt.tgg:OCLConstraint" xmi:id="_rlgNQB3SEeKBH6tGJTY7Ow" slotNode="_rlKPAR3SEeKBH6tGJTY7Ow" expression="libRef.name">
-      <slotAttribute href="http://www.storydriven.org/core/0.3.1#//NamedElement/name"/>
+      <slotAttribute href="http://www.muml.org/core/1.0.0#//NamedElement/name"/>
     </constraint>
     <constraint xsi:type="de.upb.swt.qvt.tgg:OCLConstraint" xmi:id="_rlgNQR3SEeKBH6tGJTY7Ow" slotNode="_rlKPBB3SEeKBH6tGJTY7Ow" expression="compInst.name">
       <slotAttribute href="http://www.muml.org/simulink/1.0.0#//Block/name"/>
@@ -1679,7 +1679,7 @@
     <domain xsi:type="de.upb.swt.qvt.tgg:DomainGraphPattern" xmi:id="_3tiE9KDIEeCnWpMK39eFTA" typedModel="_NYLIYJzXEeCxo-rGjpVr5g" node="_3trO4aDIEeCnWpMK39eFTA _RqcdcKDKEeCnWpMK39eFTA _hws2UKyyEeCal9OvkNx3FQ"/>
     <domain xsi:type="de.upb.swt.qvt.tgg:DomainGraphPattern" xmi:id="_3tiE9aDIEeCnWpMK39eFTA" typedModel="_M439QJzXEeCxo-rGjpVr5g" node="_3tiE-qDIEeCnWpMK39eFTA _-mm1kKDIEeCnWpMK39eFTA _HLaIMKDJEeCnWpMK39eFTA"/>
     <constraint xsi:type="de.upb.swt.qvt.tgg:OCLConstraint" xmi:id="_4Q4NIKDJEeCnWpMK39eFTA" slotNode="_HLaIMKDJEeCnWpMK39eFTA" expression="libRef.name">
-      <slotAttribute href="http://www.storydriven.org/core/0.3.1#//NamedElement/name"/>
+      <slotAttribute href="http://www.muml.org/core/1.0.0#//NamedElement/name"/>
     </constraint>
     <constraint xsi:type="de.upb.swt.qvt.tgg:OCLConstraint" xmi:id="_IsLmIKWlEeCn_NGV1J09-Q" slotNode="_J5dC0KDJEeCnWpMK39eFTA" expression="atomCompInst.name">
       <slotAttribute href="http://www.muml.org/simulink/1.0.0#//Block/name"/>
@@ -1785,7 +1785,7 @@
     <domain xsi:type="de.upb.swt.qvt.tgg:DomainGraphPattern" xmi:id="_uJ0TEystEeG2hJjL7HcD9A" typedModel="_NK6IcJzXEeCxo-rGjpVr5g" node="_uJ0TFystEeG2hJjL7HcD9A _uJ06ISstEeG2hJjL7HcD9A _uJ06IystEeG2hJjL7HcD9A _uJ06JSstEeG2hJjL7HcD9A"/>
     <domain xsi:type="de.upb.swt.qvt.tgg:DomainGraphPattern" xmi:id="_uJ0TFCstEeG2hJjL7HcD9A" typedModel="_M439QJzXEeCxo-rGjpVr5g" node="_uJ0TGCstEeG2hJjL7HcD9A _uJ06ICstEeG2hJjL7HcD9A _uJ06IistEeG2hJjL7HcD9A _uJ06JCstEeG2hJjL7HcD9A"/>
     <constraint xsi:type="de.upb.swt.qvt.tgg:OCLConstraint" xmi:id="_uJ39cistEeG2hJjL7HcD9A" slotNode="_uJ06JCstEeG2hJjL7HcD9A" expression="libRef.name">
-      <slotAttribute href="http://www.storydriven.org/core/0.3.1#//NamedElement/name"/>
+      <slotAttribute href="http://www.muml.org/core/1.0.0#//NamedElement/name"/>
     </constraint>
     <constraint xsi:type="de.upb.swt.qvt.tgg:OCLConstraint" xmi:id="_uJ39cystEeG2hJjL7HcD9A" slotNode="_uJ06JSstEeG2hJjL7HcD9A" expression="atomCompInst.name">
       <slotAttribute href="http://www.muml.org/simulink/1.0.0#//Block/name"/>
@@ -1918,7 +1918,7 @@
       <slotAttribute href="http://www.muml.org/simulink/1.0.0#//Block/name"/>
     </constraint>
     <constraint xsi:type="de.upb.swt.qvt.tgg:OCLConstraint" xmi:id="_8sUBUssPEeCOW8zkXzL0SQ" slotNode="_8sUBMMsPEeCOW8zkXzL0SQ" expression="inPort.name">
-      <slotAttribute href="http://www.storydriven.org/core/0.3.1#//NamedElement/name"/>
+      <slotAttribute href="http://www.muml.org/core/1.0.0#//NamedElement/name"/>
     </constraint>
     <constraint xsi:type="de.upb.swt.qvt.tgg:OCLConstraint" xmi:id="_NjKCcMsQEeCOW8zkXzL0SQ" slotNode="_8sUBMMsPEeCOW8zkXzL0SQ" expression="component::PortDirectionKind::IN">
       <slotAttribute href="http://www.muml.org/pim/component/1.0.0#//DirectedTypedPort/kind"/>
@@ -2051,7 +2051,7 @@
       <slotAttribute href="http://www.muml.org/simulink/1.0.0#//Block/name"/>
     </constraint>
     <constraint xsi:type="de.upb.swt.qvt.tgg:OCLConstraint" xmi:id="_2XW_ecsREeCOW8zkXzL0SQ" slotNode="_2XW_V8sREeCOW8zkXzL0SQ" expression="outPort.name">
-      <slotAttribute href="http://www.storydriven.org/core/0.3.1#//NamedElement/name"/>
+      <slotAttribute href="http://www.muml.org/core/1.0.0#//NamedElement/name"/>
     </constraint>
     <constraint xsi:type="de.upb.swt.qvt.tgg:OCLConstraint" xmi:id="_t6rS8NrgEeCPa78HvI270A" slotNode="_2XW_V8sREeCOW8zkXzL0SQ" expression="component::PortDirectionKind::OUT">
       <slotAttribute href="http://www.muml.org/pim/component/1.0.0#//DirectedTypedPort/kind"/>
@@ -2180,7 +2180,7 @@
         <typeReference href="http://www.muml.org/pim/behavior/1.0.0#//TypedNamedElement/dataType"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_vDuxwE0JEeObv8tlIHzEPQ" targetNode="_vCGaEE0JEeObv8tlIHzEPQ" graphPattern="_9TuyQT0lEeG5q9-3cEBhJA">
-        <typeReference href="http://www.storydriven.org/core/0.3.1#//ExtendableElement/annotation"/>
+        <typeReference href="http://www.muml.org/core/1.0.0#//ExtendableElement/annotation"/>
       </outgoingEdge>
       <eType href="http://www.muml.org/pim/component/1.0.0#//HybridPort"/>
     </node>
@@ -2262,7 +2262,7 @@
       <slotAttribute href="http://www.muml.org/simulink/1.0.0#//Block/name"/>
     </constraint>
     <constraint xsi:type="de.upb.swt.qvt.tgg:OCLConstraint" xmi:id="_9Tx1kT0lEeG5q9-3cEBhJA" slotNode="_EMk5YD0mEeG5q9-3cEBhJA" expression="outPort.name">
-      <slotAttribute href="http://www.storydriven.org/core/0.3.1#//NamedElement/name"/>
+      <slotAttribute href="http://www.muml.org/core/1.0.0#//NamedElement/name"/>
     </constraint>
     <constraint xsi:type="de.upb.swt.qvt.tgg:OCLConstraint" xmi:id="_9Tx1kj0lEeG5q9-3cEBhJA" slotNode="_EMk5YD0mEeG5q9-3cEBhJA" expression="component::PortDirectionKind::OUT">
       <slotAttribute href="http://www.muml.org/pim/component/1.0.0#//DirectedTypedPort/kind"/>
@@ -2400,7 +2400,7 @@
         <typeReference href="http://www.muml.org/pim/behavior/1.0.0#//TypedNamedElement/dataType"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_EG2yIEudEeODycb8rL9Fjg" targetNode="_EGj3MEudEeODycb8rL9Fjg" graphPattern="_hG_k0T0nEeG5q9-3cEBhJA">
-        <typeReference href="http://www.storydriven.org/core/0.3.1#//ExtendableElement/annotation"/>
+        <typeReference href="http://www.muml.org/core/1.0.0#//ExtendableElement/annotation"/>
       </outgoingEdge>
       <eType href="http://www.muml.org/pim/component/1.0.0#//HybridPort"/>
     </node>
@@ -2560,7 +2560,7 @@
     <domain xsi:type="de.upb.swt.qvt.tgg:DomainGraphPattern" xmi:id="_hG_k0z0nEeG5q9-3cEBhJA" typedModel="_M439QJzXEeCxo-rGjpVr5g" node="_hHAy8z0nEeG5q9-3cEBhJA _hHBaAT0nEeG5q9-3cEBhJA _hHBaAz0nEeG5q9-3cEBhJA _hHBaBD0nEeG5q9-3cEBhJA _8z_PkMBpEeG5iqrc0ZpK4g _EGj3MEudEeODycb8rL9Fjg _NSgpYEudEeODycb8rL9Fjg"/>
     <domain xsi:type="de.upb.swt.qvt.tgg:DomainGraphPattern" xmi:id="_hG_k1D0nEeG5q9-3cEBhJA" typedModel="_NYLIYJzXEeCxo-rGjpVr5g" node="_hG_k1z0nEeG5q9-3cEBhJA _hHAy8D0nEeG5q9-3cEBhJA _hHAy8T0nEeG5q9-3cEBhJA _hHBaAj0nEeG5q9-3cEBhJA"/>
     <constraint xsi:type="de.upb.swt.qvt.tgg:OCLConstraint" xmi:id="_hHD2Rj0nEeG5q9-3cEBhJA" slotNode="_hHBaBD0nEeG5q9-3cEBhJA" expression="inPort.name">
-      <slotAttribute href="http://www.storydriven.org/core/0.3.1#//NamedElement/name"/>
+      <slotAttribute href="http://www.muml.org/core/1.0.0#//NamedElement/name"/>
     </constraint>
     <constraint xsi:type="de.upb.swt.qvt.tgg:OCLConstraint" xmi:id="_hHD2Rz0nEeG5q9-3cEBhJA" slotNode="_uNN0MD0nEeG5q9-3cEBhJA" expression="hybInPort.name">
       <slotAttribute href="http://www.muml.org/simulink/1.0.0#//Block/name"/>
@@ -2609,7 +2609,7 @@
         <typeReference href="http://www.muml.org/pim/component/1.0.0#//Port/component"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_GnsZABLiEeKCjeR7boqtXw" targetNode="_GnjPEBLiEeKCjeR7boqtXw" graphPattern="_0UvhEuHrEeCRmI32NP_6kw">
-        <typeReference href="http://www.storydriven.org/core/0.3.1#//ExtendableElement/annotation"/>
+        <typeReference href="http://www.muml.org/core/1.0.0#//ExtendableElement/annotation"/>
       </outgoingEdge>
       <eType href="http://www.muml.org/pim/component/1.0.0#//DiscretePort"/>
     </node>
@@ -3710,7 +3710,7 @@
         <typeReference href="http://www.muml.org/pim/component/1.0.0#//Port/component"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_rLajvKESEeK3zaunJX6gEw" targetNode="_rLHozaESEeK3zaunJX6gEw" graphPattern="_rLHogqESEeK3zaunJX6gEw">
-        <typeReference href="http://www.storydriven.org/core/0.3.1#//ExtendableElement/annotation"/>
+        <typeReference href="http://www.muml.org/core/1.0.0#//ExtendableElement/annotation"/>
       </outgoingEdge>
       <eType href="http://www.muml.org/pim/component/1.0.0#//DiscretePort"/>
     </node>
@@ -4443,7 +4443,7 @@
         <typeReference href="http://www.muml.org/pim/component/1.0.0#//Port/component"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_Oac8taEWEeKHiPhFkTIeGQ" targetNode="_OaTLsKEWEeKHiPhFkTIeGQ">
-        <typeReference href="http://www.storydriven.org/core/0.3.1#//ExtendableElement/annotation"/>
+        <typeReference href="http://www.muml.org/core/1.0.0#//ExtendableElement/annotation"/>
       </outgoingEdge>
       <eType href="http://www.muml.org/pim/component/1.0.0#//DiscretePort"/>
     </node>
@@ -4823,7 +4823,7 @@
         <typeReference href="http://www.muml.org/pim/component/1.0.0#//Port/component"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_wU6QAKEWEeKHiPhFkTIeGQ" targetNode="_hgn8UKEWEeKHiPhFkTIeGQ">
-        <typeReference href="http://www.storydriven.org/core/0.3.1#//ExtendableElement/annotation"/>
+        <typeReference href="http://www.muml.org/core/1.0.0#//ExtendableElement/annotation"/>
       </outgoingEdge>
       <eType href="http://www.muml.org/pim/component/1.0.0#//DiscretePort"/>
     </node>
@@ -5277,7 +5277,7 @@
         <typeReference href="http://www.muml.org/pim/instance/1.0.0#//PortInstance/componentInstance"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_-DVI4HHkEeKe2tmIfMT6VA" targetNode="_-DCN8HHkEeKe2tmIfMT6VA" graphPattern="_Ix65cR9aEeKF_enPmnxIIw">
-        <typeReference href="http://www.storydriven.org/core/0.3.1#//ExtendableElement/annotation"/>
+        <typeReference href="http://www.muml.org/core/1.0.0#//ExtendableElement/annotation"/>
       </outgoingEdge>
       <eType href="http://www.muml.org/pim/instance/1.0.0#//DiscreteSinglePortInstance"/>
     </node>
@@ -5509,7 +5509,7 @@
         <typeReference href="http://www.muml.org/pim/instance/1.0.0#//PortInstance/componentInstance"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="__NUNQHfBEeGV25REnt3VPQ" targetNode="__M3hUHfBEeGV25REnt3VPQ" graphPattern="_qH-DYv4sEeCXt5i8QOvGag">
-        <typeReference href="http://www.storydriven.org/core/0.3.1#//ExtendableElement/annotation"/>
+        <typeReference href="http://www.muml.org/core/1.0.0#//ExtendableElement/annotation"/>
       </outgoingEdge>
       <eType href="http://www.muml.org/pim/instance/1.0.0#//DiscreteSinglePortInstance"/>
     </node>
@@ -5857,7 +5857,7 @@
       <slotAttribute href="http://www.muml.org/simulink/1.0.0#//Block/name"/>
     </constraint>
     <constraint xsi:type="de.upb.swt.qvt.tgg:OCLConstraint" xmi:id="_4yIvsOQrEeCvv675m38mew" slotNode="_yADWoNigEeCoxJMBKfH_rA" expression="inPort.name">
-      <slotAttribute href="http://www.storydriven.org/core/0.3.1#//NamedElement/name"/>
+      <slotAttribute href="http://www.muml.org/core/1.0.0#//NamedElement/name"/>
     </constraint>
     <constraint xsi:type="de.upb.swt.qvt.tgg:OCLConstraint" xmi:id="_t0th8MBrEeG5iqrc0ZpK4g" slotNode="_LICHsNihEeCoxJMBKfH_rA" expression="if (portType.oclAsType(muml::types::PrimitiveDataType).primitiveType = muml::types::PrimitiveTypes::INT32 or portType.oclAsType(muml::types::PrimitiveDataType).primitiveType = muml::types::PrimitiveTypes::INT64) then model::DataType::INT32 else if portType.oclAsType(muml::types::PrimitiveDataType).primitiveType = muml::types::PrimitiveTypes::DOUBLE then model::DataType::DOUBLE else if portType.oclAsType(muml::types::PrimitiveDataType).primitiveType = muml::types::PrimitiveTypes::BOOLEAN then model::DataType::BOOLEAN else if portType.oclAsType(muml::types::PrimitiveDataType).primitiveType = muml::types::PrimitiveTypes::INT16 then model::DataType::INT16 else if portType.oclAsType(muml::types::PrimitiveDataType).primitiveType = muml::types::PrimitiveTypes::INT8 then model::DataType::INT8 else model::DataType::BOOLEAN endif endif endif endif endif">
       <slotAttribute href="http://www.muml.org/simulink/1.0.0#//PortBlock/type"/>
@@ -5972,7 +5972,7 @@
       <slotAttribute href="http://www.muml.org/pim/component/1.0.0#//DirectedTypedPort/kind"/>
     </constraint>
     <constraint xsi:type="de.upb.swt.qvt.tgg:OCLConstraint" xmi:id="_Ad_BEOQsEeCvv675m38mew" slotNode="_mzDybNijEeCoxJMBKfH_rA" expression="outPort.name">
-      <slotAttribute href="http://www.storydriven.org/core/0.3.1#//NamedElement/name"/>
+      <slotAttribute href="http://www.muml.org/core/1.0.0#//NamedElement/name"/>
     </constraint>
     <constraint xsi:type="de.upb.swt.qvt.tgg:OCLConstraint" xmi:id="_DWKvIOQsEeCvv675m38mew" slotNode="_beR2ANikEeCoxJMBKfH_rA" expression="portInst.name.concat(':').concat(p.name)">
       <slotAttribute href="http://www.muml.org/simulink/1.0.0#//Block/name"/>
@@ -6074,7 +6074,7 @@
         <typeReference href="http://www.muml.org/pim/connector/1.0.0#//ConnectorEndpointInstance/type"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_oTTjYXHqEeKe2tmIfMT6VA" targetNode="_oTKZcHHqEeKe2tmIfMT6VA" graphPattern="_tLIuMR9aEeKF_enPmnxIIw">
-        <typeReference href="http://www.storydriven.org/core/0.3.1#//ExtendableElement/annotation"/>
+        <typeReference href="http://www.muml.org/core/1.0.0#//ExtendableElement/annotation"/>
       </outgoingEdge>
       <eType href="http://www.muml.org/pim/instance/1.0.0#//DiscreteSinglePortInstance"/>
     </node>
@@ -6171,7 +6171,7 @@
       <slotAttribute href="http://www.muml.org/simulink/1.0.0#//Block/name"/>
     </constraint>
     <constraint xsi:type="de.upb.swt.qvt.tgg:OCLConstraint" xmi:id="_tLO02R9aEeKF_enPmnxIIw" slotNode="_tLJVRB9aEeKF_enPmnxIIw" expression="outPort.name">
-      <slotAttribute href="http://www.storydriven.org/core/0.3.1#//NamedElement/name"/>
+      <slotAttribute href="http://www.muml.org/core/1.0.0#//NamedElement/name"/>
     </constraint>
     <constraint xsi:type="de.upb.swt.qvt.tgg:OCLConstraint" xmi:id="_tLO03B9aEeKF_enPmnxIIw" slotNode="_tLJ8Ux9aEeKF_enPmnxIIw" expression="dp.name.concat('_net_address')">
       <slotAttribute href="http://www.muml.org/simulink/1.0.0#//Block/name"/>
@@ -6249,7 +6249,7 @@
         <typeReference href="http://www.muml.org/pim/connector/1.0.0#//ConnectorEndpointInstance/type"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_hGIh1nfCEeGV25REnt3VPQ" targetNode="_hGIh0HfCEeGV25REnt3VPQ" graphPattern="_bsyrwtinEeCoxJMBKfH_rA">
-        <typeReference href="http://www.storydriven.org/core/0.3.1#//ExtendableElement/annotation"/>
+        <typeReference href="http://www.muml.org/core/1.0.0#//ExtendableElement/annotation"/>
       </outgoingEdge>
       <eType href="http://www.muml.org/pim/instance/1.0.0#//DiscreteSinglePortInstance"/>
     </node>
@@ -6436,7 +6436,7 @@
       <slotAttribute href="http://www.muml.org/simulink/1.0.0#//Block/name"/>
     </constraint>
     <constraint xsi:type="de.upb.swt.qvt.tgg:OCLConstraint" xmi:id="_jqTIYOQtEeCvv675m38mew" slotNode="_bsyrzNinEeCoxJMBKfH_rA" expression="outPort.name">
-      <slotAttribute href="http://www.storydriven.org/core/0.3.1#//NamedElement/name"/>
+      <slotAttribute href="http://www.muml.org/core/1.0.0#//NamedElement/name"/>
     </constraint>
     <constraint xsi:type="de.upb.swt.qvt.tgg:OCLConstraint" xmi:id="_7mehUGE3EeGtup0fCoofjQ" slotNode="_UrJ8MGE3EeGtup0fCoofjQ" expression="id.value">
       <slotAttribute href="http://www.muml.org/simulink/1.0.0#//Constant/value"/>

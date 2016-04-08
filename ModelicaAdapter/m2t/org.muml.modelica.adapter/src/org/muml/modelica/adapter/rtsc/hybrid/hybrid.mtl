@@ -1,4 +1,4 @@
-[module hybrid('http://www.storydriven.org/core/0.3.1',
+[module hybrid('http://www.muml.org/core/1.0.0',
 			   'http://www.muml.org/pim/component/1.0.0',
 			   'http://www.muml.org/pim/instance/1.0.0',
 'http://www.muml.org/pim/valuetype/1.0.0')/]

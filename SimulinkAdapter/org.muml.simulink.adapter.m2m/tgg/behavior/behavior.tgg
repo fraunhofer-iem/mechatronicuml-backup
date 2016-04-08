@@ -59,7 +59,7 @@
       <typedModel href="../fujaba2simulink.tgg#_NK6IcJzXEeCxo-rGjpVr5g"/>
     </domain>
     <constraint xsi:type="de.upb.swt.qvt.tgg:OCLConstraint" xmi:id="_Wm-XgMXaEeCl0_SfQxol4w" slotNode="_OfX-QMXaEeCl0_SfQxol4w" expression="sfState.name">
-      <slotAttribute href="http://www.storydriven.org/core/0.3.1#//NamedElement/name"/>
+      <slotAttribute href="http://www.muml.org/core/1.0.0#//NamedElement/name"/>
     </constraint>
     <constraint xsi:type="de.upb.swt.qvt.tgg:OCLConstraint" xmi:id="_S02tQMc5EeCiXcmvaJrd5w" slotNode="_RTrR4MXaEeCl0_SfQxol4w" expression="scState.name">
       <slotAttribute href="http://www.muml.org/simulink/1.0.0#//stateflow/State/name"/>
@@ -338,7 +338,7 @@
     </node>
     <node xmi:id="_NevkoC2iEeKrdcw9A70YWA" name="scEntryAction" incomingEdge="_Ne5VpS2iEeKrdcw9A70YWA _E6CT8AxgEeGeE5xZxQj7Ew" graphPattern="_n2yQYAO9EeGwDJsbysphKQ _n2y3cAO9EeGwDJsbysphKQ">
       <outgoingEdge xmi:id="_Q6_pFS2iEeKrdcw9A70YWA" targetNode="_Q614EC2iEeKrdcw9A70YWA" graphPattern="_n2yQYAO9EeGwDJsbysphKQ">
-        <typeReference href="http://www.storydriven.org/core/0.3.1#//ExtendableElement/annotation"/>
+        <typeReference href="http://www.muml.org/core/1.0.0#//ExtendableElement/annotation"/>
       </outgoingEdge>
       <eType href="http://www.muml.org/pim/realtimestatechart/1.0.0#//Action"/>
     </node>
@@ -405,7 +405,7 @@
     </node>
     <node xmi:id="_p4L9kAn2EeGUabeDAjLyaw" name="scExitAction" incomingEdge="_p4WVoAn2EeGUabeDAjLyaw _Ht6-kQxlEeGeE5xZxQj7Ew" graphPattern="_S9SvIQn2EeGUabeDAjLyaw _S9TWMAn2EeGUabeDAjLyaw">
       <outgoingEdge xmi:id="_RQwwJiKeEeKSXe5NL0CtwA" targetNode="_RQwwICKeEeKSXe5NL0CtwA" graphPattern="_S9SvIQn2EeGUabeDAjLyaw">
-        <typeReference href="http://www.storydriven.org/core/0.3.1#//ExtendableElement/annotation"/>
+        <typeReference href="http://www.muml.org/core/1.0.0#//ExtendableElement/annotation"/>
       </outgoingEdge>
       <eType href="http://www.muml.org/pim/realtimestatechart/1.0.0#//Action"/>
     </node>
@@ -527,7 +527,7 @@
       <slotAttribute href="http://www.muml.org/pim/realtimestatechart/1.0.0#//State/initial"/>
     </constraint>
     <constraint xsi:type="de.upb.swt.qvt.tgg:OCLConstraint" xmi:id="_iaKkEBENEeGeYqZ5Cm-n0w" slotNode="_IlS30BENEeGeYqZ5Cm-n0w" expression="sfStateIn.name">
-      <slotAttribute href="http://www.storydriven.org/core/0.3.1#//NamedElement/name"/>
+      <slotAttribute href="http://www.muml.org/core/1.0.0#//NamedElement/name"/>
     </constraint>
     <constraint xsi:type="de.upb.swt.qvt.tgg:OCLConstraint" xmi:id="_isj7oBENEeGeYqZ5Cm-n0w" slotNode="_E8ovEBENEeGeYqZ5Cm-n0w" expression="scStateIn.initial">
       <slotAttribute href="http://www.muml.org/simulink/1.0.0#//stateflow/State/initial"/>
@@ -955,7 +955,7 @@
         <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//Transition/target"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_RHyCYCAYEeGVuP_ceMrrSA" targetNode="_RHpfgCAYEeGVuP_ceMrrSA" graphPattern="_sbvVIR9PEeG1lImYf33bVw">
-        <typeReference href="http://www.storydriven.org/core/0.3.1#//ExtendableElement/annotation"/>
+        <typeReference href="http://www.muml.org/core/1.0.0#//ExtendableElement/annotation"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_JNEnsCJfEeG0bu9wmNQLQg" targetNode="_JMh1ICJfEeG0bu9wmNQLQg">
         <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//Transition/synchronization"/>
@@ -1186,7 +1186,7 @@
   <rule xsi:type="de.upb.swt.qvt.tgg:TripleGraphGrammarRule" xmi:id="_PnLswDq7EeGxvdE_FoEV0w" name="scAsyncRec2sfAsyncRecPara">
     <node xmi:id="_PnOwEjq7EeGxvdE_FoEV0w" name="scTransIn" incomingEdge="_PnPXJTq7EeGxvdE_FoEV0w" graphPattern="_PnOwEDq7EeGxvdE_FoEV0w _PnOwETq7EeGxvdE_FoEV0w _PnPXIDq7EeGxvdE_FoEV0w">
       <outgoingEdge xmi:id="_3KUowF1KEeG-AZcYPcSXWQ" targetNode="_3KLe0F1KEeG-AZcYPcSXWQ">
-        <typeReference href="http://www.storydriven.org/core/0.3.1#//ExtendableElement/annotation"/>
+        <typeReference href="http://www.muml.org/core/1.0.0#//ExtendableElement/annotation"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_wxSYMF1MEeG-AZcYPcSXWQ" targetNode="_gi8qUDq7EeGxvdE_FoEV0w">
         <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//Transition/triggerMessageEvent"/>
@@ -1247,7 +1247,7 @@
   <rule xsi:type="de.upb.swt.qvt.tgg:TripleGraphGrammarRule" xmi:id="_vFL6wEBYEeGxy-I1s6LQvw" name="scAsyncSend2sfAsyncSendEnd">
     <node xmi:id="_vFOXBUBYEeGxy-I1s6LQvw" name="scTransIn" incomingEdge="_vFPlIkBYEeGxy-I1s6LQvw" graphPattern="_vFNv8EBYEeGxy-I1s6LQvw _vFNv8UBYEeGxy-I1s6LQvw _vFOXA0BYEeGxy-I1s6LQvw">
       <outgoingEdge xmi:id="_trpu4F1KEeG-AZcYPcSXWQ" targetNode="_trfW0F1KEeG-AZcYPcSXWQ">
-        <typeReference href="http://www.storydriven.org/core/0.3.1#//ExtendableElement/annotation"/>
+        <typeReference href="http://www.muml.org/core/1.0.0#//ExtendableElement/annotation"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_iYMLsF1MEeG-AZcYPcSXWQ" targetNode="_ywMycEtlEeGmOYWyP6IFRQ">
         <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//Transition/raiseMessageEvent"/>
@@ -1339,7 +1339,7 @@
     </node>
     <node xmi:id="_NuYvwl1EEeG-AZcYPcSXWQ" name="scTransIn" incomingEdge="_NubMAV1EEeG-AZcYPcSXWQ" graphPattern="_NuW6kF1EEeG-AZcYPcSXWQ _NuW6kV1EEeG-AZcYPcSXWQ _NuXhoF1EEeG-AZcYPcSXWQ">
       <outgoingEdge xmi:id="_lzVu0F1KEeG-AZcYPcSXWQ" targetNode="_lzLWwF1KEeG-AZcYPcSXWQ">
-        <typeReference href="http://www.storydriven.org/core/0.3.1#//ExtendableElement/annotation"/>
+        <typeReference href="http://www.muml.org/core/1.0.0#//ExtendableElement/annotation"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_sB8UMF1MEeG-AZcYPcSXWQ" targetNode="_NuZW0F1EEeG-AZcYPcSXWQ">
         <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//Transition/triggerMessageEvent"/>
@@ -1604,7 +1604,7 @@
         <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//ClockConstraint/bound"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_iTNG5UubEeODycb8rL9Fjg" targetNode="_iTD88EubEeODycb8rL9Fjg">
-        <typeReference href="http://www.storydriven.org/core/0.3.1#//ExtendableElement/annotation"/>
+        <typeReference href="http://www.muml.org/core/1.0.0#//ExtendableElement/annotation"/>
       </outgoingEdge>
       <eType href="http://www.muml.org/pim/realtimestatechart/1.0.0#//ClockConstraint"/>
     </node>
@@ -1768,7 +1768,7 @@
         <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//ClockConstraint/clock"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_ccke8EuAEeODycb8rL9Fjg" targetNode="_ccat8EuAEeODycb8rL9Fjg" graphPattern="_by8AEV16EeG-AZcYPcSXWQ">
-        <typeReference href="http://www.storydriven.org/core/0.3.1#//ExtendableElement/annotation"/>
+        <typeReference href="http://www.muml.org/core/1.0.0#//ExtendableElement/annotation"/>
       </outgoingEdge>
       <eType href="http://www.muml.org/pim/realtimestatechart/1.0.0#//ClockConstraint"/>
     </node>
@@ -1872,7 +1872,7 @@
   <rule xsi:type="de.upb.swt.qvt.tgg:TripleGraphGrammarRule" xmi:id="_wQT-sGFVEeGQnfAykX6w5Q" name="scGuard2sfGuard">
     <node xmi:id="_wQVz4mFVEeGQnfAykX6w5Q" name="scTrans" incomingEdge="_wQWa8WFVEeGQnfAykX6w5Q" graphPattern="_wQVz4GFVEeGQnfAykX6w5Q _wQVz4WFVEeGQnfAykX6w5Q _wQVz42FVEeGQnfAykX6w5Q">
       <outgoingEdge xmi:id="_neepJiKWEeKSXe5NL0CtwA" targetNode="_neepICKWEeKSXe5NL0CtwA">
-        <typeReference href="http://www.storydriven.org/core/0.3.1#//ExtendableElement/annotation"/>
+        <typeReference href="http://www.muml.org/core/1.0.0#//ExtendableElement/annotation"/>
       </outgoingEdge>
       <eType href="http://www.muml.org/pim/realtimestatechart/1.0.0#//Transition"/>
     </node>
@@ -1979,7 +1979,7 @@
     </node>
     <node xmi:id="_EzcPQJ6FEeGW6sj2RUML5A" name="scAction" incomingEdge="_EzpqoJ6FEeGW6sj2RUML5A _aXwFEGFXEeGQnfAykX6w5Q" graphPattern="_MguD02FXEeGQnfAykX6w5Q">
       <outgoingEdge xmi:id="_muj10SKbEeKSXe5NL0CtwA" targetNode="_muaE0CKbEeKSXe5NL0CtwA">
-        <typeReference href="http://www.storydriven.org/core/0.3.1#//ExtendableElement/annotation"/>
+        <typeReference href="http://www.muml.org/core/1.0.0#//ExtendableElement/annotation"/>
       </outgoingEdge>
       <eType href="http://www.muml.org/pim/realtimestatechart/1.0.0#//Action"/>
     </node>
@@ -2169,7 +2169,7 @@
     </node>
     <node xmi:id="_oK1WAL7DEeGV5Nk2H6AG6Q" name="scOperation" incomingEdge="_oLAVIL7DEeGV5Nk2H6AG6Q _qTx_gL7DEeGV5Nk2H6AG6Q" graphPattern="_PAf1gWbUEeGMT4_hdcVGvw _PAgckWbUEeGMT4_hdcVGvw">
       <outgoingEdge xmi:id="_ZF4FgCKOEeKSXe5NL0CtwA" targetNode="_ZFx-4CKOEeKSXe5NL0CtwA" graphPattern="_PAf1gWbUEeGMT4_hdcVGvw">
-        <typeReference href="http://www.storydriven.org/core/0.3.1#//ExtendableElement/annotation"/>
+        <typeReference href="http://www.muml.org/core/1.0.0#//ExtendableElement/annotation"/>
       </outgoingEdge>
       <eType href="http://www.muml.org/pim/behavior/1.0.0#//Operation"/>
     </node>
@@ -2269,7 +2269,7 @@
     </node>
     <node xmi:id="_bBpSML7DEeGV5Nk2H6AG6Q" name="scOperation" incomingEdge="_bC3aML7DEeGV5Nk2H6AG6Q _dS0DkL7DEeGV5Nk2H6AG6Q" graphPattern="_DNrx8WbYEeGMT4_hdcVGvw _DNrx82bYEeGMT4_hdcVGvw">
       <outgoingEdge xmi:id="_qfIAYCJ6EeKATKJjFP_pGw" targetNode="_qe1FcCJ6EeKATKJjFP_pGw" graphPattern="_DNrx8WbYEeGMT4_hdcVGvw">
-        <typeReference href="http://www.storydriven.org/core/0.3.1#//ExtendableElement/annotation"/>
+        <typeReference href="http://www.muml.org/core/1.0.0#//ExtendableElement/annotation"/>
       </outgoingEdge>
       <eType href="http://www.muml.org/pim/behavior/1.0.0#//Operation"/>
     </node>
@@ -2589,7 +2589,7 @@
         <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//Transition/synchronization"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_PRF-5o03EeGA-YAQsv-62A" targetNode="_PRDiqY03EeGA-YAQsv-62A" graphPattern="_PRC7kY03EeGA-YAQsv-62A">
-        <typeReference href="http://www.storydriven.org/core/0.3.1#//ExtendableElement/annotation"/>
+        <typeReference href="http://www.muml.org/core/1.0.0#//ExtendableElement/annotation"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_gAMZcI03EeGA-YAQsv-62A" targetNode="_PRC7nY03EeGA-YAQsv-62A">
         <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//Transition/source"/>
@@ -3097,7 +3097,7 @@
     </node>
     <node xmi:id="_CpLbsB28EeKWU6fgPSPnQg" name="scMessagePara" incomingEdge="_CpRiVR28EeKWU6fgPSPnQg _ba8sMB28EeKWU6fgPSPnQg" graphPattern="_YEIW1B27EeKWU6fgPSPnQg">
       <outgoingEdge xmi:id="_FVOLNh28EeKWU6fgPSPnQg" targetNode="_FVOLMB28EeKWU6fgPSPnQg">
-        <typeReference href="http://www.storydriven.org/core/0.3.1#//ExtendableElement/annotation"/>
+        <typeReference href="http://www.muml.org/core/1.0.0#//ExtendableElement/annotation"/>
       </outgoingEdge>
       <eType href="http://www.muml.org/pim/behavior/1.0.0#//Parameter"/>
     </node>
@@ -3201,7 +3201,7 @@
     </node>
     <node xmi:id="_OMIsFx29EeKWU6fgPSPnQg" name="scMessagePara" incomingEdge="_OMIsJB29EeKWU6fgPSPnQg _OMIsJx29EeKWU6fgPSPnQg" graphPattern="_OMCldB29EeKWU6fgPSPnQg">
       <outgoingEdge xmi:id="_OMIsKh29EeKWU6fgPSPnQg" targetNode="_OMIsGh29EeKWU6fgPSPnQg">
-        <typeReference href="http://www.storydriven.org/core/0.3.1#//ExtendableElement/annotation"/>
+        <typeReference href="http://www.muml.org/core/1.0.0#//ExtendableElement/annotation"/>
       </outgoingEdge>
       <eType href="http://www.muml.org/pim/behavior/1.0.0#//Parameter"/>
     </node>
@@ -3269,7 +3269,7 @@
     </node>
     <node xmi:id="_hTtZ6B29EeKWU6fgPSPnQg" name="scMessageType" incomingEdge="_hTtZ8h29EeKWU6fgPSPnQg _xINY4IAfEeKa7ImV5GD1lA" graphPattern="_hTtZ5x29EeKWU6fgPSPnQg">
       <outgoingEdge xmi:id="_vcMXhR29EeKWU6fgPSPnQg" targetNode="_vcGQ4B29EeKWU6fgPSPnQg">
-        <typeReference href="http://www.storydriven.org/core/0.3.1#//ExtendableElement/annotation"/>
+        <typeReference href="http://www.muml.org/core/1.0.0#//ExtendableElement/annotation"/>
       </outgoingEdge>
       <eType href="http://www.muml.org/pim/msgtype/1.0.0#//MessageType"/>
     </node>
@@ -3371,7 +3371,7 @@
     </node>
     <node xmi:id="_O4p-aB2-EeKWU6fgPSPnQg" name="scMessageType" incomingEdge="_O4p-cB2-EeKWU6fgPSPnQg _PCkwUIAfEeKa7ImV5GD1lA" graphPattern="_O4p-Zx2-EeKWU6fgPSPnQg">
       <outgoingEdge xmi:id="_O4p-cR2-EeKWU6fgPSPnQg" targetNode="_O4p-Zh2-EeKWU6fgPSPnQg">
-        <typeReference href="http://www.storydriven.org/core/0.3.1#//ExtendableElement/annotation"/>
+        <typeReference href="http://www.muml.org/core/1.0.0#//ExtendableElement/annotation"/>
       </outgoingEdge>
       <eType href="http://www.muml.org/pim/msgtype/1.0.0#//MessageType"/>
     </node>
@@ -3530,7 +3530,7 @@
     </node>
     <node xmi:id="_223ScC2ZEeKXbsi__pbqWA" name="scEntryAction" incomingEdge="_229ZFS2ZEeKXbsi__pbqWA _ACZf0C2YEeKXbsi__pbqWA" graphPattern="_HVk55C2VEeKo4PKoxC1TKw">
       <outgoingEdge xmi:id="_6-bkxS2ZEeKXbsi__pbqWA" targetNode="_6-VeIC2ZEeKXbsi__pbqWA">
-        <typeReference href="http://www.storydriven.org/core/0.3.1#//ExtendableElement/annotation"/>
+        <typeReference href="http://www.muml.org/core/1.0.0#//ExtendableElement/annotation"/>
       </outgoingEdge>
       <eType href="http://www.muml.org/pim/realtimestatechart/1.0.0#//Action"/>
     </node>
@@ -3577,7 +3577,7 @@
     </node>
     <node xmi:id="_ES7cti2fEeKXbsi__pbqWA" name="scExitAction" incomingEdge="_ES7czS2fEeKXbsi__pbqWA _N_dzcC2fEeKXbsi__pbqWA" graphPattern="_ES7ctC2fEeKXbsi__pbqWA">
       <outgoingEdge xmi:id="_ES7cwy2fEeKXbsi__pbqWA" targetNode="_ES7ctS2fEeKXbsi__pbqWA">
-        <typeReference href="http://www.storydriven.org/core/0.3.1#//ExtendableElement/annotation"/>
+        <typeReference href="http://www.muml.org/core/1.0.0#//ExtendableElement/annotation"/>
       </outgoingEdge>
       <eType href="http://www.muml.org/pim/realtimestatechart/1.0.0#//Action"/>
     </node>
@@ -3889,7 +3889,7 @@
   <rule xsi:type="de.upb.swt.qvt.tgg:TripleGraphGrammarRule" xmi:id="_gEmXELe7EeKQmplBJxRlEw" name="scSyncConditions2sfStateActions_cond">
     <node xmi:id="_gEoMQre7EeKQmplBJxRlEw" name="scState" incomingEdge="_gEozUre7EeKQmplBJxRlEw" graphPattern="_gEoMQLe7EeKQmplBJxRlEw _gEoMQbe7EeKQmplBJxRlEw _gEoMQ7e7EeKQmplBJxRlEw">
       <outgoingEdge xmi:id="_sV8z8Le7EeKQmplBJxRlEw" targetNode="_sVmOoLe7EeKQmplBJxRlEw" graphPattern="_gEoMQbe7EeKQmplBJxRlEw">
-        <typeReference href="http://www.storydriven.org/core/0.3.1#//ExtendableElement/annotation"/>
+        <typeReference href="http://www.muml.org/core/1.0.0#//ExtendableElement/annotation"/>
       </outgoingEdge>
       <eType href="http://www.muml.org/pim/realtimestatechart/1.0.0#//State"/>
     </node>
@@ -3972,7 +3972,7 @@
   <rule xsi:type="de.upb.swt.qvt.tgg:TripleGraphGrammarRule" xmi:id="_dzKFgLvEEeKmtdIcjRkieA" name="scSyncConditions2sfStateActions_noCond">
     <node xmi:id="_dzKFg7vEEeKmtdIcjRkieA" name="scState" incomingEdge="_dzKFkrvEEeKmtdIcjRkieA" graphPattern="_dzKFgbvEEeKmtdIcjRkieA _dzKFgrvEEeKmtdIcjRkieA _dzKFhLvEEeKmtdIcjRkieA">
       <outgoingEdge xmi:id="_dzKFj7vEEeKmtdIcjRkieA" targetNode="_dzKFhbvEEeKmtdIcjRkieA" graphPattern="_dzKFgrvEEeKmtdIcjRkieA">
-        <typeReference href="http://www.storydriven.org/core/0.3.1#//ExtendableElement/annotation"/>
+        <typeReference href="http://www.muml.org/core/1.0.0#//ExtendableElement/annotation"/>
       </outgoingEdge>
       <eType href="http://www.muml.org/pim/realtimestatechart/1.0.0#//State"/>
     </node>
@@ -4072,7 +4072,7 @@
     </node>
     <node xmi:id="_jj47zLvJEeKmtdIcjRkieA" name="scState" incomingEdge="_jj4707vJEeKmtdIcjRkieA" graphPattern="_jj47wbvJEeKmtdIcjRkieA _jj47wrvJEeKmtdIcjRkieA _jj47yLvJEeKmtdIcjRkieA">
       <outgoingEdge xmi:id="_jj470rvJEeKmtdIcjRkieA" targetNode="_jj47ybvJEeKmtdIcjRkieA" graphPattern="_jj47wrvJEeKmtdIcjRkieA">
-        <typeReference href="http://www.storydriven.org/core/0.3.1#//ExtendableElement/annotation"/>
+        <typeReference href="http://www.muml.org/core/1.0.0#//ExtendableElement/annotation"/>
       </outgoingEdge>
       <eType href="http://www.muml.org/pim/realtimestatechart/1.0.0#//State"/>
     </node>
@@ -4151,7 +4151,7 @@
         <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//Transition/synchronization"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_KFO4sPh-EeOwatzSDPB_Yw" targetNode="_KEyMwPh-EeOwatzSDPB_Yw" graphPattern="_vzVacbyVEeKnzelKRucsXw">
-        <typeReference href="http://www.storydriven.org/core/0.3.1#//ExtendableElement/annotation"/>
+        <typeReference href="http://www.muml.org/core/1.0.0#//ExtendableElement/annotation"/>
       </outgoingEdge>
       <eType href="http://www.muml.org/pim/realtimestatechart/1.0.0#//Transition"/>
     </node>
@@ -4223,7 +4223,7 @@
     </node>
     <node xmi:id="_w6BzAMFGEeKXhqcUlrt9TA" incomingEdge="_w6MLEMFGEeKXhqcUlrt9TA" graphPattern="_dWuygMFGEeKXhqcUlrt9TA">
       <outgoingEdge xmi:id="_y3PtoMFGEeKXhqcUlrt9TA" targetNode="_y3MqUMFGEeKXhqcUlrt9TA">
-        <typeReference href="http://www.storydriven.org/core/0.3.1#//ExtendableElement/annotation"/>
+        <typeReference href="http://www.muml.org/core/1.0.0#//ExtendableElement/annotation"/>
       </outgoingEdge>
       <eType href="http://www.muml.org/pim/realtimestatechart/1.0.0#//Synchronization"/>
     </node>
@@ -4270,7 +4270,7 @@
   <rule xsi:type="de.upb.swt.qvt.tgg:TripleGraphGrammarRule" xmi:id="_qoxmkMImEeKu84phHCAexA" name="scSyncReceive2sfSyncVariable">
     <node xmi:id="_qozbwsImEeKu84phHCAexA" name="" incomingEdge="_qo0C1cImEeKu84phHCAexA" graphPattern="_qozbwMImEeKu84phHCAexA _qozbwcImEeKu84phHCAexA _qozbw8ImEeKu84phHCAexA">
       <outgoingEdge xmi:id="_9vmtgMImEeKu84phHCAexA" targetNode="_9vOTAMImEeKu84phHCAexA" graphPattern="_qozbwcImEeKu84phHCAexA">
-        <typeReference href="http://www.storydriven.org/core/0.3.1#//ExtendableElement/annotation"/>
+        <typeReference href="http://www.muml.org/core/1.0.0#//ExtendableElement/annotation"/>
       </outgoingEdge>
       <eType href="http://www.muml.org/pim/realtimestatechart/1.0.0#//State"/>
     </node>
@@ -4337,7 +4337,7 @@
         <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//Transition/triggerMessageEvent"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_Gx56Ic99EeK4l_fhGvbyMw" targetNode="_Gx5TEc99EeK4l_fhGvbyMw">
-        <typeReference href="http://www.storydriven.org/core/0.3.1#//ExtendableElement/annotation"/>
+        <typeReference href="http://www.muml.org/core/1.0.0#//ExtendableElement/annotation"/>
       </outgoingEdge>
       <eType href="http://www.muml.org/pim/realtimestatechart/1.0.0#//Transition"/>
     </node>
@@ -4456,7 +4456,7 @@
         <typeReference href="http://www.muml.org/pim/behavior/1.0.0#//TypedNamedElement/dataType"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="__ZMrVOPBEeKHN9VAxmB5fg" targetNode="__Y0Q0OPBEeKHN9VAxmB5fg" graphPattern="_64-ocePBEeKHN9VAxmB5fg">
-        <typeReference href="http://www.storydriven.org/core/0.3.1#//ExtendableElement/annotation"/>
+        <typeReference href="http://www.muml.org/core/1.0.0#//ExtendableElement/annotation"/>
       </outgoingEdge>
       <eType href="http://www.muml.org/pim/behavior/1.0.0#//Variable"/>
     </node>
@@ -4538,7 +4538,7 @@
         <typeReference href="http://www.muml.org/pim/behavior/1.0.0#//TypedNamedElement/dataType"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_ix7MFuPFEeKHN9VAxmB5fg" targetNode="_ix7MEOPFEeKHN9VAxmB5fg" graphPattern="_c99pYePFEeKHN9VAxmB5fg">
-        <typeReference href="http://www.storydriven.org/core/0.3.1#//ExtendableElement/annotation"/>
+        <typeReference href="http://www.muml.org/core/1.0.0#//ExtendableElement/annotation"/>
       </outgoingEdge>
       <eType href="http://www.muml.org/pim/behavior/1.0.0#//Variable"/>
     </node>
@@ -4602,7 +4602,7 @@
   <rule xsi:type="de.upb.swt.qvt.tgg:TripleGraphGrammarRule" xmi:id="_P9mRUO4AEeKKZ9U2ihN3ww" name="scPortStatechart2sfInitialState">
     <node xmi:id="_P9yeku4AEeKKZ9U2ihN3ww" name="scRegRtsc" incomingEdge="_P9yemO4AEeKKZ9U2ihN3ww" graphPattern="_P9yekO4AEeKKZ9U2ihN3ww _P9yeke4AEeKKZ9U2ihN3ww _P9yek-4AEeKKZ9U2ihN3ww">
       <outgoingEdge xmi:id="_FNgg8O4CEeKKZ9U2ihN3ww" targetNode="_FMvr8O4CEeKKZ9U2ihN3ww">
-        <typeReference href="http://www.storydriven.org/core/0.3.1#//ExtendableElement/annotation"/>
+        <typeReference href="http://www.muml.org/core/1.0.0#//ExtendableElement/annotation"/>
       </outgoingEdge>
       <eType href="http://www.muml.org/pim/realtimestatechart/1.0.0#//RealtimeStatechart"/>
     </node>
@@ -4670,7 +4670,7 @@
     </node>
     <node xmi:id="_KEMtpe4DEeKKZ9U2ihN3ww" name="scRegRtsc" incomingEdge="_KEMtq-4DEeKKZ9U2ihN3ww" graphPattern="_KEMtoe4DEeKKZ9U2ihN3ww _KEMtou4DEeKKZ9U2ihN3ww _KEMtpO4DEeKKZ9U2ihN3ww">
       <outgoingEdge xmi:id="_KEMtqu4DEeKKZ9U2ihN3ww" targetNode="_KEMto-4DEeKKZ9U2ihN3ww">
-        <typeReference href="http://www.storydriven.org/core/0.3.1#//ExtendableElement/annotation"/>
+        <typeReference href="http://www.muml.org/core/1.0.0#//ExtendableElement/annotation"/>
       </outgoingEdge>
       <eType href="http://www.muml.org/pim/realtimestatechart/1.0.0#//RealtimeStatechart"/>
     </node>
@@ -4729,7 +4729,7 @@
         <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//RealtimeStatechart/states"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_5ulNRu4GEeKKZ9U2ihN3ww" targetNode="_5ulNQO4GEeKKZ9U2ihN3ww">
-        <typeReference href="http://www.storydriven.org/core/0.3.1#//ExtendableElement/annotation"/>
+        <typeReference href="http://www.muml.org/core/1.0.0#//ExtendableElement/annotation"/>
       </outgoingEdge>
       <eType href="http://www.muml.org/pim/realtimestatechart/1.0.0#//RealtimeStatechart"/>
     </node>
@@ -4990,7 +4990,7 @@
         <typeReference href="http://www.muml.org/pim/behavior/1.0.0#//TypedNamedElement/dataType"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_dogksOAMEeOhB8D8v5M3fA" targetNode="_doNpwOAMEeOhB8D8v5M3fA" graphPattern="_LYnFwuAMEeOhB8D8v5M3fA">
-        <typeReference href="http://www.storydriven.org/core/0.3.1#//ExtendableElement/annotation"/>
+        <typeReference href="http://www.muml.org/core/1.0.0#//ExtendableElement/annotation"/>
       </outgoingEdge>
       <eType href="http://www.muml.org/pim/behavior/1.0.0#//Variable"/>
     </node>
@@ -5105,7 +5105,7 @@
         <typeReference href="http://www.muml.org/pim/behavior/1.0.0#//TypedNamedElement/dataType"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_FXtBVeAOEeOhB8D8v5M3fA" targetNode="_FXj3YOAOEeOhB8D8v5M3fA" graphPattern="_8UfUYuANEeOhB8D8v5M3fA">
-        <typeReference href="http://www.storydriven.org/core/0.3.1#//ExtendableElement/annotation"/>
+        <typeReference href="http://www.muml.org/core/1.0.0#//ExtendableElement/annotation"/>
       </outgoingEdge>
       <eType href="http://www.muml.org/pim/behavior/1.0.0#//Variable"/>
     </node>
@@ -5181,7 +5181,7 @@
   <rule xsi:type="de.upb.swt.qvt.tgg:TripleGraphGrammarRule" xmi:id="_d0h9wOAoEeOyQPNXw4zW2w" name="scSyncSendSelectorAssignment2sfData">
     <node xmi:id="_d0h9w-AoEeOyQPNXw4zW2w" name="scStateIn" incomingEdge="_d0ruxeAoEeOyQPNXw4zW2w" graphPattern="_d0h9weAoEeOyQPNXw4zW2w _d0h9wuAoEeOyQPNXw4zW2w _d0ruwOAoEeOyQPNXw4zW2w">
       <outgoingEdge xmi:id="_lRFO4OAoEeOyQPNXw4zW2w" targetNode="_lQyT8OAoEeOyQPNXw4zW2w" graphPattern="_d0h9wuAoEeOyQPNXw4zW2w">
-        <typeReference href="http://www.storydriven.org/core/0.3.1#//ExtendableElement/annotation"/>
+        <typeReference href="http://www.muml.org/core/1.0.0#//ExtendableElement/annotation"/>
       </outgoingEdge>
       <eType href="http://www.muml.org/pim/realtimestatechart/1.0.0#//State"/>
     </node>
@@ -5258,7 +5258,7 @@
     </node>
     <node xmi:id="_s4zt6OArEeOyQPNXw4zW2w" name="scSyncTrans" incomingEdge="_s4zt7-ArEeOyQPNXw4zW2w" graphPattern="_s4zt4eArEeOyQPNXw4zW2w _s4zt4uArEeOyQPNXw4zW2w _s4zt4-ArEeOyQPNXw4zW2w">
       <outgoingEdge xmi:id="_IVw80OAtEeOyQPNXw4zW2w" targetNode="_s4zt6uArEeOyQPNXw4zW2w">
-        <typeReference href="http://www.storydriven.org/core/0.3.1#//ExtendableElement/annotation"/>
+        <typeReference href="http://www.muml.org/core/1.0.0#//ExtendableElement/annotation"/>
       </outgoingEdge>
       <eType href="http://www.muml.org/pim/realtimestatechart/1.0.0#//Transition"/>
     </node>
@@ -5314,7 +5314,7 @@
     </node>
     <node xmi:id="_a35JWOAvEeOyQPNXw4zW2w" name="scSyncTrans" incomingEdge="_a35JXeAvEeOyQPNXw4zW2w" graphPattern="_a35JUeAvEeOyQPNXw4zW2w _a35JUuAvEeOyQPNXw4zW2w _a35JU-AvEeOyQPNXw4zW2w">
       <outgoingEdge xmi:id="_a35JXuAvEeOyQPNXw4zW2w" targetNode="_a35JWeAvEeOyQPNXw4zW2w" graphPattern="_a35JUuAvEeOyQPNXw4zW2w">
-        <typeReference href="http://www.storydriven.org/core/0.3.1#//ExtendableElement/annotation"/>
+        <typeReference href="http://www.muml.org/core/1.0.0#//ExtendableElement/annotation"/>
       </outgoingEdge>
       <eType href="http://www.muml.org/pim/realtimestatechart/1.0.0#//Transition"/>
     </node>

@@ -2,7 +2,7 @@ import TypeAndBehaviorLibrary;
 import ProjectSpecificConstants;
 
 --core models
-modeltype core uses core('http://www.storydriven.org/core/0.3.1');
+modeltype core uses core('http://www.muml.org/core/1.0.0');
 modeltype modelinst uses modelinstance("http://www.muml.org/modelinstance/1.0.0");
 
 -- muml models 

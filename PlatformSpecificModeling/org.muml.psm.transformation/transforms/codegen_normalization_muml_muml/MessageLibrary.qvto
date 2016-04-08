@@ -3,7 +3,7 @@ import CommonLibrary;
 library MessageLibrary;
 
 
-modeltype Core uses core('http://www.storydriven.org/core/0.3.1');
+modeltype Core uses core('http://www.muml.org/core/1.0.0');
 
 modeltype PimPackage uses pim('http://www.muml.org/pim/1.0.0');
 modeltype ConnectorPackage uses pim::connector('http://www.muml.org/pim/1.0.0');

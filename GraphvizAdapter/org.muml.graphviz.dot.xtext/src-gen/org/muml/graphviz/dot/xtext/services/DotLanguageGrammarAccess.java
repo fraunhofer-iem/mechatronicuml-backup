@@ -77,7 +77,7 @@ public class DotLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cEdgesDotEdgeParserRuleCall_3_5_0 = (RuleCall)cEdgesAssignment_3_5.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
-		////import "http://www.storydriven.org/core/0.3.1" as core
+		////import "http://www.muml.org/core/1.0.0" as core
 		////import "platform:/resource/de.uni_paderborn.fujaba.graphviz/model/graphviz.ecore#//dot" as dot
 		////import "platform:/resource/de.uni_paderborn.fujaba.graphviz/model/graphviz.ecore#//common" as common
 		//DotGraph dot::DotGraph:
@@ -660,7 +660,7 @@ public class DotLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	
-	////import "http://www.storydriven.org/core/0.3.1" as core
+	////import "http://www.muml.org/core/1.0.0" as core
 	////import "platform:/resource/de.uni_paderborn.fujaba.graphviz/model/graphviz.ecore#//dot" as dot
 	////import "platform:/resource/de.uni_paderborn.fujaba.graphviz/model/graphviz.ecore#//common" as common
 	//DotGraph dot::DotGraph:

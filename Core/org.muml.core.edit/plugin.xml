@@ -14,7 +14,7 @@
 <plugin>
 	<extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
 		<factory
-			uri="http://www.storydriven.org/core/0.3.1"
+			uri="http://www.muml.org/core/1.0.0"
 			class="org.muml.core.provider.CoreItemProviderAdapterFactory"
 			supportedTypes=
 				"org.eclipse.emf.edit.provider.IEditingDomainItemProvider
@@ -23,7 +23,7 @@
 				 org.eclipse.emf.edit.provider.IItemLabelProvider
 				 org.eclipse.emf.edit.provider.IItemPropertySource"/>
 		<factory
-			uri="http://www.storydriven.org/core/expressions/0.3.1"
+			uri="http://www.muml.org/core/expressions/1.0.0"
 			class="org.muml.core.expressions.provider.ExpressionsItemProviderAdapterFactory"
 			supportedTypes=
 				"org.eclipse.emf.edit.provider.IEditingDomainItemProvider
@@ -33,7 +33,7 @@
 				 org.eclipse.emf.edit.provider.IItemPropertySource"/>
   <factory
         class="org.muml.core.expressions.common.provider.CommonExpressionsItemProviderAdapterFactory"
-        uri="http://www.storydriven.org/core/expressions/common/0.3.1"
+        uri="http://www.muml.org/core/expressions/common/1.0.0"
 			supportedTypes=
 				"org.eclipse.emf.edit.provider.IEditingDomainItemProvider
 				 org.eclipse.emf.edit.provider.IStructuredItemContentProvider
@@ -45,7 +45,7 @@
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <!-- @generated core.uml -->
       <factory
-            uri="http://www.storydriven.org/core/expressions/0.3.1"
+            uri="http://www.muml.org/core/expressions/1.0.0"
             class="org.muml.core.expressions.provider.ExpressionsItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
@@ -58,7 +58,7 @@
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <!-- @generated core.uml -->
       <factory
-            uri="http://www.storydriven.org/core/expressions/common/0.3.1"
+            uri="http://www.muml.org/core/expressions/common/1.0.0"
             class="org.muml.core.expressions.common.provider.CommonExpressionsItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider

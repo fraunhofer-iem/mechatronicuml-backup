@@ -1,5 +1,5 @@
 [module clock('http://www.muml.org/pim/realtimestatechart/1.0.0',
-'http://www.storydriven.org/core/0.3.1',
+'http://www.muml.org/core/1.0.0',
 				'http://www.muml.org/pim/actionlanguage/1.0.0',
 'http://www.muml.org/pim/valuetype/1.0.0')/]
 

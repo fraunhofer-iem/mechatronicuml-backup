@@ -3,7 +3,7 @@ import transforms.naming;
 modeltype DOT uses dot("http://www.muml.org/graphviz/dot/1.0.0");
 modeltype COMMON uses common("http://www.muml.org/graphviz/common/1.0.0");
 modeltype UTIL uses util("http://www.muml.org/graphviz/util/1.0.0");
-modeltype CORE uses core("http://www.storydriven.org/core/0.3.1");
+modeltype CORE uses core("http://www.muml.org/core/1.0.0");
 modeltype ECORE uses ecore("http://www.eclipse.org/emf/2002/Ecore");
 
 library AnnotationBase access Naming;

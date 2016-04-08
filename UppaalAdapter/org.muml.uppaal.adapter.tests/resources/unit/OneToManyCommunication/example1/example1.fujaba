@@ -11,7 +11,7 @@
     xmlns:msgtype="http://www.muml.org/pim/msgtype/1.0.0"
     xmlns:protocol="http://www.muml.org/pim/protocol/1.0.0"
     xmlns:realtimestatechart="http://www.muml.org/pim/realtimestatechart/1.0.0"
-    xmlns:sdcec="http://www.storydriven.org/core/expressions/common/0.3.1"
+    xmlns:sdcec="http://www.muml.org/core/expressions/common/1.0.0"
     xmlns:types="http://www.muml.org/pim/types/1.0.0"
     xmi:id="_W8MzUNUMEeOzB5sVHdJ6ng">
   <categories

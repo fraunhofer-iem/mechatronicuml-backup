@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--muml metamodel version 0.3.2 (r15221)-->
-<modelinstance:RootNode xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:actionlanguage="http://www.muml.org/pim/actionlanguage/1.0.0" xmlns:component="http://www.muml.org/pim/component/1.0.0" xmlns:componentsdd="http://www.fujaba.de/muml/verification/sdd/componentsdd/0.4.0" xmlns:componentstorydiagram="http://www.muml.org/reconfiguration/componentstorydiagram/1.0.0" xmlns:componentstorypattern="http://www.muml.org/reconfiguration/componentstorypattern/1.0.0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:expr="http://www.storydriven.org/core/expressions/0.3.1" xmlns:expression="http://www.fujaba.de/muml/reconfiguration/expression/0.3.7" xmlns:instance="http://www.muml.org/pim/instance/1.0.0" xmlns:modelinstance="http://www.muml.org/modelinstance/1.0.0" xmlns:msgtype="http://www.muml.org/pim/msgtype/1.0.0" xmlns:protocol="http://www.muml.org/pim/protocol/1.0.0" xmlns:protocolinstantiation="http://www.fujaba.de/muml/reconfiguration/protocolinstantiation/0.4.0" xmlns:realtimestatechart="http://www.muml.org/pim/realtimestatechart/1.0.0" xmlns:reconfInstance="http://www.fujaba.de/muml/reconfiguration/reconfInstance/0.4.0" xmlns:reconfiguration="http://www.fujaba.de/muml/reconfiguration/0.3.18" xmlns:sda="http://www.muml.org/storydiagram/activities/1.0.0" xmlns:sdcec="http://www.storydriven.org/core/expressions/common/0.3.1" xmlns:sdd="http://www.fujaba.de/muml/verification/sdd/0.4.0" xmlns:sdp="http://www.muml.org/storydiagram/patterns/1.0.0" xmlns:structdatatype="http://www.fujaba.de/muml/reconfiguration/structdatatype/0.3.18" xmlns:types="http://www.muml.org/pim/types/1.0.0" xmi:id="_hm9EULiwEeKp46K0r5yxrg">
+<modelinstance:RootNode xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:actionlanguage="http://www.muml.org/pim/actionlanguage/1.0.0" xmlns:component="http://www.muml.org/pim/component/1.0.0" xmlns:componentsdd="http://www.fujaba.de/muml/verification/sdd/componentsdd/0.4.0" xmlns:componentstorydiagram="http://www.muml.org/reconfiguration/componentstorydiagram/1.0.0" xmlns:componentstorypattern="http://www.muml.org/reconfiguration/componentstorypattern/1.0.0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:expr="http://www.muml.org/core/expressions/1.0.0" xmlns:expression="http://www.fujaba.de/muml/reconfiguration/expression/0.3.7" xmlns:instance="http://www.muml.org/pim/instance/1.0.0" xmlns:modelinstance="http://www.muml.org/modelinstance/1.0.0" xmlns:msgtype="http://www.muml.org/pim/msgtype/1.0.0" xmlns:protocol="http://www.muml.org/pim/protocol/1.0.0" xmlns:protocolinstantiation="http://www.fujaba.de/muml/reconfiguration/protocolinstantiation/0.4.0" xmlns:realtimestatechart="http://www.muml.org/pim/realtimestatechart/1.0.0" xmlns:reconfInstance="http://www.fujaba.de/muml/reconfiguration/reconfInstance/0.4.0" xmlns:reconfiguration="http://www.fujaba.de/muml/reconfiguration/0.3.18" xmlns:sda="http://www.muml.org/storydiagram/activities/1.0.0" xmlns:sdcec="http://www.muml.org/core/expressions/common/1.0.0" xmlns:sdd="http://www.fujaba.de/muml/verification/sdd/0.4.0" xmlns:sdp="http://www.muml.org/storydiagram/patterns/1.0.0" xmlns:structdatatype="http://www.fujaba.de/muml/reconfiguration/structdatatype/0.3.18" xmlns:types="http://www.muml.org/pim/types/1.0.0" xmi:id="_hm9EULiwEeKp46K0r5yxrg">
   <categories xmi:id="_hm9EUbiwEeKp46K0r5yxrg" key="org.muml.types.category" name="types">
     <modelElements xsi:type="structdatatype:StructType" xmi:id="_Xl73APSAEeOKmIQk3FL8KA" name="Profile"/>
     <modelElements xsi:type="structdatatype:StructType" xmi:id="_Xl73AfSAEeOKmIQk3FL8KA" name="ProfileStore">
@@ -14206,7 +14206,7 @@
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_gxay8O5kEeO0hMrCmuqTKA" name="subRoleInstance" incomingLink="_gxazB-5kEeO0hMrCmuqTKA _gxazC-5kEeO0hMrCmuqTKA" outgoingLink="_gxazCO5kEeO0hMrCmuqTKA _gxazCe5kEeO0hMrCmuqTKA _gxazCu5kEeO0hMrCmuqTKA _gxazDO5kEeO0hMrCmuqTKA _gxazEe5kEeO0hMrCmuqTKA" bindingOperator="CREATE">
             <attributeAssignment xmi:id="_gxay8e5kEeO0hMrCmuqTKA">
-              <attribute href="http://www.storydriven.org/core/0.3.1#//NamedElement/name"/>
+              <attribute href="http://www.muml.org/core/1.0.0#//NamedElement/name"/>
               <valueExpression xsi:type="expr:TextualExpression" xmi:id="_gxay8u5kEeO0hMrCmuqTKA" expressionText="'subRoleInstance_'.concat(multiRoleInstance.name).concat('_').concat(multiRoleInstance.subInteractionEndpointInstances->size().toString())" language="OCL" languageVersion="1.0"/>
             </attributeAssignment>
             <classifier href="http://www.muml.org/verification/core/runtime/1.0.0#//SingleRoleInstance"/>
@@ -14237,7 +14237,7 @@
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_gxay_O5kEeO0hMrCmuqTKA" name="singleRoleInstance" outgoingLink="_gxazGO5kEeO0hMrCmuqTKA _gxazGe5kEeO0hMrCmuqTKA _gxazGu5kEeO0hMrCmuqTKA _gxazG-5kEeO0hMrCmuqTKA" bindingOperator="CREATE">
             <attributeAssignment xmi:id="_gxay_e5kEeO0hMrCmuqTKA">
-              <attribute href="http://www.storydriven.org/core/0.3.1#//NamedElement/name"/>
+              <attribute href="http://www.muml.org/core/1.0.0#//NamedElement/name"/>
               <valueExpression xsi:type="expr:TextualExpression" xmi:id="_gxay_u5kEeO0hMrCmuqTKA" expressionText="singleRole.name.concat(multiRoleInstance.subInteractionEndpointInstances->size().toString())" language="OCL" languageVersion="1.0"/>
             </attributeAssignment>
             <classifier href="http://www.muml.org/verification/core/runtime/1.0.0#//SingleRoleInstance"/>
@@ -14420,8 +14420,8 @@
         <details xmi:id="_uuWpdPSTEeOKmIQk3FL8KA" key="http://www.muml.org/pim/realtimestatechart/1.0.0" value="true"/>
         <details xmi:id="_uuWpdfSTEeOKmIQk3FL8KA" key="http://www.muml.org/pim/behavior/1.0.0" value="true"/>
         <details xmi:id="_uuWpdvSTEeOKmIQk3FL8KA" key="http://www.muml.org/pim/connector/1.0.0" value="true"/>
-        <details xmi:id="_uuWpd_STEeOKmIQk3FL8KA" key="http://www.storydriven.org/core/expressions/common/0.3.1" value="true"/>
-        <details xmi:id="_uuWpePSTEeOKmIQk3FL8KA" key="http://www.storydriven.org/core/expressions/0.3.1" value="true"/>
+        <details xmi:id="_uuWpd_STEeOKmIQk3FL8KA" key="http://www.muml.org/core/expressions/common/1.0.0" value="true"/>
+        <details xmi:id="_uuWpePSTEeOKmIQk3FL8KA" key="http://www.muml.org/core/expressions/1.0.0" value="true"/>
       </annotation>
       <containedParameters xmi:id="_uuWpefSTEeOKmIQk3FL8KA" name="multiRoleInstance">
         <eType xsi:type="ecore:EClass" href="http://www.muml.org/verification/core/runtime/1.0.0#//MultiRoleInstance"/>
@@ -14449,14 +14449,14 @@
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_uuWpi_STEeOKmIQk3FL8KA" name="singleRoleInstance" incomingLink="_uuWppvSTEeOKmIQk3FL8KA" outgoingLink="_uuWprfSTEeOKmIQk3FL8KA _uuWpt_STEeOKmIQk3FL8KA _uuWpv_STEeOKmIQk3FL8KA" bindingOperator="CREATE">
             <attributeAssignment xmi:id="_uuWpjPSTEeOKmIQk3FL8KA">
-              <attribute href="http://www.storydriven.org/core/0.3.1#//NamedElement/name"/>
+              <attribute href="http://www.muml.org/core/1.0.0#//NamedElement/name"/>
               <valueExpression xsi:type="expr:TextualExpression" xmi:id="_uuWpjfSTEeOKmIQk3FL8KA" expressionText="'memberInstance_'.concat(multiRoleInstance.subInteractionEndpointInstances->size().toString())" language="OCL" languageVersion="1.0"/>
             </attributeAssignment>
             <classifier href="http://www.muml.org/verification/core/runtime/1.0.0#//SingleRoleInstance"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_uuWpjvSTEeOKmIQk3FL8KA" name="subRoleInstance" incomingLink="_uuWpp_STEeOKmIQk3FL8KA _uuWpqPSTEeOKmIQk3FL8KA _uuWpuvSTEeOKmIQk3FL8KA _uuWpu_STEeOKmIQk3FL8KA" outgoingLink="_uuWpqvSTEeOKmIQk3FL8KA _uuWpr_STEeOKmIQk3FL8KA _uuWpvvSTEeOKmIQk3FL8KA" bindingOperator="CREATE">
             <attributeAssignment xmi:id="_uuWpj_STEeOKmIQk3FL8KA">
-              <attribute href="http://www.storydriven.org/core/0.3.1#//NamedElement/name"/>
+              <attribute href="http://www.muml.org/core/1.0.0#//NamedElement/name"/>
               <valueExpression xsi:type="expr:TextualExpression" xmi:id="_uuWpkPSTEeOKmIQk3FL8KA" expressionText="'subRoleInstance_'.concat(multiRoleInstance.name).concat('_').concat(multiRoleInstance.subInteractionEndpointInstances->size().toString())" language="OCL" languageVersion="1.0"/>
             </attributeAssignment>
             <classifier href="http://www.muml.org/verification/core/runtime/1.0.0#//SingleRoleInstance"/>

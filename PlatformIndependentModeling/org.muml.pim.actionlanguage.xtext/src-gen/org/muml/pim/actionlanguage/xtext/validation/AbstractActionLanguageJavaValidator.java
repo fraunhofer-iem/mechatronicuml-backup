@@ -13,11 +13,11 @@ public class AbstractActionLanguageJavaValidator extends org.eclipse.xtext.valid
 	@Override
 	protected List<EPackage> getEPackages() {
 	    List<EPackage> result = new ArrayList<EPackage>();
-	    result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.storydriven.org/core/expressions/0.3.1"));
+	    result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.muml.org/core/expressions/1.0.0"));
 	    result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.muml.org/pim/actionlanguage/1.0.0"));
 	    result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.muml.org/pim/behavior/1.0.0"));
 	    result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.muml.org/pim/valuetype/1.0.0"));
-	    result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.storydriven.org/core/expressions/common/0.3.1"));
+	    result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.muml.org/core/expressions/common/1.0.0"));
 		return result;
 	}
 

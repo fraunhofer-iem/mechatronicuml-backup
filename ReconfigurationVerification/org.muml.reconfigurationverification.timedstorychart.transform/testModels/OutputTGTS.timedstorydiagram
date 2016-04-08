@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ASCII"?>
-<de.uni_paderborn.fujaba.muml.timedstorydiagram:TimedGraphTransformationSystem xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.uni_paderborn.fujaba.muml.timedstorydiagram="http://www.fujaba.de/timedstorydiagram/0.1.0" xmlns:expr="http://www.storydriven.org/core/expressions/0.3.1" xmlns:sda="http://www.muml.org/storydiagram/activities/1.0.0" xmlns:sdp="http://www.muml.org/storydiagram/patterns/1.0.0">
+<de.uni_paderborn.fujaba.muml.timedstorydiagram:TimedGraphTransformationSystem xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.uni_paderborn.fujaba.muml.timedstorydiagram="http://www.fujaba.de/timedstorydiagram/0.1.0" xmlns:expr="http://www.muml.org/core/expressions/1.0.0" xmlns:sda="http://www.muml.org/storydiagram/activities/1.0.0" xmlns:sdp="http://www.muml.org/storydiagram/patterns/1.0.0">
   <rules name="SyncTransition_sender:state1_state2_role2_adaptation_rtscreceiver:state1_state2_role2_behavior">
     <ownedActivityEdge target="//@rules.0/@ownedActivityNode.3" source="//@rules.0/@ownedActivityNode.0"/>
     <ownedActivityEdge target="//@rules.0/@ownedActivityNode.4" source="//@rules.0/@ownedActivityNode.3" guard="SUCCESS"/>
@@ -173,14 +173,14 @@
         </variable>
         <variable xsi:type="sdp:ObjectVariable" name="m2_1" incomingLink="//@rules.0/@ownedActivityNode.7/@ownedRule/@linkVariable.9" outgoingLink="//@rules.0/@ownedActivityNode.7/@ownedRule/@linkVariable.7 //@rules.0/@ownedActivityNode.7/@ownedRule/@linkVariable.8" bindingOperator="CREATE">
           <attributeAssignment>
-            <attribute href="http://www.storydriven.org/core/0.3.1#//NamedElement/name"/>
+            <attribute href="http://www.muml.org/core/1.0.0#//NamedElement/name"/>
             <valueExpression xsi:type="expr:TextualExpression" expressionText="'m1'" language="OCL" languageVersion="1.0"/>
           </attributeAssignment>
           <classifier href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RuntimeMessage"/>
         </variable>
         <variable xsi:type="sdp:ObjectVariable" name="p_param1" incomingLink="//@rules.0/@ownedActivityNode.7/@ownedRule/@linkVariable.7 //@rules.0/@ownedActivityNode.7/@ownedRule/@linkVariable.18" bindingOperator="CREATE">
           <attributeAssignment>
-            <attribute href="http://www.storydriven.org/core/0.3.1#//NamedElement/name"/>
+            <attribute href="http://www.muml.org/core/1.0.0#//NamedElement/name"/>
             <valueExpression xsi:type="expr:TextualExpression" expressionText="'param1'" language="OCL" languageVersion="1.0"/>
           </attributeAssignment>
           <attributeAssignment>
@@ -188,7 +188,7 @@
             <valueExpression xsi:type="expr:TextualExpression" expressionText="'org.storydriven.core.expressions.common.impl.LiteralExpressionImpl@7783ec (comment: &quot;no comment provided&quot;) (value: 11)'" language="OCL" languageVersion="1.0"/>
           </attributeAssignment>
           <attributeAssignment>
-            <attribute href="http://www.storydriven.org/core/0.3.1#//NamedElement/name"/>
+            <attribute href="http://www.muml.org/core/1.0.0#//NamedElement/name"/>
             <valueExpression xsi:type="expr:TextualExpression" expressionText="'param1'" language="OCL" languageVersion="1.0"/>
           </attributeAssignment>
           <attributeAssignment>
@@ -199,7 +199,7 @@
         </variable>
         <variable xsi:type="sdp:ObjectVariable" name="p_param2" incomingLink="//@rules.0/@ownedActivityNode.7/@ownedRule/@linkVariable.8 //@rules.0/@ownedActivityNode.7/@ownedRule/@linkVariable.19" bindingOperator="CREATE">
           <attributeAssignment>
-            <attribute href="http://www.storydriven.org/core/0.3.1#//NamedElement/name"/>
+            <attribute href="http://www.muml.org/core/1.0.0#//NamedElement/name"/>
             <valueExpression xsi:type="expr:TextualExpression" expressionText="'param2'" language="OCL" languageVersion="1.0"/>
           </attributeAssignment>
           <attributeAssignment>
@@ -207,7 +207,7 @@
             <valueExpression xsi:type="expr:TextualExpression" expressionText="'org.storydriven.core.expressions.common.impl.LiteralExpressionImpl@7aa244 (comment: &quot;no comment provided&quot;) (value: 12)'" language="OCL" languageVersion="1.0"/>
           </attributeAssignment>
           <attributeAssignment>
-            <attribute href="http://www.storydriven.org/core/0.3.1#//NamedElement/name"/>
+            <attribute href="http://www.muml.org/core/1.0.0#//NamedElement/name"/>
             <valueExpression xsi:type="expr:TextualExpression" expressionText="'param2'" language="OCL" languageVersion="1.0"/>
           </attributeAssignment>
           <attributeAssignment>
@@ -248,7 +248,7 @@
         </variable>
         <variable xsi:type="sdp:ObjectVariable" name="m2_2" incomingLink="//@rules.0/@ownedActivityNode.7/@ownedRule/@linkVariable.20" outgoingLink="//@rules.0/@ownedActivityNode.7/@ownedRule/@linkVariable.18 //@rules.0/@ownedActivityNode.7/@ownedRule/@linkVariable.19" bindingOperator="CREATE">
           <attributeAssignment>
-            <attribute href="http://www.storydriven.org/core/0.3.1#//NamedElement/name"/>
+            <attribute href="http://www.muml.org/core/1.0.0#//NamedElement/name"/>
             <valueExpression xsi:type="expr:TextualExpression" expressionText="'m1'" language="OCL" languageVersion="1.0"/>
           </attributeAssignment>
           <classifier href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RuntimeMessage"/>
@@ -489,14 +489,14 @@
         </variable>
         <variable xsi:type="sdp:ObjectVariable" name="m2_1" incomingLink="//@rules.1/@ownedActivityNode.7/@ownedRule/@linkVariable.9" outgoingLink="//@rules.1/@ownedActivityNode.7/@ownedRule/@linkVariable.7 //@rules.1/@ownedActivityNode.7/@ownedRule/@linkVariable.8" bindingOperator="CREATE">
           <attributeAssignment>
-            <attribute href="http://www.storydriven.org/core/0.3.1#//NamedElement/name"/>
+            <attribute href="http://www.muml.org/core/1.0.0#//NamedElement/name"/>
             <valueExpression xsi:type="expr:TextualExpression" expressionText="'m1'" language="OCL" languageVersion="1.0"/>
           </attributeAssignment>
           <classifier href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RuntimeMessage"/>
         </variable>
         <variable xsi:type="sdp:ObjectVariable" name="p_param1" incomingLink="//@rules.1/@ownedActivityNode.7/@ownedRule/@linkVariable.7 //@rules.1/@ownedActivityNode.7/@ownedRule/@linkVariable.18" bindingOperator="CREATE">
           <attributeAssignment>
-            <attribute href="http://www.storydriven.org/core/0.3.1#//NamedElement/name"/>
+            <attribute href="http://www.muml.org/core/1.0.0#//NamedElement/name"/>
             <valueExpression xsi:type="expr:TextualExpression" expressionText="'param1'" language="OCL" languageVersion="1.0"/>
           </attributeAssignment>
           <attributeAssignment>
@@ -504,7 +504,7 @@
             <valueExpression xsi:type="expr:TextualExpression" expressionText="'org.storydriven.core.expressions.common.impl.LiteralExpressionImpl@16b0e26 (comment: &quot;no comment provided&quot;) (value: 11)'" language="OCL" languageVersion="1.0"/>
           </attributeAssignment>
           <attributeAssignment>
-            <attribute href="http://www.storydriven.org/core/0.3.1#//NamedElement/name"/>
+            <attribute href="http://www.muml.org/core/1.0.0#//NamedElement/name"/>
             <valueExpression xsi:type="expr:TextualExpression" expressionText="'param1'" language="OCL" languageVersion="1.0"/>
           </attributeAssignment>
           <attributeAssignment>
@@ -515,7 +515,7 @@
         </variable>
         <variable xsi:type="sdp:ObjectVariable" name="p_param2" incomingLink="//@rules.1/@ownedActivityNode.7/@ownedRule/@linkVariable.8 //@rules.1/@ownedActivityNode.7/@ownedRule/@linkVariable.19" bindingOperator="CREATE">
           <attributeAssignment>
-            <attribute href="http://www.storydriven.org/core/0.3.1#//NamedElement/name"/>
+            <attribute href="http://www.muml.org/core/1.0.0#//NamedElement/name"/>
             <valueExpression xsi:type="expr:TextualExpression" expressionText="'param2'" language="OCL" languageVersion="1.0"/>
           </attributeAssignment>
           <attributeAssignment>
@@ -523,7 +523,7 @@
             <valueExpression xsi:type="expr:TextualExpression" expressionText="'org.storydriven.core.expressions.common.impl.LiteralExpressionImpl@9f8c12 (comment: &quot;no comment provided&quot;) (value: 12)'" language="OCL" languageVersion="1.0"/>
           </attributeAssignment>
           <attributeAssignment>
-            <attribute href="http://www.storydriven.org/core/0.3.1#//NamedElement/name"/>
+            <attribute href="http://www.muml.org/core/1.0.0#//NamedElement/name"/>
             <valueExpression xsi:type="expr:TextualExpression" expressionText="'param2'" language="OCL" languageVersion="1.0"/>
           </attributeAssignment>
           <attributeAssignment>
@@ -564,7 +564,7 @@
         </variable>
         <variable xsi:type="sdp:ObjectVariable" name="m2_2" incomingLink="//@rules.1/@ownedActivityNode.7/@ownedRule/@linkVariable.20" outgoingLink="//@rules.1/@ownedActivityNode.7/@ownedRule/@linkVariable.18 //@rules.1/@ownedActivityNode.7/@ownedRule/@linkVariable.19" bindingOperator="CREATE">
           <attributeAssignment>
-            <attribute href="http://www.storydriven.org/core/0.3.1#//NamedElement/name"/>
+            <attribute href="http://www.muml.org/core/1.0.0#//NamedElement/name"/>
             <valueExpression xsi:type="expr:TextualExpression" expressionText="'m1'" language="OCL" languageVersion="1.0"/>
           </attributeAssignment>
           <classifier href="http://www.fujaba.de/muml/model/runtime/0.3.14#//RuntimeMessage"/>
@@ -735,7 +735,7 @@
       <ownedRule xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:TimedStoryPattern">
         <variable xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:ClockInstanceVariable" name="ci" outgoingLink="//@clockInstanceRules.0/@ownedActivityNode.2/@ownedRule/@linkVariable.0 //@clockInstanceRules.0/@ownedActivityNode.2/@ownedRule/@linkVariable.1" bindingOperator="CREATE">
           <attributeAssignment>
-            <attribute href="http://www.storydriven.org/core/0.3.1#//NamedElement/name"/>
+            <attribute href="http://www.muml.org/core/1.0.0#//NamedElement/name"/>
             <valueExpression xsi:type="expr:TextualExpression" expressionText="'role1_behavior.cDead1'" language="OCL" languageVersion="1.0"/>
           </attributeAssignment>
           <classifier href="http://www.fujaba.de/timedstorydiagram/0.1.0#//ClockInstance"/>
@@ -782,7 +782,7 @@
       <ownedRule xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:TimedStoryPattern">
         <variable xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:ClockInstanceVariable" name="ci" outgoingLink="//@clockInstanceRules.1/@ownedActivityNode.2/@ownedRule/@linkVariable.0 //@clockInstanceRules.1/@ownedActivityNode.2/@ownedRule/@linkVariable.1" bindingOperator="CREATE">
           <attributeAssignment>
-            <attribute href="http://www.storydriven.org/core/0.3.1#//NamedElement/name"/>
+            <attribute href="http://www.muml.org/core/1.0.0#//NamedElement/name"/>
             <valueExpression xsi:type="expr:TextualExpression" expressionText="'role2_behavior.cDead3'" language="OCL" languageVersion="1.0"/>
           </attributeAssignment>
           <classifier href="http://www.fujaba.de/timedstorydiagram/0.1.0#//ClockInstance"/>

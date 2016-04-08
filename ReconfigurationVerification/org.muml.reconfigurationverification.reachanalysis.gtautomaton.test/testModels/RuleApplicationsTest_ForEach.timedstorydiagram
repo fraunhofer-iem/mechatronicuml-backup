@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ASCII"?>
-<de.uni_paderborn.fujaba.muml.timedstorydiagram:TimedGraphTransformationSystem xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.uni_paderborn.fujaba.muml.timedstorydiagram="http://www.fujaba.de/timedstorydiagram/0.1.0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:expr="http://www.storydriven.org/core/expressions/0.3.1" xmlns:sda="http://www.muml.org/storydiagram/activities/1.0.0" xmlns:sdce="http://www.muml.org/storydiagram/calls/expressions/1.0.0" xmlns:sdp="http://www.muml.org/storydiagram/patterns/1.0.0">
+<de.uni_paderborn.fujaba.muml.timedstorydiagram:TimedGraphTransformationSystem xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.uni_paderborn.fujaba.muml.timedstorydiagram="http://www.fujaba.de/timedstorydiagram/0.1.0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:expr="http://www.muml.org/core/expressions/1.0.0" xmlns:sda="http://www.muml.org/storydiagram/activities/1.0.0" xmlns:sdce="http://www.muml.org/storydiagram/calls/expressions/1.0.0" xmlns:sdp="http://www.muml.org/storydiagram/patterns/1.0.0">
   <rules inParameter="//@rules.0/@containedParameters.0 //@rules.0/@containedParameters.1" name="rule1_forEach" resets="//@rules.0/@ownedActivityNode.2/@ownedRule/@variable.2">
     <containedParameters name="step">
       <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//StepGraph"/>
@@ -692,7 +692,7 @@
         </variable>
         <variable xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:ClockInstanceVariable" name="ci" incomingLink="//@clockInstanceRules.0/@ownedActivityNode.2/@ownedRule/@linkVariable.4 //@clockInstanceRules.0/@ownedActivityNode.2/@ownedRule/@linkVariable.5" outgoingLink="//@clockInstanceRules.0/@ownedActivityNode.2/@ownedRule/@linkVariable.1" bindingOperator="CREATE">
           <attributeAssignment>
-            <attribute href="http://www.storydriven.org/core/0.3.1#//NamedElement/name"/>
+            <attribute href="http://www.muml.org/core/1.0.0#//NamedElement/name"/>
             <valueExpression xsi:type="expr:TextualExpression" expressionText="'ci2'" language="OCL" languageVersion="1.0"/>
           </attributeAssignment>
           <classifier href="http://www.fujaba.de/timedstorydiagram/0.1.0#//ClockInstance"/>
