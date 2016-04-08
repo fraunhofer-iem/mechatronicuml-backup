@@ -36,7 +36,7 @@ public interface ExecutionTracePackage extends EPackage
 	 * 
 	 * @generated
 	 */
-	String					eNS_URI																		= "http://www.mdelab.de/sdm/interpreter/core/executionTrace/1.0";
+	String					eNS_URI																		= "http://www.muml.org/storydiagram/interpreter/core/executiontrace/1.0";
 
 	/**
 	 * The package namespace name. <!-- begin-user-doc --> <!-- end-user-doc -->

@@ -57,7 +57,7 @@ public class ExecutionTraceFactoryImpl extends EFactoryImpl implements Execution
 		try
 		{
 			final ExecutionTraceFactory theExecutionTraceFactory = (ExecutionTraceFactory) EPackage.Registry.INSTANCE
-					.getEFactory("http://www.mdelab.de/sdm/interpreter/core/executionTrace/1.0");
+					.getEFactory("http://www.muml.org/storydiagram/interpreter/core/executiontrace/1.0");
 			if (theExecutionTraceFactory != null)
 			{
 				return theExecutionTraceFactory;
