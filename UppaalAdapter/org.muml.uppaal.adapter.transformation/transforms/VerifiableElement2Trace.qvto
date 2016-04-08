@@ -3,7 +3,7 @@ import transforms.UPPAALTrace2MUMLTrace;
 import transforms.lib.ExternalizedStrings;
 import transforms.VerifiableElement2UPPAAL;
 
-modeltype muml uses 'http://www.fujaba.de/muml/0.4.0';
+modeltype muml uses 'http://www.muml.org/pim/1.0.0';
 modeltype uppaal uses 'http://www.uni-paderborn.de/uppaal/0.4.0';
 modeltype uppaal_requirements uses 'http://www.uni-paderborn.de/requirements/0.4.0';
 modeltype uppaal_trace uses 'http://www.uni-paderborn.de/uppaal/trace/0.4.0';

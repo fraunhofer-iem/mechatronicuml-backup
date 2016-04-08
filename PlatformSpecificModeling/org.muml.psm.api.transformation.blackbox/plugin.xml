@@ -10,7 +10,7 @@
                class="org.muml.psm.api.transformation.blackbox.TimeUnitLibrary"
                name="TimenitLib">
             <metamodel
-                  nsURI="http://www.fujaba.de/muml/valuetype/0.4.0">
+                  nsURI="http://www.muml.org/pim/valuetype/1.0.0">
             </metamodel>
             <metamodel
                   nsURI="http://www.storydriven.org/core/expressions/0.3.1">

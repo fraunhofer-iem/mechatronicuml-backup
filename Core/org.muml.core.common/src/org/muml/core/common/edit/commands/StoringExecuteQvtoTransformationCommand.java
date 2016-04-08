@@ -159,7 +159,7 @@ public class StoringExecuteQvtoTransformationCommand extends
 			// Make sure that only valid types are put into types category
 			if (TYPES_CATEGORY_KEY.equals(key)) {
 				if (!modelElement.eClass().getEPackage().getNsURI()
-						.equals("http://www.fujaba.de/muml/types/0.4.0")) {
+						.equals("http://www.muml.org/pim/types/1.0.0")) {
 					return false;
 				}
 			}

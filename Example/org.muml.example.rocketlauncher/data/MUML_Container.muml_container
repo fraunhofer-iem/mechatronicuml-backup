@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ASCII"?>
-<muml_container:SystemConfiguration xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:component="http://www.fujaba.de/muml/component/0.4.0" xmlns:instance="http://www.fujaba.de/muml/instance/0.4.0" xmlns:muml_container="http://www.muml.org/muml_container/0.5.0">
+<muml_container:SystemConfiguration xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:component="http://www.muml.org/pim/component/1.0.0" xmlns:instance="http://www.muml.org/pim/instance/1.0.0" xmlns:muml_container="http://www.muml.org/muml_container/0.5.0">
   <systemAllocation href="org.muml.examples.muml#_xOKX98knEeWbAtw7kHpt1w"/>
   <ecuConfigurations name="ECU-Launch_config">
     <structuredResourceInstance href="org.muml.examples.muml#_xOKX08knEeWbAtw7kHpt1w"/>

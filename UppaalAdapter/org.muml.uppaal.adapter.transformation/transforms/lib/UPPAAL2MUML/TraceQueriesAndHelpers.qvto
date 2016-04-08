@@ -18,11 +18,11 @@ modeltype muml_rtsc uses pim::realtimestatechart('http://www.muml.org/pim/1.0.0'
 modeltype muml_proto uses pim::protocol('http://www.muml.org/pim/1.0.0');
 modeltype muml_behavior uses pim::behavior('http://www.muml.org/pim/1.0.0');
 modeltype muml_types uses pim::types('http://www.muml.org/pim/1.0.0');
-modeltype muml_instance uses muml::instance('http://www.fujaba.de/muml/0.4.0');
+modeltype muml_instance uses muml::instance('http://www.muml.org/pim/1.0.0');
 modeltype muml_connector uses pim::connector('http://www.muml.org/pim/1.0.0');
-modeltype muml_msgtype uses muml::msgtype('http://www.fujaba.de/muml/0.4.0');
+modeltype muml_msgtype uses muml::msgtype('http://www.muml.org/pim/1.0.0');
 modeltype muml_component uses pim::component('http://www.muml.org/pim/1.0.0');
-modeltype muml uses 'http://www.fujaba.de/muml/0.4.0';
+modeltype muml uses 'http://www.muml.org/pim/1.0.0';
 modeltype uppaal_expressions uses uppaal::expressions('http://www.uni-paderborn.de/uppaal/0.4.0');
 modeltype uppaal_declarations_system uses uppaal::declarations::system('http://www.uni-paderborn.de/uppaal/0.4.0');
 modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';

@@ -1,12 +1,12 @@
-[module reporter('http://www.fujaba.de/muml/behavior/0.4.0',
+[module reporter('http://www.muml.org/pim/behavior/1.0.0',
 				 'http://www.storydriven.org/core/0.3.1',
 				 'http://www.fujaba.de/muml/actionlanguage/0.4.0',
-				 'http://www.fujaba.de/muml/msgtype/0.4.0',
-				 'http://www.fujaba.de/muml/types/0.4.0',
-				 'http://www.fujaba.de/muml/component/0.4.0',
-				 'http://www.fujaba.de/muml/instance/0.4.0',
+				 'http://www.muml.org/pim/msgtype/1.0.0',
+				 'http://www.muml.org/pim/types/1.0.0',
+				 'http://www.muml.org/pim/component/1.0.0',
+				 'http://www.muml.org/pim/instance/1.0.0',
 				 'http://www.fujaba.de/modelica/m2t/transform/0.4.0',
-				 'http://www.fujaba.de/muml/realtimestatechart/0.4.0',
+				 'http://www.muml.org/pim/realtimestatechart/1.0.0',
 				 'http://www.eclipse.org/emf/2002/Ecore')/]
 
 [**

@@ -10,7 +10,7 @@ modeltype behavior uses pim::behavior('http://www.muml.org/pim/1.0.0');
 modeltype msgi uses pim::msgtype('http://www.muml.org/pim/1.0.0');
 modeltype types uses pim::types('http://www.muml.org/pim/1.0.0');
 modeltype valuetype uses pim::valuetype('http://www.muml.org/pim/1.0.0');
-modeltype connector uses muml::connector("http://www.fujaba.de/muml/0.4.0");
+modeltype connector uses muml::connector("http://www.muml.org/pim/1.0.0");
 
 library MessageTypeLibrary;
 

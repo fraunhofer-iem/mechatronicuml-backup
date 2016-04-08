@@ -1,4 +1,4 @@
-[module port('http://www.fujaba.de/muml/msgtype/0.4.0')/]
+[module port('http://www.muml.org/pim/msgtype/1.0.0')/]
 
 [import org::muml::modelica::adapter::rtsc::async::helper::queries]
 

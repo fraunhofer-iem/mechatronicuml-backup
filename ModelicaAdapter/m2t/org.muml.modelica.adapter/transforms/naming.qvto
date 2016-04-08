@@ -1,6 +1,6 @@
-modeltype RTSC uses muml::realtimestatechart("http://www.fujaba.de/muml/0.4.0");
+modeltype RTSC uses muml::realtimestatechart("http://www.muml.org/pim/1.0.0");
 modeltype CORE uses core('http://www.storydriven.org/core/0.3.1');
-modeltype INSTANCE uses muml::instance("http://www.fujaba.de/muml/0.4.0");
+modeltype INSTANCE uses muml::instance("http://www.muml.org/pim/1.0.0");
 
 library Naming;
 

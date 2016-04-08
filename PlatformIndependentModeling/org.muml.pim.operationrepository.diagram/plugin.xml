@@ -126,7 +126,7 @@
          
          <child
                class="OperationRepository"
-               packageNsUri="http://www.fujaba.de/muml/behavior/0.4.0">
+               packageNsUri="http://www.muml.org/pim/behavior/1.0.0">
          </child>
          
          
@@ -427,7 +427,7 @@
             <param name="semanticHint" value="1000"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/behavior/0.4.0">
+      <metamodel nsURI="http://www.muml.org/pim/behavior/1.0.0">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.operationrepository.diagram.OperationRepository_2001"
                name="%metatype.name.OperationRepository_2001"
@@ -437,7 +437,7 @@
             <param name="semanticHint" value="2001"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/behavior/0.4.0">
+      <metamodel nsURI="http://www.muml.org/pim/behavior/1.0.0">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.operationrepository.diagram.Operation_3001"
                name="%metatype.name.Operation_3001"
@@ -447,7 +447,7 @@
             <param name="semanticHint" value="3001"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/behavior/0.4.0">
+      <metamodel nsURI="http://www.muml.org/pim/behavior/1.0.0">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.operationrepository.diagram.Parameter_3002"
                name="%metatype.name.Parameter_3002"

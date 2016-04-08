@@ -1,7 +1,7 @@
 library Types;
 
 modeltype uppaal_types uses uppaal::types('http://www.uni-paderborn.de/uppaal/0.4.0');
-modeltype msgtype uses muml::msgtype('http://www.fujaba.de/muml/0.4.0');
+modeltype msgtype uses muml::msgtype('http://www.muml.org/pim/1.0.0');
 
 
 	mapping createMessageIdType() : DeclaredType {

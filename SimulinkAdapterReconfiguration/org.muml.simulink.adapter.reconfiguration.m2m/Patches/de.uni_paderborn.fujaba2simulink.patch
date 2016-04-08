@@ -4,8 +4,8 @@ Index: tgg/fujaba2simulink.tgg
 +++ tgg/fujaba2simulink.tgg	(working copy)
 @@ -23,12 +23,14 @@
      <usedPackage href="http://www.storydriven.org/storydiagrams/0.2.1#//patterns/expressions"/>
-     <usedPackage href="http://www.fujaba.de/muml/component/0.4.0#/"/>
-     <usedPackage href="http://www.fujaba.de/muml/instance/0.4.0#/"/>
+     <usedPackage href="http://www.muml.org/pim/component/1.0.0#/"/>
+     <usedPackage href="http://www.muml.org/pim/instance/1.0.0#/"/>
 +    <usedPackage href="http://www.fujaba.de/muml/reconfiguration/0.3.18#/"/>
    </modelParameter>
    <modelParameter xmi:id="_NK6IcJzXEeCxo-rGjpVr5g" name="simulink">

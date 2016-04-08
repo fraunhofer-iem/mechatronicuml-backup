@@ -1,8 +1,8 @@
 import transforms.mtctl.MTCTLStaticNormalization; 
 import de.uni_paderborn.fujaba.muml.verification.uppaal._blackbox.ProgressUnit;
 
-modeltype muml_model uses 'http://www.fujaba.de/muml/0.4.0';
-modeltype mumlConstraint uses 'http://www.fujaba.de/muml/constraint/0.4.0';
+modeltype muml_model uses 'http://www.muml.org/pim/1.0.0';
+modeltype mumlConstraint uses 'http://www.muml.org/pim/constraint/1.0.0';
 modeltype result_model uses 'http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/results';
 modeltype uppaal_trace uses 'http://www.uni-paderborn.de/uppaal/trace/0.4.0';
 

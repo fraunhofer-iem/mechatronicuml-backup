@@ -1,4 +1,4 @@
-[module time('http://www.fujaba.de/muml/valuetype/0.4.0')]
+[module time('http://www.muml.org/pim/valuetype/1.0.0')]
 
 [**
  * Returns a factor for the time value's unit.

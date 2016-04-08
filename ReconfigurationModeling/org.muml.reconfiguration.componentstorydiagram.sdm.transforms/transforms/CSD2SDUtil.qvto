@@ -4,7 +4,7 @@ library CSD2SDUtil;
 
 modeltype sdPatterns uses storydiagrams::patterns('http://www.storydriven.org/storydiagrams/0.2.1');
 
-modeltype componentInstanceConfiguration uses muml::instance('http://www.fujaba.de/muml/0.4.0');
+modeltype componentInstanceConfiguration uses muml::instance('http://www.muml.org/pim/1.0.0');
 
 modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
 

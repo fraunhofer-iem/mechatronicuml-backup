@@ -5,7 +5,7 @@
 
     
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
-      <metamodel nsURI="http://www.fujaba.de/muml/realtimestatechart/0.4.0">
+      <metamodel nsURI="http://www.muml.org/pim/realtimestatechart/1.0.0">
       
         <adviceBinding  id="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.custom.TransitionAdvice"
 		  typeId="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.Transition_4003"
@@ -71,7 +71,7 @@
    </extension>
        
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
-      <metamodel nsURI="http://www.fujaba.de/muml/realtimestatechart/0.4.0">
+      <metamodel nsURI="http://www.muml.org/pim/realtimestatechart/1.0.0">
         <adviceBinding  id="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.custom.StateAdvice"
 		  typeId="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.State_3032"
 		  class="org.muml.pim.realtimestatechart.diagram.custom.edit.helpers.TransitionContainerAdaptionEditHelperAdvice"
@@ -89,7 +89,7 @@
    </extension>
        
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
-      <metamodel nsURI="http://www.fujaba.de/muml/realtimestatechart/0.4.0">
+      <metamodel nsURI="http://www.muml.org/pim/realtimestatechart/1.0.0">
         <adviceBinding  id="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.custom.RegionAdvice"
 		  typeId="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.Region_3042"
 		  class="org.muml.pim.realtimestatechart.diagram.custom.edit.helpers.TransitionContainerAdaptionEditHelperAdvice"
@@ -109,7 +109,7 @@
    </extension>
        
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
-      <metamodel nsURI="http://www.fujaba.de/muml/realtimestatechart/0.4.0">
+      <metamodel nsURI="http://www.muml.org/pim/realtimestatechart/1.0.0">
         <adviceBinding  id="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.custom.ModelElementCategoryAdvice"
 		  typeId="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.RealtimeStatechart_1000"
 		  class="org.muml.pim.realtimestatechart.diagram.custom.edit.helpers.TransitionContainerAdaptionEditHelperAdvice"

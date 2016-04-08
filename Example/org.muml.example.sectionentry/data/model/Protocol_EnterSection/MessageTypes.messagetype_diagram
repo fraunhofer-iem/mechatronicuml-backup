@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.4.0" xmlns:msgtype="http://www.fujaba.de/muml/msgtype/0.4.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_VdvlYMOpEeKt4K__LJLJ8w" type="Message Type" name="MessageTypes.messagetype_diagram" measurementUnit="Pixel">
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.4.0" xmlns:msgtype="http://www.muml.org/pim/msgtype/1.0.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_VdvlYMOpEeKt4K__LJLJ8w" type="Message Type" name="MessageTypes.messagetype_diagram" measurementUnit="Pixel">
   <children xmi:type="notation:Shape" xmi:id="_V2fckMOpEeKt4K__LJLJ8w" type="2008" fontName="Segoe UI" lineColor="0">
     <children xmi:type="notation:DecorationNode" xmi:id="_V2gDoMOpEeKt4K__LJLJ8w" type="5017"/>
     <children xmi:type="notation:DecorationNode" xmi:id="_V2hRwMOpEeKt4K__LJLJ8w" type="7010">

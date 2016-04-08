@@ -13,8 +13,8 @@ public class AbstractOperatingSystemLanguageValidator extends org.eclipse.xtext.
 	protected List<EPackage> getEPackages() {
 	    List<EPackage> result = new ArrayList<EPackage>();
 	    result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.fujaba.de/muml/swplatform/0.4.0/"));
-	    result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.fujaba.de/muml/behavior/0.4.0"));
-	    result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.fujaba.de/muml/valuetype/0.4.0"));
+	    result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.muml.org/pim/behavior/1.0.0"));
+	    result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.muml.org/pim/valuetype/1.0.0"));
 	    result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.storydriven.org/core/expressions/common/0.3.1"));
 		return result;
 	}

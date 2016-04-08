@@ -1,4 +1,4 @@
-modeltype RTSC uses muml::realtimestatechart("http://www.fujaba.de/muml/0.4.0");
+modeltype RTSC uses muml::realtimestatechart("http://www.muml.org/pim/1.0.0");
 
 transformation RegionPriorityNormalization(inout rtscModel : RTSC);
 

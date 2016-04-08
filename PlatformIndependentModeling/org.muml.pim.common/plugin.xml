@@ -109,7 +109,7 @@
               name="types">
           <child
               class="DataType"
-              packageNsUri="http://www.fujaba.de/muml/types/0.4.0">
+              packageNsUri="http://www.muml.org/pim/types/1.0.0">
           </child>
       </category>
   </extension>

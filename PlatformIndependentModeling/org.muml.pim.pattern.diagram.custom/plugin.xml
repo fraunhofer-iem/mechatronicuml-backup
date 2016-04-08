@@ -41,7 +41,7 @@
       </binding>
    </extension>
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
-      <metamodel nsURI="http://www.fujaba.de/muml/pattern/0.3.18">
+      <metamodel nsURI="http://www.muml.org/pim/pattern/1.0.0">
         <adviceBinding  id="de.uni_paderborn.fujaba.muml.pattern.diagram.Pattern2Advice"
 		  typeId="de.uni_paderborn.fujaba.muml.pattern.diagram.CoordinationPattern_3003"
 		  class="de.uni_paderborn.fujaba.muml.coordinationspecification.common.edit.helpers.PreventDeleteEditHelperAdvice"
@@ -59,7 +59,7 @@
       </binding>
    </extension>
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
-      <metamodel nsURI="http://www.fujaba.de/muml/pattern/0.3.18">
+      <metamodel nsURI="http://www.muml.org/pim/pattern/1.0.0">
         <adviceBinding  id="de.uni_paderborn.fujaba.muml.pattern.diagram.PatternVariant2Advice"
 		  typeId="de.uni_paderborn.fujaba.muml.pattern.diagram.CoordinationPatternVariant_3008"
 		  class="de.uni_paderborn.fujaba.muml.coordinationspecification.common.edit.helpers.PreventDeleteEditHelperAdvice"
@@ -77,7 +77,7 @@
       </binding>
    </extension>
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
-      <metamodel nsURI="http://www.fujaba.de/muml/pattern/0.3.18">
+      <metamodel nsURI="http://www.muml.org/pim/pattern/1.0.0">
         <adviceBinding id="de.uni_paderborn.fujaba.muml.pattern.diagram.CoordinationPatternAdvice"
 		  typeId="de.uni_paderborn.fujaba.muml.pattern.diagram.CoordinationPattern_2001"
 		  class="de.uni_paderborn.fujaba.muml.coordinationspecification.common.edit.helpers.DeleteWithChildrenEditHelperAdvice"
@@ -94,7 +94,7 @@
       </binding>
    </extension>
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
-      <metamodel nsURI="http://www.fujaba.de/muml/pattern/0.3.18">
+      <metamodel nsURI="http://www.muml.org/pim/pattern/1.0.0">
         <adviceBinding id="de.uni_paderborn.fujaba.muml.pattern.diagram.CoordinationPatternVariantAdvice"
 		  typeId="de.uni_paderborn.fujaba.muml.pattern.diagram.CoordinationPatternVariant_2002"
 		  class="de.uni_paderborn.fujaba.muml.coordinationspecification.common.edit.helpers.DeleteWithChildrenEditHelperAdvice"

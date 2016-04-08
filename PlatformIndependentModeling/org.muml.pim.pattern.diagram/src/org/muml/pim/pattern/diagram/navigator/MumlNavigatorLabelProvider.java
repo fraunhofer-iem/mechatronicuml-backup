@@ -74,48 +74,48 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements ICommon
 			return getImage("Navigator?Diagram?http://www.fujaba.de/modelinstance/0.4.0?ModelElementCategory", //$NON-NLS-1$
 					org.muml.pim.pattern.diagram.providers.MumlElementTypes.ModelElementCategory_1000);
 		case org.muml.pim.pattern.diagram.edit.parts.CoordinationPatternEditPart.VISUAL_ID:
-			return getImage("Navigator?TopLevelNode?http://www.fujaba.de/muml/pattern/0.3.18?CoordinationPattern", //$NON-NLS-1$
+			return getImage("Navigator?TopLevelNode?http://www.muml.org/pim/pattern/1.0.0?CoordinationPattern", //$NON-NLS-1$
 					org.muml.pim.pattern.diagram.providers.MumlElementTypes.CoordinationPattern_2001);
 		case org.muml.pim.pattern.diagram.edit.parts.CoordinationPatternVariantEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?TopLevelNode?http://www.fujaba.de/muml/pattern/0.3.18?CoordinationPatternVariant", //$NON-NLS-1$
+					"Navigator?TopLevelNode?http://www.muml.org/pim/pattern/1.0.0?CoordinationPatternVariant", //$NON-NLS-1$
 					org.muml.pim.pattern.diagram.providers.MumlElementTypes.CoordinationPatternVariant_2002);
 		case org.muml.pim.pattern.diagram.edit.parts.RoleEditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.fujaba.de/muml/protocol/0.4.0?Role", //$NON-NLS-1$
+			return getImage("Navigator?Node?http://www.muml.org/pim/protocol/1.0.0?Role", //$NON-NLS-1$
 					org.muml.pim.pattern.diagram.providers.MumlElementTypes.Role_3002);
 		case org.muml.pim.pattern.diagram.edit.parts.CoordinationPattern2EditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.fujaba.de/muml/pattern/0.3.18?CoordinationPattern", //$NON-NLS-1$
+			return getImage("Navigator?Node?http://www.muml.org/pim/pattern/1.0.0?CoordinationPattern", //$NON-NLS-1$
 					org.muml.pim.pattern.diagram.providers.MumlElementTypes.CoordinationPattern_3003);
 		case org.muml.pim.pattern.diagram.edit.parts.MessageBufferEditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.fujaba.de/muml/connector/0.4.0?MessageBuffer", //$NON-NLS-1$
+			return getImage("Navigator?Node?http://www.muml.org/pim/connector/1.0.0?MessageBuffer", //$NON-NLS-1$
 					org.muml.pim.pattern.diagram.providers.MumlElementTypes.MessageBuffer_3004);
 		case org.muml.pim.pattern.diagram.edit.parts.MessageTypeEditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.fujaba.de/muml/msgtype/0.4.0?MessageType", //$NON-NLS-1$
+			return getImage("Navigator?Node?http://www.muml.org/pim/msgtype/1.0.0?MessageType", //$NON-NLS-1$
 					org.muml.pim.pattern.diagram.providers.MumlElementTypes.MessageType_3005);
 		case org.muml.pim.pattern.diagram.edit.parts.ParameterEditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.fujaba.de/muml/behavior/0.4.0?Parameter", //$NON-NLS-1$
+			return getImage("Navigator?Node?http://www.muml.org/pim/behavior/1.0.0?Parameter", //$NON-NLS-1$
 					org.muml.pim.pattern.diagram.providers.MumlElementTypes.Parameter_3006);
 		case org.muml.pim.pattern.diagram.edit.parts.ConnectorQualityOfServiceAssumptionsEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Node?http://www.fujaba.de/muml/protocol/0.4.0?ConnectorQualityOfServiceAssumptions", //$NON-NLS-1$
+					"Navigator?Node?http://www.muml.org/pim/protocol/1.0.0?ConnectorQualityOfServiceAssumptions", //$NON-NLS-1$
 					org.muml.pim.pattern.diagram.providers.MumlElementTypes.ConnectorQualityOfServiceAssumptions_3007);
 		case org.muml.pim.pattern.diagram.edit.parts.CoordinationPatternVariant2EditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.fujaba.de/muml/pattern/0.3.18?CoordinationPatternVariant", //$NON-NLS-1$
+			return getImage("Navigator?Node?http://www.muml.org/pim/pattern/1.0.0?CoordinationPatternVariant", //$NON-NLS-1$
 					org.muml.pim.pattern.diagram.providers.MumlElementTypes.CoordinationPatternVariant_3008);
 		case org.muml.pim.pattern.diagram.edit.parts.RoleConnectorEditPart.VISUAL_ID:
-			return getImage("Navigator?Link?http://www.fujaba.de/muml/protocol/0.4.0?RoleConnector", //$NON-NLS-1$
+			return getImage("Navigator?Link?http://www.muml.org/pim/protocol/1.0.0?RoleConnector", //$NON-NLS-1$
 					org.muml.pim.pattern.diagram.providers.MumlElementTypes.RoleConnector_4001);
 		case org.muml.pim.pattern.diagram.edit.parts.AbstractCoordinationSpecificationRolesEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Link?http://www.fujaba.de/muml/protocol/0.4.0?AbstractCoordinationSpecification?roles", //$NON-NLS-1$
+					"Navigator?Link?http://www.muml.org/pim/protocol/1.0.0?AbstractCoordinationSpecification?roles", //$NON-NLS-1$
 					org.muml.pim.pattern.diagram.providers.MumlElementTypes.AbstractCoordinationSpecificationRoles_4002);
 		case org.muml.pim.pattern.diagram.edit.parts.DiscreteInteractionEndpointReceiverMessageBufferEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Link?http://www.fujaba.de/muml/connector/0.4.0?DiscreteInteractionEndpoint?receiverMessageBuffer", //$NON-NLS-1$
+					"Navigator?Link?http://www.muml.org/pim/connector/1.0.0?DiscreteInteractionEndpoint?receiverMessageBuffer", //$NON-NLS-1$
 					org.muml.pim.pattern.diagram.providers.MumlElementTypes.DiscreteInteractionEndpointReceiverMessageBuffer_4003);
 		case org.muml.pim.pattern.diagram.edit.parts.RoleConnectorConnectorQualityOfServiceAssumptionsEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Link?http://www.fujaba.de/muml/protocol/0.4.0?RoleConnector?connectorQualityOfServiceAssumptions", //$NON-NLS-1$
+					"Navigator?Link?http://www.muml.org/pim/protocol/1.0.0?RoleConnector?connectorQualityOfServiceAssumptions", //$NON-NLS-1$
 					org.muml.pim.pattern.diagram.providers.MumlElementTypes.RoleConnectorConnectorQualityOfServiceAssumptions_4004);
 		}
 		return getImage("Navigator?UnknownElement", null); //$NON-NLS-1$

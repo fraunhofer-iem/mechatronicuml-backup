@@ -89,68 +89,68 @@ public class ComponentinstanceconfigurationNavigatorLabelProvider extends LabelP
 		switch (org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
 				.getVisualID(view)) {
 		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.ComponentInstanceConfigurationDiagramEditPart.VISUAL_ID:
-			return getImage("Navigator?Diagram?http://www.fujaba.de/muml/instance/0.4.0?ComponentInstanceConfiguration", //$NON-NLS-1$
+			return getImage("Navigator?Diagram?http://www.muml.org/pim/instance/1.0.0?ComponentInstanceConfiguration", //$NON-NLS-1$
 					org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes.ComponentInstanceConfiguration_1000);
 		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.StructuredComponentInstanceEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?TopLevelNode?http://www.fujaba.de/muml/instance/0.4.0?StructuredComponentInstance", //$NON-NLS-1$
+					"Navigator?TopLevelNode?http://www.muml.org/pim/instance/1.0.0?StructuredComponentInstance", //$NON-NLS-1$
 					org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes.StructuredComponentInstance_2015);
 		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.AtomicComponentInstanceEditPart.VISUAL_ID:
-			return getImage("Navigator?TopLevelNode?http://www.fujaba.de/muml/instance/0.4.0?AtomicComponentInstance", //$NON-NLS-1$
+			return getImage("Navigator?TopLevelNode?http://www.muml.org/pim/instance/1.0.0?AtomicComponentInstance", //$NON-NLS-1$
 					org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes.AtomicComponentInstance_2016);
 		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.HybridPortInstanceEditPart.VISUAL_ID:
-			return getImage("Navigator?TopLevelNode?http://www.fujaba.de/muml/instance/0.4.0?HybridPortInstance", //$NON-NLS-1$
+			return getImage("Navigator?TopLevelNode?http://www.muml.org/pim/instance/1.0.0?HybridPortInstance", //$NON-NLS-1$
 					org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes.HybridPortInstance_2021);
 		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteSinglePortInstanceEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?TopLevelNode?http://www.fujaba.de/muml/instance/0.4.0?DiscreteSinglePortInstance", //$NON-NLS-1$
+					"Navigator?TopLevelNode?http://www.muml.org/pim/instance/1.0.0?DiscreteSinglePortInstance", //$NON-NLS-1$
 					org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes.DiscreteSinglePortInstance_2022);
 		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteMultiPortInstanceEditPart.VISUAL_ID:
-			return getImage("Navigator?TopLevelNode?http://www.fujaba.de/muml/instance/0.4.0?DiscreteMultiPortInstance", //$NON-NLS-1$
+			return getImage("Navigator?TopLevelNode?http://www.muml.org/pim/instance/1.0.0?DiscreteMultiPortInstance", //$NON-NLS-1$
 					org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes.DiscreteMultiPortInstance_2023);
 		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.ContinuousPortInstanceEditPart.VISUAL_ID:
-			return getImage("Navigator?TopLevelNode?http://www.fujaba.de/muml/instance/0.4.0?ContinuousPortInstance", //$NON-NLS-1$
+			return getImage("Navigator?TopLevelNode?http://www.muml.org/pim/instance/1.0.0?ContinuousPortInstance", //$NON-NLS-1$
 					org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes.ContinuousPortInstance_2024);
 		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.CoordinationProtocolInstanceEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?TopLevelNode?http://www.fujaba.de/muml/instance/0.4.0?CoordinationProtocolInstance", //$NON-NLS-1$
+					"Navigator?TopLevelNode?http://www.muml.org/pim/instance/1.0.0?CoordinationProtocolInstance", //$NON-NLS-1$
 					org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes.CoordinationProtocolInstance_2025);
 		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.ComponentInstanceConfigurationEditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.fujaba.de/muml/instance/0.4.0?ComponentInstanceConfiguration", //$NON-NLS-1$
+			return getImage("Navigator?Node?http://www.muml.org/pim/instance/1.0.0?ComponentInstanceConfiguration", //$NON-NLS-1$
 					org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes.ComponentInstanceConfiguration_3023);
 		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.AtomicComponentInstance2EditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.fujaba.de/muml/instance/0.4.0?AtomicComponentInstance", //$NON-NLS-1$
+			return getImage("Navigator?Node?http://www.muml.org/pim/instance/1.0.0?AtomicComponentInstance", //$NON-NLS-1$
 					org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes.AtomicComponentInstance_3024);
 		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.StructuredComponentInstance2EditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.fujaba.de/muml/instance/0.4.0?StructuredComponentInstance", //$NON-NLS-1$
+			return getImage("Navigator?Node?http://www.muml.org/pim/instance/1.0.0?StructuredComponentInstance", //$NON-NLS-1$
 					org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes.StructuredComponentInstance_3025);
 		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteSinglePortInstance2EditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.fujaba.de/muml/instance/0.4.0?DiscreteSinglePortInstance", //$NON-NLS-1$
+			return getImage("Navigator?Node?http://www.muml.org/pim/instance/1.0.0?DiscreteSinglePortInstance", //$NON-NLS-1$
 					org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes.DiscreteSinglePortInstance_3026);
 		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.HybridPortInstance2EditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.fujaba.de/muml/instance/0.4.0?HybridPortInstance", //$NON-NLS-1$
+			return getImage("Navigator?Node?http://www.muml.org/pim/instance/1.0.0?HybridPortInstance", //$NON-NLS-1$
 					org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes.HybridPortInstance_3031);
 		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteSinglePortInstance3EditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.fujaba.de/muml/instance/0.4.0?DiscreteSinglePortInstance", //$NON-NLS-1$
+			return getImage("Navigator?Node?http://www.muml.org/pim/instance/1.0.0?DiscreteSinglePortInstance", //$NON-NLS-1$
 					org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes.DiscreteSinglePortInstance_3032);
 		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteMultiPortInstance2EditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.fujaba.de/muml/instance/0.4.0?DiscreteMultiPortInstance", //$NON-NLS-1$
+			return getImage("Navigator?Node?http://www.muml.org/pim/instance/1.0.0?DiscreteMultiPortInstance", //$NON-NLS-1$
 					org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes.DiscreteMultiPortInstance_3033);
 		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.ContinuousPortInstance2EditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.fujaba.de/muml/instance/0.4.0?ContinuousPortInstance", //$NON-NLS-1$
+			return getImage("Navigator?Node?http://www.muml.org/pim/instance/1.0.0?ContinuousPortInstance", //$NON-NLS-1$
 					org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes.ContinuousPortInstance_3034);
 		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.CoordinationProtocolInstance2EditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.fujaba.de/muml/instance/0.4.0?CoordinationProtocolInstance", //$NON-NLS-1$
+			return getImage("Navigator?Node?http://www.muml.org/pim/instance/1.0.0?CoordinationProtocolInstance", //$NON-NLS-1$
 					org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes.CoordinationProtocolInstance_3035);
 		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.AssemblyConnectorInstanceEditPart.VISUAL_ID:
-			return getImage("Navigator?Link?http://www.fujaba.de/muml/instance/0.4.0?AssemblyConnectorInstance", //$NON-NLS-1$
+			return getImage("Navigator?Link?http://www.muml.org/pim/instance/1.0.0?AssemblyConnectorInstance", //$NON-NLS-1$
 					org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes.AssemblyConnectorInstance_4001);
 		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DelegationConnectorInstanceEditPart.VISUAL_ID:
-			return getImage("Navigator?Link?http://www.fujaba.de/muml/instance/0.4.0?DelegationConnectorInstance", //$NON-NLS-1$
+			return getImage("Navigator?Link?http://www.muml.org/pim/instance/1.0.0?DelegationConnectorInstance", //$NON-NLS-1$
 					org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes.DelegationConnectorInstance_4002);
 		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.CoordinationProtocolInstancePortInstancesEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Link?http://www.fujaba.de/muml/instance/0.4.0?CoordinationProtocolInstance?portInstances", //$NON-NLS-1$
+					"Navigator?Link?http://www.muml.org/pim/instance/1.0.0?CoordinationProtocolInstance?portInstances", //$NON-NLS-1$
 					org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes.CoordinationProtocolInstancePortInstances_4003);
 		}
 		return getImage("Navigator?UnknownElement", null); //$NON-NLS-1$

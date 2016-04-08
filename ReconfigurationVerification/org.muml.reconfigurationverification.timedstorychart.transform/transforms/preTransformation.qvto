@@ -1,10 +1,10 @@
 modeltype expressionscommon uses core::expressions::common('http://www.muml.org/core/1.0.0');
 
-modeltype realtimestatechart uses muml::realtimestatechart("http://www.fujaba.de/muml/0.4.0");
+modeltype realtimestatechart uses muml::realtimestatechart("http://www.muml.org/pim/1.0.0");
 modeltype valuetype uses pim::valuetype('http://www.muml.org/pim/1.0.0');
-modeltype pattern uses muml::protocol("http://www.fujaba.de/muml/0.4.0");
-modeltype connector uses muml::connector("http://www.fujaba.de/muml/0.4.0");
-modeltype component uses muml::component("http://www.fujaba.de/muml/0.4.0");
+modeltype pattern uses muml::protocol("http://www.muml.org/pim/1.0.0");
+modeltype connector uses muml::connector("http://www.muml.org/pim/1.0.0");
+modeltype component uses muml::component("http://www.muml.org/pim/1.0.0");
 
 
 modeltype transformationHelper uses "http://www.fujaba.de/verification/timedstorychart/transform/helper/0.1.0";

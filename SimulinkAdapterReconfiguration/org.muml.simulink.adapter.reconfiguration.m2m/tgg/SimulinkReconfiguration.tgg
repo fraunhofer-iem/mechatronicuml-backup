@@ -73,24 +73,24 @@
     </node>
     <node xmi:id="_moyuCinkEeORPcZB3PfXyA" incomingEdge="_moyuICnkEeORPcZB3PfXyA" graphPattern="_moyuMynkEeORPcZB3PfXyA _moyuMinkEeORPcZB3PfXyA _moyuNinkEeORPcZB3PfXyA">
       <outgoingEdge xmi:id="_moyuCynkEeORPcZB3PfXyA" targetNode="_moyuDCnkEeORPcZB3PfXyA" graphPattern="_moyuMynkEeORPcZB3PfXyA">
-        <typeReference href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstanceConfiguration/componentInstances"/>
+        <typeReference href="http://www.muml.org/pim/instance/1.0.0#//ComponentInstanceConfiguration/componentInstances"/>
       </outgoingEdge>
-      <eType href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstanceConfiguration"/>
+      <eType href="http://www.muml.org/pim/instance/1.0.0#//ComponentInstanceConfiguration"/>
     </node>
     <node xmi:id="_moyuDCnkEeORPcZB3PfXyA" name="compInst" incomingEdge="_moyuCynkEeORPcZB3PfXyA _moyuGSnkEeORPcZB3PfXyA _moyuHSnkEeORPcZB3PfXyA" graphPattern="_moyuMynkEeORPcZB3PfXyA _moyuNinkEeORPcZB3PfXyA">
       <outgoingEdge xmi:id="_moyuDSnkEeORPcZB3PfXyA" targetNode="_moyuDynkEeORPcZB3PfXyA" graphPattern="_moyuMynkEeORPcZB3PfXyA">
-        <typeReference href="http://www.fujaba.de/muml/instance/0.4.0#//StructuredComponentInstance/embeddedCIC"/>
+        <typeReference href="http://www.muml.org/pim/instance/1.0.0#//StructuredComponentInstance/embeddedCIC"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_moyuDinkEeORPcZB3PfXyA" targetNode="_moyuIynkEeORPcZB3PfXyA" graphPattern="_moyuMynkEeORPcZB3PfXyA">
-        <typeReference href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstance/componentType"/>
+        <typeReference href="http://www.muml.org/pim/instance/1.0.0#//ComponentInstance/componentType"/>
       </outgoingEdge>
-      <eType href="http://www.fujaba.de/muml/instance/0.4.0#//StructuredComponentInstance"/>
+      <eType href="http://www.muml.org/pim/instance/1.0.0#//StructuredComponentInstance"/>
     </node>
     <node xmi:id="_moyuDynkEeORPcZB3PfXyA" name="instConfig" incomingEdge="_moyuDSnkEeORPcZB3PfXyA _moyuGinkEeORPcZB3PfXyA" graphPattern="_moyuMynkEeORPcZB3PfXyA _moyuNinkEeORPcZB3PfXyA">
       <outgoingEdge xmi:id="_moyuECnkEeORPcZB3PfXyA" targetNode="_moyuLSnkEeORPcZB3PfXyA" graphPattern="_moyuMynkEeORPcZB3PfXyA">
         <typeReference href="http://www.storydriven.org/core/0.3.1#//ExtendableElement/annotation"/>
       </outgoingEdge>
-      <eType href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstanceConfiguration"/>
+      <eType href="http://www.muml.org/pim/instance/1.0.0#//ComponentInstanceConfiguration"/>
     </node>
     <node xmi:id="_moyuESnkEeORPcZB3PfXyA" incomingEdge="_moyuFCnkEeORPcZB3PfXyA _moyuISnkEeORPcZB3PfXyA" graphPattern="_moyuMynkEeORPcZB3PfXyA _moyuMinkEeORPcZB3PfXyA _moyuNCnkEeORPcZB3PfXyA" matchSubtype="true">
       <outgoingEdge xmi:id="_moyuEinkEeORPcZB3PfXyA" targetNode="_moyuEynkEeORPcZB3PfXyA" graphPattern="_moyuMynkEeORPcZB3PfXyA">
@@ -254,24 +254,24 @@
     </node>
     <node xmi:id="_moyuSCnkEeORPcZB3PfXyA" name="" incomingEdge="_moyuXinkEeORPcZB3PfXyA" graphPattern="_moyubinkEeORPcZB3PfXyA _moyubynkEeORPcZB3PfXyA _moyucSnkEeORPcZB3PfXyA">
       <outgoingEdge xmi:id="_moyuSSnkEeORPcZB3PfXyA" targetNode="_moyuSinkEeORPcZB3PfXyA" graphPattern="_moyubynkEeORPcZB3PfXyA">
-        <typeReference href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstanceConfiguration/componentInstances"/>
+        <typeReference href="http://www.muml.org/pim/instance/1.0.0#//ComponentInstanceConfiguration/componentInstances"/>
       </outgoingEdge>
-      <eType href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstanceConfiguration"/>
+      <eType href="http://www.muml.org/pim/instance/1.0.0#//ComponentInstanceConfiguration"/>
     </node>
     <node xmi:id="_moyuSinkEeORPcZB3PfXyA" name="compInst" incomingEdge="_moyuSSnkEeORPcZB3PfXyA _moyuVynkEeORPcZB3PfXyA _moyuWynkEeORPcZB3PfXyA" graphPattern="_moyubynkEeORPcZB3PfXyA _moyucSnkEeORPcZB3PfXyA">
       <outgoingEdge xmi:id="_moyuSynkEeORPcZB3PfXyA" targetNode="_moyuTSnkEeORPcZB3PfXyA" graphPattern="_moyubynkEeORPcZB3PfXyA">
-        <typeReference href="http://www.fujaba.de/muml/instance/0.4.0#//StructuredComponentInstance/embeddedCIC"/>
+        <typeReference href="http://www.muml.org/pim/instance/1.0.0#//StructuredComponentInstance/embeddedCIC"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_moyuTCnkEeORPcZB3PfXyA" targetNode="_moyuYSnkEeORPcZB3PfXyA" graphPattern="_moyubynkEeORPcZB3PfXyA">
-        <typeReference href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstance/componentType"/>
+        <typeReference href="http://www.muml.org/pim/instance/1.0.0#//ComponentInstance/componentType"/>
       </outgoingEdge>
-      <eType href="http://www.fujaba.de/muml/instance/0.4.0#//StructuredComponentInstance"/>
+      <eType href="http://www.muml.org/pim/instance/1.0.0#//StructuredComponentInstance"/>
     </node>
     <node xmi:id="_moyuTSnkEeORPcZB3PfXyA" name="instConfig" incomingEdge="_moyuSynkEeORPcZB3PfXyA _moyuWCnkEeORPcZB3PfXyA" graphPattern="_moyubynkEeORPcZB3PfXyA _moyucSnkEeORPcZB3PfXyA">
       <outgoingEdge xmi:id="_moyuTinkEeORPcZB3PfXyA" targetNode="_moyuaynkEeORPcZB3PfXyA" graphPattern="_moyubynkEeORPcZB3PfXyA">
         <typeReference href="http://www.storydriven.org/core/0.3.1#//ExtendableElement/annotation"/>
       </outgoingEdge>
-      <eType href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstanceConfiguration"/>
+      <eType href="http://www.muml.org/pim/instance/1.0.0#//ComponentInstanceConfiguration"/>
     </node>
     <node xmi:id="_moyuTynkEeORPcZB3PfXyA" incomingEdge="_moyuUinkEeORPcZB3PfXyA _moyuXynkEeORPcZB3PfXyA" graphPattern="_moyubinkEeORPcZB3PfXyA _moyubynkEeORPcZB3PfXyA _moyucCnkEeORPcZB3PfXyA" matchSubtype="true">
       <outgoingEdge xmi:id="_moyuUCnkEeORPcZB3PfXyA" targetNode="_moyuUSnkEeORPcZB3PfXyA" graphPattern="_moyubynkEeORPcZB3PfXyA">
@@ -423,12 +423,12 @@
     </node>
     <node xmi:id="_Yc5DETHGEeO1rcTjon2HaQ" name="scState" incomingEdge="_Yc5DEDHGEeO1rcTjon2HaQ _1qE5cDHHEeO1rcTjon2HaQ _5LPBIDHJEeO1rcTjon2HaQ" graphPattern="_Yc5DRzHGEeO1rcTjon2HaQ _Yc5DSDHGEeO1rcTjon2HaQ _Yc5DSTHGEeO1rcTjon2HaQ">
       <outgoingEdge xmi:id="_1qFggDHHEeO1rcTjon2HaQ" targetNode="_ZRIt8DHHEeO1rcTjon2HaQ">
-        <typeReference href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//State/parentStatechart"/>
+        <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//State/parentStatechart"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_5d2bIDHJEeO1rcTjon2HaQ" targetNode="_Yc5DNzHGEeO1rcTjon2HaQ" graphPattern="_Yc5DSDHGEeO1rcTjon2HaQ">
-        <typeReference href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Vertex/incomingTransitions"/>
+        <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//Vertex/incomingTransitions"/>
       </outgoingEdge>
-      <eType href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//State"/>
+      <eType href="http://www.muml.org/pim/realtimestatechart/1.0.0#//State"/>
     </node>
     <node xmi:id="_Yc5DFDHGEeO1rcTjon2HaQ" name="sfStateReg" incomingEdge="_Yc5DGDHGEeO1rcTjon2HaQ _Yc5DLTHGEeO1rcTjon2HaQ _Yc5DMTHGEeO1rcTjon2HaQ" graphPattern="_Yc5DRzHGEeO1rcTjon2HaQ _Yc5DSDHGEeO1rcTjon2HaQ _Yc5DSzHGEeO1rcTjon2HaQ">
       <outgoingEdge xmi:id="_Yc5DFTHGEeO1rcTjon2HaQ" targetNode="_Yc5DLDHGEeO1rcTjon2HaQ" graphPattern="_Yc5DRzHGEeO1rcTjon2HaQ _Yc5DSDHGEeO1rcTjon2HaQ">
@@ -453,45 +453,45 @@
     </node>
     <node xmi:id="_Yc5DGzHGEeO1rcTjon2HaQ" name="scStateReg" incomingEdge="_Yc5DGTHGEeO1rcTjon2HaQ _Yc5DIDHGEeO1rcTjon2HaQ _Yc5DNjHGEeO1rcTjon2HaQ _vNkJADHHEeO1rcTjon2HaQ" graphPattern="_Yc5DRzHGEeO1rcTjon2HaQ _Yc5DSDHGEeO1rcTjon2HaQ _Yc5DSTHGEeO1rcTjon2HaQ">
       <outgoingEdge xmi:id="_Yc5DHDHGEeO1rcTjon2HaQ" targetNode="_Yc5DHzHGEeO1rcTjon2HaQ">
-        <typeReference href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//State/embeddedRegions"/>
+        <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//State/embeddedRegions"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_Yc5DHjHGEeO1rcTjon2HaQ" targetNode="_Yc5DMzHGEeO1rcTjon2HaQ" graphPattern="_Yc5DSDHGEeO1rcTjon2HaQ">
-        <typeReference href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//State/connectionPoints"/>
+        <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//State/connectionPoints"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_vNkwEDHHEeO1rcTjon2HaQ" targetNode="_ZRIt8DHHEeO1rcTjon2HaQ">
-        <typeReference href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//State/parentStatechart"/>
+        <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//State/parentStatechart"/>
       </outgoingEdge>
-      <eType href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//State"/>
+      <eType href="http://www.muml.org/pim/realtimestatechart/1.0.0#//State"/>
     </node>
     <node xmi:id="_Yc5DHzHGEeO1rcTjon2HaQ" name="scRegion" incomingEdge="_Yc5DHDHGEeO1rcTjon2HaQ _Yc5DIzHGEeO1rcTjon2HaQ" graphPattern="_Yc5DSTHGEeO1rcTjon2HaQ">
       <outgoingEdge xmi:id="_Yc5DIDHGEeO1rcTjon2HaQ" targetNode="_Yc5DGzHGEeO1rcTjon2HaQ">
-        <typeReference href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Region/parentState"/>
+        <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//Region/parentState"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_Yc5DITHGEeO1rcTjon2HaQ" targetNode="_Yc5DIjHGEeO1rcTjon2HaQ">
-        <typeReference href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Region/embeddedStatechart"/>
+        <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//Region/embeddedStatechart"/>
       </outgoingEdge>
-      <eType href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Region"/>
+      <eType href="http://www.muml.org/pim/realtimestatechart/1.0.0#//Region"/>
     </node>
     <node xmi:id="_Yc5DIjHGEeO1rcTjon2HaQ" name="scSubChart" incomingEdge="_Yc5DITHGEeO1rcTjon2HaQ _Yc5DJzHGEeO1rcTjon2HaQ _Yc5DPjHGEeO1rcTjon2HaQ" graphPattern="_Yc5DSTHGEeO1rcTjon2HaQ">
       <outgoingEdge xmi:id="_Yc5DIzHGEeO1rcTjon2HaQ" targetNode="_Yc5DHzHGEeO1rcTjon2HaQ">
-        <typeReference href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart/parentRegion"/>
+        <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//RealtimeStatechart/parentRegion"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_Yc5DJDHGEeO1rcTjon2HaQ" targetNode="_Yc5DJjHGEeO1rcTjon2HaQ">
-        <typeReference href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart/states"/>
+        <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//RealtimeStatechart/states"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_Yc5DJTHGEeO1rcTjon2HaQ" targetNode="_Yc5DOzHGEeO1rcTjon2HaQ" graphPattern="_Yc5DSDHGEeO1rcTjon2HaQ">
-        <typeReference href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart/transitions"/>
+        <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//RealtimeStatechart/transitions"/>
       </outgoingEdge>
-      <eType href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+      <eType href="http://www.muml.org/pim/realtimestatechart/1.0.0#//RealtimeStatechart"/>
     </node>
     <node xmi:id="_Yc5DJjHGEeO1rcTjon2HaQ" name="scStateIn" incomingEdge="_Yc5DKjHGEeO1rcTjon2HaQ _Yc5DJDHGEeO1rcTjon2HaQ _0qsOIDHJEeO1rcTjon2HaQ" graphPattern="_Yc5DRzHGEeO1rcTjon2HaQ _Yc5DSDHGEeO1rcTjon2HaQ _Yc5DSTHGEeO1rcTjon2HaQ">
       <outgoingEdge xmi:id="_Yc5DJzHGEeO1rcTjon2HaQ" targetNode="_Yc5DIjHGEeO1rcTjon2HaQ">
-        <typeReference href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//State/parentStatechart"/>
+        <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//State/parentStatechart"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_06tnIDHJEeO1rcTjon2HaQ" targetNode="_Yc5DOzHGEeO1rcTjon2HaQ" graphPattern="_Yc5DSDHGEeO1rcTjon2HaQ">
-        <typeReference href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Vertex/outgoingTransitions"/>
+        <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//Vertex/outgoingTransitions"/>
       </outgoingEdge>
-      <eType href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//State"/>
+      <eType href="http://www.muml.org/pim/realtimestatechart/1.0.0#//State"/>
     </node>
     <node xmi:id="_Yc5DKTHGEeO1rcTjon2HaQ" incomingEdge="_Yc5DGjHGEeO1rcTjon2HaQ" graphPattern="_Yc5DRzHGEeO1rcTjon2HaQ _Yc5DSDHGEeO1rcTjon2HaQ _Yc5DSjHGEeO1rcTjon2HaQ">
       <outgoingEdge xmi:id="_Yc5DKjHGEeO1rcTjon2HaQ" targetNode="_Yc5DJjHGEeO1rcTjon2HaQ" graphPattern="_Yc5DRzHGEeO1rcTjon2HaQ _Yc5DSDHGEeO1rcTjon2HaQ">
@@ -525,39 +525,39 @@
     </node>
     <node xmi:id="_Yc5DMzHGEeO1rcTjon2HaQ" incomingEdge="_Yc5DQDHGEeO1rcTjon2HaQ _Yc5DHjHGEeO1rcTjon2HaQ _zF1JIDHJEeO1rcTjon2HaQ _312ikDHJEeO1rcTjon2HaQ" graphPattern="_Yc5DSDHGEeO1rcTjon2HaQ _Yc5DSTHGEeO1rcTjon2HaQ">
       <outgoingEdge xmi:id="_Yc5DNjHGEeO1rcTjon2HaQ" targetNode="_Yc5DGzHGEeO1rcTjon2HaQ" graphPattern="_Yc5DSDHGEeO1rcTjon2HaQ">
-        <typeReference href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//StateConnectionPoint/state"/>
+        <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//StateConnectionPoint/state"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_zOrjIDHJEeO1rcTjon2HaQ" targetNode="_Yc5DOzHGEeO1rcTjon2HaQ" graphPattern="_Yc5DSDHGEeO1rcTjon2HaQ">
-        <typeReference href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Vertex/incomingTransitions"/>
+        <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//Vertex/incomingTransitions"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_4ErBsDHJEeO1rcTjon2HaQ" targetNode="_Yc5DNzHGEeO1rcTjon2HaQ" graphPattern="_Yc5DSDHGEeO1rcTjon2HaQ">
-        <typeReference href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Vertex/outgoingTransitions"/>
+        <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//Vertex/outgoingTransitions"/>
       </outgoingEdge>
-      <eType href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//ExitPoint"/>
+      <eType href="http://www.muml.org/pim/realtimestatechart/1.0.0#//ExitPoint"/>
     </node>
     <node xmi:id="_Yc5DNzHGEeO1rcTjon2HaQ" name="scOutTrans" incomingEdge="_Yc5DQjHGEeO1rcTjon2HaQ _Yc5DBDHGEeO1rcTjon2HaQ _4ErBsDHJEeO1rcTjon2HaQ _5d2bIDHJEeO1rcTjon2HaQ" graphPattern="_Yc5DSDHGEeO1rcTjon2HaQ _Yc5DSTHGEeO1rcTjon2HaQ">
       <outgoingEdge xmi:id="_Yc5DOjHGEeO1rcTjon2HaQ" targetNode="_ZRIt8DHHEeO1rcTjon2HaQ" graphPattern="_Yc5DSDHGEeO1rcTjon2HaQ">
-        <typeReference href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Transition/statechart"/>
+        <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//Transition/statechart"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_312ikDHJEeO1rcTjon2HaQ" targetNode="_Yc5DMzHGEeO1rcTjon2HaQ" graphPattern="_Yc5DSDHGEeO1rcTjon2HaQ">
-        <typeReference href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Transition/source"/>
+        <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//Transition/source"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_5LPBIDHJEeO1rcTjon2HaQ" targetNode="_Yc5DETHGEeO1rcTjon2HaQ" graphPattern="_Yc5DSDHGEeO1rcTjon2HaQ">
-        <typeReference href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Transition/target"/>
+        <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//Transition/target"/>
       </outgoingEdge>
-      <eType href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Transition"/>
+      <eType href="http://www.muml.org/pim/realtimestatechart/1.0.0#//Transition"/>
     </node>
     <node xmi:id="_Yc5DOzHGEeO1rcTjon2HaQ" name="scInTrans" incomingEdge="_Yc5DQTHGEeO1rcTjon2HaQ _Yc5DJTHGEeO1rcTjon2HaQ _zOrjIDHJEeO1rcTjon2HaQ _06tnIDHJEeO1rcTjon2HaQ _GHUIsDJcEeO50N1GFGL30Q" graphPattern="_Yc5DSDHGEeO1rcTjon2HaQ _Yc5DSTHGEeO1rcTjon2HaQ">
       <outgoingEdge xmi:id="_Yc5DPjHGEeO1rcTjon2HaQ" targetNode="_Yc5DIjHGEeO1rcTjon2HaQ" graphPattern="_Yc5DSDHGEeO1rcTjon2HaQ">
-        <typeReference href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Transition/statechart"/>
+        <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//Transition/statechart"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_zF1JIDHJEeO1rcTjon2HaQ" targetNode="_Yc5DMzHGEeO1rcTjon2HaQ" graphPattern="_Yc5DSDHGEeO1rcTjon2HaQ">
-        <typeReference href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Transition/target"/>
+        <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//Transition/target"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_0qsOIDHJEeO1rcTjon2HaQ" targetNode="_Yc5DJjHGEeO1rcTjon2HaQ" graphPattern="_Yc5DSDHGEeO1rcTjon2HaQ">
-        <typeReference href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Transition/source"/>
+        <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//Transition/source"/>
       </outgoingEdge>
-      <eType href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Transition"/>
+      <eType href="http://www.muml.org/pim/realtimestatechart/1.0.0#//Transition"/>
     </node>
     <node xmi:id="_Yc5DPzHGEeO1rcTjon2HaQ" incomingEdge="_Yc5DCjHGEeO1rcTjon2HaQ" graphPattern="_Yc5DSDHGEeO1rcTjon2HaQ _Yc5DSjHGEeO1rcTjon2HaQ">
       <outgoingEdge xmi:id="_Yc5DQDHGEeO1rcTjon2HaQ" targetNode="_Yc5DMzHGEeO1rcTjon2HaQ" graphPattern="_Yc5DSDHGEeO1rcTjon2HaQ">
@@ -606,33 +606,33 @@
     </node>
     <node xmi:id="_Wp5l8DHHEeO1rcTjon2HaQ" incomingEdge="_ds4ggDHHEeO1rcTjon2HaQ _lOyywDHHEeO1rcTjon2HaQ" graphPattern="_Yc5DSTHGEeO1rcTjon2HaQ">
       <outgoingEdge xmi:id="_dszoADHHEeO1rcTjon2HaQ" targetNode="_ZRIt8DHHEeO1rcTjon2HaQ">
-        <typeReference href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Region/embeddedStatechart"/>
+        <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//Region/embeddedStatechart"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_kNP2MDHHEeO1rcTjon2HaQ" targetNode="_kNK9sDHHEeO1rcTjon2HaQ">
-        <typeReference href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Region/parentState"/>
+        <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//Region/parentState"/>
       </outgoingEdge>
-      <eType href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Region"/>
+      <eType href="http://www.muml.org/pim/realtimestatechart/1.0.0#//Region"/>
     </node>
     <node xmi:id="_ZRIt8DHHEeO1rcTjon2HaQ" incomingEdge="_dszoADHHEeO1rcTjon2HaQ _Yc5DOjHGEeO1rcTjon2HaQ _vNkwEDHHEeO1rcTjon2HaQ _1qFggDHHEeO1rcTjon2HaQ" graphPattern="_Yc5DSTHGEeO1rcTjon2HaQ">
       <outgoingEdge xmi:id="_ds4ggDHHEeO1rcTjon2HaQ" targetNode="_Wp5l8DHHEeO1rcTjon2HaQ">
-        <typeReference href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart/parentRegion"/>
+        <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//RealtimeStatechart/parentRegion"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_Yc5DBDHGEeO1rcTjon2HaQ" targetNode="_Yc5DNzHGEeO1rcTjon2HaQ" graphPattern="_Yc5DSDHGEeO1rcTjon2HaQ">
-        <typeReference href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart/transitions"/>
+        <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//RealtimeStatechart/transitions"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_vNkJADHHEeO1rcTjon2HaQ" targetNode="_Yc5DGzHGEeO1rcTjon2HaQ">
-        <typeReference href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart/states"/>
+        <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//RealtimeStatechart/states"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_1qE5cDHHEeO1rcTjon2HaQ" targetNode="_Yc5DETHGEeO1rcTjon2HaQ">
-        <typeReference href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart/states"/>
+        <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//RealtimeStatechart/states"/>
       </outgoingEdge>
-      <eType href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+      <eType href="http://www.muml.org/pim/realtimestatechart/1.0.0#//RealtimeStatechart"/>
     </node>
     <node xmi:id="_kNK9sDHHEeO1rcTjon2HaQ" incomingEdge="_kNP2MDHHEeO1rcTjon2HaQ _mmMqkDHHEeO1rcTjon2HaQ" graphPattern="_Yc5DSDHGEeO1rcTjon2HaQ _Yc5DRzHGEeO1rcTjon2HaQ _Yc5DSTHGEeO1rcTjon2HaQ">
       <outgoingEdge xmi:id="_lOyywDHHEeO1rcTjon2HaQ" targetNode="_Wp5l8DHHEeO1rcTjon2HaQ">
-        <typeReference href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//State/embeddedRegions"/>
+        <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//State/embeddedRegions"/>
       </outgoingEdge>
-      <eType href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//State"/>
+      <eType href="http://www.muml.org/pim/realtimestatechart/1.0.0#//State"/>
     </node>
     <node xmi:id="_CSNfYDJcEeO50N1GFGL30Q" incomingEdge="_CTM94DJcEeO50N1GFGL30Q" graphPattern="_Yc5DSDHGEeO1rcTjon2HaQ _Yc5DSjHGEeO1rcTjon2HaQ">
       <outgoingEdge xmi:id="_GHUIsDJcEeO50N1GFGL30Q" targetNode="_Yc5DOzHGEeO1rcTjon2HaQ" graphPattern="_Yc5DSDHGEeO1rcTjon2HaQ">
@@ -679,12 +679,12 @@
     </node>
     <node xmi:id="_l95f9zKBEeOMa8FDYZATEw" name="scState" incomingEdge="_l95f9jKBEeOMa8FDYZATEw _l95gOzKBEeOMa8FDYZATEw _lLxqADKCEeOMa8FDYZATEw" graphPattern="_l95gQTKBEeOMa8FDYZATEw _l95gQjKBEeOMa8FDYZATEw _l95gQzKBEeOMa8FDYZATEw">
       <outgoingEdge xmi:id="_l95f-DKBEeOMa8FDYZATEw" targetNode="_l95gNzKBEeOMa8FDYZATEw">
-        <typeReference href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//State/parentStatechart"/>
+        <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//State/parentStatechart"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_lVx6kDKCEeOMa8FDYZATEw" targetNode="_l95gHTKBEeOMa8FDYZATEw" graphPattern="_l95gQjKBEeOMa8FDYZATEw">
-        <typeReference href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Vertex/outgoingTransitions"/>
+        <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//Vertex/outgoingTransitions"/>
       </outgoingEdge>
-      <eType href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//State"/>
+      <eType href="http://www.muml.org/pim/realtimestatechart/1.0.0#//State"/>
     </node>
     <node xmi:id="_l95f-jKBEeOMa8FDYZATEw" name="sfStateReg" incomingEdge="_l95f_jKBEeOMa8FDYZATEw _l95gEzKBEeOMa8FDYZATEw _l95gFzKBEeOMa8FDYZATEw" graphPattern="_l95gQTKBEeOMa8FDYZATEw _l95gQjKBEeOMa8FDYZATEw _l95gRTKBEeOMa8FDYZATEw">
       <outgoingEdge xmi:id="_l95f-zKBEeOMa8FDYZATEw" targetNode="_l95gEjKBEeOMa8FDYZATEw" graphPattern="_l95gQTKBEeOMa8FDYZATEw _l95gQjKBEeOMa8FDYZATEw">
@@ -709,45 +709,45 @@
     </node>
     <node xmi:id="_l95gATKBEeOMa8FDYZATEw" name="scStateReg" incomingEdge="_l95f_zKBEeOMa8FDYZATEw _l95gBjKBEeOMa8FDYZATEw _l95gGjKBEeOMa8FDYZATEw _l95gOjKBEeOMa8FDYZATEw" graphPattern="_l95gQTKBEeOMa8FDYZATEw _l95gQjKBEeOMa8FDYZATEw _l95gQzKBEeOMa8FDYZATEw">
       <outgoingEdge xmi:id="_l95gAjKBEeOMa8FDYZATEw" targetNode="_l95gBTKBEeOMa8FDYZATEw">
-        <typeReference href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//State/embeddedRegions"/>
+        <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//State/embeddedRegions"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_l95gAzKBEeOMa8FDYZATEw" targetNode="_l95gGTKBEeOMa8FDYZATEw" graphPattern="_l95gQjKBEeOMa8FDYZATEw">
-        <typeReference href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//State/connectionPoints"/>
+        <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//State/connectionPoints"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_l95gBDKBEeOMa8FDYZATEw" targetNode="_l95gNzKBEeOMa8FDYZATEw">
-        <typeReference href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//State/parentStatechart"/>
+        <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//State/parentStatechart"/>
       </outgoingEdge>
-      <eType href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//State"/>
+      <eType href="http://www.muml.org/pim/realtimestatechart/1.0.0#//State"/>
     </node>
     <node xmi:id="_l95gBTKBEeOMa8FDYZATEw" name="scRegion" incomingEdge="_l95gAjKBEeOMa8FDYZATEw _l95gCTKBEeOMa8FDYZATEw" graphPattern="_l95gQzKBEeOMa8FDYZATEw">
       <outgoingEdge xmi:id="_l95gBjKBEeOMa8FDYZATEw" targetNode="_l95gATKBEeOMa8FDYZATEw">
-        <typeReference href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Region/parentState"/>
+        <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//Region/parentState"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_l95gBzKBEeOMa8FDYZATEw" targetNode="_l95gCDKBEeOMa8FDYZATEw">
-        <typeReference href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Region/embeddedStatechart"/>
+        <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//Region/embeddedStatechart"/>
       </outgoingEdge>
-      <eType href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Region"/>
+      <eType href="http://www.muml.org/pim/realtimestatechart/1.0.0#//Region"/>
     </node>
     <node xmi:id="_l95gCDKBEeOMa8FDYZATEw" name="scSubChart" incomingEdge="_l95gBzKBEeOMa8FDYZATEw _l95gDTKBEeOMa8FDYZATEw _l95gIjKBEeOMa8FDYZATEw" graphPattern="_l95gQzKBEeOMa8FDYZATEw">
       <outgoingEdge xmi:id="_l95gCTKBEeOMa8FDYZATEw" targetNode="_l95gBTKBEeOMa8FDYZATEw">
-        <typeReference href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart/parentRegion"/>
+        <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//RealtimeStatechart/parentRegion"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_l95gCjKBEeOMa8FDYZATEw" targetNode="_l95gDDKBEeOMa8FDYZATEw">
-        <typeReference href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart/states"/>
+        <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//RealtimeStatechart/states"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_l95gCzKBEeOMa8FDYZATEw" targetNode="_l95gITKBEeOMa8FDYZATEw" graphPattern="_l95gQjKBEeOMa8FDYZATEw">
-        <typeReference href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart/transitions"/>
+        <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//RealtimeStatechart/transitions"/>
       </outgoingEdge>
-      <eType href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+      <eType href="http://www.muml.org/pim/realtimestatechart/1.0.0#//RealtimeStatechart"/>
     </node>
     <node xmi:id="_l95gDDKBEeOMa8FDYZATEw" name="scStateIn" incomingEdge="_l95gEDKBEeOMa8FDYZATEw _l95gCjKBEeOMa8FDYZATEw _hzCMkDKCEeOMa8FDYZATEw" graphPattern="_l95gQTKBEeOMa8FDYZATEw _l95gQjKBEeOMa8FDYZATEw _l95gQzKBEeOMa8FDYZATEw">
       <outgoingEdge xmi:id="_l95gDTKBEeOMa8FDYZATEw" targetNode="_l95gCDKBEeOMa8FDYZATEw">
-        <typeReference href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//State/parentStatechart"/>
+        <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//State/parentStatechart"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_h8fqkDKCEeOMa8FDYZATEw" targetNode="_l95gITKBEeOMa8FDYZATEw" graphPattern="_l95gQjKBEeOMa8FDYZATEw">
-        <typeReference href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Vertex/incomingTransitions"/>
+        <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//Vertex/incomingTransitions"/>
       </outgoingEdge>
-      <eType href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//State"/>
+      <eType href="http://www.muml.org/pim/realtimestatechart/1.0.0#//State"/>
     </node>
     <node xmi:id="_l95gDzKBEeOMa8FDYZATEw" incomingEdge="_l95gADKBEeOMa8FDYZATEw" graphPattern="_l95gQTKBEeOMa8FDYZATEw _l95gQjKBEeOMa8FDYZATEw _l95gRDKBEeOMa8FDYZATEw">
       <outgoingEdge xmi:id="_l95gEDKBEeOMa8FDYZATEw" targetNode="_l95gDDKBEeOMa8FDYZATEw" graphPattern="_l95gQTKBEeOMa8FDYZATEw _l95gQjKBEeOMa8FDYZATEw">
@@ -781,39 +781,39 @@
     </node>
     <node xmi:id="_l95gGTKBEeOMa8FDYZATEw" incomingEdge="_l95gAzKBEeOMa8FDYZATEw _g2dPkDKCEeOMa8FDYZATEw _kRa6kDKCEeOMa8FDYZATEw _o8HiUDM2EeOuvb-X1PsS1w" graphPattern="_l95gQjKBEeOMa8FDYZATEw _l95gQzKBEeOMa8FDYZATEw">
       <outgoingEdge xmi:id="_l95gGjKBEeOMa8FDYZATEw" targetNode="_l95gATKBEeOMa8FDYZATEw" graphPattern="_l95gQjKBEeOMa8FDYZATEw">
-        <typeReference href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//StateConnectionPoint/state"/>
+        <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//StateConnectionPoint/state"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_hBk6cDKCEeOMa8FDYZATEw" targetNode="_l95gITKBEeOMa8FDYZATEw" graphPattern="_l95gQjKBEeOMa8FDYZATEw">
-        <typeReference href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Vertex/outgoingTransitions"/>
+        <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//Vertex/outgoingTransitions"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_kYXQEDKCEeOMa8FDYZATEw" targetNode="_l95gHTKBEeOMa8FDYZATEw" graphPattern="_l95gQjKBEeOMa8FDYZATEw">
-        <typeReference href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Vertex/incomingTransitions"/>
+        <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//Vertex/incomingTransitions"/>
       </outgoingEdge>
-      <eType href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//EntryPoint"/>
+      <eType href="http://www.muml.org/pim/realtimestatechart/1.0.0#//EntryPoint"/>
     </node>
     <node xmi:id="_l95gHTKBEeOMa8FDYZATEw" name="scOutTrans" incomingEdge="_l95gOTKBEeOMa8FDYZATEw _kYXQEDKCEeOMa8FDYZATEw _lVx6kDKCEeOMa8FDYZATEw _nTYp8DM2EeOuvb-X1PsS1w _l95gPzKBEeOMa8FDYZATEw" graphPattern="_l95gQjKBEeOMa8FDYZATEw _l95gQzKBEeOMa8FDYZATEw">
       <outgoingEdge xmi:id="_l95gHjKBEeOMa8FDYZATEw" targetNode="_l95gNzKBEeOMa8FDYZATEw" graphPattern="_l95gQjKBEeOMa8FDYZATEw">
-        <typeReference href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Transition/statechart"/>
+        <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//Transition/statechart"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_kRa6kDKCEeOMa8FDYZATEw" targetNode="_l95gGTKBEeOMa8FDYZATEw" graphPattern="_l95gQjKBEeOMa8FDYZATEw">
-        <typeReference href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Transition/target"/>
+        <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//Transition/target"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_lLxqADKCEeOMa8FDYZATEw" targetNode="_l95f9zKBEeOMa8FDYZATEw" graphPattern="_l95gQjKBEeOMa8FDYZATEw">
-        <typeReference href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Transition/source"/>
+        <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//Transition/source"/>
       </outgoingEdge>
-      <eType href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Transition"/>
+      <eType href="http://www.muml.org/pim/realtimestatechart/1.0.0#//Transition"/>
     </node>
     <node xmi:id="_l95gITKBEeOMa8FDYZATEw" name="scInTrans" incomingEdge="_l95gCzKBEeOMa8FDYZATEw _hBk6cDKCEeOMa8FDYZATEw _h8fqkDKCEeOMa8FDYZATEw _qByJ4DM2EeOuvb-X1PsS1w" graphPattern="_l95gQjKBEeOMa8FDYZATEw _l95gQzKBEeOMa8FDYZATEw">
       <outgoingEdge xmi:id="_l95gIjKBEeOMa8FDYZATEw" targetNode="_l95gCDKBEeOMa8FDYZATEw" graphPattern="_l95gQjKBEeOMa8FDYZATEw">
-        <typeReference href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Transition/statechart"/>
+        <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//Transition/statechart"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_g2dPkDKCEeOMa8FDYZATEw" targetNode="_l95gGTKBEeOMa8FDYZATEw" graphPattern="_l95gQjKBEeOMa8FDYZATEw">
-        <typeReference href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Transition/source"/>
+        <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//Transition/source"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_hzCMkDKCEeOMa8FDYZATEw" targetNode="_l95gDDKBEeOMa8FDYZATEw" graphPattern="_l95gQjKBEeOMa8FDYZATEw">
-        <typeReference href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Transition/target"/>
+        <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//Transition/target"/>
       </outgoingEdge>
-      <eType href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Transition"/>
+      <eType href="http://www.muml.org/pim/realtimestatechart/1.0.0#//Transition"/>
     </node>
     <node xmi:id="_l95gKjKBEeOMa8FDYZATEw" incomingEdge="_l95gGDKBEeOMa8FDYZATEw _l95gQDKBEeOMa8FDYZATEw _Jg-hcDKDEeOMa8FDYZATEw _K0mFcDKDEeOMa8FDYZATEw _mnf0UDM2EeOuvb-X1PsS1w" graphPattern="_l95gQjKBEeOMa8FDYZATEw _l95gRTKBEeOMa8FDYZATEw">
       <outgoingEdge xmi:id="_JYqS8DKDEeOMa8FDYZATEw" targetNode="_l95f8TKBEeOMa8FDYZATEw" graphPattern="_l95gQjKBEeOMa8FDYZATEw">
@@ -844,33 +844,33 @@
     </node>
     <node xmi:id="_l95gNDKBEeOMa8FDYZATEw" incomingEdge="_l95gODKBEeOMa8FDYZATEw _l95gPTKBEeOMa8FDYZATEw" graphPattern="_l95gQzKBEeOMa8FDYZATEw">
       <outgoingEdge xmi:id="_l95gNTKBEeOMa8FDYZATEw" targetNode="_l95gNzKBEeOMa8FDYZATEw">
-        <typeReference href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Region/embeddedStatechart"/>
+        <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//Region/embeddedStatechart"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_l95gNjKBEeOMa8FDYZATEw" targetNode="_l95gPDKBEeOMa8FDYZATEw">
-        <typeReference href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Region/parentState"/>
+        <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//Region/parentState"/>
       </outgoingEdge>
-      <eType href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Region"/>
+      <eType href="http://www.muml.org/pim/realtimestatechart/1.0.0#//Region"/>
     </node>
     <node xmi:id="_l95gNzKBEeOMa8FDYZATEw" incomingEdge="_l95gNTKBEeOMa8FDYZATEw _l95gHjKBEeOMa8FDYZATEw _l95gBDKBEeOMa8FDYZATEw _l95f-DKBEeOMa8FDYZATEw" graphPattern="_l95gQzKBEeOMa8FDYZATEw">
       <outgoingEdge xmi:id="_l95gODKBEeOMa8FDYZATEw" targetNode="_l95gNDKBEeOMa8FDYZATEw">
-        <typeReference href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart/parentRegion"/>
+        <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//RealtimeStatechart/parentRegion"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_l95gOTKBEeOMa8FDYZATEw" targetNode="_l95gHTKBEeOMa8FDYZATEw" graphPattern="_l95gQjKBEeOMa8FDYZATEw">
-        <typeReference href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart/transitions"/>
+        <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//RealtimeStatechart/transitions"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_l95gOjKBEeOMa8FDYZATEw" targetNode="_l95gATKBEeOMa8FDYZATEw">
-        <typeReference href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart/states"/>
+        <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//RealtimeStatechart/states"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_l95gOzKBEeOMa8FDYZATEw" targetNode="_l95f9zKBEeOMa8FDYZATEw">
-        <typeReference href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart/states"/>
+        <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//RealtimeStatechart/states"/>
       </outgoingEdge>
-      <eType href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+      <eType href="http://www.muml.org/pim/realtimestatechart/1.0.0#//RealtimeStatechart"/>
     </node>
     <node xmi:id="_l95gPDKBEeOMa8FDYZATEw" incomingEdge="_l95gNjKBEeOMa8FDYZATEw _l95gLjKBEeOMa8FDYZATEw" graphPattern="_l95gQjKBEeOMa8FDYZATEw _l95gQTKBEeOMa8FDYZATEw _l95gQzKBEeOMa8FDYZATEw">
       <outgoingEdge xmi:id="_l95gPTKBEeOMa8FDYZATEw" targetNode="_l95gNDKBEeOMa8FDYZATEw">
-        <typeReference href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//State/embeddedRegions"/>
+        <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//State/embeddedRegions"/>
       </outgoingEdge>
-      <eType href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//State"/>
+      <eType href="http://www.muml.org/pim/realtimestatechart/1.0.0#//State"/>
     </node>
     <node xmi:id="_l95gPjKBEeOMa8FDYZATEw" incomingEdge="_l95gMzKBEeOMa8FDYZATEw" graphPattern="_l95gQjKBEeOMa8FDYZATEw _l95gRDKBEeOMa8FDYZATEw">
       <outgoingEdge xmi:id="_l95gPzKBEeOMa8FDYZATEw" targetNode="_l95gHTKBEeOMa8FDYZATEw" graphPattern="_l95gQjKBEeOMa8FDYZATEw">
@@ -923,45 +923,45 @@
     </node>
     <node xmi:id="_burLkTKEEeOMa8FDYZATEw" name="scStateReg" incomingEdge="_burLqjKEEeOMa8FDYZATEw _rOV3IDKHEeOMa8FDYZATEw _wunBwDKHEeOMa8FDYZATEw _XfLIYDKIEeOMa8FDYZATEw" graphPattern="_burL0TKEEeOMa8FDYZATEw _burL0jKEEeOMa8FDYZATEw _burL0zKEEeOMa8FDYZATEw">
       <outgoingEdge xmi:id="_burLkzKEEeOMa8FDYZATEw" targetNode="_burLqTKEEeOMa8FDYZATEw" graphPattern="_burL0jKEEeOMa8FDYZATEw">
-        <typeReference href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//State/connectionPoints"/>
+        <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//State/connectionPoints"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_rOVQEDKHEeOMa8FDYZATEw" targetNode="_burLmDKEEeOMa8FDYZATEw">
-        <typeReference href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//State/parentStatechart"/>
+        <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//State/parentStatechart"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_vQbMgDKHEeOMa8FDYZATEw" targetNode="_vQXiIDKHEeOMa8FDYZATEw">
-        <typeReference href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//State/embeddedRegions"/>
+        <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//State/embeddedRegions"/>
       </outgoingEdge>
-      <eType href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//State"/>
+      <eType href="http://www.muml.org/pim/realtimestatechart/1.0.0#//State"/>
     </node>
     <node xmi:id="_burLlTKEEeOMa8FDYZATEw" name="scRegion" incomingEdge="_mL2NoDKHEeOMa8FDYZATEw _qS5ikTKHEeOMa8FDYZATEw" graphPattern="_burL0zKEEeOMa8FDYZATEw">
       <outgoingEdge xmi:id="_mL1mkDKHEeOMa8FDYZATEw" targetNode="_burLmDKEEeOMa8FDYZATEw">
-        <typeReference href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Region/embeddedStatechart"/>
+        <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//Region/embeddedStatechart"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_qS5ikDKHEeOMa8FDYZATEw" targetNode="_burLnDKEEeOMa8FDYZATEw">
-        <typeReference href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Region/parentState"/>
+        <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//Region/parentState"/>
       </outgoingEdge>
-      <eType href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Region"/>
+      <eType href="http://www.muml.org/pim/realtimestatechart/1.0.0#//Region"/>
     </node>
     <node xmi:id="_burLmDKEEeOMa8FDYZATEw" name="scSubChart" incomingEdge="_burLsjKEEeOMa8FDYZATEw _mL1mkDKHEeOMa8FDYZATEw _rOVQEDKHEeOMa8FDYZATEw _tw1pEDKHEeOMa8FDYZATEw" graphPattern="_burL0zKEEeOMa8FDYZATEw">
       <outgoingEdge xmi:id="_burLmzKEEeOMa8FDYZATEw" targetNode="_burLsTKEEeOMa8FDYZATEw" graphPattern="_burL0jKEEeOMa8FDYZATEw">
-        <typeReference href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart/transitions"/>
+        <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//RealtimeStatechart/transitions"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_mL2NoDKHEeOMa8FDYZATEw" targetNode="_burLlTKEEeOMa8FDYZATEw">
-        <typeReference href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart/parentRegion"/>
+        <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//RealtimeStatechart/parentRegion"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_rOV3IDKHEeOMa8FDYZATEw" targetNode="_burLkTKEEeOMa8FDYZATEw">
-        <typeReference href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart/states"/>
+        <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//RealtimeStatechart/states"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_tw2QIDKHEeOMa8FDYZATEw" targetNode="_GhKaADKGEeOMa8FDYZATEw">
-        <typeReference href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart/states"/>
+        <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//RealtimeStatechart/states"/>
       </outgoingEdge>
-      <eType href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+      <eType href="http://www.muml.org/pim/realtimestatechart/1.0.0#//RealtimeStatechart"/>
     </node>
     <node xmi:id="_burLnDKEEeOMa8FDYZATEw" name="scStateIn" incomingEdge="_burLoDKEEeOMa8FDYZATEw _qS5ikDKHEeOMa8FDYZATEw" graphPattern="_burL0TKEEeOMa8FDYZATEw _burL0jKEEeOMa8FDYZATEw _burL0zKEEeOMa8FDYZATEw">
       <outgoingEdge xmi:id="_qS5ikTKHEeOMa8FDYZATEw" targetNode="_burLlTKEEeOMa8FDYZATEw">
-        <typeReference href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//State/embeddedRegions"/>
+        <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//State/embeddedRegions"/>
       </outgoingEdge>
-      <eType href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//State"/>
+      <eType href="http://www.muml.org/pim/realtimestatechart/1.0.0#//State"/>
     </node>
     <node xmi:id="_burLnzKEEeOMa8FDYZATEw" graphPattern="_burL0TKEEeOMa8FDYZATEw _burL0jKEEeOMa8FDYZATEw _burL1DKEEeOMa8FDYZATEw">
       <outgoingEdge xmi:id="_burLoDKEEeOMa8FDYZATEw" targetNode="_burLnDKEEeOMa8FDYZATEw" graphPattern="_burL0TKEEeOMa8FDYZATEw _burL0jKEEeOMa8FDYZATEw">
@@ -995,39 +995,39 @@
     </node>
     <node xmi:id="_burLqTKEEeOMa8FDYZATEw" incomingEdge="_burLkzKEEeOMa8FDYZATEw _5YsH4DKFEeOMa8FDYZATEw __HW64DKFEeOMa8FDYZATEw" graphPattern="_burL0jKEEeOMa8FDYZATEw _burL0zKEEeOMa8FDYZATEw">
       <outgoingEdge xmi:id="_burLqjKEEeOMa8FDYZATEw" targetNode="_burLkTKEEeOMa8FDYZATEw" graphPattern="_burL0jKEEeOMa8FDYZATEw">
-        <typeReference href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//StateConnectionPoint/state"/>
+        <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//StateConnectionPoint/state"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_5hdpYDKFEeOMa8FDYZATEw" targetNode="_burLsTKEEeOMa8FDYZATEw" graphPattern="_burL0jKEEeOMa8FDYZATEw">
-        <typeReference href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Vertex/incomingTransitions"/>
+        <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//Vertex/incomingTransitions"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="__ntO4DKFEeOMa8FDYZATEw" targetNode="_burLrTKEEeOMa8FDYZATEw" graphPattern="_burL0jKEEeOMa8FDYZATEw">
-        <typeReference href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Vertex/outgoingTransitions"/>
+        <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//Vertex/outgoingTransitions"/>
       </outgoingEdge>
-      <eType href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//EntryPoint"/>
+      <eType href="http://www.muml.org/pim/realtimestatechart/1.0.0#//EntryPoint"/>
     </node>
     <node xmi:id="_burLrTKEEeOMa8FDYZATEw" name="scOutTrans" incomingEdge="__ntO4DKFEeOMa8FDYZATEw _7hG7ADKHEeOMa8FDYZATEw _9LsNgTKHEeOMa8FDYZATEw" graphPattern="_burL0jKEEeOMa8FDYZATEw _burL0zKEEeOMa8FDYZATEw">
       <outgoingEdge xmi:id="__HW64DKFEeOMa8FDYZATEw" targetNode="_burLqTKEEeOMa8FDYZATEw" graphPattern="_burL0jKEEeOMa8FDYZATEw">
-        <typeReference href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Transition/source"/>
+        <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//Transition/source"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_7UI2ADKHEeOMa8FDYZATEw" targetNode="_3uSJoDKHEeOMa8FDYZATEw" graphPattern="_burL0jKEEeOMa8FDYZATEw">
-        <typeReference href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Transition/target"/>
+        <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//Transition/target"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_9LsNgDKHEeOMa8FDYZATEw" targetNode="_xreSoDKHEeOMa8FDYZATEw" graphPattern="_burL0jKEEeOMa8FDYZATEw">
-        <typeReference href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Transition/statechart"/>
+        <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//Transition/statechart"/>
       </outgoingEdge>
-      <eType href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Transition"/>
+      <eType href="http://www.muml.org/pim/realtimestatechart/1.0.0#//Transition"/>
     </node>
     <node xmi:id="_burLsTKEEeOMa8FDYZATEw" name="scInTrans" incomingEdge="_burLmzKEEeOMa8FDYZATEw _burLzzKEEeOMa8FDYZATEw _4YTo8DKFEeOMa8FDYZATEw _5hdpYDKFEeOMa8FDYZATEw" graphPattern="_burL0jKEEeOMa8FDYZATEw _burL0zKEEeOMa8FDYZATEw">
       <outgoingEdge xmi:id="_burLsjKEEeOMa8FDYZATEw" targetNode="_burLmDKEEeOMa8FDYZATEw" graphPattern="_burL0jKEEeOMa8FDYZATEw">
-        <typeReference href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Transition/statechart"/>
+        <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//Transition/statechart"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_4NjKcDKFEeOMa8FDYZATEw" targetNode="_ePGrcDKFEeOMa8FDYZATEw" graphPattern="_burL0jKEEeOMa8FDYZATEw">
-        <typeReference href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Transition/source"/>
+        <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//Transition/source"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_5YsH4DKFEeOMa8FDYZATEw" targetNode="_burLqTKEEeOMa8FDYZATEw" graphPattern="_burL0jKEEeOMa8FDYZATEw">
-        <typeReference href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Transition/target"/>
+        <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//Transition/target"/>
       </outgoingEdge>
-      <eType href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Transition"/>
+      <eType href="http://www.muml.org/pim/realtimestatechart/1.0.0#//Transition"/>
     </node>
     <node xmi:id="_burLujKEEeOMa8FDYZATEw" incomingEdge="_burL0DKEEeOMa8FDYZATEw _qJeEUDKIEeOMa8FDYZATEw _sp_gUDKIEeOMa8FDYZATEw _bMVhMDKJEeOMa8FDYZATEw" graphPattern="_burL0jKEEeOMa8FDYZATEw _burL1TKEEeOMa8FDYZATEw">
       <outgoingEdge xmi:id="_p9kWUDKIEeOMa8FDYZATEw" targetNode="_ktXA8DKIEeOMa8FDYZATEw" graphPattern="_burL0jKEEeOMa8FDYZATEw">
@@ -1061,99 +1061,99 @@
     </node>
     <node xmi:id="_ePGrcDKFEeOMa8FDYZATEw" incomingEdge="_4NjKcDKFEeOMa8FDYZATEw _7eIKYDKFEeOMa8FDYZATEw _L0fU0DKGEeOMa8FDYZATEw" graphPattern="_burL0jKEEeOMa8FDYZATEw _burL0zKEEeOMa8FDYZATEw">
       <outgoingEdge xmi:id="_4YTo8DKFEeOMa8FDYZATEw" targetNode="_burLsTKEEeOMa8FDYZATEw" graphPattern="_burL0jKEEeOMa8FDYZATEw">
-        <typeReference href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Vertex/outgoingTransitions"/>
+        <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//Vertex/outgoingTransitions"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_7vN6YDKFEeOMa8FDYZATEw" targetNode="_zYYyUDKFEeOMa8FDYZATEw" graphPattern="_burL0jKEEeOMa8FDYZATEw">
-        <typeReference href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Vertex/incomingTransitions"/>
+        <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//Vertex/incomingTransitions"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_LOMJ0DKGEeOMa8FDYZATEw" targetNode="_GhKaADKGEeOMa8FDYZATEw" graphPattern="_burL0jKEEeOMa8FDYZATEw">
-        <typeReference href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//StateConnectionPoint/state"/>
+        <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//StateConnectionPoint/state"/>
       </outgoingEdge>
-      <eType href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//ExitPoint"/>
+      <eType href="http://www.muml.org/pim/realtimestatechart/1.0.0#//ExitPoint"/>
     </node>
     <node xmi:id="_tmrSYDKFEeOMa8FDYZATEw" name="" incomingEdge="_6e4T4DKFEeOMa8FDYZATEw _1Y4_kDKHEeOMa8FDYZATEw _dVjF4DKIEeOMa8FDYZATEw" graphPattern="_burL0jKEEeOMa8FDYZATEw _burL0TKEEeOMa8FDYZATEw _burL0zKEEeOMa8FDYZATEw">
       <outgoingEdge xmi:id="_6tKAcDKFEeOMa8FDYZATEw" targetNode="_zYYyUDKFEeOMa8FDYZATEw" graphPattern="_burL0jKEEeOMa8FDYZATEw">
-        <typeReference href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Vertex/outgoingTransitions"/>
+        <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//Vertex/outgoingTransitions"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_1Y4YgDKHEeOMa8FDYZATEw" targetNode="_fZuPADKGEeOMa8FDYZATEw">
-        <typeReference href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//State/parentStatechart"/>
+        <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//State/parentStatechart"/>
       </outgoingEdge>
-      <eType href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//State"/>
+      <eType href="http://www.muml.org/pim/realtimestatechart/1.0.0#//State"/>
     </node>
     <node xmi:id="_zYYyUDKFEeOMa8FDYZATEw" incomingEdge="_6tKAcDKFEeOMa8FDYZATEw _7vN6YDKFEeOMa8FDYZATEw _95KXgDKHEeOMa8FDYZATEw" graphPattern="_burL0jKEEeOMa8FDYZATEw _burL0zKEEeOMa8FDYZATEw">
       <outgoingEdge xmi:id="_6e4T4DKFEeOMa8FDYZATEw" targetNode="_tmrSYDKFEeOMa8FDYZATEw" graphPattern="_burL0jKEEeOMa8FDYZATEw">
-        <typeReference href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Transition/source"/>
+        <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//Transition/source"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_7eIKYDKFEeOMa8FDYZATEw" targetNode="_ePGrcDKFEeOMa8FDYZATEw" graphPattern="_burL0jKEEeOMa8FDYZATEw">
-        <typeReference href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Transition/target"/>
+        <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//Transition/target"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_95JwcDKHEeOMa8FDYZATEw" targetNode="_fZuPADKGEeOMa8FDYZATEw" graphPattern="_burL0jKEEeOMa8FDYZATEw">
-        <typeReference href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Transition/statechart"/>
+        <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//Transition/statechart"/>
       </outgoingEdge>
-      <eType href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Transition"/>
+      <eType href="http://www.muml.org/pim/realtimestatechart/1.0.0#//Transition"/>
     </node>
     <node xmi:id="_GhKaADKGEeOMa8FDYZATEw" incomingEdge="_LOMJ0DKGEeOMa8FDYZATEw _tw2QIDKHEeOMa8FDYZATEw _y9svgDKHEeOMa8FDYZATEw _YuI14DKIEeOMa8FDYZATEw" graphPattern="_burL0jKEEeOMa8FDYZATEw _burL0TKEEeOMa8FDYZATEw _burL0zKEEeOMa8FDYZATEw">
       <outgoingEdge xmi:id="_L0fU0DKGEeOMa8FDYZATEw" targetNode="_ePGrcDKFEeOMa8FDYZATEw" graphPattern="_burL0jKEEeOMa8FDYZATEw">
-        <typeReference href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//State/connectionPoints"/>
+        <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//State/connectionPoints"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_tw1pEDKHEeOMa8FDYZATEw" targetNode="_burLmDKEEeOMa8FDYZATEw">
-        <typeReference href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//State/parentStatechart"/>
+        <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//State/parentStatechart"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_y9tWkDKHEeOMa8FDYZATEw" targetNode="_hWrD4DKGEeOMa8FDYZATEw">
-        <typeReference href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//State/embeddedRegions"/>
+        <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//State/embeddedRegions"/>
       </outgoingEdge>
-      <eType href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//State"/>
+      <eType href="http://www.muml.org/pim/realtimestatechart/1.0.0#//State"/>
     </node>
     <node xmi:id="_fZuPADKGEeOMa8FDYZATEw" incomingEdge="_zz4woDKHEeOMa8FDYZATEw _1Y4YgDKHEeOMa8FDYZATEw _95JwcDKHEeOMa8FDYZATEw" graphPattern="_burL0zKEEeOMa8FDYZATEw">
       <outgoingEdge xmi:id="_zz4JkDKHEeOMa8FDYZATEw" targetNode="_hWrD4DKGEeOMa8FDYZATEw">
-        <typeReference href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart/parentRegion"/>
+        <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//RealtimeStatechart/parentRegion"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_1Y4_kDKHEeOMa8FDYZATEw" targetNode="_tmrSYDKFEeOMa8FDYZATEw">
-        <typeReference href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart/states"/>
+        <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//RealtimeStatechart/states"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_95KXgDKHEeOMa8FDYZATEw" targetNode="_zYYyUDKFEeOMa8FDYZATEw" graphPattern="_burL0jKEEeOMa8FDYZATEw">
-        <typeReference href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart/transitions"/>
+        <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//RealtimeStatechart/transitions"/>
       </outgoingEdge>
-      <eType href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+      <eType href="http://www.muml.org/pim/realtimestatechart/1.0.0#//RealtimeStatechart"/>
     </node>
     <node xmi:id="_hWrD4DKGEeOMa8FDYZATEw" incomingEdge="_y9tWkDKHEeOMa8FDYZATEw _zz4JkDKHEeOMa8FDYZATEw" graphPattern="_burL0zKEEeOMa8FDYZATEw">
       <outgoingEdge xmi:id="_y9svgDKHEeOMa8FDYZATEw" targetNode="_GhKaADKGEeOMa8FDYZATEw">
-        <typeReference href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Region/parentState"/>
+        <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//Region/parentState"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_zz4woDKHEeOMa8FDYZATEw" targetNode="_fZuPADKGEeOMa8FDYZATEw">
-        <typeReference href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Region/embeddedStatechart"/>
+        <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//Region/embeddedStatechart"/>
       </outgoingEdge>
-      <eType href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Region"/>
+      <eType href="http://www.muml.org/pim/realtimestatechart/1.0.0#//Region"/>
     </node>
     <node xmi:id="_vQXiIDKHEeOMa8FDYZATEw" incomingEdge="_vQbMgDKHEeOMa8FDYZATEw _x9jhIDKHEeOMa8FDYZATEw" graphPattern="_burL0zKEEeOMa8FDYZATEw">
       <outgoingEdge xmi:id="_wunBwDKHEeOMa8FDYZATEw" targetNode="_burLkTKEEeOMa8FDYZATEw">
-        <typeReference href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Region/parentState"/>
+        <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//Region/parentState"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_xrhV8DKHEeOMa8FDYZATEw" targetNode="_xreSoDKHEeOMa8FDYZATEw">
-        <typeReference href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Region/embeddedStatechart"/>
+        <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//Region/embeddedStatechart"/>
       </outgoingEdge>
-      <eType href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Region"/>
+      <eType href="http://www.muml.org/pim/realtimestatechart/1.0.0#//Region"/>
     </node>
     <node xmi:id="_xreSoDKHEeOMa8FDYZATEw" incomingEdge="_xrhV8DKHEeOMa8FDYZATEw _4jZMsDKHEeOMa8FDYZATEw _9LsNgDKHEeOMa8FDYZATEw" graphPattern="_burL0zKEEeOMa8FDYZATEw">
       <outgoingEdge xmi:id="_x9jhIDKHEeOMa8FDYZATEw" targetNode="_vQXiIDKHEeOMa8FDYZATEw">
-        <typeReference href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart/parentRegion"/>
+        <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//RealtimeStatechart/parentRegion"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_3uXCIDKHEeOMa8FDYZATEw" targetNode="_3uSJoDKHEeOMa8FDYZATEw">
-        <typeReference href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart/states"/>
+        <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//RealtimeStatechart/states"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_9LsNgTKHEeOMa8FDYZATEw" targetNode="_burLrTKEEeOMa8FDYZATEw" graphPattern="_burL0jKEEeOMa8FDYZATEw">
-        <typeReference href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart/transitions"/>
+        <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//RealtimeStatechart/transitions"/>
       </outgoingEdge>
-      <eType href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+      <eType href="http://www.muml.org/pim/realtimestatechart/1.0.0#//RealtimeStatechart"/>
     </node>
     <node xmi:id="_3uSJoDKHEeOMa8FDYZATEw" incomingEdge="_3uXCIDKHEeOMa8FDYZATEw _7UI2ADKHEeOMa8FDYZATEw _ccCD8DKIEeOMa8FDYZATEw" graphPattern="_burL0jKEEeOMa8FDYZATEw _burL0TKEEeOMa8FDYZATEw _burL0zKEEeOMa8FDYZATEw">
       <outgoingEdge xmi:id="_4jZMsDKHEeOMa8FDYZATEw" targetNode="_xreSoDKHEeOMa8FDYZATEw">
-        <typeReference href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//State/parentStatechart"/>
+        <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//State/parentStatechart"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_7hG7ADKHEeOMa8FDYZATEw" targetNode="_burLrTKEEeOMa8FDYZATEw" graphPattern="_burL0jKEEeOMa8FDYZATEw">
-        <typeReference href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Vertex/incomingTransitions"/>
+        <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//Vertex/incomingTransitions"/>
       </outgoingEdge>
-      <eType href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//State"/>
+      <eType href="http://www.muml.org/pim/realtimestatechart/1.0.0#//State"/>
     </node>
     <node xmi:id="_IDCxkDKIEeOMa8FDYZATEw" incomingEdge="_IDHDADKIEeOMa8FDYZATEw" graphPattern="_burL0jKEEeOMa8FDYZATEw _burL0TKEEeOMa8FDYZATEw _burL1DKEEeOMa8FDYZATEw">
       <outgoingEdge xmi:id="_LipsADKIEeOMa8FDYZATEw" targetNode="_LimBoDKIEeOMa8FDYZATEw" graphPattern="_burL0jKEEeOMa8FDYZATEw _burL0TKEEeOMa8FDYZATEw">
@@ -1257,27 +1257,27 @@
     </node>
     <node xmi:id="_CXg4gDKQEeOMa8FDYZATEw" incomingEdge="_CXki4DKQEeOMa8FDYZATEw _HsL3IDKQEeOMa8FDYZATEw" graphPattern="_QNu27TKPEeOMa8FDYZATEw _QNu27DKPEeOMa8FDYZATEw _QNu27jKPEeOMa8FDYZATEw">
       <outgoingEdge xmi:id="_HOw7UDKQEeOMa8FDYZATEw" targetNode="_HOt4ADKQEeOMa8FDYZATEw">
-        <typeReference href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//State/embeddedRegions"/>
+        <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//State/embeddedRegions"/>
       </outgoingEdge>
-      <eType href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//State"/>
+      <eType href="http://www.muml.org/pim/realtimestatechart/1.0.0#//State"/>
     </node>
     <node xmi:id="_HOt4ADKQEeOMa8FDYZATEw" incomingEdge="_HOw7UDKQEeOMa8FDYZATEw _JKirgDKQEeOMa8FDYZATEw" graphPattern="_QNu27jKPEeOMa8FDYZATEw">
       <outgoingEdge xmi:id="_HsL3IDKQEeOMa8FDYZATEw" targetNode="_CXg4gDKQEeOMa8FDYZATEw">
-        <typeReference href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Region/parentState"/>
+        <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//Region/parentState"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_I2g8QDKQEeOMa8FDYZATEw" targetNode="_I2egADKQEeOMa8FDYZATEw">
-        <typeReference href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Region/embeddedStatechart"/>
+        <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//Region/embeddedStatechart"/>
       </outgoingEdge>
-      <eType href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Region"/>
+      <eType href="http://www.muml.org/pim/realtimestatechart/1.0.0#//Region"/>
     </node>
     <node xmi:id="_I2egADKQEeOMa8FDYZATEw" incomingEdge="_I2g8QDKQEeOMa8FDYZATEw" graphPattern="_QNu27jKPEeOMa8FDYZATEw">
       <outgoingEdge xmi:id="_JKirgDKQEeOMa8FDYZATEw" targetNode="_HOt4ADKQEeOMa8FDYZATEw">
-        <typeReference href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart/parentRegion"/>
+        <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//RealtimeStatechart/parentRegion"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_K-LzYDKQEeOMa8FDYZATEw" targetNode="_QNu24TKPEeOMa8FDYZATEw">
         <typeReference href="http://www.storydriven.org/core/0.3.1#//ExtendableElement/annotation"/>
       </outgoingEdge>
-      <eType href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+      <eType href="http://www.muml.org/pim/realtimestatechart/1.0.0#//RealtimeStatechart"/>
     </node>
     <leftGraphPattern xmi:id="_QNu27DKPEeOMa8FDYZATEw" node="_QNu26DKPEeOMa8FDYZATEw _jTzv4DKPEeOMa8FDYZATEw _CXg4gDKQEeOMa8FDYZATEw" edge="_zGovcDKPEeOMa8FDYZATEw _CXki4DKQEeOMa8FDYZATEw"/>
     <rightGraphPattern xmi:id="_QNu27TKPEeOMa8FDYZATEw" node="_QNu26DKPEeOMa8FDYZATEw _QNu26jKPEeOMa8FDYZATEw _jTzv4DKPEeOMa8FDYZATEw _CXg4gDKQEeOMa8FDYZATEw" edge="_QNu26TKPEeOMa8FDYZATEw _zGovcDKPEeOMa8FDYZATEw _CXki4DKQEeOMa8FDYZATEw"/>
@@ -1340,27 +1340,27 @@
     </node>
     <node xmi:id="_XMP2QDKREeOMa8FDYZATEw" incomingEdge="_XMSSgDKREeOMa8FDYZATEw _ZNqUYDKREeOMa8FDYZATEw" graphPattern="_FaCY7jKREeOMa8FDYZATEw _FaCY7TKREeOMa8FDYZATEw _FaCY7zKREeOMa8FDYZATEw">
       <outgoingEdge xmi:id="_YnJuADKREeOMa8FDYZATEw" targetNode="_YnHRwDKREeOMa8FDYZATEw">
-        <typeReference href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//State/embeddedRegions"/>
+        <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//State/embeddedRegions"/>
       </outgoingEdge>
-      <eType href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//State"/>
+      <eType href="http://www.muml.org/pim/realtimestatechart/1.0.0#//State"/>
     </node>
     <node xmi:id="_YnHRwDKREeOMa8FDYZATEw" incomingEdge="_YnJuADKREeOMa8FDYZATEw _aiFwsDKREeOMa8FDYZATEw" graphPattern="_FaCY7zKREeOMa8FDYZATEw">
       <outgoingEdge xmi:id="_ZNqUYDKREeOMa8FDYZATEw" targetNode="_XMP2QDKREeOMa8FDYZATEw">
-        <typeReference href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Region/parentState"/>
+        <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//Region/parentState"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_aQg4gDKREeOMa8FDYZATEw" targetNode="_aQd1MDKREeOMa8FDYZATEw">
-        <typeReference href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Region/embeddedStatechart"/>
+        <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//Region/embeddedStatechart"/>
       </outgoingEdge>
-      <eType href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Region"/>
+      <eType href="http://www.muml.org/pim/realtimestatechart/1.0.0#//Region"/>
     </node>
     <node xmi:id="_aQd1MDKREeOMa8FDYZATEw" incomingEdge="_aQg4gDKREeOMa8FDYZATEw" graphPattern="_FaCY7zKREeOMa8FDYZATEw">
       <outgoingEdge xmi:id="_aiFwsDKREeOMa8FDYZATEw" targetNode="_YnHRwDKREeOMa8FDYZATEw">
-        <typeReference href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart/parentRegion"/>
+        <typeReference href="http://www.muml.org/pim/realtimestatechart/1.0.0#//RealtimeStatechart/parentRegion"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_bml6oDKREeOMa8FDYZATEw" targetNode="_FaCY7DKREeOMa8FDYZATEw">
         <typeReference href="http://www.storydriven.org/core/0.3.1#//ExtendableElement/annotation"/>
       </outgoingEdge>
-      <eType href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+      <eType href="http://www.muml.org/pim/realtimestatechart/1.0.0#//RealtimeStatechart"/>
     </node>
     <leftGraphPattern xmi:id="_FaCY7TKREeOMa8FDYZATEw" node="_FaCY5jKREeOMa8FDYZATEw _TNjMEDKREeOMa8FDYZATEw _XMP2QDKREeOMa8FDYZATEw" edge="_WUnDoDKREeOMa8FDYZATEw _XMSSgDKREeOMa8FDYZATEw"/>
     <rightGraphPattern xmi:id="_FaCY7jKREeOMa8FDYZATEw" node="_FaCY5jKREeOMa8FDYZATEw _FaCY6DKREeOMa8FDYZATEw _FaCY6zKREeOMa8FDYZATEw _TNjMEDKREeOMa8FDYZATEw _XMP2QDKREeOMa8FDYZATEw" edge="_FaCY5zKREeOMa8FDYZATEw _FaCY6TKREeOMa8FDYZATEw _FaCY6jKREeOMa8FDYZATEw _WUnDoDKREeOMa8FDYZATEw _XMSSgDKREeOMa8FDYZATEw"/>
@@ -1422,7 +1422,7 @@
       <outgoingEdge xmi:id="_jSkO0DS1EeOZ4cmbJlkOfg" targetNode="_jSJ_IDS1EeOZ4cmbJlkOfg" graphPattern="_mDgz6DSyEeO2FajGvdeGtw">
         <typeReference href="http://www.storydriven.org/core/0.3.1#//ExtendableElement/annotation"/>
       </outgoingEdge>
-      <eType href="http://www.fujaba.de/muml/instance/0.4.0#//AtomicComponentInstance"/>
+      <eType href="http://www.muml.org/pim/instance/1.0.0#//AtomicComponentInstance"/>
     </node>
     <node xmi:id="_8UpWwDS2EeOZ4cmbJlkOfg" incomingEdge="_8UuPQDS2EeOZ4cmbJlkOfg" graphPattern="_mDgz6DSyEeO2FajGvdeGtw _mDgz6TSyEeO2FajGvdeGtw">
       <outgoingEdge xmi:id="_8zX6IDS2EeOZ4cmbJlkOfg" targetNode="_ytDKYDS2EeOZ4cmbJlkOfg" graphPattern="_mDgz6DSyEeO2FajGvdeGtw">
@@ -1469,7 +1469,7 @@
       <outgoingEdge xmi:id="_Db4iMDcHEeOB1-JFijdexw" targetNode="_DbybkDcHEeOB1-JFijdexw" graphPattern="_h0KksTcGEeOB1-JFijdexw">
         <typeReference href="http://www.storydriven.org/core/0.3.1#//ExtendableElement/annotation"/>
       </outgoingEdge>
-      <eType href="http://www.fujaba.de/muml/instance/0.4.0#//DelegationConnectorInstance"/>
+      <eType href="http://www.muml.org/pim/instance/1.0.0#//DelegationConnectorInstance"/>
     </node>
     <node xmi:id="_vcbKIDcGEeOB1-JFijdexw" incomingEdge="_vcgCoDcGEeOB1-JFijdexw" graphPattern="_h0KksTcGEeOB1-JFijdexw _en5dADcGEeOB1-JFijdexw">
       <eType href="de.uni_paderborn.fujaba.simulink#//Parameter"/>
@@ -1539,7 +1539,7 @@
       <outgoingEdge xmi:id="_2J_np1RNEeOfSIp-QrYk8Q" targetNode="_2J_nqVRNEeOfSIp-QrYk8Q" graphPattern="_2J_nrVRNEeOfSIp-QrYk8Q">
         <typeReference href="http://www.storydriven.org/core/0.3.1#//ExtendableElement/annotation"/>
       </outgoingEdge>
-      <eType href="http://www.fujaba.de/muml/instance/0.4.0#//AssemblyConnectorInstance"/>
+      <eType href="http://www.muml.org/pim/instance/1.0.0#//AssemblyConnectorInstance"/>
     </node>
     <leftGraphPattern xmi:id="_2J_nrFRNEeOfSIp-QrYk8Q" node="_2J_npFRNEeOfSIp-QrYk8Q _HPVX8FROEeOfSIp-QrYk8Q _MFfOkFROEeOfSIp-QrYk8Q" edge="_LNGOAFROEeOfSIp-QrYk8Q _MFkuIFROEeOfSIp-QrYk8Q"/>
     <rightGraphPattern xmi:id="_2J_nrVRNEeOfSIp-QrYk8Q" node="_2J_npFRNEeOfSIp-QrYk8Q _2J_nqFRNEeOfSIp-QrYk8Q _2J_nqVRNEeOfSIp-QrYk8Q _2J_nq1RNEeOfSIp-QrYk8Q _HPVX8FROEeOfSIp-QrYk8Q _MFfOkFROEeOfSIp-QrYk8Q" edge="_2J_npVRNEeOfSIp-QrYk8Q _2J_np1RNEeOfSIp-QrYk8Q _2J_nqlRNEeOfSIp-QrYk8Q _LNGOAFROEeOfSIp-QrYk8Q _MFkuIFROEeOfSIp-QrYk8Q"/>

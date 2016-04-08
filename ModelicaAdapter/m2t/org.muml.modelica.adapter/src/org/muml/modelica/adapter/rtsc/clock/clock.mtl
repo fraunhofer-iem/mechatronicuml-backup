@@ -1,7 +1,7 @@
-[module clock('http://www.fujaba.de/muml/realtimestatechart/0.4.0',
+[module clock('http://www.muml.org/pim/realtimestatechart/1.0.0',
 'http://www.storydriven.org/core/0.3.1',
 				'http://www.fujaba.de/muml/actionlanguage/0.4.0',
-'http://www.fujaba.de/muml/valuetype/0.4.0')/]
+'http://www.muml.org/pim/valuetype/1.0.0')/]
 
 [import org::muml::modelica::adapter::rtsc::actionlanguage::expression]
 

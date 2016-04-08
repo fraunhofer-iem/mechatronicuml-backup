@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:instance="http://www.fujaba.de/muml/instance/0.4.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_z8b8MRyFEeSKP_lLzmbIVg" type="Component Instance Configuration" measurementUnit="Pixel">
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:instance="http://www.muml.org/pim/instance/1.0.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_z8b8MRyFEeSKP_lLzmbIVg" type="Component Instance Configuration" measurementUnit="Pixel">
   <children xmi:type="notation:Shape" xmi:id="_0R6c8ByFEeSKP_lLzmbIVg" type="2016" fontName="Lucida Grande" fontHeight="11" lineColor="0">
     <children xmi:type="notation:DecorationNode" xmi:id="_0R7EAByFEeSKP_lLzmbIVg" type="5027"/>
     <element xmi:type="instance:AtomicComponentInstance" href="syncChannel.muml#_0R2ykByFEeSKP_lLzmbIVg"/>

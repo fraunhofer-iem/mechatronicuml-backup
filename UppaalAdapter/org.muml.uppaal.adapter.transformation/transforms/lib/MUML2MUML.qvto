@@ -4,7 +4,7 @@ modeltype behaviorModel uses pim::behavior('http://www.muml.org/pim/1.0.0');
 modeltype actionLanguage uses 'http://www.muml.org/pim/actionlanguage/1.0.0';
 modeltype common uses core::expressions::common('http://www.muml.org/core/1.0.0');
 modeltype expressionsModel uses core::expressions('http://www.muml.org/core/1.0.0');
-modeltype msgtype uses muml::msgtype('http://www.fujaba.de/muml/0.4.0');
+modeltype msgtype uses muml::msgtype('http://www.muml.org/pim/1.0.0');
 modeltype types uses pim::types('http://www.muml.org/pim/1.0.0');
 modeltype valuetype uses pim::valuetype('http://www.muml.org/pim/1.0.0');
 modeltype connector uses pim::connector('http://www.muml.org/pim/1.0.0');
@@ -13,8 +13,8 @@ modeltype componentModel uses pim::component('http://www.muml.org/pim/1.0.0');
 modeltype verificationExtension uses 'http://www.fujaba.de/muml/verification/extension/0.4.0';
 modeltype modelinstance uses 'http://www.muml.org/core/modelinstance/1.0.0';
 modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
-modeltype instanceModel uses'http://www.fujaba.de/muml/instance/0.4.0';
-modeltype constraintModel uses 'http://www.fujaba.de/muml/constraint/0.4.0';
+modeltype instanceModel uses'http://www.muml.org/pim/instance/1.0.0';
+modeltype constraintModel uses 'http://www.muml.org/pim/constraint/1.0.0';
 modeltype storydriven uses 'http://www.muml.org/core/1.0.0';
 modeltype mtctl uses 'http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl';
 modeltype mtctlQuantifiers uses 'http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Quantifiers';
@@ -23,7 +23,7 @@ modeltype mtctlSets uses 'http://www.uni_paderborn.de/fujaba/muml/verification/u
 modeltype mtctlBooleanLogic uses 'http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/BooleanLogic';
 modeltype mtctlComparables uses 'http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Comparables';
 
-modeltype mumlConstraint uses 'http://www.fujaba.de/muml/constraint/0.4.0';
+modeltype mumlConstraint uses 'http://www.muml.org/pim/constraint/1.0.0';
 mapping Extension :: Extension2Extension() : Extension disjuncts CommittedExtension::CommittedExtension2CommittedExtension, ElementToVerifyExtension::ElementToVerifyExtension2ElementToVerifyExtension;
 
 mapping CommittedExtension :: CommittedExtension2CommittedExtension() : CommittedExtension{

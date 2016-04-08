@@ -29,7 +29,7 @@
   
   
    <extension point="org.eclipse.emf.ecore.generated_package">
-      <package class="org.muml.pim.PimPackage" genModel="model/pim.genmodel" uri="http://www.fujaba.de/muml/0.4.0"/>
+      <package class="org.muml.pim.PimPackage" genModel="model/pim.genmodel" uri="http://www.muml.org/pim/1.0.0"/>
    </extension>
    
    

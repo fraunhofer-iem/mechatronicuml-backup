@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:realtimestatechart="http://www.fujaba.de/muml/realtimestatechart/0.4.0" xmi:id="_QbjmkFL1EeWl58eUwm1Yvw" type="Real-Time Statechart" measurementUnit="Pixel">
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:realtimestatechart="http://www.muml.org/pim/realtimestatechart/1.0.0" xmi:id="_QbjmkFL1EeWl58eUwm1Yvw" type="Real-Time Statechart" measurementUnit="Pixel">
   <children xmi:type="notation:Shape" xmi:id="_QhKfUFL1EeWl58eUwm1Yvw" type="2007" fontName=".Helvetica Neue DeskInterface" fontHeight="11" lineColor="0">
     <children xmi:type="notation:DecorationNode" xmi:id="_QhLGYFL1EeWl58eUwm1Yvw" type="5061"/>
     <children xmi:type="notation:DecorationNode" xmi:id="_QhLGYVL1EeWl58eUwm1Yvw" type="5062"/>

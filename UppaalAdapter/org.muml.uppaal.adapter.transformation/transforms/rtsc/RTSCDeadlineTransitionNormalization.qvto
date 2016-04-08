@@ -8,14 +8,14 @@ import transforms.lib.MultiMappingUtil;
 */
 transformation RTSCDeadlineTransitionNormalization(in input:muml_rtsc, out output:muml_rtsc);
 
-modeltype muml uses 'http://www.fujaba.de/muml/0.4.0';
+modeltype muml uses 'http://www.muml.org/pim/1.0.0';
 modeltype muml_rtsc uses pim::realtimestatechart('http://www.muml.org/pim/1.0.0');
 modeltype muml_connector uses pim::connector('http://www.muml.org/pim/1.0.0');
-modeltype muml_constraint uses muml::constraint('http://www.fujaba.de/muml/0.4.0');
+modeltype muml_constraint uses muml::constraint('http://www.muml.org/pim/1.0.0');
 modeltype muml_behavior uses pim::behavior('http://www.muml.org/pim/1.0.0');
 modeltype muml_protocol uses pim::protocol('http://www.muml.org/pim/1.0.0');
 modeltype muml_actionLanguage uses 'http://www.muml.org/pim/actionlanguage/1.0.0';
-modeltype muml_msgtype uses muml::msgtype('http://www.fujaba.de/muml/0.4.0');
+modeltype muml_msgtype uses muml::msgtype('http://www.muml.org/pim/1.0.0');
 modeltype muml_types uses pim::types('http://www.muml.org/pim/1.0.0');
 modeltype muml_valuetype uses pim::valuetype('http://www.muml.org/pim/1.0.0');
 modeltype storydriven_core_expressions_common uses core::expressions::common('http://www.muml.org/core/1.0.0');

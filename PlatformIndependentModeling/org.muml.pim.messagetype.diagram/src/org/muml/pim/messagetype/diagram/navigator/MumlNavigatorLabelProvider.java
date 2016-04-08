@@ -75,13 +75,13 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements ICommon
 			return getImage("Navigator?Diagram?http://www.fujaba.de/modelinstance/0.4.0?ModelElementCategory", //$NON-NLS-1$
 					org.muml.pim.messagetype.diagram.providers.MumlElementTypes.ModelElementCategory_1000);
 		case org.muml.pim.messagetype.diagram.edit.parts.MessageTypeRepositoryEditPart.VISUAL_ID:
-			return getImage("Navigator?TopLevelNode?http://www.fujaba.de/muml/msgtype/0.4.0?MessageTypeRepository", //$NON-NLS-1$
+			return getImage("Navigator?TopLevelNode?http://www.muml.org/pim/msgtype/1.0.0?MessageTypeRepository", //$NON-NLS-1$
 					org.muml.pim.messagetype.diagram.providers.MumlElementTypes.MessageTypeRepository_2008);
 		case org.muml.pim.messagetype.diagram.edit.parts.MessageTypeEditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.fujaba.de/muml/msgtype/0.4.0?MessageType", //$NON-NLS-1$
+			return getImage("Navigator?Node?http://www.muml.org/pim/msgtype/1.0.0?MessageType", //$NON-NLS-1$
 					org.muml.pim.messagetype.diagram.providers.MumlElementTypes.MessageType_3007);
 		case org.muml.pim.messagetype.diagram.edit.parts.ParameterEditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.fujaba.de/muml/behavior/0.4.0?Parameter", //$NON-NLS-1$
+			return getImage("Navigator?Node?http://www.muml.org/pim/behavior/1.0.0?Parameter", //$NON-NLS-1$
 					org.muml.pim.messagetype.diagram.providers.MumlElementTypes.Parameter_3009);
 		}
 		return getImage("Navigator?UnknownElement", null); //$NON-NLS-1$

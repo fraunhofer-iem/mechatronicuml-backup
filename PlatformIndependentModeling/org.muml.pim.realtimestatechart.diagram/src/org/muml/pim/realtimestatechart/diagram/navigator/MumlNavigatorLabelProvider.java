@@ -85,44 +85,44 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements ICommon
 	public Image getImage(View view) {
 		switch (org.muml.pim.realtimestatechart.diagram.part.MumlVisualIDRegistry.getVisualID(view)) {
 		case org.muml.pim.realtimestatechart.diagram.edit.parts.ModelElementCategoryEditPart.VISUAL_ID:
-			return getImage("Navigator?Diagram?http://www.fujaba.de/muml/realtimestatechart/0.4.0?RealtimeStatechart", //$NON-NLS-1$
+			return getImage("Navigator?Diagram?http://www.muml.org/pim/realtimestatechart/1.0.0?RealtimeStatechart", //$NON-NLS-1$
 					org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes.RealtimeStatechart_1000);
 		case org.muml.pim.realtimestatechart.diagram.edit.parts.RealtimeStatechartEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?TopLevelNode?http://www.fujaba.de/muml/realtimestatechart/0.4.0?RealtimeStatechart", //$NON-NLS-1$
+					"Navigator?TopLevelNode?http://www.muml.org/pim/realtimestatechart/1.0.0?RealtimeStatechart", //$NON-NLS-1$
 					org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes.RealtimeStatechart_2007);
 		case org.muml.pim.realtimestatechart.diagram.edit.parts.StateEditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.fujaba.de/muml/realtimestatechart/0.4.0?State", //$NON-NLS-1$
+			return getImage("Navigator?Node?http://www.muml.org/pim/realtimestatechart/1.0.0?State", //$NON-NLS-1$
 					org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes.State_3032);
 		case org.muml.pim.realtimestatechart.diagram.edit.parts.EntryEventEditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.fujaba.de/muml/realtimestatechart/0.4.0?EntryEvent", //$NON-NLS-1$
+			return getImage("Navigator?Node?http://www.muml.org/pim/realtimestatechart/1.0.0?EntryEvent", //$NON-NLS-1$
 					org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes.EntryEvent_3033);
 		case org.muml.pim.realtimestatechart.diagram.edit.parts.DoEventEditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.fujaba.de/muml/realtimestatechart/0.4.0?DoEvent", //$NON-NLS-1$
+			return getImage("Navigator?Node?http://www.muml.org/pim/realtimestatechart/1.0.0?DoEvent", //$NON-NLS-1$
 					org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes.DoEvent_3034);
 		case org.muml.pim.realtimestatechart.diagram.edit.parts.ExitEventEditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.fujaba.de/muml/realtimestatechart/0.4.0?ExitEvent", //$NON-NLS-1$
+			return getImage("Navigator?Node?http://www.muml.org/pim/realtimestatechart/1.0.0?ExitEvent", //$NON-NLS-1$
 					org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes.ExitEvent_3035);
 		case org.muml.pim.realtimestatechart.diagram.edit.parts.ClockConstraintEditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.fujaba.de/muml/realtimestatechart/0.4.0?ClockConstraint", //$NON-NLS-1$
+			return getImage("Navigator?Node?http://www.muml.org/pim/realtimestatechart/1.0.0?ClockConstraint", //$NON-NLS-1$
 					org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes.ClockConstraint_3036);
 		case org.muml.pim.realtimestatechart.diagram.edit.parts.SynchronizationChannelEditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.fujaba.de/muml/realtimestatechart/0.4.0?SynchronizationChannel", //$NON-NLS-1$
+			return getImage("Navigator?Node?http://www.muml.org/pim/realtimestatechart/1.0.0?SynchronizationChannel", //$NON-NLS-1$
 					org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes.SynchronizationChannel_3037);
 		case org.muml.pim.realtimestatechart.diagram.edit.parts.EntryPointEditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.fujaba.de/muml/realtimestatechart/0.4.0?EntryPoint", //$NON-NLS-1$
+			return getImage("Navigator?Node?http://www.muml.org/pim/realtimestatechart/1.0.0?EntryPoint", //$NON-NLS-1$
 					org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes.EntryPoint_3040);
 		case org.muml.pim.realtimestatechart.diagram.edit.parts.ExitPointEditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.fujaba.de/muml/realtimestatechart/0.4.0?ExitPoint", //$NON-NLS-1$
+			return getImage("Navigator?Node?http://www.muml.org/pim/realtimestatechart/1.0.0?ExitPoint", //$NON-NLS-1$
 					org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes.ExitPoint_3041);
 		case org.muml.pim.realtimestatechart.diagram.edit.parts.RegionEditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.fujaba.de/muml/realtimestatechart/0.4.0?Region", //$NON-NLS-1$
+			return getImage("Navigator?Node?http://www.muml.org/pim/realtimestatechart/1.0.0?Region", //$NON-NLS-1$
 					org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes.Region_3042);
 		case org.muml.pim.realtimestatechart.diagram.edit.parts.RealtimeStatechart2EditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.fujaba.de/muml/realtimestatechart/0.4.0?RealtimeStatechart", //$NON-NLS-1$
+			return getImage("Navigator?Node?http://www.muml.org/pim/realtimestatechart/1.0.0?RealtimeStatechart", //$NON-NLS-1$
 					org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes.RealtimeStatechart_3043);
 		case org.muml.pim.realtimestatechart.diagram.edit.parts.TransitionEditPart.VISUAL_ID:
-			return getImage("Navigator?Link?http://www.fujaba.de/muml/realtimestatechart/0.4.0?Transition", //$NON-NLS-1$
+			return getImage("Navigator?Link?http://www.muml.org/pim/realtimestatechart/1.0.0?Transition", //$NON-NLS-1$
 					org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes.Transition_4003);
 		}
 		return getImage("Navigator?UnknownElement", null); //$NON-NLS-1$
