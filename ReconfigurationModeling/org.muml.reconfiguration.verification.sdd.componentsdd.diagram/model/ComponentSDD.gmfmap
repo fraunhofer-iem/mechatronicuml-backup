@@ -48,7 +48,7 @@
                       xsi:type="ecore:EAttribute"
                       href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.ecore#//ComponentStoryPatternVariable/bindingState"/>
                   <value
-                      body="storydiagrams::patterns::BindingState::BOUND"/>
+                      body="storydiagram::patterns::BindingState::BOUND"/>
                 </initializers>
                 <initializers
                     xsi:type="gmfmap:FeatureValueSpec">
@@ -56,7 +56,7 @@
                       xsi:type="ecore:EAttribute"
                       href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.ecore#//ComponentStoryPatternVariable/bindingSemantics"/>
                   <value
-                      body="storydiagrams::patterns::BindingSemantics::MANDATORY"/>
+                      body="storydiagram::patterns::BindingSemantics::MANDATORY"/>
                 </initializers>
                 <initializers
                     xsi:type="gmfmap:FeatureValueSpec">
@@ -85,7 +85,7 @@
         <diagramLabel
             href="../../org.muml.storydiagram.verification.sdd.basicsdd.diagram/model/sdd.gmfgraph#PatternNodeType"/>
         <viewExpression
-            body="let&#xD;&#xA;&#x9;directContents : Sequence(OclAny) = self.eContents(),&#xD;&#xA;&#x9;allContents: Set(OclAny)= directContents->closure(t | &#xD;&#xA;&#x9;&#x9;if&#xD;&#xA;&#x9;&#x9;&#x9;t.oclIsKindOf(ecore::EObject)&#xD;&#xA;&#x9;&#x9;then&#xD;&#xA;&#x9;&#x9;&#x9;t.oclAsType(ecore::EObject).eContents()&#xD;&#xA;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;null&#xD;&#xA;&#x9;&#x9;endif&#xD;&#xA;&#x9;)->flatten()->asSet(),&#xD;&#xA;&#x9;boundCompSPVariables : Set(OclAny) = allContents->select(oclIsKindOf(componentstorypattern::ComponentStoryPatternVariable) and oclAsType(componentstorypattern::ComponentStoryPatternVariable).bindingState = storydiagrams::patterns::BindingState::UNBOUND),&#xD;&#xA;&#x9;checkVariables : OrderedSet(OclAny) = boundCompSPVariables->select(not (oclIsTypeOf(componentstorypattern::ComponentVariable) or oclAsType(componentstorypattern::ComponentStoryPatternVariable).name = ''))->asOrderedSet()&#xD;&#xA;in&#xD;&#xA;&#x9;checkVariables->iterate(v : OclAny; s : String = '' | s+v.oclAsType(componentstorypattern::ComponentStoryPatternVariable).name+&#xD;&#xA;&#x9;&#x9;if&#xD;&#xA;&#x9;&#x9;&#x9;checkVariables->indexOf(v) = checkVariables->size()&#xD;&#xA;&#x9;&#x9;then&#xD;&#xA;&#x9;&#x9;&#x9;''&#xD;&#xA;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;', '&#xD;&#xA;&#x9;&#x9;endif&#xD;&#xA;&#x9;)"/>
+            body="let&#xD;&#xA;&#x9;directContents : Sequence(OclAny) = self.eContents(),&#xD;&#xA;&#x9;allContents: Set(OclAny)= directContents->closure(t | &#xD;&#xA;&#x9;&#x9;if&#xD;&#xA;&#x9;&#x9;&#x9;t.oclIsKindOf(ecore::EObject)&#xD;&#xA;&#x9;&#x9;then&#xD;&#xA;&#x9;&#x9;&#x9;t.oclAsType(ecore::EObject).eContents()&#xD;&#xA;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;null&#xD;&#xA;&#x9;&#x9;endif&#xD;&#xA;&#x9;)->flatten()->asSet(),&#xD;&#xA;&#x9;boundCompSPVariables : Set(OclAny) = allContents->select(oclIsKindOf(componentstorypattern::ComponentStoryPatternVariable) and oclAsType(componentstorypattern::ComponentStoryPatternVariable).bindingState = storydiagram::patterns::BindingState::UNBOUND),&#xD;&#xA;&#x9;checkVariables : OrderedSet(OclAny) = boundCompSPVariables->select(not (oclIsTypeOf(componentstorypattern::ComponentVariable) or oclAsType(componentstorypattern::ComponentStoryPatternVariable).name = ''))->asOrderedSet()&#xD;&#xA;in&#xD;&#xA;&#x9;checkVariables->iterate(v : OclAny; s : String = '' | s+v.oclAsType(componentstorypattern::ComponentStoryPatternVariable).name+&#xD;&#xA;&#x9;&#x9;if&#xD;&#xA;&#x9;&#x9;&#x9;checkVariables->indexOf(v) = checkVariables->size()&#xD;&#xA;&#x9;&#x9;then&#xD;&#xA;&#x9;&#x9;&#x9;''&#xD;&#xA;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;', '&#xD;&#xA;&#x9;&#x9;endif&#xD;&#xA;&#x9;)"/>
       </labelMappings>
       <labelMappings
           xsi:type="gmfmap:ExpressionLabelMapping"
@@ -160,7 +160,7 @@
                     <diagramLabel
                         href="../../org.muml.reconfiguration.componentstorydiagram.diagram/model/ComponentStoryDiagram.gmfgraph#FadingComponentVariableNameLabel"/>
                     <viewExpression
-                        body="let compName : String = if self.componentPartType.componentType.name.oclIsUndefined() then 'null' else&#x9;self.componentPartType.componentType.name endif in&#xD;&#xA;let partName : String = if self.componentPartType.name.oclIsUndefined() then ' ' else&#x9;' / '.concat(self.componentPartType.name) endif in&#xD;&#xA;let selfName : String = if self.name.oclIsUndefined() then 'null' else self.name endif in&#xD;&#xA;if bindingState = storydiagrams::patterns::BindingState::BOUND then&#xD;&#xA;selfName&#xD;&#xA;else&#xD;&#xA;selfName.concat(partName.concat(' : '.concat(compName)))&#xD;&#xA;endif"/>
+                        body="let compName : String = if self.componentPartType.componentType.name.oclIsUndefined() then 'null' else&#x9;self.componentPartType.componentType.name endif in&#xD;&#xA;let partName : String = if self.componentPartType.name.oclIsUndefined() then ' ' else&#x9;' / '.concat(self.componentPartType.name) endif in&#xD;&#xA;let selfName : String = if self.name.oclIsUndefined() then 'null' else self.name endif in&#xD;&#xA;if bindingState = storydiagram::patterns::BindingState::BOUND then&#xD;&#xA;selfName&#xD;&#xA;else&#xD;&#xA;selfName.concat(partName.concat(' : '.concat(compName)))&#xD;&#xA;endif"/>
                   </labelMappings>
                   <labelMappings
                       readOnly="true">
@@ -284,7 +284,7 @@
             xsi:type="ecore:EReference"
             href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.ecore#//AssemblyVariable/type"/>
         <value
-            body="let this : componentstorypattern::ComponentVariable = self.eContainer().oclAsType(ComponentVariable),&#xD;&#xA;&#x9;assemblyConnectors : Collection(muml::connector::Connector) = this.type.oclAsType(muml::component::StructuredComponent).connectors->select(oclIsTypeOf(muml::component::AssemblyConnector)),&#xD;&#xA;&#x9;portVariableTypes: Collection(muml::component::Port) = self.portVariables.portType->excluding(null),&#xD;&#xA;&#x9;connector : muml::component::AssemblyConnector = assemblyConnectors->select(aC | portVariableTypes->forAll(p | aC.oclAsType(muml::component::AssemblyConnector).portParts.portType->includes(p)))->any(true).oclAsType(muml::component::AssemblyConnector)&#xD;&#xA;in&#xD;&#xA;&#x9;if&#xD;&#xA;&#x9;&#x9;not connector.oclIsUndefined()&#xD;&#xA;&#x9;then&#xD;&#xA;&#x9;&#x9;connector&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;null&#xD;&#xA;&#x9;endif"/>
+            body="let this : componentstorypattern::ComponentVariable = self.eContainer().oclAsType(ComponentVariable),&#xD;&#xA;&#x9;assemblyConnectors : Collection(pim::connector::Connector) = this.type.oclAsType(pim::component::StructuredComponent).connectors->select(oclIsTypeOf(pim::component::AssemblyConnector)),&#xD;&#xA;&#x9;portVariableTypes: Collection(pim::component::Port) = self.portVariables.portType->excluding(null),&#xD;&#xA;&#x9;connector : pim::component::AssemblyConnector = assemblyConnectors->select(aC | portVariableTypes->forAll(p | aC.oclAsType(pim::component::AssemblyConnector).portParts.portType->includes(p)))->any(true).oclAsType(pim::component::AssemblyConnector)&#xD;&#xA;in&#xD;&#xA;&#x9;if&#xD;&#xA;&#x9;&#x9;not connector.oclIsUndefined()&#xD;&#xA;&#x9;then&#xD;&#xA;&#x9;&#x9;connector&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;null&#xD;&#xA;&#x9;endif"/>
       </initializers>
     </domainInitializer>
     <labelMappings
@@ -327,7 +327,7 @@
             xsi:type="ecore:EReference"
             href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.ecore#//DelegationVariable/type"/>
         <value
-            body="let outerPort : muml::component::Port = self.portVariables->select(eContainer().oclIsTypeOf(ComponentVariable))->at(1).portType,&#xD;&#xA;&#x9;innerPort : muml::component::Port = self.portVariables.portType->excluding(outerPort)->at(1),&#xD;&#xA;&#x9;delegationConnectorsOuter : OrderedSet(muml::connector::Connector) = outerPort.connectors->select(oclIsTypeOf(muml::component::DelegationConnector))&#xD;&#xA;in&#xD;&#xA;&#x9;delegationConnectorsOuter->select(dC | dC.oclAsType(muml::component::DelegationConnector).portPart.portType = innerPort)->any(true).oclAsType(muml::component::DelegationConnector)"/>
+            body="let outerPort : pim::component::Port = self.portVariables->select(eContainer().oclIsTypeOf(ComponentVariable))->at(1).portType,&#xD;&#xA;&#x9;innerPort : pim::component::Port = self.portVariables.portType->excluding(outerPort)->at(1),&#xD;&#xA;&#x9;delegationConnectorsOuter : OrderedSet(pim::connector::Connector) = outerPort.connectors->select(oclIsTypeOf(pim::component::DelegationConnector))&#xD;&#xA;in&#xD;&#xA;&#x9;delegationConnectorsOuter->select(dC | dC.oclAsType(pim::component::DelegationConnector).portPart.portType = innerPort)->any(true).oclAsType(pim::component::DelegationConnector)"/>
       </initializers>
     </domainInitializer>
     <labelMappings
