@@ -74,7 +74,7 @@
               <font xsi:type="gmfgraph:BasicFont" faceName="" style="BOLD"/>
             </children>
             <children xsi:type="gmfgraph:FigureRef">
-              <figure xsi:type="gmfgraph:Rectangle" href="../../de.uni_paderborn.fujaba.muml.common/model/component.gmfgraph#//@figures.0/@descriptors.6/@actualFigure"/>
+              <figure xsi:type="gmfgraph:Rectangle" href="../../org.muml.pim.common/model/component.gmfgraph#//@figures.0/@descriptors.6/@actualFigure"/>
             </children>
           </children>
           <children xsi:type="gmfgraph:Rectangle" name="children" outline="false" fill="false">
@@ -143,7 +143,7 @@
             <layoutData xsi:type="gmfgraph:GridLayoutData" horizontalAlignment="END"/>
             <layout xsi:type="gmfgraph:GridLayout" equalWidth="false"/>
             <children xsi:type="gmfgraph:FigureRef">
-              <figure xsi:type="gmfgraph:Rectangle" href="../../de.uni_paderborn.fujaba.muml.common/model/component.gmfgraph#//@figures.0/@descriptors.6/@actualFigure"/>
+              <figure xsi:type="gmfgraph:Rectangle" href="../../org.muml.pim.common/model/component.gmfgraph#//@figures.0/@descriptors.6/@actualFigure"/>
             </children>
           </children>
           <children xsi:type="gmfgraph:Rectangle" name="TriggerEmbeddedComponentExpressionContainer" outline="false">
@@ -511,13 +511,13 @@
     </facets>
   </nodes>
   <nodes name="SinglePortVariable" affixedParentSide="NORTH">
-    <figure href="../../de.uni_paderborn.fujaba.muml.common/model/component.gmfgraph#PortFigureRef"/>
+    <figure href="../../org.muml.pim.common/model/component.gmfgraph#PortFigureRef"/>
     <facets xsi:type="gmfgraph:DefaultSizeFacet">
       <defaultSize dx="30" dy="30"/>
     </facets>
   </nodes>
   <nodes name="InnerSinglePortVariable">
-    <figure href="../../de.uni_paderborn.fujaba.muml.common/model/component.gmfgraph#PortFigureRef"/>
+    <figure href="../../org.muml.pim.common/model/component.gmfgraph#PortFigureRef"/>
     <facets xsi:type="gmfgraph:DefaultSizeFacet">
       <defaultSize dx="30" dy="30"/>
     </facets>
@@ -559,7 +559,7 @@
   <labels name="ControllerExchangeNodeIconDeadline" figure="ControllerExchangeNodeFigure" elementIcon="false" accessor="//@figures.0/@descriptors.14/@accessors.3"/>
   <labels name="FadingComponentVariableNameLabel" figure="FadingComponentVariableFigure" elementIcon="false" accessor="//@figures.0/@descriptors.16/@accessors.0"/>
   <labels name="PortVariableTypeLabel" elementIcon="false">
-    <figure href="../../de.uni_paderborn.fujaba.muml.common/model/component.gmfgraph#UnderlinedLabelFigure"/>
+    <figure href="../../org.muml.pim.common/model/component.gmfgraph#UnderlinedLabelFigure"/>
   </labels>
   <labels name="MultiPortOrderConstraintTypeLabel" figure="MultiPortOrderConstraintFigure" elementIcon="false" accessor="//@figures.0/@descriptors.19/@accessors.0"/>
   <labels name="TriggerEmbeddedComponentExpression" figure="PartVariableFigure" elementIcon="false" accessor="//@figures.0/@descriptors.8/@accessors.1"/>

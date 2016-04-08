@@ -245,13 +245,13 @@
   <nodes
       name="CoordinationProtocol">
     <figure
-        href="../../de.uni_paderborn.fujaba.muml.common/model/coordinationprotocol.gmfgraph#CoordinationProtocolFigure"/>
+        href="../../org.muml.pim.common/model/coordinationprotocol.gmfgraph#CoordinationProtocolFigure"/>
   </nodes>
   <nodes
       name="Role"
       resizeConstraint="NONE">
     <figure
-        href="../../de.uni_paderborn.fujaba.muml.common/model/component.gmfgraph#PortFigureRef"/>
+        href="../../org.muml.pim.common/model/component.gmfgraph#PortFigureRef"/>
     <facets
         xsi:type="gmfgraph:DefaultSizeFacet">
       <defaultSize
@@ -277,7 +277,7 @@
   <connections
       name="RolePattern">
     <figure
-        href="../../de.uni_paderborn.fujaba.muml.common/model/coordinationprotocol.gmfgraph#RolePatternFigure"/>
+        href="../../org.muml.pim.common/model/coordinationprotocol.gmfgraph#RolePatternFigure"/>
   </connections>
   <connections
       name="ConstraintLink"
@@ -298,15 +298,15 @@
       name="CoordinationProtocolName"
       elementIcon="false">
     <figure
-        href="../../de.uni_paderborn.fujaba.muml.common/model/coordinationprotocol.gmfgraph#CoordinationProtocolFigure"/>
+        href="../../org.muml.pim.common/model/coordinationprotocol.gmfgraph#CoordinationProtocolFigure"/>
     <accessor
-        href="../../de.uni_paderborn.fujaba.muml.common/model/coordinationprotocol.gmfgraph#//@figures.0/@descriptors.0/@accessors.0"/>
+        href="../../org.muml.pim.common/model/coordinationprotocol.gmfgraph#//@figures.0/@descriptors.0/@accessors.0"/>
   </labels>
   <labels
       name="RoleName"
       elementIcon="false">
     <figure
-        href="../../de.uni_paderborn.fujaba.muml.common/model/component.gmfgraph#LabelFigure"/>
+        href="../../org.muml.pim.common/model/component.gmfgraph#LabelFigure"/>
   </labels>
   <labels
       name="TextualConstraintName"

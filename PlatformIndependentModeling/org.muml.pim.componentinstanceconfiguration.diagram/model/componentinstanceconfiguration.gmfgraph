@@ -51,7 +51,7 @@
   <nodes
       name="StructuredComponentInstance">
     <figure
-        href="../../de.uni_paderborn.fujaba.muml.common/model/component.gmfgraph#StructuredComponentFigure"/>
+        href="../../org.muml.pim.common/model/component.gmfgraph#StructuredComponentFigure"/>
     <facets
         xsi:type="gmfgraph:DefaultSizeFacet">
       <defaultSize
@@ -63,7 +63,7 @@
       name="Port"
       affixedParentSide="NORTH">
     <figure
-        href="../../de.uni_paderborn.fujaba.muml.common/model/component.gmfgraph#PortFigureRef"/>
+        href="../../org.muml.pim.common/model/component.gmfgraph#PortFigureRef"/>
     <facets
         xsi:type="gmfgraph:DefaultSizeFacet">
       <defaultSize
@@ -85,7 +85,7 @@
   <nodes
       name="InnerDiscreteSinglePortInstance">
     <figure
-        href="../../de.uni_paderborn.fujaba.muml.common/model/component.gmfgraph#PortFigure"/>
+        href="../../org.muml.pim.common/model/component.gmfgraph#PortFigure"/>
     <facets
         xsi:type="gmfgraph:DefaultSizeFacet">
       <defaultSize
@@ -99,7 +99,7 @@
   <nodes
       name="InnerPort">
     <figure
-        href="../../de.uni_paderborn.fujaba.muml.common/model/component.gmfgraph#PortFigureRef"/>
+        href="../../org.muml.pim.common/model/component.gmfgraph#PortFigureRef"/>
     <facets
         xsi:type="gmfgraph:DefaultSizeFacet">
       <defaultSize
@@ -110,7 +110,7 @@
   <nodes
       name="AtomicComponentInstance">
     <figure
-        href="../../de.uni_paderborn.fujaba.muml.common/model/component.gmfgraph#ComponentFigure"/>
+        href="../../org.muml.pim.common/model/component.gmfgraph#ComponentFigure"/>
     <facets
         xsi:type="gmfgraph:DefaultSizeFacet">
       <defaultSize
@@ -121,7 +121,7 @@
   <nodes
       name="StructuredComponentInstance">
     <figure
-        href="../../de.uni_paderborn.fujaba.muml.common/model/component.gmfgraph#StructuredComponentFigure"/>
+        href="../../org.muml.pim.common/model/component.gmfgraph#StructuredComponentFigure"/>
     <facets
         xsi:type="gmfgraph:DefaultSizeFacet">
       <defaultSize
@@ -132,12 +132,12 @@
   <connections
       name="Delegation">
     <figure
-        href="../../de.uni_paderborn.fujaba.muml.common/model/component.gmfgraph#ConnectorFigure"/>
+        href="../../org.muml.pim.common/model/component.gmfgraph#ConnectorFigure"/>
   </connections>
   <connections
       name="Assembly">
     <figure
-        href="../../de.uni_paderborn.fujaba.muml.common/model/component.gmfgraph#ConnectorFigure"/>
+        href="../../org.muml.pim.common/model/component.gmfgraph#ConnectorFigure"/>
   </connections>
   <compartments
       name="DiscreteMultiPortInstanceCompartment"
@@ -146,9 +146,9 @@
   <compartments
       name="ComponentInstanceContentsCompartment">
     <figure
-        href="../../de.uni_paderborn.fujaba.muml.common/model/component.gmfgraph#StructuredComponentFigure"/>
+        href="../../org.muml.pim.common/model/component.gmfgraph#StructuredComponentFigure"/>
     <accessor
-        href="../../de.uni_paderborn.fujaba.muml.common/model/component.gmfgraph#//@figures.0/@descriptors.1/@accessors.1"/>
+        href="../../org.muml.pim.common/model/component.gmfgraph#//@figures.0/@descriptors.1/@accessors.1"/>
   </compartments>
   <compartments
       name="ComponentInstanceConfigurationContentsCompartment"
@@ -158,14 +158,14 @@
       name="ComponentName"
       elementIcon="false">
     <figure
-        href="../../de.uni_paderborn.fujaba.muml.common/model/component.gmfgraph#ComponentFigure"/>
+        href="../../org.muml.pim.common/model/component.gmfgraph#ComponentFigure"/>
     <accessor
-        href="../../de.uni_paderborn.fujaba.muml.common/model/component.gmfgraph#//@figures.0/@descriptors.1/@accessors.0"/>
+        href="../../org.muml.pim.common/model/component.gmfgraph#//@figures.0/@descriptors.1/@accessors.0"/>
   </labels>
   <labels
       name="PortInstanceLabel"
       elementIcon="false">
     <figure
-        href="../../de.uni_paderborn.fujaba.muml.common/model/component.gmfgraph#UnderlinedLabelFigure"/>
+        href="../../org.muml.pim.common/model/component.gmfgraph#UnderlinedLabelFigure"/>
   </labels>
 </gmfgraph:Canvas>
