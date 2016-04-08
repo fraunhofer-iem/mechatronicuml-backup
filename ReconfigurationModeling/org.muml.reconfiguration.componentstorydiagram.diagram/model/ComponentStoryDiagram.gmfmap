@@ -8,7 +8,7 @@
     xmlns:gmftool="http://www.eclipse.org/gmf/2005/ToolDefinition">
   <nodes>
     <containmentFeature
-        href="../../de.uni_paderborn.fujaba.muml.componentstorydiagram/model/ComponentStoryDiagram.ecore#//ComponentStoryRule/activity"/>
+        href="../../org.muml.reconfiguration.componentstorydiagram/model/ComponentStoryDiagram.ecore#//ComponentStoryRule/activity"/>
     <ownedChild>
       <domainMetaElement
           href="../../org.muml.storydiagram/model/storydiagrams.ecore#//activities/Activity"/>
@@ -39,14 +39,14 @@
             href="../../org.muml.storydiagram/model/storydiagrams.ecore#//activities/Activity/ownedActivityNode"/>
         <ownedChild>
           <domainMetaElement
-              href="../../de.uni_paderborn.fujaba.muml.componentstorydiagram/model/ComponentStoryDiagram.ecore#//ComponentStoryNode"/>
+              href="../../org.muml.reconfiguration.componentstorydiagram/model/ComponentStoryDiagram.ecore#//ComponentStoryNode"/>
           <domainInitializer
               xsi:type="gmfmap:FeatureSeqInitializer">
             <initializers
                 xsi:type="gmfmap:ReferenceNewElementSpec">
               <feature
                   xsi:type="ecore:EReference"
-                  href="../../de.uni_paderborn.fujaba.muml.componentstorydiagram/model/ComponentStoryDiagram.ecore#//ComponentStoryNode/componentStoryPattern"/>
+                  href="../../org.muml.reconfiguration.componentstorydiagram/model/ComponentStoryDiagram.ecore#//ComponentStoryNode/componentStoryPattern"/>
               <newElementInitializers>
                 <initializers
                     xsi:type="gmfmap:FeatureValueSpec">
@@ -122,7 +122,7 @@
           <children
               compartment="//@nodes.0/@ownedChild/@children.0/@ownedChild/@compartments.0">
             <containmentFeature
-                href="../../de.uni_paderborn.fujaba.muml.componentstorydiagram/model/ComponentStoryDiagram.ecore#//ComponentStoryNode/componentStoryPattern"/>
+                href="../../org.muml.reconfiguration.componentstorydiagram/model/ComponentStoryDiagram.ecore#//ComponentStoryNode/componentStoryPattern"/>
             <ownedChild>
               <domainMetaElement
                   href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.ecore#//ComponentStoryPattern"/>
@@ -389,14 +389,14 @@
             href="../../org.muml.storydiagram/model/storydiagrams.ecore#//activities/Activity/ownedActivityNode"/>
         <ownedChild>
           <domainMetaElement
-              href="../../de.uni_paderborn.fujaba.muml.componentstorydiagram/model/ComponentStoryDiagram.ecore#//ControllerExchangeNode"/>
+              href="../../org.muml.reconfiguration.componentstorydiagram/model/ComponentStoryDiagram.ecore#//ControllerExchangeNode"/>
           <domainInitializer
               xsi:type="gmfmap:FeatureSeqInitializer">
             <initializers
                 xsi:type="gmfmap:ReferenceNewElementSpec">
               <feature
                   xsi:type="ecore:EReference"
-                  href="../../de.uni_paderborn.fujaba.muml.componentstorydiagram/model/ComponentStoryDiagram.ecore#//ControllerExchangeNode/componentStoryPattern"/>
+                  href="../../org.muml.reconfiguration.componentstorydiagram/model/ComponentStoryDiagram.ecore#//ControllerExchangeNode/componentStoryPattern"/>
               <newElementInitializers>
                 <initializers
                     xsi:type="gmfmap:FeatureValueSpec">
@@ -510,7 +510,7 @@
           <children
               compartment="//@nodes.0/@ownedChild/@children.4/@ownedChild/@compartments.0">
             <containmentFeature
-                href="../../de.uni_paderborn.fujaba.muml.componentstorydiagram/model/ComponentStoryDiagram.ecore#//ControllerExchangeNode/componentStoryPattern"/>
+                href="../../org.muml.reconfiguration.componentstorydiagram/model/ComponentStoryDiagram.ecore#//ControllerExchangeNode/componentStoryPattern"/>
             <ownedChild>
               <domainMetaElement
                   href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.ecore#//ComponentStoryPattern"/>
@@ -760,9 +760,9 @@
     <diagramCanvas
         href="ComponentStoryDiagram.gmfgraph#componentstorydiagram"/>
     <domainModel
-        href="../../de.uni_paderborn.fujaba.muml.componentstorydiagram/model/ComponentStoryDiagram.ecore#/"/>
+        href="../../org.muml.reconfiguration.componentstorydiagram/model/ComponentStoryDiagram.ecore#/"/>
     <domainMetaElement
-        href="../../de.uni_paderborn.fujaba.muml.componentstorydiagram/model/ComponentStoryDiagram.ecore#//ComponentStoryRule"/>
+        href="../../org.muml.reconfiguration.componentstorydiagram/model/ComponentStoryDiagram.ecore#//ComponentStoryRule"/>
     <palette
         href="ComponentStoryDiagram.gmftool#//@palette"/>
   </diagram>

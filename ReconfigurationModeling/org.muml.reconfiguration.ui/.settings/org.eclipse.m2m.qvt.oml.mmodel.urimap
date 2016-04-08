@@ -5,5 +5,5 @@
   <mapping sourceURI="http://www.muml.org/reconfiguration/1.0.0" targetURI="platform:/resource/org.muml.reconfiguration/model/MumlReconfiguration.ecore"/>
   <mapping sourceURI="http://www.muml.org/core/1.0.0" targetURI="platform:/resource/org.muml.core/model/core.ecore"/>
   <mapping sourceURI="http://www.muml.org/pim/actionlanguage/1.0.0" targetURI="platform:/resource/org.muml.pim.actionlanguage/model/actionlanguage.ecore"/>
-  <mapping sourceURI="http://www.fujaba.de/muml/componentstorydiagram/0.3.1" targetURI="platform:/resource/de.uni_paderborn.fujaba.muml.componentstorydiagram/model/ComponentStoryDiagram.ecore"/>
+  <mapping sourceURI="http://www.fujaba.de/muml/componentstorydiagram/0.3.1" targetURI="platform:/resource/org.muml.reconfiguration.componentstorydiagram/model/ComponentStoryDiagram.ecore"/>
 </uriMap:MappingContainer>
