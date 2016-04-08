@@ -11,7 +11,7 @@ import com.google.inject.Binder;
 import com.google.inject.name.Names;
 
 /**
- * Manual modifications go to {de.uni_paderborn.fujaba.graphviz.dot.xtext.DotLanguageRuntimeModule}
+ * Manual modifications go to {org.muml.graphviz.dot.xtext.DotLanguageRuntimeModule}
  */
 @SuppressWarnings("all")
 public abstract class AbstractDotLanguageRuntimeModule extends org.eclipse.xtext.common.types.DefaultCommonTypesRuntimeModule {
@@ -20,12 +20,12 @@ public abstract class AbstractDotLanguageRuntimeModule extends org.eclipse.xtext
 
 	@Override
 	public void configure(Binder binder) {
-		properties = tryBindProperties(binder, "de/uni_paderborn/fujaba/graphviz/dot/xtext/DotLanguage.properties");
+		properties = tryBindProperties(binder, "org/muml/graphviz/dot/xtext/DotLanguage.properties");
 		super.configure(binder);
 	}
 	
 	public void configureLanguageName(Binder binder) {
-		binder.bind(String.class).annotatedWith(Names.named(Constants.LANGUAGE_NAME)).toInstance("de.uni_paderborn.fujaba.graphviz.dot.xtext.DotLanguage");
+		binder.bind(String.class).annotatedWith(Names.named(Constants.LANGUAGE_NAME)).toInstance("org.muml.graphviz.dot.xtext.DotLanguage");
 	}
 	
 	public void configureFileExtensions(Binder binder) {

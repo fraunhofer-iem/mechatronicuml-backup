@@ -11,6 +11,6 @@ public class DotLanguageAntlrTokenFileProvider implements IAntlrTokenFileProvide
 	@Override
 	public InputStream getAntlrTokenFile() {
 		ClassLoader classLoader = getClass().getClassLoader();
-    	return classLoader.getResourceAsStream("de/uni_paderborn/fujaba/graphviz/dot/xtext/parser/antlr/internal/InternalDotLanguage.tokens");
+    	return classLoader.getResourceAsStream("org/muml/graphviz/dot/xtext/parser/antlr/internal/InternalDotLanguage.tokens");
 	}
 }

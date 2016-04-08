@@ -9,7 +9,7 @@ options {
 }
 
 @lexer::header {
-package de.uni_paderborn.fujaba.graphviz.dot.xtext.parser.antlr.internal;
+package org.muml.graphviz.dot.xtext.parser.antlr.internal;
 
 // Hack: Use our own Lexer superclass by means of import. 
 // Currently there is no other way to specify the superclass for the lexer.
@@ -17,7 +17,7 @@ import org.eclipse.xtext.parser.antlr.Lexer;
 }
 
 @parser::header {
-package de.uni_paderborn.fujaba.graphviz.dot.xtext.parser.antlr.internal; 
+package org.muml.graphviz.dot.xtext.parser.antlr.internal; 
 
 import org.eclipse.xtext.*;
 import org.eclipse.xtext.parser.*;
@@ -28,7 +28,7 @@ import org.eclipse.xtext.parser.antlr.AbstractInternalAntlrParser;
 import org.eclipse.xtext.parser.antlr.XtextTokenStream;
 import org.eclipse.xtext.parser.antlr.XtextTokenStream.HiddenTokens;
 import org.eclipse.xtext.parser.antlr.AntlrDatatypeRuleToken;
-import de.uni_paderborn.fujaba.graphviz.dot.xtext.services.DotLanguageGrammarAccess;
+import org.muml.graphviz.dot.xtext.services.DotLanguageGrammarAccess;
 
 }
 
@@ -116,7 +116,7 @@ ruleDotGraph returns [EObject current=null]
        			$current, 
        			"id",
         		lv_id_3_0, 
-        		"de.uni_paderborn.fujaba.graphviz.dot.xtext.DotLanguage.DotID");
+        		"org.muml.graphviz.dot.xtext.DotLanguage.DotID");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -139,7 +139,7 @@ ruleDotGraph returns [EObject current=null]
        			$current, 
        			"id",
         		lv_id_5_0, 
-        		"de.uni_paderborn.fujaba.graphviz.dot.xtext.DotLanguage.DotID");
+        		"org.muml.graphviz.dot.xtext.DotLanguage.DotID");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -169,7 +169,7 @@ ruleDotGraph returns [EObject current=null]
        			$current, 
        			"graphSettings",
         		lv_graphSettings_9_0, 
-        		"de.uni_paderborn.fujaba.graphviz.dot.xtext.DotLanguage.Setting");
+        		"org.muml.graphviz.dot.xtext.DotLanguage.Setting");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -191,7 +191,7 @@ ruleDotGraph returns [EObject current=null]
        			$current, 
        			"graphSettings",
         		lv_graphSettings_11_0, 
-        		"de.uni_paderborn.fujaba.graphviz.dot.xtext.DotLanguage.Setting");
+        		"org.muml.graphviz.dot.xtext.DotLanguage.Setting");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -226,7 +226,7 @@ ruleDotGraph returns [EObject current=null]
        			$current, 
        			"nodeSettings",
         		lv_nodeSettings_16_0, 
-        		"de.uni_paderborn.fujaba.graphviz.dot.xtext.DotLanguage.Setting");
+        		"org.muml.graphviz.dot.xtext.DotLanguage.Setting");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -248,7 +248,7 @@ ruleDotGraph returns [EObject current=null]
        			$current, 
        			"nodeSettings",
         		lv_nodeSettings_18_0, 
-        		"de.uni_paderborn.fujaba.graphviz.dot.xtext.DotLanguage.Setting");
+        		"org.muml.graphviz.dot.xtext.DotLanguage.Setting");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -283,7 +283,7 @@ ruleDotGraph returns [EObject current=null]
        			$current, 
        			"edgeSettings",
         		lv_edgeSettings_23_0, 
-        		"de.uni_paderborn.fujaba.graphviz.dot.xtext.DotLanguage.Setting");
+        		"org.muml.graphviz.dot.xtext.DotLanguage.Setting");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -305,7 +305,7 @@ ruleDotGraph returns [EObject current=null]
        			$current, 
        			"edgeSettings",
         		lv_edgeSettings_25_0, 
-        		"de.uni_paderborn.fujaba.graphviz.dot.xtext.DotLanguage.Setting");
+        		"org.muml.graphviz.dot.xtext.DotLanguage.Setting");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -332,7 +332,7 @@ ruleDotGraph returns [EObject current=null]
        			$current, 
        			"subgraphs",
         		lv_subgraphs_28_0, 
-        		"de.uni_paderborn.fujaba.graphviz.dot.xtext.DotLanguage.DotGraph");
+        		"org.muml.graphviz.dot.xtext.DotLanguage.DotGraph");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -351,7 +351,7 @@ ruleDotGraph returns [EObject current=null]
        			$current, 
        			"nodes",
         		lv_nodes_29_0, 
-        		"de.uni_paderborn.fujaba.graphviz.dot.xtext.DotLanguage.DotNode");
+        		"org.muml.graphviz.dot.xtext.DotLanguage.DotNode");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -370,7 +370,7 @@ ruleDotGraph returns [EObject current=null]
        			$current, 
        			"edges",
         		lv_edges_30_0, 
-        		"de.uni_paderborn.fujaba.graphviz.dot.xtext.DotLanguage.DotEdge");
+        		"org.muml.graphviz.dot.xtext.DotLanguage.DotEdge");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -413,7 +413,7 @@ ruleDotNode returns [EObject current=null]
        			$current, 
        			"name",
         		lv_name_0_0, 
-        		"de.uni_paderborn.fujaba.graphviz.dot.xtext.DotLanguage.DotID");
+        		"org.muml.graphviz.dot.xtext.DotLanguage.DotID");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -435,7 +435,7 @@ ruleDotNode returns [EObject current=null]
        			$current, 
        			"settings",
         		lv_settings_2_0, 
-        		"de.uni_paderborn.fujaba.graphviz.dot.xtext.DotLanguage.Setting");
+        		"org.muml.graphviz.dot.xtext.DotLanguage.Setting");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -457,7 +457,7 @@ ruleDotNode returns [EObject current=null]
        			$current, 
        			"settings",
         		lv_settings_4_0, 
-        		"de.uni_paderborn.fujaba.graphviz.dot.xtext.DotLanguage.Setting");
+        		"org.muml.graphviz.dot.xtext.DotLanguage.Setting");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -582,7 +582,7 @@ ruleDirectedDotEdge returns [EObject current=null]
        			$current, 
        			"settings",
         		lv_settings_4_0, 
-        		"de.uni_paderborn.fujaba.graphviz.dot.xtext.DotLanguage.Setting");
+        		"org.muml.graphviz.dot.xtext.DotLanguage.Setting");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -604,7 +604,7 @@ ruleDirectedDotEdge returns [EObject current=null]
        			$current, 
        			"settings",
         		lv_settings_6_0, 
-        		"de.uni_paderborn.fujaba.graphviz.dot.xtext.DotLanguage.Setting");
+        		"org.muml.graphviz.dot.xtext.DotLanguage.Setting");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -689,7 +689,7 @@ ruleUndirectedDotEdge returns [EObject current=null]
        			$current, 
        			"settings",
         		lv_settings_4_0, 
-        		"de.uni_paderborn.fujaba.graphviz.dot.xtext.DotLanguage.Setting");
+        		"org.muml.graphviz.dot.xtext.DotLanguage.Setting");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -711,7 +711,7 @@ ruleUndirectedDotEdge returns [EObject current=null]
        			$current, 
        			"settings",
         		lv_settings_6_0, 
-        		"de.uni_paderborn.fujaba.graphviz.dot.xtext.DotLanguage.Setting");
+        		"org.muml.graphviz.dot.xtext.DotLanguage.Setting");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -758,7 +758,7 @@ ruleSetting returns [EObject current=null]
        			$current, 
        			"attribute",
         		lv_attribute_0_0, 
-        		"de.uni_paderborn.fujaba.graphviz.dot.xtext.DotLanguage.DotID");
+        		"org.muml.graphviz.dot.xtext.DotLanguage.DotID");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -780,7 +780,7 @@ ruleSetting returns [EObject current=null]
        			$current, 
        			"value",
         		lv_value_2_0, 
-        		"de.uni_paderborn.fujaba.graphviz.dot.xtext.DotLanguage.DotID");
+        		"org.muml.graphviz.dot.xtext.DotLanguage.DotID");
 	        afterParserOrEnumRuleCall();
 	    }
 

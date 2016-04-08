@@ -7,7 +7,7 @@ package org.muml.graphviz.dot.xtext.ui;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 
 /**
- * Manual modifications go to {de.uni_paderborn.fujaba.graphviz.dot.xtext.ui.DotLanguageUiModule}
+ * Manual modifications go to {org.muml.graphviz.dot.xtext.ui.DotLanguageUiModule}
  */
 @SuppressWarnings("all")
 public abstract class AbstractDotLanguageUiModule extends org.eclipse.xtext.common.types.ui.DefaultCommonTypesUiModule {

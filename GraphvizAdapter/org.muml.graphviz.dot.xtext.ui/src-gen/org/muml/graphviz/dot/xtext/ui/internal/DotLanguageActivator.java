@@ -23,7 +23,7 @@ import com.google.inject.Module;
  */
 public class DotLanguageActivator extends AbstractUIPlugin {
 	
-	public static final String DE_UNI_PADERBORN_FUJABA_GRAPHVIZ_DOT_XTEXT_DOTLANGUAGE = "de.uni_paderborn.fujaba.graphviz.dot.xtext.DotLanguage";
+	public static final String ORG_MUML_GRAPHVIZ_DOT_XTEXT_DOTLANGUAGE = "org.muml.graphviz.dot.xtext.DotLanguage";
 	
 	private static final Logger logger = Logger.getLogger(DotLanguageActivator.class);
 	
@@ -73,7 +73,7 @@ public class DotLanguageActivator extends AbstractUIPlugin {
 	}
 
 	protected Module getRuntimeModule(String grammar) {
-		if (DE_UNI_PADERBORN_FUJABA_GRAPHVIZ_DOT_XTEXT_DOTLANGUAGE.equals(grammar)) {
+		if (ORG_MUML_GRAPHVIZ_DOT_XTEXT_DOTLANGUAGE.equals(grammar)) {
 			return new org.muml.graphviz.dot.xtext.DotLanguageRuntimeModule();
 		}
 		
@@ -81,7 +81,7 @@ public class DotLanguageActivator extends AbstractUIPlugin {
 	}
 	
 	protected Module getUiModule(String grammar) {
-		if (DE_UNI_PADERBORN_FUJABA_GRAPHVIZ_DOT_XTEXT_DOTLANGUAGE.equals(grammar)) {
+		if (ORG_MUML_GRAPHVIZ_DOT_XTEXT_DOTLANGUAGE.equals(grammar)) {
 			return new org.muml.graphviz.dot.xtext.ui.DotLanguageUiModule(this);
 		}
 		

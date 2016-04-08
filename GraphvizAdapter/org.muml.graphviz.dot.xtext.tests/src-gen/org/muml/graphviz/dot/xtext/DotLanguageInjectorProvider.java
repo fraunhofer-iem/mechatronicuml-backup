@@ -5,7 +5,6 @@ package org.muml.graphviz.dot.xtext;
 
 import org.eclipse.xtext.junit4.GlobalRegistries;
 import org.eclipse.xtext.junit4.GlobalRegistries.GlobalStateMemento;
-import org.muml.graphviz.dot.xtext.DotLanguageStandaloneSetup;
 import org.eclipse.xtext.junit4.IInjectorProvider;
 import org.eclipse.xtext.junit4.IRegistryConfigurator;
 

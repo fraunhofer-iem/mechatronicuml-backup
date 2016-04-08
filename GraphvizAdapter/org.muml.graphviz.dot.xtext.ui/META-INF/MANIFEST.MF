@@ -25,3 +25,4 @@ Export-Package: org.muml.graphviz.dot.xtext.ui.contentassist,
  org.muml.graphviz.dot.xtext.ui.internal,
  org.muml.graphviz.dot.xtext.ui.quickfix
 Bundle-Activator: org.muml.graphviz.dot.xtext.ui.internal.DotLanguageActivator
+Import-Package: org.apache.log4j

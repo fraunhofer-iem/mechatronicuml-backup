@@ -4,7 +4,7 @@ import org.eclipse.emf.mwe.utils.*
 import org.eclipse.xtext.generator.*
 import org.eclipse.xtext.ui.generator.*
 
-var grammarURI = "classpath:/de/uni_paderborn/fujaba/graphviz/dot/xtext/DotLanguage.xtext"
+var grammarURI = "classpath:/org/muml/graphviz/dot/xtext/DotLanguage.xtext"
 var fileExtensions = "graphviz_dot"
 var projectName = "org.muml.graphviz.dot.xtext"
 var runtimeProject = "../${projectName}"
@@ -14,7 +14,7 @@ Workflow {
 	bean = StandaloneSetup {
 		scanClassPath  = true
 		platformUri = "${runtimeProject}/.."
-		registerGeneratedEPackage = "de.uni_paderborn.fujaba.graphviz.dot.DotPackage"
+		registerGeneratedEPackage = "org.muml.graphviz.dot.DotPackage"
 		registerGenModelFile = "platform:/resource/org.muml.graphviz/model/graphviz.genmodel"
 	}
 

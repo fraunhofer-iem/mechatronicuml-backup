@@ -4,7 +4,6 @@
 package org.muml.graphviz.dot.xtext.serializer;
 
 import com.google.inject.Inject;
-
 import java.util.List;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.IGrammarAccess;

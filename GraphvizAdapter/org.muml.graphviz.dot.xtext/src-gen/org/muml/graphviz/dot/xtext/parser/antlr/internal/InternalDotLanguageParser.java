@@ -3,13 +3,16 @@ package org.muml.graphviz.dot.xtext.parser.antlr.internal;
 import org.eclipse.xtext.*;
 import org.eclipse.xtext.parser.*;
 import org.eclipse.xtext.parser.impl.*;
-import org.muml.graphviz.dot.xtext.services.DotLanguageGrammarAccess;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.parser.antlr.AbstractInternalAntlrParser;
 import org.eclipse.xtext.parser.antlr.XtextTokenStream;
 import org.eclipse.xtext.parser.antlr.XtextTokenStream.HiddenTokens;
 import org.eclipse.xtext.parser.antlr.AntlrDatatypeRuleToken;
+import org.muml.graphviz.dot.xtext.services.DotLanguageGrammarAccess;
+
+
+
 import org.antlr.runtime.*;
 import java.util.Stack;
 import java.util.List;
@@ -300,7 +303,7 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
                                    			current, 
                                    			"id",
                                     		lv_id_3_0, 
-                                    		"de.uni_paderborn.fujaba.graphviz.dot.xtext.DotLanguage.DotID");
+                                    		"org.muml.graphviz.dot.xtext.DotLanguage.DotID");
                             	        afterParserOrEnumRuleCall();
                             	    
 
@@ -358,7 +361,7 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
                                    			current, 
                                    			"id",
                                     		lv_id_5_0, 
-                                    		"de.uni_paderborn.fujaba.graphviz.dot.xtext.DotLanguage.DotID");
+                                    		"org.muml.graphviz.dot.xtext.DotLanguage.DotID");
                             	        afterParserOrEnumRuleCall();
                             	    
 
@@ -425,7 +428,7 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
             	           			current, 
             	           			"graphSettings",
             	            		lv_graphSettings_9_0, 
-            	            		"de.uni_paderborn.fujaba.graphviz.dot.xtext.DotLanguage.Setting");
+            	            		"org.muml.graphviz.dot.xtext.DotLanguage.Setting");
             	    	        afterParserOrEnumRuleCall();
             	    	    
 
@@ -475,7 +478,7 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
             	    	           			current, 
             	    	           			"graphSettings",
             	    	            		lv_graphSettings_11_0, 
-            	    	            		"de.uni_paderborn.fujaba.graphviz.dot.xtext.DotLanguage.Setting");
+            	    	            		"org.muml.graphviz.dot.xtext.DotLanguage.Setting");
             	    	    	        afterParserOrEnumRuleCall();
             	    	    	    
 
@@ -560,7 +563,7 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
             	           			current, 
             	           			"nodeSettings",
             	            		lv_nodeSettings_16_0, 
-            	            		"de.uni_paderborn.fujaba.graphviz.dot.xtext.DotLanguage.Setting");
+            	            		"org.muml.graphviz.dot.xtext.DotLanguage.Setting");
             	    	        afterParserOrEnumRuleCall();
             	    	    
 
@@ -610,7 +613,7 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
             	    	           			current, 
             	    	           			"nodeSettings",
             	    	            		lv_nodeSettings_18_0, 
-            	    	            		"de.uni_paderborn.fujaba.graphviz.dot.xtext.DotLanguage.Setting");
+            	    	            		"org.muml.graphviz.dot.xtext.DotLanguage.Setting");
             	    	    	        afterParserOrEnumRuleCall();
             	    	    	    
 
@@ -695,7 +698,7 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
             	           			current, 
             	           			"edgeSettings",
             	            		lv_edgeSettings_23_0, 
-            	            		"de.uni_paderborn.fujaba.graphviz.dot.xtext.DotLanguage.Setting");
+            	            		"org.muml.graphviz.dot.xtext.DotLanguage.Setting");
             	    	        afterParserOrEnumRuleCall();
             	    	    
 
@@ -745,7 +748,7 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
             	    	           			current, 
             	    	           			"edgeSettings",
             	    	            		lv_edgeSettings_25_0, 
-            	    	            		"de.uni_paderborn.fujaba.graphviz.dot.xtext.DotLanguage.Setting");
+            	    	            		"org.muml.graphviz.dot.xtext.DotLanguage.Setting");
             	    	    	        afterParserOrEnumRuleCall();
             	    	    	    
 
@@ -819,7 +822,7 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
             	           			current, 
             	           			"subgraphs",
             	            		lv_subgraphs_28_0, 
-            	            		"de.uni_paderborn.fujaba.graphviz.dot.xtext.DotLanguage.DotGraph");
+            	            		"org.muml.graphviz.dot.xtext.DotLanguage.DotGraph");
             	    	        afterParserOrEnumRuleCall();
             	    	    
 
@@ -856,7 +859,7 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
             	           			current, 
             	           			"nodes",
             	            		lv_nodes_29_0, 
-            	            		"de.uni_paderborn.fujaba.graphviz.dot.xtext.DotLanguage.DotNode");
+            	            		"org.muml.graphviz.dot.xtext.DotLanguage.DotNode");
             	    	        afterParserOrEnumRuleCall();
             	    	    
 
@@ -893,7 +896,7 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
             	           			current, 
             	           			"edges",
             	            		lv_edges_30_0, 
-            	            		"de.uni_paderborn.fujaba.graphviz.dot.xtext.DotLanguage.DotEdge");
+            	            		"org.muml.graphviz.dot.xtext.DotLanguage.DotEdge");
             	    	        afterParserOrEnumRuleCall();
             	    	    
 
@@ -1018,7 +1021,7 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
                    			current, 
                    			"name",
                     		lv_name_0_0, 
-                    		"de.uni_paderborn.fujaba.graphviz.dot.xtext.DotLanguage.DotID");
+                    		"org.muml.graphviz.dot.xtext.DotLanguage.DotID");
             	        afterParserOrEnumRuleCall();
             	    
 
@@ -1064,7 +1067,7 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
                            			current, 
                            			"settings",
                             		lv_settings_2_0, 
-                            		"de.uni_paderborn.fujaba.graphviz.dot.xtext.DotLanguage.Setting");
+                            		"org.muml.graphviz.dot.xtext.DotLanguage.Setting");
                     	        afterParserOrEnumRuleCall();
                     	    
 
@@ -1114,7 +1117,7 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
                     	           			current, 
                     	           			"settings",
                     	            		lv_settings_4_0, 
-                    	            		"de.uni_paderborn.fujaba.graphviz.dot.xtext.DotLanguage.Setting");
+                    	            		"org.muml.graphviz.dot.xtext.DotLanguage.Setting");
                     	    	        afterParserOrEnumRuleCall();
                     	    	    
 
@@ -1593,7 +1596,7 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
                            			current, 
                            			"settings",
                             		lv_settings_4_0, 
-                            		"de.uni_paderborn.fujaba.graphviz.dot.xtext.DotLanguage.Setting");
+                            		"org.muml.graphviz.dot.xtext.DotLanguage.Setting");
                     	        afterParserOrEnumRuleCall();
                     	    
 
@@ -1643,7 +1646,7 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
                     	           			current, 
                     	           			"settings",
                     	            		lv_settings_6_0, 
-                    	            		"de.uni_paderborn.fujaba.graphviz.dot.xtext.DotLanguage.Setting");
+                    	            		"org.muml.graphviz.dot.xtext.DotLanguage.Setting");
                     	    	        afterParserOrEnumRuleCall();
                     	    	    
 
@@ -1869,7 +1872,7 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
                            			current, 
                            			"settings",
                             		lv_settings_4_0, 
-                            		"de.uni_paderborn.fujaba.graphviz.dot.xtext.DotLanguage.Setting");
+                            		"org.muml.graphviz.dot.xtext.DotLanguage.Setting");
                     	        afterParserOrEnumRuleCall();
                     	    
 
@@ -1919,7 +1922,7 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
                     	           			current, 
                     	           			"settings",
                     	            		lv_settings_6_0, 
-                    	            		"de.uni_paderborn.fujaba.graphviz.dot.xtext.DotLanguage.Setting");
+                    	            		"org.muml.graphviz.dot.xtext.DotLanguage.Setting");
                     	    	        afterParserOrEnumRuleCall();
                     	    	    
 
@@ -2066,7 +2069,7 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
                    			current, 
                    			"attribute",
                     		lv_attribute_0_0, 
-                    		"de.uni_paderborn.fujaba.graphviz.dot.xtext.DotLanguage.DotID");
+                    		"org.muml.graphviz.dot.xtext.DotLanguage.DotID");
             	        afterParserOrEnumRuleCall();
             	    
 
@@ -2101,7 +2104,7 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
                    			current, 
                    			"value",
                     		lv_value_2_0, 
-                    		"de.uni_paderborn.fujaba.graphviz.dot.xtext.DotLanguage.DotID");
+                    		"org.muml.graphviz.dot.xtext.DotLanguage.DotID");
             	        afterParserOrEnumRuleCall();
             	    
 

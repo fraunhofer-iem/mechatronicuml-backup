@@ -19,7 +19,7 @@ public class DotLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	
 	
 	public class DotGraphElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.uni_paderborn.fujaba.graphviz.dot.xtext.DotLanguage.DotGraph");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.graphviz.dot.xtext.DotLanguage.DotGraph");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cDotGraphAction_0 = (Action)cGroup.eContents().get(0);
 		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
@@ -264,7 +264,7 @@ public class DotLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class DotNodeElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.uni_paderborn.fujaba.graphviz.dot.xtext.DotLanguage.DotNode");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.graphviz.dot.xtext.DotLanguage.DotNode");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cNameDotIDParserRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
@@ -324,7 +324,7 @@ public class DotLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class DotEdgeElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.uni_paderborn.fujaba.graphviz.dot.xtext.DotLanguage.DotEdge");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.graphviz.dot.xtext.DotLanguage.DotEdge");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cDirectedDotEdgeParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cUndirectedDotEdgeParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
@@ -344,7 +344,7 @@ public class DotLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class DirectedDotEdgeElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.uni_paderborn.fujaba.graphviz.dot.xtext.DotLanguage.DirectedDotEdge");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.graphviz.dot.xtext.DotLanguage.DirectedDotEdge");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cSourceAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final CrossReference cSourceDotNodeCrossReference_0_0 = (CrossReference)cSourceAssignment_0.eContents().get(0);
@@ -425,7 +425,7 @@ public class DotLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class UndirectedDotEdgeElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.uni_paderborn.fujaba.graphviz.dot.xtext.DotLanguage.UndirectedDotEdge");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.graphviz.dot.xtext.DotLanguage.UndirectedDotEdge");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cSourceAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final CrossReference cSourceDotNodeCrossReference_0_0 = (CrossReference)cSourceAssignment_0.eContents().get(0);
@@ -506,7 +506,7 @@ public class DotLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class SettingElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.uni_paderborn.fujaba.graphviz.dot.xtext.DotLanguage.Setting");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.graphviz.dot.xtext.DotLanguage.Setting");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cAttributeAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cAttributeDotIDParserRuleCall_0_0 = (RuleCall)cAttributeAssignment_0.eContents().get(0);
@@ -538,7 +538,7 @@ public class DotLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class DotIDElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.uni_paderborn.fujaba.graphviz.dot.xtext.DotLanguage.DotID");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.graphviz.dot.xtext.DotLanguage.DotID");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cDOTSTRINGTERMTerminalRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cNUMPREFIXEDIDTerminalRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
@@ -571,7 +571,7 @@ public class DotLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class NumberElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.uni_paderborn.fujaba.graphviz.dot.xtext.DotLanguage.Number");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.graphviz.dot.xtext.DotLanguage.Number");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cHyphenMinusKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
@@ -627,16 +627,16 @@ public class DotLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		this.pUndirectedDotEdge = new UndirectedDotEdgeElements();
 		this.pSetting = new SettingElements();
 		this.pDotID = new DotIDElements();
-		this.tNUMPREFIXEDID = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "de.uni_paderborn.fujaba.graphviz.dot.xtext.DotLanguage.NUMPREFIXEDID");
-		this.tDOTSTRINGTERM = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "de.uni_paderborn.fujaba.graphviz.dot.xtext.DotLanguage.DOTSTRINGTERM");
+		this.tNUMPREFIXEDID = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.graphviz.dot.xtext.DotLanguage.NUMPREFIXEDID");
+		this.tDOTSTRINGTERM = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.graphviz.dot.xtext.DotLanguage.DOTSTRINGTERM");
 		this.pNumber = new NumberElements();
-		this.tDOUBLE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "de.uni_paderborn.fujaba.graphviz.dot.xtext.DotLanguage.DOUBLE");
+		this.tDOUBLE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.muml.graphviz.dot.xtext.DotLanguage.DOUBLE");
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
 		Grammar grammar = grammarProvider.getGrammar(this);
 		while (grammar != null) {
-			if ("de.uni_paderborn.fujaba.graphviz.dot.xtext.DotLanguage".equals(grammar.getName())) {
+			if ("org.muml.graphviz.dot.xtext.DotLanguage".equals(grammar.getName())) {
 				return grammar;
 			}
 			List<Grammar> grammars = grammar.getUsedGrammars();

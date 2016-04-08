@@ -11,7 +11,7 @@ public class DotLanguageUiInjectorProvider implements IInjectorProvider {
 	
 	@Override
 	public Injector getInjector() {
-		return org.muml.graphviz.dot.xtext.ui.internal.DotLanguageActivator.getInstance().getInjector("de.uni_paderborn.fujaba.graphviz.dot.xtext.DotLanguage");
+		return org.muml.graphviz.dot.xtext.ui.internal.DotLanguageActivator.getInstance().getInjector("org.muml.graphviz.dot.xtext.DotLanguage");
 	}
 	
 }
