@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:hwplatforminstance="http://www.fujaba.de/muml/hardware/hwplatforminstance/1.1/" xmlns:hwresourceinstance="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.1/" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_6jiAEFTFEeWfMJam0XczWg" type="PlatformInstance" name="HWPlatformInstanceConfiguration.platforminstance_diagram" measurementUnit="Pixel">
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:hwplatforminstance="http://www.muml.org/pm/hardware/hwplatforminstance/1.0.0" xmlns:hwresourceinstance="http://www.muml.org/pm/hardware/hwresourceinstance/1.0.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_6jiAEFTFEeWfMJam0XczWg" type="PlatformInstance" name="HWPlatformInstanceConfiguration.platforminstance_diagram" measurementUnit="Pixel">
   <children xmi:type="notation:Shape" xmi:id="_8ogIgFTFEeWfMJam0XczWg" type="2005" fontName="Sans" fontHeight="10" lineColor="0">
     <children xmi:type="notation:DecorationNode" xmi:id="_8ojy4FTFEeWfMJam0XczWg" type="7012">
       <children xmi:type="notation:Shape" xmi:id="_8sGPEFTFEeWfMJam0XczWg" type="3039" fontName="Sans" fontHeight="10" lineColor="0">

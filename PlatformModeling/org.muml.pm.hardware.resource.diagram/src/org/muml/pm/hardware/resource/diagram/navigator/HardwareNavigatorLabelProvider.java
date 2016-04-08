@@ -75,45 +75,45 @@ public class HardwareNavigatorLabelProvider extends LabelProvider
 		switch (org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry
 				.getVisualID(view)) {
 		case org.muml.pm.hardware.resource.diagram.edit.parts.ResourceRepositoryEditPart.VISUAL_ID:
-			return getImage("Navigator?Diagram?http://www.fujaba.de/muml/hardware/hwresource/1.1/?ResourceRepository", //$NON-NLS-1$
+			return getImage("Navigator?Diagram?http://www.muml.org/pm/hardware/hwresource/1.0.0?ResourceRepository", //$NON-NLS-1$
 					org.muml.pm.hardware.resource.diagram.providers.HardwareElementTypes.ResourceRepository_1000);
 		case org.muml.pm.hardware.resource.diagram.edit.parts.DeviceEditPart.VISUAL_ID:
-			return getImage("Navigator?TopLevelNode?http://www.fujaba.de/muml/hardware/hwresource/1.1/?Device", //$NON-NLS-1$
+			return getImage("Navigator?TopLevelNode?http://www.muml.org/pm/hardware/hwresource/1.0.0?Device", //$NON-NLS-1$
 					org.muml.pm.hardware.resource.diagram.providers.HardwareElementTypes.Device_2006);
 		case org.muml.pm.hardware.resource.diagram.edit.parts.StructuredResourceEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?TopLevelNode?http://www.fujaba.de/muml/hardware/hwresource/1.1/?StructuredResource", //$NON-NLS-1$
+					"Navigator?TopLevelNode?http://www.muml.org/pm/hardware/hwresource/1.0.0?StructuredResource", //$NON-NLS-1$
 					org.muml.pm.hardware.resource.diagram.providers.HardwareElementTypes.StructuredResource_2007);
 		case org.muml.pm.hardware.resource.diagram.edit.parts.CommunicationProtocolRepositoryEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?TopLevelNode?http://www.fujaba.de/muml/hardware/hwresource/1.1/?CommunicationProtocolRepository", //$NON-NLS-1$
+					"Navigator?TopLevelNode?http://www.muml.org/pm/hardware/hwresource/1.0.0?CommunicationProtocolRepository", //$NON-NLS-1$
 					org.muml.pm.hardware.resource.diagram.providers.HardwareElementTypes.CommunicationProtocolRepository_2008);
 		case org.muml.pm.hardware.resource.diagram.edit.parts.CommunicationResourceEditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.fujaba.de/muml/hardware/hwresource/1.1/?CommunicationResource", //$NON-NLS-1$
+			return getImage("Navigator?Node?http://www.muml.org/pm/hardware/hwresource/1.0.0?CommunicationResource", //$NON-NLS-1$
 					org.muml.pm.hardware.resource.diagram.providers.HardwareElementTypes.CommunicationResource_3011);
 		case org.muml.pm.hardware.resource.diagram.edit.parts.CommunicationResource2EditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.fujaba.de/muml/hardware/hwresource/1.1/?CommunicationResource", //$NON-NLS-1$
+			return getImage("Navigator?Node?http://www.muml.org/pm/hardware/hwresource/1.0.0?CommunicationResource", //$NON-NLS-1$
 					org.muml.pm.hardware.resource.diagram.providers.HardwareElementTypes.CommunicationResource_3012);
 		case org.muml.pm.hardware.resource.diagram.edit.parts.CacheEditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.fujaba.de/muml/hardware/hwresource/1.1/?Cache", //$NON-NLS-1$
+			return getImage("Navigator?Node?http://www.muml.org/pm/hardware/hwresource/1.0.0?Cache", //$NON-NLS-1$
 					org.muml.pm.hardware.resource.diagram.providers.HardwareElementTypes.Cache_3013);
 		case org.muml.pm.hardware.resource.diagram.edit.parts.ProcessorEditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.fujaba.de/muml/hardware/hwresource/1.1/?Processor", //$NON-NLS-1$
+			return getImage("Navigator?Node?http://www.muml.org/pm/hardware/hwresource/1.0.0?Processor", //$NON-NLS-1$
 					org.muml.pm.hardware.resource.diagram.providers.HardwareElementTypes.Processor_3014);
 		case org.muml.pm.hardware.resource.diagram.edit.parts.ProgrammableLogicDeviceEditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.fujaba.de/muml/hardware/hwresource/1.1/?ProgrammableLogicDevice", //$NON-NLS-1$
+			return getImage("Navigator?Node?http://www.muml.org/pm/hardware/hwresource/1.0.0?ProgrammableLogicDevice", //$NON-NLS-1$
 					org.muml.pm.hardware.resource.diagram.providers.HardwareElementTypes.ProgrammableLogicDevice_3015);
 		case org.muml.pm.hardware.resource.diagram.edit.parts.MemoryResourceEditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.fujaba.de/muml/hardware/hwresource/1.1/?MemoryResource", //$NON-NLS-1$
+			return getImage("Navigator?Node?http://www.muml.org/pm/hardware/hwresource/1.0.0?MemoryResource", //$NON-NLS-1$
 					org.muml.pm.hardware.resource.diagram.providers.HardwareElementTypes.MemoryResource_3016);
 		case org.muml.pm.hardware.resource.diagram.edit.parts.BusProtocolEditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.fujaba.de/muml/hardware/hwresource/1.1/?BusProtocol", //$NON-NLS-1$
+			return getImage("Navigator?Node?http://www.muml.org/pm/hardware/hwresource/1.0.0?BusProtocol", //$NON-NLS-1$
 					org.muml.pm.hardware.resource.diagram.providers.HardwareElementTypes.BusProtocol_3017);
 		case org.muml.pm.hardware.resource.diagram.edit.parts.LinkProtocolEditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.fujaba.de/muml/hardware/hwresource/1.1/?LinkProtocol", //$NON-NLS-1$
+			return getImage("Navigator?Node?http://www.muml.org/pm/hardware/hwresource/1.0.0?LinkProtocol", //$NON-NLS-1$
 					org.muml.pm.hardware.resource.diagram.providers.HardwareElementTypes.LinkProtocol_3018);
 		case org.muml.pm.hardware.resource.diagram.edit.parts.ProcessorOwnedCacheEditPart.VISUAL_ID:
-			return getImage("Navigator?Link?http://www.fujaba.de/muml/hardware/hwresource/1.1/?Processor?ownedCache", //$NON-NLS-1$
+			return getImage("Navigator?Link?http://www.muml.org/pm/hardware/hwresource/1.0.0?Processor?ownedCache", //$NON-NLS-1$
 					org.muml.pm.hardware.resource.diagram.providers.HardwareElementTypes.ProcessorOwnedCache_4002);
 		}
 		return getImage("Navigator?UnknownElement", null); //$NON-NLS-1$

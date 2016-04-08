@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:hwresourceinstance="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.1/" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_2aPKENr5EeWU7egAQ86jrA" type="ResourceInstance" name="ResourceInstanceRepository.resourceinstance_diagram" measurementUnit="Pixel">
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:hwresourceinstance="http://www.muml.org/pm/hardware/hwresourceinstance/1.0.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_2aPKENr5EeWU7egAQ86jrA" type="ResourceInstance" name="ResourceInstanceRepository.resourceinstance_diagram" measurementUnit="Pixel">
   <styles xmi:type="notation:DiagramStyle" xmi:id="_2aPKEdr5EeWU7egAQ86jrA"/>
   <element xmi:type="hwresourceinstance:ResourceInstanceRepository" href="../arduino_car_example.muml#_0YgRA5q9EeWHH7cQ5HOrAg"/>
 </notation:Diagram>

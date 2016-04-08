@@ -52,7 +52,7 @@
    <extension
          point="org.eclipse.gmf.runtime.emf.type.core.elementTypes">
       <metamodel
-            nsURI="http://www.fujaba.de/muml/hardware/hwplatforminstance/1.1/">
+            nsURI="http://www.muml.org/pm/hardware/hwplatforminstance/1.0.0">
          <adviceBinding
                class="org.muml.pm.hardware.platforminstance.diagram.custom.edit.helper.HWPlatformInstanceEditHelperAdvice"
                id="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.custom.adviceBinding1"

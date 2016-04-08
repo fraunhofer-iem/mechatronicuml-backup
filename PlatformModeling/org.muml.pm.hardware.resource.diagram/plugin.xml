@@ -153,7 +153,7 @@
          
          <child
                class="ResourceRepository"
-               packageNsUri="http://www.fujaba.de/muml/hardware/hwresource/1.1/">
+               packageNsUri="http://www.muml.org/pm/hardware/hwresource/1.0.0">
          </child>
          
       </category>
@@ -171,7 +171,7 @@
             modelElementCategoryKey="de.uni_paderborn.fujaba.muml.hardware.hwresource.category"
             modelId="Resource">
          <diagramElement
-               packageNsURI="http://www.fujaba.de/muml/hardware/hwresource/1.1/"
+               packageNsURI="http://www.muml.org/pm/hardware/hwresource/1.0.0"
                className="ResourceRepository">
          </diagramElement>
          
@@ -512,7 +512,7 @@
 
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
       <?gmfgen generated="true"?>
-      <metamodel nsURI="http://www.fujaba.de/muml/hardware/hwresource/1.1/">
+      <metamodel nsURI="http://www.muml.org/pm/hardware/hwresource/1.0.0">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.hardware.resource.diagram.ResourceRepository_1000"
                name="%metatype.name.ResourceRepository_1000"
@@ -522,7 +522,7 @@
             <param name="semanticHint" value="1000"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/hardware/hwresource/1.1/">
+      <metamodel nsURI="http://www.muml.org/pm/hardware/hwresource/1.0.0">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.hardware.resource.diagram.Device_2006"
                name="%metatype.name.Device_2006"
@@ -532,7 +532,7 @@
             <param name="semanticHint" value="2006"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/hardware/hwresource/1.1/">
+      <metamodel nsURI="http://www.muml.org/pm/hardware/hwresource/1.0.0">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.hardware.resource.diagram.StructuredResource_2007"
                name="%metatype.name.StructuredResource_2007"
@@ -542,7 +542,7 @@
             <param name="semanticHint" value="2007"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/hardware/hwresource/1.1/">
+      <metamodel nsURI="http://www.muml.org/pm/hardware/hwresource/1.0.0">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.hardware.resource.diagram.CommunicationProtocolRepository_2008"
                name="%metatype.name.CommunicationProtocolRepository_2008"
@@ -552,7 +552,7 @@
             <param name="semanticHint" value="2008"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/hardware/hwresource/1.1/">
+      <metamodel nsURI="http://www.muml.org/pm/hardware/hwresource/1.0.0">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.hardware.resource.diagram.CommunicationResource_3011"
                name="%metatype.name.CommunicationResource_3011"
@@ -562,7 +562,7 @@
             <param name="semanticHint" value="3011"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/hardware/hwresource/1.1/">
+      <metamodel nsURI="http://www.muml.org/pm/hardware/hwresource/1.0.0">
          <specializationType
                id="de.uni_paderborn.fujaba.muml.hardware.resource.diagram.CommunicationResource_3012"
                name="%metatype.name.CommunicationResource_3012"
@@ -571,7 +571,7 @@
             <param name="semanticHint" value="3012"/>
          </specializationType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/hardware/hwresource/1.1/">
+      <metamodel nsURI="http://www.muml.org/pm/hardware/hwresource/1.0.0">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.hardware.resource.diagram.Cache_3013"
                name="%metatype.name.Cache_3013"
@@ -581,7 +581,7 @@
             <param name="semanticHint" value="3013"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/hardware/hwresource/1.1/">
+      <metamodel nsURI="http://www.muml.org/pm/hardware/hwresource/1.0.0">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.hardware.resource.diagram.Processor_3014"
                name="%metatype.name.Processor_3014"
@@ -591,7 +591,7 @@
             <param name="semanticHint" value="3014"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/hardware/hwresource/1.1/">
+      <metamodel nsURI="http://www.muml.org/pm/hardware/hwresource/1.0.0">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.hardware.resource.diagram.ProgrammableLogicDevice_3015"
                name="%metatype.name.ProgrammableLogicDevice_3015"
@@ -601,7 +601,7 @@
             <param name="semanticHint" value="3015"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/hardware/hwresource/1.1/">
+      <metamodel nsURI="http://www.muml.org/pm/hardware/hwresource/1.0.0">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.hardware.resource.diagram.MemoryResource_3016"
                name="%metatype.name.MemoryResource_3016"
@@ -611,7 +611,7 @@
             <param name="semanticHint" value="3016"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/hardware/hwresource/1.1/">
+      <metamodel nsURI="http://www.muml.org/pm/hardware/hwresource/1.0.0">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.hardware.resource.diagram.BusProtocol_3017"
                name="%metatype.name.BusProtocol_3017"
@@ -621,7 +621,7 @@
             <param name="semanticHint" value="3017"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/hardware/hwresource/1.1/">
+      <metamodel nsURI="http://www.muml.org/pm/hardware/hwresource/1.0.0">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.hardware.resource.diagram.LinkProtocol_3018"
                name="%metatype.name.LinkProtocol_3018"
@@ -631,7 +631,7 @@
             <param name="semanticHint" value="3018"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/hardware/hwresource/1.1/">
+      <metamodel nsURI="http://www.muml.org/pm/hardware/hwresource/1.0.0">
          <specializationType
                id="de.uni_paderborn.fujaba.muml.hardware.resource.diagram.ProcessorOwnedCache_4002"
                name="%metatype.name.ProcessorOwnedCache_4002"

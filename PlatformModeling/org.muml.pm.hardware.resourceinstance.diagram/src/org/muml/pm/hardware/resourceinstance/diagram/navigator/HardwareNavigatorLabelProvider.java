@@ -78,45 +78,45 @@ public class HardwareNavigatorLabelProvider extends LabelProvider
 				.getVisualID(view)) {
 		case org.muml.pm.hardware.resourceinstance.diagram.edit.parts.ResourceInstanceRepositoryEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Diagram?http://www.fujaba.de/muml/hardware/hwresourceinstance/1.1/?ResourceInstanceRepository", //$NON-NLS-1$
+					"Navigator?Diagram?http://www.muml.org/pm/hardware/hwresourceinstance/1.0.0?ResourceInstanceRepository", //$NON-NLS-1$
 					org.muml.pm.hardware.resourceinstance.diagram.providers.HardwareElementTypes.ResourceInstanceRepository_1000);
 		case org.muml.pm.hardware.resourceinstance.diagram.edit.parts.SensorInstanceEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?TopLevelNode?http://www.fujaba.de/muml/hardware/hwresourceinstance/1.1/?SensorInstance", //$NON-NLS-1$
+					"Navigator?TopLevelNode?http://www.muml.org/pm/hardware/hwresourceinstance/1.0.0?SensorInstance", //$NON-NLS-1$
 					org.muml.pm.hardware.resourceinstance.diagram.providers.HardwareElementTypes.SensorInstance_2007);
 		case org.muml.pm.hardware.resourceinstance.diagram.edit.parts.ActuatorInstanceEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?TopLevelNode?http://www.fujaba.de/muml/hardware/hwresourceinstance/1.1/?ActuatorInstance", //$NON-NLS-1$
+					"Navigator?TopLevelNode?http://www.muml.org/pm/hardware/hwresourceinstance/1.0.0?ActuatorInstance", //$NON-NLS-1$
 					org.muml.pm.hardware.resourceinstance.diagram.providers.HardwareElementTypes.ActuatorInstance_2008);
 		case org.muml.pm.hardware.resourceinstance.diagram.edit.parts.StructuredResourceInstanceEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?TopLevelNode?http://www.fujaba.de/muml/hardware/hwresourceinstance/1.1/?StructuredResourceInstance", //$NON-NLS-1$
+					"Navigator?TopLevelNode?http://www.muml.org/pm/hardware/hwresourceinstance/1.0.0?StructuredResourceInstance", //$NON-NLS-1$
 					org.muml.pm.hardware.resourceinstance.diagram.providers.HardwareElementTypes.StructuredResourceInstance_2009);
 		case org.muml.pm.hardware.resourceinstance.diagram.edit.parts.HWPortEditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.fujaba.de/muml/hardware/hwresourceinstance/1.1/?HWPort", //$NON-NLS-1$
+			return getImage("Navigator?Node?http://www.muml.org/pm/hardware/hwresourceinstance/1.0.0?HWPort", //$NON-NLS-1$
 					org.muml.pm.hardware.resourceinstance.diagram.providers.HardwareElementTypes.HWPort_3017);
 		case org.muml.pm.hardware.resourceinstance.diagram.edit.parts.CacheInstanceEditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.fujaba.de/muml/hardware/hwresourceinstance/1.1/?CacheInstance", //$NON-NLS-1$
+			return getImage("Navigator?Node?http://www.muml.org/pm/hardware/hwresourceinstance/1.0.0?CacheInstance", //$NON-NLS-1$
 					org.muml.pm.hardware.resourceinstance.diagram.providers.HardwareElementTypes.CacheInstance_3018);
 		case org.muml.pm.hardware.resourceinstance.diagram.edit.parts.ProgrammableLogicDeviceInstanceEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Node?http://www.fujaba.de/muml/hardware/hwresourceinstance/1.1/?ProgrammableLogicDeviceInstance", //$NON-NLS-1$
+					"Navigator?Node?http://www.muml.org/pm/hardware/hwresourceinstance/1.0.0?ProgrammableLogicDeviceInstance", //$NON-NLS-1$
 					org.muml.pm.hardware.resourceinstance.diagram.providers.HardwareElementTypes.ProgrammableLogicDeviceInstance_3019);
 		case org.muml.pm.hardware.resourceinstance.diagram.edit.parts.ProcessorInstanceEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Node?http://www.fujaba.de/muml/hardware/hwresourceinstance/1.1/?ProcessorInstance", //$NON-NLS-1$
+					"Navigator?Node?http://www.muml.org/pm/hardware/hwresourceinstance/1.0.0?ProcessorInstance", //$NON-NLS-1$
 					org.muml.pm.hardware.resourceinstance.diagram.providers.HardwareElementTypes.ProcessorInstance_3020);
 		case org.muml.pm.hardware.resourceinstance.diagram.edit.parts.ProcessingMemoryInstanceEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Node?http://www.fujaba.de/muml/hardware/hwresourceinstance/1.1/?ProcessingMemoryInstance", //$NON-NLS-1$
+					"Navigator?Node?http://www.muml.org/pm/hardware/hwresourceinstance/1.0.0?ProcessingMemoryInstance", //$NON-NLS-1$
 					org.muml.pm.hardware.resourceinstance.diagram.providers.HardwareElementTypes.ProcessingMemoryInstance_3021);
 		case org.muml.pm.hardware.resourceinstance.diagram.edit.parts.StorageMemoryInstanceEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Node?http://www.fujaba.de/muml/hardware/hwresourceinstance/1.1/?StorageMemoryInstance", //$NON-NLS-1$
+					"Navigator?Node?http://www.muml.org/pm/hardware/hwresourceinstance/1.0.0?StorageMemoryInstance", //$NON-NLS-1$
 					org.muml.pm.hardware.resourceinstance.diagram.providers.HardwareElementTypes.StorageMemoryInstance_3022);
 		case org.muml.pm.hardware.resourceinstance.diagram.edit.parts.ProcessorInstanceOwnedCacheInstanceEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Link?http://www.fujaba.de/muml/hardware/hwresourceinstance/1.1/?ProcessorInstance?ownedCacheInstance", //$NON-NLS-1$
+					"Navigator?Link?http://www.muml.org/pm/hardware/hwresourceinstance/1.0.0?ProcessorInstance?ownedCacheInstance", //$NON-NLS-1$
 					org.muml.pm.hardware.resourceinstance.diagram.providers.HardwareElementTypes.ProcessorInstanceOwnedCacheInstance_4003);
 		}
 		return getImage("Navigator?UnknownElement", null); //$NON-NLS-1$

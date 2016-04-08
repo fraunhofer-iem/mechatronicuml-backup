@@ -144,7 +144,7 @@
          
          <child
                class="ResourceInstanceRepository"
-               packageNsUri="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.1/">
+               packageNsUri="http://www.muml.org/pm/hardware/hwresourceinstance/1.0.0">
          </child>
          
       </category>
@@ -162,7 +162,7 @@
             modelElementCategoryKey="de.uni_paderborn.fujaba.muml.hardware.hwresource.category"
             modelId="ResourceInstance">
          <diagramElement
-               packageNsURI="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.1/"
+               packageNsURI="http://www.muml.org/pm/hardware/hwresourceinstance/1.0.0"
                className="ResourceInstanceRepository">
          </diagramElement>
          
@@ -482,7 +482,7 @@
 
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
       <?gmfgen generated="true"?>
-      <metamodel nsURI="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.1/">
+      <metamodel nsURI="http://www.muml.org/pm/hardware/hwresourceinstance/1.0.0">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.ResourceInstanceRepository_1000"
                name="%metatype.name.ResourceInstanceRepository_1000"
@@ -492,7 +492,7 @@
             <param name="semanticHint" value="1000"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.1/">
+      <metamodel nsURI="http://www.muml.org/pm/hardware/hwresourceinstance/1.0.0">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.SensorInstance_2007"
                name="%metatype.name.SensorInstance_2007"
@@ -502,7 +502,7 @@
             <param name="semanticHint" value="2007"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.1/">
+      <metamodel nsURI="http://www.muml.org/pm/hardware/hwresourceinstance/1.0.0">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.ActuatorInstance_2008"
                name="%metatype.name.ActuatorInstance_2008"
@@ -512,7 +512,7 @@
             <param name="semanticHint" value="2008"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.1/">
+      <metamodel nsURI="http://www.muml.org/pm/hardware/hwresourceinstance/1.0.0">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.StructuredResourceInstance_2009"
                name="%metatype.name.StructuredResourceInstance_2009"
@@ -522,7 +522,7 @@
             <param name="semanticHint" value="2009"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.1/">
+      <metamodel nsURI="http://www.muml.org/pm/hardware/hwresourceinstance/1.0.0">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.HWPort_3017"
                name="%metatype.name.HWPort_3017"
@@ -532,7 +532,7 @@
             <param name="semanticHint" value="3017"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.1/">
+      <metamodel nsURI="http://www.muml.org/pm/hardware/hwresourceinstance/1.0.0">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.CacheInstance_3018"
                name="%metatype.name.CacheInstance_3018"
@@ -542,7 +542,7 @@
             <param name="semanticHint" value="3018"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.1/">
+      <metamodel nsURI="http://www.muml.org/pm/hardware/hwresourceinstance/1.0.0">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.ProgrammableLogicDeviceInstance_3019"
                name="%metatype.name.ProgrammableLogicDeviceInstance_3019"
@@ -552,7 +552,7 @@
             <param name="semanticHint" value="3019"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.1/">
+      <metamodel nsURI="http://www.muml.org/pm/hardware/hwresourceinstance/1.0.0">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.ProcessorInstance_3020"
                name="%metatype.name.ProcessorInstance_3020"
@@ -562,7 +562,7 @@
             <param name="semanticHint" value="3020"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.1/">
+      <metamodel nsURI="http://www.muml.org/pm/hardware/hwresourceinstance/1.0.0">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.ProcessingMemoryInstance_3021"
                name="%metatype.name.ProcessingMemoryInstance_3021"
@@ -572,7 +572,7 @@
             <param name="semanticHint" value="3021"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.1/">
+      <metamodel nsURI="http://www.muml.org/pm/hardware/hwresourceinstance/1.0.0">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.StorageMemoryInstance_3022"
                name="%metatype.name.StorageMemoryInstance_3022"
@@ -582,7 +582,7 @@
             <param name="semanticHint" value="3022"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.1/">
+      <metamodel nsURI="http://www.muml.org/pm/hardware/hwresourceinstance/1.0.0">
          <specializationType
                id="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.ProcessorInstanceOwnedCacheInstance_4003"
                name="%metatype.name.ProcessorInstanceOwnedCacheInstance_4003"

@@ -144,7 +144,7 @@
          
          <child
                class="HWPlatform"
-               packageNsUri="http://www.fujaba.de/muml/hardware/hwplatform/1.1/">
+               packageNsUri="http://www.muml.org/pm/hardware/hwplatform/1.0.0">
          </child>
          
       </category>
@@ -162,7 +162,7 @@
             modelElementCategoryKey="de.uni_paderborn.fujaba.muml.hardware.hwplatform.category"
             modelId="Platform">
          <diagramElement
-               packageNsURI="http://www.fujaba.de/muml/hardware/hwplatform/1.1/"
+               packageNsURI="http://www.muml.org/pm/hardware/hwplatform/1.0.0"
                className="HWPlatform">
          </diagramElement>
          
@@ -462,7 +462,7 @@
 
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
       <?gmfgen generated="true"?>
-      <metamodel nsURI="http://www.fujaba.de/muml/hardware/hwplatform/1.1/">
+      <metamodel nsURI="http://www.muml.org/pm/hardware/hwplatform/1.0.0">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.hardware.platform.diagram.HWPlatform_1000"
                name="%metatype.name.HWPlatform_1000"
@@ -472,7 +472,7 @@
             <param name="semanticHint" value="1000"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/hardware/hwplatform/1.1/">
+      <metamodel nsURI="http://www.muml.org/pm/hardware/hwplatform/1.0.0">
          <specializationType
                id="de.uni_paderborn.fujaba.muml.hardware.platform.diagram.HWPlatform_2009"
                name="%metatype.name.HWPlatform_2009"
@@ -481,7 +481,7 @@
             <param name="semanticHint" value="2009"/>
          </specializationType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/hardware/hwplatform/1.1/">
+      <metamodel nsURI="http://www.muml.org/pm/hardware/hwplatform/1.0.0">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.hardware.platform.diagram.Bus_3025"
                name="%metatype.name.Bus_3025"
@@ -491,7 +491,7 @@
             <param name="semanticHint" value="3025"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/hardware/hwplatform/1.1/">
+      <metamodel nsURI="http://www.muml.org/pm/hardware/hwplatform/1.0.0">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.hardware.platform.diagram.NetworkBridge_3026"
                name="%metatype.name.NetworkBridge_3026"
@@ -501,7 +501,7 @@
             <param name="semanticHint" value="3026"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/hardware/hwplatform/1.1/">
+      <metamodel nsURI="http://www.muml.org/pm/hardware/hwplatform/1.0.0">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.hardware.platform.diagram.HWPlatformPart_3027"
                name="%metatype.name.HWPlatformPart_3027"
@@ -511,7 +511,7 @@
             <param name="semanticHint" value="3027"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/hardware/hwplatform/1.1/">
+      <metamodel nsURI="http://www.muml.org/pm/hardware/hwplatform/1.0.0">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.hardware.platform.diagram.HWPortPart_3028"
                name="%metatype.name.HWPortPart_3028"
@@ -521,7 +521,7 @@
             <param name="semanticHint" value="3028"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/hardware/hwplatform/1.1/">
+      <metamodel nsURI="http://www.muml.org/pm/hardware/hwplatform/1.0.0">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.hardware.platform.diagram.DelegationHWPort_3029"
                name="%metatype.name.DelegationHWPort_3029"
@@ -531,7 +531,7 @@
             <param name="semanticHint" value="3029"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/hardware/hwplatform/1.1/">
+      <metamodel nsURI="http://www.muml.org/pm/hardware/hwplatform/1.0.0">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.hardware.platform.diagram.ResourcePart_3030"
                name="%metatype.name.ResourcePart_3030"
@@ -541,7 +541,7 @@
             <param name="semanticHint" value="3030"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/hardware/hwplatform/1.1/">
+      <metamodel nsURI="http://www.muml.org/pm/hardware/hwplatform/1.0.0">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.hardware.platform.diagram.NetworkConnector_4032"
                name="%metatype.name.NetworkConnector_4032"

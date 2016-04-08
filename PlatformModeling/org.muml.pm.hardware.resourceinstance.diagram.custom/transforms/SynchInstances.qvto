@@ -4,10 +4,10 @@ modeltype ModelInstancePackage uses modelinstance("http://www.fujaba.de/modelins
 modeltype PimPackage uses pim('http://www.muml.org/pim/1.0.0');
 modeltype ValuetypePackage uses pim::valuetype('http://www.muml.org/pim/1.0.0');
 modeltype Ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
-modeltype HardwarePackage uses hardware('http://www.fujaba.de/muml/hardware/1.1/');
-modeltype ResourceTypePackage uses hardware::hwresource('http://www.fujaba.de/muml/hardware/1.1/');
-modeltype ResourceInstancePackage uses hardware::hwresourceinstance('http://www.fujaba.de/muml/hardware/1.1/');
-modeltype HWValuetypePackage uses hardware::hwvaluetype('http://www.fujaba.de/muml/hardware/1.1/');
+modeltype HardwarePackage uses hardware('http://www.muml.org/pm/hardware/1.0.0');
+modeltype ResourceTypePackage uses hardware::hwresource('http://www.muml.org/pm/hardware/1.0.0');
+modeltype ResourceInstancePackage uses hardware::hwresourceinstance('http://www.muml.org/pm/hardware/1.0.0');
+modeltype HWValuetypePackage uses hardware::hwvaluetype('http://www.muml.org/pm/hardware/1.0.0');
 
 
 
