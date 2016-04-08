@@ -89,7 +89,7 @@
               </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
-                  href="../../de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram/model/resourceinstance.gmftool#//@palette/@tools.0/@tools.0"/>
+                  href="../../org.muml.pm.hardware.resourceinstance.diagram/model/resourceinstance.gmftool#//@palette/@tools.0/@tools.0"/>
               <diagramNode
                   href="../../org.muml.pm.hardware.common/model/hardwarecommon.gmfgraph#Resource"/>
               <children>
@@ -143,7 +143,7 @@
               </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
-                  href="../../de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram/model/resourceinstance.gmftool#//@palette/@tools.0/@tools.2"/>
+                  href="../../org.muml.pm.hardware.resourceinstance.diagram/model/resourceinstance.gmftool#//@palette/@tools.0/@tools.2"/>
               <diagramNode
                   href="../../org.muml.pm.hardware.common/model/hardwarecommon.gmfgraph#SimpleResource"/>
               <children
@@ -186,7 +186,7 @@
               </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
-                  href="../../de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram/model/resourceinstance.gmftool#//@palette/@tools.0/@tools.1"/>
+                  href="../../org.muml.pm.hardware.resourceinstance.diagram/model/resourceinstance.gmftool#//@palette/@tools.0/@tools.1"/>
               <diagramNode
                   href="../../org.muml.pm.hardware.common/model/hardwarecommon.gmfgraph#SimpleResource"/>
               <children
@@ -282,7 +282,7 @@
         href="../../org.muml.pm.hardware/model/hardware.ecore#//hwplatforminstance/HWPlatformInstanceConfiguration/networkConnectorInstances"/>
     <tool
         xsi:type="gmftool:CreationTool"
-        href="../../de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram/model/resourceinstance.gmftool#//@palette/@tools.0/@tools.5"/>
+        href="../../org.muml.pm.hardware.resourceinstance.diagram/model/resourceinstance.gmftool#//@palette/@tools.0/@tools.5"/>
     <diagramLink
         href="../../de.uni_paderborn.fujaba.muml.hardware.platform.diagram/model/platform.gmfgraph#Link"/>
     <sourceMetaFeature
