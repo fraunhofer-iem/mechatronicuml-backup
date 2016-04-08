@@ -12,7 +12,7 @@ public class AbstractDependencyModelLanguageValidator extends org.eclipse.xtext.
 	@Override
 	protected List<EPackage> getEPackages() {
 	    List<EPackage> result = new ArrayList<EPackage>();
-	    result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.fujaba.de/muml/dependencylanguage/0.4.0"));
+	    result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.muml.org/cbs/dependencylanguage/1.0.0"));
 	    result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.muml.org/pim/actionlanguage/1.0.0"));
 	    result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.muml.org/pim/valuetype/1.0.0"));
 	    result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.storydriven.org/core/expressions/0.3.1"));
