@@ -365,7 +365,7 @@
             <param name="semanticHint" value="2003"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/verification/sdd/0.4.0">
+      <metamodel nsURI="http://www.muml.org/storydiagram/verification/sdd/1.0.0">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd.diagram.LeafNode_2004"
                name="%metatype.name.LeafNode_2004"
@@ -434,7 +434,7 @@
             <param name="semanticHint" value="3010"/>
          </specializationType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/verification/sdd/0.4.0">
+      <metamodel nsURI="http://www.muml.org/storydiagram/verification/sdd/1.0.0">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd.diagram.Edge_4001"
                name="%metatype.name.Edge_4001"

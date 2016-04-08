@@ -94,7 +94,7 @@ public class ComponentSDDNavigatorLabelProvider extends LabelProvider implements
 					"Navigator?Diagram?http://www.fujaba.de/muml/verification/sdd/componentsdd/0.4.0?ComponentStoryDecisionDiagram", org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.ComponentStoryDecisionDiagram_1000); //$NON-NLS-1$
 		case org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.LeafNodeEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?TopLevelNode?http://www.fujaba.de/muml/verification/sdd/0.4.0?LeafNode", org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.LeafNode_2002); //$NON-NLS-1$
+					"Navigator?TopLevelNode?http://www.muml.org/storydiagram/verification/sdd/1.0.0?LeafNode", org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.LeafNode_2002); //$NON-NLS-1$
 		case org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.ComponentStoryPatternNodeEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?TopLevelNode?http://www.fujaba.de/muml/verification/sdd/componentsdd/0.4.0?ComponentStoryPatternNode", org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.ComponentStoryPatternNode_2003); //$NON-NLS-1$
@@ -130,7 +130,7 @@ public class ComponentSDDNavigatorLabelProvider extends LabelProvider implements
 					"Navigator?Node?http://www.muml.org/reconfiguration/componentstorypattern/1.0.0?FadingComponentPartVariable", org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.FadingComponentPartVariable_3009); //$NON-NLS-1$
 		case org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.EdgeEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Link?http://www.fujaba.de/muml/verification/sdd/0.4.0?Edge", org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.Edge_4001); //$NON-NLS-1$
+					"Navigator?Link?http://www.muml.org/storydiagram/verification/sdd/1.0.0?Edge", org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.Edge_4001); //$NON-NLS-1$
 		case org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.AssemblyVariableEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?Link?http://www.muml.org/reconfiguration/componentstorypattern/1.0.0?AssemblyVariable", org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.AssemblyVariable_4002); //$NON-NLS-1$

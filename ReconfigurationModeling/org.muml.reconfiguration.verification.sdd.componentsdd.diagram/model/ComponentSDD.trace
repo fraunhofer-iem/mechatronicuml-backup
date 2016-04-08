@@ -5,10 +5,10 @@
     xmlns:trace="http://www.eclipse.org/gmf/2006/Trace">
   <nodeTraces
       visualID="2002"
-      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/verification/sdd/0.4.0' and _eClass_.name = 'LeafNode') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/verification/sdd/0.4.0' and _eClass_.name = 'AbstractStoryDecisionDiagram') and _containmentMF_.name = 'nodes')"/>
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/storydiagram/verification/sdd/1.0.0' and _eClass_.name = 'LeafNode') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/storydiagram/verification/sdd/1.0.0' and _eClass_.name = 'AbstractStoryDecisionDiagram') and _containmentMF_.name = 'nodes')"/>
   <nodeTraces
       visualID="2003"
-      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/verification/sdd/componentsdd/0.4.0' and _eClass_.name = 'ComponentStoryPatternNode') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/verification/sdd/0.4.0' and _eClass_.name = 'AbstractStoryDecisionDiagram') and _containmentMF_.name = 'nodes')">
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/verification/sdd/componentsdd/0.4.0' and _eClass_.name = 'ComponentStoryPatternNode') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/storydiagram/verification/sdd/1.0.0' and _eClass_.name = 'AbstractStoryDecisionDiagram') and _containmentMF_.name = 'nodes')">
     <nodeLabelTraces
         visualID="5037"
         queryText="true"/>
@@ -21,7 +21,7 @@
   </nodeTraces>
   <nodeTraces
       visualID="2004"
-      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/verification/sdd/componentsdd/0.4.0' and _eClass_.name = 'InitialNode') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/verification/sdd/0.4.0' and _eClass_.name = 'AbstractStoryDecisionDiagram') and _containmentMF_.name = 'nodes')">
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/verification/sdd/componentsdd/0.4.0' and _eClass_.name = 'InitialNode') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/storydiagram/verification/sdd/1.0.0' and _eClass_.name = 'AbstractStoryDecisionDiagram') and _containmentMF_.name = 'nodes')">
     <nodeLabelTraces
         visualID="5042"
         queryText="true"/>
@@ -138,7 +138,7 @@
   </childNodeTraces>
   <linkTraces
       visualID="4001"
-      queryText="modelFacet.oclIsKindOf(gmfgen::TypeLinkModelFacet) and (let _eClass_:ecore::EClass = modelFacet.oclAsType(gmfgen::TypeLinkModelFacet).metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/verification/sdd/0.4.0' and _eClass_.name = 'Edge')"/>
+      queryText="modelFacet.oclIsKindOf(gmfgen::TypeLinkModelFacet) and (let _eClass_:ecore::EClass = modelFacet.oclAsType(gmfgen::TypeLinkModelFacet).metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/storydiagram/verification/sdd/1.0.0' and _eClass_.name = 'Edge')"/>
   <linkTraces
       visualID="4002"
       queryText="modelFacet.oclIsKindOf(gmfgen::TypeLinkModelFacet) and (let _eClass_:ecore::EClass = modelFacet.oclAsType(gmfgen::TypeLinkModelFacet).metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/reconfiguration/componentstorypattern/1.0.0' and _eClass_.name = 'AssemblyVariable')">

@@ -87,7 +87,7 @@ public class BasicSDDNavigatorLabelProvider extends LabelProvider implements
 					"Navigator?TopLevelNode?http://www.muml.org/storydiagram/verification/sdd/basicsdd/1.0.0?StoryPatternNode", org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.BasicSDDElementTypes.StoryPatternNode_2003); //$NON-NLS-1$
 		case org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.LeafNodeEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?TopLevelNode?http://www.fujaba.de/muml/verification/sdd/0.4.0?LeafNode", org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.BasicSDDElementTypes.LeafNode_2004); //$NON-NLS-1$
+					"Navigator?TopLevelNode?http://www.muml.org/storydiagram/verification/sdd/1.0.0?LeafNode", org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.BasicSDDElementTypes.LeafNode_2004); //$NON-NLS-1$
 		case org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.CollectionVariableEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?Node?http://www.muml.org/storydiagram/patterns/1.0.0?CollectionVariable", org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.BasicSDDElementTypes.CollectionVariable_3006); //$NON-NLS-1$
@@ -108,7 +108,7 @@ public class BasicSDDNavigatorLabelProvider extends LabelProvider implements
 					"Navigator?Node?http://www.muml.org/storydiagram/patterns/1.0.0?StoryPattern", org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.BasicSDDElementTypes.StoryPattern_3011); //$NON-NLS-1$
 		case org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.EdgeEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Link?http://www.fujaba.de/muml/verification/sdd/0.4.0?Edge", org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.BasicSDDElementTypes.Edge_4001); //$NON-NLS-1$
+					"Navigator?Link?http://www.muml.org/storydiagram/verification/sdd/1.0.0?Edge", org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.BasicSDDElementTypes.Edge_4001); //$NON-NLS-1$
 		case org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.LinkVariableEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?Link?http://www.muml.org/storydiagram/patterns/1.0.0?LinkVariable", org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.BasicSDDElementTypes.LinkVariable_4003); //$NON-NLS-1$

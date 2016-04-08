@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:componentsdd="http://www.fujaba.de/muml/verification/sdd/componentsdd/0.4.0" xmlns:componentstorypattern="http://www.muml.org/reconfiguration/componentstorypattern/1.0.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:sdd="http://www.fujaba.de/muml/verification/sdd/0.4.0" xmi:id="_j0xL8XFyEeSVioZazDBeBw" type="Component Story Decision" name="InConvoyCtrl.componentsdd_diagram" measurementUnit="Pixel">
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:componentsdd="http://www.fujaba.de/muml/verification/sdd/componentsdd/0.4.0" xmlns:componentstorypattern="http://www.muml.org/reconfiguration/componentstorypattern/1.0.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:sdd="http://www.muml.org/storydiagram/verification/sdd/1.0.0" xmi:id="_j0xL8XFyEeSVioZazDBeBw" type="Component Story Decision" name="InConvoyCtrl.componentsdd_diagram" measurementUnit="Pixel">
   <children xmi:type="notation:Shape" xmi:id="_nvTH0XFyEeSVioZazDBeBw" type="2004" fontName="Segoe UI" lineColor="0">
     <children xmi:type="notation:DecorationNode" xmi:id="_nvc40HFyEeSVioZazDBeBw" type="5042"/>
     <children xmi:type="notation:DecorationNode" xmi:id="_nvc40XFyEeSVioZazDBeBw" type="5043"/>
