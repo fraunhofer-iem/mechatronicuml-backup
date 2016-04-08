@@ -18,7 +18,7 @@ public class HardwareGenmodelTest extends GenmodelTest {
 	
 	@Parameters
 	public static Collection<Object[]> getGenmodelPaths() {
-		return Collections.singleton(new Object[] {"de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel"});
+		return Collections.singleton(new Object[] {"org.muml.pm.hardware/model/hardware.genmodel"});
 	}
 
 }

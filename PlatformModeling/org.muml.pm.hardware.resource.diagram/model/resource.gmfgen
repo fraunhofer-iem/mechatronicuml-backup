@@ -29,7 +29,7 @@
         xsi:type="gmfgen:FigureViewmap"
         figureQualifiedClassName="org.eclipse.draw2d.FreeformLayer"/>
     <domainDiagramElement
-        href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/ResourceRepository"/>
+        href="../../org.muml.pm.hardware/model/hardware.genmodel#//hardware/hwresource/ResourceRepository"/>
     <childNodes
         xsi:type="gmfgen:GenChildSideAffixedNode"
         visualID="3011"
@@ -59,11 +59,11 @@
           editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.hardware.common.edit.policies.hwport.HWPortEditPolicy"/>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/CommunicationResource"/>
+            href="../../org.muml.pm.hardware/model/hardware.genmodel#//hardware/hwresource/CommunicationResource"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/Resource/communicationResources"/>
+            href="../../org.muml.pm.hardware/model/hardware.genmodel#//hardware/hwresource/Resource/communicationResources"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/Resource/communicationResources"/>
+            href="../../org.muml.pm.hardware/model/hardware.genmodel#//hardware/hwresource/Resource/communicationResources"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
@@ -75,7 +75,7 @@
           <initializers
               xsi:type="gmfgen:GenReferenceNewElementSpec">
             <feature
-                href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/CommunicationResource/cardinality"/>
+                href="../../org.muml.pm.hardware/model/hardware.genmodel#//hardware/hwresource/CommunicationResource/cardinality"/>
             <newElementInitializers>
               <initializers
                   xsi:type="gmfgen:GenReferenceNewElementSpec">
@@ -155,17 +155,17 @@
           editPolicyQualifiedClassName="de.uni_paderborn.fujaba.common.edit.policies.compartment.EnlargeCompartmentEditPolicy"/>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/CommunicationResource"/>
+            href="../../org.muml.pm.hardware/model/hardware.genmodel#//hardware/hwresource/CommunicationResource"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/Resource/communicationResources"/>
+            href="../../org.muml.pm.hardware/model/hardware.genmodel#//hardware/hwresource/Resource/communicationResources"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/Resource/communicationResources"/>
+            href="../../org.muml.pm.hardware/model/hardware.genmodel#//hardware/hwresource/Resource/communicationResources"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenReferenceNewElementSpec">
             <feature
-                href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/CommunicationResource/cardinality"/>
+                href="../../org.muml.pm.hardware/model/hardware.genmodel#//hardware/hwresource/CommunicationResource/cardinality"/>
             <newElementInitializers>
               <initializers
                   xsi:type="gmfgen:GenReferenceNewElementSpec">
@@ -285,11 +285,11 @@
           editPolicyQualifiedClassName="de.uni_paderborn.fujaba.common.edit.policies.compartment.EnlargeCompartmentEditPolicy"/>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/Cache"/>
+            href="../../org.muml.pm.hardware/model/hardware.genmodel#//hardware/hwresource/Cache"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/StructuredResource/embeddedAtomicResources"/>
+            href="../../org.muml.pm.hardware/model/hardware.genmodel#//hardware/hwresource/StructuredResource/embeddedAtomicResources"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/StructuredResource/embeddedAtomicResources"/>
+            href="../../org.muml.pm.hardware/model/hardware.genmodel#//hardware/hwresource/StructuredResource/embeddedAtomicResources"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
@@ -299,7 +299,7 @@
                 href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
           </initializers>
           <elementClass
-              href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/Cache"/>
+              href="../../org.muml.pm.hardware/model/hardware.genmodel#//hardware/hwresource/Cache"/>
         </modelElementInitializer>
       </modelFacet>
       <labels
@@ -412,17 +412,17 @@
           editPolicyQualifiedClassName="de.uni_paderborn.fujaba.common.edit.policies.compartment.EnlargeCompartmentEditPolicy"/>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/Processor"/>
+            href="../../org.muml.pm.hardware/model/hardware.genmodel#//hardware/hwresource/Processor"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/StructuredResource/embeddedAtomicResources"/>
+            href="../../org.muml.pm.hardware/model/hardware.genmodel#//hardware/hwresource/StructuredResource/embeddedAtomicResources"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/StructuredResource/embeddedAtomicResources"/>
+            href="../../org.muml.pm.hardware/model/hardware.genmodel#//hardware/hwresource/StructuredResource/embeddedAtomicResources"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenReferenceNewElementSpec">
             <feature
-                href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/Processor/nbCores"/>
+                href="../../org.muml.pm.hardware/model/hardware.genmodel#//hardware/hwresource/Processor/nbCores"/>
             <newElementInitializers>
               <initializers
                   xsi:type="gmfgen:GenFeatureValueSpec"
@@ -550,11 +550,11 @@
           editPolicyQualifiedClassName="de.uni_paderborn.fujaba.common.edit.policies.compartment.EnlargeCompartmentEditPolicy"/>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/ProgrammableLogicDevice"/>
+            href="../../org.muml.pm.hardware/model/hardware.genmodel#//hardware/hwresource/ProgrammableLogicDevice"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/StructuredResource/embeddedAtomicResources"/>
+            href="../../org.muml.pm.hardware/model/hardware.genmodel#//hardware/hwresource/StructuredResource/embeddedAtomicResources"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/StructuredResource/embeddedAtomicResources"/>
+            href="../../org.muml.pm.hardware/model/hardware.genmodel#//hardware/hwresource/StructuredResource/embeddedAtomicResources"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
@@ -564,7 +564,7 @@
                 href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
           </initializers>
           <elementClass
-              href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/ProgrammableLogicDevice"/>
+              href="../../org.muml.pm.hardware/model/hardware.genmodel#//hardware/hwresource/ProgrammableLogicDevice"/>
         </modelElementInitializer>
       </modelFacet>
       <labels
@@ -649,11 +649,11 @@
           editPolicyQualifiedClassName="de.uni_paderborn.fujaba.common.edit.policies.compartment.EnlargeCompartmentEditPolicy"/>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/MemoryResource"/>
+            href="../../org.muml.pm.hardware/model/hardware.genmodel#//hardware/hwresource/MemoryResource"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/StructuredResource/embeddedAtomicResources"/>
+            href="../../org.muml.pm.hardware/model/hardware.genmodel#//hardware/hwresource/StructuredResource/embeddedAtomicResources"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/StructuredResource/embeddedAtomicResources"/>
+            href="../../org.muml.pm.hardware/model/hardware.genmodel#//hardware/hwresource/StructuredResource/embeddedAtomicResources"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
@@ -663,7 +663,7 @@
                 href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
           </initializers>
           <elementClass
-              href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/MemoryResource"/>
+              href="../../org.muml.pm.hardware/model/hardware.genmodel#//hardware/hwresource/MemoryResource"/>
         </modelElementInitializer>
       </modelFacet>
       <labels
@@ -769,29 +769,29 @@
       </viewmap>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/BusProtocol"/>
+            href="../../org.muml.pm.hardware/model/hardware.genmodel#//hardware/hwresource/BusProtocol"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/CommunicationProtocolRepository/communicationProtocols"/>
+            href="../../org.muml.pm.hardware/model/hardware.genmodel#//hardware/hwresource/CommunicationProtocolRepository/communicationProtocols"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/CommunicationProtocolRepository/communicationProtocols"/>
+            href="../../org.muml.pm.hardware/model/hardware.genmodel#//hardware/hwresource/CommunicationProtocolRepository/communicationProtocols"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenReferenceNewElementSpec">
             <feature
-                href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/CommunicationProtocol/bandwidth"/>
+                href="../../org.muml.pm.hardware/model/hardware.genmodel#//hardware/hwresource/CommunicationProtocol/bandwidth"/>
             <newElementInitializers>
               <initializers
                   xsi:type="gmfgen:GenFeatureValueSpec"
                   value="//@expressionProviders/@providers.0/@expressions.27">
                 <feature
-                    href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwvaluetype/DataRate/unit"/>
+                    href="../../org.muml.pm.hardware/model/hardware.genmodel#//hardware/hwvaluetype/DataRate/unit"/>
               </initializers>
               <initializers
                   xsi:type="gmfgen:GenFeatureValueSpec"
                   value="//@expressionProviders/@providers.0/@expressions.28">
                 <feature
-                    href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwvaluetype/DataRate/value"/>
+                    href="../../org.muml.pm.hardware/model/hardware.genmodel#//hardware/hwvaluetype/DataRate/value"/>
               </initializers>
             </newElementInitializers>
           </initializers>
@@ -846,29 +846,29 @@
       </viewmap>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/LinkProtocol"/>
+            href="../../org.muml.pm.hardware/model/hardware.genmodel#//hardware/hwresource/LinkProtocol"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/CommunicationProtocolRepository/communicationProtocols"/>
+            href="../../org.muml.pm.hardware/model/hardware.genmodel#//hardware/hwresource/CommunicationProtocolRepository/communicationProtocols"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/CommunicationProtocolRepository/communicationProtocols"/>
+            href="../../org.muml.pm.hardware/model/hardware.genmodel#//hardware/hwresource/CommunicationProtocolRepository/communicationProtocols"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenReferenceNewElementSpec">
             <feature
-                href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/CommunicationProtocol/bandwidth"/>
+                href="../../org.muml.pm.hardware/model/hardware.genmodel#//hardware/hwresource/CommunicationProtocol/bandwidth"/>
             <newElementInitializers>
               <initializers
                   xsi:type="gmfgen:GenFeatureValueSpec"
                   value="//@expressionProviders/@providers.0/@expressions.29">
                 <feature
-                    href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwvaluetype/DataRate/unit"/>
+                    href="../../org.muml.pm.hardware/model/hardware.genmodel#//hardware/hwvaluetype/DataRate/unit"/>
               </initializers>
               <initializers
                   xsi:type="gmfgen:GenFeatureValueSpec"
                   value="//@expressionProviders/@providers.0/@expressions.30">
                 <feature
-                    href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwvaluetype/DataRate/value"/>
+                    href="../../org.muml.pm.hardware/model/hardware.genmodel#//hardware/hwvaluetype/DataRate/value"/>
               </initializers>
             </newElementInitializers>
           </initializers>
@@ -926,11 +926,11 @@
           editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.hardware.common.edit.policies.resource.ResourceEditPolicy"/>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/Device"/>
+            href="../../org.muml.pm.hardware/model/hardware.genmodel#//hardware/hwresource/Device"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/ResourceRepository/resources"/>
+            href="../../org.muml.pm.hardware/model/hardware.genmodel#//hardware/hwresource/ResourceRepository/resources"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/ResourceRepository/resources"/>
+            href="../../org.muml.pm.hardware/model/hardware.genmodel#//hardware/hwresource/ResourceRepository/resources"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
@@ -940,7 +940,7 @@
                 href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
           </initializers>
           <elementClass
-              href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/Device"/>
+              href="../../org.muml.pm.hardware/model/hardware.genmodel#//hardware/hwresource/Device"/>
         </modelElementInitializer>
       </modelFacet>
       <labels
@@ -1017,11 +1017,11 @@
       </viewmap>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/StructuredResource"/>
+            href="../../org.muml.pm.hardware/model/hardware.genmodel#//hardware/hwresource/StructuredResource"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/ResourceRepository/resources"/>
+            href="../../org.muml.pm.hardware/model/hardware.genmodel#//hardware/hwresource/ResourceRepository/resources"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/ResourceRepository/resources"/>
+            href="../../org.muml.pm.hardware/model/hardware.genmodel#//hardware/hwresource/ResourceRepository/resources"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
@@ -1031,7 +1031,7 @@
                 href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
           </initializers>
           <elementClass
-              href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/StructuredResource"/>
+              href="../../org.muml.pm.hardware/model/hardware.genmodel#//hardware/hwresource/StructuredResource"/>
         </modelElementInitializer>
       </modelFacet>
       <labels
@@ -1120,11 +1120,11 @@
       </viewmap>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/CommunicationProtocolRepository"/>
+            href="../../org.muml.pm.hardware/model/hardware.genmodel#//hardware/hwresource/CommunicationProtocolRepository"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/ResourceRepository/protocols"/>
+            href="../../org.muml.pm.hardware/model/hardware.genmodel#//hardware/hwresource/ResourceRepository/protocols"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/ResourceRepository/protocols"/>
+            href="../../org.muml.pm.hardware/model/hardware.genmodel#//hardware/hwresource/ResourceRepository/protocols"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
@@ -1134,7 +1134,7 @@
                 href="../../org.muml.core/model/core.genmodel#//core/NamedElement/name"/>
           </initializers>
           <elementClass
-              href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/CommunicationProtocolRepository"/>
+              href="../../org.muml.pm.hardware/model/hardware.genmodel#//hardware/hwresource/CommunicationProtocolRepository"/>
         </modelElementInitializer>
       </modelFacet>
       <labels
@@ -1176,7 +1176,7 @@
       <modelFacet
           xsi:type="gmfgen:FeatureLinkModelFacet">
         <metaFeature
-            href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/Processor/ownedCache"/>
+            href="../../org.muml.pm.hardware/model/hardware.genmodel#//hardware/hwresource/Processor/ownedCache"/>
       </modelFacet>
       <creationConstraints
           sourceEnd="//@expressionProviders/@providers.0/@expressions.31"
@@ -1478,7 +1478,7 @@
     </tabs>
   </propertySheet>
   <domainGenModel
-      href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#/"/>
+      href="../../org.muml.pm.hardware/model/hardware.genmodel#/"/>
   <expressionProviders>
     <providers
         xsi:type="gmfgen:GenExpressionInterpreter">
@@ -1580,7 +1580,7 @@
         className="CommunicationResourceLabelExpressionLabelParser5040"
         viewExpression="//@expressionProviders/@providers.0/@expressions.3">
       <expressionContext
-          href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/CommunicationResource"/>
+          href="../../org.muml.pm.hardware/model/hardware.genmodel#//hardware/hwresource/CommunicationResource"/>
     </implementations>
     <implementations
         xsi:type="gmfgen:PredefinedParser"
@@ -1591,7 +1591,7 @@
         className="DeviceLabelExpressionLabelParser5042"
         viewExpression="//@expressionProviders/@providers.0/@expressions.4">
       <expressionContext
-          href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/Device"/>
+          href="../../org.muml.pm.hardware/model/hardware.genmodel#//hardware/hwresource/Device"/>
     </implementations>
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
@@ -1599,7 +1599,7 @@
         className="DeviceLabelExpressionLabelParser5043"
         viewExpression="//@expressionProviders/@providers.0/@expressions.5">
       <expressionContext
-          href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/Device"/>
+          href="../../org.muml.pm.hardware/model/hardware.genmodel#//hardware/hwresource/Device"/>
     </implementations>
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
@@ -1607,7 +1607,7 @@
         className="CommunicationResourceLabelExpressionLabelParser5045"
         viewExpression="//@expressionProviders/@providers.0/@expressions.8">
       <expressionContext
-          href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/CommunicationResource"/>
+          href="../../org.muml.pm.hardware/model/hardware.genmodel#//hardware/hwresource/CommunicationResource"/>
     </implementations>
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
@@ -1615,7 +1615,7 @@
         className="CommunicationResourceLabelExpressionLabelParser5046"
         viewExpression="//@expressionProviders/@providers.0/@expressions.9">
       <expressionContext
-          href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/CommunicationResource"/>
+          href="../../org.muml.pm.hardware/model/hardware.genmodel#//hardware/hwresource/CommunicationResource"/>
     </implementations>
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
@@ -1623,7 +1623,7 @@
         className="CacheLabelExpressionLabelParser5048"
         viewExpression="//@expressionProviders/@providers.0/@expressions.10">
       <expressionContext
-          href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/Cache"/>
+          href="../../org.muml.pm.hardware/model/hardware.genmodel#//hardware/hwresource/Cache"/>
     </implementations>
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
@@ -1631,7 +1631,7 @@
         className="CacheLabelExpressionLabelParser5049"
         viewExpression="//@expressionProviders/@providers.0/@expressions.11">
       <expressionContext
-          href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/Cache"/>
+          href="../../org.muml.pm.hardware/model/hardware.genmodel#//hardware/hwresource/Cache"/>
     </implementations>
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
@@ -1639,7 +1639,7 @@
         className="CacheLabelExpressionLabelParser5050"
         viewExpression="//@expressionProviders/@providers.0/@expressions.12">
       <expressionContext
-          href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/Cache"/>
+          href="../../org.muml.pm.hardware/model/hardware.genmodel#//hardware/hwresource/Cache"/>
     </implementations>
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
@@ -1647,7 +1647,7 @@
         className="CacheLabelExpressionLabelParser5051"
         viewExpression="//@expressionProviders/@providers.0/@expressions.13">
       <expressionContext
-          href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/Cache"/>
+          href="../../org.muml.pm.hardware/model/hardware.genmodel#//hardware/hwresource/Cache"/>
     </implementations>
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
@@ -1655,7 +1655,7 @@
         className="ProcessorLabelExpressionLabelParser5052"
         viewExpression="//@expressionProviders/@providers.0/@expressions.15">
       <expressionContext
-          href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/Processor"/>
+          href="../../org.muml.pm.hardware/model/hardware.genmodel#//hardware/hwresource/Processor"/>
     </implementations>
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
@@ -1663,7 +1663,7 @@
         className="ProcessorLabelExpressionLabelParser5054"
         viewExpression="//@expressionProviders/@providers.0/@expressions.16">
       <expressionContext
-          href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/Processor"/>
+          href="../../org.muml.pm.hardware/model/hardware.genmodel#//hardware/hwresource/Processor"/>
     </implementations>
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
@@ -1671,7 +1671,7 @@
         className="ProcessorLabelExpressionLabelParser5055"
         viewExpression="//@expressionProviders/@providers.0/@expressions.17">
       <expressionContext
-          href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/Processor"/>
+          href="../../org.muml.pm.hardware/model/hardware.genmodel#//hardware/hwresource/Processor"/>
     </implementations>
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
@@ -1679,7 +1679,7 @@
         className="ProcessorLabelExpressionLabelParser5056"
         viewExpression="//@expressionProviders/@providers.0/@expressions.18">
       <expressionContext
-          href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/Processor"/>
+          href="../../org.muml.pm.hardware/model/hardware.genmodel#//hardware/hwresource/Processor"/>
     </implementations>
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
@@ -1687,7 +1687,7 @@
         className="ProgrammableLogicDeviceLabelExpressionLabelParser5058"
         viewExpression="//@expressionProviders/@providers.0/@expressions.19">
       <expressionContext
-          href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/ProgrammableLogicDevice"/>
+          href="../../org.muml.pm.hardware/model/hardware.genmodel#//hardware/hwresource/ProgrammableLogicDevice"/>
     </implementations>
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
@@ -1695,7 +1695,7 @@
         className="ProgrammableLogicDeviceLabelExpressionLabelParser5059"
         viewExpression="//@expressionProviders/@providers.0/@expressions.20">
       <expressionContext
-          href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/ProgrammableLogicDevice"/>
+          href="../../org.muml.pm.hardware/model/hardware.genmodel#//hardware/hwresource/ProgrammableLogicDevice"/>
     </implementations>
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
@@ -1703,7 +1703,7 @@
         className="MemoryResourceLabelExpressionLabelParser5061"
         viewExpression="//@expressionProviders/@providers.0/@expressions.21">
       <expressionContext
-          href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/MemoryResource"/>
+          href="../../org.muml.pm.hardware/model/hardware.genmodel#//hardware/hwresource/MemoryResource"/>
     </implementations>
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
@@ -1711,7 +1711,7 @@
         className="MemoryResourceLabelExpressionLabelParser5062"
         viewExpression="//@expressionProviders/@providers.0/@expressions.22">
       <expressionContext
-          href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/MemoryResource"/>
+          href="../../org.muml.pm.hardware/model/hardware.genmodel#//hardware/hwresource/MemoryResource"/>
     </implementations>
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
@@ -1719,7 +1719,7 @@
         className="MemoryResourceLabelExpressionLabelParser5063"
         viewExpression="//@expressionProviders/@providers.0/@expressions.23">
       <expressionContext
-          href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/MemoryResource"/>
+          href="../../org.muml.pm.hardware/model/hardware.genmodel#//hardware/hwresource/MemoryResource"/>
     </implementations>
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
@@ -1727,7 +1727,7 @@
         className="MemoryResourceLabelExpressionLabelParser5064"
         viewExpression="//@expressionProviders/@providers.0/@expressions.24">
       <expressionContext
-          href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/MemoryResource"/>
+          href="../../org.muml.pm.hardware/model/hardware.genmodel#//hardware/hwresource/MemoryResource"/>
     </implementations>
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
@@ -1735,7 +1735,7 @@
         className="StructuredResourceLabelExpressionLabelParser5066"
         viewExpression="//@expressionProviders/@providers.0/@expressions.25">
       <expressionContext
-          href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/StructuredResource"/>
+          href="../../org.muml.pm.hardware/model/hardware.genmodel#//hardware/hwresource/StructuredResource"/>
     </implementations>
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
@@ -1743,7 +1743,7 @@
         className="StructuredResourceLabelExpressionLabelParser5067"
         viewExpression="//@expressionProviders/@providers.0/@expressions.26">
       <expressionContext
-          href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/StructuredResource"/>
+          href="../../org.muml.pm.hardware/model/hardware.genmodel#//hardware/hwresource/StructuredResource"/>
     </implementations>
   </labelParsers>
   <contextMenus
@@ -1754,6 +1754,6 @@
   <extensions
       oclType="">
     <rootInput
-        href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.propsheet#_RlRs0M1gEeSIgPDefa6ZBw"/>
+        href="../../org.muml.pm.hardware/model/hardware.propsheet#_RlRs0M1gEeSIgPDefa6ZBw"/>
   </extensions>
 </gmfgen:GenEditorGenerator>
