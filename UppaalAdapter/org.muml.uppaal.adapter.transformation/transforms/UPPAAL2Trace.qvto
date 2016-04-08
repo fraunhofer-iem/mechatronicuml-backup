@@ -13,7 +13,7 @@ modeltype uppaal_types uses uppaal::types('http://www.muml.org/uppaal/1.0.0');
 modeltype uppaal_templates uses uppaal::templates('http://www.muml.org/uppaal/1.0.0');
 modeltype uppaal_declarations_system uses uppaal::declarations::system('http://www.muml.org/uppaal/1.0.0');
 modeltype uppaal_declarations uses uppaal::declarations('http://www.muml.org/uppaal/1.0.0');
-modeltype uppaal_trace uses 'http://www.uni-paderborn.de/uppaal/trace/0.4.0';
+modeltype uppaal_trace uses 'http://www.muml.org/uppaal/trace/1.0.0';
 
 configuration property generateTrace : Boolean;
 

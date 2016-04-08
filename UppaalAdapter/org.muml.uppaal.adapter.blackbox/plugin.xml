@@ -6,7 +6,7 @@
     <library name="TraceLib" 
              class="org.muml.uppaal.adapter.blackbox.TraceLibrary">
       <metamodel nsURI="http://www.muml.org/uppaal/1.0.0"/>       
-      <metamodel nsURI="http://www.uni-paderborn.de/uppaal/trace/0.4.0"/>
+      <metamodel nsURI="http://www.muml.org/uppaal/trace/1.0.0"/>
       <metamodel
             nsURI="http://www.uni-paderborn.de/requirements/0.4.0">
       </metamodel>
@@ -22,7 +22,7 @@
              class="org.muml.uppaal.adapter.blackbox.ValueLibrary"
              name="ValueLib">
           <metamodel
-                nsURI="http://www.uni-paderborn.de/uppaal/trace/0.4.0">
+                nsURI="http://www.muml.org/uppaal/trace/1.0.0">
           </metamodel>
           <metamodel
                 nsURI="http://www.muml.org/verification/core/runtime/1.0.0">

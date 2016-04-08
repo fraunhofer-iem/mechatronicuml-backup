@@ -16,7 +16,7 @@ modeltype verification_extension uses 'http://www.muml.org/uppaal/adapter/extens
 
 modeltype uppaal uses 'http://www.muml.org/uppaal/1.0.0';
 modeltype uppaal_requirements uses 'http://www.uni-paderborn.de/requirements/0.4.0';
-modeltype uppaal_trace uses 'http://www.uni-paderborn.de/uppaal/trace/0.4.0';
+modeltype uppaal_trace uses 'http://www.muml.org/uppaal/trace/1.0.0';
 
 /*
 * Transforms a Verifiable Element model into a property result model

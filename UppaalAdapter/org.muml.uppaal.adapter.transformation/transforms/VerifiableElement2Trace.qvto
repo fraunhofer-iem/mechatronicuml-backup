@@ -6,7 +6,7 @@ import transforms.VerifiableElement2UPPAAL;
 modeltype muml uses 'http://www.muml.org/pim/1.0.0';
 modeltype uppaal uses 'http://www.muml.org/uppaal/1.0.0';
 modeltype uppaal_requirements uses 'http://www.uni-paderborn.de/requirements/0.4.0';
-modeltype uppaal_trace uses 'http://www.uni-paderborn.de/uppaal/trace/0.4.0';
+modeltype uppaal_trace uses 'http://www.muml.org/uppaal/trace/1.0.0';
 modeltype reachability_rtsc uses 'http://www.muml.org/verification/core/reachanalysis/reachabilitygraph/rtsc/1.0.0';
 modeltype verification_options uses 'http://www.muml.org/uppaal/options/1.0.0';
 
