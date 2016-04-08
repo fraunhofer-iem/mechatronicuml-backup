@@ -35,7 +35,7 @@ public class PSMMetamodelTest extends MetamodelTest {
 		HardwarePackage.eINSTANCE.eClass();
 		SwplatformPackage.eINSTANCE.eClass();
 		// Resource coreModel = TestUtilities.loadResource(resourceSet,
-		// "org.storydriven.core/model/core.ecore");
+		// "org.muml.core/model/core.ecore");
 
 		Resource mumlModel = TestUtilities.loadResource(resourceSet,
 				"org.muml.psm/model/psm.ecore");
