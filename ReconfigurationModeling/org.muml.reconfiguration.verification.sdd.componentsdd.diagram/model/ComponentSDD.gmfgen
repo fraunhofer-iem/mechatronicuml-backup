@@ -28,7 +28,7 @@
         xsi:type="gmfgen:FigureViewmap"
         figureQualifiedClassName="org.eclipse.draw2d.FreeformLayer"/>
     <domainDiagramElement
-        href="../../de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD/model/ComponentSDD.genmodel#//componentsdd/ComponentStoryDecisionDiagram"/>
+        href="../../org.muml.reconfiguration.verification.sdd.componentsdd/model/ComponentSDD.genmodel#//componentsdd/ComponentStoryDecisionDiagram"/>
     <childNodes
         visualID="3001"
         editPartClassName="ComponentStoryPatternEditPart"
@@ -52,9 +52,9 @@
         <metaClass
             href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentStoryPattern"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD/model/ComponentSDD.genmodel#//componentsdd/ComponentStoryPatternNode/pattern"/>
+            href="../../org.muml.reconfiguration.verification.sdd.componentsdd/model/ComponentSDD.genmodel#//componentsdd/ComponentStoryPatternNode/pattern"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD/model/ComponentSDD.genmodel#//componentsdd/ComponentStoryPatternNode/pattern"/>
+            href="../../org.muml.reconfiguration.verification.sdd.componentsdd/model/ComponentSDD.genmodel#//componentsdd/ComponentStoryPatternNode/pattern"/>
       </modelFacet>
     </childNodes>
     <childNodes
@@ -776,7 +776,7 @@
       </viewmap>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD/model/ComponentSDD.genmodel#//componentsdd/ComponentStoryPatternNode"/>
+            href="../../org.muml.reconfiguration.verification.sdd.componentsdd/model/ComponentSDD.genmodel#//componentsdd/ComponentStoryPatternNode"/>
         <containmentMetaFeature
             href="../../org.muml.storydiagram.verification.sdd/model/sdd.genmodel#//sdd/AbstractStoryDecisionDiagram/nodes"/>
         <childMetaFeature
@@ -786,7 +786,7 @@
           <initializers
               xsi:type="gmfgen:GenReferenceNewElementSpec">
             <feature
-                href="../../de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD/model/ComponentSDD.genmodel#//componentsdd/ComponentStoryPatternNode/pattern"/>
+                href="../../org.muml.reconfiguration.verification.sdd.componentsdd/model/ComponentSDD.genmodel#//componentsdd/ComponentStoryPatternNode/pattern"/>
             <newElementInitializers>
               <initializers
                   xsi:type="gmfgen:GenFeatureValueSpec"
@@ -927,7 +927,7 @@
           classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class CSDDInitialNodeFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureInitialNodeInvariantLabel; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureInitialNodeCSDDNameLabel; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public CSDDInitialNodeFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutThis = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutThis.numColumns = 1;&#xA;&#x9;layoutThis.makeColumnsEqualWidth = false;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;this.setFill(false);&#xA;this.setOutline(false);&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureInitialNodeInvariantLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureInitialNodeInvariantLabel.setText(&quot;&quot;);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureInitialNodeInvariantLabel = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureInitialNodeInvariantLabel.verticalAlignment = org.eclipse.draw2d.GridData.BEGINNING;&#xA;constraintFFigureInitialNodeInvariantLabel.horizontalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureInitialNodeInvariantLabel.horizontalIndent = 0;&#xA;constraintFFigureInitialNodeInvariantLabel.horizontalSpan = 1;&#xA;constraintFFigureInitialNodeInvariantLabel.verticalSpan = 1;&#xA;constraintFFigureInitialNodeInvariantLabel.grabExcessHorizontalSpace = true;&#xA;constraintFFigureInitialNodeInvariantLabel.grabExcessVerticalSpace = false;&#xA;this.add(fFigureInitialNodeInvariantLabel, constraintFFigureInitialNodeInvariantLabel);&#xA;&#xA;&#xA;&#xA;&#xA;fFigureInitialNodeCSDDNameLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureInitialNodeCSDDNameLabel.setText(&quot;&quot;);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureInitialNodeCSDDNameLabel = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureInitialNodeCSDDNameLabel.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureInitialNodeCSDDNameLabel.horizontalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureInitialNodeCSDDNameLabel.horizontalIndent = 0;&#xA;constraintFFigureInitialNodeCSDDNameLabel.horizontalSpan = 1;&#xA;constraintFFigureInitialNodeCSDDNameLabel.verticalSpan = 1;&#xA;constraintFFigureInitialNodeCSDDNameLabel.grabExcessHorizontalSpace = true;&#xA;constraintFFigureInitialNodeCSDDNameLabel.grabExcessVerticalSpace = false;&#xA;this.add(fFigureInitialNodeCSDDNameLabel, constraintFFigureInitialNodeCSDDNameLabel);&#xA;&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.Ellipse startNodeEllipse0 = new org.eclipse.draw2d.Ellipse();&#xA;&#xA;&#x9;startNodeEllipse0.setForegroundColor(org.eclipse.draw2d.ColorConstants.black);&#xA;&#x9;startNodeEllipse0.setBackgroundColor(org.eclipse.draw2d.ColorConstants.black);&#xA;startNodeEllipse0.setPreferredSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(15)&#xA;, getMapMode().DPtoLP(15)&#xA;));&#xA;startNodeEllipse0.setMaximumSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(15)&#xA;, getMapMode().DPtoLP(15)&#xA;));&#xA;startNodeEllipse0.setMinimumSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(15)&#xA;, getMapMode().DPtoLP(15)&#xA;));&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintStartNodeEllipse0 = new org.eclipse.draw2d.GridData();&#xA;constraintStartNodeEllipse0.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintStartNodeEllipse0.horizontalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintStartNodeEllipse0.horizontalIndent = 0;&#xA;constraintStartNodeEllipse0.horizontalSpan = 1;&#xA;constraintStartNodeEllipse0.verticalSpan = 1;&#xA;constraintStartNodeEllipse0.grabExcessHorizontalSpace = false;&#xA;constraintStartNodeEllipse0.grabExcessVerticalSpace = false;&#xA;this.add(startNodeEllipse0, constraintStartNodeEllipse0);&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureInitialNodeInvariantLabel() {&#xA;&#x9;&#x9;return fFigureInitialNodeInvariantLabel;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureInitialNodeCSDDNameLabel() {&#xA;&#x9;&#x9;return fFigureInitialNodeCSDDNameLabel;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD/model/ComponentSDD.genmodel#//componentsdd/InitialNode"/>
+            href="../../org.muml.reconfiguration.verification.sdd.componentsdd/model/ComponentSDD.genmodel#//componentsdd/InitialNode"/>
         <containmentMetaFeature
             href="../../org.muml.storydiagram.verification.sdd/model/sdd.genmodel#//sdd/AbstractStoryDecisionDiagram/nodes"/>
         <childMetaFeature
@@ -1924,7 +1924,7 @@
     </tabs>
   </propertySheet>
   <domainGenModel
-      href="../../de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD/model/ComponentSDD.genmodel#/"/>
+      href="../../org.muml.reconfiguration.verification.sdd.componentsdd/model/ComponentSDD.genmodel#/"/>
   <expressionProviders>
     <providers
         xsi:type="gmfgen:GenExpressionInterpreter">
@@ -2061,7 +2061,7 @@
         className="ComponentStoryPatternNodeLabelExpressionLabelParser5037"
         viewExpression="//@expressionProviders/@providers.0/@expressions.13">
       <expressionContext
-          href="../../de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD/model/ComponentSDD.genmodel#//componentsdd/ComponentStoryPatternNode"/>
+          href="../../org.muml.reconfiguration.verification.sdd.componentsdd/model/ComponentSDD.genmodel#//componentsdd/ComponentStoryPatternNode"/>
     </implementations>
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
@@ -2069,7 +2069,7 @@
         className="ComponentStoryPatternNodeLabelExpressionLabelParser5038"
         viewExpression="//@expressionProviders/@providers.0/@expressions.14">
       <expressionContext
-          href="../../de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD/model/ComponentSDD.genmodel#//componentsdd/ComponentStoryPatternNode"/>
+          href="../../org.muml.reconfiguration.verification.sdd.componentsdd/model/ComponentSDD.genmodel#//componentsdd/ComponentStoryPatternNode"/>
     </implementations>
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
@@ -2077,7 +2077,7 @@
         className="InitialNodeLabelExpressionLabelParser5042"
         viewExpression="//@expressionProviders/@providers.0/@expressions.15">
       <expressionContext
-          href="../../de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD/model/ComponentSDD.genmodel#//componentsdd/InitialNode"/>
+          href="../../org.muml.reconfiguration.verification.sdd.componentsdd/model/ComponentSDD.genmodel#//componentsdd/InitialNode"/>
     </implementations>
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
@@ -2085,7 +2085,7 @@
         className="InitialNodeLabelExpressionLabelParser5043"
         viewExpression="//@expressionProviders/@providers.0/@expressions.16">
       <expressionContext
-          href="../../de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD/model/ComponentSDD.genmodel#//componentsdd/InitialNode"/>
+          href="../../org.muml.reconfiguration.verification.sdd.componentsdd/model/ComponentSDD.genmodel#//componentsdd/InitialNode"/>
     </implementations>
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"

@@ -11,14 +11,14 @@
         href="../../org.muml.storydiagram.verification.sdd/model/sdd.ecore#//AbstractStoryDecisionDiagram/nodes"/>
     <ownedChild>
       <domainMetaElement
-          href="../../de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD/model/ComponentSDD.ecore#//ComponentStoryPatternNode"/>
+          href="../../org.muml.reconfiguration.verification.sdd.componentsdd/model/ComponentSDD.ecore#//ComponentStoryPatternNode"/>
       <domainInitializer
           xsi:type="gmfmap:FeatureSeqInitializer">
         <initializers
             xsi:type="gmfmap:ReferenceNewElementSpec">
           <feature
               xsi:type="ecore:EReference"
-              href="../../de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD/model/ComponentSDD.ecore#//ComponentStoryPatternNode/pattern"/>
+              href="../../org.muml.reconfiguration.verification.sdd.componentsdd/model/ComponentSDD.ecore#//ComponentStoryPatternNode/pattern"/>
           <newElementInitializers>
             <initializers
                 xsi:type="gmfmap:FeatureValueSpec">
@@ -103,7 +103,7 @@
       <children
           compartment="//@nodes.0/@ownedChild/@compartments.0">
         <containmentFeature
-            href="../../de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD/model/ComponentSDD.ecore#//ComponentStoryPatternNode/pattern"/>
+            href="../../org.muml.reconfiguration.verification.sdd.componentsdd/model/ComponentSDD.ecore#//ComponentStoryPatternNode/pattern"/>
         <ownedChild>
           <domainMetaElement
               href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.ecore#//ComponentStoryPattern"/>
@@ -232,7 +232,7 @@
         href="../../org.muml.storydiagram.verification.sdd/model/sdd.ecore#//AbstractStoryDecisionDiagram/nodes"/>
     <ownedChild>
       <domainMetaElement
-          href="../../de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD/model/ComponentSDD.ecore#//InitialNode"/>
+          href="../../org.muml.reconfiguration.verification.sdd.componentsdd/model/ComponentSDD.ecore#//InitialNode"/>
       <labelMappings
           xsi:type="gmfmap:ExpressionLabelMapping"
           readOnly="true">
@@ -388,9 +388,9 @@
     <diagramCanvas
         href="ComponentSDD.gmfgraph#componentSDD"/>
     <domainModel
-        href="../../de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD/model/ComponentSDD.ecore#/"/>
+        href="../../org.muml.reconfiguration.verification.sdd.componentsdd/model/ComponentSDD.ecore#/"/>
     <domainMetaElement
-        href="../../de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD/model/ComponentSDD.ecore#//ComponentStoryDecisionDiagram"/>
+        href="../../org.muml.reconfiguration.verification.sdd.componentsdd/model/ComponentSDD.ecore#//ComponentStoryDecisionDiagram"/>
     <palette
         href="../../de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd.diagram/model/sdd.gmftool#//@palette"/>
   </diagram>
