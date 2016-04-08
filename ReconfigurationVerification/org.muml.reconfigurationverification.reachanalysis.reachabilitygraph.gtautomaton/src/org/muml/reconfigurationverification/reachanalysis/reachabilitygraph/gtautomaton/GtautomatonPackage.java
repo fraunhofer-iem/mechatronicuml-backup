@@ -42,7 +42,7 @@ public interface GtautomatonPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.fujaba.de/reachabilityGraph/gtautomaton/0.4.0";
+	String eNS_URI = "http://www.muml.org/reconfigurationverification/reachanalysis/reachabilitygraph/gtautomaton/1.0.0";
 
 	/**
 	 * The package namespace name.

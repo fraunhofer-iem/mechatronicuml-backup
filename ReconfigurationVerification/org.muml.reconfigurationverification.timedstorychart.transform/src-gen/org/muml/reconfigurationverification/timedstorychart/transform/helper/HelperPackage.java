@@ -36,7 +36,7 @@ public interface HelperPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.fujaba.de/verification/timedstorychart/transform/helper/0.1.0";
+	String eNS_URI = "http://www.muml.org/reconfigurationverification/timedstorychart/transform/helper/1.0.0";
 
 	/**
 	 * The package namespace name.

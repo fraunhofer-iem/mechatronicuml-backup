@@ -13,7 +13,7 @@ modeltype reach_sdm uses sdm ('http://www.muml.org/storydiagram.reachanalysis.re
 modeltype reach_core uses reachabilityGraph ('http://www.muml.org/core/reachabilitygraph/1.0.0');
 modeltype reach_tsdm uses timedstorydiagram ('http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0');
 modeltype reach_tsdmTransform uses tsdmhelper('http://www.muml.org/reconfigurationverification.reachanalysis.tsdm.transform/helper/1.0.0');
-modeltype reach_gta uses gtautomaton('http://www.fujaba.de/reachabilityGraph/gtautomaton/0.4.0');
+modeltype reach_gta uses gtautomaton('http://www.muml.org/reconfigurationverification/reachanalysis/reachabilitygraph/gtautomaton/1.0.0');
 //others
 modeltype ecore uses ecore;
 
