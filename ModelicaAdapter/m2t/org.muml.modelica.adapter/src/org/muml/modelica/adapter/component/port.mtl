@@ -6,7 +6,7 @@
 				'http://www.fujaba.de/modelinstance/0.4.0',
 				'http://www.muml.org/pim/component/1.0.0',
 				'http://www.muml.org/pim/instance/1.0.0',
-				'http://www.fujaba.de/modelica/m2t/transform/0.4.0',
+				'http://www.muml.de/modelica/transform/1.0.0',
 				'http://www.muml.org/pim/realtimestatechart/1.0.0')/]
 
 [import org::muml::modelica::adapter::rtsc::actionlanguage::expression]

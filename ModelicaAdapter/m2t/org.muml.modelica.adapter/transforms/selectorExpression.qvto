@@ -11,7 +11,7 @@ modeltype COREEXP uses core::expressions('http://www.muml.org/core/1.0.0');
 modeltype CORE uses core::expressions::common('http://www.muml.org/core/1.0.0');
 modeltype ACTION uses actionlanguage('http://www.muml.org/pim/actionlanguage/1.0.0');
 modeltype ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
-modeltype TRANSFORM uses transform('http://www.fujaba.de/modelica/m2t/transform/0.4.0');
+modeltype TRANSFORM uses transform('http://www.muml.de/modelica/transform/1.0.0');
 
 library SelectorExpression
 	extends Util; // extends is only used due to a qvto bug, which is fixed in luna

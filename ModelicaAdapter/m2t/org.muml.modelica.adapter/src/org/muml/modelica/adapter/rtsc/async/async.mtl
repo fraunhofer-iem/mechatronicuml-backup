@@ -1,7 +1,7 @@
 [module async('http://www.muml.org/pim/realtimestatechart/1.0.0',
 			  'http://www.muml.org/pim/behavior/1.0.0',
 			  'http://www.muml.org/pim/msgtype/1.0.0',
-			  'http://www.fujaba.de/modelica/m2t/transform/0.4.0')]
+			  'http://www.muml.de/modelica/transform/1.0.0')]
 
 [import org::muml::modelica::adapter::rtsc::actionlanguage::expression]
 [import org::muml::modelica::adapter::rtsc::async::helper::port]
