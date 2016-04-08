@@ -83,7 +83,7 @@
           xsi:type="gmfmap:ExpressionLabelMapping"
           readOnly="true">
         <diagramLabel
-            href="../../de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd.diagram/model/sdd.gmfgraph#PatternNodeType"/>
+            href="../../org.muml.storydiagram.verification.sdd.basicsdd.diagram/model/sdd.gmfgraph#PatternNodeType"/>
         <viewExpression
             body="let&#xD;&#xA;&#x9;directContents : Sequence(OclAny) = self.eContents(),&#xD;&#xA;&#x9;allContents: Set(OclAny)= directContents->closure(t | &#xD;&#xA;&#x9;&#x9;if&#xD;&#xA;&#x9;&#x9;&#x9;t.oclIsKindOf(ecore::EObject)&#xD;&#xA;&#x9;&#x9;then&#xD;&#xA;&#x9;&#x9;&#x9;t.oclAsType(ecore::EObject).eContents()&#xD;&#xA;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;null&#xD;&#xA;&#x9;&#x9;endif&#xD;&#xA;&#x9;)->flatten()->asSet(),&#xD;&#xA;&#x9;boundCompSPVariables : Set(OclAny) = allContents->select(oclIsKindOf(componentstorypattern::ComponentStoryPatternVariable) and oclAsType(componentstorypattern::ComponentStoryPatternVariable).bindingState = storydiagrams::patterns::BindingState::UNBOUND),&#xD;&#xA;&#x9;checkVariables : OrderedSet(OclAny) = boundCompSPVariables->select(not (oclIsTypeOf(componentstorypattern::ComponentVariable) or oclAsType(componentstorypattern::ComponentStoryPatternVariable).name = ''))->asOrderedSet()&#xD;&#xA;in&#xD;&#xA;&#x9;checkVariables->iterate(v : OclAny; s : String = '' | s+v.oclAsType(componentstorypattern::ComponentStoryPatternVariable).name+&#xD;&#xA;&#x9;&#x9;if&#xD;&#xA;&#x9;&#x9;&#x9;checkVariables->indexOf(v) = checkVariables->size()&#xD;&#xA;&#x9;&#x9;then&#xD;&#xA;&#x9;&#x9;&#x9;''&#xD;&#xA;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;', '&#xD;&#xA;&#x9;&#x9;endif&#xD;&#xA;&#x9;)"/>
       </labelMappings>
@@ -91,15 +91,15 @@
           xsi:type="gmfmap:ExpressionLabelMapping"
           readOnly="true">
         <diagramLabel
-            href="../../de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd.diagram/model/sdd.gmfgraph#PatternNodeName"/>
+            href="../../org.muml.storydiagram.verification.sdd.basicsdd.diagram/model/sdd.gmfgraph#PatternNodeName"/>
         <viewExpression
             body="if&#xD;&#xA;&#x9;self.type = sdd::PatternNodeType::Existential&#xD;&#xA;then&#xD;&#xA;&#x9;'\u2203'&#xD;&#xA;else&#xD;&#xA;&#x9;'\u2200'&#xD;&#xA;endif"/>
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="../../de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd.diagram/model/sdd.gmftool#//@palette/@tools.0/@tools.2"/>
+          href="../../org.muml.storydiagram.verification.sdd.basicsdd.diagram/model/sdd.gmftool#//@palette/@tools.0/@tools.2"/>
       <diagramNode
-          href="../../de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd.diagram/model/sdd.gmfgraph#PatternNode"/>
+          href="../../org.muml.storydiagram.verification.sdd.basicsdd.diagram/model/sdd.gmfgraph#PatternNode"/>
       <children
           compartment="//@nodes.0/@ownedChild/@compartments.0">
         <containmentFeature
@@ -210,7 +210,7 @@
       <compartments
           children="//@nodes.0/@ownedChild/@children.0">
         <compartment
-            href="../../de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd.diagram/model/sdd.gmfgraph#PatternNodeContentCompartment"/>
+            href="../../org.muml.storydiagram.verification.sdd.basicsdd.diagram/model/sdd.gmfgraph#PatternNodeContentCompartment"/>
       </compartments>
     </ownedChild>
   </nodes>
@@ -222,9 +222,9 @@
           href="../../org.muml.storydiagram.verification.sdd/model/sdd.ecore#//LeafNode"/>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="../../de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd.diagram/model/sdd.gmftool#//@palette/@tools.0/@tools.1"/>
+          href="../../org.muml.storydiagram.verification.sdd.basicsdd.diagram/model/sdd.gmftool#//@palette/@tools.0/@tools.1"/>
       <diagramNode
-          href="../../de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd.diagram/model/sdd.gmfgraph#LeafNode"/>
+          href="../../org.muml.storydiagram.verification.sdd.basicsdd.diagram/model/sdd.gmfgraph#LeafNode"/>
     </ownedChild>
   </nodes>
   <nodes>
@@ -263,9 +263,9 @@
         href="../../org.muml.storydiagram.verification.sdd/model/sdd.ecore#//AbstractStoryDecisionDiagram/edges"/>
     <tool
         xsi:type="gmftool:CreationTool"
-        href="../../de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd.diagram/model/sdd.gmftool#//@palette/@tools.0/@tools.0"/>
+        href="../../org.muml.storydiagram.verification.sdd.basicsdd.diagram/model/sdd.gmftool#//@palette/@tools.0/@tools.0"/>
     <diagramLink
-        href="../../de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd.diagram/model/sdd.gmfgraph#Edge"/>
+        href="../../org.muml.storydiagram.verification.sdd.basicsdd.diagram/model/sdd.gmfgraph#Edge"/>
     <sourceMetaFeature
         xsi:type="ecore:EReference"
         href="../../org.muml.storydiagram.verification.sdd/model/sdd.ecore#//Edge/sourceNode"/>
@@ -392,6 +392,6 @@
     <domainMetaElement
         href="../../org.muml.reconfiguration.verification.sdd.componentsdd/model/ComponentSDD.ecore#//ComponentStoryDecisionDiagram"/>
     <palette
-        href="../../de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd.diagram/model/sdd.gmftool#//@palette"/>
+        href="../../org.muml.storydiagram.verification.sdd.basicsdd.diagram/model/sdd.gmftool#//@palette"/>
   </diagram>
 </gmfmap:Mapping>
