@@ -5,7 +5,7 @@ transformation UPPAALTrace2MUMLTrace(in cicModel:muml, in uppaalModel:uppaal, in
 
 modeltype uppaal_trace uses 'http://www.uni-paderborn.de/uppaal/trace/0.4.0';
 modeltype reachability uses 'http://www.fujaba.de/reachabilityGraph/0.4.0';
-modeltype reachability_rtsc uses 'http://www.fujaba.de/reachabilityGraph/rtsc/0.4.0';
+modeltype reachability_rtsc uses 'http://www.muml.org/verification/core/reachanalysis/reachabilitygraph/rtsc/1.0.0';
 modeltype muml_runtime uses 'http://www.fujaba.de/muml/runtime/0.4.0';
 modeltype uppaal_templates uses uppaal::templates('http://www.uni-paderborn.de/uppaal/0.4.0');
 modeltype muml_rtsc uses pim::realtimestatechart('http://www.muml.org/pim/1.0.0');
