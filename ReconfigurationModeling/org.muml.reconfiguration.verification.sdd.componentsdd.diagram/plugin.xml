@@ -334,7 +334,7 @@
    
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
       <?gmfgen generated="true"?>
-      <metamodel nsURI="http://www.fujaba.de/muml/verification/sdd/componentsdd/0.4.0">
+      <metamodel nsURI="http://www.muml.org/reconfiguration/verification/sdd/componentsdd/1.0.0">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.ComponentStoryDecisionDiagram_1000"
                name="%metatype.name.ComponentStoryDecisionDiagram_1000"
@@ -344,7 +344,7 @@
             <param name="semanticHint" value="1000"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/verification/sdd/componentsdd/0.4.0">
+      <metamodel nsURI="http://www.muml.org/reconfiguration/verification/sdd/componentsdd/1.0.0">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.ComponentStoryPatternNode_2003"
                name="%metatype.name.ComponentStoryPatternNode_2003"
@@ -364,7 +364,7 @@
             <param name="semanticHint" value="2002"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/verification/sdd/componentsdd/0.4.0">
+      <metamodel nsURI="http://www.muml.org/reconfiguration/verification/sdd/componentsdd/1.0.0">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.InitialNode_2004"
                name="%metatype.name.InitialNode_2004"
@@ -765,7 +765,7 @@
          
          <child
                class="ComponentStoryDecisionDiagram"
-               packageNsUri="http://www.fujaba.de/muml/verification/sdd/componentsdd/0.4.0">
+               packageNsUri="http://www.muml.org/reconfiguration/verification/sdd/componentsdd/1.0.0">
          </child>
          
       </category>
@@ -782,7 +782,7 @@
             modelElementCategoryKey="de.uni_paderborn.fujaba.muml.verification.sdd.componentssdd.category"
             modelId="Component Story Decision">
          <diagramElement
-               packageNsURI="http://www.fujaba.de/muml/verification/sdd/componentsdd/0.4.0"
+               packageNsURI="http://www.muml.org/reconfiguration/verification/sdd/componentsdd/1.0.0"
                className="ComponentStoryDecisionDiagram">
          </diagramElement>
          

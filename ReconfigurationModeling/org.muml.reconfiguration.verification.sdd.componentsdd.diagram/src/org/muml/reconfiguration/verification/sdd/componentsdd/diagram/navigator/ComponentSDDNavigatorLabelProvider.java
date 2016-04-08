@@ -91,16 +91,16 @@ public class ComponentSDDNavigatorLabelProvider extends LabelProvider implements
 				.getVisualID(view)) {
 		case org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.ComponentStoryDecisionDiagramEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Diagram?http://www.fujaba.de/muml/verification/sdd/componentsdd/0.4.0?ComponentStoryDecisionDiagram", org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.ComponentStoryDecisionDiagram_1000); //$NON-NLS-1$
+					"Navigator?Diagram?http://www.muml.org/reconfiguration/verification/sdd/componentsdd/1.0.0?ComponentStoryDecisionDiagram", org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.ComponentStoryDecisionDiagram_1000); //$NON-NLS-1$
 		case org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.LeafNodeEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?TopLevelNode?http://www.muml.org/storydiagram/verification/sdd/1.0.0?LeafNode", org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.LeafNode_2002); //$NON-NLS-1$
 		case org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.ComponentStoryPatternNodeEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?TopLevelNode?http://www.fujaba.de/muml/verification/sdd/componentsdd/0.4.0?ComponentStoryPatternNode", org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.ComponentStoryPatternNode_2003); //$NON-NLS-1$
+					"Navigator?TopLevelNode?http://www.muml.org/reconfiguration/verification/sdd/componentsdd/1.0.0?ComponentStoryPatternNode", org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.ComponentStoryPatternNode_2003); //$NON-NLS-1$
 		case org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.InitialNodeEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?TopLevelNode?http://www.fujaba.de/muml/verification/sdd/componentsdd/0.4.0?InitialNode", org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.InitialNode_2004); //$NON-NLS-1$
+					"Navigator?TopLevelNode?http://www.muml.org/reconfiguration/verification/sdd/componentsdd/1.0.0?InitialNode", org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.InitialNode_2004); //$NON-NLS-1$
 		case org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.ComponentStoryPatternEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?Node?http://www.muml.org/reconfiguration/componentstorypattern/1.0.0?ComponentStoryPattern", org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.ComponentStoryPattern_3001); //$NON-NLS-1$
