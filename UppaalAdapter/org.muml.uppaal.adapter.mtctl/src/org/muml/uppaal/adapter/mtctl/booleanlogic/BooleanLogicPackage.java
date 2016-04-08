@@ -38,7 +38,7 @@ public interface BooleanLogicPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/BooleanLogic";
+	String eNS_URI = "http://www.muml.org/uppaal/adapter/mtctl/booleanlogic/1.0.0";
 
 	/**
 	 * The package namespace name.

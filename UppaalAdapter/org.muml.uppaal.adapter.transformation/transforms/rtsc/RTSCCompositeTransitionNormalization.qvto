@@ -20,10 +20,10 @@ modeltype storydriven_core_expressions_common uses core::expressions::common('ht
 modeltype storydriven_core_expressions uses core::expressions('http://www.muml.org/core/1.0.0');
 modeltype extension uses 'http://www.muml.org/uppaal/adapter/extension/verificationextension/1.0.0';
 modeltype modelinstance uses 'http://www.muml.org/core/modelinstance/1.0.0';
-modeltype mtctl uses 'http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl';
-modeltype mtctl_comparables uses mtctl::Comparables('http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl');
-modeltype mtctl_predicates uses 'http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Predicates';
-modeltype mtctl_bool uses 'http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/BooleanLogic';
+modeltype mtctl uses 'http://www.muml.org/uppaal/adapter/mtctl/1.0.0';
+modeltype mtctl_comparables uses mtctl::Comparables('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
+modeltype mtctl_predicates uses 'http://www.muml.org/uppaal/adapter/mtctl/predicates/1.0.0';
+modeltype mtctl_bool uses 'http://www.muml.org/uppaal/adapter/mtctl/booleanlogic/1.0.0';
 modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
 
 property mumlElemsToFix : Set(MumlElemExpr) = Set{}; --set of mapped MumlElemExpr where the original was referencing a State

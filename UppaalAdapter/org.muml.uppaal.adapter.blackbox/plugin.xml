@@ -58,7 +58,7 @@
              	nsURI="http://www.eclipse.org/emf/2002/Ecore">
              </metamodel>
              <metamodel
-             	nsURI="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Comparables">
+             	nsURI="http://www.muml.org/uppaal/adapter/mtctl/comparables/1.0.0">
              </metamodel>
              <metamodel
              	nsURI="http://www.muml.org/pim/constraint/1.0.0">

@@ -13,12 +13,12 @@ public class AbstractMtctlJavaValidator extends org.eclipse.xtext.validation.Abs
 	@Override
 	protected List<EPackage> getEPackages() {
 	    List<EPackage> result = new ArrayList<EPackage>();
-	    result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl"));
-	    result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Quantifiers"));
-	    result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/BooleanLogic"));
-	    result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Predicates"));
-	    result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Comparables"));
-	    result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Sets"));
+	    result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.muml.org/uppaal/adapter/mtctl/1.0.0"));
+	    result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.muml.org/uppaal/adapter/mtctl/quantifiers/1.0.0"));
+	    result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.muml.org/uppaal/adapter/mtctl/booleanlogic/1.0.0"));
+	    result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.muml.org/uppaal/adapter/mtctl/predicates/1.0.0"));
+	    result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.muml.org/uppaal/adapter/mtctl/comparables/1.0.0"));
+	    result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.muml.org/uppaal/adapter/mtctl/sets/1.0.0"));
 		return result;
 	}
 

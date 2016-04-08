@@ -8,12 +8,12 @@ modeltype behavior uses pim::behavior('http://www.muml.org/pim/1.0.0');
 modeltype verificationExtension uses 'http://www.muml.org/uppaal/adapter/extension/verificationextension/1.0.0';
 modeltype instancePackage uses muml::instance('http://www.muml.org/pim/1.0.0');
 modeltype modelinstance uses 'http://www.muml.org/core/modelinstance/1.0.0';
-modeltype mtctl uses 'http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl';
-modeltype mtctlQuantifiers uses mtctl::Quantifiers('http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl');
-modeltype mtctlPredicates uses mtctl::Predicates('http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl');
-modeltype mtctlSets uses mtctl::Sets('http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl');
-modeltype mtctlBooleanLogic uses mtctl::BooleanLogic('http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl');
-modeltype mtctlComparables uses mtctl::Comparables('http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl');
+modeltype mtctl uses 'http://www.muml.org/uppaal/adapter/mtctl/1.0.0';
+modeltype mtctlQuantifiers uses mtctl::Quantifiers('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
+modeltype mtctlPredicates uses mtctl::Predicates('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
+modeltype mtctlSets uses mtctl::Sets('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
+modeltype mtctlBooleanLogic uses mtctl::BooleanLogic('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
+modeltype mtctlComparables uses mtctl::Comparables('http://www.muml.org/uppaal/adapter/mtctl/1.0.0');
 modeltype expressionsModel uses core::expressions('http://www.muml.org/core/1.0.0');
 
 /**
