@@ -71,7 +71,7 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements ICommon
 	public Image getImage(View view) {
 		switch (org.muml.pim.pattern.diagram.part.MumlVisualIDRegistry.getVisualID(view)) {
 		case org.muml.pim.pattern.diagram.edit.parts.ModelElementCategoryEditPart.VISUAL_ID:
-			return getImage("Navigator?Diagram?http://www.fujaba.de/modelinstance/0.4.0?ModelElementCategory", //$NON-NLS-1$
+			return getImage("Navigator?Diagram?http://www.muml.org/modelinstance/1.0.0?ModelElementCategory", //$NON-NLS-1$
 					org.muml.pim.pattern.diagram.providers.MumlElementTypes.ModelElementCategory_1000);
 		case org.muml.pim.pattern.diagram.edit.parts.CoordinationPatternEditPart.VISUAL_ID:
 			return getImage("Navigator?TopLevelNode?http://www.muml.org/pim/pattern/1.0.0?CoordinationPattern", //$NON-NLS-1$

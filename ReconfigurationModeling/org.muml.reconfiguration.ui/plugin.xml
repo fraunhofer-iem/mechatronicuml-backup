@@ -388,7 +388,7 @@
                 modelId="Component"
                 preferencesHint="de.uni_paderborn.fujaba.muml.component.diagram">
              <diagramElement
-                   packageNsURI="http://www.fujaba.de/modelinstance/0.4.0"
+                   packageNsURI="http://www.muml.org/modelinstance/1.0.0"
                    className="ModelElementCategory">
              </diagramElement>
              <topLevelNode

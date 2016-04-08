@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:component="http://www.muml.org/pim/component/1.0.0" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.4.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_NFpoAO8CEeOkfud6pZP9gQ" type="Component" name="ConvoyDrive.component_diagram" measurementUnit="Pixel">
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:component="http://www.muml.org/pim/component/1.0.0" xmlns:modelinstance="http://www.muml.org/modelinstance/1.0.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_NFpoAO8CEeOkfud6pZP9gQ" type="Component" name="ConvoyDrive.component_diagram" measurementUnit="Pixel">
   <children xmi:type="notation:Shape" xmi:id="_NFpoAu8CEeOkfud6pZP9gQ" type="2006" fontName="Segoe UI" lineColor="0">
     <children xmi:type="notation:DecorationNode" xmi:id="_NFpoBO8CEeOkfud6pZP9gQ" type="5028"/>
     <children xmi:type="notation:Shape" xmi:id="_URPbQu8eEeONt73-GFpSIw" type="3011" fontName="Segoe UI" lineColor="0">

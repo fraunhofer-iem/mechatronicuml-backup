@@ -351,7 +351,7 @@
 
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
       <?gmfgen generated="true"?>
-      <metamodel nsURI="http://www.fujaba.de/modelinstance/0.4.0">
+      <metamodel nsURI="http://www.muml.org/modelinstance/1.0.0">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.pattern.diagram.ModelElementCategory_1000"
                name="%metatype.name.ModelElementCategory_1000"
@@ -768,7 +768,7 @@
             modelElementCategoryKey="de.uni_paderborn.fujaba.muml.pattern.category"
             modelId="Coordination Pattern">
          <diagramElement
-               packageNsURI="http://www.fujaba.de/modelinstance/0.4.0"
+               packageNsURI="http://www.muml.org/modelinstance/1.0.0"
                className="ModelElementCategory">
          </diagramElement>
          

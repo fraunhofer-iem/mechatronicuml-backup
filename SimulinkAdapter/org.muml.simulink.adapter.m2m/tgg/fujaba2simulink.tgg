@@ -15,7 +15,7 @@
     <usedPackage href="http://www.muml.org/pim/1.0.0#/"/>
     <usedPackage href="http://www.storydriven.org/core/0.3.1#/"/>
     <usedPackage href="http://www.storydriven.org/core/0.3.1#//expressions"/>
-    <usedPackage href="http://www.fujaba.de/modelinstance/0.4.0#/"/>
+    <usedPackage href="http://www.muml.org/modelinstance/1.0.0#/"/>
     <usedPackage href="http://www.storydriven.org/core/0.3.1#//expressions/common"/>
     <usedPackage href="http://www.muml.org/storydiagram/1.0.0#//calls"/>
     <usedPackage href="http://www.muml.org/storydiagram/1.0.0#//calls/expressions"/>
@@ -36,7 +36,7 @@
   </modelParameter>
   <rule xsi:type="de.upb.swt.qvt.tgg:TripleGraphGrammarAxiom" xmi:id="_j7WaYJzXEeCxo-rGjpVr5g" name="RootNode2SimulinkContainer">
     <node xmi:id="_xIi0cJzXEeCxo-rGjpVr5g" incomingEdge="_viFDQaDEEeCnWpMK39eFTA" graphPattern="_qv86sJzXEeCxo-rGjpVr5g _uJXGgZzXEeCxo-rGjpVr5g">
-      <eType href="http://www.fujaba.de/modelinstance/0.4.0#//RootNode"/>
+      <eType href="http://www.muml.org/modelinstance/1.0.0#//RootNode"/>
     </node>
     <node xmi:id="_yiGBUJzXEeCxo-rGjpVr5g" incomingEdge="_viFDQqDEEeCnWpMK39eFTA" graphPattern="_uJXGgZzXEeCxo-rGjpVr5g _rQSnoJzXEeCxo-rGjpVr5g">
       <eType href="http://www.muml.org/simulink/1.0.0#//SimulinkContainer"/>
@@ -59,9 +59,9 @@
   <rule xsi:type="de.upb.swt.qvt.tgg:TripleGraphGrammarRule" xmi:id="_40udAJzXEeCxo-rGjpVr5g" name="modElCat2simLib">
     <node xmi:id="_40udB5zXEeCxo-rGjpVr5g" incomingEdge="_z8c80KDEEeCnWpMK39eFTA" graphPattern="_40udAZzXEeCxo-rGjpVr5g _40udApzXEeCxo-rGjpVr5g _40udA5zXEeCxo-rGjpVr5g">
       <outgoingEdge xmi:id="_h1H4QJzYEeCxo-rGjpVr5g" targetNode="_7VES0JzXEeCxo-rGjpVr5g" graphPattern="_40udApzXEeCxo-rGjpVr5g">
-        <typeReference href="http://www.fujaba.de/modelinstance/0.4.0#//RootNode/categories"/>
+        <typeReference href="http://www.muml.org/modelinstance/1.0.0#//RootNode/categories"/>
       </outgoingEdge>
-      <eType href="http://www.fujaba.de/modelinstance/0.4.0#//RootNode"/>
+      <eType href="http://www.muml.org/modelinstance/1.0.0#//RootNode"/>
     </node>
     <node xmi:id="_40udCJzXEeCxo-rGjpVr5g" incomingEdge="_0ekycKDEEeCnWpMK39eFTA" graphPattern="_40udAZzXEeCxo-rGjpVr5g _40udApzXEeCxo-rGjpVr5g _40udBZzXEeCxo-rGjpVr5g">
       <outgoingEdge xmi:id="__pxpRpzXEeCxo-rGjpVr5g" targetNode="__pxpQJzXEeCxo-rGjpVr5g" graphPattern="_40udApzXEeCxo-rGjpVr5g">
@@ -70,7 +70,7 @@
       <eType href="http://www.muml.org/simulink/1.0.0#//SimulinkContainer"/>
     </node>
     <node xmi:id="_7VES0JzXEeCxo-rGjpVr5g" name="modElCat" incomingEdge="_h1H4QJzYEeCxo-rGjpVr5g _3yeMIaDEEeCnWpMK39eFTA" graphPattern="_40udApzXEeCxo-rGjpVr5g _40udA5zXEeCxo-rGjpVr5g">
-      <eType href="http://www.fujaba.de/modelinstance/0.4.0#//ModelElementCategory"/>
+      <eType href="http://www.muml.org/modelinstance/1.0.0#//ModelElementCategory"/>
     </node>
     <node xmi:id="__pxpQJzXEeCxo-rGjpVr5g" name="simLib" incomingEdge="__pxpRpzXEeCxo-rGjpVr5g _3yeMIqDEEeCnWpMK39eFTA _Vs3r4He0EeGL-fD4OX3tVg" graphPattern="_40udApzXEeCxo-rGjpVr5g _40udBZzXEeCxo-rGjpVr5g">
       <outgoingEdge xmi:id="_xcS9VU5UEeGCt_Gl18Sz6A" targetNode="_5pPYRp32EeGeZZPnfJRjWA" graphPattern="_40udApzXEeCxo-rGjpVr5g">
@@ -150,7 +150,7 @@
     <domain xsi:type="de.upb.swt.qvt.tgg:DomainGraphPattern" xmi:id="_40udBJzXEeCxo-rGjpVr5g" typedModel="_NYLIYJzXEeCxo-rGjpVr5g" node="_x-rokKDEEeCnWpMK39eFTA _3yeMIKDEEeCnWpMK39eFTA"/>
     <domain xsi:type="de.upb.swt.qvt.tgg:DomainGraphPattern" xmi:id="_40udBZzXEeCxo-rGjpVr5g" typedModel="_NK6IcJzXEeCxo-rGjpVr5g" node="_40udCJzXEeCxo-rGjpVr5g __pxpQJzXEeCxo-rGjpVr5g _5pPYRp32EeGeZZPnfJRjWA _5pPYSp32EeGeZZPnfJRjWA _5pPYTp32EeGeZZPnfJRjWA _5pPYUp32EeGeZZPnfJRjWA _5pPYVp32EeGeZZPnfJRjWA _5pPYWp32EeGeZZPnfJRjWA _5pPYXp32EeGeZZPnfJRjWA"/>
     <constraint xsi:type="de.upb.swt.qvt.tgg:OCLConstraint" xmi:id="_Y_6yIJzYEeCxo-rGjpVr5g" slotNode="_7VES0JzXEeCxo-rGjpVr5g" expression="'de.uni_paderborn.fujaba.muml.components.category'">
-      <slotAttribute href="http://www.fujaba.de/modelinstance/0.4.0#//ModelElementCategory/key"/>
+      <slotAttribute href="http://www.muml.org/modelinstance/1.0.0#//ModelElementCategory/key"/>
     </constraint>
     <constraint xsi:type="de.upb.swt.qvt.tgg:OCLConstraint" xmi:id="_skwgEKDQEeCEzLz4fDrGXA" slotNode="__pxpQJzXEeCxo-rGjpVr5g" expression="'AtomicLibrary'">
       <slotAttribute href="http://www.muml.org/simulink/1.0.0#//Block/name"/>
@@ -222,9 +222,9 @@
     </node>
     <node xmi:id="_yIy1JsXXEeCl0_SfQxol4w" incomingEdge="_yIy1NMXXEeCl0_SfQxol4w" graphPattern="_yIy1IMXXEeCl0_SfQxol4w _yIy1IcXXEeCl0_SfQxol4w _yIy1IsXXEeCl0_SfQxol4w">
       <outgoingEdge xmi:id="_8eHDJsXXEeCl0_SfQxol4w" targetNode="_8eHDIMXXEeCl0_SfQxol4w" graphPattern="_yIy1IcXXEeCl0_SfQxol4w">
-        <typeReference href="http://www.fujaba.de/modelinstance/0.4.0#//RootNode/categories"/>
+        <typeReference href="http://www.muml.org/modelinstance/1.0.0#//RootNode/categories"/>
       </outgoingEdge>
-      <eType href="http://www.fujaba.de/modelinstance/0.4.0#//RootNode"/>
+      <eType href="http://www.muml.org/modelinstance/1.0.0#//RootNode"/>
     </node>
     <node xmi:id="_yIy1K8XXEeCl0_SfQxol4w" graphPattern="_yIy1IMXXEeCl0_SfQxol4w _yIy1IcXXEeCl0_SfQxol4w _yIy1I8XXEeCl0_SfQxol4w">
       <outgoingEdge xmi:id="_yIy1M8XXEeCl0_SfQxol4w" targetNode="_yIy1JcXXEeCl0_SfQxol4w" graphPattern="_yIy1IMXXEeCl0_SfQxol4w _yIy1IcXXEeCl0_SfQxol4w">
@@ -248,7 +248,7 @@
       <eType href="http://www.muml.org/simulink/1.0.0#//stateflow/StateflowMachine"/>
     </node>
     <node xmi:id="_8eHDIMXXEeCl0_SfQxol4w" name="rtScCat" incomingEdge="_8eHDJsXXEeCl0_SfQxol4w _FGX-YMZlEeCi64Sqmkr9-g" graphPattern="_yIy1IcXXEeCl0_SfQxol4w _yIy1IsXXEeCl0_SfQxol4w">
-      <eType href="http://www.fujaba.de/modelinstance/0.4.0#//ModelElementCategory"/>
+      <eType href="http://www.muml.org/modelinstance/1.0.0#//ModelElementCategory"/>
     </node>
     <node xmi:id="_mC3IoMXYEeCl0_SfQxol4w" incomingEdge="_nMxXAMXYEeCl0_SfQxol4w" graphPattern="_yIy1IcXXEeCl0_SfQxol4w _yIy1I8XXEeCl0_SfQxol4w">
       <outgoingEdge xmi:id="_EtMCUMZlEeCi64Sqmkr9-g" targetNode="_36V9AMXXEeCl0_SfQxol4w" graphPattern="_yIy1IcXXEeCl0_SfQxol4w">
@@ -271,7 +271,7 @@
     <domain xsi:type="de.upb.swt.qvt.tgg:DomainGraphPattern" xmi:id="_yIy1I8XXEeCl0_SfQxol4w" typedModel="_NYLIYJzXEeCxo-rGjpVr5g" node="_yIy1K8XXEeCl0_SfQxol4w _mC3IoMXYEeCl0_SfQxol4w"/>
     <domain xsi:type="de.upb.swt.qvt.tgg:DomainGraphPattern" xmi:id="_yIy1JMXXEeCl0_SfQxol4w" typedModel="_NK6IcJzXEeCxo-rGjpVr5g" node="_yIy1JcXXEeCl0_SfQxol4w _36V9AMXXEeCl0_SfQxol4w _95vg8EBoEeGxy-I1s6LQvw"/>
     <constraint xsi:type="de.upb.swt.qvt.tgg:OCLConstraint" xmi:id="_bQDGUMXYEeCl0_SfQxol4w" slotNode="_8eHDIMXXEeCl0_SfQxol4w" expression="'org.muml.realtimestatechart.category'">
-      <slotAttribute href="http://www.fujaba.de/modelinstance/0.4.0#//ModelElementCategory/key"/>
+      <slotAttribute href="http://www.muml.org/modelinstance/1.0.0#//ModelElementCategory/key"/>
     </constraint>
   </rule>
   <rule xsi:type="de.upb.swt.qvt.tgg:TripleGraphGrammarRule" xmi:id="_GHMn0MXZEeCl0_SfQxol4w" name="rtSc2chart">
@@ -295,9 +295,9 @@
     </node>
     <node xmi:id="_GHWY2MXZEeCl0_SfQxol4w" incomingEdge="_GHWY38XZEeCl0_SfQxol4w" graphPattern="_GHWY0MXZEeCl0_SfQxol4w _GHWY0cXZEeCl0_SfQxol4w _GHWY08XZEeCl0_SfQxol4w">
       <outgoingEdge xmi:id="_GHWY4sXZEeCl0_SfQxol4w" targetNode="_GHWY2sXZEeCl0_SfQxol4w" graphPattern="_GHWY0MXZEeCl0_SfQxol4w _GHWY0cXZEeCl0_SfQxol4w">
-        <typeReference href="http://www.fujaba.de/modelinstance/0.4.0#//RootNode/categories"/>
+        <typeReference href="http://www.muml.org/modelinstance/1.0.0#//RootNode/categories"/>
       </outgoingEdge>
-      <eType href="http://www.fujaba.de/modelinstance/0.4.0#//RootNode"/>
+      <eType href="http://www.muml.org/modelinstance/1.0.0#//RootNode"/>
     </node>
     <node xmi:id="_GHWY2cXZEeCl0_SfQxol4w" name="sfM" incomingEdge="_KPi9QMXZEeCl0_SfQxol4w _dKj1wMXZEeCl0_SfQxol4w _lR0b4EBbEeGxy-I1s6LQvw" graphPattern="_GHWY0MXZEeCl0_SfQxol4w _GHWY0cXZEeCl0_SfQxol4w _GHWY1MXZEeCl0_SfQxol4w">
       <outgoingEdge xmi:id="_JXq6EMXZEeCl0_SfQxol4w" targetNode="_JXhJEMXZEeCl0_SfQxol4w" graphPattern="_GHWY0cXZEeCl0_SfQxol4w">
@@ -310,9 +310,9 @@
     </node>
     <node xmi:id="_GHWY2sXZEeCl0_SfQxol4w" name="rtScCat" incomingEdge="_GHWY4sXZEeCl0_SfQxol4w _dnxWMMXZEeCl0_SfQxol4w" graphPattern="_GHWY0MXZEeCl0_SfQxol4w _GHWY0cXZEeCl0_SfQxol4w _GHWY08XZEeCl0_SfQxol4w">
       <outgoingEdge xmi:id="_OLhqpsXZEeCl0_SfQxol4w" targetNode="_OLhqoMXZEeCl0_SfQxol4w" graphPattern="_GHWY0cXZEeCl0_SfQxol4w">
-        <typeReference href="http://www.fujaba.de/modelinstance/0.4.0#//ModelElementCategory/modelElements"/>
+        <typeReference href="http://www.muml.org/modelinstance/1.0.0#//ModelElementCategory/modelElements"/>
       </outgoingEdge>
-      <eType href="http://www.fujaba.de/modelinstance/0.4.0#//ModelElementCategory"/>
+      <eType href="http://www.muml.org/modelinstance/1.0.0#//ModelElementCategory"/>
     </node>
     <node xmi:id="_GHWY28XZEeCl0_SfQxol4w" incomingEdge="_GHWY48XZEeCl0_SfQxol4w" graphPattern="_GHWY0MXZEeCl0_SfQxol4w _GHWY0cXZEeCl0_SfQxol4w _GHWY0sXZEeCl0_SfQxol4w">
       <outgoingEdge xmi:id="_dKj1wMXZEeCl0_SfQxol4w" targetNode="_GHWY2cXZEeCl0_SfQxol4w" graphPattern="_GHWY0cXZEeCl0_SfQxol4w _GHWY0MXZEeCl0_SfQxol4w">
@@ -678,9 +678,9 @@
   <rule xsi:type="de.upb.swt.qvt.tgg:TripleGraphGrammarRule" xmi:id="_oEngYJzYEeCxo-rGjpVr5g" name="discAtomComp2atomSys">
     <node xmi:id="_oEngZpzYEeCxo-rGjpVr5g" incomingEdge="_--6ksKDEEeCnWpMK39eFTA" graphPattern="_oEngYZzYEeCxo-rGjpVr5g _oEngYpzYEeCxo-rGjpVr5g _oEngZZzYEeCxo-rGjpVr5g">
       <outgoingEdge xmi:id="_oEngbpzYEeCxo-rGjpVr5g" targetNode="_oEngaZzYEeCxo-rGjpVr5g" graphPattern="_oEngYZzYEeCxo-rGjpVr5g _oEngYpzYEeCxo-rGjpVr5g">
-        <typeReference href="http://www.fujaba.de/modelinstance/0.4.0#//RootNode/categories"/>
+        <typeReference href="http://www.muml.org/modelinstance/1.0.0#//RootNode/categories"/>
       </outgoingEdge>
-      <eType href="http://www.fujaba.de/modelinstance/0.4.0#//RootNode"/>
+      <eType href="http://www.muml.org/modelinstance/1.0.0#//RootNode"/>
     </node>
     <node xmi:id="_oEngaJzYEeCxo-rGjpVr5g" incomingEdge="__lqboKDEEeCnWpMK39eFTA" graphPattern="_oEngYZzYEeCxo-rGjpVr5g _oEngYpzYEeCxo-rGjpVr5g _oEngY5zYEeCxo-rGjpVr5g">
       <outgoingEdge xmi:id="_oEngb5zYEeCxo-rGjpVr5g" targetNode="_oEngapzYEeCxo-rGjpVr5g" graphPattern="_oEngYZzYEeCxo-rGjpVr5g _oEngYpzYEeCxo-rGjpVr5g">
@@ -690,9 +690,9 @@
     </node>
     <node xmi:id="_oEngaZzYEeCxo-rGjpVr5g" name="modElCat" incomingEdge="_oEngbpzYEeCxo-rGjpVr5g _D5CVUKDFEeCnWpMK39eFTA" graphPattern="_oEngYZzYEeCxo-rGjpVr5g _oEngYpzYEeCxo-rGjpVr5g _oEngZZzYEeCxo-rGjpVr5g">
       <outgoingEdge xmi:id="_qMqyAJzYEeCxo-rGjpVr5g" targetNode="_qMhBAJzYEeCxo-rGjpVr5g" graphPattern="_oEngYpzYEeCxo-rGjpVr5g">
-        <typeReference href="http://www.fujaba.de/modelinstance/0.4.0#//ModelElementCategory/modelElements"/>
+        <typeReference href="http://www.muml.org/modelinstance/1.0.0#//ModelElementCategory/modelElements"/>
       </outgoingEdge>
-      <eType href="http://www.fujaba.de/modelinstance/0.4.0#//ModelElementCategory"/>
+      <eType href="http://www.muml.org/modelinstance/1.0.0#//ModelElementCategory"/>
     </node>
     <node xmi:id="_oEngapzYEeCxo-rGjpVr5g" name="" incomingEdge="_oEngb5zYEeCxo-rGjpVr5g _ERw-YKDFEeCnWpMK39eFTA _aZP7cHe0EeGL-fD4OX3tVg" graphPattern="_oEngYZzYEeCxo-rGjpVr5g _oEngYpzYEeCxo-rGjpVr5g _oEngY5zYEeCxo-rGjpVr5g">
       <outgoingEdge xmi:id="_52eYcJzYEeCxo-rGjpVr5g" targetNode="_sWWbUJzYEeCxo-rGjpVr5g" graphPattern="_oEngYpzYEeCxo-rGjpVr5g">
@@ -856,7 +856,7 @@
     <domain xsi:type="de.upb.swt.qvt.tgg:DomainGraphPattern" xmi:id="_oEngZJzYEeCxo-rGjpVr5g" typedModel="_NYLIYJzXEeCxo-rGjpVr5g" node="_6bJekKDEEeCnWpMK39eFTA _BCpXAKDFEeCnWpMK39eFTA _GZ-BAKDFEeCnWpMK39eFTA _p7qwMFV1EeGxSIz9Wfzh2g"/>
     <domain xsi:type="de.upb.swt.qvt.tgg:DomainGraphPattern" xmi:id="_oEngZZzYEeCxo-rGjpVr5g" typedModel="_M439QJzXEeCxo-rGjpVr5g" node="_oEngZpzYEeCxo-rGjpVr5g _oEngaZzYEeCxo-rGjpVr5g _qMhBAJzYEeCxo-rGjpVr5g _luY3cFV1EeGxSIz9Wfzh2g"/>
     <constraint xsi:type="de.upb.swt.qvt.tgg:OCLConstraint" xmi:id="_oEngcpzYEeCxo-rGjpVr5g" slotNode="_oEngaZzYEeCxo-rGjpVr5g" expression="'de.uni_paderborn.fujaba.muml.components.category'">
-      <slotAttribute href="http://www.fujaba.de/modelinstance/0.4.0#//ModelElementCategory/key"/>
+      <slotAttribute href="http://www.muml.org/modelinstance/1.0.0#//ModelElementCategory/key"/>
     </constraint>
     <constraint xsi:type="de.upb.swt.qvt.tgg:OCLConstraint" xmi:id="_Ys2oIaA5EeCfbLuZZ68Xtg" slotNode="_qMhBAJzYEeCxo-rGjpVr5g" expression="atomSys.name">
       <slotAttribute href="http://www.storydriven.org/core/0.3.1#//NamedElement/name"/>
@@ -886,15 +886,15 @@
   <rule xsi:type="de.upb.swt.qvt.tgg:TripleGraphGrammarRule" xmi:id="_43dW8CssEeG2hJjL7HcD9A" name="contAtomComp2atomSys">
     <node xmi:id="_43elFSssEeG2hJjL7HcD9A" incomingEdge="_43fzNSssEeG2hJjL7HcD9A" graphPattern="_43elECssEeG2hJjL7HcD9A _43elESssEeG2hJjL7HcD9A _43elFCssEeG2hJjL7HcD9A">
       <outgoingEdge xmi:id="_43fzMSssEeG2hJjL7HcD9A" targetNode="_43fMICssEeG2hJjL7HcD9A" graphPattern="_43elECssEeG2hJjL7HcD9A _43elESssEeG2hJjL7HcD9A">
-        <typeReference href="http://www.fujaba.de/modelinstance/0.4.0#//RootNode/categories"/>
+        <typeReference href="http://www.muml.org/modelinstance/1.0.0#//RootNode/categories"/>
       </outgoingEdge>
-      <eType href="http://www.fujaba.de/modelinstance/0.4.0#//RootNode"/>
+      <eType href="http://www.muml.org/modelinstance/1.0.0#//RootNode"/>
     </node>
     <node xmi:id="_43fMICssEeG2hJjL7HcD9A" name="modElCat" incomingEdge="_43fzMSssEeG2hJjL7HcD9A _43gaQissEeG2hJjL7HcD9A" graphPattern="_43elECssEeG2hJjL7HcD9A _43elESssEeG2hJjL7HcD9A _43elFCssEeG2hJjL7HcD9A">
       <outgoingEdge xmi:id="_43fzMyssEeG2hJjL7HcD9A" targetNode="_43fMIyssEeG2hJjL7HcD9A" graphPattern="_43elESssEeG2hJjL7HcD9A">
-        <typeReference href="http://www.fujaba.de/modelinstance/0.4.0#//ModelElementCategory/modelElements"/>
+        <typeReference href="http://www.muml.org/modelinstance/1.0.0#//ModelElementCategory/modelElements"/>
       </outgoingEdge>
-      <eType href="http://www.fujaba.de/modelinstance/0.4.0#//ModelElementCategory"/>
+      <eType href="http://www.muml.org/modelinstance/1.0.0#//ModelElementCategory"/>
     </node>
     <node xmi:id="_43fMISssEeG2hJjL7HcD9A" incomingEdge="_43gaQCssEeG2hJjL7HcD9A" graphPattern="_43elECssEeG2hJjL7HcD9A _43elESssEeG2hJjL7HcD9A _43elEissEeG2hJjL7HcD9A">
       <outgoingEdge xmi:id="_43fzMissEeG2hJjL7HcD9A" targetNode="_43fMIissEeG2hJjL7HcD9A" graphPattern="_43elECssEeG2hJjL7HcD9A _43elESssEeG2hJjL7HcD9A">
@@ -956,7 +956,7 @@
     <domain xsi:type="de.upb.swt.qvt.tgg:DomainGraphPattern" xmi:id="_43elEyssEeG2hJjL7HcD9A" typedModel="_NYLIYJzXEeCxo-rGjpVr5g" node="_43fMJSssEeG2hJjL7HcD9A _43fMJissEeG2hJjL7HcD9A _43fMJyssEeG2hJjL7HcD9A"/>
     <domain xsi:type="de.upb.swt.qvt.tgg:DomainGraphPattern" xmi:id="_43elFCssEeG2hJjL7HcD9A" typedModel="_M439QJzXEeCxo-rGjpVr5g" node="_43elFSssEeG2hJjL7HcD9A _43fMICssEeG2hJjL7HcD9A _43fMIyssEeG2hJjL7HcD9A"/>
     <constraint xsi:type="de.upb.swt.qvt.tgg:OCLConstraint" xmi:id="_43hBVSssEeG2hJjL7HcD9A" slotNode="_43fMICssEeG2hJjL7HcD9A" expression="'de.uni_paderborn.fujaba.muml.components.category'">
-      <slotAttribute href="http://www.fujaba.de/modelinstance/0.4.0#//ModelElementCategory/key"/>
+      <slotAttribute href="http://www.muml.org/modelinstance/1.0.0#//ModelElementCategory/key"/>
     </constraint>
     <constraint xsi:type="de.upb.swt.qvt.tgg:OCLConstraint" xmi:id="_43hBVissEeG2hJjL7HcD9A" slotNode="_43fMIyssEeG2hJjL7HcD9A" expression="atomSys.name">
       <slotAttribute href="http://www.storydriven.org/core/0.3.1#//NamedElement/name"/>
@@ -971,15 +971,15 @@
   <rule xsi:type="de.upb.swt.qvt.tgg:TripleGraphGrammarRule" xmi:id="_-rizwNlOEeClStyXL6p2fw" name="structComp2nothing">
     <node xmi:id="_-rizxtlOEeClStyXL6p2fw" incomingEdge="_-riz09lOEeClStyXL6p2fw" graphPattern="_-rizwdlOEeClStyXL6p2fw _-rizwtlOEeClStyXL6p2fw _-rizxdlOEeClStyXL6p2fw">
       <outgoingEdge xmi:id="_-rizz9lOEeClStyXL6p2fw" targetNode="_-rizx9lOEeClStyXL6p2fw" graphPattern="_-rizwdlOEeClStyXL6p2fw _-rizwtlOEeClStyXL6p2fw">
-        <typeReference href="http://www.fujaba.de/modelinstance/0.4.0#//RootNode/categories"/>
+        <typeReference href="http://www.muml.org/modelinstance/1.0.0#//RootNode/categories"/>
       </outgoingEdge>
-      <eType href="http://www.fujaba.de/modelinstance/0.4.0#//RootNode"/>
+      <eType href="http://www.muml.org/modelinstance/1.0.0#//RootNode"/>
     </node>
     <node xmi:id="_-rizx9lOEeClStyXL6p2fw" name="modElCat" incomingEdge="_-rizz9lOEeClStyXL6p2fw" graphPattern="_-rizwdlOEeClStyXL6p2fw _-rizwtlOEeClStyXL6p2fw _-rizxdlOEeClStyXL6p2fw">
       <outgoingEdge xmi:id="__nQFMN_VEeG1_K3Os7gsbA" targetNode="__nBbsN_VEeG1_K3Os7gsbA" graphPattern="_-rizwtlOEeClStyXL6p2fw">
-        <typeReference href="http://www.fujaba.de/modelinstance/0.4.0#//ModelElementCategory/modelElements"/>
+        <typeReference href="http://www.muml.org/modelinstance/1.0.0#//ModelElementCategory/modelElements"/>
       </outgoingEdge>
-      <eType href="http://www.fujaba.de/modelinstance/0.4.0#//ModelElementCategory"/>
+      <eType href="http://www.muml.org/modelinstance/1.0.0#//ModelElementCategory"/>
     </node>
     <node xmi:id="_-rizyNlOEeClStyXL6p2fw" incomingEdge="_-riz1NlOEeClStyXL6p2fw" graphPattern="_-rizwdlOEeClStyXL6p2fw _-rizwtlOEeClStyXL6p2fw _-rizw9lOEeClStyXL6p2fw">
       <eType href="http://www.muml.org/simulink/1.0.0#//SimulinkContainer"/>
@@ -1002,15 +1002,15 @@
     <domain xsi:type="de.upb.swt.qvt.tgg:DomainGraphPattern" xmi:id="_-rizxNlOEeClStyXL6p2fw" typedModel="_NYLIYJzXEeCxo-rGjpVr5g" node="_-rizzNlOEeClStyXL6p2fw"/>
     <domain xsi:type="de.upb.swt.qvt.tgg:DomainGraphPattern" xmi:id="_-rizxdlOEeClStyXL6p2fw" typedModel="_M439QJzXEeCxo-rGjpVr5g" node="_-rizxtlOEeClStyXL6p2fw _-rizx9lOEeClStyXL6p2fw __nBbsN_VEeG1_K3Os7gsbA"/>
     <constraint xsi:type="de.upb.swt.qvt.tgg:OCLConstraint" xmi:id="_-riz29lOEeClStyXL6p2fw" slotNode="_-rizx9lOEeClStyXL6p2fw" expression="'de.uni_paderborn.fujaba.muml.components.category'">
-      <slotAttribute href="http://www.fujaba.de/modelinstance/0.4.0#//ModelElementCategory/key"/>
+      <slotAttribute href="http://www.muml.org/modelinstance/1.0.0#//ModelElementCategory/key"/>
     </constraint>
   </rule>
   <rule xsi:type="de.upb.swt.qvt.tgg:TripleGraphGrammarRule" xmi:id="_jHdqAKAyEeC04985_I7g0A" name="instConfig2simMod">
     <node xmi:id="_jHdqBqAyEeC04985_I7g0A" incomingEdge="_eF3OkKDFEeCnWpMK39eFTA" graphPattern="_jHdqAaAyEeC04985_I7g0A _jHdqAqAyEeC04985_I7g0A _jHdqBaAyEeC04985_I7g0A">
       <outgoingEdge xmi:id="_BTtWAKC-EeCnWpMK39eFTA" targetNode="_BTjlAKC-EeCnWpMK39eFTA" graphPattern="_jHdqAqAyEeC04985_I7g0A">
-        <typeReference href="http://www.fujaba.de/modelinstance/0.4.0#//RootNode/categories"/>
+        <typeReference href="http://www.muml.org/modelinstance/1.0.0#//RootNode/categories"/>
       </outgoingEdge>
-      <eType href="http://www.fujaba.de/modelinstance/0.4.0#//RootNode"/>
+      <eType href="http://www.muml.org/modelinstance/1.0.0#//RootNode"/>
     </node>
     <node xmi:id="_jHdqCKAyEeC04985_I7g0A" incomingEdge="_dDdqwKAzEeC0yNmTV8OXaQ _dhWzUKDFEeCnWpMK39eFTA" graphPattern="_jHdqAaAyEeC04985_I7g0A _jHdqAqAyEeC04985_I7g0A _jHdqA6AyEeC04985_I7g0A">
       <outgoingEdge xmi:id="_dDUg0KAzEeC0yNmTV8OXaQ" targetNode="_jHdqCqAyEeC04985_I7g0A" graphPattern="_jHdqAqAyEeC04985_I7g0A">
@@ -1029,9 +1029,9 @@
     </node>
     <node xmi:id="_BTjlAKC-EeCnWpMK39eFTA" incomingEdge="_BTtWAKC-EeCnWpMK39eFTA _ZYjx8qDFEeCnWpMK39eFTA" graphPattern="_jHdqAqAyEeC04985_I7g0A _jHdqBaAyEeC04985_I7g0A">
       <outgoingEdge xmi:id="_CUO-5qC-EeCnWpMK39eFTA" targetNode="_CUO-4KC-EeCnWpMK39eFTA" graphPattern="_jHdqAqAyEeC04985_I7g0A">
-        <typeReference href="http://www.fujaba.de/modelinstance/0.4.0#//ModelElementCategory/modelElements"/>
+        <typeReference href="http://www.muml.org/modelinstance/1.0.0#//ModelElementCategory/modelElements"/>
       </outgoingEdge>
-      <eType href="http://www.fujaba.de/modelinstance/0.4.0#//ModelElementCategory"/>
+      <eType href="http://www.muml.org/modelinstance/1.0.0#//ModelElementCategory"/>
     </node>
     <node xmi:id="_CUO-4KC-EeCnWpMK39eFTA" name="instConfig" incomingEdge="_CUO-5qC-EeCnWpMK39eFTA _ZYjx86DFEeCnWpMK39eFTA" graphPattern="_jHdqAqAyEeC04985_I7g0A _jHdqBaAyEeC04985_I7g0A">
       <outgoingEdge xmi:id="_Xs6EEA7dEeK3S7a8oiJw3A" targetNode="_XiC34A7dEeK3S7a8oiJw3A" graphPattern="_jHdqAqAyEeC04985_I7g0A">
@@ -1093,7 +1093,7 @@
     <domain xsi:type="de.upb.swt.qvt.tgg:DomainGraphPattern" xmi:id="_jHdqBKAyEeC04985_I7g0A" typedModel="_NYLIYJzXEeCxo-rGjpVr5g" node="_ZYjx8KDFEeCnWpMK39eFTA _bI6VQKDFEeCnWpMK39eFTA"/>
     <domain xsi:type="de.upb.swt.qvt.tgg:DomainGraphPattern" xmi:id="_jHdqBaAyEeC04985_I7g0A" typedModel="_M439QJzXEeCxo-rGjpVr5g" node="_jHdqBqAyEeC04985_I7g0A _BTjlAKC-EeCnWpMK39eFTA _CUO-4KC-EeCnWpMK39eFTA _XiC34A7dEeK3S7a8oiJw3A _68oJYGV9EeKeTMk7s4_BRA _VH-a8GWJEeK-9-l0jybw7A"/>
     <constraint xsi:type="de.upb.swt.qvt.tgg:OCLConstraint" xmi:id="_jHdqEqAyEeC04985_I7g0A" slotNode="_BTjlAKC-EeCnWpMK39eFTA" expression="'de.uni_paderborn.fujaba.muml.instance.category'">
-      <slotAttribute href="http://www.fujaba.de/modelinstance/0.4.0#//ModelElementCategory/key"/>
+      <slotAttribute href="http://www.muml.org/modelinstance/1.0.0#//ModelElementCategory/key"/>
     </constraint>
     <constraint xsi:type="de.upb.swt.qvt.tgg:OCLConstraint" xmi:id="_DS6bYaWlEeCn_NGV1J09-Q" slotNode="_jHdqCqAyEeC04985_I7g0A" expression="'LibraryReference'">
       <slotAttribute href="http://www.muml.org/simulink/1.0.0#//Block/name"/>
@@ -1129,9 +1129,9 @@
     </node>
     <node xmi:id="_SRApQB0ZEeKSio6gBw7LGQ" incomingEdge="_SRGI0R0ZEeKSio6gBw7LGQ" graphPattern="_SRACMB0ZEeKSio6gBw7LGQ _SRACMR0ZEeKSio6gBw7LGQ _SRACMh0ZEeKSio6gBw7LGQ">
       <outgoingEdge xmi:id="_SRE6sx0ZEeKSio6gBw7LGQ" targetNode="_SRApQh0ZEeKSio6gBw7LGQ" graphPattern="_SRACMR0ZEeKSio6gBw7LGQ">
-        <typeReference href="http://www.fujaba.de/modelinstance/0.4.0#//RootNode/categories"/>
+        <typeReference href="http://www.muml.org/modelinstance/1.0.0#//RootNode/categories"/>
       </outgoingEdge>
-      <eType href="http://www.fujaba.de/modelinstance/0.4.0#//RootNode"/>
+      <eType href="http://www.muml.org/modelinstance/1.0.0#//RootNode"/>
     </node>
     <node xmi:id="_SRApQR0ZEeKSio6gBw7LGQ" name="simMod" incomingEdge="_SRE6sR0ZEeKSio6gBw7LGQ _SRFhwR0ZEeKSio6gBw7LGQ" graphPattern="_SRACMR0ZEeKSio6gBw7LGQ _SRACNB0ZEeKSio6gBw7LGQ">
       <outgoingEdge xmi:id="_SRE6sh0ZEeKSio6gBw7LGQ" targetNode="_SRACNR0ZEeKSio6gBw7LGQ" graphPattern="_SRACMR0ZEeKSio6gBw7LGQ">
@@ -1141,9 +1141,9 @@
     </node>
     <node xmi:id="_SRApQh0ZEeKSio6gBw7LGQ" incomingEdge="_SRE6sx0ZEeKSio6gBw7LGQ _SRFhwh0ZEeKSio6gBw7LGQ" graphPattern="_SRACMR0ZEeKSio6gBw7LGQ _SRACMh0ZEeKSio6gBw7LGQ">
       <outgoingEdge xmi:id="_SRFhwB0ZEeKSio6gBw7LGQ" targetNode="_SRApQx0ZEeKSio6gBw7LGQ" graphPattern="_SRACMR0ZEeKSio6gBw7LGQ">
-        <typeReference href="http://www.fujaba.de/modelinstance/0.4.0#//ModelElementCategory/modelElements"/>
+        <typeReference href="http://www.muml.org/modelinstance/1.0.0#//ModelElementCategory/modelElements"/>
       </outgoingEdge>
-      <eType href="http://www.fujaba.de/modelinstance/0.4.0#//ModelElementCategory"/>
+      <eType href="http://www.muml.org/modelinstance/1.0.0#//ModelElementCategory"/>
     </node>
     <node xmi:id="_SRApQx0ZEeKSio6gBw7LGQ" name="instConfig" incomingEdge="_SRFhwB0ZEeKSio6gBw7LGQ _SRFhwx0ZEeKSio6gBw7LGQ" graphPattern="_SRACMR0ZEeKSio6gBw7LGQ _SRACMh0ZEeKSio6gBw7LGQ">
       <outgoingEdge xmi:id="_SRTkMB0ZEeKSio6gBw7LGQ" targetNode="_SRE6sB0ZEeKSio6gBw7LGQ" graphPattern="_SRACMR0ZEeKSio6gBw7LGQ">
@@ -1193,7 +1193,7 @@
     <domain xsi:type="de.upb.swt.qvt.tgg:DomainGraphPattern" xmi:id="_SRACMx0ZEeKSio6gBw7LGQ" typedModel="_NYLIYJzXEeCxo-rGjpVr5g" node="_SRApRB0ZEeKSio6gBw7LGQ _SRBQUB0ZEeKSio6gBw7LGQ"/>
     <domain xsi:type="de.upb.swt.qvt.tgg:DomainGraphPattern" xmi:id="_SRACNB0ZEeKSio6gBw7LGQ" typedModel="_NK6IcJzXEeCxo-rGjpVr5g" node="_SRACNR0ZEeKSio6gBw7LGQ _SRApQR0ZEeKSio6gBw7LGQ"/>
     <constraint xsi:type="de.upb.swt.qvt.tgg:OCLConstraint" xmi:id="_SRTkMR0ZEeKSio6gBw7LGQ" slotNode="_SRApQh0ZEeKSio6gBw7LGQ" expression="'de.uni_paderborn.fujaba.muml.instance.category'">
-      <slotAttribute href="http://www.fujaba.de/modelinstance/0.4.0#//ModelElementCategory/key"/>
+      <slotAttribute href="http://www.muml.org/modelinstance/1.0.0#//ModelElementCategory/key"/>
     </constraint>
     <constraint xsi:type="de.upb.swt.qvt.tgg:OCLConstraint" xmi:id="_SRTkMh0ZEeKSio6gBw7LGQ" slotNode="_SRApQR0ZEeKSio6gBw7LGQ" expression="'LibraryReference'">
       <slotAttribute href="http://www.muml.org/simulink/1.0.0#//Block/name"/>
@@ -1214,9 +1214,9 @@
   <rule xsi:type="de.upb.swt.qvt.tgg:TripleGraphGrammarRule" xmi:id="_OqkR0NVVEeClDszfD2CezA" name="structComp2subSys">
     <node xmi:id="_OqkR19VVEeClDszfD2CezA" name="modElCat" incomingEdge="_OquC3NVVEeClDszfD2CezA" graphPattern="_OqkR0dVVEeClDszfD2CezA _OqkR0tVVEeClDszfD2CezA _OqkR1dVVEeClDszfD2CezA">
       <outgoingEdge xmi:id="_NAFQYNlPEeClStyXL6p2fw" targetNode="_M_yVcNlPEeClStyXL6p2fw" graphPattern="_OqkR0tVVEeClDszfD2CezA _OqkR0dVVEeClDszfD2CezA">
-        <typeReference href="http://www.fujaba.de/modelinstance/0.4.0#//ModelElementCategory/modelElements"/>
+        <typeReference href="http://www.muml.org/modelinstance/1.0.0#//ModelElementCategory/modelElements"/>
       </outgoingEdge>
-      <eType href="http://www.fujaba.de/modelinstance/0.4.0#//ModelElementCategory"/>
+      <eType href="http://www.muml.org/modelinstance/1.0.0#//ModelElementCategory"/>
     </node>
     <node xmi:id="_OquC0dVVEeClDszfD2CezA" name="" incomingEdge="_HAgTsNVWEeClDszfD2CezA _i6h_oNi5EeCP2sffFp4Trw _GHZ9cHe1EeGL-fD4OX3tVg _bRNt0IW5EeK5Afm3ujmDHg" graphPattern="_OqkR0tVVEeClDszfD2CezA _OqkR09VVEeClDszfD2CezA">
       <outgoingEdge xmi:id="_GjrCsHe1EeGL-fD4OX3tVg" targetNode="_Eu4rUHe1EeGL-fD4OX3tVg" graphPattern="_OqkR0tVVEeClDszfD2CezA">
@@ -1410,9 +1410,9 @@
     </node>
     <node xmi:id="_rlJn8x3SEeKBH6tGJTY7Ow" name="modElCat" incomingEdge="_rlOgch3SEeKBH6tGJTY7Ow" graphPattern="_rlJA4B3SEeKBH6tGJTY7Ow _rlJA4R3SEeKBH6tGJTY7Ow _rlJA4x3SEeKBH6tGJTY7Ow">
       <outgoingEdge xmi:id="_rlQ8sR3SEeKBH6tGJTY7Ow" targetNode="_rlK2Ex3SEeKBH6tGJTY7Ow" graphPattern="_rlJA4B3SEeKBH6tGJTY7Ow _rlJA4R3SEeKBH6tGJTY7Ow">
-        <typeReference href="http://www.fujaba.de/modelinstance/0.4.0#//ModelElementCategory/modelElements"/>
+        <typeReference href="http://www.muml.org/modelinstance/1.0.0#//ModelElementCategory/modelElements"/>
       </outgoingEdge>
-      <eType href="http://www.fujaba.de/modelinstance/0.4.0#//ModelElementCategory"/>
+      <eType href="http://www.muml.org/modelinstance/1.0.0#//ModelElementCategory"/>
     </node>
     <node xmi:id="_rlKPAB3SEeKBH6tGJTY7Ow" name="" incomingEdge="_rlQVox3SEeKBH6tGJTY7Ow" graphPattern="_rlJA4B3SEeKBH6tGJTY7Ow _rlJA4R3SEeKBH6tGJTY7Ow _rlJA4x3SEeKBH6tGJTY7Ow">
       <outgoingEdge xmi:id="_rlPHgB3SEeKBH6tGJTY7Ow" targetNode="_rlKPAR3SEeKBH6tGJTY7Ow" graphPattern="_rlJA4R3SEeKBH6tGJTY7Ow">
@@ -1718,9 +1718,9 @@
     </node>
     <node xmi:id="_uJ0TGCstEeG2hJjL7HcD9A" name="modElCat" incomingEdge="_uJ1hNSstEeG2hJjL7HcD9A" graphPattern="_uJ0TECstEeG2hJjL7HcD9A _uJ0TESstEeG2hJjL7HcD9A _uJ0TFCstEeG2hJjL7HcD9A">
       <outgoingEdge xmi:id="_uJ1hNystEeG2hJjL7HcD9A" targetNode="_uJ06ICstEeG2hJjL7HcD9A" graphPattern="_uJ0TECstEeG2hJjL7HcD9A _uJ0TESstEeG2hJjL7HcD9A">
-        <typeReference href="http://www.fujaba.de/modelinstance/0.4.0#//ModelElementCategory/modelElements"/>
+        <typeReference href="http://www.muml.org/modelinstance/1.0.0#//ModelElementCategory/modelElements"/>
       </outgoingEdge>
-      <eType href="http://www.fujaba.de/modelinstance/0.4.0#//ModelElementCategory"/>
+      <eType href="http://www.muml.org/modelinstance/1.0.0#//ModelElementCategory"/>
     </node>
     <node xmi:id="_uJ06ICstEeG2hJjL7HcD9A" name="atomComp" incomingEdge="_uJ1hNistEeG2hJjL7HcD9A _uJ1hNystEeG2hJjL7HcD9A _uJ2IQystEeG2hJjL7HcD9A" graphPattern="_uJ0TECstEeG2hJjL7HcD9A _uJ0TESstEeG2hJjL7HcD9A _uJ0TFCstEeG2hJjL7HcD9A">
       <eType href="http://www.muml.org/pim/component/1.0.0#//StaticAtomicComponent"/>
@@ -1821,15 +1821,15 @@
     </node>
     <node xmi:id="_8sUBKcsPEeCOW8zkXzL0SQ" name="modElCat" incomingEdge="_8sUBNssPEeCOW8zkXzL0SQ _8sUBTssPEeCOW8zkXzL0SQ" graphPattern="_8sUBIcsPEeCOW8zkXzL0SQ _8sUBIssPEeCOW8zkXzL0SQ _8sUBJMsPEeCOW8zkXzL0SQ">
       <outgoingEdge xmi:id="_GCtCENigEeCoxJMBKfH_rA" targetNode="_GCaHINigEeCoxJMBKfH_rA" graphPattern="_8sUBIssPEeCOW8zkXzL0SQ _8sUBIcsPEeCOW8zkXzL0SQ">
-        <typeReference href="http://www.fujaba.de/modelinstance/0.4.0#//ModelElementCategory/modelElements"/>
+        <typeReference href="http://www.muml.org/modelinstance/1.0.0#//ModelElementCategory/modelElements"/>
       </outgoingEdge>
-      <eType href="http://www.fujaba.de/modelinstance/0.4.0#//ModelElementCategory"/>
+      <eType href="http://www.muml.org/modelinstance/1.0.0#//ModelElementCategory"/>
     </node>
     <node xmi:id="_8sUBKssPEeCOW8zkXzL0SQ" incomingEdge="_8sUBPcsPEeCOW8zkXzL0SQ" graphPattern="_8sUBIcsPEeCOW8zkXzL0SQ _8sUBIssPEeCOW8zkXzL0SQ _8sUBJMsPEeCOW8zkXzL0SQ">
       <outgoingEdge xmi:id="_8sUBNssPEeCOW8zkXzL0SQ" targetNode="_8sUBKcsPEeCOW8zkXzL0SQ" graphPattern="_8sUBIcsPEeCOW8zkXzL0SQ _8sUBIssPEeCOW8zkXzL0SQ">
-        <typeReference href="http://www.fujaba.de/modelinstance/0.4.0#//RootNode/categories"/>
+        <typeReference href="http://www.muml.org/modelinstance/1.0.0#//RootNode/categories"/>
       </outgoingEdge>
-      <eType href="http://www.fujaba.de/modelinstance/0.4.0#//RootNode"/>
+      <eType href="http://www.muml.org/modelinstance/1.0.0#//RootNode"/>
     </node>
     <node xmi:id="_8sUBK8sPEeCOW8zkXzL0SQ" name="inPort" incomingEdge="_8sUBOssPEeCOW8zkXzL0SQ _8sUBRMsPEeCOW8zkXzL0SQ _8sUBTMsPEeCOW8zkXzL0SQ" graphPattern="_8sUBIssPEeCOW8zkXzL0SQ _8sUBJcsPEeCOW8zkXzL0SQ">
       <outgoingEdge xmi:id="_8sUBOcsPEeCOW8zkXzL0SQ" targetNode="_8sUBLMsPEeCOW8zkXzL0SQ" graphPattern="_8sUBIssPEeCOW8zkXzL0SQ">
@@ -1990,15 +1990,15 @@
     </node>
     <node xmi:id="_2XW_XssREeCOW8zkXzL0SQ" name="modElCat" incomingEdge="_2XW_b8sREeCOW8zkXzL0SQ _2XW_dssREeCOW8zkXzL0SQ" graphPattern="_2XW_UcsREeCOW8zkXzL0SQ _2XW_UssREeCOW8zkXzL0SQ _2XW_VMsREeCOW8zkXzL0SQ">
       <outgoingEdge xmi:id="_K4wLANigEeCoxJMBKfH_rA" targetNode="_Jk_dENigEeCoxJMBKfH_rA" graphPattern="_2XW_UssREeCOW8zkXzL0SQ _2XW_UcsREeCOW8zkXzL0SQ">
-        <typeReference href="http://www.fujaba.de/modelinstance/0.4.0#//ModelElementCategory/modelElements"/>
+        <typeReference href="http://www.muml.org/modelinstance/1.0.0#//ModelElementCategory/modelElements"/>
       </outgoingEdge>
-      <eType href="http://www.fujaba.de/modelinstance/0.4.0#//ModelElementCategory"/>
+      <eType href="http://www.muml.org/modelinstance/1.0.0#//ModelElementCategory"/>
     </node>
     <node xmi:id="_2XW_X8sREeCOW8zkXzL0SQ" incomingEdge="_2XW_bssREeCOW8zkXzL0SQ" graphPattern="_2XW_UcsREeCOW8zkXzL0SQ _2XW_UssREeCOW8zkXzL0SQ _2XW_VMsREeCOW8zkXzL0SQ">
       <outgoingEdge xmi:id="_2XW_b8sREeCOW8zkXzL0SQ" targetNode="_2XW_XssREeCOW8zkXzL0SQ" graphPattern="_2XW_UcsREeCOW8zkXzL0SQ _2XW_UssREeCOW8zkXzL0SQ">
-        <typeReference href="http://www.fujaba.de/modelinstance/0.4.0#//RootNode/categories"/>
+        <typeReference href="http://www.muml.org/modelinstance/1.0.0#//RootNode/categories"/>
       </outgoingEdge>
-      <eType href="http://www.fujaba.de/modelinstance/0.4.0#//RootNode"/>
+      <eType href="http://www.muml.org/modelinstance/1.0.0#//RootNode"/>
     </node>
     <node xmi:id="_2XW_YcsREeCOW8zkXzL0SQ" name="" incomingEdge="_2XW_c8sREeCOW8zkXzL0SQ _2XW_dcsREeCOW8zkXzL0SQ _Xk0vMHe4EeGmSuY8Ve3EBQ" graphPattern="_2XW_UcsREeCOW8zkXzL0SQ _2XW_UssREeCOW8zkXzL0SQ _2XW_U8sREeCOW8zkXzL0SQ">
       <outgoingEdge xmi:id="_2XW_dMsREeCOW8zkXzL0SQ" targetNode="_2XW_WcsREeCOW8zkXzL0SQ" graphPattern="_2XW_UcsREeCOW8zkXzL0SQ _2XW_UssREeCOW8zkXzL0SQ">
@@ -2132,9 +2132,9 @@
     </node>
     <node xmi:id="_9TvZVT0lEeG5q9-3cEBhJA" incomingEdge="_9TwncD0lEeG5q9-3cEBhJA" graphPattern="_9TuyQD0lEeG5q9-3cEBhJA _9TuyQT0lEeG5q9-3cEBhJA _9TuyQz0lEeG5q9-3cEBhJA">
       <outgoingEdge xmi:id="_9TwndT0lEeG5q9-3cEBhJA" targetNode="_9TvZVz0lEeG5q9-3cEBhJA" graphPattern="_9TuyQD0lEeG5q9-3cEBhJA _9TuyQT0lEeG5q9-3cEBhJA">
-        <typeReference href="http://www.fujaba.de/modelinstance/0.4.0#//RootNode/categories"/>
+        <typeReference href="http://www.muml.org/modelinstance/1.0.0#//RootNode/categories"/>
       </outgoingEdge>
-      <eType href="http://www.fujaba.de/modelinstance/0.4.0#//RootNode"/>
+      <eType href="http://www.muml.org/modelinstance/1.0.0#//RootNode"/>
     </node>
     <node xmi:id="_9TvZVj0lEeG5q9-3cEBhJA" name="" incomingEdge="_9TwncT0lEeG5q9-3cEBhJA _9Twncj0lEeG5q9-3cEBhJA _yqet4He4EeGmSuY8Ve3EBQ" graphPattern="_9TuyQD0lEeG5q9-3cEBhJA _9TuyQT0lEeG5q9-3cEBhJA _9TuyQj0lEeG5q9-3cEBhJA">
       <outgoingEdge xmi:id="_9Twncz0lEeG5q9-3cEBhJA" targetNode="_9TvZUj0lEeG5q9-3cEBhJA" graphPattern="_9TuyQD0lEeG5q9-3cEBhJA _9TuyQT0lEeG5q9-3cEBhJA">
@@ -2144,9 +2144,9 @@
     </node>
     <node xmi:id="_9TvZVz0lEeG5q9-3cEBhJA" name="modElCat" incomingEdge="_9TwndD0lEeG5q9-3cEBhJA _9TwndT0lEeG5q9-3cEBhJA" graphPattern="_9TuyQD0lEeG5q9-3cEBhJA _9TuyQT0lEeG5q9-3cEBhJA _9TuyQz0lEeG5q9-3cEBhJA">
       <outgoingEdge xmi:id="_9TxOhj0lEeG5q9-3cEBhJA" targetNode="_9TwAYD0lEeG5q9-3cEBhJA" graphPattern="_9TuyQD0lEeG5q9-3cEBhJA _9TuyQT0lEeG5q9-3cEBhJA">
-        <typeReference href="http://www.fujaba.de/modelinstance/0.4.0#//ModelElementCategory/modelElements"/>
+        <typeReference href="http://www.muml.org/modelinstance/1.0.0#//ModelElementCategory/modelElements"/>
       </outgoingEdge>
-      <eType href="http://www.fujaba.de/modelinstance/0.4.0#//ModelElementCategory"/>
+      <eType href="http://www.muml.org/modelinstance/1.0.0#//ModelElementCategory"/>
     </node>
     <node xmi:id="_9TvZWD0lEeG5q9-3cEBhJA" name="outPort" incomingEdge="_9Twndj0lEeG5q9-3cEBhJA _9Twndz0lEeG5q9-3cEBhJA _9TxOgz0lEeG5q9-3cEBhJA _45KugCQvEeKoZdqDryiIkg" graphPattern="_9TuyQT0lEeG5q9-3cEBhJA _9TuyQj0lEeG5q9-3cEBhJA">
       <outgoingEdge xmi:id="_9TxOgD0lEeG5q9-3cEBhJA" targetNode="_9TvZUj0lEeG5q9-3cEBhJA" graphPattern="_9TuyQT0lEeG5q9-3cEBhJA">
@@ -2358,9 +2358,9 @@
     </node>
     <node xmi:id="_hHAy8z0nEeG5q9-3cEBhJA" name="modElCat" incomingEdge="_hHCBFT0nEeG5q9-3cEBhJA _hHCoJz0nEeG5q9-3cEBhJA" graphPattern="_hG_k0D0nEeG5q9-3cEBhJA _hG_k0T0nEeG5q9-3cEBhJA _hG_k0z0nEeG5q9-3cEBhJA">
       <outgoingEdge xmi:id="_hHCoIT0nEeG5q9-3cEBhJA" targetNode="_hHBaAT0nEeG5q9-3cEBhJA" graphPattern="_hG_k0D0nEeG5q9-3cEBhJA _hG_k0T0nEeG5q9-3cEBhJA">
-        <typeReference href="http://www.fujaba.de/modelinstance/0.4.0#//ModelElementCategory/modelElements"/>
+        <typeReference href="http://www.muml.org/modelinstance/1.0.0#//ModelElementCategory/modelElements"/>
       </outgoingEdge>
-      <eType href="http://www.fujaba.de/modelinstance/0.4.0#//ModelElementCategory"/>
+      <eType href="http://www.muml.org/modelinstance/1.0.0#//ModelElementCategory"/>
     </node>
     <node xmi:id="_hHBaAD0nEeG5q9-3cEBhJA" name="" incomingEdge="_hHCBFj0nEeG5q9-3cEBhJA _hHCBFz0nEeG5q9-3cEBhJA _vootgHe4EeGmSuY8Ve3EBQ" graphPattern="_hG_k0D0nEeG5q9-3cEBhJA _hG_k0T0nEeG5q9-3cEBhJA _hG_k0j0nEeG5q9-3cEBhJA">
       <outgoingEdge xmi:id="_hHCoID0nEeG5q9-3cEBhJA" targetNode="_hHAy8j0nEeG5q9-3cEBhJA" graphPattern="_hG_k0D0nEeG5q9-3cEBhJA _hG_k0T0nEeG5q9-3cEBhJA">
@@ -2388,9 +2388,9 @@
     </node>
     <node xmi:id="_hHBaAz0nEeG5q9-3cEBhJA" incomingEdge="_hHCoJj0nEeG5q9-3cEBhJA" graphPattern="_hG_k0D0nEeG5q9-3cEBhJA _hG_k0T0nEeG5q9-3cEBhJA _hG_k0z0nEeG5q9-3cEBhJA">
       <outgoingEdge xmi:id="_hHCoJz0nEeG5q9-3cEBhJA" targetNode="_hHAy8z0nEeG5q9-3cEBhJA" graphPattern="_hG_k0D0nEeG5q9-3cEBhJA _hG_k0T0nEeG5q9-3cEBhJA">
-        <typeReference href="http://www.fujaba.de/modelinstance/0.4.0#//RootNode/categories"/>
+        <typeReference href="http://www.muml.org/modelinstance/1.0.0#//RootNode/categories"/>
       </outgoingEdge>
-      <eType href="http://www.fujaba.de/modelinstance/0.4.0#//RootNode"/>
+      <eType href="http://www.muml.org/modelinstance/1.0.0#//RootNode"/>
     </node>
     <node xmi:id="_hHBaBD0nEeG5q9-3cEBhJA" name="hybInPort" incomingEdge="_hHDPMD0nEeG5q9-3cEBhJA _hHDPMT0nEeG5q9-3cEBhJA" graphPattern="_hG_k0T0nEeG5q9-3cEBhJA _hG_k0z0nEeG5q9-3cEBhJA">
       <outgoingEdge xmi:id="_hHDPMj0nEeG5q9-3cEBhJA" targetNode="_hHBaAT0nEeG5q9-3cEBhJA" graphPattern="_hG_k0T0nEeG5q9-3cEBhJA">
@@ -2666,15 +2666,15 @@
     </node>
     <node xmi:id="_0UvhHOHrEeCRmI32NP_6kw" name="modElCat" incomingEdge="_0UvhKuHrEeCRmI32NP_6kw _0UvhLuHrEeCRmI32NP_6kw" graphPattern="_0UvhEeHrEeCRmI32NP_6kw _0UvhEuHrEeCRmI32NP_6kw _0UvhE-HrEeCRmI32NP_6kw">
       <outgoingEdge xmi:id="_0UvhKeHrEeCRmI32NP_6kw" targetNode="_0UvhG-HrEeCRmI32NP_6kw" graphPattern="_0UvhEeHrEeCRmI32NP_6kw _0UvhEuHrEeCRmI32NP_6kw">
-        <typeReference href="http://www.fujaba.de/modelinstance/0.4.0#//ModelElementCategory/modelElements"/>
+        <typeReference href="http://www.muml.org/modelinstance/1.0.0#//ModelElementCategory/modelElements"/>
       </outgoingEdge>
-      <eType href="http://www.fujaba.de/modelinstance/0.4.0#//ModelElementCategory"/>
+      <eType href="http://www.muml.org/modelinstance/1.0.0#//ModelElementCategory"/>
     </node>
     <node xmi:id="_0UvhHeHrEeCRmI32NP_6kw" incomingEdge="_0UvhLOHrEeCRmI32NP_6kw" graphPattern="_0UvhEeHrEeCRmI32NP_6kw _0UvhEuHrEeCRmI32NP_6kw _0UvhE-HrEeCRmI32NP_6kw">
       <outgoingEdge xmi:id="_0UvhKuHrEeCRmI32NP_6kw" targetNode="_0UvhHOHrEeCRmI32NP_6kw" graphPattern="_0UvhEeHrEeCRmI32NP_6kw _0UvhEuHrEeCRmI32NP_6kw">
-        <typeReference href="http://www.fujaba.de/modelinstance/0.4.0#//RootNode/categories"/>
+        <typeReference href="http://www.muml.org/modelinstance/1.0.0#//RootNode/categories"/>
       </outgoingEdge>
-      <eType href="http://www.fujaba.de/modelinstance/0.4.0#//RootNode"/>
+      <eType href="http://www.muml.org/modelinstance/1.0.0#//RootNode"/>
     </node>
     <node xmi:id="_0UvhHuHrEeCRmI32NP_6kw" graphPattern="_0UvhEeHrEeCRmI32NP_6kw _0UvhEuHrEeCRmI32NP_6kw _0UvhFOHrEeCRmI32NP_6kw">
       <outgoingEdge xmi:id="_0UvhK-HrEeCRmI32NP_6kw" targetNode="_0UvhGOHrEeCRmI32NP_6kw" graphPattern="_0UvhEeHrEeCRmI32NP_6kw _0UvhEuHrEeCRmI32NP_6kw">
@@ -3593,9 +3593,9 @@
   <rule xsi:type="de.upb.swt.qvt.tgg:TripleGraphGrammarRule" xmi:id="_rLHogKESEeK3zaunJX6gEw" name="discPort2ports(card.1)part1">
     <node xmi:id="_rLHohqESEeK3zaunJX6gEw" name="modElCat" incomingEdge="_rLHo0aESEeK3zaunJX6gEw _rLQyf6ESEeK3zaunJX6gEw" graphPattern="_rLHogaESEeK3zaunJX6gEw _rLHogqESEeK3zaunJX6gEw _rLHog6ESEeK3zaunJX6gEw">
       <outgoingEdge xmi:id="_rLHo06ESEeK3zaunJX6gEw" targetNode="_rLHoi6ESEeK3zaunJX6gEw" graphPattern="_rLHogaESEeK3zaunJX6gEw _rLHogqESEeK3zaunJX6gEw">
-        <typeReference href="http://www.fujaba.de/modelinstance/0.4.0#//ModelElementCategory/modelElements"/>
+        <typeReference href="http://www.muml.org/modelinstance/1.0.0#//ModelElementCategory/modelElements"/>
       </outgoingEdge>
-      <eType href="http://www.fujaba.de/modelinstance/0.4.0#//ModelElementCategory"/>
+      <eType href="http://www.muml.org/modelinstance/1.0.0#//ModelElementCategory"/>
     </node>
     <node xmi:id="_rLHoh6ESEeK3zaunJX6gEw" name="c2s" incomingEdge="_rLHo0qESEeK3zaunJX6gEw" graphPattern="_rLHogaESEeK3zaunJX6gEw _rLHogqESEeK3zaunJX6gEw _rLHohaESEeK3zaunJX6gEw" matchSubtype="true">
       <outgoingEdge xmi:id="_rLHo1KESEeK3zaunJX6gEw" targetNode="_rLHoi6ESEeK3zaunJX6gEw" graphPattern="_rLHogaESEeK3zaunJX6gEw _rLHogqESEeK3zaunJX6gEw">
@@ -3743,9 +3743,9 @@
     </node>
     <node xmi:id="_rLHokqESEeK3zaunJX6gEw" incomingEdge="_rLQyfqESEeK3zaunJX6gEw" graphPattern="_rLHogaESEeK3zaunJX6gEw _rLHogqESEeK3zaunJX6gEw _rLHog6ESEeK3zaunJX6gEw">
       <outgoingEdge xmi:id="_rLQyf6ESEeK3zaunJX6gEw" targetNode="_rLHohqESEeK3zaunJX6gEw" graphPattern="_rLHogaESEeK3zaunJX6gEw _rLHogqESEeK3zaunJX6gEw">
-        <typeReference href="http://www.fujaba.de/modelinstance/0.4.0#//RootNode/categories"/>
+        <typeReference href="http://www.muml.org/modelinstance/1.0.0#//RootNode/categories"/>
       </outgoingEdge>
-      <eType href="http://www.fujaba.de/modelinstance/0.4.0#//RootNode"/>
+      <eType href="http://www.muml.org/modelinstance/1.0.0#//RootNode"/>
     </node>
     <node xmi:id="_rLHok6ESEeK3zaunJX6gEw" name="inPort" incomingEdge="_rLQygKESEeK3zaunJX6gEw _rLQygaESEeK3zaunJX6gEw _rLQyhaESEeK3zaunJX6gEw _rLQyyqESEeK3zaunJX6gEw" graphPattern="_rLHogqESEeK3zaunJX6gEw _rLHohKESEeK3zaunJX6gEw">
       <outgoingEdge xmi:id="_rLQygqESEeK3zaunJX6gEw" targetNode="_rLHojaESEeK3zaunJX6gEw" graphPattern="_rLHogqESEeK3zaunJX6gEw">
@@ -4149,9 +4149,9 @@
   <rule xsi:type="de.upb.swt.qvt.tgg:TripleGraphGrammarRule" xmi:id="_oqEPwKEMEeKKcP0ZLSkwvw" name="discPort2ports(card.1)part2">
     <node xmi:id="_oqOAxaEMEeKKcP0ZLSkwvw" name="modElCat" incomingEdge="_oqOBEKEMEeKKcP0ZLSkwvw _oqOBI6EMEeKKcP0ZLSkwvw" graphPattern="_oqOAwKEMEeKKcP0ZLSkwvw _oqOAwaEMEeKKcP0ZLSkwvw _oqOAwqEMEeKKcP0ZLSkwvw">
       <outgoingEdge xmi:id="_oqOBEqEMEeKKcP0ZLSkwvw" targetNode="_oqOAyqEMEeKKcP0ZLSkwvw" graphPattern="_oqOAwKEMEeKKcP0ZLSkwvw _oqOAwaEMEeKKcP0ZLSkwvw">
-        <typeReference href="http://www.fujaba.de/modelinstance/0.4.0#//ModelElementCategory/modelElements"/>
+        <typeReference href="http://www.muml.org/modelinstance/1.0.0#//ModelElementCategory/modelElements"/>
       </outgoingEdge>
-      <eType href="http://www.fujaba.de/modelinstance/0.4.0#//ModelElementCategory"/>
+      <eType href="http://www.muml.org/modelinstance/1.0.0#//ModelElementCategory"/>
     </node>
     <node xmi:id="_oqOAxqEMEeKKcP0ZLSkwvw" name="c2s" incomingEdge="_oqOBEaEMEeKKcP0ZLSkwvw" graphPattern="_oqOAwKEMEeKKcP0ZLSkwvw _oqOAwaEMEeKKcP0ZLSkwvw _oqOAxKEMEeKKcP0ZLSkwvw" matchSubtype="true">
       <outgoingEdge xmi:id="_oqOBE6EMEeKKcP0ZLSkwvw" targetNode="_oqOAyqEMEeKKcP0ZLSkwvw" graphPattern="_oqOAwKEMEeKKcP0ZLSkwvw _oqOAwaEMEeKKcP0ZLSkwvw">
@@ -4230,9 +4230,9 @@
     </node>
     <node xmi:id="_oqOA0aEMEeKKcP0ZLSkwvw" incomingEdge="_oqOBIqEMEeKKcP0ZLSkwvw" graphPattern="_oqOAwKEMEeKKcP0ZLSkwvw _oqOAwaEMEeKKcP0ZLSkwvw _oqOAwqEMEeKKcP0ZLSkwvw">
       <outgoingEdge xmi:id="_oqOBI6EMEeKKcP0ZLSkwvw" targetNode="_oqOAxaEMEeKKcP0ZLSkwvw" graphPattern="_oqOAwKEMEeKKcP0ZLSkwvw _oqOAwaEMEeKKcP0ZLSkwvw">
-        <typeReference href="http://www.fujaba.de/modelinstance/0.4.0#//RootNode/categories"/>
+        <typeReference href="http://www.muml.org/modelinstance/1.0.0#//RootNode/categories"/>
       </outgoingEdge>
-      <eType href="http://www.fujaba.de/modelinstance/0.4.0#//RootNode"/>
+      <eType href="http://www.muml.org/modelinstance/1.0.0#//RootNode"/>
     </node>
     <node xmi:id="_oqOA1KEMEeKKcP0ZLSkwvw" incomingEdge="_oqOBKqEMEeKKcP0ZLSkwvw _oqXK36EMEeKKcP0ZLSkwvw _oqXK9qEMEeKKcP0ZLSkwvw _oqXK-6EMEeKKcP0ZLSkwvw _oqXLAqEMEeKKcP0ZLSkwvw _b2-AcKq_EeK4Q57fOtwx0Q _cn2q0Kq_EeK4Q57fOtwx0Q _dQmF0Kq_EeK4Q57fOtwx0Q _d8VxgKq_EeK4Q57fOtwx0Q" graphPattern="_oqOAwKEMEeKKcP0ZLSkwvw _oqOAwaEMEeKKcP0ZLSkwvw _oqOAw6EMEeKKcP0ZLSkwvw">
       <outgoingEdge xmi:id="_oqOBK6EMEeKKcP0ZLSkwvw" targetNode="_oqOAzKEMEeKKcP0ZLSkwvw" graphPattern="_oqOAwKEMEeKKcP0ZLSkwvw _oqOAwaEMEeKKcP0ZLSkwvw">
@@ -4508,9 +4508,9 @@
   <rule xsi:type="de.upb.swt.qvt.tgg:TripleGraphGrammarRule" xmi:id="_XxtOsKEQEeKKcP0ZLSkwvw" name="discPort2ports(card.1)part3">
     <node xmi:id="_XxtOtqEQEeKKcP0ZLSkwvw" name="modElCat" incomingEdge="_XxtPAaEQEeKKcP0ZLSkwvw _XxtPFKEQEeKKcP0ZLSkwvw" graphPattern="_XxtOsaEQEeKKcP0ZLSkwvw _XxtOsqEQEeKKcP0ZLSkwvw _XxtOs6EQEeKKcP0ZLSkwvw">
       <outgoingEdge xmi:id="_XxtPA6EQEeKKcP0ZLSkwvw" targetNode="_XxtOu6EQEeKKcP0ZLSkwvw" graphPattern="_XxtOsaEQEeKKcP0ZLSkwvw _XxtOsqEQEeKKcP0ZLSkwvw">
-        <typeReference href="http://www.fujaba.de/modelinstance/0.4.0#//ModelElementCategory/modelElements"/>
+        <typeReference href="http://www.muml.org/modelinstance/1.0.0#//ModelElementCategory/modelElements"/>
       </outgoingEdge>
-      <eType href="http://www.fujaba.de/modelinstance/0.4.0#//ModelElementCategory"/>
+      <eType href="http://www.muml.org/modelinstance/1.0.0#//ModelElementCategory"/>
     </node>
     <node xmi:id="_XxtOt6EQEeKKcP0ZLSkwvw" name="c2s" incomingEdge="_XxtPAqEQEeKKcP0ZLSkwvw" graphPattern="_XxtOsaEQEeKKcP0ZLSkwvw _XxtOsqEQEeKKcP0ZLSkwvw _XxtOtaEQEeKKcP0ZLSkwvw" matchSubtype="true">
       <outgoingEdge xmi:id="_XxtPBKEQEeKKcP0ZLSkwvw" targetNode="_XxtOu6EQEeKKcP0ZLSkwvw" graphPattern="_XxtOsaEQEeKKcP0ZLSkwvw _XxtOsqEQEeKKcP0ZLSkwvw">
@@ -4589,9 +4589,9 @@
     </node>
     <node xmi:id="_XxtOwqEQEeKKcP0ZLSkwvw" incomingEdge="_XxtPE6EQEeKKcP0ZLSkwvw" graphPattern="_XxtOsaEQEeKKcP0ZLSkwvw _XxtOsqEQEeKKcP0ZLSkwvw _XxtOs6EQEeKKcP0ZLSkwvw">
       <outgoingEdge xmi:id="_XxtPFKEQEeKKcP0ZLSkwvw" targetNode="_XxtOtqEQEeKKcP0ZLSkwvw" graphPattern="_XxtOsaEQEeKKcP0ZLSkwvw _XxtOsqEQEeKKcP0ZLSkwvw">
-        <typeReference href="http://www.fujaba.de/modelinstance/0.4.0#//RootNode/categories"/>
+        <typeReference href="http://www.muml.org/modelinstance/1.0.0#//RootNode/categories"/>
       </outgoingEdge>
-      <eType href="http://www.fujaba.de/modelinstance/0.4.0#//RootNode"/>
+      <eType href="http://www.muml.org/modelinstance/1.0.0#//RootNode"/>
     </node>
     <node xmi:id="_XxtOxaEQEeKKcP0ZLSkwvw" incomingEdge="_XxtPG6EQEeKKcP0ZLSkwvw _Xx2_1KEQEeKKcP0ZLSkwvw _Xx2_26EQEeKKcP0ZLSkwvw _Xx2_9aEQEeKKcP0ZLSkwvw _Xx2__aEQEeKKcP0ZLSkwvw _iuVg4Kq_EeK4Q57fOtwx0Q _jXUMcKq_EeK4Q57fOtwx0Q _khNzwKq_EeK4Q57fOtwx0Q _lKEjgKq_EeK4Q57fOtwx0Q" graphPattern="_XxtOsaEQEeKKcP0ZLSkwvw _XxtOsqEQEeKKcP0ZLSkwvw _XxtOtKEQEeKKcP0ZLSkwvw">
       <outgoingEdge xmi:id="_XxtPHKEQEeKKcP0ZLSkwvw" targetNode="_XxtOvaEQEeKKcP0ZLSkwvw" graphPattern="_XxtOsaEQEeKKcP0ZLSkwvw _XxtOsqEQEeKKcP0ZLSkwvw">

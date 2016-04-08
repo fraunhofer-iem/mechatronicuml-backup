@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.4.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:protocol="http://www.muml.org/pim/protocol/1.0.0" xmi:id="_ZXns4NUMEeOzB5sVHdJ6ng" type="Coordination Protocol" measurementUnit="Pixel">
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:modelinstance="http://www.muml.org/modelinstance/1.0.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:protocol="http://www.muml.org/pim/protocol/1.0.0" xmi:id="_ZXns4NUMEeOzB5sVHdJ6ng" type="Coordination Protocol" measurementUnit="Pixel">
   <children xmi:type="notation:Shape" xmi:id="_nuXwANUMEeOzB5sVHdJ6ng" type="2005" fontName="Lucida Grande" fontHeight="11" lineColor="0">
     <children xmi:type="notation:DecorationNode" xmi:id="_nuYXENUMEeOzB5sVHdJ6ng" type="7005">
       <children xmi:type="notation:Shape" xmi:id="_nubaYNUMEeOzB5sVHdJ6ng" type="3005" fontName="Lucida Grande" fontHeight="11" lineColor="0">

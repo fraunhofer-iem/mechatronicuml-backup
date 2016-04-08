@@ -3,15 +3,15 @@
   <rule xsi:type="de.upb.swt.qvt.tgg:TripleGraphGrammarRule" xmi:id="_LO_rUCnkEeORPcZB3PfXyA" name="reconfStructComp2nothing">
     <node xmi:id="_LO_rUSnkEeORPcZB3PfXyA" incomingEdge="_LO_rVynkEeORPcZB3PfXyA" graphPattern="_LO_rWinkEeORPcZB3PfXyA _LO_rWynkEeORPcZB3PfXyA _LO_rXinkEeORPcZB3PfXyA">
       <outgoingEdge xmi:id="_LO_rUinkEeORPcZB3PfXyA" targetNode="_LO_rUynkEeORPcZB3PfXyA" graphPattern="_LO_rWinkEeORPcZB3PfXyA _LO_rWynkEeORPcZB3PfXyA">
-        <typeReference href="http://www.fujaba.de/modelinstance/0.4.0#//RootNode/categories"/>
+        <typeReference href="http://www.muml.org/modelinstance/1.0.0#//RootNode/categories"/>
       </outgoingEdge>
-      <eType href="http://www.fujaba.de/modelinstance/0.4.0#//RootNode"/>
+      <eType href="http://www.muml.org/modelinstance/1.0.0#//RootNode"/>
     </node>
     <node xmi:id="_LO_rUynkEeORPcZB3PfXyA" name="modElCat" incomingEdge="_LO_rUinkEeORPcZB3PfXyA" graphPattern="_LO_rWinkEeORPcZB3PfXyA _LO_rWynkEeORPcZB3PfXyA _LO_rXinkEeORPcZB3PfXyA">
       <outgoingEdge xmi:id="_LO_rVCnkEeORPcZB3PfXyA" targetNode="_LO_rWSnkEeORPcZB3PfXyA" graphPattern="_LO_rWynkEeORPcZB3PfXyA">
-        <typeReference href="http://www.fujaba.de/modelinstance/0.4.0#//ModelElementCategory/modelElements"/>
+        <typeReference href="http://www.muml.org/modelinstance/1.0.0#//ModelElementCategory/modelElements"/>
       </outgoingEdge>
-      <eType href="http://www.fujaba.de/modelinstance/0.4.0#//ModelElementCategory"/>
+      <eType href="http://www.muml.org/modelinstance/1.0.0#//ModelElementCategory"/>
     </node>
     <node xmi:id="_LO_rVSnkEeORPcZB3PfXyA" incomingEdge="_LO_rWCnkEeORPcZB3PfXyA" graphPattern="_LO_rWinkEeORPcZB3PfXyA _LO_rWynkEeORPcZB3PfXyA _LO_rXCnkEeORPcZB3PfXyA">
       <eType href="http://www.muml.org/simulink/1.0.0#//SimulinkContainer"/>
@@ -40,15 +40,15 @@
       <typedModel href="../../de.uni_paderborn.fujaba.simulink.m2m/tgg/fujaba2simulink.tgg#_M439QJzXEeCxo-rGjpVr5g"/>
     </domain>
     <constraint xsi:type="de.upb.swt.qvt.tgg:OCLConstraint" xmi:id="_LO_rXynkEeORPcZB3PfXyA" slotNode="_LO_rUynkEeORPcZB3PfXyA" expression="'de.uni_paderborn.fujaba.muml.components.category'">
-      <slotAttribute href="http://www.fujaba.de/modelinstance/0.4.0#//ModelElementCategory/key"/>
+      <slotAttribute href="http://www.muml.org/modelinstance/1.0.0#//ModelElementCategory/key"/>
     </constraint>
   </rule>
   <rule xsi:type="de.upb.swt.qvt.tgg:TripleGraphGrammarRule" xmi:id="_moyuACnkEeORPcZB3PfXyA" name="reconfStructComp2subSys">
     <node xmi:id="_moyuASnkEeORPcZB3PfXyA" name="modElCat" incomingEdge="_moyuBynkEeORPcZB3PfXyA" graphPattern="_moyuMinkEeORPcZB3PfXyA _moyuMynkEeORPcZB3PfXyA _moyuNinkEeORPcZB3PfXyA">
       <outgoingEdge xmi:id="_moyuAinkEeORPcZB3PfXyA" targetNode="_moyuIynkEeORPcZB3PfXyA" graphPattern="_moyuMynkEeORPcZB3PfXyA _moyuMinkEeORPcZB3PfXyA">
-        <typeReference href="http://www.fujaba.de/modelinstance/0.4.0#//ModelElementCategory/modelElements"/>
+        <typeReference href="http://www.muml.org/modelinstance/1.0.0#//ModelElementCategory/modelElements"/>
       </outgoingEdge>
-      <eType href="http://www.fujaba.de/modelinstance/0.4.0#//ModelElementCategory"/>
+      <eType href="http://www.muml.org/modelinstance/1.0.0#//ModelElementCategory"/>
     </node>
     <node xmi:id="_moyuAynkEeORPcZB3PfXyA" name="" incomingEdge="_moyuFynkEeORPcZB3PfXyA _moyuFSnkEeORPcZB3PfXyA _moyuLCnkEeORPcZB3PfXyA _moyuMSnkEeORPcZB3PfXyA" graphPattern="_moyuMynkEeORPcZB3PfXyA _moyuNCnkEeORPcZB3PfXyA">
       <outgoingEdge xmi:id="_moyuBCnkEeORPcZB3PfXyA" targetNode="_moyuKynkEeORPcZB3PfXyA" graphPattern="_moyuMynkEeORPcZB3PfXyA">
@@ -248,9 +248,9 @@
     </node>
     <node xmi:id="_moyuRinkEeORPcZB3PfXyA" name="modElCat" incomingEdge="_moyuQynkEeORPcZB3PfXyA" graphPattern="_moyubinkEeORPcZB3PfXyA _moyubynkEeORPcZB3PfXyA _moyucSnkEeORPcZB3PfXyA">
       <outgoingEdge xmi:id="_moyuRynkEeORPcZB3PfXyA" targetNode="_moyuYSnkEeORPcZB3PfXyA" graphPattern="_moyubinkEeORPcZB3PfXyA _moyubynkEeORPcZB3PfXyA">
-        <typeReference href="http://www.fujaba.de/modelinstance/0.4.0#//ModelElementCategory/modelElements"/>
+        <typeReference href="http://www.muml.org/modelinstance/1.0.0#//ModelElementCategory/modelElements"/>
       </outgoingEdge>
-      <eType href="http://www.fujaba.de/modelinstance/0.4.0#//ModelElementCategory"/>
+      <eType href="http://www.muml.org/modelinstance/1.0.0#//ModelElementCategory"/>
     </node>
     <node xmi:id="_moyuSCnkEeORPcZB3PfXyA" name="" incomingEdge="_moyuXinkEeORPcZB3PfXyA" graphPattern="_moyubinkEeORPcZB3PfXyA _moyubynkEeORPcZB3PfXyA _moyucSnkEeORPcZB3PfXyA">
       <outgoingEdge xmi:id="_moyuSSnkEeORPcZB3PfXyA" targetNode="_moyuSinkEeORPcZB3PfXyA" graphPattern="_moyubynkEeORPcZB3PfXyA">
