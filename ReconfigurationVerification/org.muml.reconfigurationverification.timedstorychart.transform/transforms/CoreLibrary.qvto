@@ -1,5 +1,5 @@
-modeltype activity uses storydiagrams::activities('http://www.storydriven.org/storydiagrams/0.2.1');
-modeltype patterns uses storydiagrams::patterns('http://www.storydriven.org/storydiagrams/0.2.1');
+modeltype activity uses storydiagrams::activities('http://www.muml.org/storydiagram/1.0.0');
+modeltype patterns uses storydiagrams::patterns('http://www.muml.org/storydiagram/1.0.0');
 
 modeltype core uses core('http://www.storydriven.org/core/0.3.1');
 modeltype expressions uses core::expressions('http://www.muml.org/core/1.0.0');

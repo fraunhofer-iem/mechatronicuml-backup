@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<sda:Activity xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:expr="http://www.storydriven.org/core/expressions/0.3.1" xmlns:sda="http://www.storydriven.org/storydiagrams/activities/0.2.1" name="OneEmptyNode">
+<sda:Activity xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:expr="http://www.storydriven.org/core/expressions/0.3.1" xmlns:sda="http://www.muml.org/storydiagram/activities/1.0.0" name="OneEmptyNode">
   <ownedActivityEdge target="//@ownedActivityNode.1" source="//@ownedActivityNode.0"/>
   <ownedActivityEdge target="//@ownedActivityNode.2" source="//@ownedActivityNode.1"/>
   <ownedActivityNode xsi:type="sda:InitialNode" name="init" outgoing="//@ownedActivityEdge.0"/>

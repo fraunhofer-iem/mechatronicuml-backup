@@ -1,11 +1,11 @@
 //ns.storydriven.org
-modeltype activitiesModelType uses storydiagrams::activities('http://www.storydriven.org/storydiagrams/0.2.1');
-modeltype patterns uses storydiagrams::patterns('http://www.storydriven.org/storydiagrams/0.2.1');
-modeltype patternExpression uses storydiagrams::patterns::expressions('http://www.storydriven.org/storydiagrams/0.2.1');
+modeltype activitiesModelType uses storydiagrams::activities('http://www.muml.org/storydiagram/1.0.0');
+modeltype patterns uses storydiagrams::patterns('http://www.muml.org/storydiagram/1.0.0');
+modeltype patternExpression uses storydiagrams::patterns::expressions('http://www.muml.org/storydiagram/1.0.0');
 modeltype expressions uses core::expressions('http://www.muml.org/core/1.0.0');
 modeltype expressions_common uses core::expressions::common('http://www.muml.org/core/1.0.0');
-modeltype calls uses storydiagrams::calls('http://www.storydriven.org/storydiagrams/0.2.1');
-modeltype callsExpressions uses storydiagrams::calls::expressions('http://www.storydriven.org/storydiagrams/0.2.1');
+modeltype calls uses storydiagrams::calls('http://www.muml.org/storydiagram/1.0.0');
+modeltype callsExpressions uses storydiagrams::calls::expressions('http://www.muml.org/storydiagram/1.0.0');
 
 //reachanalysis
 modeltype reach_sdm uses sdm ('http://www.fujaba.de/reachabilityGraph/sdm/0.4.0');

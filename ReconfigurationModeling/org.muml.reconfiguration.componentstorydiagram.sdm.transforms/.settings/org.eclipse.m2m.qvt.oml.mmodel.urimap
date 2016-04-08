@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <uriMap:MappingContainer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:uriMap="http:///www.eclipse.org/m2m/qvt/oml/MModelUriMap/1.0.0">
-  <mapping sourceURI="http://www.storydriven.org/storydiagrams/0.2.1" targetURI="platform:/resource/org.muml.storydiagram/model/storydiagrams.ecore"/>
+  <mapping sourceURI="http://www.muml.org/storydiagram/1.0.0" targetURI="platform:/resource/org.muml.storydiagram/model/storydiagrams.ecore"/>
   <mapping sourceURI="http://www.fujaba.de/muml/componentstorydiagram/0.4.0" targetURI="platform:/resource/de.uni_paderborn.fujaba.muml.componentstorydiagram/model/ComponentStoryDiagram.ecore"/>
   <mapping sourceURI="http://www.fujaba.de/muml/componentstorypattern/0.4.0" targetURI="platform:/resource/org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.ecore"/>
   <mapping sourceURI="http://www.muml.org/pim/1.0.0" targetURI="platform:/resource/org.muml.pim/model/pim.ecore"/>

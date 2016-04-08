@@ -90,28 +90,28 @@ public class BasicSDDNavigatorLabelProvider extends LabelProvider implements
 					"Navigator?TopLevelNode?http://www.fujaba.de/muml/verification/sdd/0.4.0?LeafNode", org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.BasicSDDElementTypes.LeafNode_2004); //$NON-NLS-1$
 		case org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.CollectionVariableEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Node?http://www.storydriven.org/storydiagrams/patterns/0.2.1?CollectionVariable", org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.BasicSDDElementTypes.CollectionVariable_3006); //$NON-NLS-1$
+					"Navigator?Node?http://www.muml.org/storydiagram/patterns/1.0.0?CollectionVariable", org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.BasicSDDElementTypes.CollectionVariable_3006); //$NON-NLS-1$
 		case org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.AttributeAssignmentEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Node?http://www.storydriven.org/storydiagrams/patterns/0.2.1?AttributeAssignment", org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.BasicSDDElementTypes.AttributeAssignment_3007); //$NON-NLS-1$
+					"Navigator?Node?http://www.muml.org/storydiagram/patterns/1.0.0?AttributeAssignment", org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.BasicSDDElementTypes.AttributeAssignment_3007); //$NON-NLS-1$
 		case org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.ConstraintEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Node?http://www.storydriven.org/storydiagrams/patterns/0.2.1?Constraint", org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.BasicSDDElementTypes.Constraint_3008); //$NON-NLS-1$
+					"Navigator?Node?http://www.muml.org/storydiagram/patterns/1.0.0?Constraint", org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.BasicSDDElementTypes.Constraint_3008); //$NON-NLS-1$
 		case org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.ObjectVariableEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Node?http://www.storydriven.org/storydiagrams/patterns/0.2.1?ObjectVariable", org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.BasicSDDElementTypes.ObjectVariable_3009); //$NON-NLS-1$
+					"Navigator?Node?http://www.muml.org/storydiagram/patterns/1.0.0?ObjectVariable", org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.BasicSDDElementTypes.ObjectVariable_3009); //$NON-NLS-1$
 		case org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.Constraint2EditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Node?http://www.storydriven.org/storydiagrams/patterns/0.2.1?Constraint", org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.BasicSDDElementTypes.Constraint_3010); //$NON-NLS-1$
+					"Navigator?Node?http://www.muml.org/storydiagram/patterns/1.0.0?Constraint", org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.BasicSDDElementTypes.Constraint_3010); //$NON-NLS-1$
 		case org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryPatternEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Node?http://www.storydriven.org/storydiagrams/patterns/0.2.1?StoryPattern", org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.BasicSDDElementTypes.StoryPattern_3011); //$NON-NLS-1$
+					"Navigator?Node?http://www.muml.org/storydiagram/patterns/1.0.0?StoryPattern", org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.BasicSDDElementTypes.StoryPattern_3011); //$NON-NLS-1$
 		case org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.EdgeEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?Link?http://www.fujaba.de/muml/verification/sdd/0.4.0?Edge", org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.BasicSDDElementTypes.Edge_4001); //$NON-NLS-1$
 		case org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.LinkVariableEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Link?http://www.storydriven.org/storydiagrams/patterns/0.2.1?LinkVariable", org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.BasicSDDElementTypes.LinkVariable_4003); //$NON-NLS-1$
+					"Navigator?Link?http://www.muml.org/storydiagram/patterns/1.0.0?LinkVariable", org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.BasicSDDElementTypes.LinkVariable_4003); //$NON-NLS-1$
 		}
 		return getImage("Navigator?UnknownElement", null); //$NON-NLS-1$
 	}

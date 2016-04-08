@@ -365,7 +365,7 @@
             <param name="semanticHint" value="1000"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.storydriven.org/storydiagrams/activities/0.2.1">
+      <metamodel nsURI="http://www.muml.org/storydiagram/activities/1.0.0">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.Activity_2003"
                name="%metatype.name.Activity_2003"
@@ -462,7 +462,7 @@
             <param name="semanticHint" value="3020"/>
          </specializationType>
       </metamodel>
-      <metamodel nsURI="http://www.storydriven.org/storydiagrams/activities/0.2.1">
+      <metamodel nsURI="http://www.muml.org/storydiagram/activities/1.0.0">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.InitialNode_3007"
                name="%metatype.name.InitialNode_3007"
@@ -472,7 +472,7 @@
             <param name="semanticHint" value="3007"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.storydriven.org/storydiagrams/activities/0.2.1">
+      <metamodel nsURI="http://www.muml.org/storydiagram/activities/1.0.0">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.JunctionNode_3008"
                name="%metatype.name.JunctionNode_3008"
@@ -482,7 +482,7 @@
             <param name="semanticHint" value="3008"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.storydriven.org/storydiagrams/activities/0.2.1">
+      <metamodel nsURI="http://www.muml.org/storydiagram/activities/1.0.0">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.ActivityFinalNode_3010"
                name="%metatype.name.ActivityFinalNode_3010"
@@ -530,7 +530,7 @@
             <param name="semanticHint" value="3024"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.storydriven.org/storydiagrams/activities/0.2.1">
+      <metamodel nsURI="http://www.muml.org/storydiagram/activities/1.0.0">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.ActivityEdge_4001"
                name="%metatype.name.ActivityEdge_4001"

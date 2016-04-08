@@ -6,9 +6,9 @@ library Patterns;
 modeltype csd uses 'http://www.fujaba.de/muml/componentstorydiagram/0.4.0';
 modeltype csp uses 'http://www.fujaba.de/muml/componentstorypattern/0.4.0';
 
-modeltype sd uses 'http://www.storydriven.org/storydiagrams/0.2.1';
-modeltype sdActivities uses storydiagrams::activities('http://www.storydriven.org/storydiagrams/0.2.1');
-modeltype sdPatterns uses storydiagrams::patterns('http://www.storydriven.org/storydiagrams/0.2.1');
+modeltype sd uses 'http://www.muml.org/storydiagram/1.0.0';
+modeltype sdActivities uses storydiagrams::activities('http://www.muml.org/storydiagram/1.0.0');
+modeltype sdPatterns uses storydiagrams::patterns('http://www.muml.org/storydiagram/1.0.0');
 
 modeltype componentInstanceConfiguration uses muml::instance('http://www.muml.org/pim/1.0.0');
 

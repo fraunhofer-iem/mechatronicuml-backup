@@ -17,10 +17,10 @@
     <usedPackage href="http://www.storydriven.org/core/0.3.1#//expressions"/>
     <usedPackage href="http://www.fujaba.de/modelinstance/0.4.0#/"/>
     <usedPackage href="http://www.storydriven.org/core/0.3.1#//expressions/common"/>
-    <usedPackage href="http://www.storydriven.org/storydiagrams/0.2.1#//calls"/>
-    <usedPackage href="http://www.storydriven.org/storydiagrams/0.2.1#//calls/expressions"/>
-    <usedPackage href="http://www.storydriven.org/storydiagrams/0.2.1#//activities/expressions"/>
-    <usedPackage href="http://www.storydriven.org/storydiagrams/0.2.1#//patterns/expressions"/>
+    <usedPackage href="http://www.muml.org/storydiagram/1.0.0#//calls"/>
+    <usedPackage href="http://www.muml.org/storydiagram/1.0.0#//calls/expressions"/>
+    <usedPackage href="http://www.muml.org/storydiagram/1.0.0#//activities/expressions"/>
+    <usedPackage href="http://www.muml.org/storydiagram/1.0.0#//patterns/expressions"/>
     <usedPackage href="http://www.muml.org/pim/component/1.0.0#/"/>
     <usedPackage href="http://www.muml.org/pim/instance/1.0.0#/"/>
   </modelParameter>

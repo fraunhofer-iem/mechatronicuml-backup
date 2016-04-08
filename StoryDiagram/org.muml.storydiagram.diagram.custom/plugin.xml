@@ -641,7 +641,7 @@
             name="storydiagrams">
          <child
                class="Activity"
-               packageNsUri="http://www.storydriven.org/storydiagrams/activities/0.2.1">
+               packageNsUri="http://www.muml.org/storydiagram/activities/1.0.0">
          </child>
       </category>
    </extension>
@@ -655,7 +655,7 @@
             modelElementCategoryKey="org.storydriven.storydiagrams.category"
             modelId="Storydiagrams">
          <diagramElement
-               packageNsURI="http://www.storydriven.org/storydiagrams/activities/0.2.1"
+               packageNsURI="http://www.muml.org/storydiagram/activities/1.0.0"
                className="Activity">
          </diagramElement>
          <topLevelNode

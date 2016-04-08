@@ -375,7 +375,7 @@
             <param name="semanticHint" value="2004"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.storydriven.org/storydiagrams/patterns/0.2.1">
+      <metamodel nsURI="http://www.muml.org/storydiagram/patterns/1.0.0">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd.diagram.StoryPattern_3011"
                name="%metatype.name.StoryPattern_3011"
@@ -385,7 +385,7 @@
             <param name="semanticHint" value="3011"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.storydriven.org/storydiagrams/patterns/0.2.1">
+      <metamodel nsURI="http://www.muml.org/storydiagram/patterns/1.0.0">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd.diagram.CollectionVariable_3006"
                name="%metatype.name.CollectionVariable_3006"
@@ -395,7 +395,7 @@
             <param name="semanticHint" value="3006"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.storydriven.org/storydiagrams/patterns/0.2.1">
+      <metamodel nsURI="http://www.muml.org/storydiagram/patterns/1.0.0">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd.diagram.AttributeAssignment_3007"
                name="%metatype.name.AttributeAssignment_3007"
@@ -405,7 +405,7 @@
             <param name="semanticHint" value="3007"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.storydriven.org/storydiagrams/patterns/0.2.1">
+      <metamodel nsURI="http://www.muml.org/storydiagram/patterns/1.0.0">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd.diagram.Constraint_3008"
                name="%metatype.name.Constraint_3008"
@@ -415,7 +415,7 @@
             <param name="semanticHint" value="3008"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.storydriven.org/storydiagrams/patterns/0.2.1">
+      <metamodel nsURI="http://www.muml.org/storydiagram/patterns/1.0.0">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd.diagram.ObjectVariable_3009"
                name="%metatype.name.ObjectVariable_3009"
@@ -425,7 +425,7 @@
             <param name="semanticHint" value="3009"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.storydriven.org/storydiagrams/patterns/0.2.1">
+      <metamodel nsURI="http://www.muml.org/storydiagram/patterns/1.0.0">
          <specializationType
                id="de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd.diagram.Constraint_3010"
                name="%metatype.name.Constraint_3010"
@@ -444,7 +444,7 @@
             <param name="semanticHint" value="4001"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.storydriven.org/storydiagrams/patterns/0.2.1">
+      <metamodel nsURI="http://www.muml.org/storydiagram/patterns/1.0.0">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd.diagram.LinkVariable_4003"
                name="%metatype.name.LinkVariable_4003"

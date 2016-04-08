@@ -3,7 +3,7 @@ Index: tgg/fujaba2simulink.tgg
 --- tgg/fujaba2simulink.tgg	(revision 1238)
 +++ tgg/fujaba2simulink.tgg	(working copy)
 @@ -23,12 +23,14 @@
-     <usedPackage href="http://www.storydriven.org/storydiagrams/0.2.1#//patterns/expressions"/>
+     <usedPackage href="http://www.muml.org/storydiagram/1.0.0#//patterns/expressions"/>
      <usedPackage href="http://www.muml.org/pim/component/1.0.0#/"/>
      <usedPackage href="http://www.muml.org/pim/instance/1.0.0#/"/>
 +    <usedPackage href="http://www.fujaba.de/muml/reconfiguration/0.3.18#/"/>

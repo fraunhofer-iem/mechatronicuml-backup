@@ -2,7 +2,7 @@ import Queries;
 
 library CSD2SDUtil;
 
-modeltype sdPatterns uses storydiagrams::patterns('http://www.storydriven.org/storydiagrams/0.2.1');
+modeltype sdPatterns uses storydiagrams::patterns('http://www.muml.org/storydiagram/1.0.0');
 
 modeltype componentInstanceConfiguration uses muml::instance('http://www.muml.org/pim/1.0.0');
 
