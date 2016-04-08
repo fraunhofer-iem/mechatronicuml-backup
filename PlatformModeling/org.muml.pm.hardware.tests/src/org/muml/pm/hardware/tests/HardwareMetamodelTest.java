@@ -32,7 +32,7 @@ public class HardwareMetamodelTest extends MetamodelTest {
 		PimPackage.eINSTANCE.eClass();
 		
 //		Resource coreModel = TestUtilities.loadResource(resourceSet,
-//				"org.storydriven.core/model/core.ecore");
+//				"org.muml.core/model/core.ecore");
 
 		
 		Resource mumlModel = TestUtilities.loadResource(resourceSet,

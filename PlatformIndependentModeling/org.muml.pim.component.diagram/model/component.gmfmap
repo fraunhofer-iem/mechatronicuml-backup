@@ -17,7 +17,7 @@
         <diagramLabel
             href="component.gmfgraph#ComponentName"/>
         <features
-            href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+            href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
@@ -79,7 +79,7 @@
             <diagramLabel
                 href="component.gmfgraph#PortRefinementLabel"/>
             <features
-                href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+                href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
           </labelMappings>
           <labelMappings
               xsi:type="gmfmap:ExpressionLabelMapping"
@@ -108,7 +108,7 @@
             <diagramLabel
                 href="component.gmfgraph#PortRefinementLabel"/>
             <features
-                href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+                href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
@@ -152,7 +152,7 @@
         <diagramLabel
             href="component.gmfgraph#ComponentName"/>
         <features
-            href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+            href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"

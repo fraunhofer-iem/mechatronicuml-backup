@@ -17,9 +17,9 @@
         <diagramLabel
             href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#SimpleResourceNameLabel"/>
         <features
-            href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+            href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
         <editableFeatures
-            href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+            href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
       </labelMappings>
       <labelMappings
           xsi:type="gmfmap:ExpressionLabelMapping"
@@ -55,7 +55,7 @@
                 xsi:type="gmfmap:FeatureValueSpec">
               <feature
                   xsi:type="ecore:EAttribute"
-                  href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+                  href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
               <value
                   body="'hw-port'"/>
             </initializers>
@@ -127,9 +127,9 @@
         <diagramLabel
             href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#StructuredResourceNameLabel"/>
         <features
-            href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+            href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
         <editableFeatures
-            href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+            href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
       </labelMappings>
       <labelMappings
           xsi:type="gmfmap:ExpressionLabelMapping"
@@ -208,9 +208,9 @@
             <diagramLabel
                 href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#SimpleResourceNameLabel"/>
             <features
-                href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+                href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
             <editableFeatures
-                href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+                href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
           </labelMappings>
           <labelMappings
               xsi:type="gmfmap:ExpressionLabelMapping"
@@ -247,9 +247,9 @@
             <diagramLabel
                 href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#ResourceNameLabel"/>
             <features
-                href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+                href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
             <editableFeatures
-                href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+                href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
           </labelMappings>
           <labelMappings
               xsi:type="gmfmap:ExpressionLabelMapping"
@@ -327,9 +327,9 @@
             <diagramLabel
                 href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#ResourceNameLabel"/>
             <features
-                href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+                href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
             <editableFeatures
-                href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+                href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
           </labelMappings>
           <labelMappings
               xsi:type="gmfmap:ExpressionLabelMapping"
@@ -373,9 +373,9 @@
             <diagramLabel
                 href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#ResourceNameLabel"/>
             <features
-                href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+                href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
             <editableFeatures
-                href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+                href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
           </labelMappings>
           <labelMappings
               xsi:type="gmfmap:ExpressionLabelMapping"
@@ -412,9 +412,9 @@
             <diagramLabel
                 href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#ResourceNameLabel"/>
             <features
-                href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+                href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
             <editableFeatures
-                href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+                href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
           </labelMappings>
           <labelMappings
               xsi:type="gmfmap:ExpressionLabelMapping"
@@ -471,7 +471,7 @@
         <diagramLabel
             href="resource.gmfgraph#ProtocolRepositoryName"/>
         <features
-            href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+            href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
@@ -517,7 +517,7 @@
             <diagramLabel
                 href="resource.gmfgraph#ProtocolName"/>
             <features
-                href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+                href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
@@ -565,7 +565,7 @@
             <diagramLabel
                 href="resource.gmfgraph#ProtocolName"/>
             <features
-                href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+                href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"

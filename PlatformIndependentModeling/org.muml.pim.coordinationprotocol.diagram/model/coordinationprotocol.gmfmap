@@ -24,7 +24,7 @@
                 xsi:type="gmfmap:FeatureValueSpec">
               <feature
                   xsi:type="ecore:EAttribute"
-                  href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+                  href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
               <value
                   body="'role1'"/>
             </initializers>
@@ -78,7 +78,7 @@
                 xsi:type="gmfmap:FeatureValueSpec">
               <feature
                   xsi:type="ecore:EAttribute"
-                  href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+                  href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
               <value
                   body="'role2'"/>
             </initializers>
@@ -150,7 +150,7 @@
                     xsi:type="gmfmap:FeatureValueSpec">
                   <feature
                       xsi:type="ecore:EAttribute"
-                      href="../../org.storydriven.core/model/core.ecore#//CommentableElement/comment"/>
+                      href="../../org.muml.core/model/core.ecore#//CommentableElement/comment"/>
                   <value
                       body="''"/>
                 </initializers>
@@ -170,12 +170,12 @@
                             xsi:type="gmfmap:FeatureValueSpec">
                           <feature
                               xsi:type="ecore:EAttribute"
-                              href="../../org.storydriven.core/model/core.ecore#//expressions/common/LiteralExpression/value"/>
+                              href="../../org.muml.core/model/core.ecore#//expressions/common/LiteralExpression/value"/>
                           <value
                               body="'0'"/>
                         </initializers>
                         <elementClass
-                            href="../../org.storydriven.core/model/core.ecore#//expressions/common/LiteralExpression"/>
+                            href="../../org.muml.core/model/core.ecore#//expressions/common/LiteralExpression"/>
                       </newElementInitializers>
                     </initializers>
                     <initializers
@@ -205,12 +205,12 @@
                             xsi:type="gmfmap:FeatureValueSpec">
                           <feature
                               xsi:type="ecore:EAttribute"
-                              href="../../org.storydriven.core/model/core.ecore#//expressions/common/LiteralExpression/value"/>
+                              href="../../org.muml.core/model/core.ecore#//expressions/common/LiteralExpression/value"/>
                           <value
                               body="'0'"/>
                         </initializers>
                         <elementClass
-                            href="../../org.storydriven.core/model/core.ecore#//expressions/common/LiteralExpression"/>
+                            href="../../org.muml.core/model/core.ecore#//expressions/common/LiteralExpression"/>
                       </newElementInitializers>
                     </initializers>
                     <initializers
@@ -251,7 +251,7 @@
             <diagramLabel
                 href="../../de.uni_paderborn.fujaba.muml.coordinationspecification.common/model/coordinationspecification.gmfgraph#CoordinationProtocolName"/>
             <features
-                href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+                href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
           </labelMappings>
           <diagramNode
               href="../../de.uni_paderborn.fujaba.muml.coordinationspecification.common/model/coordinationspecification.gmfgraph#CoordinationProtocol"/>
@@ -315,7 +315,7 @@
             <diagramLabel
                 href="../../de.uni_paderborn.fujaba.muml.coordinationspecification.common/model/coordinationspecification.gmfgraph#RoleName"/>
             <features
-                href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+                href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
@@ -366,7 +366,7 @@
                 <diagramLabel
                     href="../../de.uni_paderborn.fujaba.muml.common/model/messagetype.gmfgraph#MessageTypeName"/>
                 <features
-                    href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+                    href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
               </labelMappings>
               <diagramNode
                   href="../../de.uni_paderborn.fujaba.muml.common/model/messagetype.gmfgraph#MessageType"/>
@@ -459,7 +459,7 @@
               xsi:type="gmfmap:FeatureValueSpec">
             <feature
                 xsi:type="ecore:EAttribute"
-                href="../../org.storydriven.core/model/core.ecore#//CommentableElement/comment"/>
+                href="../../org.muml.core/model/core.ecore#//CommentableElement/comment"/>
             <value
                 body="''"/>
           </initializers>
@@ -479,12 +479,12 @@
                       xsi:type="gmfmap:FeatureValueSpec">
                     <feature
                         xsi:type="ecore:EAttribute"
-                        href="../../org.storydriven.core/model/core.ecore#//expressions/common/LiteralExpression/value"/>
+                        href="../../org.muml.core/model/core.ecore#//expressions/common/LiteralExpression/value"/>
                     <value
                         body="'0'"/>
                   </initializers>
                   <elementClass
-                      href="../../org.storydriven.core/model/core.ecore#//expressions/common/LiteralExpression"/>
+                      href="../../org.muml.core/model/core.ecore#//expressions/common/LiteralExpression"/>
                 </newElementInitializers>
               </initializers>
               <initializers
@@ -514,12 +514,12 @@
                       xsi:type="gmfmap:FeatureValueSpec">
                     <feature
                         xsi:type="ecore:EAttribute"
-                        href="../../org.storydriven.core/model/core.ecore#//expressions/common/LiteralExpression/value"/>
+                        href="../../org.muml.core/model/core.ecore#//expressions/common/LiteralExpression/value"/>
                     <value
                         body="'0'"/>
                   </initializers>
                   <elementClass
-                      href="../../org.storydriven.core/model/core.ecore#//expressions/common/LiteralExpression"/>
+                      href="../../org.muml.core/model/core.ecore#//expressions/common/LiteralExpression"/>
                 </newElementInitializers>
               </initializers>
               <initializers

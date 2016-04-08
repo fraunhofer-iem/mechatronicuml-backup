@@ -16,7 +16,7 @@
         <diagramLabel
             href="messagetype.gmfgraph#MessageInterfaceName"/>
         <features
-            href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+            href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
@@ -35,7 +35,7 @@
             <diagramLabel
                 href="../../de.uni_paderborn.fujaba.muml.common/model/messagetype.gmfgraph#MessageTypeName"/>
             <features
-                href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+                href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"

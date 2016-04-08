@@ -19,7 +19,7 @@ public class PSMValidateMetamodelsTest extends ValidateMetamodelsTest {
 	@Parameters
 	public static Collection<Object[]> getResourcePaths() {
 		return new ArrayList<Object[]>(Arrays.asList(new Object[][] {
-//				new Object[] {"org.storydriven.core/model/core.ecore"},
+//				new Object[] {"org.muml.core/model/core.ecore"},
 //				new Object[] {"org.muml.pim/model/pim.ecore"},
 //				new Object[] {"org.muml.pim.actionlanguage/model/actionlanguage.ecore"},
 				new Object[] {"org.muml.psm/model/psm.ecore"}

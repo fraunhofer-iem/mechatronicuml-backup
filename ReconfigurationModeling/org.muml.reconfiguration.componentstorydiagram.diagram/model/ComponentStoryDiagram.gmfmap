@@ -18,7 +18,7 @@
             xsi:type="gmfmap:FeatureValueSpec">
           <feature
               xsi:type="ecore:EAttribute"
-              href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+              href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
           <value
               body="'activity'"/>
         </initializers>
@@ -52,7 +52,7 @@
                     xsi:type="gmfmap:FeatureValueSpec">
                   <feature
                       xsi:type="ecore:EAttribute"
-                      href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+                      href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
                   <value
                       body="'componentStoryPattern'"/>
                 </initializers>
@@ -66,7 +66,7 @@
                         xsi:type="gmfmap:FeatureValueSpec">
                       <feature
                           xsi:type="ecore:EAttribute"
-                          href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+                          href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
                       <value
                           body="'this'"/>
                     </initializers>
@@ -102,7 +102,7 @@
                 xsi:type="gmfmap:FeatureValueSpec">
               <feature
                   xsi:type="ecore:EAttribute"
-                  href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+                  href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
               <value
                   body="'componentStoryNode'"/>
             </initializers>
@@ -112,7 +112,7 @@
             <diagramLabel
                 href="ComponentStoryDiagram.gmfgraph#ComponentStoryNodeLabel"/>
             <features
-                href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+                href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
@@ -208,9 +208,9 @@
                         <diagramLabel
                             href="ComponentStoryDiagram.gmfgraph#PortVariableNameLabel"/>
                         <features
-                            href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+                            href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
                         <editableFeatures
-                            href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+                            href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
                       </labelMappings>
                       <labelMappings
                           xsi:type="gmfmap:ExpressionLabelMapping">
@@ -264,9 +264,9 @@
                         <diagramLabel
                             href="ComponentStoryDiagram.gmfgraph#PortVariableNameLabel"/>
                         <features
-                            href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+                            href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
                         <editableFeatures
-                            href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+                            href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
                       </labelMappings>
                       <labelMappings
                           xsi:type="gmfmap:ExpressionLabelMapping">
@@ -316,7 +316,7 @@
                 xsi:type="gmfmap:FeatureValueSpec">
               <feature
                   xsi:type="ecore:EAttribute"
-                  href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+                  href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
               <value
                   body="'init'"/>
             </initializers>
@@ -341,7 +341,7 @@
                 xsi:type="gmfmap:FeatureValueSpec">
               <feature
                   xsi:type="ecore:EAttribute"
-                  href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+                  href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
               <value
                   body="'junction'"/>
             </initializers>
@@ -366,7 +366,7 @@
                 xsi:type="gmfmap:FeatureValueSpec">
               <feature
                   xsi:type="ecore:EAttribute"
-                  href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+                  href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
               <value
                   body="'final'"/>
             </initializers>
@@ -402,7 +402,7 @@
                     xsi:type="gmfmap:FeatureValueSpec">
                   <feature
                       xsi:type="ecore:EAttribute"
-                      href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+                      href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
                   <value
                       body="'componentStoryPattern'"/>
                 </initializers>
@@ -416,7 +416,7 @@
                         xsi:type="gmfmap:FeatureValueSpec">
                       <feature
                           xsi:type="ecore:EAttribute"
-                          href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+                          href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
                       <value
                           body="'this'"/>
                     </initializers>
@@ -482,7 +482,7 @@
                 xsi:type="gmfmap:FeatureValueSpec">
               <feature
                   xsi:type="ecore:EAttribute"
-                  href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+                  href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
               <value
                   body="'controllerExchangeNode'"/>
             </initializers>
@@ -492,7 +492,7 @@
             <diagramLabel
                 href="ComponentStoryDiagram.gmfgraph#ControllerExchangeNodeLabel"/>
             <features
-                href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+                href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
           </labelMappings>
           <labelMappings
               xsi:type="gmfmap:ExpressionLabelMapping"
@@ -664,9 +664,9 @@
       <diagramLabel
           href="ComponentStoryDiagram.gmfgraph#AssemblyNameLabel"/>
       <features
-          href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+          href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
       <editableFeatures
-          href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+          href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
     </labelMappings>
     <containmentFeature
         href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.ecore#//ComponentVariable/connectorVariables"/>
@@ -707,9 +707,9 @@
       <diagramLabel
           href="ComponentStoryDiagram.gmfgraph#DelegationNameLabel"/>
       <features
-          href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+          href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
       <editableFeatures
-          href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+          href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
     </labelMappings>
     <containmentFeature
         href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.ecore#//ComponentVariable/connectorVariables"/>

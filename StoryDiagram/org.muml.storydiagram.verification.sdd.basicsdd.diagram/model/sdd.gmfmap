@@ -18,7 +18,7 @@
             xsi:type="gmfmap:FeatureValueSpec">
           <feature
               xsi:type="ecore:EAttribute"
-              href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+              href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
           <value
               body="&quot;PatternNode&quot;"
               language="literal"/>
@@ -33,7 +33,7 @@
                 xsi:type="gmfmap:FeatureValueSpec">
               <feature
                   xsi:type="ecore:EAttribute"
-                  href="../../org.storydriven.core/model/core.ecore#//CommentableElement/comment"/>
+                  href="../../org.muml.core/model/core.ecore#//CommentableElement/comment"/>
               <value
                   body="&quot;&quot;"
                   language="literal"/>
@@ -51,9 +51,9 @@
         <diagramLabel
             href="sdd.gmfgraph#PatternNodeName"/>
         <features
-            href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+            href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
         <editableFeatures
-            href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+            href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
       </labelMappings>
       <labelMappings
           xsi:type="gmfmap:FeatureLabelMapping">

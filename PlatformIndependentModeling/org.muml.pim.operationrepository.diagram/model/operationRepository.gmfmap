@@ -16,7 +16,7 @@
         <diagramLabel
             href="operationRepository.gmfgraph#OperationRepositoryName"/>
         <features
-            href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+            href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
@@ -35,7 +35,7 @@
             <diagramLabel
                 href="operationRepository.gmfgraph#OperationName"/>
             <features
-                href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+                href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
           </labelMappings>
           <labelMappings
               xsi:type="gmfmap:ExpressionLabelMapping">

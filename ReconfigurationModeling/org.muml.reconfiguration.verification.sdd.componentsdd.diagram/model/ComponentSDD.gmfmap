@@ -24,7 +24,7 @@
                 xsi:type="gmfmap:FeatureValueSpec">
               <feature
                   xsi:type="ecore:EAttribute"
-                  href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+                  href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
               <value
                   body="'componentStoryPattern'"/>
             </initializers>
@@ -38,7 +38,7 @@
                     xsi:type="gmfmap:FeatureValueSpec">
                   <feature
                       xsi:type="ecore:EAttribute"
-                      href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+                      href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
                   <value
                       body="'this'"/>
                 </initializers>
@@ -74,7 +74,7 @@
             xsi:type="gmfmap:FeatureValueSpec">
           <feature
               xsi:type="ecore:EAttribute"
-              href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+              href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
           <value
               body="'componentStoryPatternNode'"/>
         </initializers>
@@ -292,9 +292,9 @@
       <diagramLabel
           href="../../de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram/model/ComponentStoryDiagram.gmfgraph#AssemblyNameLabel"/>
       <features
-          href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+          href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
       <editableFeatures
-          href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+          href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
     </labelMappings>
     <containmentFeature
         href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.ecore#//ComponentVariable/connectorVariables"/>
@@ -335,9 +335,9 @@
       <diagramLabel
           href="../../de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram/model/ComponentStoryDiagram.gmfgraph#DelegationNameLabel"/>
       <features
-          href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+          href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
       <editableFeatures
-          href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+          href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
     </labelMappings>
     <containmentFeature
         href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.ecore#//ComponentVariable/connectorVariables"/>
