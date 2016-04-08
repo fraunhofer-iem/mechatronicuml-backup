@@ -34,7 +34,7 @@ modeltype uppaal_declarations uses uppaal::declarations('http://www.muml.org/upp
 modeltype uppaal_core uses uppaal::core('http://www.muml.org/uppaal/1.0.0');
 modeltype uppaal_system uses uppaal::declarations::system('http://www.muml.org/uppaal/1.0.0');
 
-modeltype uppaalReq uses 'http://www.uni-paderborn.de/requirements/0.4.0';
+modeltype uppaalReq uses 'http://www.muml.org/uppaal/requirements/1.0.0';
 modeltype uppaalExpr uses uppaal::expressions('http://www.muml.org/uppaal/1.0.0');
 
 //Maps a set of (normalized) MTCTL properties to uppaal properties. Assumes normalized MTCTL and direct access to MUML2Uppaal traces (i.e. it should be the directly previous transformation)

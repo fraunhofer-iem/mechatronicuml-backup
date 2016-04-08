@@ -13,7 +13,7 @@ import transforms.lib.MUML2UPPAAL.Async.Variables;
 import transforms.lib.MUML2UPPAAL.Async.Events;
 --
 modeltype uppaal uses 'http://www.muml.org/uppaal/1.0.0';
-modeltype uppaal_requirements uses 'http://www.uni-paderborn.de/requirements/0.4.0';
+modeltype uppaal_requirements uses 'http://www.muml.org/uppaal/requirements/1.0.0';
 modeltype uppaal_expressions uses uppaal::expressions('http://www.muml.org/uppaal/1.0.0');
 modeltype uppaal_types uses uppaal::types('http://www.muml.org/uppaal/1.0.0');
 modeltype uppaal_templates uses uppaal::templates('http://www.muml.org/uppaal/1.0.0');
