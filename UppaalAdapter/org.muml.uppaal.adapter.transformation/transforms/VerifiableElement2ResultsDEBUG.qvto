@@ -10,7 +10,7 @@ modeltype storydriven uses 'http://www.muml.org/core/1.0.0';
 modeltype muml uses 'http://www.muml.org/pim/1.0.0';
 modeltype muml_constraint uses muml::constraint('http://www.muml.org/pim/1.0.0');
 
-modeltype result_model uses 'http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/results';
+modeltype result_model uses 'http://www.muml.org/uppaal/adapter/results/1.0.0';
 modeltype verification_options uses 'http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/options';
 modeltype verification_extension uses 'http://www.fujaba.de/muml/verification/extension/0.4.0';
 
