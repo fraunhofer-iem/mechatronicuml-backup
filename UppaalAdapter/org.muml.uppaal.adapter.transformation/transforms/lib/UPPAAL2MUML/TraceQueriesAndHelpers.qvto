@@ -10,7 +10,7 @@ import transforms.rtsc.RTSCHierarchyNormalization;
 library TraceQueriesAndHelpers;
 
 modeltype uppaal_trace uses 'http://www.uni-paderborn.de/uppaal/trace/0.4.0';
-modeltype reachability uses 'http://www.fujaba.de/reachabilityGraph/0.4.0';
+modeltype reachability uses 'http://www.muml.org/core/reachabilitygraph/1.0.0';
 modeltype reachability_rtsc uses 'http://www.muml.org/verification/core/reachanalysis/reachabilitygraph/rtsc/1.0.0';
 modeltype muml_runtime uses 'http://www.muml.org/verification/core/runtime/1.0.0';
 modeltype uppaal_templates uses uppaal::templates('http://www.muml.org/uppaal/1.0.0');

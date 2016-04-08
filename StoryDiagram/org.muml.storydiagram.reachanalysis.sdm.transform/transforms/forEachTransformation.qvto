@@ -9,7 +9,7 @@ modeltype callsExpressions uses storydiagrams::calls::expressions('http://www.mu
 
 //reachanalysis
 modeltype reach_sdm uses sdm ('http://www.fujaba.de/reachabilityGraph/sdm/0.4.0');
-modeltype reach_core uses reachabilityGraph ('http://www.fujaba.de/reachabilityGraph/0.4.0');
+modeltype reach_core uses reachabilityGraph ('http://www.muml.org/core/reachabilitygraph/1.0.0');
 //others
 modeltype ecore uses ecore;
 
