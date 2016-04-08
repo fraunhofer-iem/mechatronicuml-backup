@@ -1,0 +1,2882 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:mtl="http://www.eclipse.org/acceleo/mtl/3.0" xmlns:ocl.ecore="http://www.eclipse.org/ocl/1.1.0/Ecore">
+  <mtl:Module name="operations" nsURI="org::muml::codegen::componenttype::c::files::operations" startHeaderPosition="85" endHeaderPosition="569">
+    <documentation xsi:type="mtl:ModuleDocumentation">
+      <body startPosition="32" endPosition="82" value="&#xA;The documentation of the module operations.&#xA;&#xA;"/>
+    </documentation>
+    <input>
+      <takesTypesFrom href="http://www.muml.org/pim/1.0.0#//connector"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.muml.org/pim/1.0.0#//behavior"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.muml.org/core/1.0.0#/"/>
+      <takesTypesFrom href="http://www.muml.org/core/1.0.0#//expressions"/>
+      <takesTypesFrom href="http://www.muml.org/core/1.0.0#//expressions/common"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.muml.org/pim/actionlanguage/1.0.0#/"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.muml.org/pim/1.0.0#//msgtype"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.muml.org/pim/1.0.0#//types"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.muml.org/modelinstance/1.0.0#/"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.muml.org/pim/1.0.0#//component"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.muml.org/pim/1.0.0#//instance"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.muml.org/pim/1.0.0#//realtimestatechart"/>
+      <takesTypesFrom href="http://www.muml.org/pim/1.0.0#//realtimestatechart/one_to_n_schemata"/>
+    </input>
+    <imports href="platform:/resource/org.muml.codegen.componenttype.c/bin/org/muml/codegen/componenttype/c/queries/stringQueries.emtl#/0"/>
+    <imports href="platform:/resource/org.muml.codegen.componenttype.c/bin/org/muml/codegen/componenttype/c/queries/modelQueries.emtl#/0"/>
+    <imports href="platform:/resource/org.muml.codegen.componenttype.c/bin/org/muml/codegen/componenttype/c/actionlanguage/operation_queries.emtl#/0"/>
+    <imports href="platform:/resource/org.muml.codegen.componenttype.c/bin/org/muml/codegen/componenttype/c/actionlanguage/expression.emtl#/0"/>
+    <ownedModuleElement xsi:type="mtl:Template" name="generateOperationFiles" visibility="Public">
+      <body xsi:type="mtl:FileBlock" openMode="OverWrite">
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="#ifndef OPERATIONS_H_&#xA;#define OPERATIONS_H_&#xA;#ifdef __cplusplus&#xA;  extern &quot;C&quot; {&#xA;#endif&#xA;"/>
+        <body xsi:type="mtl:LetBlock">
+          <body xsi:type="mtl:ForBlock">
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;"/>
+            <body xsi:type="mtl:TemplateInvocation" definition="/0/generateOperationRepositoryHeader">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              <argument xsi:type="ocl.ecore:VariableExp" name="opRep" referredVariable="/0/generateOperationFiles/%/%.1/%/opRep">
+                <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/OperationRepository"/>
+              </argument>
+              <argument xsi:type="ocl.ecore:VariableExp" name="path" referredVariable="/0/generateOperationFiles/path">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              </argument>
+              <argument xsi:type="ocl.ecore:VariableExp" name="useSubDir" referredVariable="/0/generateOperationFiles/useSubDir">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+              </argument>
+            </body>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#x9;"/>
+            <body xsi:type="mtl:TemplateInvocation" definition="/0/generateOperationRepositoryClass">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              <argument xsi:type="ocl.ecore:VariableExp" name="opRep" referredVariable="/0/generateOperationFiles/%/%.1/%/opRep">
+                <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/OperationRepository"/>
+              </argument>
+              <argument xsi:type="ocl.ecore:VariableExp" name="path" referredVariable="/0/generateOperationFiles/path">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              </argument>
+              <argument xsi:type="ocl.ecore:VariableExp" name="useSubDir" referredVariable="/0/generateOperationFiles/useSubDir">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+              </argument>
+            </body>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#xA;"/>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;#include &quot;"/>
+            <body xsi:type="mtl:QueryInvocation">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              <definition href="platform:/resource/org.muml.codegen.componenttype.c/bin/org/muml/codegen/componenttype/c/queries/stringQueries.emtl#/0/getFileName.1"/>
+              <argument xsi:type="ocl.ecore:VariableExp" name="opRep" referredVariable="/0/generateOperationFiles/%/%.1/%/opRep">
+                <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/OperationRepository"/>
+              </argument>
+              <argument xsi:type="ocl.ecore:BooleanLiteralExp" booleanSymbol="true">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+              </argument>
+              <argument xsi:type="ocl.ecore:BooleanLiteralExp" booleanSymbol="false">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+              </argument>
+            </body>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&quot;&#xA;&#xA;"/>
+            <loopVariable name="opRep">
+              <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/OperationRepository"/>
+            </loopVariable>
+            <iterSet xsi:type="ocl.ecore:VariableExp" name="opRepos" eType="/3/Sequence(OperationRepository)" referredVariable="/0/generateOperationFiles/%/%.1/opRepos"/>
+          </body>
+          <letVariable name="opRepos" eType="/3/Sequence(OperationRepository)">
+            <initExpression xsi:type="ocl.ecore:IteratorExp" name="collect" eType="/3/Sequence(OperationRepository)">
+              <source xsi:type="ocl.ecore:IteratorExp" name="collect" eType="/3/Sequence(RealtimeStatechart)">
+                <source xsi:type="ocl.ecore:IteratorExp" name="collect" eType="/3/Sequence(Behavior)">
+                  <source xsi:type="ocl.ecore:OperationCallExp" eType="/3/OrderedSet(AtomicComponent)">
+                    <source xsi:type="ocl.ecore:VariableExp" name="COs" eType="/3/OrderedSet(Component)" referredVariable="/0/generateOperationFiles/COs"/>
+                    <argument xsi:type="ocl.ecore:TypeExp" eType="/9/AtomicComponent">
+                      <referredType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//component/AtomicComponent"/>
+                    </argument>
+                    <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OrderedSet(T)_Class/selectByKind"/>
+                  </source>
+                  <body xsi:type="ocl.ecore:PropertyCallExp">
+                    <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/Behavior"/>
+                    <source xsi:type="ocl.ecore:VariableExp" name="temp1" referredVariable="/0/generateOperationFiles/%/%.1/opRepos/collect/collect/collect/temp1">
+                      <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//component/AtomicComponent"/>
+                    </source>
+                    <referredProperty xsi:type="ecore:EReference" href="http://www.muml.org/pim/1.0.0#//behavior/BehavioralElement/behavior"/>
+                  </body>
+                  <iterator xsi:type="ocl.ecore:Variable" name="temp1">
+                    <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//component/AtomicComponent"/>
+                  </iterator>
+                </source>
+                <body xsi:type="ocl.ecore:OperationCallExp">
+                  <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//realtimestatechart/RealtimeStatechart"/>
+                  <source xsi:type="ocl.ecore:VariableExp" name="temp2" referredVariable="/0/generateOperationFiles/%/%.1/opRepos/collect/collect/temp2">
+                    <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/Behavior"/>
+                  </source>
+                  <argument xsi:type="ocl.ecore:TypeExp" eType="/9/RealtimeStatechart">
+                    <referredType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//realtimestatechart/RealtimeStatechart"/>
+                  </argument>
+                  <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclAsType"/>
+                </body>
+                <iterator xsi:type="ocl.ecore:Variable" name="temp2">
+                  <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/Behavior"/>
+                </iterator>
+              </source>
+              <body xsi:type="ocl.ecore:PropertyCallExp" eType="/3/OrderedSet(OperationRepository)">
+                <source xsi:type="ocl.ecore:VariableExp" name="temp3" referredVariable="/0/generateOperationFiles/%/%.1/opRepos/collect/temp3">
+                  <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//realtimestatechart/RealtimeStatechart"/>
+                </source>
+                <referredProperty xsi:type="ecore:EReference" href="http://www.muml.org/pim/1.0.0#//realtimestatechart/RealtimeStatechart/usedOperationRepositories"/>
+              </body>
+              <iterator xsi:type="ocl.ecore:Variable" name="temp3">
+                <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//realtimestatechart/RealtimeStatechart"/>
+              </iterator>
+            </initExpression>
+          </letVariable>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;#ifdef __cplusplus&#xA;  }&#xA;#endif&#xA;#endif /*OPERATIONS_H_ */&#xA;"/>
+        <fileUrl xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/oclstdlib_String_Class/+">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <source xsi:type="ocl.ecore:VariableExp" name="path" referredVariable="/0/generateOperationFiles/path">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          </source>
+          <argument xsi:type="mtl:QueryInvocation">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <definition href="platform:/resource/org.muml.codegen.componenttype.c/bin/org/muml/codegen/componenttype/c/queries/stringQueries.emtl#/0/getFileName4Operations"/>
+            <argument xsi:type="ocl.ecore:BooleanLiteralExp" booleanSymbol="true">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+            </argument>
+            <argument xsi:type="ocl.ecore:VariableExp" name="useSubDir" referredVariable="/0/generateOperationFiles/useSubDir">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+            </argument>
+          </argument>
+        </fileUrl>
+        <charset xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="UTF-8">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </charset>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+      <documentation xsi:type="mtl:ModuleElementDocumentation">
+        <body startPosition="874" endPosition="966" value="&#xA;The documentation of the template generateOperationFile.&#xA;@param anAbsoluteDeadline&#xA;&#xA;"/>
+        <parametersDocumentation name="anAbsoluteDeadline">
+          <body value=""/>
+        </parametersDocumentation>
+      </documentation>
+      <parameter name="COs" eType="/3/OrderedSet(Component)"/>
+      <parameter name="path">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+      </parameter>
+      <parameter name="useSubDir">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+      </parameter>
+    </ownedModuleElement>
+    <ownedModuleElement xsi:type="mtl:Template" name="generateOperationRepositoryHeader" visibility="Public">
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+      <body xsi:type="mtl:FileBlock" openMode="OverWrite">
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="#ifndef "/>
+        <body xsi:type="ocl.ecore:OperationCallExp">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <source xsi:type="mtl:QueryInvocation">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <definition href="platform:/resource/org.muml.codegen.componenttype.c/bin/org/muml/codegen/componenttype/c/queries/stringQueries.emtl#/0/getName"/>
+            <argument xsi:type="ocl.ecore:VariableExp" name="opRep" referredVariable="/0/generateOperationRepositoryHeader/opRep">
+              <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/OperationRepository"/>
+            </argument>
+          </source>
+          <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/toUpper"/>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="_H_&#xA;#define "/>
+        <body xsi:type="ocl.ecore:OperationCallExp">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <source xsi:type="mtl:QueryInvocation">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <definition href="platform:/resource/org.muml.codegen.componenttype.c/bin/org/muml/codegen/componenttype/c/queries/stringQueries.emtl#/0/getName"/>
+            <argument xsi:type="ocl.ecore:VariableExp" name="opRep" referredVariable="/0/generateOperationRepositoryHeader/opRep">
+              <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/OperationRepository"/>
+            </argument>
+          </source>
+          <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/toUpper"/>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="_H_&#xA;#ifdef __cplusplus&#xA;  extern &quot;C&quot; {&#xA;#endif&#xA;&#xA;&#x9;#include &quot;"/>
+        <body xsi:type="mtl:IfBlock">
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="../types/"/>
+          <ifExpr xsi:type="ocl.ecore:VariableExp" name="useSubDir" referredVariable="/0/generateOperationRepositoryHeader/useSubDir">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+          </ifExpr>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="standardTypes.h&quot;&#xA;&#x9;#include &quot;"/>
+        <body xsi:type="mtl:IfBlock">
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="../types/"/>
+          <ifExpr xsi:type="ocl.ecore:VariableExp" name="useSubDir" referredVariable="/0/generateOperationRepositoryHeader/useSubDir">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+          </ifExpr>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="customTypes.h&quot;&#xA;&#xA;&#xA;&#x9;&#x9;&#x9;&#xA;"/>
+        <body xsi:type="mtl:ForBlock">
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#x9;/**&#xA;&#x9;&#x9; * @brief Implementation stub of operation "/>
+          <body xsi:type="ocl.ecore:PropertyCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <source xsi:type="ocl.ecore:VariableExp" name="operation" referredVariable="/0/generateOperationRepositoryHeader/%.1/%.9/operation">
+              <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/Operation"/>
+            </source>
+            <referredProperty xsi:type="ecore:EAttribute" href="http://www.muml.org/core/1.0.0#//NamedElement/name"/>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA; &#x9;&#x9; * @details This function shall contain the implementation of the operation "/>
+          <body xsi:type="ocl.ecore:PropertyCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <source xsi:type="ocl.ecore:VariableExp" name="operation" referredVariable="/0/generateOperationRepositoryHeader/%.1/%.9/operation">
+              <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/Operation"/>
+            </source>
+            <referredProperty xsi:type="ecore:EAttribute" href="http://www.muml.org/core/1.0.0#//NamedElement/name"/>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=".&#xA;&#x9;&#x9; * "/>
+          <body xsi:type="mtl:ForBlock">
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="@param "/>
+            <body xsi:type="mtl:QueryInvocation">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              <definition href="platform:/resource/org.muml.codegen.componenttype.c/bin/org/muml/codegen/componenttype/c/queries/stringQueries.emtl#/0/getName.2"/>
+              <argument xsi:type="ocl.ecore:VariableExp" name="p" referredVariable="/0/generateOperationRepositoryHeader/%.1/%.9/%.5/p">
+                <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/Parameter"/>
+              </argument>
+            </body>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" "/>
+            <loopVariable name="p">
+              <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/Parameter"/>
+            </loopVariable>
+            <iterSet xsi:type="ocl.ecore:PropertyCallExp" eType="/3/OrderedSet(Parameter)">
+              <source xsi:type="ocl.ecore:VariableExp" name="operation" referredVariable="/0/generateOperationRepositoryHeader/%.1/%.9/operation">
+                <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/Operation"/>
+              </source>
+              <referredProperty xsi:type="ecore:EReference" href="http://www.muml.org/pim/1.0.0#//behavior/Operation/parameters"/>
+            </iterSet>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#x9;&#x9; */&#xA;&#x9;&#x9;"/>
+          <body xsi:type="mtl:QueryInvocation">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <definition href="platform:/resource/org.muml.codegen.componenttype.c/bin/org/muml/codegen/componenttype/c/queries/stringQueries.emtl#/0/getTypeName.4"/>
+            <argument xsi:type="ocl.ecore:PropertyCallExp">
+              <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//types/DataType"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="operation" referredVariable="/0/generateOperationRepositoryHeader/%.1/%.9/operation">
+                <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/Operation"/>
+              </source>
+              <referredProperty xsi:type="ecore:EReference" href="http://www.muml.org/pim/1.0.0#//behavior/Operation/returnType"/>
+            </argument>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" "/>
+          <body xsi:type="mtl:QueryInvocation">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <definition href="platform:/resource/org.muml.codegen.componenttype.c/bin/org/muml/codegen/componenttype/c/queries/stringQueries.emtl#/0/getName.1"/>
+            <argument xsi:type="ocl.ecore:VariableExp" name="operation" referredVariable="/0/generateOperationRepositoryHeader/%.1/%.9/operation">
+              <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/Operation"/>
+            </argument>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="("/>
+          <body xsi:type="mtl:ForBlock">
+            <body xsi:type="mtl:QueryInvocation">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              <definition href="platform:/resource/org.muml.codegen.componenttype.c/bin/org/muml/codegen/componenttype/c/queries/stringQueries.emtl#/0/getTypeName.4"/>
+              <argument xsi:type="ocl.ecore:PropertyCallExp">
+                <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//types/DataType"/>
+                <source xsi:type="ocl.ecore:VariableExp" name="p" referredVariable="/0/generateOperationRepositoryHeader/%.1/%.9/%.11/p">
+                  <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/Parameter"/>
+                </source>
+                <referredProperty xsi:type="ecore:EReference" href="http://www.muml.org/pim/1.0.0#//behavior/TypedNamedElement/dataType"/>
+              </argument>
+            </body>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" "/>
+            <body xsi:type="mtl:QueryInvocation">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              <definition href="platform:/resource/org.muml.codegen.componenttype.c/bin/org/muml/codegen/componenttype/c/queries/stringQueries.emtl#/0/getName.2"/>
+              <argument xsi:type="ocl.ecore:VariableExp" name="p" referredVariable="/0/generateOperationRepositoryHeader/%.1/%.9/%.11/p">
+                <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/Parameter"/>
+              </argument>
+            </body>
+            <loopVariable name="p">
+              <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/Parameter"/>
+            </loopVariable>
+            <iterSet xsi:type="ocl.ecore:PropertyCallExp" eType="/3/OrderedSet(Parameter)">
+              <source xsi:type="ocl.ecore:VariableExp" name="operation" referredVariable="/0/generateOperationRepositoryHeader/%.1/%.9/operation">
+                <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/Operation"/>
+              </source>
+              <referredProperty xsi:type="ecore:EReference" href="http://www.muml.org/pim/1.0.0#//behavior/Operation/parameters"/>
+            </iterSet>
+            <each xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=", ">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            </each>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=");&#xA;"/>
+          <loopVariable name="operation">
+            <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/Operation"/>
+          </loopVariable>
+          <iterSet xsi:type="ocl.ecore:PropertyCallExp" eType="/3/OrderedSet(Operation)">
+            <source xsi:type="ocl.ecore:VariableExp" name="opRep" referredVariable="/0/generateOperationRepositoryHeader/opRep">
+              <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/OperationRepository"/>
+            </source>
+            <referredProperty xsi:type="ecore:EReference" href="http://www.muml.org/pim/1.0.0#//behavior/OperationRepository/operations"/>
+          </iterSet>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#xA;#ifdef __cplusplus&#xA;  }&#xA;#endif&#xA;#endif /*"/>
+        <body xsi:type="ocl.ecore:OperationCallExp">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <source xsi:type="mtl:QueryInvocation">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <definition href="platform:/resource/org.muml.codegen.componenttype.c/bin/org/muml/codegen/componenttype/c/queries/stringQueries.emtl#/0/getName"/>
+            <argument xsi:type="ocl.ecore:VariableExp" name="opRep" referredVariable="/0/generateOperationRepositoryHeader/opRep">
+              <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/OperationRepository"/>
+            </argument>
+          </source>
+          <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/toUpper"/>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="_H_ */&#xA;"/>
+        <fileUrl xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/oclstdlib_String_Class/+">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <source xsi:type="ocl.ecore:VariableExp" name="path" referredVariable="/0/generateOperationRepositoryHeader/path">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          </source>
+          <argument xsi:type="mtl:QueryInvocation">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <definition href="platform:/resource/org.muml.codegen.componenttype.c/bin/org/muml/codegen/componenttype/c/queries/stringQueries.emtl#/0/getFileName.1"/>
+            <argument xsi:type="ocl.ecore:VariableExp" name="opRep" referredVariable="/0/generateOperationRepositoryHeader/opRep">
+              <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/OperationRepository"/>
+            </argument>
+            <argument xsi:type="ocl.ecore:BooleanLiteralExp" booleanSymbol="true">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+            </argument>
+            <argument xsi:type="ocl.ecore:VariableExp" name="useSubDir" referredVariable="/0/generateOperationRepositoryHeader/useSubDir">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+            </argument>
+          </argument>
+        </fileUrl>
+        <charset xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="UTF-8">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </charset>
+      </body>
+      <documentation xsi:type="mtl:ModuleElementDocumentation">
+        <body startPosition="1823" endPosition="1915" value="&#xA;The documentation of the template generateOperationFile.&#xA;@param anAbsoluteDeadline&#xA;&#xA;"/>
+        <parametersDocumentation name="anAbsoluteDeadline">
+          <body value=""/>
+        </parametersDocumentation>
+      </documentation>
+      <parameter name="opRep">
+        <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/OperationRepository"/>
+      </parameter>
+      <parameter name="path">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+      </parameter>
+      <parameter name="useSubDir">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+      </parameter>
+    </ownedModuleElement>
+    <ownedModuleElement xsi:type="mtl:Template" name="generateOperationRepositoryClass" visibility="Public">
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+      <body xsi:type="mtl:FileBlock" openMode="OverWrite">
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;#include &quot;operations.h&quot;&#xA;/** "/>
+        <body xsi:type="mtl:ProtectedAreaBlock">
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" &#xA;&#xA;&#xA;/**"/>
+          <marker xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="User includes **/">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          </marker>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="**/&#xA;"/>
+        <body xsi:type="mtl:ForBlock">
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+          <body xsi:type="mtl:QueryInvocation">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <definition href="platform:/resource/org.muml.codegen.componenttype.c/bin/org/muml/codegen/componenttype/c/queries/stringQueries.emtl#/0/getTypeName.4"/>
+            <argument xsi:type="ocl.ecore:PropertyCallExp">
+              <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//types/DataType"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="operation" referredVariable="/0/generateOperationRepositoryClass/%.1/%.3/operation">
+                <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/Operation"/>
+              </source>
+              <referredProperty xsi:type="ecore:EReference" href="http://www.muml.org/pim/1.0.0#//behavior/Operation/returnType"/>
+            </argument>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" "/>
+          <body xsi:type="mtl:QueryInvocation">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <definition href="platform:/resource/org.muml.codegen.componenttype.c/bin/org/muml/codegen/componenttype/c/queries/stringQueries.emtl#/0/getName.1"/>
+            <argument xsi:type="ocl.ecore:VariableExp" name="operation" referredVariable="/0/generateOperationRepositoryClass/%.1/%.3/operation">
+              <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/Operation"/>
+            </argument>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="("/>
+          <body xsi:type="mtl:ForBlock">
+            <body xsi:type="mtl:QueryInvocation">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              <definition href="platform:/resource/org.muml.codegen.componenttype.c/bin/org/muml/codegen/componenttype/c/queries/stringQueries.emtl#/0/getTypeName.4"/>
+              <argument xsi:type="ocl.ecore:PropertyCallExp">
+                <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//types/DataType"/>
+                <source xsi:type="ocl.ecore:VariableExp" name="p" referredVariable="/0/generateOperationRepositoryClass/%.1/%.3/%.5/p">
+                  <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/Parameter"/>
+                </source>
+                <referredProperty xsi:type="ecore:EReference" href="http://www.muml.org/pim/1.0.0#//behavior/TypedNamedElement/dataType"/>
+              </argument>
+            </body>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" "/>
+            <body xsi:type="mtl:QueryInvocation">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              <definition href="platform:/resource/org.muml.codegen.componenttype.c/bin/org/muml/codegen/componenttype/c/queries/stringQueries.emtl#/0/getName.2"/>
+              <argument xsi:type="ocl.ecore:VariableExp" name="p" referredVariable="/0/generateOperationRepositoryClass/%.1/%.3/%.5/p">
+                <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/Parameter"/>
+              </argument>
+            </body>
+            <loopVariable name="p">
+              <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/Parameter"/>
+            </loopVariable>
+            <iterSet xsi:type="ocl.ecore:PropertyCallExp" eType="/3/OrderedSet(Parameter)">
+              <source xsi:type="ocl.ecore:VariableExp" name="operation" referredVariable="/0/generateOperationRepositoryClass/%.1/%.3/operation">
+                <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/Operation"/>
+              </source>
+              <referredProperty xsi:type="ecore:EReference" href="http://www.muml.org/pim/1.0.0#//behavior/Operation/parameters"/>
+            </iterSet>
+            <each xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=", ">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            </each>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="){&#xA;&#xA;"/>
+          <body xsi:type="mtl:IfBlock">
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="/** "/>
+            <body xsi:type="mtl:ProtectedAreaBlock">
+              <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" &#xA;//@TODO: add your implementation here&#xA;#warning Missing implemenation of repository operation '"/>
+              <body xsi:type="mtl:QueryInvocation">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                <definition href="platform:/resource/org.muml.codegen.componenttype.c/bin/org/muml/codegen/componenttype/c/queries/stringQueries.emtl#/0/getName.1"/>
+                <argument xsi:type="ocl.ecore:VariableExp" name="operation" referredVariable="/0/generateOperationRepositoryClass/%.1/%.3/operation">
+                  <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/Operation"/>
+                </argument>
+              </body>
+              <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="'&#xA;"/>
+              <body xsi:type="mtl:IfBlock">
+                <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;//default return value&#xA;&#x9;"/>
+                <body xsi:type="mtl:QueryInvocation">
+                  <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                  <definition href="platform:/resource/org.muml.codegen.componenttype.c/bin/org/muml/codegen/componenttype/c/queries/stringQueries.emtl#/0/getTypeName.4"/>
+                  <argument xsi:type="ocl.ecore:PropertyCallExp">
+                    <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//types/DataType"/>
+                    <source xsi:type="ocl.ecore:VariableExp" name="operation" referredVariable="/0/generateOperationRepositoryClass/%.1/%.3/operation">
+                      <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/Operation"/>
+                    </source>
+                    <referredProperty xsi:type="ecore:EReference" href="http://www.muml.org/pim/1.0.0#//behavior/Operation/returnType"/>
+                  </argument>
+                </body>
+                <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" ret = "/>
+                <body xsi:type="mtl:QueryInvocation">
+                  <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                  <definition href="platform:/resource/org.muml.codegen.componenttype.c/bin/org/muml/codegen/componenttype/c/queries/stringQueries.emtl#/0/getDefaultValue.3"/>
+                  <argument xsi:type="ocl.ecore:PropertyCallExp">
+                    <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//types/DataType"/>
+                    <source xsi:type="ocl.ecore:VariableExp" name="operation" referredVariable="/0/generateOperationRepositoryClass/%.1/%.3/operation">
+                      <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/Operation"/>
+                    </source>
+                    <referredProperty xsi:type="ecore:EReference" href="http://www.muml.org/pim/1.0.0#//behavior/Operation/returnType"/>
+                  </argument>
+                </body>
+                <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=";&#xA;&#x9;return ret;&#xA;"/>
+                <ifExpr xsi:type="ocl.ecore:OperationCallExp">
+                  <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                  <source xsi:type="ocl.ecore:OperationCallExp">
+                    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                    <source xsi:type="ocl.ecore:OperationCallExp">
+                      <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                      <source xsi:type="ocl.ecore:PropertyCallExp">
+                        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                        <source xsi:type="ocl.ecore:PropertyCallExp">
+                          <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//types/DataType"/>
+                          <source xsi:type="ocl.ecore:VariableExp" name="operation" referredVariable="/0/generateOperationRepositoryClass/%.1/%.3/operation">
+                            <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/Operation"/>
+                          </source>
+                          <referredProperty xsi:type="ecore:EReference" href="http://www.muml.org/pim/1.0.0#//behavior/Operation/returnType"/>
+                        </source>
+                        <referredProperty xsi:type="ecore:EAttribute" href="http://www.muml.org/core/1.0.0#//NamedElement/name"/>
+                      </source>
+                      <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="VOID">
+                        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                      </argument>
+                      <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/="/>
+                    </source>
+                    <argument xsi:type="ocl.ecore:OperationCallExp">
+                      <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                      <source xsi:type="ocl.ecore:PropertyCallExp">
+                        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                        <source xsi:type="ocl.ecore:PropertyCallExp">
+                          <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//types/DataType"/>
+                          <source xsi:type="ocl.ecore:VariableExp" name="operation" referredVariable="/0/generateOperationRepositoryClass/%.1/%.3/operation">
+                            <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/Operation"/>
+                          </source>
+                          <referredProperty xsi:type="ecore:EReference" href="http://www.muml.org/pim/1.0.0#//behavior/Operation/returnType"/>
+                        </source>
+                        <referredProperty xsi:type="ecore:EAttribute" href="http://www.muml.org/core/1.0.0#//NamedElement/name"/>
+                      </source>
+                      <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="void">
+                        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                      </argument>
+                      <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/="/>
+                    </argument>
+                    <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean_Class/or"/>
+                  </source>
+                  <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean_Class/not"/>
+                </ifExpr>
+              </body>
+              <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="/**"/>
+              <marker xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/oclstdlib_String_Class/+">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                <source xsi:type="mtl:QueryInvocation">
+                  <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                  <definition href="platform:/resource/org.muml.codegen.componenttype.c/bin/org/muml/codegen/componenttype/c/queries/stringQueries.emtl#/0/getName.1"/>
+                  <argument xsi:type="ocl.ecore:VariableExp" name="operation" referredVariable="/0/generateOperationRepositoryClass/%.1/%.3/operation">
+                    <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/Operation"/>
+                  </argument>
+                </source>
+                <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" **/">
+                  <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                </argument>
+              </marker>
+            </body>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="**/&#xA;"/>
+            <ifExpr xsi:type="ocl.ecore:OperationCallExp">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+              <source xsi:type="ocl.ecore:OperationCallExp">
+                <eType xsi:type="ecore:EClass" href="http://www.muml.org/core/1.0.0#//expressions/Expression"/>
+                <source xsi:type="ocl.ecore:PropertyCallExp" eType="/3/OrderedSet(Expression)">
+                  <source xsi:type="ocl.ecore:VariableExp" name="operation" referredVariable="/0/generateOperationRepositoryClass/%.1/%.3/operation">
+                    <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/Operation"/>
+                  </source>
+                  <referredProperty xsi:type="ecore:EReference" href="http://www.muml.org/pim/1.0.0#//behavior/Operation/implementations"/>
+                </source>
+                <argument xsi:type="ocl.ecore:IntegerLiteralExp" integerSymbol="1">
+                  <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+                </argument>
+                <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OrderedSet(T)_Class/at"/>
+              </source>
+              <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclIsUndefined"/>
+            </ifExpr>
+            <else>
+              <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" /** auto generated implementation **/&#xA;"/>
+              <body xsi:type="mtl:IfBlock">
+                <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;"/>
+                <body xsi:type="mtl:QueryInvocation">
+                  <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                  <definition href="platform:/resource/org.muml.codegen.componenttype.c/bin/org/muml/codegen/componenttype/c/queries/stringQueries.emtl#/0/getTypeName.4"/>
+                  <argument xsi:type="ocl.ecore:PropertyCallExp">
+                    <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//types/DataType"/>
+                    <source xsi:type="ocl.ecore:VariableExp" name="operation" referredVariable="/0/generateOperationRepositoryClass/%.1/%.3/operation">
+                      <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/Operation"/>
+                    </source>
+                    <referredProperty xsi:type="ecore:EReference" href="http://www.muml.org/pim/1.0.0#//behavior/Operation/returnType"/>
+                  </argument>
+                </body>
+                <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" "/>
+                <body xsi:type="mtl:QueryInvocation">
+                  <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                  <definition href="platform:/resource/org.muml.codegen.componenttype.c/bin/org/muml/codegen/componenttype/c/actionlanguage/operation_queries.emtl#/0/getOperationOutputVariableName"/>
+                  <argument xsi:type="ocl.ecore:VariableExp" name="operation" referredVariable="/0/generateOperationRepositoryClass/%.1/%.3/operation">
+                    <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/Operation"/>
+                  </argument>
+                </body>
+                <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" = "/>
+                <body xsi:type="mtl:QueryInvocation">
+                  <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                  <definition href="platform:/resource/org.muml.codegen.componenttype.c/bin/org/muml/codegen/componenttype/c/queries/stringQueries.emtl#/0/getDefaultValue.3"/>
+                  <argument xsi:type="ocl.ecore:PropertyCallExp">
+                    <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//types/DataType"/>
+                    <source xsi:type="ocl.ecore:VariableExp" name="operation" referredVariable="/0/generateOperationRepositoryClass/%.1/%.3/operation">
+                      <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/Operation"/>
+                    </source>
+                    <referredProperty xsi:type="ecore:EReference" href="http://www.muml.org/pim/1.0.0#//behavior/Operation/returnType"/>
+                  </argument>
+                </body>
+                <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=";&#xA;"/>
+                <ifExpr xsi:type="ocl.ecore:OperationCallExp">
+                  <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                  <source xsi:type="ocl.ecore:OperationCallExp">
+                    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                    <source xsi:type="ocl.ecore:OperationCallExp">
+                      <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                      <source xsi:type="ocl.ecore:PropertyCallExp">
+                        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                        <source xsi:type="ocl.ecore:PropertyCallExp">
+                          <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//types/DataType"/>
+                          <source xsi:type="ocl.ecore:VariableExp" name="operation" referredVariable="/0/generateOperationRepositoryClass/%.1/%.3/operation">
+                            <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/Operation"/>
+                          </source>
+                          <referredProperty xsi:type="ecore:EReference" href="http://www.muml.org/pim/1.0.0#//behavior/Operation/returnType"/>
+                        </source>
+                        <referredProperty xsi:type="ecore:EAttribute" href="http://www.muml.org/core/1.0.0#//NamedElement/name"/>
+                      </source>
+                      <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="VOID">
+                        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                      </argument>
+                      <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/="/>
+                    </source>
+                    <argument xsi:type="ocl.ecore:OperationCallExp">
+                      <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                      <source xsi:type="ocl.ecore:PropertyCallExp">
+                        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                        <source xsi:type="ocl.ecore:PropertyCallExp">
+                          <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//types/DataType"/>
+                          <source xsi:type="ocl.ecore:VariableExp" name="operation" referredVariable="/0/generateOperationRepositoryClass/%.1/%.3/operation">
+                            <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/Operation"/>
+                          </source>
+                          <referredProperty xsi:type="ecore:EReference" href="http://www.muml.org/pim/1.0.0#//behavior/Operation/returnType"/>
+                        </source>
+                        <referredProperty xsi:type="ecore:EAttribute" href="http://www.muml.org/core/1.0.0#//NamedElement/name"/>
+                      </source>
+                      <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="void">
+                        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                      </argument>
+                      <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/="/>
+                    </argument>
+                    <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean_Class/or"/>
+                  </source>
+                  <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean_Class/not"/>
+                </ifExpr>
+              </body>
+              <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;"/>
+              <body xsi:type="mtl:TemplateInvocation">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                <definition href="platform:/resource/org.muml.codegen.componenttype.c/bin/org/muml/codegen/componenttype/c/actionlanguage/expression.emtl#/0/generateExpression.51"/>
+                <argument xsi:type="ocl.ecore:OperationCallExp">
+                  <eType xsi:type="ecore:EClass" href="http://www.muml.org/core/1.0.0#//expressions/Expression"/>
+                  <source xsi:type="ocl.ecore:PropertyCallExp" eType="/3/OrderedSet(Expression)">
+                    <source xsi:type="ocl.ecore:VariableExp" name="operation" referredVariable="/0/generateOperationRepositoryClass/%.1/%.3/operation">
+                      <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/Operation"/>
+                    </source>
+                    <referredProperty xsi:type="ecore:EReference" href="http://www.muml.org/pim/1.0.0#//behavior/Operation/implementations"/>
+                  </source>
+                  <argument xsi:type="ocl.ecore:IntegerLiteralExp" integerSymbol="1">
+                    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+                  </argument>
+                  <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OrderedSet(T)_Class/at"/>
+                </argument>
+                <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="">
+                  <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                </argument>
+              </body>
+              <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+              <body xsi:type="mtl:IfBlock">
+                <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;return "/>
+                <body xsi:type="mtl:QueryInvocation">
+                  <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                  <definition href="platform:/resource/org.muml.codegen.componenttype.c/bin/org/muml/codegen/componenttype/c/actionlanguage/operation_queries.emtl#/0/getOperationOutputVariableName"/>
+                  <argument xsi:type="ocl.ecore:VariableExp" name="operation" referredVariable="/0/generateOperationRepositoryClass/%.1/%.3/operation">
+                    <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/Operation"/>
+                  </argument>
+                </body>
+                <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=";&#xA;"/>
+                <ifExpr xsi:type="ocl.ecore:OperationCallExp">
+                  <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                  <source xsi:type="ocl.ecore:OperationCallExp">
+                    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                    <source xsi:type="ocl.ecore:OperationCallExp">
+                      <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                      <source xsi:type="ocl.ecore:PropertyCallExp">
+                        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                        <source xsi:type="ocl.ecore:PropertyCallExp">
+                          <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//types/DataType"/>
+                          <source xsi:type="ocl.ecore:VariableExp" name="operation" referredVariable="/0/generateOperationRepositoryClass/%.1/%.3/operation">
+                            <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/Operation"/>
+                          </source>
+                          <referredProperty xsi:type="ecore:EReference" href="http://www.muml.org/pim/1.0.0#//behavior/Operation/returnType"/>
+                        </source>
+                        <referredProperty xsi:type="ecore:EAttribute" href="http://www.muml.org/core/1.0.0#//NamedElement/name"/>
+                      </source>
+                      <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="VOID">
+                        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                      </argument>
+                      <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/="/>
+                    </source>
+                    <argument xsi:type="ocl.ecore:OperationCallExp">
+                      <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                      <source xsi:type="ocl.ecore:PropertyCallExp">
+                        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                        <source xsi:type="ocl.ecore:PropertyCallExp">
+                          <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//types/DataType"/>
+                          <source xsi:type="ocl.ecore:VariableExp" name="operation" referredVariable="/0/generateOperationRepositoryClass/%.1/%.3/operation">
+                            <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/Operation"/>
+                          </source>
+                          <referredProperty xsi:type="ecore:EReference" href="http://www.muml.org/pim/1.0.0#//behavior/Operation/returnType"/>
+                        </source>
+                        <referredProperty xsi:type="ecore:EAttribute" href="http://www.muml.org/core/1.0.0#//NamedElement/name"/>
+                      </source>
+                      <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="void">
+                        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                      </argument>
+                      <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/="/>
+                    </argument>
+                    <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean_Class/or"/>
+                  </source>
+                  <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean_Class/not"/>
+                </ifExpr>
+              </body>
+            </else>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;}&#xA;&#xA;&#xA;"/>
+          <loopVariable name="operation">
+            <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/Operation"/>
+          </loopVariable>
+          <iterSet xsi:type="ocl.ecore:PropertyCallExp" eType="/3/OrderedSet(Operation)">
+            <source xsi:type="ocl.ecore:VariableExp" name="opRep" referredVariable="/0/generateOperationRepositoryClass/opRep">
+              <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/OperationRepository"/>
+            </source>
+            <referredProperty xsi:type="ecore:EReference" href="http://www.muml.org/pim/1.0.0#//behavior/OperationRepository/operations"/>
+          </iterSet>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#xA;"/>
+        <fileUrl xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/oclstdlib_String_Class/+">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <source xsi:type="ocl.ecore:VariableExp" name="path" referredVariable="/0/generateOperationRepositoryClass/path">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          </source>
+          <argument xsi:type="mtl:QueryInvocation">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <definition href="platform:/resource/org.muml.codegen.componenttype.c/bin/org/muml/codegen/componenttype/c/queries/stringQueries.emtl#/0/getFileName.1"/>
+            <argument xsi:type="ocl.ecore:VariableExp" name="opRep" referredVariable="/0/generateOperationRepositoryClass/opRep">
+              <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/OperationRepository"/>
+            </argument>
+            <argument xsi:type="ocl.ecore:BooleanLiteralExp" booleanSymbol="false">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+            </argument>
+            <argument xsi:type="ocl.ecore:VariableExp" name="useSubDir" referredVariable="/0/generateOperationRepositoryClass/useSubDir">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+            </argument>
+          </argument>
+        </fileUrl>
+        <charset xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="UTF-8">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </charset>
+      </body>
+      <documentation xsi:type="mtl:ModuleElementDocumentation">
+        <body startPosition="2924" endPosition="3016" value="&#xA;The documentation of the template generateOperationFile.&#xA;@param anAbsoluteDeadline&#xA;&#xA;"/>
+        <parametersDocumentation name="anAbsoluteDeadline">
+          <body value=""/>
+        </parametersDocumentation>
+      </documentation>
+      <parameter name="opRep">
+        <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/OperationRepository"/>
+      </parameter>
+      <parameter name="path">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+      </parameter>
+      <parameter name="useSubDir">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+      </parameter>
+    </ownedModuleElement>
+  </mtl:Module>
+  <ecore:EPackage name="additions">
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_String_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+      </eAnnotations>
+      <eOperations name="+">
+        <eAnnotations source="MTL non-standard"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="other">
+          <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
+        </eParameters>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_Integer_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_Real_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Real"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ecore_EObject_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+      </eAnnotations>
+      <eOperations name="generateOperationFiles">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/generateOperationFiles"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="COs" eType="/3/OrderedSet(Component)"/>
+        <eParameters name="path">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </eParameters>
+        <eParameters name="useSubDir">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="generateOperationRepositoryHeader">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/generateOperationRepositoryHeader"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="opRep">
+          <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/OperationRepository"/>
+        </eParameters>
+        <eParameters name="path">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </eParameters>
+        <eParameters name="useSubDir">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="generateOperationRepositoryClass">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/generateOperationRepositoryClass"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="opRep">
+          <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/OperationRepository"/>
+        </eParameters>
+        <eParameters name="path">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </eParameters>
+        <eParameters name="useSubDir">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="getName">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL">
+          <references href="platform:/resource/org.muml.codegen.componenttype.c/bin/org/muml/codegen/componenttype/c/queries/stringQueries.emtl#/0/getName"/>
+        </eAnnotations>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="oRep">
+          <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/OperationRepository"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="getName">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL">
+          <references href="platform:/resource/org.muml.codegen.componenttype.c/bin/org/muml/codegen/componenttype/c/queries/stringQueries.emtl#/0/getName.1"/>
+        </eAnnotations>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="op">
+          <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/Operation"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="getName">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL">
+          <references href="platform:/resource/org.muml.codegen.componenttype.c/bin/org/muml/codegen/componenttype/c/queries/stringQueries.emtl#/0/getName.2"/>
+        </eAnnotations>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="parameter">
+          <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/Parameter"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="getFileName">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL">
+          <references href="platform:/resource/org.muml.codegen.componenttype.c/bin/org/muml/codegen/componenttype/c/queries/stringQueries.emtl#/0/getFileName.1"/>
+        </eAnnotations>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="opRep">
+          <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/OperationRepository"/>
+        </eParameters>
+        <eParameters name="header">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+        </eParameters>
+        <eParameters name="useSubDir">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="getFileName4Operations">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL">
+          <references href="platform:/resource/org.muml.codegen.componenttype.c/bin/org/muml/codegen/componenttype/c/queries/stringQueries.emtl#/0/getFileName4Operations"/>
+        </eAnnotations>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="header">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+        </eParameters>
+        <eParameters name="useSubDir">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="getTypeName">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL">
+          <references href="platform:/resource/org.muml.codegen.componenttype.c/bin/org/muml/codegen/componenttype/c/queries/stringQueries.emtl#/0/getTypeName.4"/>
+        </eAnnotations>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="type">
+          <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//types/DataType"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="getDefaultValue">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL">
+          <references href="platform:/resource/org.muml.codegen.componenttype.c/bin/org/muml/codegen/componenttype/c/queries/stringQueries.emtl#/0/getDefaultValue.3"/>
+        </eAnnotations>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="type">
+          <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//types/DataType"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="getOperationOutputVariableName">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL">
+          <references href="platform:/resource/org.muml.codegen.componenttype.c/bin/org/muml/codegen/componenttype/c/actionlanguage/operation_queries.emtl#/0/getOperationOutputVariableName"/>
+        </eAnnotations>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="operation">
+          <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/Operation"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="generateExpression">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL">
+          <references href="platform:/resource/org.muml.codegen.componenttype.c/bin/org/muml/codegen/componenttype/c/actionlanguage/expression.emtl#/0/generateExpression.51"/>
+        </eAnnotations>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="expression">
+          <eType xsi:type="ecore:EClass" href="http://www.muml.org/core/1.0.0#//expressions/Expression"/>
+        </eParameters>
+        <eParameters name="fqname">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </eParameters>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_OclAny_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_Collection(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Collection(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_Sequence(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Sequence(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_OrderedSet(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OrderedSet(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="collections_OrderedSet(Component)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL" references="/3/OrderedSet(Component)"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="behavior_OperationRepository_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/pim/1.0.0#//behavior/OperationRepository"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="realtimestatechart_RealtimeStatechart_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/pim/1.0.0#//realtimestatechart/RealtimeStatechart"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="connector_MessageBuffer_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/pim/1.0.0#//connector/MessageBuffer"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="msgtype_MessageType_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/pim/1.0.0#//msgtype/MessageType"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="instance_ContinuousPortInstance_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/pim/1.0.0#//instance/ContinuousPortInstance"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="instance_ComponentInstance_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/pim/1.0.0#//instance/ComponentInstance"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="component_Component_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/pim/1.0.0#//component/Component"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="component_Port_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/pim/1.0.0#//component/Port"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="behavior_Operation_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/pim/1.0.0#//behavior/Operation"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="behavior_Parameter_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/pim/1.0.0#//behavior/Parameter"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="types_Attribute_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/pim/1.0.0#//types/Attribute"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="component_ComponentPart_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/pim/1.0.0#//component/ComponentPart"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="behavior_Variable_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/pim/1.0.0#//behavior/Variable"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="realtimestatechart_Region_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/pim/1.0.0#//realtimestatechart/Region"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="msgtype_MessageTypeRepository_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/pim/1.0.0#//msgtype/MessageTypeRepository"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="realtimestatechart_SynchronizationChannel_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/pim/1.0.0#//realtimestatechart/SynchronizationChannel"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="realtimestatechart_State_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/pim/1.0.0#//realtimestatechart/State"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="component_HybridPort_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/pim/1.0.0#//component/HybridPort"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="instance_PortInstance_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/pim/1.0.0#//instance/PortInstance"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_Boolean_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="connector_Connector_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/pim/1.0.0#//connector/Connector"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="realtimestatechart_Clock_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/pim/1.0.0#//realtimestatechart/Clock"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="realtimestatechart_DoEvent_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/pim/1.0.0#//realtimestatechart/DoEvent"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="connector_ConnectorInstance_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/pim/1.0.0#//connector/ConnectorInstance"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="types_StructureDataType_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/pim/1.0.0#//types/StructureDataType"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="types_ArrayDataType_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/pim/1.0.0#//types/ArrayDataType"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="types_PrimitiveDataType_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/pim/1.0.0#//types/PrimitiveDataType"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="types_DataType_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/pim/1.0.0#//types/DataType"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="common_ComparingOperator_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/core/1.0.0#//expressions/common/ComparingOperator"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="component_DiscretePort_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/pim/1.0.0#//component/DiscretePort"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="component_AtomicComponent_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/pim/1.0.0#//component/AtomicComponent"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="instance_ComponentInstanceConfiguration_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/pim/1.0.0#//instance/ComponentInstanceConfiguration"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="instance_AtomicComponentInstance_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/pim/1.0.0#//instance/AtomicComponentInstance"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="modelinstance_ModelElementCategory_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/modelinstance/1.0.0#//ModelElementCategory"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="collections_OrderedSet(ComponentInstance)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="platform:/resource/org.muml.codegen.componenttype.c/bin/org/muml/codegen/componenttype/c/queries/modelQueries.emtl#/3/OrderedSet(ComponentInstance)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="valuetype_TimeValue_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/pim/1.0.0#//valuetype/TimeValue"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="expressions_Expression_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/core/1.0.0#//expressions/Expression"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="common_LogicalExpression_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/core/1.0.0#//expressions/common/LogicalExpression"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="common_ComparisonExpression_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/core/1.0.0#//expressions/common/ComparisonExpression"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="common_ArithmeticExpression_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/core/1.0.0#//expressions/common/ArithmeticExpression"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="common_UnaryExpression_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/core/1.0.0#//expressions/common/UnaryExpression"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="actionlanguage_TypedNamedElementExpression_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/pim/actionlanguage/1.0.0#//TypedNamedElementExpression"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="actionlanguage_ArrayIndexExpression_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/pim/actionlanguage/1.0.0#//ArrayIndexExpression"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="actionlanguage_AttributeAccessorExpression_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/pim/actionlanguage/1.0.0#//AttributeAccessorExpression"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="common_LiteralExpression_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/core/1.0.0#//expressions/common/LiteralExpression"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="actionlanguage_TriggerMessageExpression_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/pim/actionlanguage/1.0.0#//TriggerMessageExpression"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="actionlanguage_Assignment_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/pim/actionlanguage/1.0.0#//Assignment"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="actionlanguage_Block_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/pim/actionlanguage/1.0.0#//Block"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="actionlanguage_IfStatement_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/pim/actionlanguage/1.0.0#//IfStatement"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="actionlanguage_ForLoop_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/pim/actionlanguage/1.0.0#//ForLoop"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="actionlanguage_ReturnStatement_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/pim/actionlanguage/1.0.0#//ReturnStatement"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="actionlanguage_LocalVariableDeclarationStatement_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/pim/actionlanguage/1.0.0#//LocalVariableDeclarationStatement"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="actionlanguage_OperationCall_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/pim/actionlanguage/1.0.0#//OperationCall"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="actionlanguage_TypeCastExpression_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/pim/actionlanguage/1.0.0#//TypeCastExpression"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="actionlanguage_WhileLoop_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/pim/actionlanguage/1.0.0#//WhileLoop"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="expressions_TextualExpression_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/core/1.0.0#//expressions/TextualExpression"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="behavior_ParameterBinding_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/pim/1.0.0#//behavior/ParameterBinding"/>
+      </eAnnotations>
+    </eClassifiers>
+  </ecore:EPackage>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ecore:EPackage name="collections">
+    <eClassifiers xsi:type="ocl.ecore:OrderedSetType" name="OrderedSet(Component)" instanceClassName="java.util.LinkedHashSet">
+      <elementType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//component/Component"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:OrderedSetType" name="OrderedSet(AtomicComponent)" instanceClassName="java.util.LinkedHashSet">
+      <elementType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//component/AtomicComponent"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:SequenceType" name="Sequence(Behavior)" instanceClassName="java.util.List">
+      <elementType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/Behavior"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:SequenceType" name="Sequence(RealtimeStatechart)" instanceClassName="java.util.List">
+      <elementType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//realtimestatechart/RealtimeStatechart"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:OrderedSetType" name="OrderedSet(OperationRepository)" instanceClassName="java.util.LinkedHashSet">
+      <elementType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/OperationRepository"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:SequenceType" name="Sequence(OperationRepository)" instanceClassName="java.util.List">
+      <elementType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/OperationRepository"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:OrderedSetType" name="OrderedSet(Operation)" instanceClassName="java.util.LinkedHashSet">
+      <elementType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/Operation"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:OrderedSetType" name="OrderedSet(Parameter)" instanceClassName="java.util.LinkedHashSet">
+      <elementType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/Parameter"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:OrderedSetType" name="OrderedSet(Expression)" instanceClassName="java.util.LinkedHashSet">
+      <elementType xsi:type="ecore:EClass" href="http://www.muml.org/core/1.0.0#//expressions/Expression"/>
+    </eClassifiers>
+  </ecore:EPackage>
+  <ocl.ecore:Variable name="self" eType="/3/OrderedSet(Component)"/>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self" eType="/3/OrderedSet(Component)"/>
+  <ocl.ecore:Variable name="self" eType="/3/OrderedSet(Component)"/>
+  <ocl.ecore:Variable name="self" eType="/3/OrderedSet(Component)"/>
+  <ecore:EPackage name="types">
+    <eClassifiers xsi:type="ocl.ecore:TypeType" name="AtomicComponent">
+      <referredType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//component/AtomicComponent"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:TypeType" name="RealtimeStatechart">
+      <referredType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//realtimestatechart/RealtimeStatechart"/>
+    </eClassifiers>
+  </ecore:EPackage>
+  <ocl.ecore:Variable name="self" eType="/3/OrderedSet(Component)"/>
+  <ocl.ecore:Variable name="self" eType="/3/OrderedSet(Component)"/>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/OperationRepository"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/OperationRepository"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/OperationRepository"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/OperationRepository"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self" eType="/3/OrderedSet(Component)"/>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/OperationRepository"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/OperationRepository"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/OperationRepository"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/OperationRepository"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/OperationRepository"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/OperationRepository"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/OperationRepository"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/OperationRepository"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/OperationRepository"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/Operation"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/Operation"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/Operation"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/Operation"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/Parameter"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/Parameter"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/Operation"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/Operation"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/Operation"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/Operation"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/Operation"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/Parameter"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/Parameter"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/Parameter"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/Operation"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/OperationRepository"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/OperationRepository"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/OperationRepository"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/OperationRepository"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/OperationRepository"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/OperationRepository"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/OperationRepository"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/OperationRepository"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/Operation"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/Operation"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/Operation"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/Operation"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/Operation"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/Parameter"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/Parameter"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/Parameter"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/Operation"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/Operation"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/Operation"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/Operation"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/Operation"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/Operation"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/Operation"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/Operation"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/Operation"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/Operation"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/Operation"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/Operation"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/Operation"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/Operation"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/OperationRepository"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ecore:EAnnotation source="positions">
+    <eAnnotations source="positions.0" references="/0/%">
+      <details key="start" value="29"/>
+      <details key="end" value="84"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.1" references="/0/generateOperationFiles">
+      <details key="start" value="969"/>
+      <details key="end" value="1815"/>
+      <details key="line" value="23"/>
+    </eAnnotations>
+    <eAnnotations source="positions.2" references="/0/generateOperationFiles/%">
+      <details key="start" value="1074"/>
+      <details key="end" value="1802"/>
+      <details key="line" value="24"/>
+    </eAnnotations>
+    <eAnnotations source="positions.3" references="/0/generateOperationFiles/%/%">
+      <details key="start" value="1144"/>
+      <details key="end" value="1229"/>
+      <details key="line" value="25"/>
+    </eAnnotations>
+    <eAnnotations source="positions.4" references="/0/generateOperationFiles/%/%.1">
+      <details key="start" value="1229"/>
+      <details key="end" value="1737"/>
+      <details key="line" value="30"/>
+    </eAnnotations>
+    <eAnnotations source="positions.5" references="/0/generateOperationFiles/%/%.1/%">
+      <details key="start" value="1377"/>
+      <details key="end" value="1730"/>
+      <details key="line" value="31"/>
+    </eAnnotations>
+    <eAnnotations source="positions.6" references="/0/generateOperationFiles/%/%.1/%/%">
+      <details key="start" value="1480"/>
+      <details key="end" value="1481"/>
+      <details key="line" value="32"/>
+    </eAnnotations>
+    <eAnnotations source="positions.7" references="/0/generateOperationFiles/%/%.1/%/%.1">
+      <details key="start" value="1482"/>
+      <details key="end" value="1539"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.8" references="/0/generateOperationFiles/%/%.1/%/%.1/opRep">
+      <details key="start" value="1516"/>
+      <details key="end" value="1521"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.9" references="/0/generateOperationFiles/%/%.1/%/%.1/path">
+      <details key="start" value="1523"/>
+      <details key="end" value="1527"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.10" references="/0/generateOperationFiles/%/%.1/%/%.1/useSubDir">
+      <details key="start" value="1529"/>
+      <details key="end" value="1538"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.11" references="/0/generateOperationFiles/%/%.1/%/%.2">
+      <details key="start" value="1541"/>
+      <details key="end" value="1543"/>
+      <details key="line" value="34"/>
+    </eAnnotations>
+    <eAnnotations source="positions.12" references="/0/generateOperationFiles/%/%.1/%/%.3">
+      <details key="start" value="1544"/>
+      <details key="end" value="1600"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.13" references="/0/generateOperationFiles/%/%.1/%/%.3/opRep">
+      <details key="start" value="1577"/>
+      <details key="end" value="1582"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.14" references="/0/generateOperationFiles/%/%.1/%/%.3/path">
+      <details key="start" value="1584"/>
+      <details key="end" value="1588"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.15" references="/0/generateOperationFiles/%/%.1/%/%.3/useSubDir">
+      <details key="start" value="1590"/>
+      <details key="end" value="1599"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.16" references="/0/generateOperationFiles/%/%.1/%/%.4">
+      <details key="start" value="1602"/>
+      <details key="end" value="1604"/>
+      <details key="line" value="35"/>
+    </eAnnotations>
+    <eAnnotations source="positions.17" references="/0/generateOperationFiles/%/%.1/%/%.5">
+      <details key="start" value="1677"/>
+      <details key="end" value="1688"/>
+      <details key="line" value="37"/>
+    </eAnnotations>
+    <eAnnotations source="positions.18" references="/0/generateOperationFiles/%/%.1/%/%.6">
+      <details key="start" value="1689"/>
+      <details key="end" value="1719"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.19" references="/0/generateOperationFiles/%/%.1/%/%.6/opRep">
+      <details key="start" value="1689"/>
+      <details key="end" value="1694"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.20" references="/0/generateOperationFiles/%/%.1/%/%.6/%">
+      <details key="start" value="1707"/>
+      <details key="end" value="1711"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.21" references="/0/generateOperationFiles/%/%.1/%/%.6/%.1">
+      <details key="start" value="1713"/>
+      <details key="end" value="1718"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.22" references="/0/generateOperationFiles/%/%.1/%/%.7">
+      <details key="start" value="1721"/>
+      <details key="end" value="1724"/>
+      <details key="line" value="37"/>
+    </eAnnotations>
+    <eAnnotations source="positions.23" references="/0/generateOperationFiles/%/%.1/%/opRep">
+      <details key="start" value="1383"/>
+      <details key="end" value="1409"/>
+      <details key="line" value="31"/>
+    </eAnnotations>
+    <eAnnotations source="positions.24" references="/0/generateOperationFiles/%/%.1/%/opRepos">
+      <details key="start" value="1412"/>
+      <details key="end" value="1419"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.25" references="/0/generateOperationFiles/%/%.1/opRepos">
+      <details key="start" value="1234"/>
+      <details key="end" value="1375"/>
+      <details key="line" value="30"/>
+    </eAnnotations>
+    <eAnnotations source="positions.26" references="/0/generateOperationFiles/%/%.1/opRepos/collect">
+      <details key="start" value="1277"/>
+      <details key="end" value="1376"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.27" references="/0/generateOperationFiles/%/%.1/opRepos/collect/collect">
+      <details key="start" value="1277"/>
+      <details key="end" value="1350"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.28" references="/0/generateOperationFiles/%/%.1/opRepos/collect/collect/collect">
+      <details key="start" value="1277"/>
+      <details key="end" value="1320"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.29" references="/0/generateOperationFiles/%/%.1/opRepos/collect/collect/collect/%">
+      <details key="start" value="1277"/>
+      <details key="end" value="1311"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.30" references="/0/generateOperationFiles/%/%.1/opRepos/collect/collect/collect/%/COs">
+      <details key="start" value="1277"/>
+      <details key="end" value="1280"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.31" references="/0/generateOperationFiles/%/%.1/opRepos/collect/collect/collect/%/%">
+      <details key="start" value="1295"/>
+      <details key="end" value="1310"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.32" references="/0/generateOperationFiles/%/%.1/opRepos/collect/collect/collect/%.1">
+      <details key="start" value="1312"/>
+      <details key="end" value="1320"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.33" references="/0/generateOperationFiles/%/%.1/opRepos/collect/collect/collect/%.1/temp1">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.34" references="/0/generateOperationFiles/%/%.1/opRepos/collect/collect/collect/temp1">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.35" references="/0/generateOperationFiles/%/%.1/opRepos/collect/collect/%">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.36" references="/0/generateOperationFiles/%/%.1/opRepos/collect/collect/%/temp2">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.37" references="/0/generateOperationFiles/%/%.1/opRepos/collect/collect/%/%">
+      <details key="start" value="1331"/>
+      <details key="end" value="1349"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.38" references="/0/generateOperationFiles/%/%.1/opRepos/collect/collect/temp2">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.39" references="/0/generateOperationFiles/%/%.1/opRepos/collect/%">
+      <details key="start" value="1351"/>
+      <details key="end" value="1376"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.40" references="/0/generateOperationFiles/%/%.1/opRepos/collect/%/temp3">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.41" references="/0/generateOperationFiles/%/%.1/opRepos/collect/temp3">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.42" references="/0/generateOperationFiles/%/%.2">
+      <details key="start" value="1738"/>
+      <details key="end" value="1795"/>
+      <details key="line" value="41"/>
+    </eAnnotations>
+    <eAnnotations source="positions.43" references="/0/generateOperationFiles/%/%.3">
+      <details key="start" value="1081"/>
+      <details key="end" value="1125"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.44" references="/0/generateOperationFiles/%/%.3/path">
+      <details key="start" value="1081"/>
+      <details key="end" value="1085"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.45" references="/0/generateOperationFiles/%/%.3/%">
+      <details key="start" value="1086"/>
+      <details key="end" value="1125"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.46" references="/0/generateOperationFiles/%/%.3/%/%">
+      <details key="start" value="1109"/>
+      <details key="end" value="1113"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.47" references="/0/generateOperationFiles/%/%.3/%/useSubDir">
+      <details key="start" value="1115"/>
+      <details key="end" value="1124"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.48" references="/0/generateOperationFiles/%/%.4">
+      <details key="start" value="1134"/>
+      <details key="end" value="1141"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.49" references="/0/generateOperationFiles/%.1">
+      <details key="start" value="1803"/>
+      <details key="end" value="1804"/>
+      <details key="line" value="47"/>
+    </eAnnotations>
+    <eAnnotations source="positions.50" references="/0/generateOperationFiles/%.2">
+      <details key="start" value="871"/>
+      <details key="end" value="968"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.51" references="/0/generateOperationFiles/%.2/anAbsoluteDeadline">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.52" references="/0/generateOperationFiles/COs">
+      <details key="start" value="1009"/>
+      <details key="end" value="1036"/>
+      <details key="line" value="23"/>
+    </eAnnotations>
+    <eAnnotations source="positions.53" references="/0/generateOperationFiles/path">
+      <details key="start" value="1038"/>
+      <details key="end" value="1051"/>
+      <details key="line" value="23"/>
+    </eAnnotations>
+    <eAnnotations source="positions.54" references="/0/generateOperationFiles/useSubDir">
+      <details key="start" value="1053"/>
+      <details key="end" value="1071"/>
+      <details key="line" value="23"/>
+    </eAnnotations>
+    <eAnnotations source="positions.55" references="/0/generateOperationRepositoryHeader">
+      <details key="start" value="1918"/>
+      <details key="end" value="2919"/>
+      <details key="line" value="57"/>
+    </eAnnotations>
+    <eAnnotations source="positions.56" references="/0/generateOperationRepositoryHeader/%">
+      <details key="start" value="2034"/>
+      <details key="end" value="2035"/>
+      <details key="line" value="58"/>
+    </eAnnotations>
+    <eAnnotations source="positions.57" references="/0/generateOperationRepositoryHeader/%.1">
+      <details key="start" value="2035"/>
+      <details key="end" value="2907"/>
+      <details key="line" value="59"/>
+    </eAnnotations>
+    <eAnnotations source="positions.58" references="/0/generateOperationRepositoryHeader/%.1/%">
+      <details key="start" value="2101"/>
+      <details key="end" value="2109"/>
+      <details key="line" value="60"/>
+    </eAnnotations>
+    <eAnnotations source="positions.59" references="/0/generateOperationRepositoryHeader/%.1/%.1">
+      <details key="start" value="2110"/>
+      <details key="end" value="2135"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.60" references="/0/generateOperationRepositoryHeader/%.1/%.1/%">
+      <details key="start" value="2110"/>
+      <details key="end" value="2125"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.61" references="/0/generateOperationRepositoryHeader/%.1/%.1/%/opRep">
+      <details key="start" value="2110"/>
+      <details key="end" value="2115"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.62" references="/0/generateOperationRepositoryHeader/%.1/%.2">
+      <details key="start" value="2137"/>
+      <details key="end" value="2149"/>
+      <details key="line" value="60"/>
+    </eAnnotations>
+    <eAnnotations source="positions.63" references="/0/generateOperationRepositoryHeader/%.1/%.3">
+      <details key="start" value="2150"/>
+      <details key="end" value="2175"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.64" references="/0/generateOperationRepositoryHeader/%.1/%.3/%">
+      <details key="start" value="2150"/>
+      <details key="end" value="2165"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.65" references="/0/generateOperationRepositoryHeader/%.1/%.3/%/opRep">
+      <details key="start" value="2150"/>
+      <details key="end" value="2155"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.66" references="/0/generateOperationRepositoryHeader/%.1/%.4">
+      <details key="start" value="2177"/>
+      <details key="end" value="2234"/>
+      <details key="line" value="61"/>
+    </eAnnotations>
+    <eAnnotations source="positions.67" references="/0/generateOperationRepositoryHeader/%.1/%.5">
+      <details key="start" value="2234"/>
+      <details key="end" value="2264"/>
+      <details key="line" value="66"/>
+    </eAnnotations>
+    <eAnnotations source="positions.68" references="/0/generateOperationRepositoryHeader/%.1/%.5/%">
+      <details key="start" value="2250"/>
+      <details key="end" value="2259"/>
+      <details key="line" value="66"/>
+    </eAnnotations>
+    <eAnnotations source="positions.69" references="/0/generateOperationRepositoryHeader/%.1/%.5/useSubDir">
+      <details key="start" value="2238"/>
+      <details key="end" value="2249"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.70" references="/0/generateOperationRepositoryHeader/%.1/%.6">
+      <details key="start" value="2264"/>
+      <details key="end" value="2292"/>
+      <details key="line" value="66"/>
+    </eAnnotations>
+    <eAnnotations source="positions.71" references="/0/generateOperationRepositoryHeader/%.1/%.7">
+      <details key="start" value="2292"/>
+      <details key="end" value="2322"/>
+      <details key="line" value="67"/>
+    </eAnnotations>
+    <eAnnotations source="positions.72" references="/0/generateOperationRepositoryHeader/%.1/%.7/%">
+      <details key="start" value="2308"/>
+      <details key="end" value="2317"/>
+      <details key="line" value="67"/>
+    </eAnnotations>
+    <eAnnotations source="positions.73" references="/0/generateOperationRepositoryHeader/%.1/%.7/useSubDir">
+      <details key="start" value="2296"/>
+      <details key="end" value="2307"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.74" references="/0/generateOperationRepositoryHeader/%.1/%.8">
+      <details key="start" value="2322"/>
+      <details key="end" value="2343"/>
+      <details key="line" value="67"/>
+    </eAnnotations>
+    <eAnnotations source="positions.75" references="/0/generateOperationRepositoryHeader/%.1/%.9">
+      <details key="start" value="2345"/>
+      <details key="end" value="2823"/>
+      <details key="line" value="71"/>
+    </eAnnotations>
+    <eAnnotations source="positions.76" references="/0/generateOperationRepositoryHeader/%.1/%.9/%">
+      <details key="start" value="2394"/>
+      <details key="end" value="2445"/>
+      <details key="line" value="72"/>
+    </eAnnotations>
+    <eAnnotations source="positions.77" references="/0/generateOperationRepositoryHeader/%.1/%.9/%.1">
+      <details key="start" value="2446"/>
+      <details key="end" value="2460"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.78" references="/0/generateOperationRepositoryHeader/%.1/%.9/%.1/operation">
+      <details key="start" value="2446"/>
+      <details key="end" value="2455"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.79" references="/0/generateOperationRepositoryHeader/%.1/%.9/%.2">
+      <details key="start" value="2462"/>
+      <details key="end" value="2542"/>
+      <details key="line" value="74"/>
+    </eAnnotations>
+    <eAnnotations source="positions.80" references="/0/generateOperationRepositoryHeader/%.1/%.9/%.3">
+      <details key="start" value="2543"/>
+      <details key="end" value="2557"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.81" references="/0/generateOperationRepositoryHeader/%.1/%.9/%.3/operation">
+      <details key="start" value="2543"/>
+      <details key="end" value="2552"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.82" references="/0/generateOperationRepositoryHeader/%.1/%.9/%.4">
+      <details key="start" value="2559"/>
+      <details key="end" value="2566"/>
+      <details key="line" value="74"/>
+    </eAnnotations>
+    <eAnnotations source="positions.83" references="/0/generateOperationRepositoryHeader/%.1/%.9/%.5">
+      <details key="start" value="2566"/>
+      <details key="end" value="2637"/>
+      <details key="line" value="75"/>
+    </eAnnotations>
+    <eAnnotations source="positions.84" references="/0/generateOperationRepositoryHeader/%.1/%.9/%.5/%">
+      <details key="start" value="2609"/>
+      <details key="end" value="2616"/>
+      <details key="line" value="75"/>
+    </eAnnotations>
+    <eAnnotations source="positions.85" references="/0/generateOperationRepositoryHeader/%.1/%.9/%.5/%.1">
+      <details key="start" value="2617"/>
+      <details key="end" value="2628"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.86" references="/0/generateOperationRepositoryHeader/%.1/%.9/%.5/%.1/p">
+      <details key="start" value="2617"/>
+      <details key="end" value="2618"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.87" references="/0/generateOperationRepositoryHeader/%.1/%.9/%.5/%.2">
+      <details key="start" value="2630"/>
+      <details key="end" value="2631"/>
+      <details key="line" value="75"/>
+    </eAnnotations>
+    <eAnnotations source="positions.88" references="/0/generateOperationRepositoryHeader/%.1/%.9/%.5/p">
+      <details key="start" value="2572"/>
+      <details key="end" value="2584"/>
+      <details key="line" value="75"/>
+    </eAnnotations>
+    <eAnnotations source="positions.89" references="/0/generateOperationRepositoryHeader/%.1/%.9/%.5/%.3">
+      <details key="start" value="2587"/>
+      <details key="end" value="2607"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.90" references="/0/generateOperationRepositoryHeader/%.1/%.9/%.5/%.3/operation">
+      <details key="start" value="2587"/>
+      <details key="end" value="2596"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.91" references="/0/generateOperationRepositoryHeader/%.1/%.9/%.6">
+      <details key="start" value="2637"/>
+      <details key="end" value="2646"/>
+      <details key="line" value="76"/>
+    </eAnnotations>
+    <eAnnotations source="positions.92" references="/0/generateOperationRepositoryHeader/%.1/%.9/%.7">
+      <details key="start" value="2647"/>
+      <details key="end" value="2681"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.93" references="/0/generateOperationRepositoryHeader/%.1/%.9/%.7/%">
+      <details key="start" value="2647"/>
+      <details key="end" value="2667"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.94" references="/0/generateOperationRepositoryHeader/%.1/%.9/%.7/%/operation">
+      <details key="start" value="2647"/>
+      <details key="end" value="2656"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.95" references="/0/generateOperationRepositoryHeader/%.1/%.9/%.8">
+      <details key="start" value="2683"/>
+      <details key="end" value="2684"/>
+      <details key="line" value="77"/>
+    </eAnnotations>
+    <eAnnotations source="positions.96" references="/0/generateOperationRepositoryHeader/%.1/%.9/%.9">
+      <details key="start" value="2685"/>
+      <details key="end" value="2704"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.97" references="/0/generateOperationRepositoryHeader/%.1/%.9/%.9/operation">
+      <details key="start" value="2685"/>
+      <details key="end" value="2694"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.98" references="/0/generateOperationRepositoryHeader/%.1/%.9/%.10">
+      <details key="start" value="2706"/>
+      <details key="end" value="2707"/>
+      <details key="line" value="77"/>
+    </eAnnotations>
+    <eAnnotations source="positions.99" references="/0/generateOperationRepositoryHeader/%.1/%.9/%.11">
+      <details key="start" value="2707"/>
+      <details key="end" value="2814"/>
+      <details key="line" value="77"/>
+    </eAnnotations>
+    <eAnnotations source="positions.100" references="/0/generateOperationRepositoryHeader/%.1/%.9/%.11/%">
+      <details key="start" value="2767"/>
+      <details key="end" value="2791"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.101" references="/0/generateOperationRepositoryHeader/%.1/%.9/%.11/%/%">
+      <details key="start" value="2767"/>
+      <details key="end" value="2777"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.102" references="/0/generateOperationRepositoryHeader/%.1/%.9/%.11/%/%/p">
+      <details key="start" value="2767"/>
+      <details key="end" value="2768"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.103" references="/0/generateOperationRepositoryHeader/%.1/%.9/%.11/%.1">
+      <details key="start" value="2793"/>
+      <details key="end" value="2794"/>
+      <details key="line" value="77"/>
+    </eAnnotations>
+    <eAnnotations source="positions.104" references="/0/generateOperationRepositoryHeader/%.1/%.9/%.11/%.2">
+      <details key="start" value="2795"/>
+      <details key="end" value="2806"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.105" references="/0/generateOperationRepositoryHeader/%.1/%.9/%.11/%.2/p">
+      <details key="start" value="2795"/>
+      <details key="end" value="2796"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.106" references="/0/generateOperationRepositoryHeader/%.1/%.9/%.11/p">
+      <details key="start" value="2713"/>
+      <details key="end" value="2725"/>
+      <details key="line" value="77"/>
+    </eAnnotations>
+    <eAnnotations source="positions.107" references="/0/generateOperationRepositoryHeader/%.1/%.9/%.11/%.3">
+      <details key="start" value="2728"/>
+      <details key="end" value="2748"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.108" references="/0/generateOperationRepositoryHeader/%.1/%.9/%.11/%.3/operation">
+      <details key="start" value="2728"/>
+      <details key="end" value="2737"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.109" references="/0/generateOperationRepositoryHeader/%.1/%.9/%.11/%.4">
+      <details key="start" value="2760"/>
+      <details key="end" value="2764"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.110" references="/0/generateOperationRepositoryHeader/%.1/%.9/%.12">
+      <details key="start" value="2814"/>
+      <details key="end" value="2817"/>
+      <details key="line" value="77"/>
+    </eAnnotations>
+    <eAnnotations source="positions.111" references="/0/generateOperationRepositoryHeader/%.1/%.9/operation">
+      <details key="start" value="2351"/>
+      <details key="end" value="2372"/>
+      <details key="line" value="71"/>
+    </eAnnotations>
+    <eAnnotations source="positions.112" references="/0/generateOperationRepositoryHeader/%.1/%.9/%.13">
+      <details key="start" value="2375"/>
+      <details key="end" value="2391"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.113" references="/0/generateOperationRepositoryHeader/%.1/%.9/%.13/opRep">
+      <details key="start" value="2375"/>
+      <details key="end" value="2380"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.114" references="/0/generateOperationRepositoryHeader/%.1/%.10">
+      <details key="start" value="2824"/>
+      <details key="end" value="2865"/>
+      <details key="line" value="79"/>
+    </eAnnotations>
+    <eAnnotations source="positions.115" references="/0/generateOperationRepositoryHeader/%.1/%.11">
+      <details key="start" value="2866"/>
+      <details key="end" value="2891"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.116" references="/0/generateOperationRepositoryHeader/%.1/%.11/%">
+      <details key="start" value="2866"/>
+      <details key="end" value="2881"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.117" references="/0/generateOperationRepositoryHeader/%.1/%.11/%/opRep">
+      <details key="start" value="2866"/>
+      <details key="end" value="2871"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.118" references="/0/generateOperationRepositoryHeader/%.1/%.12">
+      <details key="start" value="2893"/>
+      <details key="end" value="2900"/>
+      <details key="line" value="84"/>
+    </eAnnotations>
+    <eAnnotations source="positions.119" references="/0/generateOperationRepositoryHeader/%.1/%.13">
+      <details key="start" value="2042"/>
+      <details key="end" value="2082"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.120" references="/0/generateOperationRepositoryHeader/%.1/%.13/path">
+      <details key="start" value="2042"/>
+      <details key="end" value="2046"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.121" references="/0/generateOperationRepositoryHeader/%.1/%.13/%">
+      <details key="start" value="2047"/>
+      <details key="end" value="2082"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.122" references="/0/generateOperationRepositoryHeader/%.1/%.13/%/opRep">
+      <details key="start" value="2059"/>
+      <details key="end" value="2064"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.123" references="/0/generateOperationRepositoryHeader/%.1/%.13/%/%">
+      <details key="start" value="2066"/>
+      <details key="end" value="2070"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.124" references="/0/generateOperationRepositoryHeader/%.1/%.13/%/useSubDir">
+      <details key="start" value="2072"/>
+      <details key="end" value="2081"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.125" references="/0/generateOperationRepositoryHeader/%.1/%.14">
+      <details key="start" value="2091"/>
+      <details key="end" value="2098"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.126" references="/0/generateOperationRepositoryHeader/%.2">
+      <details key="start" value="1820"/>
+      <details key="end" value="1917"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.127" references="/0/generateOperationRepositoryHeader/%.2/anAbsoluteDeadline">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.128" references="/0/generateOperationRepositoryHeader/opRep">
+      <details key="start" value="1969"/>
+      <details key="end" value="1996"/>
+      <details key="line" value="57"/>
+    </eAnnotations>
+    <eAnnotations source="positions.129" references="/0/generateOperationRepositoryHeader/path">
+      <details key="start" value="1998"/>
+      <details key="end" value="2011"/>
+      <details key="line" value="57"/>
+    </eAnnotations>
+    <eAnnotations source="positions.130" references="/0/generateOperationRepositoryHeader/useSubDir">
+      <details key="start" value="2013"/>
+      <details key="end" value="2031"/>
+      <details key="line" value="57"/>
+    </eAnnotations>
+    <eAnnotations source="positions.131" references="/0/generateOperationRepositoryClass">
+      <details key="start" value="3019"/>
+      <details key="end" value="4476"/>
+      <details key="line" value="92"/>
+    </eAnnotations>
+    <eAnnotations source="positions.132" references="/0/generateOperationRepositoryClass/%">
+      <details key="start" value="3133"/>
+      <details key="end" value="3134"/>
+      <details key="line" value="93"/>
+    </eAnnotations>
+    <eAnnotations source="positions.133" references="/0/generateOperationRepositoryClass/%.1">
+      <details key="start" value="3134"/>
+      <details key="end" value="4464"/>
+      <details key="line" value="94"/>
+    </eAnnotations>
+    <eAnnotations source="positions.134" references="/0/generateOperationRepositoryClass/%.1/%">
+      <details key="start" value="3201"/>
+      <details key="end" value="3230"/>
+      <details key="line" value="95"/>
+    </eAnnotations>
+    <eAnnotations source="positions.135" references="/0/generateOperationRepositoryClass/%.1/%.1">
+      <details key="start" value="3230"/>
+      <details key="end" value="3282"/>
+      <details key="line" value="97"/>
+    </eAnnotations>
+    <eAnnotations source="positions.136" references="/0/generateOperationRepositoryClass/%.1/%.1/%">
+      <details key="start" value="3263"/>
+      <details key="end" value="3270"/>
+      <details key="line" value="97"/>
+    </eAnnotations>
+    <eAnnotations source="positions.137" references="/0/generateOperationRepositoryClass/%.1/%.1/%.1">
+      <details key="start" value="3242"/>
+      <details key="end" value="3261"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.138" references="/0/generateOperationRepositoryClass/%.1/%.2">
+      <details key="start" value="3282"/>
+      <details key="end" value="3286"/>
+      <details key="line" value="100"/>
+    </eAnnotations>
+    <eAnnotations source="positions.139" references="/0/generateOperationRepositoryClass/%.1/%.3">
+      <details key="start" value="3286"/>
+      <details key="end" value="4454"/>
+      <details key="line" value="101"/>
+    </eAnnotations>
+    <eAnnotations source="positions.140" references="/0/generateOperationRepositoryClass/%.1/%.3/%">
+      <details key="start" value="3335"/>
+      <details key="end" value="3336"/>
+      <details key="line" value="102"/>
+    </eAnnotations>
+    <eAnnotations source="positions.141" references="/0/generateOperationRepositoryClass/%.1/%.3/%.1">
+      <details key="start" value="3337"/>
+      <details key="end" value="3371"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.142" references="/0/generateOperationRepositoryClass/%.1/%.3/%.1/%">
+      <details key="start" value="3337"/>
+      <details key="end" value="3357"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.143" references="/0/generateOperationRepositoryClass/%.1/%.3/%.1/%/operation">
+      <details key="start" value="3337"/>
+      <details key="end" value="3346"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.144" references="/0/generateOperationRepositoryClass/%.1/%.3/%.2">
+      <details key="start" value="3373"/>
+      <details key="end" value="3374"/>
+      <details key="line" value="103"/>
+    </eAnnotations>
+    <eAnnotations source="positions.145" references="/0/generateOperationRepositoryClass/%.1/%.3/%.3">
+      <details key="start" value="3375"/>
+      <details key="end" value="3394"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.146" references="/0/generateOperationRepositoryClass/%.1/%.3/%.3/operation">
+      <details key="start" value="3375"/>
+      <details key="end" value="3384"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.147" references="/0/generateOperationRepositoryClass/%.1/%.3/%.4">
+      <details key="start" value="3396"/>
+      <details key="end" value="3397"/>
+      <details key="line" value="103"/>
+    </eAnnotations>
+    <eAnnotations source="positions.148" references="/0/generateOperationRepositoryClass/%.1/%.3/%.5">
+      <details key="start" value="3397"/>
+      <details key="end" value="3505"/>
+      <details key="line" value="103"/>
+    </eAnnotations>
+    <eAnnotations source="positions.149" references="/0/generateOperationRepositoryClass/%.1/%.3/%.5/%">
+      <details key="start" value="3458"/>
+      <details key="end" value="3482"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.150" references="/0/generateOperationRepositoryClass/%.1/%.3/%.5/%/%">
+      <details key="start" value="3458"/>
+      <details key="end" value="3468"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.151" references="/0/generateOperationRepositoryClass/%.1/%.3/%.5/%/%/p">
+      <details key="start" value="3458"/>
+      <details key="end" value="3459"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.152" references="/0/generateOperationRepositoryClass/%.1/%.3/%.5/%.1">
+      <details key="start" value="3484"/>
+      <details key="end" value="3485"/>
+      <details key="line" value="103"/>
+    </eAnnotations>
+    <eAnnotations source="positions.153" references="/0/generateOperationRepositoryClass/%.1/%.3/%.5/%.2">
+      <details key="start" value="3486"/>
+      <details key="end" value="3497"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.154" references="/0/generateOperationRepositoryClass/%.1/%.3/%.5/%.2/p">
+      <details key="start" value="3486"/>
+      <details key="end" value="3487"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.155" references="/0/generateOperationRepositoryClass/%.1/%.3/%.5/p">
+      <details key="start" value="3403"/>
+      <details key="end" value="3415"/>
+      <details key="line" value="103"/>
+    </eAnnotations>
+    <eAnnotations source="positions.156" references="/0/generateOperationRepositoryClass/%.1/%.3/%.5/%.3">
+      <details key="start" value="3418"/>
+      <details key="end" value="3438"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.157" references="/0/generateOperationRepositoryClass/%.1/%.3/%.5/%.3/operation">
+      <details key="start" value="3418"/>
+      <details key="end" value="3427"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.158" references="/0/generateOperationRepositoryClass/%.1/%.3/%.5/%.4">
+      <details key="start" value="3451"/>
+      <details key="end" value="3455"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.159" references="/0/generateOperationRepositoryClass/%.1/%.3/%.6">
+      <details key="start" value="3505"/>
+      <details key="end" value="3509"/>
+      <details key="line" value="103"/>
+    </eAnnotations>
+    <eAnnotations source="positions.160" references="/0/generateOperationRepositoryClass/%.1/%.3/%.7">
+      <details key="start" value="3509"/>
+      <details key="end" value="4442"/>
+      <details key="line" value="105"/>
+    </eAnnotations>
+    <eAnnotations source="positions.161" references="/0/generateOperationRepositoryClass/%.1/%.3/%.7/%">
+      <details key="start" value="3566"/>
+      <details key="end" value="3570"/>
+      <details key="line" value="106"/>
+    </eAnnotations>
+    <eAnnotations source="positions.162" references="/0/generateOperationRepositoryClass/%.1/%.3/%.7/%.1">
+      <details key="start" value="3570"/>
+      <details key="end" value="3962"/>
+      <details key="line" value="106"/>
+    </eAnnotations>
+    <eAnnotations source="positions.163" references="/0/generateOperationRepositoryClass/%.1/%.3/%.7/%.1/%">
+      <details key="start" value="3610"/>
+      <details key="end" value="3706"/>
+      <details key="line" value="106"/>
+    </eAnnotations>
+    <eAnnotations source="positions.164" references="/0/generateOperationRepositoryClass/%.1/%.3/%.7/%.1/%.1">
+      <details key="start" value="3707"/>
+      <details key="end" value="3726"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.165" references="/0/generateOperationRepositoryClass/%.1/%.3/%.7/%.1/%.1/operation">
+      <details key="start" value="3707"/>
+      <details key="end" value="3716"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.166" references="/0/generateOperationRepositoryClass/%.1/%.3/%.7/%.1/%.2">
+      <details key="start" value="3728"/>
+      <details key="end" value="3730"/>
+      <details key="line" value="108"/>
+    </eAnnotations>
+    <eAnnotations source="positions.167" references="/0/generateOperationRepositoryClass/%.1/%.3/%.7/%.1/%.3">
+      <details key="start" value="3731"/>
+      <details key="end" value="3946"/>
+      <details key="line" value="109"/>
+    </eAnnotations>
+    <eAnnotations source="positions.168" references="/0/generateOperationRepositoryClass/%.1/%.3/%.7/%.1/%.3/%">
+      <details key="start" value="3815"/>
+      <details key="end" value="3840"/>
+      <details key="line" value="110"/>
+    </eAnnotations>
+    <eAnnotations source="positions.169" references="/0/generateOperationRepositoryClass/%.1/%.3/%.7/%.1/%.3/%.1">
+      <details key="start" value="3841"/>
+      <details key="end" value="3875"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.170" references="/0/generateOperationRepositoryClass/%.1/%.3/%.7/%.1/%.3/%.1/%">
+      <details key="start" value="3841"/>
+      <details key="end" value="3861"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.171" references="/0/generateOperationRepositoryClass/%.1/%.3/%.7/%.1/%.3/%.1/%/operation">
+      <details key="start" value="3841"/>
+      <details key="end" value="3850"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.172" references="/0/generateOperationRepositoryClass/%.1/%.3/%.7/%.1/%.3/%.2">
+      <details key="start" value="3877"/>
+      <details key="end" value="3884"/>
+      <details key="line" value="111"/>
+    </eAnnotations>
+    <eAnnotations source="positions.173" references="/0/generateOperationRepositoryClass/%.1/%.3/%.7/%.1/%.3/%.3">
+      <details key="start" value="3885"/>
+      <details key="end" value="3923"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.174" references="/0/generateOperationRepositoryClass/%.1/%.3/%.7/%.1/%.3/%.3/%">
+      <details key="start" value="3885"/>
+      <details key="end" value="3905"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.175" references="/0/generateOperationRepositoryClass/%.1/%.3/%.7/%.1/%.3/%.3/%/operation">
+      <details key="start" value="3885"/>
+      <details key="end" value="3894"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.176" references="/0/generateOperationRepositoryClass/%.1/%.3/%.7/%.1/%.3/%.4">
+      <details key="start" value="3925"/>
+      <details key="end" value="3940"/>
+      <details key="line" value="111"/>
+    </eAnnotations>
+    <eAnnotations source="positions.177" references="/0/generateOperationRepositoryClass/%.1/%.3/%.7/%.1/%.3/%.5">
+      <details key="start" value="3735"/>
+      <details key="end" value="3813"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.178" references="/0/generateOperationRepositoryClass/%.1/%.3/%.7/%.1/%.3/%.5/%">
+      <details key="start" value="3739"/>
+      <details key="end" value="3813"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.179" references="/0/generateOperationRepositoryClass/%.1/%.3/%.7/%.1/%.3/%.5/%/%">
+      <details key="start" value="3740"/>
+      <details key="end" value="3774"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.180" references="/0/generateOperationRepositoryClass/%.1/%.3/%.7/%.1/%.3/%.5/%/%/%">
+      <details key="start" value="3740"/>
+      <details key="end" value="3765"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.181" references="/0/generateOperationRepositoryClass/%.1/%.3/%.7/%.1/%.3/%.5/%/%/%/%">
+      <details key="start" value="3740"/>
+      <details key="end" value="3760"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.182" references="/0/generateOperationRepositoryClass/%.1/%.3/%.7/%.1/%.3/%.5/%/%/%/%/operation">
+      <details key="start" value="3740"/>
+      <details key="end" value="3749"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.183" references="/0/generateOperationRepositoryClass/%.1/%.3/%.7/%.1/%.3/%.5/%/%/%.1">
+      <details key="start" value="3768"/>
+      <details key="end" value="3774"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.184" references="/0/generateOperationRepositoryClass/%.1/%.3/%.7/%.1/%.3/%.5/%/%.1">
+      <details key="start" value="3778"/>
+      <details key="end" value="3812"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.185" references="/0/generateOperationRepositoryClass/%.1/%.3/%.7/%.1/%.3/%.5/%/%.1/%">
+      <details key="start" value="3778"/>
+      <details key="end" value="3803"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.186" references="/0/generateOperationRepositoryClass/%.1/%.3/%.7/%.1/%.3/%.5/%/%.1/%/%">
+      <details key="start" value="3778"/>
+      <details key="end" value="3798"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.187" references="/0/generateOperationRepositoryClass/%.1/%.3/%.7/%.1/%.3/%.5/%/%.1/%/%/operation">
+      <details key="start" value="3778"/>
+      <details key="end" value="3787"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.188" references="/0/generateOperationRepositoryClass/%.1/%.3/%.7/%.1/%.3/%.5/%/%.1/%.1">
+      <details key="start" value="3806"/>
+      <details key="end" value="3812"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.189" references="/0/generateOperationRepositoryClass/%.1/%.3/%.7/%.1/%.4">
+      <details key="start" value="3947"/>
+      <details key="end" value="3950"/>
+      <details key="line" value="114"/>
+    </eAnnotations>
+    <eAnnotations source="positions.190" references="/0/generateOperationRepositoryClass/%.1/%.3/%.7/%.1/%.5">
+      <details key="start" value="3582"/>
+      <details key="end" value="3608"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.191" references="/0/generateOperationRepositoryClass/%.1/%.3/%.7/%.1/%.5/%">
+      <details key="start" value="3582"/>
+      <details key="end" value="3601"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.192" references="/0/generateOperationRepositoryClass/%.1/%.3/%.7/%.1/%.5/%/operation">
+      <details key="start" value="3582"/>
+      <details key="end" value="3591"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.193" references="/0/generateOperationRepositoryClass/%.1/%.3/%.7/%.1/%.5/%.1">
+      <details key="start" value="3602"/>
+      <details key="end" value="3608"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.194" references="/0/generateOperationRepositoryClass/%.1/%.3/%.7/%.2">
+      <details key="start" value="3962"/>
+      <details key="end" value="3966"/>
+      <details key="line" value="114"/>
+    </eAnnotations>
+    <eAnnotations source="positions.195" references="/0/generateOperationRepositoryClass/%.1/%.3/%.7/%.3">
+      <details key="start" value="3513"/>
+      <details key="end" value="3564"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.196" references="/0/generateOperationRepositoryClass/%.1/%.3/%.7/%.3/%">
+      <details key="start" value="3514"/>
+      <details key="end" value="3546"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.197" references="/0/generateOperationRepositoryClass/%.1/%.3/%.7/%.3/%/%">
+      <details key="start" value="3514"/>
+      <details key="end" value="3539"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.198" references="/0/generateOperationRepositoryClass/%.1/%.3/%.7/%.3/%/%/operation">
+      <details key="start" value="3514"/>
+      <details key="end" value="3523"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.199" references="/0/generateOperationRepositoryClass/%.1/%.3/%.7/%.3/%/%.1">
+      <details key="start" value="3544"/>
+      <details key="end" value="3545"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.200" references="/0/generateOperationRepositoryClass/%.1/%.3/%.7/%.4">
+      <details key="start" value="3966"/>
+      <details key="end" value="4437"/>
+      <details key="line" value="115"/>
+    </eAnnotations>
+    <eAnnotations source="positions.201" references="/0/generateOperationRepositoryClass/%.1/%.3/%.7/%.4/%">
+      <details key="start" value="3973"/>
+      <details key="end" value="4012"/>
+      <details key="line" value="116"/>
+    </eAnnotations>
+    <eAnnotations source="positions.202" references="/0/generateOperationRepositoryClass/%.1/%.3/%.7/%.4/%.1">
+      <details key="start" value="4012"/>
+      <details key="end" value="4231"/>
+      <details key="line" value="117"/>
+    </eAnnotations>
+    <eAnnotations source="positions.203" references="/0/generateOperationRepositoryClass/%.1/%.3/%.7/%.4/%.1/%">
+      <details key="start" value="4096"/>
+      <details key="end" value="4097"/>
+      <details key="line" value="118"/>
+    </eAnnotations>
+    <eAnnotations source="positions.204" references="/0/generateOperationRepositoryClass/%.1/%.3/%.7/%.4/%.1/%.1">
+      <details key="start" value="4098"/>
+      <details key="end" value="4132"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.205" references="/0/generateOperationRepositoryClass/%.1/%.3/%.7/%.4/%.1/%.1/%">
+      <details key="start" value="4098"/>
+      <details key="end" value="4118"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.206" references="/0/generateOperationRepositoryClass/%.1/%.3/%.7/%.4/%.1/%.1/%/operation">
+      <details key="start" value="4098"/>
+      <details key="end" value="4107"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.207" references="/0/generateOperationRepositoryClass/%.1/%.3/%.7/%.4/%.1/%.2">
+      <details key="start" value="4134"/>
+      <details key="end" value="4135"/>
+      <details key="line" value="118"/>
+    </eAnnotations>
+    <eAnnotations source="positions.208" references="/0/generateOperationRepositoryClass/%.1/%.3/%.7/%.4/%.1/%.3">
+      <details key="start" value="4136"/>
+      <details key="end" value="4178"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.209" references="/0/generateOperationRepositoryClass/%.1/%.3/%.7/%.4/%.1/%.3/operation">
+      <details key="start" value="4136"/>
+      <details key="end" value="4145"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.210" references="/0/generateOperationRepositoryClass/%.1/%.3/%.7/%.4/%.1/%.4">
+      <details key="start" value="4180"/>
+      <details key="end" value="4183"/>
+      <details key="line" value="118"/>
+    </eAnnotations>
+    <eAnnotations source="positions.211" references="/0/generateOperationRepositoryClass/%.1/%.3/%.7/%.4/%.1/%.5">
+      <details key="start" value="4184"/>
+      <details key="end" value="4222"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.212" references="/0/generateOperationRepositoryClass/%.1/%.3/%.7/%.4/%.1/%.5/%">
+      <details key="start" value="4184"/>
+      <details key="end" value="4204"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.213" references="/0/generateOperationRepositoryClass/%.1/%.3/%.7/%.4/%.1/%.5/%/operation">
+      <details key="start" value="4184"/>
+      <details key="end" value="4193"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.214" references="/0/generateOperationRepositoryClass/%.1/%.3/%.7/%.4/%.1/%.6">
+      <details key="start" value="4224"/>
+      <details key="end" value="4226"/>
+      <details key="line" value="118"/>
+    </eAnnotations>
+    <eAnnotations source="positions.215" references="/0/generateOperationRepositoryClass/%.1/%.3/%.7/%.4/%.1/%.7">
+      <details key="start" value="4016"/>
+      <details key="end" value="4094"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.216" references="/0/generateOperationRepositoryClass/%.1/%.3/%.7/%.4/%.1/%.7/%">
+      <details key="start" value="4020"/>
+      <details key="end" value="4094"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.217" references="/0/generateOperationRepositoryClass/%.1/%.3/%.7/%.4/%.1/%.7/%/%">
+      <details key="start" value="4021"/>
+      <details key="end" value="4055"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.218" references="/0/generateOperationRepositoryClass/%.1/%.3/%.7/%.4/%.1/%.7/%/%/%">
+      <details key="start" value="4021"/>
+      <details key="end" value="4046"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.219" references="/0/generateOperationRepositoryClass/%.1/%.3/%.7/%.4/%.1/%.7/%/%/%/%">
+      <details key="start" value="4021"/>
+      <details key="end" value="4041"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.220" references="/0/generateOperationRepositoryClass/%.1/%.3/%.7/%.4/%.1/%.7/%/%/%/%/operation">
+      <details key="start" value="4021"/>
+      <details key="end" value="4030"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.221" references="/0/generateOperationRepositoryClass/%.1/%.3/%.7/%.4/%.1/%.7/%/%/%.1">
+      <details key="start" value="4049"/>
+      <details key="end" value="4055"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.222" references="/0/generateOperationRepositoryClass/%.1/%.3/%.7/%.4/%.1/%.7/%/%.1">
+      <details key="start" value="4059"/>
+      <details key="end" value="4093"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.223" references="/0/generateOperationRepositoryClass/%.1/%.3/%.7/%.4/%.1/%.7/%/%.1/%">
+      <details key="start" value="4059"/>
+      <details key="end" value="4084"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.224" references="/0/generateOperationRepositoryClass/%.1/%.3/%.7/%.4/%.1/%.7/%/%.1/%/%">
+      <details key="start" value="4059"/>
+      <details key="end" value="4079"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.225" references="/0/generateOperationRepositoryClass/%.1/%.3/%.7/%.4/%.1/%.7/%/%.1/%/%/operation">
+      <details key="start" value="4059"/>
+      <details key="end" value="4068"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.226" references="/0/generateOperationRepositoryClass/%.1/%.3/%.7/%.4/%.1/%.7/%/%.1/%.1">
+      <details key="start" value="4087"/>
+      <details key="end" value="4093"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.227" references="/0/generateOperationRepositoryClass/%.1/%.3/%.7/%.4/%.2">
+      <details key="start" value="4232"/>
+      <details key="end" value="4233"/>
+      <details key="line" value="120"/>
+    </eAnnotations>
+    <eAnnotations source="positions.228" references="/0/generateOperationRepositoryClass/%.1/%.3/%.7/%.4/%.3">
+      <details key="start" value="4234"/>
+      <details key="end" value="4289"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.229" references="/0/generateOperationRepositoryClass/%.1/%.3/%.7/%.4/%.3/%">
+      <details key="start" value="4253"/>
+      <details key="end" value="4285"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.230" references="/0/generateOperationRepositoryClass/%.1/%.3/%.7/%.4/%.3/%/%">
+      <details key="start" value="4253"/>
+      <details key="end" value="4278"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.231" references="/0/generateOperationRepositoryClass/%.1/%.3/%.7/%.4/%.3/%/%/operation">
+      <details key="start" value="4253"/>
+      <details key="end" value="4262"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.232" references="/0/generateOperationRepositoryClass/%.1/%.3/%.7/%.4/%.3/%/%.1">
+      <details key="start" value="4283"/>
+      <details key="end" value="4284"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.233" references="/0/generateOperationRepositoryClass/%.1/%.3/%.7/%.4/%.3/%.1">
+      <details key="start" value="4286"/>
+      <details key="end" value="4288"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.234" references="/0/generateOperationRepositoryClass/%.1/%.3/%.7/%.4/%.4">
+      <details key="start" value="4291"/>
+      <details key="end" value="4292"/>
+      <details key="line" value="121"/>
+    </eAnnotations>
+    <eAnnotations source="positions.235" references="/0/generateOperationRepositoryClass/%.1/%.3/%.7/%.4/%.5">
+      <details key="start" value="4292"/>
+      <details key="end" value="4436"/>
+      <details key="line" value="121"/>
+    </eAnnotations>
+    <eAnnotations source="positions.236" references="/0/generateOperationRepositoryClass/%.1/%.3/%.7/%.4/%.5/%">
+      <details key="start" value="4376"/>
+      <details key="end" value="4384"/>
+      <details key="line" value="122"/>
+    </eAnnotations>
+    <eAnnotations source="positions.237" references="/0/generateOperationRepositoryClass/%.1/%.3/%.7/%.4/%.5/%.1">
+      <details key="start" value="4385"/>
+      <details key="end" value="4427"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.238" references="/0/generateOperationRepositoryClass/%.1/%.3/%.7/%.4/%.5/%.1/operation">
+      <details key="start" value="4385"/>
+      <details key="end" value="4394"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.239" references="/0/generateOperationRepositoryClass/%.1/%.3/%.7/%.4/%.5/%.2">
+      <details key="start" value="4429"/>
+      <details key="end" value="4431"/>
+      <details key="line" value="122"/>
+    </eAnnotations>
+    <eAnnotations source="positions.240" references="/0/generateOperationRepositoryClass/%.1/%.3/%.7/%.4/%.5/%.3">
+      <details key="start" value="4296"/>
+      <details key="end" value="4374"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.241" references="/0/generateOperationRepositoryClass/%.1/%.3/%.7/%.4/%.5/%.3/%">
+      <details key="start" value="4300"/>
+      <details key="end" value="4374"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.242" references="/0/generateOperationRepositoryClass/%.1/%.3/%.7/%.4/%.5/%.3/%/%">
+      <details key="start" value="4301"/>
+      <details key="end" value="4335"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.243" references="/0/generateOperationRepositoryClass/%.1/%.3/%.7/%.4/%.5/%.3/%/%/%">
+      <details key="start" value="4301"/>
+      <details key="end" value="4326"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.244" references="/0/generateOperationRepositoryClass/%.1/%.3/%.7/%.4/%.5/%.3/%/%/%/%">
+      <details key="start" value="4301"/>
+      <details key="end" value="4321"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.245" references="/0/generateOperationRepositoryClass/%.1/%.3/%.7/%.4/%.5/%.3/%/%/%/%/operation">
+      <details key="start" value="4301"/>
+      <details key="end" value="4310"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.246" references="/0/generateOperationRepositoryClass/%.1/%.3/%.7/%.4/%.5/%.3/%/%/%.1">
+      <details key="start" value="4329"/>
+      <details key="end" value="4335"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.247" references="/0/generateOperationRepositoryClass/%.1/%.3/%.7/%.4/%.5/%.3/%/%.1">
+      <details key="start" value="4339"/>
+      <details key="end" value="4373"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.248" references="/0/generateOperationRepositoryClass/%.1/%.3/%.7/%.4/%.5/%.3/%/%.1/%">
+      <details key="start" value="4339"/>
+      <details key="end" value="4364"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.249" references="/0/generateOperationRepositoryClass/%.1/%.3/%.7/%.4/%.5/%.3/%/%.1/%/%">
+      <details key="start" value="4339"/>
+      <details key="end" value="4359"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.250" references="/0/generateOperationRepositoryClass/%.1/%.3/%.7/%.4/%.5/%.3/%/%.1/%/%/operation">
+      <details key="start" value="4339"/>
+      <details key="end" value="4348"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.251" references="/0/generateOperationRepositoryClass/%.1/%.3/%.7/%.4/%.5/%.3/%/%.1/%.1">
+      <details key="start" value="4367"/>
+      <details key="end" value="4373"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.252" references="/0/generateOperationRepositoryClass/%.1/%.3/%.8">
+      <details key="start" value="4443"/>
+      <details key="end" value="4448"/>
+      <details key="line" value="125"/>
+    </eAnnotations>
+    <eAnnotations source="positions.253" references="/0/generateOperationRepositoryClass/%.1/%.3/operation">
+      <details key="start" value="3292"/>
+      <details key="end" value="3313"/>
+      <details key="line" value="101"/>
+    </eAnnotations>
+    <eAnnotations source="positions.254" references="/0/generateOperationRepositoryClass/%.1/%.3/%.9">
+      <details key="start" value="3316"/>
+      <details key="end" value="3332"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.255" references="/0/generateOperationRepositoryClass/%.1/%.3/%.9/opRep">
+      <details key="start" value="3316"/>
+      <details key="end" value="3321"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.256" references="/0/generateOperationRepositoryClass/%.1/%.4">
+      <details key="start" value="4455"/>
+      <details key="end" value="4457"/>
+      <details key="line" value="130"/>
+    </eAnnotations>
+    <eAnnotations source="positions.257" references="/0/generateOperationRepositoryClass/%.1/%.5">
+      <details key="start" value="3141"/>
+      <details key="end" value="3182"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.258" references="/0/generateOperationRepositoryClass/%.1/%.5/path">
+      <details key="start" value="3141"/>
+      <details key="end" value="3145"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.259" references="/0/generateOperationRepositoryClass/%.1/%.5/%">
+      <details key="start" value="3146"/>
+      <details key="end" value="3182"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.260" references="/0/generateOperationRepositoryClass/%.1/%.5/%/opRep">
+      <details key="start" value="3158"/>
+      <details key="end" value="3163"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.261" references="/0/generateOperationRepositoryClass/%.1/%.5/%/%">
+      <details key="start" value="3165"/>
+      <details key="end" value="3170"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.262" references="/0/generateOperationRepositoryClass/%.1/%.5/%/useSubDir">
+      <details key="start" value="3172"/>
+      <details key="end" value="3181"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.263" references="/0/generateOperationRepositoryClass/%.1/%.6">
+      <details key="start" value="3191"/>
+      <details key="end" value="3198"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.264" references="/0/generateOperationRepositoryClass/%.2">
+      <details key="start" value="2921"/>
+      <details key="end" value="3018"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.265" references="/0/generateOperationRepositoryClass/%.2/anAbsoluteDeadline">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.266" references="/0/generateOperationRepositoryClass/opRep">
+      <details key="start" value="3069"/>
+      <details key="end" value="3095"/>
+      <details key="line" value="92"/>
+    </eAnnotations>
+    <eAnnotations source="positions.267" references="/0/generateOperationRepositoryClass/path">
+      <details key="start" value="3097"/>
+      <details key="end" value="3110"/>
+      <details key="line" value="92"/>
+    </eAnnotations>
+    <eAnnotations source="positions.268" references="/0/generateOperationRepositoryClass/useSubDir">
+      <details key="start" value="3112"/>
+      <details key="end" value="3130"/>
+      <details key="line" value="92"/>
+    </eAnnotations>
+  </ecore:EAnnotation>
+</xmi:XMI>

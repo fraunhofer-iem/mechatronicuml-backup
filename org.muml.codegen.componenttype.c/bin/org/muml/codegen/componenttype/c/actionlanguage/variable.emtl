@@ -1,0 +1,1073 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:mtl="http://www.eclipse.org/acceleo/mtl/3.0" xmlns:ocl.ecore="http://www.eclipse.org/ocl/1.1.0/Ecore">
+  <mtl:Module name="variable" nsURI="org::muml::codegen::componenttype::c::actionlanguage::variable" endHeaderPosition="482">
+    <input>
+      <takesTypesFrom href="http://www.muml.org/pim/1.0.0#//connector"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.muml.org/pim/1.0.0#//behavior"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.muml.org/core/1.0.0#/"/>
+      <takesTypesFrom href="http://www.muml.org/core/1.0.0#//expressions"/>
+      <takesTypesFrom href="http://www.muml.org/core/1.0.0#//expressions/common"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.muml.org/pim/actionlanguage/1.0.0#/"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.muml.org/pim/1.0.0#//msgtype"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.muml.org/pim/1.0.0#//types"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.muml.org/modelinstance/1.0.0#/"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.muml.org/pim/1.0.0#//component"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.muml.org/pim/1.0.0#//instance"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.muml.org/pim/1.0.0#//realtimestatechart"/>
+      <takesTypesFrom href="http://www.muml.org/pim/1.0.0#//realtimestatechart/one_to_n_schemata"/>
+    </input>
+    <imports href="expression.emtl#/0"/>
+    <imports href="variable_queries.emtl#/0"/>
+    <imports href="../queries/stringQueries.emtl#/0"/>
+    <imports href="../queries/modelQueries.emtl#/0"/>
+    <ownedModuleElement xsi:type="mtl:Template" name="createVariableDeclarations" visibility="Public">
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;// attribute declarations&#xA;"/>
+      <body xsi:type="mtl:ForBlock">
+        <body xsi:type="mtl:IfBlock">
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;inner "/>
+          <body xsi:type="mtl:QueryInvocation">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <definition href="../queries/stringQueries.emtl#/0/getTypeName.4"/>
+            <argument xsi:type="ocl.ecore:PropertyCallExp">
+              <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//types/DataType"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="variable" referredVariable="/0/createVariableDeclarations/%.1/variable">
+                <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/Variable"/>
+              </source>
+              <referredProperty xsi:type="ecore:EReference" href="http://www.muml.org/pim/1.0.0#//behavior/TypedNamedElement/dataType"/>
+            </argument>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" "/>
+          <body xsi:type="ocl.ecore:PropertyCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <source xsi:type="ocl.ecore:VariableExp" name="variable" referredVariable="/0/createVariableDeclarations/%.1/variable">
+              <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/Variable"/>
+            </source>
+            <referredProperty xsi:type="ecore:EAttribute" href="http://www.muml.org/core/1.0.0#//NamedElement/name"/>
+          </body>
+          <body xsi:type="mtl:IfBlock">
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="(start="/>
+            <body xsi:type="mtl:TemplateInvocation">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              <definition href="expression.emtl#/0/generateExpression.51"/>
+              <argument xsi:type="ocl.ecore:PropertyCallExp">
+                <eType xsi:type="ecore:EClass" href="http://www.muml.org/core/1.0.0#//expressions/Expression"/>
+                <source xsi:type="ocl.ecore:VariableExp" name="variable" referredVariable="/0/createVariableDeclarations/%.1/variable">
+                  <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/Variable"/>
+                </source>
+                <referredProperty xsi:type="ecore:EReference" href="http://www.muml.org/pim/1.0.0#//behavior/Variable/initializeExpression"/>
+              </argument>
+              <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              </argument>
+            </body>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=")"/>
+            <ifExpr xsi:type="ocl.ecore:OperationCallExp">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+              <source xsi:type="ocl.ecore:OperationCallExp">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                <source xsi:type="ocl.ecore:PropertyCallExp">
+                  <eType xsi:type="ecore:EClass" href="http://www.muml.org/core/1.0.0#//expressions/Expression"/>
+                  <source xsi:type="ocl.ecore:VariableExp" name="variable" referredVariable="/0/createVariableDeclarations/%.1/variable">
+                    <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/Variable"/>
+                  </source>
+                  <referredProperty xsi:type="ecore:EReference" href="http://www.muml.org/pim/1.0.0#//behavior/Variable/initializeExpression"/>
+                </source>
+                <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclIsUndefined"/>
+              </source>
+              <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean_Class/not"/>
+            </ifExpr>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=";&#xA;"/>
+          <ifExpr xsi:type="ocl.ecore:OperationCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+            <source xsi:type="ocl.ecore:PropertyCallExp" eType="/6/OrderedSet(Variable)">
+              <source xsi:type="ocl.ecore:VariableExp" name="rtsc" referredVariable="/0/createVariableDeclarations/rtsc">
+                <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//realtimestatechart/RealtimeStatechart"/>
+              </source>
+              <referredProperty xsi:type="ecore:EReference" href="http://www.muml.org/pim/1.0.0#//behavior/Behavior/variables"/>
+            </source>
+            <argument xsi:type="ocl.ecore:VariableExp" name="variable" referredVariable="/0/createVariableDeclarations/%.1/variable">
+              <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/Variable"/>
+            </argument>
+            <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OrderedSet(T)_Class/includes"/>
+          </ifExpr>
+          <else>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;outer "/>
+            <body xsi:type="mtl:QueryInvocation">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              <definition href="../queries/stringQueries.emtl#/0/getTypeName.4"/>
+              <argument xsi:type="ocl.ecore:PropertyCallExp">
+                <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//types/DataType"/>
+                <source xsi:type="ocl.ecore:VariableExp" name="variable" referredVariable="/0/createVariableDeclarations/%.1/variable">
+                  <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/Variable"/>
+                </source>
+                <referredProperty xsi:type="ecore:EReference" href="http://www.muml.org/pim/1.0.0#//behavior/TypedNamedElement/dataType"/>
+              </argument>
+            </body>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" "/>
+            <body xsi:type="ocl.ecore:PropertyCallExp">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="variable" referredVariable="/0/createVariableDeclarations/%.1/variable">
+                <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/Variable"/>
+              </source>
+              <referredProperty xsi:type="ecore:EAttribute" href="http://www.muml.org/core/1.0.0#//NamedElement/name"/>
+            </body>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=";&#xA;"/>
+          </else>
+        </body>
+        <loopVariable name="variable">
+          <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/Variable"/>
+        </loopVariable>
+        <iterSet xsi:type="ocl.ecore:PropertyCallExp" eType="/6/OrderedSet(Variable)">
+          <source xsi:type="ocl.ecore:VariableExp" name="rtsc" referredVariable="/0/createVariableDeclarations/rtsc">
+            <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//realtimestatechart/RealtimeStatechart"/>
+          </source>
+          <referredProperty xsi:type="ecore:EReference" href="http://www.muml.org/pim/1.0.0#//realtimestatechart/RealtimeStatechart/allAvailableVariables"/>
+        </iterSet>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;// end attribute declarations"/>
+      <documentation xsi:type="mtl:ModuleElementDocumentation">
+        <body startPosition="788" endPosition="867" value="&#xA;Create variable declarations&#xA;@param attributeSet the set of attributes&#xA;&#xA;"/>
+        <parametersDocumentation name="attributeSet">
+          <body value=" the set of attributes"/>
+        </parametersDocumentation>
+      </documentation>
+      <parameter name="rtsc">
+        <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//realtimestatechart/RealtimeStatechart"/>
+      </parameter>
+    </ownedModuleElement>
+    <ownedModuleElement xsi:type="mtl:Template" name="createLocalVariableDeclarations" visibility="Public">
+      <init>
+        <variable name="lVarDecls" eType="/6/Set(LocalVariableDeclarationStatement)">
+          <initExpression xsi:type="mtl:QueryInvocation" eType="/6/Set(LocalVariableDeclarationStatement)">
+            <definition href="variable_queries.emtl#/0/getLocalVariableDeclarationStatementRepr"/>
+            <argument xsi:type="mtl:QueryInvocation" eType="/6/Set(LocalVariableDeclarationStatement)">
+              <definition href="variable_queries.emtl#/0/getAllLocalVariableDeclarationStatements.1"/>
+              <argument xsi:type="ocl.ecore:VariableExp" name="rtsc" referredVariable="/0/createLocalVariableDeclarations/rtsc">
+                <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//realtimestatechart/RealtimeStatechart"/>
+              </argument>
+            </argument>
+          </initExpression>
+        </variable>
+      </init>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;// local variable declarations&#xA;"/>
+      <body xsi:type="mtl:ForBlock">
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;"/>
+        <body xsi:type="mtl:QueryInvocation">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <definition href="../queries/stringQueries.emtl#/0/getTypeName.4"/>
+          <argument xsi:type="ocl.ecore:PropertyCallExp">
+            <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//types/DataType"/>
+            <source xsi:type="ocl.ecore:PropertyCallExp">
+              <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/Variable"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="lVarDecl" referredVariable="/0/createLocalVariableDeclarations/%.1/lVarDecl">
+                <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/actionlanguage/1.0.0#//LocalVariableDeclarationStatement"/>
+              </source>
+              <referredProperty xsi:type="ecore:EReference" href="http://www.muml.org/pim/actionlanguage/1.0.0#//LocalVariableDeclarationStatement/variable"/>
+            </source>
+            <referredProperty xsi:type="ecore:EReference" href="http://www.muml.org/pim/1.0.0#//behavior/TypedNamedElement/dataType"/>
+          </argument>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" "/>
+        <body xsi:type="mtl:QueryInvocation">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <definition href="variable_queries.emtl#/0/getTypedNamedElementName"/>
+          <argument xsi:type="ocl.ecore:PropertyCallExp">
+            <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/Variable"/>
+            <source xsi:type="ocl.ecore:VariableExp" name="lVarDecl" referredVariable="/0/createLocalVariableDeclarations/%.1/lVarDecl">
+              <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/actionlanguage/1.0.0#//LocalVariableDeclarationStatement"/>
+            </source>
+            <referredProperty xsi:type="ecore:EReference" href="http://www.muml.org/pim/actionlanguage/1.0.0#//LocalVariableDeclarationStatement/variable"/>
+          </argument>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=";&#xA;"/>
+        <loopVariable name="lVarDecl">
+          <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/actionlanguage/1.0.0#//LocalVariableDeclarationStatement"/>
+        </loopVariable>
+        <iterSet xsi:type="ocl.ecore:VariableExp" name="lVarDecls" eType="/6/Set(LocalVariableDeclarationStatement)" referredVariable="/0/createLocalVariableDeclarations/@init/@variable.0"/>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;// end local variable declarations"/>
+      <documentation xsi:type="mtl:ModuleElementDocumentation">
+        <body startPosition="1383" endPosition="1447" value="&#xA;Create local variable declarations&#xA;@param rtsc the rtsc&#xA;&#xA;"/>
+        <parametersDocumentation name="rtsc">
+          <body value=" the rtsc"/>
+        </parametersDocumentation>
+      </documentation>
+      <parameter name="rtsc">
+        <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//realtimestatechart/RealtimeStatechart"/>
+      </parameter>
+    </ownedModuleElement>
+  </mtl:Module>
+  <ecore:EPackage name="additions">
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_String_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_Integer_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_Real_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Real"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ecore_EObject_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+      </eAnnotations>
+      <eOperations name="createVariableDeclarations">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/createVariableDeclarations"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="rtsc">
+          <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//realtimestatechart/RealtimeStatechart"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="createLocalVariableDeclarations">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/createLocalVariableDeclarations"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="rtsc">
+          <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//realtimestatechart/RealtimeStatechart"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="generateExpression">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL">
+          <references href="expression.emtl#/0/generateExpression.51"/>
+        </eAnnotations>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="expression">
+          <eType xsi:type="ecore:EClass" href="http://www.muml.org/core/1.0.0#//expressions/Expression"/>
+        </eParameters>
+        <eParameters name="fqname">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="getTypedNamedElementName">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL">
+          <references href="variable_queries.emtl#/0/getTypedNamedElementName"/>
+        </eAnnotations>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="typedNamedElement">
+          <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/TypedNamedElement"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="getAllLocalVariableDeclarationStatements">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL">
+          <references href="variable_queries.emtl#/0/getAllLocalVariableDeclarationStatements.1"/>
+        </eAnnotations>
+        <eType xsi:type="ocl.ecore:SetType" href="variable_queries.emtl#/3/Set(LocalVariableDeclarationStatement)"/>
+        <eParameters name="rtsc">
+          <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//realtimestatechart/RealtimeStatechart"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="getLocalVariableDeclarationStatementRepr">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL">
+          <references href="variable_queries.emtl#/0/getLocalVariableDeclarationStatementRepr"/>
+        </eAnnotations>
+        <eType xsi:type="ocl.ecore:SetType" href="variable_queries.emtl#/3/Set(LocalVariableDeclarationStatement)"/>
+        <eParameters name="lVarDecls">
+          <eType xsi:type="ocl.ecore:SetType" href="variable_queries.emtl#/3/Set(LocalVariableDeclarationStatement)"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="getTypeName">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL">
+          <references href="../queries/stringQueries.emtl#/0/getTypeName.4"/>
+        </eAnnotations>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="type">
+          <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//types/DataType"/>
+        </eParameters>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_OclAny_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_Collection(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Collection(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_Sequence(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Sequence(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_OrderedSet(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OrderedSet(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="realtimestatechart_RealtimeStatechart_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/pim/1.0.0#//realtimestatechart/RealtimeStatechart"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="common_LogicalExpression_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/core/1.0.0#//expressions/common/LogicalExpression"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="common_ComparisonExpression_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/core/1.0.0#//expressions/common/ComparisonExpression"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="common_ArithmeticExpression_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/core/1.0.0#//expressions/common/ArithmeticExpression"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="common_UnaryExpression_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/core/1.0.0#//expressions/common/UnaryExpression"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="actionlanguage_TypedNamedElementExpression_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/pim/actionlanguage/1.0.0#//TypedNamedElementExpression"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="actionlanguage_ArrayIndexExpression_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/pim/actionlanguage/1.0.0#//ArrayIndexExpression"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="actionlanguage_AttributeAccessorExpression_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/pim/actionlanguage/1.0.0#//AttributeAccessorExpression"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="behavior_Variable_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/pim/1.0.0#//behavior/Variable"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="common_LiteralExpression_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/core/1.0.0#//expressions/common/LiteralExpression"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="actionlanguage_TriggerMessageExpression_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/pim/actionlanguage/1.0.0#//TriggerMessageExpression"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="actionlanguage_Assignment_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/pim/actionlanguage/1.0.0#//Assignment"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="actionlanguage_Block_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/pim/actionlanguage/1.0.0#//Block"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="actionlanguage_IfStatement_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/pim/actionlanguage/1.0.0#//IfStatement"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="actionlanguage_ForLoop_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/pim/actionlanguage/1.0.0#//ForLoop"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="actionlanguage_ReturnStatement_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/pim/actionlanguage/1.0.0#//ReturnStatement"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="actionlanguage_LocalVariableDeclarationStatement_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/pim/actionlanguage/1.0.0#//LocalVariableDeclarationStatement"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="actionlanguage_OperationCall_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/pim/actionlanguage/1.0.0#//OperationCall"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="actionlanguage_TypeCastExpression_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/pim/actionlanguage/1.0.0#//TypeCastExpression"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="actionlanguage_WhileLoop_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/pim/actionlanguage/1.0.0#//WhileLoop"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="expressions_TextualExpression_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/core/1.0.0#//expressions/TextualExpression"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="expressions_Expression_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/core/1.0.0#//expressions/Expression"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="behavior_ParameterBinding_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/pim/1.0.0#//behavior/ParameterBinding"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="behavior_TypedNamedElement_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/pim/1.0.0#//behavior/TypedNamedElement"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="collections_Set(LocalVariableDeclarationStatement)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="variable_queries.emtl#/3/Set(LocalVariableDeclarationStatement)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="connector_MessageBuffer_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/pim/1.0.0#//connector/MessageBuffer"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="msgtype_MessageType_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/pim/1.0.0#//msgtype/MessageType"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="behavior_OperationRepository_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/pim/1.0.0#//behavior/OperationRepository"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="instance_ContinuousPortInstance_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/pim/1.0.0#//instance/ContinuousPortInstance"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="instance_ComponentInstance_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/pim/1.0.0#//instance/ComponentInstance"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="component_Component_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/pim/1.0.0#//component/Component"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="component_Port_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/pim/1.0.0#//component/Port"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="behavior_Operation_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/pim/1.0.0#//behavior/Operation"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="behavior_Parameter_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/pim/1.0.0#//behavior/Parameter"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="types_Attribute_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/pim/1.0.0#//types/Attribute"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="component_ComponentPart_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/pim/1.0.0#//component/ComponentPart"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="realtimestatechart_Region_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/pim/1.0.0#//realtimestatechart/Region"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="msgtype_MessageTypeRepository_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/pim/1.0.0#//msgtype/MessageTypeRepository"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="realtimestatechart_SynchronizationChannel_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/pim/1.0.0#//realtimestatechart/SynchronizationChannel"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="realtimestatechart_State_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/pim/1.0.0#//realtimestatechart/State"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="component_HybridPort_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/pim/1.0.0#//component/HybridPort"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="instance_PortInstance_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/pim/1.0.0#//instance/PortInstance"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_Boolean_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="connector_Connector_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/pim/1.0.0#//connector/Connector"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="realtimestatechart_Clock_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/pim/1.0.0#//realtimestatechart/Clock"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="realtimestatechart_DoEvent_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/pim/1.0.0#//realtimestatechart/DoEvent"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="connector_ConnectorInstance_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/pim/1.0.0#//connector/ConnectorInstance"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="types_StructureDataType_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/pim/1.0.0#//types/StructureDataType"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="types_ArrayDataType_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/pim/1.0.0#//types/ArrayDataType"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="types_PrimitiveDataType_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/pim/1.0.0#//types/PrimitiveDataType"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="types_DataType_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/pim/1.0.0#//types/DataType"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="common_ComparingOperator_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/core/1.0.0#//expressions/common/ComparingOperator"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="component_DiscretePort_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/pim/1.0.0#//component/DiscretePort"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="component_AtomicComponent_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/pim/1.0.0#//component/AtomicComponent"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="instance_ComponentInstanceConfiguration_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/pim/1.0.0#//instance/ComponentInstanceConfiguration"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="instance_AtomicComponentInstance_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/pim/1.0.0#//instance/AtomicComponentInstance"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="modelinstance_ModelElementCategory_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/modelinstance/1.0.0#//ModelElementCategory"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="collections_OrderedSet(ComponentInstance)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="../queries/modelQueries.emtl#/3/OrderedSet(ComponentInstance)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="collections_OrderedSet(Component)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="../queries/modelQueries.emtl#/3/OrderedSet(Component)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="valuetype_TimeValue_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.muml.org/pim/1.0.0#//valuetype/TimeValue"/>
+      </eAnnotations>
+    </eClassifiers>
+  </ecore:EPackage>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//realtimestatechart/RealtimeStatechart"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//realtimestatechart/RealtimeStatechart"/>
+  </ocl.ecore:Variable>
+  <ecore:EPackage name="collections">
+    <eClassifiers xsi:type="ocl.ecore:OrderedSetType" name="OrderedSet(Variable)" instanceClassName="java.util.LinkedHashSet">
+      <elementType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/Variable"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:SetType" name="Set(Variable)" instanceClassName="java.util.Set">
+      <elementType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/Variable"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:SetType" name="Set(LocalVariableDeclarationStatement)" instanceClassName="java.util.Set">
+      <elementType xsi:type="ecore:EClass" href="http://www.muml.org/pim/actionlanguage/1.0.0#//LocalVariableDeclarationStatement"/>
+    </eClassifiers>
+  </ecore:EPackage>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//realtimestatechart/RealtimeStatechart"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/Variable"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/Variable"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/Variable"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/Variable"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/Variable"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/Variable"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/Variable"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//behavior/Variable"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//realtimestatechart/RealtimeStatechart"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//realtimestatechart/RealtimeStatechart"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//realtimestatechart/RealtimeStatechart"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//realtimestatechart/RealtimeStatechart"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//realtimestatechart/RealtimeStatechart"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/actionlanguage/1.0.0#//LocalVariableDeclarationStatement"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/actionlanguage/1.0.0#//LocalVariableDeclarationStatement"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/actionlanguage/1.0.0#//LocalVariableDeclarationStatement"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.muml.org/pim/1.0.0#//realtimestatechart/RealtimeStatechart"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ecore:EAnnotation source="positions">
+    <eAnnotations source="positions.0" references="/0/createVariableDeclarations">
+      <details key="start" value="870"/>
+      <details key="end" value="1378"/>
+      <details key="line" value="21"/>
+    </eAnnotations>
+    <eAnnotations source="positions.1" references="/0/createVariableDeclarations/%">
+      <details key="start" value="942"/>
+      <details key="end" value="969"/>
+      <details key="line" value="22"/>
+    </eAnnotations>
+    <eAnnotations source="positions.2" references="/0/createVariableDeclarations/%.1">
+      <details key="start" value="969"/>
+      <details key="end" value="1335"/>
+      <details key="line" value="23"/>
+    </eAnnotations>
+    <eAnnotations source="positions.3" references="/0/createVariableDeclarations/%.1/%">
+      <details key="start" value="1027"/>
+      <details key="end" value="1328"/>
+      <details key="line" value="24"/>
+    </eAnnotations>
+    <eAnnotations source="positions.4" references="/0/createVariableDeclarations/%.1/%/%">
+      <details key="start" value="1067"/>
+      <details key="end" value="1074"/>
+      <details key="line" value="25"/>
+    </eAnnotations>
+    <eAnnotations source="positions.5" references="/0/createVariableDeclarations/%.1/%/%.1">
+      <details key="start" value="1075"/>
+      <details key="end" value="1106"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.6" references="/0/createVariableDeclarations/%.1/%/%.1/%">
+      <details key="start" value="1075"/>
+      <details key="end" value="1092"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.7" references="/0/createVariableDeclarations/%.1/%/%.1/%/variable">
+      <details key="start" value="1075"/>
+      <details key="end" value="1083"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.8" references="/0/createVariableDeclarations/%.1/%/%.2">
+      <details key="start" value="1109"/>
+      <details key="end" value="1110"/>
+      <details key="line" value="25"/>
+    </eAnnotations>
+    <eAnnotations source="positions.9" references="/0/createVariableDeclarations/%.1/%/%.3">
+      <details key="start" value="1111"/>
+      <details key="end" value="1124"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.10" references="/0/createVariableDeclarations/%.1/%/%.3/variable">
+      <details key="start" value="1111"/>
+      <details key="end" value="1119"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.11" references="/0/createVariableDeclarations/%.1/%/%.4">
+      <details key="start" value="1126"/>
+      <details key="end" value="1251"/>
+      <details key="line" value="25"/>
+    </eAnnotations>
+    <eAnnotations source="positions.12" references="/0/createVariableDeclarations/%.1/%/%.4/%">
+      <details key="start" value="1181"/>
+      <details key="end" value="1188"/>
+      <details key="line" value="25"/>
+    </eAnnotations>
+    <eAnnotations source="positions.13" references="/0/createVariableDeclarations/%.1/%/%.4/%.1">
+      <details key="start" value="1189"/>
+      <details key="end" value="1242"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.14" references="/0/createVariableDeclarations/%.1/%/%.4/%.1/%">
+      <details key="start" value="1208"/>
+      <details key="end" value="1237"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.15" references="/0/createVariableDeclarations/%.1/%/%.4/%.1/%/variable">
+      <details key="start" value="1208"/>
+      <details key="end" value="1216"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.16" references="/0/createVariableDeclarations/%.1/%/%.4/%.1/%.1">
+      <details key="start" value="1239"/>
+      <details key="end" value="1241"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.17" references="/0/createVariableDeclarations/%.1/%/%.4/%.2">
+      <details key="start" value="1245"/>
+      <details key="end" value="1246"/>
+      <details key="line" value="25"/>
+    </eAnnotations>
+    <eAnnotations source="positions.18" references="/0/createVariableDeclarations/%.1/%/%.4/%.3">
+      <details key="start" value="1130"/>
+      <details key="end" value="1180"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.19" references="/0/createVariableDeclarations/%.1/%/%.4/%.3/%">
+      <details key="start" value="1134"/>
+      <details key="end" value="1180"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.20" references="/0/createVariableDeclarations/%.1/%/%.4/%.3/%/%">
+      <details key="start" value="1134"/>
+      <details key="end" value="1163"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.21" references="/0/createVariableDeclarations/%.1/%/%.4/%.3/%/%/variable">
+      <details key="start" value="1134"/>
+      <details key="end" value="1142"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.22" references="/0/createVariableDeclarations/%.1/%/%.5">
+      <details key="start" value="1251"/>
+      <details key="end" value="1253"/>
+      <details key="line" value="25"/>
+    </eAnnotations>
+    <eAnnotations source="positions.23" references="/0/createVariableDeclarations/%.1/%/%.6">
+      <details key="start" value="1031"/>
+      <details key="end" value="1065"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.24" references="/0/createVariableDeclarations/%.1/%/%.6/%">
+      <details key="start" value="1031"/>
+      <details key="end" value="1045"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.25" references="/0/createVariableDeclarations/%.1/%/%.6/%/rtsc">
+      <details key="start" value="1031"/>
+      <details key="end" value="1035"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.26" references="/0/createVariableDeclarations/%.1/%/%.6/variable">
+      <details key="start" value="1056"/>
+      <details key="end" value="1064"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.27" references="/0/createVariableDeclarations/%.1/%/%.7">
+      <details key="start" value="1254"/>
+      <details key="end" value="1323"/>
+      <details key="line" value="26"/>
+    </eAnnotations>
+    <eAnnotations source="positions.28" references="/0/createVariableDeclarations/%.1/%/%.7/%">
+      <details key="start" value="1261"/>
+      <details key="end" value="1268"/>
+      <details key="line" value="27"/>
+    </eAnnotations>
+    <eAnnotations source="positions.29" references="/0/createVariableDeclarations/%.1/%/%.7/%.1">
+      <details key="start" value="1269"/>
+      <details key="end" value="1300"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.30" references="/0/createVariableDeclarations/%.1/%/%.7/%.1/%">
+      <details key="start" value="1269"/>
+      <details key="end" value="1286"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.31" references="/0/createVariableDeclarations/%.1/%/%.7/%.1/%/variable">
+      <details key="start" value="1269"/>
+      <details key="end" value="1277"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.32" references="/0/createVariableDeclarations/%.1/%/%.7/%.2">
+      <details key="start" value="1303"/>
+      <details key="end" value="1304"/>
+      <details key="line" value="27"/>
+    </eAnnotations>
+    <eAnnotations source="positions.33" references="/0/createVariableDeclarations/%.1/%/%.7/%.3">
+      <details key="start" value="1305"/>
+      <details key="end" value="1318"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.34" references="/0/createVariableDeclarations/%.1/%/%.7/%.3/variable">
+      <details key="start" value="1305"/>
+      <details key="end" value="1313"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.35" references="/0/createVariableDeclarations/%.1/%/%.7/%.4">
+      <details key="start" value="1320"/>
+      <details key="end" value="1322"/>
+      <details key="line" value="27"/>
+    </eAnnotations>
+    <eAnnotations source="positions.36" references="/0/createVariableDeclarations/%.1/variable">
+      <details key="start" value="975"/>
+      <details key="end" value="994"/>
+      <details key="line" value="23"/>
+    </eAnnotations>
+    <eAnnotations source="positions.37" references="/0/createVariableDeclarations/%.1/%.1">
+      <details key="start" value="997"/>
+      <details key="end" value="1023"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.38" references="/0/createVariableDeclarations/%.1/%.1/rtsc">
+      <details key="start" value="997"/>
+      <details key="end" value="1001"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.39" references="/0/createVariableDeclarations/%.2">
+      <details key="start" value="1336"/>
+      <details key="end" value="1366"/>
+      <details key="line" value="30"/>
+    </eAnnotations>
+    <eAnnotations source="positions.40" references="/0/createVariableDeclarations/%.3">
+      <details key="start" value="785"/>
+      <details key="end" value="869"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.41" references="/0/createVariableDeclarations/%.3/attributeSet">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.42" references="/0/createVariableDeclarations/rtsc">
+      <details key="start" value="914"/>
+      <details key="end" value="939"/>
+      <details key="line" value="21"/>
+    </eAnnotations>
+    <eAnnotations source="positions.43" references="/0/createLocalVariableDeclarations">
+      <details key="start" value="1450"/>
+      <details key="end" value="2028"/>
+      <details key="line" value="37"/>
+    </eAnnotations>
+    <eAnnotations source="positions.44" references="/0/createLocalVariableDeclarations/@init">
+      <details key="start" value="1526"/>
+      <details key="end" value="1677"/>
+      <details key="line" value="37"/>
+    </eAnnotations>
+    <eAnnotations source="positions.45" references="/0/createLocalVariableDeclarations/@init/@variable.0">
+      <details key="start" value="1529"/>
+      <details key="end" value="1673"/>
+      <details key="line" value="38"/>
+    </eAnnotations>
+    <eAnnotations source="positions.46" references="/0/createLocalVariableDeclarations/@init/@variable.0/%">
+      <details key="start" value="1582"/>
+      <details key="end" value="1673"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.47" references="/0/createLocalVariableDeclarations/@init/@variable.0/%/%">
+      <details key="start" value="1582"/>
+      <details key="end" value="1629"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.48" references="/0/createLocalVariableDeclarations/@init/@variable.0/%/%/rtsc">
+      <details key="start" value="1582"/>
+      <details key="end" value="1586"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.49" references="/0/createLocalVariableDeclarations/%">
+      <details key="start" value="1679"/>
+      <details key="end" value="1711"/>
+      <details key="line" value="40"/>
+    </eAnnotations>
+    <eAnnotations source="positions.50" references="/0/createLocalVariableDeclarations/%.1">
+      <details key="start" value="1711"/>
+      <details key="end" value="1980"/>
+      <details key="line" value="41"/>
+    </eAnnotations>
+    <eAnnotations source="positions.51" references="/0/createLocalVariableDeclarations/%.1/%">
+      <details key="start" value="1880"/>
+      <details key="end" value="1881"/>
+      <details key="line" value="43"/>
+    </eAnnotations>
+    <eAnnotations source="positions.52" references="/0/createLocalVariableDeclarations/%.1/%.1">
+      <details key="start" value="1882"/>
+      <details key="end" value="1922"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.53" references="/0/createLocalVariableDeclarations/%.1/%.1/%">
+      <details key="start" value="1882"/>
+      <details key="end" value="1908"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.54" references="/0/createLocalVariableDeclarations/%.1/%.1/%/%">
+      <details key="start" value="1882"/>
+      <details key="end" value="1899"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.55" references="/0/createLocalVariableDeclarations/%.1/%.1/%/%/lVarDecl">
+      <details key="start" value="1882"/>
+      <details key="end" value="1890"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.56" references="/0/createLocalVariableDeclarations/%.1/%.2">
+      <details key="start" value="1924"/>
+      <details key="end" value="1925"/>
+      <details key="line" value="43"/>
+    </eAnnotations>
+    <eAnnotations source="positions.57" references="/0/createLocalVariableDeclarations/%.1/%.3">
+      <details key="start" value="1926"/>
+      <details key="end" value="1970"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.58" references="/0/createLocalVariableDeclarations/%.1/%.3/%">
+      <details key="start" value="1926"/>
+      <details key="end" value="1943"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.59" references="/0/createLocalVariableDeclarations/%.1/%.3/%/lVarDecl">
+      <details key="start" value="1926"/>
+      <details key="end" value="1934"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.60" references="/0/createLocalVariableDeclarations/%.1/%.4">
+      <details key="start" value="1972"/>
+      <details key="end" value="1974"/>
+      <details key="line" value="43"/>
+    </eAnnotations>
+    <eAnnotations source="positions.61" references="/0/createLocalVariableDeclarations/%.1/lVarDecl">
+      <details key="start" value="1717"/>
+      <details key="end" value="1761"/>
+      <details key="line" value="41"/>
+    </eAnnotations>
+    <eAnnotations source="positions.62" references="/0/createLocalVariableDeclarations/%.1/lVarDecls">
+      <details key="start" value="1764"/>
+      <details key="end" value="1773"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.63" references="/0/createLocalVariableDeclarations/%.2">
+      <details key="start" value="1981"/>
+      <details key="end" value="2016"/>
+      <details key="line" value="45"/>
+    </eAnnotations>
+    <eAnnotations source="positions.64" references="/0/createLocalVariableDeclarations/%.3">
+      <details key="start" value="1380"/>
+      <details key="end" value="1449"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.65" references="/0/createLocalVariableDeclarations/%.3/rtsc">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.66" references="/0/createLocalVariableDeclarations/rtsc">
+      <details key="start" value="1499"/>
+      <details key="end" value="1524"/>
+      <details key="line" value="37"/>
+    </eAnnotations>
+  </ecore:EAnnotation>
+</xmi:XMI>
