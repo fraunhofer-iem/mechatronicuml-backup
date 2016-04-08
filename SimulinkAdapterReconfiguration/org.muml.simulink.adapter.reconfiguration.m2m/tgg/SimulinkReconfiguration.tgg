@@ -26,7 +26,7 @@
       <eType href="http://www.muml.org/simulink/adapter/corrmodel/1.0.0#//RootNode2SimulinkContainer"/>
     </node>
     <node xmi:id="_LO_rWSnkEeORPcZB3PfXyA" name="strComp" incomingEdge="_LO_rVCnkEeORPcZB3PfXyA" graphPattern="_LO_rWynkEeORPcZB3PfXyA _LO_rXinkEeORPcZB3PfXyA">
-      <eType href="http://www.fujaba.de/muml/reconfiguration/0.3.18#//ReconfigurableStructuredComponent"/>
+      <eType href="http://www.muml.org/reconfiguration/1.0.0#//ReconfigurableStructuredComponent"/>
     </node>
     <leftGraphPattern xmi:id="_LO_rWinkEeORPcZB3PfXyA" node="_LO_rUSnkEeORPcZB3PfXyA _LO_rUynkEeORPcZB3PfXyA _LO_rVSnkEeORPcZB3PfXyA _LO_rVinkEeORPcZB3PfXyA" edge="_LO_rUinkEeORPcZB3PfXyA _LO_rVynkEeORPcZB3PfXyA _LO_rWCnkEeORPcZB3PfXyA"/>
     <rightGraphPattern xmi:id="_LO_rWynkEeORPcZB3PfXyA" node="_LO_rUSnkEeORPcZB3PfXyA _LO_rUynkEeORPcZB3PfXyA _LO_rVSnkEeORPcZB3PfXyA _LO_rVinkEeORPcZB3PfXyA _LO_rWSnkEeORPcZB3PfXyA" edge="_LO_rUinkEeORPcZB3PfXyA _LO_rVynkEeORPcZB3PfXyA _LO_rWCnkEeORPcZB3PfXyA _LO_rVCnkEeORPcZB3PfXyA"/>
@@ -147,7 +147,7 @@
       <eType href="http://www.muml.org/simulink/adapter/corrmodel/1.0.0#//CompInstConfig2SubSys"/>
     </node>
     <node xmi:id="_moyuIynkEeORPcZB3PfXyA" name="structComp" incomingEdge="_moyuAinkEeORPcZB3PfXyA _moyuGynkEeORPcZB3PfXyA _moyuDinkEeORPcZB3PfXyA" graphPattern="_moyuMynkEeORPcZB3PfXyA _moyuMinkEeORPcZB3PfXyA _moyuNinkEeORPcZB3PfXyA">
-      <eType href="http://www.fujaba.de/muml/reconfiguration/0.3.18#//ReconfigurableStructuredComponent"/>
+      <eType href="http://www.muml.org/reconfiguration/1.0.0#//ReconfigurableStructuredComponent"/>
     </node>
     <node xmi:id="_moyuJCnkEeORPcZB3PfXyA" incomingEdge="_moyuJynkEeORPcZB3PfXyA" graphPattern="_moyuMynkEeORPcZB3PfXyA _moyuMinkEeORPcZB3PfXyA _moyuNCnkEeORPcZB3PfXyA">
       <outgoingEdge xmi:id="_moyuJSnkEeORPcZB3PfXyA" targetNode="_moyuKynkEeORPcZB3PfXyA" graphPattern="_moyuMynkEeORPcZB3PfXyA">
@@ -328,7 +328,7 @@
       <eType href="http://www.muml.org/simulink/adapter/corrmodel/1.0.0#//CompInstConfig2SubSys"/>
     </node>
     <node xmi:id="_moyuYSnkEeORPcZB3PfXyA" name="structComp" incomingEdge="_moyuRynkEeORPcZB3PfXyA _moyuTCnkEeORPcZB3PfXyA _moyuWSnkEeORPcZB3PfXyA" graphPattern="_moyubinkEeORPcZB3PfXyA _moyubynkEeORPcZB3PfXyA _moyucSnkEeORPcZB3PfXyA">
-      <eType href="http://www.fujaba.de/muml/reconfiguration/0.3.18#//ReconfigurableStructuredComponent"/>
+      <eType href="http://www.muml.org/reconfiguration/1.0.0#//ReconfigurableStructuredComponent"/>
     </node>
     <node xmi:id="_moyuYinkEeORPcZB3PfXyA" incomingEdge="_moyuZSnkEeORPcZB3PfXyA" graphPattern="_moyubinkEeORPcZB3PfXyA _moyubynkEeORPcZB3PfXyA _moyucCnkEeORPcZB3PfXyA">
       <outgoingEdge xmi:id="_moyuYynkEeORPcZB3PfXyA" targetNode="_moyuaSnkEeORPcZB3PfXyA" graphPattern="_moyubynkEeORPcZB3PfXyA">

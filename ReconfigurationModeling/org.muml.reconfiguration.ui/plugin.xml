@@ -138,15 +138,15 @@
             name="component">
          <child
                class="ReconfigurableStructuredComponent"
-               packageNsUri="http://www.fujaba.de/muml/reconfiguration/0.3.18">
+               packageNsUri="http://www.muml.org/reconfiguration/1.0.0">
          </child>
          <child
                class="ReconfigurableAtomicComponent"
-               packageNsUri="http://www.fujaba.de/muml/reconfiguration/0.3.18">
+               packageNsUri="http://www.muml.org/reconfiguration/1.0.0">
          </child>
          <child
                class="FadingComponent"
-               packageNsUri="http://www.fujaba.de/muml/reconfiguration/0.3.18">
+               packageNsUri="http://www.muml.org/reconfiguration/1.0.0">
          </child>
       </category>
    </extension>
@@ -240,7 +240,7 @@
        <extension
              point="org.eclipse.gmf.runtime.emf.type.core.elementTypes">
           <metamodel
-                nsURI="http://www.fujaba.de/muml/reconfiguration/0.3.18">
+                nsURI="http://www.muml.org/reconfiguration/1.0.0">
              <metamodelType
                    eclass="Manager"
                    edithelper="org.muml.reconfiguration.ui.edit.helpers.ManagerEditHelper"

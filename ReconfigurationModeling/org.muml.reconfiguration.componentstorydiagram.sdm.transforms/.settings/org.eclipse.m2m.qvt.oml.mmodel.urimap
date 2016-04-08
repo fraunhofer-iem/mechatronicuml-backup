@@ -6,5 +6,5 @@
   <mapping sourceURI="http://www.muml.org/pim/1.0.0" targetURI="platform:/resource/org.muml.pim/model/pim.ecore"/>
   <mapping sourceURI="http://www.muml.org/core/modelinstance/1.0.0" targetURI="platform:/resource/org.muml.core.modelinstance/model/modelinstance.ecore"/>
   <mapping sourceURI="http://www.muml.org/core/1.0.0" targetURI="platform:/resource/org.muml.core/model/core.ecore"/>
-  <mapping sourceURI="http://www.fujaba.de/muml/reconfiguration/0.3.18" targetURI="platform:/resource/org.muml.reconfiguration/model/MumlReconfiguration.ecore"/>
+  <mapping sourceURI="http://www.muml.org/reconfiguration/1.0.0" targetURI="platform:/resource/org.muml.reconfiguration/model/MumlReconfiguration.ecore"/>
 </uriMap:MappingContainer>

@@ -15,8 +15,8 @@ modeltype valuetype uses pim::valuetype('http://www.muml.org/pim/1.0.0');
 
 modeltype actionlanguage uses actionlanguage('http://www.muml.org/pim/actionlanguage/1.0.0');
 
-modeltype reconf uses reconfiguration("http://www.fujaba.de/muml/reconfiguration/0.3.18");
-modeltype reconf_expressions uses reconfiguration::expression("http://www.fujaba.de/muml/reconfiguration/0.3.18");
+modeltype reconf uses reconfiguration("http://www.muml.org/reconfiguration/1.0.0");
+modeltype reconf_expressions uses reconfiguration::expression("http://www.muml.org/reconfiguration/1.0.0");
 
 
 ------------ helper functions --------------

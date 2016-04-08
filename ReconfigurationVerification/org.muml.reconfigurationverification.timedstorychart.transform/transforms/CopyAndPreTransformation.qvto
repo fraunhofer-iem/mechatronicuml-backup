@@ -15,7 +15,7 @@ modeltype transformationHelper uses "http://www.fujaba.de/verification/timedstor
 
 modeltype actionlanguage uses actionlanguage('http://www.muml.org/pim/actionlanguage/1.0.0');
 
-modeltype reconfigurationExpressions uses reconfiguration::expression('http://www.fujaba.de/muml/reconfiguration/0.3.18');
+modeltype reconfigurationExpressions uses reconfiguration::expression('http://www.muml.org/reconfiguration/1.0.0');
 
 modeltype activities uses storydiagrams::activities('http://www.muml.org/storydiagram/1.0.0');
 modeltype calls uses storydiagrams::calls('http://www.muml.org/storydiagram/1.0.0');

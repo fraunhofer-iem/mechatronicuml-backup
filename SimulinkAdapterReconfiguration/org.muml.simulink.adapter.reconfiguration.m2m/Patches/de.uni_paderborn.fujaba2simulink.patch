@@ -6,7 +6,7 @@ Index: tgg/fujaba2simulink.tgg
      <usedPackage href="http://www.muml.org/storydiagram/1.0.0#//patterns/expressions"/>
      <usedPackage href="http://www.muml.org/pim/component/1.0.0#/"/>
      <usedPackage href="http://www.muml.org/pim/instance/1.0.0#/"/>
-+    <usedPackage href="http://www.fujaba.de/muml/reconfiguration/0.3.18#/"/>
++    <usedPackage href="http://www.muml.org/reconfiguration/1.0.0#/"/>
    </modelParameter>
    <modelParameter xmi:id="_NK6IcJzXEeCxo-rGjpVr5g" name="simulink">
      <usedPackage href="http://www.muml.org/simulink/1.0.0#/"/>

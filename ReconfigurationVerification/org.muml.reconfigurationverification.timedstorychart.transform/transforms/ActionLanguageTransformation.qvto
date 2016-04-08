@@ -23,7 +23,7 @@ modeltype mumlbehavior uses pim::behavior('http://www.muml.org/pim/1.0.0');
 modeltype mumltypes uses pim::types('http://www.muml.org/pim/1.0.0');
 modeltype mumlconnector uses muml::connector("http://www.muml.org/pim/1.0.0");
 
-modeltype exp uses reconfiguration::expression('http://www.fujaba.de/muml/reconfiguration/0.3.18');
+modeltype exp uses reconfiguration::expression('http://www.muml.org/reconfiguration/1.0.0');
 
 modeltype help uses _helper('http://www.fujaba.de/verification/timedstorychart/transform/helper/0.1.0');
 

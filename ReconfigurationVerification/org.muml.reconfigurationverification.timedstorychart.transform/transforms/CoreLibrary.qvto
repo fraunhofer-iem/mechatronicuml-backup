@@ -17,7 +17,7 @@ modeltype mumlconnector uses muml::connector("http://www.muml.org/pim/1.0.0");
 
 modeltype wrapper uses wrapper('http://www.muml.org/storydiagram/reachanalysis/reachabilitygraph/sdm/wrapper/1.0.0');
 
-modeltype exp uses reconfiguration::expression('http://www.fujaba.de/muml/reconfiguration/0.3.18');
+modeltype exp uses reconfiguration::expression('http://www.muml.org/reconfiguration/1.0.0');
 
 modeltype runtime uses runtime('http://www.muml.org/verification/core/runtime/1.0.0');
 
