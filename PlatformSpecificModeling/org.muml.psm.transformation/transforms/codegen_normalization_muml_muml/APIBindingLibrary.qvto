@@ -4,14 +4,14 @@ import StateChartLibrary;
 
 modeltype SoftPlattform uses swplatform('http://www.fujaba.de/muml/swplatform/0.4.0/');
 
-modeltype PSM uses psm('http://www.fujaba.de/muml/psm/0.4.0/');
-modeltype PortMappingModel uses psm::portapimapping('http://www.fujaba.de/muml/psm/0.4.0/');
-modeltype ApiExpessions uses psm::apiexpressions('http://www.fujaba.de/muml/psm/0.4.0/');
+modeltype PSM uses psm('http://www.muml.org/psm/1.0.0');
+modeltype PortMappingModel uses psm::portapimapping('http://www.muml.org/psm/1.0.0');
+modeltype ApiExpessions uses psm::apiexpressions('http://www.muml.org/psm/1.0.0');
 
-modeltype PSMInstance uses psm::psm_instance('http://www.fujaba.de/muml/psm/0.4.0/');
-modeltype PSMStateChart uses psm::psm_realtimestatechart('http://www.fujaba.de/muml/psm/0.4.0/');
-modeltype Realtimestatechartparameter uses psm::psm_realtimestatechart::realtimestatechartparameter('http://www.fujaba.de/muml/psm/0.4.0/');
-modeltype PSMparameterBinding uses psm::psm_realtimestatechart::realtimestatechartparameterbinding('http://www.fujaba.de/muml/psm/0.4.0/');
+modeltype PSMInstance uses psm::psm_instance('http://www.muml.org/psm/1.0.0');
+modeltype PSMStateChart uses psm::psm_realtimestatechart('http://www.muml.org/psm/1.0.0');
+modeltype Realtimestatechartparameter uses psm::psm_realtimestatechart::realtimestatechartparameter('http://www.muml.org/psm/1.0.0');
+modeltype PSMparameterBinding uses psm::psm_realtimestatechart::realtimestatechartparameterbinding('http://www.muml.org/psm/1.0.0');
 
 modeltype Modelinstance uses modelinstance('http://www.muml.org/core/modelinstance/1.0.0');
 modeltype Muml uses muml('http://www.muml.org/pim/1.0.0');
