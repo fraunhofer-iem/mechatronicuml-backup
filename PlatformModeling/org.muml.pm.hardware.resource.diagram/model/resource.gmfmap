@@ -15,7 +15,7 @@
       <labelMappings
           xsi:type="gmfmap:FeatureLabelMapping">
         <diagramLabel
-            href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#SimpleResourceNameLabel"/>
+            href="../../org.muml.pm.hardware.common/model/hardwarecommon.gmfgraph#SimpleResourceNameLabel"/>
         <features
             href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
         <editableFeatures
@@ -25,7 +25,7 @@
           xsi:type="gmfmap:ExpressionLabelMapping"
           readOnly="true">
         <diagramLabel
-            href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#SimpleResourceCardinalityLabel"/>
+            href="../../org.muml.pm.hardware.common/model/hardwarecommon.gmfgraph#SimpleResourceCardinalityLabel"/>
         <viewExpression
             body="' '"/>
       </labelMappings>
@@ -33,7 +33,7 @@
           xsi:type="gmfmap:ExpressionLabelMapping"
           readOnly="true">
         <diagramLabel
-            href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#SimpleResourceKindLabel"/>
+            href="../../org.muml.pm.hardware.common/model/hardwarecommon.gmfgraph#SimpleResourceKindLabel"/>
         <viewExpression
             body="': ' + self.deviceKind.toString()"/>
       </labelMappings>
@@ -41,7 +41,7 @@
           xsi:type="gmftool:CreationTool"
           href="resource.gmftool#//@palette/@tools.0/@tools.0"/>
       <diagramNode
-          href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#SimpleResource"/>
+          href="../../org.muml.pm.hardware.common/model/hardwarecommon.gmfgraph#SimpleResource"/>
       <children
           referencedChild="//@nodes.0/@ownedChild/@children.0/@ownedChild">
         <containmentFeature
@@ -103,7 +103,7 @@
           <labelMappings
               xsi:type="gmfmap:ExpressionLabelMapping">
             <diagramLabel
-                href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#HWPortLabel"/>
+                href="../../org.muml.pm.hardware.common/model/hardwarecommon.gmfgraph#HWPortLabel"/>
             <viewExpression
                 body="let portName : String = if self.name.oclIsUndefined() then 'null' else self.name endif in&#xD;&#xA;let protocolName : String = if self.protocol.oclIsUndefined() then 'null' else self.protocol.name endif in&#xD;&#xA;portName.concat(' : ').concat(protocolName)"/>
           </labelMappings>
@@ -111,7 +111,7 @@
               xsi:type="gmftool:CreationTool"
               href="resource.gmftool#//@palette/@tools.0/@tools.1"/>
           <diagramNode
-              href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#HWPort"/>
+              href="../../org.muml.pm.hardware.common/model/hardwarecommon.gmfgraph#HWPort"/>
         </ownedChild>
       </children>
     </ownedChild>
@@ -125,7 +125,7 @@
       <labelMappings
           xsi:type="gmfmap:FeatureLabelMapping">
         <diagramLabel
-            href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#StructuredResourceNameLabel"/>
+            href="../../org.muml.pm.hardware.common/model/hardwarecommon.gmfgraph#StructuredResourceNameLabel"/>
         <features
             href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
         <editableFeatures
@@ -135,7 +135,7 @@
           xsi:type="gmfmap:ExpressionLabelMapping"
           readOnly="true">
         <diagramLabel
-            href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#StructuredResourceKindLabel"/>
+            href="../../org.muml.pm.hardware.common/model/hardwarecommon.gmfgraph#StructuredResourceKindLabel"/>
         <viewExpression
             body="' '"/>
       </labelMappings>
@@ -143,7 +143,7 @@
           xsi:type="gmfmap:ExpressionLabelMapping"
           readOnly="true">
         <diagramLabel
-            href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#StructuredResourceCardinalityLabel"/>
+            href="../../org.muml.pm.hardware.common/model/hardwarecommon.gmfgraph#StructuredResourceCardinalityLabel"/>
         <viewExpression
             body="' '"/>
       </labelMappings>
@@ -151,7 +151,7 @@
           xsi:type="gmftool:CreationTool"
           href="resource.gmftool#//@palette/@tools.1/@tools.0"/>
       <diagramNode
-          href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#StructuredResource"/>
+          href="../../org.muml.pm.hardware.common/model/hardwarecommon.gmfgraph#StructuredResource"/>
       <children
           compartment="//@nodes.1/@ownedChild/@compartments.0"
           referencedChild="//@nodes.0/@ownedChild/@children.0/@ownedChild">
@@ -206,7 +206,7 @@
           <labelMappings
               xsi:type="gmfmap:FeatureLabelMapping">
             <diagramLabel
-                href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#SimpleResourceNameLabel"/>
+                href="../../org.muml.pm.hardware.common/model/hardwarecommon.gmfgraph#SimpleResourceNameLabel"/>
             <features
                 href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
             <editableFeatures
@@ -216,7 +216,7 @@
               xsi:type="gmfmap:ExpressionLabelMapping"
               readOnly="true">
             <diagramLabel
-                href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#SimpleResourceKindLabel"/>
+                href="../../org.muml.pm.hardware.common/model/hardwarecommon.gmfgraph#SimpleResourceKindLabel"/>
             <viewExpression
                 body="if self.protocol.oclIsUndefined() then 'null' else self.protocol.name endif"/>
           </labelMappings>
@@ -224,7 +224,7 @@
               xsi:type="gmfmap:ExpressionLabelMapping"
               readOnly="true">
             <diagramLabel
-                href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#SimpleResourceCardinalityLabel"/>
+                href="../../org.muml.pm.hardware.common/model/hardwarecommon.gmfgraph#SimpleResourceCardinalityLabel"/>
             <viewExpression
                 body="let lowerBound : String = if self.cardinality.lowerBound.oclIsUndefined() then 'null' else cardinality.lowerBound.toString() endif in&#xA;let upperBound : String = if self.cardinality.upperBound.oclIsUndefined() then 'null' else cardinality.upperBound.toString() endif in&#xD;&#xA;'[' + lowerBound + '..' + upperBound + ']'"/>
           </labelMappings>
@@ -232,7 +232,7 @@
               xsi:type="gmftool:CreationTool"
               href="resource.gmftool#//@palette/@tools.0/@tools.1"/>
           <diagramNode
-              href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#SimpleResource"/>
+              href="../../org.muml.pm.hardware.common/model/hardwarecommon.gmfgraph#SimpleResource"/>
         </ownedChild>
       </children>
       <children
@@ -245,7 +245,7 @@
           <labelMappings
               xsi:type="gmfmap:FeatureLabelMapping">
             <diagramLabel
-                href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#ResourceNameLabel"/>
+                href="../../org.muml.pm.hardware.common/model/hardwarecommon.gmfgraph#ResourceNameLabel"/>
             <features
                 href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
             <editableFeatures
@@ -255,7 +255,7 @@
               xsi:type="gmfmap:ExpressionLabelMapping"
               readOnly="true">
             <diagramLabel
-                href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#ResourceKindLabel"/>
+                href="../../org.muml.pm.hardware.common/model/hardwarecommon.gmfgraph#ResourceKindLabel"/>
             <viewExpression
                 body="' : Cache'"/>
           </labelMappings>
@@ -263,21 +263,21 @@
               xsi:type="gmfmap:ExpressionLabelMapping"
               readOnly="true">
             <diagramLabel
-                href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#ResourceCardinalityLabel"/>
+                href="../../org.muml.pm.hardware.common/model/hardwarecommon.gmfgraph#ResourceCardinalityLabel"/>
             <viewExpression
                 body="' '"/>
           </labelMappings>
           <labelMappings
               xsi:type="gmfmap:ExpressionLabelMapping">
             <diagramLabel
-                href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#ResourceInfo1"/>
+                href="../../org.muml.pm.hardware.common/model/hardwarecommon.gmfgraph#ResourceInfo1"/>
             <viewExpression
                 body="let nbSet : String = if self.nbSets.oclIsUndefined() then 'null' else self.nbSets.toString() endif in&#xA;'#Sets:' + nbSet"/>
           </labelMappings>
           <labelMappings
               xsi:type="gmfmap:ExpressionLabelMapping">
             <diagramLabel
-                href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#ResourceInfo2"/>
+                href="../../org.muml.pm.hardware.common/model/hardwarecommon.gmfgraph#ResourceInfo2"/>
             <viewExpression
                 body="let associa : String =  if self.associativity.oclIsUndefined() then 'null' else self.associativity.toString() endif in&#xA;'Associativity:' + associa"/>
           </labelMappings>
@@ -285,7 +285,7 @@
               xsi:type="gmftool:CreationTool"
               href="resource.gmftool#//@palette/@tools.1/@tools.2"/>
           <diagramNode
-              href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#Resource"/>
+              href="../../org.muml.pm.hardware.common/model/hardwarecommon.gmfgraph#Resource"/>
         </ownedChild>
       </children>
       <children
@@ -318,14 +318,14 @@
               xsi:type="gmfmap:ExpressionLabelMapping"
               readOnly="true">
             <diagramLabel
-                href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#ResourceKindLabel"/>
+                href="../../org.muml.pm.hardware.common/model/hardwarecommon.gmfgraph#ResourceKindLabel"/>
             <viewExpression
                 body="' : Processor'"/>
           </labelMappings>
           <labelMappings
               xsi:type="gmfmap:FeatureLabelMapping">
             <diagramLabel
-                href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#ResourceNameLabel"/>
+                href="../../org.muml.pm.hardware.common/model/hardwarecommon.gmfgraph#ResourceNameLabel"/>
             <features
                 href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
             <editableFeatures
@@ -335,21 +335,21 @@
               xsi:type="gmfmap:ExpressionLabelMapping"
               readOnly="true">
             <diagramLabel
-                href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#ResourceCardinalityLabel"/>
+                href="../../org.muml.pm.hardware.common/model/hardwarecommon.gmfgraph#ResourceCardinalityLabel"/>
             <viewExpression
                 body="' '"/>
           </labelMappings>
           <labelMappings
               xsi:type="gmfmap:ExpressionLabelMapping">
             <diagramLabel
-                href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#ResourceInfo1"/>
+                href="../../org.muml.pm.hardware.common/model/hardwarecommon.gmfgraph#ResourceInfo1"/>
             <viewExpression
                 body="'#Cores: ' + self. nbCores.toString()"/>
           </labelMappings>
           <labelMappings
               xsi:type="gmfmap:ExpressionLabelMapping">
             <diagramLabel
-                href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#ResourceInfo2"/>
+                href="../../org.muml.pm.hardware.common/model/hardwarecommon.gmfgraph#ResourceInfo2"/>
             <viewExpression
                 body="let arch: String = if self.architecture.oclIsUndefined() then 'null' else self.architecture.toString() endif in&#xA;let fam: String =  if self.family.oclIsUndefined() then 'null' else self.family.toString() endif in&#xA;'Architecture: ' + arch + ' Family: ' + fam"/>
           </labelMappings>
@@ -357,7 +357,7 @@
               xsi:type="gmftool:CreationTool"
               href="resource.gmftool#//@palette/@tools.1/@tools.4"/>
           <diagramNode
-              href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#Resource"/>
+              href="../../org.muml.pm.hardware.common/model/hardwarecommon.gmfgraph#Resource"/>
         </ownedChild>
       </children>
       <children
@@ -371,7 +371,7 @@
           <labelMappings
               xsi:type="gmfmap:FeatureLabelMapping">
             <diagramLabel
-                href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#ResourceNameLabel"/>
+                href="../../org.muml.pm.hardware.common/model/hardwarecommon.gmfgraph#ResourceNameLabel"/>
             <features
                 href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
             <editableFeatures
@@ -381,7 +381,7 @@
               xsi:type="gmfmap:ExpressionLabelMapping"
               readOnly="true">
             <diagramLabel
-                href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#ResourceKindLabel"/>
+                href="../../org.muml.pm.hardware.common/model/hardwarecommon.gmfgraph#ResourceKindLabel"/>
             <viewExpression
                 body="' : PLD'"/>
           </labelMappings>
@@ -389,7 +389,7 @@
               xsi:type="gmfmap:ExpressionLabelMapping"
               readOnly="true">
             <diagramLabel
-                href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#ResourceCardinalityLabel"/>
+                href="../../org.muml.pm.hardware.common/model/hardwarecommon.gmfgraph#ResourceCardinalityLabel"/>
             <viewExpression
                 body="' '"/>
           </labelMappings>
@@ -397,7 +397,7 @@
               xsi:type="gmftool:CreationTool"
               href="resource.gmftool#//@palette/@tools.1/@tools.3"/>
           <diagramNode
-              href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#Resource"/>
+              href="../../org.muml.pm.hardware.common/model/hardwarecommon.gmfgraph#Resource"/>
         </ownedChild>
       </children>
       <children
@@ -410,7 +410,7 @@
           <labelMappings
               xsi:type="gmfmap:FeatureLabelMapping">
             <diagramLabel
-                href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#ResourceNameLabel"/>
+                href="../../org.muml.pm.hardware.common/model/hardwarecommon.gmfgraph#ResourceNameLabel"/>
             <features
                 href="../../org.muml.core/model/core.ecore#//NamedElement/name"/>
             <editableFeatures
@@ -420,7 +420,7 @@
               xsi:type="gmfmap:ExpressionLabelMapping"
               readOnly="true">
             <diagramLabel
-                href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#ResourceKindLabel"/>
+                href="../../org.muml.pm.hardware.common/model/hardwarecommon.gmfgraph#ResourceKindLabel"/>
             <viewExpression
                 body="if self.memoryType.oclIsUndefined() then ':' else ': '.concat(self.memoryType.toString()) endif"/>
           </labelMappings>
@@ -428,21 +428,21 @@
               xsi:type="gmfmap:ExpressionLabelMapping"
               readOnly="true">
             <diagramLabel
-                href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#ResourceCardinalityLabel"/>
+                href="../../org.muml.pm.hardware.common/model/hardwarecommon.gmfgraph#ResourceCardinalityLabel"/>
             <viewExpression
                 body="' '"/>
           </labelMappings>
           <labelMappings
               xsi:type="gmfmap:ExpressionLabelMapping">
             <diagramLabel
-                href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#ResourceInfo1"/>
+                href="../../org.muml.pm.hardware.common/model/hardwarecommon.gmfgraph#ResourceInfo1"/>
             <viewExpression
                 body="let access: String = if self.memoryAccess.oclIsUndefined() then 'null' else self.memoryAccess.toString() endif in&#xA;'Access: ' + access"/>
           </labelMappings>
           <labelMappings
               xsi:type="gmfmap:ExpressionLabelMapping">
             <diagramLabel
-                href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#ResourceInfo2"/>
+                href="../../org.muml.pm.hardware.common/model/hardwarecommon.gmfgraph#ResourceInfo2"/>
             <viewExpression
                 body="let volatile: String = if self.isVolatile.oclIsUndefined() then 'null' else self.isVolatile.toString() endif in&#xA;'Volatile: ' + volatile"/>
           </labelMappings>
@@ -450,13 +450,13 @@
               xsi:type="gmftool:CreationTool"
               href="resource.gmftool#//@palette/@tools.1/@tools.1"/>
           <diagramNode
-              href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#Resource"/>
+              href="../../org.muml.pm.hardware.common/model/hardwarecommon.gmfgraph#Resource"/>
         </ownedChild>
       </children>
       <compartments
           children="//@nodes.1/@ownedChild/@children.1 //@nodes.1/@ownedChild/@children.4 //@nodes.1/@ownedChild/@children.2 //@nodes.1/@ownedChild/@children.3 //@nodes.1/@ownedChild/@children.0">
         <compartment
-            href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#StructuredResourceCompartment"/>
+            href="../../org.muml.pm.hardware.common/model/hardwarecommon.gmfgraph#StructuredResourceCompartment"/>
       </compartments>
     </ownedChild>
   </nodes>
