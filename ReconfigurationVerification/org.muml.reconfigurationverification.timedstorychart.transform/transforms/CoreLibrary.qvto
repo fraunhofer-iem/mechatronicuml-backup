@@ -19,7 +19,7 @@ modeltype wrapper uses wrapper('http://www.fujaba.de/reachabilityGraph/sdm/wrapp
 
 modeltype exp uses reconfiguration::expression('http://www.fujaba.de/muml/reconfiguration/0.3.18');
 
-modeltype runtime uses runtime('http://www.fujaba.de/muml/runtime/0.4.0');
+modeltype runtime uses runtime('http://www.muml.org/verification/core/runtime/1.0.0');
 
 
 modeltype ecore uses ecore;

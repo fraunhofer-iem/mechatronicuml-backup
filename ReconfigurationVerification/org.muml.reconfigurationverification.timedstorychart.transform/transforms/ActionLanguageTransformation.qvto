@@ -8,7 +8,7 @@ modeltype patternExpression uses storydiagrams::patterns::expressions('http://ww
 
 modeltype tgts uses timedstorydiagram ('http://www.fujaba.de/timedstorydiagram/0.1.0');
 
-modeltype runtime uses runtime('http://www.fujaba.de/muml/runtime/0.4.0');
+modeltype runtime uses runtime('http://www.muml.org/verification/core/runtime/1.0.0');
 
 modeltype core uses core('http://www.storydriven.org/core/0.3.1');
 modeltype expressions uses core::expressions('http://www.muml.org/core/1.0.0');

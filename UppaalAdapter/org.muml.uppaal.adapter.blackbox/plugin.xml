@@ -25,7 +25,7 @@
                 nsURI="http://www.uni-paderborn.de/uppaal/trace/0.4.0">
           </metamodel>
           <metamodel
-                nsURI="http://www.fujaba.de/muml/runtime/0.4.0">
+                nsURI="http://www.muml.org/verification/core/runtime/1.0.0">
           </metamodel>
        </library>
     </unit>
