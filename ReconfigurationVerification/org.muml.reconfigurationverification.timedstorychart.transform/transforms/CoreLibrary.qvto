@@ -7,7 +7,7 @@ modeltype expressions_common uses core::expressions::common('http://www.muml.org
 
 modeltype actionlanguage uses actionlanguage('http://www.muml.org/pim/actionlanguage/1.0.0');
 
-modeltype tgts uses timedstorydiagram ('http://www.fujaba.de/timedstorydiagram/0.1.0');
+modeltype tgts uses timedstorydiagram ('http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0');
 
 modeltype types uses pim::types('http://www.muml.org/pim/1.0.0');
 modeltype protocol uses muml::protocol("http://www.muml.org/pim/1.0.0");

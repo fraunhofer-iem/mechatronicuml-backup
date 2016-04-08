@@ -6,7 +6,7 @@ modeltype calls uses storydiagrams::calls('http://www.muml.org/storydiagram/1.0.
 
 modeltype patternExpression uses storydiagrams::patterns::expressions('http://www.muml.org/storydiagram/1.0.0');
 
-modeltype tgts uses timedstorydiagram ('http://www.fujaba.de/timedstorydiagram/0.1.0');
+modeltype tgts uses timedstorydiagram ('http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0');
 
 modeltype runtime uses runtime('http://www.muml.org/verification/core/runtime/1.0.0');
 
@@ -16,7 +16,7 @@ modeltype expressions_common uses core::expressions::common('http://www.muml.org
 
 modeltype actionlanguage uses actionlanguage('http://www.muml.org/pim/actionlanguage/1.0.0');
 
---modeltype tgts uses timedstorydiagram ('http://www.fujaba.de/timedstorydiagram/0.1.0');
+--modeltype tgts uses timedstorydiagram ('http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0');
 
 modeltype realtimestatechart uses pim::realtimestatechart('http://www.muml.org/pim/1.0.0');
 modeltype mumlbehavior uses pim::behavior('http://www.muml.org/pim/1.0.0');

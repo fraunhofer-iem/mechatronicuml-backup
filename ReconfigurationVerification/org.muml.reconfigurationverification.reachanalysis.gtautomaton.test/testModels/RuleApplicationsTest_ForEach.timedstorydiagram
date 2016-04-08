@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ASCII"?>
-<de.uni_paderborn.fujaba.muml.timedstorydiagram:TimedGraphTransformationSystem xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.uni_paderborn.fujaba.muml.timedstorydiagram="http://www.fujaba.de/timedstorydiagram/0.1.0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:expr="http://www.muml.org/core/expressions/1.0.0" xmlns:sda="http://www.muml.org/storydiagram/activities/1.0.0" xmlns:sdce="http://www.muml.org/storydiagram/calls/expressions/1.0.0" xmlns:sdp="http://www.muml.org/storydiagram/patterns/1.0.0">
+<de.uni_paderborn.fujaba.muml.timedstorydiagram:TimedGraphTransformationSystem xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.uni_paderborn.fujaba.muml.timedstorydiagram="http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:expr="http://www.muml.org/core/expressions/1.0.0" xmlns:sda="http://www.muml.org/storydiagram/activities/1.0.0" xmlns:sdce="http://www.muml.org/storydiagram/calls/expressions/1.0.0" xmlns:sdp="http://www.muml.org/storydiagram/patterns/1.0.0">
   <rules inParameter="//@rules.0/@containedParameters.0 //@rules.0/@containedParameters.1" name="rule1_forEach" resets="//@rules.0/@ownedActivityNode.2/@ownedRule/@variable.2">
     <containedParameters name="step">
       <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//StepGraph"/>
@@ -24,7 +24,7 @@
           <classifier href="http://www.eclipse.org/emf/2002/Ecore#//EOperation"/>
         </variable>
         <variable xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:ClockInstanceVariable" name="ci" incomingLink="//@rules.0/@ownedActivityNode.2/@ownedRule/@linkVariable.3 //@rules.0/@ownedActivityNode.2/@ownedRule/@linkVariable.7" outgoingLink="//@rules.0/@ownedActivityNode.2/@ownedRule/@linkVariable.0" clockInstanceConstraints="//@rules.0/@clockInstConstraint.0">
-          <classifier href="http://www.fujaba.de/timedstorydiagram/0.1.0#//ClockInstance"/>
+          <classifier href="http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0#//ClockInstance"/>
         </variable>
         <variable xsi:type="sdp:ObjectVariable" name="step" bindingState="BOUND" outgoingLink="//@rules.0/@ownedActivityNode.2/@ownedRule/@linkVariable.2 //@rules.0/@ownedActivityNode.2/@ownedRule/@linkVariable.3">
           <classifier href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//StepGraph"/>
@@ -54,7 +54,7 @@
           <classifier href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//MatchingEntry"/>
         </variable>
         <linkVariable xsi:type="sdp:LinkVariable" name="hasNode" source="//@rules.0/@ownedActivityNode.2/@ownedRule/@variable.2" target="//@rules.0/@ownedActivityNode.2/@ownedRule/@variable.0">
-          <targetEnd href="http://www.fujaba.de/timedstorydiagram/0.1.0#//ClockInstance/hasNode"/>
+          <targetEnd href="http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0#//ClockInstance/hasNode"/>
         </linkVariable>
         <linkVariable xsi:type="sdp:LinkVariable" name="operation" source="//@rules.0/@ownedActivityNode.2/@ownedRule/@variable.0" target="//@rules.0/@ownedActivityNode.2/@ownedRule/@variable.1">
           <targetEnd href="http://www.eclipse.org/emf/2002/Ecore#//EClass/eOperations"/>
@@ -151,13 +151,13 @@
           <classifier href="http://www.eclipse.org/emf/2002/Ecore#//EClass"/>
         </variable>
         <variable xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:ClockInstanceVariable" name="ci_succ" incomingLink="//@rules.0/@ownedActivityNode.5/@ownedRule/@linkVariable.6">
-          <classifier href="http://www.fujaba.de/timedstorydiagram/0.1.0#//ClockInstance"/>
+          <classifier href="http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0#//ClockInstance"/>
         </variable>
         <variable xsi:type="sdp:ObjectVariable" name="ci_entry" incomingLink="//@rules.0/@ownedActivityNode.5/@ownedRule/@linkVariable.4" outgoingLink="//@rules.0/@ownedActivityNode.5/@ownedRule/@linkVariable.5 //@rules.0/@ownedActivityNode.5/@ownedRule/@linkVariable.6">
           <classifier href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//IndexEntry"/>
         </variable>
         <variable xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:ClockInstanceVariable" name="ci" bindingState="BOUND" incomingLink="//@rules.0/@ownedActivityNode.5/@ownedRule/@linkVariable.5">
-          <classifier href="http://www.fujaba.de/timedstorydiagram/0.1.0#//ClockInstance"/>
+          <classifier href="http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0#//ClockInstance"/>
         </variable>
         <variable xsi:type="sdp:ObjectVariable" name="o_succ" incomingLink="//@rules.0/@ownedActivityNode.5/@ownedRule/@linkVariable.9" outgoingLink="//@rules.0/@ownedActivityNode.5/@ownedRule/@linkVariable.10">
           <classifier href="http://www.eclipse.org/emf/2002/Ecore#//EOperation"/>
@@ -229,7 +229,7 @@
           <classifier href="http://www.eclipse.org/emf/2002/Ecore#//EClass"/>
         </variable>
         <variable xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:ClockInstanceVariable" name="ci" incomingLink="//@rules.1/@ownedActivityNode.2/@ownedRule/@linkVariable.3 //@rules.1/@ownedActivityNode.2/@ownedRule/@linkVariable.9" outgoingLink="//@rules.1/@ownedActivityNode.2/@ownedRule/@linkVariable.0" clockInstanceConstraints="//@rules.1/@clockInstConstraint.0">
-          <classifier href="http://www.fujaba.de/timedstorydiagram/0.1.0#//ClockInstance"/>
+          <classifier href="http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0#//ClockInstance"/>
         </variable>
         <variable xsi:type="sdp:ObjectVariable" name="step" bindingState="BOUND" outgoingLink="//@rules.1/@ownedActivityNode.2/@ownedRule/@linkVariable.2 //@rules.1/@ownedActivityNode.2/@ownedRule/@linkVariable.3">
           <classifier href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//StepGraph"/>
@@ -262,7 +262,7 @@
           <constraintExpression xsi:type="expr:TextualExpression" expressionText="o.name='op1'" language="OCL" languageVersion="1.0"/>
         </constraint>
         <linkVariable xsi:type="sdp:LinkVariable" name="hasNode" source="//@rules.1/@ownedActivityNode.2/@ownedRule/@variable.2" target="//@rules.1/@ownedActivityNode.2/@ownedRule/@variable.1">
-          <targetEnd href="http://www.fujaba.de/timedstorydiagram/0.1.0#//ClockInstance/hasNode"/>
+          <targetEnd href="http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0#//ClockInstance/hasNode"/>
         </linkVariable>
         <linkVariable xsi:type="sdp:LinkVariable" name="operation" source="//@rules.1/@ownedActivityNode.2/@ownedRule/@variable.1" target="//@rules.1/@ownedActivityNode.2/@ownedRule/@variable.0">
           <targetEnd href="http://www.eclipse.org/emf/2002/Ecore#//EClass/eOperations"/>
@@ -365,13 +365,13 @@
           <classifier href="http://www.eclipse.org/emf/2002/Ecore#//EClass"/>
         </variable>
         <variable xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:ClockInstanceVariable" name="ci_succ" incomingLink="//@rules.1/@ownedActivityNode.5/@ownedRule/@linkVariable.8">
-          <classifier href="http://www.fujaba.de/timedstorydiagram/0.1.0#//ClockInstance"/>
+          <classifier href="http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0#//ClockInstance"/>
         </variable>
         <variable xsi:type="sdp:ObjectVariable" name="ci_entry" incomingLink="//@rules.1/@ownedActivityNode.5/@ownedRule/@linkVariable.6" outgoingLink="//@rules.1/@ownedActivityNode.5/@ownedRule/@linkVariable.7 //@rules.1/@ownedActivityNode.5/@ownedRule/@linkVariable.8">
           <classifier href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//IndexEntry"/>
         </variable>
         <variable xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:ClockInstanceVariable" name="ci" bindingState="BOUND" incomingLink="//@rules.1/@ownedActivityNode.5/@ownedRule/@linkVariable.7">
-          <classifier href="http://www.fujaba.de/timedstorydiagram/0.1.0#//ClockInstance"/>
+          <classifier href="http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0#//ClockInstance"/>
         </variable>
         <variable xsi:type="sdp:ObjectVariable" name="p_succ" incomingLink="//@rules.1/@ownedActivityNode.5/@ownedRule/@linkVariable.9 //@rules.1/@ownedActivityNode.5/@ownedRule/@linkVariable.10" bindingOperator="CREATE">
           <classifier href="http://www.eclipse.org/emf/2002/Ecore#//EParameter"/>
@@ -437,7 +437,7 @@
           <classifier href="http://www.eclipse.org/emf/2002/Ecore#//EClass"/>
         </variable>
         <variable xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:ClockInstanceVariable" name="ci" incomingLink="//@rules.2/@ownedActivityNode.2/@ownedRule/@linkVariable.3 //@rules.2/@ownedActivityNode.2/@ownedRule/@linkVariable.7" outgoingLink="//@rules.2/@ownedActivityNode.2/@ownedRule/@linkVariable.0" clockInstanceConstraints="//@rules.2/@clockInstConstraint.0">
-          <classifier href="http://www.fujaba.de/timedstorydiagram/0.1.0#//ClockInstance"/>
+          <classifier href="http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0#//ClockInstance"/>
         </variable>
         <variable xsi:type="sdp:ObjectVariable" name="step" bindingState="BOUND" outgoingLink="//@rules.2/@ownedActivityNode.2/@ownedRule/@linkVariable.2 //@rules.2/@ownedActivityNode.2/@ownedRule/@linkVariable.3">
           <classifier href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//StepGraph"/>
@@ -470,7 +470,7 @@
           <constraintExpression xsi:type="expr:TextualExpression" expressionText="o.name='op3'" language="OCL" languageVersion="1.0"/>
         </constraint>
         <linkVariable xsi:type="sdp:LinkVariable" name="hasNode" source="//@rules.2/@ownedActivityNode.2/@ownedRule/@variable.2" target="//@rules.2/@ownedActivityNode.2/@ownedRule/@variable.1">
-          <targetEnd href="http://www.fujaba.de/timedstorydiagram/0.1.0#//ClockInstance/hasNode"/>
+          <targetEnd href="http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0#//ClockInstance/hasNode"/>
         </linkVariable>
         <linkVariable xsi:type="sdp:LinkVariable" name="operation" source="//@rules.2/@ownedActivityNode.2/@ownedRule/@variable.1" target="//@rules.2/@ownedActivityNode.2/@ownedRule/@variable.0">
           <targetEnd href="http://www.eclipse.org/emf/2002/Ecore#//EClass/eOperations"/>
@@ -577,13 +577,13 @@
           <classifier href="http://www.eclipse.org/emf/2002/Ecore#//EOperation"/>
         </variable>
         <variable xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:ClockInstanceVariable" name="ci_succ" incomingLink="//@rules.2/@ownedActivityNode.5/@ownedRule/@linkVariable.6">
-          <classifier href="http://www.fujaba.de/timedstorydiagram/0.1.0#//ClockInstance"/>
+          <classifier href="http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0#//ClockInstance"/>
         </variable>
         <variable xsi:type="sdp:ObjectVariable" name="ci_entry" incomingLink="//@rules.2/@ownedActivityNode.5/@ownedRule/@linkVariable.4" outgoingLink="//@rules.2/@ownedActivityNode.5/@ownedRule/@linkVariable.5 //@rules.2/@ownedActivityNode.5/@ownedRule/@linkVariable.6">
           <classifier href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//IndexEntry"/>
         </variable>
         <variable xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:ClockInstanceVariable" name="ci" bindingState="BOUND" incomingLink="//@rules.2/@ownedActivityNode.5/@ownedRule/@linkVariable.5">
-          <classifier href="http://www.fujaba.de/timedstorydiagram/0.1.0#//ClockInstance"/>
+          <classifier href="http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0#//ClockInstance"/>
         </variable>
         <variable xsi:type="sdp:ObjectVariable" name="c_succ" incomingLink="//@rules.2/@ownedActivityNode.5/@ownedRule/@linkVariable.9">
           <classifier href="http://www.eclipse.org/emf/2002/Ecore#//EClass"/>
@@ -649,7 +649,7 @@
           <classifier href="http://www.eclipse.org/emf/2002/Ecore#//EClass"/>
         </variable>
         <variable xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:ClockInstanceVariable" name="ci" incomingLink="//@invariants.0/@ownedActivityNode.2/@ownedRule/@linkVariable.2 //@invariants.0/@ownedActivityNode.2/@ownedRule/@linkVariable.3" outgoingLink="//@invariants.0/@ownedActivityNode.2/@ownedRule/@linkVariable.0" clockInstanceConstraints="//@invariants.0/@clockInstConstraint">
-          <classifier href="http://www.fujaba.de/timedstorydiagram/0.1.0#//ClockInstance"/>
+          <classifier href="http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0#//ClockInstance"/>
         </variable>
         <variable xsi:type="sdp:ObjectVariable" name="step" bindingState="BOUND" outgoingLink="//@invariants.0/@ownedActivityNode.2/@ownedRule/@linkVariable.1 //@invariants.0/@ownedActivityNode.2/@ownedRule/@linkVariable.2">
           <classifier href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//StepGraph"/>
@@ -658,7 +658,7 @@
           <classifier href="http://www.muml.org/reconfigurationverification.reachanalysis.tsdm.transform/helper/1.0.0#//BoundClockInstances"/>
         </variable>
         <linkVariable xsi:type="sdp:LinkVariable" name="hasNode" source="//@invariants.0/@ownedActivityNode.2/@ownedRule/@variable.1" target="//@invariants.0/@ownedActivityNode.2/@ownedRule/@variable.0">
-          <targetEnd href="http://www.fujaba.de/timedstorydiagram/0.1.0#//ClockInstance/hasNode"/>
+          <targetEnd href="http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0#//ClockInstance/hasNode"/>
         </linkVariable>
         <linkVariable xsi:type="sdp:LinkVariable" name="changeable" source="//@invariants.0/@ownedActivityNode.2/@ownedRule/@variable.2" target="//@invariants.0/@ownedActivityNode.2/@ownedRule/@variable.0">
           <targetEnd href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//StepGraph/changeableNodes"/>
@@ -695,22 +695,22 @@
             <attribute href="http://www.muml.org/core/1.0.0#//NamedElement/name"/>
             <valueExpression xsi:type="expr:TextualExpression" expressionText="'ci2'" language="OCL" languageVersion="1.0"/>
           </attributeAssignment>
-          <classifier href="http://www.fujaba.de/timedstorydiagram/0.1.0#//ClockInstance"/>
+          <classifier href="http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0#//ClockInstance"/>
         </variable>
         <variable xsi:type="de.uni_paderborn.fujaba.muml.timedstorydiagram:ClockInstanceVariable" name="NoSuchCI" incomingLink="//@clockInstanceRules.0/@ownedActivityNode.2/@ownedRule/@linkVariable.3" outgoingLink="//@clockInstanceRules.0/@ownedActivityNode.2/@ownedRule/@linkVariable.0" bindingSemantics="NEGATIVE">
           <constraint>
             <constraintExpression xsi:type="expr:TextualExpression" expressionText="self.name='ci2'" language="OCL" languageVersion="1.0"/>
           </constraint>
-          <classifier href="http://www.fujaba.de/timedstorydiagram/0.1.0#//ClockInstance"/>
+          <classifier href="http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0#//ClockInstance"/>
         </variable>
         <variable xsi:type="sdp:ObjectVariable" name="step" bindingState="BOUND" outgoingLink="//@clockInstanceRules.0/@ownedActivityNode.2/@ownedRule/@linkVariable.2 //@clockInstanceRules.0/@ownedActivityNode.2/@ownedRule/@linkVariable.3 //@clockInstanceRules.0/@ownedActivityNode.2/@ownedRule/@linkVariable.4 //@clockInstanceRules.0/@ownedActivityNode.2/@ownedRule/@linkVariable.5">
           <classifier href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//StepGraph"/>
         </variable>
         <linkVariable xsi:type="sdp:LinkVariable" name="hasNode" source="//@clockInstanceRules.0/@ownedActivityNode.2/@ownedRule/@variable.2" target="//@clockInstanceRules.0/@ownedActivityNode.2/@ownedRule/@variable.0">
-          <targetEnd href="http://www.fujaba.de/timedstorydiagram/0.1.0#//ClockInstance/hasNode"/>
+          <targetEnd href="http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0#//ClockInstance/hasNode"/>
         </linkVariable>
         <linkVariable xsi:type="sdp:LinkVariable" name="hasNode" source="//@clockInstanceRules.0/@ownedActivityNode.2/@ownedRule/@variable.1" target="//@clockInstanceRules.0/@ownedActivityNode.2/@ownedRule/@variable.0">
-          <targetEnd href="http://www.fujaba.de/timedstorydiagram/0.1.0#//ClockInstance/hasNode"/>
+          <targetEnd href="http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0#//ClockInstance/hasNode"/>
         </linkVariable>
         <linkVariable xsi:type="sdp:LinkVariable" name="changeable" source="//@clockInstanceRules.0/@ownedActivityNode.2/@ownedRule/@variable.3" target="//@clockInstanceRules.0/@ownedActivityNode.2/@ownedRule/@variable.0">
           <targetEnd href="http://www.fujaba.de/reachabilityGraph/sdm/0.1.0#//StepGraph/changeableNodes"/>

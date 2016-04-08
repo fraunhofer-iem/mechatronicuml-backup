@@ -4,7 +4,7 @@
   <mapping sourceURI="http://www.muml.org/core/1.0.0" targetURI="platform:/resource/org.muml.core/model/core.ecore"/>
   <mapping sourceURI="http://www.muml.org/storydiagram.reachanalysis.reachabilitygraph/sdm/1.0.0" targetURI="platform:/resource/org.muml.storydiagram.reachanalysis.reachabilitygraph.sdm/model/SDMReachabilityAnalysis.ecore"/>
   <mapping sourceURI="http://www.muml.org/core/reachabilitygraph/1.0.0" targetURI="platform:/resource/org.muml.core.reachanalysis.reachabilitygraph/model/ReachabilityAnalysisCore.ecore"/>
-  <mapping sourceURI="http://www.fujaba.de/timedstorydiagram/0.1.0" targetURI="platform:/resource/org.muml.reconfigurationverification.timedstorydiagram/model/TimedStoryDiagrams.ecore"/>
+  <mapping sourceURI="http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0" targetURI="platform:/resource/org.muml.reconfigurationverification.timedstorydiagram/model/TimedStoryDiagrams.ecore"/>
   <mapping sourceURI="http://www.muml.org/reconfigurationverification.reachanalysis.tsdm.transform/helper/1.0.0" targetURI="platform:/resource/de.uni_paderborn.fujaba.muml.reachanalysis.tsdm.transform/model/TimedSDMReachabilityAnalysisHelper.ecore"/>
   <mapping sourceURI="http://www.fujaba.de/reachabilityGraph/gtautomaton/0.4.0" targetURI="platform:/resource/de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.gtautomaton/model/GtAutomaton.ecore"/>
 </uriMap:MappingContainer>

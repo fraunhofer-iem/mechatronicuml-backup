@@ -11,7 +11,7 @@ modeltype callsExpressions uses storydiagrams::calls::expressions('http://www.mu
 //reachanalysis
 modeltype reach_sdm uses sdm ('http://www.muml.org/storydiagram.reachanalysis.reachabilitygraph/sdm/1.0.0');
 modeltype reach_core uses reachabilityGraph ('http://www.muml.org/core/reachabilitygraph/1.0.0');
-modeltype reach_tsdm uses timedstorydiagram ('http://www.fujaba.de/timedstorydiagram/0.1.0');
+modeltype reach_tsdm uses timedstorydiagram ('http://www.muml.org/reconfigurationverification/timedstorydiagram/1.0.0');
 modeltype reach_tsdmTransform uses tsdmhelper('http://www.muml.org/reconfigurationverification.reachanalysis.tsdm.transform/helper/1.0.0');
 modeltype reach_gta uses gtautomaton('http://www.fujaba.de/reachabilityGraph/gtautomaton/0.4.0');
 //others
