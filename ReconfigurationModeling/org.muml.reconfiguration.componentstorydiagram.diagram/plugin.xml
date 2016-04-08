@@ -98,7 +98,7 @@
          
          <child
                class="ComponentStoryRule"
-               packageNsUri="http://www.fujaba.de/muml/componentstorydiagram/0.4.0">
+               packageNsUri="http://www.muml.org/reconfiguration/componentstorydiagram/1.0.0">
          </child>
          
       </category>
@@ -116,7 +116,7 @@
             modelElementCategoryKey="org.storydriven.storydiagrams.activities.category"
             modelId="Component Story">
          <diagramElement
-               packageNsURI="http://www.fujaba.de/muml/componentstorydiagram/0.4.0"
+               packageNsURI="http://www.muml.org/reconfiguration/componentstorydiagram/1.0.0"
                className="ComponentStoryRule">
          </diagramElement>
          
@@ -355,7 +355,7 @@
 
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
       <?gmfgen generated="true"?>
-      <metamodel nsURI="http://www.fujaba.de/muml/componentstorydiagram/0.4.0">
+      <metamodel nsURI="http://www.muml.org/reconfiguration/componentstorydiagram/1.0.0">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.ComponentStoryRule_1000"
                name="%metatype.name.ComponentStoryRule_1000"
@@ -375,7 +375,7 @@
             <param name="semanticHint" value="2003"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/componentstorydiagram/0.4.0">
+      <metamodel nsURI="http://www.muml.org/reconfiguration/componentstorydiagram/1.0.0">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.ComponentStoryNode_3001"
                name="%metatype.name.ComponentStoryNode_3001"
@@ -492,7 +492,7 @@
             <param name="semanticHint" value="3010"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/componentstorydiagram/0.4.0">
+      <metamodel nsURI="http://www.muml.org/reconfiguration/componentstorydiagram/1.0.0">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.ControllerExchangeNode_3021"
                name="%metatype.name.ControllerExchangeNode_3021"

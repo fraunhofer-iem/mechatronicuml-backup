@@ -4,7 +4,7 @@ import CSD2SDUtil;
 import Queries;
 import Patterns;
 
-modeltype csd uses 'http://www.fujaba.de/muml/componentstorydiagram/0.4.0';
+modeltype csd uses 'http://www.muml.org/reconfiguration/componentstorydiagram/1.0.0';
 modeltype csp uses 'http://www.fujaba.de/muml/componentstorypattern/0.4.0';
 
 modeltype sd uses 'http://www.muml.org/storydiagram/1.0.0';
