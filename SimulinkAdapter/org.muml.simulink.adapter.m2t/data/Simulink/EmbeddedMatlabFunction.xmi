@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ASCII"?>
-<model:SimulinkContainer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="de.uni_paderborn.fujaba.simulink" id="_wy48kEs2EeGu8J0uOyzC3g">
+<model:SimulinkContainer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://www.muml.org/simulink/1.0.0" id="_wy48kEs2EeGu8J0uOyzC3g">
   <models id="_w1JmYEs2EeGu8J0uOyzC3g" name="EmbeddedMatlabFunction">
     <parameters name="ExtModeEnableFloating" value="on"/>
     <parameters name="ScopeRefreshTime" value="0.035000"/>

@@ -36,7 +36,7 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated Simulink -->
       <package
-            uri="de.uni_paderborn.fujaba.simulink.model.msglib.buffer"
+            uri="http://www.muml.org/simulink/msglib/buffer/1.0.0"
             class="org.muml.simulink.msglib.buffer.BufferPackage"
             genModel="model/Simulink.genmodel"/>
    </extension>

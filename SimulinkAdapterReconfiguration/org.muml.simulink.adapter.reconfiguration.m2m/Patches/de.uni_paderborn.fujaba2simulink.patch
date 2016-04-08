@@ -9,11 +9,11 @@ Index: tgg/fujaba2simulink.tgg
 +    <usedPackage href="http://www.fujaba.de/muml/reconfiguration/0.3.18#/"/>
    </modelParameter>
    <modelParameter xmi:id="_NK6IcJzXEeCxo-rGjpVr5g" name="simulink">
-     <usedPackage href="de.uni_paderborn.fujaba.simulink#/"/>
-     <usedPackage href="de.uni_paderborn.fujaba.simulink#//stateflow"/>
-     <usedPackage href="de.uni_paderborn.fujaba.simulink#//msglib"/>
-     <usedPackage href="de.uni_paderborn.fujaba.simulink#//msglib/buffer"/>
-+    <usedPackage href="de.uni_paderborn.fujaba.simulink.model.reconfiguration#/"/>
+     <usedPackage href="http://www.muml.org/simulink/1.0.0#/"/>
+     <usedPackage href="http://www.muml.org/simulink/1.0.0#//stateflow"/>
+     <usedPackage href="http://www.muml.org/simulink/1.0.0#//msglib"/>
+     <usedPackage href="http://www.muml.org/simulink/1.0.0#//msglib/buffer"/>
++    <usedPackage href="http://www.muml.org/simulink/reconfiguration/1.0.0#/"/>
    </modelParameter>
    <modelParameter xmi:id="_NYLIYJzXEeCxo-rGjpVr5g" name="fujaba2simulink">
      <usedPackage href="http://www.muml.org/simulink/adapter/corrmodel/1.0.0#/"/>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ASCII"?>
-<model:SimulinkContainer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="de.uni_paderborn.fujaba.simulink" xmlns:stateflow="de.uni_paderborn.fujaba.simulink.model.stateflow" id="_x3zMEEXZEeGRyehUlJU_cA">
+<model:SimulinkContainer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://www.muml.org/simulink/1.0.0" xmlns:stateflow="http://www.muml.org/simulink/stateflow/1.0.0" id="_x3zMEEXZEeGRyehUlJU_cA">
   <models id="_x3zMEUXZEeGRyehUlJU_cA" name="TransitionAttributes">
     <blocks xsi:type="model:ChartBlock" id="_x3zMEkXZEeGRyehUlJU_cA" name="Chart" chart="_x3zMFEXZEeGRyehUlJU_cA"/>
     <stateflowMachine id="_x3zME0XZEeGRyehUlJU_cA">

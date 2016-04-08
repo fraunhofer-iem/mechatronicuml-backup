@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ASCII"?>
-<model:SimulinkContainer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:model="de.uni_paderborn.fujaba.simulink" id="_QOoykG01EeGB6sXGPiiDSg">
+<model:SimulinkContainer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:model="http://www.muml.org/simulink/1.0.0" id="_QOoykG01EeGB6sXGPiiDSg">
   <models id="_7K9WII7uEeGTBPExsBmtEw" name="RailCabBusModel">
     <buses id="_9zCLs47uEeGTBPExsBmtEw" name="RailCabBus">
       <elements name="rc1" type="Bus" bus="__ZWpO47uEeGTBPExsBmtEw"/>

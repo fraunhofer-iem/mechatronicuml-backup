@@ -14,7 +14,7 @@
       <eType href="http://www.fujaba.de/modelinstance/0.4.0#//ModelElementCategory"/>
     </node>
     <node xmi:id="_LO_rVSnkEeORPcZB3PfXyA" incomingEdge="_LO_rWCnkEeORPcZB3PfXyA" graphPattern="_LO_rWinkEeORPcZB3PfXyA _LO_rWynkEeORPcZB3PfXyA _LO_rXCnkEeORPcZB3PfXyA">
-      <eType href="de.uni_paderborn.fujaba.simulink#//SimulinkContainer"/>
+      <eType href="http://www.muml.org/simulink/1.0.0#//SimulinkContainer"/>
     </node>
     <node xmi:id="_LO_rVinkEeORPcZB3PfXyA" graphPattern="_LO_rWinkEeORPcZB3PfXyA _LO_rWynkEeORPcZB3PfXyA _LO_rXSnkEeORPcZB3PfXyA">
       <outgoingEdge xmi:id="_LO_rVynkEeORPcZB3PfXyA" targetNode="_LO_rUSnkEeORPcZB3PfXyA" graphPattern="_LO_rWinkEeORPcZB3PfXyA _LO_rWynkEeORPcZB3PfXyA">
@@ -52,12 +52,12 @@
     </node>
     <node xmi:id="_moyuAynkEeORPcZB3PfXyA" name="" incomingEdge="_moyuFynkEeORPcZB3PfXyA _moyuFSnkEeORPcZB3PfXyA _moyuLCnkEeORPcZB3PfXyA _moyuMSnkEeORPcZB3PfXyA" graphPattern="_moyuMynkEeORPcZB3PfXyA _moyuNCnkEeORPcZB3PfXyA">
       <outgoingEdge xmi:id="_moyuBCnkEeORPcZB3PfXyA" targetNode="_moyuKynkEeORPcZB3PfXyA" graphPattern="_moyuMynkEeORPcZB3PfXyA">
-        <typeReference href="de.uni_paderborn.fujaba.simulink#//Block/parent"/>
+        <typeReference href="http://www.muml.org/simulink/1.0.0#//Block/parent"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_moyuBSnkEeORPcZB3PfXyA" targetNode="_moyuMCnkEeORPcZB3PfXyA" graphPattern="_moyuMynkEeORPcZB3PfXyA">
-        <typeReference href="de.uni_paderborn.fujaba.simulink#//SubSystem/blocks"/>
+        <typeReference href="http://www.muml.org/simulink/1.0.0#//SubSystem/blocks"/>
       </outgoingEdge>
-      <eType href="de.uni_paderborn.fujaba.simulink#//SubSystem"/>
+      <eType href="http://www.muml.org/simulink/1.0.0#//SubSystem"/>
     </node>
     <node xmi:id="_moyuBinkEeORPcZB3PfXyA" incomingEdge="_moyuKSnkEeORPcZB3PfXyA" graphPattern="_moyuMinkEeORPcZB3PfXyA _moyuMynkEeORPcZB3PfXyA _moyuNSnkEeORPcZB3PfXyA">
       <outgoingEdge xmi:id="_moyuBynkEeORPcZB3PfXyA" targetNode="_moyuASnkEeORPcZB3PfXyA" graphPattern="_moyuMinkEeORPcZB3PfXyA _moyuMynkEeORPcZB3PfXyA">
@@ -94,18 +94,18 @@
     </node>
     <node xmi:id="_moyuESnkEeORPcZB3PfXyA" incomingEdge="_moyuFCnkEeORPcZB3PfXyA _moyuISnkEeORPcZB3PfXyA" graphPattern="_moyuMynkEeORPcZB3PfXyA _moyuMinkEeORPcZB3PfXyA _moyuNCnkEeORPcZB3PfXyA" matchSubtype="true">
       <outgoingEdge xmi:id="_moyuEinkEeORPcZB3PfXyA" targetNode="_moyuEynkEeORPcZB3PfXyA" graphPattern="_moyuMynkEeORPcZB3PfXyA">
-        <typeReference href="de.uni_paderborn.fujaba.simulink#//SubSystem/blocks"/>
+        <typeReference href="http://www.muml.org/simulink/1.0.0#//SubSystem/blocks"/>
       </outgoingEdge>
-      <eType href="de.uni_paderborn.fujaba.simulink#//SubSystem"/>
+      <eType href="http://www.muml.org/simulink/1.0.0#//SubSystem"/>
     </node>
     <node xmi:id="_moyuEynkEeORPcZB3PfXyA" name="libRef" incomingEdge="_moyuEinkEeORPcZB3PfXyA _moyuGCnkEeORPcZB3PfXyA _moyuHinkEeORPcZB3PfXyA" graphPattern="_moyuMynkEeORPcZB3PfXyA _moyuNCnkEeORPcZB3PfXyA">
       <outgoingEdge xmi:id="_moyuFCnkEeORPcZB3PfXyA" targetNode="_moyuESnkEeORPcZB3PfXyA" graphPattern="_moyuMynkEeORPcZB3PfXyA">
-        <typeReference href="de.uni_paderborn.fujaba.simulink#//Block/parent"/>
+        <typeReference href="http://www.muml.org/simulink/1.0.0#//Block/parent"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_moyuFSnkEeORPcZB3PfXyA" targetNode="_moyuAynkEeORPcZB3PfXyA" graphPattern="_moyuMynkEeORPcZB3PfXyA">
-        <typeReference href="de.uni_paderborn.fujaba.simulink#//LibraryReference/sourceBlock"/>
+        <typeReference href="http://www.muml.org/simulink/1.0.0#//LibraryReference/sourceBlock"/>
       </outgoingEdge>
-      <eType href="de.uni_paderborn.fujaba.simulink#//LibraryReference"/>
+      <eType href="http://www.muml.org/simulink/1.0.0#//LibraryReference"/>
     </node>
     <node xmi:id="_moyuFinkEeORPcZB3PfXyA" incomingEdge="_moyuCCnkEeORPcZB3PfXyA _moyuKCnkEeORPcZB3PfXyA" graphPattern="_moyuMynkEeORPcZB3PfXyA _moyuNSnkEeORPcZB3PfXyA">
       <outgoingEdge xmi:id="_moyuFynkEeORPcZB3PfXyA" targetNode="_moyuAynkEeORPcZB3PfXyA" graphPattern="_moyuMynkEeORPcZB3PfXyA">
@@ -151,9 +151,9 @@
     </node>
     <node xmi:id="_moyuJCnkEeORPcZB3PfXyA" incomingEdge="_moyuJynkEeORPcZB3PfXyA" graphPattern="_moyuMynkEeORPcZB3PfXyA _moyuMinkEeORPcZB3PfXyA _moyuNCnkEeORPcZB3PfXyA">
       <outgoingEdge xmi:id="_moyuJSnkEeORPcZB3PfXyA" targetNode="_moyuKynkEeORPcZB3PfXyA" graphPattern="_moyuMynkEeORPcZB3PfXyA">
-        <typeReference href="de.uni_paderborn.fujaba.simulink#//SimulinkContainer/libraries"/>
+        <typeReference href="http://www.muml.org/simulink/1.0.0#//SimulinkContainer/libraries"/>
       </outgoingEdge>
-      <eType href="de.uni_paderborn.fujaba.simulink#//SimulinkContainer"/>
+      <eType href="http://www.muml.org/simulink/1.0.0#//SimulinkContainer"/>
     </node>
     <node xmi:id="_moyuJinkEeORPcZB3PfXyA" graphPattern="_moyuMynkEeORPcZB3PfXyA _moyuMinkEeORPcZB3PfXyA _moyuNSnkEeORPcZB3PfXyA">
       <outgoingEdge xmi:id="_moyuJynkEeORPcZB3PfXyA" targetNode="_moyuJCnkEeORPcZB3PfXyA" graphPattern="_moyuMynkEeORPcZB3PfXyA _moyuMinkEeORPcZB3PfXyA">
@@ -172,9 +172,9 @@
     </node>
     <node xmi:id="_moyuKynkEeORPcZB3PfXyA" incomingEdge="_moyuJSnkEeORPcZB3PfXyA _moyuBCnkEeORPcZB3PfXyA _moyuCSnkEeORPcZB3PfXyA" graphPattern="_moyuMynkEeORPcZB3PfXyA _moyuNCnkEeORPcZB3PfXyA">
       <outgoingEdge xmi:id="_moyuLCnkEeORPcZB3PfXyA" targetNode="_moyuAynkEeORPcZB3PfXyA" graphPattern="_moyuMynkEeORPcZB3PfXyA">
-        <typeReference href="de.uni_paderborn.fujaba.simulink#//SubSystem/blocks"/>
+        <typeReference href="http://www.muml.org/simulink/1.0.0#//SubSystem/blocks"/>
       </outgoingEdge>
-      <eType href="de.uni_paderborn.fujaba.simulink#//SimulinkLibrary"/>
+      <eType href="http://www.muml.org/simulink/1.0.0#//SimulinkLibrary"/>
     </node>
     <node xmi:id="_moyuLSnkEeORPcZB3PfXyA" incomingEdge="_moyuECnkEeORPcZB3PfXyA" graphPattern="_moyuMynkEeORPcZB3PfXyA _moyuNinkEeORPcZB3PfXyA">
       <outgoingEdge xmi:id="_moyuLinkEeORPcZB3PfXyA" targetNode="_moyuLynkEeORPcZB3PfXyA" graphPattern="_moyuMynkEeORPcZB3PfXyA">
@@ -187,9 +187,9 @@
     </node>
     <node xmi:id="_moyuMCnkEeORPcZB3PfXyA" incomingEdge="_moyuBSnkEeORPcZB3PfXyA" graphPattern="_moyuMynkEeORPcZB3PfXyA _moyuNCnkEeORPcZB3PfXyA">
       <outgoingEdge xmi:id="_moyuMSnkEeORPcZB3PfXyA" targetNode="_moyuAynkEeORPcZB3PfXyA" graphPattern="_moyuMynkEeORPcZB3PfXyA">
-        <typeReference href="de.uni_paderborn.fujaba.simulink#//Block/parent"/>
+        <typeReference href="http://www.muml.org/simulink/1.0.0#//Block/parent"/>
       </outgoingEdge>
-      <eType href="de.uni_paderborn.fujaba.simulink#//msglib/CommunicationSwitch"/>
+      <eType href="http://www.muml.org/simulink/1.0.0#//msglib/CommunicationSwitch"/>
     </node>
     <leftGraphPattern xmi:id="_moyuMinkEeORPcZB3PfXyA" node="_moyuASnkEeORPcZB3PfXyA _moyuBinkEeORPcZB3PfXyA _moyuCinkEeORPcZB3PfXyA _moyuESnkEeORPcZB3PfXyA _moyuHynkEeORPcZB3PfXyA _moyuIynkEeORPcZB3PfXyA _moyuJCnkEeORPcZB3PfXyA _moyuJinkEeORPcZB3PfXyA" edge="_moyuBynkEeORPcZB3PfXyA _moyuICnkEeORPcZB3PfXyA _moyuISnkEeORPcZB3PfXyA _moyuAinkEeORPcZB3PfXyA _moyuJynkEeORPcZB3PfXyA _moyuKSnkEeORPcZB3PfXyA _moyuKinkEeORPcZB3PfXyA"/>
     <rightGraphPattern xmi:id="_moyuMynkEeORPcZB3PfXyA" node="_moyuASnkEeORPcZB3PfXyA _moyuAynkEeORPcZB3PfXyA _moyuBinkEeORPcZB3PfXyA _moyuCinkEeORPcZB3PfXyA _moyuDCnkEeORPcZB3PfXyA _moyuDynkEeORPcZB3PfXyA _moyuESnkEeORPcZB3PfXyA _moyuEynkEeORPcZB3PfXyA _moyuFinkEeORPcZB3PfXyA _moyuHCnkEeORPcZB3PfXyA _moyuHynkEeORPcZB3PfXyA _moyuIynkEeORPcZB3PfXyA _moyuJCnkEeORPcZB3PfXyA _moyuJinkEeORPcZB3PfXyA _moyuKynkEeORPcZB3PfXyA _moyuLSnkEeORPcZB3PfXyA _moyuLynkEeORPcZB3PfXyA _moyuMCnkEeORPcZB3PfXyA" edge="_moyuBynkEeORPcZB3PfXyA _moyuCynkEeORPcZB3PfXyA _moyuDSnkEeORPcZB3PfXyA _moyuEinkEeORPcZB3PfXyA _moyuFCnkEeORPcZB3PfXyA _moyuFynkEeORPcZB3PfXyA _moyuGCnkEeORPcZB3PfXyA _moyuGSnkEeORPcZB3PfXyA _moyuGinkEeORPcZB3PfXyA _moyuCCnkEeORPcZB3PfXyA _moyuHSnkEeORPcZB3PfXyA _moyuHinkEeORPcZB3PfXyA _moyuICnkEeORPcZB3PfXyA _moyuISnkEeORPcZB3PfXyA _moyuIinkEeORPcZB3PfXyA _moyuFSnkEeORPcZB3PfXyA _moyuAinkEeORPcZB3PfXyA _moyuGynkEeORPcZB3PfXyA _moyuDinkEeORPcZB3PfXyA _moyuJynkEeORPcZB3PfXyA _moyuKCnkEeORPcZB3PfXyA _moyuJSnkEeORPcZB3PfXyA _moyuLCnkEeORPcZB3PfXyA _moyuBCnkEeORPcZB3PfXyA _moyuKSnkEeORPcZB3PfXyA _moyuCSnkEeORPcZB3PfXyA _moyuKinkEeORPcZB3PfXyA _moyuECnkEeORPcZB3PfXyA _moyuLinkEeORPcZB3PfXyA _moyuBSnkEeORPcZB3PfXyA _moyuMSnkEeORPcZB3PfXyA"/>
@@ -206,13 +206,13 @@
       <slotAttribute href="http://www.storydriven.org/core/0.3.1#//NamedElement/name"/>
     </constraint>
     <constraint xsi:type="de.upb.swt.qvt.tgg:OCLConstraint" xmi:id="_moyuOCnkEeORPcZB3PfXyA" slotNode="_moyuEynkEeORPcZB3PfXyA" expression="compInst.name">
-      <slotAttribute href="de.uni_paderborn.fujaba.simulink#//Block/name"/>
+      <slotAttribute href="http://www.muml.org/simulink/1.0.0#//Block/name"/>
     </constraint>
     <constraint xsi:type="de.upb.swt.qvt.tgg:OCLConstraint" xmi:id="_moyuOSnkEeORPcZB3PfXyA" slotNode="_moyuAynkEeORPcZB3PfXyA" expression="cic2subSys.compInstName.concat(compInst.name)">
-      <slotAttribute href="de.uni_paderborn.fujaba.simulink#//Block/name"/>
+      <slotAttribute href="http://www.muml.org/simulink/1.0.0#//Block/name"/>
     </constraint>
     <constraint xsi:type="de.upb.swt.qvt.tgg:OCLConstraint" xmi:id="_moyuOinkEeORPcZB3PfXyA" slotNode="_moyuKynkEeORPcZB3PfXyA" expression="cic2subSys.compInstName.concat(compInst.name)">
-      <slotAttribute href="de.uni_paderborn.fujaba.simulink#//Block/name"/>
+      <slotAttribute href="http://www.muml.org/simulink/1.0.0#//Block/name"/>
     </constraint>
     <constraint xsi:type="de.upb.swt.qvt.tgg:OCLConstraint" xmi:id="_moyuOynkEeORPcZB3PfXyA" slotNode="_moyuLSnkEeORPcZB3PfXyA" expression="'CIC'">
       <slotAttribute href="http://www.eclipse.org/emf/2002/Ecore#//EAnnotation/source"/>
@@ -230,9 +230,9 @@
   <rule xsi:type="de.upb.swt.qvt.tgg:TripleGraphGrammarRule" xmi:id="_moyuPynkEeORPcZB3PfXyA" name="reconfStructComp2subSys(noCS)">
     <node xmi:id="_moyuQCnkEeORPcZB3PfXyA" name="" incomingEdge="_moyuUynkEeORPcZB3PfXyA _moyuVSnkEeORPcZB3PfXyA _moyuainkEeORPcZB3PfXyA" graphPattern="_moyubynkEeORPcZB3PfXyA _moyucCnkEeORPcZB3PfXyA">
       <outgoingEdge xmi:id="_moyuQSnkEeORPcZB3PfXyA" targetNode="_moyuaSnkEeORPcZB3PfXyA" graphPattern="_moyubynkEeORPcZB3PfXyA">
-        <typeReference href="de.uni_paderborn.fujaba.simulink#//Block/parent"/>
+        <typeReference href="http://www.muml.org/simulink/1.0.0#//Block/parent"/>
       </outgoingEdge>
-      <eType href="de.uni_paderborn.fujaba.simulink#//SubSystem"/>
+      <eType href="http://www.muml.org/simulink/1.0.0#//SubSystem"/>
     </node>
     <node xmi:id="_moyuQinkEeORPcZB3PfXyA" incomingEdge="_moyuZynkEeORPcZB3PfXyA" graphPattern="_moyubinkEeORPcZB3PfXyA _moyubynkEeORPcZB3PfXyA _moyucinkEeORPcZB3PfXyA">
       <outgoingEdge xmi:id="_moyuQynkEeORPcZB3PfXyA" targetNode="_moyuRinkEeORPcZB3PfXyA" graphPattern="_moyubinkEeORPcZB3PfXyA _moyubynkEeORPcZB3PfXyA">
@@ -275,18 +275,18 @@
     </node>
     <node xmi:id="_moyuTynkEeORPcZB3PfXyA" incomingEdge="_moyuUinkEeORPcZB3PfXyA _moyuXynkEeORPcZB3PfXyA" graphPattern="_moyubinkEeORPcZB3PfXyA _moyubynkEeORPcZB3PfXyA _moyucCnkEeORPcZB3PfXyA" matchSubtype="true">
       <outgoingEdge xmi:id="_moyuUCnkEeORPcZB3PfXyA" targetNode="_moyuUSnkEeORPcZB3PfXyA" graphPattern="_moyubynkEeORPcZB3PfXyA">
-        <typeReference href="de.uni_paderborn.fujaba.simulink#//SubSystem/blocks"/>
+        <typeReference href="http://www.muml.org/simulink/1.0.0#//SubSystem/blocks"/>
       </outgoingEdge>
-      <eType href="de.uni_paderborn.fujaba.simulink#//SubSystem"/>
+      <eType href="http://www.muml.org/simulink/1.0.0#//SubSystem"/>
     </node>
     <node xmi:id="_moyuUSnkEeORPcZB3PfXyA" name="libRef" incomingEdge="_moyuUCnkEeORPcZB3PfXyA _moyuVinkEeORPcZB3PfXyA _moyuXCnkEeORPcZB3PfXyA" graphPattern="_moyubynkEeORPcZB3PfXyA _moyucCnkEeORPcZB3PfXyA">
       <outgoingEdge xmi:id="_moyuUinkEeORPcZB3PfXyA" targetNode="_moyuTynkEeORPcZB3PfXyA" graphPattern="_moyubynkEeORPcZB3PfXyA">
-        <typeReference href="de.uni_paderborn.fujaba.simulink#//Block/parent"/>
+        <typeReference href="http://www.muml.org/simulink/1.0.0#//Block/parent"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_moyuUynkEeORPcZB3PfXyA" targetNode="_moyuQCnkEeORPcZB3PfXyA" graphPattern="_moyubynkEeORPcZB3PfXyA">
-        <typeReference href="de.uni_paderborn.fujaba.simulink#//LibraryReference/sourceBlock"/>
+        <typeReference href="http://www.muml.org/simulink/1.0.0#//LibraryReference/sourceBlock"/>
       </outgoingEdge>
-      <eType href="de.uni_paderborn.fujaba.simulink#//LibraryReference"/>
+      <eType href="http://www.muml.org/simulink/1.0.0#//LibraryReference"/>
     </node>
     <node xmi:id="_moyuVCnkEeORPcZB3PfXyA" incomingEdge="_moyuRCnkEeORPcZB3PfXyA _moyuZinkEeORPcZB3PfXyA" graphPattern="_moyubynkEeORPcZB3PfXyA _moyucinkEeORPcZB3PfXyA">
       <outgoingEdge xmi:id="_moyuVSnkEeORPcZB3PfXyA" targetNode="_moyuQCnkEeORPcZB3PfXyA" graphPattern="_moyubynkEeORPcZB3PfXyA">
@@ -332,9 +332,9 @@
     </node>
     <node xmi:id="_moyuYinkEeORPcZB3PfXyA" incomingEdge="_moyuZSnkEeORPcZB3PfXyA" graphPattern="_moyubinkEeORPcZB3PfXyA _moyubynkEeORPcZB3PfXyA _moyucCnkEeORPcZB3PfXyA">
       <outgoingEdge xmi:id="_moyuYynkEeORPcZB3PfXyA" targetNode="_moyuaSnkEeORPcZB3PfXyA" graphPattern="_moyubynkEeORPcZB3PfXyA">
-        <typeReference href="de.uni_paderborn.fujaba.simulink#//SimulinkContainer/libraries"/>
+        <typeReference href="http://www.muml.org/simulink/1.0.0#//SimulinkContainer/libraries"/>
       </outgoingEdge>
-      <eType href="de.uni_paderborn.fujaba.simulink#//SimulinkContainer"/>
+      <eType href="http://www.muml.org/simulink/1.0.0#//SimulinkContainer"/>
     </node>
     <node xmi:id="_moyuZCnkEeORPcZB3PfXyA" graphPattern="_moyubinkEeORPcZB3PfXyA _moyubynkEeORPcZB3PfXyA _moyucinkEeORPcZB3PfXyA">
       <outgoingEdge xmi:id="_moyuZSnkEeORPcZB3PfXyA" targetNode="_moyuYinkEeORPcZB3PfXyA" graphPattern="_moyubinkEeORPcZB3PfXyA _moyubynkEeORPcZB3PfXyA">
@@ -353,9 +353,9 @@
     </node>
     <node xmi:id="_moyuaSnkEeORPcZB3PfXyA" incomingEdge="_moyuQSnkEeORPcZB3PfXyA _moyuRSnkEeORPcZB3PfXyA _moyuYynkEeORPcZB3PfXyA" graphPattern="_moyubynkEeORPcZB3PfXyA _moyucCnkEeORPcZB3PfXyA">
       <outgoingEdge xmi:id="_moyuainkEeORPcZB3PfXyA" targetNode="_moyuQCnkEeORPcZB3PfXyA" graphPattern="_moyubynkEeORPcZB3PfXyA">
-        <typeReference href="de.uni_paderborn.fujaba.simulink#//SubSystem/blocks"/>
+        <typeReference href="http://www.muml.org/simulink/1.0.0#//SubSystem/blocks"/>
       </outgoingEdge>
-      <eType href="de.uni_paderborn.fujaba.simulink#//SimulinkLibrary"/>
+      <eType href="http://www.muml.org/simulink/1.0.0#//SimulinkLibrary"/>
     </node>
     <node xmi:id="_moyuaynkEeORPcZB3PfXyA" incomingEdge="_moyuTinkEeORPcZB3PfXyA" graphPattern="_moyubynkEeORPcZB3PfXyA _moyucSnkEeORPcZB3PfXyA">
       <outgoingEdge xmi:id="_moyubCnkEeORPcZB3PfXyA" targetNode="_moyubSnkEeORPcZB3PfXyA" graphPattern="_moyubynkEeORPcZB3PfXyA">
@@ -381,13 +381,13 @@
       <slotAttribute href="http://www.storydriven.org/core/0.3.1#//NamedElement/name"/>
     </constraint>
     <constraint xsi:type="de.upb.swt.qvt.tgg:OCLConstraint" xmi:id="_moyudCnkEeORPcZB3PfXyA" slotNode="_moyuUSnkEeORPcZB3PfXyA" expression="compInst.name">
-      <slotAttribute href="de.uni_paderborn.fujaba.simulink#//Block/name"/>
+      <slotAttribute href="http://www.muml.org/simulink/1.0.0#//Block/name"/>
     </constraint>
     <constraint xsi:type="de.upb.swt.qvt.tgg:OCLConstraint" xmi:id="_moyudSnkEeORPcZB3PfXyA" slotNode="_moyuQCnkEeORPcZB3PfXyA" expression="cic2subSys.compInstName.concat(compInst.name)">
-      <slotAttribute href="de.uni_paderborn.fujaba.simulink#//Block/name"/>
+      <slotAttribute href="http://www.muml.org/simulink/1.0.0#//Block/name"/>
     </constraint>
     <constraint xsi:type="de.upb.swt.qvt.tgg:OCLConstraint" xmi:id="_moyudinkEeORPcZB3PfXyA" slotNode="_moyuaSnkEeORPcZB3PfXyA" expression="cic2subSys.compInstName.concat(compInst.name)">
-      <slotAttribute href="de.uni_paderborn.fujaba.simulink#//Block/name"/>
+      <slotAttribute href="http://www.muml.org/simulink/1.0.0#//Block/name"/>
     </constraint>
     <constraint xsi:type="de.upb.swt.qvt.tgg:OCLConstraint" xmi:id="_moyudynkEeORPcZB3PfXyA" slotNode="_moyuaynkEeORPcZB3PfXyA" expression="'CIC'">
       <slotAttribute href="http://www.eclipse.org/emf/2002/Ecore#//EAnnotation/source"/>
@@ -405,12 +405,12 @@
   <rule xsi:type="de.upb.swt.qvt.tgg:TripleGraphGrammarRule" xmi:id="_Yc5DADHGEeO1rcTjon2HaQ" name="scInterLevelTrans2sfTransitionExitInRegion">
     <node xmi:id="_Yc5DCzHGEeO1rcTjon2HaQ" name="sfState" incomingEdge="_Yc5DDzHGEeO1rcTjon2HaQ _Yc5DMDHGEeO1rcTjon2HaQ _Yc5DRjHGEeO1rcTjon2HaQ" graphPattern="_Yc5DRzHGEeO1rcTjon2HaQ _Yc5DSDHGEeO1rcTjon2HaQ _Yc5DSzHGEeO1rcTjon2HaQ">
       <outgoingEdge xmi:id="_Yc5DDDHGEeO1rcTjon2HaQ" targetNode="_Yc5DLzHGEeO1rcTjon2HaQ" graphPattern="_Yc5DSDHGEeO1rcTjon2HaQ _Yc5DRzHGEeO1rcTjon2HaQ">
-        <typeReference href="de.uni_paderborn.fujaba.simulink#//stateflow/Node/parent"/>
+        <typeReference href="http://www.muml.org/simulink/1.0.0#//stateflow/Node/parent"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_Yc5DDTHGEeO1rcTjon2HaQ" targetNode="_Yc5DRDHGEeO1rcTjon2HaQ" graphPattern="_Yc5DSDHGEeO1rcTjon2HaQ">
-        <typeReference href="de.uni_paderborn.fujaba.simulink#//stateflow/Node/incoming"/>
+        <typeReference href="http://www.muml.org/simulink/1.0.0#//stateflow/Node/incoming"/>
       </outgoingEdge>
-      <eType href="de.uni_paderborn.fujaba.simulink#//stateflow/State"/>
+      <eType href="http://www.muml.org/simulink/1.0.0#//stateflow/State"/>
     </node>
     <node xmi:id="_Yc5DDjHGEeO1rcTjon2HaQ" incomingEdge="_Yc5DBzHGEeO1rcTjon2HaQ" graphPattern="_Yc5DRzHGEeO1rcTjon2HaQ _Yc5DSDHGEeO1rcTjon2HaQ _Yc5DSjHGEeO1rcTjon2HaQ">
       <outgoingEdge xmi:id="_Yc5DDzHGEeO1rcTjon2HaQ" targetNode="_Yc5DCzHGEeO1rcTjon2HaQ" graphPattern="_Yc5DRzHGEeO1rcTjon2HaQ _Yc5DSDHGEeO1rcTjon2HaQ">
@@ -432,12 +432,12 @@
     </node>
     <node xmi:id="_Yc5DFDHGEeO1rcTjon2HaQ" name="sfStateReg" incomingEdge="_Yc5DGDHGEeO1rcTjon2HaQ _Yc5DLTHGEeO1rcTjon2HaQ _Yc5DMTHGEeO1rcTjon2HaQ" graphPattern="_Yc5DRzHGEeO1rcTjon2HaQ _Yc5DSDHGEeO1rcTjon2HaQ _Yc5DSzHGEeO1rcTjon2HaQ">
       <outgoingEdge xmi:id="_Yc5DFTHGEeO1rcTjon2HaQ" targetNode="_Yc5DLDHGEeO1rcTjon2HaQ" graphPattern="_Yc5DRzHGEeO1rcTjon2HaQ _Yc5DSDHGEeO1rcTjon2HaQ">
-        <typeReference href="de.uni_paderborn.fujaba.simulink#//stateflow/State/nodes"/>
+        <typeReference href="http://www.muml.org/simulink/1.0.0#//stateflow/State/nodes"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_Yc5DFjHGEeO1rcTjon2HaQ" targetNode="_Yc5DLzHGEeO1rcTjon2HaQ" graphPattern="_Yc5DSDHGEeO1rcTjon2HaQ _Yc5DRzHGEeO1rcTjon2HaQ">
-        <typeReference href="de.uni_paderborn.fujaba.simulink#//stateflow/Node/parent"/>
+        <typeReference href="http://www.muml.org/simulink/1.0.0#//stateflow/Node/parent"/>
       </outgoingEdge>
-      <eType href="de.uni_paderborn.fujaba.simulink#//stateflow/State"/>
+      <eType href="http://www.muml.org/simulink/1.0.0#//stateflow/State"/>
     </node>
     <node xmi:id="_Yc5DFzHGEeO1rcTjon2HaQ" incomingEdge="_Yc5DCDHGEeO1rcTjon2HaQ" graphPattern="_Yc5DRzHGEeO1rcTjon2HaQ _Yc5DSDHGEeO1rcTjon2HaQ _Yc5DSjHGEeO1rcTjon2HaQ">
       <outgoingEdge xmi:id="_Yc5DGDHGEeO1rcTjon2HaQ" targetNode="_Yc5DFDHGEeO1rcTjon2HaQ" graphPattern="_Yc5DRzHGEeO1rcTjon2HaQ _Yc5DSDHGEeO1rcTjon2HaQ">
@@ -504,24 +504,24 @@
     </node>
     <node xmi:id="_Yc5DLDHGEeO1rcTjon2HaQ" name="sfStateIn" incomingEdge="_Yc5DFTHGEeO1rcTjon2HaQ _Yc5DKzHGEeO1rcTjon2HaQ _Yc5DRTHGEeO1rcTjon2HaQ" graphPattern="_Yc5DRzHGEeO1rcTjon2HaQ _Yc5DSDHGEeO1rcTjon2HaQ _Yc5DSzHGEeO1rcTjon2HaQ">
       <outgoingEdge xmi:id="_Yc5DLTHGEeO1rcTjon2HaQ" targetNode="_Yc5DFDHGEeO1rcTjon2HaQ" graphPattern="_Yc5DRzHGEeO1rcTjon2HaQ _Yc5DSDHGEeO1rcTjon2HaQ">
-        <typeReference href="de.uni_paderborn.fujaba.simulink#//stateflow/Node/parent"/>
+        <typeReference href="http://www.muml.org/simulink/1.0.0#//stateflow/Node/parent"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_Yc5DLjHGEeO1rcTjon2HaQ" targetNode="_Yc5DRDHGEeO1rcTjon2HaQ" graphPattern="_Yc5DSDHGEeO1rcTjon2HaQ">
-        <typeReference href="de.uni_paderborn.fujaba.simulink#//stateflow/Node/outgoing"/>
+        <typeReference href="http://www.muml.org/simulink/1.0.0#//stateflow/Node/outgoing"/>
       </outgoingEdge>
-      <eType href="de.uni_paderborn.fujaba.simulink#//stateflow/State"/>
+      <eType href="http://www.muml.org/simulink/1.0.0#//stateflow/State"/>
     </node>
     <node xmi:id="_Yc5DLzHGEeO1rcTjon2HaQ" name="sfChartRegion" incomingEdge="_Yc5DDDHGEeO1rcTjon2HaQ _Yc5DFjHGEeO1rcTjon2HaQ _-CA0wDHHEeO1rcTjon2HaQ" graphPattern="_Yc5DSDHGEeO1rcTjon2HaQ _Yc5DRzHGEeO1rcTjon2HaQ _Yc5DSzHGEeO1rcTjon2HaQ">
       <outgoingEdge xmi:id="_Yc5DMDHGEeO1rcTjon2HaQ" targetNode="_Yc5DCzHGEeO1rcTjon2HaQ" graphPattern="_Yc5DSDHGEeO1rcTjon2HaQ _Yc5DRzHGEeO1rcTjon2HaQ">
-        <typeReference href="de.uni_paderborn.fujaba.simulink#//stateflow/State/nodes"/>
+        <typeReference href="http://www.muml.org/simulink/1.0.0#//stateflow/State/nodes"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_Yc5DMTHGEeO1rcTjon2HaQ" targetNode="_Yc5DFDHGEeO1rcTjon2HaQ" graphPattern="_Yc5DSDHGEeO1rcTjon2HaQ _Yc5DRzHGEeO1rcTjon2HaQ">
-        <typeReference href="de.uni_paderborn.fujaba.simulink#//stateflow/State/nodes"/>
+        <typeReference href="http://www.muml.org/simulink/1.0.0#//stateflow/State/nodes"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_Yc5DMjHGEeO1rcTjon2HaQ" targetNode="_Yc5DRDHGEeO1rcTjon2HaQ" graphPattern="_Yc5DSDHGEeO1rcTjon2HaQ">
-        <typeReference href="de.uni_paderborn.fujaba.simulink#//stateflow/State/transitions"/>
+        <typeReference href="http://www.muml.org/simulink/1.0.0#//stateflow/State/transitions"/>
       </outgoingEdge>
-      <eType href="de.uni_paderborn.fujaba.simulink#//stateflow/State"/>
+      <eType href="http://www.muml.org/simulink/1.0.0#//stateflow/State"/>
     </node>
     <node xmi:id="_Yc5DMzHGEeO1rcTjon2HaQ" incomingEdge="_Yc5DQDHGEeO1rcTjon2HaQ _Yc5DHjHGEeO1rcTjon2HaQ _zF1JIDHJEeO1rcTjon2HaQ _312ikDHJEeO1rcTjon2HaQ" graphPattern="_Yc5DSDHGEeO1rcTjon2HaQ _Yc5DSTHGEeO1rcTjon2HaQ">
       <outgoingEdge xmi:id="_Yc5DNjHGEeO1rcTjon2HaQ" targetNode="_Yc5DGzHGEeO1rcTjon2HaQ" graphPattern="_Yc5DSDHGEeO1rcTjon2HaQ">
@@ -576,12 +576,12 @@
     </node>
     <node xmi:id="_Yc5DRDHGEeO1rcTjon2HaQ" incomingEdge="_Yc5DQzHGEeO1rcTjon2HaQ _Yc5DLjHGEeO1rcTjon2HaQ _Yc5DDTHGEeO1rcTjon2HaQ _Yc5DMjHGEeO1rcTjon2HaQ _IKndMDJcEeO50N1GFGL30Q" graphPattern="_Yc5DSDHGEeO1rcTjon2HaQ _Yc5DSzHGEeO1rcTjon2HaQ">
       <outgoingEdge xmi:id="_Yc5DRTHGEeO1rcTjon2HaQ" targetNode="_Yc5DLDHGEeO1rcTjon2HaQ" graphPattern="_Yc5DSDHGEeO1rcTjon2HaQ">
-        <typeReference href="de.uni_paderborn.fujaba.simulink#//stateflow/Transition/source"/>
+        <typeReference href="http://www.muml.org/simulink/1.0.0#//stateflow/Transition/source"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_Yc5DRjHGEeO1rcTjon2HaQ" targetNode="_Yc5DCzHGEeO1rcTjon2HaQ" graphPattern="_Yc5DSDHGEeO1rcTjon2HaQ">
-        <typeReference href="de.uni_paderborn.fujaba.simulink#//stateflow/Transition/target"/>
+        <typeReference href="http://www.muml.org/simulink/1.0.0#//stateflow/Transition/target"/>
       </outgoingEdge>
-      <eType href="de.uni_paderborn.fujaba.simulink#//stateflow/Transition"/>
+      <eType href="http://www.muml.org/simulink/1.0.0#//stateflow/Transition"/>
     </node>
     <node xmi:id="_HZvOkDHHEeO1rcTjon2HaQ" graphPattern="_Yc5DSDHGEeO1rcTjon2HaQ _Yc5DRzHGEeO1rcTjon2HaQ _Yc5DSjHGEeO1rcTjon2HaQ">
       <outgoingEdge xmi:id="_mmMqkDHHEeO1rcTjon2HaQ" targetNode="_kNK9sDHHEeO1rcTjon2HaQ" graphPattern="_Yc5DSDHGEeO1rcTjon2HaQ _Yc5DRzHGEeO1rcTjon2HaQ">
@@ -655,18 +655,18 @@
       <typedModel href="../../de.uni_paderborn.fujaba.simulink.m2m/tgg/fujaba2simulink.tgg#_NK6IcJzXEeCxo-rGjpVr5g"/>
     </domain>
     <constraint xsi:type="de.upb.swt.qvt.tgg:OCLConstraint" xmi:id="_Yc5DTDHGEeO1rcTjon2HaQ" slotNode="_Yc5DRDHGEeO1rcTjon2HaQ" expression="scStateIn.outgoingTransitions->size() - scOutTrans.priority +1">
-      <slotAttribute href="de.uni_paderborn.fujaba.simulink#//stateflow/Transition/priority"/>
+      <slotAttribute href="http://www.muml.org/simulink/1.0.0#//stateflow/Transition/priority"/>
     </constraint>
   </rule>
   <rule xsi:type="de.upb.swt.qvt.tgg:TripleGraphGrammarRule" xmi:id="_l95f8DKBEeOMa8FDYZATEw" name="scInterLevelTrans2sfTransitionEntryInRegion">
     <node xmi:id="_l95f8TKBEeOMa8FDYZATEw" name="sfState" incomingEdge="_l95f9TKBEeOMa8FDYZATEw _l95gFjKBEeOMa8FDYZATEw _JYqS8DKDEeOMa8FDYZATEw" graphPattern="_l95gQTKBEeOMa8FDYZATEw _l95gQjKBEeOMa8FDYZATEw _l95gRTKBEeOMa8FDYZATEw">
       <outgoingEdge xmi:id="_l95f8jKBEeOMa8FDYZATEw" targetNode="_l95gFTKBEeOMa8FDYZATEw" graphPattern="_l95gQjKBEeOMa8FDYZATEw _l95gQTKBEeOMa8FDYZATEw">
-        <typeReference href="de.uni_paderborn.fujaba.simulink#//stateflow/Node/parent"/>
+        <typeReference href="http://www.muml.org/simulink/1.0.0#//stateflow/Node/parent"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_Jg-hcDKDEeOMa8FDYZATEw" targetNode="_l95gKjKBEeOMa8FDYZATEw" graphPattern="_l95gQjKBEeOMa8FDYZATEw">
-        <typeReference href="de.uni_paderborn.fujaba.simulink#//stateflow/Node/outgoing"/>
+        <typeReference href="http://www.muml.org/simulink/1.0.0#//stateflow/Node/outgoing"/>
       </outgoingEdge>
-      <eType href="de.uni_paderborn.fujaba.simulink#//stateflow/State"/>
+      <eType href="http://www.muml.org/simulink/1.0.0#//stateflow/State"/>
     </node>
     <node xmi:id="_l95f9DKBEeOMa8FDYZATEw" incomingEdge="_l95gLzKBEeOMa8FDYZATEw" graphPattern="_l95gQTKBEeOMa8FDYZATEw _l95gQjKBEeOMa8FDYZATEw _l95gRDKBEeOMa8FDYZATEw">
       <outgoingEdge xmi:id="_l95f9TKBEeOMa8FDYZATEw" targetNode="_l95f8TKBEeOMa8FDYZATEw" graphPattern="_l95gQTKBEeOMa8FDYZATEw _l95gQjKBEeOMa8FDYZATEw">
@@ -688,12 +688,12 @@
     </node>
     <node xmi:id="_l95f-jKBEeOMa8FDYZATEw" name="sfStateReg" incomingEdge="_l95f_jKBEeOMa8FDYZATEw _l95gEzKBEeOMa8FDYZATEw _l95gFzKBEeOMa8FDYZATEw" graphPattern="_l95gQTKBEeOMa8FDYZATEw _l95gQjKBEeOMa8FDYZATEw _l95gRTKBEeOMa8FDYZATEw">
       <outgoingEdge xmi:id="_l95f-zKBEeOMa8FDYZATEw" targetNode="_l95gEjKBEeOMa8FDYZATEw" graphPattern="_l95gQTKBEeOMa8FDYZATEw _l95gQjKBEeOMa8FDYZATEw">
-        <typeReference href="de.uni_paderborn.fujaba.simulink#//stateflow/State/nodes"/>
+        <typeReference href="http://www.muml.org/simulink/1.0.0#//stateflow/State/nodes"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_l95f_DKBEeOMa8FDYZATEw" targetNode="_l95gFTKBEeOMa8FDYZATEw" graphPattern="_l95gQjKBEeOMa8FDYZATEw _l95gQTKBEeOMa8FDYZATEw">
-        <typeReference href="de.uni_paderborn.fujaba.simulink#//stateflow/Node/parent"/>
+        <typeReference href="http://www.muml.org/simulink/1.0.0#//stateflow/Node/parent"/>
       </outgoingEdge>
-      <eType href="de.uni_paderborn.fujaba.simulink#//stateflow/State"/>
+      <eType href="http://www.muml.org/simulink/1.0.0#//stateflow/State"/>
     </node>
     <node xmi:id="_l95f_TKBEeOMa8FDYZATEw" incomingEdge="_l95gMDKBEeOMa8FDYZATEw" graphPattern="_l95gQTKBEeOMa8FDYZATEw _l95gQjKBEeOMa8FDYZATEw _l95gRDKBEeOMa8FDYZATEw">
       <outgoingEdge xmi:id="_l95f_jKBEeOMa8FDYZATEw" targetNode="_l95f-jKBEeOMa8FDYZATEw" graphPattern="_l95gQTKBEeOMa8FDYZATEw _l95gQjKBEeOMa8FDYZATEw">
@@ -760,24 +760,24 @@
     </node>
     <node xmi:id="_l95gEjKBEeOMa8FDYZATEw" name="sfStateIn" incomingEdge="_l95f-zKBEeOMa8FDYZATEw _l95gETKBEeOMa8FDYZATEw _Kmew8DKDEeOMa8FDYZATEw" graphPattern="_l95gQTKBEeOMa8FDYZATEw _l95gQjKBEeOMa8FDYZATEw _l95gRTKBEeOMa8FDYZATEw">
       <outgoingEdge xmi:id="_l95gEzKBEeOMa8FDYZATEw" targetNode="_l95f-jKBEeOMa8FDYZATEw" graphPattern="_l95gQTKBEeOMa8FDYZATEw _l95gQjKBEeOMa8FDYZATEw">
-        <typeReference href="de.uni_paderborn.fujaba.simulink#//stateflow/Node/parent"/>
+        <typeReference href="http://www.muml.org/simulink/1.0.0#//stateflow/Node/parent"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_K0mFcDKDEeOMa8FDYZATEw" targetNode="_l95gKjKBEeOMa8FDYZATEw" graphPattern="_l95gQjKBEeOMa8FDYZATEw">
-        <typeReference href="de.uni_paderborn.fujaba.simulink#//stateflow/Node/incoming"/>
+        <typeReference href="http://www.muml.org/simulink/1.0.0#//stateflow/Node/incoming"/>
       </outgoingEdge>
-      <eType href="de.uni_paderborn.fujaba.simulink#//stateflow/State"/>
+      <eType href="http://www.muml.org/simulink/1.0.0#//stateflow/State"/>
     </node>
     <node xmi:id="_l95gFTKBEeOMa8FDYZATEw" name="sfChartRegion" incomingEdge="_l95f8jKBEeOMa8FDYZATEw _l95f_DKBEeOMa8FDYZATEw _l95gMjKBEeOMa8FDYZATEw" graphPattern="_l95gQjKBEeOMa8FDYZATEw _l95gQTKBEeOMa8FDYZATEw _l95gRTKBEeOMa8FDYZATEw">
       <outgoingEdge xmi:id="_l95gFjKBEeOMa8FDYZATEw" targetNode="_l95f8TKBEeOMa8FDYZATEw" graphPattern="_l95gQjKBEeOMa8FDYZATEw _l95gQTKBEeOMa8FDYZATEw">
-        <typeReference href="de.uni_paderborn.fujaba.simulink#//stateflow/State/nodes"/>
+        <typeReference href="http://www.muml.org/simulink/1.0.0#//stateflow/State/nodes"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_l95gFzKBEeOMa8FDYZATEw" targetNode="_l95f-jKBEeOMa8FDYZATEw" graphPattern="_l95gQjKBEeOMa8FDYZATEw _l95gQTKBEeOMa8FDYZATEw">
-        <typeReference href="de.uni_paderborn.fujaba.simulink#//stateflow/State/nodes"/>
+        <typeReference href="http://www.muml.org/simulink/1.0.0#//stateflow/State/nodes"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_l95gGDKBEeOMa8FDYZATEw" targetNode="_l95gKjKBEeOMa8FDYZATEw" graphPattern="_l95gQjKBEeOMa8FDYZATEw">
-        <typeReference href="de.uni_paderborn.fujaba.simulink#//stateflow/State/transitions"/>
+        <typeReference href="http://www.muml.org/simulink/1.0.0#//stateflow/State/transitions"/>
       </outgoingEdge>
-      <eType href="de.uni_paderborn.fujaba.simulink#//stateflow/State"/>
+      <eType href="http://www.muml.org/simulink/1.0.0#//stateflow/State"/>
     </node>
     <node xmi:id="_l95gGTKBEeOMa8FDYZATEw" incomingEdge="_l95gAzKBEeOMa8FDYZATEw _g2dPkDKCEeOMa8FDYZATEw _kRa6kDKCEeOMa8FDYZATEw _o8HiUDM2EeOuvb-X1PsS1w" graphPattern="_l95gQjKBEeOMa8FDYZATEw _l95gQzKBEeOMa8FDYZATEw">
       <outgoingEdge xmi:id="_l95gGjKBEeOMa8FDYZATEw" targetNode="_l95gATKBEeOMa8FDYZATEw" graphPattern="_l95gQjKBEeOMa8FDYZATEw">
@@ -817,12 +817,12 @@
     </node>
     <node xmi:id="_l95gKjKBEeOMa8FDYZATEw" incomingEdge="_l95gGDKBEeOMa8FDYZATEw _l95gQDKBEeOMa8FDYZATEw _Jg-hcDKDEeOMa8FDYZATEw _K0mFcDKDEeOMa8FDYZATEw _mnf0UDM2EeOuvb-X1PsS1w" graphPattern="_l95gQjKBEeOMa8FDYZATEw _l95gRTKBEeOMa8FDYZATEw">
       <outgoingEdge xmi:id="_JYqS8DKDEeOMa8FDYZATEw" targetNode="_l95f8TKBEeOMa8FDYZATEw" graphPattern="_l95gQjKBEeOMa8FDYZATEw">
-        <typeReference href="de.uni_paderborn.fujaba.simulink#//stateflow/Transition/source"/>
+        <typeReference href="http://www.muml.org/simulink/1.0.0#//stateflow/Transition/source"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_Kmew8DKDEeOMa8FDYZATEw" targetNode="_l95gEjKBEeOMa8FDYZATEw" graphPattern="_l95gQjKBEeOMa8FDYZATEw">
-        <typeReference href="de.uni_paderborn.fujaba.simulink#//stateflow/Transition/target"/>
+        <typeReference href="http://www.muml.org/simulink/1.0.0#//stateflow/Transition/target"/>
       </outgoingEdge>
-      <eType href="de.uni_paderborn.fujaba.simulink#//stateflow/Transition"/>
+      <eType href="http://www.muml.org/simulink/1.0.0#//stateflow/Transition"/>
     </node>
     <node xmi:id="_l95gLTKBEeOMa8FDYZATEw" graphPattern="_l95gQjKBEeOMa8FDYZATEw _l95gQTKBEeOMa8FDYZATEw _l95gRDKBEeOMa8FDYZATEw">
       <outgoingEdge xmi:id="_l95gLjKBEeOMa8FDYZATEw" targetNode="_l95gPDKBEeOMa8FDYZATEw" graphPattern="_l95gQjKBEeOMa8FDYZATEw _l95gQTKBEeOMa8FDYZATEw">
@@ -908,7 +908,7 @@
       <typedModel href="../../de.uni_paderborn.fujaba.simulink.m2m/tgg/fujaba2simulink.tgg#_NK6IcJzXEeCxo-rGjpVr5g"/>
     </domain>
     <constraint xsi:type="de.upb.swt.qvt.tgg:OCLConstraint" xmi:id="_l95gRjKBEeOMa8FDYZATEw" slotNode="_l95gKjKBEeOMa8FDYZATEw" expression="scStateIn.outgoingTransitions->size() - scOutTrans.priority +1">
-      <slotAttribute href="de.uni_paderborn.fujaba.simulink#//stateflow/Transition/priority"/>
+      <slotAttribute href="http://www.muml.org/simulink/1.0.0#//stateflow/Transition/priority"/>
     </constraint>
   </rule>
   <rule xsi:type="de.upb.swt.qvt.tgg:TripleGraphGrammarRule" xmi:id="_burLgDKEEeOMa8FDYZATEw" name="scInterLevelTrans2sfTransitionExitEntryInRegion">
@@ -983,15 +983,15 @@
     </node>
     <node xmi:id="_burLojKEEeOMa8FDYZATEw" name="sfStateIn" incomingEdge="_burLoTKEEeOMa8FDYZATEw _Tb0AoDKIEeOMa8FDYZATEw _VQd1IDKIEeOMa8FDYZATEw" graphPattern="_burL0TKEEeOMa8FDYZATEw _burL0jKEEeOMa8FDYZATEw _burL1TKEEeOMa8FDYZATEw">
       <outgoingEdge xmi:id="_Squh8DKIEeOMa8FDYZATEw" targetNode="_Sqq3kDKIEeOMa8FDYZATEw" graphPattern="_burL0jKEEeOMa8FDYZATEw _burL0TKEEeOMa8FDYZATEw">
-        <typeReference href="de.uni_paderborn.fujaba.simulink#//stateflow/State/nodes"/>
+        <typeReference href="http://www.muml.org/simulink/1.0.0#//stateflow/State/nodes"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_U6uOoDKIEeOMa8FDYZATEw" targetNode="_U6ovEDKIEeOMa8FDYZATEw" graphPattern="_burL0jKEEeOMa8FDYZATEw _burL0TKEEeOMa8FDYZATEw">
-        <typeReference href="de.uni_paderborn.fujaba.simulink#//stateflow/State/nodes"/>
+        <typeReference href="http://www.muml.org/simulink/1.0.0#//stateflow/State/nodes"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_bMVhMDKJEeOMa8FDYZATEw" targetNode="_burLujKEEeOMa8FDYZATEw" graphPattern="_burL0jKEEeOMa8FDYZATEw">
-        <typeReference href="de.uni_paderborn.fujaba.simulink#//stateflow/State/transitions"/>
+        <typeReference href="http://www.muml.org/simulink/1.0.0#//stateflow/State/transitions"/>
       </outgoingEdge>
-      <eType href="de.uni_paderborn.fujaba.simulink#//stateflow/State"/>
+      <eType href="http://www.muml.org/simulink/1.0.0#//stateflow/State"/>
     </node>
     <node xmi:id="_burLqTKEEeOMa8FDYZATEw" incomingEdge="_burLkzKEEeOMa8FDYZATEw _5YsH4DKFEeOMa8FDYZATEw __HW64DKFEeOMa8FDYZATEw" graphPattern="_burL0jKEEeOMa8FDYZATEw _burL0zKEEeOMa8FDYZATEw">
       <outgoingEdge xmi:id="_burLqjKEEeOMa8FDYZATEw" targetNode="_burLkTKEEeOMa8FDYZATEw" graphPattern="_burL0jKEEeOMa8FDYZATEw">
@@ -1031,12 +1031,12 @@
     </node>
     <node xmi:id="_burLujKEEeOMa8FDYZATEw" incomingEdge="_burL0DKEEeOMa8FDYZATEw _qJeEUDKIEeOMa8FDYZATEw _sp_gUDKIEeOMa8FDYZATEw _bMVhMDKJEeOMa8FDYZATEw" graphPattern="_burL0jKEEeOMa8FDYZATEw _burL1TKEEeOMa8FDYZATEw">
       <outgoingEdge xmi:id="_p9kWUDKIEeOMa8FDYZATEw" targetNode="_ktXA8DKIEeOMa8FDYZATEw" graphPattern="_burL0jKEEeOMa8FDYZATEw">
-        <typeReference href="de.uni_paderborn.fujaba.simulink#//stateflow/Transition/source"/>
+        <typeReference href="http://www.muml.org/simulink/1.0.0#//stateflow/Transition/source"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_sgipYDKIEeOMa8FDYZATEw" targetNode="_ej2FADKIEeOMa8FDYZATEw" graphPattern="_burL0jKEEeOMa8FDYZATEw">
-        <typeReference href="de.uni_paderborn.fujaba.simulink#//stateflow/Transition/target"/>
+        <typeReference href="http://www.muml.org/simulink/1.0.0#//stateflow/Transition/target"/>
       </outgoingEdge>
-      <eType href="de.uni_paderborn.fujaba.simulink#//stateflow/Transition"/>
+      <eType href="http://www.muml.org/simulink/1.0.0#//stateflow/Transition"/>
     </node>
     <node xmi:id="_burLvTKEEeOMa8FDYZATEw" incomingEdge="_EQVU8DKIEeOMa8FDYZATEw" graphPattern="_burL0jKEEeOMa8FDYZATEw _burL0TKEEeOMa8FDYZATEw _burL1DKEEeOMa8FDYZATEw">
       <outgoingEdge xmi:id="_burLvzKEEeOMa8FDYZATEw" targetNode="_burLhDKEEeOMa8FDYZATEw" graphPattern="_burL0jKEEeOMa8FDYZATEw _burL0TKEEeOMa8FDYZATEw">
@@ -1178,39 +1178,39 @@
     </node>
     <node xmi:id="_Sqq3kDKIEeOMa8FDYZATEw" incomingEdge="_Squh8DKIEeOMa8FDYZATEw _WshjcDKIEeOMa8FDYZATEw _fTxtIDKIEeOMa8FDYZATEw" graphPattern="_burL0jKEEeOMa8FDYZATEw _burL0TKEEeOMa8FDYZATEw _burL1TKEEeOMa8FDYZATEw">
       <outgoingEdge xmi:id="_Tb0AoDKIEeOMa8FDYZATEw" targetNode="_burLojKEEeOMa8FDYZATEw" graphPattern="_burL0jKEEeOMa8FDYZATEw _burL0TKEEeOMa8FDYZATEw">
-        <typeReference href="de.uni_paderborn.fujaba.simulink#//stateflow/Node/parent"/>
+        <typeReference href="http://www.muml.org/simulink/1.0.0#//stateflow/Node/parent"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_ej6WcDKIEeOMa8FDYZATEw" targetNode="_ej2FADKIEeOMa8FDYZATEw" graphPattern="_burL0jKEEeOMa8FDYZATEw _burL0TKEEeOMa8FDYZATEw">
-        <typeReference href="de.uni_paderborn.fujaba.simulink#//stateflow/State/nodes"/>
+        <typeReference href="http://www.muml.org/simulink/1.0.0#//stateflow/State/nodes"/>
       </outgoingEdge>
-      <eType href="de.uni_paderborn.fujaba.simulink#//stateflow/State"/>
+      <eType href="http://www.muml.org/simulink/1.0.0#//stateflow/State"/>
     </node>
     <node xmi:id="_U6ovEDKIEeOMa8FDYZATEw" incomingEdge="_U6uOoDKIEeOMa8FDYZATEw _ZV0g8DKIEeOMa8FDYZATEw _lC2IwDKIEeOMa8FDYZATEw" graphPattern="_burL0jKEEeOMa8FDYZATEw _burL0TKEEeOMa8FDYZATEw _burL1TKEEeOMa8FDYZATEw">
       <outgoingEdge xmi:id="_VQd1IDKIEeOMa8FDYZATEw" targetNode="_burLojKEEeOMa8FDYZATEw" graphPattern="_burL0jKEEeOMa8FDYZATEw _burL0TKEEeOMa8FDYZATEw">
-        <typeReference href="de.uni_paderborn.fujaba.simulink#//stateflow/Node/parent"/>
+        <typeReference href="http://www.muml.org/simulink/1.0.0#//stateflow/Node/parent"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_ktbSYDKIEeOMa8FDYZATEw" targetNode="_ktXA8DKIEeOMa8FDYZATEw" graphPattern="_burL0jKEEeOMa8FDYZATEw _burL0TKEEeOMa8FDYZATEw">
-        <typeReference href="de.uni_paderborn.fujaba.simulink#//stateflow/State/nodes"/>
+        <typeReference href="http://www.muml.org/simulink/1.0.0#//stateflow/State/nodes"/>
       </outgoingEdge>
-      <eType href="de.uni_paderborn.fujaba.simulink#//stateflow/State"/>
+      <eType href="http://www.muml.org/simulink/1.0.0#//stateflow/State"/>
     </node>
     <node xmi:id="_ej2FADKIEeOMa8FDYZATEw" incomingEdge="_ej6WcDKIEeOMa8FDYZATEw _nyuPYDKIEeOMa8FDYZATEw _sgipYDKIEeOMa8FDYZATEw" graphPattern="_burL0jKEEeOMa8FDYZATEw _burL0TKEEeOMa8FDYZATEw _burL1TKEEeOMa8FDYZATEw">
       <outgoingEdge xmi:id="_fTxtIDKIEeOMa8FDYZATEw" targetNode="_Sqq3kDKIEeOMa8FDYZATEw" graphPattern="_burL0jKEEeOMa8FDYZATEw _burL0TKEEeOMa8FDYZATEw">
-        <typeReference href="de.uni_paderborn.fujaba.simulink#//stateflow/Node/parent"/>
+        <typeReference href="http://www.muml.org/simulink/1.0.0#//stateflow/Node/parent"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_sp_gUDKIEeOMa8FDYZATEw" targetNode="_burLujKEEeOMa8FDYZATEw" graphPattern="_burL0jKEEeOMa8FDYZATEw">
-        <typeReference href="de.uni_paderborn.fujaba.simulink#//stateflow/Node/incoming"/>
+        <typeReference href="http://www.muml.org/simulink/1.0.0#//stateflow/Node/incoming"/>
       </outgoingEdge>
-      <eType href="de.uni_paderborn.fujaba.simulink#//stateflow/State"/>
+      <eType href="http://www.muml.org/simulink/1.0.0#//stateflow/State"/>
     </node>
     <node xmi:id="_ktXA8DKIEeOMa8FDYZATEw" incomingEdge="_ktbSYDKIEeOMa8FDYZATEw _mkloUDKIEeOMa8FDYZATEw _p9kWUDKIEeOMa8FDYZATEw" graphPattern="_burL0jKEEeOMa8FDYZATEw _burL0TKEEeOMa8FDYZATEw _burL1TKEEeOMa8FDYZATEw">
       <outgoingEdge xmi:id="_lC2IwDKIEeOMa8FDYZATEw" targetNode="_U6ovEDKIEeOMa8FDYZATEw" graphPattern="_burL0jKEEeOMa8FDYZATEw _burL0TKEEeOMa8FDYZATEw">
-        <typeReference href="de.uni_paderborn.fujaba.simulink#//stateflow/Node/parent"/>
+        <typeReference href="http://www.muml.org/simulink/1.0.0#//stateflow/Node/parent"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_qJeEUDKIEeOMa8FDYZATEw" targetNode="_burLujKEEeOMa8FDYZATEw" graphPattern="_burL0jKEEeOMa8FDYZATEw">
-        <typeReference href="de.uni_paderborn.fujaba.simulink#//stateflow/Node/outgoing"/>
+        <typeReference href="http://www.muml.org/simulink/1.0.0#//stateflow/Node/outgoing"/>
       </outgoingEdge>
-      <eType href="de.uni_paderborn.fujaba.simulink#//stateflow/State"/>
+      <eType href="http://www.muml.org/simulink/1.0.0#//stateflow/State"/>
     </node>
     <leftGraphPattern xmi:id="_burL0TKEEeOMa8FDYZATEw" node="_burLhDKEEeOMa8FDYZATEw _burLkTKEEeOMa8FDYZATEw _burLnDKEEeOMa8FDYZATEw _burLnzKEEeOMa8FDYZATEw _burLojKEEeOMa8FDYZATEw _burLvTKEEeOMa8FDYZATEw _tmrSYDKFEeOMa8FDYZATEw _GhKaADKGEeOMa8FDYZATEw _3uSJoDKHEeOMa8FDYZATEw _IDCxkDKIEeOMa8FDYZATEw _LimBoDKIEeOMa8FDYZATEw _Sqq3kDKIEeOMa8FDYZATEw _U6ovEDKIEeOMa8FDYZATEw _ej2FADKIEeOMa8FDYZATEw _ktXA8DKIEeOMa8FDYZATEw" edge="_burLoDKEEeOMa8FDYZATEw _burLoTKEEeOMa8FDYZATEw _burLvzKEEeOMa8FDYZATEw _EQVU8DKIEeOMa8FDYZATEw _IDHDADKIEeOMa8FDYZATEw _LipsADKIEeOMa8FDYZATEw _Squh8DKIEeOMa8FDYZATEw _Tb0AoDKIEeOMa8FDYZATEw _U6uOoDKIEeOMa8FDYZATEw _VQd1IDKIEeOMa8FDYZATEw _WshjcDKIEeOMa8FDYZATEw _XfLIYDKIEeOMa8FDYZATEw _YuI14DKIEeOMa8FDYZATEw _ZV0g8DKIEeOMa8FDYZATEw _ccCD8DKIEeOMa8FDYZATEw _dVjF4DKIEeOMa8FDYZATEw _ej6WcDKIEeOMa8FDYZATEw _fTxtIDKIEeOMa8FDYZATEw _ktbSYDKIEeOMa8FDYZATEw _lC2IwDKIEeOMa8FDYZATEw _mkloUDKIEeOMa8FDYZATEw _nyuPYDKIEeOMa8FDYZATEw"/>
     <rightGraphPattern xmi:id="_burL0jKEEeOMa8FDYZATEw" node="_burLhDKEEeOMa8FDYZATEw _burLkTKEEeOMa8FDYZATEw _burLnDKEEeOMa8FDYZATEw _burLnzKEEeOMa8FDYZATEw _burLojKEEeOMa8FDYZATEw _burLqTKEEeOMa8FDYZATEw _burLrTKEEeOMa8FDYZATEw _burLsTKEEeOMa8FDYZATEw _burLujKEEeOMa8FDYZATEw _burLvTKEEeOMa8FDYZATEw _burLzjKEEeOMa8FDYZATEw _ePGrcDKFEeOMa8FDYZATEw _tmrSYDKFEeOMa8FDYZATEw _zYYyUDKFEeOMa8FDYZATEw _GhKaADKGEeOMa8FDYZATEw _3uSJoDKHEeOMa8FDYZATEw _IDCxkDKIEeOMa8FDYZATEw _LimBoDKIEeOMa8FDYZATEw _Sqq3kDKIEeOMa8FDYZATEw _U6ovEDKIEeOMa8FDYZATEw _ej2FADKIEeOMa8FDYZATEw _ktXA8DKIEeOMa8FDYZATEw" edge="_burLoDKEEeOMa8FDYZATEw _burLoTKEEeOMa8FDYZATEw _burLvzKEEeOMa8FDYZATEw _burLkzKEEeOMa8FDYZATEw _burLqjKEEeOMa8FDYZATEw _burLmzKEEeOMa8FDYZATEw _burLsjKEEeOMa8FDYZATEw _burLwzKEEeOMa8FDYZATEw _burLzzKEEeOMa8FDYZATEw _burL0DKEEeOMa8FDYZATEw _4NjKcDKFEeOMa8FDYZATEw _4YTo8DKFEeOMa8FDYZATEw _5YsH4DKFEeOMa8FDYZATEw _5hdpYDKFEeOMa8FDYZATEw _6e4T4DKFEeOMa8FDYZATEw _6tKAcDKFEeOMa8FDYZATEw _7eIKYDKFEeOMa8FDYZATEw _7vN6YDKFEeOMa8FDYZATEw __HW64DKFEeOMa8FDYZATEw __ntO4DKFEeOMa8FDYZATEw _LOMJ0DKGEeOMa8FDYZATEw _L0fU0DKGEeOMa8FDYZATEw _7UI2ADKHEeOMa8FDYZATEw _7hG7ADKHEeOMa8FDYZATEw _9LsNgDKHEeOMa8FDYZATEw _9LsNgTKHEeOMa8FDYZATEw _95JwcDKHEeOMa8FDYZATEw _95KXgDKHEeOMa8FDYZATEw _EQVU8DKIEeOMa8FDYZATEw _IDHDADKIEeOMa8FDYZATEw _LipsADKIEeOMa8FDYZATEw _Squh8DKIEeOMa8FDYZATEw _Tb0AoDKIEeOMa8FDYZATEw _U6uOoDKIEeOMa8FDYZATEw _VQd1IDKIEeOMa8FDYZATEw _WshjcDKIEeOMa8FDYZATEw _XfLIYDKIEeOMa8FDYZATEw _YuI14DKIEeOMa8FDYZATEw _ZV0g8DKIEeOMa8FDYZATEw _ccCD8DKIEeOMa8FDYZATEw _dVjF4DKIEeOMa8FDYZATEw _ej6WcDKIEeOMa8FDYZATEw _fTxtIDKIEeOMa8FDYZATEw _ktbSYDKIEeOMa8FDYZATEw _lC2IwDKIEeOMa8FDYZATEw _mkloUDKIEeOMa8FDYZATEw _nyuPYDKIEeOMa8FDYZATEw _p9kWUDKIEeOMa8FDYZATEw _qJeEUDKIEeOMa8FDYZATEw _sgipYDKIEeOMa8FDYZATEw _sp_gUDKIEeOMa8FDYZATEw _bMVhMDKJEeOMa8FDYZATEw"/>
@@ -1224,7 +1224,7 @@
       <typedModel href="../../de.uni_paderborn.fujaba.simulink.m2m/tgg/fujaba2simulink.tgg#_NK6IcJzXEeCxo-rGjpVr5g"/>
     </domain>
     <constraint xsi:type="de.upb.swt.qvt.tgg:OCLConstraint" xmi:id="_burL1jKEEeOMa8FDYZATEw" slotNode="_burLujKEEeOMa8FDYZATEw" expression="scStateReg.outgoingTransitions->size()">
-      <slotAttribute href="de.uni_paderborn.fujaba.simulink#//stateflow/Transition/priority"/>
+      <slotAttribute href="http://www.muml.org/simulink/1.0.0#//stateflow/Transition/priority"/>
     </constraint>
   </rule>
   <rule xsi:type="de.upb.swt.qvt.tgg:TripleGraphGrammarRule" xmi:id="_QNu24DKPEeOMa8FDYZATEw" name="scPortStatechart2sfEnabledConstantExclusive">
@@ -1236,12 +1236,12 @@
     </node>
     <node xmi:id="_QNu26DKPEeOMa8FDYZATEw" name="sfParallelState" incomingEdge="_zGovcDKPEeOMa8FDYZATEw" graphPattern="_QNu27DKPEeOMa8FDYZATEw _QNu27TKPEeOMa8FDYZATEw _QNu28DKPEeOMa8FDYZATEw">
       <outgoingEdge xmi:id="_QNu26TKPEeOMa8FDYZATEw" targetNode="_QNu26jKPEeOMa8FDYZATEw" graphPattern="_QNu27TKPEeOMa8FDYZATEw">
-        <typeReference href="de.uni_paderborn.fujaba.simulink#//stateflow/State/constant"/>
+        <typeReference href="http://www.muml.org/simulink/1.0.0#//stateflow/State/constant"/>
       </outgoingEdge>
-      <eType href="de.uni_paderborn.fujaba.simulink#//stateflow/State"/>
+      <eType href="http://www.muml.org/simulink/1.0.0#//stateflow/State"/>
     </node>
     <node xmi:id="_QNu26jKPEeOMa8FDYZATEw" name="sfEnabledConst" incomingEdge="_QNu26TKPEeOMa8FDYZATEw" graphPattern="_QNu27TKPEeOMa8FDYZATEw _QNu28DKPEeOMa8FDYZATEw">
-      <eType href="de.uni_paderborn.fujaba.simulink#//stateflow/Data"/>
+      <eType href="http://www.muml.org/simulink/1.0.0#//stateflow/Data"/>
     </node>
     <node xmi:id="_QNu26zKPEeOMa8FDYZATEw" name="scDetails" incomingEdge="_QNu24jKPEeOMa8FDYZATEw" graphPattern="_QNu27jKPEeOMa8FDYZATEw">
       <eType href="http://www.eclipse.org/emf/2002/Ecore#//EStringToStringMapEntry"/>
@@ -1295,36 +1295,36 @@
     </constraint>
     <constraint xsi:type="de.upb.swt.qvt.tgg:OCLConstraint" xmi:id="_QNu28jKPEeOMa8FDYZATEw" expression="not(sfParallelState.constant ->exists(v|v.name = '_region_enabled'))"/>
     <constraint xsi:type="de.upb.swt.qvt.tgg:OCLConstraint" xmi:id="_QNu28zKPEeOMa8FDYZATEw" slotNode="_QNu26jKPEeOMa8FDYZATEw" expression="'_region_enabled'">
-      <slotAttribute href="de.uni_paderborn.fujaba.simulink#//stateflow/Data/name"/>
+      <slotAttribute href="http://www.muml.org/simulink/1.0.0#//stateflow/Data/name"/>
     </constraint>
     <constraint xsi:type="de.upb.swt.qvt.tgg:OCLConstraint" xmi:id="_QNu29DKPEeOMa8FDYZATEw" slotNode="_QNu26jKPEeOMa8FDYZATEw" expression="scDetails.value">
-      <slotAttribute href="de.uni_paderborn.fujaba.simulink#//stateflow/Data/value"/>
+      <slotAttribute href="http://www.muml.org/simulink/1.0.0#//stateflow/Data/value"/>
     </constraint>
     <constraint xsi:type="de.upb.swt.qvt.tgg:OCLConstraint" xmi:id="_QNu29TKPEeOMa8FDYZATEw" slotNode="_QNu26zKPEeOMa8FDYZATEw" expression="'portInCIC'">
       <slotAttribute href="http://www.eclipse.org/emf/2002/Ecore#//EStringToStringMapEntry/key"/>
     </constraint>
     <constraint xsi:type="de.upb.swt.qvt.tgg:OCLConstraint" xmi:id="_QNu29jKPEeOMa8FDYZATEw" slotNode="_QNu26jKPEeOMa8FDYZATEw" expression="model::DataType::BOOLEAN">
-      <slotAttribute href="de.uni_paderborn.fujaba.simulink#//stateflow/Data/type"/>
+      <slotAttribute href="http://www.muml.org/simulink/1.0.0#//stateflow/Data/type"/>
     </constraint>
   </rule>
   <rule xsi:type="de.upb.swt.qvt.tgg:TripleGraphGrammarRule" xmi:id="_FaCY4DKREeOMa8FDYZATEw" name="scPortStatechart2sfInitialStateExclusive">
     <node xmi:id="_FaCY5jKREeOMa8FDYZATEw" name="sfParallelState" incomingEdge="_FaCY6TKREeOMa8FDYZATEw _WUnDoDKREeOMa8FDYZATEw" graphPattern="_FaCY7TKREeOMa8FDYZATEw _FaCY7jKREeOMa8FDYZATEw _FaCY8TKREeOMa8FDYZATEw">
       <outgoingEdge xmi:id="_FaCY5zKREeOMa8FDYZATEw" targetNode="_FaCY6DKREeOMa8FDYZATEw" graphPattern="_FaCY7jKREeOMa8FDYZATEw">
-        <typeReference href="de.uni_paderborn.fujaba.simulink#//stateflow/State/nodes"/>
+        <typeReference href="http://www.muml.org/simulink/1.0.0#//stateflow/State/nodes"/>
       </outgoingEdge>
-      <eType href="de.uni_paderborn.fujaba.simulink#//stateflow/State"/>
+      <eType href="http://www.muml.org/simulink/1.0.0#//stateflow/State"/>
     </node>
     <node xmi:id="_FaCY6DKREeOMa8FDYZATEw" name="sfState" incomingEdge="_FaCY5zKREeOMa8FDYZATEw" graphPattern="_FaCY7jKREeOMa8FDYZATEw _FaCY8TKREeOMa8FDYZATEw">
       <outgoingEdge xmi:id="_FaCY6TKREeOMa8FDYZATEw" targetNode="_FaCY5jKREeOMa8FDYZATEw" graphPattern="_FaCY7jKREeOMa8FDYZATEw">
-        <typeReference href="de.uni_paderborn.fujaba.simulink#//stateflow/Node/parent"/>
+        <typeReference href="http://www.muml.org/simulink/1.0.0#//stateflow/Node/parent"/>
       </outgoingEdge>
       <outgoingEdge xmi:id="_FaCY6jKREeOMa8FDYZATEw" targetNode="_FaCY6zKREeOMa8FDYZATEw" graphPattern="_FaCY7jKREeOMa8FDYZATEw">
-        <typeReference href="de.uni_paderborn.fujaba.simulink#//stateflow/State/initial_guard"/>
+        <typeReference href="http://www.muml.org/simulink/1.0.0#//stateflow/State/initial_guard"/>
       </outgoingEdge>
-      <eType href="de.uni_paderborn.fujaba.simulink#//stateflow/State"/>
+      <eType href="http://www.muml.org/simulink/1.0.0#//stateflow/State"/>
     </node>
     <node xmi:id="_FaCY6zKREeOMa8FDYZATEw" name="sfInitialGuard" incomingEdge="_FaCY6jKREeOMa8FDYZATEw" graphPattern="_FaCY7jKREeOMa8FDYZATEw _FaCY8TKREeOMa8FDYZATEw">
-      <eType href="de.uni_paderborn.fujaba.simulink#//stateflow/Action"/>
+      <eType href="http://www.muml.org/simulink/1.0.0#//stateflow/Action"/>
     </node>
     <node xmi:id="_FaCY7DKREeOMa8FDYZATEw" name="scAnnotation" incomingEdge="_bml6oDKREeOMa8FDYZATEw" graphPattern="_FaCY7zKREeOMa8FDYZATEw">
       <eType href="http://www.eclipse.org/emf/2002/Ecore#//EAnnotation"/>
@@ -1377,13 +1377,13 @@
       <slotAttribute href="http://www.eclipse.org/emf/2002/Ecore#//EAnnotation/source"/>
     </constraint>
     <constraint xsi:type="de.upb.swt.qvt.tgg:OCLConstraint" xmi:id="_FaCY8zKREeOMa8FDYZATEw" slotNode="_FaCY6zKREeOMa8FDYZATEw" expression="'_region_enabled == false'">
-      <slotAttribute href="de.uni_paderborn.fujaba.simulink#//stateflow/Action/expression"/>
+      <slotAttribute href="http://www.muml.org/simulink/1.0.0#//stateflow/Action/expression"/>
     </constraint>
     <constraint xsi:type="de.upb.swt.qvt.tgg:OCLConstraint" xmi:id="_FaCY9DKREeOMa8FDYZATEw" slotNode="_FaCY6DKREeOMa8FDYZATEw" expression="'_region_inactive'">
-      <slotAttribute href="de.uni_paderborn.fujaba.simulink#//stateflow/State/name"/>
+      <slotAttribute href="http://www.muml.org/simulink/1.0.0#//stateflow/State/name"/>
     </constraint>
     <constraint xsi:type="de.upb.swt.qvt.tgg:OCLConstraint" xmi:id="_FaCY9TKREeOMa8FDYZATEw" slotNode="_FaCY6DKREeOMa8FDYZATEw" expression="true">
-      <slotAttribute href="de.uni_paderborn.fujaba.simulink#//stateflow/State/initial"/>
+      <slotAttribute href="http://www.muml.org/simulink/1.0.0#//stateflow/State/initial"/>
     </constraint>
     <constraint xsi:type="de.upb.swt.qvt.tgg:OCLConstraint" xmi:id="_FaCY9jKREeOMa8FDYZATEw" expression="not(sfParallelState.nodes.oclAsType(stateflow::State) ->exists(v|v.name = '_region_inactive'))"/>
   </rule>
@@ -1408,15 +1408,15 @@
     </node>
     <node xmi:id="_wiuA0DS2EeOZ4cmbJlkOfg" incomingEdge="_wiy5UDS2EeOZ4cmbJlkOfg" graphPattern="_mDgz6DSyEeO2FajGvdeGtw _mDgz5zSyEeO2FajGvdeGtw _mDgz6TSyEeO2FajGvdeGtw">
       <outgoingEdge xmi:id="_ytKfIDS2EeOZ4cmbJlkOfg" targetNode="_ytDKYDS2EeOZ4cmbJlkOfg" graphPattern="_mDgz6DSyEeO2FajGvdeGtw _mDgz5zSyEeO2FajGvdeGtw">
-        <typeReference href="de.uni_paderborn.fujaba.simulink#//LibraryReference/sourceBlock"/>
+        <typeReference href="http://www.muml.org/simulink/1.0.0#//LibraryReference/sourceBlock"/>
       </outgoingEdge>
-      <eType href="de.uni_paderborn.fujaba.simulink#//LibraryReference"/>
+      <eType href="http://www.muml.org/simulink/1.0.0#//LibraryReference"/>
     </node>
     <node xmi:id="_ytDKYDS2EeOZ4cmbJlkOfg" name="subSys" incomingEdge="_ytKfIDS2EeOZ4cmbJlkOfg _8zX6IDS2EeOZ4cmbJlkOfg" graphPattern="_mDgz6DSyEeO2FajGvdeGtw _mDgz5zSyEeO2FajGvdeGtw _mDgz6TSyEeO2FajGvdeGtw">
       <outgoingEdge xmi:id="_8UuPQDS2EeOZ4cmbJlkOfg" targetNode="_8UpWwDS2EeOZ4cmbJlkOfg" graphPattern="_mDgz6DSyEeO2FajGvdeGtw">
-        <typeReference href="de.uni_paderborn.fujaba.simulink#//Block/inPorts"/>
+        <typeReference href="http://www.muml.org/simulink/1.0.0#//Block/inPorts"/>
       </outgoingEdge>
-      <eType href="de.uni_paderborn.fujaba.simulink#//SubSystem"/>
+      <eType href="http://www.muml.org/simulink/1.0.0#//SubSystem"/>
     </node>
     <node xmi:id="_15zaQDS2EeOZ4cmbJlkOfg" incomingEdge="_15450DS2EeOZ4cmbJlkOfg" graphPattern="_mDgz6DSyEeO2FajGvdeGtw _mDgz5zSyEeO2FajGvdeGtw _mDgz6zSyEeO2FajGvdeGtw">
       <outgoingEdge xmi:id="_jSkO0DS1EeOZ4cmbJlkOfg" targetNode="_jSJ_IDS1EeOZ4cmbJlkOfg" graphPattern="_mDgz6DSyEeO2FajGvdeGtw">
@@ -1426,9 +1426,9 @@
     </node>
     <node xmi:id="_8UpWwDS2EeOZ4cmbJlkOfg" incomingEdge="_8UuPQDS2EeOZ4cmbJlkOfg" graphPattern="_mDgz6DSyEeO2FajGvdeGtw _mDgz6TSyEeO2FajGvdeGtw">
       <outgoingEdge xmi:id="_8zX6IDS2EeOZ4cmbJlkOfg" targetNode="_ytDKYDS2EeOZ4cmbJlkOfg" graphPattern="_mDgz6DSyEeO2FajGvdeGtw">
-        <typeReference href="de.uni_paderborn.fujaba.simulink#//InPortBlock/block"/>
+        <typeReference href="http://www.muml.org/simulink/1.0.0#//InPortBlock/block"/>
       </outgoingEdge>
-      <eType href="de.uni_paderborn.fujaba.simulink#//EnablePort"/>
+      <eType href="http://www.muml.org/simulink/1.0.0#//EnablePort"/>
     </node>
     <leftGraphPattern xmi:id="_mDgz5zSyEeO2FajGvdeGtw" node="_plRtkDS2EeOZ4cmbJlkOfg _wiuA0DS2EeOZ4cmbJlkOfg _ytDKYDS2EeOZ4cmbJlkOfg _15zaQDS2EeOZ4cmbJlkOfg" edge="_wiy5UDS2EeOZ4cmbJlkOfg _ytKfIDS2EeOZ4cmbJlkOfg _15450DS2EeOZ4cmbJlkOfg"/>
     <rightGraphPattern xmi:id="_mDgz6DSyEeO2FajGvdeGtw" node="_jSJ_IDS1EeOZ4cmbJlkOfg _lQoeADS1EeOZ4cmbJlkOfg _plRtkDS2EeOZ4cmbJlkOfg _wiuA0DS2EeOZ4cmbJlkOfg _ytDKYDS2EeOZ4cmbJlkOfg _15zaQDS2EeOZ4cmbJlkOfg _8UpWwDS2EeOZ4cmbJlkOfg" edge="_jSkO0DS1EeOZ4cmbJlkOfg _lQt9kDS1EeOZ4cmbJlkOfg _wiy5UDS2EeOZ4cmbJlkOfg _ytKfIDS2EeOZ4cmbJlkOfg _15450DS2EeOZ4cmbJlkOfg _8UuPQDS2EeOZ4cmbJlkOfg _8zX6IDS2EeOZ4cmbJlkOfg"/>
@@ -1461,9 +1461,9 @@
     </node>
     <node xmi:id="_ltfmsDcGEeOB1-JFijdexw" incomingEdge="_ltkfMDcGEeOB1-JFijdexw" graphPattern="_h0KksTcGEeOB1-JFijdexw _h0KksDcGEeOB1-JFijdexw _en5dADcGEeOB1-JFijdexw">
       <outgoingEdge xmi:id="_vcgCoDcGEeOB1-JFijdexw" targetNode="_vcbKIDcGEeOB1-JFijdexw" graphPattern="_h0KksTcGEeOB1-JFijdexw">
-        <typeReference href="de.uni_paderborn.fujaba.simulink#//Element/parameters"/>
+        <typeReference href="http://www.muml.org/simulink/1.0.0#//Element/parameters"/>
       </outgoingEdge>
-      <eType href="de.uni_paderborn.fujaba.simulink#//Line"/>
+      <eType href="http://www.muml.org/simulink/1.0.0#//Line"/>
     </node>
     <node xmi:id="_n30JMDcGEeOB1-JFijdexw" incomingEdge="_n34aoDcGEeOB1-JFijdexw" graphPattern="_h0KksTcGEeOB1-JFijdexw _h0KksDcGEeOB1-JFijdexw _c0BEkDcGEeOB1-JFijdexw">
       <outgoingEdge xmi:id="_Db4iMDcHEeOB1-JFijdexw" targetNode="_DbybkDcHEeOB1-JFijdexw" graphPattern="_h0KksTcGEeOB1-JFijdexw">
@@ -1472,7 +1472,7 @@
       <eType href="http://www.muml.org/pim/instance/1.0.0#//DelegationConnectorInstance"/>
     </node>
     <node xmi:id="_vcbKIDcGEeOB1-JFijdexw" incomingEdge="_vcgCoDcGEeOB1-JFijdexw" graphPattern="_h0KksTcGEeOB1-JFijdexw _en5dADcGEeOB1-JFijdexw">
-      <eType href="de.uni_paderborn.fujaba.simulink#//Parameter"/>
+      <eType href="http://www.muml.org/simulink/1.0.0#//Parameter"/>
     </node>
     <node xmi:id="_DbybkDcHEeOB1-JFijdexw" incomingEdge="_Db4iMDcHEeOB1-JFijdexw" graphPattern="_h0KksTcGEeOB1-JFijdexw _c0BEkDcGEeOB1-JFijdexw">
       <outgoingEdge xmi:id="_Q5PfMDcHEeOB1-JFijdexw" targetNode="_Q5IxgDcHEeOB1-JFijdexw" graphPattern="_h0KksTcGEeOB1-JFijdexw">
@@ -1495,10 +1495,10 @@
       <typedModel href="../../de.uni_paderborn.fujaba.simulink.m2m/tgg/fujaba2simulink.tgg#_NK6IcJzXEeCxo-rGjpVr5g"/>
     </domain>
     <constraint xsi:type="de.upb.swt.qvt.tgg:OCLConstraint" xmi:id="_xhcV4DcGEeOB1-JFijdexw" slotNode="_vcbKIDcGEeOB1-JFijdexw" expression="multilineindex.key">
-      <slotAttribute href="de.uni_paderborn.fujaba.simulink#//Parameter/name"/>
+      <slotAttribute href="http://www.muml.org/simulink/1.0.0#//Parameter/name"/>
     </constraint>
     <constraint xsi:type="de.upb.swt.qvt.tgg:OCLConstraint" xmi:id="_3xmsYDcGEeOB1-JFijdexw" slotNode="_vcbKIDcGEeOB1-JFijdexw" expression="multilineindex.value">
-      <slotAttribute href="de.uni_paderborn.fujaba.simulink#//Parameter/value"/>
+      <slotAttribute href="http://www.muml.org/simulink/1.0.0#//Parameter/value"/>
     </constraint>
     <constraint xsi:type="de.upb.swt.qvt.tgg:OCLConstraint" xmi:id="_E55YUDcHEeOB1-JFijdexw" slotNode="_DbybkDcHEeOB1-JFijdexw" expression="'Reconfiguration'">
       <slotAttribute href="http://www.eclipse.org/emf/2002/Ecore#//EAnnotation/source"/>
@@ -1510,12 +1510,12 @@
   <rule xsi:type="de.upb.swt.qvt.tgg:TripleGraphGrammarRule" xmi:id="_2J_noFRNEeOfSIp-QrYk8Q" name="assemblyAnnotation2lineParameter">
     <node xmi:id="_2J_npFRNEeOfSIp-QrYk8Q" incomingEdge="_LNGOAFROEeOfSIp-QrYk8Q" graphPattern="_2J_nrVRNEeOfSIp-QrYk8Q _2J_nrFRNEeOfSIp-QrYk8Q _2J_nsFRNEeOfSIp-QrYk8Q">
       <outgoingEdge xmi:id="_2J_npVRNEeOfSIp-QrYk8Q" targetNode="_2J_nqFRNEeOfSIp-QrYk8Q" graphPattern="_2J_nrVRNEeOfSIp-QrYk8Q">
-        <typeReference href="de.uni_paderborn.fujaba.simulink#//Element/parameters"/>
+        <typeReference href="http://www.muml.org/simulink/1.0.0#//Element/parameters"/>
       </outgoingEdge>
-      <eType href="de.uni_paderborn.fujaba.simulink#//Line"/>
+      <eType href="http://www.muml.org/simulink/1.0.0#//Line"/>
     </node>
     <node xmi:id="_2J_nqFRNEeOfSIp-QrYk8Q" incomingEdge="_2J_npVRNEeOfSIp-QrYk8Q" graphPattern="_2J_nrVRNEeOfSIp-QrYk8Q _2J_nsFRNEeOfSIp-QrYk8Q">
-      <eType href="de.uni_paderborn.fujaba.simulink#//Parameter"/>
+      <eType href="http://www.muml.org/simulink/1.0.0#//Parameter"/>
     </node>
     <node xmi:id="_2J_nqVRNEeOfSIp-QrYk8Q" incomingEdge="_2J_np1RNEeOfSIp-QrYk8Q" graphPattern="_2J_nrVRNEeOfSIp-QrYk8Q _2J_nrlRNEeOfSIp-QrYk8Q">
       <outgoingEdge xmi:id="_2J_nqlRNEeOfSIp-QrYk8Q" targetNode="_2J_nq1RNEeOfSIp-QrYk8Q" graphPattern="_2J_nrVRNEeOfSIp-QrYk8Q">
@@ -1553,10 +1553,10 @@
       <typedModel href="../../de.uni_paderborn.fujaba.simulink.m2m/tgg/fujaba2simulink.tgg#_NK6IcJzXEeCxo-rGjpVr5g"/>
     </domain>
     <constraint xsi:type="de.upb.swt.qvt.tgg:OCLConstraint" xmi:id="_2J_nsVRNEeOfSIp-QrYk8Q" slotNode="_2J_nqFRNEeOfSIp-QrYk8Q" expression="multilineindex.key">
-      <slotAttribute href="de.uni_paderborn.fujaba.simulink#//Parameter/name"/>
+      <slotAttribute href="http://www.muml.org/simulink/1.0.0#//Parameter/name"/>
     </constraint>
     <constraint xsi:type="de.upb.swt.qvt.tgg:OCLConstraint" xmi:id="_2J_nslRNEeOfSIp-QrYk8Q" slotNode="_2J_nqFRNEeOfSIp-QrYk8Q" expression="multilineindex.value">
-      <slotAttribute href="de.uni_paderborn.fujaba.simulink#//Parameter/value"/>
+      <slotAttribute href="http://www.muml.org/simulink/1.0.0#//Parameter/value"/>
     </constraint>
     <constraint xsi:type="de.upb.swt.qvt.tgg:OCLConstraint" xmi:id="_2J_ns1RNEeOfSIp-QrYk8Q" slotNode="_2J_nqVRNEeOfSIp-QrYk8Q" expression="'Reconfiguration'">
       <slotAttribute href="http://www.eclipse.org/emf/2002/Ecore#//EAnnotation/source"/>

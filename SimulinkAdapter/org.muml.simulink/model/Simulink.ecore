@@ -427,7 +427,7 @@
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
           defaultValueLiteral="[1 1; 2 1]"/>
     </eClassifiers>
-    <eSubpackages name="buffer" nsURI="de.uni_paderborn.fujaba.simulink.model.msglib.buffer"
+    <eSubpackages name="buffer" nsURI="http://www.muml.org/simulink/msglib/buffer/1.0.0"
         nsPrefix="buffer">
       <eClassifiers xsi:type="ecore:EClass" name="Enqueue" eSuperTypes="#//msglib/buffer/BufferFunction"/>
       <eClassifiers xsi:type="ecore:EClass" name="Dequeue" eSuperTypes="#//msglib/buffer/BufferFunction"/>

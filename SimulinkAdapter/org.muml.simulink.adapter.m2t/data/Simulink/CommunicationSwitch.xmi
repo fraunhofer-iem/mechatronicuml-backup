@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ASCII"?>
-<model:SimulinkContainer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="de.uni_paderborn.fujaba.simulink" id="_rWygIJhtEeGVzsCBdc_15A">
+<model:SimulinkContainer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://www.muml.org/simulink/1.0.0" id="_rWygIJhtEeGVzsCBdc_15A">
   <libraries id="_rY-4gJhtEeGVzsCBdc_15A" name="CommunicationSwitch">
     <blocks xsi:type="model:SubSystem" id="_rgBUoJhtEeGVzsCBdc_15A" name="CommunicationSwitch">
       <parameters name="System.Location" value="[559, 228, 1057, 528]"/>
