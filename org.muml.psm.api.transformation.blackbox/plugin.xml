@@ -13,7 +13,7 @@
                   nsURI="http://www.muml.org/pim/valuetype/1.0.0">
             </metamodel>
             <metamodel
-                  nsURI="http://www.storydriven.org/core/expressions/0.3.1">
+                  nsURI="http://www.muml.org/core/expressions/1.0.0">
             </metamodel>
          </library>
       </unit>
