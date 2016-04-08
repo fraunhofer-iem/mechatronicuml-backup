@@ -11,11 +11,11 @@ modeltype InstancePackage uses muml::instance('http://www.muml.org/pim/1.0.0');
 modeltype ModelInstance uses modelinstance('http://www.muml.org/core/modelinstance/1.0.0');
 modeltype Actionlanguage uses actionlanguage('http://www.muml.org/pim/actionlanguage/1.0.0');
 
-modeltype PSM uses psm('http://www.fujaba.de/muml/psm/0.4.0/');
-modeltype Allocation uses psm::allocation('http://www.fujaba.de/muml/psm/0.4.0/');
-modeltype Codegen uses psm::codegen('http://www.fujaba.de/muml/psm/0.4.0/');
-modeltype PortMappingModel uses psm::portapimapping('http://www.fujaba.de/muml/psm/0.4.0/');
-modeltype ApiExpessions uses psm::apiexpressions('http://www.fujaba.de/muml/psm/0.4.0/');
+modeltype PSM uses psm('http://www.muml.org/psm/1.0.0');
+modeltype Allocation uses psm::allocation('http://www.muml.org/psm/1.0.0');
+modeltype Codegen uses psm::codegen('http://www.muml.org/psm/1.0.0');
+modeltype PortMappingModel uses psm::portapimapping('http://www.muml.org/psm/1.0.0');
+modeltype ApiExpessions uses psm::apiexpressions('http://www.muml.org/psm/1.0.0');
 
 modeltype SoftPlattform uses swplatform('http://www.fujaba.de/muml/swplatform/0.4.0/');
 modeltype Hardware uses hardware('http://www.fujaba.de/muml/hardware/1.1/');
