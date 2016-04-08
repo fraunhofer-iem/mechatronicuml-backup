@@ -12,7 +12,7 @@
   <mapping sourceURI="http://www.muml.org/core/modelinstance/1.0.0" targetURI="platform:/resource/org.muml.core.modelinstance/model/modelinstance.ecore"/>
   <mapping sourceURI="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl" targetURI="platform:/resource/de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl/model/Mtctl.ecore"/>
   <mapping sourceURI="http://www.uni-paderborn.de/requirements/0.4.0" targetURI="platform:/resource/de.uni_paderborn.uppaal.requirements/model/requirements.ecore"/>
-  <mapping sourceURI="http://www.fujaba.de/reachabilityGraph/cic/0.4.0" targetURI="platform:/resource/de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.cic/model/CICReachabilityGraph.ecore"/>
+  <mapping sourceURI="http://www.muml.org/verification/core/reachanalysis/reachabilitygraph/cic/1.0.0" targetURI="platform:/resource/de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.cic/model/CICReachabilityGraph.ecore"/>
   <mapping sourceURI="http://www.muml.org/pim/instance/1.0.0" targetURI="platform:/resource/org.muml.pim/model/pim.ecore"/>
   <mapping sourceURI="http://www.muml.org/pim/constraint/1.0.0" targetURI="platform:/resource/org.muml.pim/model/pim.ecore"/>
   <mapping sourceURI="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Quantifiers" targetURI="platform:/resource/de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl/model/Mtctl.ecore"/>
