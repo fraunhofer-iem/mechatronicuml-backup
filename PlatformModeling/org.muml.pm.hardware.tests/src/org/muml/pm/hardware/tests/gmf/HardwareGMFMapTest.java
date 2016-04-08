@@ -35,7 +35,7 @@ public class HardwareGMFMapTest extends GMFMapTest {
 		List<Object[]> mappingModels = new ArrayList<Object[]>();
 		mappingModels.add(new Object[] { "de.uni_paderborn.fujaba.muml.hardware.resource.diagram/model/resource.gmfmap" });
 		mappingModels.add(new Object[] { "org.muml.pm.hardware.resourceinstance.diagram/model/resourceinstance.gmfmap" });
-		mappingModels.add(new Object[] { "de.uni_paderborn.fujaba.muml.hardware.platform.diagram/model/platform.gmfmap" });
+		mappingModels.add(new Object[] { "org.muml.pm.hardware.platform.diagram/model/platform.gmfmap" });
 		mappingModels.add(new Object[] { "de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram/model/platforminstance.gmfmap" });
 		return mappingModels;
 	}

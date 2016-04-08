@@ -234,12 +234,12 @@
                   xsi:type="gmfmap:ExpressionLabelMapping"
                   readOnly="true">
                 <diagramLabel
-                    href="../../de.uni_paderborn.fujaba.muml.hardware.platform.diagram/model/platform.gmfgraph#BridgeComment"/>
+                    href="../../org.muml.pm.hardware.platform.diagram/model/platform.gmfgraph#BridgeComment"/>
                 <viewExpression
                     body="'Bridge'"/>
               </labelMappings>
               <diagramNode
-                  href="../../de.uni_paderborn.fujaba.muml.hardware.platform.diagram/model/platform.gmfgraph#Bridge"/>
+                  href="../../org.muml.pm.hardware.platform.diagram/model/platform.gmfgraph#Bridge"/>
             </ownedChild>
           </children>
           <compartments
@@ -266,7 +266,7 @@
               href="../../org.muml.pm.hardware.common/model/hardwarecommon.gmfgraph#HWPort"/>
         </ownedChild>
         <referencedChild
-            href="../../de.uni_paderborn.fujaba.muml.hardware.platform.diagram/model/platform.gmfmap#//@nodes.0/@ownedChild/@children.3/@ownedChild"/>
+            href="../../org.muml.pm.hardware.platform.diagram/model/platform.gmfmap#//@nodes.0/@ownedChild/@children.3/@ownedChild"/>
       </children>
       <compartments
           children="//@nodes.0/@ownedChild/@children.0">
@@ -284,7 +284,7 @@
         xsi:type="gmftool:CreationTool"
         href="../../org.muml.pm.hardware.resourceinstance.diagram/model/resourceinstance.gmftool#//@palette/@tools.0/@tools.5"/>
     <diagramLink
-        href="../../de.uni_paderborn.fujaba.muml.hardware.platform.diagram/model/platform.gmfgraph#Link"/>
+        href="../../org.muml.pm.hardware.platform.diagram/model/platform.gmfgraph#Link"/>
     <sourceMetaFeature
         xsi:type="ecore:EReference"
         href="../../org.muml.pim/model/pim.ecore#//connector/ConnectorInstance/connectorEndpointInstances"/>
