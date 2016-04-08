@@ -4,7 +4,7 @@
     xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:actionlanguage="http://www.fujaba.de/muml/actionlanguage/0.4.0"
+    xmlns:actionlanguage="http://www.muml.org/pim/actionlanguage/1.0.0"
     xmlns:component="http://www.muml.org/pim/component/1.0.0"
     xmlns:instance="http://www.muml.org/pim/instance/1.0.0"
     xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.4.0"

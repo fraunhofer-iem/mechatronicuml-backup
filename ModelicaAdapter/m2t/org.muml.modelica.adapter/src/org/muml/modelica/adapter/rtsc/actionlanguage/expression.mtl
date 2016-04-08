@@ -1,5 +1,5 @@
 [module expression('http://www.storydriven.org/core/0.3.1',
-				   'http://www.fujaba.de/muml/actionlanguage/0.4.0',
+				   'http://www.muml.org/pim/actionlanguage/1.0.0',
 				   'http://www.muml.org/pim/behavior/1.0.0')]
 
 [import org::muml::modelica::adapter::rtsc::actionlanguage::expression_queries]

@@ -20,7 +20,7 @@ modeltype connector uses muml::connector("http://www.muml.org/pim/1.0.0");
 modeltype component uses muml::component("http://www.muml.org/pim/1.0.0");
 modeltype mumlbehavior uses pim::behavior('http://www.muml.org/pim/1.0.0');
 
-modeltype actionlanguage uses actionlanguage('http://www.fujaba.de/muml/actionlanguage/0.4.0');
+modeltype actionlanguage uses actionlanguage('http://www.muml.org/pim/actionlanguage/1.0.0');
 
 modeltype runtime uses runtime('http://www.fujaba.de/muml/runtime/0.4.0');
 

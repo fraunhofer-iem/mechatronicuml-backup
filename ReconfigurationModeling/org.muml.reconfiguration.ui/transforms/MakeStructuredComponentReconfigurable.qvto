@@ -19,7 +19,7 @@ modeltype realtimestatechart uses pim::realtimestatechart('http://www.muml.org/p
 modeltype types uses pim::types('http://www.muml.org/pim/1.0.0');
 modeltype valuetype uses pim::valuetype('http://www.muml.org/pim/1.0.0');
 
-modeltype actionlanguage uses actionlanguage('http://www.fujaba.de/muml/actionlanguage/0.4.0');
+modeltype actionlanguage uses actionlanguage('http://www.muml.org/pim/actionlanguage/1.0.0');
 modeltype reconf uses reconfiguration("http://www.fujaba.de/muml/reconfiguration/0.3.18");
 modeltype reconf_expressions uses reconfiguration::expression("http://www.fujaba.de/muml/reconfiguration/0.3.18");
 modeltype reconf_datatype uses reconfiguration::structdatatype("http://www.fujaba.de/muml/reconfiguration/0.3.18");

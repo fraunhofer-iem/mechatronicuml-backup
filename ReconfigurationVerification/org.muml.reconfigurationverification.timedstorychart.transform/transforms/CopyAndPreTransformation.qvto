@@ -13,7 +13,7 @@ modeltype datatypes uses pim::types('http://www.muml.org/pim/1.0.0');
 
 modeltype transformationHelper uses "http://www.fujaba.de/verification/timedstorychart/transform/helper/0.1.0";
 
-modeltype actionlanguage uses actionlanguage('http://www.fujaba.de/muml/actionlanguage/0.4.0');
+modeltype actionlanguage uses actionlanguage('http://www.muml.org/pim/actionlanguage/1.0.0');
 
 modeltype reconfigurationExpressions uses reconfiguration::expression('http://www.fujaba.de/muml/reconfiguration/0.3.18');
 

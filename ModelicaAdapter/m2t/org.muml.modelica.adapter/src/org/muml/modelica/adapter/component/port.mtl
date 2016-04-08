@@ -1,6 +1,6 @@
 [module port('http://www.muml.org/pim/behavior/1.0.0',
 				'http://www.storydriven.org/core/0.3.1',
-				'http://www.fujaba.de/muml/actionlanguage/0.4.0',
+				'http://www.muml.org/pim/actionlanguage/1.0.0',
 				'http://www.muml.org/pim/msgtype/1.0.0',
 				'http://www.muml.org/pim/types/1.0.0',
 				'http://www.fujaba.de/modelinstance/0.4.0',
