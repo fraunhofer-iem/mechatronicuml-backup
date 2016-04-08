@@ -282,7 +282,7 @@
    
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
       <?gmfgen generated="true"?>
-      <metamodel nsURI="http://de/uni_paderborn/fujaba/muml/testlanguage">
+      <metamodel nsURI="http://www.muml.org/testlanguage/1.0">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.testlanguage.diagram.TestCase_1000"
                name="%metatype.name.TestCase_1000"
@@ -292,7 +292,7 @@
             <param name="semanticHint" value="1000"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://de/uni_paderborn/fujaba/muml/testlanguage">
+      <metamodel nsURI="http://www.muml.org/testlanguage/1.0">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.testlanguage.diagram.Node_2001"
                name="%metatype.name.Node_2001"
@@ -302,7 +302,7 @@
             <param name="semanticHint" value="2001"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://de/uni_paderborn/fujaba/muml/testlanguage">
+      <metamodel nsURI="http://www.muml.org/testlanguage/1.0">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.testlanguage.diagram.Input_3001"
                name="%metatype.name.Input_3001"
@@ -312,7 +312,7 @@
             <param name="semanticHint" value="3001"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://de/uni_paderborn/fujaba/muml/testlanguage">
+      <metamodel nsURI="http://www.muml.org/testlanguage/1.0">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.testlanguage.diagram.Output_3002"
                name="%metatype.name.Output_3002"
@@ -322,7 +322,7 @@
             <param name="semanticHint" value="3002"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://de/uni_paderborn/fujaba/muml/testlanguage">
+      <metamodel nsURI="http://www.muml.org/testlanguage/1.0">
          <specializationType
                id="de.uni_paderborn.fujaba.muml.testlanguage.diagram.OutputTargets_4001"
                name="%metatype.name.OutputTargets_4001"

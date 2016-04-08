@@ -5,7 +5,7 @@
     xmlns:trace="http://www.eclipse.org/gmf/2006/Trace">
   <nodeTraces
       visualID="2001"
-      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://de/uni_paderborn/fujaba/muml/testlanguage' and _eClass_.name = 'Node') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://de/uni_paderborn/fujaba/muml/testlanguage' and _eClass_.name = 'TestCase') and _containmentMF_.name = 'nodes')">
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/testlanguage/1.0' and _eClass_.name = 'Node') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/testlanguage/1.0' and _eClass_.name = 'TestCase') and _containmentMF_.name = 'nodes')">
     <nodeLabelTraces
         visualID="5003"
         queryText="true"/>
@@ -15,19 +15,19 @@
   </nodeTraces>
   <childNodeTraces
       visualID="3001"
-      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://de/uni_paderborn/fujaba/muml/testlanguage' and _eClass_.name = 'Input') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://de/uni_paderborn/fujaba/muml/testlanguage' and _eClass_.name = 'Node') and _containmentMF_.name = 'inputs')">
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/testlanguage/1.0' and _eClass_.name = 'Input') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/testlanguage/1.0' and _eClass_.name = 'Node') and _containmentMF_.name = 'inputs')">
     <nodeLabelTraces
         visualID="5001"
         queryText="true"/>
   </childNodeTraces>
   <childNodeTraces
       visualID="3002"
-      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://de/uni_paderborn/fujaba/muml/testlanguage' and _eClass_.name = 'Output') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://de/uni_paderborn/fujaba/muml/testlanguage' and _eClass_.name = 'Node') and _containmentMF_.name = 'outputs')">
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/testlanguage/1.0' and _eClass_.name = 'Output') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/testlanguage/1.0' and _eClass_.name = 'Node') and _containmentMF_.name = 'outputs')">
     <nodeLabelTraces
         visualID="5002"
         queryText="true"/>
   </childNodeTraces>
   <linkTraces
       visualID="4001"
-      queryText="modelFacet.oclIsKindOf(gmfgen::FeatureLinkModelFacet) and (let _feature_:ecore::EStructuralFeature = modelFacet.oclAsType(gmfgen::FeatureLinkModelFacet).metaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _feature_.eContainingClass in _eClass_.ePackage.nsURI = 'http://de/uni_paderborn/fujaba/muml/testlanguage' and _eClass_.name = 'Output') and _feature_.name = 'targets')"/>
+      queryText="modelFacet.oclIsKindOf(gmfgen::FeatureLinkModelFacet) and (let _feature_:ecore::EStructuralFeature = modelFacet.oclAsType(gmfgen::FeatureLinkModelFacet).metaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _feature_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.muml.org/testlanguage/1.0' and _eClass_.name = 'Output') and _feature_.name = 'targets')"/>
 </trace:TraceModel>

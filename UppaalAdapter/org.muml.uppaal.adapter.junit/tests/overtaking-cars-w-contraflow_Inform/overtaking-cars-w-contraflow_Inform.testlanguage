@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<de.uni_paderborn.fujaba.muml.testlanguage:TestCase xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.uni_paderborn.fujaba.muml.testlanguage="http://de/uni_paderborn/fujaba/muml/testlanguage" xmlns:de.uni_paderborn.fujaba.muml.testlanguage.specification="http://de/uni_paderborn/fujaba/muml/testlanguage/specification">
+<de.uni_paderborn.fujaba.muml.testlanguage:TestCase xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.uni_paderborn.fujaba.muml.testlanguage="http://www.muml.org/testlanguage/1.0" xmlns:de.uni_paderborn.fujaba.muml.testlanguage.specification="http://www.muml.org/testlanguage/specification/1.0">
   <nodes label="Load Model" specificationClassName="LoadModel">
     <outputs name="model" targets="//@nodes.1/@inputs[name='muml']"/>
     <specification xsi:type="de.uni_paderborn.fujaba.muml.testlanguage.specification:LoadModel" label="Load Model" uri="platform:/plugin/de.uni_paderborn.fujaba.muml.testlanguage.junit/tests/overtaking-cars-w-contraflow_Inform/overtaking-cars-w-contraflow_Correct.muml#_Oc_zEJ6WEeSB5YpXOU2UeA">

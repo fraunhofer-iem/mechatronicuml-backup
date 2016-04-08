@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.uni_paderborn.fujaba.muml.testlanguage="http://de/uni_paderborn/fujaba/muml/testlanguage" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_K8cckI7MEeWkJvX98oQNEw" type="TestLanguage" name="bebots_AllPositionsTransmission.testlanguage_diagram" measurementUnit="Pixel">
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.uni_paderborn.fujaba.muml.testlanguage="http://www.muml.org/testlanguage/1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_K8cckI7MEeWkJvX98oQNEw" type="TestLanguage" name="bebots_AllPositionsTransmission.testlanguage_diagram" measurementUnit="Pixel">
   <children xmi:type="notation:Node" xmi:id="_NL9BEI7MEeWkJvX98oQNEw" type="2001">
     <children xmi:type="notation:DecorationNode" xmi:id="_NL-PMI7MEeWkJvX98oQNEw" type="5003"/>
     <children xmi:type="notation:DecorationNode" xmi:id="_NL-PMY7MEeWkJvX98oQNEw" type="7001">

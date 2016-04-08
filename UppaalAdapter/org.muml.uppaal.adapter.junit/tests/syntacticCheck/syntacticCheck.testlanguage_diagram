@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.uni_paderborn.fujaba.muml.testlanguage="http://de/uni_paderborn/fujaba/muml/testlanguage" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_TgTbEFBZEeSiHuGUyT2t3Q" type="TestLanguage" name="syntacticCheck.testlanguage_diagram" measurementUnit="Pixel">
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.uni_paderborn.fujaba.muml.testlanguage="http://www.muml.org/testlanguage/1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_TgTbEFBZEeSiHuGUyT2t3Q" type="TestLanguage" name="syntacticCheck.testlanguage_diagram" measurementUnit="Pixel">
   <children xmi:type="notation:Node" xmi:id="_T9UHMFBZEeSiHuGUyT2t3Q" type="2001">
     <children xmi:type="notation:DecorationNode" xmi:id="_T9UHNVBZEeSiHuGUyT2t3Q" type="5003"/>
     <children xmi:type="notation:DecorationNode" xmi:id="_T9UHNlBZEeSiHuGUyT2t3Q" type="7001">

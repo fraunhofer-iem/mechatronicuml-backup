@@ -12,7 +12,7 @@
             cache="true"
             mode="Batch">
          <package
-               namespaceUri="http://de/uni_paderborn/fujaba/muml/testlanguage">
+               namespaceUri="http://www.muml.org/testlanguage/1.0">
          </package>
          <constraints
                categories="de.uni_paderborn.fujaba.muml.testlanguage.topologicalConstraints">
@@ -77,7 +77,7 @@
          point="org.eclipse.emf.validation.traversal">
       <traversalStrategy
             class="org.muml.testlanguage.custom.validation.TestLanguageTopologicalTraversalStrategy"
-            namespaceUri="http://de/uni_paderborn/fujaba/muml/testlanguage">
+            namespaceUri="http://www.muml.org/testlanguage/1.0">
       </traversalStrategy>
    </extension>
    <extension

@@ -79,19 +79,19 @@ public class TestLanguageNavigatorLabelProvider extends LabelProvider implements
 				.getVisualID(view)) {
 		case org.muml.testlanguage.diagram.edit.parts.TestCaseEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Diagram?http://de/uni_paderborn/fujaba/muml/testlanguage?TestCase", org.muml.testlanguage.diagram.providers.TestLanguageElementTypes.TestCase_1000); //$NON-NLS-1$
+					"Navigator?Diagram?http://www.muml.org/testlanguage/1.0?TestCase", org.muml.testlanguage.diagram.providers.TestLanguageElementTypes.TestCase_1000); //$NON-NLS-1$
 		case org.muml.testlanguage.diagram.edit.parts.NodeEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?TopLevelNode?http://de/uni_paderborn/fujaba/muml/testlanguage?Node", org.muml.testlanguage.diagram.providers.TestLanguageElementTypes.Node_2001); //$NON-NLS-1$
+					"Navigator?TopLevelNode?http://www.muml.org/testlanguage/1.0?Node", org.muml.testlanguage.diagram.providers.TestLanguageElementTypes.Node_2001); //$NON-NLS-1$
 		case org.muml.testlanguage.diagram.edit.parts.InputEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Node?http://de/uni_paderborn/fujaba/muml/testlanguage?Input", org.muml.testlanguage.diagram.providers.TestLanguageElementTypes.Input_3001); //$NON-NLS-1$
+					"Navigator?Node?http://www.muml.org/testlanguage/1.0?Input", org.muml.testlanguage.diagram.providers.TestLanguageElementTypes.Input_3001); //$NON-NLS-1$
 		case org.muml.testlanguage.diagram.edit.parts.OutputEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Node?http://de/uni_paderborn/fujaba/muml/testlanguage?Output", org.muml.testlanguage.diagram.providers.TestLanguageElementTypes.Output_3002); //$NON-NLS-1$
+					"Navigator?Node?http://www.muml.org/testlanguage/1.0?Output", org.muml.testlanguage.diagram.providers.TestLanguageElementTypes.Output_3002); //$NON-NLS-1$
 		case org.muml.testlanguage.diagram.edit.parts.OutputTargetsEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Link?http://de/uni_paderborn/fujaba/muml/testlanguage?Output?targets", org.muml.testlanguage.diagram.providers.TestLanguageElementTypes.OutputTargets_4001); //$NON-NLS-1$
+					"Navigator?Link?http://www.muml.org/testlanguage/1.0?Output?targets", org.muml.testlanguage.diagram.providers.TestLanguageElementTypes.OutputTargets_4001); //$NON-NLS-1$
 		}
 		return getImage("Navigator?UnknownElement", null); //$NON-NLS-1$
 	}
