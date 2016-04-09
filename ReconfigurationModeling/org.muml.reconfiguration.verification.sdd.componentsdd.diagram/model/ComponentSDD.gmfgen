@@ -1299,22 +1299,22 @@
             xsi:type="gmfgen:ToolEntry"
             title="Edge"
             description="Create new Edge"
-            largeIconPath="/de.uni_paderborn.fujaba.pgSafeBots.verification.constraints.sdd/icons/edge.gif"
-            smallIconPath="/de.uni_paderborn.fujaba.pgSafeBots.verification.constraints.sdd/icons/edge.gif"
+            largeIconPath="/org.muml.storydiagram.verification.sdd.edit/icons/full/obj16/Edge.gif"
+            smallIconPath="/org.muml.storydiagram.verification.sdd.edit/icons/full/obj16/Edge.gif"
             genLinks="//@diagram/@links.0"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Leaf Node"
             description="Create new Leaf Node"
-            largeIconPath="/de.uni_paderborn.fujaba.pgSafeBots.verification.constraints.sdd/icons/leaf_node.gif"
-            smallIconPath="/de.uni_paderborn.fujaba.pgSafeBots.verification.constraints.sdd/icons/leaf_node.gif"
+            largeIconPath="/org.muml.storydiagram.verification.sdd.edit/icons/full/obj16/LeafNode.gif"
+            smallIconPath="/org.muml.storydiagram.verification.sdd.edit/icons/full/obj16/LeafNode.gif"
             genNodes="//@diagram/@topLevelNodes.1"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Pattern Node"
             description="Create new Pattern Node"
-            largeIconPath="/de.uni_paderborn.fujaba.pgSafeBots.verification.constraints.sdd/icons/pattern_node.gif"
-            smallIconPath="/de.uni_paderborn.fujaba.pgSafeBots.verification.constraints.sdd/icons/pattern_node.gif"
+            largeIconPath="/org.muml.storydiagram.verification.sdd.edit/icons/full/obj16/PatternNode.gif"
+            smallIconPath="/org.muml.storydiagram.verification.sdd.edit/icons/full/obj16/PatternNode.gif"
             genNodes="//@diagram/@topLevelNodes.0"/>
       </groups>
       <groups
@@ -1423,9 +1423,9 @@
     <requiredPlugins>org.eclipse.gmf.runtime.draw2d.ui</requiredPlugins>
     <requiredPlugins>org.muml.storydiagram.verification.sdd.basicsdd.edit.properties</requiredPlugins>
     <requiredPlugins>org.muml.pim.edit.properties</requiredPlugins>
-    <requiredPlugins>de.uni_paderborn.fujaba.muml.verification.sdd.edit.properties</requiredPlugins>
+    <requiredPlugins>org.muml.reconfiguration.verification.sdd.componentsdd.edit.properties</requiredPlugins>
     <requiredPlugins>org.muml.core.edit.properties</requiredPlugins>
-    <requiredPlugins>de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.edit.properties</requiredPlugins>
+    <requiredPlugins>org.muml.reconfiguration.verification.sdd.componentsdd.edit.properties</requiredPlugins>
     <requiredPlugins>org.muml.core.common</requiredPlugins>
     <requiredPlugins>org.muml.ape.runtime</requiredPlugins>
   </plugin>

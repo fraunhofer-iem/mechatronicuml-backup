@@ -84,9 +84,9 @@ public class ComponentSDDPaletteFactory {
 						.singletonList(org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.Edge_4001));
 		entry.setId("createEdge1CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDDiagramEditorPlugin
-				.findImageDescriptor("/de.uni_paderborn.fujaba.pgSafeBots.verification.constraints.sdd/icons/edge.gif")); //$NON-NLS-1$
+				.findImageDescriptor("/org.muml.storydiagram.verification.sdd.edit/icons/full/obj16/Edge.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDDiagramEditorPlugin
-				.findImageDescriptor("/de.uni_paderborn.fujaba.pgSafeBots.verification.constraints.sdd/icons/edge.gif")); //$NON-NLS-1$
+				.findImageDescriptor("/org.muml.storydiagram.verification.sdd.edit/icons/full/obj16/Edge.gif")); //$NON-NLS-1$
 		return entry;
 	}
 
@@ -101,9 +101,9 @@ public class ComponentSDDPaletteFactory {
 						.singletonList(org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.LeafNode_2002));
 		entry.setId("createLeafNode2CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDDiagramEditorPlugin
-				.findImageDescriptor("/de.uni_paderborn.fujaba.pgSafeBots.verification.constraints.sdd/icons/leaf_node.gif")); //$NON-NLS-1$
+				.findImageDescriptor("/org.muml.storydiagram.verification.sdd.edit/icons/full/obj16/LeafNode.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDDiagramEditorPlugin
-				.findImageDescriptor("/de.uni_paderborn.fujaba.pgSafeBots.verification.constraints.sdd/icons/leaf_node.gif")); //$NON-NLS-1$
+				.findImageDescriptor("/org.muml.storydiagram.verification.sdd.edit/icons/full/obj16/LeafNode.gif")); //$NON-NLS-1$
 		return entry;
 	}
 
@@ -118,9 +118,9 @@ public class ComponentSDDPaletteFactory {
 						.singletonList(org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.ComponentStoryPatternNode_2003));
 		entry.setId("createPatternNode3CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDDiagramEditorPlugin
-				.findImageDescriptor("/de.uni_paderborn.fujaba.pgSafeBots.verification.constraints.sdd/icons/pattern_node.gif")); //$NON-NLS-1$
+				.findImageDescriptor("/org.muml.storydiagram.verification.sdd.edit/icons/full/obj16/PatternNode.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDDiagramEditorPlugin
-				.findImageDescriptor("/de.uni_paderborn.fujaba.pgSafeBots.verification.constraints.sdd/icons/pattern_node.gif")); //$NON-NLS-1$
+				.findImageDescriptor("/org.muml.storydiagram.verification.sdd.edit/icons/full/obj16/PatternNode.gif")); //$NON-NLS-1$
 		return entry;
 	}
 
