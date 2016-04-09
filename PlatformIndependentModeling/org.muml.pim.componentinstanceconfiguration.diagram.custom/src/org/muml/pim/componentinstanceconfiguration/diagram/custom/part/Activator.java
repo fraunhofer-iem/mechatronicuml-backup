@@ -21,11 +21,11 @@ public class Activator extends AbstractUIPlugin {
 
 
 
-	public static final String CREATE_INSTANCE_TRANSFORMATION = "/de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.custom/transforms/instances.qvto";
+	public static final String CREATE_INSTANCE_TRANSFORMATION = "/org.muml.pim.componentinstanceconfiguration.diagram.custom/transforms/instances.qvto";
 
-	public static final String CREATE_PROTOCOL_INSTANCE_TRANSFORMATION = "/de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.custom/transforms/protocolInstance.qvto";
+	public static final String CREATE_PROTOCOL_INSTANCE_TRANSFORMATION = "/org.muml.pim.componentinstanceconfiguration.diagram.custom/transforms/protocolInstance.qvto";
 	
-	public static final String UPDATE_INSTANCE_TRANSFORMATION = "/de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.custom/transforms/updateInstance.qvto";
+	public static final String UPDATE_INSTANCE_TRANSFORMATION = "/org.muml.pim.componentinstanceconfiguration.diagram.custom/transforms/updateInstance.qvto";
 
 	private static Activator instance;
 

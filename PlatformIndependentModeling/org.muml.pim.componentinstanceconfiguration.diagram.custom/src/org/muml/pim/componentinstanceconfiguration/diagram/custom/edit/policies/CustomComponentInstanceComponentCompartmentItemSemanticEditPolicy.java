@@ -13,7 +13,7 @@ package org.muml.pim.componentinstanceconfiguration.diagram.custom.edit.policies
 //	 * @generated
 //	 */
 //	protected Command getCreateCommand(CreateElementRequest req) {
-//		if (de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.providers.MumlElementTypes.ComponentInstance_2004 == req
+//		if (org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes.ComponentInstance_2004 == req
 //				.getElementType()) {
 //			return UnexecutableCommand.INSTANCE;
 //		}

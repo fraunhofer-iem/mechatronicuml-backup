@@ -4,14 +4,14 @@
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:gmfgen="http://www.eclipse.org/gmf/2009/GenModel"
-    packageNamePrefix="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram"
+    packageNamePrefix="org.muml.pim.componentinstanceconfiguration.diagram"
     modelID="Component Instance Configuration"
     diagramFileExtension="componentinstanceconfiguration_diagram"
     domainFileExtension="fujaba"
     dynamicTemplates="true"
     templateDirectory="/org.muml.core.common/gmf-templates"
     copyrightText="&lt;copyright>&#xD;&#xA;Copyright (c) 2013 Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Germany.&#xD;&#xA;All rights reserved. This program and the accompanying materials&#xD;&#xA;are made available under the terms of the Eclipse Public License v1.0&#xD;&#xA;which accompanies this distribution, and is available at&#xD;&#xA;http://www.eclipse.org/legal/epl-v10.html&#xD;&#xA;&#xD;&#xA;Contributors:&#xD;&#xA;    Software Engineering Group - initial API and implementation&#xD;&#xA;&lt;/copyright>"
-    pluginDirectory="/de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram/src">
+    pluginDirectory="/org.muml.pim.componentinstanceconfiguration.diagram/src">
   <diagram
       visualID="1000"
       editPartClassName="ComponentInstanceConfigurationDiagramEditPart"
@@ -1348,37 +1348,37 @@
     </preferences>
     <preferencePages
         xsi:type="gmfgen:GenStandardPreferencePage"
-        iD="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.general"
+        iD="org.muml.pim.componentinstanceconfiguration.diagram.general"
         name="Component Instance Configuration Diagram Editor"
         parentCategory="org.muml.preferences">
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
-          iD="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.appearance"
+          iD="org.muml.pim.componentinstanceconfiguration.diagram.appearance"
           name="Appearance"
-          parentCategory="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.general"
+          parentCategory="org.muml.pim.componentinstanceconfiguration.diagram.general"
           kind="Appearance"/>
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
-          iD="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.connections"
+          iD="org.muml.pim.componentinstanceconfiguration.diagram.connections"
           name="Connections"
-          parentCategory="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.general"
+          parentCategory="org.muml.pim.componentinstanceconfiguration.diagram.general"
           kind="Connections"/>
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
-          iD="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.printing"
+          iD="org.muml.pim.componentinstanceconfiguration.diagram.printing"
           name="Printing"
-          parentCategory="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.general"
+          parentCategory="org.muml.pim.componentinstanceconfiguration.diagram.general"
           kind="Printing"/>
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
-          iD="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.rulersAndGrid"
+          iD="org.muml.pim.componentinstanceconfiguration.diagram.rulersAndGrid"
           name="Rulers And Grid"
-          parentCategory="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.general"
+          parentCategory="org.muml.pim.componentinstanceconfiguration.diagram.general"
           kind="RulersAndGrid"/>
     </preferencePages>
   </diagram>
   <plugin
-      iD="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram"
+      iD="org.muml.pim.componentinstanceconfiguration.diagram"
       name="Component Instance Configuration Diagram Editor"
       provider="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn"
       version="0.5.0.qualifier"

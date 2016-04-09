@@ -35,11 +35,11 @@ public class CustomPortInstanceItemSemanticEditPolicy extends
 //	@Override
 //	public Command getCreateRelationshipCommand(CreateRelationshipRequest req) {
 //
-//		if (de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.providers.MumlElementTypes.DelegationInstance_4006 == req
+//		if (org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes.DelegationInstance_4006 == req
 //				.getElementType()) {
 //			return getGEFWrapper(getDelegationInstanceCreateCommand(req));
 //		}
-//		if (de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.providers.MumlElementTypes.AssemblyInstance_4005 == req
+//		if (org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes.AssemblyInstance_4005 == req
 //				.getElementType()) {
 //			return getGEFWrapper(getAssemblyInstanceCreateCommand(req));
 //		}
@@ -50,9 +50,9 @@ public class CustomPortInstanceItemSemanticEditPolicy extends
 //	protected Command getReorientRelationshipCommand(
 //			ReorientRelationshipRequest req) {
 //		switch (getVisualID(req)) {
-//		case de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.DelegationInstanceEditPart.VISUAL_ID:
+//		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DelegationInstanceEditPart.VISUAL_ID:
 //			return getGEFWrapper(getDelegationInstanceReorientCommand(req));
-//		case de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.AssemblyInstanceEditPart.VISUAL_ID:
+//		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.AssemblyInstanceEditPart.VISUAL_ID:
 //			return getGEFWrapper(getAssemblyInstanceReorientCommand(req));
 //		}
 //		return super.getReorientRelationshipCommand(req);

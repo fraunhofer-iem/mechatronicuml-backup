@@ -5,7 +5,7 @@
    <extension
          point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders">
       <editpartProvider
-            class="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.custom.providers.CustomComponentinstanceconfigurationEditPartProvider">
+            class="org.muml.pim.componentinstanceconfiguration.diagram.custom.providers.CustomComponentinstanceconfigurationEditPartProvider">
          <Priority
                name="Low">
          </Priority>
@@ -14,24 +14,24 @@
    
       
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings">
-      <binding context="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.TypeContext">
-         <elementType ref="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.AssemblyConnectorInstance_4001"/>
-         <advice ref="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.AssemblyConnectorInstanceAdvice"/>
+      <binding context="org.muml.pim.componentinstanceconfiguration.diagram.TypeContext">
+         <elementType ref="org.muml.pim.componentinstanceconfiguration.diagram.AssemblyConnectorInstance_4001"/>
+         <advice ref="org.muml.pim.componentinstanceconfiguration.diagram.AssemblyConnectorInstanceAdvice"/>
       </binding>
    </extension>
    
    
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings">
-      <binding context="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.TypeContext">
-         <elementType ref="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.DiscreteSinglePortInstance_2022"/>
-         <advice ref="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.DiscreteSinglePortInstanceAdvice"/>
+      <binding context="org.muml.pim.componentinstanceconfiguration.diagram.TypeContext">
+         <elementType ref="org.muml.pim.componentinstanceconfiguration.diagram.DiscreteSinglePortInstance_2022"/>
+         <advice ref="org.muml.pim.componentinstanceconfiguration.diagram.DiscreteSinglePortInstanceAdvice"/>
       </binding>
    </extension>
    
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings">
-      <binding context="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.TypeContext">
-         <elementType ref="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.DiscreteMultiPortInstance_2023"/>
-         <advice ref="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.DiscreteMultiPortInstanceAdvice"/>
+      <binding context="org.muml.pim.componentinstanceconfiguration.diagram.TypeContext">
+         <elementType ref="org.muml.pim.componentinstanceconfiguration.diagram.DiscreteMultiPortInstance_2023"/>
+         <advice ref="org.muml.pim.componentinstanceconfiguration.diagram.DiscreteMultiPortInstanceAdvice"/>
       </binding>
    </extension>
    
@@ -40,8 +40,8 @@
    
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes">
       <metamodel nsURI="http://www.muml.org/pim/instance/1.0.0">
-        <adviceBinding id="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.AssemblyConnectorInstanceAdvice"
-		  typeId="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.AssemblyConnectorInstance_4001"
+        <adviceBinding id="org.muml.pim.componentinstanceconfiguration.diagram.AssemblyConnectorInstanceAdvice"
+		  typeId="org.muml.pim.componentinstanceconfiguration.diagram.AssemblyConnectorInstance_4001"
 		  class="org.muml.pim.componentinstanceconfiguration.diagram.custom.edit.helpers.AssemblyConnectorInstanceEditHelperAdvice"
 		  inheritance="all">
         </adviceBinding>
@@ -50,8 +50,8 @@
    
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes">
       <metamodel nsURI="http://www.muml.org/pim/instance/1.0.0">
-        <adviceBinding id="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.DiscreteSinglePortInstanceAdvice"
-		  typeId="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.DiscreteSinglePortInstance_2022"
+        <adviceBinding id="org.muml.pim.componentinstanceconfiguration.diagram.DiscreteSinglePortInstanceAdvice"
+		  typeId="org.muml.pim.componentinstanceconfiguration.diagram.DiscreteSinglePortInstance_2022"
 		  class="org.muml.pim.componentinstanceconfiguration.diagram.custom.edit.helpers.DiscreteSinglePortInstanceEditHelperAdvice"
 		  inheritance="all">
         </adviceBinding>
@@ -60,8 +60,8 @@
    
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes">
       <metamodel nsURI="http://www.muml.org/pim/instance/1.0.0">
-        <adviceBinding id="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.DiscreteMultiPortInstanceAdvice"
-		  typeId="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.DiscreteMultiPortInstance_2023"
+        <adviceBinding id="org.muml.pim.componentinstanceconfiguration.diagram.DiscreteMultiPortInstanceAdvice"
+		  typeId="org.muml.pim.componentinstanceconfiguration.diagram.DiscreteMultiPortInstance_2023"
 		  class="org.muml.pim.componentinstanceconfiguration.diagram.custom.edit.helpers.DiscreteMultiPortInstanceEditHelperAdvice"
 		  inheritance="all">
         </adviceBinding>
@@ -76,7 +76,7 @@
    </extension>
    
    <extension point="org.eclipse.gmf.runtime.diagram.ui.layoutProviders">
-       <layoutProvider class="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.custom.layout.CICLayoutProvider">
+       <layoutProvider class="org.muml.pim.componentinstanceconfiguration.diagram.custom.layout.CICLayoutProvider">
             <Priority name="High"/>
        </layoutProvider>
    </extension>
