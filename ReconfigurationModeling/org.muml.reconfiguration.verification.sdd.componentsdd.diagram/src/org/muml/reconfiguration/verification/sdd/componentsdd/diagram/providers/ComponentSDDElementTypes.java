@@ -57,74 +57,74 @@ public class ComponentSDDElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType ComponentStoryDecisionDiagram_1000 = getElementType("de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.ComponentStoryDecisionDiagram_1000"); //$NON-NLS-1$
+	public static final IElementType ComponentStoryDecisionDiagram_1000 = getElementType("org.muml.reconfiguration.verification.sdd.componentsdd.diagram.ComponentStoryDecisionDiagram_1000"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType ComponentStoryPatternNode_2003 = getElementType("de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.ComponentStoryPatternNode_2003"); //$NON-NLS-1$
+	public static final IElementType ComponentStoryPatternNode_2003 = getElementType("org.muml.reconfiguration.verification.sdd.componentsdd.diagram.ComponentStoryPatternNode_2003"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType LeafNode_2002 = getElementType("de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.LeafNode_2002"); //$NON-NLS-1$
+	public static final IElementType LeafNode_2002 = getElementType("org.muml.reconfiguration.verification.sdd.componentsdd.diagram.LeafNode_2002"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType InitialNode_2004 = getElementType("de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.InitialNode_2004"); //$NON-NLS-1$
+	public static final IElementType InitialNode_2004 = getElementType("org.muml.reconfiguration.verification.sdd.componentsdd.diagram.InitialNode_2004"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType ComponentStoryPattern_3001 = getElementType("de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.ComponentStoryPattern_3001"); //$NON-NLS-1$
+	public static final IElementType ComponentStoryPattern_3001 = getElementType("org.muml.reconfiguration.verification.sdd.componentsdd.diagram.ComponentStoryPattern_3001"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType ComponentVariable_3002 = getElementType("de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.ComponentVariable_3002"); //$NON-NLS-1$
+	public static final IElementType ComponentVariable_3002 = getElementType("org.muml.reconfiguration.verification.sdd.componentsdd.diagram.ComponentVariable_3002"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType ComponentPartVariable_3003 = getElementType("de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.ComponentPartVariable_3003"); //$NON-NLS-1$
+	public static final IElementType ComponentPartVariable_3003 = getElementType("org.muml.reconfiguration.verification.sdd.componentsdd.diagram.ComponentPartVariable_3003"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType MultiPortVariable_3004 = getElementType("de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.MultiPortVariable_3004"); //$NON-NLS-1$
+	public static final IElementType MultiPortVariable_3004 = getElementType("org.muml.reconfiguration.verification.sdd.componentsdd.diagram.MultiPortVariable_3004"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType SinglePortVariable_3005 = getElementType("de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.SinglePortVariable_3005"); //$NON-NLS-1$
+	public static final IElementType SinglePortVariable_3005 = getElementType("org.muml.reconfiguration.verification.sdd.componentsdd.diagram.SinglePortVariable_3005"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType SinglePortVariable_3006 = getElementType("de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.SinglePortVariable_3006"); //$NON-NLS-1$
+	public static final IElementType SinglePortVariable_3006 = getElementType("org.muml.reconfiguration.verification.sdd.componentsdd.diagram.SinglePortVariable_3006"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType MultiPortVariable_3007 = getElementType("de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.MultiPortVariable_3007"); //$NON-NLS-1$
+	public static final IElementType MultiPortVariable_3007 = getElementType("org.muml.reconfiguration.verification.sdd.componentsdd.diagram.MultiPortVariable_3007"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType SinglePortVariable_3008 = getElementType("de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.SinglePortVariable_3008"); //$NON-NLS-1$
+	public static final IElementType SinglePortVariable_3008 = getElementType("org.muml.reconfiguration.verification.sdd.componentsdd.diagram.SinglePortVariable_3008"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType FadingComponentPartVariable_3009 = getElementType("de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.FadingComponentPartVariable_3009"); //$NON-NLS-1$
+	public static final IElementType FadingComponentPartVariable_3009 = getElementType("org.muml.reconfiguration.verification.sdd.componentsdd.diagram.FadingComponentPartVariable_3009"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Edge_4001 = getElementType("de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.Edge_4001"); //$NON-NLS-1$
+	public static final IElementType Edge_4001 = getElementType("org.muml.reconfiguration.verification.sdd.componentsdd.diagram.Edge_4001"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType AssemblyVariable_4002 = getElementType("de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.AssemblyVariable_4002"); //$NON-NLS-1$
+	public static final IElementType AssemblyVariable_4002 = getElementType("org.muml.reconfiguration.verification.sdd.componentsdd.diagram.AssemblyVariable_4002"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType DelegationVariable_4003 = getElementType("de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.DelegationVariable_4003"); //$NON-NLS-1$
+	public static final IElementType DelegationVariable_4003 = getElementType("org.muml.reconfiguration.verification.sdd.componentsdd.diagram.DelegationVariable_4003"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType MultiPortOrderConstraint_4004 = getElementType("de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.MultiPortOrderConstraint_4004"); //$NON-NLS-1$
+	public static final IElementType MultiPortOrderConstraint_4004 = getElementType("org.muml.reconfiguration.verification.sdd.componentsdd.diagram.MultiPortOrderConstraint_4004"); //$NON-NLS-1$
 
 	/**
 	 * @generated

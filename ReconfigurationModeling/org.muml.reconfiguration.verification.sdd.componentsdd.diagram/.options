@@ -1,7 +1,7 @@
-# Tracing options for the de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram plug-in
+# Tracing options for the org.muml.reconfiguration.verification.sdd.componentsdd.diagram plug-in
 
 # Common issues
-de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram/debug=false
+org.muml.reconfiguration.verification.sdd.componentsdd.diagram/debug=false
 
 # Visual IDs
-de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram/debug/visualID=false
+org.muml.reconfiguration.verification.sdd.componentsdd.diagram/debug/visualID=false

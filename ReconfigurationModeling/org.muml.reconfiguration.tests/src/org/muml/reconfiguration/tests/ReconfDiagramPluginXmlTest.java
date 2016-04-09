@@ -40,8 +40,8 @@ public class ReconfDiagramPluginXmlTest extends org.muml.core.tests.DiagramPlugi
 			}},
 
 			new Object[] { new String[] {
-					"de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram",
-					"de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.custom"
+					"org.muml.reconfiguration.verification.sdd.componentsdd.diagram",
+					"org.muml.reconfiguration.verification.sdd.componentsdd.diagram.custom"
 			}}
 		};
 		return Arrays.asList(pluginsToCheck);

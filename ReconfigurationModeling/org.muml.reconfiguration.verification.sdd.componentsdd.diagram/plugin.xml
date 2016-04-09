@@ -104,33 +104,33 @@
    <extension point="org.eclipse.ui.preferencePages" id="prefpages">
       <?gmfgen generated="true"?>
       <page
-            id="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.general"
-            name="%prefpage.de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.general"
+            id="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.general"
+            name="%prefpage.org.muml.reconfiguration.verification.sdd.componentsdd.diagram.general"
             category="org.muml.preferences"
             class="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.preferences.DiagramGeneralPreferencePage">
       </page>
       <page
-            id="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.appearance"
-            name="%prefpage.de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.appearance"
-            category="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.general"
+            id="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.appearance"
+            name="%prefpage.org.muml.reconfiguration.verification.sdd.componentsdd.diagram.appearance"
+            category="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.general"
             class="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.preferences.DiagramAppearancePreferencePage">
       </page>
       <page
-            id="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.connections"
-            name="%prefpage.de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.connections"
-            category="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.general"
+            id="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.connections"
+            name="%prefpage.org.muml.reconfiguration.verification.sdd.componentsdd.diagram.connections"
+            category="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.general"
             class="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.preferences.DiagramConnectionsPreferencePage">
       </page>
       <page
-            id="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.printing"
-            name="%prefpage.de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.printing"
-            category="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.general"
+            id="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.printing"
+            name="%prefpage.org.muml.reconfiguration.verification.sdd.componentsdd.diagram.printing"
+            category="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.general"
             class="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.preferences.DiagramPrintingPreferencePage">
       </page>
       <page
-            id="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.rulersAndGrid"
-            name="%prefpage.de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.rulersAndGrid"
-            category="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.general"
+            id="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.rulersAndGrid"
+            name="%prefpage.org.muml.reconfiguration.verification.sdd.componentsdd.diagram.rulersAndGrid"
+            category="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.general"
             class="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.preferences.DiagramRulersAndGridPreferencePage">
       </page>
    </extension>
@@ -138,7 +138,7 @@
    <extension point="org.eclipse.ui.views.properties.tabbed.propertyContributor" id="prop-contrib">
       <?gmfgen generated="true"?>
       <propertyContributor
-            contributorId="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram"
+            contributorId="org.muml.reconfiguration.verification.sdd.componentsdd.diagram"
             labelProvider="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.sheet.ComponentSDDSheetLabelProvider">
          <propertyCategory category="domain"/>
          <propertyCategory category="visual"/>
@@ -148,7 +148,7 @@
 
    <extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs" id="proptabs">
       <?gmfgen generated="true"?>   
-      <propertyTabs contributorId="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram">
+      <propertyTabs contributorId="org.muml.reconfiguration.verification.sdd.componentsdd.diagram">
          <propertyTab
              category="visual"
              id="property.tab.AppearancePropertySection"
@@ -175,7 +175,7 @@
 
    <extension point="org.eclipse.ui.views.properties.tabbed.propertySections" id="propsections">
       <?gmfgen generated="true"?>   
-      <propertySections contributorId="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram">
+      <propertySections contributorId="org.muml.reconfiguration.verification.sdd.componentsdd.diagram">
          <propertySection id="property.section.ConnectorAppearancePropertySection" 
             filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.ConnectionEditPartPropertySectionFilter" 
             class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.ConnectionAppearancePropertySection" 
@@ -336,7 +336,7 @@
       <?gmfgen generated="true"?>
       <metamodel nsURI="http://www.muml.org/reconfiguration/verification/sdd/componentsdd/1.0.0">
          <metamodelType
-               id="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.ComponentStoryDecisionDiagram_1000"
+               id="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.ComponentStoryDecisionDiagram_1000"
                name="%metatype.name.ComponentStoryDecisionDiagram_1000"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="ComponentStoryDecisionDiagram"
@@ -346,7 +346,7 @@
       </metamodel>
       <metamodel nsURI="http://www.muml.org/reconfiguration/verification/sdd/componentsdd/1.0.0">
          <metamodelType
-               id="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.ComponentStoryPatternNode_2003"
+               id="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.ComponentStoryPatternNode_2003"
                name="%metatype.name.ComponentStoryPatternNode_2003"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="ComponentStoryPatternNode"
@@ -356,7 +356,7 @@
       </metamodel>
       <metamodel nsURI="http://www.muml.org/storydiagram/verification/sdd/1.0.0">
          <metamodelType
-               id="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.LeafNode_2002"
+               id="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.LeafNode_2002"
                name="%metatype.name.LeafNode_2002"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="LeafNode"
@@ -366,7 +366,7 @@
       </metamodel>
       <metamodel nsURI="http://www.muml.org/reconfiguration/verification/sdd/componentsdd/1.0.0">
          <metamodelType
-               id="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.InitialNode_2004"
+               id="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.InitialNode_2004"
                name="%metatype.name.InitialNode_2004"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="InitialNode"
@@ -376,7 +376,7 @@
       </metamodel>
       <metamodel nsURI="http://www.muml.org/reconfiguration/componentstorypattern/1.0.0">
          <metamodelType
-               id="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.ComponentStoryPattern_3001"
+               id="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.ComponentStoryPattern_3001"
                name="%metatype.name.ComponentStoryPattern_3001"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="ComponentStoryPattern"
@@ -386,7 +386,7 @@
       </metamodel>
       <metamodel nsURI="http://www.muml.org/reconfiguration/componentstorypattern/1.0.0">
          <metamodelType
-               id="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.ComponentVariable_3002"
+               id="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.ComponentVariable_3002"
                name="%metatype.name.ComponentVariable_3002"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="ComponentVariable"
@@ -396,7 +396,7 @@
       </metamodel>
       <metamodel nsURI="http://www.muml.org/reconfiguration/componentstorypattern/1.0.0">
          <metamodelType
-               id="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.ComponentPartVariable_3003"
+               id="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.ComponentPartVariable_3003"
                name="%metatype.name.ComponentPartVariable_3003"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="ComponentPartVariable"
@@ -406,7 +406,7 @@
       </metamodel>
       <metamodel nsURI="http://www.muml.org/reconfiguration/componentstorypattern/1.0.0">
          <metamodelType
-               id="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.MultiPortVariable_3004"
+               id="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.MultiPortVariable_3004"
                name="%metatype.name.MultiPortVariable_3004"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="MultiPortVariable"
@@ -416,7 +416,7 @@
       </metamodel>
       <metamodel nsURI="http://www.muml.org/reconfiguration/componentstorypattern/1.0.0">
          <metamodelType
-               id="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.SinglePortVariable_3005"
+               id="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.SinglePortVariable_3005"
                name="%metatype.name.SinglePortVariable_3005"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="SinglePortVariable"
@@ -426,34 +426,34 @@
       </metamodel>
       <metamodel nsURI="http://www.muml.org/reconfiguration/componentstorypattern/1.0.0">
          <specializationType
-               id="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.SinglePortVariable_3006"
+               id="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.SinglePortVariable_3006"
                name="%metatype.name.SinglePortVariable_3006"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
-            <specializes id="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.SinglePortVariable_3005"/>
+            <specializes id="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.SinglePortVariable_3005"/>
             <param name="semanticHint" value="3006"/>
          </specializationType>
       </metamodel>
       <metamodel nsURI="http://www.muml.org/reconfiguration/componentstorypattern/1.0.0">
          <specializationType
-               id="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.MultiPortVariable_3007"
+               id="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.MultiPortVariable_3007"
                name="%metatype.name.MultiPortVariable_3007"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
-            <specializes id="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.MultiPortVariable_3004"/>
+            <specializes id="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.MultiPortVariable_3004"/>
             <param name="semanticHint" value="3007"/>
          </specializationType>
       </metamodel>
       <metamodel nsURI="http://www.muml.org/reconfiguration/componentstorypattern/1.0.0">
          <specializationType
-               id="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.SinglePortVariable_3008"
+               id="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.SinglePortVariable_3008"
                name="%metatype.name.SinglePortVariable_3008"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
-            <specializes id="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.SinglePortVariable_3005"/>
+            <specializes id="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.SinglePortVariable_3005"/>
             <param name="semanticHint" value="3008"/>
          </specializationType>
       </metamodel>
       <metamodel nsURI="http://www.muml.org/reconfiguration/componentstorypattern/1.0.0">
          <metamodelType
-               id="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.FadingComponentPartVariable_3009"
+               id="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.FadingComponentPartVariable_3009"
                name="%metatype.name.FadingComponentPartVariable_3009"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="FadingComponentPartVariable"
@@ -463,7 +463,7 @@
       </metamodel>
       <metamodel nsURI="http://www.muml.org/storydiagram/verification/sdd/1.0.0">
          <metamodelType
-               id="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.Edge_4001"
+               id="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.Edge_4001"
                name="%metatype.name.Edge_4001"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="Edge"
@@ -473,7 +473,7 @@
       </metamodel>
       <metamodel nsURI="http://www.muml.org/reconfiguration/componentstorypattern/1.0.0">
          <metamodelType
-               id="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.AssemblyVariable_4002"
+               id="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.AssemblyVariable_4002"
                name="%metatype.name.AssemblyVariable_4002"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="AssemblyVariable"
@@ -483,7 +483,7 @@
       </metamodel>
       <metamodel nsURI="http://www.muml.org/reconfiguration/componentstorypattern/1.0.0">
          <metamodelType
-               id="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.DelegationVariable_4003"
+               id="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.DelegationVariable_4003"
                name="%metatype.name.DelegationVariable_4003"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="DelegationVariable"
@@ -493,7 +493,7 @@
       </metamodel>
       <metamodel nsURI="http://www.muml.org/reconfiguration/componentstorypattern/1.0.0">
          <metamodelType
-               id="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.MultiPortOrderConstraint_4004"
+               id="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.MultiPortOrderConstraint_4004"
                name="%metatype.name.MultiPortOrderConstraint_4004"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="MultiPortOrderConstraint"
@@ -505,40 +505,40 @@
 
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings" id="element-types-bindings">
       <?gmfgen generated="true"?>
-      <clientContext id="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.TypeContext">
+      <clientContext id="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.TypeContext">
          <enablement>
             <test
                property="org.eclipse.gmf.runtime.emf.core.editingDomain"
-               value="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.EditingDomain"/>
+               value="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.EditingDomain"/>
          </enablement>
       </clientContext> 
-      <binding context="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.TypeContext">
-         <elementType ref="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.ComponentStoryDecisionDiagram_1000"/>
-         <elementType ref="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.ComponentStoryPatternNode_2003"/>
-         <elementType ref="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.LeafNode_2002"/>
-         <elementType ref="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.InitialNode_2004"/>
-         <elementType ref="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.ComponentStoryPattern_3001"/>
-         <elementType ref="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.ComponentVariable_3002"/>
-         <elementType ref="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.ComponentPartVariable_3003"/>
-         <elementType ref="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.MultiPortVariable_3004"/>
-         <elementType ref="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.SinglePortVariable_3005"/>
-         <elementType ref="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.SinglePortVariable_3006"/>
-         <elementType ref="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.MultiPortVariable_3007"/>
-         <elementType ref="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.SinglePortVariable_3008"/>
-         <elementType ref="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.FadingComponentPartVariable_3009"/>
-         <elementType ref="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.Edge_4001"/>
-         <elementType ref="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.AssemblyVariable_4002"/>
-         <elementType ref="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.DelegationVariable_4003"/>
-         <elementType ref="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.MultiPortOrderConstraint_4004"/>
+      <binding context="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.TypeContext">
+         <elementType ref="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.ComponentStoryDecisionDiagram_1000"/>
+         <elementType ref="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.ComponentStoryPatternNode_2003"/>
+         <elementType ref="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.LeafNode_2002"/>
+         <elementType ref="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.InitialNode_2004"/>
+         <elementType ref="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.ComponentStoryPattern_3001"/>
+         <elementType ref="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.ComponentVariable_3002"/>
+         <elementType ref="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.ComponentPartVariable_3003"/>
+         <elementType ref="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.MultiPortVariable_3004"/>
+         <elementType ref="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.SinglePortVariable_3005"/>
+         <elementType ref="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.SinglePortVariable_3006"/>
+         <elementType ref="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.MultiPortVariable_3007"/>
+         <elementType ref="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.SinglePortVariable_3008"/>
+         <elementType ref="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.FadingComponentPartVariable_3009"/>
+         <elementType ref="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.Edge_4001"/>
+         <elementType ref="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.AssemblyVariable_4002"/>
+         <elementType ref="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.DelegationVariable_4003"/>
+         <elementType ref="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.MultiPortOrderConstraint_4004"/>
          <advice ref="org.eclipse.gmf.runtime.diagram.core.advice.notationDepdendents"/>
       </binding>
    </extension>
 	   <extension point="org.eclipse.core.expressions.propertyTesters" id="navigator-proptest.isURIEditorInput">
       <?gmfgen generated="true"?>
        <propertyTester
-           id="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.URIEditorInputPropertyTester"
+           id="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.URIEditorInputPropertyTester"
            type="org.eclipse.emf.common.ui.URIEditorInput"
-           namespace="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram"
+           namespace="org.muml.reconfiguration.verification.sdd.componentsdd.diagram"
            properties="isURIEditorInput"
            class="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDUriEditorInputTester">
        </propertyTester>
@@ -548,14 +548,14 @@
       <?gmfgen generated="true"?>
       <viewerContentBinding viewerId="org.eclipse.ui.navigator.ProjectExplorer">
          <includes>
-            <contentExtension pattern="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.resourceContent"/>
-			<contentExtension pattern="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.domainResourceContent"/>
-            <contentExtension pattern="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.navigatorLinkHelper"/>
+            <contentExtension pattern="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.resourceContent"/>
+			<contentExtension pattern="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.domainResourceContent"/>
+            <contentExtension pattern="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.navigatorLinkHelper"/>
          </includes>
       </viewerContentBinding>
       <viewerActionBinding viewerId="org.eclipse.ui.navigator.ProjectExplorer">
          <includes>
-            <actionExtension pattern="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.navigatorActionProvider"/>
+            <actionExtension pattern="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.navigatorActionProvider"/>
          </includes>
       </viewerActionBinding>
    </extension>
@@ -563,7 +563,7 @@
    <extension point="org.eclipse.ui.navigator.navigatorContent" id="navigator-content">
       <?gmfgen generated="true"?>
       <navigatorContent
-            id="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.resourceContent" 
+            id="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.resourceContent" 
             name="%navigatorContentName" 
             priority="normal" 
             contentProvider="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.navigator.ComponentSDDNavigatorContentProvider" 
@@ -585,7 +585,7 @@
             </or>
          </possibleChildren>
          <commonSorter 
-               id="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.navigatorSorter" 
+               id="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.navigatorSorter" 
                class="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.navigator.ComponentSDDNavigatorSorter">
             <parentExpression>
                <or>
@@ -599,7 +599,7 @@
          </commonSorter>
       </navigatorContent>
       <navigatorContent
-            id="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.domainResourceContent" 
+            id="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.domainResourceContent" 
             name="%domainNavigatorContentName" 
             priority="normal" 
             contentProvider="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.navigator.ComponentSDDDomainNavigatorContentProvider" 
@@ -620,7 +620,7 @@
          </possibleChildren>
       </navigatorContent>
       <actionProvider
-            id="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.navigatorActionProvider"
+            id="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.navigatorActionProvider"
             class="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.navigator.ComponentSDDNavigatorActionProvider">
          <enablement>
             <or>
@@ -633,12 +633,12 @@
 	   <extension point="org.eclipse.ui.navigator.linkHelper" id="navigator-linkhelper">
       <?gmfgen generated="true"?>
       <linkHelper
-            id="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.navigatorLinkHelper"
+            id="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.navigatorLinkHelper"
             class="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.navigator.ComponentSDDNavigatorLinkHelper">
          <editorInputEnablement>
             <and>
                <instanceof value="org.eclipse.emf.common.ui.URIEditorInput"/>
-               <test property="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.isURIEditorInput"/>
+               <test property="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.isURIEditorInput"/>
             </and>
          </editorInputEnablement>
          <selectionEnablement>
@@ -672,7 +672,7 @@
       <menuContribution locationURI="toolbar:org.eclipse.ui.main.toolbar?after=">
       </menuContribution -->
       <menuContribution locationURI="popup:org.eclipse.gmf.runtime.diagram.ui.DiagramEditorContextMenu">
-         <command commandId="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.LoadResourceAction">
+         <command commandId="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.LoadResourceAction">
             <visibleWhen>
                <and>
                   <with variable="activePartId"><equals value="de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.part.ComponentSDDDiagramEditorID"/></with>
@@ -688,7 +688,7 @@
    <extension point="org.eclipse.ui.commands" id="menu-commands">
       <?gmfgen generated="true"?>
       <category id="de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.part.ComponentSDDDiagramEditorID" name="%cmdcategory.name" description="%cmdcategory.desc"/>
-      <command id="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.LoadResourceAction"
+      <command id="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.LoadResourceAction"
          name="Load Resource"
          categoryId="de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.part.ComponentSDDDiagramEditorID"
          defaultHandler="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.LoadResourceAction"/>
@@ -703,7 +703,7 @@
 <extension point="org.eclipse.gmf.runtime.common.ui.services.markerNavigationProviders" id="markers-navigation">
       <?gmfgen generated="true"?>
       <MarkerNavigationProvider class="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDMarkerNavigationProvider">
-         <MarkerType name="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.diagnostic"/>
+         <MarkerType name="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.diagnostic"/>
          <Priority name="Lowest"/>
       </MarkerNavigationProvider>
    </extension>
@@ -733,9 +733,9 @@
 	         allPopups="false"
 	         locationURI="popup:de.uni_paderborn.fujaba?after=diagrams">
 	      <command
-	            commandId="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.createDiagram"
+	            commandId="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.createDiagram"
 	            icon="icons/obj16/ComponentsddDiagramFile.gif"
-	            id="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.createDiagram"
+	            id="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.createDiagram"
 	            label="Create Component Story Decision Diagram"
 	            style="push">
 	            	<visibleWhen checkEnabled="false">
@@ -751,7 +751,7 @@
 			categoryId="de.uni_paderborn.fujaba"
 			description="Initialize realtimestatechart_diagram"
 			defaultHandler="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDInitDiagramFileAction"
-			id="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.createDiagram"
+			id="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.createDiagram"
 			name="%initDiagramActionLabel">
 		</command>
 	</extension>
@@ -775,7 +775,7 @@
          point="org.muml.core.modelinstance.ui.diagraminformation">
       <?gmfgen generated="true"?>
       <editor
-            preferencesHint="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram"
+            preferencesHint="org.muml.reconfiguration.verification.sdd.componentsdd.diagram"
             editorId="de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.part.ComponentSDDDiagramEditorID"
             editorName="Component Story Decision Editor"
             fileExtension="componentsdd_diagram"

@@ -31,7 +31,7 @@ public class ComponentSDDVisualIDRegistry {
 	/**
 	 * @generated
 	 */
-	private static final String DEBUG_KEY = "de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram/debug/visualID"; //$NON-NLS-1$
+	private static final String DEBUG_KEY = "org.muml.reconfiguration.verification.sdd.componentsdd.diagram/debug/visualID"; //$NON-NLS-1$
 
 	/**
 	 * @generated

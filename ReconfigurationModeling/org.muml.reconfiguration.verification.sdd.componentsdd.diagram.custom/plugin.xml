@@ -13,9 +13,9 @@
    <extension
          point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings">
       <binding
-            context="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.TypeContext">
+            context="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.TypeContext">
          <elementType
-               ref="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.SinglePortVariable_3005">
+               ref="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.SinglePortVariable_3005">
          </elementType>
          <advice
                ref="org.muml.reconfiguration.componentstorydiagram.diagram.SinglePortVariable_3005Advice">
@@ -30,7 +30,7 @@
                class="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.custom.edit.helper.SinglePortVariableEditHelperAdvice"
                id="org.muml.reconfiguration.componentstorydiagram.diagram.SinglePortVariable_3005Advice"
                inheritance="all"
-               typeId="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.SinglePortVariable_3005">
+               typeId="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.SinglePortVariable_3005">
          </adviceBinding>
       </metamodel>
    </extension>

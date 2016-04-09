@@ -184,7 +184,7 @@ public class ComponentSDDDocumentProvider extends AbstractDocumentProvider
 		TransactionalEditingDomain editingDomain = DiagramEditingDomainFactory
 				.getInstance().createEditingDomain();
 		editingDomain
-				.setID("de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.EditingDomain"); //$NON-NLS-1$
+				.setID("org.muml.reconfiguration.verification.sdd.componentsdd.diagram.EditingDomain"); //$NON-NLS-1$
 		final NotificationFilter diagramResourceModifiedFilter = NotificationFilter
 				.createNotifierFilter(editingDomain.getResourceSet())
 				.and(NotificationFilter.createEventTypeFilter(Notification.ADD))

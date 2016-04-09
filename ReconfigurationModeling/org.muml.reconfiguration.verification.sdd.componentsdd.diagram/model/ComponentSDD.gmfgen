@@ -1386,32 +1386,32 @@
     </preferences>
     <preferencePages
         xsi:type="gmfgen:GenStandardPreferencePage"
-        iD="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.general"
+        iD="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.general"
         name="Component Story Decision Diagram Editor"
         parentCategory="org.muml.preferences">
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
-          iD="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.appearance"
+          iD="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.appearance"
           name="Appearance"
-          parentCategory="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.general"
+          parentCategory="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.general"
           kind="Appearance"/>
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
-          iD="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.connections"
+          iD="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.connections"
           name="Connections"
-          parentCategory="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.general"
+          parentCategory="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.general"
           kind="Connections"/>
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
-          iD="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.printing"
+          iD="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.printing"
           name="Printing"
-          parentCategory="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.general"
+          parentCategory="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.general"
           kind="Printing"/>
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
-          iD="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.rulersAndGrid"
+          iD="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.rulersAndGrid"
           name="Rulers And Grid"
-          parentCategory="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.general"
+          parentCategory="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.general"
           kind="RulersAndGrid"/>
     </preferencePages>
   </diagram>
