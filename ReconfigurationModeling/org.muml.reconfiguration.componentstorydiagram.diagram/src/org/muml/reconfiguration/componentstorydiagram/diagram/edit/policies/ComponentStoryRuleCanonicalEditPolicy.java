@@ -41,11 +41,39 @@ import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.update.UpdaterLinkDescriptor;
+import org.muml.core.common.edit.policies.IDiagramCanonicalEditPolicy;
+import org.muml.reconfiguration.componentstorydiagram.ComponentstorydiagramPackage;
+import org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ActivityEdgeEditPart;
+import org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ActivityEditPart;
+import org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ActivityFinalNodeEditPart;
+import org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.AssemblyVariableEditPart;
+import org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ComponentStoryNodeEditPart;
+import org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ComponentStoryPattern2EditPart;
+import org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ComponentStoryPatternEditPart;
+import org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ComponentStoryRuleEditPart;
+import org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ComponentVariable2EditPart;
+import org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ComponentVariableEditPart;
+import org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ControllerExchangeNodeEditPart;
+import org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.DelegationVariableEditPart;
+import org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.FadingComponentPartVariableEditPart;
+import org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.InitialNodeEditPart;
+import org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.JunctionNodeEditPart;
+import org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.MultiPortOrderConstraintEditPart;
+import org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.MultiPortVariable2EditPart;
+import org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.MultiPortVariableEditPart;
+import org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.PartVariableEditPart;
+import org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.SinglePortVariable2EditPart;
+import org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.SinglePortVariable3EditPart;
+import org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.SinglePortVariableEditPart;
+import org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramUpdater;
+import org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramLinkDescriptor;
+import org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramNodeDescriptor;
+import org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramVisualIDRegistry;
 
 /**
  * @generated
  */
-public class ComponentStoryRuleCanonicalEditPolicy extends CanonicalEditPolicy {
+public class ComponentStoryRuleCanonicalEditPolicy extends CanonicalEditPolicy implements IDiagramCanonicalEditPolicy {
 
 	private boolean canonicalNodes = true;
 
@@ -54,6 +82,25 @@ public class ComponentStoryRuleCanonicalEditPolicy extends CanonicalEditPolicy {
 
 	public ComponentStoryRuleCanonicalEditPolicy(boolean canonicalNodes) {
 		this.canonicalNodes = canonicalNodes;
+	}
+
+	/**
+	* @generated
+	*/
+	private List<String> noConnectionViews = new ArrayList<String>();
+
+	/**
+	 * @generated
+	 */
+	public void addNoConnectionView(String type) {
+		noConnectionViews.add(type);
+	}
+
+	/**
+	 * @generated
+	 */
+	public void removeNoConnectionView(String type) {
+		noConnectionViews.remove(type);
 	}
 
 	/**
@@ -72,8 +119,7 @@ public class ComponentStoryRuleCanonicalEditPolicy extends CanonicalEditPolicy {
 	 * @generated
 	 */
 	protected EStructuralFeature getFeatureToSynchronize() {
-		return org.muml.reconfiguration.componentstorydiagram.ComponentstorydiagramPackage.eINSTANCE
-				.getComponentStoryRule_Activity();
+		return ComponentstorydiagramPackage.eINSTANCE.getComponentStoryRule_Activity();
 	}
 
 	/**
@@ -81,9 +127,9 @@ public class ComponentStoryRuleCanonicalEditPolicy extends CanonicalEditPolicy {
 	 */
 	@SuppressWarnings("rawtypes")
 	protected List getSemanticChildrenList() {
-		List<org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramNodeDescriptor> childDescriptors = getSemanticChildrenViewDescriptors();
+		List<ComponentStoryDiagramNodeDescriptor> childDescriptors = getSemanticChildrenViewDescriptors();
 		LinkedList<EObject> result = new LinkedList<EObject>();
-		for (org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramNodeDescriptor d : childDescriptors) {
+		for (ComponentStoryDiagramNodeDescriptor d : childDescriptors) {
 			result.add(d.getModelElement());
 		}
 		return result;
@@ -99,21 +145,17 @@ public class ComponentStoryRuleCanonicalEditPolicy extends CanonicalEditPolicy {
 		if (!canonicalNodes) {
 			View containerView = (View) getHost().getModel();
 			List<View> childViews = containerView.getChildren();
-			List<org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramNodeDescriptor> result = new LinkedList<org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramNodeDescriptor>();
+			List<ComponentStoryDiagramNodeDescriptor> result = new LinkedList<ComponentStoryDiagramNodeDescriptor>();
 
 			for (View childView : childViews) {
 				EObject childElement = childView.getElement();
-				int visualID = org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramVisualIDRegistry
-						.getVisualID(childView);
-				List<Integer> visualIDs = Arrays
-						.asList(new Integer[] { org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ActivityEditPart.VISUAL_ID });
+				int visualID = ComponentStoryDiagramVisualIDRegistry.getVisualID(childView);
+				List<Integer> visualIDs = Arrays.asList(new Integer[] { ActivityEditPart.VISUAL_ID });
 
 				// Note: childElement can be null, for diagram annotations!
 				if (childElement == null
-						|| childElement.eContainer() == containerView
-								.getElement() && visualIDs.contains(visualID)) {
-					result.add(new org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramNodeDescriptor(
-							childElement, visualID));
+						|| childElement.eContainer() == containerView.getElement() && visualIDs.contains(visualID)) {
+					result.add(new ComponentStoryDiagramNodeDescriptor(childElement, visualID));
 					continue;
 				}
 			}
@@ -122,26 +164,22 @@ public class ComponentStoryRuleCanonicalEditPolicy extends CanonicalEditPolicy {
 		// End added
 
 		View viewObject = (View) getHost().getModel();
-		return org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramUpdater
-				.getComponentStoryRule_1000SemanticChildren(viewObject);
+		return ComponentStoryDiagramDiagramUpdater.getComponentStoryRule_1000SemanticChildren(viewObject);
 
 	}
 
 	/**
 	 * @generated
 	 */
-	protected boolean isOrphaned(Collection<EObject> semanticChildren,
-			final View view) {
-		return isMyDiagramElement(view)
-				&& !semanticChildren.contains(view.getElement());
+	protected boolean isOrphaned(Collection<EObject> semanticChildren, final View view) {
+		return isMyDiagramElement(view) && !semanticChildren.contains(view.getElement());
 	}
 
 	/**
 	 * @generated
 	 */
 	private boolean isMyDiagramElement(View view) {
-		return org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ActivityEditPart.VISUAL_ID == org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramVisualIDRegistry
-				.getVisualID(view);
+		return ActivityEditPart.VISUAL_ID == ComponentStoryDiagramVisualIDRegistry.getVisualID(view);
 	}
 
 	/**
@@ -152,7 +190,7 @@ public class ComponentStoryRuleCanonicalEditPolicy extends CanonicalEditPolicy {
 			return;
 		}
 		LinkedList<IAdaptable> createdViews = new LinkedList<IAdaptable>();
-		List<org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramNodeDescriptor> childDescriptors = getSemanticChildrenViewDescriptors();
+		List<ComponentStoryDiagramNodeDescriptor> childDescriptors = getSemanticChildrenViewDescriptors();
 		LinkedList<View> orphaned = new LinkedList<View>();
 		// we care to check only views we recognize as ours
 		LinkedList<View> knownViewChildren = new LinkedList<View>();
@@ -166,19 +204,16 @@ public class ComponentStoryRuleCanonicalEditPolicy extends CanonicalEditPolicy {
 		// iteration happens over list of desired semantic elements, trying to find best matching View, while original CEP
 		// iterates views, potentially losing view (size/bounds) information - i.e. if there are few views to reference same EObject, only last one 
 		// to answer isOrphaned == true will be used for the domain element representation, see #cleanCanonicalSemanticChildren()
-		for (Iterator<org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramNodeDescriptor> descriptorsIterator = childDescriptors
+		for (Iterator<ComponentStoryDiagramNodeDescriptor> descriptorsIterator = childDescriptors
 				.iterator(); descriptorsIterator.hasNext();) {
-			org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramNodeDescriptor next = descriptorsIterator
-					.next();
-			String hint = org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramVisualIDRegistry
-					.getType(next.getVisualID());
+			ComponentStoryDiagramNodeDescriptor next = descriptorsIterator.next();
+			String hint = ComponentStoryDiagramVisualIDRegistry.getType(next.getVisualID());
 			LinkedList<View> perfectMatch = new LinkedList<View>(); // both semanticElement and hint match that of NodeDescriptor
 			for (View childView : getViewChildren()) {
 				EObject semanticElement = childView.getElement();
 
 				// Note: semanticElement can be null, for diagram annotations!
-				if (semanticElement != null
-						&& semanticElement.equals(next.getModelElement())) {
+				if (semanticElement != null && semanticElement.equals(next.getModelElement())) {
 					if (hint.equals(childView.getType())) {
 						perfectMatch.add(childView);
 						// actually, can stop iteration over view children here, but
@@ -199,14 +234,11 @@ public class ComponentStoryRuleCanonicalEditPolicy extends CanonicalEditPolicy {
 		//
 		ArrayList<CreateViewRequest.ViewDescriptor> viewDescriptors = new ArrayList<CreateViewRequest.ViewDescriptor>(
 				childDescriptors.size());
-		for (org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramNodeDescriptor next : childDescriptors) {
-			String hint = org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramVisualIDRegistry
-					.getType(next.getVisualID());
-			IAdaptable elementAdapter = new CanonicalElementAdapter(
-					next.getModelElement(), hint);
-			CreateViewRequest.ViewDescriptor descriptor = new CreateViewRequest.ViewDescriptor(
-					elementAdapter, Node.class, hint, ViewUtil.APPEND, false,
-					host().getDiagramPreferencesHint());
+		for (ComponentStoryDiagramNodeDescriptor next : childDescriptors) {
+			String hint = ComponentStoryDiagramVisualIDRegistry.getType(next.getVisualID());
+			IAdaptable elementAdapter = new CanonicalElementAdapter(next.getModelElement(), hint);
+			CreateViewRequest.ViewDescriptor descriptor = new CreateViewRequest.ViewDescriptor(elementAdapter,
+					Node.class, hint, ViewUtil.APPEND, false, host().getDiagramPreferencesHint());
 			viewDescriptors.add(descriptor);
 		}
 
@@ -215,10 +247,10 @@ public class ComponentStoryRuleCanonicalEditPolicy extends CanonicalEditPolicy {
 		CreateViewRequest request = getCreateViewRequest(viewDescriptors);
 		Command cmd = getCreateViewCommand(request);
 		if (cmd != null && cmd.canExecute()) {
-			SetViewMutabilityCommand.makeMutable(
-					new EObjectAdapter(host().getNotationView())).execute();
+			SetViewMutabilityCommand.makeMutable(new EObjectAdapter(host().getNotationView())).execute();
 			executeCommand(cmd);
 			@SuppressWarnings("unchecked")
+
 			List<IAdaptable> nl = (List<IAdaptable>) request.getNewObject();
 			createdViews.addAll(nl);
 		}
@@ -230,8 +262,8 @@ public class ComponentStoryRuleCanonicalEditPolicy extends CanonicalEditPolicy {
 
 		if (createdViews.size() > 1) {
 			// perform a layout of the container
-			DeferredLayoutCommand layoutCmd = new DeferredLayoutCommand(host()
-					.getEditingDomain(), createdViews, host());
+			DeferredLayoutCommand layoutCmd = new DeferredLayoutCommand(host().getEditingDomain(), createdViews,
+					host());
 			executeCommand(new ICommandProxy(layoutCmd));
 		}
 
@@ -245,39 +277,29 @@ public class ComponentStoryRuleCanonicalEditPolicy extends CanonicalEditPolicy {
 	 */
 	private Collection<IAdaptable> refreshConnections() {
 		Domain2Notation domain2NotationMap = new Domain2Notation();
-		Collection<org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramLinkDescriptor> linkDescriptors = collectAllLinks(
-				getDiagram(), domain2NotationMap);
+		Collection<ComponentStoryDiagramLinkDescriptor> linkDescriptors = collectAllLinks(getDiagram(),
+				domain2NotationMap);
 		Collection existingLinks = new LinkedList(getDiagram().getEdges());
-		for (Iterator linksIterator = existingLinks.iterator(); linksIterator
-				.hasNext();) {
+		for (Iterator linksIterator = existingLinks.iterator(); linksIterator.hasNext();) {
 			Edge nextDiagramLink = (Edge) linksIterator.next();
-			int diagramLinkVisualID = org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramVisualIDRegistry
-					.getVisualID(nextDiagramLink);
+			int diagramLinkVisualID = ComponentStoryDiagramVisualIDRegistry.getVisualID(nextDiagramLink);
 			if (diagramLinkVisualID == -1) {
-				if (nextDiagramLink.getSource() != null
-						&& nextDiagramLink.getTarget() != null) {
+				if (nextDiagramLink.getSource() != null && nextDiagramLink.getTarget() != null) {
 					linksIterator.remove();
 				}
 				continue;
 			}
-			if (nextDiagramLink.getSource() != null
-					&& nextDiagramLink.getTarget() != null) {
+			if (nextDiagramLink.getSource() != null && nextDiagramLink.getTarget() != null) {
 				EObject diagramLinkObject = nextDiagramLink.getElement();
-				EObject diagramLinkSrc = nextDiagramLink.getSource()
-						.getElement();
-				EObject diagramLinkDst = nextDiagramLink.getTarget()
-						.getElement();
-				for (Iterator<org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramLinkDescriptor> linkDescriptorsIterator = linkDescriptors
+				EObject diagramLinkSrc = nextDiagramLink.getSource().getElement();
+				EObject diagramLinkDst = nextDiagramLink.getTarget().getElement();
+				for (Iterator<ComponentStoryDiagramLinkDescriptor> linkDescriptorsIterator = linkDescriptors
 						.iterator(); linkDescriptorsIterator.hasNext();) {
-					org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramLinkDescriptor nextLinkDescriptor = linkDescriptorsIterator
-							.next();
-					if (diagramLinkObject == nextLinkDescriptor
-							.getModelElement()
+					ComponentStoryDiagramLinkDescriptor nextLinkDescriptor = linkDescriptorsIterator.next();
+					if (diagramLinkObject == nextLinkDescriptor.getModelElement()
 							&& diagramLinkSrc == nextLinkDescriptor.getSource()
-							&& diagramLinkDst == nextLinkDescriptor
-									.getDestination()
-							&& diagramLinkVisualID == nextLinkDescriptor
-									.getVisualID()) {
+							&& diagramLinkDst == nextLinkDescriptor.getDestination()
+							&& diagramLinkVisualID == nextLinkDescriptor.getVisualID()) {
 						linksIterator.remove();
 						linkDescriptorsIterator.remove();
 						break;
@@ -292,201 +314,262 @@ public class ComponentStoryRuleCanonicalEditPolicy extends CanonicalEditPolicy {
 	/**
 	 * @generated
 	 */
-	private Collection<org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramLinkDescriptor> collectAllLinks(
-			View view, Domain2Notation domain2NotationMap) {
-		if (!org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ComponentStoryRuleEditPart.MODEL_ID
-				.equals(org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramVisualIDRegistry
-						.getModelID(view))) {
+	private Collection<ComponentStoryDiagramLinkDescriptor> collectAllLinks(View view,
+			Domain2Notation domain2NotationMap) {
+		if (!ComponentStoryRuleEditPart.MODEL_ID.equals(ComponentStoryDiagramVisualIDRegistry.getModelID(view))) {
 			return Collections.emptyList();
 		}
-		LinkedList<org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramLinkDescriptor> result = new LinkedList<org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramLinkDescriptor>();
-		switch (org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramVisualIDRegistry
-				.getVisualID(view)) {
-		case org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ComponentStoryRuleEditPart.VISUAL_ID: {
+		LinkedList<ComponentStoryDiagramLinkDescriptor> result = new LinkedList<ComponentStoryDiagramLinkDescriptor>();
+		switch (ComponentStoryDiagramVisualIDRegistry.getVisualID(view)) {
+		case ComponentStoryRuleEditPart.VISUAL_ID: {
+			if (noConnectionViews.contains(view.getType())) {
+				// MUML TICKET #1247
+				break;
+			}
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramUpdater
-						.getComponentStoryRule_1000ContainedLinks(view));
+				result.addAll(ComponentStoryDiagramDiagramUpdater.getComponentStoryRule_1000ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ActivityEditPart.VISUAL_ID: {
+		case ActivityEditPart.VISUAL_ID: {
+			if (noConnectionViews.contains(view.getType())) {
+				// MUML TICKET #1247
+				break;
+			}
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramUpdater
-						.getActivity_2003ContainedLinks(view));
+				result.addAll(ComponentStoryDiagramDiagramUpdater.getActivity_2003ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ComponentStoryNodeEditPart.VISUAL_ID: {
+		case ComponentStoryNodeEditPart.VISUAL_ID: {
+			if (noConnectionViews.contains(view.getType())) {
+				// MUML TICKET #1247
+				break;
+			}
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramUpdater
-						.getComponentStoryNode_3001ContainedLinks(view));
+				result.addAll(ComponentStoryDiagramDiagramUpdater.getComponentStoryNode_3001ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ComponentStoryPatternEditPart.VISUAL_ID: {
+		case ComponentStoryPatternEditPart.VISUAL_ID: {
+			if (noConnectionViews.contains(view.getType())) {
+				// MUML TICKET #1247
+				break;
+			}
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramUpdater
-						.getComponentStoryPattern_3011ContainedLinks(view));
+				result.addAll(ComponentStoryDiagramDiagramUpdater.getComponentStoryPattern_3011ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ComponentVariableEditPart.VISUAL_ID: {
+		case ComponentVariableEditPart.VISUAL_ID: {
+			if (noConnectionViews.contains(view.getType())) {
+				// MUML TICKET #1247
+				break;
+			}
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramUpdater
-						.getComponentVariable_3012ContainedLinks(view));
+				result.addAll(ComponentStoryDiagramDiagramUpdater.getComponentVariable_3012ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.PartVariableEditPart.VISUAL_ID: {
+		case PartVariableEditPart.VISUAL_ID: {
+			if (noConnectionViews.contains(view.getType())) {
+				// MUML TICKET #1247
+				break;
+			}
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramUpdater
-						.getComponentPartVariable_3014ContainedLinks(view));
+				result.addAll(ComponentStoryDiagramDiagramUpdater.getComponentPartVariable_3014ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.MultiPortVariableEditPart.VISUAL_ID: {
+		case MultiPortVariableEditPart.VISUAL_ID: {
+			if (noConnectionViews.contains(view.getType())) {
+				// MUML TICKET #1247
+				break;
+			}
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramUpdater
-						.getMultiPortVariable_3016ContainedLinks(view));
+				result.addAll(ComponentStoryDiagramDiagramUpdater.getMultiPortVariable_3016ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.SinglePortVariableEditPart.VISUAL_ID: {
+		case SinglePortVariableEditPart.VISUAL_ID: {
+			if (noConnectionViews.contains(view.getType())) {
+				// MUML TICKET #1247
+				break;
+			}
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramUpdater
-						.getSinglePortVariable_3017ContainedLinks(view));
+				result.addAll(ComponentStoryDiagramDiagramUpdater.getSinglePortVariable_3017ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.SinglePortVariable2EditPart.VISUAL_ID: {
+		case SinglePortVariable2EditPart.VISUAL_ID: {
+			if (noConnectionViews.contains(view.getType())) {
+				// MUML TICKET #1247
+				break;
+			}
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramUpdater
-						.getSinglePortVariable_3018ContainedLinks(view));
+				result.addAll(ComponentStoryDiagramDiagramUpdater.getSinglePortVariable_3018ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.MultiPortVariable2EditPart.VISUAL_ID: {
+		case MultiPortVariable2EditPart.VISUAL_ID: {
+			if (noConnectionViews.contains(view.getType())) {
+				// MUML TICKET #1247
+				break;
+			}
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramUpdater
-						.getMultiPortVariable_3019ContainedLinks(view));
+				result.addAll(ComponentStoryDiagramDiagramUpdater.getMultiPortVariable_3019ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.SinglePortVariable3EditPart.VISUAL_ID: {
+		case SinglePortVariable3EditPart.VISUAL_ID: {
+			if (noConnectionViews.contains(view.getType())) {
+				// MUML TICKET #1247
+				break;
+			}
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramUpdater
-						.getSinglePortVariable_3020ContainedLinks(view));
+				result.addAll(ComponentStoryDiagramDiagramUpdater.getSinglePortVariable_3020ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.InitialNodeEditPart.VISUAL_ID: {
+		case InitialNodeEditPart.VISUAL_ID: {
+			if (noConnectionViews.contains(view.getType())) {
+				// MUML TICKET #1247
+				break;
+			}
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramUpdater
-						.getInitialNode_3007ContainedLinks(view));
+				result.addAll(ComponentStoryDiagramDiagramUpdater.getInitialNode_3007ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.JunctionNodeEditPart.VISUAL_ID: {
+		case JunctionNodeEditPart.VISUAL_ID: {
+			if (noConnectionViews.contains(view.getType())) {
+				// MUML TICKET #1247
+				break;
+			}
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramUpdater
-						.getJunctionNode_3008ContainedLinks(view));
+				result.addAll(ComponentStoryDiagramDiagramUpdater.getJunctionNode_3008ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ActivityFinalNodeEditPart.VISUAL_ID: {
+		case ActivityFinalNodeEditPart.VISUAL_ID: {
+			if (noConnectionViews.contains(view.getType())) {
+				// MUML TICKET #1247
+				break;
+			}
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramUpdater
-						.getActivityFinalNode_3010ContainedLinks(view));
+				result.addAll(ComponentStoryDiagramDiagramUpdater.getActivityFinalNode_3010ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ControllerExchangeNodeEditPart.VISUAL_ID: {
+		case ControllerExchangeNodeEditPart.VISUAL_ID: {
+			if (noConnectionViews.contains(view.getType())) {
+				// MUML TICKET #1247
+				break;
+			}
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramUpdater
-						.getControllerExchangeNode_3021ContainedLinks(view));
+				result.addAll(ComponentStoryDiagramDiagramUpdater.getControllerExchangeNode_3021ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ComponentStoryPattern2EditPart.VISUAL_ID: {
+		case ComponentStoryPattern2EditPart.VISUAL_ID: {
+			if (noConnectionViews.contains(view.getType())) {
+				// MUML TICKET #1247
+				break;
+			}
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramUpdater
-						.getComponentStoryPattern_3022ContainedLinks(view));
+				result.addAll(ComponentStoryDiagramDiagramUpdater.getComponentStoryPattern_3022ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ComponentVariable2EditPart.VISUAL_ID: {
+		case ComponentVariable2EditPart.VISUAL_ID: {
+			if (noConnectionViews.contains(view.getType())) {
+				// MUML TICKET #1247
+				break;
+			}
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramUpdater
-						.getComponentVariable_3023ContainedLinks(view));
+				result.addAll(ComponentStoryDiagramDiagramUpdater.getComponentVariable_3023ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.FadingComponentPartVariableEditPart.VISUAL_ID: {
+		case FadingComponentPartVariableEditPart.VISUAL_ID: {
+			if (noConnectionViews.contains(view.getType())) {
+				// MUML TICKET #1247
+				break;
+			}
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramUpdater
-						.getFadingComponentPartVariable_3024ContainedLinks(view));
+				result.addAll(
+						ComponentStoryDiagramDiagramUpdater.getFadingComponentPartVariable_3024ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ActivityEdgeEditPart.VISUAL_ID: {
+		case ActivityEdgeEditPart.VISUAL_ID: {
+			if (noConnectionViews.contains(view.getType())) {
+				// MUML TICKET #1247
+				break;
+			}
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramUpdater
-						.getActivityEdge_4001ContainedLinks(view));
+				result.addAll(ComponentStoryDiagramDiagramUpdater.getActivityEdge_4001ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.AssemblyVariableEditPart.VISUAL_ID: {
+		case AssemblyVariableEditPart.VISUAL_ID: {
+			if (noConnectionViews.contains(view.getType())) {
+				// MUML TICKET #1247
+				break;
+			}
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramUpdater
-						.getAssemblyVariable_4004ContainedLinks(view));
+				result.addAll(ComponentStoryDiagramDiagramUpdater.getAssemblyVariable_4004ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.DelegationVariableEditPart.VISUAL_ID: {
+		case DelegationVariableEditPart.VISUAL_ID: {
+			if (noConnectionViews.contains(view.getType())) {
+				// MUML TICKET #1247
+				break;
+			}
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramUpdater
-						.getDelegationVariable_4005ContainedLinks(view));
+				result.addAll(ComponentStoryDiagramDiagramUpdater.getDelegationVariable_4005ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.MultiPortOrderConstraintEditPart.VISUAL_ID: {
+		case MultiPortOrderConstraintEditPart.VISUAL_ID: {
+			if (noConnectionViews.contains(view.getType())) {
+				// MUML TICKET #1247
+				break;
+			}
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramUpdater
-						.getMultiPortOrderConstraint_4006ContainedLinks(view));
+				result.addAll(ComponentStoryDiagramDiagramUpdater.getMultiPortOrderConstraint_4006ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		}
-		for (Iterator children = view.getChildren().iterator(); children
-				.hasNext();) {
-			result.addAll(collectAllLinks((View) children.next(),
-					domain2NotationMap));
+		for (Iterator children = view.getChildren().iterator(); children.hasNext();) {
+			result.addAll(collectAllLinks((View) children.next(), domain2NotationMap));
 		}
 		for (Iterator edges = view.getSourceEdges().iterator(); edges.hasNext();) {
-			result.addAll(collectAllLinks((View) edges.next(),
-					domain2NotationMap));
+			result.addAll(collectAllLinks((View) edges.next(), domain2NotationMap));
 		}
 		return result;
 	}
@@ -494,26 +577,20 @@ public class ComponentStoryRuleCanonicalEditPolicy extends CanonicalEditPolicy {
 	/**
 	 * @generated
 	 */
-	private Collection<IAdaptable> createConnections(
-			Collection<org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramLinkDescriptor> linkDescriptors,
+	private Collection<IAdaptable> createConnections(Collection<ComponentStoryDiagramLinkDescriptor> linkDescriptors,
 			Domain2Notation domain2NotationMap) {
 		LinkedList<IAdaptable> adapters = new LinkedList<IAdaptable>();
-		for (org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramLinkDescriptor nextLinkDescriptor : linkDescriptors) {
-			EditPart sourceEditPart = getSourceEditPart(nextLinkDescriptor,
-					domain2NotationMap);
-			EditPart targetEditPart = getTargetEditPart(nextLinkDescriptor,
-					domain2NotationMap);
+		for (ComponentStoryDiagramLinkDescriptor nextLinkDescriptor : linkDescriptors) {
+			EditPart sourceEditPart = getSourceEditPart(nextLinkDescriptor, domain2NotationMap);
+			EditPart targetEditPart = getTargetEditPart(nextLinkDescriptor, domain2NotationMap);
 			if (sourceEditPart == null || targetEditPart == null) {
 				continue;
 			}
 			CreateConnectionViewRequest.ConnectionViewDescriptor descriptor = new CreateConnectionViewRequest.ConnectionViewDescriptor(
 					nextLinkDescriptor.getSemanticAdapter(),
-					org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramVisualIDRegistry
-							.getType(nextLinkDescriptor.getVisualID()),
-					ViewUtil.APPEND, false, ((IGraphicalEditPart) getHost())
-							.getDiagramPreferencesHint());
-			CreateConnectionViewRequest ccr = new CreateConnectionViewRequest(
-					descriptor);
+					ComponentStoryDiagramVisualIDRegistry.getType(nextLinkDescriptor.getVisualID()), ViewUtil.APPEND,
+					false, ((IGraphicalEditPart) getHost()).getDiagramPreferencesHint());
+			CreateConnectionViewRequest ccr = new CreateConnectionViewRequest(descriptor);
 			ccr.setType(RequestConstants.REQ_CONNECTION_START);
 			ccr.setSourceEditPart(sourceEditPart);
 			sourceEditPart.getCommand(ccr);
@@ -534,12 +611,10 @@ public class ComponentStoryRuleCanonicalEditPolicy extends CanonicalEditPolicy {
 	/**
 	 * @generated
 	 */
-	private EditPart getEditPart(EObject domainModelElement,
-			Domain2Notation domain2NotationMap) {
+	private EditPart getEditPart(EObject domainModelElement, Domain2Notation domain2NotationMap) {
 		View view = (View) domain2NotationMap.get(domainModelElement);
 		if (view != null) {
-			return (EditPart) getHost().getViewer().getEditPartRegistry()
-					.get(view);
+			return (EditPart) getHost().getViewer().getEditPartRegistry().get(view);
 		}
 		return null;
 	}
@@ -554,32 +629,26 @@ public class ComponentStoryRuleCanonicalEditPolicy extends CanonicalEditPolicy {
 	/**
 	 * @generated
 	 */
-	protected EditPart getSourceEditPart(UpdaterLinkDescriptor descriptor,
-			Domain2Notation domain2NotationMap) {
+	protected EditPart getSourceEditPart(UpdaterLinkDescriptor descriptor, Domain2Notation domain2NotationMap) {
 		return getEditPart(descriptor.getSource(), domain2NotationMap);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected EditPart getTargetEditPart(UpdaterLinkDescriptor descriptor,
-			Domain2Notation domain2NotationMap) {
+	protected EditPart getTargetEditPart(UpdaterLinkDescriptor descriptor, Domain2Notation domain2NotationMap) {
 		return getEditPart(descriptor.getDestination(), domain2NotationMap);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected final EditPart getHintedEditPart(EObject domainModelElement,
-			Domain2Notation domain2NotationMap, int hintVisualId) {
-		View view = (View) domain2NotationMap
-				.getHinted(
-						domainModelElement,
-						org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramVisualIDRegistry
-								.getType(hintVisualId));
+	protected final EditPart getHintedEditPart(EObject domainModelElement, Domain2Notation domain2NotationMap,
+			int hintVisualId) {
+		View view = (View) domain2NotationMap.getHinted(domainModelElement,
+				ComponentStoryDiagramVisualIDRegistry.getType(hintVisualId));
 		if (view != null) {
-			return (EditPart) getHost().getViewer().getEditPartRegistry()
-					.get(view);
+			return (EditPart) getHost().getViewer().getEditPartRegistry().get(view);
 		}
 		return null;
 	}

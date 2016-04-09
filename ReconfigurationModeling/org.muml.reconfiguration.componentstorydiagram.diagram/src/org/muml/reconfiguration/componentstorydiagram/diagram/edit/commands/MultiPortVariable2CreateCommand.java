@@ -11,6 +11,9 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.reconfiguration.componentstorypattern.ComponentVariable;
+import org.muml.reconfiguration.componentstorypattern.ComponentstorypatternFactory;
+import org.muml.reconfiguration.componentstorypattern.MultiPortVariable;
 
 /**
  * @generated
@@ -29,8 +32,7 @@ public class MultiPortVariable2CreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected EObject getElementToEdit() {
-		EObject container = ((CreateElementRequest) getRequest())
-				.getContainer();
+		EObject container = ((CreateElementRequest) getRequest()).getContainer();
 		if (container instanceof View) {
 			container = ((View) container).getElement();
 		}
@@ -48,12 +50,10 @@ public class MultiPortVariable2CreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
-			IAdaptable info) throws ExecutionException {
-		org.muml.reconfiguration.componentstorypattern.MultiPortVariable newElement = org.muml.reconfiguration.componentstorypattern.ComponentstorypatternFactory.eINSTANCE
-				.createMultiPortVariable();
+	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
+		MultiPortVariable newElement = ComponentstorypatternFactory.eINSTANCE.createMultiPortVariable();
 
-		org.muml.reconfiguration.componentstorypattern.ComponentVariable owner = (org.muml.reconfiguration.componentstorypattern.ComponentVariable) getElementToEdit();
+		ComponentVariable owner = (ComponentVariable) getElementToEdit();
 		owner.getPortVariables().add(newElement);
 
 		doConfigure(newElement, monitor, info);
@@ -63,21 +63,15 @@ public class MultiPortVariable2CreateCommand extends EditElementCommand {
 	}
 
 	/**
-	 * @generated
-	 */
-	protected void doConfigure(
-			org.muml.reconfiguration.componentstorypattern.MultiPortVariable newElement,
-			IProgressMonitor monitor, IAdaptable info)
+	* @generated
+	*/
+	protected void doConfigure(MultiPortVariable newElement, IProgressMonitor monitor, IAdaptable info)
 			throws ExecutionException {
-		IElementType elementType = ((CreateElementRequest) getRequest())
-				.getElementType();
-		ConfigureRequest configureRequest = new ConfigureRequest(
-				getEditingDomain(), newElement, elementType);
-		configureRequest.setClientContext(((CreateElementRequest) getRequest())
-				.getClientContext());
+		IElementType elementType = ((CreateElementRequest) getRequest()).getElementType();
+		ConfigureRequest configureRequest = new ConfigureRequest(getEditingDomain(), newElement, elementType);
+		configureRequest.setClientContext(((CreateElementRequest) getRequest()).getClientContext());
 		configureRequest.addParameters(getRequest().getParameters());
-		ICommand configureCommand = elementType
-				.getEditCommand(configureRequest);
+		ICommand configureCommand = elementType.getEditCommand(configureRequest);
 		if (configureCommand != null && configureCommand.canExecute()) {
 			configureCommand.execute(monitor, info);
 		}

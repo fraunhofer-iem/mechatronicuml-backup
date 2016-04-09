@@ -26,6 +26,7 @@ import org.eclipse.gmf.runtime.diagram.ui.tools.UnspecifiedTypeCreationTool;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.tooling.runtime.part.DefaultLinkToolEntry;
 import org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry;
+import org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes;
 
 /**
  * @generated
@@ -45,8 +46,7 @@ public class ComponentStoryDiagramPaletteFactory {
 	 * @generated
 	 */
 	private PaletteContainer createComponentStoryDiagram1Group() {
-		PaletteDrawer paletteContainer = new PaletteDrawer(
-				org.muml.reconfiguration.componentstorydiagram.diagram.part.Messages.ComponentStoryDiagram1Group_title);
+		PaletteDrawer paletteContainer = new PaletteDrawer(Messages.ComponentStoryDiagram1Group_title);
 		paletteContainer.setId("createComponentStoryDiagram1Group"); //$NON-NLS-1$
 		paletteContainer.add(createActivity1CreationTool());
 		paletteContainer.add(createComponentStoryNode2CreationTool());
@@ -63,8 +63,7 @@ public class ComponentStoryDiagramPaletteFactory {
 	 * @generated
 	 */
 	private PaletteContainer createComponentStoryPattern2Group() {
-		PaletteDrawer paletteContainer = new PaletteDrawer(
-				org.muml.reconfiguration.componentstorydiagram.diagram.part.Messages.ComponentStoryPattern2Group_title);
+		PaletteDrawer paletteContainer = new PaletteDrawer(Messages.ComponentStoryPattern2Group_title);
 		paletteContainer.setId("createComponentStoryPattern2Group"); //$NON-NLS-1$
 		paletteContainer.add(createPartVariable1CreationTool());
 		paletteContainer.add(createSinglePortVariable2CreationTool());
@@ -80,14 +79,12 @@ public class ComponentStoryDiagramPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createActivity1CreationTool() {
-		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
-				org.muml.reconfiguration.componentstorydiagram.diagram.part.Messages.Activity1CreationTool_title,
-				org.muml.reconfiguration.componentstorydiagram.diagram.part.Messages.Activity1CreationTool_desc,
-				Collections
-						.singletonList(org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.Activity_2003));
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.Activity1CreationTool_title,
+				Messages.Activity1CreationTool_desc,
+				Collections.singletonList(ComponentStoryDiagramElementTypes.Activity_2003));
 		entry.setId("createActivity1CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes
-				.getImageDescriptor(org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.Activity_2003));
+		entry.setSmallIcon(
+				ComponentStoryDiagramElementTypes.getImageDescriptor(ComponentStoryDiagramElementTypes.Activity_2003));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -96,14 +93,12 @@ public class ComponentStoryDiagramPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createComponentStoryNode2CreationTool() {
-		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
-				org.muml.reconfiguration.componentstorydiagram.diagram.part.Messages.ComponentStoryNode2CreationTool_title,
-				org.muml.reconfiguration.componentstorydiagram.diagram.part.Messages.ComponentStoryNode2CreationTool_desc,
-				Collections
-						.singletonList(org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.ComponentStoryNode_3001));
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.ComponentStoryNode2CreationTool_title,
+				Messages.ComponentStoryNode2CreationTool_desc,
+				Collections.singletonList(ComponentStoryDiagramElementTypes.ComponentStoryNode_3001));
 		entry.setId("createComponentStoryNode2CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramEditorPlugin
-				.findImageDescriptor("/org.muml.reconfiguration.componentstorydiagram.diagram.custom/icons/ComponentStoryNode.png")); //$NON-NLS-1$
+		entry.setSmallIcon(ComponentStoryDiagramDiagramEditorPlugin.findImageDescriptor(
+				"/org.muml.reconfiguration.componentstorydiagram.diagram.custom/icons/ComponentStoryNode.png")); //$NON-NLS-1$
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -112,14 +107,12 @@ public class ComponentStoryDiagramPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createControllerExchangeNode3CreationTool() {
-		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
-				org.muml.reconfiguration.componentstorydiagram.diagram.part.Messages.ControllerExchangeNode3CreationTool_title,
-				org.muml.reconfiguration.componentstorydiagram.diagram.part.Messages.ControllerExchangeNode3CreationTool_desc,
-				Collections
-						.singletonList(org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.ControllerExchangeNode_3021));
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.ControllerExchangeNode3CreationTool_title,
+				Messages.ControllerExchangeNode3CreationTool_desc,
+				Collections.singletonList(ComponentStoryDiagramElementTypes.ControllerExchangeNode_3021));
 		entry.setId("createControllerExchangeNode3CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramEditorPlugin
-				.findImageDescriptor("/org.muml.reconfiguration.componentstorydiagram.diagram.custom/icons/ControllerExchangeNode.png")); //$NON-NLS-1$
+		entry.setSmallIcon(ComponentStoryDiagramDiagramEditorPlugin.findImageDescriptor(
+				"/org.muml.reconfiguration.componentstorydiagram.diagram.custom/icons/ControllerExchangeNode.png")); //$NON-NLS-1$
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -128,14 +121,12 @@ public class ComponentStoryDiagramPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createActivityEdge4CreationTool() {
-		DefaultLinkToolEntry entry = new DefaultLinkToolEntry(
-				org.muml.reconfiguration.componentstorydiagram.diagram.part.Messages.ActivityEdge4CreationTool_title,
-				org.muml.reconfiguration.componentstorydiagram.diagram.part.Messages.ActivityEdge4CreationTool_desc,
-				Collections
-						.singletonList(org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.ActivityEdge_4001));
+		DefaultLinkToolEntry entry = new DefaultLinkToolEntry(Messages.ActivityEdge4CreationTool_title,
+				Messages.ActivityEdge4CreationTool_desc,
+				Collections.singletonList(ComponentStoryDiagramElementTypes.ActivityEdge_4001));
 		entry.setId("createActivityEdge4CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes
-				.getImageDescriptor(org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.ActivityEdge_4001));
+		entry.setSmallIcon(ComponentStoryDiagramElementTypes
+				.getImageDescriptor(ComponentStoryDiagramElementTypes.ActivityEdge_4001));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -144,14 +135,12 @@ public class ComponentStoryDiagramPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createInitialNode5CreationTool() {
-		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
-				org.muml.reconfiguration.componentstorydiagram.diagram.part.Messages.InitialNode5CreationTool_title,
-				org.muml.reconfiguration.componentstorydiagram.diagram.part.Messages.InitialNode5CreationTool_desc,
-				Collections
-						.singletonList(org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.InitialNode_3007));
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.InitialNode5CreationTool_title,
+				Messages.InitialNode5CreationTool_desc,
+				Collections.singletonList(ComponentStoryDiagramElementTypes.InitialNode_3007));
 		entry.setId("createInitialNode5CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes
-				.getImageDescriptor(org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.InitialNode_3007));
+		entry.setSmallIcon(ComponentStoryDiagramElementTypes
+				.getImageDescriptor(ComponentStoryDiagramElementTypes.InitialNode_3007));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -160,14 +149,12 @@ public class ComponentStoryDiagramPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createJunctionNode6CreationTool() {
-		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
-				org.muml.reconfiguration.componentstorydiagram.diagram.part.Messages.JunctionNode6CreationTool_title,
-				org.muml.reconfiguration.componentstorydiagram.diagram.part.Messages.JunctionNode6CreationTool_desc,
-				Collections
-						.singletonList(org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.JunctionNode_3008));
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.JunctionNode6CreationTool_title,
+				Messages.JunctionNode6CreationTool_desc,
+				Collections.singletonList(ComponentStoryDiagramElementTypes.JunctionNode_3008));
 		entry.setId("createJunctionNode6CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes
-				.getImageDescriptor(org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.JunctionNode_3008));
+		entry.setSmallIcon(ComponentStoryDiagramElementTypes
+				.getImageDescriptor(ComponentStoryDiagramElementTypes.JunctionNode_3008));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -176,14 +163,12 @@ public class ComponentStoryDiagramPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createActivityFinalNode7CreationTool() {
-		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
-				org.muml.reconfiguration.componentstorydiagram.diagram.part.Messages.ActivityFinalNode7CreationTool_title,
-				org.muml.reconfiguration.componentstorydiagram.diagram.part.Messages.ActivityFinalNode7CreationTool_desc,
-				Collections
-						.singletonList(org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.ActivityFinalNode_3010));
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.ActivityFinalNode7CreationTool_title,
+				Messages.ActivityFinalNode7CreationTool_desc,
+				Collections.singletonList(ComponentStoryDiagramElementTypes.ActivityFinalNode_3010));
 		entry.setId("createActivityFinalNode7CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes
-				.getImageDescriptor(org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.ActivityFinalNode_3010));
+		entry.setSmallIcon(ComponentStoryDiagramElementTypes
+				.getImageDescriptor(ComponentStoryDiagramElementTypes.ActivityFinalNode_3010));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -192,13 +177,11 @@ public class ComponentStoryDiagramPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createPartVariable1CreationTool() {
-		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
-				org.muml.reconfiguration.componentstorydiagram.diagram.part.Messages.PartVariable1CreationTool_title,
-				org.muml.reconfiguration.componentstorydiagram.diagram.part.Messages.PartVariable1CreationTool_desc,
-				Collections
-						.singletonList(org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.ComponentPartVariable_3014));
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.PartVariable1CreationTool_title,
+				Messages.PartVariable1CreationTool_desc,
+				Collections.singletonList(ComponentStoryDiagramElementTypes.ComponentPartVariable_3014));
 		entry.setId("createPartVariable1CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramEditorPlugin
+		entry.setSmallIcon(ComponentStoryDiagramDiagramEditorPlugin
 				.findImageDescriptor("/org.muml.pim.common/icons/ComponentPart.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
@@ -209,16 +192,14 @@ public class ComponentStoryDiagramPaletteFactory {
 	 */
 	private ToolEntry createSinglePortVariable2CreationTool() {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(3);
-		types.add(org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.SinglePortVariable_3017);
-		types.add(org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.SinglePortVariable_3018);
-		types.add(org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.SinglePortVariable_3020);
-		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
-				org.muml.reconfiguration.componentstorydiagram.diagram.part.Messages.SinglePortVariable2CreationTool_title,
-				org.muml.reconfiguration.componentstorydiagram.diagram.part.Messages.SinglePortVariable2CreationTool_desc,
-				types);
+		types.add(ComponentStoryDiagramElementTypes.SinglePortVariable_3017);
+		types.add(ComponentStoryDiagramElementTypes.SinglePortVariable_3018);
+		types.add(ComponentStoryDiagramElementTypes.SinglePortVariable_3020);
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.SinglePortVariable2CreationTool_title,
+				Messages.SinglePortVariable2CreationTool_desc, types);
 		entry.setId("createSinglePortVariable2CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramEditorPlugin
-				.findImageDescriptor("/org.muml.pim.common/icons/Port.gif")); //$NON-NLS-1$
+		entry.setSmallIcon(
+				ComponentStoryDiagramDiagramEditorPlugin.findImageDescriptor("/org.muml.pim.common/icons/Port.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -228,15 +209,13 @@ public class ComponentStoryDiagramPaletteFactory {
 	 */
 	private ToolEntry createMultiPortVariable3CreationTool() {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
-		types.add(org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.MultiPortVariable_3016);
-		types.add(org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.MultiPortVariable_3019);
-		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
-				org.muml.reconfiguration.componentstorydiagram.diagram.part.Messages.MultiPortVariable3CreationTool_title,
-				org.muml.reconfiguration.componentstorydiagram.diagram.part.Messages.MultiPortVariable3CreationTool_desc,
-				types);
+		types.add(ComponentStoryDiagramElementTypes.MultiPortVariable_3016);
+		types.add(ComponentStoryDiagramElementTypes.MultiPortVariable_3019);
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.MultiPortVariable3CreationTool_title,
+				Messages.MultiPortVariable3CreationTool_desc, types);
 		entry.setId("createMultiPortVariable3CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramEditorPlugin
-				.findImageDescriptor("/org.muml.pim.common/icons/Port.gif")); //$NON-NLS-1$
+		entry.setSmallIcon(
+				ComponentStoryDiagramDiagramEditorPlugin.findImageDescriptor("/org.muml.pim.common/icons/Port.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -245,13 +224,11 @@ public class ComponentStoryDiagramPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createAssemblyVariable4CreationTool() {
-		DefaultLinkToolEntry entry = new DefaultLinkToolEntry(
-				org.muml.reconfiguration.componentstorydiagram.diagram.part.Messages.AssemblyVariable4CreationTool_title,
-				org.muml.reconfiguration.componentstorydiagram.diagram.part.Messages.AssemblyVariable4CreationTool_desc,
-				Collections
-						.singletonList(org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.AssemblyVariable_4004));
+		DefaultLinkToolEntry entry = new DefaultLinkToolEntry(Messages.AssemblyVariable4CreationTool_title,
+				Messages.AssemblyVariable4CreationTool_desc,
+				Collections.singletonList(ComponentStoryDiagramElementTypes.AssemblyVariable_4004));
 		entry.setId("createAssemblyVariable4CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramEditorPlugin
+		entry.setSmallIcon(ComponentStoryDiagramDiagramEditorPlugin
 				.findImageDescriptor("/org.muml.pim.common/icons/Assembly.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
@@ -261,13 +238,11 @@ public class ComponentStoryDiagramPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createDelegationVariable5CreationTool() {
-		DefaultLinkToolEntry entry = new DefaultLinkToolEntry(
-				org.muml.reconfiguration.componentstorydiagram.diagram.part.Messages.DelegationVariable5CreationTool_title,
-				org.muml.reconfiguration.componentstorydiagram.diagram.part.Messages.DelegationVariable5CreationTool_desc,
-				Collections
-						.singletonList(org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.DelegationVariable_4005));
+		DefaultLinkToolEntry entry = new DefaultLinkToolEntry(Messages.DelegationVariable5CreationTool_title,
+				Messages.DelegationVariable5CreationTool_desc,
+				Collections.singletonList(ComponentStoryDiagramElementTypes.DelegationVariable_4005));
 		entry.setId("createDelegationVariable5CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramEditorPlugin
+		entry.setSmallIcon(ComponentStoryDiagramDiagramEditorPlugin
 				.findImageDescriptor("/org.muml.pim.common/icons/Delegation.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
@@ -277,14 +252,12 @@ public class ComponentStoryDiagramPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createFadingComponentPartVariable6CreationTool() {
-		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
-				org.muml.reconfiguration.componentstorydiagram.diagram.part.Messages.FadingComponentPartVariable6CreationTool_title,
-				org.muml.reconfiguration.componentstorydiagram.diagram.part.Messages.FadingComponentPartVariable6CreationTool_desc,
-				Collections
-						.singletonList(org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.FadingComponentPartVariable_3024));
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.FadingComponentPartVariable6CreationTool_title,
+				Messages.FadingComponentPartVariable6CreationTool_desc,
+				Collections.singletonList(ComponentStoryDiagramElementTypes.FadingComponentPartVariable_3024));
 		entry.setId("createFadingComponentPartVariable6CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes
-				.getImageDescriptor(org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.FadingComponentPartVariable_3024));
+		entry.setSmallIcon(ComponentStoryDiagramElementTypes
+				.getImageDescriptor(ComponentStoryDiagramElementTypes.FadingComponentPartVariable_3024));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -293,14 +266,12 @@ public class ComponentStoryDiagramPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createMultiPortOrderConstraint7CreationTool() {
-		DefaultLinkToolEntry entry = new DefaultLinkToolEntry(
-				org.muml.reconfiguration.componentstorydiagram.diagram.part.Messages.MultiPortOrderConstraint7CreationTool_title,
-				org.muml.reconfiguration.componentstorydiagram.diagram.part.Messages.MultiPortOrderConstraint7CreationTool_desc,
-				Collections
-						.singletonList(org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.MultiPortOrderConstraint_4006));
+		DefaultLinkToolEntry entry = new DefaultLinkToolEntry(Messages.MultiPortOrderConstraint7CreationTool_title,
+				Messages.MultiPortOrderConstraint7CreationTool_desc,
+				Collections.singletonList(ComponentStoryDiagramElementTypes.MultiPortOrderConstraint_4006));
 		entry.setId("createMultiPortOrderConstraint7CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes
-				.getImageDescriptor(org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.MultiPortOrderConstraint_4006));
+		entry.setSmallIcon(ComponentStoryDiagramElementTypes
+				.getImageDescriptor(ComponentStoryDiagramElementTypes.MultiPortOrderConstraint_4006));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}

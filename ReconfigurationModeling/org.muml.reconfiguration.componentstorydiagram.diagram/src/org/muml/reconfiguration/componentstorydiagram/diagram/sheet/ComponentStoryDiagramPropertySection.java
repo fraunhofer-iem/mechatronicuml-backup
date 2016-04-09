@@ -25,12 +25,13 @@ import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.gmf.tooling.runtime.sheet.DefaultPropertySection;
 import org.eclipse.ui.views.properties.IPropertySource;
 import org.eclipse.ui.views.properties.IPropertySourceProvider;
+import org.muml.core.common.FujabaCommonPlugin;
+import org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramEditorPlugin;
 
 /**
  * @generated
  */
-public class ComponentStoryDiagramPropertySection extends
-		DefaultPropertySection implements IPropertySourceProvider {
+public class ComponentStoryDiagramPropertySection extends DefaultPropertySection implements IPropertySourceProvider {
 
 	/**
 	 * Modify/unwrap selection.
@@ -49,16 +50,10 @@ public class ComponentStoryDiagramPropertySection extends
 		AdapterFactoryEditingDomain editingDomain = getEditingDomainFor(object);
 		if (editingDomain != null) {
 			AdapterFactory defaultFactory = editingDomain.getAdapterFactory();
-			List<AdapterFactory> positivePriorityFactories = org.muml.core.common.FujabaCommonPlugin
-					.getInstance()
-					.getCustomItemProviderAdapterFactories(
-							org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramEditorPlugin.ID,
-							true);
-			List<AdapterFactory> negativePriorityFactories = org.muml.core.common.FujabaCommonPlugin
-					.getInstance()
-					.getCustomItemProviderAdapterFactories(
-							org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramEditorPlugin.ID,
-							false);
+			List<AdapterFactory> positivePriorityFactories = FujabaCommonPlugin.getInstance()
+					.getCustomItemProviderAdapterFactories(ComponentStoryDiagramDiagramEditorPlugin.ID, true);
+			List<AdapterFactory> negativePriorityFactories = FujabaCommonPlugin.getInstance()
+					.getCustomItemProviderAdapterFactories(ComponentStoryDiagramDiagramEditorPlugin.ID, false);
 
 			// Put all factories into one composed adapter factory.
 			List<AdapterFactory> factories = new ArrayList<AdapterFactory>();
@@ -77,8 +72,7 @@ public class ComponentStoryDiagramPropertySection extends
 		if (getEditingDomain() instanceof AdapterFactoryEditingDomain) {
 			return (AdapterFactoryEditingDomain) getEditingDomain();
 		}
-		return (AdapterFactoryEditingDomain) TransactionUtil
-				.getEditingDomain(object);
+		return (AdapterFactoryEditingDomain) TransactionUtil.getEditingDomain(object);
 	}
 
 }

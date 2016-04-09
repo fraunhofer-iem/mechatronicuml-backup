@@ -1850,8 +1850,8 @@
     <requiredPlugins>org.muml.ape.runtime</requiredPlugins>
     <requiredPlugins>org.muml.reconfiguration.common</requiredPlugins>
     <requiredPlugins>org.muml.reconfiguration.componentstorydiagram.edit.properties</requiredPlugins>
-    <requiredPlugins>de.uni_paderborn.fujaba.muml.componentstorypattern.edit.properties</requiredPlugins>
-    <requiredPlugins>de.uni_paderborn.fujaba.muml.reconfiguration.edit.properties</requiredPlugins>
+    <requiredPlugins>org.muml.reconfiguration.componentstorypattern.edit.properties</requiredPlugins>
+    <requiredPlugins>org.muml.reconfiguration.edit.properties</requiredPlugins>
   </plugin>
   <editor
       iconPath="icons/obj16/ComponentStoryDiagramFile.gif"/>

@@ -15,7 +15,5 @@ package org.muml.reconfiguration.componentstorydiagram.diagram.edit.helpers;
 /**
  * @generated
  */
-public class FadingComponentPartVariableEditHelper
-		extends
-		org.muml.reconfiguration.componentstorydiagram.diagram.edit.helpers.ComponentStoryDiagramBaseEditHelper {
+public class FadingComponentPartVariableEditHelper extends ComponentStoryDiagramBaseEditHelper {
 }

@@ -14,20 +14,24 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipReques
 import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.reconfiguration.componentstorydiagram.diagram.edit.commands.ActivityEdgeCreateCommand;
+import org.muml.reconfiguration.componentstorydiagram.diagram.edit.commands.ActivityEdgeReorientCommand;
+import org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ActivityEdgeEditPart;
+import org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ComponentStoryPattern2EditPart;
+import org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ControllerExchangeNodeControllerExchangeNodeFadingFunctionsCompartmentEditPart;
+import org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramVisualIDRegistry;
+import org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes;
 
 /**
  * @generated
  */
-public class ControllerExchangeNodeItemSemanticEditPolicy
-		extends
-		org.muml.reconfiguration.componentstorydiagram.diagram.edit.policies.ComponentStoryDiagramBaseItemSemanticEditPolicy {
+public class ControllerExchangeNodeItemSemanticEditPolicy extends ComponentStoryDiagramBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public ControllerExchangeNodeItemSemanticEditPolicy() {
-		super(
-				org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.ControllerExchangeNode_3021);
+		super(ComponentStoryDiagramElementTypes.ControllerExchangeNode_3021);
 	}
 
 	/**
@@ -35,15 +39,12 @@ public class ControllerExchangeNodeItemSemanticEditPolicy
 	 */
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		View view = (View) getHost().getModel();
-		CompositeTransactionalCommand cmd = new CompositeTransactionalCommand(
-				getEditingDomain(), null);
+		CompositeTransactionalCommand cmd = new CompositeTransactionalCommand(getEditingDomain(), null);
 		cmd.setTransactionNestingEnabled(false);
 		for (Iterator<?> it = view.getTargetEdges().iterator(); it.hasNext();) {
 			Edge incomingLink = (Edge) it.next();
-			if (org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramVisualIDRegistry
-					.getVisualID(incomingLink) == org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ActivityEdgeEditPart.VISUAL_ID) {
-				DestroyElementRequest r = new DestroyElementRequest(
-						incomingLink.getElement(), false);
+			if (ComponentStoryDiagramVisualIDRegistry.getVisualID(incomingLink) == ActivityEdgeEditPart.VISUAL_ID) {
+				DestroyElementRequest r = new DestroyElementRequest(incomingLink.getElement(), false);
 				cmd.add(new DestroyElementCommand(r));
 				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
 				continue;
@@ -51,10 +52,8 @@ public class ControllerExchangeNodeItemSemanticEditPolicy
 		}
 		for (Iterator<?> it = view.getSourceEdges().iterator(); it.hasNext();) {
 			Edge outgoingLink = (Edge) it.next();
-			if (org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramVisualIDRegistry
-					.getVisualID(outgoingLink) == org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ActivityEdgeEditPart.VISUAL_ID) {
-				DestroyElementRequest r = new DestroyElementRequest(
-						outgoingLink.getElement(), false);
+			if (ComponentStoryDiagramVisualIDRegistry.getVisualID(outgoingLink) == ActivityEdgeEditPart.VISUAL_ID) {
+				DestroyElementRequest r = new DestroyElementRequest(outgoingLink.getElement(), false);
 				cmd.add(new DestroyElementCommand(r));
 				cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
 				continue;
@@ -80,19 +79,15 @@ public class ControllerExchangeNodeItemSemanticEditPolicy
 		View view = (View) getHost().getModel();
 		for (Iterator<?> nit = view.getChildren().iterator(); nit.hasNext();) {
 			Node node = (Node) nit.next();
-			switch (org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramVisualIDRegistry
-					.getVisualID(node)) {
-			case org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ControllerExchangeNodeControllerExchangeNodeFadingFunctionsCompartmentEditPart.VISUAL_ID:
-				for (Iterator<?> cit = node.getChildren().iterator(); cit
-						.hasNext();) {
+			switch (ComponentStoryDiagramVisualIDRegistry.getVisualID(node)) {
+			case ControllerExchangeNodeControllerExchangeNodeFadingFunctionsCompartmentEditPart.VISUAL_ID:
+				for (Iterator<?> cit = node.getChildren().iterator(); cit.hasNext();) {
 					Node cnode = (Node) cit.next();
-					switch (org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramVisualIDRegistry
-							.getVisualID(cnode)) {
-					case org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ComponentStoryPattern2EditPart.VISUAL_ID:
+					switch (ComponentStoryDiagramVisualIDRegistry.getVisualID(cnode)) {
+					case ComponentStoryPattern2EditPart.VISUAL_ID:
 
 						cmd.add(new DestroyElementCommand(
-								new DestroyElementRequest(getEditingDomain(),
-										cnode.getElement(), false)));
+								new DestroyElementRequest(getEditingDomain(), cnode.getElement(), false)));
 						// don't need explicit deletion of cnode as parent's view deletion would clean child views as well 
 						// cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), cnode));
 
@@ -110,19 +105,15 @@ public class ControllerExchangeNodeItemSemanticEditPolicy
 	protected Command getCreateRelationshipCommand(CreateRelationshipRequest req) {
 		Command command = req.getTarget() == null ? getStartCreateRelationshipCommand(req)
 				: getCompleteCreateRelationshipCommand(req);
-		return command != null ? command : super
-				.getCreateRelationshipCommand(req);
+		return command != null ? command : super.getCreateRelationshipCommand(req);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected Command getStartCreateRelationshipCommand(
-			CreateRelationshipRequest req) {
-		if (org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.ActivityEdge_4001 == req
-				.getElementType()) {
-			return getGEFWrapper(new org.muml.reconfiguration.componentstorydiagram.diagram.edit.commands.ActivityEdgeCreateCommand(
-					req, req.getSource(), req.getTarget()));
+	protected Command getStartCreateRelationshipCommand(CreateRelationshipRequest req) {
+		if (ComponentStoryDiagramElementTypes.ActivityEdge_4001 == req.getElementType()) {
+			return getGEFWrapper(new ActivityEdgeCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return null;
 	}
@@ -130,12 +121,9 @@ public class ControllerExchangeNodeItemSemanticEditPolicy
 	/**
 	 * @generated
 	 */
-	protected Command getCompleteCreateRelationshipCommand(
-			CreateRelationshipRequest req) {
-		if (org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.ActivityEdge_4001 == req
-				.getElementType()) {
-			return getGEFWrapper(new org.muml.reconfiguration.componentstorydiagram.diagram.edit.commands.ActivityEdgeCreateCommand(
-					req, req.getSource(), req.getTarget()));
+	protected Command getCompleteCreateRelationshipCommand(CreateRelationshipRequest req) {
+		if (ComponentStoryDiagramElementTypes.ActivityEdge_4001 == req.getElementType()) {
+			return getGEFWrapper(new ActivityEdgeCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return null;
 	}
@@ -146,12 +134,10 @@ public class ControllerExchangeNodeItemSemanticEditPolicy
 	 * 
 	 * @generated
 	 */
-	protected Command getReorientRelationshipCommand(
-			ReorientRelationshipRequest req) {
+	protected Command getReorientRelationshipCommand(ReorientRelationshipRequest req) {
 		switch (getVisualID(req)) {
-		case org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ActivityEdgeEditPart.VISUAL_ID:
-			return getGEFWrapper(new org.muml.reconfiguration.componentstorydiagram.diagram.edit.commands.ActivityEdgeReorientCommand(
-					req));
+		case ActivityEdgeEditPart.VISUAL_ID:
+			return getGEFWrapper(new ActivityEdgeReorientCommand(req));
 		}
 		return super.getReorientRelationshipCommand(req);
 	}

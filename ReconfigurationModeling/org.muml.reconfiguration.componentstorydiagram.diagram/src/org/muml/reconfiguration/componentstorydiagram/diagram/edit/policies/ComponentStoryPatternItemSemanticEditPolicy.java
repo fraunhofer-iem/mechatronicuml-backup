@@ -11,20 +11,21 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ComponentStoryPatternComponentStoryPatternCompartmentEditPart;
+import org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ComponentVariableEditPart;
+import org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramVisualIDRegistry;
+import org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes;
 
 /**
  * @generated
  */
-public class ComponentStoryPatternItemSemanticEditPolicy
-		extends
-		org.muml.reconfiguration.componentstorydiagram.diagram.edit.policies.ComponentStoryDiagramBaseItemSemanticEditPolicy {
+public class ComponentStoryPatternItemSemanticEditPolicy extends ComponentStoryDiagramBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public ComponentStoryPatternItemSemanticEditPolicy() {
-		super(
-				org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.ComponentStoryPattern_3011);
+		super(ComponentStoryDiagramElementTypes.ComponentStoryPattern_3011);
 	}
 
 	/**
@@ -32,8 +33,7 @@ public class ComponentStoryPatternItemSemanticEditPolicy
 	 */
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		View view = (View) getHost().getModel();
-		CompositeTransactionalCommand cmd = new CompositeTransactionalCommand(
-				getEditingDomain(), null);
+		CompositeTransactionalCommand cmd = new CompositeTransactionalCommand(getEditingDomain(), null);
 		cmd.setTransactionNestingEnabled(false);
 		EAnnotation annotation = view.getEAnnotation("Shortcut"); //$NON-NLS-1$
 		if (annotation == null) {
@@ -55,19 +55,15 @@ public class ComponentStoryPatternItemSemanticEditPolicy
 		View view = (View) getHost().getModel();
 		for (Iterator<?> nit = view.getChildren().iterator(); nit.hasNext();) {
 			Node node = (Node) nit.next();
-			switch (org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramVisualIDRegistry
-					.getVisualID(node)) {
-			case org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ComponentStoryPatternComponentStoryPatternCompartmentEditPart.VISUAL_ID:
-				for (Iterator<?> cit = node.getChildren().iterator(); cit
-						.hasNext();) {
+			switch (ComponentStoryDiagramVisualIDRegistry.getVisualID(node)) {
+			case ComponentStoryPatternComponentStoryPatternCompartmentEditPart.VISUAL_ID:
+				for (Iterator<?> cit = node.getChildren().iterator(); cit.hasNext();) {
 					Node cnode = (Node) cit.next();
-					switch (org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramVisualIDRegistry
-							.getVisualID(cnode)) {
-					case org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ComponentVariableEditPart.VISUAL_ID:
+					switch (ComponentStoryDiagramVisualIDRegistry.getVisualID(cnode)) {
+					case ComponentVariableEditPart.VISUAL_ID:
 
 						cmd.add(new DestroyElementCommand(
-								new DestroyElementRequest(getEditingDomain(),
-										cnode.getElement(), false)));
+								new DestroyElementRequest(getEditingDomain(), cnode.getElement(), false)));
 						// don't need explicit deletion of cnode as parent's view deletion would clean child views as well 
 						// cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), cnode));
 

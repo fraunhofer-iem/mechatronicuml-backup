@@ -32,12 +32,13 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.swt.widgets.Display;
+import org.muml.reconfiguration.componentstorydiagram.diagram.edit.policies.MultiPortOrderConstraintItemSemanticEditPolicy;
 
 /**
  * @generated
  */
-public class MultiPortOrderConstraintEditPart extends ConnectionNodeEditPart
-		implements ITreeBranchEditPart {
+public class MultiPortOrderConstraintEditPart extends ConnectionNodeEditPart implements ITreeBranchEditPart {
 
 	/**
 	 * @generated
@@ -79,19 +80,16 @@ public class MultiPortOrderConstraintEditPart extends ConnectionNodeEditPart
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(
-				EditPolicyRoles.SEMANTIC_ROLE,
-				new org.muml.reconfiguration.componentstorydiagram.diagram.edit.policies.MultiPortOrderConstraintItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new MultiPortOrderConstraintItemSemanticEditPolicy());
 	}
 
 	/**
 	 * @generated
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.MultiPortOrderConstraintOrderConstraintTypeEditPart) {
-			((org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.MultiPortOrderConstraintOrderConstraintTypeEditPart) childEditPart)
-					.setLabel(getPrimaryShape()
-							.getMultiPortOrderConstraintTypeLabelFigure());
+		if (childEditPart instanceof MultiPortOrderConstraintOrderConstraintTypeEditPart) {
+			((MultiPortOrderConstraintOrderConstraintTypeEditPart) childEditPart)
+					.setLabel(getPrimaryShape().getMultiPortOrderConstraintTypeLabelFigure());
 			return true;
 		}
 		return false;
@@ -111,7 +109,7 @@ public class MultiPortOrderConstraintEditPart extends ConnectionNodeEditPart
 	 * @generated
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.MultiPortOrderConstraintOrderConstraintTypeEditPart) {
+		if (childEditPart instanceof MultiPortOrderConstraintOrderConstraintTypeEditPart) {
 			return true;
 		}
 		return false;
@@ -214,17 +212,19 @@ public class MultiPortOrderConstraintEditPart extends ConnectionNodeEditPart
 		// Properties View.
 		EObject sourceElement = null;
 		if (getSource() instanceof GraphicalEditPart) {
-			sourceElement = ((GraphicalEditPart) getSource()).getNotationView()
-					.getElement();
+			sourceElement = ((GraphicalEditPart) getSource()).getNotationView().getElement();
 		}
 		EObject targetElement = null;
 		if (getTarget() instanceof GraphicalEditPart) {
-			targetElement = ((GraphicalEditPart) getTarget()).getNotationView()
-					.getElement();
+			targetElement = ((GraphicalEditPart) getTarget()).getNotationView().getElement();
 		}
-		if (notification.getOldValue() == sourceElement
-				|| notification.getOldValue() == targetElement) {
-			doCanonicalRefresh();
+		if (notification.getOldValue() == sourceElement || notification.getOldValue() == targetElement) {
+			Display.getCurrent().asyncExec(new Runnable() {
+				@Override
+				public void run() {
+					doCanonicalRefresh();
+				}
+			});
 		}
 
 		super.handleNotificationEvent(notification);

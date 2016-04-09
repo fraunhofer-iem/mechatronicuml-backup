@@ -2,30 +2,28 @@ package org.muml.reconfiguration.componentstorydiagram.diagram.edit.policies;
 
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
+import org.muml.reconfiguration.componentstorydiagram.diagram.edit.commands.ComponentVariableCreateCommand;
+import org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes;
 
 /**
  * @generated
  */
 public class ComponentStoryPatternComponentStoryPatternCompartmentItemSemanticEditPolicy
-		extends
-		org.muml.reconfiguration.componentstorydiagram.diagram.edit.policies.ComponentStoryDiagramBaseItemSemanticEditPolicy {
+		extends ComponentStoryDiagramBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public ComponentStoryPatternComponentStoryPatternCompartmentItemSemanticEditPolicy() {
-		super(
-				org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.ComponentStoryPattern_3011);
+		super(ComponentStoryDiagramElementTypes.ComponentStoryPattern_3011);
 	}
 
 	/**
 	 * @generated
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
-		if (org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.ComponentVariable_3012 == req
-				.getElementType()) {
-			return getGEFWrapper(new org.muml.reconfiguration.componentstorydiagram.diagram.edit.commands.ComponentVariableCreateCommand(
-					req));
+		if (ComponentStoryDiagramElementTypes.ComponentVariable_3012 == req.getElementType()) {
+			return getGEFWrapper(new ComponentVariableCreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}

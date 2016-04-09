@@ -19,13 +19,19 @@ import java.util.List;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
+import org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.MultiPortVariable2EditPart;
+import org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.MultiPortVariableEditPart;
+import org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.SinglePortVariable2EditPart;
+import org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.SinglePortVariable3EditPart;
+import org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.SinglePortVariableEditPart;
+import org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes;
+import org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramModelingAssistantProvider;
 
 /**
  * @generated
  */
 public class ComponentStoryDiagramModelingAssistantProviderOfMultiPortVariable2EditPart
-		extends
-		org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramModelingAssistantProvider {
+		extends ComponentStoryDiagramModelingAssistantProvider {
 
 	/**
 	 * @generated
@@ -33,7 +39,7 @@ public class ComponentStoryDiagramModelingAssistantProviderOfMultiPortVariable2E
 	@Override
 	public List<IElementType> getTypesForPopupBar(IAdaptable host) {
 		List<IElementType> types = new ArrayList<IElementType>(1);
-		types.add(org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.SinglePortVariable_3017);
+		types.add(ComponentStoryDiagramElementTypes.SinglePortVariable_3017);
 		return types;
 	}
 
@@ -42,19 +48,17 @@ public class ComponentStoryDiagramModelingAssistantProviderOfMultiPortVariable2E
 	 */
 	@Override
 	public List<IElementType> getRelTypesOnSource(IAdaptable source) {
-		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source
-				.getAdapter(IGraphicalEditPart.class);
-		return doGetRelTypesOnSource((org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.MultiPortVariable2EditPart) sourceEditPart);
+		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source.getAdapter(IGraphicalEditPart.class);
+		return doGetRelTypesOnSource((MultiPortVariable2EditPart) sourceEditPart);
 	}
 
 	/**
-	 * @generated
-	 */
-	public List<IElementType> doGetRelTypesOnSource(
-			org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.MultiPortVariable2EditPart source) {
+	* @generated
+	*/
+	public List<IElementType> doGetRelTypesOnSource(MultiPortVariable2EditPart source) {
 		List<IElementType> types = new ArrayList<IElementType>(2);
-		types.add(org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.AssemblyVariable_4004);
-		types.add(org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.DelegationVariable_4005);
+		types.add(ComponentStoryDiagramElementTypes.AssemblyVariable_4004);
+		types.add(ComponentStoryDiagramElementTypes.DelegationVariable_4005);
 		return types;
 	}
 
@@ -62,53 +66,47 @@ public class ComponentStoryDiagramModelingAssistantProviderOfMultiPortVariable2E
 	 * @generated
 	 */
 	@Override
-	public List<IElementType> getRelTypesOnSourceAndTarget(IAdaptable source,
-			IAdaptable target) {
-		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source
-				.getAdapter(IGraphicalEditPart.class);
-		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target
-				.getAdapter(IGraphicalEditPart.class);
-		return doGetRelTypesOnSourceAndTarget(
-				(org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.MultiPortVariable2EditPart) sourceEditPart,
-				targetEditPart);
+	public List<IElementType> getRelTypesOnSourceAndTarget(IAdaptable source, IAdaptable target) {
+		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source.getAdapter(IGraphicalEditPart.class);
+		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target.getAdapter(IGraphicalEditPart.class);
+		return doGetRelTypesOnSourceAndTarget((MultiPortVariable2EditPart) sourceEditPart, targetEditPart);
 	}
 
 	/**
-	 * @generated
-	 */
-	public List<IElementType> doGetRelTypesOnSourceAndTarget(
-			org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.MultiPortVariable2EditPart source,
+	* @generated
+	*/
+	public List<IElementType> doGetRelTypesOnSourceAndTarget(MultiPortVariable2EditPart source,
 			IGraphicalEditPart targetEditPart) {
 		List<IElementType> types = new LinkedList<IElementType>();
-		if (targetEditPart instanceof org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.MultiPortVariableEditPart) {
-			types.add(org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.AssemblyVariable_4004);
+		if (targetEditPart instanceof MultiPortVariableEditPart) {
+			types.add(ComponentStoryDiagramElementTypes.AssemblyVariable_4004);
 		}
-		if (targetEditPart instanceof org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.SinglePortVariableEditPart) {
-			types.add(org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.AssemblyVariable_4004);
+		if (targetEditPart instanceof SinglePortVariableEditPart) {
+			types.add(ComponentStoryDiagramElementTypes.AssemblyVariable_4004);
 		}
-		if (targetEditPart instanceof org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.SinglePortVariable2EditPart) {
-			types.add(org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.AssemblyVariable_4004);
+		if (targetEditPart instanceof SinglePortVariable2EditPart) {
+			types.add(ComponentStoryDiagramElementTypes.AssemblyVariable_4004);
 		}
-		if (targetEditPart instanceof org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.MultiPortVariable2EditPart) {
-			types.add(org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.AssemblyVariable_4004);
+		if (targetEditPart instanceof MultiPortVariable2EditPart) {
+			types.add(ComponentStoryDiagramElementTypes.AssemblyVariable_4004);
 		}
-		if (targetEditPart instanceof org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.SinglePortVariable3EditPart) {
-			types.add(org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.AssemblyVariable_4004);
+		if (targetEditPart instanceof SinglePortVariable3EditPart) {
+			types.add(ComponentStoryDiagramElementTypes.AssemblyVariable_4004);
 		}
-		if (targetEditPart instanceof org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.MultiPortVariableEditPart) {
-			types.add(org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.DelegationVariable_4005);
+		if (targetEditPart instanceof MultiPortVariableEditPart) {
+			types.add(ComponentStoryDiagramElementTypes.DelegationVariable_4005);
 		}
-		if (targetEditPart instanceof org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.SinglePortVariableEditPart) {
-			types.add(org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.DelegationVariable_4005);
+		if (targetEditPart instanceof SinglePortVariableEditPart) {
+			types.add(ComponentStoryDiagramElementTypes.DelegationVariable_4005);
 		}
-		if (targetEditPart instanceof org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.SinglePortVariable2EditPart) {
-			types.add(org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.DelegationVariable_4005);
+		if (targetEditPart instanceof SinglePortVariable2EditPart) {
+			types.add(ComponentStoryDiagramElementTypes.DelegationVariable_4005);
 		}
-		if (targetEditPart instanceof org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.MultiPortVariable2EditPart) {
-			types.add(org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.DelegationVariable_4005);
+		if (targetEditPart instanceof MultiPortVariable2EditPart) {
+			types.add(ComponentStoryDiagramElementTypes.DelegationVariable_4005);
 		}
-		if (targetEditPart instanceof org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.SinglePortVariable3EditPart) {
-			types.add(org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.DelegationVariable_4005);
+		if (targetEditPart instanceof SinglePortVariable3EditPart) {
+			types.add(ComponentStoryDiagramElementTypes.DelegationVariable_4005);
 		}
 		return types;
 	}
@@ -117,34 +115,28 @@ public class ComponentStoryDiagramModelingAssistantProviderOfMultiPortVariable2E
 	 * @generated
 	 */
 	@Override
-	public List<IElementType> getTypesForTarget(IAdaptable source,
-			IElementType relationshipType) {
-		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source
-				.getAdapter(IGraphicalEditPart.class);
-		return doGetTypesForTarget(
-				(org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.MultiPortVariable2EditPart) sourceEditPart,
-				relationshipType);
+	public List<IElementType> getTypesForTarget(IAdaptable source, IElementType relationshipType) {
+		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source.getAdapter(IGraphicalEditPart.class);
+		return doGetTypesForTarget((MultiPortVariable2EditPart) sourceEditPart, relationshipType);
 	}
 
 	/**
-	 * @generated
-	 */
-	public List<IElementType> doGetTypesForTarget(
-			org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.MultiPortVariable2EditPart source,
-			IElementType relationshipType) {
+	* @generated
+	*/
+	public List<IElementType> doGetTypesForTarget(MultiPortVariable2EditPart source, IElementType relationshipType) {
 		List<IElementType> types = new ArrayList<IElementType>();
-		if (relationshipType == org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.AssemblyVariable_4004) {
-			types.add(org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.MultiPortVariable_3016);
-			types.add(org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.SinglePortVariable_3017);
-			types.add(org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.SinglePortVariable_3018);
-			types.add(org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.MultiPortVariable_3019);
-			types.add(org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.SinglePortVariable_3020);
-		} else if (relationshipType == org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.DelegationVariable_4005) {
-			types.add(org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.MultiPortVariable_3016);
-			types.add(org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.SinglePortVariable_3017);
-			types.add(org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.SinglePortVariable_3018);
-			types.add(org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.MultiPortVariable_3019);
-			types.add(org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.SinglePortVariable_3020);
+		if (relationshipType == ComponentStoryDiagramElementTypes.AssemblyVariable_4004) {
+			types.add(ComponentStoryDiagramElementTypes.MultiPortVariable_3016);
+			types.add(ComponentStoryDiagramElementTypes.SinglePortVariable_3017);
+			types.add(ComponentStoryDiagramElementTypes.SinglePortVariable_3018);
+			types.add(ComponentStoryDiagramElementTypes.MultiPortVariable_3019);
+			types.add(ComponentStoryDiagramElementTypes.SinglePortVariable_3020);
+		} else if (relationshipType == ComponentStoryDiagramElementTypes.DelegationVariable_4005) {
+			types.add(ComponentStoryDiagramElementTypes.MultiPortVariable_3016);
+			types.add(ComponentStoryDiagramElementTypes.SinglePortVariable_3017);
+			types.add(ComponentStoryDiagramElementTypes.SinglePortVariable_3018);
+			types.add(ComponentStoryDiagramElementTypes.MultiPortVariable_3019);
+			types.add(ComponentStoryDiagramElementTypes.SinglePortVariable_3020);
 		}
 		return types;
 	}
@@ -154,19 +146,17 @@ public class ComponentStoryDiagramModelingAssistantProviderOfMultiPortVariable2E
 	 */
 	@Override
 	public List<IElementType> getRelTypesOnTarget(IAdaptable target) {
-		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target
-				.getAdapter(IGraphicalEditPart.class);
-		return doGetRelTypesOnTarget((org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.MultiPortVariable2EditPart) targetEditPart);
+		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target.getAdapter(IGraphicalEditPart.class);
+		return doGetRelTypesOnTarget((MultiPortVariable2EditPart) targetEditPart);
 	}
 
 	/**
-	 * @generated
-	 */
-	public List<IElementType> doGetRelTypesOnTarget(
-			org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.MultiPortVariable2EditPart target) {
+	* @generated
+	*/
+	public List<IElementType> doGetRelTypesOnTarget(MultiPortVariable2EditPart target) {
 		List<IElementType> types = new ArrayList<IElementType>(2);
-		types.add(org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.AssemblyVariable_4004);
-		types.add(org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.DelegationVariable_4005);
+		types.add(ComponentStoryDiagramElementTypes.AssemblyVariable_4004);
+		types.add(ComponentStoryDiagramElementTypes.DelegationVariable_4005);
 		return types;
 	}
 
@@ -174,34 +164,28 @@ public class ComponentStoryDiagramModelingAssistantProviderOfMultiPortVariable2E
 	 * @generated
 	 */
 	@Override
-	public List<IElementType> getTypesForSource(IAdaptable target,
-			IElementType relationshipType) {
-		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target
-				.getAdapter(IGraphicalEditPart.class);
-		return doGetTypesForSource(
-				(org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.MultiPortVariable2EditPart) targetEditPart,
-				relationshipType);
+	public List<IElementType> getTypesForSource(IAdaptable target, IElementType relationshipType) {
+		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target.getAdapter(IGraphicalEditPart.class);
+		return doGetTypesForSource((MultiPortVariable2EditPart) targetEditPart, relationshipType);
 	}
 
 	/**
-	 * @generated
-	 */
-	public List<IElementType> doGetTypesForSource(
-			org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.MultiPortVariable2EditPart target,
-			IElementType relationshipType) {
+	* @generated
+	*/
+	public List<IElementType> doGetTypesForSource(MultiPortVariable2EditPart target, IElementType relationshipType) {
 		List<IElementType> types = new ArrayList<IElementType>();
-		if (relationshipType == org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.AssemblyVariable_4004) {
-			types.add(org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.MultiPortVariable_3016);
-			types.add(org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.SinglePortVariable_3017);
-			types.add(org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.SinglePortVariable_3018);
-			types.add(org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.MultiPortVariable_3019);
-			types.add(org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.SinglePortVariable_3020);
-		} else if (relationshipType == org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.DelegationVariable_4005) {
-			types.add(org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.MultiPortVariable_3016);
-			types.add(org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.SinglePortVariable_3017);
-			types.add(org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.SinglePortVariable_3018);
-			types.add(org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.MultiPortVariable_3019);
-			types.add(org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.SinglePortVariable_3020);
+		if (relationshipType == ComponentStoryDiagramElementTypes.AssemblyVariable_4004) {
+			types.add(ComponentStoryDiagramElementTypes.MultiPortVariable_3016);
+			types.add(ComponentStoryDiagramElementTypes.SinglePortVariable_3017);
+			types.add(ComponentStoryDiagramElementTypes.SinglePortVariable_3018);
+			types.add(ComponentStoryDiagramElementTypes.MultiPortVariable_3019);
+			types.add(ComponentStoryDiagramElementTypes.SinglePortVariable_3020);
+		} else if (relationshipType == ComponentStoryDiagramElementTypes.DelegationVariable_4005) {
+			types.add(ComponentStoryDiagramElementTypes.MultiPortVariable_3016);
+			types.add(ComponentStoryDiagramElementTypes.SinglePortVariable_3017);
+			types.add(ComponentStoryDiagramElementTypes.SinglePortVariable_3018);
+			types.add(ComponentStoryDiagramElementTypes.MultiPortVariable_3019);
+			types.add(ComponentStoryDiagramElementTypes.SinglePortVariable_3020);
 		}
 		return types;
 	}

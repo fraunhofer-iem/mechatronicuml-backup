@@ -24,6 +24,13 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy;
+import org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy;
+import org.muml.reconfiguration.componentstorydiagram.diagram.edit.policies.ComponentStoryDiagramBaseItemSemanticEditPolicy;
+import org.muml.reconfiguration.componentstorypattern.ComponentstorypatternFactory;
+import org.muml.reconfiguration.componentstorypattern.MultiPortOrderConstraint;
+import org.muml.reconfiguration.componentstorypattern.MultiPortVariable;
+import org.muml.reconfiguration.componentstorypattern.SinglePortVariable;
 
 /**
  * @generated
@@ -43,24 +50,21 @@ public class MultiPortOrderConstraintCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	private final org.muml.reconfiguration.componentstorypattern.MultiPortVariable container;
+	private final MultiPortVariable container;
 
 	/**
 	 * @generated
 	 */
-	public MultiPortOrderConstraintCreateCommand(
-			CreateRelationshipRequest request, EObject source, EObject target) {
+	public MultiPortOrderConstraintCreateCommand(CreateRelationshipRequest request, EObject source, EObject target) {
 		super(request.getLabel(), null, request);
-		org.muml.reconfiguration.componentstorypattern.MultiPortVariable container = null;
+		MultiPortVariable container = null;
 		this.source = source;
 		this.target = target;
 		container = deduceContainer(source, target);
 
 		if (container == null) {
-			View sourceView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-					.getSourceView(getRequest());
-			View targetView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-					.getTargetView(getRequest());
+			View sourceView = ConnectionConfigureHelperGraphicalNodeEditPolicy.getSourceView(getRequest());
+			View targetView = ConnectionConfigureHelperGraphicalNodeEditPolicy.getTargetView(getRequest());
 			container = deduceContainerUsingViews(sourceView, targetView);
 		}
 		this.container = container;
@@ -73,12 +77,10 @@ public class MultiPortOrderConstraintCreateCommand extends EditElementCommand {
 		if (source == null && target == null) {
 			return false;
 		}
-		if (source != null
-				&& false == source instanceof org.muml.reconfiguration.componentstorypattern.SinglePortVariable) {
+		if (source != null && false == source instanceof SinglePortVariable) {
 			return false;
 		}
-		if (target != null
-				&& false == target instanceof org.muml.reconfiguration.componentstorypattern.SinglePortVariable) {
+		if (target != null && false == target instanceof SinglePortVariable) {
 			return false;
 		}
 		if (getSource() == null) {
@@ -88,21 +90,15 @@ public class MultiPortOrderConstraintCreateCommand extends EditElementCommand {
 		if (getContainer() == null) {
 			return false;
 		}
-		View sourceView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-				.getSourceView(getRequest());
-		View targetView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-				.getTargetView(getRequest());
-		if (!org.muml.reconfiguration.componentstorydiagram.diagram.edit.policies.ComponentStoryDiagramBaseItemSemanticEditPolicy
-				.getLinkConstraints().canCreateMultiPortOrderConstraint_4006(
-						getContainer(), getSource(), getTarget(), sourceView,
+		View sourceView = ConnectionConfigureHelperGraphicalNodeEditPolicy.getSourceView(getRequest());
+		View targetView = ConnectionConfigureHelperGraphicalNodeEditPolicy.getTargetView(getRequest());
+		if (!ComponentStoryDiagramBaseItemSemanticEditPolicy.getLinkConstraints()
+				.canCreateMultiPortOrderConstraint_4006(getContainer(), getSource(), getTarget(), sourceView,
 						targetView)) {
-			String errorMessage = org.muml.reconfiguration.componentstorydiagram.diagram.edit.policies.ComponentStoryDiagramBaseItemSemanticEditPolicy
-					.getLinkConstraints()
-					.getErrorMultiPortOrderConstraint_4006(getContainer(),
-							getSource(), getTarget(), sourceView, targetView);
-			org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy
-					.showMessage(targetView != null ? targetView : sourceView,
-							errorMessage);
+			String errorMessage = ComponentStoryDiagramBaseItemSemanticEditPolicy.getLinkConstraints()
+					.getErrorMultiPortOrderConstraint_4006(getContainer(), getSource(), getTarget(), sourceView,
+							targetView);
+			ErrorFeedbackEditPolicy.showMessage(targetView != null ? targetView : sourceView, errorMessage);
 			return false;
 		}
 		return true;
@@ -111,15 +107,12 @@ public class MultiPortOrderConstraintCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
-			IAdaptable info) throws ExecutionException {
+	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		if (!canExecute()) {
-			throw new ExecutionException(
-					"Invalid arguments in create link command"); //$NON-NLS-1$
+			throw new ExecutionException("Invalid arguments in create link command"); //$NON-NLS-1$
 		}
 
-		org.muml.reconfiguration.componentstorypattern.MultiPortOrderConstraint newElement = org.muml.reconfiguration.componentstorypattern.ComponentstorypatternFactory.eINSTANCE
-				.createMultiPortOrderConstraint();
+		MultiPortOrderConstraint newElement = ComponentstorypatternFactory.eINSTANCE.createMultiPortOrderConstraint();
 		getContainer().getOrderConstraints().add(newElement);
 		newElement.setSrcSubPortVariable(getSource());
 		newElement.setTgtSubPortVariable(getTarget());
@@ -130,25 +123,17 @@ public class MultiPortOrderConstraintCreateCommand extends EditElementCommand {
 	}
 
 	/**
-	 * @generated
-	 */
-	protected void doConfigure(
-			org.muml.reconfiguration.componentstorypattern.MultiPortOrderConstraint newElement,
-			IProgressMonitor monitor, IAdaptable info)
+	* @generated
+	*/
+	protected void doConfigure(MultiPortOrderConstraint newElement, IProgressMonitor monitor, IAdaptable info)
 			throws ExecutionException {
-		IElementType elementType = ((CreateElementRequest) getRequest())
-				.getElementType();
-		ConfigureRequest configureRequest = new ConfigureRequest(
-				getEditingDomain(), newElement, elementType);
-		configureRequest.setClientContext(((CreateElementRequest) getRequest())
-				.getClientContext());
+		IElementType elementType = ((CreateElementRequest) getRequest()).getElementType();
+		ConfigureRequest configureRequest = new ConfigureRequest(getEditingDomain(), newElement, elementType);
+		configureRequest.setClientContext(((CreateElementRequest) getRequest()).getClientContext());
 		configureRequest.addParameters(getRequest().getParameters());
-		configureRequest.setParameter(CreateRelationshipRequest.SOURCE,
-				getSource());
-		configureRequest.setParameter(CreateRelationshipRequest.TARGET,
-				getTarget());
-		ICommand configureCommand = elementType
-				.getEditCommand(configureRequest);
+		configureRequest.setParameter(CreateRelationshipRequest.SOURCE, getSource());
+		configureRequest.setParameter(CreateRelationshipRequest.TARGET, getTarget());
+		ICommand configureCommand = elementType.getEditCommand(configureRequest);
 		if (configureCommand != null && configureCommand.canExecute()) {
 			configureCommand.execute(monitor, info);
 		}
@@ -164,21 +149,21 @@ public class MultiPortOrderConstraintCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected org.muml.reconfiguration.componentstorypattern.SinglePortVariable getSource() {
-		return (org.muml.reconfiguration.componentstorypattern.SinglePortVariable) source;
+	protected SinglePortVariable getSource() {
+		return (SinglePortVariable) source;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected org.muml.reconfiguration.componentstorypattern.SinglePortVariable getTarget() {
-		return (org.muml.reconfiguration.componentstorypattern.SinglePortVariable) target;
+	protected SinglePortVariable getTarget() {
+		return (SinglePortVariable) target;
 	}
 
 	/**
 	 * @generated
 	 */
-	public org.muml.reconfiguration.componentstorypattern.MultiPortVariable getContainer() {
+	public MultiPortVariable getContainer() {
 		return container;
 	}
 
@@ -187,15 +172,13 @@ public class MultiPortOrderConstraintCreateCommand extends EditElementCommand {
 	 * Modify with appropriate logic.
 	 * @generated
 	 */
-	private static org.muml.reconfiguration.componentstorypattern.MultiPortVariable deduceContainer(
-			EObject source, EObject target) {
+	private static MultiPortVariable deduceContainer(EObject source, EObject target) {
 		// Find container element for the new link.
 		// Climb up by containment hierarchy starting from the source
 		// and return the first element that is instance of the container class.
-		for (EObject element = source; element != null; element = element
-				.eContainer()) {
-			if (element instanceof org.muml.reconfiguration.componentstorypattern.MultiPortVariable) {
-				return (org.muml.reconfiguration.componentstorypattern.MultiPortVariable) element;
+		for (EObject element = source; element != null; element = element.eContainer()) {
+			if (element instanceof MultiPortVariable) {
+				return (MultiPortVariable) element;
 			}
 		}
 		return null;
@@ -206,13 +189,10 @@ public class MultiPortOrderConstraintCreateCommand extends EditElementCommand {
 	 * 
 	 * @generated
 	 */
-	private static org.muml.reconfiguration.componentstorypattern.MultiPortVariable deduceContainerUsingViews(
-			View sourceView, View targetView) {
-		for (View view = sourceView; view != null; view = (View) view
-				.eContainer()) {
-			if (view.getElement() instanceof org.muml.reconfiguration.componentstorypattern.MultiPortVariable) {
-				return (org.muml.reconfiguration.componentstorypattern.MultiPortVariable) view
-						.getElement();
+	private static MultiPortVariable deduceContainerUsingViews(View sourceView, View targetView) {
+		for (View view = sourceView; view != null; view = (View) view.eContainer()) {
+			if (view.getElement() instanceof MultiPortVariable) {
+				return (MultiPortVariable) view.getElement();
 			}
 		}
 		return null;

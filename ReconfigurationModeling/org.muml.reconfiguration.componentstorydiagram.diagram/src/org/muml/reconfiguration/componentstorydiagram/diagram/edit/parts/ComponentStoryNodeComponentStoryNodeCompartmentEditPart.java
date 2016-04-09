@@ -17,12 +17,16 @@ import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.edit.policies.reparent.CreationEditPolicyWithCustomReparent;
+import org.muml.reconfiguration.componentstorydiagram.diagram.edit.policies.ComponentStoryNodeComponentStoryNodeCompartmentCanonicalEditPolicy;
+import org.muml.reconfiguration.componentstorydiagram.diagram.edit.policies.ComponentStoryNodeComponentStoryNodeCompartmentItemSemanticEditPolicy;
+import org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramVisualIDRegistry;
+import org.muml.reconfiguration.componentstorydiagram.diagram.part.Messages;
+import org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes;
 
 /**
  * @generated
  */
-public class ComponentStoryNodeComponentStoryNodeCompartmentEditPart extends
-		ListCompartmentEditPart {
+public class ComponentStoryNodeComponentStoryNodeCompartmentEditPart extends ListCompartmentEditPart {
 
 	/**
 	 * @generated
@@ -70,21 +74,19 @@ public class ComponentStoryNodeComponentStoryNodeCompartmentEditPart extends
 	 * @generated
 	 */
 	public String getCompartmentName() {
-		return org.muml.reconfiguration.componentstorydiagram.diagram.part.Messages.ComponentStoryNodeComponentStoryNodeCompartmentEditPart_title;
+		return Messages.ComponentStoryNodeComponentStoryNodeCompartmentEditPart_title;
 	}
 
 	/**
 	 * @generated
 	 */
 	public IFigure createFigure() {
-		ResizableCompartmentFigure result = (ResizableCompartmentFigure) super
-				.createFigure();
+		ResizableCompartmentFigure result = (ResizableCompartmentFigure) super.createFigure();
 
 		result.setTitleVisibility(false);
 
 		// Begin added to always stretch list layouts
-		LayoutManager layoutManager = result.getContentPane()
-				.getLayoutManager();
+		LayoutManager layoutManager = result.getContentPane().getLayoutManager();
 		if (layoutManager instanceof ConstrainedToolbarLayout) {
 			ConstrainedToolbarLayout constrainedToolbarLayout = (ConstrainedToolbarLayout) layoutManager;
 			constrainedToolbarLayout.setStretchMajorAxis(true);
@@ -100,18 +102,13 @@ public class ComponentStoryNodeComponentStoryNodeCompartmentEditPart extends
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(
-				EditPolicyRoles.SEMANTIC_ROLE,
-				new org.muml.reconfiguration.componentstorydiagram.diagram.edit.policies.ComponentStoryNodeComponentStoryNodeCompartmentItemSemanticEditPolicy());
-		installEditPolicy(
-				EditPolicyRoles.CREATION_ROLE,
-				new CreationEditPolicyWithCustomReparent(
-						org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramVisualIDRegistry.TYPED_INSTANCE));
-		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE,
-				new DragDropEditPolicy());
-		installEditPolicy(
-				EditPolicyRoles.CANONICAL_ROLE,
-				new org.muml.reconfiguration.componentstorydiagram.diagram.edit.policies.ComponentStoryNodeComponentStoryNodeCompartmentCanonicalEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
+				new ComponentStoryNodeComponentStoryNodeCompartmentItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.CREATION_ROLE,
+				new CreationEditPolicyWithCustomReparent(ComponentStoryDiagramVisualIDRegistry.TYPED_INSTANCE));
+		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
+		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE,
+				new ComponentStoryNodeComponentStoryNodeCompartmentCanonicalEditPolicy());
 	}
 
 	/**
@@ -128,12 +125,10 @@ public class ComponentStoryNodeComponentStoryNodeCompartmentEditPart extends
 	 */
 	public EditPart getTargetEditPart(Request request) {
 		if (request instanceof CreateViewAndElementRequest) {
-			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request)
-					.getViewAndElementDescriptor()
+			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request).getViewAndElementDescriptor()
 					.getCreateElementRequestAdapter();
-			IElementType type = (IElementType) adapter
-					.getAdapter(IElementType.class);
-			if (type == org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.ComponentStoryPattern_3011) {
+			IElementType type = (IElementType) adapter.getAdapter(IElementType.class);
+			if (type == ComponentStoryDiagramElementTypes.ComponentStoryPattern_3011) {
 				return this;
 			}
 			return getParent().getTargetEditPart(request);

@@ -11,10 +11,7 @@ public class ModelElementSelectionPage extends DefaultModelElementSelectionPage 
 	 * @generated
 	 */
 	public ModelElementSelectionPage(String pageName) {
-		super(
-				org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramEditorPlugin
-						.getInstance().getItemProvidersAdapterFactory(),
-				pageName);
+		super(ComponentStoryDiagramDiagramEditorPlugin.getInstance().getItemProvidersAdapterFactory(), pageName);
 	}
 
 	/**
@@ -22,7 +19,7 @@ public class ModelElementSelectionPage extends DefaultModelElementSelectionPage 
 	 * @generated
 	 */
 	protected String getSelectionTitle() {
-		return org.muml.reconfiguration.componentstorydiagram.diagram.part.Messages.ModelElementSelectionPageMessage;
+		return Messages.ModelElementSelectionPageMessage;
 	}
 
 }

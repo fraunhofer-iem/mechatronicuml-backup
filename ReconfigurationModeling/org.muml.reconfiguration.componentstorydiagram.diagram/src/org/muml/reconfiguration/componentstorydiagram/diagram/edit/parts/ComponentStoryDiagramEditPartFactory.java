@@ -18,6 +18,7 @@ import org.eclipse.gef.tools.CellEditorLocator;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ITextAwareEditPart;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.directedit.locator.CellEditorLocatorAccess;
+import org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramVisualIDRegistry;
 
 /**
  * @generated
@@ -30,256 +31,193 @@ public class ComponentStoryDiagramEditPartFactory implements EditPartFactory {
 	public EditPart createEditPart(EditPart context, Object model) {
 		if (model instanceof View) {
 			View view = (View) model;
-			switch (org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramVisualIDRegistry
-					.getVisualID(view)) {
+			switch (ComponentStoryDiagramVisualIDRegistry.getVisualID(view)) {
 
-			case org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ComponentStoryRuleEditPart.VISUAL_ID:
-				return new org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ComponentStoryRuleEditPart(
-						view);
+			case ComponentStoryRuleEditPart.VISUAL_ID:
+				return new ComponentStoryRuleEditPart(view);
 
-			case org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ActivityEditPart.VISUAL_ID:
-				return new org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ActivityEditPart(
-						view);
+			case ActivityEditPart.VISUAL_ID:
+				return new ActivityEditPart(view);
 
-			case org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ActivityNameEditPart.VISUAL_ID:
-				return new org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ActivityNameEditPart(
-						view);
+			case ActivityNameEditPart.VISUAL_ID:
+				return new ActivityNameEditPart(view);
 
-			case org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ComponentStoryNodeEditPart.VISUAL_ID:
-				return new org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ComponentStoryNodeEditPart(
-						view);
+			case ComponentStoryNodeEditPart.VISUAL_ID:
+				return new ComponentStoryNodeEditPart(view);
 
-			case org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ComponentStoryNodeNameEditPart.VISUAL_ID:
-				return new org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ComponentStoryNodeNameEditPart(
-						view);
+			case ComponentStoryNodeNameEditPart.VISUAL_ID:
+				return new ComponentStoryNodeNameEditPart(view);
 
-			case org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ComponentStoryPatternEditPart.VISUAL_ID:
-				return new org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ComponentStoryPatternEditPart(
-						view);
+			case ComponentStoryPatternEditPart.VISUAL_ID:
+				return new ComponentStoryPatternEditPart(view);
 
-			case org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ComponentVariableEditPart.VISUAL_ID:
-				return new org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ComponentVariableEditPart(
-						view);
+			case ComponentVariableEditPart.VISUAL_ID:
+				return new ComponentVariableEditPart(view);
 
-			case org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ComponentVariableOperatorEditPart.VISUAL_ID:
-				return new org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ComponentVariableOperatorEditPart(
-						view);
+			case ComponentVariableOperatorEditPart.VISUAL_ID:
+				return new ComponentVariableOperatorEditPart(view);
 
-			case org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ComponentVariableNameEditPart.VISUAL_ID:
-				return new org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ComponentVariableNameEditPart(
-						view);
+			case ComponentVariableNameEditPart.VISUAL_ID:
+				return new ComponentVariableNameEditPart(view);
 
-			case org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.PartVariableEditPart.VISUAL_ID:
-				return new org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.PartVariableEditPart(
-						view);
+			case PartVariableEditPart.VISUAL_ID:
+				return new PartVariableEditPart(view);
 
-			case org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID:
-				return new org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.WrappingLabelEditPart(
-						view);
+			case WrappingLabelEditPart.VISUAL_ID:
+				return new WrappingLabelEditPart(view);
 
-			case org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.WrappingLabel2EditPart.VISUAL_ID:
-				return new org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.WrappingLabel2EditPart(
-						view);
+			case WrappingLabel2EditPart.VISUAL_ID:
+				return new WrappingLabel2EditPart(view);
 
-			case org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.WrappingLabel7EditPart.VISUAL_ID:
-				return new org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.WrappingLabel7EditPart(
-						view);
+			case WrappingLabel7EditPart.VISUAL_ID:
+				return new WrappingLabel7EditPart(view);
 
-			case org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.MultiPortVariableEditPart.VISUAL_ID:
-				return new org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.MultiPortVariableEditPart(
-						view);
+			case MultiPortVariableEditPart.VISUAL_ID:
+				return new MultiPortVariableEditPart(view);
 
-			case org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.PortVariableOperatorEditPart.VISUAL_ID:
-				return new org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.PortVariableOperatorEditPart(
-						view);
+			case PortVariableOperatorEditPart.VISUAL_ID:
+				return new PortVariableOperatorEditPart(view);
 
-			case org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.MultiPortVariableNameEditPart.VISUAL_ID:
-				return new org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.MultiPortVariableNameEditPart(
-						view);
+			case MultiPortVariableNameEditPart.VISUAL_ID:
+				return new MultiPortVariableNameEditPart(view);
 
-			case org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.UnderlinedLabelEditPart.VISUAL_ID:
-				return new org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.UnderlinedLabelEditPart(
-						view);
+			case UnderlinedLabelEditPart.VISUAL_ID:
+				return new UnderlinedLabelEditPart(view);
 
-			case org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.SinglePortVariableEditPart.VISUAL_ID:
-				return new org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.SinglePortVariableEditPart(
-						view);
+			case SinglePortVariableEditPart.VISUAL_ID:
+				return new SinglePortVariableEditPart(view);
 
-			case org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.SinglePortVariable2EditPart.VISUAL_ID:
-				return new org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.SinglePortVariable2EditPart(
-						view);
+			case SinglePortVariable2EditPart.VISUAL_ID:
+				return new SinglePortVariable2EditPart(view);
 
-			case org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.PortVariableOperator2EditPart.VISUAL_ID:
-				return new org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.PortVariableOperator2EditPart(
-						view);
+			case PortVariableOperator2EditPart.VISUAL_ID:
+				return new PortVariableOperator2EditPart(view);
 
-			case org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.SinglePortVariableNameEditPart.VISUAL_ID:
-				return new org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.SinglePortVariableNameEditPart(
-						view);
+			case SinglePortVariableNameEditPart.VISUAL_ID:
+				return new SinglePortVariableNameEditPart(view);
 
-			case org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.UnderlinedLabel2EditPart.VISUAL_ID:
-				return new org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.UnderlinedLabel2EditPart(
-						view);
+			case UnderlinedLabel2EditPart.VISUAL_ID:
+				return new UnderlinedLabel2EditPart(view);
 
-			case org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.MultiPortVariable2EditPart.VISUAL_ID:
-				return new org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.MultiPortVariable2EditPart(
-						view);
+			case MultiPortVariable2EditPart.VISUAL_ID:
+				return new MultiPortVariable2EditPart(view);
 
-			case org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.PortVariableOperator3EditPart.VISUAL_ID:
-				return new org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.PortVariableOperator3EditPart(
-						view);
+			case PortVariableOperator3EditPart.VISUAL_ID:
+				return new PortVariableOperator3EditPart(view);
 
-			case org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.MultiPortVariableName2EditPart.VISUAL_ID:
-				return new org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.MultiPortVariableName2EditPart(
-						view);
+			case MultiPortVariableName2EditPart.VISUAL_ID:
+				return new MultiPortVariableName2EditPart(view);
 
-			case org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.UnderlinedLabel3EditPart.VISUAL_ID:
-				return new org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.UnderlinedLabel3EditPart(
-						view);
+			case UnderlinedLabel3EditPart.VISUAL_ID:
+				return new UnderlinedLabel3EditPart(view);
 
-			case org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.SinglePortVariable3EditPart.VISUAL_ID:
-				return new org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.SinglePortVariable3EditPart(
-						view);
+			case SinglePortVariable3EditPart.VISUAL_ID:
+				return new SinglePortVariable3EditPart(view);
 
-			case org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.PortVariableOperator4EditPart.VISUAL_ID:
-				return new org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.PortVariableOperator4EditPart(
-						view);
+			case PortVariableOperator4EditPart.VISUAL_ID:
+				return new PortVariableOperator4EditPart(view);
 
-			case org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.SinglePortVariableName2EditPart.VISUAL_ID:
-				return new org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.SinglePortVariableName2EditPart(
-						view);
+			case SinglePortVariableName2EditPart.VISUAL_ID:
+				return new SinglePortVariableName2EditPart(view);
 
-			case org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.UnderlinedLabel4EditPart.VISUAL_ID:
-				return new org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.UnderlinedLabel4EditPart(
-						view);
+			case UnderlinedLabel4EditPart.VISUAL_ID:
+				return new UnderlinedLabel4EditPart(view);
 
-			case org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.InitialNodeEditPart.VISUAL_ID:
-				return new org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.InitialNodeEditPart(
-						view);
+			case InitialNodeEditPart.VISUAL_ID:
+				return new InitialNodeEditPart(view);
 
-			case org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.JunctionNodeEditPart.VISUAL_ID:
-				return new org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.JunctionNodeEditPart(
-						view);
+			case JunctionNodeEditPart.VISUAL_ID:
+				return new JunctionNodeEditPart(view);
 
-			case org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ActivityFinalNodeEditPart.VISUAL_ID:
-				return new org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ActivityFinalNodeEditPart(
-						view);
+			case ActivityFinalNodeEditPart.VISUAL_ID:
+				return new ActivityFinalNodeEditPart(view);
 
-			case org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.WrappingLabel4EditPart.VISUAL_ID:
-				return new org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.WrappingLabel4EditPart(
-						view);
+			case WrappingLabel4EditPart.VISUAL_ID:
+				return new WrappingLabel4EditPart(view);
 
-			case org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ControllerExchangeNodeEditPart.VISUAL_ID:
-				return new org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ControllerExchangeNodeEditPart(
-						view);
+			case ControllerExchangeNodeEditPart.VISUAL_ID:
+				return new ControllerExchangeNodeEditPart(view);
 
-			case org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ControllerExchangeNodeNameEditPart.VISUAL_ID:
-				return new org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ControllerExchangeNodeNameEditPart(
-						view);
+			case ControllerExchangeNodeNameEditPart.VISUAL_ID:
+				return new ControllerExchangeNodeNameEditPart(view);
 
-			case org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.WrappingLabel8EditPart.VISUAL_ID:
-				return new org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.WrappingLabel8EditPart(
-						view);
+			case WrappingLabel8EditPart.VISUAL_ID:
+				return new WrappingLabel8EditPart(view);
 
-			case org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ComponentStoryPattern2EditPart.VISUAL_ID:
-				return new org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ComponentStoryPattern2EditPart(
-						view);
+			case ComponentStoryPattern2EditPart.VISUAL_ID:
+				return new ComponentStoryPattern2EditPart(view);
 
-			case org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ComponentVariable2EditPart.VISUAL_ID:
-				return new org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ComponentVariable2EditPart(
-						view);
+			case ComponentVariable2EditPart.VISUAL_ID:
+				return new ComponentVariable2EditPart(view);
 
-			case org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ComponentVariableOperator2EditPart.VISUAL_ID:
-				return new org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ComponentVariableOperator2EditPart(
-						view);
+			case ComponentVariableOperator2EditPart.VISUAL_ID:
+				return new ComponentVariableOperator2EditPart(view);
 
-			case org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.WrappingLabel3EditPart.VISUAL_ID:
-				return new org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.WrappingLabel3EditPart(
-						view);
+			case WrappingLabel3EditPart.VISUAL_ID:
+				return new WrappingLabel3EditPart(view);
 
-			case org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.FadingComponentPartVariableEditPart.VISUAL_ID:
-				return new org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.FadingComponentPartVariableEditPart(
-						view);
+			case FadingComponentPartVariableEditPart.VISUAL_ID:
+				return new FadingComponentPartVariableEditPart(view);
 
-			case org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.WrappingLabel5EditPart.VISUAL_ID:
-				return new org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.WrappingLabel5EditPart(
-						view);
+			case WrappingLabel5EditPart.VISUAL_ID:
+				return new WrappingLabel5EditPart(view);
 
-			case org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.WrappingLabel6EditPart.VISUAL_ID:
-				return new org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.WrappingLabel6EditPart(
-						view);
+			case WrappingLabel6EditPart.VISUAL_ID:
+				return new WrappingLabel6EditPart(view);
 
-			case org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.WrappingLabel9EditPart.VISUAL_ID:
-				return new org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.WrappingLabel9EditPart(
-						view);
+			case WrappingLabel9EditPart.VISUAL_ID:
+				return new WrappingLabel9EditPart(view);
 
-			case org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ActivityActivityCompartmentEditPart.VISUAL_ID:
-				return new org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ActivityActivityCompartmentEditPart(
-						view);
+			case ActivityActivityCompartmentEditPart.VISUAL_ID:
+				return new ActivityActivityCompartmentEditPart(view);
 
-			case org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ComponentStoryNodeComponentStoryNodeCompartmentEditPart.VISUAL_ID:
-				return new org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ComponentStoryNodeComponentStoryNodeCompartmentEditPart(
-						view);
+			case ComponentStoryNodeComponentStoryNodeCompartmentEditPart.VISUAL_ID:
+				return new ComponentStoryNodeComponentStoryNodeCompartmentEditPart(view);
 
-			case org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ComponentStoryPatternComponentStoryPatternCompartmentEditPart.VISUAL_ID:
-				return new org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ComponentStoryPatternComponentStoryPatternCompartmentEditPart(
-						view);
+			case ComponentStoryPatternComponentStoryPatternCompartmentEditPart.VISUAL_ID:
+				return new ComponentStoryPatternComponentStoryPatternCompartmentEditPart(view);
 
-			case org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ComponentVariableComponentVariableCompartmentEditPart.VISUAL_ID:
-				return new org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ComponentVariableComponentVariableCompartmentEditPart(
-						view);
+			case ComponentVariableComponentVariableCompartmentEditPart.VISUAL_ID:
+				return new ComponentVariableComponentVariableCompartmentEditPart(view);
 
-			case org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.MultiPortVariableMultiPortVariablesCompartmentEditPart.VISUAL_ID:
-				return new org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.MultiPortVariableMultiPortVariablesCompartmentEditPart(
-						view);
+			case MultiPortVariableMultiPortVariablesCompartmentEditPart.VISUAL_ID:
+				return new MultiPortVariableMultiPortVariablesCompartmentEditPart(view);
 
-			case org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.MultiPortVariableMultiPortVariablesCompartment2EditPart.VISUAL_ID:
-				return new org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.MultiPortVariableMultiPortVariablesCompartment2EditPart(
-						view);
+			case MultiPortVariableMultiPortVariablesCompartment2EditPart.VISUAL_ID:
+				return new MultiPortVariableMultiPortVariablesCompartment2EditPart(view);
 
-			case org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ControllerExchangeNodeControllerExchangeNodeFadingFunctionsCompartmentEditPart.VISUAL_ID:
-				return new org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ControllerExchangeNodeControllerExchangeNodeFadingFunctionsCompartmentEditPart(
-						view);
+			case ControllerExchangeNodeControllerExchangeNodeFadingFunctionsCompartmentEditPart.VISUAL_ID:
+				return new ControllerExchangeNodeControllerExchangeNodeFadingFunctionsCompartmentEditPart(view);
 
-			case org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ComponentStoryPatternComponentStoryPatternCompartment2EditPart.VISUAL_ID:
-				return new org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ComponentStoryPatternComponentStoryPatternCompartment2EditPart(
-						view);
+			case ComponentStoryPatternComponentStoryPatternCompartment2EditPart.VISUAL_ID:
+				return new ComponentStoryPatternComponentStoryPatternCompartment2EditPart(view);
 
-			case org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ComponentVariableComponentVariableCompartment2EditPart.VISUAL_ID:
-				return new org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ComponentVariableComponentVariableCompartment2EditPart(
-						view);
+			case ComponentVariableComponentVariableCompartment2EditPart.VISUAL_ID:
+				return new ComponentVariableComponentVariableCompartment2EditPart(view);
 
-			case org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ActivityEdgeEditPart.VISUAL_ID:
-				return new org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ActivityEdgeEditPart(
-						view);
+			case ActivityEdgeEditPart.VISUAL_ID:
+				return new ActivityEdgeEditPart(view);
 
-			case org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ActivityEdgeGuardEditPart.VISUAL_ID:
-				return new org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ActivityEdgeGuardEditPart(
-						view);
+			case ActivityEdgeGuardEditPart.VISUAL_ID:
+				return new ActivityEdgeGuardEditPart(view);
 
-			case org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.AssemblyVariableEditPart.VISUAL_ID:
-				return new org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.AssemblyVariableEditPart(
-						view);
+			case AssemblyVariableEditPart.VISUAL_ID:
+				return new AssemblyVariableEditPart(view);
 
-			case org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.AssemblyVariableNameEditPart.VISUAL_ID:
-				return new org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.AssemblyVariableNameEditPart(
-						view);
+			case AssemblyVariableNameEditPart.VISUAL_ID:
+				return new AssemblyVariableNameEditPart(view);
 
-			case org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.DelegationVariableEditPart.VISUAL_ID:
-				return new org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.DelegationVariableEditPart(
-						view);
+			case DelegationVariableEditPart.VISUAL_ID:
+				return new DelegationVariableEditPart(view);
 
-			case org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.DelegationVariableNameEditPart.VISUAL_ID:
-				return new org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.DelegationVariableNameEditPart(
-						view);
+			case DelegationVariableNameEditPart.VISUAL_ID:
+				return new DelegationVariableNameEditPart(view);
 
-			case org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.MultiPortOrderConstraintEditPart.VISUAL_ID:
-				return new org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.MultiPortOrderConstraintEditPart(
-						view);
+			case MultiPortOrderConstraintEditPart.VISUAL_ID:
+				return new MultiPortOrderConstraintEditPart(view);
 
-			case org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.MultiPortOrderConstraintOrderConstraintTypeEditPart.VISUAL_ID:
-				return new org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.MultiPortOrderConstraintOrderConstraintTypeEditPart(
-						view);
+			case MultiPortOrderConstraintOrderConstraintTypeEditPart.VISUAL_ID:
+				return new MultiPortOrderConstraintOrderConstraintTypeEditPart(view);
 
 			}
 		}
@@ -297,10 +235,8 @@ public class ComponentStoryDiagramEditPartFactory implements EditPartFactory {
 	/**
 	 * @generated
 	 */
-	public static CellEditorLocator getTextCellEditorLocator(
-			ITextAwareEditPart source) {
-		return CellEditorLocatorAccess.INSTANCE
-				.getTextCellEditorLocator(source);
+	public static CellEditorLocator getTextCellEditorLocator(ITextAwareEditPart source) {
+		return CellEditorLocatorAccess.INSTANCE.getTextCellEditorLocator(source);
 	}
 
 }

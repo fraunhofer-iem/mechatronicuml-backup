@@ -17,13 +17,14 @@ import java.util.List;
 
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
+import org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes;
+import org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramModelingAssistantProvider;
 
 /**
  * @generated
  */
 public class ComponentStoryDiagramModelingAssistantProviderOfComponentStoryRuleEditPart
-		extends
-		org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramModelingAssistantProvider {
+		extends ComponentStoryDiagramModelingAssistantProvider {
 
 	/**
 	 * @generated
@@ -31,7 +32,7 @@ public class ComponentStoryDiagramModelingAssistantProviderOfComponentStoryRuleE
 	@Override
 	public List<IElementType> getTypesForPopupBar(IAdaptable host) {
 		List<IElementType> types = new ArrayList<IElementType>(1);
-		types.add(org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.Activity_2003);
+		types.add(ComponentStoryDiagramElementTypes.Activity_2003);
 		return types;
 	}
 

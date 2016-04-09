@@ -17,6 +17,7 @@ import java.util.Collection;
 import org.eclipse.draw2d.Border;
 import org.eclipse.draw2d.BorderLayout;
 import org.eclipse.draw2d.ColorConstants;
+import org.eclipse.draw2d.ConnectionAnchor;
 import org.eclipse.draw2d.GridData;
 import org.eclipse.draw2d.GridLayout;
 import org.eclipse.draw2d.IFigure;
@@ -53,6 +54,13 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Font;
 import org.eclipse.swt.widgets.Display;
+import org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy;
+import org.muml.core.common.edit.policies.anchor.IConnectionAnchorCreationEditPolicy;
+import org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy;
+import org.muml.pim.common.edit.policies.IBackgroundColorEditPolicy;
+import org.muml.reconfiguration.componentstorydiagram.diagram.edit.policies.ControllerExchangeNodeItemSemanticEditPolicy;
+import org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramVisualIDRegistry;
+import org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes;
 
 /**
  * @generated
@@ -88,6 +96,22 @@ public class ControllerExchangeNodeEditPart extends ShapeNodeEditPart {
 	}
 
 	/**
+	* MUML FIX: Adapt background color if IBackgroundColorEditPolicy is registered.
+	* 
+	* @generated
+	*/
+	@Override
+	protected void refreshBackgroundColor() {
+		EditPolicy backgroundColorPolicy = getEditPolicy(
+				org.muml.core.common.edit.policies.EditPolicyRoles.BACKGROUND_COLOR_ROLE);
+		if (backgroundColorPolicy instanceof IBackgroundColorEditPolicy) {
+			setBackgroundColor(((IBackgroundColorEditPolicy) backgroundColorPolicy).getCurrentBackgroundColor());
+		} else {
+			super.refreshBackgroundColor();
+		}
+	}
+
+	/**
 	 * @generated
 	 */
 	protected IFigure contentPane;
@@ -108,25 +132,18 @@ public class ControllerExchangeNodeEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected void createDefaultEditPolicies() {
-		installEditPolicy(
-				EditPolicyRoles.CREATION_ROLE,
-				new CreationEditPolicyWithCustomReparent(
-						org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramVisualIDRegistry.TYPED_INSTANCE));
+		installEditPolicy(EditPolicyRoles.CREATION_ROLE,
+				new CreationEditPolicyWithCustomReparent(ComponentStoryDiagramVisualIDRegistry.TYPED_INSTANCE));
 		super.createDefaultEditPolicies();
-		installEditPolicy(
-				EditPolicyRoles.SEMANTIC_ROLE,
-				new org.muml.reconfiguration.componentstorydiagram.diagram.edit.policies.ControllerExchangeNodeItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new ControllerExchangeNodeItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 
-		installEditPolicy(
-				EditPolicy.GRAPHICAL_NODE_ROLE,
-				new org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy());
+		installEditPolicy(EditPolicy.GRAPHICAL_NODE_ROLE, new ConnectionConfigureHelperGraphicalNodeEditPolicy());
 
-		installEditPolicy(
-				org.muml.core.common.edit.policies.EditPolicyRoles.ERROR_FEEDBACK_ROLE,
-				new org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy());
+		installEditPolicy(org.muml.core.common.edit.policies.EditPolicyRoles.ERROR_FEEDBACK_ROLE,
+				new ErrorFeedbackEditPolicy());
 
 	}
 
@@ -137,8 +154,7 @@ public class ControllerExchangeNodeEditPart extends ShapeNodeEditPart {
 		org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy lep = new org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy() {
 
 			protected EditPolicy createChildEditPolicy(EditPart child) {
-				EditPolicy result = child
-						.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
+				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
 				if (result == null) {
 					result = new NonResizableEditPolicy();
 				}
@@ -174,22 +190,19 @@ public class ControllerExchangeNodeEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ControllerExchangeNodeNameEditPart) {
-			((org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ControllerExchangeNodeNameEditPart) childEditPart)
-					.setLabel(getPrimaryShape()
-							.getFigureControllerExchangeNodeName());
+		if (childEditPart instanceof ControllerExchangeNodeNameEditPart) {
+			((ControllerExchangeNodeNameEditPart) childEditPart)
+					.setLabel(getPrimaryShape().getFigureControllerExchangeNodeName());
 			return true;
 		}
-		if (childEditPart instanceof org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.WrappingLabel8EditPart) {
-			((org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.WrappingLabel8EditPart) childEditPart)
-					.setLabel(getPrimaryShape().getFigureDeadlineLabel());
+		if (childEditPart instanceof WrappingLabel8EditPart) {
+			((WrappingLabel8EditPart) childEditPart).setLabel(getPrimaryShape().getFigureDeadlineLabel());
 			return true;
 		}
-		if (childEditPart instanceof org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ControllerExchangeNodeControllerExchangeNodeFadingFunctionsCompartmentEditPart) {
-			IFigure pane = getPrimaryShape()
-					.getFigureControllerExchangeNodePatternContainer();
+		if (childEditPart instanceof ControllerExchangeNodeControllerExchangeNodeFadingFunctionsCompartmentEditPart) {
+			IFigure pane = getPrimaryShape().getFigureControllerExchangeNodePatternContainer();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
-			pane.add(((org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ControllerExchangeNodeControllerExchangeNodeFadingFunctionsCompartmentEditPart) childEditPart)
+			pane.add(((ControllerExchangeNodeControllerExchangeNodeFadingFunctionsCompartmentEditPart) childEditPart)
 					.getFigure());
 			return true;
 		}
@@ -200,16 +213,15 @@ public class ControllerExchangeNodeEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ControllerExchangeNodeNameEditPart) {
+		if (childEditPart instanceof ControllerExchangeNodeNameEditPart) {
 			return true;
 		}
-		if (childEditPart instanceof org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.WrappingLabel8EditPart) {
+		if (childEditPart instanceof WrappingLabel8EditPart) {
 			return true;
 		}
-		if (childEditPart instanceof org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ControllerExchangeNodeControllerExchangeNodeFadingFunctionsCompartmentEditPart) {
-			IFigure pane = getPrimaryShape()
-					.getFigureControllerExchangeNodePatternContainer();
-			pane.remove(((org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ControllerExchangeNodeControllerExchangeNodeFadingFunctionsCompartmentEditPart) childEditPart)
+		if (childEditPart instanceof ControllerExchangeNodeControllerExchangeNodeFadingFunctionsCompartmentEditPart) {
+			IFigure pane = getPrimaryShape().getFigureControllerExchangeNodePatternContainer();
+			pane.remove(((ControllerExchangeNodeControllerExchangeNodeFadingFunctionsCompartmentEditPart) childEditPart)
 					.getFigure());
 			return true;
 		}
@@ -240,9 +252,8 @@ public class ControllerExchangeNodeEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
-		if (editPart instanceof org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ControllerExchangeNodeControllerExchangeNodeFadingFunctionsCompartmentEditPart) {
-			return getPrimaryShape()
-					.getFigureControllerExchangeNodePatternContainer();
+		if (editPart instanceof ControllerExchangeNodeControllerExchangeNodeFadingFunctionsCompartmentEditPart) {
+			return getPrimaryShape().getFigureControllerExchangeNodePatternContainer();
 		}
 		return getContentPane();
 	}
@@ -251,7 +262,17 @@ public class ControllerExchangeNodeEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected NodeFigure createNodePlate() {
-		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(40, 40);
+		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(40, 40) {
+			@Override
+			public ConnectionAnchor createDefaultAnchor() {
+				IConnectionAnchorCreationEditPolicy connectionAnchorCreationEditPolicy = (IConnectionAnchorCreationEditPolicy) getEditPolicy(
+						org.muml.core.common.edit.policies.EditPolicyRoles.CONNECTION_ANCHOR_CREATION_ROLE);
+				if (connectionAnchorCreationEditPolicy != null) {
+					return connectionAnchorCreationEditPolicy.createDefaultAnchor();
+				}
+				return super.createDefaultAnchor();
+			}
+		};
 
 		// Ensures that the element can be shrinked (Muml Bug #62).
 		result.setMinimumSize(new Dimension(0, 0));
@@ -341,8 +362,8 @@ public class ControllerExchangeNodeEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramVisualIDRegistry
-				.getType(org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ControllerExchangeNodeNameEditPart.VISUAL_ID));
+		return getChildBySemanticHint(
+				ComponentStoryDiagramVisualIDRegistry.getType(ControllerExchangeNodeNameEditPart.VISUAL_ID));
 	}
 
 	/**
@@ -350,14 +371,12 @@ public class ControllerExchangeNodeEditPart extends ShapeNodeEditPart {
 	 */
 	public EditPart getTargetEditPart(Request request) {
 		if (request instanceof CreateViewAndElementRequest) {
-			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request)
-					.getViewAndElementDescriptor()
+			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request).getViewAndElementDescriptor()
 					.getCreateElementRequestAdapter();
-			IElementType type = (IElementType) adapter
-					.getAdapter(IElementType.class);
-			if (type == org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.ComponentStoryPattern_3022) {
-				return getChildBySemanticHint(org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramVisualIDRegistry
-						.getType(org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ControllerExchangeNodeControllerExchangeNodeFadingFunctionsCompartmentEditPart.VISUAL_ID));
+			IElementType type = (IElementType) adapter.getAdapter(IElementType.class);
+			if (type == ComponentStoryDiagramElementTypes.ComponentStoryPattern_3022) {
+				return getChildBySemanticHint(ComponentStoryDiagramVisualIDRegistry.getType(
+						ControllerExchangeNodeControllerExchangeNodeFadingFunctionsCompartmentEditPart.VISUAL_ID));
 			}
 		}
 		return super.getTargetEditPart(request);
@@ -398,8 +417,7 @@ public class ControllerExchangeNodeEditPart extends ShapeNodeEditPart {
 			BorderLayout layoutThis = new BorderLayout();
 			this.setLayoutManager(layoutThis);
 
-			this.setCornerDimensions(new Dimension(getMapMode().DPtoLP(12),
-					getMapMode().DPtoLP(12)));
+			this.setCornerDimensions(new Dimension(getMapMode().DPtoLP(12), getMapMode().DPtoLP(12)));
 			this.setFill(false);
 			createContents();
 		}
@@ -420,8 +438,7 @@ public class ControllerExchangeNodeEditPart extends ShapeNodeEditPart {
 			GridLayout layoutControllerExchangeNodeNameContainer0 = new GridLayout();
 			layoutControllerExchangeNodeNameContainer0.numColumns = 1;
 			layoutControllerExchangeNodeNameContainer0.makeColumnsEqualWidth = true;
-			controllerExchangeNodeNameContainer0
-					.setLayoutManager(layoutControllerExchangeNodeNameContainer0);
+			controllerExchangeNodeNameContainer0.setLayoutManager(layoutControllerExchangeNodeNameContainer0);
 
 			fFigureControllerExchangeNodeName = new WrappingLabel();
 
@@ -435,8 +452,7 @@ public class ControllerExchangeNodeEditPart extends ShapeNodeEditPart {
 			constraintFFigureControllerExchangeNodeName.verticalSpan = 1;
 			constraintFFigureControllerExchangeNodeName.grabExcessHorizontalSpace = true;
 			constraintFFigureControllerExchangeNodeName.grabExcessVerticalSpace = true;
-			controllerExchangeNodeNameContainer0.add(
-					fFigureControllerExchangeNodeName,
+			controllerExchangeNodeNameContainer0.add(fFigureControllerExchangeNodeName,
 					constraintFFigureControllerExchangeNodeName);
 
 			RectangleFigure controllerExchangeNodeContentContainer0 = new RectangleFigure();
@@ -444,14 +460,12 @@ public class ControllerExchangeNodeEditPart extends ShapeNodeEditPart {
 			controllerExchangeNodeContentContainer0.setFill(false);
 			controllerExchangeNodeContentContainer0.setOutline(false);
 
-			this.add(controllerExchangeNodeContentContainer0,
-					BorderLayout.CENTER);
+			this.add(controllerExchangeNodeContentContainer0, BorderLayout.CENTER);
 
 			GridLayout layoutControllerExchangeNodeContentContainer0 = new GridLayout();
 			layoutControllerExchangeNodeContentContainer0.numColumns = 1;
 			layoutControllerExchangeNodeContentContainer0.makeColumnsEqualWidth = true;
-			controllerExchangeNodeContentContainer0
-					.setLayoutManager(layoutControllerExchangeNodeContentContainer0);
+			controllerExchangeNodeContentContainer0.setLayoutManager(layoutControllerExchangeNodeContentContainer0);
 
 			RectangleFigure controllerExchangeNodeIconContainer1 = new RectangleFigure();
 
@@ -465,18 +479,15 @@ public class ControllerExchangeNodeEditPart extends ShapeNodeEditPart {
 			constraintControllerExchangeNodeIconContainer1.verticalSpan = 1;
 			constraintControllerExchangeNodeIconContainer1.grabExcessHorizontalSpace = true;
 			constraintControllerExchangeNodeIconContainer1.grabExcessVerticalSpace = false;
-			controllerExchangeNodeContentContainer0.add(
-					controllerExchangeNodeIconContainer1,
+			controllerExchangeNodeContentContainer0.add(controllerExchangeNodeIconContainer1,
 					constraintControllerExchangeNodeIconContainer1);
 
 			BorderLayout layoutControllerExchangeNodeIconContainer1 = new BorderLayout();
-			controllerExchangeNodeIconContainer1
-					.setLayoutManager(layoutControllerExchangeNodeIconContainer1);
+			controllerExchangeNodeIconContainer1.setLayoutManager(layoutControllerExchangeNodeIconContainer1);
 
 			RectangleFigure iconRow2 = new RectangleFigure();
 
-			controllerExchangeNodeIconContainer1
-					.add(iconRow2, BorderLayout.TOP);
+			controllerExchangeNodeIconContainer1.add(iconRow2, BorderLayout.TOP);
 
 			BorderLayout layoutIconRow2 = new BorderLayout();
 			iconRow2.setLayoutManager(layoutIconRow2);
@@ -492,15 +503,13 @@ public class ControllerExchangeNodeEditPart extends ShapeNodeEditPart {
 			iconRow2.add(controllerExchangeNodeIcon3, BorderLayout.RIGHT);
 
 			BorderLayout layoutControllerExchangeNodeIcon3 = new BorderLayout();
-			controllerExchangeNodeIcon3
-					.setLayoutManager(layoutControllerExchangeNodeIcon3);
+			controllerExchangeNodeIcon3.setLayoutManager(layoutControllerExchangeNodeIcon3);
 
 			RectangleFigure leftIconRectangle4 = new RectangleFigure();
 
 			leftIconRectangle4.setOutline(false);
 
-			controllerExchangeNodeIcon3.add(leftIconRectangle4,
-					BorderLayout.LEFT);
+			controllerExchangeNodeIcon3.add(leftIconRectangle4, BorderLayout.LEFT);
 
 			BorderLayout layoutLeftIconRectangle4 = new BorderLayout();
 			leftIconRectangle4.setLayoutManager(layoutLeftIconRectangle4);
@@ -512,20 +521,15 @@ public class ControllerExchangeNodeEditPart extends ShapeNodeEditPart {
 			leftIconRectangle4.add(upperLeftIconRectangle5, BorderLayout.TOP);
 
 			BorderLayout layoutUpperLeftIconRectangle5 = new BorderLayout();
-			upperLeftIconRectangle5
-					.setLayoutManager(layoutUpperLeftIconRectangle5);
+			upperLeftIconRectangle5.setLayoutManager(layoutUpperLeftIconRectangle5);
 
 			RectangleFigure greenIconRectangle6 = new RectangleFigure();
 
 			greenIconRectangle6.setForegroundColor(GREENICONRECTANGLE6_FORE);
-			greenIconRectangle6.setPreferredSize(new Dimension(getMapMode()
-					.DPtoLP(14), getMapMode().DPtoLP(14)));
-			greenIconRectangle6.setMaximumSize(new Dimension(getMapMode()
-					.DPtoLP(14), getMapMode().DPtoLP(14)));
-			greenIconRectangle6.setMinimumSize(new Dimension(getMapMode()
-					.DPtoLP(14), getMapMode().DPtoLP(14)));
-			greenIconRectangle6.setSize(getMapMode().DPtoLP(14), getMapMode()
-					.DPtoLP(14));
+			greenIconRectangle6.setPreferredSize(new Dimension(getMapMode().DPtoLP(14), getMapMode().DPtoLP(14)));
+			greenIconRectangle6.setMaximumSize(new Dimension(getMapMode().DPtoLP(14), getMapMode().DPtoLP(14)));
+			greenIconRectangle6.setMinimumSize(new Dimension(getMapMode().DPtoLP(14), getMapMode().DPtoLP(14)));
+			greenIconRectangle6.setSize(getMapMode().DPtoLP(14), getMapMode().DPtoLP(14));
 
 			upperLeftIconRectangle5.add(greenIconRectangle6, BorderLayout.LEFT);
 
@@ -533,33 +537,23 @@ public class ControllerExchangeNodeEditPart extends ShapeNodeEditPart {
 
 			leftArrowPolygonRectangle6.setFill(false);
 			leftArrowPolygonRectangle6.setOutline(false);
-			leftArrowPolygonRectangle6.setPreferredSize(new Dimension(
-					getMapMode().DPtoLP(7), getMapMode().DPtoLP(14)));
+			leftArrowPolygonRectangle6.setPreferredSize(new Dimension(getMapMode().DPtoLP(7), getMapMode().DPtoLP(14)));
 
-			upperLeftIconRectangle5.add(leftArrowPolygonRectangle6,
-					BorderLayout.RIGHT);
+			upperLeftIconRectangle5.add(leftArrowPolygonRectangle6, BorderLayout.RIGHT);
 
 			PolygonShape leftArrowPolygon7 = new PolygonShape();
 
-			leftArrowPolygon7.addPoint(new Point(getMapMode().DPtoLP(0),
-					getMapMode().DPtoLP(7)));
-			leftArrowPolygon7.addPoint(new Point(getMapMode().DPtoLP(7),
-					getMapMode().DPtoLP(0)));
-			leftArrowPolygon7.addPoint(new Point(getMapMode().DPtoLP(7),
-					getMapMode().DPtoLP(14)));
-			leftArrowPolygon7.addPoint(new Point(getMapMode().DPtoLP(0),
-					getMapMode().DPtoLP(7)));
+			leftArrowPolygon7.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(7)));
+			leftArrowPolygon7.addPoint(new Point(getMapMode().DPtoLP(7), getMapMode().DPtoLP(0)));
+			leftArrowPolygon7.addPoint(new Point(getMapMode().DPtoLP(7), getMapMode().DPtoLP(14)));
+			leftArrowPolygon7.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(7)));
 			leftArrowPolygon7.setFill(true);
 			leftArrowPolygon7.setForegroundColor(ColorConstants.black);
 			leftArrowPolygon7.setBackgroundColor(ColorConstants.black);
-			leftArrowPolygon7.setPreferredSize(new Dimension(getMapMode()
-					.DPtoLP(7), getMapMode().DPtoLP(14)));
-			leftArrowPolygon7.setMaximumSize(new Dimension(getMapMode().DPtoLP(
-					7), getMapMode().DPtoLP(14)));
-			leftArrowPolygon7.setMinimumSize(new Dimension(getMapMode().DPtoLP(
-					7), getMapMode().DPtoLP(14)));
-			leftArrowPolygon7.setSize(getMapMode().DPtoLP(7), getMapMode()
-					.DPtoLP(14));
+			leftArrowPolygon7.setPreferredSize(new Dimension(getMapMode().DPtoLP(7), getMapMode().DPtoLP(14)));
+			leftArrowPolygon7.setMaximumSize(new Dimension(getMapMode().DPtoLP(7), getMapMode().DPtoLP(14)));
+			leftArrowPolygon7.setMinimumSize(new Dimension(getMapMode().DPtoLP(7), getMapMode().DPtoLP(14)));
+			leftArrowPolygon7.setSize(getMapMode().DPtoLP(7), getMapMode().DPtoLP(14));
 
 			leftArrowPolygonRectangle6.add(leftArrowPolygon7);
 
@@ -567,15 +561,13 @@ public class ControllerExchangeNodeEditPart extends ShapeNodeEditPart {
 
 			lowerLeftIconRectangle5.setOutline(false);
 
-			leftIconRectangle4
-					.add(lowerLeftIconRectangle5, BorderLayout.CENTER);
+			leftIconRectangle4.add(lowerLeftIconRectangle5, BorderLayout.CENTER);
 
 			RectangleFigure middleIconRectangle4 = new RectangleFigure();
 
 			middleIconRectangle4.setOutline(false);
 
-			controllerExchangeNodeIcon3.add(middleIconRectangle4,
-					BorderLayout.CENTER);
+			controllerExchangeNodeIcon3.add(middleIconRectangle4, BorderLayout.CENTER);
 
 			GridLayout layoutMiddleIconRectangle4 = new GridLayout();
 			layoutMiddleIconRectangle4.numColumns = 1;
@@ -586,14 +578,10 @@ public class ControllerExchangeNodeEditPart extends ShapeNodeEditPart {
 
 			upperLineHelper5.setFill(false);
 			upperLineHelper5.setOutline(false);
-			upperLineHelper5.setPreferredSize(new Dimension(getMapMode()
-					.DPtoLP(1), getMapMode().DPtoLP(6)));
-			upperLineHelper5.setMaximumSize(new Dimension(getMapMode()
-					.DPtoLP(1), getMapMode().DPtoLP(6)));
-			upperLineHelper5.setMinimumSize(new Dimension(getMapMode()
-					.DPtoLP(1), getMapMode().DPtoLP(6)));
-			upperLineHelper5.setSize(getMapMode().DPtoLP(1), getMapMode()
-					.DPtoLP(6));
+			upperLineHelper5.setPreferredSize(new Dimension(getMapMode().DPtoLP(1), getMapMode().DPtoLP(6)));
+			upperLineHelper5.setMaximumSize(new Dimension(getMapMode().DPtoLP(1), getMapMode().DPtoLP(6)));
+			upperLineHelper5.setMinimumSize(new Dimension(getMapMode().DPtoLP(1), getMapMode().DPtoLP(6)));
+			upperLineHelper5.setSize(getMapMode().DPtoLP(1), getMapMode().DPtoLP(6));
 
 			GridData constraintUpperLineHelper5 = new GridData();
 			constraintUpperLineHelper5.verticalAlignment = GridData.BEGINNING;
@@ -603,15 +591,12 @@ public class ControllerExchangeNodeEditPart extends ShapeNodeEditPart {
 			constraintUpperLineHelper5.verticalSpan = 1;
 			constraintUpperLineHelper5.grabExcessHorizontalSpace = false;
 			constraintUpperLineHelper5.grabExcessVerticalSpace = false;
-			middleIconRectangle4.add(upperLineHelper5,
-					constraintUpperLineHelper5);
+			middleIconRectangle4.add(upperLineHelper5, constraintUpperLineHelper5);
 
 			ScalablePolygonShape linePolygon5 = new ScalablePolygonShape();
 
-			linePolygon5.addPoint(new Point(getMapMode().DPtoLP(0),
-					getMapMode().DPtoLP(0)));
-			linePolygon5.addPoint(new Point(getMapMode().DPtoLP(1),
-					getMapMode().DPtoLP(0)));
+			linePolygon5.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(0)));
+			linePolygon5.addPoint(new Point(getMapMode().DPtoLP(1), getMapMode().DPtoLP(0)));
 			linePolygon5.setFill(true);
 			linePolygon5.setLineWidth(2);
 
@@ -637,8 +622,7 @@ public class ControllerExchangeNodeEditPart extends ShapeNodeEditPart {
 			constraintLabelRectangle5.verticalSpan = 1;
 			constraintLabelRectangle5.grabExcessHorizontalSpace = false;
 			constraintLabelRectangle5.grabExcessVerticalSpace = false;
-			middleIconRectangle4
-					.add(labelRectangle5, constraintLabelRectangle5);
+			middleIconRectangle4.add(labelRectangle5, constraintLabelRectangle5);
 
 			BorderLayout layoutLabelRectangle5 = new BorderLayout();
 			labelRectangle5.setLayoutManager(layoutLabelRectangle5);
@@ -647,28 +631,23 @@ public class ControllerExchangeNodeEditPart extends ShapeNodeEditPart {
 
 			fFigureControllerExchangeNodeIconLabel.setText("");
 
-			fFigureControllerExchangeNodeIconLabel
-					.setFont(FFIGURECONTROLLEREXCHANGENODEICONLABEL_FONT);
+			fFigureControllerExchangeNodeIconLabel.setFont(FFIGURECONTROLLEREXCHANGENODEICONLABEL_FONT);
 
-			labelRectangle5.add(fFigureControllerExchangeNodeIconLabel,
-					BorderLayout.LEFT);
+			labelRectangle5.add(fFigureControllerExchangeNodeIconLabel, BorderLayout.LEFT);
 
 			fFigureControllerExchangeNodeIconDeadline = new WrappingLabel();
 
 			fFigureControllerExchangeNodeIconDeadline.setText("");
 
-			fFigureControllerExchangeNodeIconDeadline
-					.setFont(FFIGURECONTROLLEREXCHANGENODEICONDEADLINE_FONT);
+			fFigureControllerExchangeNodeIconDeadline.setFont(FFIGURECONTROLLEREXCHANGENODEICONDEADLINE_FONT);
 
-			labelRectangle5.add(fFigureControllerExchangeNodeIconDeadline,
-					BorderLayout.RIGHT);
+			labelRectangle5.add(fFigureControllerExchangeNodeIconDeadline, BorderLayout.RIGHT);
 
 			RectangleFigure rightIconRectangle4 = new RectangleFigure();
 
 			rightIconRectangle4.setOutline(false);
 
-			controllerExchangeNodeIcon3.add(rightIconRectangle4,
-					BorderLayout.RIGHT);
+			controllerExchangeNodeIcon3.add(rightIconRectangle4, BorderLayout.RIGHT);
 
 			BorderLayout layoutRightIconRectangle4 = new BorderLayout();
 			rightIconRectangle4.setLayoutManager(layoutRightIconRectangle4);
@@ -680,48 +659,37 @@ public class ControllerExchangeNodeEditPart extends ShapeNodeEditPart {
 			rightIconRectangle4.add(upperRightIconRectangle5, BorderLayout.TOP);
 
 			BorderLayout layoutUpperRightIconRectangle5 = new BorderLayout();
-			upperRightIconRectangle5
-					.setLayoutManager(layoutUpperRightIconRectangle5);
+			upperRightIconRectangle5.setLayoutManager(layoutUpperRightIconRectangle5);
 
 			RectangleFigure rightArrowPolygonRectangle6 = new RectangleFigure();
 
 			rightArrowPolygonRectangle6.setFill(false);
 			rightArrowPolygonRectangle6.setOutline(false);
-			rightArrowPolygonRectangle6.setPreferredSize(new Dimension(
-					getMapMode().DPtoLP(7), getMapMode().DPtoLP(14)));
+			rightArrowPolygonRectangle6
+					.setPreferredSize(new Dimension(getMapMode().DPtoLP(7), getMapMode().DPtoLP(14)));
 
-			upperRightIconRectangle5.add(rightArrowPolygonRectangle6,
-					BorderLayout.LEFT);
+			upperRightIconRectangle5.add(rightArrowPolygonRectangle6, BorderLayout.LEFT);
 
 			PolygonShape rightArrowPolygon7 = new PolygonShape();
 
-			rightArrowPolygon7.addPoint(new Point(getMapMode().DPtoLP(0),
-					getMapMode().DPtoLP(0)));
-			rightArrowPolygon7.addPoint(new Point(getMapMode().DPtoLP(7),
-					getMapMode().DPtoLP(7)));
-			rightArrowPolygon7.addPoint(new Point(getMapMode().DPtoLP(0),
-					getMapMode().DPtoLP(14)));
-			rightArrowPolygon7.addPoint(new Point(getMapMode().DPtoLP(0),
-					getMapMode().DPtoLP(0)));
+			rightArrowPolygon7.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(0)));
+			rightArrowPolygon7.addPoint(new Point(getMapMode().DPtoLP(7), getMapMode().DPtoLP(7)));
+			rightArrowPolygon7.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(14)));
+			rightArrowPolygon7.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(0)));
 			rightArrowPolygon7.setFill(true);
 			rightArrowPolygon7.setForegroundColor(ColorConstants.black);
 			rightArrowPolygon7.setBackgroundColor(ColorConstants.black);
-			rightArrowPolygon7.setPreferredSize(new Dimension(getMapMode()
-					.DPtoLP(7), getMapMode().DPtoLP(14)));
-			rightArrowPolygon7.setMaximumSize(new Dimension(getMapMode()
-					.DPtoLP(7), getMapMode().DPtoLP(14)));
-			rightArrowPolygon7.setMinimumSize(new Dimension(getMapMode()
-					.DPtoLP(7), getMapMode().DPtoLP(14)));
-			rightArrowPolygon7.setSize(getMapMode().DPtoLP(7), getMapMode()
-					.DPtoLP(14));
+			rightArrowPolygon7.setPreferredSize(new Dimension(getMapMode().DPtoLP(7), getMapMode().DPtoLP(14)));
+			rightArrowPolygon7.setMaximumSize(new Dimension(getMapMode().DPtoLP(7), getMapMode().DPtoLP(14)));
+			rightArrowPolygon7.setMinimumSize(new Dimension(getMapMode().DPtoLP(7), getMapMode().DPtoLP(14)));
+			rightArrowPolygon7.setSize(getMapMode().DPtoLP(7), getMapMode().DPtoLP(14));
 
 			rightArrowPolygonRectangle6.add(rightArrowPolygon7);
 
 			RectangleFigure redIconRectangle6 = new RectangleFigure();
 
 			redIconRectangle6.setForegroundColor(REDICONRECTANGLE6_FORE);
-			redIconRectangle6.setPreferredSize(new Dimension(getMapMode()
-					.DPtoLP(14), getMapMode().DPtoLP(14)));
+			redIconRectangle6.setPreferredSize(new Dimension(getMapMode().DPtoLP(14), getMapMode().DPtoLP(14)));
 
 			upperRightIconRectangle5.add(redIconRectangle6, BorderLayout.RIGHT);
 
@@ -729,13 +697,11 @@ public class ControllerExchangeNodeEditPart extends ShapeNodeEditPart {
 
 			lowerRightIconRectangle5.setOutline(false);
 
-			rightIconRectangle4.add(lowerRightIconRectangle5,
-					BorderLayout.CENTER);
+			rightIconRectangle4.add(lowerRightIconRectangle5, BorderLayout.CENTER);
 
 			RectangleFigure deadlineRow2 = new RectangleFigure();
 
-			controllerExchangeNodeIconContainer1.add(deadlineRow2,
-					BorderLayout.BOTTOM);
+			controllerExchangeNodeIconContainer1.add(deadlineRow2, BorderLayout.BOTTOM);
 
 			BorderLayout layoutDeadlineRow2 = new BorderLayout();
 			deadlineRow2.setLayoutManager(layoutDeadlineRow2);
@@ -744,8 +710,7 @@ public class ControllerExchangeNodeEditPart extends ShapeNodeEditPart {
 
 			controllerExchangeNodeDeadlineHelper3.setOutline(false);
 
-			deadlineRow2.add(controllerExchangeNodeDeadlineHelper3,
-					BorderLayout.CENTER);
+			deadlineRow2.add(controllerExchangeNodeDeadlineHelper3, BorderLayout.CENTER);
 
 			RectangleFigure deadlineLabelContainer3 = new RectangleFigure();
 
@@ -756,8 +721,7 @@ public class ControllerExchangeNodeEditPart extends ShapeNodeEditPart {
 			GridLayout layoutDeadlineLabelContainer3 = new GridLayout();
 			layoutDeadlineLabelContainer3.numColumns = 1;
 			layoutDeadlineLabelContainer3.makeColumnsEqualWidth = true;
-			deadlineLabelContainer3
-					.setLayoutManager(layoutDeadlineLabelContainer3);
+			deadlineLabelContainer3.setLayoutManager(layoutDeadlineLabelContainer3);
 
 			fFigureDeadlineLabel = new WrappingLabel();
 
@@ -778,8 +742,7 @@ public class ControllerExchangeNodeEditPart extends ShapeNodeEditPart {
 			constraintFFigureControllerExchangeNodePatternContainer.verticalSpan = 1;
 			constraintFFigureControllerExchangeNodePatternContainer.grabExcessHorizontalSpace = true;
 			constraintFFigureControllerExchangeNodePatternContainer.grabExcessVerticalSpace = true;
-			controllerExchangeNodeContentContainer0.add(
-					fFigureControllerExchangeNodePatternContainer,
+			controllerExchangeNodeContentContainer0.add(fFigureControllerExchangeNodePatternContainer,
 					constraintFFigureControllerExchangeNodePatternContainer);
 
 		}
@@ -839,16 +802,14 @@ public class ControllerExchangeNodeEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	static final Font FFIGURECONTROLLEREXCHANGENODEICONLABEL_FONT = new Font(
-			Display.getCurrent(), Display.getDefault().getSystemFont()
-					.getFontData()[0].getName(), 8, SWT.ITALIC);
+	static final Font FFIGURECONTROLLEREXCHANGENODEICONLABEL_FONT = new Font(Display.getCurrent(),
+			Display.getDefault().getSystemFont().getFontData()[0].getName(), 8, SWT.ITALIC);
 
 	/**
 	 * @generated
 	 */
-	static final Font FFIGURECONTROLLEREXCHANGENODEICONDEADLINE_FONT = new Font(
-			Display.getCurrent(), Display.getDefault().getSystemFont()
-					.getFontData()[0].getName(), 8, SWT.NORMAL);
+	static final Font FFIGURECONTROLLEREXCHANGENODEICONDEADLINE_FONT = new Font(Display.getCurrent(),
+			Display.getDefault().getSystemFont().getFontData()[0].getName(), 8, SWT.NORMAL);
 
 	/**
 	 * @generated

@@ -6,14 +6,12 @@ import org.eclipse.gmf.tooling.runtime.providers.DefaultElementTypeIconProvider;
 /**
  * @generated
  */
-public class ComponentStoryDiagramIconProvider extends
-		DefaultElementTypeIconProvider implements IIconProvider {
+public class ComponentStoryDiagramIconProvider extends DefaultElementTypeIconProvider implements IIconProvider {
 
 	/**
 	 * @generated
 	 */
 	public ComponentStoryDiagramIconProvider() {
-		super(
-				org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.TYPED_INSTANCE);
+		super(ComponentStoryDiagramElementTypes.TYPED_INSTANCE);
 	}
 }

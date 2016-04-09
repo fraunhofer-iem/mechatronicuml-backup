@@ -12,11 +12,12 @@
  */
 package org.muml.reconfiguration.componentstorydiagram.diagram.providers.assistants;
 
+import org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramModelingAssistantProvider;
+
 /**
  * @generated
  */
 public class ComponentStoryDiagramModelingAssistantProviderOfActivityEditPart
-		extends
-		org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramModelingAssistantProvider {
+		extends ComponentStoryDiagramModelingAssistantProvider {
 
 }

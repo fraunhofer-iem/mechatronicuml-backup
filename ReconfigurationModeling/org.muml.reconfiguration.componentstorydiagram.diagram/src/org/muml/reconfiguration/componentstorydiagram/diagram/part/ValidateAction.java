@@ -34,6 +34,8 @@ import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.actions.WorkspaceModifyDelegatingOperation;
+import org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramMarkerNavigationProvider;
+import org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramValidationProvider;
 
 /**
  * @generated
@@ -49,7 +51,7 @@ public class ValidateAction extends Action {
 	 * @generated
 	 */
 	public ValidateAction(IWorkbenchPage page) {
-		setText(org.muml.reconfiguration.componentstorydiagram.diagram.part.Messages.ValidateActionMessage);
+		setText(Messages.ValidateActionMessage);
 		this.page = page;
 	}
 
@@ -61,19 +63,14 @@ public class ValidateAction extends Action {
 		if (workbenchPart instanceof IDiagramWorkbenchPart) {
 			final IDiagramWorkbenchPart part = (IDiagramWorkbenchPart) workbenchPart;
 			try {
-				new WorkspaceModifyDelegatingOperation(
-						new IRunnableWithProgress() {
+				new WorkspaceModifyDelegatingOperation(new IRunnableWithProgress() {
 
-							public void run(IProgressMonitor monitor)
-									throws InterruptedException,
-									InvocationTargetException {
-								runValidation(part.getDiagramEditPart(),
-										part.getDiagram());
-							}
-						}).run(new NullProgressMonitor());
+					public void run(IProgressMonitor monitor) throws InterruptedException, InvocationTargetException {
+						runValidation(part.getDiagramEditPart(), part.getDiagram());
+					}
+				}).run(new NullProgressMonitor());
 			} catch (Exception e) {
-				org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramEditorPlugin
-						.getInstance().logError("Validation action failed", e); //$NON-NLS-1$
+				ComponentStoryDiagramDiagramEditorPlugin.getInstance().logError("Validation action failed", e); //$NON-NLS-1$
 			}
 		}
 	}
@@ -83,23 +80,17 @@ public class ValidateAction extends Action {
 	 */
 	public static void runValidation(View view) {
 		try {
-			if (org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramEditorUtil
-					.openDiagram(view.eResource())) {
-				IEditorPart editorPart = PlatformUI.getWorkbench()
-						.getActiveWorkbenchWindow().getActivePage()
+			if (ComponentStoryDiagramDiagramEditorUtil.openDiagram(view.eResource())) {
+				IEditorPart editorPart = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage()
 						.getActiveEditor();
 				if (editorPart instanceof IDiagramWorkbenchPart) {
-					runValidation(
-							((IDiagramWorkbenchPart) editorPart)
-									.getDiagramEditPart(),
-							view);
+					runValidation(((IDiagramWorkbenchPart) editorPart).getDiagramEditPart(), view);
 				} else {
 					runNonUIValidation(view);
 				}
 			}
 		} catch (Exception e) {
-			org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramEditorPlugin
-					.getInstance().logError("Validation action failed", e); //$NON-NLS-1$
+			ComponentStoryDiagramDiagramEditorPlugin.getInstance().logError("Validation action failed", e); //$NON-NLS-1$
 		}
 	}
 
@@ -107,8 +98,8 @@ public class ValidateAction extends Action {
 	 * @generated
 	 */
 	public static void runNonUIValidation(View view) {
-		DiagramEditPart diagramEditPart = OffscreenEditPartFactory
-				.getInstance().createDiagramEditPart(view.getDiagram());
+		DiagramEditPart diagramEditPart = OffscreenEditPartFactory.getInstance()
+				.createDiagramEditPart(view.getDiagram());
 		runValidation(diagramEditPart, view);
 	}
 
@@ -118,15 +109,13 @@ public class ValidateAction extends Action {
 	public static void runValidation(DiagramEditPart diagramEditPart, View view) {
 		final DiagramEditPart fpart = diagramEditPart;
 		final View fview = view;
-		TransactionalEditingDomain txDomain = TransactionUtil
-				.getEditingDomain(view);
-		org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramValidationProvider
-				.runWithConstraints(txDomain, new Runnable() {
+		TransactionalEditingDomain txDomain = TransactionUtil.getEditingDomain(view);
+		ComponentStoryDiagramValidationProvider.runWithConstraints(txDomain, new Runnable() {
 
-					public void run() {
-						validate(fpart, fview);
-					}
-				});
+			public void run() {
+				validate(fpart, fview);
+			}
+		});
 	}
 
 	/**
@@ -154,16 +143,14 @@ public class ValidateAction extends Action {
 	 * @generated
 	 */
 	private static void validate(DiagramEditPart diagramEditPart, View view) {
-		IFile target = view.eResource() != null ? WorkspaceSynchronizer
-				.getFile(view.eResource()) : null;
+		IFile target = view.eResource() != null ? WorkspaceSynchronizer.getFile(view.eResource()) : null;
 		if (target != null) {
-			org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramMarkerNavigationProvider
-					.deleteMarkers(target);
+			ComponentStoryDiagramMarkerNavigationProvider.deleteMarkers(target);
 		}
 		Diagnostic diagnostic = runEMFValidator(view);
 		createMarkers(target, diagnostic, diagramEditPart);
-		IBatchValidator validator = (IBatchValidator) ModelValidationService
-				.getInstance().newValidator(EvaluationMode.BATCH);
+		IBatchValidator validator = (IBatchValidator) ModelValidationService.getInstance()
+				.newValidator(EvaluationMode.BATCH);
 		validator.setIncludeLiveConstraints(true);
 		if (view.isSetElement() && view.getElement() != null) {
 			IStatus status = validator.validate(view.getElement());
@@ -174,24 +161,21 @@ public class ValidateAction extends Action {
 	/**
 	 * @generated
 	 */
-	private static void createMarkers(IFile target, IStatus validationStatus,
-			DiagramEditPart diagramEditPart) {
+	private static void createMarkers(IFile target, IStatus validationStatus, DiagramEditPart diagramEditPart) {
 		if (validationStatus.isOK()) {
 			return;
 		}
 		final IStatus rootStatus = validationStatus;
 		List allStatuses = new ArrayList();
-		org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramEditorUtil.LazyElement2ViewMap element2ViewMap = new org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramEditorUtil.LazyElement2ViewMap(
-				diagramEditPart.getDiagramView(), collectTargetElements(
-						rootStatus, new HashSet<EObject>(), allStatuses));
+		ComponentStoryDiagramDiagramEditorUtil.LazyElement2ViewMap element2ViewMap = new ComponentStoryDiagramDiagramEditorUtil.LazyElement2ViewMap(
+				diagramEditPart.getDiagramView(),
+				collectTargetElements(rootStatus, new HashSet<EObject>(), allStatuses));
 		for (Iterator it = allStatuses.iterator(); it.hasNext();) {
 			IConstraintStatus nextStatus = (IConstraintStatus) it.next();
-			View view = org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramEditorUtil
-					.findView(diagramEditPart, nextStatus.getTarget(),
-							element2ViewMap);
-			addMarker(diagramEditPart.getViewer(), target, view.eResource()
-					.getURIFragment(view), EMFCoreUtil.getQualifiedName(
-					nextStatus.getTarget(), true), nextStatus.getMessage(),
+			View view = ComponentStoryDiagramDiagramEditorUtil.findView(diagramEditPart, nextStatus.getTarget(),
+					element2ViewMap);
+			addMarker(diagramEditPart.getViewer(), target, view.eResource().getURIFragment(view),
+					EMFCoreUtil.getQualifiedName(nextStatus.getTarget(), true), nextStatus.getMessage(),
 					nextStatus.getSeverity());
 		}
 	}
@@ -199,31 +183,23 @@ public class ValidateAction extends Action {
 	/**
 	 * @generated
 	 */
-	private static void createMarkers(IFile target,
-			Diagnostic emfValidationStatus, DiagramEditPart diagramEditPart) {
+	private static void createMarkers(IFile target, Diagnostic emfValidationStatus, DiagramEditPart diagramEditPart) {
 		if (emfValidationStatus.getSeverity() == Diagnostic.OK) {
 			return;
 		}
 		final Diagnostic rootStatus = emfValidationStatus;
 		List allDiagnostics = new ArrayList();
-		org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramEditorUtil.LazyElement2ViewMap element2ViewMap = new org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramEditorUtil.LazyElement2ViewMap(
-				diagramEditPart.getDiagramView(), collectTargetElements(
-						rootStatus, new HashSet<EObject>(), allDiagnostics));
-		for (Iterator it = emfValidationStatus.getChildren().iterator(); it
-				.hasNext();) {
+		ComponentStoryDiagramDiagramEditorUtil.LazyElement2ViewMap element2ViewMap = new ComponentStoryDiagramDiagramEditorUtil.LazyElement2ViewMap(
+				diagramEditPart.getDiagramView(),
+				collectTargetElements(rootStatus, new HashSet<EObject>(), allDiagnostics));
+		for (Iterator it = emfValidationStatus.getChildren().iterator(); it.hasNext();) {
 			Diagnostic nextDiagnostic = (Diagnostic) it.next();
 			List data = nextDiagnostic.getData();
-			if (data != null && !data.isEmpty()
-					&& data.get(0) instanceof EObject) {
+			if (data != null && !data.isEmpty() && data.get(0) instanceof EObject) {
 				EObject element = (EObject) data.get(0);
-				View view = org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramEditorUtil
-						.findView(diagramEditPart, element, element2ViewMap);
-				addMarker(
-						diagramEditPart.getViewer(),
-						target,
-						view.eResource().getURIFragment(view),
-						EMFCoreUtil.getQualifiedName(element, true),
-						nextDiagnostic.getMessage(),
+				View view = ComponentStoryDiagramDiagramEditorUtil.findView(diagramEditPart, element, element2ViewMap);
+				addMarker(diagramEditPart.getViewer(), target, view.eResource().getURIFragment(view),
+						EMFCoreUtil.getQualifiedName(element, true), nextDiagnostic.getMessage(),
 						diagnosticToStatusSeverity(nextDiagnostic.getSeverity()));
 			}
 		}
@@ -232,14 +208,12 @@ public class ValidateAction extends Action {
 	/**
 	 * @generated
 	 */
-	private static void addMarker(EditPartViewer viewer, IFile target,
-			String elementId, String location, String message,
-			int statusSeverity) {
+	private static void addMarker(EditPartViewer viewer, IFile target, String elementId, String location,
+			String message, int statusSeverity) {
 		if (target == null) {
 			return;
 		}
-		org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramMarkerNavigationProvider
-				.addMarker(target, elementId, location, message, statusSeverity);
+		ComponentStoryDiagramMarkerNavigationProvider.addMarker(target, elementId, location, message, statusSeverity);
 	}
 
 	/**
@@ -252,8 +226,7 @@ public class ValidateAction extends Action {
 			return IStatus.INFO;
 		} else if (diagnosticSeverity == Diagnostic.WARNING) {
 			return IStatus.WARNING;
-		} else if (diagnosticSeverity == Diagnostic.ERROR
-				|| diagnosticSeverity == Diagnostic.CANCEL) {
+		} else if (diagnosticSeverity == Diagnostic.ERROR || diagnosticSeverity == Diagnostic.CANCEL) {
 			return IStatus.ERROR;
 		}
 		return IStatus.INFO;
@@ -262,18 +235,16 @@ public class ValidateAction extends Action {
 	/**
 	 * @generated
 	 */
-	private static Set<EObject> collectTargetElements(IStatus status,
-			Set<EObject> targetElementCollector, List allConstraintStatuses) {
+	private static Set<EObject> collectTargetElements(IStatus status, Set<EObject> targetElementCollector,
+			List allConstraintStatuses) {
 		if (status instanceof IConstraintStatus) {
-			targetElementCollector
-					.add(((IConstraintStatus) status).getTarget());
+			targetElementCollector.add(((IConstraintStatus) status).getTarget());
 			allConstraintStatuses.add(status);
 		}
 		if (status.isMultiStatus()) {
 			IStatus[] children = status.getChildren();
 			for (int i = 0; i < children.length; i++) {
-				collectTargetElements(children[i], targetElementCollector,
-						allConstraintStatuses);
+				collectTargetElements(children[i], targetElementCollector, allConstraintStatuses);
 			}
 		}
 		return targetElementCollector;
@@ -282,8 +253,8 @@ public class ValidateAction extends Action {
 	/**
 	 * @generated
 	 */
-	private static Set<EObject> collectTargetElements(Diagnostic diagnostic,
-			Set<EObject> targetElementCollector, List allDiagnostics) {
+	private static Set<EObject> collectTargetElements(Diagnostic diagnostic, Set<EObject> targetElementCollector,
+			List allDiagnostics) {
 		List data = diagnostic.getData();
 		EObject target = null;
 		if (data != null && !data.isEmpty() && data.get(0) instanceof EObject) {
@@ -291,12 +262,9 @@ public class ValidateAction extends Action {
 			targetElementCollector.add(target);
 			allDiagnostics.add(diagnostic);
 		}
-		if (diagnostic.getChildren() != null
-				&& !diagnostic.getChildren().isEmpty()) {
-			for (Iterator it = diagnostic.getChildren().iterator(); it
-					.hasNext();) {
-				collectTargetElements((Diagnostic) it.next(),
-						targetElementCollector, allDiagnostics);
+		if (diagnostic.getChildren() != null && !diagnostic.getChildren().isEmpty()) {
+			for (Iterator it = diagnostic.getChildren().iterator(); it.hasNext();) {
+				collectTargetElements((Diagnostic) it.next(), targetElementCollector, allDiagnostics);
 			}
 		}
 		return targetElementCollector;

@@ -17,13 +17,14 @@ import java.util.List;
 
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
+import org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes;
+import org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramModelingAssistantProvider;
 
 /**
  * @generated
  */
 public class ComponentStoryDiagramModelingAssistantProviderOfComponentVariable2EditPart
-		extends
-		org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramModelingAssistantProvider {
+		extends ComponentStoryDiagramModelingAssistantProvider {
 
 	/**
 	 * @generated
@@ -31,8 +32,8 @@ public class ComponentStoryDiagramModelingAssistantProviderOfComponentVariable2E
 	@Override
 	public List<IElementType> getTypesForPopupBar(IAdaptable host) {
 		List<IElementType> types = new ArrayList<IElementType>(2);
-		types.add(org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.MultiPortVariable_3019);
-		types.add(org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.SinglePortVariable_3020);
+		types.add(ComponentStoryDiagramElementTypes.MultiPortVariable_3019);
+		types.add(ComponentStoryDiagramElementTypes.SinglePortVariable_3020);
 		return types;
 	}
 

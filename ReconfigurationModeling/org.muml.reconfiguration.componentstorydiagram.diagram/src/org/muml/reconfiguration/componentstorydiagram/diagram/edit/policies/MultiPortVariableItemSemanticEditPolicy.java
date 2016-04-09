@@ -15,20 +15,28 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipReques
 import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.reconfiguration.componentstorydiagram.diagram.edit.commands.AssemblyVariableCreateCommand;
+import org.muml.reconfiguration.componentstorydiagram.diagram.edit.commands.AssemblyVariableReorientCommand;
+import org.muml.reconfiguration.componentstorydiagram.diagram.edit.commands.DelegationVariableCreateCommand;
+import org.muml.reconfiguration.componentstorydiagram.diagram.edit.commands.DelegationVariableReorientCommand;
+import org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.AssemblyVariableEditPart;
+import org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.DelegationVariableEditPart;
+import org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.MultiPortOrderConstraintEditPart;
+import org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.MultiPortVariableMultiPortVariablesCompartmentEditPart;
+import org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.SinglePortVariableEditPart;
+import org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramVisualIDRegistry;
+import org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes;
 
 /**
  * @generated
  */
-public class MultiPortVariableItemSemanticEditPolicy
-		extends
-		org.muml.reconfiguration.componentstorydiagram.diagram.edit.policies.ComponentStoryDiagramBaseItemSemanticEditPolicy {
+public class MultiPortVariableItemSemanticEditPolicy extends ComponentStoryDiagramBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public MultiPortVariableItemSemanticEditPolicy() {
-		super(
-				org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.MultiPortVariable_3016);
+		super(ComponentStoryDiagramElementTypes.MultiPortVariable_3016);
 	}
 
 	/**
@@ -36,23 +44,19 @@ public class MultiPortVariableItemSemanticEditPolicy
 	 */
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		View view = (View) getHost().getModel();
-		CompositeTransactionalCommand cmd = new CompositeTransactionalCommand(
-				getEditingDomain(), null);
+		CompositeTransactionalCommand cmd = new CompositeTransactionalCommand(getEditingDomain(), null);
 		cmd.setTransactionNestingEnabled(false);
 		for (Iterator<?> it = view.getTargetEdges().iterator(); it.hasNext();) {
 			Edge incomingLink = (Edge) it.next();
-			if (org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramVisualIDRegistry
-					.getVisualID(incomingLink) == org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.AssemblyVariableEditPart.VISUAL_ID) {
-				DestroyElementRequest r = new DestroyElementRequest(
-						incomingLink.getElement(), false);
+			if (ComponentStoryDiagramVisualIDRegistry.getVisualID(incomingLink) == AssemblyVariableEditPart.VISUAL_ID) {
+				DestroyElementRequest r = new DestroyElementRequest(incomingLink.getElement(), false);
 				cmd.add(new DestroyElementCommand(r));
 				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
 				continue;
 			}
-			if (org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramVisualIDRegistry
-					.getVisualID(incomingLink) == org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.DelegationVariableEditPart.VISUAL_ID) {
-				DestroyElementRequest r = new DestroyElementRequest(
-						incomingLink.getElement(), false);
+			if (ComponentStoryDiagramVisualIDRegistry
+					.getVisualID(incomingLink) == DelegationVariableEditPart.VISUAL_ID) {
+				DestroyElementRequest r = new DestroyElementRequest(incomingLink.getElement(), false);
 				cmd.add(new DestroyElementCommand(r));
 				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
 				continue;
@@ -60,18 +64,15 @@ public class MultiPortVariableItemSemanticEditPolicy
 		}
 		for (Iterator<?> it = view.getSourceEdges().iterator(); it.hasNext();) {
 			Edge outgoingLink = (Edge) it.next();
-			if (org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramVisualIDRegistry
-					.getVisualID(outgoingLink) == org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.AssemblyVariableEditPart.VISUAL_ID) {
-				DestroyElementRequest r = new DestroyElementRequest(
-						outgoingLink.getElement(), false);
+			if (ComponentStoryDiagramVisualIDRegistry.getVisualID(outgoingLink) == AssemblyVariableEditPart.VISUAL_ID) {
+				DestroyElementRequest r = new DestroyElementRequest(outgoingLink.getElement(), false);
 				cmd.add(new DestroyElementCommand(r));
 				cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
 				continue;
 			}
-			if (org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramVisualIDRegistry
-					.getVisualID(outgoingLink) == org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.DelegationVariableEditPart.VISUAL_ID) {
-				DestroyElementRequest r = new DestroyElementRequest(
-						outgoingLink.getElement(), false);
+			if (ComponentStoryDiagramVisualIDRegistry
+					.getVisualID(outgoingLink) == DelegationVariableEditPart.VISUAL_ID) {
+				DestroyElementRequest r = new DestroyElementRequest(outgoingLink.getElement(), false);
 				cmd.add(new DestroyElementCommand(r));
 				cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
 				continue;
@@ -97,81 +98,63 @@ public class MultiPortVariableItemSemanticEditPolicy
 		View view = (View) getHost().getModel();
 		for (Iterator<?> nit = view.getChildren().iterator(); nit.hasNext();) {
 			Node node = (Node) nit.next();
-			switch (org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramVisualIDRegistry
-					.getVisualID(node)) {
-			case org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.MultiPortVariableMultiPortVariablesCompartmentEditPart.VISUAL_ID:
-				for (Iterator<?> cit = node.getChildren().iterator(); cit
-						.hasNext();) {
+			switch (ComponentStoryDiagramVisualIDRegistry.getVisualID(node)) {
+			case MultiPortVariableMultiPortVariablesCompartmentEditPart.VISUAL_ID:
+				for (Iterator<?> cit = node.getChildren().iterator(); cit.hasNext();) {
 					Node cnode = (Node) cit.next();
-					switch (org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramVisualIDRegistry
-							.getVisualID(cnode)) {
-					case org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.SinglePortVariableEditPart.VISUAL_ID:
-						for (Iterator<?> it = cnode.getTargetEdges().iterator(); it
-								.hasNext();) {
+					switch (ComponentStoryDiagramVisualIDRegistry.getVisualID(cnode)) {
+					case SinglePortVariableEditPart.VISUAL_ID:
+						for (Iterator<?> it = cnode.getTargetEdges().iterator(); it.hasNext();) {
 							Edge incomingLink = (Edge) it.next();
-							if (org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramVisualIDRegistry
-									.getVisualID(incomingLink) == org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.AssemblyVariableEditPart.VISUAL_ID) {
-								DestroyElementRequest r = new DestroyElementRequest(
-										incomingLink.getElement(), false);
+							if (ComponentStoryDiagramVisualIDRegistry
+									.getVisualID(incomingLink) == AssemblyVariableEditPart.VISUAL_ID) {
+								DestroyElementRequest r = new DestroyElementRequest(incomingLink.getElement(), false);
 								cmd.add(new DestroyElementCommand(r));
-								cmd.add(new DeleteCommand(getEditingDomain(),
-										incomingLink));
+								cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
 								continue;
 							}
-							if (org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramVisualIDRegistry
-									.getVisualID(incomingLink) == org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.DelegationVariableEditPart.VISUAL_ID) {
-								DestroyElementRequest r = new DestroyElementRequest(
-										incomingLink.getElement(), false);
+							if (ComponentStoryDiagramVisualIDRegistry
+									.getVisualID(incomingLink) == DelegationVariableEditPart.VISUAL_ID) {
+								DestroyElementRequest r = new DestroyElementRequest(incomingLink.getElement(), false);
 								cmd.add(new DestroyElementCommand(r));
-								cmd.add(new DeleteCommand(getEditingDomain(),
-										incomingLink));
+								cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
 								continue;
 							}
-							if (org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramVisualIDRegistry
-									.getVisualID(incomingLink) == org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.MultiPortOrderConstraintEditPart.VISUAL_ID) {
-								DestroyElementRequest r = new DestroyElementRequest(
-										incomingLink.getElement(), false);
+							if (ComponentStoryDiagramVisualIDRegistry
+									.getVisualID(incomingLink) == MultiPortOrderConstraintEditPart.VISUAL_ID) {
+								DestroyElementRequest r = new DestroyElementRequest(incomingLink.getElement(), false);
 								cmd.add(new DestroyElementCommand(r));
-								cmd.add(new DeleteCommand(getEditingDomain(),
-										incomingLink));
+								cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
 								continue;
 							}
 						}
-						for (Iterator<?> it = cnode.getSourceEdges().iterator(); it
-								.hasNext();) {
+						for (Iterator<?> it = cnode.getSourceEdges().iterator(); it.hasNext();) {
 							Edge outgoingLink = (Edge) it.next();
-							if (org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramVisualIDRegistry
-									.getVisualID(outgoingLink) == org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.AssemblyVariableEditPart.VISUAL_ID) {
-								DestroyElementRequest r = new DestroyElementRequest(
-										outgoingLink.getElement(), false);
+							if (ComponentStoryDiagramVisualIDRegistry
+									.getVisualID(outgoingLink) == AssemblyVariableEditPart.VISUAL_ID) {
+								DestroyElementRequest r = new DestroyElementRequest(outgoingLink.getElement(), false);
 								cmd.add(new DestroyElementCommand(r));
-								cmd.add(new DeleteCommand(getEditingDomain(),
-										outgoingLink));
+								cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
 								continue;
 							}
-							if (org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramVisualIDRegistry
-									.getVisualID(outgoingLink) == org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.DelegationVariableEditPart.VISUAL_ID) {
-								DestroyElementRequest r = new DestroyElementRequest(
-										outgoingLink.getElement(), false);
+							if (ComponentStoryDiagramVisualIDRegistry
+									.getVisualID(outgoingLink) == DelegationVariableEditPart.VISUAL_ID) {
+								DestroyElementRequest r = new DestroyElementRequest(outgoingLink.getElement(), false);
 								cmd.add(new DestroyElementCommand(r));
-								cmd.add(new DeleteCommand(getEditingDomain(),
-										outgoingLink));
+								cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
 								continue;
 							}
-							if (org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramVisualIDRegistry
-									.getVisualID(outgoingLink) == org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.MultiPortOrderConstraintEditPart.VISUAL_ID) {
-								DestroyElementRequest r = new DestroyElementRequest(
-										outgoingLink.getElement(), false);
+							if (ComponentStoryDiagramVisualIDRegistry
+									.getVisualID(outgoingLink) == MultiPortOrderConstraintEditPart.VISUAL_ID) {
+								DestroyElementRequest r = new DestroyElementRequest(outgoingLink.getElement(), false);
 								cmd.add(new DestroyElementCommand(r));
-								cmd.add(new DeleteCommand(getEditingDomain(),
-										outgoingLink));
+								cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
 								continue;
 							}
 						}
 
 						cmd.add(new DestroyElementCommand(
-								new DestroyElementRequest(getEditingDomain(),
-										cnode.getElement(), false)));
+								new DestroyElementRequest(getEditingDomain(), cnode.getElement(), false)));
 						// don't need explicit deletion of cnode as parent's view deletion would clean child views as well 
 						// cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), cnode));
 
@@ -189,24 +172,18 @@ public class MultiPortVariableItemSemanticEditPolicy
 	protected Command getCreateRelationshipCommand(CreateRelationshipRequest req) {
 		Command command = req.getTarget() == null ? getStartCreateRelationshipCommand(req)
 				: getCompleteCreateRelationshipCommand(req);
-		return command != null ? command : super
-				.getCreateRelationshipCommand(req);
+		return command != null ? command : super.getCreateRelationshipCommand(req);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected Command getStartCreateRelationshipCommand(
-			CreateRelationshipRequest req) {
-		if (org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.AssemblyVariable_4004 == req
-				.getElementType()) {
-			return getGEFWrapper(new org.muml.reconfiguration.componentstorydiagram.diagram.edit.commands.AssemblyVariableCreateCommand(
-					req, req.getSource(), req.getTarget()));
+	protected Command getStartCreateRelationshipCommand(CreateRelationshipRequest req) {
+		if (ComponentStoryDiagramElementTypes.AssemblyVariable_4004 == req.getElementType()) {
+			return getGEFWrapper(new AssemblyVariableCreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		if (org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.DelegationVariable_4005 == req
-				.getElementType()) {
-			return getGEFWrapper(new org.muml.reconfiguration.componentstorydiagram.diagram.edit.commands.DelegationVariableCreateCommand(
-					req, req.getSource(), req.getTarget()));
+		if (ComponentStoryDiagramElementTypes.DelegationVariable_4005 == req.getElementType()) {
+			return getGEFWrapper(new DelegationVariableCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return null;
 	}
@@ -214,17 +191,12 @@ public class MultiPortVariableItemSemanticEditPolicy
 	/**
 	 * @generated
 	 */
-	protected Command getCompleteCreateRelationshipCommand(
-			CreateRelationshipRequest req) {
-		if (org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.AssemblyVariable_4004 == req
-				.getElementType()) {
-			return getGEFWrapper(new org.muml.reconfiguration.componentstorydiagram.diagram.edit.commands.AssemblyVariableCreateCommand(
-					req, req.getSource(), req.getTarget()));
+	protected Command getCompleteCreateRelationshipCommand(CreateRelationshipRequest req) {
+		if (ComponentStoryDiagramElementTypes.AssemblyVariable_4004 == req.getElementType()) {
+			return getGEFWrapper(new AssemblyVariableCreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		if (org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.DelegationVariable_4005 == req
-				.getElementType()) {
-			return getGEFWrapper(new org.muml.reconfiguration.componentstorydiagram.diagram.edit.commands.DelegationVariableCreateCommand(
-					req, req.getSource(), req.getTarget()));
+		if (ComponentStoryDiagramElementTypes.DelegationVariable_4005 == req.getElementType()) {
+			return getGEFWrapper(new DelegationVariableCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return null;
 	}
@@ -235,15 +207,12 @@ public class MultiPortVariableItemSemanticEditPolicy
 	 * 
 	 * @generated
 	 */
-	protected Command getReorientRelationshipCommand(
-			ReorientRelationshipRequest req) {
+	protected Command getReorientRelationshipCommand(ReorientRelationshipRequest req) {
 		switch (getVisualID(req)) {
-		case org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.AssemblyVariableEditPart.VISUAL_ID:
-			return getGEFWrapper(new org.muml.reconfiguration.componentstorydiagram.diagram.edit.commands.AssemblyVariableReorientCommand(
-					req));
-		case org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.DelegationVariableEditPart.VISUAL_ID:
-			return getGEFWrapper(new org.muml.reconfiguration.componentstorydiagram.diagram.edit.commands.DelegationVariableReorientCommand(
-					req));
+		case AssemblyVariableEditPart.VISUAL_ID:
+			return getGEFWrapper(new AssemblyVariableReorientCommand(req));
+		case DelegationVariableEditPart.VISUAL_ID:
+			return getGEFWrapper(new DelegationVariableReorientCommand(req));
 		}
 		return super.getReorientRelationshipCommand(req);
 	}

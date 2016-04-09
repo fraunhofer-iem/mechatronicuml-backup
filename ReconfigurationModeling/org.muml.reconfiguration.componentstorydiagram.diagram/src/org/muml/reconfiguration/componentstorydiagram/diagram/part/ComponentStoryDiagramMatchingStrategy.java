@@ -9,8 +9,7 @@ import org.eclipse.ui.PartInitException;
 /**
  * @generated
  */
-public class ComponentStoryDiagramMatchingStrategy implements
-		IEditorMatchingStrategy {
+public class ComponentStoryDiagramMatchingStrategy implements IEditorMatchingStrategy {
 
 	/**
 	 * @generated
@@ -26,10 +25,8 @@ public class ComponentStoryDiagramMatchingStrategy implements
 		if (editorInput.equals(input)) {
 			return true;
 		}
-		if (editorInput instanceof URIEditorInput
-				&& input instanceof URIEditorInput) {
-			return ((URIEditorInput) editorInput).getURI().equals(
-					((URIEditorInput) input).getURI());
+		if (editorInput instanceof URIEditorInput && input instanceof URIEditorInput) {
+			return ((URIEditorInput) editorInput).getURI().equals(((URIEditorInput) input).getURI());
 		}
 		return false;
 	}

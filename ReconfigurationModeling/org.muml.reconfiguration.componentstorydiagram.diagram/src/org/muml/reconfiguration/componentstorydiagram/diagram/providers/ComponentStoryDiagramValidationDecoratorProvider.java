@@ -37,12 +37,15 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.ui.ISharedImages;
 import org.eclipse.ui.PlatformUI;
+import org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ComponentStoryRuleEditPart;
+import org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramEditor;
+import org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramEditorPlugin;
+import org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramVisualIDRegistry;
 
 /**
  * @generated
  */
-public class ComponentStoryDiagramValidationDecoratorProvider extends
-		AbstractProvider implements IDecoratorProvider {
+public class ComponentStoryDiagramValidationDecoratorProvider extends AbstractProvider implements IDecoratorProvider {
 
 	/**
 	 * @generated
@@ -52,8 +55,7 @@ public class ComponentStoryDiagramValidationDecoratorProvider extends
 	/**
 	 * @generated
 	 */
-	private static final String MARKER_TYPE = org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramEditorPlugin.ID
-			+ ".diagnostic"; //$NON-NLS-1$
+	private static final String MARKER_TYPE = ComponentStoryDiagramDiagramEditorPlugin.ID + ".diagnostic"; //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -63,16 +65,14 @@ public class ComponentStoryDiagramValidationDecoratorProvider extends
 	/**
 	 * @generated
 	 */
-	private static Map/*<String, List<IDecorator>>*/allDecorators = new HashMap();
+	private static Map/*<String, List<IDecorator>>*/ allDecorators = new HashMap();
 
 	/**
 	 * @generated
 	 */
 	public void createDecorators(IDecoratorTarget decoratorTarget) {
-		EditPart editPart = (EditPart) decoratorTarget
-				.getAdapter(EditPart.class);
-		if (editPart instanceof GraphicalEditPart
-				|| editPart instanceof AbstractConnectionEditPart) {
+		EditPart editPart = (EditPart) decoratorTarget.getAdapter(EditPart.class);
+		if (editPart instanceof GraphicalEditPart || editPart instanceof AbstractConnectionEditPart) {
 			Object model = editPart.getModel();
 			if ((model instanceof View)) {
 				View view = (View) model;
@@ -84,9 +84,8 @@ public class ComponentStoryDiagramValidationDecoratorProvider extends
 			if (!(ed instanceof DiagramEditDomain)) {
 				return;
 			}
-			if (((DiagramEditDomain) ed).getEditorPart() instanceof org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramEditor) {
-				decoratorTarget.installDecorator(KEY, new StatusDecorator(
-						decoratorTarget));
+			if (((DiagramEditDomain) ed).getEditorPart() instanceof ComponentStoryDiagramDiagramEditor) {
+				decoratorTarget.installDecorator(KEY, new StatusDecorator(decoratorTarget));
 			}
 		}
 	}
@@ -98,13 +97,10 @@ public class ComponentStoryDiagramValidationDecoratorProvider extends
 		if (!(operation instanceof CreateDecoratorsOperation)) {
 			return false;
 		}
-		IDecoratorTarget decoratorTarget = ((CreateDecoratorsOperation) operation)
-				.getDecoratorTarget();
+		IDecoratorTarget decoratorTarget = ((CreateDecoratorsOperation) operation).getDecoratorTarget();
 		View view = (View) decoratorTarget.getAdapter(View.class);
 		return view != null
-				&& org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ComponentStoryRuleEditPart.MODEL_ID
-						.equals(org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramVisualIDRegistry
-								.getModelID(view));
+				&& ComponentStoryRuleEditPart.MODEL_ID.equals(ComponentStoryDiagramVisualIDRegistry.getModelID(view));
 	}
 
 	/**
@@ -118,8 +114,7 @@ public class ComponentStoryDiagramValidationDecoratorProvider extends
 	 * @generated
 	 */
 	private static void refreshDecorators(String viewId, Diagram diagram) {
-		final List decorators = viewId != null ? (List) allDecorators
-				.get(viewId) : null;
+		final List decorators = viewId != null ? (List) allDecorators.get(viewId) : null;
 		if (decorators == null || decorators.isEmpty() || diagram == null) {
 			return;
 		}
@@ -129,16 +124,13 @@ public class ComponentStoryDiagramValidationDecoratorProvider extends
 			public void run() {
 				try {
 					// BEGIN Added null checks
-					TransactionalEditingDomain editingDomain = TransactionUtil
-							.getEditingDomain(fdiagram);
+					TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(fdiagram);
 					if (editingDomain != null) {
 						editingDomain.runExclusive(new Runnable() {
 
 							public void run() {
-								for (Iterator it = decorators.iterator(); it
-										.hasNext();) {
-									IDecorator decorator = (IDecorator) it
-											.next();
+								for (Iterator it = decorators.iterator(); it.hasNext();) {
+									IDecorator decorator = (IDecorator) it.next();
 									if (decorator != null) {
 										decorator.refresh();
 									}
@@ -148,9 +140,7 @@ public class ComponentStoryDiagramValidationDecoratorProvider extends
 					}
 					// END Added null checks
 				} catch (Exception e) {
-					org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramEditorPlugin
-							.getInstance().logError(
-									"Decorator refresh failure", e); //$NON-NLS-1$
+					ComponentStoryDiagramDiagramEditorPlugin.getInstance().logError("Decorator refresh failure", e); //$NON-NLS-1$
 				}
 			}
 		});
@@ -172,19 +162,15 @@ public class ComponentStoryDiagramValidationDecoratorProvider extends
 		public StatusDecorator(IDecoratorTarget decoratorTarget) {
 			super(decoratorTarget);
 			try {
-				final View view = (View) getDecoratorTarget().getAdapter(
-						View.class);
-				TransactionUtil.getEditingDomain(view).runExclusive(
-						new Runnable() {
+				final View view = (View) getDecoratorTarget().getAdapter(View.class);
+				TransactionUtil.getEditingDomain(view).runExclusive(new Runnable() {
 
-							public void run() {
-								StatusDecorator.this.viewId = view != null ? ViewUtil
-										.getIdStr(view) : null;
-							}
-						});
+					public void run() {
+						StatusDecorator.this.viewId = view != null ? ViewUtil.getIdStr(view) : null;
+					}
+				});
 			} catch (Exception e) {
-				org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramEditorPlugin
-						.getInstance().logError("ViewID access failure", e); //$NON-NLS-1$			
+				ComponentStoryDiagramDiagramEditorPlugin.getInstance().logError("ViewID access failure", e); //$NON-NLS-1$			
 			}
 		}
 
@@ -197,8 +183,7 @@ public class ComponentStoryDiagramValidationDecoratorProvider extends
 			if (view == null || view.eResource() == null) {
 				return;
 			}
-			EditPart editPart = (EditPart) getDecoratorTarget().getAdapter(
-					EditPart.class);
+			EditPart editPart = (EditPart) getDecoratorTarget().getAdapter(EditPart.class);
 			if (editPart == null || editPart.getViewer() == null) {
 				return;
 			}
@@ -210,19 +195,16 @@ public class ComponentStoryDiagramValidationDecoratorProvider extends
 			}
 			int severity = IMarker.SEVERITY_INFO;
 			IMarker foundMarker = null;
-			IResource resource = WorkspaceSynchronizer
-					.getFile(view.eResource());
+			IResource resource = WorkspaceSynchronizer.getFile(view.eResource());
 			if (resource == null || !resource.exists()) {
 				return;
 			}
 			IMarker[] markers = null;
 			try {
-				markers = resource.findMarkers(MARKER_TYPE, true,
-						IResource.DEPTH_INFINITE);
+				markers = resource.findMarkers(MARKER_TYPE, true, IResource.DEPTH_INFINITE);
 			} catch (CoreException e) {
-				org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramEditorPlugin
-						.getInstance().logError(
-								"Validation markers refresh failure", e); //$NON-NLS-1$
+				ComponentStoryDiagramDiagramEditorPlugin.getInstance().logError("Validation markers refresh failure", //$NON-NLS-1$
+						e);
 			}
 			if (markers == null || markers.length == 0) {
 				return;
@@ -230,18 +212,14 @@ public class ComponentStoryDiagramValidationDecoratorProvider extends
 			Label toolTip = null;
 			for (int i = 0; i < markers.length; i++) {
 				IMarker marker = markers[i];
-				String attribute = marker
-						.getAttribute(
-								org.eclipse.gmf.runtime.common.ui.resources.IMarker.ELEMENT_ID,
-								""); //$NON-NLS-1$
+				String attribute = marker.getAttribute(org.eclipse.gmf.runtime.common.ui.resources.IMarker.ELEMENT_ID,
+						""); //$NON-NLS-1$
 				if (attribute.equals(elementId)) {
-					int nextSeverity = marker.getAttribute(IMarker.SEVERITY,
-							IMarker.SEVERITY_INFO);
+					int nextSeverity = marker.getAttribute(IMarker.SEVERITY, IMarker.SEVERITY_INFO);
 					Image nextImage = getImage(nextSeverity);
 					if (foundMarker == null) {
 						foundMarker = marker;
-						toolTip = new Label(marker.getAttribute(
-								IMarker.MESSAGE, ""), //$NON-NLS-1$
+						toolTip = new Label(marker.getAttribute(IMarker.MESSAGE, ""), //$NON-NLS-1$
 								nextImage);
 					} else {
 						if (toolTip.getChildren().isEmpty()) {
@@ -252,12 +230,10 @@ public class ComponentStoryDiagramValidationDecoratorProvider extends
 							comositeLabel.add(toolTip);
 							toolTip = comositeLabel;
 						}
-						toolTip.add(new Label(marker.getAttribute(
-								IMarker.MESSAGE, ""), //$NON-NLS-1$
+						toolTip.add(new Label(marker.getAttribute(IMarker.MESSAGE, ""), //$NON-NLS-1$
 								nextImage));
 					}
-					severity = (nextSeverity > severity) ? nextSeverity
-							: severity;
+					severity = (nextSeverity > severity) ? nextSeverity : severity;
 				}
 			}
 			if (foundMarker == null) {
@@ -267,19 +243,15 @@ public class ComponentStoryDiagramValidationDecoratorProvider extends
 			// add decoration
 			if (editPart instanceof org.eclipse.gef.GraphicalEditPart) {
 				if (view instanceof Edge) {
-					setDecoration(getDecoratorTarget().addConnectionDecoration(
-							getImage(severity), 50, true));
+					setDecoration(getDecoratorTarget().addConnectionDecoration(getImage(severity), 50, true));
 				} else {
 					int margin = -1;
 					if (editPart instanceof org.eclipse.gef.GraphicalEditPart) {
-						margin = MapModeUtil.getMapMode(
-								((org.eclipse.gef.GraphicalEditPart) editPart)
-										.getFigure()).DPtoLP(margin);
+						margin = MapModeUtil.getMapMode(((org.eclipse.gef.GraphicalEditPart) editPart).getFigure())
+								.DPtoLP(margin);
 					}
-					setDecoration(getDecoratorTarget()
-							.addShapeDecoration(getImage(severity),
-									IDecoratorTarget.Direction.NORTH_EAST,
-									margin, true));
+					setDecoration(getDecoratorTarget().addShapeDecoration(getImage(severity),
+							IDecoratorTarget.Direction.NORTH_EAST, margin, true));
 				}
 				getDecoration().setToolTip(toolTip);
 			}
@@ -300,8 +272,7 @@ public class ComponentStoryDiagramValidationDecoratorProvider extends
 			default:
 				imageName = ISharedImages.IMG_OBJS_INFO_TSK;
 			}
-			return PlatformUI.getWorkbench().getSharedImages()
-					.getImage(imageName);
+			return PlatformUI.getWorkbench().getSharedImages().getImage(imageName);
 		}
 
 		/**
@@ -332,8 +303,7 @@ public class ComponentStoryDiagramValidationDecoratorProvider extends
 				return;
 			}
 			if (fileObserver == null) {
-				FileChangeManager.getInstance().addFileObserver(
-						fileObserver = new MarkerObserver(diagramView));
+				FileChangeManager.getInstance().addFileObserver(fileObserver = new MarkerObserver(diagramView));
 			}
 		}
 
@@ -356,8 +326,7 @@ public class ComponentStoryDiagramValidationDecoratorProvider extends
 
 			// stop listening to changes in resources if there are no more decorators
 			if (fileObserver != null && allDecorators.isEmpty()) {
-				FileChangeManager.getInstance()
-						.removeFileObserver(fileObserver);
+				FileChangeManager.getInstance().removeFileObserver(fileObserver);
 				fileObserver = null;
 			}
 			super.deactivate();
@@ -409,10 +378,7 @@ public class ComponentStoryDiagramValidationDecoratorProvider extends
 		 * @generated
 		 */
 		public void handleMarkerAdded(IMarker marker) {
-			if (marker
-					.getAttribute(
-							org.eclipse.gmf.runtime.common.ui.resources.IMarker.ELEMENT_ID,
-							null) != null) {
+			if (marker.getAttribute(org.eclipse.gmf.runtime.common.ui.resources.IMarker.ELEMENT_ID, null) != null) {
 				handleMarkerChanged(marker);
 			}
 		}
@@ -421,8 +387,7 @@ public class ComponentStoryDiagramValidationDecoratorProvider extends
 		 * @generated
 		 */
 		public void handleMarkerDeleted(IMarker marker, Map attributes) {
-			String viewId = (String) attributes
-					.get(org.eclipse.gmf.runtime.common.ui.resources.IMarker.ELEMENT_ID);
+			String viewId = (String) attributes.get(org.eclipse.gmf.runtime.common.ui.resources.IMarker.ELEMENT_ID);
 			refreshDecorators(viewId, diagram);
 		}
 
@@ -433,10 +398,7 @@ public class ComponentStoryDiagramValidationDecoratorProvider extends
 			if (!MARKER_TYPE.equals(getType(marker))) {
 				return;
 			}
-			String viewId = marker
-					.getAttribute(
-							org.eclipse.gmf.runtime.common.ui.resources.IMarker.ELEMENT_ID,
-							""); //$NON-NLS-1$
+			String viewId = marker.getAttribute(org.eclipse.gmf.runtime.common.ui.resources.IMarker.ELEMENT_ID, ""); //$NON-NLS-1$
 			refreshDecorators(viewId, diagram);
 		}
 
@@ -447,9 +409,7 @@ public class ComponentStoryDiagramValidationDecoratorProvider extends
 			try {
 				return marker.getType();
 			} catch (CoreException e) {
-				org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramEditorPlugin
-						.getInstance().logError(
-								"Validation marker refresh failure", e); //$NON-NLS-1$
+				ComponentStoryDiagramDiagramEditorPlugin.getInstance().logError("Validation marker refresh failure", e); //$NON-NLS-1$
 				return ""; //$NON-NLS-1$
 			}
 		}

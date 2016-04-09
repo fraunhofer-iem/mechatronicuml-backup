@@ -11,6 +11,9 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.reconfiguration.componentstorypattern.ComponentPartVariable;
+import org.muml.reconfiguration.componentstorypattern.ComponentVariable;
+import org.muml.reconfiguration.componentstorypattern.ComponentstorypatternFactory;
 
 /**
  * @generated
@@ -29,8 +32,7 @@ public class PartVariableCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected EObject getElementToEdit() {
-		EObject container = ((CreateElementRequest) getRequest())
-				.getContainer();
+		EObject container = ((CreateElementRequest) getRequest()).getContainer();
 		if (container instanceof View) {
 			container = ((View) container).getElement();
 		}
@@ -48,12 +50,10 @@ public class PartVariableCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
-			IAdaptable info) throws ExecutionException {
-		org.muml.reconfiguration.componentstorypattern.ComponentPartVariable newElement = org.muml.reconfiguration.componentstorypattern.ComponentstorypatternFactory.eINSTANCE
-				.createComponentPartVariable();
+	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
+		ComponentPartVariable newElement = ComponentstorypatternFactory.eINSTANCE.createComponentPartVariable();
 
-		org.muml.reconfiguration.componentstorypattern.ComponentVariable owner = (org.muml.reconfiguration.componentstorypattern.ComponentVariable) getElementToEdit();
+		ComponentVariable owner = (ComponentVariable) getElementToEdit();
 		owner.getPartVariables().add(newElement);
 
 		doConfigure(newElement, monitor, info);
@@ -63,21 +63,15 @@ public class PartVariableCreateCommand extends EditElementCommand {
 	}
 
 	/**
-	 * @generated
-	 */
-	protected void doConfigure(
-			org.muml.reconfiguration.componentstorypattern.ComponentPartVariable newElement,
-			IProgressMonitor monitor, IAdaptable info)
+	* @generated
+	*/
+	protected void doConfigure(ComponentPartVariable newElement, IProgressMonitor monitor, IAdaptable info)
 			throws ExecutionException {
-		IElementType elementType = ((CreateElementRequest) getRequest())
-				.getElementType();
-		ConfigureRequest configureRequest = new ConfigureRequest(
-				getEditingDomain(), newElement, elementType);
-		configureRequest.setClientContext(((CreateElementRequest) getRequest())
-				.getClientContext());
+		IElementType elementType = ((CreateElementRequest) getRequest()).getElementType();
+		ConfigureRequest configureRequest = new ConfigureRequest(getEditingDomain(), newElement, elementType);
+		configureRequest.setClientContext(((CreateElementRequest) getRequest()).getClientContext());
 		configureRequest.addParameters(getRequest().getParameters());
-		ICommand configureCommand = elementType
-				.getEditCommand(configureRequest);
+		ICommand configureCommand = elementType.getEditCommand(configureRequest);
 		if (configureCommand != null && configureCommand.canExecute()) {
 			configureCommand.execute(monitor, info);
 		}

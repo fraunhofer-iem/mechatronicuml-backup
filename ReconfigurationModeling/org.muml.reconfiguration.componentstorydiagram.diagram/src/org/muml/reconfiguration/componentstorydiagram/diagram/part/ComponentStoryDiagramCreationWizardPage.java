@@ -11,8 +11,7 @@ import org.eclipse.ui.dialogs.WizardNewFileCreationPage;
 /**
  * @generated
  */
-public class ComponentStoryDiagramCreationWizardPage extends
-		WizardNewFileCreationPage {
+public class ComponentStoryDiagramCreationWizardPage extends WizardNewFileCreationPage {
 
 	/**
 	 * @generated
@@ -22,8 +21,8 @@ public class ComponentStoryDiagramCreationWizardPage extends
 	/**
 	 * @generated
 	 */
-	public ComponentStoryDiagramCreationWizardPage(String pageName,
-			IStructuredSelection selection, String fileExtension) {
+	public ComponentStoryDiagramCreationWizardPage(String pageName, IStructuredSelection selection,
+			String fileExtension) {
 		super(pageName, selection);
 		this.fileExtension = fileExtension;
 	}
@@ -64,9 +63,8 @@ public class ComponentStoryDiagramCreationWizardPage extends
 	 */
 	public void createControl(Composite parent) {
 		super.createControl(parent);
-		setFileName(org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramEditorUtil
-				.getUniqueFileName(getContainerFullPath(), getFileName(),
-						getExtension()));
+		setFileName(ComponentStoryDiagramDiagramEditorUtil.getUniqueFileName(getContainerFullPath(), getFileName(),
+				getExtension()));
 		setPageComplete(validatePage());
 	}
 
@@ -78,11 +76,8 @@ public class ComponentStoryDiagramCreationWizardPage extends
 			return false;
 		}
 		String extension = getExtension();
-		if (extension != null
-				&& !getFilePath().toString().endsWith("." + extension)) {
-			setErrorMessage(NLS
-					.bind(org.muml.reconfiguration.componentstorydiagram.diagram.part.Messages.ComponentStoryDiagramCreationWizardPageExtensionError,
-							extension));
+		if (extension != null && !getFilePath().toString().endsWith("." + extension)) {
+			setErrorMessage(NLS.bind(Messages.ComponentStoryDiagramCreationWizardPageExtensionError, extension));
 			return false;
 		}
 		return true;

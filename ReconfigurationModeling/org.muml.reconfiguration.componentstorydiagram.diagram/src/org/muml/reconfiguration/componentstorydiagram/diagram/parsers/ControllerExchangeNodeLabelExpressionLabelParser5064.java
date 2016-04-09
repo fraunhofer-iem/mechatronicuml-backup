@@ -31,12 +31,13 @@ import org.eclipse.gmf.runtime.common.ui.services.parser.ParserEditStatus;
 import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand;
 import org.eclipse.gmf.tooling.runtime.parsers.ExpressionLabelParserBase;
 import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
+import org.muml.reconfiguration.componentstorydiagram.ComponentstorydiagramPackage;
+import org.muml.reconfiguration.componentstorydiagram.diagram.expressions.ComponentStoryDiagramOCLFactory;
 
 /**
  * @generated
  */
-public class ControllerExchangeNodeLabelExpressionLabelParser5064 extends
-		ExpressionLabelParserBase {
+public class ControllerExchangeNodeLabelExpressionLabelParser5064 extends ExpressionLabelParserBase {
 	/**
 	 * @generated
 	 */
@@ -48,11 +49,8 @@ public class ControllerExchangeNodeLabelExpressionLabelParser5064 extends
 	 */
 	@Override
 	protected String getExpressionBody() {
-		return org.muml.reconfiguration.componentstorydiagram.diagram.expressions.ComponentStoryDiagramOCLFactory
-				.getExpression(
-						25,
-						org.muml.reconfiguration.componentstorydiagram.ComponentstorydiagramPackage.eINSTANCE
-								.getControllerExchangeNode(), null).body();
+		return ComponentStoryDiagramOCLFactory
+				.getExpression(25, ComponentstorydiagramPackage.eINSTANCE.getControllerExchangeNode(), null).body();
 	}
 
 	/**
@@ -65,31 +63,26 @@ public class ControllerExchangeNodeLabelExpressionLabelParser5064 extends
 	/**
 	 * @generated
 	 */
-	public IParserEditStatus isValidEditString(IAdaptable element,
-			String editString) {
+	public IParserEditStatus isValidEditString(IAdaptable element, String editString) {
 		return ParserEditStatus.EDITABLE_STATUS;
 	}
 
 	/**
 	 * @generated
 	 */
-	public ICommand getParseCommand(IAdaptable element, final String newString,
-			int flags) {
+	public ICommand getParseCommand(IAdaptable element, final String newString, int flags) {
 		final EObject target = (EObject) element.getAdapter(EObject.class);
 		if (!validateValues(target, newString)) {
 			return UnexecutableCommand.INSTANCE;
 		}
-		TransactionalEditingDomain editingDomain = TransactionUtil
-				.getEditingDomain(target);
+		TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(target);
 		if (editingDomain == null) {
 			return UnexecutableCommand.INSTANCE;
 		}
 		IFile affectedFile = WorkspaceSynchronizer.getFile(target.eResource());
-		return new AbstractTransactionalCommand(
-				editingDomain,
-				"Set Values", affectedFile == null ? null : Collections.singletonList(affectedFile)) { //$NON-NLS-1$ 
-			protected CommandResult doExecuteWithResult(
-					IProgressMonitor monitor, IAdaptable info)
+		return new AbstractTransactionalCommand(editingDomain, "Set Values", //$NON-NLS-1$
+				affectedFile == null ? null : Collections.singletonList(affectedFile)) {
+			protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info)
 					throws ExecutionException {
 				return new CommandResult(updateValues(target, newString));
 			}
@@ -114,12 +107,10 @@ public class ControllerExchangeNodeLabelExpressionLabelParser5064 extends
 	/**
 	 * @generated
 	 */
-	protected IStatus updateValues(EObject target, String newString)
-			throws ExecutionException {
+	protected IStatus updateValues(EObject target, String newString) throws ExecutionException {
 		// TODO implement this method
 		// DO NOT FORGET to remove @generated tag or mark method @generated NOT
-		throw new ExecutionException(
-				"Please implement parsing and value modification");
+		throw new ExecutionException("Please implement parsing and value modification");
 	}
 
 	/**

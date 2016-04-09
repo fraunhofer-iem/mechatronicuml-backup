@@ -18,6 +18,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 import org.eclipse.draw2d.BorderLayout;
+import org.eclipse.draw2d.ConnectionAnchor;
 import org.eclipse.draw2d.GridData;
 import org.eclipse.draw2d.GridLayout;
 import org.eclipse.draw2d.IFigure;
@@ -47,6 +48,13 @@ import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.edit.policies.reparent.CreationEditPolicyWithCustomReparent;
 import org.eclipse.swt.graphics.Color;
+import org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy;
+import org.muml.core.common.edit.policies.anchor.IConnectionAnchorCreationEditPolicy;
+import org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy;
+import org.muml.pim.common.edit.policies.IBackgroundColorEditPolicy;
+import org.muml.reconfiguration.componentstorydiagram.diagram.edit.policies.ComponentStoryNodeItemSemanticEditPolicy;
+import org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramVisualIDRegistry;
+import org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes;
 
 /**
  * @generated
@@ -82,6 +90,22 @@ public class ComponentStoryNodeEditPart extends ShapeNodeEditPart {
 	}
 
 	/**
+	* MUML FIX: Adapt background color if IBackgroundColorEditPolicy is registered.
+	* 
+	* @generated
+	*/
+	@Override
+	protected void refreshBackgroundColor() {
+		EditPolicy backgroundColorPolicy = getEditPolicy(
+				org.muml.core.common.edit.policies.EditPolicyRoles.BACKGROUND_COLOR_ROLE);
+		if (backgroundColorPolicy instanceof IBackgroundColorEditPolicy) {
+			setBackgroundColor(((IBackgroundColorEditPolicy) backgroundColorPolicy).getCurrentBackgroundColor());
+		} else {
+			super.refreshBackgroundColor();
+		}
+	}
+
+	/**
 	 * @generated
 	 */
 	protected IFigure contentPane;
@@ -102,25 +126,18 @@ public class ComponentStoryNodeEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected void createDefaultEditPolicies() {
-		installEditPolicy(
-				EditPolicyRoles.CREATION_ROLE,
-				new CreationEditPolicyWithCustomReparent(
-						org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramVisualIDRegistry.TYPED_INSTANCE));
+		installEditPolicy(EditPolicyRoles.CREATION_ROLE,
+				new CreationEditPolicyWithCustomReparent(ComponentStoryDiagramVisualIDRegistry.TYPED_INSTANCE));
 		super.createDefaultEditPolicies();
-		installEditPolicy(
-				EditPolicyRoles.SEMANTIC_ROLE,
-				new org.muml.reconfiguration.componentstorydiagram.diagram.edit.policies.ComponentStoryNodeItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new ComponentStoryNodeItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 
-		installEditPolicy(
-				EditPolicy.GRAPHICAL_NODE_ROLE,
-				new org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy());
+		installEditPolicy(EditPolicy.GRAPHICAL_NODE_ROLE, new ConnectionConfigureHelperGraphicalNodeEditPolicy());
 
-		installEditPolicy(
-				org.muml.core.common.edit.policies.EditPolicyRoles.ERROR_FEEDBACK_ROLE,
-				new org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy());
+		installEditPolicy(org.muml.core.common.edit.policies.EditPolicyRoles.ERROR_FEEDBACK_ROLE,
+				new ErrorFeedbackEditPolicy());
 
 	}
 
@@ -131,8 +148,7 @@ public class ComponentStoryNodeEditPart extends ShapeNodeEditPart {
 		org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy lep = new org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy() {
 
 			protected EditPolicy createChildEditPolicy(EditPart child) {
-				EditPolicy result = child
-						.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
+				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
 				if (result == null) {
 					result = new NonResizableEditPolicy();
 				}
@@ -168,18 +184,15 @@ public class ComponentStoryNodeEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ComponentStoryNodeNameEditPart) {
-			((org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ComponentStoryNodeNameEditPart) childEditPart)
-					.setLabel(getPrimaryShape()
-							.getFigureComponentStoryNodeName());
+		if (childEditPart instanceof ComponentStoryNodeNameEditPart) {
+			((ComponentStoryNodeNameEditPart) childEditPart)
+					.setLabel(getPrimaryShape().getFigureComponentStoryNodeName());
 			return true;
 		}
-		if (childEditPart instanceof org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ComponentStoryNodeComponentStoryNodeCompartmentEditPart) {
-			IFigure pane = getPrimaryShape()
-					.getFigureComponentStoryNodePatternContainer();
+		if (childEditPart instanceof ComponentStoryNodeComponentStoryNodeCompartmentEditPart) {
+			IFigure pane = getPrimaryShape().getFigureComponentStoryNodePatternContainer();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
-			pane.add(((org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ComponentStoryNodeComponentStoryNodeCompartmentEditPart) childEditPart)
-					.getFigure());
+			pane.add(((ComponentStoryNodeComponentStoryNodeCompartmentEditPart) childEditPart).getFigure());
 			return true;
 		}
 		return false;
@@ -189,14 +202,12 @@ public class ComponentStoryNodeEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ComponentStoryNodeNameEditPart) {
+		if (childEditPart instanceof ComponentStoryNodeNameEditPart) {
 			return true;
 		}
-		if (childEditPart instanceof org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ComponentStoryNodeComponentStoryNodeCompartmentEditPart) {
-			IFigure pane = getPrimaryShape()
-					.getFigureComponentStoryNodePatternContainer();
-			pane.remove(((org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ComponentStoryNodeComponentStoryNodeCompartmentEditPart) childEditPart)
-					.getFigure());
+		if (childEditPart instanceof ComponentStoryNodeComponentStoryNodeCompartmentEditPart) {
+			IFigure pane = getPrimaryShape().getFigureComponentStoryNodePatternContainer();
+			pane.remove(((ComponentStoryNodeComponentStoryNodeCompartmentEditPart) childEditPart).getFigure());
 			return true;
 		}
 		return false;
@@ -226,9 +237,8 @@ public class ComponentStoryNodeEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
-		if (editPart instanceof org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ComponentStoryNodeComponentStoryNodeCompartmentEditPart) {
-			return getPrimaryShape()
-					.getFigureComponentStoryNodePatternContainer();
+		if (editPart instanceof ComponentStoryNodeComponentStoryNodeCompartmentEditPart) {
+			return getPrimaryShape().getFigureComponentStoryNodePatternContainer();
 		}
 		return getContentPane();
 	}
@@ -237,7 +247,17 @@ public class ComponentStoryNodeEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected NodeFigure createNodePlate() {
-		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(40, 40);
+		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(40, 40) {
+			@Override
+			public ConnectionAnchor createDefaultAnchor() {
+				IConnectionAnchorCreationEditPolicy connectionAnchorCreationEditPolicy = (IConnectionAnchorCreationEditPolicy) getEditPolicy(
+						org.muml.core.common.edit.policies.EditPolicyRoles.CONNECTION_ANCHOR_CREATION_ROLE);
+				if (connectionAnchorCreationEditPolicy != null) {
+					return connectionAnchorCreationEditPolicy.createDefaultAnchor();
+				}
+				return super.createDefaultAnchor();
+			}
+		};
 
 		// Ensures that the element can be shrinked (Muml Bug #62).
 		result.setMinimumSize(new Dimension(0, 0));
@@ -327,8 +347,8 @@ public class ComponentStoryNodeEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramVisualIDRegistry
-				.getType(org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ComponentStoryNodeNameEditPart.VISUAL_ID));
+		return getChildBySemanticHint(
+				ComponentStoryDiagramVisualIDRegistry.getType(ComponentStoryNodeNameEditPart.VISUAL_ID));
 	}
 
 	/**
@@ -336,14 +356,12 @@ public class ComponentStoryNodeEditPart extends ShapeNodeEditPart {
 	 */
 	public EditPart getTargetEditPart(Request request) {
 		if (request instanceof CreateViewAndElementRequest) {
-			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request)
-					.getViewAndElementDescriptor()
+			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request).getViewAndElementDescriptor()
 					.getCreateElementRequestAdapter();
-			IElementType type = (IElementType) adapter
-					.getAdapter(IElementType.class);
-			if (type == org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.ComponentStoryPattern_3011) {
-				return getChildBySemanticHint(org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramVisualIDRegistry
-						.getType(org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ComponentStoryNodeComponentStoryNodeCompartmentEditPart.VISUAL_ID));
+			IElementType type = (IElementType) adapter.getAdapter(IElementType.class);
+			if (type == ComponentStoryDiagramElementTypes.ComponentStoryPattern_3011) {
+				return getChildBySemanticHint(ComponentStoryDiagramVisualIDRegistry
+						.getType(ComponentStoryNodeComponentStoryNodeCompartmentEditPart.VISUAL_ID));
 			}
 		}
 		return super.getTargetEditPart(request);
@@ -352,8 +370,7 @@ public class ComponentStoryNodeEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public class ComponentStoryNodeRoundedFigureForEach extends
-			RoundedRectangle {
+	public class ComponentStoryNodeRoundedFigureForEach extends RoundedRectangle {
 
 		/**
 		 * @generated
@@ -374,8 +391,7 @@ public class ComponentStoryNodeEditPart extends ShapeNodeEditPart {
 		 */
 		public ComponentStoryNodeRoundedFigureForEach() {
 			this.setLayoutManager(new StackLayout());
-			this.setCornerDimensions(new Dimension(getMapMode().DPtoLP(12),
-					getMapMode().DPtoLP(12)));
+			this.setCornerDimensions(new Dimension(getMapMode().DPtoLP(12), getMapMode().DPtoLP(12)));
 			this.setFill(false);
 			this.setOutline(false);
 			createContents();
@@ -388,12 +404,10 @@ public class ComponentStoryNodeEditPart extends ShapeNodeEditPart {
 
 			RoundedRectangle aux10 = new RoundedRectangle();
 
-			aux10.setCornerDimensions(new Dimension(getMapMode().DPtoLP(12),
-					getMapMode().DPtoLP(12)));
+			aux10.setCornerDimensions(new Dimension(getMapMode().DPtoLP(12), getMapMode().DPtoLP(12)));
 			aux10.setFill(false);
 			aux10.setOutline(false);
-			aux10.setBorder(new MarginBorder(getMapMode().DPtoLP(0),
-					getMapMode().DPtoLP(3), getMapMode().DPtoLP(8),
+			aux10.setBorder(new MarginBorder(getMapMode().DPtoLP(0), getMapMode().DPtoLP(3), getMapMode().DPtoLP(8),
 					getMapMode().DPtoLP(0)));
 
 			this.add(aux10);
@@ -401,51 +415,43 @@ public class ComponentStoryNodeEditPart extends ShapeNodeEditPart {
 
 			RoundedRectangle shadow1 = new RoundedRectangle();
 
-			shadow1.setCornerDimensions(new Dimension(getMapMode().DPtoLP(12),
-					getMapMode().DPtoLP(12)));
+			shadow1.setCornerDimensions(new Dimension(getMapMode().DPtoLP(12), getMapMode().DPtoLP(12)));
 
 			aux10.add(shadow1);
 
 			fFigureInnerRoundedRectangleContainer = new RoundedRectangle();
 
 			fFigureInnerRoundedRectangleContainer
-					.setCornerDimensions(new Dimension(getMapMode().DPtoLP(12),
-							getMapMode().DPtoLP(12)));
+					.setCornerDimensions(new Dimension(getMapMode().DPtoLP(12), getMapMode().DPtoLP(12)));
 			fFigureInnerRoundedRectangleContainer.setFill(false);
 			fFigureInnerRoundedRectangleContainer.setOutline(false);
-			fFigureInnerRoundedRectangleContainer.setBorder(new MarginBorder(
-					getMapMode().DPtoLP(8), getMapMode().DPtoLP(0),
-					getMapMode().DPtoLP(0), getMapMode().DPtoLP(3)));
+			fFigureInnerRoundedRectangleContainer.setBorder(new MarginBorder(getMapMode().DPtoLP(8),
+					getMapMode().DPtoLP(0), getMapMode().DPtoLP(0), getMapMode().DPtoLP(3)));
 
 			this.add(fFigureInnerRoundedRectangleContainer);
-			fFigureInnerRoundedRectangleContainer
-					.setLayoutManager(new StackLayout());
+			fFigureInnerRoundedRectangleContainer.setLayoutManager(new StackLayout());
 
 			RoundedRectangle componentStoryNodeRoundedFigure1 = new RoundedRectangle();
 
-			componentStoryNodeRoundedFigure1.setCornerDimensions(new Dimension(
-					getMapMode().DPtoLP(12), getMapMode().DPtoLP(12)));
+			componentStoryNodeRoundedFigure1
+					.setCornerDimensions(new Dimension(getMapMode().DPtoLP(12), getMapMode().DPtoLP(12)));
 
-			fFigureInnerRoundedRectangleContainer
-					.add(componentStoryNodeRoundedFigure1);
+			fFigureInnerRoundedRectangleContainer.add(componentStoryNodeRoundedFigure1);
 
 			BorderLayout layoutComponentStoryNodeRoundedFigure1 = new BorderLayout();
-			componentStoryNodeRoundedFigure1
-					.setLayoutManager(layoutComponentStoryNodeRoundedFigure1);
+			componentStoryNodeRoundedFigure1.setLayoutManager(layoutComponentStoryNodeRoundedFigure1);
 
 			RectangleFigure storyNodeNameContainer2 = new RectangleFigure();
 
 			storyNodeNameContainer2.setFill(false);
 			storyNodeNameContainer2.setOutline(false);
 
-			componentStoryNodeRoundedFigure1.add(storyNodeNameContainer2,
-					BorderLayout.TOP);
+			componentStoryNodeRoundedFigure1.add(storyNodeNameContainer2, BorderLayout.TOP);
 
 			GridLayout layoutStoryNodeNameContainer2 = new GridLayout();
 			layoutStoryNodeNameContainer2.numColumns = 1;
 			layoutStoryNodeNameContainer2.makeColumnsEqualWidth = true;
-			storyNodeNameContainer2
-					.setLayoutManager(layoutStoryNodeNameContainer2);
+			storyNodeNameContainer2.setLayoutManager(layoutStoryNodeNameContainer2);
 
 			fFigureComponentStoryNodeName = new WrappingLabel();
 
@@ -459,34 +465,28 @@ public class ComponentStoryNodeEditPart extends ShapeNodeEditPart {
 			constraintFFigureComponentStoryNodeName.verticalSpan = 1;
 			constraintFFigureComponentStoryNodeName.grabExcessHorizontalSpace = false;
 			constraintFFigureComponentStoryNodeName.grabExcessVerticalSpace = false;
-			storyNodeNameContainer2.add(fFigureComponentStoryNodeName,
-					constraintFFigureComponentStoryNodeName);
+			storyNodeNameContainer2.add(fFigureComponentStoryNodeName, constraintFFigureComponentStoryNodeName);
 
 			RectangleFigure componentStoryNodeContentContainer2 = new RectangleFigure();
 
 			componentStoryNodeContentContainer2.setFill(false);
 			componentStoryNodeContentContainer2.setOutline(false);
 
-			componentStoryNodeRoundedFigure1.add(
-					componentStoryNodeContentContainer2, BorderLayout.CENTER);
+			componentStoryNodeRoundedFigure1.add(componentStoryNodeContentContainer2, BorderLayout.CENTER);
 
 			BorderLayout layoutComponentStoryNodeContentContainer2 = new BorderLayout();
-			componentStoryNodeContentContainer2
-					.setLayoutManager(layoutComponentStoryNodeContentContainer2);
+			componentStoryNodeContentContainer2.setLayoutManager(layoutComponentStoryNodeContentContainer2);
 
 			fFigureComponentStoryNodePatternContainer = new RectangleFigure();
 
 			fFigureComponentStoryNodePatternContainer.setFill(false);
 			fFigureComponentStoryNodePatternContainer.setOutline(false);
 
-			componentStoryNodeContentContainer2.add(
-					fFigureComponentStoryNodePatternContainer,
-					BorderLayout.CENTER);
+			componentStoryNodeContentContainer2.add(fFigureComponentStoryNodePatternContainer, BorderLayout.CENTER);
 
 			// Process FigureRef details
 
-			fFigureInnerRoundedRectangleContainer
-					.add(componentStoryNodeRoundedFigure1);
+			fFigureInnerRoundedRectangleContainer.add(componentStoryNodeRoundedFigure1);
 
 		}
 

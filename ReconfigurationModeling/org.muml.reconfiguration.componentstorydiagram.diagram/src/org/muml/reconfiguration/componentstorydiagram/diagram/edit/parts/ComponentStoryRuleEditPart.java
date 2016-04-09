@@ -19,6 +19,9 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.DiagramEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.edit.policies.reparent.CreationEditPolicyWithCustomReparent;
+import org.muml.reconfiguration.componentstorydiagram.diagram.edit.policies.ComponentStoryRuleCanonicalEditPolicy;
+import org.muml.reconfiguration.componentstorydiagram.diagram.edit.policies.ComponentStoryRuleItemSemanticEditPolicy;
+import org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramVisualIDRegistry;
 
 /**
  * @generated
@@ -70,19 +73,12 @@ public class ComponentStoryRuleEditPart extends DiagramEditPart {
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(
-				EditPolicyRoles.SEMANTIC_ROLE,
-				new org.muml.reconfiguration.componentstorydiagram.diagram.edit.policies.ComponentStoryRuleItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new ComponentStoryRuleItemSemanticEditPolicy());
 
-		installEditPolicy(
-				EditPolicyRoles.CANONICAL_ROLE,
-				new org.muml.reconfiguration.componentstorydiagram.diagram.edit.policies.ComponentStoryRuleCanonicalEditPolicy(
-						true));
+		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new ComponentStoryRuleCanonicalEditPolicy(true));
 
-		installEditPolicy(
-				EditPolicyRoles.CREATION_ROLE,
-				new CreationEditPolicyWithCustomReparent(
-						org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramVisualIDRegistry.TYPED_INSTANCE));
+		installEditPolicy(EditPolicyRoles.CREATION_ROLE,
+				new CreationEditPolicyWithCustomReparent(ComponentStoryDiagramVisualIDRegistry.TYPED_INSTANCE));
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.POPUPBAR_ROLE);
 	}
 

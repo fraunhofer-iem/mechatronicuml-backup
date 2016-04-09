@@ -16,12 +16,13 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.swt.widgets.Display;
+import org.muml.reconfiguration.componentstorydiagram.diagram.edit.policies.DelegationVariableItemSemanticEditPolicy;
 
 /**
  * @generated
  */
-public class DelegationVariableEditPart extends ConnectionNodeEditPart
-		implements ITreeBranchEditPart {
+public class DelegationVariableEditPart extends ConnectionNodeEditPart implements ITreeBranchEditPart {
 
 	/**
 	 * @generated
@@ -63,19 +64,16 @@ public class DelegationVariableEditPart extends ConnectionNodeEditPart
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(
-				EditPolicyRoles.SEMANTIC_ROLE,
-				new org.muml.reconfiguration.componentstorydiagram.diagram.edit.policies.DelegationVariableItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new DelegationVariableItemSemanticEditPolicy());
 	}
 
 	/**
 	 * @generated
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.DelegationVariableNameEditPart) {
-			((org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.DelegationVariableNameEditPart) childEditPart)
-					.setLabel(getPrimaryShape()
-							.getFigureDelegationVariableLabelFigure());
+		if (childEditPart instanceof DelegationVariableNameEditPart) {
+			((DelegationVariableNameEditPart) childEditPart)
+					.setLabel(getPrimaryShape().getFigureDelegationVariableLabelFigure());
 			return true;
 		}
 		return false;
@@ -95,7 +93,7 @@ public class DelegationVariableEditPart extends ConnectionNodeEditPart
 	 * @generated
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.DelegationVariableNameEditPart) {
+		if (childEditPart instanceof DelegationVariableNameEditPart) {
 			return true;
 		}
 		return false;
@@ -186,17 +184,19 @@ public class DelegationVariableEditPart extends ConnectionNodeEditPart
 		// Properties View.
 		EObject sourceElement = null;
 		if (getSource() instanceof GraphicalEditPart) {
-			sourceElement = ((GraphicalEditPart) getSource()).getNotationView()
-					.getElement();
+			sourceElement = ((GraphicalEditPart) getSource()).getNotationView().getElement();
 		}
 		EObject targetElement = null;
 		if (getTarget() instanceof GraphicalEditPart) {
-			targetElement = ((GraphicalEditPart) getTarget()).getNotationView()
-					.getElement();
+			targetElement = ((GraphicalEditPart) getTarget()).getNotationView().getElement();
 		}
-		if (notification.getOldValue() == sourceElement
-				|| notification.getOldValue() == targetElement) {
-			doCanonicalRefresh();
+		if (notification.getOldValue() == sourceElement || notification.getOldValue() == targetElement) {
+			Display.getCurrent().asyncExec(new Runnable() {
+				@Override
+				public void run() {
+					doCanonicalRefresh();
+				}
+			});
 		}
 
 		super.handleNotificationEvent(notification);

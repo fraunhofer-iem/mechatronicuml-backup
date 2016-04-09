@@ -16,12 +16,17 @@ import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.edit.policies.reparent.CreationEditPolicyWithCustomReparent;
+import org.muml.core.common.edit.policies.compartment.BorderlessCompartmentEditPolicy;
+import org.muml.reconfiguration.componentstorydiagram.diagram.edit.policies.ComponentStoryPatternComponentStoryPatternCompartmentCanonicalEditPolicy;
+import org.muml.reconfiguration.componentstorydiagram.diagram.edit.policies.ComponentStoryPatternComponentStoryPatternCompartmentItemSemanticEditPolicy;
+import org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramVisualIDRegistry;
+import org.muml.reconfiguration.componentstorydiagram.diagram.part.Messages;
+import org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes;
 
 /**
  * @generated
  */
-public class ComponentStoryPatternComponentStoryPatternCompartmentEditPart
-		extends ShapeCompartmentEditPart {
+public class ComponentStoryPatternComponentStoryPatternCompartmentEditPart extends ShapeCompartmentEditPart {
 
 	/**
 	 * @generated
@@ -54,8 +59,7 @@ public class ComponentStoryPatternComponentStoryPatternCompartmentEditPart
 	/**
 	 * @generated
 	 */
-	public ComponentStoryPatternComponentStoryPatternCompartmentEditPart(
-			View view) {
+	public ComponentStoryPatternComponentStoryPatternCompartmentEditPart(View view) {
 		super(view);
 	}
 
@@ -63,21 +67,19 @@ public class ComponentStoryPatternComponentStoryPatternCompartmentEditPart
 	 * @generated
 	 */
 	public String getCompartmentName() {
-		return org.muml.reconfiguration.componentstorydiagram.diagram.part.Messages.ComponentStoryPatternComponentStoryPatternCompartmentEditPart_title;
+		return Messages.ComponentStoryPatternComponentStoryPatternCompartmentEditPart_title;
 	}
 
 	/**
 	 * @generated
 	 */
 	public IFigure createFigure() {
-		ResizableCompartmentFigure result = (ResizableCompartmentFigure) super
-				.createFigure();
+		ResizableCompartmentFigure result = (ResizableCompartmentFigure) super.createFigure();
 
 		result.setTitleVisibility(false);
 
 		// Begin added to always stretch list layouts
-		LayoutManager layoutManager = result.getContentPane()
-				.getLayoutManager();
+		LayoutManager layoutManager = result.getContentPane().getLayoutManager();
 		if (layoutManager instanceof ConstrainedToolbarLayout) {
 			ConstrainedToolbarLayout constrainedToolbarLayout = (ConstrainedToolbarLayout) layoutManager;
 			constrainedToolbarLayout.setStretchMajorAxis(true);
@@ -93,21 +95,17 @@ public class ComponentStoryPatternComponentStoryPatternCompartmentEditPart
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(
-				EditPolicyRoles.SEMANTIC_ROLE,
-				new org.muml.reconfiguration.componentstorydiagram.diagram.edit.policies.ComponentStoryPatternComponentStoryPatternCompartmentItemSemanticEditPolicy());
-		installEditPolicy(
-				EditPolicyRoles.CREATION_ROLE,
-				new CreationEditPolicyWithCustomReparent(
-						org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramVisualIDRegistry.TYPED_INSTANCE));
-		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE,
-				new DragDropEditPolicy());
-		installEditPolicy(
-				EditPolicyRoles.CANONICAL_ROLE,
-				new org.muml.reconfiguration.componentstorydiagram.diagram.edit.policies.ComponentStoryPatternComponentStoryPatternCompartmentCanonicalEditPolicy());
-		installEditPolicy(
-				org.muml.pim.common.edit.policies.EditPolicyRoles.COMPARTMENT_BORDER_ROLE,
-				new org.muml.core.common.edit.policies.compartment.BorderlessCompartmentEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
+				new ComponentStoryPatternComponentStoryPatternCompartmentItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.CREATION_ROLE,
+				new CreationEditPolicyWithCustomReparent(ComponentStoryDiagramVisualIDRegistry.TYPED_INSTANCE));
+		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
+		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE,
+				new ComponentStoryPatternComponentStoryPatternCompartmentCanonicalEditPolicy());
+
+		installEditPolicy(org.muml.pim.common.edit.policies.EditPolicyRoles.COMPARTMENT_BORDER_ROLE,
+				new BorderlessCompartmentEditPolicy());
+
 	}
 
 	/**
@@ -124,12 +122,10 @@ public class ComponentStoryPatternComponentStoryPatternCompartmentEditPart
 	 */
 	public EditPart getTargetEditPart(Request request) {
 		if (request instanceof CreateViewAndElementRequest) {
-			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request)
-					.getViewAndElementDescriptor()
+			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request).getViewAndElementDescriptor()
 					.getCreateElementRequestAdapter();
-			IElementType type = (IElementType) adapter
-					.getAdapter(IElementType.class);
-			if (type == org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.ComponentVariable_3012) {
+			IElementType type = (IElementType) adapter.getAdapter(IElementType.class);
+			if (type == ComponentStoryDiagramElementTypes.ComponentVariable_3012) {
 				return this;
 			}
 			return getParent().getTargetEditPart(request);

@@ -11,8 +11,7 @@ public class ComponentStoryDiagramNodeDescriptor extends UpdaterNodeDescriptor {
 	/**
 	 * @generated
 	 */
-	public ComponentStoryDiagramNodeDescriptor(EObject modelElement,
-			int visualID) {
+	public ComponentStoryDiagramNodeDescriptor(EObject modelElement, int visualID) {
 		super(modelElement, visualID);
 	}
 

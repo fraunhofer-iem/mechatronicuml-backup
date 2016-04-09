@@ -12,6 +12,14 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy;
+import org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy;
+import org.muml.pim.connector.ConnectorEndpoint;
+import org.muml.reconfiguration.componentstorydiagram.diagram.edit.policies.ComponentStoryDiagramBaseItemSemanticEditPolicy;
+import org.muml.reconfiguration.componentstorydiagram.diagram.providers.ElementInitializers;
+import org.muml.reconfiguration.componentstorypattern.AssemblyVariable;
+import org.muml.reconfiguration.componentstorypattern.ComponentVariable;
+import org.muml.reconfiguration.componentstorypattern.ComponentstorypatternFactory;
 
 /**
  * @generated
@@ -31,24 +39,21 @@ public class AssemblyVariableCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	private final org.muml.reconfiguration.componentstorypattern.ComponentVariable container;
+	private final ComponentVariable container;
 
 	/**
 	 * @generated
 	 */
-	public AssemblyVariableCreateCommand(CreateRelationshipRequest request,
-			EObject source, EObject target) {
+	public AssemblyVariableCreateCommand(CreateRelationshipRequest request, EObject source, EObject target) {
 		super(request.getLabel(), null, request);
-		org.muml.reconfiguration.componentstorypattern.ComponentVariable container = null;
+		ComponentVariable container = null;
 		this.source = source;
 		this.target = target;
 		container = deduceContainer(source, target);
 
 		if (container == null) {
-			View sourceView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-					.getSourceView(getRequest());
-			View targetView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-					.getTargetView(getRequest());
+			View sourceView = ConnectionConfigureHelperGraphicalNodeEditPolicy.getSourceView(getRequest());
+			View targetView = ConnectionConfigureHelperGraphicalNodeEditPolicy.getTargetView(getRequest());
 			container = deduceContainerUsingViews(sourceView, targetView);
 		}
 		this.container = container;
@@ -61,12 +66,10 @@ public class AssemblyVariableCreateCommand extends EditElementCommand {
 		if (source == null && target == null) {
 			return false;
 		}
-		if (source != null
-				&& false == source instanceof org.muml.pim.connector.ConnectorEndpoint) {
+		if (source != null && false == source instanceof ConnectorEndpoint) {
 			return false;
 		}
-		if (target != null
-				&& false == target instanceof org.muml.pim.connector.ConnectorEndpoint) {
+		if (target != null && false == target instanceof ConnectorEndpoint) {
 			return false;
 		}
 		if (getSource() == null) {
@@ -76,21 +79,13 @@ public class AssemblyVariableCreateCommand extends EditElementCommand {
 		if (getContainer() == null) {
 			return false;
 		}
-		View sourceView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-				.getSourceView(getRequest());
-		View targetView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-				.getTargetView(getRequest());
-		if (!org.muml.reconfiguration.componentstorydiagram.diagram.edit.policies.ComponentStoryDiagramBaseItemSemanticEditPolicy
-				.getLinkConstraints().canCreateAssemblyVariable_4004(
-						getContainer(), getSource(), getTarget(), sourceView,
-						targetView)) {
-			String errorMessage = org.muml.reconfiguration.componentstorydiagram.diagram.edit.policies.ComponentStoryDiagramBaseItemSemanticEditPolicy
-					.getLinkConstraints().getErrorAssemblyVariable_4004(
-							getContainer(), getSource(), getTarget(),
-							sourceView, targetView);
-			org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy
-					.showMessage(targetView != null ? targetView : sourceView,
-							errorMessage);
+		View sourceView = ConnectionConfigureHelperGraphicalNodeEditPolicy.getSourceView(getRequest());
+		View targetView = ConnectionConfigureHelperGraphicalNodeEditPolicy.getTargetView(getRequest());
+		if (!ComponentStoryDiagramBaseItemSemanticEditPolicy.getLinkConstraints()
+				.canCreateAssemblyVariable_4004(getContainer(), getSource(), getTarget(), sourceView, targetView)) {
+			String errorMessage = ComponentStoryDiagramBaseItemSemanticEditPolicy.getLinkConstraints()
+					.getErrorAssemblyVariable_4004(getContainer(), getSource(), getTarget(), sourceView, targetView);
+			ErrorFeedbackEditPolicy.showMessage(targetView != null ? targetView : sourceView, errorMessage);
 			return false;
 		}
 		return true;
@@ -99,20 +94,16 @@ public class AssemblyVariableCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
-			IAdaptable info) throws ExecutionException {
+	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		if (!canExecute()) {
-			throw new ExecutionException(
-					"Invalid arguments in create link command"); //$NON-NLS-1$
+			throw new ExecutionException("Invalid arguments in create link command"); //$NON-NLS-1$
 		}
 
-		org.muml.reconfiguration.componentstorypattern.AssemblyVariable newElement = org.muml.reconfiguration.componentstorypattern.ComponentstorypatternFactory.eINSTANCE
-				.createAssemblyVariable();
+		AssemblyVariable newElement = ComponentstorypatternFactory.eINSTANCE.createAssemblyVariable();
 		getContainer().getConnectorVariables().add(newElement);
 		newElement.getConnectorEndpoints().add(getSource());
 		newElement.getConnectorEndpoints().add(getTarget());
-		org.muml.reconfiguration.componentstorydiagram.diagram.providers.ElementInitializers
-				.getInstance().init_AssemblyVariable_4004(newElement);
+		ElementInitializers.getInstance().init_AssemblyVariable_4004(newElement);
 		doConfigure(newElement, monitor, info);
 		((CreateElementRequest) getRequest()).setNewElement(newElement);
 		return CommandResult.newOKCommandResult(newElement);
@@ -120,25 +111,17 @@ public class AssemblyVariableCreateCommand extends EditElementCommand {
 	}
 
 	/**
-	 * @generated
-	 */
-	protected void doConfigure(
-			org.muml.reconfiguration.componentstorypattern.AssemblyVariable newElement,
-			IProgressMonitor monitor, IAdaptable info)
+	* @generated
+	*/
+	protected void doConfigure(AssemblyVariable newElement, IProgressMonitor monitor, IAdaptable info)
 			throws ExecutionException {
-		IElementType elementType = ((CreateElementRequest) getRequest())
-				.getElementType();
-		ConfigureRequest configureRequest = new ConfigureRequest(
-				getEditingDomain(), newElement, elementType);
-		configureRequest.setClientContext(((CreateElementRequest) getRequest())
-				.getClientContext());
+		IElementType elementType = ((CreateElementRequest) getRequest()).getElementType();
+		ConfigureRequest configureRequest = new ConfigureRequest(getEditingDomain(), newElement, elementType);
+		configureRequest.setClientContext(((CreateElementRequest) getRequest()).getClientContext());
 		configureRequest.addParameters(getRequest().getParameters());
-		configureRequest.setParameter(CreateRelationshipRequest.SOURCE,
-				getSource());
-		configureRequest.setParameter(CreateRelationshipRequest.TARGET,
-				getTarget());
-		ICommand configureCommand = elementType
-				.getEditCommand(configureRequest);
+		configureRequest.setParameter(CreateRelationshipRequest.SOURCE, getSource());
+		configureRequest.setParameter(CreateRelationshipRequest.TARGET, getTarget());
+		ICommand configureCommand = elementType.getEditCommand(configureRequest);
 		if (configureCommand != null && configureCommand.canExecute()) {
 			configureCommand.execute(monitor, info);
 		}
@@ -154,21 +137,21 @@ public class AssemblyVariableCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected org.muml.pim.connector.ConnectorEndpoint getSource() {
-		return (org.muml.pim.connector.ConnectorEndpoint) source;
+	protected ConnectorEndpoint getSource() {
+		return (ConnectorEndpoint) source;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected org.muml.pim.connector.ConnectorEndpoint getTarget() {
-		return (org.muml.pim.connector.ConnectorEndpoint) target;
+	protected ConnectorEndpoint getTarget() {
+		return (ConnectorEndpoint) target;
 	}
 
 	/**
 	 * @generated
 	 */
-	public org.muml.reconfiguration.componentstorypattern.ComponentVariable getContainer() {
+	public ComponentVariable getContainer() {
 		return container;
 	}
 
@@ -177,15 +160,13 @@ public class AssemblyVariableCreateCommand extends EditElementCommand {
 	 * Modify with appropriate logic.
 	 * @generated
 	 */
-	private static org.muml.reconfiguration.componentstorypattern.ComponentVariable deduceContainer(
-			EObject source, EObject target) {
+	private static ComponentVariable deduceContainer(EObject source, EObject target) {
 		// Find container element for the new link.
 		// Climb up by containment hierarchy starting from the source
 		// and return the first element that is instance of the container class.
-		for (EObject element = source; element != null; element = element
-				.eContainer()) {
-			if (element instanceof org.muml.reconfiguration.componentstorypattern.ComponentVariable) {
-				return (org.muml.reconfiguration.componentstorypattern.ComponentVariable) element;
+		for (EObject element = source; element != null; element = element.eContainer()) {
+			if (element instanceof ComponentVariable) {
+				return (ComponentVariable) element;
 			}
 		}
 		return null;
@@ -196,13 +177,10 @@ public class AssemblyVariableCreateCommand extends EditElementCommand {
 	 * 
 	 * @generated
 	 */
-	private static org.muml.reconfiguration.componentstorypattern.ComponentVariable deduceContainerUsingViews(
-			View sourceView, View targetView) {
-		for (View view = sourceView; view != null; view = (View) view
-				.eContainer()) {
-			if (view.getElement() instanceof org.muml.reconfiguration.componentstorypattern.ComponentVariable) {
-				return (org.muml.reconfiguration.componentstorypattern.ComponentVariable) view
-						.getElement();
+	private static ComponentVariable deduceContainerUsingViews(View sourceView, View targetView) {
+		for (View view = sourceView; view != null; view = (View) view.eContainer()) {
+			if (view.getElement() instanceof ComponentVariable) {
+				return (ComponentVariable) view.getElement();
 			}
 		}
 		return null;

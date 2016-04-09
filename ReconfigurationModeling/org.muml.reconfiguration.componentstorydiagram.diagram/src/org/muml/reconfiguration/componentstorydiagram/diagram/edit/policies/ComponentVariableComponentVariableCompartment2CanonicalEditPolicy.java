@@ -33,20 +33,43 @@ import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest;
 import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.FadingComponentPartVariableEditPart;
+import org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.PartVariableEditPart;
+import org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramUpdater;
+import org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramNodeDescriptor;
+import org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramVisualIDRegistry;
+import org.muml.reconfiguration.componentstorypattern.ComponentstorypatternPackage;
 
 /**
  * @generated
  */
-public class ComponentVariableComponentVariableCompartment2CanonicalEditPolicy
-		extends CanonicalEditPolicy {
+public class ComponentVariableComponentVariableCompartment2CanonicalEditPolicy extends CanonicalEditPolicy {
 	private boolean canonicalNodes = true;
 
 	public ComponentVariableComponentVariableCompartment2CanonicalEditPolicy() {
 	}
 
-	public ComponentVariableComponentVariableCompartment2CanonicalEditPolicy(
-			boolean canonicalNodes) {
+	public ComponentVariableComponentVariableCompartment2CanonicalEditPolicy(boolean canonicalNodes) {
 		this.canonicalNodes = canonicalNodes;
+	}
+
+	/**
+	* @generated
+	*/
+	private List<String> noConnectionViews = new ArrayList<String>();
+
+	/**
+	 * @generated
+	 */
+	public void addNoConnectionView(String type) {
+		noConnectionViews.add(type);
+	}
+
+	/**
+	 * @generated
+	 */
+	public void removeNoConnectionView(String type) {
+		noConnectionViews.remove(type);
 	}
 
 	/**
@@ -65,8 +88,7 @@ public class ComponentVariableComponentVariableCompartment2CanonicalEditPolicy
 	 * @generated
 	 */
 	protected EStructuralFeature getFeatureToSynchronize() {
-		return org.muml.reconfiguration.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
-				.getComponentVariable_PartVariables();
+		return ComponentstorypatternPackage.eINSTANCE.getComponentVariable_PartVariables();
 	}
 
 	/**
@@ -74,9 +96,9 @@ public class ComponentVariableComponentVariableCompartment2CanonicalEditPolicy
 	 */
 	@SuppressWarnings("rawtypes")
 	protected List getSemanticChildrenList() {
-		List<org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramNodeDescriptor> childDescriptors = getSemanticChildrenViewDescriptors();
+		List<ComponentStoryDiagramNodeDescriptor> childDescriptors = getSemanticChildrenViewDescriptors();
 		LinkedList<EObject> result = new LinkedList<EObject>();
-		for (org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramNodeDescriptor d : childDescriptors) {
+		for (ComponentStoryDiagramNodeDescriptor d : childDescriptors) {
 			result.add(d.getModelElement());
 		}
 		return result;
@@ -92,23 +114,18 @@ public class ComponentVariableComponentVariableCompartment2CanonicalEditPolicy
 		if (!canonicalNodes) {
 			View containerView = (View) getHost().getModel();
 			List<View> childViews = containerView.getChildren();
-			List<org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramNodeDescriptor> result = new LinkedList<org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramNodeDescriptor>();
+			List<ComponentStoryDiagramNodeDescriptor> result = new LinkedList<ComponentStoryDiagramNodeDescriptor>();
 
 			for (View childView : childViews) {
 				EObject childElement = childView.getElement();
-				int visualID = org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramVisualIDRegistry
-						.getVisualID(childView);
-				List<Integer> visualIDs = Arrays
-						.asList(new Integer[] {
-								org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.PartVariableEditPart.VISUAL_ID,
-								org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.FadingComponentPartVariableEditPart.VISUAL_ID });
+				int visualID = ComponentStoryDiagramVisualIDRegistry.getVisualID(childView);
+				List<Integer> visualIDs = Arrays.asList(new Integer[] { PartVariableEditPart.VISUAL_ID,
+						FadingComponentPartVariableEditPart.VISUAL_ID });
 
 				// Note: childElement can be null, for diagram annotations!
 				if (childElement == null
-						|| childElement.eContainer() == containerView
-								.getElement() && visualIDs.contains(visualID)) {
-					result.add(new org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramNodeDescriptor(
-							childElement, visualID));
+						|| childElement.eContainer() == containerView.getElement() && visualIDs.contains(visualID)) {
+					result.add(new ComponentStoryDiagramNodeDescriptor(childElement, visualID));
 					continue;
 				}
 			}
@@ -117,7 +134,7 @@ public class ComponentVariableComponentVariableCompartment2CanonicalEditPolicy
 		// End added
 
 		View viewObject = (View) getHost().getModel();
-		return org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramUpdater
+		return ComponentStoryDiagramDiagramUpdater
 				.getComponentVariableComponentVariableCompartment_7013SemanticChildren(viewObject);
 
 	}
@@ -125,20 +142,16 @@ public class ComponentVariableComponentVariableCompartment2CanonicalEditPolicy
 	/**
 	 * @generated
 	 */
-	protected boolean isOrphaned(Collection<EObject> semanticChildren,
-			final View view) {
-		return isMyDiagramElement(view)
-				&& !semanticChildren.contains(view.getElement());
+	protected boolean isOrphaned(Collection<EObject> semanticChildren, final View view) {
+		return isMyDiagramElement(view) && !semanticChildren.contains(view.getElement());
 	}
 
 	/**
 	 * @generated
 	 */
 	private boolean isMyDiagramElement(View view) {
-		int visualID = org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramVisualIDRegistry
-				.getVisualID(view);
-		return visualID == org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.PartVariableEditPart.VISUAL_ID
-				|| visualID == org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.FadingComponentPartVariableEditPart.VISUAL_ID;
+		int visualID = ComponentStoryDiagramVisualIDRegistry.getVisualID(view);
+		return visualID == PartVariableEditPart.VISUAL_ID || visualID == FadingComponentPartVariableEditPart.VISUAL_ID;
 	}
 
 	/**
@@ -149,7 +162,7 @@ public class ComponentVariableComponentVariableCompartment2CanonicalEditPolicy
 			return;
 		}
 		LinkedList<IAdaptable> createdViews = new LinkedList<IAdaptable>();
-		List<org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramNodeDescriptor> childDescriptors = getSemanticChildrenViewDescriptors();
+		List<ComponentStoryDiagramNodeDescriptor> childDescriptors = getSemanticChildrenViewDescriptors();
 		LinkedList<View> orphaned = new LinkedList<View>();
 		// we care to check only views we recognize as ours
 		LinkedList<View> knownViewChildren = new LinkedList<View>();
@@ -163,19 +176,16 @@ public class ComponentVariableComponentVariableCompartment2CanonicalEditPolicy
 		// iteration happens over list of desired semantic elements, trying to find best matching View, while original CEP
 		// iterates views, potentially losing view (size/bounds) information - i.e. if there are few views to reference same EObject, only last one 
 		// to answer isOrphaned == true will be used for the domain element representation, see #cleanCanonicalSemanticChildren()
-		for (Iterator<org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramNodeDescriptor> descriptorsIterator = childDescriptors
+		for (Iterator<ComponentStoryDiagramNodeDescriptor> descriptorsIterator = childDescriptors
 				.iterator(); descriptorsIterator.hasNext();) {
-			org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramNodeDescriptor next = descriptorsIterator
-					.next();
-			String hint = org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramVisualIDRegistry
-					.getType(next.getVisualID());
+			ComponentStoryDiagramNodeDescriptor next = descriptorsIterator.next();
+			String hint = ComponentStoryDiagramVisualIDRegistry.getType(next.getVisualID());
 			LinkedList<View> perfectMatch = new LinkedList<View>(); // both semanticElement and hint match that of NodeDescriptor
 			for (View childView : getViewChildren()) {
 				EObject semanticElement = childView.getElement();
 
 				// Note: semanticElement can be null, for diagram annotations!
-				if (semanticElement != null
-						&& semanticElement.equals(next.getModelElement())) {
+				if (semanticElement != null && semanticElement.equals(next.getModelElement())) {
 					if (hint.equals(childView.getType())) {
 						perfectMatch.add(childView);
 						// actually, can stop iteration over view children here, but
@@ -196,14 +206,11 @@ public class ComponentVariableComponentVariableCompartment2CanonicalEditPolicy
 		//
 		ArrayList<CreateViewRequest.ViewDescriptor> viewDescriptors = new ArrayList<CreateViewRequest.ViewDescriptor>(
 				childDescriptors.size());
-		for (org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramNodeDescriptor next : childDescriptors) {
-			String hint = org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramVisualIDRegistry
-					.getType(next.getVisualID());
-			IAdaptable elementAdapter = new CanonicalElementAdapter(
-					next.getModelElement(), hint);
-			CreateViewRequest.ViewDescriptor descriptor = new CreateViewRequest.ViewDescriptor(
-					elementAdapter, Node.class, hint, ViewUtil.APPEND, false,
-					host().getDiagramPreferencesHint());
+		for (ComponentStoryDiagramNodeDescriptor next : childDescriptors) {
+			String hint = ComponentStoryDiagramVisualIDRegistry.getType(next.getVisualID());
+			IAdaptable elementAdapter = new CanonicalElementAdapter(next.getModelElement(), hint);
+			CreateViewRequest.ViewDescriptor descriptor = new CreateViewRequest.ViewDescriptor(elementAdapter,
+					Node.class, hint, ViewUtil.APPEND, false, host().getDiagramPreferencesHint());
 			viewDescriptors.add(descriptor);
 		}
 
@@ -212,10 +219,10 @@ public class ComponentVariableComponentVariableCompartment2CanonicalEditPolicy
 		CreateViewRequest request = getCreateViewRequest(viewDescriptors);
 		Command cmd = getCreateViewCommand(request);
 		if (cmd != null && cmd.canExecute()) {
-			SetViewMutabilityCommand.makeMutable(
-					new EObjectAdapter(host().getNotationView())).execute();
+			SetViewMutabilityCommand.makeMutable(new EObjectAdapter(host().getNotationView())).execute();
 			executeCommand(cmd);
 			@SuppressWarnings("unchecked")
+
 			List<IAdaptable> nl = (List<IAdaptable>) request.getNewObject();
 			createdViews.addAll(nl);
 		}
@@ -224,8 +231,8 @@ public class ComponentVariableComponentVariableCompartment2CanonicalEditPolicy
 		}
 		if (createdViews.size() > 1) {
 			// perform a layout of the container
-			DeferredLayoutCommand layoutCmd = new DeferredLayoutCommand(host()
-					.getEditingDomain(), createdViews, host());
+			DeferredLayoutCommand layoutCmd = new DeferredLayoutCommand(host().getEditingDomain(), createdViews,
+					host());
 			executeCommand(new ICommandProxy(layoutCmd));
 		}
 

@@ -20,12 +20,13 @@ import org.eclipse.jface.viewers.BaseLabelProvider;
 import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.swt.graphics.Image;
+import org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramVisualIDRegistry;
+import org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes;
 
 /**
  * @generated
  */
-public class ComponentStoryDiagramSheetLabelProvider extends BaseLabelProvider
-		implements ILabelProvider {
+public class ComponentStoryDiagramSheetLabelProvider extends BaseLabelProvider implements ILabelProvider {
 
 	/**
 	 * @generated
@@ -52,9 +53,7 @@ public class ComponentStoryDiagramSheetLabelProvider extends BaseLabelProvider
 	 */
 	public Image getImage(Object element) {
 		IElementType etype = getElementType(getView(unwrap(element)));
-		return etype == null ? null
-				: org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes
-						.getImage(etype);
+		return etype == null ? null : ComponentStoryDiagramElementTypes.getImage(etype);
 	}
 
 	/**
@@ -86,15 +85,12 @@ public class ComponentStoryDiagramSheetLabelProvider extends BaseLabelProvider
 	private IElementType getElementType(View view) {
 		// For intermediate views climb up the containment hierarchy to find the one associated with an element type.
 		while (view != null) {
-			int vid = org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramVisualIDRegistry
-					.getVisualID(view);
-			IElementType etype = org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes
-					.getElementType(vid);
+			int vid = ComponentStoryDiagramVisualIDRegistry.getVisualID(view);
+			IElementType etype = ComponentStoryDiagramElementTypes.getElementType(vid);
 			if (etype != null) {
 				return etype;
 			}
-			view = view.eContainer() instanceof View ? (View) view.eContainer()
-					: null;
+			view = view.eContainer() instanceof View ? (View) view.eContainer() : null;
 		}
 		return null;
 	}

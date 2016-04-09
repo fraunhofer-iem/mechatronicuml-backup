@@ -37,12 +37,13 @@ import org.eclipse.ui.dialogs.SaveAsDialog;
 import org.eclipse.ui.ide.IGotoMarker;
 import org.eclipse.ui.part.FileEditorInput;
 import org.eclipse.ui.part.ShowInContext;
+import org.muml.core.common.editingdomain.EditingDomainPlugin;
+import org.muml.core.common.editingdomain.initialize.IEditingDomainInitializer;
 
 /**
  * @generated
  */
-public class ComponentStoryDiagramDiagramEditor extends DiagramDocumentEditor
-		implements IGotoMarker {
+public class ComponentStoryDiagramDiagramEditor extends DiagramDocumentEditor implements IGotoMarker {
 
 	/**
 	 * @generated
@@ -73,8 +74,7 @@ public class ComponentStoryDiagramDiagramEditor extends DiagramDocumentEditor
 	 */
 	protected PaletteRoot createPaletteRoot(PaletteRoot existingPaletteRoot) {
 		PaletteRoot root = super.createPaletteRoot(existingPaletteRoot);
-		new org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramPaletteFactory()
-				.fillPalette(root);
+		new ComponentStoryDiagramPaletteFactory().fillPalette(root);
 		return root;
 	}
 
@@ -82,24 +82,22 @@ public class ComponentStoryDiagramDiagramEditor extends DiagramDocumentEditor
 	 * @generated
 	 */
 	protected PreferencesHint getPreferencesHint() {
-		return org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT;
+		return ComponentStoryDiagramDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT;
 	}
 
 	/**
 	 * @generated
 	 */
 	public String getContributorId() {
-		return org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramEditorPlugin.ID;
+		return ComponentStoryDiagramDiagramEditorPlugin.ID;
 	}
 
 	/**
 	 * @generated
 	 */
 	protected IDocumentProvider getDocumentProvider(IEditorInput input) {
-		if (input instanceof IFileEditorInput
-				|| input instanceof URIEditorInput) {
-			return org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramEditorPlugin
-					.getInstance().getDocumentProvider();
+		if (input instanceof IFileEditorInput || input instanceof URIEditorInput) {
+			return ComponentStoryDiagramDiagramEditorPlugin.getInstance().getDocumentProvider();
 		}
 		return super.getDocumentProvider(input);
 	}
@@ -108,8 +106,7 @@ public class ComponentStoryDiagramDiagramEditor extends DiagramDocumentEditor
 	 * @generated
 	 */
 	public TransactionalEditingDomain getEditingDomain() {
-		IDocument document = getEditorInput() != null ? getDocumentProvider()
-				.getDocument(getEditorInput()) : null;
+		IDocument document = getEditorInput() != null ? getDocumentProvider().getDocument(getEditorInput()) : null;
 		if (document instanceof IDiagramDocument) {
 			return ((IDiagramDocument) document).getEditingDomain();
 		}
@@ -120,10 +117,8 @@ public class ComponentStoryDiagramDiagramEditor extends DiagramDocumentEditor
 	 * @generated
 	 */
 	protected void setDocumentProvider(IEditorInput input) {
-		if (input instanceof IFileEditorInput
-				|| input instanceof URIEditorInput) {
-			setDocumentProvider(org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramEditorPlugin
-					.getInstance().getDocumentProvider());
+		if (input instanceof IFileEditorInput || input instanceof URIEditorInput) {
+			setDocumentProvider(ComponentStoryDiagramDiagramEditorPlugin.getInstance().getDocumentProvider());
 		} else {
 			super.setDocumentProvider(input);
 		}
@@ -157,8 +152,7 @@ public class ComponentStoryDiagramDiagramEditor extends DiagramDocumentEditor
 		Shell shell = getSite().getShell();
 		IEditorInput input = getEditorInput();
 		SaveAsDialog dialog = new SaveAsDialog(shell);
-		IFile original = input instanceof IFileEditorInput ? ((IFileEditorInput) input)
-				.getFile() : null;
+		IFile original = input instanceof IFileEditorInput ? ((IFileEditorInput) input).getFile() : null;
 		if (original != null) {
 			dialog.setOriginalFile(original);
 		}
@@ -169,9 +163,8 @@ public class ComponentStoryDiagramDiagramEditor extends DiagramDocumentEditor
 			return;
 		}
 		if (provider.isDeleted(input) && original != null) {
-			String message = NLS
-					.bind(org.muml.reconfiguration.componentstorydiagram.diagram.part.Messages.ComponentStoryDiagramDiagramEditor_SavingDeletedFile,
-							original.getName());
+			String message = NLS.bind(Messages.ComponentStoryDiagramDiagramEditor_SavingDeletedFile,
+					original.getName());
 			dialog.setErrorMessage(null);
 			dialog.setMessage(message, IMessageProvider.WARNING);
 		}
@@ -192,37 +185,27 @@ public class ComponentStoryDiagramDiagramEditor extends DiagramDocumentEditor
 		IFile file = workspaceRoot.getFile(filePath);
 		final IEditorInput newInput = new FileEditorInput(file);
 		// Check if the editor is already open
-		IEditorMatchingStrategy matchingStrategy = getEditorDescriptor()
-				.getEditorMatchingStrategy();
-		IEditorReference[] editorRefs = PlatformUI.getWorkbench()
-				.getActiveWorkbenchWindow().getActivePage()
+		IEditorMatchingStrategy matchingStrategy = getEditorDescriptor().getEditorMatchingStrategy();
+		IEditorReference[] editorRefs = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage()
 				.getEditorReferences();
 		for (int i = 0; i < editorRefs.length; i++) {
 			if (matchingStrategy.matches(editorRefs[i], newInput)) {
-				MessageDialog
-						.openWarning(
-								shell,
-								org.muml.reconfiguration.componentstorydiagram.diagram.part.Messages.ComponentStoryDiagramDiagramEditor_SaveAsErrorTitle,
-								org.muml.reconfiguration.componentstorydiagram.diagram.part.Messages.ComponentStoryDiagramDiagramEditor_SaveAsErrorMessage);
+				MessageDialog.openWarning(shell, Messages.ComponentStoryDiagramDiagramEditor_SaveAsErrorTitle,
+						Messages.ComponentStoryDiagramDiagramEditor_SaveAsErrorMessage);
 				return;
 			}
 		}
 		boolean success = false;
 		try {
 			provider.aboutToChange(newInput);
-			getDocumentProvider(newInput).saveDocument(progressMonitor,
-					newInput,
+			getDocumentProvider(newInput).saveDocument(progressMonitor, newInput,
 					getDocumentProvider().getDocument(getEditorInput()), true);
 			success = true;
 		} catch (CoreException x) {
 			IStatus status = x.getStatus();
 			if (status == null || status.getSeverity() != IStatus.CANCEL) {
-				ErrorDialog
-						.openError(
-								shell,
-								org.muml.reconfiguration.componentstorydiagram.diagram.part.Messages.ComponentStoryDiagramDiagramEditor_SaveErrorTitle,
-								org.muml.reconfiguration.componentstorydiagram.diagram.part.Messages.ComponentStoryDiagramDiagramEditor_SaveErrorMessage,
-								x.getStatus());
+				ErrorDialog.openError(shell, Messages.ComponentStoryDiagramDiagramEditor_SaveErrorTitle,
+						Messages.ComponentStoryDiagramDiagramEditor_SaveErrorMessage, x.getStatus());
 			}
 		} finally {
 			provider.changed(newInput);
@@ -239,8 +222,7 @@ public class ComponentStoryDiagramDiagramEditor extends DiagramDocumentEditor
 	 * @generated
 	 */
 	public ShowInContext getShowInContext() {
-		return new ShowInContext(getEditorInput(), getGraphicalViewer()
-				.getSelection());
+		return new ShowInContext(getEditorInput(), getGraphicalViewer().getSelection());
 	}
 
 	/**
@@ -248,21 +230,29 @@ public class ComponentStoryDiagramDiagramEditor extends DiagramDocumentEditor
 	 */
 	protected void configureGraphicalViewer() {
 		super.configureGraphicalViewer();
-		org.muml.reconfiguration.componentstorydiagram.diagram.part.DiagramEditorContextMenuProvider provider = new org.muml.reconfiguration.componentstorydiagram.diagram.part.DiagramEditorContextMenuProvider(
-				this, getDiagramGraphicalViewer());
+		DiagramEditorContextMenuProvider provider = new DiagramEditorContextMenuProvider(this,
+				getDiagramGraphicalViewer());
 		getDiagramGraphicalViewer().setContextMenu(provider);
-		getSite().registerContextMenu(ActionIds.DIAGRAM_EDITOR_CONTEXT_MENU,
-				provider, getDiagramGraphicalViewer());
+		getSite().registerContextMenu(ActionIds.DIAGRAM_EDITOR_CONTEXT_MENU, provider, getDiagramGraphicalViewer());
 
 		// Begin added to bind delete keyboard shortcut to "Delete From Model" action, not Delete From Diagram (default)
 		KeyHandler keyHandler = getDiagramGraphicalViewer().getKeyHandler();
-		keyHandler.put(
-				KeyStroke.getPressed(SWT.DEL, 127, 0),
-				getActionRegistry().getAction(
-						ActionIds.ACTION_DELETE_FROM_MODEL));
-		keyHandler.put(KeyStroke.getPressed(SWT.BS, 8, 0), getActionRegistry()
-				.getAction(ActionIds.ACTION_DELETE_FROM_MODEL));
+		keyHandler.put(KeyStroke.getPressed(SWT.DEL, 127, 0),
+				getActionRegistry().getAction(ActionIds.ACTION_DELETE_FROM_MODEL));
+		keyHandler.put(KeyStroke.getPressed(SWT.BS, 8, 0),
+				getActionRegistry().getAction(ActionIds.ACTION_DELETE_FROM_MODEL));
 		// End added
+	}
+
+	/**
+	* @generated
+	*/
+	@Override
+	public void setInput(IEditorInput input) {
+		super.setInput(input);
+		for (IEditingDomainInitializer init : EditingDomainPlugin.getEditingDomainInitializers()) {
+			init.initialize(getEditingDomain());
+		}
 	}
 
 	/**
@@ -270,8 +260,7 @@ public class ComponentStoryDiagramDiagramEditor extends DiagramDocumentEditor
 	 */
 	@Override
 	public void doSave(IProgressMonitor progressMonitor) {
-		ValidateAction.runValidation(getDiagramEditPart(), getDiagramEditPart()
-				.getDiagramView());
+		ValidateAction.runValidation(getDiagramEditPart(), getDiagramEditPart().getDiagramView());
 		super.doSave(progressMonitor);
 	}
 

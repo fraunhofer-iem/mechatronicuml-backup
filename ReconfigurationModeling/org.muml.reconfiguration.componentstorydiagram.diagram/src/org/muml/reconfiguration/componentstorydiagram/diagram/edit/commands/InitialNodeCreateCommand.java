@@ -11,6 +11,7 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.reconfiguration.componentstorydiagram.diagram.providers.ElementInitializers;
 import org.muml.storydiagram.activities.ActivitiesFactory;
 import org.muml.storydiagram.activities.Activity;
 import org.muml.storydiagram.activities.InitialNode;
@@ -32,8 +33,7 @@ public class InitialNodeCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected EObject getElementToEdit() {
-		EObject container = ((CreateElementRequest) getRequest())
-				.getContainer();
+		EObject container = ((CreateElementRequest) getRequest()).getContainer();
 		if (container instanceof View) {
 			container = ((View) container).getElement();
 		}
@@ -51,16 +51,13 @@ public class InitialNodeCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
-			IAdaptable info) throws ExecutionException {
-		InitialNode newElement = ActivitiesFactory.eINSTANCE
-				.createInitialNode();
+	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
+		InitialNode newElement = ActivitiesFactory.eINSTANCE.createInitialNode();
 
 		Activity owner = (Activity) getElementToEdit();
 		owner.getOwnedActivityNodes().add(newElement);
 
-		org.muml.reconfiguration.componentstorydiagram.diagram.providers.ElementInitializers
-				.getInstance().init_InitialNode_3007(newElement);
+		ElementInitializers.getInstance().init_InitialNode_3007(newElement);
 
 		doConfigure(newElement, monitor, info);
 
@@ -71,18 +68,13 @@ public class InitialNodeCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected void doConfigure(InitialNode newElement,
-			IProgressMonitor monitor, IAdaptable info)
+	protected void doConfigure(InitialNode newElement, IProgressMonitor monitor, IAdaptable info)
 			throws ExecutionException {
-		IElementType elementType = ((CreateElementRequest) getRequest())
-				.getElementType();
-		ConfigureRequest configureRequest = new ConfigureRequest(
-				getEditingDomain(), newElement, elementType);
-		configureRequest.setClientContext(((CreateElementRequest) getRequest())
-				.getClientContext());
+		IElementType elementType = ((CreateElementRequest) getRequest()).getElementType();
+		ConfigureRequest configureRequest = new ConfigureRequest(getEditingDomain(), newElement, elementType);
+		configureRequest.setClientContext(((CreateElementRequest) getRequest()).getClientContext());
 		configureRequest.addParameters(getRequest().getParameters());
-		ICommand configureCommand = elementType
-				.getEditCommand(configureRequest);
+		ICommand configureCommand = elementType.getEditCommand(configureRequest);
 		if (configureCommand != null && configureCommand.canExecute()) {
 			configureCommand.execute(monitor, info);
 		}

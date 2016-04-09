@@ -1,6 +1,7 @@
 package org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts;
 
 import java.util.Collection;
+import org.eclipse.draw2d.ConnectionAnchor;
 import org.eclipse.draw2d.GridData;
 import org.eclipse.draw2d.GridLayout;
 import org.eclipse.draw2d.IFigure;
@@ -36,6 +37,15 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Font;
 import org.eclipse.swt.widgets.Display;
+import org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy;
+import org.muml.core.common.edit.policies.anchor.IConnectionAnchorCreationEditPolicy;
+import org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy;
+import org.muml.core.common.figures.CustomExternalLabelBorderItemLocator;
+import org.muml.pim.common.edit.policies.IBackgroundColorEditPolicy;
+import org.muml.reconfiguration.common.edit.policies.ComponentStoryPatternVariableEditPolicy;
+import org.muml.reconfiguration.componentstorydiagram.diagram.edit.policies.ComponentVariableCanonicalEditPolicy;
+import org.muml.reconfiguration.componentstorydiagram.diagram.edit.policies.ComponentVariableItemSemanticEditPolicy;
+import org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramVisualIDRegistry;
 
 /**
  * @generated
@@ -71,6 +81,22 @@ public class ComponentVariableEditPart extends AbstractBorderedShapeEditPart {
 	}
 
 	/**
+	* MUML FIX: Adapt background color if IBackgroundColorEditPolicy is registered.
+	* 
+	* @generated
+	*/
+	@Override
+	protected void refreshBackgroundColor() {
+		EditPolicy backgroundColorPolicy = getEditPolicy(
+				org.muml.core.common.edit.policies.EditPolicyRoles.BACKGROUND_COLOR_ROLE);
+		if (backgroundColorPolicy instanceof IBackgroundColorEditPolicy) {
+			setBackgroundColor(((IBackgroundColorEditPolicy) backgroundColorPolicy).getCurrentBackgroundColor());
+		} else {
+			super.refreshBackgroundColor();
+		}
+	}
+
+	/**
 	 * @generated
 	 */
 	protected IFigure contentPane;
@@ -91,33 +117,25 @@ public class ComponentVariableEditPart extends AbstractBorderedShapeEditPart {
 	 * @generated
 	 */
 	protected void createDefaultEditPolicies() {
-		installEditPolicy(
-				EditPolicyRoles.CREATION_ROLE,
-				new CreationEditPolicyWithCustomReparent(
-						org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramVisualIDRegistry.TYPED_INSTANCE));
+		installEditPolicy(EditPolicyRoles.CREATION_ROLE,
+				new CreationEditPolicyWithCustomReparent(ComponentStoryDiagramVisualIDRegistry.TYPED_INSTANCE));
 		super.createDefaultEditPolicies();
-		installEditPolicy(
-				EditPolicyRoles.SEMANTIC_ROLE,
-				new org.muml.reconfiguration.componentstorydiagram.diagram.edit.policies.ComponentVariableItemSemanticEditPolicy());
-		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE,
-				new DragDropEditPolicy());
-		installEditPolicy(
-				EditPolicyRoles.CANONICAL_ROLE,
-				new org.muml.reconfiguration.componentstorydiagram.diagram.edit.policies.ComponentVariableCanonicalEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new ComponentVariableItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
+		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new ComponentVariableCanonicalEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
+
 		installEditPolicy(
 				org.muml.pim.common.edit.policies.EditPolicyRoles.COMPONENTSTORYPATTERNVARIABLE_VISUALIZATION_ROLE,
-				new org.muml.reconfiguration.common.edit.policies.ComponentStoryPatternVariableEditPolicy());
+				new ComponentStoryPatternVariableEditPolicy());
+
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 
-		installEditPolicy(
-				EditPolicy.GRAPHICAL_NODE_ROLE,
-				new org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy());
+		installEditPolicy(EditPolicy.GRAPHICAL_NODE_ROLE, new ConnectionConfigureHelperGraphicalNodeEditPolicy());
 
-		installEditPolicy(
-				org.muml.core.common.edit.policies.EditPolicyRoles.ERROR_FEEDBACK_ROLE,
-				new org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy());
+		installEditPolicy(org.muml.core.common.edit.policies.EditPolicyRoles.ERROR_FEEDBACK_ROLE,
+				new ErrorFeedbackEditPolicy());
 
 	}
 
@@ -129,16 +147,14 @@ public class ComponentVariableEditPart extends AbstractBorderedShapeEditPart {
 
 			protected EditPolicy createChildEditPolicy(EditPart child) {
 				View childView = (View) child.getModel();
-				switch (org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramVisualIDRegistry
-						.getVisualID(childView)) {
-				case org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ComponentVariableOperatorEditPart.VISUAL_ID:
+				switch (ComponentStoryDiagramVisualIDRegistry.getVisualID(childView)) {
+				case ComponentVariableOperatorEditPart.VISUAL_ID:
 					return new org.muml.core.common.edit.policies.BorderItemSelectionEditPolicy();
-				case org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.MultiPortVariable2EditPart.VISUAL_ID:
-				case org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.SinglePortVariable3EditPart.VISUAL_ID:
+				case MultiPortVariable2EditPart.VISUAL_ID:
+				case SinglePortVariable3EditPart.VISUAL_ID:
 					return new BorderItemSelectionEditPolicy();
 				}
-				EditPolicy result = child
-						.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
+				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
 				if (result == null) {
 					result = new NonResizableEditPolicy();
 				}
@@ -174,35 +190,27 @@ public class ComponentVariableEditPart extends AbstractBorderedShapeEditPart {
 	 * @generated
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ComponentVariableNameEditPart) {
-			((org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ComponentVariableNameEditPart) childEditPart)
-					.setLabel(getPrimaryShape()
-							.getFigureComponentVariableNameFigure());
+		if (childEditPart instanceof ComponentVariableNameEditPart) {
+			((ComponentVariableNameEditPart) childEditPart)
+					.setLabel(getPrimaryShape().getFigureComponentVariableNameFigure());
 			return true;
 		}
-		if (childEditPart instanceof org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ComponentVariableComponentVariableCompartmentEditPart) {
+		if (childEditPart instanceof ComponentVariableComponentVariableCompartmentEditPart) {
 			IFigure pane = getPrimaryShape().getFigureChildren();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
-			pane.add(((org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ComponentVariableComponentVariableCompartmentEditPart) childEditPart)
-					.getFigure());
+			pane.add(((ComponentVariableComponentVariableCompartmentEditPart) childEditPart).getFigure());
 			return true;
 		}
-		if (childEditPart instanceof org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.MultiPortVariable2EditPart) {
-			BorderItemLocator locator = new BorderItemLocator(getMainFigure(),
-					PositionConstants.NORTH);
-			getBorderedFigure()
-					.getBorderItemContainer()
-					.add(((org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.MultiPortVariable2EditPart) childEditPart)
-							.getFigure(), locator);
+		if (childEditPart instanceof MultiPortVariable2EditPart) {
+			BorderItemLocator locator = new BorderItemLocator(getMainFigure(), PositionConstants.NORTH);
+			getBorderedFigure().getBorderItemContainer().add(((MultiPortVariable2EditPart) childEditPart).getFigure(),
+					locator);
 			return true;
 		}
-		if (childEditPart instanceof org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.SinglePortVariable3EditPart) {
-			BorderItemLocator locator = new BorderItemLocator(getMainFigure(),
-					PositionConstants.NORTH);
-			getBorderedFigure()
-					.getBorderItemContainer()
-					.add(((org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.SinglePortVariable3EditPart) childEditPart)
-							.getFigure(), locator);
+		if (childEditPart instanceof SinglePortVariable3EditPart) {
+			BorderItemLocator locator = new BorderItemLocator(getMainFigure(), PositionConstants.NORTH);
+			getBorderedFigure().getBorderItemContainer().add(((SinglePortVariable3EditPart) childEditPart).getFigure(),
+					locator);
 			return true;
 		}
 		return false;
@@ -212,27 +220,22 @@ public class ComponentVariableEditPart extends AbstractBorderedShapeEditPart {
 	 * @generated
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ComponentVariableNameEditPart) {
+		if (childEditPart instanceof ComponentVariableNameEditPart) {
 			return true;
 		}
-		if (childEditPart instanceof org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ComponentVariableComponentVariableCompartmentEditPart) {
+		if (childEditPart instanceof ComponentVariableComponentVariableCompartmentEditPart) {
 			IFigure pane = getPrimaryShape().getFigureChildren();
-			pane.remove(((org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ComponentVariableComponentVariableCompartmentEditPart) childEditPart)
-					.getFigure());
+			pane.remove(((ComponentVariableComponentVariableCompartmentEditPart) childEditPart).getFigure());
 			return true;
 		}
-		if (childEditPart instanceof org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.MultiPortVariable2EditPart) {
-			getBorderedFigure()
-					.getBorderItemContainer()
-					.remove(((org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.MultiPortVariable2EditPart) childEditPart)
-							.getFigure());
+		if (childEditPart instanceof MultiPortVariable2EditPart) {
+			getBorderedFigure().getBorderItemContainer()
+					.remove(((MultiPortVariable2EditPart) childEditPart).getFigure());
 			return true;
 		}
-		if (childEditPart instanceof org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.SinglePortVariable3EditPart) {
-			getBorderedFigure()
-					.getBorderItemContainer()
-					.remove(((org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.SinglePortVariable3EditPart) childEditPart)
-							.getFigure());
+		if (childEditPart instanceof SinglePortVariable3EditPart) {
+			getBorderedFigure().getBorderItemContainer()
+					.remove(((SinglePortVariable3EditPart) childEditPart).getFigure());
 			return true;
 		}
 		return false;
@@ -262,7 +265,7 @@ public class ComponentVariableEditPart extends AbstractBorderedShapeEditPart {
 	 * @generated
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
-		if (editPart instanceof org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ComponentVariableComponentVariableCompartmentEditPart) {
+		if (editPart instanceof ComponentVariableComponentVariableCompartmentEditPart) {
 			return getPrimaryShape().getFigureChildren();
 		}
 		if (editPart instanceof IBorderItemEditPart) {
@@ -274,12 +277,11 @@ public class ComponentVariableEditPart extends AbstractBorderedShapeEditPart {
 	/**
 	 * @generated
 	 */
-	protected void addBorderItem(IFigure borderItemContainer,
-			IBorderItemEditPart borderItemEditPart) {
-		if (borderItemEditPart instanceof org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ComponentVariableOperatorEditPart) {
+	protected void addBorderItem(IFigure borderItemContainer, IBorderItemEditPart borderItemEditPart) {
+		if (borderItemEditPart instanceof ComponentVariableOperatorEditPart) {
 			// bug-fix: allows the free positioning of external Labels
-			org.muml.core.common.figures.CustomExternalLabelBorderItemLocator locator = new org.muml.core.common.figures.CustomExternalLabelBorderItemLocator(
-					getMainFigure(), PositionConstants.SOUTH);
+			CustomExternalLabelBorderItemLocator locator = new CustomExternalLabelBorderItemLocator(getMainFigure(),
+					PositionConstants.SOUTH);
 			locator.setBorderItemOffset(new Dimension(-20, -20));
 			borderItemContainer.add(borderItemEditPart.getFigure(), locator);
 		} else {
@@ -291,7 +293,17 @@ public class ComponentVariableEditPart extends AbstractBorderedShapeEditPart {
 	 * @generated
 	 */
 	protected NodeFigure createNodePlate() {
-		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(40, 40);
+		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(40, 40) {
+			@Override
+			public ConnectionAnchor createDefaultAnchor() {
+				IConnectionAnchorCreationEditPolicy connectionAnchorCreationEditPolicy = (IConnectionAnchorCreationEditPolicy) getEditPolicy(
+						org.muml.core.common.edit.policies.EditPolicyRoles.CONNECTION_ANCHOR_CREATION_ROLE);
+				if (connectionAnchorCreationEditPolicy != null) {
+					return connectionAnchorCreationEditPolicy.createDefaultAnchor();
+				}
+				return super.createDefaultAnchor();
+			}
+		};
 
 		// Ensures that the element can be shrinked (Muml Bug #62).
 		result.setMinimumSize(new Dimension(0, 0));
@@ -381,8 +393,8 @@ public class ComponentVariableEditPart extends AbstractBorderedShapeEditPart {
 	 * @generated
 	 */
 	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramVisualIDRegistry
-				.getType(org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ComponentVariableOperatorEditPart.VISUAL_ID));
+		return getChildBySemanticHint(
+				ComponentStoryDiagramVisualIDRegistry.getType(ComponentVariableOperatorEditPart.VISUAL_ID));
 	}
 
 	/**
@@ -422,16 +434,14 @@ public class ComponentVariableEditPart extends AbstractBorderedShapeEditPart {
 			GridLayout layoutComponentVariableContent0 = new GridLayout();
 			layoutComponentVariableContent0.numColumns = 1;
 			layoutComponentVariableContent0.makeColumnsEqualWidth = true;
-			componentVariableContent0
-					.setLayoutManager(layoutComponentVariableContent0);
+			componentVariableContent0.setLayoutManager(layoutComponentVariableContent0);
 
 			RectangleFigure container1 = new RectangleFigure();
 
 			container1.setFill(false);
 			container1.setOutline(false);
-			container1.setBorder(new MarginBorder(getMapMode().DPtoLP(3),
-					getMapMode().DPtoLP(3), getMapMode().DPtoLP(0),
-					getMapMode().DPtoLP(3)));
+			container1.setBorder(new MarginBorder(getMapMode().DPtoLP(3), getMapMode().DPtoLP(3),
+					getMapMode().DPtoLP(0), getMapMode().DPtoLP(3)));
 
 			GridData constraintContainer1 = new GridData();
 			constraintContainer1.verticalAlignment = GridData.BEGINNING;
@@ -459,8 +469,7 @@ public class ComponentVariableEditPart extends AbstractBorderedShapeEditPart {
 
 			fFigureComponentVariableNameFigure.setText("this");
 
-			fFigureComponentVariableNameFigure
-					.setFont(FFIGURECOMPONENTVARIABLENAMEFIGURE_FONT);
+			fFigureComponentVariableNameFigure.setFont(FFIGURECOMPONENTVARIABLENAMEFIGURE_FONT);
 
 			GridData constraintFFigureComponentVariableNameFigure = new GridData();
 			constraintFFigureComponentVariableNameFigure.verticalAlignment = GridData.BEGINNING;
@@ -470,15 +479,13 @@ public class ComponentVariableEditPart extends AbstractBorderedShapeEditPart {
 			constraintFFigureComponentVariableNameFigure.verticalSpan = 1;
 			constraintFFigureComponentVariableNameFigure.grabExcessHorizontalSpace = true;
 			constraintFFigureComponentVariableNameFigure.grabExcessVerticalSpace = false;
-			container1.add(fFigureComponentVariableNameFigure,
-					constraintFFigureComponentVariableNameFigure);
+			container1.add(fFigureComponentVariableNameFigure, constraintFFigureComponentVariableNameFigure);
 
 			RectangleFigure componentIconFigure2 = new RectangleFigure();
 
 			componentIconFigure2.setFill(false);
 			componentIconFigure2.setOutline(false);
-			componentIconFigure2.setPreferredSize(new Dimension(getMapMode()
-					.DPtoLP(20), getMapMode().DPtoLP(20)));
+			componentIconFigure2.setPreferredSize(new Dimension(getMapMode().DPtoLP(20), getMapMode().DPtoLP(20)));
 
 			GridData constraintComponentIconFigure2 = new GridData();
 			constraintComponentIconFigure2.verticalAlignment = GridData.BEGINNING;
@@ -488,8 +495,7 @@ public class ComponentVariableEditPart extends AbstractBorderedShapeEditPart {
 			constraintComponentIconFigure2.verticalSpan = 1;
 			constraintComponentIconFigure2.grabExcessHorizontalSpace = true;
 			constraintComponentIconFigure2.grabExcessVerticalSpace = false;
-			container1
-					.add(componentIconFigure2, constraintComponentIconFigure2);
+			container1.add(componentIconFigure2, constraintComponentIconFigure2);
 
 			componentIconFigure2.setLayoutManager(new StackLayout());
 
@@ -503,9 +509,8 @@ public class ComponentVariableEditPart extends AbstractBorderedShapeEditPart {
 
 			RectangleFigure b14 = new RectangleFigure();
 
-			componentIconOuter3.add(b14, new Rectangle(getMapMode().DPtoLP(4),
-					getMapMode().DPtoLP(0), getMapMode().DPtoLP(16),
-					getMapMode().DPtoLP(20)));
+			componentIconOuter3.add(b14, new Rectangle(getMapMode().DPtoLP(4), getMapMode().DPtoLP(0),
+					getMapMode().DPtoLP(16), getMapMode().DPtoLP(20)));
 
 			RectangleFigure componentIconInner13 = new RectangleFigure();
 
@@ -517,9 +522,8 @@ public class ComponentVariableEditPart extends AbstractBorderedShapeEditPart {
 
 			RectangleFigure c14 = new RectangleFigure();
 
-			componentIconInner13.add(c14, new Rectangle(getMapMode().DPtoLP(0),
-					getMapMode().DPtoLP(2), getMapMode().DPtoLP(12),
-					getMapMode().DPtoLP(6)));
+			componentIconInner13.add(c14, new Rectangle(getMapMode().DPtoLP(0), getMapMode().DPtoLP(2),
+					getMapMode().DPtoLP(12), getMapMode().DPtoLP(6)));
 
 			RectangleFigure componentIconInner23 = new RectangleFigure();
 
@@ -531,9 +535,8 @@ public class ComponentVariableEditPart extends AbstractBorderedShapeEditPart {
 
 			RectangleFigure d14 = new RectangleFigure();
 
-			componentIconInner23.add(d14, new Rectangle(getMapMode().DPtoLP(0),
-					getMapMode().DPtoLP(10), getMapMode().DPtoLP(12),
-					getMapMode().DPtoLP(6)));
+			componentIconInner23.add(d14, new Rectangle(getMapMode().DPtoLP(0), getMapMode().DPtoLP(10),
+					getMapMode().DPtoLP(12), getMapMode().DPtoLP(6)));
 
 			// Process FigureRef details
 
@@ -552,8 +555,7 @@ public class ComponentVariableEditPart extends AbstractBorderedShapeEditPart {
 			constraintFFigureChildren.verticalSpan = 1;
 			constraintFFigureChildren.grabExcessHorizontalSpace = true;
 			constraintFFigureChildren.grabExcessVerticalSpace = true;
-			componentVariableContent0.add(fFigureChildren,
-					constraintFFigureChildren);
+			componentVariableContent0.add(fFigureChildren, constraintFFigureChildren);
 
 		}
 
@@ -576,8 +578,7 @@ public class ComponentVariableEditPart extends AbstractBorderedShapeEditPart {
 	/**
 	 * @generated
 	 */
-	static final Font FFIGURECOMPONENTVARIABLENAMEFIGURE_FONT = new Font(
-			Display.getCurrent(), Display.getDefault().getSystemFont()
-					.getFontData()[0].getName(), 9, SWT.BOLD);
+	static final Font FFIGURECOMPONENTVARIABLENAMEFIGURE_FONT = new Font(Display.getCurrent(),
+			Display.getDefault().getSystemFont().getFontData()[0].getName(), 9, SWT.BOLD);
 
 }

@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EEnumLiteral;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramEditorPlugin;
 
 /**
  * @generated
@@ -27,14 +28,11 @@ public abstract class ComponentStoryDiagramAbstractExpression {
 	 * @generated
 	 */
 	protected void setStatus(int severity, String message, Throwable throwable) {
-		String pluginID = org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramEditorPlugin.ID;
-		this.status = new Status(severity, pluginID, -1,
-				(message != null) ? message : "", throwable); //$NON-NLS-1$
+		String pluginID = ComponentStoryDiagramDiagramEditorPlugin.ID;
+		this.status = new Status(severity, pluginID, -1, (message != null) ? message : "", throwable); //$NON-NLS-1$
 		if (!this.status.isOK()) {
-			org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramEditorPlugin
-					.getInstance()
-					.logError(
-							"Expression problem:" + message + "body:" + body(), throwable); //$NON-NLS-1$ //$NON-NLS-2$
+			ComponentStoryDiagramDiagramEditorPlugin.getInstance()
+					.logError("Expression problem:" + message + "body:" + body(), throwable); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 	}
 
@@ -72,8 +70,7 @@ public abstract class ComponentStoryDiagramAbstractExpression {
 	/**
 	 * @generated
 	 */
-	protected ComponentStoryDiagramAbstractExpression(String body,
-			EClassifier context) {
+	protected ComponentStoryDiagramAbstractExpression(String body, EClassifier context) {
 		myBody = body;
 		myContext = context;
 	}
@@ -100,9 +97,8 @@ public abstract class ComponentStoryDiagramAbstractExpression {
 			try {
 				return doEvaluate(context, env);
 			} catch (Exception e) {
-				org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramEditorPlugin
-						.getInstance().logError(
-								"Expression evaluation failure: " + body(), e); //$NON-NLS-1$
+				ComponentStoryDiagramDiagramEditorPlugin.getInstance()
+						.logError("Expression evaluation failure: " + body(), e); //$NON-NLS-1$
 			}
 		}
 		return null;
@@ -116,12 +112,10 @@ public abstract class ComponentStoryDiagramAbstractExpression {
 		if (targetType instanceof EEnum) {
 			if (value instanceof EEnumLiteral) {
 				EEnumLiteral literal = (EEnumLiteral) value;
-				return (literal.getInstance() != null) ? literal.getInstance()
-						: literal;
+				return (literal.getInstance() != null) ? literal.getInstance() : literal;
 			}
 		}
-		if (false == value instanceof Number || targetType == null
-				|| targetType.getInstanceClass() == null) {
+		if (false == value instanceof Number || targetType == null || targetType.getInstanceClass() == null) {
 			return value;
 		}
 		Class<?> targetClass = targetType.getInstanceClass();

@@ -19,31 +19,35 @@ import java.util.List;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
+import org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ActivityFinalNodeEditPart;
+import org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ComponentStoryNodeEditPart;
+import org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ControllerExchangeNodeEditPart;
+import org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.InitialNodeEditPart;
+import org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.JunctionNodeEditPart;
+import org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes;
+import org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramModelingAssistantProvider;
 
 /**
  * @generated
  */
 public class ComponentStoryDiagramModelingAssistantProviderOfInitialNodeEditPart
-		extends
-		org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramModelingAssistantProvider {
+		extends ComponentStoryDiagramModelingAssistantProvider {
 
 	/**
 	 * @generated
 	 */
 	@Override
 	public List<IElementType> getRelTypesOnSource(IAdaptable source) {
-		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source
-				.getAdapter(IGraphicalEditPart.class);
-		return doGetRelTypesOnSource((org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.InitialNodeEditPart) sourceEditPart);
+		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source.getAdapter(IGraphicalEditPart.class);
+		return doGetRelTypesOnSource((InitialNodeEditPart) sourceEditPart);
 	}
 
 	/**
-	 * @generated
-	 */
-	public List<IElementType> doGetRelTypesOnSource(
-			org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.InitialNodeEditPart source) {
+	* @generated
+	*/
+	public List<IElementType> doGetRelTypesOnSource(InitialNodeEditPart source) {
 		List<IElementType> types = new ArrayList<IElementType>(1);
-		types.add(org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.ActivityEdge_4001);
+		types.add(ComponentStoryDiagramElementTypes.ActivityEdge_4001);
 		return types;
 	}
 
@@ -51,38 +55,32 @@ public class ComponentStoryDiagramModelingAssistantProviderOfInitialNodeEditPart
 	 * @generated
 	 */
 	@Override
-	public List<IElementType> getRelTypesOnSourceAndTarget(IAdaptable source,
-			IAdaptable target) {
-		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source
-				.getAdapter(IGraphicalEditPart.class);
-		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target
-				.getAdapter(IGraphicalEditPart.class);
-		return doGetRelTypesOnSourceAndTarget(
-				(org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.InitialNodeEditPart) sourceEditPart,
-				targetEditPart);
+	public List<IElementType> getRelTypesOnSourceAndTarget(IAdaptable source, IAdaptable target) {
+		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source.getAdapter(IGraphicalEditPart.class);
+		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target.getAdapter(IGraphicalEditPart.class);
+		return doGetRelTypesOnSourceAndTarget((InitialNodeEditPart) sourceEditPart, targetEditPart);
 	}
 
 	/**
-	 * @generated
-	 */
-	public List<IElementType> doGetRelTypesOnSourceAndTarget(
-			org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.InitialNodeEditPart source,
+	* @generated
+	*/
+	public List<IElementType> doGetRelTypesOnSourceAndTarget(InitialNodeEditPart source,
 			IGraphicalEditPart targetEditPart) {
 		List<IElementType> types = new LinkedList<IElementType>();
-		if (targetEditPart instanceof org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ComponentStoryNodeEditPart) {
-			types.add(org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.ActivityEdge_4001);
+		if (targetEditPart instanceof ComponentStoryNodeEditPart) {
+			types.add(ComponentStoryDiagramElementTypes.ActivityEdge_4001);
 		}
-		if (targetEditPart instanceof org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.InitialNodeEditPart) {
-			types.add(org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.ActivityEdge_4001);
+		if (targetEditPart instanceof InitialNodeEditPart) {
+			types.add(ComponentStoryDiagramElementTypes.ActivityEdge_4001);
 		}
-		if (targetEditPart instanceof org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.JunctionNodeEditPart) {
-			types.add(org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.ActivityEdge_4001);
+		if (targetEditPart instanceof JunctionNodeEditPart) {
+			types.add(ComponentStoryDiagramElementTypes.ActivityEdge_4001);
 		}
-		if (targetEditPart instanceof org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ActivityFinalNodeEditPart) {
-			types.add(org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.ActivityEdge_4001);
+		if (targetEditPart instanceof ActivityFinalNodeEditPart) {
+			types.add(ComponentStoryDiagramElementTypes.ActivityEdge_4001);
 		}
-		if (targetEditPart instanceof org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.ControllerExchangeNodeEditPart) {
-			types.add(org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.ActivityEdge_4001);
+		if (targetEditPart instanceof ControllerExchangeNodeEditPart) {
+			types.add(ComponentStoryDiagramElementTypes.ActivityEdge_4001);
 		}
 		return types;
 	}
@@ -91,28 +89,22 @@ public class ComponentStoryDiagramModelingAssistantProviderOfInitialNodeEditPart
 	 * @generated
 	 */
 	@Override
-	public List<IElementType> getTypesForTarget(IAdaptable source,
-			IElementType relationshipType) {
-		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source
-				.getAdapter(IGraphicalEditPart.class);
-		return doGetTypesForTarget(
-				(org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.InitialNodeEditPart) sourceEditPart,
-				relationshipType);
+	public List<IElementType> getTypesForTarget(IAdaptable source, IElementType relationshipType) {
+		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source.getAdapter(IGraphicalEditPart.class);
+		return doGetTypesForTarget((InitialNodeEditPart) sourceEditPart, relationshipType);
 	}
 
 	/**
-	 * @generated
-	 */
-	public List<IElementType> doGetTypesForTarget(
-			org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.InitialNodeEditPart source,
-			IElementType relationshipType) {
+	* @generated
+	*/
+	public List<IElementType> doGetTypesForTarget(InitialNodeEditPart source, IElementType relationshipType) {
 		List<IElementType> types = new ArrayList<IElementType>();
-		if (relationshipType == org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.ActivityEdge_4001) {
-			types.add(org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.ComponentStoryNode_3001);
-			types.add(org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.InitialNode_3007);
-			types.add(org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.JunctionNode_3008);
-			types.add(org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.ActivityFinalNode_3010);
-			types.add(org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.ControllerExchangeNode_3021);
+		if (relationshipType == ComponentStoryDiagramElementTypes.ActivityEdge_4001) {
+			types.add(ComponentStoryDiagramElementTypes.ComponentStoryNode_3001);
+			types.add(ComponentStoryDiagramElementTypes.InitialNode_3007);
+			types.add(ComponentStoryDiagramElementTypes.JunctionNode_3008);
+			types.add(ComponentStoryDiagramElementTypes.ActivityFinalNode_3010);
+			types.add(ComponentStoryDiagramElementTypes.ControllerExchangeNode_3021);
 		}
 		return types;
 	}
@@ -122,18 +114,16 @@ public class ComponentStoryDiagramModelingAssistantProviderOfInitialNodeEditPart
 	 */
 	@Override
 	public List<IElementType> getRelTypesOnTarget(IAdaptable target) {
-		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target
-				.getAdapter(IGraphicalEditPart.class);
-		return doGetRelTypesOnTarget((org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.InitialNodeEditPart) targetEditPart);
+		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target.getAdapter(IGraphicalEditPart.class);
+		return doGetRelTypesOnTarget((InitialNodeEditPart) targetEditPart);
 	}
 
 	/**
-	 * @generated
-	 */
-	public List<IElementType> doGetRelTypesOnTarget(
-			org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.InitialNodeEditPart target) {
+	* @generated
+	*/
+	public List<IElementType> doGetRelTypesOnTarget(InitialNodeEditPart target) {
 		List<IElementType> types = new ArrayList<IElementType>(1);
-		types.add(org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.ActivityEdge_4001);
+		types.add(ComponentStoryDiagramElementTypes.ActivityEdge_4001);
 		return types;
 	}
 
@@ -141,28 +131,22 @@ public class ComponentStoryDiagramModelingAssistantProviderOfInitialNodeEditPart
 	 * @generated
 	 */
 	@Override
-	public List<IElementType> getTypesForSource(IAdaptable target,
-			IElementType relationshipType) {
-		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target
-				.getAdapter(IGraphicalEditPart.class);
-		return doGetTypesForSource(
-				(org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.InitialNodeEditPart) targetEditPart,
-				relationshipType);
+	public List<IElementType> getTypesForSource(IAdaptable target, IElementType relationshipType) {
+		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target.getAdapter(IGraphicalEditPart.class);
+		return doGetTypesForSource((InitialNodeEditPart) targetEditPart, relationshipType);
 	}
 
 	/**
-	 * @generated
-	 */
-	public List<IElementType> doGetTypesForSource(
-			org.muml.reconfiguration.componentstorydiagram.diagram.edit.parts.InitialNodeEditPart target,
-			IElementType relationshipType) {
+	* @generated
+	*/
+	public List<IElementType> doGetTypesForSource(InitialNodeEditPart target, IElementType relationshipType) {
 		List<IElementType> types = new ArrayList<IElementType>();
-		if (relationshipType == org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.ActivityEdge_4001) {
-			types.add(org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.ComponentStoryNode_3001);
-			types.add(org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.InitialNode_3007);
-			types.add(org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.JunctionNode_3008);
-			types.add(org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.ActivityFinalNode_3010);
-			types.add(org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.ControllerExchangeNode_3021);
+		if (relationshipType == ComponentStoryDiagramElementTypes.ActivityEdge_4001) {
+			types.add(ComponentStoryDiagramElementTypes.ComponentStoryNode_3001);
+			types.add(ComponentStoryDiagramElementTypes.InitialNode_3007);
+			types.add(ComponentStoryDiagramElementTypes.JunctionNode_3008);
+			types.add(ComponentStoryDiagramElementTypes.ActivityFinalNode_3010);
+			types.add(ComponentStoryDiagramElementTypes.ControllerExchangeNode_3021);
 		}
 		return types;
 	}

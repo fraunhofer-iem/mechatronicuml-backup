@@ -48,7 +48,7 @@
   	  <wizard
   	     name="%newWizardName"
   	     icon="icons/obj16/ComponentStoryDiagramFile.gif"
-  	     category="de.uni_paderborn.fujaba/de.uni_paderborn.fujaba.diagrams"
+  	     category="org.eclipse.ui.Examples"
   	     class="org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramCreationWizard"
   	     id="org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramCreationWizardID">
   	  	 <description>%newWizardDesc</description>  
@@ -59,8 +59,27 @@
 	
 	
 	<extension point="org.eclipse.ui.menus">
-	   <?gmfgen generated="true"?>   
+	   <?gmfgen generated="true"?>
 	   <menuContribution
+	         allPopups="false"
+	         locationURI="popup:de.uni_paderborn.fujaba.muml.browser.new.menu?after=additions">
+	  		<command
+                 commandId="org.muml.reconfiguration.componentstorydiagram.ComponentStoryRule.browser.create"
+                 icon="icons/obj16/ComponentStoryDiagramFile.gif"
+                 id="org.muml.reconfiguration.componentstorydiagram.ComponentStoryRule.browser.create"
+                 label="ComponentStoryRule"
+                 style="push">
+              <visibleWhen
+                    checkEnabled="false">
+                    <iterate ifEmpty="false" operator="and">
+                       <adapt type="org.eclipse.core.resources.IResource">
+				       </adapt>
+                    </iterate>	
+              </visibleWhen>
+           </command>
+      </menuContribution>
+      <?gmfgen generated="true"?>   
+	  <menuContribution
 	         allPopups="false"
 	         locationURI="popup:de.uni_paderborn.fujaba?after=diagrams">
 	      <command
@@ -70,30 +89,38 @@
 	            label="Create Component Story Diagram"
 	            style="push">
 	            	<visibleWhen checkEnabled="false">
-						<reference definitionId="de.uni_paderborn.fujaba.expression.fujabafile"></reference>
+		            	<or>
+		            	<reference definitionId="de.uni_paderborn.fujaba.expression.fujabafile"></reference>
+						<iterate ifEmpty="false" operator="or">
+		            		<adapt type="org.eclipse.core.resources.IResource">
+		            			<test property="org.eclipse.core.resources.name" value="*.activities"></test>
+	              			</adapt>
+		    			</iterate>
+		    			</or>
           			</visibleWhen>
 	      </command>
 	   </menuContribution>
+	   
 	</extension>
 
 	
 	<extension point="org.eclipse.ui.commands">
-		<?gmfgen generated="true"?>
-		<command
-			categoryId="de.uni_paderborn.fujaba"
-			description="Initialize realtimestatechart_diagram"
-			defaultHandler="org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramInitDiagramFileAction"
-			id="org.muml.reconfiguration.componentstorydiagram.diagram.createDiagram"
-			name="%initDiagramActionLabel">
-		</command>
-	</extension>
+	<?gmfgen generated="true"?>
+	<command
+           defaultHandler="org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramInitDiagramFileAction$CreateDiagramElement"
+           categoryId="de.uni_paderborn.fujaba"
+           description="Create new Component Story"
+           id="org.muml.reconfiguration.componentstorydiagram.ComponentStoryRule.browser.create"
+           name="Create new Component Story">
+    </command>
+    </extension>
 
 	
 	<extension
          point="org.muml.core.modelinstance.modelelementcategory">
       <?gmfgen generated="true"?>  
       <category
-            key="org.storydriven.storydiagrams.activities.category"
+            key="org.muml.storydiagram.activities.category"
             name="activities">
          
          <child
@@ -113,7 +140,7 @@
             editorId="org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramEditorID"
             editorName="Component Story Editor"
             fileExtension="componentstorydiagram_diagram"
-            modelElementCategoryKey="org.storydriven.storydiagrams.activities.category"
+            modelElementCategoryKey="org.muml.storydiagram.activities.category"
             modelId="Component Story">
          <diagramElement
                packageNsURI="http://www.muml.org/reconfiguration/componentstorydiagram/1.0.0"
@@ -770,6 +797,32 @@
          </propertySection>
       </propertySections>
    </extension>
+<extension point="org.eclipse.emf.ecore.extension_parser" id="resource-factory">
+      <?gmfgen generated="true"?>
+      <parser
+         type="componentstoryrule"
+         class="org.eclipse.gmf.runtime.emf.core.resources.GMFResourceFactory">
+      </parser>
+   </extension>
+
+<extension point="org.eclipse.core.contenttype.contentTypes">
+		<?gmfgen generated="true"?>
+   		<!--
+   		<file-association content-type="de.uni_paderborn.fujaba.modelinstance.editor.model" file-extensions="activities"/>
+   		-->
+    </extension>
+
+<extension point="org.eclipse.ui.commands">
+		<?gmfgen generated="true"?>
+		<command
+			categoryId="de.uni_paderborn.fujaba"
+			description="Initialize realtimestatechart_diagram"
+			defaultHandler="org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramInitDiagramFileAction"
+			id="org.muml.reconfiguration.componentstorydiagram.diagram.createDiagram"
+			name="%initDiagramActionLabel">
+		</command>
+	</extension>
+
 
 
 

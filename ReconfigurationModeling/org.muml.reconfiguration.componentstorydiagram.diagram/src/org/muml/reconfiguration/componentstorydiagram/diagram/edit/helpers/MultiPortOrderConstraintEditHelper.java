@@ -15,7 +15,5 @@ package org.muml.reconfiguration.componentstorydiagram.diagram.edit.helpers;
 /**
  * @generated
  */
-public class MultiPortOrderConstraintEditHelper
-		extends
-		org.muml.reconfiguration.componentstorydiagram.diagram.edit.helpers.ComponentStoryDiagramBaseEditHelper {
+public class MultiPortOrderConstraintEditHelper extends ComponentStoryDiagramBaseEditHelper {
 }

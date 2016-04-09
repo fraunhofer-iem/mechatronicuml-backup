@@ -14,35 +14,32 @@ package org.muml.reconfiguration.componentstorydiagram.diagram.edit.policies;
 
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
+import org.muml.reconfiguration.componentstorydiagram.diagram.edit.commands.FadingComponentPartVariableCreateCommand;
+import org.muml.reconfiguration.componentstorydiagram.diagram.edit.commands.PartVariableCreateCommand;
+import org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes;
 
 /**
  * @generated
  */
 public class ComponentVariableComponentVariableCompartment2ItemSemanticEditPolicy
-		extends
-		org.muml.reconfiguration.componentstorydiagram.diagram.edit.policies.ComponentStoryDiagramBaseItemSemanticEditPolicy {
+		extends ComponentStoryDiagramBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public ComponentVariableComponentVariableCompartment2ItemSemanticEditPolicy() {
-		super(
-				org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.ComponentVariable_3023);
+		super(ComponentStoryDiagramElementTypes.ComponentVariable_3023);
 	}
 
 	/**
 	 * @generated
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
-		if (org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.ComponentPartVariable_3014 == req
-				.getElementType()) {
-			return getGEFWrapper(new org.muml.reconfiguration.componentstorydiagram.diagram.edit.commands.PartVariableCreateCommand(
-					req));
+		if (ComponentStoryDiagramElementTypes.ComponentPartVariable_3014 == req.getElementType()) {
+			return getGEFWrapper(new PartVariableCreateCommand(req));
 		}
-		if (org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.FadingComponentPartVariable_3024 == req
-				.getElementType()) {
-			return getGEFWrapper(new org.muml.reconfiguration.componentstorydiagram.diagram.edit.commands.FadingComponentPartVariableCreateCommand(
-					req));
+		if (ComponentStoryDiagramElementTypes.FadingComponentPartVariable_3024 == req.getElementType()) {
+			return getGEFWrapper(new FadingComponentPartVariableCreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}

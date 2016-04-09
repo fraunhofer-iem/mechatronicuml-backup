@@ -9,6 +9,9 @@ import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy;
+import org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy;
+import org.muml.reconfiguration.componentstorydiagram.diagram.edit.policies.ComponentStoryDiagramBaseItemSemanticEditPolicy;
 import org.muml.storydiagram.activities.Activity;
 import org.muml.storydiagram.activities.ActivityEdge;
 import org.muml.storydiagram.activities.ActivityNode;
@@ -71,19 +74,13 @@ public class ActivityEdgeReorientCommand extends EditElementCommand {
 			return false;
 		}
 		Activity container = (Activity) getLink().eContainer();
-		View sourceView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-				.getSourceView(getRequest());
-		View targetView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-				.getTargetView(getRequest());
-		if (!org.muml.reconfiguration.componentstorydiagram.diagram.edit.policies.ComponentStoryDiagramBaseItemSemanticEditPolicy
-				.getLinkConstraints().canExistActivityEdge_4001(container,
-						getLink(), getNewSource(), target, sourceView,
-						targetView)) {
-			String errorMessage = org.muml.reconfiguration.componentstorydiagram.diagram.edit.policies.ComponentStoryDiagramBaseItemSemanticEditPolicy
-					.getLinkConstraints().getErrorActivityEdge_4001(container,
-							getNewSource(), target, sourceView, targetView);
-			org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy
-					.showMessage(sourceView, errorMessage);
+		View sourceView = ConnectionConfigureHelperGraphicalNodeEditPolicy.getSourceView(getRequest());
+		View targetView = ConnectionConfigureHelperGraphicalNodeEditPolicy.getTargetView(getRequest());
+		if (!ComponentStoryDiagramBaseItemSemanticEditPolicy.getLinkConstraints().canExistActivityEdge_4001(container,
+				getLink(), getNewSource(), target, sourceView, targetView)) {
+			String errorMessage = ComponentStoryDiagramBaseItemSemanticEditPolicy.getLinkConstraints()
+					.getErrorActivityEdge_4001(container, getNewSource(), target, sourceView, targetView);
+			ErrorFeedbackEditPolicy.showMessage(sourceView, errorMessage);
 			return false;
 		}
 		return true;
@@ -101,19 +98,13 @@ public class ActivityEdgeReorientCommand extends EditElementCommand {
 			return false;
 		}
 		Activity container = (Activity) getLink().eContainer();
-		View sourceView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-				.getSourceView(getRequest());
-		View targetView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-				.getTargetView(getRequest());
-		if (!org.muml.reconfiguration.componentstorydiagram.diagram.edit.policies.ComponentStoryDiagramBaseItemSemanticEditPolicy
-				.getLinkConstraints().canExistActivityEdge_4001(container,
-						getLink(), source, getNewTarget(), sourceView,
-						targetView)) {
-			String errorMessage = org.muml.reconfiguration.componentstorydiagram.diagram.edit.policies.ComponentStoryDiagramBaseItemSemanticEditPolicy
-					.getLinkConstraints().getErrorActivityEdge_4001(container,
-							source, getNewTarget(), sourceView, targetView);
-			org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy
-					.showMessage(sourceView, errorMessage);
+		View sourceView = ConnectionConfigureHelperGraphicalNodeEditPolicy.getSourceView(getRequest());
+		View targetView = ConnectionConfigureHelperGraphicalNodeEditPolicy.getTargetView(getRequest());
+		if (!ComponentStoryDiagramBaseItemSemanticEditPolicy.getLinkConstraints().canExistActivityEdge_4001(container,
+				getLink(), source, getNewTarget(), sourceView, targetView)) {
+			String errorMessage = ComponentStoryDiagramBaseItemSemanticEditPolicy.getLinkConstraints()
+					.getErrorActivityEdge_4001(container, source, getNewTarget(), sourceView, targetView);
+			ErrorFeedbackEditPolicy.showMessage(sourceView, errorMessage);
 			return false;
 		}
 		return true;
@@ -122,11 +113,9 @@ public class ActivityEdgeReorientCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
-			IAdaptable info) throws ExecutionException {
+	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		if (!canExecute()) {
-			throw new ExecutionException(
-					"Invalid arguments in reorient link command"); //$NON-NLS-1$
+			throw new ExecutionException("Invalid arguments in reorient link command"); //$NON-NLS-1$
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
 			return reorientSource();
