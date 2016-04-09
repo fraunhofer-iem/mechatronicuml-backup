@@ -52,12 +52,12 @@ public class HardwareDiagramEditor extends DiagramDocumentEditor implements IGot
 	/**
 	 * @generated
 	 */
-	public static final String ID = "de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareDiagramEditorID"; //$NON-NLS-1$
+	public static final String ID = "org.muml.pm.hardware.resourceinstance.diagram.part.HardwareDiagramEditorID"; //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final String CONTEXT_ID = "de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.ui.diagramContext"; //$NON-NLS-1$
+	public static final String CONTEXT_ID = "org.muml.pm.hardware.resourceinstance.diagram.ui.diagramContext"; //$NON-NLS-1$
 
 	/**
 	 * @generated

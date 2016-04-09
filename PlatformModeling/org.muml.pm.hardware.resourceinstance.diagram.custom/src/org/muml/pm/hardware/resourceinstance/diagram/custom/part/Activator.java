@@ -26,7 +26,7 @@ public class Activator extends AbstractUIPlugin {
 
 	// The plug-in ID
 
-	public static final String CREATEINSTANCE_TRANSFORMATION = "/de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.custom/transforms/SynchInstances.qvto";
+	public static final String CREATEINSTANCE_TRANSFORMATION = "/org.muml.pm.hardware.resourceinstance.diagram.custom/transforms/SynchInstances.qvto";
 
 	// The shared instance
 	private static Activator plugin;

@@ -36,12 +36,12 @@ public class OpenResourceInstanceDiagramEditPolicy extends
 
 	@Override
 	protected String getEditorID() {
-		return "de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareDiagramEditorID";
+		return "org.muml.pm.hardware.resourceinstance.diagram.part.HardwareDiagramEditorID";
 	}
 
 	@Override
 	protected String getPluginID() {
-		return "de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram";
+		return "org.muml.pm.hardware.resourceinstance.diagram";
 	}
 
 	@Override
