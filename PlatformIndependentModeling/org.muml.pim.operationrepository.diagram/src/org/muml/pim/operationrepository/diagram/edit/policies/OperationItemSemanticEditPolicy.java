@@ -23,18 +23,21 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.pim.operationrepository.diagram.edit.parts.OperationParametersCompartmentEditPart;
+import org.muml.pim.operationrepository.diagram.edit.parts.ParameterEditPart;
+import org.muml.pim.operationrepository.diagram.part.MumlVisualIDRegistry;
+import org.muml.pim.operationrepository.diagram.providers.MumlElementTypes;
 
 /**
  * @generated
  */
-public class OperationItemSemanticEditPolicy
-		extends org.muml.pim.operationrepository.diagram.edit.policies.MumlBaseItemSemanticEditPolicy {
+public class OperationItemSemanticEditPolicy extends MumlBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public OperationItemSemanticEditPolicy() {
-		super(org.muml.pim.operationrepository.diagram.providers.MumlElementTypes.Operation_3001);
+		super(MumlElementTypes.Operation_3001);
 	}
 
 	/**
@@ -64,14 +67,12 @@ public class OperationItemSemanticEditPolicy
 		View view = (View) getHost().getModel();
 		for (Iterator<?> nit = view.getChildren().iterator(); nit.hasNext();) {
 			Node node = (Node) nit.next();
-			switch (org.muml.pim.operationrepository.diagram.part.MumlVisualIDRegistry
-					.getVisualID(node)) {
-			case org.muml.pim.operationrepository.diagram.edit.parts.OperationParametersCompartmentEditPart.VISUAL_ID:
+			switch (MumlVisualIDRegistry.getVisualID(node)) {
+			case OperationParametersCompartmentEditPart.VISUAL_ID:
 				for (Iterator<?> cit = node.getChildren().iterator(); cit.hasNext();) {
 					Node cnode = (Node) cit.next();
-					switch (org.muml.pim.operationrepository.diagram.part.MumlVisualIDRegistry
-							.getVisualID(cnode)) {
-					case org.muml.pim.operationrepository.diagram.edit.parts.ParameterEditPart.VISUAL_ID:
+					switch (MumlVisualIDRegistry.getVisualID(cnode)) {
+					case ParameterEditPart.VISUAL_ID:
 
 						cmd.add(new DestroyElementCommand(
 								new DestroyElementRequest(getEditingDomain(), cnode.getElement(), false)));

@@ -11,6 +11,10 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.pim.behavior.BehaviorFactory;
+import org.muml.pim.behavior.Operation;
+import org.muml.pim.behavior.OperationRepository;
+import org.muml.pim.operationrepository.diagram.providers.ElementInitializers;
 
 /**
  * @generated
@@ -48,14 +52,12 @@ public class OperationCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-		org.muml.pim.behavior.Operation newElement = org.muml.pim.behavior.BehaviorFactory.eINSTANCE
-				.createOperation();
+		Operation newElement = BehaviorFactory.eINSTANCE.createOperation();
 
-		org.muml.pim.behavior.OperationRepository owner = (org.muml.pim.behavior.OperationRepository) getElementToEdit();
+		OperationRepository owner = (OperationRepository) getElementToEdit();
 		owner.getOperations().add(newElement);
 
-		org.muml.pim.operationrepository.diagram.providers.ElementInitializers.getInstance()
-				.init_Operation_3001(newElement);
+		ElementInitializers.getInstance().init_Operation_3001(newElement);
 
 		doConfigure(newElement, monitor, info);
 
@@ -64,10 +66,10 @@ public class OperationCreateCommand extends EditElementCommand {
 	}
 
 	/**
-	 * @generated
-	 */
-	protected void doConfigure(org.muml.pim.behavior.Operation newElement, IProgressMonitor monitor,
-			IAdaptable info) throws ExecutionException {
+	* @generated
+	*/
+	protected void doConfigure(Operation newElement, IProgressMonitor monitor, IAdaptable info)
+			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest()).getElementType();
 		ConfigureRequest configureRequest = new ConfigureRequest(getEditingDomain(), newElement, elementType);
 		configureRequest.setClientContext(((CreateElementRequest) getRequest()).getClientContext());

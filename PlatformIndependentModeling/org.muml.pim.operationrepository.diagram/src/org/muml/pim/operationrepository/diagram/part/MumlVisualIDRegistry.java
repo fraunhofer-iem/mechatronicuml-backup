@@ -6,6 +6,19 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.structure.DiagramStructure;
+import org.muml.core.modelinstance.ModelElementCategory;
+import org.muml.core.modelinstance.ModelinstancePackage;
+import org.muml.pim.behavior.BehaviorPackage;
+import org.muml.pim.operationrepository.diagram.edit.parts.ModelElementCategoryEditPart;
+import org.muml.pim.operationrepository.diagram.edit.parts.OperationEditPart;
+import org.muml.pim.operationrepository.diagram.edit.parts.OperationNameEditPart;
+import org.muml.pim.operationrepository.diagram.edit.parts.OperationParametersCompartmentEditPart;
+import org.muml.pim.operationrepository.diagram.edit.parts.OperationRepositoryEditPart;
+import org.muml.pim.operationrepository.diagram.edit.parts.OperationRepositoryNameEditPart;
+import org.muml.pim.operationrepository.diagram.edit.parts.OperationRepositoryOperationCompartmentEditPart;
+import org.muml.pim.operationrepository.diagram.edit.parts.ParameterEditPart;
+import org.muml.pim.operationrepository.diagram.edit.parts.WrappingLabel2EditPart;
+import org.muml.pim.operationrepository.diagram.edit.parts.WrappingLabelEditPart;
 
 /**
  * This registry is used to determine which type of visual object should be
@@ -26,15 +39,13 @@ public class MumlVisualIDRegistry {
 	 */
 	public static int getVisualID(View view) {
 		if (view instanceof Diagram) {
-			if (org.muml.pim.operationrepository.diagram.edit.parts.ModelElementCategoryEditPart.MODEL_ID
-					.equals(view.getType())) {
-				return org.muml.pim.operationrepository.diagram.edit.parts.ModelElementCategoryEditPart.VISUAL_ID;
+			if (ModelElementCategoryEditPart.MODEL_ID.equals(view.getType())) {
+				return ModelElementCategoryEditPart.VISUAL_ID;
 			} else {
 				return -1;
 			}
 		}
-		return org.muml.pim.operationrepository.diagram.part.MumlVisualIDRegistry
-				.getVisualID(view.getType());
+		return org.muml.pim.operationrepository.diagram.part.MumlVisualIDRegistry.getVisualID(view.getType());
 	}
 
 	/**
@@ -60,8 +71,8 @@ public class MumlVisualIDRegistry {
 			return Integer.parseInt(type);
 		} catch (NumberFormatException e) {
 			if (Boolean.TRUE.toString().equalsIgnoreCase(Platform.getDebugOption(DEBUG_KEY))) {
-				org.muml.pim.operationrepository.diagram.part.OperationRepositoryDiagramEditorPlugin
-						.getInstance().logError("Unable to parse view type as a visualID number: " + type);
+				OperationRepositoryDiagramEditorPlugin.getInstance()
+						.logError("Unable to parse view type as a visualID number: " + type);
 			}
 		}
 		return -1;
@@ -81,10 +92,9 @@ public class MumlVisualIDRegistry {
 		if (domainElement == null) {
 			return -1;
 		}
-		if (org.muml.core.modelinstance.ModelinstancePackage.eINSTANCE.getModelElementCategory()
-				.isSuperTypeOf(domainElement.eClass())
-				&& isDiagram((org.muml.core.modelinstance.ModelElementCategory) domainElement)) {
-			return org.muml.pim.operationrepository.diagram.edit.parts.ModelElementCategoryEditPart.VISUAL_ID;
+		if (ModelinstancePackage.eINSTANCE.getModelElementCategory().isSuperTypeOf(domainElement.eClass())
+				&& isDiagram((ModelElementCategory) domainElement)) {
+			return ModelElementCategoryEditPart.VISUAL_ID;
 		}
 		return -1;
 	}
@@ -98,39 +108,34 @@ public class MumlVisualIDRegistry {
 		}
 		String containerModelID = org.muml.pim.operationrepository.diagram.part.MumlVisualIDRegistry
 				.getModelID(containerView);
-		if (!org.muml.pim.operationrepository.diagram.edit.parts.ModelElementCategoryEditPart.MODEL_ID
-				.equals(containerModelID)) {
+		if (!ModelElementCategoryEditPart.MODEL_ID.equals(containerModelID)) {
 			return -1;
 		}
 		int containerVisualID;
-		if (org.muml.pim.operationrepository.diagram.edit.parts.ModelElementCategoryEditPart.MODEL_ID
-				.equals(containerModelID)) {
+		if (ModelElementCategoryEditPart.MODEL_ID.equals(containerModelID)) {
 			containerVisualID = org.muml.pim.operationrepository.diagram.part.MumlVisualIDRegistry
 					.getVisualID(containerView);
 		} else {
 			if (containerView instanceof Diagram) {
-				containerVisualID = org.muml.pim.operationrepository.diagram.edit.parts.ModelElementCategoryEditPart.VISUAL_ID;
+				containerVisualID = ModelElementCategoryEditPart.VISUAL_ID;
 			} else {
 				return -1;
 			}
 		}
 		switch (containerVisualID) {
-		case org.muml.pim.operationrepository.diagram.edit.parts.ModelElementCategoryEditPart.VISUAL_ID:
-			if (org.muml.pim.behavior.BehaviorPackage.eINSTANCE.getOperationRepository()
-					.isSuperTypeOf(domainElement.eClass())) {
-				return org.muml.pim.operationrepository.diagram.edit.parts.OperationRepositoryEditPart.VISUAL_ID;
+		case ModelElementCategoryEditPart.VISUAL_ID:
+			if (BehaviorPackage.eINSTANCE.getOperationRepository().isSuperTypeOf(domainElement.eClass())) {
+				return OperationRepositoryEditPart.VISUAL_ID;
 			}
 			break;
-		case org.muml.pim.operationrepository.diagram.edit.parts.OperationRepositoryOperationCompartmentEditPart.VISUAL_ID:
-			if (org.muml.pim.behavior.BehaviorPackage.eINSTANCE.getOperation()
-					.isSuperTypeOf(domainElement.eClass())) {
-				return org.muml.pim.operationrepository.diagram.edit.parts.OperationEditPart.VISUAL_ID;
+		case OperationRepositoryOperationCompartmentEditPart.VISUAL_ID:
+			if (BehaviorPackage.eINSTANCE.getOperation().isSuperTypeOf(domainElement.eClass())) {
+				return OperationEditPart.VISUAL_ID;
 			}
 			break;
-		case org.muml.pim.operationrepository.diagram.edit.parts.OperationParametersCompartmentEditPart.VISUAL_ID:
-			if (org.muml.pim.behavior.BehaviorPackage.eINSTANCE.getParameter()
-					.isSuperTypeOf(domainElement.eClass())) {
-				return org.muml.pim.operationrepository.diagram.edit.parts.ParameterEditPart.VISUAL_ID;
+		case OperationParametersCompartmentEditPart.VISUAL_ID:
+			if (BehaviorPackage.eINSTANCE.getParameter().isSuperTypeOf(domainElement.eClass())) {
+				return ParameterEditPart.VISUAL_ID;
 			}
 			break;
 		}
@@ -143,59 +148,57 @@ public class MumlVisualIDRegistry {
 	public static boolean canCreateNode(View containerView, int nodeVisualID) {
 		String containerModelID = org.muml.pim.operationrepository.diagram.part.MumlVisualIDRegistry
 				.getModelID(containerView);
-		if (!org.muml.pim.operationrepository.diagram.edit.parts.ModelElementCategoryEditPart.MODEL_ID
-				.equals(containerModelID)) {
+		if (!ModelElementCategoryEditPart.MODEL_ID.equals(containerModelID)) {
 			return false;
 		}
 		int containerVisualID;
-		if (org.muml.pim.operationrepository.diagram.edit.parts.ModelElementCategoryEditPart.MODEL_ID
-				.equals(containerModelID)) {
+		if (ModelElementCategoryEditPart.MODEL_ID.equals(containerModelID)) {
 			containerVisualID = org.muml.pim.operationrepository.diagram.part.MumlVisualIDRegistry
 					.getVisualID(containerView);
 		} else {
 			if (containerView instanceof Diagram) {
-				containerVisualID = org.muml.pim.operationrepository.diagram.edit.parts.ModelElementCategoryEditPart.VISUAL_ID;
+				containerVisualID = ModelElementCategoryEditPart.VISUAL_ID;
 			} else {
 				return false;
 			}
 		}
 		switch (containerVisualID) {
-		case org.muml.pim.operationrepository.diagram.edit.parts.ModelElementCategoryEditPart.VISUAL_ID:
-			if (org.muml.pim.operationrepository.diagram.edit.parts.OperationRepositoryEditPart.VISUAL_ID == nodeVisualID) {
+		case ModelElementCategoryEditPart.VISUAL_ID:
+			if (OperationRepositoryEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
-		case org.muml.pim.operationrepository.diagram.edit.parts.OperationRepositoryEditPart.VISUAL_ID:
-			if (org.muml.pim.operationrepository.diagram.edit.parts.OperationRepositoryNameEditPart.VISUAL_ID == nodeVisualID) {
+		case OperationRepositoryEditPart.VISUAL_ID:
+			if (OperationRepositoryNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (org.muml.pim.operationrepository.diagram.edit.parts.OperationRepositoryOperationCompartmentEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case org.muml.pim.operationrepository.diagram.edit.parts.OperationEditPart.VISUAL_ID:
-			if (org.muml.pim.operationrepository.diagram.edit.parts.OperationNameEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (org.muml.pim.operationrepository.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (org.muml.pim.operationrepository.diagram.edit.parts.OperationParametersCompartmentEditPart.VISUAL_ID == nodeVisualID) {
+			if (OperationRepositoryOperationCompartmentEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
-		case org.muml.pim.operationrepository.diagram.edit.parts.ParameterEditPart.VISUAL_ID:
-			if (org.muml.pim.operationrepository.diagram.edit.parts.WrappingLabel2EditPart.VISUAL_ID == nodeVisualID) {
+		case OperationEditPart.VISUAL_ID:
+			if (OperationNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (WrappingLabelEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (OperationParametersCompartmentEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
-		case org.muml.pim.operationrepository.diagram.edit.parts.OperationRepositoryOperationCompartmentEditPart.VISUAL_ID:
-			if (org.muml.pim.operationrepository.diagram.edit.parts.OperationEditPart.VISUAL_ID == nodeVisualID) {
+		case ParameterEditPart.VISUAL_ID:
+			if (WrappingLabel2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
-		case org.muml.pim.operationrepository.diagram.edit.parts.OperationParametersCompartmentEditPart.VISUAL_ID:
-			if (org.muml.pim.operationrepository.diagram.edit.parts.ParameterEditPart.VISUAL_ID == nodeVisualID) {
+		case OperationRepositoryOperationCompartmentEditPart.VISUAL_ID:
+			if (OperationEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case OperationParametersCompartmentEditPart.VISUAL_ID:
+			if (ParameterEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -214,12 +217,12 @@ public class MumlVisualIDRegistry {
 	}
 
 	/**
-	 * User can change implementation of this method to handle some specific
-	 * situations not covered by default logic.
-	 * 
-	 * @generated
-	 */
-	private static boolean isDiagram(org.muml.core.modelinstance.ModelElementCategory element) {
+	* User can change implementation of this method to handle some specific
+	* situations not covered by default logic.
+	* 
+	* @generated
+	*/
+	private static boolean isDiagram(ModelElementCategory element) {
 		return true;
 	}
 
@@ -240,8 +243,8 @@ public class MumlVisualIDRegistry {
 	 */
 	public static boolean isCompartmentVisualID(int visualID) {
 		switch (visualID) {
-		case org.muml.pim.operationrepository.diagram.edit.parts.OperationRepositoryOperationCompartmentEditPart.VISUAL_ID:
-		case org.muml.pim.operationrepository.diagram.edit.parts.OperationParametersCompartmentEditPart.VISUAL_ID:
+		case OperationRepositoryOperationCompartmentEditPart.VISUAL_ID:
+		case OperationParametersCompartmentEditPart.VISUAL_ID:
 			return true;
 		default:
 			break;
@@ -254,9 +257,9 @@ public class MumlVisualIDRegistry {
 	 */
 	public static boolean isSemanticLeafVisualID(int visualID) {
 		switch (visualID) {
-		case org.muml.pim.operationrepository.diagram.edit.parts.ModelElementCategoryEditPart.VISUAL_ID:
+		case ModelElementCategoryEditPart.VISUAL_ID:
 			return false;
-		case org.muml.pim.operationrepository.diagram.edit.parts.ParameterEditPart.VISUAL_ID:
+		case ParameterEditPart.VISUAL_ID:
 			return true;
 		default:
 			break;
@@ -292,8 +295,8 @@ public class MumlVisualIDRegistry {
 		@Override
 
 		public int getNodeVisualID(View containerView, EObject domainElement) {
-			return org.muml.pim.operationrepository.diagram.part.MumlVisualIDRegistry
-					.getNodeVisualID(containerView, domainElement);
+			return org.muml.pim.operationrepository.diagram.part.MumlVisualIDRegistry.getNodeVisualID(containerView,
+					domainElement);
 		}
 
 		/**
@@ -302,8 +305,8 @@ public class MumlVisualIDRegistry {
 		@Override
 
 		public boolean checkNodeVisualID(View containerView, EObject domainElement, int candidate) {
-			return org.muml.pim.operationrepository.diagram.part.MumlVisualIDRegistry
-					.checkNodeVisualID(containerView, domainElement, candidate);
+			return org.muml.pim.operationrepository.diagram.part.MumlVisualIDRegistry.checkNodeVisualID(containerView,
+					domainElement, candidate);
 		}
 
 		/**
@@ -312,8 +315,7 @@ public class MumlVisualIDRegistry {
 		@Override
 
 		public boolean isCompartmentVisualID(int visualID) {
-			return org.muml.pim.operationrepository.diagram.part.MumlVisualIDRegistry
-					.isCompartmentVisualID(visualID);
+			return org.muml.pim.operationrepository.diagram.part.MumlVisualIDRegistry.isCompartmentVisualID(visualID);
 		}
 
 		/**
@@ -322,8 +324,7 @@ public class MumlVisualIDRegistry {
 		@Override
 
 		public boolean isSemanticLeafVisualID(int visualID) {
-			return org.muml.pim.operationrepository.diagram.part.MumlVisualIDRegistry
-					.isSemanticLeafVisualID(visualID);
+			return org.muml.pim.operationrepository.diagram.part.MumlVisualIDRegistry.isSemanticLeafVisualID(visualID);
 		}
 	};
 

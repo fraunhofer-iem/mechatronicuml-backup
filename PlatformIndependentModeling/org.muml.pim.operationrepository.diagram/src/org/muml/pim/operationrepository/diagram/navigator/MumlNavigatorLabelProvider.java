@@ -15,6 +15,18 @@ import org.eclipse.swt.graphics.Image;
 import org.eclipse.ui.IMemento;
 import org.eclipse.ui.navigator.ICommonContentExtensionSite;
 import org.eclipse.ui.navigator.ICommonLabelProvider;
+import org.muml.core.modelinstance.ModelElementCategory;
+import org.muml.pim.operationrepository.diagram.edit.parts.ModelElementCategoryEditPart;
+import org.muml.pim.operationrepository.diagram.edit.parts.OperationEditPart;
+import org.muml.pim.operationrepository.diagram.edit.parts.OperationNameEditPart;
+import org.muml.pim.operationrepository.diagram.edit.parts.OperationRepositoryEditPart;
+import org.muml.pim.operationrepository.diagram.edit.parts.OperationRepositoryNameEditPart;
+import org.muml.pim.operationrepository.diagram.edit.parts.ParameterEditPart;
+import org.muml.pim.operationrepository.diagram.edit.parts.WrappingLabel2EditPart;
+import org.muml.pim.operationrepository.diagram.part.MumlVisualIDRegistry;
+import org.muml.pim.operationrepository.diagram.part.OperationRepositoryDiagramEditorPlugin;
+import org.muml.pim.operationrepository.diagram.providers.MumlElementTypes;
+import org.muml.pim.operationrepository.diagram.providers.MumlParserProvider;
 
 /**
  * @generated
@@ -25,12 +37,10 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements ICommon
 	 * @generated
 	 */
 	static {
-		org.muml.pim.operationrepository.diagram.part.OperationRepositoryDiagramEditorPlugin
-				.getInstance().getImageRegistry()
-				.put("Navigator?UnknownElement", ImageDescriptor.getMissingImageDescriptor()); //$NON-NLS-1$
-		org.muml.pim.operationrepository.diagram.part.OperationRepositoryDiagramEditorPlugin
-				.getInstance().getImageRegistry()
-				.put("Navigator?ImageNotFound", ImageDescriptor.getMissingImageDescriptor()); //$NON-NLS-1$
+		OperationRepositoryDiagramEditorPlugin.getInstance().getImageRegistry().put("Navigator?UnknownElement", //$NON-NLS-1$
+				ImageDescriptor.getMissingImageDescriptor());
+		OperationRepositoryDiagramEditorPlugin.getInstance().getImageRegistry().put("Navigator?ImageNotFound", //$NON-NLS-1$
+				ImageDescriptor.getMissingImageDescriptor());
 	}
 
 	/**
@@ -38,10 +48,7 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements ICommon
 	 */
 	public void updateLabel(ViewerLabel label, TreePath elementPath) {
 		Object element = elementPath.getLastSegment();
-		if (element instanceof org.muml.pim.operationrepository.diagram.navigator.MumlNavigatorItem
-				&& !isOwnView(
-						((org.muml.pim.operationrepository.diagram.navigator.MumlNavigatorItem) element)
-								.getView())) {
+		if (element instanceof MumlNavigatorItem && !isOwnView(((MumlNavigatorItem) element).getView())) {
 			return;
 		}
 		label.setText(getText(element));
@@ -52,14 +59,13 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements ICommon
 	 * @generated
 	 */
 	public Image getImage(Object element) {
-		if (element instanceof org.muml.pim.operationrepository.diagram.navigator.MumlNavigatorGroup) {
-			org.muml.pim.operationrepository.diagram.navigator.MumlNavigatorGroup group = (org.muml.pim.operationrepository.diagram.navigator.MumlNavigatorGroup) element;
-			return org.muml.pim.operationrepository.diagram.part.OperationRepositoryDiagramEditorPlugin
-					.getInstance().getBundledImage(group.getIcon());
+		if (element instanceof MumlNavigatorGroup) {
+			MumlNavigatorGroup group = (MumlNavigatorGroup) element;
+			return OperationRepositoryDiagramEditorPlugin.getInstance().getBundledImage(group.getIcon());
 		}
 
-		if (element instanceof org.muml.pim.operationrepository.diagram.navigator.MumlNavigatorItem) {
-			org.muml.pim.operationrepository.diagram.navigator.MumlNavigatorItem navigatorItem = (org.muml.pim.operationrepository.diagram.navigator.MumlNavigatorItem) element;
+		if (element instanceof MumlNavigatorItem) {
+			MumlNavigatorItem navigatorItem = (MumlNavigatorItem) element;
 			if (!isOwnView(navigatorItem.getView())) {
 				return super.getImage(element);
 			}
@@ -73,19 +79,19 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements ICommon
 	 * @generated
 	 */
 	public Image getImage(View view) {
-		switch (org.muml.pim.operationrepository.diagram.part.MumlVisualIDRegistry.getVisualID(view)) {
-		case org.muml.pim.operationrepository.diagram.edit.parts.ModelElementCategoryEditPart.VISUAL_ID:
+		switch (MumlVisualIDRegistry.getVisualID(view)) {
+		case ModelElementCategoryEditPart.VISUAL_ID:
 			return getImage("Navigator?Diagram?http://www.muml.org/modelinstance/1.0.0?ModelElementCategory", //$NON-NLS-1$
-					org.muml.pim.operationrepository.diagram.providers.MumlElementTypes.ModelElementCategory_1000);
-		case org.muml.pim.operationrepository.diagram.edit.parts.OperationRepositoryEditPart.VISUAL_ID:
+					MumlElementTypes.ModelElementCategory_1000);
+		case OperationRepositoryEditPart.VISUAL_ID:
 			return getImage("Navigator?TopLevelNode?http://www.muml.org/pim/behavior/1.0.0?OperationRepository", //$NON-NLS-1$
-					org.muml.pim.operationrepository.diagram.providers.MumlElementTypes.OperationRepository_2001);
-		case org.muml.pim.operationrepository.diagram.edit.parts.OperationEditPart.VISUAL_ID:
+					MumlElementTypes.OperationRepository_2001);
+		case OperationEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.muml.org/pim/behavior/1.0.0?Operation", //$NON-NLS-1$
-					org.muml.pim.operationrepository.diagram.providers.MumlElementTypes.Operation_3001);
-		case org.muml.pim.operationrepository.diagram.edit.parts.ParameterEditPart.VISUAL_ID:
+					MumlElementTypes.Operation_3001);
+		case ParameterEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.muml.org/pim/behavior/1.0.0?Parameter", //$NON-NLS-1$
-					org.muml.pim.operationrepository.diagram.providers.MumlElementTypes.Parameter_3002);
+					MumlElementTypes.Parameter_3002);
 		}
 		return getImage("Navigator?UnknownElement", null); //$NON-NLS-1$
 	}
@@ -94,14 +100,10 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements ICommon
 	 * @generated
 	 */
 	private Image getImage(String key, IElementType elementType) {
-		ImageRegistry imageRegistry = org.muml.pim.operationrepository.diagram.part.OperationRepositoryDiagramEditorPlugin
-				.getInstance().getImageRegistry();
+		ImageRegistry imageRegistry = OperationRepositoryDiagramEditorPlugin.getInstance().getImageRegistry();
 		Image image = imageRegistry.get(key);
-		if (image == null && elementType != null
-				&& org.muml.pim.operationrepository.diagram.providers.MumlElementTypes
-						.isKnownElementType(elementType)) {
-			image = org.muml.pim.operationrepository.diagram.providers.MumlElementTypes
-					.getImage(elementType);
+		if (image == null && elementType != null && MumlElementTypes.isKnownElementType(elementType)) {
+			image = MumlElementTypes.getImage(elementType);
 			imageRegistry.put(key, image);
 		}
 
@@ -116,13 +118,13 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements ICommon
 	 * @generated
 	 */
 	public String getText(Object element) {
-		if (element instanceof org.muml.pim.operationrepository.diagram.navigator.MumlNavigatorGroup) {
-			org.muml.pim.operationrepository.diagram.navigator.MumlNavigatorGroup group = (org.muml.pim.operationrepository.diagram.navigator.MumlNavigatorGroup) element;
+		if (element instanceof MumlNavigatorGroup) {
+			MumlNavigatorGroup group = (MumlNavigatorGroup) element;
 			return group.getGroupName();
 		}
 
-		if (element instanceof org.muml.pim.operationrepository.diagram.navigator.MumlNavigatorItem) {
-			org.muml.pim.operationrepository.diagram.navigator.MumlNavigatorItem navigatorItem = (org.muml.pim.operationrepository.diagram.navigator.MumlNavigatorItem) element;
+		if (element instanceof MumlNavigatorItem) {
+			MumlNavigatorItem navigatorItem = (MumlNavigatorItem) element;
 			if (!isOwnView(navigatorItem.getView())) {
 				return null;
 			}
@@ -139,14 +141,14 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements ICommon
 		if (view.getElement() != null && view.getElement().eIsProxy()) {
 			return getUnresolvedDomainElementProxyText(view);
 		}
-		switch (org.muml.pim.operationrepository.diagram.part.MumlVisualIDRegistry.getVisualID(view)) {
-		case org.muml.pim.operationrepository.diagram.edit.parts.ModelElementCategoryEditPart.VISUAL_ID:
+		switch (MumlVisualIDRegistry.getVisualID(view)) {
+		case ModelElementCategoryEditPart.VISUAL_ID:
 			return getModelElementCategory_1000Text(view);
-		case org.muml.pim.operationrepository.diagram.edit.parts.OperationRepositoryEditPart.VISUAL_ID:
+		case OperationRepositoryEditPart.VISUAL_ID:
 			return getOperationRepository_2001Text(view);
-		case org.muml.pim.operationrepository.diagram.edit.parts.OperationEditPart.VISUAL_ID:
+		case OperationEditPart.VISUAL_ID:
 			return getOperation_3001Text(view);
-		case org.muml.pim.operationrepository.diagram.edit.parts.ParameterEditPart.VISUAL_ID:
+		case ParameterEditPart.VISUAL_ID:
 			return getParameter_3002Text(view);
 		}
 		return getUnknownElementText(view);
@@ -156,13 +158,12 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements ICommon
 	 * @generated
 	 */
 	private String getModelElementCategory_1000Text(View view) {
-		org.muml.core.modelinstance.ModelElementCategory domainModelElement = (org.muml.core.modelinstance.ModelElementCategory) view
-				.getElement();
+		ModelElementCategory domainModelElement = (ModelElementCategory) view.getElement();
 		if (domainModelElement != null) {
 			return domainModelElement.getName();
 		} else {
-			org.muml.pim.operationrepository.diagram.part.OperationRepositoryDiagramEditorPlugin
-					.getInstance().logError("No domain element for view with visualID = " + 1000); //$NON-NLS-1$
+			OperationRepositoryDiagramEditorPlugin.getInstance()
+					.logError("No domain element for view with visualID = " + 1000); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -171,18 +172,14 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements ICommon
 	 * @generated
 	 */
 	private String getOperationRepository_2001Text(View view) {
-		IParser parser = org.muml.pim.operationrepository.diagram.providers.MumlParserProvider
-				.getParser(
-						org.muml.pim.operationrepository.diagram.providers.MumlElementTypes.OperationRepository_2001,
-						view.getElement() != null ? view.getElement() : view,
-						org.muml.pim.operationrepository.diagram.part.MumlVisualIDRegistry.getType(
-								org.muml.pim.operationrepository.diagram.edit.parts.OperationRepositoryNameEditPart.VISUAL_ID));
+		IParser parser = MumlParserProvider.getParser(MumlElementTypes.OperationRepository_2001,
+				view.getElement() != null ? view.getElement() : view,
+				MumlVisualIDRegistry.getType(OperationRepositoryNameEditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
 					ParserOptions.NONE.intValue());
 		} else {
-			org.muml.pim.operationrepository.diagram.part.OperationRepositoryDiagramEditorPlugin
-					.getInstance().logError("Parser was not found for label " + 5003); //$NON-NLS-1$
+			OperationRepositoryDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5003); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -191,18 +188,14 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements ICommon
 	 * @generated
 	 */
 	private String getOperation_3001Text(View view) {
-		IParser parser = org.muml.pim.operationrepository.diagram.providers.MumlParserProvider
-				.getParser(
-						org.muml.pim.operationrepository.diagram.providers.MumlElementTypes.Operation_3001,
-						view.getElement() != null ? view.getElement() : view,
-						org.muml.pim.operationrepository.diagram.part.MumlVisualIDRegistry.getType(
-								org.muml.pim.operationrepository.diagram.edit.parts.OperationNameEditPart.VISUAL_ID));
+		IParser parser = MumlParserProvider.getParser(MumlElementTypes.Operation_3001,
+				view.getElement() != null ? view.getElement() : view,
+				MumlVisualIDRegistry.getType(OperationNameEditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
 					ParserOptions.NONE.intValue());
 		} else {
-			org.muml.pim.operationrepository.diagram.part.OperationRepositoryDiagramEditorPlugin
-					.getInstance().logError("Parser was not found for label " + 5002); //$NON-NLS-1$
+			OperationRepositoryDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5002); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -211,18 +204,14 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements ICommon
 	 * @generated
 	 */
 	private String getParameter_3002Text(View view) {
-		IParser parser = org.muml.pim.operationrepository.diagram.providers.MumlParserProvider
-				.getParser(
-						org.muml.pim.operationrepository.diagram.providers.MumlElementTypes.Parameter_3002,
-						view.getElement() != null ? view.getElement() : view,
-						org.muml.pim.operationrepository.diagram.part.MumlVisualIDRegistry.getType(
-								org.muml.pim.operationrepository.diagram.edit.parts.WrappingLabel2EditPart.VISUAL_ID));
+		IParser parser = MumlParserProvider.getParser(MumlElementTypes.Parameter_3002,
+				view.getElement() != null ? view.getElement() : view,
+				MumlVisualIDRegistry.getType(WrappingLabel2EditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
 					ParserOptions.NONE.intValue());
 		} else {
-			org.muml.pim.operationrepository.diagram.part.OperationRepositoryDiagramEditorPlugin
-					.getInstance().logError("Parser was not found for label " + 5001); //$NON-NLS-1$
+			OperationRepositoryDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5001); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -270,9 +259,7 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements ICommon
 	 * @generated
 	 */
 	private boolean isOwnView(View view) {
-		return org.muml.pim.operationrepository.diagram.edit.parts.ModelElementCategoryEditPart.MODEL_ID
-				.equals(org.muml.pim.operationrepository.diagram.part.MumlVisualIDRegistry
-						.getModelID(view));
+		return ModelElementCategoryEditPart.MODEL_ID.equals(MumlVisualIDRegistry.getModelID(view));
 	}
 
 }

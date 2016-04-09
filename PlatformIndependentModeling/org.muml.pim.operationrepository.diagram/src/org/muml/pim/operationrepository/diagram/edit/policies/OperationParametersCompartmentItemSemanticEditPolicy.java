@@ -14,29 +14,27 @@ package org.muml.pim.operationrepository.diagram.edit.policies;
 
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
+import org.muml.pim.operationrepository.diagram.edit.commands.ParameterCreateCommand;
+import org.muml.pim.operationrepository.diagram.providers.MumlElementTypes;
 
 /**
  * @generated
  */
-public class OperationParametersCompartmentItemSemanticEditPolicy
-		extends org.muml.pim.operationrepository.diagram.edit.policies.MumlBaseItemSemanticEditPolicy {
+public class OperationParametersCompartmentItemSemanticEditPolicy extends MumlBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public OperationParametersCompartmentItemSemanticEditPolicy() {
-		super(org.muml.pim.operationrepository.diagram.providers.MumlElementTypes.Operation_3001);
+		super(MumlElementTypes.Operation_3001);
 	}
 
 	/**
 	 * @generated
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
-		if (org.muml.pim.operationrepository.diagram.providers.MumlElementTypes.Parameter_3002 == req
-				.getElementType()) {
-			return getGEFWrapper(
-					new org.muml.pim.operationrepository.diagram.edit.commands.ParameterCreateCommand(
-							req));
+		if (MumlElementTypes.Parameter_3002 == req.getElementType()) {
+			return getGEFWrapper(new ParameterCreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}

@@ -66,11 +66,8 @@ public class MumlDocumentProvider extends AbstractDocumentProvider implements ID
 	 */
 	protected ElementInfo createElementInfo(Object element) throws CoreException {
 		if (false == element instanceof IFileEditorInput && false == element instanceof URIEditorInput) {
-			throw new CoreException(new Status(IStatus.ERROR,
-					org.muml.pim.operationrepository.diagram.part.OperationRepositoryDiagramEditorPlugin.ID,
-					0,
-					NLS.bind(
-							org.muml.pim.operationrepository.diagram.part.Messages.MumlDocumentProvider_IncorrectInputError,
+			throw new CoreException(new Status(IStatus.ERROR, OperationRepositoryDiagramEditorPlugin.ID, 0,
+					NLS.bind(Messages.MumlDocumentProvider_IncorrectInputError,
 							new Object[] { element, "org.eclipse.ui.IFileEditorInput", //$NON-NLS-1$
 									"org.eclipse.emf.common.ui.URIEditorInput" }), //$NON-NLS-1$ 
 					null));
@@ -89,11 +86,8 @@ public class MumlDocumentProvider extends AbstractDocumentProvider implements ID
 	 */
 	protected IDocument createDocument(Object element) throws CoreException {
 		if (false == element instanceof IFileEditorInput && false == element instanceof URIEditorInput) {
-			throw new CoreException(new Status(IStatus.ERROR,
-					org.muml.pim.operationrepository.diagram.part.OperationRepositoryDiagramEditorPlugin.ID,
-					0,
-					NLS.bind(
-							org.muml.pim.operationrepository.diagram.part.Messages.MumlDocumentProvider_IncorrectInputError,
+			throw new CoreException(new Status(IStatus.ERROR, OperationRepositoryDiagramEditorPlugin.ID, 0,
+					NLS.bind(Messages.MumlDocumentProvider_IncorrectInputError,
 							new Object[] { element, "org.eclipse.ui.IFileEditorInput", //$NON-NLS-1$
 									"org.eclipse.emf.common.ui.URIEditorInput" }), //$NON-NLS-1$ 
 					null));
@@ -237,29 +231,21 @@ public class MumlDocumentProvider extends AbstractDocumentProvider implements ID
 						}
 					}
 				}
-				throw new RuntimeException(
-						org.muml.pim.operationrepository.diagram.part.Messages.MumlDocumentProvider_NoDiagramInResourceError);
+				throw new RuntimeException(Messages.MumlDocumentProvider_NoDiagramInResourceError);
 			} catch (Exception e) {
 				CoreException thrownExcp = null;
 				if (e instanceof CoreException) {
 					thrownExcp = (CoreException) e;
 				} else {
 					String msg = e.getLocalizedMessage();
-					thrownExcp = new CoreException(new Status(IStatus.ERROR,
-							org.muml.pim.operationrepository.diagram.part.OperationRepositoryDiagramEditorPlugin.ID,
-							0,
-							msg != null ? msg
-									: org.muml.pim.operationrepository.diagram.part.Messages.MumlDocumentProvider_DiagramLoadingError,
-							e));
+					thrownExcp = new CoreException(new Status(IStatus.ERROR, OperationRepositoryDiagramEditorPlugin.ID,
+							0, msg != null ? msg : Messages.MumlDocumentProvider_DiagramLoadingError, e));
 				}
 				throw thrownExcp;
 			}
 		} else {
-			throw new CoreException(new Status(IStatus.ERROR,
-					org.muml.pim.operationrepository.diagram.part.OperationRepositoryDiagramEditorPlugin.ID,
-					0,
-					NLS.bind(
-							org.muml.pim.operationrepository.diagram.part.Messages.MumlDocumentProvider_IncorrectInputError,
+			throw new CoreException(new Status(IStatus.ERROR, OperationRepositoryDiagramEditorPlugin.ID, 0,
+					NLS.bind(Messages.MumlDocumentProvider_IncorrectInputError,
 							new Object[] { element, "org.eclipse.ui.IFileEditorInput", //$NON-NLS-1$
 									"org.eclipse.emf.common.ui.URIEditorInput" }), //$NON-NLS-1$ 
 					null));
@@ -341,10 +327,8 @@ public class MumlDocumentProvider extends AbstractDocumentProvider implements ID
 				try {
 					updateCache(element);
 				} catch (CoreException ex) {
-					org.muml.pim.operationrepository.diagram.part.OperationRepositoryDiagramEditorPlugin
-							.getInstance().logError(
-									org.muml.pim.operationrepository.diagram.part.Messages.MumlDocumentProvider_isModifiable,
-									ex);
+					OperationRepositoryDiagramEditorPlugin.getInstance()
+							.logError(Messages.MumlDocumentProvider_isModifiable, ex);
 					// Error message to log was initially taken from org.eclipse.gmf.runtime.diagram.ui.resources.editor.ide.internal.l10n.EditorMessages.StorageDocumentProvider_isModifiable
 				}
 			}
@@ -368,10 +352,8 @@ public class MumlDocumentProvider extends AbstractDocumentProvider implements ID
 				try {
 					updateCache(element);
 				} catch (CoreException ex) {
-					org.muml.pim.operationrepository.diagram.part.OperationRepositoryDiagramEditorPlugin
-							.getInstance().logError(
-									org.muml.pim.operationrepository.diagram.part.Messages.MumlDocumentProvider_isModifiable,
-									ex);
+					OperationRepositoryDiagramEditorPlugin.getInstance()
+							.logError(Messages.MumlDocumentProvider_isModifiable, ex);
 					// Error message to log was initially taken from org.eclipse.gmf.runtime.diagram.ui.resources.editor.ide.internal.l10n.EditorMessages.StorageDocumentProvider_isModifiable
 				}
 			}
@@ -545,32 +527,25 @@ public class MumlDocumentProvider extends AbstractDocumentProvider implements ID
 		ResourceSetInfo info = getResourceSetInfo(element);
 		if (info != null) {
 			if (!overwrite && !info.isSynchronized()) {
-				throw new CoreException(new Status(IStatus.ERROR,
-						org.muml.pim.operationrepository.diagram.part.OperationRepositoryDiagramEditorPlugin.ID,
-						IResourceStatus.OUT_OF_SYNC_LOCAL,
-						org.muml.pim.operationrepository.diagram.part.Messages.MumlDocumentProvider_UnsynchronizedFileSaveError,
+				throw new CoreException(new Status(IStatus.ERROR, OperationRepositoryDiagramEditorPlugin.ID,
+						IResourceStatus.OUT_OF_SYNC_LOCAL, Messages.MumlDocumentProvider_UnsynchronizedFileSaveError,
 						null));
 			}
 			info.stopResourceListening();
 			fireElementStateChanging(element);
 			try {
-				monitor.beginTask(
-						org.muml.pim.operationrepository.diagram.part.Messages.MumlDocumentProvider_SaveDiagramTask,
+				monitor.beginTask(Messages.MumlDocumentProvider_SaveDiagramTask,
 						info.getResourceSet().getResources().size() + 1); //"Saving diagram"
 				for (Iterator<Resource> it = info.getLoadedResourcesIterator(); it.hasNext();) {
 					Resource nextResource = it.next();
-					monitor.setTaskName(NLS.bind(
-							org.muml.pim.operationrepository.diagram.part.Messages.MumlDocumentProvider_SaveNextResourceTask,
-							nextResource.getURI()));
+					monitor.setTaskName(
+							NLS.bind(Messages.MumlDocumentProvider_SaveNextResourceTask, nextResource.getURI()));
 					if (nextResource.isLoaded() && !info.getEditingDomain().isReadOnly(nextResource)) {
 						try {
-							nextResource
-									.save(org.muml.pim.operationrepository.diagram.part.MumlDiagramEditorUtil
-											.getSaveOptions());
+							nextResource.save(MumlDiagramEditorUtil.getSaveOptions());
 						} catch (IOException e) {
 							fireElementStateChangeFailed(element);
-							throw new CoreException(new Status(IStatus.ERROR,
-									org.muml.pim.operationrepository.diagram.part.OperationRepositoryDiagramEditorPlugin.ID,
+							throw new CoreException(new Status(IStatus.ERROR, OperationRepositoryDiagramEditorPlugin.ID,
 									EditorStatusCodes.RESOURCE_FAILURE, e.getLocalizedMessage(), null));
 						}
 					}
@@ -595,20 +570,15 @@ public class MumlDocumentProvider extends AbstractDocumentProvider implements ID
 				newResoruceURI = ((URIEditorInput) element).getURI();
 			} else {
 				fireElementStateChangeFailed(element);
-				throw new CoreException(new Status(IStatus.ERROR,
-						org.muml.pim.operationrepository.diagram.part.OperationRepositoryDiagramEditorPlugin.ID,
-						0,
-						NLS.bind(
-								org.muml.pim.operationrepository.diagram.part.Messages.MumlDocumentProvider_IncorrectInputError,
+				throw new CoreException(new Status(IStatus.ERROR, OperationRepositoryDiagramEditorPlugin.ID, 0,
+						NLS.bind(Messages.MumlDocumentProvider_IncorrectInputError,
 								new Object[] { element, "org.eclipse.ui.IFileEditorInput", //$NON-NLS-1$
 										"org.eclipse.emf.common.ui.URIEditorInput" }), //$NON-NLS-1$ 
 						null));
 			}
 			if (false == document instanceof IDiagramDocument) {
 				fireElementStateChangeFailed(element);
-				throw new CoreException(new Status(IStatus.ERROR,
-						org.muml.pim.operationrepository.diagram.part.OperationRepositoryDiagramEditorPlugin.ID,
-						0,
+				throw new CoreException(new Status(IStatus.ERROR, OperationRepositoryDiagramEditorPlugin.ID, 0,
 						"Incorrect document used: " + document //$NON-NLS-1$
 								+ " instead of org.eclipse.gmf.runtime.diagram.ui.resources.editor.document.IDiagramDocument", //$NON-NLS-1$
 						null));
@@ -619,28 +589,22 @@ public class MumlDocumentProvider extends AbstractDocumentProvider implements ID
 			final Diagram diagramCopy = (Diagram) EcoreUtil.copy(diagramDocument.getDiagram());
 			try {
 				new AbstractTransactionalCommand(diagramDocument.getEditingDomain(),
-						NLS.bind(
-								org.muml.pim.operationrepository.diagram.part.Messages.MumlDocumentProvider_SaveAsOperation,
-								diagramCopy.getName()),
-						affectedFiles) {
+						NLS.bind(Messages.MumlDocumentProvider_SaveAsOperation, diagramCopy.getName()), affectedFiles) {
 					protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info)
 							throws ExecutionException {
 						newResource.getContents().add(diagramCopy);
 						return CommandResult.newOKCommandResult();
 					}
 				}.execute(monitor, null);
-				newResource.save(org.muml.pim.operationrepository.diagram.part.MumlDiagramEditorUtil
-						.getSaveOptions());
+				newResource.save(MumlDiagramEditorUtil.getSaveOptions());
 			} catch (ExecutionException e) {
 				fireElementStateChangeFailed(element);
-				throw new CoreException(new Status(IStatus.ERROR,
-						org.muml.pim.operationrepository.diagram.part.OperationRepositoryDiagramEditorPlugin.ID,
-						0, e.getLocalizedMessage(), null));
+				throw new CoreException(new Status(IStatus.ERROR, OperationRepositoryDiagramEditorPlugin.ID, 0,
+						e.getLocalizedMessage(), null));
 			} catch (IOException e) {
 				fireElementStateChangeFailed(element);
-				throw new CoreException(new Status(IStatus.ERROR,
-						org.muml.pim.operationrepository.diagram.part.OperationRepositoryDiagramEditorPlugin.ID,
-						0, e.getLocalizedMessage(), null));
+				throw new CoreException(new Status(IStatus.ERROR, OperationRepositoryDiagramEditorPlugin.ID, 0,
+						e.getLocalizedMessage(), null));
 			}
 			newResource.unload();
 		}
@@ -655,10 +619,8 @@ public class MumlDocumentProvider extends AbstractDocumentProvider implements ID
 			try {
 				file.refreshLocal(IResource.DEPTH_INFINITE, monitor);
 			} catch (CoreException ex) {
-				org.muml.pim.operationrepository.diagram.part.OperationRepositoryDiagramEditorPlugin
-						.getInstance().logError(
-								org.muml.pim.operationrepository.diagram.part.Messages.MumlDocumentProvider_handleElementContentChanged,
-								ex);
+				OperationRepositoryDiagramEditorPlugin.getInstance()
+						.logError(Messages.MumlDocumentProvider_handleElementContentChanged, ex);
 				// Error message to log was initially taken from org.eclipse.gmf.runtime.diagram.ui.resources.editor.ide.internal.l10n.EditorMessages.FileDocumentProvider_handleElementContentChanged
 			}
 		}

@@ -43,6 +43,8 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipReques
 import org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.edit.helpers.GeneratedEditHelperBase;
+import org.muml.pim.operationrepository.diagram.part.MumlVisualIDRegistry;
+import org.muml.pim.operationrepository.diagram.providers.MumlElementTypes;
 
 /**
  * @generated
@@ -80,9 +82,7 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		if (request instanceof ReconnectRequest) {
 			Object view = ((ReconnectRequest) request).getConnectionEditPart().getModel();
 			if (view instanceof View) {
-				Integer id = new Integer(
-						org.muml.pim.operationrepository.diagram.part.MumlVisualIDRegistry
-								.getVisualID((View) view));
+				Integer id = new Integer(MumlVisualIDRegistry.getVisualID((View) view));
 				request.getExtendedData().put(VISUAL_ID_KEY, id);
 			}
 		}
@@ -147,8 +147,7 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 	 * @generated
 	 */
 	private IElementType getContextElementType(IEditCommandRequest request) {
-		IElementType requestContextElementType = org.muml.pim.operationrepository.diagram.providers.MumlElementTypes
-				.getElementType(getVisualID(request));
+		IElementType requestContextElementType = MumlElementTypes.getElementType(getVisualID(request));
 		return requestContextElementType != null ? requestContextElementType : myElementType;
 	}
 

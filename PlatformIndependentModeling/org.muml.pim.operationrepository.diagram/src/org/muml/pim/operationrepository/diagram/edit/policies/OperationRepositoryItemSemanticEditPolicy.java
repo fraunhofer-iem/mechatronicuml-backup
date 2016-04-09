@@ -23,18 +23,21 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.pim.operationrepository.diagram.edit.parts.OperationEditPart;
+import org.muml.pim.operationrepository.diagram.edit.parts.OperationRepositoryOperationCompartmentEditPart;
+import org.muml.pim.operationrepository.diagram.part.MumlVisualIDRegistry;
+import org.muml.pim.operationrepository.diagram.providers.MumlElementTypes;
 
 /**
  * @generated
  */
-public class OperationRepositoryItemSemanticEditPolicy
-		extends org.muml.pim.operationrepository.diagram.edit.policies.MumlBaseItemSemanticEditPolicy {
+public class OperationRepositoryItemSemanticEditPolicy extends MumlBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public OperationRepositoryItemSemanticEditPolicy() {
-		super(org.muml.pim.operationrepository.diagram.providers.MumlElementTypes.OperationRepository_2001);
+		super(MumlElementTypes.OperationRepository_2001);
 	}
 
 	/**
@@ -64,14 +67,12 @@ public class OperationRepositoryItemSemanticEditPolicy
 		View view = (View) getHost().getModel();
 		for (Iterator<?> nit = view.getChildren().iterator(); nit.hasNext();) {
 			Node node = (Node) nit.next();
-			switch (org.muml.pim.operationrepository.diagram.part.MumlVisualIDRegistry
-					.getVisualID(node)) {
-			case org.muml.pim.operationrepository.diagram.edit.parts.OperationRepositoryOperationCompartmentEditPart.VISUAL_ID:
+			switch (MumlVisualIDRegistry.getVisualID(node)) {
+			case OperationRepositoryOperationCompartmentEditPart.VISUAL_ID:
 				for (Iterator<?> cit = node.getChildren().iterator(); cit.hasNext();) {
 					Node cnode = (Node) cit.next();
-					switch (org.muml.pim.operationrepository.diagram.part.MumlVisualIDRegistry
-							.getVisualID(cnode)) {
-					case org.muml.pim.operationrepository.diagram.edit.parts.OperationEditPart.VISUAL_ID:
+					switch (MumlVisualIDRegistry.getVisualID(cnode)) {
+					case OperationEditPart.VISUAL_ID:
 
 						cmd.add(new DestroyElementCommand(
 								new DestroyElementRequest(getEditingDomain(), cnode.getElement(), false)));

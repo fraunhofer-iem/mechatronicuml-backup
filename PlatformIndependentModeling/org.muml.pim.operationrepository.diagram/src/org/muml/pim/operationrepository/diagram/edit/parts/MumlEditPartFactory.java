@@ -6,6 +6,7 @@ import org.eclipse.gef.tools.CellEditorLocator;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ITextAwareEditPart;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.directedit.locator.CellEditorLocatorAccess;
+import org.muml.pim.operationrepository.diagram.part.MumlVisualIDRegistry;
 
 /**
  * @generated
@@ -18,46 +19,37 @@ public class MumlEditPartFactory implements EditPartFactory {
 	public EditPart createEditPart(EditPart context, Object model) {
 		if (model instanceof View) {
 			View view = (View) model;
-			switch (org.muml.pim.operationrepository.diagram.part.MumlVisualIDRegistry
-					.getVisualID(view)) {
+			switch (MumlVisualIDRegistry.getVisualID(view)) {
 
-			case org.muml.pim.operationrepository.diagram.edit.parts.ModelElementCategoryEditPart.VISUAL_ID:
-				return new org.muml.pim.operationrepository.diagram.edit.parts.ModelElementCategoryEditPart(
-						view);
+			case ModelElementCategoryEditPart.VISUAL_ID:
+				return new ModelElementCategoryEditPart(view);
 
-			case org.muml.pim.operationrepository.diagram.edit.parts.OperationRepositoryEditPart.VISUAL_ID:
-				return new org.muml.pim.operationrepository.diagram.edit.parts.OperationRepositoryEditPart(
-						view);
+			case OperationRepositoryEditPart.VISUAL_ID:
+				return new OperationRepositoryEditPart(view);
 
-			case org.muml.pim.operationrepository.diagram.edit.parts.OperationRepositoryNameEditPart.VISUAL_ID:
-				return new org.muml.pim.operationrepository.diagram.edit.parts.OperationRepositoryNameEditPart(
-						view);
+			case OperationRepositoryNameEditPart.VISUAL_ID:
+				return new OperationRepositoryNameEditPart(view);
 
-			case org.muml.pim.operationrepository.diagram.edit.parts.OperationEditPart.VISUAL_ID:
-				return new org.muml.pim.operationrepository.diagram.edit.parts.OperationEditPart(view);
+			case OperationEditPart.VISUAL_ID:
+				return new OperationEditPart(view);
 
-			case org.muml.pim.operationrepository.diagram.edit.parts.OperationNameEditPart.VISUAL_ID:
-				return new org.muml.pim.operationrepository.diagram.edit.parts.OperationNameEditPart(
-						view);
+			case OperationNameEditPart.VISUAL_ID:
+				return new OperationNameEditPart(view);
 
-			case org.muml.pim.operationrepository.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID:
-				return new org.muml.pim.operationrepository.diagram.edit.parts.WrappingLabelEditPart(
-						view);
+			case WrappingLabelEditPart.VISUAL_ID:
+				return new WrappingLabelEditPart(view);
 
-			case org.muml.pim.operationrepository.diagram.edit.parts.ParameterEditPart.VISUAL_ID:
-				return new org.muml.pim.operationrepository.diagram.edit.parts.ParameterEditPart(view);
+			case ParameterEditPart.VISUAL_ID:
+				return new ParameterEditPart(view);
 
-			case org.muml.pim.operationrepository.diagram.edit.parts.WrappingLabel2EditPart.VISUAL_ID:
-				return new org.muml.pim.operationrepository.diagram.edit.parts.WrappingLabel2EditPart(
-						view);
+			case WrappingLabel2EditPart.VISUAL_ID:
+				return new WrappingLabel2EditPart(view);
 
-			case org.muml.pim.operationrepository.diagram.edit.parts.OperationRepositoryOperationCompartmentEditPart.VISUAL_ID:
-				return new org.muml.pim.operationrepository.diagram.edit.parts.OperationRepositoryOperationCompartmentEditPart(
-						view);
+			case OperationRepositoryOperationCompartmentEditPart.VISUAL_ID:
+				return new OperationRepositoryOperationCompartmentEditPart(view);
 
-			case org.muml.pim.operationrepository.diagram.edit.parts.OperationParametersCompartmentEditPart.VISUAL_ID:
-				return new org.muml.pim.operationrepository.diagram.edit.parts.OperationParametersCompartmentEditPart(
-						view);
+			case OperationParametersCompartmentEditPart.VISUAL_ID:
+				return new OperationParametersCompartmentEditPart(view);
 			}
 		}
 		return createUnrecognizedEditPart(context, model);

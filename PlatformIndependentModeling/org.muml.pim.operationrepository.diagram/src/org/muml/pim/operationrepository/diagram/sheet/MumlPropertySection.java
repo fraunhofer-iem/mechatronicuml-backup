@@ -9,6 +9,8 @@ import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
 import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.gmf.tooling.runtime.sheet.DefaultPropertySection;
 import org.eclipse.ui.views.properties.IPropertySourceProvider;
+import org.muml.core.common.FujabaCommonPlugin;
+import org.muml.pim.operationrepository.diagram.part.OperationRepositoryDiagramEditorPlugin;
 
 /**
  * @generated
@@ -32,14 +34,10 @@ public class MumlPropertySection extends DefaultPropertySection implements IProp
 		AdapterFactoryEditingDomain editingDomain = getEditingDomainFor(object);
 		if (editingDomain != null) {
 			AdapterFactory defaultFactory = editingDomain.getAdapterFactory();
-			List<AdapterFactory> positivePriorityFactories = org.muml.core.common.FujabaCommonPlugin
-					.getInstance().getCustomItemProviderAdapterFactories(
-							org.muml.pim.operationrepository.diagram.part.OperationRepositoryDiagramEditorPlugin.ID,
-							true);
-			List<AdapterFactory> negativePriorityFactories = org.muml.core.common.FujabaCommonPlugin
-					.getInstance().getCustomItemProviderAdapterFactories(
-							org.muml.pim.operationrepository.diagram.part.OperationRepositoryDiagramEditorPlugin.ID,
-							false);
+			List<AdapterFactory> positivePriorityFactories = FujabaCommonPlugin.getInstance()
+					.getCustomItemProviderAdapterFactories(OperationRepositoryDiagramEditorPlugin.ID, true);
+			List<AdapterFactory> negativePriorityFactories = FujabaCommonPlugin.getInstance()
+					.getCustomItemProviderAdapterFactories(OperationRepositoryDiagramEditorPlugin.ID, false);
 
 			// Put all factories into one composed adapter factory.
 			List<AdapterFactory> factories = new ArrayList<AdapterFactory>();

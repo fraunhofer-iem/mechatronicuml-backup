@@ -31,6 +31,8 @@ import org.eclipse.gmf.runtime.common.ui.services.parser.ParserEditStatus;
 import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand;
 import org.eclipse.gmf.tooling.runtime.parsers.ExpressionLabelParserBase;
 import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
+import org.muml.pim.behavior.BehaviorPackage;
+import org.muml.pim.operationrepository.diagram.expressions.MumlOCLFactory;
 
 /**
  * @generated
@@ -48,9 +50,7 @@ public class ParameterLabelExpressionLabelParser5001 extends ExpressionLabelPars
 	@Override
 
 	protected String getExpressionBody() {
-		return org.muml.pim.operationrepository.diagram.expressions.MumlOCLFactory
-				.getExpression(0, org.muml.pim.behavior.BehaviorPackage.eINSTANCE.getParameter(), null)
-				.body();
+		return MumlOCLFactory.getExpression(0, BehaviorPackage.eINSTANCE.getParameter(), null).body();
 	}
 
 	/**

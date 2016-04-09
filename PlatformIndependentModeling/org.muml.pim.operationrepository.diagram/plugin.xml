@@ -48,7 +48,7 @@
   	  <wizard
   	     name="%newWizardName"
   	     icon="icons/obj16/ModelinstanceDiagramFile.gif"
-  	     category="de.uni_paderborn.fujaba/de.uni_paderborn.fujaba.diagrams"
+  	     category="org.muml/org.muml.diagrams"
   	     class="org.muml.pim.operationrepository.diagram.part.MumlCreationWizard"
   	     id="org.muml.pim.operationrepository.diagram.part.MumlCreationWizardID">
   	  	 <description>%newWizardDesc</description>  
@@ -64,9 +64,9 @@
 	         allPopups="false"
 	         locationURI="popup:de.uni_paderborn.fujaba.muml.browser.new.menu?after=additions">
 	  		<command
-                 commandId="de.uni_paderborn.fujaba.modelinstance.ModelElementCategory.browser.create"
+                 commandId="org.muml.core.modelinstance.ModelElementCategory.browser.create"
                  icon="icons/obj16/ModelinstanceDiagramFile.gif"
-                 id="de.uni_paderborn.fujaba.modelinstance.ModelElementCategory.browser.create"
+                 id="org.muml.core.modelinstance.ModelElementCategory.browser.create"
                  label="ModelElementCategory"
                  style="push">
               <visibleWhen
@@ -110,7 +110,7 @@
            defaultHandler="org.muml.pim.operationrepository.diagram.part.MumlInitDiagramFileAction$CreateDiagramElement"
            categoryId="de.uni_paderborn.fujaba"
            description="Create new Operation Repository"
-           id="de.uni_paderborn.fujaba.modelinstance.ModelElementCategory.browser.create"
+           id="org.muml.core.modelinstance.ModelElementCategory.browser.create"
            name="Create new Operation Repository">
     </command>
     </extension>
@@ -120,7 +120,7 @@
          point="org.muml.core.modelinstance.modelelementcategory">
       <?gmfgen generated="true"?>  
       <category
-            key="de.uni_paderborn.fujaba.muml.behavior.category"
+            key="org.muml.pim.behavior.category"
             name="behavior">
          
          
@@ -142,7 +142,7 @@
             editorId="org.muml.pim.operationrepository.diagram.part.MumlDiagramEditorID"
             editorName="Operation Repository Editor"
             fileExtension="operationrepository_diagram"
-            modelElementCategoryKey="de.uni_paderborn.fujaba.muml.behavior.category"
+            modelElementCategoryKey="org.muml.pim.behavior.category"
             modelId="Operation Repository">
          <diagramElement
                packageNsURI="http://www.muml.org/modelinstance/1.0.0"

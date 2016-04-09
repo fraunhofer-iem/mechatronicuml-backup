@@ -6,8 +6,7 @@ import java.util.LinkedList;
 /**
  * @generated
  */
-public class MumlNavigatorGroup
-		extends org.muml.pim.operationrepository.diagram.navigator.MumlAbstractNavigatorItem {
+public class MumlNavigatorGroup extends MumlAbstractNavigatorItem {
 
 	/**
 	 * @generated

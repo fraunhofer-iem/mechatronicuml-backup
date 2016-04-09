@@ -1,6 +1,7 @@
 package org.muml.pim.operationrepository.diagram.preferences;
 
 import org.eclipse.gmf.runtime.diagram.ui.preferences.RulerGridPreferencePage;
+import org.muml.pim.operationrepository.diagram.part.OperationRepositoryDiagramEditorPlugin;
 
 /**
  * @generated
@@ -11,8 +12,6 @@ public class DiagramRulersAndGridPreferencePage extends RulerGridPreferencePage 
 	 * @generated
 	 */
 	public DiagramRulersAndGridPreferencePage() {
-		setPreferenceStore(
-				org.muml.pim.operationrepository.diagram.part.OperationRepositoryDiagramEditorPlugin
-						.getInstance().getPreferenceStore());
+		setPreferenceStore(OperationRepositoryDiagramEditorPlugin.getInstance().getPreferenceStore());
 	}
 }

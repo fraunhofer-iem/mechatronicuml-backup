@@ -13,6 +13,14 @@ import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.emf.ui.services.parser.ParserHintAdapter;
 import org.eclipse.gmf.runtime.notation.View;
 import org.muml.core.CorePackage;
+import org.muml.pim.operationrepository.diagram.edit.parts.OperationNameEditPart;
+import org.muml.pim.operationrepository.diagram.edit.parts.OperationRepositoryNameEditPart;
+import org.muml.pim.operationrepository.diagram.edit.parts.WrappingLabel2EditPart;
+import org.muml.pim.operationrepository.diagram.edit.parts.WrappingLabelEditPart;
+import org.muml.pim.operationrepository.diagram.parsers.MessageFormatParser;
+import org.muml.pim.operationrepository.diagram.parsers.OperationLabelExpressionLabelParser5005;
+import org.muml.pim.operationrepository.diagram.parsers.ParameterLabelExpressionLabelParser5001;
+import org.muml.pim.operationrepository.diagram.part.MumlVisualIDRegistry;
 
 /**
  * @generated
@@ -30,8 +38,7 @@ public class MumlParserProvider extends AbstractProvider implements IParserProvi
 	private IParser getOperationRepositoryName_5003Parser() {
 		if (operationRepositoryName_5003Parser == null) {
 			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
-			org.muml.pim.operationrepository.diagram.parsers.MessageFormatParser parser = new org.muml.pim.operationrepository.diagram.parsers.MessageFormatParser(
-					features);
+			MessageFormatParser parser = new MessageFormatParser(features);
 			operationRepositoryName_5003Parser = parser;
 		}
 		return operationRepositoryName_5003Parser;
@@ -48,8 +55,7 @@ public class MumlParserProvider extends AbstractProvider implements IParserProvi
 	private IParser getOperationName_5002Parser() {
 		if (operationName_5002Parser == null) {
 			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
-			org.muml.pim.operationrepository.diagram.parsers.MessageFormatParser parser = new org.muml.pim.operationrepository.diagram.parsers.MessageFormatParser(
-					features);
+			MessageFormatParser parser = new MessageFormatParser(features);
 			operationName_5002Parser = parser;
 		}
 		return operationName_5002Parser;
@@ -59,14 +65,14 @@ public class MumlParserProvider extends AbstractProvider implements IParserProvi
 	 * @generated
 	 */
 	private IParser getOperationLabel_5005Parser() {
-		return new org.muml.pim.operationrepository.diagram.parsers.OperationLabelExpressionLabelParser5005();
+		return new OperationLabelExpressionLabelParser5005();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getParameterLabel_5001Parser() {
-		return new org.muml.pim.operationrepository.diagram.parsers.ParameterLabelExpressionLabelParser5001();
+		return new ParameterLabelExpressionLabelParser5001();
 	}
 
 	/**
@@ -74,13 +80,13 @@ public class MumlParserProvider extends AbstractProvider implements IParserProvi
 	 */
 	protected IParser getParser(int visualID) {
 		switch (visualID) {
-		case org.muml.pim.operationrepository.diagram.edit.parts.OperationRepositoryNameEditPart.VISUAL_ID:
+		case OperationRepositoryNameEditPart.VISUAL_ID:
 			return getOperationRepositoryName_5003Parser();
-		case org.muml.pim.operationrepository.diagram.edit.parts.OperationNameEditPart.VISUAL_ID:
+		case OperationNameEditPart.VISUAL_ID:
 			return getOperationName_5002Parser();
-		case org.muml.pim.operationrepository.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID:
+		case WrappingLabelEditPart.VISUAL_ID:
 			return getOperationLabel_5005Parser();
-		case org.muml.pim.operationrepository.diagram.edit.parts.WrappingLabel2EditPart.VISUAL_ID:
+		case WrappingLabel2EditPart.VISUAL_ID:
 			return getParameterLabel_5001Parser();
 		}
 		return null;
@@ -100,13 +106,11 @@ public class MumlParserProvider extends AbstractProvider implements IParserProvi
 	public IParser getParser(IAdaptable hint) {
 		String vid = (String) hint.getAdapter(String.class);
 		if (vid != null) {
-			return getParser(org.muml.pim.operationrepository.diagram.part.MumlVisualIDRegistry
-					.getVisualID(vid));
+			return getParser(MumlVisualIDRegistry.getVisualID(vid));
 		}
 		View view = (View) hint.getAdapter(View.class);
 		if (view != null) {
-			return getParser(org.muml.pim.operationrepository.diagram.part.MumlVisualIDRegistry
-					.getVisualID(view));
+			return getParser(MumlVisualIDRegistry.getVisualID(view));
 		}
 		return null;
 	}
@@ -117,8 +121,7 @@ public class MumlParserProvider extends AbstractProvider implements IParserProvi
 	public boolean provides(IOperation operation) {
 		if (operation instanceof GetParserOperation) {
 			IAdaptable hint = ((GetParserOperation) operation).getHint();
-			if (org.muml.pim.operationrepository.diagram.providers.MumlElementTypes
-					.getElement(hint) == null) {
+			if (MumlElementTypes.getElement(hint) == null) {
 				return false;
 			}
 			return getParser(hint) != null;

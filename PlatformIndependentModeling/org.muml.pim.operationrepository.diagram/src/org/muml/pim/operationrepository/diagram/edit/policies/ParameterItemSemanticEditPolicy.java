@@ -19,18 +19,18 @@ import org.eclipse.gmf.runtime.emf.commands.core.command.CompositeTransactionalC
 import org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.pim.operationrepository.diagram.providers.MumlElementTypes;
 
 /**
  * @generated
  */
-public class ParameterItemSemanticEditPolicy
-		extends org.muml.pim.operationrepository.diagram.edit.policies.MumlBaseItemSemanticEditPolicy {
+public class ParameterItemSemanticEditPolicy extends MumlBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public ParameterItemSemanticEditPolicy() {
-		super(org.muml.pim.operationrepository.diagram.providers.MumlElementTypes.Parameter_3002);
+		super(MumlElementTypes.Parameter_3002);
 	}
 
 	/**

@@ -17,14 +17,14 @@ public class MumlDiagramActionBarContributor extends DiagramActionBarContributor
 	 * @generated
 	 */
 	protected Class getEditorClass() {
-		return org.muml.pim.operationrepository.diagram.part.MumlDiagramEditor.class;
+		return MumlDiagramEditor.class;
 	}
 
 	/**
 	 * @generated
 	 */
 	protected String getEditorId() {
-		return org.muml.pim.operationrepository.diagram.part.MumlDiagramEditor.ID;
+		return MumlDiagramEditor.ID;
 	}
 
 	/**
@@ -41,7 +41,7 @@ public class MumlDiagramActionBarContributor extends DiagramActionBarContributor
 		if (editMenu.find("validationGroup") == null) { //$NON-NLS-1$
 			editMenu.add(new GroupMarker("validationGroup")); //$NON-NLS-1$
 		}
-		IAction validateAction = new org.muml.pim.operationrepository.diagram.part.ValidateAction(page);
+		IAction validateAction = new ValidateAction(page);
 		editMenu.appendToGroup("validationGroup", validateAction); //$NON-NLS-1$
 	}
 }

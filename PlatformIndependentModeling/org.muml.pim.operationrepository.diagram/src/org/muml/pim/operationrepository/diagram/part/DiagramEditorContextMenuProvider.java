@@ -22,7 +22,7 @@ public class DiagramEditorContextMenuProvider extends DiagramContextMenuProvider
 	/**
 	 * @generated
 	 */
-	private org.muml.pim.operationrepository.diagram.part.DeleteElementAction deleteAction;
+	private DeleteElementAction deleteAction;
 
 	/**
 	 * @generated
@@ -30,7 +30,7 @@ public class DiagramEditorContextMenuProvider extends DiagramContextMenuProvider
 	public DiagramEditorContextMenuProvider(IWorkbenchPart part, EditPartViewer viewer) {
 		super(part, viewer);
 		this.part = part;
-		deleteAction = new org.muml.pim.operationrepository.diagram.part.DeleteElementAction(part);
+		deleteAction = new DeleteElementAction(part);
 		deleteAction.init();
 	}
 
@@ -62,8 +62,7 @@ public class DiagramEditorContextMenuProvider extends DiagramContextMenuProvider
 						}
 					});
 		} catch (Exception e) {
-			org.muml.pim.operationrepository.diagram.part.OperationRepositoryDiagramEditorPlugin
-					.getInstance().logError("Error building context menu", e);
+			OperationRepositoryDiagramEditorPlugin.getInstance().logError("Error building context menu", e);
 		}
 	}
 }

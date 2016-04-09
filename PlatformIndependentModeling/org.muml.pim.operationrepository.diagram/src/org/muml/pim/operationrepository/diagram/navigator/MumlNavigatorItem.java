@@ -9,8 +9,7 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class MumlNavigatorItem
-		extends org.muml.pim.operationrepository.diagram.navigator.MumlAbstractNavigatorItem {
+public class MumlNavigatorItem extends MumlAbstractNavigatorItem {
 
 	/**
 	 * @generated
@@ -72,10 +71,8 @@ public class MumlNavigatorItem
 	 */
 	public boolean equals(Object obj) {
 		if (obj instanceof org.muml.pim.operationrepository.diagram.navigator.MumlNavigatorItem) {
-			return EcoreUtil.getURI(getView())
-					.equals(EcoreUtil
-							.getURI(((org.muml.pim.operationrepository.diagram.navigator.MumlNavigatorItem) obj)
-									.getView()));
+			return EcoreUtil.getURI(getView()).equals(EcoreUtil
+					.getURI(((org.muml.pim.operationrepository.diagram.navigator.MumlNavigatorItem) obj).getView()));
 		}
 		return super.equals(obj);
 	}

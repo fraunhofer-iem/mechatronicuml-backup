@@ -13,6 +13,13 @@ import org.eclipse.gmf.tooling.runtime.providers.DiagramElementTypeImages;
 import org.eclipse.gmf.tooling.runtime.providers.DiagramElementTypes;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.swt.graphics.Image;
+import org.muml.core.modelinstance.ModelinstancePackage;
+import org.muml.pim.behavior.BehaviorPackage;
+import org.muml.pim.operationrepository.diagram.edit.parts.ModelElementCategoryEditPart;
+import org.muml.pim.operationrepository.diagram.edit.parts.OperationEditPart;
+import org.muml.pim.operationrepository.diagram.edit.parts.OperationRepositoryEditPart;
+import org.muml.pim.operationrepository.diagram.edit.parts.ParameterEditPart;
+import org.muml.pim.operationrepository.diagram.part.OperationRepositoryDiagramEditorPlugin;
 
 /**
  * @generated
@@ -34,8 +41,7 @@ public class MumlElementTypes {
 	 * @generated
 	 */
 	private static DiagramElementTypeImages elementTypeImages = new DiagramElementTypeImages(
-			org.muml.pim.operationrepository.diagram.part.OperationRepositoryDiagramEditorPlugin
-					.getInstance().getItemProvidersAdapterFactory());
+			OperationRepositoryDiagramEditorPlugin.getInstance().getItemProvidersAdapterFactory());
 
 	/**
 	 * @generated
@@ -103,17 +109,13 @@ public class MumlElementTypes {
 		if (elements == null) {
 			elements = new IdentityHashMap<IElementType, ENamedElement>();
 
-			elements.put(ModelElementCategory_1000,
-					org.muml.core.modelinstance.ModelinstancePackage.eINSTANCE.getModelElementCategory());
+			elements.put(ModelElementCategory_1000, ModelinstancePackage.eINSTANCE.getModelElementCategory());
 
-			elements.put(OperationRepository_2001,
-					org.muml.pim.behavior.BehaviorPackage.eINSTANCE.getOperationRepository());
+			elements.put(OperationRepository_2001, BehaviorPackage.eINSTANCE.getOperationRepository());
 
-			elements.put(Operation_3001,
-					org.muml.pim.behavior.BehaviorPackage.eINSTANCE.getOperation());
+			elements.put(Operation_3001, BehaviorPackage.eINSTANCE.getOperation());
 
-			elements.put(Parameter_3002,
-					org.muml.pim.behavior.BehaviorPackage.eINSTANCE.getParameter());
+			elements.put(Parameter_3002, BehaviorPackage.eINSTANCE.getParameter());
 		}
 		return (ENamedElement) elements.get(type);
 	}
@@ -144,13 +146,13 @@ public class MumlElementTypes {
 	 */
 	public static IElementType getElementType(int visualID) {
 		switch (visualID) {
-		case org.muml.pim.operationrepository.diagram.edit.parts.ModelElementCategoryEditPart.VISUAL_ID:
+		case ModelElementCategoryEditPart.VISUAL_ID:
 			return ModelElementCategory_1000;
-		case org.muml.pim.operationrepository.diagram.edit.parts.OperationRepositoryEditPart.VISUAL_ID:
+		case OperationRepositoryEditPart.VISUAL_ID:
 			return OperationRepository_2001;
-		case org.muml.pim.operationrepository.diagram.edit.parts.OperationEditPart.VISUAL_ID:
+		case OperationEditPart.VISUAL_ID:
 			return Operation_3001;
-		case org.muml.pim.operationrepository.diagram.edit.parts.ParameterEditPart.VISUAL_ID:
+		case ParameterEditPart.VISUAL_ID:
 			return Parameter_3002;
 		}
 		return null;
@@ -167,8 +169,7 @@ public class MumlElementTypes {
 		@Override
 
 		public boolean isKnownElementType(IElementType elementType) {
-			return org.muml.pim.operationrepository.diagram.providers.MumlElementTypes
-					.isKnownElementType(elementType);
+			return org.muml.pim.operationrepository.diagram.providers.MumlElementTypes.isKnownElementType(elementType);
 		}
 
 		/**
@@ -177,8 +178,7 @@ public class MumlElementTypes {
 		@Override
 
 		public IElementType getElementTypeForVisualId(int visualID) {
-			return org.muml.pim.operationrepository.diagram.providers.MumlElementTypes
-					.getElementType(visualID);
+			return org.muml.pim.operationrepository.diagram.providers.MumlElementTypes.getElementType(visualID);
 		}
 
 		/**
@@ -187,8 +187,7 @@ public class MumlElementTypes {
 		@Override
 
 		public ENamedElement getDefiningNamedElement(IAdaptable elementTypeAdapter) {
-			return org.muml.pim.operationrepository.diagram.providers.MumlElementTypes
-					.getElement(elementTypeAdapter);
+			return org.muml.pim.operationrepository.diagram.providers.MumlElementTypes.getElement(elementTypeAdapter);
 		}
 	};
 

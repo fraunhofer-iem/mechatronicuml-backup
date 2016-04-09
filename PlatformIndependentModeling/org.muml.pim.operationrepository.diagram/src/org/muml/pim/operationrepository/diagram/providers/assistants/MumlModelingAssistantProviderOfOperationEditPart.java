@@ -5,12 +5,13 @@ import java.util.List;
 
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
+import org.muml.pim.operationrepository.diagram.providers.MumlElementTypes;
+import org.muml.pim.operationrepository.diagram.providers.MumlModelingAssistantProvider;
 
 /**
  * @generated
  */
-public class MumlModelingAssistantProviderOfOperationEditPart
-		extends org.muml.pim.operationrepository.diagram.providers.MumlModelingAssistantProvider {
+public class MumlModelingAssistantProviderOfOperationEditPart extends MumlModelingAssistantProvider {
 
 	/**
 	 * @generated
@@ -18,7 +19,7 @@ public class MumlModelingAssistantProviderOfOperationEditPart
 	@Override
 	public List<IElementType> getTypesForPopupBar(IAdaptable host) {
 		List<IElementType> types = new ArrayList<IElementType>(1);
-		types.add(org.muml.pim.operationrepository.diagram.providers.MumlElementTypes.Parameter_3002);
+		types.add(MumlElementTypes.Parameter_3002);
 		return types;
 	}
 
