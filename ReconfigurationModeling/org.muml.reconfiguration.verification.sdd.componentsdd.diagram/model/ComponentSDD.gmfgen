@@ -1424,7 +1424,7 @@
     <requiredPlugins>de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd.edit.properties</requiredPlugins>
     <requiredPlugins>de.uni_paderborn.fujaba.muml.edit.properties</requiredPlugins>
     <requiredPlugins>de.uni_paderborn.fujaba.muml.verification.sdd.edit.properties</requiredPlugins>
-    <requiredPlugins>org.storydriven.core.edit.properties</requiredPlugins>
+    <requiredPlugins>org.muml.core.edit.properties</requiredPlugins>
     <requiredPlugins>de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.edit.properties</requiredPlugins>
     <requiredPlugins>org.muml.core.common</requiredPlugins>
     <requiredPlugins>de.uni_paderborn.fujaba.properties.runtime</requiredPlugins>

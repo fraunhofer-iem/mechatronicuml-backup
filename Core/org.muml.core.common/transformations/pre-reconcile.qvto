@@ -28,7 +28,7 @@ parser.className.concat(parser._uses->first().container().oclAsType(GenCommonBas
     model.plugin.requiredPlugins += "org.muml.core.common";
   --  model.plugin.requiredPlugins += "org.muml.pim.common";
     model.plugin.requiredPlugins += "org.muml.core.modelinstance.ui";
-    model.plugin.requiredPlugins += "org.storydriven.core.edit.properties";
+    model.plugin.requiredPlugins += "org.muml.core.edit.properties";
     model.plugin.requiredPlugins += "de.uni_paderborn.fujaba.muml.edit.properties";
     model.plugin.requiredPlugins += "org.muml.core.common.editingdomain";
     
