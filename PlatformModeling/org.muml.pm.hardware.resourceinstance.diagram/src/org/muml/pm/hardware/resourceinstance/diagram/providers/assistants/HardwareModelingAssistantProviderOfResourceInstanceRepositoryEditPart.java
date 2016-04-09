@@ -5,12 +5,14 @@ import java.util.List;
 
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
+import org.muml.pm.hardware.resourceinstance.diagram.providers.HardwareElementTypes;
+import org.muml.pm.hardware.resourceinstance.diagram.providers.HardwareModelingAssistantProvider;
 
 /**
  * @generated
  */
-public class HardwareModelingAssistantProviderOfResourceInstanceRepositoryEditPart extends
-		org.muml.pm.hardware.resourceinstance.diagram.providers.HardwareModelingAssistantProvider {
+public class HardwareModelingAssistantProviderOfResourceInstanceRepositoryEditPart
+		extends HardwareModelingAssistantProvider {
 
 	/**
 	 * @generated
@@ -18,12 +20,9 @@ public class HardwareModelingAssistantProviderOfResourceInstanceRepositoryEditPa
 	@Override
 	public List<IElementType> getTypesForPopupBar(IAdaptable host) {
 		List<IElementType> types = new ArrayList<IElementType>(3);
-		types.add(
-				org.muml.pm.hardware.resourceinstance.diagram.providers.HardwareElementTypes.SensorInstance_2007);
-		types.add(
-				org.muml.pm.hardware.resourceinstance.diagram.providers.HardwareElementTypes.ActuatorInstance_2008);
-		types.add(
-				org.muml.pm.hardware.resourceinstance.diagram.providers.HardwareElementTypes.StructuredResourceInstance_2009);
+		types.add(HardwareElementTypes.SensorInstance_2007);
+		types.add(HardwareElementTypes.ActuatorInstance_2008);
+		types.add(HardwareElementTypes.StructuredResourceInstance_2009);
 		return types;
 	}
 

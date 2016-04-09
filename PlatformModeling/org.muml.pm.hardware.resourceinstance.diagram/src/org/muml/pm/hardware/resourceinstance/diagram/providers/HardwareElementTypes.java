@@ -13,6 +13,19 @@ import org.eclipse.gmf.tooling.runtime.providers.DiagramElementTypeImages;
 import org.eclipse.gmf.tooling.runtime.providers.DiagramElementTypes;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.swt.graphics.Image;
+import org.muml.pm.hardware.hwresourceinstance.HwresourceinstancePackage;
+import org.muml.pm.hardware.resourceinstance.diagram.edit.parts.ActuatorInstanceEditPart;
+import org.muml.pm.hardware.resourceinstance.diagram.edit.parts.CacheInstanceEditPart;
+import org.muml.pm.hardware.resourceinstance.diagram.edit.parts.HWPortEditPart;
+import org.muml.pm.hardware.resourceinstance.diagram.edit.parts.ProcessingMemoryInstanceEditPart;
+import org.muml.pm.hardware.resourceinstance.diagram.edit.parts.ProcessorInstanceEditPart;
+import org.muml.pm.hardware.resourceinstance.diagram.edit.parts.ProcessorInstanceOwnedCacheInstanceEditPart;
+import org.muml.pm.hardware.resourceinstance.diagram.edit.parts.ProgrammableLogicDeviceInstanceEditPart;
+import org.muml.pm.hardware.resourceinstance.diagram.edit.parts.ResourceInstanceRepositoryEditPart;
+import org.muml.pm.hardware.resourceinstance.diagram.edit.parts.SensorInstanceEditPart;
+import org.muml.pm.hardware.resourceinstance.diagram.edit.parts.StorageMemoryInstanceEditPart;
+import org.muml.pm.hardware.resourceinstance.diagram.edit.parts.StructuredResourceInstanceEditPart;
+import org.muml.pm.hardware.resourceinstance.diagram.part.ResourceInstanceDiagramEditorPlugin;
 
 /**
  * @generated
@@ -34,8 +47,7 @@ public class HardwareElementTypes {
 	 * @generated
 	 */
 	private static DiagramElementTypeImages elementTypeImages = new DiagramElementTypeImages(
-			org.muml.pm.hardware.resourceinstance.diagram.part.ResourceInstanceDiagramEditorPlugin
-					.getInstance().getItemProvidersAdapterFactory());
+			ResourceInstanceDiagramEditorPlugin.getInstance().getItemProvidersAdapterFactory());
 
 	/**
 	 * @generated
@@ -146,48 +158,31 @@ public class HardwareElementTypes {
 			elements = new IdentityHashMap<IElementType, ENamedElement>();
 
 			elements.put(ResourceInstanceRepository_1000,
-					org.muml.pm.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE
-							.getResourceInstanceRepository());
+					HwresourceinstancePackage.eINSTANCE.getResourceInstanceRepository());
 
-			elements.put(SensorInstance_2007,
-					org.muml.pm.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE
-							.getSensorInstance());
+			elements.put(SensorInstance_2007, HwresourceinstancePackage.eINSTANCE.getSensorInstance());
 
-			elements.put(ActuatorInstance_2008,
-					org.muml.pm.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE
-							.getActuatorInstance());
+			elements.put(ActuatorInstance_2008, HwresourceinstancePackage.eINSTANCE.getActuatorInstance());
 
 			elements.put(StructuredResourceInstance_2009,
-					org.muml.pm.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE
-							.getStructuredResourceInstance());
+					HwresourceinstancePackage.eINSTANCE.getStructuredResourceInstance());
 
-			elements.put(HWPort_3017,
-					org.muml.pm.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE
-							.getHWPort());
+			elements.put(HWPort_3017, HwresourceinstancePackage.eINSTANCE.getHWPort());
 
-			elements.put(CacheInstance_3018,
-					org.muml.pm.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE
-							.getCacheInstance());
+			elements.put(CacheInstance_3018, HwresourceinstancePackage.eINSTANCE.getCacheInstance());
 
 			elements.put(ProgrammableLogicDeviceInstance_3019,
-					org.muml.pm.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE
-							.getProgrammableLogicDeviceInstance());
+					HwresourceinstancePackage.eINSTANCE.getProgrammableLogicDeviceInstance());
 
-			elements.put(ProcessorInstance_3020,
-					org.muml.pm.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE
-							.getProcessorInstance());
+			elements.put(ProcessorInstance_3020, HwresourceinstancePackage.eINSTANCE.getProcessorInstance());
 
 			elements.put(ProcessingMemoryInstance_3021,
-					org.muml.pm.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE
-							.getProcessingMemoryInstance());
+					HwresourceinstancePackage.eINSTANCE.getProcessingMemoryInstance());
 
-			elements.put(StorageMemoryInstance_3022,
-					org.muml.pm.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE
-							.getStorageMemoryInstance());
+			elements.put(StorageMemoryInstance_3022, HwresourceinstancePackage.eINSTANCE.getStorageMemoryInstance());
 
 			elements.put(ProcessorInstanceOwnedCacheInstance_4003,
-					org.muml.pm.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE
-							.getProcessorInstance_OwnedCacheInstance());
+					HwresourceinstancePackage.eINSTANCE.getProcessorInstance_OwnedCacheInstance());
 		}
 		return (ENamedElement) elements.get(type);
 	}
@@ -225,27 +220,27 @@ public class HardwareElementTypes {
 	 */
 	public static IElementType getElementType(int visualID) {
 		switch (visualID) {
-		case org.muml.pm.hardware.resourceinstance.diagram.edit.parts.ResourceInstanceRepositoryEditPart.VISUAL_ID:
+		case ResourceInstanceRepositoryEditPart.VISUAL_ID:
 			return ResourceInstanceRepository_1000;
-		case org.muml.pm.hardware.resourceinstance.diagram.edit.parts.SensorInstanceEditPart.VISUAL_ID:
+		case SensorInstanceEditPart.VISUAL_ID:
 			return SensorInstance_2007;
-		case org.muml.pm.hardware.resourceinstance.diagram.edit.parts.ActuatorInstanceEditPart.VISUAL_ID:
+		case ActuatorInstanceEditPart.VISUAL_ID:
 			return ActuatorInstance_2008;
-		case org.muml.pm.hardware.resourceinstance.diagram.edit.parts.StructuredResourceInstanceEditPart.VISUAL_ID:
+		case StructuredResourceInstanceEditPart.VISUAL_ID:
 			return StructuredResourceInstance_2009;
-		case org.muml.pm.hardware.resourceinstance.diagram.edit.parts.HWPortEditPart.VISUAL_ID:
+		case HWPortEditPart.VISUAL_ID:
 			return HWPort_3017;
-		case org.muml.pm.hardware.resourceinstance.diagram.edit.parts.CacheInstanceEditPart.VISUAL_ID:
+		case CacheInstanceEditPart.VISUAL_ID:
 			return CacheInstance_3018;
-		case org.muml.pm.hardware.resourceinstance.diagram.edit.parts.ProgrammableLogicDeviceInstanceEditPart.VISUAL_ID:
+		case ProgrammableLogicDeviceInstanceEditPart.VISUAL_ID:
 			return ProgrammableLogicDeviceInstance_3019;
-		case org.muml.pm.hardware.resourceinstance.diagram.edit.parts.ProcessorInstanceEditPart.VISUAL_ID:
+		case ProcessorInstanceEditPart.VISUAL_ID:
 			return ProcessorInstance_3020;
-		case org.muml.pm.hardware.resourceinstance.diagram.edit.parts.ProcessingMemoryInstanceEditPart.VISUAL_ID:
+		case ProcessingMemoryInstanceEditPart.VISUAL_ID:
 			return ProcessingMemoryInstance_3021;
-		case org.muml.pm.hardware.resourceinstance.diagram.edit.parts.StorageMemoryInstanceEditPart.VISUAL_ID:
+		case StorageMemoryInstanceEditPart.VISUAL_ID:
 			return StorageMemoryInstance_3022;
-		case org.muml.pm.hardware.resourceinstance.diagram.edit.parts.ProcessorInstanceOwnedCacheInstanceEditPart.VISUAL_ID:
+		case ProcessorInstanceOwnedCacheInstanceEditPart.VISUAL_ID:
 			return ProcessorInstanceOwnedCacheInstance_4003;
 		}
 		return null;

@@ -19,6 +19,8 @@ import org.eclipse.gmf.runtime.common.ui.services.parser.ParserEditStatus;
 import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand;
 import org.eclipse.gmf.tooling.runtime.parsers.ExpressionLabelParserBase;
 import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
+import org.muml.pm.hardware.hwresourceinstance.HwresourceinstancePackage;
+import org.muml.pm.hardware.resourceinstance.diagram.expressions.HardwareOCLFactory;
 
 /**
  * @generated
@@ -35,11 +37,7 @@ public class SensorInstanceLabelExpressionLabelParser5073 extends ExpressionLabe
 	 */
 	@Override
 	protected String getExpressionBody() {
-		return org.muml.pm.hardware.resourceinstance.diagram.expressions.HardwareOCLFactory
-				.getExpression(1,
-						org.muml.pm.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE
-								.getSensorInstance(),
-						null)
+		return HardwareOCLFactory.getExpression(1, HwresourceinstancePackage.eINSTANCE.getSensorInstance(), null)
 				.body();
 	}
 

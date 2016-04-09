@@ -9,6 +9,11 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelationshipRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy;
+import org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy;
+import org.muml.pm.hardware.hwresourceinstance.CacheInstance;
+import org.muml.pm.hardware.hwresourceinstance.ProcessorInstance;
+import org.muml.pm.hardware.resourceinstance.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy;
 
 /**
  * @generated
@@ -50,7 +55,7 @@ public class ProcessorInstanceOwnedCacheInstanceReorientCommand extends EditElem
 	 * @generated
 	 */
 	public boolean canExecute() {
-		if (false == referenceOwner instanceof org.muml.pm.hardware.hwresourceinstance.ProcessorInstance) {
+		if (false == referenceOwner instanceof ProcessorInstance) {
 			return false;
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
@@ -66,21 +71,17 @@ public class ProcessorInstanceOwnedCacheInstanceReorientCommand extends EditElem
 	 * @generated
 	 */
 	protected boolean canReorientSource() {
-		if (!(oldEnd instanceof org.muml.pm.hardware.hwresourceinstance.CacheInstance
-				&& newEnd instanceof org.muml.pm.hardware.hwresourceinstance.ProcessorInstance)) {
+		if (!(oldEnd instanceof CacheInstance && newEnd instanceof ProcessorInstance)) {
 			return false;
 		}
-		View sourceView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-				.getSourceView(getRequest());
-		View targetView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-				.getTargetView(getRequest());
-		if (!org.muml.pm.hardware.resourceinstance.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy
-				.getLinkConstraints().canExistProcessorInstanceOwnedCacheInstance_4003(getNewSource(), getOldTarget(),
-						sourceView, targetView)) {
-			String errorMessage = org.muml.pm.hardware.resourceinstance.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy
-					.getLinkConstraints().getErrorProcessorInstanceOwnedCacheInstance_4003(getNewSource(),
-							getOldTarget(), sourceView, targetView);
-			org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy.showMessage(sourceView, errorMessage);
+		View sourceView = ConnectionConfigureHelperGraphicalNodeEditPolicy.getSourceView(getRequest());
+		View targetView = ConnectionConfigureHelperGraphicalNodeEditPolicy.getTargetView(getRequest());
+		if (!HardwareBaseItemSemanticEditPolicy.getLinkConstraints().canExistProcessorInstanceOwnedCacheInstance_4003(
+				getNewSource(), getOldTarget(), sourceView, targetView)) {
+			String errorMessage = HardwareBaseItemSemanticEditPolicy.getLinkConstraints()
+					.getErrorProcessorInstanceOwnedCacheInstance_4003(getNewSource(), getOldTarget(), sourceView,
+							targetView);
+			ErrorFeedbackEditPolicy.showMessage(sourceView, errorMessage);
 			return false;
 		}
 		return true;
@@ -90,21 +91,17 @@ public class ProcessorInstanceOwnedCacheInstanceReorientCommand extends EditElem
 	 * @generated
 	 */
 	protected boolean canReorientTarget() {
-		if (!(oldEnd instanceof org.muml.pm.hardware.hwresourceinstance.CacheInstance
-				&& newEnd instanceof org.muml.pm.hardware.hwresourceinstance.CacheInstance)) {
+		if (!(oldEnd instanceof CacheInstance && newEnd instanceof CacheInstance)) {
 			return false;
 		}
-		View sourceView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-				.getSourceView(getRequest());
-		View targetView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-				.getTargetView(getRequest());
-		if (!org.muml.pm.hardware.resourceinstance.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy
-				.getLinkConstraints().canExistProcessorInstanceOwnedCacheInstance_4003(getOldSource(), getNewTarget(),
-						sourceView, targetView)) {
-			String errorMessage = org.muml.pm.hardware.resourceinstance.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy
-					.getLinkConstraints().getErrorProcessorInstanceOwnedCacheInstance_4003(getOldSource(),
-							getNewTarget(), sourceView, targetView);
-			org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy.showMessage(targetView, errorMessage);
+		View sourceView = ConnectionConfigureHelperGraphicalNodeEditPolicy.getSourceView(getRequest());
+		View targetView = ConnectionConfigureHelperGraphicalNodeEditPolicy.getTargetView(getRequest());
+		if (!HardwareBaseItemSemanticEditPolicy.getLinkConstraints().canExistProcessorInstanceOwnedCacheInstance_4003(
+				getOldSource(), getNewTarget(), sourceView, targetView)) {
+			String errorMessage = HardwareBaseItemSemanticEditPolicy.getLinkConstraints()
+					.getErrorProcessorInstanceOwnedCacheInstance_4003(getOldSource(), getNewTarget(), sourceView,
+							targetView);
+			ErrorFeedbackEditPolicy.showMessage(targetView, errorMessage);
 			return false;
 		}
 		return true;
@@ -150,29 +147,29 @@ public class ProcessorInstanceOwnedCacheInstanceReorientCommand extends EditElem
 	/**
 	 * @generated
 	 */
-	protected org.muml.pm.hardware.hwresourceinstance.ProcessorInstance getOldSource() {
-		return (org.muml.pm.hardware.hwresourceinstance.ProcessorInstance) referenceOwner;
+	protected ProcessorInstance getOldSource() {
+		return (ProcessorInstance) referenceOwner;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected org.muml.pm.hardware.hwresourceinstance.ProcessorInstance getNewSource() {
-		return (org.muml.pm.hardware.hwresourceinstance.ProcessorInstance) newEnd;
+	protected ProcessorInstance getNewSource() {
+		return (ProcessorInstance) newEnd;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected org.muml.pm.hardware.hwresourceinstance.CacheInstance getOldTarget() {
-		return (org.muml.pm.hardware.hwresourceinstance.CacheInstance) oldEnd;
+	protected CacheInstance getOldTarget() {
+		return (CacheInstance) oldEnd;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected org.muml.pm.hardware.hwresourceinstance.CacheInstance getNewTarget() {
-		return (org.muml.pm.hardware.hwresourceinstance.CacheInstance) newEnd;
+	protected CacheInstance getNewTarget() {
+		return (CacheInstance) newEnd;
 	}
 
 	/**

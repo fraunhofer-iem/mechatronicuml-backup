@@ -12,29 +12,29 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.pm.hardware.resourceinstance.diagram.edit.commands.HWPortCreateCommand;
+import org.muml.pm.hardware.resourceinstance.diagram.edit.parts.HWPortEditPart;
+import org.muml.pm.hardware.resourceinstance.diagram.part.HardwareVisualIDRegistry;
+import org.muml.pm.hardware.resourceinstance.diagram.providers.HardwareElementTypes;
 
 /**
  * @generated
  */
-public class SensorInstanceItemSemanticEditPolicy extends
-		org.muml.pm.hardware.resourceinstance.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy {
+public class SensorInstanceItemSemanticEditPolicy extends HardwareBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public SensorInstanceItemSemanticEditPolicy() {
-		super(org.muml.pm.hardware.resourceinstance.diagram.providers.HardwareElementTypes.SensorInstance_2007);
+		super(HardwareElementTypes.SensorInstance_2007);
 	}
 
 	/**
 	 * @generated
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
-		if (org.muml.pm.hardware.resourceinstance.diagram.providers.HardwareElementTypes.HWPort_3017 == req
-				.getElementType()) {
-			return getGEFWrapper(
-					new org.muml.pm.hardware.resourceinstance.diagram.edit.commands.HWPortCreateCommand(
-							req));
+		if (HardwareElementTypes.HWPort_3017 == req.getElementType()) {
+			return getGEFWrapper(new HWPortCreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}
@@ -66,9 +66,8 @@ public class SensorInstanceItemSemanticEditPolicy extends
 		View view = (View) getHost().getModel();
 		for (Iterator<?> nit = view.getChildren().iterator(); nit.hasNext();) {
 			Node node = (Node) nit.next();
-			switch (org.muml.pm.hardware.resourceinstance.diagram.part.HardwareVisualIDRegistry
-					.getVisualID(node)) {
-			case org.muml.pm.hardware.resourceinstance.diagram.edit.parts.HWPortEditPart.VISUAL_ID:
+			switch (HardwareVisualIDRegistry.getVisualID(node)) {
+			case HWPortEditPart.VISUAL_ID:
 
 				cmd.add(new DestroyElementCommand(
 						new DestroyElementRequest(getEditingDomain(), node.getElement(), false)));

@@ -49,6 +49,9 @@ import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.part.FileEditorInput;
+import org.muml.pm.hardware.hwresourceinstance.HwresourceinstanceFactory;
+import org.muml.pm.hardware.hwresourceinstance.ResourceInstanceRepository;
+import org.muml.pm.hardware.resourceinstance.diagram.edit.parts.ResourceInstanceRepositoryEditPart;
 
 /**
  * @generated
@@ -73,8 +76,7 @@ public class HardwareDiagramEditorUtil {
 		IResource workspaceResource = ResourcesPlugin.getWorkspace().getRoot().findMember(new Path(path));
 		if (workspaceResource instanceof IFile) {
 			IWorkbenchPage page = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
-			return null != page.openEditor(new FileEditorInput((IFile) workspaceResource),
-					org.muml.pm.hardware.resourceinstance.diagram.part.HardwareDiagramEditor.ID);
+			return null != page.openEditor(new FileEditorInput((IFile) workspaceResource), HardwareDiagramEditor.ID);
 		}
 		return false;
 	}
@@ -89,8 +91,8 @@ public class HardwareDiagramEditorUtil {
 		try {
 			file.setCharset("UTF-8", new NullProgressMonitor()); //$NON-NLS-1$
 		} catch (CoreException e) {
-			org.muml.pm.hardware.resourceinstance.diagram.part.ResourceInstanceDiagramEditorPlugin
-					.getInstance().logError("Unable to set charset for file " + file.getFullPath(), e); //$NON-NLS-1$
+			ResourceInstanceDiagramEditorPlugin.getInstance()
+					.logError("Unable to set charset for file " + file.getFullPath(), e); //$NON-NLS-1$
 		}
 	}
 
@@ -108,8 +110,7 @@ public class HardwareDiagramEditorUtil {
 	 * @generated
 	 */
 	public static void runWizard(Shell shell, Wizard wizard, String settingsKey) {
-		IDialogSettings pluginDialogSettings = org.muml.pm.hardware.resourceinstance.diagram.part.ResourceInstanceDiagramEditorPlugin
-				.getInstance().getDialogSettings();
+		IDialogSettings pluginDialogSettings = ResourceInstanceDiagramEditorPlugin.getInstance().getDialogSettings();
 		IDialogSettings wizardDialogSettings = pluginDialogSettings.getSection(settingsKey);
 		if (wizardDialogSettings == null) {
 			wizardDialogSettings = pluginDialogSettings.addNewSection(settingsKey);
@@ -127,23 +128,19 @@ public class HardwareDiagramEditorUtil {
 	 */
 	public static Resource createDiagram(URI diagramURI, URI modelURI, IProgressMonitor progressMonitor) {
 		TransactionalEditingDomain editingDomain = GMFEditingDomainFactory.INSTANCE.createEditingDomain();
-		progressMonitor.beginTask(
-				org.muml.pm.hardware.resourceinstance.diagram.part.Messages.HardwareDiagramEditorUtil_CreateDiagramProgressTask,
-				3);
+		progressMonitor.beginTask(Messages.HardwareDiagramEditorUtil_CreateDiagramProgressTask, 3);
 		final Resource diagramResource = editingDomain.getResourceSet().createResource(diagramURI);
 		final Resource modelResource = editingDomain.getResourceSet().createResource(modelURI);
 		final String diagramName = diagramURI.lastSegment();
 		AbstractTransactionalCommand command = new AbstractTransactionalCommand(editingDomain,
-				org.muml.pm.hardware.resourceinstance.diagram.part.Messages.HardwareDiagramEditorUtil_CreateDiagramCommandLabel,
-				Collections.EMPTY_LIST) {
+				Messages.HardwareDiagramEditorUtil_CreateDiagramCommandLabel, Collections.EMPTY_LIST) {
 			protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info)
 					throws ExecutionException {
-				org.muml.pm.hardware.hwresourceinstance.ResourceInstanceRepository model = createInitialModel();
+				ResourceInstanceRepository model = createInitialModel();
 				attachModelToResource(model, modelResource);
 
-				Diagram diagram = ViewService.createDiagram(model,
-						org.muml.pm.hardware.resourceinstance.diagram.edit.parts.ResourceInstanceRepositoryEditPart.MODEL_ID,
-						org.muml.pm.hardware.resourceinstance.diagram.part.ResourceInstanceDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT);
+				Diagram diagram = ViewService.createDiagram(model, ResourceInstanceRepositoryEditPart.MODEL_ID,
+						ResourceInstanceDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT);
 				if (diagram != null) {
 					diagramResource.getContents().add(diagram);
 					diagram.setName(diagramName);
@@ -151,16 +148,14 @@ public class HardwareDiagramEditorUtil {
 				}
 
 				try {
-					modelResource
-							.save(org.muml.pm.hardware.resourceinstance.diagram.part.HardwareDiagramEditorUtil
-									.getSaveOptions());
-					diagramResource
-							.save(org.muml.pm.hardware.resourceinstance.diagram.part.HardwareDiagramEditorUtil
-									.getSaveOptions());
+					modelResource.save(org.muml.pm.hardware.resourceinstance.diagram.part.HardwareDiagramEditorUtil
+							.getSaveOptions());
+					diagramResource.save(org.muml.pm.hardware.resourceinstance.diagram.part.HardwareDiagramEditorUtil
+							.getSaveOptions());
 				} catch (IOException e) {
 
-					org.muml.pm.hardware.resourceinstance.diagram.part.ResourceInstanceDiagramEditorPlugin
-							.getInstance().logError("Unable to store model and diagram resources", e); //$NON-NLS-1$
+					ResourceInstanceDiagramEditorPlugin.getInstance()
+							.logError("Unable to store model and diagram resources", e); //$NON-NLS-1$
 				}
 				return CommandResult.newOKCommandResult();
 			}
@@ -169,8 +164,7 @@ public class HardwareDiagramEditorUtil {
 			OperationHistoryFactory.getOperationHistory().execute(command, new SubProgressMonitor(progressMonitor, 1),
 					null);
 		} catch (ExecutionException e) {
-			org.muml.pm.hardware.resourceinstance.diagram.part.ResourceInstanceDiagramEditorPlugin
-					.getInstance().logError("Unable to create model and diagram", e); //$NON-NLS-1$
+			ResourceInstanceDiagramEditorPlugin.getInstance().logError("Unable to create model and diagram", e); //$NON-NLS-1$
 		}
 		setCharset(WorkspaceSynchronizer.getFile(modelResource));
 		setCharset(WorkspaceSynchronizer.getFile(diagramResource));
@@ -183,20 +177,17 @@ public class HardwareDiagramEditorUtil {
 	 * <!-- end-user-doc -->
 	* @generated
 	*/
-	private static org.muml.pm.hardware.hwresourceinstance.ResourceInstanceRepository createInitialModel() {
-		return org.muml.pm.hardware.hwresourceinstance.HwresourceinstanceFactory.eINSTANCE
-				.createResourceInstanceRepository();
+	private static ResourceInstanceRepository createInitialModel() {
+		return HwresourceinstanceFactory.eINSTANCE.createResourceInstanceRepository();
 	}
 
 	/**
 	* Store model element in the resource.
 	* <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	* <!-- end-user-doc -->
 	* @generated
 	*/
-	private static void attachModelToResource(
-			org.muml.pm.hardware.hwresourceinstance.ResourceInstanceRepository model,
-			Resource resource) {
+	private static void attachModelToResource(ResourceInstanceRepository model, Resource resource) {
 		resource.getContents().add(model);
 	}
 

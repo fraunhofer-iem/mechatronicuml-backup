@@ -15,29 +15,36 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyReferenceRequest;
 import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.pm.hardware.resourceinstance.diagram.edit.commands.HWPortCreateCommand;
+import org.muml.pm.hardware.resourceinstance.diagram.edit.parts.CacheInstanceEditPart;
+import org.muml.pm.hardware.resourceinstance.diagram.edit.parts.HWPortEditPart;
+import org.muml.pm.hardware.resourceinstance.diagram.edit.parts.ProcessingMemoryInstanceEditPart;
+import org.muml.pm.hardware.resourceinstance.diagram.edit.parts.ProcessorInstanceEditPart;
+import org.muml.pm.hardware.resourceinstance.diagram.edit.parts.ProcessorInstanceOwnedCacheInstanceEditPart;
+import org.muml.pm.hardware.resourceinstance.diagram.edit.parts.ProgrammableLogicDeviceInstanceEditPart;
+import org.muml.pm.hardware.resourceinstance.diagram.edit.parts.StorageMemoryInstanceEditPart;
+import org.muml.pm.hardware.resourceinstance.diagram.edit.parts.StructuredResourceInstanceStructuredResourceCompartmentEditPart;
+import org.muml.pm.hardware.resourceinstance.diagram.part.HardwareVisualIDRegistry;
+import org.muml.pm.hardware.resourceinstance.diagram.providers.HardwareElementTypes;
 
 /**
  * @generated
  */
-public class StructuredResourceInstanceItemSemanticEditPolicy extends
-		org.muml.pm.hardware.resourceinstance.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy {
+public class StructuredResourceInstanceItemSemanticEditPolicy extends HardwareBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public StructuredResourceInstanceItemSemanticEditPolicy() {
-		super(org.muml.pm.hardware.resourceinstance.diagram.providers.HardwareElementTypes.StructuredResourceInstance_2009);
+		super(HardwareElementTypes.StructuredResourceInstance_2009);
 	}
 
 	/**
 	 * @generated
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
-		if (org.muml.pm.hardware.resourceinstance.diagram.providers.HardwareElementTypes.HWPort_3017 == req
-				.getElementType()) {
-			return getGEFWrapper(
-					new org.muml.pm.hardware.resourceinstance.diagram.edit.commands.HWPortCreateCommand(
-							req));
+		if (HardwareElementTypes.HWPort_3017 == req.getElementType()) {
+			return getGEFWrapper(new HWPortCreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}
@@ -69,9 +76,8 @@ public class StructuredResourceInstanceItemSemanticEditPolicy extends
 		View view = (View) getHost().getModel();
 		for (Iterator<?> nit = view.getChildren().iterator(); nit.hasNext();) {
 			Node node = (Node) nit.next();
-			switch (org.muml.pm.hardware.resourceinstance.diagram.part.HardwareVisualIDRegistry
-					.getVisualID(node)) {
-			case org.muml.pm.hardware.resourceinstance.diagram.edit.parts.HWPortEditPart.VISUAL_ID:
+			switch (HardwareVisualIDRegistry.getVisualID(node)) {
+			case HWPortEditPart.VISUAL_ID:
 
 				cmd.add(new DestroyElementCommand(
 						new DestroyElementRequest(getEditingDomain(), node.getElement(), false)));
@@ -79,17 +85,15 @@ public class StructuredResourceInstanceItemSemanticEditPolicy extends
 				// cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), node));
 
 				break;
-			case org.muml.pm.hardware.resourceinstance.diagram.edit.parts.StructuredResourceInstanceStructuredResourceCompartmentEditPart.VISUAL_ID:
+			case StructuredResourceInstanceStructuredResourceCompartmentEditPart.VISUAL_ID:
 				for (Iterator<?> cit = node.getChildren().iterator(); cit.hasNext();) {
 					Node cnode = (Node) cit.next();
-					switch (org.muml.pm.hardware.resourceinstance.diagram.part.HardwareVisualIDRegistry
-							.getVisualID(cnode)) {
-					case org.muml.pm.hardware.resourceinstance.diagram.edit.parts.CacheInstanceEditPart.VISUAL_ID:
+					switch (HardwareVisualIDRegistry.getVisualID(cnode)) {
+					case CacheInstanceEditPart.VISUAL_ID:
 						for (Iterator<?> it = cnode.getTargetEdges().iterator(); it.hasNext();) {
 							Edge incomingLink = (Edge) it.next();
-							if (org.muml.pm.hardware.resourceinstance.diagram.part.HardwareVisualIDRegistry
-									.getVisualID(
-											incomingLink) == org.muml.pm.hardware.resourceinstance.diagram.edit.parts.ProcessorInstanceOwnedCacheInstanceEditPart.VISUAL_ID) {
+							if (HardwareVisualIDRegistry.getVisualID(
+									incomingLink) == ProcessorInstanceOwnedCacheInstanceEditPart.VISUAL_ID) {
 								DestroyReferenceRequest r = new DestroyReferenceRequest(
 										incomingLink.getSource().getElement(), null,
 										incomingLink.getTarget().getElement(), false);
@@ -105,7 +109,7 @@ public class StructuredResourceInstanceItemSemanticEditPolicy extends
 						// cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), cnode));
 
 						break;
-					case org.muml.pm.hardware.resourceinstance.diagram.edit.parts.ProgrammableLogicDeviceInstanceEditPart.VISUAL_ID:
+					case ProgrammableLogicDeviceInstanceEditPart.VISUAL_ID:
 
 						cmd.add(new DestroyElementCommand(
 								new DestroyElementRequest(getEditingDomain(), cnode.getElement(), false)));
@@ -113,12 +117,11 @@ public class StructuredResourceInstanceItemSemanticEditPolicy extends
 						// cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), cnode));
 
 						break;
-					case org.muml.pm.hardware.resourceinstance.diagram.edit.parts.ProcessorInstanceEditPart.VISUAL_ID:
+					case ProcessorInstanceEditPart.VISUAL_ID:
 						for (Iterator<?> it = cnode.getSourceEdges().iterator(); it.hasNext();) {
 							Edge outgoingLink = (Edge) it.next();
-							if (org.muml.pm.hardware.resourceinstance.diagram.part.HardwareVisualIDRegistry
-									.getVisualID(
-											outgoingLink) == org.muml.pm.hardware.resourceinstance.diagram.edit.parts.ProcessorInstanceOwnedCacheInstanceEditPart.VISUAL_ID) {
+							if (HardwareVisualIDRegistry.getVisualID(
+									outgoingLink) == ProcessorInstanceOwnedCacheInstanceEditPart.VISUAL_ID) {
 								DestroyReferenceRequest r = new DestroyReferenceRequest(
 										outgoingLink.getSource().getElement(), null,
 										outgoingLink.getTarget().getElement(), false);
@@ -134,7 +137,7 @@ public class StructuredResourceInstanceItemSemanticEditPolicy extends
 						// cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), cnode));
 
 						break;
-					case org.muml.pm.hardware.resourceinstance.diagram.edit.parts.ProcessingMemoryInstanceEditPart.VISUAL_ID:
+					case ProcessingMemoryInstanceEditPart.VISUAL_ID:
 
 						cmd.add(new DestroyElementCommand(
 								new DestroyElementRequest(getEditingDomain(), cnode.getElement(), false)));
@@ -142,7 +145,7 @@ public class StructuredResourceInstanceItemSemanticEditPolicy extends
 						// cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), cnode));
 
 						break;
-					case org.muml.pm.hardware.resourceinstance.diagram.edit.parts.StorageMemoryInstanceEditPart.VISUAL_ID:
+					case StorageMemoryInstanceEditPart.VISUAL_ID:
 
 						cmd.add(new DestroyElementCommand(
 								new DestroyElementRequest(getEditingDomain(), cnode.getElement(), false)));

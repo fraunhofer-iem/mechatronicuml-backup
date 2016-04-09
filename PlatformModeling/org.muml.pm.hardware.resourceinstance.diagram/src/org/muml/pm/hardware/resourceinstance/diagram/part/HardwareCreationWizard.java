@@ -13,12 +13,12 @@ import org.eclipse.ui.INewWizard;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
+import org.muml.core.modelinstance.ui.diagrams.AbstractFujabaDiagramNewWizard;
 
 /**
  * @generated
  */
-public class HardwareCreationWizard
-		extends org.muml.core.modelinstance.ui.diagrams.AbstractFujabaDiagramNewWizard {
+public class HardwareCreationWizard extends AbstractFujabaDiagramNewWizard {
 
 	/**
 	 * @generated
@@ -26,9 +26,8 @@ public class HardwareCreationWizard
 	public void init(IWorkbench workbench, IStructuredSelection selection) {
 		super.init(workbench, selection);
 
-		setDefaultPageImageDescriptor(
-				org.muml.pm.hardware.resourceinstance.diagram.part.ResourceInstanceDiagramEditorPlugin
-						.getBundledImageDescriptor("icons/wizban/NewHwresourceinstanceWizard.gif")); //$NON-NLS-1$
+		setDefaultPageImageDescriptor(ResourceInstanceDiagramEditorPlugin
+				.getBundledImageDescriptor("icons/wizban/NewHwresourceinstanceWizard.gif")); //$NON-NLS-1$
 
 	}
 
@@ -37,7 +36,7 @@ public class HardwareCreationWizard
 	 */
 	@Override
 	public String getEditorId() {
-		return org.muml.pm.hardware.resourceinstance.diagram.part.HardwareDiagramEditor.ID;
+		return HardwareDiagramEditor.ID;
 
 	}
 
@@ -46,8 +45,7 @@ public class HardwareCreationWizard
 	 */
 	@Override
 	public AdapterFactory getItemProvidersAdapterFactory() {
-		return org.muml.pm.hardware.resourceinstance.diagram.part.ResourceInstanceDiagramEditorPlugin
-				.getInstance().getItemProvidersAdapterFactory();
+		return ResourceInstanceDiagramEditorPlugin.getInstance().getItemProvidersAdapterFactory();
 	}
 
 }

@@ -14,18 +14,22 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyReferenceRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelationshipRequest;
 import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.pm.hardware.resourceinstance.diagram.edit.commands.ProcessorInstanceOwnedCacheInstanceCreateCommand;
+import org.muml.pm.hardware.resourceinstance.diagram.edit.commands.ProcessorInstanceOwnedCacheInstanceReorientCommand;
+import org.muml.pm.hardware.resourceinstance.diagram.edit.parts.ProcessorInstanceOwnedCacheInstanceEditPart;
+import org.muml.pm.hardware.resourceinstance.diagram.part.HardwareVisualIDRegistry;
+import org.muml.pm.hardware.resourceinstance.diagram.providers.HardwareElementTypes;
 
 /**
  * @generated
  */
-public class ProcessorInstanceItemSemanticEditPolicy extends
-		org.muml.pm.hardware.resourceinstance.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy {
+public class ProcessorInstanceItemSemanticEditPolicy extends HardwareBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public ProcessorInstanceItemSemanticEditPolicy() {
-		super(org.muml.pm.hardware.resourceinstance.diagram.providers.HardwareElementTypes.ProcessorInstance_3020);
+		super(HardwareElementTypes.ProcessorInstance_3020);
 	}
 
 	/**
@@ -37,9 +41,8 @@ public class ProcessorInstanceItemSemanticEditPolicy extends
 		cmd.setTransactionNestingEnabled(false);
 		for (Iterator<?> it = view.getSourceEdges().iterator(); it.hasNext();) {
 			Edge outgoingLink = (Edge) it.next();
-			if (org.muml.pm.hardware.resourceinstance.diagram.part.HardwareVisualIDRegistry
-					.getVisualID(
-							outgoingLink) == org.muml.pm.hardware.resourceinstance.diagram.edit.parts.ProcessorInstanceOwnedCacheInstanceEditPart.VISUAL_ID) {
+			if (HardwareVisualIDRegistry
+					.getVisualID(outgoingLink) == ProcessorInstanceOwnedCacheInstanceEditPart.VISUAL_ID) {
 				DestroyReferenceRequest r = new DestroyReferenceRequest(outgoingLink.getSource().getElement(), null,
 						outgoingLink.getTarget().getElement(), false);
 				cmd.add(new DestroyReferenceCommand(r));
@@ -72,11 +75,9 @@ public class ProcessorInstanceItemSemanticEditPolicy extends
 	 * @generated
 	 */
 	protected Command getStartCreateRelationshipCommand(CreateRelationshipRequest req) {
-		if (org.muml.pm.hardware.resourceinstance.diagram.providers.HardwareElementTypes.ProcessorInstanceOwnedCacheInstance_4003 == req
-				.getElementType()) {
+		if (HardwareElementTypes.ProcessorInstanceOwnedCacheInstance_4003 == req.getElementType()) {
 			return getGEFWrapper(
-					new org.muml.pm.hardware.resourceinstance.diagram.edit.commands.ProcessorInstanceOwnedCacheInstanceCreateCommand(
-							req, req.getSource(), req.getTarget()));
+					new ProcessorInstanceOwnedCacheInstanceCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return null;
 	}
@@ -85,8 +86,7 @@ public class ProcessorInstanceItemSemanticEditPolicy extends
 	 * @generated
 	 */
 	protected Command getCompleteCreateRelationshipCommand(CreateRelationshipRequest req) {
-		if (org.muml.pm.hardware.resourceinstance.diagram.providers.HardwareElementTypes.ProcessorInstanceOwnedCacheInstance_4003 == req
-				.getElementType()) {
+		if (HardwareElementTypes.ProcessorInstanceOwnedCacheInstance_4003 == req.getElementType()) {
 			return null;
 		}
 		return null;
@@ -100,10 +100,8 @@ public class ProcessorInstanceItemSemanticEditPolicy extends
 	 */
 	protected Command getReorientReferenceRelationshipCommand(ReorientReferenceRelationshipRequest req) {
 		switch (getVisualID(req)) {
-		case org.muml.pm.hardware.resourceinstance.diagram.edit.parts.ProcessorInstanceOwnedCacheInstanceEditPart.VISUAL_ID:
-			return getGEFWrapper(
-					new org.muml.pm.hardware.resourceinstance.diagram.edit.commands.ProcessorInstanceOwnedCacheInstanceReorientCommand(
-							req));
+		case ProcessorInstanceOwnedCacheInstanceEditPart.VISUAL_ID:
+			return getGEFWrapper(new ProcessorInstanceOwnedCacheInstanceReorientCommand(req));
 		}
 		return super.getReorientReferenceRelationshipCommand(req);
 	}

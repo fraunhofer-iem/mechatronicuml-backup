@@ -64,9 +64,9 @@
 	         allPopups="false"
 	         locationURI="popup:de.uni_paderborn.fujaba.muml.browser.new.menu?after=additions">
 	  		<command
-                 commandId="de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.ResourceInstanceRepository.browser.create"
+                 commandId="org.muml.pm.hardware.hwresourceinstance.ResourceInstanceRepository.browser.create"
                  icon="icons/obj16/HwresourceinstanceDiagramFile.gif"
-                 id="de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.ResourceInstanceRepository.browser.create"
+                 id="org.muml.pm.hardware.hwresourceinstance.ResourceInstanceRepository.browser.create"
                  label="ResourceInstanceRepository"
                  style="push">
               <visibleWhen
@@ -110,7 +110,7 @@
            defaultHandler="org.muml.pm.hardware.resourceinstance.diagram.part.HardwareInitDiagramFileAction$CreateDiagramElement"
            categoryId="de.uni_paderborn.fujaba"
            description="Create new ResourceInstance"
-           id="de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.ResourceInstanceRepository.browser.create"
+           id="org.muml.pm.hardware.hwresourceinstance.ResourceInstanceRepository.browser.create"
            name="Create new ResourceInstance">
     </command>
     </extension>

@@ -15,6 +15,7 @@ import org.eclipse.ocl.ecore.OCLExpression;
 import org.eclipse.ocl.ecore.Variable;
 import org.eclipse.ocl.ecore.OCL.Helper;
 import org.eclipse.ocl.options.ParsingOptions;
+import org.muml.pm.hardware.resourceinstance.diagram.part.ResourceInstanceDiagramEditorPlugin;
 
 /**
  * @generated
@@ -24,7 +25,7 @@ public class HardwareOCLFactory {
 	/**
 	 * @generated
 	 */
-	private final org.muml.pm.hardware.resourceinstance.diagram.expressions.HardwareAbstractExpression[] expressions;
+	private final HardwareAbstractExpression[] expressions;
 
 	/**
 	 * @generated
@@ -35,7 +36,7 @@ public class HardwareOCLFactory {
 	 * @generated
 	 */
 	protected HardwareOCLFactory() {
-		this.expressions = new org.muml.pm.hardware.resourceinstance.diagram.expressions.HardwareAbstractExpression[41];
+		this.expressions = new HardwareAbstractExpression[41];
 		this.expressionBodies = new String[] {
 				"let portName : String = if self.name.oclIsUndefined() then \'null\' else self.name endif in\r\nlet protocolName : String = if self.protocol.oclIsUndefined() then \'null\' else self.protocol.name endif in\r\nportName +\': \' +  \'\\n\' + protocolName", //$NON-NLS-1$
 				"\': \' + if self.resourceType.oclIsUndefined() then \'null\' else self.resourceType.name endif", //$NON-NLS-1$
@@ -85,11 +86,10 @@ public class HardwareOCLFactory {
 	 * @generated
 	 */
 	private static HardwareOCLFactory getInstance() {
-		HardwareOCLFactory instance = org.muml.pm.hardware.resourceinstance.diagram.part.ResourceInstanceDiagramEditorPlugin
-				.getInstance().getHardwareOCLFactory();
+		HardwareOCLFactory instance = ResourceInstanceDiagramEditorPlugin.getInstance().getHardwareOCLFactory();
 		if (instance == null) {
-			org.muml.pm.hardware.resourceinstance.diagram.part.ResourceInstanceDiagramEditorPlugin
-					.getInstance().setHardwareOCLFactory(instance = new HardwareOCLFactory());
+			ResourceInstanceDiagramEditorPlugin.getInstance()
+					.setHardwareOCLFactory(instance = new HardwareOCLFactory());
 		}
 		return instance;
 	}
@@ -104,8 +104,8 @@ public class HardwareOCLFactory {
 	/**
 	 * @generated
 	 */
-	public static org.muml.pm.hardware.resourceinstance.diagram.expressions.HardwareAbstractExpression getExpression(
-			int index, EClassifier context, Map<String, EClassifier> environment) {
+	public static HardwareAbstractExpression getExpression(int index, EClassifier context,
+			Map<String, EClassifier> environment) {
 		HardwareOCLFactory cached = getInstance();
 		if (index < 0 || index >= cached.expressions.length) {
 			throw new IllegalArgumentException();
@@ -121,8 +121,8 @@ public class HardwareOCLFactory {
 	 * This is factory method, callers are responsible to keep reference to the return value if they want to reuse parsed expression
 	 * @generated
 	 */
-	public static org.muml.pm.hardware.resourceinstance.diagram.expressions.HardwareAbstractExpression getExpression(
-			String body, EClassifier context, Map<String, EClassifier> environment) {
+	public static HardwareAbstractExpression getExpression(String body, EClassifier context,
+			Map<String, EClassifier> environment) {
 		return new Expression(body, context, environment);
 	}
 
@@ -130,16 +130,14 @@ public class HardwareOCLFactory {
 	 * This method will become private in the next release
 	 * @generated
 	 */
-	public static org.muml.pm.hardware.resourceinstance.diagram.expressions.HardwareAbstractExpression getExpression(
-			String body, EClassifier context) {
+	public static HardwareAbstractExpression getExpression(String body, EClassifier context) {
 		return getExpression(body, context, Collections.<String, EClassifier> emptyMap());
 	}
 
 	/**
 	 * @generated
 	 */
-	private static class Expression extends
-			org.muml.pm.hardware.resourceinstance.diagram.expressions.HardwareAbstractExpression {
+	private static class Expression extends HardwareAbstractExpression {
 
 		/**
 		 * @generated

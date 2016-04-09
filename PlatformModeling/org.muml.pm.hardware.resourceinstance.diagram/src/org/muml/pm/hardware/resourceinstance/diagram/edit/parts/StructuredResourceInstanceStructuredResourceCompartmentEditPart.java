@@ -21,6 +21,11 @@ import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.edit.policies.reparent.CreationEditPolicyWithCustomReparent;
+import org.muml.pm.hardware.resourceinstance.diagram.edit.policies.StructuredResourceInstanceStructuredResourceCompartmentCanonicalEditPolicy;
+import org.muml.pm.hardware.resourceinstance.diagram.edit.policies.StructuredResourceInstanceStructuredResourceCompartmentItemSemanticEditPolicy;
+import org.muml.pm.hardware.resourceinstance.diagram.part.HardwareVisualIDRegistry;
+import org.muml.pm.hardware.resourceinstance.diagram.part.Messages;
+import org.muml.pm.hardware.resourceinstance.diagram.providers.HardwareElementTypes;
 
 /**
  * @generated
@@ -66,7 +71,7 @@ public class StructuredResourceInstanceStructuredResourceCompartmentEditPart ext
 	 * @generated
 	 */
 	public String getCompartmentName() {
-		return org.muml.pm.hardware.resourceinstance.diagram.part.Messages.StructuredResourceInstanceStructuredResourceCompartmentEditPart_title;
+		return Messages.StructuredResourceInstanceStructuredResourceCompartmentEditPart_title;
 	}
 
 	/**
@@ -96,12 +101,12 @@ public class StructuredResourceInstanceStructuredResourceCompartmentEditPart ext
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, new ResizableCompartmentEditPolicy());
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
-				new org.muml.pm.hardware.resourceinstance.diagram.edit.policies.StructuredResourceInstanceStructuredResourceCompartmentItemSemanticEditPolicy());
-		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicyWithCustomReparent(
-				org.muml.pm.hardware.resourceinstance.diagram.part.HardwareVisualIDRegistry.TYPED_INSTANCE));
+				new StructuredResourceInstanceStructuredResourceCompartmentItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.CREATION_ROLE,
+				new CreationEditPolicyWithCustomReparent(HardwareVisualIDRegistry.TYPED_INSTANCE));
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
 		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE,
-				new org.muml.pm.hardware.resourceinstance.diagram.edit.policies.StructuredResourceInstanceStructuredResourceCompartmentCanonicalEditPolicy());
+				new StructuredResourceInstanceStructuredResourceCompartmentCanonicalEditPolicy());
 	}
 
 	/**
@@ -121,19 +126,19 @@ public class StructuredResourceInstanceStructuredResourceCompartmentEditPart ext
 			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request).getViewAndElementDescriptor()
 					.getCreateElementRequestAdapter();
 			IElementType type = (IElementType) adapter.getAdapter(IElementType.class);
-			if (type == org.muml.pm.hardware.resourceinstance.diagram.providers.HardwareElementTypes.CacheInstance_3018) {
+			if (type == HardwareElementTypes.CacheInstance_3018) {
 				return this;
 			}
-			if (type == org.muml.pm.hardware.resourceinstance.diagram.providers.HardwareElementTypes.ProgrammableLogicDeviceInstance_3019) {
+			if (type == HardwareElementTypes.ProgrammableLogicDeviceInstance_3019) {
 				return this;
 			}
-			if (type == org.muml.pm.hardware.resourceinstance.diagram.providers.HardwareElementTypes.ProcessorInstance_3020) {
+			if (type == HardwareElementTypes.ProcessorInstance_3020) {
 				return this;
 			}
-			if (type == org.muml.pm.hardware.resourceinstance.diagram.providers.HardwareElementTypes.ProcessingMemoryInstance_3021) {
+			if (type == HardwareElementTypes.ProcessingMemoryInstance_3021) {
 				return this;
 			}
-			if (type == org.muml.pm.hardware.resourceinstance.diagram.providers.HardwareElementTypes.StorageMemoryInstance_3022) {
+			if (type == HardwareElementTypes.StorageMemoryInstance_3022) {
 				return this;
 			}
 			return getParent().getTargetEditPart(request);
@@ -143,8 +148,7 @@ public class StructuredResourceInstanceStructuredResourceCompartmentEditPart ext
 				for (Object type : ((CreateUnspecifiedTypeConnectionRequest) request).getElementTypes()) {
 					if (type instanceof IElementType) {
 						IElementType elementType = (IElementType) type;
-						if (elementType.equals(
-								org.muml.pm.hardware.resourceinstance.diagram.providers.HardwareElementTypes.ProcessorInstanceOwnedCacheInstance_4003))
+						if (elementType.equals(HardwareElementTypes.ProcessorInstanceOwnedCacheInstance_4003))
 							return super.getTargetEditPart(request);
 					}
 				}

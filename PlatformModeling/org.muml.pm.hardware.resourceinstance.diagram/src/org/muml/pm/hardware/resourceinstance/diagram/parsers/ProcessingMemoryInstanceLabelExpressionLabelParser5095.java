@@ -19,6 +19,8 @@ import org.eclipse.gmf.runtime.common.ui.services.parser.ParserEditStatus;
 import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand;
 import org.eclipse.gmf.tooling.runtime.parsers.ExpressionLabelParserBase;
 import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
+import org.muml.pm.hardware.hwresourceinstance.HwresourceinstancePackage;
+import org.muml.pm.hardware.resourceinstance.diagram.expressions.HardwareOCLFactory;
 
 /**
  * @generated
@@ -35,12 +37,8 @@ public class ProcessingMemoryInstanceLabelExpressionLabelParser5095 extends Expr
 	 */
 	@Override
 	protected String getExpressionBody() {
-		return org.muml.pm.hardware.resourceinstance.diagram.expressions.HardwareOCLFactory
-				.getExpression(23,
-						org.muml.pm.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE
-								.getProcessingMemoryInstance(),
-						null)
-				.body();
+		return HardwareOCLFactory
+				.getExpression(23, HwresourceinstancePackage.eINSTANCE.getProcessingMemoryInstance(), null).body();
 	}
 
 	/**

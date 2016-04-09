@@ -11,6 +11,10 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.pm.hardware.hwresourceinstance.HWPort;
+import org.muml.pm.hardware.hwresourceinstance.HwresourceinstanceFactory;
+import org.muml.pm.hardware.hwresourceinstance.ResourceInstance;
+import org.muml.pm.hardware.resourceinstance.diagram.providers.ElementInitializers;
 
 /**
  * @generated
@@ -48,14 +52,12 @@ public class HWPortCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-		org.muml.pm.hardware.hwresourceinstance.HWPort newElement = org.muml.pm.hardware.hwresourceinstance.HwresourceinstanceFactory.eINSTANCE
-				.createHWPort();
+		HWPort newElement = HwresourceinstanceFactory.eINSTANCE.createHWPort();
 
-		org.muml.pm.hardware.hwresourceinstance.ResourceInstance owner = (org.muml.pm.hardware.hwresourceinstance.ResourceInstance) getElementToEdit();
+		ResourceInstance owner = (ResourceInstance) getElementToEdit();
 		owner.getHwports().add(newElement);
 
-		org.muml.pm.hardware.resourceinstance.diagram.providers.ElementInitializers.getInstance()
-				.init_HWPort_3017(newElement);
+		ElementInitializers.getInstance().init_HWPort_3017(newElement);
 
 		doConfigure(newElement, monitor, info);
 
@@ -64,10 +66,9 @@ public class HWPortCreateCommand extends EditElementCommand {
 	}
 
 	/**
-	 * @generated
-	 */
-	protected void doConfigure(org.muml.pm.hardware.hwresourceinstance.HWPort newElement,
-			IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
+	* @generated
+	*/
+	protected void doConfigure(HWPort newElement, IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest()).getElementType();
 		ConfigureRequest configureRequest = new ConfigureRequest(getEditingDomain(), newElement, elementType);
 		configureRequest.setClientContext(((CreateElementRequest) getRequest()).getClientContext());

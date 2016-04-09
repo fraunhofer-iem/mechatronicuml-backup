@@ -9,6 +9,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.ITreeBranchEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.pm.hardware.resourceinstance.diagram.edit.policies.ProcessorInstanceOwnedCacheInstanceItemSemanticEditPolicy;
 
 /**
  * @generated
@@ -56,7 +57,7 @@ public class ProcessorInstanceOwnedCacheInstanceEditPart extends ConnectionNodeE
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
-				new org.muml.pm.hardware.resourceinstance.diagram.edit.policies.ProcessorInstanceOwnedCacheInstanceItemSemanticEditPolicy());
+				new ProcessorInstanceOwnedCacheInstanceItemSemanticEditPolicy());
 	}
 
 	/**

@@ -17,6 +17,7 @@ import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.ui.IMemento;
 import org.eclipse.ui.navigator.ICommonContentExtensionSite;
 import org.eclipse.ui.navigator.ICommonContentProvider;
+import org.muml.pm.hardware.resourceinstance.diagram.part.ResourceInstanceDiagramEditorPlugin;
 
 /**
  * @generated
@@ -58,8 +59,7 @@ public class HardwareDomainNavigatorContentProvider implements ICommonContentPro
 	 */
 	public HardwareDomainNavigatorContentProvider() {
 		myAdapterFctoryContentProvier = new AdapterFactoryContentProvider(
-				org.muml.pm.hardware.resourceinstance.diagram.part.ResourceInstanceDiagramEditorPlugin
-						.getInstance().getItemProvidersAdapterFactory());
+				ResourceInstanceDiagramEditorPlugin.getInstance().getItemProvidersAdapterFactory());
 		TransactionalEditingDomain editingDomain = GMFEditingDomainFactory.INSTANCE.createEditingDomain();
 		myEditingDomain = (AdapterFactoryEditingDomain) editingDomain;
 		myEditingDomain.setResourceToReadOnlyMap(new HashMap() {
@@ -175,11 +175,9 @@ public class HardwareDomainNavigatorContentProvider implements ICommonContentPro
 			return wrapEObjects(myAdapterFctoryContentProvier.getChildren(resource), parentElement);
 		}
 
-		if (parentElement instanceof org.muml.pm.hardware.resourceinstance.diagram.navigator.HardwareDomainNavigatorItem) {
-			return wrapEObjects(myAdapterFctoryContentProvier.getChildren(
-					((org.muml.pm.hardware.resourceinstance.diagram.navigator.HardwareDomainNavigatorItem) parentElement)
-							.getEObject()),
-					parentElement);
+		if (parentElement instanceof HardwareDomainNavigatorItem) {
+			return wrapEObjects(myAdapterFctoryContentProvier
+					.getChildren(((HardwareDomainNavigatorItem) parentElement).getEObject()), parentElement);
 		}
 		return EMPTY_ARRAY;
 	}
@@ -191,9 +189,8 @@ public class HardwareDomainNavigatorContentProvider implements ICommonContentPro
 		Collection result = new ArrayList();
 		for (int i = 0; i < objects.length; i++) {
 			if (objects[i] instanceof EObject) {
-				result.add(
-						new org.muml.pm.hardware.resourceinstance.diagram.navigator.HardwareDomainNavigatorItem(
-								(EObject) objects[i], parentElement, myAdapterFctoryContentProvier));
+				result.add(new HardwareDomainNavigatorItem((EObject) objects[i], parentElement,
+						myAdapterFctoryContentProvier));
 			}
 		}
 		return result.toArray();
@@ -203,8 +200,8 @@ public class HardwareDomainNavigatorContentProvider implements ICommonContentPro
 	 * @generated
 	 */
 	public Object getParent(Object element) {
-		if (element instanceof org.muml.pm.hardware.resourceinstance.diagram.navigator.HardwareAbstractNavigatorItem) {
-			org.muml.pm.hardware.resourceinstance.diagram.navigator.HardwareAbstractNavigatorItem abstractNavigatorItem = (org.muml.pm.hardware.resourceinstance.diagram.navigator.HardwareAbstractNavigatorItem) element;
+		if (element instanceof HardwareAbstractNavigatorItem) {
+			HardwareAbstractNavigatorItem abstractNavigatorItem = (HardwareAbstractNavigatorItem) element;
 			return abstractNavigatorItem.getParent();
 		}
 		return null;

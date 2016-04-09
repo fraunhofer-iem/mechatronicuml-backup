@@ -19,6 +19,8 @@ import org.eclipse.gmf.runtime.common.ui.services.parser.ParserEditStatus;
 import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand;
 import org.eclipse.gmf.tooling.runtime.parsers.ExpressionLabelParserBase;
 import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
+import org.muml.pm.hardware.hwresourceinstance.HwresourceinstancePackage;
+import org.muml.pm.hardware.resourceinstance.diagram.expressions.HardwareOCLFactory;
 
 /**
  * @generated
@@ -35,11 +37,7 @@ public class ProcessorInstanceLabelExpressionLabelParser5089 extends ExpressionL
 	 */
 	@Override
 	protected String getExpressionBody() {
-		return org.muml.pm.hardware.resourceinstance.diagram.expressions.HardwareOCLFactory
-				.getExpression(15,
-						org.muml.pm.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE
-								.getProcessorInstance(),
-						null)
+		return HardwareOCLFactory.getExpression(15, HwresourceinstancePackage.eINSTANCE.getProcessorInstance(), null)
 				.body();
 	}
 
@@ -48,12 +46,8 @@ public class ProcessorInstanceLabelExpressionLabelParser5089 extends ExpressionL
 	 */
 	public String getEditString(IAdaptable element, int flags) {
 		EObject target = (EObject) element.getAdapter(EObject.class);
-		Object result = org.muml.pm.hardware.resourceinstance.diagram.expressions.HardwareOCLFactory
-				.getExpression(16,
-						org.muml.pm.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE
-								.getProcessorInstance(),
-						null)
-				.evaluate(target);
+		Object result = HardwareOCLFactory
+				.getExpression(16, HwresourceinstancePackage.eINSTANCE.getProcessorInstance(), null).evaluate(target);
 		return String.valueOf(result);
 	}
 

@@ -6,41 +6,35 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.emf.commands.core.commands.DuplicateEObjectsCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DuplicateElementsRequest;
+import org.muml.pm.hardware.resourceinstance.diagram.edit.commands.ActuatorInstanceCreateCommand;
+import org.muml.pm.hardware.resourceinstance.diagram.edit.commands.SensorInstanceCreateCommand;
+import org.muml.pm.hardware.resourceinstance.diagram.edit.commands.StructuredResourceInstanceCreateCommand;
+import org.muml.pm.hardware.resourceinstance.diagram.providers.HardwareElementTypes;
 
 /**
  * @generated
  */
-public class ResourceInstanceRepositoryItemSemanticEditPolicy extends
-		org.muml.pm.hardware.resourceinstance.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy {
+public class ResourceInstanceRepositoryItemSemanticEditPolicy extends HardwareBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public ResourceInstanceRepositoryItemSemanticEditPolicy() {
-		super(org.muml.pm.hardware.resourceinstance.diagram.providers.HardwareElementTypes.ResourceInstanceRepository_1000);
+		super(HardwareElementTypes.ResourceInstanceRepository_1000);
 	}
 
 	/**
 	 * @generated
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
-		if (org.muml.pm.hardware.resourceinstance.diagram.providers.HardwareElementTypes.SensorInstance_2007 == req
-				.getElementType()) {
-			return getGEFWrapper(
-					new org.muml.pm.hardware.resourceinstance.diagram.edit.commands.SensorInstanceCreateCommand(
-							req));
+		if (HardwareElementTypes.SensorInstance_2007 == req.getElementType()) {
+			return getGEFWrapper(new SensorInstanceCreateCommand(req));
 		}
-		if (org.muml.pm.hardware.resourceinstance.diagram.providers.HardwareElementTypes.ActuatorInstance_2008 == req
-				.getElementType()) {
-			return getGEFWrapper(
-					new org.muml.pm.hardware.resourceinstance.diagram.edit.commands.ActuatorInstanceCreateCommand(
-							req));
+		if (HardwareElementTypes.ActuatorInstance_2008 == req.getElementType()) {
+			return getGEFWrapper(new ActuatorInstanceCreateCommand(req));
 		}
-		if (org.muml.pm.hardware.resourceinstance.diagram.providers.HardwareElementTypes.StructuredResourceInstance_2009 == req
-				.getElementType()) {
-			return getGEFWrapper(
-					new org.muml.pm.hardware.resourceinstance.diagram.edit.commands.StructuredResourceInstanceCreateCommand(
-							req));
+		if (HardwareElementTypes.StructuredResourceInstance_2009 == req.getElementType()) {
+			return getGEFWrapper(new StructuredResourceInstanceCreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}

@@ -12,6 +12,29 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.update.DiagramUpdater;
+import org.muml.pm.hardware.hwresourceinstance.ActuatorInstance;
+import org.muml.pm.hardware.hwresourceinstance.AtomicResourceInstance;
+import org.muml.pm.hardware.hwresourceinstance.CacheInstance;
+import org.muml.pm.hardware.hwresourceinstance.HWPort;
+import org.muml.pm.hardware.hwresourceinstance.HwresourceinstancePackage;
+import org.muml.pm.hardware.hwresourceinstance.ProcessorInstance;
+import org.muml.pm.hardware.hwresourceinstance.ResourceInstance;
+import org.muml.pm.hardware.hwresourceinstance.ResourceInstanceRepository;
+import org.muml.pm.hardware.hwresourceinstance.SensorInstance;
+import org.muml.pm.hardware.hwresourceinstance.StructuredResourceInstance;
+import org.muml.pm.hardware.resourceinstance.diagram.edit.parts.ActuatorInstanceEditPart;
+import org.muml.pm.hardware.resourceinstance.diagram.edit.parts.CacheInstanceEditPart;
+import org.muml.pm.hardware.resourceinstance.diagram.edit.parts.HWPortEditPart;
+import org.muml.pm.hardware.resourceinstance.diagram.edit.parts.ProcessingMemoryInstanceEditPart;
+import org.muml.pm.hardware.resourceinstance.diagram.edit.parts.ProcessorInstanceEditPart;
+import org.muml.pm.hardware.resourceinstance.diagram.edit.parts.ProcessorInstanceOwnedCacheInstanceEditPart;
+import org.muml.pm.hardware.resourceinstance.diagram.edit.parts.ProgrammableLogicDeviceInstanceEditPart;
+import org.muml.pm.hardware.resourceinstance.diagram.edit.parts.ResourceInstanceRepositoryEditPart;
+import org.muml.pm.hardware.resourceinstance.diagram.edit.parts.SensorInstanceEditPart;
+import org.muml.pm.hardware.resourceinstance.diagram.edit.parts.StorageMemoryInstanceEditPart;
+import org.muml.pm.hardware.resourceinstance.diagram.edit.parts.StructuredResourceInstanceEditPart;
+import org.muml.pm.hardware.resourceinstance.diagram.edit.parts.StructuredResourceInstanceStructuredResourceCompartmentEditPart;
+import org.muml.pm.hardware.resourceinstance.diagram.providers.HardwareElementTypes;
 
 /**
  * @generated
@@ -21,19 +44,17 @@ public class HardwareDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pm.hardware.resourceinstance.diagram.part.HardwareNodeDescriptor> getSemanticChildren(
-			View view) {
-		switch (org.muml.pm.hardware.resourceinstance.diagram.part.HardwareVisualIDRegistry
-				.getVisualID(view)) {
-		case org.muml.pm.hardware.resourceinstance.diagram.edit.parts.ResourceInstanceRepositoryEditPart.VISUAL_ID:
+	public static List<HardwareNodeDescriptor> getSemanticChildren(View view) {
+		switch (HardwareVisualIDRegistry.getVisualID(view)) {
+		case ResourceInstanceRepositoryEditPart.VISUAL_ID:
 			return getResourceInstanceRepository_1000SemanticChildren(view);
-		case org.muml.pm.hardware.resourceinstance.diagram.edit.parts.SensorInstanceEditPart.VISUAL_ID:
+		case SensorInstanceEditPart.VISUAL_ID:
 			return getSensorInstance_2007SemanticChildren(view);
-		case org.muml.pm.hardware.resourceinstance.diagram.edit.parts.ActuatorInstanceEditPart.VISUAL_ID:
+		case ActuatorInstanceEditPart.VISUAL_ID:
 			return getActuatorInstance_2008SemanticChildren(view);
-		case org.muml.pm.hardware.resourceinstance.diagram.edit.parts.StructuredResourceInstanceEditPart.VISUAL_ID:
+		case StructuredResourceInstanceEditPart.VISUAL_ID:
 			return getStructuredResourceInstance_2009SemanticChildren(view);
-		case org.muml.pm.hardware.resourceinstance.diagram.edit.parts.StructuredResourceInstanceStructuredResourceCompartmentEditPart.VISUAL_ID:
+		case StructuredResourceInstanceStructuredResourceCompartmentEditPart.VISUAL_ID:
 			return getStructuredResourceInstanceStructuredResourceCompartment_7003SemanticChildren(view);
 		}
 		return Collections.emptyList();
@@ -42,35 +63,25 @@ public class HardwareDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pm.hardware.resourceinstance.diagram.part.HardwareNodeDescriptor> getResourceInstanceRepository_1000SemanticChildren(
-			View view) {
+	public static List<HardwareNodeDescriptor> getResourceInstanceRepository_1000SemanticChildren(View view) {
 		if (!view.isSetElement()) {
 			return Collections.emptyList();
 		}
-		org.muml.pm.hardware.hwresourceinstance.ResourceInstanceRepository modelElement = (org.muml.pm.hardware.hwresourceinstance.ResourceInstanceRepository) view
-				.getElement();
-		LinkedList<org.muml.pm.hardware.resourceinstance.diagram.part.HardwareNodeDescriptor> result = new LinkedList<org.muml.pm.hardware.resourceinstance.diagram.part.HardwareNodeDescriptor>();
+		ResourceInstanceRepository modelElement = (ResourceInstanceRepository) view.getElement();
+		LinkedList<HardwareNodeDescriptor> result = new LinkedList<HardwareNodeDescriptor>();
 		for (Iterator<?> it = modelElement.getResourceInstances().iterator(); it.hasNext();) {
-			org.muml.pm.hardware.hwresourceinstance.ResourceInstance childElement = (org.muml.pm.hardware.hwresourceinstance.ResourceInstance) it
-					.next();
-			int visualID = org.muml.pm.hardware.resourceinstance.diagram.part.HardwareVisualIDRegistry
-					.getNodeVisualID(view, childElement);
-			if (visualID == org.muml.pm.hardware.resourceinstance.diagram.edit.parts.SensorInstanceEditPart.VISUAL_ID) {
-				result.add(
-						new org.muml.pm.hardware.resourceinstance.diagram.part.HardwareNodeDescriptor(
-								childElement, visualID));
+			ResourceInstance childElement = (ResourceInstance) it.next();
+			int visualID = HardwareVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == SensorInstanceEditPart.VISUAL_ID) {
+				result.add(new HardwareNodeDescriptor(childElement, visualID));
 				continue;
 			}
-			if (visualID == org.muml.pm.hardware.resourceinstance.diagram.edit.parts.ActuatorInstanceEditPart.VISUAL_ID) {
-				result.add(
-						new org.muml.pm.hardware.resourceinstance.diagram.part.HardwareNodeDescriptor(
-								childElement, visualID));
+			if (visualID == ActuatorInstanceEditPart.VISUAL_ID) {
+				result.add(new HardwareNodeDescriptor(childElement, visualID));
 				continue;
 			}
-			if (visualID == org.muml.pm.hardware.resourceinstance.diagram.edit.parts.StructuredResourceInstanceEditPart.VISUAL_ID) {
-				result.add(
-						new org.muml.pm.hardware.resourceinstance.diagram.part.HardwareNodeDescriptor(
-								childElement, visualID));
+			if (visualID == StructuredResourceInstanceEditPart.VISUAL_ID) {
+				result.add(new HardwareNodeDescriptor(childElement, visualID));
 				continue;
 			}
 		}
@@ -81,23 +92,17 @@ public class HardwareDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pm.hardware.resourceinstance.diagram.part.HardwareNodeDescriptor> getSensorInstance_2007SemanticChildren(
-			View view) {
+	public static List<HardwareNodeDescriptor> getSensorInstance_2007SemanticChildren(View view) {
 		if (!view.isSetElement()) {
 			return Collections.emptyList();
 		}
-		org.muml.pm.hardware.hwresourceinstance.SensorInstance modelElement = (org.muml.pm.hardware.hwresourceinstance.SensorInstance) view
-				.getElement();
-		LinkedList<org.muml.pm.hardware.resourceinstance.diagram.part.HardwareNodeDescriptor> result = new LinkedList<org.muml.pm.hardware.resourceinstance.diagram.part.HardwareNodeDescriptor>();
+		SensorInstance modelElement = (SensorInstance) view.getElement();
+		LinkedList<HardwareNodeDescriptor> result = new LinkedList<HardwareNodeDescriptor>();
 		for (Iterator<?> it = modelElement.getHwports().iterator(); it.hasNext();) {
-			org.muml.pm.hardware.hwresourceinstance.HWPort childElement = (org.muml.pm.hardware.hwresourceinstance.HWPort) it
-					.next();
-			int visualID = org.muml.pm.hardware.resourceinstance.diagram.part.HardwareVisualIDRegistry
-					.getNodeVisualID(view, childElement);
-			if (visualID == org.muml.pm.hardware.resourceinstance.diagram.edit.parts.HWPortEditPart.VISUAL_ID) {
-				result.add(
-						new org.muml.pm.hardware.resourceinstance.diagram.part.HardwareNodeDescriptor(
-								childElement, visualID));
+			HWPort childElement = (HWPort) it.next();
+			int visualID = HardwareVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == HWPortEditPart.VISUAL_ID) {
+				result.add(new HardwareNodeDescriptor(childElement, visualID));
 				continue;
 			}
 		}
@@ -108,23 +113,17 @@ public class HardwareDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pm.hardware.resourceinstance.diagram.part.HardwareNodeDescriptor> getActuatorInstance_2008SemanticChildren(
-			View view) {
+	public static List<HardwareNodeDescriptor> getActuatorInstance_2008SemanticChildren(View view) {
 		if (!view.isSetElement()) {
 			return Collections.emptyList();
 		}
-		org.muml.pm.hardware.hwresourceinstance.ActuatorInstance modelElement = (org.muml.pm.hardware.hwresourceinstance.ActuatorInstance) view
-				.getElement();
-		LinkedList<org.muml.pm.hardware.resourceinstance.diagram.part.HardwareNodeDescriptor> result = new LinkedList<org.muml.pm.hardware.resourceinstance.diagram.part.HardwareNodeDescriptor>();
+		ActuatorInstance modelElement = (ActuatorInstance) view.getElement();
+		LinkedList<HardwareNodeDescriptor> result = new LinkedList<HardwareNodeDescriptor>();
 		for (Iterator<?> it = modelElement.getHwports().iterator(); it.hasNext();) {
-			org.muml.pm.hardware.hwresourceinstance.HWPort childElement = (org.muml.pm.hardware.hwresourceinstance.HWPort) it
-					.next();
-			int visualID = org.muml.pm.hardware.resourceinstance.diagram.part.HardwareVisualIDRegistry
-					.getNodeVisualID(view, childElement);
-			if (visualID == org.muml.pm.hardware.resourceinstance.diagram.edit.parts.HWPortEditPart.VISUAL_ID) {
-				result.add(
-						new org.muml.pm.hardware.resourceinstance.diagram.part.HardwareNodeDescriptor(
-								childElement, visualID));
+			HWPort childElement = (HWPort) it.next();
+			int visualID = HardwareVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == HWPortEditPart.VISUAL_ID) {
+				result.add(new HardwareNodeDescriptor(childElement, visualID));
 				continue;
 			}
 		}
@@ -135,23 +134,17 @@ public class HardwareDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pm.hardware.resourceinstance.diagram.part.HardwareNodeDescriptor> getStructuredResourceInstance_2009SemanticChildren(
-			View view) {
+	public static List<HardwareNodeDescriptor> getStructuredResourceInstance_2009SemanticChildren(View view) {
 		if (!view.isSetElement()) {
 			return Collections.emptyList();
 		}
-		org.muml.pm.hardware.hwresourceinstance.StructuredResourceInstance modelElement = (org.muml.pm.hardware.hwresourceinstance.StructuredResourceInstance) view
-				.getElement();
-		LinkedList<org.muml.pm.hardware.resourceinstance.diagram.part.HardwareNodeDescriptor> result = new LinkedList<org.muml.pm.hardware.resourceinstance.diagram.part.HardwareNodeDescriptor>();
+		StructuredResourceInstance modelElement = (StructuredResourceInstance) view.getElement();
+		LinkedList<HardwareNodeDescriptor> result = new LinkedList<HardwareNodeDescriptor>();
 		for (Iterator<?> it = modelElement.getHwports().iterator(); it.hasNext();) {
-			org.muml.pm.hardware.hwresourceinstance.HWPort childElement = (org.muml.pm.hardware.hwresourceinstance.HWPort) it
-					.next();
-			int visualID = org.muml.pm.hardware.resourceinstance.diagram.part.HardwareVisualIDRegistry
-					.getNodeVisualID(view, childElement);
-			if (visualID == org.muml.pm.hardware.resourceinstance.diagram.edit.parts.HWPortEditPart.VISUAL_ID) {
-				result.add(
-						new org.muml.pm.hardware.resourceinstance.diagram.part.HardwareNodeDescriptor(
-								childElement, visualID));
+			HWPort childElement = (HWPort) it.next();
+			int visualID = HardwareVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == HWPortEditPart.VISUAL_ID) {
+				result.add(new HardwareNodeDescriptor(childElement, visualID));
 				continue;
 			}
 		}
@@ -162,7 +155,7 @@ public class HardwareDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pm.hardware.resourceinstance.diagram.part.HardwareNodeDescriptor> getStructuredResourceInstanceStructuredResourceCompartment_7003SemanticChildren(
+	public static List<HardwareNodeDescriptor> getStructuredResourceInstanceStructuredResourceCompartment_7003SemanticChildren(
 			View view) {
 		if (false == view.eContainer() instanceof View) {
 			return Collections.emptyList();
@@ -171,42 +164,29 @@ public class HardwareDiagramUpdater {
 		if (!containerView.isSetElement()) {
 			return Collections.emptyList();
 		}
-		org.muml.pm.hardware.hwresourceinstance.StructuredResourceInstance modelElement = (org.muml.pm.hardware.hwresourceinstance.StructuredResourceInstance) containerView
-				.getElement();
-		LinkedList<org.muml.pm.hardware.resourceinstance.diagram.part.HardwareNodeDescriptor> result = new LinkedList<org.muml.pm.hardware.resourceinstance.diagram.part.HardwareNodeDescriptor>();
+		StructuredResourceInstance modelElement = (StructuredResourceInstance) containerView.getElement();
+		LinkedList<HardwareNodeDescriptor> result = new LinkedList<HardwareNodeDescriptor>();
 		for (Iterator<?> it = modelElement.getEmbeddedAtomicResourceInstances().iterator(); it.hasNext();) {
-			org.muml.pm.hardware.hwresourceinstance.AtomicResourceInstance childElement = (org.muml.pm.hardware.hwresourceinstance.AtomicResourceInstance) it
-					.next();
-			int visualID = org.muml.pm.hardware.resourceinstance.diagram.part.HardwareVisualIDRegistry
-					.getNodeVisualID(view, childElement);
-			if (visualID == org.muml.pm.hardware.resourceinstance.diagram.edit.parts.CacheInstanceEditPart.VISUAL_ID) {
-				result.add(
-						new org.muml.pm.hardware.resourceinstance.diagram.part.HardwareNodeDescriptor(
-								childElement, visualID));
+			AtomicResourceInstance childElement = (AtomicResourceInstance) it.next();
+			int visualID = HardwareVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == CacheInstanceEditPart.VISUAL_ID) {
+				result.add(new HardwareNodeDescriptor(childElement, visualID));
 				continue;
 			}
-			if (visualID == org.muml.pm.hardware.resourceinstance.diagram.edit.parts.ProgrammableLogicDeviceInstanceEditPart.VISUAL_ID) {
-				result.add(
-						new org.muml.pm.hardware.resourceinstance.diagram.part.HardwareNodeDescriptor(
-								childElement, visualID));
+			if (visualID == ProgrammableLogicDeviceInstanceEditPart.VISUAL_ID) {
+				result.add(new HardwareNodeDescriptor(childElement, visualID));
 				continue;
 			}
-			if (visualID == org.muml.pm.hardware.resourceinstance.diagram.edit.parts.ProcessorInstanceEditPart.VISUAL_ID) {
-				result.add(
-						new org.muml.pm.hardware.resourceinstance.diagram.part.HardwareNodeDescriptor(
-								childElement, visualID));
+			if (visualID == ProcessorInstanceEditPart.VISUAL_ID) {
+				result.add(new HardwareNodeDescriptor(childElement, visualID));
 				continue;
 			}
-			if (visualID == org.muml.pm.hardware.resourceinstance.diagram.edit.parts.ProcessingMemoryInstanceEditPart.VISUAL_ID) {
-				result.add(
-						new org.muml.pm.hardware.resourceinstance.diagram.part.HardwareNodeDescriptor(
-								childElement, visualID));
+			if (visualID == ProcessingMemoryInstanceEditPart.VISUAL_ID) {
+				result.add(new HardwareNodeDescriptor(childElement, visualID));
 				continue;
 			}
-			if (visualID == org.muml.pm.hardware.resourceinstance.diagram.edit.parts.StorageMemoryInstanceEditPart.VISUAL_ID) {
-				result.add(
-						new org.muml.pm.hardware.resourceinstance.diagram.part.HardwareNodeDescriptor(
-								childElement, visualID));
+			if (visualID == StorageMemoryInstanceEditPart.VISUAL_ID) {
+				result.add(new HardwareNodeDescriptor(childElement, visualID));
 				continue;
 			}
 		}
@@ -217,29 +197,27 @@ public class HardwareDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pm.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor> getContainedLinks(
-			View view) {
-		switch (org.muml.pm.hardware.resourceinstance.diagram.part.HardwareVisualIDRegistry
-				.getVisualID(view)) {
-		case org.muml.pm.hardware.resourceinstance.diagram.edit.parts.ResourceInstanceRepositoryEditPart.VISUAL_ID:
+	public static List<HardwareLinkDescriptor> getContainedLinks(View view) {
+		switch (HardwareVisualIDRegistry.getVisualID(view)) {
+		case ResourceInstanceRepositoryEditPart.VISUAL_ID:
 			return getResourceInstanceRepository_1000ContainedLinks(view);
-		case org.muml.pm.hardware.resourceinstance.diagram.edit.parts.SensorInstanceEditPart.VISUAL_ID:
+		case SensorInstanceEditPart.VISUAL_ID:
 			return getSensorInstance_2007ContainedLinks(view);
-		case org.muml.pm.hardware.resourceinstance.diagram.edit.parts.ActuatorInstanceEditPart.VISUAL_ID:
+		case ActuatorInstanceEditPart.VISUAL_ID:
 			return getActuatorInstance_2008ContainedLinks(view);
-		case org.muml.pm.hardware.resourceinstance.diagram.edit.parts.StructuredResourceInstanceEditPart.VISUAL_ID:
+		case StructuredResourceInstanceEditPart.VISUAL_ID:
 			return getStructuredResourceInstance_2009ContainedLinks(view);
-		case org.muml.pm.hardware.resourceinstance.diagram.edit.parts.HWPortEditPart.VISUAL_ID:
+		case HWPortEditPart.VISUAL_ID:
 			return getHWPort_3017ContainedLinks(view);
-		case org.muml.pm.hardware.resourceinstance.diagram.edit.parts.CacheInstanceEditPart.VISUAL_ID:
+		case CacheInstanceEditPart.VISUAL_ID:
 			return getCacheInstance_3018ContainedLinks(view);
-		case org.muml.pm.hardware.resourceinstance.diagram.edit.parts.ProgrammableLogicDeviceInstanceEditPart.VISUAL_ID:
+		case ProgrammableLogicDeviceInstanceEditPart.VISUAL_ID:
 			return getProgrammableLogicDeviceInstance_3019ContainedLinks(view);
-		case org.muml.pm.hardware.resourceinstance.diagram.edit.parts.ProcessorInstanceEditPart.VISUAL_ID:
+		case ProcessorInstanceEditPart.VISUAL_ID:
 			return getProcessorInstance_3020ContainedLinks(view);
-		case org.muml.pm.hardware.resourceinstance.diagram.edit.parts.ProcessingMemoryInstanceEditPart.VISUAL_ID:
+		case ProcessingMemoryInstanceEditPart.VISUAL_ID:
 			return getProcessingMemoryInstance_3021ContainedLinks(view);
-		case org.muml.pm.hardware.resourceinstance.diagram.edit.parts.StorageMemoryInstanceEditPart.VISUAL_ID:
+		case StorageMemoryInstanceEditPart.VISUAL_ID:
 			return getStorageMemoryInstance_3022ContainedLinks(view);
 		}
 		return Collections.emptyList();
@@ -248,27 +226,25 @@ public class HardwareDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pm.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor> getIncomingLinks(
-			View view) {
-		switch (org.muml.pm.hardware.resourceinstance.diagram.part.HardwareVisualIDRegistry
-				.getVisualID(view)) {
-		case org.muml.pm.hardware.resourceinstance.diagram.edit.parts.SensorInstanceEditPart.VISUAL_ID:
+	public static List<HardwareLinkDescriptor> getIncomingLinks(View view) {
+		switch (HardwareVisualIDRegistry.getVisualID(view)) {
+		case SensorInstanceEditPart.VISUAL_ID:
 			return getSensorInstance_2007IncomingLinks(view);
-		case org.muml.pm.hardware.resourceinstance.diagram.edit.parts.ActuatorInstanceEditPart.VISUAL_ID:
+		case ActuatorInstanceEditPart.VISUAL_ID:
 			return getActuatorInstance_2008IncomingLinks(view);
-		case org.muml.pm.hardware.resourceinstance.diagram.edit.parts.StructuredResourceInstanceEditPart.VISUAL_ID:
+		case StructuredResourceInstanceEditPart.VISUAL_ID:
 			return getStructuredResourceInstance_2009IncomingLinks(view);
-		case org.muml.pm.hardware.resourceinstance.diagram.edit.parts.HWPortEditPart.VISUAL_ID:
+		case HWPortEditPart.VISUAL_ID:
 			return getHWPort_3017IncomingLinks(view);
-		case org.muml.pm.hardware.resourceinstance.diagram.edit.parts.CacheInstanceEditPart.VISUAL_ID:
+		case CacheInstanceEditPart.VISUAL_ID:
 			return getCacheInstance_3018IncomingLinks(view);
-		case org.muml.pm.hardware.resourceinstance.diagram.edit.parts.ProgrammableLogicDeviceInstanceEditPart.VISUAL_ID:
+		case ProgrammableLogicDeviceInstanceEditPart.VISUAL_ID:
 			return getProgrammableLogicDeviceInstance_3019IncomingLinks(view);
-		case org.muml.pm.hardware.resourceinstance.diagram.edit.parts.ProcessorInstanceEditPart.VISUAL_ID:
+		case ProcessorInstanceEditPart.VISUAL_ID:
 			return getProcessorInstance_3020IncomingLinks(view);
-		case org.muml.pm.hardware.resourceinstance.diagram.edit.parts.ProcessingMemoryInstanceEditPart.VISUAL_ID:
+		case ProcessingMemoryInstanceEditPart.VISUAL_ID:
 			return getProcessingMemoryInstance_3021IncomingLinks(view);
-		case org.muml.pm.hardware.resourceinstance.diagram.edit.parts.StorageMemoryInstanceEditPart.VISUAL_ID:
+		case StorageMemoryInstanceEditPart.VISUAL_ID:
 			return getStorageMemoryInstance_3022IncomingLinks(view);
 		}
 		return Collections.emptyList();
@@ -277,27 +253,25 @@ public class HardwareDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pm.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor> getOutgoingLinks(
-			View view) {
-		switch (org.muml.pm.hardware.resourceinstance.diagram.part.HardwareVisualIDRegistry
-				.getVisualID(view)) {
-		case org.muml.pm.hardware.resourceinstance.diagram.edit.parts.SensorInstanceEditPart.VISUAL_ID:
+	public static List<HardwareLinkDescriptor> getOutgoingLinks(View view) {
+		switch (HardwareVisualIDRegistry.getVisualID(view)) {
+		case SensorInstanceEditPart.VISUAL_ID:
 			return getSensorInstance_2007OutgoingLinks(view);
-		case org.muml.pm.hardware.resourceinstance.diagram.edit.parts.ActuatorInstanceEditPart.VISUAL_ID:
+		case ActuatorInstanceEditPart.VISUAL_ID:
 			return getActuatorInstance_2008OutgoingLinks(view);
-		case org.muml.pm.hardware.resourceinstance.diagram.edit.parts.StructuredResourceInstanceEditPart.VISUAL_ID:
+		case StructuredResourceInstanceEditPart.VISUAL_ID:
 			return getStructuredResourceInstance_2009OutgoingLinks(view);
-		case org.muml.pm.hardware.resourceinstance.diagram.edit.parts.HWPortEditPart.VISUAL_ID:
+		case HWPortEditPart.VISUAL_ID:
 			return getHWPort_3017OutgoingLinks(view);
-		case org.muml.pm.hardware.resourceinstance.diagram.edit.parts.CacheInstanceEditPart.VISUAL_ID:
+		case CacheInstanceEditPart.VISUAL_ID:
 			return getCacheInstance_3018OutgoingLinks(view);
-		case org.muml.pm.hardware.resourceinstance.diagram.edit.parts.ProgrammableLogicDeviceInstanceEditPart.VISUAL_ID:
+		case ProgrammableLogicDeviceInstanceEditPart.VISUAL_ID:
 			return getProgrammableLogicDeviceInstance_3019OutgoingLinks(view);
-		case org.muml.pm.hardware.resourceinstance.diagram.edit.parts.ProcessorInstanceEditPart.VISUAL_ID:
+		case ProcessorInstanceEditPart.VISUAL_ID:
 			return getProcessorInstance_3020OutgoingLinks(view);
-		case org.muml.pm.hardware.resourceinstance.diagram.edit.parts.ProcessingMemoryInstanceEditPart.VISUAL_ID:
+		case ProcessingMemoryInstanceEditPart.VISUAL_ID:
 			return getProcessingMemoryInstance_3021OutgoingLinks(view);
-		case org.muml.pm.hardware.resourceinstance.diagram.edit.parts.StorageMemoryInstanceEditPart.VISUAL_ID:
+		case StorageMemoryInstanceEditPart.VISUAL_ID:
 			return getStorageMemoryInstance_3022OutgoingLinks(view);
 		}
 		return Collections.emptyList();
@@ -306,67 +280,58 @@ public class HardwareDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pm.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor> getResourceInstanceRepository_1000ContainedLinks(
-			View view) {
+	public static List<HardwareLinkDescriptor> getResourceInstanceRepository_1000ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pm.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor> getSensorInstance_2007ContainedLinks(
-			View view) {
+	public static List<HardwareLinkDescriptor> getSensorInstance_2007ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pm.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor> getActuatorInstance_2008ContainedLinks(
-			View view) {
+	public static List<HardwareLinkDescriptor> getActuatorInstance_2008ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pm.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor> getStructuredResourceInstance_2009ContainedLinks(
-			View view) {
+	public static List<HardwareLinkDescriptor> getStructuredResourceInstance_2009ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pm.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor> getHWPort_3017ContainedLinks(
-			View view) {
+	public static List<HardwareLinkDescriptor> getHWPort_3017ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pm.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor> getCacheInstance_3018ContainedLinks(
-			View view) {
+	public static List<HardwareLinkDescriptor> getCacheInstance_3018ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pm.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor> getProgrammableLogicDeviceInstance_3019ContainedLinks(
-			View view) {
+	public static List<HardwareLinkDescriptor> getProgrammableLogicDeviceInstance_3019ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pm.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor> getProcessorInstance_3020ContainedLinks(
-			View view) {
-		org.muml.pm.hardware.hwresourceinstance.ProcessorInstance modelElement = (org.muml.pm.hardware.hwresourceinstance.ProcessorInstance) view
-				.getElement();
-		LinkedList<org.muml.pm.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor> result = new LinkedList<org.muml.pm.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor>();
+	public static List<HardwareLinkDescriptor> getProcessorInstance_3020ContainedLinks(View view) {
+		ProcessorInstance modelElement = (ProcessorInstance) view.getElement();
+		LinkedList<HardwareLinkDescriptor> result = new LinkedList<HardwareLinkDescriptor>();
 		result.addAll(getOutgoingFeatureModelFacetLinks_ProcessorInstance_OwnedCacheInstance_4003(modelElement));
 		return result;
 	}
@@ -374,61 +339,53 @@ public class HardwareDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pm.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor> getProcessingMemoryInstance_3021ContainedLinks(
-			View view) {
+	public static List<HardwareLinkDescriptor> getProcessingMemoryInstance_3021ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pm.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor> getStorageMemoryInstance_3022ContainedLinks(
-			View view) {
+	public static List<HardwareLinkDescriptor> getStorageMemoryInstance_3022ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pm.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor> getSensorInstance_2007IncomingLinks(
-			View view) {
+	public static List<HardwareLinkDescriptor> getSensorInstance_2007IncomingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pm.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor> getActuatorInstance_2008IncomingLinks(
-			View view) {
+	public static List<HardwareLinkDescriptor> getActuatorInstance_2008IncomingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pm.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor> getStructuredResourceInstance_2009IncomingLinks(
-			View view) {
+	public static List<HardwareLinkDescriptor> getStructuredResourceInstance_2009IncomingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pm.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor> getHWPort_3017IncomingLinks(
-			View view) {
+	public static List<HardwareLinkDescriptor> getHWPort_3017IncomingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pm.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor> getCacheInstance_3018IncomingLinks(
-			View view) {
-		org.muml.pm.hardware.hwresourceinstance.CacheInstance modelElement = (org.muml.pm.hardware.hwresourceinstance.CacheInstance) view
-				.getElement();
+	public static List<HardwareLinkDescriptor> getCacheInstance_3018IncomingLinks(View view) {
+		CacheInstance modelElement = (CacheInstance) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
-		LinkedList<org.muml.pm.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor> result = new LinkedList<org.muml.pm.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor>();
+		LinkedList<HardwareLinkDescriptor> result = new LinkedList<HardwareLinkDescriptor>();
 		result.addAll(getIncomingFeatureModelFacetLinks_ProcessorInstance_OwnedCacheInstance_4003(modelElement,
 				crossReferences));
 		return result;
@@ -437,91 +394,79 @@ public class HardwareDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pm.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor> getProgrammableLogicDeviceInstance_3019IncomingLinks(
-			View view) {
+	public static List<HardwareLinkDescriptor> getProgrammableLogicDeviceInstance_3019IncomingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pm.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor> getProcessorInstance_3020IncomingLinks(
-			View view) {
+	public static List<HardwareLinkDescriptor> getProcessorInstance_3020IncomingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pm.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor> getProcessingMemoryInstance_3021IncomingLinks(
-			View view) {
+	public static List<HardwareLinkDescriptor> getProcessingMemoryInstance_3021IncomingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pm.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor> getStorageMemoryInstance_3022IncomingLinks(
-			View view) {
+	public static List<HardwareLinkDescriptor> getStorageMemoryInstance_3022IncomingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pm.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor> getSensorInstance_2007OutgoingLinks(
-			View view) {
+	public static List<HardwareLinkDescriptor> getSensorInstance_2007OutgoingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pm.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor> getActuatorInstance_2008OutgoingLinks(
-			View view) {
+	public static List<HardwareLinkDescriptor> getActuatorInstance_2008OutgoingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pm.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor> getStructuredResourceInstance_2009OutgoingLinks(
-			View view) {
+	public static List<HardwareLinkDescriptor> getStructuredResourceInstance_2009OutgoingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pm.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor> getHWPort_3017OutgoingLinks(
-			View view) {
+	public static List<HardwareLinkDescriptor> getHWPort_3017OutgoingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pm.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor> getCacheInstance_3018OutgoingLinks(
-			View view) {
+	public static List<HardwareLinkDescriptor> getCacheInstance_3018OutgoingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pm.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor> getProgrammableLogicDeviceInstance_3019OutgoingLinks(
-			View view) {
+	public static List<HardwareLinkDescriptor> getProgrammableLogicDeviceInstance_3019OutgoingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pm.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor> getProcessorInstance_3020OutgoingLinks(
-			View view) {
-		org.muml.pm.hardware.hwresourceinstance.ProcessorInstance modelElement = (org.muml.pm.hardware.hwresourceinstance.ProcessorInstance) view
-				.getElement();
-		LinkedList<org.muml.pm.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor> result = new LinkedList<org.muml.pm.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor>();
+	public static List<HardwareLinkDescriptor> getProcessorInstance_3020OutgoingLinks(View view) {
+		ProcessorInstance modelElement = (ProcessorInstance) view.getElement();
+		LinkedList<HardwareLinkDescriptor> result = new LinkedList<HardwareLinkDescriptor>();
 		result.addAll(getOutgoingFeatureModelFacetLinks_ProcessorInstance_OwnedCacheInstance_4003(modelElement));
 		return result;
 	}
@@ -529,56 +474,48 @@ public class HardwareDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pm.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor> getProcessingMemoryInstance_3021OutgoingLinks(
-			View view) {
+	public static List<HardwareLinkDescriptor> getProcessingMemoryInstance_3021OutgoingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pm.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor> getStorageMemoryInstance_3022OutgoingLinks(
-			View view) {
+	public static List<HardwareLinkDescriptor> getStorageMemoryInstance_3022OutgoingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
-	 * @generated
-	 */
-	private static Collection<org.muml.pm.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor> getIncomingFeatureModelFacetLinks_ProcessorInstance_OwnedCacheInstance_4003(
-			org.muml.pm.hardware.hwresourceinstance.CacheInstance target,
-			Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
-		LinkedList<org.muml.pm.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor> result = new LinkedList<org.muml.pm.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor>();
+	* @generated
+	*/
+	private static Collection<HardwareLinkDescriptor> getIncomingFeatureModelFacetLinks_ProcessorInstance_OwnedCacheInstance_4003(
+			CacheInstance target, Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
+		LinkedList<HardwareLinkDescriptor> result = new LinkedList<HardwareLinkDescriptor>();
 		Collection<EStructuralFeature.Setting> settings = crossReferences.get(target);
 		for (EStructuralFeature.Setting setting : settings) {
-			if (setting
-					.getEStructuralFeature() == org.muml.pm.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE
-							.getProcessorInstance_OwnedCacheInstance()) {
-				result.add(
-						new org.muml.pm.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor(
-								setting.getEObject(), target,
-								org.muml.pm.hardware.resourceinstance.diagram.providers.HardwareElementTypes.ProcessorInstanceOwnedCacheInstance_4003,
-								org.muml.pm.hardware.resourceinstance.diagram.edit.parts.ProcessorInstanceOwnedCacheInstanceEditPart.VISUAL_ID));
+			if (setting.getEStructuralFeature() == HwresourceinstancePackage.eINSTANCE
+					.getProcessorInstance_OwnedCacheInstance()) {
+				result.add(new HardwareLinkDescriptor(setting.getEObject(), target,
+						HardwareElementTypes.ProcessorInstanceOwnedCacheInstance_4003,
+						ProcessorInstanceOwnedCacheInstanceEditPart.VISUAL_ID));
 			}
 		}
 		return result;
 	}
 
 	/**
-	 * @generated
-	 */
-	private static Collection<org.muml.pm.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor> getOutgoingFeatureModelFacetLinks_ProcessorInstance_OwnedCacheInstance_4003(
-			org.muml.pm.hardware.hwresourceinstance.ProcessorInstance source) {
-		LinkedList<org.muml.pm.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor> result = new LinkedList<org.muml.pm.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor>();
-		org.muml.pm.hardware.hwresourceinstance.CacheInstance destination = source
-				.getOwnedCacheInstance();
+	* @generated
+	*/
+	private static Collection<HardwareLinkDescriptor> getOutgoingFeatureModelFacetLinks_ProcessorInstance_OwnedCacheInstance_4003(
+			ProcessorInstance source) {
+		LinkedList<HardwareLinkDescriptor> result = new LinkedList<HardwareLinkDescriptor>();
+		CacheInstance destination = source.getOwnedCacheInstance();
 		if (destination == null) {
 			return result;
 		}
-		result.add(new org.muml.pm.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor(
-				source, destination,
-				org.muml.pm.hardware.resourceinstance.diagram.providers.HardwareElementTypes.ProcessorInstanceOwnedCacheInstance_4003,
-				org.muml.pm.hardware.resourceinstance.diagram.edit.parts.ProcessorInstanceOwnedCacheInstanceEditPart.VISUAL_ID));
+		result.add(new HardwareLinkDescriptor(source, destination,
+				HardwareElementTypes.ProcessorInstanceOwnedCacheInstance_4003,
+				ProcessorInstanceOwnedCacheInstanceEditPart.VISUAL_ID));
 		return result;
 	}
 
@@ -591,8 +528,7 @@ public class HardwareDiagramUpdater {
 		*/
 		@Override
 
-		public List<org.muml.pm.hardware.resourceinstance.diagram.part.HardwareNodeDescriptor> getSemanticChildren(
-				View view) {
+		public List<HardwareNodeDescriptor> getSemanticChildren(View view) {
 			return HardwareDiagramUpdater.getSemanticChildren(view);
 		}
 
@@ -601,8 +537,7 @@ public class HardwareDiagramUpdater {
 		*/
 		@Override
 
-		public List<org.muml.pm.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor> getContainedLinks(
-				View view) {
+		public List<HardwareLinkDescriptor> getContainedLinks(View view) {
 			return HardwareDiagramUpdater.getContainedLinks(view);
 		}
 
@@ -611,8 +546,7 @@ public class HardwareDiagramUpdater {
 		*/
 		@Override
 
-		public List<org.muml.pm.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor> getIncomingLinks(
-				View view) {
+		public List<HardwareLinkDescriptor> getIncomingLinks(View view) {
 			return HardwareDiagramUpdater.getIncomingLinks(view);
 		}
 
@@ -621,8 +555,7 @@ public class HardwareDiagramUpdater {
 		*/
 		@Override
 
-		public List<org.muml.pm.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor> getOutgoingLinks(
-				View view) {
+		public List<HardwareLinkDescriptor> getOutgoingLinks(View view) {
 			return HardwareDiagramUpdater.getOutgoingLinks(view);
 		}
 	};

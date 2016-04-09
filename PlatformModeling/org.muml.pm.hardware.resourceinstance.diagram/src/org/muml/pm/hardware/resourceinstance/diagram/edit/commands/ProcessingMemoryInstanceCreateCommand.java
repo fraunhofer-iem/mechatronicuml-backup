@@ -11,6 +11,10 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.pm.hardware.hwresourceinstance.HwresourceinstanceFactory;
+import org.muml.pm.hardware.hwresourceinstance.ProcessingMemoryInstance;
+import org.muml.pm.hardware.hwresourceinstance.StructuredResourceInstance;
+import org.muml.pm.hardware.resourceinstance.diagram.providers.ElementInitializers;
 
 /**
  * @generated
@@ -48,14 +52,12 @@ public class ProcessingMemoryInstanceCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-		org.muml.pm.hardware.hwresourceinstance.ProcessingMemoryInstance newElement = org.muml.pm.hardware.hwresourceinstance.HwresourceinstanceFactory.eINSTANCE
-				.createProcessingMemoryInstance();
+		ProcessingMemoryInstance newElement = HwresourceinstanceFactory.eINSTANCE.createProcessingMemoryInstance();
 
-		org.muml.pm.hardware.hwresourceinstance.StructuredResourceInstance owner = (org.muml.pm.hardware.hwresourceinstance.StructuredResourceInstance) getElementToEdit();
+		StructuredResourceInstance owner = (StructuredResourceInstance) getElementToEdit();
 		owner.getEmbeddedAtomicResourceInstances().add(newElement);
 
-		org.muml.pm.hardware.resourceinstance.diagram.providers.ElementInitializers.getInstance()
-				.init_ProcessingMemoryInstance_3021(newElement);
+		ElementInitializers.getInstance().init_ProcessingMemoryInstance_3021(newElement);
 
 		doConfigure(newElement, monitor, info);
 
@@ -64,11 +66,10 @@ public class ProcessingMemoryInstanceCreateCommand extends EditElementCommand {
 	}
 
 	/**
-	 * @generated
-	 */
-	protected void doConfigure(
-			org.muml.pm.hardware.hwresourceinstance.ProcessingMemoryInstance newElement,
-			IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
+	* @generated
+	*/
+	protected void doConfigure(ProcessingMemoryInstance newElement, IProgressMonitor monitor, IAdaptable info)
+			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest()).getElementType();
 		ConfigureRequest configureRequest = new ConfigureRequest(getEditingDomain(), newElement, elementType);
 		configureRequest.setClientContext(((CreateElementRequest) getRequest()).getClientContext());

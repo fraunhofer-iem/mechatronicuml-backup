@@ -27,6 +27,7 @@ import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.osgi.util.NLS;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.dialogs.WizardNewFileCreationPage;
+import org.muml.pm.hardware.resourceinstance.diagram.edit.parts.ResourceInstanceRepositoryEditPart;
 
 /**
  * @generated
@@ -41,7 +42,7 @@ public class HardwareNewDiagramFileWizard extends Wizard {
 	/**
 	 * @generated
 	 */
-	private org.muml.pm.hardware.resourceinstance.diagram.part.ModelElementSelectionPage diagramRootElementSelectionPage;
+	private ModelElementSelectionPage diagramRootElementSelectionPage;
 
 	/**
 	 * @generated
@@ -57,14 +58,11 @@ public class HardwareNewDiagramFileWizard extends Wizard {
 		assert diagramRoot != null : "Doagram root element must be specified"; //$NON-NLS-1$
 		assert editingDomain != null : "Editing domain must be specified"; //$NON-NLS-1$
 
-		myFileCreationPage = new WizardNewFileCreationPage(
-				org.muml.pm.hardware.resourceinstance.diagram.part.Messages.HardwareNewDiagramFileWizard_CreationPageName,
+		myFileCreationPage = new WizardNewFileCreationPage(Messages.HardwareNewDiagramFileWizard_CreationPageName,
 				StructuredSelection.EMPTY);
-		myFileCreationPage.setTitle(
-				org.muml.pm.hardware.resourceinstance.diagram.part.Messages.HardwareNewDiagramFileWizard_CreationPageTitle);
-		myFileCreationPage.setDescription(NLS.bind(
-				org.muml.pm.hardware.resourceinstance.diagram.part.Messages.HardwareNewDiagramFileWizard_CreationPageDescription,
-				org.muml.pm.hardware.resourceinstance.diagram.edit.parts.ResourceInstanceRepositoryEditPart.MODEL_ID));
+		myFileCreationPage.setTitle(Messages.HardwareNewDiagramFileWizard_CreationPageTitle);
+		myFileCreationPage.setDescription(NLS.bind(Messages.HardwareNewDiagramFileWizard_CreationPageDescription,
+				ResourceInstanceRepositoryEditPart.MODEL_ID));
 		IPath filePath;
 		String fileName = URI.decode(domainModelURI.trimFileExtension().lastSegment());
 		if (domainModelURI.isPlatformResource()) {
@@ -77,15 +75,13 @@ public class HardwareNewDiagramFileWizard extends Wizard {
 		}
 		myFileCreationPage.setContainerFullPath(filePath);
 		myFileCreationPage.setFileName(
-				org.muml.pm.hardware.resourceinstance.diagram.part.HardwareDiagramEditorUtil
-						.getUniqueFileName(filePath, fileName, "resourceinstance_diagram")); //$NON-NLS-1$
+				HardwareDiagramEditorUtil.getUniqueFileName(filePath, fileName, "resourceinstance_diagram")); //$NON-NLS-1$
 
 		diagramRootElementSelectionPage = new DiagramRootElementSelectionPage(
-				org.muml.pm.hardware.resourceinstance.diagram.part.Messages.HardwareNewDiagramFileWizard_RootSelectionPageName);
-		diagramRootElementSelectionPage.setTitle(
-				org.muml.pm.hardware.resourceinstance.diagram.part.Messages.HardwareNewDiagramFileWizard_RootSelectionPageTitle);
-		diagramRootElementSelectionPage.setDescription(
-				org.muml.pm.hardware.resourceinstance.diagram.part.Messages.HardwareNewDiagramFileWizard_RootSelectionPageDescription);
+				Messages.HardwareNewDiagramFileWizard_RootSelectionPageName);
+		diagramRootElementSelectionPage.setTitle(Messages.HardwareNewDiagramFileWizard_RootSelectionPageTitle);
+		diagramRootElementSelectionPage
+				.setDescription(Messages.HardwareNewDiagramFileWizard_RootSelectionPageDescription);
 		diagramRootElementSelectionPage.setModelElement(diagramRoot);
 
 		myEditingDomain = editingDomain;
@@ -105,47 +101,40 @@ public class HardwareNewDiagramFileWizard extends Wizard {
 	public boolean performFinish() {
 		LinkedList<IFile> affectedFiles = new LinkedList<IFile>();
 		IFile diagramFile = myFileCreationPage.createNewFile();
-		org.muml.pm.hardware.resourceinstance.diagram.part.HardwareDiagramEditorUtil
-				.setCharset(diagramFile);
+		HardwareDiagramEditorUtil.setCharset(diagramFile);
 		affectedFiles.add(diagramFile);
 		URI diagramModelURI = URI.createPlatformResourceURI(diagramFile.getFullPath().toString(), true);
 		ResourceSet resourceSet = myEditingDomain.getResourceSet();
 		final Resource diagramResource = resourceSet.createResource(diagramModelURI);
 		AbstractTransactionalCommand command = new AbstractTransactionalCommand(myEditingDomain,
-				org.muml.pm.hardware.resourceinstance.diagram.part.Messages.HardwareNewDiagramFileWizard_InitDiagramCommand,
-				affectedFiles) {
+				Messages.HardwareNewDiagramFileWizard_InitDiagramCommand, affectedFiles) {
 
 			protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info)
 					throws ExecutionException {
-				int diagramVID = org.muml.pm.hardware.resourceinstance.diagram.part.HardwareVisualIDRegistry
+				int diagramVID = HardwareVisualIDRegistry
 						.getDiagramVisualID(diagramRootElementSelectionPage.getModelElement());
-				if (diagramVID != org.muml.pm.hardware.resourceinstance.diagram.edit.parts.ResourceInstanceRepositoryEditPart.VISUAL_ID) {
-					return CommandResult.newErrorCommandResult(
-							org.muml.pm.hardware.resourceinstance.diagram.part.Messages.HardwareNewDiagramFileWizard_IncorrectRootError);
+				if (diagramVID != ResourceInstanceRepositoryEditPart.VISUAL_ID) {
+					return CommandResult
+							.newErrorCommandResult(Messages.HardwareNewDiagramFileWizard_IncorrectRootError);
 				}
 				Diagram diagram = ViewService.createDiagram(diagramRootElementSelectionPage.getModelElement(),
-						org.muml.pm.hardware.resourceinstance.diagram.edit.parts.ResourceInstanceRepositoryEditPart.MODEL_ID,
-						org.muml.pm.hardware.resourceinstance.diagram.part.ResourceInstanceDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT);
+						ResourceInstanceRepositoryEditPart.MODEL_ID,
+						ResourceInstanceDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT);
 				diagramResource.getContents().add(diagram);
 				return CommandResult.newOKCommandResult();
 			}
 		};
 		try {
 			OperationHistoryFactory.getOperationHistory().execute(command, new NullProgressMonitor(), null);
-			diagramResource
-					.save(org.muml.pm.hardware.resourceinstance.diagram.part.HardwareDiagramEditorUtil
-							.getSaveOptions());
-			org.muml.pm.hardware.resourceinstance.diagram.part.HardwareDiagramEditorUtil
-					.openDiagram(diagramResource);
+			diagramResource.save(HardwareDiagramEditorUtil.getSaveOptions());
+			HardwareDiagramEditorUtil.openDiagram(diagramResource);
 		} catch (ExecutionException e) {
-			org.muml.pm.hardware.resourceinstance.diagram.part.ResourceInstanceDiagramEditorPlugin
-					.getInstance().logError("Unable to create model and diagram", e); //$NON-NLS-1$
+			ResourceInstanceDiagramEditorPlugin.getInstance().logError("Unable to create model and diagram", e); //$NON-NLS-1$
 		} catch (IOException ex) {
-			org.muml.pm.hardware.resourceinstance.diagram.part.ResourceInstanceDiagramEditorPlugin
-					.getInstance().logError("Save operation failed for: " + diagramModelURI, ex); //$NON-NLS-1$
+			ResourceInstanceDiagramEditorPlugin.getInstance().logError("Save operation failed for: " + diagramModelURI, //$NON-NLS-1$
+					ex);
 		} catch (PartInitException ex) {
-			org.muml.pm.hardware.resourceinstance.diagram.part.ResourceInstanceDiagramEditorPlugin
-					.getInstance().logError("Unable to open editor", ex); //$NON-NLS-1$
+			ResourceInstanceDiagramEditorPlugin.getInstance().logError("Unable to open editor", ex); //$NON-NLS-1$
 		}
 		return true;
 	}
@@ -153,8 +142,7 @@ public class HardwareNewDiagramFileWizard extends Wizard {
 	/**
 	 * @generated
 	 */
-	private static class DiagramRootElementSelectionPage
-			extends org.muml.pm.hardware.resourceinstance.diagram.part.ModelElementSelectionPage {
+	private static class DiagramRootElementSelectionPage extends ModelElementSelectionPage {
 
 		/**
 		 * @generated
@@ -167,7 +155,7 @@ public class HardwareNewDiagramFileWizard extends Wizard {
 		 * @generated
 		 */
 		protected String getSelectionTitle() {
-			return org.muml.pm.hardware.resourceinstance.diagram.part.Messages.HardwareNewDiagramFileWizard_RootSelectionPageSelectionTitle;
+			return Messages.HardwareNewDiagramFileWizard_RootSelectionPageSelectionTitle;
 		}
 
 		/**
@@ -175,17 +163,15 @@ public class HardwareNewDiagramFileWizard extends Wizard {
 		 */
 		protected boolean validatePage() {
 			if (getModelElement() == null) {
-				setErrorMessage(
-						org.muml.pm.hardware.resourceinstance.diagram.part.Messages.HardwareNewDiagramFileWizard_RootSelectionPageNoSelectionMessage);
+				setErrorMessage(Messages.HardwareNewDiagramFileWizard_RootSelectionPageNoSelectionMessage);
 				return false;
 			}
 			boolean result = ViewService.getInstance()
-					.provides(new CreateDiagramViewOperation(new EObjectAdapter(
-							getModelElement()),
-					org.muml.pm.hardware.resourceinstance.diagram.edit.parts.ResourceInstanceRepositoryEditPart.MODEL_ID,
-					org.muml.pm.hardware.resourceinstance.diagram.part.ResourceInstanceDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT));
-			setErrorMessage(result ? null
-					: org.muml.pm.hardware.resourceinstance.diagram.part.Messages.HardwareNewDiagramFileWizard_RootSelectionPageInvalidSelectionMessage);
+					.provides(new CreateDiagramViewOperation(new EObjectAdapter(getModelElement()),
+							ResourceInstanceRepositoryEditPart.MODEL_ID,
+							ResourceInstanceDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT));
+			setErrorMessage(
+					result ? null : Messages.HardwareNewDiagramFileWizard_RootSelectionPageInvalidSelectionMessage);
 			return result;
 		}
 	}

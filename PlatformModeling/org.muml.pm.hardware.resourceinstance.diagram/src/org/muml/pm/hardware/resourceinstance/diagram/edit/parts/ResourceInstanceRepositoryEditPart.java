@@ -7,6 +7,9 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.DiagramEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.edit.policies.reparent.CreationEditPolicyWithCustomReparent;
+import org.muml.pm.hardware.resourceinstance.diagram.edit.policies.ResourceInstanceRepositoryCanonicalEditPolicy;
+import org.muml.pm.hardware.resourceinstance.diagram.edit.policies.ResourceInstanceRepositoryItemSemanticEditPolicy;
+import org.muml.pm.hardware.resourceinstance.diagram.part.HardwareVisualIDRegistry;
 
 /**
  * @generated
@@ -58,15 +61,12 @@ public class ResourceInstanceRepositoryEditPart extends DiagramEditPart {
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
-				new org.muml.pm.hardware.resourceinstance.diagram.edit.policies.ResourceInstanceRepositoryItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new ResourceInstanceRepositoryItemSemanticEditPolicy());
 
-		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE,
-				new org.muml.pm.hardware.resourceinstance.diagram.edit.policies.ResourceInstanceRepositoryCanonicalEditPolicy(
-						true));
+		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new ResourceInstanceRepositoryCanonicalEditPolicy(true));
 
-		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicyWithCustomReparent(
-				org.muml.pm.hardware.resourceinstance.diagram.part.HardwareVisualIDRegistry.TYPED_INSTANCE));
+		installEditPolicy(EditPolicyRoles.CREATION_ROLE,
+				new CreationEditPolicyWithCustomReparent(HardwareVisualIDRegistry.TYPED_INSTANCE));
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.POPUPBAR_ROLE);
 	}
 

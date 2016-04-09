@@ -2,6 +2,9 @@ package org.muml.pm.hardware.resourceinstance.diagram.providers;
 
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.pm.hardware.resourceinstance.diagram.edit.parts.ResourceInstanceRepositoryEditPart;
+import org.muml.pm.hardware.resourceinstance.diagram.part.HardwareVisualIDRegistry;
+import org.muml.pm.hardware.resourceinstance.diagram.part.ResourceInstanceDiagramEditorPlugin;
 
 /**
  * @generated
@@ -39,8 +42,7 @@ public class HardwareValidationProvider {
 			try {
 				editingDomain.runExclusive(task);
 			} catch (Exception e) {
-				org.muml.pm.hardware.resourceinstance.diagram.part.ResourceInstanceDiagramEditorPlugin
-						.getInstance().logError("Validation failed", e); //$NON-NLS-1$
+				ResourceInstanceDiagramEditorPlugin.getInstance().logError("Validation failed", e); //$NON-NLS-1$
 			}
 		} else {
 			task.run();
@@ -55,10 +57,8 @@ public class HardwareValidationProvider {
 			return false;
 		}
 		if (object instanceof View) {
-			return constraintsActive
-					&& org.muml.pm.hardware.resourceinstance.diagram.edit.parts.ResourceInstanceRepositoryEditPart.MODEL_ID
-							.equals(org.muml.pm.hardware.resourceinstance.diagram.part.HardwareVisualIDRegistry
-									.getModelID((View) object));
+			return constraintsActive && ResourceInstanceRepositoryEditPart.MODEL_ID
+					.equals(HardwareVisualIDRegistry.getModelID((View) object));
 		}
 		return true;
 	}

@@ -31,6 +31,11 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipReques
 import org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.edit.helpers.GeneratedEditHelperBase;
+import org.muml.pm.hardware.hwresourceinstance.CacheInstance;
+import org.muml.pm.hardware.hwresourceinstance.ProcessorInstance;
+import org.muml.pm.hardware.resourceinstance.diagram.part.HardwareVisualIDRegistry;
+import org.muml.pm.hardware.resourceinstance.diagram.part.ResourceInstanceDiagramEditorPlugin;
+import org.muml.pm.hardware.resourceinstance.diagram.providers.HardwareElementTypes;
 
 /**
  * @generated
@@ -68,9 +73,7 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		if (request instanceof ReconnectRequest) {
 			Object view = ((ReconnectRequest) request).getConnectionEditPart().getModel();
 			if (view instanceof View) {
-				Integer id = new Integer(
-						org.muml.pm.hardware.resourceinstance.diagram.part.HardwareVisualIDRegistry
-								.getVisualID((View) view));
+				Integer id = new Integer(HardwareVisualIDRegistry.getVisualID((View) view));
 				request.getExtendedData().put(VISUAL_ID_KEY, id);
 			}
 		}
@@ -135,8 +138,7 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 	 * @generated
 	 */
 	private IElementType getContextElementType(IEditCommandRequest request) {
-		IElementType requestContextElementType = org.muml.pm.hardware.resourceinstance.diagram.providers.HardwareElementTypes
-				.getElementType(getVisualID(request));
+		IElementType requestContextElementType = HardwareElementTypes.getElementType(getVisualID(request));
 		return requestContextElementType != null ? requestContextElementType : myElementType;
 	}
 
@@ -282,11 +284,9 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 	 * @generated
 	 */
 	public static LinkConstraints getLinkConstraints() {
-		LinkConstraints cached = org.muml.pm.hardware.resourceinstance.diagram.part.ResourceInstanceDiagramEditorPlugin
-				.getInstance().getLinkConstraints();
+		LinkConstraints cached = ResourceInstanceDiagramEditorPlugin.getInstance().getLinkConstraints();
 		if (cached == null) {
-			org.muml.pm.hardware.resourceinstance.diagram.part.ResourceInstanceDiagramEditorPlugin
-					.getInstance().setLinkConstraints(cached = new LinkConstraints());
+			ResourceInstanceDiagramEditorPlugin.getInstance().setLinkConstraints(cached = new LinkConstraints());
 		}
 		return cached;
 	}
@@ -304,12 +304,10 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		}
 
 		/**
-		 * @generated
-		 */
-		public boolean canCreateProcessorInstanceOwnedCacheInstance_4003(
-				org.muml.pm.hardware.hwresourceinstance.ProcessorInstance source,
-				org.muml.pm.hardware.hwresourceinstance.CacheInstance target, View sourceView,
-				View targetView) {
+		* @generated
+		*/
+		public boolean canCreateProcessorInstanceOwnedCacheInstance_4003(ProcessorInstance source, CacheInstance target,
+				View sourceView, View targetView) {
 			if (source != null) {
 				if (source.getOwnedCacheInstance() != null) {
 					return false;
@@ -320,22 +318,18 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		}
 
 		/**
-		 * @generated
-		 */
-		public boolean canExistProcessorInstanceOwnedCacheInstance_4003(
-				org.muml.pm.hardware.hwresourceinstance.ProcessorInstance source,
-				org.muml.pm.hardware.hwresourceinstance.CacheInstance target, View sourceView,
-				View targetView) {
+		* @generated
+		*/
+		public boolean canExistProcessorInstanceOwnedCacheInstance_4003(ProcessorInstance source, CacheInstance target,
+				View sourceView, View targetView) {
 			return true;
 		}
 
 		/**
-		 * @generated
-		 */
-		public java.lang.String getErrorProcessorInstanceOwnedCacheInstance_4003(
-				org.muml.pm.hardware.hwresourceinstance.ProcessorInstance source,
-				org.muml.pm.hardware.hwresourceinstance.CacheInstance target, View sourceView,
-				View targetView) {
+		* @generated
+		*/
+		public java.lang.String getErrorProcessorInstanceOwnedCacheInstance_4003(ProcessorInstance source,
+				CacheInstance target, View sourceView, View targetView) {
 			return null;
 		}
 

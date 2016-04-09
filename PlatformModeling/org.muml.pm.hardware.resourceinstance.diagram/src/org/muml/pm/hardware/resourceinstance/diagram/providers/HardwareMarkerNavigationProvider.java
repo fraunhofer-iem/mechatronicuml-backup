@@ -12,6 +12,8 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.diagram.ui.parts.DiagramEditor;
 import org.eclipse.gmf.runtime.emf.ui.providers.marker.AbstractModelMarkerNavigationProvider;
+import org.muml.pm.hardware.resourceinstance.diagram.part.HardwareDiagramEditorUtil;
+import org.muml.pm.hardware.resourceinstance.diagram.part.ResourceInstanceDiagramEditorPlugin;
 
 /**
  * @generated
@@ -21,8 +23,7 @@ public class HardwareMarkerNavigationProvider extends AbstractModelMarkerNavigat
 	/**
 	 * @generated
 	 */
-	public static final String MARKER_TYPE = org.muml.pm.hardware.resourceinstance.diagram.part.ResourceInstanceDiagramEditorPlugin.ID
-			+ ".diagnostic"; //$NON-NLS-1$
+	public static final String MARKER_TYPE = ResourceInstanceDiagramEditorPlugin.ID + ".diagnostic"; //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -40,8 +41,7 @@ public class HardwareMarkerNavigationProvider extends AbstractModelMarkerNavigat
 		}
 		EditPart targetEditPart = (EditPart) editPartRegistry.get(targetView);
 		if (targetEditPart != null) {
-			org.muml.pm.hardware.resourceinstance.diagram.part.HardwareDiagramEditorUtil
-					.selectElementsInDiagram(editor, Arrays.asList(new EditPart[] { targetEditPart }));
+			HardwareDiagramEditorUtil.selectElementsInDiagram(editor, Arrays.asList(new EditPart[] { targetEditPart }));
 		}
 	}
 
@@ -52,8 +52,7 @@ public class HardwareMarkerNavigationProvider extends AbstractModelMarkerNavigat
 		try {
 			resource.deleteMarkers(MARKER_TYPE, true, IResource.DEPTH_ZERO);
 		} catch (CoreException e) {
-			org.muml.pm.hardware.resourceinstance.diagram.part.ResourceInstanceDiagramEditorPlugin
-					.getInstance().logError("Failed to delete validation markers", e); //$NON-NLS-1$
+			ResourceInstanceDiagramEditorPlugin.getInstance().logError("Failed to delete validation markers", e); //$NON-NLS-1$
 		}
 	}
 
@@ -75,8 +74,7 @@ public class HardwareMarkerNavigationProvider extends AbstractModelMarkerNavigat
 			}
 			marker.setAttribute(IMarker.SEVERITY, markerSeverity);
 		} catch (CoreException e) {
-			org.muml.pm.hardware.resourceinstance.diagram.part.ResourceInstanceDiagramEditorPlugin
-					.getInstance().logError("Failed to create validation marker", e); //$NON-NLS-1$
+			ResourceInstanceDiagramEditorPlugin.getInstance().logError("Failed to create validation marker", e); //$NON-NLS-1$
 		}
 		return marker;
 	}
