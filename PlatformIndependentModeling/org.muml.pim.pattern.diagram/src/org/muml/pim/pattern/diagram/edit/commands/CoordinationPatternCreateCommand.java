@@ -11,6 +11,10 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.core.modelinstance.ModelElementCategory;
+import org.muml.pim.pattern.CoordinationPattern;
+import org.muml.pim.pattern.PatternFactory;
+import org.muml.pim.pattern.diagram.providers.ElementInitializers;
 
 /**
  * @generated
@@ -48,14 +52,12 @@ public class CoordinationPatternCreateCommand extends EditElementCommand {
 	* @generated
 	*/
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-		org.muml.pim.pattern.CoordinationPattern newElement = org.muml.pim.pattern.PatternFactory.eINSTANCE
-				.createCoordinationPattern();
+		CoordinationPattern newElement = PatternFactory.eINSTANCE.createCoordinationPattern();
 
-		org.muml.core.modelinstance.ModelElementCategory owner = (org.muml.core.modelinstance.ModelElementCategory) getElementToEdit();
+		ModelElementCategory owner = (ModelElementCategory) getElementToEdit();
 		owner.getModelElements().add(newElement);
 
-		org.muml.pim.pattern.diagram.providers.ElementInitializers.getInstance()
-				.init_CoordinationPattern_2001(newElement);
+		ElementInitializers.getInstance().init_CoordinationPattern_2001(newElement);
 
 		doConfigure(newElement, monitor, info);
 
@@ -66,8 +68,8 @@ public class CoordinationPatternCreateCommand extends EditElementCommand {
 	/**
 	* @generated
 	*/
-	protected void doConfigure(org.muml.pim.pattern.CoordinationPattern newElement,
-			IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
+	protected void doConfigure(CoordinationPattern newElement, IProgressMonitor monitor, IAdaptable info)
+			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest()).getElementType();
 		ConfigureRequest configureRequest = new ConfigureRequest(getEditingDomain(), newElement, elementType);
 		configureRequest.setClientContext(((CreateElementRequest) getRequest()).getClientContext());

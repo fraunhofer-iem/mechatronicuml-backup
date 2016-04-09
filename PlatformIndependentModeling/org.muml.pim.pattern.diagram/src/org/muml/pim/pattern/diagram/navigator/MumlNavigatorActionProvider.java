@@ -21,6 +21,11 @@ import org.eclipse.ui.navigator.ICommonActionConstants;
 import org.eclipse.ui.navigator.ICommonActionExtensionSite;
 import org.eclipse.ui.navigator.ICommonViewerWorkbenchSite;
 import org.eclipse.ui.part.FileEditorInput;
+import org.muml.pim.pattern.diagram.edit.parts.ModelElementCategoryEditPart;
+import org.muml.pim.pattern.diagram.part.CoordinationPatternDiagramEditor;
+import org.muml.pim.pattern.diagram.part.Messages;
+import org.muml.pim.pattern.diagram.part.MumlDiagramEditorPlugin;
+import org.muml.pim.pattern.diagram.part.MumlVisualIDRegistry;
 
 /**
  * @generated
@@ -96,7 +101,7 @@ public class MumlNavigatorActionProvider extends CommonActionProvider {
 		* @generated
 		*/
 		public OpenDiagramAction(ICommonViewerWorkbenchSite viewerSite) {
-			super(org.muml.pim.pattern.diagram.part.Messages.NavigatorActionProvider_OpenDiagramActionName);
+			super(Messages.NavigatorActionProvider_OpenDiagramActionName);
 			myViewerSite = viewerSite;
 		}
 
@@ -107,17 +112,14 @@ public class MumlNavigatorActionProvider extends CommonActionProvider {
 			myDiagram = null;
 			if (selection.size() == 1) {
 				Object selectedElement = selection.getFirstElement();
-				if (selectedElement instanceof org.muml.pim.pattern.diagram.navigator.MumlNavigatorItem) {
-					selectedElement = ((org.muml.pim.pattern.diagram.navigator.MumlNavigatorItem) selectedElement)
-							.getView();
+				if (selectedElement instanceof MumlNavigatorItem) {
+					selectedElement = ((MumlNavigatorItem) selectedElement).getView();
 				} else if (selectedElement instanceof IAdaptable) {
 					selectedElement = ((IAdaptable) selectedElement).getAdapter(View.class);
 				}
 				if (selectedElement instanceof Diagram) {
 					Diagram diagram = (Diagram) selectedElement;
-					if (org.muml.pim.pattern.diagram.edit.parts.ModelElementCategoryEditPart.MODEL_ID
-							.equals(org.muml.pim.pattern.diagram.part.MumlVisualIDRegistry
-									.getModelID(diagram))) {
+					if (ModelElementCategoryEditPart.MODEL_ID.equals(MumlVisualIDRegistry.getModelID(diagram))) {
 						myDiagram = diagram;
 					}
 				}
@@ -136,11 +138,9 @@ public class MumlNavigatorActionProvider extends CommonActionProvider {
 			IEditorInput editorInput = getEditorInput(myDiagram);
 			IWorkbenchPage page = myViewerSite.getPage();
 			try {
-				page.openEditor(editorInput,
-						org.muml.pim.pattern.diagram.part.CoordinationPatternDiagramEditor.ID);
+				page.openEditor(editorInput, CoordinationPatternDiagramEditor.ID);
 			} catch (PartInitException e) {
-				org.muml.pim.pattern.diagram.part.MumlDiagramEditorPlugin.getInstance()
-						.logError("Exception while openning diagram", e); //$NON-NLS-1$
+				MumlDiagramEditorPlugin.getInstance().logError("Exception while openning diagram", e); //$NON-NLS-1$
 			}
 		}
 

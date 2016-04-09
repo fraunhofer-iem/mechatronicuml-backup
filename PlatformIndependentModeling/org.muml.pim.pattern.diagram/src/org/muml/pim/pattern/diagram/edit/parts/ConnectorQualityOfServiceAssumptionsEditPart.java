@@ -35,6 +35,12 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Font;
 import org.eclipse.swt.widgets.Display;
+import org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy;
+import org.muml.core.common.edit.policies.anchor.IConnectionAnchorCreationEditPolicy;
+import org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy;
+import org.muml.pim.common.edit.policies.IBackgroundColorEditPolicy;
+import org.muml.pim.pattern.diagram.edit.policies.ConnectorQualityOfServiceAssumptionsItemSemanticEditPolicy;
+import org.muml.pim.pattern.diagram.part.MumlVisualIDRegistry;
 
 /**
  * @generated
@@ -78,10 +84,8 @@ public class ConnectorQualityOfServiceAssumptionsEditPart extends ShapeNodeEditP
 	protected void refreshBackgroundColor() {
 		EditPolicy backgroundColorPolicy = getEditPolicy(
 				org.muml.core.common.edit.policies.EditPolicyRoles.BACKGROUND_COLOR_ROLE);
-		if (backgroundColorPolicy instanceof org.muml.pim.common.edit.policies.IBackgroundColorEditPolicy) {
-			setBackgroundColor(
-					((org.muml.pim.common.edit.policies.IBackgroundColorEditPolicy) backgroundColorPolicy)
-							.getCurrentBackgroundColor());
+		if (backgroundColorPolicy instanceof IBackgroundColorEditPolicy) {
+			setBackgroundColor(((IBackgroundColorEditPolicy) backgroundColorPolicy).getCurrentBackgroundColor());
 		} else {
 			super.refreshBackgroundColor();
 		}
@@ -110,7 +114,7 @@ public class ConnectorQualityOfServiceAssumptionsEditPart extends ShapeNodeEditP
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
-				new org.muml.pim.pattern.diagram.edit.policies.ConnectorQualityOfServiceAssumptionsItemSemanticEditPolicy());
+				new ConnectorQualityOfServiceAssumptionsItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 
 		removeEditPolicy(EditPolicy.COMPONENT_ROLE);
@@ -129,7 +133,7 @@ public class ConnectorQualityOfServiceAssumptionsEditPart extends ShapeNodeEditP
 		});
 		removeEditPolicy(EditPolicyRoles.SEMANTIC_ROLE);
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
-				new org.muml.pim.pattern.diagram.edit.policies.ConnectorQualityOfServiceAssumptionsItemSemanticEditPolicy() {
+				new ConnectorQualityOfServiceAssumptionsItemSemanticEditPolicy() {
 					@Override
 					protected Command getSemanticCommand(IEditCommandRequest request) {
 						if (request instanceof DestroyRequest) {
@@ -142,11 +146,10 @@ public class ConnectorQualityOfServiceAssumptionsEditPart extends ShapeNodeEditP
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 
-		installEditPolicy(EditPolicy.GRAPHICAL_NODE_ROLE,
-				new org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy());
+		installEditPolicy(EditPolicy.GRAPHICAL_NODE_ROLE, new ConnectionConfigureHelperGraphicalNodeEditPolicy());
 
 		installEditPolicy(org.muml.core.common.edit.policies.EditPolicyRoles.ERROR_FEEDBACK_ROLE,
-				new org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy());
+				new ErrorFeedbackEditPolicy());
 
 	}
 
@@ -193,14 +196,12 @@ public class ConnectorQualityOfServiceAssumptionsEditPart extends ShapeNodeEditP
 	* @generated
 	*/
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof org.muml.pim.pattern.diagram.edit.parts.WrappingLabel3EditPart) {
-			((org.muml.pim.pattern.diagram.edit.parts.WrappingLabel3EditPart) childEditPart)
-					.setLabel(getPrimaryShape().getFigureMsgLossLabel());
+		if (childEditPart instanceof WrappingLabel3EditPart) {
+			((WrappingLabel3EditPart) childEditPart).setLabel(getPrimaryShape().getFigureMsgLossLabel());
 			return true;
 		}
-		if (childEditPart instanceof org.muml.pim.pattern.diagram.edit.parts.WrappingLabel4EditPart) {
-			((org.muml.pim.pattern.diagram.edit.parts.WrappingLabel4EditPart) childEditPart)
-					.setLabel(getPrimaryShape().getFigureMaxDelayLabel());
+		if (childEditPart instanceof WrappingLabel4EditPart) {
+			((WrappingLabel4EditPart) childEditPart).setLabel(getPrimaryShape().getFigureMaxDelayLabel());
 			return true;
 		}
 		return false;
@@ -210,10 +211,10 @@ public class ConnectorQualityOfServiceAssumptionsEditPart extends ShapeNodeEditP
 	* @generated
 	*/
 	protected boolean removeFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof org.muml.pim.pattern.diagram.edit.parts.WrappingLabel3EditPart) {
+		if (childEditPart instanceof WrappingLabel3EditPart) {
 			return true;
 		}
-		if (childEditPart instanceof org.muml.pim.pattern.diagram.edit.parts.WrappingLabel4EditPart) {
+		if (childEditPart instanceof WrappingLabel4EditPart) {
 			return true;
 		}
 		return false;
@@ -253,7 +254,7 @@ public class ConnectorQualityOfServiceAssumptionsEditPart extends ShapeNodeEditP
 		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(40, 40) {
 			@Override
 			public ConnectionAnchor createDefaultAnchor() {
-				org.muml.core.common.edit.policies.anchor.IConnectionAnchorCreationEditPolicy connectionAnchorCreationEditPolicy = (org.muml.core.common.edit.policies.anchor.IConnectionAnchorCreationEditPolicy) getEditPolicy(
+				IConnectionAnchorCreationEditPolicy connectionAnchorCreationEditPolicy = (IConnectionAnchorCreationEditPolicy) getEditPolicy(
 						org.muml.core.common.edit.policies.EditPolicyRoles.CONNECTION_ANCHOR_CREATION_ROLE);
 				if (connectionAnchorCreationEditPolicy != null) {
 					return connectionAnchorCreationEditPolicy.createDefaultAnchor();
@@ -350,8 +351,7 @@ public class ConnectorQualityOfServiceAssumptionsEditPart extends ShapeNodeEditP
 	* @generated
 	*/
 	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(org.muml.pim.pattern.diagram.part.MumlVisualIDRegistry
-				.getType(org.muml.pim.pattern.diagram.edit.parts.WrappingLabel3EditPart.VISUAL_ID));
+		return getChildBySemanticHint(MumlVisualIDRegistry.getType(WrappingLabel3EditPart.VISUAL_ID));
 	}
 
 	/**

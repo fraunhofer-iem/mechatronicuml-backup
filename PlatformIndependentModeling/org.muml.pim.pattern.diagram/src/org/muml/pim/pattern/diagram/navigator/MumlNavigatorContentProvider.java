@@ -22,6 +22,26 @@ import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.ui.IMemento;
 import org.eclipse.ui.navigator.ICommonContentExtensionSite;
 import org.eclipse.ui.navigator.ICommonContentProvider;
+import org.muml.pim.pattern.diagram.edit.parts.AbstractCoordinationSpecificationRolesEditPart;
+import org.muml.pim.pattern.diagram.edit.parts.ConnectorQualityOfServiceAssumptionsEditPart;
+import org.muml.pim.pattern.diagram.edit.parts.CoordinationPattern2EditPart;
+import org.muml.pim.pattern.diagram.edit.parts.CoordinationPatternEditPart;
+import org.muml.pim.pattern.diagram.edit.parts.CoordinationPatternPatternCompartmentEditPart;
+import org.muml.pim.pattern.diagram.edit.parts.CoordinationPatternVariant2EditPart;
+import org.muml.pim.pattern.diagram.edit.parts.CoordinationPatternVariantCoordinationProtocolContainerCompartmentEditPart;
+import org.muml.pim.pattern.diagram.edit.parts.CoordinationPatternVariantEditPart;
+import org.muml.pim.pattern.diagram.edit.parts.DiscreteInteractionEndpointReceiverMessageBufferEditPart;
+import org.muml.pim.pattern.diagram.edit.parts.MessageBufferEditPart;
+import org.muml.pim.pattern.diagram.edit.parts.MessageBufferMessageBufferCompartmentEditPart;
+import org.muml.pim.pattern.diagram.edit.parts.MessageTypeEditPart;
+import org.muml.pim.pattern.diagram.edit.parts.MessageTypeParametersCompartmentEditPart;
+import org.muml.pim.pattern.diagram.edit.parts.ModelElementCategoryEditPart;
+import org.muml.pim.pattern.diagram.edit.parts.ParameterEditPart;
+import org.muml.pim.pattern.diagram.edit.parts.RoleConnectorConnectorQualityOfServiceAssumptionsEditPart;
+import org.muml.pim.pattern.diagram.edit.parts.RoleConnectorEditPart;
+import org.muml.pim.pattern.diagram.edit.parts.RoleEditPart;
+import org.muml.pim.pattern.diagram.part.Messages;
+import org.muml.pim.pattern.diagram.part.MumlVisualIDRegistry;
 
 /**
  * @generated
@@ -170,27 +190,25 @@ public class MumlNavigatorContentProvider implements ICommonContentProvider {
 			IFile file = (IFile) parentElement;
 			URI fileURI = URI.createPlatformResourceURI(file.getFullPath().toString(), true);
 			Resource resource = myEditingDomain.getResourceSet().getResource(fileURI, true);
-			ArrayList<org.muml.pim.pattern.diagram.navigator.MumlNavigatorItem> result = new ArrayList<org.muml.pim.pattern.diagram.navigator.MumlNavigatorItem>();
+			ArrayList<MumlNavigatorItem> result = new ArrayList<MumlNavigatorItem>();
 			ArrayList<View> topViews = new ArrayList<View>(resource.getContents().size());
 			for (EObject o : resource.getContents()) {
 				if (o instanceof View) {
 					topViews.add((View) o);
 				}
 			}
-			result.addAll(createNavigatorItems(
-					selectViewsByType(topViews,
-							org.muml.pim.pattern.diagram.edit.parts.ModelElementCategoryEditPart.MODEL_ID),
-					file, false));
+			result.addAll(createNavigatorItems(selectViewsByType(topViews, ModelElementCategoryEditPart.MODEL_ID), file,
+					false));
 			return result.toArray();
 		}
 
-		if (parentElement instanceof org.muml.pim.pattern.diagram.navigator.MumlNavigatorGroup) {
-			org.muml.pim.pattern.diagram.navigator.MumlNavigatorGroup group = (org.muml.pim.pattern.diagram.navigator.MumlNavigatorGroup) parentElement;
+		if (parentElement instanceof MumlNavigatorGroup) {
+			MumlNavigatorGroup group = (MumlNavigatorGroup) parentElement;
 			return group.getChildren();
 		}
 
-		if (parentElement instanceof org.muml.pim.pattern.diagram.navigator.MumlNavigatorItem) {
-			org.muml.pim.pattern.diagram.navigator.MumlNavigatorItem navigatorItem = (org.muml.pim.pattern.diagram.navigator.MumlNavigatorItem) parentElement;
+		if (parentElement instanceof MumlNavigatorItem) {
+			MumlNavigatorItem navigatorItem = (MumlNavigatorItem) parentElement;
 			if (navigatorItem.isLeaf() || !isOwnView(navigatorItem.getView())) {
 				return EMPTY_ARRAY;
 			}
@@ -204,38 +222,32 @@ public class MumlNavigatorContentProvider implements ICommonContentProvider {
 	* @generated
 	*/
 	private Object[] getViewChildren(View view, Object parentElement) {
-		switch (org.muml.pim.pattern.diagram.part.MumlVisualIDRegistry.getVisualID(view)) {
+		switch (MumlVisualIDRegistry.getVisualID(view)) {
 
-		case org.muml.pim.pattern.diagram.edit.parts.ModelElementCategoryEditPart.VISUAL_ID: {
-			LinkedList<org.muml.pim.pattern.diagram.navigator.MumlAbstractNavigatorItem> result = new LinkedList<org.muml.pim.pattern.diagram.navigator.MumlAbstractNavigatorItem>();
+		case ModelElementCategoryEditPart.VISUAL_ID: {
+			LinkedList<MumlAbstractNavigatorItem> result = new LinkedList<MumlAbstractNavigatorItem>();
 			Diagram sv = (Diagram) view;
-			org.muml.pim.pattern.diagram.navigator.MumlNavigatorGroup links = new org.muml.pim.pattern.diagram.navigator.MumlNavigatorGroup(
-					org.muml.pim.pattern.diagram.part.Messages.NavigatorGroupName_ModelElementCategory_1000_links,
-					"icons/linksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			MumlNavigatorGroup links = new MumlNavigatorGroup(
+					Messages.NavigatorGroupName_ModelElementCategory_1000_links, "icons/linksNavigatorGroup.gif", //$NON-NLS-1$
+					parentElement);
 			Collection<View> connectedViews;
 			connectedViews = getChildrenByType(Collections.singleton(sv),
-					org.muml.pim.pattern.diagram.part.MumlVisualIDRegistry.getType(
-							org.muml.pim.pattern.diagram.edit.parts.CoordinationPatternEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(CoordinationPatternEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			connectedViews = getChildrenByType(Collections.singleton(sv),
-					org.muml.pim.pattern.diagram.part.MumlVisualIDRegistry.getType(
-							org.muml.pim.pattern.diagram.edit.parts.CoordinationPatternVariantEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(CoordinationPatternVariantEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			connectedViews = getDiagramLinksByType(Collections.singleton(sv),
-					org.muml.pim.pattern.diagram.part.MumlVisualIDRegistry.getType(
-							org.muml.pim.pattern.diagram.edit.parts.AbstractCoordinationSpecificationRolesEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(AbstractCoordinationSpecificationRolesEditPart.VISUAL_ID));
 			links.addChildren(createNavigatorItems(connectedViews, links, false));
 			connectedViews = getDiagramLinksByType(Collections.singleton(sv),
-					org.muml.pim.pattern.diagram.part.MumlVisualIDRegistry.getType(
-							org.muml.pim.pattern.diagram.edit.parts.RoleConnectorEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(RoleConnectorEditPart.VISUAL_ID));
 			links.addChildren(createNavigatorItems(connectedViews, links, false));
 			connectedViews = getDiagramLinksByType(Collections.singleton(sv),
-					org.muml.pim.pattern.diagram.part.MumlVisualIDRegistry.getType(
-							org.muml.pim.pattern.diagram.edit.parts.DiscreteInteractionEndpointReceiverMessageBufferEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(DiscreteInteractionEndpointReceiverMessageBufferEditPart.VISUAL_ID));
 			links.addChildren(createNavigatorItems(connectedViews, links, false));
 			connectedViews = getDiagramLinksByType(Collections.singleton(sv),
-					org.muml.pim.pattern.diagram.part.MumlVisualIDRegistry.getType(
-							org.muml.pim.pattern.diagram.edit.parts.RoleConnectorConnectorQualityOfServiceAssumptionsEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(RoleConnectorConnectorQualityOfServiceAssumptionsEditPart.VISUAL_ID));
 			links.addChildren(createNavigatorItems(connectedViews, links, false));
 			if (!links.isEmpty()) {
 				result.add(links);
@@ -243,44 +255,34 @@ public class MumlNavigatorContentProvider implements ICommonContentProvider {
 			return result.toArray();
 		}
 
-		case org.muml.pim.pattern.diagram.edit.parts.CoordinationPatternEditPart.VISUAL_ID: {
-			LinkedList<org.muml.pim.pattern.diagram.navigator.MumlAbstractNavigatorItem> result = new LinkedList<org.muml.pim.pattern.diagram.navigator.MumlAbstractNavigatorItem>();
+		case CoordinationPatternEditPart.VISUAL_ID: {
+			LinkedList<MumlAbstractNavigatorItem> result = new LinkedList<MumlAbstractNavigatorItem>();
 			Node sv = (Node) view;
-			org.muml.pim.pattern.diagram.navigator.MumlNavigatorGroup outgoinglinks = new org.muml.pim.pattern.diagram.navigator.MumlNavigatorGroup(
-					org.muml.pim.pattern.diagram.part.Messages.NavigatorGroupName_CoordinationPattern_2001_outgoinglinks,
+			MumlNavigatorGroup outgoinglinks = new MumlNavigatorGroup(
+					Messages.NavigatorGroupName_CoordinationPattern_2001_outgoinglinks,
 					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
 			connectedViews = getChildrenByType(Collections.singleton(sv),
-					org.muml.pim.pattern.diagram.part.MumlVisualIDRegistry.getType(
-							org.muml.pim.pattern.diagram.edit.parts.CoordinationPatternPatternCompartmentEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(CoordinationPatternPatternCompartmentEditPart.VISUAL_ID));
 			connectedViews = getChildrenByType(connectedViews,
-					org.muml.pim.pattern.diagram.part.MumlVisualIDRegistry.getType(
-							org.muml.pim.pattern.diagram.edit.parts.CoordinationPattern2EditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(CoordinationPattern2EditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			connectedViews = getChildrenByType(Collections.singleton(sv),
-					org.muml.pim.pattern.diagram.part.MumlVisualIDRegistry.getType(
-							org.muml.pim.pattern.diagram.edit.parts.CoordinationPatternPatternCompartmentEditPart.VISUAL_ID));
-			connectedViews = getChildrenByType(connectedViews,
-					org.muml.pim.pattern.diagram.part.MumlVisualIDRegistry
-							.getType(org.muml.pim.pattern.diagram.edit.parts.RoleEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(CoordinationPatternPatternCompartmentEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(connectedViews, MumlVisualIDRegistry.getType(RoleEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			connectedViews = getChildrenByType(Collections.singleton(sv),
-					org.muml.pim.pattern.diagram.part.MumlVisualIDRegistry.getType(
-							org.muml.pim.pattern.diagram.edit.parts.CoordinationPatternPatternCompartmentEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(CoordinationPatternPatternCompartmentEditPart.VISUAL_ID));
 			connectedViews = getChildrenByType(connectedViews,
-					org.muml.pim.pattern.diagram.part.MumlVisualIDRegistry.getType(
-							org.muml.pim.pattern.diagram.edit.parts.MessageBufferEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(MessageBufferEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			connectedViews = getChildrenByType(Collections.singleton(sv),
-					org.muml.pim.pattern.diagram.part.MumlVisualIDRegistry.getType(
-							org.muml.pim.pattern.diagram.edit.parts.CoordinationPatternPatternCompartmentEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(CoordinationPatternPatternCompartmentEditPart.VISUAL_ID));
 			connectedViews = getChildrenByType(connectedViews,
-					org.muml.pim.pattern.diagram.part.MumlVisualIDRegistry.getType(
-							org.muml.pim.pattern.diagram.edit.parts.ConnectorQualityOfServiceAssumptionsEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(ConnectorQualityOfServiceAssumptionsEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					org.muml.pim.pattern.diagram.part.MumlVisualIDRegistry.getType(
-							org.muml.pim.pattern.diagram.edit.parts.AbstractCoordinationSpecificationRolesEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(AbstractCoordinationSpecificationRolesEditPart.VISUAL_ID));
 			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
 			if (!outgoinglinks.isEmpty()) {
 				result.add(outgoinglinks);
@@ -288,44 +290,34 @@ public class MumlNavigatorContentProvider implements ICommonContentProvider {
 			return result.toArray();
 		}
 
-		case org.muml.pim.pattern.diagram.edit.parts.CoordinationPatternVariantEditPart.VISUAL_ID: {
-			LinkedList<org.muml.pim.pattern.diagram.navigator.MumlAbstractNavigatorItem> result = new LinkedList<org.muml.pim.pattern.diagram.navigator.MumlAbstractNavigatorItem>();
+		case CoordinationPatternVariantEditPart.VISUAL_ID: {
+			LinkedList<MumlAbstractNavigatorItem> result = new LinkedList<MumlAbstractNavigatorItem>();
 			Node sv = (Node) view;
-			org.muml.pim.pattern.diagram.navigator.MumlNavigatorGroup outgoinglinks = new org.muml.pim.pattern.diagram.navigator.MumlNavigatorGroup(
-					org.muml.pim.pattern.diagram.part.Messages.NavigatorGroupName_CoordinationPatternVariant_2002_outgoinglinks,
+			MumlNavigatorGroup outgoinglinks = new MumlNavigatorGroup(
+					Messages.NavigatorGroupName_CoordinationPatternVariant_2002_outgoinglinks,
 					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
-			connectedViews = getChildrenByType(Collections.singleton(sv),
-					org.muml.pim.pattern.diagram.part.MumlVisualIDRegistry.getType(
-							org.muml.pim.pattern.diagram.edit.parts.CoordinationPatternVariantCoordinationProtocolContainerCompartmentEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(Collections.singleton(sv), MumlVisualIDRegistry
+					.getType(CoordinationPatternVariantCoordinationProtocolContainerCompartmentEditPart.VISUAL_ID));
 			connectedViews = getChildrenByType(connectedViews,
-					org.muml.pim.pattern.diagram.part.MumlVisualIDRegistry.getType(
-							org.muml.pim.pattern.diagram.edit.parts.CoordinationPatternVariant2EditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(CoordinationPatternVariant2EditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getChildrenByType(Collections.singleton(sv),
-					org.muml.pim.pattern.diagram.part.MumlVisualIDRegistry.getType(
-							org.muml.pim.pattern.diagram.edit.parts.CoordinationPatternVariantCoordinationProtocolContainerCompartmentEditPart.VISUAL_ID));
-			connectedViews = getChildrenByType(connectedViews,
-					org.muml.pim.pattern.diagram.part.MumlVisualIDRegistry
-							.getType(org.muml.pim.pattern.diagram.edit.parts.RoleEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(Collections.singleton(sv), MumlVisualIDRegistry
+					.getType(CoordinationPatternVariantCoordinationProtocolContainerCompartmentEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(connectedViews, MumlVisualIDRegistry.getType(RoleEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getChildrenByType(Collections.singleton(sv),
-					org.muml.pim.pattern.diagram.part.MumlVisualIDRegistry.getType(
-							org.muml.pim.pattern.diagram.edit.parts.CoordinationPatternVariantCoordinationProtocolContainerCompartmentEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(Collections.singleton(sv), MumlVisualIDRegistry
+					.getType(CoordinationPatternVariantCoordinationProtocolContainerCompartmentEditPart.VISUAL_ID));
 			connectedViews = getChildrenByType(connectedViews,
-					org.muml.pim.pattern.diagram.part.MumlVisualIDRegistry.getType(
-							org.muml.pim.pattern.diagram.edit.parts.MessageBufferEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(MessageBufferEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getChildrenByType(Collections.singleton(sv),
-					org.muml.pim.pattern.diagram.part.MumlVisualIDRegistry.getType(
-							org.muml.pim.pattern.diagram.edit.parts.CoordinationPatternVariantCoordinationProtocolContainerCompartmentEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(Collections.singleton(sv), MumlVisualIDRegistry
+					.getType(CoordinationPatternVariantCoordinationProtocolContainerCompartmentEditPart.VISUAL_ID));
 			connectedViews = getChildrenByType(connectedViews,
-					org.muml.pim.pattern.diagram.part.MumlVisualIDRegistry.getType(
-							org.muml.pim.pattern.diagram.edit.parts.ConnectorQualityOfServiceAssumptionsEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(ConnectorQualityOfServiceAssumptionsEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					org.muml.pim.pattern.diagram.part.MumlVisualIDRegistry.getType(
-							org.muml.pim.pattern.diagram.edit.parts.AbstractCoordinationSpecificationRolesEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(AbstractCoordinationSpecificationRolesEditPart.VISUAL_ID));
 			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
 			if (!outgoinglinks.isEmpty()) {
 				result.add(outgoinglinks);
@@ -333,31 +325,27 @@ public class MumlNavigatorContentProvider implements ICommonContentProvider {
 			return result.toArray();
 		}
 
-		case org.muml.pim.pattern.diagram.edit.parts.RoleEditPart.VISUAL_ID: {
-			LinkedList<org.muml.pim.pattern.diagram.navigator.MumlAbstractNavigatorItem> result = new LinkedList<org.muml.pim.pattern.diagram.navigator.MumlAbstractNavigatorItem>();
+		case RoleEditPart.VISUAL_ID: {
+			LinkedList<MumlAbstractNavigatorItem> result = new LinkedList<MumlAbstractNavigatorItem>();
 			Node sv = (Node) view;
-			org.muml.pim.pattern.diagram.navigator.MumlNavigatorGroup incominglinks = new org.muml.pim.pattern.diagram.navigator.MumlNavigatorGroup(
-					org.muml.pim.pattern.diagram.part.Messages.NavigatorGroupName_Role_3002_incominglinks,
-					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			org.muml.pim.pattern.diagram.navigator.MumlNavigatorGroup outgoinglinks = new org.muml.pim.pattern.diagram.navigator.MumlNavigatorGroup(
-					org.muml.pim.pattern.diagram.part.Messages.NavigatorGroupName_Role_3002_outgoinglinks,
-					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			MumlNavigatorGroup incominglinks = new MumlNavigatorGroup(
+					Messages.NavigatorGroupName_Role_3002_incominglinks, "icons/incomingLinksNavigatorGroup.gif", //$NON-NLS-1$
+					parentElement);
+			MumlNavigatorGroup outgoinglinks = new MumlNavigatorGroup(
+					Messages.NavigatorGroupName_Role_3002_outgoinglinks, "icons/outgoingLinksNavigatorGroup.gif", //$NON-NLS-1$
+					parentElement);
 			Collection<View> connectedViews;
 			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					org.muml.pim.pattern.diagram.part.MumlVisualIDRegistry.getType(
-							org.muml.pim.pattern.diagram.edit.parts.AbstractCoordinationSpecificationRolesEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(AbstractCoordinationSpecificationRolesEditPart.VISUAL_ID));
 			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
 			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					org.muml.pim.pattern.diagram.part.MumlVisualIDRegistry.getType(
-							org.muml.pim.pattern.diagram.edit.parts.RoleConnectorEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(RoleConnectorEditPart.VISUAL_ID));
 			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
 			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					org.muml.pim.pattern.diagram.part.MumlVisualIDRegistry.getType(
-							org.muml.pim.pattern.diagram.edit.parts.RoleConnectorEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(RoleConnectorEditPart.VISUAL_ID));
 			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
 			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					org.muml.pim.pattern.diagram.part.MumlVisualIDRegistry.getType(
-							org.muml.pim.pattern.diagram.edit.parts.DiscreteInteractionEndpointReceiverMessageBufferEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(DiscreteInteractionEndpointReceiverMessageBufferEditPart.VISUAL_ID));
 			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
 			if (!incominglinks.isEmpty()) {
 				result.add(incominglinks);
@@ -368,16 +356,15 @@ public class MumlNavigatorContentProvider implements ICommonContentProvider {
 			return result.toArray();
 		}
 
-		case org.muml.pim.pattern.diagram.edit.parts.CoordinationPattern2EditPart.VISUAL_ID: {
-			LinkedList<org.muml.pim.pattern.diagram.navigator.MumlAbstractNavigatorItem> result = new LinkedList<org.muml.pim.pattern.diagram.navigator.MumlAbstractNavigatorItem>();
+		case CoordinationPattern2EditPart.VISUAL_ID: {
+			LinkedList<MumlAbstractNavigatorItem> result = new LinkedList<MumlAbstractNavigatorItem>();
 			Node sv = (Node) view;
-			org.muml.pim.pattern.diagram.navigator.MumlNavigatorGroup outgoinglinks = new org.muml.pim.pattern.diagram.navigator.MumlNavigatorGroup(
-					org.muml.pim.pattern.diagram.part.Messages.NavigatorGroupName_CoordinationPattern_3003_outgoinglinks,
+			MumlNavigatorGroup outgoinglinks = new MumlNavigatorGroup(
+					Messages.NavigatorGroupName_CoordinationPattern_3003_outgoinglinks,
 					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
 			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					org.muml.pim.pattern.diagram.part.MumlVisualIDRegistry.getType(
-							org.muml.pim.pattern.diagram.edit.parts.AbstractCoordinationSpecificationRolesEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(AbstractCoordinationSpecificationRolesEditPart.VISUAL_ID));
 			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
 			if (!outgoinglinks.isEmpty()) {
 				result.add(outgoinglinks);
@@ -385,23 +372,20 @@ public class MumlNavigatorContentProvider implements ICommonContentProvider {
 			return result.toArray();
 		}
 
-		case org.muml.pim.pattern.diagram.edit.parts.MessageBufferEditPart.VISUAL_ID: {
-			LinkedList<org.muml.pim.pattern.diagram.navigator.MumlAbstractNavigatorItem> result = new LinkedList<org.muml.pim.pattern.diagram.navigator.MumlAbstractNavigatorItem>();
+		case MessageBufferEditPart.VISUAL_ID: {
+			LinkedList<MumlAbstractNavigatorItem> result = new LinkedList<MumlAbstractNavigatorItem>();
 			Node sv = (Node) view;
-			org.muml.pim.pattern.diagram.navigator.MumlNavigatorGroup incominglinks = new org.muml.pim.pattern.diagram.navigator.MumlNavigatorGroup(
-					org.muml.pim.pattern.diagram.part.Messages.NavigatorGroupName_MessageBuffer_3004_incominglinks,
+			MumlNavigatorGroup incominglinks = new MumlNavigatorGroup(
+					Messages.NavigatorGroupName_MessageBuffer_3004_incominglinks,
 					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
 			connectedViews = getChildrenByType(Collections.singleton(sv),
-					org.muml.pim.pattern.diagram.part.MumlVisualIDRegistry.getType(
-							org.muml.pim.pattern.diagram.edit.parts.MessageBufferMessageBufferCompartmentEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(MessageBufferMessageBufferCompartmentEditPart.VISUAL_ID));
 			connectedViews = getChildrenByType(connectedViews,
-					org.muml.pim.pattern.diagram.part.MumlVisualIDRegistry.getType(
-							org.muml.pim.pattern.diagram.edit.parts.MessageTypeEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(MessageTypeEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					org.muml.pim.pattern.diagram.part.MumlVisualIDRegistry.getType(
-							org.muml.pim.pattern.diagram.edit.parts.DiscreteInteractionEndpointReceiverMessageBufferEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(DiscreteInteractionEndpointReceiverMessageBufferEditPart.VISUAL_ID));
 			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
 			if (!incominglinks.isEmpty()) {
 				result.add(incominglinks);
@@ -409,30 +393,27 @@ public class MumlNavigatorContentProvider implements ICommonContentProvider {
 			return result.toArray();
 		}
 
-		case org.muml.pim.pattern.diagram.edit.parts.MessageTypeEditPart.VISUAL_ID: {
-			LinkedList<org.muml.pim.pattern.diagram.navigator.MumlAbstractNavigatorItem> result = new LinkedList<org.muml.pim.pattern.diagram.navigator.MumlAbstractNavigatorItem>();
+		case MessageTypeEditPart.VISUAL_ID: {
+			LinkedList<MumlAbstractNavigatorItem> result = new LinkedList<MumlAbstractNavigatorItem>();
 			Node sv = (Node) view;
 			Collection<View> connectedViews;
 			connectedViews = getChildrenByType(Collections.singleton(sv),
-					org.muml.pim.pattern.diagram.part.MumlVisualIDRegistry.getType(
-							org.muml.pim.pattern.diagram.edit.parts.MessageTypeParametersCompartmentEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(MessageTypeParametersCompartmentEditPart.VISUAL_ID));
 			connectedViews = getChildrenByType(connectedViews,
-					org.muml.pim.pattern.diagram.part.MumlVisualIDRegistry.getType(
-							org.muml.pim.pattern.diagram.edit.parts.ParameterEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(ParameterEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			return result.toArray();
 		}
 
-		case org.muml.pim.pattern.diagram.edit.parts.ConnectorQualityOfServiceAssumptionsEditPart.VISUAL_ID: {
-			LinkedList<org.muml.pim.pattern.diagram.navigator.MumlAbstractNavigatorItem> result = new LinkedList<org.muml.pim.pattern.diagram.navigator.MumlAbstractNavigatorItem>();
+		case ConnectorQualityOfServiceAssumptionsEditPart.VISUAL_ID: {
+			LinkedList<MumlAbstractNavigatorItem> result = new LinkedList<MumlAbstractNavigatorItem>();
 			Node sv = (Node) view;
-			org.muml.pim.pattern.diagram.navigator.MumlNavigatorGroup incominglinks = new org.muml.pim.pattern.diagram.navigator.MumlNavigatorGroup(
-					org.muml.pim.pattern.diagram.part.Messages.NavigatorGroupName_ConnectorQualityOfServiceAssumptions_3007_incominglinks,
+			MumlNavigatorGroup incominglinks = new MumlNavigatorGroup(
+					Messages.NavigatorGroupName_ConnectorQualityOfServiceAssumptions_3007_incominglinks,
 					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
 			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					org.muml.pim.pattern.diagram.part.MumlVisualIDRegistry.getType(
-							org.muml.pim.pattern.diagram.edit.parts.RoleConnectorConnectorQualityOfServiceAssumptionsEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(RoleConnectorConnectorQualityOfServiceAssumptionsEditPart.VISUAL_ID));
 			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
 			if (!incominglinks.isEmpty()) {
 				result.add(incominglinks);
@@ -440,16 +421,15 @@ public class MumlNavigatorContentProvider implements ICommonContentProvider {
 			return result.toArray();
 		}
 
-		case org.muml.pim.pattern.diagram.edit.parts.CoordinationPatternVariant2EditPart.VISUAL_ID: {
-			LinkedList<org.muml.pim.pattern.diagram.navigator.MumlAbstractNavigatorItem> result = new LinkedList<org.muml.pim.pattern.diagram.navigator.MumlAbstractNavigatorItem>();
+		case CoordinationPatternVariant2EditPart.VISUAL_ID: {
+			LinkedList<MumlAbstractNavigatorItem> result = new LinkedList<MumlAbstractNavigatorItem>();
 			Node sv = (Node) view;
-			org.muml.pim.pattern.diagram.navigator.MumlNavigatorGroup outgoinglinks = new org.muml.pim.pattern.diagram.navigator.MumlNavigatorGroup(
-					org.muml.pim.pattern.diagram.part.Messages.NavigatorGroupName_CoordinationPatternVariant_3008_outgoinglinks,
+			MumlNavigatorGroup outgoinglinks = new MumlNavigatorGroup(
+					Messages.NavigatorGroupName_CoordinationPatternVariant_3008_outgoinglinks,
 					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
 			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					org.muml.pim.pattern.diagram.part.MumlVisualIDRegistry.getType(
-							org.muml.pim.pattern.diagram.edit.parts.AbstractCoordinationSpecificationRolesEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(AbstractCoordinationSpecificationRolesEditPart.VISUAL_ID));
 			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
 			if (!outgoinglinks.isEmpty()) {
 				result.add(outgoinglinks);
@@ -457,26 +437,22 @@ public class MumlNavigatorContentProvider implements ICommonContentProvider {
 			return result.toArray();
 		}
 
-		case org.muml.pim.pattern.diagram.edit.parts.RoleConnectorEditPart.VISUAL_ID: {
-			LinkedList<org.muml.pim.pattern.diagram.navigator.MumlAbstractNavigatorItem> result = new LinkedList<org.muml.pim.pattern.diagram.navigator.MumlAbstractNavigatorItem>();
+		case RoleConnectorEditPart.VISUAL_ID: {
+			LinkedList<MumlAbstractNavigatorItem> result = new LinkedList<MumlAbstractNavigatorItem>();
 			Edge sv = (Edge) view;
-			org.muml.pim.pattern.diagram.navigator.MumlNavigatorGroup target = new org.muml.pim.pattern.diagram.navigator.MumlNavigatorGroup(
-					org.muml.pim.pattern.diagram.part.Messages.NavigatorGroupName_RoleConnector_4001_target,
+			MumlNavigatorGroup target = new MumlNavigatorGroup(Messages.NavigatorGroupName_RoleConnector_4001_target,
 					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			org.muml.pim.pattern.diagram.navigator.MumlNavigatorGroup source = new org.muml.pim.pattern.diagram.navigator.MumlNavigatorGroup(
-					org.muml.pim.pattern.diagram.part.Messages.NavigatorGroupName_RoleConnector_4001_source,
+			MumlNavigatorGroup source = new MumlNavigatorGroup(Messages.NavigatorGroupName_RoleConnector_4001_source,
 					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			org.muml.pim.pattern.diagram.navigator.MumlNavigatorGroup outgoinglinks = new org.muml.pim.pattern.diagram.navigator.MumlNavigatorGroup(
-					org.muml.pim.pattern.diagram.part.Messages.NavigatorGroupName_RoleConnector_4001_outgoinglinks,
+			MumlNavigatorGroup outgoinglinks = new MumlNavigatorGroup(
+					Messages.NavigatorGroupName_RoleConnector_4001_outgoinglinks,
 					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					org.muml.pim.pattern.diagram.part.MumlVisualIDRegistry
-							.getType(org.muml.pim.pattern.diagram.edit.parts.RoleEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(RoleEditPart.VISUAL_ID));
 			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					org.muml.pim.pattern.diagram.part.MumlVisualIDRegistry
-							.getType(org.muml.pim.pattern.diagram.edit.parts.RoleEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(RoleEditPart.VISUAL_ID));
 			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			if (!target.isEmpty()) {
 				result.add(target);
@@ -490,35 +466,30 @@ public class MumlNavigatorContentProvider implements ICommonContentProvider {
 			return result.toArray();
 		}
 
-		case org.muml.pim.pattern.diagram.edit.parts.AbstractCoordinationSpecificationRolesEditPart.VISUAL_ID: {
-			LinkedList<org.muml.pim.pattern.diagram.navigator.MumlAbstractNavigatorItem> result = new LinkedList<org.muml.pim.pattern.diagram.navigator.MumlAbstractNavigatorItem>();
+		case AbstractCoordinationSpecificationRolesEditPart.VISUAL_ID: {
+			LinkedList<MumlAbstractNavigatorItem> result = new LinkedList<MumlAbstractNavigatorItem>();
 			Edge sv = (Edge) view;
-			org.muml.pim.pattern.diagram.navigator.MumlNavigatorGroup target = new org.muml.pim.pattern.diagram.navigator.MumlNavigatorGroup(
-					org.muml.pim.pattern.diagram.part.Messages.NavigatorGroupName_AbstractCoordinationSpecificationRoles_4002_target,
+			MumlNavigatorGroup target = new MumlNavigatorGroup(
+					Messages.NavigatorGroupName_AbstractCoordinationSpecificationRoles_4002_target,
 					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			org.muml.pim.pattern.diagram.navigator.MumlNavigatorGroup source = new org.muml.pim.pattern.diagram.navigator.MumlNavigatorGroup(
-					org.muml.pim.pattern.diagram.part.Messages.NavigatorGroupName_AbstractCoordinationSpecificationRoles_4002_source,
+			MumlNavigatorGroup source = new MumlNavigatorGroup(
+					Messages.NavigatorGroupName_AbstractCoordinationSpecificationRoles_4002_source,
 					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					org.muml.pim.pattern.diagram.part.MumlVisualIDRegistry
-							.getType(org.muml.pim.pattern.diagram.edit.parts.RoleEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(RoleEditPart.VISUAL_ID));
 			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					org.muml.pim.pattern.diagram.part.MumlVisualIDRegistry.getType(
-							org.muml.pim.pattern.diagram.edit.parts.CoordinationPatternEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(CoordinationPatternEditPart.VISUAL_ID));
 			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					org.muml.pim.pattern.diagram.part.MumlVisualIDRegistry.getType(
-							org.muml.pim.pattern.diagram.edit.parts.CoordinationPatternVariantEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(CoordinationPatternVariantEditPart.VISUAL_ID));
 			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					org.muml.pim.pattern.diagram.part.MumlVisualIDRegistry.getType(
-							org.muml.pim.pattern.diagram.edit.parts.CoordinationPattern2EditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(CoordinationPattern2EditPart.VISUAL_ID));
 			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					org.muml.pim.pattern.diagram.part.MumlVisualIDRegistry.getType(
-							org.muml.pim.pattern.diagram.edit.parts.CoordinationPatternVariant2EditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(CoordinationPatternVariant2EditPart.VISUAL_ID));
 			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			if (!target.isEmpty()) {
 				result.add(target);
@@ -529,23 +500,21 @@ public class MumlNavigatorContentProvider implements ICommonContentProvider {
 			return result.toArray();
 		}
 
-		case org.muml.pim.pattern.diagram.edit.parts.DiscreteInteractionEndpointReceiverMessageBufferEditPart.VISUAL_ID: {
-			LinkedList<org.muml.pim.pattern.diagram.navigator.MumlAbstractNavigatorItem> result = new LinkedList<org.muml.pim.pattern.diagram.navigator.MumlAbstractNavigatorItem>();
+		case DiscreteInteractionEndpointReceiverMessageBufferEditPart.VISUAL_ID: {
+			LinkedList<MumlAbstractNavigatorItem> result = new LinkedList<MumlAbstractNavigatorItem>();
 			Edge sv = (Edge) view;
-			org.muml.pim.pattern.diagram.navigator.MumlNavigatorGroup target = new org.muml.pim.pattern.diagram.navigator.MumlNavigatorGroup(
-					org.muml.pim.pattern.diagram.part.Messages.NavigatorGroupName_DiscreteInteractionEndpointReceiverMessageBuffer_4003_target,
+			MumlNavigatorGroup target = new MumlNavigatorGroup(
+					Messages.NavigatorGroupName_DiscreteInteractionEndpointReceiverMessageBuffer_4003_target,
 					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			org.muml.pim.pattern.diagram.navigator.MumlNavigatorGroup source = new org.muml.pim.pattern.diagram.navigator.MumlNavigatorGroup(
-					org.muml.pim.pattern.diagram.part.Messages.NavigatorGroupName_DiscreteInteractionEndpointReceiverMessageBuffer_4003_source,
+			MumlNavigatorGroup source = new MumlNavigatorGroup(
+					Messages.NavigatorGroupName_DiscreteInteractionEndpointReceiverMessageBuffer_4003_source,
 					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					org.muml.pim.pattern.diagram.part.MumlVisualIDRegistry.getType(
-							org.muml.pim.pattern.diagram.edit.parts.MessageBufferEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(MessageBufferEditPart.VISUAL_ID));
 			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					org.muml.pim.pattern.diagram.part.MumlVisualIDRegistry
-							.getType(org.muml.pim.pattern.diagram.edit.parts.RoleEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(RoleEditPart.VISUAL_ID));
 			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			if (!target.isEmpty()) {
 				result.add(target);
@@ -556,19 +525,18 @@ public class MumlNavigatorContentProvider implements ICommonContentProvider {
 			return result.toArray();
 		}
 
-		case org.muml.pim.pattern.diagram.edit.parts.RoleConnectorConnectorQualityOfServiceAssumptionsEditPart.VISUAL_ID: {
-			LinkedList<org.muml.pim.pattern.diagram.navigator.MumlAbstractNavigatorItem> result = new LinkedList<org.muml.pim.pattern.diagram.navigator.MumlAbstractNavigatorItem>();
+		case RoleConnectorConnectorQualityOfServiceAssumptionsEditPart.VISUAL_ID: {
+			LinkedList<MumlAbstractNavigatorItem> result = new LinkedList<MumlAbstractNavigatorItem>();
 			Edge sv = (Edge) view;
-			org.muml.pim.pattern.diagram.navigator.MumlNavigatorGroup target = new org.muml.pim.pattern.diagram.navigator.MumlNavigatorGroup(
-					org.muml.pim.pattern.diagram.part.Messages.NavigatorGroupName_RoleConnectorConnectorQualityOfServiceAssumptions_4004_target,
+			MumlNavigatorGroup target = new MumlNavigatorGroup(
+					Messages.NavigatorGroupName_RoleConnectorConnectorQualityOfServiceAssumptions_4004_target,
 					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			org.muml.pim.pattern.diagram.navigator.MumlNavigatorGroup source = new org.muml.pim.pattern.diagram.navigator.MumlNavigatorGroup(
-					org.muml.pim.pattern.diagram.part.Messages.NavigatorGroupName_RoleConnectorConnectorQualityOfServiceAssumptions_4004_source,
+			MumlNavigatorGroup source = new MumlNavigatorGroup(
+					Messages.NavigatorGroupName_RoleConnectorConnectorQualityOfServiceAssumptions_4004_source,
 					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					org.muml.pim.pattern.diagram.part.MumlVisualIDRegistry.getType(
-							org.muml.pim.pattern.diagram.edit.parts.ConnectorQualityOfServiceAssumptionsEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(ConnectorQualityOfServiceAssumptionsEditPart.VISUAL_ID));
 			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			if (!target.isEmpty()) {
 				result.add(target);
@@ -672,20 +640,16 @@ public class MumlNavigatorContentProvider implements ICommonContentProvider {
 	 * @generated
 	 */
 	private boolean isOwnView(View view) {
-		return org.muml.pim.pattern.diagram.edit.parts.ModelElementCategoryEditPart.MODEL_ID
-				.equals(org.muml.pim.pattern.diagram.part.MumlVisualIDRegistry.getModelID(view));
+		return ModelElementCategoryEditPart.MODEL_ID.equals(MumlVisualIDRegistry.getModelID(view));
 	}
 
 	/**
 	 * @generated
 	 */
-	private Collection<org.muml.pim.pattern.diagram.navigator.MumlNavigatorItem> createNavigatorItems(
-			Collection<View> views, Object parent, boolean isLeafs) {
-		ArrayList<org.muml.pim.pattern.diagram.navigator.MumlNavigatorItem> result = new ArrayList<org.muml.pim.pattern.diagram.navigator.MumlNavigatorItem>(
-				views.size());
+	private Collection<MumlNavigatorItem> createNavigatorItems(Collection<View> views, Object parent, boolean isLeafs) {
+		ArrayList<MumlNavigatorItem> result = new ArrayList<MumlNavigatorItem>(views.size());
 		for (View nextView : views) {
-			result.add(new org.muml.pim.pattern.diagram.navigator.MumlNavigatorItem(nextView, parent,
-					isLeafs));
+			result.add(new MumlNavigatorItem(nextView, parent, isLeafs));
 		}
 		return result;
 	}
@@ -694,8 +658,8 @@ public class MumlNavigatorContentProvider implements ICommonContentProvider {
 	* @generated
 	*/
 	public Object getParent(Object element) {
-		if (element instanceof org.muml.pim.pattern.diagram.navigator.MumlAbstractNavigatorItem) {
-			org.muml.pim.pattern.diagram.navigator.MumlAbstractNavigatorItem abstractNavigatorItem = (org.muml.pim.pattern.diagram.navigator.MumlAbstractNavigatorItem) element;
+		if (element instanceof MumlAbstractNavigatorItem) {
+			MumlAbstractNavigatorItem abstractNavigatorItem = (MumlAbstractNavigatorItem) element;
 			return abstractNavigatorItem.getParent();
 		}
 		return null;

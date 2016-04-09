@@ -11,6 +11,9 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.pim.connector.MessageBuffer;
+import org.muml.pim.msgtype.MessageType;
+import org.muml.pim.msgtype.MsgtypeFactory;
 
 /**
  * @generated
@@ -48,10 +51,9 @@ public class MessageTypeCreateCommand extends EditElementCommand {
 	* @generated
 	*/
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-		org.muml.pim.msgtype.MessageType newElement = org.muml.pim.msgtype.MsgtypeFactory.eINSTANCE
-				.createMessageType();
+		MessageType newElement = MsgtypeFactory.eINSTANCE.createMessageType();
 
-		org.muml.pim.connector.MessageBuffer owner = (org.muml.pim.connector.MessageBuffer) getElementToEdit();
+		MessageBuffer owner = (MessageBuffer) getElementToEdit();
 		owner.getGmfMessageTypes().add(newElement);
 
 		doConfigure(newElement, monitor, info);
@@ -63,8 +65,8 @@ public class MessageTypeCreateCommand extends EditElementCommand {
 	/**
 	* @generated
 	*/
-	protected void doConfigure(org.muml.pim.msgtype.MessageType newElement, IProgressMonitor monitor,
-			IAdaptable info) throws ExecutionException {
+	protected void doConfigure(MessageType newElement, IProgressMonitor monitor, IAdaptable info)
+			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest()).getElementType();
 		ConfigureRequest configureRequest = new ConfigureRequest(getEditingDomain(), newElement, elementType);
 		configureRequest.setClientContext(((CreateElementRequest) getRequest()).getClientContext());

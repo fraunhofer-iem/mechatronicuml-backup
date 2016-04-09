@@ -15,6 +15,7 @@ import org.eclipse.ocl.ecore.OCLExpression;
 import org.eclipse.ocl.ecore.Variable;
 import org.eclipse.ocl.ecore.OCL.Helper;
 import org.eclipse.ocl.options.ParsingOptions;
+import org.muml.pim.pattern.diagram.part.MumlDiagramEditorPlugin;
 
 /**
  * @generated
@@ -24,7 +25,7 @@ public class MumlOCLFactory {
 	/**
 	* @generated
 	*/
-	private final org.muml.pim.pattern.diagram.expressions.MumlAbstractExpression[] expressions;
+	private final MumlAbstractExpression[] expressions;
 
 	/**
 	* @generated
@@ -35,7 +36,7 @@ public class MumlOCLFactory {
 	* @generated
 	*/
 	protected MumlOCLFactory() {
-		this.expressions = new org.muml.pim.pattern.diagram.expressions.MumlAbstractExpression[33];
+		this.expressions = new MumlAbstractExpression[33];
 		this.expressionBodies = new String[] { "\'role1\'", //$NON-NLS-1$
 				"1", //$NON-NLS-1$
 				"1", //$NON-NLS-1$
@@ -76,11 +77,9 @@ public class MumlOCLFactory {
 	* @generated
 	*/
 	private static MumlOCLFactory getInstance() {
-		MumlOCLFactory instance = org.muml.pim.pattern.diagram.part.MumlDiagramEditorPlugin
-				.getInstance().getMumlOCLFactory();
+		MumlOCLFactory instance = MumlDiagramEditorPlugin.getInstance().getMumlOCLFactory();
 		if (instance == null) {
-			org.muml.pim.pattern.diagram.part.MumlDiagramEditorPlugin.getInstance()
-					.setMumlOCLFactory(instance = new MumlOCLFactory());
+			MumlDiagramEditorPlugin.getInstance().setMumlOCLFactory(instance = new MumlOCLFactory());
 		}
 		return instance;
 	}
@@ -95,8 +94,8 @@ public class MumlOCLFactory {
 	/**
 	* @generated
 	*/
-	public static org.muml.pim.pattern.diagram.expressions.MumlAbstractExpression getExpression(
-			int index, EClassifier context, Map<String, EClassifier> environment) {
+	public static MumlAbstractExpression getExpression(int index, EClassifier context,
+			Map<String, EClassifier> environment) {
 		MumlOCLFactory cached = getInstance();
 		if (index < 0 || index >= cached.expressions.length) {
 			throw new IllegalArgumentException();
@@ -112,8 +111,8 @@ public class MumlOCLFactory {
 	* This is factory method, callers are responsible to keep reference to the return value if they want to reuse parsed expression
 	* @generated
 	*/
-	public static org.muml.pim.pattern.diagram.expressions.MumlAbstractExpression getExpression(
-			String body, EClassifier context, Map<String, EClassifier> environment) {
+	public static MumlAbstractExpression getExpression(String body, EClassifier context,
+			Map<String, EClassifier> environment) {
 		return new Expression(body, context, environment);
 	}
 
@@ -121,16 +120,14 @@ public class MumlOCLFactory {
 	* This method will become private in the next release
 	* @generated
 	*/
-	public static org.muml.pim.pattern.diagram.expressions.MumlAbstractExpression getExpression(
-			String body, EClassifier context) {
+	public static MumlAbstractExpression getExpression(String body, EClassifier context) {
 		return getExpression(body, context, Collections.<String, EClassifier> emptyMap());
 	}
 
 	/**
 	* @generated
 	*/
-	private static class Expression
-			extends org.muml.pim.pattern.diagram.expressions.MumlAbstractExpression {
+	private static class Expression extends MumlAbstractExpression {
 
 		/**
 		* @generated

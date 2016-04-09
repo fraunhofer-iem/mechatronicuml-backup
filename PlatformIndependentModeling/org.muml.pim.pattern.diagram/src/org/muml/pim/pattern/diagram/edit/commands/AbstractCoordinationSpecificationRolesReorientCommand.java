@@ -9,6 +9,11 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelationshipRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy;
+import org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy;
+import org.muml.pim.pattern.diagram.edit.policies.MumlBaseItemSemanticEditPolicy;
+import org.muml.pim.protocol.AbstractCoordinationSpecification;
+import org.muml.pim.protocol.Role;
 
 /**
  * @generated
@@ -50,7 +55,7 @@ public class AbstractCoordinationSpecificationRolesReorientCommand extends EditE
 	* @generated
 	*/
 	public boolean canExecute() {
-		if (false == referenceOwner instanceof org.muml.pim.protocol.AbstractCoordinationSpecification) {
+		if (false == referenceOwner instanceof AbstractCoordinationSpecification) {
 			return false;
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
@@ -66,21 +71,17 @@ public class AbstractCoordinationSpecificationRolesReorientCommand extends EditE
 	* @generated
 	*/
 	protected boolean canReorientSource() {
-		if (!(oldEnd instanceof org.muml.pim.protocol.Role
-				&& newEnd instanceof org.muml.pim.protocol.AbstractCoordinationSpecification)) {
+		if (!(oldEnd instanceof Role && newEnd instanceof AbstractCoordinationSpecification)) {
 			return false;
 		}
-		View sourceView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-				.getSourceView(getRequest());
-		View targetView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-				.getTargetView(getRequest());
-		if (!org.muml.pim.pattern.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-				.getLinkConstraints().canExistAbstractCoordinationSpecificationRoles_4002(getNewSource(),
-						getOldTarget(), sourceView, targetView)) {
-			String errorMessage = org.muml.pim.pattern.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-					.getLinkConstraints().getErrorAbstractCoordinationSpecificationRoles_4002(getNewSource(),
-							getOldTarget(), sourceView, targetView);
-			org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy.showMessage(sourceView, errorMessage);
+		View sourceView = ConnectionConfigureHelperGraphicalNodeEditPolicy.getSourceView(getRequest());
+		View targetView = ConnectionConfigureHelperGraphicalNodeEditPolicy.getTargetView(getRequest());
+		if (!MumlBaseItemSemanticEditPolicy.getLinkConstraints().canExistAbstractCoordinationSpecificationRoles_4002(
+				getNewSource(), getOldTarget(), sourceView, targetView)) {
+			String errorMessage = MumlBaseItemSemanticEditPolicy.getLinkConstraints()
+					.getErrorAbstractCoordinationSpecificationRoles_4002(getNewSource(), getOldTarget(), sourceView,
+							targetView);
+			ErrorFeedbackEditPolicy.showMessage(sourceView, errorMessage);
 			return false;
 		}
 		return true;
@@ -90,21 +91,17 @@ public class AbstractCoordinationSpecificationRolesReorientCommand extends EditE
 	* @generated
 	*/
 	protected boolean canReorientTarget() {
-		if (!(oldEnd instanceof org.muml.pim.protocol.Role
-				&& newEnd instanceof org.muml.pim.protocol.Role)) {
+		if (!(oldEnd instanceof Role && newEnd instanceof Role)) {
 			return false;
 		}
-		View sourceView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-				.getSourceView(getRequest());
-		View targetView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-				.getTargetView(getRequest());
-		if (!org.muml.pim.pattern.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-				.getLinkConstraints().canExistAbstractCoordinationSpecificationRoles_4002(getOldSource(),
-						getNewTarget(), sourceView, targetView)) {
-			String errorMessage = org.muml.pim.pattern.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-					.getLinkConstraints().getErrorAbstractCoordinationSpecificationRoles_4002(getOldSource(),
-							getNewTarget(), sourceView, targetView);
-			org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy.showMessage(targetView, errorMessage);
+		View sourceView = ConnectionConfigureHelperGraphicalNodeEditPolicy.getSourceView(getRequest());
+		View targetView = ConnectionConfigureHelperGraphicalNodeEditPolicy.getTargetView(getRequest());
+		if (!MumlBaseItemSemanticEditPolicy.getLinkConstraints().canExistAbstractCoordinationSpecificationRoles_4002(
+				getOldSource(), getNewTarget(), sourceView, targetView)) {
+			String errorMessage = MumlBaseItemSemanticEditPolicy.getLinkConstraints()
+					.getErrorAbstractCoordinationSpecificationRoles_4002(getOldSource(), getNewTarget(), sourceView,
+							targetView);
+			ErrorFeedbackEditPolicy.showMessage(targetView, errorMessage);
 			return false;
 		}
 		return true;
@@ -157,29 +154,29 @@ public class AbstractCoordinationSpecificationRolesReorientCommand extends EditE
 	/**
 	* @generated
 	*/
-	protected org.muml.pim.protocol.AbstractCoordinationSpecification getOldSource() {
-		return (org.muml.pim.protocol.AbstractCoordinationSpecification) referenceOwner;
+	protected AbstractCoordinationSpecification getOldSource() {
+		return (AbstractCoordinationSpecification) referenceOwner;
 	}
 
 	/**
 	* @generated
 	*/
-	protected org.muml.pim.protocol.AbstractCoordinationSpecification getNewSource() {
-		return (org.muml.pim.protocol.AbstractCoordinationSpecification) newEnd;
+	protected AbstractCoordinationSpecification getNewSource() {
+		return (AbstractCoordinationSpecification) newEnd;
 	}
 
 	/**
 	* @generated
 	*/
-	protected org.muml.pim.protocol.Role getOldTarget() {
-		return (org.muml.pim.protocol.Role) oldEnd;
+	protected Role getOldTarget() {
+		return (Role) oldEnd;
 	}
 
 	/**
 	* @generated
 	*/
-	protected org.muml.pim.protocol.Role getNewTarget() {
-		return (org.muml.pim.protocol.Role) newEnd;
+	protected Role getNewTarget() {
+		return (Role) newEnd;
 	}
 
 	/**

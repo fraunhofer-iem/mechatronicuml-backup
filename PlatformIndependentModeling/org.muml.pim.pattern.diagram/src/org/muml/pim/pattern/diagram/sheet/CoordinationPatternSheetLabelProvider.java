@@ -9,6 +9,9 @@ import org.eclipse.jface.viewers.BaseLabelProvider;
 import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.swt.graphics.Image;
+import org.muml.pim.pattern.diagram.navigator.MumlNavigatorGroup;
+import org.muml.pim.pattern.diagram.part.MumlVisualIDRegistry;
+import org.muml.pim.pattern.diagram.providers.MumlElementTypes;
 
 /**
  * @generated
@@ -31,8 +34,8 @@ public class CoordinationPatternSheetLabelProvider extends BaseLabelProvider imp
 		}
 		// END: Added for MUML #912
 
-		if (element instanceof org.muml.pim.pattern.diagram.navigator.MumlNavigatorGroup) {
-			return ((org.muml.pim.pattern.diagram.navigator.MumlNavigatorGroup) element).getGroupName();
+		if (element instanceof MumlNavigatorGroup) {
+			return ((MumlNavigatorGroup) element).getGroupName();
 		}
 		IElementType etype = getElementType(getView(element));
 		return etype == null ? "" : etype.getDisplayName();
@@ -43,8 +46,7 @@ public class CoordinationPatternSheetLabelProvider extends BaseLabelProvider imp
 	*/
 	public Image getImage(Object element) {
 		IElementType etype = getElementType(getView(unwrap(element)));
-		return etype == null ? null
-				: org.muml.pim.pattern.diagram.providers.MumlElementTypes.getImage(etype);
+		return etype == null ? null : MumlElementTypes.getImage(etype);
 	}
 
 	/**
@@ -76,9 +78,8 @@ public class CoordinationPatternSheetLabelProvider extends BaseLabelProvider imp
 	private IElementType getElementType(View view) {
 		// For intermediate views climb up the containment hierarchy to find the one associated with an element type.
 		while (view != null) {
-			int vid = org.muml.pim.pattern.diagram.part.MumlVisualIDRegistry.getVisualID(view);
-			IElementType etype = org.muml.pim.pattern.diagram.providers.MumlElementTypes
-					.getElementType(vid);
+			int vid = MumlVisualIDRegistry.getVisualID(view);
+			IElementType etype = MumlElementTypes.getElementType(vid);
 			if (etype != null) {
 				return etype;
 			}

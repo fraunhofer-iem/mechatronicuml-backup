@@ -6,35 +6,31 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.emf.commands.core.commands.DuplicateEObjectsCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DuplicateElementsRequest;
+import org.muml.pim.pattern.diagram.edit.commands.CoordinationPatternCreateCommand;
+import org.muml.pim.pattern.diagram.edit.commands.CoordinationPatternVariantCreateCommand;
+import org.muml.pim.pattern.diagram.providers.MumlElementTypes;
 
 /**
  * @generated
  */
-public class ModelElementCategoryItemSemanticEditPolicy
-		extends org.muml.pim.pattern.diagram.edit.policies.MumlBaseItemSemanticEditPolicy {
+public class ModelElementCategoryItemSemanticEditPolicy extends MumlBaseItemSemanticEditPolicy {
 
 	/**
 	* @generated
 	*/
 	public ModelElementCategoryItemSemanticEditPolicy() {
-		super(org.muml.pim.pattern.diagram.providers.MumlElementTypes.ModelElementCategory_1000);
+		super(MumlElementTypes.ModelElementCategory_1000);
 	}
 
 	/**
 	* @generated
 	*/
 	protected Command getCreateCommand(CreateElementRequest req) {
-		if (org.muml.pim.pattern.diagram.providers.MumlElementTypes.CoordinationPattern_2001 == req
-				.getElementType()) {
-			return getGEFWrapper(
-					new org.muml.pim.pattern.diagram.edit.commands.CoordinationPatternCreateCommand(
-							req));
+		if (MumlElementTypes.CoordinationPattern_2001 == req.getElementType()) {
+			return getGEFWrapper(new CoordinationPatternCreateCommand(req));
 		}
-		if (org.muml.pim.pattern.diagram.providers.MumlElementTypes.CoordinationPatternVariant_2002 == req
-				.getElementType()) {
-			return getGEFWrapper(
-					new org.muml.pim.pattern.diagram.edit.commands.CoordinationPatternVariantCreateCommand(
-							req));
+		if (MumlElementTypes.CoordinationPatternVariant_2002 == req.getElementType()) {
+			return getGEFWrapper(new CoordinationPatternVariantCreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}

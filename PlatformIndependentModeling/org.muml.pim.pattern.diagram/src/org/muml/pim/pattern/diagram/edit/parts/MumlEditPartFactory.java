@@ -6,6 +6,7 @@ import org.eclipse.gef.tools.CellEditorLocator;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ITextAwareEditPart;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.directedit.locator.CellEditorLocatorAccess;
+import org.muml.pim.pattern.diagram.part.MumlVisualIDRegistry;
 
 /**
  * @generated
@@ -18,103 +19,91 @@ public class MumlEditPartFactory implements EditPartFactory {
 	public EditPart createEditPart(EditPart context, Object model) {
 		if (model instanceof View) {
 			View view = (View) model;
-			switch (org.muml.pim.pattern.diagram.part.MumlVisualIDRegistry.getVisualID(view)) {
+			switch (MumlVisualIDRegistry.getVisualID(view)) {
 
-			case org.muml.pim.pattern.diagram.edit.parts.ModelElementCategoryEditPart.VISUAL_ID:
-				return new org.muml.pim.pattern.diagram.edit.parts.ModelElementCategoryEditPart(view);
+			case ModelElementCategoryEditPart.VISUAL_ID:
+				return new ModelElementCategoryEditPart(view);
 
-			case org.muml.pim.pattern.diagram.edit.parts.CoordinationPatternEditPart.VISUAL_ID:
-				return new org.muml.pim.pattern.diagram.edit.parts.CoordinationPatternEditPart(view);
+			case CoordinationPatternEditPart.VISUAL_ID:
+				return new CoordinationPatternEditPart(view);
 
-			case org.muml.pim.pattern.diagram.edit.parts.CoordinationPatternVariantEditPart.VISUAL_ID:
-				return new org.muml.pim.pattern.diagram.edit.parts.CoordinationPatternVariantEditPart(
-						view);
+			case CoordinationPatternVariantEditPart.VISUAL_ID:
+				return new CoordinationPatternVariantEditPart(view);
 
-			case org.muml.pim.pattern.diagram.edit.parts.CoordinationPattern2EditPart.VISUAL_ID:
-				return new org.muml.pim.pattern.diagram.edit.parts.CoordinationPattern2EditPart(view);
+			case CoordinationPattern2EditPart.VISUAL_ID:
+				return new CoordinationPattern2EditPart(view);
 
-			case org.muml.pim.pattern.diagram.edit.parts.CoordinationPatternNameEditPart.VISUAL_ID:
-				return new org.muml.pim.pattern.diagram.edit.parts.CoordinationPatternNameEditPart(
-						view);
+			case CoordinationPatternNameEditPart.VISUAL_ID:
+				return new CoordinationPatternNameEditPart(view);
 
-			case org.muml.pim.pattern.diagram.edit.parts.RoleEditPart.VISUAL_ID:
-				return new org.muml.pim.pattern.diagram.edit.parts.RoleEditPart(view);
+			case RoleEditPart.VISUAL_ID:
+				return new RoleEditPart(view);
 
-			case org.muml.pim.pattern.diagram.edit.parts.RoleNameEditPart.VISUAL_ID:
-				return new org.muml.pim.pattern.diagram.edit.parts.RoleNameEditPart(view);
+			case RoleNameEditPart.VISUAL_ID:
+				return new RoleNameEditPart(view);
 
-			case org.muml.pim.pattern.diagram.edit.parts.MessageBufferEditPart.VISUAL_ID:
-				return new org.muml.pim.pattern.diagram.edit.parts.MessageBufferEditPart(view);
+			case MessageBufferEditPart.VISUAL_ID:
+				return new MessageBufferEditPart(view);
 
-			case org.muml.pim.pattern.diagram.edit.parts.MessageBufferNameEditPart.VISUAL_ID:
-				return new org.muml.pim.pattern.diagram.edit.parts.MessageBufferNameEditPart(view);
+			case MessageBufferNameEditPart.VISUAL_ID:
+				return new MessageBufferNameEditPart(view);
 
-			case org.muml.pim.pattern.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID:
-				return new org.muml.pim.pattern.diagram.edit.parts.WrappingLabelEditPart(view);
+			case WrappingLabelEditPart.VISUAL_ID:
+				return new WrappingLabelEditPart(view);
 
-			case org.muml.pim.pattern.diagram.edit.parts.WrappingLabel6EditPart.VISUAL_ID:
-				return new org.muml.pim.pattern.diagram.edit.parts.WrappingLabel6EditPart(view);
+			case WrappingLabel6EditPart.VISUAL_ID:
+				return new WrappingLabel6EditPart(view);
 
-			case org.muml.pim.pattern.diagram.edit.parts.MessageTypeEditPart.VISUAL_ID:
-				return new org.muml.pim.pattern.diagram.edit.parts.MessageTypeEditPart(view);
+			case MessageTypeEditPart.VISUAL_ID:
+				return new MessageTypeEditPart(view);
 
-			case org.muml.pim.pattern.diagram.edit.parts.MessageTypeNameEditPart.VISUAL_ID:
-				return new org.muml.pim.pattern.diagram.edit.parts.MessageTypeNameEditPart(view);
+			case MessageTypeNameEditPart.VISUAL_ID:
+				return new MessageTypeNameEditPart(view);
 
-			case org.muml.pim.pattern.diagram.edit.parts.ParameterEditPart.VISUAL_ID:
-				return new org.muml.pim.pattern.diagram.edit.parts.ParameterEditPart(view);
+			case ParameterEditPart.VISUAL_ID:
+				return new ParameterEditPart(view);
 
-			case org.muml.pim.pattern.diagram.edit.parts.WrappingLabel2EditPart.VISUAL_ID:
-				return new org.muml.pim.pattern.diagram.edit.parts.WrappingLabel2EditPart(view);
+			case WrappingLabel2EditPart.VISUAL_ID:
+				return new WrappingLabel2EditPart(view);
 
-			case org.muml.pim.pattern.diagram.edit.parts.ConnectorQualityOfServiceAssumptionsEditPart.VISUAL_ID:
-				return new org.muml.pim.pattern.diagram.edit.parts.ConnectorQualityOfServiceAssumptionsEditPart(
-						view);
+			case ConnectorQualityOfServiceAssumptionsEditPart.VISUAL_ID:
+				return new ConnectorQualityOfServiceAssumptionsEditPart(view);
 
-			case org.muml.pim.pattern.diagram.edit.parts.WrappingLabel3EditPart.VISUAL_ID:
-				return new org.muml.pim.pattern.diagram.edit.parts.WrappingLabel3EditPart(view);
+			case WrappingLabel3EditPart.VISUAL_ID:
+				return new WrappingLabel3EditPart(view);
 
-			case org.muml.pim.pattern.diagram.edit.parts.WrappingLabel4EditPart.VISUAL_ID:
-				return new org.muml.pim.pattern.diagram.edit.parts.WrappingLabel4EditPart(view);
+			case WrappingLabel4EditPart.VISUAL_ID:
+				return new WrappingLabel4EditPart(view);
 
-			case org.muml.pim.pattern.diagram.edit.parts.CoordinationPatternVariant2EditPart.VISUAL_ID:
-				return new org.muml.pim.pattern.diagram.edit.parts.CoordinationPatternVariant2EditPart(
-						view);
+			case CoordinationPatternVariant2EditPart.VISUAL_ID:
+				return new CoordinationPatternVariant2EditPart(view);
 
-			case org.muml.pim.pattern.diagram.edit.parts.CoordinationPatternVariantNameEditPart.VISUAL_ID:
-				return new org.muml.pim.pattern.diagram.edit.parts.CoordinationPatternVariantNameEditPart(
-						view);
+			case CoordinationPatternVariantNameEditPart.VISUAL_ID:
+				return new CoordinationPatternVariantNameEditPart(view);
 
-			case org.muml.pim.pattern.diagram.edit.parts.CoordinationPatternPatternCompartmentEditPart.VISUAL_ID:
-				return new org.muml.pim.pattern.diagram.edit.parts.CoordinationPatternPatternCompartmentEditPart(
-						view);
+			case CoordinationPatternPatternCompartmentEditPart.VISUAL_ID:
+				return new CoordinationPatternPatternCompartmentEditPart(view);
 
-			case org.muml.pim.pattern.diagram.edit.parts.MessageBufferMessageBufferCompartmentEditPart.VISUAL_ID:
-				return new org.muml.pim.pattern.diagram.edit.parts.MessageBufferMessageBufferCompartmentEditPart(
-						view);
+			case MessageBufferMessageBufferCompartmentEditPart.VISUAL_ID:
+				return new MessageBufferMessageBufferCompartmentEditPart(view);
 
-			case org.muml.pim.pattern.diagram.edit.parts.MessageTypeParametersCompartmentEditPart.VISUAL_ID:
-				return new org.muml.pim.pattern.diagram.edit.parts.MessageTypeParametersCompartmentEditPart(
-						view);
+			case MessageTypeParametersCompartmentEditPart.VISUAL_ID:
+				return new MessageTypeParametersCompartmentEditPart(view);
 
-			case org.muml.pim.pattern.diagram.edit.parts.CoordinationPatternVariantCoordinationProtocolContainerCompartmentEditPart.VISUAL_ID:
-				return new org.muml.pim.pattern.diagram.edit.parts.CoordinationPatternVariantCoordinationProtocolContainerCompartmentEditPart(
-						view);
+			case CoordinationPatternVariantCoordinationProtocolContainerCompartmentEditPart.VISUAL_ID:
+				return new CoordinationPatternVariantCoordinationProtocolContainerCompartmentEditPart(view);
 
-			case org.muml.pim.pattern.diagram.edit.parts.AbstractCoordinationSpecificationRolesEditPart.VISUAL_ID:
-				return new org.muml.pim.pattern.diagram.edit.parts.AbstractCoordinationSpecificationRolesEditPart(
-						view);
+			case AbstractCoordinationSpecificationRolesEditPart.VISUAL_ID:
+				return new AbstractCoordinationSpecificationRolesEditPart(view);
 
-			case org.muml.pim.pattern.diagram.edit.parts.RoleConnectorEditPart.VISUAL_ID:
-				return new org.muml.pim.pattern.diagram.edit.parts.RoleConnectorEditPart(view);
+			case RoleConnectorEditPart.VISUAL_ID:
+				return new RoleConnectorEditPart(view);
 
-			case org.muml.pim.pattern.diagram.edit.parts.DiscreteInteractionEndpointReceiverMessageBufferEditPart.VISUAL_ID:
-				return new org.muml.pim.pattern.diagram.edit.parts.DiscreteInteractionEndpointReceiverMessageBufferEditPart(
-						view);
+			case DiscreteInteractionEndpointReceiverMessageBufferEditPart.VISUAL_ID:
+				return new DiscreteInteractionEndpointReceiverMessageBufferEditPart(view);
 
-			case org.muml.pim.pattern.diagram.edit.parts.RoleConnectorConnectorQualityOfServiceAssumptionsEditPart.VISUAL_ID:
-				return new org.muml.pim.pattern.diagram.edit.parts.RoleConnectorConnectorQualityOfServiceAssumptionsEditPart(
-						view);
+			case RoleConnectorConnectorQualityOfServiceAssumptionsEditPart.VISUAL_ID:
+				return new RoleConnectorConnectorQualityOfServiceAssumptionsEditPart(view);
 
 			}
 		}

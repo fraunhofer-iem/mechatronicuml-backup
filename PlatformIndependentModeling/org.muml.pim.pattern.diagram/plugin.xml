@@ -685,9 +685,9 @@
 	         allPopups="false"
 	         locationURI="popup:de.uni_paderborn.fujaba.muml.browser.new.menu?after=additions">
 	  		<command
-                 commandId="de.uni_paderborn.fujaba.modelinstance.ModelElementCategory.browser.create"
+                 commandId="org.muml.core.modelinstance.ModelElementCategory.browser.create"
                  icon="icons/obj16/ModelinstanceDiagramFile.gif"
-                 id="de.uni_paderborn.fujaba.modelinstance.ModelElementCategory.browser.create"
+                 id="org.muml.core.modelinstance.ModelElementCategory.browser.create"
                  label="ModelElementCategory"
                  style="push">
               <visibleWhen
@@ -730,7 +730,7 @@
            defaultHandler="org.muml.pim.pattern.diagram.part.MumlInitDiagramFileAction$CreateDiagramElement"
            categoryId="de.uni_paderborn.fujaba"
            description="Create new Coordination Pattern"
-           id="de.uni_paderborn.fujaba.modelinstance.ModelElementCategory.browser.create"
+           id="org.muml.core.modelinstance.ModelElementCategory.browser.create"
            name="Create new Coordination Pattern">
     </command>
     </extension>
@@ -739,7 +739,7 @@
          point="org.muml.core.modelinstance.modelelementcategory">
       <?gmfgen generated="true"?>  
       <category
-            key="de.uni_paderborn.fujaba.muml.pattern.category"
+            key="org.muml.pim.pattern.category"
             name="pattern">
          
          
@@ -765,7 +765,7 @@
             editorId="org.muml.pim.pattern.diagram.part.CoordinationPatternDiagramEditorID"
             editorName="Coordination Pattern Editor"
             fileExtension="coordinationpattern_diagram"
-            modelElementCategoryKey="de.uni_paderborn.fujaba.muml.pattern.category"
+            modelElementCategoryKey="org.muml.pim.pattern.category"
             modelId="Coordination Pattern">
          <diagramElement
                packageNsURI="http://www.muml.org/modelinstance/1.0.0"

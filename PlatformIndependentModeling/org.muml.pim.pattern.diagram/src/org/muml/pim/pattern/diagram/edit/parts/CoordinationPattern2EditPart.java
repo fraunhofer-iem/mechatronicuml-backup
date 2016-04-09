@@ -33,6 +33,16 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Font;
 import org.eclipse.swt.widgets.Display;
+import org.muml.core.common.edit.policies.CanonicalRefreshEditPolicy;
+import org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy;
+import org.muml.core.common.edit.policies.anchor.EllipseConnectionAnchorCreationEditPolicy;
+import org.muml.core.common.edit.policies.anchor.IConnectionAnchorCreationEditPolicy;
+import org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy;
+import org.muml.pim.common.edit.policies.IBackgroundColorEditPolicy;
+import org.muml.pim.coordinationspecification.common.edit.policies.CustomAbstractCoordinationSpecificationUpdateEditPolicy;
+import org.muml.pim.pattern.diagram.edit.policies.CoordinationPattern2ItemSemanticEditPolicy;
+import org.muml.pim.pattern.diagram.part.MumlVisualIDRegistry;
+import org.muml.pim.protocol.ProtocolPackage;
 
 /**
  * @generated
@@ -76,10 +86,8 @@ public class CoordinationPattern2EditPart extends ShapeNodeEditPart {
 	protected void refreshBackgroundColor() {
 		EditPolicy backgroundColorPolicy = getEditPolicy(
 				org.muml.core.common.edit.policies.EditPolicyRoles.BACKGROUND_COLOR_ROLE);
-		if (backgroundColorPolicy instanceof org.muml.pim.common.edit.policies.IBackgroundColorEditPolicy) {
-			setBackgroundColor(
-					((org.muml.pim.common.edit.policies.IBackgroundColorEditPolicy) backgroundColorPolicy)
-							.getCurrentBackgroundColor());
+		if (backgroundColorPolicy instanceof IBackgroundColorEditPolicy) {
+			setBackgroundColor(((IBackgroundColorEditPolicy) backgroundColorPolicy).getCurrentBackgroundColor());
 		} else {
 			super.refreshBackgroundColor();
 		}
@@ -107,30 +115,28 @@ public class CoordinationPattern2EditPart extends ShapeNodeEditPart {
 	*/
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
-				new org.muml.pim.pattern.diagram.edit.policies.CoordinationPattern2ItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new CoordinationPattern2ItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 
 		installEditPolicy(org.muml.core.common.edit.policies.EditPolicyRoles.CONNECTION_ANCHOR_CREATION_ROLE,
-				new org.muml.core.common.edit.policies.anchor.EllipseConnectionAnchorCreationEditPolicy());
+				new EllipseConnectionAnchorCreationEditPolicy());
 
 		removeEditPolicy(org.muml.core.common.edit.policies.EditPolicyRoles.NON_DELETABLE_ROLE);
 
 		installEditPolicy(
 				org.muml.pim.coordinationspecification.common.edit.policies.EditPolicyRoles.ABSTRACT_COORDINATION_SPECIFICATION_EDITPOLICY,
-				new org.muml.pim.coordinationspecification.common.edit.policies.CustomAbstractCoordinationSpecificationUpdateEditPolicy());
+				new CustomAbstractCoordinationSpecificationUpdateEditPolicy());
 
 		installEditPolicy(org.muml.core.common.edit.policies.EditPolicyRoles.CANONICAL_REFRESH_ROLE,
-				new org.muml.core.common.edit.policies.CanonicalRefreshEditPolicy());
+				new CanonicalRefreshEditPolicy());
 
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 
-		installEditPolicy(EditPolicy.GRAPHICAL_NODE_ROLE,
-				new org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy());
+		installEditPolicy(EditPolicy.GRAPHICAL_NODE_ROLE, new ConnectionConfigureHelperGraphicalNodeEditPolicy());
 
 		installEditPolicy(org.muml.core.common.edit.policies.EditPolicyRoles.ERROR_FEEDBACK_ROLE,
-				new org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy());
+				new ErrorFeedbackEditPolicy());
 
 	}
 
@@ -177,9 +183,8 @@ public class CoordinationPattern2EditPart extends ShapeNodeEditPart {
 	* @generated
 	*/
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof org.muml.pim.pattern.diagram.edit.parts.CoordinationPatternNameEditPart) {
-			((org.muml.pim.pattern.diagram.edit.parts.CoordinationPatternNameEditPart) childEditPart)
-					.setLabel(getPrimaryShape().getFigurePatternNameLabel());
+		if (childEditPart instanceof CoordinationPatternNameEditPart) {
+			((CoordinationPatternNameEditPart) childEditPart).setLabel(getPrimaryShape().getFigurePatternNameLabel());
 			return true;
 		}
 		return false;
@@ -189,7 +194,7 @@ public class CoordinationPattern2EditPart extends ShapeNodeEditPart {
 	* @generated
 	*/
 	protected boolean removeFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof org.muml.pim.pattern.diagram.edit.parts.CoordinationPatternNameEditPart) {
+		if (childEditPart instanceof CoordinationPatternNameEditPart) {
 			return true;
 		}
 		return false;
@@ -229,7 +234,7 @@ public class CoordinationPattern2EditPart extends ShapeNodeEditPart {
 		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(40, 40) {
 			@Override
 			public ConnectionAnchor createDefaultAnchor() {
-				org.muml.core.common.edit.policies.anchor.IConnectionAnchorCreationEditPolicy connectionAnchorCreationEditPolicy = (org.muml.core.common.edit.policies.anchor.IConnectionAnchorCreationEditPolicy) getEditPolicy(
+				IConnectionAnchorCreationEditPolicy connectionAnchorCreationEditPolicy = (IConnectionAnchorCreationEditPolicy) getEditPolicy(
 						org.muml.core.common.edit.policies.EditPolicyRoles.CONNECTION_ANCHOR_CREATION_ROLE);
 				if (connectionAnchorCreationEditPolicy != null) {
 					return connectionAnchorCreationEditPolicy.createDefaultAnchor();
@@ -326,8 +331,7 @@ public class CoordinationPattern2EditPart extends ShapeNodeEditPart {
 	* @generated
 	*/
 	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(org.muml.pim.pattern.diagram.part.MumlVisualIDRegistry.getType(
-				org.muml.pim.pattern.diagram.edit.parts.CoordinationPatternNameEditPart.VISUAL_ID));
+		return getChildBySemanticHint(MumlVisualIDRegistry.getType(CoordinationPatternNameEditPart.VISUAL_ID));
 	}
 
 	/**
@@ -412,8 +416,7 @@ public class CoordinationPattern2EditPart extends ShapeNodeEditPart {
 	protected void handleNotificationEvent(Notification event) {
 		boolean update = false;
 
-		if (event.getFeature() == org.muml.pim.protocol.ProtocolPackage.eINSTANCE
-				.getAbstractCoordinationSpecification_Roles()) {
+		if (event.getFeature() == ProtocolPackage.eINSTANCE.getAbstractCoordinationSpecification_Roles()) {
 			update = true;
 		}
 

@@ -8,6 +8,12 @@ import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy;
+import org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy;
+import org.muml.pim.connector.ConnectorEndpoint;
+import org.muml.pim.pattern.diagram.edit.policies.MumlBaseItemSemanticEditPolicy;
+import org.muml.pim.protocol.AbstractCoordinationSpecification;
+import org.muml.pim.protocol.RoleConnector;
 
 /**
  * @generated
@@ -43,7 +49,7 @@ public class RoleConnectorReorientCommand extends EditElementCommand {
 	* @generated
 	*/
 	public boolean canExecute() {
-		if (false == getElementToEdit() instanceof org.muml.pim.protocol.RoleConnector) {
+		if (false == getElementToEdit() instanceof RoleConnector) {
 			return false;
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
@@ -59,8 +65,7 @@ public class RoleConnectorReorientCommand extends EditElementCommand {
 	* @generated
 	*/
 	protected boolean canReorientSource() {
-		if (!(oldEnd instanceof org.muml.pim.connector.ConnectorEndpoint
-				&& newEnd instanceof org.muml.pim.connector.ConnectorEndpoint)) {
+		if (!(oldEnd instanceof ConnectorEndpoint && newEnd instanceof ConnectorEndpoint)) {
 			return false;
 		}
 		// Removed this check, because other cases are now implemented; Enhancement for MUML-BUG #446
@@ -69,25 +74,18 @@ public class RoleConnectorReorientCommand extends EditElementCommand {
 		  return false;
 		}
 		*/
-		org.muml.pim.connector.ConnectorEndpoint target = (org.muml.pim.connector.ConnectorEndpoint) getLink()
-				.getConnectorEndpoints().get(0);
-		if (!(getLink()
-				.eContainer() instanceof org.muml.pim.protocol.AbstractCoordinationSpecification)) {
+		ConnectorEndpoint target = (ConnectorEndpoint) getLink().getConnectorEndpoints().get(0);
+		if (!(getLink().eContainer() instanceof AbstractCoordinationSpecification)) {
 			return false;
 		}
-		org.muml.pim.protocol.AbstractCoordinationSpecification container = (org.muml.pim.protocol.AbstractCoordinationSpecification) getLink()
-				.eContainer();
-		View sourceView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-				.getSourceView(getRequest());
-		View targetView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-				.getTargetView(getRequest());
-		if (!org.muml.pim.pattern.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-				.getLinkConstraints()
-				.canExistRoleConnector_4001(container, getLink(), getNewSource(), target, sourceView, targetView)) {
-			String errorMessage = org.muml.pim.pattern.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-					.getLinkConstraints()
+		AbstractCoordinationSpecification container = (AbstractCoordinationSpecification) getLink().eContainer();
+		View sourceView = ConnectionConfigureHelperGraphicalNodeEditPolicy.getSourceView(getRequest());
+		View targetView = ConnectionConfigureHelperGraphicalNodeEditPolicy.getTargetView(getRequest());
+		if (!MumlBaseItemSemanticEditPolicy.getLinkConstraints().canExistRoleConnector_4001(container, getLink(),
+				getNewSource(), target, sourceView, targetView)) {
+			String errorMessage = MumlBaseItemSemanticEditPolicy.getLinkConstraints()
 					.getErrorRoleConnector_4001(container, getNewSource(), target, sourceView, targetView);
-			org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy.showMessage(sourceView, errorMessage);
+			ErrorFeedbackEditPolicy.showMessage(sourceView, errorMessage);
 			return false;
 		}
 		return true;
@@ -97,8 +95,7 @@ public class RoleConnectorReorientCommand extends EditElementCommand {
 	* @generated
 	*/
 	protected boolean canReorientTarget() {
-		if (!(oldEnd instanceof org.muml.pim.connector.ConnectorEndpoint
-				&& newEnd instanceof org.muml.pim.connector.ConnectorEndpoint)) {
+		if (!(oldEnd instanceof ConnectorEndpoint && newEnd instanceof ConnectorEndpoint)) {
 			return false;
 		}
 		// Removed this check, because other cases are now implemented; Enhancement for MUML-BUG #446
@@ -107,25 +104,18 @@ public class RoleConnectorReorientCommand extends EditElementCommand {
 		  return false;
 		}
 		*/
-		org.muml.pim.connector.ConnectorEndpoint source = (org.muml.pim.connector.ConnectorEndpoint) getLink()
-				.getConnectorEndpoints().get(0);
-		if (!(getLink()
-				.eContainer() instanceof org.muml.pim.protocol.AbstractCoordinationSpecification)) {
+		ConnectorEndpoint source = (ConnectorEndpoint) getLink().getConnectorEndpoints().get(0);
+		if (!(getLink().eContainer() instanceof AbstractCoordinationSpecification)) {
 			return false;
 		}
-		org.muml.pim.protocol.AbstractCoordinationSpecification container = (org.muml.pim.protocol.AbstractCoordinationSpecification) getLink()
-				.eContainer();
-		View sourceView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-				.getSourceView(getRequest());
-		View targetView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-				.getTargetView(getRequest());
-		if (!org.muml.pim.pattern.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-				.getLinkConstraints()
-				.canExistRoleConnector_4001(container, getLink(), source, getNewTarget(), sourceView, targetView)) {
-			String errorMessage = org.muml.pim.pattern.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-					.getLinkConstraints()
+		AbstractCoordinationSpecification container = (AbstractCoordinationSpecification) getLink().eContainer();
+		View sourceView = ConnectionConfigureHelperGraphicalNodeEditPolicy.getSourceView(getRequest());
+		View targetView = ConnectionConfigureHelperGraphicalNodeEditPolicy.getTargetView(getRequest());
+		if (!MumlBaseItemSemanticEditPolicy.getLinkConstraints().canExistRoleConnector_4001(container, getLink(),
+				source, getNewTarget(), sourceView, targetView)) {
+			String errorMessage = MumlBaseItemSemanticEditPolicy.getLinkConstraints()
 					.getErrorRoleConnector_4001(container, source, getNewTarget(), sourceView, targetView);
-			org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy.showMessage(sourceView, errorMessage);
+			ErrorFeedbackEditPolicy.showMessage(sourceView, errorMessage);
 			return false;
 		}
 		return true;
@@ -178,36 +168,36 @@ public class RoleConnectorReorientCommand extends EditElementCommand {
 	/**
 	* @generated
 	*/
-	protected org.muml.pim.protocol.RoleConnector getLink() {
-		return (org.muml.pim.protocol.RoleConnector) getElementToEdit();
+	protected RoleConnector getLink() {
+		return (RoleConnector) getElementToEdit();
 	}
 
 	/**
 	* @generated
 	*/
-	protected org.muml.pim.connector.ConnectorEndpoint getOldSource() {
-		return (org.muml.pim.connector.ConnectorEndpoint) oldEnd;
+	protected ConnectorEndpoint getOldSource() {
+		return (ConnectorEndpoint) oldEnd;
 	}
 
 	/**
 	* @generated
 	*/
-	protected org.muml.pim.connector.ConnectorEndpoint getNewSource() {
-		return (org.muml.pim.connector.ConnectorEndpoint) newEnd;
+	protected ConnectorEndpoint getNewSource() {
+		return (ConnectorEndpoint) newEnd;
 	}
 
 	/**
 	* @generated
 	*/
-	protected org.muml.pim.connector.ConnectorEndpoint getOldTarget() {
-		return (org.muml.pim.connector.ConnectorEndpoint) oldEnd;
+	protected ConnectorEndpoint getOldTarget() {
+		return (ConnectorEndpoint) oldEnd;
 	}
 
 	/**
 	* @generated
 	*/
-	protected org.muml.pim.connector.ConnectorEndpoint getNewTarget() {
-		return (org.muml.pim.connector.ConnectorEndpoint) newEnd;
+	protected ConnectorEndpoint getNewTarget() {
+		return (ConnectorEndpoint) newEnd;
 	}
 
 	/**

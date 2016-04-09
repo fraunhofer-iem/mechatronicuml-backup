@@ -21,6 +21,7 @@ import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.navigator.ILinkHelper;
 import org.eclipse.ui.part.FileEditorInput;
+import org.muml.pim.pattern.diagram.part.MumlDiagramEditorPlugin;
 
 /**
  * @generated
@@ -50,8 +51,8 @@ public class MumlNavigatorLinkHelper implements ILinkHelper {
 	* @generated
 	*/
 	public IStructuredSelection findSelection(IEditorInput anInput) {
-		IDiagramDocument document = org.muml.pim.pattern.diagram.part.MumlDiagramEditorPlugin
-				.getInstance().getDocumentProvider().getDiagramDocument(anInput);
+		IDiagramDocument document = MumlDiagramEditorPlugin.getInstance().getDocumentProvider()
+				.getDiagramDocument(anInput);
 		if (document == null) {
 			return StructuredSelection.EMPTY;
 		}
@@ -61,8 +62,7 @@ public class MumlNavigatorLinkHelper implements ILinkHelper {
 		}
 		IFile file = WorkspaceSynchronizer.getFile(diagram.eResource());
 		if (file != null) {
-			org.muml.pim.pattern.diagram.navigator.MumlNavigatorItem item = new org.muml.pim.pattern.diagram.navigator.MumlNavigatorItem(
-					diagram, file, false);
+			MumlNavigatorItem item = new MumlNavigatorItem(diagram, file, false);
 			return new StructuredSelection(item);
 		}
 		return StructuredSelection.EMPTY;
@@ -75,23 +75,18 @@ public class MumlNavigatorLinkHelper implements ILinkHelper {
 		if (aSelection == null || aSelection.isEmpty()) {
 			return;
 		}
-		if (false == aSelection
-				.getFirstElement() instanceof org.muml.pim.pattern.diagram.navigator.MumlAbstractNavigatorItem) {
+		if (false == aSelection.getFirstElement() instanceof MumlAbstractNavigatorItem) {
 			return;
 		}
 
-		org.muml.pim.pattern.diagram.navigator.MumlAbstractNavigatorItem abstractNavigatorItem = (org.muml.pim.pattern.diagram.navigator.MumlAbstractNavigatorItem) aSelection
-				.getFirstElement();
+		MumlAbstractNavigatorItem abstractNavigatorItem = (MumlAbstractNavigatorItem) aSelection.getFirstElement();
 		View navigatorView = null;
-		if (abstractNavigatorItem instanceof org.muml.pim.pattern.diagram.navigator.MumlNavigatorItem) {
-			navigatorView = ((org.muml.pim.pattern.diagram.navigator.MumlNavigatorItem) abstractNavigatorItem)
-					.getView();
-		} else if (abstractNavigatorItem instanceof org.muml.pim.pattern.diagram.navigator.MumlNavigatorGroup) {
-			org.muml.pim.pattern.diagram.navigator.MumlNavigatorGroup navigatorGroup = (org.muml.pim.pattern.diagram.navigator.MumlNavigatorGroup) abstractNavigatorItem;
-			if (navigatorGroup
-					.getParent() instanceof org.muml.pim.pattern.diagram.navigator.MumlNavigatorItem) {
-				navigatorView = ((org.muml.pim.pattern.diagram.navigator.MumlNavigatorItem) navigatorGroup
-						.getParent()).getView();
+		if (abstractNavigatorItem instanceof MumlNavigatorItem) {
+			navigatorView = ((MumlNavigatorItem) abstractNavigatorItem).getView();
+		} else if (abstractNavigatorItem instanceof MumlNavigatorGroup) {
+			MumlNavigatorGroup navigatorGroup = (MumlNavigatorGroup) abstractNavigatorItem;
+			if (navigatorGroup.getParent() instanceof MumlNavigatorItem) {
+				navigatorView = ((MumlNavigatorItem) navigatorGroup.getParent()).getView();
 			}
 		}
 		if (navigatorView == null) {

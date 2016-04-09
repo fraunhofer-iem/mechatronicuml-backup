@@ -8,6 +8,11 @@ import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy;
+import org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy;
+import org.muml.pim.pattern.diagram.edit.policies.MumlBaseItemSemanticEditPolicy;
+import org.muml.pim.protocol.AbstractCoordinationSpecification;
+import org.muml.pim.protocol.Role;
 
 /**
  * @generated
@@ -41,29 +46,24 @@ public class AbstractCoordinationSpecificationRolesCreateCommand extends EditEle
 		if (source == null && target == null) {
 			return false;
 		}
-		if (source != null
-				&& false == source instanceof org.muml.pim.protocol.AbstractCoordinationSpecification) {
+		if (source != null && false == source instanceof AbstractCoordinationSpecification) {
 			return false;
 		}
-		if (target != null && false == target instanceof org.muml.pim.protocol.Role) {
+		if (target != null && false == target instanceof Role) {
 			return false;
 		}
 		if (getSource() == null) {
 			return true; // link creation is in progress; source is not defined yet
 		}
 		// target may be null here but it's possible to check constraint
-		View sourceView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-				.getSourceView(getRequest());
-		View targetView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-				.getTargetView(getRequest());
-		if (!org.muml.pim.pattern.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-				.getLinkConstraints().canCreateAbstractCoordinationSpecificationRoles_4002(getSource(), getTarget(),
-						sourceView, targetView)) {
-			String errorMessage = org.muml.pim.pattern.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-					.getLinkConstraints().getErrorAbstractCoordinationSpecificationRoles_4002(getSource(), getTarget(),
-							sourceView, targetView);
-			org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy
-					.showMessage(targetView != null ? targetView : sourceView, errorMessage);
+		View sourceView = ConnectionConfigureHelperGraphicalNodeEditPolicy.getSourceView(getRequest());
+		View targetView = ConnectionConfigureHelperGraphicalNodeEditPolicy.getTargetView(getRequest());
+		if (!MumlBaseItemSemanticEditPolicy.getLinkConstraints().canCreateAbstractCoordinationSpecificationRoles_4002(
+				getSource(), getTarget(), sourceView, targetView)) {
+			String errorMessage = MumlBaseItemSemanticEditPolicy.getLinkConstraints()
+					.getErrorAbstractCoordinationSpecificationRoles_4002(getSource(), getTarget(), sourceView,
+							targetView);
+			ErrorFeedbackEditPolicy.showMessage(targetView != null ? targetView : sourceView, errorMessage);
 			return false;
 		}
 		return true;
@@ -94,14 +94,14 @@ public class AbstractCoordinationSpecificationRolesCreateCommand extends EditEle
 	/**
 	* @generated
 	*/
-	protected org.muml.pim.protocol.AbstractCoordinationSpecification getSource() {
-		return (org.muml.pim.protocol.AbstractCoordinationSpecification) source;
+	protected AbstractCoordinationSpecification getSource() {
+		return (AbstractCoordinationSpecification) source;
 	}
 
 	/**
 	* @generated
 	*/
-	protected org.muml.pim.protocol.Role getTarget() {
-		return (org.muml.pim.protocol.Role) target;
+	protected Role getTarget() {
+		return (Role) target;
 	}
 }

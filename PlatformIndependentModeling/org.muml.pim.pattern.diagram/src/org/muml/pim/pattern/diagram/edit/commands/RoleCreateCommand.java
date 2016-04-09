@@ -11,6 +11,10 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.pim.pattern.diagram.providers.ElementInitializers;
+import org.muml.pim.protocol.AbstractCoordinationSpecification;
+import org.muml.pim.protocol.ProtocolFactory;
+import org.muml.pim.protocol.Role;
 
 /**
  * @generated
@@ -40,7 +44,7 @@ public class RoleCreateCommand extends EditElementCommand {
 	* @generated
 	*/
 	public boolean canExecute() {
-		org.muml.pim.protocol.AbstractCoordinationSpecification container = (org.muml.pim.protocol.AbstractCoordinationSpecification) getElementToEdit();
+		AbstractCoordinationSpecification container = (AbstractCoordinationSpecification) getElementToEdit();
 		if (container.getRoles().size() >= 2) {
 			return false;
 		}
@@ -52,14 +56,12 @@ public class RoleCreateCommand extends EditElementCommand {
 	* @generated
 	*/
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-		org.muml.pim.protocol.Role newElement = org.muml.pim.protocol.ProtocolFactory.eINSTANCE
-				.createRole();
+		Role newElement = ProtocolFactory.eINSTANCE.createRole();
 
-		org.muml.pim.protocol.AbstractCoordinationSpecification owner = (org.muml.pim.protocol.AbstractCoordinationSpecification) getElementToEdit();
+		AbstractCoordinationSpecification owner = (AbstractCoordinationSpecification) getElementToEdit();
 		owner.getRoles().add(newElement);
 
-		org.muml.pim.pattern.diagram.providers.ElementInitializers.getInstance()
-				.init_Role_3002(newElement);
+		ElementInitializers.getInstance().init_Role_3002(newElement);
 
 		doConfigure(newElement, monitor, info);
 
@@ -70,8 +72,7 @@ public class RoleCreateCommand extends EditElementCommand {
 	/**
 	* @generated
 	*/
-	protected void doConfigure(org.muml.pim.protocol.Role newElement, IProgressMonitor monitor,
-			IAdaptable info) throws ExecutionException {
+	protected void doConfigure(Role newElement, IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest()).getElementType();
 		ConfigureRequest configureRequest = new ConfigureRequest(getEditingDomain(), newElement, elementType);
 		configureRequest.setClientContext(((CreateElementRequest) getRequest()).getClientContext());

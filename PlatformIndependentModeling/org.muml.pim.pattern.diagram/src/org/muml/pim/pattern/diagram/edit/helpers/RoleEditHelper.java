@@ -3,5 +3,5 @@ package org.muml.pim.pattern.diagram.edit.helpers;
 /**
  * @generated
  */
-public class RoleEditHelper extends org.muml.pim.pattern.diagram.edit.helpers.MumlBaseEditHelper {
+public class RoleEditHelper extends MumlBaseEditHelper {
 }

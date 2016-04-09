@@ -13,6 +13,27 @@ import org.eclipse.gmf.tooling.runtime.providers.DiagramElementTypeImages;
 import org.eclipse.gmf.tooling.runtime.providers.DiagramElementTypes;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.swt.graphics.Image;
+import org.muml.core.modelinstance.ModelinstancePackage;
+import org.muml.pim.behavior.BehaviorPackage;
+import org.muml.pim.connector.ConnectorPackage;
+import org.muml.pim.msgtype.MsgtypePackage;
+import org.muml.pim.pattern.PatternPackage;
+import org.muml.pim.pattern.diagram.edit.parts.AbstractCoordinationSpecificationRolesEditPart;
+import org.muml.pim.pattern.diagram.edit.parts.ConnectorQualityOfServiceAssumptionsEditPart;
+import org.muml.pim.pattern.diagram.edit.parts.CoordinationPattern2EditPart;
+import org.muml.pim.pattern.diagram.edit.parts.CoordinationPatternEditPart;
+import org.muml.pim.pattern.diagram.edit.parts.CoordinationPatternVariant2EditPart;
+import org.muml.pim.pattern.diagram.edit.parts.CoordinationPatternVariantEditPart;
+import org.muml.pim.pattern.diagram.edit.parts.DiscreteInteractionEndpointReceiverMessageBufferEditPart;
+import org.muml.pim.pattern.diagram.edit.parts.MessageBufferEditPart;
+import org.muml.pim.pattern.diagram.edit.parts.MessageTypeEditPart;
+import org.muml.pim.pattern.diagram.edit.parts.ModelElementCategoryEditPart;
+import org.muml.pim.pattern.diagram.edit.parts.ParameterEditPart;
+import org.muml.pim.pattern.diagram.edit.parts.RoleConnectorConnectorQualityOfServiceAssumptionsEditPart;
+import org.muml.pim.pattern.diagram.edit.parts.RoleConnectorEditPart;
+import org.muml.pim.pattern.diagram.edit.parts.RoleEditPart;
+import org.muml.pim.pattern.diagram.part.MumlDiagramEditorPlugin;
+import org.muml.pim.protocol.ProtocolPackage;
 
 /**
  * @generated
@@ -34,8 +55,7 @@ public class MumlElementTypes {
 	* @generated
 	*/
 	private static DiagramElementTypeImages elementTypeImages = new DiagramElementTypeImages(
-			org.muml.pim.pattern.diagram.part.MumlDiagramEditorPlugin.getInstance()
-					.getItemProvidersAdapterFactory());
+			MumlDiagramEditorPlugin.getInstance().getItemProvidersAdapterFactory());
 
 	/**
 	* @generated
@@ -65,8 +85,7 @@ public class MumlElementTypes {
 	/**
 	* @generated
 	*/
-	public static final IElementType Role_3002 = getElementType(
-			"org.muml.pim.pattern.diagram.Role_3002"); //$NON-NLS-1$
+	public static final IElementType Role_3002 = getElementType("org.muml.pim.pattern.diagram.Role_3002"); //$NON-NLS-1$
 	/**
 	* @generated
 	*/
@@ -75,13 +94,11 @@ public class MumlElementTypes {
 	/**
 	* @generated
 	*/
-	public static final IElementType MessageType_3005 = getElementType(
-			"org.muml.pim.pattern.diagram.MessageType_3005"); //$NON-NLS-1$
+	public static final IElementType MessageType_3005 = getElementType("org.muml.pim.pattern.diagram.MessageType_3005"); //$NON-NLS-1$
 	/**
 	* @generated
 	*/
-	public static final IElementType Parameter_3006 = getElementType(
-			"org.muml.pim.pattern.diagram.Parameter_3006"); //$NON-NLS-1$
+	public static final IElementType Parameter_3006 = getElementType("org.muml.pim.pattern.diagram.Parameter_3006"); //$NON-NLS-1$
 	/**
 	* @generated
 	*/
@@ -151,50 +168,37 @@ public class MumlElementTypes {
 		if (elements == null) {
 			elements = new IdentityHashMap<IElementType, ENamedElement>();
 
-			elements.put(ModelElementCategory_1000,
-					org.muml.core.modelinstance.ModelinstancePackage.eINSTANCE.getModelElementCategory());
+			elements.put(ModelElementCategory_1000, ModelinstancePackage.eINSTANCE.getModelElementCategory());
 
-			elements.put(CoordinationPattern_2001,
-					org.muml.pim.pattern.PatternPackage.eINSTANCE.getCoordinationPattern());
+			elements.put(CoordinationPattern_2001, PatternPackage.eINSTANCE.getCoordinationPattern());
 
-			elements.put(CoordinationPatternVariant_2002,
-					org.muml.pim.pattern.PatternPackage.eINSTANCE.getCoordinationPatternVariant());
+			elements.put(CoordinationPatternVariant_2002, PatternPackage.eINSTANCE.getCoordinationPatternVariant());
 
-			elements.put(CoordinationPattern_3003,
-					org.muml.pim.pattern.PatternPackage.eINSTANCE.getCoordinationPattern());
+			elements.put(CoordinationPattern_3003, PatternPackage.eINSTANCE.getCoordinationPattern());
 
-			elements.put(Role_3002, org.muml.pim.protocol.ProtocolPackage.eINSTANCE.getRole());
+			elements.put(Role_3002, ProtocolPackage.eINSTANCE.getRole());
 
-			elements.put(MessageBuffer_3004,
-					org.muml.pim.connector.ConnectorPackage.eINSTANCE.getMessageBuffer());
+			elements.put(MessageBuffer_3004, ConnectorPackage.eINSTANCE.getMessageBuffer());
 
-			elements.put(MessageType_3005,
-					org.muml.pim.msgtype.MsgtypePackage.eINSTANCE.getMessageType());
+			elements.put(MessageType_3005, MsgtypePackage.eINSTANCE.getMessageType());
 
-			elements.put(Parameter_3006,
-					org.muml.pim.behavior.BehaviorPackage.eINSTANCE.getParameter());
+			elements.put(Parameter_3006, BehaviorPackage.eINSTANCE.getParameter());
 
 			elements.put(ConnectorQualityOfServiceAssumptions_3007,
-					org.muml.pim.protocol.ProtocolPackage.eINSTANCE
-							.getConnectorQualityOfServiceAssumptions());
+					ProtocolPackage.eINSTANCE.getConnectorQualityOfServiceAssumptions());
 
-			elements.put(CoordinationPatternVariant_3008,
-					org.muml.pim.pattern.PatternPackage.eINSTANCE.getCoordinationPatternVariant());
+			elements.put(CoordinationPatternVariant_3008, PatternPackage.eINSTANCE.getCoordinationPatternVariant());
 
 			elements.put(AbstractCoordinationSpecificationRoles_4002,
-					org.muml.pim.protocol.ProtocolPackage.eINSTANCE
-							.getAbstractCoordinationSpecification_Roles());
+					ProtocolPackage.eINSTANCE.getAbstractCoordinationSpecification_Roles());
 
-			elements.put(RoleConnector_4001,
-					org.muml.pim.protocol.ProtocolPackage.eINSTANCE.getRoleConnector());
+			elements.put(RoleConnector_4001, ProtocolPackage.eINSTANCE.getRoleConnector());
 
 			elements.put(DiscreteInteractionEndpointReceiverMessageBuffer_4003,
-					org.muml.pim.connector.ConnectorPackage.eINSTANCE
-							.getDiscreteInteractionEndpoint_ReceiverMessageBuffer());
+					ConnectorPackage.eINSTANCE.getDiscreteInteractionEndpoint_ReceiverMessageBuffer());
 
 			elements.put(RoleConnectorConnectorQualityOfServiceAssumptions_4004,
-					org.muml.pim.protocol.ProtocolPackage.eINSTANCE
-							.getRoleConnector_ConnectorQualityOfServiceAssumptions());
+					ProtocolPackage.eINSTANCE.getRoleConnector_ConnectorQualityOfServiceAssumptions());
 		}
 		return (ENamedElement) elements.get(type);
 	}
@@ -235,33 +239,33 @@ public class MumlElementTypes {
 	*/
 	public static IElementType getElementType(int visualID) {
 		switch (visualID) {
-		case org.muml.pim.pattern.diagram.edit.parts.ModelElementCategoryEditPart.VISUAL_ID:
+		case ModelElementCategoryEditPart.VISUAL_ID:
 			return ModelElementCategory_1000;
-		case org.muml.pim.pattern.diagram.edit.parts.CoordinationPatternEditPart.VISUAL_ID:
+		case CoordinationPatternEditPart.VISUAL_ID:
 			return CoordinationPattern_2001;
-		case org.muml.pim.pattern.diagram.edit.parts.CoordinationPatternVariantEditPart.VISUAL_ID:
+		case CoordinationPatternVariantEditPart.VISUAL_ID:
 			return CoordinationPatternVariant_2002;
-		case org.muml.pim.pattern.diagram.edit.parts.CoordinationPattern2EditPart.VISUAL_ID:
+		case CoordinationPattern2EditPart.VISUAL_ID:
 			return CoordinationPattern_3003;
-		case org.muml.pim.pattern.diagram.edit.parts.RoleEditPart.VISUAL_ID:
+		case RoleEditPart.VISUAL_ID:
 			return Role_3002;
-		case org.muml.pim.pattern.diagram.edit.parts.MessageBufferEditPart.VISUAL_ID:
+		case MessageBufferEditPart.VISUAL_ID:
 			return MessageBuffer_3004;
-		case org.muml.pim.pattern.diagram.edit.parts.MessageTypeEditPart.VISUAL_ID:
+		case MessageTypeEditPart.VISUAL_ID:
 			return MessageType_3005;
-		case org.muml.pim.pattern.diagram.edit.parts.ParameterEditPart.VISUAL_ID:
+		case ParameterEditPart.VISUAL_ID:
 			return Parameter_3006;
-		case org.muml.pim.pattern.diagram.edit.parts.ConnectorQualityOfServiceAssumptionsEditPart.VISUAL_ID:
+		case ConnectorQualityOfServiceAssumptionsEditPart.VISUAL_ID:
 			return ConnectorQualityOfServiceAssumptions_3007;
-		case org.muml.pim.pattern.diagram.edit.parts.CoordinationPatternVariant2EditPart.VISUAL_ID:
+		case CoordinationPatternVariant2EditPart.VISUAL_ID:
 			return CoordinationPatternVariant_3008;
-		case org.muml.pim.pattern.diagram.edit.parts.AbstractCoordinationSpecificationRolesEditPart.VISUAL_ID:
+		case AbstractCoordinationSpecificationRolesEditPart.VISUAL_ID:
 			return AbstractCoordinationSpecificationRoles_4002;
-		case org.muml.pim.pattern.diagram.edit.parts.RoleConnectorEditPart.VISUAL_ID:
+		case RoleConnectorEditPart.VISUAL_ID:
 			return RoleConnector_4001;
-		case org.muml.pim.pattern.diagram.edit.parts.DiscreteInteractionEndpointReceiverMessageBufferEditPart.VISUAL_ID:
+		case DiscreteInteractionEndpointReceiverMessageBufferEditPart.VISUAL_ID:
 			return DiscreteInteractionEndpointReceiverMessageBuffer_4003;
-		case org.muml.pim.pattern.diagram.edit.parts.RoleConnectorConnectorQualityOfServiceAssumptionsEditPart.VISUAL_ID:
+		case RoleConnectorConnectorQualityOfServiceAssumptionsEditPart.VISUAL_ID:
 			return RoleConnectorConnectorQualityOfServiceAssumptions_4004;
 		}
 		return null;
@@ -278,8 +282,7 @@ public class MumlElementTypes {
 		@Override
 
 		public boolean isKnownElementType(IElementType elementType) {
-			return org.muml.pim.pattern.diagram.providers.MumlElementTypes
-					.isKnownElementType(elementType);
+			return org.muml.pim.pattern.diagram.providers.MumlElementTypes.isKnownElementType(elementType);
 		}
 
 		/**
@@ -297,8 +300,7 @@ public class MumlElementTypes {
 		@Override
 
 		public ENamedElement getDefiningNamedElement(IAdaptable elementTypeAdapter) {
-			return org.muml.pim.pattern.diagram.providers.MumlElementTypes
-					.getElement(elementTypeAdapter);
+			return org.muml.pim.pattern.diagram.providers.MumlElementTypes.getElement(elementTypeAdapter);
 		}
 	};
 

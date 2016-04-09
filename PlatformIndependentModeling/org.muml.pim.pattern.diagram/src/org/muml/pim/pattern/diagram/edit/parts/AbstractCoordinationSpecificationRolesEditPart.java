@@ -12,6 +12,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.pim.pattern.diagram.edit.policies.AbstractCoordinationSpecificationRolesItemSemanticEditPolicy;
 
 /**
  * @generated
@@ -60,7 +61,7 @@ public class AbstractCoordinationSpecificationRolesEditPart extends ConnectionNo
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
-				new org.muml.pim.pattern.diagram.edit.policies.AbstractCoordinationSpecificationRolesItemSemanticEditPolicy());
+				new AbstractCoordinationSpecificationRolesItemSemanticEditPolicy());
 	}
 
 	/**

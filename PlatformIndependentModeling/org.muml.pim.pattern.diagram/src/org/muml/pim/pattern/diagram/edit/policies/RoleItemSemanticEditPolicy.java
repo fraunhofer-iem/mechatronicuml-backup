@@ -21,18 +21,28 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelations
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
 import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.pim.pattern.diagram.edit.commands.AbstractCoordinationSpecificationRolesCreateCommand;
+import org.muml.pim.pattern.diagram.edit.commands.AbstractCoordinationSpecificationRolesReorientCommand;
+import org.muml.pim.pattern.diagram.edit.commands.DiscreteInteractionEndpointReceiverMessageBufferCreateCommand;
+import org.muml.pim.pattern.diagram.edit.commands.DiscreteInteractionEndpointReceiverMessageBufferReorientCommand;
+import org.muml.pim.pattern.diagram.edit.commands.RoleConnectorCreateCommand;
+import org.muml.pim.pattern.diagram.edit.commands.RoleConnectorReorientCommand;
+import org.muml.pim.pattern.diagram.edit.parts.AbstractCoordinationSpecificationRolesEditPart;
+import org.muml.pim.pattern.diagram.edit.parts.DiscreteInteractionEndpointReceiverMessageBufferEditPart;
+import org.muml.pim.pattern.diagram.edit.parts.RoleConnectorEditPart;
+import org.muml.pim.pattern.diagram.part.MumlVisualIDRegistry;
+import org.muml.pim.pattern.diagram.providers.MumlElementTypes;
 
 /**
  * @generated
  */
-public class RoleItemSemanticEditPolicy
-		extends org.muml.pim.pattern.diagram.edit.policies.MumlBaseItemSemanticEditPolicy {
+public class RoleItemSemanticEditPolicy extends MumlBaseItemSemanticEditPolicy {
 
 	/**
 	* @generated
 	*/
 	public RoleItemSemanticEditPolicy() {
-		super(org.muml.pim.pattern.diagram.providers.MumlElementTypes.Role_3002);
+		super(MumlElementTypes.Role_3002);
 	}
 
 	/**
@@ -44,8 +54,8 @@ public class RoleItemSemanticEditPolicy
 		cmd.setTransactionNestingEnabled(false);
 		for (Iterator<?> it = view.getTargetEdges().iterator(); it.hasNext();) {
 			Edge incomingLink = (Edge) it.next();
-			if (org.muml.pim.pattern.diagram.part.MumlVisualIDRegistry.getVisualID(
-					incomingLink) == org.muml.pim.pattern.diagram.edit.parts.AbstractCoordinationSpecificationRolesEditPart.VISUAL_ID) {
+			if (MumlVisualIDRegistry
+					.getVisualID(incomingLink) == AbstractCoordinationSpecificationRolesEditPart.VISUAL_ID) {
 				DestroyReferenceRequest r = new DestroyReferenceRequest(incomingLink.getSource().getElement(), null,
 						incomingLink.getTarget().getElement(), false);
 				cmd.add(new DestroyReferenceCommand(r) {
@@ -63,8 +73,7 @@ public class RoleItemSemanticEditPolicy
 				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
 				continue;
 			}
-			if (org.muml.pim.pattern.diagram.part.MumlVisualIDRegistry.getVisualID(
-					incomingLink) == org.muml.pim.pattern.diagram.edit.parts.RoleConnectorEditPart.VISUAL_ID) {
+			if (MumlVisualIDRegistry.getVisualID(incomingLink) == RoleConnectorEditPart.VISUAL_ID) {
 				DestroyElementRequest r = new DestroyElementRequest(incomingLink.getElement(), false);
 				cmd.add(new DestroyElementCommand(r));
 				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
@@ -73,15 +82,14 @@ public class RoleItemSemanticEditPolicy
 		}
 		for (Iterator<?> it = view.getSourceEdges().iterator(); it.hasNext();) {
 			Edge outgoingLink = (Edge) it.next();
-			if (org.muml.pim.pattern.diagram.part.MumlVisualIDRegistry.getVisualID(
-					outgoingLink) == org.muml.pim.pattern.diagram.edit.parts.RoleConnectorEditPart.VISUAL_ID) {
+			if (MumlVisualIDRegistry.getVisualID(outgoingLink) == RoleConnectorEditPart.VISUAL_ID) {
 				DestroyElementRequest r = new DestroyElementRequest(outgoingLink.getElement(), false);
 				cmd.add(new DestroyElementCommand(r));
 				cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
 				continue;
 			}
-			if (org.muml.pim.pattern.diagram.part.MumlVisualIDRegistry.getVisualID(
-					outgoingLink) == org.muml.pim.pattern.diagram.edit.parts.DiscreteInteractionEndpointReceiverMessageBufferEditPart.VISUAL_ID) {
+			if (MumlVisualIDRegistry
+					.getVisualID(outgoingLink) == DiscreteInteractionEndpointReceiverMessageBufferEditPart.VISUAL_ID) {
 				DestroyReferenceRequest r = new DestroyReferenceRequest(outgoingLink.getSource().getElement(), null,
 						outgoingLink.getTarget().getElement(), false);
 				cmd.add(new DestroyReferenceCommand(r) {
@@ -125,21 +133,15 @@ public class RoleItemSemanticEditPolicy
 	 * @generated
 	 */
 	protected Command getStartCreateRelationshipCommand(CreateRelationshipRequest req) {
-		if (org.muml.pim.pattern.diagram.providers.MumlElementTypes.AbstractCoordinationSpecificationRoles_4002 == req
-				.getElementType()) {
+		if (MumlElementTypes.AbstractCoordinationSpecificationRoles_4002 == req.getElementType()) {
 			return null;
 		}
-		if (org.muml.pim.pattern.diagram.providers.MumlElementTypes.RoleConnector_4001 == req
-				.getElementType()) {
-			return getGEFWrapper(
-					new org.muml.pim.pattern.diagram.edit.commands.RoleConnectorCreateCommand(req,
-							req.getSource(), req.getTarget()));
+		if (MumlElementTypes.RoleConnector_4001 == req.getElementType()) {
+			return getGEFWrapper(new RoleConnectorCreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		if (org.muml.pim.pattern.diagram.providers.MumlElementTypes.DiscreteInteractionEndpointReceiverMessageBuffer_4003 == req
-				.getElementType()) {
-			return getGEFWrapper(
-					new org.muml.pim.pattern.diagram.edit.commands.DiscreteInteractionEndpointReceiverMessageBufferCreateCommand(
-							req, req.getSource(), req.getTarget()));
+		if (MumlElementTypes.DiscreteInteractionEndpointReceiverMessageBuffer_4003 == req.getElementType()) {
+			return getGEFWrapper(new DiscreteInteractionEndpointReceiverMessageBufferCreateCommand(req, req.getSource(),
+					req.getTarget()));
 		}
 		return null;
 	}
@@ -148,20 +150,14 @@ public class RoleItemSemanticEditPolicy
 	 * @generated
 	 */
 	protected Command getCompleteCreateRelationshipCommand(CreateRelationshipRequest req) {
-		if (org.muml.pim.pattern.diagram.providers.MumlElementTypes.AbstractCoordinationSpecificationRoles_4002 == req
-				.getElementType()) {
+		if (MumlElementTypes.AbstractCoordinationSpecificationRoles_4002 == req.getElementType()) {
 			return getGEFWrapper(
-					new org.muml.pim.pattern.diagram.edit.commands.AbstractCoordinationSpecificationRolesCreateCommand(
-							req, req.getSource(), req.getTarget()));
+					new AbstractCoordinationSpecificationRolesCreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		if (org.muml.pim.pattern.diagram.providers.MumlElementTypes.RoleConnector_4001 == req
-				.getElementType()) {
-			return getGEFWrapper(
-					new org.muml.pim.pattern.diagram.edit.commands.RoleConnectorCreateCommand(req,
-							req.getSource(), req.getTarget()));
+		if (MumlElementTypes.RoleConnector_4001 == req.getElementType()) {
+			return getGEFWrapper(new RoleConnectorCreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		if (org.muml.pim.pattern.diagram.providers.MumlElementTypes.DiscreteInteractionEndpointReceiverMessageBuffer_4003 == req
-				.getElementType()) {
+		if (MumlElementTypes.DiscreteInteractionEndpointReceiverMessageBuffer_4003 == req.getElementType()) {
 			return null;
 		}
 		return null;
@@ -175,9 +171,8 @@ public class RoleItemSemanticEditPolicy
 	 */
 	protected Command getReorientRelationshipCommand(ReorientRelationshipRequest req) {
 		switch (getVisualID(req)) {
-		case org.muml.pim.pattern.diagram.edit.parts.RoleConnectorEditPart.VISUAL_ID:
-			return getGEFWrapper(
-					new org.muml.pim.pattern.diagram.edit.commands.RoleConnectorReorientCommand(req));
+		case RoleConnectorEditPart.VISUAL_ID:
+			return getGEFWrapper(new RoleConnectorReorientCommand(req));
 		}
 		return super.getReorientRelationshipCommand(req);
 	}
@@ -190,14 +185,10 @@ public class RoleItemSemanticEditPolicy
 	 */
 	protected Command getReorientReferenceRelationshipCommand(ReorientReferenceRelationshipRequest req) {
 		switch (getVisualID(req)) {
-		case org.muml.pim.pattern.diagram.edit.parts.AbstractCoordinationSpecificationRolesEditPart.VISUAL_ID:
-			return getGEFWrapper(
-					new org.muml.pim.pattern.diagram.edit.commands.AbstractCoordinationSpecificationRolesReorientCommand(
-							req));
-		case org.muml.pim.pattern.diagram.edit.parts.DiscreteInteractionEndpointReceiverMessageBufferEditPart.VISUAL_ID:
-			return getGEFWrapper(
-					new org.muml.pim.pattern.diagram.edit.commands.DiscreteInteractionEndpointReceiverMessageBufferReorientCommand(
-							req));
+		case AbstractCoordinationSpecificationRolesEditPart.VISUAL_ID:
+			return getGEFWrapper(new AbstractCoordinationSpecificationRolesReorientCommand(req));
+		case DiscreteInteractionEndpointReceiverMessageBufferEditPart.VISUAL_ID:
+			return getGEFWrapper(new DiscreteInteractionEndpointReceiverMessageBufferReorientCommand(req));
 		}
 		return super.getReorientReferenceRelationshipCommand(req);
 	}

@@ -7,12 +7,15 @@ import java.util.List;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
+import org.muml.pim.pattern.diagram.edit.parts.CoordinationPatternVariantEditPart;
+import org.muml.pim.pattern.diagram.edit.parts.RoleEditPart;
+import org.muml.pim.pattern.diagram.providers.MumlElementTypes;
+import org.muml.pim.pattern.diagram.providers.MumlModelingAssistantProvider;
 
 /**
  * @generated
  */
-public class MumlModelingAssistantProviderOfCoordinationPatternVariantEditPart
-		extends org.muml.pim.pattern.diagram.providers.MumlModelingAssistantProvider {
+public class MumlModelingAssistantProviderOfCoordinationPatternVariantEditPart extends MumlModelingAssistantProvider {
 
 	/**
 	* @generated
@@ -21,18 +24,15 @@ public class MumlModelingAssistantProviderOfCoordinationPatternVariantEditPart
 
 	public List<IElementType> getRelTypesOnSource(IAdaptable source) {
 		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source.getAdapter(IGraphicalEditPart.class);
-		return doGetRelTypesOnSource(
-				(org.muml.pim.pattern.diagram.edit.parts.CoordinationPatternVariantEditPart) sourceEditPart);
+		return doGetRelTypesOnSource((CoordinationPatternVariantEditPart) sourceEditPart);
 	}
 
 	/**
 	* @generated
 	*/
-	public List<IElementType> doGetRelTypesOnSource(
-			org.muml.pim.pattern.diagram.edit.parts.CoordinationPatternVariantEditPart source) {
+	public List<IElementType> doGetRelTypesOnSource(CoordinationPatternVariantEditPart source) {
 		List<IElementType> types = new ArrayList<IElementType>(1);
-		types.add(
-				org.muml.pim.pattern.diagram.providers.MumlElementTypes.AbstractCoordinationSpecificationRoles_4002);
+		types.add(MumlElementTypes.AbstractCoordinationSpecificationRoles_4002);
 		return types;
 	}
 
@@ -44,21 +44,17 @@ public class MumlModelingAssistantProviderOfCoordinationPatternVariantEditPart
 	public List<IElementType> getRelTypesOnSourceAndTarget(IAdaptable source, IAdaptable target) {
 		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source.getAdapter(IGraphicalEditPart.class);
 		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target.getAdapter(IGraphicalEditPart.class);
-		return doGetRelTypesOnSourceAndTarget(
-				(org.muml.pim.pattern.diagram.edit.parts.CoordinationPatternVariantEditPart) sourceEditPart,
-				targetEditPart);
+		return doGetRelTypesOnSourceAndTarget((CoordinationPatternVariantEditPart) sourceEditPart, targetEditPart);
 	}
 
 	/**
 	* @generated
 	*/
-	public List<IElementType> doGetRelTypesOnSourceAndTarget(
-			org.muml.pim.pattern.diagram.edit.parts.CoordinationPatternVariantEditPart source,
+	public List<IElementType> doGetRelTypesOnSourceAndTarget(CoordinationPatternVariantEditPart source,
 			IGraphicalEditPart targetEditPart) {
 		List<IElementType> types = new LinkedList<IElementType>();
-		if (targetEditPart instanceof org.muml.pim.pattern.diagram.edit.parts.RoleEditPart) {
-			types.add(
-					org.muml.pim.pattern.diagram.providers.MumlElementTypes.AbstractCoordinationSpecificationRoles_4002);
+		if (targetEditPart instanceof RoleEditPart) {
+			types.add(MumlElementTypes.AbstractCoordinationSpecificationRoles_4002);
 		}
 		return types;
 	}
@@ -70,20 +66,17 @@ public class MumlModelingAssistantProviderOfCoordinationPatternVariantEditPart
 
 	public List<IElementType> getTypesForTarget(IAdaptable source, IElementType relationshipType) {
 		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source.getAdapter(IGraphicalEditPart.class);
-		return doGetTypesForTarget(
-				(org.muml.pim.pattern.diagram.edit.parts.CoordinationPatternVariantEditPart) sourceEditPart,
-				relationshipType);
+		return doGetTypesForTarget((CoordinationPatternVariantEditPart) sourceEditPart, relationshipType);
 	}
 
 	/**
 	* @generated
 	*/
-	public List<IElementType> doGetTypesForTarget(
-			org.muml.pim.pattern.diagram.edit.parts.CoordinationPatternVariantEditPart source,
+	public List<IElementType> doGetTypesForTarget(CoordinationPatternVariantEditPart source,
 			IElementType relationshipType) {
 		List<IElementType> types = new ArrayList<IElementType>();
-		if (relationshipType == org.muml.pim.pattern.diagram.providers.MumlElementTypes.AbstractCoordinationSpecificationRoles_4002) {
-			types.add(org.muml.pim.pattern.diagram.providers.MumlElementTypes.Role_3002);
+		if (relationshipType == MumlElementTypes.AbstractCoordinationSpecificationRoles_4002) {
+			types.add(MumlElementTypes.Role_3002);
 		}
 		return types;
 	}

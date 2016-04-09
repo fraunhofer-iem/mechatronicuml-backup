@@ -18,6 +18,11 @@ import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.edit.policies.reparent.CreationEditPolicyWithCustomReparent;
+import org.muml.pim.pattern.diagram.edit.policies.CoordinationPatternPatternCompartmentCanonicalEditPolicy;
+import org.muml.pim.pattern.diagram.edit.policies.CoordinationPatternPatternCompartmentItemSemanticEditPolicy;
+import org.muml.pim.pattern.diagram.part.Messages;
+import org.muml.pim.pattern.diagram.part.MumlVisualIDRegistry;
+import org.muml.pim.pattern.diagram.providers.MumlElementTypes;
 
 /**
  * @generated
@@ -63,7 +68,7 @@ public class CoordinationPatternPatternCompartmentEditPart extends ShapeCompartm
 	* @generated
 	*/
 	public String getCompartmentName() {
-		return org.muml.pim.pattern.diagram.part.Messages.CoordinationPatternPatternCompartmentEditPart_title;
+		return Messages.CoordinationPatternPatternCompartmentEditPart_title;
 	}
 
 	/**
@@ -92,12 +97,12 @@ public class CoordinationPatternPatternCompartmentEditPart extends ShapeCompartm
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
-				new org.muml.pim.pattern.diagram.edit.policies.CoordinationPatternPatternCompartmentItemSemanticEditPolicy());
-		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicyWithCustomReparent(
-				org.muml.pim.pattern.diagram.part.MumlVisualIDRegistry.TYPED_INSTANCE));
+				new CoordinationPatternPatternCompartmentItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.CREATION_ROLE,
+				new CreationEditPolicyWithCustomReparent(MumlVisualIDRegistry.TYPED_INSTANCE));
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
 		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE,
-				new org.muml.pim.pattern.diagram.edit.policies.CoordinationPatternPatternCompartmentCanonicalEditPolicy());
+				new CoordinationPatternPatternCompartmentCanonicalEditPolicy());
 	}
 
 	/**
@@ -117,16 +122,16 @@ public class CoordinationPatternPatternCompartmentEditPart extends ShapeCompartm
 			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request).getViewAndElementDescriptor()
 					.getCreateElementRequestAdapter();
 			IElementType type = (IElementType) adapter.getAdapter(IElementType.class);
-			if (type == org.muml.pim.pattern.diagram.providers.MumlElementTypes.CoordinationPattern_3003) {
+			if (type == MumlElementTypes.CoordinationPattern_3003) {
 				return this;
 			}
-			if (type == org.muml.pim.pattern.diagram.providers.MumlElementTypes.Role_3002) {
+			if (type == MumlElementTypes.Role_3002) {
 				return this;
 			}
-			if (type == org.muml.pim.pattern.diagram.providers.MumlElementTypes.MessageBuffer_3004) {
+			if (type == MumlElementTypes.MessageBuffer_3004) {
 				return this;
 			}
-			if (type == org.muml.pim.pattern.diagram.providers.MumlElementTypes.ConnectorQualityOfServiceAssumptions_3007) {
+			if (type == MumlElementTypes.ConnectorQualityOfServiceAssumptions_3007) {
 				return this;
 			}
 			return getParent().getTargetEditPart(request);
@@ -136,12 +141,10 @@ public class CoordinationPatternPatternCompartmentEditPart extends ShapeCompartm
 				for (Object type : ((CreateUnspecifiedTypeConnectionRequest) request).getElementTypes()) {
 					if (type instanceof IElementType) {
 						IElementType elementType = (IElementType) type;
-						if (elementType
-								.equals(org.muml.pim.pattern.diagram.providers.MumlElementTypes.RoleConnector_4001)
+						if (elementType.equals(MumlElementTypes.RoleConnector_4001)
+								|| elementType.equals(MumlElementTypes.AbstractCoordinationSpecificationRoles_4002)
 								|| elementType
-										.equals(org.muml.pim.pattern.diagram.providers.MumlElementTypes.AbstractCoordinationSpecificationRoles_4002)
-								|| elementType.equals(
-										org.muml.pim.pattern.diagram.providers.MumlElementTypes.DiscreteInteractionEndpointReceiverMessageBuffer_4003))
+										.equals(MumlElementTypes.DiscreteInteractionEndpointReceiverMessageBuffer_4003))
 							return super.getTargetEditPart(request);
 					}
 				}

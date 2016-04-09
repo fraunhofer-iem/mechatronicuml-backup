@@ -9,18 +9,19 @@ import org.eclipse.gef.commands.Command;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.emf.type.core.commands.DestroyReferenceCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyReferenceRequest;
+import org.muml.pim.pattern.diagram.providers.MumlElementTypes;
 
 /**
  * @generated
  */
 public class DiscreteInteractionEndpointReceiverMessageBufferItemSemanticEditPolicy
-		extends org.muml.pim.pattern.diagram.edit.policies.MumlBaseItemSemanticEditPolicy {
+		extends MumlBaseItemSemanticEditPolicy {
 
 	/**
 	* @generated
 	*/
 	public DiscreteInteractionEndpointReceiverMessageBufferItemSemanticEditPolicy() {
-		super(org.muml.pim.pattern.diagram.providers.MumlElementTypes.DiscreteInteractionEndpointReceiverMessageBuffer_4003);
+		super(MumlElementTypes.DiscreteInteractionEndpointReceiverMessageBuffer_4003);
 	}
 
 	/**

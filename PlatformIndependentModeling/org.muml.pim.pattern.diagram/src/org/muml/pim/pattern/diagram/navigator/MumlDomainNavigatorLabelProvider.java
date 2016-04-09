@@ -6,6 +6,7 @@ import org.eclipse.swt.graphics.Image;
 import org.eclipse.ui.IMemento;
 import org.eclipse.ui.navigator.ICommonContentExtensionSite;
 import org.eclipse.ui.navigator.ICommonLabelProvider;
+import org.muml.pim.pattern.diagram.part.MumlDiagramEditorPlugin;
 
 /**
  * @generated
@@ -16,8 +17,7 @@ public class MumlDomainNavigatorLabelProvider implements ICommonLabelProvider {
 	* @generated
 	*/
 	private AdapterFactoryLabelProvider myAdapterFactoryLabelProvider = new AdapterFactoryLabelProvider(
-			org.muml.pim.pattern.diagram.part.MumlDiagramEditorPlugin.getInstance()
-					.getItemProvidersAdapterFactory());
+			MumlDiagramEditorPlugin.getInstance().getItemProvidersAdapterFactory());
 
 	/**
 	* @generated
@@ -29,10 +29,8 @@ public class MumlDomainNavigatorLabelProvider implements ICommonLabelProvider {
 	* @generated
 	*/
 	public Image getImage(Object element) {
-		if (element instanceof org.muml.pim.pattern.diagram.navigator.MumlDomainNavigatorItem) {
-			return myAdapterFactoryLabelProvider
-					.getImage(((org.muml.pim.pattern.diagram.navigator.MumlDomainNavigatorItem) element)
-							.getEObject());
+		if (element instanceof MumlDomainNavigatorItem) {
+			return myAdapterFactoryLabelProvider.getImage(((MumlDomainNavigatorItem) element).getEObject());
 		}
 		return null;
 	}
@@ -41,10 +39,8 @@ public class MumlDomainNavigatorLabelProvider implements ICommonLabelProvider {
 	* @generated
 	*/
 	public String getText(Object element) {
-		if (element instanceof org.muml.pim.pattern.diagram.navigator.MumlDomainNavigatorItem) {
-			return myAdapterFactoryLabelProvider
-					.getText(((org.muml.pim.pattern.diagram.navigator.MumlDomainNavigatorItem) element)
-							.getEObject());
+		if (element instanceof MumlDomainNavigatorItem) {
+			return myAdapterFactoryLabelProvider.getText(((MumlDomainNavigatorItem) element).getEObject());
 		}
 		return null;
 	}

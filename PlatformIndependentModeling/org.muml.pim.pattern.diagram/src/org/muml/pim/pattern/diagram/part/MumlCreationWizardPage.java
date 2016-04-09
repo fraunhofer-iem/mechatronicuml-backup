@@ -62,8 +62,7 @@ public class MumlCreationWizardPage extends WizardNewFileCreationPage {
 	*/
 	public void createControl(Composite parent) {
 		super.createControl(parent);
-		setFileName(org.muml.pim.pattern.diagram.part.MumlDiagramEditorUtil
-				.getUniqueFileName(getContainerFullPath(), getFileName(), getExtension()));
+		setFileName(MumlDiagramEditorUtil.getUniqueFileName(getContainerFullPath(), getFileName(), getExtension()));
 		setPageComplete(validatePage());
 	}
 
@@ -76,9 +75,7 @@ public class MumlCreationWizardPage extends WizardNewFileCreationPage {
 		}
 		String extension = getExtension();
 		if (extension != null && !getFilePath().toString().endsWith("." + extension)) {
-			setErrorMessage(NLS.bind(
-					org.muml.pim.pattern.diagram.part.Messages.MumlCreationWizardPageExtensionError,
-					extension));
+			setErrorMessage(NLS.bind(Messages.MumlCreationWizardPageExtensionError, extension));
 			return false;
 		}
 		return true;

@@ -20,18 +20,22 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyReferenceRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelationshipRequest;
 import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.pim.pattern.diagram.edit.commands.RoleConnectorConnectorQualityOfServiceAssumptionsCreateCommand;
+import org.muml.pim.pattern.diagram.edit.commands.RoleConnectorConnectorQualityOfServiceAssumptionsReorientCommand;
+import org.muml.pim.pattern.diagram.edit.parts.RoleConnectorConnectorQualityOfServiceAssumptionsEditPart;
+import org.muml.pim.pattern.diagram.part.MumlVisualIDRegistry;
+import org.muml.pim.pattern.diagram.providers.MumlElementTypes;
 
 /**
  * @generated
  */
-public class ConnectorQualityOfServiceAssumptionsItemSemanticEditPolicy
-		extends org.muml.pim.pattern.diagram.edit.policies.MumlBaseItemSemanticEditPolicy {
+public class ConnectorQualityOfServiceAssumptionsItemSemanticEditPolicy extends MumlBaseItemSemanticEditPolicy {
 
 	/**
 	* @generated
 	*/
 	public ConnectorQualityOfServiceAssumptionsItemSemanticEditPolicy() {
-		super(org.muml.pim.pattern.diagram.providers.MumlElementTypes.ConnectorQualityOfServiceAssumptions_3007);
+		super(MumlElementTypes.ConnectorQualityOfServiceAssumptions_3007);
 	}
 
 	/**
@@ -43,8 +47,8 @@ public class ConnectorQualityOfServiceAssumptionsItemSemanticEditPolicy
 		cmd.setTransactionNestingEnabled(false);
 		for (Iterator<?> it = view.getTargetEdges().iterator(); it.hasNext();) {
 			Edge incomingLink = (Edge) it.next();
-			if (org.muml.pim.pattern.diagram.part.MumlVisualIDRegistry.getVisualID(
-					incomingLink) == org.muml.pim.pattern.diagram.edit.parts.RoleConnectorConnectorQualityOfServiceAssumptionsEditPart.VISUAL_ID) {
+			if (MumlVisualIDRegistry
+					.getVisualID(incomingLink) == RoleConnectorConnectorQualityOfServiceAssumptionsEditPart.VISUAL_ID) {
 				DestroyReferenceRequest r = new DestroyReferenceRequest(incomingLink.getSource().getElement(), null,
 						incomingLink.getTarget().getElement(), false);
 				cmd.add(new DestroyReferenceCommand(r) {
@@ -88,8 +92,7 @@ public class ConnectorQualityOfServiceAssumptionsItemSemanticEditPolicy
 	 * @generated
 	 */
 	protected Command getStartCreateRelationshipCommand(CreateRelationshipRequest req) {
-		if (org.muml.pim.pattern.diagram.providers.MumlElementTypes.RoleConnectorConnectorQualityOfServiceAssumptions_4004 == req
-				.getElementType()) {
+		if (MumlElementTypes.RoleConnectorConnectorQualityOfServiceAssumptions_4004 == req.getElementType()) {
 			return null;
 		}
 		return null;
@@ -99,11 +102,9 @@ public class ConnectorQualityOfServiceAssumptionsItemSemanticEditPolicy
 	 * @generated
 	 */
 	protected Command getCompleteCreateRelationshipCommand(CreateRelationshipRequest req) {
-		if (org.muml.pim.pattern.diagram.providers.MumlElementTypes.RoleConnectorConnectorQualityOfServiceAssumptions_4004 == req
-				.getElementType()) {
-			return getGEFWrapper(
-					new org.muml.pim.pattern.diagram.edit.commands.RoleConnectorConnectorQualityOfServiceAssumptionsCreateCommand(
-							req, req.getSource(), req.getTarget()));
+		if (MumlElementTypes.RoleConnectorConnectorQualityOfServiceAssumptions_4004 == req.getElementType()) {
+			return getGEFWrapper(new RoleConnectorConnectorQualityOfServiceAssumptionsCreateCommand(req,
+					req.getSource(), req.getTarget()));
 		}
 		return null;
 	}
@@ -116,10 +117,8 @@ public class ConnectorQualityOfServiceAssumptionsItemSemanticEditPolicy
 	 */
 	protected Command getReorientReferenceRelationshipCommand(ReorientReferenceRelationshipRequest req) {
 		switch (getVisualID(req)) {
-		case org.muml.pim.pattern.diagram.edit.parts.RoleConnectorConnectorQualityOfServiceAssumptionsEditPart.VISUAL_ID:
-			return getGEFWrapper(
-					new org.muml.pim.pattern.diagram.edit.commands.RoleConnectorConnectorQualityOfServiceAssumptionsReorientCommand(
-							req));
+		case RoleConnectorConnectorQualityOfServiceAssumptionsEditPart.VISUAL_ID:
+			return getGEFWrapper(new RoleConnectorConnectorQualityOfServiceAssumptionsReorientCommand(req));
 		}
 		return super.getReorientReferenceRelationshipCommand(req);
 	}

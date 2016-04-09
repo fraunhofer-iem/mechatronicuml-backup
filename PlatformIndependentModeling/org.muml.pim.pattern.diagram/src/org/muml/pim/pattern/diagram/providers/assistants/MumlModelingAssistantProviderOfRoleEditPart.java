@@ -7,12 +7,15 @@ import java.util.List;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
+import org.muml.pim.pattern.diagram.edit.parts.MessageBufferEditPart;
+import org.muml.pim.pattern.diagram.edit.parts.RoleEditPart;
+import org.muml.pim.pattern.diagram.providers.MumlElementTypes;
+import org.muml.pim.pattern.diagram.providers.MumlModelingAssistantProvider;
 
 /**
  * @generated
  */
-public class MumlModelingAssistantProviderOfRoleEditPart
-		extends org.muml.pim.pattern.diagram.providers.MumlModelingAssistantProvider {
+public class MumlModelingAssistantProviderOfRoleEditPart extends MumlModelingAssistantProvider {
 
 	/**
 	* @generated
@@ -21,19 +24,16 @@ public class MumlModelingAssistantProviderOfRoleEditPart
 
 	public List<IElementType> getRelTypesOnSource(IAdaptable source) {
 		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source.getAdapter(IGraphicalEditPart.class);
-		return doGetRelTypesOnSource(
-				(org.muml.pim.pattern.diagram.edit.parts.RoleEditPart) sourceEditPart);
+		return doGetRelTypesOnSource((RoleEditPart) sourceEditPart);
 	}
 
 	/**
 	* @generated
 	*/
-	public List<IElementType> doGetRelTypesOnSource(
-			org.muml.pim.pattern.diagram.edit.parts.RoleEditPart source) {
+	public List<IElementType> doGetRelTypesOnSource(RoleEditPart source) {
 		List<IElementType> types = new ArrayList<IElementType>(2);
-		types.add(org.muml.pim.pattern.diagram.providers.MumlElementTypes.RoleConnector_4001);
-		types.add(
-				org.muml.pim.pattern.diagram.providers.MumlElementTypes.DiscreteInteractionEndpointReceiverMessageBuffer_4003);
+		types.add(MumlElementTypes.RoleConnector_4001);
+		types.add(MumlElementTypes.DiscreteInteractionEndpointReceiverMessageBuffer_4003);
 		return types;
 	}
 
@@ -45,23 +45,19 @@ public class MumlModelingAssistantProviderOfRoleEditPart
 	public List<IElementType> getRelTypesOnSourceAndTarget(IAdaptable source, IAdaptable target) {
 		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source.getAdapter(IGraphicalEditPart.class);
 		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target.getAdapter(IGraphicalEditPart.class);
-		return doGetRelTypesOnSourceAndTarget(
-				(org.muml.pim.pattern.diagram.edit.parts.RoleEditPart) sourceEditPart, targetEditPart);
+		return doGetRelTypesOnSourceAndTarget((RoleEditPart) sourceEditPart, targetEditPart);
 	}
 
 	/**
 	* @generated
 	*/
-	public List<IElementType> doGetRelTypesOnSourceAndTarget(
-			org.muml.pim.pattern.diagram.edit.parts.RoleEditPart source,
-			IGraphicalEditPart targetEditPart) {
+	public List<IElementType> doGetRelTypesOnSourceAndTarget(RoleEditPart source, IGraphicalEditPart targetEditPart) {
 		List<IElementType> types = new LinkedList<IElementType>();
-		if (targetEditPart instanceof org.muml.pim.pattern.diagram.edit.parts.RoleEditPart) {
-			types.add(org.muml.pim.pattern.diagram.providers.MumlElementTypes.RoleConnector_4001);
+		if (targetEditPart instanceof RoleEditPart) {
+			types.add(MumlElementTypes.RoleConnector_4001);
 		}
-		if (targetEditPart instanceof org.muml.pim.pattern.diagram.edit.parts.MessageBufferEditPart) {
-			types.add(
-					org.muml.pim.pattern.diagram.providers.MumlElementTypes.DiscreteInteractionEndpointReceiverMessageBuffer_4003);
+		if (targetEditPart instanceof MessageBufferEditPart) {
+			types.add(MumlElementTypes.DiscreteInteractionEndpointReceiverMessageBuffer_4003);
 		}
 		return types;
 	}
@@ -73,22 +69,18 @@ public class MumlModelingAssistantProviderOfRoleEditPart
 
 	public List<IElementType> getTypesForTarget(IAdaptable source, IElementType relationshipType) {
 		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source.getAdapter(IGraphicalEditPart.class);
-		return doGetTypesForTarget(
-				(org.muml.pim.pattern.diagram.edit.parts.RoleEditPart) sourceEditPart,
-				relationshipType);
+		return doGetTypesForTarget((RoleEditPart) sourceEditPart, relationshipType);
 	}
 
 	/**
 	* @generated
 	*/
-	public List<IElementType> doGetTypesForTarget(
-			org.muml.pim.pattern.diagram.edit.parts.RoleEditPart source,
-			IElementType relationshipType) {
+	public List<IElementType> doGetTypesForTarget(RoleEditPart source, IElementType relationshipType) {
 		List<IElementType> types = new ArrayList<IElementType>();
-		if (relationshipType == org.muml.pim.pattern.diagram.providers.MumlElementTypes.RoleConnector_4001) {
-			types.add(org.muml.pim.pattern.diagram.providers.MumlElementTypes.Role_3002);
-		} else if (relationshipType == org.muml.pim.pattern.diagram.providers.MumlElementTypes.DiscreteInteractionEndpointReceiverMessageBuffer_4003) {
-			types.add(org.muml.pim.pattern.diagram.providers.MumlElementTypes.MessageBuffer_3004);
+		if (relationshipType == MumlElementTypes.RoleConnector_4001) {
+			types.add(MumlElementTypes.Role_3002);
+		} else if (relationshipType == MumlElementTypes.DiscreteInteractionEndpointReceiverMessageBuffer_4003) {
+			types.add(MumlElementTypes.MessageBuffer_3004);
 		}
 		return types;
 	}
@@ -100,19 +92,16 @@ public class MumlModelingAssistantProviderOfRoleEditPart
 
 	public List<IElementType> getRelTypesOnTarget(IAdaptable target) {
 		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target.getAdapter(IGraphicalEditPart.class);
-		return doGetRelTypesOnTarget(
-				(org.muml.pim.pattern.diagram.edit.parts.RoleEditPart) targetEditPart);
+		return doGetRelTypesOnTarget((RoleEditPart) targetEditPart);
 	}
 
 	/**
 	* @generated
 	*/
-	public List<IElementType> doGetRelTypesOnTarget(
-			org.muml.pim.pattern.diagram.edit.parts.RoleEditPart target) {
+	public List<IElementType> doGetRelTypesOnTarget(RoleEditPart target) {
 		List<IElementType> types = new ArrayList<IElementType>(2);
-		types.add(
-				org.muml.pim.pattern.diagram.providers.MumlElementTypes.AbstractCoordinationSpecificationRoles_4002);
-		types.add(org.muml.pim.pattern.diagram.providers.MumlElementTypes.RoleConnector_4001);
+		types.add(MumlElementTypes.AbstractCoordinationSpecificationRoles_4002);
+		types.add(MumlElementTypes.RoleConnector_4001);
 		return types;
 	}
 
@@ -123,27 +112,21 @@ public class MumlModelingAssistantProviderOfRoleEditPart
 
 	public List<IElementType> getTypesForSource(IAdaptable target, IElementType relationshipType) {
 		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target.getAdapter(IGraphicalEditPart.class);
-		return doGetTypesForSource(
-				(org.muml.pim.pattern.diagram.edit.parts.RoleEditPart) targetEditPart,
-				relationshipType);
+		return doGetTypesForSource((RoleEditPart) targetEditPart, relationshipType);
 	}
 
 	/**
 	* @generated
 	*/
-	public List<IElementType> doGetTypesForSource(
-			org.muml.pim.pattern.diagram.edit.parts.RoleEditPart target,
-			IElementType relationshipType) {
+	public List<IElementType> doGetTypesForSource(RoleEditPart target, IElementType relationshipType) {
 		List<IElementType> types = new ArrayList<IElementType>();
-		if (relationshipType == org.muml.pim.pattern.diagram.providers.MumlElementTypes.AbstractCoordinationSpecificationRoles_4002) {
-			types.add(org.muml.pim.pattern.diagram.providers.MumlElementTypes.CoordinationPattern_2001);
-			types.add(
-					org.muml.pim.pattern.diagram.providers.MumlElementTypes.CoordinationPatternVariant_2002);
-			types.add(org.muml.pim.pattern.diagram.providers.MumlElementTypes.CoordinationPattern_3003);
-			types.add(
-					org.muml.pim.pattern.diagram.providers.MumlElementTypes.CoordinationPatternVariant_3008);
-		} else if (relationshipType == org.muml.pim.pattern.diagram.providers.MumlElementTypes.RoleConnector_4001) {
-			types.add(org.muml.pim.pattern.diagram.providers.MumlElementTypes.Role_3002);
+		if (relationshipType == MumlElementTypes.AbstractCoordinationSpecificationRoles_4002) {
+			types.add(MumlElementTypes.CoordinationPattern_2001);
+			types.add(MumlElementTypes.CoordinationPatternVariant_2002);
+			types.add(MumlElementTypes.CoordinationPattern_3003);
+			types.add(MumlElementTypes.CoordinationPatternVariant_3008);
+		} else if (relationshipType == MumlElementTypes.RoleConnector_4001) {
+			types.add(MumlElementTypes.Role_3002);
 		}
 		return types;
 	}

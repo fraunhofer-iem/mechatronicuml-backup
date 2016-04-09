@@ -9,6 +9,11 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelationshipRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy;
+import org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy;
+import org.muml.pim.pattern.diagram.edit.policies.MumlBaseItemSemanticEditPolicy;
+import org.muml.pim.protocol.ConnectorQualityOfServiceAssumptions;
+import org.muml.pim.protocol.RoleConnector;
 
 /**
  * @generated
@@ -51,7 +56,7 @@ public class RoleConnectorConnectorQualityOfServiceAssumptionsReorientCommand ex
 	* @generated
 	*/
 	public boolean canExecute() {
-		if (false == referenceOwner instanceof org.muml.pim.protocol.RoleConnector) {
+		if (false == referenceOwner instanceof RoleConnector) {
 			return false;
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
@@ -67,21 +72,18 @@ public class RoleConnectorConnectorQualityOfServiceAssumptionsReorientCommand ex
 	* @generated
 	*/
 	protected boolean canReorientSource() {
-		if (!(oldEnd instanceof org.muml.pim.protocol.ConnectorQualityOfServiceAssumptions
-				&& newEnd instanceof org.muml.pim.protocol.RoleConnector)) {
+		if (!(oldEnd instanceof ConnectorQualityOfServiceAssumptions && newEnd instanceof RoleConnector)) {
 			return false;
 		}
-		View sourceView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-				.getSourceView(getRequest());
-		View targetView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-				.getTargetView(getRequest());
-		if (!org.muml.pim.pattern.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-				.getLinkConstraints().canExistRoleConnectorConnectorQualityOfServiceAssumptions_4004(getNewSource(),
-						getOldTarget(), sourceView, targetView)) {
-			String errorMessage = org.muml.pim.pattern.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-					.getLinkConstraints().getErrorRoleConnectorConnectorQualityOfServiceAssumptions_4004(getNewSource(),
-							getOldTarget(), sourceView, targetView);
-			org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy.showMessage(sourceView, errorMessage);
+		View sourceView = ConnectionConfigureHelperGraphicalNodeEditPolicy.getSourceView(getRequest());
+		View targetView = ConnectionConfigureHelperGraphicalNodeEditPolicy.getTargetView(getRequest());
+		if (!MumlBaseItemSemanticEditPolicy.getLinkConstraints()
+				.canExistRoleConnectorConnectorQualityOfServiceAssumptions_4004(getNewSource(), getOldTarget(),
+						sourceView, targetView)) {
+			String errorMessage = MumlBaseItemSemanticEditPolicy.getLinkConstraints()
+					.getErrorRoleConnectorConnectorQualityOfServiceAssumptions_4004(getNewSource(), getOldTarget(),
+							sourceView, targetView);
+			ErrorFeedbackEditPolicy.showMessage(sourceView, errorMessage);
 			return false;
 		}
 		return true;
@@ -91,21 +93,19 @@ public class RoleConnectorConnectorQualityOfServiceAssumptionsReorientCommand ex
 	* @generated
 	*/
 	protected boolean canReorientTarget() {
-		if (!(oldEnd instanceof org.muml.pim.protocol.ConnectorQualityOfServiceAssumptions
-				&& newEnd instanceof org.muml.pim.protocol.ConnectorQualityOfServiceAssumptions)) {
+		if (!(oldEnd instanceof ConnectorQualityOfServiceAssumptions
+				&& newEnd instanceof ConnectorQualityOfServiceAssumptions)) {
 			return false;
 		}
-		View sourceView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-				.getSourceView(getRequest());
-		View targetView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-				.getTargetView(getRequest());
-		if (!org.muml.pim.pattern.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-				.getLinkConstraints().canExistRoleConnectorConnectorQualityOfServiceAssumptions_4004(getOldSource(),
-						getNewTarget(), sourceView, targetView)) {
-			String errorMessage = org.muml.pim.pattern.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-					.getLinkConstraints().getErrorRoleConnectorConnectorQualityOfServiceAssumptions_4004(getOldSource(),
-							getNewTarget(), sourceView, targetView);
-			org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy.showMessage(targetView, errorMessage);
+		View sourceView = ConnectionConfigureHelperGraphicalNodeEditPolicy.getSourceView(getRequest());
+		View targetView = ConnectionConfigureHelperGraphicalNodeEditPolicy.getTargetView(getRequest());
+		if (!MumlBaseItemSemanticEditPolicy.getLinkConstraints()
+				.canExistRoleConnectorConnectorQualityOfServiceAssumptions_4004(getOldSource(), getNewTarget(),
+						sourceView, targetView)) {
+			String errorMessage = MumlBaseItemSemanticEditPolicy.getLinkConstraints()
+					.getErrorRoleConnectorConnectorQualityOfServiceAssumptions_4004(getOldSource(), getNewTarget(),
+							sourceView, targetView);
+			ErrorFeedbackEditPolicy.showMessage(targetView, errorMessage);
 			return false;
 		}
 		return true;
@@ -151,29 +151,29 @@ public class RoleConnectorConnectorQualityOfServiceAssumptionsReorientCommand ex
 	/**
 	* @generated
 	*/
-	protected org.muml.pim.protocol.RoleConnector getOldSource() {
-		return (org.muml.pim.protocol.RoleConnector) referenceOwner;
+	protected RoleConnector getOldSource() {
+		return (RoleConnector) referenceOwner;
 	}
 
 	/**
 	* @generated
 	*/
-	protected org.muml.pim.protocol.RoleConnector getNewSource() {
-		return (org.muml.pim.protocol.RoleConnector) newEnd;
+	protected RoleConnector getNewSource() {
+		return (RoleConnector) newEnd;
 	}
 
 	/**
 	* @generated
 	*/
-	protected org.muml.pim.protocol.ConnectorQualityOfServiceAssumptions getOldTarget() {
-		return (org.muml.pim.protocol.ConnectorQualityOfServiceAssumptions) oldEnd;
+	protected ConnectorQualityOfServiceAssumptions getOldTarget() {
+		return (ConnectorQualityOfServiceAssumptions) oldEnd;
 	}
 
 	/**
 	* @generated
 	*/
-	protected org.muml.pim.protocol.ConnectorQualityOfServiceAssumptions getNewTarget() {
-		return (org.muml.pim.protocol.ConnectorQualityOfServiceAssumptions) newEnd;
+	protected ConnectorQualityOfServiceAssumptions getNewTarget() {
+		return (ConnectorQualityOfServiceAssumptions) newEnd;
 	}
 
 	/**

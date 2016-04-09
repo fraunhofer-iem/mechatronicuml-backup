@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EEnumLiteral;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.muml.pim.pattern.diagram.part.MumlDiagramEditorPlugin;
 
 /**
  * @generated
@@ -27,11 +28,11 @@ public abstract class MumlAbstractExpression {
 	* @generated
 	*/
 	protected void setStatus(int severity, String message, Throwable throwable) {
-		String pluginID = org.muml.pim.pattern.diagram.part.MumlDiagramEditorPlugin.ID;
+		String pluginID = MumlDiagramEditorPlugin.ID;
 		this.status = new Status(severity, pluginID, -1, (message != null) ? message : "", throwable); //$NON-NLS-1$
 		if (!this.status.isOK()) {
-			org.muml.pim.pattern.diagram.part.MumlDiagramEditorPlugin.getInstance()
-					.logError("Expression problem:" + message + "body:" + body(), throwable); //$NON-NLS-1$ //$NON-NLS-2$
+			MumlDiagramEditorPlugin.getInstance().logError("Expression problem:" + message + "body:" + body(), //$NON-NLS-1$//$NON-NLS-2$
+					throwable);
 		}
 	}
 
@@ -96,8 +97,7 @@ public abstract class MumlAbstractExpression {
 			try {
 				return doEvaluate(context, env);
 			} catch (Exception e) {
-				org.muml.pim.pattern.diagram.part.MumlDiagramEditorPlugin.getInstance()
-						.logError("Expression evaluation failure: " + body(), e); //$NON-NLS-1$
+				MumlDiagramEditorPlugin.getInstance().logError("Expression evaluation failure: " + body(), e); //$NON-NLS-1$
 			}
 		}
 		return null;
