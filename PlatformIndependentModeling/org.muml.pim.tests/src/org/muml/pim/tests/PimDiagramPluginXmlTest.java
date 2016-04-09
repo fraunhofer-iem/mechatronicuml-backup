@@ -27,8 +27,8 @@ public class PimDiagramPluginXmlTest extends DiagramPluginXmlTest {
 
 		Object[][] pluginsToCheck = new Object[][] {
 			new Object[] { new String[] { 
-					"de.uni_paderborn.fujaba.muml.component.diagram",
-					"de.uni_paderborn.fujaba.muml.component.diagram.custom"
+					"org.muml.pim.component.diagram",
+					"org.muml.pim.component.diagram.custom"
 			}},
 			new Object[] { new String[] {
 					"de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram",

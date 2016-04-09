@@ -24,7 +24,7 @@ import org.muml.pim.component.Component;
 import org.muml.pim.component.ComponentPackage;
 
 public class EmbedAsPartsHandler extends AbstractHandler {
-	public static final String COMMAND_ID_OF_COMPONENT_DIAGRAM_EMBEDASPART_HANDER = "de.uni_paderborn.fujaba.muml.component.diagram.custom.embedAsParts.editorcmd";
+	public static final String COMMAND_ID_OF_COMPONENT_DIAGRAM_EMBEDASPART_HANDER = "org.muml.pim.component.diagram.custom.embedAsParts.editorcmd";
 
 	public EmbedAsPartsHandler() {
 	}

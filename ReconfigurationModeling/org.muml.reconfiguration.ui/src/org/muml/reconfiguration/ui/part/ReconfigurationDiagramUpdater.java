@@ -570,7 +570,7 @@ public class ReconfigurationDiagramUpdater {
 	// */
 	// @Override
 	// public
-	// List<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlNodeDescriptor>
+	// List<org.muml.pim.component.diagram.part.MumlNodeDescriptor>
 	// getSemanticChildren(
 	// View view) {
 	// return ReconfigurationDiagramUpdater.getSemanticChildren(view);
@@ -581,7 +581,7 @@ public class ReconfigurationDiagramUpdater {
 	// */
 	// @Override
 	// public
-	// List<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlLinkDescriptor>
+	// List<org.muml.pim.component.diagram.part.MumlLinkDescriptor>
 	// getContainedLinks(
 	// View view) {
 	// return ReconfigurationDiagramUpdater.getContainedLinks(view);
@@ -592,7 +592,7 @@ public class ReconfigurationDiagramUpdater {
 	// */
 	// @Override
 	// public
-	// List<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlLinkDescriptor>
+	// List<org.muml.pim.component.diagram.part.MumlLinkDescriptor>
 	// getIncomingLinks(
 	// View view) {
 	// return ReconfigurationDiagramUpdater.getIncomingLinks(view);
@@ -603,7 +603,7 @@ public class ReconfigurationDiagramUpdater {
 	// */
 	// @Override
 	// public
-	// List<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlLinkDescriptor>
+	// List<org.muml.pim.component.diagram.part.MumlLinkDescriptor>
 	// getOutgoingLinks(
 	// View view) {
 	// return ReconfigurationDiagramUpdater.getOutgoingLinks(view);

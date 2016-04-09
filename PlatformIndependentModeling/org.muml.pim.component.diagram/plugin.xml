@@ -35,7 +35,7 @@ Contributors:
 	<extension point="org.eclipse.ui.editors" id="gmf-editor">
       <?gmfgen generated="true"?>
       <editor
-         id="de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorID"
+         id="org.muml.pim.component.diagram.part.ComponentDiagramEditorID"
          name="%editorName"
          icon="icons/obj16/ModelinstanceDiagramFile.gif"
          extensions="component_diagram"
@@ -49,7 +49,7 @@ Contributors:
       <?gmfgen generated="true"?>
       <context
          description="%context.description"
-         id="de.uni_paderborn.fujaba.muml.component.diagram.ui.diagramContext"
+         id="org.muml.pim.component.diagram.ui.diagramContext"
          name="%context.name"
          parentId="org.eclipse.gmf.runtime.diagram.ui.diagramContext">
       </context>
@@ -62,7 +62,7 @@ Contributors:
   	     icon="icons/obj16/ModelinstanceDiagramFile.gif"
   	     category="de.uni_paderborn.fujaba/de.uni_paderborn.fujaba.diagrams"
   	     class="org.muml.pim.component.diagram.part.MumlCreationWizard"
-  	     id="de.uni_paderborn.fujaba.muml.component.diagram.part.MumlCreationWizardID">
+  	     id="org.muml.pim.component.diagram.part.MumlCreationWizardID">
   	  	 <description>%newWizardDesc</description>  
       </wizard>
    	</extension>
@@ -95,9 +95,9 @@ Contributors:
 	         allPopups="false"
 	         locationURI="popup:de.uni_paderborn.fujaba?after=structural-diagrams">
 	      <command
-	            commandId="de.uni_paderborn.fujaba.muml.component.diagram.createDiagram"
+	            commandId="org.muml.pim.component.diagram.createDiagram"
 	            icon="icons/obj16/ModelinstanceDiagramFile.gif"
-	            id="de.uni_paderborn.fujaba.muml.component.diagram.createDiagram"
+	            id="org.muml.pim.component.diagram.createDiagram"
 	            label="Create Component Diagram"
 	            style="push">
 	            	<visibleWhen checkEnabled="false">
@@ -155,8 +155,8 @@ Contributors:
          point="org.muml.core.modelinstance.ui.diagraminformation">
       <?gmfgen generated="true"?>
       <editor
-            preferencesHint="de.uni_paderborn.fujaba.muml.component.diagram"
-            editorId="de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorID"
+            preferencesHint="org.muml.pim.component.diagram"
+            editorId="org.muml.pim.component.diagram.part.ComponentDiagramEditorID"
             editorName="Component Editor"
             fileExtension="component_diagram"
             modelElementCategoryKey="de.uni_paderborn.fujaba.muml.components.category"
@@ -186,7 +186,7 @@ Contributors:
          class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramGlobalActionHandlerProvider"
          id="ComponentPresentation">
          <Priority name="Lowest"/>
-         <ViewId id="de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorID">
+         <ViewId id="org.muml.pim.component.diagram.part.ComponentDiagramEditorID">
             <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
                <GlobalActionId actionId="delete"/>
             </ElementType>
@@ -203,7 +203,7 @@ Contributors:
          class="org.eclipse.gmf.runtime.diagram.ui.providers.ide.providers.DiagramIDEGlobalActionHandlerProvider"
          id="ComponentPresentationIDE">
          <Priority name="Lowest"/>
-         <ViewId id="de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorID">
+         <ViewId id="org.muml.pim.component.diagram.part.ComponentDiagramEditorID">
             <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
                <GlobalActionId actionId="bookmark"/>
             </ElementType>
@@ -213,7 +213,7 @@ Contributors:
             class="org.eclipse.gmf.runtime.diagram.ui.render.providers.DiagramUIRenderGlobalActionHandlerProvider"
             id="ComponentRender">
          <Priority name="Lowest"/>
-         <ViewId id="de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorID">
+         <ViewId id="org.muml.pim.component.diagram.part.ComponentDiagramEditorID">
             <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
                <GlobalActionId actionId="cut"/>
                <GlobalActionId actionId="copy"/>
@@ -227,7 +227,7 @@ Contributors:
    <extension point="org.eclipse.gmf.runtime.common.ui.services.markerNavigationProviders" id="markers-navigation">
       <?gmfgen generated="true"?>
       <MarkerNavigationProvider class="org.muml.pim.component.diagram.providers.MumlMarkerNavigationProvider">
-         <MarkerType name="de.uni_paderborn.fujaba.muml.component.diagram.diagnostic"/>
+         <MarkerType name="org.muml.pim.component.diagram.diagnostic"/>
          <Priority name="Lowest"/>
       </MarkerNavigationProvider>
    </extension>
@@ -256,33 +256,33 @@ Contributors:
    <extension point="org.eclipse.ui.preferencePages" id="prefpages">
       <?gmfgen generated="true"?>
       <page
-            id="de.uni_paderborn.fujaba.muml.component.diagram.general"
-            name="%prefpage.de.uni_paderborn.fujaba.muml.component.diagram.general"
+            id="org.muml.pim.component.diagram.general"
+            name="%prefpage.org.muml.pim.component.diagram.general"
             category="de.uni_paderborn.fujaba.preferences"
             class="org.muml.pim.component.diagram.preferences.DiagramGeneralPreferencePage">
       </page>
       <page
-            id="de.uni_paderborn.fujaba.muml.component.diagram.appearance"
-            name="%prefpage.de.uni_paderborn.fujaba.muml.component.diagram.appearance"
-            category="de.uni_paderborn.fujaba.muml.component.diagram.general"
+            id="org.muml.pim.component.diagram.appearance"
+            name="%prefpage.org.muml.pim.component.diagram.appearance"
+            category="org.muml.pim.component.diagram.general"
             class="org.muml.pim.component.diagram.preferences.DiagramAppearancePreferencePage">
       </page>
       <page
-            id="de.uni_paderborn.fujaba.muml.component.diagram.connections"
-            name="%prefpage.de.uni_paderborn.fujaba.muml.component.diagram.connections"
-            category="de.uni_paderborn.fujaba.muml.component.diagram.general"
+            id="org.muml.pim.component.diagram.connections"
+            name="%prefpage.org.muml.pim.component.diagram.connections"
+            category="org.muml.pim.component.diagram.general"
             class="org.muml.pim.component.diagram.preferences.DiagramConnectionsPreferencePage">
       </page>
       <page
-            id="de.uni_paderborn.fujaba.muml.component.diagram.printing"
-            name="%prefpage.de.uni_paderborn.fujaba.muml.component.diagram.printing"
-            category="de.uni_paderborn.fujaba.muml.component.diagram.general"
+            id="org.muml.pim.component.diagram.printing"
+            name="%prefpage.org.muml.pim.component.diagram.printing"
+            category="org.muml.pim.component.diagram.general"
             class="org.muml.pim.component.diagram.preferences.DiagramPrintingPreferencePage">
       </page>
       <page
-            id="de.uni_paderborn.fujaba.muml.component.diagram.rulersAndGrid"
-            name="%prefpage.de.uni_paderborn.fujaba.muml.component.diagram.rulersAndGrid"
-            category="de.uni_paderborn.fujaba.muml.component.diagram.general"
+            id="org.muml.pim.component.diagram.rulersAndGrid"
+            name="%prefpage.org.muml.pim.component.diagram.rulersAndGrid"
+            category="org.muml.pim.component.diagram.general"
             class="org.muml.pim.component.diagram.preferences.DiagramRulersAndGridPreferencePage">
       </page>
    </extension>
@@ -290,7 +290,7 @@ Contributors:
    <extension point="org.eclipse.ui.views.properties.tabbed.propertyContributor" id="prop-contrib">
       <?gmfgen generated="true"?>
       <propertyContributor
-            contributorId="de.uni_paderborn.fujaba.muml.component.diagram"
+            contributorId="org.muml.pim.component.diagram"
             labelProvider="org.muml.pim.component.diagram.sheet.MumlSheetLabelProvider">
          <propertyCategory category="domain"/>
          <propertyCategory category="visual"/>
@@ -300,7 +300,7 @@ Contributors:
 
    <extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs" id="proptabs">
       <?gmfgen generated="true"?>   
-      <propertyTabs contributorId="de.uni_paderborn.fujaba.muml.component.diagram">
+      <propertyTabs contributorId="org.muml.pim.component.diagram">
          <propertyTab
              category="visual"
              id="property.tab.AppearancePropertySection"
@@ -347,7 +347,7 @@ Contributors:
 
    <extension point="org.eclipse.ui.views.properties.tabbed.propertySections" id="propsections">
       <?gmfgen generated="true"?>   
-      <propertySections contributorId="de.uni_paderborn.fujaba.muml.component.diagram">
+      <propertySections contributorId="org.muml.pim.component.diagram">
          <propertySection id="property.section.ConnectorAppearancePropertySection" 
             filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.ConnectionEditPartPropertySectionFilter" 
             class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.ConnectionAppearancePropertySection" 
@@ -416,7 +416,7 @@ Contributors:
 
    <extension point="org.eclipse.gmf.runtime.diagram.core.viewProviders" id="view-provider">
       <?gmfgen generated="true"?>
-      <viewProvider class="de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlViewProvider">
+      <viewProvider class="org.muml.pim.component.diagram.providers.MumlViewProvider">
          <Priority name="Lowest"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="Component"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2006,2005,3010,3011,3013,3012,3022,3016"/>
@@ -426,7 +426,7 @@ Contributors:
 
    <extension point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders" id="ep-provider">
       <?gmfgen generated="true"?>
-      <editpartProvider class="de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlEditPartProvider">
+      <editpartProvider class="org.muml.pim.component.diagram.providers.MumlEditPartProvider">
          <Priority name="Lowest"/>
          <object class="org.eclipse.gmf.runtime.notation.Diagram" id="generated-diagram">
             <method name="getType()" value="Component"/>
@@ -452,47 +452,47 @@ Contributors:
       <?gmfgen generated="true"?>
       <modelingAssistantProvider class="org.muml.pim.component.diagram.providers.assistants.MumlModelingAssistantProviderOfModelElementCategoryEditPart">
          <Priority name="Lowest"/>
-         <object class="de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ModelElementCategoryEditPart" id="ModelElementCategory_1000"/>
+         <object class="org.muml.pim.component.diagram.edit.parts.ModelElementCategoryEditPart" id="ModelElementCategory_1000"/>
          <context elements="ModelElementCategory_1000"/>
       </modelingAssistantProvider>
             <modelingAssistantProvider class="org.muml.pim.component.diagram.providers.assistants.MumlModelingAssistantProviderOfStaticAtomicComponentEditPart">
          <Priority name="Lowest"/>
-         <object class="de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.StaticAtomicComponentEditPart" id="StaticAtomicComponent_2006"/>
+         <object class="org.muml.pim.component.diagram.edit.parts.StaticAtomicComponentEditPart" id="StaticAtomicComponent_2006"/>
          <context elements="StaticAtomicComponent_2006"/>
       </modelingAssistantProvider>
             <modelingAssistantProvider class="org.muml.pim.component.diagram.providers.assistants.MumlModelingAssistantProviderOfStaticStructuredComponentEditPart">
          <Priority name="Lowest"/>
-         <object class="de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.StaticStructuredComponentEditPart" id="StaticStructuredComponent_2005"/>
+         <object class="org.muml.pim.component.diagram.edit.parts.StaticStructuredComponentEditPart" id="StaticStructuredComponent_2005"/>
          <context elements="StaticStructuredComponent_2005"/>
       </modelingAssistantProvider>
             <modelingAssistantProvider class="org.muml.pim.component.diagram.providers.assistants.MumlModelingAssistantProviderOfDiscretePortEditPart">
          <Priority name="Lowest"/>
-         <object class="de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DiscretePortEditPart" id="DiscretePort_3010"/>
+         <object class="org.muml.pim.component.diagram.edit.parts.DiscretePortEditPart" id="DiscretePort_3010"/>
          <context elements="DiscretePort_3010"/>
       </modelingAssistantProvider>
             <modelingAssistantProvider class="org.muml.pim.component.diagram.providers.assistants.MumlModelingAssistantProviderOfContinuousPortEditPart">
          <Priority name="Lowest"/>
-         <object class="de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ContinuousPortEditPart" id="ContinuousPort_3011"/>
+         <object class="org.muml.pim.component.diagram.edit.parts.ContinuousPortEditPart" id="ContinuousPort_3011"/>
          <context elements="ContinuousPort_3011"/>
       </modelingAssistantProvider>
             <modelingAssistantProvider class="org.muml.pim.component.diagram.providers.assistants.MumlModelingAssistantProviderOfHybridPortEditPart">
          <Priority name="Lowest"/>
-         <object class="de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.HybridPortEditPart" id="HybridPort_3013"/>
+         <object class="org.muml.pim.component.diagram.edit.parts.HybridPortEditPart" id="HybridPort_3013"/>
          <context elements="HybridPort_3013"/>
       </modelingAssistantProvider>
             <modelingAssistantProvider class="org.muml.pim.component.diagram.providers.assistants.MumlModelingAssistantProviderOfComponentPartEditPart">
          <Priority name="Lowest"/>
-         <object class="de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ComponentPartEditPart" id="ComponentPart_3012"/>
+         <object class="org.muml.pim.component.diagram.edit.parts.ComponentPartEditPart" id="ComponentPart_3012"/>
          <context elements="ComponentPart_3012"/>
       </modelingAssistantProvider>
             <modelingAssistantProvider class="org.muml.pim.component.diagram.providers.assistants.MumlModelingAssistantProviderOfPortPartEditPart">
          <Priority name="Lowest"/>
-         <object class="de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.PortPartEditPart" id="PortPart_3022"/>
+         <object class="org.muml.pim.component.diagram.edit.parts.PortPartEditPart" id="PortPart_3022"/>
          <context elements="PortPart_3022"/>
       </modelingAssistantProvider>
             <modelingAssistantProvider class="org.muml.pim.component.diagram.providers.assistants.MumlModelingAssistantProviderOfCoordinationProtocolPartEditPart">
          <Priority name="Lowest"/>
-         <object class="de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.CoordinationProtocolPartEditPart" id="CoordinationProtocolPart_3016"/>
+         <object class="org.muml.pim.component.diagram.edit.parts.CoordinationProtocolPartEditPart" id="CoordinationProtocolPart_3016"/>
          <context elements="CoordinationProtocolPart_3016"/>
       </modelingAssistantProvider>
       
@@ -517,7 +517,7 @@ Contributors:
       <?gmfgen generated="true"?>
       <metamodel nsURI="http://www.muml.org/modelinstance/1.0.0">
          <metamodelType
-               id="de.uni_paderborn.fujaba.muml.component.diagram.ModelElementCategory_1000"
+               id="org.muml.pim.component.diagram.ModelElementCategory_1000"
                name="%metatype.name.ModelElementCategory_1000"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="ModelElementCategory"
@@ -527,7 +527,7 @@ Contributors:
       </metamodel>
       <metamodel nsURI="http://www.muml.org/pim/component/1.0.0">
          <metamodelType
-               id="de.uni_paderborn.fujaba.muml.component.diagram.StaticAtomicComponent_2006"
+               id="org.muml.pim.component.diagram.StaticAtomicComponent_2006"
                name="%metatype.name.StaticAtomicComponent_2006"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="StaticAtomicComponent"
@@ -537,7 +537,7 @@ Contributors:
       </metamodel>
       <metamodel nsURI="http://www.muml.org/pim/component/1.0.0">
          <metamodelType
-               id="de.uni_paderborn.fujaba.muml.component.diagram.StaticStructuredComponent_2005"
+               id="org.muml.pim.component.diagram.StaticStructuredComponent_2005"
                name="%metatype.name.StaticStructuredComponent_2005"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="StaticStructuredComponent"
@@ -547,7 +547,7 @@ Contributors:
       </metamodel>
       <metamodel nsURI="http://www.muml.org/pim/component/1.0.0">
          <metamodelType
-               id="de.uni_paderborn.fujaba.muml.component.diagram.DiscretePort_3010"
+               id="org.muml.pim.component.diagram.DiscretePort_3010"
                name="%metatype.name.DiscretePort_3010"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="DiscretePort"
@@ -557,7 +557,7 @@ Contributors:
       </metamodel>
       <metamodel nsURI="http://www.muml.org/pim/component/1.0.0">
          <metamodelType
-               id="de.uni_paderborn.fujaba.muml.component.diagram.ContinuousPort_3011"
+               id="org.muml.pim.component.diagram.ContinuousPort_3011"
                name="%metatype.name.ContinuousPort_3011"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="ContinuousPort"
@@ -567,7 +567,7 @@ Contributors:
       </metamodel>
       <metamodel nsURI="http://www.muml.org/pim/component/1.0.0">
          <metamodelType
-               id="de.uni_paderborn.fujaba.muml.component.diagram.HybridPort_3013"
+               id="org.muml.pim.component.diagram.HybridPort_3013"
                name="%metatype.name.HybridPort_3013"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="HybridPort"
@@ -577,7 +577,7 @@ Contributors:
       </metamodel>
       <metamodel nsURI="http://www.muml.org/pim/component/1.0.0">
          <metamodelType
-               id="de.uni_paderborn.fujaba.muml.component.diagram.ComponentPart_3012"
+               id="org.muml.pim.component.diagram.ComponentPart_3012"
                name="%metatype.name.ComponentPart_3012"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="ComponentPart"
@@ -587,7 +587,7 @@ Contributors:
       </metamodel>
       <metamodel nsURI="http://www.muml.org/pim/component/1.0.0">
          <metamodelType
-               id="de.uni_paderborn.fujaba.muml.component.diagram.PortPart_3022"
+               id="org.muml.pim.component.diagram.PortPart_3022"
                name="%metatype.name.PortPart_3022"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="PortPart"
@@ -597,7 +597,7 @@ Contributors:
       </metamodel>
       <metamodel nsURI="http://www.muml.org/pim/component/1.0.0">
          <metamodelType
-               id="de.uni_paderborn.fujaba.muml.component.diagram.CoordinationProtocolPart_3016"
+               id="org.muml.pim.component.diagram.CoordinationProtocolPart_3016"
                name="%metatype.name.CoordinationProtocolPart_3016"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="CoordinationProtocolPart"
@@ -607,7 +607,7 @@ Contributors:
       </metamodel>
       <metamodel nsURI="http://www.muml.org/pim/component/1.0.0">
          <metamodelType
-               id="de.uni_paderborn.fujaba.muml.component.diagram.AssemblyConnector_4001"
+               id="org.muml.pim.component.diagram.AssemblyConnector_4001"
                name="%metatype.name.AssemblyConnector_4001"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="AssemblyConnector"
@@ -617,7 +617,7 @@ Contributors:
       </metamodel>
       <metamodel nsURI="http://www.muml.org/pim/component/1.0.0">
          <metamodelType
-               id="de.uni_paderborn.fujaba.muml.component.diagram.DelegationConnector_4002"
+               id="org.muml.pim.component.diagram.DelegationConnector_4002"
                name="%metatype.name.DelegationConnector_4002"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="DelegationConnector"
@@ -627,7 +627,7 @@ Contributors:
       </metamodel>
       <metamodel nsURI="http://www.muml.org/pim/component/1.0.0">
          <specializationType
-               id="de.uni_paderborn.fujaba.muml.component.diagram.PortPartCoordinationProtocolPart_4004"
+               id="org.muml.pim.component.diagram.PortPartCoordinationProtocolPart_4004"
                name="%metatype.name.PortPartCoordinationProtocolPart_4004"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
             <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
@@ -638,26 +638,26 @@ Contributors:
 
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings" id="element-types-bindings">
       <?gmfgen generated="true"?>
-      <clientContext id="de.uni_paderborn.fujaba.muml.component.diagram.TypeContext">
+      <clientContext id="org.muml.pim.component.diagram.TypeContext">
          <enablement>
             <test
                property="org.eclipse.gmf.runtime.emf.core.editingDomain"
-               value="de.uni_paderborn.fujaba.muml.component.diagram.EditingDomain"/>
+               value="org.muml.pim.component.diagram.EditingDomain"/>
          </enablement>
       </clientContext> 
-      <binding context="de.uni_paderborn.fujaba.muml.component.diagram.TypeContext">
-         <elementType ref="de.uni_paderborn.fujaba.muml.component.diagram.ModelElementCategory_1000"/>
-         <elementType ref="de.uni_paderborn.fujaba.muml.component.diagram.StaticAtomicComponent_2006"/>
-         <elementType ref="de.uni_paderborn.fujaba.muml.component.diagram.StaticStructuredComponent_2005"/>
-         <elementType ref="de.uni_paderborn.fujaba.muml.component.diagram.DiscretePort_3010"/>
-         <elementType ref="de.uni_paderborn.fujaba.muml.component.diagram.ContinuousPort_3011"/>
-         <elementType ref="de.uni_paderborn.fujaba.muml.component.diagram.HybridPort_3013"/>
-         <elementType ref="de.uni_paderborn.fujaba.muml.component.diagram.ComponentPart_3012"/>
-         <elementType ref="de.uni_paderborn.fujaba.muml.component.diagram.PortPart_3022"/>
-         <elementType ref="de.uni_paderborn.fujaba.muml.component.diagram.CoordinationProtocolPart_3016"/>
-         <elementType ref="de.uni_paderborn.fujaba.muml.component.diagram.AssemblyConnector_4001"/>
-         <elementType ref="de.uni_paderborn.fujaba.muml.component.diagram.DelegationConnector_4002"/>
-         <elementType ref="de.uni_paderborn.fujaba.muml.component.diagram.PortPartCoordinationProtocolPart_4004"/>
+      <binding context="org.muml.pim.component.diagram.TypeContext">
+         <elementType ref="org.muml.pim.component.diagram.ModelElementCategory_1000"/>
+         <elementType ref="org.muml.pim.component.diagram.StaticAtomicComponent_2006"/>
+         <elementType ref="org.muml.pim.component.diagram.StaticStructuredComponent_2005"/>
+         <elementType ref="org.muml.pim.component.diagram.DiscretePort_3010"/>
+         <elementType ref="org.muml.pim.component.diagram.ContinuousPort_3011"/>
+         <elementType ref="org.muml.pim.component.diagram.HybridPort_3013"/>
+         <elementType ref="org.muml.pim.component.diagram.ComponentPart_3012"/>
+         <elementType ref="org.muml.pim.component.diagram.PortPart_3022"/>
+         <elementType ref="org.muml.pim.component.diagram.CoordinationProtocolPart_3016"/>
+         <elementType ref="org.muml.pim.component.diagram.AssemblyConnector_4001"/>
+         <elementType ref="org.muml.pim.component.diagram.DelegationConnector_4002"/>
+         <elementType ref="org.muml.pim.component.diagram.PortPartCoordinationProtocolPart_4004"/>
          <advice ref="org.eclipse.gmf.runtime.diagram.core.advice.notationDepdendents"/>
       </binding>
    </extension>
@@ -667,15 +667,15 @@ Contributors:
          categoryId="org.eclipse.ui.category.edit"
          defaultHandler="org.muml.pim.component.diagram.part.MumlDiagramUpdateCommand"
          description="%update.diagram.description"
-         id="de.uni_paderborn.fujaba.muml.component.diagram.updateDiagram"
+         id="org.muml.pim.component.diagram.updateDiagram"
          name="%update.diagram.name"/>
    </extension>
    
    <extension point="org.eclipse.ui.bindings" id="update-cmd-binding">
       <?gmfgen generated="true"?>
       <key 
-         commandId="de.uni_paderborn.fujaba.muml.component.diagram.updateDiagram"
-         contextId="de.uni_paderborn.fujaba.muml.component.diagram.ui.diagramContext"
+         commandId="org.muml.pim.component.diagram.updateDiagram"
+         contextId="org.muml.pim.component.diagram.ui.diagramContext"
          schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
          sequence="F5"/>
    </extension>
@@ -687,10 +687,10 @@ Contributors:
       <menuContribution locationURI="toolbar:org.eclipse.ui.main.toolbar?after=">
       </menuContribution -->
       <menuContribution locationURI="popup:org.eclipse.gmf.runtime.diagram.ui.DiagramEditorContextMenu">
-         <command commandId="de.uni_paderborn.fujaba.muml.component.diagram.LoadResourceAction">
+         <command commandId="org.muml.pim.component.diagram.LoadResourceAction">
             <visibleWhen>
                <and>
-                  <with variable="activePartId"><equals value="de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorID"/></with>
+                  <with variable="activePartId"><equals value="org.muml.pim.component.diagram.part.ComponentDiagramEditorID"/></with>
                   <with variable="selection"><iterate ifEmpty="false"> 
                      <instanceof value="org.muml.pim.component.diagram.edit.parts.ModelElementCategoryEditPart"/>
                   </iterate></with>
@@ -702,10 +702,10 @@ Contributors:
 
    <extension point="org.eclipse.ui.commands" id="menu-commands">
       <?gmfgen generated="true"?>
-      <category id="de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorID" name="%cmdcategory.name" description="%cmdcategory.desc"/>
-      <command id="de.uni_paderborn.fujaba.muml.component.diagram.LoadResourceAction"
+      <category id="org.muml.pim.component.diagram.part.ComponentDiagramEditorID" name="%cmdcategory.name" description="%cmdcategory.desc"/>
+      <command id="org.muml.pim.component.diagram.LoadResourceAction"
          name="Load Resource"
-         categoryId="de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorID"
+         categoryId="org.muml.pim.component.diagram.part.ComponentDiagramEditorID"
          defaultHandler="org.muml.pim.component.diagram.part.LoadResourceAction"/>
    </extension>
 
@@ -725,7 +725,7 @@ Contributors:
 			categoryId="de.uni_paderborn.fujaba"
 			description="Initialize realtimestatechart_diagram"
 			defaultHandler="org.muml.pim.component.diagram.part.MumlInitDiagramFileAction"
-			id="de.uni_paderborn.fujaba.muml.component.diagram.createDiagram"
+			id="org.muml.pim.component.diagram.createDiagram"
 			name="%initDiagramActionLabel">
 		</command>
 	</extension>

@@ -24,11 +24,11 @@ public class Activator extends AbstractUIPlugin {
 
 
 
-	public static final String COPYTOPORT_TRANSFORMATION = "/de.uni_paderborn.fujaba.muml.component.diagram.custom/transforms/CopyRolePropertiesToPort.qvto";
+	public static final String COPYTOPORT_TRANSFORMATION = "/org.muml.pim.component.diagram.custom/transforms/CopyRolePropertiesToPort.qvto";
 
-	public static final String PART_TRANSFORMATION = "/de.uni_paderborn.fujaba.muml.component.diagram.custom/transforms/part.qvto";
+	public static final String PART_TRANSFORMATION = "/org.muml.pim.component.diagram.custom/transforms/part.qvto";
 	
-	public static final String PROTOCOL_TRANSFORMATION = "/de.uni_paderborn.fujaba.muml.component.diagram.custom/transforms/protocol.qvto";
+	public static final String PROTOCOL_TRANSFORMATION = "/org.muml.pim.component.diagram.custom/transforms/protocol.qvto";
 	
 	
 	private static Activator instance;

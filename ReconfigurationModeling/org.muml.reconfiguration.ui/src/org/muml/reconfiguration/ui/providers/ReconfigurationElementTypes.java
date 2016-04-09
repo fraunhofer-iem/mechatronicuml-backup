@@ -49,13 +49,13 @@ public class ReconfigurationElementTypes {
 	public static final IElementType Executor_2077 = getElementType("de.uni_paderborn.fujaba.muml.reconfiguration.Executor_2077");
 	public static final IElementType ReconfigurationPortDelegationConnector_4076 = getElementType("de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPortDelegationConnector_4076");
 	public static final IElementType ReconfigurationPortAssemblyConnector_4075 = getElementType("de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPortAssemblyConnector_4075");
-	public static final IElementType ComponentPart_3012 = getElementType("de.uni_paderborn.fujaba.muml.component.diagram.ComponentPart_3012");
-	public static final IElementType DiscretePort_3010 = getElementType("de.uni_paderborn.fujaba.muml.component.diagram.DiscretePort_3010");
-	public static final IElementType HybridPort_3013 = getElementType("de.uni_paderborn.fujaba.muml.component.diagram.HybridPort_3013");
-	public static final IElementType ContinuousPort_3011 = getElementType("de.uni_paderborn.fujaba.muml.component.diagram.ContinuousPort_3011");
+	public static final IElementType ComponentPart_3012 = getElementType("org.muml.pim.component.diagram.ComponentPart_3012");
+	public static final IElementType DiscretePort_3010 = getElementType("org.muml.pim.component.diagram.DiscretePort_3010");
+	public static final IElementType HybridPort_3013 = getElementType("org.muml.pim.component.diagram.HybridPort_3013");
+	public static final IElementType ContinuousPort_3011 = getElementType("org.muml.pim.component.diagram.ContinuousPort_3011");
 	public static final IElementType FadingComponent_2079 = getElementType("de.uni_paderborn.fujaba.muml.reconfiguration.FadingComponent_2079");
 	public static final IElementType BroadcastPort_3078 = getElementType("de.uni_paderborn.fujaba.muml.reconfiguration.BroadcastPort_3078");
-	public static final IElementType CoordinationProtocolPart_3016 = getElementType("de.uni_paderborn.fujaba.muml.component.diagram.CoordinationProtocolPart_3016");
+	public static final IElementType CoordinationProtocolPart_3016 = getElementType("org.muml.pim.component.diagram.CoordinationProtocolPart_3016");
 	
 	public static ImageDescriptor getImageDescriptor(ENamedElement element) {
 		return elementTypeImages.getImageDescriptor(element);

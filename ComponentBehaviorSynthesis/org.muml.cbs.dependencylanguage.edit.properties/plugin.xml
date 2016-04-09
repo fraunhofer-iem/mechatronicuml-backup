@@ -6,7 +6,7 @@
   <extension
          point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
     <propertyContributor
-          contributorId="de.uni_paderborn.fujaba.muml.component.diagram">
+          contributorId="org.muml.pim.component.diagram">
        <propertyCategory
              category="domain">
        </propertyCategory>
@@ -25,7 +25,7 @@
 
 
 <extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
-      <propertyTabs contributorId="de.uni_paderborn.fujaba.muml.component.diagram">
+      <propertyTabs contributorId="org.muml.pim.component.diagram">
           <propertyTab
              category="domain"
              id="org.muml.dependencylanguage"
@@ -39,7 +39,7 @@
 
 
   <extension point="org.eclipse.ui.views.properties.tabbed.propertySections"> 
-      <propertySections contributorId="de.uni_paderborn.fujaba.muml.component.diagram">
+      <propertySections contributorId="org.muml.pim.component.diagram">
           <propertySection
             class="org.muml.ape.runtime.sections.ObjectPropertySection"
             filter="org.muml.cbs.dependencylanguage.properties.tabs.Org_muml_dependencylanguageTabElementFilter"

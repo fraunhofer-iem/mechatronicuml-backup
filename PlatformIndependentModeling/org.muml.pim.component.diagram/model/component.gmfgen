@@ -4,21 +4,21 @@
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:gmfgen="http://www.eclipse.org/gmf/2009/GenModel"
-    packageNamePrefix="de.uni_paderborn.fujaba.muml.component.diagram"
+    packageNamePrefix="org.muml.pim.component.diagram"
     modelID="Component"
     diagramFileExtension="component_diagram"
     domainFileExtension="fujaba"
     dynamicTemplates="true"
     templateDirectory="/org.muml.core.common/gmf-templates"
     copyrightText="&lt;copyright>&#xD;&#xA;Copyright (c) 2013 Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Germany.&#xD;&#xA;All rights reserved. This program and the accompanying materials&#xD;&#xA;are made available under the terms of the Eclipse Public License v1.0&#xD;&#xA;which accompanies this distribution, and is available at&#xD;&#xA;http://www.eclipse.org/legal/epl-v10.html&#xD;&#xA;&#xD;&#xA;Contributors:&#xD;&#xA;    Software Engineering Group - initial API and implementation&#xD;&#xA;&lt;/copyright>"
-    pluginDirectory="/de.uni_paderborn.fujaba.muml.component.diagram/src">
+    pluginDirectory="/org.muml.pim.component.diagram/src">
   <diagram
       visualID="1000"
       editPartClassName="ModelElementCategoryEditPart"
       itemSemanticEditPolicyClassName="ModelElementCategoryItemSemanticEditPolicy"
       canonicalEditPolicyClassName="ModelElementCategoryCanonicalEditPolicy"
       iconProviderPriority="Low"
-      creationWizardCategoryID="de.uni_paderborn.fujaba/de.uni_paderborn.fujaba.diagrams"
+      creationWizardCategoryID="org.muml/org.muml.diagrams"
       validationProviderPriority="Low"
       validationEnabled="true"
       validationDecorators="true">
@@ -273,7 +273,7 @@
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
             key="&quot;hybridportlabelrefresh&quot;"
-            editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.component.diagram.edit.policies.HybridPortLabelUpdateEditPolicy"/>
+            editPolicyQualifiedClassName="org.muml.pim.component.diagram.edit.policies.HybridPortLabelUpdateEditPolicy"/>
         <modelFacet
             xsi:type="gmfgen:ExpressionLabelModelFacet"
             parser="//@labelParsers/@implementations.2"/>
@@ -805,37 +805,37 @@
     </preferences>
     <preferencePages
         xsi:type="gmfgen:GenStandardPreferencePage"
-        iD="de.uni_paderborn.fujaba.muml.component.diagram.general"
+        iD="org.muml.pim.component.diagram.general"
         name="Component Diagram Editor"
         parentCategory="de.uni_paderborn.fujaba.preferences">
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
-          iD="de.uni_paderborn.fujaba.muml.component.diagram.appearance"
+          iD="org.muml.pim.component.diagram.appearance"
           name="Appearance"
-          parentCategory="de.uni_paderborn.fujaba.muml.component.diagram.general"
+          parentCategory="org.muml.pim.component.diagram.general"
           kind="Appearance"/>
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
-          iD="de.uni_paderborn.fujaba.muml.component.diagram.connections"
+          iD="org.muml.pim.component.diagram.connections"
           name="Connections"
-          parentCategory="de.uni_paderborn.fujaba.muml.component.diagram.general"
+          parentCategory="org.muml.pim.component.diagram.general"
           kind="Connections"/>
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
-          iD="de.uni_paderborn.fujaba.muml.component.diagram.printing"
+          iD="org.muml.pim.component.diagram.printing"
           name="Printing"
-          parentCategory="de.uni_paderborn.fujaba.muml.component.diagram.general"
+          parentCategory="org.muml.pim.component.diagram.general"
           kind="Printing"/>
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
-          iD="de.uni_paderborn.fujaba.muml.component.diagram.rulersAndGrid"
+          iD="org.muml.pim.component.diagram.rulersAndGrid"
           name="Rulers And Grid"
-          parentCategory="de.uni_paderborn.fujaba.muml.component.diagram.general"
+          parentCategory="org.muml.pim.component.diagram.general"
           kind="RulersAndGrid"/>
     </preferencePages>
   </diagram>
   <plugin
-      iD="de.uni_paderborn.fujaba.muml.component.diagram"
+      iD="org.muml.pim.component.diagram"
       name="Component Diagram Editor"
       provider="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn"
       version="0.5.0.qualifier"

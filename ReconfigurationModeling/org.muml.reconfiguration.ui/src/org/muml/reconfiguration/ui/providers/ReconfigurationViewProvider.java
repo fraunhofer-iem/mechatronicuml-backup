@@ -42,7 +42,7 @@ public class ReconfigurationViewProvider extends MumlViewProvider implements
 		IViewProvider {
 
 	// basically copied from
-	// /de.uni_paderborn.fujaba.muml.component.diagram/src/de/uni_paderborn/fujaba/muml/component/diagram/providers/MumlViewProvider.java
+	// /org.muml.pim.component.diagram/src/de/uni_paderborn/fujaba/muml/component/diagram/providers/MumlViewProvider.java
 	protected boolean provides(CreateNodeViewOperation op) {
 		if (op.getContainerView() == null) {
 			return false;
@@ -144,7 +144,7 @@ public class ReconfigurationViewProvider extends MumlViewProvider implements
 	}
 
 	// copied from
-	// /de.uni_paderborn.fujaba.muml.component.diagram/src/de/uni_paderborn/fujaba/muml/component/diagram/providers/MumlViewProvider.java
+	// /org.muml.pim.component.diagram/src/de/uni_paderborn/fujaba/muml/component/diagram/providers/MumlViewProvider.java
 	protected boolean provides(CreateDiagramViewOperation op) {
 		return super.provides(op);
 	}
@@ -209,7 +209,7 @@ public class ReconfigurationViewProvider extends MumlViewProvider implements
 	}
 
 	// basically copied from
-	// /de.uni_paderborn.fujaba.muml.component.diagram/src/de/uni_paderborn/fujaba/muml/component/diagram/providers/MumlViewProvider.java
+	// /org.muml.pim.component.diagram/src/de/uni_paderborn/fujaba/muml/component/diagram/providers/MumlViewProvider.java
 	public Node createNode(IAdaptable semanticAdapter, View containerView,
 			String semanticHint, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
@@ -786,7 +786,7 @@ public class ReconfigurationViewProvider extends MumlViewProvider implements
 
 
 	// copied from
-	// /de.uni_paderborn.fujaba.muml.component.diagram/src/de/uni_paderborn/fujaba/muml/component/diagram/providers/MumlViewProvider.java
+	// /org.muml.pim.component.diagram/src/de/uni_paderborn/fujaba/muml/component/diagram/providers/MumlViewProvider.java
 	private EObject getSemanticElement(IAdaptable semanticAdapter) {
 		if (semanticAdapter == null) {
 			return null;
@@ -800,7 +800,7 @@ public class ReconfigurationViewProvider extends MumlViewProvider implements
 	}
 
 	// copied from
-	// /de.uni_paderborn.fujaba.muml.component.diagram/src/de/uni_paderborn/fujaba/muml/component/diagram/providers/MumlViewProvider.java
+	// /org.muml.pim.component.diagram/src/de/uni_paderborn/fujaba/muml/component/diagram/providers/MumlViewProvider.java
 	private IElementType getSemanticElementType(IAdaptable semanticAdapter) {
 		if (semanticAdapter == null) {
 			return null;
@@ -809,7 +809,7 @@ public class ReconfigurationViewProvider extends MumlViewProvider implements
 	}
 
 	// copied from
-	// /de.uni_paderborn.fujaba.muml.component.diagram/src/de/uni_paderborn/fujaba/muml/component/diagram/providers/MumlViewProvider.java
+	// /org.muml.pim.component.diagram/src/de/uni_paderborn/fujaba/muml/component/diagram/providers/MumlViewProvider.java
 	private void stampShortcut(View containerView, Node target) {
 		if (!org.muml.pim.component.diagram.edit.parts.ModelElementCategoryEditPart.MODEL_ID
 				.equals(org.muml.pim.component.diagram.part.MumlVisualIDRegistry
@@ -825,7 +825,7 @@ public class ReconfigurationViewProvider extends MumlViewProvider implements
 	}
 
 	// copied from
-	// /de.uni_paderborn.fujaba.muml.component.diagram/src/de/uni_paderborn/fujaba/muml/component/diagram/providers/MumlViewProvider.java
+	// /org.muml.pim.component.diagram/src/de/uni_paderborn/fujaba/muml/component/diagram/providers/MumlViewProvider.java
 	private Node createLabel(View owner, String hint) {
 		DecorationNode rv = NotationFactory.eINSTANCE.createDecorationNode();
 		rv.setType(hint);
@@ -834,7 +834,7 @@ public class ReconfigurationViewProvider extends MumlViewProvider implements
 	}
 
 	// copied from
-	// /de.uni_paderborn.fujaba.muml.component.diagram/src/de/uni_paderborn/fujaba/muml/component/diagram/providers/MumlViewProvider.java
+	// /org.muml.pim.component.diagram/src/de/uni_paderborn/fujaba/muml/component/diagram/providers/MumlViewProvider.java
 	private Node createCompartment(View owner, String hint,
 			boolean canCollapse, boolean hasTitle, boolean canSort,
 			boolean canFilter) {

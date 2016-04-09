@@ -50,7 +50,7 @@
                         ifEmpty="false">
                      <or>
                         <instanceof
-                              value="de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.StaticStructuredComponentEditPart">
+                              value="org.muml.pim.component.diagram.edit.parts.StaticStructuredComponentEditPart">
                         </instanceof>
                         <instanceof
                               value="de.uni_paderborn.fujaba.muml.component.StaticStructuredComponent">
@@ -158,7 +158,7 @@
                name="High">
          </Priority>
          <editor
-               id="de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorID"></editor>
+               id="org.muml.pim.component.diagram.part.ComponentDiagramEditorID"></editor>
          <contribution
                factoryClass="org.muml.reconfiguration.ui.part.ReconfigurationPaletteFactory">
             <entry
@@ -381,12 +381,12 @@
        <extension
              point="org.muml.core.modelinstance.ui.diagraminformation">
           <editor
-                editorId="de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorID"
+                editorId="org.muml.pim.component.diagram.part.ComponentDiagramEditorID"
                 editorName="Component Editor"
                 fileExtension="component_diagram"
                 modelElementCategoryKey="de.uni_paderborn.fujaba.muml.components.category"
                 modelId="Component"
-                preferencesHint="de.uni_paderborn.fujaba.muml.component.diagram">
+                preferencesHint="org.muml.pim.component.diagram">
              <diagramElement
                    packageNsURI="http://www.muml.org/modelinstance/1.0.0"
                    className="ModelElementCategory">

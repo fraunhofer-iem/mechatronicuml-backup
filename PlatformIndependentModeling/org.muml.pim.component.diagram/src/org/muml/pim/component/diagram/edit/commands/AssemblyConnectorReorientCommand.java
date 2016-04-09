@@ -55,6 +55,7 @@ public class AssemblyConnectorReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	public boolean canExecute() {
+		int i;
 		if (false == getElementToEdit() instanceof org.muml.pim.component.AssemblyConnector) {
 			return false;
 		}

@@ -17,7 +17,7 @@
                            ifEmpty="false">
                         <or>
                            <instanceof
-                                 value="de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DiscretePortEditPart">
+                                 value="org.muml.pim.component.diagram.edit.parts.DiscretePortEditPart">
                            </instanceof>
                            <instanceof
                                  value="de.uni_paderborn.fujaba.muml.component.DiscretePort">

@@ -58,62 +58,62 @@ public class MumlElementTypes {
 	 * @generated
 	 */
 	public static final IElementType ModelElementCategory_1000 = getElementType(
-			"de.uni_paderborn.fujaba.muml.component.diagram.ModelElementCategory_1000"); //$NON-NLS-1$
+			"org.muml.pim.component.diagram.ModelElementCategory_1000"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
 	public static final IElementType StaticAtomicComponent_2006 = getElementType(
-			"de.uni_paderborn.fujaba.muml.component.diagram.StaticAtomicComponent_2006"); //$NON-NLS-1$
+			"org.muml.pim.component.diagram.StaticAtomicComponent_2006"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
 	public static final IElementType StaticStructuredComponent_2005 = getElementType(
-			"de.uni_paderborn.fujaba.muml.component.diagram.StaticStructuredComponent_2005"); //$NON-NLS-1$
+			"org.muml.pim.component.diagram.StaticStructuredComponent_2005"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
 	public static final IElementType DiscretePort_3010 = getElementType(
-			"de.uni_paderborn.fujaba.muml.component.diagram.DiscretePort_3010"); //$NON-NLS-1$
+			"org.muml.pim.component.diagram.DiscretePort_3010"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
 	public static final IElementType ContinuousPort_3011 = getElementType(
-			"de.uni_paderborn.fujaba.muml.component.diagram.ContinuousPort_3011"); //$NON-NLS-1$
+			"org.muml.pim.component.diagram.ContinuousPort_3011"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
 	public static final IElementType HybridPort_3013 = getElementType(
-			"de.uni_paderborn.fujaba.muml.component.diagram.HybridPort_3013"); //$NON-NLS-1$
+			"org.muml.pim.component.diagram.HybridPort_3013"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
 	public static final IElementType ComponentPart_3012 = getElementType(
-			"de.uni_paderborn.fujaba.muml.component.diagram.ComponentPart_3012"); //$NON-NLS-1$
+			"org.muml.pim.component.diagram.ComponentPart_3012"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
 	public static final IElementType PortPart_3022 = getElementType(
-			"de.uni_paderborn.fujaba.muml.component.diagram.PortPart_3022"); //$NON-NLS-1$
+			"org.muml.pim.component.diagram.PortPart_3022"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
 	public static final IElementType CoordinationProtocolPart_3016 = getElementType(
-			"de.uni_paderborn.fujaba.muml.component.diagram.CoordinationProtocolPart_3016"); //$NON-NLS-1$
+			"org.muml.pim.component.diagram.CoordinationProtocolPart_3016"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
 	public static final IElementType AssemblyConnector_4001 = getElementType(
-			"de.uni_paderborn.fujaba.muml.component.diagram.AssemblyConnector_4001"); //$NON-NLS-1$
+			"org.muml.pim.component.diagram.AssemblyConnector_4001"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
 	public static final IElementType DelegationConnector_4002 = getElementType(
-			"de.uni_paderborn.fujaba.muml.component.diagram.DelegationConnector_4002"); //$NON-NLS-1$
+			"org.muml.pim.component.diagram.DelegationConnector_4002"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
 	public static final IElementType PortPartCoordinationProtocolPart_4004 = getElementType(
-			"de.uni_paderborn.fujaba.muml.component.diagram.PortPartCoordinationProtocolPart_4004"); //$NON-NLS-1$
+			"org.muml.pim.component.diagram.PortPartCoordinationProtocolPart_4004"); //$NON-NLS-1$
 
 	/**
 	 * @generated

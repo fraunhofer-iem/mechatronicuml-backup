@@ -19,7 +19,7 @@ public class PimNLSUnusedMessageTest extends NLSUnusedMessageTest {
 	@Parameters
 	public static Collection<Object[]> getPluginIDs() {
 		return new ArrayList<Object[]>(Arrays.asList(new Object[][] {
-				new Object[] {"de.uni_paderborn.fujaba.muml.component.diagram"},
+				new Object[] {"org.muml.pim.component.diagram"},
 				new Object[] {"de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram"},
 				new Object[] {"de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram"},
 				new Object[] {"de.uni_paderborn.fujaba.muml.deployment.diagram"},

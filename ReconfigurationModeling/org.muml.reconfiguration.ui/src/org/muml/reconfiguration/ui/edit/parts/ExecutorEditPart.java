@@ -66,7 +66,7 @@ public class ExecutorEditPart extends AbstractBorderedShapeEditPart {
 		// installEditPolicy(
 		// EditPolicyRoles.CREATION_ROLE,
 		// new CreationEditPolicyWithCustomReparent(
-		// de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry.TYPED_INSTANCE));
+		// org.muml.pim.component.diagram.part.MumlVisualIDRegistry.TYPED_INSTANCE));
 		// super.createDefaultEditPolicies();
 		 installEditPolicy(
 		 EditPolicyRoles.SEMANTIC_ROLE,
@@ -108,7 +108,7 @@ public class ExecutorEditPart extends AbstractBorderedShapeEditPart {
 						.getVisualID(childView)) {
 				case org.muml.pim.component.diagram.edit.parts.DiscretePortEditPart.VISUAL_ID:
 					// case
-					// de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ContinuousPortEditPart.VISUAL_ID:
+					// org.muml.pim.component.diagram.edit.parts.ContinuousPortEditPart.VISUAL_ID:
 					// case
 					// de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurationMessagePortEditPart.VISUAL_ID:
 				case org.muml.reconfiguration.ui.edit.parts.ReconfigurationExecutionPortEditPart.VISUAL_ID:

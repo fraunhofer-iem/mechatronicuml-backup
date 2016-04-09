@@ -18,7 +18,7 @@
       itemSemanticEditPolicyClassName="ComponentInstanceConfigurationDiagramItemSemanticEditPolicy"
       canonicalEditPolicyClassName="ComponentInstanceConfigurationDiagramCanonicalEditPolicy"
       iconProviderPriority="Low"
-      creationWizardCategoryID="de.uni_paderborn.fujaba/de.uni_paderborn.fujaba.diagrams"
+      creationWizardCategoryID="org.muml/org.muml.diagrams"
       validationProviderClassName="ComponentinstanceconfigurationValidationProvider"
       validationProviderPriority="Low"
       validationEnabled="true"

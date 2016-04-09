@@ -169,7 +169,7 @@ package org.muml.common.editingdomain;
 //	 */
 //	private TransactionalEditingDomain createEditingDomain() {
 //		TransactionalEditingDomain editingDomain = DiagramEditingDomainFactory.getInstance().createEditingDomain();
-//		editingDomain.setID("de.uni_paderborn.fujaba.muml.component.diagram.EditingDomain"); //$NON-NLS-1$
+//		editingDomain.setID("org.muml.pim.component.diagram.EditingDomain"); //$NON-NLS-1$
 //		final NotificationFilter diagramResourceModifiedFilter = NotificationFilter
 //				.createNotifierFilter(editingDomain.getResourceSet())
 //				.and(NotificationFilter.createEventTypeFilter(Notification.ADD))
@@ -537,30 +537,30 @@ package org.muml.common.editingdomain;
 //		if (info != null) {
 //			if (!overwrite && !info.isSynchronized()) {
 //				throw new CoreException(new Status(IStatus.ERROR,
-//						de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorPlugin.ID,
+//						org.muml.pim.component.diagram.part.ComponentDiagramEditorPlugin.ID,
 //						IResourceStatus.OUT_OF_SYNC_LOCAL,
-//						de.uni_paderborn.fujaba.muml.component.diagram.part.Messages.MumlDocumentProvider_UnsynchronizedFileSaveError,
+//						org.muml.pim.component.diagram.part.Messages.MumlDocumentProvider_UnsynchronizedFileSaveError,
 //						null));
 //			}
 //			info.stopResourceListening();
 //			fireElementStateChanging(element);
 //			try {
 //				monitor.beginTask(
-//						de.uni_paderborn.fujaba.muml.component.diagram.part.Messages.MumlDocumentProvider_SaveDiagramTask,
+//						org.muml.pim.component.diagram.part.Messages.MumlDocumentProvider_SaveDiagramTask,
 //						info.getResourceSet().getResources().size() + 1); //"Saving diagram"
 //				for (Iterator<Resource> it = info.getLoadedResourcesIterator(); it.hasNext();) {
 //					Resource nextResource = it.next();
 //					monitor.setTaskName(NLS.bind(
-//							de.uni_paderborn.fujaba.muml.component.diagram.part.Messages.MumlDocumentProvider_SaveNextResourceTask,
+//							org.muml.pim.component.diagram.part.Messages.MumlDocumentProvider_SaveNextResourceTask,
 //							nextResource.getURI()));
 //					if (nextResource.isLoaded() && !info.getEditingDomain().isReadOnly(nextResource)) {
 //						try {
-//							nextResource.save(de.uni_paderborn.fujaba.muml.component.diagram.part.MumlDiagramEditorUtil
+//							nextResource.save(org.muml.pim.component.diagram.part.MumlDiagramEditorUtil
 //									.getSaveOptions());
 //						} catch (IOException e) {
 //							fireElementStateChangeFailed(element);
 //							throw new CoreException(new Status(IStatus.ERROR,
-//									de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorPlugin.ID,
+//									org.muml.pim.component.diagram.part.ComponentDiagramEditorPlugin.ID,
 //									EditorStatusCodes.RESOURCE_FAILURE, e.getLocalizedMessage(), null));
 //						}
 //					}
@@ -586,9 +586,9 @@ package org.muml.common.editingdomain;
 //			} else {
 //				fireElementStateChangeFailed(element);
 //				throw new CoreException(new Status(IStatus.ERROR,
-//						de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorPlugin.ID, 0,
+//						org.muml.pim.component.diagram.part.ComponentDiagramEditorPlugin.ID, 0,
 //						NLS.bind(
-//								de.uni_paderborn.fujaba.muml.component.diagram.part.Messages.MumlDocumentProvider_IncorrectInputError,
+//								org.muml.pim.component.diagram.part.Messages.MumlDocumentProvider_IncorrectInputError,
 //								new Object[] { element, "org.eclipse.ui.IFileEditorInput", //$NON-NLS-1$
 //										"org.eclipse.emf.common.ui.URIEditorInput" }), //$NON-NLS-1$ 
 //						null));
@@ -596,7 +596,7 @@ package org.muml.common.editingdomain;
 //			if (false == document instanceof IDiagramDocument) {
 //				fireElementStateChangeFailed(element);
 //				throw new CoreException(new Status(IStatus.ERROR,
-//						de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorPlugin.ID, 0,
+//						org.muml.pim.component.diagram.part.ComponentDiagramEditorPlugin.ID, 0,
 //						"Incorrect document used: " + document //$NON-NLS-1$
 //								+ " instead of org.eclipse.gmf.runtime.diagram.ui.resources.editor.document.IDiagramDocument", //$NON-NLS-1$
 //						null));
@@ -608,7 +608,7 @@ package org.muml.common.editingdomain;
 //			try {
 //				new AbstractTransactionalCommand(diagramDocument.getEditingDomain(),
 //						NLS.bind(
-//								de.uni_paderborn.fujaba.muml.component.diagram.part.Messages.MumlDocumentProvider_SaveAsOperation,
+//								org.muml.pim.component.diagram.part.Messages.MumlDocumentProvider_SaveAsOperation,
 //								diagramCopy.getName()),
 //						affectedFiles) {
 //					protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info)
@@ -618,16 +618,16 @@ package org.muml.common.editingdomain;
 //					}
 //				}.execute(monitor, null);
 //				newResource.save(
-//						de.uni_paderborn.fujaba.muml.component.diagram.part.MumlDiagramEditorUtil.getSaveOptions());
+//						org.muml.pim.component.diagram.part.MumlDiagramEditorUtil.getSaveOptions());
 //			} catch (ExecutionException e) {
 //				fireElementStateChangeFailed(element);
 //				throw new CoreException(new Status(IStatus.ERROR,
-//						de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorPlugin.ID, 0,
+//						org.muml.pim.component.diagram.part.ComponentDiagramEditorPlugin.ID, 0,
 //						e.getLocalizedMessage(), null));
 //			} catch (IOException e) {
 //				fireElementStateChangeFailed(element);
 //				throw new CoreException(new Status(IStatus.ERROR,
-//						de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorPlugin.ID, 0,
+//						org.muml.pim.component.diagram.part.ComponentDiagramEditorPlugin.ID, 0,
 //						e.getLocalizedMessage(), null));
 //			}
 //			newResource.unload();
@@ -643,8 +643,8 @@ package org.muml.common.editingdomain;
 //			try {
 //				file.refreshLocal(IResource.DEPTH_INFINITE, monitor);
 //			} catch (CoreException ex) {
-//				de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorPlugin.getInstance().logError(
-//						de.uni_paderborn.fujaba.muml.component.diagram.part.Messages.MumlDocumentProvider_handleElementContentChanged,
+//				org.muml.pim.component.diagram.part.ComponentDiagramEditorPlugin.getInstance().logError(
+//						org.muml.pim.component.diagram.part.Messages.MumlDocumentProvider_handleElementContentChanged,
 //						ex);
 //				// Error message to log was initially taken from org.eclipse.gmf.runtime.diagram.ui.resources.editor.ide.internal.l10n.EditorMessages.FileDocumentProvider_handleElementContentChanged
 //			}

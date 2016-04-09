@@ -12,8 +12,8 @@
                visible="true">
          </separator>
          <command
-               commandId="de.uni_paderborn.fujaba.muml.component.diagram.custom.copyRolePropertiesToPort"
-               id="de.uni_paderborn.fujaba.muml.component.diagram.custom.copyRolePropertiesToPort"
+               commandId="org.muml.pim.component.diagram.custom.copyRolePropertiesToPort"
+               id="org.muml.pim.component.diagram.custom.copyRolePropertiesToPort"
                label="Copy Role Properties To Port"
                style="push">
             <visibleWhen>
@@ -30,8 +30,8 @@
             </visibleWhen>
          </command>
          <command
-               commandId="de.uni_paderborn.fujaba.muml.component.diagram.custom.embedAllPortBehavior"
-               id="de.uni_paderborn.fujaba.muml.component.diagram.custom.embedAllPortBehavior"
+               commandId="org.muml.pim.component.diagram.custom.embedAllPortBehavior"
+               id="org.muml.pim.component.diagram.custom.embedAllPortBehavior"
                label="Embed All Ports&apos; Behavior in the behavior Real-Time Statechart of the Atomic Component"
                style="push">
              <visibleWhen>
@@ -50,7 +50,7 @@
             </visibleWhen>
          </command>
          <command
-               commandId="de.uni_paderborn.fujaba.muml.component.diagram.custom.CreateComponentRTSCandCopyRolePropertiesToPortCommand"
+               commandId="org.muml.pim.component.diagram.custom.CreateComponentRTSCandCopyRolePropertiesToPortCommand"
                id="CreateComponentRTSCandCopyRolePropertiesToPort"
                label="Create Component-RTSC (incl. Diagram) And Copy All Role Properties to Ports"
                style="push">
@@ -70,7 +70,7 @@
          </command>
          <command
                commandId="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.custom.createRoleRTSCCommand"
-               id="de.uni_paderborn.fujaba.muml.component.diagram.custom.copyRolePropertiesToPortde.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.custom.createRoleRTSC"
+               id="org.muml.pim.component.diagram.custom.copyRolePropertiesToPortde.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.custom.createRoleRTSC"
                label="Create Role RTSC (incl. Diagram)"
                style="push">
             <visibleWhen>
@@ -104,8 +104,8 @@
             </visibleWhen>
          </command>
          <command
-               commandId="de.uni_paderborn.fujaba.muml.component.diagram.custom.embedAsParts"
-               id="de.uni_paderborn.fujaba.muml.component.diagram.custom.embedAsParts"
+               commandId="org.muml.pim.component.diagram.custom.embedAsParts"
+               id="org.muml.pim.component.diagram.custom.embedAsParts"
                label="Embed Selected Components As Parts in a new Structured Component"
                style="push">
             <visibleWhen>
@@ -128,8 +128,8 @@
             </visibleWhen>
          </command>
          <command
-               commandId="de.uni_paderborn.fujaba.muml.component.diagram.custom.createBufferForMsgType"
-               id="de.uni_paderborn.fujaba.muml.component.diagram.custom.createBufferForMsgType"
+               commandId="org.muml.pim.component.diagram.custom.createBufferForMsgType"
+               id="org.muml.pim.component.diagram.custom.createBufferForMsgType"
                label="Create MessageBuffer for every ReceiverMessageType"
                style="push">
             <visibleWhen>
@@ -154,21 +154,21 @@
             categoryId="de.uni_paderborn.fujaba"
             defaultHandler="org.muml.pim.ui.contextmenu.handlers.component.CopyRolePropertiesToPortHandler"
             description="Copy Properties defined in the Role to the Port."
-            id="de.uni_paderborn.fujaba.muml.component.diagram.custom.copyRolePropertiesToPort"
+            id="org.muml.pim.component.diagram.custom.copyRolePropertiesToPort"
             name="Copy Role Properties To Port">
       </command>
       <command
             categoryId="de.uni_paderborn.fujaba"
             defaultHandler="org.muml.pim.ui.contextmenu.handlers.component.EmbedAllPortBehaviorsToACHandler"
             description="Embeds the behavior of all DiscretePorts into the Behavior of this Atomic Component"
-            id="de.uni_paderborn.fujaba.muml.component.diagram.custom.embedAllPortBehavior"
+            id="org.muml.pim.component.diagram.custom.embedAllPortBehavior"
             name="Embed All Port Behaviors">
       </command>
       <command
             categoryId="de.uni_paderborn.fujaba"
             defaultHandler="org.muml.pim.ui.contextmenu.handlers.component.CreateCompRTSCCopyRolePropertiesHandler"
             description="Create Component-RTSC (incl. Diagram) And Copy All Role Properties to Ports"
-            id="de.uni_paderborn.fujaba.muml.component.diagram.custom.CreateComponentRTSCandCopyRolePropertiesToPortCommand"
+            id="org.muml.pim.component.diagram.custom.CreateComponentRTSCandCopyRolePropertiesToPortCommand"
             name="Create Component-RTSC (incl. Diagram) And Copy All Role Properties to Ports">
       </command>
        <command
@@ -187,14 +187,14 @@
             categoryId="de.uni_paderborn.fujaba"
             defaultHandler="org.muml.pim.ui.contextmenu.handlers.component.EmbedAsPartsHandler"
             description="Embeds Atomic Components as Component Parts in a new Structured Component."
-            id="de.uni_paderborn.fujaba.muml.component.diagram.custom.embedAsParts"
+            id="org.muml.pim.component.diagram.custom.embedAsParts"
             name="Embed As Parts">
       </command>
        <command
              categoryId="de.uni_paderborn.fujaba"
              defaultHandler="org.muml.pim.ui.contextmenu.handlers.discreteInteractionEndpoint.CreateMessageBufferForEveryReceiverMessageTypeHandler"
              description="Create a MessageBuffer for every Receiver MessageType"
-             id="de.uni_paderborn.fujaba.muml.component.diagram.custom.createBufferForMsgType"
+             id="org.muml.pim.component.diagram.custom.createBufferForMsgType"
              name="Create MessageBuffer for every receiver message type">
        </command>
    </extension>

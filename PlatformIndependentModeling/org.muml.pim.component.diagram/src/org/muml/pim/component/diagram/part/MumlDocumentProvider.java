@@ -168,7 +168,7 @@ public class MumlDocumentProvider extends AbstractDocumentProvider implements ID
 	 */
 	private TransactionalEditingDomain createEditingDomain() {
 		TransactionalEditingDomain editingDomain = DiagramEditingDomainFactory.getInstance().createEditingDomain();
-		editingDomain.setID("de.uni_paderborn.fujaba.muml.component.diagram.EditingDomain"); //$NON-NLS-1$
+		editingDomain.setID("org.muml.pim.component.diagram.EditingDomain"); //$NON-NLS-1$
 		final NotificationFilter diagramResourceModifiedFilter = NotificationFilter
 				.createNotifierFilter(editingDomain.getResourceSet())
 				.and(NotificationFilter.createEventTypeFilter(Notification.ADD))

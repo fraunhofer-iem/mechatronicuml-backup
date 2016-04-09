@@ -26,12 +26,12 @@
 							</with>
 							<and>
 								<with variable="activePartId">
-									<equals value="de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorID"/>
+									<equals value="org.muml.pim.component.diagram.part.ComponentDiagramEditorID"/>
 								</with>
 								<with variable="selection">
 									<iterate ifEmpty="false">
 									<instanceof
-									value="de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.AtomicComponentEditPart">
+									value="org.muml.pim.component.diagram.edit.parts.AtomicComponentEditPart">
 									</instanceof>
 									</iterate>
 								</with>

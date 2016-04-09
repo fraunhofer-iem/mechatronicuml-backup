@@ -38,7 +38,7 @@ public class ReconfigurationVisualIDRegistry {
 	}
 
 	// copied from
-	// /de.uni_paderborn.fujaba.muml.component.diagram/src/de/uni_paderborn/fujaba/muml/component/diagram/part/MumlVisualIDRegistry.java
+	// /org.muml.pim.component.diagram/src/de/uni_paderborn/fujaba/muml/component/diagram/part/MumlVisualIDRegistry.java
 	public static String getModelID(View view) {
 		View diagram = view.getDiagram();
 		while (view != diagram) {
@@ -52,7 +52,7 @@ public class ReconfigurationVisualIDRegistry {
 	}
 
 	// copied from
-	// /de.uni_paderborn.fujaba.muml.component.diagram/src/de/uni_paderborn/fujaba/muml/component/diagram/part/MumlVisualIDRegistry.java
+	// /org.muml.pim.component.diagram/src/de/uni_paderborn/fujaba/muml/component/diagram/part/MumlVisualIDRegistry.java
 	public static int getVisualID(String type) {
 		try {
 			return Integer.parseInt(type);
@@ -69,13 +69,13 @@ public class ReconfigurationVisualIDRegistry {
 	}
 
 	// copied from
-	// /de.uni_paderborn.fujaba.muml.component.diagram/src/de/uni_paderborn/fujaba/muml/component/diagram/part/MumlVisualIDRegistry.java
+	// /org.muml.pim.component.diagram/src/de/uni_paderborn/fujaba/muml/component/diagram/part/MumlVisualIDRegistry.java
 	public static String getType(int visualID) {
 		return Integer.toString(visualID);
 	}
 
 	// basically copied from
-	// /de.uni_paderborn.fujaba.muml.component.diagram/src/de/uni_paderborn/fujaba/muml/component/diagram/part/MumlVisualIDRegistry.java
+	// /org.muml.pim.component.diagram/src/de/uni_paderborn/fujaba/muml/component/diagram/part/MumlVisualIDRegistry.java
 	public static int getDiagramVisualID(EObject domainElement) {
 		if (domainElement == null) {
 			return -1;
@@ -90,7 +90,7 @@ public class ReconfigurationVisualIDRegistry {
 	}
 
 	// basically copied from
-	// /de.uni_paderborn.fujaba.muml.component.diagram/src/de/uni_paderborn/fujaba/muml/component/diagram/part/MumlVisualIDRegistry.java
+	// /org.muml.pim.component.diagram/src/de/uni_paderborn/fujaba/muml/component/diagram/part/MumlVisualIDRegistry.java
 	public static int getNodeVisualID(View containerView, EObject domainElement) {
 		if (domainElement == null) {
 			return -1;

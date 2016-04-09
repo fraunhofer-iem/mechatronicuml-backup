@@ -9,7 +9,7 @@
             categoryId="de.uni_paderborn.fujaba"
             defaultHandler="org.muml.pim.component.diagram.custom.edit.handlers.EmbedAsPartsGraphicalHandler"
             description="Embeds Atomic Components as Component Parts in a new Structured Component."
-            id="de.uni_paderborn.fujaba.muml.component.diagram.custom.embedAsParts.editorcmd"
+            id="org.muml.pim.component.diagram.custom.embedAsParts.editorcmd"
             name="Embed As Parts">
       </command>
    </extension>
@@ -20,7 +20,7 @@
    <extension
          point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders">
       <editpartProvider
-            class="de.uni_paderborn.fujaba.muml.component.diagram.custom.providers.CustomStructuredcomponentEditPartProvider">
+            class="org.muml.pim.component.diagram.custom.providers.CustomStructuredcomponentEditPartProvider">
          <Priority
                name="Low">
          </Priority>
@@ -38,7 +38,7 @@
    </extension>
 	
    <extension point="org.eclipse.gmf.runtime.diagram.ui.layoutProviders">
-       <layoutProvider class="de.uni_paderborn.fujaba.muml.component.diagram.custom.layout.ComponentLayoutProvider">
+       <layoutProvider class="org.muml.pim.component.diagram.custom.layout.ComponentLayoutProvider">
             <Priority name="High"/>
        </layoutProvider>
    </extension>
