@@ -15,18 +15,18 @@ package org.muml.pim.component.diagram.edit.policies;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
+import org.muml.pim.component.diagram.providers.MumlElementTypes;
 
 /**
  * @generated
  */
-public class AssemblyConnectorItemSemanticEditPolicy
-		extends org.muml.pim.component.diagram.edit.policies.MumlBaseItemSemanticEditPolicy {
+public class AssemblyConnectorItemSemanticEditPolicy extends MumlBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public AssemblyConnectorItemSemanticEditPolicy() {
-		super(org.muml.pim.component.diagram.providers.MumlElementTypes.AssemblyConnector_4001);
+		super(MumlElementTypes.AssemblyConnector_4001);
 	}
 
 	/**

@@ -23,6 +23,10 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.pim.component.Component;
+import org.muml.pim.component.ComponentFactory;
+import org.muml.pim.component.HybridPort;
+import org.muml.pim.component.diagram.providers.ElementInitializers;
 
 /**
  * @generated
@@ -60,14 +64,12 @@ public class HybridPortCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-		org.muml.pim.component.HybridPort newElement = org.muml.pim.component.ComponentFactory.eINSTANCE
-				.createHybridPort();
+		HybridPort newElement = ComponentFactory.eINSTANCE.createHybridPort();
 
-		org.muml.pim.component.Component owner = (org.muml.pim.component.Component) getElementToEdit();
+		Component owner = (Component) getElementToEdit();
 		owner.getPorts().add(newElement);
 
-		org.muml.pim.component.diagram.providers.ElementInitializers.getInstance()
-				.init_HybridPort_3013(newElement);
+		ElementInitializers.getInstance().init_HybridPort_3013(newElement);
 
 		doConfigure(newElement, monitor, info);
 
@@ -76,10 +78,10 @@ public class HybridPortCreateCommand extends EditElementCommand {
 	}
 
 	/**
-	 * @generated
-	 */
-	protected void doConfigure(org.muml.pim.component.HybridPort newElement, IProgressMonitor monitor,
-			IAdaptable info) throws ExecutionException {
+	* @generated
+	*/
+	protected void doConfigure(HybridPort newElement, IProgressMonitor monitor, IAdaptable info)
+			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest()).getElementType();
 		ConfigureRequest configureRequest = new ConfigureRequest(getEditingDomain(), newElement, elementType);
 		configureRequest.setClientContext(((CreateElementRequest) getRequest()).getClientContext());

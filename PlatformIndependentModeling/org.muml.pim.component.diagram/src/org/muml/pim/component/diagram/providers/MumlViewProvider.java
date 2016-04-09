@@ -54,6 +54,29 @@ import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.jface.preference.PreferenceConverter;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.FontData;
+import org.muml.pim.component.diagram.edit.parts.AssemblyConnectorEditPart;
+import org.muml.pim.component.diagram.edit.parts.ComponentPartEditPart;
+import org.muml.pim.component.diagram.edit.parts.ContinuousPortEditPart;
+import org.muml.pim.component.diagram.edit.parts.ContinuousPortNameEditPart;
+import org.muml.pim.component.diagram.edit.parts.CoordinationProtocolPartEditPart;
+import org.muml.pim.component.diagram.edit.parts.DelegationConnectorEditPart;
+import org.muml.pim.component.diagram.edit.parts.DiscretePortEditPart;
+import org.muml.pim.component.diagram.edit.parts.DiscretePortNameEditPart;
+import org.muml.pim.component.diagram.edit.parts.HybridPortEditPart;
+import org.muml.pim.component.diagram.edit.parts.ModelElementCategoryEditPart;
+import org.muml.pim.component.diagram.edit.parts.PortPartCoordinationProtocolPartEditPart;
+import org.muml.pim.component.diagram.edit.parts.PortPartEditPart;
+import org.muml.pim.component.diagram.edit.parts.PortPartNameEditPart;
+import org.muml.pim.component.diagram.edit.parts.StaticAtomicComponentEditPart;
+import org.muml.pim.component.diagram.edit.parts.StaticAtomicComponentNameEditPart;
+import org.muml.pim.component.diagram.edit.parts.StaticStructuredComponentComponentCompartmentEditPart;
+import org.muml.pim.component.diagram.edit.parts.StaticStructuredComponentEditPart;
+import org.muml.pim.component.diagram.edit.parts.StaticStructuredComponentNameEditPart;
+import org.muml.pim.component.diagram.edit.parts.WrappingLabel2EditPart;
+import org.muml.pim.component.diagram.edit.parts.WrappingLabel3EditPart;
+import org.muml.pim.component.diagram.edit.parts.WrappingLabel4EditPart;
+import org.muml.pim.component.diagram.edit.parts.WrappingLabelEditPart;
+import org.muml.pim.component.diagram.part.MumlVisualIDRegistry;
 
 /**
  * @generated
@@ -95,10 +118,8 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 	 * @generated
 	 */
 	protected boolean provides(CreateDiagramViewOperation op) {
-		return org.muml.pim.component.diagram.edit.parts.ModelElementCategoryEditPart.MODEL_ID
-				.equals(op.getSemanticHint())
-				&& org.muml.pim.component.diagram.part.MumlVisualIDRegistry
-						.getDiagramVisualID(getSemanticElement(op.getSemanticAdapter())) != -1;
+		return ModelElementCategoryEditPart.MODEL_ID.equals(op.getSemanticHint())
+				&& MumlVisualIDRegistry.getDiagramVisualID(getSemanticElement(op.getSemanticAdapter())) != -1;
 	}
 
 	/**
@@ -118,14 +139,11 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 			if (elementType != null || domainElement == null) {
 				return false;
 			}
-			visualID = org.muml.pim.component.diagram.part.MumlVisualIDRegistry
-					.getNodeVisualID(op.getContainerView(), domainElement);
+			visualID = MumlVisualIDRegistry.getNodeVisualID(op.getContainerView(), domainElement);
 		} else {
-			visualID = org.muml.pim.component.diagram.part.MumlVisualIDRegistry
-					.getVisualID(op.getSemanticHint());
+			visualID = MumlVisualIDRegistry.getVisualID(op.getSemanticHint());
 			if (elementType != null) {
-				if (!org.muml.pim.component.diagram.providers.MumlElementTypes
-						.isKnownElementType(elementType) || (!(elementType instanceof IHintedType))) {
+				if (!MumlElementTypes.isKnownElementType(elementType) || (!(elementType instanceof IHintedType))) {
 					return false; // foreign element type
 				}
 				String elementTypeHint = ((IHintedType) elementType).getSemanticHint();
@@ -133,28 +151,25 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 					return false; // if semantic hint is specified it should be the same as in element type
 				}
 				if (domainElement != null
-						&& visualID != org.muml.pim.component.diagram.part.MumlVisualIDRegistry
-								.getNodeVisualID(op.getContainerView(), domainElement)) {
+						&& visualID != MumlVisualIDRegistry.getNodeVisualID(op.getContainerView(), domainElement)) {
 					return false; // visual id for node EClass should match visual id from element type
 				}
 			} else {
-				if (!org.muml.pim.component.diagram.edit.parts.ModelElementCategoryEditPart.MODEL_ID
-						.equals(org.muml.pim.component.diagram.part.MumlVisualIDRegistry
-								.getModelID(op.getContainerView()))) {
+				if (!ModelElementCategoryEditPart.MODEL_ID
+						.equals(MumlVisualIDRegistry.getModelID(op.getContainerView()))) {
 					return false; // foreign diagram
 				}
 				switch (visualID) {
-				case org.muml.pim.component.diagram.edit.parts.StaticAtomicComponentEditPart.VISUAL_ID:
-				case org.muml.pim.component.diagram.edit.parts.StaticStructuredComponentEditPart.VISUAL_ID:
-				case org.muml.pim.component.diagram.edit.parts.DiscretePortEditPart.VISUAL_ID:
-				case org.muml.pim.component.diagram.edit.parts.ContinuousPortEditPart.VISUAL_ID:
-				case org.muml.pim.component.diagram.edit.parts.HybridPortEditPart.VISUAL_ID:
-				case org.muml.pim.component.diagram.edit.parts.ComponentPartEditPart.VISUAL_ID:
-				case org.muml.pim.component.diagram.edit.parts.PortPartEditPart.VISUAL_ID:
-				case org.muml.pim.component.diagram.edit.parts.CoordinationProtocolPartEditPart.VISUAL_ID:
+				case StaticAtomicComponentEditPart.VISUAL_ID:
+				case StaticStructuredComponentEditPart.VISUAL_ID:
+				case DiscretePortEditPart.VISUAL_ID:
+				case ContinuousPortEditPart.VISUAL_ID:
+				case HybridPortEditPart.VISUAL_ID:
+				case ComponentPartEditPart.VISUAL_ID:
+				case PortPartEditPart.VISUAL_ID:
+				case CoordinationProtocolPartEditPart.VISUAL_ID:
 					if (domainElement == null
-							|| visualID != org.muml.pim.component.diagram.part.MumlVisualIDRegistry
-									.getNodeVisualID(op.getContainerView(), domainElement)) {
+							|| visualID != MumlVisualIDRegistry.getNodeVisualID(op.getContainerView(), domainElement)) {
 						return false; // visual id in semantic hint should match visual id for domain element
 					}
 					break;
@@ -163,14 +178,11 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 				}
 			}
 		}
-		return org.muml.pim.component.diagram.edit.parts.StaticAtomicComponentEditPart.VISUAL_ID == visualID
-				|| org.muml.pim.component.diagram.edit.parts.StaticStructuredComponentEditPart.VISUAL_ID == visualID
-				|| org.muml.pim.component.diagram.edit.parts.DiscretePortEditPart.VISUAL_ID == visualID
-				|| org.muml.pim.component.diagram.edit.parts.ContinuousPortEditPart.VISUAL_ID == visualID
-				|| org.muml.pim.component.diagram.edit.parts.HybridPortEditPart.VISUAL_ID == visualID
-				|| org.muml.pim.component.diagram.edit.parts.ComponentPartEditPart.VISUAL_ID == visualID
-				|| org.muml.pim.component.diagram.edit.parts.PortPartEditPart.VISUAL_ID == visualID
-				|| org.muml.pim.component.diagram.edit.parts.CoordinationProtocolPartEditPart.VISUAL_ID == visualID;
+		return StaticAtomicComponentEditPart.VISUAL_ID == visualID
+				|| StaticStructuredComponentEditPart.VISUAL_ID == visualID || DiscretePortEditPart.VISUAL_ID == visualID
+				|| ContinuousPortEditPart.VISUAL_ID == visualID || HybridPortEditPart.VISUAL_ID == visualID
+				|| ComponentPartEditPart.VISUAL_ID == visualID || PortPartEditPart.VISUAL_ID == visualID
+				|| CoordinationProtocolPartEditPart.VISUAL_ID == visualID;
 	}
 
 	/**
@@ -178,8 +190,7 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 	 */
 	protected boolean provides(CreateEdgeViewOperation op) {
 		IElementType elementType = getSemanticElementType(op.getSemanticAdapter());
-		if (!org.muml.pim.component.diagram.providers.MumlElementTypes.isKnownElementType(elementType)
-				|| (!(elementType instanceof IHintedType))) {
+		if (!MumlElementTypes.isKnownElementType(elementType) || (!(elementType instanceof IHintedType))) {
 			return false; // foreign element type
 		}
 		String elementTypeHint = ((IHintedType) elementType).getSemanticHint();
@@ -187,12 +198,9 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 				|| (op.getSemanticHint() != null && !elementTypeHint.equals(op.getSemanticHint()))) {
 			return false; // our hint is visual id and must be specified, and it should be the same as in element type
 		}
-		int visualID = org.muml.pim.component.diagram.part.MumlVisualIDRegistry
-				.getVisualID(elementTypeHint);
+		int visualID = MumlVisualIDRegistry.getVisualID(elementTypeHint);
 		EObject domainElement = getSemanticElement(op.getSemanticAdapter());
-		if (domainElement != null
-				&& visualID != org.muml.pim.component.diagram.part.MumlVisualIDRegistry
-						.getLinkWithClassVisualID(domainElement)) {
+		if (domainElement != null && visualID != MumlVisualIDRegistry.getLinkWithClassVisualID(domainElement)) {
 			return false; // visual id for link EClass should match visual id from element type
 		}
 		return true;
@@ -204,8 +212,7 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 	public Diagram createDiagram(IAdaptable semanticAdapter, String diagramKind, PreferencesHint preferencesHint) {
 		Diagram diagram = NotationFactory.eINSTANCE.createDiagram();
 		diagram.getStyles().add(NotationFactory.eINSTANCE.createDiagramStyle());
-		diagram.setType(
-				org.muml.pim.component.diagram.edit.parts.ModelElementCategoryEditPart.MODEL_ID);
+		diagram.setType(ModelElementCategoryEditPart.MODEL_ID);
 		diagram.setElement(getSemanticElement(semanticAdapter));
 		diagram.setMeasurementUnit(MeasurementUnit.PIXEL_LITERAL);
 		return diagram;
@@ -219,29 +226,27 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 		final EObject domainElement = getSemanticElement(semanticAdapter);
 		final int visualID;
 		if (semanticHint == null) {
-			visualID = org.muml.pim.component.diagram.part.MumlVisualIDRegistry
-					.getNodeVisualID(containerView, domainElement);
+			visualID = MumlVisualIDRegistry.getNodeVisualID(containerView, domainElement);
 		} else {
-			visualID = org.muml.pim.component.diagram.part.MumlVisualIDRegistry
-					.getVisualID(semanticHint);
+			visualID = MumlVisualIDRegistry.getVisualID(semanticHint);
 		}
 		switch (visualID) {
-		case org.muml.pim.component.diagram.edit.parts.StaticAtomicComponentEditPart.VISUAL_ID:
+		case StaticAtomicComponentEditPart.VISUAL_ID:
 			return createStaticAtomicComponent_2006(domainElement, containerView, index, persisted, preferencesHint);
-		case org.muml.pim.component.diagram.edit.parts.StaticStructuredComponentEditPart.VISUAL_ID:
+		case StaticStructuredComponentEditPart.VISUAL_ID:
 			return createStaticStructuredComponent_2005(domainElement, containerView, index, persisted,
 					preferencesHint);
-		case org.muml.pim.component.diagram.edit.parts.DiscretePortEditPart.VISUAL_ID:
+		case DiscretePortEditPart.VISUAL_ID:
 			return createDiscretePort_3010(domainElement, containerView, index, persisted, preferencesHint);
-		case org.muml.pim.component.diagram.edit.parts.ContinuousPortEditPart.VISUAL_ID:
+		case ContinuousPortEditPart.VISUAL_ID:
 			return createContinuousPort_3011(domainElement, containerView, index, persisted, preferencesHint);
-		case org.muml.pim.component.diagram.edit.parts.HybridPortEditPart.VISUAL_ID:
+		case HybridPortEditPart.VISUAL_ID:
 			return createHybridPort_3013(domainElement, containerView, index, persisted, preferencesHint);
-		case org.muml.pim.component.diagram.edit.parts.ComponentPartEditPart.VISUAL_ID:
+		case ComponentPartEditPart.VISUAL_ID:
 			return createComponentPart_3012(domainElement, containerView, index, persisted, preferencesHint);
-		case org.muml.pim.component.diagram.edit.parts.PortPartEditPart.VISUAL_ID:
+		case PortPartEditPart.VISUAL_ID:
 			return createPortPart_3022(domainElement, containerView, index, persisted, preferencesHint);
-		case org.muml.pim.component.diagram.edit.parts.CoordinationProtocolPartEditPart.VISUAL_ID:
+		case CoordinationProtocolPartEditPart.VISUAL_ID:
 			return createCoordinationProtocolPart_3016(domainElement, containerView, index, persisted, preferencesHint);
 		}
 		// can't happen, provided #provides(CreateNodeViewOperation) is correct
@@ -255,14 +260,14 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 			boolean persisted, PreferencesHint preferencesHint) {
 		IElementType elementType = getSemanticElementType(semanticAdapter);
 		String elementTypeHint = ((IHintedType) elementType).getSemanticHint();
-		switch (org.muml.pim.component.diagram.part.MumlVisualIDRegistry.getVisualID(elementTypeHint)) {
-		case org.muml.pim.component.diagram.edit.parts.AssemblyConnectorEditPart.VISUAL_ID:
+		switch (MumlVisualIDRegistry.getVisualID(elementTypeHint)) {
+		case AssemblyConnectorEditPart.VISUAL_ID:
 			return createAssemblyConnector_4001(getSemanticElement(semanticAdapter), containerView, index, persisted,
 					preferencesHint);
-		case org.muml.pim.component.diagram.edit.parts.DelegationConnectorEditPart.VISUAL_ID:
+		case DelegationConnectorEditPart.VISUAL_ID:
 			return createDelegationConnector_4002(getSemanticElement(semanticAdapter), containerView, index, persisted,
 					preferencesHint);
-		case org.muml.pim.component.diagram.edit.parts.PortPartCoordinationProtocolPartEditPart.VISUAL_ID:
+		case PortPartCoordinationProtocolPartEditPart.VISUAL_ID:
 			return createPortPartCoordinationProtocolPart_4004(containerView, index, persisted, preferencesHint);
 		}
 		// can never happen, provided #provides(CreateEdgeViewOperation) is correct
@@ -276,8 +281,7 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 			boolean persisted, PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
-		node.setType(org.muml.pim.component.diagram.part.MumlVisualIDRegistry.getType(
-				org.muml.pim.component.diagram.edit.parts.StaticAtomicComponentEditPart.VISUAL_ID));
+		node.setType(MumlVisualIDRegistry.getType(StaticAtomicComponentEditPart.VISUAL_ID));
 		ViewUtil.insertChildView(containerView, node, index, persisted);
 		node.setElement(domainElement);
 		stampShortcut(containerView, node);
@@ -303,9 +307,7 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 				IPreferenceConstants.PREF_FILL_COLOR);
 		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5028 = createLabel(node,
-				org.muml.pim.component.diagram.part.MumlVisualIDRegistry.getType(
-						org.muml.pim.component.diagram.edit.parts.StaticAtomicComponentNameEditPart.VISUAL_ID));
+		Node label5028 = createLabel(node, MumlVisualIDRegistry.getType(StaticAtomicComponentNameEditPart.VISUAL_ID));
 		return node;
 	}
 
@@ -316,8 +318,7 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 			boolean persisted, PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
-		node.setType(org.muml.pim.component.diagram.part.MumlVisualIDRegistry.getType(
-				org.muml.pim.component.diagram.edit.parts.StaticStructuredComponentEditPart.VISUAL_ID));
+		node.setType(MumlVisualIDRegistry.getType(StaticStructuredComponentEditPart.VISUAL_ID));
 		ViewUtil.insertChildView(containerView, node, index, persisted);
 		node.setElement(domainElement);
 		stampShortcut(containerView, node);
@@ -344,12 +345,10 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
 		Node label5021 = createLabel(node,
-				org.muml.pim.component.diagram.part.MumlVisualIDRegistry.getType(
-						org.muml.pim.component.diagram.edit.parts.StaticStructuredComponentNameEditPart.VISUAL_ID));
+				MumlVisualIDRegistry.getType(StaticStructuredComponentNameEditPart.VISUAL_ID));
 		createCompartment(node,
-				org.muml.pim.component.diagram.part.MumlVisualIDRegistry.getType(
-						org.muml.pim.component.diagram.edit.parts.StaticStructuredComponentComponentCompartmentEditPart.VISUAL_ID),
-				false, false, false, false);
+				MumlVisualIDRegistry.getType(StaticStructuredComponentComponentCompartmentEditPart.VISUAL_ID), false,
+				false, false, false);
 		return node;
 	}
 
@@ -360,8 +359,7 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
-		node.setType(org.muml.pim.component.diagram.part.MumlVisualIDRegistry
-				.getType(org.muml.pim.component.diagram.edit.parts.DiscretePortEditPart.VISUAL_ID));
+		node.setType(MumlVisualIDRegistry.getType(DiscretePortEditPart.VISUAL_ID));
 		ViewUtil.insertChildView(containerView, node, index, persisted);
 		node.setElement(domainElement);
 		// initializeFromPreferences 
@@ -386,14 +384,12 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 				IPreferenceConstants.PREF_FILL_COLOR);
 		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5012 = createLabel(node, org.muml.pim.component.diagram.part.MumlVisualIDRegistry
-				.getType(org.muml.pim.component.diagram.edit.parts.DiscretePortNameEditPart.VISUAL_ID));
+		Node label5012 = createLabel(node, MumlVisualIDRegistry.getType(DiscretePortNameEditPart.VISUAL_ID));
 		label5012.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
 		Location location5012 = (Location) label5012.getLayoutConstraint();
 		location5012.setX(0);
 		location5012.setY(5);
-		Node label5025 = createLabel(node, org.muml.pim.component.diagram.part.MumlVisualIDRegistry
-				.getType(org.muml.pim.component.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID));
+		Node label5025 = createLabel(node, MumlVisualIDRegistry.getType(WrappingLabelEditPart.VISUAL_ID));
 		label5025.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
 		Location location5025 = (Location) label5025.getLayoutConstraint();
 		location5025.setX(0);
@@ -408,8 +404,7 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
-		node.setType(org.muml.pim.component.diagram.part.MumlVisualIDRegistry
-				.getType(org.muml.pim.component.diagram.edit.parts.ContinuousPortEditPart.VISUAL_ID));
+		node.setType(MumlVisualIDRegistry.getType(ContinuousPortEditPart.VISUAL_ID));
 		ViewUtil.insertChildView(containerView, node, index, persisted);
 		node.setElement(domainElement);
 		// initializeFromPreferences 
@@ -434,9 +429,7 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 				IPreferenceConstants.PREF_FILL_COLOR);
 		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5013 = createLabel(node,
-				org.muml.pim.component.diagram.part.MumlVisualIDRegistry.getType(
-						org.muml.pim.component.diagram.edit.parts.ContinuousPortNameEditPart.VISUAL_ID));
+		Node label5013 = createLabel(node, MumlVisualIDRegistry.getType(ContinuousPortNameEditPart.VISUAL_ID));
 		label5013.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
 		Location location5013 = (Location) label5013.getLayoutConstraint();
 		location5013.setX(0);
@@ -451,8 +444,7 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
-		node.setType(org.muml.pim.component.diagram.part.MumlVisualIDRegistry
-				.getType(org.muml.pim.component.diagram.edit.parts.HybridPortEditPart.VISUAL_ID));
+		node.setType(MumlVisualIDRegistry.getType(HybridPortEditPart.VISUAL_ID));
 		ViewUtil.insertChildView(containerView, node, index, persisted);
 		node.setElement(domainElement);
 		// initializeFromPreferences 
@@ -477,8 +469,7 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 				IPreferenceConstants.PREF_FILL_COLOR);
 		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5024 = createLabel(node, org.muml.pim.component.diagram.part.MumlVisualIDRegistry
-				.getType(org.muml.pim.component.diagram.edit.parts.WrappingLabel2EditPart.VISUAL_ID));
+		Node label5024 = createLabel(node, MumlVisualIDRegistry.getType(WrappingLabel2EditPart.VISUAL_ID));
 		label5024.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
 		Location location5024 = (Location) label5024.getLayoutConstraint();
 		location5024.setX(0);
@@ -493,8 +484,7 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
-		node.setType(org.muml.pim.component.diagram.part.MumlVisualIDRegistry
-				.getType(org.muml.pim.component.diagram.edit.parts.ComponentPartEditPart.VISUAL_ID));
+		node.setType(MumlVisualIDRegistry.getType(ComponentPartEditPart.VISUAL_ID));
 		ViewUtil.insertChildView(containerView, node, index, persisted);
 		node.setElement(domainElement);
 		// initializeFromPreferences 
@@ -519,8 +509,7 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 				IPreferenceConstants.PREF_FILL_COLOR);
 		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5017 = createLabel(node, org.muml.pim.component.diagram.part.MumlVisualIDRegistry
-				.getType(org.muml.pim.component.diagram.edit.parts.WrappingLabel3EditPart.VISUAL_ID));
+		Node label5017 = createLabel(node, MumlVisualIDRegistry.getType(WrappingLabel3EditPart.VISUAL_ID));
 		return node;
 	}
 
@@ -531,8 +520,7 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
-		node.setType(org.muml.pim.component.diagram.part.MumlVisualIDRegistry
-				.getType(org.muml.pim.component.diagram.edit.parts.PortPartEditPart.VISUAL_ID));
+		node.setType(MumlVisualIDRegistry.getType(PortPartEditPart.VISUAL_ID));
 		ViewUtil.insertChildView(containerView, node, index, persisted);
 		node.setElement(domainElement);
 		// initializeFromPreferences 
@@ -557,8 +545,7 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 				IPreferenceConstants.PREF_FILL_COLOR);
 		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5034 = createLabel(node, org.muml.pim.component.diagram.part.MumlVisualIDRegistry
-				.getType(org.muml.pim.component.diagram.edit.parts.PortPartNameEditPart.VISUAL_ID));
+		Node label5034 = createLabel(node, MumlVisualIDRegistry.getType(PortPartNameEditPart.VISUAL_ID));
 		label5034.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
 		Location location5034 = (Location) label5034.getLayoutConstraint();
 		location5034.setX(0);
@@ -576,8 +563,7 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 		node.getStyles().add(NotationFactory.eINSTANCE.createFontStyle());
 		node.getStyles().add(NotationFactory.eINSTANCE.createLineStyle());
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
-		node.setType(org.muml.pim.component.diagram.part.MumlVisualIDRegistry.getType(
-				org.muml.pim.component.diagram.edit.parts.CoordinationProtocolPartEditPart.VISUAL_ID));
+		node.setType(MumlVisualIDRegistry.getType(CoordinationProtocolPartEditPart.VISUAL_ID));
 		ViewUtil.insertChildView(containerView, node, index, persisted);
 		node.setElement(domainElement);
 		// initializeFromPreferences 
@@ -598,8 +584,7 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 					IPreferenceConstants.PREF_FONT_COLOR);
 			nodeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB).intValue());
 		}
-		Node label5026 = createLabel(node, org.muml.pim.component.diagram.part.MumlVisualIDRegistry
-				.getType(org.muml.pim.component.diagram.edit.parts.WrappingLabel4EditPart.VISUAL_ID));
+		Node label5026 = createLabel(node, MumlVisualIDRegistry.getType(WrappingLabel4EditPart.VISUAL_ID));
 		return node;
 	}
 
@@ -617,8 +602,7 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 		bendpoints.setPoints(points);
 		edge.setBendpoints(bendpoints);
 		ViewUtil.insertChildView(containerView, edge, index, persisted);
-		edge.setType(org.muml.pim.component.diagram.part.MumlVisualIDRegistry.getType(
-				org.muml.pim.component.diagram.edit.parts.AssemblyConnectorEditPart.VISUAL_ID));
+		edge.setType(MumlVisualIDRegistry.getType(AssemblyConnectorEditPart.VISUAL_ID));
 		edge.setElement(domainElement);
 		// initializePreferences
 		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint.getPreferenceStore();
@@ -659,8 +643,7 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 		bendpoints.setPoints(points);
 		edge.setBendpoints(bendpoints);
 		ViewUtil.insertChildView(containerView, edge, index, persisted);
-		edge.setType(org.muml.pim.component.diagram.part.MumlVisualIDRegistry.getType(
-				org.muml.pim.component.diagram.edit.parts.DelegationConnectorEditPart.VISUAL_ID));
+		edge.setType(MumlVisualIDRegistry.getType(DelegationConnectorEditPart.VISUAL_ID));
 		edge.setElement(domainElement);
 		// initializePreferences
 		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint.getPreferenceStore();
@@ -701,8 +684,7 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 		bendpoints.setPoints(points);
 		edge.setBendpoints(bendpoints);
 		ViewUtil.insertChildView(containerView, edge, index, persisted);
-		edge.setType(org.muml.pim.component.diagram.part.MumlVisualIDRegistry.getType(
-				org.muml.pim.component.diagram.edit.parts.PortPartCoordinationProtocolPartEditPart.VISUAL_ID));
+		edge.setType(MumlVisualIDRegistry.getType(PortPartCoordinationProtocolPartEditPart.VISUAL_ID));
 		edge.setElement(null);
 		// initializePreferences
 		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint.getPreferenceStore();
@@ -733,12 +715,10 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 	 * @generated
 	 */
 	private void stampShortcut(View containerView, Node target) {
-		if (!org.muml.pim.component.diagram.edit.parts.ModelElementCategoryEditPart.MODEL_ID.equals(
-				org.muml.pim.component.diagram.part.MumlVisualIDRegistry.getModelID(containerView))) {
+		if (!ModelElementCategoryEditPart.MODEL_ID.equals(MumlVisualIDRegistry.getModelID(containerView))) {
 			EAnnotation shortcutAnnotation = EcoreFactory.eINSTANCE.createEAnnotation();
 			shortcutAnnotation.setSource("Shortcut"); //$NON-NLS-1$
-			shortcutAnnotation.getDetails().put("modelID", //$NON-NLS-1$
-					org.muml.pim.component.diagram.edit.parts.ModelElementCategoryEditPart.MODEL_ID);
+			shortcutAnnotation.getDetails().put("modelID", ModelElementCategoryEditPart.MODEL_ID); //$NON-NLS-1$
 			target.getEAnnotations().add(shortcutAnnotation);
 		}
 	}

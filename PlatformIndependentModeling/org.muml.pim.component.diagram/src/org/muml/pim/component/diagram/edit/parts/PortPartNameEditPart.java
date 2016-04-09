@@ -59,6 +59,10 @@ import org.eclipse.swt.accessibility.AccessibleEvent;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.FontData;
 import org.eclipse.swt.graphics.Image;
+import org.muml.pim.component.diagram.edit.policies.MumlTextSelectionEditPolicy;
+import org.muml.pim.component.diagram.part.MumlVisualIDRegistry;
+import org.muml.pim.component.diagram.providers.MumlElementTypes;
+import org.muml.pim.component.diagram.providers.MumlParserProvider;
 
 /**
  * @generated
@@ -123,8 +127,7 @@ public class PortPartNameEditPart extends LabelEditPart implements ITextAwareEdi
 	 */
 	static {
 		registerSnapBackPosition(
-				org.muml.pim.component.diagram.part.MumlVisualIDRegistry.getType(
-						org.muml.pim.component.diagram.edit.parts.PortPartNameEditPart.VISUAL_ID),
+				MumlVisualIDRegistry.getType(org.muml.pim.component.diagram.edit.parts.PortPartNameEditPart.VISUAL_ID),
 				new Point(0, 0));
 	}
 
@@ -141,8 +144,7 @@ public class PortPartNameEditPart extends LabelEditPart implements ITextAwareEdi
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicy.DIRECT_EDIT_ROLE, new LabelDirectEditPolicy());
-		installEditPolicy(EditPolicy.SELECTION_FEEDBACK_ROLE,
-				new org.muml.pim.component.diagram.edit.policies.MumlTextSelectionEditPolicy());
+		installEditPolicy(EditPolicy.SELECTION_FEEDBACK_ROLE, new MumlTextSelectionEditPolicy());
 	}
 
 	/**
@@ -354,11 +356,9 @@ public class PortPartNameEditPart extends LabelEditPart implements ITextAwareEdi
 	 */
 	public IParser getParser() {
 		if (parser == null) {
-			parser = org.muml.pim.component.diagram.providers.MumlParserProvider.getParser(
-					org.muml.pim.component.diagram.providers.MumlElementTypes.PortPart_3022,
-					getParserElement(),
-					org.muml.pim.component.diagram.part.MumlVisualIDRegistry.getType(
-							org.muml.pim.component.diagram.edit.parts.PortPartNameEditPart.VISUAL_ID));
+			parser = MumlParserProvider.getParser(MumlElementTypes.PortPart_3022, getParserElement(),
+					MumlVisualIDRegistry
+							.getType(org.muml.pim.component.diagram.edit.parts.PortPartNameEditPart.VISUAL_ID));
 		}
 		return parser;
 	}
@@ -368,9 +368,7 @@ public class PortPartNameEditPart extends LabelEditPart implements ITextAwareEdi
 	 */
 	protected DirectEditManager getManager() {
 		if (manager == null) {
-			setManager(new TextDirectEditManager(this, null,
-					org.muml.pim.component.diagram.edit.parts.MumlEditPartFactory
-							.getTextCellEditorLocator(this)));
+			setManager(new TextDirectEditManager(this, null, MumlEditPartFactory.getTextCellEditorLocator(this)));
 		}
 		return manager;
 	}

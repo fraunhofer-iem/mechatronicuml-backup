@@ -27,18 +27,28 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelations
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
 import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.pim.component.diagram.edit.commands.AssemblyConnectorCreateCommand;
+import org.muml.pim.component.diagram.edit.commands.AssemblyConnectorReorientCommand;
+import org.muml.pim.component.diagram.edit.commands.DelegationConnectorCreateCommand;
+import org.muml.pim.component.diagram.edit.commands.DelegationConnectorReorientCommand;
+import org.muml.pim.component.diagram.edit.commands.PortPartCoordinationProtocolPartCreateCommand;
+import org.muml.pim.component.diagram.edit.commands.PortPartCoordinationProtocolPartReorientCommand;
+import org.muml.pim.component.diagram.edit.parts.AssemblyConnectorEditPart;
+import org.muml.pim.component.diagram.edit.parts.DelegationConnectorEditPart;
+import org.muml.pim.component.diagram.edit.parts.PortPartCoordinationProtocolPartEditPart;
+import org.muml.pim.component.diagram.part.MumlVisualIDRegistry;
+import org.muml.pim.component.diagram.providers.MumlElementTypes;
 
 /**
  * @generated
  */
-public class PortPartItemSemanticEditPolicy
-		extends org.muml.pim.component.diagram.edit.policies.MumlBaseItemSemanticEditPolicy {
+public class PortPartItemSemanticEditPolicy extends MumlBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public PortPartItemSemanticEditPolicy() {
-		super(org.muml.pim.component.diagram.providers.MumlElementTypes.PortPart_3022);
+		super(MumlElementTypes.PortPart_3022);
 	}
 
 	/**
@@ -50,15 +60,13 @@ public class PortPartItemSemanticEditPolicy
 		cmd.setTransactionNestingEnabled(false);
 		for (Iterator<?> it = view.getTargetEdges().iterator(); it.hasNext();) {
 			Edge incomingLink = (Edge) it.next();
-			if (org.muml.pim.component.diagram.part.MumlVisualIDRegistry.getVisualID(
-					incomingLink) == org.muml.pim.component.diagram.edit.parts.AssemblyConnectorEditPart.VISUAL_ID) {
+			if (MumlVisualIDRegistry.getVisualID(incomingLink) == AssemblyConnectorEditPart.VISUAL_ID) {
 				DestroyElementRequest r = new DestroyElementRequest(incomingLink.getElement(), false);
 				cmd.add(new DestroyElementCommand(r));
 				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
 				continue;
 			}
-			if (org.muml.pim.component.diagram.part.MumlVisualIDRegistry.getVisualID(
-					incomingLink) == org.muml.pim.component.diagram.edit.parts.DelegationConnectorEditPart.VISUAL_ID) {
+			if (MumlVisualIDRegistry.getVisualID(incomingLink) == DelegationConnectorEditPart.VISUAL_ID) {
 				DestroyElementRequest r = new DestroyElementRequest(incomingLink.getElement(), false);
 				cmd.add(new DestroyElementCommand(r));
 				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
@@ -67,22 +75,19 @@ public class PortPartItemSemanticEditPolicy
 		}
 		for (Iterator<?> it = view.getSourceEdges().iterator(); it.hasNext();) {
 			Edge outgoingLink = (Edge) it.next();
-			if (org.muml.pim.component.diagram.part.MumlVisualIDRegistry.getVisualID(
-					outgoingLink) == org.muml.pim.component.diagram.edit.parts.AssemblyConnectorEditPart.VISUAL_ID) {
+			if (MumlVisualIDRegistry.getVisualID(outgoingLink) == AssemblyConnectorEditPart.VISUAL_ID) {
 				DestroyElementRequest r = new DestroyElementRequest(outgoingLink.getElement(), false);
 				cmd.add(new DestroyElementCommand(r));
 				cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
 				continue;
 			}
-			if (org.muml.pim.component.diagram.part.MumlVisualIDRegistry.getVisualID(
-					outgoingLink) == org.muml.pim.component.diagram.edit.parts.DelegationConnectorEditPart.VISUAL_ID) {
+			if (MumlVisualIDRegistry.getVisualID(outgoingLink) == DelegationConnectorEditPart.VISUAL_ID) {
 				DestroyElementRequest r = new DestroyElementRequest(outgoingLink.getElement(), false);
 				cmd.add(new DestroyElementCommand(r));
 				cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
 				continue;
 			}
-			if (org.muml.pim.component.diagram.part.MumlVisualIDRegistry.getVisualID(
-					outgoingLink) == org.muml.pim.component.diagram.edit.parts.PortPartCoordinationProtocolPartEditPart.VISUAL_ID) {
+			if (MumlVisualIDRegistry.getVisualID(outgoingLink) == PortPartCoordinationProtocolPartEditPart.VISUAL_ID) {
 				DestroyReferenceRequest r = new DestroyReferenceRequest(outgoingLink.getSource().getElement(), null,
 						outgoingLink.getTarget().getElement(), false);
 				cmd.add(new DestroyReferenceCommand(r));
@@ -115,23 +120,15 @@ public class PortPartItemSemanticEditPolicy
 	 * @generated
 	 */
 	protected Command getStartCreateRelationshipCommand(CreateRelationshipRequest req) {
-		if (org.muml.pim.component.diagram.providers.MumlElementTypes.AssemblyConnector_4001 == req
-				.getElementType()) {
-			return getGEFWrapper(
-					new org.muml.pim.component.diagram.edit.commands.AssemblyConnectorCreateCommand(req,
-							req.getSource(), req.getTarget()));
+		if (MumlElementTypes.AssemblyConnector_4001 == req.getElementType()) {
+			return getGEFWrapper(new AssemblyConnectorCreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		if (org.muml.pim.component.diagram.providers.MumlElementTypes.DelegationConnector_4002 == req
-				.getElementType()) {
-			return getGEFWrapper(
-					new org.muml.pim.component.diagram.edit.commands.DelegationConnectorCreateCommand(
-							req, req.getSource(), req.getTarget()));
+		if (MumlElementTypes.DelegationConnector_4002 == req.getElementType()) {
+			return getGEFWrapper(new DelegationConnectorCreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		if (org.muml.pim.component.diagram.providers.MumlElementTypes.PortPartCoordinationProtocolPart_4004 == req
-				.getElementType()) {
+		if (MumlElementTypes.PortPartCoordinationProtocolPart_4004 == req.getElementType()) {
 			return getGEFWrapper(
-					new org.muml.pim.component.diagram.edit.commands.PortPartCoordinationProtocolPartCreateCommand(
-							req, req.getSource(), req.getTarget()));
+					new PortPartCoordinationProtocolPartCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return null;
 	}
@@ -140,20 +137,13 @@ public class PortPartItemSemanticEditPolicy
 	 * @generated
 	 */
 	protected Command getCompleteCreateRelationshipCommand(CreateRelationshipRequest req) {
-		if (org.muml.pim.component.diagram.providers.MumlElementTypes.AssemblyConnector_4001 == req
-				.getElementType()) {
-			return getGEFWrapper(
-					new org.muml.pim.component.diagram.edit.commands.AssemblyConnectorCreateCommand(req,
-							req.getSource(), req.getTarget()));
+		if (MumlElementTypes.AssemblyConnector_4001 == req.getElementType()) {
+			return getGEFWrapper(new AssemblyConnectorCreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		if (org.muml.pim.component.diagram.providers.MumlElementTypes.DelegationConnector_4002 == req
-				.getElementType()) {
-			return getGEFWrapper(
-					new org.muml.pim.component.diagram.edit.commands.DelegationConnectorCreateCommand(
-							req, req.getSource(), req.getTarget()));
+		if (MumlElementTypes.DelegationConnector_4002 == req.getElementType()) {
+			return getGEFWrapper(new DelegationConnectorCreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		if (org.muml.pim.component.diagram.providers.MumlElementTypes.PortPartCoordinationProtocolPart_4004 == req
-				.getElementType()) {
+		if (MumlElementTypes.PortPartCoordinationProtocolPart_4004 == req.getElementType()) {
 			return null;
 		}
 		return null;
@@ -167,14 +157,10 @@ public class PortPartItemSemanticEditPolicy
 	 */
 	protected Command getReorientRelationshipCommand(ReorientRelationshipRequest req) {
 		switch (getVisualID(req)) {
-		case org.muml.pim.component.diagram.edit.parts.AssemblyConnectorEditPart.VISUAL_ID:
-			return getGEFWrapper(
-					new org.muml.pim.component.diagram.edit.commands.AssemblyConnectorReorientCommand(
-							req));
-		case org.muml.pim.component.diagram.edit.parts.DelegationConnectorEditPart.VISUAL_ID:
-			return getGEFWrapper(
-					new org.muml.pim.component.diagram.edit.commands.DelegationConnectorReorientCommand(
-							req));
+		case AssemblyConnectorEditPart.VISUAL_ID:
+			return getGEFWrapper(new AssemblyConnectorReorientCommand(req));
+		case DelegationConnectorEditPart.VISUAL_ID:
+			return getGEFWrapper(new DelegationConnectorReorientCommand(req));
 		}
 		return super.getReorientRelationshipCommand(req);
 	}
@@ -187,10 +173,8 @@ public class PortPartItemSemanticEditPolicy
 	 */
 	protected Command getReorientReferenceRelationshipCommand(ReorientReferenceRelationshipRequest req) {
 		switch (getVisualID(req)) {
-		case org.muml.pim.component.diagram.edit.parts.PortPartCoordinationProtocolPartEditPart.VISUAL_ID:
-			return getGEFWrapper(
-					new org.muml.pim.component.diagram.edit.commands.PortPartCoordinationProtocolPartReorientCommand(
-							req));
+		case PortPartCoordinationProtocolPartEditPart.VISUAL_ID:
+			return getGEFWrapper(new PortPartCoordinationProtocolPartReorientCommand(req));
 		}
 		return super.getReorientReferenceRelationshipCommand(req);
 	}

@@ -31,6 +31,8 @@ import org.eclipse.gmf.runtime.common.ui.services.parser.ParserEditStatus;
 import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand;
 import org.eclipse.gmf.tooling.runtime.parsers.ExpressionLabelParserBase;
 import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
+import org.muml.pim.component.ComponentPackage;
+import org.muml.pim.component.diagram.expressions.MumlOCLFactory;
 
 /**
  * @generated
@@ -48,8 +50,7 @@ public class HybridPortLabelExpressionLabelParser5024 extends ExpressionLabelPar
 	@Override
 
 	protected String getExpressionBody() {
-		return org.muml.pim.component.diagram.expressions.MumlOCLFactory.getExpression(3,
-				org.muml.pim.component.ComponentPackage.eINSTANCE.getHybridPort(), null).body();
+		return MumlOCLFactory.getExpression(3, ComponentPackage.eINSTANCE.getHybridPort(), null).body();
 	}
 
 	/**
@@ -57,8 +58,7 @@ public class HybridPortLabelExpressionLabelParser5024 extends ExpressionLabelPar
 	*/
 	public String getEditString(IAdaptable element, int flags) {
 		EObject target = (EObject) element.getAdapter(EObject.class);
-		Object result = org.muml.pim.component.diagram.expressions.MumlOCLFactory.getExpression(4,
-				org.muml.pim.component.ComponentPackage.eINSTANCE.getHybridPort(), null)
+		Object result = MumlOCLFactory.getExpression(4, ComponentPackage.eINSTANCE.getHybridPort(), null)
 				.evaluate(target);
 		return String.valueOf(result);
 	}

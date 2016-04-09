@@ -17,12 +17,13 @@ import java.util.List;
 
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
+import org.muml.pim.component.diagram.providers.MumlElementTypes;
+import org.muml.pim.component.diagram.providers.MumlModelingAssistantProvider;
 
 /**
  * @generated
  */
-public class MumlModelingAssistantProviderOfModelElementCategoryEditPart
-		extends org.muml.pim.component.diagram.providers.MumlModelingAssistantProvider {
+public class MumlModelingAssistantProviderOfModelElementCategoryEditPart extends MumlModelingAssistantProvider {
 
 	/**
 	 * @generated
@@ -30,9 +31,8 @@ public class MumlModelingAssistantProviderOfModelElementCategoryEditPart
 	@Override
 	public List<IElementType> getTypesForPopupBar(IAdaptable host) {
 		List<IElementType> types = new ArrayList<IElementType>(2);
-		types.add(org.muml.pim.component.diagram.providers.MumlElementTypes.StaticAtomicComponent_2006);
-		types.add(
-				org.muml.pim.component.diagram.providers.MumlElementTypes.StaticStructuredComponent_2005);
+		types.add(MumlElementTypes.StaticAtomicComponent_2006);
+		types.add(MumlElementTypes.StaticStructuredComponent_2005);
 		return types;
 	}
 

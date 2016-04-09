@@ -19,12 +19,17 @@ import java.util.List;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
+import org.muml.pim.component.diagram.edit.parts.ContinuousPortEditPart;
+import org.muml.pim.component.diagram.edit.parts.DiscretePortEditPart;
+import org.muml.pim.component.diagram.edit.parts.HybridPortEditPart;
+import org.muml.pim.component.diagram.edit.parts.PortPartEditPart;
+import org.muml.pim.component.diagram.providers.MumlElementTypes;
+import org.muml.pim.component.diagram.providers.MumlModelingAssistantProvider;
 
 /**
  * @generated
  */
-public class MumlModelingAssistantProviderOfDiscretePortEditPart
-		extends org.muml.pim.component.diagram.providers.MumlModelingAssistantProvider {
+public class MumlModelingAssistantProviderOfDiscretePortEditPart extends MumlModelingAssistantProvider {
 
 	/**
 	 * @generated
@@ -32,18 +37,16 @@ public class MumlModelingAssistantProviderOfDiscretePortEditPart
 	@Override
 	public List<IElementType> getRelTypesOnSource(IAdaptable source) {
 		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source.getAdapter(IGraphicalEditPart.class);
-		return doGetRelTypesOnSource(
-				(org.muml.pim.component.diagram.edit.parts.DiscretePortEditPart) sourceEditPart);
+		return doGetRelTypesOnSource((DiscretePortEditPart) sourceEditPart);
 	}
 
 	/**
-	 * @generated
-	 */
-	public List<IElementType> doGetRelTypesOnSource(
-			org.muml.pim.component.diagram.edit.parts.DiscretePortEditPart source) {
+	* @generated
+	*/
+	public List<IElementType> doGetRelTypesOnSource(DiscretePortEditPart source) {
 		List<IElementType> types = new ArrayList<IElementType>(2);
-		types.add(org.muml.pim.component.diagram.providers.MumlElementTypes.AssemblyConnector_4001);
-		types.add(org.muml.pim.component.diagram.providers.MumlElementTypes.DelegationConnector_4002);
+		types.add(MumlElementTypes.AssemblyConnector_4001);
+		types.add(MumlElementTypes.DelegationConnector_4002);
 		return types;
 	}
 
@@ -54,45 +57,38 @@ public class MumlModelingAssistantProviderOfDiscretePortEditPart
 	public List<IElementType> getRelTypesOnSourceAndTarget(IAdaptable source, IAdaptable target) {
 		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source.getAdapter(IGraphicalEditPart.class);
 		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target.getAdapter(IGraphicalEditPart.class);
-		return doGetRelTypesOnSourceAndTarget(
-				(org.muml.pim.component.diagram.edit.parts.DiscretePortEditPart) sourceEditPart,
-				targetEditPart);
+		return doGetRelTypesOnSourceAndTarget((DiscretePortEditPart) sourceEditPart, targetEditPart);
 	}
 
 	/**
-	 * @generated
-	 */
-	public List<IElementType> doGetRelTypesOnSourceAndTarget(
-			org.muml.pim.component.diagram.edit.parts.DiscretePortEditPart source,
+	* @generated
+	*/
+	public List<IElementType> doGetRelTypesOnSourceAndTarget(DiscretePortEditPart source,
 			IGraphicalEditPart targetEditPart) {
 		List<IElementType> types = new LinkedList<IElementType>();
-		if (targetEditPart instanceof org.muml.pim.component.diagram.edit.parts.DiscretePortEditPart) {
-			types.add(org.muml.pim.component.diagram.providers.MumlElementTypes.AssemblyConnector_4001);
+		if (targetEditPart instanceof DiscretePortEditPart) {
+			types.add(MumlElementTypes.AssemblyConnector_4001);
 		}
-		if (targetEditPart instanceof org.muml.pim.component.diagram.edit.parts.ContinuousPortEditPart) {
-			types.add(org.muml.pim.component.diagram.providers.MumlElementTypes.AssemblyConnector_4001);
+		if (targetEditPart instanceof ContinuousPortEditPart) {
+			types.add(MumlElementTypes.AssemblyConnector_4001);
 		}
-		if (targetEditPart instanceof org.muml.pim.component.diagram.edit.parts.HybridPortEditPart) {
-			types.add(org.muml.pim.component.diagram.providers.MumlElementTypes.AssemblyConnector_4001);
+		if (targetEditPart instanceof HybridPortEditPart) {
+			types.add(MumlElementTypes.AssemblyConnector_4001);
 		}
-		if (targetEditPart instanceof org.muml.pim.component.diagram.edit.parts.PortPartEditPart) {
-			types.add(org.muml.pim.component.diagram.providers.MumlElementTypes.AssemblyConnector_4001);
+		if (targetEditPart instanceof PortPartEditPart) {
+			types.add(MumlElementTypes.AssemblyConnector_4001);
 		}
-		if (targetEditPart instanceof org.muml.pim.component.diagram.edit.parts.DiscretePortEditPart) {
-			types.add(
-					org.muml.pim.component.diagram.providers.MumlElementTypes.DelegationConnector_4002);
+		if (targetEditPart instanceof DiscretePortEditPart) {
+			types.add(MumlElementTypes.DelegationConnector_4002);
 		}
-		if (targetEditPart instanceof org.muml.pim.component.diagram.edit.parts.ContinuousPortEditPart) {
-			types.add(
-					org.muml.pim.component.diagram.providers.MumlElementTypes.DelegationConnector_4002);
+		if (targetEditPart instanceof ContinuousPortEditPart) {
+			types.add(MumlElementTypes.DelegationConnector_4002);
 		}
-		if (targetEditPart instanceof org.muml.pim.component.diagram.edit.parts.HybridPortEditPart) {
-			types.add(
-					org.muml.pim.component.diagram.providers.MumlElementTypes.DelegationConnector_4002);
+		if (targetEditPart instanceof HybridPortEditPart) {
+			types.add(MumlElementTypes.DelegationConnector_4002);
 		}
-		if (targetEditPart instanceof org.muml.pim.component.diagram.edit.parts.PortPartEditPart) {
-			types.add(
-					org.muml.pim.component.diagram.providers.MumlElementTypes.DelegationConnector_4002);
+		if (targetEditPart instanceof PortPartEditPart) {
+			types.add(MumlElementTypes.DelegationConnector_4002);
 		}
 		return types;
 	}
@@ -103,28 +99,24 @@ public class MumlModelingAssistantProviderOfDiscretePortEditPart
 	@Override
 	public List<IElementType> getTypesForTarget(IAdaptable source, IElementType relationshipType) {
 		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source.getAdapter(IGraphicalEditPart.class);
-		return doGetTypesForTarget(
-				(org.muml.pim.component.diagram.edit.parts.DiscretePortEditPart) sourceEditPart,
-				relationshipType);
+		return doGetTypesForTarget((DiscretePortEditPart) sourceEditPart, relationshipType);
 	}
 
 	/**
-	 * @generated
-	 */
-	public List<IElementType> doGetTypesForTarget(
-			org.muml.pim.component.diagram.edit.parts.DiscretePortEditPart source,
-			IElementType relationshipType) {
+	* @generated
+	*/
+	public List<IElementType> doGetTypesForTarget(DiscretePortEditPart source, IElementType relationshipType) {
 		List<IElementType> types = new ArrayList<IElementType>();
-		if (relationshipType == org.muml.pim.component.diagram.providers.MumlElementTypes.AssemblyConnector_4001) {
-			types.add(org.muml.pim.component.diagram.providers.MumlElementTypes.DiscretePort_3010);
-			types.add(org.muml.pim.component.diagram.providers.MumlElementTypes.ContinuousPort_3011);
-			types.add(org.muml.pim.component.diagram.providers.MumlElementTypes.HybridPort_3013);
-			types.add(org.muml.pim.component.diagram.providers.MumlElementTypes.PortPart_3022);
-		} else if (relationshipType == org.muml.pim.component.diagram.providers.MumlElementTypes.DelegationConnector_4002) {
-			types.add(org.muml.pim.component.diagram.providers.MumlElementTypes.DiscretePort_3010);
-			types.add(org.muml.pim.component.diagram.providers.MumlElementTypes.ContinuousPort_3011);
-			types.add(org.muml.pim.component.diagram.providers.MumlElementTypes.HybridPort_3013);
-			types.add(org.muml.pim.component.diagram.providers.MumlElementTypes.PortPart_3022);
+		if (relationshipType == MumlElementTypes.AssemblyConnector_4001) {
+			types.add(MumlElementTypes.DiscretePort_3010);
+			types.add(MumlElementTypes.ContinuousPort_3011);
+			types.add(MumlElementTypes.HybridPort_3013);
+			types.add(MumlElementTypes.PortPart_3022);
+		} else if (relationshipType == MumlElementTypes.DelegationConnector_4002) {
+			types.add(MumlElementTypes.DiscretePort_3010);
+			types.add(MumlElementTypes.ContinuousPort_3011);
+			types.add(MumlElementTypes.HybridPort_3013);
+			types.add(MumlElementTypes.PortPart_3022);
 		}
 		return types;
 	}
@@ -135,18 +127,16 @@ public class MumlModelingAssistantProviderOfDiscretePortEditPart
 	@Override
 	public List<IElementType> getRelTypesOnTarget(IAdaptable target) {
 		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target.getAdapter(IGraphicalEditPart.class);
-		return doGetRelTypesOnTarget(
-				(org.muml.pim.component.diagram.edit.parts.DiscretePortEditPart) targetEditPart);
+		return doGetRelTypesOnTarget((DiscretePortEditPart) targetEditPart);
 	}
 
 	/**
-	 * @generated
-	 */
-	public List<IElementType> doGetRelTypesOnTarget(
-			org.muml.pim.component.diagram.edit.parts.DiscretePortEditPart target) {
+	* @generated
+	*/
+	public List<IElementType> doGetRelTypesOnTarget(DiscretePortEditPart target) {
 		List<IElementType> types = new ArrayList<IElementType>(2);
-		types.add(org.muml.pim.component.diagram.providers.MumlElementTypes.AssemblyConnector_4001);
-		types.add(org.muml.pim.component.diagram.providers.MumlElementTypes.DelegationConnector_4002);
+		types.add(MumlElementTypes.AssemblyConnector_4001);
+		types.add(MumlElementTypes.DelegationConnector_4002);
 		return types;
 	}
 
@@ -156,28 +146,24 @@ public class MumlModelingAssistantProviderOfDiscretePortEditPart
 	@Override
 	public List<IElementType> getTypesForSource(IAdaptable target, IElementType relationshipType) {
 		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target.getAdapter(IGraphicalEditPart.class);
-		return doGetTypesForSource(
-				(org.muml.pim.component.diagram.edit.parts.DiscretePortEditPart) targetEditPart,
-				relationshipType);
+		return doGetTypesForSource((DiscretePortEditPart) targetEditPart, relationshipType);
 	}
 
 	/**
-	 * @generated
-	 */
-	public List<IElementType> doGetTypesForSource(
-			org.muml.pim.component.diagram.edit.parts.DiscretePortEditPart target,
-			IElementType relationshipType) {
+	* @generated
+	*/
+	public List<IElementType> doGetTypesForSource(DiscretePortEditPart target, IElementType relationshipType) {
 		List<IElementType> types = new ArrayList<IElementType>();
-		if (relationshipType == org.muml.pim.component.diagram.providers.MumlElementTypes.AssemblyConnector_4001) {
-			types.add(org.muml.pim.component.diagram.providers.MumlElementTypes.DiscretePort_3010);
-			types.add(org.muml.pim.component.diagram.providers.MumlElementTypes.ContinuousPort_3011);
-			types.add(org.muml.pim.component.diagram.providers.MumlElementTypes.HybridPort_3013);
-			types.add(org.muml.pim.component.diagram.providers.MumlElementTypes.PortPart_3022);
-		} else if (relationshipType == org.muml.pim.component.diagram.providers.MumlElementTypes.DelegationConnector_4002) {
-			types.add(org.muml.pim.component.diagram.providers.MumlElementTypes.DiscretePort_3010);
-			types.add(org.muml.pim.component.diagram.providers.MumlElementTypes.ContinuousPort_3011);
-			types.add(org.muml.pim.component.diagram.providers.MumlElementTypes.HybridPort_3013);
-			types.add(org.muml.pim.component.diagram.providers.MumlElementTypes.PortPart_3022);
+		if (relationshipType == MumlElementTypes.AssemblyConnector_4001) {
+			types.add(MumlElementTypes.DiscretePort_3010);
+			types.add(MumlElementTypes.ContinuousPort_3011);
+			types.add(MumlElementTypes.HybridPort_3013);
+			types.add(MumlElementTypes.PortPart_3022);
+		} else if (relationshipType == MumlElementTypes.DelegationConnector_4002) {
+			types.add(MumlElementTypes.DiscretePort_3010);
+			types.add(MumlElementTypes.ContinuousPort_3011);
+			types.add(MumlElementTypes.HybridPort_3013);
+			types.add(MumlElementTypes.PortPart_3022);
 		}
 		return types;
 	}

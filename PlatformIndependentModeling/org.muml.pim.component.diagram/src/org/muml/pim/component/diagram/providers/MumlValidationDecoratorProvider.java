@@ -49,6 +49,10 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.ui.ISharedImages;
 import org.eclipse.ui.PlatformUI;
+import org.muml.pim.component.diagram.edit.parts.ModelElementCategoryEditPart;
+import org.muml.pim.component.diagram.part.ComponentDiagramEditor;
+import org.muml.pim.component.diagram.part.ComponentDiagramEditorPlugin;
+import org.muml.pim.component.diagram.part.MumlVisualIDRegistry;
 
 /**
  * @generated
@@ -63,8 +67,7 @@ public class MumlValidationDecoratorProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	private static final String MARKER_TYPE = org.muml.pim.component.diagram.part.ComponentDiagramEditorPlugin.ID
-			+ ".diagnostic"; //$NON-NLS-1$
+	private static final String MARKER_TYPE = ComponentDiagramEditorPlugin.ID + ".diagnostic"; //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -93,8 +96,7 @@ public class MumlValidationDecoratorProvider extends AbstractProvider implements
 			if (!(ed instanceof DiagramEditDomain)) {
 				return;
 			}
-			if (((DiagramEditDomain) ed)
-					.getEditorPart() instanceof org.muml.pim.component.diagram.part.ComponentDiagramEditor) {
+			if (((DiagramEditDomain) ed).getEditorPart() instanceof ComponentDiagramEditor) {
 				decoratorTarget.installDecorator(KEY, new StatusDecorator(decoratorTarget));
 			}
 		}
@@ -109,10 +111,7 @@ public class MumlValidationDecoratorProvider extends AbstractProvider implements
 		}
 		IDecoratorTarget decoratorTarget = ((CreateDecoratorsOperation) operation).getDecoratorTarget();
 		View view = (View) decoratorTarget.getAdapter(View.class);
-		return view != null
-				&& org.muml.pim.component.diagram.edit.parts.ModelElementCategoryEditPart.MODEL_ID
-						.equals(org.muml.pim.component.diagram.part.MumlVisualIDRegistry
-								.getModelID(view));
+		return view != null && ModelElementCategoryEditPart.MODEL_ID.equals(MumlVisualIDRegistry.getModelID(view));
 	}
 
 	/**
@@ -152,8 +151,7 @@ public class MumlValidationDecoratorProvider extends AbstractProvider implements
 					}
 					// END Added null checks
 				} catch (Exception e) {
-					org.muml.pim.component.diagram.part.ComponentDiagramEditorPlugin.getInstance()
-							.logError("Decorator refresh failure", e); //$NON-NLS-1$
+					ComponentDiagramEditorPlugin.getInstance().logError("Decorator refresh failure", e); //$NON-NLS-1$
 				}
 			}
 		});
@@ -183,8 +181,7 @@ public class MumlValidationDecoratorProvider extends AbstractProvider implements
 					}
 				});
 			} catch (Exception e) {
-				org.muml.pim.component.diagram.part.ComponentDiagramEditorPlugin.getInstance()
-						.logError("ViewID access failure", e); //$NON-NLS-1$			
+				ComponentDiagramEditorPlugin.getInstance().logError("ViewID access failure", e); //$NON-NLS-1$			
 			}
 		}
 
@@ -217,8 +214,7 @@ public class MumlValidationDecoratorProvider extends AbstractProvider implements
 			try {
 				markers = resource.findMarkers(MARKER_TYPE, true, IResource.DEPTH_INFINITE);
 			} catch (CoreException e) {
-				org.muml.pim.component.diagram.part.ComponentDiagramEditorPlugin.getInstance()
-						.logError("Validation markers refresh failure", e); //$NON-NLS-1$
+				ComponentDiagramEditorPlugin.getInstance().logError("Validation markers refresh failure", e); //$NON-NLS-1$
 			}
 			if (markers == null || markers.length == 0) {
 				return;
@@ -423,8 +419,7 @@ public class MumlValidationDecoratorProvider extends AbstractProvider implements
 			try {
 				return marker.getType();
 			} catch (CoreException e) {
-				org.muml.pim.component.diagram.part.ComponentDiagramEditorPlugin.getInstance()
-						.logError("Validation marker refresh failure", e); //$NON-NLS-1$
+				ComponentDiagramEditorPlugin.getInstance().logError("Validation marker refresh failure", e); //$NON-NLS-1$
 				return ""; //$NON-NLS-1$
 			}
 		}

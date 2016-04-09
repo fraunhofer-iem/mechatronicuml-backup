@@ -24,6 +24,8 @@ import org.eclipse.gmf.runtime.common.ui.services.parser.IParserEditStatus;
 import org.eclipse.gmf.runtime.common.ui.services.parser.ParserEditStatus;
 import org.eclipse.gmf.tooling.runtime.parsers.AbstractAttributeParser;
 import org.eclipse.osgi.util.NLS;
+import org.muml.pim.component.diagram.part.ComponentDiagramEditorPlugin;
+import org.muml.pim.component.diagram.part.Messages;
 
 /**
  * @generated
@@ -178,12 +180,8 @@ public class MessageFormatParser extends AbstractAttributeParser {
 		ParsePosition pos = new ParsePosition(0);
 		Object[] values = getEditProcessor().parse(editString, pos);
 		if (values == null) {
-			return new ParserEditStatus(
-					org.muml.pim.component.diagram.part.ComponentDiagramEditorPlugin.ID,
-					IParserEditStatus.UNEDITABLE,
-					NLS.bind(
-							org.muml.pim.component.diagram.part.Messages.MessageFormatParser_InvalidInputError,
-							new Integer(pos.getErrorIndex())));
+			return new ParserEditStatus(ComponentDiagramEditorPlugin.ID, IParserEditStatus.UNEDITABLE,
+					NLS.bind(Messages.MessageFormatParser_InvalidInputError, new Integer(pos.getErrorIndex())));
 		}
 		return validateNewValues(values);
 	}

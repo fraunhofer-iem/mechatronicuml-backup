@@ -47,6 +47,18 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.edit.helpers.GeneratedEditHelperBase;
+import org.muml.pim.component.AssemblyConnector;
+import org.muml.pim.component.CoordinationProtocolPart;
+import org.muml.pim.component.DelegationConnector;
+import org.muml.pim.component.PortPart;
+import org.muml.pim.component.StructuredComponent;
+import org.muml.pim.component.diagram.expressions.MumlAbstractExpression;
+import org.muml.pim.component.diagram.expressions.MumlOCLFactory;
+import org.muml.pim.component.diagram.part.ComponentDiagramEditorPlugin;
+import org.muml.pim.component.diagram.part.MumlVisualIDRegistry;
+import org.muml.pim.component.diagram.providers.MumlElementTypes;
+import org.muml.pim.connector.ConnectorEndpoint;
+import org.muml.pim.connector.ConnectorPackage;
 
 /**
  * @generated
@@ -84,8 +96,7 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		if (request instanceof ReconnectRequest) {
 			Object view = ((ReconnectRequest) request).getConnectionEditPart().getModel();
 			if (view instanceof View) {
-				Integer id = new Integer(org.muml.pim.component.diagram.part.MumlVisualIDRegistry
-						.getVisualID((View) view));
+				Integer id = new Integer(MumlVisualIDRegistry.getVisualID((View) view));
 				request.getExtendedData().put(VISUAL_ID_KEY, id);
 			}
 		}
@@ -150,8 +161,7 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 	 * @generated
 	 */
 	private IElementType getContextElementType(IEditCommandRequest request) {
-		IElementType requestContextElementType = org.muml.pim.component.diagram.providers.MumlElementTypes
-				.getElementType(getVisualID(request));
+		IElementType requestContextElementType = MumlElementTypes.getElementType(getVisualID(request));
 		return requestContextElementType != null ? requestContextElementType : myElementType;
 	}
 
@@ -297,11 +307,9 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 	 * @generated
 	 */
 	public static LinkConstraints getLinkConstraints() {
-		LinkConstraints cached = org.muml.pim.component.diagram.part.ComponentDiagramEditorPlugin
-				.getInstance().getLinkConstraints();
+		LinkConstraints cached = ComponentDiagramEditorPlugin.getInstance().getLinkConstraints();
 		if (cached == null) {
-			org.muml.pim.component.diagram.part.ComponentDiagramEditorPlugin.getInstance()
-					.setLinkConstraints(cached = new LinkConstraints());
+			ComponentDiagramEditorPlugin.getInstance().setLinkConstraints(cached = new LinkConstraints());
 		}
 		return cached;
 	}
@@ -319,32 +327,26 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		}
 
 		/**
-		 * @generated
-		 */
-		public boolean canCreateAssemblyConnector_4001(
-				org.muml.pim.component.StructuredComponent container,
-				org.muml.pim.connector.ConnectorEndpoint source,
-				org.muml.pim.connector.ConnectorEndpoint target, View sourceView, View targetView) {
+		* @generated
+		*/
+		public boolean canCreateAssemblyConnector_4001(StructuredComponent container, ConnectorEndpoint source,
+				ConnectorEndpoint target, View sourceView, View targetView) {
 			return canExistAssemblyConnector_4001(container, null, source, target, sourceView, targetView);
 		}
 
 		/**
-		 * @generated
-		 */
-		public boolean canCreateDelegationConnector_4002(
-				org.muml.pim.component.StructuredComponent container,
-				org.muml.pim.connector.ConnectorEndpoint source,
-				org.muml.pim.connector.ConnectorEndpoint target, View sourceView, View targetView) {
+		* @generated
+		*/
+		public boolean canCreateDelegationConnector_4002(StructuredComponent container, ConnectorEndpoint source,
+				ConnectorEndpoint target, View sourceView, View targetView) {
 			return canExistDelegationConnector_4002(container, null, source, target, sourceView, targetView);
 		}
 
 		/**
-		 * @generated
-		 */
-		public boolean canCreatePortPartCoordinationProtocolPart_4004(
-				org.muml.pim.component.PortPart source,
-				org.muml.pim.component.CoordinationProtocolPart target, View sourceView,
-				View targetView) {
+		* @generated
+		*/
+		public boolean canCreatePortPartCoordinationProtocolPart_4004(PortPart source, CoordinationProtocolPart target,
+				View sourceView, View targetView) {
 			if (source != null) {
 				if (source.getCoordinationProtocolPart() != null) {
 					return false;
@@ -358,30 +360,25 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		}
 
 		/**
-		 * @generated
-		 */
-		public boolean canExistAssemblyConnector_4001(
-				org.muml.pim.component.StructuredComponent container,
-				org.muml.pim.component.AssemblyConnector linkInstance,
-				org.muml.pim.connector.ConnectorEndpoint source,
-				org.muml.pim.connector.ConnectorEndpoint target, View sourceView, View targetView) {
+		* @generated
+		*/
+		public boolean canExistAssemblyConnector_4001(StructuredComponent container, AssemblyConnector linkInstance,
+				ConnectorEndpoint source, ConnectorEndpoint target, View sourceView, View targetView) {
 			try {
 				if (source == null) {
 					return true;
 				} else {
 					Map<String, EClassifier> envType = new HashMap<String, EClassifier>();
 					Map<String, Object> env = new HashMap<String, Object>();
-					envType.put("oppositeEnd", //$NON-NLS-1$
-							org.muml.pim.connector.ConnectorPackage.eINSTANCE.getConnectorEndpoint());
+					envType.put("oppositeEnd", ConnectorPackage.eINSTANCE.getConnectorEndpoint()); //$NON-NLS-1$
 					env.put("oppositeEnd", target);
 					envType.put("view", NotationPackage.Literals.VIEW);
 					env.put("view", sourceView);
 					envType.put("oppositeView", NotationPackage.Literals.VIEW);
 					env.put("oppositeView", targetView);
 
-					org.muml.pim.component.diagram.expressions.MumlAbstractExpression expression = org.muml.pim.component.diagram.expressions.MumlOCLFactory
-							.getExpression(9, org.muml.pim.connector.ConnectorPackage.eINSTANCE
-									.getConnectorEndpoint(), envType);
+					MumlAbstractExpression expression = MumlOCLFactory.getExpression(9,
+							ConnectorPackage.eINSTANCE.getConnectorEndpoint(), envType);
 					Object sourceVal = expression.evaluate(source, env); //$NON-NLS-1$
 
 					if (false == sourceVal instanceof Boolean || !((Boolean) sourceVal).booleanValue()) {
@@ -393,17 +390,15 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 				} else {
 					Map<String, EClassifier> envType = new HashMap<String, EClassifier>();
 					Map<String, Object> env = new HashMap<String, Object>();
-					envType.put("oppositeEnd", //$NON-NLS-1$
-							org.muml.pim.connector.ConnectorPackage.eINSTANCE.getConnectorEndpoint());
+					envType.put("oppositeEnd", ConnectorPackage.eINSTANCE.getConnectorEndpoint()); //$NON-NLS-1$
 					env.put("oppositeEnd", source);
 					envType.put("view", NotationPackage.Literals.VIEW);
 					env.put("view", targetView);
 					envType.put("oppositeView", NotationPackage.Literals.VIEW);
 					env.put("oppositeView", sourceView);
 
-					org.muml.pim.component.diagram.expressions.MumlAbstractExpression expression = org.muml.pim.component.diagram.expressions.MumlOCLFactory
-							.getExpression(10, org.muml.pim.connector.ConnectorPackage.eINSTANCE
-									.getConnectorEndpoint(), envType);
+					MumlAbstractExpression expression = MumlOCLFactory.getExpression(10,
+							ConnectorPackage.eINSTANCE.getConnectorEndpoint(), envType);
 					Object targetVal = expression.evaluate(target, env); //$NON-NLS-1$
 
 					if (false == targetVal instanceof Boolean || !((Boolean) targetVal).booleanValue()) {
@@ -412,36 +407,31 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 				}
 				return true;
 			} catch (Exception e) {
-				org.muml.pim.component.diagram.part.ComponentDiagramEditorPlugin.getInstance()
-						.logError("Link constraint evaluation error", e); //$NON-NLS-1$
+				ComponentDiagramEditorPlugin.getInstance().logError("Link constraint evaluation error", e); //$NON-NLS-1$
 				return false;
 			}
 		}
 
 		/**
-		 * @generated
-		 */
-		public java.lang.String getErrorAssemblyConnector_4001(
-				org.muml.pim.component.StructuredComponent container,
-				org.muml.pim.connector.ConnectorEndpoint source,
-				org.muml.pim.connector.ConnectorEndpoint target, View sourceView, View targetView) {
+		* @generated
+		*/
+		public java.lang.String getErrorAssemblyConnector_4001(StructuredComponent container, ConnectorEndpoint source,
+				ConnectorEndpoint target, View sourceView, View targetView) {
 			try {
 				if (source == null) {
 					return null;
 				} else {
 					Map<String, EClassifier> envType = new HashMap<String, EClassifier>();
 					Map<String, Object> env = new HashMap<String, Object>();
-					envType.put("oppositeEnd", //$NON-NLS-1$
-							org.muml.pim.connector.ConnectorPackage.eINSTANCE.getConnectorEndpoint());
+					envType.put("oppositeEnd", ConnectorPackage.eINSTANCE.getConnectorEndpoint()); //$NON-NLS-1$
 					env.put("oppositeEnd", target);
 					envType.put("view", NotationPackage.Literals.VIEW);
 					env.put("view", sourceView);
 					envType.put("oppositeView", NotationPackage.Literals.VIEW);
 					env.put("oppositeView", targetView);
 
-					org.muml.pim.component.diagram.expressions.MumlAbstractExpression expression = org.muml.pim.component.diagram.expressions.MumlOCLFactory
-							.getExpression(9, org.muml.pim.connector.ConnectorPackage.eINSTANCE
-									.getConnectorEndpoint(), envType);
+					MumlAbstractExpression expression = MumlOCLFactory.getExpression(9,
+							ConnectorPackage.eINSTANCE.getConnectorEndpoint(), envType);
 					Object sourceVal = expression.evaluate(source, env); //$NON-NLS-1$
 
 					if (false == sourceVal instanceof Boolean || !((Boolean) sourceVal).booleanValue()) {
@@ -465,17 +455,15 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 				} else {
 					Map<String, EClassifier> envType = new HashMap<String, EClassifier>();
 					Map<String, Object> env = new HashMap<String, Object>();
-					envType.put("oppositeEnd", //$NON-NLS-1$
-							org.muml.pim.connector.ConnectorPackage.eINSTANCE.getConnectorEndpoint());
+					envType.put("oppositeEnd", ConnectorPackage.eINSTANCE.getConnectorEndpoint()); //$NON-NLS-1$
 					env.put("oppositeEnd", source);
 					envType.put("view", NotationPackage.Literals.VIEW);
 					env.put("view", targetView);
 					envType.put("oppositeView", NotationPackage.Literals.VIEW);
 					env.put("oppositeView", sourceView);
 
-					org.muml.pim.component.diagram.expressions.MumlAbstractExpression expression = org.muml.pim.component.diagram.expressions.MumlOCLFactory
-							.getExpression(10, org.muml.pim.connector.ConnectorPackage.eINSTANCE
-									.getConnectorEndpoint(), envType);
+					MumlAbstractExpression expression = MumlOCLFactory.getExpression(10,
+							ConnectorPackage.eINSTANCE.getConnectorEndpoint(), envType);
 					Object targetVal = expression.evaluate(target, env); //$NON-NLS-1$
 
 					if (false == targetVal instanceof Boolean || !((Boolean) targetVal).booleanValue()) {
@@ -496,37 +484,31 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 				}
 				return null;
 			} catch (Exception e) {
-				org.muml.pim.component.diagram.part.ComponentDiagramEditorPlugin.getInstance()
-						.logError("Link constraint evaluation error", e); //$NON-NLS-1$
+				ComponentDiagramEditorPlugin.getInstance().logError("Link constraint evaluation error", e); //$NON-NLS-1$
 				return "Link constraint evaluation error";
 			}
 		}
 
 		/**
-		 * @generated
-		 */
-		public boolean canExistDelegationConnector_4002(
-				org.muml.pim.component.StructuredComponent container,
-				org.muml.pim.component.DelegationConnector linkInstance,
-				org.muml.pim.connector.ConnectorEndpoint source,
-				org.muml.pim.connector.ConnectorEndpoint target, View sourceView, View targetView) {
+		* @generated
+		*/
+		public boolean canExistDelegationConnector_4002(StructuredComponent container, DelegationConnector linkInstance,
+				ConnectorEndpoint source, ConnectorEndpoint target, View sourceView, View targetView) {
 			try {
 				if (source == null) {
 					return true;
 				} else {
 					Map<String, EClassifier> envType = new HashMap<String, EClassifier>();
 					Map<String, Object> env = new HashMap<String, Object>();
-					envType.put("oppositeEnd", //$NON-NLS-1$
-							org.muml.pim.connector.ConnectorPackage.eINSTANCE.getConnectorEndpoint());
+					envType.put("oppositeEnd", ConnectorPackage.eINSTANCE.getConnectorEndpoint()); //$NON-NLS-1$
 					env.put("oppositeEnd", target);
 					envType.put("view", NotationPackage.Literals.VIEW);
 					env.put("view", sourceView);
 					envType.put("oppositeView", NotationPackage.Literals.VIEW);
 					env.put("oppositeView", targetView);
 
-					org.muml.pim.component.diagram.expressions.MumlAbstractExpression expression = org.muml.pim.component.diagram.expressions.MumlOCLFactory
-							.getExpression(11, org.muml.pim.connector.ConnectorPackage.eINSTANCE
-									.getConnectorEndpoint(), envType);
+					MumlAbstractExpression expression = MumlOCLFactory.getExpression(11,
+							ConnectorPackage.eINSTANCE.getConnectorEndpoint(), envType);
 					Object sourceVal = expression.evaluate(source, env); //$NON-NLS-1$
 
 					if (false == sourceVal instanceof Boolean || !((Boolean) sourceVal).booleanValue()) {
@@ -538,17 +520,15 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 				} else {
 					Map<String, EClassifier> envType = new HashMap<String, EClassifier>();
 					Map<String, Object> env = new HashMap<String, Object>();
-					envType.put("oppositeEnd", //$NON-NLS-1$
-							org.muml.pim.connector.ConnectorPackage.eINSTANCE.getConnectorEndpoint());
+					envType.put("oppositeEnd", ConnectorPackage.eINSTANCE.getConnectorEndpoint()); //$NON-NLS-1$
 					env.put("oppositeEnd", source);
 					envType.put("view", NotationPackage.Literals.VIEW);
 					env.put("view", targetView);
 					envType.put("oppositeView", NotationPackage.Literals.VIEW);
 					env.put("oppositeView", sourceView);
 
-					org.muml.pim.component.diagram.expressions.MumlAbstractExpression expression = org.muml.pim.component.diagram.expressions.MumlOCLFactory
-							.getExpression(12, org.muml.pim.connector.ConnectorPackage.eINSTANCE
-									.getConnectorEndpoint(), envType);
+					MumlAbstractExpression expression = MumlOCLFactory.getExpression(12,
+							ConnectorPackage.eINSTANCE.getConnectorEndpoint(), envType);
 					Object targetVal = expression.evaluate(target, env); //$NON-NLS-1$
 
 					if (false == targetVal instanceof Boolean || !((Boolean) targetVal).booleanValue()) {
@@ -557,36 +537,31 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 				}
 				return true;
 			} catch (Exception e) {
-				org.muml.pim.component.diagram.part.ComponentDiagramEditorPlugin.getInstance()
-						.logError("Link constraint evaluation error", e); //$NON-NLS-1$
+				ComponentDiagramEditorPlugin.getInstance().logError("Link constraint evaluation error", e); //$NON-NLS-1$
 				return false;
 			}
 		}
 
 		/**
-		 * @generated
-		 */
-		public java.lang.String getErrorDelegationConnector_4002(
-				org.muml.pim.component.StructuredComponent container,
-				org.muml.pim.connector.ConnectorEndpoint source,
-				org.muml.pim.connector.ConnectorEndpoint target, View sourceView, View targetView) {
+		* @generated
+		*/
+		public java.lang.String getErrorDelegationConnector_4002(StructuredComponent container,
+				ConnectorEndpoint source, ConnectorEndpoint target, View sourceView, View targetView) {
 			try {
 				if (source == null) {
 					return null;
 				} else {
 					Map<String, EClassifier> envType = new HashMap<String, EClassifier>();
 					Map<String, Object> env = new HashMap<String, Object>();
-					envType.put("oppositeEnd", //$NON-NLS-1$
-							org.muml.pim.connector.ConnectorPackage.eINSTANCE.getConnectorEndpoint());
+					envType.put("oppositeEnd", ConnectorPackage.eINSTANCE.getConnectorEndpoint()); //$NON-NLS-1$
 					env.put("oppositeEnd", target);
 					envType.put("view", NotationPackage.Literals.VIEW);
 					env.put("view", sourceView);
 					envType.put("oppositeView", NotationPackage.Literals.VIEW);
 					env.put("oppositeView", targetView);
 
-					org.muml.pim.component.diagram.expressions.MumlAbstractExpression expression = org.muml.pim.component.diagram.expressions.MumlOCLFactory
-							.getExpression(11, org.muml.pim.connector.ConnectorPackage.eINSTANCE
-									.getConnectorEndpoint(), envType);
+					MumlAbstractExpression expression = MumlOCLFactory.getExpression(11,
+							ConnectorPackage.eINSTANCE.getConnectorEndpoint(), envType);
 					Object sourceVal = expression.evaluate(source, env); //$NON-NLS-1$
 
 					if (false == sourceVal instanceof Boolean || !((Boolean) sourceVal).booleanValue()) {
@@ -610,17 +585,15 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 				} else {
 					Map<String, EClassifier> envType = new HashMap<String, EClassifier>();
 					Map<String, Object> env = new HashMap<String, Object>();
-					envType.put("oppositeEnd", //$NON-NLS-1$
-							org.muml.pim.connector.ConnectorPackage.eINSTANCE.getConnectorEndpoint());
+					envType.put("oppositeEnd", ConnectorPackage.eINSTANCE.getConnectorEndpoint()); //$NON-NLS-1$
 					env.put("oppositeEnd", source);
 					envType.put("view", NotationPackage.Literals.VIEW);
 					env.put("view", targetView);
 					envType.put("oppositeView", NotationPackage.Literals.VIEW);
 					env.put("oppositeView", sourceView);
 
-					org.muml.pim.component.diagram.expressions.MumlAbstractExpression expression = org.muml.pim.component.diagram.expressions.MumlOCLFactory
-							.getExpression(12, org.muml.pim.connector.ConnectorPackage.eINSTANCE
-									.getConnectorEndpoint(), envType);
+					MumlAbstractExpression expression = MumlOCLFactory.getExpression(12,
+							ConnectorPackage.eINSTANCE.getConnectorEndpoint(), envType);
 					Object targetVal = expression.evaluate(target, env); //$NON-NLS-1$
 
 					if (false == targetVal instanceof Boolean || !((Boolean) targetVal).booleanValue()) {
@@ -641,29 +614,24 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 				}
 				return null;
 			} catch (Exception e) {
-				org.muml.pim.component.diagram.part.ComponentDiagramEditorPlugin.getInstance()
-						.logError("Link constraint evaluation error", e); //$NON-NLS-1$
+				ComponentDiagramEditorPlugin.getInstance().logError("Link constraint evaluation error", e); //$NON-NLS-1$
 				return "Link constraint evaluation error";
 			}
 		}
 
 		/**
-		 * @generated
-		 */
-		public boolean canExistPortPartCoordinationProtocolPart_4004(
-				org.muml.pim.component.PortPart source,
-				org.muml.pim.component.CoordinationProtocolPart target, View sourceView,
-				View targetView) {
+		* @generated
+		*/
+		public boolean canExistPortPartCoordinationProtocolPart_4004(PortPart source, CoordinationProtocolPart target,
+				View sourceView, View targetView) {
 			return true;
 		}
 
 		/**
-		 * @generated
-		 */
-		public java.lang.String getErrorPortPartCoordinationProtocolPart_4004(
-				org.muml.pim.component.PortPart source,
-				org.muml.pim.component.CoordinationProtocolPart target, View sourceView,
-				View targetView) {
+		* @generated
+		*/
+		public java.lang.String getErrorPortPartCoordinationProtocolPart_4004(PortPart source,
+				CoordinationProtocolPart target, View sourceView, View targetView) {
 			return null;
 		}
 

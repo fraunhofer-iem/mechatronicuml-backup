@@ -28,6 +28,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.widgets.Display;
+import org.muml.pim.component.diagram.edit.policies.AssemblyConnectorItemSemanticEditPolicy;
 
 /**
  * @generated
@@ -74,8 +75,7 @@ public class AssemblyConnectorEditPart extends ConnectionNodeEditPart implements
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
-				new org.muml.pim.component.diagram.edit.policies.AssemblyConnectorItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new AssemblyConnectorItemSemanticEditPolicy());
 	}
 
 	/**

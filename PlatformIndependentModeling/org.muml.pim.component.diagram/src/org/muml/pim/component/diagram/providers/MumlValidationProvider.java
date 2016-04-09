@@ -14,6 +14,9 @@ package org.muml.pim.component.diagram.providers;
 
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.pim.component.diagram.edit.parts.ModelElementCategoryEditPart;
+import org.muml.pim.component.diagram.part.ComponentDiagramEditorPlugin;
+import org.muml.pim.component.diagram.part.MumlVisualIDRegistry;
 
 /**
  * @generated
@@ -51,8 +54,7 @@ public class MumlValidationProvider {
 			try {
 				editingDomain.runExclusive(task);
 			} catch (Exception e) {
-				org.muml.pim.component.diagram.part.ComponentDiagramEditorPlugin.getInstance()
-						.logError("Validation failed", e); //$NON-NLS-1$
+				ComponentDiagramEditorPlugin.getInstance().logError("Validation failed", e); //$NON-NLS-1$
 			}
 		} else {
 			task.run();
@@ -68,9 +70,7 @@ public class MumlValidationProvider {
 		}
 		if (object instanceof View) {
 			return constraintsActive
-					&& org.muml.pim.component.diagram.edit.parts.ModelElementCategoryEditPart.MODEL_ID
-							.equals(org.muml.pim.component.diagram.part.MumlVisualIDRegistry
-									.getModelID((View) object));
+					&& ModelElementCategoryEditPart.MODEL_ID.equals(MumlVisualIDRegistry.getModelID((View) object));
 		}
 		return true;
 	}

@@ -24,6 +24,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.pim.component.diagram.edit.policies.PortPartCoordinationProtocolPartItemSemanticEditPolicy;
 
 /**
  * @generated
@@ -70,8 +71,7 @@ public class PortPartCoordinationProtocolPartEditPart extends ConnectionNodeEdit
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
-				new org.muml.pim.component.diagram.edit.policies.PortPartCoordinationProtocolPartItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new PortPartCoordinationProtocolPartItemSemanticEditPolicy());
 	}
 
 	/**

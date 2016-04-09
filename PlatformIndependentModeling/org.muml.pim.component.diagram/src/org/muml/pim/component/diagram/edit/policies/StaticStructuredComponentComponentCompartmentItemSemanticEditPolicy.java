@@ -14,34 +14,32 @@ package org.muml.pim.component.diagram.edit.policies;
 
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
+import org.muml.pim.component.diagram.edit.commands.ComponentPartCreateCommand;
+import org.muml.pim.component.diagram.edit.commands.CoordinationProtocolPartCreateCommand;
+import org.muml.pim.component.diagram.providers.MumlElementTypes;
 
 /**
  * @generated
  */
 public class StaticStructuredComponentComponentCompartmentItemSemanticEditPolicy
-		extends org.muml.pim.component.diagram.edit.policies.MumlBaseItemSemanticEditPolicy {
+		extends MumlBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public StaticStructuredComponentComponentCompartmentItemSemanticEditPolicy() {
-		super(org.muml.pim.component.diagram.providers.MumlElementTypes.StaticStructuredComponent_2005);
+		super(MumlElementTypes.StaticStructuredComponent_2005);
 	}
 
 	/**
 	 * @generated
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
-		if (org.muml.pim.component.diagram.providers.MumlElementTypes.ComponentPart_3012 == req
-				.getElementType()) {
-			return getGEFWrapper(
-					new org.muml.pim.component.diagram.edit.commands.ComponentPartCreateCommand(req));
+		if (MumlElementTypes.ComponentPart_3012 == req.getElementType()) {
+			return getGEFWrapper(new ComponentPartCreateCommand(req));
 		}
-		if (org.muml.pim.component.diagram.providers.MumlElementTypes.CoordinationProtocolPart_3016 == req
-				.getElementType()) {
-			return getGEFWrapper(
-					new org.muml.pim.component.diagram.edit.commands.CoordinationProtocolPartCreateCommand(
-							req));
+		if (MumlElementTypes.CoordinationProtocolPart_3016 == req.getElementType()) {
+			return getGEFWrapper(new CoordinationProtocolPartCreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}

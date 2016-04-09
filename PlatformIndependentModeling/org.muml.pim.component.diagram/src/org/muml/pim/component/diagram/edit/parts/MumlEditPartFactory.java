@@ -18,6 +18,7 @@ import org.eclipse.gef.tools.CellEditorLocator;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ITextAwareEditPart;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.directedit.locator.CellEditorLocatorAccess;
+import org.muml.pim.component.diagram.part.MumlVisualIDRegistry;
 
 /**
  * @generated
@@ -30,80 +31,73 @@ public class MumlEditPartFactory implements EditPartFactory {
 	public EditPart createEditPart(EditPart context, Object model) {
 		if (model instanceof View) {
 			View view = (View) model;
-			switch (org.muml.pim.component.diagram.part.MumlVisualIDRegistry.getVisualID(view)) {
+			switch (MumlVisualIDRegistry.getVisualID(view)) {
 
-			case org.muml.pim.component.diagram.edit.parts.ModelElementCategoryEditPart.VISUAL_ID:
-				return new org.muml.pim.component.diagram.edit.parts.ModelElementCategoryEditPart(view);
+			case ModelElementCategoryEditPart.VISUAL_ID:
+				return new ModelElementCategoryEditPart(view);
 
-			case org.muml.pim.component.diagram.edit.parts.StaticAtomicComponentEditPart.VISUAL_ID:
-				return new org.muml.pim.component.diagram.edit.parts.StaticAtomicComponentEditPart(
-						view);
+			case StaticAtomicComponentEditPart.VISUAL_ID:
+				return new StaticAtomicComponentEditPart(view);
 
-			case org.muml.pim.component.diagram.edit.parts.StaticAtomicComponentNameEditPart.VISUAL_ID:
-				return new org.muml.pim.component.diagram.edit.parts.StaticAtomicComponentNameEditPart(
-						view);
+			case StaticAtomicComponentNameEditPart.VISUAL_ID:
+				return new StaticAtomicComponentNameEditPart(view);
 
-			case org.muml.pim.component.diagram.edit.parts.StaticStructuredComponentEditPart.VISUAL_ID:
-				return new org.muml.pim.component.diagram.edit.parts.StaticStructuredComponentEditPart(
-						view);
+			case StaticStructuredComponentEditPart.VISUAL_ID:
+				return new StaticStructuredComponentEditPart(view);
 
-			case org.muml.pim.component.diagram.edit.parts.StaticStructuredComponentNameEditPart.VISUAL_ID:
-				return new org.muml.pim.component.diagram.edit.parts.StaticStructuredComponentNameEditPart(
-						view);
+			case StaticStructuredComponentNameEditPart.VISUAL_ID:
+				return new StaticStructuredComponentNameEditPart(view);
 
-			case org.muml.pim.component.diagram.edit.parts.DiscretePortEditPart.VISUAL_ID:
-				return new org.muml.pim.component.diagram.edit.parts.DiscretePortEditPart(view);
+			case DiscretePortEditPart.VISUAL_ID:
+				return new DiscretePortEditPart(view);
 
-			case org.muml.pim.component.diagram.edit.parts.DiscretePortNameEditPart.VISUAL_ID:
-				return new org.muml.pim.component.diagram.edit.parts.DiscretePortNameEditPart(view);
+			case DiscretePortNameEditPart.VISUAL_ID:
+				return new DiscretePortNameEditPart(view);
 
-			case org.muml.pim.component.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID:
-				return new org.muml.pim.component.diagram.edit.parts.WrappingLabelEditPart(view);
+			case WrappingLabelEditPart.VISUAL_ID:
+				return new WrappingLabelEditPart(view);
 
-			case org.muml.pim.component.diagram.edit.parts.ContinuousPortEditPart.VISUAL_ID:
-				return new org.muml.pim.component.diagram.edit.parts.ContinuousPortEditPart(view);
+			case ContinuousPortEditPart.VISUAL_ID:
+				return new ContinuousPortEditPart(view);
 
-			case org.muml.pim.component.diagram.edit.parts.ContinuousPortNameEditPart.VISUAL_ID:
-				return new org.muml.pim.component.diagram.edit.parts.ContinuousPortNameEditPart(view);
+			case ContinuousPortNameEditPart.VISUAL_ID:
+				return new ContinuousPortNameEditPart(view);
 
-			case org.muml.pim.component.diagram.edit.parts.HybridPortEditPart.VISUAL_ID:
-				return new org.muml.pim.component.diagram.edit.parts.HybridPortEditPart(view);
+			case HybridPortEditPart.VISUAL_ID:
+				return new HybridPortEditPart(view);
 
-			case org.muml.pim.component.diagram.edit.parts.WrappingLabel2EditPart.VISUAL_ID:
-				return new org.muml.pim.component.diagram.edit.parts.WrappingLabel2EditPart(view);
+			case WrappingLabel2EditPart.VISUAL_ID:
+				return new WrappingLabel2EditPart(view);
 
-			case org.muml.pim.component.diagram.edit.parts.ComponentPartEditPart.VISUAL_ID:
-				return new org.muml.pim.component.diagram.edit.parts.ComponentPartEditPart(view);
+			case ComponentPartEditPart.VISUAL_ID:
+				return new ComponentPartEditPart(view);
 
-			case org.muml.pim.component.diagram.edit.parts.WrappingLabel3EditPart.VISUAL_ID:
-				return new org.muml.pim.component.diagram.edit.parts.WrappingLabel3EditPart(view);
+			case WrappingLabel3EditPart.VISUAL_ID:
+				return new WrappingLabel3EditPart(view);
 
-			case org.muml.pim.component.diagram.edit.parts.PortPartEditPart.VISUAL_ID:
-				return new org.muml.pim.component.diagram.edit.parts.PortPartEditPart(view);
+			case PortPartEditPart.VISUAL_ID:
+				return new PortPartEditPart(view);
 
-			case org.muml.pim.component.diagram.edit.parts.PortPartNameEditPart.VISUAL_ID:
-				return new org.muml.pim.component.diagram.edit.parts.PortPartNameEditPart(view);
+			case PortPartNameEditPart.VISUAL_ID:
+				return new PortPartNameEditPart(view);
 
-			case org.muml.pim.component.diagram.edit.parts.CoordinationProtocolPartEditPart.VISUAL_ID:
-				return new org.muml.pim.component.diagram.edit.parts.CoordinationProtocolPartEditPart(
-						view);
+			case CoordinationProtocolPartEditPart.VISUAL_ID:
+				return new CoordinationProtocolPartEditPart(view);
 
-			case org.muml.pim.component.diagram.edit.parts.WrappingLabel4EditPart.VISUAL_ID:
-				return new org.muml.pim.component.diagram.edit.parts.WrappingLabel4EditPart(view);
+			case WrappingLabel4EditPart.VISUAL_ID:
+				return new WrappingLabel4EditPart(view);
 
-			case org.muml.pim.component.diagram.edit.parts.StaticStructuredComponentComponentCompartmentEditPart.VISUAL_ID:
-				return new org.muml.pim.component.diagram.edit.parts.StaticStructuredComponentComponentCompartmentEditPart(
-						view);
+			case StaticStructuredComponentComponentCompartmentEditPart.VISUAL_ID:
+				return new StaticStructuredComponentComponentCompartmentEditPart(view);
 
-			case org.muml.pim.component.diagram.edit.parts.AssemblyConnectorEditPart.VISUAL_ID:
-				return new org.muml.pim.component.diagram.edit.parts.AssemblyConnectorEditPart(view);
+			case AssemblyConnectorEditPart.VISUAL_ID:
+				return new AssemblyConnectorEditPart(view);
 
-			case org.muml.pim.component.diagram.edit.parts.DelegationConnectorEditPart.VISUAL_ID:
-				return new org.muml.pim.component.diagram.edit.parts.DelegationConnectorEditPart(view);
+			case DelegationConnectorEditPart.VISUAL_ID:
+				return new DelegationConnectorEditPart(view);
 
-			case org.muml.pim.component.diagram.edit.parts.PortPartCoordinationProtocolPartEditPart.VISUAL_ID:
-				return new org.muml.pim.component.diagram.edit.parts.PortPartCoordinationProtocolPartEditPart(
-						view);
+			case PortPartCoordinationProtocolPartEditPart.VISUAL_ID:
+				return new PortPartCoordinationProtocolPartEditPart(view);
 
 			}
 		}

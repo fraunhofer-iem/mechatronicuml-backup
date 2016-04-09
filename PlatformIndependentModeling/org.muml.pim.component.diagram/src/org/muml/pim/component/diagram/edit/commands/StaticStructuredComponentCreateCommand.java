@@ -23,6 +23,10 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.core.modelinstance.ModelElementCategory;
+import org.muml.pim.component.ComponentFactory;
+import org.muml.pim.component.StaticStructuredComponent;
+import org.muml.pim.component.diagram.providers.ElementInitializers;
 
 /**
  * @generated
@@ -60,14 +64,12 @@ public class StaticStructuredComponentCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-		org.muml.pim.component.StaticStructuredComponent newElement = org.muml.pim.component.ComponentFactory.eINSTANCE
-				.createStaticStructuredComponent();
+		StaticStructuredComponent newElement = ComponentFactory.eINSTANCE.createStaticStructuredComponent();
 
-		org.muml.core.modelinstance.ModelElementCategory owner = (org.muml.core.modelinstance.ModelElementCategory) getElementToEdit();
+		ModelElementCategory owner = (ModelElementCategory) getElementToEdit();
 		owner.getModelElements().add(newElement);
 
-		org.muml.pim.component.diagram.providers.ElementInitializers.getInstance()
-				.init_StaticStructuredComponent_2005(newElement);
+		ElementInitializers.getInstance().init_StaticStructuredComponent_2005(newElement);
 
 		doConfigure(newElement, monitor, info);
 
@@ -76,10 +78,10 @@ public class StaticStructuredComponentCreateCommand extends EditElementCommand {
 	}
 
 	/**
-	 * @generated
-	 */
-	protected void doConfigure(org.muml.pim.component.StaticStructuredComponent newElement,
-			IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
+	* @generated
+	*/
+	protected void doConfigure(StaticStructuredComponent newElement, IProgressMonitor monitor, IAdaptable info)
+			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest()).getElementType();
 		ConfigureRequest configureRequest = new ConfigureRequest(getEditingDomain(), newElement, elementType);
 		configureRequest.setClientContext(((CreateElementRequest) getRequest()).getClientContext());

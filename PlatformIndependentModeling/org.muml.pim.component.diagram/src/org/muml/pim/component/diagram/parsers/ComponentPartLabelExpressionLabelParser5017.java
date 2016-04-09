@@ -31,6 +31,8 @@ import org.eclipse.gmf.runtime.common.ui.services.parser.ParserEditStatus;
 import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand;
 import org.eclipse.gmf.tooling.runtime.parsers.ExpressionLabelParserBase;
 import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
+import org.muml.pim.component.ComponentPackage;
+import org.muml.pim.component.diagram.expressions.MumlOCLFactory;
 
 /**
  * @generated
@@ -47,8 +49,7 @@ public class ComponentPartLabelExpressionLabelParser5017 extends ExpressionLabel
 	 */
 	@Override
 	protected String getExpressionBody() {
-		return org.muml.pim.component.diagram.expressions.MumlOCLFactory.getExpression(7,
-				org.muml.pim.component.ComponentPackage.eINSTANCE.getComponentPart(), null).body();
+		return MumlOCLFactory.getExpression(7, ComponentPackage.eINSTANCE.getComponentPart(), null).body();
 	}
 
 	/**

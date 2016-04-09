@@ -15,6 +15,5 @@ package org.muml.pim.component.diagram.edit.helpers;
 /**
  * @generated
  */
-public class DelegationConnectorEditHelper
-		extends org.muml.pim.component.diagram.edit.helpers.MumlBaseEditHelper {
+public class DelegationConnectorEditHelper extends MumlBaseEditHelper {
 }

@@ -30,12 +30,13 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.handlers.HandlerUtil;
+import org.muml.core.modelinstance.ModelinstanceFactory;
+import org.muml.core.modelinstance.ui.handlers.AbstractCreateDiagramFileCommand;
 
 /**
  * @generated
  */
-public class MumlInitDiagramFileAction
-		extends org.muml.core.modelinstance.ui.handlers.AbstractCreateDiagramFileCommand {
+public class MumlInitDiagramFileAction extends AbstractCreateDiagramFileCommand {
 
 	/**
 	 * @generated
@@ -62,20 +63,18 @@ public class MumlInitDiagramFileAction
 			if (selectedResource instanceof IContainer) {
 				// Get a unique filename for the new file
 				IPath filePath = selectedResource.getFullPath();
-				String fileName = org.muml.pim.component.diagram.part.MumlDiagramEditorUtil
-						.getUniqueFileName(filePath, "ModelElementCategory", "modelelementcategory");
+				String fileName = MumlDiagramEditorUtil.getUniqueFileName(filePath, "ModelElementCategory",
+						"modelelementcategory");
 				// Create the new file
 				ResourceSet resourceSet = new ResourceSetImpl();
 				URI uri = URI.createPlatformResourceURI(filePath.append(fileName).toString(), true);
 				Resource resource = resourceSet.createResource(uri);
-				EObject model = org.muml.core.modelinstance.ModelinstanceFactory.eINSTANCE
-						.createModelElementCategory();
+				EObject model = ModelinstanceFactory.eINSTANCE.createModelElementCategory();
 				resource.getContents().add(model);
 				try {
 					resource.save(Collections.emptyMap());
 				} catch (IOException e) {
-					org.muml.pim.component.diagram.part.ComponentDiagramEditorPlugin.getInstance()
-							.logError("Could not create child element", e);
+					ComponentDiagramEditorPlugin.getInstance().logError("Could not create child element", e);
 				}
 			}
 			return null;
@@ -87,7 +86,7 @@ public class MumlInitDiagramFileAction
 	 */
 	@Override
 	public void setCharset(IFile diagramFile) {
-		org.muml.pim.component.diagram.part.MumlDiagramEditorUtil.setCharset(diagramFile);
+		MumlDiagramEditorUtil.setCharset(diagramFile);
 	}
 
 	/**
@@ -95,8 +94,7 @@ public class MumlInitDiagramFileAction
 	 */
 	@Override
 	public String getUniqueFilename(String hint, String extension, IPath filePath) {
-		return org.muml.pim.component.diagram.part.MumlDiagramEditorUtil.getUniqueFileName(filePath,
-				hint, extension);
+		return MumlDiagramEditorUtil.getUniqueFileName(filePath, hint, extension);
 	}
 
 	/**
@@ -104,7 +102,7 @@ public class MumlInitDiagramFileAction
 	 */
 	@Override
 	public String getEditorId() {
-		return org.muml.pim.component.diagram.part.ComponentDiagramEditor.ID;
+		return ComponentDiagramEditor.ID;
 
 	}
 }

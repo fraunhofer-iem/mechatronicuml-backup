@@ -24,6 +24,8 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.diagram.ui.parts.DiagramEditor;
 import org.eclipse.gmf.runtime.emf.ui.providers.marker.AbstractModelMarkerNavigationProvider;
+import org.muml.pim.component.diagram.part.ComponentDiagramEditorPlugin;
+import org.muml.pim.component.diagram.part.MumlDiagramEditorUtil;
 
 /**
  * @generated
@@ -33,8 +35,7 @@ public class MumlMarkerNavigationProvider extends AbstractModelMarkerNavigationP
 	/**
 	 * @generated
 	 */
-	public static final String MARKER_TYPE = org.muml.pim.component.diagram.part.ComponentDiagramEditorPlugin.ID
-			+ ".diagnostic"; //$NON-NLS-1$
+	public static final String MARKER_TYPE = ComponentDiagramEditorPlugin.ID + ".diagnostic"; //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -52,8 +53,7 @@ public class MumlMarkerNavigationProvider extends AbstractModelMarkerNavigationP
 		}
 		EditPart targetEditPart = (EditPart) editPartRegistry.get(targetView);
 		if (targetEditPart != null) {
-			org.muml.pim.component.diagram.part.MumlDiagramEditorUtil.selectElementsInDiagram(editor,
-					Arrays.asList(new EditPart[] { targetEditPart }));
+			MumlDiagramEditorUtil.selectElementsInDiagram(editor, Arrays.asList(new EditPart[] { targetEditPart }));
 		}
 	}
 
@@ -64,8 +64,7 @@ public class MumlMarkerNavigationProvider extends AbstractModelMarkerNavigationP
 		try {
 			resource.deleteMarkers(MARKER_TYPE, true, IResource.DEPTH_ZERO);
 		} catch (CoreException e) {
-			org.muml.pim.component.diagram.part.ComponentDiagramEditorPlugin.getInstance()
-					.logError("Failed to delete validation markers", e); //$NON-NLS-1$
+			ComponentDiagramEditorPlugin.getInstance().logError("Failed to delete validation markers", e); //$NON-NLS-1$
 		}
 	}
 
@@ -87,8 +86,7 @@ public class MumlMarkerNavigationProvider extends AbstractModelMarkerNavigationP
 			}
 			marker.setAttribute(IMarker.SEVERITY, markerSeverity);
 		} catch (CoreException e) {
-			org.muml.pim.component.diagram.part.ComponentDiagramEditorPlugin.getInstance()
-					.logError("Failed to create validation marker", e); //$NON-NLS-1$
+			ComponentDiagramEditorPlugin.getInstance().logError("Failed to create validation marker", e); //$NON-NLS-1$
 		}
 		return marker;
 	}

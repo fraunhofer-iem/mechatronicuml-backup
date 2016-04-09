@@ -25,6 +25,22 @@ import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.emf.ui.services.parser.ParserHintAdapter;
 import org.eclipse.gmf.runtime.notation.View;
 import org.muml.core.CorePackage;
+import org.muml.pim.component.ComponentPackage;
+import org.muml.pim.component.diagram.edit.parts.ContinuousPortNameEditPart;
+import org.muml.pim.component.diagram.edit.parts.DiscretePortNameEditPart;
+import org.muml.pim.component.diagram.edit.parts.PortPartNameEditPart;
+import org.muml.pim.component.diagram.edit.parts.StaticAtomicComponentNameEditPart;
+import org.muml.pim.component.diagram.edit.parts.StaticStructuredComponentNameEditPart;
+import org.muml.pim.component.diagram.edit.parts.WrappingLabel2EditPart;
+import org.muml.pim.component.diagram.edit.parts.WrappingLabel3EditPart;
+import org.muml.pim.component.diagram.edit.parts.WrappingLabel4EditPart;
+import org.muml.pim.component.diagram.edit.parts.WrappingLabelEditPart;
+import org.muml.pim.component.diagram.parsers.ComponentPartLabelExpressionLabelParser5017;
+import org.muml.pim.component.diagram.parsers.CoordinationProtocolPartLabelExpressionLabelParser5026;
+import org.muml.pim.component.diagram.parsers.DiscretePortLabelExpressionLabelParser5025;
+import org.muml.pim.component.diagram.parsers.HybridPortLabelExpressionLabelParser5024;
+import org.muml.pim.component.diagram.parsers.MessageFormatParser;
+import org.muml.pim.component.diagram.part.MumlVisualIDRegistry;
 
 /**
  * @generated
@@ -42,8 +58,7 @@ public class MumlParserProvider extends AbstractProvider implements IParserProvi
 	private IParser getStaticAtomicComponentName_5028Parser() {
 		if (staticAtomicComponentName_5028Parser == null) {
 			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
-			org.muml.pim.component.diagram.parsers.MessageFormatParser parser = new org.muml.pim.component.diagram.parsers.MessageFormatParser(
-					features);
+			MessageFormatParser parser = new MessageFormatParser(features);
 			staticAtomicComponentName_5028Parser = parser;
 		}
 		return staticAtomicComponentName_5028Parser;
@@ -60,8 +75,7 @@ public class MumlParserProvider extends AbstractProvider implements IParserProvi
 	private IParser getStaticStructuredComponentName_5021Parser() {
 		if (staticStructuredComponentName_5021Parser == null) {
 			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
-			org.muml.pim.component.diagram.parsers.MessageFormatParser parser = new org.muml.pim.component.diagram.parsers.MessageFormatParser(
-					features);
+			MessageFormatParser parser = new MessageFormatParser(features);
 			staticStructuredComponentName_5021Parser = parser;
 		}
 		return staticStructuredComponentName_5021Parser;
@@ -78,8 +92,7 @@ public class MumlParserProvider extends AbstractProvider implements IParserProvi
 	private IParser getDiscretePortName_5012Parser() {
 		if (discretePortName_5012Parser == null) {
 			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
-			org.muml.pim.component.diagram.parsers.MessageFormatParser parser = new org.muml.pim.component.diagram.parsers.MessageFormatParser(
-					features);
+			MessageFormatParser parser = new MessageFormatParser(features);
 			discretePortName_5012Parser = parser;
 		}
 		return discretePortName_5012Parser;
@@ -89,7 +102,7 @@ public class MumlParserProvider extends AbstractProvider implements IParserProvi
 	 * @generated
 	 */
 	private IParser getDiscretePortLabel_5025Parser() {
-		return new org.muml.pim.component.diagram.parsers.DiscretePortLabelExpressionLabelParser5025();
+		return new DiscretePortLabelExpressionLabelParser5025();
 	}
 
 	/**
@@ -103,8 +116,7 @@ public class MumlParserProvider extends AbstractProvider implements IParserProvi
 	private IParser getContinuousPortName_5013Parser() {
 		if (continuousPortName_5013Parser == null) {
 			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
-			org.muml.pim.component.diagram.parsers.MessageFormatParser parser = new org.muml.pim.component.diagram.parsers.MessageFormatParser(
-					features);
+			MessageFormatParser parser = new MessageFormatParser(features);
 			continuousPortName_5013Parser = parser;
 		}
 		return continuousPortName_5013Parser;
@@ -114,14 +126,14 @@ public class MumlParserProvider extends AbstractProvider implements IParserProvi
 	* @generated
 	*/
 	private IParser getHybridPortLabel_5024Parser() {
-		return new org.muml.pim.component.diagram.parsers.HybridPortLabelExpressionLabelParser5024();
+		return new HybridPortLabelExpressionLabelParser5024();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getComponentPartLabel_5017Parser() {
-		return new org.muml.pim.component.diagram.parsers.ComponentPartLabelExpressionLabelParser5017();
+		return new ComponentPartLabelExpressionLabelParser5017();
 	}
 
 	/**
@@ -134,10 +146,8 @@ public class MumlParserProvider extends AbstractProvider implements IParserProvi
 	 */
 	private IParser getPortPartName_5034Parser() {
 		if (portPartName_5034Parser == null) {
-			EAttribute[] features = new EAttribute[] {
-					org.muml.pim.component.ComponentPackage.eINSTANCE.getPortPart_Name() };
-			org.muml.pim.component.diagram.parsers.MessageFormatParser parser = new org.muml.pim.component.diagram.parsers.MessageFormatParser(
-					features);
+			EAttribute[] features = new EAttribute[] { ComponentPackage.eINSTANCE.getPortPart_Name() };
+			MessageFormatParser parser = new MessageFormatParser(features);
 			portPartName_5034Parser = parser;
 		}
 		return portPartName_5034Parser;
@@ -147,7 +157,7 @@ public class MumlParserProvider extends AbstractProvider implements IParserProvi
 	 * @generated
 	 */
 	private IParser getCoordinationProtocolPartLabel_5026Parser() {
-		return new org.muml.pim.component.diagram.parsers.CoordinationProtocolPartLabelExpressionLabelParser5026();
+		return new CoordinationProtocolPartLabelExpressionLabelParser5026();
 	}
 
 	/**
@@ -155,23 +165,23 @@ public class MumlParserProvider extends AbstractProvider implements IParserProvi
 	 */
 	protected IParser getParser(int visualID) {
 		switch (visualID) {
-		case org.muml.pim.component.diagram.edit.parts.StaticAtomicComponentNameEditPart.VISUAL_ID:
+		case StaticAtomicComponentNameEditPart.VISUAL_ID:
 			return getStaticAtomicComponentName_5028Parser();
-		case org.muml.pim.component.diagram.edit.parts.StaticStructuredComponentNameEditPart.VISUAL_ID:
+		case StaticStructuredComponentNameEditPart.VISUAL_ID:
 			return getStaticStructuredComponentName_5021Parser();
-		case org.muml.pim.component.diagram.edit.parts.DiscretePortNameEditPart.VISUAL_ID:
+		case DiscretePortNameEditPart.VISUAL_ID:
 			return getDiscretePortName_5012Parser();
-		case org.muml.pim.component.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID:
+		case WrappingLabelEditPart.VISUAL_ID:
 			return getDiscretePortLabel_5025Parser();
-		case org.muml.pim.component.diagram.edit.parts.ContinuousPortNameEditPart.VISUAL_ID:
+		case ContinuousPortNameEditPart.VISUAL_ID:
 			return getContinuousPortName_5013Parser();
-		case org.muml.pim.component.diagram.edit.parts.WrappingLabel2EditPart.VISUAL_ID:
+		case WrappingLabel2EditPart.VISUAL_ID:
 			return getHybridPortLabel_5024Parser();
-		case org.muml.pim.component.diagram.edit.parts.WrappingLabel3EditPart.VISUAL_ID:
+		case WrappingLabel3EditPart.VISUAL_ID:
 			return getComponentPartLabel_5017Parser();
-		case org.muml.pim.component.diagram.edit.parts.PortPartNameEditPart.VISUAL_ID:
+		case PortPartNameEditPart.VISUAL_ID:
 			return getPortPartName_5034Parser();
-		case org.muml.pim.component.diagram.edit.parts.WrappingLabel4EditPart.VISUAL_ID:
+		case WrappingLabel4EditPart.VISUAL_ID:
 			return getCoordinationProtocolPartLabel_5026Parser();
 		}
 		return null;
@@ -191,12 +201,11 @@ public class MumlParserProvider extends AbstractProvider implements IParserProvi
 	public IParser getParser(IAdaptable hint) {
 		String vid = (String) hint.getAdapter(String.class);
 		if (vid != null) {
-			return getParser(org.muml.pim.component.diagram.part.MumlVisualIDRegistry.getVisualID(vid));
+			return getParser(MumlVisualIDRegistry.getVisualID(vid));
 		}
 		View view = (View) hint.getAdapter(View.class);
 		if (view != null) {
-			return getParser(
-					org.muml.pim.component.diagram.part.MumlVisualIDRegistry.getVisualID(view));
+			return getParser(MumlVisualIDRegistry.getVisualID(view));
 		}
 		return null;
 	}
@@ -207,7 +216,7 @@ public class MumlParserProvider extends AbstractProvider implements IParserProvi
 	public boolean provides(IOperation operation) {
 		if (operation instanceof GetParserOperation) {
 			IAdaptable hint = ((GetParserOperation) operation).getHint();
-			if (org.muml.pim.component.diagram.providers.MumlElementTypes.getElement(hint) == null) {
+			if (MumlElementTypes.getElement(hint) == null) {
 				return false;
 			}
 			return getParser(hint) != null;

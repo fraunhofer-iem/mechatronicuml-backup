@@ -15,6 +15,5 @@ package org.muml.pim.component.diagram.edit.helpers;
 /**
  * @generated
  */
-public class ContinuousPortEditHelper
-		extends org.muml.pim.component.diagram.edit.helpers.MumlBaseEditHelper {
+public class ContinuousPortEditHelper extends MumlBaseEditHelper {
 }

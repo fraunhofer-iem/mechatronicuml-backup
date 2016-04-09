@@ -23,6 +23,9 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.pim.component.ComponentFactory;
+import org.muml.pim.component.ComponentPart;
+import org.muml.pim.component.PortPart;
 
 /**
  * @generated
@@ -60,10 +63,9 @@ public class PortPartCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-		org.muml.pim.component.PortPart newElement = org.muml.pim.component.ComponentFactory.eINSTANCE
-				.createPortPart();
+		PortPart newElement = ComponentFactory.eINSTANCE.createPortPart();
 
-		org.muml.pim.component.ComponentPart owner = (org.muml.pim.component.ComponentPart) getElementToEdit();
+		ComponentPart owner = (ComponentPart) getElementToEdit();
 		owner.getPortParts().add(newElement);
 
 		doConfigure(newElement, monitor, info);
@@ -73,10 +75,10 @@ public class PortPartCreateCommand extends EditElementCommand {
 	}
 
 	/**
-	 * @generated
-	 */
-	protected void doConfigure(org.muml.pim.component.PortPart newElement, IProgressMonitor monitor,
-			IAdaptable info) throws ExecutionException {
+	* @generated
+	*/
+	protected void doConfigure(PortPart newElement, IProgressMonitor monitor, IAdaptable info)
+			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest()).getElementType();
 		ConfigureRequest configureRequest = new ConfigureRequest(getEditingDomain(), newElement, elementType);
 		configureRequest.setClientContext(((CreateElementRequest) getRequest()).getClientContext());

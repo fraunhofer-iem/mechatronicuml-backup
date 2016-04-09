@@ -20,6 +20,11 @@ import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy;
+import org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy;
+import org.muml.pim.component.CoordinationProtocolPart;
+import org.muml.pim.component.PortPart;
+import org.muml.pim.component.diagram.edit.policies.MumlBaseItemSemanticEditPolicy;
 
 /**
  * @generated
@@ -53,29 +58,23 @@ public class PortPartCoordinationProtocolPartCreateCommand extends EditElementCo
 		if (source == null && target == null) {
 			return false;
 		}
-		if (source != null && false == source instanceof org.muml.pim.component.PortPart) {
+		if (source != null && false == source instanceof PortPart) {
 			return false;
 		}
-		if (target != null
-				&& false == target instanceof org.muml.pim.component.CoordinationProtocolPart) {
+		if (target != null && false == target instanceof CoordinationProtocolPart) {
 			return false;
 		}
 		if (getSource() == null) {
 			return true; // link creation is in progress; source is not defined yet
 		}
 		// target may be null here but it's possible to check constraint
-		View sourceView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-				.getSourceView(getRequest());
-		View targetView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-				.getTargetView(getRequest());
-		if (!org.muml.pim.component.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-				.getLinkConstraints()
+		View sourceView = ConnectionConfigureHelperGraphicalNodeEditPolicy.getSourceView(getRequest());
+		View targetView = ConnectionConfigureHelperGraphicalNodeEditPolicy.getTargetView(getRequest());
+		if (!MumlBaseItemSemanticEditPolicy.getLinkConstraints()
 				.canCreatePortPartCoordinationProtocolPart_4004(getSource(), getTarget(), sourceView, targetView)) {
-			String errorMessage = org.muml.pim.component.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-					.getLinkConstraints()
+			String errorMessage = MumlBaseItemSemanticEditPolicy.getLinkConstraints()
 					.getErrorPortPartCoordinationProtocolPart_4004(getSource(), getTarget(), sourceView, targetView);
-			org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy
-					.showMessage(targetView != null ? targetView : sourceView, errorMessage);
+			ErrorFeedbackEditPolicy.showMessage(targetView != null ? targetView : sourceView, errorMessage);
 			return false;
 		}
 		return true;
@@ -106,14 +105,14 @@ public class PortPartCoordinationProtocolPartCreateCommand extends EditElementCo
 	/**
 	 * @generated
 	 */
-	protected org.muml.pim.component.PortPart getSource() {
-		return (org.muml.pim.component.PortPart) source;
+	protected PortPart getSource() {
+		return (PortPart) source;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected org.muml.pim.component.CoordinationProtocolPart getTarget() {
-		return (org.muml.pim.component.CoordinationProtocolPart) target;
+	protected CoordinationProtocolPart getTarget() {
+		return (CoordinationProtocolPart) target;
 	}
 }

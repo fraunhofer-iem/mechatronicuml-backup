@@ -13,6 +13,7 @@
 package org.muml.pim.component.diagram.preferences;
 
 import org.eclipse.gmf.runtime.diagram.ui.preferences.ConnectionsPreferencePage;
+import org.muml.pim.component.diagram.part.ComponentDiagramEditorPlugin;
 
 /**
  * @generated
@@ -23,7 +24,6 @@ public class DiagramConnectionsPreferencePage extends ConnectionsPreferencePage 
 	 * @generated
 	 */
 	public DiagramConnectionsPreferencePage() {
-		setPreferenceStore(org.muml.pim.component.diagram.part.ComponentDiagramEditorPlugin
-				.getInstance().getPreferenceStore());
+		setPreferenceStore(ComponentDiagramEditorPlugin.getInstance().getPreferenceStore());
 	}
 }

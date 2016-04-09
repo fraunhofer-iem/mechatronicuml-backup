@@ -18,35 +18,31 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.emf.commands.core.commands.DuplicateEObjectsCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DuplicateElementsRequest;
+import org.muml.pim.component.diagram.edit.commands.StaticAtomicComponentCreateCommand;
+import org.muml.pim.component.diagram.edit.commands.StaticStructuredComponentCreateCommand;
+import org.muml.pim.component.diagram.providers.MumlElementTypes;
 
 /**
  * @generated
  */
-public class ModelElementCategoryItemSemanticEditPolicy
-		extends org.muml.pim.component.diagram.edit.policies.MumlBaseItemSemanticEditPolicy {
+public class ModelElementCategoryItemSemanticEditPolicy extends MumlBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public ModelElementCategoryItemSemanticEditPolicy() {
-		super(org.muml.pim.component.diagram.providers.MumlElementTypes.ModelElementCategory_1000);
+		super(MumlElementTypes.ModelElementCategory_1000);
 	}
 
 	/**
 	 * @generated
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
-		if (org.muml.pim.component.diagram.providers.MumlElementTypes.StaticAtomicComponent_2006 == req
-				.getElementType()) {
-			return getGEFWrapper(
-					new org.muml.pim.component.diagram.edit.commands.StaticAtomicComponentCreateCommand(
-							req));
+		if (MumlElementTypes.StaticAtomicComponent_2006 == req.getElementType()) {
+			return getGEFWrapper(new StaticAtomicComponentCreateCommand(req));
 		}
-		if (org.muml.pim.component.diagram.providers.MumlElementTypes.StaticStructuredComponent_2005 == req
-				.getElementType()) {
-			return getGEFWrapper(
-					new org.muml.pim.component.diagram.edit.commands.StaticStructuredComponentCreateCommand(
-							req));
+		if (MumlElementTypes.StaticStructuredComponent_2005 == req.getElementType()) {
+			return getGEFWrapper(new StaticStructuredComponentCreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}

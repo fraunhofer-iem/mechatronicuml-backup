@@ -25,6 +25,21 @@ import org.eclipse.gmf.tooling.runtime.providers.DiagramElementTypeImages;
 import org.eclipse.gmf.tooling.runtime.providers.DiagramElementTypes;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.swt.graphics.Image;
+import org.muml.core.modelinstance.ModelinstancePackage;
+import org.muml.pim.component.ComponentPackage;
+import org.muml.pim.component.diagram.edit.parts.AssemblyConnectorEditPart;
+import org.muml.pim.component.diagram.edit.parts.ComponentPartEditPart;
+import org.muml.pim.component.diagram.edit.parts.ContinuousPortEditPart;
+import org.muml.pim.component.diagram.edit.parts.CoordinationProtocolPartEditPart;
+import org.muml.pim.component.diagram.edit.parts.DelegationConnectorEditPart;
+import org.muml.pim.component.diagram.edit.parts.DiscretePortEditPart;
+import org.muml.pim.component.diagram.edit.parts.HybridPortEditPart;
+import org.muml.pim.component.diagram.edit.parts.ModelElementCategoryEditPart;
+import org.muml.pim.component.diagram.edit.parts.PortPartCoordinationProtocolPartEditPart;
+import org.muml.pim.component.diagram.edit.parts.PortPartEditPart;
+import org.muml.pim.component.diagram.edit.parts.StaticAtomicComponentEditPart;
+import org.muml.pim.component.diagram.edit.parts.StaticStructuredComponentEditPart;
+import org.muml.pim.component.diagram.part.ComponentDiagramEditorPlugin;
 
 /**
  * @generated
@@ -46,8 +61,7 @@ public class MumlElementTypes {
 	 * @generated
 	 */
 	private static DiagramElementTypeImages elementTypeImages = new DiagramElementTypeImages(
-			org.muml.pim.component.diagram.part.ComponentDiagramEditorPlugin.getInstance()
-					.getItemProvidersAdapterFactory());
+			ComponentDiagramEditorPlugin.getInstance().getItemProvidersAdapterFactory());
 
 	/**
 	 * @generated
@@ -82,8 +96,7 @@ public class MumlElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType HybridPort_3013 = getElementType(
-			"org.muml.pim.component.diagram.HybridPort_3013"); //$NON-NLS-1$
+	public static final IElementType HybridPort_3013 = getElementType("org.muml.pim.component.diagram.HybridPort_3013"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
@@ -92,8 +105,7 @@ public class MumlElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType PortPart_3022 = getElementType(
-			"org.muml.pim.component.diagram.PortPart_3022"); //$NON-NLS-1$
+	public static final IElementType PortPart_3022 = getElementType("org.muml.pim.component.diagram.PortPart_3022"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
@@ -153,42 +165,30 @@ public class MumlElementTypes {
 		if (elements == null) {
 			elements = new IdentityHashMap<IElementType, ENamedElement>();
 
-			elements.put(ModelElementCategory_1000,
-					org.muml.core.modelinstance.ModelinstancePackage.eINSTANCE.getModelElementCategory());
+			elements.put(ModelElementCategory_1000, ModelinstancePackage.eINSTANCE.getModelElementCategory());
 
-			elements.put(StaticAtomicComponent_2006,
-					org.muml.pim.component.ComponentPackage.eINSTANCE.getStaticAtomicComponent());
+			elements.put(StaticAtomicComponent_2006, ComponentPackage.eINSTANCE.getStaticAtomicComponent());
 
-			elements.put(StaticStructuredComponent_2005,
-					org.muml.pim.component.ComponentPackage.eINSTANCE.getStaticStructuredComponent());
+			elements.put(StaticStructuredComponent_2005, ComponentPackage.eINSTANCE.getStaticStructuredComponent());
 
-			elements.put(DiscretePort_3010,
-					org.muml.pim.component.ComponentPackage.eINSTANCE.getDiscretePort());
+			elements.put(DiscretePort_3010, ComponentPackage.eINSTANCE.getDiscretePort());
 
-			elements.put(ContinuousPort_3011,
-					org.muml.pim.component.ComponentPackage.eINSTANCE.getContinuousPort());
+			elements.put(ContinuousPort_3011, ComponentPackage.eINSTANCE.getContinuousPort());
 
-			elements.put(HybridPort_3013,
-					org.muml.pim.component.ComponentPackage.eINSTANCE.getHybridPort());
+			elements.put(HybridPort_3013, ComponentPackage.eINSTANCE.getHybridPort());
 
-			elements.put(ComponentPart_3012,
-					org.muml.pim.component.ComponentPackage.eINSTANCE.getComponentPart());
+			elements.put(ComponentPart_3012, ComponentPackage.eINSTANCE.getComponentPart());
 
-			elements.put(PortPart_3022,
-					org.muml.pim.component.ComponentPackage.eINSTANCE.getPortPart());
+			elements.put(PortPart_3022, ComponentPackage.eINSTANCE.getPortPart());
 
-			elements.put(CoordinationProtocolPart_3016,
-					org.muml.pim.component.ComponentPackage.eINSTANCE.getCoordinationProtocolPart());
+			elements.put(CoordinationProtocolPart_3016, ComponentPackage.eINSTANCE.getCoordinationProtocolPart());
 
-			elements.put(AssemblyConnector_4001,
-					org.muml.pim.component.ComponentPackage.eINSTANCE.getAssemblyConnector());
+			elements.put(AssemblyConnector_4001, ComponentPackage.eINSTANCE.getAssemblyConnector());
 
-			elements.put(DelegationConnector_4002,
-					org.muml.pim.component.ComponentPackage.eINSTANCE.getDelegationConnector());
+			elements.put(DelegationConnector_4002, ComponentPackage.eINSTANCE.getDelegationConnector());
 
 			elements.put(PortPartCoordinationProtocolPart_4004,
-					org.muml.pim.component.ComponentPackage.eINSTANCE
-							.getPortPart_CoordinationProtocolPart());
+					ComponentPackage.eINSTANCE.getPortPart_CoordinationProtocolPart());
 		}
 		return (ENamedElement) elements.get(type);
 	}
@@ -227,29 +227,29 @@ public class MumlElementTypes {
 	 */
 	public static IElementType getElementType(int visualID) {
 		switch (visualID) {
-		case org.muml.pim.component.diagram.edit.parts.ModelElementCategoryEditPart.VISUAL_ID:
+		case ModelElementCategoryEditPart.VISUAL_ID:
 			return ModelElementCategory_1000;
-		case org.muml.pim.component.diagram.edit.parts.StaticAtomicComponentEditPart.VISUAL_ID:
+		case StaticAtomicComponentEditPart.VISUAL_ID:
 			return StaticAtomicComponent_2006;
-		case org.muml.pim.component.diagram.edit.parts.StaticStructuredComponentEditPart.VISUAL_ID:
+		case StaticStructuredComponentEditPart.VISUAL_ID:
 			return StaticStructuredComponent_2005;
-		case org.muml.pim.component.diagram.edit.parts.DiscretePortEditPart.VISUAL_ID:
+		case DiscretePortEditPart.VISUAL_ID:
 			return DiscretePort_3010;
-		case org.muml.pim.component.diagram.edit.parts.ContinuousPortEditPart.VISUAL_ID:
+		case ContinuousPortEditPart.VISUAL_ID:
 			return ContinuousPort_3011;
-		case org.muml.pim.component.diagram.edit.parts.HybridPortEditPart.VISUAL_ID:
+		case HybridPortEditPart.VISUAL_ID:
 			return HybridPort_3013;
-		case org.muml.pim.component.diagram.edit.parts.ComponentPartEditPart.VISUAL_ID:
+		case ComponentPartEditPart.VISUAL_ID:
 			return ComponentPart_3012;
-		case org.muml.pim.component.diagram.edit.parts.PortPartEditPart.VISUAL_ID:
+		case PortPartEditPart.VISUAL_ID:
 			return PortPart_3022;
-		case org.muml.pim.component.diagram.edit.parts.CoordinationProtocolPartEditPart.VISUAL_ID:
+		case CoordinationProtocolPartEditPart.VISUAL_ID:
 			return CoordinationProtocolPart_3016;
-		case org.muml.pim.component.diagram.edit.parts.AssemblyConnectorEditPart.VISUAL_ID:
+		case AssemblyConnectorEditPart.VISUAL_ID:
 			return AssemblyConnector_4001;
-		case org.muml.pim.component.diagram.edit.parts.DelegationConnectorEditPart.VISUAL_ID:
+		case DelegationConnectorEditPart.VISUAL_ID:
 			return DelegationConnector_4002;
-		case org.muml.pim.component.diagram.edit.parts.PortPartCoordinationProtocolPartEditPart.VISUAL_ID:
+		case PortPartCoordinationProtocolPartEditPart.VISUAL_ID:
 			return PortPartCoordinationProtocolPart_4004;
 		}
 		return null;
@@ -266,8 +266,7 @@ public class MumlElementTypes {
 		@Override
 
 		public boolean isKnownElementType(IElementType elementType) {
-			return org.muml.pim.component.diagram.providers.MumlElementTypes
-					.isKnownElementType(elementType);
+			return org.muml.pim.component.diagram.providers.MumlElementTypes.isKnownElementType(elementType);
 		}
 
 		/**
@@ -285,8 +284,7 @@ public class MumlElementTypes {
 		@Override
 
 		public ENamedElement getDefiningNamedElement(IAdaptable elementTypeAdapter) {
-			return org.muml.pim.component.diagram.providers.MumlElementTypes
-					.getElement(elementTypeAdapter);
+			return org.muml.pim.component.diagram.providers.MumlElementTypes.getElement(elementTypeAdapter);
 		}
 	};
 

@@ -13,6 +13,7 @@
 package org.muml.pim.component.diagram.preferences;
 
 import org.eclipse.gmf.runtime.diagram.ui.preferences.AppearancePreferencePage;
+import org.muml.pim.component.diagram.part.ComponentDiagramEditorPlugin;
 
 /**
  * @generated
@@ -23,7 +24,6 @@ public class DiagramAppearancePreferencePage extends AppearancePreferencePage {
 	 * @generated
 	 */
 	public DiagramAppearancePreferencePage() {
-		setPreferenceStore(org.muml.pim.component.diagram.part.ComponentDiagramEditorPlugin
-				.getInstance().getPreferenceStore());
+		setPreferenceStore(ComponentDiagramEditorPlugin.getInstance().getPreferenceStore());
 	}
 }

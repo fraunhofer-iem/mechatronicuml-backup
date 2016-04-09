@@ -21,6 +21,11 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelationshipRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy;
+import org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy;
+import org.muml.pim.component.CoordinationProtocolPart;
+import org.muml.pim.component.PortPart;
+import org.muml.pim.component.diagram.edit.policies.MumlBaseItemSemanticEditPolicy;
 
 /**
  * @generated
@@ -62,7 +67,7 @@ public class PortPartCoordinationProtocolPartReorientCommand extends EditElement
 	 * @generated
 	 */
 	public boolean canExecute() {
-		if (false == referenceOwner instanceof org.muml.pim.component.PortPart) {
+		if (false == referenceOwner instanceof PortPart) {
 			return false;
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
@@ -78,21 +83,17 @@ public class PortPartCoordinationProtocolPartReorientCommand extends EditElement
 	 * @generated
 	 */
 	protected boolean canReorientSource() {
-		if (!(oldEnd instanceof org.muml.pim.component.CoordinationProtocolPart
-				&& newEnd instanceof org.muml.pim.component.PortPart)) {
+		if (!(oldEnd instanceof CoordinationProtocolPart && newEnd instanceof PortPart)) {
 			return false;
 		}
-		View sourceView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-				.getSourceView(getRequest());
-		View targetView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-				.getTargetView(getRequest());
-		if (!org.muml.pim.component.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-				.getLinkConstraints().canExistPortPartCoordinationProtocolPart_4004(getNewSource(), getOldTarget(),
-						sourceView, targetView)) {
-			String errorMessage = org.muml.pim.component.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-					.getLinkConstraints().getErrorPortPartCoordinationProtocolPart_4004(getNewSource(), getOldTarget(),
-							sourceView, targetView);
-			org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy.showMessage(sourceView, errorMessage);
+		View sourceView = ConnectionConfigureHelperGraphicalNodeEditPolicy.getSourceView(getRequest());
+		View targetView = ConnectionConfigureHelperGraphicalNodeEditPolicy.getTargetView(getRequest());
+		if (!MumlBaseItemSemanticEditPolicy.getLinkConstraints().canExistPortPartCoordinationProtocolPart_4004(
+				getNewSource(), getOldTarget(), sourceView, targetView)) {
+			String errorMessage = MumlBaseItemSemanticEditPolicy.getLinkConstraints()
+					.getErrorPortPartCoordinationProtocolPart_4004(getNewSource(), getOldTarget(), sourceView,
+							targetView);
+			ErrorFeedbackEditPolicy.showMessage(sourceView, errorMessage);
 			return false;
 		}
 		return true;
@@ -102,21 +103,17 @@ public class PortPartCoordinationProtocolPartReorientCommand extends EditElement
 	 * @generated
 	 */
 	protected boolean canReorientTarget() {
-		if (!(oldEnd instanceof org.muml.pim.component.CoordinationProtocolPart
-				&& newEnd instanceof org.muml.pim.component.CoordinationProtocolPart)) {
+		if (!(oldEnd instanceof CoordinationProtocolPart && newEnd instanceof CoordinationProtocolPart)) {
 			return false;
 		}
-		View sourceView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-				.getSourceView(getRequest());
-		View targetView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-				.getTargetView(getRequest());
-		if (!org.muml.pim.component.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-				.getLinkConstraints().canExistPortPartCoordinationProtocolPart_4004(getOldSource(), getNewTarget(),
-						sourceView, targetView)) {
-			String errorMessage = org.muml.pim.component.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-					.getLinkConstraints().getErrorPortPartCoordinationProtocolPart_4004(getOldSource(), getNewTarget(),
-							sourceView, targetView);
-			org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy.showMessage(targetView, errorMessage);
+		View sourceView = ConnectionConfigureHelperGraphicalNodeEditPolicy.getSourceView(getRequest());
+		View targetView = ConnectionConfigureHelperGraphicalNodeEditPolicy.getTargetView(getRequest());
+		if (!MumlBaseItemSemanticEditPolicy.getLinkConstraints().canExistPortPartCoordinationProtocolPart_4004(
+				getOldSource(), getNewTarget(), sourceView, targetView)) {
+			String errorMessage = MumlBaseItemSemanticEditPolicy.getLinkConstraints()
+					.getErrorPortPartCoordinationProtocolPart_4004(getOldSource(), getNewTarget(), sourceView,
+							targetView);
+			ErrorFeedbackEditPolicy.showMessage(targetView, errorMessage);
 			return false;
 		}
 		return true;
@@ -162,29 +159,29 @@ public class PortPartCoordinationProtocolPartReorientCommand extends EditElement
 	/**
 	 * @generated
 	 */
-	protected org.muml.pim.component.PortPart getOldSource() {
-		return (org.muml.pim.component.PortPart) referenceOwner;
+	protected PortPart getOldSource() {
+		return (PortPart) referenceOwner;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected org.muml.pim.component.PortPart getNewSource() {
-		return (org.muml.pim.component.PortPart) newEnd;
+	protected PortPart getNewSource() {
+		return (PortPart) newEnd;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected org.muml.pim.component.CoordinationProtocolPart getOldTarget() {
-		return (org.muml.pim.component.CoordinationProtocolPart) oldEnd;
+	protected CoordinationProtocolPart getOldTarget() {
+		return (CoordinationProtocolPart) oldEnd;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected org.muml.pim.component.CoordinationProtocolPart getNewTarget() {
-		return (org.muml.pim.component.CoordinationProtocolPart) newEnd;
+	protected CoordinationProtocolPart getNewTarget() {
+		return (CoordinationProtocolPart) newEnd;
 	}
 
 	/**

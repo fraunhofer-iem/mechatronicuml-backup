@@ -41,12 +41,29 @@ import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.update.UpdaterLinkDescriptor;
+import org.muml.core.common.edit.policies.IDiagramCanonicalEditPolicy;
+import org.muml.core.modelinstance.ModelinstancePackage;
+import org.muml.pim.component.diagram.edit.parts.AssemblyConnectorEditPart;
+import org.muml.pim.component.diagram.edit.parts.ComponentPartEditPart;
+import org.muml.pim.component.diagram.edit.parts.ContinuousPortEditPart;
+import org.muml.pim.component.diagram.edit.parts.CoordinationProtocolPartEditPart;
+import org.muml.pim.component.diagram.edit.parts.DelegationConnectorEditPart;
+import org.muml.pim.component.diagram.edit.parts.DiscretePortEditPart;
+import org.muml.pim.component.diagram.edit.parts.HybridPortEditPart;
+import org.muml.pim.component.diagram.edit.parts.ModelElementCategoryEditPart;
+import org.muml.pim.component.diagram.edit.parts.PortPartEditPart;
+import org.muml.pim.component.diagram.edit.parts.StaticAtomicComponentEditPart;
+import org.muml.pim.component.diagram.edit.parts.StaticStructuredComponentEditPart;
+import org.muml.pim.component.diagram.part.MumlDiagramUpdater;
+import org.muml.pim.component.diagram.part.MumlLinkDescriptor;
+import org.muml.pim.component.diagram.part.MumlNodeDescriptor;
+import org.muml.pim.component.diagram.part.MumlVisualIDRegistry;
 
 /**
  * @generated
  */
 public class ModelElementCategoryCanonicalEditPolicy extends CanonicalEditPolicy
-		implements org.muml.core.common.edit.policies.IDiagramCanonicalEditPolicy {
+		implements IDiagramCanonicalEditPolicy {
 
 	/**
 	 * @generated
@@ -104,8 +121,7 @@ public class ModelElementCategoryCanonicalEditPolicy extends CanonicalEditPolicy
 	 * @generated
 	 */
 	protected EStructuralFeature getFeatureToSynchronize() {
-		return org.muml.core.modelinstance.ModelinstancePackage.eINSTANCE
-				.getModelElementCategory_ModelElements();
+		return ModelinstancePackage.eINSTANCE.getModelElementCategory_ModelElements();
 	}
 
 	/**
@@ -113,9 +129,9 @@ public class ModelElementCategoryCanonicalEditPolicy extends CanonicalEditPolicy
 	 */
 	@SuppressWarnings("rawtypes")
 	protected List getSemanticChildrenList() {
-		List<org.muml.pim.component.diagram.part.MumlNodeDescriptor> childDescriptors = getSemanticChildrenViewDescriptors();
+		List<MumlNodeDescriptor> childDescriptors = getSemanticChildrenViewDescriptors();
 		LinkedList<EObject> result = new LinkedList<EObject>();
-		for (org.muml.pim.component.diagram.part.MumlNodeDescriptor d : childDescriptors) {
+		for (MumlNodeDescriptor d : childDescriptors) {
 			result.add(d.getModelElement());
 		}
 		return result;
@@ -131,21 +147,18 @@ public class ModelElementCategoryCanonicalEditPolicy extends CanonicalEditPolicy
 		if (!canonicalNodes) {
 			View containerView = (View) getHost().getModel();
 			List<View> childViews = containerView.getChildren();
-			List<org.muml.pim.component.diagram.part.MumlNodeDescriptor> result = new LinkedList<org.muml.pim.component.diagram.part.MumlNodeDescriptor>();
+			List<MumlNodeDescriptor> result = new LinkedList<MumlNodeDescriptor>();
 
 			for (View childView : childViews) {
 				EObject childElement = childView.getElement();
-				int visualID = org.muml.pim.component.diagram.part.MumlVisualIDRegistry
-						.getVisualID(childView);
-				List<Integer> visualIDs = Arrays.asList(new Integer[] {
-						org.muml.pim.component.diagram.edit.parts.StaticAtomicComponentEditPart.VISUAL_ID,
-						org.muml.pim.component.diagram.edit.parts.StaticStructuredComponentEditPart.VISUAL_ID });
+				int visualID = MumlVisualIDRegistry.getVisualID(childView);
+				List<Integer> visualIDs = Arrays.asList(new Integer[] { StaticAtomicComponentEditPart.VISUAL_ID,
+						StaticStructuredComponentEditPart.VISUAL_ID });
 
 				// Note: childElement can be null, for diagram annotations!
 				if (childElement == null
 						|| childElement.eContainer() == containerView.getElement() && visualIDs.contains(visualID)) {
-					result.add(new org.muml.pim.component.diagram.part.MumlNodeDescriptor(childElement,
-							visualID));
+					result.add(new MumlNodeDescriptor(childElement, visualID));
 					continue;
 				}
 			}
@@ -154,8 +167,7 @@ public class ModelElementCategoryCanonicalEditPolicy extends CanonicalEditPolicy
 		// End added
 
 		View viewObject = (View) getHost().getModel();
-		return org.muml.pim.component.diagram.part.MumlDiagramUpdater
-				.getModelElementCategory_1000SemanticChildren(viewObject);
+		return MumlDiagramUpdater.getModelElementCategory_1000SemanticChildren(viewObject);
 
 	}
 
@@ -170,9 +182,9 @@ public class ModelElementCategoryCanonicalEditPolicy extends CanonicalEditPolicy
 	 * @generated
 	 */
 	private boolean isMyDiagramElement(View view) {
-		int visualID = org.muml.pim.component.diagram.part.MumlVisualIDRegistry.getVisualID(view);
-		return visualID == org.muml.pim.component.diagram.edit.parts.StaticAtomicComponentEditPart.VISUAL_ID
-				|| visualID == org.muml.pim.component.diagram.edit.parts.StaticStructuredComponentEditPart.VISUAL_ID;
+		int visualID = MumlVisualIDRegistry.getVisualID(view);
+		return visualID == StaticAtomicComponentEditPart.VISUAL_ID
+				|| visualID == StaticStructuredComponentEditPart.VISUAL_ID;
 	}
 
 	/**
@@ -183,7 +195,7 @@ public class ModelElementCategoryCanonicalEditPolicy extends CanonicalEditPolicy
 			return;
 		}
 		LinkedList<IAdaptable> createdViews = new LinkedList<IAdaptable>();
-		List<org.muml.pim.component.diagram.part.MumlNodeDescriptor> childDescriptors = getSemanticChildrenViewDescriptors();
+		List<MumlNodeDescriptor> childDescriptors = getSemanticChildrenViewDescriptors();
 		LinkedList<View> orphaned = new LinkedList<View>();
 		// we care to check only views we recognize as ours
 		LinkedList<View> knownViewChildren = new LinkedList<View>();
@@ -197,11 +209,10 @@ public class ModelElementCategoryCanonicalEditPolicy extends CanonicalEditPolicy
 		// iteration happens over list of desired semantic elements, trying to find best matching View, while original CEP
 		// iterates views, potentially losing view (size/bounds) information - i.e. if there are few views to reference same EObject, only last one 
 		// to answer isOrphaned == true will be used for the domain element representation, see #cleanCanonicalSemanticChildren()
-		for (Iterator<org.muml.pim.component.diagram.part.MumlNodeDescriptor> descriptorsIterator = childDescriptors
-				.iterator(); descriptorsIterator.hasNext();) {
-			org.muml.pim.component.diagram.part.MumlNodeDescriptor next = descriptorsIterator.next();
-			String hint = org.muml.pim.component.diagram.part.MumlVisualIDRegistry
-					.getType(next.getVisualID());
+		for (Iterator<MumlNodeDescriptor> descriptorsIterator = childDescriptors.iterator(); descriptorsIterator
+				.hasNext();) {
+			MumlNodeDescriptor next = descriptorsIterator.next();
+			String hint = MumlVisualIDRegistry.getType(next.getVisualID());
 			LinkedList<View> perfectMatch = new LinkedList<View>(); // both semanticElement and hint match that of NodeDescriptor
 			for (View childView : getViewChildren()) {
 				EObject semanticElement = childView.getElement();
@@ -228,9 +239,8 @@ public class ModelElementCategoryCanonicalEditPolicy extends CanonicalEditPolicy
 		//
 		ArrayList<CreateViewRequest.ViewDescriptor> viewDescriptors = new ArrayList<CreateViewRequest.ViewDescriptor>(
 				childDescriptors.size());
-		for (org.muml.pim.component.diagram.part.MumlNodeDescriptor next : childDescriptors) {
-			String hint = org.muml.pim.component.diagram.part.MumlVisualIDRegistry
-					.getType(next.getVisualID());
+		for (MumlNodeDescriptor next : childDescriptors) {
+			String hint = MumlVisualIDRegistry.getType(next.getVisualID());
 			IAdaptable elementAdapter = new CanonicalElementAdapter(next.getModelElement(), hint);
 			CreateViewRequest.ViewDescriptor descriptor = new CreateViewRequest.ViewDescriptor(elementAdapter,
 					Node.class, hint, ViewUtil.APPEND, false, host().getDiagramPreferencesHint());
@@ -272,13 +282,11 @@ public class ModelElementCategoryCanonicalEditPolicy extends CanonicalEditPolicy
 	 */
 	private Collection<IAdaptable> refreshConnections() {
 		Domain2Notation domain2NotationMap = new Domain2Notation();
-		Collection<org.muml.pim.component.diagram.part.MumlLinkDescriptor> linkDescriptors = collectAllLinks(
-				getDiagram(), domain2NotationMap);
+		Collection<MumlLinkDescriptor> linkDescriptors = collectAllLinks(getDiagram(), domain2NotationMap);
 		Collection existingLinks = new LinkedList(getDiagram().getEdges());
 		for (Iterator linksIterator = existingLinks.iterator(); linksIterator.hasNext();) {
 			Edge nextDiagramLink = (Edge) linksIterator.next();
-			int diagramLinkVisualID = org.muml.pim.component.diagram.part.MumlVisualIDRegistry
-					.getVisualID(nextDiagramLink);
+			int diagramLinkVisualID = MumlVisualIDRegistry.getVisualID(nextDiagramLink);
 			if (diagramLinkVisualID == -1) {
 				if (nextDiagramLink.getSource() != null && nextDiagramLink.getTarget() != null) {
 					linksIterator.remove();
@@ -289,10 +297,9 @@ public class ModelElementCategoryCanonicalEditPolicy extends CanonicalEditPolicy
 				EObject diagramLinkObject = nextDiagramLink.getElement();
 				EObject diagramLinkSrc = nextDiagramLink.getSource().getElement();
 				EObject diagramLinkDst = nextDiagramLink.getTarget().getElement();
-				for (Iterator<org.muml.pim.component.diagram.part.MumlLinkDescriptor> linkDescriptorsIterator = linkDescriptors
+				for (Iterator<MumlLinkDescriptor> linkDescriptorsIterator = linkDescriptors
 						.iterator(); linkDescriptorsIterator.hasNext();) {
-					org.muml.pim.component.diagram.part.MumlLinkDescriptor nextLinkDescriptor = linkDescriptorsIterator
-							.next();
+					MumlLinkDescriptor nextLinkDescriptor = linkDescriptorsIterator.next();
 					if (diagramLinkObject == nextLinkDescriptor.getModelElement()
 							&& diagramLinkSrc == nextLinkDescriptor.getSource()
 							&& diagramLinkDst == nextLinkDescriptor.getDestination()
@@ -311,142 +318,129 @@ public class ModelElementCategoryCanonicalEditPolicy extends CanonicalEditPolicy
 	/**
 	 * @generated
 	 */
-	private Collection<org.muml.pim.component.diagram.part.MumlLinkDescriptor> collectAllLinks(
-			View view, Domain2Notation domain2NotationMap) {
-		if (!org.muml.pim.component.diagram.edit.parts.ModelElementCategoryEditPart.MODEL_ID
-				.equals(org.muml.pim.component.diagram.part.MumlVisualIDRegistry.getModelID(view))) {
+	private Collection<MumlLinkDescriptor> collectAllLinks(View view, Domain2Notation domain2NotationMap) {
+		if (!ModelElementCategoryEditPart.MODEL_ID.equals(MumlVisualIDRegistry.getModelID(view))) {
 			return Collections.emptyList();
 		}
-		LinkedList<org.muml.pim.component.diagram.part.MumlLinkDescriptor> result = new LinkedList<org.muml.pim.component.diagram.part.MumlLinkDescriptor>();
-		switch (org.muml.pim.component.diagram.part.MumlVisualIDRegistry.getVisualID(view)) {
-		case org.muml.pim.component.diagram.edit.parts.ModelElementCategoryEditPart.VISUAL_ID: {
+		LinkedList<MumlLinkDescriptor> result = new LinkedList<MumlLinkDescriptor>();
+		switch (MumlVisualIDRegistry.getVisualID(view)) {
+		case ModelElementCategoryEditPart.VISUAL_ID: {
 			if (noConnectionViews.contains(view.getType())) {
 				// MUML TICKET #1247
 				break;
 			}
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(org.muml.pim.component.diagram.part.MumlDiagramUpdater
-						.getModelElementCategory_1000ContainedLinks(view));
+				result.addAll(MumlDiagramUpdater.getModelElementCategory_1000ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case org.muml.pim.component.diagram.edit.parts.StaticAtomicComponentEditPart.VISUAL_ID: {
+		case StaticAtomicComponentEditPart.VISUAL_ID: {
 			if (noConnectionViews.contains(view.getType())) {
 				// MUML TICKET #1247
 				break;
 			}
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(org.muml.pim.component.diagram.part.MumlDiagramUpdater
-						.getStaticAtomicComponent_2006ContainedLinks(view));
+				result.addAll(MumlDiagramUpdater.getStaticAtomicComponent_2006ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case org.muml.pim.component.diagram.edit.parts.StaticStructuredComponentEditPart.VISUAL_ID: {
+		case StaticStructuredComponentEditPart.VISUAL_ID: {
 			if (noConnectionViews.contains(view.getType())) {
 				// MUML TICKET #1247
 				break;
 			}
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(org.muml.pim.component.diagram.part.MumlDiagramUpdater
-						.getStaticStructuredComponent_2005ContainedLinks(view));
+				result.addAll(MumlDiagramUpdater.getStaticStructuredComponent_2005ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case org.muml.pim.component.diagram.edit.parts.DiscretePortEditPart.VISUAL_ID: {
+		case DiscretePortEditPart.VISUAL_ID: {
 			if (noConnectionViews.contains(view.getType())) {
 				// MUML TICKET #1247
 				break;
 			}
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(org.muml.pim.component.diagram.part.MumlDiagramUpdater
-						.getDiscretePort_3010ContainedLinks(view));
+				result.addAll(MumlDiagramUpdater.getDiscretePort_3010ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case org.muml.pim.component.diagram.edit.parts.ContinuousPortEditPart.VISUAL_ID: {
+		case ContinuousPortEditPart.VISUAL_ID: {
 			if (noConnectionViews.contains(view.getType())) {
 				// MUML TICKET #1247
 				break;
 			}
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(org.muml.pim.component.diagram.part.MumlDiagramUpdater
-						.getContinuousPort_3011ContainedLinks(view));
+				result.addAll(MumlDiagramUpdater.getContinuousPort_3011ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case org.muml.pim.component.diagram.edit.parts.HybridPortEditPart.VISUAL_ID: {
+		case HybridPortEditPart.VISUAL_ID: {
 			if (noConnectionViews.contains(view.getType())) {
 				// MUML TICKET #1247
 				break;
 			}
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(org.muml.pim.component.diagram.part.MumlDiagramUpdater
-						.getHybridPort_3013ContainedLinks(view));
+				result.addAll(MumlDiagramUpdater.getHybridPort_3013ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case org.muml.pim.component.diagram.edit.parts.ComponentPartEditPart.VISUAL_ID: {
+		case ComponentPartEditPart.VISUAL_ID: {
 			if (noConnectionViews.contains(view.getType())) {
 				// MUML TICKET #1247
 				break;
 			}
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(org.muml.pim.component.diagram.part.MumlDiagramUpdater
-						.getComponentPart_3012ContainedLinks(view));
+				result.addAll(MumlDiagramUpdater.getComponentPart_3012ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case org.muml.pim.component.diagram.edit.parts.PortPartEditPart.VISUAL_ID: {
+		case PortPartEditPart.VISUAL_ID: {
 			if (noConnectionViews.contains(view.getType())) {
 				// MUML TICKET #1247
 				break;
 			}
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(org.muml.pim.component.diagram.part.MumlDiagramUpdater
-						.getPortPart_3022ContainedLinks(view));
+				result.addAll(MumlDiagramUpdater.getPortPart_3022ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case org.muml.pim.component.diagram.edit.parts.CoordinationProtocolPartEditPart.VISUAL_ID: {
+		case CoordinationProtocolPartEditPart.VISUAL_ID: {
 			if (noConnectionViews.contains(view.getType())) {
 				// MUML TICKET #1247
 				break;
 			}
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(org.muml.pim.component.diagram.part.MumlDiagramUpdater
-						.getCoordinationProtocolPart_3016ContainedLinks(view));
+				result.addAll(MumlDiagramUpdater.getCoordinationProtocolPart_3016ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case org.muml.pim.component.diagram.edit.parts.AssemblyConnectorEditPart.VISUAL_ID: {
+		case AssemblyConnectorEditPart.VISUAL_ID: {
 			if (noConnectionViews.contains(view.getType())) {
 				// MUML TICKET #1247
 				break;
 			}
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(org.muml.pim.component.diagram.part.MumlDiagramUpdater
-						.getAssemblyConnector_4001ContainedLinks(view));
+				result.addAll(MumlDiagramUpdater.getAssemblyConnector_4001ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case org.muml.pim.component.diagram.edit.parts.DelegationConnectorEditPart.VISUAL_ID: {
+		case DelegationConnectorEditPart.VISUAL_ID: {
 			if (noConnectionViews.contains(view.getType())) {
 				// MUML TICKET #1247
 				break;
 			}
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(org.muml.pim.component.diagram.part.MumlDiagramUpdater
-						.getDelegationConnector_4002ContainedLinks(view));
+				result.addAll(MumlDiagramUpdater.getDelegationConnector_4002ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
@@ -464,11 +458,10 @@ public class ModelElementCategoryCanonicalEditPolicy extends CanonicalEditPolicy
 	/**
 	 * @generated
 	 */
-	private Collection<IAdaptable> createConnections(
-			Collection<org.muml.pim.component.diagram.part.MumlLinkDescriptor> linkDescriptors,
+	private Collection<IAdaptable> createConnections(Collection<MumlLinkDescriptor> linkDescriptors,
 			Domain2Notation domain2NotationMap) {
 		LinkedList<IAdaptable> adapters = new LinkedList<IAdaptable>();
-		for (org.muml.pim.component.diagram.part.MumlLinkDescriptor nextLinkDescriptor : linkDescriptors) {
+		for (MumlLinkDescriptor nextLinkDescriptor : linkDescriptors) {
 			EditPart sourceEditPart = getSourceEditPart(nextLinkDescriptor, domain2NotationMap);
 			EditPart targetEditPart = getTargetEditPart(nextLinkDescriptor, domain2NotationMap);
 			if (sourceEditPart == null || targetEditPart == null) {
@@ -476,9 +469,8 @@ public class ModelElementCategoryCanonicalEditPolicy extends CanonicalEditPolicy
 			}
 			CreateConnectionViewRequest.ConnectionViewDescriptor descriptor = new CreateConnectionViewRequest.ConnectionViewDescriptor(
 					nextLinkDescriptor.getSemanticAdapter(),
-					org.muml.pim.component.diagram.part.MumlVisualIDRegistry
-							.getType(nextLinkDescriptor.getVisualID()),
-					ViewUtil.APPEND, false, ((IGraphicalEditPart) getHost()).getDiagramPreferencesHint());
+					MumlVisualIDRegistry.getType(nextLinkDescriptor.getVisualID()), ViewUtil.APPEND, false,
+					((IGraphicalEditPart) getHost()).getDiagramPreferencesHint());
 			CreateConnectionViewRequest ccr = new CreateConnectionViewRequest(descriptor);
 			ccr.setType(RequestConstants.REQ_CONNECTION_START);
 			ccr.setSourceEditPart(sourceEditPart);
@@ -534,8 +526,7 @@ public class ModelElementCategoryCanonicalEditPolicy extends CanonicalEditPolicy
 	 */
 	protected final EditPart getHintedEditPart(EObject domainModelElement, Domain2Notation domain2NotationMap,
 			int hintVisualId) {
-		View view = (View) domain2NotationMap.getHinted(domainModelElement,
-				org.muml.pim.component.diagram.part.MumlVisualIDRegistry.getType(hintVisualId));
+		View view = (View) domain2NotationMap.getHinted(domainModelElement, MumlVisualIDRegistry.getType(hintVisualId));
 		if (view != null) {
 			return (EditPart) getHost().getViewer().getEditPartRegistry().get(view);
 		}

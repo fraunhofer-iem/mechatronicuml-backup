@@ -30,6 +30,11 @@ import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.edit.policies.reparent.CreationEditPolicyWithCustomReparent;
+import org.muml.pim.component.diagram.edit.policies.StaticStructuredComponentComponentCompartmentCanonicalEditPolicy;
+import org.muml.pim.component.diagram.edit.policies.StaticStructuredComponentComponentCompartmentItemSemanticEditPolicy;
+import org.muml.pim.component.diagram.part.Messages;
+import org.muml.pim.component.diagram.part.MumlVisualIDRegistry;
+import org.muml.pim.component.diagram.providers.MumlElementTypes;
 
 /**
  * @generated
@@ -75,7 +80,7 @@ public class StaticStructuredComponentComponentCompartmentEditPart extends Shape
 	 * @generated
 	 */
 	public String getCompartmentName() {
-		return org.muml.pim.component.diagram.part.Messages.StaticStructuredComponentComponentCompartmentEditPart_title;
+		return Messages.StaticStructuredComponentComponentCompartmentEditPart_title;
 	}
 
 	/**
@@ -104,12 +109,12 @@ public class StaticStructuredComponentComponentCompartmentEditPart extends Shape
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
-				new org.muml.pim.component.diagram.edit.policies.StaticStructuredComponentComponentCompartmentItemSemanticEditPolicy());
-		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicyWithCustomReparent(
-				org.muml.pim.component.diagram.part.MumlVisualIDRegistry.TYPED_INSTANCE));
+				new StaticStructuredComponentComponentCompartmentItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.CREATION_ROLE,
+				new CreationEditPolicyWithCustomReparent(MumlVisualIDRegistry.TYPED_INSTANCE));
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
 		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE,
-				new org.muml.pim.component.diagram.edit.policies.StaticStructuredComponentComponentCompartmentCanonicalEditPolicy());
+				new StaticStructuredComponentComponentCompartmentCanonicalEditPolicy());
 	}
 
 	/**
@@ -129,10 +134,10 @@ public class StaticStructuredComponentComponentCompartmentEditPart extends Shape
 			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request).getViewAndElementDescriptor()
 					.getCreateElementRequestAdapter();
 			IElementType type = (IElementType) adapter.getAdapter(IElementType.class);
-			if (type == org.muml.pim.component.diagram.providers.MumlElementTypes.ComponentPart_3012) {
+			if (type == MumlElementTypes.ComponentPart_3012) {
 				return this;
 			}
-			if (type == org.muml.pim.component.diagram.providers.MumlElementTypes.CoordinationProtocolPart_3016) {
+			if (type == MumlElementTypes.CoordinationProtocolPart_3016) {
 				return this;
 			}
 			return getParent().getTargetEditPart(request);
@@ -142,8 +147,7 @@ public class StaticStructuredComponentComponentCompartmentEditPart extends Shape
 				for (Object type : ((CreateUnspecifiedTypeConnectionRequest) request).getElementTypes()) {
 					if (type instanceof IElementType) {
 						IElementType elementType = (IElementType) type;
-						if (elementType.equals(
-								org.muml.pim.component.diagram.providers.MumlElementTypes.PortPartCoordinationProtocolPart_4004))
+						if (elementType.equals(MumlElementTypes.PortPartCoordinationProtocolPart_4004))
 							return super.getTargetEditPart(request);
 					}
 				}

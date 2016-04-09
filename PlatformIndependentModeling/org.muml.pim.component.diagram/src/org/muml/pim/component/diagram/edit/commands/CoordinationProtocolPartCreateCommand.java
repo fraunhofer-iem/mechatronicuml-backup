@@ -23,6 +23,9 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.pim.component.ComponentFactory;
+import org.muml.pim.component.CoordinationProtocolPart;
+import org.muml.pim.component.StructuredComponent;
 
 /**
  * @generated
@@ -60,10 +63,9 @@ public class CoordinationProtocolPartCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-		org.muml.pim.component.CoordinationProtocolPart newElement = org.muml.pim.component.ComponentFactory.eINSTANCE
-				.createCoordinationProtocolPart();
+		CoordinationProtocolPart newElement = ComponentFactory.eINSTANCE.createCoordinationProtocolPart();
 
-		org.muml.pim.component.StructuredComponent owner = (org.muml.pim.component.StructuredComponent) getElementToEdit();
+		StructuredComponent owner = (StructuredComponent) getElementToEdit();
 		owner.getCoordinationProtocolParts().add(newElement);
 
 		doConfigure(newElement, monitor, info);
@@ -73,10 +75,10 @@ public class CoordinationProtocolPartCreateCommand extends EditElementCommand {
 	}
 
 	/**
-	 * @generated
-	 */
-	protected void doConfigure(org.muml.pim.component.CoordinationProtocolPart newElement,
-			IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
+	* @generated
+	*/
+	protected void doConfigure(CoordinationProtocolPart newElement, IProgressMonitor monitor, IAdaptable info)
+			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest()).getElementType();
 		ConfigureRequest configureRequest = new ConfigureRequest(getEditingDomain(), newElement, elementType);
 		configureRequest.setClientContext(((CreateElementRequest) getRequest()).getClientContext());

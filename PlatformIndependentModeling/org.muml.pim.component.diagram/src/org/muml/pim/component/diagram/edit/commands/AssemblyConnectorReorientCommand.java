@@ -20,6 +20,12 @@ import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy;
+import org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy;
+import org.muml.pim.component.AssemblyConnector;
+import org.muml.pim.component.StructuredComponent;
+import org.muml.pim.component.diagram.edit.policies.MumlBaseItemSemanticEditPolicy;
+import org.muml.pim.connector.ConnectorEndpoint;
 
 /**
  * @generated
@@ -55,8 +61,7 @@ public class AssemblyConnectorReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	public boolean canExecute() {
-		int i;
-		if (false == getElementToEdit() instanceof org.muml.pim.component.AssemblyConnector) {
+		if (false == getElementToEdit() instanceof AssemblyConnector) {
 			return false;
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
@@ -72,8 +77,7 @@ public class AssemblyConnectorReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected boolean canReorientSource() {
-		if (!(oldEnd instanceof org.muml.pim.connector.ConnectorEndpoint
-				&& newEnd instanceof org.muml.pim.connector.ConnectorEndpoint)) {
+		if (!(oldEnd instanceof ConnectorEndpoint && newEnd instanceof ConnectorEndpoint)) {
 			return false;
 		}
 		// Removed this check, because other cases are now implemented; Enhancement for MUML-BUG #446
@@ -82,24 +86,18 @@ public class AssemblyConnectorReorientCommand extends EditElementCommand {
 		  return false;
 		}
 		*/
-		org.muml.pim.connector.ConnectorEndpoint target = (org.muml.pim.connector.ConnectorEndpoint) getLink()
-				.getConnectorEndpoints().get(0);
-		if (!(getLink().eContainer() instanceof org.muml.pim.component.StructuredComponent)) {
+		ConnectorEndpoint target = (ConnectorEndpoint) getLink().getConnectorEndpoints().get(0);
+		if (!(getLink().eContainer() instanceof StructuredComponent)) {
 			return false;
 		}
-		org.muml.pim.component.StructuredComponent container = (org.muml.pim.component.StructuredComponent) getLink()
-				.eContainer();
-		View sourceView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-				.getSourceView(getRequest());
-		View targetView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-				.getTargetView(getRequest());
-		if (!org.muml.pim.component.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-				.getLinkConstraints()
-				.canExistAssemblyConnector_4001(container, getLink(), getNewSource(), target, sourceView, targetView)) {
-			String errorMessage = org.muml.pim.component.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-					.getLinkConstraints()
+		StructuredComponent container = (StructuredComponent) getLink().eContainer();
+		View sourceView = ConnectionConfigureHelperGraphicalNodeEditPolicy.getSourceView(getRequest());
+		View targetView = ConnectionConfigureHelperGraphicalNodeEditPolicy.getTargetView(getRequest());
+		if (!MumlBaseItemSemanticEditPolicy.getLinkConstraints().canExistAssemblyConnector_4001(container, getLink(),
+				getNewSource(), target, sourceView, targetView)) {
+			String errorMessage = MumlBaseItemSemanticEditPolicy.getLinkConstraints()
 					.getErrorAssemblyConnector_4001(container, getNewSource(), target, sourceView, targetView);
-			org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy.showMessage(sourceView, errorMessage);
+			ErrorFeedbackEditPolicy.showMessage(sourceView, errorMessage);
 			return false;
 		}
 		return true;
@@ -109,8 +107,7 @@ public class AssemblyConnectorReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected boolean canReorientTarget() {
-		if (!(oldEnd instanceof org.muml.pim.connector.ConnectorEndpoint
-				&& newEnd instanceof org.muml.pim.connector.ConnectorEndpoint)) {
+		if (!(oldEnd instanceof ConnectorEndpoint && newEnd instanceof ConnectorEndpoint)) {
 			return false;
 		}
 		// Removed this check, because other cases are now implemented; Enhancement for MUML-BUG #446
@@ -119,24 +116,18 @@ public class AssemblyConnectorReorientCommand extends EditElementCommand {
 		  return false;
 		}
 		*/
-		org.muml.pim.connector.ConnectorEndpoint source = (org.muml.pim.connector.ConnectorEndpoint) getLink()
-				.getConnectorEndpoints().get(0);
-		if (!(getLink().eContainer() instanceof org.muml.pim.component.StructuredComponent)) {
+		ConnectorEndpoint source = (ConnectorEndpoint) getLink().getConnectorEndpoints().get(0);
+		if (!(getLink().eContainer() instanceof StructuredComponent)) {
 			return false;
 		}
-		org.muml.pim.component.StructuredComponent container = (org.muml.pim.component.StructuredComponent) getLink()
-				.eContainer();
-		View sourceView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-				.getSourceView(getRequest());
-		View targetView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-				.getTargetView(getRequest());
-		if (!org.muml.pim.component.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-				.getLinkConstraints()
-				.canExistAssemblyConnector_4001(container, getLink(), source, getNewTarget(), sourceView, targetView)) {
-			String errorMessage = org.muml.pim.component.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-					.getLinkConstraints()
+		StructuredComponent container = (StructuredComponent) getLink().eContainer();
+		View sourceView = ConnectionConfigureHelperGraphicalNodeEditPolicy.getSourceView(getRequest());
+		View targetView = ConnectionConfigureHelperGraphicalNodeEditPolicy.getTargetView(getRequest());
+		if (!MumlBaseItemSemanticEditPolicy.getLinkConstraints().canExistAssemblyConnector_4001(container, getLink(),
+				source, getNewTarget(), sourceView, targetView)) {
+			String errorMessage = MumlBaseItemSemanticEditPolicy.getLinkConstraints()
 					.getErrorAssemblyConnector_4001(container, source, getNewTarget(), sourceView, targetView);
-			org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy.showMessage(sourceView, errorMessage);
+			ErrorFeedbackEditPolicy.showMessage(sourceView, errorMessage);
 			return false;
 		}
 		return true;
@@ -189,36 +180,36 @@ public class AssemblyConnectorReorientCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected org.muml.pim.component.AssemblyConnector getLink() {
-		return (org.muml.pim.component.AssemblyConnector) getElementToEdit();
+	protected AssemblyConnector getLink() {
+		return (AssemblyConnector) getElementToEdit();
 	}
 
 	/**
 	 * @generated
 	 */
-	protected org.muml.pim.connector.ConnectorEndpoint getOldSource() {
-		return (org.muml.pim.connector.ConnectorEndpoint) oldEnd;
+	protected ConnectorEndpoint getOldSource() {
+		return (ConnectorEndpoint) oldEnd;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected org.muml.pim.connector.ConnectorEndpoint getNewSource() {
-		return (org.muml.pim.connector.ConnectorEndpoint) newEnd;
+	protected ConnectorEndpoint getNewSource() {
+		return (ConnectorEndpoint) newEnd;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected org.muml.pim.connector.ConnectorEndpoint getOldTarget() {
-		return (org.muml.pim.connector.ConnectorEndpoint) oldEnd;
+	protected ConnectorEndpoint getOldTarget() {
+		return (ConnectorEndpoint) oldEnd;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected org.muml.pim.connector.ConnectorEndpoint getNewTarget() {
-		return (org.muml.pim.connector.ConnectorEndpoint) newEnd;
+	protected ConnectorEndpoint getNewTarget() {
+		return (ConnectorEndpoint) newEnd;
 	}
 
 	/**
