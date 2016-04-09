@@ -25,12 +25,12 @@ mapping inout GenEditorGenerator::editorSpecific() {
 	var nodes := self.diagram.childNodes[GenNode]->union(self.diagram.topLevelNodes);
 	nodes->forEach(node) {
 		if (node.modelFacet.metaClass.ecoreClass.name = 'State') then {
-			node->map behavior('org.muml.pim.common.edit.policies.EditPolicyRoles.STATE_COLOR_ROLE', 'de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.policies.statechart.StateColorEditPolicy');
+			node->map behavior('org.muml.pim.common.edit.policies.EditPolicyRoles.STATE_COLOR_ROLE', 'org.muml.pim.realtimestatechart.diagram.edit.policies.statechart.StateColorEditPolicy');
 			node->map behavior('org.muml.pim.common.edit.policies.EditPolicyRoles.STATE_VISUALIZATION_ROLE', 'org.muml.pim.common.edit.policies.statechart.StateEditPolicy');
 		} elif (node.modelFacet.metaClass.ecoreClass.name = 'ClockConstraint') then {
-			node->map behavior('"TitleHelper"', 'de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.policies.statechart.TitleHelperEditPolicy');
+			node->map behavior('"TitleHelper"', 'org.muml.pim.realtimestatechart.diagram.edit.policies.statechart.TitleHelperEditPolicy');
 		} elif (node.modelFacet.metaClass.ecoreClass.name = 'SynchronizationChannel') then {
-			node->map behavior('"TitleHelper"', 'de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.policies.statechart.TitleHelperEditPolicy');
+			node->map behavior('"TitleHelper"', 'org.muml.pim.realtimestatechart.diagram.edit.policies.statechart.TitleHelperEditPolicy');
 		} endif;
 	};
 

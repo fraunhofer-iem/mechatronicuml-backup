@@ -7,8 +7,8 @@
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
       <metamodel nsURI="http://www.muml.org/pim/realtimestatechart/1.0.0">
       
-        <adviceBinding  id="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.custom.TransitionAdvice"
-		  typeId="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.Transition_4003"
+        <adviceBinding  id="org.muml.pim.realtimestatechart.diagram.custom.TransitionAdvice"
+		  typeId="org.muml.pim.realtimestatechart.diagram.Transition_4003"
 		  class="org.muml.pim.realtimestatechart.diagram.custom.edit.helpers.TransitionContainerAdaptionEditHelperAdvice"
 		  inheritance="all">
         </adviceBinding>
@@ -17,16 +17,16 @@
    </extension>
    
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings" id="element-types-bindings">
-      <binding context="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.TypeContext">
-         <elementType ref="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.Transition_4003"/>
-         <advice ref="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.custom.TransitionAdvice"/>
+      <binding context="org.muml.pim.realtimestatechart.diagram.TypeContext">
+         <elementType ref="org.muml.pim.realtimestatechart.diagram.Transition_4003"/>
+         <advice ref="org.muml.pim.realtimestatechart.diagram.custom.TransitionAdvice"/>
       </binding>
    </extension>
   
    <extension point="org.eclipse.gmf.runtime.diagram.core.viewProviders" id="view-provider">
-      <viewProvider class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.custom.providers.CustomRealtimestatechartViewProvider">
+      <viewProvider class="org.muml.pim.realtimestatechart.diagram.custom.providers.CustomRealtimestatechartViewProvider">
          <Priority name="Low"/>
-		 <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram"/>
+		 <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="org.muml.pim.realtimestatechart.diagram"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints=""/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints=""/>
       </viewProvider>
@@ -35,7 +35,7 @@
    <extension
          point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders">
       <editpartProvider
-            class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.custom.providers.CustomRealtimestatechartEditPartProvider">
+            class="org.muml.pim.realtimestatechart.diagram.custom.providers.CustomRealtimestatechartEditPartProvider">
          <Priority
                name="Medium">
          </Priority>
@@ -58,22 +58,22 @@
    
    
    <extension point="org.eclipse.gmf.runtime.diagram.ui.layoutProviders">
-       <layoutProvider class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.custom.layout.RealtimeStatechartLayoutProvider">
+       <layoutProvider class="org.muml.pim.realtimestatechart.diagram.custom.layout.RealtimeStatechartLayoutProvider">
             <Priority name="High"/>
        </layoutProvider>
    </extension>
    
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings" id="element-types-bindings">
-      <binding context="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.TypeContext">
-         <elementType ref="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.State_3032"/>
-         <advice ref="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.custom.StateAdvice"/>
+      <binding context="org.muml.pim.realtimestatechart.diagram.TypeContext">
+         <elementType ref="org.muml.pim.realtimestatechart.diagram.State_3032"/>
+         <advice ref="org.muml.pim.realtimestatechart.diagram.custom.StateAdvice"/>
       </binding>
    </extension>
        
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
       <metamodel nsURI="http://www.muml.org/pim/realtimestatechart/1.0.0">
-        <adviceBinding  id="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.custom.StateAdvice"
-		  typeId="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.State_3032"
+        <adviceBinding  id="org.muml.pim.realtimestatechart.diagram.custom.StateAdvice"
+		  typeId="org.muml.pim.realtimestatechart.diagram.State_3032"
 		  class="org.muml.pim.realtimestatechart.diagram.custom.edit.helpers.TransitionContainerAdaptionEditHelperAdvice"
 		  inheritance="all">
         </adviceBinding>
@@ -82,16 +82,16 @@
    
    
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings" id="element-types-bindings">
-      <binding context="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.TypeContext">
-         <elementType ref="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.Region_3042"/>
-         <advice ref="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.custom.RegionAdvice"/>
+      <binding context="org.muml.pim.realtimestatechart.diagram.TypeContext">
+         <elementType ref="org.muml.pim.realtimestatechart.diagram.Region_3042"/>
+         <advice ref="org.muml.pim.realtimestatechart.diagram.custom.RegionAdvice"/>
       </binding>
    </extension>
        
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
       <metamodel nsURI="http://www.muml.org/pim/realtimestatechart/1.0.0">
-        <adviceBinding  id="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.custom.RegionAdvice"
-		  typeId="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.Region_3042"
+        <adviceBinding  id="org.muml.pim.realtimestatechart.diagram.custom.RegionAdvice"
+		  typeId="org.muml.pim.realtimestatechart.diagram.Region_3042"
 		  class="org.muml.pim.realtimestatechart.diagram.custom.edit.helpers.TransitionContainerAdaptionEditHelperAdvice"
 		  inheritance="all">
         </adviceBinding>
@@ -102,16 +102,16 @@
    
    
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings" id="element-types-bindings">
-      <binding context="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.TypeContext">
-         <elementType ref="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.RealtimeStatechart_1000"/>
-         <advice ref="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.custom.ModelElementCategoryAdvice"/>
+      <binding context="org.muml.pim.realtimestatechart.diagram.TypeContext">
+         <elementType ref="org.muml.pim.realtimestatechart.diagram.RealtimeStatechart_1000"/>
+         <advice ref="org.muml.pim.realtimestatechart.diagram.custom.ModelElementCategoryAdvice"/>
       </binding>
    </extension>
        
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
       <metamodel nsURI="http://www.muml.org/pim/realtimestatechart/1.0.0">
-        <adviceBinding  id="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.custom.ModelElementCategoryAdvice"
-		  typeId="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.RealtimeStatechart_1000"
+        <adviceBinding  id="org.muml.pim.realtimestatechart.diagram.custom.ModelElementCategoryAdvice"
+		  typeId="org.muml.pim.realtimestatechart.diagram.RealtimeStatechart_1000"
 		  class="org.muml.pim.realtimestatechart.diagram.custom.edit.helpers.TransitionContainerAdaptionEditHelperAdvice"
 		  inheritance="all">
         </adviceBinding>
@@ -134,7 +134,7 @@
 <!--
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes">
        <elementTypeFactory
-           factory="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.custom.edit.helpers.StateTypeFactory"
+           factory="org.muml.pim.realtimestatechart.diagram.custom.edit.helpers.StateTypeFactory"
            kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
        </elementTypeFactory>
    </extension>   

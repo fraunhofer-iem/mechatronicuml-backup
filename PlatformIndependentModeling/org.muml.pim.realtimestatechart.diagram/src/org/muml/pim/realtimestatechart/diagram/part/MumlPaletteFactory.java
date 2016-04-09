@@ -81,7 +81,7 @@ public class MumlPaletteFactory {
 		entry.setSmallIcon(
 				org.muml.pim.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
 						.findImageDescriptor(
-								"/de.uni_paderborn.fujaba.muml.realtimestatechart.diagram/icon/c_state16.gif")); //$NON-NLS-1$
+								"/org.muml.pim.realtimestatechart.diagram/icon/c_state16.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -99,7 +99,7 @@ public class MumlPaletteFactory {
 		entry.setSmallIcon(
 				org.muml.pim.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
 						.findImageDescriptor(
-								"/de.uni_paderborn.fujaba.muml.realtimestatechart.diagram/icon/transition16.gif")); //$NON-NLS-1$
+								"/org.muml.pim.realtimestatechart.diagram/icon/transition16.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -117,7 +117,7 @@ public class MumlPaletteFactory {
 		entry.setSmallIcon(
 				org.muml.pim.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
 						.findImageDescriptor(
-								"/de.uni_paderborn.fujaba.muml.realtimestatechart.diagram/icon/entry_action16.gif")); //$NON-NLS-1$
+								"/org.muml.pim.realtimestatechart.diagram/icon/entry_action16.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -135,7 +135,7 @@ public class MumlPaletteFactory {
 		entry.setSmallIcon(
 				org.muml.pim.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
 						.findImageDescriptor(
-								"/de.uni_paderborn.fujaba.muml.realtimestatechart.diagram/icon/do_action16.gif")); //$NON-NLS-1$
+								"/org.muml.pim.realtimestatechart.diagram/icon/do_action16.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -153,7 +153,7 @@ public class MumlPaletteFactory {
 		entry.setSmallIcon(
 				org.muml.pim.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
 						.findImageDescriptor(
-								"/de.uni_paderborn.fujaba.muml.realtimestatechart.diagram/icon/exit_action16.gif")); //$NON-NLS-1$
+								"/org.muml.pim.realtimestatechart.diagram/icon/exit_action16.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -171,7 +171,7 @@ public class MumlPaletteFactory {
 		entry.setSmallIcon(
 				org.muml.pim.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
 						.findImageDescriptor(
-								"/de.uni_paderborn.fujaba.muml.realtimestatechart.diagram/icon/region.gif")); //$NON-NLS-1$
+								"/org.muml.pim.realtimestatechart.diagram/icon/region.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -189,7 +189,7 @@ public class MumlPaletteFactory {
 		entry.setSmallIcon(
 				org.muml.pim.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
 						.findImageDescriptor(
-								"/de.uni_paderborn.fujaba.muml.realtimestatechart.diagram/icon/state_entry_point.gif")); //$NON-NLS-1$
+								"/org.muml.pim.realtimestatechart.diagram/icon/state_entry_point.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -207,7 +207,7 @@ public class MumlPaletteFactory {
 		entry.setSmallIcon(
 				org.muml.pim.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
 						.findImageDescriptor(
-								"/de.uni_paderborn.fujaba.muml.realtimestatechart.diagram/icon/state_exit_point.gif")); //$NON-NLS-1$
+								"/org.muml.pim.realtimestatechart.diagram/icon/state_exit_point.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}

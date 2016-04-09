@@ -6,7 +6,7 @@
       <objectContribution
             adaptable="false"
             id="objectContribution.Zone"
-            objectClass="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.StateEditPart">
+            objectClass="org.muml.pim.realtimestatechart.diagram.edit.parts.StateEditPart">
          <menu
                id="RTSCZoneGraph.zoneGraph"
                label="Zone Graph"

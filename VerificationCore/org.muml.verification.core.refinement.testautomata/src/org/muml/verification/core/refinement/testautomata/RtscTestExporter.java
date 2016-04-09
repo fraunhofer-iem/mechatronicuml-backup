@@ -71,7 +71,7 @@ public class RtscTestExporter {
 				// .createDiagram(
 				// testAutomaton,
 				// "Realtimestatechart",
-				// de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT);
+				// org.muml.pim.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT);
 				//
 
 				// if (diagram != null) {

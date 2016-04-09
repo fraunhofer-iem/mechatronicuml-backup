@@ -57,7 +57,7 @@
 «DEFINE afterSeparator FOR gmfgen::GenEditorGenerator-»
 «IF plugin.iD = 'org.muml.pim.component.diagram' or plugin.iD = 'org.muml.pim.componentinstanceconfiguration.diagram' or plugin.iD = 'org.muml.pim.coordinationprotocol.diagram'-»
 structural-diagrams«-»
-«ELSEIF plugin.iD = 'de.uni_paderborn.fujaba.muml.realtimestatechart.diagram'-»
+«ELSEIF plugin.iD = 'org.muml.pim.realtimestatechart.diagram'-»
 behavioral-diagrams«-»
 «ELSEIF plugin.iD = 'org.muml.pim.messagetype.diagram'-»
 types«-»

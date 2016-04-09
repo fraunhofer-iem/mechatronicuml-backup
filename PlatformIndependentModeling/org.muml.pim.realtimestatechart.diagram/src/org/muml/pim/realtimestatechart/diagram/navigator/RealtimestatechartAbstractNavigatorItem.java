@@ -29,7 +29,7 @@ public abstract class RealtimestatechartAbstractNavigatorItem extends PlatformOb
 		final Class[] supportedTypes = new Class[] { ITabbedPropertySheetPageContributor.class };
 		final ITabbedPropertySheetPageContributor propertySheetPageContributor = new ITabbedPropertySheetPageContributor() {
 			public String getContributorId() {
-				return "de.uni_paderborn.fujaba.muml.realtimestatechart.diagram"; //$NON-NLS-1$
+				return "org.muml.pim.realtimestatechart.diagram"; //$NON-NLS-1$
 			}
 		};
 		Platform.getAdapterManager().registerAdapters(new IAdapterFactory() {

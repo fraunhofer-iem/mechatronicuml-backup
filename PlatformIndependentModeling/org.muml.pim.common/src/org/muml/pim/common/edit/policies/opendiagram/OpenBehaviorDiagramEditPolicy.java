@@ -31,12 +31,12 @@ public class OpenBehaviorDiagramEditPolicy extends
 
 	@Override
 	protected String getEditorID() {
-		return "de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorID";
+		return "org.muml.pim.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorID";
 	}
 
 	@Override
 	protected String getPluginID() {
-		return "de.uni_paderborn.fujaba.muml.realtimestatechart.diagram";
+		return "org.muml.pim.realtimestatechart.diagram";
 	}
 
 	@Override

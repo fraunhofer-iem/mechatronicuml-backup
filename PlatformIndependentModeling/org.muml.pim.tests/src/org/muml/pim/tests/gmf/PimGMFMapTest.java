@@ -24,7 +24,7 @@ public class PimGMFMapTest extends GMFMapTest {
 		List<Object[]> mappingModels = new ArrayList<Object[]>();
 		mappingModels.add(new Object[] { "org.muml.pim.component.diagram/model/component.gmfmap" });
 		mappingModels.add(new Object[] { "org.muml.pim.componentinstanceconfiguration.diagram/model/componentinstanceconfiguration.gmfmap" });
-		mappingModels.add(new Object[] { "de.uni_paderborn.fujaba.muml.realtimestatechart.diagram/model/realtimestatechart.gmfmap" });
+		mappingModels.add(new Object[] { "org.muml.pim.realtimestatechart.diagram/model/realtimestatechart.gmfmap" });
 		return mappingModels;
 	}
 

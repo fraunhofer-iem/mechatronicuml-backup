@@ -64,12 +64,12 @@ public class RealtimestatechartDiagramEditor extends DiagramDocumentEditor imple
 	/**
 	 * @generated
 	 */
-	public static final String ID = "de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorID"; //$NON-NLS-1$
+	public static final String ID = "org.muml.pim.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorID"; //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final String CONTEXT_ID = "de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.ui.diagramContext"; //$NON-NLS-1$
+	public static final String CONTEXT_ID = "org.muml.pim.realtimestatechart.diagram.ui.diagramContext"; //$NON-NLS-1$
 
 	/**
 	 * @generated

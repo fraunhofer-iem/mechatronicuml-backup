@@ -43,8 +43,8 @@ public class PimDiagramPluginXmlTest extends DiagramPluginXmlTest {
 					"org.muml.pim.coordinationprotocol.diagram.custom"
 			}},
 			new Object[] { new String[] {
-					"de.uni_paderborn.fujaba.muml.realtimestatechart.diagram",
-					"de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.custom"
+					"org.muml.pim.realtimestatechart.diagram",
+					"org.muml.pim.realtimestatechart.diagram.custom"
 			}},
 			new Object[] {new String[] {
 					"org.muml.pim.common"

@@ -156,7 +156,7 @@
       <objectContribution
             adaptable="false"
             id="de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui.objectContribution1"
-            objectClass="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.DoEventEditPart">
+            objectClass="org.muml.pim.realtimestatechart.diagram.edit.parts.DoEventEditPart">
          <action
                class="de.uni_paderborn.fujaba.muml.ui.popup.actions.OpenEditorAction"
                id="de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui.action1"
@@ -169,7 +169,7 @@
       <objectContribution
             adaptable="false"
             id="de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui.objectContribution2"
-            objectClass="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.EntryEventEditPart">
+            objectClass="org.muml.pim.realtimestatechart.diagram.edit.parts.EntryEventEditPart">
          <action
                class="de.uni_paderborn.fujaba.muml.ui.popup.actions.OpenEditorAction"
                id="de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui.action2"
@@ -182,7 +182,7 @@
       <objectContribution
             adaptable="false"
             id="de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui.objectContribution3"
-            objectClass="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.ExitEventEditPart">
+            objectClass="org.muml.pim.realtimestatechart.diagram.edit.parts.ExitEventEditPart">
          <action
                class="de.uni_paderborn.fujaba.muml.ui.popup.actions.OpenEditorAction"
                id="de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui.action3"
@@ -195,7 +195,7 @@
       <objectContribution
             adaptable="false"
             id="de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui.objectContribution4"
-            objectClass="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.TransitionEditPart">
+            objectClass="org.muml.pim.realtimestatechart.diagram.edit.parts.TransitionEditPart">
          <action
                class="de.uni_paderborn.fujaba.muml.ui.popup.actions.OpenEditorAction"
                id="de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui.action4"
@@ -208,7 +208,7 @@
       <objectContribution
             adaptable="false"
             id="de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui.objectContribution5"
-            objectClass="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.TransitionEditPart">
+            objectClass="org.muml.pim.realtimestatechart.diagram.edit.parts.TransitionEditPart">
          <action
                class="de.uni_paderborn.fujaba.muml.ui.popup.actions.OpenEditorGuard"
                id="de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui.action5"
@@ -221,7 +221,7 @@
       <objectContribution
             adaptable="false"
             id="de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui.objectContribution6"
-            objectClass="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.TransitionEditPart">
+            objectClass="org.muml.pim.realtimestatechart.diagram.edit.parts.TransitionEditPart">
          <action
                class="de.uni_paderborn.fujaba.muml.ui.popup.actions.OpenEditorSynchronization"
                id="de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui.action6"

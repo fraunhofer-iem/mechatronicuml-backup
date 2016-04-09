@@ -4,14 +4,14 @@
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:gmfgen="http://www.eclipse.org/gmf/2009/GenModel"
-    packageNamePrefix="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram"
+    packageNamePrefix="org.muml.pim.realtimestatechart.diagram"
     modelID="Real-Time Statechart"
     diagramFileExtension="realtimestatechart_diagram"
     domainFileExtension="fujaba"
     dynamicTemplates="true"
     templateDirectory="/org.muml.core.common/gmf-templates"
     copyrightText="&lt;copyright>&#xD;&#xA;Copyright (c) 2013 Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Germany.&#xD;&#xA;All rights reserved. This program and the accompanying materials&#xD;&#xA;are made available under the terms of the Eclipse Public License v1.0&#xD;&#xA;which accompanies this distribution, and is available at&#xD;&#xA;http://www.eclipse.org/legal/epl-v10.html&#xD;&#xA;&#xD;&#xA;Contributors:&#xD;&#xA;    Software Engineering Group - initial API and implementation&#xD;&#xA;&lt;/copyright>"
-    pluginDirectory="/de.uni_paderborn.fujaba.muml.realtimestatechart.diagram/src">
+    pluginDirectory="/org.muml.pim.realtimestatechart.diagram/src">
   <diagram
       visualID="1000"
       editPartClassName="ModelElementCategoryEditPart"
@@ -63,7 +63,7 @@
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
           key="org.muml.pim.common.edit.policies.EditPolicyRoles.STATE_COLOR_ROLE"
-          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.policies.statechart.StateColorEditPolicy"/>
+          editPolicyQualifiedClassName="org.muml.pim.realtimestatechart.diagram.edit.policies.statechart.StateColorEditPolicy"/>
       <modelFacet>
         <metaClass
             href="../../org.muml.pim/model/pim.genmodel#//pim/realtimestatechart/State"/>
@@ -304,7 +304,7 @@
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
           key="&quot;TitleHelper&quot;"
-          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.policies.statechart.TitleHelperEditPolicy"/>
+          editPolicyQualifiedClassName="org.muml.pim.realtimestatechart.diagram.edit.policies.statechart.TitleHelperEditPolicy"/>
       <modelFacet>
         <metaClass
             href="../../org.muml.pim/model/pim.genmodel#//pim/realtimestatechart/ClockConstraint"/>
@@ -360,7 +360,7 @@
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
           key="&quot;TitleHelper&quot;"
-          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.policies.statechart.TitleHelperEditPolicy"/>
+          editPolicyQualifiedClassName="org.muml.pim.realtimestatechart.diagram.edit.policies.statechart.TitleHelperEditPolicy"/>
       <modelFacet>
         <metaClass
             href="../../org.muml.pim/model/pim.genmodel#//pim/realtimestatechart/SynchronizationChannel"/>
@@ -989,13 +989,13 @@
             xsi:type="gmfgen:ToolEntry"
             title="State"
             description="Creates a new State"
-            smallIconPath="/de.uni_paderborn.fujaba.muml.realtimestatechart.diagram/icon/c_state16.gif"
+            smallIconPath="/org.muml.pim.realtimestatechart.diagram/icon/c_state16.gif"
             genNodes="//@diagram/@childNodes.0"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Transition"
             description="Creates a new Transition"
-            smallIconPath="/de.uni_paderborn.fujaba.muml.realtimestatechart.diagram/icon/transition16.gif"
+            smallIconPath="/org.muml.pim.realtimestatechart.diagram/icon/transition16.gif"
             genLinks="//@diagram/@links.0"/>
       </groups>
       <groups
@@ -1006,37 +1006,37 @@
             xsi:type="gmfgen:ToolEntry"
             title="Entry Action"
             description="Creates an EntryAction"
-            smallIconPath="/de.uni_paderborn.fujaba.muml.realtimestatechart.diagram/icon/entry_action16.gif"
+            smallIconPath="/org.muml.pim.realtimestatechart.diagram/icon/entry_action16.gif"
             genNodes="//@diagram/@childNodes.1"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Do Action"
             description="Creates a Do Action"
-            smallIconPath="/de.uni_paderborn.fujaba.muml.realtimestatechart.diagram/icon/do_action16.gif"
+            smallIconPath="/org.muml.pim.realtimestatechart.diagram/icon/do_action16.gif"
             genNodes="//@diagram/@childNodes.2"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Exit Action"
             description="Creates an Exit Action"
-            smallIconPath="/de.uni_paderborn.fujaba.muml.realtimestatechart.diagram/icon/exit_action16.gif"
+            smallIconPath="/org.muml.pim.realtimestatechart.diagram/icon/exit_action16.gif"
             genNodes="//@diagram/@childNodes.3"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Region"
             description="Creates an inner Region for a State"
-            smallIconPath="/de.uni_paderborn.fujaba.muml.realtimestatechart.diagram/icon/region.gif"
+            smallIconPath="/org.muml.pim.realtimestatechart.diagram/icon/region.gif"
             genNodes="//@diagram/@childNodes.6"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Entry Point"
             description="Create Entry Point"
-            smallIconPath="/de.uni_paderborn.fujaba.muml.realtimestatechart.diagram/icon/state_entry_point.gif"
+            smallIconPath="/org.muml.pim.realtimestatechart.diagram/icon/state_entry_point.gif"
             genNodes="//@diagram/@childNodes.8"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Exit Point"
             description="Create Exit Point"
-            smallIconPath="/de.uni_paderborn.fujaba.muml.realtimestatechart.diagram/icon/state_exit_point.gif"
+            smallIconPath="/org.muml.pim.realtimestatechart.diagram/icon/state_exit_point.gif"
             genNodes="//@diagram/@childNodes.9"/>
       </groups>
     </palette>
@@ -1059,37 +1059,37 @@
     </preferences>
     <preferencePages
         xsi:type="gmfgen:GenStandardPreferencePage"
-        iD="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.general"
+        iD="org.muml.pim.realtimestatechart.diagram.general"
         name="Realtime Statechart Diagram Editor"
         parentCategory="org.muml.preferences">
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
-          iD="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.appearance"
+          iD="org.muml.pim.realtimestatechart.diagram.appearance"
           name="Appearance"
-          parentCategory="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.general"
+          parentCategory="org.muml.pim.realtimestatechart.diagram.general"
           kind="Appearance"/>
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
-          iD="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.connections"
+          iD="org.muml.pim.realtimestatechart.diagram.connections"
           name="Connections"
-          parentCategory="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.general"
+          parentCategory="org.muml.pim.realtimestatechart.diagram.general"
           kind="Connections"/>
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
-          iD="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.printing"
+          iD="org.muml.pim.realtimestatechart.diagram.printing"
           name="Printing"
-          parentCategory="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.general"
+          parentCategory="org.muml.pim.realtimestatechart.diagram.general"
           kind="Printing"/>
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
-          iD="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.rulersAndGrid"
+          iD="org.muml.pim.realtimestatechart.diagram.rulersAndGrid"
           name="Rulers And Grid"
-          parentCategory="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.general"
+          parentCategory="org.muml.pim.realtimestatechart.diagram.general"
           kind="RulersAndGrid"/>
     </preferencePages>
   </diagram>
   <plugin
-      iD="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram"
+      iD="org.muml.pim.realtimestatechart.diagram"
       name="Realtime Statechart Diagram Editor"
       provider="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn"
       version="0.5.0.qualifier"

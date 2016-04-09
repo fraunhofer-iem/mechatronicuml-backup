@@ -87,7 +87,7 @@
             </visibleWhen>
          </command>
           <command
-               commandId="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.custom.DisassembleOne2ManyComSchemata"
+               commandId="org.muml.pim.realtimestatechart.diagram.custom.DisassembleOne2ManyComSchemata"
                label="Disassemble One-To-Many Communication Schemata">
             <visibleWhen>
                <or>
@@ -180,7 +180,7 @@
       </command>
           <command
             defaultHandler="org.muml.pim.ui.contextmenu.handlers.realtimestatechart.DisassembleOne2ManyComSchemataHandler"
-            id="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.custom.DisassembleOne2ManyComSchemata"
+            id="org.muml.pim.realtimestatechart.diagram.custom.DisassembleOne2ManyComSchemata"
             name="Disassemble One-To-Many Communication Schemata">
       </command>
        <command
