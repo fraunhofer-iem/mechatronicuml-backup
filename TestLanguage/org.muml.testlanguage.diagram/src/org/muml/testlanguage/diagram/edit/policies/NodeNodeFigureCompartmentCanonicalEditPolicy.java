@@ -22,12 +22,17 @@ import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest;
 import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.testlanguage.TestLanguagePackage;
+import org.muml.testlanguage.diagram.edit.parts.InputEditPart;
+import org.muml.testlanguage.diagram.edit.parts.OutputEditPart;
+import org.muml.testlanguage.diagram.part.TestLanguageDiagramUpdater;
+import org.muml.testlanguage.diagram.part.TestLanguageNodeDescriptor;
+import org.muml.testlanguage.diagram.part.TestLanguageVisualIDRegistry;
 
 /**
  * @generated
  */
-public class NodeNodeFigureCompartmentCanonicalEditPolicy extends
-		CanonicalEditPolicy {
+public class NodeNodeFigureCompartmentCanonicalEditPolicy extends CanonicalEditPolicy {
 
 	/**
 	 * @generated
@@ -52,12 +57,8 @@ public class NodeNodeFigureCompartmentCanonicalEditPolicy extends
 	protected Set getFeaturesToSynchronize() {
 		if (myFeaturesToSynchronize == null) {
 			myFeaturesToSynchronize = new HashSet<EStructuralFeature>();
-			myFeaturesToSynchronize
-					.add(org.muml.testlanguage.TestLanguagePackage.eINSTANCE
-							.getNode_Inputs());
-			myFeaturesToSynchronize
-					.add(org.muml.testlanguage.TestLanguagePackage.eINSTANCE
-							.getNode_Outputs());
+			myFeaturesToSynchronize.add(TestLanguagePackage.eINSTANCE.getNode_Inputs());
+			myFeaturesToSynchronize.add(TestLanguagePackage.eINSTANCE.getNode_Outputs());
 		}
 		return myFeaturesToSynchronize;
 	}
@@ -69,9 +70,9 @@ public class NodeNodeFigureCompartmentCanonicalEditPolicy extends
 	protected List getSemanticChildrenList() {
 		View viewObject = (View) getHost().getModel();
 		LinkedList<EObject> result = new LinkedList<EObject>();
-		List<org.muml.testlanguage.diagram.part.TestLanguageNodeDescriptor> childDescriptors = org.muml.testlanguage.diagram.part.TestLanguageDiagramUpdater
+		List<TestLanguageNodeDescriptor> childDescriptors = TestLanguageDiagramUpdater
 				.getNodeNodeFigureCompartment_7001SemanticChildren(viewObject);
-		for (org.muml.testlanguage.diagram.part.TestLanguageNodeDescriptor d : childDescriptors) {
+		for (TestLanguageNodeDescriptor d : childDescriptors) {
 			result.add(d.getModelElement());
 		}
 		return result;
@@ -80,20 +81,16 @@ public class NodeNodeFigureCompartmentCanonicalEditPolicy extends
 	/**
 	 * @generated
 	 */
-	protected boolean isOrphaned(Collection<EObject> semanticChildren,
-			final View view) {
-		return isMyDiagramElement(view)
-				&& !semanticChildren.contains(view.getElement());
+	protected boolean isOrphaned(Collection<EObject> semanticChildren, final View view) {
+		return isMyDiagramElement(view) && !semanticChildren.contains(view.getElement());
 	}
 
 	/**
 	 * @generated
 	 */
 	private boolean isMyDiagramElement(View view) {
-		int visualID = org.muml.testlanguage.diagram.part.TestLanguageVisualIDRegistry
-				.getVisualID(view);
-		return visualID == org.muml.testlanguage.diagram.edit.parts.InputEditPart.VISUAL_ID
-				|| visualID == org.muml.testlanguage.diagram.edit.parts.OutputEditPart.VISUAL_ID;
+		int visualID = TestLanguageVisualIDRegistry.getVisualID(view);
+		return visualID == InputEditPart.VISUAL_ID || visualID == OutputEditPart.VISUAL_ID;
 	}
 
 	/**
@@ -104,9 +101,8 @@ public class NodeNodeFigureCompartmentCanonicalEditPolicy extends
 			return;
 		}
 		LinkedList<IAdaptable> createdViews = new LinkedList<IAdaptable>();
-		List<org.muml.testlanguage.diagram.part.TestLanguageNodeDescriptor> childDescriptors = org.muml.testlanguage.diagram.part.TestLanguageDiagramUpdater
-				.getNodeNodeFigureCompartment_7001SemanticChildren((View) getHost()
-						.getModel());
+		List<TestLanguageNodeDescriptor> childDescriptors = TestLanguageDiagramUpdater
+				.getNodeNodeFigureCompartment_7001SemanticChildren((View) getHost().getModel());
 		LinkedList<View> orphaned = new LinkedList<View>();
 		// we care to check only views we recognize as ours
 		LinkedList<View> knownViewChildren = new LinkedList<View>();
@@ -120,12 +116,10 @@ public class NodeNodeFigureCompartmentCanonicalEditPolicy extends
 		// iteration happens over list of desired semantic elements, trying to find best matching View, while original CEP
 		// iterates views, potentially losing view (size/bounds) information - i.e. if there are few views to reference same EObject, only last one 
 		// to answer isOrphaned == true will be used for the domain element representation, see #cleanCanonicalSemanticChildren()
-		for (Iterator<org.muml.testlanguage.diagram.part.TestLanguageNodeDescriptor> descriptorsIterator = childDescriptors
-				.iterator(); descriptorsIterator.hasNext();) {
-			org.muml.testlanguage.diagram.part.TestLanguageNodeDescriptor next = descriptorsIterator
-					.next();
-			String hint = org.muml.testlanguage.diagram.part.TestLanguageVisualIDRegistry
-					.getType(next.getVisualID());
+		for (Iterator<TestLanguageNodeDescriptor> descriptorsIterator = childDescriptors.iterator(); descriptorsIterator
+				.hasNext();) {
+			TestLanguageNodeDescriptor next = descriptorsIterator.next();
+			String hint = TestLanguageVisualIDRegistry.getType(next.getVisualID());
 			LinkedList<View> perfectMatch = new LinkedList<View>(); // both semanticElement and hint match that of NodeDescriptor
 			for (View childView : getViewChildren()) {
 				EObject semanticElement = childView.getElement();
@@ -150,14 +144,11 @@ public class NodeNodeFigureCompartmentCanonicalEditPolicy extends
 		//
 		ArrayList<CreateViewRequest.ViewDescriptor> viewDescriptors = new ArrayList<CreateViewRequest.ViewDescriptor>(
 				childDescriptors.size());
-		for (org.muml.testlanguage.diagram.part.TestLanguageNodeDescriptor next : childDescriptors) {
-			String hint = org.muml.testlanguage.diagram.part.TestLanguageVisualIDRegistry
-					.getType(next.getVisualID());
-			IAdaptable elementAdapter = new CanonicalElementAdapter(
-					next.getModelElement(), hint);
-			CreateViewRequest.ViewDescriptor descriptor = new CreateViewRequest.ViewDescriptor(
-					elementAdapter, Node.class, hint, ViewUtil.APPEND, false,
-					host().getDiagramPreferencesHint());
+		for (TestLanguageNodeDescriptor next : childDescriptors) {
+			String hint = TestLanguageVisualIDRegistry.getType(next.getVisualID());
+			IAdaptable elementAdapter = new CanonicalElementAdapter(next.getModelElement(), hint);
+			CreateViewRequest.ViewDescriptor descriptor = new CreateViewRequest.ViewDescriptor(elementAdapter,
+					Node.class, hint, ViewUtil.APPEND, false, host().getDiagramPreferencesHint());
 			viewDescriptors.add(descriptor);
 		}
 
@@ -166,10 +157,10 @@ public class NodeNodeFigureCompartmentCanonicalEditPolicy extends
 		CreateViewRequest request = getCreateViewRequest(viewDescriptors);
 		Command cmd = getCreateViewCommand(request);
 		if (cmd != null && cmd.canExecute()) {
-			SetViewMutabilityCommand.makeMutable(
-					new EObjectAdapter(host().getNotationView())).execute();
+			SetViewMutabilityCommand.makeMutable(new EObjectAdapter(host().getNotationView())).execute();
 			executeCommand(cmd);
 			@SuppressWarnings("unchecked")
+
 			List<IAdaptable> nl = (List<IAdaptable>) request.getNewObject();
 			createdViews.addAll(nl);
 		}
@@ -178,8 +169,8 @@ public class NodeNodeFigureCompartmentCanonicalEditPolicy extends
 		}
 		if (createdViews.size() > 1) {
 			// perform a layout of the container
-			DeferredLayoutCommand layoutCmd = new DeferredLayoutCommand(host()
-					.getEditingDomain(), createdViews, host());
+			DeferredLayoutCommand layoutCmd = new DeferredLayoutCommand(host().getEditingDomain(), createdViews,
+					host());
 			executeCommand(new ICommandProxy(layoutCmd));
 		}
 

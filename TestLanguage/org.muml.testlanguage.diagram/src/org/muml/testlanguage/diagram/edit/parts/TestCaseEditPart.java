@@ -4,6 +4,9 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.DiagramEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.edit.policies.reparent.CreationEditPolicyWithCustomReparent;
+import org.muml.testlanguage.diagram.edit.policies.TestCaseCanonicalEditPolicy;
+import org.muml.testlanguage.diagram.edit.policies.TestCaseItemSemanticEditPolicy;
+import org.muml.testlanguage.diagram.part.TestLanguageVisualIDRegistry;
 
 /**
  * @generated
@@ -32,16 +35,10 @@ public class TestCaseEditPart extends DiagramEditPart {
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(
-				EditPolicyRoles.SEMANTIC_ROLE,
-				new org.muml.testlanguage.diagram.edit.policies.TestCaseItemSemanticEditPolicy());
-		installEditPolicy(
-				EditPolicyRoles.CANONICAL_ROLE,
-				new org.muml.testlanguage.diagram.edit.policies.TestCaseCanonicalEditPolicy());
-		installEditPolicy(
-				EditPolicyRoles.CREATION_ROLE,
-				new CreationEditPolicyWithCustomReparent(
-						org.muml.testlanguage.diagram.part.TestLanguageVisualIDRegistry.TYPED_INSTANCE));
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new TestCaseItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new TestCaseCanonicalEditPolicy());
+		installEditPolicy(EditPolicyRoles.CREATION_ROLE,
+				new CreationEditPolicyWithCustomReparent(TestLanguageVisualIDRegistry.TYPED_INSTANCE));
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.POPUPBAR_ROLE);
 	}
 

@@ -7,6 +7,9 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
+import org.muml.testlanguage.Input;
+import org.muml.testlanguage.Output;
+import org.muml.testlanguage.diagram.edit.policies.TestLanguageBaseItemSemanticEditPolicy;
 
 /**
  * @generated
@@ -26,8 +29,7 @@ public class OutputTargetsCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	public OutputTargetsCreateCommand(CreateRelationshipRequest request,
-			EObject source, EObject target) {
+	public OutputTargetsCreateCommand(CreateRelationshipRequest request, EObject source, EObject target) {
 		super(request.getLabel(), null, request);
 		this.source = source;
 		this.target = target;
@@ -40,31 +42,26 @@ public class OutputTargetsCreateCommand extends EditElementCommand {
 		if (source == null && target == null) {
 			return false;
 		}
-		if (source != null
-				&& false == source instanceof org.muml.testlanguage.Output) {
+		if (source != null && false == source instanceof Output) {
 			return false;
 		}
-		if (target != null
-				&& false == target instanceof org.muml.testlanguage.Input) {
+		if (target != null && false == target instanceof Input) {
 			return false;
 		}
 		if (getSource() == null) {
 			return true; // link creation is in progress; source is not defined yet
 		}
 		// target may be null here but it's possible to check constraint
-		return org.muml.testlanguage.diagram.edit.policies.TestLanguageBaseItemSemanticEditPolicy
-				.getLinkConstraints().canCreateOutputTargets_4001(getSource(),
-						getTarget());
+		return TestLanguageBaseItemSemanticEditPolicy.getLinkConstraints().canCreateOutputTargets_4001(getSource(),
+				getTarget());
 	}
 
 	/**
 	 * @generated
 	 */
-	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
-			IAdaptable info) throws ExecutionException {
+	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		if (!canExecute()) {
-			throw new ExecutionException(
-					"Invalid arguments in create link command"); //$NON-NLS-1$
+			throw new ExecutionException("Invalid arguments in create link command"); //$NON-NLS-1$
 		}
 
 		if (getSource() != null && getTarget() != null) {
@@ -84,14 +81,14 @@ public class OutputTargetsCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected org.muml.testlanguage.Output getSource() {
-		return (org.muml.testlanguage.Output) source;
+	protected Output getSource() {
+		return (Output) source;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected org.muml.testlanguage.Input getTarget() {
-		return (org.muml.testlanguage.Input) target;
+	protected Input getTarget() {
+		return (Input) target;
 	}
 }

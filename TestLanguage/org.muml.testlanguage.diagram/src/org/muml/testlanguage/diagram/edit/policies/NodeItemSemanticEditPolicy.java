@@ -14,20 +14,23 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyReferenceRequest;
 import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.testlanguage.diagram.edit.parts.InputEditPart;
+import org.muml.testlanguage.diagram.edit.parts.NodeNodeFigureCompartmentEditPart;
+import org.muml.testlanguage.diagram.edit.parts.OutputEditPart;
+import org.muml.testlanguage.diagram.edit.parts.OutputTargetsEditPart;
+import org.muml.testlanguage.diagram.part.TestLanguageVisualIDRegistry;
+import org.muml.testlanguage.diagram.providers.TestLanguageElementTypes;
 
 /**
  * @generated
  */
-public class NodeItemSemanticEditPolicy
-		extends
-		org.muml.testlanguage.diagram.edit.policies.TestLanguageBaseItemSemanticEditPolicy {
+public class NodeItemSemanticEditPolicy extends TestLanguageBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public NodeItemSemanticEditPolicy() {
-		super(
-				org.muml.testlanguage.diagram.providers.TestLanguageElementTypes.Node_2001);
+		super(TestLanguageElementTypes.Node_2001);
 	}
 
 	/**
@@ -35,8 +38,7 @@ public class NodeItemSemanticEditPolicy
 	 */
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		View view = (View) getHost().getModel();
-		CompositeTransactionalCommand cmd = new CompositeTransactionalCommand(
-				getEditingDomain(), null);
+		CompositeTransactionalCommand cmd = new CompositeTransactionalCommand(getEditingDomain(), null);
 		cmd.setTransactionNestingEnabled(false);
 		EAnnotation annotation = view.getEAnnotation("Shortcut"); //$NON-NLS-1$
 		if (annotation == null) {
@@ -58,55 +60,44 @@ public class NodeItemSemanticEditPolicy
 		View view = (View) getHost().getModel();
 		for (Iterator<?> nit = view.getChildren().iterator(); nit.hasNext();) {
 			Node node = (Node) nit.next();
-			switch (org.muml.testlanguage.diagram.part.TestLanguageVisualIDRegistry
-					.getVisualID(node)) {
-			case org.muml.testlanguage.diagram.edit.parts.NodeNodeFigureCompartmentEditPart.VISUAL_ID:
-				for (Iterator<?> cit = node.getChildren().iterator(); cit
-						.hasNext();) {
+			switch (TestLanguageVisualIDRegistry.getVisualID(node)) {
+			case NodeNodeFigureCompartmentEditPart.VISUAL_ID:
+				for (Iterator<?> cit = node.getChildren().iterator(); cit.hasNext();) {
 					Node cnode = (Node) cit.next();
-					switch (org.muml.testlanguage.diagram.part.TestLanguageVisualIDRegistry
-							.getVisualID(cnode)) {
-					case org.muml.testlanguage.diagram.edit.parts.InputEditPart.VISUAL_ID:
-						for (Iterator<?> it = cnode.getTargetEdges().iterator(); it
-								.hasNext();) {
+					switch (TestLanguageVisualIDRegistry.getVisualID(cnode)) {
+					case InputEditPart.VISUAL_ID:
+						for (Iterator<?> it = cnode.getTargetEdges().iterator(); it.hasNext();) {
 							Edge incomingLink = (Edge) it.next();
-							if (org.muml.testlanguage.diagram.part.TestLanguageVisualIDRegistry
-									.getVisualID(incomingLink) == org.muml.testlanguage.diagram.edit.parts.OutputTargetsEditPart.VISUAL_ID) {
+							if (TestLanguageVisualIDRegistry
+									.getVisualID(incomingLink) == OutputTargetsEditPart.VISUAL_ID) {
 								DestroyReferenceRequest r = new DestroyReferenceRequest(
-										incomingLink.getSource().getElement(),
-										null, incomingLink.getTarget()
-												.getElement(), false);
+										incomingLink.getSource().getElement(), null,
+										incomingLink.getTarget().getElement(), false);
 								cmd.add(new DestroyReferenceCommand(r));
-								cmd.add(new DeleteCommand(getEditingDomain(),
-										incomingLink));
+								cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
 								continue;
 							}
 						}
 						cmd.add(new DestroyElementCommand(
-								new DestroyElementRequest(getEditingDomain(),
-										cnode.getElement(), false))); // directlyOwned: true
+								new DestroyElementRequest(getEditingDomain(), cnode.getElement(), false))); // directlyOwned: true
 						// don't need explicit deletion of cnode as parent's view deletion would clean child views as well 
 						// cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), cnode));
 						break;
-					case org.muml.testlanguage.diagram.edit.parts.OutputEditPart.VISUAL_ID:
-						for (Iterator<?> it = cnode.getSourceEdges().iterator(); it
-								.hasNext();) {
+					case OutputEditPart.VISUAL_ID:
+						for (Iterator<?> it = cnode.getSourceEdges().iterator(); it.hasNext();) {
 							Edge outgoingLink = (Edge) it.next();
-							if (org.muml.testlanguage.diagram.part.TestLanguageVisualIDRegistry
-									.getVisualID(outgoingLink) == org.muml.testlanguage.diagram.edit.parts.OutputTargetsEditPart.VISUAL_ID) {
+							if (TestLanguageVisualIDRegistry
+									.getVisualID(outgoingLink) == OutputTargetsEditPart.VISUAL_ID) {
 								DestroyReferenceRequest r = new DestroyReferenceRequest(
-										outgoingLink.getSource().getElement(),
-										null, outgoingLink.getTarget()
-												.getElement(), false);
+										outgoingLink.getSource().getElement(), null,
+										outgoingLink.getTarget().getElement(), false);
 								cmd.add(new DestroyReferenceCommand(r));
-								cmd.add(new DeleteCommand(getEditingDomain(),
-										outgoingLink));
+								cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
 								continue;
 							}
 						}
 						cmd.add(new DestroyElementCommand(
-								new DestroyElementRequest(getEditingDomain(),
-										cnode.getElement(), false))); // directlyOwned: true
+								new DestroyElementRequest(getEditingDomain(), cnode.getElement(), false))); // directlyOwned: true
 						// don't need explicit deletion of cnode as parent's view deletion would clean child views as well 
 						// cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), cnode));
 						break;

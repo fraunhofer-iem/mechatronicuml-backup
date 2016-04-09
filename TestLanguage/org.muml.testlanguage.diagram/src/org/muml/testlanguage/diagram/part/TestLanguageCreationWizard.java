@@ -32,12 +32,12 @@ public class TestLanguageCreationWizard extends Wizard implements INewWizard {
 	/**
 	 * @generated
 	 */
-	protected org.muml.testlanguage.diagram.part.TestLanguageCreationWizardPage diagramModelFilePage;
+	protected TestLanguageCreationWizardPage diagramModelFilePage;
 
 	/**
 	 * @generated
 	 */
-	protected org.muml.testlanguage.diagram.part.TestLanguageCreationWizardPage domainModelFilePage;
+	protected TestLanguageCreationWizardPage domainModelFilePage;
 
 	/**
 	 * @generated
@@ -80,8 +80,7 @@ public class TestLanguageCreationWizard extends Wizard implements INewWizard {
 	/**
 	 * @generated
 	 */
-	public void setOpenNewlyCreatedDiagramEditor(
-			boolean openNewlyCreatedDiagramEditor) {
+	public void setOpenNewlyCreatedDiagramEditor(boolean openNewlyCreatedDiagramEditor) {
 		this.openNewlyCreatedDiagramEditor = openNewlyCreatedDiagramEditor;
 	}
 
@@ -91,9 +90,9 @@ public class TestLanguageCreationWizard extends Wizard implements INewWizard {
 	public void init(IWorkbench workbench, IStructuredSelection selection) {
 		this.workbench = workbench;
 		this.selection = selection;
-		setWindowTitle(org.muml.testlanguage.diagram.part.Messages.TestLanguageCreationWizardTitle);
-		setDefaultPageImageDescriptor(org.muml.testlanguage.diagram.part.TestLanguageDiagramEditorPlugin
-				.getBundledImageDescriptor("icons/wizban/NewTestLanguageWizard.gif")); //$NON-NLS-1$
+		setWindowTitle(Messages.TestLanguageCreationWizardTitle);
+		setDefaultPageImageDescriptor(
+				TestLanguageDiagramEditorPlugin.getBundledImageDescriptor("icons/wizban/NewTestLanguageWizard.gif")); //$NON-NLS-1$
 		setNeedsProgressMonitor(true);
 	}
 
@@ -101,33 +100,26 @@ public class TestLanguageCreationWizard extends Wizard implements INewWizard {
 	 * @generated
 	 */
 	public void addPages() {
-		diagramModelFilePage = new org.muml.testlanguage.diagram.part.TestLanguageCreationWizardPage(
-				"DiagramModelFile", getSelection(), "testlanguage_diagram"); //$NON-NLS-1$ //$NON-NLS-2$
-		diagramModelFilePage
-				.setTitle(org.muml.testlanguage.diagram.part.Messages.TestLanguageCreationWizard_DiagramModelFilePageTitle);
-		diagramModelFilePage
-				.setDescription(org.muml.testlanguage.diagram.part.Messages.TestLanguageCreationWizard_DiagramModelFilePageDescription);
+		diagramModelFilePage = new TestLanguageCreationWizardPage("DiagramModelFile", getSelection(), //$NON-NLS-1$
+				"testlanguage_diagram"); //$NON-NLS-1$
+		diagramModelFilePage.setTitle(Messages.TestLanguageCreationWizard_DiagramModelFilePageTitle);
+		diagramModelFilePage.setDescription(Messages.TestLanguageCreationWizard_DiagramModelFilePageDescription);
 		addPage(diagramModelFilePage);
 
-		domainModelFilePage = new org.muml.testlanguage.diagram.part.TestLanguageCreationWizardPage(
-				"DomainModelFile", getSelection(), "testlanguage") { //$NON-NLS-1$ //$NON-NLS-2$
+		domainModelFilePage = new TestLanguageCreationWizardPage("DomainModelFile", getSelection(), "testlanguage") { //$NON-NLS-1$ //$NON-NLS-2$
 
 			public void setVisible(boolean visible) {
 				if (visible) {
 					String fileName = diagramModelFilePage.getFileName();
-					fileName = fileName.substring(0, fileName.length()
-							- ".testlanguage_diagram".length()); //$NON-NLS-1$
-					setFileName(org.muml.testlanguage.diagram.part.TestLanguageDiagramEditorUtil
-							.getUniqueFileName(getContainerFullPath(),
-									fileName, "testlanguage")); //$NON-NLS-1$
+					fileName = fileName.substring(0, fileName.length() - ".testlanguage_diagram".length()); //$NON-NLS-1$
+					setFileName(TestLanguageDiagramEditorUtil.getUniqueFileName(getContainerFullPath(), fileName,
+							"testlanguage")); //$NON-NLS-1$
 				}
 				super.setVisible(visible);
 			}
 		};
-		domainModelFilePage
-				.setTitle(org.muml.testlanguage.diagram.part.Messages.TestLanguageCreationWizard_DomainModelFilePageTitle);
-		domainModelFilePage
-				.setDescription(org.muml.testlanguage.diagram.part.Messages.TestLanguageCreationWizard_DomainModelFilePageDescription);
+		domainModelFilePage.setTitle(Messages.TestLanguageCreationWizard_DomainModelFilePageTitle);
+		domainModelFilePage.setDescription(Messages.TestLanguageCreationWizard_DomainModelFilePageDescription);
 		addPage(domainModelFilePage);
 	}
 
@@ -137,21 +129,15 @@ public class TestLanguageCreationWizard extends Wizard implements INewWizard {
 	public boolean performFinish() {
 		IRunnableWithProgress op = new WorkspaceModifyOperation(null) {
 
-			protected void execute(IProgressMonitor monitor)
-					throws CoreException, InterruptedException {
-				diagram = org.muml.testlanguage.diagram.part.TestLanguageDiagramEditorUtil
-						.createDiagram(diagramModelFilePage.getURI(),
-								domainModelFilePage.getURI(), monitor);
+			protected void execute(IProgressMonitor monitor) throws CoreException, InterruptedException {
+				diagram = TestLanguageDiagramEditorUtil.createDiagram(diagramModelFilePage.getURI(),
+						domainModelFilePage.getURI(), monitor);
 				if (isOpenNewlyCreatedDiagramEditor() && diagram != null) {
 					try {
-						org.muml.testlanguage.diagram.part.TestLanguageDiagramEditorUtil
-								.openDiagram(diagram);
+						TestLanguageDiagramEditorUtil.openDiagram(diagram);
 					} catch (PartInitException e) {
-						ErrorDialog
-								.openError(
-										getContainer().getShell(),
-										org.muml.testlanguage.diagram.part.Messages.TestLanguageCreationWizardOpenEditorError,
-										null, e.getStatus());
+						ErrorDialog.openError(getContainer().getShell(),
+								Messages.TestLanguageCreationWizardOpenEditorError, null, e.getStatus());
 					}
 				}
 			}
@@ -162,17 +148,11 @@ public class TestLanguageCreationWizard extends Wizard implements INewWizard {
 			return false;
 		} catch (InvocationTargetException e) {
 			if (e.getTargetException() instanceof CoreException) {
-				ErrorDialog
-						.openError(
-								getContainer().getShell(),
-								org.muml.testlanguage.diagram.part.Messages.TestLanguageCreationWizardCreationError,
-								null, ((CoreException) e.getTargetException())
-										.getStatus());
+				ErrorDialog.openError(getContainer().getShell(), Messages.TestLanguageCreationWizardCreationError, null,
+						((CoreException) e.getTargetException()).getStatus());
 			} else {
-				org.muml.testlanguage.diagram.part.TestLanguageDiagramEditorPlugin
-						.getInstance()
-						.logError(
-								"Error creating diagram", e.getTargetException()); //$NON-NLS-1$
+				TestLanguageDiagramEditorPlugin.getInstance().logError("Error creating diagram", //$NON-NLS-1$
+						e.getTargetException());
 			}
 			return false;
 		}

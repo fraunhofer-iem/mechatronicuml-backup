@@ -21,8 +21,7 @@ public class TestLanguageCreationWizardPage extends WizardNewFileCreationPage {
 	/**
 	 * @generated
 	 */
-	public TestLanguageCreationWizardPage(String pageName,
-			IStructuredSelection selection, String fileExtension) {
+	public TestLanguageCreationWizardPage(String pageName, IStructuredSelection selection, String fileExtension) {
 		super(pageName, selection);
 		this.fileExtension = fileExtension;
 	}
@@ -63,9 +62,8 @@ public class TestLanguageCreationWizardPage extends WizardNewFileCreationPage {
 	 */
 	public void createControl(Composite parent) {
 		super.createControl(parent);
-		setFileName(org.muml.testlanguage.diagram.part.TestLanguageDiagramEditorUtil
-				.getUniqueFileName(getContainerFullPath(), getFileName(),
-						getExtension()));
+		setFileName(
+				TestLanguageDiagramEditorUtil.getUniqueFileName(getContainerFullPath(), getFileName(), getExtension()));
 		setPageComplete(validatePage());
 	}
 
@@ -77,11 +75,8 @@ public class TestLanguageCreationWizardPage extends WizardNewFileCreationPage {
 			return false;
 		}
 		String extension = getExtension();
-		if (extension != null
-				&& !getFilePath().toString().endsWith("." + extension)) {
-			setErrorMessage(NLS
-					.bind(org.muml.testlanguage.diagram.part.Messages.TestLanguageCreationWizardPageExtensionError,
-							extension));
+		if (extension != null && !getFilePath().toString().endsWith("." + extension)) {
+			setErrorMessage(NLS.bind(Messages.TestLanguageCreationWizardPageExtensionError, extension));
 			return false;
 		}
 		return true;

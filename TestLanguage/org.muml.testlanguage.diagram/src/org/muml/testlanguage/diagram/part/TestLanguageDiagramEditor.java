@@ -40,12 +40,12 @@ import org.eclipse.ui.navigator.resources.ProjectExplorer;
 import org.eclipse.ui.part.FileEditorInput;
 import org.eclipse.ui.part.IShowInTargetList;
 import org.eclipse.ui.part.ShowInContext;
+import org.muml.testlanguage.diagram.navigator.TestLanguageNavigatorItem;
 
 /**
  * @generated
  */
-public class TestLanguageDiagramEditor extends DiagramDocumentEditor implements
-		IGotoMarker {
+public class TestLanguageDiagramEditor extends DiagramDocumentEditor implements IGotoMarker {
 
 	/**
 	 * @generated
@@ -76,8 +76,7 @@ public class TestLanguageDiagramEditor extends DiagramDocumentEditor implements
 	 */
 	protected PaletteRoot createPaletteRoot(PaletteRoot existingPaletteRoot) {
 		PaletteRoot root = super.createPaletteRoot(existingPaletteRoot);
-		new org.muml.testlanguage.diagram.part.TestLanguagePaletteFactory()
-				.fillPalette(root);
+		new TestLanguagePaletteFactory().fillPalette(root);
 		return root;
 	}
 
@@ -85,14 +84,14 @@ public class TestLanguageDiagramEditor extends DiagramDocumentEditor implements
 	 * @generated
 	 */
 	protected PreferencesHint getPreferencesHint() {
-		return org.muml.testlanguage.diagram.part.TestLanguageDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT;
+		return TestLanguageDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT;
 	}
 
 	/**
 	 * @generated
 	 */
 	public String getContributorId() {
-		return org.muml.testlanguage.diagram.part.TestLanguageDiagramEditorPlugin.ID;
+		return TestLanguageDiagramEditorPlugin.ID;
 	}
 
 	/**
@@ -114,10 +113,8 @@ public class TestLanguageDiagramEditor extends DiagramDocumentEditor implements
 	 * @generated
 	 */
 	protected IDocumentProvider getDocumentProvider(IEditorInput input) {
-		if (input instanceof IFileEditorInput
-				|| input instanceof URIEditorInput) {
-			return org.muml.testlanguage.diagram.part.TestLanguageDiagramEditorPlugin
-					.getInstance().getDocumentProvider();
+		if (input instanceof IFileEditorInput || input instanceof URIEditorInput) {
+			return TestLanguageDiagramEditorPlugin.getInstance().getDocumentProvider();
 		}
 		return super.getDocumentProvider(input);
 	}
@@ -126,8 +123,7 @@ public class TestLanguageDiagramEditor extends DiagramDocumentEditor implements
 	 * @generated
 	 */
 	public TransactionalEditingDomain getEditingDomain() {
-		IDocument document = getEditorInput() != null ? getDocumentProvider()
-				.getDocument(getEditorInput()) : null;
+		IDocument document = getEditorInput() != null ? getDocumentProvider().getDocument(getEditorInput()) : null;
 		if (document instanceof IDiagramDocument) {
 			return ((IDiagramDocument) document).getEditingDomain();
 		}
@@ -138,10 +134,8 @@ public class TestLanguageDiagramEditor extends DiagramDocumentEditor implements
 	 * @generated
 	 */
 	protected void setDocumentProvider(IEditorInput input) {
-		if (input instanceof IFileEditorInput
-				|| input instanceof URIEditorInput) {
-			setDocumentProvider(org.muml.testlanguage.diagram.part.TestLanguageDiagramEditorPlugin
-					.getInstance().getDocumentProvider());
+		if (input instanceof IFileEditorInput || input instanceof URIEditorInput) {
+			setDocumentProvider(TestLanguageDiagramEditorPlugin.getInstance().getDocumentProvider());
 		} else {
 			super.setDocumentProvider(input);
 		}
@@ -175,8 +169,7 @@ public class TestLanguageDiagramEditor extends DiagramDocumentEditor implements
 		Shell shell = getSite().getShell();
 		IEditorInput input = getEditorInput();
 		SaveAsDialog dialog = new SaveAsDialog(shell);
-		IFile original = input instanceof IFileEditorInput ? ((IFileEditorInput) input)
-				.getFile() : null;
+		IFile original = input instanceof IFileEditorInput ? ((IFileEditorInput) input).getFile() : null;
 		if (original != null) {
 			dialog.setOriginalFile(original);
 		}
@@ -187,9 +180,7 @@ public class TestLanguageDiagramEditor extends DiagramDocumentEditor implements
 			return;
 		}
 		if (provider.isDeleted(input) && original != null) {
-			String message = NLS
-					.bind(org.muml.testlanguage.diagram.part.Messages.TestLanguageDiagramEditor_SavingDeletedFile,
-							original.getName());
+			String message = NLS.bind(Messages.TestLanguageDiagramEditor_SavingDeletedFile, original.getName());
 			dialog.setErrorMessage(null);
 			dialog.setMessage(message, IMessageProvider.WARNING);
 		}
@@ -210,37 +201,27 @@ public class TestLanguageDiagramEditor extends DiagramDocumentEditor implements
 		IFile file = workspaceRoot.getFile(filePath);
 		final IEditorInput newInput = new FileEditorInput(file);
 		// Check if the editor is already open
-		IEditorMatchingStrategy matchingStrategy = getEditorDescriptor()
-				.getEditorMatchingStrategy();
-		IEditorReference[] editorRefs = PlatformUI.getWorkbench()
-				.getActiveWorkbenchWindow().getActivePage()
+		IEditorMatchingStrategy matchingStrategy = getEditorDescriptor().getEditorMatchingStrategy();
+		IEditorReference[] editorRefs = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage()
 				.getEditorReferences();
 		for (int i = 0; i < editorRefs.length; i++) {
 			if (matchingStrategy.matches(editorRefs[i], newInput)) {
-				MessageDialog
-						.openWarning(
-								shell,
-								org.muml.testlanguage.diagram.part.Messages.TestLanguageDiagramEditor_SaveAsErrorTitle,
-								org.muml.testlanguage.diagram.part.Messages.TestLanguageDiagramEditor_SaveAsErrorMessage);
+				MessageDialog.openWarning(shell, Messages.TestLanguageDiagramEditor_SaveAsErrorTitle,
+						Messages.TestLanguageDiagramEditor_SaveAsErrorMessage);
 				return;
 			}
 		}
 		boolean success = false;
 		try {
 			provider.aboutToChange(newInput);
-			getDocumentProvider(newInput).saveDocument(progressMonitor,
-					newInput,
+			getDocumentProvider(newInput).saveDocument(progressMonitor, newInput,
 					getDocumentProvider().getDocument(getEditorInput()), true);
 			success = true;
 		} catch (CoreException x) {
 			IStatus status = x.getStatus();
 			if (status == null || status.getSeverity() != IStatus.CANCEL) {
-				ErrorDialog
-						.openError(
-								shell,
-								org.muml.testlanguage.diagram.part.Messages.TestLanguageDiagramEditor_SaveErrorTitle,
-								org.muml.testlanguage.diagram.part.Messages.TestLanguageDiagramEditor_SaveErrorMessage,
-								x.getStatus());
+				ErrorDialog.openError(shell, Messages.TestLanguageDiagramEditor_SaveErrorTitle,
+						Messages.TestLanguageDiagramEditor_SaveErrorMessage, x.getStatus());
 			}
 		} finally {
 			provider.changed(newInput);
@@ -274,8 +255,7 @@ public class TestLanguageDiagramEditor extends DiagramDocumentEditor implements
 		}
 		IFile file = WorkspaceSynchronizer.getFile(diagram.eResource());
 		if (file != null) {
-			org.muml.testlanguage.diagram.navigator.TestLanguageNavigatorItem item = new org.muml.testlanguage.diagram.navigator.TestLanguageNavigatorItem(
-					diagram, file, false);
+			TestLanguageNavigatorItem item = new TestLanguageNavigatorItem(diagram, file, false);
 			return new StructuredSelection(item);
 		}
 		return StructuredSelection.EMPTY;
@@ -286,11 +266,10 @@ public class TestLanguageDiagramEditor extends DiagramDocumentEditor implements
 	 */
 	protected void configureGraphicalViewer() {
 		super.configureGraphicalViewer();
-		org.muml.testlanguage.diagram.part.DiagramEditorContextMenuProvider provider = new org.muml.testlanguage.diagram.part.DiagramEditorContextMenuProvider(
-				this, getDiagramGraphicalViewer());
+		DiagramEditorContextMenuProvider provider = new DiagramEditorContextMenuProvider(this,
+				getDiagramGraphicalViewer());
 		getDiagramGraphicalViewer().setContextMenu(provider);
-		getSite().registerContextMenu(ActionIds.DIAGRAM_EDITOR_CONTEXT_MENU,
-				provider, getDiagramGraphicalViewer());
+		getSite().registerContextMenu(ActionIds.DIAGRAM_EDITOR_CONTEXT_MENU, provider, getDiagramGraphicalViewer());
 	}
 
 }

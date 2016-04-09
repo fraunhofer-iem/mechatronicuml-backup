@@ -6,6 +6,7 @@ import org.eclipse.gef.tools.CellEditorLocator;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ITextAwareEditPart;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.directedit.locator.CellEditorLocatorAccess;
+import org.muml.testlanguage.diagram.part.TestLanguageVisualIDRegistry;
 
 /**
  * @generated
@@ -18,44 +19,34 @@ public class TestLanguageEditPartFactory implements EditPartFactory {
 	public EditPart createEditPart(EditPart context, Object model) {
 		if (model instanceof View) {
 			View view = (View) model;
-			switch (org.muml.testlanguage.diagram.part.TestLanguageVisualIDRegistry
-					.getVisualID(view)) {
+			switch (TestLanguageVisualIDRegistry.getVisualID(view)) {
 
-			case org.muml.testlanguage.diagram.edit.parts.TestCaseEditPart.VISUAL_ID:
-				return new org.muml.testlanguage.diagram.edit.parts.TestCaseEditPart(
-						view);
+			case TestCaseEditPart.VISUAL_ID:
+				return new TestCaseEditPart(view);
 
-			case org.muml.testlanguage.diagram.edit.parts.NodeEditPart.VISUAL_ID:
-				return new org.muml.testlanguage.diagram.edit.parts.NodeEditPart(
-						view);
+			case NodeEditPart.VISUAL_ID:
+				return new NodeEditPart(view);
 
-			case org.muml.testlanguage.diagram.edit.parts.NodeLabelEditPart.VISUAL_ID:
-				return new org.muml.testlanguage.diagram.edit.parts.NodeLabelEditPart(
-						view);
+			case NodeLabelEditPart.VISUAL_ID:
+				return new NodeLabelEditPart(view);
 
-			case org.muml.testlanguage.diagram.edit.parts.InputEditPart.VISUAL_ID:
-				return new org.muml.testlanguage.diagram.edit.parts.InputEditPart(
-						view);
+			case InputEditPart.VISUAL_ID:
+				return new InputEditPart(view);
 
-			case org.muml.testlanguage.diagram.edit.parts.InputNameEditPart.VISUAL_ID:
-				return new org.muml.testlanguage.diagram.edit.parts.InputNameEditPart(
-						view);
+			case InputNameEditPart.VISUAL_ID:
+				return new InputNameEditPart(view);
 
-			case org.muml.testlanguage.diagram.edit.parts.OutputEditPart.VISUAL_ID:
-				return new org.muml.testlanguage.diagram.edit.parts.OutputEditPart(
-						view);
+			case OutputEditPart.VISUAL_ID:
+				return new OutputEditPart(view);
 
-			case org.muml.testlanguage.diagram.edit.parts.OutputNameEditPart.VISUAL_ID:
-				return new org.muml.testlanguage.diagram.edit.parts.OutputNameEditPart(
-						view);
+			case OutputNameEditPart.VISUAL_ID:
+				return new OutputNameEditPart(view);
 
-			case org.muml.testlanguage.diagram.edit.parts.NodeNodeFigureCompartmentEditPart.VISUAL_ID:
-				return new org.muml.testlanguage.diagram.edit.parts.NodeNodeFigureCompartmentEditPart(
-						view);
+			case NodeNodeFigureCompartmentEditPart.VISUAL_ID:
+				return new NodeNodeFigureCompartmentEditPart(view);
 
-			case org.muml.testlanguage.diagram.edit.parts.OutputTargetsEditPart.VISUAL_ID:
-				return new org.muml.testlanguage.diagram.edit.parts.OutputTargetsEditPart(
-						view);
+			case OutputTargetsEditPart.VISUAL_ID:
+				return new OutputTargetsEditPart(view);
 
 			}
 		}
@@ -73,10 +64,8 @@ public class TestLanguageEditPartFactory implements EditPartFactory {
 	/**
 	 * @generated
 	 */
-	public static CellEditorLocator getTextCellEditorLocator(
-			ITextAwareEditPart source) {
-		return CellEditorLocatorAccess.INSTANCE
-				.getTextCellEditorLocator(source);
+	public static CellEditorLocator getTextCellEditorLocator(ITextAwareEditPart source) {
+		return CellEditorLocatorAccess.INSTANCE.getTextCellEditorLocator(source);
 	}
 
 }

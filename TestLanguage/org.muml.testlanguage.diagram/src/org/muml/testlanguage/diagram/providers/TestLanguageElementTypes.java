@@ -13,6 +13,13 @@ import org.eclipse.gmf.tooling.runtime.providers.DiagramElementTypeImages;
 import org.eclipse.gmf.tooling.runtime.providers.DiagramElementTypes;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.swt.graphics.Image;
+import org.muml.testlanguage.TestLanguagePackage;
+import org.muml.testlanguage.diagram.edit.parts.InputEditPart;
+import org.muml.testlanguage.diagram.edit.parts.NodeEditPart;
+import org.muml.testlanguage.diagram.edit.parts.OutputEditPart;
+import org.muml.testlanguage.diagram.edit.parts.OutputTargetsEditPart;
+import org.muml.testlanguage.diagram.edit.parts.TestCaseEditPart;
+import org.muml.testlanguage.diagram.part.TestLanguageDiagramEditorPlugin;
 
 /**
  * @generated
@@ -34,8 +41,7 @@ public class TestLanguageElementTypes {
 	 * @generated
 	 */
 	private static DiagramElementTypeImages elementTypeImages = new DiagramElementTypeImages(
-			org.muml.testlanguage.diagram.part.TestLanguageDiagramEditorPlugin
-					.getInstance().getItemProvidersAdapterFactory());
+			TestLanguageDiagramEditorPlugin.getInstance().getItemProvidersAdapterFactory());
 
 	/**
 	 * @generated
@@ -61,7 +67,8 @@ public class TestLanguageElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType OutputTargets_4001 = getElementType("org.muml.testlanguage.diagram.OutputTargets_4001"); //$NON-NLS-1$
+	public static final IElementType OutputTargets_4001 = getElementType(
+			"org.muml.testlanguage.diagram.OutputTargets_4001"); //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -101,30 +108,15 @@ public class TestLanguageElementTypes {
 		if (elements == null) {
 			elements = new IdentityHashMap<IElementType, ENamedElement>();
 
-			elements.put(
-					TestCase_1000,
-					org.muml.testlanguage.TestLanguagePackage.eINSTANCE
-							.getTestCase());
+			elements.put(TestCase_1000, TestLanguagePackage.eINSTANCE.getTestCase());
 
-			elements.put(
-					Node_2001,
-					org.muml.testlanguage.TestLanguagePackage.eINSTANCE
-							.getNode());
+			elements.put(Node_2001, TestLanguagePackage.eINSTANCE.getNode());
 
-			elements.put(
-					Input_3001,
-					org.muml.testlanguage.TestLanguagePackage.eINSTANCE
-							.getInput());
+			elements.put(Input_3001, TestLanguagePackage.eINSTANCE.getInput());
 
-			elements.put(
-					Output_3002,
-					org.muml.testlanguage.TestLanguagePackage.eINSTANCE
-							.getOutput());
+			elements.put(Output_3002, TestLanguagePackage.eINSTANCE.getOutput());
 
-			elements.put(
-					OutputTargets_4001,
-					org.muml.testlanguage.TestLanguagePackage.eINSTANCE
-							.getOutput_Targets());
+			elements.put(OutputTargets_4001, TestLanguagePackage.eINSTANCE.getOutput_Targets());
 		}
 		return (ENamedElement) elements.get(type);
 	}
@@ -156,15 +148,15 @@ public class TestLanguageElementTypes {
 	 */
 	public static IElementType getElementType(int visualID) {
 		switch (visualID) {
-		case org.muml.testlanguage.diagram.edit.parts.TestCaseEditPart.VISUAL_ID:
+		case TestCaseEditPart.VISUAL_ID:
 			return TestCase_1000;
-		case org.muml.testlanguage.diagram.edit.parts.NodeEditPart.VISUAL_ID:
+		case NodeEditPart.VISUAL_ID:
 			return Node_2001;
-		case org.muml.testlanguage.diagram.edit.parts.InputEditPart.VISUAL_ID:
+		case InputEditPart.VISUAL_ID:
 			return Input_3001;
-		case org.muml.testlanguage.diagram.edit.parts.OutputEditPart.VISUAL_ID:
+		case OutputEditPart.VISUAL_ID:
 			return Output_3002;
-		case org.muml.testlanguage.diagram.edit.parts.OutputTargetsEditPart.VISUAL_ID:
+		case OutputTargetsEditPart.VISUAL_ID:
 			return OutputTargets_4001;
 		}
 		return null;
@@ -173,35 +165,33 @@ public class TestLanguageElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final DiagramElementTypes TYPED_INSTANCE = new DiagramElementTypes(
-			elementTypeImages) {
+	public static final DiagramElementTypes TYPED_INSTANCE = new DiagramElementTypes(elementTypeImages) {
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		@Override
+
 		public boolean isKnownElementType(IElementType elementType) {
-			return org.muml.testlanguage.diagram.providers.TestLanguageElementTypes
-					.isKnownElementType(elementType);
+			return org.muml.testlanguage.diagram.providers.TestLanguageElementTypes.isKnownElementType(elementType);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		@Override
+
 		public IElementType getElementTypeForVisualId(int visualID) {
-			return org.muml.testlanguage.diagram.providers.TestLanguageElementTypes
-					.getElementType(visualID);
+			return org.muml.testlanguage.diagram.providers.TestLanguageElementTypes.getElementType(visualID);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		@Override
-		public ENamedElement getDefiningNamedElement(
-				IAdaptable elementTypeAdapter) {
-			return org.muml.testlanguage.diagram.providers.TestLanguageElementTypes
-					.getElement(elementTypeAdapter);
+
+		public ENamedElement getDefiningNamedElement(IAdaptable elementTypeAdapter) {
+			return org.muml.testlanguage.diagram.providers.TestLanguageElementTypes.getElement(elementTypeAdapter);
 		}
 	};
 

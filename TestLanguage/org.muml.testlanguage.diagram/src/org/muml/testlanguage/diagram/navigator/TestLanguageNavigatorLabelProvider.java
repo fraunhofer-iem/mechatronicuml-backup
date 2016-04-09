@@ -15,25 +15,33 @@ import org.eclipse.swt.graphics.Image;
 import org.eclipse.ui.IMemento;
 import org.eclipse.ui.navigator.ICommonContentExtensionSite;
 import org.eclipse.ui.navigator.ICommonLabelProvider;
+import org.muml.testlanguage.diagram.edit.parts.InputEditPart;
+import org.muml.testlanguage.diagram.edit.parts.InputNameEditPart;
+import org.muml.testlanguage.diagram.edit.parts.NodeEditPart;
+import org.muml.testlanguage.diagram.edit.parts.NodeLabelEditPart;
+import org.muml.testlanguage.diagram.edit.parts.OutputEditPart;
+import org.muml.testlanguage.diagram.edit.parts.OutputNameEditPart;
+import org.muml.testlanguage.diagram.edit.parts.OutputTargetsEditPart;
+import org.muml.testlanguage.diagram.edit.parts.TestCaseEditPart;
+import org.muml.testlanguage.diagram.part.TestLanguageDiagramEditorPlugin;
+import org.muml.testlanguage.diagram.part.TestLanguageVisualIDRegistry;
+import org.muml.testlanguage.diagram.providers.TestLanguageElementTypes;
+import org.muml.testlanguage.diagram.providers.TestLanguageParserProvider;
 
 /**
  * @generated
  */
-public class TestLanguageNavigatorLabelProvider extends LabelProvider implements
-		ICommonLabelProvider, ITreePathLabelProvider {
+public class TestLanguageNavigatorLabelProvider extends LabelProvider
+		implements ICommonLabelProvider, ITreePathLabelProvider {
 
 	/**
 	 * @generated
 	 */
 	static {
-		org.muml.testlanguage.diagram.part.TestLanguageDiagramEditorPlugin
-				.getInstance()
-				.getImageRegistry()
-				.put("Navigator?UnknownElement", ImageDescriptor.getMissingImageDescriptor()); //$NON-NLS-1$
-		org.muml.testlanguage.diagram.part.TestLanguageDiagramEditorPlugin
-				.getInstance()
-				.getImageRegistry()
-				.put("Navigator?ImageNotFound", ImageDescriptor.getMissingImageDescriptor()); //$NON-NLS-1$
+		TestLanguageDiagramEditorPlugin.getInstance().getImageRegistry().put("Navigator?UnknownElement", //$NON-NLS-1$
+				ImageDescriptor.getMissingImageDescriptor());
+		TestLanguageDiagramEditorPlugin.getInstance().getImageRegistry().put("Navigator?ImageNotFound", //$NON-NLS-1$
+				ImageDescriptor.getMissingImageDescriptor());
 	}
 
 	/**
@@ -41,9 +49,8 @@ public class TestLanguageNavigatorLabelProvider extends LabelProvider implements
 	 */
 	public void updateLabel(ViewerLabel label, TreePath elementPath) {
 		Object element = elementPath.getLastSegment();
-		if (element instanceof org.muml.testlanguage.diagram.navigator.TestLanguageNavigatorItem
-				&& !isOwnView(((org.muml.testlanguage.diagram.navigator.TestLanguageNavigatorItem) element)
-						.getView())) {
+		if (element instanceof TestLanguageNavigatorItem
+				&& !isOwnView(((TestLanguageNavigatorItem) element).getView())) {
 			return;
 		}
 		label.setText(getText(element));
@@ -54,14 +61,13 @@ public class TestLanguageNavigatorLabelProvider extends LabelProvider implements
 	 * @generated
 	 */
 	public Image getImage(Object element) {
-		if (element instanceof org.muml.testlanguage.diagram.navigator.TestLanguageNavigatorGroup) {
-			org.muml.testlanguage.diagram.navigator.TestLanguageNavigatorGroup group = (org.muml.testlanguage.diagram.navigator.TestLanguageNavigatorGroup) element;
-			return org.muml.testlanguage.diagram.part.TestLanguageDiagramEditorPlugin
-					.getInstance().getBundledImage(group.getIcon());
+		if (element instanceof TestLanguageNavigatorGroup) {
+			TestLanguageNavigatorGroup group = (TestLanguageNavigatorGroup) element;
+			return TestLanguageDiagramEditorPlugin.getInstance().getBundledImage(group.getIcon());
 		}
 
-		if (element instanceof org.muml.testlanguage.diagram.navigator.TestLanguageNavigatorItem) {
-			org.muml.testlanguage.diagram.navigator.TestLanguageNavigatorItem navigatorItem = (org.muml.testlanguage.diagram.navigator.TestLanguageNavigatorItem) element;
+		if (element instanceof TestLanguageNavigatorItem) {
+			TestLanguageNavigatorItem navigatorItem = (TestLanguageNavigatorItem) element;
 			if (!isOwnView(navigatorItem.getView())) {
 				return super.getImage(element);
 			}
@@ -75,23 +81,22 @@ public class TestLanguageNavigatorLabelProvider extends LabelProvider implements
 	 * @generated
 	 */
 	public Image getImage(View view) {
-		switch (org.muml.testlanguage.diagram.part.TestLanguageVisualIDRegistry
-				.getVisualID(view)) {
-		case org.muml.testlanguage.diagram.edit.parts.TestCaseEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Diagram?http://www.muml.org/testlanguage/1.0?TestCase", org.muml.testlanguage.diagram.providers.TestLanguageElementTypes.TestCase_1000); //$NON-NLS-1$
-		case org.muml.testlanguage.diagram.edit.parts.NodeEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?TopLevelNode?http://www.muml.org/testlanguage/1.0?Node", org.muml.testlanguage.diagram.providers.TestLanguageElementTypes.Node_2001); //$NON-NLS-1$
-		case org.muml.testlanguage.diagram.edit.parts.InputEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Node?http://www.muml.org/testlanguage/1.0?Input", org.muml.testlanguage.diagram.providers.TestLanguageElementTypes.Input_3001); //$NON-NLS-1$
-		case org.muml.testlanguage.diagram.edit.parts.OutputEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Node?http://www.muml.org/testlanguage/1.0?Output", org.muml.testlanguage.diagram.providers.TestLanguageElementTypes.Output_3002); //$NON-NLS-1$
-		case org.muml.testlanguage.diagram.edit.parts.OutputTargetsEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Link?http://www.muml.org/testlanguage/1.0?Output?targets", org.muml.testlanguage.diagram.providers.TestLanguageElementTypes.OutputTargets_4001); //$NON-NLS-1$
+		switch (TestLanguageVisualIDRegistry.getVisualID(view)) {
+		case TestCaseEditPart.VISUAL_ID:
+			return getImage("Navigator?Diagram?http://www.muml.org/testlanguage/1.0?TestCase", //$NON-NLS-1$
+					TestLanguageElementTypes.TestCase_1000);
+		case NodeEditPart.VISUAL_ID:
+			return getImage("Navigator?TopLevelNode?http://www.muml.org/testlanguage/1.0?Node", //$NON-NLS-1$
+					TestLanguageElementTypes.Node_2001);
+		case InputEditPart.VISUAL_ID:
+			return getImage("Navigator?Node?http://www.muml.org/testlanguage/1.0?Input", //$NON-NLS-1$
+					TestLanguageElementTypes.Input_3001);
+		case OutputEditPart.VISUAL_ID:
+			return getImage("Navigator?Node?http://www.muml.org/testlanguage/1.0?Output", //$NON-NLS-1$
+					TestLanguageElementTypes.Output_3002);
+		case OutputTargetsEditPart.VISUAL_ID:
+			return getImage("Navigator?Link?http://www.muml.org/testlanguage/1.0?Output?targets", //$NON-NLS-1$
+					TestLanguageElementTypes.OutputTargets_4001);
 		}
 		return getImage("Navigator?UnknownElement", null); //$NON-NLS-1$
 	}
@@ -100,15 +105,10 @@ public class TestLanguageNavigatorLabelProvider extends LabelProvider implements
 	 * @generated
 	 */
 	private Image getImage(String key, IElementType elementType) {
-		ImageRegistry imageRegistry = org.muml.testlanguage.diagram.part.TestLanguageDiagramEditorPlugin
-				.getInstance().getImageRegistry();
+		ImageRegistry imageRegistry = TestLanguageDiagramEditorPlugin.getInstance().getImageRegistry();
 		Image image = imageRegistry.get(key);
-		if (image == null
-				&& elementType != null
-				&& org.muml.testlanguage.diagram.providers.TestLanguageElementTypes
-						.isKnownElementType(elementType)) {
-			image = org.muml.testlanguage.diagram.providers.TestLanguageElementTypes
-					.getImage(elementType);
+		if (image == null && elementType != null && TestLanguageElementTypes.isKnownElementType(elementType)) {
+			image = TestLanguageElementTypes.getImage(elementType);
 			imageRegistry.put(key, image);
 		}
 
@@ -123,13 +123,13 @@ public class TestLanguageNavigatorLabelProvider extends LabelProvider implements
 	 * @generated
 	 */
 	public String getText(Object element) {
-		if (element instanceof org.muml.testlanguage.diagram.navigator.TestLanguageNavigatorGroup) {
-			org.muml.testlanguage.diagram.navigator.TestLanguageNavigatorGroup group = (org.muml.testlanguage.diagram.navigator.TestLanguageNavigatorGroup) element;
+		if (element instanceof TestLanguageNavigatorGroup) {
+			TestLanguageNavigatorGroup group = (TestLanguageNavigatorGroup) element;
 			return group.getGroupName();
 		}
 
-		if (element instanceof org.muml.testlanguage.diagram.navigator.TestLanguageNavigatorItem) {
-			org.muml.testlanguage.diagram.navigator.TestLanguageNavigatorItem navigatorItem = (org.muml.testlanguage.diagram.navigator.TestLanguageNavigatorItem) element;
+		if (element instanceof TestLanguageNavigatorItem) {
+			TestLanguageNavigatorItem navigatorItem = (TestLanguageNavigatorItem) element;
 			if (!isOwnView(navigatorItem.getView())) {
 				return null;
 			}
@@ -146,17 +146,16 @@ public class TestLanguageNavigatorLabelProvider extends LabelProvider implements
 		if (view.getElement() != null && view.getElement().eIsProxy()) {
 			return getUnresolvedDomainElementProxyText(view);
 		}
-		switch (org.muml.testlanguage.diagram.part.TestLanguageVisualIDRegistry
-				.getVisualID(view)) {
-		case org.muml.testlanguage.diagram.edit.parts.TestCaseEditPart.VISUAL_ID:
+		switch (TestLanguageVisualIDRegistry.getVisualID(view)) {
+		case TestCaseEditPart.VISUAL_ID:
 			return getTestCase_1000Text(view);
-		case org.muml.testlanguage.diagram.edit.parts.NodeEditPart.VISUAL_ID:
+		case NodeEditPart.VISUAL_ID:
 			return getNode_2001Text(view);
-		case org.muml.testlanguage.diagram.edit.parts.InputEditPart.VISUAL_ID:
+		case InputEditPart.VISUAL_ID:
 			return getInput_3001Text(view);
-		case org.muml.testlanguage.diagram.edit.parts.OutputEditPart.VISUAL_ID:
+		case OutputEditPart.VISUAL_ID:
 			return getOutput_3002Text(view);
-		case org.muml.testlanguage.diagram.edit.parts.OutputTargetsEditPart.VISUAL_ID:
+		case OutputTargetsEditPart.VISUAL_ID:
 			return getOutputTargets_4001Text(view);
 		}
 		return getUnknownElementText(view);
@@ -173,20 +172,14 @@ public class TestLanguageNavigatorLabelProvider extends LabelProvider implements
 	 * @generated
 	 */
 	private String getNode_2001Text(View view) {
-		IParser parser = org.muml.testlanguage.diagram.providers.TestLanguageParserProvider
-				.getParser(
-						org.muml.testlanguage.diagram.providers.TestLanguageElementTypes.Node_2001,
-						view.getElement() != null ? view.getElement() : view,
-						org.muml.testlanguage.diagram.part.TestLanguageVisualIDRegistry
-								.getType(org.muml.testlanguage.diagram.edit.parts.NodeLabelEditPart.VISUAL_ID));
+		IParser parser = TestLanguageParserProvider.getParser(TestLanguageElementTypes.Node_2001,
+				view.getElement() != null ? view.getElement() : view,
+				TestLanguageVisualIDRegistry.getType(NodeLabelEditPart.VISUAL_ID));
 		if (parser != null) {
-			return parser.getPrintString(new EObjectAdapter(
-					view.getElement() != null ? view.getElement() : view),
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
 					ParserOptions.NONE.intValue());
 		} else {
-			org.muml.testlanguage.diagram.part.TestLanguageDiagramEditorPlugin
-					.getInstance().logError(
-							"Parser was not found for label " + 5003); //$NON-NLS-1$
+			TestLanguageDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5003); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -195,20 +188,14 @@ public class TestLanguageNavigatorLabelProvider extends LabelProvider implements
 	 * @generated
 	 */
 	private String getInput_3001Text(View view) {
-		IParser parser = org.muml.testlanguage.diagram.providers.TestLanguageParserProvider
-				.getParser(
-						org.muml.testlanguage.diagram.providers.TestLanguageElementTypes.Input_3001,
-						view.getElement() != null ? view.getElement() : view,
-						org.muml.testlanguage.diagram.part.TestLanguageVisualIDRegistry
-								.getType(org.muml.testlanguage.diagram.edit.parts.InputNameEditPart.VISUAL_ID));
+		IParser parser = TestLanguageParserProvider.getParser(TestLanguageElementTypes.Input_3001,
+				view.getElement() != null ? view.getElement() : view,
+				TestLanguageVisualIDRegistry.getType(InputNameEditPart.VISUAL_ID));
 		if (parser != null) {
-			return parser.getPrintString(new EObjectAdapter(
-					view.getElement() != null ? view.getElement() : view),
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
 					ParserOptions.NONE.intValue());
 		} else {
-			org.muml.testlanguage.diagram.part.TestLanguageDiagramEditorPlugin
-					.getInstance().logError(
-							"Parser was not found for label " + 5001); //$NON-NLS-1$
+			TestLanguageDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5001); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -217,20 +204,14 @@ public class TestLanguageNavigatorLabelProvider extends LabelProvider implements
 	 * @generated
 	 */
 	private String getOutput_3002Text(View view) {
-		IParser parser = org.muml.testlanguage.diagram.providers.TestLanguageParserProvider
-				.getParser(
-						org.muml.testlanguage.diagram.providers.TestLanguageElementTypes.Output_3002,
-						view.getElement() != null ? view.getElement() : view,
-						org.muml.testlanguage.diagram.part.TestLanguageVisualIDRegistry
-								.getType(org.muml.testlanguage.diagram.edit.parts.OutputNameEditPart.VISUAL_ID));
+		IParser parser = TestLanguageParserProvider.getParser(TestLanguageElementTypes.Output_3002,
+				view.getElement() != null ? view.getElement() : view,
+				TestLanguageVisualIDRegistry.getType(OutputNameEditPart.VISUAL_ID));
 		if (parser != null) {
-			return parser.getPrintString(new EObjectAdapter(
-					view.getElement() != null ? view.getElement() : view),
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
 					ParserOptions.NONE.intValue());
 		} else {
-			org.muml.testlanguage.diagram.part.TestLanguageDiagramEditorPlugin
-					.getInstance().logError(
-							"Parser was not found for label " + 5002); //$NON-NLS-1$
+			TestLanguageDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5002); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -285,9 +266,7 @@ public class TestLanguageNavigatorLabelProvider extends LabelProvider implements
 	 * @generated
 	 */
 	private boolean isOwnView(View view) {
-		return org.muml.testlanguage.diagram.edit.parts.TestCaseEditPart.MODEL_ID
-				.equals(org.muml.testlanguage.diagram.part.TestLanguageVisualIDRegistry
-						.getModelID(view));
+		return TestCaseEditPart.MODEL_ID.equals(TestLanguageVisualIDRegistry.getModelID(view));
 	}
 
 }

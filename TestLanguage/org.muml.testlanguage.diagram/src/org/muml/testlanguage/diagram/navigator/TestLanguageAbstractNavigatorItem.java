@@ -20,23 +20,20 @@ public abstract class TestLanguageAbstractNavigatorItem extends PlatformObject {
 				return "org.muml.testlanguage.diagram"; //$NON-NLS-1$
 			}
 		};
-		Platform.getAdapterManager().registerAdapters(
-				new IAdapterFactory() {
+		Platform.getAdapterManager().registerAdapters(new IAdapterFactory() {
 
-					public Object getAdapter(Object adaptableObject,
-							Class adapterType) {
-						if (adaptableObject instanceof org.muml.testlanguage.diagram.navigator.TestLanguageAbstractNavigatorItem
-								&& adapterType == ITabbedPropertySheetPageContributor.class) {
-							return propertySheetPageContributor;
-						}
-						return null;
-					}
+			public Object getAdapter(Object adaptableObject, Class adapterType) {
+				if (adaptableObject instanceof org.muml.testlanguage.diagram.navigator.TestLanguageAbstractNavigatorItem
+						&& adapterType == ITabbedPropertySheetPageContributor.class) {
+					return propertySheetPageContributor;
+				}
+				return null;
+			}
 
-					public Class[] getAdapterList() {
-						return supportedTypes;
-					}
-				},
-				org.muml.testlanguage.diagram.navigator.TestLanguageAbstractNavigatorItem.class);
+			public Class[] getAdapterList() {
+				return supportedTypes;
+			}
+		}, org.muml.testlanguage.diagram.navigator.TestLanguageAbstractNavigatorItem.class);
 	}
 
 	/**

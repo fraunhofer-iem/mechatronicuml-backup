@@ -1,5 +1,7 @@
 package org.muml.testlanguage.diagram.providers;
 
+import org.muml.testlanguage.diagram.part.TestLanguageDiagramEditorPlugin;
+
 /**
  * @generated
  */
@@ -13,12 +15,9 @@ public class ElementInitializers {
 	 * @generated
 	 */
 	public static ElementInitializers getInstance() {
-		ElementInitializers cached = org.muml.testlanguage.diagram.part.TestLanguageDiagramEditorPlugin
-				.getInstance().getElementInitializers();
+		ElementInitializers cached = TestLanguageDiagramEditorPlugin.getInstance().getElementInitializers();
 		if (cached == null) {
-			org.muml.testlanguage.diagram.part.TestLanguageDiagramEditorPlugin
-					.getInstance().setElementInitializers(
-							cached = new ElementInitializers());
+			TestLanguageDiagramEditorPlugin.getInstance().setElementInitializers(cached = new ElementInitializers());
 		}
 		return cached;
 	}

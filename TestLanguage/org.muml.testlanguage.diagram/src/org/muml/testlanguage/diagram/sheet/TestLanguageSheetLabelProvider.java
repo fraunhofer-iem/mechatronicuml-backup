@@ -7,21 +7,22 @@ import org.eclipse.jface.viewers.BaseLabelProvider;
 import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.swt.graphics.Image;
+import org.muml.testlanguage.diagram.navigator.TestLanguageNavigatorGroup;
+import org.muml.testlanguage.diagram.part.TestLanguageVisualIDRegistry;
+import org.muml.testlanguage.diagram.providers.TestLanguageElementTypes;
 
 /**
  * @generated
  */
-public class TestLanguageSheetLabelProvider extends BaseLabelProvider implements
-		ILabelProvider {
+public class TestLanguageSheetLabelProvider extends BaseLabelProvider implements ILabelProvider {
 
 	/**
 	 * @generated
 	 */
 	public String getText(Object element) {
 		element = unwrap(element);
-		if (element instanceof org.muml.testlanguage.diagram.navigator.TestLanguageNavigatorGroup) {
-			return ((org.muml.testlanguage.diagram.navigator.TestLanguageNavigatorGroup) element)
-					.getGroupName();
+		if (element instanceof TestLanguageNavigatorGroup) {
+			return ((TestLanguageNavigatorGroup) element).getGroupName();
 		}
 		IElementType etype = getElementType(getView(element));
 		return etype == null ? "" : etype.getDisplayName();
@@ -32,9 +33,7 @@ public class TestLanguageSheetLabelProvider extends BaseLabelProvider implements
 	 */
 	public Image getImage(Object element) {
 		IElementType etype = getElementType(getView(unwrap(element)));
-		return etype == null ? null
-				: org.muml.testlanguage.diagram.providers.TestLanguageElementTypes
-						.getImage(etype);
+		return etype == null ? null : TestLanguageElementTypes.getImage(etype);
 	}
 
 	/**
@@ -66,15 +65,12 @@ public class TestLanguageSheetLabelProvider extends BaseLabelProvider implements
 	private IElementType getElementType(View view) {
 		// For intermediate views climb up the containment hierarchy to find the one associated with an element type.
 		while (view != null) {
-			int vid = org.muml.testlanguage.diagram.part.TestLanguageVisualIDRegistry
-					.getVisualID(view);
-			IElementType etype = org.muml.testlanguage.diagram.providers.TestLanguageElementTypes
-					.getElementType(vid);
+			int vid = TestLanguageVisualIDRegistry.getVisualID(view);
+			IElementType etype = TestLanguageElementTypes.getElementType(vid);
 			if (etype != null) {
 				return etype;
 			}
-			view = view.eContainer() instanceof View ? (View) view.eContainer()
-					: null;
+			view = view.eContainer() instanceof View ? (View) view.eContainer() : null;
 		}
 		return null;
 	}

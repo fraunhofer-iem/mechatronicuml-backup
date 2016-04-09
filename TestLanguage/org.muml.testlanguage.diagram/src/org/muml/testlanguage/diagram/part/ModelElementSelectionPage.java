@@ -12,10 +12,7 @@ public class ModelElementSelectionPage extends DefaultModelElementSelectionPage 
 	 * @generated
 	 */
 	public ModelElementSelectionPage(String pageName) {
-		super(
-				org.muml.testlanguage.diagram.part.TestLanguageDiagramEditorPlugin
-						.getInstance().getItemProvidersAdapterFactory(),
-				pageName);
+		super(TestLanguageDiagramEditorPlugin.getInstance().getItemProvidersAdapterFactory(), pageName);
 	}
 
 	/**
@@ -23,7 +20,7 @@ public class ModelElementSelectionPage extends DefaultModelElementSelectionPage 
 	 * @generated
 	 */
 	protected String getSelectionTitle() {
-		return org.muml.testlanguage.diagram.part.Messages.ModelElementSelectionPageMessage;
+		return Messages.ModelElementSelectionPageMessage;
 	}
 
 }

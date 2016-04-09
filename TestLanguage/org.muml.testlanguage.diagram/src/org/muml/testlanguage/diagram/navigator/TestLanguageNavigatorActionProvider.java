@@ -21,6 +21,11 @@ import org.eclipse.ui.navigator.ICommonActionConstants;
 import org.eclipse.ui.navigator.ICommonActionExtensionSite;
 import org.eclipse.ui.navigator.ICommonViewerWorkbenchSite;
 import org.eclipse.ui.part.FileEditorInput;
+import org.muml.testlanguage.diagram.edit.parts.TestCaseEditPart;
+import org.muml.testlanguage.diagram.part.Messages;
+import org.muml.testlanguage.diagram.part.TestLanguageDiagramEditor;
+import org.muml.testlanguage.diagram.part.TestLanguageDiagramEditorPlugin;
+import org.muml.testlanguage.diagram.part.TestLanguageVisualIDRegistry;
 
 /**
  * @generated
@@ -64,12 +69,10 @@ public class TestLanguageNavigatorActionProvider extends CommonActionProvider {
 		if (!myContribute) {
 			return;
 		}
-		IStructuredSelection selection = (IStructuredSelection) getContext()
-				.getSelection();
+		IStructuredSelection selection = (IStructuredSelection) getContext().getSelection();
 		myOpenDiagramAction.selectionChanged(selection);
 		if (myOpenDiagramAction.isEnabled()) {
-			actionBars.setGlobalActionHandler(ICommonActionConstants.OPEN,
-					myOpenDiagramAction);
+			actionBars.setGlobalActionHandler(ICommonActionConstants.OPEN, myOpenDiagramAction);
 		}
 	}
 
@@ -98,8 +101,7 @@ public class TestLanguageNavigatorActionProvider extends CommonActionProvider {
 		 * @generated
 		 */
 		public OpenDiagramAction(ICommonViewerWorkbenchSite viewerSite) {
-			super(
-					org.muml.testlanguage.diagram.part.Messages.NavigatorActionProvider_OpenDiagramActionName);
+			super(Messages.NavigatorActionProvider_OpenDiagramActionName);
 			myViewerSite = viewerSite;
 		}
 
@@ -110,18 +112,14 @@ public class TestLanguageNavigatorActionProvider extends CommonActionProvider {
 			myDiagram = null;
 			if (selection.size() == 1) {
 				Object selectedElement = selection.getFirstElement();
-				if (selectedElement instanceof org.muml.testlanguage.diagram.navigator.TestLanguageNavigatorItem) {
-					selectedElement = ((org.muml.testlanguage.diagram.navigator.TestLanguageNavigatorItem) selectedElement)
-							.getView();
+				if (selectedElement instanceof TestLanguageNavigatorItem) {
+					selectedElement = ((TestLanguageNavigatorItem) selectedElement).getView();
 				} else if (selectedElement instanceof IAdaptable) {
-					selectedElement = ((IAdaptable) selectedElement)
-							.getAdapter(View.class);
+					selectedElement = ((IAdaptable) selectedElement).getAdapter(View.class);
 				}
 				if (selectedElement instanceof Diagram) {
 					Diagram diagram = (Diagram) selectedElement;
-					if (org.muml.testlanguage.diagram.edit.parts.TestCaseEditPart.MODEL_ID
-							.equals(org.muml.testlanguage.diagram.part.TestLanguageVisualIDRegistry
-									.getModelID(diagram))) {
+					if (TestCaseEditPart.MODEL_ID.equals(TestLanguageVisualIDRegistry.getModelID(diagram))) {
 						myDiagram = diagram;
 					}
 				}
@@ -140,13 +138,9 @@ public class TestLanguageNavigatorActionProvider extends CommonActionProvider {
 			IEditorInput editorInput = getEditorInput(myDiagram);
 			IWorkbenchPage page = myViewerSite.getPage();
 			try {
-				page.openEditor(
-						editorInput,
-						org.muml.testlanguage.diagram.part.TestLanguageDiagramEditor.ID);
+				page.openEditor(editorInput, TestLanguageDiagramEditor.ID);
 			} catch (PartInitException e) {
-				org.muml.testlanguage.diagram.part.TestLanguageDiagramEditorPlugin
-						.getInstance().logError(
-								"Exception while openning diagram", e); //$NON-NLS-1$
+				TestLanguageDiagramEditorPlugin.getInstance().logError("Exception while openning diagram", e); //$NON-NLS-1$
 			}
 		}
 
@@ -157,16 +151,14 @@ public class TestLanguageNavigatorActionProvider extends CommonActionProvider {
 			Resource diagramResource = diagram.eResource();
 			for (EObject nextEObject : diagramResource.getContents()) {
 				if (nextEObject == diagram) {
-					return new FileEditorInput(
-							WorkspaceSynchronizer.getFile(diagramResource));
+					return new FileEditorInput(WorkspaceSynchronizer.getFile(diagramResource));
 				}
 				if (nextEObject instanceof Diagram) {
 					break;
 				}
 			}
 			URI uri = EcoreUtil.getURI(diagram);
-			String editorName = uri.lastSegment() + '#'
-					+ diagram.eResource().getContents().indexOf(diagram);
+			String editorName = uri.lastSegment() + '#' + diagram.eResource().getContents().indexOf(diagram);
 			IEditorInput editorInput = new URIEditorInput(uri, editorName);
 			return editorInput;
 		}

@@ -17,6 +17,7 @@ import org.eclipse.osgi.util.NLS;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.IObjectActionDelegate;
 import org.eclipse.ui.IWorkbenchPart;
+import org.muml.testlanguage.diagram.edit.parts.TestCaseEditPart;
 
 /**
  * @generated
@@ -46,14 +47,11 @@ public class TestLanguageInitDiagramFileAction implements IObjectActionDelegate 
 	public void selectionChanged(IAction action, ISelection selection) {
 		domainModelURI = null;
 		action.setEnabled(false);
-		if (selection instanceof IStructuredSelection == false
-				|| selection.isEmpty()) {
+		if (selection instanceof IStructuredSelection == false || selection.isEmpty()) {
 			return;
 		}
-		IFile file = (IFile) ((IStructuredSelection) selection)
-				.getFirstElement();
-		domainModelURI = URI.createPlatformResourceURI(file.getFullPath()
-				.toString(), true);
+		IFile file = (IFile) ((IStructuredSelection) selection).getFirstElement();
+		domainModelURI = URI.createPlatformResourceURI(file.getFullPath().toString(), true);
 		action.setEnabled(true);
 	}
 
@@ -68,32 +66,22 @@ public class TestLanguageInitDiagramFileAction implements IObjectActionDelegate 
 	 * @generated
 	 */
 	public void run(IAction action) {
-		TransactionalEditingDomain editingDomain = GMFEditingDomainFactory.INSTANCE
-				.createEditingDomain();
+		TransactionalEditingDomain editingDomain = GMFEditingDomainFactory.INSTANCE.createEditingDomain();
 		ResourceSet resourceSet = editingDomain.getResourceSet();
 		EObject diagramRoot = null;
 		try {
 			Resource resource = resourceSet.getResource(domainModelURI, true);
 			diagramRoot = (EObject) resource.getContents().get(0);
 		} catch (WrappedException ex) {
-			org.muml.testlanguage.diagram.part.TestLanguageDiagramEditorPlugin
-					.getInstance().logError(
-							"Unable to load resource: " + domainModelURI, ex); //$NON-NLS-1$
+			TestLanguageDiagramEditorPlugin.getInstance().logError("Unable to load resource: " + domainModelURI, ex); //$NON-NLS-1$
 		}
 		if (diagramRoot == null) {
-			MessageDialog
-					.openError(
-							getShell(),
-							org.muml.testlanguage.diagram.part.Messages.InitDiagramFile_ResourceErrorDialogTitle,
-							org.muml.testlanguage.diagram.part.Messages.InitDiagramFile_ResourceErrorDialogMessage);
+			MessageDialog.openError(getShell(), Messages.InitDiagramFile_ResourceErrorDialogTitle,
+					Messages.InitDiagramFile_ResourceErrorDialogMessage);
 			return;
 		}
-		Wizard wizard = new org.muml.testlanguage.diagram.part.TestLanguageNewDiagramFileWizard(
-				domainModelURI, diagramRoot, editingDomain);
-		wizard.setWindowTitle(NLS
-				.bind(org.muml.testlanguage.diagram.part.Messages.InitDiagramFile_WizardTitle,
-						org.muml.testlanguage.diagram.edit.parts.TestCaseEditPart.MODEL_ID));
-		org.muml.testlanguage.diagram.part.TestLanguageDiagramEditorUtil
-				.runWizard(getShell(), wizard, "InitDiagramFile"); //$NON-NLS-1$
+		Wizard wizard = new TestLanguageNewDiagramFileWizard(domainModelURI, diagramRoot, editingDomain);
+		wizard.setWindowTitle(NLS.bind(Messages.InitDiagramFile_WizardTitle, TestCaseEditPart.MODEL_ID));
+		TestLanguageDiagramEditorUtil.runWizard(getShell(), wizard, "InitDiagramFile"); //$NON-NLS-1$
 	}
 }

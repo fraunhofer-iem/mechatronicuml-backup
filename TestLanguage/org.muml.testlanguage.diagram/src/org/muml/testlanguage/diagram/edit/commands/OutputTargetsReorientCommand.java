@@ -8,6 +8,9 @@ import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelationshipRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
+import org.muml.testlanguage.Input;
+import org.muml.testlanguage.Output;
+import org.muml.testlanguage.diagram.edit.policies.TestLanguageBaseItemSemanticEditPolicy;
 
 /**
  * @generated
@@ -37,8 +40,7 @@ public class OutputTargetsReorientCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	public OutputTargetsReorientCommand(
-			ReorientReferenceRelationshipRequest request) {
+	public OutputTargetsReorientCommand(ReorientReferenceRelationshipRequest request) {
 		super(request.getLabel(), null, request);
 		reorientDirection = request.getDirection();
 		referenceOwner = request.getReferenceOwner();
@@ -50,7 +52,7 @@ public class OutputTargetsReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	public boolean canExecute() {
-		if (false == referenceOwner instanceof org.muml.testlanguage.Output) {
+		if (false == referenceOwner instanceof Output) {
 			return false;
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
@@ -66,34 +68,30 @@ public class OutputTargetsReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected boolean canReorientSource() {
-		if (!(oldEnd instanceof org.muml.testlanguage.Input && newEnd instanceof org.muml.testlanguage.Output)) {
+		if (!(oldEnd instanceof Input && newEnd instanceof Output)) {
 			return false;
 		}
-		return org.muml.testlanguage.diagram.edit.policies.TestLanguageBaseItemSemanticEditPolicy
-				.getLinkConstraints().canExistOutputTargets_4001(
-						getNewSource(), getOldTarget());
+		return TestLanguageBaseItemSemanticEditPolicy.getLinkConstraints().canExistOutputTargets_4001(getNewSource(),
+				getOldTarget());
 	}
 
 	/**
 	 * @generated
 	 */
 	protected boolean canReorientTarget() {
-		if (!(oldEnd instanceof org.muml.testlanguage.Input && newEnd instanceof org.muml.testlanguage.Input)) {
+		if (!(oldEnd instanceof Input && newEnd instanceof Input)) {
 			return false;
 		}
-		return org.muml.testlanguage.diagram.edit.policies.TestLanguageBaseItemSemanticEditPolicy
-				.getLinkConstraints().canExistOutputTargets_4001(
-						getOldSource(), getNewTarget());
+		return TestLanguageBaseItemSemanticEditPolicy.getLinkConstraints().canExistOutputTargets_4001(getOldSource(),
+				getNewTarget());
 	}
 
 	/**
 	 * @generated
 	 */
-	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
-			IAdaptable info) throws ExecutionException {
+	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		if (!canExecute()) {
-			throw new ExecutionException(
-					"Invalid arguments in reorient link command"); //$NON-NLS-1$
+			throw new ExecutionException("Invalid arguments in reorient link command"); //$NON-NLS-1$
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
 			return reorientSource();
@@ -125,28 +123,28 @@ public class OutputTargetsReorientCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected org.muml.testlanguage.Output getOldSource() {
-		return (org.muml.testlanguage.Output) referenceOwner;
+	protected Output getOldSource() {
+		return (Output) referenceOwner;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected org.muml.testlanguage.Output getNewSource() {
-		return (org.muml.testlanguage.Output) newEnd;
+	protected Output getNewSource() {
+		return (Output) newEnd;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected org.muml.testlanguage.Input getOldTarget() {
-		return (org.muml.testlanguage.Input) oldEnd;
+	protected Input getOldTarget() {
+		return (Input) oldEnd;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected org.muml.testlanguage.Input getNewTarget() {
-		return (org.muml.testlanguage.Input) newEnd;
+	protected Input getNewTarget() {
+		return (Input) newEnd;
 	}
 }

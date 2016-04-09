@@ -6,12 +6,12 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.ITreeBranchEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.testlanguage.diagram.edit.policies.OutputTargetsItemSemanticEditPolicy;
 
 /**
  * @generated
  */
-public class OutputTargetsEditPart extends ConnectionNodeEditPart implements
-		ITreeBranchEditPart {
+public class OutputTargetsEditPart extends ConnectionNodeEditPart implements ITreeBranchEditPart {
 
 	/**
 	 * @generated
@@ -30,9 +30,7 @@ public class OutputTargetsEditPart extends ConnectionNodeEditPart implements
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(
-				EditPolicyRoles.SEMANTIC_ROLE,
-				new org.muml.testlanguage.diagram.edit.policies.OutputTargetsItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new OutputTargetsItemSemanticEditPolicy());
 	}
 
 	/**

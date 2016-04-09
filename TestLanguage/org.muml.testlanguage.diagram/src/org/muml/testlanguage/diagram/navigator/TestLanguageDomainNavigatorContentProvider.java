@@ -17,12 +17,12 @@ import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.ui.IMemento;
 import org.eclipse.ui.navigator.ICommonContentExtensionSite;
 import org.eclipse.ui.navigator.ICommonContentProvider;
+import org.muml.testlanguage.diagram.part.TestLanguageDiagramEditorPlugin;
 
 /**
  * @generated
  */
-public class TestLanguageDomainNavigatorContentProvider implements
-		ICommonContentProvider {
+public class TestLanguageDomainNavigatorContentProvider implements ICommonContentProvider {
 
 	/**
 	 * @generated
@@ -59,10 +59,8 @@ public class TestLanguageDomainNavigatorContentProvider implements
 	 */
 	public TestLanguageDomainNavigatorContentProvider() {
 		myAdapterFctoryContentProvier = new AdapterFactoryContentProvider(
-				org.muml.testlanguage.diagram.part.TestLanguageDiagramEditorPlugin
-						.getInstance().getItemProvidersAdapterFactory());
-		TransactionalEditingDomain editingDomain = GMFEditingDomainFactory.INSTANCE
-				.createEditingDomain();
+				TestLanguageDiagramEditorPlugin.getInstance().getItemProvidersAdapterFactory());
+		TransactionalEditingDomain editingDomain = GMFEditingDomainFactory.INSTANCE.createEditingDomain();
 		myEditingDomain = (AdapterFactoryEditingDomain) editingDomain;
 		myEditingDomain.setResourceToReadOnlyMap(new HashMap() {
 			public Object get(Object key) {
@@ -79,30 +77,28 @@ public class TestLanguageDomainNavigatorContentProvider implements
 				}
 			}
 		};
-		myWorkspaceSynchronizer = new WorkspaceSynchronizer(editingDomain,
-				new WorkspaceSynchronizer.Delegate() {
-					public void dispose() {
-					}
+		myWorkspaceSynchronizer = new WorkspaceSynchronizer(editingDomain, new WorkspaceSynchronizer.Delegate() {
+			public void dispose() {
+			}
 
-					public boolean handleResourceChanged(final Resource resource) {
-						unloadAllResources();
-						asyncRefresh();
-						return true;
-					}
+			public boolean handleResourceChanged(final Resource resource) {
+				unloadAllResources();
+				asyncRefresh();
+				return true;
+			}
 
-					public boolean handleResourceDeleted(Resource resource) {
-						unloadAllResources();
-						asyncRefresh();
-						return true;
-					}
+			public boolean handleResourceDeleted(Resource resource) {
+				unloadAllResources();
+				asyncRefresh();
+				return true;
+			}
 
-					public boolean handleResourceMoved(Resource resource,
-							final URI newURI) {
-						unloadAllResources();
-						asyncRefresh();
-						return true;
-					}
-				});
+			public boolean handleResourceMoved(Resource resource, final URI newURI) {
+				unloadAllResources();
+				asyncRefresh();
+				return true;
+			}
+		});
 	}
 
 	/**
@@ -129,8 +125,7 @@ public class TestLanguageDomainNavigatorContentProvider implements
 	 * @generated
 	 */
 	void unloadAllResources() {
-		for (Resource nextResource : myEditingDomain.getResourceSet()
-				.getResources()) {
+		for (Resource nextResource : myEditingDomain.getResourceSet().getResources()) {
 			nextResource.unload();
 		}
 	}
@@ -140,8 +135,7 @@ public class TestLanguageDomainNavigatorContentProvider implements
 	 */
 	void asyncRefresh() {
 		if (myViewer != null && !myViewer.getControl().isDisposed()) {
-			myViewer.getControl().getDisplay()
-					.asyncExec(myViewerRefreshRunnable);
+			myViewer.getControl().getDisplay().asyncExec(myViewerRefreshRunnable);
 		}
 	}
 
@@ -176,19 +170,14 @@ public class TestLanguageDomainNavigatorContentProvider implements
 	public Object[] getChildren(Object parentElement) {
 		if (parentElement instanceof IFile) {
 			IFile file = (IFile) parentElement;
-			URI fileURI = URI.createPlatformResourceURI(file.getFullPath()
-					.toString(), true);
-			Resource resource = myEditingDomain.getResourceSet().getResource(
-					fileURI, true);
-			return wrapEObjects(
-					myAdapterFctoryContentProvier.getChildren(resource),
-					parentElement);
+			URI fileURI = URI.createPlatformResourceURI(file.getFullPath().toString(), true);
+			Resource resource = myEditingDomain.getResourceSet().getResource(fileURI, true);
+			return wrapEObjects(myAdapterFctoryContentProvier.getChildren(resource), parentElement);
 		}
 
-		if (parentElement instanceof org.muml.testlanguage.diagram.navigator.TestLanguageDomainNavigatorItem) {
-			return wrapEObjects(
-					myAdapterFctoryContentProvier.getChildren(((org.muml.testlanguage.diagram.navigator.TestLanguageDomainNavigatorItem) parentElement)
-							.getEObject()), parentElement);
+		if (parentElement instanceof TestLanguageDomainNavigatorItem) {
+			return wrapEObjects(myAdapterFctoryContentProvier
+					.getChildren(((TestLanguageDomainNavigatorItem) parentElement).getEObject()), parentElement);
 		}
 		return EMPTY_ARRAY;
 	}
@@ -200,8 +189,7 @@ public class TestLanguageDomainNavigatorContentProvider implements
 		Collection result = new ArrayList();
 		for (int i = 0; i < objects.length; i++) {
 			if (objects[i] instanceof EObject) {
-				result.add(new org.muml.testlanguage.diagram.navigator.TestLanguageDomainNavigatorItem(
-						(EObject) objects[i], parentElement,
+				result.add(new TestLanguageDomainNavigatorItem((EObject) objects[i], parentElement,
 						myAdapterFctoryContentProvier));
 			}
 		}
@@ -212,8 +200,8 @@ public class TestLanguageDomainNavigatorContentProvider implements
 	 * @generated
 	 */
 	public Object getParent(Object element) {
-		if (element instanceof org.muml.testlanguage.diagram.navigator.TestLanguageAbstractNavigatorItem) {
-			org.muml.testlanguage.diagram.navigator.TestLanguageAbstractNavigatorItem abstractNavigatorItem = (org.muml.testlanguage.diagram.navigator.TestLanguageAbstractNavigatorItem) element;
+		if (element instanceof TestLanguageAbstractNavigatorItem) {
+			TestLanguageAbstractNavigatorItem abstractNavigatorItem = (TestLanguageAbstractNavigatorItem) element;
 			return abstractNavigatorItem.getParent();
 		}
 		return null;

@@ -6,19 +6,18 @@ import org.eclipse.swt.graphics.Image;
 import org.eclipse.ui.IMemento;
 import org.eclipse.ui.navigator.ICommonContentExtensionSite;
 import org.eclipse.ui.navigator.ICommonLabelProvider;
+import org.muml.testlanguage.diagram.part.TestLanguageDiagramEditorPlugin;
 
 /**
  * @generated
  */
-public class TestLanguageDomainNavigatorLabelProvider implements
-		ICommonLabelProvider {
+public class TestLanguageDomainNavigatorLabelProvider implements ICommonLabelProvider {
 
 	/**
 	 * @generated
 	 */
 	private AdapterFactoryLabelProvider myAdapterFactoryLabelProvider = new AdapterFactoryLabelProvider(
-			org.muml.testlanguage.diagram.part.TestLanguageDiagramEditorPlugin
-					.getInstance().getItemProvidersAdapterFactory());
+			TestLanguageDiagramEditorPlugin.getInstance().getItemProvidersAdapterFactory());
 
 	/**
 	 * @generated
@@ -30,10 +29,8 @@ public class TestLanguageDomainNavigatorLabelProvider implements
 	 * @generated
 	 */
 	public Image getImage(Object element) {
-		if (element instanceof org.muml.testlanguage.diagram.navigator.TestLanguageDomainNavigatorItem) {
-			return myAdapterFactoryLabelProvider
-					.getImage(((org.muml.testlanguage.diagram.navigator.TestLanguageDomainNavigatorItem) element)
-							.getEObject());
+		if (element instanceof TestLanguageDomainNavigatorItem) {
+			return myAdapterFactoryLabelProvider.getImage(((TestLanguageDomainNavigatorItem) element).getEObject());
 		}
 		return null;
 	}
@@ -42,10 +39,8 @@ public class TestLanguageDomainNavigatorLabelProvider implements
 	 * @generated
 	 */
 	public String getText(Object element) {
-		if (element instanceof org.muml.testlanguage.diagram.navigator.TestLanguageDomainNavigatorItem) {
-			return myAdapterFactoryLabelProvider
-					.getText(((org.muml.testlanguage.diagram.navigator.TestLanguageDomainNavigatorItem) element)
-							.getEObject());
+		if (element instanceof TestLanguageDomainNavigatorItem) {
+			return myAdapterFactoryLabelProvider.getText(((TestLanguageDomainNavigatorItem) element).getEObject());
 		}
 		return null;
 	}

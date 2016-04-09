@@ -12,12 +12,17 @@ import org.eclipse.gmf.runtime.common.ui.services.parser.ParserService;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.emf.ui.services.parser.ParserHintAdapter;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.testlanguage.TestLanguagePackage;
+import org.muml.testlanguage.diagram.edit.parts.InputNameEditPart;
+import org.muml.testlanguage.diagram.edit.parts.NodeLabelEditPart;
+import org.muml.testlanguage.diagram.edit.parts.OutputNameEditPart;
+import org.muml.testlanguage.diagram.parsers.MessageFormatParser;
+import org.muml.testlanguage.diagram.part.TestLanguageVisualIDRegistry;
 
 /**
  * @generated
  */
-public class TestLanguageParserProvider extends AbstractProvider implements
-		IParserProvider {
+public class TestLanguageParserProvider extends AbstractProvider implements IParserProvider {
 
 	/**
 	 * @generated
@@ -29,12 +34,9 @@ public class TestLanguageParserProvider extends AbstractProvider implements
 	 */
 	private IParser getNodeLabel_5003Parser() {
 		if (nodeLabel_5003Parser == null) {
-			EAttribute[] features = new EAttribute[] { org.muml.testlanguage.TestLanguagePackage.eINSTANCE
-					.getNode_Label() };
-			EAttribute[] editableFeatures = new EAttribute[] { org.muml.testlanguage.TestLanguagePackage.eINSTANCE
-					.getNode_Label() };
-			org.muml.testlanguage.diagram.parsers.MessageFormatParser parser = new org.muml.testlanguage.diagram.parsers.MessageFormatParser(
-					features, editableFeatures);
+			EAttribute[] features = new EAttribute[] { TestLanguagePackage.eINSTANCE.getNode_Label() };
+			EAttribute[] editableFeatures = new EAttribute[] { TestLanguagePackage.eINSTANCE.getNode_Label() };
+			MessageFormatParser parser = new MessageFormatParser(features, editableFeatures);
 			nodeLabel_5003Parser = parser;
 		}
 		return nodeLabel_5003Parser;
@@ -50,12 +52,9 @@ public class TestLanguageParserProvider extends AbstractProvider implements
 	 */
 	private IParser getInputName_5001Parser() {
 		if (inputName_5001Parser == null) {
-			EAttribute[] features = new EAttribute[] { org.muml.testlanguage.TestLanguagePackage.eINSTANCE
-					.getPort_Name() };
-			EAttribute[] editableFeatures = new EAttribute[] { org.muml.testlanguage.TestLanguagePackage.eINSTANCE
-					.getPort_Name() };
-			org.muml.testlanguage.diagram.parsers.MessageFormatParser parser = new org.muml.testlanguage.diagram.parsers.MessageFormatParser(
-					features, editableFeatures);
+			EAttribute[] features = new EAttribute[] { TestLanguagePackage.eINSTANCE.getPort_Name() };
+			EAttribute[] editableFeatures = new EAttribute[] { TestLanguagePackage.eINSTANCE.getPort_Name() };
+			MessageFormatParser parser = new MessageFormatParser(features, editableFeatures);
 			inputName_5001Parser = parser;
 		}
 		return inputName_5001Parser;
@@ -71,12 +70,9 @@ public class TestLanguageParserProvider extends AbstractProvider implements
 	 */
 	private IParser getOutputName_5002Parser() {
 		if (outputName_5002Parser == null) {
-			EAttribute[] features = new EAttribute[] { org.muml.testlanguage.TestLanguagePackage.eINSTANCE
-					.getPort_Name() };
-			EAttribute[] editableFeatures = new EAttribute[] { org.muml.testlanguage.TestLanguagePackage.eINSTANCE
-					.getPort_Name() };
-			org.muml.testlanguage.diagram.parsers.MessageFormatParser parser = new org.muml.testlanguage.diagram.parsers.MessageFormatParser(
-					features, editableFeatures);
+			EAttribute[] features = new EAttribute[] { TestLanguagePackage.eINSTANCE.getPort_Name() };
+			EAttribute[] editableFeatures = new EAttribute[] { TestLanguagePackage.eINSTANCE.getPort_Name() };
+			MessageFormatParser parser = new MessageFormatParser(features, editableFeatures);
 			outputName_5002Parser = parser;
 		}
 		return outputName_5002Parser;
@@ -87,11 +83,11 @@ public class TestLanguageParserProvider extends AbstractProvider implements
 	 */
 	protected IParser getParser(int visualID) {
 		switch (visualID) {
-		case org.muml.testlanguage.diagram.edit.parts.NodeLabelEditPart.VISUAL_ID:
+		case NodeLabelEditPart.VISUAL_ID:
 			return getNodeLabel_5003Parser();
-		case org.muml.testlanguage.diagram.edit.parts.InputNameEditPart.VISUAL_ID:
+		case InputNameEditPart.VISUAL_ID:
 			return getInputName_5001Parser();
-		case org.muml.testlanguage.diagram.edit.parts.OutputNameEditPart.VISUAL_ID:
+		case OutputNameEditPart.VISUAL_ID:
 			return getOutputName_5002Parser();
 		}
 		return null;
@@ -101,10 +97,8 @@ public class TestLanguageParserProvider extends AbstractProvider implements
 	 * Utility method that consults ParserService
 	 * @generated
 	 */
-	public static IParser getParser(IElementType type, EObject object,
-			String parserHint) {
-		return ParserService.getInstance().getParser(
-				new HintAdapter(type, object, parserHint));
+	public static IParser getParser(IElementType type, EObject object, String parserHint) {
+		return ParserService.getInstance().getParser(new HintAdapter(type, object, parserHint));
 	}
 
 	/**
@@ -113,13 +107,11 @@ public class TestLanguageParserProvider extends AbstractProvider implements
 	public IParser getParser(IAdaptable hint) {
 		String vid = (String) hint.getAdapter(String.class);
 		if (vid != null) {
-			return getParser(org.muml.testlanguage.diagram.part.TestLanguageVisualIDRegistry
-					.getVisualID(vid));
+			return getParser(TestLanguageVisualIDRegistry.getVisualID(vid));
 		}
 		View view = (View) hint.getAdapter(View.class);
 		if (view != null) {
-			return getParser(org.muml.testlanguage.diagram.part.TestLanguageVisualIDRegistry
-					.getVisualID(view));
+			return getParser(TestLanguageVisualIDRegistry.getVisualID(view));
 		}
 		return null;
 	}
@@ -130,8 +122,7 @@ public class TestLanguageParserProvider extends AbstractProvider implements
 	public boolean provides(IOperation operation) {
 		if (operation instanceof GetParserOperation) {
 			IAdaptable hint = ((GetParserOperation) operation).getHint();
-			if (org.muml.testlanguage.diagram.providers.TestLanguageElementTypes
-					.getElement(hint) == null) {
+			if (TestLanguageElementTypes.getElement(hint) == null) {
 				return false;
 			}
 			return getParser(hint) != null;

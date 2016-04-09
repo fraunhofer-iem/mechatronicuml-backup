@@ -2,6 +2,9 @@ package org.muml.testlanguage.diagram.providers;
 
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.testlanguage.diagram.edit.parts.TestCaseEditPart;
+import org.muml.testlanguage.diagram.part.TestLanguageDiagramEditorPlugin;
+import org.muml.testlanguage.diagram.part.TestLanguageVisualIDRegistry;
 
 /**
  * @generated
@@ -23,8 +26,7 @@ public class TestLanguageValidationProvider {
 	/**
 	 * @generated
 	 */
-	public static void runWithConstraints(
-			TransactionalEditingDomain editingDomain, Runnable operation) {
+	public static void runWithConstraints(TransactionalEditingDomain editingDomain, Runnable operation) {
 		final Runnable op = operation;
 		Runnable task = new Runnable() {
 			public void run() {
@@ -40,8 +42,7 @@ public class TestLanguageValidationProvider {
 			try {
 				editingDomain.runExclusive(task);
 			} catch (Exception e) {
-				org.muml.testlanguage.diagram.part.TestLanguageDiagramEditorPlugin
-						.getInstance().logError("Validation failed", e); //$NON-NLS-1$
+				TestLanguageDiagramEditorPlugin.getInstance().logError("Validation failed", e); //$NON-NLS-1$
 			}
 		} else {
 			task.run();
@@ -57,9 +58,7 @@ public class TestLanguageValidationProvider {
 		}
 		if (object instanceof View) {
 			return constraintsActive
-					&& org.muml.testlanguage.diagram.edit.parts.TestCaseEditPart.MODEL_ID
-							.equals(org.muml.testlanguage.diagram.part.TestLanguageVisualIDRegistry
-									.getModelID((View) object));
+					&& TestCaseEditPart.MODEL_ID.equals(TestLanguageVisualIDRegistry.getModelID((View) object));
 		}
 		return true;
 	}

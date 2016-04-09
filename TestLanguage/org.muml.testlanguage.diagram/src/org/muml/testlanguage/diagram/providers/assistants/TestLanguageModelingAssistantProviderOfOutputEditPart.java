@@ -7,31 +7,31 @@ import java.util.List;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
+import org.muml.testlanguage.diagram.edit.parts.InputEditPart;
+import org.muml.testlanguage.diagram.edit.parts.OutputEditPart;
+import org.muml.testlanguage.diagram.providers.TestLanguageElementTypes;
+import org.muml.testlanguage.diagram.providers.TestLanguageModelingAssistantProvider;
 
 /**
  * @generated
  */
-public class TestLanguageModelingAssistantProviderOfOutputEditPart
-		extends
-		org.muml.testlanguage.diagram.providers.TestLanguageModelingAssistantProvider {
+public class TestLanguageModelingAssistantProviderOfOutputEditPart extends TestLanguageModelingAssistantProvider {
 
 	/**
 	 * @generated
 	 */
 	@Override
 	public List<IElementType> getRelTypesOnSource(IAdaptable source) {
-		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source
-				.getAdapter(IGraphicalEditPart.class);
-		return doGetRelTypesOnSource((org.muml.testlanguage.diagram.edit.parts.OutputEditPart) sourceEditPart);
+		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source.getAdapter(IGraphicalEditPart.class);
+		return doGetRelTypesOnSource((OutputEditPart) sourceEditPart);
 	}
 
 	/**
-	 * @generated
-	 */
-	public List<IElementType> doGetRelTypesOnSource(
-			org.muml.testlanguage.diagram.edit.parts.OutputEditPart source) {
+	* @generated
+	*/
+	public List<IElementType> doGetRelTypesOnSource(OutputEditPart source) {
 		List<IElementType> types = new ArrayList<IElementType>(1);
-		types.add(org.muml.testlanguage.diagram.providers.TestLanguageElementTypes.OutputTargets_4001);
+		types.add(TestLanguageElementTypes.OutputTargets_4001);
 		return types;
 	}
 
@@ -39,26 +39,19 @@ public class TestLanguageModelingAssistantProviderOfOutputEditPart
 	 * @generated
 	 */
 	@Override
-	public List<IElementType> getRelTypesOnSourceAndTarget(IAdaptable source,
-			IAdaptable target) {
-		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source
-				.getAdapter(IGraphicalEditPart.class);
-		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target
-				.getAdapter(IGraphicalEditPart.class);
-		return doGetRelTypesOnSourceAndTarget(
-				(org.muml.testlanguage.diagram.edit.parts.OutputEditPart) sourceEditPart,
-				targetEditPart);
+	public List<IElementType> getRelTypesOnSourceAndTarget(IAdaptable source, IAdaptable target) {
+		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source.getAdapter(IGraphicalEditPart.class);
+		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target.getAdapter(IGraphicalEditPart.class);
+		return doGetRelTypesOnSourceAndTarget((OutputEditPart) sourceEditPart, targetEditPart);
 	}
 
 	/**
-	 * @generated
-	 */
-	public List<IElementType> doGetRelTypesOnSourceAndTarget(
-			org.muml.testlanguage.diagram.edit.parts.OutputEditPart source,
-			IGraphicalEditPart targetEditPart) {
+	* @generated
+	*/
+	public List<IElementType> doGetRelTypesOnSourceAndTarget(OutputEditPart source, IGraphicalEditPart targetEditPart) {
 		List<IElementType> types = new LinkedList<IElementType>();
-		if (targetEditPart instanceof org.muml.testlanguage.diagram.edit.parts.InputEditPart) {
-			types.add(org.muml.testlanguage.diagram.providers.TestLanguageElementTypes.OutputTargets_4001);
+		if (targetEditPart instanceof InputEditPart) {
+			types.add(TestLanguageElementTypes.OutputTargets_4001);
 		}
 		return types;
 	}
@@ -67,24 +60,18 @@ public class TestLanguageModelingAssistantProviderOfOutputEditPart
 	 * @generated
 	 */
 	@Override
-	public List<IElementType> getTypesForTarget(IAdaptable source,
-			IElementType relationshipType) {
-		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source
-				.getAdapter(IGraphicalEditPart.class);
-		return doGetTypesForTarget(
-				(org.muml.testlanguage.diagram.edit.parts.OutputEditPart) sourceEditPart,
-				relationshipType);
+	public List<IElementType> getTypesForTarget(IAdaptable source, IElementType relationshipType) {
+		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source.getAdapter(IGraphicalEditPart.class);
+		return doGetTypesForTarget((OutputEditPart) sourceEditPart, relationshipType);
 	}
 
 	/**
-	 * @generated
-	 */
-	public List<IElementType> doGetTypesForTarget(
-			org.muml.testlanguage.diagram.edit.parts.OutputEditPart source,
-			IElementType relationshipType) {
+	* @generated
+	*/
+	public List<IElementType> doGetTypesForTarget(OutputEditPart source, IElementType relationshipType) {
 		List<IElementType> types = new ArrayList<IElementType>();
-		if (relationshipType == org.muml.testlanguage.diagram.providers.TestLanguageElementTypes.OutputTargets_4001) {
-			types.add(org.muml.testlanguage.diagram.providers.TestLanguageElementTypes.Input_3001);
+		if (relationshipType == TestLanguageElementTypes.OutputTargets_4001) {
+			types.add(TestLanguageElementTypes.Input_3001);
 		}
 		return types;
 	}

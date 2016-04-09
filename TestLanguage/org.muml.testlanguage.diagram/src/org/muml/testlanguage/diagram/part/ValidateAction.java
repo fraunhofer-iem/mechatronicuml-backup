@@ -35,6 +35,8 @@ import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.actions.WorkspaceModifyDelegatingOperation;
 import org.muml.testlanguage.custom.validation.ValidationRunnable;
+import org.muml.testlanguage.diagram.providers.TestLanguageMarkerNavigationProvider;
+import org.muml.testlanguage.diagram.providers.TestLanguageValidationProvider;
 
 /**
  * @generated
@@ -50,7 +52,7 @@ public class ValidateAction extends Action {
 	 * @generated
 	 */
 	public ValidateAction(IWorkbenchPage page) {
-		setText(org.muml.testlanguage.diagram.part.Messages.ValidateActionMessage);
+		setText(Messages.ValidateActionMessage);
 		this.page = page;
 	}
 
@@ -61,24 +63,16 @@ public class ValidateAction extends Action {
 		IWorkbenchPart workbenchPart = page.getActivePart();
 		if (workbenchPart instanceof IDiagramWorkbenchPart) {
 			final IDiagramWorkbenchPart part = (IDiagramWorkbenchPart) workbenchPart;
-			runValidation(part.getDiagramEditPart(), part.getDiagram());
-			
-			// FIX: deactivated
-			// Executing as workspace modifying operation makes problems with SaveModel.
-			// Because SaveModel creates a file and sets its contents, which in turn opens a new
-			// workspace modifying operation. This then leads to a deadlock.
-//			try {
-//				
-//				new WorkspaceModifyDelegatingOperation(new IRunnableWithProgress() {
-//
-//					public void run(IProgressMonitor monitor) throws InterruptedException, InvocationTargetException {
-//						runValidation(part.getDiagramEditPart(), part.getDiagram());
-//					}
-//				}).run(new NullProgressMonitor());
-//			} catch (Exception e) {
-//				org.muml.testlanguage.diagram.part.TestLanguageDiagramEditorPlugin.getInstance()
-//						.logError("Validation action failed", e); //$NON-NLS-1$
-//			}
+			try {
+				new WorkspaceModifyDelegatingOperation(new IRunnableWithProgress() {
+
+					public void run(IProgressMonitor monitor) throws InterruptedException, InvocationTargetException {
+						runValidation(part.getDiagramEditPart(), part.getDiagram());
+					}
+				}).run(new NullProgressMonitor());
+			} catch (Exception e) {
+				TestLanguageDiagramEditorPlugin.getInstance().logError("Validation action failed", e); //$NON-NLS-1$
+			}
 		}
 	}
 
@@ -87,8 +81,7 @@ public class ValidateAction extends Action {
 	 */
 	public static void runValidation(View view) {
 		try {
-			if (org.muml.testlanguage.diagram.part.TestLanguageDiagramEditorUtil
-					.openDiagram(view.eResource())) {
+			if (TestLanguageDiagramEditorUtil.openDiagram(view.eResource())) {
 				IEditorPart editorPart = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage()
 						.getActiveEditor();
 				if (editorPart instanceof IDiagramWorkbenchPart) {
@@ -98,8 +91,7 @@ public class ValidateAction extends Action {
 				}
 			}
 		} catch (Exception e) {
-			org.muml.testlanguage.diagram.part.TestLanguageDiagramEditorPlugin.getInstance()
-					.logError("Validation action failed", e); //$NON-NLS-1$
+			TestLanguageDiagramEditorPlugin.getInstance().logError("Validation action failed", e); //$NON-NLS-1$
 		}
 	}
 
@@ -119,13 +111,12 @@ public class ValidateAction extends Action {
 		final DiagramEditPart fpart = diagramEditPart;
 		final View fview = view;
 		TransactionalEditingDomain txDomain = TransactionUtil.getEditingDomain(view);
-		org.muml.testlanguage.diagram.providers.TestLanguageValidationProvider
-				.runWithConstraints(txDomain, new Runnable() {
+		TestLanguageValidationProvider.runWithConstraints(txDomain, new Runnable() {
 
-					public void run() {
-						validate(fpart, fview);
-					}
-				});
+			public void run() {
+				validate(fpart, fview);
+			}
+		});
 	}
 
 	/**
@@ -149,8 +140,7 @@ public class ValidateAction extends Action {
 	private static void validate(DiagramEditPart diagramEditPart, View view) {
 		IFile target = view.eResource() != null ? WorkspaceSynchronizer.getFile(view.eResource()) : null;
 		if (target != null) {
-			org.muml.testlanguage.diagram.providers.TestLanguageMarkerNavigationProvider
-					.deleteMarkers(target);
+			TestLanguageMarkerNavigationProvider.deleteMarkers(target);
 		}
 		Diagnostic diagnostic = runEMFValidator(view);
 		createMarkers(target, diagnostic, diagramEditPart);
@@ -165,8 +155,7 @@ public class ValidateAction extends Action {
 		validator.setIncludeLiveConstraints(true);
 		if (view.isSetElement() && view.getElement() != null) {
 			// TODO somehow handle exceptions
-			org.muml.testlanguage.custom.validation.ValidationRunnable validation = new ValidationRunnable(
-					view, validator);
+			ValidationRunnable validation = new ValidationRunnable(view, validator);
 			ValidationRunnable.runWithShell(validation,
 					PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell());
 
@@ -186,13 +175,13 @@ public class ValidateAction extends Action {
 		}
 		final IStatus rootStatus = validationStatus;
 		List allStatuses = new ArrayList();
-		org.muml.testlanguage.diagram.part.TestLanguageDiagramEditorUtil.LazyElement2ViewMap element2ViewMap = new org.muml.testlanguage.diagram.part.TestLanguageDiagramEditorUtil.LazyElement2ViewMap(
+		TestLanguageDiagramEditorUtil.LazyElement2ViewMap element2ViewMap = new TestLanguageDiagramEditorUtil.LazyElement2ViewMap(
 				diagramEditPart.getDiagramView(),
 				collectTargetElements(rootStatus, new HashSet<EObject>(), allStatuses));
 		for (Iterator it = allStatuses.iterator(); it.hasNext();) {
 			IConstraintStatus nextStatus = (IConstraintStatus) it.next();
-			View view = org.muml.testlanguage.diagram.part.TestLanguageDiagramEditorUtil
-					.findView(diagramEditPart, nextStatus.getTarget(), element2ViewMap);
+			View view = TestLanguageDiagramEditorUtil.findView(diagramEditPart, nextStatus.getTarget(),
+					element2ViewMap);
 			addMarker(diagramEditPart.getViewer(), target, view.eResource().getURIFragment(view),
 					EMFCoreUtil.getQualifiedName(nextStatus.getTarget(), true), nextStatus.getMessage(),
 					nextStatus.getSeverity());
@@ -208,7 +197,7 @@ public class ValidateAction extends Action {
 		}
 		final Diagnostic rootStatus = emfValidationStatus;
 		List allDiagnostics = new ArrayList();
-		org.muml.testlanguage.diagram.part.TestLanguageDiagramEditorUtil.LazyElement2ViewMap element2ViewMap = new org.muml.testlanguage.diagram.part.TestLanguageDiagramEditorUtil.LazyElement2ViewMap(
+		TestLanguageDiagramEditorUtil.LazyElement2ViewMap element2ViewMap = new TestLanguageDiagramEditorUtil.LazyElement2ViewMap(
 				diagramEditPart.getDiagramView(),
 				collectTargetElements(rootStatus, new HashSet<EObject>(), allDiagnostics));
 		for (Iterator it = emfValidationStatus.getChildren().iterator(); it.hasNext();) {
@@ -216,8 +205,7 @@ public class ValidateAction extends Action {
 			List data = nextDiagnostic.getData();
 			if (data != null && !data.isEmpty() && data.get(0) instanceof EObject) {
 				EObject element = (EObject) data.get(0);
-				View view = org.muml.testlanguage.diagram.part.TestLanguageDiagramEditorUtil
-						.findView(diagramEditPart, element, element2ViewMap);
+				View view = TestLanguageDiagramEditorUtil.findView(diagramEditPart, element, element2ViewMap);
 				addMarker(diagramEditPart.getViewer(), target, view.eResource().getURIFragment(view),
 						EMFCoreUtil.getQualifiedName(element, true), nextDiagnostic.getMessage(),
 						diagnosticToStatusSeverity(nextDiagnostic.getSeverity()));
@@ -233,8 +221,7 @@ public class ValidateAction extends Action {
 		if (target == null) {
 			return;
 		}
-		org.muml.testlanguage.diagram.providers.TestLanguageMarkerNavigationProvider
-				.addMarker(target, elementId, location, message, statusSeverity);
+		TestLanguageMarkerNavigationProvider.addMarker(target, elementId, location, message, statusSeverity);
 	}
 
 	/**

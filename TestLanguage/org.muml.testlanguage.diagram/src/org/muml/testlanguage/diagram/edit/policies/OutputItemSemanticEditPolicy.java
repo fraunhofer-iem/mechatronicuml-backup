@@ -14,20 +14,22 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyReferenceRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelationshipRequest;
 import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.testlanguage.diagram.edit.commands.OutputTargetsCreateCommand;
+import org.muml.testlanguage.diagram.edit.commands.OutputTargetsReorientCommand;
+import org.muml.testlanguage.diagram.edit.parts.OutputTargetsEditPart;
+import org.muml.testlanguage.diagram.part.TestLanguageVisualIDRegistry;
+import org.muml.testlanguage.diagram.providers.TestLanguageElementTypes;
 
 /**
  * @generated
  */
-public class OutputItemSemanticEditPolicy
-		extends
-		org.muml.testlanguage.diagram.edit.policies.TestLanguageBaseItemSemanticEditPolicy {
+public class OutputItemSemanticEditPolicy extends TestLanguageBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public OutputItemSemanticEditPolicy() {
-		super(
-				org.muml.testlanguage.diagram.providers.TestLanguageElementTypes.Output_3002);
+		super(TestLanguageElementTypes.Output_3002);
 	}
 
 	/**
@@ -35,15 +37,12 @@ public class OutputItemSemanticEditPolicy
 	 */
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		View view = (View) getHost().getModel();
-		CompositeTransactionalCommand cmd = new CompositeTransactionalCommand(
-				getEditingDomain(), null);
+		CompositeTransactionalCommand cmd = new CompositeTransactionalCommand(getEditingDomain(), null);
 		cmd.setTransactionNestingEnabled(false);
 		for (Iterator<?> it = view.getSourceEdges().iterator(); it.hasNext();) {
 			Edge outgoingLink = (Edge) it.next();
-			if (org.muml.testlanguage.diagram.part.TestLanguageVisualIDRegistry
-					.getVisualID(outgoingLink) == org.muml.testlanguage.diagram.edit.parts.OutputTargetsEditPart.VISUAL_ID) {
-				DestroyReferenceRequest r = new DestroyReferenceRequest(
-						outgoingLink.getSource().getElement(), null,
+			if (TestLanguageVisualIDRegistry.getVisualID(outgoingLink) == OutputTargetsEditPart.VISUAL_ID) {
+				DestroyReferenceRequest r = new DestroyReferenceRequest(outgoingLink.getSource().getElement(), null,
 						outgoingLink.getTarget().getElement(), false);
 				cmd.add(new DestroyReferenceCommand(r));
 				cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
@@ -68,19 +67,15 @@ public class OutputItemSemanticEditPolicy
 	protected Command getCreateRelationshipCommand(CreateRelationshipRequest req) {
 		Command command = req.getTarget() == null ? getStartCreateRelationshipCommand(req)
 				: getCompleteCreateRelationshipCommand(req);
-		return command != null ? command : super
-				.getCreateRelationshipCommand(req);
+		return command != null ? command : super.getCreateRelationshipCommand(req);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected Command getStartCreateRelationshipCommand(
-			CreateRelationshipRequest req) {
-		if (org.muml.testlanguage.diagram.providers.TestLanguageElementTypes.OutputTargets_4001 == req
-				.getElementType()) {
-			return getGEFWrapper(new org.muml.testlanguage.diagram.edit.commands.OutputTargetsCreateCommand(
-					req, req.getSource(), req.getTarget()));
+	protected Command getStartCreateRelationshipCommand(CreateRelationshipRequest req) {
+		if (TestLanguageElementTypes.OutputTargets_4001 == req.getElementType()) {
+			return getGEFWrapper(new OutputTargetsCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return null;
 	}
@@ -88,10 +83,8 @@ public class OutputItemSemanticEditPolicy
 	/**
 	 * @generated
 	 */
-	protected Command getCompleteCreateRelationshipCommand(
-			CreateRelationshipRequest req) {
-		if (org.muml.testlanguage.diagram.providers.TestLanguageElementTypes.OutputTargets_4001 == req
-				.getElementType()) {
+	protected Command getCompleteCreateRelationshipCommand(CreateRelationshipRequest req) {
+		if (TestLanguageElementTypes.OutputTargets_4001 == req.getElementType()) {
 			return null;
 		}
 		return null;
@@ -103,12 +96,10 @@ public class OutputItemSemanticEditPolicy
 	 * 
 	 * @generated
 	 */
-	protected Command getReorientReferenceRelationshipCommand(
-			ReorientReferenceRelationshipRequest req) {
+	protected Command getReorientReferenceRelationshipCommand(ReorientReferenceRelationshipRequest req) {
 		switch (getVisualID(req)) {
-		case org.muml.testlanguage.diagram.edit.parts.OutputTargetsEditPart.VISUAL_ID:
-			return getGEFWrapper(new org.muml.testlanguage.diagram.edit.commands.OutputTargetsReorientCommand(
-					req));
+		case OutputTargetsEditPart.VISUAL_ID:
+			return getGEFWrapper(new OutputTargetsReorientCommand(req));
 		}
 		return super.getReorientReferenceRelationshipCommand(req);
 	}

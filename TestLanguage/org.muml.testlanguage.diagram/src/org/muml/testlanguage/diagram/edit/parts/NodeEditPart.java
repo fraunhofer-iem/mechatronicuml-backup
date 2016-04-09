@@ -31,6 +31,9 @@ import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.edit.policies.reparent.CreationEditPolicyWithCustomReparent;
 import org.eclipse.swt.graphics.Color;
+import org.muml.testlanguage.diagram.edit.policies.NodeItemSemanticEditPolicy;
+import org.muml.testlanguage.diagram.part.TestLanguageVisualIDRegistry;
+import org.muml.testlanguage.diagram.providers.TestLanguageElementTypes;
 
 /**
  * @generated
@@ -63,14 +66,10 @@ public class NodeEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected void createDefaultEditPolicies() {
-		installEditPolicy(
-				EditPolicyRoles.CREATION_ROLE,
-				new CreationEditPolicyWithCustomReparent(
-						org.muml.testlanguage.diagram.part.TestLanguageVisualIDRegistry.TYPED_INSTANCE));
+		installEditPolicy(EditPolicyRoles.CREATION_ROLE,
+				new CreationEditPolicyWithCustomReparent(TestLanguageVisualIDRegistry.TYPED_INSTANCE));
 		super.createDefaultEditPolicies();
-		installEditPolicy(
-				EditPolicyRoles.SEMANTIC_ROLE,
-				new org.muml.testlanguage.diagram.edit.policies.NodeItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new NodeItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
@@ -83,8 +82,7 @@ public class NodeEditPart extends ShapeNodeEditPart {
 		org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy lep = new org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy() {
 
 			protected EditPolicy createChildEditPolicy(EditPart child) {
-				EditPolicy result = child
-						.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
+				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
 				if (result == null) {
 					result = new NonResizableEditPolicy();
 				}
@@ -120,16 +118,14 @@ public class NodeEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof org.muml.testlanguage.diagram.edit.parts.NodeLabelEditPart) {
-			((org.muml.testlanguage.diagram.edit.parts.NodeLabelEditPart) childEditPart)
-					.setLabel(getPrimaryShape().getFigureNodeLabelFigure());
+		if (childEditPart instanceof NodeLabelEditPart) {
+			((NodeLabelEditPart) childEditPart).setLabel(getPrimaryShape().getFigureNodeLabelFigure());
 			return true;
 		}
-		if (childEditPart instanceof org.muml.testlanguage.diagram.edit.parts.NodeNodeFigureCompartmentEditPart) {
+		if (childEditPart instanceof NodeNodeFigureCompartmentEditPart) {
 			IFigure pane = getPrimaryShape().getFigureNodeCompartmentFigure();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
-			pane.add(((org.muml.testlanguage.diagram.edit.parts.NodeNodeFigureCompartmentEditPart) childEditPart)
-					.getFigure());
+			pane.add(((NodeNodeFigureCompartmentEditPart) childEditPart).getFigure());
 			return true;
 		}
 		return false;
@@ -139,13 +135,12 @@ public class NodeEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof org.muml.testlanguage.diagram.edit.parts.NodeLabelEditPart) {
+		if (childEditPart instanceof NodeLabelEditPart) {
 			return true;
 		}
-		if (childEditPart instanceof org.muml.testlanguage.diagram.edit.parts.NodeNodeFigureCompartmentEditPart) {
+		if (childEditPart instanceof NodeNodeFigureCompartmentEditPart) {
 			IFigure pane = getPrimaryShape().getFigureNodeCompartmentFigure();
-			pane.remove(((org.muml.testlanguage.diagram.edit.parts.NodeNodeFigureCompartmentEditPart) childEditPart)
-					.getFigure());
+			pane.remove(((NodeNodeFigureCompartmentEditPart) childEditPart).getFigure());
 			return true;
 		}
 		return false;
@@ -175,7 +170,7 @@ public class NodeEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
-		if (editPart instanceof org.muml.testlanguage.diagram.edit.parts.NodeNodeFigureCompartmentEditPart) {
+		if (editPart instanceof NodeNodeFigureCompartmentEditPart) {
 			return getPrimaryShape().getFigureNodeCompartmentFigure();
 		}
 		return getContentPane();
@@ -196,8 +191,7 @@ public class NodeEditPart extends ShapeNodeEditPart {
 		EditPolicy result = super.getPrimaryDragEditPolicy();
 		if (result instanceof ResizableEditPolicy) {
 			ResizableEditPolicy ep = (ResizableEditPolicy) result;
-			ep.setResizeDirections(PositionConstants.WEST
-					| PositionConstants.EAST);
+			ep.setResizeDirections(PositionConstants.WEST | PositionConstants.EAST);
 		}
 		return result;
 	}
@@ -284,8 +278,7 @@ public class NodeEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(org.muml.testlanguage.diagram.part.TestLanguageVisualIDRegistry
-				.getType(org.muml.testlanguage.diagram.edit.parts.NodeLabelEditPart.VISUAL_ID));
+		return getChildBySemanticHint(TestLanguageVisualIDRegistry.getType(NodeLabelEditPart.VISUAL_ID));
 	}
 
 	/**
@@ -293,18 +286,16 @@ public class NodeEditPart extends ShapeNodeEditPart {
 	 */
 	public EditPart getTargetEditPart(Request request) {
 		if (request instanceof CreateViewAndElementRequest) {
-			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request)
-					.getViewAndElementDescriptor()
+			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request).getViewAndElementDescriptor()
 					.getCreateElementRequestAdapter();
-			IElementType type = (IElementType) adapter
-					.getAdapter(IElementType.class);
-			if (type == org.muml.testlanguage.diagram.providers.TestLanguageElementTypes.Input_3001) {
-				return getChildBySemanticHint(org.muml.testlanguage.diagram.part.TestLanguageVisualIDRegistry
-						.getType(org.muml.testlanguage.diagram.edit.parts.NodeNodeFigureCompartmentEditPart.VISUAL_ID));
+			IElementType type = (IElementType) adapter.getAdapter(IElementType.class);
+			if (type == TestLanguageElementTypes.Input_3001) {
+				return getChildBySemanticHint(
+						TestLanguageVisualIDRegistry.getType(NodeNodeFigureCompartmentEditPart.VISUAL_ID));
 			}
-			if (type == org.muml.testlanguage.diagram.providers.TestLanguageElementTypes.Output_3002) {
-				return getChildBySemanticHint(org.muml.testlanguage.diagram.part.TestLanguageVisualIDRegistry
-						.getType(org.muml.testlanguage.diagram.edit.parts.NodeNodeFigureCompartmentEditPart.VISUAL_ID));
+			if (type == TestLanguageElementTypes.Output_3002) {
+				return getChildBySemanticHint(
+						TestLanguageVisualIDRegistry.getType(NodeNodeFigureCompartmentEditPart.VISUAL_ID));
 			}
 		}
 		return super.getTargetEditPart(request);
@@ -340,8 +331,7 @@ public class NodeEditPart extends ShapeNodeEditPart {
 
 			this.setLineWidth(2);
 			this.setForegroundColor(ColorConstants.black);
-			this.setMinimumSize(new Dimension(getMapMode().DPtoLP(100),
-					getMapMode().DPtoLP(0)));
+			this.setMinimumSize(new Dimension(getMapMode().DPtoLP(100), getMapMode().DPtoLP(0)));
 			createContents();
 		}
 
@@ -356,8 +346,7 @@ public class NodeEditPart extends ShapeNodeEditPart {
 			fig0.setFill(false);
 			fig0.setOpaque(false);
 
-			fig0.setBorder(new MarginBorder(getMapMode().DPtoLP(3),
-					getMapMode().DPtoLP(5), getMapMode().DPtoLP(2),
+			fig0.setBorder(new MarginBorder(getMapMode().DPtoLP(3), getMapMode().DPtoLP(5), getMapMode().DPtoLP(2),
 					getMapMode().DPtoLP(2)));
 
 			GridData constraintFig0 = new GridData();
@@ -393,8 +382,7 @@ public class NodeEditPart extends ShapeNodeEditPart {
 			fFigureNodeCompartmentFigure.setOutline(false);
 			fFigureNodeCompartmentFigure.setLineWidth(0);
 
-			fFigureNodeCompartmentFigure.setBorder(new MarginBorder(
-					getMapMode().DPtoLP(0), getMapMode().DPtoLP(0),
+			fFigureNodeCompartmentFigure.setBorder(new MarginBorder(getMapMode().DPtoLP(0), getMapMode().DPtoLP(0),
 					getMapMode().DPtoLP(0), getMapMode().DPtoLP(0)));
 
 			GridData constraintFFigureNodeCompartmentFigure = new GridData();
@@ -405,8 +393,7 @@ public class NodeEditPart extends ShapeNodeEditPart {
 			constraintFFigureNodeCompartmentFigure.verticalSpan = 1;
 			constraintFFigureNodeCompartmentFigure.grabExcessHorizontalSpace = true;
 			constraintFFigureNodeCompartmentFigure.grabExcessVerticalSpace = false;
-			this.add(fFigureNodeCompartmentFigure,
-					constraintFFigureNodeCompartmentFigure);
+			this.add(fFigureNodeCompartmentFigure, constraintFFigureNodeCompartmentFigure);
 
 		}
 

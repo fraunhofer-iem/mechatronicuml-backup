@@ -5,13 +5,13 @@ import java.util.List;
 
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
+import org.muml.testlanguage.diagram.providers.TestLanguageElementTypes;
+import org.muml.testlanguage.diagram.providers.TestLanguageModelingAssistantProvider;
 
 /**
  * @generated
  */
-public class TestLanguageModelingAssistantProviderOfNodeEditPart
-		extends
-		org.muml.testlanguage.diagram.providers.TestLanguageModelingAssistantProvider {
+public class TestLanguageModelingAssistantProviderOfNodeEditPart extends TestLanguageModelingAssistantProvider {
 
 	/**
 	 * @generated
@@ -19,8 +19,8 @@ public class TestLanguageModelingAssistantProviderOfNodeEditPart
 	@Override
 	public List<IElementType> getTypesForPopupBar(IAdaptable host) {
 		List<IElementType> types = new ArrayList<IElementType>(2);
-		types.add(org.muml.testlanguage.diagram.providers.TestLanguageElementTypes.Input_3001);
-		types.add(org.muml.testlanguage.diagram.providers.TestLanguageElementTypes.Output_3002);
+		types.add(TestLanguageElementTypes.Input_3001);
+		types.add(TestLanguageElementTypes.Output_3002);
 		return types;
 	}
 

@@ -11,6 +11,9 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.testlanguage.Node;
+import org.muml.testlanguage.TestCase;
+import org.muml.testlanguage.TestLanguageFactory;
 
 /**
  * @generated
@@ -29,8 +32,7 @@ public class NodeCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected EObject getElementToEdit() {
-		EObject container = ((CreateElementRequest) getRequest())
-				.getContainer();
+		EObject container = ((CreateElementRequest) getRequest()).getContainer();
 		if (container instanceof View) {
 			container = ((View) container).getElement();
 		}
@@ -48,18 +50,15 @@ public class NodeCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
-			IAdaptable info) throws ExecutionException {
-		org.muml.testlanguage.Node newElement = org.muml.testlanguage.TestLanguageFactory.eINSTANCE
-				.createNode();
+	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
+		Node newElement = TestLanguageFactory.eINSTANCE.createNode();
 
-		org.muml.testlanguage.TestCase owner = (org.muml.testlanguage.TestCase) getElementToEdit();
+		TestCase owner = (TestCase) getElementToEdit();
 		owner.getNodes().add(newElement);
 
 		// Generate the ports of the node if it is one.
 
-		newElement.setSpecificationClassName((String) this.getRequest()
-				.getParameter("specificationClassName"));
+		newElement.setSpecificationClassName((String) this.getRequest().getParameter("specificationClassName"));
 		newElement.createSpecification();
 		newElement.setupFromSpecification();
 
@@ -70,21 +69,14 @@ public class NodeCreateCommand extends EditElementCommand {
 	}
 
 	/**
-	 * @generated
-	 */
-	protected void doConfigure(
-			org.muml.testlanguage.Node newElement,
-			IProgressMonitor monitor, IAdaptable info)
-			throws ExecutionException {
-		IElementType elementType = ((CreateElementRequest) getRequest())
-				.getElementType();
-		ConfigureRequest configureRequest = new ConfigureRequest(
-				getEditingDomain(), newElement, elementType);
-		configureRequest.setClientContext(((CreateElementRequest) getRequest())
-				.getClientContext());
+	* @generated
+	*/
+	protected void doConfigure(Node newElement, IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
+		IElementType elementType = ((CreateElementRequest) getRequest()).getElementType();
+		ConfigureRequest configureRequest = new ConfigureRequest(getEditingDomain(), newElement, elementType);
+		configureRequest.setClientContext(((CreateElementRequest) getRequest()).getClientContext());
 		configureRequest.addParameters(getRequest().getParameters());
-		ICommand configureCommand = elementType
-				.getEditCommand(configureRequest);
+		ICommand configureCommand = elementType.getEditCommand(configureRequest);
 		if (configureCommand != null && configureCommand.canExecute()) {
 			configureCommand.execute(monitor, info);
 		}

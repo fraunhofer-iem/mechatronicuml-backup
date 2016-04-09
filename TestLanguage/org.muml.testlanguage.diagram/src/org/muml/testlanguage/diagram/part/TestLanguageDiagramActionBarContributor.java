@@ -13,21 +13,20 @@ import org.eclipse.ui.IWorkbenchPage;
 /**
  * @generated
  */
-public class TestLanguageDiagramActionBarContributor extends
-		DiagramActionBarContributor {
+public class TestLanguageDiagramActionBarContributor extends DiagramActionBarContributor {
 
 	/**
 	 * @generated
 	 */
 	protected Class getEditorClass() {
-		return org.muml.testlanguage.diagram.part.TestLanguageDiagramEditor.class;
+		return TestLanguageDiagramEditor.class;
 	}
 
 	/**
 	 * @generated
 	 */
 	protected String getEditorId() {
-		return org.muml.testlanguage.diagram.part.TestLanguageDiagramEditor.ID;
+		return TestLanguageDiagramEditor.ID;
 	}
 
 	/**
@@ -36,20 +35,16 @@ public class TestLanguageDiagramActionBarContributor extends
 	public void init(IActionBars bars, IWorkbenchPage page) {
 		super.init(bars, page);
 		// print preview
-		IMenuManager fileMenu = bars.getMenuManager().findMenuUsingPath(
-				IWorkbenchActionConstants.M_FILE);
+		IMenuManager fileMenu = bars.getMenuManager().findMenuUsingPath(IWorkbenchActionConstants.M_FILE);
 		assert fileMenu != null;
-		IAction printPreviewAction = new RenderedPrintPreviewAction(
-				new EnhancedPrintActionHelper());
+		IAction printPreviewAction = new RenderedPrintPreviewAction(new EnhancedPrintActionHelper());
 		fileMenu.insertBefore("print", printPreviewAction); //$NON-NLS-1$
-		IMenuManager editMenu = bars.getMenuManager().findMenuUsingPath(
-				IWorkbenchActionConstants.M_EDIT);
+		IMenuManager editMenu = bars.getMenuManager().findMenuUsingPath(IWorkbenchActionConstants.M_EDIT);
 		assert editMenu != null;
 		if (editMenu.find("validationGroup") == null) { //$NON-NLS-1$
 			editMenu.add(new GroupMarker("validationGroup")); //$NON-NLS-1$
 		}
-		IAction validateAction = new org.muml.testlanguage.diagram.part.ValidateAction(
-				page);
+		IAction validateAction = new ValidateAction(page);
 		editMenu.appendToGroup("validationGroup", validateAction); //$NON-NLS-1$
 	}
 }

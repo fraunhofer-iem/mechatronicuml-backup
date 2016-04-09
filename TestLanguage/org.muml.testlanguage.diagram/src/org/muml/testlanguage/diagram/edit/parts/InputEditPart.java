@@ -24,6 +24,8 @@ import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.graphics.Color;
+import org.muml.testlanguage.diagram.edit.policies.InputItemSemanticEditPolicy;
+import org.muml.testlanguage.diagram.part.TestLanguageVisualIDRegistry;
 
 /**
  * @generated
@@ -57,9 +59,7 @@ public class InputEditPart extends ShapeNodeEditPart {
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(
-				EditPolicyRoles.SEMANTIC_ROLE,
-				new org.muml.testlanguage.diagram.edit.policies.InputItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new InputItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
@@ -72,8 +72,7 @@ public class InputEditPart extends ShapeNodeEditPart {
 		org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy lep = new org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy() {
 
 			protected EditPolicy createChildEditPolicy(EditPart child) {
-				EditPolicy result = child
-						.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
+				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
 				if (result == null) {
 					result = new NonResizableEditPolicy();
 				}
@@ -109,9 +108,8 @@ public class InputEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof org.muml.testlanguage.diagram.edit.parts.InputNameEditPart) {
-			((org.muml.testlanguage.diagram.edit.parts.InputNameEditPart) childEditPart)
-					.setLabel(getPrimaryShape().getFigureInputLabelFigure());
+		if (childEditPart instanceof InputNameEditPart) {
+			((InputNameEditPart) childEditPart).setLabel(getPrimaryShape().getFigureInputLabelFigure());
 			return true;
 		}
 		return false;
@@ -121,7 +119,7 @@ public class InputEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof org.muml.testlanguage.diagram.edit.parts.InputNameEditPart) {
+		if (childEditPart instanceof InputNameEditPart) {
 			return true;
 		}
 		return false;
@@ -256,8 +254,7 @@ public class InputEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(org.muml.testlanguage.diagram.part.TestLanguageVisualIDRegistry
-				.getType(org.muml.testlanguage.diagram.edit.parts.InputNameEditPart.VISUAL_ID));
+		return getChildBySemanticHint(TestLanguageVisualIDRegistry.getType(InputNameEditPart.VISUAL_ID));
 	}
 
 	/**

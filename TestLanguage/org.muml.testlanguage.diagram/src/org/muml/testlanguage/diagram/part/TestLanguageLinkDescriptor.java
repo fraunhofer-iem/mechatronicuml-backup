@@ -11,16 +11,15 @@ public class TestLanguageLinkDescriptor extends UpdaterLinkDescriptor {
 	/**
 	 * @generated
 	 */
-	public TestLanguageLinkDescriptor(EObject source, EObject destination,
-			IElementType elementType, int linkVID) {
+	public TestLanguageLinkDescriptor(EObject source, EObject destination, IElementType elementType, int linkVID) {
 		super(source, destination, elementType, linkVID);
 	}
 
 	/**
 	 * @generated
 	 */
-	public TestLanguageLinkDescriptor(EObject source, EObject destination,
-			EObject linkElement, IElementType elementType, int linkVID) {
+	public TestLanguageLinkDescriptor(EObject source, EObject destination, EObject linkElement,
+			IElementType elementType, int linkVID) {
 		super(source, destination, linkElement, elementType, linkVID);
 	}
 

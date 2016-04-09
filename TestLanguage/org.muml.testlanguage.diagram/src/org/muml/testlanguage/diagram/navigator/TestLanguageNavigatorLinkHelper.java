@@ -21,6 +21,7 @@ import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.navigator.ILinkHelper;
 import org.eclipse.ui.part.FileEditorInput;
+import org.muml.testlanguage.diagram.part.TestLanguageDiagramEditorPlugin;
 
 /**
  * @generated
@@ -34,16 +35,14 @@ public class TestLanguageNavigatorLinkHelper implements ILinkHelper {
 		Resource diagramResource = diagram.eResource();
 		for (EObject nextEObject : diagramResource.getContents()) {
 			if (nextEObject == diagram) {
-				return new FileEditorInput(
-						WorkspaceSynchronizer.getFile(diagramResource));
+				return new FileEditorInput(WorkspaceSynchronizer.getFile(diagramResource));
 			}
 			if (nextEObject instanceof Diagram) {
 				break;
 			}
 		}
 		URI uri = EcoreUtil.getURI(diagram);
-		String editorName = uri.lastSegment() + '#'
-				+ diagram.eResource().getContents().indexOf(diagram);
+		String editorName = uri.lastSegment() + '#' + diagram.eResource().getContents().indexOf(diagram);
 		IEditorInput editorInput = new URIEditorInput(uri, editorName);
 		return editorInput;
 	}
@@ -52,8 +51,7 @@ public class TestLanguageNavigatorLinkHelper implements ILinkHelper {
 	 * @generated
 	 */
 	public IStructuredSelection findSelection(IEditorInput anInput) {
-		IDiagramDocument document = org.muml.testlanguage.diagram.part.TestLanguageDiagramEditorPlugin
-				.getInstance().getDocumentProvider()
+		IDiagramDocument document = TestLanguageDiagramEditorPlugin.getInstance().getDocumentProvider()
 				.getDiagramDocument(anInput);
 		if (document == null) {
 			return StructuredSelection.EMPTY;
@@ -64,8 +62,7 @@ public class TestLanguageNavigatorLinkHelper implements ILinkHelper {
 		}
 		IFile file = WorkspaceSynchronizer.getFile(diagram.eResource());
 		if (file != null) {
-			org.muml.testlanguage.diagram.navigator.TestLanguageNavigatorItem item = new org.muml.testlanguage.diagram.navigator.TestLanguageNavigatorItem(
-					diagram, file, false);
+			TestLanguageNavigatorItem item = new TestLanguageNavigatorItem(diagram, file, false);
 			return new StructuredSelection(item);
 		}
 		return StructuredSelection.EMPTY;
@@ -74,26 +71,23 @@ public class TestLanguageNavigatorLinkHelper implements ILinkHelper {
 	/**
 	 * @generated
 	 */
-	public void activateEditor(IWorkbenchPage aPage,
-			IStructuredSelection aSelection) {
+	public void activateEditor(IWorkbenchPage aPage, IStructuredSelection aSelection) {
 		if (aSelection == null || aSelection.isEmpty()) {
 			return;
 		}
-		if (false == aSelection.getFirstElement() instanceof org.muml.testlanguage.diagram.navigator.TestLanguageAbstractNavigatorItem) {
+		if (false == aSelection.getFirstElement() instanceof TestLanguageAbstractNavigatorItem) {
 			return;
 		}
 
-		org.muml.testlanguage.diagram.navigator.TestLanguageAbstractNavigatorItem abstractNavigatorItem = (org.muml.testlanguage.diagram.navigator.TestLanguageAbstractNavigatorItem) aSelection
+		TestLanguageAbstractNavigatorItem abstractNavigatorItem = (TestLanguageAbstractNavigatorItem) aSelection
 				.getFirstElement();
 		View navigatorView = null;
-		if (abstractNavigatorItem instanceof org.muml.testlanguage.diagram.navigator.TestLanguageNavigatorItem) {
-			navigatorView = ((org.muml.testlanguage.diagram.navigator.TestLanguageNavigatorItem) abstractNavigatorItem)
-					.getView();
-		} else if (abstractNavigatorItem instanceof org.muml.testlanguage.diagram.navigator.TestLanguageNavigatorGroup) {
-			org.muml.testlanguage.diagram.navigator.TestLanguageNavigatorGroup navigatorGroup = (org.muml.testlanguage.diagram.navigator.TestLanguageNavigatorGroup) abstractNavigatorItem;
-			if (navigatorGroup.getParent() instanceof org.muml.testlanguage.diagram.navigator.TestLanguageNavigatorItem) {
-				navigatorView = ((org.muml.testlanguage.diagram.navigator.TestLanguageNavigatorItem) navigatorGroup
-						.getParent()).getView();
+		if (abstractNavigatorItem instanceof TestLanguageNavigatorItem) {
+			navigatorView = ((TestLanguageNavigatorItem) abstractNavigatorItem).getView();
+		} else if (abstractNavigatorItem instanceof TestLanguageNavigatorGroup) {
+			TestLanguageNavigatorGroup navigatorGroup = (TestLanguageNavigatorGroup) abstractNavigatorItem;
+			if (navigatorGroup.getParent() instanceof TestLanguageNavigatorItem) {
+				navigatorView = ((TestLanguageNavigatorItem) navigatorGroup.getParent()).getView();
 			}
 		}
 		if (navigatorView == null) {
@@ -107,17 +101,13 @@ public class TestLanguageNavigatorLinkHelper implements ILinkHelper {
 		aPage.bringToTop(editor);
 		if (editor instanceof DiagramEditor) {
 			DiagramEditor diagramEditor = (DiagramEditor) editor;
-			ResourceSet diagramEditorResourceSet = diagramEditor
-					.getEditingDomain().getResourceSet();
-			EObject selectedView = diagramEditorResourceSet.getEObject(
-					EcoreUtil.getURI(navigatorView), true);
+			ResourceSet diagramEditorResourceSet = diagramEditor.getEditingDomain().getResourceSet();
+			EObject selectedView = diagramEditorResourceSet.getEObject(EcoreUtil.getURI(navigatorView), true);
 			if (selectedView == null) {
 				return;
 			}
-			GraphicalViewer graphicalViewer = (GraphicalViewer) diagramEditor
-					.getAdapter(GraphicalViewer.class);
-			EditPart selectedEditPart = (EditPart) graphicalViewer
-					.getEditPartRegistry().get(selectedView);
+			GraphicalViewer graphicalViewer = (GraphicalViewer) diagramEditor.getAdapter(GraphicalViewer.class);
+			EditPart selectedEditPart = (EditPart) graphicalViewer.getEditPartRegistry().get(selectedView);
 			if (selectedEditPart != null) {
 				graphicalViewer.select(selectedEditPart);
 			}

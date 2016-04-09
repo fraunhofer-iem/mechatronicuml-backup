@@ -17,34 +17,28 @@ public class TestLanguageDomainNavigatorItem extends PlatformObject {
 	 * @generated
 	 */
 	static {
-		final Class[] supportedTypes = new Class[] { EObject.class,
-				IPropertySource.class };
-		Platform.getAdapterManager().registerAdapters(
-				new IAdapterFactory() {
+		final Class[] supportedTypes = new Class[] { EObject.class, IPropertySource.class };
+		Platform.getAdapterManager().registerAdapters(new IAdapterFactory() {
 
-					public Object getAdapter(Object adaptableObject,
-							Class adapterType) {
-						if (adaptableObject instanceof org.muml.testlanguage.diagram.navigator.TestLanguageDomainNavigatorItem) {
-							org.muml.testlanguage.diagram.navigator.TestLanguageDomainNavigatorItem domainNavigatorItem = (org.muml.testlanguage.diagram.navigator.TestLanguageDomainNavigatorItem) adaptableObject;
-							EObject eObject = domainNavigatorItem.getEObject();
-							if (adapterType == EObject.class) {
-								return eObject;
-							}
-							if (adapterType == IPropertySource.class) {
-								return domainNavigatorItem
-										.getPropertySourceProvider()
-										.getPropertySource(eObject);
-							}
-						}
-
-						return null;
+			public Object getAdapter(Object adaptableObject, Class adapterType) {
+				if (adaptableObject instanceof org.muml.testlanguage.diagram.navigator.TestLanguageDomainNavigatorItem) {
+					org.muml.testlanguage.diagram.navigator.TestLanguageDomainNavigatorItem domainNavigatorItem = (org.muml.testlanguage.diagram.navigator.TestLanguageDomainNavigatorItem) adaptableObject;
+					EObject eObject = domainNavigatorItem.getEObject();
+					if (adapterType == EObject.class) {
+						return eObject;
 					}
-
-					public Class[] getAdapterList() {
-						return supportedTypes;
+					if (adapterType == IPropertySource.class) {
+						return domainNavigatorItem.getPropertySourceProvider().getPropertySource(eObject);
 					}
-				},
-				org.muml.testlanguage.diagram.navigator.TestLanguageDomainNavigatorItem.class);
+				}
+
+				return null;
+			}
+
+			public Class[] getAdapterList() {
+				return supportedTypes;
+			}
+		}, org.muml.testlanguage.diagram.navigator.TestLanguageDomainNavigatorItem.class);
 	}
 
 	/**
@@ -98,11 +92,8 @@ public class TestLanguageDomainNavigatorItem extends PlatformObject {
 	 */
 	public boolean equals(Object obj) {
 		if (obj instanceof org.muml.testlanguage.diagram.navigator.TestLanguageDomainNavigatorItem) {
-			return EcoreUtil
-					.getURI(getEObject())
-					.equals(EcoreUtil
-							.getURI(((org.muml.testlanguage.diagram.navigator.TestLanguageDomainNavigatorItem) obj)
-									.getEObject()));
+			return EcoreUtil.getURI(getEObject()).equals(EcoreUtil.getURI(
+					((org.muml.testlanguage.diagram.navigator.TestLanguageDomainNavigatorItem) obj).getEObject()));
 		}
 		return super.equals(obj);
 	}

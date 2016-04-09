@@ -6,6 +6,16 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.structure.DiagramStructure;
+import org.muml.testlanguage.TestCase;
+import org.muml.testlanguage.TestLanguagePackage;
+import org.muml.testlanguage.diagram.edit.parts.InputEditPart;
+import org.muml.testlanguage.diagram.edit.parts.InputNameEditPart;
+import org.muml.testlanguage.diagram.edit.parts.NodeEditPart;
+import org.muml.testlanguage.diagram.edit.parts.NodeLabelEditPart;
+import org.muml.testlanguage.diagram.edit.parts.NodeNodeFigureCompartmentEditPart;
+import org.muml.testlanguage.diagram.edit.parts.OutputEditPart;
+import org.muml.testlanguage.diagram.edit.parts.OutputNameEditPart;
+import org.muml.testlanguage.diagram.edit.parts.TestCaseEditPart;
 
 /**
  * This registry is used to determine which type of visual object should be
@@ -26,15 +36,13 @@ public class TestLanguageVisualIDRegistry {
 	 */
 	public static int getVisualID(View view) {
 		if (view instanceof Diagram) {
-			if (org.muml.testlanguage.diagram.edit.parts.TestCaseEditPart.MODEL_ID
-					.equals(view.getType())) {
-				return org.muml.testlanguage.diagram.edit.parts.TestCaseEditPart.VISUAL_ID;
+			if (TestCaseEditPart.MODEL_ID.equals(view.getType())) {
+				return TestCaseEditPart.VISUAL_ID;
 			} else {
 				return -1;
 			}
 		}
-		return org.muml.testlanguage.diagram.part.TestLanguageVisualIDRegistry
-				.getVisualID(view.getType());
+		return org.muml.testlanguage.diagram.part.TestLanguageVisualIDRegistry.getVisualID(view.getType());
 	}
 
 	/**
@@ -59,12 +67,9 @@ public class TestLanguageVisualIDRegistry {
 		try {
 			return Integer.parseInt(type);
 		} catch (NumberFormatException e) {
-			if (Boolean.TRUE.toString().equalsIgnoreCase(
-					Platform.getDebugOption(DEBUG_KEY))) {
-				org.muml.testlanguage.diagram.part.TestLanguageDiagramEditorPlugin
-						.getInstance().logError(
-								"Unable to parse view type as a visualID number: "
-										+ type);
+			if (Boolean.TRUE.toString().equalsIgnoreCase(Platform.getDebugOption(DEBUG_KEY))) {
+				TestLanguageDiagramEditorPlugin.getInstance()
+						.logError("Unable to parse view type as a visualID number: " + type);
 			}
 		}
 		return -1;
@@ -84,10 +89,9 @@ public class TestLanguageVisualIDRegistry {
 		if (domainElement == null) {
 			return -1;
 		}
-		if (org.muml.testlanguage.TestLanguagePackage.eINSTANCE
-				.getTestCase().isSuperTypeOf(domainElement.eClass())
-				&& isDiagram((org.muml.testlanguage.TestCase) domainElement)) {
-			return org.muml.testlanguage.diagram.edit.parts.TestCaseEditPart.VISUAL_ID;
+		if (TestLanguagePackage.eINSTANCE.getTestCase().isSuperTypeOf(domainElement.eClass())
+				&& isDiagram((TestCase) domainElement)) {
+			return TestCaseEditPart.VISUAL_ID;
 		}
 		return -1;
 	}
@@ -101,37 +105,32 @@ public class TestLanguageVisualIDRegistry {
 		}
 		String containerModelID = org.muml.testlanguage.diagram.part.TestLanguageVisualIDRegistry
 				.getModelID(containerView);
-		if (!org.muml.testlanguage.diagram.edit.parts.TestCaseEditPart.MODEL_ID
-				.equals(containerModelID)) {
+		if (!TestCaseEditPart.MODEL_ID.equals(containerModelID)) {
 			return -1;
 		}
 		int containerVisualID;
-		if (org.muml.testlanguage.diagram.edit.parts.TestCaseEditPart.MODEL_ID
-				.equals(containerModelID)) {
+		if (TestCaseEditPart.MODEL_ID.equals(containerModelID)) {
 			containerVisualID = org.muml.testlanguage.diagram.part.TestLanguageVisualIDRegistry
 					.getVisualID(containerView);
 		} else {
 			if (containerView instanceof Diagram) {
-				containerVisualID = org.muml.testlanguage.diagram.edit.parts.TestCaseEditPart.VISUAL_ID;
+				containerVisualID = TestCaseEditPart.VISUAL_ID;
 			} else {
 				return -1;
 			}
 		}
 		switch (containerVisualID) {
-		case org.muml.testlanguage.diagram.edit.parts.TestCaseEditPart.VISUAL_ID:
-			if (org.muml.testlanguage.TestLanguagePackage.eINSTANCE
-					.getNode().isSuperTypeOf(domainElement.eClass())) {
-				return org.muml.testlanguage.diagram.edit.parts.NodeEditPart.VISUAL_ID;
+		case TestCaseEditPart.VISUAL_ID:
+			if (TestLanguagePackage.eINSTANCE.getNode().isSuperTypeOf(domainElement.eClass())) {
+				return NodeEditPart.VISUAL_ID;
 			}
 			break;
-		case org.muml.testlanguage.diagram.edit.parts.NodeNodeFigureCompartmentEditPart.VISUAL_ID:
-			if (org.muml.testlanguage.TestLanguagePackage.eINSTANCE
-					.getInput().isSuperTypeOf(domainElement.eClass())) {
-				return org.muml.testlanguage.diagram.edit.parts.InputEditPart.VISUAL_ID;
+		case NodeNodeFigureCompartmentEditPart.VISUAL_ID:
+			if (TestLanguagePackage.eINSTANCE.getInput().isSuperTypeOf(domainElement.eClass())) {
+				return InputEditPart.VISUAL_ID;
 			}
-			if (org.muml.testlanguage.TestLanguagePackage.eINSTANCE
-					.getOutput().isSuperTypeOf(domainElement.eClass())) {
-				return org.muml.testlanguage.diagram.edit.parts.OutputEditPart.VISUAL_ID;
+			if (TestLanguagePackage.eINSTANCE.getOutput().isSuperTypeOf(domainElement.eClass())) {
+				return OutputEditPart.VISUAL_ID;
 			}
 			break;
 		}
@@ -144,51 +143,49 @@ public class TestLanguageVisualIDRegistry {
 	public static boolean canCreateNode(View containerView, int nodeVisualID) {
 		String containerModelID = org.muml.testlanguage.diagram.part.TestLanguageVisualIDRegistry
 				.getModelID(containerView);
-		if (!org.muml.testlanguage.diagram.edit.parts.TestCaseEditPart.MODEL_ID
-				.equals(containerModelID)) {
+		if (!TestCaseEditPart.MODEL_ID.equals(containerModelID)) {
 			return false;
 		}
 		int containerVisualID;
-		if (org.muml.testlanguage.diagram.edit.parts.TestCaseEditPart.MODEL_ID
-				.equals(containerModelID)) {
+		if (TestCaseEditPart.MODEL_ID.equals(containerModelID)) {
 			containerVisualID = org.muml.testlanguage.diagram.part.TestLanguageVisualIDRegistry
 					.getVisualID(containerView);
 		} else {
 			if (containerView instanceof Diagram) {
-				containerVisualID = org.muml.testlanguage.diagram.edit.parts.TestCaseEditPart.VISUAL_ID;
+				containerVisualID = TestCaseEditPart.VISUAL_ID;
 			} else {
 				return false;
 			}
 		}
 		switch (containerVisualID) {
-		case org.muml.testlanguage.diagram.edit.parts.TestCaseEditPart.VISUAL_ID:
-			if (org.muml.testlanguage.diagram.edit.parts.NodeEditPart.VISUAL_ID == nodeVisualID) {
+		case TestCaseEditPart.VISUAL_ID:
+			if (NodeEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
-		case org.muml.testlanguage.diagram.edit.parts.NodeEditPart.VISUAL_ID:
-			if (org.muml.testlanguage.diagram.edit.parts.NodeLabelEditPart.VISUAL_ID == nodeVisualID) {
+		case NodeEditPart.VISUAL_ID:
+			if (NodeLabelEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (org.muml.testlanguage.diagram.edit.parts.NodeNodeFigureCompartmentEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case org.muml.testlanguage.diagram.edit.parts.InputEditPart.VISUAL_ID:
-			if (org.muml.testlanguage.diagram.edit.parts.InputNameEditPart.VISUAL_ID == nodeVisualID) {
+			if (NodeNodeFigureCompartmentEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
-		case org.muml.testlanguage.diagram.edit.parts.OutputEditPart.VISUAL_ID:
-			if (org.muml.testlanguage.diagram.edit.parts.OutputNameEditPart.VISUAL_ID == nodeVisualID) {
+		case InputEditPart.VISUAL_ID:
+			if (InputNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
-		case org.muml.testlanguage.diagram.edit.parts.NodeNodeFigureCompartmentEditPart.VISUAL_ID:
-			if (org.muml.testlanguage.diagram.edit.parts.InputEditPart.VISUAL_ID == nodeVisualID) {
+		case OutputEditPart.VISUAL_ID:
+			if (OutputNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (org.muml.testlanguage.diagram.edit.parts.OutputEditPart.VISUAL_ID == nodeVisualID) {
+			break;
+		case NodeNodeFigureCompartmentEditPart.VISUAL_ID:
+			if (InputEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (OutputEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -207,21 +204,19 @@ public class TestLanguageVisualIDRegistry {
 	}
 
 	/**
-	 * User can change implementation of this method to handle some specific
-	 * situations not covered by default logic.
-	 * 
-	 * @generated
-	 */
-	private static boolean isDiagram(
-			org.muml.testlanguage.TestCase element) {
+	* User can change implementation of this method to handle some specific
+	* situations not covered by default logic.
+	* 
+	* @generated
+	*/
+	private static boolean isDiagram(TestCase element) {
 		return true;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static boolean checkNodeVisualID(View containerView,
-			EObject domainElement, int candidate) {
+	public static boolean checkNodeVisualID(View containerView, EObject domainElement, int candidate) {
 		if (candidate == -1) {
 			//unrecognized id is always bad
 			return false;
@@ -235,7 +230,7 @@ public class TestLanguageVisualIDRegistry {
 	 */
 	public static boolean isCompartmentVisualID(int visualID) {
 		switch (visualID) {
-		case org.muml.testlanguage.diagram.edit.parts.NodeNodeFigureCompartmentEditPart.VISUAL_ID:
+		case NodeNodeFigureCompartmentEditPart.VISUAL_ID:
 			return true;
 		default:
 			break;
@@ -248,10 +243,10 @@ public class TestLanguageVisualIDRegistry {
 	 */
 	public static boolean isSemanticLeafVisualID(int visualID) {
 		switch (visualID) {
-		case org.muml.testlanguage.diagram.edit.parts.TestCaseEditPart.VISUAL_ID:
+		case TestCaseEditPart.VISUAL_ID:
 			return false;
-		case org.muml.testlanguage.diagram.edit.parts.InputEditPart.VISUAL_ID:
-		case org.muml.testlanguage.diagram.edit.parts.OutputEditPart.VISUAL_ID:
+		case InputEditPart.VISUAL_ID:
+		case OutputEditPart.VISUAL_ID:
 			return true;
 		default:
 			break;
@@ -264,58 +259,59 @@ public class TestLanguageVisualIDRegistry {
 	 */
 	public static final DiagramStructure TYPED_INSTANCE = new DiagramStructure() {
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		@Override
+
 		public int getVisualID(View view) {
-			return org.muml.testlanguage.diagram.part.TestLanguageVisualIDRegistry
-					.getVisualID(view);
+			return org.muml.testlanguage.diagram.part.TestLanguageVisualIDRegistry.getVisualID(view);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		@Override
+
 		public String getModelID(View view) {
-			return org.muml.testlanguage.diagram.part.TestLanguageVisualIDRegistry
-					.getModelID(view);
+			return org.muml.testlanguage.diagram.part.TestLanguageVisualIDRegistry.getModelID(view);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		@Override
+
 		public int getNodeVisualID(View containerView, EObject domainElement) {
-			return org.muml.testlanguage.diagram.part.TestLanguageVisualIDRegistry
-					.getNodeVisualID(containerView, domainElement);
+			return org.muml.testlanguage.diagram.part.TestLanguageVisualIDRegistry.getNodeVisualID(containerView,
+					domainElement);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		@Override
-		public boolean checkNodeVisualID(View containerView,
-				EObject domainElement, int candidate) {
-			return org.muml.testlanguage.diagram.part.TestLanguageVisualIDRegistry
-					.checkNodeVisualID(containerView, domainElement, candidate);
+
+		public boolean checkNodeVisualID(View containerView, EObject domainElement, int candidate) {
+			return org.muml.testlanguage.diagram.part.TestLanguageVisualIDRegistry.checkNodeVisualID(containerView,
+					domainElement, candidate);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		@Override
+
 		public boolean isCompartmentVisualID(int visualID) {
-			return org.muml.testlanguage.diagram.part.TestLanguageVisualIDRegistry
-					.isCompartmentVisualID(visualID);
+			return org.muml.testlanguage.diagram.part.TestLanguageVisualIDRegistry.isCompartmentVisualID(visualID);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		@Override
+
 		public boolean isSemanticLeafVisualID(int visualID) {
-			return org.muml.testlanguage.diagram.part.TestLanguageVisualIDRegistry
-					.isSemanticLeafVisualID(visualID);
+			return org.muml.testlanguage.diagram.part.TestLanguageVisualIDRegistry.isSemanticLeafVisualID(visualID);
 		}
 	};
 

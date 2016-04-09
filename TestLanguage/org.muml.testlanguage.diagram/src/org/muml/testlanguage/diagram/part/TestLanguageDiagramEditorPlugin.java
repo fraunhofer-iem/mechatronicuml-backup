@@ -17,6 +17,10 @@ import org.eclipse.gmf.tooling.runtime.LogHelper;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
+import org.muml.testlanguage.diagram.edit.policies.TestLanguageBaseItemSemanticEditPolicy;
+import org.muml.testlanguage.diagram.providers.ElementInitializers;
+import org.muml.testlanguage.provider.TestLanguageItemProviderAdapterFactory;
+import org.muml.testlanguage.specification.provider.SpecificationItemProviderAdapterFactory;
 import org.osgi.framework.BundleContext;
 
 /**
@@ -37,8 +41,7 @@ public class TestLanguageDiagramEditorPlugin extends AbstractUIPlugin {
 	/**
 	 * @generated
 	 */
-	public static final PreferencesHint DIAGRAM_PREFERENCES_HINT = new PreferencesHint(
-			ID);
+	public static final PreferencesHint DIAGRAM_PREFERENCES_HINT = new PreferencesHint(ID);
 
 	/**
 	 * @generated
@@ -53,17 +56,17 @@ public class TestLanguageDiagramEditorPlugin extends AbstractUIPlugin {
 	/**
 	 * @generated
 	 */
-	private org.muml.testlanguage.diagram.part.TestLanguageDocumentProvider documentProvider;
+	private TestLanguageDocumentProvider documentProvider;
 
 	/**
 	 * @generated
 	 */
-	private org.muml.testlanguage.diagram.edit.policies.TestLanguageBaseItemSemanticEditPolicy.LinkConstraints linkConstraints;
+	private TestLanguageBaseItemSemanticEditPolicy.LinkConstraints linkConstraints;
 
 	/**
 	 * @generated
 	 */
-	private org.muml.testlanguage.diagram.providers.ElementInitializers initializers;
+	private ElementInitializers initializers;
 
 	/**
 	 * @generated
@@ -78,8 +81,7 @@ public class TestLanguageDiagramEditorPlugin extends AbstractUIPlugin {
 		super.start(context);
 		instance = this;
 		myLogHelper = new LogHelper(this);
-		PreferencesHint.registerPreferenceStore(DIAGRAM_PREFERENCES_HINT,
-				getPreferenceStore());
+		PreferencesHint.registerPreferenceStore(DIAGRAM_PREFERENCES_HINT, getPreferenceStore());
 		adapterFactory = createAdapterFactory();
 	}
 
@@ -115,10 +117,8 @@ public class TestLanguageDiagramEditorPlugin extends AbstractUIPlugin {
 	 * @generated
 	 */
 	protected void fillItemProviderFactories(List<AdapterFactory> factories) {
-		factories
-				.add(new org.muml.testlanguage.provider.TestLanguageItemProviderAdapterFactory());
-		factories
-				.add(new org.muml.testlanguage.specification.provider.SpecificationItemProviderAdapterFactory());
+		factories.add(new TestLanguageItemProviderAdapterFactory());
+		factories.add(new SpecificationItemProviderAdapterFactory());
 		factories.add(new ResourceItemProviderAdapterFactory());
 		factories.add(new ReflectiveItemProviderAdapterFactory());
 	}
@@ -134,11 +134,9 @@ public class TestLanguageDiagramEditorPlugin extends AbstractUIPlugin {
 	 * @generated
 	 */
 	public ImageDescriptor getItemImageDescriptor(Object item) {
-		IItemLabelProvider labelProvider = (IItemLabelProvider) adapterFactory
-				.adapt(item, IItemLabelProvider.class);
+		IItemLabelProvider labelProvider = (IItemLabelProvider) adapterFactory.adapt(item, IItemLabelProvider.class);
 		if (labelProvider != null) {
-			return ExtendedImageRegistry.getInstance().getImageDescriptor(
-					labelProvider.getImage(item));
+			return ExtendedImageRegistry.getInstance().getImageDescriptor(labelProvider.getImage(item));
 		}
 		return null;
 	}
@@ -167,8 +165,8 @@ public class TestLanguageDiagramEditorPlugin extends AbstractUIPlugin {
 	public static ImageDescriptor findImageDescriptor(String path) {
 		final IPath p = new Path(path);
 		if (p.isAbsolute() && p.segmentCount() > 1) {
-			return AbstractUIPlugin.imageDescriptorFromPlugin(p.segment(0), p
-					.removeFirstSegments(1).makeAbsolute().toString());
+			return AbstractUIPlugin.imageDescriptorFromPlugin(p.segment(0),
+					p.removeFirstSegments(1).makeAbsolute().toString());
 		} else {
 			return getBundledImageDescriptor(p.makeAbsolute().toString());
 		}
@@ -203,9 +201,9 @@ public class TestLanguageDiagramEditorPlugin extends AbstractUIPlugin {
 	/**
 	 * @generated
 	 */
-	public org.muml.testlanguage.diagram.part.TestLanguageDocumentProvider getDocumentProvider() {
+	public TestLanguageDocumentProvider getDocumentProvider() {
 		if (documentProvider == null) {
-			documentProvider = new org.muml.testlanguage.diagram.part.TestLanguageDocumentProvider();
+			documentProvider = new TestLanguageDocumentProvider();
 		}
 		return documentProvider;
 	}
@@ -213,30 +211,28 @@ public class TestLanguageDiagramEditorPlugin extends AbstractUIPlugin {
 	/**
 	 * @generated
 	 */
-	public org.muml.testlanguage.diagram.edit.policies.TestLanguageBaseItemSemanticEditPolicy.LinkConstraints getLinkConstraints() {
+	public TestLanguageBaseItemSemanticEditPolicy.LinkConstraints getLinkConstraints() {
 		return linkConstraints;
 	}
 
 	/**
-	 * @generated
-	 */
-	public void setLinkConstraints(
-			org.muml.testlanguage.diagram.edit.policies.TestLanguageBaseItemSemanticEditPolicy.LinkConstraints lc) {
+	* @generated
+	*/
+	public void setLinkConstraints(TestLanguageBaseItemSemanticEditPolicy.LinkConstraints lc) {
 		this.linkConstraints = lc;
 	}
 
 	/**
 	 * @generated
 	 */
-	public org.muml.testlanguage.diagram.providers.ElementInitializers getElementInitializers() {
+	public ElementInitializers getElementInitializers() {
 		return initializers;
 	}
 
 	/**
-	 * @generated
-	 */
-	public void setElementInitializers(
-			org.muml.testlanguage.diagram.providers.ElementInitializers i) {
+	* @generated
+	*/
+	public void setElementInitializers(ElementInitializers i) {
 		this.initializers = i;
 	}
 

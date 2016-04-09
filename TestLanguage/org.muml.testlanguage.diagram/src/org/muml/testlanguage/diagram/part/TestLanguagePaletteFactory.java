@@ -14,8 +14,10 @@ import org.eclipse.gef.palette.ToolEntry;
 import org.eclipse.gmf.runtime.diagram.ui.tools.UnspecifiedTypeCreationTool;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.tooling.runtime.part.DefaultLinkToolEntry;
+import org.muml.testlanguage.diagram.providers.TestLanguageElementTypes;
 import org.muml.testlanguage.specification.NodeSpecification;
 import org.muml.testlanguage.specification.SpecificationFactory;
+import org.muml.testlanguage.specification.custom.SpecificationRegistry;
 
 /**
  * @generated
@@ -35,8 +37,7 @@ public class TestLanguagePaletteFactory {
 	 * @generated
 	 */
 	private PaletteContainer createGeneral1Group() {
-		PaletteGroup paletteContainer = new PaletteGroup(
-				org.muml.testlanguage.diagram.part.Messages.General1Group_title);
+		PaletteGroup paletteContainer = new PaletteGroup(Messages.General1Group_title);
 		paletteContainer.setId("createGeneral1Group"); //$NON-NLS-1$
 		paletteContainer.add(createConnection1CreationTool());
 		return paletteContainer;
@@ -47,27 +48,24 @@ public class TestLanguagePaletteFactory {
 	 * @generated
 	 */
 	private PaletteContainer createNodes2Group() {
-		PaletteGroup paletteContainer = new PaletteGroup(
-				org.muml.testlanguage.diagram.part.Messages.Nodes2Group_title);
+		PaletteGroup paletteContainer = new PaletteGroup(Messages.Nodes2Group_title);
 		paletteContainer.setId("createNodes2Group"); //$NON-NLS-1$
 
-		List<String> specs = org.muml.testlanguage.specification.custom.SpecificationRegistry
-				.getSpecificationClasses();
+		List<String> specs = SpecificationRegistry.getSpecificationClasses();
 		for (String spec : specs) {
 			ArrayList<IElementType> types = new ArrayList<IElementType>(3);
-			types.add(org.muml.testlanguage.diagram.providers.TestLanguageElementTypes.Node_2001);
-			types.add(org.muml.testlanguage.diagram.providers.TestLanguageElementTypes.Input_3001);
-			types.add(org.muml.testlanguage.diagram.providers.TestLanguageElementTypes.Output_3002);
+			types.add(TestLanguageElementTypes.Node_2001);
+			types.add(TestLanguageElementTypes.Input_3001);
+			types.add(TestLanguageElementTypes.Output_3002);
 
 			// Create a NodeSpecification-instance of the given type to get the
 			// label. *cough* A bit of a hack, but EMF won't allow static
 			// members.
 			String label = spec;
 			try {
-				SpecificationFactory fac = org.muml.testlanguage.specification.SpecificationFactory.eINSTANCE;
+				SpecificationFactory fac = SpecificationFactory.eINSTANCE;
 				Method creator = fac.getClass().getMethod("create" + spec);
-				NodeSpecification concSpec = (NodeSpecification) creator
-						.invoke(fac);
+				NodeSpecification concSpec = (NodeSpecification) creator.invoke(fac);
 				concSpec.initialize();
 				label = concSpec.getLabel();
 			} catch (Exception e) {
@@ -78,8 +76,7 @@ public class TestLanguagePaletteFactory {
 			// Create the tool entry.
 			NodeToolEntry entry = new NodeToolEntry(label, spec, types);
 			entry.setId("createNode1" + spec); //$NON-NLS-1$
-			entry.setSmallIcon(org.muml.testlanguage.diagram.providers.TestLanguageElementTypes
-					.getImageDescriptor(org.muml.testlanguage.diagram.providers.TestLanguageElementTypes.Node_2001));
+			entry.setSmallIcon(TestLanguageElementTypes.getImageDescriptor(TestLanguageElementTypes.Node_2001));
 			entry.setLargeIcon(entry.getSmallIcon());
 			entry.setSpecificationClassName(spec);
 			paletteContainer.add(entry);
@@ -91,14 +88,11 @@ public class TestLanguagePaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createConnection1CreationTool() {
-		LinkToolEntry entry = new LinkToolEntry(
-				org.muml.testlanguage.diagram.part.Messages.Connection1CreationTool_title,
-				org.muml.testlanguage.diagram.part.Messages.Connection1CreationTool_desc,
-				Collections
-						.singletonList(org.muml.testlanguage.diagram.providers.TestLanguageElementTypes.OutputTargets_4001));
+		LinkToolEntry entry = new LinkToolEntry(Messages.Connection1CreationTool_title,
+				Messages.Connection1CreationTool_desc,
+				Collections.singletonList(TestLanguageElementTypes.OutputTargets_4001));
 		entry.setId("createConnection1CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(org.muml.testlanguage.diagram.providers.TestLanguageElementTypes
-				.getImageDescriptor(org.muml.testlanguage.diagram.providers.TestLanguageElementTypes.OutputTargets_4001));
+		entry.setSmallIcon(TestLanguageElementTypes.getImageDescriptor(TestLanguageElementTypes.OutputTargets_4001));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -108,16 +102,13 @@ public class TestLanguagePaletteFactory {
 	 */
 	private ToolEntry createNode1CreationTool() {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(3);
-		types.add(org.muml.testlanguage.diagram.providers.TestLanguageElementTypes.Node_2001);
-		types.add(org.muml.testlanguage.diagram.providers.TestLanguageElementTypes.Input_3001);
-		types.add(org.muml.testlanguage.diagram.providers.TestLanguageElementTypes.Output_3002);
-		NodeToolEntry entry = new NodeToolEntry(
-				org.muml.testlanguage.diagram.part.Messages.Node1CreationTool_title,
-				org.muml.testlanguage.diagram.part.Messages.Node1CreationTool_desc,
+		types.add(TestLanguageElementTypes.Node_2001);
+		types.add(TestLanguageElementTypes.Input_3001);
+		types.add(TestLanguageElementTypes.Output_3002);
+		NodeToolEntry entry = new NodeToolEntry(Messages.Node1CreationTool_title, Messages.Node1CreationTool_desc,
 				types);
 		entry.setId("createNode1CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(org.muml.testlanguage.diagram.providers.TestLanguageElementTypes
-				.getImageDescriptor(org.muml.testlanguage.diagram.providers.TestLanguageElementTypes.Node_2001));
+		entry.setSmallIcon(TestLanguageElementTypes.getImageDescriptor(TestLanguageElementTypes.Node_2001));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -141,8 +132,7 @@ public class TestLanguagePaletteFactory {
 		/**
 		 * @generated
 		 */
-		private NodeToolEntry(String title, String description,
-				List<IElementType> elementTypes) {
+		private NodeToolEntry(String title, String description, List<IElementType> elementTypes) {
 			super(title, description, null, null);
 			this.elementTypes = elementTypes;
 		}
@@ -156,8 +146,7 @@ public class TestLanguagePaletteFactory {
 				@Override
 				protected Request createTargetRequest() {
 					Request req = super.createTargetRequest();
-					req.getExtendedData().put("specificationClassName",
-							specificationClassName);
+					req.getExtendedData().put("specificationClassName", specificationClassName);
 					return req;
 				}
 			};
@@ -174,8 +163,7 @@ public class TestLanguagePaletteFactory {
 		/**
 		 * @generated
 		 */
-		private LinkToolEntry(String title, String description,
-				List<IElementType> elementTypes) {
+		private LinkToolEntry(String title, String description, List<IElementType> elementTypes) {
 			super(title, description, elementTypes);
 		}
 	}

@@ -6,15 +6,13 @@ import org.eclipse.gmf.tooling.runtime.providers.DefaultElementTypeIconProvider;
 /**
  * @generated
  */
-public class TestLanguageIconProvider extends DefaultElementTypeIconProvider
-		implements IIconProvider {
+public class TestLanguageIconProvider extends DefaultElementTypeIconProvider implements IIconProvider {
 
 	/**
 	 * @generated
 	 */
 	public TestLanguageIconProvider() {
-		super(
-				org.muml.testlanguage.diagram.providers.TestLanguageElementTypes.TYPED_INSTANCE);
+		super(TestLanguageElementTypes.TYPED_INSTANCE);
 	}
 
 }

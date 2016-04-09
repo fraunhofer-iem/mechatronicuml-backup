@@ -22,12 +22,19 @@ import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.ui.IMemento;
 import org.eclipse.ui.navigator.ICommonContentExtensionSite;
 import org.eclipse.ui.navigator.ICommonContentProvider;
+import org.muml.testlanguage.diagram.edit.parts.InputEditPart;
+import org.muml.testlanguage.diagram.edit.parts.NodeEditPart;
+import org.muml.testlanguage.diagram.edit.parts.NodeNodeFigureCompartmentEditPart;
+import org.muml.testlanguage.diagram.edit.parts.OutputEditPart;
+import org.muml.testlanguage.diagram.edit.parts.OutputTargetsEditPart;
+import org.muml.testlanguage.diagram.edit.parts.TestCaseEditPart;
+import org.muml.testlanguage.diagram.part.Messages;
+import org.muml.testlanguage.diagram.part.TestLanguageVisualIDRegistry;
 
 /**
  * @generated
  */
-public class TestLanguageNavigatorContentProvider implements
-		ICommonContentProvider {
+public class TestLanguageNavigatorContentProvider implements ICommonContentProvider {
 
 	/**
 	 * @generated
@@ -59,8 +66,7 @@ public class TestLanguageNavigatorContentProvider implements
 	 */
 	@SuppressWarnings({ "unchecked", "serial", "rawtypes" })
 	public TestLanguageNavigatorContentProvider() {
-		TransactionalEditingDomain editingDomain = GMFEditingDomainFactory.INSTANCE
-				.createEditingDomain();
+		TransactionalEditingDomain editingDomain = GMFEditingDomainFactory.INSTANCE.createEditingDomain();
 		myEditingDomain = (AdapterFactoryEditingDomain) editingDomain;
 		myEditingDomain.setResourceToReadOnlyMap(new HashMap() {
 			public Object get(Object key) {
@@ -77,30 +83,28 @@ public class TestLanguageNavigatorContentProvider implements
 				}
 			}
 		};
-		myWorkspaceSynchronizer = new WorkspaceSynchronizer(editingDomain,
-				new WorkspaceSynchronizer.Delegate() {
-					public void dispose() {
-					}
+		myWorkspaceSynchronizer = new WorkspaceSynchronizer(editingDomain, new WorkspaceSynchronizer.Delegate() {
+			public void dispose() {
+			}
 
-					public boolean handleResourceChanged(final Resource resource) {
-						unloadAllResources();
-						asyncRefresh();
-						return true;
-					}
+			public boolean handleResourceChanged(final Resource resource) {
+				unloadAllResources();
+				asyncRefresh();
+				return true;
+			}
 
-					public boolean handleResourceDeleted(Resource resource) {
-						unloadAllResources();
-						asyncRefresh();
-						return true;
-					}
+			public boolean handleResourceDeleted(Resource resource) {
+				unloadAllResources();
+				asyncRefresh();
+				return true;
+			}
 
-					public boolean handleResourceMoved(Resource resource,
-							final URI newURI) {
-						unloadAllResources();
-						asyncRefresh();
-						return true;
-					}
-				});
+			public boolean handleResourceMoved(Resource resource, final URI newURI) {
+				unloadAllResources();
+				asyncRefresh();
+				return true;
+			}
+		});
 	}
 
 	/**
@@ -127,8 +131,7 @@ public class TestLanguageNavigatorContentProvider implements
 	 * @generated
 	 */
 	void unloadAllResources() {
-		for (Resource nextResource : myEditingDomain.getResourceSet()
-				.getResources()) {
+		for (Resource nextResource : myEditingDomain.getResourceSet().getResources()) {
 			nextResource.unload();
 		}
 	}
@@ -138,8 +141,7 @@ public class TestLanguageNavigatorContentProvider implements
 	 */
 	void asyncRefresh() {
 		if (myViewer != null && !myViewer.getControl().isDisposed()) {
-			myViewer.getControl().getDisplay()
-					.asyncExec(myViewerRefreshRunnable);
+			myViewer.getControl().getDisplay().asyncExec(myViewerRefreshRunnable);
 		}
 	}
 
@@ -174,33 +176,26 @@ public class TestLanguageNavigatorContentProvider implements
 	public Object[] getChildren(Object parentElement) {
 		if (parentElement instanceof IFile) {
 			IFile file = (IFile) parentElement;
-			URI fileURI = URI.createPlatformResourceURI(file.getFullPath()
-					.toString(), true);
-			Resource resource = myEditingDomain.getResourceSet().getResource(
-					fileURI, true);
-			ArrayList<org.muml.testlanguage.diagram.navigator.TestLanguageNavigatorItem> result = new ArrayList<org.muml.testlanguage.diagram.navigator.TestLanguageNavigatorItem>();
-			ArrayList<View> topViews = new ArrayList<View>(resource
-					.getContents().size());
+			URI fileURI = URI.createPlatformResourceURI(file.getFullPath().toString(), true);
+			Resource resource = myEditingDomain.getResourceSet().getResource(fileURI, true);
+			ArrayList<TestLanguageNavigatorItem> result = new ArrayList<TestLanguageNavigatorItem>();
+			ArrayList<View> topViews = new ArrayList<View>(resource.getContents().size());
 			for (EObject o : resource.getContents()) {
 				if (o instanceof View) {
 					topViews.add((View) o);
 				}
 			}
-			result.addAll(createNavigatorItems(
-					selectViewsByType(
-							topViews,
-							org.muml.testlanguage.diagram.edit.parts.TestCaseEditPart.MODEL_ID),
-					file, false));
+			result.addAll(createNavigatorItems(selectViewsByType(topViews, TestCaseEditPart.MODEL_ID), file, false));
 			return result.toArray();
 		}
 
-		if (parentElement instanceof org.muml.testlanguage.diagram.navigator.TestLanguageNavigatorGroup) {
-			org.muml.testlanguage.diagram.navigator.TestLanguageNavigatorGroup group = (org.muml.testlanguage.diagram.navigator.TestLanguageNavigatorGroup) parentElement;
+		if (parentElement instanceof TestLanguageNavigatorGroup) {
+			TestLanguageNavigatorGroup group = (TestLanguageNavigatorGroup) parentElement;
 			return group.getChildren();
 		}
 
-		if (parentElement instanceof org.muml.testlanguage.diagram.navigator.TestLanguageNavigatorItem) {
-			org.muml.testlanguage.diagram.navigator.TestLanguageNavigatorItem navigatorItem = (org.muml.testlanguage.diagram.navigator.TestLanguageNavigatorItem) parentElement;
+		if (parentElement instanceof TestLanguageNavigatorItem) {
+			TestLanguageNavigatorItem navigatorItem = (TestLanguageNavigatorItem) parentElement;
 			if (navigatorItem.isLeaf() || !isOwnView(navigatorItem.getView())) {
 				return EMPTY_ARRAY;
 			}
@@ -214,26 +209,19 @@ public class TestLanguageNavigatorContentProvider implements
 	 * @generated
 	 */
 	private Object[] getViewChildren(View view, Object parentElement) {
-		switch (org.muml.testlanguage.diagram.part.TestLanguageVisualIDRegistry
-				.getVisualID(view)) {
+		switch (TestLanguageVisualIDRegistry.getVisualID(view)) {
 
-		case org.muml.testlanguage.diagram.edit.parts.TestCaseEditPart.VISUAL_ID: {
-			LinkedList<org.muml.testlanguage.diagram.navigator.TestLanguageAbstractNavigatorItem> result = new LinkedList<org.muml.testlanguage.diagram.navigator.TestLanguageAbstractNavigatorItem>();
+		case TestCaseEditPart.VISUAL_ID: {
+			LinkedList<TestLanguageAbstractNavigatorItem> result = new LinkedList<TestLanguageAbstractNavigatorItem>();
 			Diagram sv = (Diagram) view;
-			org.muml.testlanguage.diagram.navigator.TestLanguageNavigatorGroup links = new org.muml.testlanguage.diagram.navigator.TestLanguageNavigatorGroup(
-					org.muml.testlanguage.diagram.part.Messages.NavigatorGroupName_TestCase_1000_links,
-					"icons/linksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			TestLanguageNavigatorGroup links = new TestLanguageNavigatorGroup(
+					Messages.NavigatorGroupName_TestCase_1000_links, "icons/linksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
-			connectedViews = getChildrenByType(
-					Collections.singleton(sv),
-					org.muml.testlanguage.diagram.part.TestLanguageVisualIDRegistry
-							.getType(org.muml.testlanguage.diagram.edit.parts.NodeEditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement,
-					false));
-			connectedViews = getDiagramLinksByType(
-					Collections.singleton(sv),
-					org.muml.testlanguage.diagram.part.TestLanguageVisualIDRegistry
-							.getType(org.muml.testlanguage.diagram.edit.parts.OutputTargetsEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(Collections.singleton(sv),
+					TestLanguageVisualIDRegistry.getType(NodeEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+			connectedViews = getDiagramLinksByType(Collections.singleton(sv),
+					TestLanguageVisualIDRegistry.getType(OutputTargetsEditPart.VISUAL_ID));
 			links.addChildren(createNavigatorItems(connectedViews, links, false));
 			if (!links.isEmpty()) {
 				result.add(links);
@@ -241,93 +229,71 @@ public class TestLanguageNavigatorContentProvider implements
 			return result.toArray();
 		}
 
-		case org.muml.testlanguage.diagram.edit.parts.NodeEditPart.VISUAL_ID: {
-			LinkedList<org.muml.testlanguage.diagram.navigator.TestLanguageAbstractNavigatorItem> result = new LinkedList<org.muml.testlanguage.diagram.navigator.TestLanguageAbstractNavigatorItem>();
+		case NodeEditPart.VISUAL_ID: {
+			LinkedList<TestLanguageAbstractNavigatorItem> result = new LinkedList<TestLanguageAbstractNavigatorItem>();
 			Node sv = (Node) view;
 			Collection<View> connectedViews;
-			connectedViews = getChildrenByType(
-					Collections.singleton(sv),
-					org.muml.testlanguage.diagram.part.TestLanguageVisualIDRegistry
-							.getType(org.muml.testlanguage.diagram.edit.parts.NodeNodeFigureCompartmentEditPart.VISUAL_ID));
-			connectedViews = getChildrenByType(
-					connectedViews,
-					org.muml.testlanguage.diagram.part.TestLanguageVisualIDRegistry
-							.getType(org.muml.testlanguage.diagram.edit.parts.InputEditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement,
-					false));
-			connectedViews = getChildrenByType(
-					Collections.singleton(sv),
-					org.muml.testlanguage.diagram.part.TestLanguageVisualIDRegistry
-							.getType(org.muml.testlanguage.diagram.edit.parts.NodeNodeFigureCompartmentEditPart.VISUAL_ID));
-			connectedViews = getChildrenByType(
-					connectedViews,
-					org.muml.testlanguage.diagram.part.TestLanguageVisualIDRegistry
-							.getType(org.muml.testlanguage.diagram.edit.parts.OutputEditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement,
-					false));
+			connectedViews = getChildrenByType(Collections.singleton(sv),
+					TestLanguageVisualIDRegistry.getType(NodeNodeFigureCompartmentEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(connectedViews,
+					TestLanguageVisualIDRegistry.getType(InputEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+			connectedViews = getChildrenByType(Collections.singleton(sv),
+					TestLanguageVisualIDRegistry.getType(NodeNodeFigureCompartmentEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(connectedViews,
+					TestLanguageVisualIDRegistry.getType(OutputEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			return result.toArray();
 		}
 
-		case org.muml.testlanguage.diagram.edit.parts.InputEditPart.VISUAL_ID: {
-			LinkedList<org.muml.testlanguage.diagram.navigator.TestLanguageAbstractNavigatorItem> result = new LinkedList<org.muml.testlanguage.diagram.navigator.TestLanguageAbstractNavigatorItem>();
+		case InputEditPart.VISUAL_ID: {
+			LinkedList<TestLanguageAbstractNavigatorItem> result = new LinkedList<TestLanguageAbstractNavigatorItem>();
 			Node sv = (Node) view;
-			org.muml.testlanguage.diagram.navigator.TestLanguageNavigatorGroup incominglinks = new org.muml.testlanguage.diagram.navigator.TestLanguageNavigatorGroup(
-					org.muml.testlanguage.diagram.part.Messages.NavigatorGroupName_Input_3001_incominglinks,
-					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			TestLanguageNavigatorGroup incominglinks = new TestLanguageNavigatorGroup(
+					Messages.NavigatorGroupName_Input_3001_incominglinks, "icons/incomingLinksNavigatorGroup.gif", //$NON-NLS-1$
+					parentElement);
 			Collection<View> connectedViews;
-			connectedViews = getIncomingLinksByType(
-					Collections.singleton(sv),
-					org.muml.testlanguage.diagram.part.TestLanguageVisualIDRegistry
-							.getType(org.muml.testlanguage.diagram.edit.parts.OutputTargetsEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
+			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
+					TestLanguageVisualIDRegistry.getType(OutputTargetsEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
 			if (!incominglinks.isEmpty()) {
 				result.add(incominglinks);
 			}
 			return result.toArray();
 		}
 
-		case org.muml.testlanguage.diagram.edit.parts.OutputEditPart.VISUAL_ID: {
-			LinkedList<org.muml.testlanguage.diagram.navigator.TestLanguageAbstractNavigatorItem> result = new LinkedList<org.muml.testlanguage.diagram.navigator.TestLanguageAbstractNavigatorItem>();
+		case OutputEditPart.VISUAL_ID: {
+			LinkedList<TestLanguageAbstractNavigatorItem> result = new LinkedList<TestLanguageAbstractNavigatorItem>();
 			Node sv = (Node) view;
-			org.muml.testlanguage.diagram.navigator.TestLanguageNavigatorGroup outgoinglinks = new org.muml.testlanguage.diagram.navigator.TestLanguageNavigatorGroup(
-					org.muml.testlanguage.diagram.part.Messages.NavigatorGroupName_Output_3002_outgoinglinks,
-					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			TestLanguageNavigatorGroup outgoinglinks = new TestLanguageNavigatorGroup(
+					Messages.NavigatorGroupName_Output_3002_outgoinglinks, "icons/outgoingLinksNavigatorGroup.gif", //$NON-NLS-1$
+					parentElement);
 			Collection<View> connectedViews;
-			connectedViews = getOutgoingLinksByType(
-					Collections.singleton(sv),
-					org.muml.testlanguage.diagram.part.TestLanguageVisualIDRegistry
-							.getType(org.muml.testlanguage.diagram.edit.parts.OutputTargetsEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
+			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
+					TestLanguageVisualIDRegistry.getType(OutputTargetsEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
 			if (!outgoinglinks.isEmpty()) {
 				result.add(outgoinglinks);
 			}
 			return result.toArray();
 		}
 
-		case org.muml.testlanguage.diagram.edit.parts.OutputTargetsEditPart.VISUAL_ID: {
-			LinkedList<org.muml.testlanguage.diagram.navigator.TestLanguageAbstractNavigatorItem> result = new LinkedList<org.muml.testlanguage.diagram.navigator.TestLanguageAbstractNavigatorItem>();
+		case OutputTargetsEditPart.VISUAL_ID: {
+			LinkedList<TestLanguageAbstractNavigatorItem> result = new LinkedList<TestLanguageAbstractNavigatorItem>();
 			Edge sv = (Edge) view;
-			org.muml.testlanguage.diagram.navigator.TestLanguageNavigatorGroup target = new org.muml.testlanguage.diagram.navigator.TestLanguageNavigatorGroup(
-					org.muml.testlanguage.diagram.part.Messages.NavigatorGroupName_OutputTargets_4001_target,
-					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			org.muml.testlanguage.diagram.navigator.TestLanguageNavigatorGroup source = new org.muml.testlanguage.diagram.navigator.TestLanguageNavigatorGroup(
-					org.muml.testlanguage.diagram.part.Messages.NavigatorGroupName_OutputTargets_4001_source,
-					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			TestLanguageNavigatorGroup target = new TestLanguageNavigatorGroup(
+					Messages.NavigatorGroupName_OutputTargets_4001_target, "icons/linkTargetNavigatorGroup.gif", //$NON-NLS-1$
+					parentElement);
+			TestLanguageNavigatorGroup source = new TestLanguageNavigatorGroup(
+					Messages.NavigatorGroupName_OutputTargets_4001_source, "icons/linkSourceNavigatorGroup.gif", //$NON-NLS-1$
+					parentElement);
 			Collection<View> connectedViews;
-			connectedViews = getLinksTargetByType(
-					Collections.singleton(sv),
-					org.muml.testlanguage.diagram.part.TestLanguageVisualIDRegistry
-							.getType(org.muml.testlanguage.diagram.edit.parts.InputEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
-			connectedViews = getLinksSourceByType(
-					Collections.singleton(sv),
-					org.muml.testlanguage.diagram.part.TestLanguageVisualIDRegistry
-							.getType(org.muml.testlanguage.diagram.edit.parts.OutputEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
+			connectedViews = getLinksTargetByType(Collections.singleton(sv),
+					TestLanguageVisualIDRegistry.getType(InputEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target, true));
+			connectedViews = getLinksSourceByType(Collections.singleton(sv),
+					TestLanguageVisualIDRegistry.getType(OutputEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			if (!target.isEmpty()) {
 				result.add(target);
 			}
@@ -343,13 +309,11 @@ public class TestLanguageNavigatorContentProvider implements
 	/**
 	 * @generated
 	 */
-	private Collection<View> getLinksSourceByType(Collection<Edge> edges,
-			String type) {
+	private Collection<View> getLinksSourceByType(Collection<Edge> edges, String type) {
 		LinkedList<View> result = new LinkedList<View>();
 		for (Edge nextEdge : edges) {
 			View nextEdgeSource = nextEdge.getSource();
-			if (type.equals(nextEdgeSource.getType())
-					&& isOwnView(nextEdgeSource)) {
+			if (type.equals(nextEdgeSource.getType()) && isOwnView(nextEdgeSource)) {
 				result.add(nextEdgeSource);
 			}
 		}
@@ -359,13 +323,11 @@ public class TestLanguageNavigatorContentProvider implements
 	/**
 	 * @generated
 	 */
-	private Collection<View> getLinksTargetByType(Collection<Edge> edges,
-			String type) {
+	private Collection<View> getLinksTargetByType(Collection<Edge> edges, String type) {
 		LinkedList<View> result = new LinkedList<View>();
 		for (Edge nextEdge : edges) {
 			View nextEdgeTarget = nextEdge.getTarget();
-			if (type.equals(nextEdgeTarget.getType())
-					&& isOwnView(nextEdgeTarget)) {
+			if (type.equals(nextEdgeTarget.getType()) && isOwnView(nextEdgeTarget)) {
 				result.add(nextEdgeTarget);
 			}
 		}
@@ -375,8 +337,7 @@ public class TestLanguageNavigatorContentProvider implements
 	/**
 	 * @generated
 	 */
-	private Collection<View> getOutgoingLinksByType(
-			Collection<? extends View> nodes, String type) {
+	private Collection<View> getOutgoingLinksByType(Collection<? extends View> nodes, String type) {
 		LinkedList<View> result = new LinkedList<View>();
 		for (View nextNode : nodes) {
 			result.addAll(selectViewsByType(nextNode.getSourceEdges(), type));
@@ -387,8 +348,7 @@ public class TestLanguageNavigatorContentProvider implements
 	/**
 	 * @generated
 	 */
-	private Collection<View> getIncomingLinksByType(
-			Collection<? extends View> nodes, String type) {
+	private Collection<View> getIncomingLinksByType(Collection<? extends View> nodes, String type) {
 		LinkedList<View> result = new LinkedList<View>();
 		for (View nextNode : nodes) {
 			result.addAll(selectViewsByType(nextNode.getTargetEdges(), type));
@@ -399,8 +359,7 @@ public class TestLanguageNavigatorContentProvider implements
 	/**
 	 * @generated
 	 */
-	private Collection<View> getChildrenByType(
-			Collection<? extends View> nodes, String type) {
+	private Collection<View> getChildrenByType(Collection<? extends View> nodes, String type) {
 		LinkedList<View> result = new LinkedList<View>();
 		for (View nextNode : nodes) {
 			result.addAll(selectViewsByType(nextNode.getChildren(), type));
@@ -411,8 +370,7 @@ public class TestLanguageNavigatorContentProvider implements
 	/**
 	 * @generated
 	 */
-	private Collection<View> getDiagramLinksByType(
-			Collection<Diagram> diagrams, String type) {
+	private Collection<View> getDiagramLinksByType(Collection<Diagram> diagrams, String type) {
 		ArrayList<View> result = new ArrayList<View>();
 		for (Diagram nextDiagram : diagrams) {
 			result.addAll(selectViewsByType(nextDiagram.getEdges(), type));
@@ -424,8 +382,7 @@ public class TestLanguageNavigatorContentProvider implements
 	/**
 	 * @generated
 	 */
-	private Collection<View> selectViewsByType(Collection<View> views,
-			String type) {
+	private Collection<View> selectViewsByType(Collection<View> views, String type) {
 		ArrayList<View> result = new ArrayList<View>();
 		for (View nextView : views) {
 			if (type.equals(nextView.getType()) && isOwnView(nextView)) {
@@ -439,21 +396,17 @@ public class TestLanguageNavigatorContentProvider implements
 	 * @generated
 	 */
 	private boolean isOwnView(View view) {
-		return org.muml.testlanguage.diagram.edit.parts.TestCaseEditPart.MODEL_ID
-				.equals(org.muml.testlanguage.diagram.part.TestLanguageVisualIDRegistry
-						.getModelID(view));
+		return TestCaseEditPart.MODEL_ID.equals(TestLanguageVisualIDRegistry.getModelID(view));
 	}
 
 	/**
 	 * @generated
 	 */
-	private Collection<org.muml.testlanguage.diagram.navigator.TestLanguageNavigatorItem> createNavigatorItems(
-			Collection<View> views, Object parent, boolean isLeafs) {
-		ArrayList<org.muml.testlanguage.diagram.navigator.TestLanguageNavigatorItem> result = new ArrayList<org.muml.testlanguage.diagram.navigator.TestLanguageNavigatorItem>(
-				views.size());
+	private Collection<TestLanguageNavigatorItem> createNavigatorItems(Collection<View> views, Object parent,
+			boolean isLeafs) {
+		ArrayList<TestLanguageNavigatorItem> result = new ArrayList<TestLanguageNavigatorItem>(views.size());
 		for (View nextView : views) {
-			result.add(new org.muml.testlanguage.diagram.navigator.TestLanguageNavigatorItem(
-					nextView, parent, isLeafs));
+			result.add(new TestLanguageNavigatorItem(nextView, parent, isLeafs));
 		}
 		return result;
 	}
@@ -462,8 +415,8 @@ public class TestLanguageNavigatorContentProvider implements
 	 * @generated
 	 */
 	public Object getParent(Object element) {
-		if (element instanceof org.muml.testlanguage.diagram.navigator.TestLanguageAbstractNavigatorItem) {
-			org.muml.testlanguage.diagram.navigator.TestLanguageAbstractNavigatorItem abstractNavigatorItem = (org.muml.testlanguage.diagram.navigator.TestLanguageAbstractNavigatorItem) element;
+		if (element instanceof TestLanguageAbstractNavigatorItem) {
+			TestLanguageAbstractNavigatorItem abstractNavigatorItem = (TestLanguageAbstractNavigatorItem) element;
 			return abstractNavigatorItem.getParent();
 		}
 		return null;

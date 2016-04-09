@@ -6,9 +6,7 @@ import java.util.LinkedList;
 /**
  * @generated
  */
-public class TestLanguageNavigatorGroup
-		extends
-		org.muml.testlanguage.diagram.navigator.TestLanguageAbstractNavigatorItem {
+public class TestLanguageNavigatorGroup extends TestLanguageAbstractNavigatorItem {
 
 	/**
 	 * @generated

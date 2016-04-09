@@ -9,33 +9,28 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class TestLanguageNavigatorItem
-		extends
-		org.muml.testlanguage.diagram.navigator.TestLanguageAbstractNavigatorItem {
+public class TestLanguageNavigatorItem extends TestLanguageAbstractNavigatorItem {
 
 	/**
 	 * @generated
 	 */
 	static {
 		final Class[] supportedTypes = new Class[] { View.class, EObject.class };
-		Platform.getAdapterManager().registerAdapters(
-				new IAdapterFactory() {
+		Platform.getAdapterManager().registerAdapters(new IAdapterFactory() {
 
-					public Object getAdapter(Object adaptableObject,
-							Class adapterType) {
-						if (adaptableObject instanceof org.muml.testlanguage.diagram.navigator.TestLanguageNavigatorItem
-								&& (adapterType == View.class || adapterType == EObject.class)) {
-							return ((org.muml.testlanguage.diagram.navigator.TestLanguageNavigatorItem) adaptableObject)
-									.getView();
-						}
-						return null;
-					}
+			public Object getAdapter(Object adaptableObject, Class adapterType) {
+				if (adaptableObject instanceof org.muml.testlanguage.diagram.navigator.TestLanguageNavigatorItem
+						&& (adapterType == View.class || adapterType == EObject.class)) {
+					return ((org.muml.testlanguage.diagram.navigator.TestLanguageNavigatorItem) adaptableObject)
+							.getView();
+				}
+				return null;
+			}
 
-					public Class[] getAdapterList() {
-						return supportedTypes;
-					}
-				},
-				org.muml.testlanguage.diagram.navigator.TestLanguageNavigatorItem.class);
+			public Class[] getAdapterList() {
+				return supportedTypes;
+			}
+		}, org.muml.testlanguage.diagram.navigator.TestLanguageNavigatorItem.class);
 	}
 
 	/**
@@ -76,11 +71,8 @@ public class TestLanguageNavigatorItem
 	 */
 	public boolean equals(Object obj) {
 		if (obj instanceof org.muml.testlanguage.diagram.navigator.TestLanguageNavigatorItem) {
-			return EcoreUtil
-					.getURI(getView())
-					.equals(EcoreUtil
-							.getURI(((org.muml.testlanguage.diagram.navigator.TestLanguageNavigatorItem) obj)
-									.getView()));
+			return EcoreUtil.getURI(getView()).equals(EcoreUtil
+					.getURI(((org.muml.testlanguage.diagram.navigator.TestLanguageNavigatorItem) obj).getView()));
 		}
 		return super.equals(obj);
 	}

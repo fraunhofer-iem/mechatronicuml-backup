@@ -28,6 +28,15 @@ import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.update.UpdaterLinkDescriptor;
+import org.muml.testlanguage.TestLanguagePackage;
+import org.muml.testlanguage.diagram.edit.parts.InputEditPart;
+import org.muml.testlanguage.diagram.edit.parts.NodeEditPart;
+import org.muml.testlanguage.diagram.edit.parts.OutputEditPart;
+import org.muml.testlanguage.diagram.edit.parts.TestCaseEditPart;
+import org.muml.testlanguage.diagram.part.TestLanguageDiagramUpdater;
+import org.muml.testlanguage.diagram.part.TestLanguageLinkDescriptor;
+import org.muml.testlanguage.diagram.part.TestLanguageNodeDescriptor;
+import org.muml.testlanguage.diagram.part.TestLanguageVisualIDRegistry;
 
 /**
  * @generated
@@ -50,8 +59,7 @@ public class TestCaseCanonicalEditPolicy extends CanonicalEditPolicy {
 	 * @generated
 	 */
 	protected EStructuralFeature getFeatureToSynchronize() {
-		return org.muml.testlanguage.TestLanguagePackage.eINSTANCE
-				.getTestCase_Nodes();
+		return TestLanguagePackage.eINSTANCE.getTestCase_Nodes();
 	}
 
 	/**
@@ -61,9 +69,9 @@ public class TestCaseCanonicalEditPolicy extends CanonicalEditPolicy {
 	protected List getSemanticChildrenList() {
 		View viewObject = (View) getHost().getModel();
 		LinkedList<EObject> result = new LinkedList<EObject>();
-		List<org.muml.testlanguage.diagram.part.TestLanguageNodeDescriptor> childDescriptors = org.muml.testlanguage.diagram.part.TestLanguageDiagramUpdater
+		List<TestLanguageNodeDescriptor> childDescriptors = TestLanguageDiagramUpdater
 				.getTestCase_1000SemanticChildren(viewObject);
-		for (org.muml.testlanguage.diagram.part.TestLanguageNodeDescriptor d : childDescriptors) {
+		for (TestLanguageNodeDescriptor d : childDescriptors) {
 			result.add(d.getModelElement());
 		}
 		return result;
@@ -72,18 +80,15 @@ public class TestCaseCanonicalEditPolicy extends CanonicalEditPolicy {
 	/**
 	 * @generated
 	 */
-	protected boolean isOrphaned(Collection<EObject> semanticChildren,
-			final View view) {
-		return isMyDiagramElement(view)
-				&& !semanticChildren.contains(view.getElement());
+	protected boolean isOrphaned(Collection<EObject> semanticChildren, final View view) {
+		return isMyDiagramElement(view) && !semanticChildren.contains(view.getElement());
 	}
 
 	/**
 	 * @generated
 	 */
 	private boolean isMyDiagramElement(View view) {
-		return org.muml.testlanguage.diagram.edit.parts.NodeEditPart.VISUAL_ID == org.muml.testlanguage.diagram.part.TestLanguageVisualIDRegistry
-				.getVisualID(view);
+		return NodeEditPart.VISUAL_ID == TestLanguageVisualIDRegistry.getVisualID(view);
 	}
 
 	/**
@@ -94,7 +99,7 @@ public class TestCaseCanonicalEditPolicy extends CanonicalEditPolicy {
 			return;
 		}
 		LinkedList<IAdaptable> createdViews = new LinkedList<IAdaptable>();
-		List<org.muml.testlanguage.diagram.part.TestLanguageNodeDescriptor> childDescriptors = org.muml.testlanguage.diagram.part.TestLanguageDiagramUpdater
+		List<TestLanguageNodeDescriptor> childDescriptors = TestLanguageDiagramUpdater
 				.getTestCase_1000SemanticChildren((View) getHost().getModel());
 		LinkedList<View> orphaned = new LinkedList<View>();
 		// we care to check only views we recognize as ours
@@ -109,12 +114,10 @@ public class TestCaseCanonicalEditPolicy extends CanonicalEditPolicy {
 		// iteration happens over list of desired semantic elements, trying to find best matching View, while original CEP
 		// iterates views, potentially losing view (size/bounds) information - i.e. if there are few views to reference same EObject, only last one 
 		// to answer isOrphaned == true will be used for the domain element representation, see #cleanCanonicalSemanticChildren()
-		for (Iterator<org.muml.testlanguage.diagram.part.TestLanguageNodeDescriptor> descriptorsIterator = childDescriptors
-				.iterator(); descriptorsIterator.hasNext();) {
-			org.muml.testlanguage.diagram.part.TestLanguageNodeDescriptor next = descriptorsIterator
-					.next();
-			String hint = org.muml.testlanguage.diagram.part.TestLanguageVisualIDRegistry
-					.getType(next.getVisualID());
+		for (Iterator<TestLanguageNodeDescriptor> descriptorsIterator = childDescriptors.iterator(); descriptorsIterator
+				.hasNext();) {
+			TestLanguageNodeDescriptor next = descriptorsIterator.next();
+			String hint = TestLanguageVisualIDRegistry.getType(next.getVisualID());
 			LinkedList<View> perfectMatch = new LinkedList<View>(); // both semanticElement and hint match that of NodeDescriptor
 			for (View childView : getViewChildren()) {
 				EObject semanticElement = childView.getElement();
@@ -139,14 +142,11 @@ public class TestCaseCanonicalEditPolicy extends CanonicalEditPolicy {
 		//
 		ArrayList<CreateViewRequest.ViewDescriptor> viewDescriptors = new ArrayList<CreateViewRequest.ViewDescriptor>(
 				childDescriptors.size());
-		for (org.muml.testlanguage.diagram.part.TestLanguageNodeDescriptor next : childDescriptors) {
-			String hint = org.muml.testlanguage.diagram.part.TestLanguageVisualIDRegistry
-					.getType(next.getVisualID());
-			IAdaptable elementAdapter = new CanonicalElementAdapter(
-					next.getModelElement(), hint);
-			CreateViewRequest.ViewDescriptor descriptor = new CreateViewRequest.ViewDescriptor(
-					elementAdapter, Node.class, hint, ViewUtil.APPEND, false,
-					host().getDiagramPreferencesHint());
+		for (TestLanguageNodeDescriptor next : childDescriptors) {
+			String hint = TestLanguageVisualIDRegistry.getType(next.getVisualID());
+			IAdaptable elementAdapter = new CanonicalElementAdapter(next.getModelElement(), hint);
+			CreateViewRequest.ViewDescriptor descriptor = new CreateViewRequest.ViewDescriptor(elementAdapter,
+					Node.class, hint, ViewUtil.APPEND, false, host().getDiagramPreferencesHint());
 			viewDescriptors.add(descriptor);
 		}
 
@@ -155,10 +155,10 @@ public class TestCaseCanonicalEditPolicy extends CanonicalEditPolicy {
 		CreateViewRequest request = getCreateViewRequest(viewDescriptors);
 		Command cmd = getCreateViewCommand(request);
 		if (cmd != null && cmd.canExecute()) {
-			SetViewMutabilityCommand.makeMutable(
-					new EObjectAdapter(host().getNotationView())).execute();
+			SetViewMutabilityCommand.makeMutable(new EObjectAdapter(host().getNotationView())).execute();
 			executeCommand(cmd);
 			@SuppressWarnings("unchecked")
+
 			List<IAdaptable> nl = (List<IAdaptable>) request.getNewObject();
 			createdViews.addAll(nl);
 		}
@@ -170,8 +170,8 @@ public class TestCaseCanonicalEditPolicy extends CanonicalEditPolicy {
 
 		if (createdViews.size() > 1) {
 			// perform a layout of the container
-			DeferredLayoutCommand layoutCmd = new DeferredLayoutCommand(host()
-					.getEditingDomain(), createdViews, host());
+			DeferredLayoutCommand layoutCmd = new DeferredLayoutCommand(host().getEditingDomain(), createdViews,
+					host());
 			executeCommand(new ICommandProxy(layoutCmd));
 		}
 
@@ -185,17 +185,13 @@ public class TestCaseCanonicalEditPolicy extends CanonicalEditPolicy {
 	 */
 	private Collection<IAdaptable> refreshConnections() {
 		Domain2Notation domain2NotationMap = new Domain2Notation();
-		Collection<org.muml.testlanguage.diagram.part.TestLanguageLinkDescriptor> linkDescriptors = collectAllLinks(
-				getDiagram(), domain2NotationMap);
+		Collection<TestLanguageLinkDescriptor> linkDescriptors = collectAllLinks(getDiagram(), domain2NotationMap);
 		Collection existingLinks = new LinkedList(getDiagram().getEdges());
-		for (Iterator linksIterator = existingLinks.iterator(); linksIterator
-				.hasNext();) {
+		for (Iterator linksIterator = existingLinks.iterator(); linksIterator.hasNext();) {
 			Edge nextDiagramLink = (Edge) linksIterator.next();
-			int diagramLinkVisualID = org.muml.testlanguage.diagram.part.TestLanguageVisualIDRegistry
-					.getVisualID(nextDiagramLink);
+			int diagramLinkVisualID = TestLanguageVisualIDRegistry.getVisualID(nextDiagramLink);
 			if (diagramLinkVisualID == -1) {
-				if (nextDiagramLink.getSource() != null
-						&& nextDiagramLink.getTarget() != null) {
+				if (nextDiagramLink.getSource() != null && nextDiagramLink.getTarget() != null) {
 					linksIterator.remove();
 				}
 				continue;
@@ -203,16 +199,13 @@ public class TestCaseCanonicalEditPolicy extends CanonicalEditPolicy {
 			EObject diagramLinkObject = nextDiagramLink.getElement();
 			EObject diagramLinkSrc = nextDiagramLink.getSource().getElement();
 			EObject diagramLinkDst = nextDiagramLink.getTarget().getElement();
-			for (Iterator<org.muml.testlanguage.diagram.part.TestLanguageLinkDescriptor> linkDescriptorsIterator = linkDescriptors
+			for (Iterator<TestLanguageLinkDescriptor> linkDescriptorsIterator = linkDescriptors
 					.iterator(); linkDescriptorsIterator.hasNext();) {
-				org.muml.testlanguage.diagram.part.TestLanguageLinkDescriptor nextLinkDescriptor = linkDescriptorsIterator
-						.next();
+				TestLanguageLinkDescriptor nextLinkDescriptor = linkDescriptorsIterator.next();
 				if (diagramLinkObject == nextLinkDescriptor.getModelElement()
 						&& diagramLinkSrc == nextLinkDescriptor.getSource()
-						&& diagramLinkDst == nextLinkDescriptor
-								.getDestination()
-						&& diagramLinkVisualID == nextLinkDescriptor
-								.getVisualID()) {
+						&& diagramLinkDst == nextLinkDescriptor.getDestination()
+						&& diagramLinkVisualID == nextLinkDescriptor.getVisualID()) {
 					linksIterator.remove();
 					linkDescriptorsIterator.remove();
 					break;
@@ -226,57 +219,46 @@ public class TestCaseCanonicalEditPolicy extends CanonicalEditPolicy {
 	/**
 	 * @generated
 	 */
-	private Collection<org.muml.testlanguage.diagram.part.TestLanguageLinkDescriptor> collectAllLinks(
-			View view, Domain2Notation domain2NotationMap) {
-		if (!org.muml.testlanguage.diagram.edit.parts.TestCaseEditPart.MODEL_ID
-				.equals(org.muml.testlanguage.diagram.part.TestLanguageVisualIDRegistry
-						.getModelID(view))) {
+	private Collection<TestLanguageLinkDescriptor> collectAllLinks(View view, Domain2Notation domain2NotationMap) {
+		if (!TestCaseEditPart.MODEL_ID.equals(TestLanguageVisualIDRegistry.getModelID(view))) {
 			return Collections.emptyList();
 		}
-		LinkedList<org.muml.testlanguage.diagram.part.TestLanguageLinkDescriptor> result = new LinkedList<org.muml.testlanguage.diagram.part.TestLanguageLinkDescriptor>();
-		switch (org.muml.testlanguage.diagram.part.TestLanguageVisualIDRegistry
-				.getVisualID(view)) {
-		case org.muml.testlanguage.diagram.edit.parts.TestCaseEditPart.VISUAL_ID: {
+		LinkedList<TestLanguageLinkDescriptor> result = new LinkedList<TestLanguageLinkDescriptor>();
+		switch (TestLanguageVisualIDRegistry.getVisualID(view)) {
+		case TestCaseEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(org.muml.testlanguage.diagram.part.TestLanguageDiagramUpdater
-						.getTestCase_1000ContainedLinks(view));
+				result.addAll(TestLanguageDiagramUpdater.getTestCase_1000ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case org.muml.testlanguage.diagram.edit.parts.NodeEditPart.VISUAL_ID: {
+		case NodeEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(org.muml.testlanguage.diagram.part.TestLanguageDiagramUpdater
-						.getNode_2001ContainedLinks(view));
+				result.addAll(TestLanguageDiagramUpdater.getNode_2001ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case org.muml.testlanguage.diagram.edit.parts.InputEditPart.VISUAL_ID: {
+		case InputEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(org.muml.testlanguage.diagram.part.TestLanguageDiagramUpdater
-						.getInput_3001ContainedLinks(view));
+				result.addAll(TestLanguageDiagramUpdater.getInput_3001ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case org.muml.testlanguage.diagram.edit.parts.OutputEditPart.VISUAL_ID: {
+		case OutputEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(org.muml.testlanguage.diagram.part.TestLanguageDiagramUpdater
-						.getOutput_3002ContainedLinks(view));
+				result.addAll(TestLanguageDiagramUpdater.getOutput_3002ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		}
-		for (Iterator children = view.getChildren().iterator(); children
-				.hasNext();) {
-			result.addAll(collectAllLinks((View) children.next(),
-					domain2NotationMap));
+		for (Iterator children = view.getChildren().iterator(); children.hasNext();) {
+			result.addAll(collectAllLinks((View) children.next(), domain2NotationMap));
 		}
 		for (Iterator edges = view.getSourceEdges().iterator(); edges.hasNext();) {
-			result.addAll(collectAllLinks((View) edges.next(),
-					domain2NotationMap));
+			result.addAll(collectAllLinks((View) edges.next(), domain2NotationMap));
 		}
 		return result;
 	}
@@ -284,26 +266,20 @@ public class TestCaseCanonicalEditPolicy extends CanonicalEditPolicy {
 	/**
 	 * @generated
 	 */
-	private Collection<IAdaptable> createConnections(
-			Collection<org.muml.testlanguage.diagram.part.TestLanguageLinkDescriptor> linkDescriptors,
+	private Collection<IAdaptable> createConnections(Collection<TestLanguageLinkDescriptor> linkDescriptors,
 			Domain2Notation domain2NotationMap) {
 		LinkedList<IAdaptable> adapters = new LinkedList<IAdaptable>();
-		for (org.muml.testlanguage.diagram.part.TestLanguageLinkDescriptor nextLinkDescriptor : linkDescriptors) {
-			EditPart sourceEditPart = getSourceEditPart(nextLinkDescriptor,
-					domain2NotationMap);
-			EditPart targetEditPart = getTargetEditPart(nextLinkDescriptor,
-					domain2NotationMap);
+		for (TestLanguageLinkDescriptor nextLinkDescriptor : linkDescriptors) {
+			EditPart sourceEditPart = getSourceEditPart(nextLinkDescriptor, domain2NotationMap);
+			EditPart targetEditPart = getTargetEditPart(nextLinkDescriptor, domain2NotationMap);
 			if (sourceEditPart == null || targetEditPart == null) {
 				continue;
 			}
 			CreateConnectionViewRequest.ConnectionViewDescriptor descriptor = new CreateConnectionViewRequest.ConnectionViewDescriptor(
 					nextLinkDescriptor.getSemanticAdapter(),
-					org.muml.testlanguage.diagram.part.TestLanguageVisualIDRegistry
-							.getType(nextLinkDescriptor.getVisualID()),
-					ViewUtil.APPEND, false, ((IGraphicalEditPart) getHost())
-							.getDiagramPreferencesHint());
-			CreateConnectionViewRequest ccr = new CreateConnectionViewRequest(
-					descriptor);
+					TestLanguageVisualIDRegistry.getType(nextLinkDescriptor.getVisualID()), ViewUtil.APPEND, false,
+					((IGraphicalEditPart) getHost()).getDiagramPreferencesHint());
+			CreateConnectionViewRequest ccr = new CreateConnectionViewRequest(descriptor);
 			ccr.setType(RequestConstants.REQ_CONNECTION_START);
 			ccr.setSourceEditPart(sourceEditPart);
 			sourceEditPart.getCommand(ccr);
@@ -324,12 +300,10 @@ public class TestCaseCanonicalEditPolicy extends CanonicalEditPolicy {
 	/**
 	 * @generated
 	 */
-	private EditPart getEditPart(EObject domainModelElement,
-			Domain2Notation domain2NotationMap) {
+	private EditPart getEditPart(EObject domainModelElement, Domain2Notation domain2NotationMap) {
 		View view = (View) domain2NotationMap.get(domainModelElement);
 		if (view != null) {
-			return (EditPart) getHost().getViewer().getEditPartRegistry()
-					.get(view);
+			return (EditPart) getHost().getViewer().getEditPartRegistry().get(view);
 		}
 		return null;
 	}
@@ -344,32 +318,26 @@ public class TestCaseCanonicalEditPolicy extends CanonicalEditPolicy {
 	/**
 	 * @generated
 	 */
-	private EditPart getSourceEditPart(UpdaterLinkDescriptor descriptor,
-			Domain2Notation domain2NotationMap) {
+	private EditPart getSourceEditPart(UpdaterLinkDescriptor descriptor, Domain2Notation domain2NotationMap) {
 		return getEditPart(descriptor.getSource(), domain2NotationMap);
 	}
 
 	/**
 	 * @generated
 	 */
-	private EditPart getTargetEditPart(UpdaterLinkDescriptor descriptor,
-			Domain2Notation domain2NotationMap) {
+	private EditPart getTargetEditPart(UpdaterLinkDescriptor descriptor, Domain2Notation domain2NotationMap) {
 		return getEditPart(descriptor.getDestination(), domain2NotationMap);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected final EditPart getHintedEditPart(EObject domainModelElement,
-			Domain2Notation domain2NotationMap, int hintVisualId) {
-		View view = (View) domain2NotationMap
-				.getHinted(
-						domainModelElement,
-						org.muml.testlanguage.diagram.part.TestLanguageVisualIDRegistry
-								.getType(hintVisualId));
+	protected final EditPart getHintedEditPart(EObject domainModelElement, Domain2Notation domain2NotationMap,
+			int hintVisualId) {
+		View view = (View) domain2NotationMap.getHinted(domainModelElement,
+				TestLanguageVisualIDRegistry.getType(hintVisualId));
 		if (view != null) {
-			return (EditPart) getHost().getViewer().getEditPartRegistry()
-					.get(view);
+			return (EditPart) getHost().getViewer().getEditPartRegistry().get(view);
 		}
 		return null;
 	}
