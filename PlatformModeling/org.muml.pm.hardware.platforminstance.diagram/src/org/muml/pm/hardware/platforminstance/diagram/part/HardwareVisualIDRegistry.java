@@ -6,6 +6,42 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.structure.DiagramStructure;
+import org.muml.pm.hardware.hwplatforminstance.HWPlatformInstanceConfiguration;
+import org.muml.pm.hardware.hwplatforminstance.HwplatforminstancePackage;
+import org.muml.pm.hardware.hwresourceinstance.HwresourceinstancePackage;
+import org.muml.pm.hardware.platforminstance.diagram.edit.parts.ActuatorInstanceEditPart;
+import org.muml.pm.hardware.platforminstance.diagram.edit.parts.ActuatorInstanceNameEditPart;
+import org.muml.pm.hardware.platforminstance.diagram.edit.parts.BusInstanceEditPart;
+import org.muml.pm.hardware.platforminstance.diagram.edit.parts.DelegationHWPortInstanceEditPart;
+import org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstance2EditPart;
+import org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceConfiguration2EditPart;
+import org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceConfigurationEditPart;
+import org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceConfigurationHWPInstanceConfigurationContentsCompartmentEditPart;
+import org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceEditPart;
+import org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceHWPlatformCompartment2EditPart;
+import org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceHWPlatformCompartmentEditPart;
+import org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceName2EditPart;
+import org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceNameEditPart;
+import org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPortInstanceEditPart;
+import org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPortLabel2EditPart;
+import org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPortLabelEditPart;
+import org.muml.pm.hardware.platforminstance.diagram.edit.parts.NetworkBridgeInstanceEditPart;
+import org.muml.pm.hardware.platforminstance.diagram.edit.parts.NetworkConnectorInstanceEditPart;
+import org.muml.pm.hardware.platforminstance.diagram.edit.parts.SensorInstanceEditPart;
+import org.muml.pm.hardware.platforminstance.diagram.edit.parts.SensorInstanceNameEditPart;
+import org.muml.pm.hardware.platforminstance.diagram.edit.parts.StructuredResourceInstanceEditPart;
+import org.muml.pm.hardware.platforminstance.diagram.edit.parts.StructuredResourceInstanceNameEditPart;
+import org.muml.pm.hardware.platforminstance.diagram.edit.parts.WrappingLabel10EditPart;
+import org.muml.pm.hardware.platforminstance.diagram.edit.parts.WrappingLabel11EditPart;
+import org.muml.pm.hardware.platforminstance.diagram.edit.parts.WrappingLabel12EditPart;
+import org.muml.pm.hardware.platforminstance.diagram.edit.parts.WrappingLabel13EditPart;
+import org.muml.pm.hardware.platforminstance.diagram.edit.parts.WrappingLabel3EditPart;
+import org.muml.pm.hardware.platforminstance.diagram.edit.parts.WrappingLabel4EditPart;
+import org.muml.pm.hardware.platforminstance.diagram.edit.parts.WrappingLabel5EditPart;
+import org.muml.pm.hardware.platforminstance.diagram.edit.parts.WrappingLabel6EditPart;
+import org.muml.pm.hardware.platforminstance.diagram.edit.parts.WrappingLabel7EditPart;
+import org.muml.pm.hardware.platforminstance.diagram.edit.parts.WrappingLabel8EditPart;
+import org.muml.pm.hardware.platforminstance.diagram.edit.parts.WrappingLabel9EditPart;
 
 /**
  * This registry is used to determine which type of visual object should be
@@ -26,15 +62,13 @@ public class HardwareVisualIDRegistry {
 	 */
 	public static int getVisualID(View view) {
 		if (view instanceof Diagram) {
-			if (org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceConfigurationEditPart.MODEL_ID
-					.equals(view.getType())) {
-				return org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceConfigurationEditPart.VISUAL_ID;
+			if (HWPlatformInstanceConfigurationEditPart.MODEL_ID.equals(view.getType())) {
+				return HWPlatformInstanceConfigurationEditPart.VISUAL_ID;
 			} else {
 				return -1;
 			}
 		}
-		return org.muml.pm.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
-				.getVisualID(view.getType());
+		return org.muml.pm.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry.getVisualID(view.getType());
 	}
 
 	/**
@@ -60,8 +94,8 @@ public class HardwareVisualIDRegistry {
 			return Integer.parseInt(type);
 		} catch (NumberFormatException e) {
 			if (Boolean.TRUE.toString().equalsIgnoreCase(Platform.getDebugOption(DEBUG_KEY))) {
-				org.muml.pm.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
-						.getInstance().logError("Unable to parse view type as a visualID number: " + type);
+				PlatformInstanceDiagramEditorPlugin.getInstance()
+						.logError("Unable to parse view type as a visualID number: " + type);
 			}
 		}
 		return -1;
@@ -81,11 +115,9 @@ public class HardwareVisualIDRegistry {
 		if (domainElement == null) {
 			return -1;
 		}
-		if (org.muml.pm.hardware.hwplatforminstance.HwplatforminstancePackage.eINSTANCE
-				.getHWPlatformInstanceConfiguration().isSuperTypeOf(domainElement.eClass())
-				&& isDiagram(
-						(org.muml.pm.hardware.hwplatforminstance.HWPlatformInstanceConfiguration) domainElement)) {
-			return org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceConfigurationEditPart.VISUAL_ID;
+		if (HwplatforminstancePackage.eINSTANCE.getHWPlatformInstanceConfiguration()
+				.isSuperTypeOf(domainElement.eClass()) && isDiagram((HWPlatformInstanceConfiguration) domainElement)) {
+			return HWPlatformInstanceConfigurationEditPart.VISUAL_ID;
 		}
 		return -1;
 	}
@@ -99,95 +131,84 @@ public class HardwareVisualIDRegistry {
 		}
 		String containerModelID = org.muml.pm.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
 				.getModelID(containerView);
-		if (!org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceConfigurationEditPart.MODEL_ID
-				.equals(containerModelID)) {
+		if (!HWPlatformInstanceConfigurationEditPart.MODEL_ID.equals(containerModelID)) {
 			return -1;
 		}
 		int containerVisualID;
-		if (org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceConfigurationEditPart.MODEL_ID
-				.equals(containerModelID)) {
+		if (HWPlatformInstanceConfigurationEditPart.MODEL_ID.equals(containerModelID)) {
 			containerVisualID = org.muml.pm.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
 					.getVisualID(containerView);
 		} else {
 			if (containerView instanceof Diagram) {
-				containerVisualID = org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceConfigurationEditPart.VISUAL_ID;
+				containerVisualID = HWPlatformInstanceConfigurationEditPart.VISUAL_ID;
 			} else {
 				return -1;
 			}
 		}
 		switch (containerVisualID) {
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceConfigurationEditPart.VISUAL_ID:
-			if (org.muml.pm.hardware.hwplatforminstance.HwplatforminstancePackage.eINSTANCE
-					.getHWPlatformInstance().isSuperTypeOf(domainElement.eClass())) {
-				return org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceEditPart.VISUAL_ID;
+		case HWPlatformInstanceConfigurationEditPart.VISUAL_ID:
+			if (HwplatforminstancePackage.eINSTANCE.getHWPlatformInstance().isSuperTypeOf(domainElement.eClass())) {
+				return HWPlatformInstanceEditPart.VISUAL_ID;
 			}
 			break;
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceEditPart.VISUAL_ID:
-			if (org.muml.pm.hardware.hwplatforminstance.HwplatforminstancePackage.eINSTANCE
-					.getDelegationHWPortInstance().isSuperTypeOf(domainElement.eClass())) {
-				return org.muml.pm.hardware.platforminstance.diagram.edit.parts.DelegationHWPortInstanceEditPart.VISUAL_ID;
+		case HWPlatformInstanceEditPart.VISUAL_ID:
+			if (HwplatforminstancePackage.eINSTANCE.getDelegationHWPortInstance()
+					.isSuperTypeOf(domainElement.eClass())) {
+				return DelegationHWPortInstanceEditPart.VISUAL_ID;
 			}
 			break;
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstance2EditPart.VISUAL_ID:
-			if (org.muml.pm.hardware.hwplatforminstance.HwplatforminstancePackage.eINSTANCE
-					.getDelegationHWPortInstance().isSuperTypeOf(domainElement.eClass())) {
-				return org.muml.pm.hardware.platforminstance.diagram.edit.parts.DelegationHWPortInstanceEditPart.VISUAL_ID;
+		case HWPlatformInstance2EditPart.VISUAL_ID:
+			if (HwplatforminstancePackage.eINSTANCE.getDelegationHWPortInstance()
+					.isSuperTypeOf(domainElement.eClass())) {
+				return DelegationHWPortInstanceEditPart.VISUAL_ID;
 			}
 			break;
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.StructuredResourceInstanceEditPart.VISUAL_ID:
-			if (org.muml.pm.hardware.hwplatforminstance.HwplatforminstancePackage.eINSTANCE
-					.getHWPortInstance().isSuperTypeOf(domainElement.eClass())) {
-				return org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPortInstanceEditPart.VISUAL_ID;
+		case StructuredResourceInstanceEditPart.VISUAL_ID:
+			if (HwplatforminstancePackage.eINSTANCE.getHWPortInstance().isSuperTypeOf(domainElement.eClass())) {
+				return HWPortInstanceEditPart.VISUAL_ID;
 			}
 			break;
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.ActuatorInstanceEditPart.VISUAL_ID:
-			if (org.muml.pm.hardware.hwplatforminstance.HwplatforminstancePackage.eINSTANCE
-					.getHWPortInstance().isSuperTypeOf(domainElement.eClass())) {
-				return org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPortInstanceEditPart.VISUAL_ID;
+		case ActuatorInstanceEditPart.VISUAL_ID:
+			if (HwplatforminstancePackage.eINSTANCE.getHWPortInstance().isSuperTypeOf(domainElement.eClass())) {
+				return HWPortInstanceEditPart.VISUAL_ID;
 			}
 			break;
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.SensorInstanceEditPart.VISUAL_ID:
-			if (org.muml.pm.hardware.hwplatforminstance.HwplatforminstancePackage.eINSTANCE
-					.getHWPortInstance().isSuperTypeOf(domainElement.eClass())) {
-				return org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPortInstanceEditPart.VISUAL_ID;
+		case SensorInstanceEditPart.VISUAL_ID:
+			if (HwplatforminstancePackage.eINSTANCE.getHWPortInstance().isSuperTypeOf(domainElement.eClass())) {
+				return HWPortInstanceEditPart.VISUAL_ID;
 			}
 			break;
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceHWPlatformCompartmentEditPart.VISUAL_ID:
-			if (org.muml.pm.hardware.hwplatforminstance.HwplatforminstancePackage.eINSTANCE
-					.getHWPlatformInstanceConfiguration().isSuperTypeOf(domainElement.eClass())) {
-				return org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceConfiguration2EditPart.VISUAL_ID;
+		case HWPlatformInstanceHWPlatformCompartmentEditPart.VISUAL_ID:
+			if (HwplatforminstancePackage.eINSTANCE.getHWPlatformInstanceConfiguration()
+					.isSuperTypeOf(domainElement.eClass())) {
+				return HWPlatformInstanceConfiguration2EditPart.VISUAL_ID;
 			}
 			break;
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceConfigurationHWPInstanceConfigurationContentsCompartmentEditPart.VISUAL_ID:
-			if (org.muml.pm.hardware.hwplatforminstance.HwplatforminstancePackage.eINSTANCE
-					.getHWPlatformInstance().isSuperTypeOf(domainElement.eClass())) {
-				return org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstance2EditPart.VISUAL_ID;
+		case HWPlatformInstanceConfigurationHWPInstanceConfigurationContentsCompartmentEditPart.VISUAL_ID:
+			if (HwplatforminstancePackage.eINSTANCE.getHWPlatformInstance().isSuperTypeOf(domainElement.eClass())) {
+				return HWPlatformInstance2EditPart.VISUAL_ID;
 			}
-			if (org.muml.pm.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE
-					.getStructuredResourceInstance().isSuperTypeOf(domainElement.eClass())) {
-				return org.muml.pm.hardware.platforminstance.diagram.edit.parts.StructuredResourceInstanceEditPart.VISUAL_ID;
+			if (HwresourceinstancePackage.eINSTANCE.getStructuredResourceInstance()
+					.isSuperTypeOf(domainElement.eClass())) {
+				return StructuredResourceInstanceEditPart.VISUAL_ID;
 			}
-			if (org.muml.pm.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE
-					.getActuatorInstance().isSuperTypeOf(domainElement.eClass())) {
-				return org.muml.pm.hardware.platforminstance.diagram.edit.parts.ActuatorInstanceEditPart.VISUAL_ID;
+			if (HwresourceinstancePackage.eINSTANCE.getActuatorInstance().isSuperTypeOf(domainElement.eClass())) {
+				return ActuatorInstanceEditPart.VISUAL_ID;
 			}
-			if (org.muml.pm.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE
-					.getSensorInstance().isSuperTypeOf(domainElement.eClass())) {
-				return org.muml.pm.hardware.platforminstance.diagram.edit.parts.SensorInstanceEditPart.VISUAL_ID;
+			if (HwresourceinstancePackage.eINSTANCE.getSensorInstance().isSuperTypeOf(domainElement.eClass())) {
+				return SensorInstanceEditPart.VISUAL_ID;
 			}
-			if (org.muml.pm.hardware.hwplatforminstance.HwplatforminstancePackage.eINSTANCE
-					.getBusInstance().isSuperTypeOf(domainElement.eClass())) {
-				return org.muml.pm.hardware.platforminstance.diagram.edit.parts.BusInstanceEditPart.VISUAL_ID;
+			if (HwplatforminstancePackage.eINSTANCE.getBusInstance().isSuperTypeOf(domainElement.eClass())) {
+				return BusInstanceEditPart.VISUAL_ID;
 			}
-			if (org.muml.pm.hardware.hwplatforminstance.HwplatforminstancePackage.eINSTANCE
-					.getNetworkBridgeInstance().isSuperTypeOf(domainElement.eClass())) {
-				return org.muml.pm.hardware.platforminstance.diagram.edit.parts.NetworkBridgeInstanceEditPart.VISUAL_ID;
+			if (HwplatforminstancePackage.eINSTANCE.getNetworkBridgeInstance().isSuperTypeOf(domainElement.eClass())) {
+				return NetworkBridgeInstanceEditPart.VISUAL_ID;
 			}
 			break;
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceHWPlatformCompartment2EditPart.VISUAL_ID:
-			if (org.muml.pm.hardware.hwplatforminstance.HwplatforminstancePackage.eINSTANCE
-					.getHWPlatformInstanceConfiguration().isSuperTypeOf(domainElement.eClass())) {
-				return org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceConfiguration2EditPart.VISUAL_ID;
+		case HWPlatformInstanceHWPlatformCompartment2EditPart.VISUAL_ID:
+			if (HwplatforminstancePackage.eINSTANCE.getHWPlatformInstanceConfiguration()
+					.isSuperTypeOf(domainElement.eClass())) {
+				return HWPlatformInstanceConfiguration2EditPart.VISUAL_ID;
 			}
 			break;
 		}
@@ -200,153 +221,151 @@ public class HardwareVisualIDRegistry {
 	public static boolean canCreateNode(View containerView, int nodeVisualID) {
 		String containerModelID = org.muml.pm.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
 				.getModelID(containerView);
-		if (!org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceConfigurationEditPart.MODEL_ID
-				.equals(containerModelID)) {
+		if (!HWPlatformInstanceConfigurationEditPart.MODEL_ID.equals(containerModelID)) {
 			return false;
 		}
 		int containerVisualID;
-		if (org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceConfigurationEditPart.MODEL_ID
-				.equals(containerModelID)) {
+		if (HWPlatformInstanceConfigurationEditPart.MODEL_ID.equals(containerModelID)) {
 			containerVisualID = org.muml.pm.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
 					.getVisualID(containerView);
 		} else {
 			if (containerView instanceof Diagram) {
-				containerVisualID = org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceConfigurationEditPart.VISUAL_ID;
+				containerVisualID = HWPlatformInstanceConfigurationEditPart.VISUAL_ID;
 			} else {
 				return false;
 			}
 		}
 		switch (containerVisualID) {
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceConfigurationEditPart.VISUAL_ID:
-			if (org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceEditPart.VISUAL_ID == nodeVisualID) {
+		case HWPlatformInstanceConfigurationEditPart.VISUAL_ID:
+			if (HWPlatformInstanceEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceEditPart.VISUAL_ID:
-			if (org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceNameEditPart.VISUAL_ID == nodeVisualID) {
+		case HWPlatformInstanceEditPart.VISUAL_ID:
+			if (HWPlatformInstanceNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceHWPlatformCompartmentEditPart.VISUAL_ID == nodeVisualID) {
+			if (HWPlatformInstanceHWPlatformCompartmentEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (org.muml.pm.hardware.platforminstance.diagram.edit.parts.DelegationHWPortInstanceEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceConfiguration2EditPart.VISUAL_ID:
-			if (org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceConfigurationHWPInstanceConfigurationContentsCompartmentEditPart.VISUAL_ID == nodeVisualID) {
+			if (DelegationHWPortInstanceEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstance2EditPart.VISUAL_ID:
-			if (org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceName2EditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceHWPlatformCompartment2EditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (org.muml.pm.hardware.platforminstance.diagram.edit.parts.DelegationHWPortInstanceEditPart.VISUAL_ID == nodeVisualID) {
+		case HWPlatformInstanceConfiguration2EditPart.VISUAL_ID:
+			if (HWPlatformInstanceConfigurationHWPInstanceConfigurationContentsCompartmentEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.DelegationHWPortInstanceEditPart.VISUAL_ID:
-			if (org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPortLabelEditPart.VISUAL_ID == nodeVisualID) {
+		case HWPlatformInstance2EditPart.VISUAL_ID:
+			if (HWPlatformInstanceName2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (HWPlatformInstanceHWPlatformCompartment2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (DelegationHWPortInstanceEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.StructuredResourceInstanceEditPart.VISUAL_ID:
-			if (org.muml.pm.hardware.platforminstance.diagram.edit.parts.StructuredResourceInstanceNameEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (org.muml.pm.hardware.platforminstance.diagram.edit.parts.WrappingLabel3EditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (org.muml.pm.hardware.platforminstance.diagram.edit.parts.WrappingLabel4EditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (org.muml.pm.hardware.platforminstance.diagram.edit.parts.WrappingLabel5EditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (org.muml.pm.hardware.platforminstance.diagram.edit.parts.WrappingLabel6EditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPortInstanceEditPart.VISUAL_ID == nodeVisualID) {
+		case DelegationHWPortInstanceEditPart.VISUAL_ID:
+			if (HWPortLabelEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPortInstanceEditPart.VISUAL_ID:
-			if (org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPortLabel2EditPart.VISUAL_ID == nodeVisualID) {
+		case StructuredResourceInstanceEditPart.VISUAL_ID:
+			if (StructuredResourceInstanceNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (WrappingLabel3EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (WrappingLabel4EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (WrappingLabel5EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (WrappingLabel6EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (HWPortInstanceEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.ActuatorInstanceEditPart.VISUAL_ID:
-			if (org.muml.pm.hardware.platforminstance.diagram.edit.parts.ActuatorInstanceNameEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (org.muml.pm.hardware.platforminstance.diagram.edit.parts.WrappingLabel7EditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (org.muml.pm.hardware.platforminstance.diagram.edit.parts.WrappingLabel8EditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPortInstanceEditPart.VISUAL_ID == nodeVisualID) {
+		case HWPortInstanceEditPart.VISUAL_ID:
+			if (HWPortLabel2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.SensorInstanceEditPart.VISUAL_ID:
-			if (org.muml.pm.hardware.platforminstance.diagram.edit.parts.SensorInstanceNameEditPart.VISUAL_ID == nodeVisualID) {
+		case ActuatorInstanceEditPart.VISUAL_ID:
+			if (ActuatorInstanceNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (org.muml.pm.hardware.platforminstance.diagram.edit.parts.WrappingLabel9EditPart.VISUAL_ID == nodeVisualID) {
+			if (WrappingLabel7EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (org.muml.pm.hardware.platforminstance.diagram.edit.parts.WrappingLabel10EditPart.VISUAL_ID == nodeVisualID) {
+			if (WrappingLabel8EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPortInstanceEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.BusInstanceEditPart.VISUAL_ID:
-			if (org.muml.pm.hardware.platforminstance.diagram.edit.parts.WrappingLabel11EditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (org.muml.pm.hardware.platforminstance.diagram.edit.parts.WrappingLabel12EditPart.VISUAL_ID == nodeVisualID) {
+			if (HWPortInstanceEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.NetworkBridgeInstanceEditPart.VISUAL_ID:
-			if (org.muml.pm.hardware.platforminstance.diagram.edit.parts.WrappingLabel13EditPart.VISUAL_ID == nodeVisualID) {
+		case SensorInstanceEditPart.VISUAL_ID:
+			if (SensorInstanceNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (WrappingLabel9EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (WrappingLabel10EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (HWPortInstanceEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceHWPlatformCompartmentEditPart.VISUAL_ID:
-			if (org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceConfiguration2EditPart.VISUAL_ID == nodeVisualID) {
+		case BusInstanceEditPart.VISUAL_ID:
+			if (WrappingLabel11EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (WrappingLabel12EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceConfigurationHWPInstanceConfigurationContentsCompartmentEditPart.VISUAL_ID:
-			if (org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstance2EditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (org.muml.pm.hardware.platforminstance.diagram.edit.parts.StructuredResourceInstanceEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (org.muml.pm.hardware.platforminstance.diagram.edit.parts.ActuatorInstanceEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (org.muml.pm.hardware.platforminstance.diagram.edit.parts.SensorInstanceEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (org.muml.pm.hardware.platforminstance.diagram.edit.parts.BusInstanceEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (org.muml.pm.hardware.platforminstance.diagram.edit.parts.NetworkBridgeInstanceEditPart.VISUAL_ID == nodeVisualID) {
+		case NetworkBridgeInstanceEditPart.VISUAL_ID:
+			if (WrappingLabel13EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceHWPlatformCompartment2EditPart.VISUAL_ID:
-			if (org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceConfiguration2EditPart.VISUAL_ID == nodeVisualID) {
+		case HWPlatformInstanceHWPlatformCompartmentEditPart.VISUAL_ID:
+			if (HWPlatformInstanceConfiguration2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case HWPlatformInstanceConfigurationHWPInstanceConfigurationContentsCompartmentEditPart.VISUAL_ID:
+			if (HWPlatformInstance2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (StructuredResourceInstanceEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ActuatorInstanceEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (SensorInstanceEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (BusInstanceEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (NetworkBridgeInstanceEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case HWPlatformInstanceHWPlatformCompartment2EditPart.VISUAL_ID:
+			if (HWPlatformInstanceConfiguration2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -361,21 +380,19 @@ public class HardwareVisualIDRegistry {
 		if (domainElement == null) {
 			return -1;
 		}
-		if (org.muml.pm.hardware.hwplatforminstance.HwplatforminstancePackage.eINSTANCE
-				.getNetworkConnectorInstance().isSuperTypeOf(domainElement.eClass())) {
-			return org.muml.pm.hardware.platforminstance.diagram.edit.parts.NetworkConnectorInstanceEditPart.VISUAL_ID;
+		if (HwplatforminstancePackage.eINSTANCE.getNetworkConnectorInstance().isSuperTypeOf(domainElement.eClass())) {
+			return NetworkConnectorInstanceEditPart.VISUAL_ID;
 		}
 		return -1;
 	}
 
 	/**
-	 * User can change implementation of this method to handle some specific
-	 * situations not covered by default logic.
-	 * 
-	 * @generated
-	 */
-	private static boolean isDiagram(
-			org.muml.pm.hardware.hwplatforminstance.HWPlatformInstanceConfiguration element) {
+	* User can change implementation of this method to handle some specific
+	* situations not covered by default logic.
+	* 
+	* @generated
+	*/
+	private static boolean isDiagram(HWPlatformInstanceConfiguration element) {
 		return true;
 	}
 
@@ -396,9 +413,9 @@ public class HardwareVisualIDRegistry {
 	 */
 	public static boolean isCompartmentVisualID(int visualID) {
 		switch (visualID) {
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceHWPlatformCompartmentEditPart.VISUAL_ID:
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceConfigurationHWPInstanceConfigurationContentsCompartmentEditPart.VISUAL_ID:
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceHWPlatformCompartment2EditPart.VISUAL_ID:
+		case HWPlatformInstanceHWPlatformCompartmentEditPart.VISUAL_ID:
+		case HWPlatformInstanceConfigurationHWPInstanceConfigurationContentsCompartmentEditPart.VISUAL_ID:
+		case HWPlatformInstanceHWPlatformCompartment2EditPart.VISUAL_ID:
 			return true;
 		default:
 			break;
@@ -411,12 +428,12 @@ public class HardwareVisualIDRegistry {
 	 */
 	public static boolean isSemanticLeafVisualID(int visualID) {
 		switch (visualID) {
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceConfigurationEditPart.VISUAL_ID:
+		case HWPlatformInstanceConfigurationEditPart.VISUAL_ID:
 			return false;
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.DelegationHWPortInstanceEditPart.VISUAL_ID:
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPortInstanceEditPart.VISUAL_ID:
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.BusInstanceEditPart.VISUAL_ID:
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.NetworkBridgeInstanceEditPart.VISUAL_ID:
+		case DelegationHWPortInstanceEditPart.VISUAL_ID:
+		case HWPortInstanceEditPart.VISUAL_ID:
+		case BusInstanceEditPart.VISUAL_ID:
+		case NetworkBridgeInstanceEditPart.VISUAL_ID:
 			return true;
 		default:
 			break;
@@ -434,8 +451,7 @@ public class HardwareVisualIDRegistry {
 		@Override
 
 		public int getVisualID(View view) {
-			return org.muml.pm.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
-					.getVisualID(view);
+			return org.muml.pm.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry.getVisualID(view);
 		}
 
 		/**
@@ -444,8 +460,7 @@ public class HardwareVisualIDRegistry {
 		@Override
 
 		public String getModelID(View view) {
-			return org.muml.pm.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
-					.getModelID(view);
+			return org.muml.pm.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry.getModelID(view);
 		}
 
 		/**

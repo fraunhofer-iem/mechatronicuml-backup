@@ -19,6 +19,11 @@ import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.edit.policies.reparent.CreationEditPolicyWithCustomReparent;
+import org.muml.pm.hardware.platforminstance.diagram.edit.policies.HWPlatformInstanceHWPlatformCompartmentCanonicalEditPolicy;
+import org.muml.pm.hardware.platforminstance.diagram.edit.policies.HWPlatformInstanceHWPlatformCompartmentItemSemanticEditPolicy;
+import org.muml.pm.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry;
+import org.muml.pm.hardware.platforminstance.diagram.part.Messages;
+import org.muml.pm.hardware.platforminstance.diagram.providers.HardwareElementTypes;
 
 /**
  * @generated
@@ -71,7 +76,7 @@ public class HWPlatformInstanceHWPlatformCompartmentEditPart extends ListCompart
 	 * @generated
 	 */
 	public String getCompartmentName() {
-		return org.muml.pm.hardware.platforminstance.diagram.part.Messages.HWPlatformInstanceHWPlatformCompartmentEditPart_title;
+		return Messages.HWPlatformInstanceHWPlatformCompartmentEditPart_title;
 	}
 
 	/**
@@ -100,12 +105,12 @@ public class HWPlatformInstanceHWPlatformCompartmentEditPart extends ListCompart
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
-				new org.muml.pm.hardware.platforminstance.diagram.edit.policies.HWPlatformInstanceHWPlatformCompartmentItemSemanticEditPolicy());
-		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicyWithCustomReparent(
-				org.muml.pm.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry.TYPED_INSTANCE));
+				new HWPlatformInstanceHWPlatformCompartmentItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.CREATION_ROLE,
+				new CreationEditPolicyWithCustomReparent(HardwareVisualIDRegistry.TYPED_INSTANCE));
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
 		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE,
-				new org.muml.pm.hardware.platforminstance.diagram.edit.policies.HWPlatformInstanceHWPlatformCompartmentCanonicalEditPolicy());
+				new HWPlatformInstanceHWPlatformCompartmentCanonicalEditPolicy());
 	}
 
 	/**
@@ -125,7 +130,7 @@ public class HWPlatformInstanceHWPlatformCompartmentEditPart extends ListCompart
 			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request).getViewAndElementDescriptor()
 					.getCreateElementRequestAdapter();
 			IElementType type = (IElementType) adapter.getAdapter(IElementType.class);
-			if (type == org.muml.pm.hardware.platforminstance.diagram.providers.HardwareElementTypes.HWPlatformInstanceConfiguration_3039) {
+			if (type == HardwareElementTypes.HWPlatformInstanceConfiguration_3039) {
 				return this;
 			}
 			return getParent().getTargetEditPart(request);

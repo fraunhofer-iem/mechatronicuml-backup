@@ -64,9 +64,9 @@
 	         allPopups="false"
 	         locationURI="popup:de.uni_paderborn.fujaba.muml.browser.new.menu?after=additions">
 	  		<command
-                 commandId="de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration.browser.create"
+                 commandId="org.muml.pm.hardware.hwplatforminstance.HWPlatformInstanceConfiguration.browser.create"
                  icon="icons/obj16/HwplatforminstanceDiagramFile.gif"
-                 id="de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration.browser.create"
+                 id="org.muml.pm.hardware.hwplatforminstance.HWPlatformInstanceConfiguration.browser.create"
                  label="HWPlatformInstanceConfiguration"
                  style="push">
               <visibleWhen
@@ -110,7 +110,7 @@
            defaultHandler="org.muml.pm.hardware.platforminstance.diagram.part.HardwareInitDiagramFileAction$CreateDiagramElement"
            categoryId="de.uni_paderborn.fujaba"
            description="Create new PlatformInstance"
-           id="de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration.browser.create"
+           id="org.muml.pm.hardware.hwplatforminstance.HWPlatformInstanceConfiguration.browser.create"
            name="Create new PlatformInstance">
     </command>
     </extension>

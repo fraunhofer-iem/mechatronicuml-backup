@@ -29,12 +29,30 @@ import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.update.UpdaterLinkDescriptor;
+import org.muml.core.common.edit.policies.IDiagramCanonicalEditPolicy;
+import org.muml.pm.hardware.hwplatforminstance.HwplatforminstancePackage;
+import org.muml.pm.hardware.platforminstance.diagram.edit.parts.ActuatorInstanceEditPart;
+import org.muml.pm.hardware.platforminstance.diagram.edit.parts.BusInstanceEditPart;
+import org.muml.pm.hardware.platforminstance.diagram.edit.parts.DelegationHWPortInstanceEditPart;
+import org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstance2EditPart;
+import org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceConfiguration2EditPart;
+import org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceConfigurationEditPart;
+import org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceEditPart;
+import org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPortInstanceEditPart;
+import org.muml.pm.hardware.platforminstance.diagram.edit.parts.NetworkBridgeInstanceEditPart;
+import org.muml.pm.hardware.platforminstance.diagram.edit.parts.NetworkConnectorInstanceEditPart;
+import org.muml.pm.hardware.platforminstance.diagram.edit.parts.SensorInstanceEditPart;
+import org.muml.pm.hardware.platforminstance.diagram.edit.parts.StructuredResourceInstanceEditPart;
+import org.muml.pm.hardware.platforminstance.diagram.part.HardwareDiagramUpdater;
+import org.muml.pm.hardware.platforminstance.diagram.part.HardwareLinkDescriptor;
+import org.muml.pm.hardware.platforminstance.diagram.part.HardwareNodeDescriptor;
+import org.muml.pm.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry;
 
 /**
  * @generated
  */
 public class HWPlatformInstanceConfigurationCanonicalEditPolicy extends CanonicalEditPolicy
-		implements org.muml.core.common.edit.policies.IDiagramCanonicalEditPolicy {
+		implements IDiagramCanonicalEditPolicy {
 
 	private boolean canonicalNodes = true;
 
@@ -80,8 +98,7 @@ public class HWPlatformInstanceConfigurationCanonicalEditPolicy extends Canonica
 	 * @generated
 	 */
 	protected EStructuralFeature getFeatureToSynchronize() {
-		return org.muml.pm.hardware.hwplatforminstance.HwplatforminstancePackage.eINSTANCE
-				.getHWPlatformInstanceConfiguration_HwplatformInstances();
+		return HwplatforminstancePackage.eINSTANCE.getHWPlatformInstanceConfiguration_HwplatformInstances();
 	}
 
 	/**
@@ -89,9 +106,9 @@ public class HWPlatformInstanceConfigurationCanonicalEditPolicy extends Canonica
 	 */
 	@SuppressWarnings("rawtypes")
 	protected List getSemanticChildrenList() {
-		List<org.muml.pm.hardware.platforminstance.diagram.part.HardwareNodeDescriptor> childDescriptors = getSemanticChildrenViewDescriptors();
+		List<HardwareNodeDescriptor> childDescriptors = getSemanticChildrenViewDescriptors();
 		LinkedList<EObject> result = new LinkedList<EObject>();
-		for (org.muml.pm.hardware.platforminstance.diagram.part.HardwareNodeDescriptor d : childDescriptors) {
+		for (HardwareNodeDescriptor d : childDescriptors) {
 			result.add(d.getModelElement());
 		}
 		return result;
@@ -107,21 +124,17 @@ public class HWPlatformInstanceConfigurationCanonicalEditPolicy extends Canonica
 		if (!canonicalNodes) {
 			View containerView = (View) getHost().getModel();
 			List<View> childViews = containerView.getChildren();
-			List<org.muml.pm.hardware.platforminstance.diagram.part.HardwareNodeDescriptor> result = new LinkedList<org.muml.pm.hardware.platforminstance.diagram.part.HardwareNodeDescriptor>();
+			List<HardwareNodeDescriptor> result = new LinkedList<HardwareNodeDescriptor>();
 
 			for (View childView : childViews) {
 				EObject childElement = childView.getElement();
-				int visualID = org.muml.pm.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
-						.getVisualID(childView);
-				List<Integer> visualIDs = Arrays.asList(new Integer[] {
-						org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceEditPart.VISUAL_ID });
+				int visualID = HardwareVisualIDRegistry.getVisualID(childView);
+				List<Integer> visualIDs = Arrays.asList(new Integer[] { HWPlatformInstanceEditPart.VISUAL_ID });
 
 				// Note: childElement can be null, for diagram annotations!
 				if (childElement == null
 						|| childElement.eContainer() == containerView.getElement() && visualIDs.contains(visualID)) {
-					result.add(
-							new org.muml.pm.hardware.platforminstance.diagram.part.HardwareNodeDescriptor(
-									childElement, visualID));
+					result.add(new HardwareNodeDescriptor(childElement, visualID));
 					continue;
 				}
 			}
@@ -130,8 +143,7 @@ public class HWPlatformInstanceConfigurationCanonicalEditPolicy extends Canonica
 		// End added
 
 		View viewObject = (View) getHost().getModel();
-		return org.muml.pm.hardware.platforminstance.diagram.part.HardwareDiagramUpdater
-				.getHWPlatformInstanceConfiguration_1000SemanticChildren(viewObject);
+		return HardwareDiagramUpdater.getHWPlatformInstanceConfiguration_1000SemanticChildren(viewObject);
 
 	}
 
@@ -146,8 +158,7 @@ public class HWPlatformInstanceConfigurationCanonicalEditPolicy extends Canonica
 	 * @generated
 	 */
 	private boolean isMyDiagramElement(View view) {
-		return org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceEditPart.VISUAL_ID == org.muml.pm.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
-				.getVisualID(view);
+		return HWPlatformInstanceEditPart.VISUAL_ID == HardwareVisualIDRegistry.getVisualID(view);
 	}
 
 	/**
@@ -158,7 +169,7 @@ public class HWPlatformInstanceConfigurationCanonicalEditPolicy extends Canonica
 			return;
 		}
 		LinkedList<IAdaptable> createdViews = new LinkedList<IAdaptable>();
-		List<org.muml.pm.hardware.platforminstance.diagram.part.HardwareNodeDescriptor> childDescriptors = getSemanticChildrenViewDescriptors();
+		List<HardwareNodeDescriptor> childDescriptors = getSemanticChildrenViewDescriptors();
 		LinkedList<View> orphaned = new LinkedList<View>();
 		// we care to check only views we recognize as ours
 		LinkedList<View> knownViewChildren = new LinkedList<View>();
@@ -172,12 +183,10 @@ public class HWPlatformInstanceConfigurationCanonicalEditPolicy extends Canonica
 		// iteration happens over list of desired semantic elements, trying to find best matching View, while original CEP
 		// iterates views, potentially losing view (size/bounds) information - i.e. if there are few views to reference same EObject, only last one 
 		// to answer isOrphaned == true will be used for the domain element representation, see #cleanCanonicalSemanticChildren()
-		for (Iterator<org.muml.pm.hardware.platforminstance.diagram.part.HardwareNodeDescriptor> descriptorsIterator = childDescriptors
-				.iterator(); descriptorsIterator.hasNext();) {
-			org.muml.pm.hardware.platforminstance.diagram.part.HardwareNodeDescriptor next = descriptorsIterator
-					.next();
-			String hint = org.muml.pm.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
-					.getType(next.getVisualID());
+		for (Iterator<HardwareNodeDescriptor> descriptorsIterator = childDescriptors.iterator(); descriptorsIterator
+				.hasNext();) {
+			HardwareNodeDescriptor next = descriptorsIterator.next();
+			String hint = HardwareVisualIDRegistry.getType(next.getVisualID());
 			LinkedList<View> perfectMatch = new LinkedList<View>(); // both semanticElement and hint match that of NodeDescriptor
 			for (View childView : getViewChildren()) {
 				EObject semanticElement = childView.getElement();
@@ -204,9 +213,8 @@ public class HWPlatformInstanceConfigurationCanonicalEditPolicy extends Canonica
 		//
 		ArrayList<CreateViewRequest.ViewDescriptor> viewDescriptors = new ArrayList<CreateViewRequest.ViewDescriptor>(
 				childDescriptors.size());
-		for (org.muml.pm.hardware.platforminstance.diagram.part.HardwareNodeDescriptor next : childDescriptors) {
-			String hint = org.muml.pm.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
-					.getType(next.getVisualID());
+		for (HardwareNodeDescriptor next : childDescriptors) {
+			String hint = HardwareVisualIDRegistry.getType(next.getVisualID());
 			IAdaptable elementAdapter = new CanonicalElementAdapter(next.getModelElement(), hint);
 			CreateViewRequest.ViewDescriptor descriptor = new CreateViewRequest.ViewDescriptor(elementAdapter,
 					Node.class, hint, ViewUtil.APPEND, false, host().getDiagramPreferencesHint());
@@ -248,13 +256,11 @@ public class HWPlatformInstanceConfigurationCanonicalEditPolicy extends Canonica
 	 */
 	private Collection<IAdaptable> refreshConnections() {
 		Domain2Notation domain2NotationMap = new Domain2Notation();
-		Collection<org.muml.pm.hardware.platforminstance.diagram.part.HardwareLinkDescriptor> linkDescriptors = collectAllLinks(
-				getDiagram(), domain2NotationMap);
+		Collection<HardwareLinkDescriptor> linkDescriptors = collectAllLinks(getDiagram(), domain2NotationMap);
 		Collection existingLinks = new LinkedList(getDiagram().getEdges());
 		for (Iterator linksIterator = existingLinks.iterator(); linksIterator.hasNext();) {
 			Edge nextDiagramLink = (Edge) linksIterator.next();
-			int diagramLinkVisualID = org.muml.pm.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
-					.getVisualID(nextDiagramLink);
+			int diagramLinkVisualID = HardwareVisualIDRegistry.getVisualID(nextDiagramLink);
 			if (diagramLinkVisualID == -1) {
 				if (nextDiagramLink.getSource() != null && nextDiagramLink.getTarget() != null) {
 					linksIterator.remove();
@@ -265,10 +271,9 @@ public class HWPlatformInstanceConfigurationCanonicalEditPolicy extends Canonica
 				EObject diagramLinkObject = nextDiagramLink.getElement();
 				EObject diagramLinkSrc = nextDiagramLink.getSource().getElement();
 				EObject diagramLinkDst = nextDiagramLink.getTarget().getElement();
-				for (Iterator<org.muml.pm.hardware.platforminstance.diagram.part.HardwareLinkDescriptor> linkDescriptorsIterator = linkDescriptors
+				for (Iterator<HardwareLinkDescriptor> linkDescriptorsIterator = linkDescriptors
 						.iterator(); linkDescriptorsIterator.hasNext();) {
-					org.muml.pm.hardware.platforminstance.diagram.part.HardwareLinkDescriptor nextLinkDescriptor = linkDescriptorsIterator
-							.next();
+					HardwareLinkDescriptor nextLinkDescriptor = linkDescriptorsIterator.next();
 					if (diagramLinkObject == nextLinkDescriptor.getModelElement()
 							&& diagramLinkSrc == nextLinkDescriptor.getSource()
 							&& diagramLinkDst == nextLinkDescriptor.getDestination()
@@ -287,156 +292,140 @@ public class HWPlatformInstanceConfigurationCanonicalEditPolicy extends Canonica
 	/**
 	 * @generated
 	 */
-	private Collection<org.muml.pm.hardware.platforminstance.diagram.part.HardwareLinkDescriptor> collectAllLinks(
-			View view, Domain2Notation domain2NotationMap) {
-		if (!org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceConfigurationEditPart.MODEL_ID
-				.equals(org.muml.pm.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
-						.getModelID(view))) {
+	private Collection<HardwareLinkDescriptor> collectAllLinks(View view, Domain2Notation domain2NotationMap) {
+		if (!HWPlatformInstanceConfigurationEditPart.MODEL_ID.equals(HardwareVisualIDRegistry.getModelID(view))) {
 			return Collections.emptyList();
 		}
-		LinkedList<org.muml.pm.hardware.platforminstance.diagram.part.HardwareLinkDescriptor> result = new LinkedList<org.muml.pm.hardware.platforminstance.diagram.part.HardwareLinkDescriptor>();
-		switch (org.muml.pm.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
-				.getVisualID(view)) {
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceConfigurationEditPart.VISUAL_ID: {
+		LinkedList<HardwareLinkDescriptor> result = new LinkedList<HardwareLinkDescriptor>();
+		switch (HardwareVisualIDRegistry.getVisualID(view)) {
+		case HWPlatformInstanceConfigurationEditPart.VISUAL_ID: {
 			if (noConnectionViews.contains(view.getType())) {
 				// MUML TICKET #1247
 				break;
 			}
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(org.muml.pm.hardware.platforminstance.diagram.part.HardwareDiagramUpdater
-						.getHWPlatformInstanceConfiguration_1000ContainedLinks(view));
+				result.addAll(HardwareDiagramUpdater.getHWPlatformInstanceConfiguration_1000ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceEditPart.VISUAL_ID: {
+		case HWPlatformInstanceEditPart.VISUAL_ID: {
 			if (noConnectionViews.contains(view.getType())) {
 				// MUML TICKET #1247
 				break;
 			}
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(org.muml.pm.hardware.platforminstance.diagram.part.HardwareDiagramUpdater
-						.getHWPlatformInstance_2005ContainedLinks(view));
+				result.addAll(HardwareDiagramUpdater.getHWPlatformInstance_2005ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceConfiguration2EditPart.VISUAL_ID: {
+		case HWPlatformInstanceConfiguration2EditPart.VISUAL_ID: {
 			if (noConnectionViews.contains(view.getType())) {
 				// MUML TICKET #1247
 				break;
 			}
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(org.muml.pm.hardware.platforminstance.diagram.part.HardwareDiagramUpdater
-						.getHWPlatformInstanceConfiguration_3039ContainedLinks(view));
+				result.addAll(HardwareDiagramUpdater.getHWPlatformInstanceConfiguration_3039ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstance2EditPart.VISUAL_ID: {
+		case HWPlatformInstance2EditPart.VISUAL_ID: {
 			if (noConnectionViews.contains(view.getType())) {
 				// MUML TICKET #1247
 				break;
 			}
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(org.muml.pm.hardware.platforminstance.diagram.part.HardwareDiagramUpdater
-						.getHWPlatformInstance_3040ContainedLinks(view));
+				result.addAll(HardwareDiagramUpdater.getHWPlatformInstance_3040ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.DelegationHWPortInstanceEditPart.VISUAL_ID: {
+		case DelegationHWPortInstanceEditPart.VISUAL_ID: {
 			if (noConnectionViews.contains(view.getType())) {
 				// MUML TICKET #1247
 				break;
 			}
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(org.muml.pm.hardware.platforminstance.diagram.part.HardwareDiagramUpdater
-						.getDelegationHWPortInstance_3041ContainedLinks(view));
+				result.addAll(HardwareDiagramUpdater.getDelegationHWPortInstance_3041ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.StructuredResourceInstanceEditPart.VISUAL_ID: {
+		case StructuredResourceInstanceEditPart.VISUAL_ID: {
 			if (noConnectionViews.contains(view.getType())) {
 				// MUML TICKET #1247
 				break;
 			}
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(org.muml.pm.hardware.platforminstance.diagram.part.HardwareDiagramUpdater
-						.getStructuredResourceInstance_3042ContainedLinks(view));
+				result.addAll(HardwareDiagramUpdater.getStructuredResourceInstance_3042ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPortInstanceEditPart.VISUAL_ID: {
+		case HWPortInstanceEditPart.VISUAL_ID: {
 			if (noConnectionViews.contains(view.getType())) {
 				// MUML TICKET #1247
 				break;
 			}
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(org.muml.pm.hardware.platforminstance.diagram.part.HardwareDiagramUpdater
-						.getHWPortInstance_3043ContainedLinks(view));
+				result.addAll(HardwareDiagramUpdater.getHWPortInstance_3043ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.ActuatorInstanceEditPart.VISUAL_ID: {
+		case ActuatorInstanceEditPart.VISUAL_ID: {
 			if (noConnectionViews.contains(view.getType())) {
 				// MUML TICKET #1247
 				break;
 			}
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(org.muml.pm.hardware.platforminstance.diagram.part.HardwareDiagramUpdater
-						.getActuatorInstance_3044ContainedLinks(view));
+				result.addAll(HardwareDiagramUpdater.getActuatorInstance_3044ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.SensorInstanceEditPart.VISUAL_ID: {
+		case SensorInstanceEditPart.VISUAL_ID: {
 			if (noConnectionViews.contains(view.getType())) {
 				// MUML TICKET #1247
 				break;
 			}
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(org.muml.pm.hardware.platforminstance.diagram.part.HardwareDiagramUpdater
-						.getSensorInstance_3045ContainedLinks(view));
+				result.addAll(HardwareDiagramUpdater.getSensorInstance_3045ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.BusInstanceEditPart.VISUAL_ID: {
+		case BusInstanceEditPart.VISUAL_ID: {
 			if (noConnectionViews.contains(view.getType())) {
 				// MUML TICKET #1247
 				break;
 			}
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(org.muml.pm.hardware.platforminstance.diagram.part.HardwareDiagramUpdater
-						.getBusInstance_3046ContainedLinks(view));
+				result.addAll(HardwareDiagramUpdater.getBusInstance_3046ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.NetworkBridgeInstanceEditPart.VISUAL_ID: {
+		case NetworkBridgeInstanceEditPart.VISUAL_ID: {
 			if (noConnectionViews.contains(view.getType())) {
 				// MUML TICKET #1247
 				break;
 			}
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(org.muml.pm.hardware.platforminstance.diagram.part.HardwareDiagramUpdater
-						.getNetworkBridgeInstance_3047ContainedLinks(view));
+				result.addAll(HardwareDiagramUpdater.getNetworkBridgeInstance_3047ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.NetworkConnectorInstanceEditPart.VISUAL_ID: {
+		case NetworkConnectorInstanceEditPart.VISUAL_ID: {
 			if (noConnectionViews.contains(view.getType())) {
 				// MUML TICKET #1247
 				break;
 			}
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(org.muml.pm.hardware.platforminstance.diagram.part.HardwareDiagramUpdater
-						.getNetworkConnectorInstance_4012ContainedLinks(view));
+				result.addAll(HardwareDiagramUpdater.getNetworkConnectorInstance_4012ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
@@ -454,11 +443,10 @@ public class HWPlatformInstanceConfigurationCanonicalEditPolicy extends Canonica
 	/**
 	 * @generated
 	 */
-	private Collection<IAdaptable> createConnections(
-			Collection<org.muml.pm.hardware.platforminstance.diagram.part.HardwareLinkDescriptor> linkDescriptors,
+	private Collection<IAdaptable> createConnections(Collection<HardwareLinkDescriptor> linkDescriptors,
 			Domain2Notation domain2NotationMap) {
 		LinkedList<IAdaptable> adapters = new LinkedList<IAdaptable>();
-		for (org.muml.pm.hardware.platforminstance.diagram.part.HardwareLinkDescriptor nextLinkDescriptor : linkDescriptors) {
+		for (HardwareLinkDescriptor nextLinkDescriptor : linkDescriptors) {
 			EditPart sourceEditPart = getSourceEditPart(nextLinkDescriptor, domain2NotationMap);
 			EditPart targetEditPart = getTargetEditPart(nextLinkDescriptor, domain2NotationMap);
 			if (sourceEditPart == null || targetEditPart == null) {
@@ -466,9 +454,8 @@ public class HWPlatformInstanceConfigurationCanonicalEditPolicy extends Canonica
 			}
 			CreateConnectionViewRequest.ConnectionViewDescriptor descriptor = new CreateConnectionViewRequest.ConnectionViewDescriptor(
 					nextLinkDescriptor.getSemanticAdapter(),
-					org.muml.pm.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
-							.getType(nextLinkDescriptor.getVisualID()),
-					ViewUtil.APPEND, false, ((IGraphicalEditPart) getHost()).getDiagramPreferencesHint());
+					HardwareVisualIDRegistry.getType(nextLinkDescriptor.getVisualID()), ViewUtil.APPEND, false,
+					((IGraphicalEditPart) getHost()).getDiagramPreferencesHint());
 			CreateConnectionViewRequest ccr = new CreateConnectionViewRequest(descriptor);
 			ccr.setType(RequestConstants.REQ_CONNECTION_START);
 			ccr.setSourceEditPart(sourceEditPart);
@@ -525,8 +512,7 @@ public class HWPlatformInstanceConfigurationCanonicalEditPolicy extends Canonica
 	protected final EditPart getHintedEditPart(EObject domainModelElement, Domain2Notation domain2NotationMap,
 			int hintVisualId) {
 		View view = (View) domain2NotationMap.getHinted(domainModelElement,
-				org.muml.pm.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
-						.getType(hintVisualId));
+				HardwareVisualIDRegistry.getType(hintVisualId));
 		if (view != null) {
 			return (EditPart) getHost().getViewer().getEditPartRegistry().get(view);
 		}

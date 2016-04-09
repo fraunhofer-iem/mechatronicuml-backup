@@ -9,8 +9,7 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class HardwareNavigatorItem
-		extends org.muml.pm.hardware.platforminstance.diagram.navigator.HardwareAbstractNavigatorItem {
+public class HardwareNavigatorItem extends HardwareAbstractNavigatorItem {
 
 	/**
 	 * @generated
@@ -72,10 +71,8 @@ public class HardwareNavigatorItem
 	 */
 	public boolean equals(Object obj) {
 		if (obj instanceof org.muml.pm.hardware.platforminstance.diagram.navigator.HardwareNavigatorItem) {
-			return EcoreUtil.getURI(getView())
-					.equals(EcoreUtil
-							.getURI(((org.muml.pm.hardware.platforminstance.diagram.navigator.HardwareNavigatorItem) obj)
-									.getView()));
+			return EcoreUtil.getURI(getView()).equals(EcoreUtil.getURI(
+					((org.muml.pm.hardware.platforminstance.diagram.navigator.HardwareNavigatorItem) obj).getView()));
 		}
 		return super.equals(obj);
 	}

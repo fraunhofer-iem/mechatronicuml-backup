@@ -31,6 +31,12 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipReques
 import org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.edit.helpers.GeneratedEditHelperBase;
+import org.muml.pim.connector.ConnectorEndpointInstance;
+import org.muml.pm.hardware.hwplatforminstance.HWPlatformInstanceConfiguration;
+import org.muml.pm.hardware.hwplatforminstance.NetworkConnectorInstance;
+import org.muml.pm.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry;
+import org.muml.pm.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin;
+import org.muml.pm.hardware.platforminstance.diagram.providers.HardwareElementTypes;
 
 /**
  * @generated
@@ -68,9 +74,7 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		if (request instanceof ReconnectRequest) {
 			Object view = ((ReconnectRequest) request).getConnectionEditPart().getModel();
 			if (view instanceof View) {
-				Integer id = new Integer(
-						org.muml.pm.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
-								.getVisualID((View) view));
+				Integer id = new Integer(HardwareVisualIDRegistry.getVisualID((View) view));
 				request.getExtendedData().put(VISUAL_ID_KEY, id);
 			}
 		}
@@ -135,8 +139,7 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 	 * @generated
 	 */
 	private IElementType getContextElementType(IEditCommandRequest request) {
-		IElementType requestContextElementType = org.muml.pm.hardware.platforminstance.diagram.providers.HardwareElementTypes
-				.getElementType(getVisualID(request));
+		IElementType requestContextElementType = HardwareElementTypes.getElementType(getVisualID(request));
 		return requestContextElementType != null ? requestContextElementType : myElementType;
 	}
 
@@ -282,11 +285,9 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 	 * @generated
 	 */
 	public static LinkConstraints getLinkConstraints() {
-		LinkConstraints cached = org.muml.pm.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
-				.getInstance().getLinkConstraints();
+		LinkConstraints cached = PlatformInstanceDiagramEditorPlugin.getInstance().getLinkConstraints();
 		if (cached == null) {
-			org.muml.pm.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
-					.getInstance().setLinkConstraints(cached = new LinkConstraints());
+			PlatformInstanceDiagramEditorPlugin.getInstance().setLinkConstraints(cached = new LinkConstraints());
 		}
 		return cached;
 	}
@@ -304,36 +305,27 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		}
 
 		/**
-		 * @generated
-		 */
-		public boolean canCreateNetworkConnectorInstance_4012(
-				org.muml.pm.hardware.hwplatforminstance.HWPlatformInstanceConfiguration container,
-				org.muml.pim.connector.ConnectorEndpointInstance source,
-				org.muml.pim.connector.ConnectorEndpointInstance target, View sourceView,
-				View targetView) {
+		* @generated
+		*/
+		public boolean canCreateNetworkConnectorInstance_4012(HWPlatformInstanceConfiguration container,
+				ConnectorEndpointInstance source, ConnectorEndpointInstance target, View sourceView, View targetView) {
 			return canExistNetworkConnectorInstance_4012(container, null, source, target, sourceView, targetView);
 		}
 
 		/**
-		 * @generated
-		 */
-		public boolean canExistNetworkConnectorInstance_4012(
-				org.muml.pm.hardware.hwplatforminstance.HWPlatformInstanceConfiguration container,
-				org.muml.pm.hardware.hwplatforminstance.NetworkConnectorInstance linkInstance,
-				org.muml.pim.connector.ConnectorEndpointInstance source,
-				org.muml.pim.connector.ConnectorEndpointInstance target, View sourceView,
-				View targetView) {
+		* @generated
+		*/
+		public boolean canExistNetworkConnectorInstance_4012(HWPlatformInstanceConfiguration container,
+				NetworkConnectorInstance linkInstance, ConnectorEndpointInstance source,
+				ConnectorEndpointInstance target, View sourceView, View targetView) {
 			return true;
 		}
 
 		/**
-		 * @generated
-		 */
-		public java.lang.String getErrorNetworkConnectorInstance_4012(
-				org.muml.pm.hardware.hwplatforminstance.HWPlatformInstanceConfiguration container,
-				org.muml.pim.connector.ConnectorEndpointInstance source,
-				org.muml.pim.connector.ConnectorEndpointInstance target, View sourceView,
-				View targetView) {
+		* @generated
+		*/
+		public java.lang.String getErrorNetworkConnectorInstance_4012(HWPlatformInstanceConfiguration container,
+				ConnectorEndpointInstance source, ConnectorEndpointInstance target, View sourceView, View targetView) {
 			return null;
 		}
 

@@ -43,6 +43,9 @@ import org.eclipse.ui.navigator.resources.ProjectExplorer;
 import org.eclipse.ui.part.FileEditorInput;
 import org.eclipse.ui.part.IShowInTargetList;
 import org.eclipse.ui.part.ShowInContext;
+import org.muml.core.common.editingdomain.EditingDomainPlugin;
+import org.muml.core.common.editingdomain.initialize.IEditingDomainInitializer;
+import org.muml.pm.hardware.platforminstance.diagram.navigator.HardwareNavigatorItem;
 
 /**
  * @generated
@@ -78,8 +81,7 @@ public class PlatformInstanceDiagramEditor extends DiagramDocumentEditor impleme
 	 */
 	protected PaletteRoot createPaletteRoot(PaletteRoot existingPaletteRoot) {
 		PaletteRoot root = super.createPaletteRoot(existingPaletteRoot);
-		new org.muml.pm.hardware.platforminstance.diagram.part.HardwarePaletteFactory()
-				.fillPalette(root);
+		new HardwarePaletteFactory().fillPalette(root);
 		return root;
 	}
 
@@ -87,14 +89,14 @@ public class PlatformInstanceDiagramEditor extends DiagramDocumentEditor impleme
 	 * @generated
 	 */
 	protected PreferencesHint getPreferencesHint() {
-		return org.muml.pm.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT;
+		return PlatformInstanceDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT;
 	}
 
 	/**
 	 * @generated
 	 */
 	public String getContributorId() {
-		return org.muml.pm.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin.ID;
+		return PlatformInstanceDiagramEditorPlugin.ID;
 	}
 
 	/**
@@ -117,8 +119,7 @@ public class PlatformInstanceDiagramEditor extends DiagramDocumentEditor impleme
 	 */
 	protected IDocumentProvider getDocumentProvider(IEditorInput input) {
 		if (input instanceof IFileEditorInput || input instanceof URIEditorInput) {
-			return org.muml.pm.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
-					.getInstance().getDocumentProvider();
+			return PlatformInstanceDiagramEditorPlugin.getInstance().getDocumentProvider();
 		}
 		return super.getDocumentProvider(input);
 	}
@@ -139,9 +140,7 @@ public class PlatformInstanceDiagramEditor extends DiagramDocumentEditor impleme
 	 */
 	protected void setDocumentProvider(IEditorInput input) {
 		if (input instanceof IFileEditorInput || input instanceof URIEditorInput) {
-			setDocumentProvider(
-					org.muml.pm.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
-							.getInstance().getDocumentProvider());
+			setDocumentProvider(PlatformInstanceDiagramEditorPlugin.getInstance().getDocumentProvider());
 		} else {
 			super.setDocumentProvider(input);
 		}
@@ -186,9 +185,7 @@ public class PlatformInstanceDiagramEditor extends DiagramDocumentEditor impleme
 			return;
 		}
 		if (provider.isDeleted(input) && original != null) {
-			String message = NLS.bind(
-					org.muml.pm.hardware.platforminstance.diagram.part.Messages.PlatformInstanceDiagramEditor_SavingDeletedFile,
-					original.getName());
+			String message = NLS.bind(Messages.PlatformInstanceDiagramEditor_SavingDeletedFile, original.getName());
 			dialog.setErrorMessage(null);
 			dialog.setMessage(message, IMessageProvider.WARNING);
 		}
@@ -214,9 +211,8 @@ public class PlatformInstanceDiagramEditor extends DiagramDocumentEditor impleme
 				.getEditorReferences();
 		for (int i = 0; i < editorRefs.length; i++) {
 			if (matchingStrategy.matches(editorRefs[i], newInput)) {
-				MessageDialog.openWarning(shell,
-						org.muml.pm.hardware.platforminstance.diagram.part.Messages.PlatformInstanceDiagramEditor_SaveAsErrorTitle,
-						org.muml.pm.hardware.platforminstance.diagram.part.Messages.PlatformInstanceDiagramEditor_SaveAsErrorMessage);
+				MessageDialog.openWarning(shell, Messages.PlatformInstanceDiagramEditor_SaveAsErrorTitle,
+						Messages.PlatformInstanceDiagramEditor_SaveAsErrorMessage);
 				return;
 			}
 		}
@@ -229,10 +225,8 @@ public class PlatformInstanceDiagramEditor extends DiagramDocumentEditor impleme
 		} catch (CoreException x) {
 			IStatus status = x.getStatus();
 			if (status == null || status.getSeverity() != IStatus.CANCEL) {
-				ErrorDialog.openError(shell,
-						org.muml.pm.hardware.platforminstance.diagram.part.Messages.PlatformInstanceDiagramEditor_SaveErrorTitle,
-						org.muml.pm.hardware.platforminstance.diagram.part.Messages.PlatformInstanceDiagramEditor_SaveErrorMessage,
-						x.getStatus());
+				ErrorDialog.openError(shell, Messages.PlatformInstanceDiagramEditor_SaveErrorTitle,
+						Messages.PlatformInstanceDiagramEditor_SaveErrorMessage, x.getStatus());
 			}
 		} finally {
 			provider.changed(newInput);
@@ -266,8 +260,7 @@ public class PlatformInstanceDiagramEditor extends DiagramDocumentEditor impleme
 		}
 		IFile file = WorkspaceSynchronizer.getFile(diagram.eResource());
 		if (file != null) {
-			org.muml.pm.hardware.platforminstance.diagram.navigator.HardwareNavigatorItem item = new org.muml.pm.hardware.platforminstance.diagram.navigator.HardwareNavigatorItem(
-					diagram, file, false);
+			HardwareNavigatorItem item = new HardwareNavigatorItem(diagram, file, false);
 			return new StructuredSelection(item);
 		}
 		return StructuredSelection.EMPTY;
@@ -278,8 +271,8 @@ public class PlatformInstanceDiagramEditor extends DiagramDocumentEditor impleme
 	 */
 	protected void configureGraphicalViewer() {
 		super.configureGraphicalViewer();
-		org.muml.pm.hardware.platforminstance.diagram.part.DiagramEditorContextMenuProvider provider = new org.muml.pm.hardware.platforminstance.diagram.part.DiagramEditorContextMenuProvider(
-				this, getDiagramGraphicalViewer());
+		DiagramEditorContextMenuProvider provider = new DiagramEditorContextMenuProvider(this,
+				getDiagramGraphicalViewer());
 		getDiagramGraphicalViewer().setContextMenu(provider);
 		getSite().registerContextMenu(ActionIds.DIAGRAM_EDITOR_CONTEXT_MENU, provider, getDiagramGraphicalViewer());
 
@@ -298,8 +291,7 @@ public class PlatformInstanceDiagramEditor extends DiagramDocumentEditor impleme
 	@Override
 	public void setInput(IEditorInput input) {
 		super.setInput(input);
-		for (org.muml.common.editingdomain.initialize.IEditingDomainInitializer init : org.muml.common.editingdomain.EditingDomainPlugin
-				.getEditingDomainInitializers()) {
+		for (IEditingDomainInitializer init : EditingDomainPlugin.getEditingDomainInitializers()) {
 			init.initialize(getEditingDomain());
 		}
 	}

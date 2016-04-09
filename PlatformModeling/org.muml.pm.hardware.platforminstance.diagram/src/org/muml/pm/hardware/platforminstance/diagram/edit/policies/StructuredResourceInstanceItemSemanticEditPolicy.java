@@ -13,29 +13,30 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.pm.hardware.platforminstance.diagram.edit.commands.HWPortInstanceCreateCommand;
+import org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPortInstanceEditPart;
+import org.muml.pm.hardware.platforminstance.diagram.edit.parts.NetworkConnectorInstanceEditPart;
+import org.muml.pm.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry;
+import org.muml.pm.hardware.platforminstance.diagram.providers.HardwareElementTypes;
 
 /**
  * @generated
  */
-public class StructuredResourceInstanceItemSemanticEditPolicy extends
-		org.muml.pm.hardware.platforminstance.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy {
+public class StructuredResourceInstanceItemSemanticEditPolicy extends HardwareBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public StructuredResourceInstanceItemSemanticEditPolicy() {
-		super(org.muml.pm.hardware.platforminstance.diagram.providers.HardwareElementTypes.StructuredResourceInstance_3042);
+		super(HardwareElementTypes.StructuredResourceInstance_3042);
 	}
 
 	/**
 	 * @generated
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
-		if (org.muml.pm.hardware.platforminstance.diagram.providers.HardwareElementTypes.HWPortInstance_3043 == req
-				.getElementType()) {
-			return getGEFWrapper(
-					new org.muml.pm.hardware.platforminstance.diagram.edit.commands.HWPortInstanceCreateCommand(
-							req));
+		if (HardwareElementTypes.HWPortInstance_3043 == req.getElementType()) {
+			return getGEFWrapper(new HWPortInstanceCreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}
@@ -67,14 +68,12 @@ public class StructuredResourceInstanceItemSemanticEditPolicy extends
 		View view = (View) getHost().getModel();
 		for (Iterator<?> nit = view.getChildren().iterator(); nit.hasNext();) {
 			Node node = (Node) nit.next();
-			switch (org.muml.pm.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
-					.getVisualID(node)) {
-			case org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPortInstanceEditPart.VISUAL_ID:
+			switch (HardwareVisualIDRegistry.getVisualID(node)) {
+			case HWPortInstanceEditPart.VISUAL_ID:
 				for (Iterator<?> it = node.getTargetEdges().iterator(); it.hasNext();) {
 					Edge incomingLink = (Edge) it.next();
-					if (org.muml.pm.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
-							.getVisualID(
-									incomingLink) == org.muml.pm.hardware.platforminstance.diagram.edit.parts.NetworkConnectorInstanceEditPart.VISUAL_ID) {
+					if (HardwareVisualIDRegistry
+							.getVisualID(incomingLink) == NetworkConnectorInstanceEditPart.VISUAL_ID) {
 						DestroyElementRequest r = new DestroyElementRequest(incomingLink.getElement(), false);
 						cmd.add(new DestroyElementCommand(r));
 						cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
@@ -83,9 +82,8 @@ public class StructuredResourceInstanceItemSemanticEditPolicy extends
 				}
 				for (Iterator<?> it = node.getSourceEdges().iterator(); it.hasNext();) {
 					Edge outgoingLink = (Edge) it.next();
-					if (org.muml.pm.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
-							.getVisualID(
-									outgoingLink) == org.muml.pm.hardware.platforminstance.diagram.edit.parts.NetworkConnectorInstanceEditPart.VISUAL_ID) {
+					if (HardwareVisualIDRegistry
+							.getVisualID(outgoingLink) == NetworkConnectorInstanceEditPart.VISUAL_ID) {
 						DestroyElementRequest r = new DestroyElementRequest(outgoingLink.getElement(), false);
 						cmd.add(new DestroyElementCommand(r));
 						cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));

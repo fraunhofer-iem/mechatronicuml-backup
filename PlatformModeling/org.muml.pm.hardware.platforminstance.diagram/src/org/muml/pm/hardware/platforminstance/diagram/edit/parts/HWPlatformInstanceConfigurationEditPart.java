@@ -8,6 +8,9 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.DiagramEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.edit.policies.reparent.CreationEditPolicyWithCustomReparent;
+import org.muml.pm.hardware.platforminstance.diagram.edit.policies.HWPlatformInstanceConfigurationCanonicalEditPolicy;
+import org.muml.pm.hardware.platforminstance.diagram.edit.policies.HWPlatformInstanceConfigurationItemSemanticEditPolicy;
+import org.muml.pm.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry;
 
 /**
  * @generated
@@ -59,15 +62,12 @@ public class HWPlatformInstanceConfigurationEditPart extends DiagramEditPart {
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
-				new org.muml.pm.hardware.platforminstance.diagram.edit.policies.HWPlatformInstanceConfigurationItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new HWPlatformInstanceConfigurationItemSemanticEditPolicy());
 
-		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE,
-				new org.muml.pm.hardware.platforminstance.diagram.edit.policies.HWPlatformInstanceConfigurationCanonicalEditPolicy(
-						true));
+		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new HWPlatformInstanceConfigurationCanonicalEditPolicy(true));
 
-		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicyWithCustomReparent(
-				org.muml.pm.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry.TYPED_INSTANCE));
+		installEditPolicy(EditPolicyRoles.CREATION_ROLE,
+				new CreationEditPolicyWithCustomReparent(HardwareVisualIDRegistry.TYPED_INSTANCE));
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.POPUPBAR_ROLE);
 	}
 

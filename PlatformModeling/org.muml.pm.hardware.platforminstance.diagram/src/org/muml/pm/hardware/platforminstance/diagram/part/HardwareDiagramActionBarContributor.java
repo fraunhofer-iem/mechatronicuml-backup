@@ -17,14 +17,14 @@ public class HardwareDiagramActionBarContributor extends DiagramActionBarContrib
 	 * @generated
 	 */
 	protected Class getEditorClass() {
-		return org.muml.pm.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditor.class;
+		return PlatformInstanceDiagramEditor.class;
 	}
 
 	/**
 	 * @generated
 	 */
 	protected String getEditorId() {
-		return org.muml.pm.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditor.ID;
+		return PlatformInstanceDiagramEditor.ID;
 	}
 
 	/**
@@ -41,8 +41,7 @@ public class HardwareDiagramActionBarContributor extends DiagramActionBarContrib
 		if (editMenu.find("validationGroup") == null) { //$NON-NLS-1$
 			editMenu.add(new GroupMarker("validationGroup")); //$NON-NLS-1$
 		}
-		IAction validateAction = new org.muml.pm.hardware.platforminstance.diagram.part.ValidateAction(
-				page);
+		IAction validateAction = new ValidateAction(page);
 		editMenu.appendToGroup("validationGroup", validateAction); //$NON-NLS-1$
 	}
 }

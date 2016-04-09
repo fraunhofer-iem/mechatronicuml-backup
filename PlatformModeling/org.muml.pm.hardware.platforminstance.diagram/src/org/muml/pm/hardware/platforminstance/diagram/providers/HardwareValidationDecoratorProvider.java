@@ -37,6 +37,10 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.ui.ISharedImages;
 import org.eclipse.ui.PlatformUI;
+import org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceConfigurationEditPart;
+import org.muml.pm.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry;
+import org.muml.pm.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditor;
+import org.muml.pm.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin;
 
 /**
  * @generated
@@ -51,8 +55,7 @@ public class HardwareValidationDecoratorProvider extends AbstractProvider implem
 	/**
 	 * @generated
 	 */
-	private static final String MARKER_TYPE = org.muml.pm.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin.ID
-			+ ".diagnostic"; //$NON-NLS-1$
+	private static final String MARKER_TYPE = PlatformInstanceDiagramEditorPlugin.ID + ".diagnostic"; //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -81,8 +84,7 @@ public class HardwareValidationDecoratorProvider extends AbstractProvider implem
 			if (!(ed instanceof DiagramEditDomain)) {
 				return;
 			}
-			if (((DiagramEditDomain) ed)
-					.getEditorPart() instanceof org.muml.pm.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditor) {
+			if (((DiagramEditDomain) ed).getEditorPart() instanceof PlatformInstanceDiagramEditor) {
 				decoratorTarget.installDecorator(KEY, new StatusDecorator(decoratorTarget));
 			}
 		}
@@ -98,9 +100,7 @@ public class HardwareValidationDecoratorProvider extends AbstractProvider implem
 		IDecoratorTarget decoratorTarget = ((CreateDecoratorsOperation) operation).getDecoratorTarget();
 		View view = (View) decoratorTarget.getAdapter(View.class);
 		return view != null
-				&& org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceConfigurationEditPart.MODEL_ID
-						.equals(org.muml.pm.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
-								.getModelID(view));
+				&& HWPlatformInstanceConfigurationEditPart.MODEL_ID.equals(HardwareVisualIDRegistry.getModelID(view));
 	}
 
 	/**
@@ -140,8 +140,7 @@ public class HardwareValidationDecoratorProvider extends AbstractProvider implem
 					}
 					// END Added null checks
 				} catch (Exception e) {
-					org.muml.pm.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
-							.getInstance().logError("Decorator refresh failure", e); //$NON-NLS-1$
+					PlatformInstanceDiagramEditorPlugin.getInstance().logError("Decorator refresh failure", e); //$NON-NLS-1$
 				}
 			}
 		});
@@ -171,8 +170,7 @@ public class HardwareValidationDecoratorProvider extends AbstractProvider implem
 					}
 				});
 			} catch (Exception e) {
-				org.muml.pm.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
-						.getInstance().logError("ViewID access failure", e); //$NON-NLS-1$			
+				PlatformInstanceDiagramEditorPlugin.getInstance().logError("ViewID access failure", e); //$NON-NLS-1$			
 			}
 		}
 
@@ -205,8 +203,7 @@ public class HardwareValidationDecoratorProvider extends AbstractProvider implem
 			try {
 				markers = resource.findMarkers(MARKER_TYPE, true, IResource.DEPTH_INFINITE);
 			} catch (CoreException e) {
-				org.muml.pm.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
-						.getInstance().logError("Validation markers refresh failure", e); //$NON-NLS-1$
+				PlatformInstanceDiagramEditorPlugin.getInstance().logError("Validation markers refresh failure", e); //$NON-NLS-1$
 			}
 			if (markers == null || markers.length == 0) {
 				return;
@@ -411,8 +408,7 @@ public class HardwareValidationDecoratorProvider extends AbstractProvider implem
 			try {
 				return marker.getType();
 			} catch (CoreException e) {
-				org.muml.pm.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
-						.getInstance().logError("Validation marker refresh failure", e); //$NON-NLS-1$
+				PlatformInstanceDiagramEditorPlugin.getInstance().logError("Validation marker refresh failure", e); //$NON-NLS-1$
 				return ""; //$NON-NLS-1$
 			}
 		}

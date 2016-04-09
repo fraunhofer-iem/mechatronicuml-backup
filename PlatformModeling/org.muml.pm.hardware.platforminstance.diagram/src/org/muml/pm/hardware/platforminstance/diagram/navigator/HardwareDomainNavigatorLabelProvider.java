@@ -6,6 +6,7 @@ import org.eclipse.swt.graphics.Image;
 import org.eclipse.ui.IMemento;
 import org.eclipse.ui.navigator.ICommonContentExtensionSite;
 import org.eclipse.ui.navigator.ICommonLabelProvider;
+import org.muml.pm.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin;
 
 /**
  * @generated
@@ -16,8 +17,7 @@ public class HardwareDomainNavigatorLabelProvider implements ICommonLabelProvide
 	 * @generated
 	 */
 	private AdapterFactoryLabelProvider myAdapterFactoryLabelProvider = new AdapterFactoryLabelProvider(
-			org.muml.pm.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
-					.getInstance().getItemProvidersAdapterFactory());
+			PlatformInstanceDiagramEditorPlugin.getInstance().getItemProvidersAdapterFactory());
 
 	/**
 	 * @generated
@@ -29,10 +29,8 @@ public class HardwareDomainNavigatorLabelProvider implements ICommonLabelProvide
 	 * @generated
 	 */
 	public Image getImage(Object element) {
-		if (element instanceof org.muml.pm.hardware.platforminstance.diagram.navigator.HardwareDomainNavigatorItem) {
-			return myAdapterFactoryLabelProvider.getImage(
-					((org.muml.pm.hardware.platforminstance.diagram.navigator.HardwareDomainNavigatorItem) element)
-							.getEObject());
+		if (element instanceof HardwareDomainNavigatorItem) {
+			return myAdapterFactoryLabelProvider.getImage(((HardwareDomainNavigatorItem) element).getEObject());
 		}
 		return null;
 	}
@@ -41,10 +39,8 @@ public class HardwareDomainNavigatorLabelProvider implements ICommonLabelProvide
 	 * @generated
 	 */
 	public String getText(Object element) {
-		if (element instanceof org.muml.pm.hardware.platforminstance.diagram.navigator.HardwareDomainNavigatorItem) {
-			return myAdapterFactoryLabelProvider.getText(
-					((org.muml.pm.hardware.platforminstance.diagram.navigator.HardwareDomainNavigatorItem) element)
-							.getEObject());
+		if (element instanceof HardwareDomainNavigatorItem) {
+			return myAdapterFactoryLabelProvider.getText(((HardwareDomainNavigatorItem) element).getEObject());
 		}
 		return null;
 	}

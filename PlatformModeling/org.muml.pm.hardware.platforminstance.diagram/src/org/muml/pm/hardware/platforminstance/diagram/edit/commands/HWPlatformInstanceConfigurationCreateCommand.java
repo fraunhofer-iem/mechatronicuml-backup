@@ -11,6 +11,9 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.pm.hardware.hwplatforminstance.HWPlatformInstance;
+import org.muml.pm.hardware.hwplatforminstance.HWPlatformInstanceConfiguration;
+import org.muml.pm.hardware.hwplatforminstance.HwplatforminstanceFactory;
 
 /**
  * @generated
@@ -40,7 +43,7 @@ public class HWPlatformInstanceConfigurationCreateCommand extends EditElementCom
 	 * @generated
 	 */
 	public boolean canExecute() {
-		org.muml.pm.hardware.hwplatforminstance.HWPlatformInstance container = (org.muml.pm.hardware.hwplatforminstance.HWPlatformInstance) getElementToEdit();
+		HWPlatformInstance container = (HWPlatformInstance) getElementToEdit();
 		if (container.getEmbeddedHPIC() != null) {
 			return false;
 		}
@@ -52,10 +55,10 @@ public class HWPlatformInstanceConfigurationCreateCommand extends EditElementCom
 	 * @generated
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-		org.muml.pm.hardware.hwplatforminstance.HWPlatformInstanceConfiguration newElement = org.muml.pm.hardware.hwplatforminstance.HwplatforminstanceFactory.eINSTANCE
+		HWPlatformInstanceConfiguration newElement = HwplatforminstanceFactory.eINSTANCE
 				.createHWPlatformInstanceConfiguration();
 
-		org.muml.pm.hardware.hwplatforminstance.HWPlatformInstance owner = (org.muml.pm.hardware.hwplatforminstance.HWPlatformInstance) getElementToEdit();
+		HWPlatformInstance owner = (HWPlatformInstance) getElementToEdit();
 		owner.setEmbeddedHPIC(newElement);
 
 		doConfigure(newElement, monitor, info);
@@ -65,11 +68,10 @@ public class HWPlatformInstanceConfigurationCreateCommand extends EditElementCom
 	}
 
 	/**
-	 * @generated
-	 */
-	protected void doConfigure(
-			org.muml.pm.hardware.hwplatforminstance.HWPlatformInstanceConfiguration newElement,
-			IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
+	* @generated
+	*/
+	protected void doConfigure(HWPlatformInstanceConfiguration newElement, IProgressMonitor monitor, IAdaptable info)
+			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest()).getElementType();
 		ConfigureRequest configureRequest = new ConfigureRequest(getEditingDomain(), newElement, elementType);
 		configureRequest.setClientContext(((CreateElementRequest) getRequest()).getClientContext());

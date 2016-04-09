@@ -15,6 +15,33 @@ import org.eclipse.swt.graphics.Image;
 import org.eclipse.ui.IMemento;
 import org.eclipse.ui.navigator.ICommonContentExtensionSite;
 import org.eclipse.ui.navigator.ICommonLabelProvider;
+import org.muml.pm.hardware.hwplatforminstance.HWPlatformInstanceConfiguration;
+import org.muml.pm.hardware.hwplatforminstance.NetworkConnectorInstance;
+import org.muml.pm.hardware.platforminstance.diagram.edit.parts.ActuatorInstanceEditPart;
+import org.muml.pm.hardware.platforminstance.diagram.edit.parts.ActuatorInstanceNameEditPart;
+import org.muml.pm.hardware.platforminstance.diagram.edit.parts.BusInstanceEditPart;
+import org.muml.pm.hardware.platforminstance.diagram.edit.parts.DelegationHWPortInstanceEditPart;
+import org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstance2EditPart;
+import org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceConfiguration2EditPart;
+import org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceConfigurationEditPart;
+import org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceEditPart;
+import org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceName2EditPart;
+import org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceNameEditPart;
+import org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPortInstanceEditPart;
+import org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPortLabel2EditPart;
+import org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPortLabelEditPart;
+import org.muml.pm.hardware.platforminstance.diagram.edit.parts.NetworkBridgeInstanceEditPart;
+import org.muml.pm.hardware.platforminstance.diagram.edit.parts.NetworkConnectorInstanceEditPart;
+import org.muml.pm.hardware.platforminstance.diagram.edit.parts.SensorInstanceEditPart;
+import org.muml.pm.hardware.platforminstance.diagram.edit.parts.SensorInstanceNameEditPart;
+import org.muml.pm.hardware.platforminstance.diagram.edit.parts.StructuredResourceInstanceEditPart;
+import org.muml.pm.hardware.platforminstance.diagram.edit.parts.StructuredResourceInstanceNameEditPart;
+import org.muml.pm.hardware.platforminstance.diagram.edit.parts.WrappingLabel11EditPart;
+import org.muml.pm.hardware.platforminstance.diagram.edit.parts.WrappingLabel13EditPart;
+import org.muml.pm.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry;
+import org.muml.pm.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin;
+import org.muml.pm.hardware.platforminstance.diagram.providers.HardwareElementTypes;
+import org.muml.pm.hardware.platforminstance.diagram.providers.HardwareParserProvider;
 
 /**
  * @generated
@@ -26,12 +53,10 @@ public class HardwareNavigatorLabelProvider extends LabelProvider
 	 * @generated
 	 */
 	static {
-		org.muml.pm.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
-				.getInstance().getImageRegistry()
-				.put("Navigator?UnknownElement", ImageDescriptor.getMissingImageDescriptor()); //$NON-NLS-1$
-		org.muml.pm.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
-				.getInstance().getImageRegistry()
-				.put("Navigator?ImageNotFound", ImageDescriptor.getMissingImageDescriptor()); //$NON-NLS-1$
+		PlatformInstanceDiagramEditorPlugin.getInstance().getImageRegistry().put("Navigator?UnknownElement", //$NON-NLS-1$
+				ImageDescriptor.getMissingImageDescriptor());
+		PlatformInstanceDiagramEditorPlugin.getInstance().getImageRegistry().put("Navigator?ImageNotFound", //$NON-NLS-1$
+				ImageDescriptor.getMissingImageDescriptor());
 	}
 
 	/**
@@ -39,10 +64,7 @@ public class HardwareNavigatorLabelProvider extends LabelProvider
 	 */
 	public void updateLabel(ViewerLabel label, TreePath elementPath) {
 		Object element = elementPath.getLastSegment();
-		if (element instanceof org.muml.pm.hardware.platforminstance.diagram.navigator.HardwareNavigatorItem
-				&& !isOwnView(
-						((org.muml.pm.hardware.platforminstance.diagram.navigator.HardwareNavigatorItem) element)
-								.getView())) {
+		if (element instanceof HardwareNavigatorItem && !isOwnView(((HardwareNavigatorItem) element).getView())) {
 			return;
 		}
 		label.setText(getText(element));
@@ -53,14 +75,13 @@ public class HardwareNavigatorLabelProvider extends LabelProvider
 	 * @generated
 	 */
 	public Image getImage(Object element) {
-		if (element instanceof org.muml.pm.hardware.platforminstance.diagram.navigator.HardwareNavigatorGroup) {
-			org.muml.pm.hardware.platforminstance.diagram.navigator.HardwareNavigatorGroup group = (org.muml.pm.hardware.platforminstance.diagram.navigator.HardwareNavigatorGroup) element;
-			return org.muml.pm.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
-					.getInstance().getBundledImage(group.getIcon());
+		if (element instanceof HardwareNavigatorGroup) {
+			HardwareNavigatorGroup group = (HardwareNavigatorGroup) element;
+			return PlatformInstanceDiagramEditorPlugin.getInstance().getBundledImage(group.getIcon());
 		}
 
-		if (element instanceof org.muml.pm.hardware.platforminstance.diagram.navigator.HardwareNavigatorItem) {
-			org.muml.pm.hardware.platforminstance.diagram.navigator.HardwareNavigatorItem navigatorItem = (org.muml.pm.hardware.platforminstance.diagram.navigator.HardwareNavigatorItem) element;
+		if (element instanceof HardwareNavigatorItem) {
+			HardwareNavigatorItem navigatorItem = (HardwareNavigatorItem) element;
 			if (!isOwnView(navigatorItem.getView())) {
 				return super.getImage(element);
 			}
@@ -74,53 +95,51 @@ public class HardwareNavigatorLabelProvider extends LabelProvider
 	 * @generated
 	 */
 	public Image getImage(View view) {
-		switch (org.muml.pm.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
-				.getVisualID(view)) {
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceConfigurationEditPart.VISUAL_ID:
+		switch (HardwareVisualIDRegistry.getVisualID(view)) {
+		case HWPlatformInstanceConfigurationEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?Diagram?http://www.muml.org/pm/hardware/hwplatforminstance/1.0.0?HWPlatformInstanceConfiguration", //$NON-NLS-1$
-					org.muml.pm.hardware.platforminstance.diagram.providers.HardwareElementTypes.HWPlatformInstanceConfiguration_1000);
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceEditPart.VISUAL_ID:
+					HardwareElementTypes.HWPlatformInstanceConfiguration_1000);
+		case HWPlatformInstanceEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?TopLevelNode?http://www.muml.org/pm/hardware/hwplatforminstance/1.0.0?HWPlatformInstance", //$NON-NLS-1$
-					org.muml.pm.hardware.platforminstance.diagram.providers.HardwareElementTypes.HWPlatformInstance_2005);
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceConfiguration2EditPart.VISUAL_ID:
+					HardwareElementTypes.HWPlatformInstance_2005);
+		case HWPlatformInstanceConfiguration2EditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?Node?http://www.muml.org/pm/hardware/hwplatforminstance/1.0.0?HWPlatformInstanceConfiguration", //$NON-NLS-1$
-					org.muml.pm.hardware.platforminstance.diagram.providers.HardwareElementTypes.HWPlatformInstanceConfiguration_3039);
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstance2EditPart.VISUAL_ID:
+					HardwareElementTypes.HWPlatformInstanceConfiguration_3039);
+		case HWPlatformInstance2EditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?Node?http://www.muml.org/pm/hardware/hwplatforminstance/1.0.0?HWPlatformInstance", //$NON-NLS-1$
-					org.muml.pm.hardware.platforminstance.diagram.providers.HardwareElementTypes.HWPlatformInstance_3040);
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.DelegationHWPortInstanceEditPart.VISUAL_ID:
+					HardwareElementTypes.HWPlatformInstance_3040);
+		case DelegationHWPortInstanceEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?Node?http://www.muml.org/pm/hardware/hwplatforminstance/1.0.0?DelegationHWPortInstance", //$NON-NLS-1$
-					org.muml.pm.hardware.platforminstance.diagram.providers.HardwareElementTypes.DelegationHWPortInstance_3041);
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.StructuredResourceInstanceEditPart.VISUAL_ID:
+					HardwareElementTypes.DelegationHWPortInstance_3041);
+		case StructuredResourceInstanceEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?Node?http://www.muml.org/pm/hardware/hwresourceinstance/1.0.0?StructuredResourceInstance", //$NON-NLS-1$
-					org.muml.pm.hardware.platforminstance.diagram.providers.HardwareElementTypes.StructuredResourceInstance_3042);
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPortInstanceEditPart.VISUAL_ID:
+					HardwareElementTypes.StructuredResourceInstance_3042);
+		case HWPortInstanceEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.muml.org/pm/hardware/hwplatforminstance/1.0.0?HWPortInstance", //$NON-NLS-1$
-					org.muml.pm.hardware.platforminstance.diagram.providers.HardwareElementTypes.HWPortInstance_3043);
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.ActuatorInstanceEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Node?http://www.muml.org/pm/hardware/hwresourceinstance/1.0.0?ActuatorInstance", //$NON-NLS-1$
-					org.muml.pm.hardware.platforminstance.diagram.providers.HardwareElementTypes.ActuatorInstance_3044);
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.SensorInstanceEditPart.VISUAL_ID:
+					HardwareElementTypes.HWPortInstance_3043);
+		case ActuatorInstanceEditPart.VISUAL_ID:
+			return getImage("Navigator?Node?http://www.muml.org/pm/hardware/hwresourceinstance/1.0.0?ActuatorInstance", //$NON-NLS-1$
+					HardwareElementTypes.ActuatorInstance_3044);
+		case SensorInstanceEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.muml.org/pm/hardware/hwresourceinstance/1.0.0?SensorInstance", //$NON-NLS-1$
-					org.muml.pm.hardware.platforminstance.diagram.providers.HardwareElementTypes.SensorInstance_3045);
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.BusInstanceEditPart.VISUAL_ID:
+					HardwareElementTypes.SensorInstance_3045);
+		case BusInstanceEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.muml.org/pm/hardware/hwplatforminstance/1.0.0?BusInstance", //$NON-NLS-1$
-					org.muml.pm.hardware.platforminstance.diagram.providers.HardwareElementTypes.BusInstance_3046);
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.NetworkBridgeInstanceEditPart.VISUAL_ID:
+					HardwareElementTypes.BusInstance_3046);
+		case NetworkBridgeInstanceEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?Node?http://www.muml.org/pm/hardware/hwplatforminstance/1.0.0?NetworkBridgeInstance", //$NON-NLS-1$
-					org.muml.pm.hardware.platforminstance.diagram.providers.HardwareElementTypes.NetworkBridgeInstance_3047);
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.NetworkConnectorInstanceEditPart.VISUAL_ID:
+					HardwareElementTypes.NetworkBridgeInstance_3047);
+		case NetworkConnectorInstanceEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?Link?http://www.muml.org/pm/hardware/hwplatforminstance/1.0.0?NetworkConnectorInstance", //$NON-NLS-1$
-					org.muml.pm.hardware.platforminstance.diagram.providers.HardwareElementTypes.NetworkConnectorInstance_4012);
+					HardwareElementTypes.NetworkConnectorInstance_4012);
 		}
 		return getImage("Navigator?UnknownElement", null); //$NON-NLS-1$
 	}
@@ -129,14 +148,10 @@ public class HardwareNavigatorLabelProvider extends LabelProvider
 	 * @generated
 	 */
 	private Image getImage(String key, IElementType elementType) {
-		ImageRegistry imageRegistry = org.muml.pm.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
-				.getInstance().getImageRegistry();
+		ImageRegistry imageRegistry = PlatformInstanceDiagramEditorPlugin.getInstance().getImageRegistry();
 		Image image = imageRegistry.get(key);
-		if (image == null && elementType != null
-				&& org.muml.pm.hardware.platforminstance.diagram.providers.HardwareElementTypes
-						.isKnownElementType(elementType)) {
-			image = org.muml.pm.hardware.platforminstance.diagram.providers.HardwareElementTypes
-					.getImage(elementType);
+		if (image == null && elementType != null && HardwareElementTypes.isKnownElementType(elementType)) {
+			image = HardwareElementTypes.getImage(elementType);
 			imageRegistry.put(key, image);
 		}
 
@@ -151,13 +166,13 @@ public class HardwareNavigatorLabelProvider extends LabelProvider
 	 * @generated
 	 */
 	public String getText(Object element) {
-		if (element instanceof org.muml.pm.hardware.platforminstance.diagram.navigator.HardwareNavigatorGroup) {
-			org.muml.pm.hardware.platforminstance.diagram.navigator.HardwareNavigatorGroup group = (org.muml.pm.hardware.platforminstance.diagram.navigator.HardwareNavigatorGroup) element;
+		if (element instanceof HardwareNavigatorGroup) {
+			HardwareNavigatorGroup group = (HardwareNavigatorGroup) element;
 			return group.getGroupName();
 		}
 
-		if (element instanceof org.muml.pm.hardware.platforminstance.diagram.navigator.HardwareNavigatorItem) {
-			org.muml.pm.hardware.platforminstance.diagram.navigator.HardwareNavigatorItem navigatorItem = (org.muml.pm.hardware.platforminstance.diagram.navigator.HardwareNavigatorItem) element;
+		if (element instanceof HardwareNavigatorItem) {
+			HardwareNavigatorItem navigatorItem = (HardwareNavigatorItem) element;
 			if (!isOwnView(navigatorItem.getView())) {
 				return null;
 			}
@@ -174,31 +189,30 @@ public class HardwareNavigatorLabelProvider extends LabelProvider
 		if (view.getElement() != null && view.getElement().eIsProxy()) {
 			return getUnresolvedDomainElementProxyText(view);
 		}
-		switch (org.muml.pm.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
-				.getVisualID(view)) {
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceConfigurationEditPart.VISUAL_ID:
+		switch (HardwareVisualIDRegistry.getVisualID(view)) {
+		case HWPlatformInstanceConfigurationEditPart.VISUAL_ID:
 			return getHWPlatformInstanceConfiguration_1000Text(view);
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceEditPart.VISUAL_ID:
+		case HWPlatformInstanceEditPart.VISUAL_ID:
 			return getHWPlatformInstance_2005Text(view);
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceConfiguration2EditPart.VISUAL_ID:
+		case HWPlatformInstanceConfiguration2EditPart.VISUAL_ID:
 			return getHWPlatformInstanceConfiguration_3039Text(view);
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstance2EditPart.VISUAL_ID:
+		case HWPlatformInstance2EditPart.VISUAL_ID:
 			return getHWPlatformInstance_3040Text(view);
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.DelegationHWPortInstanceEditPart.VISUAL_ID:
+		case DelegationHWPortInstanceEditPart.VISUAL_ID:
 			return getDelegationHWPortInstance_3041Text(view);
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.StructuredResourceInstanceEditPart.VISUAL_ID:
+		case StructuredResourceInstanceEditPart.VISUAL_ID:
 			return getStructuredResourceInstance_3042Text(view);
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPortInstanceEditPart.VISUAL_ID:
+		case HWPortInstanceEditPart.VISUAL_ID:
 			return getHWPortInstance_3043Text(view);
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.ActuatorInstanceEditPart.VISUAL_ID:
+		case ActuatorInstanceEditPart.VISUAL_ID:
 			return getActuatorInstance_3044Text(view);
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.SensorInstanceEditPart.VISUAL_ID:
+		case SensorInstanceEditPart.VISUAL_ID:
 			return getSensorInstance_3045Text(view);
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.BusInstanceEditPart.VISUAL_ID:
+		case BusInstanceEditPart.VISUAL_ID:
 			return getBusInstance_3046Text(view);
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.NetworkBridgeInstanceEditPart.VISUAL_ID:
+		case NetworkBridgeInstanceEditPart.VISUAL_ID:
 			return getNetworkBridgeInstance_3047Text(view);
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.NetworkConnectorInstanceEditPart.VISUAL_ID:
+		case NetworkConnectorInstanceEditPart.VISUAL_ID:
 			return getNetworkConnectorInstance_4012Text(view);
 		}
 		return getUnknownElementText(view);
@@ -208,13 +222,12 @@ public class HardwareNavigatorLabelProvider extends LabelProvider
 	 * @generated
 	 */
 	private String getHWPlatformInstanceConfiguration_1000Text(View view) {
-		org.muml.pm.hardware.hwplatforminstance.HWPlatformInstanceConfiguration domainModelElement = (org.muml.pm.hardware.hwplatforminstance.HWPlatformInstanceConfiguration) view
-				.getElement();
+		HWPlatformInstanceConfiguration domainModelElement = (HWPlatformInstanceConfiguration) view.getElement();
 		if (domainModelElement != null) {
 			return domainModelElement.getComment();
 		} else {
-			org.muml.pm.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
-					.getInstance().logError("No domain element for view with visualID = " + 1000); //$NON-NLS-1$
+			PlatformInstanceDiagramEditorPlugin.getInstance()
+					.logError("No domain element for view with visualID = " + 1000); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -223,19 +236,14 @@ public class HardwareNavigatorLabelProvider extends LabelProvider
 	 * @generated
 	 */
 	private String getHWPlatformInstance_2005Text(View view) {
-		IParser parser = org.muml.pm.hardware.platforminstance.diagram.providers.HardwareParserProvider
-				.getParser(
-						org.muml.pm.hardware.platforminstance.diagram.providers.HardwareElementTypes.HWPlatformInstance_2005,
-						view.getElement() != null ? view.getElement() : view,
-						org.muml.pm.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
-								.getType(
-										org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceNameEditPart.VISUAL_ID));
+		IParser parser = HardwareParserProvider.getParser(HardwareElementTypes.HWPlatformInstance_2005,
+				view.getElement() != null ? view.getElement() : view,
+				HardwareVisualIDRegistry.getType(HWPlatformInstanceNameEditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
 					ParserOptions.NONE.intValue());
 		} else {
-			org.muml.pm.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
-					.getInstance().logError("Parser was not found for label " + 5118); //$NON-NLS-1$
+			PlatformInstanceDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5118); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -244,13 +252,12 @@ public class HardwareNavigatorLabelProvider extends LabelProvider
 	 * @generated
 	 */
 	private String getHWPlatformInstanceConfiguration_3039Text(View view) {
-		org.muml.pm.hardware.hwplatforminstance.HWPlatformInstanceConfiguration domainModelElement = (org.muml.pm.hardware.hwplatforminstance.HWPlatformInstanceConfiguration) view
-				.getElement();
+		HWPlatformInstanceConfiguration domainModelElement = (HWPlatformInstanceConfiguration) view.getElement();
 		if (domainModelElement != null) {
 			return domainModelElement.getComment();
 		} else {
-			org.muml.pm.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
-					.getInstance().logError("No domain element for view with visualID = " + 3039); //$NON-NLS-1$
+			PlatformInstanceDiagramEditorPlugin.getInstance()
+					.logError("No domain element for view with visualID = " + 3039); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -259,19 +266,14 @@ public class HardwareNavigatorLabelProvider extends LabelProvider
 	 * @generated
 	 */
 	private String getHWPlatformInstance_3040Text(View view) {
-		IParser parser = org.muml.pm.hardware.platforminstance.diagram.providers.HardwareParserProvider
-				.getParser(
-						org.muml.pm.hardware.platforminstance.diagram.providers.HardwareElementTypes.HWPlatformInstance_3040,
-						view.getElement() != null ? view.getElement() : view,
-						org.muml.pm.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
-								.getType(
-										org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceName2EditPart.VISUAL_ID));
+		IParser parser = HardwareParserProvider.getParser(HardwareElementTypes.HWPlatformInstance_3040,
+				view.getElement() != null ? view.getElement() : view,
+				HardwareVisualIDRegistry.getType(HWPlatformInstanceName2EditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
 					ParserOptions.NONE.intValue());
 		} else {
-			org.muml.pm.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
-					.getInstance().logError("Parser was not found for label " + 5117); //$NON-NLS-1$
+			PlatformInstanceDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5117); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -280,19 +282,14 @@ public class HardwareNavigatorLabelProvider extends LabelProvider
 	 * @generated
 	 */
 	private String getDelegationHWPortInstance_3041Text(View view) {
-		IParser parser = org.muml.pm.hardware.platforminstance.diagram.providers.HardwareParserProvider
-				.getParser(
-						org.muml.pm.hardware.platforminstance.diagram.providers.HardwareElementTypes.DelegationHWPortInstance_3041,
-						view.getElement() != null ? view.getElement() : view,
-						org.muml.pm.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
-								.getType(
-										org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPortLabelEditPart.VISUAL_ID));
+		IParser parser = HardwareParserProvider.getParser(HardwareElementTypes.DelegationHWPortInstance_3041,
+				view.getElement() != null ? view.getElement() : view,
+				HardwareVisualIDRegistry.getType(HWPortLabelEditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
 					ParserOptions.NONE.intValue());
 		} else {
-			org.muml.pm.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
-					.getInstance().logError("Parser was not found for label " + 5100); //$NON-NLS-1$
+			PlatformInstanceDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5100); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -301,19 +298,14 @@ public class HardwareNavigatorLabelProvider extends LabelProvider
 	 * @generated
 	 */
 	private String getStructuredResourceInstance_3042Text(View view) {
-		IParser parser = org.muml.pm.hardware.platforminstance.diagram.providers.HardwareParserProvider
-				.getParser(
-						org.muml.pm.hardware.platforminstance.diagram.providers.HardwareElementTypes.StructuredResourceInstance_3042,
-						view.getElement() != null ? view.getElement() : view,
-						org.muml.pm.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
-								.getType(
-										org.muml.pm.hardware.platforminstance.diagram.edit.parts.StructuredResourceInstanceNameEditPart.VISUAL_ID));
+		IParser parser = HardwareParserProvider.getParser(HardwareElementTypes.StructuredResourceInstance_3042,
+				view.getElement() != null ? view.getElement() : view,
+				HardwareVisualIDRegistry.getType(StructuredResourceInstanceNameEditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
 					ParserOptions.NONE.intValue());
 		} else {
-			org.muml.pm.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
-					.getInstance().logError("Parser was not found for label " + 5103); //$NON-NLS-1$
+			PlatformInstanceDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5103); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -322,19 +314,14 @@ public class HardwareNavigatorLabelProvider extends LabelProvider
 	 * @generated
 	 */
 	private String getHWPortInstance_3043Text(View view) {
-		IParser parser = org.muml.pm.hardware.platforminstance.diagram.providers.HardwareParserProvider
-				.getParser(
-						org.muml.pm.hardware.platforminstance.diagram.providers.HardwareElementTypes.HWPortInstance_3043,
-						view.getElement() != null ? view.getElement() : view,
-						org.muml.pm.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
-								.getType(
-										org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPortLabel2EditPart.VISUAL_ID));
+		IParser parser = HardwareParserProvider.getParser(HardwareElementTypes.HWPortInstance_3043,
+				view.getElement() != null ? view.getElement() : view,
+				HardwareVisualIDRegistry.getType(HWPortLabel2EditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
 					ParserOptions.NONE.intValue());
 		} else {
-			org.muml.pm.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
-					.getInstance().logError("Parser was not found for label " + 5102); //$NON-NLS-1$
+			PlatformInstanceDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5102); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -343,19 +330,14 @@ public class HardwareNavigatorLabelProvider extends LabelProvider
 	 * @generated
 	 */
 	private String getActuatorInstance_3044Text(View view) {
-		IParser parser = org.muml.pm.hardware.platforminstance.diagram.providers.HardwareParserProvider
-				.getParser(
-						org.muml.pm.hardware.platforminstance.diagram.providers.HardwareElementTypes.ActuatorInstance_3044,
-						view.getElement() != null ? view.getElement() : view,
-						org.muml.pm.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
-								.getType(
-										org.muml.pm.hardware.platforminstance.diagram.edit.parts.ActuatorInstanceNameEditPart.VISUAL_ID));
+		IParser parser = HardwareParserProvider.getParser(HardwareElementTypes.ActuatorInstance_3044,
+				view.getElement() != null ? view.getElement() : view,
+				HardwareVisualIDRegistry.getType(ActuatorInstanceNameEditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
 					ParserOptions.NONE.intValue());
 		} else {
-			org.muml.pm.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
-					.getInstance().logError("Parser was not found for label " + 5108); //$NON-NLS-1$
+			PlatformInstanceDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5108); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -364,19 +346,14 @@ public class HardwareNavigatorLabelProvider extends LabelProvider
 	 * @generated
 	 */
 	private String getSensorInstance_3045Text(View view) {
-		IParser parser = org.muml.pm.hardware.platforminstance.diagram.providers.HardwareParserProvider
-				.getParser(
-						org.muml.pm.hardware.platforminstance.diagram.providers.HardwareElementTypes.SensorInstance_3045,
-						view.getElement() != null ? view.getElement() : view,
-						org.muml.pm.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
-								.getType(
-										org.muml.pm.hardware.platforminstance.diagram.edit.parts.SensorInstanceNameEditPart.VISUAL_ID));
+		IParser parser = HardwareParserProvider.getParser(HardwareElementTypes.SensorInstance_3045,
+				view.getElement() != null ? view.getElement() : view,
+				HardwareVisualIDRegistry.getType(SensorInstanceNameEditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
 					ParserOptions.NONE.intValue());
 		} else {
-			org.muml.pm.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
-					.getInstance().logError("Parser was not found for label " + 5111); //$NON-NLS-1$
+			PlatformInstanceDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5111); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -385,19 +362,14 @@ public class HardwareNavigatorLabelProvider extends LabelProvider
 	 * @generated
 	 */
 	private String getBusInstance_3046Text(View view) {
-		IParser parser = org.muml.pm.hardware.platforminstance.diagram.providers.HardwareParserProvider
-				.getParser(
-						org.muml.pm.hardware.platforminstance.diagram.providers.HardwareElementTypes.BusInstance_3046,
-						view.getElement() != null ? view.getElement() : view,
-						org.muml.pm.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
-								.getType(
-										org.muml.pm.hardware.platforminstance.diagram.edit.parts.WrappingLabel11EditPart.VISUAL_ID));
+		IParser parser = HardwareParserProvider.getParser(HardwareElementTypes.BusInstance_3046,
+				view.getElement() != null ? view.getElement() : view,
+				HardwareVisualIDRegistry.getType(WrappingLabel11EditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
 					ParserOptions.NONE.intValue());
 		} else {
-			org.muml.pm.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
-					.getInstance().logError("Parser was not found for label " + 5114); //$NON-NLS-1$
+			PlatformInstanceDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5114); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -406,19 +378,14 @@ public class HardwareNavigatorLabelProvider extends LabelProvider
 	 * @generated
 	 */
 	private String getNetworkBridgeInstance_3047Text(View view) {
-		IParser parser = org.muml.pm.hardware.platforminstance.diagram.providers.HardwareParserProvider
-				.getParser(
-						org.muml.pm.hardware.platforminstance.diagram.providers.HardwareElementTypes.NetworkBridgeInstance_3047,
-						view.getElement() != null ? view.getElement() : view,
-						org.muml.pm.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
-								.getType(
-										org.muml.pm.hardware.platforminstance.diagram.edit.parts.WrappingLabel13EditPart.VISUAL_ID));
+		IParser parser = HardwareParserProvider.getParser(HardwareElementTypes.NetworkBridgeInstance_3047,
+				view.getElement() != null ? view.getElement() : view,
+				HardwareVisualIDRegistry.getType(WrappingLabel13EditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
 					ParserOptions.NONE.intValue());
 		} else {
-			org.muml.pm.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
-					.getInstance().logError("Parser was not found for label " + 5116); //$NON-NLS-1$
+			PlatformInstanceDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5116); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -427,13 +394,12 @@ public class HardwareNavigatorLabelProvider extends LabelProvider
 	 * @generated
 	 */
 	private String getNetworkConnectorInstance_4012Text(View view) {
-		org.muml.pm.hardware.hwplatforminstance.NetworkConnectorInstance domainModelElement = (org.muml.pm.hardware.hwplatforminstance.NetworkConnectorInstance) view
-				.getElement();
+		NetworkConnectorInstance domainModelElement = (NetworkConnectorInstance) view.getElement();
 		if (domainModelElement != null) {
 			return domainModelElement.getComment();
 		} else {
-			org.muml.pm.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
-					.getInstance().logError("No domain element for view with visualID = " + 4012); //$NON-NLS-1$
+			PlatformInstanceDiagramEditorPlugin.getInstance()
+					.logError("No domain element for view with visualID = " + 4012); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -481,9 +447,7 @@ public class HardwareNavigatorLabelProvider extends LabelProvider
 	 * @generated
 	 */
 	private boolean isOwnView(View view) {
-		return org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceConfigurationEditPart.MODEL_ID
-				.equals(org.muml.pm.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
-						.getModelID(view));
+		return HWPlatformInstanceConfigurationEditPart.MODEL_ID.equals(HardwareVisualIDRegistry.getModelID(view));
 	}
 
 }

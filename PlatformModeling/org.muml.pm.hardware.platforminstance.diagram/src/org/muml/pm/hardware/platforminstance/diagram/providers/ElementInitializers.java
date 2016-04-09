@@ -1,5 +1,18 @@
 package org.muml.pm.hardware.platforminstance.diagram.providers;
 
+import org.muml.pm.hardware.hwplatforminstance.BusInstance;
+import org.muml.pm.hardware.hwplatforminstance.DelegationHWPortInstance;
+import org.muml.pm.hardware.hwplatforminstance.HWPlatformInstance;
+import org.muml.pm.hardware.hwplatforminstance.HWPortInstance;
+import org.muml.pm.hardware.hwplatforminstance.HwplatforminstancePackage;
+import org.muml.pm.hardware.hwplatforminstance.NetworkBridgeInstance;
+import org.muml.pm.hardware.hwresourceinstance.ActuatorInstance;
+import org.muml.pm.hardware.hwresourceinstance.HwresourceinstancePackage;
+import org.muml.pm.hardware.hwresourceinstance.SensorInstance;
+import org.muml.pm.hardware.hwresourceinstance.StructuredResourceInstance;
+import org.muml.pm.hardware.platforminstance.diagram.expressions.HardwareOCLFactory;
+import org.muml.pm.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin;
+
 /**
  * @generated
  */
@@ -12,170 +25,125 @@ public class ElementInitializers {
 	/**
 	* @generated
 	*/
-	public void init_HWPlatformInstance_2005(
-			org.muml.pm.hardware.hwplatforminstance.HWPlatformInstance instance) {
+	public void init_HWPlatformInstance_2005(HWPlatformInstance instance) {
 		try {
-			Object value_0 = org.muml.pm.hardware.platforminstance.diagram.expressions.HardwareOCLFactory
-					.getExpression(13,
-							org.muml.pm.hardware.hwplatforminstance.HwplatforminstancePackage.eINSTANCE
-									.getHWPlatformInstance(),
-							null)
+			Object value_0 = HardwareOCLFactory
+					.getExpression(13, HwplatforminstancePackage.eINSTANCE.getHWPlatformInstance(), null)
 					.evaluate(instance);
 			instance.setName((String) value_0);
 		} catch (RuntimeException e) {
-			org.muml.pm.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
-					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
+			PlatformInstanceDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
 		}
 	}
 
 	/**
 	* @generated
 	*/
-	public void init_HWPlatformInstance_3040(
-			org.muml.pm.hardware.hwplatforminstance.HWPlatformInstance instance) {
+	public void init_HWPlatformInstance_3040(HWPlatformInstance instance) {
 		try {
-			Object value_0 = org.muml.pm.hardware.platforminstance.diagram.expressions.HardwareOCLFactory
-					.getExpression(14,
-							org.muml.pm.hardware.hwplatforminstance.HwplatforminstancePackage.eINSTANCE
-									.getHWPlatformInstance(),
-							null)
+			Object value_0 = HardwareOCLFactory
+					.getExpression(14, HwplatforminstancePackage.eINSTANCE.getHWPlatformInstance(), null)
 					.evaluate(instance);
 			instance.setName((String) value_0);
 		} catch (RuntimeException e) {
-			org.muml.pm.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
-					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
+			PlatformInstanceDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
 		}
 	}
 
 	/**
 	* @generated
 	*/
-	public void init_DelegationHWPortInstance_3041(
-			org.muml.pm.hardware.hwplatforminstance.DelegationHWPortInstance instance) {
+	public void init_DelegationHWPortInstance_3041(DelegationHWPortInstance instance) {
 		try {
-			Object value_0 = org.muml.pm.hardware.platforminstance.diagram.expressions.HardwareOCLFactory
-					.getExpression(15,
-							org.muml.pm.hardware.hwplatforminstance.HwplatforminstancePackage.eINSTANCE
-									.getDelegationHWPortInstance(),
-							null)
+			Object value_0 = HardwareOCLFactory
+					.getExpression(15, HwplatforminstancePackage.eINSTANCE.getDelegationHWPortInstance(), null)
 					.evaluate(instance);
 			instance.setName((String) value_0);
 		} catch (RuntimeException e) {
-			org.muml.pm.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
-					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
+			PlatformInstanceDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
 		}
 	}
 
 	/**
 	* @generated
 	*/
-	public void init_StructuredResourceInstance_3042(
-			org.muml.pm.hardware.hwresourceinstance.StructuredResourceInstance instance) {
+	public void init_StructuredResourceInstance_3042(StructuredResourceInstance instance) {
 		try {
-			Object value_0 = org.muml.pm.hardware.platforminstance.diagram.expressions.HardwareOCLFactory
-					.getExpression(16,
-							org.muml.pm.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE
-									.getStructuredResourceInstance(),
-							null)
+			Object value_0 = HardwareOCLFactory
+					.getExpression(16, HwresourceinstancePackage.eINSTANCE.getStructuredResourceInstance(), null)
 					.evaluate(instance);
 			instance.setName((String) value_0);
 		} catch (RuntimeException e) {
-			org.muml.pm.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
-					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
+			PlatformInstanceDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
 		}
 	}
 
 	/**
 	* @generated
 	*/
-	public void init_HWPortInstance_3043(
-			org.muml.pm.hardware.hwplatforminstance.HWPortInstance instance) {
+	public void init_HWPortInstance_3043(HWPortInstance instance) {
 		try {
-			Object value_0 = org.muml.pm.hardware.platforminstance.diagram.expressions.HardwareOCLFactory
-					.getExpression(17,
-							org.muml.pm.hardware.hwplatforminstance.HwplatforminstancePackage.eINSTANCE
-									.getHWPortInstance(),
-							null)
+			Object value_0 = HardwareOCLFactory
+					.getExpression(17, HwplatforminstancePackage.eINSTANCE.getHWPortInstance(), null)
 					.evaluate(instance);
 			instance.setName((String) value_0);
 		} catch (RuntimeException e) {
-			org.muml.pm.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
-					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
+			PlatformInstanceDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
 		}
 	}
 
 	/**
 	* @generated
 	*/
-	public void init_ActuatorInstance_3044(
-			org.muml.pm.hardware.hwresourceinstance.ActuatorInstance instance) {
+	public void init_ActuatorInstance_3044(ActuatorInstance instance) {
 		try {
-			Object value_0 = org.muml.pm.hardware.platforminstance.diagram.expressions.HardwareOCLFactory
-					.getExpression(18,
-							org.muml.pm.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE
-									.getActuatorInstance(),
-							null)
+			Object value_0 = HardwareOCLFactory
+					.getExpression(18, HwresourceinstancePackage.eINSTANCE.getActuatorInstance(), null)
 					.evaluate(instance);
 			instance.setName((String) value_0);
 		} catch (RuntimeException e) {
-			org.muml.pm.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
-					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
+			PlatformInstanceDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
 		}
 	}
 
 	/**
 	* @generated
 	*/
-	public void init_SensorInstance_3045(
-			org.muml.pm.hardware.hwresourceinstance.SensorInstance instance) {
+	public void init_SensorInstance_3045(SensorInstance instance) {
 		try {
-			Object value_0 = org.muml.pm.hardware.platforminstance.diagram.expressions.HardwareOCLFactory
-					.getExpression(19,
-							org.muml.pm.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE
-									.getSensorInstance(),
-							null)
+			Object value_0 = HardwareOCLFactory
+					.getExpression(19, HwresourceinstancePackage.eINSTANCE.getSensorInstance(), null)
 					.evaluate(instance);
 			instance.setName((String) value_0);
 		} catch (RuntimeException e) {
-			org.muml.pm.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
-					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
+			PlatformInstanceDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
 		}
 	}
 
 	/**
 	* @generated
 	*/
-	public void init_BusInstance_3046(org.muml.pm.hardware.hwplatforminstance.BusInstance instance) {
+	public void init_BusInstance_3046(BusInstance instance) {
 		try {
-			Object value_0 = org.muml.pm.hardware.platforminstance.diagram.expressions.HardwareOCLFactory
-					.getExpression(20,
-							org.muml.pm.hardware.hwplatforminstance.HwplatforminstancePackage.eINSTANCE
-									.getBusInstance(),
-							null)
-					.evaluate(instance);
+			Object value_0 = HardwareOCLFactory
+					.getExpression(20, HwplatforminstancePackage.eINSTANCE.getBusInstance(), null).evaluate(instance);
 			instance.setName((String) value_0);
 		} catch (RuntimeException e) {
-			org.muml.pm.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
-					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
+			PlatformInstanceDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
 		}
 	}
 
 	/**
 	* @generated
 	*/
-	public void init_NetworkBridgeInstance_3047(
-			org.muml.pm.hardware.hwplatforminstance.NetworkBridgeInstance instance) {
+	public void init_NetworkBridgeInstance_3047(NetworkBridgeInstance instance) {
 		try {
-			Object value_0 = org.muml.pm.hardware.platforminstance.diagram.expressions.HardwareOCLFactory
-					.getExpression(21,
-							org.muml.pm.hardware.hwplatforminstance.HwplatforminstancePackage.eINSTANCE
-									.getNetworkBridgeInstance(),
-							null)
+			Object value_0 = HardwareOCLFactory
+					.getExpression(21, HwplatforminstancePackage.eINSTANCE.getNetworkBridgeInstance(), null)
 					.evaluate(instance);
 			instance.setName((String) value_0);
 		} catch (RuntimeException e) {
-			org.muml.pm.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
-					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
+			PlatformInstanceDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
 		}
 	}
 
@@ -183,11 +151,10 @@ public class ElementInitializers {
 	 * @generated
 	 */
 	public static ElementInitializers getInstance() {
-		ElementInitializers cached = org.muml.pm.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
-				.getInstance().getElementInitializers();
+		ElementInitializers cached = PlatformInstanceDiagramEditorPlugin.getInstance().getElementInitializers();
 		if (cached == null) {
-			org.muml.pm.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
-					.getInstance().setElementInitializers(cached = new ElementInitializers());
+			PlatformInstanceDiagramEditorPlugin.getInstance()
+					.setElementInitializers(cached = new ElementInitializers());
 		}
 		return cached;
 	}

@@ -13,6 +13,21 @@ import org.eclipse.gmf.tooling.runtime.providers.DiagramElementTypeImages;
 import org.eclipse.gmf.tooling.runtime.providers.DiagramElementTypes;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.swt.graphics.Image;
+import org.muml.pm.hardware.hwplatforminstance.HwplatforminstancePackage;
+import org.muml.pm.hardware.hwresourceinstance.HwresourceinstancePackage;
+import org.muml.pm.hardware.platforminstance.diagram.edit.parts.ActuatorInstanceEditPart;
+import org.muml.pm.hardware.platforminstance.diagram.edit.parts.BusInstanceEditPart;
+import org.muml.pm.hardware.platforminstance.diagram.edit.parts.DelegationHWPortInstanceEditPart;
+import org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstance2EditPart;
+import org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceConfiguration2EditPart;
+import org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceConfigurationEditPart;
+import org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceEditPart;
+import org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPortInstanceEditPart;
+import org.muml.pm.hardware.platforminstance.diagram.edit.parts.NetworkBridgeInstanceEditPart;
+import org.muml.pm.hardware.platforminstance.diagram.edit.parts.NetworkConnectorInstanceEditPart;
+import org.muml.pm.hardware.platforminstance.diagram.edit.parts.SensorInstanceEditPart;
+import org.muml.pm.hardware.platforminstance.diagram.edit.parts.StructuredResourceInstanceEditPart;
+import org.muml.pm.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin;
 
 /**
  * @generated
@@ -34,8 +49,7 @@ public class HardwareElementTypes {
 	 * @generated
 	 */
 	private static DiagramElementTypeImages elementTypeImages = new DiagramElementTypeImages(
-			org.muml.pm.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
-					.getInstance().getItemProvidersAdapterFactory());
+			PlatformInstanceDiagramEditorPlugin.getInstance().getItemProvidersAdapterFactory());
 
 	/**
 	 * @generated
@@ -152,52 +166,33 @@ public class HardwareElementTypes {
 			elements = new IdentityHashMap<IElementType, ENamedElement>();
 
 			elements.put(HWPlatformInstanceConfiguration_1000,
-					org.muml.pm.hardware.hwplatforminstance.HwplatforminstancePackage.eINSTANCE
-							.getHWPlatformInstanceConfiguration());
+					HwplatforminstancePackage.eINSTANCE.getHWPlatformInstanceConfiguration());
 
-			elements.put(HWPlatformInstance_2005,
-					org.muml.pm.hardware.hwplatforminstance.HwplatforminstancePackage.eINSTANCE
-							.getHWPlatformInstance());
+			elements.put(HWPlatformInstance_2005, HwplatforminstancePackage.eINSTANCE.getHWPlatformInstance());
 
 			elements.put(HWPlatformInstanceConfiguration_3039,
-					org.muml.pm.hardware.hwplatforminstance.HwplatforminstancePackage.eINSTANCE
-							.getHWPlatformInstanceConfiguration());
+					HwplatforminstancePackage.eINSTANCE.getHWPlatformInstanceConfiguration());
 
-			elements.put(HWPlatformInstance_3040,
-					org.muml.pm.hardware.hwplatforminstance.HwplatforminstancePackage.eINSTANCE
-							.getHWPlatformInstance());
+			elements.put(HWPlatformInstance_3040, HwplatforminstancePackage.eINSTANCE.getHWPlatformInstance());
 
 			elements.put(DelegationHWPortInstance_3041,
-					org.muml.pm.hardware.hwplatforminstance.HwplatforminstancePackage.eINSTANCE
-							.getDelegationHWPortInstance());
+					HwplatforminstancePackage.eINSTANCE.getDelegationHWPortInstance());
 
 			elements.put(StructuredResourceInstance_3042,
-					org.muml.pm.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE
-							.getStructuredResourceInstance());
+					HwresourceinstancePackage.eINSTANCE.getStructuredResourceInstance());
 
-			elements.put(HWPortInstance_3043,
-					org.muml.pm.hardware.hwplatforminstance.HwplatforminstancePackage.eINSTANCE
-							.getHWPortInstance());
+			elements.put(HWPortInstance_3043, HwplatforminstancePackage.eINSTANCE.getHWPortInstance());
 
-			elements.put(ActuatorInstance_3044,
-					org.muml.pm.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE
-							.getActuatorInstance());
+			elements.put(ActuatorInstance_3044, HwresourceinstancePackage.eINSTANCE.getActuatorInstance());
 
-			elements.put(SensorInstance_3045,
-					org.muml.pm.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE
-							.getSensorInstance());
+			elements.put(SensorInstance_3045, HwresourceinstancePackage.eINSTANCE.getSensorInstance());
 
-			elements.put(BusInstance_3046,
-					org.muml.pm.hardware.hwplatforminstance.HwplatforminstancePackage.eINSTANCE
-							.getBusInstance());
+			elements.put(BusInstance_3046, HwplatforminstancePackage.eINSTANCE.getBusInstance());
 
-			elements.put(NetworkBridgeInstance_3047,
-					org.muml.pm.hardware.hwplatforminstance.HwplatforminstancePackage.eINSTANCE
-							.getNetworkBridgeInstance());
+			elements.put(NetworkBridgeInstance_3047, HwplatforminstancePackage.eINSTANCE.getNetworkBridgeInstance());
 
 			elements.put(NetworkConnectorInstance_4012,
-					org.muml.pm.hardware.hwplatforminstance.HwplatforminstancePackage.eINSTANCE
-							.getNetworkConnectorInstance());
+					HwplatforminstancePackage.eINSTANCE.getNetworkConnectorInstance());
 		}
 		return (ENamedElement) elements.get(type);
 	}
@@ -236,29 +231,29 @@ public class HardwareElementTypes {
 	 */
 	public static IElementType getElementType(int visualID) {
 		switch (visualID) {
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceConfigurationEditPart.VISUAL_ID:
+		case HWPlatformInstanceConfigurationEditPart.VISUAL_ID:
 			return HWPlatformInstanceConfiguration_1000;
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceEditPart.VISUAL_ID:
+		case HWPlatformInstanceEditPart.VISUAL_ID:
 			return HWPlatformInstance_2005;
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceConfiguration2EditPart.VISUAL_ID:
+		case HWPlatformInstanceConfiguration2EditPart.VISUAL_ID:
 			return HWPlatformInstanceConfiguration_3039;
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstance2EditPart.VISUAL_ID:
+		case HWPlatformInstance2EditPart.VISUAL_ID:
 			return HWPlatformInstance_3040;
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.DelegationHWPortInstanceEditPart.VISUAL_ID:
+		case DelegationHWPortInstanceEditPart.VISUAL_ID:
 			return DelegationHWPortInstance_3041;
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.StructuredResourceInstanceEditPart.VISUAL_ID:
+		case StructuredResourceInstanceEditPart.VISUAL_ID:
 			return StructuredResourceInstance_3042;
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPortInstanceEditPart.VISUAL_ID:
+		case HWPortInstanceEditPart.VISUAL_ID:
 			return HWPortInstance_3043;
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.ActuatorInstanceEditPart.VISUAL_ID:
+		case ActuatorInstanceEditPart.VISUAL_ID:
 			return ActuatorInstance_3044;
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.SensorInstanceEditPart.VISUAL_ID:
+		case SensorInstanceEditPart.VISUAL_ID:
 			return SensorInstance_3045;
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.BusInstanceEditPart.VISUAL_ID:
+		case BusInstanceEditPart.VISUAL_ID:
 			return BusInstance_3046;
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.NetworkBridgeInstanceEditPart.VISUAL_ID:
+		case NetworkBridgeInstanceEditPart.VISUAL_ID:
 			return NetworkBridgeInstance_3047;
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.NetworkConnectorInstanceEditPart.VISUAL_ID:
+		case NetworkConnectorInstanceEditPart.VISUAL_ID:
 			return NetworkConnectorInstance_4012;
 		}
 		return null;

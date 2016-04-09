@@ -6,29 +6,27 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.emf.commands.core.commands.DuplicateEObjectsCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DuplicateElementsRequest;
+import org.muml.pm.hardware.platforminstance.diagram.edit.commands.HWPlatformInstanceCreateCommand;
+import org.muml.pm.hardware.platforminstance.diagram.providers.HardwareElementTypes;
 
 /**
  * @generated
  */
-public class HWPlatformInstanceConfigurationItemSemanticEditPolicy extends
-		org.muml.pm.hardware.platforminstance.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy {
+public class HWPlatformInstanceConfigurationItemSemanticEditPolicy extends HardwareBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public HWPlatformInstanceConfigurationItemSemanticEditPolicy() {
-		super(org.muml.pm.hardware.platforminstance.diagram.providers.HardwareElementTypes.HWPlatformInstanceConfiguration_1000);
+		super(HardwareElementTypes.HWPlatformInstanceConfiguration_1000);
 	}
 
 	/**
 	 * @generated
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
-		if (org.muml.pm.hardware.platforminstance.diagram.providers.HardwareElementTypes.HWPlatformInstance_2005 == req
-				.getElementType()) {
-			return getGEFWrapper(
-					new org.muml.pm.hardware.platforminstance.diagram.edit.commands.HWPlatformInstanceCreateCommand(
-							req));
+		if (HardwareElementTypes.HWPlatformInstance_2005 == req.getElementType()) {
+			return getGEFWrapper(new HWPlatformInstanceCreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}

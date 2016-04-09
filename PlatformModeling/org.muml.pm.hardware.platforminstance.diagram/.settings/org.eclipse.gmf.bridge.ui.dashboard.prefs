@@ -3,5 +3,5 @@ gmf_dashboard/domainGenerationModel=platform\:/resource/org.muml.pm.hardware/mod
 gmf_dashboard/domainModel=platform\:/resource/org.muml.pm.hardware/model/hardware.ecore
 gmf_dashboard/generationModel=platform\:/resource/org.muml.pm.hardware.platforminstance.diagram/model/platforminstance.gmfgen
 gmf_dashboard/graphicalDefinitionModel=platform\:/resource/org.muml.pm.hardware.platforminstance.diagram/model/platforminstance.gmfgraph
-gmf_dashboard/mappingModel=platform\:/resource/org.muml.pm.hardware.platforminstance.diagram/model/platforminstance.gmfmap
-gmf_dashboard/toolingDefinitionModel=platform\:/resource/org.muml.pm.hardware.platforminstance.diagram/model/platforminstance.gmftool
+gmf_dashboard/mappingModel=platform\:/resource/org.muml.pm.hardware.platform.diagram/model/platform.gmfmap
+gmf_dashboard/toolingDefinitionModel=platform\:/resource/org.muml.pm.hardware.platform.diagram/model/platform.gmftool

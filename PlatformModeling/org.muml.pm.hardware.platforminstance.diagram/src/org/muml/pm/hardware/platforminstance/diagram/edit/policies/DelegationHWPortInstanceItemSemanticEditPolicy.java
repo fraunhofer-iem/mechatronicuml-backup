@@ -12,18 +12,22 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
 import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.pm.hardware.platforminstance.diagram.edit.commands.NetworkConnectorInstanceCreateCommand;
+import org.muml.pm.hardware.platforminstance.diagram.edit.commands.NetworkConnectorInstanceReorientCommand;
+import org.muml.pm.hardware.platforminstance.diagram.edit.parts.NetworkConnectorInstanceEditPart;
+import org.muml.pm.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry;
+import org.muml.pm.hardware.platforminstance.diagram.providers.HardwareElementTypes;
 
 /**
  * @generated
  */
-public class DelegationHWPortInstanceItemSemanticEditPolicy extends
-		org.muml.pm.hardware.platforminstance.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy {
+public class DelegationHWPortInstanceItemSemanticEditPolicy extends HardwareBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public DelegationHWPortInstanceItemSemanticEditPolicy() {
-		super(org.muml.pm.hardware.platforminstance.diagram.providers.HardwareElementTypes.DelegationHWPortInstance_3041);
+		super(HardwareElementTypes.DelegationHWPortInstance_3041);
 	}
 
 	/**
@@ -35,9 +39,7 @@ public class DelegationHWPortInstanceItemSemanticEditPolicy extends
 		cmd.setTransactionNestingEnabled(false);
 		for (Iterator<?> it = view.getTargetEdges().iterator(); it.hasNext();) {
 			Edge incomingLink = (Edge) it.next();
-			if (org.muml.pm.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
-					.getVisualID(
-							incomingLink) == org.muml.pm.hardware.platforminstance.diagram.edit.parts.NetworkConnectorInstanceEditPart.VISUAL_ID) {
+			if (HardwareVisualIDRegistry.getVisualID(incomingLink) == NetworkConnectorInstanceEditPart.VISUAL_ID) {
 				DestroyElementRequest r = new DestroyElementRequest(incomingLink.getElement(), false);
 				cmd.add(new DestroyElementCommand(r));
 				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
@@ -46,9 +48,7 @@ public class DelegationHWPortInstanceItemSemanticEditPolicy extends
 		}
 		for (Iterator<?> it = view.getSourceEdges().iterator(); it.hasNext();) {
 			Edge outgoingLink = (Edge) it.next();
-			if (org.muml.pm.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
-					.getVisualID(
-							outgoingLink) == org.muml.pm.hardware.platforminstance.diagram.edit.parts.NetworkConnectorInstanceEditPart.VISUAL_ID) {
+			if (HardwareVisualIDRegistry.getVisualID(outgoingLink) == NetworkConnectorInstanceEditPart.VISUAL_ID) {
 				DestroyElementRequest r = new DestroyElementRequest(outgoingLink.getElement(), false);
 				cmd.add(new DestroyElementCommand(r));
 				cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
@@ -80,11 +80,8 @@ public class DelegationHWPortInstanceItemSemanticEditPolicy extends
 	 * @generated
 	 */
 	protected Command getStartCreateRelationshipCommand(CreateRelationshipRequest req) {
-		if (org.muml.pm.hardware.platforminstance.diagram.providers.HardwareElementTypes.NetworkConnectorInstance_4012 == req
-				.getElementType()) {
-			return getGEFWrapper(
-					new org.muml.pm.hardware.platforminstance.diagram.edit.commands.NetworkConnectorInstanceCreateCommand(
-							req, req.getSource(), req.getTarget()));
+		if (HardwareElementTypes.NetworkConnectorInstance_4012 == req.getElementType()) {
+			return getGEFWrapper(new NetworkConnectorInstanceCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return null;
 	}
@@ -93,11 +90,8 @@ public class DelegationHWPortInstanceItemSemanticEditPolicy extends
 	 * @generated
 	 */
 	protected Command getCompleteCreateRelationshipCommand(CreateRelationshipRequest req) {
-		if (org.muml.pm.hardware.platforminstance.diagram.providers.HardwareElementTypes.NetworkConnectorInstance_4012 == req
-				.getElementType()) {
-			return getGEFWrapper(
-					new org.muml.pm.hardware.platforminstance.diagram.edit.commands.NetworkConnectorInstanceCreateCommand(
-							req, req.getSource(), req.getTarget()));
+		if (HardwareElementTypes.NetworkConnectorInstance_4012 == req.getElementType()) {
+			return getGEFWrapper(new NetworkConnectorInstanceCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return null;
 	}
@@ -110,10 +104,8 @@ public class DelegationHWPortInstanceItemSemanticEditPolicy extends
 	 */
 	protected Command getReorientRelationshipCommand(ReorientRelationshipRequest req) {
 		switch (getVisualID(req)) {
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.NetworkConnectorInstanceEditPart.VISUAL_ID:
-			return getGEFWrapper(
-					new org.muml.pm.hardware.platforminstance.diagram.edit.commands.NetworkConnectorInstanceReorientCommand(
-							req));
+		case NetworkConnectorInstanceEditPart.VISUAL_ID:
+			return getGEFWrapper(new NetworkConnectorInstanceReorientCommand(req));
 		}
 		return super.getReorientRelationshipCommand(req);
 	}

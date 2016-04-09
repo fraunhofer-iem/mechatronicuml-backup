@@ -11,6 +11,10 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.pm.hardware.hwplatforminstance.DelegationHWPortInstance;
+import org.muml.pm.hardware.hwplatforminstance.HWPlatformInstance;
+import org.muml.pm.hardware.hwplatforminstance.HwplatforminstanceFactory;
+import org.muml.pm.hardware.platforminstance.diagram.providers.ElementInitializers;
 
 /**
  * @generated
@@ -48,14 +52,12 @@ public class DelegationHWPortInstanceCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-		org.muml.pm.hardware.hwplatforminstance.DelegationHWPortInstance newElement = org.muml.pm.hardware.hwplatforminstance.HwplatforminstanceFactory.eINSTANCE
-				.createDelegationHWPortInstance();
+		DelegationHWPortInstance newElement = HwplatforminstanceFactory.eINSTANCE.createDelegationHWPortInstance();
 
-		org.muml.pm.hardware.hwplatforminstance.HWPlatformInstance owner = (org.muml.pm.hardware.hwplatforminstance.HWPlatformInstance) getElementToEdit();
+		HWPlatformInstance owner = (HWPlatformInstance) getElementToEdit();
 		owner.getDelegationPorts().add(newElement);
 
-		org.muml.pm.hardware.platforminstance.diagram.providers.ElementInitializers.getInstance()
-				.init_DelegationHWPortInstance_3041(newElement);
+		ElementInitializers.getInstance().init_DelegationHWPortInstance_3041(newElement);
 
 		doConfigure(newElement, monitor, info);
 
@@ -64,11 +66,10 @@ public class DelegationHWPortInstanceCreateCommand extends EditElementCommand {
 	}
 
 	/**
-	 * @generated
-	 */
-	protected void doConfigure(
-			org.muml.pm.hardware.hwplatforminstance.DelegationHWPortInstance newElement,
-			IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
+	* @generated
+	*/
+	protected void doConfigure(DelegationHWPortInstance newElement, IProgressMonitor monitor, IAdaptable info)
+			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest()).getElementType();
 		ConfigureRequest configureRequest = new ConfigureRequest(getEditingDomain(), newElement, elementType);
 		configureRequest.setClientContext(((CreateElementRequest) getRequest()).getClientContext());

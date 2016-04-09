@@ -45,6 +45,10 @@ import org.eclipse.swt.accessibility.AccessibleEvent;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.FontData;
 import org.eclipse.swt.graphics.Image;
+import org.muml.pm.hardware.platforminstance.diagram.edit.policies.HardwareTextSelectionEditPolicy;
+import org.muml.pm.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry;
+import org.muml.pm.hardware.platforminstance.diagram.providers.HardwareElementTypes;
+import org.muml.pm.hardware.platforminstance.diagram.providers.HardwareParserProvider;
 
 /**
  * @generated
@@ -116,8 +120,7 @@ public class StructuredResourceInstanceNameEditPart extends CompartmentEditPart 
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicy.SELECTION_FEEDBACK_ROLE,
-				new org.muml.pm.hardware.platforminstance.diagram.edit.policies.HardwareTextSelectionEditPolicy());
+		installEditPolicy(EditPolicy.SELECTION_FEEDBACK_ROLE, new HardwareTextSelectionEditPolicy());
 		installEditPolicy(EditPolicy.DIRECT_EDIT_ROLE, new LabelDirectEditPolicy());
 		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, new DefaultNodeLabelDragPolicy());
 	}
@@ -308,13 +311,9 @@ public class StructuredResourceInstanceNameEditPart extends CompartmentEditPart 
 	 */
 	public IParser getParser() {
 		if (parser == null) {
-			parser = org.muml.pm.hardware.platforminstance.diagram.providers.HardwareParserProvider
-					.getParser(
-							org.muml.pm.hardware.platforminstance.diagram.providers.HardwareElementTypes.StructuredResourceInstance_3042,
-							getParserElement(),
-							org.muml.pm.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
-									.getType(
-											org.muml.pm.hardware.platforminstance.diagram.edit.parts.StructuredResourceInstanceNameEditPart.VISUAL_ID));
+			parser = HardwareParserProvider.getParser(HardwareElementTypes.StructuredResourceInstance_3042,
+					getParserElement(), HardwareVisualIDRegistry.getType(
+							org.muml.pm.hardware.platforminstance.diagram.edit.parts.StructuredResourceInstanceNameEditPart.VISUAL_ID));
 		}
 		return parser;
 	}
@@ -324,9 +323,7 @@ public class StructuredResourceInstanceNameEditPart extends CompartmentEditPart 
 	 */
 	protected DirectEditManager getManager() {
 		if (manager == null) {
-			setManager(new TextDirectEditManager(this, null,
-					org.muml.pm.hardware.platforminstance.diagram.edit.parts.HardwareEditPartFactory
-							.getTextCellEditorLocator(this)));
+			setManager(new TextDirectEditManager(this, null, HardwareEditPartFactory.getTextCellEditorLocator(this)));
 		}
 		return manager;
 	}

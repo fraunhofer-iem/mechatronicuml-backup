@@ -17,9 +17,30 @@ import org.eclipse.gmf.tooling.runtime.LogHelper;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
+import org.muml.core.common.FujabaCommonPlugin;
 import org.muml.core.expressions.common.provider.CommonExpressionsItemProviderAdapterFactory;
 import org.muml.core.expressions.provider.ExpressionsItemProviderAdapterFactory;
 import org.muml.core.provider.CoreItemProviderAdapterFactory;
+import org.muml.pim.behavior.provider.BehaviorItemProviderAdapterFactory;
+import org.muml.pim.component.provider.ComponentItemProviderAdapterFactory;
+import org.muml.pim.connector.provider.ConnectorItemProviderAdapterFactory;
+import org.muml.pim.constraint.provider.ConstraintItemProviderAdapterFactory;
+import org.muml.pim.instance.provider.InstanceItemProviderAdapterFactory;
+import org.muml.pim.msgtype.provider.MsgtypeItemProviderAdapterFactory;
+import org.muml.pim.pattern.provider.PatternItemProviderAdapterFactory;
+import org.muml.pim.protocol.provider.ProtocolItemProviderAdapterFactory;
+import org.muml.pim.provider.PimItemProviderAdapterFactory;
+import org.muml.pim.realtimestatechart.provider.RealtimestatechartItemProviderAdapterFactory;
+import org.muml.pim.types.provider.TypesItemProviderAdapterFactory;
+import org.muml.pim.valuetype.provider.ValuetypeItemProviderAdapterFactory;
+import org.muml.pm.hardware.hwplatform.provider.HwplatformItemProviderAdapterFactory;
+import org.muml.pm.hardware.hwplatforminstance.provider.HwplatforminstanceItemProviderAdapterFactory;
+import org.muml.pm.hardware.hwresource.provider.HwresourceItemProviderAdapterFactory;
+import org.muml.pm.hardware.hwresourceinstance.provider.HwresourceinstanceItemProviderAdapterFactory;
+import org.muml.pm.hardware.hwvaluetype.provider.HwvaluetypeItemProviderAdapterFactory;
+import org.muml.pm.hardware.platforminstance.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy;
+import org.muml.pm.hardware.platforminstance.diagram.expressions.HardwareOCLFactory;
+import org.muml.pm.hardware.platforminstance.diagram.providers.ElementInitializers;
 import org.osgi.framework.BundleContext;
 
 /**
@@ -55,22 +76,22 @@ public class PlatformInstanceDiagramEditorPlugin extends AbstractUIPlugin {
 	/**
 	 * @generated
 	 */
-	private org.muml.pm.hardware.platforminstance.diagram.part.HardwareDocumentProvider documentProvider;
+	private HardwareDocumentProvider documentProvider;
 
 	/**
 	 * @generated
 	 */
-	private org.muml.pm.hardware.platforminstance.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy.LinkConstraints linkConstraints;
+	private HardwareBaseItemSemanticEditPolicy.LinkConstraints linkConstraints;
 
 	/**
 	 * @generated
 	 */
-	private org.muml.pm.hardware.platforminstance.diagram.providers.ElementInitializers initializers;
+	private ElementInitializers initializers;
 
 	/**
 	 * @generated
 	 */
-	private org.muml.pm.hardware.platforminstance.diagram.expressions.HardwareOCLFactory oclFactory;
+	private HardwareOCLFactory oclFactory;
 
 	/**
 	 * @generated
@@ -122,42 +143,37 @@ public class PlatformInstanceDiagramEditorPlugin extends AbstractUIPlugin {
 	 * @generated
 	 */
 	protected void fillItemProviderFactories(List<AdapterFactory> factories) {
-		List<AdapterFactory> positivePriorityFactories = org.muml.core.common.FujabaCommonPlugin.getInstance()
+		List<AdapterFactory> positivePriorityFactories = FujabaCommonPlugin.getInstance()
 				.getCustomItemProviderAdapterFactories(ID, true);
-		List<AdapterFactory> negativePriorityFactories = org.muml.core.common.FujabaCommonPlugin.getInstance()
+		List<AdapterFactory> negativePriorityFactories = FujabaCommonPlugin.getInstance()
 				.getCustomItemProviderAdapterFactories(ID, false);
 
 		// Custom Factories with positive priority
 		factories.addAll(positivePriorityFactories);
 
 		// Default Factories
-		factories.add(
-				new org.muml.pm.hardware.hwplatform.provider.HwplatformItemProviderAdapterFactory());
-		factories.add(
-				new org.muml.pm.hardware.hwvaluetype.provider.HwvaluetypeItemProviderAdapterFactory());
-		factories.add(
-				new org.muml.pm.hardware.hwplatforminstance.provider.HwplatforminstanceItemProviderAdapterFactory());
-		factories.add(
-				new org.muml.pm.hardware.hwresource.provider.HwresourceItemProviderAdapterFactory());
-		factories.add(
-				new org.muml.pm.hardware.hwresourceinstance.provider.HwresourceinstanceItemProviderAdapterFactory());
+		factories.add(new HwplatformItemProviderAdapterFactory());
+		factories.add(new HwvaluetypeItemProviderAdapterFactory());
+		factories.add(new HwplatforminstanceItemProviderAdapterFactory());
+		factories.add(new HwresourceItemProviderAdapterFactory());
+		factories.add(new HwresourceinstanceItemProviderAdapterFactory());
 		factories.add(new CoreItemProviderAdapterFactory());
 		factories.add(new ExpressionsItemProviderAdapterFactory());
 		factories.add(new CommonExpressionsItemProviderAdapterFactory());
-		factories.add(new org.muml.pim.constraint.provider.ConstraintItemProviderAdapterFactory());
-		factories.add(new org.muml.pim.instance.provider.InstanceItemProviderAdapterFactory());
-		factories.add(new org.muml.pim.protocol.provider.ProtocolItemProviderAdapterFactory());
-		factories.add(
-				new org.muml.pim.realtimestatechart.provider.RealtimestatechartItemProviderAdapterFactory());
+		factories.add(new PimItemProviderAdapterFactory());
+		factories.add(new ConstraintItemProviderAdapterFactory());
+		factories.add(new InstanceItemProviderAdapterFactory());
+		factories.add(new ProtocolItemProviderAdapterFactory());
+		factories.add(new RealtimestatechartItemProviderAdapterFactory());
 		factories.add(
 				new org.muml.pim.realtimestatechart.one_to_n_schemata.provider.One_to_n_schemataItemProviderAdapterFactory());
-		factories.add(new org.muml.pim.msgtype.provider.MsgtypeItemProviderAdapterFactory());
-		factories.add(new org.muml.pim.types.provider.TypesItemProviderAdapterFactory());
-		factories.add(new org.muml.pim.connector.provider.ConnectorItemProviderAdapterFactory());
-		factories.add(new org.muml.pim.valuetype.provider.ValuetypeItemProviderAdapterFactory());
-		factories.add(new org.muml.pim.behavior.provider.BehaviorItemProviderAdapterFactory());
-		factories.add(new org.muml.pim.component.provider.ComponentItemProviderAdapterFactory());
-		factories.add(new org.muml.pim.pattern.provider.PatternItemProviderAdapterFactory());
+		factories.add(new MsgtypeItemProviderAdapterFactory());
+		factories.add(new TypesItemProviderAdapterFactory());
+		factories.add(new ConnectorItemProviderAdapterFactory());
+		factories.add(new ValuetypeItemProviderAdapterFactory());
+		factories.add(new BehaviorItemProviderAdapterFactory());
+		factories.add(new ComponentItemProviderAdapterFactory());
+		factories.add(new PatternItemProviderAdapterFactory());
 
 		// Custom Factories with negative priority
 		factories.addAll(negativePriorityFactories);
@@ -243,9 +259,9 @@ public class PlatformInstanceDiagramEditorPlugin extends AbstractUIPlugin {
 	/**
 	 * @generated
 	 */
-	public org.muml.pm.hardware.platforminstance.diagram.part.HardwareDocumentProvider getDocumentProvider() {
+	public HardwareDocumentProvider getDocumentProvider() {
 		if (documentProvider == null) {
-			documentProvider = new org.muml.pm.hardware.platforminstance.diagram.part.HardwareDocumentProvider();
+			documentProvider = new HardwareDocumentProvider();
 		}
 		return documentProvider;
 	}
@@ -253,45 +269,42 @@ public class PlatformInstanceDiagramEditorPlugin extends AbstractUIPlugin {
 	/**
 	 * @generated
 	 */
-	public org.muml.pm.hardware.platforminstance.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy.LinkConstraints getLinkConstraints() {
+	public HardwareBaseItemSemanticEditPolicy.LinkConstraints getLinkConstraints() {
 		return linkConstraints;
 	}
 
 	/**
-	 * @generated
-	 */
-	public void setLinkConstraints(
-			org.muml.pm.hardware.platforminstance.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy.LinkConstraints lc) {
+	* @generated
+	*/
+	public void setLinkConstraints(HardwareBaseItemSemanticEditPolicy.LinkConstraints lc) {
 		this.linkConstraints = lc;
 	}
 
 	/**
 	 * @generated
 	 */
-	public org.muml.pm.hardware.platforminstance.diagram.providers.ElementInitializers getElementInitializers() {
+	public ElementInitializers getElementInitializers() {
 		return initializers;
 	}
 
 	/**
-	 * @generated
-	 */
-	public void setElementInitializers(
-			org.muml.pm.hardware.platforminstance.diagram.providers.ElementInitializers i) {
+	* @generated
+	*/
+	public void setElementInitializers(ElementInitializers i) {
 		this.initializers = i;
 	}
 
 	/**
 	 * @generated
 	 */
-	public org.muml.pm.hardware.platforminstance.diagram.expressions.HardwareOCLFactory getHardwareOCLFactory() {
+	public HardwareOCLFactory getHardwareOCLFactory() {
 		return oclFactory;
 	}
 
 	/**
-	 * @generated
-	 */
-	public void setHardwareOCLFactory(
-			org.muml.pm.hardware.platforminstance.diagram.expressions.HardwareOCLFactory f) {
+	* @generated
+	*/
+	public void setHardwareOCLFactory(HardwareOCLFactory f) {
 		this.oclFactory = f;
 	}
 

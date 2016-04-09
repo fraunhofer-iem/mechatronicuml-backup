@@ -17,6 +17,8 @@ import org.eclipse.jface.window.Window;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.dialogs.ElementListSelectionDialog;
+import org.muml.pm.hardware.platforminstance.diagram.part.Messages;
+import org.muml.pm.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin;
 
 /**
  * @generated
@@ -76,13 +78,10 @@ public class HardwareModelingAssistantProvider extends ModelingAssistantProvider
 	protected EObject selectElement(EObject[] elements) {
 		Shell shell = Display.getCurrent().getActiveShell();
 		ILabelProvider labelProvider = new AdapterFactoryLabelProvider(
-				org.muml.pm.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
-						.getInstance().getItemProvidersAdapterFactory());
+				PlatformInstanceDiagramEditorPlugin.getInstance().getItemProvidersAdapterFactory());
 		ElementListSelectionDialog dialog = new ElementListSelectionDialog(shell, labelProvider);
-		dialog.setMessage(
-				org.muml.pm.hardware.platforminstance.diagram.part.Messages.HardwareModelingAssistantProviderMessage);
-		dialog.setTitle(
-				org.muml.pm.hardware.platforminstance.diagram.part.Messages.HardwareModelingAssistantProviderTitle);
+		dialog.setMessage(Messages.HardwareModelingAssistantProviderMessage);
+		dialog.setTitle(Messages.HardwareModelingAssistantProviderTitle);
 		dialog.setMultipleSelection(false);
 		dialog.setElements(elements);
 		EObject selected = null;

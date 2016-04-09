@@ -3,12 +3,12 @@ package org.muml.pm.hardware.platforminstance.diagram.part;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.IWorkbench;
+import org.muml.core.modelinstance.ui.diagrams.AbstractFujabaDiagramNewWizard;
 
 /**
  * @generated
  */
-public class HardwareCreationWizard
-		extends org.muml.core.modelinstance.ui.diagrams.AbstractFujabaDiagramNewWizard {
+public class HardwareCreationWizard extends AbstractFujabaDiagramNewWizard {
 
 	/**
 	 * @generated
@@ -16,9 +16,8 @@ public class HardwareCreationWizard
 	public void init(IWorkbench workbench, IStructuredSelection selection) {
 		super.init(workbench, selection);
 
-		setDefaultPageImageDescriptor(
-				org.muml.pm.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
-						.getBundledImageDescriptor("icons/wizban/NewHwplatforminstanceWizard.gif")); //$NON-NLS-1$
+		setDefaultPageImageDescriptor(PlatformInstanceDiagramEditorPlugin
+				.getBundledImageDescriptor("icons/wizban/NewHwplatforminstanceWizard.gif")); //$NON-NLS-1$
 
 	}
 
@@ -27,7 +26,7 @@ public class HardwareCreationWizard
 	 */
 	@Override
 	public String getEditorId() {
-		return org.muml.pm.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditor.ID;
+		return PlatformInstanceDiagramEditor.ID;
 
 	}
 
@@ -36,8 +35,7 @@ public class HardwareCreationWizard
 	 */
 	@Override
 	public AdapterFactory getItemProvidersAdapterFactory() {
-		return org.muml.pm.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
-				.getInstance().getItemProvidersAdapterFactory();
+		return PlatformInstanceDiagramEditorPlugin.getInstance().getItemProvidersAdapterFactory();
 	}
 
 }

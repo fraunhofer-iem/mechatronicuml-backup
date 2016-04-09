@@ -7,6 +7,7 @@ import org.eclipse.gmf.runtime.diagram.ui.preferences.IPreferenceConstants;
 import org.eclipse.gmf.runtime.notation.Routing;
 import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.jface.preference.PreferenceConverter;
+import org.muml.pm.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin;
 
 /**
  * @generated
@@ -54,7 +55,6 @@ public class DiagramPreferenceInitializer extends AbstractPreferenceInitializer 
 	 * @generated
 	 */
 	protected IPreferenceStore getPreferenceStore() {
-		return org.muml.pm.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
-				.getInstance().getPreferenceStore();
+		return PlatformInstanceDiagramEditorPlugin.getInstance().getPreferenceStore();
 	}
 }

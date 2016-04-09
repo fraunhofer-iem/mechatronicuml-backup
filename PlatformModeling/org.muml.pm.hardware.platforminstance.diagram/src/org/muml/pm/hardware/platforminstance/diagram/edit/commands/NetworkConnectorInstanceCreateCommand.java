@@ -12,6 +12,13 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy;
+import org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy;
+import org.muml.pim.connector.ConnectorEndpointInstance;
+import org.muml.pm.hardware.hwplatforminstance.HWPlatformInstanceConfiguration;
+import org.muml.pm.hardware.hwplatforminstance.HwplatforminstanceFactory;
+import org.muml.pm.hardware.hwplatforminstance.NetworkConnectorInstance;
+import org.muml.pm.hardware.platforminstance.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy;
 
 /**
  * @generated
@@ -31,23 +38,21 @@ public class NetworkConnectorInstanceCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	private final org.muml.pm.hardware.hwplatforminstance.HWPlatformInstanceConfiguration container;
+	private final HWPlatformInstanceConfiguration container;
 
 	/**
 	 * @generated
 	 */
 	public NetworkConnectorInstanceCreateCommand(CreateRelationshipRequest request, EObject source, EObject target) {
 		super(request.getLabel(), null, request);
-		org.muml.pm.hardware.hwplatforminstance.HWPlatformInstanceConfiguration container = null;
+		HWPlatformInstanceConfiguration container = null;
 		this.source = source;
 		this.target = target;
 		container = deduceContainer(source, target);
 
 		if (container == null) {
-			View sourceView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-					.getSourceView(getRequest());
-			View targetView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-					.getTargetView(getRequest());
+			View sourceView = ConnectionConfigureHelperGraphicalNodeEditPolicy.getSourceView(getRequest());
+			View targetView = ConnectionConfigureHelperGraphicalNodeEditPolicy.getTargetView(getRequest());
 			container = deduceContainerUsingViews(sourceView, targetView);
 		}
 		this.container = container;
@@ -60,12 +65,10 @@ public class NetworkConnectorInstanceCreateCommand extends EditElementCommand {
 		if (source == null && target == null) {
 			return false;
 		}
-		if (source != null
-				&& false == source instanceof org.muml.pim.connector.ConnectorEndpointInstance) {
+		if (source != null && false == source instanceof ConnectorEndpointInstance) {
 			return false;
 		}
-		if (target != null
-				&& false == target instanceof org.muml.pim.connector.ConnectorEndpointInstance) {
+		if (target != null && false == target instanceof ConnectorEndpointInstance) {
 			return false;
 		}
 		if (getSource() == null) {
@@ -75,18 +78,14 @@ public class NetworkConnectorInstanceCreateCommand extends EditElementCommand {
 		if (getContainer() == null) {
 			return false;
 		}
-		View sourceView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-				.getSourceView(getRequest());
-		View targetView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-				.getTargetView(getRequest());
-		if (!org.muml.pm.hardware.platforminstance.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy
-				.getLinkConstraints().canCreateNetworkConnectorInstance_4012(getContainer(), getSource(), getTarget(),
-						sourceView, targetView)) {
-			String errorMessage = org.muml.pm.hardware.platforminstance.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy
-					.getLinkConstraints().getErrorNetworkConnectorInstance_4012(getContainer(), getSource(),
-							getTarget(), sourceView, targetView);
-			org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy
-					.showMessage(targetView != null ? targetView : sourceView, errorMessage);
+		View sourceView = ConnectionConfigureHelperGraphicalNodeEditPolicy.getSourceView(getRequest());
+		View targetView = ConnectionConfigureHelperGraphicalNodeEditPolicy.getTargetView(getRequest());
+		if (!HardwareBaseItemSemanticEditPolicy.getLinkConstraints().canCreateNetworkConnectorInstance_4012(
+				getContainer(), getSource(), getTarget(), sourceView, targetView)) {
+			String errorMessage = HardwareBaseItemSemanticEditPolicy.getLinkConstraints()
+					.getErrorNetworkConnectorInstance_4012(getContainer(), getSource(), getTarget(), sourceView,
+							targetView);
+			ErrorFeedbackEditPolicy.showMessage(targetView != null ? targetView : sourceView, errorMessage);
 			return false;
 		}
 		return true;
@@ -100,8 +99,7 @@ public class NetworkConnectorInstanceCreateCommand extends EditElementCommand {
 			throw new ExecutionException("Invalid arguments in create link command"); //$NON-NLS-1$
 		}
 
-		org.muml.pm.hardware.hwplatforminstance.NetworkConnectorInstance newElement = org.muml.pm.hardware.hwplatforminstance.HwplatforminstanceFactory.eINSTANCE
-				.createNetworkConnectorInstance();
+		NetworkConnectorInstance newElement = HwplatforminstanceFactory.eINSTANCE.createNetworkConnectorInstance();
 		getContainer().getNetworkConnectorInstances().add(newElement);
 		newElement.getConnectorEndpointInstances().add(getSource());
 		newElement.getConnectorEndpointInstances().add(getTarget());
@@ -112,11 +110,10 @@ public class NetworkConnectorInstanceCreateCommand extends EditElementCommand {
 	}
 
 	/**
-	 * @generated
-	 */
-	protected void doConfigure(
-			org.muml.pm.hardware.hwplatforminstance.NetworkConnectorInstance newElement,
-			IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
+	* @generated
+	*/
+	protected void doConfigure(NetworkConnectorInstance newElement, IProgressMonitor monitor, IAdaptable info)
+			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest()).getElementType();
 		ConfigureRequest configureRequest = new ConfigureRequest(getEditingDomain(), newElement, elementType);
 		configureRequest.setClientContext(((CreateElementRequest) getRequest()).getClientContext());
@@ -139,21 +136,21 @@ public class NetworkConnectorInstanceCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected org.muml.pim.connector.ConnectorEndpointInstance getSource() {
-		return (org.muml.pim.connector.ConnectorEndpointInstance) source;
+	protected ConnectorEndpointInstance getSource() {
+		return (ConnectorEndpointInstance) source;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected org.muml.pim.connector.ConnectorEndpointInstance getTarget() {
-		return (org.muml.pim.connector.ConnectorEndpointInstance) target;
+	protected ConnectorEndpointInstance getTarget() {
+		return (ConnectorEndpointInstance) target;
 	}
 
 	/**
 	 * @generated
 	 */
-	public org.muml.pm.hardware.hwplatforminstance.HWPlatformInstanceConfiguration getContainer() {
+	public HWPlatformInstanceConfiguration getContainer() {
 		return container;
 	}
 
@@ -162,14 +159,13 @@ public class NetworkConnectorInstanceCreateCommand extends EditElementCommand {
 	 * Modify with appropriate logic.
 	 * @generated
 	 */
-	private static org.muml.pm.hardware.hwplatforminstance.HWPlatformInstanceConfiguration deduceContainer(
-			EObject source, EObject target) {
+	private static HWPlatformInstanceConfiguration deduceContainer(EObject source, EObject target) {
 		// Find container element for the new link.
 		// Climb up by containment hierarchy starting from the source
 		// and return the first element that is instance of the container class.
 		for (EObject element = source; element != null; element = element.eContainer()) {
-			if (element instanceof org.muml.pm.hardware.hwplatforminstance.HWPlatformInstanceConfiguration) {
-				return (org.muml.pm.hardware.hwplatforminstance.HWPlatformInstanceConfiguration) element;
+			if (element instanceof HWPlatformInstanceConfiguration) {
+				return (HWPlatformInstanceConfiguration) element;
 			}
 		}
 		return null;
@@ -180,12 +176,10 @@ public class NetworkConnectorInstanceCreateCommand extends EditElementCommand {
 	 * 
 	 * @generated
 	 */
-	private static org.muml.pm.hardware.hwplatforminstance.HWPlatformInstanceConfiguration deduceContainerUsingViews(
-			View sourceView, View targetView) {
+	private static HWPlatformInstanceConfiguration deduceContainerUsingViews(View sourceView, View targetView) {
 		for (View view = sourceView; view != null; view = (View) view.eContainer()) {
-			if (view.getElement() instanceof org.muml.pm.hardware.hwplatforminstance.HWPlatformInstanceConfiguration) {
-				return (org.muml.pm.hardware.hwplatforminstance.HWPlatformInstanceConfiguration) view
-						.getElement();
+			if (view.getElement() instanceof HWPlatformInstanceConfiguration) {
+				return (HWPlatformInstanceConfiguration) view.getElement();
 			}
 		}
 		return null;

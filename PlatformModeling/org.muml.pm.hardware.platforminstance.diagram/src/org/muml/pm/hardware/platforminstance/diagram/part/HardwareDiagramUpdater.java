@@ -12,6 +12,37 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.update.DiagramUpdater;
+import org.muml.pim.connector.ConnectorEndpointInstance;
+import org.muml.pim.connector.ConnectorPackage;
+import org.muml.pm.hardware.hwplatforminstance.BusInstance;
+import org.muml.pm.hardware.hwplatforminstance.DelegationHWPortInstance;
+import org.muml.pm.hardware.hwplatforminstance.HWPlatformInstance;
+import org.muml.pm.hardware.hwplatforminstance.HWPlatformInstanceConfiguration;
+import org.muml.pm.hardware.hwplatforminstance.HWPortInstance;
+import org.muml.pm.hardware.hwplatforminstance.NetworkBridgeInstance;
+import org.muml.pm.hardware.hwplatforminstance.NetworkConnectorInstance;
+import org.muml.pm.hardware.hwplatforminstance.NetworkingHardwareInstance;
+import org.muml.pm.hardware.hwresourceinstance.ActuatorInstance;
+import org.muml.pm.hardware.hwresourceinstance.HWPort;
+import org.muml.pm.hardware.hwresourceinstance.ResourceInstance;
+import org.muml.pm.hardware.hwresourceinstance.SensorInstance;
+import org.muml.pm.hardware.hwresourceinstance.StructuredResourceInstance;
+import org.muml.pm.hardware.platforminstance.diagram.edit.parts.ActuatorInstanceEditPart;
+import org.muml.pm.hardware.platforminstance.diagram.edit.parts.BusInstanceEditPart;
+import org.muml.pm.hardware.platforminstance.diagram.edit.parts.DelegationHWPortInstanceEditPart;
+import org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstance2EditPart;
+import org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceConfiguration2EditPart;
+import org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceConfigurationEditPart;
+import org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceConfigurationHWPInstanceConfigurationContentsCompartmentEditPart;
+import org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceEditPart;
+import org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceHWPlatformCompartment2EditPart;
+import org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceHWPlatformCompartmentEditPart;
+import org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPortInstanceEditPart;
+import org.muml.pm.hardware.platforminstance.diagram.edit.parts.NetworkBridgeInstanceEditPart;
+import org.muml.pm.hardware.platforminstance.diagram.edit.parts.NetworkConnectorInstanceEditPart;
+import org.muml.pm.hardware.platforminstance.diagram.edit.parts.SensorInstanceEditPart;
+import org.muml.pm.hardware.platforminstance.diagram.edit.parts.StructuredResourceInstanceEditPart;
+import org.muml.pm.hardware.platforminstance.diagram.providers.HardwareElementTypes;
 
 /**
  * @generated
@@ -21,28 +52,26 @@ public class HardwareDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pm.hardware.platforminstance.diagram.part.HardwareNodeDescriptor> getSemanticChildren(
-			View view) {
-		switch (org.muml.pm.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
-				.getVisualID(view)) {
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceConfigurationEditPart.VISUAL_ID:
+	public static List<HardwareNodeDescriptor> getSemanticChildren(View view) {
+		switch (HardwareVisualIDRegistry.getVisualID(view)) {
+		case HWPlatformInstanceConfigurationEditPart.VISUAL_ID:
 			return getHWPlatformInstanceConfiguration_1000SemanticChildren(view);
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceEditPart.VISUAL_ID:
+		case HWPlatformInstanceEditPart.VISUAL_ID:
 			return getHWPlatformInstance_2005SemanticChildren(view);
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstance2EditPart.VISUAL_ID:
+		case HWPlatformInstance2EditPart.VISUAL_ID:
 			return getHWPlatformInstance_3040SemanticChildren(view);
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.StructuredResourceInstanceEditPart.VISUAL_ID:
+		case StructuredResourceInstanceEditPart.VISUAL_ID:
 			return getStructuredResourceInstance_3042SemanticChildren(view);
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.ActuatorInstanceEditPart.VISUAL_ID:
+		case ActuatorInstanceEditPart.VISUAL_ID:
 			return getActuatorInstance_3044SemanticChildren(view);
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.SensorInstanceEditPart.VISUAL_ID:
+		case SensorInstanceEditPart.VISUAL_ID:
 			return getSensorInstance_3045SemanticChildren(view);
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceHWPlatformCompartmentEditPart.VISUAL_ID:
+		case HWPlatformInstanceHWPlatformCompartmentEditPart.VISUAL_ID:
 			return getHWPlatformInstanceHWPlatformCompartment_7012SemanticChildren(view);
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceConfigurationHWPInstanceConfigurationContentsCompartmentEditPart.VISUAL_ID:
+		case HWPlatformInstanceConfigurationHWPInstanceConfigurationContentsCompartmentEditPart.VISUAL_ID:
 			return getHWPlatformInstanceConfigurationHWPInstanceConfigurationContentsCompartment_7013SemanticChildren(
 					view);
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceHWPlatformCompartment2EditPart.VISUAL_ID:
+		case HWPlatformInstanceHWPlatformCompartment2EditPart.VISUAL_ID:
 			return getHWPlatformInstanceHWPlatformCompartment_7014SemanticChildren(view);
 		}
 		return Collections.emptyList();
@@ -51,23 +80,17 @@ public class HardwareDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pm.hardware.platforminstance.diagram.part.HardwareNodeDescriptor> getHWPlatformInstanceConfiguration_1000SemanticChildren(
-			View view) {
+	public static List<HardwareNodeDescriptor> getHWPlatformInstanceConfiguration_1000SemanticChildren(View view) {
 		if (!view.isSetElement()) {
 			return Collections.emptyList();
 		}
-		org.muml.pm.hardware.hwplatforminstance.HWPlatformInstanceConfiguration modelElement = (org.muml.pm.hardware.hwplatforminstance.HWPlatformInstanceConfiguration) view
-				.getElement();
-		LinkedList<org.muml.pm.hardware.platforminstance.diagram.part.HardwareNodeDescriptor> result = new LinkedList<org.muml.pm.hardware.platforminstance.diagram.part.HardwareNodeDescriptor>();
+		HWPlatformInstanceConfiguration modelElement = (HWPlatformInstanceConfiguration) view.getElement();
+		LinkedList<HardwareNodeDescriptor> result = new LinkedList<HardwareNodeDescriptor>();
 		for (Iterator<?> it = modelElement.getHwplatformInstances().iterator(); it.hasNext();) {
-			org.muml.pm.hardware.hwplatforminstance.HWPlatformInstance childElement = (org.muml.pm.hardware.hwplatforminstance.HWPlatformInstance) it
-					.next();
-			int visualID = org.muml.pm.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
-					.getNodeVisualID(view, childElement);
-			if (visualID == org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceEditPart.VISUAL_ID) {
-				result.add(
-						new org.muml.pm.hardware.platforminstance.diagram.part.HardwareNodeDescriptor(
-								childElement, visualID));
+			HWPlatformInstance childElement = (HWPlatformInstance) it.next();
+			int visualID = HardwareVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == HWPlatformInstanceEditPart.VISUAL_ID) {
+				result.add(new HardwareNodeDescriptor(childElement, visualID));
 				continue;
 			}
 		}
@@ -78,23 +101,17 @@ public class HardwareDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pm.hardware.platforminstance.diagram.part.HardwareNodeDescriptor> getHWPlatformInstance_2005SemanticChildren(
-			View view) {
+	public static List<HardwareNodeDescriptor> getHWPlatformInstance_2005SemanticChildren(View view) {
 		if (!view.isSetElement()) {
 			return Collections.emptyList();
 		}
-		org.muml.pm.hardware.hwplatforminstance.HWPlatformInstance modelElement = (org.muml.pm.hardware.hwplatforminstance.HWPlatformInstance) view
-				.getElement();
-		LinkedList<org.muml.pm.hardware.platforminstance.diagram.part.HardwareNodeDescriptor> result = new LinkedList<org.muml.pm.hardware.platforminstance.diagram.part.HardwareNodeDescriptor>();
+		HWPlatformInstance modelElement = (HWPlatformInstance) view.getElement();
+		LinkedList<HardwareNodeDescriptor> result = new LinkedList<HardwareNodeDescriptor>();
 		for (Iterator<?> it = modelElement.getDelegationPorts().iterator(); it.hasNext();) {
-			org.muml.pm.hardware.hwplatforminstance.DelegationHWPortInstance childElement = (org.muml.pm.hardware.hwplatforminstance.DelegationHWPortInstance) it
-					.next();
-			int visualID = org.muml.pm.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
-					.getNodeVisualID(view, childElement);
-			if (visualID == org.muml.pm.hardware.platforminstance.diagram.edit.parts.DelegationHWPortInstanceEditPart.VISUAL_ID) {
-				result.add(
-						new org.muml.pm.hardware.platforminstance.diagram.part.HardwareNodeDescriptor(
-								childElement, visualID));
+			DelegationHWPortInstance childElement = (DelegationHWPortInstance) it.next();
+			int visualID = HardwareVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == DelegationHWPortInstanceEditPart.VISUAL_ID) {
+				result.add(new HardwareNodeDescriptor(childElement, visualID));
 				continue;
 			}
 		}
@@ -105,23 +122,17 @@ public class HardwareDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pm.hardware.platforminstance.diagram.part.HardwareNodeDescriptor> getHWPlatformInstance_3040SemanticChildren(
-			View view) {
+	public static List<HardwareNodeDescriptor> getHWPlatformInstance_3040SemanticChildren(View view) {
 		if (!view.isSetElement()) {
 			return Collections.emptyList();
 		}
-		org.muml.pm.hardware.hwplatforminstance.HWPlatformInstance modelElement = (org.muml.pm.hardware.hwplatforminstance.HWPlatformInstance) view
-				.getElement();
-		LinkedList<org.muml.pm.hardware.platforminstance.diagram.part.HardwareNodeDescriptor> result = new LinkedList<org.muml.pm.hardware.platforminstance.diagram.part.HardwareNodeDescriptor>();
+		HWPlatformInstance modelElement = (HWPlatformInstance) view.getElement();
+		LinkedList<HardwareNodeDescriptor> result = new LinkedList<HardwareNodeDescriptor>();
 		for (Iterator<?> it = modelElement.getDelegationPorts().iterator(); it.hasNext();) {
-			org.muml.pm.hardware.hwplatforminstance.DelegationHWPortInstance childElement = (org.muml.pm.hardware.hwplatforminstance.DelegationHWPortInstance) it
-					.next();
-			int visualID = org.muml.pm.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
-					.getNodeVisualID(view, childElement);
-			if (visualID == org.muml.pm.hardware.platforminstance.diagram.edit.parts.DelegationHWPortInstanceEditPart.VISUAL_ID) {
-				result.add(
-						new org.muml.pm.hardware.platforminstance.diagram.part.HardwareNodeDescriptor(
-								childElement, visualID));
+			DelegationHWPortInstance childElement = (DelegationHWPortInstance) it.next();
+			int visualID = HardwareVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == DelegationHWPortInstanceEditPart.VISUAL_ID) {
+				result.add(new HardwareNodeDescriptor(childElement, visualID));
 				continue;
 			}
 		}
@@ -132,23 +143,17 @@ public class HardwareDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pm.hardware.platforminstance.diagram.part.HardwareNodeDescriptor> getStructuredResourceInstance_3042SemanticChildren(
-			View view) {
+	public static List<HardwareNodeDescriptor> getStructuredResourceInstance_3042SemanticChildren(View view) {
 		if (!view.isSetElement()) {
 			return Collections.emptyList();
 		}
-		org.muml.pm.hardware.hwresourceinstance.StructuredResourceInstance modelElement = (org.muml.pm.hardware.hwresourceinstance.StructuredResourceInstance) view
-				.getElement();
-		LinkedList<org.muml.pm.hardware.platforminstance.diagram.part.HardwareNodeDescriptor> result = new LinkedList<org.muml.pm.hardware.platforminstance.diagram.part.HardwareNodeDescriptor>();
+		StructuredResourceInstance modelElement = (StructuredResourceInstance) view.getElement();
+		LinkedList<HardwareNodeDescriptor> result = new LinkedList<HardwareNodeDescriptor>();
 		for (Iterator<?> it = modelElement.getHwports().iterator(); it.hasNext();) {
-			org.muml.pm.hardware.hwresourceinstance.HWPort childElement = (org.muml.pm.hardware.hwresourceinstance.HWPort) it
-					.next();
-			int visualID = org.muml.pm.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
-					.getNodeVisualID(view, childElement);
-			if (visualID == org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPortInstanceEditPart.VISUAL_ID) {
-				result.add(
-						new org.muml.pm.hardware.platforminstance.diagram.part.HardwareNodeDescriptor(
-								childElement, visualID));
+			HWPort childElement = (HWPort) it.next();
+			int visualID = HardwareVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == HWPortInstanceEditPart.VISUAL_ID) {
+				result.add(new HardwareNodeDescriptor(childElement, visualID));
 				continue;
 			}
 		}
@@ -159,23 +164,17 @@ public class HardwareDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pm.hardware.platforminstance.diagram.part.HardwareNodeDescriptor> getActuatorInstance_3044SemanticChildren(
-			View view) {
+	public static List<HardwareNodeDescriptor> getActuatorInstance_3044SemanticChildren(View view) {
 		if (!view.isSetElement()) {
 			return Collections.emptyList();
 		}
-		org.muml.pm.hardware.hwresourceinstance.ActuatorInstance modelElement = (org.muml.pm.hardware.hwresourceinstance.ActuatorInstance) view
-				.getElement();
-		LinkedList<org.muml.pm.hardware.platforminstance.diagram.part.HardwareNodeDescriptor> result = new LinkedList<org.muml.pm.hardware.platforminstance.diagram.part.HardwareNodeDescriptor>();
+		ActuatorInstance modelElement = (ActuatorInstance) view.getElement();
+		LinkedList<HardwareNodeDescriptor> result = new LinkedList<HardwareNodeDescriptor>();
 		for (Iterator<?> it = modelElement.getHwports().iterator(); it.hasNext();) {
-			org.muml.pm.hardware.hwresourceinstance.HWPort childElement = (org.muml.pm.hardware.hwresourceinstance.HWPort) it
-					.next();
-			int visualID = org.muml.pm.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
-					.getNodeVisualID(view, childElement);
-			if (visualID == org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPortInstanceEditPart.VISUAL_ID) {
-				result.add(
-						new org.muml.pm.hardware.platforminstance.diagram.part.HardwareNodeDescriptor(
-								childElement, visualID));
+			HWPort childElement = (HWPort) it.next();
+			int visualID = HardwareVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == HWPortInstanceEditPart.VISUAL_ID) {
+				result.add(new HardwareNodeDescriptor(childElement, visualID));
 				continue;
 			}
 		}
@@ -186,23 +185,17 @@ public class HardwareDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pm.hardware.platforminstance.diagram.part.HardwareNodeDescriptor> getSensorInstance_3045SemanticChildren(
-			View view) {
+	public static List<HardwareNodeDescriptor> getSensorInstance_3045SemanticChildren(View view) {
 		if (!view.isSetElement()) {
 			return Collections.emptyList();
 		}
-		org.muml.pm.hardware.hwresourceinstance.SensorInstance modelElement = (org.muml.pm.hardware.hwresourceinstance.SensorInstance) view
-				.getElement();
-		LinkedList<org.muml.pm.hardware.platforminstance.diagram.part.HardwareNodeDescriptor> result = new LinkedList<org.muml.pm.hardware.platforminstance.diagram.part.HardwareNodeDescriptor>();
+		SensorInstance modelElement = (SensorInstance) view.getElement();
+		LinkedList<HardwareNodeDescriptor> result = new LinkedList<HardwareNodeDescriptor>();
 		for (Iterator<?> it = modelElement.getHwports().iterator(); it.hasNext();) {
-			org.muml.pm.hardware.hwresourceinstance.HWPort childElement = (org.muml.pm.hardware.hwresourceinstance.HWPort) it
-					.next();
-			int visualID = org.muml.pm.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
-					.getNodeVisualID(view, childElement);
-			if (visualID == org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPortInstanceEditPart.VISUAL_ID) {
-				result.add(
-						new org.muml.pm.hardware.platforminstance.diagram.part.HardwareNodeDescriptor(
-								childElement, visualID));
+			HWPort childElement = (HWPort) it.next();
+			int visualID = HardwareVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == HWPortInstanceEditPart.VISUAL_ID) {
+				result.add(new HardwareNodeDescriptor(childElement, visualID));
 				continue;
 			}
 		}
@@ -213,7 +206,7 @@ public class HardwareDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pm.hardware.platforminstance.diagram.part.HardwareNodeDescriptor> getHWPlatformInstanceHWPlatformCompartment_7012SemanticChildren(
+	public static List<HardwareNodeDescriptor> getHWPlatformInstanceHWPlatformCompartment_7012SemanticChildren(
 			View view) {
 		if (false == view.eContainer() instanceof View) {
 			return Collections.emptyList();
@@ -222,18 +215,13 @@ public class HardwareDiagramUpdater {
 		if (!containerView.isSetElement()) {
 			return Collections.emptyList();
 		}
-		org.muml.pm.hardware.hwplatforminstance.HWPlatformInstance modelElement = (org.muml.pm.hardware.hwplatforminstance.HWPlatformInstance) containerView
-				.getElement();
-		LinkedList<org.muml.pm.hardware.platforminstance.diagram.part.HardwareNodeDescriptor> result = new LinkedList<org.muml.pm.hardware.platforminstance.diagram.part.HardwareNodeDescriptor>();
+		HWPlatformInstance modelElement = (HWPlatformInstance) containerView.getElement();
+		LinkedList<HardwareNodeDescriptor> result = new LinkedList<HardwareNodeDescriptor>();
 		{
-			org.muml.pm.hardware.hwplatforminstance.HWPlatformInstanceConfiguration childElement = modelElement
-					.getEmbeddedHPIC();
-			int visualID = org.muml.pm.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
-					.getNodeVisualID(view, childElement);
-			if (visualID == org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceConfiguration2EditPart.VISUAL_ID) {
-				result.add(
-						new org.muml.pm.hardware.platforminstance.diagram.part.HardwareNodeDescriptor(
-								childElement, visualID));
+			HWPlatformInstanceConfiguration childElement = modelElement.getEmbeddedHPIC();
+			int visualID = HardwareVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == HWPlatformInstanceConfiguration2EditPart.VISUAL_ID) {
+				result.add(new HardwareNodeDescriptor(childElement, visualID));
 			}
 		}
 
@@ -243,7 +231,7 @@ public class HardwareDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pm.hardware.platforminstance.diagram.part.HardwareNodeDescriptor> getHWPlatformInstanceConfigurationHWPInstanceConfigurationContentsCompartment_7013SemanticChildren(
+	public static List<HardwareNodeDescriptor> getHWPlatformInstanceConfigurationHWPInstanceConfigurationContentsCompartment_7013SemanticChildren(
 			View view) {
 		if (false == view.eContainer() instanceof View) {
 			return Collections.emptyList();
@@ -252,60 +240,41 @@ public class HardwareDiagramUpdater {
 		if (!containerView.isSetElement()) {
 			return Collections.emptyList();
 		}
-		org.muml.pm.hardware.hwplatforminstance.HWPlatformInstanceConfiguration modelElement = (org.muml.pm.hardware.hwplatforminstance.HWPlatformInstanceConfiguration) containerView
-				.getElement();
-		LinkedList<org.muml.pm.hardware.platforminstance.diagram.part.HardwareNodeDescriptor> result = new LinkedList<org.muml.pm.hardware.platforminstance.diagram.part.HardwareNodeDescriptor>();
+		HWPlatformInstanceConfiguration modelElement = (HWPlatformInstanceConfiguration) containerView.getElement();
+		LinkedList<HardwareNodeDescriptor> result = new LinkedList<HardwareNodeDescriptor>();
 		for (Iterator<?> it = modelElement.getHwplatformInstances().iterator(); it.hasNext();) {
-			org.muml.pm.hardware.hwplatforminstance.HWPlatformInstance childElement = (org.muml.pm.hardware.hwplatforminstance.HWPlatformInstance) it
-					.next();
-			int visualID = org.muml.pm.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
-					.getNodeVisualID(view, childElement);
-			if (visualID == org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstance2EditPart.VISUAL_ID) {
-				result.add(
-						new org.muml.pm.hardware.platforminstance.diagram.part.HardwareNodeDescriptor(
-								childElement, visualID));
+			HWPlatformInstance childElement = (HWPlatformInstance) it.next();
+			int visualID = HardwareVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == HWPlatformInstance2EditPart.VISUAL_ID) {
+				result.add(new HardwareNodeDescriptor(childElement, visualID));
 				continue;
 			}
 		}
 		for (Iterator<?> it = modelElement.getResources().iterator(); it.hasNext();) {
-			org.muml.pm.hardware.hwresourceinstance.ResourceInstance childElement = (org.muml.pm.hardware.hwresourceinstance.ResourceInstance) it
-					.next();
-			int visualID = org.muml.pm.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
-					.getNodeVisualID(view, childElement);
-			if (visualID == org.muml.pm.hardware.platforminstance.diagram.edit.parts.StructuredResourceInstanceEditPart.VISUAL_ID) {
-				result.add(
-						new org.muml.pm.hardware.platforminstance.diagram.part.HardwareNodeDescriptor(
-								childElement, visualID));
+			ResourceInstance childElement = (ResourceInstance) it.next();
+			int visualID = HardwareVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == StructuredResourceInstanceEditPart.VISUAL_ID) {
+				result.add(new HardwareNodeDescriptor(childElement, visualID));
 				continue;
 			}
-			if (visualID == org.muml.pm.hardware.platforminstance.diagram.edit.parts.ActuatorInstanceEditPart.VISUAL_ID) {
-				result.add(
-						new org.muml.pm.hardware.platforminstance.diagram.part.HardwareNodeDescriptor(
-								childElement, visualID));
+			if (visualID == ActuatorInstanceEditPart.VISUAL_ID) {
+				result.add(new HardwareNodeDescriptor(childElement, visualID));
 				continue;
 			}
-			if (visualID == org.muml.pm.hardware.platforminstance.diagram.edit.parts.SensorInstanceEditPart.VISUAL_ID) {
-				result.add(
-						new org.muml.pm.hardware.platforminstance.diagram.part.HardwareNodeDescriptor(
-								childElement, visualID));
+			if (visualID == SensorInstanceEditPart.VISUAL_ID) {
+				result.add(new HardwareNodeDescriptor(childElement, visualID));
 				continue;
 			}
 		}
 		for (Iterator<?> it = modelElement.getNetworkingHardwareInstances().iterator(); it.hasNext();) {
-			org.muml.pm.hardware.hwplatforminstance.NetworkingHardwareInstance childElement = (org.muml.pm.hardware.hwplatforminstance.NetworkingHardwareInstance) it
-					.next();
-			int visualID = org.muml.pm.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
-					.getNodeVisualID(view, childElement);
-			if (visualID == org.muml.pm.hardware.platforminstance.diagram.edit.parts.BusInstanceEditPart.VISUAL_ID) {
-				result.add(
-						new org.muml.pm.hardware.platforminstance.diagram.part.HardwareNodeDescriptor(
-								childElement, visualID));
+			NetworkingHardwareInstance childElement = (NetworkingHardwareInstance) it.next();
+			int visualID = HardwareVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == BusInstanceEditPart.VISUAL_ID) {
+				result.add(new HardwareNodeDescriptor(childElement, visualID));
 				continue;
 			}
-			if (visualID == org.muml.pm.hardware.platforminstance.diagram.edit.parts.NetworkBridgeInstanceEditPart.VISUAL_ID) {
-				result.add(
-						new org.muml.pm.hardware.platforminstance.diagram.part.HardwareNodeDescriptor(
-								childElement, visualID));
+			if (visualID == NetworkBridgeInstanceEditPart.VISUAL_ID) {
+				result.add(new HardwareNodeDescriptor(childElement, visualID));
 				continue;
 			}
 		}
@@ -316,7 +285,7 @@ public class HardwareDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pm.hardware.platforminstance.diagram.part.HardwareNodeDescriptor> getHWPlatformInstanceHWPlatformCompartment_7014SemanticChildren(
+	public static List<HardwareNodeDescriptor> getHWPlatformInstanceHWPlatformCompartment_7014SemanticChildren(
 			View view) {
 		if (false == view.eContainer() instanceof View) {
 			return Collections.emptyList();
@@ -325,18 +294,13 @@ public class HardwareDiagramUpdater {
 		if (!containerView.isSetElement()) {
 			return Collections.emptyList();
 		}
-		org.muml.pm.hardware.hwplatforminstance.HWPlatformInstance modelElement = (org.muml.pm.hardware.hwplatforminstance.HWPlatformInstance) containerView
-				.getElement();
-		LinkedList<org.muml.pm.hardware.platforminstance.diagram.part.HardwareNodeDescriptor> result = new LinkedList<org.muml.pm.hardware.platforminstance.diagram.part.HardwareNodeDescriptor>();
+		HWPlatformInstance modelElement = (HWPlatformInstance) containerView.getElement();
+		LinkedList<HardwareNodeDescriptor> result = new LinkedList<HardwareNodeDescriptor>();
 		{
-			org.muml.pm.hardware.hwplatforminstance.HWPlatformInstanceConfiguration childElement = modelElement
-					.getEmbeddedHPIC();
-			int visualID = org.muml.pm.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
-					.getNodeVisualID(view, childElement);
-			if (visualID == org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceConfiguration2EditPart.VISUAL_ID) {
-				result.add(
-						new org.muml.pm.hardware.platforminstance.diagram.part.HardwareNodeDescriptor(
-								childElement, visualID));
+			HWPlatformInstanceConfiguration childElement = modelElement.getEmbeddedHPIC();
+			int visualID = HardwareVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == HWPlatformInstanceConfiguration2EditPart.VISUAL_ID) {
+				result.add(new HardwareNodeDescriptor(childElement, visualID));
 			}
 		}
 
@@ -346,33 +310,31 @@ public class HardwareDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pm.hardware.platforminstance.diagram.part.HardwareLinkDescriptor> getContainedLinks(
-			View view) {
-		switch (org.muml.pm.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
-				.getVisualID(view)) {
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceConfigurationEditPart.VISUAL_ID:
+	public static List<HardwareLinkDescriptor> getContainedLinks(View view) {
+		switch (HardwareVisualIDRegistry.getVisualID(view)) {
+		case HWPlatformInstanceConfigurationEditPart.VISUAL_ID:
 			return getHWPlatformInstanceConfiguration_1000ContainedLinks(view);
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceEditPart.VISUAL_ID:
+		case HWPlatformInstanceEditPart.VISUAL_ID:
 			return getHWPlatformInstance_2005ContainedLinks(view);
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceConfiguration2EditPart.VISUAL_ID:
+		case HWPlatformInstanceConfiguration2EditPart.VISUAL_ID:
 			return getHWPlatformInstanceConfiguration_3039ContainedLinks(view);
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstance2EditPart.VISUAL_ID:
+		case HWPlatformInstance2EditPart.VISUAL_ID:
 			return getHWPlatformInstance_3040ContainedLinks(view);
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.DelegationHWPortInstanceEditPart.VISUAL_ID:
+		case DelegationHWPortInstanceEditPart.VISUAL_ID:
 			return getDelegationHWPortInstance_3041ContainedLinks(view);
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.StructuredResourceInstanceEditPart.VISUAL_ID:
+		case StructuredResourceInstanceEditPart.VISUAL_ID:
 			return getStructuredResourceInstance_3042ContainedLinks(view);
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPortInstanceEditPart.VISUAL_ID:
+		case HWPortInstanceEditPart.VISUAL_ID:
 			return getHWPortInstance_3043ContainedLinks(view);
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.ActuatorInstanceEditPart.VISUAL_ID:
+		case ActuatorInstanceEditPart.VISUAL_ID:
 			return getActuatorInstance_3044ContainedLinks(view);
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.SensorInstanceEditPart.VISUAL_ID:
+		case SensorInstanceEditPart.VISUAL_ID:
 			return getSensorInstance_3045ContainedLinks(view);
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.BusInstanceEditPart.VISUAL_ID:
+		case BusInstanceEditPart.VISUAL_ID:
 			return getBusInstance_3046ContainedLinks(view);
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.NetworkBridgeInstanceEditPart.VISUAL_ID:
+		case NetworkBridgeInstanceEditPart.VISUAL_ID:
 			return getNetworkBridgeInstance_3047ContainedLinks(view);
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.NetworkConnectorInstanceEditPart.VISUAL_ID:
+		case NetworkConnectorInstanceEditPart.VISUAL_ID:
 			return getNetworkConnectorInstance_4012ContainedLinks(view);
 		}
 		return Collections.emptyList();
@@ -381,31 +343,29 @@ public class HardwareDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pm.hardware.platforminstance.diagram.part.HardwareLinkDescriptor> getIncomingLinks(
-			View view) {
-		switch (org.muml.pm.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
-				.getVisualID(view)) {
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceEditPart.VISUAL_ID:
+	public static List<HardwareLinkDescriptor> getIncomingLinks(View view) {
+		switch (HardwareVisualIDRegistry.getVisualID(view)) {
+		case HWPlatformInstanceEditPart.VISUAL_ID:
 			return getHWPlatformInstance_2005IncomingLinks(view);
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceConfiguration2EditPart.VISUAL_ID:
+		case HWPlatformInstanceConfiguration2EditPart.VISUAL_ID:
 			return getHWPlatformInstanceConfiguration_3039IncomingLinks(view);
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstance2EditPart.VISUAL_ID:
+		case HWPlatformInstance2EditPart.VISUAL_ID:
 			return getHWPlatformInstance_3040IncomingLinks(view);
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.DelegationHWPortInstanceEditPart.VISUAL_ID:
+		case DelegationHWPortInstanceEditPart.VISUAL_ID:
 			return getDelegationHWPortInstance_3041IncomingLinks(view);
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.StructuredResourceInstanceEditPart.VISUAL_ID:
+		case StructuredResourceInstanceEditPart.VISUAL_ID:
 			return getStructuredResourceInstance_3042IncomingLinks(view);
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPortInstanceEditPart.VISUAL_ID:
+		case HWPortInstanceEditPart.VISUAL_ID:
 			return getHWPortInstance_3043IncomingLinks(view);
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.ActuatorInstanceEditPart.VISUAL_ID:
+		case ActuatorInstanceEditPart.VISUAL_ID:
 			return getActuatorInstance_3044IncomingLinks(view);
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.SensorInstanceEditPart.VISUAL_ID:
+		case SensorInstanceEditPart.VISUAL_ID:
 			return getSensorInstance_3045IncomingLinks(view);
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.BusInstanceEditPart.VISUAL_ID:
+		case BusInstanceEditPart.VISUAL_ID:
 			return getBusInstance_3046IncomingLinks(view);
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.NetworkBridgeInstanceEditPart.VISUAL_ID:
+		case NetworkBridgeInstanceEditPart.VISUAL_ID:
 			return getNetworkBridgeInstance_3047IncomingLinks(view);
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.NetworkConnectorInstanceEditPart.VISUAL_ID:
+		case NetworkConnectorInstanceEditPart.VISUAL_ID:
 			return getNetworkConnectorInstance_4012IncomingLinks(view);
 		}
 		return Collections.emptyList();
@@ -414,31 +374,29 @@ public class HardwareDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pm.hardware.platforminstance.diagram.part.HardwareLinkDescriptor> getOutgoingLinks(
-			View view) {
-		switch (org.muml.pm.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
-				.getVisualID(view)) {
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceEditPart.VISUAL_ID:
+	public static List<HardwareLinkDescriptor> getOutgoingLinks(View view) {
+		switch (HardwareVisualIDRegistry.getVisualID(view)) {
+		case HWPlatformInstanceEditPart.VISUAL_ID:
 			return getHWPlatformInstance_2005OutgoingLinks(view);
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceConfiguration2EditPart.VISUAL_ID:
+		case HWPlatformInstanceConfiguration2EditPart.VISUAL_ID:
 			return getHWPlatformInstanceConfiguration_3039OutgoingLinks(view);
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstance2EditPart.VISUAL_ID:
+		case HWPlatformInstance2EditPart.VISUAL_ID:
 			return getHWPlatformInstance_3040OutgoingLinks(view);
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.DelegationHWPortInstanceEditPart.VISUAL_ID:
+		case DelegationHWPortInstanceEditPart.VISUAL_ID:
 			return getDelegationHWPortInstance_3041OutgoingLinks(view);
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.StructuredResourceInstanceEditPart.VISUAL_ID:
+		case StructuredResourceInstanceEditPart.VISUAL_ID:
 			return getStructuredResourceInstance_3042OutgoingLinks(view);
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPortInstanceEditPart.VISUAL_ID:
+		case HWPortInstanceEditPart.VISUAL_ID:
 			return getHWPortInstance_3043OutgoingLinks(view);
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.ActuatorInstanceEditPart.VISUAL_ID:
+		case ActuatorInstanceEditPart.VISUAL_ID:
 			return getActuatorInstance_3044OutgoingLinks(view);
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.SensorInstanceEditPart.VISUAL_ID:
+		case SensorInstanceEditPart.VISUAL_ID:
 			return getSensorInstance_3045OutgoingLinks(view);
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.BusInstanceEditPart.VISUAL_ID:
+		case BusInstanceEditPart.VISUAL_ID:
 			return getBusInstance_3046OutgoingLinks(view);
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.NetworkBridgeInstanceEditPart.VISUAL_ID:
+		case NetworkBridgeInstanceEditPart.VISUAL_ID:
 			return getNetworkBridgeInstance_3047OutgoingLinks(view);
-		case org.muml.pm.hardware.platforminstance.diagram.edit.parts.NetworkConnectorInstanceEditPart.VISUAL_ID:
+		case NetworkConnectorInstanceEditPart.VISUAL_ID:
 			return getNetworkConnectorInstance_4012OutgoingLinks(view);
 		}
 		return Collections.emptyList();
@@ -447,11 +405,9 @@ public class HardwareDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pm.hardware.platforminstance.diagram.part.HardwareLinkDescriptor> getHWPlatformInstanceConfiguration_1000ContainedLinks(
-			View view) {
-		org.muml.pm.hardware.hwplatforminstance.HWPlatformInstanceConfiguration modelElement = (org.muml.pm.hardware.hwplatforminstance.HWPlatformInstanceConfiguration) view
-				.getElement();
-		LinkedList<org.muml.pm.hardware.platforminstance.diagram.part.HardwareLinkDescriptor> result = new LinkedList<org.muml.pm.hardware.platforminstance.diagram.part.HardwareLinkDescriptor>();
+	public static List<HardwareLinkDescriptor> getHWPlatformInstanceConfiguration_1000ContainedLinks(View view) {
+		HWPlatformInstanceConfiguration modelElement = (HWPlatformInstanceConfiguration) view.getElement();
+		LinkedList<HardwareLinkDescriptor> result = new LinkedList<HardwareLinkDescriptor>();
 		result.addAll(getContainedTypeModelFacetLinks_NetworkConnectorInstance_4012(modelElement));
 		return result;
 	}
@@ -459,19 +415,16 @@ public class HardwareDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pm.hardware.platforminstance.diagram.part.HardwareLinkDescriptor> getHWPlatformInstance_2005ContainedLinks(
-			View view) {
+	public static List<HardwareLinkDescriptor> getHWPlatformInstance_2005ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pm.hardware.platforminstance.diagram.part.HardwareLinkDescriptor> getHWPlatformInstanceConfiguration_3039ContainedLinks(
-			View view) {
-		org.muml.pm.hardware.hwplatforminstance.HWPlatformInstanceConfiguration modelElement = (org.muml.pm.hardware.hwplatforminstance.HWPlatformInstanceConfiguration) view
-				.getElement();
-		LinkedList<org.muml.pm.hardware.platforminstance.diagram.part.HardwareLinkDescriptor> result = new LinkedList<org.muml.pm.hardware.platforminstance.diagram.part.HardwareLinkDescriptor>();
+	public static List<HardwareLinkDescriptor> getHWPlatformInstanceConfiguration_3039ContainedLinks(View view) {
+		HWPlatformInstanceConfiguration modelElement = (HWPlatformInstanceConfiguration) view.getElement();
+		LinkedList<HardwareLinkDescriptor> result = new LinkedList<HardwareLinkDescriptor>();
 		result.addAll(getContainedTypeModelFacetLinks_NetworkConnectorInstance_4012(modelElement));
 		return result;
 	}
@@ -479,109 +432,95 @@ public class HardwareDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pm.hardware.platforminstance.diagram.part.HardwareLinkDescriptor> getHWPlatformInstance_3040ContainedLinks(
-			View view) {
+	public static List<HardwareLinkDescriptor> getHWPlatformInstance_3040ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pm.hardware.platforminstance.diagram.part.HardwareLinkDescriptor> getDelegationHWPortInstance_3041ContainedLinks(
-			View view) {
+	public static List<HardwareLinkDescriptor> getDelegationHWPortInstance_3041ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pm.hardware.platforminstance.diagram.part.HardwareLinkDescriptor> getStructuredResourceInstance_3042ContainedLinks(
-			View view) {
+	public static List<HardwareLinkDescriptor> getStructuredResourceInstance_3042ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pm.hardware.platforminstance.diagram.part.HardwareLinkDescriptor> getHWPortInstance_3043ContainedLinks(
-			View view) {
+	public static List<HardwareLinkDescriptor> getHWPortInstance_3043ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pm.hardware.platforminstance.diagram.part.HardwareLinkDescriptor> getActuatorInstance_3044ContainedLinks(
-			View view) {
+	public static List<HardwareLinkDescriptor> getActuatorInstance_3044ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pm.hardware.platforminstance.diagram.part.HardwareLinkDescriptor> getSensorInstance_3045ContainedLinks(
-			View view) {
+	public static List<HardwareLinkDescriptor> getSensorInstance_3045ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pm.hardware.platforminstance.diagram.part.HardwareLinkDescriptor> getBusInstance_3046ContainedLinks(
-			View view) {
+	public static List<HardwareLinkDescriptor> getBusInstance_3046ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pm.hardware.platforminstance.diagram.part.HardwareLinkDescriptor> getNetworkBridgeInstance_3047ContainedLinks(
-			View view) {
+	public static List<HardwareLinkDescriptor> getNetworkBridgeInstance_3047ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pm.hardware.platforminstance.diagram.part.HardwareLinkDescriptor> getNetworkConnectorInstance_4012ContainedLinks(
-			View view) {
+	public static List<HardwareLinkDescriptor> getNetworkConnectorInstance_4012ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pm.hardware.platforminstance.diagram.part.HardwareLinkDescriptor> getHWPlatformInstance_2005IncomingLinks(
-			View view) {
+	public static List<HardwareLinkDescriptor> getHWPlatformInstance_2005IncomingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pm.hardware.platforminstance.diagram.part.HardwareLinkDescriptor> getHWPlatformInstanceConfiguration_3039IncomingLinks(
-			View view) {
+	public static List<HardwareLinkDescriptor> getHWPlatformInstanceConfiguration_3039IncomingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pm.hardware.platforminstance.diagram.part.HardwareLinkDescriptor> getHWPlatformInstance_3040IncomingLinks(
-			View view) {
+	public static List<HardwareLinkDescriptor> getHWPlatformInstance_3040IncomingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pm.hardware.platforminstance.diagram.part.HardwareLinkDescriptor> getDelegationHWPortInstance_3041IncomingLinks(
-			View view) {
-		org.muml.pm.hardware.hwplatforminstance.DelegationHWPortInstance modelElement = (org.muml.pm.hardware.hwplatforminstance.DelegationHWPortInstance) view
-				.getElement();
+	public static List<HardwareLinkDescriptor> getDelegationHWPortInstance_3041IncomingLinks(View view) {
+		DelegationHWPortInstance modelElement = (DelegationHWPortInstance) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
-		LinkedList<org.muml.pm.hardware.platforminstance.diagram.part.HardwareLinkDescriptor> result = new LinkedList<org.muml.pm.hardware.platforminstance.diagram.part.HardwareLinkDescriptor>();
+		LinkedList<HardwareLinkDescriptor> result = new LinkedList<HardwareLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_NetworkConnectorInstance_4012(modelElement, crossReferences));
 		return result;
 	}
@@ -589,21 +528,18 @@ public class HardwareDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pm.hardware.platforminstance.diagram.part.HardwareLinkDescriptor> getStructuredResourceInstance_3042IncomingLinks(
-			View view) {
+	public static List<HardwareLinkDescriptor> getStructuredResourceInstance_3042IncomingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pm.hardware.platforminstance.diagram.part.HardwareLinkDescriptor> getHWPortInstance_3043IncomingLinks(
-			View view) {
-		org.muml.pm.hardware.hwplatforminstance.HWPortInstance modelElement = (org.muml.pm.hardware.hwplatforminstance.HWPortInstance) view
-				.getElement();
+	public static List<HardwareLinkDescriptor> getHWPortInstance_3043IncomingLinks(View view) {
+		HWPortInstance modelElement = (HWPortInstance) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
-		LinkedList<org.muml.pm.hardware.platforminstance.diagram.part.HardwareLinkDescriptor> result = new LinkedList<org.muml.pm.hardware.platforminstance.diagram.part.HardwareLinkDescriptor>();
+		LinkedList<HardwareLinkDescriptor> result = new LinkedList<HardwareLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_NetworkConnectorInstance_4012(modelElement, crossReferences));
 		return result;
 	}
@@ -611,29 +547,25 @@ public class HardwareDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pm.hardware.platforminstance.diagram.part.HardwareLinkDescriptor> getActuatorInstance_3044IncomingLinks(
-			View view) {
+	public static List<HardwareLinkDescriptor> getActuatorInstance_3044IncomingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pm.hardware.platforminstance.diagram.part.HardwareLinkDescriptor> getSensorInstance_3045IncomingLinks(
-			View view) {
+	public static List<HardwareLinkDescriptor> getSensorInstance_3045IncomingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pm.hardware.platforminstance.diagram.part.HardwareLinkDescriptor> getBusInstance_3046IncomingLinks(
-			View view) {
-		org.muml.pm.hardware.hwplatforminstance.BusInstance modelElement = (org.muml.pm.hardware.hwplatforminstance.BusInstance) view
-				.getElement();
+	public static List<HardwareLinkDescriptor> getBusInstance_3046IncomingLinks(View view) {
+		BusInstance modelElement = (BusInstance) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
-		LinkedList<org.muml.pm.hardware.platforminstance.diagram.part.HardwareLinkDescriptor> result = new LinkedList<org.muml.pm.hardware.platforminstance.diagram.part.HardwareLinkDescriptor>();
+		LinkedList<HardwareLinkDescriptor> result = new LinkedList<HardwareLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_NetworkConnectorInstance_4012(modelElement, crossReferences));
 		return result;
 	}
@@ -641,13 +573,11 @@ public class HardwareDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pm.hardware.platforminstance.diagram.part.HardwareLinkDescriptor> getNetworkBridgeInstance_3047IncomingLinks(
-			View view) {
-		org.muml.pm.hardware.hwplatforminstance.NetworkBridgeInstance modelElement = (org.muml.pm.hardware.hwplatforminstance.NetworkBridgeInstance) view
-				.getElement();
+	public static List<HardwareLinkDescriptor> getNetworkBridgeInstance_3047IncomingLinks(View view) {
+		NetworkBridgeInstance modelElement = (NetworkBridgeInstance) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
-		LinkedList<org.muml.pm.hardware.platforminstance.diagram.part.HardwareLinkDescriptor> result = new LinkedList<org.muml.pm.hardware.platforminstance.diagram.part.HardwareLinkDescriptor>();
+		LinkedList<HardwareLinkDescriptor> result = new LinkedList<HardwareLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_NetworkConnectorInstance_4012(modelElement, crossReferences));
 		return result;
 	}
@@ -655,43 +585,37 @@ public class HardwareDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pm.hardware.platforminstance.diagram.part.HardwareLinkDescriptor> getNetworkConnectorInstance_4012IncomingLinks(
-			View view) {
+	public static List<HardwareLinkDescriptor> getNetworkConnectorInstance_4012IncomingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pm.hardware.platforminstance.diagram.part.HardwareLinkDescriptor> getHWPlatformInstance_2005OutgoingLinks(
-			View view) {
+	public static List<HardwareLinkDescriptor> getHWPlatformInstance_2005OutgoingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pm.hardware.platforminstance.diagram.part.HardwareLinkDescriptor> getHWPlatformInstanceConfiguration_3039OutgoingLinks(
-			View view) {
+	public static List<HardwareLinkDescriptor> getHWPlatformInstanceConfiguration_3039OutgoingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pm.hardware.platforminstance.diagram.part.HardwareLinkDescriptor> getHWPlatformInstance_3040OutgoingLinks(
-			View view) {
+	public static List<HardwareLinkDescriptor> getHWPlatformInstance_3040OutgoingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pm.hardware.platforminstance.diagram.part.HardwareLinkDescriptor> getDelegationHWPortInstance_3041OutgoingLinks(
-			View view) {
-		org.muml.pm.hardware.hwplatforminstance.DelegationHWPortInstance modelElement = (org.muml.pm.hardware.hwplatforminstance.DelegationHWPortInstance) view
-				.getElement();
-		LinkedList<org.muml.pm.hardware.platforminstance.diagram.part.HardwareLinkDescriptor> result = new LinkedList<org.muml.pm.hardware.platforminstance.diagram.part.HardwareLinkDescriptor>();
+	public static List<HardwareLinkDescriptor> getDelegationHWPortInstance_3041OutgoingLinks(View view) {
+		DelegationHWPortInstance modelElement = (DelegationHWPortInstance) view.getElement();
+		LinkedList<HardwareLinkDescriptor> result = new LinkedList<HardwareLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_NetworkConnectorInstance_4012(modelElement));
 		return result;
 	}
@@ -699,19 +623,16 @@ public class HardwareDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pm.hardware.platforminstance.diagram.part.HardwareLinkDescriptor> getStructuredResourceInstance_3042OutgoingLinks(
-			View view) {
+	public static List<HardwareLinkDescriptor> getStructuredResourceInstance_3042OutgoingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pm.hardware.platforminstance.diagram.part.HardwareLinkDescriptor> getHWPortInstance_3043OutgoingLinks(
-			View view) {
-		org.muml.pm.hardware.hwplatforminstance.HWPortInstance modelElement = (org.muml.pm.hardware.hwplatforminstance.HWPortInstance) view
-				.getElement();
-		LinkedList<org.muml.pm.hardware.platforminstance.diagram.part.HardwareLinkDescriptor> result = new LinkedList<org.muml.pm.hardware.platforminstance.diagram.part.HardwareLinkDescriptor>();
+	public static List<HardwareLinkDescriptor> getHWPortInstance_3043OutgoingLinks(View view) {
+		HWPortInstance modelElement = (HWPortInstance) view.getElement();
+		LinkedList<HardwareLinkDescriptor> result = new LinkedList<HardwareLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_NetworkConnectorInstance_4012(modelElement));
 		return result;
 	}
@@ -719,27 +640,23 @@ public class HardwareDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pm.hardware.platforminstance.diagram.part.HardwareLinkDescriptor> getActuatorInstance_3044OutgoingLinks(
-			View view) {
+	public static List<HardwareLinkDescriptor> getActuatorInstance_3044OutgoingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pm.hardware.platforminstance.diagram.part.HardwareLinkDescriptor> getSensorInstance_3045OutgoingLinks(
-			View view) {
+	public static List<HardwareLinkDescriptor> getSensorInstance_3045OutgoingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pm.hardware.platforminstance.diagram.part.HardwareLinkDescriptor> getBusInstance_3046OutgoingLinks(
-			View view) {
-		org.muml.pm.hardware.hwplatforminstance.BusInstance modelElement = (org.muml.pm.hardware.hwplatforminstance.BusInstance) view
-				.getElement();
-		LinkedList<org.muml.pm.hardware.platforminstance.diagram.part.HardwareLinkDescriptor> result = new LinkedList<org.muml.pm.hardware.platforminstance.diagram.part.HardwareLinkDescriptor>();
+	public static List<HardwareLinkDescriptor> getBusInstance_3046OutgoingLinks(View view) {
+		BusInstance modelElement = (BusInstance) view.getElement();
+		LinkedList<HardwareLinkDescriptor> result = new LinkedList<HardwareLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_NetworkConnectorInstance_4012(modelElement));
 		return result;
 	}
@@ -747,11 +664,9 @@ public class HardwareDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pm.hardware.platforminstance.diagram.part.HardwareLinkDescriptor> getNetworkBridgeInstance_3047OutgoingLinks(
-			View view) {
-		org.muml.pm.hardware.hwplatforminstance.NetworkBridgeInstance modelElement = (org.muml.pm.hardware.hwplatforminstance.NetworkBridgeInstance) view
-				.getElement();
-		LinkedList<org.muml.pm.hardware.platforminstance.diagram.part.HardwareLinkDescriptor> result = new LinkedList<org.muml.pm.hardware.platforminstance.diagram.part.HardwareLinkDescriptor>();
+	public static List<HardwareLinkDescriptor> getNetworkBridgeInstance_3047OutgoingLinks(View view) {
+		NetworkBridgeInstance modelElement = (NetworkBridgeInstance) view.getElement();
+		LinkedList<HardwareLinkDescriptor> result = new LinkedList<HardwareLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_NetworkConnectorInstance_4012(modelElement));
 		return result;
 	}
@@ -759,129 +674,116 @@ public class HardwareDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pm.hardware.platforminstance.diagram.part.HardwareLinkDescriptor> getNetworkConnectorInstance_4012OutgoingLinks(
-			View view) {
+	public static List<HardwareLinkDescriptor> getNetworkConnectorInstance_4012OutgoingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
-	 * @generated
-	 */
-	private static Collection<org.muml.pm.hardware.platforminstance.diagram.part.HardwareLinkDescriptor> getContainedTypeModelFacetLinks_NetworkConnectorInstance_4012(
-			org.muml.pm.hardware.hwplatforminstance.HWPlatformInstanceConfiguration container) {
-		LinkedList<org.muml.pm.hardware.platforminstance.diagram.part.HardwareLinkDescriptor> result = new LinkedList<org.muml.pm.hardware.platforminstance.diagram.part.HardwareLinkDescriptor>();
+	* @generated
+	*/
+	private static Collection<HardwareLinkDescriptor> getContainedTypeModelFacetLinks_NetworkConnectorInstance_4012(
+			HWPlatformInstanceConfiguration container) {
+		LinkedList<HardwareLinkDescriptor> result = new LinkedList<HardwareLinkDescriptor>();
 		for (Iterator<?> links = container.getNetworkConnectorInstances().iterator(); links.hasNext();) {
 			EObject linkObject = (EObject) links.next();
-			if (false == linkObject instanceof org.muml.pm.hardware.hwplatforminstance.NetworkConnectorInstance) {
+			if (false == linkObject instanceof NetworkConnectorInstance) {
 				continue;
 			}
-			org.muml.pm.hardware.hwplatforminstance.NetworkConnectorInstance link = (org.muml.pm.hardware.hwplatforminstance.NetworkConnectorInstance) linkObject;
-			if (org.muml.pm.hardware.platforminstance.diagram.edit.parts.NetworkConnectorInstanceEditPart.VISUAL_ID != org.muml.pm.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
-					.getLinkWithClassVisualID(link)) {
+			NetworkConnectorInstance link = (NetworkConnectorInstance) linkObject;
+			if (NetworkConnectorInstanceEditPart.VISUAL_ID != HardwareVisualIDRegistry.getLinkWithClassVisualID(link)) {
 				continue;
 			}
 			List targets = link.getConnectorEndpointInstances();
 			Object theTarget = !targets.isEmpty() ? targets.get(targets.size() - 1) : null; // Adapted for MUML-BUG #446
-			if (false == theTarget instanceof org.muml.pim.connector.ConnectorEndpointInstance) {
+			if (false == theTarget instanceof ConnectorEndpointInstance) {
 				continue;
 			}
-			org.muml.pim.connector.ConnectorEndpointInstance dst = (org.muml.pim.connector.ConnectorEndpointInstance) theTarget;
+			ConnectorEndpointInstance dst = (ConnectorEndpointInstance) theTarget;
 			List sources = link.getConnectorEndpointInstances();
 			Object theSource = !sources.isEmpty() ? sources.get(0) : null; // Adapted for MUML-BUG #446
-			if (false == theSource instanceof org.muml.pim.connector.ConnectorEndpointInstance) {
+			if (false == theSource instanceof ConnectorEndpointInstance) {
 				continue;
 			}
-			org.muml.pim.connector.ConnectorEndpointInstance src = (org.muml.pim.connector.ConnectorEndpointInstance) theSource;
-			result.add(new org.muml.pm.hardware.platforminstance.diagram.part.HardwareLinkDescriptor(
-					src, dst, link,
-					org.muml.pm.hardware.platforminstance.diagram.providers.HardwareElementTypes.NetworkConnectorInstance_4012,
-					org.muml.pm.hardware.platforminstance.diagram.edit.parts.NetworkConnectorInstanceEditPart.VISUAL_ID));
+			ConnectorEndpointInstance src = (ConnectorEndpointInstance) theSource;
+			result.add(new HardwareLinkDescriptor(src, dst, link, HardwareElementTypes.NetworkConnectorInstance_4012,
+					NetworkConnectorInstanceEditPart.VISUAL_ID));
 		}
 		return result;
 	}
 
 	/**
-	 * @generated
-	 */
-	private static Collection<org.muml.pm.hardware.platforminstance.diagram.part.HardwareLinkDescriptor> getIncomingTypeModelFacetLinks_NetworkConnectorInstance_4012(
-			org.muml.pim.connector.ConnectorEndpointInstance target,
-			Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
-		LinkedList<org.muml.pm.hardware.platforminstance.diagram.part.HardwareLinkDescriptor> result = new LinkedList<org.muml.pm.hardware.platforminstance.diagram.part.HardwareLinkDescriptor>();
+	* @generated
+	*/
+	private static Collection<HardwareLinkDescriptor> getIncomingTypeModelFacetLinks_NetworkConnectorInstance_4012(
+			ConnectorEndpointInstance target, Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
+		LinkedList<HardwareLinkDescriptor> result = new LinkedList<HardwareLinkDescriptor>();
 		Collection<EStructuralFeature.Setting> settings = crossReferences.get(target);
 		for (EStructuralFeature.Setting setting : settings) {
-			if (setting.getEStructuralFeature() != org.muml.pim.connector.ConnectorPackage.eINSTANCE
+			if (setting.getEStructuralFeature() != ConnectorPackage.eINSTANCE
 					.getConnectorInstance_ConnectorEndpointInstances()
-					|| false == setting
-							.getEObject() instanceof org.muml.pm.hardware.hwplatforminstance.NetworkConnectorInstance) {
+					|| false == setting.getEObject() instanceof NetworkConnectorInstance) {
 				continue;
 			}
-			org.muml.pm.hardware.hwplatforminstance.NetworkConnectorInstance link = (org.muml.pm.hardware.hwplatforminstance.NetworkConnectorInstance) setting
-					.getEObject();
-			if (org.muml.pm.hardware.platforminstance.diagram.edit.parts.NetworkConnectorInstanceEditPart.VISUAL_ID != org.muml.pm.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
-					.getLinkWithClassVisualID(link)) {
+			NetworkConnectorInstance link = (NetworkConnectorInstance) setting.getEObject();
+			if (NetworkConnectorInstanceEditPart.VISUAL_ID != HardwareVisualIDRegistry.getLinkWithClassVisualID(link)) {
 				continue;
 			}
 			List sources = link.getConnectorEndpointInstances();
 			Object theSource = !sources.isEmpty() ? sources.get(0) : null; // Adapted for MUML-BUG #446
-			if (false == theSource instanceof org.muml.pim.connector.ConnectorEndpointInstance) {
+			if (false == theSource instanceof ConnectorEndpointInstance) {
 				continue;
 			}
-			org.muml.pim.connector.ConnectorEndpointInstance src = (org.muml.pim.connector.ConnectorEndpointInstance) theSource;
-			result.add(new org.muml.pm.hardware.platforminstance.diagram.part.HardwareLinkDescriptor(
-					src, target, link,
-					org.muml.pm.hardware.platforminstance.diagram.providers.HardwareElementTypes.NetworkConnectorInstance_4012,
-					org.muml.pm.hardware.platforminstance.diagram.edit.parts.NetworkConnectorInstanceEditPart.VISUAL_ID));
+			ConnectorEndpointInstance src = (ConnectorEndpointInstance) theSource;
+			result.add(new HardwareLinkDescriptor(src, target, link, HardwareElementTypes.NetworkConnectorInstance_4012,
+					NetworkConnectorInstanceEditPart.VISUAL_ID));
 		}
 		return result;
 	}
 
 	/**
-	 * @generated
-	 */
-	private static Collection<org.muml.pm.hardware.platforminstance.diagram.part.HardwareLinkDescriptor> getOutgoingTypeModelFacetLinks_NetworkConnectorInstance_4012(
-			org.muml.pim.connector.ConnectorEndpointInstance source) {
-		org.muml.pm.hardware.hwplatforminstance.HWPlatformInstanceConfiguration container = null;
+	* @generated
+	*/
+	private static Collection<HardwareLinkDescriptor> getOutgoingTypeModelFacetLinks_NetworkConnectorInstance_4012(
+			ConnectorEndpointInstance source) {
+		HWPlatformInstanceConfiguration container = null;
 		// Find container element for the link.
 		// Climb up by containment hierarchy starting from the source
 		// and return the first element that is instance of the container class.
 		for (EObject element = source; element != null && container == null; element = element.eContainer()) {
-			if (element instanceof org.muml.pm.hardware.hwplatforminstance.HWPlatformInstanceConfiguration) {
-				container = (org.muml.pm.hardware.hwplatforminstance.HWPlatformInstanceConfiguration) element;
+			if (element instanceof HWPlatformInstanceConfiguration) {
+				container = (HWPlatformInstanceConfiguration) element;
 			}
 		}
 		if (container == null) {
 			return Collections.emptyList();
 		}
-		LinkedList<org.muml.pm.hardware.platforminstance.diagram.part.HardwareLinkDescriptor> result = new LinkedList<org.muml.pm.hardware.platforminstance.diagram.part.HardwareLinkDescriptor>();
+		LinkedList<HardwareLinkDescriptor> result = new LinkedList<HardwareLinkDescriptor>();
 		for (Iterator<?> links = container.getNetworkConnectorInstances().iterator(); links.hasNext();) {
 			EObject linkObject = (EObject) links.next();
-			if (false == linkObject instanceof org.muml.pm.hardware.hwplatforminstance.NetworkConnectorInstance) {
+			if (false == linkObject instanceof NetworkConnectorInstance) {
 				continue;
 			}
-			org.muml.pm.hardware.hwplatforminstance.NetworkConnectorInstance link = (org.muml.pm.hardware.hwplatforminstance.NetworkConnectorInstance) linkObject;
-			if (org.muml.pm.hardware.platforminstance.diagram.edit.parts.NetworkConnectorInstanceEditPart.VISUAL_ID != org.muml.pm.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
-					.getLinkWithClassVisualID(link)) {
+			NetworkConnectorInstance link = (NetworkConnectorInstance) linkObject;
+			if (NetworkConnectorInstanceEditPart.VISUAL_ID != HardwareVisualIDRegistry.getLinkWithClassVisualID(link)) {
 				continue;
 			}
 			List targets = link.getConnectorEndpointInstances();
 			Object theTarget = !targets.isEmpty() ? targets.get(targets.size() - 1) : null; // Adapted for MUML-BUG #446
-			if (false == theTarget instanceof org.muml.pim.connector.ConnectorEndpointInstance) {
+			if (false == theTarget instanceof ConnectorEndpointInstance) {
 				continue;
 			}
-			org.muml.pim.connector.ConnectorEndpointInstance dst = (org.muml.pim.connector.ConnectorEndpointInstance) theTarget;
+			ConnectorEndpointInstance dst = (ConnectorEndpointInstance) theTarget;
 			List sources = link.getConnectorEndpointInstances();
 			Object theSource = !sources.isEmpty() ? sources.get(0) : null; // Adapted for MUML-BUG #446
-			if (false == theSource instanceof org.muml.pim.connector.ConnectorEndpointInstance) {
+			if (false == theSource instanceof ConnectorEndpointInstance) {
 				continue;
 			}
-			org.muml.pim.connector.ConnectorEndpointInstance src = (org.muml.pim.connector.ConnectorEndpointInstance) theSource;
+			ConnectorEndpointInstance src = (ConnectorEndpointInstance) theSource;
 			if (src != source) {
 				continue;
 			}
-			result.add(new org.muml.pm.hardware.platforminstance.diagram.part.HardwareLinkDescriptor(
-					src, dst, link,
-					org.muml.pm.hardware.platforminstance.diagram.providers.HardwareElementTypes.NetworkConnectorInstance_4012,
-					org.muml.pm.hardware.platforminstance.diagram.edit.parts.NetworkConnectorInstanceEditPart.VISUAL_ID));
+			result.add(new HardwareLinkDescriptor(src, dst, link, HardwareElementTypes.NetworkConnectorInstance_4012,
+					NetworkConnectorInstanceEditPart.VISUAL_ID));
 		}
 		return result;
 	}
@@ -895,8 +797,7 @@ public class HardwareDiagramUpdater {
 		*/
 		@Override
 
-		public List<org.muml.pm.hardware.platforminstance.diagram.part.HardwareNodeDescriptor> getSemanticChildren(
-				View view) {
+		public List<HardwareNodeDescriptor> getSemanticChildren(View view) {
 			return HardwareDiagramUpdater.getSemanticChildren(view);
 		}
 
@@ -905,8 +806,7 @@ public class HardwareDiagramUpdater {
 		*/
 		@Override
 
-		public List<org.muml.pm.hardware.platforminstance.diagram.part.HardwareLinkDescriptor> getContainedLinks(
-				View view) {
+		public List<HardwareLinkDescriptor> getContainedLinks(View view) {
 			return HardwareDiagramUpdater.getContainedLinks(view);
 		}
 
@@ -915,8 +815,7 @@ public class HardwareDiagramUpdater {
 		*/
 		@Override
 
-		public List<org.muml.pm.hardware.platforminstance.diagram.part.HardwareLinkDescriptor> getIncomingLinks(
-				View view) {
+		public List<HardwareLinkDescriptor> getIncomingLinks(View view) {
 			return HardwareDiagramUpdater.getIncomingLinks(view);
 		}
 
@@ -925,8 +824,7 @@ public class HardwareDiagramUpdater {
 		*/
 		@Override
 
-		public List<org.muml.pm.hardware.platforminstance.diagram.part.HardwareLinkDescriptor> getOutgoingLinks(
-				View view) {
+		public List<HardwareLinkDescriptor> getOutgoingLinks(View view) {
 			return HardwareDiagramUpdater.getOutgoingLinks(view);
 		}
 	};

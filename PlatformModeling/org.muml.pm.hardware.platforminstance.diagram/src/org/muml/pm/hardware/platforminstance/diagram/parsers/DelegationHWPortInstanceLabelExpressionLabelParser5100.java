@@ -19,6 +19,8 @@ import org.eclipse.gmf.runtime.common.ui.services.parser.ParserEditStatus;
 import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand;
 import org.eclipse.gmf.tooling.runtime.parsers.ExpressionLabelParserBase;
 import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
+import org.muml.pm.hardware.hwplatforminstance.HwplatforminstancePackage;
+import org.muml.pm.hardware.platforminstance.diagram.expressions.HardwareOCLFactory;
 
 /**
  * @generated
@@ -35,12 +37,8 @@ public class DelegationHWPortInstanceLabelExpressionLabelParser5100 extends Expr
 	 */
 	@Override
 	protected String getExpressionBody() {
-		return org.muml.pm.hardware.platforminstance.diagram.expressions.HardwareOCLFactory
-				.getExpression(0,
-						org.muml.pm.hardware.hwplatforminstance.HwplatforminstancePackage.eINSTANCE
-								.getDelegationHWPortInstance(),
-						null)
-				.body();
+		return HardwareOCLFactory
+				.getExpression(0, HwplatforminstancePackage.eINSTANCE.getDelegationHWPortInstance(), null).body();
 	}
 
 	/**

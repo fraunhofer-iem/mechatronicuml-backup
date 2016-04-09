@@ -11,6 +11,10 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.pm.hardware.hwplatforminstance.HWPlatformInstanceConfiguration;
+import org.muml.pm.hardware.hwresourceinstance.ActuatorInstance;
+import org.muml.pm.hardware.hwresourceinstance.HwresourceinstanceFactory;
+import org.muml.pm.hardware.platforminstance.diagram.providers.ElementInitializers;
 
 /**
  * @generated
@@ -48,14 +52,12 @@ public class ActuatorInstanceCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-		org.muml.pm.hardware.hwresourceinstance.ActuatorInstance newElement = org.muml.pm.hardware.hwresourceinstance.HwresourceinstanceFactory.eINSTANCE
-				.createActuatorInstance();
+		ActuatorInstance newElement = HwresourceinstanceFactory.eINSTANCE.createActuatorInstance();
 
-		org.muml.pm.hardware.hwplatforminstance.HWPlatformInstanceConfiguration owner = (org.muml.pm.hardware.hwplatforminstance.HWPlatformInstanceConfiguration) getElementToEdit();
+		HWPlatformInstanceConfiguration owner = (HWPlatformInstanceConfiguration) getElementToEdit();
 		owner.getResources().add(newElement);
 
-		org.muml.pm.hardware.platforminstance.diagram.providers.ElementInitializers.getInstance()
-				.init_ActuatorInstance_3044(newElement);
+		ElementInitializers.getInstance().init_ActuatorInstance_3044(newElement);
 
 		doConfigure(newElement, monitor, info);
 
@@ -64,10 +66,10 @@ public class ActuatorInstanceCreateCommand extends EditElementCommand {
 	}
 
 	/**
-	 * @generated
-	 */
-	protected void doConfigure(org.muml.pm.hardware.hwresourceinstance.ActuatorInstance newElement,
-			IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
+	* @generated
+	*/
+	protected void doConfigure(ActuatorInstance newElement, IProgressMonitor monitor, IAdaptable info)
+			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest()).getElementType();
 		ConfigureRequest configureRequest = new ConfigureRequest(getEditingDomain(), newElement, elementType);
 		configureRequest.setClientContext(((CreateElementRequest) getRequest()).getClientContext());

@@ -21,6 +21,11 @@ import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest;
 import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.pm.hardware.hwplatforminstance.HwplatforminstancePackage;
+import org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceConfiguration2EditPart;
+import org.muml.pm.hardware.platforminstance.diagram.part.HardwareDiagramUpdater;
+import org.muml.pm.hardware.platforminstance.diagram.part.HardwareNodeDescriptor;
+import org.muml.pm.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry;
 
 /**
  * @generated
@@ -70,8 +75,7 @@ public class HWPlatformInstanceHWPlatformCompartmentCanonicalEditPolicy extends 
 	 * @generated
 	 */
 	protected EStructuralFeature getFeatureToSynchronize() {
-		return org.muml.pm.hardware.hwplatforminstance.HwplatforminstancePackage.eINSTANCE
-				.getHWPlatformInstance_EmbeddedHPIC();
+		return HwplatforminstancePackage.eINSTANCE.getHWPlatformInstance_EmbeddedHPIC();
 	}
 
 	/**
@@ -79,9 +83,9 @@ public class HWPlatformInstanceHWPlatformCompartmentCanonicalEditPolicy extends 
 	 */
 	@SuppressWarnings("rawtypes")
 	protected List getSemanticChildrenList() {
-		List<org.muml.pm.hardware.platforminstance.diagram.part.HardwareNodeDescriptor> childDescriptors = getSemanticChildrenViewDescriptors();
+		List<HardwareNodeDescriptor> childDescriptors = getSemanticChildrenViewDescriptors();
 		LinkedList<EObject> result = new LinkedList<EObject>();
-		for (org.muml.pm.hardware.platforminstance.diagram.part.HardwareNodeDescriptor d : childDescriptors) {
+		for (HardwareNodeDescriptor d : childDescriptors) {
 			result.add(d.getModelElement());
 		}
 		return result;
@@ -97,21 +101,18 @@ public class HWPlatformInstanceHWPlatformCompartmentCanonicalEditPolicy extends 
 		if (!canonicalNodes) {
 			View containerView = (View) getHost().getModel();
 			List<View> childViews = containerView.getChildren();
-			List<org.muml.pm.hardware.platforminstance.diagram.part.HardwareNodeDescriptor> result = new LinkedList<org.muml.pm.hardware.platforminstance.diagram.part.HardwareNodeDescriptor>();
+			List<HardwareNodeDescriptor> result = new LinkedList<HardwareNodeDescriptor>();
 
 			for (View childView : childViews) {
 				EObject childElement = childView.getElement();
-				int visualID = org.muml.pm.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
-						.getVisualID(childView);
-				List<Integer> visualIDs = Arrays.asList(new Integer[] {
-						org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceConfiguration2EditPart.VISUAL_ID });
+				int visualID = HardwareVisualIDRegistry.getVisualID(childView);
+				List<Integer> visualIDs = Arrays
+						.asList(new Integer[] { HWPlatformInstanceConfiguration2EditPart.VISUAL_ID });
 
 				// Note: childElement can be null, for diagram annotations!
 				if (childElement == null
 						|| childElement.eContainer() == containerView.getElement() && visualIDs.contains(visualID)) {
-					result.add(
-							new org.muml.pm.hardware.platforminstance.diagram.part.HardwareNodeDescriptor(
-									childElement, visualID));
+					result.add(new HardwareNodeDescriptor(childElement, visualID));
 					continue;
 				}
 			}
@@ -120,8 +121,7 @@ public class HWPlatformInstanceHWPlatformCompartmentCanonicalEditPolicy extends 
 		// End added
 
 		View viewObject = (View) getHost().getModel();
-		return org.muml.pm.hardware.platforminstance.diagram.part.HardwareDiagramUpdater
-				.getHWPlatformInstanceHWPlatformCompartment_7012SemanticChildren(viewObject);
+		return HardwareDiagramUpdater.getHWPlatformInstanceHWPlatformCompartment_7012SemanticChildren(viewObject);
 
 	}
 
@@ -136,8 +136,7 @@ public class HWPlatformInstanceHWPlatformCompartmentCanonicalEditPolicy extends 
 	 * @generated
 	 */
 	private boolean isMyDiagramElement(View view) {
-		return org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceConfiguration2EditPart.VISUAL_ID == org.muml.pm.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
-				.getVisualID(view);
+		return HWPlatformInstanceConfiguration2EditPart.VISUAL_ID == HardwareVisualIDRegistry.getVisualID(view);
 	}
 
 	/**
@@ -148,7 +147,7 @@ public class HWPlatformInstanceHWPlatformCompartmentCanonicalEditPolicy extends 
 			return;
 		}
 		LinkedList<IAdaptable> createdViews = new LinkedList<IAdaptable>();
-		List<org.muml.pm.hardware.platforminstance.diagram.part.HardwareNodeDescriptor> childDescriptors = getSemanticChildrenViewDescriptors();
+		List<HardwareNodeDescriptor> childDescriptors = getSemanticChildrenViewDescriptors();
 		LinkedList<View> orphaned = new LinkedList<View>();
 		// we care to check only views we recognize as ours
 		LinkedList<View> knownViewChildren = new LinkedList<View>();
@@ -162,12 +161,10 @@ public class HWPlatformInstanceHWPlatformCompartmentCanonicalEditPolicy extends 
 		// iteration happens over list of desired semantic elements, trying to find best matching View, while original CEP
 		// iterates views, potentially losing view (size/bounds) information - i.e. if there are few views to reference same EObject, only last one 
 		// to answer isOrphaned == true will be used for the domain element representation, see #cleanCanonicalSemanticChildren()
-		for (Iterator<org.muml.pm.hardware.platforminstance.diagram.part.HardwareNodeDescriptor> descriptorsIterator = childDescriptors
-				.iterator(); descriptorsIterator.hasNext();) {
-			org.muml.pm.hardware.platforminstance.diagram.part.HardwareNodeDescriptor next = descriptorsIterator
-					.next();
-			String hint = org.muml.pm.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
-					.getType(next.getVisualID());
+		for (Iterator<HardwareNodeDescriptor> descriptorsIterator = childDescriptors.iterator(); descriptorsIterator
+				.hasNext();) {
+			HardwareNodeDescriptor next = descriptorsIterator.next();
+			String hint = HardwareVisualIDRegistry.getType(next.getVisualID());
 			LinkedList<View> perfectMatch = new LinkedList<View>(); // both semanticElement and hint match that of NodeDescriptor
 			for (View childView : getViewChildren()) {
 				EObject semanticElement = childView.getElement();
@@ -194,9 +191,8 @@ public class HWPlatformInstanceHWPlatformCompartmentCanonicalEditPolicy extends 
 		//
 		ArrayList<CreateViewRequest.ViewDescriptor> viewDescriptors = new ArrayList<CreateViewRequest.ViewDescriptor>(
 				childDescriptors.size());
-		for (org.muml.pm.hardware.platforminstance.diagram.part.HardwareNodeDescriptor next : childDescriptors) {
-			String hint = org.muml.pm.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
-					.getType(next.getVisualID());
+		for (HardwareNodeDescriptor next : childDescriptors) {
+			String hint = HardwareVisualIDRegistry.getType(next.getVisualID());
 			IAdaptable elementAdapter = new CanonicalElementAdapter(next.getModelElement(), hint);
 			CreateViewRequest.ViewDescriptor descriptor = new CreateViewRequest.ViewDescriptor(elementAdapter,
 					Node.class, hint, ViewUtil.APPEND, false, host().getDiagramPreferencesHint());

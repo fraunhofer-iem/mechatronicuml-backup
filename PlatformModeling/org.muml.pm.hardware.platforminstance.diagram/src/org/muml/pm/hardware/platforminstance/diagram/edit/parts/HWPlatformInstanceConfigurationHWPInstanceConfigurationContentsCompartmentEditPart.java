@@ -20,6 +20,11 @@ import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.edit.policies.reparent.CreationEditPolicyWithCustomReparent;
+import org.muml.pm.hardware.platforminstance.diagram.edit.policies.HWPlatformInstanceConfigurationHWPInstanceConfigurationContentsCompartmentCanonicalEditPolicy;
+import org.muml.pm.hardware.platforminstance.diagram.edit.policies.HWPlatformInstanceConfigurationHWPInstanceConfigurationContentsCompartmentItemSemanticEditPolicy;
+import org.muml.pm.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry;
+import org.muml.pm.hardware.platforminstance.diagram.part.Messages;
+import org.muml.pm.hardware.platforminstance.diagram.providers.HardwareElementTypes;
 
 /**
  * @generated
@@ -66,7 +71,7 @@ public class HWPlatformInstanceConfigurationHWPInstanceConfigurationContentsComp
 	 * @generated
 	 */
 	public String getCompartmentName() {
-		return org.muml.pm.hardware.platforminstance.diagram.part.Messages.HWPlatformInstanceConfigurationHWPInstanceConfigurationContentsCompartmentEditPart_title;
+		return Messages.HWPlatformInstanceConfigurationHWPInstanceConfigurationContentsCompartmentEditPart_title;
 	}
 
 	/**
@@ -95,12 +100,12 @@ public class HWPlatformInstanceConfigurationHWPInstanceConfigurationContentsComp
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
-				new org.muml.pm.hardware.platforminstance.diagram.edit.policies.HWPlatformInstanceConfigurationHWPInstanceConfigurationContentsCompartmentItemSemanticEditPolicy());
-		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicyWithCustomReparent(
-				org.muml.pm.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry.TYPED_INSTANCE));
+				new HWPlatformInstanceConfigurationHWPInstanceConfigurationContentsCompartmentItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.CREATION_ROLE,
+				new CreationEditPolicyWithCustomReparent(HardwareVisualIDRegistry.TYPED_INSTANCE));
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
 		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE,
-				new org.muml.pm.hardware.platforminstance.diagram.edit.policies.HWPlatformInstanceConfigurationHWPInstanceConfigurationContentsCompartmentCanonicalEditPolicy());
+				new HWPlatformInstanceConfigurationHWPInstanceConfigurationContentsCompartmentCanonicalEditPolicy());
 	}
 
 	/**
@@ -120,22 +125,22 @@ public class HWPlatformInstanceConfigurationHWPInstanceConfigurationContentsComp
 			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request).getViewAndElementDescriptor()
 					.getCreateElementRequestAdapter();
 			IElementType type = (IElementType) adapter.getAdapter(IElementType.class);
-			if (type == org.muml.pm.hardware.platforminstance.diagram.providers.HardwareElementTypes.HWPlatformInstance_3040) {
+			if (type == HardwareElementTypes.HWPlatformInstance_3040) {
 				return this;
 			}
-			if (type == org.muml.pm.hardware.platforminstance.diagram.providers.HardwareElementTypes.StructuredResourceInstance_3042) {
+			if (type == HardwareElementTypes.StructuredResourceInstance_3042) {
 				return this;
 			}
-			if (type == org.muml.pm.hardware.platforminstance.diagram.providers.HardwareElementTypes.ActuatorInstance_3044) {
+			if (type == HardwareElementTypes.ActuatorInstance_3044) {
 				return this;
 			}
-			if (type == org.muml.pm.hardware.platforminstance.diagram.providers.HardwareElementTypes.SensorInstance_3045) {
+			if (type == HardwareElementTypes.SensorInstance_3045) {
 				return this;
 			}
-			if (type == org.muml.pm.hardware.platforminstance.diagram.providers.HardwareElementTypes.BusInstance_3046) {
+			if (type == HardwareElementTypes.BusInstance_3046) {
 				return this;
 			}
-			if (type == org.muml.pm.hardware.platforminstance.diagram.providers.HardwareElementTypes.NetworkBridgeInstance_3047) {
+			if (type == HardwareElementTypes.NetworkBridgeInstance_3047) {
 				return this;
 			}
 			return getParent().getTargetEditPart(request);
@@ -145,8 +150,7 @@ public class HWPlatformInstanceConfigurationHWPInstanceConfigurationContentsComp
 				for (Object type : ((CreateUnspecifiedTypeConnectionRequest) request).getElementTypes()) {
 					if (type instanceof IElementType) {
 						IElementType elementType = (IElementType) type;
-						if (elementType.equals(
-								org.muml.pm.hardware.platforminstance.diagram.providers.HardwareElementTypes.NetworkConnectorInstance_4012))
+						if (elementType.equals(HardwareElementTypes.NetworkConnectorInstance_4012))
 							return super.getTargetEditPart(request);
 					}
 				}

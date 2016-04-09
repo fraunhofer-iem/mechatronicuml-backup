@@ -5,12 +5,14 @@ import java.util.List;
 
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
+import org.muml.pm.hardware.platforminstance.diagram.providers.HardwareElementTypes;
+import org.muml.pm.hardware.platforminstance.diagram.providers.HardwareModelingAssistantProvider;
 
 /**
  * @generated
  */
-public class HardwareModelingAssistantProviderOfStructuredResourceInstanceEditPart extends
-		org.muml.pm.hardware.platforminstance.diagram.providers.HardwareModelingAssistantProvider {
+public class HardwareModelingAssistantProviderOfStructuredResourceInstanceEditPart
+		extends HardwareModelingAssistantProvider {
 
 	/**
 	 * @generated
@@ -18,8 +20,7 @@ public class HardwareModelingAssistantProviderOfStructuredResourceInstanceEditPa
 	@Override
 	public List<IElementType> getTypesForPopupBar(IAdaptable host) {
 		List<IElementType> types = new ArrayList<IElementType>(1);
-		types.add(
-				org.muml.pm.hardware.platforminstance.diagram.providers.HardwareElementTypes.HWPortInstance_3043);
+		types.add(HardwareElementTypes.HWPortInstance_3043);
 		return types;
 	}
 

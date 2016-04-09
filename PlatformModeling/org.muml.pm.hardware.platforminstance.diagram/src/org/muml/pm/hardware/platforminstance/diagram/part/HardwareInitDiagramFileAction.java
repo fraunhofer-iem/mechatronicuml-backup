@@ -18,12 +18,13 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.handlers.HandlerUtil;
+import org.muml.core.modelinstance.ui.handlers.AbstractCreateDiagramFileCommand;
+import org.muml.pm.hardware.hwplatforminstance.HwplatforminstanceFactory;
 
 /**
  * @generated
  */
-public class HardwareInitDiagramFileAction
-		extends org.muml.core.modelinstance.ui.handlers.AbstractCreateDiagramFileCommand {
+public class HardwareInitDiagramFileAction extends AbstractCreateDiagramFileCommand {
 
 	/**
 	* @generated
@@ -50,21 +51,18 @@ public class HardwareInitDiagramFileAction
 			if (selectedResource instanceof IContainer) {
 				// Get a unique filename for the new file
 				IPath filePath = selectedResource.getFullPath();
-				String fileName = org.muml.pm.hardware.platforminstance.diagram.part.HardwareDiagramEditorUtil
-						.getUniqueFileName(filePath, "HWPlatformInstanceConfiguration",
-								"hwplatforminstanceconfiguration");
+				String fileName = HardwareDiagramEditorUtil.getUniqueFileName(filePath,
+						"HWPlatformInstanceConfiguration", "hwplatforminstanceconfiguration");
 				// Create the new file
 				ResourceSet resourceSet = new ResourceSetImpl();
 				URI uri = URI.createPlatformResourceURI(filePath.append(fileName).toString(), true);
 				Resource resource = resourceSet.createResource(uri);
-				EObject model = org.muml.pm.hardware.hwplatforminstance.HwplatforminstanceFactory.eINSTANCE
-						.createHWPlatformInstanceConfiguration();
+				EObject model = HwplatforminstanceFactory.eINSTANCE.createHWPlatformInstanceConfiguration();
 				resource.getContents().add(model);
 				try {
 					resource.save(Collections.emptyMap());
 				} catch (IOException e) {
-					org.muml.pm.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
-							.getInstance().logError("Could not create child element", e);
+					PlatformInstanceDiagramEditorPlugin.getInstance().logError("Could not create child element", e);
 				}
 			}
 			return null;
@@ -76,8 +74,7 @@ public class HardwareInitDiagramFileAction
 	 */
 	@Override
 	public void setCharset(IFile diagramFile) {
-		org.muml.pm.hardware.platforminstance.diagram.part.HardwareDiagramEditorUtil
-				.setCharset(diagramFile);
+		HardwareDiagramEditorUtil.setCharset(diagramFile);
 	}
 
 	/**
@@ -85,8 +82,7 @@ public class HardwareInitDiagramFileAction
 	 */
 	@Override
 	public String getUniqueFilename(String hint, String extension, IPath filePath) {
-		return org.muml.pm.hardware.platforminstance.diagram.part.HardwareDiagramEditorUtil
-				.getUniqueFileName(filePath, hint, extension);
+		return HardwareDiagramEditorUtil.getUniqueFileName(filePath, hint, extension);
 	}
 
 	/**
@@ -94,7 +90,7 @@ public class HardwareInitDiagramFileAction
 	 */
 	@Override
 	public String getEditorId() {
-		return org.muml.pm.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditor.ID;
+		return PlatformInstanceDiagramEditor.ID;
 
 	}
 }

@@ -31,6 +31,13 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Font;
 import org.eclipse.swt.widgets.Display;
+import org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy;
+import org.muml.core.common.edit.policies.anchor.IConnectionAnchorCreationEditPolicy;
+import org.muml.core.common.edit.policies.compartment.EnlargeCompartmentEditPolicy;
+import org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy;
+import org.muml.pim.common.edit.policies.IBackgroundColorEditPolicy;
+import org.muml.pm.hardware.platforminstance.diagram.edit.policies.BusInstanceItemSemanticEditPolicy;
+import org.muml.pm.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry;
 
 /**
  * @generated
@@ -74,10 +81,8 @@ public class BusInstanceEditPart extends ShapeNodeEditPart {
 	protected void refreshBackgroundColor() {
 		EditPolicy backgroundColorPolicy = getEditPolicy(
 				org.muml.core.common.edit.policies.EditPolicyRoles.BACKGROUND_COLOR_ROLE);
-		if (backgroundColorPolicy instanceof org.muml.pim.common.edit.policies.IBackgroundColorEditPolicy) {
-			setBackgroundColor(
-					((org.muml.pim.common.edit.policies.IBackgroundColorEditPolicy) backgroundColorPolicy)
-							.getCurrentBackgroundColor());
+		if (backgroundColorPolicy instanceof IBackgroundColorEditPolicy) {
+			setBackgroundColor(((IBackgroundColorEditPolicy) backgroundColorPolicy).getCurrentBackgroundColor());
 		} else {
 			super.refreshBackgroundColor();
 		}
@@ -105,21 +110,19 @@ public class BusInstanceEditPart extends ShapeNodeEditPart {
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
-				new org.muml.pm.hardware.platforminstance.diagram.edit.policies.BusInstanceItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new BusInstanceItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 
 		installEditPolicy(org.muml.core.common.edit.policies.EditPolicyRoles.ENLARGE_COMPARTMENT_ROLE,
-				new org.muml.core.common.edit.policies.compartment.EnlargeCompartmentEditPolicy());
+				new EnlargeCompartmentEditPolicy());
 
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 
-		installEditPolicy(EditPolicy.GRAPHICAL_NODE_ROLE,
-				new org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy());
+		installEditPolicy(EditPolicy.GRAPHICAL_NODE_ROLE, new ConnectionConfigureHelperGraphicalNodeEditPolicy());
 
 		installEditPolicy(org.muml.core.common.edit.policies.EditPolicyRoles.ERROR_FEEDBACK_ROLE,
-				new org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy());
+				new ErrorFeedbackEditPolicy());
 
 	}
 
@@ -166,14 +169,12 @@ public class BusInstanceEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof org.muml.pm.hardware.platforminstance.diagram.edit.parts.WrappingLabel11EditPart) {
-			((org.muml.pm.hardware.platforminstance.diagram.edit.parts.WrappingLabel11EditPart) childEditPart)
-					.setLabel(getPrimaryShape().getFigureBusBandwidthFigure());
+		if (childEditPart instanceof WrappingLabel11EditPart) {
+			((WrappingLabel11EditPart) childEditPart).setLabel(getPrimaryShape().getFigureBusBandwidthFigure());
 			return true;
 		}
-		if (childEditPart instanceof org.muml.pm.hardware.platforminstance.diagram.edit.parts.WrappingLabel12EditPart) {
-			((org.muml.pm.hardware.platforminstance.diagram.edit.parts.WrappingLabel12EditPart) childEditPart)
-					.setLabel(getPrimaryShape().getFigureBusProtocolFigure());
+		if (childEditPart instanceof WrappingLabel12EditPart) {
+			((WrappingLabel12EditPart) childEditPart).setLabel(getPrimaryShape().getFigureBusProtocolFigure());
 			return true;
 		}
 		return false;
@@ -183,10 +184,10 @@ public class BusInstanceEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof org.muml.pm.hardware.platforminstance.diagram.edit.parts.WrappingLabel11EditPart) {
+		if (childEditPart instanceof WrappingLabel11EditPart) {
 			return true;
 		}
-		if (childEditPart instanceof org.muml.pm.hardware.platforminstance.diagram.edit.parts.WrappingLabel12EditPart) {
+		if (childEditPart instanceof WrappingLabel12EditPart) {
 			return true;
 		}
 		return false;
@@ -226,7 +227,7 @@ public class BusInstanceEditPart extends ShapeNodeEditPart {
 		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(130, 50) {
 			@Override
 			public ConnectionAnchor createDefaultAnchor() {
-				org.muml.core.common.edit.policies.anchor.IConnectionAnchorCreationEditPolicy connectionAnchorCreationEditPolicy = (org.muml.core.common.edit.policies.anchor.IConnectionAnchorCreationEditPolicy) getEditPolicy(
+				IConnectionAnchorCreationEditPolicy connectionAnchorCreationEditPolicy = (IConnectionAnchorCreationEditPolicy) getEditPolicy(
 						org.muml.core.common.edit.policies.EditPolicyRoles.CONNECTION_ANCHOR_CREATION_ROLE);
 				if (connectionAnchorCreationEditPolicy != null) {
 					return connectionAnchorCreationEditPolicy.createDefaultAnchor();
@@ -323,9 +324,7 @@ public class BusInstanceEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(
-				org.muml.pm.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry.getType(
-						org.muml.pm.hardware.platforminstance.diagram.edit.parts.WrappingLabel11EditPart.VISUAL_ID));
+		return getChildBySemanticHint(HardwareVisualIDRegistry.getType(WrappingLabel11EditPart.VISUAL_ID));
 	}
 
 	/**
