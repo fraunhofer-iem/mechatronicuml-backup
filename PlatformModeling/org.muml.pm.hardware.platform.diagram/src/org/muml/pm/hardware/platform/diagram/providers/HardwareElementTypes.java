@@ -13,6 +13,17 @@ import org.eclipse.gmf.tooling.runtime.providers.DiagramElementTypeImages;
 import org.eclipse.gmf.tooling.runtime.providers.DiagramElementTypes;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.swt.graphics.Image;
+import org.muml.pm.hardware.hwplatform.HwplatformPackage;
+import org.muml.pm.hardware.platform.diagram.edit.parts.BusEditPart;
+import org.muml.pm.hardware.platform.diagram.edit.parts.DelegationHWPortEditPart;
+import org.muml.pm.hardware.platform.diagram.edit.parts.HWPlatform2EditPart;
+import org.muml.pm.hardware.platform.diagram.edit.parts.HWPlatformEditPart;
+import org.muml.pm.hardware.platform.diagram.edit.parts.HWPlatformPartEditPart;
+import org.muml.pm.hardware.platform.diagram.edit.parts.HWPortPartEditPart;
+import org.muml.pm.hardware.platform.diagram.edit.parts.NetworkBridgeEditPart;
+import org.muml.pm.hardware.platform.diagram.edit.parts.NetworkConnectorEditPart;
+import org.muml.pm.hardware.platform.diagram.edit.parts.ResourcePartEditPart;
+import org.muml.pm.hardware.platform.diagram.part.PlatformDiagramEditorPlugin;
 
 /**
  * @generated
@@ -34,8 +45,7 @@ public class HardwareElementTypes {
 	 * @generated
 	 */
 	private static DiagramElementTypeImages elementTypeImages = new DiagramElementTypeImages(
-			org.muml.pm.hardware.platform.diagram.part.PlatformDiagramEditorPlugin.getInstance()
-					.getItemProvidersAdapterFactory());
+			PlatformDiagramEditorPlugin.getInstance().getItemProvidersAdapterFactory());
 
 	/**
 	 * @generated
@@ -56,8 +66,7 @@ public class HardwareElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType Bus_3025 = getElementType(
-			"org.muml.pm.hardware.platform.diagram.Bus_3025"); //$NON-NLS-1$
+	public static final IElementType Bus_3025 = getElementType("org.muml.pm.hardware.platform.diagram.Bus_3025"); //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -133,32 +142,23 @@ public class HardwareElementTypes {
 		if (elements == null) {
 			elements = new IdentityHashMap<IElementType, ENamedElement>();
 
-			elements.put(HWPlatform_1000,
-					org.muml.pm.hardware.hwplatform.HwplatformPackage.eINSTANCE.getHWPlatform());
+			elements.put(HWPlatform_1000, HwplatformPackage.eINSTANCE.getHWPlatform());
 
-			elements.put(HWPlatform_2009,
-					org.muml.pm.hardware.hwplatform.HwplatformPackage.eINSTANCE.getHWPlatform());
+			elements.put(HWPlatform_2009, HwplatformPackage.eINSTANCE.getHWPlatform());
 
-			elements.put(Bus_3025,
-					org.muml.pm.hardware.hwplatform.HwplatformPackage.eINSTANCE.getBus());
+			elements.put(Bus_3025, HwplatformPackage.eINSTANCE.getBus());
 
-			elements.put(NetworkBridge_3026,
-					org.muml.pm.hardware.hwplatform.HwplatformPackage.eINSTANCE.getNetworkBridge());
+			elements.put(NetworkBridge_3026, HwplatformPackage.eINSTANCE.getNetworkBridge());
 
-			elements.put(HWPlatformPart_3027,
-					org.muml.pm.hardware.hwplatform.HwplatformPackage.eINSTANCE.getHWPlatformPart());
+			elements.put(HWPlatformPart_3027, HwplatformPackage.eINSTANCE.getHWPlatformPart());
 
-			elements.put(HWPortPart_3028,
-					org.muml.pm.hardware.hwplatform.HwplatformPackage.eINSTANCE.getHWPortPart());
+			elements.put(HWPortPart_3028, HwplatformPackage.eINSTANCE.getHWPortPart());
 
-			elements.put(DelegationHWPort_3029,
-					org.muml.pm.hardware.hwplatform.HwplatformPackage.eINSTANCE.getDelegationHWPort());
+			elements.put(DelegationHWPort_3029, HwplatformPackage.eINSTANCE.getDelegationHWPort());
 
-			elements.put(ResourcePart_3030,
-					org.muml.pm.hardware.hwplatform.HwplatformPackage.eINSTANCE.getResourcePart());
+			elements.put(ResourcePart_3030, HwplatformPackage.eINSTANCE.getResourcePart());
 
-			elements.put(NetworkConnector_4032,
-					org.muml.pm.hardware.hwplatform.HwplatformPackage.eINSTANCE.getNetworkConnector());
+			elements.put(NetworkConnector_4032, HwplatformPackage.eINSTANCE.getNetworkConnector());
 		}
 		return (ENamedElement) elements.get(type);
 	}
@@ -194,23 +194,23 @@ public class HardwareElementTypes {
 	 */
 	public static IElementType getElementType(int visualID) {
 		switch (visualID) {
-		case org.muml.pm.hardware.platform.diagram.edit.parts.HWPlatformEditPart.VISUAL_ID:
+		case HWPlatformEditPart.VISUAL_ID:
 			return HWPlatform_1000;
-		case org.muml.pm.hardware.platform.diagram.edit.parts.HWPlatform2EditPart.VISUAL_ID:
+		case HWPlatform2EditPart.VISUAL_ID:
 			return HWPlatform_2009;
-		case org.muml.pm.hardware.platform.diagram.edit.parts.BusEditPart.VISUAL_ID:
+		case BusEditPart.VISUAL_ID:
 			return Bus_3025;
-		case org.muml.pm.hardware.platform.diagram.edit.parts.NetworkBridgeEditPart.VISUAL_ID:
+		case NetworkBridgeEditPart.VISUAL_ID:
 			return NetworkBridge_3026;
-		case org.muml.pm.hardware.platform.diagram.edit.parts.HWPlatformPartEditPart.VISUAL_ID:
+		case HWPlatformPartEditPart.VISUAL_ID:
 			return HWPlatformPart_3027;
-		case org.muml.pm.hardware.platform.diagram.edit.parts.HWPortPartEditPart.VISUAL_ID:
+		case HWPortPartEditPart.VISUAL_ID:
 			return HWPortPart_3028;
-		case org.muml.pm.hardware.platform.diagram.edit.parts.DelegationHWPortEditPart.VISUAL_ID:
+		case DelegationHWPortEditPart.VISUAL_ID:
 			return DelegationHWPort_3029;
-		case org.muml.pm.hardware.platform.diagram.edit.parts.ResourcePartEditPart.VISUAL_ID:
+		case ResourcePartEditPart.VISUAL_ID:
 			return ResourcePart_3030;
-		case org.muml.pm.hardware.platform.diagram.edit.parts.NetworkConnectorEditPart.VISUAL_ID:
+		case NetworkConnectorEditPart.VISUAL_ID:
 			return NetworkConnector_4032;
 		}
 		return null;
@@ -227,8 +227,7 @@ public class HardwareElementTypes {
 		@Override
 
 		public boolean isKnownElementType(IElementType elementType) {
-			return org.muml.pm.hardware.platform.diagram.providers.HardwareElementTypes
-					.isKnownElementType(elementType);
+			return org.muml.pm.hardware.platform.diagram.providers.HardwareElementTypes.isKnownElementType(elementType);
 		}
 
 		/**
@@ -237,8 +236,7 @@ public class HardwareElementTypes {
 		@Override
 
 		public IElementType getElementTypeForVisualId(int visualID) {
-			return org.muml.pm.hardware.platform.diagram.providers.HardwareElementTypes
-					.getElementType(visualID);
+			return org.muml.pm.hardware.platform.diagram.providers.HardwareElementTypes.getElementType(visualID);
 		}
 
 		/**
@@ -247,8 +245,7 @@ public class HardwareElementTypes {
 		@Override
 
 		public ENamedElement getDefiningNamedElement(IAdaptable elementTypeAdapter) {
-			return org.muml.pm.hardware.platform.diagram.providers.HardwareElementTypes
-					.getElement(elementTypeAdapter);
+			return org.muml.pm.hardware.platform.diagram.providers.HardwareElementTypes.getElement(elementTypeAdapter);
 		}
 	};
 

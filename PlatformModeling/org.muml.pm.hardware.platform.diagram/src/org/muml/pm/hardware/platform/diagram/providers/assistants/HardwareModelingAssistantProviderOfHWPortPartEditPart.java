@@ -7,12 +7,17 @@ import java.util.List;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
+import org.muml.pm.hardware.platform.diagram.edit.parts.BusEditPart;
+import org.muml.pm.hardware.platform.diagram.edit.parts.DelegationHWPortEditPart;
+import org.muml.pm.hardware.platform.diagram.edit.parts.HWPortPartEditPart;
+import org.muml.pm.hardware.platform.diagram.edit.parts.NetworkBridgeEditPart;
+import org.muml.pm.hardware.platform.diagram.providers.HardwareElementTypes;
+import org.muml.pm.hardware.platform.diagram.providers.HardwareModelingAssistantProvider;
 
 /**
  * @generated
  */
-public class HardwareModelingAssistantProviderOfHWPortPartEditPart
-		extends org.muml.pm.hardware.platform.diagram.providers.HardwareModelingAssistantProvider {
+public class HardwareModelingAssistantProviderOfHWPortPartEditPart extends HardwareModelingAssistantProvider {
 
 	/**
 	 * @generated
@@ -20,18 +25,15 @@ public class HardwareModelingAssistantProviderOfHWPortPartEditPart
 	@Override
 	public List<IElementType> getRelTypesOnSource(IAdaptable source) {
 		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source.getAdapter(IGraphicalEditPart.class);
-		return doGetRelTypesOnSource(
-				(org.muml.pm.hardware.platform.diagram.edit.parts.HWPortPartEditPart) sourceEditPart);
+		return doGetRelTypesOnSource((HWPortPartEditPart) sourceEditPart);
 	}
 
 	/**
-	 * @generated
-	 */
-	public List<IElementType> doGetRelTypesOnSource(
-			org.muml.pm.hardware.platform.diagram.edit.parts.HWPortPartEditPart source) {
+	* @generated
+	*/
+	public List<IElementType> doGetRelTypesOnSource(HWPortPartEditPart source) {
 		List<IElementType> types = new ArrayList<IElementType>(1);
-		types.add(
-				org.muml.pm.hardware.platform.diagram.providers.HardwareElementTypes.NetworkConnector_4032);
+		types.add(HardwareElementTypes.NetworkConnector_4032);
 		return types;
 	}
 
@@ -42,33 +44,26 @@ public class HardwareModelingAssistantProviderOfHWPortPartEditPart
 	public List<IElementType> getRelTypesOnSourceAndTarget(IAdaptable source, IAdaptable target) {
 		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source.getAdapter(IGraphicalEditPart.class);
 		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target.getAdapter(IGraphicalEditPart.class);
-		return doGetRelTypesOnSourceAndTarget(
-				(org.muml.pm.hardware.platform.diagram.edit.parts.HWPortPartEditPart) sourceEditPart,
-				targetEditPart);
+		return doGetRelTypesOnSourceAndTarget((HWPortPartEditPart) sourceEditPart, targetEditPart);
 	}
 
 	/**
-	 * @generated
-	 */
-	public List<IElementType> doGetRelTypesOnSourceAndTarget(
-			org.muml.pm.hardware.platform.diagram.edit.parts.HWPortPartEditPart source,
+	* @generated
+	*/
+	public List<IElementType> doGetRelTypesOnSourceAndTarget(HWPortPartEditPart source,
 			IGraphicalEditPart targetEditPart) {
 		List<IElementType> types = new LinkedList<IElementType>();
-		if (targetEditPart instanceof org.muml.pm.hardware.platform.diagram.edit.parts.BusEditPart) {
-			types.add(
-					org.muml.pm.hardware.platform.diagram.providers.HardwareElementTypes.NetworkConnector_4032);
+		if (targetEditPart instanceof BusEditPart) {
+			types.add(HardwareElementTypes.NetworkConnector_4032);
 		}
-		if (targetEditPart instanceof org.muml.pm.hardware.platform.diagram.edit.parts.NetworkBridgeEditPart) {
-			types.add(
-					org.muml.pm.hardware.platform.diagram.providers.HardwareElementTypes.NetworkConnector_4032);
+		if (targetEditPart instanceof NetworkBridgeEditPart) {
+			types.add(HardwareElementTypes.NetworkConnector_4032);
 		}
-		if (targetEditPart instanceof org.muml.pm.hardware.platform.diagram.edit.parts.HWPortPartEditPart) {
-			types.add(
-					org.muml.pm.hardware.platform.diagram.providers.HardwareElementTypes.NetworkConnector_4032);
+		if (targetEditPart instanceof HWPortPartEditPart) {
+			types.add(HardwareElementTypes.NetworkConnector_4032);
 		}
-		if (targetEditPart instanceof org.muml.pm.hardware.platform.diagram.edit.parts.DelegationHWPortEditPart) {
-			types.add(
-					org.muml.pm.hardware.platform.diagram.providers.HardwareElementTypes.NetworkConnector_4032);
+		if (targetEditPart instanceof DelegationHWPortEditPart) {
+			types.add(HardwareElementTypes.NetworkConnector_4032);
 		}
 		return types;
 	}
@@ -79,26 +74,19 @@ public class HardwareModelingAssistantProviderOfHWPortPartEditPart
 	@Override
 	public List<IElementType> getTypesForTarget(IAdaptable source, IElementType relationshipType) {
 		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source.getAdapter(IGraphicalEditPart.class);
-		return doGetTypesForTarget(
-				(org.muml.pm.hardware.platform.diagram.edit.parts.HWPortPartEditPart) sourceEditPart,
-				relationshipType);
+		return doGetTypesForTarget((HWPortPartEditPart) sourceEditPart, relationshipType);
 	}
 
 	/**
-	 * @generated
-	 */
-	public List<IElementType> doGetTypesForTarget(
-			org.muml.pm.hardware.platform.diagram.edit.parts.HWPortPartEditPart source,
-			IElementType relationshipType) {
+	* @generated
+	*/
+	public List<IElementType> doGetTypesForTarget(HWPortPartEditPart source, IElementType relationshipType) {
 		List<IElementType> types = new ArrayList<IElementType>();
-		if (relationshipType == org.muml.pm.hardware.platform.diagram.providers.HardwareElementTypes.NetworkConnector_4032) {
-			types.add(org.muml.pm.hardware.platform.diagram.providers.HardwareElementTypes.Bus_3025);
-			types.add(
-					org.muml.pm.hardware.platform.diagram.providers.HardwareElementTypes.NetworkBridge_3026);
-			types.add(
-					org.muml.pm.hardware.platform.diagram.providers.HardwareElementTypes.HWPortPart_3028);
-			types.add(
-					org.muml.pm.hardware.platform.diagram.providers.HardwareElementTypes.DelegationHWPort_3029);
+		if (relationshipType == HardwareElementTypes.NetworkConnector_4032) {
+			types.add(HardwareElementTypes.Bus_3025);
+			types.add(HardwareElementTypes.NetworkBridge_3026);
+			types.add(HardwareElementTypes.HWPortPart_3028);
+			types.add(HardwareElementTypes.DelegationHWPort_3029);
 		}
 		return types;
 	}
@@ -109,18 +97,15 @@ public class HardwareModelingAssistantProviderOfHWPortPartEditPart
 	@Override
 	public List<IElementType> getRelTypesOnTarget(IAdaptable target) {
 		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target.getAdapter(IGraphicalEditPart.class);
-		return doGetRelTypesOnTarget(
-				(org.muml.pm.hardware.platform.diagram.edit.parts.HWPortPartEditPart) targetEditPart);
+		return doGetRelTypesOnTarget((HWPortPartEditPart) targetEditPart);
 	}
 
 	/**
-	 * @generated
-	 */
-	public List<IElementType> doGetRelTypesOnTarget(
-			org.muml.pm.hardware.platform.diagram.edit.parts.HWPortPartEditPart target) {
+	* @generated
+	*/
+	public List<IElementType> doGetRelTypesOnTarget(HWPortPartEditPart target) {
 		List<IElementType> types = new ArrayList<IElementType>(1);
-		types.add(
-				org.muml.pm.hardware.platform.diagram.providers.HardwareElementTypes.NetworkConnector_4032);
+		types.add(HardwareElementTypes.NetworkConnector_4032);
 		return types;
 	}
 
@@ -130,26 +115,19 @@ public class HardwareModelingAssistantProviderOfHWPortPartEditPart
 	@Override
 	public List<IElementType> getTypesForSource(IAdaptable target, IElementType relationshipType) {
 		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target.getAdapter(IGraphicalEditPart.class);
-		return doGetTypesForSource(
-				(org.muml.pm.hardware.platform.diagram.edit.parts.HWPortPartEditPart) targetEditPart,
-				relationshipType);
+		return doGetTypesForSource((HWPortPartEditPart) targetEditPart, relationshipType);
 	}
 
 	/**
-	 * @generated
-	 */
-	public List<IElementType> doGetTypesForSource(
-			org.muml.pm.hardware.platform.diagram.edit.parts.HWPortPartEditPart target,
-			IElementType relationshipType) {
+	* @generated
+	*/
+	public List<IElementType> doGetTypesForSource(HWPortPartEditPart target, IElementType relationshipType) {
 		List<IElementType> types = new ArrayList<IElementType>();
-		if (relationshipType == org.muml.pm.hardware.platform.diagram.providers.HardwareElementTypes.NetworkConnector_4032) {
-			types.add(org.muml.pm.hardware.platform.diagram.providers.HardwareElementTypes.Bus_3025);
-			types.add(
-					org.muml.pm.hardware.platform.diagram.providers.HardwareElementTypes.NetworkBridge_3026);
-			types.add(
-					org.muml.pm.hardware.platform.diagram.providers.HardwareElementTypes.HWPortPart_3028);
-			types.add(
-					org.muml.pm.hardware.platform.diagram.providers.HardwareElementTypes.DelegationHWPort_3029);
+		if (relationshipType == HardwareElementTypes.NetworkConnector_4032) {
+			types.add(HardwareElementTypes.Bus_3025);
+			types.add(HardwareElementTypes.NetworkBridge_3026);
+			types.add(HardwareElementTypes.HWPortPart_3028);
+			types.add(HardwareElementTypes.DelegationHWPort_3029);
 		}
 		return types;
 	}

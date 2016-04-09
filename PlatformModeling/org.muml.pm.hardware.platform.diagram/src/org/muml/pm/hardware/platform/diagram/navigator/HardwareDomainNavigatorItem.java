@@ -91,10 +91,8 @@ public class HardwareDomainNavigatorItem extends PlatformObject {
 	 */
 	public boolean equals(Object obj) {
 		if (obj instanceof org.muml.pm.hardware.platform.diagram.navigator.HardwareDomainNavigatorItem) {
-			return EcoreUtil.getURI(getEObject())
-					.equals(EcoreUtil
-							.getURI(((org.muml.pm.hardware.platform.diagram.navigator.HardwareDomainNavigatorItem) obj)
-									.getEObject()));
+			return EcoreUtil.getURI(getEObject()).equals(EcoreUtil.getURI(
+					((org.muml.pm.hardware.platform.diagram.navigator.HardwareDomainNavigatorItem) obj).getEObject()));
 		}
 		return super.equals(obj);
 	}

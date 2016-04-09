@@ -36,6 +36,12 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.edit.helpers.GeneratedEditHelperBase;
+import org.muml.pim.connector.ConnectorEndpoint;
+import org.muml.pm.hardware.hwplatform.HWPlatform;
+import org.muml.pm.hardware.hwplatform.NetworkConnector;
+import org.muml.pm.hardware.platform.diagram.part.HardwareVisualIDRegistry;
+import org.muml.pm.hardware.platform.diagram.part.PlatformDiagramEditorPlugin;
+import org.muml.pm.hardware.platform.diagram.providers.HardwareElementTypes;
 
 /**
  * @generated
@@ -73,9 +79,7 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		if (request instanceof ReconnectRequest) {
 			Object view = ((ReconnectRequest) request).getConnectionEditPart().getModel();
 			if (view instanceof View) {
-				Integer id = new Integer(
-						org.muml.pm.hardware.platform.diagram.part.HardwareVisualIDRegistry
-								.getVisualID((View) view));
+				Integer id = new Integer(HardwareVisualIDRegistry.getVisualID((View) view));
 				request.getExtendedData().put(VISUAL_ID_KEY, id);
 			}
 		}
@@ -140,8 +144,7 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 	 * @generated
 	 */
 	private IElementType getContextElementType(IEditCommandRequest request) {
-		IElementType requestContextElementType = org.muml.pm.hardware.platform.diagram.providers.HardwareElementTypes
-				.getElementType(getVisualID(request));
+		IElementType requestContextElementType = HardwareElementTypes.getElementType(getVisualID(request));
 		return requestContextElementType != null ? requestContextElementType : myElementType;
 	}
 
@@ -287,11 +290,9 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 	 * @generated
 	 */
 	public static LinkConstraints getLinkConstraints() {
-		LinkConstraints cached = org.muml.pm.hardware.platform.diagram.part.PlatformDiagramEditorPlugin
-				.getInstance().getLinkConstraints();
+		LinkConstraints cached = PlatformDiagramEditorPlugin.getInstance().getLinkConstraints();
 		if (cached == null) {
-			org.muml.pm.hardware.platform.diagram.part.PlatformDiagramEditorPlugin.getInstance()
-					.setLinkConstraints(cached = new LinkConstraints());
+			PlatformDiagramEditorPlugin.getInstance().setLinkConstraints(cached = new LinkConstraints());
 		}
 		return cached;
 	}
@@ -309,33 +310,26 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		}
 
 		/**
-		 * @generated
-		 */
-		public boolean canCreateNetworkConnector_4032(
-				org.muml.pm.hardware.hwplatform.HWPlatform container,
-				org.muml.pim.connector.ConnectorEndpoint source,
-				org.muml.pim.connector.ConnectorEndpoint target, View sourceView, View targetView) {
+		* @generated
+		*/
+		public boolean canCreateNetworkConnector_4032(HWPlatform container, ConnectorEndpoint source,
+				ConnectorEndpoint target, View sourceView, View targetView) {
 			return canExistNetworkConnector_4032(container, null, source, target, sourceView, targetView);
 		}
 
 		/**
-		 * @generated
-		 */
-		public boolean canExistNetworkConnector_4032(
-				org.muml.pm.hardware.hwplatform.HWPlatform container,
-				org.muml.pm.hardware.hwplatform.NetworkConnector linkInstance,
-				org.muml.pim.connector.ConnectorEndpoint source,
-				org.muml.pim.connector.ConnectorEndpoint target, View sourceView, View targetView) {
+		* @generated
+		*/
+		public boolean canExistNetworkConnector_4032(HWPlatform container, NetworkConnector linkInstance,
+				ConnectorEndpoint source, ConnectorEndpoint target, View sourceView, View targetView) {
 			return true;
 		}
 
 		/**
-		 * @generated
-		 */
-		public java.lang.String getErrorNetworkConnector_4032(
-				org.muml.pm.hardware.hwplatform.HWPlatform container,
-				org.muml.pim.connector.ConnectorEndpoint source,
-				org.muml.pim.connector.ConnectorEndpoint target, View sourceView, View targetView) {
+		* @generated
+		*/
+		public java.lang.String getErrorNetworkConnector_4032(HWPlatform container, ConnectorEndpoint source,
+				ConnectorEndpoint target, View sourceView, View targetView) {
 			return null;
 		}
 

@@ -19,6 +19,8 @@ import org.eclipse.gmf.runtime.common.ui.services.parser.ParserEditStatus;
 import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand;
 import org.eclipse.gmf.tooling.runtime.parsers.ExpressionLabelParserBase;
 import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
+import org.muml.pm.hardware.hwplatform.HwplatformPackage;
+import org.muml.pm.hardware.platform.diagram.expressions.HardwareOCLFactory;
 
 /**
  * @generated
@@ -35,8 +37,7 @@ public class BusLabelExpressionLabelParser5058 extends ExpressionLabelParserBase
 	 */
 	@Override
 	protected String getExpressionBody() {
-		return org.muml.pm.hardware.platform.diagram.expressions.HardwareOCLFactory.getExpression(1,
-				org.muml.pm.hardware.hwplatform.HwplatformPackage.eINSTANCE.getBus(), null).body();
+		return HardwareOCLFactory.getExpression(1, HwplatformPackage.eINSTANCE.getBus(), null).body();
 	}
 
 	/**

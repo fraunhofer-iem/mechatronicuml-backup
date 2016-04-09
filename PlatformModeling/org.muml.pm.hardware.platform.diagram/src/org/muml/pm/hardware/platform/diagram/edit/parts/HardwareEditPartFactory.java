@@ -6,6 +6,7 @@ import org.eclipse.gef.tools.CellEditorLocator;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ITextAwareEditPart;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.directedit.locator.CellEditorLocatorAccess;
+import org.muml.pm.hardware.platform.diagram.part.HardwareVisualIDRegistry;
 
 /**
  * @generated
@@ -18,94 +19,76 @@ public class HardwareEditPartFactory implements EditPartFactory {
 	public EditPart createEditPart(EditPart context, Object model) {
 		if (model instanceof View) {
 			View view = (View) model;
-			switch (org.muml.pm.hardware.platform.diagram.part.HardwareVisualIDRegistry
-					.getVisualID(view)) {
+			switch (HardwareVisualIDRegistry.getVisualID(view)) {
 
-			case org.muml.pm.hardware.platform.diagram.edit.parts.HWPlatformEditPart.VISUAL_ID:
-				return new org.muml.pm.hardware.platform.diagram.edit.parts.HWPlatformEditPart(view);
+			case HWPlatformEditPart.VISUAL_ID:
+				return new HWPlatformEditPart(view);
 
-			case org.muml.pm.hardware.platform.diagram.edit.parts.HWPlatform2EditPart.VISUAL_ID:
-				return new org.muml.pm.hardware.platform.diagram.edit.parts.HWPlatform2EditPart(view);
+			case HWPlatform2EditPart.VISUAL_ID:
+				return new HWPlatform2EditPart(view);
 
-			case org.muml.pm.hardware.platform.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID:
-				return new org.muml.pm.hardware.platform.diagram.edit.parts.WrappingLabelEditPart(
-						view);
+			case WrappingLabelEditPart.VISUAL_ID:
+				return new WrappingLabelEditPart(view);
 
-			case org.muml.pm.hardware.platform.diagram.edit.parts.BusEditPart.VISUAL_ID:
-				return new org.muml.pm.hardware.platform.diagram.edit.parts.BusEditPart(view);
+			case BusEditPart.VISUAL_ID:
+				return new BusEditPart(view);
 
-			case org.muml.pm.hardware.platform.diagram.edit.parts.WrappingLabel2EditPart.VISUAL_ID:
-				return new org.muml.pm.hardware.platform.diagram.edit.parts.WrappingLabel2EditPart(
-						view);
+			case WrappingLabel2EditPart.VISUAL_ID:
+				return new WrappingLabel2EditPart(view);
 
-			case org.muml.pm.hardware.platform.diagram.edit.parts.WrappingLabel3EditPart.VISUAL_ID:
-				return new org.muml.pm.hardware.platform.diagram.edit.parts.WrappingLabel3EditPart(
-						view);
+			case WrappingLabel3EditPart.VISUAL_ID:
+				return new WrappingLabel3EditPart(view);
 
-			case org.muml.pm.hardware.platform.diagram.edit.parts.NetworkBridgeEditPart.VISUAL_ID:
-				return new org.muml.pm.hardware.platform.diagram.edit.parts.NetworkBridgeEditPart(
-						view);
+			case NetworkBridgeEditPart.VISUAL_ID:
+				return new NetworkBridgeEditPart(view);
 
-			case org.muml.pm.hardware.platform.diagram.edit.parts.WrappingLabel4EditPart.VISUAL_ID:
-				return new org.muml.pm.hardware.platform.diagram.edit.parts.WrappingLabel4EditPart(
-						view);
+			case WrappingLabel4EditPart.VISUAL_ID:
+				return new WrappingLabel4EditPart(view);
 
-			case org.muml.pm.hardware.platform.diagram.edit.parts.HWPlatformPartEditPart.VISUAL_ID:
-				return new org.muml.pm.hardware.platform.diagram.edit.parts.HWPlatformPartEditPart(
-						view);
+			case HWPlatformPartEditPart.VISUAL_ID:
+				return new HWPlatformPartEditPart(view);
 
-			case org.muml.pm.hardware.platform.diagram.edit.parts.HWPlatformPartNameEditPart.VISUAL_ID:
-				return new org.muml.pm.hardware.platform.diagram.edit.parts.HWPlatformPartNameEditPart(
-						view);
+			case HWPlatformPartNameEditPart.VISUAL_ID:
+				return new HWPlatformPartNameEditPart(view);
 
-			case org.muml.pm.hardware.platform.diagram.edit.parts.WrappingLabel5EditPart.VISUAL_ID:
-				return new org.muml.pm.hardware.platform.diagram.edit.parts.WrappingLabel5EditPart(
-						view);
+			case WrappingLabel5EditPart.VISUAL_ID:
+				return new WrappingLabel5EditPart(view);
 
-			case org.muml.pm.hardware.platform.diagram.edit.parts.WrappingLabel6EditPart.VISUAL_ID:
-				return new org.muml.pm.hardware.platform.diagram.edit.parts.WrappingLabel6EditPart(
-						view);
+			case WrappingLabel6EditPart.VISUAL_ID:
+				return new WrappingLabel6EditPart(view);
 
-			case org.muml.pm.hardware.platform.diagram.edit.parts.HWPortPartEditPart.VISUAL_ID:
-				return new org.muml.pm.hardware.platform.diagram.edit.parts.HWPortPartEditPart(view);
+			case HWPortPartEditPart.VISUAL_ID:
+				return new HWPortPartEditPart(view);
 
-			case org.muml.pm.hardware.platform.diagram.edit.parts.HWPortLabelEditPart.VISUAL_ID:
-				return new org.muml.pm.hardware.platform.diagram.edit.parts.HWPortLabelEditPart(view);
+			case HWPortLabelEditPart.VISUAL_ID:
+				return new HWPortLabelEditPart(view);
 
-			case org.muml.pm.hardware.platform.diagram.edit.parts.DelegationHWPortEditPart.VISUAL_ID:
-				return new org.muml.pm.hardware.platform.diagram.edit.parts.DelegationHWPortEditPart(
-						view);
+			case DelegationHWPortEditPart.VISUAL_ID:
+				return new DelegationHWPortEditPart(view);
 
-			case org.muml.pm.hardware.platform.diagram.edit.parts.ResourcePartEditPart.VISUAL_ID:
-				return new org.muml.pm.hardware.platform.diagram.edit.parts.ResourcePartEditPart(view);
+			case ResourcePartEditPart.VISUAL_ID:
+				return new ResourcePartEditPart(view);
 
-			case org.muml.pm.hardware.platform.diagram.edit.parts.ResourcePartNameEditPart.VISUAL_ID:
-				return new org.muml.pm.hardware.platform.diagram.edit.parts.ResourcePartNameEditPart(
-						view);
+			case ResourcePartNameEditPart.VISUAL_ID:
+				return new ResourcePartNameEditPart(view);
 
-			case org.muml.pm.hardware.platform.diagram.edit.parts.WrappingLabel7EditPart.VISUAL_ID:
-				return new org.muml.pm.hardware.platform.diagram.edit.parts.WrappingLabel7EditPart(
-						view);
+			case WrappingLabel7EditPart.VISUAL_ID:
+				return new WrappingLabel7EditPart(view);
 
-			case org.muml.pm.hardware.platform.diagram.edit.parts.WrappingLabel8EditPart.VISUAL_ID:
-				return new org.muml.pm.hardware.platform.diagram.edit.parts.WrappingLabel8EditPart(
-						view);
+			case WrappingLabel8EditPart.VISUAL_ID:
+				return new WrappingLabel8EditPart(view);
 
-			case org.muml.pm.hardware.platform.diagram.edit.parts.WrappingLabel9EditPart.VISUAL_ID:
-				return new org.muml.pm.hardware.platform.diagram.edit.parts.WrappingLabel9EditPart(
-						view);
+			case WrappingLabel9EditPart.VISUAL_ID:
+				return new WrappingLabel9EditPart(view);
 
-			case org.muml.pm.hardware.platform.diagram.edit.parts.WrappingLabel10EditPart.VISUAL_ID:
-				return new org.muml.pm.hardware.platform.diagram.edit.parts.WrappingLabel10EditPart(
-						view);
+			case WrappingLabel10EditPart.VISUAL_ID:
+				return new WrappingLabel10EditPart(view);
 
-			case org.muml.pm.hardware.platform.diagram.edit.parts.HWPlatformHWPlatformCompartmentEditPart.VISUAL_ID:
-				return new org.muml.pm.hardware.platform.diagram.edit.parts.HWPlatformHWPlatformCompartmentEditPart(
-						view);
+			case HWPlatformHWPlatformCompartmentEditPart.VISUAL_ID:
+				return new HWPlatformHWPlatformCompartmentEditPart(view);
 
-			case org.muml.pm.hardware.platform.diagram.edit.parts.NetworkConnectorEditPart.VISUAL_ID:
-				return new org.muml.pm.hardware.platform.diagram.edit.parts.NetworkConnectorEditPart(
-						view);
+			case NetworkConnectorEditPart.VISUAL_ID:
+				return new NetworkConnectorEditPart(view);
 
 			}
 		}

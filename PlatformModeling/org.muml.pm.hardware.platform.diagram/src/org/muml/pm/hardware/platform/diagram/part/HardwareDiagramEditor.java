@@ -43,6 +43,9 @@ import org.eclipse.ui.navigator.resources.ProjectExplorer;
 import org.eclipse.ui.part.FileEditorInput;
 import org.eclipse.ui.part.IShowInTargetList;
 import org.eclipse.ui.part.ShowInContext;
+import org.muml.core.common.editingdomain.EditingDomainPlugin;
+import org.muml.core.common.editingdomain.initialize.IEditingDomainInitializer;
+import org.muml.pm.hardware.platform.diagram.navigator.HardwareNavigatorItem;
 
 /**
  * @generated
@@ -78,7 +81,7 @@ public class HardwareDiagramEditor extends DiagramDocumentEditor implements IGot
 	 */
 	protected PaletteRoot createPaletteRoot(PaletteRoot existingPaletteRoot) {
 		PaletteRoot root = super.createPaletteRoot(existingPaletteRoot);
-		new org.muml.pm.hardware.platform.diagram.part.HardwarePaletteFactory().fillPalette(root);
+		new HardwarePaletteFactory().fillPalette(root);
 		return root;
 	}
 
@@ -86,14 +89,14 @@ public class HardwareDiagramEditor extends DiagramDocumentEditor implements IGot
 	 * @generated
 	 */
 	protected PreferencesHint getPreferencesHint() {
-		return org.muml.pm.hardware.platform.diagram.part.PlatformDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT;
+		return PlatformDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT;
 	}
 
 	/**
 	 * @generated
 	 */
 	public String getContributorId() {
-		return org.muml.pm.hardware.platform.diagram.part.PlatformDiagramEditorPlugin.ID;
+		return PlatformDiagramEditorPlugin.ID;
 	}
 
 	/**
@@ -116,8 +119,7 @@ public class HardwareDiagramEditor extends DiagramDocumentEditor implements IGot
 	 */
 	protected IDocumentProvider getDocumentProvider(IEditorInput input) {
 		if (input instanceof IFileEditorInput || input instanceof URIEditorInput) {
-			return org.muml.pm.hardware.platform.diagram.part.PlatformDiagramEditorPlugin.getInstance()
-					.getDocumentProvider();
+			return PlatformDiagramEditorPlugin.getInstance().getDocumentProvider();
 		}
 		return super.getDocumentProvider(input);
 	}
@@ -138,8 +140,7 @@ public class HardwareDiagramEditor extends DiagramDocumentEditor implements IGot
 	 */
 	protected void setDocumentProvider(IEditorInput input) {
 		if (input instanceof IFileEditorInput || input instanceof URIEditorInput) {
-			setDocumentProvider(org.muml.pm.hardware.platform.diagram.part.PlatformDiagramEditorPlugin
-					.getInstance().getDocumentProvider());
+			setDocumentProvider(PlatformDiagramEditorPlugin.getInstance().getDocumentProvider());
 		} else {
 			super.setDocumentProvider(input);
 		}
@@ -184,9 +185,7 @@ public class HardwareDiagramEditor extends DiagramDocumentEditor implements IGot
 			return;
 		}
 		if (provider.isDeleted(input) && original != null) {
-			String message = NLS.bind(
-					org.muml.pm.hardware.platform.diagram.part.Messages.HardwareDiagramEditor_SavingDeletedFile,
-					original.getName());
+			String message = NLS.bind(Messages.HardwareDiagramEditor_SavingDeletedFile, original.getName());
 			dialog.setErrorMessage(null);
 			dialog.setMessage(message, IMessageProvider.WARNING);
 		}
@@ -212,9 +211,8 @@ public class HardwareDiagramEditor extends DiagramDocumentEditor implements IGot
 				.getEditorReferences();
 		for (int i = 0; i < editorRefs.length; i++) {
 			if (matchingStrategy.matches(editorRefs[i], newInput)) {
-				MessageDialog.openWarning(shell,
-						org.muml.pm.hardware.platform.diagram.part.Messages.HardwareDiagramEditor_SaveAsErrorTitle,
-						org.muml.pm.hardware.platform.diagram.part.Messages.HardwareDiagramEditor_SaveAsErrorMessage);
+				MessageDialog.openWarning(shell, Messages.HardwareDiagramEditor_SaveAsErrorTitle,
+						Messages.HardwareDiagramEditor_SaveAsErrorMessage);
 				return;
 			}
 		}
@@ -227,10 +225,8 @@ public class HardwareDiagramEditor extends DiagramDocumentEditor implements IGot
 		} catch (CoreException x) {
 			IStatus status = x.getStatus();
 			if (status == null || status.getSeverity() != IStatus.CANCEL) {
-				ErrorDialog.openError(shell,
-						org.muml.pm.hardware.platform.diagram.part.Messages.HardwareDiagramEditor_SaveErrorTitle,
-						org.muml.pm.hardware.platform.diagram.part.Messages.HardwareDiagramEditor_SaveErrorMessage,
-						x.getStatus());
+				ErrorDialog.openError(shell, Messages.HardwareDiagramEditor_SaveErrorTitle,
+						Messages.HardwareDiagramEditor_SaveErrorMessage, x.getStatus());
 			}
 		} finally {
 			provider.changed(newInput);
@@ -264,8 +260,7 @@ public class HardwareDiagramEditor extends DiagramDocumentEditor implements IGot
 		}
 		IFile file = WorkspaceSynchronizer.getFile(diagram.eResource());
 		if (file != null) {
-			org.muml.pm.hardware.platform.diagram.navigator.HardwareNavigatorItem item = new org.muml.pm.hardware.platform.diagram.navigator.HardwareNavigatorItem(
-					diagram, file, false);
+			HardwareNavigatorItem item = new HardwareNavigatorItem(diagram, file, false);
 			return new StructuredSelection(item);
 		}
 		return StructuredSelection.EMPTY;
@@ -276,8 +271,8 @@ public class HardwareDiagramEditor extends DiagramDocumentEditor implements IGot
 	 */
 	protected void configureGraphicalViewer() {
 		super.configureGraphicalViewer();
-		org.muml.pm.hardware.platform.diagram.part.DiagramEditorContextMenuProvider provider = new org.muml.pm.hardware.platform.diagram.part.DiagramEditorContextMenuProvider(
-				this, getDiagramGraphicalViewer());
+		DiagramEditorContextMenuProvider provider = new DiagramEditorContextMenuProvider(this,
+				getDiagramGraphicalViewer());
 		getDiagramGraphicalViewer().setContextMenu(provider);
 		getSite().registerContextMenu(ActionIds.DIAGRAM_EDITOR_CONTEXT_MENU, provider, getDiagramGraphicalViewer());
 
@@ -296,8 +291,7 @@ public class HardwareDiagramEditor extends DiagramDocumentEditor implements IGot
 	@Override
 	public void setInput(IEditorInput input) {
 		super.setInput(input);
-		for (org.muml.common.editingdomain.initialize.IEditingDomainInitializer init : org.muml.common.editingdomain.EditingDomainPlugin
-				.getEditingDomainInitializers()) {
+		for (IEditingDomainInitializer init : EditingDomainPlugin.getEditingDomainInitializers()) {
 			init.initialize(getEditingDomain());
 		}
 	}

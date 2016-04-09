@@ -64,9 +64,9 @@
 	         allPopups="false"
 	         locationURI="popup:de.uni_paderborn.fujaba.muml.browser.new.menu?after=additions">
 	  		<command
-                 commandId="de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPlatform.browser.create"
+                 commandId="org.muml.pm.hardware.hwplatform.HWPlatform.browser.create"
                  icon="icons/obj16/HwplatformDiagramFile.gif"
-                 id="de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPlatform.browser.create"
+                 id="org.muml.pm.hardware.hwplatform.HWPlatform.browser.create"
                  label="HWPlatform"
                  style="push">
               <visibleWhen
@@ -110,7 +110,7 @@
            defaultHandler="org.muml.pm.hardware.platform.diagram.part.HardwareInitDiagramFileAction$CreateDiagramElement"
            categoryId="de.uni_paderborn.fujaba"
            description="Create new Platform"
-           id="de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPlatform.browser.create"
+           id="org.muml.pm.hardware.hwplatform.HWPlatform.browser.create"
            name="Create new Platform">
     </command>
     </extension>
@@ -139,7 +139,7 @@
          point="org.muml.core.modelinstance.modelelementcategory">
       <?gmfgen generated="true"?>  
       <category
-            key="de.uni_paderborn.fujaba.muml.hardware.hwplatform.category"
+            key="org.muml.pm.hardware.hwplatform.category"
             name="hwplatform">
          
          <child
@@ -159,7 +159,7 @@
             editorId="org.muml.pm.hardware.platform.diagram.part.HardwareDiagramEditorID"
             editorName="Platform Editor"
             fileExtension="platform_diagram"
-            modelElementCategoryKey="de.uni_paderborn.fujaba.muml.hardware.hwplatform.category"
+            modelElementCategoryKey="org.muml.pm.hardware.hwplatform.category"
             modelId="Platform">
          <diagramElement
                packageNsURI="http://www.muml.org/pm/hardware/hwplatform/1.0.0"

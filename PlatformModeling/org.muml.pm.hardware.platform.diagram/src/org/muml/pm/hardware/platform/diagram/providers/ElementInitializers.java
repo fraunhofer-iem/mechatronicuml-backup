@@ -1,6 +1,18 @@
 package org.muml.pm.hardware.platform.diagram.providers;
 
 import org.eclipse.emf.ecore.EcorePackage;
+import org.muml.pim.valuetype.Cardinality;
+import org.muml.pim.valuetype.NaturalNumber;
+import org.muml.pim.valuetype.ValuetypeFactory;
+import org.muml.pim.valuetype.ValuetypePackage;
+import org.muml.pm.hardware.hwplatform.DelegationHWPort;
+import org.muml.pm.hardware.hwplatform.HWPlatform;
+import org.muml.pm.hardware.hwplatform.HWPlatformPart;
+import org.muml.pm.hardware.hwplatform.HwplatformPackage;
+import org.muml.pm.hardware.hwplatform.ResourcePart;
+import org.muml.pm.hardware.platform.diagram.expressions.HardwareAbstractExpression;
+import org.muml.pm.hardware.platform.diagram.expressions.HardwareOCLFactory;
+import org.muml.pm.hardware.platform.diagram.part.PlatformDiagramEditorPlugin;
 
 /**
  * @generated
@@ -14,118 +26,96 @@ public class ElementInitializers {
 	/**
 	* @generated
 	*/
-	public void init_HWPlatform_2009(org.muml.pm.hardware.hwplatform.HWPlatform instance) {
+	public void init_HWPlatform_2009(HWPlatform instance) {
 		try {
-			Object value_0 = org.muml.pm.hardware.platform.diagram.expressions.HardwareOCLFactory
-					.getExpression(16, org.muml.pm.hardware.hwplatform.HwplatformPackage.eINSTANCE
-							.getHWPlatform(), null)
+			Object value_0 = HardwareOCLFactory.getExpression(16, HwplatformPackage.eINSTANCE.getHWPlatform(), null)
 					.evaluate(instance);
 			instance.setName((String) value_0);
 		} catch (RuntimeException e) {
-			org.muml.pm.hardware.platform.diagram.part.PlatformDiagramEditorPlugin.getInstance()
-					.logError("Element initialization failed", e); //$NON-NLS-1$						
-		}
-	}
-
-	/**
-	 * @generated
-	 */
-	public void init_HWPlatformPart_3027(org.muml.pm.hardware.hwplatform.HWPlatformPart instance) {
-		try {
-			org.muml.pim.valuetype.Cardinality newInstance_0_0 = org.muml.pim.valuetype.ValuetypeFactory.eINSTANCE
-					.createCardinality();
-			instance.setCardinality(newInstance_0_0);
-			org.muml.pim.valuetype.NaturalNumber newInstance_0_0_0_0 = org.muml.pim.valuetype.ValuetypeFactory.eINSTANCE
-					.createNaturalNumber();
-			newInstance_0_0.setLowerBound(newInstance_0_0_0_0);
-			Object value_0_0_0_0_0 = org.muml.pm.hardware.platform.diagram.expressions.HardwareOCLFactory
-					.getExpression(3,
-							org.muml.pim.valuetype.ValuetypePackage.eINSTANCE.getNaturalNumber(), null)
-					.evaluate(newInstance_0_0_0_0);
-
-			value_0_0_0_0_0 = org.muml.pm.hardware.platform.diagram.expressions.HardwareAbstractExpression
-					.performCast(value_0_0_0_0_0, EcorePackage.eINSTANCE.getELong());
-			newInstance_0_0_0_0.setValue(((Long) value_0_0_0_0_0).longValue());
-
-			org.muml.pim.valuetype.NaturalNumber newInstance_0_0_1_0 = org.muml.pim.valuetype.ValuetypeFactory.eINSTANCE
-					.createNaturalNumber();
-			newInstance_0_0.setUpperBound(newInstance_0_0_1_0);
-			Object value_0_0_1_0_0 = org.muml.pm.hardware.platform.diagram.expressions.HardwareOCLFactory
-					.getExpression(4,
-							org.muml.pim.valuetype.ValuetypePackage.eINSTANCE.getNaturalNumber(), null)
-					.evaluate(newInstance_0_0_1_0);
-
-			value_0_0_1_0_0 = org.muml.pm.hardware.platform.diagram.expressions.HardwareAbstractExpression
-					.performCast(value_0_0_1_0_0, EcorePackage.eINSTANCE.getELong());
-			newInstance_0_0_1_0.setValue(((Long) value_0_0_1_0_0).longValue());
-
-			Object value_1 = org.muml.pm.hardware.platform.diagram.expressions.HardwareOCLFactory
-					.getExpression(17, org.muml.pm.hardware.hwplatform.HwplatformPackage.eINSTANCE
-							.getHWPlatformPart(), null)
-					.evaluate(instance);
-			instance.setName((String) value_1);
-		} catch (RuntimeException e) {
-			org.muml.pm.hardware.platform.diagram.part.PlatformDiagramEditorPlugin.getInstance()
-					.logError("Element initialization failed", e); //$NON-NLS-1$						
+			PlatformDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
 		}
 	}
 
 	/**
 	* @generated
 	*/
-	public void init_DelegationHWPort_3029(org.muml.pm.hardware.hwplatform.DelegationHWPort instance) {
+	public void init_HWPlatformPart_3027(HWPlatformPart instance) {
 		try {
-			Object value_0 = org.muml.pm.hardware.platform.diagram.expressions.HardwareOCLFactory
-					.getExpression(18, org.muml.pm.hardware.hwplatform.HwplatformPackage.eINSTANCE
-							.getDelegationHWPort(), null)
+			Cardinality newInstance_0_0 = ValuetypeFactory.eINSTANCE.createCardinality();
+			instance.setCardinality(newInstance_0_0);
+			NaturalNumber newInstance_0_0_0_0 = ValuetypeFactory.eINSTANCE.createNaturalNumber();
+			newInstance_0_0.setLowerBound(newInstance_0_0_0_0);
+			Object value_0_0_0_0_0 = HardwareOCLFactory
+					.getExpression(3, ValuetypePackage.eINSTANCE.getNaturalNumber(), null)
+					.evaluate(newInstance_0_0_0_0);
+
+			value_0_0_0_0_0 = HardwareAbstractExpression.performCast(value_0_0_0_0_0,
+					EcorePackage.eINSTANCE.getELong());
+			newInstance_0_0_0_0.setValue(((Long) value_0_0_0_0_0).longValue());
+
+			NaturalNumber newInstance_0_0_1_0 = ValuetypeFactory.eINSTANCE.createNaturalNumber();
+			newInstance_0_0.setUpperBound(newInstance_0_0_1_0);
+			Object value_0_0_1_0_0 = HardwareOCLFactory
+					.getExpression(4, ValuetypePackage.eINSTANCE.getNaturalNumber(), null)
+					.evaluate(newInstance_0_0_1_0);
+
+			value_0_0_1_0_0 = HardwareAbstractExpression.performCast(value_0_0_1_0_0,
+					EcorePackage.eINSTANCE.getELong());
+			newInstance_0_0_1_0.setValue(((Long) value_0_0_1_0_0).longValue());
+
+			Object value_1 = HardwareOCLFactory.getExpression(17, HwplatformPackage.eINSTANCE.getHWPlatformPart(), null)
 					.evaluate(instance);
-			instance.setName((String) value_0);
+			instance.setName((String) value_1);
 		} catch (RuntimeException e) {
-			org.muml.pm.hardware.platform.diagram.part.PlatformDiagramEditorPlugin.getInstance()
-					.logError("Element initialization failed", e); //$NON-NLS-1$						
+			PlatformDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
 		}
 	}
 
 	/**
-	 * @generated
-	 */
-	public void init_ResourcePart_3030(org.muml.pm.hardware.hwplatform.ResourcePart instance) {
+	* @generated
+	*/
+	public void init_DelegationHWPort_3029(DelegationHWPort instance) {
 		try {
-			org.muml.pim.valuetype.Cardinality newInstance_0_0 = org.muml.pim.valuetype.ValuetypeFactory.eINSTANCE
-					.createCardinality();
+			Object value_0 = HardwareOCLFactory
+					.getExpression(18, HwplatformPackage.eINSTANCE.getDelegationHWPort(), null).evaluate(instance);
+			instance.setName((String) value_0);
+		} catch (RuntimeException e) {
+			PlatformDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
+		}
+	}
+
+	/**
+	* @generated
+	*/
+	public void init_ResourcePart_3030(ResourcePart instance) {
+		try {
+			Cardinality newInstance_0_0 = ValuetypeFactory.eINSTANCE.createCardinality();
 			instance.setCardinality(newInstance_0_0);
-			org.muml.pim.valuetype.NaturalNumber newInstance_0_0_0_0 = org.muml.pim.valuetype.ValuetypeFactory.eINSTANCE
-					.createNaturalNumber();
+			NaturalNumber newInstance_0_0_0_0 = ValuetypeFactory.eINSTANCE.createNaturalNumber();
 			newInstance_0_0.setLowerBound(newInstance_0_0_0_0);
-			Object value_0_0_0_0_0 = org.muml.pm.hardware.platform.diagram.expressions.HardwareOCLFactory
-					.getExpression(9,
-							org.muml.pim.valuetype.ValuetypePackage.eINSTANCE.getNaturalNumber(), null)
+			Object value_0_0_0_0_0 = HardwareOCLFactory
+					.getExpression(9, ValuetypePackage.eINSTANCE.getNaturalNumber(), null)
 					.evaluate(newInstance_0_0_0_0);
 
-			value_0_0_0_0_0 = org.muml.pm.hardware.platform.diagram.expressions.HardwareAbstractExpression
-					.performCast(value_0_0_0_0_0, EcorePackage.eINSTANCE.getELong());
+			value_0_0_0_0_0 = HardwareAbstractExpression.performCast(value_0_0_0_0_0,
+					EcorePackage.eINSTANCE.getELong());
 			newInstance_0_0_0_0.setValue(((Long) value_0_0_0_0_0).longValue());
 
-			org.muml.pim.valuetype.NaturalNumber newInstance_0_0_1_0 = org.muml.pim.valuetype.ValuetypeFactory.eINSTANCE
-					.createNaturalNumber();
+			NaturalNumber newInstance_0_0_1_0 = ValuetypeFactory.eINSTANCE.createNaturalNumber();
 			newInstance_0_0.setUpperBound(newInstance_0_0_1_0);
-			Object value_0_0_1_0_0 = org.muml.pm.hardware.platform.diagram.expressions.HardwareOCLFactory
-					.getExpression(10,
-							org.muml.pim.valuetype.ValuetypePackage.eINSTANCE.getNaturalNumber(), null)
+			Object value_0_0_1_0_0 = HardwareOCLFactory
+					.getExpression(10, ValuetypePackage.eINSTANCE.getNaturalNumber(), null)
 					.evaluate(newInstance_0_0_1_0);
 
-			value_0_0_1_0_0 = org.muml.pm.hardware.platform.diagram.expressions.HardwareAbstractExpression
-					.performCast(value_0_0_1_0_0, EcorePackage.eINSTANCE.getELong());
+			value_0_0_1_0_0 = HardwareAbstractExpression.performCast(value_0_0_1_0_0,
+					EcorePackage.eINSTANCE.getELong());
 			newInstance_0_0_1_0.setValue(((Long) value_0_0_1_0_0).longValue());
 
-			Object value_1 = org.muml.pm.hardware.platform.diagram.expressions.HardwareOCLFactory
-					.getExpression(19, org.muml.pm.hardware.hwplatform.HwplatformPackage.eINSTANCE
-							.getResourcePart(), null)
+			Object value_1 = HardwareOCLFactory.getExpression(19, HwplatformPackage.eINSTANCE.getResourcePart(), null)
 					.evaluate(instance);
 			instance.setName((String) value_1);
 		} catch (RuntimeException e) {
-			org.muml.pm.hardware.platform.diagram.part.PlatformDiagramEditorPlugin.getInstance()
-					.logError("Element initialization failed", e); //$NON-NLS-1$						
+			PlatformDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
 		}
 	}
 
@@ -133,11 +123,9 @@ public class ElementInitializers {
 	 * @generated
 	 */
 	public static ElementInitializers getInstance() {
-		ElementInitializers cached = org.muml.pm.hardware.platform.diagram.part.PlatformDiagramEditorPlugin
-				.getInstance().getElementInitializers();
+		ElementInitializers cached = PlatformDiagramEditorPlugin.getInstance().getElementInitializers();
 		if (cached == null) {
-			org.muml.pm.hardware.platform.diagram.part.PlatformDiagramEditorPlugin.getInstance()
-					.setElementInitializers(cached = new ElementInitializers());
+			PlatformDiagramEditorPlugin.getInstance().setElementInitializers(cached = new ElementInitializers());
 		}
 		return cached;
 	}

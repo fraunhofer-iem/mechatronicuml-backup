@@ -32,6 +32,15 @@ import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.edit.policies.reparent.CreationEditPolicyWithCustomReparent;
 import org.eclipse.swt.graphics.Color;
+import org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy;
+import org.muml.core.common.edit.policies.anchor.IConnectionAnchorCreationEditPolicy;
+import org.muml.core.common.edit.policies.compartment.EnlargeCompartmentEditPolicy;
+import org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy;
+import org.muml.pim.common.edit.policies.IBackgroundColorEditPolicy;
+import org.muml.pm.hardware.common.figures.CustomIconFigure;
+import org.muml.pm.hardware.platform.diagram.edit.policies.HWPlatformPartCanonicalEditPolicy;
+import org.muml.pm.hardware.platform.diagram.edit.policies.HWPlatformPartItemSemanticEditPolicy;
+import org.muml.pm.hardware.platform.diagram.part.HardwareVisualIDRegistry;
 
 /**
  * @generated
@@ -75,10 +84,8 @@ public class HWPlatformPartEditPart extends AbstractBorderedShapeEditPart {
 	protected void refreshBackgroundColor() {
 		EditPolicy backgroundColorPolicy = getEditPolicy(
 				org.muml.core.common.edit.policies.EditPolicyRoles.BACKGROUND_COLOR_ROLE);
-		if (backgroundColorPolicy instanceof org.muml.pim.common.edit.policies.IBackgroundColorEditPolicy) {
-			setBackgroundColor(
-					((org.muml.pim.common.edit.policies.IBackgroundColorEditPolicy) backgroundColorPolicy)
-							.getCurrentBackgroundColor());
+		if (backgroundColorPolicy instanceof IBackgroundColorEditPolicy) {
+			setBackgroundColor(((IBackgroundColorEditPolicy) backgroundColorPolicy).getCurrentBackgroundColor());
 		} else {
 			super.refreshBackgroundColor();
 		}
@@ -105,27 +112,24 @@ public class HWPlatformPartEditPart extends AbstractBorderedShapeEditPart {
 	 * @generated
 	 */
 	protected void createDefaultEditPolicies() {
-		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicyWithCustomReparent(
-				org.muml.pm.hardware.platform.diagram.part.HardwareVisualIDRegistry.TYPED_INSTANCE));
+		installEditPolicy(EditPolicyRoles.CREATION_ROLE,
+				new CreationEditPolicyWithCustomReparent(HardwareVisualIDRegistry.TYPED_INSTANCE));
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
-				new org.muml.pm.hardware.platform.diagram.edit.policies.HWPlatformPartItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new HWPlatformPartItemSemanticEditPolicy());
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
-		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE,
-				new org.muml.pm.hardware.platform.diagram.edit.policies.HWPlatformPartCanonicalEditPolicy());
+		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new HWPlatformPartCanonicalEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 
 		installEditPolicy(org.muml.core.common.edit.policies.EditPolicyRoles.ENLARGE_COMPARTMENT_ROLE,
-				new org.muml.core.common.edit.policies.compartment.EnlargeCompartmentEditPolicy());
+				new EnlargeCompartmentEditPolicy());
 
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 
-		installEditPolicy(EditPolicy.GRAPHICAL_NODE_ROLE,
-				new org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy());
+		installEditPolicy(EditPolicy.GRAPHICAL_NODE_ROLE, new ConnectionConfigureHelperGraphicalNodeEditPolicy());
 
 		installEditPolicy(org.muml.core.common.edit.policies.EditPolicyRoles.ERROR_FEEDBACK_ROLE,
-				new org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy());
+				new ErrorFeedbackEditPolicy());
 
 	}
 
@@ -137,9 +141,8 @@ public class HWPlatformPartEditPart extends AbstractBorderedShapeEditPart {
 
 			protected EditPolicy createChildEditPolicy(EditPart child) {
 				View childView = (View) child.getModel();
-				switch (org.muml.pm.hardware.platform.diagram.part.HardwareVisualIDRegistry
-						.getVisualID(childView)) {
-				case org.muml.pm.hardware.platform.diagram.edit.parts.HWPortPartEditPart.VISUAL_ID:
+				switch (HardwareVisualIDRegistry.getVisualID(childView)) {
+				case HWPortPartEditPart.VISUAL_ID:
 					return new BorderItemSelectionEditPolicy();
 				}
 				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
@@ -178,26 +181,21 @@ public class HWPlatformPartEditPart extends AbstractBorderedShapeEditPart {
 	 * @generated
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof org.muml.pm.hardware.platform.diagram.edit.parts.HWPlatformPartNameEditPart) {
-			((org.muml.pm.hardware.platform.diagram.edit.parts.HWPlatformPartNameEditPart) childEditPart)
-					.setLabel(getPrimaryShape().getFigureResourceNameFigure());
+		if (childEditPart instanceof HWPlatformPartNameEditPart) {
+			((HWPlatformPartNameEditPart) childEditPart).setLabel(getPrimaryShape().getFigureResourceNameFigure());
 			return true;
 		}
-		if (childEditPart instanceof org.muml.pm.hardware.platform.diagram.edit.parts.WrappingLabel5EditPart) {
-			((org.muml.pm.hardware.platform.diagram.edit.parts.WrappingLabel5EditPart) childEditPart)
-					.setLabel(getPrimaryShape().getFigureResourceKindFigure());
+		if (childEditPart instanceof WrappingLabel5EditPart) {
+			((WrappingLabel5EditPart) childEditPart).setLabel(getPrimaryShape().getFigureResourceKindFigure());
 			return true;
 		}
-		if (childEditPart instanceof org.muml.pm.hardware.platform.diagram.edit.parts.WrappingLabel6EditPart) {
-			((org.muml.pm.hardware.platform.diagram.edit.parts.WrappingLabel6EditPart) childEditPart)
-					.setLabel(getPrimaryShape().getFigureResourceCardinalityFigure());
+		if (childEditPart instanceof WrappingLabel6EditPart) {
+			((WrappingLabel6EditPart) childEditPart).setLabel(getPrimaryShape().getFigureResourceCardinalityFigure());
 			return true;
 		}
-		if (childEditPart instanceof org.muml.pm.hardware.platform.diagram.edit.parts.HWPortPartEditPart) {
+		if (childEditPart instanceof HWPortPartEditPart) {
 			BorderItemLocator locator = new BorderItemLocator(getMainFigure(), PositionConstants.EAST);
-			getBorderedFigure().getBorderItemContainer()
-					.add(((org.muml.pm.hardware.platform.diagram.edit.parts.HWPortPartEditPart) childEditPart)
-							.getFigure(), locator);
+			getBorderedFigure().getBorderItemContainer().add(((HWPortPartEditPart) childEditPart).getFigure(), locator);
 			return true;
 		}
 		return false;
@@ -207,19 +205,17 @@ public class HWPlatformPartEditPart extends AbstractBorderedShapeEditPart {
 	 * @generated
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof org.muml.pm.hardware.platform.diagram.edit.parts.HWPlatformPartNameEditPart) {
+		if (childEditPart instanceof HWPlatformPartNameEditPart) {
 			return true;
 		}
-		if (childEditPart instanceof org.muml.pm.hardware.platform.diagram.edit.parts.WrappingLabel5EditPart) {
+		if (childEditPart instanceof WrappingLabel5EditPart) {
 			return true;
 		}
-		if (childEditPart instanceof org.muml.pm.hardware.platform.diagram.edit.parts.WrappingLabel6EditPart) {
+		if (childEditPart instanceof WrappingLabel6EditPart) {
 			return true;
 		}
-		if (childEditPart instanceof org.muml.pm.hardware.platform.diagram.edit.parts.HWPortPartEditPart) {
-			getBorderedFigure().getBorderItemContainer()
-					.remove(((org.muml.pm.hardware.platform.diagram.edit.parts.HWPortPartEditPart) childEditPart)
-							.getFigure());
+		if (childEditPart instanceof HWPortPartEditPart) {
+			getBorderedFigure().getBorderItemContainer().remove(((HWPortPartEditPart) childEditPart).getFigure());
 			return true;
 		}
 		return false;
@@ -262,7 +258,7 @@ public class HWPlatformPartEditPart extends AbstractBorderedShapeEditPart {
 		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(130, 47) {
 			@Override
 			public ConnectionAnchor createDefaultAnchor() {
-				org.muml.core.common.edit.policies.anchor.IConnectionAnchorCreationEditPolicy connectionAnchorCreationEditPolicy = (org.muml.core.common.edit.policies.anchor.IConnectionAnchorCreationEditPolicy) getEditPolicy(
+				IConnectionAnchorCreationEditPolicy connectionAnchorCreationEditPolicy = (IConnectionAnchorCreationEditPolicy) getEditPolicy(
 						org.muml.core.common.edit.policies.EditPolicyRoles.CONNECTION_ANCHOR_CREATION_ROLE);
 				if (connectionAnchorCreationEditPolicy != null) {
 					return connectionAnchorCreationEditPolicy.createDefaultAnchor();
@@ -359,9 +355,7 @@ public class HWPlatformPartEditPart extends AbstractBorderedShapeEditPart {
 	 * @generated
 	 */
 	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(
-				org.muml.pm.hardware.platform.diagram.part.HardwareVisualIDRegistry.getType(
-						org.muml.pm.hardware.platform.diagram.edit.parts.HWPlatformPartNameEditPart.VISUAL_ID));
+		return getChildBySemanticHint(HardwareVisualIDRegistry.getType(HWPlatformPartNameEditPart.VISUAL_ID));
 	}
 
 	/**
@@ -384,12 +378,12 @@ public class HWPlatformPartEditPart extends AbstractBorderedShapeEditPart {
 		/**
 			 * @generated
 			 */
-		private org.muml.pm.hardware.common.figures.CustomIconFigure fFigureCustomIconFigure;
+		private CustomIconFigure fFigureCustomIconFigure;
 
 		/**
 		 * @generated
 		 */
-		private org.muml.pm.hardware.common.figures.CustomIconFigure myCustomIconFigure;
+		private CustomIconFigure myCustomIconFigure;
 
 		/**
 		 * @generated
@@ -506,7 +500,7 @@ public class HWPlatformPartEditPart extends AbstractBorderedShapeEditPart {
 			layoutSimpleResourceIconRectangle1.makeColumnsEqualWidth = false;
 			simpleResourceIconRectangle1.setLayoutManager(layoutSimpleResourceIconRectangle1);
 
-			myCustomIconFigure = new org.muml.pm.hardware.common.figures.CustomIconFigure();
+			myCustomIconFigure = new CustomIconFigure();
 
 			simpleResourceIconRectangle1.add(myCustomIconFigure);
 
@@ -536,7 +530,7 @@ public class HWPlatformPartEditPart extends AbstractBorderedShapeEditPart {
 		/**
 			 * @generated
 			 */
-		public org.muml.pm.hardware.common.figures.CustomIconFigure getFigureCustomIconFigure() {
+		public CustomIconFigure getFigureCustomIconFigure() {
 			return myCustomIconFigure;
 		}
 

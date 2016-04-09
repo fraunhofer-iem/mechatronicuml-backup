@@ -23,6 +23,14 @@ import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest;
 import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.pm.hardware.hwplatform.HwplatformPackage;
+import org.muml.pm.hardware.platform.diagram.edit.parts.BusEditPart;
+import org.muml.pm.hardware.platform.diagram.edit.parts.HWPlatformPartEditPart;
+import org.muml.pm.hardware.platform.diagram.edit.parts.NetworkBridgeEditPart;
+import org.muml.pm.hardware.platform.diagram.edit.parts.ResourcePartEditPart;
+import org.muml.pm.hardware.platform.diagram.part.HardwareDiagramUpdater;
+import org.muml.pm.hardware.platform.diagram.part.HardwareNodeDescriptor;
+import org.muml.pm.hardware.platform.diagram.part.HardwareVisualIDRegistry;
 
 /**
  * @generated
@@ -79,10 +87,8 @@ public class HWPlatformHWPlatformCompartmentCanonicalEditPolicy extends Canonica
 	protected Set getFeaturesToSynchronize() {
 		if (myFeaturesToSynchronize == null) {
 			myFeaturesToSynchronize = new HashSet<EStructuralFeature>();
-			myFeaturesToSynchronize.add(org.muml.pm.hardware.hwplatform.HwplatformPackage.eINSTANCE
-					.getHWPlatform_NetworkingHardware());
-			myFeaturesToSynchronize.add(org.muml.pm.hardware.hwplatform.HwplatformPackage.eINSTANCE
-					.getHWPlatform_EmbeddedPlatformParts());
+			myFeaturesToSynchronize.add(HwplatformPackage.eINSTANCE.getHWPlatform_NetworkingHardware());
+			myFeaturesToSynchronize.add(HwplatformPackage.eINSTANCE.getHWPlatform_EmbeddedPlatformParts());
 		}
 		return myFeaturesToSynchronize;
 	}
@@ -92,9 +98,9 @@ public class HWPlatformHWPlatformCompartmentCanonicalEditPolicy extends Canonica
 	 */
 	@SuppressWarnings("rawtypes")
 	protected List getSemanticChildrenList() {
-		List<org.muml.pm.hardware.platform.diagram.part.HardwareNodeDescriptor> childDescriptors = getSemanticChildrenViewDescriptors();
+		List<HardwareNodeDescriptor> childDescriptors = getSemanticChildrenViewDescriptors();
 		LinkedList<EObject> result = new LinkedList<EObject>();
-		for (org.muml.pm.hardware.platform.diagram.part.HardwareNodeDescriptor d : childDescriptors) {
+		for (HardwareNodeDescriptor d : childDescriptors) {
 			result.add(d.getModelElement());
 		}
 		return result;
@@ -110,23 +116,19 @@ public class HWPlatformHWPlatformCompartmentCanonicalEditPolicy extends Canonica
 		if (!canonicalNodes) {
 			View containerView = (View) getHost().getModel();
 			List<View> childViews = containerView.getChildren();
-			List<org.muml.pm.hardware.platform.diagram.part.HardwareNodeDescriptor> result = new LinkedList<org.muml.pm.hardware.platform.diagram.part.HardwareNodeDescriptor>();
+			List<HardwareNodeDescriptor> result = new LinkedList<HardwareNodeDescriptor>();
 
 			for (View childView : childViews) {
 				EObject childElement = childView.getElement();
-				int visualID = org.muml.pm.hardware.platform.diagram.part.HardwareVisualIDRegistry
-						.getVisualID(childView);
-				List<Integer> visualIDs = Arrays.asList(new Integer[] {
-						org.muml.pm.hardware.platform.diagram.edit.parts.BusEditPart.VISUAL_ID,
-						org.muml.pm.hardware.platform.diagram.edit.parts.NetworkBridgeEditPart.VISUAL_ID,
-						org.muml.pm.hardware.platform.diagram.edit.parts.HWPlatformPartEditPart.VISUAL_ID,
-						org.muml.pm.hardware.platform.diagram.edit.parts.ResourcePartEditPart.VISUAL_ID });
+				int visualID = HardwareVisualIDRegistry.getVisualID(childView);
+				List<Integer> visualIDs = Arrays
+						.asList(new Integer[] { BusEditPart.VISUAL_ID, NetworkBridgeEditPart.VISUAL_ID,
+								HWPlatformPartEditPart.VISUAL_ID, ResourcePartEditPart.VISUAL_ID });
 
 				// Note: childElement can be null, for diagram annotations!
 				if (childElement == null
 						|| childElement.eContainer() == containerView.getElement() && visualIDs.contains(visualID)) {
-					result.add(new org.muml.pm.hardware.platform.diagram.part.HardwareNodeDescriptor(
-							childElement, visualID));
+					result.add(new HardwareNodeDescriptor(childElement, visualID));
 					continue;
 				}
 			}
@@ -135,8 +137,7 @@ public class HWPlatformHWPlatformCompartmentCanonicalEditPolicy extends Canonica
 		// End added
 
 		View viewObject = (View) getHost().getModel();
-		return org.muml.pm.hardware.platform.diagram.part.HardwareDiagramUpdater
-				.getHWPlatformHWPlatformCompartment_7003SemanticChildren(viewObject);
+		return HardwareDiagramUpdater.getHWPlatformHWPlatformCompartment_7003SemanticChildren(viewObject);
 
 	}
 
@@ -151,13 +152,12 @@ public class HWPlatformHWPlatformCompartmentCanonicalEditPolicy extends Canonica
 	 * @generated
 	 */
 	private boolean isMyDiagramElement(View view) {
-		int visualID = org.muml.pm.hardware.platform.diagram.part.HardwareVisualIDRegistry
-				.getVisualID(view);
+		int visualID = HardwareVisualIDRegistry.getVisualID(view);
 		switch (visualID) {
-		case org.muml.pm.hardware.platform.diagram.edit.parts.BusEditPart.VISUAL_ID:
-		case org.muml.pm.hardware.platform.diagram.edit.parts.NetworkBridgeEditPart.VISUAL_ID:
-		case org.muml.pm.hardware.platform.diagram.edit.parts.HWPlatformPartEditPart.VISUAL_ID:
-		case org.muml.pm.hardware.platform.diagram.edit.parts.ResourcePartEditPart.VISUAL_ID:
+		case BusEditPart.VISUAL_ID:
+		case NetworkBridgeEditPart.VISUAL_ID:
+		case HWPlatformPartEditPart.VISUAL_ID:
+		case ResourcePartEditPart.VISUAL_ID:
 			return true;
 		}
 		return false;
@@ -171,7 +171,7 @@ public class HWPlatformHWPlatformCompartmentCanonicalEditPolicy extends Canonica
 			return;
 		}
 		LinkedList<IAdaptable> createdViews = new LinkedList<IAdaptable>();
-		List<org.muml.pm.hardware.platform.diagram.part.HardwareNodeDescriptor> childDescriptors = getSemanticChildrenViewDescriptors();
+		List<HardwareNodeDescriptor> childDescriptors = getSemanticChildrenViewDescriptors();
 		LinkedList<View> orphaned = new LinkedList<View>();
 		// we care to check only views we recognize as ours
 		LinkedList<View> knownViewChildren = new LinkedList<View>();
@@ -185,12 +185,10 @@ public class HWPlatformHWPlatformCompartmentCanonicalEditPolicy extends Canonica
 		// iteration happens over list of desired semantic elements, trying to find best matching View, while original CEP
 		// iterates views, potentially losing view (size/bounds) information - i.e. if there are few views to reference same EObject, only last one 
 		// to answer isOrphaned == true will be used for the domain element representation, see #cleanCanonicalSemanticChildren()
-		for (Iterator<org.muml.pm.hardware.platform.diagram.part.HardwareNodeDescriptor> descriptorsIterator = childDescriptors
-				.iterator(); descriptorsIterator.hasNext();) {
-			org.muml.pm.hardware.platform.diagram.part.HardwareNodeDescriptor next = descriptorsIterator
-					.next();
-			String hint = org.muml.pm.hardware.platform.diagram.part.HardwareVisualIDRegistry
-					.getType(next.getVisualID());
+		for (Iterator<HardwareNodeDescriptor> descriptorsIterator = childDescriptors.iterator(); descriptorsIterator
+				.hasNext();) {
+			HardwareNodeDescriptor next = descriptorsIterator.next();
+			String hint = HardwareVisualIDRegistry.getType(next.getVisualID());
 			LinkedList<View> perfectMatch = new LinkedList<View>(); // both semanticElement and hint match that of NodeDescriptor
 			for (View childView : getViewChildren()) {
 				EObject semanticElement = childView.getElement();
@@ -217,9 +215,8 @@ public class HWPlatformHWPlatformCompartmentCanonicalEditPolicy extends Canonica
 		//
 		ArrayList<CreateViewRequest.ViewDescriptor> viewDescriptors = new ArrayList<CreateViewRequest.ViewDescriptor>(
 				childDescriptors.size());
-		for (org.muml.pm.hardware.platform.diagram.part.HardwareNodeDescriptor next : childDescriptors) {
-			String hint = org.muml.pm.hardware.platform.diagram.part.HardwareVisualIDRegistry
-					.getType(next.getVisualID());
+		for (HardwareNodeDescriptor next : childDescriptors) {
+			String hint = HardwareVisualIDRegistry.getType(next.getVisualID());
 			IAdaptable elementAdapter = new CanonicalElementAdapter(next.getModelElement(), hint);
 			CreateViewRequest.ViewDescriptor descriptor = new CreateViewRequest.ViewDescriptor(elementAdapter,
 					Node.class, hint, ViewUtil.APPEND, false, host().getDiagramPreferencesHint());

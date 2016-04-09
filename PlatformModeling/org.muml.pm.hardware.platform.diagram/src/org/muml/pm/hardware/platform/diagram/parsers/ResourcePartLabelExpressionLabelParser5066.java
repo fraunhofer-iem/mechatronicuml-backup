@@ -19,6 +19,8 @@ import org.eclipse.gmf.runtime.common.ui.services.parser.ParserEditStatus;
 import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand;
 import org.eclipse.gmf.tooling.runtime.parsers.ExpressionLabelParserBase;
 import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
+import org.muml.pm.hardware.hwplatform.HwplatformPackage;
+import org.muml.pm.hardware.platform.diagram.expressions.HardwareOCLFactory;
 
 /**
  * @generated
@@ -35,9 +37,7 @@ public class ResourcePartLabelExpressionLabelParser5066 extends ExpressionLabelP
 	 */
 	@Override
 	protected String getExpressionBody() {
-		return org.muml.pm.hardware.platform.diagram.expressions.HardwareOCLFactory.getExpression(12,
-				org.muml.pm.hardware.hwplatform.HwplatformPackage.eINSTANCE.getResourcePart(), null)
-				.body();
+		return HardwareOCLFactory.getExpression(12, HwplatformPackage.eINSTANCE.getResourcePart(), null).body();
 	}
 
 	/**
@@ -45,10 +45,7 @@ public class ResourcePartLabelExpressionLabelParser5066 extends ExpressionLabelP
 	 */
 	public String getEditString(IAdaptable element, int flags) {
 		EObject target = (EObject) element.getAdapter(EObject.class);
-		Object result = org.muml.pm.hardware.platform.diagram.expressions.HardwareOCLFactory
-				.getExpression(13,
-						org.muml.pm.hardware.hwplatform.HwplatformPackage.eINSTANCE.getResourcePart(),
-						null)
+		Object result = HardwareOCLFactory.getExpression(13, HwplatformPackage.eINSTANCE.getResourcePart(), null)
 				.evaluate(target);
 		return String.valueOf(result);
 	}

@@ -21,6 +21,7 @@ import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.navigator.ILinkHelper;
 import org.eclipse.ui.part.FileEditorInput;
+import org.muml.pm.hardware.platform.diagram.part.PlatformDiagramEditorPlugin;
 
 /**
  * @generated
@@ -50,8 +51,8 @@ public class HardwareNavigatorLinkHelper implements ILinkHelper {
 	 * @generated
 	 */
 	public IStructuredSelection findSelection(IEditorInput anInput) {
-		IDiagramDocument document = org.muml.pm.hardware.platform.diagram.part.PlatformDiagramEditorPlugin
-				.getInstance().getDocumentProvider().getDiagramDocument(anInput);
+		IDiagramDocument document = PlatformDiagramEditorPlugin.getInstance().getDocumentProvider()
+				.getDiagramDocument(anInput);
 		if (document == null) {
 			return StructuredSelection.EMPTY;
 		}
@@ -61,8 +62,7 @@ public class HardwareNavigatorLinkHelper implements ILinkHelper {
 		}
 		IFile file = WorkspaceSynchronizer.getFile(diagram.eResource());
 		if (file != null) {
-			org.muml.pm.hardware.platform.diagram.navigator.HardwareNavigatorItem item = new org.muml.pm.hardware.platform.diagram.navigator.HardwareNavigatorItem(
-					diagram, file, false);
+			HardwareNavigatorItem item = new HardwareNavigatorItem(diagram, file, false);
 			return new StructuredSelection(item);
 		}
 		return StructuredSelection.EMPTY;
@@ -75,23 +75,19 @@ public class HardwareNavigatorLinkHelper implements ILinkHelper {
 		if (aSelection == null || aSelection.isEmpty()) {
 			return;
 		}
-		if (false == aSelection
-				.getFirstElement() instanceof org.muml.pm.hardware.platform.diagram.navigator.HardwareAbstractNavigatorItem) {
+		if (false == aSelection.getFirstElement() instanceof HardwareAbstractNavigatorItem) {
 			return;
 		}
 
-		org.muml.pm.hardware.platform.diagram.navigator.HardwareAbstractNavigatorItem abstractNavigatorItem = (org.muml.pm.hardware.platform.diagram.navigator.HardwareAbstractNavigatorItem) aSelection
+		HardwareAbstractNavigatorItem abstractNavigatorItem = (HardwareAbstractNavigatorItem) aSelection
 				.getFirstElement();
 		View navigatorView = null;
-		if (abstractNavigatorItem instanceof org.muml.pm.hardware.platform.diagram.navigator.HardwareNavigatorItem) {
-			navigatorView = ((org.muml.pm.hardware.platform.diagram.navigator.HardwareNavigatorItem) abstractNavigatorItem)
-					.getView();
-		} else if (abstractNavigatorItem instanceof org.muml.pm.hardware.platform.diagram.navigator.HardwareNavigatorGroup) {
-			org.muml.pm.hardware.platform.diagram.navigator.HardwareNavigatorGroup navigatorGroup = (org.muml.pm.hardware.platform.diagram.navigator.HardwareNavigatorGroup) abstractNavigatorItem;
-			if (navigatorGroup
-					.getParent() instanceof org.muml.pm.hardware.platform.diagram.navigator.HardwareNavigatorItem) {
-				navigatorView = ((org.muml.pm.hardware.platform.diagram.navigator.HardwareNavigatorItem) navigatorGroup
-						.getParent()).getView();
+		if (abstractNavigatorItem instanceof HardwareNavigatorItem) {
+			navigatorView = ((HardwareNavigatorItem) abstractNavigatorItem).getView();
+		} else if (abstractNavigatorItem instanceof HardwareNavigatorGroup) {
+			HardwareNavigatorGroup navigatorGroup = (HardwareNavigatorGroup) abstractNavigatorItem;
+			if (navigatorGroup.getParent() instanceof HardwareNavigatorItem) {
+				navigatorView = ((HardwareNavigatorItem) navigatorGroup.getParent()).getView();
 			}
 		}
 		if (navigatorView == null) {

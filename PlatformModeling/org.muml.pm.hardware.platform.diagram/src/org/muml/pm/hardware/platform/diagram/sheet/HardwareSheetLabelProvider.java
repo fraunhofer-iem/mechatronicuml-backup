@@ -8,6 +8,9 @@ import org.eclipse.jface.viewers.BaseLabelProvider;
 import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.swt.graphics.Image;
+import org.muml.pm.hardware.platform.diagram.navigator.HardwareNavigatorGroup;
+import org.muml.pm.hardware.platform.diagram.part.HardwareVisualIDRegistry;
+import org.muml.pm.hardware.platform.diagram.providers.HardwareElementTypes;
 
 /**
  * @generated
@@ -30,9 +33,8 @@ public class HardwareSheetLabelProvider extends BaseLabelProvider implements ILa
 		}
 		// END: Added for MUML #912
 
-		if (element instanceof org.muml.pm.hardware.platform.diagram.navigator.HardwareNavigatorGroup) {
-			return ((org.muml.pm.hardware.platform.diagram.navigator.HardwareNavigatorGroup) element)
-					.getGroupName();
+		if (element instanceof HardwareNavigatorGroup) {
+			return ((HardwareNavigatorGroup) element).getGroupName();
 		}
 		IElementType etype = getElementType(getView(element));
 		return etype == null ? "" : etype.getDisplayName();
@@ -43,8 +45,7 @@ public class HardwareSheetLabelProvider extends BaseLabelProvider implements ILa
 	 */
 	public Image getImage(Object element) {
 		IElementType etype = getElementType(getView(unwrap(element)));
-		return etype == null ? null
-				: org.muml.pm.hardware.platform.diagram.providers.HardwareElementTypes.getImage(etype);
+		return etype == null ? null : HardwareElementTypes.getImage(etype);
 	}
 
 	/**
@@ -76,10 +77,8 @@ public class HardwareSheetLabelProvider extends BaseLabelProvider implements ILa
 	private IElementType getElementType(View view) {
 		// For intermediate views climb up the containment hierarchy to find the one associated with an element type.
 		while (view != null) {
-			int vid = org.muml.pm.hardware.platform.diagram.part.HardwareVisualIDRegistry
-					.getVisualID(view);
-			IElementType etype = org.muml.pm.hardware.platform.diagram.providers.HardwareElementTypes
-					.getElementType(vid);
+			int vid = HardwareVisualIDRegistry.getVisualID(view);
+			IElementType etype = HardwareElementTypes.getElementType(vid);
 			if (etype != null) {
 				return etype;
 			}

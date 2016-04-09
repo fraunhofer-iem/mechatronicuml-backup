@@ -8,6 +8,12 @@ import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy;
+import org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy;
+import org.muml.pim.connector.ConnectorEndpoint;
+import org.muml.pm.hardware.hwplatform.HWPlatform;
+import org.muml.pm.hardware.hwplatform.NetworkConnector;
+import org.muml.pm.hardware.platform.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy;
 
 /**
  * @generated
@@ -43,7 +49,7 @@ public class NetworkConnectorReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	public boolean canExecute() {
-		if (false == getElementToEdit() instanceof org.muml.pm.hardware.hwplatform.NetworkConnector) {
+		if (false == getElementToEdit() instanceof NetworkConnector) {
 			return false;
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
@@ -59,8 +65,7 @@ public class NetworkConnectorReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected boolean canReorientSource() {
-		if (!(oldEnd instanceof org.muml.pim.connector.ConnectorEndpoint
-				&& newEnd instanceof org.muml.pim.connector.ConnectorEndpoint)) {
+		if (!(oldEnd instanceof ConnectorEndpoint && newEnd instanceof ConnectorEndpoint)) {
 			return false;
 		}
 		// Removed this check, because other cases are now implemented; Enhancement for MUML-BUG #446
@@ -69,24 +74,18 @@ public class NetworkConnectorReorientCommand extends EditElementCommand {
 		  return false;
 		}
 		*/
-		org.muml.pim.connector.ConnectorEndpoint target = (org.muml.pim.connector.ConnectorEndpoint) getLink()
-				.getConnectorEndpoints().get(0);
-		if (!(getLink().eContainer() instanceof org.muml.pm.hardware.hwplatform.HWPlatform)) {
+		ConnectorEndpoint target = (ConnectorEndpoint) getLink().getConnectorEndpoints().get(0);
+		if (!(getLink().eContainer() instanceof HWPlatform)) {
 			return false;
 		}
-		org.muml.pm.hardware.hwplatform.HWPlatform container = (org.muml.pm.hardware.hwplatform.HWPlatform) getLink()
-				.eContainer();
-		View sourceView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-				.getSourceView(getRequest());
-		View targetView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-				.getTargetView(getRequest());
-		if (!org.muml.pm.hardware.platform.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy
-				.getLinkConstraints()
-				.canExistNetworkConnector_4032(container, getLink(), getNewSource(), target, sourceView, targetView)) {
-			String errorMessage = org.muml.pm.hardware.platform.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy
-					.getLinkConstraints()
+		HWPlatform container = (HWPlatform) getLink().eContainer();
+		View sourceView = ConnectionConfigureHelperGraphicalNodeEditPolicy.getSourceView(getRequest());
+		View targetView = ConnectionConfigureHelperGraphicalNodeEditPolicy.getTargetView(getRequest());
+		if (!HardwareBaseItemSemanticEditPolicy.getLinkConstraints().canExistNetworkConnector_4032(container, getLink(),
+				getNewSource(), target, sourceView, targetView)) {
+			String errorMessage = HardwareBaseItemSemanticEditPolicy.getLinkConstraints()
 					.getErrorNetworkConnector_4032(container, getNewSource(), target, sourceView, targetView);
-			org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy.showMessage(sourceView, errorMessage);
+			ErrorFeedbackEditPolicy.showMessage(sourceView, errorMessage);
 			return false;
 		}
 		return true;
@@ -96,8 +95,7 @@ public class NetworkConnectorReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected boolean canReorientTarget() {
-		if (!(oldEnd instanceof org.muml.pim.connector.ConnectorEndpoint
-				&& newEnd instanceof org.muml.pim.connector.ConnectorEndpoint)) {
+		if (!(oldEnd instanceof ConnectorEndpoint && newEnd instanceof ConnectorEndpoint)) {
 			return false;
 		}
 		// Removed this check, because other cases are now implemented; Enhancement for MUML-BUG #446
@@ -106,24 +104,18 @@ public class NetworkConnectorReorientCommand extends EditElementCommand {
 		  return false;
 		}
 		*/
-		org.muml.pim.connector.ConnectorEndpoint source = (org.muml.pim.connector.ConnectorEndpoint) getLink()
-				.getConnectorEndpoints().get(0);
-		if (!(getLink().eContainer() instanceof org.muml.pm.hardware.hwplatform.HWPlatform)) {
+		ConnectorEndpoint source = (ConnectorEndpoint) getLink().getConnectorEndpoints().get(0);
+		if (!(getLink().eContainer() instanceof HWPlatform)) {
 			return false;
 		}
-		org.muml.pm.hardware.hwplatform.HWPlatform container = (org.muml.pm.hardware.hwplatform.HWPlatform) getLink()
-				.eContainer();
-		View sourceView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-				.getSourceView(getRequest());
-		View targetView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-				.getTargetView(getRequest());
-		if (!org.muml.pm.hardware.platform.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy
-				.getLinkConstraints()
-				.canExistNetworkConnector_4032(container, getLink(), source, getNewTarget(), sourceView, targetView)) {
-			String errorMessage = org.muml.pm.hardware.platform.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy
-					.getLinkConstraints()
+		HWPlatform container = (HWPlatform) getLink().eContainer();
+		View sourceView = ConnectionConfigureHelperGraphicalNodeEditPolicy.getSourceView(getRequest());
+		View targetView = ConnectionConfigureHelperGraphicalNodeEditPolicy.getTargetView(getRequest());
+		if (!HardwareBaseItemSemanticEditPolicy.getLinkConstraints().canExistNetworkConnector_4032(container, getLink(),
+				source, getNewTarget(), sourceView, targetView)) {
+			String errorMessage = HardwareBaseItemSemanticEditPolicy.getLinkConstraints()
 					.getErrorNetworkConnector_4032(container, source, getNewTarget(), sourceView, targetView);
-			org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy.showMessage(sourceView, errorMessage);
+			ErrorFeedbackEditPolicy.showMessage(sourceView, errorMessage);
 			return false;
 		}
 		return true;
@@ -176,36 +168,36 @@ public class NetworkConnectorReorientCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected org.muml.pm.hardware.hwplatform.NetworkConnector getLink() {
-		return (org.muml.pm.hardware.hwplatform.NetworkConnector) getElementToEdit();
+	protected NetworkConnector getLink() {
+		return (NetworkConnector) getElementToEdit();
 	}
 
 	/**
 	 * @generated
 	 */
-	protected org.muml.pim.connector.ConnectorEndpoint getOldSource() {
-		return (org.muml.pim.connector.ConnectorEndpoint) oldEnd;
+	protected ConnectorEndpoint getOldSource() {
+		return (ConnectorEndpoint) oldEnd;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected org.muml.pim.connector.ConnectorEndpoint getNewSource() {
-		return (org.muml.pim.connector.ConnectorEndpoint) newEnd;
+	protected ConnectorEndpoint getNewSource() {
+		return (ConnectorEndpoint) newEnd;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected org.muml.pim.connector.ConnectorEndpoint getOldTarget() {
-		return (org.muml.pim.connector.ConnectorEndpoint) oldEnd;
+	protected ConnectorEndpoint getOldTarget() {
+		return (ConnectorEndpoint) oldEnd;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected org.muml.pim.connector.ConnectorEndpoint getNewTarget() {
-		return (org.muml.pim.connector.ConnectorEndpoint) newEnd;
+	protected ConnectorEndpoint getNewTarget() {
+		return (ConnectorEndpoint) newEnd;
 	}
 
 	/**

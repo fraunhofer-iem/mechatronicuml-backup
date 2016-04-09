@@ -12,18 +12,22 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
 import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.pm.hardware.platform.diagram.edit.commands.NetworkConnectorCreateCommand;
+import org.muml.pm.hardware.platform.diagram.edit.commands.NetworkConnectorReorientCommand;
+import org.muml.pm.hardware.platform.diagram.edit.parts.NetworkConnectorEditPart;
+import org.muml.pm.hardware.platform.diagram.part.HardwareVisualIDRegistry;
+import org.muml.pm.hardware.platform.diagram.providers.HardwareElementTypes;
 
 /**
  * @generated
  */
-public class DelegationHWPortItemSemanticEditPolicy extends
-		org.muml.pm.hardware.platform.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy {
+public class DelegationHWPortItemSemanticEditPolicy extends HardwareBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public DelegationHWPortItemSemanticEditPolicy() {
-		super(org.muml.pm.hardware.platform.diagram.providers.HardwareElementTypes.DelegationHWPort_3029);
+		super(HardwareElementTypes.DelegationHWPort_3029);
 	}
 
 	/**
@@ -35,8 +39,7 @@ public class DelegationHWPortItemSemanticEditPolicy extends
 		cmd.setTransactionNestingEnabled(false);
 		for (Iterator<?> it = view.getTargetEdges().iterator(); it.hasNext();) {
 			Edge incomingLink = (Edge) it.next();
-			if (org.muml.pm.hardware.platform.diagram.part.HardwareVisualIDRegistry.getVisualID(
-					incomingLink) == org.muml.pm.hardware.platform.diagram.edit.parts.NetworkConnectorEditPart.VISUAL_ID) {
+			if (HardwareVisualIDRegistry.getVisualID(incomingLink) == NetworkConnectorEditPart.VISUAL_ID) {
 				DestroyElementRequest r = new DestroyElementRequest(incomingLink.getElement(), false);
 				cmd.add(new DestroyElementCommand(r));
 				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
@@ -45,8 +48,7 @@ public class DelegationHWPortItemSemanticEditPolicy extends
 		}
 		for (Iterator<?> it = view.getSourceEdges().iterator(); it.hasNext();) {
 			Edge outgoingLink = (Edge) it.next();
-			if (org.muml.pm.hardware.platform.diagram.part.HardwareVisualIDRegistry.getVisualID(
-					outgoingLink) == org.muml.pm.hardware.platform.diagram.edit.parts.NetworkConnectorEditPart.VISUAL_ID) {
+			if (HardwareVisualIDRegistry.getVisualID(outgoingLink) == NetworkConnectorEditPart.VISUAL_ID) {
 				DestroyElementRequest r = new DestroyElementRequest(outgoingLink.getElement(), false);
 				cmd.add(new DestroyElementCommand(r));
 				cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
@@ -78,11 +80,8 @@ public class DelegationHWPortItemSemanticEditPolicy extends
 	 * @generated
 	 */
 	protected Command getStartCreateRelationshipCommand(CreateRelationshipRequest req) {
-		if (org.muml.pm.hardware.platform.diagram.providers.HardwareElementTypes.NetworkConnector_4032 == req
-				.getElementType()) {
-			return getGEFWrapper(
-					new org.muml.pm.hardware.platform.diagram.edit.commands.NetworkConnectorCreateCommand(
-							req, req.getSource(), req.getTarget()));
+		if (HardwareElementTypes.NetworkConnector_4032 == req.getElementType()) {
+			return getGEFWrapper(new NetworkConnectorCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return null;
 	}
@@ -91,11 +90,8 @@ public class DelegationHWPortItemSemanticEditPolicy extends
 	 * @generated
 	 */
 	protected Command getCompleteCreateRelationshipCommand(CreateRelationshipRequest req) {
-		if (org.muml.pm.hardware.platform.diagram.providers.HardwareElementTypes.NetworkConnector_4032 == req
-				.getElementType()) {
-			return getGEFWrapper(
-					new org.muml.pm.hardware.platform.diagram.edit.commands.NetworkConnectorCreateCommand(
-							req, req.getSource(), req.getTarget()));
+		if (HardwareElementTypes.NetworkConnector_4032 == req.getElementType()) {
+			return getGEFWrapper(new NetworkConnectorCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return null;
 	}
@@ -108,10 +104,8 @@ public class DelegationHWPortItemSemanticEditPolicy extends
 	 */
 	protected Command getReorientRelationshipCommand(ReorientRelationshipRequest req) {
 		switch (getVisualID(req)) {
-		case org.muml.pm.hardware.platform.diagram.edit.parts.NetworkConnectorEditPart.VISUAL_ID:
-			return getGEFWrapper(
-					new org.muml.pm.hardware.platform.diagram.edit.commands.NetworkConnectorReorientCommand(
-							req));
+		case NetworkConnectorEditPart.VISUAL_ID:
+			return getGEFWrapper(new NetworkConnectorReorientCommand(req));
 		}
 		return super.getReorientRelationshipCommand(req);
 	}

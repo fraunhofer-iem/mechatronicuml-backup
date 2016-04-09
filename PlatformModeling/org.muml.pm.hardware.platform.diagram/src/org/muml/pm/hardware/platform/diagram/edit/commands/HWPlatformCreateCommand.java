@@ -12,6 +12,9 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.pm.hardware.hwplatform.HWPlatform;
+import org.muml.pm.hardware.hwplatform.HwplatformFactory;
+import org.muml.pm.hardware.platform.diagram.providers.ElementInitializers;
 
 /**
  * @generated
@@ -56,13 +59,11 @@ public class HWPlatformCreateCommand extends EditElementCommand {
 		// 	return null;
 		// }
 		Resource resource = getElementToEdit().eResource();
-		org.muml.pm.hardware.hwplatform.HWPlatform newElement = org.muml.pm.hardware.hwplatform.HwplatformFactory.eINSTANCE
-				.createHWPlatform();
+		HWPlatform newElement = HwplatformFactory.eINSTANCE.createHWPlatform();
 
 		resource.getContents().add(newElement);
 
-		org.muml.pm.hardware.platform.diagram.providers.ElementInitializers.getInstance()
-				.init_HWPlatform_2009(newElement);
+		ElementInitializers.getInstance().init_HWPlatform_2009(newElement);
 
 		doConfigure(newElement, monitor, info);
 
@@ -71,10 +72,10 @@ public class HWPlatformCreateCommand extends EditElementCommand {
 	}
 
 	/**
-	 * @generated
-	 */
-	protected void doConfigure(org.muml.pm.hardware.hwplatform.HWPlatform newElement,
-			IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
+	* @generated
+	*/
+	protected void doConfigure(HWPlatform newElement, IProgressMonitor monitor, IAdaptable info)
+			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest()).getElementType();
 		ConfigureRequest configureRequest = new ConfigureRequest(getEditingDomain(), newElement, elementType);
 		configureRequest.setClientContext(((CreateElementRequest) getRequest()).getClientContext());

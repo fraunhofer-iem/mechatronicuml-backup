@@ -2,6 +2,9 @@ package org.muml.pm.hardware.platform.diagram.providers;
 
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.pm.hardware.platform.diagram.edit.parts.HWPlatformEditPart;
+import org.muml.pm.hardware.platform.diagram.part.HardwareVisualIDRegistry;
+import org.muml.pm.hardware.platform.diagram.part.PlatformDiagramEditorPlugin;
 
 /**
  * @generated
@@ -39,8 +42,7 @@ public class HardwareValidationProvider {
 			try {
 				editingDomain.runExclusive(task);
 			} catch (Exception e) {
-				org.muml.pm.hardware.platform.diagram.part.PlatformDiagramEditorPlugin.getInstance()
-						.logError("Validation failed", e); //$NON-NLS-1$
+				PlatformDiagramEditorPlugin.getInstance().logError("Validation failed", e); //$NON-NLS-1$
 			}
 		} else {
 			task.run();
@@ -56,9 +58,7 @@ public class HardwareValidationProvider {
 		}
 		if (object instanceof View) {
 			return constraintsActive
-					&& org.muml.pm.hardware.platform.diagram.edit.parts.HWPlatformEditPart.MODEL_ID
-							.equals(org.muml.pm.hardware.platform.diagram.part.HardwareVisualIDRegistry
-									.getModelID((View) object));
+					&& HWPlatformEditPart.MODEL_ID.equals(HardwareVisualIDRegistry.getModelID((View) object));
 		}
 		return true;
 	}
