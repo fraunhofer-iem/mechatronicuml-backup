@@ -23,6 +23,10 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.core.modelinstance.ModelElementCategory;
+import org.muml.pim.coordinationprotocol.diagram.providers.ElementInitializers;
+import org.muml.pim.protocol.CoordinationProtocol;
+import org.muml.pim.protocol.ProtocolFactory;
 
 /**
  * @generated
@@ -60,14 +64,12 @@ public class CoordinationProtocolCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-		org.muml.pim.protocol.CoordinationProtocol newElement = org.muml.pim.protocol.ProtocolFactory.eINSTANCE
-				.createCoordinationProtocol();
+		CoordinationProtocol newElement = ProtocolFactory.eINSTANCE.createCoordinationProtocol();
 
-		org.muml.core.modelinstance.ModelElementCategory owner = (org.muml.core.modelinstance.ModelElementCategory) getElementToEdit();
+		ModelElementCategory owner = (ModelElementCategory) getElementToEdit();
 		owner.getModelElements().add(newElement);
 
-		org.muml.pim.coordinationprotocol.diagram.providers.ElementInitializers.getInstance()
-				.init_CoordinationProtocol_2005(newElement);
+		ElementInitializers.getInstance().init_CoordinationProtocol_2005(newElement);
 
 		doConfigure(newElement, monitor, info);
 
@@ -76,10 +78,10 @@ public class CoordinationProtocolCreateCommand extends EditElementCommand {
 	}
 
 	/**
-	 * @generated
-	 */
-	protected void doConfigure(org.muml.pim.protocol.CoordinationProtocol newElement,
-			IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
+	* @generated
+	*/
+	protected void doConfigure(CoordinationProtocol newElement, IProgressMonitor monitor, IAdaptable info)
+			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest()).getElementType();
 		ConfigureRequest configureRequest = new ConfigureRequest(getEditingDomain(), newElement, elementType);
 		configureRequest.setClientContext(((CreateElementRequest) getRequest()).getClientContext());

@@ -49,6 +49,8 @@ import org.eclipse.ui.dialogs.SaveAsDialog;
 import org.eclipse.ui.ide.IGotoMarker;
 import org.eclipse.ui.part.FileEditorInput;
 import org.eclipse.ui.part.ShowInContext;
+import org.muml.core.common.editingdomain.EditingDomainPlugin;
+import org.muml.core.common.editingdomain.initialize.IEditingDomainInitializer;
 
 /**
  * @generated
@@ -84,7 +86,7 @@ public class CoordinationProtocolDiagramEditor extends DiagramDocumentEditor imp
 	 */
 	protected PaletteRoot createPaletteRoot(PaletteRoot existingPaletteRoot) {
 		PaletteRoot root = super.createPaletteRoot(existingPaletteRoot);
-		new org.muml.pim.coordinationprotocol.diagram.part.MumlPaletteFactory().fillPalette(root);
+		new MumlPaletteFactory().fillPalette(root);
 		return root;
 	}
 
@@ -92,14 +94,14 @@ public class CoordinationProtocolDiagramEditor extends DiagramDocumentEditor imp
 	 * @generated
 	 */
 	protected PreferencesHint getPreferencesHint() {
-		return org.muml.pim.coordinationprotocol.diagram.part.MumlDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT;
+		return MumlDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT;
 	}
 
 	/**
 	 * @generated
 	 */
 	public String getContributorId() {
-		return org.muml.pim.coordinationprotocol.diagram.part.MumlDiagramEditorPlugin.ID;
+		return MumlDiagramEditorPlugin.ID;
 	}
 
 	/**
@@ -107,8 +109,7 @@ public class CoordinationProtocolDiagramEditor extends DiagramDocumentEditor imp
 	 */
 	protected IDocumentProvider getDocumentProvider(IEditorInput input) {
 		if (input instanceof IFileEditorInput || input instanceof URIEditorInput) {
-			return org.muml.pim.coordinationprotocol.diagram.part.MumlDiagramEditorPlugin.getInstance()
-					.getDocumentProvider();
+			return MumlDiagramEditorPlugin.getInstance().getDocumentProvider();
 		}
 		return super.getDocumentProvider(input);
 	}
@@ -129,8 +130,7 @@ public class CoordinationProtocolDiagramEditor extends DiagramDocumentEditor imp
 	 */
 	protected void setDocumentProvider(IEditorInput input) {
 		if (input instanceof IFileEditorInput || input instanceof URIEditorInput) {
-			setDocumentProvider(org.muml.pim.coordinationprotocol.diagram.part.MumlDiagramEditorPlugin
-					.getInstance().getDocumentProvider());
+			setDocumentProvider(MumlDiagramEditorPlugin.getInstance().getDocumentProvider());
 		} else {
 			super.setDocumentProvider(input);
 		}
@@ -175,9 +175,7 @@ public class CoordinationProtocolDiagramEditor extends DiagramDocumentEditor imp
 			return;
 		}
 		if (provider.isDeleted(input) && original != null) {
-			String message = NLS.bind(
-					org.muml.pim.coordinationprotocol.diagram.part.Messages.CoordinationProtocolDiagramEditor_SavingDeletedFile,
-					original.getName());
+			String message = NLS.bind(Messages.CoordinationProtocolDiagramEditor_SavingDeletedFile, original.getName());
 			dialog.setErrorMessage(null);
 			dialog.setMessage(message, IMessageProvider.WARNING);
 		}
@@ -203,9 +201,8 @@ public class CoordinationProtocolDiagramEditor extends DiagramDocumentEditor imp
 				.getEditorReferences();
 		for (int i = 0; i < editorRefs.length; i++) {
 			if (matchingStrategy.matches(editorRefs[i], newInput)) {
-				MessageDialog.openWarning(shell,
-						org.muml.pim.coordinationprotocol.diagram.part.Messages.CoordinationProtocolDiagramEditor_SaveAsErrorTitle,
-						org.muml.pim.coordinationprotocol.diagram.part.Messages.CoordinationProtocolDiagramEditor_SaveAsErrorMessage);
+				MessageDialog.openWarning(shell, Messages.CoordinationProtocolDiagramEditor_SaveAsErrorTitle,
+						Messages.CoordinationProtocolDiagramEditor_SaveAsErrorMessage);
 				return;
 			}
 		}
@@ -218,10 +215,8 @@ public class CoordinationProtocolDiagramEditor extends DiagramDocumentEditor imp
 		} catch (CoreException x) {
 			IStatus status = x.getStatus();
 			if (status == null || status.getSeverity() != IStatus.CANCEL) {
-				ErrorDialog.openError(shell,
-						org.muml.pim.coordinationprotocol.diagram.part.Messages.CoordinationProtocolDiagramEditor_SaveErrorTitle,
-						org.muml.pim.coordinationprotocol.diagram.part.Messages.CoordinationProtocolDiagramEditor_SaveErrorMessage,
-						x.getStatus());
+				ErrorDialog.openError(shell, Messages.CoordinationProtocolDiagramEditor_SaveErrorTitle,
+						Messages.CoordinationProtocolDiagramEditor_SaveErrorMessage, x.getStatus());
 			}
 		} finally {
 			provider.changed(newInput);
@@ -246,8 +241,8 @@ public class CoordinationProtocolDiagramEditor extends DiagramDocumentEditor imp
 	 */
 	protected void configureGraphicalViewer() {
 		super.configureGraphicalViewer();
-		org.muml.pim.coordinationprotocol.diagram.part.DiagramEditorContextMenuProvider provider = new org.muml.pim.coordinationprotocol.diagram.part.DiagramEditorContextMenuProvider(
-				this, getDiagramGraphicalViewer());
+		DiagramEditorContextMenuProvider provider = new DiagramEditorContextMenuProvider(this,
+				getDiagramGraphicalViewer());
 		getDiagramGraphicalViewer().setContextMenu(provider);
 		getSite().registerContextMenu(ActionIds.DIAGRAM_EDITOR_CONTEXT_MENU, provider, getDiagramGraphicalViewer());
 
@@ -266,8 +261,7 @@ public class CoordinationProtocolDiagramEditor extends DiagramDocumentEditor imp
 	@Override
 	public void setInput(IEditorInput input) {
 		super.setInput(input);
-		for (org.muml.common.editingdomain.initialize.IEditingDomainInitializer init : org.muml.common.editingdomain.EditingDomainPlugin
-				.getEditingDomainInitializers()) {
+		for (IEditingDomainInitializer init : EditingDomainPlugin.getEditingDomainInitializers()) {
 			init.initialize(getEditingDomain());
 		}
 	}

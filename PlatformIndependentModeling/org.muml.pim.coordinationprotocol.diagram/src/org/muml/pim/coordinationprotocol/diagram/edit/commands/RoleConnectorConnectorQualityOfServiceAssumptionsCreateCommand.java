@@ -20,6 +20,11 @@ import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy;
+import org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy;
+import org.muml.pim.coordinationprotocol.diagram.edit.policies.MumlBaseItemSemanticEditPolicy;
+import org.muml.pim.protocol.ConnectorQualityOfServiceAssumptions;
+import org.muml.pim.protocol.RoleConnector;
 
 /**
  * @generated
@@ -53,29 +58,25 @@ public class RoleConnectorConnectorQualityOfServiceAssumptionsCreateCommand exte
 		if (source == null && target == null) {
 			return false;
 		}
-		if (source != null && false == source instanceof org.muml.pim.protocol.RoleConnector) {
+		if (source != null && false == source instanceof RoleConnector) {
 			return false;
 		}
-		if (target != null
-				&& false == target instanceof org.muml.pim.protocol.ConnectorQualityOfServiceAssumptions) {
+		if (target != null && false == target instanceof ConnectorQualityOfServiceAssumptions) {
 			return false;
 		}
 		if (getSource() == null) {
 			return true; // link creation is in progress; source is not defined yet
 		}
 		// target may be null here but it's possible to check constraint
-		View sourceView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-				.getSourceView(getRequest());
-		View targetView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-				.getTargetView(getRequest());
-		if (!org.muml.pim.coordinationprotocol.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-				.getLinkConstraints().canCreateRoleConnectorConnectorQualityOfServiceAssumptions_4009(getSource(),
-						getTarget(), sourceView, targetView)) {
-			String errorMessage = org.muml.pim.coordinationprotocol.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-					.getLinkConstraints().getErrorRoleConnectorConnectorQualityOfServiceAssumptions_4009(getSource(),
-							getTarget(), sourceView, targetView);
-			org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy
-					.showMessage(targetView != null ? targetView : sourceView, errorMessage);
+		View sourceView = ConnectionConfigureHelperGraphicalNodeEditPolicy.getSourceView(getRequest());
+		View targetView = ConnectionConfigureHelperGraphicalNodeEditPolicy.getTargetView(getRequest());
+		if (!MumlBaseItemSemanticEditPolicy.getLinkConstraints()
+				.canCreateRoleConnectorConnectorQualityOfServiceAssumptions_4009(getSource(), getTarget(), sourceView,
+						targetView)) {
+			String errorMessage = MumlBaseItemSemanticEditPolicy.getLinkConstraints()
+					.getErrorRoleConnectorConnectorQualityOfServiceAssumptions_4009(getSource(), getTarget(),
+							sourceView, targetView);
+			ErrorFeedbackEditPolicy.showMessage(targetView != null ? targetView : sourceView, errorMessage);
 			return false;
 		}
 		return true;
@@ -106,14 +107,14 @@ public class RoleConnectorConnectorQualityOfServiceAssumptionsCreateCommand exte
 	/**
 	 * @generated
 	 */
-	protected org.muml.pim.protocol.RoleConnector getSource() {
-		return (org.muml.pim.protocol.RoleConnector) source;
+	protected RoleConnector getSource() {
+		return (RoleConnector) source;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected org.muml.pim.protocol.ConnectorQualityOfServiceAssumptions getTarget() {
-		return (org.muml.pim.protocol.ConnectorQualityOfServiceAssumptions) target;
+	protected ConnectorQualityOfServiceAssumptions getTarget() {
+		return (ConnectorQualityOfServiceAssumptions) target;
 	}
 }

@@ -31,6 +31,8 @@ import org.eclipse.gmf.runtime.common.ui.services.parser.ParserEditStatus;
 import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand;
 import org.eclipse.gmf.tooling.runtime.parsers.ExpressionLabelParserBase;
 import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
+import org.muml.pim.coordinationprotocol.diagram.expressions.MumlOCLFactory;
+import org.muml.pim.protocol.ProtocolPackage;
 
 /**
  * @generated
@@ -48,10 +50,8 @@ public class ConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser5021 
 	@Override
 
 	protected String getExpressionBody() {
-		return org.muml.pim.coordinationprotocol.diagram.expressions.MumlOCLFactory
-				.getExpression(18, org.muml.pim.protocol.ProtocolPackage.eINSTANCE
-						.getConnectorQualityOfServiceAssumptions(), null)
-				.body();
+		return MumlOCLFactory
+				.getExpression(18, ProtocolPackage.eINSTANCE.getConnectorQualityOfServiceAssumptions(), null).body();
 	}
 
 	/**

@@ -34,18 +34,24 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelations
 import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.pim.coordinationprotocol.diagram.edit.commands.DiscreteInteractionEndpointReceiverMessageBufferCreateCommand;
+import org.muml.pim.coordinationprotocol.diagram.edit.commands.DiscreteInteractionEndpointReceiverMessageBufferReorientCommand;
+import org.muml.pim.coordinationprotocol.diagram.edit.parts.DiscreteInteractionEndpointReceiverMessageBufferEditPart;
+import org.muml.pim.coordinationprotocol.diagram.edit.parts.MessageBufferMessageBufferCompartmentEditPart;
+import org.muml.pim.coordinationprotocol.diagram.edit.parts.MessageTypeEditPart;
+import org.muml.pim.coordinationprotocol.diagram.part.MumlVisualIDRegistry;
+import org.muml.pim.coordinationprotocol.diagram.providers.MumlElementTypes;
 
 /**
  * @generated
  */
-public class MessageBufferItemSemanticEditPolicy
-		extends org.muml.pim.coordinationprotocol.diagram.edit.policies.MumlBaseItemSemanticEditPolicy {
+public class MessageBufferItemSemanticEditPolicy extends MumlBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public MessageBufferItemSemanticEditPolicy() {
-		super(org.muml.pim.coordinationprotocol.diagram.providers.MumlElementTypes.MessageBuffer_3013);
+		super(MumlElementTypes.MessageBuffer_3013);
 	}
 
 	/**
@@ -57,8 +63,8 @@ public class MessageBufferItemSemanticEditPolicy
 		cmd.setTransactionNestingEnabled(false);
 		for (Iterator<?> it = view.getTargetEdges().iterator(); it.hasNext();) {
 			Edge incomingLink = (Edge) it.next();
-			if (org.muml.pim.coordinationprotocol.diagram.part.MumlVisualIDRegistry.getVisualID(
-					incomingLink) == org.muml.pim.coordinationprotocol.diagram.edit.parts.DiscreteInteractionEndpointReceiverMessageBufferEditPart.VISUAL_ID) {
+			if (MumlVisualIDRegistry
+					.getVisualID(incomingLink) == DiscreteInteractionEndpointReceiverMessageBufferEditPart.VISUAL_ID) {
 				DestroyReferenceRequest r = new DestroyReferenceRequest(incomingLink.getSource().getElement(), null,
 						incomingLink.getTarget().getElement(), false);
 				cmd.add(new DestroyReferenceCommand(r) {
@@ -97,14 +103,12 @@ public class MessageBufferItemSemanticEditPolicy
 		View view = (View) getHost().getModel();
 		for (Iterator<?> nit = view.getChildren().iterator(); nit.hasNext();) {
 			Node node = (Node) nit.next();
-			switch (org.muml.pim.coordinationprotocol.diagram.part.MumlVisualIDRegistry
-					.getVisualID(node)) {
-			case org.muml.pim.coordinationprotocol.diagram.edit.parts.MessageBufferMessageBufferCompartmentEditPart.VISUAL_ID:
+			switch (MumlVisualIDRegistry.getVisualID(node)) {
+			case MessageBufferMessageBufferCompartmentEditPart.VISUAL_ID:
 				for (Iterator<?> cit = node.getChildren().iterator(); cit.hasNext();) {
 					Node cnode = (Node) cit.next();
-					switch (org.muml.pim.coordinationprotocol.diagram.part.MumlVisualIDRegistry
-							.getVisualID(cnode)) {
-					case org.muml.pim.coordinationprotocol.diagram.edit.parts.MessageTypeEditPart.VISUAL_ID:
+					switch (MumlVisualIDRegistry.getVisualID(cnode)) {
+					case MessageTypeEditPart.VISUAL_ID:
 
 						cmd.add(new DestroyElementCommand(
 								new DestroyElementRequest(getEditingDomain(), cnode.getElement(), false)));
@@ -132,8 +136,7 @@ public class MessageBufferItemSemanticEditPolicy
 	 * @generated
 	 */
 	protected Command getStartCreateRelationshipCommand(CreateRelationshipRequest req) {
-		if (org.muml.pim.coordinationprotocol.diagram.providers.MumlElementTypes.DiscreteInteractionEndpointReceiverMessageBuffer_4008 == req
-				.getElementType()) {
+		if (MumlElementTypes.DiscreteInteractionEndpointReceiverMessageBuffer_4008 == req.getElementType()) {
 			return null;
 		}
 		return null;
@@ -143,11 +146,9 @@ public class MessageBufferItemSemanticEditPolicy
 	 * @generated
 	 */
 	protected Command getCompleteCreateRelationshipCommand(CreateRelationshipRequest req) {
-		if (org.muml.pim.coordinationprotocol.diagram.providers.MumlElementTypes.DiscreteInteractionEndpointReceiverMessageBuffer_4008 == req
-				.getElementType()) {
-			return getGEFWrapper(
-					new org.muml.pim.coordinationprotocol.diagram.edit.commands.DiscreteInteractionEndpointReceiverMessageBufferCreateCommand(
-							req, req.getSource(), req.getTarget()));
+		if (MumlElementTypes.DiscreteInteractionEndpointReceiverMessageBuffer_4008 == req.getElementType()) {
+			return getGEFWrapper(new DiscreteInteractionEndpointReceiverMessageBufferCreateCommand(req, req.getSource(),
+					req.getTarget()));
 		}
 		return null;
 	}
@@ -160,10 +161,8 @@ public class MessageBufferItemSemanticEditPolicy
 	 */
 	protected Command getReorientReferenceRelationshipCommand(ReorientReferenceRelationshipRequest req) {
 		switch (getVisualID(req)) {
-		case org.muml.pim.coordinationprotocol.diagram.edit.parts.DiscreteInteractionEndpointReceiverMessageBufferEditPart.VISUAL_ID:
-			return getGEFWrapper(
-					new org.muml.pim.coordinationprotocol.diagram.edit.commands.DiscreteInteractionEndpointReceiverMessageBufferReorientCommand(
-							req));
+		case DiscreteInteractionEndpointReceiverMessageBufferEditPart.VISUAL_ID:
+			return getGEFWrapper(new DiscreteInteractionEndpointReceiverMessageBufferReorientCommand(req));
 		}
 		return super.getReorientReferenceRelationshipCommand(req);
 	}

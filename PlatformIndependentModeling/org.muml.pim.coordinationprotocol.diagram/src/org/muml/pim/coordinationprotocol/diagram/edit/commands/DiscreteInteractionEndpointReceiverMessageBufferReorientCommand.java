@@ -21,6 +21,11 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelationshipRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy;
+import org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy;
+import org.muml.pim.connector.DiscreteInteractionEndpoint;
+import org.muml.pim.connector.MessageBuffer;
+import org.muml.pim.coordinationprotocol.diagram.edit.policies.MumlBaseItemSemanticEditPolicy;
 
 /**
  * @generated
@@ -63,7 +68,7 @@ public class DiscreteInteractionEndpointReceiverMessageBufferReorientCommand ext
 	 * @generated
 	 */
 	public boolean canExecute() {
-		if (false == referenceOwner instanceof org.muml.pim.connector.DiscreteInteractionEndpoint) {
+		if (false == referenceOwner instanceof DiscreteInteractionEndpoint) {
 			return false;
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
@@ -79,21 +84,18 @@ public class DiscreteInteractionEndpointReceiverMessageBufferReorientCommand ext
 	 * @generated
 	 */
 	protected boolean canReorientSource() {
-		if (!(oldEnd instanceof org.muml.pim.connector.MessageBuffer
-				&& newEnd instanceof org.muml.pim.connector.DiscreteInteractionEndpoint)) {
+		if (!(oldEnd instanceof MessageBuffer && newEnd instanceof DiscreteInteractionEndpoint)) {
 			return false;
 		}
-		View sourceView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-				.getSourceView(getRequest());
-		View targetView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-				.getTargetView(getRequest());
-		if (!org.muml.pim.coordinationprotocol.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-				.getLinkConstraints().canExistDiscreteInteractionEndpointReceiverMessageBuffer_4008(getNewSource(),
-						getOldTarget(), sourceView, targetView)) {
-			String errorMessage = org.muml.pim.coordinationprotocol.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-					.getLinkConstraints().getErrorDiscreteInteractionEndpointReceiverMessageBuffer_4008(getNewSource(),
-							getOldTarget(), sourceView, targetView);
-			org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy.showMessage(sourceView, errorMessage);
+		View sourceView = ConnectionConfigureHelperGraphicalNodeEditPolicy.getSourceView(getRequest());
+		View targetView = ConnectionConfigureHelperGraphicalNodeEditPolicy.getTargetView(getRequest());
+		if (!MumlBaseItemSemanticEditPolicy.getLinkConstraints()
+				.canExistDiscreteInteractionEndpointReceiverMessageBuffer_4008(getNewSource(), getOldTarget(),
+						sourceView, targetView)) {
+			String errorMessage = MumlBaseItemSemanticEditPolicy.getLinkConstraints()
+					.getErrorDiscreteInteractionEndpointReceiverMessageBuffer_4008(getNewSource(), getOldTarget(),
+							sourceView, targetView);
+			ErrorFeedbackEditPolicy.showMessage(sourceView, errorMessage);
 			return false;
 		}
 		return true;
@@ -103,21 +105,18 @@ public class DiscreteInteractionEndpointReceiverMessageBufferReorientCommand ext
 	 * @generated
 	 */
 	protected boolean canReorientTarget() {
-		if (!(oldEnd instanceof org.muml.pim.connector.MessageBuffer
-				&& newEnd instanceof org.muml.pim.connector.MessageBuffer)) {
+		if (!(oldEnd instanceof MessageBuffer && newEnd instanceof MessageBuffer)) {
 			return false;
 		}
-		View sourceView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-				.getSourceView(getRequest());
-		View targetView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-				.getTargetView(getRequest());
-		if (!org.muml.pim.coordinationprotocol.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-				.getLinkConstraints().canExistDiscreteInteractionEndpointReceiverMessageBuffer_4008(getOldSource(),
-						getNewTarget(), sourceView, targetView)) {
-			String errorMessage = org.muml.pim.coordinationprotocol.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-					.getLinkConstraints().getErrorDiscreteInteractionEndpointReceiverMessageBuffer_4008(getOldSource(),
-							getNewTarget(), sourceView, targetView);
-			org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy.showMessage(targetView, errorMessage);
+		View sourceView = ConnectionConfigureHelperGraphicalNodeEditPolicy.getSourceView(getRequest());
+		View targetView = ConnectionConfigureHelperGraphicalNodeEditPolicy.getTargetView(getRequest());
+		if (!MumlBaseItemSemanticEditPolicy.getLinkConstraints()
+				.canExistDiscreteInteractionEndpointReceiverMessageBuffer_4008(getOldSource(), getNewTarget(),
+						sourceView, targetView)) {
+			String errorMessage = MumlBaseItemSemanticEditPolicy.getLinkConstraints()
+					.getErrorDiscreteInteractionEndpointReceiverMessageBuffer_4008(getOldSource(), getNewTarget(),
+							sourceView, targetView);
+			ErrorFeedbackEditPolicy.showMessage(targetView, errorMessage);
 			return false;
 		}
 		return true;
@@ -170,29 +169,29 @@ public class DiscreteInteractionEndpointReceiverMessageBufferReorientCommand ext
 	/**
 	 * @generated
 	 */
-	protected org.muml.pim.connector.DiscreteInteractionEndpoint getOldSource() {
-		return (org.muml.pim.connector.DiscreteInteractionEndpoint) referenceOwner;
+	protected DiscreteInteractionEndpoint getOldSource() {
+		return (DiscreteInteractionEndpoint) referenceOwner;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected org.muml.pim.connector.DiscreteInteractionEndpoint getNewSource() {
-		return (org.muml.pim.connector.DiscreteInteractionEndpoint) newEnd;
+	protected DiscreteInteractionEndpoint getNewSource() {
+		return (DiscreteInteractionEndpoint) newEnd;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected org.muml.pim.connector.MessageBuffer getOldTarget() {
-		return (org.muml.pim.connector.MessageBuffer) oldEnd;
+	protected MessageBuffer getOldTarget() {
+		return (MessageBuffer) oldEnd;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected org.muml.pim.connector.MessageBuffer getNewTarget() {
-		return (org.muml.pim.connector.MessageBuffer) newEnd;
+	protected MessageBuffer getNewTarget() {
+		return (MessageBuffer) newEnd;
 	}
 
 	/**

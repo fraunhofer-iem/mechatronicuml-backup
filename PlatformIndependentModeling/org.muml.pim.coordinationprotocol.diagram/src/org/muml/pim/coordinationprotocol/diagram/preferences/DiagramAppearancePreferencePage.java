@@ -13,6 +13,7 @@
 package org.muml.pim.coordinationprotocol.diagram.preferences;
 
 import org.eclipse.gmf.runtime.diagram.ui.preferences.AppearancePreferencePage;
+import org.muml.pim.coordinationprotocol.diagram.part.MumlDiagramEditorPlugin;
 
 /**
  * @generated
@@ -23,7 +24,6 @@ public class DiagramAppearancePreferencePage extends AppearancePreferencePage {
 	 * @generated
 	 */
 	public DiagramAppearancePreferencePage() {
-		setPreferenceStore(org.muml.pim.coordinationprotocol.diagram.part.MumlDiagramEditorPlugin
-				.getInstance().getPreferenceStore());
+		setPreferenceStore(MumlDiagramEditorPlugin.getInstance().getPreferenceStore());
 	}
 }

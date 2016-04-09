@@ -25,6 +25,23 @@ import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.emf.ui.services.parser.ParserHintAdapter;
 import org.eclipse.gmf.runtime.notation.View;
 import org.muml.core.CorePackage;
+import org.muml.pim.coordinationprotocol.diagram.edit.parts.CoordinationProtocolNameEditPart;
+import org.muml.pim.coordinationprotocol.diagram.edit.parts.MessageBufferNameEditPart;
+import org.muml.pim.coordinationprotocol.diagram.edit.parts.MessageTypeNameEditPart;
+import org.muml.pim.coordinationprotocol.diagram.edit.parts.RoleNameEditPart;
+import org.muml.pim.coordinationprotocol.diagram.edit.parts.WrappingLabel2EditPart;
+import org.muml.pim.coordinationprotocol.diagram.edit.parts.WrappingLabel3EditPart;
+import org.muml.pim.coordinationprotocol.diagram.edit.parts.WrappingLabel5EditPart;
+import org.muml.pim.coordinationprotocol.diagram.edit.parts.WrappingLabel6EditPart;
+import org.muml.pim.coordinationprotocol.diagram.edit.parts.WrappingLabelEditPart;
+import org.muml.pim.coordinationprotocol.diagram.parsers.ConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser5020;
+import org.muml.pim.coordinationprotocol.diagram.parsers.ConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser5021;
+import org.muml.pim.coordinationprotocol.diagram.parsers.MessageBufferLabelExpressionLabelParser5018;
+import org.muml.pim.coordinationprotocol.diagram.parsers.MessageBufferLabelExpressionLabelParser5019;
+import org.muml.pim.coordinationprotocol.diagram.parsers.MessageBufferLabelExpressionLabelParser5025;
+import org.muml.pim.coordinationprotocol.diagram.parsers.MessageFormatParser;
+import org.muml.pim.coordinationprotocol.diagram.parsers.ParameterLabelExpressionLabelParser5024;
+import org.muml.pim.coordinationprotocol.diagram.part.MumlVisualIDRegistry;
 
 /**
  * @generated
@@ -42,8 +59,7 @@ public class MumlParserProvider extends AbstractProvider implements IParserProvi
 	private IParser getCoordinationProtocolName_5023Parser() {
 		if (coordinationProtocolName_5023Parser == null) {
 			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
-			org.muml.pim.coordinationprotocol.diagram.parsers.MessageFormatParser parser = new org.muml.pim.coordinationprotocol.diagram.parsers.MessageFormatParser(
-					features);
+			MessageFormatParser parser = new MessageFormatParser(features);
 			coordinationProtocolName_5023Parser = parser;
 		}
 		return coordinationProtocolName_5023Parser;
@@ -60,8 +76,7 @@ public class MumlParserProvider extends AbstractProvider implements IParserProvi
 	private IParser getRoleName_5006Parser() {
 		if (roleName_5006Parser == null) {
 			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
-			org.muml.pim.coordinationprotocol.diagram.parsers.MessageFormatParser parser = new org.muml.pim.coordinationprotocol.diagram.parsers.MessageFormatParser(
-					features);
+			MessageFormatParser parser = new MessageFormatParser(features);
 			roleName_5006Parser = parser;
 		}
 		return roleName_5006Parser;
@@ -71,21 +86,21 @@ public class MumlParserProvider extends AbstractProvider implements IParserProvi
 	 * @generated
 	 */
 	private IParser getMessageBufferLabel_5018Parser() {
-		return new org.muml.pim.coordinationprotocol.diagram.parsers.MessageBufferLabelExpressionLabelParser5018();
+		return new MessageBufferLabelExpressionLabelParser5018();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getMessageBufferLabel_5019Parser() {
-		return new org.muml.pim.coordinationprotocol.diagram.parsers.MessageBufferLabelExpressionLabelParser5019();
+		return new MessageBufferLabelExpressionLabelParser5019();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getMessageBufferLabel_5025Parser() {
-		return new org.muml.pim.coordinationprotocol.diagram.parsers.MessageBufferLabelExpressionLabelParser5025();
+		return new MessageBufferLabelExpressionLabelParser5025();
 	}
 
 	/**
@@ -99,8 +114,7 @@ public class MumlParserProvider extends AbstractProvider implements IParserProvi
 	private IParser getMessageTypeName_5010Parser() {
 		if (messageTypeName_5010Parser == null) {
 			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
-			org.muml.pim.coordinationprotocol.diagram.parsers.MessageFormatParser parser = new org.muml.pim.coordinationprotocol.diagram.parsers.MessageFormatParser(
-					features);
+			MessageFormatParser parser = new MessageFormatParser(features);
 			messageTypeName_5010Parser = parser;
 		}
 		return messageTypeName_5010Parser;
@@ -110,21 +124,21 @@ public class MumlParserProvider extends AbstractProvider implements IParserProvi
 	 * @generated
 	 */
 	private IParser getParameterLabel_5024Parser() {
-		return new org.muml.pim.coordinationprotocol.diagram.parsers.ParameterLabelExpressionLabelParser5024();
+		return new ParameterLabelExpressionLabelParser5024();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getConnectorQualityOfServiceAssumptionsLabel_5020Parser() {
-		return new org.muml.pim.coordinationprotocol.diagram.parsers.ConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser5020();
+		return new ConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser5020();
 	}
 
 	/**
 	* @generated
 	*/
 	private IParser getConnectorQualityOfServiceAssumptionsLabel_5021Parser() {
-		return new org.muml.pim.coordinationprotocol.diagram.parsers.ConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser5021();
+		return new ConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser5021();
 	}
 
 	/**
@@ -132,23 +146,23 @@ public class MumlParserProvider extends AbstractProvider implements IParserProvi
 	 */
 	protected IParser getParser(int visualID) {
 		switch (visualID) {
-		case org.muml.pim.coordinationprotocol.diagram.edit.parts.CoordinationProtocolNameEditPart.VISUAL_ID:
+		case CoordinationProtocolNameEditPart.VISUAL_ID:
 			return getCoordinationProtocolName_5023Parser();
-		case org.muml.pim.coordinationprotocol.diagram.edit.parts.RoleNameEditPart.VISUAL_ID:
+		case RoleNameEditPart.VISUAL_ID:
 			return getRoleName_5006Parser();
-		case org.muml.pim.coordinationprotocol.diagram.edit.parts.MessageBufferNameEditPart.VISUAL_ID:
+		case MessageBufferNameEditPart.VISUAL_ID:
 			return getMessageBufferLabel_5018Parser();
-		case org.muml.pim.coordinationprotocol.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID:
+		case WrappingLabelEditPart.VISUAL_ID:
 			return getMessageBufferLabel_5019Parser();
-		case org.muml.pim.coordinationprotocol.diagram.edit.parts.WrappingLabel6EditPart.VISUAL_ID:
+		case WrappingLabel6EditPart.VISUAL_ID:
 			return getMessageBufferLabel_5025Parser();
-		case org.muml.pim.coordinationprotocol.diagram.edit.parts.MessageTypeNameEditPart.VISUAL_ID:
+		case MessageTypeNameEditPart.VISUAL_ID:
 			return getMessageTypeName_5010Parser();
-		case org.muml.pim.coordinationprotocol.diagram.edit.parts.WrappingLabel5EditPart.VISUAL_ID:
+		case WrappingLabel5EditPart.VISUAL_ID:
 			return getParameterLabel_5024Parser();
-		case org.muml.pim.coordinationprotocol.diagram.edit.parts.WrappingLabel2EditPart.VISUAL_ID:
+		case WrappingLabel2EditPart.VISUAL_ID:
 			return getConnectorQualityOfServiceAssumptionsLabel_5020Parser();
-		case org.muml.pim.coordinationprotocol.diagram.edit.parts.WrappingLabel3EditPart.VISUAL_ID:
+		case WrappingLabel3EditPart.VISUAL_ID:
 			return getConnectorQualityOfServiceAssumptionsLabel_5021Parser();
 		}
 		return null;
@@ -168,13 +182,11 @@ public class MumlParserProvider extends AbstractProvider implements IParserProvi
 	public IParser getParser(IAdaptable hint) {
 		String vid = (String) hint.getAdapter(String.class);
 		if (vid != null) {
-			return getParser(org.muml.pim.coordinationprotocol.diagram.part.MumlVisualIDRegistry
-					.getVisualID(vid));
+			return getParser(MumlVisualIDRegistry.getVisualID(vid));
 		}
 		View view = (View) hint.getAdapter(View.class);
 		if (view != null) {
-			return getParser(org.muml.pim.coordinationprotocol.diagram.part.MumlVisualIDRegistry
-					.getVisualID(view));
+			return getParser(MumlVisualIDRegistry.getVisualID(view));
 		}
 		return null;
 	}
@@ -185,8 +197,7 @@ public class MumlParserProvider extends AbstractProvider implements IParserProvi
 	public boolean provides(IOperation operation) {
 		if (operation instanceof GetParserOperation) {
 			IAdaptable hint = ((GetParserOperation) operation).getHint();
-			if (org.muml.pim.coordinationprotocol.diagram.providers.MumlElementTypes
-					.getElement(hint) == null) {
+			if (MumlElementTypes.getElement(hint) == null) {
 				return false;
 			}
 			return getParser(hint) != null;

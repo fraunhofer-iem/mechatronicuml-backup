@@ -18,29 +18,27 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.emf.commands.core.commands.DuplicateEObjectsCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DuplicateElementsRequest;
+import org.muml.pim.coordinationprotocol.diagram.edit.commands.CoordinationProtocolCreateCommand;
+import org.muml.pim.coordinationprotocol.diagram.providers.MumlElementTypes;
 
 /**
  * @generated
  */
-public class ModelElementCategoryItemSemanticEditPolicy
-		extends org.muml.pim.coordinationprotocol.diagram.edit.policies.MumlBaseItemSemanticEditPolicy {
+public class ModelElementCategoryItemSemanticEditPolicy extends MumlBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public ModelElementCategoryItemSemanticEditPolicy() {
-		super(org.muml.pim.coordinationprotocol.diagram.providers.MumlElementTypes.ModelElementCategory_1000);
+		super(MumlElementTypes.ModelElementCategory_1000);
 	}
 
 	/**
 	 * @generated
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
-		if (org.muml.pim.coordinationprotocol.diagram.providers.MumlElementTypes.CoordinationProtocol_2005 == req
-				.getElementType()) {
-			return getGEFWrapper(
-					new org.muml.pim.coordinationprotocol.diagram.edit.commands.CoordinationProtocolCreateCommand(
-							req));
+		if (MumlElementTypes.CoordinationProtocol_2005 == req.getElementType()) {
+			return getGEFWrapper(new CoordinationProtocolCreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}

@@ -24,6 +24,14 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy;
+import org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy;
+import org.muml.pim.connector.ConnectorEndpoint;
+import org.muml.pim.coordinationprotocol.diagram.edit.policies.MumlBaseItemSemanticEditPolicy;
+import org.muml.pim.coordinationprotocol.diagram.providers.ElementInitializers;
+import org.muml.pim.protocol.AbstractCoordinationSpecification;
+import org.muml.pim.protocol.ProtocolFactory;
+import org.muml.pim.protocol.RoleConnector;
 
 /**
  * @generated
@@ -43,23 +51,21 @@ public class RoleConnectorCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	private final org.muml.pim.protocol.AbstractCoordinationSpecification container;
+	private final AbstractCoordinationSpecification container;
 
 	/**
 	 * @generated
 	 */
 	public RoleConnectorCreateCommand(CreateRelationshipRequest request, EObject source, EObject target) {
 		super(request.getLabel(), null, request);
-		org.muml.pim.protocol.AbstractCoordinationSpecification container = null;
+		AbstractCoordinationSpecification container = null;
 		this.source = source;
 		this.target = target;
 		container = deduceContainer(source, target);
 
 		if (container == null) {
-			View sourceView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-					.getSourceView(getRequest());
-			View targetView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-					.getTargetView(getRequest());
+			View sourceView = ConnectionConfigureHelperGraphicalNodeEditPolicy.getSourceView(getRequest());
+			View targetView = ConnectionConfigureHelperGraphicalNodeEditPolicy.getTargetView(getRequest());
 			container = deduceContainerUsingViews(sourceView, targetView);
 		}
 		this.container = container;
@@ -72,10 +78,10 @@ public class RoleConnectorCreateCommand extends EditElementCommand {
 		if (source == null && target == null) {
 			return false;
 		}
-		if (source != null && false == source instanceof org.muml.pim.connector.ConnectorEndpoint) {
+		if (source != null && false == source instanceof ConnectorEndpoint) {
 			return false;
 		}
-		if (target != null && false == target instanceof org.muml.pim.connector.ConnectorEndpoint) {
+		if (target != null && false == target instanceof ConnectorEndpoint) {
 			return false;
 		}
 		if (getSource() == null) {
@@ -85,18 +91,13 @@ public class RoleConnectorCreateCommand extends EditElementCommand {
 		if (getContainer() == null) {
 			return false;
 		}
-		View sourceView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-				.getSourceView(getRequest());
-		View targetView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-				.getTargetView(getRequest());
-		if (!org.muml.pim.coordinationprotocol.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-				.getLinkConstraints()
-				.canCreateRoleConnector_4006(getContainer(), getSource(), getTarget(), sourceView, targetView)) {
-			String errorMessage = org.muml.pim.coordinationprotocol.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-					.getLinkConstraints()
+		View sourceView = ConnectionConfigureHelperGraphicalNodeEditPolicy.getSourceView(getRequest());
+		View targetView = ConnectionConfigureHelperGraphicalNodeEditPolicy.getTargetView(getRequest());
+		if (!MumlBaseItemSemanticEditPolicy.getLinkConstraints().canCreateRoleConnector_4006(getContainer(),
+				getSource(), getTarget(), sourceView, targetView)) {
+			String errorMessage = MumlBaseItemSemanticEditPolicy.getLinkConstraints()
 					.getErrorRoleConnector_4006(getContainer(), getSource(), getTarget(), sourceView, targetView);
-			org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy
-					.showMessage(targetView != null ? targetView : sourceView, errorMessage);
+			ErrorFeedbackEditPolicy.showMessage(targetView != null ? targetView : sourceView, errorMessage);
 			return false;
 		}
 		return true;
@@ -110,13 +111,11 @@ public class RoleConnectorCreateCommand extends EditElementCommand {
 			throw new ExecutionException("Invalid arguments in create link command"); //$NON-NLS-1$
 		}
 
-		org.muml.pim.protocol.RoleConnector newElement = org.muml.pim.protocol.ProtocolFactory.eINSTANCE
-				.createRoleConnector();
+		RoleConnector newElement = ProtocolFactory.eINSTANCE.createRoleConnector();
 		getContainer().setRoleConnector(newElement);
 		newElement.getConnectorEndpoints().add(getSource());
 		newElement.getConnectorEndpoints().add(getTarget());
-		org.muml.pim.coordinationprotocol.diagram.providers.ElementInitializers.getInstance()
-				.init_RoleConnector_4006(newElement);
+		ElementInitializers.getInstance().init_RoleConnector_4006(newElement);
 		doConfigure(newElement, monitor, info);
 		((CreateElementRequest) getRequest()).setNewElement(newElement);
 		return CommandResult.newOKCommandResult(newElement);
@@ -124,10 +123,10 @@ public class RoleConnectorCreateCommand extends EditElementCommand {
 	}
 
 	/**
-	 * @generated
-	 */
-	protected void doConfigure(org.muml.pim.protocol.RoleConnector newElement, IProgressMonitor monitor,
-			IAdaptable info) throws ExecutionException {
+	* @generated
+	*/
+	protected void doConfigure(RoleConnector newElement, IProgressMonitor monitor, IAdaptable info)
+			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest()).getElementType();
 		ConfigureRequest configureRequest = new ConfigureRequest(getEditingDomain(), newElement, elementType);
 		configureRequest.setClientContext(((CreateElementRequest) getRequest()).getClientContext());
@@ -150,21 +149,21 @@ public class RoleConnectorCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected org.muml.pim.connector.ConnectorEndpoint getSource() {
-		return (org.muml.pim.connector.ConnectorEndpoint) source;
+	protected ConnectorEndpoint getSource() {
+		return (ConnectorEndpoint) source;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected org.muml.pim.connector.ConnectorEndpoint getTarget() {
-		return (org.muml.pim.connector.ConnectorEndpoint) target;
+	protected ConnectorEndpoint getTarget() {
+		return (ConnectorEndpoint) target;
 	}
 
 	/**
 	 * @generated
 	 */
-	public org.muml.pim.protocol.AbstractCoordinationSpecification getContainer() {
+	public AbstractCoordinationSpecification getContainer() {
 		return container;
 	}
 
@@ -173,14 +172,13 @@ public class RoleConnectorCreateCommand extends EditElementCommand {
 	 * Modify with appropriate logic.
 	 * @generated
 	 */
-	private static org.muml.pim.protocol.AbstractCoordinationSpecification deduceContainer(
-			EObject source, EObject target) {
+	private static AbstractCoordinationSpecification deduceContainer(EObject source, EObject target) {
 		// Find container element for the new link.
 		// Climb up by containment hierarchy starting from the source
 		// and return the first element that is instance of the container class.
 		for (EObject element = source; element != null; element = element.eContainer()) {
-			if (element instanceof org.muml.pim.protocol.AbstractCoordinationSpecification) {
-				return (org.muml.pim.protocol.AbstractCoordinationSpecification) element;
+			if (element instanceof AbstractCoordinationSpecification) {
+				return (AbstractCoordinationSpecification) element;
 			}
 		}
 		return null;
@@ -191,11 +189,10 @@ public class RoleConnectorCreateCommand extends EditElementCommand {
 	 * 
 	 * @generated
 	 */
-	private static org.muml.pim.protocol.AbstractCoordinationSpecification deduceContainerUsingViews(
-			View sourceView, View targetView) {
+	private static AbstractCoordinationSpecification deduceContainerUsingViews(View sourceView, View targetView) {
 		for (View view = sourceView; view != null; view = (View) view.eContainer()) {
-			if (view.getElement() instanceof org.muml.pim.protocol.AbstractCoordinationSpecification) {
-				return (org.muml.pim.protocol.AbstractCoordinationSpecification) view.getElement();
+			if (view.getElement() instanceof AbstractCoordinationSpecification) {
+				return (AbstractCoordinationSpecification) view.getElement();
 			}
 		}
 		return null;

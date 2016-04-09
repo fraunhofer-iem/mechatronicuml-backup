@@ -30,6 +30,13 @@ import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.edit.policies.reparent.CreationEditPolicyWithCustomReparent;
+import org.muml.core.common.edit.policies.compartment.BorderlessCompartmentEditPolicy;
+import org.muml.core.common.edit.policies.compartment.HorizontalCompartmentEditPolicy;
+import org.muml.pim.coordinationprotocol.diagram.edit.policies.MessageTypeMessageTypesCompartmentCanonicalEditPolicy;
+import org.muml.pim.coordinationprotocol.diagram.edit.policies.MessageTypeMessageTypesCompartmentItemSemanticEditPolicy;
+import org.muml.pim.coordinationprotocol.diagram.part.Messages;
+import org.muml.pim.coordinationprotocol.diagram.part.MumlVisualIDRegistry;
+import org.muml.pim.coordinationprotocol.diagram.providers.MumlElementTypes;
 
 /**
  * @generated
@@ -82,7 +89,7 @@ public class MessageTypeMessageTypesCompartmentEditPart extends ListCompartmentE
 	 * @generated
 	 */
 	public String getCompartmentName() {
-		return org.muml.pim.coordinationprotocol.diagram.part.Messages.MessageTypeMessageTypesCompartmentEditPart_title;
+		return Messages.MessageTypeMessageTypesCompartmentEditPart_title;
 	}
 
 	/**
@@ -111,19 +118,17 @@ public class MessageTypeMessageTypesCompartmentEditPart extends ListCompartmentE
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
-				new org.muml.pim.coordinationprotocol.diagram.edit.policies.MessageTypeMessageTypesCompartmentItemSemanticEditPolicy());
-		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicyWithCustomReparent(
-				org.muml.pim.coordinationprotocol.diagram.part.MumlVisualIDRegistry.TYPED_INSTANCE));
+				new MessageTypeMessageTypesCompartmentItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.CREATION_ROLE,
+				new CreationEditPolicyWithCustomReparent(MumlVisualIDRegistry.TYPED_INSTANCE));
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
-		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE,
-				new org.muml.pim.coordinationprotocol.diagram.edit.policies.MessageTypeMessageTypesCompartmentCanonicalEditPolicy());
+		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new MessageTypeMessageTypesCompartmentCanonicalEditPolicy());
 
 		installEditPolicy(org.muml.core.common.edit.policies.EditPolicyRoles.COMPARTMENT_BORDER_ROLE,
-				new org.muml.core.common.edit.policies.compartment.BorderlessCompartmentEditPolicy());
+				new BorderlessCompartmentEditPolicy());
 
-		installEditPolicy(
-				org.muml.core.common.edit.policies.EditPolicyRoles.COMPARTMENT_HORIZONTAL_LAYOUT_ROLE,
-				new org.muml.core.common.edit.policies.compartment.HorizontalCompartmentEditPolicy());
+		installEditPolicy(org.muml.core.common.edit.policies.EditPolicyRoles.COMPARTMENT_HORIZONTAL_LAYOUT_ROLE,
+				new HorizontalCompartmentEditPolicy());
 
 	}
 
@@ -143,7 +148,7 @@ public class MessageTypeMessageTypesCompartmentEditPart extends ListCompartmentE
 			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request).getViewAndElementDescriptor()
 					.getCreateElementRequestAdapter();
 			IElementType type = (IElementType) adapter.getAdapter(IElementType.class);
-			if (type == org.muml.pim.coordinationprotocol.diagram.providers.MumlElementTypes.Parameter_3016) {
+			if (type == MumlElementTypes.Parameter_3016) {
 				return this;
 			}
 			return getParent().getTargetEditPart(request);

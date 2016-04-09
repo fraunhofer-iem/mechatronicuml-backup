@@ -30,6 +30,11 @@ import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.edit.policies.reparent.CreationEditPolicyWithCustomReparent;
+import org.muml.pim.coordinationprotocol.diagram.edit.policies.CoordinationProtocolCoordinationProtocolContainerCompartmentCanonicalEditPolicy;
+import org.muml.pim.coordinationprotocol.diagram.edit.policies.CoordinationProtocolCoordinationProtocolContainerCompartmentItemSemanticEditPolicy;
+import org.muml.pim.coordinationprotocol.diagram.part.Messages;
+import org.muml.pim.coordinationprotocol.diagram.part.MumlVisualIDRegistry;
+import org.muml.pim.coordinationprotocol.diagram.providers.MumlElementTypes;
 
 /**
  * @generated
@@ -75,7 +80,7 @@ public class CoordinationProtocolCoordinationProtocolContainerCompartmentEditPar
 	 * @generated
 	 */
 	public String getCompartmentName() {
-		return org.muml.pim.coordinationprotocol.diagram.part.Messages.CoordinationProtocolCoordinationProtocolContainerCompartmentEditPart_title;
+		return Messages.CoordinationProtocolCoordinationProtocolContainerCompartmentEditPart_title;
 	}
 
 	/**
@@ -104,12 +109,12 @@ public class CoordinationProtocolCoordinationProtocolContainerCompartmentEditPar
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
-				new org.muml.pim.coordinationprotocol.diagram.edit.policies.CoordinationProtocolCoordinationProtocolContainerCompartmentItemSemanticEditPolicy());
-		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicyWithCustomReparent(
-				org.muml.pim.coordinationprotocol.diagram.part.MumlVisualIDRegistry.TYPED_INSTANCE));
+				new CoordinationProtocolCoordinationProtocolContainerCompartmentItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.CREATION_ROLE,
+				new CreationEditPolicyWithCustomReparent(MumlVisualIDRegistry.TYPED_INSTANCE));
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
 		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE,
-				new org.muml.pim.coordinationprotocol.diagram.edit.policies.CoordinationProtocolCoordinationProtocolContainerCompartmentCanonicalEditPolicy());
+				new CoordinationProtocolCoordinationProtocolContainerCompartmentCanonicalEditPolicy());
 	}
 
 	/**
@@ -129,16 +134,16 @@ public class CoordinationProtocolCoordinationProtocolContainerCompartmentEditPar
 			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request).getViewAndElementDescriptor()
 					.getCreateElementRequestAdapter();
 			IElementType type = (IElementType) adapter.getAdapter(IElementType.class);
-			if (type == org.muml.pim.coordinationprotocol.diagram.providers.MumlElementTypes.CoordinationProtocol_3015) {
+			if (type == MumlElementTypes.CoordinationProtocol_3015) {
 				return this;
 			}
-			if (type == org.muml.pim.coordinationprotocol.diagram.providers.MumlElementTypes.Role_3006) {
+			if (type == MumlElementTypes.Role_3006) {
 				return this;
 			}
-			if (type == org.muml.pim.coordinationprotocol.diagram.providers.MumlElementTypes.MessageBuffer_3013) {
+			if (type == MumlElementTypes.MessageBuffer_3013) {
 				return this;
 			}
-			if (type == org.muml.pim.coordinationprotocol.diagram.providers.MumlElementTypes.ConnectorQualityOfServiceAssumptions_3014) {
+			if (type == MumlElementTypes.ConnectorQualityOfServiceAssumptions_3014) {
 				return this;
 			}
 			return getParent().getTargetEditPart(request);
@@ -148,12 +153,10 @@ public class CoordinationProtocolCoordinationProtocolContainerCompartmentEditPar
 				for (Object type : ((CreateUnspecifiedTypeConnectionRequest) request).getElementTypes()) {
 					if (type instanceof IElementType) {
 						IElementType elementType = (IElementType) type;
-						if (elementType
-								.equals(org.muml.pim.coordinationprotocol.diagram.providers.MumlElementTypes.RoleConnector_4006)
+						if (elementType.equals(MumlElementTypes.RoleConnector_4006)
+								|| elementType.equals(MumlElementTypes.AbstractCoordinationSpecificationRoles_4007)
 								|| elementType
-										.equals(org.muml.pim.coordinationprotocol.diagram.providers.MumlElementTypes.AbstractCoordinationSpecificationRoles_4007)
-								|| elementType.equals(
-										org.muml.pim.coordinationprotocol.diagram.providers.MumlElementTypes.DiscreteInteractionEndpointReceiverMessageBuffer_4008))
+										.equals(MumlElementTypes.DiscreteInteractionEndpointReceiverMessageBuffer_4008))
 							return super.getTargetEditPart(request);
 					}
 				}

@@ -13,6 +13,9 @@
 package org.muml.pim.coordinationprotocol.diagram.providers;
 
 import org.eclipse.gmf.tooling.runtime.providers.DefaultEditPartProvider;
+import org.muml.pim.coordinationprotocol.diagram.edit.parts.ModelElementCategoryEditPart;
+import org.muml.pim.coordinationprotocol.diagram.edit.parts.MumlEditPartFactory;
+import org.muml.pim.coordinationprotocol.diagram.part.MumlVisualIDRegistry;
 
 /**
  * @generated
@@ -23,9 +26,7 @@ public class MumlEditPartProvider extends DefaultEditPartProvider {
 	 * @generated
 	 */
 	public MumlEditPartProvider() {
-		super(new org.muml.pim.coordinationprotocol.diagram.edit.parts.MumlEditPartFactory(),
-				org.muml.pim.coordinationprotocol.diagram.part.MumlVisualIDRegistry.TYPED_INSTANCE,
-				org.muml.pim.coordinationprotocol.diagram.edit.parts.ModelElementCategoryEditPart.MODEL_ID);
+		super(new MumlEditPartFactory(), MumlVisualIDRegistry.TYPED_INSTANCE, ModelElementCategoryEditPart.MODEL_ID);
 	}
 
 }

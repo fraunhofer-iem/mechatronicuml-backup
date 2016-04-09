@@ -12,10 +12,12 @@
  */
 package org.muml.pim.coordinationprotocol.diagram.providers.assistants;
 
+import org.muml.pim.coordinationprotocol.diagram.providers.MumlModelingAssistantProvider;
+
 /**
  * @generated
  */
 public class MumlModelingAssistantProviderOfConnectorQualityOfServiceAssumptionsEditPart
-		extends org.muml.pim.coordinationprotocol.diagram.providers.MumlModelingAssistantProvider {
+		extends MumlModelingAssistantProvider {
 
 }

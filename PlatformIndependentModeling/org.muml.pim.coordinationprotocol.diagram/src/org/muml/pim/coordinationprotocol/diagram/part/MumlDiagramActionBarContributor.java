@@ -29,14 +29,14 @@ public class MumlDiagramActionBarContributor extends DiagramActionBarContributor
 	 * @generated
 	 */
 	protected Class getEditorClass() {
-		return org.muml.pim.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditor.class;
+		return CoordinationProtocolDiagramEditor.class;
 	}
 
 	/**
 	 * @generated
 	 */
 	protected String getEditorId() {
-		return org.muml.pim.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditor.ID;
+		return CoordinationProtocolDiagramEditor.ID;
 	}
 
 	/**
@@ -53,8 +53,7 @@ public class MumlDiagramActionBarContributor extends DiagramActionBarContributor
 		if (editMenu.find("validationGroup") == null) { //$NON-NLS-1$
 			editMenu.add(new GroupMarker("validationGroup")); //$NON-NLS-1$
 		}
-		IAction validateAction = new org.muml.pim.coordinationprotocol.diagram.part.ValidateAction(
-				page);
+		IAction validateAction = new ValidateAction(page);
 		editMenu.appendToGroup("validationGroup", validateAction); //$NON-NLS-1$
 	}
 }

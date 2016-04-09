@@ -12,10 +12,11 @@
  */
 package org.muml.pim.coordinationprotocol.diagram.providers.assistants;
 
+import org.muml.pim.coordinationprotocol.diagram.providers.MumlModelingAssistantProvider;
+
 /**
  * @generated
  */
-public class MumlModelingAssistantProviderOfParameterEditPart
-		extends org.muml.pim.coordinationprotocol.diagram.providers.MumlModelingAssistantProvider {
+public class MumlModelingAssistantProviderOfParameterEditPart extends MumlModelingAssistantProvider {
 
 }

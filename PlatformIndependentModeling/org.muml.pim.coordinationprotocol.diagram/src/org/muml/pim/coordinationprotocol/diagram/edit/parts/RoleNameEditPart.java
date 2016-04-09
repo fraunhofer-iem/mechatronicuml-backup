@@ -59,6 +59,10 @@ import org.eclipse.swt.accessibility.AccessibleEvent;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.FontData;
 import org.eclipse.swt.graphics.Image;
+import org.muml.pim.coordinationprotocol.diagram.edit.policies.MumlTextSelectionEditPolicy;
+import org.muml.pim.coordinationprotocol.diagram.part.MumlVisualIDRegistry;
+import org.muml.pim.coordinationprotocol.diagram.providers.MumlElementTypes;
+import org.muml.pim.coordinationprotocol.diagram.providers.MumlParserProvider;
 
 /**
  * @generated
@@ -123,8 +127,8 @@ public class RoleNameEditPart extends LabelEditPart implements ITextAwareEditPar
 	 */
 	static {
 		registerSnapBackPosition(
-				org.muml.pim.coordinationprotocol.diagram.part.MumlVisualIDRegistry.getType(
-						org.muml.pim.coordinationprotocol.diagram.edit.parts.RoleNameEditPart.VISUAL_ID),
+				MumlVisualIDRegistry
+						.getType(org.muml.pim.coordinationprotocol.diagram.edit.parts.RoleNameEditPart.VISUAL_ID),
 				new Point(0, 0));
 	}
 
@@ -141,8 +145,7 @@ public class RoleNameEditPart extends LabelEditPart implements ITextAwareEditPar
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicy.DIRECT_EDIT_ROLE, new LabelDirectEditPolicy());
-		installEditPolicy(EditPolicy.SELECTION_FEEDBACK_ROLE,
-				new org.muml.pim.coordinationprotocol.diagram.edit.policies.MumlTextSelectionEditPolicy());
+		installEditPolicy(EditPolicy.SELECTION_FEEDBACK_ROLE, new MumlTextSelectionEditPolicy());
 	}
 
 	/**
@@ -354,11 +357,8 @@ public class RoleNameEditPart extends LabelEditPart implements ITextAwareEditPar
 	 */
 	public IParser getParser() {
 		if (parser == null) {
-			parser = org.muml.pim.coordinationprotocol.diagram.providers.MumlParserProvider.getParser(
-					org.muml.pim.coordinationprotocol.diagram.providers.MumlElementTypes.Role_3006,
-					getParserElement(),
-					org.muml.pim.coordinationprotocol.diagram.part.MumlVisualIDRegistry.getType(
-							org.muml.pim.coordinationprotocol.diagram.edit.parts.RoleNameEditPart.VISUAL_ID));
+			parser = MumlParserProvider.getParser(MumlElementTypes.Role_3006, getParserElement(), MumlVisualIDRegistry
+					.getType(org.muml.pim.coordinationprotocol.diagram.edit.parts.RoleNameEditPart.VISUAL_ID));
 		}
 		return parser;
 	}
@@ -368,9 +368,7 @@ public class RoleNameEditPart extends LabelEditPart implements ITextAwareEditPar
 	 */
 	protected DirectEditManager getManager() {
 		if (manager == null) {
-			setManager(new TextDirectEditManager(this, null,
-					org.muml.pim.coordinationprotocol.diagram.edit.parts.MumlEditPartFactory
-							.getTextCellEditorLocator(this)));
+			setManager(new TextDirectEditManager(this, null, MumlEditPartFactory.getTextCellEditorLocator(this)));
 		}
 		return manager;
 	}

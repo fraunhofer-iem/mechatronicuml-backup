@@ -19,12 +19,15 @@ import java.util.List;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
+import org.muml.pim.coordinationprotocol.diagram.edit.parts.CoordinationProtocolEditPart;
+import org.muml.pim.coordinationprotocol.diagram.edit.parts.RoleEditPart;
+import org.muml.pim.coordinationprotocol.diagram.providers.MumlElementTypes;
+import org.muml.pim.coordinationprotocol.diagram.providers.MumlModelingAssistantProvider;
 
 /**
  * @generated
  */
-public class MumlModelingAssistantProviderOfCoordinationProtocolEditPart
-		extends org.muml.pim.coordinationprotocol.diagram.providers.MumlModelingAssistantProvider {
+public class MumlModelingAssistantProviderOfCoordinationProtocolEditPart extends MumlModelingAssistantProvider {
 
 	/**
 	 * @generated
@@ -32,18 +35,15 @@ public class MumlModelingAssistantProviderOfCoordinationProtocolEditPart
 	@Override
 	public List<IElementType> getRelTypesOnSource(IAdaptable source) {
 		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source.getAdapter(IGraphicalEditPart.class);
-		return doGetRelTypesOnSource(
-				(org.muml.pim.coordinationprotocol.diagram.edit.parts.CoordinationProtocolEditPart) sourceEditPart);
+		return doGetRelTypesOnSource((CoordinationProtocolEditPart) sourceEditPart);
 	}
 
 	/**
-	 * @generated
-	 */
-	public List<IElementType> doGetRelTypesOnSource(
-			org.muml.pim.coordinationprotocol.diagram.edit.parts.CoordinationProtocolEditPart source) {
+	* @generated
+	*/
+	public List<IElementType> doGetRelTypesOnSource(CoordinationProtocolEditPart source) {
 		List<IElementType> types = new ArrayList<IElementType>(1);
-		types.add(
-				org.muml.pim.coordinationprotocol.diagram.providers.MumlElementTypes.AbstractCoordinationSpecificationRoles_4007);
+		types.add(MumlElementTypes.AbstractCoordinationSpecificationRoles_4007);
 		return types;
 	}
 
@@ -54,21 +54,17 @@ public class MumlModelingAssistantProviderOfCoordinationProtocolEditPart
 	public List<IElementType> getRelTypesOnSourceAndTarget(IAdaptable source, IAdaptable target) {
 		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source.getAdapter(IGraphicalEditPart.class);
 		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target.getAdapter(IGraphicalEditPart.class);
-		return doGetRelTypesOnSourceAndTarget(
-				(org.muml.pim.coordinationprotocol.diagram.edit.parts.CoordinationProtocolEditPart) sourceEditPart,
-				targetEditPart);
+		return doGetRelTypesOnSourceAndTarget((CoordinationProtocolEditPart) sourceEditPart, targetEditPart);
 	}
 
 	/**
-	 * @generated
-	 */
-	public List<IElementType> doGetRelTypesOnSourceAndTarget(
-			org.muml.pim.coordinationprotocol.diagram.edit.parts.CoordinationProtocolEditPart source,
+	* @generated
+	*/
+	public List<IElementType> doGetRelTypesOnSourceAndTarget(CoordinationProtocolEditPart source,
 			IGraphicalEditPart targetEditPart) {
 		List<IElementType> types = new LinkedList<IElementType>();
-		if (targetEditPart instanceof org.muml.pim.coordinationprotocol.diagram.edit.parts.RoleEditPart) {
-			types.add(
-					org.muml.pim.coordinationprotocol.diagram.providers.MumlElementTypes.AbstractCoordinationSpecificationRoles_4007);
+		if (targetEditPart instanceof RoleEditPart) {
+			types.add(MumlElementTypes.AbstractCoordinationSpecificationRoles_4007);
 		}
 		return types;
 	}
@@ -79,20 +75,16 @@ public class MumlModelingAssistantProviderOfCoordinationProtocolEditPart
 	@Override
 	public List<IElementType> getTypesForTarget(IAdaptable source, IElementType relationshipType) {
 		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source.getAdapter(IGraphicalEditPart.class);
-		return doGetTypesForTarget(
-				(org.muml.pim.coordinationprotocol.diagram.edit.parts.CoordinationProtocolEditPart) sourceEditPart,
-				relationshipType);
+		return doGetTypesForTarget((CoordinationProtocolEditPart) sourceEditPart, relationshipType);
 	}
 
 	/**
-	 * @generated
-	 */
-	public List<IElementType> doGetTypesForTarget(
-			org.muml.pim.coordinationprotocol.diagram.edit.parts.CoordinationProtocolEditPart source,
-			IElementType relationshipType) {
+	* @generated
+	*/
+	public List<IElementType> doGetTypesForTarget(CoordinationProtocolEditPart source, IElementType relationshipType) {
 		List<IElementType> types = new ArrayList<IElementType>();
-		if (relationshipType == org.muml.pim.coordinationprotocol.diagram.providers.MumlElementTypes.AbstractCoordinationSpecificationRoles_4007) {
-			types.add(org.muml.pim.coordinationprotocol.diagram.providers.MumlElementTypes.Role_3006);
+		if (relationshipType == MumlElementTypes.AbstractCoordinationSpecificationRoles_4007) {
+			types.add(MumlElementTypes.Role_3006);
 		}
 		return types;
 	}

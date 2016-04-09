@@ -32,18 +32,22 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyReferenceRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelationshipRequest;
 import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.pim.coordinationprotocol.diagram.edit.commands.AbstractCoordinationSpecificationRolesCreateCommand;
+import org.muml.pim.coordinationprotocol.diagram.edit.commands.AbstractCoordinationSpecificationRolesReorientCommand;
+import org.muml.pim.coordinationprotocol.diagram.edit.parts.AbstractCoordinationSpecificationRolesEditPart;
+import org.muml.pim.coordinationprotocol.diagram.part.MumlVisualIDRegistry;
+import org.muml.pim.coordinationprotocol.diagram.providers.MumlElementTypes;
 
 /**
  * @generated
  */
-public class CoordinationProtocol2ItemSemanticEditPolicy
-		extends org.muml.pim.coordinationprotocol.diagram.edit.policies.MumlBaseItemSemanticEditPolicy {
+public class CoordinationProtocol2ItemSemanticEditPolicy extends MumlBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public CoordinationProtocol2ItemSemanticEditPolicy() {
-		super(org.muml.pim.coordinationprotocol.diagram.providers.MumlElementTypes.CoordinationProtocol_3015);
+		super(MumlElementTypes.CoordinationProtocol_3015);
 	}
 
 	/**
@@ -55,8 +59,8 @@ public class CoordinationProtocol2ItemSemanticEditPolicy
 		cmd.setTransactionNestingEnabled(false);
 		for (Iterator<?> it = view.getSourceEdges().iterator(); it.hasNext();) {
 			Edge outgoingLink = (Edge) it.next();
-			if (org.muml.pim.coordinationprotocol.diagram.part.MumlVisualIDRegistry.getVisualID(
-					outgoingLink) == org.muml.pim.coordinationprotocol.diagram.edit.parts.AbstractCoordinationSpecificationRolesEditPart.VISUAL_ID) {
+			if (MumlVisualIDRegistry
+					.getVisualID(outgoingLink) == AbstractCoordinationSpecificationRolesEditPart.VISUAL_ID) {
 				DestroyReferenceRequest r = new DestroyReferenceRequest(outgoingLink.getSource().getElement(), null,
 						outgoingLink.getTarget().getElement(), false);
 				cmd.add(new DestroyReferenceCommand(r) {
@@ -100,11 +104,9 @@ public class CoordinationProtocol2ItemSemanticEditPolicy
 	 * @generated
 	 */
 	protected Command getStartCreateRelationshipCommand(CreateRelationshipRequest req) {
-		if (org.muml.pim.coordinationprotocol.diagram.providers.MumlElementTypes.AbstractCoordinationSpecificationRoles_4007 == req
-				.getElementType()) {
+		if (MumlElementTypes.AbstractCoordinationSpecificationRoles_4007 == req.getElementType()) {
 			return getGEFWrapper(
-					new org.muml.pim.coordinationprotocol.diagram.edit.commands.AbstractCoordinationSpecificationRolesCreateCommand(
-							req, req.getSource(), req.getTarget()));
+					new AbstractCoordinationSpecificationRolesCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return null;
 	}
@@ -113,8 +115,7 @@ public class CoordinationProtocol2ItemSemanticEditPolicy
 	 * @generated
 	 */
 	protected Command getCompleteCreateRelationshipCommand(CreateRelationshipRequest req) {
-		if (org.muml.pim.coordinationprotocol.diagram.providers.MumlElementTypes.AbstractCoordinationSpecificationRoles_4007 == req
-				.getElementType()) {
+		if (MumlElementTypes.AbstractCoordinationSpecificationRoles_4007 == req.getElementType()) {
 			return null;
 		}
 		return null;
@@ -128,10 +129,8 @@ public class CoordinationProtocol2ItemSemanticEditPolicy
 	 */
 	protected Command getReorientReferenceRelationshipCommand(ReorientReferenceRelationshipRequest req) {
 		switch (getVisualID(req)) {
-		case org.muml.pim.coordinationprotocol.diagram.edit.parts.AbstractCoordinationSpecificationRolesEditPart.VISUAL_ID:
-			return getGEFWrapper(
-					new org.muml.pim.coordinationprotocol.diagram.edit.commands.AbstractCoordinationSpecificationRolesReorientCommand(
-							req));
+		case AbstractCoordinationSpecificationRolesEditPart.VISUAL_ID:
+			return getGEFWrapper(new AbstractCoordinationSpecificationRolesReorientCommand(req));
 		}
 		return super.getReorientReferenceRelationshipCommand(req);
 	}

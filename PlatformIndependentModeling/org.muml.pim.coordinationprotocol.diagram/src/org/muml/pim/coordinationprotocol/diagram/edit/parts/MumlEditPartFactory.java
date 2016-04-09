@@ -18,6 +18,7 @@ import org.eclipse.gef.tools.CellEditorLocator;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ITextAwareEditPart;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.directedit.locator.CellEditorLocatorAccess;
+import org.muml.pim.coordinationprotocol.diagram.part.MumlVisualIDRegistry;
 
 /**
  * @generated
@@ -30,101 +31,79 @@ public class MumlEditPartFactory implements EditPartFactory {
 	public EditPart createEditPart(EditPart context, Object model) {
 		if (model instanceof View) {
 			View view = (View) model;
-			switch (org.muml.pim.coordinationprotocol.diagram.part.MumlVisualIDRegistry
-					.getVisualID(view)) {
+			switch (MumlVisualIDRegistry.getVisualID(view)) {
 
-			case org.muml.pim.coordinationprotocol.diagram.edit.parts.ModelElementCategoryEditPart.VISUAL_ID:
-				return new org.muml.pim.coordinationprotocol.diagram.edit.parts.ModelElementCategoryEditPart(
-						view);
+			case ModelElementCategoryEditPart.VISUAL_ID:
+				return new ModelElementCategoryEditPart(view);
 
-			case org.muml.pim.coordinationprotocol.diagram.edit.parts.CoordinationProtocolEditPart.VISUAL_ID:
-				return new org.muml.pim.coordinationprotocol.diagram.edit.parts.CoordinationProtocolEditPart(
-						view);
+			case CoordinationProtocolEditPart.VISUAL_ID:
+				return new CoordinationProtocolEditPart(view);
 
-			case org.muml.pim.coordinationprotocol.diagram.edit.parts.CoordinationProtocol2EditPart.VISUAL_ID:
-				return new org.muml.pim.coordinationprotocol.diagram.edit.parts.CoordinationProtocol2EditPart(
-						view);
+			case CoordinationProtocol2EditPart.VISUAL_ID:
+				return new CoordinationProtocol2EditPart(view);
 
-			case org.muml.pim.coordinationprotocol.diagram.edit.parts.CoordinationProtocolNameEditPart.VISUAL_ID:
-				return new org.muml.pim.coordinationprotocol.diagram.edit.parts.CoordinationProtocolNameEditPart(
-						view);
+			case CoordinationProtocolNameEditPart.VISUAL_ID:
+				return new CoordinationProtocolNameEditPart(view);
 
-			case org.muml.pim.coordinationprotocol.diagram.edit.parts.RoleEditPart.VISUAL_ID:
-				return new org.muml.pim.coordinationprotocol.diagram.edit.parts.RoleEditPart(view);
+			case RoleEditPart.VISUAL_ID:
+				return new RoleEditPart(view);
 
-			case org.muml.pim.coordinationprotocol.diagram.edit.parts.RoleNameEditPart.VISUAL_ID:
-				return new org.muml.pim.coordinationprotocol.diagram.edit.parts.RoleNameEditPart(view);
+			case RoleNameEditPart.VISUAL_ID:
+				return new RoleNameEditPart(view);
 
-			case org.muml.pim.coordinationprotocol.diagram.edit.parts.MessageBufferEditPart.VISUAL_ID:
-				return new org.muml.pim.coordinationprotocol.diagram.edit.parts.MessageBufferEditPart(
-						view);
+			case MessageBufferEditPart.VISUAL_ID:
+				return new MessageBufferEditPart(view);
 
-			case org.muml.pim.coordinationprotocol.diagram.edit.parts.MessageBufferNameEditPart.VISUAL_ID:
-				return new org.muml.pim.coordinationprotocol.diagram.edit.parts.MessageBufferNameEditPart(
-						view);
+			case MessageBufferNameEditPart.VISUAL_ID:
+				return new MessageBufferNameEditPart(view);
 
-			case org.muml.pim.coordinationprotocol.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID:
-				return new org.muml.pim.coordinationprotocol.diagram.edit.parts.WrappingLabelEditPart(
-						view);
+			case WrappingLabelEditPart.VISUAL_ID:
+				return new WrappingLabelEditPart(view);
 
-			case org.muml.pim.coordinationprotocol.diagram.edit.parts.WrappingLabel6EditPart.VISUAL_ID:
-				return new org.muml.pim.coordinationprotocol.diagram.edit.parts.WrappingLabel6EditPart(
-						view);
+			case WrappingLabel6EditPart.VISUAL_ID:
+				return new WrappingLabel6EditPart(view);
 
-			case org.muml.pim.coordinationprotocol.diagram.edit.parts.MessageTypeEditPart.VISUAL_ID:
-				return new org.muml.pim.coordinationprotocol.diagram.edit.parts.MessageTypeEditPart(
-						view);
+			case MessageTypeEditPart.VISUAL_ID:
+				return new MessageTypeEditPart(view);
 
-			case org.muml.pim.coordinationprotocol.diagram.edit.parts.MessageTypeNameEditPart.VISUAL_ID:
-				return new org.muml.pim.coordinationprotocol.diagram.edit.parts.MessageTypeNameEditPart(
-						view);
+			case MessageTypeNameEditPart.VISUAL_ID:
+				return new MessageTypeNameEditPart(view);
 
-			case org.muml.pim.coordinationprotocol.diagram.edit.parts.ParameterEditPart.VISUAL_ID:
-				return new org.muml.pim.coordinationprotocol.diagram.edit.parts.ParameterEditPart(view);
+			case ParameterEditPart.VISUAL_ID:
+				return new ParameterEditPart(view);
 
-			case org.muml.pim.coordinationprotocol.diagram.edit.parts.WrappingLabel5EditPart.VISUAL_ID:
-				return new org.muml.pim.coordinationprotocol.diagram.edit.parts.WrappingLabel5EditPart(
-						view);
+			case WrappingLabel5EditPart.VISUAL_ID:
+				return new WrappingLabel5EditPart(view);
 
-			case org.muml.pim.coordinationprotocol.diagram.edit.parts.ConnectorQualityOfServiceAssumptionsEditPart.VISUAL_ID:
-				return new org.muml.pim.coordinationprotocol.diagram.edit.parts.ConnectorQualityOfServiceAssumptionsEditPart(
-						view);
+			case ConnectorQualityOfServiceAssumptionsEditPart.VISUAL_ID:
+				return new ConnectorQualityOfServiceAssumptionsEditPart(view);
 
-			case org.muml.pim.coordinationprotocol.diagram.edit.parts.WrappingLabel2EditPart.VISUAL_ID:
-				return new org.muml.pim.coordinationprotocol.diagram.edit.parts.WrappingLabel2EditPart(
-						view);
+			case WrappingLabel2EditPart.VISUAL_ID:
+				return new WrappingLabel2EditPart(view);
 
-			case org.muml.pim.coordinationprotocol.diagram.edit.parts.WrappingLabel3EditPart.VISUAL_ID:
-				return new org.muml.pim.coordinationprotocol.diagram.edit.parts.WrappingLabel3EditPart(
-						view);
+			case WrappingLabel3EditPart.VISUAL_ID:
+				return new WrappingLabel3EditPart(view);
 
-			case org.muml.pim.coordinationprotocol.diagram.edit.parts.CoordinationProtocolCoordinationProtocolContainerCompartmentEditPart.VISUAL_ID:
-				return new org.muml.pim.coordinationprotocol.diagram.edit.parts.CoordinationProtocolCoordinationProtocolContainerCompartmentEditPart(
-						view);
+			case CoordinationProtocolCoordinationProtocolContainerCompartmentEditPart.VISUAL_ID:
+				return new CoordinationProtocolCoordinationProtocolContainerCompartmentEditPart(view);
 
-			case org.muml.pim.coordinationprotocol.diagram.edit.parts.MessageBufferMessageBufferCompartmentEditPart.VISUAL_ID:
-				return new org.muml.pim.coordinationprotocol.diagram.edit.parts.MessageBufferMessageBufferCompartmentEditPart(
-						view);
+			case MessageBufferMessageBufferCompartmentEditPart.VISUAL_ID:
+				return new MessageBufferMessageBufferCompartmentEditPart(view);
 
-			case org.muml.pim.coordinationprotocol.diagram.edit.parts.MessageTypeMessageTypesCompartmentEditPart.VISUAL_ID:
-				return new org.muml.pim.coordinationprotocol.diagram.edit.parts.MessageTypeMessageTypesCompartmentEditPart(
-						view);
+			case MessageTypeMessageTypesCompartmentEditPart.VISUAL_ID:
+				return new MessageTypeMessageTypesCompartmentEditPart(view);
 
-			case org.muml.pim.coordinationprotocol.diagram.edit.parts.AbstractCoordinationSpecificationRolesEditPart.VISUAL_ID:
-				return new org.muml.pim.coordinationprotocol.diagram.edit.parts.AbstractCoordinationSpecificationRolesEditPart(
-						view);
+			case AbstractCoordinationSpecificationRolesEditPart.VISUAL_ID:
+				return new AbstractCoordinationSpecificationRolesEditPart(view);
 
-			case org.muml.pim.coordinationprotocol.diagram.edit.parts.RoleConnectorEditPart.VISUAL_ID:
-				return new org.muml.pim.coordinationprotocol.diagram.edit.parts.RoleConnectorEditPart(
-						view);
+			case RoleConnectorEditPart.VISUAL_ID:
+				return new RoleConnectorEditPart(view);
 
-			case org.muml.pim.coordinationprotocol.diagram.edit.parts.DiscreteInteractionEndpointReceiverMessageBufferEditPart.VISUAL_ID:
-				return new org.muml.pim.coordinationprotocol.diagram.edit.parts.DiscreteInteractionEndpointReceiverMessageBufferEditPart(
-						view);
+			case DiscreteInteractionEndpointReceiverMessageBufferEditPart.VISUAL_ID:
+				return new DiscreteInteractionEndpointReceiverMessageBufferEditPart(view);
 
-			case org.muml.pim.coordinationprotocol.diagram.edit.parts.RoleConnectorConnectorQualityOfServiceAssumptionsEditPart.VISUAL_ID:
-				return new org.muml.pim.coordinationprotocol.diagram.edit.parts.RoleConnectorConnectorQualityOfServiceAssumptionsEditPart(
-						view);
+			case RoleConnectorConnectorQualityOfServiceAssumptionsEditPart.VISUAL_ID:
+				return new RoleConnectorConnectorQualityOfServiceAssumptionsEditPart(view);
 
 			}
 		}

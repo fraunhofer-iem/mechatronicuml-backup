@@ -20,6 +20,7 @@ import org.eclipse.gef.palette.PaletteRoot;
 import org.eclipse.gef.palette.ToolEntry;
 import org.eclipse.gmf.tooling.runtime.part.DefaultLinkToolEntry;
 import org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry;
+import org.muml.pim.coordinationprotocol.diagram.providers.MumlElementTypes;
 
 /**
  * @generated
@@ -39,8 +40,7 @@ public class MumlPaletteFactory {
 	 * @generated
 	 */
 	private PaletteContainer createDe1Group() {
-		PaletteGroup paletteContainer = new PaletteGroup(
-				org.muml.pim.coordinationprotocol.diagram.part.Messages.De1Group_title);
+		PaletteGroup paletteContainer = new PaletteGroup(Messages.De1Group_title);
 		paletteContainer.setId("createDe1Group"); //$NON-NLS-1$
 		paletteContainer.add(createCoordinationProtocol1CreationTool());
 		paletteContainer.add(createRoleConnector2CreationTool());
@@ -52,11 +52,9 @@ public class MumlPaletteFactory {
 	 * @generated
 	 */
 	private PaletteContainer createMisreferencedtools2Group() {
-		PaletteGroup paletteContainer = new PaletteGroup(
-				org.muml.pim.coordinationprotocol.diagram.part.Messages.Misreferencedtools2Group_title);
+		PaletteGroup paletteContainer = new PaletteGroup(Messages.Misreferencedtools2Group_title);
 		paletteContainer.setId("createMisreferencedtools2Group"); //$NON-NLS-1$
-		paletteContainer.setDescription(
-				org.muml.pim.coordinationprotocol.diagram.part.Messages.Misreferencedtools2Group_desc);
+		paletteContainer.setDescription(Messages.Misreferencedtools2Group_desc);
 		paletteContainer.add(createRole1CreationTool());
 		return paletteContainer;
 	}
@@ -65,14 +63,12 @@ public class MumlPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createCoordinationProtocol1CreationTool() {
-		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
-				org.muml.pim.coordinationprotocol.diagram.part.Messages.CoordinationProtocol1CreationTool_title,
-				org.muml.pim.coordinationprotocol.diagram.part.Messages.CoordinationProtocol1CreationTool_desc,
-				Collections.singletonList(
-						org.muml.pim.coordinationprotocol.diagram.providers.MumlElementTypes.CoordinationProtocol_2005));
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.CoordinationProtocol1CreationTool_title,
+				Messages.CoordinationProtocol1CreationTool_desc,
+				Collections.singletonList(MumlElementTypes.CoordinationProtocol_2005));
 		entry.setId("createCoordinationProtocol1CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(org.muml.pim.coordinationprotocol.diagram.part.MumlDiagramEditorPlugin
-				.findImageDescriptor("/org.muml.pim.common/icons/CoordinationProtocol.gif")); //$NON-NLS-1$
+		entry.setSmallIcon(
+				MumlDiagramEditorPlugin.findImageDescriptor("/org.muml.pim.common/icons/CoordinationProtocol.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -81,15 +77,11 @@ public class MumlPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createRoleConnector2CreationTool() {
-		DefaultLinkToolEntry entry = new DefaultLinkToolEntry(
-				org.muml.pim.coordinationprotocol.diagram.part.Messages.RoleConnector2CreationTool_title,
-				org.muml.pim.coordinationprotocol.diagram.part.Messages.RoleConnector2CreationTool_desc,
-				Collections.singletonList(
-						org.muml.pim.coordinationprotocol.diagram.providers.MumlElementTypes.RoleConnector_4006));
+		DefaultLinkToolEntry entry = new DefaultLinkToolEntry(Messages.RoleConnector2CreationTool_title,
+				Messages.RoleConnector2CreationTool_desc,
+				Collections.singletonList(MumlElementTypes.RoleConnector_4006));
 		entry.setId("createRoleConnector2CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(
-				org.muml.pim.coordinationprotocol.diagram.providers.MumlElementTypes.getImageDescriptor(
-						org.muml.pim.coordinationprotocol.diagram.providers.MumlElementTypes.RoleConnector_4006));
+		entry.setSmallIcon(MumlElementTypes.getImageDescriptor(MumlElementTypes.RoleConnector_4006));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -98,15 +90,10 @@ public class MumlPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createRole1CreationTool() {
-		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
-				org.muml.pim.coordinationprotocol.diagram.part.Messages.Role1CreationTool_title,
-				org.muml.pim.coordinationprotocol.diagram.part.Messages.Role1CreationTool_desc,
-				Collections.singletonList(
-						org.muml.pim.coordinationprotocol.diagram.providers.MumlElementTypes.Role_3006));
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.Role1CreationTool_title,
+				Messages.Role1CreationTool_desc, Collections.singletonList(MumlElementTypes.Role_3006));
 		entry.setId("createRole1CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(
-				org.muml.pim.coordinationprotocol.diagram.providers.MumlElementTypes.getImageDescriptor(
-						org.muml.pim.coordinationprotocol.diagram.providers.MumlElementTypes.Role_3006));
+		entry.setSmallIcon(MumlElementTypes.getImageDescriptor(MumlElementTypes.Role_3006));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}

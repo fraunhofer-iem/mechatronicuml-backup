@@ -18,12 +18,14 @@ import java.util.List;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
+import org.muml.pim.coordinationprotocol.diagram.edit.parts.MessageBufferEditPart;
+import org.muml.pim.coordinationprotocol.diagram.providers.MumlElementTypes;
+import org.muml.pim.coordinationprotocol.diagram.providers.MumlModelingAssistantProvider;
 
 /**
  * @generated
  */
-public class MumlModelingAssistantProviderOfMessageBufferEditPart
-		extends org.muml.pim.coordinationprotocol.diagram.providers.MumlModelingAssistantProvider {
+public class MumlModelingAssistantProviderOfMessageBufferEditPart extends MumlModelingAssistantProvider {
 
 	/**
 	 * @generated
@@ -31,8 +33,7 @@ public class MumlModelingAssistantProviderOfMessageBufferEditPart
 	@Override
 	public List<IElementType> getTypesForPopupBar(IAdaptable host) {
 		List<IElementType> types = new ArrayList<IElementType>(1);
-		types.add(
-				org.muml.pim.coordinationprotocol.diagram.providers.MumlElementTypes.MessageType_3009);
+		types.add(MumlElementTypes.MessageType_3009);
 		return types;
 	}
 
@@ -42,18 +43,15 @@ public class MumlModelingAssistantProviderOfMessageBufferEditPart
 	@Override
 	public List<IElementType> getRelTypesOnTarget(IAdaptable target) {
 		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target.getAdapter(IGraphicalEditPart.class);
-		return doGetRelTypesOnTarget(
-				(org.muml.pim.coordinationprotocol.diagram.edit.parts.MessageBufferEditPart) targetEditPart);
+		return doGetRelTypesOnTarget((MessageBufferEditPart) targetEditPart);
 	}
 
 	/**
-	 * @generated
-	 */
-	public List<IElementType> doGetRelTypesOnTarget(
-			org.muml.pim.coordinationprotocol.diagram.edit.parts.MessageBufferEditPart target) {
+	* @generated
+	*/
+	public List<IElementType> doGetRelTypesOnTarget(MessageBufferEditPart target) {
 		List<IElementType> types = new ArrayList<IElementType>(1);
-		types.add(
-				org.muml.pim.coordinationprotocol.diagram.providers.MumlElementTypes.DiscreteInteractionEndpointReceiverMessageBuffer_4008);
+		types.add(MumlElementTypes.DiscreteInteractionEndpointReceiverMessageBuffer_4008);
 		return types;
 	}
 
@@ -63,20 +61,16 @@ public class MumlModelingAssistantProviderOfMessageBufferEditPart
 	@Override
 	public List<IElementType> getTypesForSource(IAdaptable target, IElementType relationshipType) {
 		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target.getAdapter(IGraphicalEditPart.class);
-		return doGetTypesForSource(
-				(org.muml.pim.coordinationprotocol.diagram.edit.parts.MessageBufferEditPart) targetEditPart,
-				relationshipType);
+		return doGetTypesForSource((MessageBufferEditPart) targetEditPart, relationshipType);
 	}
 
 	/**
-	 * @generated
-	 */
-	public List<IElementType> doGetTypesForSource(
-			org.muml.pim.coordinationprotocol.diagram.edit.parts.MessageBufferEditPart target,
-			IElementType relationshipType) {
+	* @generated
+	*/
+	public List<IElementType> doGetTypesForSource(MessageBufferEditPart target, IElementType relationshipType) {
 		List<IElementType> types = new ArrayList<IElementType>();
-		if (relationshipType == org.muml.pim.coordinationprotocol.diagram.providers.MumlElementTypes.DiscreteInteractionEndpointReceiverMessageBuffer_4008) {
-			types.add(org.muml.pim.coordinationprotocol.diagram.providers.MumlElementTypes.Role_3006);
+		if (relationshipType == MumlElementTypes.DiscreteInteractionEndpointReceiverMessageBuffer_4008) {
+			types.add(MumlElementTypes.Role_3006);
 		}
 		return types;
 	}

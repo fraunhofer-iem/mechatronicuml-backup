@@ -14,29 +14,27 @@ package org.muml.pim.coordinationprotocol.diagram.edit.policies;
 
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
+import org.muml.pim.coordinationprotocol.diagram.edit.commands.ParameterCreateCommand;
+import org.muml.pim.coordinationprotocol.diagram.providers.MumlElementTypes;
 
 /**
  * @generated
  */
-public class MessageTypeMessageTypesCompartmentItemSemanticEditPolicy
-		extends org.muml.pim.coordinationprotocol.diagram.edit.policies.MumlBaseItemSemanticEditPolicy {
+public class MessageTypeMessageTypesCompartmentItemSemanticEditPolicy extends MumlBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public MessageTypeMessageTypesCompartmentItemSemanticEditPolicy() {
-		super(org.muml.pim.coordinationprotocol.diagram.providers.MumlElementTypes.MessageType_3009);
+		super(MumlElementTypes.MessageType_3009);
 	}
 
 	/**
 	 * @generated
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
-		if (org.muml.pim.coordinationprotocol.diagram.providers.MumlElementTypes.Parameter_3016 == req
-				.getElementType()) {
-			return getGEFWrapper(
-					new org.muml.pim.coordinationprotocol.diagram.edit.commands.ParameterCreateCommand(
-							req));
+		if (MumlElementTypes.Parameter_3016 == req.getElementType()) {
+			return getGEFWrapper(new ParameterCreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}

@@ -20,6 +20,9 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.DiagramEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.edit.policies.reparent.CreationEditPolicyWithCustomReparent;
+import org.muml.pim.coordinationprotocol.diagram.edit.policies.ModelElementCategoryCanonicalEditPolicy;
+import org.muml.pim.coordinationprotocol.diagram.edit.policies.ModelElementCategoryItemSemanticEditPolicy;
+import org.muml.pim.coordinationprotocol.diagram.part.MumlVisualIDRegistry;
 
 /**
  * @generated
@@ -71,16 +74,12 @@ public class ModelElementCategoryEditPart extends DiagramEditPart {
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
-				new org.muml.pim.coordinationprotocol.diagram.edit.policies.ModelElementCategoryItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new ModelElementCategoryItemSemanticEditPolicy());
 
-		// Not installing the EditPolicy with the key EditPolicyRoles.CANONICAL_ROLE guarantees that the "Delete from Diagram" Action is visible. 
-		installEditPolicy("CustomCanonical",
-				new org.muml.pim.coordinationprotocol.diagram.edit.policies.ModelElementCategoryCanonicalEditPolicy(
-						false));
+		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new ModelElementCategoryCanonicalEditPolicy(true));
 
-		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicyWithCustomReparent(
-				org.muml.pim.coordinationprotocol.diagram.part.MumlVisualIDRegistry.TYPED_INSTANCE));
+		installEditPolicy(EditPolicyRoles.CREATION_ROLE,
+				new CreationEditPolicyWithCustomReparent(MumlVisualIDRegistry.TYPED_INSTANCE));
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.POPUPBAR_ROLE);
 	}
 

@@ -24,8 +24,7 @@ public class ModelElementSelectionPage extends DefaultModelElementSelectionPage 
 	 * @generated
 	 */
 	public ModelElementSelectionPage(String pageName) {
-		super(org.muml.pim.coordinationprotocol.diagram.part.MumlDiagramEditorPlugin.getInstance()
-				.getItemProvidersAdapterFactory(), pageName);
+		super(MumlDiagramEditorPlugin.getInstance().getItemProvidersAdapterFactory(), pageName);
 	}
 
 	/**
@@ -33,7 +32,7 @@ public class ModelElementSelectionPage extends DefaultModelElementSelectionPage 
 	 * @generated
 	 */
 	protected String getSelectionTitle() {
-		return org.muml.pim.coordinationprotocol.diagram.part.Messages.ModelElementSelectionPageMessage;
+		return Messages.ModelElementSelectionPageMessage;
 	}
 
 }

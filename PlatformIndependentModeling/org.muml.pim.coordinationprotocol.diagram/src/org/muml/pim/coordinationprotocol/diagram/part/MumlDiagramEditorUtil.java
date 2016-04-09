@@ -61,6 +61,9 @@ import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.part.FileEditorInput;
+import org.muml.core.modelinstance.ModelElementCategory;
+import org.muml.core.modelinstance.ModelinstanceFactory;
+import org.muml.pim.coordinationprotocol.diagram.edit.parts.ModelElementCategoryEditPart;
 
 /**
  * @generated
@@ -86,7 +89,7 @@ public class MumlDiagramEditorUtil {
 		if (workspaceResource instanceof IFile) {
 			IWorkbenchPage page = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
 			return null != page.openEditor(new FileEditorInput((IFile) workspaceResource),
-					org.muml.pim.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditor.ID);
+					CoordinationProtocolDiagramEditor.ID);
 		}
 		return false;
 	}
@@ -101,8 +104,7 @@ public class MumlDiagramEditorUtil {
 		try {
 			file.setCharset("UTF-8", new NullProgressMonitor()); //$NON-NLS-1$
 		} catch (CoreException e) {
-			org.muml.pim.coordinationprotocol.diagram.part.MumlDiagramEditorPlugin.getInstance()
-					.logError("Unable to set charset for file " + file.getFullPath(), e); //$NON-NLS-1$
+			MumlDiagramEditorPlugin.getInstance().logError("Unable to set charset for file " + file.getFullPath(), e); //$NON-NLS-1$
 		}
 	}
 
@@ -120,8 +122,7 @@ public class MumlDiagramEditorUtil {
 	 * @generated
 	 */
 	public static void runWizard(Shell shell, Wizard wizard, String settingsKey) {
-		IDialogSettings pluginDialogSettings = org.muml.pim.coordinationprotocol.diagram.part.MumlDiagramEditorPlugin
-				.getInstance().getDialogSettings();
+		IDialogSettings pluginDialogSettings = MumlDiagramEditorPlugin.getInstance().getDialogSettings();
 		IDialogSettings wizardDialogSettings = pluginDialogSettings.getSection(settingsKey);
 		if (wizardDialogSettings == null) {
 			wizardDialogSettings = pluginDialogSettings.addNewSection(settingsKey);
@@ -139,23 +140,19 @@ public class MumlDiagramEditorUtil {
 	 */
 	public static Resource createDiagram(URI diagramURI, URI modelURI, IProgressMonitor progressMonitor) {
 		TransactionalEditingDomain editingDomain = GMFEditingDomainFactory.INSTANCE.createEditingDomain();
-		progressMonitor.beginTask(
-				org.muml.pim.coordinationprotocol.diagram.part.Messages.MumlDiagramEditorUtil_CreateDiagramProgressTask,
-				3);
+		progressMonitor.beginTask(Messages.MumlDiagramEditorUtil_CreateDiagramProgressTask, 3);
 		final Resource diagramResource = editingDomain.getResourceSet().createResource(diagramURI);
 		final Resource modelResource = editingDomain.getResourceSet().createResource(modelURI);
 		final String diagramName = diagramURI.lastSegment();
 		AbstractTransactionalCommand command = new AbstractTransactionalCommand(editingDomain,
-				org.muml.pim.coordinationprotocol.diagram.part.Messages.MumlDiagramEditorUtil_CreateDiagramCommandLabel,
-				Collections.EMPTY_LIST) {
+				Messages.MumlDiagramEditorUtil_CreateDiagramCommandLabel, Collections.EMPTY_LIST) {
 			protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info)
 					throws ExecutionException {
-				org.muml.core.modelinstance.ModelElementCategory model = createInitialModel();
+				ModelElementCategory model = createInitialModel();
 				attachModelToResource(model, modelResource);
 
-				Diagram diagram = ViewService.createDiagram(model,
-						org.muml.pim.coordinationprotocol.diagram.edit.parts.ModelElementCategoryEditPart.MODEL_ID,
-						org.muml.pim.coordinationprotocol.diagram.part.MumlDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT);
+				Diagram diagram = ViewService.createDiagram(model, ModelElementCategoryEditPart.MODEL_ID,
+						MumlDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT);
 				if (diagram != null) {
 					diagramResource.getContents().add(diagram);
 					diagram.setName(diagramName);
@@ -163,16 +160,13 @@ public class MumlDiagramEditorUtil {
 				}
 
 				try {
-					modelResource
-							.save(org.muml.pim.coordinationprotocol.diagram.part.MumlDiagramEditorUtil
-									.getSaveOptions());
-					diagramResource
-							.save(org.muml.pim.coordinationprotocol.diagram.part.MumlDiagramEditorUtil
-									.getSaveOptions());
+					modelResource.save(
+							org.muml.pim.coordinationprotocol.diagram.part.MumlDiagramEditorUtil.getSaveOptions());
+					diagramResource.save(
+							org.muml.pim.coordinationprotocol.diagram.part.MumlDiagramEditorUtil.getSaveOptions());
 				} catch (IOException e) {
 
-					org.muml.pim.coordinationprotocol.diagram.part.MumlDiagramEditorPlugin.getInstance()
-							.logError("Unable to store model and diagram resources", e); //$NON-NLS-1$
+					MumlDiagramEditorPlugin.getInstance().logError("Unable to store model and diagram resources", e); //$NON-NLS-1$
 				}
 				return CommandResult.newOKCommandResult();
 			}
@@ -181,8 +175,7 @@ public class MumlDiagramEditorUtil {
 			OperationHistoryFactory.getOperationHistory().execute(command, new SubProgressMonitor(progressMonitor, 1),
 					null);
 		} catch (ExecutionException e) {
-			org.muml.pim.coordinationprotocol.diagram.part.MumlDiagramEditorPlugin.getInstance()
-					.logError("Unable to create model and diagram", e); //$NON-NLS-1$
+			MumlDiagramEditorPlugin.getInstance().logError("Unable to create model and diagram", e); //$NON-NLS-1$
 		}
 		setCharset(WorkspaceSynchronizer.getFile(modelResource));
 		setCharset(WorkspaceSynchronizer.getFile(diagramResource));
@@ -195,18 +188,17 @@ public class MumlDiagramEditorUtil {
 	 * <!-- end-user-doc -->
 	* @generated
 	*/
-	private static org.muml.core.modelinstance.ModelElementCategory createInitialModel() {
-		return org.muml.core.modelinstance.ModelinstanceFactory.eINSTANCE.createModelElementCategory();
+	private static ModelElementCategory createInitialModel() {
+		return ModelinstanceFactory.eINSTANCE.createModelElementCategory();
 	}
 
 	/**
 	* Store model element in the resource.
 	* <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	* <!-- end-user-doc -->
 	* @generated
 	*/
-	private static void attachModelToResource(org.muml.core.modelinstance.ModelElementCategory model,
-			Resource resource) {
+	private static void attachModelToResource(ModelElementCategory model, Resource resource) {
 		resource.getContents().add(model);
 	}
 

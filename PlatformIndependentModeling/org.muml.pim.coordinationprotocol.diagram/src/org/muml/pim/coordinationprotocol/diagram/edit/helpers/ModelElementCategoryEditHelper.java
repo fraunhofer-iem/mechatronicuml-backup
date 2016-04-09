@@ -15,6 +15,5 @@ package org.muml.pim.coordinationprotocol.diagram.edit.helpers;
 /**
  * @generated
  */
-public class ModelElementCategoryEditHelper
-		extends org.muml.pim.coordinationprotocol.diagram.edit.helpers.MumlBaseEditHelper {
+public class ModelElementCategoryEditHelper extends MumlBaseEditHelper {
 }

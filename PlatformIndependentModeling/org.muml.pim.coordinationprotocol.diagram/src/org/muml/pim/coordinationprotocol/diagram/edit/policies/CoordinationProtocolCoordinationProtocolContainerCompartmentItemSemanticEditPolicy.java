@@ -14,46 +14,40 @@ package org.muml.pim.coordinationprotocol.diagram.edit.policies;
 
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
+import org.muml.pim.coordinationprotocol.diagram.edit.commands.ConnectorQualityOfServiceAssumptionsCreateCommand;
+import org.muml.pim.coordinationprotocol.diagram.edit.commands.CoordinationProtocol2CreateCommand;
+import org.muml.pim.coordinationprotocol.diagram.edit.commands.MessageBufferCreateCommand;
+import org.muml.pim.coordinationprotocol.diagram.edit.commands.RoleCreateCommand;
+import org.muml.pim.coordinationprotocol.diagram.providers.MumlElementTypes;
 
 /**
  * @generated
  */
 public class CoordinationProtocolCoordinationProtocolContainerCompartmentItemSemanticEditPolicy
-		extends org.muml.pim.coordinationprotocol.diagram.edit.policies.MumlBaseItemSemanticEditPolicy {
+		extends MumlBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public CoordinationProtocolCoordinationProtocolContainerCompartmentItemSemanticEditPolicy() {
-		super(org.muml.pim.coordinationprotocol.diagram.providers.MumlElementTypes.CoordinationProtocol_2005);
+		super(MumlElementTypes.CoordinationProtocol_2005);
 	}
 
 	/**
 	 * @generated
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
-		if (org.muml.pim.coordinationprotocol.diagram.providers.MumlElementTypes.CoordinationProtocol_3015 == req
-				.getElementType()) {
-			return getGEFWrapper(
-					new org.muml.pim.coordinationprotocol.diagram.edit.commands.CoordinationProtocol2CreateCommand(
-							req));
+		if (MumlElementTypes.CoordinationProtocol_3015 == req.getElementType()) {
+			return getGEFWrapper(new CoordinationProtocol2CreateCommand(req));
 		}
-		if (org.muml.pim.coordinationprotocol.diagram.providers.MumlElementTypes.Role_3006 == req
-				.getElementType()) {
-			return getGEFWrapper(
-					new org.muml.pim.coordinationprotocol.diagram.edit.commands.RoleCreateCommand(req));
+		if (MumlElementTypes.Role_3006 == req.getElementType()) {
+			return getGEFWrapper(new RoleCreateCommand(req));
 		}
-		if (org.muml.pim.coordinationprotocol.diagram.providers.MumlElementTypes.MessageBuffer_3013 == req
-				.getElementType()) {
-			return getGEFWrapper(
-					new org.muml.pim.coordinationprotocol.diagram.edit.commands.MessageBufferCreateCommand(
-							req));
+		if (MumlElementTypes.MessageBuffer_3013 == req.getElementType()) {
+			return getGEFWrapper(new MessageBufferCreateCommand(req));
 		}
-		if (org.muml.pim.coordinationprotocol.diagram.providers.MumlElementTypes.ConnectorQualityOfServiceAssumptions_3014 == req
-				.getElementType()) {
-			return getGEFWrapper(
-					new org.muml.pim.coordinationprotocol.diagram.edit.commands.ConnectorQualityOfServiceAssumptionsCreateCommand(
-							req));
+		if (MumlElementTypes.ConnectorQualityOfServiceAssumptions_3014 == req.getElementType()) {
+			return getGEFWrapper(new ConnectorQualityOfServiceAssumptionsCreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}

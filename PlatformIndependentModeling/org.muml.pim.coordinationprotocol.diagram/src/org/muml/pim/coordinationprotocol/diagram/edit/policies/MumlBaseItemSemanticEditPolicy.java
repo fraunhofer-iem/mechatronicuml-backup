@@ -47,6 +47,19 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.edit.helpers.GeneratedEditHelperBase;
+import org.muml.pim.connector.ConnectorEndpoint;
+import org.muml.pim.connector.ConnectorPackage;
+import org.muml.pim.connector.DiscreteInteractionEndpoint;
+import org.muml.pim.connector.MessageBuffer;
+import org.muml.pim.coordinationprotocol.diagram.expressions.MumlAbstractExpression;
+import org.muml.pim.coordinationprotocol.diagram.expressions.MumlOCLFactory;
+import org.muml.pim.coordinationprotocol.diagram.part.MumlDiagramEditorPlugin;
+import org.muml.pim.coordinationprotocol.diagram.part.MumlVisualIDRegistry;
+import org.muml.pim.coordinationprotocol.diagram.providers.MumlElementTypes;
+import org.muml.pim.protocol.AbstractCoordinationSpecification;
+import org.muml.pim.protocol.ConnectorQualityOfServiceAssumptions;
+import org.muml.pim.protocol.Role;
+import org.muml.pim.protocol.RoleConnector;
 
 /**
  * @generated
@@ -84,9 +97,7 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		if (request instanceof ReconnectRequest) {
 			Object view = ((ReconnectRequest) request).getConnectionEditPart().getModel();
 			if (view instanceof View) {
-				Integer id = new Integer(
-						org.muml.pim.coordinationprotocol.diagram.part.MumlVisualIDRegistry
-								.getVisualID((View) view));
+				Integer id = new Integer(MumlVisualIDRegistry.getVisualID((View) view));
 				request.getExtendedData().put(VISUAL_ID_KEY, id);
 			}
 		}
@@ -151,8 +162,7 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 	 * @generated
 	 */
 	private IElementType getContextElementType(IEditCommandRequest request) {
-		IElementType requestContextElementType = org.muml.pim.coordinationprotocol.diagram.providers.MumlElementTypes
-				.getElementType(getVisualID(request));
+		IElementType requestContextElementType = MumlElementTypes.getElementType(getVisualID(request));
 		return requestContextElementType != null ? requestContextElementType : myElementType;
 	}
 
@@ -298,11 +308,9 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 	 * @generated
 	 */
 	public static LinkConstraints getLinkConstraints() {
-		LinkConstraints cached = org.muml.pim.coordinationprotocol.diagram.part.MumlDiagramEditorPlugin
-				.getInstance().getLinkConstraints();
+		LinkConstraints cached = MumlDiagramEditorPlugin.getInstance().getLinkConstraints();
 		if (cached == null) {
-			org.muml.pim.coordinationprotocol.diagram.part.MumlDiagramEditorPlugin.getInstance()
-					.setLinkConstraints(cached = new LinkConstraints());
+			MumlDiagramEditorPlugin.getInstance().setLinkConstraints(cached = new LinkConstraints());
 		}
 		return cached;
 	}
@@ -320,11 +328,10 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		}
 
 		/**
-		 * @generated
-		 */
-		public boolean canCreateAbstractCoordinationSpecificationRoles_4007(
-				org.muml.pim.protocol.AbstractCoordinationSpecification source,
-				org.muml.pim.protocol.Role target, View sourceView, View targetView) {
+		* @generated
+		*/
+		public boolean canCreateAbstractCoordinationSpecificationRoles_4007(AbstractCoordinationSpecification source,
+				Role target, View sourceView, View targetView) {
 			if (source != null) {
 				if (source.getRoles().size() >= 2 || source.getRoles().contains(target)) {
 					return false;
@@ -341,12 +348,10 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		}
 
 		/**
-		 * @generated
-		 */
-		public boolean canCreateRoleConnector_4006(
-				org.muml.pim.protocol.AbstractCoordinationSpecification container,
-				org.muml.pim.connector.ConnectorEndpoint source,
-				org.muml.pim.connector.ConnectorEndpoint target, View sourceView, View targetView) {
+		* @generated
+		*/
+		public boolean canCreateRoleConnector_4006(AbstractCoordinationSpecification container,
+				ConnectorEndpoint source, ConnectorEndpoint target, View sourceView, View targetView) {
 			if (container != null) {
 				if (container.getRoleConnector() != null) {
 					return false;
@@ -356,11 +361,10 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		public boolean canCreateDiscreteInteractionEndpointReceiverMessageBuffer_4008(
-				org.muml.pim.connector.DiscreteInteractionEndpoint source,
-				org.muml.pim.connector.MessageBuffer target, View sourceView, View targetView) {
+				DiscreteInteractionEndpoint source, MessageBuffer target, View sourceView, View targetView) {
 			if (source != null) {
 				if (source.getReceiverMessageBuffer().contains(target)) {
 					return false;
@@ -378,12 +382,10 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		}
 
 		/**
-		 * @generated
-		 */
-		public boolean canCreateRoleConnectorConnectorQualityOfServiceAssumptions_4009(
-				org.muml.pim.protocol.RoleConnector source,
-				org.muml.pim.protocol.ConnectorQualityOfServiceAssumptions target, View sourceView,
-				View targetView) {
+		* @generated
+		*/
+		public boolean canCreateRoleConnectorConnectorQualityOfServiceAssumptions_4009(RoleConnector source,
+				ConnectorQualityOfServiceAssumptions target, View sourceView, View targetView) {
 			if (source != null) {
 				if (source.getConnectorQualityOfServiceAssumptions() != null) {
 					return false;
@@ -398,48 +400,42 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		}
 
 		/**
-		 * @generated
-		 */
-		public boolean canExistAbstractCoordinationSpecificationRoles_4007(
-				org.muml.pim.protocol.AbstractCoordinationSpecification source,
-				org.muml.pim.protocol.Role target, View sourceView, View targetView) {
+		* @generated
+		*/
+		public boolean canExistAbstractCoordinationSpecificationRoles_4007(AbstractCoordinationSpecification source,
+				Role target, View sourceView, View targetView) {
 			return true;
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		public java.lang.String getErrorAbstractCoordinationSpecificationRoles_4007(
-				org.muml.pim.protocol.AbstractCoordinationSpecification source,
-				org.muml.pim.protocol.Role target, View sourceView, View targetView) {
+				AbstractCoordinationSpecification source, Role target, View sourceView, View targetView) {
 			return null;
 		}
 
 		/**
-		 * @generated
-		 */
-		public boolean canExistRoleConnector_4006(
-				org.muml.pim.protocol.AbstractCoordinationSpecification container,
-				org.muml.pim.protocol.RoleConnector linkInstance,
-				org.muml.pim.connector.ConnectorEndpoint source,
-				org.muml.pim.connector.ConnectorEndpoint target, View sourceView, View targetView) {
+		* @generated
+		*/
+		public boolean canExistRoleConnector_4006(AbstractCoordinationSpecification container,
+				RoleConnector linkInstance, ConnectorEndpoint source, ConnectorEndpoint target, View sourceView,
+				View targetView) {
 			try {
 				if (target == null) {
 					return true;
 				} else {
 					Map<String, EClassifier> envType = new HashMap<String, EClassifier>();
 					Map<String, Object> env = new HashMap<String, Object>();
-					envType.put("oppositeEnd", //$NON-NLS-1$
-							org.muml.pim.connector.ConnectorPackage.eINSTANCE.getConnectorEndpoint());
+					envType.put("oppositeEnd", ConnectorPackage.eINSTANCE.getConnectorEndpoint()); //$NON-NLS-1$
 					env.put("oppositeEnd", source);
 					envType.put("view", NotationPackage.Literals.VIEW);
 					env.put("view", targetView);
 					envType.put("oppositeView", NotationPackage.Literals.VIEW);
 					env.put("oppositeView", sourceView);
 
-					org.muml.pim.coordinationprotocol.diagram.expressions.MumlAbstractExpression expression = org.muml.pim.coordinationprotocol.diagram.expressions.MumlOCLFactory
-							.getExpression(22, org.muml.pim.connector.ConnectorPackage.eINSTANCE
-									.getConnectorEndpoint(), envType);
+					MumlAbstractExpression expression = MumlOCLFactory.getExpression(22,
+							ConnectorPackage.eINSTANCE.getConnectorEndpoint(), envType);
 					Object targetVal = expression.evaluate(target, env); //$NON-NLS-1$
 
 					if (false == targetVal instanceof Boolean || !((Boolean) targetVal).booleanValue()) {
@@ -448,36 +444,31 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 				}
 				return true;
 			} catch (Exception e) {
-				org.muml.pim.coordinationprotocol.diagram.part.MumlDiagramEditorPlugin.getInstance()
-						.logError("Link constraint evaluation error", e); //$NON-NLS-1$
+				MumlDiagramEditorPlugin.getInstance().logError("Link constraint evaluation error", e); //$NON-NLS-1$
 				return false;
 			}
 		}
 
 		/**
-		 * @generated
-		 */
-		public java.lang.String getErrorRoleConnector_4006(
-				org.muml.pim.protocol.AbstractCoordinationSpecification container,
-				org.muml.pim.connector.ConnectorEndpoint source,
-				org.muml.pim.connector.ConnectorEndpoint target, View sourceView, View targetView) {
+		* @generated
+		*/
+		public java.lang.String getErrorRoleConnector_4006(AbstractCoordinationSpecification container,
+				ConnectorEndpoint source, ConnectorEndpoint target, View sourceView, View targetView) {
 			try {
 				if (target == null) {
 					return null;
 				} else {
 					Map<String, EClassifier> envType = new HashMap<String, EClassifier>();
 					Map<String, Object> env = new HashMap<String, Object>();
-					envType.put("oppositeEnd", //$NON-NLS-1$
-							org.muml.pim.connector.ConnectorPackage.eINSTANCE.getConnectorEndpoint());
+					envType.put("oppositeEnd", ConnectorPackage.eINSTANCE.getConnectorEndpoint()); //$NON-NLS-1$
 					env.put("oppositeEnd", source);
 					envType.put("view", NotationPackage.Literals.VIEW);
 					env.put("view", targetView);
 					envType.put("oppositeView", NotationPackage.Literals.VIEW);
 					env.put("oppositeView", sourceView);
 
-					org.muml.pim.coordinationprotocol.diagram.expressions.MumlAbstractExpression expression = org.muml.pim.coordinationprotocol.diagram.expressions.MumlOCLFactory
-							.getExpression(22, org.muml.pim.connector.ConnectorPackage.eINSTANCE
-									.getConnectorEndpoint(), envType);
+					MumlAbstractExpression expression = MumlOCLFactory.getExpression(22,
+							ConnectorPackage.eINSTANCE.getConnectorEndpoint(), envType);
 					Object targetVal = expression.evaluate(target, env); //$NON-NLS-1$
 
 					if (false == targetVal instanceof Boolean || !((Boolean) targetVal).booleanValue()) {
@@ -498,47 +489,40 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 				}
 				return null;
 			} catch (Exception e) {
-				org.muml.pim.coordinationprotocol.diagram.part.MumlDiagramEditorPlugin.getInstance()
-						.logError("Link constraint evaluation error", e); //$NON-NLS-1$
+				MumlDiagramEditorPlugin.getInstance().logError("Link constraint evaluation error", e); //$NON-NLS-1$
 				return "Link constraint evaluation error";
 			}
 		}
 
 		/**
-		 * @generated
-		 */
-		public boolean canExistDiscreteInteractionEndpointReceiverMessageBuffer_4008(
-				org.muml.pim.connector.DiscreteInteractionEndpoint source,
-				org.muml.pim.connector.MessageBuffer target, View sourceView, View targetView) {
+		* @generated
+		*/
+		public boolean canExistDiscreteInteractionEndpointReceiverMessageBuffer_4008(DiscreteInteractionEndpoint source,
+				MessageBuffer target, View sourceView, View targetView) {
 			return true;
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		public java.lang.String getErrorDiscreteInteractionEndpointReceiverMessageBuffer_4008(
-				org.muml.pim.connector.DiscreteInteractionEndpoint source,
-				org.muml.pim.connector.MessageBuffer target, View sourceView, View targetView) {
+				DiscreteInteractionEndpoint source, MessageBuffer target, View sourceView, View targetView) {
 			return null;
 		}
 
 		/**
-		 * @generated
-		 */
-		public boolean canExistRoleConnectorConnectorQualityOfServiceAssumptions_4009(
-				org.muml.pim.protocol.RoleConnector source,
-				org.muml.pim.protocol.ConnectorQualityOfServiceAssumptions target, View sourceView,
-				View targetView) {
+		* @generated
+		*/
+		public boolean canExistRoleConnectorConnectorQualityOfServiceAssumptions_4009(RoleConnector source,
+				ConnectorQualityOfServiceAssumptions target, View sourceView, View targetView) {
 			return true;
 		}
 
 		/**
-		 * @generated
-		 */
-		public java.lang.String getErrorRoleConnectorConnectorQualityOfServiceAssumptions_4009(
-				org.muml.pim.protocol.RoleConnector source,
-				org.muml.pim.protocol.ConnectorQualityOfServiceAssumptions target, View sourceView,
-				View targetView) {
+		* @generated
+		*/
+		public java.lang.String getErrorRoleConnectorConnectorQualityOfServiceAssumptions_4009(RoleConnector source,
+				ConnectorQualityOfServiceAssumptions target, View sourceView, View targetView) {
 			return null;
 		}
 

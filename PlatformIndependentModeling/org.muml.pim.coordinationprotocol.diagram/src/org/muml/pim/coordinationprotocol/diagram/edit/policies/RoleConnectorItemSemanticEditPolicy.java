@@ -17,18 +17,21 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelationshipRequest;
+import org.muml.pim.coordinationprotocol.diagram.edit.commands.RoleConnectorConnectorQualityOfServiceAssumptionsCreateCommand;
+import org.muml.pim.coordinationprotocol.diagram.edit.commands.RoleConnectorConnectorQualityOfServiceAssumptionsReorientCommand;
+import org.muml.pim.coordinationprotocol.diagram.edit.parts.RoleConnectorConnectorQualityOfServiceAssumptionsEditPart;
+import org.muml.pim.coordinationprotocol.diagram.providers.MumlElementTypes;
 
 /**
  * @generated
  */
-public class RoleConnectorItemSemanticEditPolicy
-		extends org.muml.pim.coordinationprotocol.diagram.edit.policies.MumlBaseItemSemanticEditPolicy {
+public class RoleConnectorItemSemanticEditPolicy extends MumlBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public RoleConnectorItemSemanticEditPolicy() {
-		super(org.muml.pim.coordinationprotocol.diagram.providers.MumlElementTypes.RoleConnector_4006);
+		super(MumlElementTypes.RoleConnector_4006);
 	}
 
 	/**
@@ -51,11 +54,9 @@ public class RoleConnectorItemSemanticEditPolicy
 	 * @generated
 	 */
 	protected Command getStartCreateRelationshipCommand(CreateRelationshipRequest req) {
-		if (org.muml.pim.coordinationprotocol.diagram.providers.MumlElementTypes.RoleConnectorConnectorQualityOfServiceAssumptions_4009 == req
-				.getElementType()) {
-			return getGEFWrapper(
-					new org.muml.pim.coordinationprotocol.diagram.edit.commands.RoleConnectorConnectorQualityOfServiceAssumptionsCreateCommand(
-							req, req.getSource(), req.getTarget()));
+		if (MumlElementTypes.RoleConnectorConnectorQualityOfServiceAssumptions_4009 == req.getElementType()) {
+			return getGEFWrapper(new RoleConnectorConnectorQualityOfServiceAssumptionsCreateCommand(req,
+					req.getSource(), req.getTarget()));
 		}
 		return null;
 	}
@@ -64,8 +65,7 @@ public class RoleConnectorItemSemanticEditPolicy
 	 * @generated
 	 */
 	protected Command getCompleteCreateRelationshipCommand(CreateRelationshipRequest req) {
-		if (org.muml.pim.coordinationprotocol.diagram.providers.MumlElementTypes.RoleConnectorConnectorQualityOfServiceAssumptions_4009 == req
-				.getElementType()) {
+		if (MumlElementTypes.RoleConnectorConnectorQualityOfServiceAssumptions_4009 == req.getElementType()) {
 			return null;
 		}
 		return null;
@@ -79,10 +79,8 @@ public class RoleConnectorItemSemanticEditPolicy
 	 */
 	protected Command getReorientReferenceRelationshipCommand(ReorientReferenceRelationshipRequest req) {
 		switch (getVisualID(req)) {
-		case org.muml.pim.coordinationprotocol.diagram.edit.parts.RoleConnectorConnectorQualityOfServiceAssumptionsEditPart.VISUAL_ID:
-			return getGEFWrapper(
-					new org.muml.pim.coordinationprotocol.diagram.edit.commands.RoleConnectorConnectorQualityOfServiceAssumptionsReorientCommand(
-							req));
+		case RoleConnectorConnectorQualityOfServiceAssumptionsEditPart.VISUAL_ID:
+			return getGEFWrapper(new RoleConnectorConnectorQualityOfServiceAssumptionsReorientCommand(req));
 		}
 		return super.getReorientReferenceRelationshipCommand(req);
 	}
