@@ -1427,7 +1427,7 @@
     <requiredPlugins>org.muml.core.edit.properties</requiredPlugins>
     <requiredPlugins>de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.edit.properties</requiredPlugins>
     <requiredPlugins>org.muml.core.common</requiredPlugins>
-    <requiredPlugins>de.uni_paderborn.fujaba.properties.runtime</requiredPlugins>
+    <requiredPlugins>org.muml.ape.runtime</requiredPlugins>
   </plugin>
   <editor/>
   <navigator>
@@ -1906,7 +1906,7 @@
         xsi:type="gmfgen:GenCustomPropertyTab"
         iD="general"
         label="General"
-        className="de.uni_paderborn.fujaba.properties.runtime.sections.ObjectPropertySection"
+        className="org.muml.ape.runtime.sections.ObjectPropertySection"
         generateBoilerplate="false">
       <filter
           xsi:type="gmfgen:CustomTabFilter"
@@ -1916,7 +1916,7 @@
         xsi:type="gmfgen:GenCustomPropertyTab"
         iD="documentation"
         label="Documentation"
-        className="de.uni_paderborn.fujaba.properties.runtime.sections.ObjectPropertySection"
+        className="org.muml.ape.runtime.sections.ObjectPropertySection"
         generateBoilerplate="false">
       <filter
           xsi:type="gmfgen:CustomTabFilter"

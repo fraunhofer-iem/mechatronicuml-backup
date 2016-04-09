@@ -700,31 +700,31 @@
             id="property.section.general" 
             tab="property.tab.general"
             filter="org.storydriven.core.properties.tabs.GeneralTabElementFilter"
-            class="de.uni_paderborn.fujaba.properties.runtime.sections.ObjectPropertySection">
+            class="org.muml.ape.runtime.sections.ObjectPropertySection">
          </propertySection>
          <propertySection
             id="property.section.condition" 
             tab="property.tab.condition"
             filter="de.uni_paderborn.fujaba.muml.properties.tabs.Property_tab_conditionTabElementFilter"
-            class="de.uni_paderborn.fujaba.properties.runtime.sections.ObjectPropertySection">
+            class="org.muml.ape.runtime.sections.ObjectPropertySection">
          </propertySection>
          <propertySection
             id="property.section.effect" 
             tab="property.tab.effect"
             filter="de.uni_paderborn.fujaba.muml.properties.tabs.Property_tab_effectTabElementFilter"
-            class="de.uni_paderborn.fujaba.properties.runtime.sections.ObjectPropertySection">
+            class="org.muml.ape.runtime.sections.ObjectPropertySection">
          </propertySection>
          <propertySection
             id="property.section.deadline" 
             tab="property.tab.deadline"
             filter="de.uni_paderborn.fujaba.muml.properties.tabs.Property_tab_deadlineTabElementFilter"
-            class="de.uni_paderborn.fujaba.properties.runtime.sections.ObjectPropertySection">
+            class="org.muml.ape.runtime.sections.ObjectPropertySection">
          </propertySection>
          <propertySection
             id="property.section.documentation" 
             tab="property.tab.documentation"
             filter="org.storydriven.core.properties.tabs.DocumentationTabElementFilter"
-            class="de.uni_paderborn.fujaba.properties.runtime.sections.ObjectPropertySection">
+            class="org.muml.ape.runtime.sections.ObjectPropertySection">
          </propertySection>
       </propertySections>
    </extension>

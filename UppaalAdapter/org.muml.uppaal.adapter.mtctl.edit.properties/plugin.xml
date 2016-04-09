@@ -40,7 +40,7 @@
   <extension point="org.eclipse.ui.views.properties.tabbed.propertySections"> 
       <propertySections contributorId="org.muml.ape.contributor">
           <propertySection
-            class="de.uni_paderborn.fujaba.properties.runtime.sections.ObjectPropertySection"
+            class="org.muml.ape.runtime.sections.ObjectPropertySection"
             filter="org.muml.uppaal.adapter.mtctl.properties.tabs.MtctlTabElementFilter"
             id="property.tab.mtctl"
             tab="property.tab.mtctl">

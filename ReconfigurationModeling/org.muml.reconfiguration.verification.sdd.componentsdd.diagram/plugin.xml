@@ -208,13 +208,13 @@
             id="property.section.general" 
             tab="property.tab.general"
             filter="org.storydriven.core.properties.tabs.GeneralTabElementFilter"
-            class="de.uni_paderborn.fujaba.properties.runtime.sections.ObjectPropertySection">
+            class="org.muml.ape.runtime.sections.ObjectPropertySection">
          </propertySection>
          <propertySection
             id="property.section.documentation" 
             tab="property.tab.documentation"
             filter="org.storydriven.core.properties.tabs.DocumentationTabElementFilter"
-            class="de.uni_paderborn.fujaba.properties.runtime.sections.ObjectPropertySection">
+            class="org.muml.ape.runtime.sections.ObjectPropertySection">
          </propertySection>
       </propertySections>
    </extension>
