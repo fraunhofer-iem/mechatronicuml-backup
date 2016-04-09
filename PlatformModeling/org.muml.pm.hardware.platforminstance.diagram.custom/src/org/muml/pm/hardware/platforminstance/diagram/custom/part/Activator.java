@@ -38,7 +38,7 @@ public class Activator extends AbstractUIPlugin {
 		if (transformationExecutor == null) {
 			URI transformationURI = URI
 					.createPlatformPluginURI(
-							"/de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.custom/transforms/instances.qvto",
+							"/org.muml.pm.hardware.platforminstance.diagram.custom/transforms/instances.qvto",
 							true);
 			// create executor and execution context
 			transformationExecutor = new TransformationExecutor(

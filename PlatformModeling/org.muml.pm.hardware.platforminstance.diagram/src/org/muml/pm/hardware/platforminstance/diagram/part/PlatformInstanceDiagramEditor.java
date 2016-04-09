@@ -52,12 +52,12 @@ public class PlatformInstanceDiagramEditor extends DiagramDocumentEditor impleme
 	/**
 	 * @generated
 	 */
-	public static final String ID = "de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorID"; //$NON-NLS-1$
+	public static final String ID = "org.muml.pm.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorID"; //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final String CONTEXT_ID = "de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.ui.diagramContext"; //$NON-NLS-1$
+	public static final String CONTEXT_ID = "org.muml.pm.hardware.platforminstance.diagram.ui.diagramContext"; //$NON-NLS-1$
 
 	/**
 	 * @generated

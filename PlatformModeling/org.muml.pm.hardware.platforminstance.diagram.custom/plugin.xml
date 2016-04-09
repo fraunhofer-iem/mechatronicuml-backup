@@ -4,7 +4,7 @@
    <extension
          point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders">
       <editpartProvider
-            class="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.custom.providers.CustomPlatformInstanceEditPartProvider">
+            class="org.muml.pm.hardware.platforminstance.diagram.custom.providers.CustomPlatformInstanceEditPartProvider">
          <Priority
                name="Low">
          </Priority>
@@ -16,12 +16,12 @@
             allPopups="false"
             locationURI="popup:de.uni_paderborn.fujaba">
          <separator
-               name="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.custom.separator1"
+               name="org.muml.pm.hardware.platforminstance.diagram.custom.separator1"
                visible="true">
          </separator>
          <command
-               commandId="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.custom.InitPlatformInstance"
-               id="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.custom.InitPlatformInstance"
+               commandId="org.muml.pm.hardware.platforminstance.diagram.custom.InitPlatformInstance"
+               id="org.muml.pm.hardware.platforminstance.diagram.custom.InitPlatformInstance"
                label="Initialize a Hardware Platform Instance"
                style="push">
             <visibleWhen>
@@ -45,7 +45,7 @@
       <command
             categoryId="de.uni_paderborn.fujaba"
             defaultHandler="org.muml.pm.hardware.platforminstance.diagram.custom.edit.handler.InitHWPlatformInstanceHandler"
-            id="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.custom.InitPlatformInstance"
+            id="org.muml.pm.hardware.platforminstance.diagram.custom.InitPlatformInstance"
             name="Initialize a Hardware Platform Instance">
       </command>
    </extension>
@@ -55,25 +55,25 @@
             nsURI="http://www.muml.org/pm/hardware/hwplatforminstance/1.0.0">
          <adviceBinding
                class="org.muml.pm.hardware.platforminstance.diagram.custom.edit.helper.HWPlatformInstanceEditHelperAdvice"
-               id="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.custom.adviceBinding1"
+               id="org.muml.pm.hardware.platforminstance.diagram.custom.adviceBinding1"
                inheritance="none"
-               typeId="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.HWPlatformInstance_2005">
+               typeId="org.muml.pm.hardware.platforminstance.diagram.HWPlatformInstance_2005">
          </adviceBinding>
       </metamodel>
    </extension>
    <extension
          point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings">
       <binding
-            context="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.TypeContext">
+            context="org.muml.pm.hardware.platforminstance.diagram.TypeContext">
          <advice
-               ref="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.custom.adviceBinding1">
+               ref="org.muml.pm.hardware.platforminstance.diagram.custom.adviceBinding1">
          </advice>
       </binding>
    </extension>
  <!--   <extension
          point="org.eclipse.gmf.runtime.diagram.ui.decoratorProviders">
       <decoratorProvider
-            class="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.custom.refactor.HWPlatformInstanceDecorationProvider">
+            class="org.muml.pm.hardware.platforminstance.diagram.custom.refactor.HWPlatformInstanceDecorationProvider">
          <Priority
                name="Lowest">
          </Priority>
@@ -83,7 +83,7 @@
          point="org.eclipse.ui.commands">
       <command
             categoryId="de.uni_paderborn.fujaba"
-            defaultHandler="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.custom.refactor.ExtractSubdiagramHandler"
+            defaultHandler="org.muml.pm.hardware.platforminstance.diagram.custom.refactor.ExtractSubdiagramHandler"
             id="testCommand"
             name="Refactor">
       </command>
@@ -105,7 +105,7 @@
                      <iterate
                            ifEmpty="false">
                         <instanceof
-                              value="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPlatformInstance2EditPart">
+                              value="org.muml.pm.hardware.platforminstance.diagram.edit.parts.HWPlatformInstance2EditPart">
                         </instanceof></iterate>
                   </with>
                </and>

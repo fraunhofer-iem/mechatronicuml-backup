@@ -4,13 +4,13 @@
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:gmfgen="http://www.eclipse.org/gmf/2009/GenModel"
-    packageNamePrefix="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram"
+    packageNamePrefix="org.muml.pm.hardware.platforminstance.diagram"
     modelID="PlatformInstance"
     diagramFileExtension="platforminstance_diagram"
     domainFileExtension="fujaba"
     dynamicTemplates="true"
     templateDirectory="/org.muml.core.common/gmf-templates"
-    pluginDirectory="/de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram/src">
+    pluginDirectory="/org.muml.pm.hardware.platforminstance.diagram/src">
   <diagram
       visualID="1000"
       editPartClassName="HWPlatformInstanceConfigurationEditPart"
@@ -915,37 +915,37 @@
     </preferences>
     <preferencePages
         xsi:type="gmfgen:GenStandardPreferencePage"
-        iD="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.general"
+        iD="org.muml.pm.hardware.platforminstance.diagram.general"
         name="Platform Instance Diagram Editor"
         parentCategory="org.muml.preferences">
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
-          iD="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.appearance"
+          iD="org.muml.pm.hardware.platforminstance.diagram.appearance"
           name="Appearance"
-          parentCategory="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.general"
+          parentCategory="org.muml.pm.hardware.platforminstance.diagram.general"
           kind="Appearance"/>
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
-          iD="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.connections"
+          iD="org.muml.pm.hardware.platforminstance.diagram.connections"
           name="Connections"
-          parentCategory="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.general"
+          parentCategory="org.muml.pm.hardware.platforminstance.diagram.general"
           kind="Connections"/>
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
-          iD="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.printing"
+          iD="org.muml.pm.hardware.platforminstance.diagram.printing"
           name="Printing"
-          parentCategory="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.general"
+          parentCategory="org.muml.pm.hardware.platforminstance.diagram.general"
           kind="Printing"/>
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
-          iD="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.rulersAndGrid"
+          iD="org.muml.pm.hardware.platforminstance.diagram.rulersAndGrid"
           name="Rulers And Grid"
-          parentCategory="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.general"
+          parentCategory="org.muml.pm.hardware.platforminstance.diagram.general"
           kind="RulersAndGrid"/>
     </preferencePages>
   </diagram>
   <plugin
-      iD="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram"
+      iD="org.muml.pm.hardware.platforminstance.diagram"
       name="Platform Instance Diagram Editor"
       provider="Software Engineering, Project Group Mechatronic Systems Design, Fraunhofer Institute for Production Technology IPT"
       activatorClassName="PlatformInstanceDiagramEditorPlugin">
