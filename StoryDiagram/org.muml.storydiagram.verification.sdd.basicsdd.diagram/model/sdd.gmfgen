@@ -28,7 +28,7 @@
         xsi:type="gmfgen:FigureViewmap"
         figureQualifiedClassName="org.eclipse.draw2d.FreeformLayer"/>
     <domainDiagramElement
-        href="../../org.muml.storydiagram.verification.sdd.basicsdd/model/BasicSDD.genmodel#//basicSDD/StoryDecisionDiagram"/>
+        href="../../org.muml.storydiagram.verification.sdd.basicsdd/model/BasicSDD.genmodel#//basicsdd/StoryDecisionDiagram"/>
     <childNodes
         visualID="3011"
         editPartClassName="StoryPatternEditPart"
@@ -52,9 +52,9 @@
         <metaClass
             href="../../org.muml.storydiagram/model/storydiagrams.genmodel#//storydiagram/patterns/StoryPattern"/>
         <containmentMetaFeature
-            href="../../org.muml.storydiagram.verification.sdd.basicsdd/model/BasicSDD.genmodel#//basicSDD/StoryPatternNode/pattern"/>
+            href="../../org.muml.storydiagram.verification.sdd.basicsdd/model/BasicSDD.genmodel#//basicsdd/StoryPatternNode/pattern"/>
         <childMetaFeature
-            href="../../org.muml.storydiagram.verification.sdd.basicsdd/model/BasicSDD.genmodel#//basicSDD/StoryPatternNode/pattern"/>
+            href="../../org.muml.storydiagram.verification.sdd.basicsdd/model/BasicSDD.genmodel#//basicsdd/StoryPatternNode/pattern"/>
       </modelFacet>
     </childNodes>
     <childNodes
@@ -80,9 +80,9 @@
         <metaClass
             href="../../org.muml.storydiagram/model/storydiagrams.genmodel#//storydiagram/patterns/CollectionVariable"/>
         <containmentMetaFeature
-            href="../../org.muml.storydiagram/model/storydiagrams.genmodel#//storydiagram/patterns/StoryPattern/variable"/>
+            href="../../org.muml.storydiagram/model/storydiagrams.genmodel#//storydiagram/patterns/StoryPattern/variables"/>
         <childMetaFeature
-            href="../../org.muml.storydiagram/model/storydiagrams.genmodel#//storydiagram/patterns/StoryPattern/variable"/>
+            href="../../org.muml.storydiagram/model/storydiagrams.genmodel#//storydiagram/patterns/StoryPattern/variables"/>
       </modelFacet>
       <labels
           visualID="5008"
@@ -169,9 +169,9 @@
         <metaClass
             href="../../org.muml.storydiagram/model/storydiagrams.genmodel#//storydiagram/patterns/AttributeAssignment"/>
         <containmentMetaFeature
-            href="../../org.muml.storydiagram/model/storydiagrams.genmodel#//storydiagram/patterns/ObjectVariable/attributeAssignment"/>
+            href="../../org.muml.storydiagram/model/storydiagrams.genmodel#//storydiagram/patterns/ObjectVariable/attributeAssignments"/>
         <childMetaFeature
-            href="../../org.muml.storydiagram/model/storydiagrams.genmodel#//storydiagram/patterns/ObjectVariable/attributeAssignment"/>
+            href="../../org.muml.storydiagram/model/storydiagrams.genmodel#//storydiagram/patterns/ObjectVariable/attributeAssignments"/>
       </modelFacet>
       <labelModelFacet
           parser="//@labelParsers/@implementations.0"/>
@@ -198,9 +198,9 @@
         <metaClass
             href="../../org.muml.storydiagram/model/storydiagrams.genmodel#//storydiagram/patterns/Constraint"/>
         <containmentMetaFeature
-            href="../../org.muml.storydiagram/model/storydiagrams.genmodel#//storydiagram/patterns/AbstractVariable/constraint"/>
+            href="../../org.muml.storydiagram/model/storydiagrams.genmodel#//storydiagram/patterns/AbstractVariable/constraints"/>
         <childMetaFeature
-            href="../../org.muml.storydiagram/model/storydiagrams.genmodel#//storydiagram/patterns/AbstractVariable/constraint"/>
+            href="../../org.muml.storydiagram/model/storydiagrams.genmodel#//storydiagram/patterns/AbstractVariable/constraints"/>
       </modelFacet>
       <labelModelFacet
           parser="//@labelParsers/@implementations.0"/>
@@ -228,9 +228,9 @@
         <metaClass
             href="../../org.muml.storydiagram/model/storydiagrams.genmodel#//storydiagram/patterns/ObjectVariable"/>
         <containmentMetaFeature
-            href="../../org.muml.storydiagram/model/storydiagrams.genmodel#//storydiagram/patterns/StoryPattern/variable"/>
+            href="../../org.muml.storydiagram/model/storydiagrams.genmodel#//storydiagram/patterns/StoryPattern/variables"/>
         <childMetaFeature
-            href="../../org.muml.storydiagram/model/storydiagrams.genmodel#//storydiagram/patterns/StoryPattern/variable"/>
+            href="../../org.muml.storydiagram/model/storydiagrams.genmodel#//storydiagram/patterns/StoryPattern/variables"/>
       </modelFacet>
       <labels
           visualID="5011"
@@ -317,9 +317,9 @@
         <metaClass
             href="../../org.muml.storydiagram/model/storydiagrams.genmodel#//storydiagram/patterns/Constraint"/>
         <containmentMetaFeature
-            href="../../org.muml.storydiagram/model/storydiagrams.genmodel#//storydiagram/patterns/StoryPattern/constraint"/>
+            href="../../org.muml.storydiagram/model/storydiagrams.genmodel#//storydiagram/patterns/StoryPattern/constraints"/>
         <childMetaFeature
-            href="../../org.muml.storydiagram/model/storydiagrams.genmodel#//storydiagram/patterns/StoryPattern/constraint"/>
+            href="../../org.muml.storydiagram/model/storydiagrams.genmodel#//storydiagram/patterns/StoryPattern/constraints"/>
       </modelFacet>
       <labelModelFacet
           parser="//@labelParsers/@implementations.0"/>
@@ -352,7 +352,7 @@
       </viewmap>
       <modelFacet>
         <metaClass
-            href="../../org.muml.storydiagram.verification.sdd.basicsdd/model/BasicSDD.genmodel#//basicSDD/StoryPatternNode"/>
+            href="../../org.muml.storydiagram.verification.sdd.basicsdd/model/BasicSDD.genmodel#//basicsdd/StoryPatternNode"/>
         <containmentMetaFeature
             href="../../org.muml.storydiagram.verification.sdd/model/sdd.genmodel#//sdd/AbstractStoryDecisionDiagram/nodes"/>
         <childMetaFeature
@@ -368,7 +368,7 @@
           <initializers
               xsi:type="gmfgen:GenReferenceNewElementSpec">
             <feature
-                href="../../org.muml.storydiagram.verification.sdd.basicsdd/model/BasicSDD.genmodel#//basicSDD/StoryPatternNode/pattern"/>
+                href="../../org.muml.storydiagram.verification.sdd.basicsdd/model/BasicSDD.genmodel#//basicsdd/StoryPatternNode/pattern"/>
             <newElementInitializers>
               <initializers
                   xsi:type="gmfgen:GenFeatureValueSpec"
@@ -524,9 +524,9 @@
         <metaClass
             href="../../org.muml.storydiagram/model/storydiagrams.genmodel#//storydiagram/patterns/LinkVariable"/>
         <containmentMetaFeature
-            href="../../org.muml.storydiagram/model/storydiagrams.genmodel#//storydiagram/patterns/StoryPattern/linkVariable"/>
+            href="../../org.muml.storydiagram/model/storydiagrams.genmodel#//storydiagram/patterns/StoryPattern/linkVariables"/>
         <childMetaFeature
-            href="../../org.muml.storydiagram/model/storydiagrams.genmodel#//storydiagram/patterns/StoryPattern/linkVariable"/>
+            href="../../org.muml.storydiagram/model/storydiagrams.genmodel#//storydiagram/patterns/StoryPattern/linkVariables"/>
         <sourceMetaFeature
             href="../../org.muml.storydiagram/model/storydiagrams.genmodel#//storydiagram/patterns/AbstractLinkVariable/source"/>
         <targetMetaFeature
