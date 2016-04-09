@@ -7,7 +7,7 @@
     packageNamePrefix="de.uni_paderborn.fujaba.muml.verification.sdd.diagram"
     dynamicTemplates="true"
     templateDirectory="/org.muml.core.common/gmf-templates"
-    pluginDirectory="/de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd.diagram/src">
+    pluginDirectory="/org.muml.storydiagram.verification.sdd.basicsdd.diagram/src">
   <diagram
       visualID="1000"
       editPartClassName="StoryDecisionDiagramEditPart"
@@ -744,7 +744,7 @@
     </preferencePages>
   </diagram>
   <plugin
-      iD="de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd.diagram">
+      iD="org.muml.storydiagram.verification.sdd.basicsdd.diagram">
     <requiredPlugins>org.eclipse.gmf.tooling.runtime</requiredPlugins>
     <requiredPlugins>org.eclipse.draw2d</requiredPlugins>
     <requiredPlugins>org.eclipse.gmf.runtime.draw2d.ui</requiredPlugins>

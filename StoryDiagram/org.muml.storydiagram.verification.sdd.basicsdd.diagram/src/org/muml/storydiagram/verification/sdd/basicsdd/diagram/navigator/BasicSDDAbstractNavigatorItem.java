@@ -17,7 +17,7 @@ public abstract class BasicSDDAbstractNavigatorItem extends PlatformObject {
 		final Class[] supportedTypes = new Class[] { ITabbedPropertySheetPageContributor.class };
 		final ITabbedPropertySheetPageContributor propertySheetPageContributor = new ITabbedPropertySheetPageContributor() {
 			public String getContributorId() {
-				return "de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd.diagram"; //$NON-NLS-1$
+				return "org.muml.storydiagram.verification.sdd.basicsdd.diagram"; //$NON-NLS-1$
 			}
 		};
 		Platform.getAdapterManager().registerAdapters(

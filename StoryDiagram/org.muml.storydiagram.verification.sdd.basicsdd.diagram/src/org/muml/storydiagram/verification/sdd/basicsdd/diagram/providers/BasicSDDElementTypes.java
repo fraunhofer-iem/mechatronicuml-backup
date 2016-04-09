@@ -46,47 +46,47 @@ public class BasicSDDElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType StoryDecisionDiagram_1000 = getElementType("de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd.diagram.StoryDecisionDiagram_1000"); //$NON-NLS-1$
+	public static final IElementType StoryDecisionDiagram_1000 = getElementType("org.muml.storydiagram.verification.sdd.basicsdd.diagram.StoryDecisionDiagram_1000"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType StoryPatternNode_2003 = getElementType("de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd.diagram.StoryPatternNode_2003"); //$NON-NLS-1$
+	public static final IElementType StoryPatternNode_2003 = getElementType("org.muml.storydiagram.verification.sdd.basicsdd.diagram.StoryPatternNode_2003"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType LeafNode_2004 = getElementType("de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd.diagram.LeafNode_2004"); //$NON-NLS-1$
+	public static final IElementType LeafNode_2004 = getElementType("org.muml.storydiagram.verification.sdd.basicsdd.diagram.LeafNode_2004"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType StoryPattern_3011 = getElementType("de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd.diagram.StoryPattern_3011"); //$NON-NLS-1$
+	public static final IElementType StoryPattern_3011 = getElementType("org.muml.storydiagram.verification.sdd.basicsdd.diagram.StoryPattern_3011"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType CollectionVariable_3006 = getElementType("de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd.diagram.CollectionVariable_3006"); //$NON-NLS-1$
+	public static final IElementType CollectionVariable_3006 = getElementType("org.muml.storydiagram.verification.sdd.basicsdd.diagram.CollectionVariable_3006"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType AttributeAssignment_3007 = getElementType("de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd.diagram.AttributeAssignment_3007"); //$NON-NLS-1$
+	public static final IElementType AttributeAssignment_3007 = getElementType("org.muml.storydiagram.verification.sdd.basicsdd.diagram.AttributeAssignment_3007"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType Constraint_3008 = getElementType("de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd.diagram.Constraint_3008"); //$NON-NLS-1$
+	public static final IElementType Constraint_3008 = getElementType("org.muml.storydiagram.verification.sdd.basicsdd.diagram.Constraint_3008"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType ObjectVariable_3009 = getElementType("de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd.diagram.ObjectVariable_3009"); //$NON-NLS-1$
+	public static final IElementType ObjectVariable_3009 = getElementType("org.muml.storydiagram.verification.sdd.basicsdd.diagram.ObjectVariable_3009"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType Constraint_3010 = getElementType("de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd.diagram.Constraint_3010"); //$NON-NLS-1$
+	public static final IElementType Constraint_3010 = getElementType("org.muml.storydiagram.verification.sdd.basicsdd.diagram.Constraint_3010"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType Edge_4001 = getElementType("de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd.diagram.Edge_4001"); //$NON-NLS-1$
+	public static final IElementType Edge_4001 = getElementType("org.muml.storydiagram.verification.sdd.basicsdd.diagram.Edge_4001"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType LinkVariable_4003 = getElementType("de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd.diagram.LinkVariable_4003"); //$NON-NLS-1$
+	public static final IElementType LinkVariable_4003 = getElementType("org.muml.storydiagram.verification.sdd.basicsdd.diagram.LinkVariable_4003"); //$NON-NLS-1$
 
 	/**
 	 * @generated

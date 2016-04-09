@@ -20,7 +20,7 @@ public class BasicSDDVisualIDRegistry {
 	/**
 	 * @generated
 	 */
-	private static final String DEBUG_KEY = "de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd.diagram/debug/visualID"; //$NON-NLS-1$
+	private static final String DEBUG_KEY = "org.muml.storydiagram.verification.sdd.basicsdd.diagram/debug/visualID"; //$NON-NLS-1$
 
 	/**
 	 * @generated
