@@ -63,7 +63,7 @@ public class PatternToProtocolExportWizardPage1 extends
 	/*
 	 * @Override protected void resourceChanged() { super.resourceChanged();
 	 * //initialize();
-	 * de.uni_paderborn.fujaba.muml.pattern.diagram.custom.export
+	 * org.muml.pim.pattern.diagram.custom.export
 	 * .wizard.ExportWizardPatternToProtocol2 myWizard=
 	 * (ExportWizardPatternToProtocol2)this.getWizard(); if(myWizard != null) {
 	 * myWizard.getNextPage(this).createControl(parent);

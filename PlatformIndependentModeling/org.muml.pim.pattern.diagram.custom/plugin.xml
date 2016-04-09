@@ -18,13 +18,13 @@
       <wizard
             category="de.uni_paderborn.fujaba.export"
             class="org.muml.pim.pattern.diagram.custom.export.wizard.PatternToProtocolExportWizard"
-            id="de.uni_paderborn.fujaba.muml.pattern.diagram.custom.ExportWizardPatternToProtocol"
+            id="org.muml.pim.pattern.diagram.custom.ExportWizardPatternToProtocol"
             name="Pattern To Protocol Transformation Wizard">
       </wizard>
       <wizard
             category="de.uni_paderborn.fujaba.export"
             class="org.muml.pim.pattern.diagram.custom.export.wizard.ProtocolToPatternExportWizard"
-            id="de.uni_paderborn.fujaba.muml.pattern.diagram.custom.ExportWizardProtocolToPattern"
+            id="org.muml.pim.pattern.diagram.custom.ExportWizardProtocolToPattern"
             name="Protocol To Pattern Transformation Wizard">
       </wizard>
    </extension>
@@ -35,15 +35,15 @@
    
    <!-- prevent deleting inner coordination pattern -->
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings" id="element-types-bindings">
-      <binding context="de.uni_paderborn.fujaba.muml.pattern.diagram.TypeContext">
-         <elementType ref="de.uni_paderborn.fujaba.muml.pattern.diagram.CoordinationPattern_3003"/>
-         <advice ref="de.uni_paderborn.fujaba.muml.pattern.diagram.Pattern2Advice"/>
+      <binding context="org.muml.pim.pattern.diagram.TypeContext">
+         <elementType ref="org.muml.pim.pattern.diagram.CoordinationPattern_3003"/>
+         <advice ref="org.muml.pim.pattern.diagram.Pattern2Advice"/>
       </binding>
    </extension>
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
       <metamodel nsURI="http://www.muml.org/pim/pattern/1.0.0">
-        <adviceBinding  id="de.uni_paderborn.fujaba.muml.pattern.diagram.Pattern2Advice"
-		  typeId="de.uni_paderborn.fujaba.muml.pattern.diagram.CoordinationPattern_3003"
+        <adviceBinding  id="org.muml.pim.pattern.diagram.Pattern2Advice"
+		  typeId="org.muml.pim.pattern.diagram.CoordinationPattern_3003"
 		  class="org.muml.pim.coordinationspecification.common.edit.helpers.PreventDeleteEditHelperAdvice"
 		  inheritance="all">
         </adviceBinding>
@@ -53,15 +53,15 @@
    
    <!-- prevent deleting inner coordination pattern variant -->
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings" id="element-types-bindings">
-      <binding context="de.uni_paderborn.fujaba.muml.pattern.diagram.TypeContext">
-         <elementType ref="de.uni_paderborn.fujaba.muml.pattern.diagram.CoordinationPatternVariant_3008"/>
-         <advice ref="de.uni_paderborn.fujaba.muml.pattern.diagram.PatternVariant2Advice"/>
+      <binding context="org.muml.pim.pattern.diagram.TypeContext">
+         <elementType ref="org.muml.pim.pattern.diagram.CoordinationPatternVariant_3008"/>
+         <advice ref="org.muml.pim.pattern.diagram.PatternVariant2Advice"/>
       </binding>
    </extension>
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
       <metamodel nsURI="http://www.muml.org/pim/pattern/1.0.0">
-        <adviceBinding  id="de.uni_paderborn.fujaba.muml.pattern.diagram.PatternVariant2Advice"
-		  typeId="de.uni_paderborn.fujaba.muml.pattern.diagram.CoordinationPatternVariant_3008"
+        <adviceBinding  id="org.muml.pim.pattern.diagram.PatternVariant2Advice"
+		  typeId="org.muml.pim.pattern.diagram.CoordinationPatternVariant_3008"
 		  class="org.muml.pim.coordinationspecification.common.edit.helpers.PreventDeleteEditHelperAdvice"
 		  inheritance="all">
         </adviceBinding>
@@ -71,15 +71,15 @@
    
    <!-- fix for #1230. See referenced class "DeleteWithChildrenEditHelperAdvice" for detailed explanations. -->
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings" id="element-types-bindings">
-      <binding context="de.uni_paderborn.fujaba.muml.pattern.diagram.TypeContext">
-         <elementType ref="de.uni_paderborn.fujaba.muml.pattern.diagram.CoordinationPattern_2001"/>
-         <advice ref="de.uni_paderborn.fujaba.muml.pattern.diagram.CoordinationPatternAdvice"/>
+      <binding context="org.muml.pim.pattern.diagram.TypeContext">
+         <elementType ref="org.muml.pim.pattern.diagram.CoordinationPattern_2001"/>
+         <advice ref="org.muml.pim.pattern.diagram.CoordinationPatternAdvice"/>
       </binding>
    </extension>
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
       <metamodel nsURI="http://www.muml.org/pim/pattern/1.0.0">
-        <adviceBinding id="de.uni_paderborn.fujaba.muml.pattern.diagram.CoordinationPatternAdvice"
-		  typeId="de.uni_paderborn.fujaba.muml.pattern.diagram.CoordinationPattern_2001"
+        <adviceBinding id="org.muml.pim.pattern.diagram.CoordinationPatternAdvice"
+		  typeId="org.muml.pim.pattern.diagram.CoordinationPattern_2001"
 		  class="org.muml.pim.coordinationspecification.common.edit.helpers.DeleteWithChildrenEditHelperAdvice"
 		  inheritance="all">
         </adviceBinding>
@@ -88,15 +88,15 @@
    
    <!-- fix for #1230. See referenced class "DeleteWithChildrenEditHelperAdvice" for detailed explanations. -->
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings" id="element-types-bindings">
-      <binding context="de.uni_paderborn.fujaba.muml.pattern.diagram.TypeContext">
-         <elementType ref="de.uni_paderborn.fujaba.muml.pattern.diagram.CoordinationPatternVariant_2002"/>
-         <advice ref="de.uni_paderborn.fujaba.muml.pattern.diagram.CoordinationPatternVariantAdvice"/>
+      <binding context="org.muml.pim.pattern.diagram.TypeContext">
+         <elementType ref="org.muml.pim.pattern.diagram.CoordinationPatternVariant_2002"/>
+         <advice ref="org.muml.pim.pattern.diagram.CoordinationPatternVariantAdvice"/>
       </binding>
    </extension>
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
       <metamodel nsURI="http://www.muml.org/pim/pattern/1.0.0">
-        <adviceBinding id="de.uni_paderborn.fujaba.muml.pattern.diagram.CoordinationPatternVariantAdvice"
-		  typeId="de.uni_paderborn.fujaba.muml.pattern.diagram.CoordinationPatternVariant_2002"
+        <adviceBinding id="org.muml.pim.pattern.diagram.CoordinationPatternVariantAdvice"
+		  typeId="org.muml.pim.pattern.diagram.CoordinationPatternVariant_2002"
 		  class="org.muml.pim.coordinationspecification.common.edit.helpers.DeleteWithChildrenEditHelperAdvice"
 		  inheritance="all">
         </adviceBinding>

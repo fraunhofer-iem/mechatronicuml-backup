@@ -4,13 +4,13 @@
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:gmfgen="http://www.eclipse.org/gmf/2009/GenModel"
-    packageNamePrefix="de.uni_paderborn.fujaba.muml.pattern.diagram"
+    packageNamePrefix="org.muml.pim.pattern.diagram"
     modelID="Coordination Pattern"
     diagramFileExtension="coordinationpattern_diagram"
     domainFileExtension="fujaba"
     dynamicTemplates="true"
     templateDirectory="/org.muml.core.common/gmf-templates"
-    pluginDirectory="/de.uni_paderborn.fujaba.muml.pattern.diagram/src">
+    pluginDirectory="/org.muml.pim.pattern.diagram/src">
   <diagram
       visualID="1000"
       editPartClassName="ModelElementCategoryEditPart"
@@ -1246,37 +1246,37 @@
     </preferences>
     <preferencePages
         xsi:type="gmfgen:GenStandardPreferencePage"
-        iD="de.uni_paderborn.fujaba.muml.pattern.diagram.general"
+        iD="org.muml.pim.pattern.diagram.general"
         name="Coordination Pattern Diagram Editor"
         parentCategory="org.muml.preferences">
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
-          iD="de.uni_paderborn.fujaba.muml.pattern.diagram.appearance"
+          iD="org.muml.pim.pattern.diagram.appearance"
           name="Appearance"
-          parentCategory="de.uni_paderborn.fujaba.muml.pattern.diagram.general"
+          parentCategory="org.muml.pim.pattern.diagram.general"
           kind="Appearance"/>
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
-          iD="de.uni_paderborn.fujaba.muml.pattern.diagram.connections"
+          iD="org.muml.pim.pattern.diagram.connections"
           name="Connections"
-          parentCategory="de.uni_paderborn.fujaba.muml.pattern.diagram.general"
+          parentCategory="org.muml.pim.pattern.diagram.general"
           kind="Connections"/>
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
-          iD="de.uni_paderborn.fujaba.muml.pattern.diagram.printing"
+          iD="org.muml.pim.pattern.diagram.printing"
           name="Printing"
-          parentCategory="de.uni_paderborn.fujaba.muml.pattern.diagram.general"
+          parentCategory="org.muml.pim.pattern.diagram.general"
           kind="Printing"/>
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
-          iD="de.uni_paderborn.fujaba.muml.pattern.diagram.rulersAndGrid"
+          iD="org.muml.pim.pattern.diagram.rulersAndGrid"
           name="Rulers And Grid"
-          parentCategory="de.uni_paderborn.fujaba.muml.pattern.diagram.general"
+          parentCategory="org.muml.pim.pattern.diagram.general"
           kind="RulersAndGrid"/>
     </preferencePages>
   </diagram>
   <plugin
-      iD="de.uni_paderborn.fujaba.muml.pattern.diagram"
+      iD="org.muml.pim.pattern.diagram"
       name="Coordination Pattern Diagram Editor"
       provider="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn">
     <requiredPlugins>org.eclipse.gmf.tooling.runtime</requiredPlugins>

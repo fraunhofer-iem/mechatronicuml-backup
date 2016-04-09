@@ -34,7 +34,7 @@ public class PatternVerificationWizard extends AbstractFujabaExportWizard {
 	@Override
 	public String wizardGetId() {
 		// TODO Auto-generated method stub
-		return "de.uni_paderborn.fujaba.muml.pattern.diagram.custom.export.wizard.PatternVerificationWizard";
+		return "org.muml.pim.pattern.diagram.custom.export.wizard.PatternVerificationWizard";
 	}
 
 	@Override

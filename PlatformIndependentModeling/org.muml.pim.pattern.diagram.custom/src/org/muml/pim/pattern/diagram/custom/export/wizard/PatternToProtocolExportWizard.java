@@ -48,7 +48,7 @@ public class PatternToProtocolExportWizard extends AbstractFujabaExportWizard {
 
 	@Override
 	public String wizardGetId() {
-		return "de.uni_paderborn.fujaba.muml.pattern.diagram.custom.ExportWizardPatternToProtocol";
+		return "org.muml.pim.pattern.diagram.custom.ExportWizardPatternToProtocol";
 	}
 
 	public void addPages() {

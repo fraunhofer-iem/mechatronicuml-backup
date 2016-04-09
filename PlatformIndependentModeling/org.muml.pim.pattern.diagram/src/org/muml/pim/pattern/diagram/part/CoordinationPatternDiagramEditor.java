@@ -52,12 +52,12 @@ public class CoordinationPatternDiagramEditor extends DiagramDocumentEditor impl
 	/**
 	* @generated
 	*/
-	public static final String ID = "de.uni_paderborn.fujaba.muml.pattern.diagram.part.CoordinationPatternDiagramEditorID"; //$NON-NLS-1$
+	public static final String ID = "org.muml.pim.pattern.diagram.part.CoordinationPatternDiagramEditorID"; //$NON-NLS-1$
 
 	/**
 	* @generated
 	*/
-	public static final String CONTEXT_ID = "de.uni_paderborn.fujaba.muml.pattern.diagram.ui.diagramContext"; //$NON-NLS-1$
+	public static final String CONTEXT_ID = "org.muml.pim.pattern.diagram.ui.diagramContext"; //$NON-NLS-1$
 
 	/**
 	* @generated

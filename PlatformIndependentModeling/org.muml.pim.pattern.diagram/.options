@@ -1,7 +1,7 @@
-# Tracing options for the de.uni_paderborn.fujaba.muml.pattern.diagram plug-in
+# Tracing options for the org.muml.pim.pattern.diagram plug-in
 
 # Common issues
-de.uni_paderborn.fujaba.muml.pattern.diagram/debug=false
+org.muml.pim.pattern.diagram/debug=false
 
 # Visual IDs
-de.uni_paderborn.fujaba.muml.pattern.diagram/debug/visualID=false
+org.muml.pim.pattern.diagram/debug/visualID=false
