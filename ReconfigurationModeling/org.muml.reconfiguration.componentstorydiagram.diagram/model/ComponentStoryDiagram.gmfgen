@@ -1846,7 +1846,7 @@
     <requiredPlugins>org.muml.pim.common</requiredPlugins>
     <requiredPlugins>org.muml.core.modelinstance.ui</requiredPlugins>
     <requiredPlugins>org.muml.core.edit.properties</requiredPlugins>
-    <requiredPlugins>de.uni_paderborn.fujaba.muml.edit.properties</requiredPlugins>
+    <requiredPlugins>org.muml.pim.edit.properties</requiredPlugins>
     <requiredPlugins>de.uni_paderborn.fujaba.properties.runtime</requiredPlugins>
     <requiredPlugins>de.uni_paderborn.fujaba.muml.reconfiguration.common</requiredPlugins>
     <requiredPlugins>de.uni_paderborn.fujaba.muml.componentstorydiagram.edit.properties</requiredPlugins>

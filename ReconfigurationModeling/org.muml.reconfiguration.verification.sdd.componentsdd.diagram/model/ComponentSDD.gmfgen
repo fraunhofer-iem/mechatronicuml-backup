@@ -1422,7 +1422,7 @@
     <requiredPlugins>org.eclipse.draw2d</requiredPlugins>
     <requiredPlugins>org.eclipse.gmf.runtime.draw2d.ui</requiredPlugins>
     <requiredPlugins>de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd.edit.properties</requiredPlugins>
-    <requiredPlugins>de.uni_paderborn.fujaba.muml.edit.properties</requiredPlugins>
+    <requiredPlugins>org.muml.pim.edit.properties</requiredPlugins>
     <requiredPlugins>de.uni_paderborn.fujaba.muml.verification.sdd.edit.properties</requiredPlugins>
     <requiredPlugins>org.muml.core.edit.properties</requiredPlugins>
     <requiredPlugins>de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.edit.properties</requiredPlugins>
