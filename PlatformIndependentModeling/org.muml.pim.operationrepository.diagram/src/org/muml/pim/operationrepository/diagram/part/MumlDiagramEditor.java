@@ -52,12 +52,12 @@ public class MumlDiagramEditor extends DiagramDocumentEditor implements IGotoMar
 	/**
 	 * @generated
 	 */
-	public static final String ID = "de.uni_paderborn.fujaba.muml.operationrepository.diagram.part.MumlDiagramEditorID"; //$NON-NLS-1$
+	public static final String ID = "org.muml.pim.operationrepository.diagram.part.MumlDiagramEditorID"; //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final String CONTEXT_ID = "de.uni_paderborn.fujaba.muml.operationrepository.diagram.ui.diagramContext"; //$NON-NLS-1$
+	public static final String CONTEXT_ID = "org.muml.pim.operationrepository.diagram.ui.diagramContext"; //$NON-NLS-1$
 
 	/**
 	 * @generated

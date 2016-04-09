@@ -4,7 +4,7 @@
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:gmfgen="http://www.eclipse.org/gmf/2009/GenModel"
-    packageNamePrefix="de.uni_paderborn.fujaba.muml.operationrepository.diagram"
+    packageNamePrefix="org.muml.pim.operationrepository.diagram"
     modelID="Operation Repository"
     diagramFileExtension="operationrepository_diagram"
     domainFileExtension="fujaba"
@@ -308,37 +308,37 @@
     </preferences>
     <preferencePages
         xsi:type="gmfgen:GenStandardPreferencePage"
-        iD="de.uni_paderborn.fujaba.muml.operationrepository.diagram.general"
+        iD="org.muml.pim.operationrepository.diagram.general"
         name="Operation Repository Diagram Editor"
         parentCategory="org.muml.preferences">
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
-          iD="de.uni_paderborn.fujaba.muml.operationrepository.diagram.appearance"
+          iD="org.muml.pim.operationrepository.diagram.appearance"
           name="Appearance"
-          parentCategory="de.uni_paderborn.fujaba.muml.operationrepository.diagram.general"
+          parentCategory="org.muml.pim.operationrepository.diagram.general"
           kind="Appearance"/>
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
-          iD="de.uni_paderborn.fujaba.muml.operationrepository.diagram.connections"
+          iD="org.muml.pim.operationrepository.diagram.connections"
           name="Connections"
-          parentCategory="de.uni_paderborn.fujaba.muml.operationrepository.diagram.general"
+          parentCategory="org.muml.pim.operationrepository.diagram.general"
           kind="Connections"/>
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
-          iD="de.uni_paderborn.fujaba.muml.operationrepository.diagram.printing"
+          iD="org.muml.pim.operationrepository.diagram.printing"
           name="Printing"
-          parentCategory="de.uni_paderborn.fujaba.muml.operationrepository.diagram.general"
+          parentCategory="org.muml.pim.operationrepository.diagram.general"
           kind="Printing"/>
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
-          iD="de.uni_paderborn.fujaba.muml.operationrepository.diagram.rulersAndGrid"
+          iD="org.muml.pim.operationrepository.diagram.rulersAndGrid"
           name="Rulers And Grid"
-          parentCategory="de.uni_paderborn.fujaba.muml.operationrepository.diagram.general"
+          parentCategory="org.muml.pim.operationrepository.diagram.general"
           kind="RulersAndGrid"/>
     </preferencePages>
   </diagram>
   <plugin
-      iD="de.uni_paderborn.fujaba.muml.operationrepository.diagram"
+      iD="org.muml.pim.operationrepository.diagram"
       name="Operation Repository Diagram Editor"
       provider="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn"
       version="0.5.0.qualifier"
@@ -355,7 +355,7 @@
     <requiredPlugins>org.eclipse.emf.ecore.editor</requiredPlugins>
   </plugin>
   <editor
-      iD="de.uni_paderborn.fujaba.muml.operationrepository.diagram.part.MumlDiagramEditorID"/>
+      iD="org.muml.pim.operationrepository.diagram.part.MumlDiagramEditorID"/>
   <navigator>
     <childReferences
         child="//@diagram"/>

@@ -46,24 +46,24 @@ public class MumlElementTypes {
 	 * @generated
 	 */
 	public static final IElementType ModelElementCategory_1000 = getElementType(
-			"de.uni_paderborn.fujaba.muml.operationrepository.diagram.ModelElementCategory_1000"); //$NON-NLS-1$
+			"org.muml.pim.operationrepository.diagram.ModelElementCategory_1000"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
 	public static final IElementType OperationRepository_2001 = getElementType(
-			"de.uni_paderborn.fujaba.muml.operationrepository.diagram.OperationRepository_2001"); //$NON-NLS-1$
+			"org.muml.pim.operationrepository.diagram.OperationRepository_2001"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
 	public static final IElementType Operation_3001 = getElementType(
-			"de.uni_paderborn.fujaba.muml.operationrepository.diagram.Operation_3001"); //$NON-NLS-1$
+			"org.muml.pim.operationrepository.diagram.Operation_3001"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
 	public static final IElementType Parameter_3002 = getElementType(
-			"de.uni_paderborn.fujaba.muml.operationrepository.diagram.Parameter_3002"); //$NON-NLS-1$
+			"org.muml.pim.operationrepository.diagram.Parameter_3002"); //$NON-NLS-1$
 
 	/**
 	 * @generated
