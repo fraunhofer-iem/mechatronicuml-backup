@@ -24,7 +24,7 @@ public class PimNLSUnusedMessageTest extends NLSUnusedMessageTest {
 				new Object[] {"de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram"},
 				new Object[] {"de.uni_paderborn.fujaba.muml.deployment.diagram"},
 				new Object[] {"de.uni_paderborn.fujaba.muml.messagetype.diagram"},
-				new Object[] {"de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram"},
+				new Object[] {"org.muml.pim.coordinationprotocol.diagram"},
 				new Object[] {"de.uni_paderborn.fujaba.muml.realtimestatechart.diagram"}
 		}));
 	}

@@ -58,12 +58,12 @@ public class CoordinationProtocolDiagramEditor extends DiagramDocumentEditor imp
 	/**
 	 * @generated
 	 */
-	public static final String ID = "de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditorID"; //$NON-NLS-1$
+	public static final String ID = "org.muml.pim.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditorID"; //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final String CONTEXT_ID = "de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.ui.diagramContext"; //$NON-NLS-1$
+	public static final String CONTEXT_ID = "org.muml.pim.coordinationprotocol.diagram.ui.diagramContext"; //$NON-NLS-1$
 
 	/**
 	 * @generated

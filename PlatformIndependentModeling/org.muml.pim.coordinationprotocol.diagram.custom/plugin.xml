@@ -33,7 +33,7 @@
    			checkPluginLoaded="false">
 			<Priority name="Low"/>
 			<popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-				<popupStructuredContributionCriteria objectClass="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.CoordinationProtocol2EditPart"/>
+				<popupStructuredContributionCriteria objectClass="org.muml.pim.coordinationprotocol.diagram.edit.parts.CoordinationProtocol2EditPart"/>
 				<popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
 			</popupContribution>
 		</contributionItemProvider>
@@ -43,15 +43,15 @@
    
    <!-- prevent deleting inner coordination protocol -->
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings" id="element-types-bindings">
-      <binding context="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.TypeContext">
-         <elementType ref="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.CoordinationProtocol_3015"/>
-         <advice ref="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.CoordinationProtocol2Advice"/>
+      <binding context="org.muml.pim.coordinationprotocol.diagram.TypeContext">
+         <elementType ref="org.muml.pim.coordinationprotocol.diagram.CoordinationProtocol_3015"/>
+         <advice ref="org.muml.pim.coordinationprotocol.diagram.CoordinationProtocol2Advice"/>
       </binding>
    </extension>
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
       <metamodel nsURI="http://www.muml.org/pim/protocol/1.0.0">
-        <adviceBinding  id="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.CoordinationProtocol2Advice"
-		  typeId="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.CoordinationProtocol_3015"
+        <adviceBinding  id="org.muml.pim.coordinationprotocol.diagram.CoordinationProtocol2Advice"
+		  typeId="org.muml.pim.coordinationprotocol.diagram.CoordinationProtocol_3015"
 		  class="de.uni_paderborn.fujaba.muml.coordinationspecification.common.edit.helpers.PreventDeleteEditHelperAdvice"
 		  inheritance="all">
         </adviceBinding>
@@ -60,15 +60,15 @@
 	
    <!-- fix for #1230. See referenced class "DeleteWithChildrenEditHelperAdvice" for detailed explanations. -->
     <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings" id="element-types-bindings">
-      <binding context="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.TypeContext">
-         <elementType ref="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.CoordinationProtocol_2005"/>
-         <advice ref="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.CoordinationProtocolAdvice"/>
+      <binding context="org.muml.pim.coordinationprotocol.diagram.TypeContext">
+         <elementType ref="org.muml.pim.coordinationprotocol.diagram.CoordinationProtocol_2005"/>
+         <advice ref="org.muml.pim.coordinationprotocol.diagram.CoordinationProtocolAdvice"/>
       </binding>
    </extension>
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
       <metamodel nsURI="http://www.muml.org/pim/protocol/1.0.0">
-        <adviceBinding  id="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.CoordinationProtocolAdvice"
-		  typeId="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.CoordinationProtocol_2005"
+        <adviceBinding  id="org.muml.pim.coordinationprotocol.diagram.CoordinationProtocolAdvice"
+		  typeId="org.muml.pim.coordinationprotocol.diagram.CoordinationProtocol_2005"
 		  class="de.uni_paderborn.fujaba.muml.coordinationspecification.common.edit.helpers.DeleteWithChildrenEditHelperAdvice"
 		  inheritance="all">
         </adviceBinding>

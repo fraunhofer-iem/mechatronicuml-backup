@@ -69,7 +69,7 @@
             </visibleWhen>
          </command>
          <command
-               commandId="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.custom.createRoleRTSCCommand"
+               commandId="org.muml.pim.coordinationprotocol.diagram.custom.createRoleRTSCCommand"
                id="org.muml.pim.component.diagram.custom.copyRolePropertiesToPortde.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.custom.createRoleRTSC"
                label="Create Role RTSC (incl. Diagram)"
                style="push">
@@ -175,7 +175,7 @@
             categoryId="de.uni_paderborn.fujaba"
             defaultHandler="org.muml.pim.ui.contextmenu.handlers.coordinationprotocol.CreateRoleRTSCHandler"
             description="Create the Role&apos;s RTSC and it&apos;s Diagram"
-            id="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.custom.createRoleRTSCCommand"
+            id="org.muml.pim.coordinationprotocol.diagram.custom.createRoleRTSCCommand"
             name="Create Role RTSC">
       </command>
           <command

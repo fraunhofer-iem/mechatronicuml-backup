@@ -16,7 +16,7 @@
                        ifEmpty="false"
                        operator="and">
                     <instanceof
-                          value="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.CoordinationProtocolCoordinationProtocolContainerCompartmentEditPart">
+                          value="org.muml.pim.coordinationprotocol.diagram.edit.parts.CoordinationProtocolCoordinationProtocolContainerCompartmentEditPart">
                     </instanceof>
                  </iterate>
           			</visibleWhen>
