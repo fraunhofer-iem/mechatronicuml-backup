@@ -8,10 +8,13 @@ import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy;
+import org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy;
 import org.muml.storydiagram.patterns.AbstractVariable;
 import org.muml.storydiagram.patterns.LinkVariable;
 import org.muml.storydiagram.patterns.ObjectVariable;
 import org.muml.storydiagram.patterns.StoryPattern;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.policies.BasicSDDBaseItemSemanticEditPolicy;
 
 /**
  * @generated
@@ -71,19 +74,13 @@ public class LinkVariableReorientCommand extends EditElementCommand {
 			return false;
 		}
 		StoryPattern container = (StoryPattern) getLink().eContainer();
-		View sourceView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-				.getSourceView(getRequest());
-		View targetView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-				.getTargetView(getRequest());
-		if (!org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.policies.BasicSDDBaseItemSemanticEditPolicy
-				.getLinkConstraints().canExistLinkVariable_4003(container,
-						getLink(), getNewSource(), target, sourceView,
-						targetView)) {
-			String errorMessage = org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.policies.BasicSDDBaseItemSemanticEditPolicy
-					.getLinkConstraints().getErrorLinkVariable_4003(container,
-							getNewSource(), target, sourceView, targetView);
-			org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy
-					.showMessage(sourceView, errorMessage);
+		View sourceView = ConnectionConfigureHelperGraphicalNodeEditPolicy.getSourceView(getRequest());
+		View targetView = ConnectionConfigureHelperGraphicalNodeEditPolicy.getTargetView(getRequest());
+		if (!BasicSDDBaseItemSemanticEditPolicy.getLinkConstraints().canExistLinkVariable_4003(container, getLink(),
+				getNewSource(), target, sourceView, targetView)) {
+			String errorMessage = BasicSDDBaseItemSemanticEditPolicy.getLinkConstraints()
+					.getErrorLinkVariable_4003(container, getNewSource(), target, sourceView, targetView);
+			ErrorFeedbackEditPolicy.showMessage(sourceView, errorMessage);
 			return false;
 		}
 		return true;
@@ -101,19 +98,13 @@ public class LinkVariableReorientCommand extends EditElementCommand {
 			return false;
 		}
 		StoryPattern container = (StoryPattern) getLink().eContainer();
-		View sourceView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-				.getSourceView(getRequest());
-		View targetView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-				.getTargetView(getRequest());
-		if (!org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.policies.BasicSDDBaseItemSemanticEditPolicy
-				.getLinkConstraints().canExistLinkVariable_4003(container,
-						getLink(), source, getNewTarget(), sourceView,
-						targetView)) {
-			String errorMessage = org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.policies.BasicSDDBaseItemSemanticEditPolicy
-					.getLinkConstraints().getErrorLinkVariable_4003(container,
-							source, getNewTarget(), sourceView, targetView);
-			org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy
-					.showMessage(sourceView, errorMessage);
+		View sourceView = ConnectionConfigureHelperGraphicalNodeEditPolicy.getSourceView(getRequest());
+		View targetView = ConnectionConfigureHelperGraphicalNodeEditPolicy.getTargetView(getRequest());
+		if (!BasicSDDBaseItemSemanticEditPolicy.getLinkConstraints().canExistLinkVariable_4003(container, getLink(),
+				source, getNewTarget(), sourceView, targetView)) {
+			String errorMessage = BasicSDDBaseItemSemanticEditPolicy.getLinkConstraints()
+					.getErrorLinkVariable_4003(container, source, getNewTarget(), sourceView, targetView);
+			ErrorFeedbackEditPolicy.showMessage(sourceView, errorMessage);
 			return false;
 		}
 		return true;
@@ -122,11 +113,9 @@ public class LinkVariableReorientCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
-			IAdaptable info) throws ExecutionException {
+	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		if (!canExecute()) {
-			throw new ExecutionException(
-					"Invalid arguments in reorient link command"); //$NON-NLS-1$
+			throw new ExecutionException("Invalid arguments in reorient link command"); //$NON-NLS-1$
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
 			return reorientSource();

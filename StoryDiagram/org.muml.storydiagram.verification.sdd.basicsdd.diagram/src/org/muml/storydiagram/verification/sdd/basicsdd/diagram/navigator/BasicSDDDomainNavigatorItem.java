@@ -17,34 +17,28 @@ public class BasicSDDDomainNavigatorItem extends PlatformObject {
 	 * @generated
 	 */
 	static {
-		final Class[] supportedTypes = new Class[] { EObject.class,
-				IPropertySource.class };
-		Platform.getAdapterManager().registerAdapters(
-				new IAdapterFactory() {
+		final Class[] supportedTypes = new Class[] { EObject.class, IPropertySource.class };
+		Platform.getAdapterManager().registerAdapters(new IAdapterFactory() {
 
-					public Object getAdapter(Object adaptableObject,
-							Class adapterType) {
-						if (adaptableObject instanceof org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDDomainNavigatorItem) {
-							org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDDomainNavigatorItem domainNavigatorItem = (org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDDomainNavigatorItem) adaptableObject;
-							EObject eObject = domainNavigatorItem.getEObject();
-							if (adapterType == EObject.class) {
-								return eObject;
-							}
-							if (adapterType == IPropertySource.class) {
-								return domainNavigatorItem
-										.getPropertySourceProvider()
-										.getPropertySource(eObject);
-							}
-						}
-
-						return null;
+			public Object getAdapter(Object adaptableObject, Class adapterType) {
+				if (adaptableObject instanceof org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDDomainNavigatorItem) {
+					org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDDomainNavigatorItem domainNavigatorItem = (org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDDomainNavigatorItem) adaptableObject;
+					EObject eObject = domainNavigatorItem.getEObject();
+					if (adapterType == EObject.class) {
+						return eObject;
 					}
-
-					public Class[] getAdapterList() {
-						return supportedTypes;
+					if (adapterType == IPropertySource.class) {
+						return domainNavigatorItem.getPropertySourceProvider().getPropertySource(eObject);
 					}
-				},
-				org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDDomainNavigatorItem.class);
+				}
+
+				return null;
+			}
+
+			public Class[] getAdapterList() {
+				return supportedTypes;
+			}
+		}, org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDDomainNavigatorItem.class);
 	}
 
 	/**
@@ -65,8 +59,7 @@ public class BasicSDDDomainNavigatorItem extends PlatformObject {
 	/**
 	 * @generated
 	 */
-	public BasicSDDDomainNavigatorItem(EObject eObject, Object parent,
-			IPropertySourceProvider propertySourceProvider) {
+	public BasicSDDDomainNavigatorItem(EObject eObject, Object parent, IPropertySourceProvider propertySourceProvider) {
 		myParent = parent;
 		myEObject = eObject;
 		myPropertySourceProvider = propertySourceProvider;
@@ -98,8 +91,7 @@ public class BasicSDDDomainNavigatorItem extends PlatformObject {
 	 */
 	public boolean equals(Object obj) {
 		if (obj instanceof org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDDomainNavigatorItem) {
-			return EcoreUtil
-					.getURI(getEObject())
+			return EcoreUtil.getURI(getEObject())
 					.equals(EcoreUtil
 							.getURI(((org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDDomainNavigatorItem) obj)
 									.getEObject()));

@@ -12,10 +12,7 @@ public class ModelElementSelectionPage extends DefaultModelElementSelectionPage 
 	 * @generated
 	 */
 	public ModelElementSelectionPage(String pageName) {
-		super(
-				org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDDiagramEditorPlugin
-						.getInstance().getItemProvidersAdapterFactory(),
-				pageName);
+		super(BasicSDDDiagramEditorPlugin.getInstance().getItemProvidersAdapterFactory(), pageName);
 	}
 
 	/**
@@ -23,7 +20,7 @@ public class ModelElementSelectionPage extends DefaultModelElementSelectionPage 
 	 * @generated
 	 */
 	protected String getSelectionTitle() {
-		return org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.Messages.ModelElementSelectionPageMessage;
+		return Messages.ModelElementSelectionPageMessage;
 	}
 
 }

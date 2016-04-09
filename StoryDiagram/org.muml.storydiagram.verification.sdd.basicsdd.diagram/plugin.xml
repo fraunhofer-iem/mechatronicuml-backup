@@ -23,7 +23,7 @@
 	<extension point="org.eclipse.ui.editors" id="gmf-editor">
       <?gmfgen generated="true"?>
       <editor
-         id="de.uni_paderborn.fujaba.muml.verification.sdd.diagram.part.BasicSDDDiagramEditorID"
+         id="org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDDiagramEditorID"
          name="%editorName"
          icon="icons/obj16/SDDDiagramFile.gif"
          extensions="basicsdd_diagram"
@@ -37,7 +37,7 @@
       <?gmfgen generated="true"?>
       <context
          description="%context.description"
-         id="de.uni_paderborn.fujaba.muml.verification.sdd.diagram.ui.diagramContext"
+         id="org.muml.storydiagram.verification.sdd.basicsdd.diagram.ui.diagramContext"
          name="%context.name"
          parentId="org.eclipse.gmf.runtime.diagram.ui.diagramContext">
       </context>
@@ -50,7 +50,7 @@
   	     icon="icons/obj16/SDDDiagramFile.gif"
   	     category="org.eclipse.ui.Examples"
   	     class="org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDCreationWizard"
-  	     id="de.uni_paderborn.fujaba.muml.verification.sdd.diagram.part.BasicSDDCreationWizardID">
+  	     id="org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDCreationWizardID">
   	  	 <description>%newWizardDesc</description>  
       </wizard>
    	</extension>
@@ -66,7 +66,7 @@
          categoryId="org.eclipse.ui.category.edit"
          defaultHandler="org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDDiagramUpdateCommand"
          description="%update.diagram.description"
-         id="de.uni_paderborn.fujaba.muml.verification.sdd.diagram.updateDiagram"
+         id="org.muml.storydiagram.verification.sdd.basicsdd.diagram.updateDiagram"
          name="%update.diagram.name"/>
    </extension>
 
@@ -81,7 +81,7 @@
          class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramGlobalActionHandlerProvider"
          id="BasicSDDPresentation">
          <Priority name="Lowest"/>
-         <ViewId id="de.uni_paderborn.fujaba.muml.verification.sdd.diagram.part.BasicSDDDiagramEditorID">
+         <ViewId id="org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDDiagramEditorID">
             <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
                <GlobalActionId actionId="delete"/>
             </ElementType>
@@ -98,7 +98,7 @@
          class="org.eclipse.gmf.runtime.diagram.ui.providers.ide.providers.DiagramIDEGlobalActionHandlerProvider"
          id="BasicSDDPresentationIDE">
          <Priority name="Lowest"/>
-         <ViewId id="de.uni_paderborn.fujaba.muml.verification.sdd.diagram.part.BasicSDDDiagramEditorID">
+         <ViewId id="org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDDiagramEditorID">
             <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
                <GlobalActionId actionId="bookmark"/>
             </ElementType>
@@ -108,7 +108,7 @@
             class="org.eclipse.gmf.runtime.diagram.ui.render.providers.DiagramUIRenderGlobalActionHandlerProvider"
             id="BasicSDDRender">
          <Priority name="Lowest"/>
-         <ViewId id="de.uni_paderborn.fujaba.muml.verification.sdd.diagram.part.BasicSDDDiagramEditorID">
+         <ViewId id="org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDDiagramEditorID">
             <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
                <GlobalActionId actionId="cut"/>
                <GlobalActionId actionId="copy"/>
@@ -151,32 +151,32 @@
    <extension point="org.eclipse.ui.preferencePages" id="prefpages">
       <?gmfgen generated="true"?>
       <page
-            id="de.uni_paderborn.fujaba.pgSafeBots.verification.constraints.sdd.diagram.general"
-            name="%prefpage.de.uni_paderborn.fujaba.pgSafeBots.verification.constraints.sdd.diagram.general"
+            id="org.muml.storydiagram.verification.sdd.basicsdd.diagram.general"
+            name="%prefpage.org.muml.storydiagram.verification.sdd.basicsdd.diagram.general"
             class="org.muml.storydiagram.verification.sdd.basicsdd.diagram.preferences.DiagramGeneralPreferencePage">
       </page>
       <page
-            id="de.uni_paderborn.fujaba.pgSafeBots.verification.constraints.sdd.diagram.appearance"
-            name="%prefpage.de.uni_paderborn.fujaba.pgSafeBots.verification.constraints.sdd.diagram.appearance"
-            category="de.uni_paderborn.fujaba.pgSafeBots.verification.constraints.sdd.diagram.general"
+            id="org.muml.storydiagram.verification.sdd.basicsdd.diagram.appearance"
+            name="%prefpage.org.muml.storydiagram.verification.sdd.basicsdd.diagram.appearance"
+            category="org.muml.storydiagram.verification.sdd.basicsdd.diagram.general"
             class="org.muml.storydiagram.verification.sdd.basicsdd.diagram.preferences.DiagramAppearancePreferencePage">
       </page>
       <page
-            id="de.uni_paderborn.fujaba.pgSafeBots.verification.constraints.sdd.diagram.connections"
-            name="%prefpage.de.uni_paderborn.fujaba.pgSafeBots.verification.constraints.sdd.diagram.connections"
-            category="de.uni_paderborn.fujaba.pgSafeBots.verification.constraints.sdd.diagram.general"
+            id="org.muml.storydiagram.verification.sdd.basicsdd.diagram.connections"
+            name="%prefpage.org.muml.storydiagram.verification.sdd.basicsdd.diagram.connections"
+            category="org.muml.storydiagram.verification.sdd.basicsdd.diagram.general"
             class="org.muml.storydiagram.verification.sdd.basicsdd.diagram.preferences.DiagramConnectionsPreferencePage">
       </page>
       <page
-            id="de.uni_paderborn.fujaba.pgSafeBots.verification.constraints.sdd.diagram.printing"
-            name="%prefpage.de.uni_paderborn.fujaba.pgSafeBots.verification.constraints.sdd.diagram.printing"
-            category="de.uni_paderborn.fujaba.pgSafeBots.verification.constraints.sdd.diagram.general"
+            id="org.muml.storydiagram.verification.sdd.basicsdd.diagram.printing"
+            name="%prefpage.org.muml.storydiagram.verification.sdd.basicsdd.diagram.printing"
+            category="org.muml.storydiagram.verification.sdd.basicsdd.diagram.general"
             class="org.muml.storydiagram.verification.sdd.basicsdd.diagram.preferences.DiagramPrintingPreferencePage">
       </page>
       <page
-            id="de.uni_paderborn.fujaba.pgSafeBots.verification.constraints.sdd.diagram.rulersAndGrid"
-            name="%prefpage.de.uni_paderborn.fujaba.pgSafeBots.verification.constraints.sdd.diagram.rulersAndGrid"
-            category="de.uni_paderborn.fujaba.pgSafeBots.verification.constraints.sdd.diagram.general"
+            id="org.muml.storydiagram.verification.sdd.basicsdd.diagram.rulersAndGrid"
+            name="%prefpage.org.muml.storydiagram.verification.sdd.basicsdd.diagram.rulersAndGrid"
+            category="org.muml.storydiagram.verification.sdd.basicsdd.diagram.general"
             class="org.muml.storydiagram.verification.sdd.basicsdd.diagram.preferences.DiagramRulersAndGridPreferencePage">
       </page>
    </extension>
@@ -248,7 +248,7 @@
          
    <extension point="org.eclipse.gmf.runtime.diagram.core.viewProviders" id="view-provider">
       <?gmfgen generated="true"?>
-      <viewProvider class="de.uni_paderborn.fujaba.muml.verification.sdd.diagram.providers.BasicSDDViewProvider">
+      <viewProvider class="org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.BasicSDDViewProvider">
          <Priority name="Lowest"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="BasicSDD"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2003,2004,3011,3006,3007,3008,3009,3010"/>
@@ -258,7 +258,7 @@
 
    <extension point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders" id="ep-provider">
       <?gmfgen generated="true"?>
-      <editpartProvider class="de.uni_paderborn.fujaba.muml.verification.sdd.diagram.providers.BasicSDDEditPartProvider">
+      <editpartProvider class="org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.BasicSDDEditPartProvider">
          <Priority name="Lowest"/>
          <object class="org.eclipse.gmf.runtime.notation.Diagram" id="generated-diagram">
             <method name="getType()" value="BasicSDD"/>
@@ -283,47 +283,47 @@
       <?gmfgen generated="true"?>
       <modelingAssistantProvider class="org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.assistants.BasicSDDModelingAssistantProviderOfStoryDecisionDiagramEditPart">
          <Priority name="Lowest"/>
-         <object class="de.uni_paderborn.fujaba.muml.verification.sdd.diagram.edit.parts.StoryDecisionDiagramEditPart" id="StoryDecisionDiagram_1000"/>
+         <object class="org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryDecisionDiagramEditPart" id="StoryDecisionDiagram_1000"/>
          <context elements="StoryDecisionDiagram_1000"/>
       </modelingAssistantProvider>
             <modelingAssistantProvider class="org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.assistants.BasicSDDModelingAssistantProviderOfStoryPatternNodeEditPart">
          <Priority name="Lowest"/>
-         <object class="de.uni_paderborn.fujaba.muml.verification.sdd.diagram.edit.parts.StoryPatternNodeEditPart" id="StoryPatternNode_2003"/>
+         <object class="org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryPatternNodeEditPart" id="StoryPatternNode_2003"/>
          <context elements="StoryPatternNode_2003"/>
       </modelingAssistantProvider>
             <modelingAssistantProvider class="org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.assistants.BasicSDDModelingAssistantProviderOfLeafNodeEditPart">
          <Priority name="Lowest"/>
-         <object class="de.uni_paderborn.fujaba.muml.verification.sdd.diagram.edit.parts.LeafNodeEditPart" id="LeafNode_2004"/>
+         <object class="org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.LeafNodeEditPart" id="LeafNode_2004"/>
          <context elements="LeafNode_2004"/>
       </modelingAssistantProvider>
             <modelingAssistantProvider class="org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.assistants.BasicSDDModelingAssistantProviderOfStoryPatternEditPart">
          <Priority name="Lowest"/>
-         <object class="de.uni_paderborn.fujaba.muml.verification.sdd.diagram.edit.parts.StoryPatternEditPart" id="StoryPattern_3011"/>
+         <object class="org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryPatternEditPart" id="StoryPattern_3011"/>
          <context elements="StoryPattern_3011"/>
       </modelingAssistantProvider>
             <modelingAssistantProvider class="org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.assistants.BasicSDDModelingAssistantProviderOfCollectionVariableEditPart">
          <Priority name="Lowest"/>
-         <object class="de.uni_paderborn.fujaba.muml.verification.sdd.diagram.edit.parts.CollectionVariableEditPart" id="CollectionVariable_3006"/>
+         <object class="org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.CollectionVariableEditPart" id="CollectionVariable_3006"/>
          <context elements="CollectionVariable_3006"/>
       </modelingAssistantProvider>
             <modelingAssistantProvider class="org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.assistants.BasicSDDModelingAssistantProviderOfAttributeAssignmentEditPart">
          <Priority name="Lowest"/>
-         <object class="de.uni_paderborn.fujaba.muml.verification.sdd.diagram.edit.parts.AttributeAssignmentEditPart" id="AttributeAssignment_3007"/>
+         <object class="org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.AttributeAssignmentEditPart" id="AttributeAssignment_3007"/>
          <context elements="AttributeAssignment_3007"/>
       </modelingAssistantProvider>
             <modelingAssistantProvider class="org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.assistants.BasicSDDModelingAssistantProviderOfConstraintEditPart">
          <Priority name="Lowest"/>
-         <object class="de.uni_paderborn.fujaba.muml.verification.sdd.diagram.edit.parts.ConstraintEditPart" id="Constraint_3008"/>
+         <object class="org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.ConstraintEditPart" id="Constraint_3008"/>
          <context elements="Constraint_3008"/>
       </modelingAssistantProvider>
             <modelingAssistantProvider class="org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.assistants.BasicSDDModelingAssistantProviderOfObjectVariableEditPart">
          <Priority name="Lowest"/>
-         <object class="de.uni_paderborn.fujaba.muml.verification.sdd.diagram.edit.parts.ObjectVariableEditPart" id="ObjectVariable_3009"/>
+         <object class="org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.ObjectVariableEditPart" id="ObjectVariable_3009"/>
          <context elements="ObjectVariable_3009"/>
       </modelingAssistantProvider>
             <modelingAssistantProvider class="org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.assistants.BasicSDDModelingAssistantProviderOfConstraint2EditPart">
          <Priority name="Lowest"/>
-         <object class="de.uni_paderborn.fujaba.muml.verification.sdd.diagram.edit.parts.Constraint2EditPart" id="Constraint_3010"/>
+         <object class="org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.Constraint2EditPart" id="Constraint_3010"/>
          <context elements="Constraint_3010"/>
       </modelingAssistantProvider>
       
@@ -595,18 +595,18 @@
    </extension>
    <extension point="org.eclipse.ui.commands" id="menu-commands">
       <?gmfgen generated="true"?>
-      <category id="de.uni_paderborn.fujaba.muml.verification.sdd.diagram.part.BasicSDDDiagramEditorID" name="%cmdcategory.name" description="%cmdcategory.desc"/>
+      <category id="org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDDiagramEditorID" name="%cmdcategory.name" description="%cmdcategory.desc"/>
       <command id="org.muml.storydiagram.verification.sdd.basicsdd.diagram.LoadResourceAction"
          name="Load Resource"
-         categoryId="de.uni_paderborn.fujaba.muml.verification.sdd.diagram.part.BasicSDDDiagramEditorID"
+         categoryId="org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDDiagramEditorID"
          defaultHandler="org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.LoadResourceAction"/>
    </extension>
    
    <extension point="org.eclipse.ui.bindings" id="update-cmd-binding">
       <?gmfgen generated="true"?>
       <key 
-         commandId="de.uni_paderborn.fujaba.muml.verification.sdd.diagram.updateDiagram"
-         contextId="de.uni_paderborn.fujaba.muml.verification.sdd.diagram.ui.diagramContext"
+         commandId="org.muml.storydiagram.verification.sdd.basicsdd.diagram.updateDiagram"
+         contextId="org.muml.storydiagram.verification.sdd.basicsdd.diagram.ui.diagramContext"
          schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
          sequence="F5"/>
    </extension>
@@ -626,7 +626,7 @@
          <command commandId="org.muml.storydiagram.verification.sdd.basicsdd.diagram.LoadResourceAction">
             <visibleWhen>
                <and>
-                  <with variable="activePartId"><equals value="de.uni_paderborn.fujaba.muml.verification.sdd.diagram.part.BasicSDDDiagramEditorID"/></with>
+                  <with variable="activePartId"><equals value="org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDDiagramEditorID"/></with>
                   <with variable="selection"><iterate ifEmpty="false"> 
                      <instanceof value="org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryDecisionDiagramEditPart"/>
                   </iterate></with>
@@ -636,8 +636,27 @@
       </menuContribution>
    </extension>
 <extension point="org.eclipse.ui.menus">
-	   <?gmfgen generated="true"?>   
+	   <?gmfgen generated="true"?>
 	   <menuContribution
+	         allPopups="false"
+	         locationURI="popup:de.uni_paderborn.fujaba.muml.browser.new.menu?after=additions">
+	  		<command
+                 commandId="org.muml.storydiagram.verification.sdd.basicsdd.StoryDecisionDiagram.browser.create"
+                 icon="icons/obj16/SDDDiagramFile.gif"
+                 id="org.muml.storydiagram.verification.sdd.basicsdd.StoryDecisionDiagram.browser.create"
+                 label="StoryDecisionDiagram"
+                 style="push">
+              <visibleWhen
+                    checkEnabled="false">
+                    <iterate ifEmpty="false" operator="and">
+                       <adapt type="org.eclipse.core.resources.IResource">
+				       </adapt>
+                    </iterate>	
+              </visibleWhen>
+           </command>
+      </menuContribution>
+      <?gmfgen generated="true"?>   
+	  <menuContribution
 	         allPopups="false"
 	         locationURI="popup:de.uni_paderborn.fujaba?after=diagrams">
 	      <command
@@ -647,29 +666,37 @@
 	            label="Create BasicSDD Diagram"
 	            style="push">
 	            	<visibleWhen checkEnabled="false">
-						<reference definitionId="de.uni_paderborn.fujaba.expression.fujabafile"></reference>
+		            	<or>
+		            	<reference definitionId="de.uni_paderborn.fujaba.expression.fujabafile"></reference>
+						<iterate ifEmpty="false" operator="or">
+		            		<adapt type="org.eclipse.core.resources.IResource">
+		            			<test property="org.eclipse.core.resources.name" value="*.basicsdd"></test>
+	              			</adapt>
+		    			</iterate>
+		    			</or>
           			</visibleWhen>
 	      </command>
 	   </menuContribution>
+	   
 	</extension>
 
 <extension point="org.eclipse.ui.commands">
-		<?gmfgen generated="true"?>
-		<command
-			categoryId="de.uni_paderborn.fujaba"
-			description="Initialize realtimestatechart_diagram"
-			defaultHandler="org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDInitDiagramFileAction"
-			id="org.muml.storydiagram.verification.sdd.basicsdd.diagram.createDiagram"
-			name="%initDiagramActionLabel">
-		</command>
-	</extension>
+	<?gmfgen generated="true"?>
+	<command
+           defaultHandler="org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDInitDiagramFileAction$CreateDiagramElement"
+           categoryId="de.uni_paderborn.fujaba"
+           description="Create new BasicSDD"
+           id="org.muml.storydiagram.verification.sdd.basicsdd.StoryDecisionDiagram.browser.create"
+           name="Create new BasicSDD">
+    </command>
+    </extension>
 
 <extension
          point="org.muml.core.modelinstance.modelelementcategory">
       <?gmfgen generated="true"?>  
       <category
-            key="de.uni_paderborn.fujaba.muml.verification.sdd.basicSDD.category"
-            name="basicSDD">
+            key="org.muml.storydiagram.verification.sdd.basicsdd.category"
+            name="basicsdd">
          
          <child
                class="StoryDecisionDiagram"
@@ -684,10 +711,10 @@
       <?gmfgen generated="true"?>
       <editor
             preferencesHint="org.muml.storydiagram.verification.sdd.basicsdd.diagram"
-            editorId="de.uni_paderborn.fujaba.muml.verification.sdd.diagram.part.BasicSDDDiagramEditorID"
+            editorId="org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDDiagramEditorID"
             editorName="BasicSDD Editor"
             fileExtension="basicsdd_diagram"
-            modelElementCategoryKey="de.uni_paderborn.fujaba.muml.verification.sdd.basicSDD.category"
+            modelElementCategoryKey="org.muml.storydiagram.verification.sdd.basicsdd.category"
             modelId="BasicSDD">
          <diagramElement
                packageNsURI="http://www.muml.org/storydiagram/verification/sdd/basicsdd/1.0.0"
@@ -706,6 +733,32 @@
          
       </editor>
    </extension>
+<extension point="org.eclipse.emf.ecore.extension_parser" id="resource-factory">
+      <?gmfgen generated="true"?>
+      <parser
+         type="storydecisiondiagram"
+         class="org.eclipse.gmf.runtime.emf.core.resources.GMFResourceFactory">
+      </parser>
+   </extension>
+
+<extension point="org.eclipse.core.contenttype.contentTypes">
+		<?gmfgen generated="true"?>
+   		<!--
+   		<file-association content-type="de.uni_paderborn.fujaba.modelinstance.editor.model" file-extensions="basicsdd"/>
+   		-->
+    </extension>
+
+<extension point="org.eclipse.ui.commands">
+		<?gmfgen generated="true"?>
+		<command
+			categoryId="de.uni_paderborn.fujaba"
+			description="Initialize realtimestatechart_diagram"
+			defaultHandler="org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDInitDiagramFileAction"
+			id="org.muml.storydiagram.verification.sdd.basicsdd.diagram.createDiagram"
+			name="%initDiagramActionLabel">
+		</command>
+	</extension>
+
 
 
 

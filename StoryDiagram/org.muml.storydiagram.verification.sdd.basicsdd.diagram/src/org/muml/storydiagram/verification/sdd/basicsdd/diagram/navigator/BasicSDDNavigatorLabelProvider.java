@@ -17,25 +17,42 @@ import org.eclipse.ui.navigator.ICommonContentExtensionSite;
 import org.eclipse.ui.navigator.ICommonLabelProvider;
 import org.muml.storydiagram.patterns.LinkVariable;
 import org.muml.storydiagram.patterns.StoryPattern;
+import org.muml.storydiagram.verification.sdd.Edge;
+import org.muml.storydiagram.verification.sdd.LeafNode;
+import org.muml.storydiagram.verification.sdd.basicsdd.StoryDecisionDiagram;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.AttributeAssignmentEditPart;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.CollectionVariableEditPart;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.Constraint2EditPart;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.ConstraintEditPart;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.EdgeEditPart;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.LeafNodeEditPart;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.LinkVariableEditPart;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.ObjectVariableEditPart;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryDecisionDiagramEditPart;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryPatternEditPart;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryPatternNodeEditPart;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryPatternNodeNameEditPart;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.WrappingLabel3EditPart;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.WrappingLabelEditPart;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDDiagramEditorPlugin;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDVisualIDRegistry;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.BasicSDDElementTypes;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.BasicSDDParserProvider;
 
 /**
  * @generated
  */
-public class BasicSDDNavigatorLabelProvider extends LabelProvider implements
-		ICommonLabelProvider, ITreePathLabelProvider {
+public class BasicSDDNavigatorLabelProvider extends LabelProvider
+		implements ICommonLabelProvider, ITreePathLabelProvider {
 
 	/**
 	 * @generated
 	 */
 	static {
-		org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDDiagramEditorPlugin
-				.getInstance()
-				.getImageRegistry()
-				.put("Navigator?UnknownElement", ImageDescriptor.getMissingImageDescriptor()); //$NON-NLS-1$
-		org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDDiagramEditorPlugin
-				.getInstance()
-				.getImageRegistry()
-				.put("Navigator?ImageNotFound", ImageDescriptor.getMissingImageDescriptor()); //$NON-NLS-1$
+		BasicSDDDiagramEditorPlugin.getInstance().getImageRegistry().put("Navigator?UnknownElement", //$NON-NLS-1$
+				ImageDescriptor.getMissingImageDescriptor());
+		BasicSDDDiagramEditorPlugin.getInstance().getImageRegistry().put("Navigator?ImageNotFound", //$NON-NLS-1$
+				ImageDescriptor.getMissingImageDescriptor());
 	}
 
 	/**
@@ -43,9 +60,7 @@ public class BasicSDDNavigatorLabelProvider extends LabelProvider implements
 	 */
 	public void updateLabel(ViewerLabel label, TreePath elementPath) {
 		Object element = elementPath.getLastSegment();
-		if (element instanceof org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDNavigatorItem
-				&& !isOwnView(((org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDNavigatorItem) element)
-						.getView())) {
+		if (element instanceof BasicSDDNavigatorItem && !isOwnView(((BasicSDDNavigatorItem) element).getView())) {
 			return;
 		}
 		label.setText(getText(element));
@@ -56,14 +71,13 @@ public class BasicSDDNavigatorLabelProvider extends LabelProvider implements
 	 * @generated
 	 */
 	public Image getImage(Object element) {
-		if (element instanceof org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDNavigatorGroup) {
-			org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDNavigatorGroup group = (org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDNavigatorGroup) element;
-			return org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDDiagramEditorPlugin
-					.getInstance().getBundledImage(group.getIcon());
+		if (element instanceof BasicSDDNavigatorGroup) {
+			BasicSDDNavigatorGroup group = (BasicSDDNavigatorGroup) element;
+			return BasicSDDDiagramEditorPlugin.getInstance().getBundledImage(group.getIcon());
 		}
 
-		if (element instanceof org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDNavigatorItem) {
-			org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDNavigatorItem navigatorItem = (org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDNavigatorItem) element;
+		if (element instanceof BasicSDDNavigatorItem) {
+			BasicSDDNavigatorItem navigatorItem = (BasicSDDNavigatorItem) element;
 			if (!isOwnView(navigatorItem.getView())) {
 				return super.getImage(element);
 			}
@@ -77,41 +91,42 @@ public class BasicSDDNavigatorLabelProvider extends LabelProvider implements
 	 * @generated
 	 */
 	public Image getImage(View view) {
-		switch (org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDVisualIDRegistry
-				.getVisualID(view)) {
-		case org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryDecisionDiagramEditPart.VISUAL_ID:
+		switch (BasicSDDVisualIDRegistry.getVisualID(view)) {
+		case StoryDecisionDiagramEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Diagram?http://www.muml.org/storydiagram/verification/sdd/basicsdd/1.0.0?StoryDecisionDiagram", org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.BasicSDDElementTypes.StoryDecisionDiagram_1000); //$NON-NLS-1$
-		case org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryPatternNodeEditPart.VISUAL_ID:
+					"Navigator?Diagram?http://www.muml.org/storydiagram/verification/sdd/basicsdd/1.0.0?StoryDecisionDiagram", //$NON-NLS-1$
+					BasicSDDElementTypes.StoryDecisionDiagram_1000);
+		case StoryPatternNodeEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?TopLevelNode?http://www.muml.org/storydiagram/verification/sdd/basicsdd/1.0.0?StoryPatternNode", org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.BasicSDDElementTypes.StoryPatternNode_2003); //$NON-NLS-1$
-		case org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.LeafNodeEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?TopLevelNode?http://www.muml.org/storydiagram/verification/sdd/1.0.0?LeafNode", org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.BasicSDDElementTypes.LeafNode_2004); //$NON-NLS-1$
-		case org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.CollectionVariableEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Node?http://www.muml.org/storydiagram/patterns/1.0.0?CollectionVariable", org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.BasicSDDElementTypes.CollectionVariable_3006); //$NON-NLS-1$
-		case org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.AttributeAssignmentEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Node?http://www.muml.org/storydiagram/patterns/1.0.0?AttributeAssignment", org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.BasicSDDElementTypes.AttributeAssignment_3007); //$NON-NLS-1$
-		case org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.ConstraintEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Node?http://www.muml.org/storydiagram/patterns/1.0.0?Constraint", org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.BasicSDDElementTypes.Constraint_3008); //$NON-NLS-1$
-		case org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.ObjectVariableEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Node?http://www.muml.org/storydiagram/patterns/1.0.0?ObjectVariable", org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.BasicSDDElementTypes.ObjectVariable_3009); //$NON-NLS-1$
-		case org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.Constraint2EditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Node?http://www.muml.org/storydiagram/patterns/1.0.0?Constraint", org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.BasicSDDElementTypes.Constraint_3010); //$NON-NLS-1$
-		case org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryPatternEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Node?http://www.muml.org/storydiagram/patterns/1.0.0?StoryPattern", org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.BasicSDDElementTypes.StoryPattern_3011); //$NON-NLS-1$
-		case org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.EdgeEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Link?http://www.muml.org/storydiagram/verification/sdd/1.0.0?Edge", org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.BasicSDDElementTypes.Edge_4001); //$NON-NLS-1$
-		case org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.LinkVariableEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Link?http://www.muml.org/storydiagram/patterns/1.0.0?LinkVariable", org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.BasicSDDElementTypes.LinkVariable_4003); //$NON-NLS-1$
+					"Navigator?TopLevelNode?http://www.muml.org/storydiagram/verification/sdd/basicsdd/1.0.0?StoryPatternNode", //$NON-NLS-1$
+					BasicSDDElementTypes.StoryPatternNode_2003);
+		case LeafNodeEditPart.VISUAL_ID:
+			return getImage("Navigator?TopLevelNode?http://www.muml.org/storydiagram/verification/sdd/1.0.0?LeafNode", //$NON-NLS-1$
+					BasicSDDElementTypes.LeafNode_2004);
+		case CollectionVariableEditPart.VISUAL_ID:
+			return getImage("Navigator?Node?http://www.muml.org/storydiagram/patterns/1.0.0?CollectionVariable", //$NON-NLS-1$
+					BasicSDDElementTypes.CollectionVariable_3006);
+		case AttributeAssignmentEditPart.VISUAL_ID:
+			return getImage("Navigator?Node?http://www.muml.org/storydiagram/patterns/1.0.0?AttributeAssignment", //$NON-NLS-1$
+					BasicSDDElementTypes.AttributeAssignment_3007);
+		case ConstraintEditPart.VISUAL_ID:
+			return getImage("Navigator?Node?http://www.muml.org/storydiagram/patterns/1.0.0?Constraint", //$NON-NLS-1$
+					BasicSDDElementTypes.Constraint_3008);
+		case ObjectVariableEditPart.VISUAL_ID:
+			return getImage("Navigator?Node?http://www.muml.org/storydiagram/patterns/1.0.0?ObjectVariable", //$NON-NLS-1$
+					BasicSDDElementTypes.ObjectVariable_3009);
+		case Constraint2EditPart.VISUAL_ID:
+			return getImage("Navigator?Node?http://www.muml.org/storydiagram/patterns/1.0.0?Constraint", //$NON-NLS-1$
+					BasicSDDElementTypes.Constraint_3010);
+		case StoryPatternEditPart.VISUAL_ID:
+			return getImage("Navigator?Node?http://www.muml.org/storydiagram/patterns/1.0.0?StoryPattern", //$NON-NLS-1$
+					BasicSDDElementTypes.StoryPattern_3011);
+		case EdgeEditPart.VISUAL_ID:
+			return getImage("Navigator?Link?http://www.muml.org/storydiagram/verification/sdd/1.0.0?Edge", //$NON-NLS-1$
+					BasicSDDElementTypes.Edge_4001);
+		case LinkVariableEditPart.VISUAL_ID:
+			return getImage("Navigator?Link?http://www.muml.org/storydiagram/patterns/1.0.0?LinkVariable", //$NON-NLS-1$
+					BasicSDDElementTypes.LinkVariable_4003);
 		}
 		return getImage("Navigator?UnknownElement", null); //$NON-NLS-1$
 	}
@@ -120,15 +135,10 @@ public class BasicSDDNavigatorLabelProvider extends LabelProvider implements
 	 * @generated
 	 */
 	private Image getImage(String key, IElementType elementType) {
-		ImageRegistry imageRegistry = org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDDiagramEditorPlugin
-				.getInstance().getImageRegistry();
+		ImageRegistry imageRegistry = BasicSDDDiagramEditorPlugin.getInstance().getImageRegistry();
 		Image image = imageRegistry.get(key);
-		if (image == null
-				&& elementType != null
-				&& org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.BasicSDDElementTypes
-						.isKnownElementType(elementType)) {
-			image = org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.BasicSDDElementTypes
-					.getImage(elementType);
+		if (image == null && elementType != null && BasicSDDElementTypes.isKnownElementType(elementType)) {
+			image = BasicSDDElementTypes.getImage(elementType);
 			imageRegistry.put(key, image);
 		}
 
@@ -143,13 +153,13 @@ public class BasicSDDNavigatorLabelProvider extends LabelProvider implements
 	 * @generated
 	 */
 	public String getText(Object element) {
-		if (element instanceof org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDNavigatorGroup) {
-			org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDNavigatorGroup group = (org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDNavigatorGroup) element;
+		if (element instanceof BasicSDDNavigatorGroup) {
+			BasicSDDNavigatorGroup group = (BasicSDDNavigatorGroup) element;
 			return group.getGroupName();
 		}
 
-		if (element instanceof org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDNavigatorItem) {
-			org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDNavigatorItem navigatorItem = (org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDNavigatorItem) element;
+		if (element instanceof BasicSDDNavigatorItem) {
+			BasicSDDNavigatorItem navigatorItem = (BasicSDDNavigatorItem) element;
 			if (!isOwnView(navigatorItem.getView())) {
 				return null;
 			}
@@ -166,29 +176,28 @@ public class BasicSDDNavigatorLabelProvider extends LabelProvider implements
 		if (view.getElement() != null && view.getElement().eIsProxy()) {
 			return getUnresolvedDomainElementProxyText(view);
 		}
-		switch (org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDVisualIDRegistry
-				.getVisualID(view)) {
-		case org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryDecisionDiagramEditPart.VISUAL_ID:
+		switch (BasicSDDVisualIDRegistry.getVisualID(view)) {
+		case StoryDecisionDiagramEditPart.VISUAL_ID:
 			return getStoryDecisionDiagram_1000Text(view);
-		case org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryPatternNodeEditPart.VISUAL_ID:
+		case StoryPatternNodeEditPart.VISUAL_ID:
 			return getStoryPatternNode_2003Text(view);
-		case org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.LeafNodeEditPart.VISUAL_ID:
+		case LeafNodeEditPart.VISUAL_ID:
 			return getLeafNode_2004Text(view);
-		case org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.CollectionVariableEditPart.VISUAL_ID:
+		case CollectionVariableEditPart.VISUAL_ID:
 			return getCollectionVariable_3006Text(view);
-		case org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.AttributeAssignmentEditPart.VISUAL_ID:
+		case AttributeAssignmentEditPart.VISUAL_ID:
 			return getAttributeAssignment_3007Text(view);
-		case org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.ConstraintEditPart.VISUAL_ID:
+		case ConstraintEditPart.VISUAL_ID:
 			return getConstraint_3008Text(view);
-		case org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.ObjectVariableEditPart.VISUAL_ID:
+		case ObjectVariableEditPart.VISUAL_ID:
 			return getObjectVariable_3009Text(view);
-		case org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.Constraint2EditPart.VISUAL_ID:
+		case Constraint2EditPart.VISUAL_ID:
 			return getConstraint_3010Text(view);
-		case org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryPatternEditPart.VISUAL_ID:
+		case StoryPatternEditPart.VISUAL_ID:
 			return getStoryPattern_3011Text(view);
-		case org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.EdgeEditPart.VISUAL_ID:
+		case EdgeEditPart.VISUAL_ID:
 			return getEdge_4001Text(view);
-		case org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.LinkVariableEditPart.VISUAL_ID:
+		case LinkVariableEditPart.VISUAL_ID:
 			return getLinkVariable_4003Text(view);
 		}
 		return getUnknownElementText(view);
@@ -198,15 +207,11 @@ public class BasicSDDNavigatorLabelProvider extends LabelProvider implements
 	 * @generated
 	 */
 	private String getStoryDecisionDiagram_1000Text(View view) {
-		org.muml.storydiagram.verification.sdd.basicsdd.StoryDecisionDiagram domainModelElement = (org.muml.storydiagram.verification.sdd.basicsdd.StoryDecisionDiagram) view
-				.getElement();
+		StoryDecisionDiagram domainModelElement = (StoryDecisionDiagram) view.getElement();
 		if (domainModelElement != null) {
 			return domainModelElement.getName();
 		} else {
-			org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDDiagramEditorPlugin
-					.getInstance()
-					.logError(
-							"No domain element for view with visualID = " + 1000); //$NON-NLS-1$
+			BasicSDDDiagramEditorPlugin.getInstance().logError("No domain element for view with visualID = " + 1000); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -215,20 +220,14 @@ public class BasicSDDNavigatorLabelProvider extends LabelProvider implements
 	 * @generated
 	 */
 	private String getStoryPatternNode_2003Text(View view) {
-		IParser parser = org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.BasicSDDParserProvider
-				.getParser(
-						org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.BasicSDDElementTypes.StoryPatternNode_2003,
-						view.getElement() != null ? view.getElement() : view,
-						org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDVisualIDRegistry
-								.getType(org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryPatternNodeNameEditPart.VISUAL_ID));
+		IParser parser = BasicSDDParserProvider.getParser(BasicSDDElementTypes.StoryPatternNode_2003,
+				view.getElement() != null ? view.getElement() : view,
+				BasicSDDVisualIDRegistry.getType(StoryPatternNodeNameEditPart.VISUAL_ID));
 		if (parser != null) {
-			return parser.getPrintString(new EObjectAdapter(
-					view.getElement() != null ? view.getElement() : view),
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
 					ParserOptions.NONE.intValue());
 		} else {
-			org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDDiagramEditorPlugin
-					.getInstance().logError(
-							"Parser was not found for label " + 5014); //$NON-NLS-1$
+			BasicSDDDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5014); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -237,15 +236,11 @@ public class BasicSDDNavigatorLabelProvider extends LabelProvider implements
 	 * @generated
 	 */
 	private String getLeafNode_2004Text(View view) {
-		org.muml.storydiagram.verification.sdd.LeafNode domainModelElement = (org.muml.storydiagram.verification.sdd.LeafNode) view
-				.getElement();
+		LeafNode domainModelElement = (LeafNode) view.getElement();
 		if (domainModelElement != null) {
 			return String.valueOf(domainModelElement.isValue());
 		} else {
-			org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDDiagramEditorPlugin
-					.getInstance()
-					.logError(
-							"No domain element for view with visualID = " + 2004); //$NON-NLS-1$
+			BasicSDDDiagramEditorPlugin.getInstance().logError("No domain element for view with visualID = " + 2004); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -254,20 +249,14 @@ public class BasicSDDNavigatorLabelProvider extends LabelProvider implements
 	 * @generated
 	 */
 	private String getCollectionVariable_3006Text(View view) {
-		IParser parser = org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.BasicSDDParserProvider
-				.getParser(
-						org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.BasicSDDElementTypes.CollectionVariable_3006,
-						view.getElement() != null ? view.getElement() : view,
-						org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDVisualIDRegistry
-								.getType(org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID));
+		IParser parser = BasicSDDParserProvider.getParser(BasicSDDElementTypes.CollectionVariable_3006,
+				view.getElement() != null ? view.getElement() : view,
+				BasicSDDVisualIDRegistry.getType(WrappingLabelEditPart.VISUAL_ID));
 		if (parser != null) {
-			return parser.getPrintString(new EObjectAdapter(
-					view.getElement() != null ? view.getElement() : view),
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
 					ParserOptions.NONE.intValue());
 		} else {
-			org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDDiagramEditorPlugin
-					.getInstance().logError(
-							"Parser was not found for label " + 5008); //$NON-NLS-1$
+			BasicSDDDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5008); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -276,20 +265,14 @@ public class BasicSDDNavigatorLabelProvider extends LabelProvider implements
 	 * @generated
 	 */
 	private String getAttributeAssignment_3007Text(View view) {
-		IParser parser = org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.BasicSDDParserProvider
-				.getParser(
-						org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.BasicSDDElementTypes.AttributeAssignment_3007,
-						view.getElement() != null ? view.getElement() : view,
-						org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDVisualIDRegistry
-								.getType(org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.AttributeAssignmentEditPart.VISUAL_ID));
+		IParser parser = BasicSDDParserProvider.getParser(BasicSDDElementTypes.AttributeAssignment_3007,
+				view.getElement() != null ? view.getElement() : view,
+				BasicSDDVisualIDRegistry.getType(AttributeAssignmentEditPart.VISUAL_ID));
 		if (parser != null) {
-			return parser.getPrintString(new EObjectAdapter(
-					view.getElement() != null ? view.getElement() : view),
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
 					ParserOptions.NONE.intValue());
 		} else {
-			org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDDiagramEditorPlugin
-					.getInstance().logError(
-							"Parser was not found for label " + 3007); //$NON-NLS-1$
+			BasicSDDDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 3007); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -298,20 +281,14 @@ public class BasicSDDNavigatorLabelProvider extends LabelProvider implements
 	 * @generated
 	 */
 	private String getConstraint_3008Text(View view) {
-		IParser parser = org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.BasicSDDParserProvider
-				.getParser(
-						org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.BasicSDDElementTypes.Constraint_3008,
-						view.getElement() != null ? view.getElement() : view,
-						org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDVisualIDRegistry
-								.getType(org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.ConstraintEditPart.VISUAL_ID));
+		IParser parser = BasicSDDParserProvider.getParser(BasicSDDElementTypes.Constraint_3008,
+				view.getElement() != null ? view.getElement() : view,
+				BasicSDDVisualIDRegistry.getType(ConstraintEditPart.VISUAL_ID));
 		if (parser != null) {
-			return parser.getPrintString(new EObjectAdapter(
-					view.getElement() != null ? view.getElement() : view),
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
 					ParserOptions.NONE.intValue());
 		} else {
-			org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDDiagramEditorPlugin
-					.getInstance().logError(
-							"Parser was not found for label " + 3008); //$NON-NLS-1$
+			BasicSDDDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 3008); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -320,20 +297,14 @@ public class BasicSDDNavigatorLabelProvider extends LabelProvider implements
 	 * @generated
 	 */
 	private String getObjectVariable_3009Text(View view) {
-		IParser parser = org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.BasicSDDParserProvider
-				.getParser(
-						org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.BasicSDDElementTypes.ObjectVariable_3009,
-						view.getElement() != null ? view.getElement() : view,
-						org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDVisualIDRegistry
-								.getType(org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.WrappingLabel3EditPart.VISUAL_ID));
+		IParser parser = BasicSDDParserProvider.getParser(BasicSDDElementTypes.ObjectVariable_3009,
+				view.getElement() != null ? view.getElement() : view,
+				BasicSDDVisualIDRegistry.getType(WrappingLabel3EditPart.VISUAL_ID));
 		if (parser != null) {
-			return parser.getPrintString(new EObjectAdapter(
-					view.getElement() != null ? view.getElement() : view),
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
 					ParserOptions.NONE.intValue());
 		} else {
-			org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDDiagramEditorPlugin
-					.getInstance().logError(
-							"Parser was not found for label " + 5011); //$NON-NLS-1$
+			BasicSDDDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5011); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -342,20 +313,14 @@ public class BasicSDDNavigatorLabelProvider extends LabelProvider implements
 	 * @generated
 	 */
 	private String getConstraint_3010Text(View view) {
-		IParser parser = org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.BasicSDDParserProvider
-				.getParser(
-						org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.BasicSDDElementTypes.Constraint_3010,
-						view.getElement() != null ? view.getElement() : view,
-						org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDVisualIDRegistry
-								.getType(org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.Constraint2EditPart.VISUAL_ID));
+		IParser parser = BasicSDDParserProvider.getParser(BasicSDDElementTypes.Constraint_3010,
+				view.getElement() != null ? view.getElement() : view,
+				BasicSDDVisualIDRegistry.getType(Constraint2EditPart.VISUAL_ID));
 		if (parser != null) {
-			return parser.getPrintString(new EObjectAdapter(
-					view.getElement() != null ? view.getElement() : view),
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
 					ParserOptions.NONE.intValue());
 		} else {
-			org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDDiagramEditorPlugin
-					.getInstance().logError(
-							"Parser was not found for label " + 3010); //$NON-NLS-1$
+			BasicSDDDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 3010); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -368,10 +333,7 @@ public class BasicSDDNavigatorLabelProvider extends LabelProvider implements
 		if (domainModelElement != null) {
 			return domainModelElement.getComment();
 		} else {
-			org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDDiagramEditorPlugin
-					.getInstance()
-					.logError(
-							"No domain element for view with visualID = " + 3011); //$NON-NLS-1$
+			BasicSDDDiagramEditorPlugin.getInstance().logError("No domain element for view with visualID = " + 3011); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -380,15 +342,11 @@ public class BasicSDDNavigatorLabelProvider extends LabelProvider implements
 	 * @generated
 	 */
 	private String getEdge_4001Text(View view) {
-		org.muml.storydiagram.verification.sdd.Edge domainModelElement = (org.muml.storydiagram.verification.sdd.Edge) view
-				.getElement();
+		Edge domainModelElement = (Edge) view.getElement();
 		if (domainModelElement != null) {
 			return String.valueOf(domainModelElement.getType());
 		} else {
-			org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDDiagramEditorPlugin
-					.getInstance()
-					.logError(
-							"No domain element for view with visualID = " + 4001); //$NON-NLS-1$
+			BasicSDDDiagramEditorPlugin.getInstance().logError("No domain element for view with visualID = " + 4001); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -401,10 +359,7 @@ public class BasicSDDNavigatorLabelProvider extends LabelProvider implements
 		if (domainModelElement != null) {
 			return domainModelElement.getName();
 		} else {
-			org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDDiagramEditorPlugin
-					.getInstance()
-					.logError(
-							"No domain element for view with visualID = " + 4003); //$NON-NLS-1$
+			BasicSDDDiagramEditorPlugin.getInstance().logError("No domain element for view with visualID = " + 4003); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -452,9 +407,7 @@ public class BasicSDDNavigatorLabelProvider extends LabelProvider implements
 	 * @generated
 	 */
 	private boolean isOwnView(View view) {
-		return org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryDecisionDiagramEditPart.MODEL_ID
-				.equals(org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDVisualIDRegistry
-						.getModelID(view));
+		return StoryDecisionDiagramEditPart.MODEL_ID.equals(BasicSDDVisualIDRegistry.getModelID(view));
 	}
 
 }

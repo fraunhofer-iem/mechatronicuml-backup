@@ -17,12 +17,13 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.swt.widgets.Display;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.policies.LinkVariableItemSemanticEditPolicy;
 
 /**
  * @generated
  */
-public class LinkVariableEditPart extends ConnectionNodeEditPart implements
-		ITreeBranchEditPart {
+public class LinkVariableEditPart extends ConnectionNodeEditPart implements ITreeBranchEditPart {
 
 	/**
 	 * @generated
@@ -64,9 +65,7 @@ public class LinkVariableEditPart extends ConnectionNodeEditPart implements
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(
-				EditPolicyRoles.SEMANTIC_ROLE,
-				new org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.policies.LinkVariableItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new LinkVariableItemSemanticEditPolicy());
 	}
 
 	/**
@@ -180,17 +179,19 @@ public class LinkVariableEditPart extends ConnectionNodeEditPart implements
 		// Properties View.
 		EObject sourceElement = null;
 		if (getSource() instanceof GraphicalEditPart) {
-			sourceElement = ((GraphicalEditPart) getSource()).getNotationView()
-					.getElement();
+			sourceElement = ((GraphicalEditPart) getSource()).getNotationView().getElement();
 		}
 		EObject targetElement = null;
 		if (getTarget() instanceof GraphicalEditPart) {
-			targetElement = ((GraphicalEditPart) getTarget()).getNotationView()
-					.getElement();
+			targetElement = ((GraphicalEditPart) getTarget()).getNotationView().getElement();
 		}
-		if (notification.getOldValue() == sourceElement
-				|| notification.getOldValue() == targetElement) {
-			doCanonicalRefresh();
+		if (notification.getOldValue() == sourceElement || notification.getOldValue() == targetElement) {
+			Display.getCurrent().asyncExec(new Runnable() {
+				@Override
+				public void run() {
+					doCanonicalRefresh();
+				}
+			});
 		}
 
 		super.handleNotificationEvent(notification);

@@ -27,6 +27,7 @@ import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.osgi.util.NLS;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.dialogs.WizardNewFileCreationPage;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryDecisionDiagramEditPart;
 
 /**
  * @generated
@@ -41,7 +42,7 @@ public class BasicSDDNewDiagramFileWizard extends Wizard {
 	/**
 	 * @generated
 	 */
-	private org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.ModelElementSelectionPage diagramRootElementSelectionPage;
+	private ModelElementSelectionPage diagramRootElementSelectionPage;
 
 	/**
 	 * @generated
@@ -51,46 +52,36 @@ public class BasicSDDNewDiagramFileWizard extends Wizard {
 	/**
 	 * @generated
 	 */
-	public BasicSDDNewDiagramFileWizard(URI domainModelURI,
-			EObject diagramRoot, TransactionalEditingDomain editingDomain) {
+	public BasicSDDNewDiagramFileWizard(URI domainModelURI, EObject diagramRoot,
+			TransactionalEditingDomain editingDomain) {
 		assert domainModelURI != null : "Domain model uri must be specified"; //$NON-NLS-1$
 		assert diagramRoot != null : "Doagram root element must be specified"; //$NON-NLS-1$
 		assert editingDomain != null : "Editing domain must be specified"; //$NON-NLS-1$
 
-		myFileCreationPage = new WizardNewFileCreationPage(
-				org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.Messages.BasicSDDNewDiagramFileWizard_CreationPageName,
+		myFileCreationPage = new WizardNewFileCreationPage(Messages.BasicSDDNewDiagramFileWizard_CreationPageName,
 				StructuredSelection.EMPTY);
-		myFileCreationPage
-				.setTitle(org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.Messages.BasicSDDNewDiagramFileWizard_CreationPageTitle);
-		myFileCreationPage
-				.setDescription(NLS
-						.bind(org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.Messages.BasicSDDNewDiagramFileWizard_CreationPageDescription,
-								org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryDecisionDiagramEditPart.MODEL_ID));
+		myFileCreationPage.setTitle(Messages.BasicSDDNewDiagramFileWizard_CreationPageTitle);
+		myFileCreationPage.setDescription(NLS.bind(Messages.BasicSDDNewDiagramFileWizard_CreationPageDescription,
+				StoryDecisionDiagramEditPart.MODEL_ID));
 		IPath filePath;
-		String fileName = URI.decode(domainModelURI.trimFileExtension()
-				.lastSegment());
+		String fileName = URI.decode(domainModelURI.trimFileExtension().lastSegment());
 		if (domainModelURI.isPlatformResource()) {
-			filePath = new Path(domainModelURI.trimSegments(1)
-					.toPlatformString(true));
+			filePath = new Path(domainModelURI.trimSegments(1).toPlatformString(true));
 		} else if (domainModelURI.isFile()) {
 			filePath = new Path(domainModelURI.trimSegments(1).toFileString());
 		} else {
 			// TODO : use some default path
-			throw new IllegalArgumentException(
-					"Unsupported URI: " + domainModelURI); //$NON-NLS-1$
+			throw new IllegalArgumentException("Unsupported URI: " + domainModelURI); //$NON-NLS-1$
 		}
 		myFileCreationPage.setContainerFullPath(filePath);
 		myFileCreationPage
-				.setFileName(org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDDiagramEditorUtil
-						.getUniqueFileName(filePath, fileName,
-								"basicsdd_diagram")); //$NON-NLS-1$
+				.setFileName(BasicSDDDiagramEditorUtil.getUniqueFileName(filePath, fileName, "basicsdd_diagram")); //$NON-NLS-1$
 
 		diagramRootElementSelectionPage = new DiagramRootElementSelectionPage(
-				org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.Messages.BasicSDDNewDiagramFileWizard_RootSelectionPageName);
+				Messages.BasicSDDNewDiagramFileWizard_RootSelectionPageName);
+		diagramRootElementSelectionPage.setTitle(Messages.BasicSDDNewDiagramFileWizard_RootSelectionPageTitle);
 		diagramRootElementSelectionPage
-				.setTitle(org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.Messages.BasicSDDNewDiagramFileWizard_RootSelectionPageTitle);
-		diagramRootElementSelectionPage
-				.setDescription(org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.Messages.BasicSDDNewDiagramFileWizard_RootSelectionPageDescription);
+				.setDescription(Messages.BasicSDDNewDiagramFileWizard_RootSelectionPageDescription);
 		diagramRootElementSelectionPage.setModelElement(diagramRoot);
 
 		myEditingDomain = editingDomain;
@@ -110,59 +101,38 @@ public class BasicSDDNewDiagramFileWizard extends Wizard {
 	public boolean performFinish() {
 		LinkedList<IFile> affectedFiles = new LinkedList<IFile>();
 		IFile diagramFile = myFileCreationPage.createNewFile();
-		org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDDiagramEditorUtil
-				.setCharset(diagramFile);
+		BasicSDDDiagramEditorUtil.setCharset(diagramFile);
 		affectedFiles.add(diagramFile);
-		URI diagramModelURI = URI.createPlatformResourceURI(diagramFile
-				.getFullPath().toString(), true);
+		URI diagramModelURI = URI.createPlatformResourceURI(diagramFile.getFullPath().toString(), true);
 		ResourceSet resourceSet = myEditingDomain.getResourceSet();
-		final Resource diagramResource = resourceSet
-				.createResource(diagramModelURI);
-		AbstractTransactionalCommand command = new AbstractTransactionalCommand(
-				myEditingDomain,
-				org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.Messages.BasicSDDNewDiagramFileWizard_InitDiagramCommand,
-				affectedFiles) {
+		final Resource diagramResource = resourceSet.createResource(diagramModelURI);
+		AbstractTransactionalCommand command = new AbstractTransactionalCommand(myEditingDomain,
+				Messages.BasicSDDNewDiagramFileWizard_InitDiagramCommand, affectedFiles) {
 
-			protected CommandResult doExecuteWithResult(
-					IProgressMonitor monitor, IAdaptable info)
+			protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info)
 					throws ExecutionException {
-				int diagramVID = org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDVisualIDRegistry
-						.getDiagramVisualID(diagramRootElementSelectionPage
-								.getModelElement());
-				if (diagramVID != org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryDecisionDiagramEditPart.VISUAL_ID) {
+				int diagramVID = BasicSDDVisualIDRegistry
+						.getDiagramVisualID(diagramRootElementSelectionPage.getModelElement());
+				if (diagramVID != StoryDecisionDiagramEditPart.VISUAL_ID) {
 					return CommandResult
-							.newErrorCommandResult(org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.Messages.BasicSDDNewDiagramFileWizard_IncorrectRootError);
+							.newErrorCommandResult(Messages.BasicSDDNewDiagramFileWizard_IncorrectRootError);
 				}
-				Diagram diagram = ViewService
-						.createDiagram(
-								diagramRootElementSelectionPage
-										.getModelElement(),
-								org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryDecisionDiagramEditPart.MODEL_ID,
-								org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT);
+				Diagram diagram = ViewService.createDiagram(diagramRootElementSelectionPage.getModelElement(),
+						StoryDecisionDiagramEditPart.MODEL_ID, BasicSDDDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT);
 				diagramResource.getContents().add(diagram);
 				return CommandResult.newOKCommandResult();
 			}
 		};
 		try {
-			OperationHistoryFactory.getOperationHistory().execute(command,
-					new NullProgressMonitor(), null);
-			diagramResource
-					.save(org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDDiagramEditorUtil
-							.getSaveOptions());
-			org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDDiagramEditorUtil
-					.openDiagram(diagramResource);
+			OperationHistoryFactory.getOperationHistory().execute(command, new NullProgressMonitor(), null);
+			diagramResource.save(BasicSDDDiagramEditorUtil.getSaveOptions());
+			BasicSDDDiagramEditorUtil.openDiagram(diagramResource);
 		} catch (ExecutionException e) {
-			org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDDiagramEditorPlugin
-					.getInstance().logError(
-							"Unable to create model and diagram", e); //$NON-NLS-1$
+			BasicSDDDiagramEditorPlugin.getInstance().logError("Unable to create model and diagram", e); //$NON-NLS-1$
 		} catch (IOException ex) {
-			org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDDiagramEditorPlugin
-					.getInstance()
-					.logError(
-							"Save operation failed for: " + diagramModelURI, ex); //$NON-NLS-1$
+			BasicSDDDiagramEditorPlugin.getInstance().logError("Save operation failed for: " + diagramModelURI, ex); //$NON-NLS-1$
 		} catch (PartInitException ex) {
-			org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDDiagramEditorPlugin
-					.getInstance().logError("Unable to open editor", ex); //$NON-NLS-1$
+			BasicSDDDiagramEditorPlugin.getInstance().logError("Unable to open editor", ex); //$NON-NLS-1$
 		}
 		return true;
 	}
@@ -170,9 +140,7 @@ public class BasicSDDNewDiagramFileWizard extends Wizard {
 	/**
 	 * @generated
 	 */
-	private static class DiagramRootElementSelectionPage
-			extends
-			org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.ModelElementSelectionPage {
+	private static class DiagramRootElementSelectionPage extends ModelElementSelectionPage {
 
 		/**
 		 * @generated
@@ -185,7 +153,7 @@ public class BasicSDDNewDiagramFileWizard extends Wizard {
 		 * @generated
 		 */
 		protected String getSelectionTitle() {
-			return org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.Messages.BasicSDDNewDiagramFileWizard_RootSelectionPageSelectionTitle;
+			return Messages.BasicSDDNewDiagramFileWizard_RootSelectionPageSelectionTitle;
 		}
 
 		/**
@@ -193,18 +161,15 @@ public class BasicSDDNewDiagramFileWizard extends Wizard {
 		 */
 		protected boolean validatePage() {
 			if (getModelElement() == null) {
-				setErrorMessage(org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.Messages.BasicSDDNewDiagramFileWizard_RootSelectionPageNoSelectionMessage);
+				setErrorMessage(Messages.BasicSDDNewDiagramFileWizard_RootSelectionPageNoSelectionMessage);
 				return false;
 			}
-			boolean result = ViewService
-					.getInstance()
-					.provides(
-							new CreateDiagramViewOperation(
-									new EObjectAdapter(getModelElement()),
-									org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryDecisionDiagramEditPart.MODEL_ID,
-									org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT));
-			setErrorMessage(result ? null
-					: org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.Messages.BasicSDDNewDiagramFileWizard_RootSelectionPageInvalidSelectionMessage);
+			boolean result = ViewService.getInstance()
+					.provides(new CreateDiagramViewOperation(new EObjectAdapter(getModelElement()),
+							StoryDecisionDiagramEditPart.MODEL_ID,
+							BasicSDDDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT));
+			setErrorMessage(
+					result ? null : Messages.BasicSDDNewDiagramFileWizard_RootSelectionPageInvalidSelectionMessage);
 			return result;
 		}
 	}

@@ -13,12 +13,13 @@ import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.gmf.tooling.runtime.sheet.DefaultPropertySection;
 import org.eclipse.ui.views.properties.IPropertySource;
 import org.eclipse.ui.views.properties.IPropertySourceProvider;
+import org.muml.core.common.FujabaCommonPlugin;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDDiagramEditorPlugin;
 
 /**
  * @generated
  */
-public class BasicSDDPropertySection extends DefaultPropertySection implements
-		IPropertySourceProvider {
+public class BasicSDDPropertySection extends DefaultPropertySection implements IPropertySourceProvider {
 
 	/**
 	 * Modify/unwrap selection.
@@ -37,16 +38,10 @@ public class BasicSDDPropertySection extends DefaultPropertySection implements
 		AdapterFactoryEditingDomain editingDomain = getEditingDomainFor(object);
 		if (editingDomain != null) {
 			AdapterFactory defaultFactory = editingDomain.getAdapterFactory();
-			List<AdapterFactory> positivePriorityFactories = org.muml.core.common.FujabaCommonPlugin
-					.getInstance()
-					.getCustomItemProviderAdapterFactories(
-							org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDDiagramEditorPlugin.ID,
-							true);
-			List<AdapterFactory> negativePriorityFactories = org.muml.core.common.FujabaCommonPlugin
-					.getInstance()
-					.getCustomItemProviderAdapterFactories(
-							org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDDiagramEditorPlugin.ID,
-							false);
+			List<AdapterFactory> positivePriorityFactories = FujabaCommonPlugin.getInstance()
+					.getCustomItemProviderAdapterFactories(BasicSDDDiagramEditorPlugin.ID, true);
+			List<AdapterFactory> negativePriorityFactories = FujabaCommonPlugin.getInstance()
+					.getCustomItemProviderAdapterFactories(BasicSDDDiagramEditorPlugin.ID, false);
 
 			// Put all factories into one composed adapter factory.
 			List<AdapterFactory> factories = new ArrayList<AdapterFactory>();
@@ -65,8 +60,7 @@ public class BasicSDDPropertySection extends DefaultPropertySection implements
 		if (getEditingDomain() instanceof AdapterFactoryEditingDomain) {
 			return (AdapterFactoryEditingDomain) getEditingDomain();
 		}
-		return (AdapterFactoryEditingDomain) TransactionUtil
-				.getEditingDomain(object);
+		return (AdapterFactoryEditingDomain) TransactionUtil.getEditingDomain(object);
 	}
 
 }

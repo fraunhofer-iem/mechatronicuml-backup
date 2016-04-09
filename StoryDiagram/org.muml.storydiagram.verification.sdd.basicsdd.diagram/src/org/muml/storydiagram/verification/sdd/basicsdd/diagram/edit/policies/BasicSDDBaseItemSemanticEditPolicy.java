@@ -35,6 +35,12 @@ import org.muml.storydiagram.patterns.AbstractVariable;
 import org.muml.storydiagram.patterns.LinkVariable;
 import org.muml.storydiagram.patterns.ObjectVariable;
 import org.muml.storydiagram.patterns.StoryPattern;
+import org.muml.storydiagram.verification.sdd.AbstractStoryDecisionDiagram;
+import org.muml.storydiagram.verification.sdd.Edge;
+import org.muml.storydiagram.verification.sdd.Node;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDDiagramEditorPlugin;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDVisualIDRegistry;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.BasicSDDElementTypes;
 
 /**
  * @generated
@@ -70,12 +76,9 @@ public class BasicSDDBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 	 */
 	public Command getCommand(Request request) {
 		if (request instanceof ReconnectRequest) {
-			Object view = ((ReconnectRequest) request).getConnectionEditPart()
-					.getModel();
+			Object view = ((ReconnectRequest) request).getConnectionEditPart().getModel();
 			if (view instanceof View) {
-				Integer id = new Integer(
-						org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDVisualIDRegistry
-								.getVisualID((View) view));
+				Integer id = new Integer(BasicSDDVisualIDRegistry.getVisualID((View) view));
 				request.getExtendedData().put(VISUAL_ID_KEY, id);
 			}
 		}
@@ -97,12 +100,10 @@ public class BasicSDDBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 	protected Command getSemanticCommand(IEditCommandRequest request) {
 		IEditCommandRequest completedRequest = completeRequest(request);
 		Command semanticCommand = getSemanticCommandSwitch(completedRequest);
-		semanticCommand = getEditHelperCommand(completedRequest,
-				semanticCommand);
+		semanticCommand = getEditHelperCommand(completedRequest, semanticCommand);
 		if (completedRequest instanceof DestroyRequest) {
 			DestroyRequest destroyRequest = (DestroyRequest) completedRequest;
-			return shouldProceed(destroyRequest) ? addDeleteViewCommand(
-					semanticCommand, destroyRequest) : null;
+			return shouldProceed(destroyRequest) ? addDeleteViewCommand(semanticCommand, destroyRequest) : null;
 		}
 		return semanticCommand;
 	}
@@ -110,35 +111,28 @@ public class BasicSDDBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 	/**
 	 * @generated
 	 */
-	protected Command addDeleteViewCommand(Command mainCommand,
-			DestroyRequest completedRequest) {
-		Command deleteViewCommand = getGEFWrapper(new DeleteCommand(
-				getEditingDomain(), (View) getHost().getModel()));
-		return mainCommand == null ? deleteViewCommand : mainCommand
-				.chain(deleteViewCommand);
+	protected Command addDeleteViewCommand(Command mainCommand, DestroyRequest completedRequest) {
+		Command deleteViewCommand = getGEFWrapper(new DeleteCommand(getEditingDomain(), (View) getHost().getModel()));
+		return mainCommand == null ? deleteViewCommand : mainCommand.chain(deleteViewCommand);
 	}
 
 	/**
 	 * @generated
 	 */
-	private Command getEditHelperCommand(IEditCommandRequest request,
-			Command editPolicyCommand) {
+	private Command getEditHelperCommand(IEditCommandRequest request, Command editPolicyCommand) {
 		if (editPolicyCommand != null) {
-			ICommand command = editPolicyCommand instanceof ICommandProxy ? ((ICommandProxy) editPolicyCommand)
-					.getICommand() : new CommandProxy(editPolicyCommand);
-			request.setParameter(GeneratedEditHelperBase.EDIT_POLICY_COMMAND,
-					command);
+			ICommand command = editPolicyCommand instanceof ICommandProxy
+					? ((ICommandProxy) editPolicyCommand).getICommand() : new CommandProxy(editPolicyCommand);
+			request.setParameter(GeneratedEditHelperBase.EDIT_POLICY_COMMAND, command);
 		}
 		IElementType requestContextElementType = getContextElementType(request);
-		request.setParameter(GeneratedEditHelperBase.CONTEXT_ELEMENT_TYPE,
-				requestContextElementType);
+		request.setParameter(GeneratedEditHelperBase.CONTEXT_ELEMENT_TYPE, requestContextElementType);
 		ICommand command = requestContextElementType.getEditCommand(request);
 		request.setParameter(GeneratedEditHelperBase.EDIT_POLICY_COMMAND, null);
 		request.setParameter(GeneratedEditHelperBase.CONTEXT_ELEMENT_TYPE, null);
 		if (command != null) {
 			if (!(command instanceof CompositeTransactionalCommand)) {
-				command = new CompositeTransactionalCommand(getEditingDomain(),
-						command.getLabel()).compose(command);
+				command = new CompositeTransactionalCommand(getEditingDomain(), command.getLabel()).compose(command);
 			}
 			return new ICommandProxy(command);
 		}
@@ -149,10 +143,8 @@ public class BasicSDDBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 	 * @generated
 	 */
 	private IElementType getContextElementType(IEditCommandRequest request) {
-		IElementType requestContextElementType = org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.BasicSDDElementTypes
-				.getElementType(getVisualID(request));
-		return requestContextElementType != null ? requestContextElementType
-				: myElementType;
+		IElementType requestContextElementType = BasicSDDElementTypes.getElementType(getVisualID(request));
+		return requestContextElementType != null ? requestContextElementType : myElementType;
 	}
 
 	/**
@@ -251,16 +243,14 @@ public class BasicSDDBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 	/**
 	 * @generated
 	 */
-	protected Command getReorientReferenceRelationshipCommand(
-			ReorientReferenceRelationshipRequest req) {
+	protected Command getReorientReferenceRelationshipCommand(ReorientReferenceRelationshipRequest req) {
 		return UnexecutableCommand.INSTANCE;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected Command getReorientRelationshipCommand(
-			ReorientRelationshipRequest req) {
+	protected Command getReorientRelationshipCommand(ReorientRelationshipRequest req) {
 		return UnexecutableCommand.INSTANCE;
 	}
 
@@ -285,10 +275,10 @@ public class BasicSDDBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 	 */
 	protected void addDestroyShortcutsCommand(ICompositeCommand cmd, View view) {
 		assert view.getEAnnotation("Shortcut") == null; //$NON-NLS-1$
-		for (Iterator it = view.getDiagram().getChildren().iterator(); it
-				.hasNext();) {
+		for (Iterator it = view.getDiagram().getChildren().iterator(); it.hasNext();) {
 			View nextView = (View) it.next();
-			if (nextView.getEAnnotation("Shortcut") == null || !nextView.isSetElement() || nextView.getElement() != view.getElement()) { //$NON-NLS-1$
+			if (nextView.getEAnnotation("Shortcut") == null || !nextView.isSetElement() //$NON-NLS-1$
+					|| nextView.getElement() != view.getElement()) {
 				continue;
 			}
 			cmd.add(new DeleteCommand(getEditingDomain(), nextView));
@@ -299,12 +289,9 @@ public class BasicSDDBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 	 * @generated
 	 */
 	public static LinkConstraints getLinkConstraints() {
-		LinkConstraints cached = org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDDiagramEditorPlugin
-				.getInstance().getLinkConstraints();
+		LinkConstraints cached = BasicSDDDiagramEditorPlugin.getInstance().getLinkConstraints();
 		if (cached == null) {
-			org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDDiagramEditorPlugin
-					.getInstance().setLinkConstraints(
-							cached = new LinkConstraints());
+			BasicSDDDiagramEditorPlugin.getInstance().setLinkConstraints(cached = new LinkConstraints());
 		}
 		return cached;
 	}
@@ -322,64 +309,49 @@ public class BasicSDDBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		}
 
 		/**
-		 * @generated
-		 */
-		public boolean canCreateEdge_4001(
-				org.muml.storydiagram.verification.sdd.AbstractStoryDecisionDiagram container,
-				org.muml.storydiagram.verification.sdd.Node source,
-				org.muml.storydiagram.verification.sdd.Node target,
+		* @generated
+		*/
+		public boolean canCreateEdge_4001(AbstractStoryDecisionDiagram container, Node source, Node target,
 				View sourceView, View targetView) {
-			return canExistEdge_4001(container, null, source, target,
-					sourceView, targetView);
+			return canExistEdge_4001(container, null, source, target, sourceView, targetView);
 		}
 
 		/**
-		 * @generated
-		 */
-		public boolean canCreateLinkVariable_4003(StoryPattern container,
-				ObjectVariable source, AbstractVariable target,
-				View sourceView, View targetView) {
-			return canExistLinkVariable_4003(container, null, source, target,
-					sourceView, targetView);
+			 * @generated
+			 */
+		public boolean canCreateLinkVariable_4003(StoryPattern container, ObjectVariable source,
+				AbstractVariable target, View sourceView, View targetView) {
+			return canExistLinkVariable_4003(container, null, source, target, sourceView, targetView);
 		}
 
 		/**
-		 * @generated
-		 */
-		public boolean canExistEdge_4001(
-				org.muml.storydiagram.verification.sdd.AbstractStoryDecisionDiagram container,
-				org.muml.storydiagram.verification.sdd.Edge linkInstance,
-				org.muml.storydiagram.verification.sdd.Node source,
-				org.muml.storydiagram.verification.sdd.Node target,
-				View sourceView, View targetView) {
+		* @generated
+		*/
+		public boolean canExistEdge_4001(AbstractStoryDecisionDiagram container, Edge linkInstance, Node source,
+				Node target, View sourceView, View targetView) {
 			return true;
 		}
 
 		/**
-		 * @generated
-		 */
-		public java.lang.String getErrorEdge_4001(
-				org.muml.storydiagram.verification.sdd.AbstractStoryDecisionDiagram container,
-				org.muml.storydiagram.verification.sdd.Node source,
-				org.muml.storydiagram.verification.sdd.Node target,
+		* @generated
+		*/
+		public java.lang.String getErrorEdge_4001(AbstractStoryDecisionDiagram container, Node source, Node target,
 				View sourceView, View targetView) {
 			return null;
 		}
 
 		/**
-		 * @generated
-		 */
-		public boolean canExistLinkVariable_4003(StoryPattern container,
-				LinkVariable linkInstance, ObjectVariable source,
-				AbstractVariable target, View sourceView, View targetView) {
+			 * @generated
+			 */
+		public boolean canExistLinkVariable_4003(StoryPattern container, LinkVariable linkInstance,
+				ObjectVariable source, AbstractVariable target, View sourceView, View targetView) {
 			return true;
 		}
 
 		/**
 		 * @generated
 		 */
-		public java.lang.String getErrorLinkVariable_4003(
-				StoryPattern container, ObjectVariable source,
+		public java.lang.String getErrorLinkVariable_4003(StoryPattern container, ObjectVariable source,
 				AbstractVariable target, View sourceView, View targetView) {
 			return null;
 		}

@@ -4,7 +4,7 @@
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:gmfgen="http://www.eclipse.org/gmf/2009/GenModel"
-    packageNamePrefix="de.uni_paderborn.fujaba.muml.verification.sdd.diagram"
+    packageNamePrefix="org.muml.storydiagram.verification.sdd.basicsdd.diagram"
     dynamicTemplates="true"
     templateDirectory="/org.muml.core.common/gmf-templates"
     pluginDirectory="/org.muml.storydiagram.verification.sdd.basicsdd.diagram/src">
@@ -719,26 +719,26 @@
     </palette>
     <preferencePages
         xsi:type="gmfgen:GenStandardPreferencePage"
-        iD="de.uni_paderborn.fujaba.pgSafeBots.verification.constraints.sdd.diagram.general"
+        iD="org.muml.storydiagram.verification.sdd.basicsdd.diagram.general"
         name="SDD Diagram">
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
-          iD="de.uni_paderborn.fujaba.pgSafeBots.verification.constraints.sdd.diagram.appearance"
+          iD="org.muml.storydiagram.verification.sdd.basicsdd.diagram.appearance"
           name="Appearance"
           kind="Appearance"/>
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
-          iD="de.uni_paderborn.fujaba.pgSafeBots.verification.constraints.sdd.diagram.connections"
+          iD="org.muml.storydiagram.verification.sdd.basicsdd.diagram.connections"
           name="Connections"
           kind="Connections"/>
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
-          iD="de.uni_paderborn.fujaba.pgSafeBots.verification.constraints.sdd.diagram.printing"
+          iD="org.muml.storydiagram.verification.sdd.basicsdd.diagram.printing"
           name="Printing"
           kind="Printing"/>
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
-          iD="de.uni_paderborn.fujaba.pgSafeBots.verification.constraints.sdd.diagram.rulersAndGrid"
+          iD="org.muml.storydiagram.verification.sdd.basicsdd.diagram.rulersAndGrid"
           name="Rulers And Grid"
           kind="RulersAndGrid"/>
     </preferencePages>

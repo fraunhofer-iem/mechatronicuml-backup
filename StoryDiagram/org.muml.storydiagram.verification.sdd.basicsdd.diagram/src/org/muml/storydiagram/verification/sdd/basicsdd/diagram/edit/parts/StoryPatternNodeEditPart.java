@@ -6,6 +6,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 import org.eclipse.draw2d.ColorConstants;
+import org.eclipse.draw2d.ConnectionAnchor;
 import org.eclipse.draw2d.GridData;
 import org.eclipse.draw2d.GridLayout;
 import org.eclipse.draw2d.IFigure;
@@ -37,6 +38,12 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Font;
 import org.eclipse.swt.widgets.Display;
+import org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy;
+import org.muml.core.common.edit.policies.anchor.IConnectionAnchorCreationEditPolicy;
+import org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy;
+import org.muml.pim.common.edit.policies.IBackgroundColorEditPolicy;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.policies.StoryPatternNodeItemSemanticEditPolicy;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDVisualIDRegistry;
 
 /**
  * @generated
@@ -72,6 +79,22 @@ public class StoryPatternNodeEditPart extends ShapeNodeEditPart {
 	}
 
 	/**
+	* MUML FIX: Adapt background color if IBackgroundColorEditPolicy is registered.
+	* 
+	* @generated
+	*/
+	@Override
+	protected void refreshBackgroundColor() {
+		EditPolicy backgroundColorPolicy = getEditPolicy(
+				org.muml.core.common.edit.policies.EditPolicyRoles.BACKGROUND_COLOR_ROLE);
+		if (backgroundColorPolicy instanceof IBackgroundColorEditPolicy) {
+			setBackgroundColor(((IBackgroundColorEditPolicy) backgroundColorPolicy).getCurrentBackgroundColor());
+		} else {
+			super.refreshBackgroundColor();
+		}
+	}
+
+	/**
 	 * @generated
 	 */
 	protected IFigure contentPane;
@@ -93,20 +116,15 @@ public class StoryPatternNodeEditPart extends ShapeNodeEditPart {
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(
-				EditPolicyRoles.SEMANTIC_ROLE,
-				new org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.policies.StoryPatternNodeItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new StoryPatternNodeItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 
-		installEditPolicy(
-				EditPolicy.GRAPHICAL_NODE_ROLE,
-				new org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy());
+		installEditPolicy(EditPolicy.GRAPHICAL_NODE_ROLE, new ConnectionConfigureHelperGraphicalNodeEditPolicy());
 
-		installEditPolicy(
-				org.muml.core.common.edit.policies.EditPolicyRoles.ERROR_FEEDBACK_ROLE,
-				new org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy());
+		installEditPolicy(org.muml.core.common.edit.policies.EditPolicyRoles.ERROR_FEEDBACK_ROLE,
+				new ErrorFeedbackEditPolicy());
 
 	}
 
@@ -117,8 +135,7 @@ public class StoryPatternNodeEditPart extends ShapeNodeEditPart {
 		org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy lep = new org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy() {
 
 			protected EditPolicy createChildEditPolicy(EditPart child) {
-				EditPolicy result = child
-						.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
+				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
 				if (result == null) {
 					result = new NonResizableEditPolicy();
 				}
@@ -154,24 +171,18 @@ public class StoryPatternNodeEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryPatternNodeNameEditPart) {
-			((org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryPatternNodeNameEditPart) childEditPart)
-					.setLabel(getPrimaryShape()
-							.getFigurePatternNodeNameFigure());
+		if (childEditPart instanceof StoryPatternNodeNameEditPart) {
+			((StoryPatternNodeNameEditPart) childEditPart).setLabel(getPrimaryShape().getFigurePatternNodeNameFigure());
 			return true;
 		}
-		if (childEditPart instanceof org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryPatternNodeTypeEditPart) {
-			((org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryPatternNodeTypeEditPart) childEditPart)
-					.setLabel(getPrimaryShape()
-							.getFigurePatternNodeTypeFigure());
+		if (childEditPart instanceof StoryPatternNodeTypeEditPart) {
+			((StoryPatternNodeTypeEditPart) childEditPart).setLabel(getPrimaryShape().getFigurePatternNodeTypeFigure());
 			return true;
 		}
-		if (childEditPart instanceof org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryPatternNodePatternNodeContentCompartmentEditPart) {
-			IFigure pane = getPrimaryShape()
-					.getFigurePatternNodeElementsPolygon();
+		if (childEditPart instanceof StoryPatternNodePatternNodeContentCompartmentEditPart) {
+			IFigure pane = getPrimaryShape().getFigurePatternNodeElementsPolygon();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
-			pane.add(((org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryPatternNodePatternNodeContentCompartmentEditPart) childEditPart)
-					.getFigure());
+			pane.add(((StoryPatternNodePatternNodeContentCompartmentEditPart) childEditPart).getFigure());
 			return true;
 		}
 		return false;
@@ -181,17 +192,15 @@ public class StoryPatternNodeEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryPatternNodeNameEditPart) {
+		if (childEditPart instanceof StoryPatternNodeNameEditPart) {
 			return true;
 		}
-		if (childEditPart instanceof org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryPatternNodeTypeEditPart) {
+		if (childEditPart instanceof StoryPatternNodeTypeEditPart) {
 			return true;
 		}
-		if (childEditPart instanceof org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryPatternNodePatternNodeContentCompartmentEditPart) {
-			IFigure pane = getPrimaryShape()
-					.getFigurePatternNodeElementsPolygon();
-			pane.remove(((org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryPatternNodePatternNodeContentCompartmentEditPart) childEditPart)
-					.getFigure());
+		if (childEditPart instanceof StoryPatternNodePatternNodeContentCompartmentEditPart) {
+			IFigure pane = getPrimaryShape().getFigurePatternNodeElementsPolygon();
+			pane.remove(((StoryPatternNodePatternNodeContentCompartmentEditPart) childEditPart).getFigure());
 			return true;
 		}
 		return false;
@@ -221,7 +230,7 @@ public class StoryPatternNodeEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
-		if (editPart instanceof org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryPatternNodePatternNodeContentCompartmentEditPart) {
+		if (editPart instanceof StoryPatternNodePatternNodeContentCompartmentEditPart) {
 			return getPrimaryShape().getFigurePatternNodeElementsPolygon();
 		}
 		return getContentPane();
@@ -231,7 +240,17 @@ public class StoryPatternNodeEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected NodeFigure createNodePlate() {
-		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(150, 100);
+		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(150, 100) {
+			@Override
+			public ConnectionAnchor createDefaultAnchor() {
+				IConnectionAnchorCreationEditPolicy connectionAnchorCreationEditPolicy = (IConnectionAnchorCreationEditPolicy) getEditPolicy(
+						org.muml.core.common.edit.policies.EditPolicyRoles.CONNECTION_ANCHOR_CREATION_ROLE);
+				if (connectionAnchorCreationEditPolicy != null) {
+					return connectionAnchorCreationEditPolicy.createDefaultAnchor();
+				}
+				return super.createDefaultAnchor();
+			}
+		};
 
 		// Ensures that the element can be shrinked (Muml Bug #62).
 		result.setMinimumSize(new Dimension(0, 0));
@@ -321,8 +340,7 @@ public class StoryPatternNodeEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDVisualIDRegistry
-				.getType(org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryPatternNodeNameEditPart.VISUAL_ID));
+		return getChildBySemanticHint(BasicSDDVisualIDRegistry.getType(StoryPatternNodeNameEditPart.VISUAL_ID));
 	}
 
 	/**
@@ -359,11 +377,9 @@ public class StoryPatternNodeEditPart extends ShapeNodeEditPart {
 
 			this.setFill(false);
 			this.setForegroundColor(ColorConstants.black);
-			this.setPreferredSize(new Dimension(getMapMode().DPtoLP(150),
-					getMapMode().DPtoLP(100)));
+			this.setPreferredSize(new Dimension(getMapMode().DPtoLP(150), getMapMode().DPtoLP(100)));
 
-			this.setBorder(new MarginBorder(getMapMode().DPtoLP(0),
-					getMapMode().DPtoLP(0), getMapMode().DPtoLP(0),
+			this.setBorder(new MarginBorder(getMapMode().DPtoLP(0), getMapMode().DPtoLP(0), getMapMode().DPtoLP(0),
 					getMapMode().DPtoLP(0)));
 			createContents();
 		}
@@ -375,18 +391,12 @@ public class StoryPatternNodeEditPart extends ShapeNodeEditPart {
 
 			ScalablePolygonShape patternNodeLabelPolygon0 = new ScalablePolygonShape();
 
-			patternNodeLabelPolygon0.addPoint(new Point(getMapMode().DPtoLP(0),
-					getMapMode().DPtoLP(0)));
-			patternNodeLabelPolygon0.addPoint(new Point(
-					getMapMode().DPtoLP(75), getMapMode().DPtoLP(0)));
-			patternNodeLabelPolygon0.addPoint(new Point(
-					getMapMode().DPtoLP(75), getMapMode().DPtoLP(100)));
-			patternNodeLabelPolygon0.addPoint(new Point(
-					getMapMode().DPtoLP(75), getMapMode().DPtoLP(0)));
-			patternNodeLabelPolygon0.addPoint(new Point(getMapMode().DPtoLP(0),
-					getMapMode().DPtoLP(0)));
-			patternNodeLabelPolygon0.addPoint(new Point(getMapMode().DPtoLP(0),
-					getMapMode().DPtoLP(100)));
+			patternNodeLabelPolygon0.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(0)));
+			patternNodeLabelPolygon0.addPoint(new Point(getMapMode().DPtoLP(75), getMapMode().DPtoLP(0)));
+			patternNodeLabelPolygon0.addPoint(new Point(getMapMode().DPtoLP(75), getMapMode().DPtoLP(100)));
+			patternNodeLabelPolygon0.addPoint(new Point(getMapMode().DPtoLP(75), getMapMode().DPtoLP(0)));
+			patternNodeLabelPolygon0.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(0)));
+			patternNodeLabelPolygon0.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(100)));
 			patternNodeLabelPolygon0.setFill(true);
 
 			GridData constraintPatternNodeLabelPolygon0 = new GridData();
@@ -397,8 +407,7 @@ public class StoryPatternNodeEditPart extends ShapeNodeEditPart {
 			constraintPatternNodeLabelPolygon0.verticalSpan = 1;
 			constraintPatternNodeLabelPolygon0.grabExcessHorizontalSpace = true;
 			constraintPatternNodeLabelPolygon0.grabExcessVerticalSpace = false;
-			this.add(patternNodeLabelPolygon0,
-					constraintPatternNodeLabelPolygon0);
+			this.add(patternNodeLabelPolygon0, constraintPatternNodeLabelPolygon0);
 
 			GridLayout layoutPatternNodeLabelPolygon0 = new GridLayout();
 			layoutPatternNodeLabelPolygon0.numColumns = 4;
@@ -407,15 +416,12 @@ public class StoryPatternNodeEditPart extends ShapeNodeEditPart {
 			layoutPatternNodeLabelPolygon0.verticalSpacing = 0;
 			layoutPatternNodeLabelPolygon0.marginWidth = 0;
 			layoutPatternNodeLabelPolygon0.marginHeight = 0;
-			patternNodeLabelPolygon0
-					.setLayoutManager(layoutPatternNodeLabelPolygon0);
+			patternNodeLabelPolygon0.setLayoutManager(layoutPatternNodeLabelPolygon0);
 
 			ScalablePolygonShape insetBottomPolygon1 = new ScalablePolygonShape();
 
-			insetBottomPolygon1.addPoint(new Point(getMapMode().DPtoLP(0),
-					getMapMode().DPtoLP(100)));
-			insetBottomPolygon1.addPoint(new Point(getMapMode().DPtoLP(100),
-					getMapMode().DPtoLP(100)));
+			insetBottomPolygon1.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(100)));
+			insetBottomPolygon1.addPoint(new Point(getMapMode().DPtoLP(100), getMapMode().DPtoLP(100)));
 
 			GridData constraintInsetBottomPolygon1 = new GridData();
 			constraintInsetBottomPolygon1.verticalAlignment = GridData.BEGINNING;
@@ -425,13 +431,11 @@ public class StoryPatternNodeEditPart extends ShapeNodeEditPart {
 			constraintInsetBottomPolygon1.verticalSpan = 1;
 			constraintInsetBottomPolygon1.grabExcessHorizontalSpace = false;
 			constraintInsetBottomPolygon1.grabExcessVerticalSpace = false;
-			patternNodeLabelPolygon0.add(insetBottomPolygon1,
-					constraintInsetBottomPolygon1);
+			patternNodeLabelPolygon0.add(insetBottomPolygon1, constraintInsetBottomPolygon1);
 
 			ToolbarLayout layoutInsetBottomPolygon1 = new ToolbarLayout();
 			layoutInsetBottomPolygon1.setStretchMinorAxis(true);
-			layoutInsetBottomPolygon1
-					.setMinorAlignment(ToolbarLayout.ALIGN_TOPLEFT);
+			layoutInsetBottomPolygon1.setMinorAlignment(ToolbarLayout.ALIGN_TOPLEFT);
 
 			layoutInsetBottomPolygon1.setSpacing(0);
 			layoutInsetBottomPolygon1.setVertical(false);
@@ -442,11 +446,9 @@ public class StoryPatternNodeEditPart extends ShapeNodeEditPart {
 
 			fFigurePatternNodeNameFigure.setText("");
 
-			fFigurePatternNodeNameFigure
-					.setFont(FFIGUREPATTERNNODENAMEFIGURE_FONT);
+			fFigurePatternNodeNameFigure.setFont(FFIGUREPATTERNNODENAMEFIGURE_FONT);
 
-			fFigurePatternNodeNameFigure.setBorder(new MarginBorder(
-					getMapMode().DPtoLP(0), getMapMode().DPtoLP(5),
+			fFigurePatternNodeNameFigure.setBorder(new MarginBorder(getMapMode().DPtoLP(0), getMapMode().DPtoLP(5),
 					getMapMode().DPtoLP(0), getMapMode().DPtoLP(0)));
 
 			insetBottomPolygon1.add(fFigurePatternNodeNameFigure);
@@ -455,21 +457,16 @@ public class StoryPatternNodeEditPart extends ShapeNodeEditPart {
 
 			fFigurePatternNodeTypeFigure.setText("");
 
-			fFigurePatternNodeTypeFigure
-					.setFont(FFIGUREPATTERNNODETYPEFIGURE_FONT);
+			fFigurePatternNodeTypeFigure.setFont(FFIGUREPATTERNNODETYPEFIGURE_FONT);
 
 			insetBottomPolygon1.add(fFigurePatternNodeTypeFigure);
 
 			ScalablePolygonShape insetRightPolygon1 = new ScalablePolygonShape();
 
-			insetRightPolygon1.addPoint(new Point(getMapMode().DPtoLP(0),
-					getMapMode().DPtoLP(100)));
-			insetRightPolygon1.addPoint(new Point(getMapMode().DPtoLP(100),
-					getMapMode().DPtoLP(50)));
-			insetRightPolygon1.addPoint(new Point(getMapMode().DPtoLP(100),
-					getMapMode().DPtoLP(0)));
-			insetRightPolygon1.addPoint(new Point(getMapMode().DPtoLP(100),
-					getMapMode().DPtoLP(50)));
+			insetRightPolygon1.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(100)));
+			insetRightPolygon1.addPoint(new Point(getMapMode().DPtoLP(100), getMapMode().DPtoLP(50)));
+			insetRightPolygon1.addPoint(new Point(getMapMode().DPtoLP(100), getMapMode().DPtoLP(0)));
+			insetRightPolygon1.addPoint(new Point(getMapMode().DPtoLP(100), getMapMode().DPtoLP(50)));
 			insetRightPolygon1.setFill(true);
 
 			GridData constraintInsetRightPolygon1 = new GridData();
@@ -480,13 +477,11 @@ public class StoryPatternNodeEditPart extends ShapeNodeEditPart {
 			constraintInsetRightPolygon1.verticalSpan = 1;
 			constraintInsetRightPolygon1.grabExcessHorizontalSpace = false;
 			constraintInsetRightPolygon1.grabExcessVerticalSpace = false;
-			patternNodeLabelPolygon0.add(insetRightPolygon1,
-					constraintInsetRightPolygon1);
+			patternNodeLabelPolygon0.add(insetRightPolygon1, constraintInsetRightPolygon1);
 
 			ToolbarLayout layoutInsetRightPolygon1 = new ToolbarLayout();
 			layoutInsetRightPolygon1.setStretchMinorAxis(false);
-			layoutInsetRightPolygon1
-					.setMinorAlignment(ToolbarLayout.ALIGN_TOPLEFT);
+			layoutInsetRightPolygon1.setMinorAlignment(ToolbarLayout.ALIGN_TOPLEFT);
 
 			layoutInsetRightPolygon1.setSpacing(0);
 			layoutInsetRightPolygon1.setVertical(false);
@@ -501,18 +496,12 @@ public class StoryPatternNodeEditPart extends ShapeNodeEditPart {
 
 			fFigurePatternNodeElementsPolygon = new ScalablePolygonShape();
 
-			fFigurePatternNodeElementsPolygon.addPoint(new Point(getMapMode()
-					.DPtoLP(0), getMapMode().DPtoLP(0)));
-			fFigurePatternNodeElementsPolygon.addPoint(new Point(getMapMode()
-					.DPtoLP(0), getMapMode().DPtoLP(99)));
-			fFigurePatternNodeElementsPolygon.addPoint(new Point(getMapMode()
-					.DPtoLP(100), getMapMode().DPtoLP(99)));
-			fFigurePatternNodeElementsPolygon.addPoint(new Point(getMapMode()
-					.DPtoLP(100), getMapMode().DPtoLP(0)));
-			fFigurePatternNodeElementsPolygon.addPoint(new Point(getMapMode()
-					.DPtoLP(100), getMapMode().DPtoLP(99)));
-			fFigurePatternNodeElementsPolygon.addPoint(new Point(getMapMode()
-					.DPtoLP(0), getMapMode().DPtoLP(99)));
+			fFigurePatternNodeElementsPolygon.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(0)));
+			fFigurePatternNodeElementsPolygon.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(99)));
+			fFigurePatternNodeElementsPolygon.addPoint(new Point(getMapMode().DPtoLP(100), getMapMode().DPtoLP(99)));
+			fFigurePatternNodeElementsPolygon.addPoint(new Point(getMapMode().DPtoLP(100), getMapMode().DPtoLP(0)));
+			fFigurePatternNodeElementsPolygon.addPoint(new Point(getMapMode().DPtoLP(100), getMapMode().DPtoLP(99)));
+			fFigurePatternNodeElementsPolygon.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(99)));
 			fFigurePatternNodeElementsPolygon.setFill(true);
 
 			GridData constraintFFigurePatternNodeElementsPolygon = new GridData();
@@ -523,8 +512,7 @@ public class StoryPatternNodeEditPart extends ShapeNodeEditPart {
 			constraintFFigurePatternNodeElementsPolygon.verticalSpan = 1;
 			constraintFFigurePatternNodeElementsPolygon.grabExcessHorizontalSpace = true;
 			constraintFFigurePatternNodeElementsPolygon.grabExcessVerticalSpace = true;
-			this.add(fFigurePatternNodeElementsPolygon,
-					constraintFFigurePatternNodeElementsPolygon);
+			this.add(fFigurePatternNodeElementsPolygon, constraintFFigurePatternNodeElementsPolygon);
 
 		}
 
@@ -554,15 +542,13 @@ public class StoryPatternNodeEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	static final Font FFIGUREPATTERNNODENAMEFIGURE_FONT = new Font(
-			Display.getCurrent(), Display.getDefault().getSystemFont()
-					.getFontData()[0].getName(), 9, SWT.NORMAL);
+	static final Font FFIGUREPATTERNNODENAMEFIGURE_FONT = new Font(Display.getCurrent(),
+			Display.getDefault().getSystemFont().getFontData()[0].getName(), 9, SWT.NORMAL);
 
 	/**
 	 * @generated
 	 */
-	static final Font FFIGUREPATTERNNODETYPEFIGURE_FONT = new Font(
-			Display.getCurrent(), Display.getDefault().getSystemFont()
-					.getFontData()[0].getName(), 9, SWT.NORMAL);
+	static final Font FFIGUREPATTERNNODETYPEFIGURE_FONT = new Font(Display.getCurrent(),
+			Display.getDefault().getSystemFont().getFontData()[0].getName(), 9, SWT.NORMAL);
 
 }

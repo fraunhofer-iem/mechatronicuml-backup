@@ -8,12 +8,14 @@ import org.eclipse.jface.viewers.BaseLabelProvider;
 import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.swt.graphics.Image;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDNavigatorGroup;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDVisualIDRegistry;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.BasicSDDElementTypes;
 
 /**
  * @generated
  */
-public class BasicSDDSheetLabelProvider extends BaseLabelProvider implements
-		ILabelProvider {
+public class BasicSDDSheetLabelProvider extends BaseLabelProvider implements ILabelProvider {
 
 	/**
 	 * @generated
@@ -31,9 +33,8 @@ public class BasicSDDSheetLabelProvider extends BaseLabelProvider implements
 		}
 		// END: Added for MUML #912
 
-		if (element instanceof org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDNavigatorGroup) {
-			return ((org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDNavigatorGroup) element)
-					.getGroupName();
+		if (element instanceof BasicSDDNavigatorGroup) {
+			return ((BasicSDDNavigatorGroup) element).getGroupName();
 		}
 		IElementType etype = getElementType(getView(element));
 		return etype == null ? "" : etype.getDisplayName();
@@ -44,9 +45,7 @@ public class BasicSDDSheetLabelProvider extends BaseLabelProvider implements
 	 */
 	public Image getImage(Object element) {
 		IElementType etype = getElementType(getView(unwrap(element)));
-		return etype == null ? null
-				: org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.BasicSDDElementTypes
-						.getImage(etype);
+		return etype == null ? null : BasicSDDElementTypes.getImage(etype);
 	}
 
 	/**
@@ -78,15 +77,12 @@ public class BasicSDDSheetLabelProvider extends BaseLabelProvider implements
 	private IElementType getElementType(View view) {
 		// For intermediate views climb up the containment hierarchy to find the one associated with an element type.
 		while (view != null) {
-			int vid = org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDVisualIDRegistry
-					.getVisualID(view);
-			IElementType etype = org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.BasicSDDElementTypes
-					.getElementType(vid);
+			int vid = BasicSDDVisualIDRegistry.getVisualID(view);
+			IElementType etype = BasicSDDElementTypes.getElementType(vid);
 			if (etype != null) {
 				return etype;
 			}
-			view = view.eContainer() instanceof View ? (View) view.eContainer()
-					: null;
+			view = view.eContainer() instanceof View ? (View) view.eContainer() : null;
 		}
 		return null;
 	}

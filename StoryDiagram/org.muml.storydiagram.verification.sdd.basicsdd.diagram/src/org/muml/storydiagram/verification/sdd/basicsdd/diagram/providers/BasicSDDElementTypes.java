@@ -14,6 +14,20 @@ import org.eclipse.gmf.tooling.runtime.providers.DiagramElementTypes;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.swt.graphics.Image;
 import org.muml.storydiagram.patterns.PatternsPackage;
+import org.muml.storydiagram.verification.sdd.SDDPackage;
+import org.muml.storydiagram.verification.sdd.basicsdd.BasicSDDPackage;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.AttributeAssignmentEditPart;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.CollectionVariableEditPart;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.Constraint2EditPart;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.ConstraintEditPart;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.EdgeEditPart;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.LeafNodeEditPart;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.LinkVariableEditPart;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.ObjectVariableEditPart;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryDecisionDiagramEditPart;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryPatternEditPart;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryPatternNodeEditPart;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDDiagramEditorPlugin;
 
 /**
  * @generated
@@ -35,8 +49,7 @@ public class BasicSDDElementTypes {
 	 * @generated
 	 */
 	private static DiagramElementTypeImages elementTypeImages = new DiagramElementTypeImages(
-			org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDDiagramEditorPlugin
-					.getInstance().getItemProvidersAdapterFactory());
+			BasicSDDDiagramEditorPlugin.getInstance().getItemProvidersAdapterFactory());
 
 	/**
 	 * @generated
@@ -46,47 +59,58 @@ public class BasicSDDElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType StoryDecisionDiagram_1000 = getElementType("org.muml.storydiagram.verification.sdd.basicsdd.diagram.StoryDecisionDiagram_1000"); //$NON-NLS-1$
+	public static final IElementType StoryDecisionDiagram_1000 = getElementType(
+			"org.muml.storydiagram.verification.sdd.basicsdd.diagram.StoryDecisionDiagram_1000"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType StoryPatternNode_2003 = getElementType("org.muml.storydiagram.verification.sdd.basicsdd.diagram.StoryPatternNode_2003"); //$NON-NLS-1$
+	public static final IElementType StoryPatternNode_2003 = getElementType(
+			"org.muml.storydiagram.verification.sdd.basicsdd.diagram.StoryPatternNode_2003"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType LeafNode_2004 = getElementType("org.muml.storydiagram.verification.sdd.basicsdd.diagram.LeafNode_2004"); //$NON-NLS-1$
+	public static final IElementType LeafNode_2004 = getElementType(
+			"org.muml.storydiagram.verification.sdd.basicsdd.diagram.LeafNode_2004"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType StoryPattern_3011 = getElementType("org.muml.storydiagram.verification.sdd.basicsdd.diagram.StoryPattern_3011"); //$NON-NLS-1$
+	public static final IElementType StoryPattern_3011 = getElementType(
+			"org.muml.storydiagram.verification.sdd.basicsdd.diagram.StoryPattern_3011"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType CollectionVariable_3006 = getElementType("org.muml.storydiagram.verification.sdd.basicsdd.diagram.CollectionVariable_3006"); //$NON-NLS-1$
+	public static final IElementType CollectionVariable_3006 = getElementType(
+			"org.muml.storydiagram.verification.sdd.basicsdd.diagram.CollectionVariable_3006"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType AttributeAssignment_3007 = getElementType("org.muml.storydiagram.verification.sdd.basicsdd.diagram.AttributeAssignment_3007"); //$NON-NLS-1$
+	public static final IElementType AttributeAssignment_3007 = getElementType(
+			"org.muml.storydiagram.verification.sdd.basicsdd.diagram.AttributeAssignment_3007"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType Constraint_3008 = getElementType("org.muml.storydiagram.verification.sdd.basicsdd.diagram.Constraint_3008"); //$NON-NLS-1$
+	public static final IElementType Constraint_3008 = getElementType(
+			"org.muml.storydiagram.verification.sdd.basicsdd.diagram.Constraint_3008"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType ObjectVariable_3009 = getElementType("org.muml.storydiagram.verification.sdd.basicsdd.diagram.ObjectVariable_3009"); //$NON-NLS-1$
+	public static final IElementType ObjectVariable_3009 = getElementType(
+			"org.muml.storydiagram.verification.sdd.basicsdd.diagram.ObjectVariable_3009"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType Constraint_3010 = getElementType("org.muml.storydiagram.verification.sdd.basicsdd.diagram.Constraint_3010"); //$NON-NLS-1$
+	public static final IElementType Constraint_3010 = getElementType(
+			"org.muml.storydiagram.verification.sdd.basicsdd.diagram.Constraint_3010"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType Edge_4001 = getElementType("org.muml.storydiagram.verification.sdd.basicsdd.diagram.Edge_4001"); //$NON-NLS-1$
+	public static final IElementType Edge_4001 = getElementType(
+			"org.muml.storydiagram.verification.sdd.basicsdd.diagram.Edge_4001"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType LinkVariable_4003 = getElementType("org.muml.storydiagram.verification.sdd.basicsdd.diagram.LinkVariable_4003"); //$NON-NLS-1$
+	public static final IElementType LinkVariable_4003 = getElementType(
+			"org.muml.storydiagram.verification.sdd.basicsdd.diagram.LinkVariable_4003"); //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -126,46 +150,27 @@ public class BasicSDDElementTypes {
 		if (elements == null) {
 			elements = new IdentityHashMap<IElementType, ENamedElement>();
 
-			elements.put(
-					StoryDecisionDiagram_1000,
-					org.muml.storydiagram.verification.sdd.basicsdd.BasicSDDPackage.eINSTANCE
-							.getStoryDecisionDiagram());
+			elements.put(StoryDecisionDiagram_1000, BasicSDDPackage.eINSTANCE.getStoryDecisionDiagram());
 
-			elements.put(
-					StoryPatternNode_2003,
-					org.muml.storydiagram.verification.sdd.basicsdd.BasicSDDPackage.eINSTANCE
-							.getStoryPatternNode());
+			elements.put(StoryPatternNode_2003, BasicSDDPackage.eINSTANCE.getStoryPatternNode());
 
-			elements.put(
-					LeafNode_2004,
-					org.muml.storydiagram.verification.sdd.SDDPackage.eINSTANCE
-							.getLeafNode());
+			elements.put(LeafNode_2004, SDDPackage.eINSTANCE.getLeafNode());
 
-			elements.put(StoryPattern_3011,
-					PatternsPackage.eINSTANCE.getStoryPattern());
+			elements.put(StoryPattern_3011, PatternsPackage.eINSTANCE.getStoryPattern());
 
-			elements.put(CollectionVariable_3006,
-					PatternsPackage.eINSTANCE.getCollectionVariable());
+			elements.put(CollectionVariable_3006, PatternsPackage.eINSTANCE.getCollectionVariable());
 
-			elements.put(AttributeAssignment_3007,
-					PatternsPackage.eINSTANCE.getAttributeAssignment());
+			elements.put(AttributeAssignment_3007, PatternsPackage.eINSTANCE.getAttributeAssignment());
 
-			elements.put(Constraint_3008,
-					PatternsPackage.eINSTANCE.getConstraint());
+			elements.put(Constraint_3008, PatternsPackage.eINSTANCE.getConstraint());
 
-			elements.put(ObjectVariable_3009,
-					PatternsPackage.eINSTANCE.getObjectVariable());
+			elements.put(ObjectVariable_3009, PatternsPackage.eINSTANCE.getObjectVariable());
 
-			elements.put(Constraint_3010,
-					PatternsPackage.eINSTANCE.getConstraint());
+			elements.put(Constraint_3010, PatternsPackage.eINSTANCE.getConstraint());
 
-			elements.put(
-					Edge_4001,
-					org.muml.storydiagram.verification.sdd.SDDPackage.eINSTANCE
-							.getEdge());
+			elements.put(Edge_4001, SDDPackage.eINSTANCE.getEdge());
 
-			elements.put(LinkVariable_4003,
-					PatternsPackage.eINSTANCE.getLinkVariable());
+			elements.put(LinkVariable_4003, PatternsPackage.eINSTANCE.getLinkVariable());
 		}
 		return (ENamedElement) elements.get(type);
 	}
@@ -203,27 +208,27 @@ public class BasicSDDElementTypes {
 	 */
 	public static IElementType getElementType(int visualID) {
 		switch (visualID) {
-		case org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryDecisionDiagramEditPart.VISUAL_ID:
+		case StoryDecisionDiagramEditPart.VISUAL_ID:
 			return StoryDecisionDiagram_1000;
-		case org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryPatternNodeEditPart.VISUAL_ID:
+		case StoryPatternNodeEditPart.VISUAL_ID:
 			return StoryPatternNode_2003;
-		case org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.LeafNodeEditPart.VISUAL_ID:
+		case LeafNodeEditPart.VISUAL_ID:
 			return LeafNode_2004;
-		case org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryPatternEditPart.VISUAL_ID:
+		case StoryPatternEditPart.VISUAL_ID:
 			return StoryPattern_3011;
-		case org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.CollectionVariableEditPart.VISUAL_ID:
+		case CollectionVariableEditPart.VISUAL_ID:
 			return CollectionVariable_3006;
-		case org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.AttributeAssignmentEditPart.VISUAL_ID:
+		case AttributeAssignmentEditPart.VISUAL_ID:
 			return AttributeAssignment_3007;
-		case org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.ConstraintEditPart.VISUAL_ID:
+		case ConstraintEditPart.VISUAL_ID:
 			return Constraint_3008;
-		case org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.ObjectVariableEditPart.VISUAL_ID:
+		case ObjectVariableEditPart.VISUAL_ID:
 			return ObjectVariable_3009;
-		case org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.Constraint2EditPart.VISUAL_ID:
+		case Constraint2EditPart.VISUAL_ID:
 			return Constraint_3010;
-		case org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.EdgeEditPart.VISUAL_ID:
+		case EdgeEditPart.VISUAL_ID:
 			return Edge_4001;
-		case org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.LinkVariableEditPart.VISUAL_ID:
+		case LinkVariableEditPart.VISUAL_ID:
 			return LinkVariable_4003;
 		}
 		return null;
@@ -232,33 +237,34 @@ public class BasicSDDElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final DiagramElementTypes TYPED_INSTANCE = new DiagramElementTypes(
-			elementTypeImages) {
+	public static final DiagramElementTypes TYPED_INSTANCE = new DiagramElementTypes(elementTypeImages) {
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		@Override
+
 		public boolean isKnownElementType(IElementType elementType) {
 			return org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.BasicSDDElementTypes
 					.isKnownElementType(elementType);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		@Override
+
 		public IElementType getElementTypeForVisualId(int visualID) {
 			return org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.BasicSDDElementTypes
 					.getElementType(visualID);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		@Override
-		public ENamedElement getDefiningNamedElement(
-				IAdaptable elementTypeAdapter) {
+
+		public ENamedElement getDefiningNamedElement(IAdaptable elementTypeAdapter) {
 			return org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.BasicSDDElementTypes
 					.getElement(elementTypeAdapter);
 		}

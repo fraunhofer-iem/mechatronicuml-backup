@@ -21,6 +21,11 @@ import org.eclipse.ui.navigator.ICommonActionConstants;
 import org.eclipse.ui.navigator.ICommonActionExtensionSite;
 import org.eclipse.ui.navigator.ICommonViewerWorkbenchSite;
 import org.eclipse.ui.part.FileEditorInput;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryDecisionDiagramEditPart;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDDiagramEditor;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDDiagramEditorPlugin;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDVisualIDRegistry;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.Messages;
 
 /**
  * @generated
@@ -64,12 +69,10 @@ public class BasicSDDNavigatorActionProvider extends CommonActionProvider {
 		if (!myContribute) {
 			return;
 		}
-		IStructuredSelection selection = (IStructuredSelection) getContext()
-				.getSelection();
+		IStructuredSelection selection = (IStructuredSelection) getContext().getSelection();
 		myOpenDiagramAction.selectionChanged(selection);
 		if (myOpenDiagramAction.isEnabled()) {
-			actionBars.setGlobalActionHandler(ICommonActionConstants.OPEN,
-					myOpenDiagramAction);
+			actionBars.setGlobalActionHandler(ICommonActionConstants.OPEN, myOpenDiagramAction);
 		}
 	}
 
@@ -98,8 +101,7 @@ public class BasicSDDNavigatorActionProvider extends CommonActionProvider {
 		 * @generated
 		 */
 		public OpenDiagramAction(ICommonViewerWorkbenchSite viewerSite) {
-			super(
-					org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.Messages.NavigatorActionProvider_OpenDiagramActionName);
+			super(Messages.NavigatorActionProvider_OpenDiagramActionName);
 			myViewerSite = viewerSite;
 		}
 
@@ -110,18 +112,14 @@ public class BasicSDDNavigatorActionProvider extends CommonActionProvider {
 			myDiagram = null;
 			if (selection.size() == 1) {
 				Object selectedElement = selection.getFirstElement();
-				if (selectedElement instanceof org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDNavigatorItem) {
-					selectedElement = ((org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDNavigatorItem) selectedElement)
-							.getView();
+				if (selectedElement instanceof BasicSDDNavigatorItem) {
+					selectedElement = ((BasicSDDNavigatorItem) selectedElement).getView();
 				} else if (selectedElement instanceof IAdaptable) {
-					selectedElement = ((IAdaptable) selectedElement)
-							.getAdapter(View.class);
+					selectedElement = ((IAdaptable) selectedElement).getAdapter(View.class);
 				}
 				if (selectedElement instanceof Diagram) {
 					Diagram diagram = (Diagram) selectedElement;
-					if (org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryDecisionDiagramEditPart.MODEL_ID
-							.equals(org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDVisualIDRegistry
-									.getModelID(diagram))) {
+					if (StoryDecisionDiagramEditPart.MODEL_ID.equals(BasicSDDVisualIDRegistry.getModelID(diagram))) {
 						myDiagram = diagram;
 					}
 				}
@@ -140,13 +138,9 @@ public class BasicSDDNavigatorActionProvider extends CommonActionProvider {
 			IEditorInput editorInput = getEditorInput(myDiagram);
 			IWorkbenchPage page = myViewerSite.getPage();
 			try {
-				page.openEditor(
-						editorInput,
-						org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDDiagramEditor.ID);
+				page.openEditor(editorInput, BasicSDDDiagramEditor.ID);
 			} catch (PartInitException e) {
-				org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDDiagramEditorPlugin
-						.getInstance().logError(
-								"Exception while openning diagram", e); //$NON-NLS-1$
+				BasicSDDDiagramEditorPlugin.getInstance().logError("Exception while openning diagram", e); //$NON-NLS-1$
 			}
 		}
 
@@ -157,16 +151,14 @@ public class BasicSDDNavigatorActionProvider extends CommonActionProvider {
 			Resource diagramResource = diagram.eResource();
 			for (EObject nextEObject : diagramResource.getContents()) {
 				if (nextEObject == diagram) {
-					return new FileEditorInput(
-							WorkspaceSynchronizer.getFile(diagramResource));
+					return new FileEditorInput(WorkspaceSynchronizer.getFile(diagramResource));
 				}
 				if (nextEObject instanceof Diagram) {
 					break;
 				}
 			}
 			URI uri = EcoreUtil.getURI(diagram);
-			String editorName = uri.lastSegment() + '#'
-					+ diagram.eResource().getContents().indexOf(diagram);
+			String editorName = uri.lastSegment() + '#' + diagram.eResource().getContents().indexOf(diagram);
 			IEditorInput editorInput = new URIEditorInput(uri, editorName);
 			return editorInput;
 		}

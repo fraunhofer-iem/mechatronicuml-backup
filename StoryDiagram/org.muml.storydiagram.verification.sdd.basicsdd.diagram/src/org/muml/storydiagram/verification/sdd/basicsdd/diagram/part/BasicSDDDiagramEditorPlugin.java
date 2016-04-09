@@ -20,6 +20,7 @@ import org.eclipse.gmf.tooling.runtime.LogHelper;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
+import org.muml.core.common.FujabaCommonPlugin;
 import org.muml.core.expressions.common.provider.CommonExpressionsItemProviderAdapterFactory;
 import org.muml.core.expressions.provider.ExpressionsItemProviderAdapterFactory;
 import org.muml.core.provider.CoreItemProviderAdapterFactory;
@@ -29,8 +30,13 @@ import org.muml.storydiagram.calls.expressions.provider.CallsExpressionsItemProv
 import org.muml.storydiagram.calls.provider.CallsItemProviderAdapterFactory;
 import org.muml.storydiagram.patterns.expressions.provider.PatternsExpressionsItemProviderAdapterFactory;
 import org.muml.storydiagram.patterns.provider.PatternsItemProviderAdapterFactory;
+import org.muml.storydiagram.provider.StorydiagramItemProviderAdapterFactory;
 import org.muml.storydiagram.provider.StorydiagramsItemProviderAdapterFactory;
 import org.muml.storydiagram.templates.provider.TemplatesItemProviderAdapterFactory;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.policies.BasicSDDBaseItemSemanticEditPolicy;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.ElementInitializers;
+import org.muml.storydiagram.verification.sdd.basicsdd.provider.BasicSDDItemProviderAdapterFactory;
+import org.muml.storydiagram.verification.sdd.provider.SDDItemProviderAdapterFactory;
 import org.osgi.framework.BundleContext;
 
 /**
@@ -51,8 +57,7 @@ public class BasicSDDDiagramEditorPlugin extends AbstractUIPlugin {
 	/**
 	 * @generated
 	 */
-	public static final PreferencesHint DIAGRAM_PREFERENCES_HINT = new PreferencesHint(
-			ID);
+	public static final PreferencesHint DIAGRAM_PREFERENCES_HINT = new PreferencesHint(ID);
 
 	/**
 	 * @generated
@@ -67,17 +72,17 @@ public class BasicSDDDiagramEditorPlugin extends AbstractUIPlugin {
 	/**
 	 * @generated
 	 */
-	private org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDDocumentProvider documentProvider;
+	private BasicSDDDocumentProvider documentProvider;
 
 	/**
 	 * @generated
 	 */
-	private org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.policies.BasicSDDBaseItemSemanticEditPolicy.LinkConstraints linkConstraints;
+	private BasicSDDBaseItemSemanticEditPolicy.LinkConstraints linkConstraints;
 
 	/**
 	 * @generated
 	 */
-	private org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.ElementInitializers initializers;
+	private ElementInitializers initializers;
 
 	/**
 	 * @generated
@@ -92,8 +97,7 @@ public class BasicSDDDiagramEditorPlugin extends AbstractUIPlugin {
 		super.start(context);
 		instance = this;
 		myLogHelper = new LogHelper(this);
-		PreferencesHint.registerPreferenceStore(DIAGRAM_PREFERENCES_HINT,
-				getPreferenceStore());
+		PreferencesHint.registerPreferenceStore(DIAGRAM_PREFERENCES_HINT, getPreferenceStore());
 		adapterFactory = createAdapterFactory();
 	}
 
@@ -129,24 +133,22 @@ public class BasicSDDDiagramEditorPlugin extends AbstractUIPlugin {
 	 * @generated
 	 */
 	protected void fillItemProviderFactories(List<AdapterFactory> factories) {
-		List<AdapterFactory> positivePriorityFactories = org.muml.core.common.FujabaCommonPlugin
-				.getInstance().getCustomItemProviderAdapterFactories(ID, true);
-		List<AdapterFactory> negativePriorityFactories = org.muml.core.common.FujabaCommonPlugin
-				.getInstance().getCustomItemProviderAdapterFactories(ID, false);
+		List<AdapterFactory> positivePriorityFactories = FujabaCommonPlugin.getInstance()
+				.getCustomItemProviderAdapterFactories(ID, true);
+		List<AdapterFactory> negativePriorityFactories = FujabaCommonPlugin.getInstance()
+				.getCustomItemProviderAdapterFactories(ID, false);
 
 		// Custom Factories with positive priority
 		factories.addAll(positivePriorityFactories);
 
 		// Default Factories
-		factories
-				.add(new org.muml.storydiagram.verification.sdd.basicsdd.provider.BasicSDDItemProviderAdapterFactory());
+		factories.add(new BasicSDDItemProviderAdapterFactory());
 		factories.add(new CoreItemProviderAdapterFactory());
 		factories.add(new ExpressionsItemProviderAdapterFactory());
 		factories.add(new CommonExpressionsItemProviderAdapterFactory());
 		factories.add(new EcoreItemProviderAdapterFactory());
-		factories
-				.add(new org.muml.storydiagram.verification.sdd.provider.SDDItemProviderAdapterFactory());
-		factories.add(new StorydiagramsItemProviderAdapterFactory());
+		factories.add(new SDDItemProviderAdapterFactory());
+		factories.add(new StorydiagramItemProviderAdapterFactory());
 		factories.add(new ActivitiesItemProviderAdapterFactory());
 		factories.add(new ActivitiesExpressionsItemProviderAdapterFactory());
 		factories.add(new CallsItemProviderAdapterFactory());
@@ -172,11 +174,9 @@ public class BasicSDDDiagramEditorPlugin extends AbstractUIPlugin {
 	 * @generated
 	 */
 	public ImageDescriptor getItemImageDescriptor(Object item) {
-		IItemLabelProvider labelProvider = (IItemLabelProvider) adapterFactory
-				.adapt(item, IItemLabelProvider.class);
+		IItemLabelProvider labelProvider = (IItemLabelProvider) adapterFactory.adapt(item, IItemLabelProvider.class);
 		if (labelProvider != null) {
-			return ExtendedImageRegistry.getInstance().getImageDescriptor(
-					labelProvider.getImage(item));
+			return ExtendedImageRegistry.getInstance().getImageDescriptor(labelProvider.getImage(item));
 		}
 		return null;
 	}
@@ -205,8 +205,8 @@ public class BasicSDDDiagramEditorPlugin extends AbstractUIPlugin {
 	public static ImageDescriptor findImageDescriptor(String path) {
 		final IPath p = new Path(path);
 		if (p.isAbsolute() && p.segmentCount() > 1) {
-			return AbstractUIPlugin.imageDescriptorFromPlugin(p.segment(0), p
-					.removeFirstSegments(1).makeAbsolute().toString());
+			return AbstractUIPlugin.imageDescriptorFromPlugin(p.segment(0),
+					p.removeFirstSegments(1).makeAbsolute().toString());
 		} else {
 			return getBundledImageDescriptor(p.makeAbsolute().toString());
 		}
@@ -241,9 +241,9 @@ public class BasicSDDDiagramEditorPlugin extends AbstractUIPlugin {
 	/**
 	 * @generated
 	 */
-	public org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDDocumentProvider getDocumentProvider() {
+	public BasicSDDDocumentProvider getDocumentProvider() {
 		if (documentProvider == null) {
-			documentProvider = new org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDDocumentProvider();
+			documentProvider = new BasicSDDDocumentProvider();
 		}
 		return documentProvider;
 	}
@@ -251,30 +251,28 @@ public class BasicSDDDiagramEditorPlugin extends AbstractUIPlugin {
 	/**
 	 * @generated
 	 */
-	public org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.policies.BasicSDDBaseItemSemanticEditPolicy.LinkConstraints getLinkConstraints() {
+	public BasicSDDBaseItemSemanticEditPolicy.LinkConstraints getLinkConstraints() {
 		return linkConstraints;
 	}
 
 	/**
-	 * @generated
-	 */
-	public void setLinkConstraints(
-			org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.policies.BasicSDDBaseItemSemanticEditPolicy.LinkConstraints lc) {
+	* @generated
+	*/
+	public void setLinkConstraints(BasicSDDBaseItemSemanticEditPolicy.LinkConstraints lc) {
 		this.linkConstraints = lc;
 	}
 
 	/**
 	 * @generated
 	 */
-	public org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.ElementInitializers getElementInitializers() {
+	public ElementInitializers getElementInitializers() {
 		return initializers;
 	}
 
 	/**
-	 * @generated
-	 */
-	public void setElementInitializers(
-			org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.ElementInitializers i) {
+	* @generated
+	*/
+	public void setElementInitializers(ElementInitializers i) {
 		this.initializers = i;
 	}
 

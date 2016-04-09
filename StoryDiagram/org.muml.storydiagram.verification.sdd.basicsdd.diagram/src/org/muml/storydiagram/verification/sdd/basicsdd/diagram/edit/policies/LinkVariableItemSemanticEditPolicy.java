@@ -3,20 +3,18 @@ package org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.policies;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.BasicSDDElementTypes;
 
 /**
  * @generated
  */
-public class LinkVariableItemSemanticEditPolicy
-		extends
-		org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.policies.BasicSDDBaseItemSemanticEditPolicy {
+public class LinkVariableItemSemanticEditPolicy extends BasicSDDBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public LinkVariableItemSemanticEditPolicy() {
-		super(
-				org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.BasicSDDElementTypes.LinkVariable_4003);
+		super(BasicSDDElementTypes.LinkVariable_4003);
 	}
 
 	/**

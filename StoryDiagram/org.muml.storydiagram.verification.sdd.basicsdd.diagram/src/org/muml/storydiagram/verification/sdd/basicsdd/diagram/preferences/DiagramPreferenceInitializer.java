@@ -2,6 +2,7 @@ package org.muml.storydiagram.verification.sdd.basicsdd.diagram.preferences;
 
 import org.eclipse.core.runtime.preferences.AbstractPreferenceInitializer;
 import org.eclipse.jface.preference.IPreferenceStore;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDDiagramEditorPlugin;
 
 /**
  * @generated
@@ -13,16 +14,11 @@ public class DiagramPreferenceInitializer extends AbstractPreferenceInitializer 
 	 */
 	public void initializeDefaultPreferences() {
 		IPreferenceStore store = getPreferenceStore();
-		org.muml.storydiagram.verification.sdd.basicsdd.diagram.preferences.DiagramGeneralPreferencePage
-				.initDefaults(store);
-		org.muml.storydiagram.verification.sdd.basicsdd.diagram.preferences.DiagramAppearancePreferencePage
-				.initDefaults(store);
-		org.muml.storydiagram.verification.sdd.basicsdd.diagram.preferences.DiagramConnectionsPreferencePage
-				.initDefaults(store);
-		org.muml.storydiagram.verification.sdd.basicsdd.diagram.preferences.DiagramPrintingPreferencePage
-				.initDefaults(store);
-		org.muml.storydiagram.verification.sdd.basicsdd.diagram.preferences.DiagramRulersAndGridPreferencePage
-				.initDefaults(store);
+		DiagramGeneralPreferencePage.initDefaults(store);
+		DiagramAppearancePreferencePage.initDefaults(store);
+		DiagramConnectionsPreferencePage.initDefaults(store);
+		DiagramPrintingPreferencePage.initDefaults(store);
+		DiagramRulersAndGridPreferencePage.initDefaults(store);
 
 	}
 
@@ -30,7 +26,6 @@ public class DiagramPreferenceInitializer extends AbstractPreferenceInitializer 
 	 * @generated
 	 */
 	protected IPreferenceStore getPreferenceStore() {
-		return org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDDiagramEditorPlugin
-				.getInstance().getPreferenceStore();
+		return BasicSDDDiagramEditorPlugin.getInstance().getPreferenceStore();
 	}
 }

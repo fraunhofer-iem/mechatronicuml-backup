@@ -11,6 +11,10 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.storydiagram.verification.sdd.AbstractStoryDecisionDiagram;
+import org.muml.storydiagram.verification.sdd.basicsdd.BasicSDDFactory;
+import org.muml.storydiagram.verification.sdd.basicsdd.StoryPatternNode;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.ElementInitializers;
 
 /**
  * @generated
@@ -29,8 +33,7 @@ public class StoryPatternNodeCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected EObject getElementToEdit() {
-		EObject container = ((CreateElementRequest) getRequest())
-				.getContainer();
+		EObject container = ((CreateElementRequest) getRequest()).getContainer();
 		if (container instanceof View) {
 			container = ((View) container).getElement();
 		}
@@ -48,16 +51,13 @@ public class StoryPatternNodeCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
-			IAdaptable info) throws ExecutionException {
-		org.muml.storydiagram.verification.sdd.basicsdd.StoryPatternNode newElement = org.muml.storydiagram.verification.sdd.basicsdd.BasicSDDFactory.eINSTANCE
-				.createStoryPatternNode();
+	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
+		StoryPatternNode newElement = BasicSDDFactory.eINSTANCE.createStoryPatternNode();
 
-		org.muml.storydiagram.verification.sdd.AbstractStoryDecisionDiagram owner = (org.muml.storydiagram.verification.sdd.AbstractStoryDecisionDiagram) getElementToEdit();
+		AbstractStoryDecisionDiagram owner = (AbstractStoryDecisionDiagram) getElementToEdit();
 		owner.getNodes().add(newElement);
 
-		org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.ElementInitializers
-				.getInstance().init_StoryPatternNode_2003(newElement);
+		ElementInitializers.getInstance().init_StoryPatternNode_2003(newElement);
 
 		doConfigure(newElement, monitor, info);
 
@@ -66,21 +66,15 @@ public class StoryPatternNodeCreateCommand extends EditElementCommand {
 	}
 
 	/**
-	 * @generated
-	 */
-	protected void doConfigure(
-			org.muml.storydiagram.verification.sdd.basicsdd.StoryPatternNode newElement,
-			IProgressMonitor monitor, IAdaptable info)
+	* @generated
+	*/
+	protected void doConfigure(StoryPatternNode newElement, IProgressMonitor monitor, IAdaptable info)
 			throws ExecutionException {
-		IElementType elementType = ((CreateElementRequest) getRequest())
-				.getElementType();
-		ConfigureRequest configureRequest = new ConfigureRequest(
-				getEditingDomain(), newElement, elementType);
-		configureRequest.setClientContext(((CreateElementRequest) getRequest())
-				.getClientContext());
+		IElementType elementType = ((CreateElementRequest) getRequest()).getElementType();
+		ConfigureRequest configureRequest = new ConfigureRequest(getEditingDomain(), newElement, elementType);
+		configureRequest.setClientContext(((CreateElementRequest) getRequest()).getClientContext());
 		configureRequest.addParameters(getRequest().getParameters());
-		ICommand configureCommand = elementType
-				.getEditCommand(configureRequest);
+		ICommand configureCommand = elementType.getEditCommand(configureRequest);
 		if (configureCommand != null && configureCommand.canExecute()) {
 			configureCommand.execute(monitor, info);
 		}

@@ -29,12 +29,26 @@ import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.update.UpdaterLinkDescriptor;
+import org.muml.core.common.edit.policies.IDiagramCanonicalEditPolicy;
+import org.muml.storydiagram.verification.sdd.SDDPackage;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.CollectionVariableEditPart;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.EdgeEditPart;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.LeafNodeEditPart;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.LinkVariableEditPart;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.ObjectVariableEditPart;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryDecisionDiagramEditPart;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryPatternEditPart;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryPatternNodeEditPart;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDDiagramUpdater;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDLinkDescriptor;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDNodeDescriptor;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDVisualIDRegistry;
 
 /**
  * @generated
  */
-public class StoryDecisionDiagramCanonicalEditPolicy extends
-		CanonicalEditPolicy {
+public class StoryDecisionDiagramCanonicalEditPolicy extends CanonicalEditPolicy
+		implements IDiagramCanonicalEditPolicy {
 
 	private boolean canonicalNodes = true;
 
@@ -43,6 +57,25 @@ public class StoryDecisionDiagramCanonicalEditPolicy extends
 
 	public StoryDecisionDiagramCanonicalEditPolicy(boolean canonicalNodes) {
 		this.canonicalNodes = canonicalNodes;
+	}
+
+	/**
+	* @generated
+	*/
+	private List<String> noConnectionViews = new ArrayList<String>();
+
+	/**
+	 * @generated
+	 */
+	public void addNoConnectionView(String type) {
+		noConnectionViews.add(type);
+	}
+
+	/**
+	 * @generated
+	 */
+	public void removeNoConnectionView(String type) {
+		noConnectionViews.remove(type);
 	}
 
 	/**
@@ -61,8 +94,7 @@ public class StoryDecisionDiagramCanonicalEditPolicy extends
 	 * @generated
 	 */
 	protected EStructuralFeature getFeatureToSynchronize() {
-		return org.muml.storydiagram.verification.sdd.SDDPackage.eINSTANCE
-				.getAbstractStoryDecisionDiagram_Nodes();
+		return SDDPackage.eINSTANCE.getAbstractStoryDecisionDiagram_Nodes();
 	}
 
 	/**
@@ -70,9 +102,9 @@ public class StoryDecisionDiagramCanonicalEditPolicy extends
 	 */
 	@SuppressWarnings("rawtypes")
 	protected List getSemanticChildrenList() {
-		List<org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDNodeDescriptor> childDescriptors = getSemanticChildrenViewDescriptors();
+		List<BasicSDDNodeDescriptor> childDescriptors = getSemanticChildrenViewDescriptors();
 		LinkedList<EObject> result = new LinkedList<EObject>();
-		for (org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDNodeDescriptor d : childDescriptors) {
+		for (BasicSDDNodeDescriptor d : childDescriptors) {
 			result.add(d.getModelElement());
 		}
 		return result;
@@ -88,23 +120,18 @@ public class StoryDecisionDiagramCanonicalEditPolicy extends
 		if (!canonicalNodes) {
 			View containerView = (View) getHost().getModel();
 			List<View> childViews = containerView.getChildren();
-			List<org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDNodeDescriptor> result = new LinkedList<org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDNodeDescriptor>();
+			List<BasicSDDNodeDescriptor> result = new LinkedList<BasicSDDNodeDescriptor>();
 
 			for (View childView : childViews) {
 				EObject childElement = childView.getElement();
-				int visualID = org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDVisualIDRegistry
-						.getVisualID(childView);
+				int visualID = BasicSDDVisualIDRegistry.getVisualID(childView);
 				List<Integer> visualIDs = Arrays
-						.asList(new Integer[] {
-								org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryPatternNodeEditPart.VISUAL_ID,
-								org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.LeafNodeEditPart.VISUAL_ID });
+						.asList(new Integer[] { StoryPatternNodeEditPart.VISUAL_ID, LeafNodeEditPart.VISUAL_ID });
 
 				// Note: childElement can be null, for diagram annotations!
 				if (childElement == null
-						|| childElement.eContainer() == containerView
-								.getElement() && visualIDs.contains(visualID)) {
-					result.add(new org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDNodeDescriptor(
-							childElement, visualID));
+						|| childElement.eContainer() == containerView.getElement() && visualIDs.contains(visualID)) {
+					result.add(new BasicSDDNodeDescriptor(childElement, visualID));
 					continue;
 				}
 			}
@@ -113,28 +140,23 @@ public class StoryDecisionDiagramCanonicalEditPolicy extends
 		// End added
 
 		View viewObject = (View) getHost().getModel();
-		return org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDDiagramUpdater
-				.getStoryDecisionDiagram_1000SemanticChildren(viewObject);
+		return BasicSDDDiagramUpdater.getStoryDecisionDiagram_1000SemanticChildren(viewObject);
 
 	}
 
 	/**
 	 * @generated
 	 */
-	protected boolean isOrphaned(Collection<EObject> semanticChildren,
-			final View view) {
-		return isMyDiagramElement(view)
-				&& !semanticChildren.contains(view.getElement());
+	protected boolean isOrphaned(Collection<EObject> semanticChildren, final View view) {
+		return isMyDiagramElement(view) && !semanticChildren.contains(view.getElement());
 	}
 
 	/**
 	 * @generated
 	 */
 	private boolean isMyDiagramElement(View view) {
-		int visualID = org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDVisualIDRegistry
-				.getVisualID(view);
-		return visualID == org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryPatternNodeEditPart.VISUAL_ID
-				|| visualID == org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.LeafNodeEditPart.VISUAL_ID;
+		int visualID = BasicSDDVisualIDRegistry.getVisualID(view);
+		return visualID == StoryPatternNodeEditPart.VISUAL_ID || visualID == LeafNodeEditPart.VISUAL_ID;
 	}
 
 	/**
@@ -145,7 +167,7 @@ public class StoryDecisionDiagramCanonicalEditPolicy extends
 			return;
 		}
 		LinkedList<IAdaptable> createdViews = new LinkedList<IAdaptable>();
-		List<org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDNodeDescriptor> childDescriptors = getSemanticChildrenViewDescriptors();
+		List<BasicSDDNodeDescriptor> childDescriptors = getSemanticChildrenViewDescriptors();
 		LinkedList<View> orphaned = new LinkedList<View>();
 		// we care to check only views we recognize as ours
 		LinkedList<View> knownViewChildren = new LinkedList<View>();
@@ -159,19 +181,16 @@ public class StoryDecisionDiagramCanonicalEditPolicy extends
 		// iteration happens over list of desired semantic elements, trying to find best matching View, while original CEP
 		// iterates views, potentially losing view (size/bounds) information - i.e. if there are few views to reference same EObject, only last one 
 		// to answer isOrphaned == true will be used for the domain element representation, see #cleanCanonicalSemanticChildren()
-		for (Iterator<org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDNodeDescriptor> descriptorsIterator = childDescriptors
-				.iterator(); descriptorsIterator.hasNext();) {
-			org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDNodeDescriptor next = descriptorsIterator
-					.next();
-			String hint = org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDVisualIDRegistry
-					.getType(next.getVisualID());
+		for (Iterator<BasicSDDNodeDescriptor> descriptorsIterator = childDescriptors.iterator(); descriptorsIterator
+				.hasNext();) {
+			BasicSDDNodeDescriptor next = descriptorsIterator.next();
+			String hint = BasicSDDVisualIDRegistry.getType(next.getVisualID());
 			LinkedList<View> perfectMatch = new LinkedList<View>(); // both semanticElement and hint match that of NodeDescriptor
 			for (View childView : getViewChildren()) {
 				EObject semanticElement = childView.getElement();
 
 				// Note: semanticElement can be null, for diagram annotations!
-				if (semanticElement != null
-						&& semanticElement.equals(next.getModelElement())) {
+				if (semanticElement != null && semanticElement.equals(next.getModelElement())) {
 					if (hint.equals(childView.getType())) {
 						perfectMatch.add(childView);
 						// actually, can stop iteration over view children here, but
@@ -192,14 +211,11 @@ public class StoryDecisionDiagramCanonicalEditPolicy extends
 		//
 		ArrayList<CreateViewRequest.ViewDescriptor> viewDescriptors = new ArrayList<CreateViewRequest.ViewDescriptor>(
 				childDescriptors.size());
-		for (org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDNodeDescriptor next : childDescriptors) {
-			String hint = org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDVisualIDRegistry
-					.getType(next.getVisualID());
-			IAdaptable elementAdapter = new CanonicalElementAdapter(
-					next.getModelElement(), hint);
-			CreateViewRequest.ViewDescriptor descriptor = new CreateViewRequest.ViewDescriptor(
-					elementAdapter, Node.class, hint, ViewUtil.APPEND, false,
-					host().getDiagramPreferencesHint());
+		for (BasicSDDNodeDescriptor next : childDescriptors) {
+			String hint = BasicSDDVisualIDRegistry.getType(next.getVisualID());
+			IAdaptable elementAdapter = new CanonicalElementAdapter(next.getModelElement(), hint);
+			CreateViewRequest.ViewDescriptor descriptor = new CreateViewRequest.ViewDescriptor(elementAdapter,
+					Node.class, hint, ViewUtil.APPEND, false, host().getDiagramPreferencesHint());
 			viewDescriptors.add(descriptor);
 		}
 
@@ -208,10 +224,10 @@ public class StoryDecisionDiagramCanonicalEditPolicy extends
 		CreateViewRequest request = getCreateViewRequest(viewDescriptors);
 		Command cmd = getCreateViewCommand(request);
 		if (cmd != null && cmd.canExecute()) {
-			SetViewMutabilityCommand.makeMutable(
-					new EObjectAdapter(host().getNotationView())).execute();
+			SetViewMutabilityCommand.makeMutable(new EObjectAdapter(host().getNotationView())).execute();
 			executeCommand(cmd);
 			@SuppressWarnings("unchecked")
+
 			List<IAdaptable> nl = (List<IAdaptable>) request.getNewObject();
 			createdViews.addAll(nl);
 		}
@@ -223,8 +239,8 @@ public class StoryDecisionDiagramCanonicalEditPolicy extends
 
 		if (createdViews.size() > 1) {
 			// perform a layout of the container
-			DeferredLayoutCommand layoutCmd = new DeferredLayoutCommand(host()
-					.getEditingDomain(), createdViews, host());
+			DeferredLayoutCommand layoutCmd = new DeferredLayoutCommand(host().getEditingDomain(), createdViews,
+					host());
 			executeCommand(new ICommandProxy(layoutCmd));
 		}
 
@@ -238,39 +254,28 @@ public class StoryDecisionDiagramCanonicalEditPolicy extends
 	 */
 	private Collection<IAdaptable> refreshConnections() {
 		Domain2Notation domain2NotationMap = new Domain2Notation();
-		Collection<org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDLinkDescriptor> linkDescriptors = collectAllLinks(
-				getDiagram(), domain2NotationMap);
+		Collection<BasicSDDLinkDescriptor> linkDescriptors = collectAllLinks(getDiagram(), domain2NotationMap);
 		Collection existingLinks = new LinkedList(getDiagram().getEdges());
-		for (Iterator linksIterator = existingLinks.iterator(); linksIterator
-				.hasNext();) {
+		for (Iterator linksIterator = existingLinks.iterator(); linksIterator.hasNext();) {
 			Edge nextDiagramLink = (Edge) linksIterator.next();
-			int diagramLinkVisualID = org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDVisualIDRegistry
-					.getVisualID(nextDiagramLink);
+			int diagramLinkVisualID = BasicSDDVisualIDRegistry.getVisualID(nextDiagramLink);
 			if (diagramLinkVisualID == -1) {
-				if (nextDiagramLink.getSource() != null
-						&& nextDiagramLink.getTarget() != null) {
+				if (nextDiagramLink.getSource() != null && nextDiagramLink.getTarget() != null) {
 					linksIterator.remove();
 				}
 				continue;
 			}
-			if (nextDiagramLink.getSource() != null
-					&& nextDiagramLink.getTarget() != null) {
+			if (nextDiagramLink.getSource() != null && nextDiagramLink.getTarget() != null) {
 				EObject diagramLinkObject = nextDiagramLink.getElement();
-				EObject diagramLinkSrc = nextDiagramLink.getSource()
-						.getElement();
-				EObject diagramLinkDst = nextDiagramLink.getTarget()
-						.getElement();
-				for (Iterator<org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDLinkDescriptor> linkDescriptorsIterator = linkDescriptors
+				EObject diagramLinkSrc = nextDiagramLink.getSource().getElement();
+				EObject diagramLinkDst = nextDiagramLink.getTarget().getElement();
+				for (Iterator<BasicSDDLinkDescriptor> linkDescriptorsIterator = linkDescriptors
 						.iterator(); linkDescriptorsIterator.hasNext();) {
-					org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDLinkDescriptor nextLinkDescriptor = linkDescriptorsIterator
-							.next();
-					if (diagramLinkObject == nextLinkDescriptor
-							.getModelElement()
+					BasicSDDLinkDescriptor nextLinkDescriptor = linkDescriptorsIterator.next();
+					if (diagramLinkObject == nextLinkDescriptor.getModelElement()
 							&& diagramLinkSrc == nextLinkDescriptor.getSource()
-							&& diagramLinkDst == nextLinkDescriptor
-									.getDestination()
-							&& diagramLinkVisualID == nextLinkDescriptor
-									.getVisualID()) {
+							&& diagramLinkDst == nextLinkDescriptor.getDestination()
+							&& diagramLinkVisualID == nextLinkDescriptor.getVisualID()) {
 						linksIterator.remove();
 						linkDescriptorsIterator.remove();
 						break;
@@ -285,89 +290,106 @@ public class StoryDecisionDiagramCanonicalEditPolicy extends
 	/**
 	 * @generated
 	 */
-	private Collection<org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDLinkDescriptor> collectAllLinks(
-			View view, Domain2Notation domain2NotationMap) {
-		if (!org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryDecisionDiagramEditPart.MODEL_ID
-				.equals(org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDVisualIDRegistry
-						.getModelID(view))) {
+	private Collection<BasicSDDLinkDescriptor> collectAllLinks(View view, Domain2Notation domain2NotationMap) {
+		if (!StoryDecisionDiagramEditPart.MODEL_ID.equals(BasicSDDVisualIDRegistry.getModelID(view))) {
 			return Collections.emptyList();
 		}
-		LinkedList<org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDLinkDescriptor> result = new LinkedList<org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDLinkDescriptor>();
-		switch (org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDVisualIDRegistry
-				.getVisualID(view)) {
-		case org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryDecisionDiagramEditPart.VISUAL_ID: {
+		LinkedList<BasicSDDLinkDescriptor> result = new LinkedList<BasicSDDLinkDescriptor>();
+		switch (BasicSDDVisualIDRegistry.getVisualID(view)) {
+		case StoryDecisionDiagramEditPart.VISUAL_ID: {
+			if (noConnectionViews.contains(view.getType())) {
+				// MUML TICKET #1247
+				break;
+			}
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDDiagramUpdater
-						.getStoryDecisionDiagram_1000ContainedLinks(view));
+				result.addAll(BasicSDDDiagramUpdater.getStoryDecisionDiagram_1000ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryPatternNodeEditPart.VISUAL_ID: {
+		case StoryPatternNodeEditPart.VISUAL_ID: {
+			if (noConnectionViews.contains(view.getType())) {
+				// MUML TICKET #1247
+				break;
+			}
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDDiagramUpdater
-						.getStoryPatternNode_2003ContainedLinks(view));
+				result.addAll(BasicSDDDiagramUpdater.getStoryPatternNode_2003ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.LeafNodeEditPart.VISUAL_ID: {
+		case LeafNodeEditPart.VISUAL_ID: {
+			if (noConnectionViews.contains(view.getType())) {
+				// MUML TICKET #1247
+				break;
+			}
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDDiagramUpdater
-						.getLeafNode_2004ContainedLinks(view));
+				result.addAll(BasicSDDDiagramUpdater.getLeafNode_2004ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryPatternEditPart.VISUAL_ID: {
+		case StoryPatternEditPart.VISUAL_ID: {
+			if (noConnectionViews.contains(view.getType())) {
+				// MUML TICKET #1247
+				break;
+			}
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDDiagramUpdater
-						.getStoryPattern_3011ContainedLinks(view));
+				result.addAll(BasicSDDDiagramUpdater.getStoryPattern_3011ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.CollectionVariableEditPart.VISUAL_ID: {
+		case CollectionVariableEditPart.VISUAL_ID: {
+			if (noConnectionViews.contains(view.getType())) {
+				// MUML TICKET #1247
+				break;
+			}
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDDiagramUpdater
-						.getCollectionVariable_3006ContainedLinks(view));
+				result.addAll(BasicSDDDiagramUpdater.getCollectionVariable_3006ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.ObjectVariableEditPart.VISUAL_ID: {
+		case ObjectVariableEditPart.VISUAL_ID: {
+			if (noConnectionViews.contains(view.getType())) {
+				// MUML TICKET #1247
+				break;
+			}
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDDiagramUpdater
-						.getObjectVariable_3009ContainedLinks(view));
+				result.addAll(BasicSDDDiagramUpdater.getObjectVariable_3009ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.EdgeEditPart.VISUAL_ID: {
+		case EdgeEditPart.VISUAL_ID: {
+			if (noConnectionViews.contains(view.getType())) {
+				// MUML TICKET #1247
+				break;
+			}
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDDiagramUpdater
-						.getEdge_4001ContainedLinks(view));
+				result.addAll(BasicSDDDiagramUpdater.getEdge_4001ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.LinkVariableEditPart.VISUAL_ID: {
+		case LinkVariableEditPart.VISUAL_ID: {
+			if (noConnectionViews.contains(view.getType())) {
+				// MUML TICKET #1247
+				break;
+			}
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDDiagramUpdater
-						.getLinkVariable_4003ContainedLinks(view));
+				result.addAll(BasicSDDDiagramUpdater.getLinkVariable_4003ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		}
-		for (Iterator children = view.getChildren().iterator(); children
-				.hasNext();) {
-			result.addAll(collectAllLinks((View) children.next(),
-					domain2NotationMap));
+		for (Iterator children = view.getChildren().iterator(); children.hasNext();) {
+			result.addAll(collectAllLinks((View) children.next(), domain2NotationMap));
 		}
 		for (Iterator edges = view.getSourceEdges().iterator(); edges.hasNext();) {
-			result.addAll(collectAllLinks((View) edges.next(),
-					domain2NotationMap));
+			result.addAll(collectAllLinks((View) edges.next(), domain2NotationMap));
 		}
 		return result;
 	}
@@ -375,26 +397,20 @@ public class StoryDecisionDiagramCanonicalEditPolicy extends
 	/**
 	 * @generated
 	 */
-	private Collection<IAdaptable> createConnections(
-			Collection<org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDLinkDescriptor> linkDescriptors,
+	private Collection<IAdaptable> createConnections(Collection<BasicSDDLinkDescriptor> linkDescriptors,
 			Domain2Notation domain2NotationMap) {
 		LinkedList<IAdaptable> adapters = new LinkedList<IAdaptable>();
-		for (org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDLinkDescriptor nextLinkDescriptor : linkDescriptors) {
-			EditPart sourceEditPart = getSourceEditPart(nextLinkDescriptor,
-					domain2NotationMap);
-			EditPart targetEditPart = getTargetEditPart(nextLinkDescriptor,
-					domain2NotationMap);
+		for (BasicSDDLinkDescriptor nextLinkDescriptor : linkDescriptors) {
+			EditPart sourceEditPart = getSourceEditPart(nextLinkDescriptor, domain2NotationMap);
+			EditPart targetEditPart = getTargetEditPart(nextLinkDescriptor, domain2NotationMap);
 			if (sourceEditPart == null || targetEditPart == null) {
 				continue;
 			}
 			CreateConnectionViewRequest.ConnectionViewDescriptor descriptor = new CreateConnectionViewRequest.ConnectionViewDescriptor(
 					nextLinkDescriptor.getSemanticAdapter(),
-					org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDVisualIDRegistry
-							.getType(nextLinkDescriptor.getVisualID()),
-					ViewUtil.APPEND, false, ((IGraphicalEditPart) getHost())
-							.getDiagramPreferencesHint());
-			CreateConnectionViewRequest ccr = new CreateConnectionViewRequest(
-					descriptor);
+					BasicSDDVisualIDRegistry.getType(nextLinkDescriptor.getVisualID()), ViewUtil.APPEND, false,
+					((IGraphicalEditPart) getHost()).getDiagramPreferencesHint());
+			CreateConnectionViewRequest ccr = new CreateConnectionViewRequest(descriptor);
 			ccr.setType(RequestConstants.REQ_CONNECTION_START);
 			ccr.setSourceEditPart(sourceEditPart);
 			sourceEditPart.getCommand(ccr);
@@ -415,12 +431,10 @@ public class StoryDecisionDiagramCanonicalEditPolicy extends
 	/**
 	 * @generated
 	 */
-	private EditPart getEditPart(EObject domainModelElement,
-			Domain2Notation domain2NotationMap) {
+	private EditPart getEditPart(EObject domainModelElement, Domain2Notation domain2NotationMap) {
 		View view = (View) domain2NotationMap.get(domainModelElement);
 		if (view != null) {
-			return (EditPart) getHost().getViewer().getEditPartRegistry()
-					.get(view);
+			return (EditPart) getHost().getViewer().getEditPartRegistry().get(view);
 		}
 		return null;
 	}
@@ -435,32 +449,26 @@ public class StoryDecisionDiagramCanonicalEditPolicy extends
 	/**
 	 * @generated
 	 */
-	protected EditPart getSourceEditPart(UpdaterLinkDescriptor descriptor,
-			Domain2Notation domain2NotationMap) {
+	protected EditPart getSourceEditPart(UpdaterLinkDescriptor descriptor, Domain2Notation domain2NotationMap) {
 		return getEditPart(descriptor.getSource(), domain2NotationMap);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected EditPart getTargetEditPart(UpdaterLinkDescriptor descriptor,
-			Domain2Notation domain2NotationMap) {
+	protected EditPart getTargetEditPart(UpdaterLinkDescriptor descriptor, Domain2Notation domain2NotationMap) {
 		return getEditPart(descriptor.getDestination(), domain2NotationMap);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected final EditPart getHintedEditPart(EObject domainModelElement,
-			Domain2Notation domain2NotationMap, int hintVisualId) {
-		View view = (View) domain2NotationMap
-				.getHinted(
-						domainModelElement,
-						org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDVisualIDRegistry
-								.getType(hintVisualId));
+	protected final EditPart getHintedEditPart(EObject domainModelElement, Domain2Notation domain2NotationMap,
+			int hintVisualId) {
+		View view = (View) domain2NotationMap.getHinted(domainModelElement,
+				BasicSDDVisualIDRegistry.getType(hintVisualId));
 		if (view != null) {
-			return (EditPart) getHost().getViewer().getEditPartRegistry()
-					.get(view);
+			return (EditPart) getHost().getViewer().getEditPartRegistry().get(view);
 		}
 		return null;
 	}

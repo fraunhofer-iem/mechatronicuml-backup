@@ -14,12 +14,18 @@ import org.eclipse.gmf.runtime.emf.ui.services.parser.ParserHintAdapter;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.parsers.EnumParser;
 import org.muml.core.CorePackage;
+import org.muml.storydiagram.verification.sdd.SDDPackage;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.CollectionVariableNameEditPart;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.ObjectVariableNameEditPart;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryPatternNodeNameEditPart;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryPatternNodeTypeEditPart;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.parsers.MessageFormatParser;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDVisualIDRegistry;
 
 /**
  * @generated
  */
-public class BasicSDDParserProvider extends AbstractProvider implements
-		IParserProvider {
+public class BasicSDDParserProvider extends AbstractProvider implements IParserProvider {
 
 	/**
 	 * @generated
@@ -31,12 +37,9 @@ public class BasicSDDParserProvider extends AbstractProvider implements
 	 */
 	private IParser getStoryPatternNodeName_5014Parser() {
 		if (storyPatternNodeName_5014Parser == null) {
-			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
-			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
-			org.muml.storydiagram.verification.sdd.basicsdd.diagram.parsers.MessageFormatParser parser = new org.muml.storydiagram.verification.sdd.basicsdd.diagram.parsers.MessageFormatParser(
-					features, editableFeatures);
+			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
+			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
+			MessageFormatParser parser = new MessageFormatParser(features, editableFeatures);
 			storyPatternNodeName_5014Parser = parser;
 		}
 		return storyPatternNodeName_5014Parser;
@@ -52,8 +55,7 @@ public class BasicSDDParserProvider extends AbstractProvider implements
 	 */
 	private IParser getStoryPatternNodeType_5015Parser() {
 		if (storyPatternNodeType_5015Parser == null) {
-			EAttribute editableFeature = org.muml.storydiagram.verification.sdd.SDDPackage.eINSTANCE
-					.getPatternNode_Type();
+			EAttribute editableFeature = SDDPackage.eINSTANCE.getPatternNode_Type();
 			EnumParser parser = new EnumParser(editableFeature);
 			storyPatternNodeType_5015Parser = parser;
 		}
@@ -70,12 +72,9 @@ public class BasicSDDParserProvider extends AbstractProvider implements
 	 */
 	private IParser getCollectionVariableName_5009Parser() {
 		if (collectionVariableName_5009Parser == null) {
-			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
-			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
-			org.muml.storydiagram.verification.sdd.basicsdd.diagram.parsers.MessageFormatParser parser = new org.muml.storydiagram.verification.sdd.basicsdd.diagram.parsers.MessageFormatParser(
-					features, editableFeatures);
+			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
+			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
+			MessageFormatParser parser = new MessageFormatParser(features, editableFeatures);
 			collectionVariableName_5009Parser = parser;
 		}
 		return collectionVariableName_5009Parser;
@@ -91,12 +90,9 @@ public class BasicSDDParserProvider extends AbstractProvider implements
 	 */
 	private IParser getObjectVariableName_5012Parser() {
 		if (objectVariableName_5012Parser == null) {
-			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
-			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
-			org.muml.storydiagram.verification.sdd.basicsdd.diagram.parsers.MessageFormatParser parser = new org.muml.storydiagram.verification.sdd.basicsdd.diagram.parsers.MessageFormatParser(
-					features, editableFeatures);
+			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
+			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
+			MessageFormatParser parser = new MessageFormatParser(features, editableFeatures);
 			objectVariableName_5012Parser = parser;
 		}
 		return objectVariableName_5012Parser;
@@ -107,14 +103,14 @@ public class BasicSDDParserProvider extends AbstractProvider implements
 	 */
 	protected IParser getParser(int visualID) {
 		switch (visualID) {
-		case org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryPatternNodeNameEditPart.VISUAL_ID:
+		case StoryPatternNodeNameEditPart.VISUAL_ID:
 			return getStoryPatternNodeName_5014Parser();
 
-		case org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryPatternNodeTypeEditPart.VISUAL_ID:
+		case StoryPatternNodeTypeEditPart.VISUAL_ID:
 			return getStoryPatternNodeType_5015Parser();
-		case org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.CollectionVariableNameEditPart.VISUAL_ID:
+		case CollectionVariableNameEditPart.VISUAL_ID:
 			return getCollectionVariableName_5009Parser();
-		case org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.ObjectVariableNameEditPart.VISUAL_ID:
+		case ObjectVariableNameEditPart.VISUAL_ID:
 			return getObjectVariableName_5012Parser();
 		}
 		return null;
@@ -124,10 +120,8 @@ public class BasicSDDParserProvider extends AbstractProvider implements
 	 * Utility method that consults ParserService
 	 * @generated
 	 */
-	public static IParser getParser(IElementType type, EObject object,
-			String parserHint) {
-		return ParserService.getInstance().getParser(
-				new HintAdapter(type, object, parserHint));
+	public static IParser getParser(IElementType type, EObject object, String parserHint) {
+		return ParserService.getInstance().getParser(new HintAdapter(type, object, parserHint));
 	}
 
 	/**
@@ -136,13 +130,11 @@ public class BasicSDDParserProvider extends AbstractProvider implements
 	public IParser getParser(IAdaptable hint) {
 		String vid = (String) hint.getAdapter(String.class);
 		if (vid != null) {
-			return getParser(org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDVisualIDRegistry
-					.getVisualID(vid));
+			return getParser(BasicSDDVisualIDRegistry.getVisualID(vid));
 		}
 		View view = (View) hint.getAdapter(View.class);
 		if (view != null) {
-			return getParser(org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDVisualIDRegistry
-					.getVisualID(view));
+			return getParser(BasicSDDVisualIDRegistry.getVisualID(view));
 		}
 		return null;
 	}
@@ -153,8 +145,7 @@ public class BasicSDDParserProvider extends AbstractProvider implements
 	public boolean provides(IOperation operation) {
 		if (operation instanceof GetParserOperation) {
 			IAdaptable hint = ((GetParserOperation) operation).getHint();
-			if (org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.BasicSDDElementTypes
-					.getElement(hint) == null) {
+			if (BasicSDDElementTypes.getElement(hint) == null) {
 				return false;
 			}
 			return getParser(hint) != null;

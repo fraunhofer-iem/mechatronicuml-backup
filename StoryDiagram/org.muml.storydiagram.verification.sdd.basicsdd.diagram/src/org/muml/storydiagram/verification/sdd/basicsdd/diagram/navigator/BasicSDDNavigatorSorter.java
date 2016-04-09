@@ -1,6 +1,7 @@
 package org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator;
 
 import org.eclipse.jface.viewers.ViewerSorter;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDVisualIDRegistry;
 
 /**
  * @generated
@@ -16,10 +17,9 @@ public class BasicSDDNavigatorSorter extends ViewerSorter {
 	 * @generated
 	 */
 	public int category(Object element) {
-		if (element instanceof org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDNavigatorItem) {
-			org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDNavigatorItem item = (org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDNavigatorItem) element;
-			return org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDVisualIDRegistry
-					.getVisualID(item.getView());
+		if (element instanceof BasicSDDNavigatorItem) {
+			BasicSDDNavigatorItem item = (BasicSDDNavigatorItem) element;
+			return BasicSDDVisualIDRegistry.getVisualID(item.getView());
 		}
 		return GROUP_CATEGORY;
 	}

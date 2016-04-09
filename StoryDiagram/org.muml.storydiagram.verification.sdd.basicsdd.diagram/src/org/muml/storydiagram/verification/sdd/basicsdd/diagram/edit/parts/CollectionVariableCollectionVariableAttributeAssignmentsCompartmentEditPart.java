@@ -17,6 +17,11 @@ import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.edit.policies.reparent.CreationEditPolicyWithCustomReparent;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.policies.CollectionVariableCollectionVariableAttributeAssignmentsCompartmentCanonicalEditPolicy;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.policies.CollectionVariableCollectionVariableAttributeAssignmentsCompartmentItemSemanticEditPolicy;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDVisualIDRegistry;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.Messages;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.BasicSDDElementTypes;
 
 /**
  * @generated
@@ -55,8 +60,7 @@ public class CollectionVariableCollectionVariableAttributeAssignmentsCompartment
 	/**
 	 * @generated
 	 */
-	public CollectionVariableCollectionVariableAttributeAssignmentsCompartmentEditPart(
-			View view) {
+	public CollectionVariableCollectionVariableAttributeAssignmentsCompartmentEditPart(View view) {
 		super(view);
 	}
 
@@ -71,21 +75,19 @@ public class CollectionVariableCollectionVariableAttributeAssignmentsCompartment
 	 * @generated
 	 */
 	public String getCompartmentName() {
-		return org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.Messages.CollectionVariableCollectionVariableAttributeAssignmentsCompartmentEditPart_title;
+		return Messages.CollectionVariableCollectionVariableAttributeAssignmentsCompartmentEditPart_title;
 	}
 
 	/**
 	 * @generated
 	 */
 	public IFigure createFigure() {
-		ResizableCompartmentFigure result = (ResizableCompartmentFigure) super
-				.createFigure();
+		ResizableCompartmentFigure result = (ResizableCompartmentFigure) super.createFigure();
 
 		result.setTitleVisibility(false);
 
 		// Begin added to always stretch list layouts
-		LayoutManager layoutManager = result.getContentPane()
-				.getLayoutManager();
+		LayoutManager layoutManager = result.getContentPane().getLayoutManager();
 		if (layoutManager instanceof ConstrainedToolbarLayout) {
 			ConstrainedToolbarLayout constrainedToolbarLayout = (ConstrainedToolbarLayout) layoutManager;
 			constrainedToolbarLayout.setStretchMajorAxis(true);
@@ -101,18 +103,13 @@ public class CollectionVariableCollectionVariableAttributeAssignmentsCompartment
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(
-				EditPolicyRoles.SEMANTIC_ROLE,
-				new org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.policies.CollectionVariableCollectionVariableAttributeAssignmentsCompartmentItemSemanticEditPolicy());
-		installEditPolicy(
-				EditPolicyRoles.CREATION_ROLE,
-				new CreationEditPolicyWithCustomReparent(
-						org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDVisualIDRegistry.TYPED_INSTANCE));
-		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE,
-				new DragDropEditPolicy());
-		installEditPolicy(
-				EditPolicyRoles.CANONICAL_ROLE,
-				new org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.policies.CollectionVariableCollectionVariableAttributeAssignmentsCompartmentCanonicalEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
+				new CollectionVariableCollectionVariableAttributeAssignmentsCompartmentItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.CREATION_ROLE,
+				new CreationEditPolicyWithCustomReparent(BasicSDDVisualIDRegistry.TYPED_INSTANCE));
+		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
+		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE,
+				new CollectionVariableCollectionVariableAttributeAssignmentsCompartmentCanonicalEditPolicy());
 	}
 
 	/**
@@ -129,12 +126,10 @@ public class CollectionVariableCollectionVariableAttributeAssignmentsCompartment
 	 */
 	public EditPart getTargetEditPart(Request request) {
 		if (request instanceof CreateViewAndElementRequest) {
-			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request)
-					.getViewAndElementDescriptor()
+			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request).getViewAndElementDescriptor()
 					.getCreateElementRequestAdapter();
-			IElementType type = (IElementType) adapter
-					.getAdapter(IElementType.class);
-			if (type == org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.BasicSDDElementTypes.AttributeAssignment_3007) {
+			IElementType type = (IElementType) adapter.getAdapter(IElementType.class);
+			if (type == BasicSDDElementTypes.AttributeAssignment_3007) {
 				return this;
 			}
 			return getParent().getTargetEditPart(request);

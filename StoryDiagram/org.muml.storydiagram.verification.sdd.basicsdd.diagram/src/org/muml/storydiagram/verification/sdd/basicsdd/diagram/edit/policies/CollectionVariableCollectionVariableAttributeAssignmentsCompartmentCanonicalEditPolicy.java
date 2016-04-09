@@ -22,6 +22,10 @@ import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
 import org.muml.storydiagram.patterns.PatternsPackage;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.AttributeAssignmentEditPart;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDDiagramUpdater;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDNodeDescriptor;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDVisualIDRegistry;
 
 /**
  * @generated
@@ -36,6 +40,25 @@ public class CollectionVariableCollectionVariableAttributeAssignmentsCompartment
 	public CollectionVariableCollectionVariableAttributeAssignmentsCompartmentCanonicalEditPolicy(
 			boolean canonicalNodes) {
 		this.canonicalNodes = canonicalNodes;
+	}
+
+	/**
+	* @generated
+	*/
+	private List<String> noConnectionViews = new ArrayList<String>();
+
+	/**
+	 * @generated
+	 */
+	public void addNoConnectionView(String type) {
+		noConnectionViews.add(type);
+	}
+
+	/**
+	 * @generated
+	 */
+	public void removeNoConnectionView(String type) {
+		noConnectionViews.remove(type);
 	}
 
 	/**
@@ -54,8 +77,7 @@ public class CollectionVariableCollectionVariableAttributeAssignmentsCompartment
 	 * @generated
 	 */
 	protected EStructuralFeature getFeatureToSynchronize() {
-		return PatternsPackage.eINSTANCE
-				.getObjectVariable_AttributeAssignments();
+		return PatternsPackage.eINSTANCE.getObjectVariable_AttributeAssignments();
 	}
 
 	/**
@@ -63,9 +85,9 @@ public class CollectionVariableCollectionVariableAttributeAssignmentsCompartment
 	 */
 	@SuppressWarnings("rawtypes")
 	protected List getSemanticChildrenList() {
-		List<org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDNodeDescriptor> childDescriptors = getSemanticChildrenViewDescriptors();
+		List<BasicSDDNodeDescriptor> childDescriptors = getSemanticChildrenViewDescriptors();
 		LinkedList<EObject> result = new LinkedList<EObject>();
-		for (org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDNodeDescriptor d : childDescriptors) {
+		for (BasicSDDNodeDescriptor d : childDescriptors) {
 			result.add(d.getModelElement());
 		}
 		return result;
@@ -81,21 +103,17 @@ public class CollectionVariableCollectionVariableAttributeAssignmentsCompartment
 		if (!canonicalNodes) {
 			View containerView = (View) getHost().getModel();
 			List<View> childViews = containerView.getChildren();
-			List<org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDNodeDescriptor> result = new LinkedList<org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDNodeDescriptor>();
+			List<BasicSDDNodeDescriptor> result = new LinkedList<BasicSDDNodeDescriptor>();
 
 			for (View childView : childViews) {
 				EObject childElement = childView.getElement();
-				int visualID = org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDVisualIDRegistry
-						.getVisualID(childView);
-				List<Integer> visualIDs = Arrays
-						.asList(new Integer[] { org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.AttributeAssignmentEditPart.VISUAL_ID });
+				int visualID = BasicSDDVisualIDRegistry.getVisualID(childView);
+				List<Integer> visualIDs = Arrays.asList(new Integer[] { AttributeAssignmentEditPart.VISUAL_ID });
 
 				// Note: childElement can be null, for diagram annotations!
 				if (childElement == null
-						|| childElement.eContainer() == containerView
-								.getElement() && visualIDs.contains(visualID)) {
-					result.add(new org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDNodeDescriptor(
-							childElement, visualID));
+						|| childElement.eContainer() == containerView.getElement() && visualIDs.contains(visualID)) {
+					result.add(new BasicSDDNodeDescriptor(childElement, visualID));
 					continue;
 				}
 			}
@@ -104,26 +122,24 @@ public class CollectionVariableCollectionVariableAttributeAssignmentsCompartment
 		// End added
 
 		View viewObject = (View) getHost().getModel();
-		return org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDDiagramUpdater
-				.getCollectionVariableCollectionVariableAttributeAssignmentsCompartment_7009SemanticChildren(viewObject);
+		return BasicSDDDiagramUpdater
+				.getCollectionVariableCollectionVariableAttributeAssignmentsCompartment_7009SemanticChildren(
+						viewObject);
 
 	}
 
 	/**
 	 * @generated
 	 */
-	protected boolean isOrphaned(Collection<EObject> semanticChildren,
-			final View view) {
-		return isMyDiagramElement(view)
-				&& !semanticChildren.contains(view.getElement());
+	protected boolean isOrphaned(Collection<EObject> semanticChildren, final View view) {
+		return isMyDiagramElement(view) && !semanticChildren.contains(view.getElement());
 	}
 
 	/**
 	 * @generated
 	 */
 	private boolean isMyDiagramElement(View view) {
-		return org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.AttributeAssignmentEditPart.VISUAL_ID == org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDVisualIDRegistry
-				.getVisualID(view);
+		return AttributeAssignmentEditPart.VISUAL_ID == BasicSDDVisualIDRegistry.getVisualID(view);
 	}
 
 	/**
@@ -134,7 +150,7 @@ public class CollectionVariableCollectionVariableAttributeAssignmentsCompartment
 			return;
 		}
 		LinkedList<IAdaptable> createdViews = new LinkedList<IAdaptable>();
-		List<org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDNodeDescriptor> childDescriptors = getSemanticChildrenViewDescriptors();
+		List<BasicSDDNodeDescriptor> childDescriptors = getSemanticChildrenViewDescriptors();
 		LinkedList<View> orphaned = new LinkedList<View>();
 		// we care to check only views we recognize as ours
 		LinkedList<View> knownViewChildren = new LinkedList<View>();
@@ -148,19 +164,16 @@ public class CollectionVariableCollectionVariableAttributeAssignmentsCompartment
 		// iteration happens over list of desired semantic elements, trying to find best matching View, while original CEP
 		// iterates views, potentially losing view (size/bounds) information - i.e. if there are few views to reference same EObject, only last one 
 		// to answer isOrphaned == true will be used for the domain element representation, see #cleanCanonicalSemanticChildren()
-		for (Iterator<org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDNodeDescriptor> descriptorsIterator = childDescriptors
-				.iterator(); descriptorsIterator.hasNext();) {
-			org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDNodeDescriptor next = descriptorsIterator
-					.next();
-			String hint = org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDVisualIDRegistry
-					.getType(next.getVisualID());
+		for (Iterator<BasicSDDNodeDescriptor> descriptorsIterator = childDescriptors.iterator(); descriptorsIterator
+				.hasNext();) {
+			BasicSDDNodeDescriptor next = descriptorsIterator.next();
+			String hint = BasicSDDVisualIDRegistry.getType(next.getVisualID());
 			LinkedList<View> perfectMatch = new LinkedList<View>(); // both semanticElement and hint match that of NodeDescriptor
 			for (View childView : getViewChildren()) {
 				EObject semanticElement = childView.getElement();
 
 				// Note: semanticElement can be null, for diagram annotations!
-				if (semanticElement != null
-						&& semanticElement.equals(next.getModelElement())) {
+				if (semanticElement != null && semanticElement.equals(next.getModelElement())) {
 					if (hint.equals(childView.getType())) {
 						perfectMatch.add(childView);
 						// actually, can stop iteration over view children here, but
@@ -181,14 +194,11 @@ public class CollectionVariableCollectionVariableAttributeAssignmentsCompartment
 		//
 		ArrayList<CreateViewRequest.ViewDescriptor> viewDescriptors = new ArrayList<CreateViewRequest.ViewDescriptor>(
 				childDescriptors.size());
-		for (org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDNodeDescriptor next : childDescriptors) {
-			String hint = org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDVisualIDRegistry
-					.getType(next.getVisualID());
-			IAdaptable elementAdapter = new CanonicalElementAdapter(
-					next.getModelElement(), hint);
-			CreateViewRequest.ViewDescriptor descriptor = new CreateViewRequest.ViewDescriptor(
-					elementAdapter, Node.class, hint, ViewUtil.APPEND, false,
-					host().getDiagramPreferencesHint());
+		for (BasicSDDNodeDescriptor next : childDescriptors) {
+			String hint = BasicSDDVisualIDRegistry.getType(next.getVisualID());
+			IAdaptable elementAdapter = new CanonicalElementAdapter(next.getModelElement(), hint);
+			CreateViewRequest.ViewDescriptor descriptor = new CreateViewRequest.ViewDescriptor(elementAdapter,
+					Node.class, hint, ViewUtil.APPEND, false, host().getDiagramPreferencesHint());
 			viewDescriptors.add(descriptor);
 		}
 
@@ -197,10 +207,10 @@ public class CollectionVariableCollectionVariableAttributeAssignmentsCompartment
 		CreateViewRequest request = getCreateViewRequest(viewDescriptors);
 		Command cmd = getCreateViewCommand(request);
 		if (cmd != null && cmd.canExecute()) {
-			SetViewMutabilityCommand.makeMutable(
-					new EObjectAdapter(host().getNotationView())).execute();
+			SetViewMutabilityCommand.makeMutable(new EObjectAdapter(host().getNotationView())).execute();
 			executeCommand(cmd);
 			@SuppressWarnings("unchecked")
+
 			List<IAdaptable> nl = (List<IAdaptable>) request.getNewObject();
 			createdViews.addAll(nl);
 		}
@@ -209,8 +219,8 @@ public class CollectionVariableCollectionVariableAttributeAssignmentsCompartment
 		}
 		if (createdViews.size() > 1) {
 			// perform a layout of the container
-			DeferredLayoutCommand layoutCmd = new DeferredLayoutCommand(host()
-					.getEditingDomain(), createdViews, host());
+			DeferredLayoutCommand layoutCmd = new DeferredLayoutCommand(host().getEditingDomain(), createdViews,
+					host());
 			executeCommand(new ICommandProxy(layoutCmd));
 		}
 

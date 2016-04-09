@@ -6,9 +6,7 @@ import java.util.LinkedList;
 /**
  * @generated
  */
-public class BasicSDDNavigatorGroup
-		extends
-		org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDAbstractNavigatorItem {
+public class BasicSDDNavigatorGroup extends BasicSDDAbstractNavigatorItem {
 
 	/**
 	 * @generated

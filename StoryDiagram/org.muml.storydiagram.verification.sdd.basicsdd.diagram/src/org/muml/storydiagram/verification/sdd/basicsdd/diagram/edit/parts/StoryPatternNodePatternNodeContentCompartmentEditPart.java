@@ -16,12 +16,16 @@ import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.edit.policies.reparent.CreationEditPolicyWithCustomReparent;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.policies.StoryPatternNodePatternNodeContentCompartmentCanonicalEditPolicy;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.policies.StoryPatternNodePatternNodeContentCompartmentItemSemanticEditPolicy;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDVisualIDRegistry;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.Messages;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.BasicSDDElementTypes;
 
 /**
  * @generated
  */
-public class StoryPatternNodePatternNodeContentCompartmentEditPart extends
-		ShapeCompartmentEditPart {
+public class StoryPatternNodePatternNodeContentCompartmentEditPart extends ShapeCompartmentEditPart {
 
 	/**
 	 * @generated
@@ -62,21 +66,19 @@ public class StoryPatternNodePatternNodeContentCompartmentEditPart extends
 	 * @generated
 	 */
 	public String getCompartmentName() {
-		return org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.Messages.StoryPatternNodePatternNodeContentCompartmentEditPart_title;
+		return Messages.StoryPatternNodePatternNodeContentCompartmentEditPart_title;
 	}
 
 	/**
 	 * @generated
 	 */
 	public IFigure createFigure() {
-		ResizableCompartmentFigure result = (ResizableCompartmentFigure) super
-				.createFigure();
+		ResizableCompartmentFigure result = (ResizableCompartmentFigure) super.createFigure();
 
 		result.setTitleVisibility(false);
 
 		// Begin added to always stretch list layouts
-		LayoutManager layoutManager = result.getContentPane()
-				.getLayoutManager();
+		LayoutManager layoutManager = result.getContentPane().getLayoutManager();
 		if (layoutManager instanceof ConstrainedToolbarLayout) {
 			ConstrainedToolbarLayout constrainedToolbarLayout = (ConstrainedToolbarLayout) layoutManager;
 			constrainedToolbarLayout.setStretchMajorAxis(true);
@@ -92,18 +94,13 @@ public class StoryPatternNodePatternNodeContentCompartmentEditPart extends
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(
-				EditPolicyRoles.SEMANTIC_ROLE,
-				new org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.policies.StoryPatternNodePatternNodeContentCompartmentItemSemanticEditPolicy());
-		installEditPolicy(
-				EditPolicyRoles.CREATION_ROLE,
-				new CreationEditPolicyWithCustomReparent(
-						org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDVisualIDRegistry.TYPED_INSTANCE));
-		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE,
-				new DragDropEditPolicy());
-		installEditPolicy(
-				EditPolicyRoles.CANONICAL_ROLE,
-				new org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.policies.StoryPatternNodePatternNodeContentCompartmentCanonicalEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
+				new StoryPatternNodePatternNodeContentCompartmentItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.CREATION_ROLE,
+				new CreationEditPolicyWithCustomReparent(BasicSDDVisualIDRegistry.TYPED_INSTANCE));
+		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
+		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE,
+				new StoryPatternNodePatternNodeContentCompartmentCanonicalEditPolicy());
 	}
 
 	/**
@@ -120,12 +117,10 @@ public class StoryPatternNodePatternNodeContentCompartmentEditPart extends
 	 */
 	public EditPart getTargetEditPart(Request request) {
 		if (request instanceof CreateViewAndElementRequest) {
-			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request)
-					.getViewAndElementDescriptor()
+			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request).getViewAndElementDescriptor()
 					.getCreateElementRequestAdapter();
-			IElementType type = (IElementType) adapter
-					.getAdapter(IElementType.class);
-			if (type == org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.BasicSDDElementTypes.StoryPattern_3011) {
+			IElementType type = (IElementType) adapter.getAdapter(IElementType.class);
+			if (type == BasicSDDElementTypes.StoryPattern_3011) {
 				return this;
 			}
 			return getParent().getTargetEditPart(request);

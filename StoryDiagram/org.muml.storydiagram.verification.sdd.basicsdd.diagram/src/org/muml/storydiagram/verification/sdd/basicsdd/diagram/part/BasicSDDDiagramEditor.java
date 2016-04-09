@@ -43,22 +43,24 @@ import org.eclipse.ui.navigator.resources.ProjectExplorer;
 import org.eclipse.ui.part.FileEditorInput;
 import org.eclipse.ui.part.IShowInTargetList;
 import org.eclipse.ui.part.ShowInContext;
+import org.muml.core.common.editingdomain.EditingDomainPlugin;
+import org.muml.core.common.editingdomain.initialize.IEditingDomainInitializer;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDNavigatorItem;
 
 /**
  * @generated
  */
-public class BasicSDDDiagramEditor extends DiagramDocumentEditor implements
-		IGotoMarker {
+public class BasicSDDDiagramEditor extends DiagramDocumentEditor implements IGotoMarker {
 
 	/**
 	 * @generated
 	 */
-	public static final String ID = "de.uni_paderborn.fujaba.muml.verification.sdd.diagram.part.BasicSDDDiagramEditorID"; //$NON-NLS-1$
+	public static final String ID = "org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDDiagramEditorID"; //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final String CONTEXT_ID = "de.uni_paderborn.fujaba.muml.verification.sdd.diagram.ui.diagramContext"; //$NON-NLS-1$
+	public static final String CONTEXT_ID = "org.muml.storydiagram.verification.sdd.basicsdd.diagram.ui.diagramContext"; //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -79,8 +81,7 @@ public class BasicSDDDiagramEditor extends DiagramDocumentEditor implements
 	 */
 	protected PaletteRoot createPaletteRoot(PaletteRoot existingPaletteRoot) {
 		PaletteRoot root = super.createPaletteRoot(existingPaletteRoot);
-		new org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDPaletteFactory()
-				.fillPalette(root);
+		new BasicSDDPaletteFactory().fillPalette(root);
 		return root;
 	}
 
@@ -88,14 +89,14 @@ public class BasicSDDDiagramEditor extends DiagramDocumentEditor implements
 	 * @generated
 	 */
 	protected PreferencesHint getPreferencesHint() {
-		return org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT;
+		return BasicSDDDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT;
 	}
 
 	/**
 	 * @generated
 	 */
 	public String getContributorId() {
-		return org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDDiagramEditorPlugin.ID;
+		return BasicSDDDiagramEditorPlugin.ID;
 	}
 
 	/**
@@ -117,10 +118,8 @@ public class BasicSDDDiagramEditor extends DiagramDocumentEditor implements
 	 * @generated
 	 */
 	protected IDocumentProvider getDocumentProvider(IEditorInput input) {
-		if (input instanceof IFileEditorInput
-				|| input instanceof URIEditorInput) {
-			return org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDDiagramEditorPlugin
-					.getInstance().getDocumentProvider();
+		if (input instanceof IFileEditorInput || input instanceof URIEditorInput) {
+			return BasicSDDDiagramEditorPlugin.getInstance().getDocumentProvider();
 		}
 		return super.getDocumentProvider(input);
 	}
@@ -129,8 +128,7 @@ public class BasicSDDDiagramEditor extends DiagramDocumentEditor implements
 	 * @generated
 	 */
 	public TransactionalEditingDomain getEditingDomain() {
-		IDocument document = getEditorInput() != null ? getDocumentProvider()
-				.getDocument(getEditorInput()) : null;
+		IDocument document = getEditorInput() != null ? getDocumentProvider().getDocument(getEditorInput()) : null;
 		if (document instanceof IDiagramDocument) {
 			return ((IDiagramDocument) document).getEditingDomain();
 		}
@@ -141,10 +139,8 @@ public class BasicSDDDiagramEditor extends DiagramDocumentEditor implements
 	 * @generated
 	 */
 	protected void setDocumentProvider(IEditorInput input) {
-		if (input instanceof IFileEditorInput
-				|| input instanceof URIEditorInput) {
-			setDocumentProvider(org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDDiagramEditorPlugin
-					.getInstance().getDocumentProvider());
+		if (input instanceof IFileEditorInput || input instanceof URIEditorInput) {
+			setDocumentProvider(BasicSDDDiagramEditorPlugin.getInstance().getDocumentProvider());
 		} else {
 			super.setDocumentProvider(input);
 		}
@@ -178,8 +174,7 @@ public class BasicSDDDiagramEditor extends DiagramDocumentEditor implements
 		Shell shell = getSite().getShell();
 		IEditorInput input = getEditorInput();
 		SaveAsDialog dialog = new SaveAsDialog(shell);
-		IFile original = input instanceof IFileEditorInput ? ((IFileEditorInput) input)
-				.getFile() : null;
+		IFile original = input instanceof IFileEditorInput ? ((IFileEditorInput) input).getFile() : null;
 		if (original != null) {
 			dialog.setOriginalFile(original);
 		}
@@ -190,9 +185,7 @@ public class BasicSDDDiagramEditor extends DiagramDocumentEditor implements
 			return;
 		}
 		if (provider.isDeleted(input) && original != null) {
-			String message = NLS
-					.bind(org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.Messages.BasicSDDDiagramEditor_SavingDeletedFile,
-							original.getName());
+			String message = NLS.bind(Messages.BasicSDDDiagramEditor_SavingDeletedFile, original.getName());
 			dialog.setErrorMessage(null);
 			dialog.setMessage(message, IMessageProvider.WARNING);
 		}
@@ -213,37 +206,27 @@ public class BasicSDDDiagramEditor extends DiagramDocumentEditor implements
 		IFile file = workspaceRoot.getFile(filePath);
 		final IEditorInput newInput = new FileEditorInput(file);
 		// Check if the editor is already open
-		IEditorMatchingStrategy matchingStrategy = getEditorDescriptor()
-				.getEditorMatchingStrategy();
-		IEditorReference[] editorRefs = PlatformUI.getWorkbench()
-				.getActiveWorkbenchWindow().getActivePage()
+		IEditorMatchingStrategy matchingStrategy = getEditorDescriptor().getEditorMatchingStrategy();
+		IEditorReference[] editorRefs = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage()
 				.getEditorReferences();
 		for (int i = 0; i < editorRefs.length; i++) {
 			if (matchingStrategy.matches(editorRefs[i], newInput)) {
-				MessageDialog
-						.openWarning(
-								shell,
-								org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.Messages.BasicSDDDiagramEditor_SaveAsErrorTitle,
-								org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.Messages.BasicSDDDiagramEditor_SaveAsErrorMessage);
+				MessageDialog.openWarning(shell, Messages.BasicSDDDiagramEditor_SaveAsErrorTitle,
+						Messages.BasicSDDDiagramEditor_SaveAsErrorMessage);
 				return;
 			}
 		}
 		boolean success = false;
 		try {
 			provider.aboutToChange(newInput);
-			getDocumentProvider(newInput).saveDocument(progressMonitor,
-					newInput,
+			getDocumentProvider(newInput).saveDocument(progressMonitor, newInput,
 					getDocumentProvider().getDocument(getEditorInput()), true);
 			success = true;
 		} catch (CoreException x) {
 			IStatus status = x.getStatus();
 			if (status == null || status.getSeverity() != IStatus.CANCEL) {
-				ErrorDialog
-						.openError(
-								shell,
-								org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.Messages.BasicSDDDiagramEditor_SaveErrorTitle,
-								org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.Messages.BasicSDDDiagramEditor_SaveErrorMessage,
-								x.getStatus());
+				ErrorDialog.openError(shell, Messages.BasicSDDDiagramEditor_SaveErrorTitle,
+						Messages.BasicSDDDiagramEditor_SaveErrorMessage, x.getStatus());
 			}
 		} finally {
 			provider.changed(newInput);
@@ -277,8 +260,7 @@ public class BasicSDDDiagramEditor extends DiagramDocumentEditor implements
 		}
 		IFile file = WorkspaceSynchronizer.getFile(diagram.eResource());
 		if (file != null) {
-			org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDNavigatorItem item = new org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDNavigatorItem(
-					diagram, file, false);
+			BasicSDDNavigatorItem item = new BasicSDDNavigatorItem(diagram, file, false);
 			return new StructuredSelection(item);
 		}
 		return StructuredSelection.EMPTY;
@@ -289,21 +271,29 @@ public class BasicSDDDiagramEditor extends DiagramDocumentEditor implements
 	 */
 	protected void configureGraphicalViewer() {
 		super.configureGraphicalViewer();
-		org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.DiagramEditorContextMenuProvider provider = new org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.DiagramEditorContextMenuProvider(
-				this, getDiagramGraphicalViewer());
+		DiagramEditorContextMenuProvider provider = new DiagramEditorContextMenuProvider(this,
+				getDiagramGraphicalViewer());
 		getDiagramGraphicalViewer().setContextMenu(provider);
-		getSite().registerContextMenu(ActionIds.DIAGRAM_EDITOR_CONTEXT_MENU,
-				provider, getDiagramGraphicalViewer());
+		getSite().registerContextMenu(ActionIds.DIAGRAM_EDITOR_CONTEXT_MENU, provider, getDiagramGraphicalViewer());
 
 		// Begin added to bind delete keyboard shortcut to "Delete From Model" action, not Delete From Diagram (default)
 		KeyHandler keyHandler = getDiagramGraphicalViewer().getKeyHandler();
-		keyHandler.put(
-				KeyStroke.getPressed(SWT.DEL, 127, 0),
-				getActionRegistry().getAction(
-						ActionIds.ACTION_DELETE_FROM_MODEL));
-		keyHandler.put(KeyStroke.getPressed(SWT.BS, 8, 0), getActionRegistry()
-				.getAction(ActionIds.ACTION_DELETE_FROM_MODEL));
+		keyHandler.put(KeyStroke.getPressed(SWT.DEL, 127, 0),
+				getActionRegistry().getAction(ActionIds.ACTION_DELETE_FROM_MODEL));
+		keyHandler.put(KeyStroke.getPressed(SWT.BS, 8, 0),
+				getActionRegistry().getAction(ActionIds.ACTION_DELETE_FROM_MODEL));
 		// End added
+	}
+
+	/**
+	* @generated
+	*/
+	@Override
+	public void setInput(IEditorInput input) {
+		super.setInput(input);
+		for (IEditingDomainInitializer init : EditingDomainPlugin.getEditingDomainInitializers()) {
+			init.initialize(getEditingDomain());
+		}
 	}
 
 	/**
@@ -311,8 +301,7 @@ public class BasicSDDDiagramEditor extends DiagramDocumentEditor implements
 	 */
 	@Override
 	public void doSave(IProgressMonitor progressMonitor) {
-		ValidateAction.runValidation(getDiagramEditPart(), getDiagramEditPart()
-				.getDiagramView());
+		ValidateAction.runValidation(getDiagramEditPart(), getDiagramEditPart().getDiagramView());
 		super.doSave(progressMonitor);
 	}
 

@@ -13,6 +13,7 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
 import org.muml.storydiagram.patterns.PatternsFactory;
 import org.muml.storydiagram.patterns.StoryPattern;
+import org.muml.storydiagram.verification.sdd.basicsdd.StoryPatternNode;
 
 /**
  * @generated
@@ -31,8 +32,7 @@ public class StoryPatternCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected EObject getElementToEdit() {
-		EObject container = ((CreateElementRequest) getRequest())
-				.getContainer();
+		EObject container = ((CreateElementRequest) getRequest()).getContainer();
 		if (container instanceof View) {
 			container = ((View) container).getElement();
 		}
@@ -43,7 +43,7 @@ public class StoryPatternCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	public boolean canExecute() {
-		org.muml.storydiagram.verification.sdd.basicsdd.StoryPatternNode container = (org.muml.storydiagram.verification.sdd.basicsdd.StoryPatternNode) getElementToEdit();
+		StoryPatternNode container = (StoryPatternNode) getElementToEdit();
 		if (container.getPattern() != null) {
 			return false;
 		}
@@ -54,12 +54,10 @@ public class StoryPatternCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
-			IAdaptable info) throws ExecutionException {
-		StoryPattern newElement = PatternsFactory.eINSTANCE
-				.createStoryPattern();
+	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
+		StoryPattern newElement = PatternsFactory.eINSTANCE.createStoryPattern();
 
-		org.muml.storydiagram.verification.sdd.basicsdd.StoryPatternNode owner = (org.muml.storydiagram.verification.sdd.basicsdd.StoryPatternNode) getElementToEdit();
+		StoryPatternNode owner = (StoryPatternNode) getElementToEdit();
 		owner.setPattern(newElement);
 
 		doConfigure(newElement, monitor, info);
@@ -71,18 +69,13 @@ public class StoryPatternCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected void doConfigure(StoryPattern newElement,
-			IProgressMonitor monitor, IAdaptable info)
+	protected void doConfigure(StoryPattern newElement, IProgressMonitor monitor, IAdaptable info)
 			throws ExecutionException {
-		IElementType elementType = ((CreateElementRequest) getRequest())
-				.getElementType();
-		ConfigureRequest configureRequest = new ConfigureRequest(
-				getEditingDomain(), newElement, elementType);
-		configureRequest.setClientContext(((CreateElementRequest) getRequest())
-				.getClientContext());
+		IElementType elementType = ((CreateElementRequest) getRequest()).getElementType();
+		ConfigureRequest configureRequest = new ConfigureRequest(getEditingDomain(), newElement, elementType);
+		configureRequest.setClientContext(((CreateElementRequest) getRequest()).getClientContext());
 		configureRequest.addParameters(getRequest().getParameters());
-		ICommand configureCommand = elementType
-				.getEditCommand(configureRequest);
+		ICommand configureCommand = elementType.getEditCommand(configureRequest);
 		if (configureCommand != null && configureCommand.canExecute()) {
 			configureCommand.execute(monitor, info);
 		}

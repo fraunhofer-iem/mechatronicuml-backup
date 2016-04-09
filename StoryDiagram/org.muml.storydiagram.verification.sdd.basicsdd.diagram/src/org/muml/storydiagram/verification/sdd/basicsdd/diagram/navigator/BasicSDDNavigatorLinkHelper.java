@@ -21,6 +21,7 @@ import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.navigator.ILinkHelper;
 import org.eclipse.ui.part.FileEditorInput;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDDiagramEditorPlugin;
 
 /**
  * @generated
@@ -34,16 +35,14 @@ public class BasicSDDNavigatorLinkHelper implements ILinkHelper {
 		Resource diagramResource = diagram.eResource();
 		for (EObject nextEObject : diagramResource.getContents()) {
 			if (nextEObject == diagram) {
-				return new FileEditorInput(
-						WorkspaceSynchronizer.getFile(diagramResource));
+				return new FileEditorInput(WorkspaceSynchronizer.getFile(diagramResource));
 			}
 			if (nextEObject instanceof Diagram) {
 				break;
 			}
 		}
 		URI uri = EcoreUtil.getURI(diagram);
-		String editorName = uri.lastSegment() + '#'
-				+ diagram.eResource().getContents().indexOf(diagram);
+		String editorName = uri.lastSegment() + '#' + diagram.eResource().getContents().indexOf(diagram);
 		IEditorInput editorInput = new URIEditorInput(uri, editorName);
 		return editorInput;
 	}
@@ -52,8 +51,7 @@ public class BasicSDDNavigatorLinkHelper implements ILinkHelper {
 	 * @generated
 	 */
 	public IStructuredSelection findSelection(IEditorInput anInput) {
-		IDiagramDocument document = org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDDiagramEditorPlugin
-				.getInstance().getDocumentProvider()
+		IDiagramDocument document = BasicSDDDiagramEditorPlugin.getInstance().getDocumentProvider()
 				.getDiagramDocument(anInput);
 		if (document == null) {
 			return StructuredSelection.EMPTY;
@@ -64,8 +62,7 @@ public class BasicSDDNavigatorLinkHelper implements ILinkHelper {
 		}
 		IFile file = WorkspaceSynchronizer.getFile(diagram.eResource());
 		if (file != null) {
-			org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDNavigatorItem item = new org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDNavigatorItem(
-					diagram, file, false);
+			BasicSDDNavigatorItem item = new BasicSDDNavigatorItem(diagram, file, false);
 			return new StructuredSelection(item);
 		}
 		return StructuredSelection.EMPTY;
@@ -74,26 +71,23 @@ public class BasicSDDNavigatorLinkHelper implements ILinkHelper {
 	/**
 	 * @generated
 	 */
-	public void activateEditor(IWorkbenchPage aPage,
-			IStructuredSelection aSelection) {
+	public void activateEditor(IWorkbenchPage aPage, IStructuredSelection aSelection) {
 		if (aSelection == null || aSelection.isEmpty()) {
 			return;
 		}
-		if (false == aSelection.getFirstElement() instanceof org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDAbstractNavigatorItem) {
+		if (false == aSelection.getFirstElement() instanceof BasicSDDAbstractNavigatorItem) {
 			return;
 		}
 
-		org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDAbstractNavigatorItem abstractNavigatorItem = (org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDAbstractNavigatorItem) aSelection
+		BasicSDDAbstractNavigatorItem abstractNavigatorItem = (BasicSDDAbstractNavigatorItem) aSelection
 				.getFirstElement();
 		View navigatorView = null;
-		if (abstractNavigatorItem instanceof org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDNavigatorItem) {
-			navigatorView = ((org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDNavigatorItem) abstractNavigatorItem)
-					.getView();
-		} else if (abstractNavigatorItem instanceof org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDNavigatorGroup) {
-			org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDNavigatorGroup navigatorGroup = (org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDNavigatorGroup) abstractNavigatorItem;
-			if (navigatorGroup.getParent() instanceof org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDNavigatorItem) {
-				navigatorView = ((org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDNavigatorItem) navigatorGroup
-						.getParent()).getView();
+		if (abstractNavigatorItem instanceof BasicSDDNavigatorItem) {
+			navigatorView = ((BasicSDDNavigatorItem) abstractNavigatorItem).getView();
+		} else if (abstractNavigatorItem instanceof BasicSDDNavigatorGroup) {
+			BasicSDDNavigatorGroup navigatorGroup = (BasicSDDNavigatorGroup) abstractNavigatorItem;
+			if (navigatorGroup.getParent() instanceof BasicSDDNavigatorItem) {
+				navigatorView = ((BasicSDDNavigatorItem) navigatorGroup.getParent()).getView();
 			}
 		}
 		if (navigatorView == null) {
@@ -107,17 +101,13 @@ public class BasicSDDNavigatorLinkHelper implements ILinkHelper {
 		aPage.bringToTop(editor);
 		if (editor instanceof DiagramEditor) {
 			DiagramEditor diagramEditor = (DiagramEditor) editor;
-			ResourceSet diagramEditorResourceSet = diagramEditor
-					.getEditingDomain().getResourceSet();
-			EObject selectedView = diagramEditorResourceSet.getEObject(
-					EcoreUtil.getURI(navigatorView), true);
+			ResourceSet diagramEditorResourceSet = diagramEditor.getEditingDomain().getResourceSet();
+			EObject selectedView = diagramEditorResourceSet.getEObject(EcoreUtil.getURI(navigatorView), true);
 			if (selectedView == null) {
 				return;
 			}
-			GraphicalViewer graphicalViewer = (GraphicalViewer) diagramEditor
-					.getAdapter(GraphicalViewer.class);
-			EditPart selectedEditPart = (EditPart) graphicalViewer
-					.getEditPartRegistry().get(selectedView);
+			GraphicalViewer graphicalViewer = (GraphicalViewer) diagramEditor.getAdapter(GraphicalViewer.class);
+			EditPart selectedEditPart = (EditPart) graphicalViewer.getEditPartRegistry().get(selectedView);
 			if (selectedEditPart != null) {
 				graphicalViewer.select(selectedEditPart);
 			}

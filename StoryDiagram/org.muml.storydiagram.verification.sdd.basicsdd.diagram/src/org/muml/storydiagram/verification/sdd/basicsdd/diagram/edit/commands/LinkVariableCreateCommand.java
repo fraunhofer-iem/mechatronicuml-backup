@@ -12,11 +12,14 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy;
+import org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy;
 import org.muml.storydiagram.patterns.AbstractVariable;
 import org.muml.storydiagram.patterns.LinkVariable;
 import org.muml.storydiagram.patterns.ObjectVariable;
 import org.muml.storydiagram.patterns.PatternsFactory;
 import org.muml.storydiagram.patterns.StoryPattern;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.policies.BasicSDDBaseItemSemanticEditPolicy;
 
 /**
  * @generated
@@ -41,8 +44,7 @@ public class LinkVariableCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	public LinkVariableCreateCommand(CreateRelationshipRequest request,
-			EObject source, EObject target) {
+	public LinkVariableCreateCommand(CreateRelationshipRequest request, EObject source, EObject target) {
 		super(request.getLabel(), null, request);
 		StoryPattern container = null;
 		this.source = source;
@@ -50,10 +52,8 @@ public class LinkVariableCreateCommand extends EditElementCommand {
 		container = deduceContainer(source, target);
 
 		if (container == null) {
-			View sourceView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-					.getSourceView(getRequest());
-			View targetView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-					.getTargetView(getRequest());
+			View sourceView = ConnectionConfigureHelperGraphicalNodeEditPolicy.getSourceView(getRequest());
+			View targetView = ConnectionConfigureHelperGraphicalNodeEditPolicy.getTargetView(getRequest());
 			container = deduceContainerUsingViews(sourceView, targetView);
 		}
 		this.container = container;
@@ -79,21 +79,13 @@ public class LinkVariableCreateCommand extends EditElementCommand {
 		if (getContainer() == null) {
 			return false;
 		}
-		View sourceView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-				.getSourceView(getRequest());
-		View targetView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-				.getTargetView(getRequest());
-		if (!org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.policies.BasicSDDBaseItemSemanticEditPolicy
-				.getLinkConstraints().canCreateLinkVariable_4003(
-						getContainer(), getSource(), getTarget(), sourceView,
-						targetView)) {
-			String errorMessage = org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.policies.BasicSDDBaseItemSemanticEditPolicy
-					.getLinkConstraints().getErrorLinkVariable_4003(
-							getContainer(), getSource(), getTarget(),
-							sourceView, targetView);
-			org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy
-					.showMessage(targetView != null ? targetView : sourceView,
-							errorMessage);
+		View sourceView = ConnectionConfigureHelperGraphicalNodeEditPolicy.getSourceView(getRequest());
+		View targetView = ConnectionConfigureHelperGraphicalNodeEditPolicy.getTargetView(getRequest());
+		if (!BasicSDDBaseItemSemanticEditPolicy.getLinkConstraints().canCreateLinkVariable_4003(getContainer(),
+				getSource(), getTarget(), sourceView, targetView)) {
+			String errorMessage = BasicSDDBaseItemSemanticEditPolicy.getLinkConstraints()
+					.getErrorLinkVariable_4003(getContainer(), getSource(), getTarget(), sourceView, targetView);
+			ErrorFeedbackEditPolicy.showMessage(targetView != null ? targetView : sourceView, errorMessage);
 			return false;
 		}
 		return true;
@@ -102,15 +94,12 @@ public class LinkVariableCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
-			IAdaptable info) throws ExecutionException {
+	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		if (!canExecute()) {
-			throw new ExecutionException(
-					"Invalid arguments in create link command"); //$NON-NLS-1$
+			throw new ExecutionException("Invalid arguments in create link command"); //$NON-NLS-1$
 		}
 
-		LinkVariable newElement = PatternsFactory.eINSTANCE
-				.createLinkVariable();
+		LinkVariable newElement = PatternsFactory.eINSTANCE.createLinkVariable();
 		getContainer().getLinkVariables().add(newElement);
 		newElement.setSource(getSource());
 		newElement.setTarget(getTarget());
@@ -123,22 +112,15 @@ public class LinkVariableCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected void doConfigure(LinkVariable newElement,
-			IProgressMonitor monitor, IAdaptable info)
+	protected void doConfigure(LinkVariable newElement, IProgressMonitor monitor, IAdaptable info)
 			throws ExecutionException {
-		IElementType elementType = ((CreateElementRequest) getRequest())
-				.getElementType();
-		ConfigureRequest configureRequest = new ConfigureRequest(
-				getEditingDomain(), newElement, elementType);
-		configureRequest.setClientContext(((CreateElementRequest) getRequest())
-				.getClientContext());
+		IElementType elementType = ((CreateElementRequest) getRequest()).getElementType();
+		ConfigureRequest configureRequest = new ConfigureRequest(getEditingDomain(), newElement, elementType);
+		configureRequest.setClientContext(((CreateElementRequest) getRequest()).getClientContext());
 		configureRequest.addParameters(getRequest().getParameters());
-		configureRequest.setParameter(CreateRelationshipRequest.SOURCE,
-				getSource());
-		configureRequest.setParameter(CreateRelationshipRequest.TARGET,
-				getTarget());
-		ICommand configureCommand = elementType
-				.getEditCommand(configureRequest);
+		configureRequest.setParameter(CreateRelationshipRequest.SOURCE, getSource());
+		configureRequest.setParameter(CreateRelationshipRequest.TARGET, getTarget());
+		ICommand configureCommand = elementType.getEditCommand(configureRequest);
 		if (configureCommand != null && configureCommand.canExecute()) {
 			configureCommand.execute(monitor, info);
 		}
@@ -181,8 +163,7 @@ public class LinkVariableCreateCommand extends EditElementCommand {
 		// Find container element for the new link.
 		// Climb up by containment hierarchy starting from the source
 		// and return the first element that is instance of the container class.
-		for (EObject element = source; element != null; element = element
-				.eContainer()) {
+		for (EObject element = source; element != null; element = element.eContainer()) {
 			if (element instanceof StoryPattern) {
 				return (StoryPattern) element;
 			}
@@ -195,10 +176,8 @@ public class LinkVariableCreateCommand extends EditElementCommand {
 	 * 
 	 * @generated
 	 */
-	private static StoryPattern deduceContainerUsingViews(View sourceView,
-			View targetView) {
-		for (View view = sourceView; view != null; view = (View) view
-				.eContainer()) {
+	private static StoryPattern deduceContainerUsingViews(View sourceView, View targetView) {
+		for (View view = sourceView; view != null; view = (View) view.eContainer()) {
 			if (view.getElement() instanceof StoryPattern) {
 				return (StoryPattern) view.getElement();
 			}

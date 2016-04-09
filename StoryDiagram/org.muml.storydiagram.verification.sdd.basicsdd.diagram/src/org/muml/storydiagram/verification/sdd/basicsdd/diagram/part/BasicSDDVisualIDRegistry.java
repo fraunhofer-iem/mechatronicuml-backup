@@ -7,6 +7,35 @@ import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.structure.DiagramStructure;
 import org.muml.storydiagram.patterns.PatternsPackage;
+import org.muml.storydiagram.verification.sdd.SDDPackage;
+import org.muml.storydiagram.verification.sdd.basicsdd.BasicSDDPackage;
+import org.muml.storydiagram.verification.sdd.basicsdd.StoryDecisionDiagram;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.AttributeAssignmentEditPart;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.CollectionVariableCollectionVariableAttributeAssignmentsCompartmentEditPart;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.CollectionVariableCollectionVariableConstraintsCompartmentEditPart;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.CollectionVariableEditPart;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.CollectionVariableNameEditPart;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.Constraint2EditPart;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.ConstraintEditPart;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.EdgeEditPart;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.LeafNodeEditPart;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.LinkVariableEditPart;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.ObjectVariableEditPart;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.ObjectVariableNameEditPart;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.ObjectVariableObjectVariableAttributeAssignmentsCompartmentEditPart;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.ObjectVariableObjectVariableConstraintsCompartmentEditPart;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryDecisionDiagramEditPart;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryPatternEditPart;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryPatternNodeEditPart;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryPatternNodeNameEditPart;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryPatternNodePatternNodeContentCompartmentEditPart;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryPatternNodeTypeEditPart;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryPatternStoryPatternConstraintsCompartmentEditPart;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryPatternStoryPatternContentCompartmentEditPart;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.WrappingLabel2EditPart;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.WrappingLabel3EditPart;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.WrappingLabel4EditPart;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.WrappingLabelEditPart;
 
 /**
  * This registry is used to determine which type of visual object should be
@@ -27,9 +56,8 @@ public class BasicSDDVisualIDRegistry {
 	 */
 	public static int getVisualID(View view) {
 		if (view instanceof Diagram) {
-			if (org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryDecisionDiagramEditPart.MODEL_ID
-					.equals(view.getType())) {
-				return org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryDecisionDiagramEditPart.VISUAL_ID;
+			if (StoryDecisionDiagramEditPart.MODEL_ID.equals(view.getType())) {
+				return StoryDecisionDiagramEditPart.VISUAL_ID;
 			} else {
 				return -1;
 			}
@@ -60,12 +88,9 @@ public class BasicSDDVisualIDRegistry {
 		try {
 			return Integer.parseInt(type);
 		} catch (NumberFormatException e) {
-			if (Boolean.TRUE.toString().equalsIgnoreCase(
-					Platform.getDebugOption(DEBUG_KEY))) {
-				org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDDiagramEditorPlugin
-						.getInstance().logError(
-								"Unable to parse view type as a visualID number: "
-										+ type);
+			if (Boolean.TRUE.toString().equalsIgnoreCase(Platform.getDebugOption(DEBUG_KEY))) {
+				BasicSDDDiagramEditorPlugin.getInstance()
+						.logError("Unable to parse view type as a visualID number: " + type);
 			}
 		}
 		return -1;
@@ -85,11 +110,9 @@ public class BasicSDDVisualIDRegistry {
 		if (domainElement == null) {
 			return -1;
 		}
-		if (org.muml.storydiagram.verification.sdd.basicsdd.BasicSDDPackage.eINSTANCE
-				.getStoryDecisionDiagram()
-				.isSuperTypeOf(domainElement.eClass())
-				&& isDiagram((org.muml.storydiagram.verification.sdd.basicsdd.StoryDecisionDiagram) domainElement)) {
-			return org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryDecisionDiagramEditPart.VISUAL_ID;
+		if (BasicSDDPackage.eINSTANCE.getStoryDecisionDiagram().isSuperTypeOf(domainElement.eClass())
+				&& isDiagram((StoryDecisionDiagram) domainElement)) {
+			return StoryDecisionDiagramEditPart.VISUAL_ID;
 		}
 		return -1;
 	}
@@ -103,78 +126,65 @@ public class BasicSDDVisualIDRegistry {
 		}
 		String containerModelID = org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDVisualIDRegistry
 				.getModelID(containerView);
-		if (!org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryDecisionDiagramEditPart.MODEL_ID
-				.equals(containerModelID)) {
+		if (!StoryDecisionDiagramEditPart.MODEL_ID.equals(containerModelID)) {
 			return -1;
 		}
 		int containerVisualID;
-		if (org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryDecisionDiagramEditPart.MODEL_ID
-				.equals(containerModelID)) {
+		if (StoryDecisionDiagramEditPart.MODEL_ID.equals(containerModelID)) {
 			containerVisualID = org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDVisualIDRegistry
 					.getVisualID(containerView);
 		} else {
 			if (containerView instanceof Diagram) {
-				containerVisualID = org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryDecisionDiagramEditPart.VISUAL_ID;
+				containerVisualID = StoryDecisionDiagramEditPart.VISUAL_ID;
 			} else {
 				return -1;
 			}
 		}
 		switch (containerVisualID) {
-		case org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryDecisionDiagramEditPart.VISUAL_ID:
-			if (org.muml.storydiagram.verification.sdd.basicsdd.BasicSDDPackage.eINSTANCE
-					.getStoryPatternNode()
-					.isSuperTypeOf(domainElement.eClass())) {
-				return org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryPatternNodeEditPart.VISUAL_ID;
+		case StoryDecisionDiagramEditPart.VISUAL_ID:
+			if (BasicSDDPackage.eINSTANCE.getStoryPatternNode().isSuperTypeOf(domainElement.eClass())) {
+				return StoryPatternNodeEditPart.VISUAL_ID;
 			}
-			if (org.muml.storydiagram.verification.sdd.SDDPackage.eINSTANCE
-					.getLeafNode().isSuperTypeOf(domainElement.eClass())) {
-				return org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.LeafNodeEditPart.VISUAL_ID;
+			if (SDDPackage.eINSTANCE.getLeafNode().isSuperTypeOf(domainElement.eClass())) {
+				return LeafNodeEditPart.VISUAL_ID;
 			}
 			break;
-		case org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryPatternNodePatternNodeContentCompartmentEditPart.VISUAL_ID:
-			if (PatternsPackage.eINSTANCE.getStoryPattern().isSuperTypeOf(
-					domainElement.eClass())) {
-				return org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryPatternEditPart.VISUAL_ID;
+		case StoryPatternNodePatternNodeContentCompartmentEditPart.VISUAL_ID:
+			if (PatternsPackage.eINSTANCE.getStoryPattern().isSuperTypeOf(domainElement.eClass())) {
+				return StoryPatternEditPart.VISUAL_ID;
 			}
 			break;
-		case org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryPatternStoryPatternContentCompartmentEditPart.VISUAL_ID:
-			if (PatternsPackage.eINSTANCE.getCollectionVariable()
-					.isSuperTypeOf(domainElement.eClass())) {
-				return org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.CollectionVariableEditPart.VISUAL_ID;
+		case StoryPatternStoryPatternContentCompartmentEditPart.VISUAL_ID:
+			if (PatternsPackage.eINSTANCE.getCollectionVariable().isSuperTypeOf(domainElement.eClass())) {
+				return CollectionVariableEditPart.VISUAL_ID;
 			}
-			if (PatternsPackage.eINSTANCE.getObjectVariable().isSuperTypeOf(
-					domainElement.eClass())) {
-				return org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.ObjectVariableEditPart.VISUAL_ID;
+			if (PatternsPackage.eINSTANCE.getObjectVariable().isSuperTypeOf(domainElement.eClass())) {
+				return ObjectVariableEditPart.VISUAL_ID;
 			}
 			break;
-		case org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryPatternStoryPatternConstraintsCompartmentEditPart.VISUAL_ID:
-			if (PatternsPackage.eINSTANCE.getConstraint().isSuperTypeOf(
-					domainElement.eClass())) {
-				return org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.Constraint2EditPart.VISUAL_ID;
+		case StoryPatternStoryPatternConstraintsCompartmentEditPart.VISUAL_ID:
+			if (PatternsPackage.eINSTANCE.getConstraint().isSuperTypeOf(domainElement.eClass())) {
+				return Constraint2EditPart.VISUAL_ID;
 			}
 			break;
-		case org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.CollectionVariableCollectionVariableConstraintsCompartmentEditPart.VISUAL_ID:
-			if (PatternsPackage.eINSTANCE.getConstraint().isSuperTypeOf(
-					domainElement.eClass())) {
-				return org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.ConstraintEditPart.VISUAL_ID;
+		case CollectionVariableCollectionVariableConstraintsCompartmentEditPart.VISUAL_ID:
+			if (PatternsPackage.eINSTANCE.getConstraint().isSuperTypeOf(domainElement.eClass())) {
+				return ConstraintEditPart.VISUAL_ID;
 			}
 			break;
-		case org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.CollectionVariableCollectionVariableAttributeAssignmentsCompartmentEditPart.VISUAL_ID:
-			if (PatternsPackage.eINSTANCE.getAttributeAssignment()
-					.isSuperTypeOf(domainElement.eClass())) {
-				return org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.AttributeAssignmentEditPart.VISUAL_ID;
+		case CollectionVariableCollectionVariableAttributeAssignmentsCompartmentEditPart.VISUAL_ID:
+			if (PatternsPackage.eINSTANCE.getAttributeAssignment().isSuperTypeOf(domainElement.eClass())) {
+				return AttributeAssignmentEditPart.VISUAL_ID;
 			}
 			break;
-		case org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.ObjectVariableObjectVariableConstraintsCompartmentEditPart.VISUAL_ID:
-			if (PatternsPackage.eINSTANCE.getConstraint().isSuperTypeOf(
-					domainElement.eClass())) {
-				return org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.ConstraintEditPart.VISUAL_ID;
+		case ObjectVariableObjectVariableConstraintsCompartmentEditPart.VISUAL_ID:
+			if (PatternsPackage.eINSTANCE.getConstraint().isSuperTypeOf(domainElement.eClass())) {
+				return ConstraintEditPart.VISUAL_ID;
 			}
 			break;
-		case org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.ObjectVariableObjectVariableAttributeAssignmentsCompartmentEditPart.VISUAL_ID:
-			if (PatternsPackage.eINSTANCE.getAttributeAssignment()
-					.isSuperTypeOf(domainElement.eClass())) {
-				return org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.AttributeAssignmentEditPart.VISUAL_ID;
+		case ObjectVariableObjectVariableAttributeAssignmentsCompartmentEditPart.VISUAL_ID:
+			if (PatternsPackage.eINSTANCE.getAttributeAssignment().isSuperTypeOf(domainElement.eClass())) {
+				return AttributeAssignmentEditPart.VISUAL_ID;
 			}
 			break;
 		}
@@ -187,119 +197,117 @@ public class BasicSDDVisualIDRegistry {
 	public static boolean canCreateNode(View containerView, int nodeVisualID) {
 		String containerModelID = org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDVisualIDRegistry
 				.getModelID(containerView);
-		if (!org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryDecisionDiagramEditPart.MODEL_ID
-				.equals(containerModelID)) {
+		if (!StoryDecisionDiagramEditPart.MODEL_ID.equals(containerModelID)) {
 			return false;
 		}
 		int containerVisualID;
-		if (org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryDecisionDiagramEditPart.MODEL_ID
-				.equals(containerModelID)) {
+		if (StoryDecisionDiagramEditPart.MODEL_ID.equals(containerModelID)) {
 			containerVisualID = org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDVisualIDRegistry
 					.getVisualID(containerView);
 		} else {
 			if (containerView instanceof Diagram) {
-				containerVisualID = org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryDecisionDiagramEditPart.VISUAL_ID;
+				containerVisualID = StoryDecisionDiagramEditPart.VISUAL_ID;
 			} else {
 				return false;
 			}
 		}
 		switch (containerVisualID) {
-		case org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryDecisionDiagramEditPart.VISUAL_ID:
-			if (org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryPatternNodeEditPart.VISUAL_ID == nodeVisualID) {
+		case StoryDecisionDiagramEditPart.VISUAL_ID:
+			if (StoryPatternNodeEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.LeafNodeEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryPatternNodeEditPart.VISUAL_ID:
-			if (org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryPatternNodeNameEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryPatternNodeTypeEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryPatternNodePatternNodeContentCompartmentEditPart.VISUAL_ID == nodeVisualID) {
+			if (LeafNodeEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
-		case org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryPatternEditPart.VISUAL_ID:
-			if (org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryPatternStoryPatternContentCompartmentEditPart.VISUAL_ID == nodeVisualID) {
+		case StoryPatternNodeEditPart.VISUAL_ID:
+			if (StoryPatternNodeNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryPatternStoryPatternConstraintsCompartmentEditPart.VISUAL_ID == nodeVisualID) {
+			if (StoryPatternNodeTypeEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			break;
-		case org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.CollectionVariableEditPart.VISUAL_ID:
-			if (org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.CollectionVariableNameEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.WrappingLabel2EditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.CollectionVariableCollectionVariableConstraintsCompartmentEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.CollectionVariableCollectionVariableAttributeAssignmentsCompartmentEditPart.VISUAL_ID == nodeVisualID) {
+			if (StoryPatternNodePatternNodeContentCompartmentEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
-		case org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.ObjectVariableEditPart.VISUAL_ID:
-			if (org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.WrappingLabel3EditPart.VISUAL_ID == nodeVisualID) {
+		case StoryPatternEditPart.VISUAL_ID:
+			if (StoryPatternStoryPatternContentCompartmentEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.ObjectVariableNameEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.WrappingLabel4EditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.ObjectVariableObjectVariableConstraintsCompartmentEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.ObjectVariableObjectVariableAttributeAssignmentsCompartmentEditPart.VISUAL_ID == nodeVisualID) {
+			if (StoryPatternStoryPatternConstraintsCompartmentEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
-		case org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryPatternNodePatternNodeContentCompartmentEditPart.VISUAL_ID:
-			if (org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryPatternEditPart.VISUAL_ID == nodeVisualID) {
+		case CollectionVariableEditPart.VISUAL_ID:
+			if (WrappingLabelEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (CollectionVariableNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (WrappingLabel2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (CollectionVariableCollectionVariableConstraintsCompartmentEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (CollectionVariableCollectionVariableAttributeAssignmentsCompartmentEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
-		case org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryPatternStoryPatternContentCompartmentEditPart.VISUAL_ID:
-			if (org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.CollectionVariableEditPart.VISUAL_ID == nodeVisualID) {
+		case ObjectVariableEditPart.VISUAL_ID:
+			if (WrappingLabel3EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.ObjectVariableEditPart.VISUAL_ID == nodeVisualID) {
+			if (ObjectVariableNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			break;
-		case org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryPatternStoryPatternConstraintsCompartmentEditPart.VISUAL_ID:
-			if (org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.Constraint2EditPart.VISUAL_ID == nodeVisualID) {
+			if (WrappingLabel4EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			break;
-		case org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.CollectionVariableCollectionVariableConstraintsCompartmentEditPart.VISUAL_ID:
-			if (org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.ConstraintEditPart.VISUAL_ID == nodeVisualID) {
+			if (ObjectVariableObjectVariableConstraintsCompartmentEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			break;
-		case org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.CollectionVariableCollectionVariableAttributeAssignmentsCompartmentEditPart.VISUAL_ID:
-			if (org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.AttributeAssignmentEditPart.VISUAL_ID == nodeVisualID) {
+			if (ObjectVariableObjectVariableAttributeAssignmentsCompartmentEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
-		case org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.ObjectVariableObjectVariableConstraintsCompartmentEditPart.VISUAL_ID:
-			if (org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.ConstraintEditPart.VISUAL_ID == nodeVisualID) {
+		case StoryPatternNodePatternNodeContentCompartmentEditPart.VISUAL_ID:
+			if (StoryPatternEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
-		case org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.ObjectVariableObjectVariableAttributeAssignmentsCompartmentEditPart.VISUAL_ID:
-			if (org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.AttributeAssignmentEditPart.VISUAL_ID == nodeVisualID) {
+		case StoryPatternStoryPatternContentCompartmentEditPart.VISUAL_ID:
+			if (CollectionVariableEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ObjectVariableEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case StoryPatternStoryPatternConstraintsCompartmentEditPart.VISUAL_ID:
+			if (Constraint2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case CollectionVariableCollectionVariableConstraintsCompartmentEditPart.VISUAL_ID:
+			if (ConstraintEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case CollectionVariableCollectionVariableAttributeAssignmentsCompartmentEditPart.VISUAL_ID:
+			if (AttributeAssignmentEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case ObjectVariableObjectVariableConstraintsCompartmentEditPart.VISUAL_ID:
+			if (ConstraintEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case ObjectVariableObjectVariableAttributeAssignmentsCompartmentEditPart.VISUAL_ID:
+			if (AttributeAssignmentEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -314,33 +322,29 @@ public class BasicSDDVisualIDRegistry {
 		if (domainElement == null) {
 			return -1;
 		}
-		if (org.muml.storydiagram.verification.sdd.SDDPackage.eINSTANCE
-				.getEdge().isSuperTypeOf(domainElement.eClass())) {
-			return org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.EdgeEditPart.VISUAL_ID;
+		if (SDDPackage.eINSTANCE.getEdge().isSuperTypeOf(domainElement.eClass())) {
+			return EdgeEditPart.VISUAL_ID;
 		}
-		if (PatternsPackage.eINSTANCE.getLinkVariable().isSuperTypeOf(
-				domainElement.eClass())) {
-			return org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.LinkVariableEditPart.VISUAL_ID;
+		if (PatternsPackage.eINSTANCE.getLinkVariable().isSuperTypeOf(domainElement.eClass())) {
+			return LinkVariableEditPart.VISUAL_ID;
 		}
 		return -1;
 	}
 
 	/**
-	 * User can change implementation of this method to handle some specific
-	 * situations not covered by default logic.
-	 * 
-	 * @generated
-	 */
-	private static boolean isDiagram(
-			org.muml.storydiagram.verification.sdd.basicsdd.StoryDecisionDiagram element) {
+	* User can change implementation of this method to handle some specific
+	* situations not covered by default logic.
+	* 
+	* @generated
+	*/
+	private static boolean isDiagram(StoryDecisionDiagram element) {
 		return true;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static boolean checkNodeVisualID(View containerView,
-			EObject domainElement, int candidate) {
+	public static boolean checkNodeVisualID(View containerView, EObject domainElement, int candidate) {
 		if (candidate == -1) {
 			//unrecognized id is always bad
 			return false;
@@ -354,13 +358,13 @@ public class BasicSDDVisualIDRegistry {
 	 */
 	public static boolean isCompartmentVisualID(int visualID) {
 		switch (visualID) {
-		case org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryPatternNodePatternNodeContentCompartmentEditPart.VISUAL_ID:
-		case org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryPatternStoryPatternContentCompartmentEditPart.VISUAL_ID:
-		case org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryPatternStoryPatternConstraintsCompartmentEditPart.VISUAL_ID:
-		case org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.CollectionVariableCollectionVariableConstraintsCompartmentEditPart.VISUAL_ID:
-		case org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.CollectionVariableCollectionVariableAttributeAssignmentsCompartmentEditPart.VISUAL_ID:
-		case org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.ObjectVariableObjectVariableConstraintsCompartmentEditPart.VISUAL_ID:
-		case org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.ObjectVariableObjectVariableAttributeAssignmentsCompartmentEditPart.VISUAL_ID:
+		case StoryPatternNodePatternNodeContentCompartmentEditPart.VISUAL_ID:
+		case StoryPatternStoryPatternContentCompartmentEditPart.VISUAL_ID:
+		case StoryPatternStoryPatternConstraintsCompartmentEditPart.VISUAL_ID:
+		case CollectionVariableCollectionVariableConstraintsCompartmentEditPart.VISUAL_ID:
+		case CollectionVariableCollectionVariableAttributeAssignmentsCompartmentEditPart.VISUAL_ID:
+		case ObjectVariableObjectVariableConstraintsCompartmentEditPart.VISUAL_ID:
+		case ObjectVariableObjectVariableAttributeAssignmentsCompartmentEditPart.VISUAL_ID:
 			return true;
 		default:
 			break;
@@ -373,12 +377,12 @@ public class BasicSDDVisualIDRegistry {
 	 */
 	public static boolean isSemanticLeafVisualID(int visualID) {
 		switch (visualID) {
-		case org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryDecisionDiagramEditPart.VISUAL_ID:
+		case StoryDecisionDiagramEditPart.VISUAL_ID:
 			return false;
-		case org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.LeafNodeEditPart.VISUAL_ID:
-		case org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.AttributeAssignmentEditPart.VISUAL_ID:
-		case org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.ConstraintEditPart.VISUAL_ID:
-		case org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.Constraint2EditPart.VISUAL_ID:
+		case LeafNodeEditPart.VISUAL_ID:
+		case AttributeAssignmentEditPart.VISUAL_ID:
+		case ConstraintEditPart.VISUAL_ID:
+		case Constraint2EditPart.VISUAL_ID:
 			return true;
 		default:
 			break;
@@ -391,55 +395,60 @@ public class BasicSDDVisualIDRegistry {
 	 */
 	public static final DiagramStructure TYPED_INSTANCE = new DiagramStructure() {
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		@Override
+
 		public int getVisualID(View view) {
 			return org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDVisualIDRegistry
 					.getVisualID(view);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		@Override
+
 		public String getModelID(View view) {
 			return org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDVisualIDRegistry
 					.getModelID(view);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		@Override
+
 		public int getNodeVisualID(View containerView, EObject domainElement) {
 			return org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDVisualIDRegistry
 					.getNodeVisualID(containerView, domainElement);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		@Override
-		public boolean checkNodeVisualID(View containerView,
-				EObject domainElement, int candidate) {
+
+		public boolean checkNodeVisualID(View containerView, EObject domainElement, int candidate) {
 			return org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDVisualIDRegistry
 					.checkNodeVisualID(containerView, domainElement, candidate);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		@Override
+
 		public boolean isCompartmentVisualID(int visualID) {
 			return org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDVisualIDRegistry
 					.isCompartmentVisualID(visualID);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		@Override
+
 		public boolean isSemanticLeafVisualID(int visualID) {
 			return org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDVisualIDRegistry
 					.isSemanticLeafVisualID(visualID);

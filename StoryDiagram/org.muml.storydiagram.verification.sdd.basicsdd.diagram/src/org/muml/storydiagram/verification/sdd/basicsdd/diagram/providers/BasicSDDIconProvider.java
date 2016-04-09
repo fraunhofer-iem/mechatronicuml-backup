@@ -6,15 +6,13 @@ import org.eclipse.gmf.tooling.runtime.providers.DefaultElementTypeIconProvider;
 /**
  * @generated
  */
-public class BasicSDDIconProvider extends DefaultElementTypeIconProvider
-		implements IIconProvider {
+public class BasicSDDIconProvider extends DefaultElementTypeIconProvider implements IIconProvider {
 
 	/**
 	 * @generated
 	 */
 	public BasicSDDIconProvider() {
-		super(
-				org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.BasicSDDElementTypes.TYPED_INSTANCE);
+		super(BasicSDDElementTypes.TYPED_INSTANCE);
 	}
 
 }

@@ -22,6 +22,26 @@ import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.ui.IMemento;
 import org.eclipse.ui.navigator.ICommonContentExtensionSite;
 import org.eclipse.ui.navigator.ICommonContentProvider;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.AttributeAssignmentEditPart;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.CollectionVariableCollectionVariableAttributeAssignmentsCompartmentEditPart;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.CollectionVariableCollectionVariableConstraintsCompartmentEditPart;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.CollectionVariableEditPart;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.Constraint2EditPart;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.ConstraintEditPart;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.EdgeEditPart;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.LeafNodeEditPart;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.LinkVariableEditPart;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.ObjectVariableEditPart;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.ObjectVariableObjectVariableAttributeAssignmentsCompartmentEditPart;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.ObjectVariableObjectVariableConstraintsCompartmentEditPart;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryDecisionDiagramEditPart;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryPatternEditPart;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryPatternNodeEditPart;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryPatternNodePatternNodeContentCompartmentEditPart;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryPatternStoryPatternConstraintsCompartmentEditPart;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryPatternStoryPatternContentCompartmentEditPart;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDVisualIDRegistry;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.Messages;
 
 /**
  * @generated
@@ -58,8 +78,7 @@ public class BasicSDDNavigatorContentProvider implements ICommonContentProvider 
 	 */
 	@SuppressWarnings({ "unchecked", "serial", "rawtypes" })
 	public BasicSDDNavigatorContentProvider() {
-		TransactionalEditingDomain editingDomain = GMFEditingDomainFactory.INSTANCE
-				.createEditingDomain();
+		TransactionalEditingDomain editingDomain = GMFEditingDomainFactory.INSTANCE.createEditingDomain();
 		myEditingDomain = (AdapterFactoryEditingDomain) editingDomain;
 		myEditingDomain.setResourceToReadOnlyMap(new HashMap() {
 			public Object get(Object key) {
@@ -76,30 +95,28 @@ public class BasicSDDNavigatorContentProvider implements ICommonContentProvider 
 				}
 			}
 		};
-		myWorkspaceSynchronizer = new WorkspaceSynchronizer(editingDomain,
-				new WorkspaceSynchronizer.Delegate() {
-					public void dispose() {
-					}
+		myWorkspaceSynchronizer = new WorkspaceSynchronizer(editingDomain, new WorkspaceSynchronizer.Delegate() {
+			public void dispose() {
+			}
 
-					public boolean handleResourceChanged(final Resource resource) {
-						unloadAllResources();
-						asyncRefresh();
-						return true;
-					}
+			public boolean handleResourceChanged(final Resource resource) {
+				unloadAllResources();
+				asyncRefresh();
+				return true;
+			}
 
-					public boolean handleResourceDeleted(Resource resource) {
-						unloadAllResources();
-						asyncRefresh();
-						return true;
-					}
+			public boolean handleResourceDeleted(Resource resource) {
+				unloadAllResources();
+				asyncRefresh();
+				return true;
+			}
 
-					public boolean handleResourceMoved(Resource resource,
-							final URI newURI) {
-						unloadAllResources();
-						asyncRefresh();
-						return true;
-					}
-				});
+			public boolean handleResourceMoved(Resource resource, final URI newURI) {
+				unloadAllResources();
+				asyncRefresh();
+				return true;
+			}
+		});
 	}
 
 	/**
@@ -126,8 +143,7 @@ public class BasicSDDNavigatorContentProvider implements ICommonContentProvider 
 	 * @generated
 	 */
 	void unloadAllResources() {
-		for (Resource nextResource : myEditingDomain.getResourceSet()
-				.getResources()) {
+		for (Resource nextResource : myEditingDomain.getResourceSet().getResources()) {
 			nextResource.unload();
 		}
 	}
@@ -137,8 +153,7 @@ public class BasicSDDNavigatorContentProvider implements ICommonContentProvider 
 	 */
 	void asyncRefresh() {
 		if (myViewer != null && !myViewer.getControl().isDisposed()) {
-			myViewer.getControl().getDisplay()
-					.asyncExec(myViewerRefreshRunnable);
+			myViewer.getControl().getDisplay().asyncExec(myViewerRefreshRunnable);
 		}
 	}
 
@@ -173,33 +188,27 @@ public class BasicSDDNavigatorContentProvider implements ICommonContentProvider 
 	public Object[] getChildren(Object parentElement) {
 		if (parentElement instanceof IFile) {
 			IFile file = (IFile) parentElement;
-			URI fileURI = URI.createPlatformResourceURI(file.getFullPath()
-					.toString(), true);
-			Resource resource = myEditingDomain.getResourceSet().getResource(
-					fileURI, true);
-			ArrayList<org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDNavigatorItem> result = new ArrayList<org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDNavigatorItem>();
-			ArrayList<View> topViews = new ArrayList<View>(resource
-					.getContents().size());
+			URI fileURI = URI.createPlatformResourceURI(file.getFullPath().toString(), true);
+			Resource resource = myEditingDomain.getResourceSet().getResource(fileURI, true);
+			ArrayList<BasicSDDNavigatorItem> result = new ArrayList<BasicSDDNavigatorItem>();
+			ArrayList<View> topViews = new ArrayList<View>(resource.getContents().size());
 			for (EObject o : resource.getContents()) {
 				if (o instanceof View) {
 					topViews.add((View) o);
 				}
 			}
-			result.addAll(createNavigatorItems(
-					selectViewsByType(
-							topViews,
-							org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryDecisionDiagramEditPart.MODEL_ID),
-					file, false));
+			result.addAll(createNavigatorItems(selectViewsByType(topViews, StoryDecisionDiagramEditPart.MODEL_ID), file,
+					false));
 			return result.toArray();
 		}
 
-		if (parentElement instanceof org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDNavigatorGroup) {
-			org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDNavigatorGroup group = (org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDNavigatorGroup) parentElement;
+		if (parentElement instanceof BasicSDDNavigatorGroup) {
+			BasicSDDNavigatorGroup group = (BasicSDDNavigatorGroup) parentElement;
 			return group.getChildren();
 		}
 
-		if (parentElement instanceof org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDNavigatorItem) {
-			org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDNavigatorItem navigatorItem = (org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDNavigatorItem) parentElement;
+		if (parentElement instanceof BasicSDDNavigatorItem) {
+			BasicSDDNavigatorItem navigatorItem = (BasicSDDNavigatorItem) parentElement;
 			if (navigatorItem.isLeaf() || !isOwnView(navigatorItem.getView())) {
 				return EMPTY_ARRAY;
 			}
@@ -213,37 +222,26 @@ public class BasicSDDNavigatorContentProvider implements ICommonContentProvider 
 	 * @generated
 	 */
 	private Object[] getViewChildren(View view, Object parentElement) {
-		switch (org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDVisualIDRegistry
-				.getVisualID(view)) {
+		switch (BasicSDDVisualIDRegistry.getVisualID(view)) {
 
-		case org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryDecisionDiagramEditPart.VISUAL_ID: {
-			LinkedList<org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDAbstractNavigatorItem> result = new LinkedList<org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDAbstractNavigatorItem>();
+		case StoryDecisionDiagramEditPart.VISUAL_ID: {
+			LinkedList<BasicSDDAbstractNavigatorItem> result = new LinkedList<BasicSDDAbstractNavigatorItem>();
 			Diagram sv = (Diagram) view;
-			org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDNavigatorGroup links = new org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDNavigatorGroup(
-					org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.Messages.NavigatorGroupName_StoryDecisionDiagram_1000_links,
-					"icons/linksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			BasicSDDNavigatorGroup links = new BasicSDDNavigatorGroup(
+					Messages.NavigatorGroupName_StoryDecisionDiagram_1000_links, "icons/linksNavigatorGroup.gif", //$NON-NLS-1$
+					parentElement);
 			Collection<View> connectedViews;
-			connectedViews = getChildrenByType(
-					Collections.singleton(sv),
-					org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDVisualIDRegistry
-							.getType(org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryPatternNodeEditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement,
-					false));
-			connectedViews = getChildrenByType(
-					Collections.singleton(sv),
-					org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDVisualIDRegistry
-							.getType(org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.LeafNodeEditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement,
-					false));
-			connectedViews = getDiagramLinksByType(
-					Collections.singleton(sv),
-					org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDVisualIDRegistry
-							.getType(org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.EdgeEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(Collections.singleton(sv),
+					BasicSDDVisualIDRegistry.getType(StoryPatternNodeEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+			connectedViews = getChildrenByType(Collections.singleton(sv),
+					BasicSDDVisualIDRegistry.getType(LeafNodeEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+			connectedViews = getDiagramLinksByType(Collections.singleton(sv),
+					BasicSDDVisualIDRegistry.getType(EdgeEditPart.VISUAL_ID));
 			links.addChildren(createNavigatorItems(connectedViews, links, false));
-			connectedViews = getDiagramLinksByType(
-					Collections.singleton(sv),
-					org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDVisualIDRegistry
-							.getType(org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.LinkVariableEditPart.VISUAL_ID));
+			connectedViews = getDiagramLinksByType(Collections.singleton(sv),
+					BasicSDDVisualIDRegistry.getType(LinkVariableEditPart.VISUAL_ID));
 			links.addChildren(createNavigatorItems(connectedViews, links, false));
 			if (!links.isEmpty()) {
 				result.add(links);
@@ -251,38 +249,27 @@ public class BasicSDDNavigatorContentProvider implements ICommonContentProvider 
 			return result.toArray();
 		}
 
-		case org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryPatternNodeEditPart.VISUAL_ID: {
-			LinkedList<org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDAbstractNavigatorItem> result = new LinkedList<org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDAbstractNavigatorItem>();
+		case StoryPatternNodeEditPart.VISUAL_ID: {
+			LinkedList<BasicSDDAbstractNavigatorItem> result = new LinkedList<BasicSDDAbstractNavigatorItem>();
 			Node sv = (Node) view;
-			org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDNavigatorGroup incominglinks = new org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDNavigatorGroup(
-					org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.Messages.NavigatorGroupName_StoryPatternNode_2003_incominglinks,
+			BasicSDDNavigatorGroup incominglinks = new BasicSDDNavigatorGroup(
+					Messages.NavigatorGroupName_StoryPatternNode_2003_incominglinks,
 					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDNavigatorGroup outgoinglinks = new org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDNavigatorGroup(
-					org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.Messages.NavigatorGroupName_StoryPatternNode_2003_outgoinglinks,
+			BasicSDDNavigatorGroup outgoinglinks = new BasicSDDNavigatorGroup(
+					Messages.NavigatorGroupName_StoryPatternNode_2003_outgoinglinks,
 					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
-			connectedViews = getChildrenByType(
-					Collections.singleton(sv),
-					org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDVisualIDRegistry
-							.getType(org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryPatternNodePatternNodeContentCompartmentEditPart.VISUAL_ID));
-			connectedViews = getChildrenByType(
-					connectedViews,
-					org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDVisualIDRegistry
-							.getType(org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryPatternEditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement,
-					false));
-			connectedViews = getIncomingLinksByType(
-					Collections.singleton(sv),
-					org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDVisualIDRegistry
-							.getType(org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.EdgeEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
-			connectedViews = getOutgoingLinksByType(
-					Collections.singleton(sv),
-					org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDVisualIDRegistry
-							.getType(org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.EdgeEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
+			connectedViews = getChildrenByType(Collections.singleton(sv),
+					BasicSDDVisualIDRegistry.getType(StoryPatternNodePatternNodeContentCompartmentEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(connectedViews,
+					BasicSDDVisualIDRegistry.getType(StoryPatternEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
+					BasicSDDVisualIDRegistry.getType(EdgeEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
+					BasicSDDVisualIDRegistry.getType(EdgeEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
 			if (!incominglinks.isEmpty()) {
 				result.add(incominglinks);
 			}
@@ -292,28 +279,22 @@ public class BasicSDDNavigatorContentProvider implements ICommonContentProvider 
 			return result.toArray();
 		}
 
-		case org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.LeafNodeEditPart.VISUAL_ID: {
-			LinkedList<org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDAbstractNavigatorItem> result = new LinkedList<org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDAbstractNavigatorItem>();
+		case LeafNodeEditPart.VISUAL_ID: {
+			LinkedList<BasicSDDAbstractNavigatorItem> result = new LinkedList<BasicSDDAbstractNavigatorItem>();
 			Node sv = (Node) view;
-			org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDNavigatorGroup incominglinks = new org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDNavigatorGroup(
-					org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.Messages.NavigatorGroupName_LeafNode_2004_incominglinks,
-					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDNavigatorGroup outgoinglinks = new org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDNavigatorGroup(
-					org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.Messages.NavigatorGroupName_LeafNode_2004_outgoinglinks,
-					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			BasicSDDNavigatorGroup incominglinks = new BasicSDDNavigatorGroup(
+					Messages.NavigatorGroupName_LeafNode_2004_incominglinks, "icons/incomingLinksNavigatorGroup.gif", //$NON-NLS-1$
+					parentElement);
+			BasicSDDNavigatorGroup outgoinglinks = new BasicSDDNavigatorGroup(
+					Messages.NavigatorGroupName_LeafNode_2004_outgoinglinks, "icons/outgoingLinksNavigatorGroup.gif", //$NON-NLS-1$
+					parentElement);
 			Collection<View> connectedViews;
-			connectedViews = getIncomingLinksByType(
-					Collections.singleton(sv),
-					org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDVisualIDRegistry
-							.getType(org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.EdgeEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
-			connectedViews = getOutgoingLinksByType(
-					Collections.singleton(sv),
-					org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDVisualIDRegistry
-							.getType(org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.EdgeEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
+			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
+					BasicSDDVisualIDRegistry.getType(EdgeEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
+					BasicSDDVisualIDRegistry.getType(EdgeEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
 			if (!incominglinks.isEmpty()) {
 				result.add(incominglinks);
 			}
@@ -323,48 +304,32 @@ public class BasicSDDNavigatorContentProvider implements ICommonContentProvider 
 			return result.toArray();
 		}
 
-		case org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.CollectionVariableEditPart.VISUAL_ID: {
-			LinkedList<org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDAbstractNavigatorItem> result = new LinkedList<org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDAbstractNavigatorItem>();
+		case CollectionVariableEditPart.VISUAL_ID: {
+			LinkedList<BasicSDDAbstractNavigatorItem> result = new LinkedList<BasicSDDAbstractNavigatorItem>();
 			Node sv = (Node) view;
-			org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDNavigatorGroup incominglinks = new org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDNavigatorGroup(
-					org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.Messages.NavigatorGroupName_CollectionVariable_3006_incominglinks,
+			BasicSDDNavigatorGroup incominglinks = new BasicSDDNavigatorGroup(
+					Messages.NavigatorGroupName_CollectionVariable_3006_incominglinks,
 					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDNavigatorGroup outgoinglinks = new org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDNavigatorGroup(
-					org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.Messages.NavigatorGroupName_CollectionVariable_3006_outgoinglinks,
+			BasicSDDNavigatorGroup outgoinglinks = new BasicSDDNavigatorGroup(
+					Messages.NavigatorGroupName_CollectionVariable_3006_outgoinglinks,
 					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
-			connectedViews = getChildrenByType(
-					Collections.singleton(sv),
-					org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDVisualIDRegistry
-							.getType(org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.CollectionVariableCollectionVariableAttributeAssignmentsCompartmentEditPart.VISUAL_ID));
-			connectedViews = getChildrenByType(
-					connectedViews,
-					org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDVisualIDRegistry
-							.getType(org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.AttributeAssignmentEditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement,
-					false));
-			connectedViews = getChildrenByType(
-					Collections.singleton(sv),
-					org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDVisualIDRegistry
-							.getType(org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.CollectionVariableCollectionVariableConstraintsCompartmentEditPart.VISUAL_ID));
-			connectedViews = getChildrenByType(
-					connectedViews,
-					org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDVisualIDRegistry
-							.getType(org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.ConstraintEditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement,
-					false));
-			connectedViews = getIncomingLinksByType(
-					Collections.singleton(sv),
-					org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDVisualIDRegistry
-							.getType(org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.LinkVariableEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
-			connectedViews = getOutgoingLinksByType(
-					Collections.singleton(sv),
-					org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDVisualIDRegistry
-							.getType(org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.LinkVariableEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
+			connectedViews = getChildrenByType(Collections.singleton(sv), BasicSDDVisualIDRegistry
+					.getType(CollectionVariableCollectionVariableAttributeAssignmentsCompartmentEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(connectedViews,
+					BasicSDDVisualIDRegistry.getType(AttributeAssignmentEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+			connectedViews = getChildrenByType(Collections.singleton(sv), BasicSDDVisualIDRegistry
+					.getType(CollectionVariableCollectionVariableConstraintsCompartmentEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(connectedViews,
+					BasicSDDVisualIDRegistry.getType(ConstraintEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
+					BasicSDDVisualIDRegistry.getType(LinkVariableEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
+					BasicSDDVisualIDRegistry.getType(LinkVariableEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
 			if (!incominglinks.isEmpty()) {
 				result.add(incominglinks);
 			}
@@ -374,48 +339,32 @@ public class BasicSDDNavigatorContentProvider implements ICommonContentProvider 
 			return result.toArray();
 		}
 
-		case org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.ObjectVariableEditPart.VISUAL_ID: {
-			LinkedList<org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDAbstractNavigatorItem> result = new LinkedList<org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDAbstractNavigatorItem>();
+		case ObjectVariableEditPart.VISUAL_ID: {
+			LinkedList<BasicSDDAbstractNavigatorItem> result = new LinkedList<BasicSDDAbstractNavigatorItem>();
 			Node sv = (Node) view;
-			org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDNavigatorGroup incominglinks = new org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDNavigatorGroup(
-					org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.Messages.NavigatorGroupName_ObjectVariable_3009_incominglinks,
+			BasicSDDNavigatorGroup incominglinks = new BasicSDDNavigatorGroup(
+					Messages.NavigatorGroupName_ObjectVariable_3009_incominglinks,
 					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDNavigatorGroup outgoinglinks = new org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDNavigatorGroup(
-					org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.Messages.NavigatorGroupName_ObjectVariable_3009_outgoinglinks,
+			BasicSDDNavigatorGroup outgoinglinks = new BasicSDDNavigatorGroup(
+					Messages.NavigatorGroupName_ObjectVariable_3009_outgoinglinks,
 					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
-			connectedViews = getChildrenByType(
-					Collections.singleton(sv),
-					org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDVisualIDRegistry
-							.getType(org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.ObjectVariableObjectVariableAttributeAssignmentsCompartmentEditPart.VISUAL_ID));
-			connectedViews = getChildrenByType(
-					connectedViews,
-					org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDVisualIDRegistry
-							.getType(org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.AttributeAssignmentEditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement,
-					false));
-			connectedViews = getChildrenByType(
-					Collections.singleton(sv),
-					org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDVisualIDRegistry
-							.getType(org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.ObjectVariableObjectVariableConstraintsCompartmentEditPart.VISUAL_ID));
-			connectedViews = getChildrenByType(
-					connectedViews,
-					org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDVisualIDRegistry
-							.getType(org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.ConstraintEditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement,
-					false));
-			connectedViews = getIncomingLinksByType(
-					Collections.singleton(sv),
-					org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDVisualIDRegistry
-							.getType(org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.LinkVariableEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
-			connectedViews = getOutgoingLinksByType(
-					Collections.singleton(sv),
-					org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDVisualIDRegistry
-							.getType(org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.LinkVariableEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
+			connectedViews = getChildrenByType(Collections.singleton(sv), BasicSDDVisualIDRegistry
+					.getType(ObjectVariableObjectVariableAttributeAssignmentsCompartmentEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(connectedViews,
+					BasicSDDVisualIDRegistry.getType(AttributeAssignmentEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+			connectedViews = getChildrenByType(Collections.singleton(sv), BasicSDDVisualIDRegistry
+					.getType(ObjectVariableObjectVariableConstraintsCompartmentEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(connectedViews,
+					BasicSDDVisualIDRegistry.getType(ConstraintEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
+					BasicSDDVisualIDRegistry.getType(LinkVariableEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
+					BasicSDDVisualIDRegistry.getType(LinkVariableEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
 			if (!incominglinks.isEmpty()) {
 				result.add(incominglinks);
 			}
@@ -425,77 +374,48 @@ public class BasicSDDNavigatorContentProvider implements ICommonContentProvider 
 			return result.toArray();
 		}
 
-		case org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryPatternEditPart.VISUAL_ID: {
-			LinkedList<org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDAbstractNavigatorItem> result = new LinkedList<org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDAbstractNavigatorItem>();
+		case StoryPatternEditPart.VISUAL_ID: {
+			LinkedList<BasicSDDAbstractNavigatorItem> result = new LinkedList<BasicSDDAbstractNavigatorItem>();
 			Node sv = (Node) view;
 			Collection<View> connectedViews;
-			connectedViews = getChildrenByType(
-					Collections.singleton(sv),
-					org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDVisualIDRegistry
-							.getType(org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryPatternStoryPatternContentCompartmentEditPart.VISUAL_ID));
-			connectedViews = getChildrenByType(
-					connectedViews,
-					org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDVisualIDRegistry
-							.getType(org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.CollectionVariableEditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement,
-					false));
-			connectedViews = getChildrenByType(
-					Collections.singleton(sv),
-					org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDVisualIDRegistry
-							.getType(org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryPatternStoryPatternContentCompartmentEditPart.VISUAL_ID));
-			connectedViews = getChildrenByType(
-					connectedViews,
-					org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDVisualIDRegistry
-							.getType(org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.ObjectVariableEditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement,
-					false));
-			connectedViews = getChildrenByType(
-					Collections.singleton(sv),
-					org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDVisualIDRegistry
-							.getType(org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryPatternStoryPatternConstraintsCompartmentEditPart.VISUAL_ID));
-			connectedViews = getChildrenByType(
-					connectedViews,
-					org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDVisualIDRegistry
-							.getType(org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.Constraint2EditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement,
-					false));
+			connectedViews = getChildrenByType(Collections.singleton(sv),
+					BasicSDDVisualIDRegistry.getType(StoryPatternStoryPatternContentCompartmentEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(connectedViews,
+					BasicSDDVisualIDRegistry.getType(CollectionVariableEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+			connectedViews = getChildrenByType(Collections.singleton(sv),
+					BasicSDDVisualIDRegistry.getType(StoryPatternStoryPatternContentCompartmentEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(connectedViews,
+					BasicSDDVisualIDRegistry.getType(ObjectVariableEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+			connectedViews = getChildrenByType(Collections.singleton(sv),
+					BasicSDDVisualIDRegistry.getType(StoryPatternStoryPatternConstraintsCompartmentEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(connectedViews,
+					BasicSDDVisualIDRegistry.getType(Constraint2EditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			return result.toArray();
 		}
 
-		case org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.EdgeEditPart.VISUAL_ID: {
-			LinkedList<org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDAbstractNavigatorItem> result = new LinkedList<org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDAbstractNavigatorItem>();
+		case EdgeEditPart.VISUAL_ID: {
+			LinkedList<BasicSDDAbstractNavigatorItem> result = new LinkedList<BasicSDDAbstractNavigatorItem>();
 			Edge sv = (Edge) view;
-			org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDNavigatorGroup target = new org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDNavigatorGroup(
-					org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.Messages.NavigatorGroupName_Edge_4001_target,
+			BasicSDDNavigatorGroup target = new BasicSDDNavigatorGroup(Messages.NavigatorGroupName_Edge_4001_target,
 					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDNavigatorGroup source = new org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDNavigatorGroup(
-					org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.Messages.NavigatorGroupName_Edge_4001_source,
+			BasicSDDNavigatorGroup source = new BasicSDDNavigatorGroup(Messages.NavigatorGroupName_Edge_4001_source,
 					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
-			connectedViews = getLinksTargetByType(
-					Collections.singleton(sv),
-					org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDVisualIDRegistry
-							.getType(org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryPatternNodeEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
-			connectedViews = getLinksTargetByType(
-					Collections.singleton(sv),
-					org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDVisualIDRegistry
-							.getType(org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.LeafNodeEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
-			connectedViews = getLinksSourceByType(
-					Collections.singleton(sv),
-					org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDVisualIDRegistry
-							.getType(org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryPatternNodeEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
-			connectedViews = getLinksSourceByType(
-					Collections.singleton(sv),
-					org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDVisualIDRegistry
-							.getType(org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.LeafNodeEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
+			connectedViews = getLinksTargetByType(Collections.singleton(sv),
+					BasicSDDVisualIDRegistry.getType(StoryPatternNodeEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target, true));
+			connectedViews = getLinksTargetByType(Collections.singleton(sv),
+					BasicSDDVisualIDRegistry.getType(LeafNodeEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target, true));
+			connectedViews = getLinksSourceByType(Collections.singleton(sv),
+					BasicSDDVisualIDRegistry.getType(StoryPatternNodeEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source, true));
+			connectedViews = getLinksSourceByType(Collections.singleton(sv),
+					BasicSDDVisualIDRegistry.getType(LeafNodeEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			if (!target.isEmpty()) {
 				result.add(target);
 			}
@@ -505,40 +425,28 @@ public class BasicSDDNavigatorContentProvider implements ICommonContentProvider 
 			return result.toArray();
 		}
 
-		case org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.LinkVariableEditPart.VISUAL_ID: {
-			LinkedList<org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDAbstractNavigatorItem> result = new LinkedList<org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDAbstractNavigatorItem>();
+		case LinkVariableEditPart.VISUAL_ID: {
+			LinkedList<BasicSDDAbstractNavigatorItem> result = new LinkedList<BasicSDDAbstractNavigatorItem>();
 			Edge sv = (Edge) view;
-			org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDNavigatorGroup target = new org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDNavigatorGroup(
-					org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.Messages.NavigatorGroupName_LinkVariable_4003_target,
-					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDNavigatorGroup source = new org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDNavigatorGroup(
-					org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.Messages.NavigatorGroupName_LinkVariable_4003_source,
-					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			BasicSDDNavigatorGroup target = new BasicSDDNavigatorGroup(
+					Messages.NavigatorGroupName_LinkVariable_4003_target, "icons/linkTargetNavigatorGroup.gif", //$NON-NLS-1$
+					parentElement);
+			BasicSDDNavigatorGroup source = new BasicSDDNavigatorGroup(
+					Messages.NavigatorGroupName_LinkVariable_4003_source, "icons/linkSourceNavigatorGroup.gif", //$NON-NLS-1$
+					parentElement);
 			Collection<View> connectedViews;
-			connectedViews = getLinksTargetByType(
-					Collections.singleton(sv),
-					org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDVisualIDRegistry
-							.getType(org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.CollectionVariableEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
-			connectedViews = getLinksTargetByType(
-					Collections.singleton(sv),
-					org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDVisualIDRegistry
-							.getType(org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.ObjectVariableEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
-			connectedViews = getLinksSourceByType(
-					Collections.singleton(sv),
-					org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDVisualIDRegistry
-							.getType(org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.CollectionVariableEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
-			connectedViews = getLinksSourceByType(
-					Collections.singleton(sv),
-					org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDVisualIDRegistry
-							.getType(org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.ObjectVariableEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
+			connectedViews = getLinksTargetByType(Collections.singleton(sv),
+					BasicSDDVisualIDRegistry.getType(CollectionVariableEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target, true));
+			connectedViews = getLinksTargetByType(Collections.singleton(sv),
+					BasicSDDVisualIDRegistry.getType(ObjectVariableEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target, true));
+			connectedViews = getLinksSourceByType(Collections.singleton(sv),
+					BasicSDDVisualIDRegistry.getType(CollectionVariableEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source, true));
+			connectedViews = getLinksSourceByType(Collections.singleton(sv),
+					BasicSDDVisualIDRegistry.getType(ObjectVariableEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			if (!target.isEmpty()) {
 				result.add(target);
 			}
@@ -554,13 +462,11 @@ public class BasicSDDNavigatorContentProvider implements ICommonContentProvider 
 	/**
 	 * @generated
 	 */
-	private Collection<View> getLinksSourceByType(Collection<Edge> edges,
-			String type) {
+	private Collection<View> getLinksSourceByType(Collection<Edge> edges, String type) {
 		LinkedList<View> result = new LinkedList<View>();
 		for (Edge nextEdge : edges) {
 			View nextEdgeSource = nextEdge.getSource();
-			if (type.equals(nextEdgeSource.getType())
-					&& isOwnView(nextEdgeSource)) {
+			if (type.equals(nextEdgeSource.getType()) && isOwnView(nextEdgeSource)) {
 				result.add(nextEdgeSource);
 			}
 		}
@@ -570,13 +476,11 @@ public class BasicSDDNavigatorContentProvider implements ICommonContentProvider 
 	/**
 	 * @generated
 	 */
-	private Collection<View> getLinksTargetByType(Collection<Edge> edges,
-			String type) {
+	private Collection<View> getLinksTargetByType(Collection<Edge> edges, String type) {
 		LinkedList<View> result = new LinkedList<View>();
 		for (Edge nextEdge : edges) {
 			View nextEdgeTarget = nextEdge.getTarget();
-			if (type.equals(nextEdgeTarget.getType())
-					&& isOwnView(nextEdgeTarget)) {
+			if (type.equals(nextEdgeTarget.getType()) && isOwnView(nextEdgeTarget)) {
 				result.add(nextEdgeTarget);
 			}
 		}
@@ -586,8 +490,7 @@ public class BasicSDDNavigatorContentProvider implements ICommonContentProvider 
 	/**
 	 * @generated
 	 */
-	private Collection<View> getOutgoingLinksByType(
-			Collection<? extends View> nodes, String type) {
+	private Collection<View> getOutgoingLinksByType(Collection<? extends View> nodes, String type) {
 		LinkedList<View> result = new LinkedList<View>();
 		for (View nextNode : nodes) {
 			result.addAll(selectViewsByType(nextNode.getSourceEdges(), type));
@@ -598,8 +501,7 @@ public class BasicSDDNavigatorContentProvider implements ICommonContentProvider 
 	/**
 	 * @generated
 	 */
-	private Collection<View> getIncomingLinksByType(
-			Collection<? extends View> nodes, String type) {
+	private Collection<View> getIncomingLinksByType(Collection<? extends View> nodes, String type) {
 		LinkedList<View> result = new LinkedList<View>();
 		for (View nextNode : nodes) {
 			result.addAll(selectViewsByType(nextNode.getTargetEdges(), type));
@@ -610,8 +512,7 @@ public class BasicSDDNavigatorContentProvider implements ICommonContentProvider 
 	/**
 	 * @generated
 	 */
-	private Collection<View> getChildrenByType(
-			Collection<? extends View> nodes, String type) {
+	private Collection<View> getChildrenByType(Collection<? extends View> nodes, String type) {
 		LinkedList<View> result = new LinkedList<View>();
 		for (View nextNode : nodes) {
 			result.addAll(selectViewsByType(nextNode.getChildren(), type));
@@ -622,8 +523,7 @@ public class BasicSDDNavigatorContentProvider implements ICommonContentProvider 
 	/**
 	 * @generated
 	 */
-	private Collection<View> getDiagramLinksByType(
-			Collection<Diagram> diagrams, String type) {
+	private Collection<View> getDiagramLinksByType(Collection<Diagram> diagrams, String type) {
 		ArrayList<View> result = new ArrayList<View>();
 		for (Diagram nextDiagram : diagrams) {
 			result.addAll(selectViewsByType(nextDiagram.getEdges(), type));
@@ -635,8 +535,7 @@ public class BasicSDDNavigatorContentProvider implements ICommonContentProvider 
 	/**
 	 * @generated
 	 */
-	private Collection<View> selectViewsByType(Collection<View> views,
-			String type) {
+	private Collection<View> selectViewsByType(Collection<View> views, String type) {
 		ArrayList<View> result = new ArrayList<View>();
 		for (View nextView : views) {
 			if (type.equals(nextView.getType()) && isOwnView(nextView)) {
@@ -650,21 +549,17 @@ public class BasicSDDNavigatorContentProvider implements ICommonContentProvider 
 	 * @generated
 	 */
 	private boolean isOwnView(View view) {
-		return org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryDecisionDiagramEditPart.MODEL_ID
-				.equals(org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDVisualIDRegistry
-						.getModelID(view));
+		return StoryDecisionDiagramEditPart.MODEL_ID.equals(BasicSDDVisualIDRegistry.getModelID(view));
 	}
 
 	/**
 	 * @generated
 	 */
-	private Collection<org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDNavigatorItem> createNavigatorItems(
-			Collection<View> views, Object parent, boolean isLeafs) {
-		ArrayList<org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDNavigatorItem> result = new ArrayList<org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDNavigatorItem>(
-				views.size());
+	private Collection<BasicSDDNavigatorItem> createNavigatorItems(Collection<View> views, Object parent,
+			boolean isLeafs) {
+		ArrayList<BasicSDDNavigatorItem> result = new ArrayList<BasicSDDNavigatorItem>(views.size());
 		for (View nextView : views) {
-			result.add(new org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDNavigatorItem(
-					nextView, parent, isLeafs));
+			result.add(new BasicSDDNavigatorItem(nextView, parent, isLeafs));
 		}
 		return result;
 	}
@@ -673,8 +568,8 @@ public class BasicSDDNavigatorContentProvider implements ICommonContentProvider 
 	 * @generated
 	 */
 	public Object getParent(Object element) {
-		if (element instanceof org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDAbstractNavigatorItem) {
-			org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDAbstractNavigatorItem abstractNavigatorItem = (org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDAbstractNavigatorItem) element;
+		if (element instanceof BasicSDDAbstractNavigatorItem) {
+			BasicSDDAbstractNavigatorItem abstractNavigatorItem = (BasicSDDAbstractNavigatorItem) element;
 			return abstractNavigatorItem.getParent();
 		}
 		return null;

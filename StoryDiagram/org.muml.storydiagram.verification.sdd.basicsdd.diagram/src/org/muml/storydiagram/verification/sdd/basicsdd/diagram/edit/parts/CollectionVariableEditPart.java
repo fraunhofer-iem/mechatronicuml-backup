@@ -7,6 +7,7 @@ import java.util.List;
 
 import org.eclipse.draw2d.BorderLayout;
 import org.eclipse.draw2d.ColorConstants;
+import org.eclipse.draw2d.ConnectionAnchor;
 import org.eclipse.draw2d.GridData;
 import org.eclipse.draw2d.GridLayout;
 import org.eclipse.draw2d.IFigure;
@@ -38,6 +39,13 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Font;
 import org.eclipse.swt.widgets.Display;
+import org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy;
+import org.muml.core.common.edit.policies.anchor.IConnectionAnchorCreationEditPolicy;
+import org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy;
+import org.muml.pim.common.edit.policies.IBackgroundColorEditPolicy;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.policies.CollectionVariableItemSemanticEditPolicy;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDVisualIDRegistry;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.BasicSDDElementTypes;
 
 /**
  * @generated
@@ -73,6 +81,22 @@ public class CollectionVariableEditPart extends ShapeNodeEditPart {
 	}
 
 	/**
+	* MUML FIX: Adapt background color if IBackgroundColorEditPolicy is registered.
+	* 
+	* @generated
+	*/
+	@Override
+	protected void refreshBackgroundColor() {
+		EditPolicy backgroundColorPolicy = getEditPolicy(
+				org.muml.core.common.edit.policies.EditPolicyRoles.BACKGROUND_COLOR_ROLE);
+		if (backgroundColorPolicy instanceof IBackgroundColorEditPolicy) {
+			setBackgroundColor(((IBackgroundColorEditPolicy) backgroundColorPolicy).getCurrentBackgroundColor());
+		} else {
+			super.refreshBackgroundColor();
+		}
+	}
+
+	/**
 	 * @generated
 	 */
 	protected IFigure contentPane;
@@ -93,25 +117,18 @@ public class CollectionVariableEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected void createDefaultEditPolicies() {
-		installEditPolicy(
-				EditPolicyRoles.CREATION_ROLE,
-				new CreationEditPolicyWithCustomReparent(
-						org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDVisualIDRegistry.TYPED_INSTANCE));
+		installEditPolicy(EditPolicyRoles.CREATION_ROLE,
+				new CreationEditPolicyWithCustomReparent(BasicSDDVisualIDRegistry.TYPED_INSTANCE));
 		super.createDefaultEditPolicies();
-		installEditPolicy(
-				EditPolicyRoles.SEMANTIC_ROLE,
-				new org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.policies.CollectionVariableItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new CollectionVariableItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 
-		installEditPolicy(
-				EditPolicy.GRAPHICAL_NODE_ROLE,
-				new org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy());
+		installEditPolicy(EditPolicy.GRAPHICAL_NODE_ROLE, new ConnectionConfigureHelperGraphicalNodeEditPolicy());
 
-		installEditPolicy(
-				org.muml.core.common.edit.policies.EditPolicyRoles.ERROR_FEEDBACK_ROLE,
-				new org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy());
+		installEditPolicy(org.muml.core.common.edit.policies.EditPolicyRoles.ERROR_FEEDBACK_ROLE,
+				new ErrorFeedbackEditPolicy());
 
 	}
 
@@ -122,8 +139,7 @@ public class CollectionVariableEditPart extends ShapeNodeEditPart {
 		org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy lep = new org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy() {
 
 			protected EditPolicy createChildEditPolicy(EditPart child) {
-				EditPolicy result = child
-						.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
+				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
 				if (result == null) {
 					result = new NonResizableEditPolicy();
 				}
@@ -159,37 +175,29 @@ public class CollectionVariableEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.WrappingLabelEditPart) {
-			((org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.WrappingLabelEditPart) childEditPart)
-					.setLabel(getPrimaryShape()
-							.getCollectionVariableOperatorLabel());
+		if (childEditPart instanceof WrappingLabelEditPart) {
+			((WrappingLabelEditPart) childEditPart).setLabel(getPrimaryShape().getCollectionVariableOperatorLabel());
 			return true;
 		}
-		if (childEditPart instanceof org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.CollectionVariableNameEditPart) {
-			((org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.CollectionVariableNameEditPart) childEditPart)
-					.setLabel(getPrimaryShape()
-							.getCollectionVariableNameLabel());
+		if (childEditPart instanceof CollectionVariableNameEditPart) {
+			((CollectionVariableNameEditPart) childEditPart)
+					.setLabel(getPrimaryShape().getCollectionVariableNameLabel());
 			return true;
 		}
-		if (childEditPart instanceof org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.WrappingLabel2EditPart) {
-			((org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.WrappingLabel2EditPart) childEditPart)
-					.setLabel(getPrimaryShape()
-							.getCollectionVariableTypeLabel());
+		if (childEditPart instanceof WrappingLabel2EditPart) {
+			((WrappingLabel2EditPart) childEditPart).setLabel(getPrimaryShape().getCollectionVariableTypeLabel());
 			return true;
 		}
-		if (childEditPart instanceof org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.CollectionVariableCollectionVariableConstraintsCompartmentEditPart) {
-			IFigure pane = getPrimaryShape()
-					.getCollectionVariableConstraintsRectangle();
+		if (childEditPart instanceof CollectionVariableCollectionVariableConstraintsCompartmentEditPart) {
+			IFigure pane = getPrimaryShape().getCollectionVariableConstraintsRectangle();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
-			pane.add(((org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.CollectionVariableCollectionVariableConstraintsCompartmentEditPart) childEditPart)
-					.getFigure());
+			pane.add(((CollectionVariableCollectionVariableConstraintsCompartmentEditPart) childEditPart).getFigure());
 			return true;
 		}
-		if (childEditPart instanceof org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.CollectionVariableCollectionVariableAttributeAssignmentsCompartmentEditPart) {
-			IFigure pane = getPrimaryShape()
-					.getCollectionVariableAttributeAssignmentsRectangle();
+		if (childEditPart instanceof CollectionVariableCollectionVariableAttributeAssignmentsCompartmentEditPart) {
+			IFigure pane = getPrimaryShape().getCollectionVariableAttributeAssignmentsRectangle();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
-			pane.add(((org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.CollectionVariableCollectionVariableAttributeAssignmentsCompartmentEditPart) childEditPart)
+			pane.add(((CollectionVariableCollectionVariableAttributeAssignmentsCompartmentEditPart) childEditPart)
 					.getFigure());
 			return true;
 		}
@@ -200,26 +208,24 @@ public class CollectionVariableEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.WrappingLabelEditPart) {
+		if (childEditPart instanceof WrappingLabelEditPart) {
 			return true;
 		}
-		if (childEditPart instanceof org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.CollectionVariableNameEditPart) {
+		if (childEditPart instanceof CollectionVariableNameEditPart) {
 			return true;
 		}
-		if (childEditPart instanceof org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.WrappingLabel2EditPart) {
+		if (childEditPart instanceof WrappingLabel2EditPart) {
 			return true;
 		}
-		if (childEditPart instanceof org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.CollectionVariableCollectionVariableConstraintsCompartmentEditPart) {
-			IFigure pane = getPrimaryShape()
-					.getCollectionVariableConstraintsRectangle();
-			pane.remove(((org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.CollectionVariableCollectionVariableConstraintsCompartmentEditPart) childEditPart)
-					.getFigure());
+		if (childEditPart instanceof CollectionVariableCollectionVariableConstraintsCompartmentEditPart) {
+			IFigure pane = getPrimaryShape().getCollectionVariableConstraintsRectangle();
+			pane.remove(
+					((CollectionVariableCollectionVariableConstraintsCompartmentEditPart) childEditPart).getFigure());
 			return true;
 		}
-		if (childEditPart instanceof org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.CollectionVariableCollectionVariableAttributeAssignmentsCompartmentEditPart) {
-			IFigure pane = getPrimaryShape()
-					.getCollectionVariableAttributeAssignmentsRectangle();
-			pane.remove(((org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.CollectionVariableCollectionVariableAttributeAssignmentsCompartmentEditPart) childEditPart)
+		if (childEditPart instanceof CollectionVariableCollectionVariableAttributeAssignmentsCompartmentEditPart) {
+			IFigure pane = getPrimaryShape().getCollectionVariableAttributeAssignmentsRectangle();
+			pane.remove(((CollectionVariableCollectionVariableAttributeAssignmentsCompartmentEditPart) childEditPart)
 					.getFigure());
 			return true;
 		}
@@ -250,13 +256,11 @@ public class CollectionVariableEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
-		if (editPart instanceof org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.CollectionVariableCollectionVariableConstraintsCompartmentEditPart) {
-			return getPrimaryShape()
-					.getCollectionVariableConstraintsRectangle();
+		if (editPart instanceof CollectionVariableCollectionVariableConstraintsCompartmentEditPart) {
+			return getPrimaryShape().getCollectionVariableConstraintsRectangle();
 		}
-		if (editPart instanceof org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.CollectionVariableCollectionVariableAttributeAssignmentsCompartmentEditPart) {
-			return getPrimaryShape()
-					.getCollectionVariableAttributeAssignmentsRectangle();
+		if (editPart instanceof CollectionVariableCollectionVariableAttributeAssignmentsCompartmentEditPart) {
+			return getPrimaryShape().getCollectionVariableAttributeAssignmentsRectangle();
 		}
 		return getContentPane();
 	}
@@ -265,7 +269,17 @@ public class CollectionVariableEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected NodeFigure createNodePlate() {
-		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(40, 40);
+		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(40, 40) {
+			@Override
+			public ConnectionAnchor createDefaultAnchor() {
+				IConnectionAnchorCreationEditPolicy connectionAnchorCreationEditPolicy = (IConnectionAnchorCreationEditPolicy) getEditPolicy(
+						org.muml.core.common.edit.policies.EditPolicyRoles.CONNECTION_ANCHOR_CREATION_ROLE);
+				if (connectionAnchorCreationEditPolicy != null) {
+					return connectionAnchorCreationEditPolicy.createDefaultAnchor();
+				}
+				return super.createDefaultAnchor();
+			}
+		};
 
 		// Ensures that the element can be shrinked (Muml Bug #62).
 		result.setMinimumSize(new Dimension(0, 0));
@@ -355,8 +369,7 @@ public class CollectionVariableEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDVisualIDRegistry
-				.getType(org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID));
+		return getChildBySemanticHint(BasicSDDVisualIDRegistry.getType(WrappingLabelEditPart.VISUAL_ID));
 	}
 
 	/**
@@ -364,18 +377,16 @@ public class CollectionVariableEditPart extends ShapeNodeEditPart {
 	 */
 	public EditPart getTargetEditPart(Request request) {
 		if (request instanceof CreateViewAndElementRequest) {
-			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request)
-					.getViewAndElementDescriptor()
+			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request).getViewAndElementDescriptor()
 					.getCreateElementRequestAdapter();
-			IElementType type = (IElementType) adapter
-					.getAdapter(IElementType.class);
-			if (type == org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.BasicSDDElementTypes.Constraint_3008) {
-				return getChildBySemanticHint(org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDVisualIDRegistry
-						.getType(org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.CollectionVariableCollectionVariableConstraintsCompartmentEditPart.VISUAL_ID));
+			IElementType type = (IElementType) adapter.getAdapter(IElementType.class);
+			if (type == BasicSDDElementTypes.Constraint_3008) {
+				return getChildBySemanticHint(BasicSDDVisualIDRegistry
+						.getType(CollectionVariableCollectionVariableConstraintsCompartmentEditPart.VISUAL_ID));
 			}
-			if (type == org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.BasicSDDElementTypes.AttributeAssignment_3007) {
-				return getChildBySemanticHint(org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDVisualIDRegistry
-						.getType(org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.CollectionVariableCollectionVariableAttributeAssignmentsCompartmentEditPart.VISUAL_ID));
+			if (type == BasicSDDElementTypes.AttributeAssignment_3007) {
+				return getChildBySemanticHint(BasicSDDVisualIDRegistry.getType(
+						CollectionVariableCollectionVariableAttributeAssignmentsCompartmentEditPart.VISUAL_ID));
 			}
 		}
 		return super.getTargetEditPart(request);
@@ -414,8 +425,7 @@ public class CollectionVariableEditPart extends ShapeNodeEditPart {
 			this.setLayoutManager(new StackLayout());
 			this.setFill(false);
 			this.setOutline(false);
-			this.setMinimumSize(new Dimension(getMapMode().DPtoLP(0),
-					getMapMode().DPtoLP(0)));
+			this.setMinimumSize(new Dimension(getMapMode().DPtoLP(0), getMapMode().DPtoLP(0)));
 			createContents();
 		}
 
@@ -426,14 +436,11 @@ public class CollectionVariableEditPart extends ShapeNodeEditPart {
 
 			RectangleFigure collectionVariableShadeRectangle0 = new RectangleFigure();
 
-			collectionVariableShadeRectangle0
-					.setForegroundColor(ColorConstants.black);
-			collectionVariableShadeRectangle0
-					.setBackgroundColor(ColorConstants.white);
+			collectionVariableShadeRectangle0.setForegroundColor(ColorConstants.black);
+			collectionVariableShadeRectangle0.setBackgroundColor(ColorConstants.white);
 
-			collectionVariableShadeRectangle0.setBorder(new MarginBorder(
-					getMapMode().DPtoLP(10), getMapMode().DPtoLP(10),
-					getMapMode().DPtoLP(0), getMapMode().DPtoLP(0)));
+			collectionVariableShadeRectangle0.setBorder(new MarginBorder(getMapMode().DPtoLP(10),
+					getMapMode().DPtoLP(10), getMapMode().DPtoLP(0), getMapMode().DPtoLP(0)));
 
 			this.add(collectionVariableShadeRectangle0);
 
@@ -441,38 +448,31 @@ public class CollectionVariableEditPart extends ShapeNodeEditPart {
 
 			collectionVariableContainerRectangle0.setFill(false);
 			collectionVariableContainerRectangle0.setOutline(false);
-			collectionVariableContainerRectangle0
-					.setForegroundColor(ColorConstants.black);
-			collectionVariableContainerRectangle0
-					.setBackgroundColor(ColorConstants.white);
+			collectionVariableContainerRectangle0.setForegroundColor(ColorConstants.black);
+			collectionVariableContainerRectangle0.setBackgroundColor(ColorConstants.white);
 
-			collectionVariableContainerRectangle0.setBorder(new MarginBorder(
-					getMapMode().DPtoLP(0), getMapMode().DPtoLP(0),
-					getMapMode().DPtoLP(0), getMapMode().DPtoLP(0)));
+			collectionVariableContainerRectangle0.setBorder(new MarginBorder(getMapMode().DPtoLP(0),
+					getMapMode().DPtoLP(0), getMapMode().DPtoLP(0), getMapMode().DPtoLP(0)));
 
 			this.add(collectionVariableContainerRectangle0);
 
 			BorderLayout layoutCollectionVariableContainerRectangle0 = new BorderLayout();
-			collectionVariableContainerRectangle0
-					.setLayoutManager(layoutCollectionVariableContainerRectangle0);
+			collectionVariableContainerRectangle0.setLayoutManager(layoutCollectionVariableContainerRectangle0);
 
 			RectangleFigure collectionVariableNameRectangle1 = new RectangleFigure();
 
-			collectionVariableContainerRectangle0.add(
-					collectionVariableNameRectangle1, BorderLayout.TOP);
+			collectionVariableContainerRectangle0.add(collectionVariableNameRectangle1, BorderLayout.TOP);
 
 			GridLayout layoutCollectionVariableNameRectangle1 = new GridLayout();
 			layoutCollectionVariableNameRectangle1.numColumns = 1;
 			layoutCollectionVariableNameRectangle1.makeColumnsEqualWidth = true;
-			collectionVariableNameRectangle1
-					.setLayoutManager(layoutCollectionVariableNameRectangle1);
+			collectionVariableNameRectangle1.setLayoutManager(layoutCollectionVariableNameRectangle1);
 
 			fCollectionVariableOperatorLabel = new WrappingLabel();
 
 			fCollectionVariableOperatorLabel.setText("");
 
-			fCollectionVariableOperatorLabel
-					.setFont(FCOLLECTIONVARIABLEOPERATORLABEL_FONT);
+			fCollectionVariableOperatorLabel.setFont(FCOLLECTIONVARIABLEOPERATORLABEL_FONT);
 
 			GridData constraintFCollectionVariableOperatorLabel = new GridData();
 			constraintFCollectionVariableOperatorLabel.verticalAlignment = GridData.BEGINNING;
@@ -482,16 +482,14 @@ public class CollectionVariableEditPart extends ShapeNodeEditPart {
 			constraintFCollectionVariableOperatorLabel.verticalSpan = 1;
 			constraintFCollectionVariableOperatorLabel.grabExcessHorizontalSpace = true;
 			constraintFCollectionVariableOperatorLabel.grabExcessVerticalSpace = false;
-			collectionVariableNameRectangle1.add(
-					fCollectionVariableOperatorLabel,
+			collectionVariableNameRectangle1.add(fCollectionVariableOperatorLabel,
 					constraintFCollectionVariableOperatorLabel);
 
 			fCollectionVariableNameLabel = new WrappingLabel();
 
 			fCollectionVariableNameLabel.setText("");
 
-			fCollectionVariableNameLabel
-					.setFont(FCOLLECTIONVARIABLENAMELABEL_FONT);
+			fCollectionVariableNameLabel.setFont(FCOLLECTIONVARIABLENAMELABEL_FONT);
 
 			GridData constraintFCollectionVariableNameLabel = new GridData();
 			constraintFCollectionVariableNameLabel.verticalAlignment = GridData.CENTER;
@@ -501,15 +499,13 @@ public class CollectionVariableEditPart extends ShapeNodeEditPart {
 			constraintFCollectionVariableNameLabel.verticalSpan = 1;
 			constraintFCollectionVariableNameLabel.grabExcessHorizontalSpace = true;
 			constraintFCollectionVariableNameLabel.grabExcessVerticalSpace = false;
-			collectionVariableNameRectangle1.add(fCollectionVariableNameLabel,
-					constraintFCollectionVariableNameLabel);
+			collectionVariableNameRectangle1.add(fCollectionVariableNameLabel, constraintFCollectionVariableNameLabel);
 
 			fCollectionVariableTypeLabel = new WrappingLabel();
 
 			fCollectionVariableTypeLabel.setText("");
 
-			fCollectionVariableTypeLabel
-					.setFont(FCOLLECTIONVARIABLETYPELABEL_FONT);
+			fCollectionVariableTypeLabel.setFont(FCOLLECTIONVARIABLETYPELABEL_FONT);
 
 			GridData constraintFCollectionVariableTypeLabel = new GridData();
 			constraintFCollectionVariableTypeLabel.verticalAlignment = GridData.END;
@@ -519,37 +515,31 @@ public class CollectionVariableEditPart extends ShapeNodeEditPart {
 			constraintFCollectionVariableTypeLabel.verticalSpan = 1;
 			constraintFCollectionVariableTypeLabel.grabExcessHorizontalSpace = true;
 			constraintFCollectionVariableTypeLabel.grabExcessVerticalSpace = false;
-			collectionVariableNameRectangle1.add(fCollectionVariableTypeLabel,
-					constraintFCollectionVariableTypeLabel);
+			collectionVariableNameRectangle1.add(fCollectionVariableTypeLabel, constraintFCollectionVariableTypeLabel);
 
 			RectangleFigure collectionVariableBodyRectangle1 = new RectangleFigure();
 
 			collectionVariableBodyRectangle1.setFill(false);
 			collectionVariableBodyRectangle1.setOutline(false);
 
-			collectionVariableContainerRectangle0.add(
-					collectionVariableBodyRectangle1, BorderLayout.CENTER);
+			collectionVariableContainerRectangle0.add(collectionVariableBodyRectangle1, BorderLayout.CENTER);
 
 			BorderLayout layoutCollectionVariableBodyRectangle1 = new BorderLayout();
-			collectionVariableBodyRectangle1
-					.setLayoutManager(layoutCollectionVariableBodyRectangle1);
+			collectionVariableBodyRectangle1.setLayoutManager(layoutCollectionVariableBodyRectangle1);
 
 			fCollectionVariableConstraintsRectangle = new RectangleFigure();
 
 			fCollectionVariableConstraintsRectangle.setFill(false);
 			fCollectionVariableConstraintsRectangle.setOutline(false);
 
-			collectionVariableBodyRectangle1.add(
-					fCollectionVariableConstraintsRectangle, BorderLayout.TOP);
+			collectionVariableBodyRectangle1.add(fCollectionVariableConstraintsRectangle, BorderLayout.TOP);
 
 			fCollectionVariableAttributeAssignmentsRectangle = new RectangleFigure();
 
 			fCollectionVariableAttributeAssignmentsRectangle.setFill(false);
 			fCollectionVariableAttributeAssignmentsRectangle.setOutline(false);
 
-			collectionVariableBodyRectangle1.add(
-					fCollectionVariableAttributeAssignmentsRectangle,
-					BorderLayout.CENTER);
+			collectionVariableBodyRectangle1.add(fCollectionVariableAttributeAssignmentsRectangle, BorderLayout.CENTER);
 
 		}
 
@@ -593,22 +583,19 @@ public class CollectionVariableEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	static final Font FCOLLECTIONVARIABLEOPERATORLABEL_FONT = new Font(
-			Display.getCurrent(), Display.getDefault().getSystemFont()
-					.getFontData()[0].getName(), 9, SWT.ITALIC);
+	static final Font FCOLLECTIONVARIABLEOPERATORLABEL_FONT = new Font(Display.getCurrent(),
+			Display.getDefault().getSystemFont().getFontData()[0].getName(), 9, SWT.ITALIC);
 
 	/**
 	 * @generated
 	 */
-	static final Font FCOLLECTIONVARIABLENAMELABEL_FONT = new Font(
-			Display.getCurrent(), Display.getDefault().getSystemFont()
-					.getFontData()[0].getName(), 9, SWT.BOLD);
+	static final Font FCOLLECTIONVARIABLENAMELABEL_FONT = new Font(Display.getCurrent(),
+			Display.getDefault().getSystemFont().getFontData()[0].getName(), 9, SWT.BOLD);
 
 	/**
 	 * @generated
 	 */
-	static final Font FCOLLECTIONVARIABLETYPELABEL_FONT = new Font(
-			Display.getCurrent(), Display.getDefault().getSystemFont()
-					.getFontData()[0].getName(), 9, SWT.BOLD);
+	static final Font FCOLLECTIONVARIABLETYPELABEL_FONT = new Font(Display.getCurrent(),
+			Display.getDefault().getSystemFont().getFontData()[0].getName(), 9, SWT.BOLD);
 
 }

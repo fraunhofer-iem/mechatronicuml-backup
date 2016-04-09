@@ -6,19 +6,18 @@ import org.eclipse.swt.graphics.Image;
 import org.eclipse.ui.IMemento;
 import org.eclipse.ui.navigator.ICommonContentExtensionSite;
 import org.eclipse.ui.navigator.ICommonLabelProvider;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDDiagramEditorPlugin;
 
 /**
  * @generated
  */
-public class BasicSDDDomainNavigatorLabelProvider implements
-		ICommonLabelProvider {
+public class BasicSDDDomainNavigatorLabelProvider implements ICommonLabelProvider {
 
 	/**
 	 * @generated
 	 */
 	private AdapterFactoryLabelProvider myAdapterFactoryLabelProvider = new AdapterFactoryLabelProvider(
-			org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDDiagramEditorPlugin
-					.getInstance().getItemProvidersAdapterFactory());
+			BasicSDDDiagramEditorPlugin.getInstance().getItemProvidersAdapterFactory());
 
 	/**
 	 * @generated
@@ -30,10 +29,8 @@ public class BasicSDDDomainNavigatorLabelProvider implements
 	 * @generated
 	 */
 	public Image getImage(Object element) {
-		if (element instanceof org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDDomainNavigatorItem) {
-			return myAdapterFactoryLabelProvider
-					.getImage(((org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDDomainNavigatorItem) element)
-							.getEObject());
+		if (element instanceof BasicSDDDomainNavigatorItem) {
+			return myAdapterFactoryLabelProvider.getImage(((BasicSDDDomainNavigatorItem) element).getEObject());
 		}
 		return null;
 	}
@@ -42,10 +39,8 @@ public class BasicSDDDomainNavigatorLabelProvider implements
 	 * @generated
 	 */
 	public String getText(Object element) {
-		if (element instanceof org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDDomainNavigatorItem) {
-			return myAdapterFactoryLabelProvider
-					.getText(((org.muml.storydiagram.verification.sdd.basicsdd.diagram.navigator.BasicSDDDomainNavigatorItem) element)
-							.getEObject());
+		if (element instanceof BasicSDDDomainNavigatorItem) {
+			return myAdapterFactoryLabelProvider.getText(((BasicSDDDomainNavigatorItem) element).getEObject());
 		}
 		return null;
 	}

@@ -17,12 +17,16 @@ import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.edit.policies.reparent.CreationEditPolicyWithCustomReparent;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.policies.CollectionVariableCollectionVariableConstraintsCompartmentCanonicalEditPolicy;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.policies.CollectionVariableCollectionVariableConstraintsCompartmentItemSemanticEditPolicy;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDVisualIDRegistry;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.Messages;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.BasicSDDElementTypes;
 
 /**
  * @generated
  */
-public class CollectionVariableCollectionVariableConstraintsCompartmentEditPart
-		extends ListCompartmentEditPart {
+public class CollectionVariableCollectionVariableConstraintsCompartmentEditPart extends ListCompartmentEditPart {
 
 	/**
 	 * @generated
@@ -55,8 +59,7 @@ public class CollectionVariableCollectionVariableConstraintsCompartmentEditPart
 	/**
 	 * @generated
 	 */
-	public CollectionVariableCollectionVariableConstraintsCompartmentEditPart(
-			View view) {
+	public CollectionVariableCollectionVariableConstraintsCompartmentEditPart(View view) {
 		super(view);
 	}
 
@@ -71,21 +74,19 @@ public class CollectionVariableCollectionVariableConstraintsCompartmentEditPart
 	 * @generated
 	 */
 	public String getCompartmentName() {
-		return org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.Messages.CollectionVariableCollectionVariableConstraintsCompartmentEditPart_title;
+		return Messages.CollectionVariableCollectionVariableConstraintsCompartmentEditPart_title;
 	}
 
 	/**
 	 * @generated
 	 */
 	public IFigure createFigure() {
-		ResizableCompartmentFigure result = (ResizableCompartmentFigure) super
-				.createFigure();
+		ResizableCompartmentFigure result = (ResizableCompartmentFigure) super.createFigure();
 
 		result.setTitleVisibility(false);
 
 		// Begin added to always stretch list layouts
-		LayoutManager layoutManager = result.getContentPane()
-				.getLayoutManager();
+		LayoutManager layoutManager = result.getContentPane().getLayoutManager();
 		if (layoutManager instanceof ConstrainedToolbarLayout) {
 			ConstrainedToolbarLayout constrainedToolbarLayout = (ConstrainedToolbarLayout) layoutManager;
 			constrainedToolbarLayout.setStretchMajorAxis(true);
@@ -101,18 +102,13 @@ public class CollectionVariableCollectionVariableConstraintsCompartmentEditPart
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(
-				EditPolicyRoles.SEMANTIC_ROLE,
-				new org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.policies.CollectionVariableCollectionVariableConstraintsCompartmentItemSemanticEditPolicy());
-		installEditPolicy(
-				EditPolicyRoles.CREATION_ROLE,
-				new CreationEditPolicyWithCustomReparent(
-						org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDVisualIDRegistry.TYPED_INSTANCE));
-		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE,
-				new DragDropEditPolicy());
-		installEditPolicy(
-				EditPolicyRoles.CANONICAL_ROLE,
-				new org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.policies.CollectionVariableCollectionVariableConstraintsCompartmentCanonicalEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
+				new CollectionVariableCollectionVariableConstraintsCompartmentItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.CREATION_ROLE,
+				new CreationEditPolicyWithCustomReparent(BasicSDDVisualIDRegistry.TYPED_INSTANCE));
+		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
+		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE,
+				new CollectionVariableCollectionVariableConstraintsCompartmentCanonicalEditPolicy());
 	}
 
 	/**
@@ -129,12 +125,10 @@ public class CollectionVariableCollectionVariableConstraintsCompartmentEditPart
 	 */
 	public EditPart getTargetEditPart(Request request) {
 		if (request instanceof CreateViewAndElementRequest) {
-			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request)
-					.getViewAndElementDescriptor()
+			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request).getViewAndElementDescriptor()
 					.getCreateElementRequestAdapter();
-			IElementType type = (IElementType) adapter
-					.getAdapter(IElementType.class);
-			if (type == org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers.BasicSDDElementTypes.Constraint_3008) {
+			IElementType type = (IElementType) adapter.getAdapter(IElementType.class);
+			if (type == BasicSDDElementTypes.Constraint_3008) {
 				return this;
 			}
 			return getParent().getTargetEditPart(request);

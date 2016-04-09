@@ -2,6 +2,9 @@ package org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers;
 
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryDecisionDiagramEditPart;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDDiagramEditorPlugin;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDVisualIDRegistry;
 
 /**
  * @generated
@@ -23,8 +26,7 @@ public class BasicSDDValidationProvider {
 	/**
 	 * @generated
 	 */
-	public static void runWithConstraints(
-			TransactionalEditingDomain editingDomain, Runnable operation) {
+	public static void runWithConstraints(TransactionalEditingDomain editingDomain, Runnable operation) {
 		final Runnable op = operation;
 		Runnable task = new Runnable() {
 			public void run() {
@@ -40,8 +42,7 @@ public class BasicSDDValidationProvider {
 			try {
 				editingDomain.runExclusive(task);
 			} catch (Exception e) {
-				org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDDiagramEditorPlugin
-						.getInstance().logError("Validation failed", e); //$NON-NLS-1$
+				BasicSDDDiagramEditorPlugin.getInstance().logError("Validation failed", e); //$NON-NLS-1$
 			}
 		} else {
 			task.run();
@@ -57,9 +58,7 @@ public class BasicSDDValidationProvider {
 		}
 		if (object instanceof View) {
 			return constraintsActive
-					&& org.muml.storydiagram.verification.sdd.basicsdd.diagram.edit.parts.StoryDecisionDiagramEditPart.MODEL_ID
-							.equals(org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDVisualIDRegistry
-									.getModelID((View) object));
+					&& StoryDecisionDiagramEditPart.MODEL_ID.equals(BasicSDDVisualIDRegistry.getModelID((View) object));
 		}
 		return true;
 	}

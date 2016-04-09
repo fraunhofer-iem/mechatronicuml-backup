@@ -2,6 +2,8 @@ package org.muml.storydiagram.verification.sdd.basicsdd.diagram.providers;
 
 import org.muml.storydiagram.patterns.PatternsFactory;
 import org.muml.storydiagram.patterns.StoryPattern;
+import org.muml.storydiagram.verification.sdd.basicsdd.StoryPatternNode;
+import org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDDiagramEditorPlugin;
 
 /**
  * @generated
@@ -13,20 +15,17 @@ public class ElementInitializers {
 	}
 
 	/**
-	 * @generated
-	 */
-	public void init_StoryPatternNode_2003(
-			org.muml.storydiagram.verification.sdd.basicsdd.StoryPatternNode instance) {
+	* @generated
+	*/
+	public void init_StoryPatternNode_2003(StoryPatternNode instance) {
 		try {
 			instance.setName("PatternNode");
-			StoryPattern newInstance_1_0 = PatternsFactory.eINSTANCE
-					.createStoryPattern();
+			StoryPattern newInstance_1_0 = PatternsFactory.eINSTANCE.createStoryPattern();
 			instance.setPattern(newInstance_1_0);
 			newInstance_1_0.setComment("");
 
 		} catch (RuntimeException e) {
-			org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDDiagramEditorPlugin
-					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
+			BasicSDDDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
 		}
 	}
 
@@ -34,12 +33,9 @@ public class ElementInitializers {
 	 * @generated
 	 */
 	public static ElementInitializers getInstance() {
-		ElementInitializers cached = org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDDiagramEditorPlugin
-				.getInstance().getElementInitializers();
+		ElementInitializers cached = BasicSDDDiagramEditorPlugin.getInstance().getElementInitializers();
 		if (cached == null) {
-			org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDDiagramEditorPlugin
-					.getInstance().setElementInitializers(
-							cached = new ElementInitializers());
+			BasicSDDDiagramEditorPlugin.getInstance().setElementInitializers(cached = new ElementInitializers());
 		}
 		return cached;
 	}

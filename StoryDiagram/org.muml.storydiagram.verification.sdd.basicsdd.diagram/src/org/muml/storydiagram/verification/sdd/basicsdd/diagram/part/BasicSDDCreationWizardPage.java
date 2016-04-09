@@ -21,8 +21,7 @@ public class BasicSDDCreationWizardPage extends WizardNewFileCreationPage {
 	/**
 	 * @generated
 	 */
-	public BasicSDDCreationWizardPage(String pageName,
-			IStructuredSelection selection, String fileExtension) {
+	public BasicSDDCreationWizardPage(String pageName, IStructuredSelection selection, String fileExtension) {
 		super(pageName, selection);
 		this.fileExtension = fileExtension;
 	}
@@ -63,9 +62,7 @@ public class BasicSDDCreationWizardPage extends WizardNewFileCreationPage {
 	 */
 	public void createControl(Composite parent) {
 		super.createControl(parent);
-		setFileName(org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.BasicSDDDiagramEditorUtil
-				.getUniqueFileName(getContainerFullPath(), getFileName(),
-						getExtension()));
+		setFileName(BasicSDDDiagramEditorUtil.getUniqueFileName(getContainerFullPath(), getFileName(), getExtension()));
 		setPageComplete(validatePage());
 	}
 
@@ -77,11 +74,8 @@ public class BasicSDDCreationWizardPage extends WizardNewFileCreationPage {
 			return false;
 		}
 		String extension = getExtension();
-		if (extension != null
-				&& !getFilePath().toString().endsWith("." + extension)) {
-			setErrorMessage(NLS
-					.bind(org.muml.storydiagram.verification.sdd.basicsdd.diagram.part.Messages.BasicSDDCreationWizardPageExtensionError,
-							extension));
+		if (extension != null && !getFilePath().toString().endsWith("." + extension)) {
+			setErrorMessage(NLS.bind(Messages.BasicSDDCreationWizardPageExtensionError, extension));
 			return false;
 		}
 		return true;
