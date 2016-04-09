@@ -24,8 +24,7 @@ import org.muml.storydiagram.diagram.providers.StorydiagramsElementTypes;
 /**
  * @generated
  */
-public class ModifyingStoryNodeStoryNodePatternCompartmentEditPart extends
-		ShapeCompartmentEditPart {
+public class ModifyingStoryNodeStoryNodePatternCompartmentEditPart extends ShapeCompartmentEditPart {
 
 	/**
 	 * @generated
@@ -50,8 +49,7 @@ public class ModifyingStoryNodeStoryNodePatternCompartmentEditPart extends
 	 * @generated
 	 */
 	public IFigure createFigure() {
-		ResizableCompartmentFigure result = (ResizableCompartmentFigure) super
-				.createFigure();
+		ResizableCompartmentFigure result = (ResizableCompartmentFigure) super.createFigure();
 		result.setTitleVisibility(false);
 		return result;
 	}
@@ -61,16 +59,12 @@ public class ModifyingStoryNodeStoryNodePatternCompartmentEditPart extends
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(
-				EditPolicyRoles.SEMANTIC_ROLE,
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
 				new ModifyingStoryNodeStoryNodePatternCompartmentItemSemanticEditPolicy());
 		installEditPolicy(EditPolicyRoles.CREATION_ROLE,
-				new CreationEditPolicyWithCustomReparent(
-						StorydiagramsVisualIDRegistry.TYPED_INSTANCE));
-		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE,
-				new DragDropEditPolicy());
-		installEditPolicy(
-				EditPolicyRoles.CANONICAL_ROLE,
+				new CreationEditPolicyWithCustomReparent(StorydiagramsVisualIDRegistry.TYPED_INSTANCE));
+		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
+		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE,
 				new ModifyingStoryNodeStoryNodePatternCompartmentCanonicalEditPolicy());
 	}
 
@@ -88,11 +82,9 @@ public class ModifyingStoryNodeStoryNodePatternCompartmentEditPart extends
 	 */
 	public EditPart getTargetEditPart(Request request) {
 		if (request instanceof CreateViewAndElementRequest) {
-			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request)
-					.getViewAndElementDescriptor()
+			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request).getViewAndElementDescriptor()
 					.getCreateElementRequestAdapter();
-			IElementType type = (IElementType) adapter
-					.getAdapter(IElementType.class);
+			IElementType type = (IElementType) adapter.getAdapter(IElementType.class);
 			if (type == StorydiagramsElementTypes.StoryPattern_3001) {
 				return this;
 			}

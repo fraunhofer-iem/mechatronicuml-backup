@@ -15,8 +15,7 @@ import org.muml.storydiagram.diagram.edit.policies.MaybeLinkItemSemanticEditPoli
 /**
  * @generated
  */
-public class MaybeLinkEditPart extends ConnectionNodeEditPart implements
-		ITreeBranchEditPart {
+public class MaybeLinkEditPart extends ConnectionNodeEditPart implements ITreeBranchEditPart {
 
 	/**
 	 * @generated
@@ -35,8 +34,7 @@ public class MaybeLinkEditPart extends ConnectionNodeEditPart implements
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
-				new MaybeLinkItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new MaybeLinkItemSemanticEditPolicy());
 	}
 
 	/**
@@ -44,8 +42,7 @@ public class MaybeLinkEditPart extends ConnectionNodeEditPart implements
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof MaybeLinkLabelEditPart) {
-			((MaybeLinkLabelEditPart) childEditPart).setLabel(getPrimaryShape()
-					.getMaybeLinkLabel());
+			((MaybeLinkLabelEditPart) childEditPart).setLabel(getPrimaryShape().getMaybeLinkLabel());
 			return true;
 		}
 		return false;

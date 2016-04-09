@@ -29,8 +29,7 @@ import org.muml.storydiagram.diagram.part.StorydiagramsVisualIDRegistry;
 /**
  * @generated
  */
-public class MatchingStoryNodeStoryNodePatternCompartmentCanonicalEditPolicy
-		extends CanonicalEditPolicy {
+public class MatchingStoryNodeStoryNodePatternCompartmentCanonicalEditPolicy extends CanonicalEditPolicy {
 
 	/**
 	 * @generated
@@ -69,18 +68,15 @@ public class MatchingStoryNodeStoryNodePatternCompartmentCanonicalEditPolicy
 	/**
 	 * @generated
 	 */
-	protected boolean isOrphaned(Collection<EObject> semanticChildren,
-			final View view) {
-		return isMyDiagramElement(view)
-				&& !semanticChildren.contains(view.getElement());
+	protected boolean isOrphaned(Collection<EObject> semanticChildren, final View view) {
+		return isMyDiagramElement(view) && !semanticChildren.contains(view.getElement());
 	}
 
 	/**
 	 * @generated
 	 */
 	private boolean isMyDiagramElement(View view) {
-		return MatchingPatternEditPart.VISUAL_ID == StorydiagramsVisualIDRegistry
-				.getVisualID(view);
+		return MatchingPatternEditPart.VISUAL_ID == StorydiagramsVisualIDRegistry.getVisualID(view);
 	}
 
 	/**
@@ -92,8 +88,7 @@ public class MatchingStoryNodeStoryNodePatternCompartmentCanonicalEditPolicy
 		}
 		LinkedList<IAdaptable> createdViews = new LinkedList<IAdaptable>();
 		List<StorydiagramsNodeDescriptor> childDescriptors = StorydiagramsDiagramUpdater
-				.getMatchingStoryNodeStoryNodePatternCompartment_7008SemanticChildren((View) getHost()
-						.getModel());
+				.getMatchingStoryNodeStoryNodePatternCompartment_7008SemanticChildren((View) getHost().getModel());
 		LinkedList<View> orphaned = new LinkedList<View>();
 		// we care to check only views we recognize as ours
 		LinkedList<View> knownViewChildren = new LinkedList<View>();
@@ -110,8 +105,7 @@ public class MatchingStoryNodeStoryNodePatternCompartmentCanonicalEditPolicy
 		for (Iterator<StorydiagramsNodeDescriptor> descriptorsIterator = childDescriptors
 				.iterator(); descriptorsIterator.hasNext();) {
 			StorydiagramsNodeDescriptor next = descriptorsIterator.next();
-			String hint = StorydiagramsVisualIDRegistry.getType(next
-					.getVisualID());
+			String hint = StorydiagramsVisualIDRegistry.getType(next.getVisualID());
 			LinkedList<View> perfectMatch = new LinkedList<View>(); // both semanticElement and hint match that of NodeDescriptor
 			for (View childView : getViewChildren()) {
 				EObject semanticElement = childView.getElement();
@@ -137,13 +131,10 @@ public class MatchingStoryNodeStoryNodePatternCompartmentCanonicalEditPolicy
 		ArrayList<CreateViewRequest.ViewDescriptor> viewDescriptors = new ArrayList<CreateViewRequest.ViewDescriptor>(
 				childDescriptors.size());
 		for (StorydiagramsNodeDescriptor next : childDescriptors) {
-			String hint = StorydiagramsVisualIDRegistry.getType(next
-					.getVisualID());
-			IAdaptable elementAdapter = new CanonicalElementAdapter(
-					next.getModelElement(), hint);
-			CreateViewRequest.ViewDescriptor descriptor = new CreateViewRequest.ViewDescriptor(
-					elementAdapter, Node.class, hint, ViewUtil.APPEND, false,
-					host().getDiagramPreferencesHint());
+			String hint = StorydiagramsVisualIDRegistry.getType(next.getVisualID());
+			IAdaptable elementAdapter = new CanonicalElementAdapter(next.getModelElement(), hint);
+			CreateViewRequest.ViewDescriptor descriptor = new CreateViewRequest.ViewDescriptor(elementAdapter,
+					Node.class, hint, ViewUtil.APPEND, false, host().getDiagramPreferencesHint());
 			viewDescriptors.add(descriptor);
 		}
 
@@ -152,10 +143,10 @@ public class MatchingStoryNodeStoryNodePatternCompartmentCanonicalEditPolicy
 		CreateViewRequest request = getCreateViewRequest(viewDescriptors);
 		Command cmd = getCreateViewCommand(request);
 		if (cmd != null && cmd.canExecute()) {
-			SetViewMutabilityCommand.makeMutable(
-					new EObjectAdapter(host().getNotationView())).execute();
+			SetViewMutabilityCommand.makeMutable(new EObjectAdapter(host().getNotationView())).execute();
 			executeCommand(cmd);
 			@SuppressWarnings("unchecked")
+
 			List<IAdaptable> nl = (List<IAdaptable>) request.getNewObject();
 			createdViews.addAll(nl);
 		}
@@ -164,8 +155,8 @@ public class MatchingStoryNodeStoryNodePatternCompartmentCanonicalEditPolicy
 		}
 		if (createdViews.size() > 1) {
 			// perform a layout of the container
-			DeferredLayoutCommand layoutCmd = new DeferredLayoutCommand(host()
-					.getEditingDomain(), createdViews, host());
+			DeferredLayoutCommand layoutCmd = new DeferredLayoutCommand(host().getEditingDomain(), createdViews,
+					host());
 			executeCommand(new ICommandProxy(layoutCmd));
 		}
 

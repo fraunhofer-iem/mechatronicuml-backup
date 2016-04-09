@@ -25,8 +25,7 @@ import org.muml.storydiagram.diagram.providers.StorydiagramsElementTypes;
 /**
  * @generated
  */
-public class StoryPatternStoryPatternContentCompartmentEditPart extends
-		ShapeCompartmentEditPart {
+public class StoryPatternStoryPatternContentCompartmentEditPart extends ShapeCompartmentEditPart {
 
 	/**
 	 * @generated
@@ -51,8 +50,7 @@ public class StoryPatternStoryPatternContentCompartmentEditPart extends
 	 * @generated
 	 */
 	public IFigure createFigure() {
-		ResizableCompartmentFigure result = (ResizableCompartmentFigure) super
-				.createFigure();
+		ResizableCompartmentFigure result = (ResizableCompartmentFigure) super.createFigure();
 		result.setTitleVisibility(false);
 		return result;
 	}
@@ -62,16 +60,12 @@ public class StoryPatternStoryPatternContentCompartmentEditPart extends
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(
-				EditPolicyRoles.SEMANTIC_ROLE,
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
 				new StoryPatternStoryPatternContentCompartmentItemSemanticEditPolicy());
 		installEditPolicy(EditPolicyRoles.CREATION_ROLE,
-				new CreationEditPolicyWithCustomReparent(
-						StorydiagramsVisualIDRegistry.TYPED_INSTANCE));
-		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE,
-				new DragDropEditPolicy());
-		installEditPolicy(
-				EditPolicyRoles.CANONICAL_ROLE,
+				new CreationEditPolicyWithCustomReparent(StorydiagramsVisualIDRegistry.TYPED_INSTANCE));
+		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
+		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE,
 				new StoryPatternStoryPatternContentCompartmentCanonicalEditPolicy());
 	}
 
@@ -89,11 +83,9 @@ public class StoryPatternStoryPatternContentCompartmentEditPart extends
 	 */
 	public EditPart getTargetEditPart(Request request) {
 		if (request instanceof CreateViewAndElementRequest) {
-			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request)
-					.getViewAndElementDescriptor()
+			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request).getViewAndElementDescriptor()
 					.getCreateElementRequestAdapter();
-			IElementType type = (IElementType) adapter
-					.getAdapter(IElementType.class);
+			IElementType type = (IElementType) adapter.getAdapter(IElementType.class);
 			if (type == StorydiagramsElementTypes.CollectionVariable_3002) {
 				return this;
 			}
@@ -104,16 +96,12 @@ public class StoryPatternStoryPatternContentCompartmentEditPart extends
 		}
 		if (request instanceof CreateUnspecifiedTypeConnectionRequest) {
 			if (RequestConstants.REQ_CONNECTION_END.equals(request.getType())) {
-				for (Object type : ((CreateUnspecifiedTypeConnectionRequest) request)
-						.getElementTypes()) {
+				for (Object type : ((CreateUnspecifiedTypeConnectionRequest) request).getElementTypes()) {
 					if (type instanceof IElementType) {
 						IElementType elementType = (IElementType) type;
-						if (elementType
-								.equals(StorydiagramsElementTypes.LinkVariable_4002)
-								|| elementType
-										.equals(StorydiagramsElementTypes.InclusionLink_4003)
-								|| elementType
-										.equals(StorydiagramsElementTypes.MaybeLink_4004))
+						if (elementType.equals(StorydiagramsElementTypes.LinkVariable_4002)
+								|| elementType.equals(StorydiagramsElementTypes.InclusionLink_4003)
+								|| elementType.equals(StorydiagramsElementTypes.MaybeLink_4004))
 							return super.getTargetEditPart(request);
 					}
 				}

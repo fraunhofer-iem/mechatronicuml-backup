@@ -29,16 +29,14 @@ public class StorydiagramsModelingAssistantProviderOfActivityFinalNodeEditPart
 	 */
 	@Override
 	public List<IElementType> getRelTypesOnSource(IAdaptable source) {
-		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source
-				.getAdapter(IGraphicalEditPart.class);
+		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source.getAdapter(IGraphicalEditPart.class);
 		return doGetRelTypesOnSource((ActivityFinalNodeEditPart) sourceEditPart);
 	}
 
 	/**
 	 * @generated
 	 */
-	public List<IElementType> doGetRelTypesOnSource(
-			ActivityFinalNodeEditPart source) {
+	public List<IElementType> doGetRelTypesOnSource(ActivityFinalNodeEditPart source) {
 		List<IElementType> types = new ArrayList<IElementType>(1);
 		types.add(StorydiagramsElementTypes.ActivityEdge_4001);
 		return types;
@@ -48,21 +46,17 @@ public class StorydiagramsModelingAssistantProviderOfActivityFinalNodeEditPart
 	 * @generated
 	 */
 	@Override
-	public List<IElementType> getRelTypesOnSourceAndTarget(IAdaptable source,
-			IAdaptable target) {
-		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source
-				.getAdapter(IGraphicalEditPart.class);
-		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target
-				.getAdapter(IGraphicalEditPart.class);
-		return doGetRelTypesOnSourceAndTarget(
-				(ActivityFinalNodeEditPart) sourceEditPart, targetEditPart);
+	public List<IElementType> getRelTypesOnSourceAndTarget(IAdaptable source, IAdaptable target) {
+		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source.getAdapter(IGraphicalEditPart.class);
+		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target.getAdapter(IGraphicalEditPart.class);
+		return doGetRelTypesOnSourceAndTarget((ActivityFinalNodeEditPart) sourceEditPart, targetEditPart);
 	}
 
 	/**
 	 * @generated
 	 */
-	public List<IElementType> doGetRelTypesOnSourceAndTarget(
-			ActivityFinalNodeEditPart source, IGraphicalEditPart targetEditPart) {
+	public List<IElementType> doGetRelTypesOnSourceAndTarget(ActivityFinalNodeEditPart source,
+			IGraphicalEditPart targetEditPart) {
 		List<IElementType> types = new LinkedList<IElementType>();
 		if (targetEditPart instanceof ActivityCallNodeEditPart) {
 			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
@@ -95,19 +89,15 @@ public class StorydiagramsModelingAssistantProviderOfActivityFinalNodeEditPart
 	 * @generated
 	 */
 	@Override
-	public List<IElementType> getTypesForTarget(IAdaptable source,
-			IElementType relationshipType) {
-		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source
-				.getAdapter(IGraphicalEditPart.class);
-		return doGetTypesForTarget((ActivityFinalNodeEditPart) sourceEditPart,
-				relationshipType);
+	public List<IElementType> getTypesForTarget(IAdaptable source, IElementType relationshipType) {
+		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source.getAdapter(IGraphicalEditPart.class);
+		return doGetTypesForTarget((ActivityFinalNodeEditPart) sourceEditPart, relationshipType);
 	}
 
 	/**
 	 * @generated
 	 */
-	public List<IElementType> doGetTypesForTarget(
-			ActivityFinalNodeEditPart source, IElementType relationshipType) {
+	public List<IElementType> doGetTypesForTarget(ActivityFinalNodeEditPart source, IElementType relationshipType) {
 		List<IElementType> types = new ArrayList<IElementType>();
 		if (relationshipType == StorydiagramsElementTypes.ActivityEdge_4001) {
 			types.add(StorydiagramsElementTypes.ActivityCallNode_2001);
@@ -127,16 +117,14 @@ public class StorydiagramsModelingAssistantProviderOfActivityFinalNodeEditPart
 	 */
 	@Override
 	public List<IElementType> getRelTypesOnTarget(IAdaptable target) {
-		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target
-				.getAdapter(IGraphicalEditPart.class);
+		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target.getAdapter(IGraphicalEditPart.class);
 		return doGetRelTypesOnTarget((ActivityFinalNodeEditPart) targetEditPart);
 	}
 
 	/**
 	 * @generated
 	 */
-	public List<IElementType> doGetRelTypesOnTarget(
-			ActivityFinalNodeEditPart target) {
+	public List<IElementType> doGetRelTypesOnTarget(ActivityFinalNodeEditPart target) {
 		List<IElementType> types = new ArrayList<IElementType>(1);
 		types.add(StorydiagramsElementTypes.ActivityEdge_4001);
 		return types;
@@ -146,19 +134,15 @@ public class StorydiagramsModelingAssistantProviderOfActivityFinalNodeEditPart
 	 * @generated
 	 */
 	@Override
-	public List<IElementType> getTypesForSource(IAdaptable target,
-			IElementType relationshipType) {
-		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target
-				.getAdapter(IGraphicalEditPart.class);
-		return doGetTypesForSource((ActivityFinalNodeEditPart) targetEditPart,
-				relationshipType);
+	public List<IElementType> getTypesForSource(IAdaptable target, IElementType relationshipType) {
+		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target.getAdapter(IGraphicalEditPart.class);
+		return doGetTypesForSource((ActivityFinalNodeEditPart) targetEditPart, relationshipType);
 	}
 
 	/**
 	 * @generated
 	 */
-	public List<IElementType> doGetTypesForSource(
-			ActivityFinalNodeEditPart target, IElementType relationshipType) {
+	public List<IElementType> doGetTypesForSource(ActivityFinalNodeEditPart target, IElementType relationshipType) {
 		List<IElementType> types = new ArrayList<IElementType>();
 		if (relationshipType == StorydiagramsElementTypes.ActivityEdge_4001) {
 			types.add(StorydiagramsElementTypes.ActivityCallNode_2001);

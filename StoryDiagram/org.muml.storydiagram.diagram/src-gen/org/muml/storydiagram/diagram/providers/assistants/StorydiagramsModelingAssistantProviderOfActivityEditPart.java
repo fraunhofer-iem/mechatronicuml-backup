@@ -11,8 +11,7 @@ import org.muml.storydiagram.diagram.providers.StorydiagramsModelingAssistantPro
 /**
  * @generated
  */
-public class StorydiagramsModelingAssistantProviderOfActivityEditPart extends
-		StorydiagramsModelingAssistantProvider {
+public class StorydiagramsModelingAssistantProviderOfActivityEditPart extends StorydiagramsModelingAssistantProvider {
 
 	/**
 	 * @generated

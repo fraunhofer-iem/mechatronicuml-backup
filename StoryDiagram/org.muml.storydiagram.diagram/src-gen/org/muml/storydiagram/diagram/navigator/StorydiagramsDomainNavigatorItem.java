@@ -17,34 +17,28 @@ public class StorydiagramsDomainNavigatorItem extends PlatformObject {
 	 * @generated
 	 */
 	static {
-		final Class[] supportedTypes = new Class[] { EObject.class,
-				IPropertySource.class };
-		Platform.getAdapterManager().registerAdapters(
-				new IAdapterFactory() {
+		final Class[] supportedTypes = new Class[] { EObject.class, IPropertySource.class };
+		Platform.getAdapterManager().registerAdapters(new IAdapterFactory() {
 
-					public Object getAdapter(Object adaptableObject,
-							Class adapterType) {
-						if (adaptableObject instanceof org.muml.storydiagram.diagram.navigator.StorydiagramsDomainNavigatorItem) {
-							org.muml.storydiagram.diagram.navigator.StorydiagramsDomainNavigatorItem domainNavigatorItem = (org.muml.storydiagram.diagram.navigator.StorydiagramsDomainNavigatorItem) adaptableObject;
-							EObject eObject = domainNavigatorItem.getEObject();
-							if (adapterType == EObject.class) {
-								return eObject;
-							}
-							if (adapterType == IPropertySource.class) {
-								return domainNavigatorItem
-										.getPropertySourceProvider()
-										.getPropertySource(eObject);
-							}
-						}
-
-						return null;
+			public Object getAdapter(Object adaptableObject, Class adapterType) {
+				if (adaptableObject instanceof org.muml.storydiagram.diagram.navigator.StorydiagramsDomainNavigatorItem) {
+					org.muml.storydiagram.diagram.navigator.StorydiagramsDomainNavigatorItem domainNavigatorItem = (org.muml.storydiagram.diagram.navigator.StorydiagramsDomainNavigatorItem) adaptableObject;
+					EObject eObject = domainNavigatorItem.getEObject();
+					if (adapterType == EObject.class) {
+						return eObject;
 					}
-
-					public Class[] getAdapterList() {
-						return supportedTypes;
+					if (adapterType == IPropertySource.class) {
+						return domainNavigatorItem.getPropertySourceProvider().getPropertySource(eObject);
 					}
-				},
-				org.muml.storydiagram.diagram.navigator.StorydiagramsDomainNavigatorItem.class);
+				}
+
+				return null;
+			}
+
+			public Class[] getAdapterList() {
+				return supportedTypes;
+			}
+		}, org.muml.storydiagram.diagram.navigator.StorydiagramsDomainNavigatorItem.class);
 	}
 
 	/**
@@ -98,11 +92,8 @@ public class StorydiagramsDomainNavigatorItem extends PlatformObject {
 	 */
 	public boolean equals(Object obj) {
 		if (obj instanceof org.muml.storydiagram.diagram.navigator.StorydiagramsDomainNavigatorItem) {
-			return EcoreUtil
-					.getURI(getEObject())
-					.equals(EcoreUtil
-							.getURI(((org.muml.storydiagram.diagram.navigator.StorydiagramsDomainNavigatorItem) obj)
-									.getEObject()));
+			return EcoreUtil.getURI(getEObject()).equals(EcoreUtil.getURI(
+					((org.muml.storydiagram.diagram.navigator.StorydiagramsDomainNavigatorItem) obj).getEObject()));
 		}
 		return super.equals(obj);
 	}

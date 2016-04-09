@@ -29,8 +29,7 @@ public class StorydiagramsModelingAssistantProviderOfFlowFinalNodeEditPart
 	 */
 	@Override
 	public List<IElementType> getRelTypesOnSource(IAdaptable source) {
-		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source
-				.getAdapter(IGraphicalEditPart.class);
+		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source.getAdapter(IGraphicalEditPart.class);
 		return doGetRelTypesOnSource((FlowFinalNodeEditPart) sourceEditPart);
 	}
 
@@ -47,21 +46,17 @@ public class StorydiagramsModelingAssistantProviderOfFlowFinalNodeEditPart
 	 * @generated
 	 */
 	@Override
-	public List<IElementType> getRelTypesOnSourceAndTarget(IAdaptable source,
-			IAdaptable target) {
-		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source
-				.getAdapter(IGraphicalEditPart.class);
-		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target
-				.getAdapter(IGraphicalEditPart.class);
-		return doGetRelTypesOnSourceAndTarget(
-				(FlowFinalNodeEditPart) sourceEditPart, targetEditPart);
+	public List<IElementType> getRelTypesOnSourceAndTarget(IAdaptable source, IAdaptable target) {
+		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source.getAdapter(IGraphicalEditPart.class);
+		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target.getAdapter(IGraphicalEditPart.class);
+		return doGetRelTypesOnSourceAndTarget((FlowFinalNodeEditPart) sourceEditPart, targetEditPart);
 	}
 
 	/**
 	 * @generated
 	 */
-	public List<IElementType> doGetRelTypesOnSourceAndTarget(
-			FlowFinalNodeEditPart source, IGraphicalEditPart targetEditPart) {
+	public List<IElementType> doGetRelTypesOnSourceAndTarget(FlowFinalNodeEditPart source,
+			IGraphicalEditPart targetEditPart) {
 		List<IElementType> types = new LinkedList<IElementType>();
 		if (targetEditPart instanceof ActivityCallNodeEditPart) {
 			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
@@ -94,19 +89,15 @@ public class StorydiagramsModelingAssistantProviderOfFlowFinalNodeEditPart
 	 * @generated
 	 */
 	@Override
-	public List<IElementType> getTypesForTarget(IAdaptable source,
-			IElementType relationshipType) {
-		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source
-				.getAdapter(IGraphicalEditPart.class);
-		return doGetTypesForTarget((FlowFinalNodeEditPart) sourceEditPart,
-				relationshipType);
+	public List<IElementType> getTypesForTarget(IAdaptable source, IElementType relationshipType) {
+		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source.getAdapter(IGraphicalEditPart.class);
+		return doGetTypesForTarget((FlowFinalNodeEditPart) sourceEditPart, relationshipType);
 	}
 
 	/**
 	 * @generated
 	 */
-	public List<IElementType> doGetTypesForTarget(FlowFinalNodeEditPart source,
-			IElementType relationshipType) {
+	public List<IElementType> doGetTypesForTarget(FlowFinalNodeEditPart source, IElementType relationshipType) {
 		List<IElementType> types = new ArrayList<IElementType>();
 		if (relationshipType == StorydiagramsElementTypes.ActivityEdge_4001) {
 			types.add(StorydiagramsElementTypes.ActivityCallNode_2001);
@@ -126,8 +117,7 @@ public class StorydiagramsModelingAssistantProviderOfFlowFinalNodeEditPart
 	 */
 	@Override
 	public List<IElementType> getRelTypesOnTarget(IAdaptable target) {
-		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target
-				.getAdapter(IGraphicalEditPart.class);
+		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target.getAdapter(IGraphicalEditPart.class);
 		return doGetRelTypesOnTarget((FlowFinalNodeEditPart) targetEditPart);
 	}
 
@@ -144,19 +134,15 @@ public class StorydiagramsModelingAssistantProviderOfFlowFinalNodeEditPart
 	 * @generated
 	 */
 	@Override
-	public List<IElementType> getTypesForSource(IAdaptable target,
-			IElementType relationshipType) {
-		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target
-				.getAdapter(IGraphicalEditPart.class);
-		return doGetTypesForSource((FlowFinalNodeEditPart) targetEditPart,
-				relationshipType);
+	public List<IElementType> getTypesForSource(IAdaptable target, IElementType relationshipType) {
+		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target.getAdapter(IGraphicalEditPart.class);
+		return doGetTypesForSource((FlowFinalNodeEditPart) targetEditPart, relationshipType);
 	}
 
 	/**
 	 * @generated
 	 */
-	public List<IElementType> doGetTypesForSource(FlowFinalNodeEditPart target,
-			IElementType relationshipType) {
+	public List<IElementType> doGetTypesForSource(FlowFinalNodeEditPart target, IElementType relationshipType) {
 		List<IElementType> types = new ArrayList<IElementType>();
 		if (relationshipType == StorydiagramsElementTypes.ActivityEdge_4001) {
 			types.add(StorydiagramsElementTypes.ActivityCallNode_2001);

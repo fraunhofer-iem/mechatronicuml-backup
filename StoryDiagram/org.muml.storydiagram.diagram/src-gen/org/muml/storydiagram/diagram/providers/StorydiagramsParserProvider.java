@@ -25,8 +25,7 @@ import org.muml.storydiagram.diagram.part.StorydiagramsVisualIDRegistry;
 /**
  * @generated
  */
-public class StorydiagramsParserProvider extends AbstractProvider implements
-		IParserProvider {
+public class StorydiagramsParserProvider extends AbstractProvider implements IParserProvider {
 
 	/**
 	 * @generated
@@ -38,12 +37,9 @@ public class StorydiagramsParserProvider extends AbstractProvider implements
 	 */
 	private IParser getActivityCallNodeName_5001Parser() {
 		if (activityCallNodeName_5001Parser == null) {
-			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
-			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
-			MessageFormatParser parser = new MessageFormatParser(features,
-					editableFeatures);
+			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
+			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
+			MessageFormatParser parser = new MessageFormatParser(features, editableFeatures);
 			activityCallNodeName_5001Parser = parser;
 		}
 		return activityCallNodeName_5001Parser;
@@ -59,12 +55,9 @@ public class StorydiagramsParserProvider extends AbstractProvider implements
 	 */
 	private IParser getStatementNodeName_5003Parser() {
 		if (statementNodeName_5003Parser == null) {
-			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
-			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
-			MessageFormatParser parser = new MessageFormatParser(features,
-					editableFeatures);
+			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
+			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
+			MessageFormatParser parser = new MessageFormatParser(features, editableFeatures);
 			statementNodeName_5003Parser = parser;
 		}
 		return statementNodeName_5003Parser;
@@ -80,12 +73,9 @@ public class StorydiagramsParserProvider extends AbstractProvider implements
 	 */
 	private IParser getModifyingStoryNodeName_5011Parser() {
 		if (modifyingStoryNodeName_5011Parser == null) {
-			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
-			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
-			MessageFormatParser parser = new MessageFormatParser(features,
-					editableFeatures);
+			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
+			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
+			MessageFormatParser parser = new MessageFormatParser(features, editableFeatures);
 			modifyingStoryNodeName_5011Parser = parser;
 		}
 		return modifyingStoryNodeName_5011Parser;
@@ -101,12 +91,9 @@ public class StorydiagramsParserProvider extends AbstractProvider implements
 	 */
 	private IParser getMatchingStoryNodeName_5012Parser() {
 		if (matchingStoryNodeName_5012Parser == null) {
-			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
-			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
-			MessageFormatParser parser = new MessageFormatParser(features,
-					editableFeatures);
+			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
+			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
+			MessageFormatParser parser = new MessageFormatParser(features, editableFeatures);
 			matchingStoryNodeName_5012Parser = parser;
 		}
 		return matchingStoryNodeName_5012Parser;
@@ -122,12 +109,9 @@ public class StorydiagramsParserProvider extends AbstractProvider implements
 	 */
 	private IParser getCollectionVariableName_5006Parser() {
 		if (collectionVariableName_5006Parser == null) {
-			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
-			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
-			MessageFormatParser parser = new MessageFormatParser(features,
-					editableFeatures);
+			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
+			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
+			MessageFormatParser parser = new MessageFormatParser(features, editableFeatures);
 			collectionVariableName_5006Parser = parser;
 		}
 		return collectionVariableName_5006Parser;
@@ -143,12 +127,9 @@ public class StorydiagramsParserProvider extends AbstractProvider implements
 	 */
 	private IParser getObjectVariableName_5009Parser() {
 		if (objectVariableName_5009Parser == null) {
-			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
-			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
-			MessageFormatParser parser = new MessageFormatParser(features,
-					editableFeatures);
+			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
+			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
+			MessageFormatParser parser = new MessageFormatParser(features, editableFeatures);
 			objectVariableName_5009Parser = parser;
 		}
 		return objectVariableName_5009Parser;
@@ -179,10 +160,8 @@ public class StorydiagramsParserProvider extends AbstractProvider implements
 	 * Utility method that consults ParserService
 	 * @generated
 	 */
-	public static IParser getParser(IElementType type, EObject object,
-			String parserHint) {
-		return ParserService.getInstance().getParser(
-				new HintAdapter(type, object, parserHint));
+	public static IParser getParser(IElementType type, EObject object, String parserHint) {
+		return ParserService.getInstance().getParser(new HintAdapter(type, object, parserHint));
 	}
 
 	/**

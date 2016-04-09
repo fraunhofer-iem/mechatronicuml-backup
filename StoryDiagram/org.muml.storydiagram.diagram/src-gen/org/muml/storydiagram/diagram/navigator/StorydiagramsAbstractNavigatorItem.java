@@ -17,26 +17,23 @@ public abstract class StorydiagramsAbstractNavigatorItem extends PlatformObject 
 		final Class[] supportedTypes = new Class[] { ITabbedPropertySheetPageContributor.class };
 		final ITabbedPropertySheetPageContributor propertySheetPageContributor = new ITabbedPropertySheetPageContributor() {
 			public String getContributorId() {
-				return "org.storydriven.storydiagrams.diagram"; //$NON-NLS-1$
+				return "org.muml.storydiagram.diagram"; //$NON-NLS-1$
 			}
 		};
-		Platform.getAdapterManager().registerAdapters(
-				new IAdapterFactory() {
+		Platform.getAdapterManager().registerAdapters(new IAdapterFactory() {
 
-					public Object getAdapter(Object adaptableObject,
-							Class adapterType) {
-						if (adaptableObject instanceof org.muml.storydiagram.diagram.navigator.StorydiagramsAbstractNavigatorItem
-								&& adapterType == ITabbedPropertySheetPageContributor.class) {
-							return propertySheetPageContributor;
-						}
-						return null;
-					}
+			public Object getAdapter(Object adaptableObject, Class adapterType) {
+				if (adaptableObject instanceof org.muml.storydiagram.diagram.navigator.StorydiagramsAbstractNavigatorItem
+						&& adapterType == ITabbedPropertySheetPageContributor.class) {
+					return propertySheetPageContributor;
+				}
+				return null;
+			}
 
-					public Class[] getAdapterList() {
-						return supportedTypes;
-					}
-				},
-				org.muml.storydiagram.diagram.navigator.StorydiagramsAbstractNavigatorItem.class);
+			public Class[] getAdapterList() {
+				return supportedTypes;
+			}
+		}, org.muml.storydiagram.diagram.navigator.StorydiagramsAbstractNavigatorItem.class);
 	}
 
 	/**

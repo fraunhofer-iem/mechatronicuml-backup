@@ -14,8 +14,7 @@ import org.muml.storydiagram.diagram.edit.policies.LinkVariableItemSemanticEditP
 /**
  * @generated
  */
-public class LinkVariableEditPart extends ConnectionNodeEditPart implements
-		ITreeBranchEditPart {
+public class LinkVariableEditPart extends ConnectionNodeEditPart implements ITreeBranchEditPart {
 
 	/**
 	 * @generated
@@ -34,8 +33,7 @@ public class LinkVariableEditPart extends ConnectionNodeEditPart implements
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
-				new LinkVariableItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new LinkVariableItemSemanticEditPolicy());
 	}
 
 	/**

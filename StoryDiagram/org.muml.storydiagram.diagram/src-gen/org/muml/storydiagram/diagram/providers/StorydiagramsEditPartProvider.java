@@ -24,8 +24,7 @@ public class StorydiagramsEditPartProvider extends DefaultEditPartProvider {
 	 * @generated
 	 */
 	public StorydiagramsEditPartProvider() {
-		super(new StorydiagramsEditPartFactory(),
-				StorydiagramsVisualIDRegistry.TYPED_INSTANCE,
+		super(new StorydiagramsEditPartFactory(), StorydiagramsVisualIDRegistry.TYPED_INSTANCE,
 				ActivityEditPart.MODEL_ID);
 	}
 }

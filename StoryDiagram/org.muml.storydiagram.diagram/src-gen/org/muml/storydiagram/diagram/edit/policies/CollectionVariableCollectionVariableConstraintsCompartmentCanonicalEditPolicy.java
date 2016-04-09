@@ -29,8 +29,7 @@ import org.muml.storydiagram.patterns.PatternsPackage;
 /**
  * @generated
  */
-public class CollectionVariableCollectionVariableConstraintsCompartmentCanonicalEditPolicy
-		extends CanonicalEditPolicy {
+public class CollectionVariableCollectionVariableConstraintsCompartmentCanonicalEditPolicy extends CanonicalEditPolicy {
 
 	/**
 	 * @generated
@@ -69,18 +68,15 @@ public class CollectionVariableCollectionVariableConstraintsCompartmentCanonical
 	/**
 	 * @generated
 	 */
-	protected boolean isOrphaned(Collection<EObject> semanticChildren,
-			final View view) {
-		return isMyDiagramElement(view)
-				&& !semanticChildren.contains(view.getElement());
+	protected boolean isOrphaned(Collection<EObject> semanticChildren, final View view) {
+		return isMyDiagramElement(view) && !semanticChildren.contains(view.getElement());
 	}
 
 	/**
 	 * @generated
 	 */
 	private boolean isMyDiagramElement(View view) {
-		return ConstraintEditPart.VISUAL_ID == StorydiagramsVisualIDRegistry
-				.getVisualID(view);
+		return ConstraintEditPart.VISUAL_ID == StorydiagramsVisualIDRegistry.getVisualID(view);
 	}
 
 	/**
@@ -92,8 +88,8 @@ public class CollectionVariableCollectionVariableConstraintsCompartmentCanonical
 		}
 		LinkedList<IAdaptable> createdViews = new LinkedList<IAdaptable>();
 		List<StorydiagramsNodeDescriptor> childDescriptors = StorydiagramsDiagramUpdater
-				.getCollectionVariableCollectionVariableConstraintsCompartment_7004SemanticChildren((View) getHost()
-						.getModel());
+				.getCollectionVariableCollectionVariableConstraintsCompartment_7004SemanticChildren(
+						(View) getHost().getModel());
 		LinkedList<View> orphaned = new LinkedList<View>();
 		// we care to check only views we recognize as ours
 		LinkedList<View> knownViewChildren = new LinkedList<View>();
@@ -110,8 +106,7 @@ public class CollectionVariableCollectionVariableConstraintsCompartmentCanonical
 		for (Iterator<StorydiagramsNodeDescriptor> descriptorsIterator = childDescriptors
 				.iterator(); descriptorsIterator.hasNext();) {
 			StorydiagramsNodeDescriptor next = descriptorsIterator.next();
-			String hint = StorydiagramsVisualIDRegistry.getType(next
-					.getVisualID());
+			String hint = StorydiagramsVisualIDRegistry.getType(next.getVisualID());
 			LinkedList<View> perfectMatch = new LinkedList<View>(); // both semanticElement and hint match that of NodeDescriptor
 			for (View childView : getViewChildren()) {
 				EObject semanticElement = childView.getElement();
@@ -137,13 +132,10 @@ public class CollectionVariableCollectionVariableConstraintsCompartmentCanonical
 		ArrayList<CreateViewRequest.ViewDescriptor> viewDescriptors = new ArrayList<CreateViewRequest.ViewDescriptor>(
 				childDescriptors.size());
 		for (StorydiagramsNodeDescriptor next : childDescriptors) {
-			String hint = StorydiagramsVisualIDRegistry.getType(next
-					.getVisualID());
-			IAdaptable elementAdapter = new CanonicalElementAdapter(
-					next.getModelElement(), hint);
-			CreateViewRequest.ViewDescriptor descriptor = new CreateViewRequest.ViewDescriptor(
-					elementAdapter, Node.class, hint, ViewUtil.APPEND, false,
-					host().getDiagramPreferencesHint());
+			String hint = StorydiagramsVisualIDRegistry.getType(next.getVisualID());
+			IAdaptable elementAdapter = new CanonicalElementAdapter(next.getModelElement(), hint);
+			CreateViewRequest.ViewDescriptor descriptor = new CreateViewRequest.ViewDescriptor(elementAdapter,
+					Node.class, hint, ViewUtil.APPEND, false, host().getDiagramPreferencesHint());
 			viewDescriptors.add(descriptor);
 		}
 
@@ -152,10 +144,10 @@ public class CollectionVariableCollectionVariableConstraintsCompartmentCanonical
 		CreateViewRequest request = getCreateViewRequest(viewDescriptors);
 		Command cmd = getCreateViewCommand(request);
 		if (cmd != null && cmd.canExecute()) {
-			SetViewMutabilityCommand.makeMutable(
-					new EObjectAdapter(host().getNotationView())).execute();
+			SetViewMutabilityCommand.makeMutable(new EObjectAdapter(host().getNotationView())).execute();
 			executeCommand(cmd);
 			@SuppressWarnings("unchecked")
+
 			List<IAdaptable> nl = (List<IAdaptable>) request.getNewObject();
 			createdViews.addAll(nl);
 		}
@@ -164,8 +156,8 @@ public class CollectionVariableCollectionVariableConstraintsCompartmentCanonical
 		}
 		if (createdViews.size() > 1) {
 			// perform a layout of the container
-			DeferredLayoutCommand layoutCmd = new DeferredLayoutCommand(host()
-					.getEditingDomain(), createdViews, host());
+			DeferredLayoutCommand layoutCmd = new DeferredLayoutCommand(host().getEditingDomain(), createdViews,
+					host());
 			executeCommand(new ICommandProxy(layoutCmd));
 		}
 

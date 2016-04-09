@@ -25,8 +25,7 @@ import org.muml.storydiagram.diagram.providers.StorydiagramsElementTypes;
 /**
  * @generated
  */
-public class CollectionVariableCollectionVariableConstraintsCompartmentEditPart
-		extends ListCompartmentEditPart {
+public class CollectionVariableCollectionVariableConstraintsCompartmentEditPart extends ListCompartmentEditPart {
 
 	/**
 	 * @generated
@@ -36,8 +35,7 @@ public class CollectionVariableCollectionVariableConstraintsCompartmentEditPart
 	/**
 	 * @generated
 	 */
-	public CollectionVariableCollectionVariableConstraintsCompartmentEditPart(
-			View view) {
+	public CollectionVariableCollectionVariableConstraintsCompartmentEditPart(View view) {
 		super(view);
 	}
 
@@ -59,8 +57,7 @@ public class CollectionVariableCollectionVariableConstraintsCompartmentEditPart
 	 * @generated
 	 */
 	public IFigure createFigure() {
-		ResizableCompartmentFigure result = (ResizableCompartmentFigure) super
-				.createFigure();
+		ResizableCompartmentFigure result = (ResizableCompartmentFigure) super.createFigure();
 		result.setTitleVisibility(false);
 		return result;
 	}
@@ -70,16 +67,12 @@ public class CollectionVariableCollectionVariableConstraintsCompartmentEditPart
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(
-				EditPolicyRoles.SEMANTIC_ROLE,
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
 				new CollectionVariableCollectionVariableConstraintsCompartmentItemSemanticEditPolicy());
 		installEditPolicy(EditPolicyRoles.CREATION_ROLE,
-				new CreationEditPolicyWithCustomReparent(
-						StorydiagramsVisualIDRegistry.TYPED_INSTANCE));
-		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE,
-				new DragDropEditPolicy());
-		installEditPolicy(
-				EditPolicyRoles.CANONICAL_ROLE,
+				new CreationEditPolicyWithCustomReparent(StorydiagramsVisualIDRegistry.TYPED_INSTANCE));
+		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
+		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE,
 				new CollectionVariableCollectionVariableConstraintsCompartmentCanonicalEditPolicy());
 	}
 
@@ -97,11 +90,9 @@ public class CollectionVariableCollectionVariableConstraintsCompartmentEditPart
 	 */
 	public EditPart getTargetEditPart(Request request) {
 		if (request instanceof CreateViewAndElementRequest) {
-			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request)
-					.getViewAndElementDescriptor()
+			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request).getViewAndElementDescriptor()
 					.getCreateElementRequestAdapter();
-			IElementType type = (IElementType) adapter
-					.getAdapter(IElementType.class);
+			IElementType type = (IElementType) adapter.getAdapter(IElementType.class);
 			if (type == StorydiagramsElementTypes.Constraint_3004) {
 				return this;
 			}

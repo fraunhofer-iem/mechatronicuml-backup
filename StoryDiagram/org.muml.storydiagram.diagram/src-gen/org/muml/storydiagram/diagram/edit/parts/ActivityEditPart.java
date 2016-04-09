@@ -44,13 +44,10 @@ public class ActivityEditPart extends DiagramEditPart {
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
-				new ActivityItemSemanticEditPolicy());
-		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE,
-				new ActivityCanonicalEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new ActivityItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new ActivityCanonicalEditPolicy());
 		installEditPolicy(EditPolicyRoles.CREATION_ROLE,
-				new CreationEditPolicyWithCustomReparent(
-						StorydiagramsVisualIDRegistry.TYPED_INSTANCE));
+				new CreationEditPolicyWithCustomReparent(StorydiagramsVisualIDRegistry.TYPED_INSTANCE));
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.POPUPBAR_ROLE);
 	}
 

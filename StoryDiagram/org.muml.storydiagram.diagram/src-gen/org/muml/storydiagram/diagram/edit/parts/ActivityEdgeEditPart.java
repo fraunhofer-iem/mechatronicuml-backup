@@ -16,8 +16,7 @@ import org.muml.storydiagram.diagram.edit.policies.ActivityEdgeItemSemanticEditP
 /**
  * @generated
  */
-public class ActivityEdgeEditPart extends ConnectionNodeEditPart implements
-		ITreeBranchEditPart {
+public class ActivityEdgeEditPart extends ConnectionNodeEditPart implements ITreeBranchEditPart {
 
 	/**
 	 * @generated
@@ -36,8 +35,7 @@ public class ActivityEdgeEditPart extends ConnectionNodeEditPart implements
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
-				new ActivityEdgeItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new ActivityEdgeItemSemanticEditPolicy());
 	}
 
 	/**
@@ -45,8 +43,7 @@ public class ActivityEdgeEditPart extends ConnectionNodeEditPart implements
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof ActivityEdgeGuardLabelEditPart) {
-			((ActivityEdgeGuardLabelEditPart) childEditPart)
-					.setLabel(getPrimaryShape().getActivityEdgeGuardLabel());
+			((ActivityEdgeGuardLabelEditPart) childEditPart).setLabel(getPrimaryShape().getActivityEdgeGuardLabel());
 			return true;
 		}
 		return false;

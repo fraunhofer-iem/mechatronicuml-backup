@@ -8,8 +8,7 @@ import org.muml.storydiagram.diagram.providers.StorydiagramsElementTypes;
 /**
  * @generated
  */
-public class ActivityEdgeItemSemanticEditPolicy extends
-		StorydiagramsBaseItemSemanticEditPolicy {
+public class ActivityEdgeItemSemanticEditPolicy extends StorydiagramsBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated

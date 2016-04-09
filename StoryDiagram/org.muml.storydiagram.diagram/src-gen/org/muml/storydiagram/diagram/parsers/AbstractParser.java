@@ -24,4 +24,3 @@ import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
 import org.eclipse.osgi.util.NLS;
 import org.muml.storydiagram.diagram.part.Messages;
 import org.muml.storydiagram.diagram.part.StorydiagramsDiagramEditorPlugin;
-

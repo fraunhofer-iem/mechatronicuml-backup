@@ -61,8 +61,7 @@ public class StorydiagramsElementTypes {
 	 * @generated
 	 */
 	private static DiagramElementTypeImages elementTypeImages = new DiagramElementTypeImages(
-			StorydiagramsDiagramEditorPlugin.getInstance()
-					.getItemProvidersAdapterFactory());
+			StorydiagramsDiagramEditorPlugin.getInstance().getItemProvidersAdapterFactory());
 
 	/**
 	 * @generated
@@ -72,83 +71,99 @@ public class StorydiagramsElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType Activity_1000 = getElementType("org.storydriven.storydiagrams.diagram.Activity_1000"); //$NON-NLS-1$
+	public static final IElementType Activity_1000 = getElementType("org.muml.storydiagram.diagram.Activity_1000"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType ActivityCallNode_2001 = getElementType("org.storydriven.storydiagrams.diagram.ActivityCallNode_2001"); //$NON-NLS-1$
+	public static final IElementType ActivityCallNode_2001 = getElementType(
+			"org.muml.storydiagram.diagram.ActivityCallNode_2001"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType StatementNode_2002 = getElementType("org.storydriven.storydiagrams.diagram.StatementNode_2002"); //$NON-NLS-1$
+	public static final IElementType StatementNode_2002 = getElementType(
+			"org.muml.storydiagram.diagram.StatementNode_2002"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType ModifyingStoryNode_2003 = getElementType("org.storydriven.storydiagrams.diagram.ModifyingStoryNode_2003"); //$NON-NLS-1$
+	public static final IElementType ModifyingStoryNode_2003 = getElementType(
+			"org.muml.storydiagram.diagram.ModifyingStoryNode_2003"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType MatchingStoryNode_2004 = getElementType("org.storydriven.storydiagrams.diagram.MatchingStoryNode_2004"); //$NON-NLS-1$
+	public static final IElementType MatchingStoryNode_2004 = getElementType(
+			"org.muml.storydiagram.diagram.MatchingStoryNode_2004"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType InitialNode_2005 = getElementType("org.storydriven.storydiagrams.diagram.InitialNode_2005"); //$NON-NLS-1$
+	public static final IElementType InitialNode_2005 = getElementType(
+			"org.muml.storydiagram.diagram.InitialNode_2005"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType JunctionNode_2006 = getElementType("org.storydriven.storydiagrams.diagram.JunctionNode_2006"); //$NON-NLS-1$
+	public static final IElementType JunctionNode_2006 = getElementType(
+			"org.muml.storydiagram.diagram.JunctionNode_2006"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType FlowFinalNode_2007 = getElementType("org.storydriven.storydiagrams.diagram.FlowFinalNode_2007"); //$NON-NLS-1$
+	public static final IElementType FlowFinalNode_2007 = getElementType(
+			"org.muml.storydiagram.diagram.FlowFinalNode_2007"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType ActivityFinalNode_2008 = getElementType("org.storydriven.storydiagrams.diagram.ActivityFinalNode_2008"); //$NON-NLS-1$
+	public static final IElementType ActivityFinalNode_2008 = getElementType(
+			"org.muml.storydiagram.diagram.ActivityFinalNode_2008"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType StoryPattern_3001 = getElementType("org.storydriven.storydiagrams.diagram.StoryPattern_3001"); //$NON-NLS-1$
+	public static final IElementType StoryPattern_3001 = getElementType(
+			"org.muml.storydiagram.diagram.StoryPattern_3001"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType CollectionVariable_3002 = getElementType("org.storydriven.storydiagrams.diagram.CollectionVariable_3002"); //$NON-NLS-1$
+	public static final IElementType CollectionVariable_3002 = getElementType(
+			"org.muml.storydiagram.diagram.CollectionVariable_3002"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType AttributeAssignment_3003 = getElementType("org.storydriven.storydiagrams.diagram.AttributeAssignment_3003"); //$NON-NLS-1$
+	public static final IElementType AttributeAssignment_3003 = getElementType(
+			"org.muml.storydiagram.diagram.AttributeAssignment_3003"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType Constraint_3004 = getElementType("org.storydriven.storydiagrams.diagram.Constraint_3004"); //$NON-NLS-1$
+	public static final IElementType Constraint_3004 = getElementType("org.muml.storydiagram.diagram.Constraint_3004"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType ObjectVariable_3005 = getElementType("org.storydriven.storydiagrams.diagram.ObjectVariable_3005"); //$NON-NLS-1$
+	public static final IElementType ObjectVariable_3005 = getElementType(
+			"org.muml.storydiagram.diagram.ObjectVariable_3005"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType Constraint_3006 = getElementType("org.storydriven.storydiagrams.diagram.Constraint_3006"); //$NON-NLS-1$
+	public static final IElementType Constraint_3006 = getElementType("org.muml.storydiagram.diagram.Constraint_3006"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType MatchingPattern_3007 = getElementType("org.storydriven.storydiagrams.diagram.MatchingPattern_3007"); //$NON-NLS-1$
+	public static final IElementType MatchingPattern_3007 = getElementType(
+			"org.muml.storydiagram.diagram.MatchingPattern_3007"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType ActivityEdge_4001 = getElementType("org.storydriven.storydiagrams.diagram.ActivityEdge_4001"); //$NON-NLS-1$
+	public static final IElementType ActivityEdge_4001 = getElementType(
+			"org.muml.storydiagram.diagram.ActivityEdge_4001"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType LinkVariable_4002 = getElementType("org.storydriven.storydiagrams.diagram.LinkVariable_4002"); //$NON-NLS-1$
+	public static final IElementType LinkVariable_4002 = getElementType(
+			"org.muml.storydiagram.diagram.LinkVariable_4002"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType InclusionLink_4003 = getElementType("org.storydriven.storydiagrams.diagram.InclusionLink_4003"); //$NON-NLS-1$
+	public static final IElementType InclusionLink_4003 = getElementType(
+			"org.muml.storydiagram.diagram.InclusionLink_4003"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType MaybeLink_4004 = getElementType("org.storydriven.storydiagrams.diagram.MaybeLink_4004"); //$NON-NLS-1$
+	public static final IElementType MaybeLink_4004 = getElementType("org.muml.storydiagram.diagram.MaybeLink_4004"); //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -188,65 +203,45 @@ public class StorydiagramsElementTypes {
 		if (elements == null) {
 			elements = new IdentityHashMap<IElementType, ENamedElement>();
 
-			elements.put(Activity_1000,
-					ActivitiesPackage.eINSTANCE.getActivity());
+			elements.put(Activity_1000, ActivitiesPackage.eINSTANCE.getActivity());
 
-			elements.put(ActivityCallNode_2001,
-					ActivitiesPackage.eINSTANCE.getActivityCallNode());
+			elements.put(ActivityCallNode_2001, ActivitiesPackage.eINSTANCE.getActivityCallNode());
 
-			elements.put(StatementNode_2002,
-					ActivitiesPackage.eINSTANCE.getStatementNode());
+			elements.put(StatementNode_2002, ActivitiesPackage.eINSTANCE.getStatementNode());
 
-			elements.put(ModifyingStoryNode_2003,
-					ActivitiesPackage.eINSTANCE.getModifyingStoryNode());
+			elements.put(ModifyingStoryNode_2003, ActivitiesPackage.eINSTANCE.getModifyingStoryNode());
 
-			elements.put(MatchingStoryNode_2004,
-					ActivitiesPackage.eINSTANCE.getMatchingStoryNode());
+			elements.put(MatchingStoryNode_2004, ActivitiesPackage.eINSTANCE.getMatchingStoryNode());
 
-			elements.put(InitialNode_2005,
-					ActivitiesPackage.eINSTANCE.getInitialNode());
+			elements.put(InitialNode_2005, ActivitiesPackage.eINSTANCE.getInitialNode());
 
-			elements.put(JunctionNode_2006,
-					ActivitiesPackage.eINSTANCE.getJunctionNode());
+			elements.put(JunctionNode_2006, ActivitiesPackage.eINSTANCE.getJunctionNode());
 
-			elements.put(FlowFinalNode_2007,
-					ActivitiesPackage.eINSTANCE.getFlowFinalNode());
+			elements.put(FlowFinalNode_2007, ActivitiesPackage.eINSTANCE.getFlowFinalNode());
 
-			elements.put(ActivityFinalNode_2008,
-					ActivitiesPackage.eINSTANCE.getActivityFinalNode());
+			elements.put(ActivityFinalNode_2008, ActivitiesPackage.eINSTANCE.getActivityFinalNode());
 
-			elements.put(StoryPattern_3001,
-					PatternsPackage.eINSTANCE.getStoryPattern());
+			elements.put(StoryPattern_3001, PatternsPackage.eINSTANCE.getStoryPattern());
 
-			elements.put(CollectionVariable_3002,
-					PatternsPackage.eINSTANCE.getCollectionVariable());
+			elements.put(CollectionVariable_3002, PatternsPackage.eINSTANCE.getCollectionVariable());
 
-			elements.put(AttributeAssignment_3003,
-					PatternsPackage.eINSTANCE.getAttributeAssignment());
+			elements.put(AttributeAssignment_3003, PatternsPackage.eINSTANCE.getAttributeAssignment());
 
-			elements.put(Constraint_3004,
-					PatternsPackage.eINSTANCE.getConstraint());
+			elements.put(Constraint_3004, PatternsPackage.eINSTANCE.getConstraint());
 
-			elements.put(ObjectVariable_3005,
-					PatternsPackage.eINSTANCE.getObjectVariable());
+			elements.put(ObjectVariable_3005, PatternsPackage.eINSTANCE.getObjectVariable());
 
-			elements.put(Constraint_3006,
-					PatternsPackage.eINSTANCE.getConstraint());
+			elements.put(Constraint_3006, PatternsPackage.eINSTANCE.getConstraint());
 
-			elements.put(MatchingPattern_3007,
-					PatternsPackage.eINSTANCE.getMatchingPattern());
+			elements.put(MatchingPattern_3007, PatternsPackage.eINSTANCE.getMatchingPattern());
 
-			elements.put(ActivityEdge_4001,
-					ActivitiesPackage.eINSTANCE.getActivityEdge());
+			elements.put(ActivityEdge_4001, ActivitiesPackage.eINSTANCE.getActivityEdge());
 
-			elements.put(LinkVariable_4002,
-					PatternsPackage.eINSTANCE.getLinkVariable());
+			elements.put(LinkVariable_4002, PatternsPackage.eINSTANCE.getLinkVariable());
 
-			elements.put(InclusionLink_4003,
-					PatternsPackage.eINSTANCE.getInclusionLink());
+			elements.put(InclusionLink_4003, PatternsPackage.eINSTANCE.getInclusionLink());
 
-			elements.put(MaybeLink_4004,
-					PatternsPackage.eINSTANCE.getMaybeLink());
+			elements.put(MaybeLink_4004, PatternsPackage.eINSTANCE.getMaybeLink());
 		}
 		return (ENamedElement) elements.get(type);
 	}
@@ -340,35 +335,33 @@ public class StorydiagramsElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final DiagramElementTypes TYPED_INSTANCE = new DiagramElementTypes(
-			elementTypeImages) {
+	public static final DiagramElementTypes TYPED_INSTANCE = new DiagramElementTypes(elementTypeImages) {
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		@Override
+
 		public boolean isKnownElementType(IElementType elementType) {
-			return org.muml.storydiagram.diagram.providers.StorydiagramsElementTypes
-					.isKnownElementType(elementType);
+			return org.muml.storydiagram.diagram.providers.StorydiagramsElementTypes.isKnownElementType(elementType);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		@Override
+
 		public IElementType getElementTypeForVisualId(int visualID) {
-			return org.muml.storydiagram.diagram.providers.StorydiagramsElementTypes
-					.getElementType(visualID);
+			return org.muml.storydiagram.diagram.providers.StorydiagramsElementTypes.getElementType(visualID);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		@Override
-		public ENamedElement getDefiningNamedElement(
-				IAdaptable elementTypeAdapter) {
-			return org.muml.storydiagram.diagram.providers.StorydiagramsElementTypes
-					.getElement(elementTypeAdapter);
+
+		public ENamedElement getDefiningNamedElement(IAdaptable elementTypeAdapter) {
+			return org.muml.storydiagram.diagram.providers.StorydiagramsElementTypes.getElement(elementTypeAdapter);
 		}
 	};
 

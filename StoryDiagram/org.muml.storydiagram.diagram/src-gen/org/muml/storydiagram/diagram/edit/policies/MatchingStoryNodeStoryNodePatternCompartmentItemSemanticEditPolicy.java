@@ -22,8 +22,7 @@ public class MatchingStoryNodeStoryNodePatternCompartmentItemSemanticEditPolicy
 	 * @generated
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
-		if (StorydiagramsElementTypes.MatchingPattern_3007 == req
-				.getElementType()) {
+		if (StorydiagramsElementTypes.MatchingPattern_3007 == req.getElementType()) {
 			return getGEFWrapper(new MatchingPatternCreateCommand(req));
 		}
 		return super.getCreateCommand(req);

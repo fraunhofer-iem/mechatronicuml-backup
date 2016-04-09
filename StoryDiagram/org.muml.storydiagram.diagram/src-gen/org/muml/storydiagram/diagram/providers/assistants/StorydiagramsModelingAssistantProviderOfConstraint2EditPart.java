@@ -5,7 +5,7 @@ import org.muml.storydiagram.diagram.providers.StorydiagramsModelingAssistantPro
 /**
  * @generated
  */
-public class StorydiagramsModelingAssistantProviderOfConstraint2EditPart extends
-		StorydiagramsModelingAssistantProvider {
+public class StorydiagramsModelingAssistantProviderOfConstraint2EditPart
+		extends StorydiagramsModelingAssistantProvider {
 
 }

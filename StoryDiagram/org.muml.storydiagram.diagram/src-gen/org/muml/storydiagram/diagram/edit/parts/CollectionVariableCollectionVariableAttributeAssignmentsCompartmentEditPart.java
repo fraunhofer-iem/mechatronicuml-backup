@@ -36,8 +36,7 @@ public class CollectionVariableCollectionVariableAttributeAssignmentsCompartment
 	/**
 	 * @generated
 	 */
-	public CollectionVariableCollectionVariableAttributeAssignmentsCompartmentEditPart(
-			View view) {
+	public CollectionVariableCollectionVariableAttributeAssignmentsCompartmentEditPart(View view) {
 		super(view);
 	}
 
@@ -59,8 +58,7 @@ public class CollectionVariableCollectionVariableAttributeAssignmentsCompartment
 	 * @generated
 	 */
 	public IFigure createFigure() {
-		ResizableCompartmentFigure result = (ResizableCompartmentFigure) super
-				.createFigure();
+		ResizableCompartmentFigure result = (ResizableCompartmentFigure) super.createFigure();
 		result.setTitleVisibility(false);
 		return result;
 	}
@@ -70,16 +68,12 @@ public class CollectionVariableCollectionVariableAttributeAssignmentsCompartment
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(
-				EditPolicyRoles.SEMANTIC_ROLE,
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
 				new CollectionVariableCollectionVariableAttributeAssignmentsCompartmentItemSemanticEditPolicy());
 		installEditPolicy(EditPolicyRoles.CREATION_ROLE,
-				new CreationEditPolicyWithCustomReparent(
-						StorydiagramsVisualIDRegistry.TYPED_INSTANCE));
-		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE,
-				new DragDropEditPolicy());
-		installEditPolicy(
-				EditPolicyRoles.CANONICAL_ROLE,
+				new CreationEditPolicyWithCustomReparent(StorydiagramsVisualIDRegistry.TYPED_INSTANCE));
+		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
+		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE,
 				new CollectionVariableCollectionVariableAttributeAssignmentsCompartmentCanonicalEditPolicy());
 	}
 
@@ -97,11 +91,9 @@ public class CollectionVariableCollectionVariableAttributeAssignmentsCompartment
 	 */
 	public EditPart getTargetEditPart(Request request) {
 		if (request instanceof CreateViewAndElementRequest) {
-			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request)
-					.getViewAndElementDescriptor()
+			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request).getViewAndElementDescriptor()
 					.getCreateElementRequestAdapter();
-			IElementType type = (IElementType) adapter
-					.getAdapter(IElementType.class);
+			IElementType type = (IElementType) adapter.getAdapter(IElementType.class);
 			if (type == StorydiagramsElementTypes.AttributeAssignment_3003) {
 				return this;
 			}

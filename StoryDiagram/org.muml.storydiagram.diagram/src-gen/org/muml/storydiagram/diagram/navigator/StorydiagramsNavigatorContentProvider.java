@@ -58,8 +58,7 @@ import org.muml.storydiagram.diagram.part.StorydiagramsVisualIDRegistry;
 /**
  * @generated
  */
-public class StorydiagramsNavigatorContentProvider implements
-		ICommonContentProvider {
+public class StorydiagramsNavigatorContentProvider implements ICommonContentProvider {
 
 	/**
 	 * @generated
@@ -91,8 +90,7 @@ public class StorydiagramsNavigatorContentProvider implements
 	 */
 	@SuppressWarnings({ "unchecked", "serial", "rawtypes" })
 	public StorydiagramsNavigatorContentProvider() {
-		TransactionalEditingDomain editingDomain = GMFEditingDomainFactory.INSTANCE
-				.createEditingDomain();
+		TransactionalEditingDomain editingDomain = GMFEditingDomainFactory.INSTANCE.createEditingDomain();
 		myEditingDomain = (AdapterFactoryEditingDomain) editingDomain;
 		myEditingDomain.setResourceToReadOnlyMap(new HashMap() {
 			public Object get(Object key) {
@@ -109,30 +107,28 @@ public class StorydiagramsNavigatorContentProvider implements
 				}
 			}
 		};
-		myWorkspaceSynchronizer = new WorkspaceSynchronizer(editingDomain,
-				new WorkspaceSynchronizer.Delegate() {
-					public void dispose() {
-					}
+		myWorkspaceSynchronizer = new WorkspaceSynchronizer(editingDomain, new WorkspaceSynchronizer.Delegate() {
+			public void dispose() {
+			}
 
-					public boolean handleResourceChanged(final Resource resource) {
-						unloadAllResources();
-						asyncRefresh();
-						return true;
-					}
+			public boolean handleResourceChanged(final Resource resource) {
+				unloadAllResources();
+				asyncRefresh();
+				return true;
+			}
 
-					public boolean handleResourceDeleted(Resource resource) {
-						unloadAllResources();
-						asyncRefresh();
-						return true;
-					}
+			public boolean handleResourceDeleted(Resource resource) {
+				unloadAllResources();
+				asyncRefresh();
+				return true;
+			}
 
-					public boolean handleResourceMoved(Resource resource,
-							final URI newURI) {
-						unloadAllResources();
-						asyncRefresh();
-						return true;
-					}
-				});
+			public boolean handleResourceMoved(Resource resource, final URI newURI) {
+				unloadAllResources();
+				asyncRefresh();
+				return true;
+			}
+		});
 	}
 
 	/**
@@ -159,8 +155,7 @@ public class StorydiagramsNavigatorContentProvider implements
 	 * @generated
 	 */
 	void unloadAllResources() {
-		for (Resource nextResource : myEditingDomain.getResourceSet()
-				.getResources()) {
+		for (Resource nextResource : myEditingDomain.getResourceSet().getResources()) {
 			nextResource.unload();
 		}
 	}
@@ -170,8 +165,7 @@ public class StorydiagramsNavigatorContentProvider implements
 	 */
 	void asyncRefresh() {
 		if (myViewer != null && !myViewer.getControl().isDisposed()) {
-			myViewer.getControl().getDisplay()
-					.asyncExec(myViewerRefreshRunnable);
+			myViewer.getControl().getDisplay().asyncExec(myViewerRefreshRunnable);
 		}
 	}
 
@@ -206,21 +200,16 @@ public class StorydiagramsNavigatorContentProvider implements
 	public Object[] getChildren(Object parentElement) {
 		if (parentElement instanceof IFile) {
 			IFile file = (IFile) parentElement;
-			URI fileURI = URI.createPlatformResourceURI(file.getFullPath()
-					.toString(), true);
-			Resource resource = myEditingDomain.getResourceSet().getResource(
-					fileURI, true);
+			URI fileURI = URI.createPlatformResourceURI(file.getFullPath().toString(), true);
+			Resource resource = myEditingDomain.getResourceSet().getResource(fileURI, true);
 			ArrayList<StorydiagramsNavigatorItem> result = new ArrayList<StorydiagramsNavigatorItem>();
-			ArrayList<View> topViews = new ArrayList<View>(resource
-					.getContents().size());
+			ArrayList<View> topViews = new ArrayList<View>(resource.getContents().size());
 			for (EObject o : resource.getContents()) {
 				if (o instanceof View) {
 					topViews.add((View) o);
 				}
 			}
-			result.addAll(createNavigatorItems(
-					selectViewsByType(topViews, ActivityEditPart.MODEL_ID),
-					file, false));
+			result.addAll(createNavigatorItems(selectViewsByType(topViews, ActivityEditPart.MODEL_ID), file, false));
 			return result.toArray();
 		}
 
@@ -250,64 +239,43 @@ public class StorydiagramsNavigatorContentProvider implements
 			LinkedList<StorydiagramsAbstractNavigatorItem> result = new LinkedList<StorydiagramsAbstractNavigatorItem>();
 			Diagram sv = (Diagram) view;
 			StorydiagramsNavigatorGroup links = new StorydiagramsNavigatorGroup(
-					Messages.NavigatorGroupName_Activity_1000_links,
-					"icons/linksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+					Messages.NavigatorGroupName_Activity_1000_links, "icons/linksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
 			connectedViews = getChildrenByType(Collections.singleton(sv),
-					StorydiagramsVisualIDRegistry
-							.getType(ActivityCallNodeEditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement,
-					false));
+					StorydiagramsVisualIDRegistry.getType(ActivityCallNodeEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			connectedViews = getChildrenByType(Collections.singleton(sv),
-					StorydiagramsVisualIDRegistry
-							.getType(StatementNodeEditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement,
-					false));
+					StorydiagramsVisualIDRegistry.getType(StatementNodeEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			connectedViews = getChildrenByType(Collections.singleton(sv),
-					StorydiagramsVisualIDRegistry
-							.getType(ModifyingStoryNodeEditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement,
-					false));
+					StorydiagramsVisualIDRegistry.getType(ModifyingStoryNodeEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			connectedViews = getChildrenByType(Collections.singleton(sv),
-					StorydiagramsVisualIDRegistry
-							.getType(MatchingStoryNodeEditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement,
-					false));
+					StorydiagramsVisualIDRegistry.getType(MatchingStoryNodeEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			connectedViews = getChildrenByType(Collections.singleton(sv),
-					StorydiagramsVisualIDRegistry
-							.getType(InitialNodeEditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement,
-					false));
+					StorydiagramsVisualIDRegistry.getType(InitialNodeEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			connectedViews = getChildrenByType(Collections.singleton(sv),
-					StorydiagramsVisualIDRegistry
-							.getType(JunctionNodeEditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement,
-					false));
+					StorydiagramsVisualIDRegistry.getType(JunctionNodeEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			connectedViews = getChildrenByType(Collections.singleton(sv),
-					StorydiagramsVisualIDRegistry
-							.getType(FlowFinalNodeEditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement,
-					false));
+					StorydiagramsVisualIDRegistry.getType(FlowFinalNodeEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			connectedViews = getChildrenByType(Collections.singleton(sv),
-					StorydiagramsVisualIDRegistry
-							.getType(ActivityFinalNodeEditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement,
-					false));
+					StorydiagramsVisualIDRegistry.getType(ActivityFinalNodeEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			connectedViews = getDiagramLinksByType(Collections.singleton(sv),
-					StorydiagramsVisualIDRegistry
-							.getType(ActivityEdgeEditPart.VISUAL_ID));
+					StorydiagramsVisualIDRegistry.getType(ActivityEdgeEditPart.VISUAL_ID));
 			links.addChildren(createNavigatorItems(connectedViews, links, false));
 			connectedViews = getDiagramLinksByType(Collections.singleton(sv),
-					StorydiagramsVisualIDRegistry
-							.getType(LinkVariableEditPart.VISUAL_ID));
+					StorydiagramsVisualIDRegistry.getType(LinkVariableEditPart.VISUAL_ID));
 			links.addChildren(createNavigatorItems(connectedViews, links, false));
 			connectedViews = getDiagramLinksByType(Collections.singleton(sv),
-					StorydiagramsVisualIDRegistry
-							.getType(InclusionLinkEditPart.VISUAL_ID));
+					StorydiagramsVisualIDRegistry.getType(InclusionLinkEditPart.VISUAL_ID));
 			links.addChildren(createNavigatorItems(connectedViews, links, false));
 			connectedViews = getDiagramLinksByType(Collections.singleton(sv),
-					StorydiagramsVisualIDRegistry
-							.getType(MaybeLinkEditPart.VISUAL_ID));
+					StorydiagramsVisualIDRegistry.getType(MaybeLinkEditPart.VISUAL_ID));
 			links.addChildren(createNavigatorItems(connectedViews, links, false));
 			if (!links.isEmpty()) {
 				result.add(links);
@@ -326,15 +294,11 @@ public class StorydiagramsNavigatorContentProvider implements
 					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
 			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					StorydiagramsVisualIDRegistry
-							.getType(ActivityEdgeEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
+					StorydiagramsVisualIDRegistry.getType(ActivityEdgeEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
 			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					StorydiagramsVisualIDRegistry
-							.getType(ActivityEdgeEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
+					StorydiagramsVisualIDRegistry.getType(ActivityEdgeEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
 			if (!incominglinks.isEmpty()) {
 				result.add(incominglinks);
 			}
@@ -355,15 +319,11 @@ public class StorydiagramsNavigatorContentProvider implements
 					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
 			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					StorydiagramsVisualIDRegistry
-							.getType(ActivityEdgeEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
+					StorydiagramsVisualIDRegistry.getType(ActivityEdgeEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
 			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					StorydiagramsVisualIDRegistry
-							.getType(ActivityEdgeEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
+					StorydiagramsVisualIDRegistry.getType(ActivityEdgeEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
 			if (!incominglinks.isEmpty()) {
 				result.add(incominglinks);
 			}
@@ -383,25 +343,17 @@ public class StorydiagramsNavigatorContentProvider implements
 					Messages.NavigatorGroupName_ModifyingStoryNode_2003_outgoinglinks,
 					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
-			connectedViews = getChildrenByType(
-					Collections.singleton(sv),
-					StorydiagramsVisualIDRegistry
-							.getType(ModifyingStoryNodeStoryNodePatternCompartmentEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(Collections.singleton(sv), StorydiagramsVisualIDRegistry
+					.getType(ModifyingStoryNodeStoryNodePatternCompartmentEditPart.VISUAL_ID));
 			connectedViews = getChildrenByType(connectedViews,
-					StorydiagramsVisualIDRegistry
-							.getType(StoryPatternEditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement,
-					false));
+					StorydiagramsVisualIDRegistry.getType(StoryPatternEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					StorydiagramsVisualIDRegistry
-							.getType(ActivityEdgeEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
+					StorydiagramsVisualIDRegistry.getType(ActivityEdgeEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
 			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					StorydiagramsVisualIDRegistry
-							.getType(ActivityEdgeEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
+					StorydiagramsVisualIDRegistry.getType(ActivityEdgeEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
 			if (!incominglinks.isEmpty()) {
 				result.add(incominglinks);
 			}
@@ -421,25 +373,17 @@ public class StorydiagramsNavigatorContentProvider implements
 					Messages.NavigatorGroupName_MatchingStoryNode_2004_outgoinglinks,
 					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
-			connectedViews = getChildrenByType(
-					Collections.singleton(sv),
-					StorydiagramsVisualIDRegistry
-							.getType(MatchingStoryNodeStoryNodePatternCompartmentEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(Collections.singleton(sv), StorydiagramsVisualIDRegistry
+					.getType(MatchingStoryNodeStoryNodePatternCompartmentEditPart.VISUAL_ID));
 			connectedViews = getChildrenByType(connectedViews,
-					StorydiagramsVisualIDRegistry
-							.getType(MatchingPatternEditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement,
-					false));
+					StorydiagramsVisualIDRegistry.getType(MatchingPatternEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					StorydiagramsVisualIDRegistry
-							.getType(ActivityEdgeEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
+					StorydiagramsVisualIDRegistry.getType(ActivityEdgeEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
 			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					StorydiagramsVisualIDRegistry
-							.getType(ActivityEdgeEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
+					StorydiagramsVisualIDRegistry.getType(ActivityEdgeEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
 			if (!incominglinks.isEmpty()) {
 				result.add(incominglinks);
 			}
@@ -453,22 +397,18 @@ public class StorydiagramsNavigatorContentProvider implements
 			LinkedList<StorydiagramsAbstractNavigatorItem> result = new LinkedList<StorydiagramsAbstractNavigatorItem>();
 			Node sv = (Node) view;
 			StorydiagramsNavigatorGroup incominglinks = new StorydiagramsNavigatorGroup(
-					Messages.NavigatorGroupName_InitialNode_2005_incominglinks,
-					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+					Messages.NavigatorGroupName_InitialNode_2005_incominglinks, "icons/incomingLinksNavigatorGroup.gif", //$NON-NLS-1$
+					parentElement);
 			StorydiagramsNavigatorGroup outgoinglinks = new StorydiagramsNavigatorGroup(
-					Messages.NavigatorGroupName_InitialNode_2005_outgoinglinks,
-					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+					Messages.NavigatorGroupName_InitialNode_2005_outgoinglinks, "icons/outgoingLinksNavigatorGroup.gif", //$NON-NLS-1$
+					parentElement);
 			Collection<View> connectedViews;
 			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					StorydiagramsVisualIDRegistry
-							.getType(ActivityEdgeEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
+					StorydiagramsVisualIDRegistry.getType(ActivityEdgeEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
 			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					StorydiagramsVisualIDRegistry
-							.getType(ActivityEdgeEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
+					StorydiagramsVisualIDRegistry.getType(ActivityEdgeEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
 			if (!incominglinks.isEmpty()) {
 				result.add(incominglinks);
 			}
@@ -489,15 +429,11 @@ public class StorydiagramsNavigatorContentProvider implements
 					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
 			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					StorydiagramsVisualIDRegistry
-							.getType(ActivityEdgeEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
+					StorydiagramsVisualIDRegistry.getType(ActivityEdgeEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
 			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					StorydiagramsVisualIDRegistry
-							.getType(ActivityEdgeEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
+					StorydiagramsVisualIDRegistry.getType(ActivityEdgeEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
 			if (!incominglinks.isEmpty()) {
 				result.add(incominglinks);
 			}
@@ -518,15 +454,11 @@ public class StorydiagramsNavigatorContentProvider implements
 					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
 			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					StorydiagramsVisualIDRegistry
-							.getType(ActivityEdgeEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
+					StorydiagramsVisualIDRegistry.getType(ActivityEdgeEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
 			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					StorydiagramsVisualIDRegistry
-							.getType(ActivityEdgeEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
+					StorydiagramsVisualIDRegistry.getType(ActivityEdgeEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
 			if (!incominglinks.isEmpty()) {
 				result.add(incominglinks);
 			}
@@ -547,15 +479,11 @@ public class StorydiagramsNavigatorContentProvider implements
 					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
 			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					StorydiagramsVisualIDRegistry
-							.getType(ActivityEdgeEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
+					StorydiagramsVisualIDRegistry.getType(ActivityEdgeEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
 			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					StorydiagramsVisualIDRegistry
-							.getType(ActivityEdgeEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
+					StorydiagramsVisualIDRegistry.getType(ActivityEdgeEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
 			if (!incominglinks.isEmpty()) {
 				result.add(incominglinks);
 			}
@@ -569,33 +497,21 @@ public class StorydiagramsNavigatorContentProvider implements
 			LinkedList<StorydiagramsAbstractNavigatorItem> result = new LinkedList<StorydiagramsAbstractNavigatorItem>();
 			Node sv = (Node) view;
 			Collection<View> connectedViews;
-			connectedViews = getChildrenByType(
-					Collections.singleton(sv),
-					StorydiagramsVisualIDRegistry
-							.getType(StoryPatternStoryPatternContentCompartmentEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(Collections.singleton(sv), StorydiagramsVisualIDRegistry
+					.getType(StoryPatternStoryPatternContentCompartmentEditPart.VISUAL_ID));
 			connectedViews = getChildrenByType(connectedViews,
-					StorydiagramsVisualIDRegistry
-							.getType(CollectionVariableEditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement,
-					false));
-			connectedViews = getChildrenByType(
-					Collections.singleton(sv),
-					StorydiagramsVisualIDRegistry
-							.getType(StoryPatternStoryPatternContentCompartmentEditPart.VISUAL_ID));
+					StorydiagramsVisualIDRegistry.getType(CollectionVariableEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+			connectedViews = getChildrenByType(Collections.singleton(sv), StorydiagramsVisualIDRegistry
+					.getType(StoryPatternStoryPatternContentCompartmentEditPart.VISUAL_ID));
 			connectedViews = getChildrenByType(connectedViews,
-					StorydiagramsVisualIDRegistry
-							.getType(ObjectVariableEditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement,
-					false));
-			connectedViews = getChildrenByType(
-					Collections.singleton(sv),
-					StorydiagramsVisualIDRegistry
-							.getType(StoryPatternStoryPatternConstraintsCompartmentEditPart.VISUAL_ID));
+					StorydiagramsVisualIDRegistry.getType(ObjectVariableEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+			connectedViews = getChildrenByType(Collections.singleton(sv), StorydiagramsVisualIDRegistry
+					.getType(StoryPatternStoryPatternConstraintsCompartmentEditPart.VISUAL_ID));
 			connectedViews = getChildrenByType(connectedViews,
-					StorydiagramsVisualIDRegistry
-							.getType(Constraint2EditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement,
-					false));
+					StorydiagramsVisualIDRegistry.getType(Constraint2EditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			return result.toArray();
 		}
 
@@ -609,54 +525,34 @@ public class StorydiagramsNavigatorContentProvider implements
 					Messages.NavigatorGroupName_CollectionVariable_3002_outgoinglinks,
 					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
-			connectedViews = getChildrenByType(
-					Collections.singleton(sv),
-					StorydiagramsVisualIDRegistry
-							.getType(CollectionVariableCollectionVariableAttributeAssignmentsCompartmentEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(Collections.singleton(sv), StorydiagramsVisualIDRegistry
+					.getType(CollectionVariableCollectionVariableAttributeAssignmentsCompartmentEditPart.VISUAL_ID));
 			connectedViews = getChildrenByType(connectedViews,
-					StorydiagramsVisualIDRegistry
-							.getType(AttributeAssignmentEditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement,
-					false));
-			connectedViews = getChildrenByType(
-					Collections.singleton(sv),
-					StorydiagramsVisualIDRegistry
-							.getType(CollectionVariableCollectionVariableConstraintsCompartmentEditPart.VISUAL_ID));
+					StorydiagramsVisualIDRegistry.getType(AttributeAssignmentEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+			connectedViews = getChildrenByType(Collections.singleton(sv), StorydiagramsVisualIDRegistry
+					.getType(CollectionVariableCollectionVariableConstraintsCompartmentEditPart.VISUAL_ID));
 			connectedViews = getChildrenByType(connectedViews,
-					StorydiagramsVisualIDRegistry
-							.getType(ConstraintEditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement,
-					false));
+					StorydiagramsVisualIDRegistry.getType(ConstraintEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					StorydiagramsVisualIDRegistry
-							.getType(LinkVariableEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
+					StorydiagramsVisualIDRegistry.getType(LinkVariableEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
 			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					StorydiagramsVisualIDRegistry
-							.getType(LinkVariableEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
+					StorydiagramsVisualIDRegistry.getType(LinkVariableEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
 			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					StorydiagramsVisualIDRegistry
-							.getType(InclusionLinkEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
+					StorydiagramsVisualIDRegistry.getType(InclusionLinkEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
 			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					StorydiagramsVisualIDRegistry
-							.getType(InclusionLinkEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
+					StorydiagramsVisualIDRegistry.getType(InclusionLinkEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
 			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					StorydiagramsVisualIDRegistry
-							.getType(MaybeLinkEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
+					StorydiagramsVisualIDRegistry.getType(MaybeLinkEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
 			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					StorydiagramsVisualIDRegistry
-							.getType(MaybeLinkEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
+					StorydiagramsVisualIDRegistry.getType(MaybeLinkEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
 			if (!incominglinks.isEmpty()) {
 				result.add(incominglinks);
 			}
@@ -676,54 +572,34 @@ public class StorydiagramsNavigatorContentProvider implements
 					Messages.NavigatorGroupName_ObjectVariable_3005_outgoinglinks,
 					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
-			connectedViews = getChildrenByType(
-					Collections.singleton(sv),
-					StorydiagramsVisualIDRegistry
-							.getType(ObjectVariableObjectVariableAttributeAssignmentsCompartmentEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(Collections.singleton(sv), StorydiagramsVisualIDRegistry
+					.getType(ObjectVariableObjectVariableAttributeAssignmentsCompartmentEditPart.VISUAL_ID));
 			connectedViews = getChildrenByType(connectedViews,
-					StorydiagramsVisualIDRegistry
-							.getType(AttributeAssignmentEditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement,
-					false));
-			connectedViews = getChildrenByType(
-					Collections.singleton(sv),
-					StorydiagramsVisualIDRegistry
-							.getType(ObjectVariableObjectVariableConstraintsCompartmentEditPart.VISUAL_ID));
+					StorydiagramsVisualIDRegistry.getType(AttributeAssignmentEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+			connectedViews = getChildrenByType(Collections.singleton(sv), StorydiagramsVisualIDRegistry
+					.getType(ObjectVariableObjectVariableConstraintsCompartmentEditPart.VISUAL_ID));
 			connectedViews = getChildrenByType(connectedViews,
-					StorydiagramsVisualIDRegistry
-							.getType(ConstraintEditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement,
-					false));
+					StorydiagramsVisualIDRegistry.getType(ConstraintEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					StorydiagramsVisualIDRegistry
-							.getType(LinkVariableEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
+					StorydiagramsVisualIDRegistry.getType(LinkVariableEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
 			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					StorydiagramsVisualIDRegistry
-							.getType(LinkVariableEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
+					StorydiagramsVisualIDRegistry.getType(LinkVariableEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
 			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					StorydiagramsVisualIDRegistry
-							.getType(InclusionLinkEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
+					StorydiagramsVisualIDRegistry.getType(InclusionLinkEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
 			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					StorydiagramsVisualIDRegistry
-							.getType(InclusionLinkEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
+					StorydiagramsVisualIDRegistry.getType(InclusionLinkEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
 			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					StorydiagramsVisualIDRegistry
-							.getType(MaybeLinkEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
+					StorydiagramsVisualIDRegistry.getType(MaybeLinkEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
 			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					StorydiagramsVisualIDRegistry
-							.getType(MaybeLinkEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
+					StorydiagramsVisualIDRegistry.getType(MaybeLinkEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
 			if (!incominglinks.isEmpty()) {
 				result.add(incominglinks);
 			}
@@ -737,33 +613,21 @@ public class StorydiagramsNavigatorContentProvider implements
 			LinkedList<StorydiagramsAbstractNavigatorItem> result = new LinkedList<StorydiagramsAbstractNavigatorItem>();
 			Node sv = (Node) view;
 			Collection<View> connectedViews;
-			connectedViews = getChildrenByType(
-					Collections.singleton(sv),
-					StorydiagramsVisualIDRegistry
-							.getType(MatchingPatternStoryPatternContentCompartmentEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(Collections.singleton(sv), StorydiagramsVisualIDRegistry
+					.getType(MatchingPatternStoryPatternContentCompartmentEditPart.VISUAL_ID));
 			connectedViews = getChildrenByType(connectedViews,
-					StorydiagramsVisualIDRegistry
-							.getType(CollectionVariableEditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement,
-					false));
-			connectedViews = getChildrenByType(
-					Collections.singleton(sv),
-					StorydiagramsVisualIDRegistry
-							.getType(MatchingPatternStoryPatternContentCompartmentEditPart.VISUAL_ID));
+					StorydiagramsVisualIDRegistry.getType(CollectionVariableEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+			connectedViews = getChildrenByType(Collections.singleton(sv), StorydiagramsVisualIDRegistry
+					.getType(MatchingPatternStoryPatternContentCompartmentEditPart.VISUAL_ID));
 			connectedViews = getChildrenByType(connectedViews,
-					StorydiagramsVisualIDRegistry
-							.getType(ObjectVariableEditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement,
-					false));
-			connectedViews = getChildrenByType(
-					Collections.singleton(sv),
-					StorydiagramsVisualIDRegistry
-							.getType(MatchingPatternStoryPatternConstraintsCompartmentEditPart.VISUAL_ID));
+					StorydiagramsVisualIDRegistry.getType(ObjectVariableEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+			connectedViews = getChildrenByType(Collections.singleton(sv), StorydiagramsVisualIDRegistry
+					.getType(MatchingPatternStoryPatternConstraintsCompartmentEditPart.VISUAL_ID));
 			connectedViews = getChildrenByType(connectedViews,
-					StorydiagramsVisualIDRegistry
-							.getType(Constraint2EditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement,
-					false));
+					StorydiagramsVisualIDRegistry.getType(Constraint2EditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			return result.toArray();
 		}
 
@@ -771,92 +635,60 @@ public class StorydiagramsNavigatorContentProvider implements
 			LinkedList<StorydiagramsAbstractNavigatorItem> result = new LinkedList<StorydiagramsAbstractNavigatorItem>();
 			Edge sv = (Edge) view;
 			StorydiagramsNavigatorGroup target = new StorydiagramsNavigatorGroup(
-					Messages.NavigatorGroupName_ActivityEdge_4001_target,
-					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+					Messages.NavigatorGroupName_ActivityEdge_4001_target, "icons/linkTargetNavigatorGroup.gif", //$NON-NLS-1$
+					parentElement);
 			StorydiagramsNavigatorGroup source = new StorydiagramsNavigatorGroup(
-					Messages.NavigatorGroupName_ActivityEdge_4001_source,
-					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+					Messages.NavigatorGroupName_ActivityEdge_4001_source, "icons/linkSourceNavigatorGroup.gif", //$NON-NLS-1$
+					parentElement);
 			Collection<View> connectedViews;
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					StorydiagramsVisualIDRegistry
-							.getType(ActivityCallNodeEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
+					StorydiagramsVisualIDRegistry.getType(ActivityCallNodeEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					StorydiagramsVisualIDRegistry
-							.getType(StatementNodeEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
+					StorydiagramsVisualIDRegistry.getType(StatementNodeEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					StorydiagramsVisualIDRegistry
-							.getType(ModifyingStoryNodeEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
+					StorydiagramsVisualIDRegistry.getType(ModifyingStoryNodeEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					StorydiagramsVisualIDRegistry
-							.getType(MatchingStoryNodeEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
+					StorydiagramsVisualIDRegistry.getType(MatchingStoryNodeEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					StorydiagramsVisualIDRegistry
-							.getType(InitialNodeEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
+					StorydiagramsVisualIDRegistry.getType(InitialNodeEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					StorydiagramsVisualIDRegistry
-							.getType(JunctionNodeEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
+					StorydiagramsVisualIDRegistry.getType(JunctionNodeEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					StorydiagramsVisualIDRegistry
-							.getType(FlowFinalNodeEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
+					StorydiagramsVisualIDRegistry.getType(FlowFinalNodeEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					StorydiagramsVisualIDRegistry
-							.getType(ActivityFinalNodeEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
+					StorydiagramsVisualIDRegistry.getType(ActivityFinalNodeEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					StorydiagramsVisualIDRegistry
-							.getType(ActivityCallNodeEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
+					StorydiagramsVisualIDRegistry.getType(ActivityCallNodeEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					StorydiagramsVisualIDRegistry
-							.getType(StatementNodeEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
+					StorydiagramsVisualIDRegistry.getType(StatementNodeEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					StorydiagramsVisualIDRegistry
-							.getType(ModifyingStoryNodeEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
+					StorydiagramsVisualIDRegistry.getType(ModifyingStoryNodeEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					StorydiagramsVisualIDRegistry
-							.getType(MatchingStoryNodeEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
+					StorydiagramsVisualIDRegistry.getType(MatchingStoryNodeEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					StorydiagramsVisualIDRegistry
-							.getType(InitialNodeEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
+					StorydiagramsVisualIDRegistry.getType(InitialNodeEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					StorydiagramsVisualIDRegistry
-							.getType(JunctionNodeEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
+					StorydiagramsVisualIDRegistry.getType(JunctionNodeEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					StorydiagramsVisualIDRegistry
-							.getType(FlowFinalNodeEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
+					StorydiagramsVisualIDRegistry.getType(FlowFinalNodeEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					StorydiagramsVisualIDRegistry
-							.getType(ActivityFinalNodeEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
+					StorydiagramsVisualIDRegistry.getType(ActivityFinalNodeEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			if (!target.isEmpty()) {
 				result.add(target);
 			}
@@ -870,32 +702,24 @@ public class StorydiagramsNavigatorContentProvider implements
 			LinkedList<StorydiagramsAbstractNavigatorItem> result = new LinkedList<StorydiagramsAbstractNavigatorItem>();
 			Edge sv = (Edge) view;
 			StorydiagramsNavigatorGroup target = new StorydiagramsNavigatorGroup(
-					Messages.NavigatorGroupName_LinkVariable_4002_target,
-					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+					Messages.NavigatorGroupName_LinkVariable_4002_target, "icons/linkTargetNavigatorGroup.gif", //$NON-NLS-1$
+					parentElement);
 			StorydiagramsNavigatorGroup source = new StorydiagramsNavigatorGroup(
-					Messages.NavigatorGroupName_LinkVariable_4002_source,
-					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+					Messages.NavigatorGroupName_LinkVariable_4002_source, "icons/linkSourceNavigatorGroup.gif", //$NON-NLS-1$
+					parentElement);
 			Collection<View> connectedViews;
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					StorydiagramsVisualIDRegistry
-							.getType(CollectionVariableEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
+					StorydiagramsVisualIDRegistry.getType(CollectionVariableEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					StorydiagramsVisualIDRegistry
-							.getType(ObjectVariableEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
+					StorydiagramsVisualIDRegistry.getType(ObjectVariableEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					StorydiagramsVisualIDRegistry
-							.getType(CollectionVariableEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
+					StorydiagramsVisualIDRegistry.getType(CollectionVariableEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					StorydiagramsVisualIDRegistry
-							.getType(ObjectVariableEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
+					StorydiagramsVisualIDRegistry.getType(ObjectVariableEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			if (!target.isEmpty()) {
 				result.add(target);
 			}
@@ -909,32 +733,24 @@ public class StorydiagramsNavigatorContentProvider implements
 			LinkedList<StorydiagramsAbstractNavigatorItem> result = new LinkedList<StorydiagramsAbstractNavigatorItem>();
 			Edge sv = (Edge) view;
 			StorydiagramsNavigatorGroup target = new StorydiagramsNavigatorGroup(
-					Messages.NavigatorGroupName_InclusionLink_4003_target,
-					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+					Messages.NavigatorGroupName_InclusionLink_4003_target, "icons/linkTargetNavigatorGroup.gif", //$NON-NLS-1$
+					parentElement);
 			StorydiagramsNavigatorGroup source = new StorydiagramsNavigatorGroup(
-					Messages.NavigatorGroupName_InclusionLink_4003_source,
-					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+					Messages.NavigatorGroupName_InclusionLink_4003_source, "icons/linkSourceNavigatorGroup.gif", //$NON-NLS-1$
+					parentElement);
 			Collection<View> connectedViews;
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					StorydiagramsVisualIDRegistry
-							.getType(CollectionVariableEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
+					StorydiagramsVisualIDRegistry.getType(CollectionVariableEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					StorydiagramsVisualIDRegistry
-							.getType(ObjectVariableEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
+					StorydiagramsVisualIDRegistry.getType(ObjectVariableEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					StorydiagramsVisualIDRegistry
-							.getType(CollectionVariableEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
+					StorydiagramsVisualIDRegistry.getType(CollectionVariableEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					StorydiagramsVisualIDRegistry
-							.getType(ObjectVariableEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
+					StorydiagramsVisualIDRegistry.getType(ObjectVariableEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			if (!target.isEmpty()) {
 				result.add(target);
 			}
@@ -948,32 +764,24 @@ public class StorydiagramsNavigatorContentProvider implements
 			LinkedList<StorydiagramsAbstractNavigatorItem> result = new LinkedList<StorydiagramsAbstractNavigatorItem>();
 			Edge sv = (Edge) view;
 			StorydiagramsNavigatorGroup target = new StorydiagramsNavigatorGroup(
-					Messages.NavigatorGroupName_MaybeLink_4004_target,
-					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+					Messages.NavigatorGroupName_MaybeLink_4004_target, "icons/linkTargetNavigatorGroup.gif", //$NON-NLS-1$
+					parentElement);
 			StorydiagramsNavigatorGroup source = new StorydiagramsNavigatorGroup(
-					Messages.NavigatorGroupName_MaybeLink_4004_source,
-					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+					Messages.NavigatorGroupName_MaybeLink_4004_source, "icons/linkSourceNavigatorGroup.gif", //$NON-NLS-1$
+					parentElement);
 			Collection<View> connectedViews;
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					StorydiagramsVisualIDRegistry
-							.getType(CollectionVariableEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
+					StorydiagramsVisualIDRegistry.getType(CollectionVariableEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					StorydiagramsVisualIDRegistry
-							.getType(ObjectVariableEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
+					StorydiagramsVisualIDRegistry.getType(ObjectVariableEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					StorydiagramsVisualIDRegistry
-							.getType(CollectionVariableEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
+					StorydiagramsVisualIDRegistry.getType(CollectionVariableEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					StorydiagramsVisualIDRegistry
-							.getType(ObjectVariableEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
+					StorydiagramsVisualIDRegistry.getType(ObjectVariableEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			if (!target.isEmpty()) {
 				result.add(target);
 			}
@@ -989,13 +797,11 @@ public class StorydiagramsNavigatorContentProvider implements
 	/**
 	 * @generated
 	 */
-	private Collection<View> getLinksSourceByType(Collection<Edge> edges,
-			String type) {
+	private Collection<View> getLinksSourceByType(Collection<Edge> edges, String type) {
 		LinkedList<View> result = new LinkedList<View>();
 		for (Edge nextEdge : edges) {
 			View nextEdgeSource = nextEdge.getSource();
-			if (type.equals(nextEdgeSource.getType())
-					&& isOwnView(nextEdgeSource)) {
+			if (type.equals(nextEdgeSource.getType()) && isOwnView(nextEdgeSource)) {
 				result.add(nextEdgeSource);
 			}
 		}
@@ -1005,13 +811,11 @@ public class StorydiagramsNavigatorContentProvider implements
 	/**
 	 * @generated
 	 */
-	private Collection<View> getLinksTargetByType(Collection<Edge> edges,
-			String type) {
+	private Collection<View> getLinksTargetByType(Collection<Edge> edges, String type) {
 		LinkedList<View> result = new LinkedList<View>();
 		for (Edge nextEdge : edges) {
 			View nextEdgeTarget = nextEdge.getTarget();
-			if (type.equals(nextEdgeTarget.getType())
-					&& isOwnView(nextEdgeTarget)) {
+			if (type.equals(nextEdgeTarget.getType()) && isOwnView(nextEdgeTarget)) {
 				result.add(nextEdgeTarget);
 			}
 		}
@@ -1021,8 +825,7 @@ public class StorydiagramsNavigatorContentProvider implements
 	/**
 	 * @generated
 	 */
-	private Collection<View> getOutgoingLinksByType(
-			Collection<? extends View> nodes, String type) {
+	private Collection<View> getOutgoingLinksByType(Collection<? extends View> nodes, String type) {
 		LinkedList<View> result = new LinkedList<View>();
 		for (View nextNode : nodes) {
 			result.addAll(selectViewsByType(nextNode.getSourceEdges(), type));
@@ -1033,8 +836,7 @@ public class StorydiagramsNavigatorContentProvider implements
 	/**
 	 * @generated
 	 */
-	private Collection<View> getIncomingLinksByType(
-			Collection<? extends View> nodes, String type) {
+	private Collection<View> getIncomingLinksByType(Collection<? extends View> nodes, String type) {
 		LinkedList<View> result = new LinkedList<View>();
 		for (View nextNode : nodes) {
 			result.addAll(selectViewsByType(nextNode.getTargetEdges(), type));
@@ -1045,8 +847,7 @@ public class StorydiagramsNavigatorContentProvider implements
 	/**
 	 * @generated
 	 */
-	private Collection<View> getChildrenByType(
-			Collection<? extends View> nodes, String type) {
+	private Collection<View> getChildrenByType(Collection<? extends View> nodes, String type) {
 		LinkedList<View> result = new LinkedList<View>();
 		for (View nextNode : nodes) {
 			result.addAll(selectViewsByType(nextNode.getChildren(), type));
@@ -1057,8 +858,7 @@ public class StorydiagramsNavigatorContentProvider implements
 	/**
 	 * @generated
 	 */
-	private Collection<View> getDiagramLinksByType(
-			Collection<Diagram> diagrams, String type) {
+	private Collection<View> getDiagramLinksByType(Collection<Diagram> diagrams, String type) {
 		ArrayList<View> result = new ArrayList<View>();
 		for (Diagram nextDiagram : diagrams) {
 			result.addAll(selectViewsByType(nextDiagram.getEdges(), type));
@@ -1070,8 +870,7 @@ public class StorydiagramsNavigatorContentProvider implements
 	/**
 	 * @generated
 	 */
-	private Collection<View> selectViewsByType(Collection<View> views,
-			String type) {
+	private Collection<View> selectViewsByType(Collection<View> views, String type) {
 		ArrayList<View> result = new ArrayList<View>();
 		for (View nextView : views) {
 			if (type.equals(nextView.getType()) && isOwnView(nextView)) {
@@ -1085,17 +884,15 @@ public class StorydiagramsNavigatorContentProvider implements
 	 * @generated
 	 */
 	private boolean isOwnView(View view) {
-		return ActivityEditPart.MODEL_ID.equals(StorydiagramsVisualIDRegistry
-				.getModelID(view));
+		return ActivityEditPart.MODEL_ID.equals(StorydiagramsVisualIDRegistry.getModelID(view));
 	}
 
 	/**
 	 * @generated
 	 */
-	private Collection<StorydiagramsNavigatorItem> createNavigatorItems(
-			Collection<View> views, Object parent, boolean isLeafs) {
-		ArrayList<StorydiagramsNavigatorItem> result = new ArrayList<StorydiagramsNavigatorItem>(
-				views.size());
+	private Collection<StorydiagramsNavigatorItem> createNavigatorItems(Collection<View> views, Object parent,
+			boolean isLeafs) {
+		ArrayList<StorydiagramsNavigatorItem> result = new ArrayList<StorydiagramsNavigatorItem>(views.size());
 		for (View nextView : views) {
 			result.add(new StorydiagramsNavigatorItem(nextView, parent, isLeafs));
 		}

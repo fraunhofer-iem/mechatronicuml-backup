@@ -14,8 +14,7 @@ import org.muml.storydiagram.diagram.edit.policies.InclusionLinkItemSemanticEdit
 /**
  * @generated
  */
-public class InclusionLinkEditPart extends ConnectionNodeEditPart implements
-		ITreeBranchEditPart {
+public class InclusionLinkEditPart extends ConnectionNodeEditPart implements ITreeBranchEditPart {
 
 	/**
 	 * @generated
@@ -34,8 +33,7 @@ public class InclusionLinkEditPart extends ConnectionNodeEditPart implements
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
-				new InclusionLinkItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new InclusionLinkItemSemanticEditPolicy());
 	}
 
 	/**
@@ -43,8 +41,7 @@ public class InclusionLinkEditPart extends ConnectionNodeEditPart implements
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof InclusionLinkLabelEditPart) {
-			((InclusionLinkLabelEditPart) childEditPart)
-					.setLabel(getPrimaryShape().getInclusionLinkLabel());
+			((InclusionLinkLabelEditPart) childEditPart).setLabel(getPrimaryShape().getInclusionLinkLabel());
 			return true;
 		}
 		return false;

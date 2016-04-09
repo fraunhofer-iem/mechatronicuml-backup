@@ -94,10 +94,8 @@ public class ActivityCanonicalEditPolicy extends CanonicalEditPolicy {
 	/**
 	 * @generated
 	 */
-	protected boolean isOrphaned(Collection<EObject> semanticChildren,
-			final View view) {
-		return isMyDiagramElement(view)
-				&& !semanticChildren.contains(view.getElement());
+	protected boolean isOrphaned(Collection<EObject> semanticChildren, final View view) {
+		return isMyDiagramElement(view) && !semanticChildren.contains(view.getElement());
 	}
 
 	/**
@@ -145,8 +143,7 @@ public class ActivityCanonicalEditPolicy extends CanonicalEditPolicy {
 		for (Iterator<StorydiagramsNodeDescriptor> descriptorsIterator = childDescriptors
 				.iterator(); descriptorsIterator.hasNext();) {
 			StorydiagramsNodeDescriptor next = descriptorsIterator.next();
-			String hint = StorydiagramsVisualIDRegistry.getType(next
-					.getVisualID());
+			String hint = StorydiagramsVisualIDRegistry.getType(next.getVisualID());
 			LinkedList<View> perfectMatch = new LinkedList<View>(); // both semanticElement and hint match that of NodeDescriptor
 			for (View childView : getViewChildren()) {
 				EObject semanticElement = childView.getElement();
@@ -172,13 +169,10 @@ public class ActivityCanonicalEditPolicy extends CanonicalEditPolicy {
 		ArrayList<CreateViewRequest.ViewDescriptor> viewDescriptors = new ArrayList<CreateViewRequest.ViewDescriptor>(
 				childDescriptors.size());
 		for (StorydiagramsNodeDescriptor next : childDescriptors) {
-			String hint = StorydiagramsVisualIDRegistry.getType(next
-					.getVisualID());
-			IAdaptable elementAdapter = new CanonicalElementAdapter(
-					next.getModelElement(), hint);
-			CreateViewRequest.ViewDescriptor descriptor = new CreateViewRequest.ViewDescriptor(
-					elementAdapter, Node.class, hint, ViewUtil.APPEND, false,
-					host().getDiagramPreferencesHint());
+			String hint = StorydiagramsVisualIDRegistry.getType(next.getVisualID());
+			IAdaptable elementAdapter = new CanonicalElementAdapter(next.getModelElement(), hint);
+			CreateViewRequest.ViewDescriptor descriptor = new CreateViewRequest.ViewDescriptor(elementAdapter,
+					Node.class, hint, ViewUtil.APPEND, false, host().getDiagramPreferencesHint());
 			viewDescriptors.add(descriptor);
 		}
 
@@ -187,10 +181,10 @@ public class ActivityCanonicalEditPolicy extends CanonicalEditPolicy {
 		CreateViewRequest request = getCreateViewRequest(viewDescriptors);
 		Command cmd = getCreateViewCommand(request);
 		if (cmd != null && cmd.canExecute()) {
-			SetViewMutabilityCommand.makeMutable(
-					new EObjectAdapter(host().getNotationView())).execute();
+			SetViewMutabilityCommand.makeMutable(new EObjectAdapter(host().getNotationView())).execute();
 			executeCommand(cmd);
 			@SuppressWarnings("unchecked")
+
 			List<IAdaptable> nl = (List<IAdaptable>) request.getNewObject();
 			createdViews.addAll(nl);
 		}
@@ -202,8 +196,8 @@ public class ActivityCanonicalEditPolicy extends CanonicalEditPolicy {
 
 		if (createdViews.size() > 1) {
 			// perform a layout of the container
-			DeferredLayoutCommand layoutCmd = new DeferredLayoutCommand(host()
-					.getEditingDomain(), createdViews, host());
+			DeferredLayoutCommand layoutCmd = new DeferredLayoutCommand(host().getEditingDomain(), createdViews,
+					host());
 			executeCommand(new ICommandProxy(layoutCmd));
 		}
 
@@ -217,17 +211,13 @@ public class ActivityCanonicalEditPolicy extends CanonicalEditPolicy {
 	 */
 	private Collection<IAdaptable> refreshConnections() {
 		Domain2Notation domain2NotationMap = new Domain2Notation();
-		Collection<StorydiagramsLinkDescriptor> linkDescriptors = collectAllLinks(
-				getDiagram(), domain2NotationMap);
+		Collection<StorydiagramsLinkDescriptor> linkDescriptors = collectAllLinks(getDiagram(), domain2NotationMap);
 		Collection existingLinks = new LinkedList(getDiagram().getEdges());
-		for (Iterator linksIterator = existingLinks.iterator(); linksIterator
-				.hasNext();) {
+		for (Iterator linksIterator = existingLinks.iterator(); linksIterator.hasNext();) {
 			Edge nextDiagramLink = (Edge) linksIterator.next();
-			int diagramLinkVisualID = StorydiagramsVisualIDRegistry
-					.getVisualID(nextDiagramLink);
+			int diagramLinkVisualID = StorydiagramsVisualIDRegistry.getVisualID(nextDiagramLink);
 			if (diagramLinkVisualID == -1) {
-				if (nextDiagramLink.getSource() != null
-						&& nextDiagramLink.getTarget() != null) {
+				if (nextDiagramLink.getSource() != null && nextDiagramLink.getTarget() != null) {
 					linksIterator.remove();
 				}
 				continue;
@@ -237,14 +227,11 @@ public class ActivityCanonicalEditPolicy extends CanonicalEditPolicy {
 			EObject diagramLinkDst = nextDiagramLink.getTarget().getElement();
 			for (Iterator<StorydiagramsLinkDescriptor> linkDescriptorsIterator = linkDescriptors
 					.iterator(); linkDescriptorsIterator.hasNext();) {
-				StorydiagramsLinkDescriptor nextLinkDescriptor = linkDescriptorsIterator
-						.next();
+				StorydiagramsLinkDescriptor nextLinkDescriptor = linkDescriptorsIterator.next();
 				if (diagramLinkObject == nextLinkDescriptor.getModelElement()
 						&& diagramLinkSrc == nextLinkDescriptor.getSource()
-						&& diagramLinkDst == nextLinkDescriptor
-								.getDestination()
-						&& diagramLinkVisualID == nextLinkDescriptor
-								.getVisualID()) {
+						&& diagramLinkDst == nextLinkDescriptor.getDestination()
+						&& diagramLinkVisualID == nextLinkDescriptor.getVisualID()) {
 					linksIterator.remove();
 					linkDescriptorsIterator.remove();
 					break;
@@ -258,159 +245,137 @@ public class ActivityCanonicalEditPolicy extends CanonicalEditPolicy {
 	/**
 	 * @generated
 	 */
-	private Collection<StorydiagramsLinkDescriptor> collectAllLinks(View view,
-			Domain2Notation domain2NotationMap) {
-		if (!ActivityEditPart.MODEL_ID.equals(StorydiagramsVisualIDRegistry
-				.getModelID(view))) {
+	private Collection<StorydiagramsLinkDescriptor> collectAllLinks(View view, Domain2Notation domain2NotationMap) {
+		if (!ActivityEditPart.MODEL_ID.equals(StorydiagramsVisualIDRegistry.getModelID(view))) {
 			return Collections.emptyList();
 		}
 		LinkedList<StorydiagramsLinkDescriptor> result = new LinkedList<StorydiagramsLinkDescriptor>();
 		switch (StorydiagramsVisualIDRegistry.getVisualID(view)) {
 		case ActivityEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(StorydiagramsDiagramUpdater
-						.getActivity_1000ContainedLinks(view));
+				result.addAll(StorydiagramsDiagramUpdater.getActivity_1000ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case ActivityCallNodeEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(StorydiagramsDiagramUpdater
-						.getActivityCallNode_2001ContainedLinks(view));
+				result.addAll(StorydiagramsDiagramUpdater.getActivityCallNode_2001ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case StatementNodeEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(StorydiagramsDiagramUpdater
-						.getStatementNode_2002ContainedLinks(view));
+				result.addAll(StorydiagramsDiagramUpdater.getStatementNode_2002ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case ModifyingStoryNodeEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(StorydiagramsDiagramUpdater
-						.getModifyingStoryNode_2003ContainedLinks(view));
+				result.addAll(StorydiagramsDiagramUpdater.getModifyingStoryNode_2003ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case MatchingStoryNodeEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(StorydiagramsDiagramUpdater
-						.getMatchingStoryNode_2004ContainedLinks(view));
+				result.addAll(StorydiagramsDiagramUpdater.getMatchingStoryNode_2004ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case InitialNodeEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(StorydiagramsDiagramUpdater
-						.getInitialNode_2005ContainedLinks(view));
+				result.addAll(StorydiagramsDiagramUpdater.getInitialNode_2005ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case JunctionNodeEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(StorydiagramsDiagramUpdater
-						.getJunctionNode_2006ContainedLinks(view));
+				result.addAll(StorydiagramsDiagramUpdater.getJunctionNode_2006ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case FlowFinalNodeEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(StorydiagramsDiagramUpdater
-						.getFlowFinalNode_2007ContainedLinks(view));
+				result.addAll(StorydiagramsDiagramUpdater.getFlowFinalNode_2007ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case ActivityFinalNodeEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(StorydiagramsDiagramUpdater
-						.getActivityFinalNode_2008ContainedLinks(view));
+				result.addAll(StorydiagramsDiagramUpdater.getActivityFinalNode_2008ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case StoryPatternEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(StorydiagramsDiagramUpdater
-						.getStoryPattern_3001ContainedLinks(view));
+				result.addAll(StorydiagramsDiagramUpdater.getStoryPattern_3001ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case CollectionVariableEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(StorydiagramsDiagramUpdater
-						.getCollectionVariable_3002ContainedLinks(view));
+				result.addAll(StorydiagramsDiagramUpdater.getCollectionVariable_3002ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case ObjectVariableEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(StorydiagramsDiagramUpdater
-						.getObjectVariable_3005ContainedLinks(view));
+				result.addAll(StorydiagramsDiagramUpdater.getObjectVariable_3005ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case MatchingPatternEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(StorydiagramsDiagramUpdater
-						.getMatchingPattern_3007ContainedLinks(view));
+				result.addAll(StorydiagramsDiagramUpdater.getMatchingPattern_3007ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case ActivityEdgeEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(StorydiagramsDiagramUpdater
-						.getActivityEdge_4001ContainedLinks(view));
+				result.addAll(StorydiagramsDiagramUpdater.getActivityEdge_4001ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case LinkVariableEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(StorydiagramsDiagramUpdater
-						.getLinkVariable_4002ContainedLinks(view));
+				result.addAll(StorydiagramsDiagramUpdater.getLinkVariable_4002ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case InclusionLinkEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(StorydiagramsDiagramUpdater
-						.getInclusionLink_4003ContainedLinks(view));
+				result.addAll(StorydiagramsDiagramUpdater.getInclusionLink_4003ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case MaybeLinkEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(StorydiagramsDiagramUpdater
-						.getMaybeLink_4004ContainedLinks(view));
+				result.addAll(StorydiagramsDiagramUpdater.getMaybeLink_4004ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		}
-		for (Iterator children = view.getChildren().iterator(); children
-				.hasNext();) {
-			result.addAll(collectAllLinks((View) children.next(),
-					domain2NotationMap));
+		for (Iterator children = view.getChildren().iterator(); children.hasNext();) {
+			result.addAll(collectAllLinks((View) children.next(), domain2NotationMap));
 		}
 		for (Iterator edges = view.getSourceEdges().iterator(); edges.hasNext();) {
-			result.addAll(collectAllLinks((View) edges.next(),
-					domain2NotationMap));
+			result.addAll(collectAllLinks((View) edges.next(), domain2NotationMap));
 		}
 		return result;
 	}
@@ -418,26 +383,20 @@ public class ActivityCanonicalEditPolicy extends CanonicalEditPolicy {
 	/**
 	 * @generated
 	 */
-	private Collection<IAdaptable> createConnections(
-			Collection<StorydiagramsLinkDescriptor> linkDescriptors,
+	private Collection<IAdaptable> createConnections(Collection<StorydiagramsLinkDescriptor> linkDescriptors,
 			Domain2Notation domain2NotationMap) {
 		LinkedList<IAdaptable> adapters = new LinkedList<IAdaptable>();
 		for (StorydiagramsLinkDescriptor nextLinkDescriptor : linkDescriptors) {
-			EditPart sourceEditPart = getSourceEditPart(nextLinkDescriptor,
-					domain2NotationMap);
-			EditPart targetEditPart = getTargetEditPart(nextLinkDescriptor,
-					domain2NotationMap);
+			EditPart sourceEditPart = getSourceEditPart(nextLinkDescriptor, domain2NotationMap);
+			EditPart targetEditPart = getTargetEditPart(nextLinkDescriptor, domain2NotationMap);
 			if (sourceEditPart == null || targetEditPart == null) {
 				continue;
 			}
 			CreateConnectionViewRequest.ConnectionViewDescriptor descriptor = new CreateConnectionViewRequest.ConnectionViewDescriptor(
 					nextLinkDescriptor.getSemanticAdapter(),
-					StorydiagramsVisualIDRegistry.getType(nextLinkDescriptor
-							.getVisualID()), ViewUtil.APPEND, false,
-					((IGraphicalEditPart) getHost())
-							.getDiagramPreferencesHint());
-			CreateConnectionViewRequest ccr = new CreateConnectionViewRequest(
-					descriptor);
+					StorydiagramsVisualIDRegistry.getType(nextLinkDescriptor.getVisualID()), ViewUtil.APPEND, false,
+					((IGraphicalEditPart) getHost()).getDiagramPreferencesHint());
+			CreateConnectionViewRequest ccr = new CreateConnectionViewRequest(descriptor);
 			ccr.setType(RequestConstants.REQ_CONNECTION_START);
 			ccr.setSourceEditPart(sourceEditPart);
 			sourceEditPart.getCommand(ccr);
@@ -458,12 +417,10 @@ public class ActivityCanonicalEditPolicy extends CanonicalEditPolicy {
 	/**
 	 * @generated
 	 */
-	private EditPart getEditPart(EObject domainModelElement,
-			Domain2Notation domain2NotationMap) {
+	private EditPart getEditPart(EObject domainModelElement, Domain2Notation domain2NotationMap) {
 		View view = (View) domain2NotationMap.get(domainModelElement);
 		if (view != null) {
-			return (EditPart) getHost().getViewer().getEditPartRegistry()
-					.get(view);
+			return (EditPart) getHost().getViewer().getEditPartRegistry().get(view);
 		}
 		return null;
 	}
@@ -478,29 +435,26 @@ public class ActivityCanonicalEditPolicy extends CanonicalEditPolicy {
 	/**
 	 * @generated
 	 */
-	private EditPart getSourceEditPart(UpdaterLinkDescriptor descriptor,
-			Domain2Notation domain2NotationMap) {
+	private EditPart getSourceEditPart(UpdaterLinkDescriptor descriptor, Domain2Notation domain2NotationMap) {
 		return getEditPart(descriptor.getSource(), domain2NotationMap);
 	}
 
 	/**
 	 * @generated
 	 */
-	private EditPart getTargetEditPart(UpdaterLinkDescriptor descriptor,
-			Domain2Notation domain2NotationMap) {
+	private EditPart getTargetEditPart(UpdaterLinkDescriptor descriptor, Domain2Notation domain2NotationMap) {
 		return getEditPart(descriptor.getDestination(), domain2NotationMap);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected final EditPart getHintedEditPart(EObject domainModelElement,
-			Domain2Notation domain2NotationMap, int hintVisualId) {
+	protected final EditPart getHintedEditPart(EObject domainModelElement, Domain2Notation domain2NotationMap,
+			int hintVisualId) {
 		View view = (View) domain2NotationMap.getHinted(domainModelElement,
 				StorydiagramsVisualIDRegistry.getType(hintVisualId));
 		if (view != null) {
-			return (EditPart) getHost().getViewer().getEditPartRegistry()
-					.get(view);
+			return (EditPart) getHost().getViewer().getEditPartRegistry().get(view);
 		}
 		return null;
 	}

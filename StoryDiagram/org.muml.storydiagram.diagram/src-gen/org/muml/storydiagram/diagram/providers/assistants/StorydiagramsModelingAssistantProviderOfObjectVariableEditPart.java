@@ -34,16 +34,14 @@ public class StorydiagramsModelingAssistantProviderOfObjectVariableEditPart
 	 */
 	@Override
 	public List<IElementType> getRelTypesOnSource(IAdaptable source) {
-		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source
-				.getAdapter(IGraphicalEditPart.class);
+		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source.getAdapter(IGraphicalEditPart.class);
 		return doGetRelTypesOnSource((ObjectVariableEditPart) sourceEditPart);
 	}
 
 	/**
 	 * @generated
 	 */
-	public List<IElementType> doGetRelTypesOnSource(
-			ObjectVariableEditPart source) {
+	public List<IElementType> doGetRelTypesOnSource(ObjectVariableEditPart source) {
 		List<IElementType> types = new ArrayList<IElementType>(3);
 		types.add(StorydiagramsElementTypes.LinkVariable_4002);
 		types.add(StorydiagramsElementTypes.InclusionLink_4003);
@@ -55,21 +53,17 @@ public class StorydiagramsModelingAssistantProviderOfObjectVariableEditPart
 	 * @generated
 	 */
 	@Override
-	public List<IElementType> getRelTypesOnSourceAndTarget(IAdaptable source,
-			IAdaptable target) {
-		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source
-				.getAdapter(IGraphicalEditPart.class);
-		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target
-				.getAdapter(IGraphicalEditPart.class);
-		return doGetRelTypesOnSourceAndTarget(
-				(ObjectVariableEditPart) sourceEditPart, targetEditPart);
+	public List<IElementType> getRelTypesOnSourceAndTarget(IAdaptable source, IAdaptable target) {
+		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source.getAdapter(IGraphicalEditPart.class);
+		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target.getAdapter(IGraphicalEditPart.class);
+		return doGetRelTypesOnSourceAndTarget((ObjectVariableEditPart) sourceEditPart, targetEditPart);
 	}
 
 	/**
 	 * @generated
 	 */
-	public List<IElementType> doGetRelTypesOnSourceAndTarget(
-			ObjectVariableEditPart source, IGraphicalEditPart targetEditPart) {
+	public List<IElementType> doGetRelTypesOnSourceAndTarget(ObjectVariableEditPart source,
+			IGraphicalEditPart targetEditPart) {
 		List<IElementType> types = new LinkedList<IElementType>();
 		if (targetEditPart instanceof CollectionVariableEditPart) {
 			types.add(StorydiagramsElementTypes.LinkVariable_4002);
@@ -96,19 +90,15 @@ public class StorydiagramsModelingAssistantProviderOfObjectVariableEditPart
 	 * @generated
 	 */
 	@Override
-	public List<IElementType> getTypesForTarget(IAdaptable source,
-			IElementType relationshipType) {
-		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source
-				.getAdapter(IGraphicalEditPart.class);
-		return doGetTypesForTarget((ObjectVariableEditPart) sourceEditPart,
-				relationshipType);
+	public List<IElementType> getTypesForTarget(IAdaptable source, IElementType relationshipType) {
+		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source.getAdapter(IGraphicalEditPart.class);
+		return doGetTypesForTarget((ObjectVariableEditPart) sourceEditPart, relationshipType);
 	}
 
 	/**
 	 * @generated
 	 */
-	public List<IElementType> doGetTypesForTarget(
-			ObjectVariableEditPart source, IElementType relationshipType) {
+	public List<IElementType> doGetTypesForTarget(ObjectVariableEditPart source, IElementType relationshipType) {
 		List<IElementType> types = new ArrayList<IElementType>();
 		if (relationshipType == StorydiagramsElementTypes.LinkVariable_4002) {
 			types.add(StorydiagramsElementTypes.CollectionVariable_3002);
@@ -128,16 +118,14 @@ public class StorydiagramsModelingAssistantProviderOfObjectVariableEditPart
 	 */
 	@Override
 	public List<IElementType> getRelTypesOnTarget(IAdaptable target) {
-		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target
-				.getAdapter(IGraphicalEditPart.class);
+		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target.getAdapter(IGraphicalEditPart.class);
 		return doGetRelTypesOnTarget((ObjectVariableEditPart) targetEditPart);
 	}
 
 	/**
 	 * @generated
 	 */
-	public List<IElementType> doGetRelTypesOnTarget(
-			ObjectVariableEditPart target) {
+	public List<IElementType> doGetRelTypesOnTarget(ObjectVariableEditPart target) {
 		List<IElementType> types = new ArrayList<IElementType>(3);
 		types.add(StorydiagramsElementTypes.LinkVariable_4002);
 		types.add(StorydiagramsElementTypes.InclusionLink_4003);
@@ -149,19 +137,15 @@ public class StorydiagramsModelingAssistantProviderOfObjectVariableEditPart
 	 * @generated
 	 */
 	@Override
-	public List<IElementType> getTypesForSource(IAdaptable target,
-			IElementType relationshipType) {
-		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target
-				.getAdapter(IGraphicalEditPart.class);
-		return doGetTypesForSource((ObjectVariableEditPart) targetEditPart,
-				relationshipType);
+	public List<IElementType> getTypesForSource(IAdaptable target, IElementType relationshipType) {
+		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target.getAdapter(IGraphicalEditPart.class);
+		return doGetTypesForSource((ObjectVariableEditPart) targetEditPart, relationshipType);
 	}
 
 	/**
 	 * @generated
 	 */
-	public List<IElementType> doGetTypesForSource(
-			ObjectVariableEditPart target, IElementType relationshipType) {
+	public List<IElementType> doGetTypesForSource(ObjectVariableEditPart target, IElementType relationshipType) {
 		List<IElementType> types = new ArrayList<IElementType>();
 		if (relationshipType == StorydiagramsElementTypes.LinkVariable_4002) {
 			types.add(StorydiagramsElementTypes.CollectionVariable_3002);

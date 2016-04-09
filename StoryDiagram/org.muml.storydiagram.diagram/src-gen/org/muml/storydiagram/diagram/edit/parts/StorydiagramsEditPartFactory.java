@@ -120,44 +120,34 @@ public class StorydiagramsEditPartFactory implements EditPartFactory {
 				return new MatchingPatternEditPart(view);
 
 			case ModifyingStoryNodeStoryNodePatternCompartmentEditPart.VISUAL_ID:
-				return new ModifyingStoryNodeStoryNodePatternCompartmentEditPart(
-						view);
+				return new ModifyingStoryNodeStoryNodePatternCompartmentEditPart(view);
 
 			case StoryPatternStoryPatternContentCompartmentEditPart.VISUAL_ID:
-				return new StoryPatternStoryPatternContentCompartmentEditPart(
-						view);
+				return new StoryPatternStoryPatternContentCompartmentEditPart(view);
 
 			case StoryPatternStoryPatternConstraintsCompartmentEditPart.VISUAL_ID:
-				return new StoryPatternStoryPatternConstraintsCompartmentEditPart(
-						view);
+				return new StoryPatternStoryPatternConstraintsCompartmentEditPart(view);
 
 			case CollectionVariableCollectionVariableConstraintsCompartmentEditPart.VISUAL_ID:
-				return new CollectionVariableCollectionVariableConstraintsCompartmentEditPart(
-						view);
+				return new CollectionVariableCollectionVariableConstraintsCompartmentEditPart(view);
 
 			case CollectionVariableCollectionVariableAttributeAssignmentsCompartmentEditPart.VISUAL_ID:
-				return new CollectionVariableCollectionVariableAttributeAssignmentsCompartmentEditPart(
-						view);
+				return new CollectionVariableCollectionVariableAttributeAssignmentsCompartmentEditPart(view);
 
 			case ObjectVariableObjectVariableConstraintsCompartmentEditPart.VISUAL_ID:
-				return new ObjectVariableObjectVariableConstraintsCompartmentEditPart(
-						view);
+				return new ObjectVariableObjectVariableConstraintsCompartmentEditPart(view);
 
 			case ObjectVariableObjectVariableAttributeAssignmentsCompartmentEditPart.VISUAL_ID:
-				return new ObjectVariableObjectVariableAttributeAssignmentsCompartmentEditPart(
-						view);
+				return new ObjectVariableObjectVariableAttributeAssignmentsCompartmentEditPart(view);
 
 			case MatchingStoryNodeStoryNodePatternCompartmentEditPart.VISUAL_ID:
-				return new MatchingStoryNodeStoryNodePatternCompartmentEditPart(
-						view);
+				return new MatchingStoryNodeStoryNodePatternCompartmentEditPart(view);
 
 			case MatchingPatternStoryPatternContentCompartmentEditPart.VISUAL_ID:
-				return new MatchingPatternStoryPatternContentCompartmentEditPart(
-						view);
+				return new MatchingPatternStoryPatternContentCompartmentEditPart(view);
 
 			case MatchingPatternStoryPatternConstraintsCompartmentEditPart.VISUAL_ID:
-				return new MatchingPatternStoryPatternConstraintsCompartmentEditPart(
-						view);
+				return new MatchingPatternStoryPatternConstraintsCompartmentEditPart(view);
 
 			case ActivityEdgeEditPart.VISUAL_ID:
 				return new ActivityEdgeEditPart(view);
@@ -205,9 +195,7 @@ public class StorydiagramsEditPartFactory implements EditPartFactory {
 	/**
 	 * @generated
 	 */
-	public static CellEditorLocator getTextCellEditorLocator(
-			ITextAwareEditPart source) {
-		return CellEditorLocatorAccess.INSTANCE
-				.getTextCellEditorLocator(source);
+	public static CellEditorLocator getTextCellEditorLocator(ITextAwareEditPart source) {
+		return CellEditorLocatorAccess.INSTANCE.getTextCellEditorLocator(source);
 	}
 }

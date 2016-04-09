@@ -22,8 +22,7 @@ public class CollectionVariableCollectionVariableAttributeAssignmentsCompartment
 	 * @generated
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
-		if (StorydiagramsElementTypes.AttributeAssignment_3003 == req
-				.getElementType()) {
+		if (StorydiagramsElementTypes.AttributeAssignment_3003 == req.getElementType()) {
 			return getGEFWrapper(new AttributeAssignmentCreateCommand(req));
 		}
 		return super.getCreateCommand(req);
