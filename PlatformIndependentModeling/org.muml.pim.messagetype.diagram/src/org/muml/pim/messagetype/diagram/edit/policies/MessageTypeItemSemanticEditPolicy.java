@@ -23,18 +23,21 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.pim.messagetype.diagram.edit.parts.MessageTypeParametersCompartmentEditPart;
+import org.muml.pim.messagetype.diagram.edit.parts.ParameterEditPart;
+import org.muml.pim.messagetype.diagram.part.MumlVisualIDRegistry;
+import org.muml.pim.messagetype.diagram.providers.MumlElementTypes;
 
 /**
  * @generated
  */
-public class MessageTypeItemSemanticEditPolicy
-		extends org.muml.pim.messagetype.diagram.edit.policies.MumlBaseItemSemanticEditPolicy {
+public class MessageTypeItemSemanticEditPolicy extends MumlBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public MessageTypeItemSemanticEditPolicy() {
-		super(org.muml.pim.messagetype.diagram.providers.MumlElementTypes.MessageType_3007);
+		super(MumlElementTypes.MessageType_3007);
 	}
 
 	/**
@@ -64,13 +67,12 @@ public class MessageTypeItemSemanticEditPolicy
 		View view = (View) getHost().getModel();
 		for (Iterator<?> nit = view.getChildren().iterator(); nit.hasNext();) {
 			Node node = (Node) nit.next();
-			switch (org.muml.pim.messagetype.diagram.part.MumlVisualIDRegistry.getVisualID(node)) {
-			case org.muml.pim.messagetype.diagram.edit.parts.MessageTypeParametersCompartmentEditPart.VISUAL_ID:
+			switch (MumlVisualIDRegistry.getVisualID(node)) {
+			case MessageTypeParametersCompartmentEditPart.VISUAL_ID:
 				for (Iterator<?> cit = node.getChildren().iterator(); cit.hasNext();) {
 					Node cnode = (Node) cit.next();
-					switch (org.muml.pim.messagetype.diagram.part.MumlVisualIDRegistry
-							.getVisualID(cnode)) {
-					case org.muml.pim.messagetype.diagram.edit.parts.ParameterEditPart.VISUAL_ID:
+					switch (MumlVisualIDRegistry.getVisualID(cnode)) {
+					case ParameterEditPart.VISUAL_ID:
 
 						cmd.add(new DestroyElementCommand(
 								new DestroyElementRequest(getEditingDomain(), cnode.getElement(), false)));

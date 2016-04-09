@@ -18,29 +18,27 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.emf.commands.core.commands.DuplicateEObjectsCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DuplicateElementsRequest;
+import org.muml.pim.messagetype.diagram.edit.commands.MessageTypeRepositoryCreateCommand;
+import org.muml.pim.messagetype.diagram.providers.MumlElementTypes;
 
 /**
  * @generated
  */
-public class MessageInterfaceDiagramItemSemanticEditPolicy
-		extends org.muml.pim.messagetype.diagram.edit.policies.MumlBaseItemSemanticEditPolicy {
+public class MessageInterfaceDiagramItemSemanticEditPolicy extends MumlBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public MessageInterfaceDiagramItemSemanticEditPolicy() {
-		super(org.muml.pim.messagetype.diagram.providers.MumlElementTypes.ModelElementCategory_1000);
+		super(MumlElementTypes.ModelElementCategory_1000);
 	}
 
 	/**
 	 * @generated
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
-		if (org.muml.pim.messagetype.diagram.providers.MumlElementTypes.MessageTypeRepository_2008 == req
-				.getElementType()) {
-			return getGEFWrapper(
-					new org.muml.pim.messagetype.diagram.edit.commands.MessageTypeRepositoryCreateCommand(
-							req));
+		if (MumlElementTypes.MessageTypeRepository_2008 == req.getElementType()) {
+			return getGEFWrapper(new MessageTypeRepositoryCreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}

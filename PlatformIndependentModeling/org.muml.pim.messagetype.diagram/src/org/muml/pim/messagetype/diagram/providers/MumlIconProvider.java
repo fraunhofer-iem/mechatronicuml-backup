@@ -12,6 +12,6 @@ public class MumlIconProvider extends DefaultElementTypeIconProvider implements 
 	 * @generated
 	 */
 	public MumlIconProvider() {
-		super(org.muml.pim.messagetype.diagram.providers.MumlElementTypes.TYPED_INSTANCE);
+		super(MumlElementTypes.TYPED_INSTANCE);
 	}
 }

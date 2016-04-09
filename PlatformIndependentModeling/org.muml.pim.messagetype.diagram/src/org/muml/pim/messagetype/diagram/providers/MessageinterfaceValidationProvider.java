@@ -2,6 +2,9 @@ package org.muml.pim.messagetype.diagram.providers;
 
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.pim.messagetype.diagram.edit.parts.MessageInterfaceDiagramEditPart;
+import org.muml.pim.messagetype.diagram.part.MessageTypeDiagramEditorPlugin;
+import org.muml.pim.messagetype.diagram.part.MumlVisualIDRegistry;
 
 /**
  * @generated
@@ -39,8 +42,7 @@ public class MessageinterfaceValidationProvider {
 			try {
 				editingDomain.runExclusive(task);
 			} catch (Exception e) {
-				org.muml.pim.messagetype.diagram.part.MessageTypeDiagramEditorPlugin.getInstance()
-						.logError("Validation failed", e); //$NON-NLS-1$
+				MessageTypeDiagramEditorPlugin.getInstance().logError("Validation failed", e); //$NON-NLS-1$
 			}
 		} else {
 			task.run();
@@ -56,9 +58,7 @@ public class MessageinterfaceValidationProvider {
 		}
 		if (object instanceof View) {
 			return constraintsActive
-					&& org.muml.pim.messagetype.diagram.edit.parts.MessageInterfaceDiagramEditPart.MODEL_ID
-							.equals(org.muml.pim.messagetype.diagram.part.MumlVisualIDRegistry
-									.getModelID((View) object));
+					&& MessageInterfaceDiagramEditPart.MODEL_ID.equals(MumlVisualIDRegistry.getModelID((View) object));
 		}
 		return true;
 	}

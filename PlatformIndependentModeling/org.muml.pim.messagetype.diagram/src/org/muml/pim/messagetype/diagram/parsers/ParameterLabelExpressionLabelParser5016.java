@@ -19,6 +19,8 @@ import org.eclipse.gmf.runtime.common.ui.services.parser.ParserEditStatus;
 import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand;
 import org.eclipse.gmf.tooling.runtime.parsers.ExpressionLabelParserBase;
 import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
+import org.muml.pim.behavior.BehaviorPackage;
+import org.muml.pim.messagetype.diagram.expressions.MumlOCLFactory;
 
 /**
  * @generated
@@ -35,9 +37,7 @@ public class ParameterLabelExpressionLabelParser5016 extends ExpressionLabelPars
 	 */
 	@Override
 	protected String getExpressionBody() {
-		return org.muml.pim.messagetype.diagram.expressions.MumlOCLFactory
-				.getExpression(0, org.muml.pim.behavior.BehaviorPackage.eINSTANCE.getParameter(), null)
-				.body();
+		return MumlOCLFactory.getExpression(0, BehaviorPackage.eINSTANCE.getParameter(), null).body();
 	}
 
 	/**
@@ -45,8 +45,7 @@ public class ParameterLabelExpressionLabelParser5016 extends ExpressionLabelPars
 	 */
 	public String getEditString(IAdaptable element, int flags) {
 		EObject target = (EObject) element.getAdapter(EObject.class);
-		Object result = org.muml.pim.messagetype.diagram.expressions.MumlOCLFactory
-				.getExpression(1, org.muml.pim.behavior.BehaviorPackage.eINSTANCE.getParameter(), null)
+		Object result = MumlOCLFactory.getExpression(1, BehaviorPackage.eINSTANCE.getParameter(), null)
 				.evaluate(target);
 		return String.valueOf(result);
 	}

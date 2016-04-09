@@ -17,6 +17,7 @@ import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.ui.IMemento;
 import org.eclipse.ui.navigator.ICommonContentExtensionSite;
 import org.eclipse.ui.navigator.ICommonContentProvider;
+import org.muml.pim.messagetype.diagram.part.MessageTypeDiagramEditorPlugin;
 
 /**
  * @generated
@@ -58,8 +59,7 @@ public class MumlDomainNavigatorContentProvider implements ICommonContentProvide
 	 */
 	public MumlDomainNavigatorContentProvider() {
 		myAdapterFctoryContentProvier = new AdapterFactoryContentProvider(
-				org.muml.pim.messagetype.diagram.part.MessageTypeDiagramEditorPlugin.getInstance()
-						.getItemProvidersAdapterFactory());
+				MessageTypeDiagramEditorPlugin.getInstance().getItemProvidersAdapterFactory());
 		TransactionalEditingDomain editingDomain = GMFEditingDomainFactory.INSTANCE.createEditingDomain();
 		myEditingDomain = (AdapterFactoryEditingDomain) editingDomain;
 		myEditingDomain.setResourceToReadOnlyMap(new HashMap() {
@@ -175,10 +175,9 @@ public class MumlDomainNavigatorContentProvider implements ICommonContentProvide
 			return wrapEObjects(myAdapterFctoryContentProvier.getChildren(resource), parentElement);
 		}
 
-		if (parentElement instanceof org.muml.pim.messagetype.diagram.navigator.MumlDomainNavigatorItem) {
-			return wrapEObjects(myAdapterFctoryContentProvier.getChildren(
-					((org.muml.pim.messagetype.diagram.navigator.MumlDomainNavigatorItem) parentElement)
-							.getEObject()),
+		if (parentElement instanceof MumlDomainNavigatorItem) {
+			return wrapEObjects(
+					myAdapterFctoryContentProvier.getChildren(((MumlDomainNavigatorItem) parentElement).getEObject()),
 					parentElement);
 		}
 		return EMPTY_ARRAY;
@@ -191,8 +190,8 @@ public class MumlDomainNavigatorContentProvider implements ICommonContentProvide
 		Collection result = new ArrayList();
 		for (int i = 0; i < objects.length; i++) {
 			if (objects[i] instanceof EObject) {
-				result.add(new org.muml.pim.messagetype.diagram.navigator.MumlDomainNavigatorItem(
-						(EObject) objects[i], parentElement, myAdapterFctoryContentProvier));
+				result.add(new MumlDomainNavigatorItem((EObject) objects[i], parentElement,
+						myAdapterFctoryContentProvier));
 			}
 		}
 		return result.toArray();
@@ -202,8 +201,8 @@ public class MumlDomainNavigatorContentProvider implements ICommonContentProvide
 	 * @generated
 	 */
 	public Object getParent(Object element) {
-		if (element instanceof org.muml.pim.messagetype.diagram.navigator.MumlAbstractNavigatorItem) {
-			org.muml.pim.messagetype.diagram.navigator.MumlAbstractNavigatorItem abstractNavigatorItem = (org.muml.pim.messagetype.diagram.navigator.MumlAbstractNavigatorItem) element;
+		if (element instanceof MumlAbstractNavigatorItem) {
+			MumlAbstractNavigatorItem abstractNavigatorItem = (MumlAbstractNavigatorItem) element;
 			return abstractNavigatorItem.getParent();
 		}
 		return null;

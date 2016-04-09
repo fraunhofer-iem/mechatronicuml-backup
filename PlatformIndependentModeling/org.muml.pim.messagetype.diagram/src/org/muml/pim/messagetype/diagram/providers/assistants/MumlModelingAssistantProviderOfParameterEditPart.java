@@ -12,10 +12,11 @@
  */
 package org.muml.pim.messagetype.diagram.providers.assistants;
 
+import org.muml.pim.messagetype.diagram.providers.MumlModelingAssistantProvider;
+
 /**
  * @generated
  */
-public class MumlModelingAssistantProviderOfParameterEditPart
-		extends org.muml.pim.messagetype.diagram.providers.MumlModelingAssistantProvider {
+public class MumlModelingAssistantProviderOfParameterEditPart extends MumlModelingAssistantProvider {
 
 }

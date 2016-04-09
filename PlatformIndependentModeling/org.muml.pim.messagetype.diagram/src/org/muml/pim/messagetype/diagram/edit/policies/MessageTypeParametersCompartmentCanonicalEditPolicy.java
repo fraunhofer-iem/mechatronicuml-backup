@@ -33,6 +33,11 @@ import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest;
 import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.pim.messagetype.diagram.edit.parts.ParameterEditPart;
+import org.muml.pim.messagetype.diagram.part.MumlDiagramUpdater;
+import org.muml.pim.messagetype.diagram.part.MumlNodeDescriptor;
+import org.muml.pim.messagetype.diagram.part.MumlVisualIDRegistry;
+import org.muml.pim.msgtype.MsgtypePackage;
 
 /**
  * @generated
@@ -94,7 +99,7 @@ public class MessageTypeParametersCompartmentCanonicalEditPolicy extends Canonic
 	 * @generated
 	 */
 	protected EStructuralFeature getFeatureToSynchronize() {
-		return org.muml.pim.msgtype.MsgtypePackage.eINSTANCE.getMessageType_Parameters();
+		return MsgtypePackage.eINSTANCE.getMessageType_Parameters();
 	}
 
 	/**
@@ -102,9 +107,9 @@ public class MessageTypeParametersCompartmentCanonicalEditPolicy extends Canonic
 	 */
 	@SuppressWarnings("rawtypes")
 	protected List getSemanticChildrenList() {
-		List<org.muml.pim.messagetype.diagram.part.MumlNodeDescriptor> childDescriptors = getSemanticChildrenViewDescriptors();
+		List<MumlNodeDescriptor> childDescriptors = getSemanticChildrenViewDescriptors();
 		LinkedList<EObject> result = new LinkedList<EObject>();
-		for (org.muml.pim.messagetype.diagram.part.MumlNodeDescriptor d : childDescriptors) {
+		for (MumlNodeDescriptor d : childDescriptors) {
 			result.add(d.getModelElement());
 		}
 		return result;
@@ -120,20 +125,17 @@ public class MessageTypeParametersCompartmentCanonicalEditPolicy extends Canonic
 		if (!canonicalNodes) {
 			View containerView = (View) getHost().getModel();
 			List<View> childViews = containerView.getChildren();
-			List<org.muml.pim.messagetype.diagram.part.MumlNodeDescriptor> result = new LinkedList<org.muml.pim.messagetype.diagram.part.MumlNodeDescriptor>();
+			List<MumlNodeDescriptor> result = new LinkedList<MumlNodeDescriptor>();
 
 			for (View childView : childViews) {
 				EObject childElement = childView.getElement();
-				int visualID = org.muml.pim.messagetype.diagram.part.MumlVisualIDRegistry
-						.getVisualID(childView);
-				List<Integer> visualIDs = Arrays.asList(new Integer[] {
-						org.muml.pim.messagetype.diagram.edit.parts.ParameterEditPart.VISUAL_ID });
+				int visualID = MumlVisualIDRegistry.getVisualID(childView);
+				List<Integer> visualIDs = Arrays.asList(new Integer[] { ParameterEditPart.VISUAL_ID });
 
 				// Note: childElement can be null, for diagram annotations!
 				if (childElement == null
 						|| childElement.eContainer() == containerView.getElement() && visualIDs.contains(visualID)) {
-					result.add(new org.muml.pim.messagetype.diagram.part.MumlNodeDescriptor(
-							childElement, visualID));
+					result.add(new MumlNodeDescriptor(childElement, visualID));
 					continue;
 				}
 			}
@@ -142,8 +144,7 @@ public class MessageTypeParametersCompartmentCanonicalEditPolicy extends Canonic
 		// End added
 
 		View viewObject = (View) getHost().getModel();
-		return org.muml.pim.messagetype.diagram.part.MumlDiagramUpdater
-				.getMessageTypeParametersCompartment_7009SemanticChildren(viewObject);
+		return MumlDiagramUpdater.getMessageTypeParametersCompartment_7009SemanticChildren(viewObject);
 
 	}
 
@@ -158,8 +159,7 @@ public class MessageTypeParametersCompartmentCanonicalEditPolicy extends Canonic
 	 * @generated
 	 */
 	private boolean isMyDiagramElement(View view) {
-		return org.muml.pim.messagetype.diagram.edit.parts.ParameterEditPart.VISUAL_ID == org.muml.pim.messagetype.diagram.part.MumlVisualIDRegistry
-				.getVisualID(view);
+		return ParameterEditPart.VISUAL_ID == MumlVisualIDRegistry.getVisualID(view);
 	}
 
 	/**
@@ -170,7 +170,7 @@ public class MessageTypeParametersCompartmentCanonicalEditPolicy extends Canonic
 			return;
 		}
 		LinkedList<IAdaptable> createdViews = new LinkedList<IAdaptable>();
-		List<org.muml.pim.messagetype.diagram.part.MumlNodeDescriptor> childDescriptors = getSemanticChildrenViewDescriptors();
+		List<MumlNodeDescriptor> childDescriptors = getSemanticChildrenViewDescriptors();
 		LinkedList<View> orphaned = new LinkedList<View>();
 		// we care to check only views we recognize as ours
 		LinkedList<View> knownViewChildren = new LinkedList<View>();
@@ -184,11 +184,10 @@ public class MessageTypeParametersCompartmentCanonicalEditPolicy extends Canonic
 		// iteration happens over list of desired semantic elements, trying to find best matching View, while original CEP
 		// iterates views, potentially losing view (size/bounds) information - i.e. if there are few views to reference same EObject, only last one 
 		// to answer isOrphaned == true will be used for the domain element representation, see #cleanCanonicalSemanticChildren()
-		for (Iterator<org.muml.pim.messagetype.diagram.part.MumlNodeDescriptor> descriptorsIterator = childDescriptors
-				.iterator(); descriptorsIterator.hasNext();) {
-			org.muml.pim.messagetype.diagram.part.MumlNodeDescriptor next = descriptorsIterator.next();
-			String hint = org.muml.pim.messagetype.diagram.part.MumlVisualIDRegistry
-					.getType(next.getVisualID());
+		for (Iterator<MumlNodeDescriptor> descriptorsIterator = childDescriptors.iterator(); descriptorsIterator
+				.hasNext();) {
+			MumlNodeDescriptor next = descriptorsIterator.next();
+			String hint = MumlVisualIDRegistry.getType(next.getVisualID());
 			LinkedList<View> perfectMatch = new LinkedList<View>(); // both semanticElement and hint match that of NodeDescriptor
 			for (View childView : getViewChildren()) {
 				EObject semanticElement = childView.getElement();
@@ -215,9 +214,8 @@ public class MessageTypeParametersCompartmentCanonicalEditPolicy extends Canonic
 		//
 		ArrayList<CreateViewRequest.ViewDescriptor> viewDescriptors = new ArrayList<CreateViewRequest.ViewDescriptor>(
 				childDescriptors.size());
-		for (org.muml.pim.messagetype.diagram.part.MumlNodeDescriptor next : childDescriptors) {
-			String hint = org.muml.pim.messagetype.diagram.part.MumlVisualIDRegistry
-					.getType(next.getVisualID());
+		for (MumlNodeDescriptor next : childDescriptors) {
+			String hint = MumlVisualIDRegistry.getType(next.getVisualID());
 			IAdaptable elementAdapter = new CanonicalElementAdapter(next.getModelElement(), hint);
 			CreateViewRequest.ViewDescriptor descriptor = new CreateViewRequest.ViewDescriptor(elementAdapter,
 					Node.class, hint, ViewUtil.APPEND, false, host().getDiagramPreferencesHint());

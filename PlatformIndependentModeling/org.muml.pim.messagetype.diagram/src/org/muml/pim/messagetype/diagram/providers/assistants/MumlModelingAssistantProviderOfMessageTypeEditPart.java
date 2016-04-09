@@ -17,12 +17,13 @@ import java.util.List;
 
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
+import org.muml.pim.messagetype.diagram.providers.MumlElementTypes;
+import org.muml.pim.messagetype.diagram.providers.MumlModelingAssistantProvider;
 
 /**
  * @generated
  */
-public class MumlModelingAssistantProviderOfMessageTypeEditPart
-		extends org.muml.pim.messagetype.diagram.providers.MumlModelingAssistantProvider {
+public class MumlModelingAssistantProviderOfMessageTypeEditPart extends MumlModelingAssistantProvider {
 
 	/**
 	 * @generated
@@ -30,7 +31,7 @@ public class MumlModelingAssistantProviderOfMessageTypeEditPart
 	@Override
 	public List<IElementType> getTypesForPopupBar(IAdaptable host) {
 		List<IElementType> types = new ArrayList<IElementType>(1);
-		types.add(org.muml.pim.messagetype.diagram.providers.MumlElementTypes.Parameter_3009);
+		types.add(MumlElementTypes.Parameter_3009);
 		return types;
 	}
 

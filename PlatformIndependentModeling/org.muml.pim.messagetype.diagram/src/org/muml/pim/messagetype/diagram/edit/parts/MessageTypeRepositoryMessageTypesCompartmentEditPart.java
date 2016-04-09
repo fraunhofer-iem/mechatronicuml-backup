@@ -18,6 +18,11 @@ import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.edit.policies.reparent.CreationEditPolicyWithCustomReparent;
+import org.muml.pim.messagetype.diagram.edit.policies.MessageTypeRepositoryMessageTypesCompartmentCanonicalEditPolicy;
+import org.muml.pim.messagetype.diagram.edit.policies.MessageTypeRepositoryMessageTypesCompartmentItemSemanticEditPolicy;
+import org.muml.pim.messagetype.diagram.part.Messages;
+import org.muml.pim.messagetype.diagram.part.MumlVisualIDRegistry;
+import org.muml.pim.messagetype.diagram.providers.MumlElementTypes;
 
 /**
  * @generated
@@ -70,7 +75,7 @@ public class MessageTypeRepositoryMessageTypesCompartmentEditPart extends ListCo
 	 * @generated
 	 */
 	public String getCompartmentName() {
-		return org.muml.pim.messagetype.diagram.part.Messages.MessageTypeRepositoryMessageTypesCompartmentEditPart_title;
+		return Messages.MessageTypeRepositoryMessageTypesCompartmentEditPart_title;
 	}
 
 	/**
@@ -99,12 +104,12 @@ public class MessageTypeRepositoryMessageTypesCompartmentEditPart extends ListCo
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
-				new org.muml.pim.messagetype.diagram.edit.policies.MessageTypeRepositoryMessageTypesCompartmentItemSemanticEditPolicy());
-		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicyWithCustomReparent(
-				org.muml.pim.messagetype.diagram.part.MumlVisualIDRegistry.TYPED_INSTANCE));
+				new MessageTypeRepositoryMessageTypesCompartmentItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.CREATION_ROLE,
+				new CreationEditPolicyWithCustomReparent(MumlVisualIDRegistry.TYPED_INSTANCE));
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
 		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE,
-				new org.muml.pim.messagetype.diagram.edit.policies.MessageTypeRepositoryMessageTypesCompartmentCanonicalEditPolicy());
+				new MessageTypeRepositoryMessageTypesCompartmentCanonicalEditPolicy());
 	}
 
 	/**
@@ -124,7 +129,7 @@ public class MessageTypeRepositoryMessageTypesCompartmentEditPart extends ListCo
 			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request).getViewAndElementDescriptor()
 					.getCreateElementRequestAdapter();
 			IElementType type = (IElementType) adapter.getAdapter(IElementType.class);
-			if (type == org.muml.pim.messagetype.diagram.providers.MumlElementTypes.MessageType_3007) {
+			if (type == MumlElementTypes.MessageType_3007) {
 				return this;
 			}
 			return getParent().getTargetEditPart(request);

@@ -8,6 +8,16 @@ import java.util.List;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.update.DiagramUpdater;
 import org.muml.core.ExtendableElement;
+import org.muml.core.modelinstance.ModelElementCategory;
+import org.muml.pim.behavior.Parameter;
+import org.muml.pim.messagetype.diagram.edit.parts.MessageInterfaceDiagramEditPart;
+import org.muml.pim.messagetype.diagram.edit.parts.MessageTypeEditPart;
+import org.muml.pim.messagetype.diagram.edit.parts.MessageTypeParametersCompartmentEditPart;
+import org.muml.pim.messagetype.diagram.edit.parts.MessageTypeRepositoryEditPart;
+import org.muml.pim.messagetype.diagram.edit.parts.MessageTypeRepositoryMessageTypesCompartmentEditPart;
+import org.muml.pim.messagetype.diagram.edit.parts.ParameterEditPart;
+import org.muml.pim.msgtype.MessageType;
+import org.muml.pim.msgtype.MessageTypeRepository;
 
 /**
  * @generated
@@ -17,14 +27,13 @@ public class MumlDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pim.messagetype.diagram.part.MumlNodeDescriptor> getSemanticChildren(
-			View view) {
-		switch (org.muml.pim.messagetype.diagram.part.MumlVisualIDRegistry.getVisualID(view)) {
-		case org.muml.pim.messagetype.diagram.edit.parts.MessageInterfaceDiagramEditPart.VISUAL_ID:
+	public static List<MumlNodeDescriptor> getSemanticChildren(View view) {
+		switch (MumlVisualIDRegistry.getVisualID(view)) {
+		case MessageInterfaceDiagramEditPart.VISUAL_ID:
 			return getModelElementCategory_1000SemanticChildren(view);
-		case org.muml.pim.messagetype.diagram.edit.parts.MessageTypeRepositoryMessageTypesCompartmentEditPart.VISUAL_ID:
+		case MessageTypeRepositoryMessageTypesCompartmentEditPart.VISUAL_ID:
 			return getMessageTypeRepositoryMessageTypesCompartment_7010SemanticChildren(view);
-		case org.muml.pim.messagetype.diagram.edit.parts.MessageTypeParametersCompartmentEditPart.VISUAL_ID:
+		case MessageTypeParametersCompartmentEditPart.VISUAL_ID:
 			return getMessageTypeParametersCompartment_7009SemanticChildren(view);
 		}
 		return Collections.emptyList();
@@ -33,21 +42,17 @@ public class MumlDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pim.messagetype.diagram.part.MumlNodeDescriptor> getModelElementCategory_1000SemanticChildren(
-			View view) {
+	public static List<MumlNodeDescriptor> getModelElementCategory_1000SemanticChildren(View view) {
 		if (!view.isSetElement()) {
 			return Collections.emptyList();
 		}
-		org.muml.core.modelinstance.ModelElementCategory modelElement = (org.muml.core.modelinstance.ModelElementCategory) view
-				.getElement();
-		LinkedList<org.muml.pim.messagetype.diagram.part.MumlNodeDescriptor> result = new LinkedList<org.muml.pim.messagetype.diagram.part.MumlNodeDescriptor>();
+		ModelElementCategory modelElement = (ModelElementCategory) view.getElement();
+		LinkedList<MumlNodeDescriptor> result = new LinkedList<MumlNodeDescriptor>();
 		for (Iterator<?> it = modelElement.getModelElements().iterator(); it.hasNext();) {
 			ExtendableElement childElement = (ExtendableElement) it.next();
-			int visualID = org.muml.pim.messagetype.diagram.part.MumlVisualIDRegistry
-					.getNodeVisualID(view, childElement);
-			if (visualID == org.muml.pim.messagetype.diagram.edit.parts.MessageTypeRepositoryEditPart.VISUAL_ID) {
-				result.add(new org.muml.pim.messagetype.diagram.part.MumlNodeDescriptor(childElement,
-						visualID));
+			int visualID = MumlVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == MessageTypeRepositoryEditPart.VISUAL_ID) {
+				result.add(new MumlNodeDescriptor(childElement, visualID));
 				continue;
 			}
 		}
@@ -58,7 +63,7 @@ public class MumlDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pim.messagetype.diagram.part.MumlNodeDescriptor> getMessageTypeRepositoryMessageTypesCompartment_7010SemanticChildren(
+	public static List<MumlNodeDescriptor> getMessageTypeRepositoryMessageTypesCompartment_7010SemanticChildren(
 			View view) {
 		if (false == view.eContainer() instanceof View) {
 			return Collections.emptyList();
@@ -67,17 +72,13 @@ public class MumlDiagramUpdater {
 		if (!containerView.isSetElement()) {
 			return Collections.emptyList();
 		}
-		org.muml.pim.msgtype.MessageTypeRepository modelElement = (org.muml.pim.msgtype.MessageTypeRepository) containerView
-				.getElement();
-		LinkedList<org.muml.pim.messagetype.diagram.part.MumlNodeDescriptor> result = new LinkedList<org.muml.pim.messagetype.diagram.part.MumlNodeDescriptor>();
+		MessageTypeRepository modelElement = (MessageTypeRepository) containerView.getElement();
+		LinkedList<MumlNodeDescriptor> result = new LinkedList<MumlNodeDescriptor>();
 		for (Iterator<?> it = modelElement.getMessageTypes().iterator(); it.hasNext();) {
-			org.muml.pim.msgtype.MessageType childElement = (org.muml.pim.msgtype.MessageType) it
-					.next();
-			int visualID = org.muml.pim.messagetype.diagram.part.MumlVisualIDRegistry
-					.getNodeVisualID(view, childElement);
-			if (visualID == org.muml.pim.messagetype.diagram.edit.parts.MessageTypeEditPart.VISUAL_ID) {
-				result.add(new org.muml.pim.messagetype.diagram.part.MumlNodeDescriptor(childElement,
-						visualID));
+			MessageType childElement = (MessageType) it.next();
+			int visualID = MumlVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == MessageTypeEditPart.VISUAL_ID) {
+				result.add(new MumlNodeDescriptor(childElement, visualID));
 				continue;
 			}
 		}
@@ -88,8 +89,7 @@ public class MumlDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pim.messagetype.diagram.part.MumlNodeDescriptor> getMessageTypeParametersCompartment_7009SemanticChildren(
-			View view) {
+	public static List<MumlNodeDescriptor> getMessageTypeParametersCompartment_7009SemanticChildren(View view) {
 		if (false == view.eContainer() instanceof View) {
 			return Collections.emptyList();
 		}
@@ -97,17 +97,13 @@ public class MumlDiagramUpdater {
 		if (!containerView.isSetElement()) {
 			return Collections.emptyList();
 		}
-		org.muml.pim.msgtype.MessageType modelElement = (org.muml.pim.msgtype.MessageType) containerView
-				.getElement();
-		LinkedList<org.muml.pim.messagetype.diagram.part.MumlNodeDescriptor> result = new LinkedList<org.muml.pim.messagetype.diagram.part.MumlNodeDescriptor>();
+		MessageType modelElement = (MessageType) containerView.getElement();
+		LinkedList<MumlNodeDescriptor> result = new LinkedList<MumlNodeDescriptor>();
 		for (Iterator<?> it = modelElement.getParameters().iterator(); it.hasNext();) {
-			org.muml.pim.behavior.Parameter childElement = (org.muml.pim.behavior.Parameter) it
-					.next();
-			int visualID = org.muml.pim.messagetype.diagram.part.MumlVisualIDRegistry
-					.getNodeVisualID(view, childElement);
-			if (visualID == org.muml.pim.messagetype.diagram.edit.parts.ParameterEditPart.VISUAL_ID) {
-				result.add(new org.muml.pim.messagetype.diagram.part.MumlNodeDescriptor(childElement,
-						visualID));
+			Parameter childElement = (Parameter) it.next();
+			int visualID = MumlVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == ParameterEditPart.VISUAL_ID) {
+				result.add(new MumlNodeDescriptor(childElement, visualID));
 				continue;
 			}
 		}
@@ -118,16 +114,15 @@ public class MumlDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pim.messagetype.diagram.part.MumlLinkDescriptor> getContainedLinks(
-			View view) {
-		switch (org.muml.pim.messagetype.diagram.part.MumlVisualIDRegistry.getVisualID(view)) {
-		case org.muml.pim.messagetype.diagram.edit.parts.MessageInterfaceDiagramEditPart.VISUAL_ID:
+	public static List<MumlLinkDescriptor> getContainedLinks(View view) {
+		switch (MumlVisualIDRegistry.getVisualID(view)) {
+		case MessageInterfaceDiagramEditPart.VISUAL_ID:
 			return getModelElementCategory_1000ContainedLinks(view);
-		case org.muml.pim.messagetype.diagram.edit.parts.MessageTypeRepositoryEditPart.VISUAL_ID:
+		case MessageTypeRepositoryEditPart.VISUAL_ID:
 			return getMessageTypeRepository_2008ContainedLinks(view);
-		case org.muml.pim.messagetype.diagram.edit.parts.MessageTypeEditPart.VISUAL_ID:
+		case MessageTypeEditPart.VISUAL_ID:
 			return getMessageType_3007ContainedLinks(view);
-		case org.muml.pim.messagetype.diagram.edit.parts.ParameterEditPart.VISUAL_ID:
+		case ParameterEditPart.VISUAL_ID:
 			return getParameter_3009ContainedLinks(view);
 		}
 		return Collections.emptyList();
@@ -136,14 +131,13 @@ public class MumlDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pim.messagetype.diagram.part.MumlLinkDescriptor> getIncomingLinks(
-			View view) {
-		switch (org.muml.pim.messagetype.diagram.part.MumlVisualIDRegistry.getVisualID(view)) {
-		case org.muml.pim.messagetype.diagram.edit.parts.MessageTypeRepositoryEditPart.VISUAL_ID:
+	public static List<MumlLinkDescriptor> getIncomingLinks(View view) {
+		switch (MumlVisualIDRegistry.getVisualID(view)) {
+		case MessageTypeRepositoryEditPart.VISUAL_ID:
 			return getMessageTypeRepository_2008IncomingLinks(view);
-		case org.muml.pim.messagetype.diagram.edit.parts.MessageTypeEditPart.VISUAL_ID:
+		case MessageTypeEditPart.VISUAL_ID:
 			return getMessageType_3007IncomingLinks(view);
-		case org.muml.pim.messagetype.diagram.edit.parts.ParameterEditPart.VISUAL_ID:
+		case ParameterEditPart.VISUAL_ID:
 			return getParameter_3009IncomingLinks(view);
 		}
 		return Collections.emptyList();
@@ -152,14 +146,13 @@ public class MumlDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pim.messagetype.diagram.part.MumlLinkDescriptor> getOutgoingLinks(
-			View view) {
-		switch (org.muml.pim.messagetype.diagram.part.MumlVisualIDRegistry.getVisualID(view)) {
-		case org.muml.pim.messagetype.diagram.edit.parts.MessageTypeRepositoryEditPart.VISUAL_ID:
+	public static List<MumlLinkDescriptor> getOutgoingLinks(View view) {
+		switch (MumlVisualIDRegistry.getVisualID(view)) {
+		case MessageTypeRepositoryEditPart.VISUAL_ID:
 			return getMessageTypeRepository_2008OutgoingLinks(view);
-		case org.muml.pim.messagetype.diagram.edit.parts.MessageTypeEditPart.VISUAL_ID:
+		case MessageTypeEditPart.VISUAL_ID:
 			return getMessageType_3007OutgoingLinks(view);
-		case org.muml.pim.messagetype.diagram.edit.parts.ParameterEditPart.VISUAL_ID:
+		case ParameterEditPart.VISUAL_ID:
 			return getParameter_3009OutgoingLinks(view);
 		}
 		return Collections.emptyList();
@@ -168,80 +161,70 @@ public class MumlDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pim.messagetype.diagram.part.MumlLinkDescriptor> getModelElementCategory_1000ContainedLinks(
-			View view) {
+	public static List<MumlLinkDescriptor> getModelElementCategory_1000ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pim.messagetype.diagram.part.MumlLinkDescriptor> getMessageTypeRepository_2008ContainedLinks(
-			View view) {
+	public static List<MumlLinkDescriptor> getMessageTypeRepository_2008ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pim.messagetype.diagram.part.MumlLinkDescriptor> getMessageType_3007ContainedLinks(
-			View view) {
+	public static List<MumlLinkDescriptor> getMessageType_3007ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pim.messagetype.diagram.part.MumlLinkDescriptor> getParameter_3009ContainedLinks(
-			View view) {
+	public static List<MumlLinkDescriptor> getParameter_3009ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pim.messagetype.diagram.part.MumlLinkDescriptor> getMessageTypeRepository_2008IncomingLinks(
-			View view) {
+	public static List<MumlLinkDescriptor> getMessageTypeRepository_2008IncomingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pim.messagetype.diagram.part.MumlLinkDescriptor> getMessageType_3007IncomingLinks(
-			View view) {
+	public static List<MumlLinkDescriptor> getMessageType_3007IncomingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pim.messagetype.diagram.part.MumlLinkDescriptor> getParameter_3009IncomingLinks(
-			View view) {
+	public static List<MumlLinkDescriptor> getParameter_3009IncomingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pim.messagetype.diagram.part.MumlLinkDescriptor> getMessageTypeRepository_2008OutgoingLinks(
-			View view) {
+	public static List<MumlLinkDescriptor> getMessageTypeRepository_2008OutgoingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pim.messagetype.diagram.part.MumlLinkDescriptor> getMessageType_3007OutgoingLinks(
-			View view) {
+	public static List<MumlLinkDescriptor> getMessageType_3007OutgoingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pim.messagetype.diagram.part.MumlLinkDescriptor> getParameter_3009OutgoingLinks(
-			View view) {
+	public static List<MumlLinkDescriptor> getParameter_3009OutgoingLinks(View view) {
 		return Collections.emptyList();
 	}
 
@@ -254,8 +237,7 @@ public class MumlDiagramUpdater {
 		*/
 		@Override
 
-		public List<org.muml.pim.messagetype.diagram.part.MumlNodeDescriptor> getSemanticChildren(
-				View view) {
+		public List<MumlNodeDescriptor> getSemanticChildren(View view) {
 			return MumlDiagramUpdater.getSemanticChildren(view);
 		}
 
@@ -264,8 +246,7 @@ public class MumlDiagramUpdater {
 		*/
 		@Override
 
-		public List<org.muml.pim.messagetype.diagram.part.MumlLinkDescriptor> getContainedLinks(
-				View view) {
+		public List<MumlLinkDescriptor> getContainedLinks(View view) {
 			return MumlDiagramUpdater.getContainedLinks(view);
 		}
 
@@ -274,8 +255,7 @@ public class MumlDiagramUpdater {
 		*/
 		@Override
 
-		public List<org.muml.pim.messagetype.diagram.part.MumlLinkDescriptor> getIncomingLinks(
-				View view) {
+		public List<MumlLinkDescriptor> getIncomingLinks(View view) {
 			return MumlDiagramUpdater.getIncomingLinks(view);
 		}
 
@@ -284,8 +264,7 @@ public class MumlDiagramUpdater {
 		*/
 		@Override
 
-		public List<org.muml.pim.messagetype.diagram.part.MumlLinkDescriptor> getOutgoingLinks(
-				View view) {
+		public List<MumlLinkDescriptor> getOutgoingLinks(View view) {
 			return MumlDiagramUpdater.getOutgoingLinks(view);
 		}
 	};

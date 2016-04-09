@@ -15,6 +15,7 @@ import org.eclipse.ocl.ecore.OCL.Helper;
 import org.eclipse.ocl.ecore.OCLExpression;
 import org.eclipse.ocl.ecore.Variable;
 import org.eclipse.ocl.options.ParsingOptions;
+import org.muml.pim.messagetype.diagram.part.MessageTypeDiagramEditorPlugin;
 
 /**
  * @generated
@@ -24,7 +25,7 @@ public class MumlOCLFactory {
 	/**
 	 * @generated
 	 */
-	private final org.muml.pim.messagetype.diagram.expressions.MumlAbstractExpression[] expressions;
+	private final MumlAbstractExpression[] expressions;
 
 	/**
 	 * @generated
@@ -35,7 +36,7 @@ public class MumlOCLFactory {
 	 * @generated
 	 */
 	protected MumlOCLFactory() {
-		this.expressions = new org.muml.pim.messagetype.diagram.expressions.MumlAbstractExpression[5];
+		this.expressions = new MumlAbstractExpression[5];
 		this.expressionBodies = new String[] {
 				"(\r\nif self.oclAsType(ecore::EObject).eContainer().oclAsType(msgtype::MessageType).parameters->first() = self then\r\n\t\t\'\'\r\n\telse\r\n\t\t\' \'\r\n\tendif\r\n).concat(\r\n\tif self.dataType.name.oclIsUndefined() then\r\n\t\t\'\'\r\n\telse\r\n\t\tself.dataType.name\r\n\tendif\t\r\n\r\n).concat(\r\n\tif self.name.oclIsUndefined() then\r\n\t\t\'null\'\r\n\telse\r\n\t\t\' \'.concat(self.name)\r\n\tendif\r\n).concat(\r\n\tif self.oclAsType(ecore::EObject).eContainer().oclAsType(msgtype::MessageType).parameters->last() = self then\r\n\t\t\'\'\r\n\telse\r\n\t\t\',\'\r\n\tendif\r\n)", //$NON-NLS-1$
 				"if self.name.oclIsUndefined() then\r\n\t\'\'\r\nelse\r\n\tself.name\r\nendif", //$NON-NLS-1$
@@ -49,11 +50,9 @@ public class MumlOCLFactory {
 	 * @generated
 	 */
 	private static MumlOCLFactory getInstance() {
-		MumlOCLFactory instance = org.muml.pim.messagetype.diagram.part.MessageTypeDiagramEditorPlugin
-				.getInstance().getMumlOCLFactory();
+		MumlOCLFactory instance = MessageTypeDiagramEditorPlugin.getInstance().getMumlOCLFactory();
 		if (instance == null) {
-			org.muml.pim.messagetype.diagram.part.MessageTypeDiagramEditorPlugin.getInstance()
-					.setMumlOCLFactory(instance = new MumlOCLFactory());
+			MessageTypeDiagramEditorPlugin.getInstance().setMumlOCLFactory(instance = new MumlOCLFactory());
 		}
 		return instance;
 	}
@@ -68,8 +67,8 @@ public class MumlOCLFactory {
 	/**
 	 * @generated
 	 */
-	public static org.muml.pim.messagetype.diagram.expressions.MumlAbstractExpression getExpression(
-			int index, EClassifier context, Map<String, EClassifier> environment) {
+	public static MumlAbstractExpression getExpression(int index, EClassifier context,
+			Map<String, EClassifier> environment) {
 		MumlOCLFactory cached = getInstance();
 		if (index < 0 || index >= cached.expressions.length) {
 			throw new IllegalArgumentException();
@@ -85,8 +84,8 @@ public class MumlOCLFactory {
 	 * This is factory method, callers are responsible to keep reference to the return value if they want to reuse parsed expression
 	 * @generated
 	 */
-	public static org.muml.pim.messagetype.diagram.expressions.MumlAbstractExpression getExpression(
-			String body, EClassifier context, Map<String, EClassifier> environment) {
+	public static MumlAbstractExpression getExpression(String body, EClassifier context,
+			Map<String, EClassifier> environment) {
 		return new Expression(body, context, environment);
 	}
 
@@ -94,16 +93,14 @@ public class MumlOCLFactory {
 	 * This method will become private in the next release
 	 * @generated
 	 */
-	public static org.muml.pim.messagetype.diagram.expressions.MumlAbstractExpression getExpression(
-			String body, EClassifier context) {
+	public static MumlAbstractExpression getExpression(String body, EClassifier context) {
 		return getExpression(body, context, Collections.<String, EClassifier> emptyMap());
 	}
 
 	/**
 	 * @generated
 	 */
-	private static class Expression
-			extends org.muml.pim.messagetype.diagram.expressions.MumlAbstractExpression {
+	private static class Expression extends MumlAbstractExpression {
 
 		/**
 		 * @generated

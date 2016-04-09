@@ -23,18 +23,21 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.pim.messagetype.diagram.edit.parts.MessageTypeEditPart;
+import org.muml.pim.messagetype.diagram.edit.parts.MessageTypeRepositoryMessageTypesCompartmentEditPart;
+import org.muml.pim.messagetype.diagram.part.MumlVisualIDRegistry;
+import org.muml.pim.messagetype.diagram.providers.MumlElementTypes;
 
 /**
  * @generated
  */
-public class MessageTypeRepositoryItemSemanticEditPolicy
-		extends org.muml.pim.messagetype.diagram.edit.policies.MumlBaseItemSemanticEditPolicy {
+public class MessageTypeRepositoryItemSemanticEditPolicy extends MumlBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public MessageTypeRepositoryItemSemanticEditPolicy() {
-		super(org.muml.pim.messagetype.diagram.providers.MumlElementTypes.MessageTypeRepository_2008);
+		super(MumlElementTypes.MessageTypeRepository_2008);
 	}
 
 	/**
@@ -64,13 +67,12 @@ public class MessageTypeRepositoryItemSemanticEditPolicy
 		View view = (View) getHost().getModel();
 		for (Iterator<?> nit = view.getChildren().iterator(); nit.hasNext();) {
 			Node node = (Node) nit.next();
-			switch (org.muml.pim.messagetype.diagram.part.MumlVisualIDRegistry.getVisualID(node)) {
-			case org.muml.pim.messagetype.diagram.edit.parts.MessageTypeRepositoryMessageTypesCompartmentEditPart.VISUAL_ID:
+			switch (MumlVisualIDRegistry.getVisualID(node)) {
+			case MessageTypeRepositoryMessageTypesCompartmentEditPart.VISUAL_ID:
 				for (Iterator<?> cit = node.getChildren().iterator(); cit.hasNext();) {
 					Node cnode = (Node) cit.next();
-					switch (org.muml.pim.messagetype.diagram.part.MumlVisualIDRegistry
-							.getVisualID(cnode)) {
-					case org.muml.pim.messagetype.diagram.edit.parts.MessageTypeEditPart.VISUAL_ID:
+					switch (MumlVisualIDRegistry.getVisualID(cnode)) {
+					case MessageTypeEditPart.VISUAL_ID:
 
 						cmd.add(new DestroyElementCommand(
 								new DestroyElementRequest(getEditingDomain(), cnode.getElement(), false)));

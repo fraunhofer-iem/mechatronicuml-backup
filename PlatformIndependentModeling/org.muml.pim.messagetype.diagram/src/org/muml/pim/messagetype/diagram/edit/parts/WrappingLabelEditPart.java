@@ -49,6 +49,10 @@ import org.eclipse.swt.accessibility.AccessibleEvent;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.FontData;
 import org.eclipse.swt.graphics.Image;
+import org.muml.pim.messagetype.diagram.edit.policies.MumlTextSelectionEditPolicy;
+import org.muml.pim.messagetype.diagram.part.MumlVisualIDRegistry;
+import org.muml.pim.messagetype.diagram.providers.MumlElementTypes;
+import org.muml.pim.messagetype.diagram.providers.MumlParserProvider;
 
 /**
  * @generated
@@ -120,8 +124,7 @@ public class WrappingLabelEditPart extends CompartmentEditPart implements ITextA
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicy.SELECTION_FEEDBACK_ROLE,
-				new org.muml.pim.messagetype.diagram.edit.policies.MumlTextSelectionEditPolicy());
+		installEditPolicy(EditPolicy.SELECTION_FEEDBACK_ROLE, new MumlTextSelectionEditPolicy());
 		installEditPolicy(EditPolicy.DIRECT_EDIT_ROLE, new LabelDirectEditPolicy());
 		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, new DefaultNodeLabelDragPolicy());
 	}
@@ -312,11 +315,9 @@ public class WrappingLabelEditPart extends CompartmentEditPart implements ITextA
 	 */
 	public IParser getParser() {
 		if (parser == null) {
-			parser = org.muml.pim.messagetype.diagram.providers.MumlParserProvider.getParser(
-					org.muml.pim.messagetype.diagram.providers.MumlElementTypes.Parameter_3009,
-					getParserElement(),
-					org.muml.pim.messagetype.diagram.part.MumlVisualIDRegistry.getType(
-							org.muml.pim.messagetype.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID));
+			parser = MumlParserProvider.getParser(MumlElementTypes.Parameter_3009, getParserElement(),
+					MumlVisualIDRegistry
+							.getType(org.muml.pim.messagetype.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID));
 		}
 		return parser;
 	}
@@ -326,9 +327,7 @@ public class WrappingLabelEditPart extends CompartmentEditPart implements ITextA
 	 */
 	protected DirectEditManager getManager() {
 		if (manager == null) {
-			setManager(new TextDirectEditManager(this, null,
-					org.muml.pim.messagetype.diagram.edit.parts.MumlEditPartFactory
-							.getTextCellEditorLocator(this)));
+			setManager(new TextDirectEditManager(this, null, MumlEditPartFactory.getTextCellEditorLocator(this)));
 		}
 		return manager;
 	}

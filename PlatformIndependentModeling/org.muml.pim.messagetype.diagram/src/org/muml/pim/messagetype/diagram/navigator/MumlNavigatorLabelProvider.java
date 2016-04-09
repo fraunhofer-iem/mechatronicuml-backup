@@ -15,6 +15,18 @@ import org.eclipse.swt.graphics.Image;
 import org.eclipse.ui.IMemento;
 import org.eclipse.ui.navigator.ICommonContentExtensionSite;
 import org.eclipse.ui.navigator.ICommonLabelProvider;
+import org.muml.core.modelinstance.ModelElementCategory;
+import org.muml.pim.messagetype.diagram.edit.parts.MessageInterfaceDiagramEditPart;
+import org.muml.pim.messagetype.diagram.edit.parts.MessageTypeEditPart;
+import org.muml.pim.messagetype.diagram.edit.parts.MessageTypeNameEditPart;
+import org.muml.pim.messagetype.diagram.edit.parts.MessageTypeRepositoryEditPart;
+import org.muml.pim.messagetype.diagram.edit.parts.MessageTypeRepositoryNameEditPart;
+import org.muml.pim.messagetype.diagram.edit.parts.ParameterEditPart;
+import org.muml.pim.messagetype.diagram.edit.parts.WrappingLabelEditPart;
+import org.muml.pim.messagetype.diagram.part.MessageTypeDiagramEditorPlugin;
+import org.muml.pim.messagetype.diagram.part.MumlVisualIDRegistry;
+import org.muml.pim.messagetype.diagram.providers.MumlElementTypes;
+import org.muml.pim.messagetype.diagram.providers.MumlParserProvider;
 
 /**
  * @generated
@@ -25,10 +37,10 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements ICommon
 	 * @generated
 	 */
 	static {
-		org.muml.pim.messagetype.diagram.part.MessageTypeDiagramEditorPlugin.getInstance()
-				.getImageRegistry().put("Navigator?UnknownElement", ImageDescriptor.getMissingImageDescriptor()); //$NON-NLS-1$
-		org.muml.pim.messagetype.diagram.part.MessageTypeDiagramEditorPlugin.getInstance()
-				.getImageRegistry().put("Navigator?ImageNotFound", ImageDescriptor.getMissingImageDescriptor()); //$NON-NLS-1$
+		MessageTypeDiagramEditorPlugin.getInstance().getImageRegistry().put("Navigator?UnknownElement", //$NON-NLS-1$
+				ImageDescriptor.getMissingImageDescriptor());
+		MessageTypeDiagramEditorPlugin.getInstance().getImageRegistry().put("Navigator?ImageNotFound", //$NON-NLS-1$
+				ImageDescriptor.getMissingImageDescriptor());
 	}
 
 	/**
@@ -36,9 +48,7 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements ICommon
 	 */
 	public void updateLabel(ViewerLabel label, TreePath elementPath) {
 		Object element = elementPath.getLastSegment();
-		if (element instanceof org.muml.pim.messagetype.diagram.navigator.MumlNavigatorItem
-				&& !isOwnView(((org.muml.pim.messagetype.diagram.navigator.MumlNavigatorItem) element)
-						.getView())) {
+		if (element instanceof MumlNavigatorItem && !isOwnView(((MumlNavigatorItem) element).getView())) {
 			return;
 		}
 		label.setText(getText(element));
@@ -49,14 +59,13 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements ICommon
 	 * @generated
 	 */
 	public Image getImage(Object element) {
-		if (element instanceof org.muml.pim.messagetype.diagram.navigator.MumlNavigatorGroup) {
-			org.muml.pim.messagetype.diagram.navigator.MumlNavigatorGroup group = (org.muml.pim.messagetype.diagram.navigator.MumlNavigatorGroup) element;
-			return org.muml.pim.messagetype.diagram.part.MessageTypeDiagramEditorPlugin.getInstance()
-					.getBundledImage(group.getIcon());
+		if (element instanceof MumlNavigatorGroup) {
+			MumlNavigatorGroup group = (MumlNavigatorGroup) element;
+			return MessageTypeDiagramEditorPlugin.getInstance().getBundledImage(group.getIcon());
 		}
 
-		if (element instanceof org.muml.pim.messagetype.diagram.navigator.MumlNavigatorItem) {
-			org.muml.pim.messagetype.diagram.navigator.MumlNavigatorItem navigatorItem = (org.muml.pim.messagetype.diagram.navigator.MumlNavigatorItem) element;
+		if (element instanceof MumlNavigatorItem) {
+			MumlNavigatorItem navigatorItem = (MumlNavigatorItem) element;
 			if (!isOwnView(navigatorItem.getView())) {
 				return super.getImage(element);
 			}
@@ -70,19 +79,19 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements ICommon
 	 * @generated
 	 */
 	public Image getImage(View view) {
-		switch (org.muml.pim.messagetype.diagram.part.MumlVisualIDRegistry.getVisualID(view)) {
-		case org.muml.pim.messagetype.diagram.edit.parts.MessageInterfaceDiagramEditPart.VISUAL_ID:
+		switch (MumlVisualIDRegistry.getVisualID(view)) {
+		case MessageInterfaceDiagramEditPart.VISUAL_ID:
 			return getImage("Navigator?Diagram?http://www.muml.org/modelinstance/1.0.0?ModelElementCategory", //$NON-NLS-1$
-					org.muml.pim.messagetype.diagram.providers.MumlElementTypes.ModelElementCategory_1000);
-		case org.muml.pim.messagetype.diagram.edit.parts.MessageTypeRepositoryEditPart.VISUAL_ID:
+					MumlElementTypes.ModelElementCategory_1000);
+		case MessageTypeRepositoryEditPart.VISUAL_ID:
 			return getImage("Navigator?TopLevelNode?http://www.muml.org/pim/msgtype/1.0.0?MessageTypeRepository", //$NON-NLS-1$
-					org.muml.pim.messagetype.diagram.providers.MumlElementTypes.MessageTypeRepository_2008);
-		case org.muml.pim.messagetype.diagram.edit.parts.MessageTypeEditPart.VISUAL_ID:
+					MumlElementTypes.MessageTypeRepository_2008);
+		case MessageTypeEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.muml.org/pim/msgtype/1.0.0?MessageType", //$NON-NLS-1$
-					org.muml.pim.messagetype.diagram.providers.MumlElementTypes.MessageType_3007);
-		case org.muml.pim.messagetype.diagram.edit.parts.ParameterEditPart.VISUAL_ID:
+					MumlElementTypes.MessageType_3007);
+		case ParameterEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.muml.org/pim/behavior/1.0.0?Parameter", //$NON-NLS-1$
-					org.muml.pim.messagetype.diagram.providers.MumlElementTypes.Parameter_3009);
+					MumlElementTypes.Parameter_3009);
 		}
 		return getImage("Navigator?UnknownElement", null); //$NON-NLS-1$
 	}
@@ -91,13 +100,10 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements ICommon
 	 * @generated
 	 */
 	private Image getImage(String key, IElementType elementType) {
-		ImageRegistry imageRegistry = org.muml.pim.messagetype.diagram.part.MessageTypeDiagramEditorPlugin
-				.getInstance().getImageRegistry();
+		ImageRegistry imageRegistry = MessageTypeDiagramEditorPlugin.getInstance().getImageRegistry();
 		Image image = imageRegistry.get(key);
-		if (image == null && elementType != null
-				&& org.muml.pim.messagetype.diagram.providers.MumlElementTypes
-						.isKnownElementType(elementType)) {
-			image = org.muml.pim.messagetype.diagram.providers.MumlElementTypes.getImage(elementType);
+		if (image == null && elementType != null && MumlElementTypes.isKnownElementType(elementType)) {
+			image = MumlElementTypes.getImage(elementType);
 			imageRegistry.put(key, image);
 		}
 
@@ -112,13 +118,13 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements ICommon
 	 * @generated
 	 */
 	public String getText(Object element) {
-		if (element instanceof org.muml.pim.messagetype.diagram.navigator.MumlNavigatorGroup) {
-			org.muml.pim.messagetype.diagram.navigator.MumlNavigatorGroup group = (org.muml.pim.messagetype.diagram.navigator.MumlNavigatorGroup) element;
+		if (element instanceof MumlNavigatorGroup) {
+			MumlNavigatorGroup group = (MumlNavigatorGroup) element;
 			return group.getGroupName();
 		}
 
-		if (element instanceof org.muml.pim.messagetype.diagram.navigator.MumlNavigatorItem) {
-			org.muml.pim.messagetype.diagram.navigator.MumlNavigatorItem navigatorItem = (org.muml.pim.messagetype.diagram.navigator.MumlNavigatorItem) element;
+		if (element instanceof MumlNavigatorItem) {
+			MumlNavigatorItem navigatorItem = (MumlNavigatorItem) element;
 			if (!isOwnView(navigatorItem.getView())) {
 				return null;
 			}
@@ -135,14 +141,14 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements ICommon
 		if (view.getElement() != null && view.getElement().eIsProxy()) {
 			return getUnresolvedDomainElementProxyText(view);
 		}
-		switch (org.muml.pim.messagetype.diagram.part.MumlVisualIDRegistry.getVisualID(view)) {
-		case org.muml.pim.messagetype.diagram.edit.parts.MessageInterfaceDiagramEditPart.VISUAL_ID:
+		switch (MumlVisualIDRegistry.getVisualID(view)) {
+		case MessageInterfaceDiagramEditPart.VISUAL_ID:
 			return getModelElementCategory_1000Text(view);
-		case org.muml.pim.messagetype.diagram.edit.parts.MessageTypeRepositoryEditPart.VISUAL_ID:
+		case MessageTypeRepositoryEditPart.VISUAL_ID:
 			return getMessageTypeRepository_2008Text(view);
-		case org.muml.pim.messagetype.diagram.edit.parts.MessageTypeEditPart.VISUAL_ID:
+		case MessageTypeEditPart.VISUAL_ID:
 			return getMessageType_3007Text(view);
-		case org.muml.pim.messagetype.diagram.edit.parts.ParameterEditPart.VISUAL_ID:
+		case ParameterEditPart.VISUAL_ID:
 			return getParameter_3009Text(view);
 		}
 		return getUnknownElementText(view);
@@ -152,13 +158,11 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements ICommon
 	 * @generated
 	 */
 	private String getModelElementCategory_1000Text(View view) {
-		org.muml.core.modelinstance.ModelElementCategory domainModelElement = (org.muml.core.modelinstance.ModelElementCategory) view
-				.getElement();
+		ModelElementCategory domainModelElement = (ModelElementCategory) view.getElement();
 		if (domainModelElement != null) {
 			return domainModelElement.getName();
 		} else {
-			org.muml.pim.messagetype.diagram.part.MessageTypeDiagramEditorPlugin.getInstance()
-					.logError("No domain element for view with visualID = " + 1000); //$NON-NLS-1$
+			MessageTypeDiagramEditorPlugin.getInstance().logError("No domain element for view with visualID = " + 1000); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -167,17 +171,14 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements ICommon
 	 * @generated
 	 */
 	private String getMessageTypeRepository_2008Text(View view) {
-		IParser parser = org.muml.pim.messagetype.diagram.providers.MumlParserProvider.getParser(
-				org.muml.pim.messagetype.diagram.providers.MumlElementTypes.MessageTypeRepository_2008,
+		IParser parser = MumlParserProvider.getParser(MumlElementTypes.MessageTypeRepository_2008,
 				view.getElement() != null ? view.getElement() : view,
-				org.muml.pim.messagetype.diagram.part.MumlVisualIDRegistry.getType(
-						org.muml.pim.messagetype.diagram.edit.parts.MessageTypeRepositoryNameEditPart.VISUAL_ID));
+				MumlVisualIDRegistry.getType(MessageTypeRepositoryNameEditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
 					ParserOptions.NONE.intValue());
 		} else {
-			org.muml.pim.messagetype.diagram.part.MessageTypeDiagramEditorPlugin.getInstance()
-					.logError("Parser was not found for label " + 5017); //$NON-NLS-1$
+			MessageTypeDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5017); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -186,18 +187,14 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements ICommon
 	 * @generated
 	 */
 	private String getMessageType_3007Text(View view) {
-		IParser parser = org.muml.pim.messagetype.diagram.providers.MumlParserProvider
-				.getParser(org.muml.pim.messagetype.diagram.providers.MumlElementTypes.MessageType_3007,
-						view.getElement() != null ? view.getElement()
-								: view,
-						org.muml.pim.messagetype.diagram.part.MumlVisualIDRegistry.getType(
-								org.muml.pim.messagetype.diagram.edit.parts.MessageTypeNameEditPart.VISUAL_ID));
+		IParser parser = MumlParserProvider.getParser(MumlElementTypes.MessageType_3007,
+				view.getElement() != null ? view.getElement() : view,
+				MumlVisualIDRegistry.getType(MessageTypeNameEditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
 					ParserOptions.NONE.intValue());
 		} else {
-			org.muml.pim.messagetype.diagram.part.MessageTypeDiagramEditorPlugin.getInstance()
-					.logError("Parser was not found for label " + 5014); //$NON-NLS-1$
+			MessageTypeDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5014); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -206,18 +203,14 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements ICommon
 	 * @generated
 	 */
 	private String getParameter_3009Text(View view) {
-		IParser parser = org.muml.pim.messagetype.diagram.providers.MumlParserProvider
-				.getParser(org.muml.pim.messagetype.diagram.providers.MumlElementTypes.Parameter_3009,
-						view.getElement() != null ? view.getElement()
-								: view,
-						org.muml.pim.messagetype.diagram.part.MumlVisualIDRegistry.getType(
-								org.muml.pim.messagetype.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID));
+		IParser parser = MumlParserProvider.getParser(MumlElementTypes.Parameter_3009,
+				view.getElement() != null ? view.getElement() : view,
+				MumlVisualIDRegistry.getType(WrappingLabelEditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
 					ParserOptions.NONE.intValue());
 		} else {
-			org.muml.pim.messagetype.diagram.part.MessageTypeDiagramEditorPlugin.getInstance()
-					.logError("Parser was not found for label " + 5016); //$NON-NLS-1$
+			MessageTypeDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5016); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -265,8 +258,7 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements ICommon
 	 * @generated
 	 */
 	private boolean isOwnView(View view) {
-		return org.muml.pim.messagetype.diagram.edit.parts.MessageInterfaceDiagramEditPart.MODEL_ID
-				.equals(org.muml.pim.messagetype.diagram.part.MumlVisualIDRegistry.getModelID(view));
+		return MessageInterfaceDiagramEditPart.MODEL_ID.equals(MumlVisualIDRegistry.getModelID(view));
 	}
 
 }

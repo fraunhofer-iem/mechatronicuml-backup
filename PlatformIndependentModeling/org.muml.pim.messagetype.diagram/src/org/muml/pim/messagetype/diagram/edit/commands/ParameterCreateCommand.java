@@ -11,6 +11,10 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.pim.behavior.BehaviorFactory;
+import org.muml.pim.behavior.Parameter;
+import org.muml.pim.messagetype.diagram.providers.ElementInitializers;
+import org.muml.pim.msgtype.MessageType;
 
 /**
  * @generated
@@ -48,14 +52,12 @@ public class ParameterCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-		org.muml.pim.behavior.Parameter newElement = org.muml.pim.behavior.BehaviorFactory.eINSTANCE
-				.createParameter();
+		Parameter newElement = BehaviorFactory.eINSTANCE.createParameter();
 
-		org.muml.pim.msgtype.MessageType owner = (org.muml.pim.msgtype.MessageType) getElementToEdit();
+		MessageType owner = (MessageType) getElementToEdit();
 		owner.getParameters().add(newElement);
 
-		org.muml.pim.messagetype.diagram.providers.ElementInitializers.getInstance()
-				.init_Parameter_3009(newElement);
+		ElementInitializers.getInstance().init_Parameter_3009(newElement);
 
 		doConfigure(newElement, monitor, info);
 
@@ -64,10 +66,10 @@ public class ParameterCreateCommand extends EditElementCommand {
 	}
 
 	/**
-	 * @generated
-	 */
-	protected void doConfigure(org.muml.pim.behavior.Parameter newElement, IProgressMonitor monitor,
-			IAdaptable info) throws ExecutionException {
+	* @generated
+	*/
+	protected void doConfigure(Parameter newElement, IProgressMonitor monitor, IAdaptable info)
+			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest()).getElementType();
 		ConfigureRequest configureRequest = new ConfigureRequest(getEditingDomain(), newElement, elementType);
 		configureRequest.setClientContext(((CreateElementRequest) getRequest()).getClientContext());

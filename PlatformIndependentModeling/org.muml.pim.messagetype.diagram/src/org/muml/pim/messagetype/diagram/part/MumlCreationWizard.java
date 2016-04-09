@@ -3,12 +3,12 @@ package org.muml.pim.messagetype.diagram.part;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.IWorkbench;
+import org.muml.core.modelinstance.ui.diagrams.AbstractFujabaDiagramNewWizard;
 
 /**
  * @generated
  */
-public class MumlCreationWizard
-		extends org.muml.core.modelinstance.ui.diagrams.AbstractFujabaDiagramNewWizard {
+public class MumlCreationWizard extends AbstractFujabaDiagramNewWizard {
 
 	/**
 	 * @generated
@@ -17,8 +17,7 @@ public class MumlCreationWizard
 		super.init(workbench, selection);
 
 		setDefaultPageImageDescriptor(
-				org.muml.pim.messagetype.diagram.part.MessageTypeDiagramEditorPlugin
-						.getBundledImageDescriptor("icons/wizban/NewModelinstanceWizard.gif")); //$NON-NLS-1$
+				MessageTypeDiagramEditorPlugin.getBundledImageDescriptor("icons/wizban/NewModelinstanceWizard.gif")); //$NON-NLS-1$
 
 	}
 
@@ -27,7 +26,7 @@ public class MumlCreationWizard
 	 */
 	@Override
 	public String getEditorId() {
-		return org.muml.pim.messagetype.diagram.part.MumlDiagramEditor.ID;
+		return MumlDiagramEditor.ID;
 
 	}
 
@@ -36,8 +35,7 @@ public class MumlCreationWizard
 	 */
 	@Override
 	public AdapterFactory getItemProvidersAdapterFactory() {
-		return org.muml.pim.messagetype.diagram.part.MessageTypeDiagramEditorPlugin.getInstance()
-				.getItemProvidersAdapterFactory();
+		return MessageTypeDiagramEditorPlugin.getInstance().getItemProvidersAdapterFactory();
 	}
 
 }

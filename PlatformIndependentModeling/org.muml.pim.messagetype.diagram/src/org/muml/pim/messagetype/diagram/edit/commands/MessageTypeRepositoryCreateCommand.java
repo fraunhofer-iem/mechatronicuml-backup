@@ -11,6 +11,10 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.core.modelinstance.ModelElementCategory;
+import org.muml.pim.messagetype.diagram.providers.ElementInitializers;
+import org.muml.pim.msgtype.MessageTypeRepository;
+import org.muml.pim.msgtype.MsgtypeFactory;
 
 /**
  * @generated
@@ -48,14 +52,12 @@ public class MessageTypeRepositoryCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-		org.muml.pim.msgtype.MessageTypeRepository newElement = org.muml.pim.msgtype.MsgtypeFactory.eINSTANCE
-				.createMessageTypeRepository();
+		MessageTypeRepository newElement = MsgtypeFactory.eINSTANCE.createMessageTypeRepository();
 
-		org.muml.core.modelinstance.ModelElementCategory owner = (org.muml.core.modelinstance.ModelElementCategory) getElementToEdit();
+		ModelElementCategory owner = (ModelElementCategory) getElementToEdit();
 		owner.getModelElements().add(newElement);
 
-		org.muml.pim.messagetype.diagram.providers.ElementInitializers.getInstance()
-				.init_MessageTypeRepository_2008(newElement);
+		ElementInitializers.getInstance().init_MessageTypeRepository_2008(newElement);
 
 		doConfigure(newElement, monitor, info);
 
@@ -64,10 +66,10 @@ public class MessageTypeRepositoryCreateCommand extends EditElementCommand {
 	}
 
 	/**
-	 * @generated
-	 */
-	protected void doConfigure(org.muml.pim.msgtype.MessageTypeRepository newElement,
-			IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
+	* @generated
+	*/
+	protected void doConfigure(MessageTypeRepository newElement, IProgressMonitor monitor, IAdaptable info)
+			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest()).getElementType();
 		ConfigureRequest configureRequest = new ConfigureRequest(getEditingDomain(), newElement, elementType);
 		configureRequest.setClientContext(((CreateElementRequest) getRequest()).getClientContext());

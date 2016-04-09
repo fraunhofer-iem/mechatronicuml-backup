@@ -22,6 +22,13 @@ import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.ui.IMemento;
 import org.eclipse.ui.navigator.ICommonContentExtensionSite;
 import org.eclipse.ui.navigator.ICommonContentProvider;
+import org.muml.pim.messagetype.diagram.edit.parts.MessageInterfaceDiagramEditPart;
+import org.muml.pim.messagetype.diagram.edit.parts.MessageTypeEditPart;
+import org.muml.pim.messagetype.diagram.edit.parts.MessageTypeParametersCompartmentEditPart;
+import org.muml.pim.messagetype.diagram.edit.parts.MessageTypeRepositoryEditPart;
+import org.muml.pim.messagetype.diagram.edit.parts.MessageTypeRepositoryMessageTypesCompartmentEditPart;
+import org.muml.pim.messagetype.diagram.edit.parts.ParameterEditPart;
+import org.muml.pim.messagetype.diagram.part.MumlVisualIDRegistry;
 
 /**
  * @generated
@@ -170,27 +177,25 @@ public class MumlNavigatorContentProvider implements ICommonContentProvider {
 			IFile file = (IFile) parentElement;
 			URI fileURI = URI.createPlatformResourceURI(file.getFullPath().toString(), true);
 			Resource resource = myEditingDomain.getResourceSet().getResource(fileURI, true);
-			ArrayList<org.muml.pim.messagetype.diagram.navigator.MumlNavigatorItem> result = new ArrayList<org.muml.pim.messagetype.diagram.navigator.MumlNavigatorItem>();
+			ArrayList<MumlNavigatorItem> result = new ArrayList<MumlNavigatorItem>();
 			ArrayList<View> topViews = new ArrayList<View>(resource.getContents().size());
 			for (EObject o : resource.getContents()) {
 				if (o instanceof View) {
 					topViews.add((View) o);
 				}
 			}
-			result.addAll(createNavigatorItems(
-					selectViewsByType(topViews,
-							org.muml.pim.messagetype.diagram.edit.parts.MessageInterfaceDiagramEditPart.MODEL_ID),
+			result.addAll(createNavigatorItems(selectViewsByType(topViews, MessageInterfaceDiagramEditPart.MODEL_ID),
 					file, false));
 			return result.toArray();
 		}
 
-		if (parentElement instanceof org.muml.pim.messagetype.diagram.navigator.MumlNavigatorGroup) {
-			org.muml.pim.messagetype.diagram.navigator.MumlNavigatorGroup group = (org.muml.pim.messagetype.diagram.navigator.MumlNavigatorGroup) parentElement;
+		if (parentElement instanceof MumlNavigatorGroup) {
+			MumlNavigatorGroup group = (MumlNavigatorGroup) parentElement;
 			return group.getChildren();
 		}
 
-		if (parentElement instanceof org.muml.pim.messagetype.diagram.navigator.MumlNavigatorItem) {
-			org.muml.pim.messagetype.diagram.navigator.MumlNavigatorItem navigatorItem = (org.muml.pim.messagetype.diagram.navigator.MumlNavigatorItem) parentElement;
+		if (parentElement instanceof MumlNavigatorItem) {
+			MumlNavigatorItem navigatorItem = (MumlNavigatorItem) parentElement;
 			if (navigatorItem.isLeaf() || !isOwnView(navigatorItem.getView())) {
 				return EMPTY_ARRAY;
 			}
@@ -204,43 +209,38 @@ public class MumlNavigatorContentProvider implements ICommonContentProvider {
 	 * @generated
 	 */
 	private Object[] getViewChildren(View view, Object parentElement) {
-		switch (org.muml.pim.messagetype.diagram.part.MumlVisualIDRegistry.getVisualID(view)) {
+		switch (MumlVisualIDRegistry.getVisualID(view)) {
 
-		case org.muml.pim.messagetype.diagram.edit.parts.MessageInterfaceDiagramEditPart.VISUAL_ID: {
-			LinkedList<org.muml.pim.messagetype.diagram.navigator.MumlAbstractNavigatorItem> result = new LinkedList<org.muml.pim.messagetype.diagram.navigator.MumlAbstractNavigatorItem>();
+		case MessageInterfaceDiagramEditPart.VISUAL_ID: {
+			LinkedList<MumlAbstractNavigatorItem> result = new LinkedList<MumlAbstractNavigatorItem>();
 			Diagram sv = (Diagram) view;
 			Collection<View> connectedViews;
 			connectedViews = getChildrenByType(Collections.singleton(sv),
-					org.muml.pim.messagetype.diagram.part.MumlVisualIDRegistry.getType(
-							org.muml.pim.messagetype.diagram.edit.parts.MessageTypeRepositoryEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(MessageTypeRepositoryEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			return result.toArray();
 		}
 
-		case org.muml.pim.messagetype.diagram.edit.parts.MessageTypeRepositoryEditPart.VISUAL_ID: {
-			LinkedList<org.muml.pim.messagetype.diagram.navigator.MumlAbstractNavigatorItem> result = new LinkedList<org.muml.pim.messagetype.diagram.navigator.MumlAbstractNavigatorItem>();
+		case MessageTypeRepositoryEditPart.VISUAL_ID: {
+			LinkedList<MumlAbstractNavigatorItem> result = new LinkedList<MumlAbstractNavigatorItem>();
 			Node sv = (Node) view;
 			Collection<View> connectedViews;
 			connectedViews = getChildrenByType(Collections.singleton(sv),
-					org.muml.pim.messagetype.diagram.part.MumlVisualIDRegistry.getType(
-							org.muml.pim.messagetype.diagram.edit.parts.MessageTypeRepositoryMessageTypesCompartmentEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(MessageTypeRepositoryMessageTypesCompartmentEditPart.VISUAL_ID));
 			connectedViews = getChildrenByType(connectedViews,
-					org.muml.pim.messagetype.diagram.part.MumlVisualIDRegistry.getType(
-							org.muml.pim.messagetype.diagram.edit.parts.MessageTypeEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(MessageTypeEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			return result.toArray();
 		}
 
-		case org.muml.pim.messagetype.diagram.edit.parts.MessageTypeEditPart.VISUAL_ID: {
-			LinkedList<org.muml.pim.messagetype.diagram.navigator.MumlAbstractNavigatorItem> result = new LinkedList<org.muml.pim.messagetype.diagram.navigator.MumlAbstractNavigatorItem>();
+		case MessageTypeEditPart.VISUAL_ID: {
+			LinkedList<MumlAbstractNavigatorItem> result = new LinkedList<MumlAbstractNavigatorItem>();
 			Node sv = (Node) view;
 			Collection<View> connectedViews;
 			connectedViews = getChildrenByType(Collections.singleton(sv),
-					org.muml.pim.messagetype.diagram.part.MumlVisualIDRegistry.getType(
-							org.muml.pim.messagetype.diagram.edit.parts.MessageTypeParametersCompartmentEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(MessageTypeParametersCompartmentEditPart.VISUAL_ID));
 			connectedViews = getChildrenByType(connectedViews,
-					org.muml.pim.messagetype.diagram.part.MumlVisualIDRegistry.getType(
-							org.muml.pim.messagetype.diagram.edit.parts.ParameterEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(ParameterEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			return result.toArray();
 		}
@@ -338,20 +338,16 @@ public class MumlNavigatorContentProvider implements ICommonContentProvider {
 	 * @generated
 	 */
 	private boolean isOwnView(View view) {
-		return org.muml.pim.messagetype.diagram.edit.parts.MessageInterfaceDiagramEditPart.MODEL_ID
-				.equals(org.muml.pim.messagetype.diagram.part.MumlVisualIDRegistry.getModelID(view));
+		return MessageInterfaceDiagramEditPart.MODEL_ID.equals(MumlVisualIDRegistry.getModelID(view));
 	}
 
 	/**
 	 * @generated
 	 */
-	private Collection<org.muml.pim.messagetype.diagram.navigator.MumlNavigatorItem> createNavigatorItems(
-			Collection<View> views, Object parent, boolean isLeafs) {
-		ArrayList<org.muml.pim.messagetype.diagram.navigator.MumlNavigatorItem> result = new ArrayList<org.muml.pim.messagetype.diagram.navigator.MumlNavigatorItem>(
-				views.size());
+	private Collection<MumlNavigatorItem> createNavigatorItems(Collection<View> views, Object parent, boolean isLeafs) {
+		ArrayList<MumlNavigatorItem> result = new ArrayList<MumlNavigatorItem>(views.size());
 		for (View nextView : views) {
-			result.add(new org.muml.pim.messagetype.diagram.navigator.MumlNavigatorItem(nextView,
-					parent, isLeafs));
+			result.add(new MumlNavigatorItem(nextView, parent, isLeafs));
 		}
 		return result;
 	}
@@ -360,8 +356,8 @@ public class MumlNavigatorContentProvider implements ICommonContentProvider {
 	 * @generated
 	 */
 	public Object getParent(Object element) {
-		if (element instanceof org.muml.pim.messagetype.diagram.navigator.MumlAbstractNavigatorItem) {
-			org.muml.pim.messagetype.diagram.navigator.MumlAbstractNavigatorItem abstractNavigatorItem = (org.muml.pim.messagetype.diagram.navigator.MumlAbstractNavigatorItem) element;
+		if (element instanceof MumlAbstractNavigatorItem) {
+			MumlAbstractNavigatorItem abstractNavigatorItem = (MumlAbstractNavigatorItem) element;
 			return abstractNavigatorItem.getParent();
 		}
 		return null;

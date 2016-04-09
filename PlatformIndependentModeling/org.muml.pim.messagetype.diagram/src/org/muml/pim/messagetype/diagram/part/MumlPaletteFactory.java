@@ -11,6 +11,7 @@ import org.eclipse.gef.palette.ToolEntry;
 import org.eclipse.gmf.runtime.diagram.ui.tools.UnspecifiedTypeCreationTool;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry;
+import org.muml.pim.messagetype.diagram.providers.MumlElementTypes;
 
 /**
  * @generated
@@ -29,8 +30,7 @@ public class MumlPaletteFactory {
 	 * @generated
 	 */
 	private PaletteContainer createMessageinterfaceeditor1Group() {
-		PaletteGroup paletteContainer = new PaletteGroup(
-				org.muml.pim.messagetype.diagram.part.Messages.Messageinterfaceeditor1Group_title);
+		PaletteGroup paletteContainer = new PaletteGroup(Messages.Messageinterfaceeditor1Group_title);
 		paletteContainer.setId("createMessageinterfaceeditor1Group"); //$NON-NLS-1$
 		paletteContainer.add(createMessageTypeRepository1CreationTool());
 		paletteContainer.add(createMessageType2CreationTool());
@@ -42,15 +42,12 @@ public class MumlPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createMessageTypeRepository1CreationTool() {
-		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
-				org.muml.pim.messagetype.diagram.part.Messages.MessageTypeRepository1CreationTool_title,
-				org.muml.pim.messagetype.diagram.part.Messages.MessageTypeRepository1CreationTool_desc,
-				Collections.singletonList(
-						org.muml.pim.messagetype.diagram.providers.MumlElementTypes.MessageTypeRepository_2008));
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.MessageTypeRepository1CreationTool_title,
+				Messages.MessageTypeRepository1CreationTool_desc,
+				Collections.singletonList(MumlElementTypes.MessageTypeRepository_2008));
 		entry.setId("createMessageTypeRepository1CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(org.muml.pim.messagetype.diagram.part.MessageTypeDiagramEditorPlugin
-				.findImageDescriptor(
-						"/org.muml.pim.messagetype.diagram.custom/icons/MessageInterface.gif")); //$NON-NLS-1$
+		entry.setSmallIcon(MessageTypeDiagramEditorPlugin
+				.findImageDescriptor("/org.muml.pim.messagetype.diagram.custom/icons/MessageInterface.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -59,15 +56,10 @@ public class MumlPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createMessageType2CreationTool() {
-		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
-				org.muml.pim.messagetype.diagram.part.Messages.MessageType2CreationTool_title,
-				org.muml.pim.messagetype.diagram.part.Messages.MessageType2CreationTool_desc,
-				Collections.singletonList(
-						org.muml.pim.messagetype.diagram.providers.MumlElementTypes.MessageType_3007));
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.MessageType2CreationTool_title,
+				Messages.MessageType2CreationTool_desc, Collections.singletonList(MumlElementTypes.MessageType_3007));
 		entry.setId("createMessageType2CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(
-				org.muml.pim.messagetype.diagram.providers.MumlElementTypes.getImageDescriptor(
-						org.muml.pim.messagetype.diagram.providers.MumlElementTypes.MessageType_3007));
+		entry.setSmallIcon(MumlElementTypes.getImageDescriptor(MumlElementTypes.MessageType_3007));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -76,15 +68,10 @@ public class MumlPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createParameter3CreationTool() {
-		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
-				org.muml.pim.messagetype.diagram.part.Messages.Parameter3CreationTool_title,
-				org.muml.pim.messagetype.diagram.part.Messages.Parameter3CreationTool_desc,
-				Collections.singletonList(
-						org.muml.pim.messagetype.diagram.providers.MumlElementTypes.Parameter_3009));
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.Parameter3CreationTool_title,
+				Messages.Parameter3CreationTool_desc, Collections.singletonList(MumlElementTypes.Parameter_3009));
 		entry.setId("createParameter3CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(
-				org.muml.pim.messagetype.diagram.providers.MumlElementTypes.getImageDescriptor(
-						org.muml.pim.messagetype.diagram.providers.MumlElementTypes.Parameter_3009));
+		entry.setSmallIcon(MumlElementTypes.getImageDescriptor(MumlElementTypes.Parameter_3009));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}

@@ -13,6 +13,14 @@ import org.eclipse.gmf.tooling.runtime.providers.DiagramElementTypeImages;
 import org.eclipse.gmf.tooling.runtime.providers.DiagramElementTypes;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.swt.graphics.Image;
+import org.muml.core.modelinstance.ModelinstancePackage;
+import org.muml.pim.behavior.BehaviorPackage;
+import org.muml.pim.messagetype.diagram.edit.parts.MessageInterfaceDiagramEditPart;
+import org.muml.pim.messagetype.diagram.edit.parts.MessageTypeEditPart;
+import org.muml.pim.messagetype.diagram.edit.parts.MessageTypeRepositoryEditPart;
+import org.muml.pim.messagetype.diagram.edit.parts.ParameterEditPart;
+import org.muml.pim.messagetype.diagram.part.MessageTypeDiagramEditorPlugin;
+import org.muml.pim.msgtype.MsgtypePackage;
 
 /**
  * @generated
@@ -34,8 +42,7 @@ public class MumlElementTypes {
 	 * @generated
 	 */
 	private static DiagramElementTypeImages elementTypeImages = new DiagramElementTypeImages(
-			org.muml.pim.messagetype.diagram.part.MessageTypeDiagramEditorPlugin.getInstance()
-					.getItemProvidersAdapterFactory());
+			MessageTypeDiagramEditorPlugin.getInstance().getItemProvidersAdapterFactory());
 
 	/**
 	 * @generated
@@ -61,8 +68,7 @@ public class MumlElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType Parameter_3009 = getElementType(
-			"org.muml.pim.messagetype.diagram.Parameter_3009"); //$NON-NLS-1$
+	public static final IElementType Parameter_3009 = getElementType("org.muml.pim.messagetype.diagram.Parameter_3009"); //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -102,17 +108,13 @@ public class MumlElementTypes {
 		if (elements == null) {
 			elements = new IdentityHashMap<IElementType, ENamedElement>();
 
-			elements.put(ModelElementCategory_1000,
-					org.muml.core.modelinstance.ModelinstancePackage.eINSTANCE.getModelElementCategory());
+			elements.put(ModelElementCategory_1000, ModelinstancePackage.eINSTANCE.getModelElementCategory());
 
-			elements.put(MessageTypeRepository_2008,
-					org.muml.pim.msgtype.MsgtypePackage.eINSTANCE.getMessageTypeRepository());
+			elements.put(MessageTypeRepository_2008, MsgtypePackage.eINSTANCE.getMessageTypeRepository());
 
-			elements.put(MessageType_3007,
-					org.muml.pim.msgtype.MsgtypePackage.eINSTANCE.getMessageType());
+			elements.put(MessageType_3007, MsgtypePackage.eINSTANCE.getMessageType());
 
-			elements.put(Parameter_3009,
-					org.muml.pim.behavior.BehaviorPackage.eINSTANCE.getParameter());
+			elements.put(Parameter_3009, BehaviorPackage.eINSTANCE.getParameter());
 		}
 		return (ENamedElement) elements.get(type);
 	}
@@ -143,13 +145,13 @@ public class MumlElementTypes {
 	 */
 	public static IElementType getElementType(int visualID) {
 		switch (visualID) {
-		case org.muml.pim.messagetype.diagram.edit.parts.MessageInterfaceDiagramEditPart.VISUAL_ID:
+		case MessageInterfaceDiagramEditPart.VISUAL_ID:
 			return ModelElementCategory_1000;
-		case org.muml.pim.messagetype.diagram.edit.parts.MessageTypeRepositoryEditPart.VISUAL_ID:
+		case MessageTypeRepositoryEditPart.VISUAL_ID:
 			return MessageTypeRepository_2008;
-		case org.muml.pim.messagetype.diagram.edit.parts.MessageTypeEditPart.VISUAL_ID:
+		case MessageTypeEditPart.VISUAL_ID:
 			return MessageType_3007;
-		case org.muml.pim.messagetype.diagram.edit.parts.ParameterEditPart.VISUAL_ID:
+		case ParameterEditPart.VISUAL_ID:
 			return Parameter_3009;
 		}
 		return null;
@@ -166,8 +168,7 @@ public class MumlElementTypes {
 		@Override
 
 		public boolean isKnownElementType(IElementType elementType) {
-			return org.muml.pim.messagetype.diagram.providers.MumlElementTypes
-					.isKnownElementType(elementType);
+			return org.muml.pim.messagetype.diagram.providers.MumlElementTypes.isKnownElementType(elementType);
 		}
 
 		/**
@@ -185,8 +186,7 @@ public class MumlElementTypes {
 		@Override
 
 		public ENamedElement getDefiningNamedElement(IAdaptable elementTypeAdapter) {
-			return org.muml.pim.messagetype.diagram.providers.MumlElementTypes
-					.getElement(elementTypeAdapter);
+			return org.muml.pim.messagetype.diagram.providers.MumlElementTypes.getElement(elementTypeAdapter);
 		}
 	};
 

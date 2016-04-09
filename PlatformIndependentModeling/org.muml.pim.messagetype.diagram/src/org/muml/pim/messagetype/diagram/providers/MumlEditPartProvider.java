@@ -1,6 +1,9 @@
 package org.muml.pim.messagetype.diagram.providers;
 
 import org.eclipse.gmf.tooling.runtime.providers.DefaultEditPartProvider;
+import org.muml.pim.messagetype.diagram.edit.parts.MessageInterfaceDiagramEditPart;
+import org.muml.pim.messagetype.diagram.edit.parts.MumlEditPartFactory;
+import org.muml.pim.messagetype.diagram.part.MumlVisualIDRegistry;
 
 /**
  * @generated
@@ -11,8 +14,6 @@ public class MumlEditPartProvider extends DefaultEditPartProvider {
 	 * @generated
 	 */
 	public MumlEditPartProvider() {
-		super(new org.muml.pim.messagetype.diagram.edit.parts.MumlEditPartFactory(),
-				org.muml.pim.messagetype.diagram.part.MumlVisualIDRegistry.TYPED_INSTANCE,
-				org.muml.pim.messagetype.diagram.edit.parts.MessageInterfaceDiagramEditPart.MODEL_ID);
+		super(new MumlEditPartFactory(), MumlVisualIDRegistry.TYPED_INSTANCE, MessageInterfaceDiagramEditPart.MODEL_ID);
 	}
 }

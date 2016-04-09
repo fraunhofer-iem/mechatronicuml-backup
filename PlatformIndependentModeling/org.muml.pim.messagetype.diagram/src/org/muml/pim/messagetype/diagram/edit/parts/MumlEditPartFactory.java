@@ -6,6 +6,7 @@ import org.eclipse.gef.tools.CellEditorLocator;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ITextAwareEditPart;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.directedit.locator.CellEditorLocatorAccess;
+import org.muml.pim.messagetype.diagram.part.MumlVisualIDRegistry;
 
 /**
  * @generated
@@ -18,39 +19,34 @@ public class MumlEditPartFactory implements EditPartFactory {
 	public EditPart createEditPart(EditPart context, Object model) {
 		if (model instanceof View) {
 			View view = (View) model;
-			switch (org.muml.pim.messagetype.diagram.part.MumlVisualIDRegistry.getVisualID(view)) {
+			switch (MumlVisualIDRegistry.getVisualID(view)) {
 
-			case org.muml.pim.messagetype.diagram.edit.parts.MessageInterfaceDiagramEditPart.VISUAL_ID:
-				return new org.muml.pim.messagetype.diagram.edit.parts.MessageInterfaceDiagramEditPart(
-						view);
+			case MessageInterfaceDiagramEditPart.VISUAL_ID:
+				return new MessageInterfaceDiagramEditPart(view);
 
-			case org.muml.pim.messagetype.diagram.edit.parts.MessageTypeRepositoryEditPart.VISUAL_ID:
-				return new org.muml.pim.messagetype.diagram.edit.parts.MessageTypeRepositoryEditPart(
-						view);
+			case MessageTypeRepositoryEditPart.VISUAL_ID:
+				return new MessageTypeRepositoryEditPart(view);
 
-			case org.muml.pim.messagetype.diagram.edit.parts.MessageTypeRepositoryNameEditPart.VISUAL_ID:
-				return new org.muml.pim.messagetype.diagram.edit.parts.MessageTypeRepositoryNameEditPart(
-						view);
+			case MessageTypeRepositoryNameEditPart.VISUAL_ID:
+				return new MessageTypeRepositoryNameEditPart(view);
 
-			case org.muml.pim.messagetype.diagram.edit.parts.MessageTypeEditPart.VISUAL_ID:
-				return new org.muml.pim.messagetype.diagram.edit.parts.MessageTypeEditPart(view);
+			case MessageTypeEditPart.VISUAL_ID:
+				return new MessageTypeEditPart(view);
 
-			case org.muml.pim.messagetype.diagram.edit.parts.MessageTypeNameEditPart.VISUAL_ID:
-				return new org.muml.pim.messagetype.diagram.edit.parts.MessageTypeNameEditPart(view);
+			case MessageTypeNameEditPart.VISUAL_ID:
+				return new MessageTypeNameEditPart(view);
 
-			case org.muml.pim.messagetype.diagram.edit.parts.ParameterEditPart.VISUAL_ID:
-				return new org.muml.pim.messagetype.diagram.edit.parts.ParameterEditPart(view);
+			case ParameterEditPart.VISUAL_ID:
+				return new ParameterEditPart(view);
 
-			case org.muml.pim.messagetype.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID:
-				return new org.muml.pim.messagetype.diagram.edit.parts.WrappingLabelEditPart(view);
+			case WrappingLabelEditPart.VISUAL_ID:
+				return new WrappingLabelEditPart(view);
 
-			case org.muml.pim.messagetype.diagram.edit.parts.MessageTypeRepositoryMessageTypesCompartmentEditPart.VISUAL_ID:
-				return new org.muml.pim.messagetype.diagram.edit.parts.MessageTypeRepositoryMessageTypesCompartmentEditPart(
-						view);
+			case MessageTypeRepositoryMessageTypesCompartmentEditPart.VISUAL_ID:
+				return new MessageTypeRepositoryMessageTypesCompartmentEditPart(view);
 
-			case org.muml.pim.messagetype.diagram.edit.parts.MessageTypeParametersCompartmentEditPart.VISUAL_ID:
-				return new org.muml.pim.messagetype.diagram.edit.parts.MessageTypeParametersCompartmentEditPart(
-						view);
+			case MessageTypeParametersCompartmentEditPart.VISUAL_ID:
+				return new MessageTypeParametersCompartmentEditPart(view);
 			}
 		}
 		return createUnrecognizedEditPart(context, model);
