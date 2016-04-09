@@ -8,7 +8,7 @@
 	      <command
 	            commandId="de.uni_paderborn.fujaba.muml.dependencylanguage.synthesis.ui.commands.InitialSynthesis"
 	            icon="icons/InitialSynthesis.gif"
-	            id="de.uni_paderborn.fujaba.muml.common.commands.OpenTypeDialogCommand"
+	            id="org.muml.pim.common.commands.OpenTypeDialogCommand"
 	            label="Synthesize Intra-Behavior"
 	            style="push">
 	            	<visibleWhen checkEnabled="true">

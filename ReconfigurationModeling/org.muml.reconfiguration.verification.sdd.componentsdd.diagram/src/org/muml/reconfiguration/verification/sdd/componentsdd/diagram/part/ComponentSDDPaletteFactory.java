@@ -135,7 +135,7 @@ public class ComponentSDDPaletteFactory {
 						.singletonList(org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.ComponentPartVariable_3003));
 		entry.setId("createPartVariable1CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDDiagramEditorPlugin
-				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.common/icons/ComponentPart.gif")); //$NON-NLS-1$
+				.findImageDescriptor("/org.muml.pim.common/icons/ComponentPart.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -153,7 +153,7 @@ public class ComponentSDDPaletteFactory {
 				types);
 		entry.setId("createMultiPortVariable2CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDDiagramEditorPlugin
-				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.common/icons/Port.gif")); //$NON-NLS-1$
+				.findImageDescriptor("/org.muml.pim.common/icons/Port.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -172,7 +172,7 @@ public class ComponentSDDPaletteFactory {
 				types);
 		entry.setId("createSinglePortVariable3CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDDiagramEditorPlugin
-				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.common/icons/Port.gif")); //$NON-NLS-1$
+				.findImageDescriptor("/org.muml.pim.common/icons/Port.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -220,7 +220,7 @@ public class ComponentSDDPaletteFactory {
 						.singletonList(org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.AssemblyVariable_4002));
 		entry.setId("createAssemblyVariable6CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDDiagramEditorPlugin
-				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.common/icons/Assembly.gif")); //$NON-NLS-1$
+				.findImageDescriptor("/org.muml.pim.common/icons/Assembly.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -236,7 +236,7 @@ public class ComponentSDDPaletteFactory {
 						.singletonList(org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.DelegationVariable_4003));
 		entry.setId("createDelegationVariable7CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDDiagramEditorPlugin
-				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.common/icons/Delegation.gif")); //$NON-NLS-1$
+				.findImageDescriptor("/org.muml.pim.common/icons/Delegation.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}

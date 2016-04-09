@@ -330,7 +330,7 @@
         <children
             xsi:type="gmfgraph:CustomDecoration"
             name="TransitionPriority"
-            qualifiedClassName="de.uni_paderborn.fujaba.muml.common.figures.TransitionPriorityDecoration">
+            qualifiedClassName="org.muml.pim.common.figures.TransitionPriorityDecoration">
           <location/>
           <size
               x="16"

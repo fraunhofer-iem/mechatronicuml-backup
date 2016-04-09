@@ -87,12 +87,12 @@ public class ManagerEditPart extends AbstractBorderedShapeEditPart {
 		// installEditPolicy(
 		// EditPolicy.GRAPHICAL_NODE_ROLE,
 		// new
-		// de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy());
+		// org.muml.pim.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy());
 		//
 		// installEditPolicy(
-		// de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.ERROR_FEEDBACK_ROLE,
+		// org.muml.pim.common.edit.policies.EditPolicyRoles.ERROR_FEEDBACK_ROLE,
 		// new
-		// de.uni_paderborn.fujaba.muml.common.edit.policies.ErrorFeedbackEditPolicy());
+		// org.muml.pim.common.edit.policies.ErrorFeedbackEditPolicy());
 
 	}
 

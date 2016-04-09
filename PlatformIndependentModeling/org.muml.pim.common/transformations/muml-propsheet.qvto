@@ -9,7 +9,7 @@ main() {
 }
 
 mapping inout PropertyGenerator::generator() {
-	self.plugin.requiredBundles += "de.uni_paderborn.fujaba.muml.common";
+	self.plugin.requiredBundles += "org.muml.pim.common";
 	
 	self.packages.classes.properties->select(p | p.genFeature.ecoreFeature.eType.name = 'NaturalNumber')->forEach(prop) {
 		if (prop.editor[TextPropertyEditor]->select(multiLine = false)->isEmpty()) then {

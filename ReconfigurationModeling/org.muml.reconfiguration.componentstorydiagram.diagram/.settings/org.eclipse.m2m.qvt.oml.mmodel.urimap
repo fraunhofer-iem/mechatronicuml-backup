@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="ASCII"?>
 <uriMap:MappingContainer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:uriMap="http:///www.eclipse.org/m2m/qvt/oml/MModelUriMap/1.0.0">
-  <mapping sourceURI="common" targetURI="platform:/resource/de.uni_paderborn.fujaba.muml.common/transformations/settings.qvto"/>
+  <mapping sourceURI="common" targetURI="platform:/resource/org.muml.pim.common/transformations/settings.qvto"/>
 </uriMap:MappingContainer>

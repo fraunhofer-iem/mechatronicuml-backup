@@ -25,7 +25,7 @@ mapping inout GenEditorGenerator::editorSpecific() {
 		    	node.modelFacet.metaClass.ecoreClass.name = 'StaticStructuredComponent' or
 		    	node.modelFacet.metaClass.ecoreClass.name = 'StaticAtomicComponent') then {
 			if (node.behaviour[CustomBehaviour]->select(cb | cb.key = key)->isEmpty()) then {
-				node.behaviour += new CustomBehaviour(key, 'de.uni_paderborn.fujaba.muml.common.edit.policies.component.ComponentColorEditPolicy');
+				node.behaviour += new CustomBehaviour(key, 'org.muml.pim.common.edit.policies.component.ComponentColorEditPolicy');
 			} endif;
 		} endif;
 	};

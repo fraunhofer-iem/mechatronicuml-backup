@@ -25,8 +25,8 @@ mapping inout GenEditorGenerator::editorSpecific() {
 	var nodes := self.diagram.childNodes[GenNode]->union(self.diagram.topLevelNodes);
 	nodes->forEach(node) {
 		if (node.modelFacet.metaClass.ecoreClass.name = 'State') then {
-			node->map behavior('de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.STATE_COLOR_ROLE', 'de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.policies.statechart.StateColorEditPolicy');
-			node->map behavior('de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.STATE_VISUALIZATION_ROLE', 'de.uni_paderborn.fujaba.muml.common.edit.policies.statechart.StateEditPolicy');
+			node->map behavior('org.muml.pim.common.edit.policies.EditPolicyRoles.STATE_COLOR_ROLE', 'de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.policies.statechart.StateColorEditPolicy');
+			node->map behavior('org.muml.pim.common.edit.policies.EditPolicyRoles.STATE_VISUALIZATION_ROLE', 'org.muml.pim.common.edit.policies.statechart.StateEditPolicy');
 		} elif (node.modelFacet.metaClass.ecoreClass.name = 'ClockConstraint') then {
 			node->map behavior('"TitleHelper"', 'de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.policies.statechart.TitleHelperEditPolicy');
 		} elif (node.modelFacet.metaClass.ecoreClass.name = 'SynchronizationChannel') then {
@@ -54,8 +54,8 @@ mapping inout GenCompartment::listLayout(value : Boolean) {
 
 
 mapping inout GenChildSideAffixedNode::connectionPoint() {
-	-- self.behaviour[CustomBehaviour]->reject(b | b.key = 'de.uni_paderborn.fujaba.muml.common.edit.policies.ports.ConnectionPointEditPolicy.CONNECTION_POINT_VISUALIZATION_ROLE');
-	-- self.behaviour += new CustomBehaviour('de.uni_paderborn.fujaba.muml.common.edit.policies.ports.ConnectionPointEditPolicy.CONNECTION_POINT_VISUALIZATION_ROLE', 'de.uni_paderborn.fujaba.muml.common.edit.policies.ports.ConnectionPointEditPolicy');
+	-- self.behaviour[CustomBehaviour]->reject(b | b.key = 'org.muml.pim.common.edit.policies.ports.ConnectionPointEditPolicy.CONNECTION_POINT_VISUALIZATION_ROLE');
+	-- self.behaviour += new CustomBehaviour('org.muml.pim.common.edit.policies.ports.ConnectionPointEditPolicy.CONNECTION_POINT_VISUALIZATION_ROLE', 'org.muml.pim.common.edit.policies.ports.ConnectionPointEditPolicy');
 }
 
 --constructor CustomBehaviour::CustomBehaviour(_key : String, editPolicy : String) {

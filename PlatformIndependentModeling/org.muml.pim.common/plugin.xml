@@ -27,9 +27,9 @@
 	         allPopups="false"
 	         locationURI="popup:de.uni_paderborn.fujaba?after=types">
 	      <command
-	            commandId="de.uni_paderborn.fujaba.muml.common.commands.OpenTypeDialogCommand"
+	            commandId="org.muml.pim.common.commands.OpenTypeDialogCommand"
 	            icon="icons/TypeDialog.gif"
-	            id="de.uni_paderborn.fujaba.muml.common.commands.OpenTypeDialogCommand"
+	            id="org.muml.pim.common.commands.OpenTypeDialogCommand"
 	            label="Open Data-Type Dialog"
 	            style="push">
 	            	<visibleWhen checkEnabled="false">
@@ -41,9 +41,9 @@
 	      </command>
 	      
 	       <command
-	            commandId="de.uni_paderborn.fujaba.muml.common.commands.UseSharedTypesCommand"
+	            commandId="org.muml.pim.common.commands.UseSharedTypesCommand"
 	            icon="icons/TypeDialog.gif"
-	            id="de.uni_paderborn.fujaba.muml.common.commands.UseSharedTypesCommand"
+	            id="org.muml.pim.common.commands.UseSharedTypesCommand"
 	            label="Use Shared Predefined Types"
 	            style="push">
 	            	<visibleWhen checkEnabled="false">
@@ -80,7 +80,7 @@
            categoryId="de.uni_paderborn.fujaba"
            defaultHandler="org.muml.pim.common.internal.ui.commands.OpenTypeDialogCommand"
            description="Open Type Dialog"
-           id="de.uni_paderborn.fujaba.muml.common.commands.OpenTypeDialogCommand"
+           id="org.muml.pim.common.commands.OpenTypeDialogCommand"
            name="Open Type Dialog">
      </command>
 
@@ -93,7 +93,7 @@
            categoryId="de.uni_paderborn.fujaba"
            defaultHandler="org.muml.pim.common.internal.ui.commands.UseSharedTypesCommand"
            description="Use Shared Types"
-           id="de.uni_paderborn.fujaba.muml.common.commands.UseSharedTypesCommand"
+           id="org.muml.pim.common.commands.UseSharedTypesCommand"
            name="Open Type Dialog">
      </command>
 
@@ -133,7 +133,7 @@
        point="org.eclipse.ltk.core.refactoring.moveParticipants">
     <moveParticipant
           class="org.muml.pim.common.refactoring.XMIMoveParticipant"
-          id="de.uni_paderborn.fujaba.muml.common.refactoring.xmiMoveParticipant"
+          id="org.muml.pim.common.refactoring.xmiMoveParticipant"
           name="Move XMI File">
        <enablement>
           <adapt type="org.eclipse.core.resources.IResource" />
@@ -145,7 +145,7 @@
          point="org.eclipse.ltk.core.refactoring.renameParticipants">
       <renameParticipant
             class="org.muml.pim.common.refactoring.XMIRenameParticipant"
-            id="de.uni_paderborn.fujaba.muml.common.refactoring.xmiRenameParticipant"
+            id="org.muml.pim.common.refactoring.xmiRenameParticipant"
             name="Rename XMI File">
         <enablement>
           <adapt type="org.eclipse.core.resources.IResource" />

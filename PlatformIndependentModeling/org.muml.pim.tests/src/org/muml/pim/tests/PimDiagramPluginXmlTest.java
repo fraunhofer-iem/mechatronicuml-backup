@@ -47,7 +47,7 @@ public class PimDiagramPluginXmlTest extends DiagramPluginXmlTest {
 					"de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.custom"
 			}},
 			new Object[] {new String[] {
-					"de.uni_paderborn.fujaba.muml.common"
+					"org.muml.pim.common"
 			}}
 		};
 		return Arrays.asList(pluginsToCheck);

@@ -49,7 +49,7 @@
           editHelperClassName="DiscretePortEditHelper"/>
       <viewmap
           xsi:type="gmfgen:FigureViewmap"
-          figureQualifiedClassName="de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure">
+          figureQualifiedClassName="org.muml.pim.common.figures.CustomPortFigure">
         <attributes
             xsi:type="gmfgen:DefaultSizeAttributes"
             width="24"
@@ -57,12 +57,12 @@
       </viewmap>
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
-          key="de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.PORT_VISUALIZATION_ROLE"
-          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.ports.PortTypeEditPolicy"/>
+          key="org.muml.pim.common.edit.policies.EditPolicyRoles.PORT_VISUALIZATION_ROLE"
+          editPolicyQualifiedClassName="org.muml.pim.common.edit.policies.ports.PortTypeEditPolicy"/>
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
           key="org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.OPEN_ROLE"
-          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.opendiagram.OpenBehaviorDiagramEditPolicy"/>
+          editPolicyQualifiedClassName="org.muml.pim.common.edit.policies.opendiagram.OpenBehaviorDiagramEditPolicy"/>
       <modelFacet>
         <metaClass
             href="../../org.muml.pim/model/pim.genmodel#//pim/component/DiscretePort"/>
@@ -144,7 +144,7 @@
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
             key="org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.TETHER_ROLE"
-            editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.tether.DiscretePortAssignedRoleTetherBorderItemEditPolicy"/>
+            editPolicyQualifiedClassName="org.muml.pim.common.edit.policies.tether.DiscretePortAssignedRoleTetherBorderItemEditPolicy"/>
         <modelFacet
             xsi:type="gmfgen:ExpressionLabelModelFacet"
             parser="//@labelParsers/@implementations.1"/>
@@ -167,7 +167,7 @@
           editHelperClassName="ContinuousPortEditHelper"/>
       <viewmap
           xsi:type="gmfgen:FigureViewmap"
-          figureQualifiedClassName="de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure">
+          figureQualifiedClassName="org.muml.pim.common.figures.CustomPortFigure">
         <attributes
             xsi:type="gmfgen:DefaultSizeAttributes"
             width="24"
@@ -175,8 +175,8 @@
       </viewmap>
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
-          key="de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.PORT_VISUALIZATION_ROLE"
-          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.ports.PortTypeEditPolicy"/>
+          key="org.muml.pim.common.edit.policies.EditPolicyRoles.PORT_VISUALIZATION_ROLE"
+          editPolicyQualifiedClassName="org.muml.pim.common.edit.policies.ports.PortTypeEditPolicy"/>
       <modelFacet>
         <metaClass
             href="../../org.muml.pim/model/pim.genmodel#//pim/component/ContinuousPort"/>
@@ -231,7 +231,7 @@
           editHelperClassName="HybridPortEditHelper"/>
       <viewmap
           xsi:type="gmfgen:FigureViewmap"
-          figureQualifiedClassName="de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure">
+          figureQualifiedClassName="org.muml.pim.common.figures.CustomPortFigure">
         <attributes
             xsi:type="gmfgen:DefaultSizeAttributes"
             width="24"
@@ -239,8 +239,8 @@
       </viewmap>
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
-          key="de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.PORT_VISUALIZATION_ROLE"
-          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.ports.PortTypeEditPolicy"/>
+          key="org.muml.pim.common.edit.policies.EditPolicyRoles.PORT_VISUALIZATION_ROLE"
+          editPolicyQualifiedClassName="org.muml.pim.common.edit.policies.ports.PortTypeEditPolicy"/>
       <modelFacet>
         <metaClass
             href="../../org.muml.pim/model/pim.genmodel#//pim/component/HybridPort"/>
@@ -305,7 +305,7 @@
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
           key="org.muml.core.common.edit.policies.EditPolicyRoles.BACKGROUND_COLOR_ROLE"
-          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.component.ComponentColorEditPolicy"/>
+          editPolicyQualifiedClassName="org.muml.pim.common.edit.policies.component.ComponentColorEditPolicy"/>
       <modelFacet>
         <metaClass
             href="../../org.muml.pim/model/pim.genmodel#//pim/component/ComponentPart"/>
@@ -393,7 +393,7 @@
           editHelperClassName="PortPartEditHelper"/>
       <viewmap
           xsi:type="gmfgen:FigureViewmap"
-          figureQualifiedClassName="de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure">
+          figureQualifiedClassName="org.muml.pim.common.figures.CustomPortFigure">
         <attributes
             xsi:type="gmfgen:DefaultSizeAttributes"
             width="24"
@@ -401,8 +401,8 @@
       </viewmap>
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
-          key="de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.PORT_VISUALIZATION_ROLE"
-          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.ports.PortPartEditPolicy"/>
+          key="org.muml.pim.common.edit.policies.EditPolicyRoles.PORT_VISUALIZATION_ROLE"
+          editPolicyQualifiedClassName="org.muml.pim.common.edit.policies.ports.PortPartEditPolicy"/>
       <modelFacet>
         <metaClass
             href="../../org.muml.pim/model/pim.genmodel#//pim/component/PortPart"/>
@@ -504,11 +504,11 @@
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
           key="org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.OPEN_ROLE"
-          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.opendiagram.OpenBehaviorDiagramEditPolicy"/>
+          editPolicyQualifiedClassName="org.muml.pim.common.edit.policies.opendiagram.OpenBehaviorDiagramEditPolicy"/>
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
           key="org.muml.core.common.edit.policies.EditPolicyRoles.BACKGROUND_COLOR_ROLE"
-          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.component.ComponentColorEditPolicy"/>
+          editPolicyQualifiedClassName="org.muml.pim.common.edit.policies.component.ComponentColorEditPolicy"/>
       <modelFacet>
         <metaClass
             href="../../org.muml.pim/model/pim.genmodel#//pim/component/StaticAtomicComponent"/>
@@ -576,7 +576,7 @@
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
           key="org.muml.core.common.edit.policies.EditPolicyRoles.BACKGROUND_COLOR_ROLE"
-          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.component.ComponentColorEditPolicy"/>
+          editPolicyQualifiedClassName="org.muml.pim.common.edit.policies.component.ComponentColorEditPolicy"/>
       <modelFacet>
         <metaClass
             href="../../org.muml.pim/model/pim.genmodel#//pim/component/StaticStructuredComponent"/>
@@ -728,20 +728,20 @@
             xsi:type="gmfgen:ToolEntry"
             title="Atomic Component"
             description="Create new Atomic Component"
-            smallIconPath="/de.uni_paderborn.fujaba.muml.common/icons/AtomicComponent.gif"
+            smallIconPath="/org.muml.pim.common/icons/AtomicComponent.gif"
             genNodes="//@diagram/@topLevelNodes.0"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Structured Component"
             description="Create new Structured Component"
-            smallIconPath="/de.uni_paderborn.fujaba.muml.common/icons/StructuredComponent.gif"
+            smallIconPath="/org.muml.pim.common/icons/StructuredComponent.gif"
             default="true"
             genNodes="//@diagram/@topLevelNodes.1"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Component Part"
             description="Create new Component Part"
-            smallIconPath="/de.uni_paderborn.fujaba.muml.common/icons/ComponentPart.gif"
+            smallIconPath="/org.muml.pim.common/icons/ComponentPart.gif"
             genNodes="//@diagram/@childNodes.3"/>
       </groups>
       <groups
@@ -751,20 +751,20 @@
             xsi:type="gmfgen:ToolEntry"
             title="DiscretePort"
             description="Create new DiscretePort"
-            smallIconPath="/de.uni_paderborn.fujaba.muml.common/icons/DiscretePort.gif"
+            smallIconPath="/org.muml.pim.common/icons/DiscretePort.gif"
             default="true"
             genNodes="//@diagram/@childNodes.0"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="ContinuousPort"
             description="Create new ContinuousPort"
-            smallIconPath="/de.uni_paderborn.fujaba.muml.common/icons/ContinuousPort.gif"
+            smallIconPath="/org.muml.pim.common/icons/ContinuousPort.gif"
             genNodes="//@diagram/@childNodes.1"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="HybridPort"
             description="Create new HybridPort"
-            smallIconPath="/de.uni_paderborn.fujaba.muml.common/icons/HybridPort.gif"
+            smallIconPath="/org.muml.pim.common/icons/HybridPort.gif"
             genNodes="//@diagram/@childNodes.2"/>
       </groups>
       <groups
@@ -775,14 +775,14 @@
             xsi:type="gmfgen:ToolEntry"
             title="Assembly"
             description="Create new Assembly"
-            smallIconPath="/de.uni_paderborn.fujaba.muml.common/icons/Assembly.gif"
+            smallIconPath="/org.muml.pim.common/icons/Assembly.gif"
             default="true"
             genLinks="//@diagram/@links.0"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Delegation"
             description="Create new Delegation"
-            smallIconPath="/de.uni_paderborn.fujaba.muml.common/icons/Delegation.gif"
+            smallIconPath="/org.muml.pim.common/icons/Delegation.gif"
             genLinks="//@diagram/@links.1"/>
       </groups>
     </palette>
@@ -849,7 +849,7 @@
     <requiredPlugins>de.uni_paderborn.fujaba.muml.edit.properties</requiredPlugins>
     <requiredPlugins>org.muml.core.common.editingdomain</requiredPlugins>
     <requiredPlugins>de.uni_paderborn.fujaba.properties.runtime</requiredPlugins>
-    <requiredPlugins>de.uni_paderborn.fujaba.muml.common</requiredPlugins>
+    <requiredPlugins>org.muml.pim.common</requiredPlugins>
   </plugin>
   <editor
       className="ComponentDiagramEditor"/>

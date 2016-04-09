@@ -123,7 +123,7 @@ public class InternalReconfigurationCommunicationPortEditPart extends BorderedBo
 	 */
 	protected IFigure createNodeShape() {
 		primaryShape = new org.muml.pim.common.figures.CustomPortFigure();
-		//see de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure
+		//see org.muml.pim.common.figures.CustomPortFigure
 		//creates in/out triangles
 		((CustomPortFigure)primaryShape).getFigureInOutPolygon().setVisible(true);
 		

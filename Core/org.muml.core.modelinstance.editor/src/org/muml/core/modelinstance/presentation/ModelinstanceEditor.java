@@ -1415,7 +1415,7 @@ public class ModelinstanceEditor
 //								IItemPropertySource.class);
 //						if (ips != null) {
 //							EditingDomain ed = editingDomain;
-//							return new de.uni_paderborn.fujaba.muml.common.emf.edit.provider.CustomPropertySource(
+//							return new org.muml.pim.common.emf.edit.provider.CustomPropertySource(
 //									object, ips, af, ed, this);
 //						}
 //					}

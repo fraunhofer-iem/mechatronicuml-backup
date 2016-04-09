@@ -13,7 +13,7 @@
 	      <command
 	            commandId="de.uni_paderborn.fujaba.muml.dependencylanguage.commands.CreateSynthesizableBehavior"
 	            icon="icons/SynthesizableBehavior.gif"
-	            id="de.uni_paderborn.fujaba.muml.common.commands.OpenTypeDialogCommand"
+	            id="org.muml.pim.common.commands.OpenTypeDialogCommand"
 	            label="Create Synthesizable Behavior"
 	            style="push">
 	            	<visibleWhen checkEnabled="true">

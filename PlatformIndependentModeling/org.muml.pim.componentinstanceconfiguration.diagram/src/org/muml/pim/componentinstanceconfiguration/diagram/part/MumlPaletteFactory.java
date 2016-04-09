@@ -70,7 +70,7 @@ public class MumlPaletteFactory {
 		entry.setId("createAtomicComponentInstance1CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(
 				org.muml.pim.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin
-						.findImageDescriptor("/de.uni_paderborn.fujaba.muml.common/icons/ComponentInstance.gif")); //$NON-NLS-1$
+						.findImageDescriptor("/org.muml.pim.common/icons/ComponentInstance.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -91,7 +91,7 @@ public class MumlPaletteFactory {
 		entry.setId("createStructuredComponentInstance2CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(
 				org.muml.pim.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin
-						.findImageDescriptor("/de.uni_paderborn.fujaba.muml.common/icons/ComponentInstance.gif")); //$NON-NLS-1$
+						.findImageDescriptor("/org.muml.pim.common/icons/ComponentInstance.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -108,7 +108,7 @@ public class MumlPaletteFactory {
 		entry.setId("createAssemblyInstance3CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(
 				org.muml.pim.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin
-						.findImageDescriptor("/de.uni_paderborn.fujaba.muml.common/icons/Assembly.gif")); //$NON-NLS-1$
+						.findImageDescriptor("/org.muml.pim.common/icons/Assembly.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -125,7 +125,7 @@ public class MumlPaletteFactory {
 		entry.setId("createDelegationInstance4CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(
 				org.muml.pim.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin
-						.findImageDescriptor("/de.uni_paderborn.fujaba.muml.common/icons/Assembly.gif")); //$NON-NLS-1$
+						.findImageDescriptor("/org.muml.pim.common/icons/Assembly.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -148,7 +148,7 @@ public class MumlPaletteFactory {
 		entry.setId("createDiscreteSinglePortInstance5CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(
 				org.muml.pim.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin
-						.findImageDescriptor("/de.uni_paderborn.fujaba.muml.common/icons/DiscretePort.gif")); //$NON-NLS-1$
+						.findImageDescriptor("/org.muml.pim.common/icons/DiscretePort.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -169,7 +169,7 @@ public class MumlPaletteFactory {
 		entry.setId("createDiscreteMultiPortInstance6CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(
 				org.muml.pim.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin
-						.findImageDescriptor("/de.uni_paderborn.fujaba.muml.common/icons/DiscretePort.gif")); //$NON-NLS-1$
+						.findImageDescriptor("/org.muml.pim.common/icons/DiscretePort.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -190,7 +190,7 @@ public class MumlPaletteFactory {
 		entry.setId("createContinuousPortInstance7CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(
 				org.muml.pim.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin
-						.findImageDescriptor("/de.uni_paderborn.fujaba.muml.common/icons/ContinuousPort.gif")); //$NON-NLS-1$
+						.findImageDescriptor("/org.muml.pim.common/icons/ContinuousPort.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -211,7 +211,7 @@ public class MumlPaletteFactory {
 		entry.setId("createHybridPortInstance8CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(
 				org.muml.pim.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin
-						.findImageDescriptor("/de.uni_paderborn.fujaba.muml.common/icons/HybridPort.gif")); //$NON-NLS-1$
+						.findImageDescriptor("/org.muml.pim.common/icons/HybridPort.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}

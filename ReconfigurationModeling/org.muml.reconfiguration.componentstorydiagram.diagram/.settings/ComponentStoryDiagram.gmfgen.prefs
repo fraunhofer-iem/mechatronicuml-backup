@@ -1,10 +1,10 @@
-dynamic_figure_templates=platform\:/resource/de.uni_paderborn.fujaba.muml.common/graphdef-templates
+dynamic_figure_templates=platform\:/resource/org.muml.pim.common/graphdef-templates
 eclipse.preferences.version=1
 generate_rcp=false
 ignore_gmfgen_validation=false
 ignore_mapmodel_validation=false
 post-reconcile-qvto=platform\:/resource/org.muml.reconfiguration.componentstorydiagram.diagram/model/ComponentStoryDiagram.qvto
-pre-reconcile-qvto=platform\:/resource/de.uni_paderborn.fujaba.muml.common/transformations/pre-reconcile.qvto
+pre-reconcile-qvto=platform\:/resource/org.muml.pim.common/transformations/pre-reconcile.qvto
 use_in_transfo_code_gen=true
 use_map_mode=true
 use_runtime_figures=true

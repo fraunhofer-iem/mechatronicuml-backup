@@ -52,7 +52,7 @@
           metamodelType="//@diagram/@topLevelNodes.1/@elementType"/>
       <viewmap
           xsi:type="gmfgen:FigureViewmap"
-          figureQualifiedClassName="de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure">
+          figureQualifiedClassName="org.muml.pim.common.figures.CustomPortFigure">
         <attributes
             xsi:type="gmfgen:DefaultSizeAttributes"
             width="24"
@@ -60,8 +60,8 @@
       </viewmap>
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
-          key="de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.PORT_VISUALIZATION_ROLE"
-          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.ports.PortInstanceEditPolicy"/>
+          key="org.muml.pim.common.edit.policies.EditPolicyRoles.PORT_VISUALIZATION_ROLE"
+          editPolicyQualifiedClassName="org.muml.pim.common.edit.policies.ports.PortInstanceEditPolicy"/>
       <modelFacet>
         <metaClass
             href="../../org.muml.pim/model/pim.genmodel#//pim/instance/DiscreteSinglePortInstance"/>
@@ -104,7 +104,7 @@
           metamodelType="//@diagram/@topLevelNodes.0/@elementType"/>
       <viewmap
           xsi:type="gmfgen:FigureViewmap"
-          figureQualifiedClassName="de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure">
+          figureQualifiedClassName="org.muml.pim.common.figures.CustomPortFigure">
         <attributes
             xsi:type="gmfgen:DefaultSizeAttributes"
             width="24"
@@ -112,8 +112,8 @@
       </viewmap>
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
-          key="de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.PORT_VISUALIZATION_ROLE"
-          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.ports.PortInstanceEditPolicy"/>
+          key="org.muml.pim.common.edit.policies.EditPolicyRoles.PORT_VISUALIZATION_ROLE"
+          editPolicyQualifiedClassName="org.muml.pim.common.edit.policies.ports.PortInstanceEditPolicy"/>
       <modelFacet>
         <metaClass
             href="../../org.muml.pim/model/pim.genmodel#//pim/instance/HybridPortInstance"/>
@@ -169,7 +169,7 @@
           metamodelType="//@diagram/@topLevelNodes.1/@elementType"/>
       <viewmap
           xsi:type="gmfgen:FigureViewmap"
-          figureQualifiedClassName="de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure">
+          figureQualifiedClassName="org.muml.pim.common.figures.CustomPortFigure">
         <attributes
             xsi:type="gmfgen:DefaultSizeAttributes"
             width="24"
@@ -177,8 +177,8 @@
       </viewmap>
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
-          key="de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.PORT_VISUALIZATION_ROLE"
-          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.ports.PortInstanceEditPolicy"/>
+          key="org.muml.pim.common.edit.policies.EditPolicyRoles.PORT_VISUALIZATION_ROLE"
+          editPolicyQualifiedClassName="org.muml.pim.common.edit.policies.ports.PortInstanceEditPolicy"/>
       <modelFacet
           modelElementSelector="//@expressionProviders/@providers.0/@expressions.1">
         <metaClass
@@ -260,8 +260,8 @@
       </viewmap>
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
-          key="de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.PORT_VISUALIZATION_ROLE"
-          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.ports.MultiPortEditPolicy"/>
+          key="org.muml.pim.common.edit.policies.EditPolicyRoles.PORT_VISUALIZATION_ROLE"
+          editPolicyQualifiedClassName="org.muml.pim.common.edit.policies.ports.MultiPortEditPolicy"/>
       <modelFacet>
         <metaClass
             href="../../org.muml.pim/model/pim.genmodel#//pim/instance/DiscreteMultiPortInstance"/>
@@ -332,7 +332,7 @@
           metamodelType="//@diagram/@topLevelNodes.3/@elementType"/>
       <viewmap
           xsi:type="gmfgen:FigureViewmap"
-          figureQualifiedClassName="de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure">
+          figureQualifiedClassName="org.muml.pim.common.figures.CustomPortFigure">
         <attributes
             xsi:type="gmfgen:DefaultSizeAttributes"
             width="24"
@@ -340,8 +340,8 @@
       </viewmap>
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
-          key="de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.PORT_VISUALIZATION_ROLE"
-          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.ports.PortInstanceEditPolicy"/>
+          key="org.muml.pim.common.edit.policies.EditPolicyRoles.PORT_VISUALIZATION_ROLE"
+          editPolicyQualifiedClassName="org.muml.pim.common.edit.policies.ports.PortInstanceEditPolicy"/>
       <modelFacet>
         <metaClass
             href="../../org.muml.pim/model/pim.genmodel#//pim/instance/ContinuousPortInstance"/>
@@ -445,7 +445,7 @@
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
           key="org.muml.core.common.edit.policies.EditPolicyRoles.BACKGROUND_COLOR_ROLE"
-          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.component.ComponentColorEditPolicy"/>
+          editPolicyQualifiedClassName="org.muml.pim.common.edit.policies.component.ComponentColorEditPolicy"/>
       <modelFacet>
         <metaClass
             href="../../org.muml.pim/model/pim.genmodel#//pim/instance/AtomicComponentInstance"/>
@@ -637,7 +637,7 @@
           editHelperClassName="HybridPortInstanceEditHelper"/>
       <viewmap
           xsi:type="gmfgen:FigureViewmap"
-          figureQualifiedClassName="de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure">
+          figureQualifiedClassName="org.muml.pim.common.figures.CustomPortFigure">
         <attributes
             xsi:type="gmfgen:DefaultSizeAttributes"
             width="24"
@@ -645,8 +645,8 @@
       </viewmap>
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
-          key="de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.PORT_VISUALIZATION_ROLE"
-          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.ports.PortInstanceEditPolicy"/>
+          key="org.muml.pim.common.edit.policies.EditPolicyRoles.PORT_VISUALIZATION_ROLE"
+          editPolicyQualifiedClassName="org.muml.pim.common.edit.policies.ports.PortInstanceEditPolicy"/>
       <modelFacet>
         <metaClass
             href="../../org.muml.pim/model/pim.genmodel#//pim/instance/HybridPortInstance"/>
@@ -699,7 +699,7 @@
           editHelperClassName="DiscreteSinglePortInstanceEditHelper"/>
       <viewmap
           xsi:type="gmfgen:FigureViewmap"
-          figureQualifiedClassName="de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure">
+          figureQualifiedClassName="org.muml.pim.common.figures.CustomPortFigure">
         <attributes
             xsi:type="gmfgen:DefaultSizeAttributes"
             width="24"
@@ -707,8 +707,8 @@
       </viewmap>
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
-          key="de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.PORT_VISUALIZATION_ROLE"
-          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.ports.PortInstanceEditPolicy"/>
+          key="org.muml.pim.common.edit.policies.EditPolicyRoles.PORT_VISUALIZATION_ROLE"
+          editPolicyQualifiedClassName="org.muml.pim.common.edit.policies.ports.PortInstanceEditPolicy"/>
       <modelFacet
           modelElementSelector="//@expressionProviders/@providers.0/@expressions.1">
         <metaClass
@@ -787,8 +787,8 @@
       </viewmap>
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
-          key="de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.PORT_VISUALIZATION_ROLE"
-          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.ports.MultiPortEditPolicy"/>
+          key="org.muml.pim.common.edit.policies.EditPolicyRoles.PORT_VISUALIZATION_ROLE"
+          editPolicyQualifiedClassName="org.muml.pim.common.edit.policies.ports.MultiPortEditPolicy"/>
       <modelFacet>
         <metaClass
             href="../../org.muml.pim/model/pim.genmodel#//pim/instance/DiscreteMultiPortInstance"/>
@@ -856,7 +856,7 @@
           editHelperClassName="ContinuousPortInstanceEditHelper"/>
       <viewmap
           xsi:type="gmfgen:FigureViewmap"
-          figureQualifiedClassName="de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure">
+          figureQualifiedClassName="org.muml.pim.common.figures.CustomPortFigure">
         <attributes
             xsi:type="gmfgen:DefaultSizeAttributes"
             width="24"
@@ -864,8 +864,8 @@
       </viewmap>
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
-          key="de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.PORT_VISUALIZATION_ROLE"
-          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.ports.PortInstanceEditPolicy"/>
+          key="org.muml.pim.common.edit.policies.EditPolicyRoles.PORT_VISUALIZATION_ROLE"
+          editPolicyQualifiedClassName="org.muml.pim.common.edit.policies.ports.PortInstanceEditPolicy"/>
       <modelFacet>
         <metaClass
             href="../../org.muml.pim/model/pim.genmodel#//pim/instance/ContinuousPortInstance"/>
@@ -929,7 +929,7 @@
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
           key="org.muml.core.common.edit.policies.EditPolicyRoles.BACKGROUND_COLOR_ROLE"
-          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.component.ComponentColorEditPolicy"/>
+          editPolicyQualifiedClassName="org.muml.pim.common.edit.policies.component.ComponentColorEditPolicy"/>
       <modelFacet>
         <metaClass
             href="../../org.muml.pim/model/pim.genmodel#//pim/instance/AtomicComponentInstance"/>
@@ -1283,49 +1283,49 @@
             xsi:type="gmfgen:ToolEntry"
             title="AtomicComponentInstance"
             description="Create new AtomicComponentInstance"
-            smallIconPath="/de.uni_paderborn.fujaba.muml.common/icons/ComponentInstance.gif"
+            smallIconPath="/org.muml.pim.common/icons/ComponentInstance.gif"
             genNodes="//@diagram/@topLevelNodes.4 //@diagram/@childNodes.6"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="StructuredComponentInstance"
             description="Create new StructuredComponentInstance"
-            smallIconPath="/de.uni_paderborn.fujaba.muml.common/icons/ComponentInstance.gif"
+            smallIconPath="/org.muml.pim.common/icons/ComponentInstance.gif"
             genNodes="//@diagram/@topLevelNodes.5 //@diagram/@childNodes.7"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="AssemblyInstance"
             description="Create new AssemblyInstance"
-            smallIconPath="/de.uni_paderborn.fujaba.muml.common/icons/Assembly.gif"
+            smallIconPath="/org.muml.pim.common/icons/Assembly.gif"
             genLinks="//@diagram/@links.0"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="DelegationInstance"
             description="Create new DelegationInstance"
-            smallIconPath="/de.uni_paderborn.fujaba.muml.common/icons/Assembly.gif"
+            smallIconPath="/org.muml.pim.common/icons/Assembly.gif"
             genLinks="//@diagram/@links.1"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="DiscreteSinglePortInstance"
             description="Create new DiscreteSinglePortInstance"
-            smallIconPath="/de.uni_paderborn.fujaba.muml.common/icons/DiscretePort.gif"
+            smallIconPath="/org.muml.pim.common/icons/DiscretePort.gif"
             genNodes="//@diagram/@topLevelNodes.1 //@diagram/@childNodes.0 //@diagram/@childNodes.2"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="DiscreteMultiPortInstance"
             description="Create new DiscreteMultiPortInstance"
-            smallIconPath="/de.uni_paderborn.fujaba.muml.common/icons/DiscretePort.gif"
+            smallIconPath="/org.muml.pim.common/icons/DiscretePort.gif"
             genNodes="//@diagram/@topLevelNodes.2 //@diagram/@childNodes.3"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="ContinuousPortInstance"
             description="Create new ContinuousPortInstance"
-            smallIconPath="/de.uni_paderborn.fujaba.muml.common/icons/ContinuousPort.gif"
+            smallIconPath="/org.muml.pim.common/icons/ContinuousPort.gif"
             genNodes="//@diagram/@topLevelNodes.3 //@diagram/@childNodes.4"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="HybridPortInstance"
             description="Create new HybridPortInstance"
-            smallIconPath="/de.uni_paderborn.fujaba.muml.common/icons/HybridPort.gif"
+            smallIconPath="/org.muml.pim.common/icons/HybridPort.gif"
             genNodes="//@diagram/@topLevelNodes.0 //@diagram/@childNodes.1"/>
       </groups>
     </palette>
@@ -1392,7 +1392,7 @@
     <requiredPlugins>de.uni_paderborn.fujaba.muml.edit.properties</requiredPlugins>
     <requiredPlugins>org.muml.core.common.editingdomain</requiredPlugins>
     <requiredPlugins>de.uni_paderborn.fujaba.properties.runtime</requiredPlugins>
-    <requiredPlugins>de.uni_paderborn.fujaba.muml.common</requiredPlugins>
+    <requiredPlugins>org.muml.pim.common</requiredPlugins>
   </plugin>
   <editor
       className="ComponentinstanceconfigurationDiagramEditor"/>

@@ -16,7 +16,7 @@
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="icons/ComponentInstance.gif"
-            bundle="de.uni_paderborn.fujaba.muml.common"/>
+            bundle="org.muml.pim.common"/>
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
@@ -25,7 +25,7 @@
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="icons/ComponentInstance.gif"
-            bundle="de.uni_paderborn.fujaba.muml.common"/>
+            bundle="org.muml.pim.common"/>
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
@@ -34,7 +34,7 @@
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="icons/Assembly.gif"
-            bundle="de.uni_paderborn.fujaba.muml.common"/>
+            bundle="org.muml.pim.common"/>
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
@@ -43,7 +43,7 @@
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="icons/Assembly.gif"
-            bundle="de.uni_paderborn.fujaba.muml.common"/>
+            bundle="org.muml.pim.common"/>
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
@@ -52,7 +52,7 @@
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="icons/DiscretePort.gif"
-            bundle="de.uni_paderborn.fujaba.muml.common"/>
+            bundle="org.muml.pim.common"/>
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
@@ -61,7 +61,7 @@
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="icons/DiscretePort.gif"
-            bundle="de.uni_paderborn.fujaba.muml.common"/>
+            bundle="org.muml.pim.common"/>
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
@@ -70,7 +70,7 @@
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="icons/ContinuousPort.gif"
-            bundle="de.uni_paderborn.fujaba.muml.common"/>
+            bundle="org.muml.pim.common"/>
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
@@ -79,7 +79,7 @@
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="icons/HybridPort.gif"
-            bundle="de.uni_paderborn.fujaba.muml.common"/>
+            bundle="org.muml.pim.common"/>
       </tools>
     </tools>
   </palette>

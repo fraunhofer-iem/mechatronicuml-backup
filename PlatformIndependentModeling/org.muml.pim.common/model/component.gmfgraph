@@ -141,7 +141,7 @@
       <accessors figure="//@figures.0/@descriptors.4/@actualFigure/@children.1/@children.3"/>
     </descriptors>
     <descriptors name="PortFigureRef">
-      <actualFigure xsi:type="gmfgraph:CustomFigure" name="PortFigure" qualifiedClassName="de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure"/>
+      <actualFigure xsi:type="gmfgraph:CustomFigure" name="PortFigure" qualifiedClassName="org.muml.pim.common.figures.CustomPortFigure"/>
     </descriptors>
     <descriptors name="ComponentIconFigure">
       <actualFigure xsi:type="gmfgraph:Rectangle" name="ComponentIconFigure" outline="false" fill="false">

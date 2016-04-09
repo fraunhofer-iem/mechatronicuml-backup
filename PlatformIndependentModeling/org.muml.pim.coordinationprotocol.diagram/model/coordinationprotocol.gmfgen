@@ -131,7 +131,7 @@
           editHelperClassName="RoleEditHelper"/>
       <viewmap
           xsi:type="gmfgen:FigureViewmap"
-          figureQualifiedClassName="de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure">
+          figureQualifiedClassName="org.muml.pim.common.figures.CustomPortFigure">
         <attributes
             xsi:type="gmfgen:ResizeConstraints"/>
         <attributes
@@ -141,12 +141,12 @@
       </viewmap>
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
-          key="de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.PORT_VISUALIZATION_ROLE"
-          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.ports.RoleEditPolicy"/>
+          key="org.muml.pim.common.edit.policies.EditPolicyRoles.PORT_VISUALIZATION_ROLE"
+          editPolicyQualifiedClassName="org.muml.pim.common.edit.policies.ports.RoleEditPolicy"/>
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
           key="org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.OPEN_ROLE"
-          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.opendiagram.OpenBehaviorDiagramEditPolicy"/>
+          editPolicyQualifiedClassName="org.muml.pim.common.edit.policies.opendiagram.OpenBehaviorDiagramEditPolicy"/>
       <modelFacet>
         <metaClass
             href="../../org.muml.pim/model/pim.genmodel#//pim/protocol/Role"/>
@@ -971,7 +971,7 @@
             xsi:type="gmfgen:ToolEntry"
             title="CoordinationProtocol"
             description="Create new CoordinationProtocol"
-            smallIconPath="/de.uni_paderborn.fujaba.muml.common/icons/CoordinationProtocol.gif"
+            smallIconPath="/org.muml.pim.common/icons/CoordinationProtocol.gif"
             genNodes="//@diagram/@topLevelNodes.0"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
@@ -1051,7 +1051,7 @@
     <requiredPlugins>de.uni_paderborn.fujaba.muml.edit.properties</requiredPlugins>
     <requiredPlugins>org.muml.core.common.editingdomain</requiredPlugins>
     <requiredPlugins>de.uni_paderborn.fujaba.properties.runtime</requiredPlugins>
-    <requiredPlugins>de.uni_paderborn.fujaba.muml.common</requiredPlugins>
+    <requiredPlugins>org.muml.pim.common</requiredPlugins>
   </plugin>
   <editor
       className="CoordinationProtocolDiagramEditor"

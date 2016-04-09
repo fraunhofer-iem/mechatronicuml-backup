@@ -351,7 +351,7 @@
     <requiredPlugins>de.uni_paderborn.fujaba.muml.edit.properties</requiredPlugins>
     <requiredPlugins>org.muml.core.common.editingdomain</requiredPlugins>
     <requiredPlugins>de.uni_paderborn.fujaba.properties.runtime</requiredPlugins>
-    <requiredPlugins>de.uni_paderborn.fujaba.muml.common</requiredPlugins>
+    <requiredPlugins>org.muml.pim.common</requiredPlugins>
     <requiredPlugins>org.eclipse.emf.ecore.editor</requiredPlugins>
   </plugin>
   <editor

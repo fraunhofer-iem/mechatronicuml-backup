@@ -16,7 +16,7 @@
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="icons/CoordinationProtocol.gif"
-            bundle="/de.uni_paderborn.fujaba.muml.common"/>
+            bundle="/org.muml.pim.common"/>
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"

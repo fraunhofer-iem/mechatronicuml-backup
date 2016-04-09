@@ -199,7 +199,7 @@ public class ComponentStoryDiagramPaletteFactory {
 						.singletonList(org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.ComponentPartVariable_3014));
 		entry.setId("createPartVariable1CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramEditorPlugin
-				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.common/icons/ComponentPart.gif")); //$NON-NLS-1$
+				.findImageDescriptor("/org.muml.pim.common/icons/ComponentPart.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -218,7 +218,7 @@ public class ComponentStoryDiagramPaletteFactory {
 				types);
 		entry.setId("createSinglePortVariable2CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramEditorPlugin
-				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.common/icons/Port.gif")); //$NON-NLS-1$
+				.findImageDescriptor("/org.muml.pim.common/icons/Port.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -236,7 +236,7 @@ public class ComponentStoryDiagramPaletteFactory {
 				types);
 		entry.setId("createMultiPortVariable3CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramEditorPlugin
-				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.common/icons/Port.gif")); //$NON-NLS-1$
+				.findImageDescriptor("/org.muml.pim.common/icons/Port.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -252,7 +252,7 @@ public class ComponentStoryDiagramPaletteFactory {
 						.singletonList(org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.AssemblyVariable_4004));
 		entry.setId("createAssemblyVariable4CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramEditorPlugin
-				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.common/icons/Assembly.gif")); //$NON-NLS-1$
+				.findImageDescriptor("/org.muml.pim.common/icons/Assembly.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -268,7 +268,7 @@ public class ComponentStoryDiagramPaletteFactory {
 						.singletonList(org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.DelegationVariable_4005));
 		entry.setId("createDelegationVariable5CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramEditorPlugin
-				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.common/icons/Delegation.gif")); //$NON-NLS-1$
+				.findImageDescriptor("/org.muml.pim.common/icons/Delegation.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}

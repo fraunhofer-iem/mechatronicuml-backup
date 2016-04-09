@@ -72,7 +72,7 @@ public class MumlPaletteFactory {
 						org.muml.pim.coordinationprotocol.diagram.providers.MumlElementTypes.CoordinationProtocol_2005));
 		entry.setId("createCoordinationProtocol1CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(org.muml.pim.coordinationprotocol.diagram.part.MumlDiagramEditorPlugin
-				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.common/icons/CoordinationProtocol.gif")); //$NON-NLS-1$
+				.findImageDescriptor("/org.muml.pim.common/icons/CoordinationProtocol.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}

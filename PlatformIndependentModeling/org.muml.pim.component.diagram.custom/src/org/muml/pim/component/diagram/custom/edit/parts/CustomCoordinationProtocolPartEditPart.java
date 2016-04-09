@@ -77,7 +77,7 @@ public class CustomCoordinationProtocolPartEditPart extends
 //		// TODO: Try to prevent view creation in EditHelper!
 //		installEditPolicy(
 //				EditPolicy.GRAPHICAL_NODE_ROLE,
-//				new de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy() {
+//				new org.muml.pim.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy() {
 //					/*
 //					 * Make sure the outer DiscretePorts do not connect to the
 //					 * CoordinationProtocol figure. We do this by making the

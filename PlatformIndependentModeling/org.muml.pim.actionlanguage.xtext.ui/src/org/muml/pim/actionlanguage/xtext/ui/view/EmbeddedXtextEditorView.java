@@ -25,7 +25,7 @@ package org.muml.pim.actionlanguage.xtext.ui.view;
 //
 //import com.google.inject.Injector;
 //
-//import de.uni_paderborn.fujaba.muml.common.LanguageResource;
+//import org.muml.pim.common.LanguageResource;
 //import de.uni_paderborn.fujaba.muml.realtimestatechart.DoEvent;
 //import de.uni_paderborn.fujaba.muml.realtimestatechart.EntryEvent;
 //import de.uni_paderborn.fujaba.muml.realtimestatechart.ExitEvent;
