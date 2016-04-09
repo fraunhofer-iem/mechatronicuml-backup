@@ -23,6 +23,10 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.reconfiguration.verification.sdd.componentsdd.ComponentStoryPatternNode;
+import org.muml.reconfiguration.verification.sdd.componentsdd.ComponentsddFactory;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ElementInitializers;
+import org.muml.storydiagram.verification.sdd.AbstractStoryDecisionDiagram;
 
 /**
  * @generated
@@ -41,8 +45,7 @@ public class ComponentStoryPatternNodeCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected EObject getElementToEdit() {
-		EObject container = ((CreateElementRequest) getRequest())
-				.getContainer();
+		EObject container = ((CreateElementRequest) getRequest()).getContainer();
 		if (container instanceof View) {
 			container = ((View) container).getElement();
 		}
@@ -60,16 +63,13 @@ public class ComponentStoryPatternNodeCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
-			IAdaptable info) throws ExecutionException {
-		org.muml.reconfiguration.verification.sdd.componentsdd.ComponentStoryPatternNode newElement = org.muml.reconfiguration.verification.sdd.componentsdd.ComponentsddFactory.eINSTANCE
-				.createComponentStoryPatternNode();
+	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
+		ComponentStoryPatternNode newElement = ComponentsddFactory.eINSTANCE.createComponentStoryPatternNode();
 
-		org.muml.storydiagram.verification.sdd.AbstractStoryDecisionDiagram owner = (org.muml.storydiagram.verification.sdd.AbstractStoryDecisionDiagram) getElementToEdit();
+		AbstractStoryDecisionDiagram owner = (AbstractStoryDecisionDiagram) getElementToEdit();
 		owner.getNodes().add(newElement);
 
-		org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ElementInitializers
-				.getInstance().init_ComponentStoryPatternNode_2003(newElement);
+		ElementInitializers.getInstance().init_ComponentStoryPatternNode_2003(newElement);
 
 		doConfigure(newElement, monitor, info);
 
@@ -78,21 +78,15 @@ public class ComponentStoryPatternNodeCreateCommand extends EditElementCommand {
 	}
 
 	/**
-	 * @generated
-	 */
-	protected void doConfigure(
-			org.muml.reconfiguration.verification.sdd.componentsdd.ComponentStoryPatternNode newElement,
-			IProgressMonitor monitor, IAdaptable info)
+	* @generated
+	*/
+	protected void doConfigure(ComponentStoryPatternNode newElement, IProgressMonitor monitor, IAdaptable info)
 			throws ExecutionException {
-		IElementType elementType = ((CreateElementRequest) getRequest())
-				.getElementType();
-		ConfigureRequest configureRequest = new ConfigureRequest(
-				getEditingDomain(), newElement, elementType);
-		configureRequest.setClientContext(((CreateElementRequest) getRequest())
-				.getClientContext());
+		IElementType elementType = ((CreateElementRequest) getRequest()).getElementType();
+		ConfigureRequest configureRequest = new ConfigureRequest(getEditingDomain(), newElement, elementType);
+		configureRequest.setClientContext(((CreateElementRequest) getRequest()).getClientContext());
 		configureRequest.addParameters(getRequest().getParameters());
-		ICommand configureCommand = elementType
-				.getEditCommand(configureRequest);
+		ICommand configureCommand = elementType.getEditCommand(configureRequest);
 		if (configureCommand != null && configureCommand.canExecute()) {
 			configureCommand.execute(monitor, info);
 		}

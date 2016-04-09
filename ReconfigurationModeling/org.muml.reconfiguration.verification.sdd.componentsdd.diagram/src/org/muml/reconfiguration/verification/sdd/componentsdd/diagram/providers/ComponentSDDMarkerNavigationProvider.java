@@ -24,43 +24,37 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.diagram.ui.parts.DiagramEditor;
 import org.eclipse.gmf.runtime.emf.ui.providers.marker.AbstractModelMarkerNavigationProvider;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDDiagramEditorPlugin;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDDiagramEditorUtil;
 
 /**
  * @generated
  */
-public class ComponentSDDMarkerNavigationProvider extends
-		AbstractModelMarkerNavigationProvider {
+public class ComponentSDDMarkerNavigationProvider extends AbstractModelMarkerNavigationProvider {
 
 	/**
 	 * @generated
 	 */
-	public static final String MARKER_TYPE = org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDDiagramEditorPlugin.ID
-			+ ".diagnostic"; //$NON-NLS-1$
+	public static final String MARKER_TYPE = ComponentSDDDiagramEditorPlugin.ID + ".diagnostic"; //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
 	protected void doGotoMarker(IMarker marker) {
-		String elementId = marker
-				.getAttribute(
-						org.eclipse.gmf.runtime.common.core.resources.IMarker.ELEMENT_ID,
-						null);
+		String elementId = marker.getAttribute(org.eclipse.gmf.runtime.common.core.resources.IMarker.ELEMENT_ID, null);
 		if (elementId == null || !(getEditor() instanceof DiagramEditor)) {
 			return;
 		}
 		DiagramEditor editor = (DiagramEditor) getEditor();
-		Map editPartRegistry = editor.getDiagramGraphicalViewer()
-				.getEditPartRegistry();
-		EObject targetView = editor.getDiagram().eResource()
-				.getEObject(elementId);
+		Map editPartRegistry = editor.getDiagramGraphicalViewer().getEditPartRegistry();
+		EObject targetView = editor.getDiagram().eResource().getEObject(elementId);
 		if (targetView == null) {
 			return;
 		}
 		EditPart targetEditPart = (EditPart) editPartRegistry.get(targetView);
 		if (targetEditPart != null) {
-			org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDDiagramEditorUtil
-					.selectElementsInDiagram(editor,
-							Arrays.asList(new EditPart[] { targetEditPart }));
+			ComponentSDDDiagramEditorUtil.selectElementsInDiagram(editor,
+					Arrays.asList(new EditPart[] { targetEditPart }));
 		}
 	}
 
@@ -71,37 +65,29 @@ public class ComponentSDDMarkerNavigationProvider extends
 		try {
 			resource.deleteMarkers(MARKER_TYPE, true, IResource.DEPTH_ZERO);
 		} catch (CoreException e) {
-			org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDDiagramEditorPlugin
-					.getInstance().logError(
-							"Failed to delete validation markers", e); //$NON-NLS-1$
+			ComponentSDDDiagramEditorPlugin.getInstance().logError("Failed to delete validation markers", e); //$NON-NLS-1$
 		}
 	}
 
 	/**
 	 * @generated
 	 */
-	public static IMarker addMarker(IFile file, String elementId,
-			String location, String message, int statusSeverity) {
+	public static IMarker addMarker(IFile file, String elementId, String location, String message, int statusSeverity) {
 		IMarker marker = null;
 		try {
 			marker = file.createMarker(MARKER_TYPE);
 			marker.setAttribute(IMarker.MESSAGE, message);
 			marker.setAttribute(IMarker.LOCATION, location);
-			marker.setAttribute(
-					org.eclipse.gmf.runtime.common.ui.resources.IMarker.ELEMENT_ID,
-					elementId);
+			marker.setAttribute(org.eclipse.gmf.runtime.common.ui.resources.IMarker.ELEMENT_ID, elementId);
 			int markerSeverity = IMarker.SEVERITY_INFO;
 			if (statusSeverity == IStatus.WARNING) {
 				markerSeverity = IMarker.SEVERITY_WARNING;
-			} else if (statusSeverity == IStatus.ERROR
-					|| statusSeverity == IStatus.CANCEL) {
+			} else if (statusSeverity == IStatus.ERROR || statusSeverity == IStatus.CANCEL) {
 				markerSeverity = IMarker.SEVERITY_ERROR;
 			}
 			marker.setAttribute(IMarker.SEVERITY, markerSeverity);
 		} catch (CoreException e) {
-			org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDDiagramEditorPlugin
-					.getInstance().logError(
-							"Failed to create validation marker", e); //$NON-NLS-1$
+			ComponentSDDDiagramEditorPlugin.getInstance().logError("Failed to create validation marker", e); //$NON-NLS-1$
 		}
 		return marker;
 	}

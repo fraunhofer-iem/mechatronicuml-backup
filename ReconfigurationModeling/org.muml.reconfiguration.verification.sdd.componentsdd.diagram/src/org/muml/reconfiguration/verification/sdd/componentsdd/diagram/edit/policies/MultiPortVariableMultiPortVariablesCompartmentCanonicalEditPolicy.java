@@ -33,20 +33,42 @@ import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest;
 import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.reconfiguration.componentstorypattern.ComponentstorypatternPackage;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.SinglePortVariableEditPart;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDDiagramUpdater;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDNodeDescriptor;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDVisualIDRegistry;
 
 /**
  * @generated
  */
-public class MultiPortVariableMultiPortVariablesCompartmentCanonicalEditPolicy
-		extends CanonicalEditPolicy {
+public class MultiPortVariableMultiPortVariablesCompartmentCanonicalEditPolicy extends CanonicalEditPolicy {
 	private boolean canonicalNodes = true;
 
 	public MultiPortVariableMultiPortVariablesCompartmentCanonicalEditPolicy() {
 	}
 
-	public MultiPortVariableMultiPortVariablesCompartmentCanonicalEditPolicy(
-			boolean canonicalNodes) {
+	public MultiPortVariableMultiPortVariablesCompartmentCanonicalEditPolicy(boolean canonicalNodes) {
 		this.canonicalNodes = canonicalNodes;
+	}
+
+	/**
+	* @generated
+	*/
+	private List<String> noConnectionViews = new ArrayList<String>();
+
+	/**
+	 * @generated
+	 */
+	public void addNoConnectionView(String type) {
+		noConnectionViews.add(type);
+	}
+
+	/**
+	 * @generated
+	 */
+	public void removeNoConnectionView(String type) {
+		noConnectionViews.remove(type);
 	}
 
 	/**
@@ -65,8 +87,7 @@ public class MultiPortVariableMultiPortVariablesCompartmentCanonicalEditPolicy
 	 * @generated
 	 */
 	protected EStructuralFeature getFeatureToSynchronize() {
-		return org.muml.reconfiguration.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
-				.getMultiPortVariable_GmfSubPortVariables();
+		return ComponentstorypatternPackage.eINSTANCE.getMultiPortVariable_GmfSubPortVariables();
 	}
 
 	/**
@@ -74,9 +95,9 @@ public class MultiPortVariableMultiPortVariablesCompartmentCanonicalEditPolicy
 	 */
 	@SuppressWarnings("rawtypes")
 	protected List getSemanticChildrenList() {
-		List<org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDNodeDescriptor> childDescriptors = getSemanticChildrenViewDescriptors();
+		List<ComponentSDDNodeDescriptor> childDescriptors = getSemanticChildrenViewDescriptors();
 		LinkedList<EObject> result = new LinkedList<EObject>();
-		for (org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDNodeDescriptor d : childDescriptors) {
+		for (ComponentSDDNodeDescriptor d : childDescriptors) {
 			result.add(d.getModelElement());
 		}
 		return result;
@@ -92,21 +113,17 @@ public class MultiPortVariableMultiPortVariablesCompartmentCanonicalEditPolicy
 		if (!canonicalNodes) {
 			View containerView = (View) getHost().getModel();
 			List<View> childViews = containerView.getChildren();
-			List<org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDNodeDescriptor> result = new LinkedList<org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDNodeDescriptor>();
+			List<ComponentSDDNodeDescriptor> result = new LinkedList<ComponentSDDNodeDescriptor>();
 
 			for (View childView : childViews) {
 				EObject childElement = childView.getElement();
-				int visualID = org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDVisualIDRegistry
-						.getVisualID(childView);
-				List<Integer> visualIDs = Arrays
-						.asList(new Integer[] { org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.SinglePortVariableEditPart.VISUAL_ID });
+				int visualID = ComponentSDDVisualIDRegistry.getVisualID(childView);
+				List<Integer> visualIDs = Arrays.asList(new Integer[] { SinglePortVariableEditPart.VISUAL_ID });
 
 				// Note: childElement can be null, for diagram annotations!
 				if (childElement == null
-						|| childElement.eContainer() == containerView
-								.getElement() && visualIDs.contains(visualID)) {
-					result.add(new org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDNodeDescriptor(
-							childElement, visualID));
+						|| childElement.eContainer() == containerView.getElement() && visualIDs.contains(visualID)) {
+					result.add(new ComponentSDDNodeDescriptor(childElement, visualID));
 					continue;
 				}
 			}
@@ -115,7 +132,7 @@ public class MultiPortVariableMultiPortVariablesCompartmentCanonicalEditPolicy
 		// End added
 
 		View viewObject = (View) getHost().getModel();
-		return org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDDiagramUpdater
+		return ComponentSDDDiagramUpdater
 				.getMultiPortVariableMultiPortVariablesCompartment_7004SemanticChildren(viewObject);
 
 	}
@@ -123,18 +140,15 @@ public class MultiPortVariableMultiPortVariablesCompartmentCanonicalEditPolicy
 	/**
 	 * @generated
 	 */
-	protected boolean isOrphaned(Collection<EObject> semanticChildren,
-			final View view) {
-		return isMyDiagramElement(view)
-				&& !semanticChildren.contains(view.getElement());
+	protected boolean isOrphaned(Collection<EObject> semanticChildren, final View view) {
+		return isMyDiagramElement(view) && !semanticChildren.contains(view.getElement());
 	}
 
 	/**
 	 * @generated
 	 */
 	private boolean isMyDiagramElement(View view) {
-		return org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.SinglePortVariableEditPart.VISUAL_ID == org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDVisualIDRegistry
-				.getVisualID(view);
+		return SinglePortVariableEditPart.VISUAL_ID == ComponentSDDVisualIDRegistry.getVisualID(view);
 	}
 
 	/**
@@ -145,7 +159,7 @@ public class MultiPortVariableMultiPortVariablesCompartmentCanonicalEditPolicy
 			return;
 		}
 		LinkedList<IAdaptable> createdViews = new LinkedList<IAdaptable>();
-		List<org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDNodeDescriptor> childDescriptors = getSemanticChildrenViewDescriptors();
+		List<ComponentSDDNodeDescriptor> childDescriptors = getSemanticChildrenViewDescriptors();
 		LinkedList<View> orphaned = new LinkedList<View>();
 		// we care to check only views we recognize as ours
 		LinkedList<View> knownViewChildren = new LinkedList<View>();
@@ -159,19 +173,16 @@ public class MultiPortVariableMultiPortVariablesCompartmentCanonicalEditPolicy
 		// iteration happens over list of desired semantic elements, trying to find best matching View, while original CEP
 		// iterates views, potentially losing view (size/bounds) information - i.e. if there are few views to reference same EObject, only last one 
 		// to answer isOrphaned == true will be used for the domain element representation, see #cleanCanonicalSemanticChildren()
-		for (Iterator<org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDNodeDescriptor> descriptorsIterator = childDescriptors
-				.iterator(); descriptorsIterator.hasNext();) {
-			org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDNodeDescriptor next = descriptorsIterator
-					.next();
-			String hint = org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDVisualIDRegistry
-					.getType(next.getVisualID());
+		for (Iterator<ComponentSDDNodeDescriptor> descriptorsIterator = childDescriptors.iterator(); descriptorsIterator
+				.hasNext();) {
+			ComponentSDDNodeDescriptor next = descriptorsIterator.next();
+			String hint = ComponentSDDVisualIDRegistry.getType(next.getVisualID());
 			LinkedList<View> perfectMatch = new LinkedList<View>(); // both semanticElement and hint match that of NodeDescriptor
 			for (View childView : getViewChildren()) {
 				EObject semanticElement = childView.getElement();
 
 				// Note: semanticElement can be null, for diagram annotations!
-				if (semanticElement != null
-						&& semanticElement.equals(next.getModelElement())) {
+				if (semanticElement != null && semanticElement.equals(next.getModelElement())) {
 					if (hint.equals(childView.getType())) {
 						perfectMatch.add(childView);
 						// actually, can stop iteration over view children here, but
@@ -192,14 +203,11 @@ public class MultiPortVariableMultiPortVariablesCompartmentCanonicalEditPolicy
 		//
 		ArrayList<CreateViewRequest.ViewDescriptor> viewDescriptors = new ArrayList<CreateViewRequest.ViewDescriptor>(
 				childDescriptors.size());
-		for (org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDNodeDescriptor next : childDescriptors) {
-			String hint = org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDVisualIDRegistry
-					.getType(next.getVisualID());
-			IAdaptable elementAdapter = new CanonicalElementAdapter(
-					next.getModelElement(), hint);
-			CreateViewRequest.ViewDescriptor descriptor = new CreateViewRequest.ViewDescriptor(
-					elementAdapter, Node.class, hint, ViewUtil.APPEND, false,
-					host().getDiagramPreferencesHint());
+		for (ComponentSDDNodeDescriptor next : childDescriptors) {
+			String hint = ComponentSDDVisualIDRegistry.getType(next.getVisualID());
+			IAdaptable elementAdapter = new CanonicalElementAdapter(next.getModelElement(), hint);
+			CreateViewRequest.ViewDescriptor descriptor = new CreateViewRequest.ViewDescriptor(elementAdapter,
+					Node.class, hint, ViewUtil.APPEND, false, host().getDiagramPreferencesHint());
 			viewDescriptors.add(descriptor);
 		}
 
@@ -208,10 +216,10 @@ public class MultiPortVariableMultiPortVariablesCompartmentCanonicalEditPolicy
 		CreateViewRequest request = getCreateViewRequest(viewDescriptors);
 		Command cmd = getCreateViewCommand(request);
 		if (cmd != null && cmd.canExecute()) {
-			SetViewMutabilityCommand.makeMutable(
-					new EObjectAdapter(host().getNotationView())).execute();
+			SetViewMutabilityCommand.makeMutable(new EObjectAdapter(host().getNotationView())).execute();
 			executeCommand(cmd);
 			@SuppressWarnings("unchecked")
+
 			List<IAdaptable> nl = (List<IAdaptable>) request.getNewObject();
 			createdViews.addAll(nl);
 		}
@@ -220,8 +228,8 @@ public class MultiPortVariableMultiPortVariablesCompartmentCanonicalEditPolicy
 		}
 		if (createdViews.size() > 1) {
 			// perform a layout of the container
-			DeferredLayoutCommand layoutCmd = new DeferredLayoutCommand(host()
-					.getEditingDomain(), createdViews, host());
+			DeferredLayoutCommand layoutCmd = new DeferredLayoutCommand(host().getEditingDomain(), createdViews,
+					host());
 			executeCommand(new ICommandProxy(layoutCmd));
 		}
 

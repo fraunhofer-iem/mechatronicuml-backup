@@ -24,6 +24,7 @@ import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EEnumLiteral;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDDiagramEditorPlugin;
 
 /**
  * @generated
@@ -39,14 +40,11 @@ public abstract class ComponentSDDAbstractExpression {
 	 * @generated
 	 */
 	protected void setStatus(int severity, String message, Throwable throwable) {
-		String pluginID = org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDDiagramEditorPlugin.ID;
-		this.status = new Status(severity, pluginID, -1,
-				(message != null) ? message : "", throwable); //$NON-NLS-1$
+		String pluginID = ComponentSDDDiagramEditorPlugin.ID;
+		this.status = new Status(severity, pluginID, -1, (message != null) ? message : "", throwable); //$NON-NLS-1$
 		if (!this.status.isOK()) {
-			org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDDiagramEditorPlugin
-					.getInstance()
-					.logError(
-							"Expression problem:" + message + "body:" + body(), throwable); //$NON-NLS-1$ //$NON-NLS-2$
+			ComponentSDDDiagramEditorPlugin.getInstance().logError("Expression problem:" + message + "body:" + body(), //$NON-NLS-1$//$NON-NLS-2$
+					throwable);
 		}
 	}
 
@@ -111,9 +109,7 @@ public abstract class ComponentSDDAbstractExpression {
 			try {
 				return doEvaluate(context, env);
 			} catch (Exception e) {
-				org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDDiagramEditorPlugin
-						.getInstance().logError(
-								"Expression evaluation failure: " + body(), e); //$NON-NLS-1$
+				ComponentSDDDiagramEditorPlugin.getInstance().logError("Expression evaluation failure: " + body(), e); //$NON-NLS-1$
 			}
 		}
 		return null;
@@ -127,12 +123,10 @@ public abstract class ComponentSDDAbstractExpression {
 		if (targetType instanceof EEnum) {
 			if (value instanceof EEnumLiteral) {
 				EEnumLiteral literal = (EEnumLiteral) value;
-				return (literal.getInstance() != null) ? literal.getInstance()
-						: literal;
+				return (literal.getInstance() != null) ? literal.getInstance() : literal;
 			}
 		}
-		if (false == value instanceof Number || targetType == null
-				|| targetType.getInstanceClass() == null) {
+		if (false == value instanceof Number || targetType == null || targetType.getInstanceClass() == null) {
 			return value;
 		}
 		Class<?> targetClass = targetType.getInstanceClass();

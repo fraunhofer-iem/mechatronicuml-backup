@@ -15,7 +15,5 @@ package org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.help
 /**
  * @generated
  */
-public class MultiPortOrderConstraintEditHelper
-		extends
-		org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.helpers.ComponentSDDBaseEditHelper {
+public class MultiPortOrderConstraintEditHelper extends ComponentSDDBaseEditHelper {
 }

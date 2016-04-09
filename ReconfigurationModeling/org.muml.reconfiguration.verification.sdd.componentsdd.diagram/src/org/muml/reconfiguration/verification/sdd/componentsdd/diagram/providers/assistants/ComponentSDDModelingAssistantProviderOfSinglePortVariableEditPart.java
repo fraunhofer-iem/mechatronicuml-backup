@@ -19,33 +19,37 @@ import java.util.List;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.MultiPortVariable2EditPart;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.MultiPortVariableEditPart;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.SinglePortVariable2EditPart;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.SinglePortVariable3EditPart;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.SinglePortVariableEditPart;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDModelingAssistantProvider;
 
 /**
  * @generated
  */
 public class ComponentSDDModelingAssistantProviderOfSinglePortVariableEditPart
-		extends
-		org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDModelingAssistantProvider {
+		extends ComponentSDDModelingAssistantProvider {
 
 	/**
 	 * @generated
 	 */
 	@Override
 	public List<IElementType> getRelTypesOnSource(IAdaptable source) {
-		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source
-				.getAdapter(IGraphicalEditPart.class);
-		return doGetRelTypesOnSource((org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.SinglePortVariableEditPart) sourceEditPart);
+		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source.getAdapter(IGraphicalEditPart.class);
+		return doGetRelTypesOnSource((SinglePortVariableEditPart) sourceEditPart);
 	}
 
 	/**
-	 * @generated
-	 */
-	public List<IElementType> doGetRelTypesOnSource(
-			org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.SinglePortVariableEditPart source) {
+	* @generated
+	*/
+	public List<IElementType> doGetRelTypesOnSource(SinglePortVariableEditPart source) {
 		List<IElementType> types = new ArrayList<IElementType>(3);
-		types.add(org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.AssemblyVariable_4002);
-		types.add(org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.DelegationVariable_4003);
-		types.add(org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.MultiPortOrderConstraint_4004);
+		types.add(ComponentSDDElementTypes.AssemblyVariable_4002);
+		types.add(ComponentSDDElementTypes.DelegationVariable_4003);
+		types.add(ComponentSDDElementTypes.MultiPortOrderConstraint_4004);
 		return types;
 	}
 
@@ -53,62 +57,56 @@ public class ComponentSDDModelingAssistantProviderOfSinglePortVariableEditPart
 	 * @generated
 	 */
 	@Override
-	public List<IElementType> getRelTypesOnSourceAndTarget(IAdaptable source,
-			IAdaptable target) {
-		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source
-				.getAdapter(IGraphicalEditPart.class);
-		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target
-				.getAdapter(IGraphicalEditPart.class);
-		return doGetRelTypesOnSourceAndTarget(
-				(org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.SinglePortVariableEditPart) sourceEditPart,
-				targetEditPart);
+	public List<IElementType> getRelTypesOnSourceAndTarget(IAdaptable source, IAdaptable target) {
+		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source.getAdapter(IGraphicalEditPart.class);
+		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target.getAdapter(IGraphicalEditPart.class);
+		return doGetRelTypesOnSourceAndTarget((SinglePortVariableEditPart) sourceEditPart, targetEditPart);
 	}
 
 	/**
-	 * @generated
-	 */
-	public List<IElementType> doGetRelTypesOnSourceAndTarget(
-			org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.SinglePortVariableEditPart source,
+	* @generated
+	*/
+	public List<IElementType> doGetRelTypesOnSourceAndTarget(SinglePortVariableEditPart source,
 			IGraphicalEditPart targetEditPart) {
 		List<IElementType> types = new LinkedList<IElementType>();
-		if (targetEditPart instanceof org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.MultiPortVariableEditPart) {
-			types.add(org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.AssemblyVariable_4002);
+		if (targetEditPart instanceof MultiPortVariableEditPart) {
+			types.add(ComponentSDDElementTypes.AssemblyVariable_4002);
 		}
-		if (targetEditPart instanceof org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.SinglePortVariableEditPart) {
-			types.add(org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.AssemblyVariable_4002);
+		if (targetEditPart instanceof SinglePortVariableEditPart) {
+			types.add(ComponentSDDElementTypes.AssemblyVariable_4002);
 		}
-		if (targetEditPart instanceof org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.SinglePortVariable2EditPart) {
-			types.add(org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.AssemblyVariable_4002);
+		if (targetEditPart instanceof SinglePortVariable2EditPart) {
+			types.add(ComponentSDDElementTypes.AssemblyVariable_4002);
 		}
-		if (targetEditPart instanceof org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.MultiPortVariable2EditPart) {
-			types.add(org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.AssemblyVariable_4002);
+		if (targetEditPart instanceof MultiPortVariable2EditPart) {
+			types.add(ComponentSDDElementTypes.AssemblyVariable_4002);
 		}
-		if (targetEditPart instanceof org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.SinglePortVariable3EditPart) {
-			types.add(org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.AssemblyVariable_4002);
+		if (targetEditPart instanceof SinglePortVariable3EditPart) {
+			types.add(ComponentSDDElementTypes.AssemblyVariable_4002);
 		}
-		if (targetEditPart instanceof org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.MultiPortVariableEditPart) {
-			types.add(org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.DelegationVariable_4003);
+		if (targetEditPart instanceof MultiPortVariableEditPart) {
+			types.add(ComponentSDDElementTypes.DelegationVariable_4003);
 		}
-		if (targetEditPart instanceof org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.SinglePortVariableEditPart) {
-			types.add(org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.DelegationVariable_4003);
+		if (targetEditPart instanceof SinglePortVariableEditPart) {
+			types.add(ComponentSDDElementTypes.DelegationVariable_4003);
 		}
-		if (targetEditPart instanceof org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.SinglePortVariable2EditPart) {
-			types.add(org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.DelegationVariable_4003);
+		if (targetEditPart instanceof SinglePortVariable2EditPart) {
+			types.add(ComponentSDDElementTypes.DelegationVariable_4003);
 		}
-		if (targetEditPart instanceof org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.MultiPortVariable2EditPart) {
-			types.add(org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.DelegationVariable_4003);
+		if (targetEditPart instanceof MultiPortVariable2EditPart) {
+			types.add(ComponentSDDElementTypes.DelegationVariable_4003);
 		}
-		if (targetEditPart instanceof org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.SinglePortVariable3EditPart) {
-			types.add(org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.DelegationVariable_4003);
+		if (targetEditPart instanceof SinglePortVariable3EditPart) {
+			types.add(ComponentSDDElementTypes.DelegationVariable_4003);
 		}
-		if (targetEditPart instanceof org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.SinglePortVariableEditPart) {
-			types.add(org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.MultiPortOrderConstraint_4004);
+		if (targetEditPart instanceof SinglePortVariableEditPart) {
+			types.add(ComponentSDDElementTypes.MultiPortOrderConstraint_4004);
 		}
-		if (targetEditPart instanceof org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.SinglePortVariable2EditPart) {
-			types.add(org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.MultiPortOrderConstraint_4004);
+		if (targetEditPart instanceof SinglePortVariable2EditPart) {
+			types.add(ComponentSDDElementTypes.MultiPortOrderConstraint_4004);
 		}
-		if (targetEditPart instanceof org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.SinglePortVariable3EditPart) {
-			types.add(org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.MultiPortOrderConstraint_4004);
+		if (targetEditPart instanceof SinglePortVariable3EditPart) {
+			types.add(ComponentSDDElementTypes.MultiPortOrderConstraint_4004);
 		}
 		return types;
 	}
@@ -117,38 +115,32 @@ public class ComponentSDDModelingAssistantProviderOfSinglePortVariableEditPart
 	 * @generated
 	 */
 	@Override
-	public List<IElementType> getTypesForTarget(IAdaptable source,
-			IElementType relationshipType) {
-		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source
-				.getAdapter(IGraphicalEditPart.class);
-		return doGetTypesForTarget(
-				(org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.SinglePortVariableEditPart) sourceEditPart,
-				relationshipType);
+	public List<IElementType> getTypesForTarget(IAdaptable source, IElementType relationshipType) {
+		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source.getAdapter(IGraphicalEditPart.class);
+		return doGetTypesForTarget((SinglePortVariableEditPart) sourceEditPart, relationshipType);
 	}
 
 	/**
-	 * @generated
-	 */
-	public List<IElementType> doGetTypesForTarget(
-			org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.SinglePortVariableEditPart source,
-			IElementType relationshipType) {
+	* @generated
+	*/
+	public List<IElementType> doGetTypesForTarget(SinglePortVariableEditPart source, IElementType relationshipType) {
 		List<IElementType> types = new ArrayList<IElementType>();
-		if (relationshipType == org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.AssemblyVariable_4002) {
-			types.add(org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.MultiPortVariable_3004);
-			types.add(org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.SinglePortVariable_3005);
-			types.add(org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.SinglePortVariable_3006);
-			types.add(org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.MultiPortVariable_3007);
-			types.add(org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.SinglePortVariable_3008);
-		} else if (relationshipType == org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.DelegationVariable_4003) {
-			types.add(org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.MultiPortVariable_3004);
-			types.add(org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.SinglePortVariable_3005);
-			types.add(org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.SinglePortVariable_3006);
-			types.add(org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.MultiPortVariable_3007);
-			types.add(org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.SinglePortVariable_3008);
-		} else if (relationshipType == org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.MultiPortOrderConstraint_4004) {
-			types.add(org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.SinglePortVariable_3005);
-			types.add(org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.SinglePortVariable_3006);
-			types.add(org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.SinglePortVariable_3008);
+		if (relationshipType == ComponentSDDElementTypes.AssemblyVariable_4002) {
+			types.add(ComponentSDDElementTypes.MultiPortVariable_3004);
+			types.add(ComponentSDDElementTypes.SinglePortVariable_3005);
+			types.add(ComponentSDDElementTypes.SinglePortVariable_3006);
+			types.add(ComponentSDDElementTypes.MultiPortVariable_3007);
+			types.add(ComponentSDDElementTypes.SinglePortVariable_3008);
+		} else if (relationshipType == ComponentSDDElementTypes.DelegationVariable_4003) {
+			types.add(ComponentSDDElementTypes.MultiPortVariable_3004);
+			types.add(ComponentSDDElementTypes.SinglePortVariable_3005);
+			types.add(ComponentSDDElementTypes.SinglePortVariable_3006);
+			types.add(ComponentSDDElementTypes.MultiPortVariable_3007);
+			types.add(ComponentSDDElementTypes.SinglePortVariable_3008);
+		} else if (relationshipType == ComponentSDDElementTypes.MultiPortOrderConstraint_4004) {
+			types.add(ComponentSDDElementTypes.SinglePortVariable_3005);
+			types.add(ComponentSDDElementTypes.SinglePortVariable_3006);
+			types.add(ComponentSDDElementTypes.SinglePortVariable_3008);
 		}
 		return types;
 	}
@@ -158,20 +150,18 @@ public class ComponentSDDModelingAssistantProviderOfSinglePortVariableEditPart
 	 */
 	@Override
 	public List<IElementType> getRelTypesOnTarget(IAdaptable target) {
-		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target
-				.getAdapter(IGraphicalEditPart.class);
-		return doGetRelTypesOnTarget((org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.SinglePortVariableEditPart) targetEditPart);
+		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target.getAdapter(IGraphicalEditPart.class);
+		return doGetRelTypesOnTarget((SinglePortVariableEditPart) targetEditPart);
 	}
 
 	/**
-	 * @generated
-	 */
-	public List<IElementType> doGetRelTypesOnTarget(
-			org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.SinglePortVariableEditPart target) {
+	* @generated
+	*/
+	public List<IElementType> doGetRelTypesOnTarget(SinglePortVariableEditPart target) {
 		List<IElementType> types = new ArrayList<IElementType>(3);
-		types.add(org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.AssemblyVariable_4002);
-		types.add(org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.DelegationVariable_4003);
-		types.add(org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.MultiPortOrderConstraint_4004);
+		types.add(ComponentSDDElementTypes.AssemblyVariable_4002);
+		types.add(ComponentSDDElementTypes.DelegationVariable_4003);
+		types.add(ComponentSDDElementTypes.MultiPortOrderConstraint_4004);
 		return types;
 	}
 
@@ -179,38 +169,32 @@ public class ComponentSDDModelingAssistantProviderOfSinglePortVariableEditPart
 	 * @generated
 	 */
 	@Override
-	public List<IElementType> getTypesForSource(IAdaptable target,
-			IElementType relationshipType) {
-		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target
-				.getAdapter(IGraphicalEditPart.class);
-		return doGetTypesForSource(
-				(org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.SinglePortVariableEditPart) targetEditPart,
-				relationshipType);
+	public List<IElementType> getTypesForSource(IAdaptable target, IElementType relationshipType) {
+		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target.getAdapter(IGraphicalEditPart.class);
+		return doGetTypesForSource((SinglePortVariableEditPart) targetEditPart, relationshipType);
 	}
 
 	/**
-	 * @generated
-	 */
-	public List<IElementType> doGetTypesForSource(
-			org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.SinglePortVariableEditPart target,
-			IElementType relationshipType) {
+	* @generated
+	*/
+	public List<IElementType> doGetTypesForSource(SinglePortVariableEditPart target, IElementType relationshipType) {
 		List<IElementType> types = new ArrayList<IElementType>();
-		if (relationshipType == org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.AssemblyVariable_4002) {
-			types.add(org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.MultiPortVariable_3004);
-			types.add(org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.SinglePortVariable_3005);
-			types.add(org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.SinglePortVariable_3006);
-			types.add(org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.MultiPortVariable_3007);
-			types.add(org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.SinglePortVariable_3008);
-		} else if (relationshipType == org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.DelegationVariable_4003) {
-			types.add(org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.MultiPortVariable_3004);
-			types.add(org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.SinglePortVariable_3005);
-			types.add(org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.SinglePortVariable_3006);
-			types.add(org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.MultiPortVariable_3007);
-			types.add(org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.SinglePortVariable_3008);
-		} else if (relationshipType == org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.MultiPortOrderConstraint_4004) {
-			types.add(org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.SinglePortVariable_3005);
-			types.add(org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.SinglePortVariable_3006);
-			types.add(org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.SinglePortVariable_3008);
+		if (relationshipType == ComponentSDDElementTypes.AssemblyVariable_4002) {
+			types.add(ComponentSDDElementTypes.MultiPortVariable_3004);
+			types.add(ComponentSDDElementTypes.SinglePortVariable_3005);
+			types.add(ComponentSDDElementTypes.SinglePortVariable_3006);
+			types.add(ComponentSDDElementTypes.MultiPortVariable_3007);
+			types.add(ComponentSDDElementTypes.SinglePortVariable_3008);
+		} else if (relationshipType == ComponentSDDElementTypes.DelegationVariable_4003) {
+			types.add(ComponentSDDElementTypes.MultiPortVariable_3004);
+			types.add(ComponentSDDElementTypes.SinglePortVariable_3005);
+			types.add(ComponentSDDElementTypes.SinglePortVariable_3006);
+			types.add(ComponentSDDElementTypes.MultiPortVariable_3007);
+			types.add(ComponentSDDElementTypes.SinglePortVariable_3008);
+		} else if (relationshipType == ComponentSDDElementTypes.MultiPortOrderConstraint_4004) {
+			types.add(ComponentSDDElementTypes.SinglePortVariable_3005);
+			types.add(ComponentSDDElementTypes.SinglePortVariable_3006);
+			types.add(ComponentSDDElementTypes.SinglePortVariable_3008);
 		}
 		return types;
 	}

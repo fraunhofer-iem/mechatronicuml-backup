@@ -33,6 +33,7 @@ import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.navigator.ILinkHelper;
 import org.eclipse.ui.part.FileEditorInput;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDDiagramEditorPlugin;
 
 /**
  * @generated
@@ -46,16 +47,14 @@ public class ComponentSDDNavigatorLinkHelper implements ILinkHelper {
 		Resource diagramResource = diagram.eResource();
 		for (EObject nextEObject : diagramResource.getContents()) {
 			if (nextEObject == diagram) {
-				return new FileEditorInput(
-						WorkspaceSynchronizer.getFile(diagramResource));
+				return new FileEditorInput(WorkspaceSynchronizer.getFile(diagramResource));
 			}
 			if (nextEObject instanceof Diagram) {
 				break;
 			}
 		}
 		URI uri = EcoreUtil.getURI(diagram);
-		String editorName = uri.lastSegment() + '#'
-				+ diagram.eResource().getContents().indexOf(diagram);
+		String editorName = uri.lastSegment() + '#' + diagram.eResource().getContents().indexOf(diagram);
 		IEditorInput editorInput = new URIEditorInput(uri, editorName);
 		return editorInput;
 	}
@@ -64,8 +63,7 @@ public class ComponentSDDNavigatorLinkHelper implements ILinkHelper {
 	 * @generated
 	 */
 	public IStructuredSelection findSelection(IEditorInput anInput) {
-		IDiagramDocument document = org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDDiagramEditorPlugin
-				.getInstance().getDocumentProvider()
+		IDiagramDocument document = ComponentSDDDiagramEditorPlugin.getInstance().getDocumentProvider()
 				.getDiagramDocument(anInput);
 		if (document == null) {
 			return StructuredSelection.EMPTY;
@@ -76,8 +74,7 @@ public class ComponentSDDNavigatorLinkHelper implements ILinkHelper {
 		}
 		IFile file = WorkspaceSynchronizer.getFile(diagram.eResource());
 		if (file != null) {
-			org.muml.reconfiguration.verification.sdd.componentsdd.diagram.navigator.ComponentSDDNavigatorItem item = new org.muml.reconfiguration.verification.sdd.componentsdd.diagram.navigator.ComponentSDDNavigatorItem(
-					diagram, file, false);
+			ComponentSDDNavigatorItem item = new ComponentSDDNavigatorItem(diagram, file, false);
 			return new StructuredSelection(item);
 		}
 		return StructuredSelection.EMPTY;
@@ -86,26 +83,23 @@ public class ComponentSDDNavigatorLinkHelper implements ILinkHelper {
 	/**
 	 * @generated
 	 */
-	public void activateEditor(IWorkbenchPage aPage,
-			IStructuredSelection aSelection) {
+	public void activateEditor(IWorkbenchPage aPage, IStructuredSelection aSelection) {
 		if (aSelection == null || aSelection.isEmpty()) {
 			return;
 		}
-		if (false == aSelection.getFirstElement() instanceof org.muml.reconfiguration.verification.sdd.componentsdd.diagram.navigator.ComponentSDDAbstractNavigatorItem) {
+		if (false == aSelection.getFirstElement() instanceof ComponentSDDAbstractNavigatorItem) {
 			return;
 		}
 
-		org.muml.reconfiguration.verification.sdd.componentsdd.diagram.navigator.ComponentSDDAbstractNavigatorItem abstractNavigatorItem = (org.muml.reconfiguration.verification.sdd.componentsdd.diagram.navigator.ComponentSDDAbstractNavigatorItem) aSelection
+		ComponentSDDAbstractNavigatorItem abstractNavigatorItem = (ComponentSDDAbstractNavigatorItem) aSelection
 				.getFirstElement();
 		View navigatorView = null;
-		if (abstractNavigatorItem instanceof org.muml.reconfiguration.verification.sdd.componentsdd.diagram.navigator.ComponentSDDNavigatorItem) {
-			navigatorView = ((org.muml.reconfiguration.verification.sdd.componentsdd.diagram.navigator.ComponentSDDNavigatorItem) abstractNavigatorItem)
-					.getView();
-		} else if (abstractNavigatorItem instanceof org.muml.reconfiguration.verification.sdd.componentsdd.diagram.navigator.ComponentSDDNavigatorGroup) {
-			org.muml.reconfiguration.verification.sdd.componentsdd.diagram.navigator.ComponentSDDNavigatorGroup navigatorGroup = (org.muml.reconfiguration.verification.sdd.componentsdd.diagram.navigator.ComponentSDDNavigatorGroup) abstractNavigatorItem;
-			if (navigatorGroup.getParent() instanceof org.muml.reconfiguration.verification.sdd.componentsdd.diagram.navigator.ComponentSDDNavigatorItem) {
-				navigatorView = ((org.muml.reconfiguration.verification.sdd.componentsdd.diagram.navigator.ComponentSDDNavigatorItem) navigatorGroup
-						.getParent()).getView();
+		if (abstractNavigatorItem instanceof ComponentSDDNavigatorItem) {
+			navigatorView = ((ComponentSDDNavigatorItem) abstractNavigatorItem).getView();
+		} else if (abstractNavigatorItem instanceof ComponentSDDNavigatorGroup) {
+			ComponentSDDNavigatorGroup navigatorGroup = (ComponentSDDNavigatorGroup) abstractNavigatorItem;
+			if (navigatorGroup.getParent() instanceof ComponentSDDNavigatorItem) {
+				navigatorView = ((ComponentSDDNavigatorItem) navigatorGroup.getParent()).getView();
 			}
 		}
 		if (navigatorView == null) {
@@ -119,17 +113,13 @@ public class ComponentSDDNavigatorLinkHelper implements ILinkHelper {
 		aPage.bringToTop(editor);
 		if (editor instanceof DiagramEditor) {
 			DiagramEditor diagramEditor = (DiagramEditor) editor;
-			ResourceSet diagramEditorResourceSet = diagramEditor
-					.getEditingDomain().getResourceSet();
-			EObject selectedView = diagramEditorResourceSet.getEObject(
-					EcoreUtil.getURI(navigatorView), true);
+			ResourceSet diagramEditorResourceSet = diagramEditor.getEditingDomain().getResourceSet();
+			EObject selectedView = diagramEditorResourceSet.getEObject(EcoreUtil.getURI(navigatorView), true);
 			if (selectedView == null) {
 				return;
 			}
-			GraphicalViewer graphicalViewer = (GraphicalViewer) diagramEditor
-					.getAdapter(GraphicalViewer.class);
-			EditPart selectedEditPart = (EditPart) graphicalViewer
-					.getEditPartRegistry().get(selectedView);
+			GraphicalViewer graphicalViewer = (GraphicalViewer) diagramEditor.getAdapter(GraphicalViewer.class);
+			EditPart selectedEditPart = (EditPart) graphicalViewer.getEditPartRegistry().get(selectedView);
 			if (selectedEditPart != null) {
 				graphicalViewer.select(selectedEditPart);
 			}

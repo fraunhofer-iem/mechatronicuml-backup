@@ -14,6 +14,7 @@ package org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.part
 
 import java.util.Collection;
 
+import org.eclipse.draw2d.ConnectionAnchor;
 import org.eclipse.draw2d.GridData;
 import org.eclipse.draw2d.GridLayout;
 import org.eclipse.draw2d.IFigure;
@@ -48,12 +49,20 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Font;
 import org.eclipse.swt.widgets.Display;
+import org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy;
+import org.muml.core.common.edit.policies.anchor.IConnectionAnchorCreationEditPolicy;
+import org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy;
+import org.muml.core.common.figures.CustomExternalLabelBorderItemLocator;
+import org.muml.pim.common.edit.policies.IBackgroundColorEditPolicy;
+import org.muml.reconfiguration.common.edit.policies.ComponentStoryPatternVariableEditPolicy;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.policies.FadingComponentPartVariableCanonicalEditPolicy;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.policies.FadingComponentPartVariableItemSemanticEditPolicy;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDVisualIDRegistry;
 
 /**
  * @generated
  */
-public class FadingComponentPartVariableEditPart extends
-		AbstractBorderedShapeEditPart {
+public class FadingComponentPartVariableEditPart extends AbstractBorderedShapeEditPart {
 
 	/**
 	 * @generated
@@ -84,6 +93,22 @@ public class FadingComponentPartVariableEditPart extends
 	}
 
 	/**
+	* MUML FIX: Adapt background color if IBackgroundColorEditPolicy is registered.
+	* 
+	* @generated
+	*/
+	@Override
+	protected void refreshBackgroundColor() {
+		EditPolicy backgroundColorPolicy = getEditPolicy(
+				org.muml.core.common.edit.policies.EditPolicyRoles.BACKGROUND_COLOR_ROLE);
+		if (backgroundColorPolicy instanceof IBackgroundColorEditPolicy) {
+			setBackgroundColor(((IBackgroundColorEditPolicy) backgroundColorPolicy).getCurrentBackgroundColor());
+		} else {
+			super.refreshBackgroundColor();
+		}
+	}
+
+	/**
 	 * @generated
 	 */
 	protected IFigure contentPane;
@@ -104,33 +129,25 @@ public class FadingComponentPartVariableEditPart extends
 	 * @generated
 	 */
 	protected void createDefaultEditPolicies() {
-		installEditPolicy(
-				EditPolicyRoles.CREATION_ROLE,
-				new CreationEditPolicyWithCustomReparent(
-						org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDVisualIDRegistry.TYPED_INSTANCE));
+		installEditPolicy(EditPolicyRoles.CREATION_ROLE,
+				new CreationEditPolicyWithCustomReparent(ComponentSDDVisualIDRegistry.TYPED_INSTANCE));
 		super.createDefaultEditPolicies();
-		installEditPolicy(
-				EditPolicyRoles.SEMANTIC_ROLE,
-				new org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.policies.FadingComponentPartVariableItemSemanticEditPolicy());
-		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE,
-				new DragDropEditPolicy());
-		installEditPolicy(
-				EditPolicyRoles.CANONICAL_ROLE,
-				new org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.policies.FadingComponentPartVariableCanonicalEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new FadingComponentPartVariableItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
+		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new FadingComponentPartVariableCanonicalEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
+
 		installEditPolicy(
 				org.muml.pim.common.edit.policies.EditPolicyRoles.COMPONENTSTORYPATTERNVARIABLE_VISUALIZATION_ROLE,
-				new org.muml.reconfiguration.common.edit.policies.ComponentStoryPatternVariableEditPolicy());
+				new ComponentStoryPatternVariableEditPolicy());
+
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 
-		installEditPolicy(
-				EditPolicy.GRAPHICAL_NODE_ROLE,
-				new org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy());
+		installEditPolicy(EditPolicy.GRAPHICAL_NODE_ROLE, new ConnectionConfigureHelperGraphicalNodeEditPolicy());
 
-		installEditPolicy(
-				org.muml.core.common.edit.policies.EditPolicyRoles.ERROR_FEEDBACK_ROLE,
-				new org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy());
+		installEditPolicy(org.muml.core.common.edit.policies.EditPolicyRoles.ERROR_FEEDBACK_ROLE,
+				new ErrorFeedbackEditPolicy());
 
 	}
 
@@ -142,16 +159,14 @@ public class FadingComponentPartVariableEditPart extends
 
 			protected EditPolicy createChildEditPolicy(EditPart child) {
 				View childView = (View) child.getModel();
-				switch (org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDVisualIDRegistry
-						.getVisualID(childView)) {
-				case org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.WrappingLabel5EditPart.VISUAL_ID:
+				switch (ComponentSDDVisualIDRegistry.getVisualID(childView)) {
+				case WrappingLabel5EditPart.VISUAL_ID:
 					return new org.muml.core.common.edit.policies.BorderItemSelectionEditPolicy();
-				case org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.MultiPortVariableEditPart.VISUAL_ID:
-				case org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.SinglePortVariable2EditPart.VISUAL_ID:
+				case MultiPortVariableEditPart.VISUAL_ID:
+				case SinglePortVariable2EditPart.VISUAL_ID:
 					return new BorderItemSelectionEditPolicy();
 				}
-				EditPolicy result = child
-						.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
+				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
 				if (result == null) {
 					result = new NonResizableEditPolicy();
 				}
@@ -187,33 +202,25 @@ public class FadingComponentPartVariableEditPart extends
 	 * @generated
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.WrappingLabel4EditPart) {
-			((org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.WrappingLabel4EditPart) childEditPart)
-					.setLabel(getPrimaryShape()
-							.getFigureFadingComponentVariableNameFigure());
+		if (childEditPart instanceof WrappingLabel4EditPart) {
+			((WrappingLabel4EditPart) childEditPart)
+					.setLabel(getPrimaryShape().getFigureFadingComponentVariableNameFigure());
 			return true;
 		}
-		if (childEditPart instanceof org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.WrappingLabel7EditPart) {
-			((org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.WrappingLabel7EditPart) childEditPart)
-					.setLabel(getPrimaryShape().getFigureFadingFunctionLabel());
+		if (childEditPart instanceof WrappingLabel7EditPart) {
+			((WrappingLabel7EditPart) childEditPart).setLabel(getPrimaryShape().getFigureFadingFunctionLabel());
 			return true;
 		}
-		if (childEditPart instanceof org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.MultiPortVariableEditPart) {
-			BorderItemLocator locator = new BorderItemLocator(getMainFigure(),
-					PositionConstants.NORTH);
-			getBorderedFigure()
-					.getBorderItemContainer()
-					.add(((org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.MultiPortVariableEditPart) childEditPart)
-							.getFigure(), locator);
+		if (childEditPart instanceof MultiPortVariableEditPart) {
+			BorderItemLocator locator = new BorderItemLocator(getMainFigure(), PositionConstants.NORTH);
+			getBorderedFigure().getBorderItemContainer().add(((MultiPortVariableEditPart) childEditPart).getFigure(),
+					locator);
 			return true;
 		}
-		if (childEditPart instanceof org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.SinglePortVariable2EditPart) {
-			BorderItemLocator locator = new BorderItemLocator(getMainFigure(),
-					PositionConstants.NORTH);
-			getBorderedFigure()
-					.getBorderItemContainer()
-					.add(((org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.SinglePortVariable2EditPart) childEditPart)
-							.getFigure(), locator);
+		if (childEditPart instanceof SinglePortVariable2EditPart) {
+			BorderItemLocator locator = new BorderItemLocator(getMainFigure(), PositionConstants.NORTH);
+			getBorderedFigure().getBorderItemContainer().add(((SinglePortVariable2EditPart) childEditPart).getFigure(),
+					locator);
 			return true;
 		}
 		return false;
@@ -223,24 +230,20 @@ public class FadingComponentPartVariableEditPart extends
 	 * @generated
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.WrappingLabel4EditPart) {
+		if (childEditPart instanceof WrappingLabel4EditPart) {
 			return true;
 		}
-		if (childEditPart instanceof org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.WrappingLabel7EditPart) {
+		if (childEditPart instanceof WrappingLabel7EditPart) {
 			return true;
 		}
-		if (childEditPart instanceof org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.MultiPortVariableEditPart) {
-			getBorderedFigure()
-					.getBorderItemContainer()
-					.remove(((org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.MultiPortVariableEditPart) childEditPart)
-							.getFigure());
+		if (childEditPart instanceof MultiPortVariableEditPart) {
+			getBorderedFigure().getBorderItemContainer()
+					.remove(((MultiPortVariableEditPart) childEditPart).getFigure());
 			return true;
 		}
-		if (childEditPart instanceof org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.SinglePortVariable2EditPart) {
-			getBorderedFigure()
-					.getBorderItemContainer()
-					.remove(((org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.SinglePortVariable2EditPart) childEditPart)
-							.getFigure());
+		if (childEditPart instanceof SinglePortVariable2EditPart) {
+			getBorderedFigure().getBorderItemContainer()
+					.remove(((SinglePortVariable2EditPart) childEditPart).getFigure());
 			return true;
 		}
 		return false;
@@ -279,12 +282,11 @@ public class FadingComponentPartVariableEditPart extends
 	/**
 	 * @generated
 	 */
-	protected void addBorderItem(IFigure borderItemContainer,
-			IBorderItemEditPart borderItemEditPart) {
-		if (borderItemEditPart instanceof org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.WrappingLabel5EditPart) {
+	protected void addBorderItem(IFigure borderItemContainer, IBorderItemEditPart borderItemEditPart) {
+		if (borderItemEditPart instanceof WrappingLabel5EditPart) {
 			// bug-fix: allows the free positioning of external Labels
-			org.muml.core.common.figures.CustomExternalLabelBorderItemLocator locator = new org.muml.core.common.figures.CustomExternalLabelBorderItemLocator(
-					getMainFigure(), PositionConstants.SOUTH);
+			CustomExternalLabelBorderItemLocator locator = new CustomExternalLabelBorderItemLocator(getMainFigure(),
+					PositionConstants.SOUTH);
 			locator.setBorderItemOffset(new Dimension(-20, -20));
 			borderItemContainer.add(borderItemEditPart.getFigure(), locator);
 		} else {
@@ -296,7 +298,17 @@ public class FadingComponentPartVariableEditPart extends
 	 * @generated
 	 */
 	protected NodeFigure createNodePlate() {
-		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(40, 40);
+		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(40, 40) {
+			@Override
+			public ConnectionAnchor createDefaultAnchor() {
+				IConnectionAnchorCreationEditPolicy connectionAnchorCreationEditPolicy = (IConnectionAnchorCreationEditPolicy) getEditPolicy(
+						org.muml.core.common.edit.policies.EditPolicyRoles.CONNECTION_ANCHOR_CREATION_ROLE);
+				if (connectionAnchorCreationEditPolicy != null) {
+					return connectionAnchorCreationEditPolicy.createDefaultAnchor();
+				}
+				return super.createDefaultAnchor();
+			}
+		};
 
 		// Ensures that the element can be shrinked (Muml Bug #62).
 		result.setMinimumSize(new Dimension(0, 0));
@@ -386,8 +398,7 @@ public class FadingComponentPartVariableEditPart extends
 	 * @generated
 	 */
 	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDVisualIDRegistry
-				.getType(org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.WrappingLabel4EditPart.VISUAL_ID));
+		return getChildBySemanticHint(ComponentSDDVisualIDRegistry.getType(WrappingLabel4EditPart.VISUAL_ID));
 	}
 
 	/**
@@ -426,8 +437,7 @@ public class FadingComponentPartVariableEditPart extends
 			GridLayout layoutFadingComponentVariable0 = new GridLayout();
 			layoutFadingComponentVariable0.numColumns = 2;
 			layoutFadingComponentVariable0.makeColumnsEqualWidth = false;
-			fadingComponentVariable0
-					.setLayoutManager(layoutFadingComponentVariable0);
+			fadingComponentVariable0.setLayoutManager(layoutFadingComponentVariable0);
 
 			RectangleFigure nameContainer1 = new RectangleFigure();
 
@@ -442,8 +452,7 @@ public class FadingComponentPartVariableEditPart extends
 			constraintNameContainer1.verticalSpan = 1;
 			constraintNameContainer1.grabExcessHorizontalSpace = true;
 			constraintNameContainer1.grabExcessVerticalSpace = false;
-			fadingComponentVariable0.add(nameContainer1,
-					constraintNameContainer1);
+			fadingComponentVariable0.add(nameContainer1, constraintNameContainer1);
 
 			GridLayout layoutNameContainer1 = new GridLayout();
 			layoutNameContainer1.numColumns = 1;
@@ -454,8 +463,7 @@ public class FadingComponentPartVariableEditPart extends
 
 			fFigureFadingComponentVariableNameFigure.setText("");
 
-			fFigureFadingComponentVariableNameFigure
-					.setFont(FFIGUREFADINGCOMPONENTVARIABLENAMEFIGURE_FONT);
+			fFigureFadingComponentVariableNameFigure.setFont(FFIGUREFADINGCOMPONENTVARIABLENAMEFIGURE_FONT);
 
 			fFigureFadingComponentVariableNameFigure.setTextUnderline(true);
 
@@ -483,8 +491,7 @@ public class FadingComponentPartVariableEditPart extends
 			constraintIconContainer1.verticalSpan = 1;
 			constraintIconContainer1.grabExcessHorizontalSpace = false;
 			constraintIconContainer1.grabExcessVerticalSpace = false;
-			fadingComponentVariable0.add(iconContainer1,
-					constraintIconContainer1);
+			fadingComponentVariable0.add(iconContainer1, constraintIconContainer1);
 
 			GridLayout layoutIconContainer1 = new GridLayout();
 			layoutIconContainer1.numColumns = 1;
@@ -495,8 +502,8 @@ public class FadingComponentPartVariableEditPart extends
 
 			fadingComponentIconFigure2.setFill(false);
 			fadingComponentIconFigure2.setOutline(false);
-			fadingComponentIconFigure2.setPreferredSize(new Dimension(
-					getMapMode().DPtoLP(40), getMapMode().DPtoLP(22)));
+			fadingComponentIconFigure2
+					.setPreferredSize(new Dimension(getMapMode().DPtoLP(40), getMapMode().DPtoLP(22)));
 
 			GridData constraintFadingComponentIconFigure2 = new GridData();
 			constraintFadingComponentIconFigure2.verticalAlignment = GridData.BEGINNING;
@@ -506,8 +513,7 @@ public class FadingComponentPartVariableEditPart extends
 			constraintFadingComponentIconFigure2.verticalSpan = 1;
 			constraintFadingComponentIconFigure2.grabExcessHorizontalSpace = true;
 			constraintFadingComponentIconFigure2.grabExcessVerticalSpace = false;
-			iconContainer1.add(fadingComponentIconFigure2,
-					constraintFadingComponentIconFigure2);
+			iconContainer1.add(fadingComponentIconFigure2, constraintFadingComponentIconFigure2);
 
 			fadingComponentIconFigure2.setLayoutManager(new XYLayout());
 
@@ -516,25 +522,22 @@ public class FadingComponentPartVariableEditPart extends
 			componentIconOuter3.setFill(false);
 			componentIconOuter3.setOutline(false);
 
-			fadingComponentIconFigure2.add(componentIconOuter3, new Rectangle(
-					getMapMode().DPtoLP(0), getMapMode().DPtoLP(2),
-					getMapMode().DPtoLP(40), getMapMode().DPtoLP(20)));
+			fadingComponentIconFigure2.add(componentIconOuter3, new Rectangle(getMapMode().DPtoLP(0),
+					getMapMode().DPtoLP(2), getMapMode().DPtoLP(40), getMapMode().DPtoLP(20)));
 			componentIconOuter3.setLayoutManager(new XYLayout());
 
 			RectangleFigure b14 = new RectangleFigure();
 
-			componentIconOuter3.add(b14, new Rectangle(getMapMode().DPtoLP(4),
-					getMapMode().DPtoLP(0), getMapMode().DPtoLP(36),
-					getMapMode().DPtoLP(20)));
+			componentIconOuter3.add(b14, new Rectangle(getMapMode().DPtoLP(4), getMapMode().DPtoLP(0),
+					getMapMode().DPtoLP(36), getMapMode().DPtoLP(20)));
 			b14.setLayoutManager(new XYLayout());
 
 			RectangleFigure plus5 = new RectangleFigure();
 
 			plus5.setForegroundColor(PLUS5_FORE);
 
-			b14.add(plus5, new Rectangle(getMapMode().DPtoLP(10), getMapMode()
-					.DPtoLP(5), getMapMode().DPtoLP(10), getMapMode()
-					.DPtoLP(10)));
+			b14.add(plus5, new Rectangle(getMapMode().DPtoLP(10), getMapMode().DPtoLP(5), getMapMode().DPtoLP(10),
+					getMapMode().DPtoLP(10)));
 
 			GridLayout layoutPlus5 = new GridLayout();
 			layoutPlus5.numColumns = 1;
@@ -545,9 +548,8 @@ public class FadingComponentPartVariableEditPart extends
 
 			minus5.setForegroundColor(MINUS5_FORE);
 
-			b14.add(minus5, new Rectangle(getMapMode().DPtoLP(23), getMapMode()
-					.DPtoLP(5), getMapMode().DPtoLP(10), getMapMode()
-					.DPtoLP(10)));
+			b14.add(minus5, new Rectangle(getMapMode().DPtoLP(23), getMapMode().DPtoLP(5), getMapMode().DPtoLP(10),
+					getMapMode().DPtoLP(10)));
 
 			GridLayout layoutMinus5 = new GridLayout();
 			layoutMinus5.numColumns = 1;
@@ -559,32 +561,28 @@ public class FadingComponentPartVariableEditPart extends
 			componentIconInner13.setFill(false);
 			componentIconInner13.setOutline(false);
 
-			fadingComponentIconFigure2.add(componentIconInner13, new Rectangle(
-					getMapMode().DPtoLP(0), getMapMode().DPtoLP(2),
-					getMapMode().DPtoLP(40), getMapMode().DPtoLP(20)));
+			fadingComponentIconFigure2.add(componentIconInner13, new Rectangle(getMapMode().DPtoLP(0),
+					getMapMode().DPtoLP(2), getMapMode().DPtoLP(40), getMapMode().DPtoLP(20)));
 			componentIconInner13.setLayoutManager(new XYLayout());
 
 			RectangleFigure c14 = new RectangleFigure();
 
-			componentIconInner13.add(c14, new Rectangle(getMapMode().DPtoLP(0),
-					getMapMode().DPtoLP(2), getMapMode().DPtoLP(12),
-					getMapMode().DPtoLP(6)));
+			componentIconInner13.add(c14, new Rectangle(getMapMode().DPtoLP(0), getMapMode().DPtoLP(2),
+					getMapMode().DPtoLP(12), getMapMode().DPtoLP(6)));
 
 			RectangleFigure componentIconInner23 = new RectangleFigure();
 
 			componentIconInner23.setFill(false);
 			componentIconInner23.setOutline(false);
 
-			fadingComponentIconFigure2.add(componentIconInner23, new Rectangle(
-					getMapMode().DPtoLP(0), getMapMode().DPtoLP(1),
-					getMapMode().DPtoLP(40), getMapMode().DPtoLP(20)));
+			fadingComponentIconFigure2.add(componentIconInner23, new Rectangle(getMapMode().DPtoLP(0),
+					getMapMode().DPtoLP(1), getMapMode().DPtoLP(40), getMapMode().DPtoLP(20)));
 			componentIconInner23.setLayoutManager(new XYLayout());
 
 			RectangleFigure d14 = new RectangleFigure();
 
-			componentIconInner23.add(d14, new Rectangle(getMapMode().DPtoLP(0),
-					getMapMode().DPtoLP(10), getMapMode().DPtoLP(12),
-					getMapMode().DPtoLP(6)));
+			componentIconInner23.add(d14, new Rectangle(getMapMode().DPtoLP(0), getMapMode().DPtoLP(10),
+					getMapMode().DPtoLP(12), getMapMode().DPtoLP(6)));
 
 			RectangleFigure plusLabelContainer3 = new RectangleFigure();
 
@@ -592,9 +590,8 @@ public class FadingComponentPartVariableEditPart extends
 			plusLabelContainer3.setOutline(false);
 			plusLabelContainer3.setForegroundColor(PLUSLABELCONTAINER3_FORE);
 
-			fadingComponentIconFigure2.add(plusLabelContainer3, new Rectangle(
-					getMapMode().DPtoLP(9), getMapMode().DPtoLP(0),
-					getMapMode().DPtoLP(20), getMapMode().DPtoLP(21)));
+			fadingComponentIconFigure2.add(plusLabelContainer3, new Rectangle(getMapMode().DPtoLP(9),
+					getMapMode().DPtoLP(0), getMapMode().DPtoLP(20), getMapMode().DPtoLP(21)));
 
 			GridLayout layoutPlusLabelContainer3 = new GridLayout();
 			layoutPlusLabelContainer3.numColumns = 1;
@@ -623,9 +620,8 @@ public class FadingComponentPartVariableEditPart extends
 			minusLabelContainer3.setOutline(false);
 			minusLabelContainer3.setForegroundColor(MINUSLABELCONTAINER3_FORE);
 
-			fadingComponentIconFigure2.add(minusLabelContainer3, new Rectangle(
-					getMapMode().DPtoLP(22), getMapMode().DPtoLP(0),
-					getMapMode().DPtoLP(20), getMapMode().DPtoLP(21)));
+			fadingComponentIconFigure2.add(minusLabelContainer3, new Rectangle(getMapMode().DPtoLP(22),
+					getMapMode().DPtoLP(0), getMapMode().DPtoLP(20), getMapMode().DPtoLP(21)));
 
 			GridLayout layoutMinusLabelContainer3 = new GridLayout();
 			layoutMinusLabelContainer3.numColumns = 1;
@@ -664,8 +660,7 @@ public class FadingComponentPartVariableEditPart extends
 			constraintFFigureFadingFunctionLabel.verticalSpan = 1;
 			constraintFFigureFadingFunctionLabel.grabExcessHorizontalSpace = false;
 			constraintFFigureFadingFunctionLabel.grabExcessVerticalSpace = false;
-			fadingComponentVariable0.add(fFigureFadingFunctionLabel,
-					constraintFFigureFadingFunctionLabel);
+			fadingComponentVariable0.add(fFigureFadingFunctionLabel, constraintFFigureFadingFunctionLabel);
 
 		}
 
@@ -688,9 +683,8 @@ public class FadingComponentPartVariableEditPart extends
 	/**
 	 * @generated
 	 */
-	static final Font FFIGUREFADINGCOMPONENTVARIABLENAMEFIGURE_FONT = new Font(
-			Display.getCurrent(), Display.getDefault().getSystemFont()
-					.getFontData()[0].getName(), 9, SWT.NORMAL);
+	static final Font FFIGUREFADINGCOMPONENTVARIABLENAMEFIGURE_FONT = new Font(Display.getCurrent(),
+			Display.getDefault().getSystemFont().getFontData()[0].getName(), 9, SWT.NORMAL);
 
 	/**
 	 * @generated
@@ -710,9 +704,8 @@ public class FadingComponentPartVariableEditPart extends
 	/**
 	 * @generated
 	 */
-	static final Font PLUSLABEL4_FONT = new Font(Display.getCurrent(), Display
-			.getDefault().getSystemFont().getFontData()[0].getName(), 7,
-			SWT.NORMAL);
+	static final Font PLUSLABEL4_FONT = new Font(Display.getCurrent(),
+			Display.getDefault().getSystemFont().getFontData()[0].getName(), 7, SWT.NORMAL);
 
 	/**
 	 * @generated
@@ -722,8 +715,7 @@ public class FadingComponentPartVariableEditPart extends
 	/**
 	 * @generated
 	 */
-	static final Font MINUSLABEL4_FONT = new Font(Display.getCurrent(), Display
-			.getDefault().getSystemFont().getFontData()[0].getName(), 7,
-			SWT.NORMAL);
+	static final Font MINUSLABEL4_FONT = new Font(Display.getCurrent(),
+			Display.getDefault().getSystemFont().getFontData()[0].getName(), 7, SWT.NORMAL);
 
 }

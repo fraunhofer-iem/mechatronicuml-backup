@@ -32,23 +32,20 @@ public abstract class ComponentSDDAbstractNavigatorItem extends PlatformObject {
 				return "org.muml.reconfiguration.verification.sdd.componentsdd.diagram"; //$NON-NLS-1$
 			}
 		};
-		Platform.getAdapterManager().registerAdapters(
-				new IAdapterFactory() {
+		Platform.getAdapterManager().registerAdapters(new IAdapterFactory() {
 
-					public Object getAdapter(Object adaptableObject,
-							Class adapterType) {
-						if (adaptableObject instanceof org.muml.reconfiguration.verification.sdd.componentsdd.diagram.navigator.ComponentSDDAbstractNavigatorItem
-								&& adapterType == ITabbedPropertySheetPageContributor.class) {
-							return propertySheetPageContributor;
-						}
-						return null;
-					}
+			public Object getAdapter(Object adaptableObject, Class adapterType) {
+				if (adaptableObject instanceof org.muml.reconfiguration.verification.sdd.componentsdd.diagram.navigator.ComponentSDDAbstractNavigatorItem
+						&& adapterType == ITabbedPropertySheetPageContributor.class) {
+					return propertySheetPageContributor;
+				}
+				return null;
+			}
 
-					public Class[] getAdapterList() {
-						return supportedTypes;
-					}
-				},
-				org.muml.reconfiguration.verification.sdd.componentsdd.diagram.navigator.ComponentSDDAbstractNavigatorItem.class);
+			public Class[] getAdapterList() {
+				return supportedTypes;
+			}
+		}, org.muml.reconfiguration.verification.sdd.componentsdd.diagram.navigator.ComponentSDDAbstractNavigatorItem.class);
 	}
 
 	/**

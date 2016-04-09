@@ -15,20 +15,18 @@ package org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.poli
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes;
 
 /**
  * @generated
  */
-public class DelegationVariableItemSemanticEditPolicy
-		extends
-		org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.policies.ComponentSDDBaseItemSemanticEditPolicy {
+public class DelegationVariableItemSemanticEditPolicy extends ComponentSDDBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public DelegationVariableItemSemanticEditPolicy() {
-		super(
-				org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.DelegationVariable_4003);
+		super(ComponentSDDElementTypes.DelegationVariable_4003);
 	}
 
 	/**

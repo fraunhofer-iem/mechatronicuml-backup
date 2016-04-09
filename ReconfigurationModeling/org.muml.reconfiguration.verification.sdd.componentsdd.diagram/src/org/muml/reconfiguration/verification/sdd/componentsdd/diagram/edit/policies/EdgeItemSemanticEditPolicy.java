@@ -15,20 +15,18 @@ package org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.poli
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes;
 
 /**
  * @generated
  */
-public class EdgeItemSemanticEditPolicy
-		extends
-		org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.policies.ComponentSDDBaseItemSemanticEditPolicy {
+public class EdgeItemSemanticEditPolicy extends ComponentSDDBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public EdgeItemSemanticEditPolicy() {
-		super(
-				org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.Edge_4001);
+		super(ComponentSDDElementTypes.Edge_4001);
 	}
 
 	/**

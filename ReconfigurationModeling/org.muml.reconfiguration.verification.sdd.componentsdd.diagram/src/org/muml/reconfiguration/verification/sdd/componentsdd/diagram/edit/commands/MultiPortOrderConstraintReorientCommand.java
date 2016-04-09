@@ -20,6 +20,12 @@ import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy;
+import org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy;
+import org.muml.reconfiguration.componentstorypattern.MultiPortOrderConstraint;
+import org.muml.reconfiguration.componentstorypattern.MultiPortVariable;
+import org.muml.reconfiguration.componentstorypattern.SinglePortVariable;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.policies.ComponentSDDBaseItemSemanticEditPolicy;
 
 /**
  * @generated
@@ -44,8 +50,7 @@ public class MultiPortOrderConstraintReorientCommand extends EditElementCommand 
 	/**
 	 * @generated
 	 */
-	public MultiPortOrderConstraintReorientCommand(
-			ReorientRelationshipRequest request) {
+	public MultiPortOrderConstraintReorientCommand(ReorientRelationshipRequest request) {
 		super(request.getLabel(), request.getRelationship(), request);
 		reorientDirection = request.getDirection();
 		oldEnd = request.getOldRelationshipEnd();
@@ -56,7 +61,7 @@ public class MultiPortOrderConstraintReorientCommand extends EditElementCommand 
 	 * @generated
 	 */
 	public boolean canExecute() {
-		if (false == getElementToEdit() instanceof org.muml.reconfiguration.componentstorypattern.MultiPortOrderConstraint) {
+		if (false == getElementToEdit() instanceof MultiPortOrderConstraint) {
 			return false;
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
@@ -72,30 +77,21 @@ public class MultiPortOrderConstraintReorientCommand extends EditElementCommand 
 	 * @generated
 	 */
 	protected boolean canReorientSource() {
-		if (!(oldEnd instanceof org.muml.reconfiguration.componentstorypattern.SinglePortVariable && newEnd instanceof org.muml.reconfiguration.componentstorypattern.SinglePortVariable)) {
+		if (!(oldEnd instanceof SinglePortVariable && newEnd instanceof SinglePortVariable)) {
 			return false;
 		}
-		org.muml.reconfiguration.componentstorypattern.SinglePortVariable target = getLink()
-				.getTgtSubPortVariable();
-		if (!(getLink().eContainer() instanceof org.muml.reconfiguration.componentstorypattern.MultiPortVariable)) {
+		SinglePortVariable target = getLink().getTgtSubPortVariable();
+		if (!(getLink().eContainer() instanceof MultiPortVariable)) {
 			return false;
 		}
-		org.muml.reconfiguration.componentstorypattern.MultiPortVariable container = (org.muml.reconfiguration.componentstorypattern.MultiPortVariable) getLink()
-				.eContainer();
-		View sourceView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-				.getSourceView(getRequest());
-		View targetView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-				.getTargetView(getRequest());
-		if (!org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.policies.ComponentSDDBaseItemSemanticEditPolicy
-				.getLinkConstraints().canExistMultiPortOrderConstraint_4004(
-						container, getLink(), getNewSource(), target,
-						sourceView, targetView)) {
-			String errorMessage = org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.policies.ComponentSDDBaseItemSemanticEditPolicy
-					.getLinkConstraints()
-					.getErrorMultiPortOrderConstraint_4004(container,
-							getNewSource(), target, sourceView, targetView);
-			org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy
-					.showMessage(sourceView, errorMessage);
+		MultiPortVariable container = (MultiPortVariable) getLink().eContainer();
+		View sourceView = ConnectionConfigureHelperGraphicalNodeEditPolicy.getSourceView(getRequest());
+		View targetView = ConnectionConfigureHelperGraphicalNodeEditPolicy.getTargetView(getRequest());
+		if (!ComponentSDDBaseItemSemanticEditPolicy.getLinkConstraints().canExistMultiPortOrderConstraint_4004(
+				container, getLink(), getNewSource(), target, sourceView, targetView)) {
+			String errorMessage = ComponentSDDBaseItemSemanticEditPolicy.getLinkConstraints()
+					.getErrorMultiPortOrderConstraint_4004(container, getNewSource(), target, sourceView, targetView);
+			ErrorFeedbackEditPolicy.showMessage(sourceView, errorMessage);
 			return false;
 		}
 		return true;
@@ -105,30 +101,21 @@ public class MultiPortOrderConstraintReorientCommand extends EditElementCommand 
 	 * @generated
 	 */
 	protected boolean canReorientTarget() {
-		if (!(oldEnd instanceof org.muml.reconfiguration.componentstorypattern.SinglePortVariable && newEnd instanceof org.muml.reconfiguration.componentstorypattern.SinglePortVariable)) {
+		if (!(oldEnd instanceof SinglePortVariable && newEnd instanceof SinglePortVariable)) {
 			return false;
 		}
-		org.muml.reconfiguration.componentstorypattern.SinglePortVariable source = getLink()
-				.getSrcSubPortVariable();
-		if (!(getLink().eContainer() instanceof org.muml.reconfiguration.componentstorypattern.MultiPortVariable)) {
+		SinglePortVariable source = getLink().getSrcSubPortVariable();
+		if (!(getLink().eContainer() instanceof MultiPortVariable)) {
 			return false;
 		}
-		org.muml.reconfiguration.componentstorypattern.MultiPortVariable container = (org.muml.reconfiguration.componentstorypattern.MultiPortVariable) getLink()
-				.eContainer();
-		View sourceView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-				.getSourceView(getRequest());
-		View targetView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-				.getTargetView(getRequest());
-		if (!org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.policies.ComponentSDDBaseItemSemanticEditPolicy
-				.getLinkConstraints().canExistMultiPortOrderConstraint_4004(
-						container, getLink(), source, getNewTarget(),
-						sourceView, targetView)) {
-			String errorMessage = org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.policies.ComponentSDDBaseItemSemanticEditPolicy
-					.getLinkConstraints()
-					.getErrorMultiPortOrderConstraint_4004(container, source,
-							getNewTarget(), sourceView, targetView);
-			org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy
-					.showMessage(sourceView, errorMessage);
+		MultiPortVariable container = (MultiPortVariable) getLink().eContainer();
+		View sourceView = ConnectionConfigureHelperGraphicalNodeEditPolicy.getSourceView(getRequest());
+		View targetView = ConnectionConfigureHelperGraphicalNodeEditPolicy.getTargetView(getRequest());
+		if (!ComponentSDDBaseItemSemanticEditPolicy.getLinkConstraints().canExistMultiPortOrderConstraint_4004(
+				container, getLink(), source, getNewTarget(), sourceView, targetView)) {
+			String errorMessage = ComponentSDDBaseItemSemanticEditPolicy.getLinkConstraints()
+					.getErrorMultiPortOrderConstraint_4004(container, source, getNewTarget(), sourceView, targetView);
+			ErrorFeedbackEditPolicy.showMessage(sourceView, errorMessage);
 			return false;
 		}
 		return true;
@@ -137,11 +124,9 @@ public class MultiPortOrderConstraintReorientCommand extends EditElementCommand 
 	/**
 	 * @generated
 	 */
-	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
-			IAdaptable info) throws ExecutionException {
+	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		if (!canExecute()) {
-			throw new ExecutionException(
-					"Invalid arguments in reorient link command"); //$NON-NLS-1$
+			throw new ExecutionException("Invalid arguments in reorient link command"); //$NON-NLS-1$
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
 			return reorientSource();
@@ -175,36 +160,36 @@ public class MultiPortOrderConstraintReorientCommand extends EditElementCommand 
 	/**
 	 * @generated
 	 */
-	protected org.muml.reconfiguration.componentstorypattern.MultiPortOrderConstraint getLink() {
-		return (org.muml.reconfiguration.componentstorypattern.MultiPortOrderConstraint) getElementToEdit();
+	protected MultiPortOrderConstraint getLink() {
+		return (MultiPortOrderConstraint) getElementToEdit();
 	}
 
 	/**
 	 * @generated
 	 */
-	protected org.muml.reconfiguration.componentstorypattern.SinglePortVariable getOldSource() {
-		return (org.muml.reconfiguration.componentstorypattern.SinglePortVariable) oldEnd;
+	protected SinglePortVariable getOldSource() {
+		return (SinglePortVariable) oldEnd;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected org.muml.reconfiguration.componentstorypattern.SinglePortVariable getNewSource() {
-		return (org.muml.reconfiguration.componentstorypattern.SinglePortVariable) newEnd;
+	protected SinglePortVariable getNewSource() {
+		return (SinglePortVariable) newEnd;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected org.muml.reconfiguration.componentstorypattern.SinglePortVariable getOldTarget() {
-		return (org.muml.reconfiguration.componentstorypattern.SinglePortVariable) oldEnd;
+	protected SinglePortVariable getOldTarget() {
+		return (SinglePortVariable) oldEnd;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected org.muml.reconfiguration.componentstorypattern.SinglePortVariable getNewTarget() {
-		return (org.muml.reconfiguration.componentstorypattern.SinglePortVariable) newEnd;
+	protected SinglePortVariable getNewTarget() {
+		return (SinglePortVariable) newEnd;
 	}
 
 	/**

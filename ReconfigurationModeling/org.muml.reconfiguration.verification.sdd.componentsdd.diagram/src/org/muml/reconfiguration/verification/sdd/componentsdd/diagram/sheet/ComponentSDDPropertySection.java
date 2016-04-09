@@ -21,12 +21,13 @@ import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
 import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.gmf.tooling.runtime.sheet.DefaultPropertySection;
 import org.eclipse.ui.views.properties.IPropertySourceProvider;
+import org.muml.core.common.FujabaCommonPlugin;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDDiagramEditorPlugin;
 
 /**
  * @generated
  */
-public class ComponentSDDPropertySection extends DefaultPropertySection
-		implements IPropertySourceProvider {
+public class ComponentSDDPropertySection extends DefaultPropertySection implements IPropertySourceProvider {
 
 	/**
 	 * Modify/unwrap selection.
@@ -45,16 +46,10 @@ public class ComponentSDDPropertySection extends DefaultPropertySection
 		AdapterFactoryEditingDomain editingDomain = getEditingDomainFor(object);
 		if (editingDomain != null) {
 			AdapterFactory defaultFactory = editingDomain.getAdapterFactory();
-			List<AdapterFactory> positivePriorityFactories = org.muml.core.common.FujabaCommonPlugin
-					.getInstance()
-					.getCustomItemProviderAdapterFactories(
-							org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDDiagramEditorPlugin.ID,
-							true);
-			List<AdapterFactory> negativePriorityFactories = org.muml.core.common.FujabaCommonPlugin
-					.getInstance()
-					.getCustomItemProviderAdapterFactories(
-							org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDDiagramEditorPlugin.ID,
-							false);
+			List<AdapterFactory> positivePriorityFactories = FujabaCommonPlugin.getInstance()
+					.getCustomItemProviderAdapterFactories(ComponentSDDDiagramEditorPlugin.ID, true);
+			List<AdapterFactory> negativePriorityFactories = FujabaCommonPlugin.getInstance()
+					.getCustomItemProviderAdapterFactories(ComponentSDDDiagramEditorPlugin.ID, false);
 
 			// Put all factories into one composed adapter factory.
 			List<AdapterFactory> factories = new ArrayList<AdapterFactory>();
@@ -73,8 +68,7 @@ public class ComponentSDDPropertySection extends DefaultPropertySection
 		if (getEditingDomain() instanceof AdapterFactoryEditingDomain) {
 			return (AdapterFactoryEditingDomain) getEditingDomain();
 		}
-		return (AdapterFactoryEditingDomain) TransactionUtil
-				.getEditingDomain(object);
+		return (AdapterFactoryEditingDomain) TransactionUtil.getEditingDomain(object);
 	}
 
 }

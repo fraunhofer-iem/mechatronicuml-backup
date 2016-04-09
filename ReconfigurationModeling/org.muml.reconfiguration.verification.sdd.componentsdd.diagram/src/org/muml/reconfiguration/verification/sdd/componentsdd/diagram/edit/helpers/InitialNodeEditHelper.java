@@ -15,7 +15,5 @@ package org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.help
 /**
  * @generated
  */
-public class InitialNodeEditHelper
-		extends
-		org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.helpers.ComponentSDDBaseEditHelper {
+public class InitialNodeEditHelper extends ComponentSDDBaseEditHelper {
 }

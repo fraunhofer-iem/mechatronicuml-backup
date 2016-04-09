@@ -13,6 +13,9 @@
 package org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers;
 
 import org.eclipse.gmf.tooling.runtime.providers.DefaultEditPartProvider;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.ComponentSDDEditPartFactory;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.ComponentStoryDecisionDiagramEditPart;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDVisualIDRegistry;
 
 /**
  * @generated
@@ -23,10 +26,8 @@ public class ComponentSDDEditPartProvider extends DefaultEditPartProvider {
 	 * @generated
 	 */
 	public ComponentSDDEditPartProvider() {
-		super(
-				new org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.ComponentSDDEditPartFactory(),
-				org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDVisualIDRegistry.TYPED_INSTANCE,
-				org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.ComponentStoryDecisionDiagramEditPart.MODEL_ID);
+		super(new ComponentSDDEditPartFactory(), ComponentSDDVisualIDRegistry.TYPED_INSTANCE,
+				ComponentStoryDecisionDiagramEditPart.MODEL_ID);
 	}
 
 }

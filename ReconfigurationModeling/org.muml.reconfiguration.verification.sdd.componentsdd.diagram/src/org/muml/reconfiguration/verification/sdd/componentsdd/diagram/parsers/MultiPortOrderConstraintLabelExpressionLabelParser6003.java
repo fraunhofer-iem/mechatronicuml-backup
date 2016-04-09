@@ -31,12 +31,13 @@ import org.eclipse.gmf.runtime.common.ui.services.parser.ParserEditStatus;
 import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand;
 import org.eclipse.gmf.tooling.runtime.parsers.ExpressionLabelParserBase;
 import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
+import org.muml.reconfiguration.componentstorypattern.ComponentstorypatternPackage;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.expressions.ComponentSDDOCLFactory;
 
 /**
  * @generated
  */
-public class MultiPortOrderConstraintLabelExpressionLabelParser6003 extends
-		ExpressionLabelParserBase {
+public class MultiPortOrderConstraintLabelExpressionLabelParser6003 extends ExpressionLabelParserBase {
 	/**
 	 * @generated
 	 */
@@ -48,11 +49,8 @@ public class MultiPortOrderConstraintLabelExpressionLabelParser6003 extends
 	 */
 	@Override
 	protected String getExpressionBody() {
-		return org.muml.reconfiguration.verification.sdd.componentsdd.diagram.expressions.ComponentSDDOCLFactory
-				.getExpression(
-						23,
-						org.muml.reconfiguration.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
-								.getMultiPortOrderConstraint(), null).body();
+		return ComponentSDDOCLFactory
+				.getExpression(23, ComponentstorypatternPackage.eINSTANCE.getMultiPortOrderConstraint(), null).body();
 	}
 
 	/**
@@ -65,31 +63,26 @@ public class MultiPortOrderConstraintLabelExpressionLabelParser6003 extends
 	/**
 	 * @generated
 	 */
-	public IParserEditStatus isValidEditString(IAdaptable element,
-			String editString) {
+	public IParserEditStatus isValidEditString(IAdaptable element, String editString) {
 		return ParserEditStatus.EDITABLE_STATUS;
 	}
 
 	/**
 	 * @generated
 	 */
-	public ICommand getParseCommand(IAdaptable element, final String newString,
-			int flags) {
+	public ICommand getParseCommand(IAdaptable element, final String newString, int flags) {
 		final EObject target = (EObject) element.getAdapter(EObject.class);
 		if (!validateValues(target, newString)) {
 			return UnexecutableCommand.INSTANCE;
 		}
-		TransactionalEditingDomain editingDomain = TransactionUtil
-				.getEditingDomain(target);
+		TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(target);
 		if (editingDomain == null) {
 			return UnexecutableCommand.INSTANCE;
 		}
 		IFile affectedFile = WorkspaceSynchronizer.getFile(target.eResource());
-		return new AbstractTransactionalCommand(
-				editingDomain,
-				"Set Values", affectedFile == null ? null : Collections.singletonList(affectedFile)) { //$NON-NLS-1$ 
-			protected CommandResult doExecuteWithResult(
-					IProgressMonitor monitor, IAdaptable info)
+		return new AbstractTransactionalCommand(editingDomain, "Set Values", //$NON-NLS-1$
+				affectedFile == null ? null : Collections.singletonList(affectedFile)) {
+			protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info)
 					throws ExecutionException {
 				return new CommandResult(updateValues(target, newString));
 			}
@@ -114,12 +107,10 @@ public class MultiPortOrderConstraintLabelExpressionLabelParser6003 extends
 	/**
 	 * @generated
 	 */
-	protected IStatus updateValues(EObject target, String newString)
-			throws ExecutionException {
+	protected IStatus updateValues(EObject target, String newString) throws ExecutionException {
 		// TODO implement this method
 		// DO NOT FORGET to remove @generated tag or mark method @generated NOT
-		throw new ExecutionException(
-				"Please implement parsing and value modification");
+		throw new ExecutionException("Please implement parsing and value modification");
 	}
 
 	/**

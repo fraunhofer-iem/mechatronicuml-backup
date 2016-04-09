@@ -47,6 +47,22 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.edit.helpers.GeneratedEditHelperBase;
+import org.muml.pim.connector.ConnectorEndpoint;
+import org.muml.pim.connector.ConnectorPackage;
+import org.muml.reconfiguration.componentstorypattern.AssemblyVariable;
+import org.muml.reconfiguration.componentstorypattern.ComponentVariable;
+import org.muml.reconfiguration.componentstorypattern.DelegationVariable;
+import org.muml.reconfiguration.componentstorypattern.MultiPortOrderConstraint;
+import org.muml.reconfiguration.componentstorypattern.MultiPortVariable;
+import org.muml.reconfiguration.componentstorypattern.SinglePortVariable;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.expressions.ComponentSDDAbstractExpression;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.expressions.ComponentSDDOCLFactory;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDDiagramEditorPlugin;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDVisualIDRegistry;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes;
+import org.muml.storydiagram.verification.sdd.AbstractStoryDecisionDiagram;
+import org.muml.storydiagram.verification.sdd.Edge;
+import org.muml.storydiagram.verification.sdd.Node;
 
 /**
  * @generated
@@ -82,12 +98,9 @@ public class ComponentSDDBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 	 */
 	public Command getCommand(Request request) {
 		if (request instanceof ReconnectRequest) {
-			Object view = ((ReconnectRequest) request).getConnectionEditPart()
-					.getModel();
+			Object view = ((ReconnectRequest) request).getConnectionEditPart().getModel();
 			if (view instanceof View) {
-				Integer id = new Integer(
-						org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDVisualIDRegistry
-								.getVisualID((View) view));
+				Integer id = new Integer(ComponentSDDVisualIDRegistry.getVisualID((View) view));
 				request.getExtendedData().put(VISUAL_ID_KEY, id);
 			}
 		}
@@ -109,12 +122,10 @@ public class ComponentSDDBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 	protected Command getSemanticCommand(IEditCommandRequest request) {
 		IEditCommandRequest completedRequest = completeRequest(request);
 		Command semanticCommand = getSemanticCommandSwitch(completedRequest);
-		semanticCommand = getEditHelperCommand(completedRequest,
-				semanticCommand);
+		semanticCommand = getEditHelperCommand(completedRequest, semanticCommand);
 		if (completedRequest instanceof DestroyRequest) {
 			DestroyRequest destroyRequest = (DestroyRequest) completedRequest;
-			return shouldProceed(destroyRequest) ? addDeleteViewCommand(
-					semanticCommand, destroyRequest) : null;
+			return shouldProceed(destroyRequest) ? addDeleteViewCommand(semanticCommand, destroyRequest) : null;
 		}
 		return semanticCommand;
 	}
@@ -122,35 +133,28 @@ public class ComponentSDDBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 	/**
 	 * @generated
 	 */
-	protected Command addDeleteViewCommand(Command mainCommand,
-			DestroyRequest completedRequest) {
-		Command deleteViewCommand = getGEFWrapper(new DeleteCommand(
-				getEditingDomain(), (View) getHost().getModel()));
-		return mainCommand == null ? deleteViewCommand : mainCommand
-				.chain(deleteViewCommand);
+	protected Command addDeleteViewCommand(Command mainCommand, DestroyRequest completedRequest) {
+		Command deleteViewCommand = getGEFWrapper(new DeleteCommand(getEditingDomain(), (View) getHost().getModel()));
+		return mainCommand == null ? deleteViewCommand : mainCommand.chain(deleteViewCommand);
 	}
 
 	/**
 	 * @generated
 	 */
-	private Command getEditHelperCommand(IEditCommandRequest request,
-			Command editPolicyCommand) {
+	private Command getEditHelperCommand(IEditCommandRequest request, Command editPolicyCommand) {
 		if (editPolicyCommand != null) {
-			ICommand command = editPolicyCommand instanceof ICommandProxy ? ((ICommandProxy) editPolicyCommand)
-					.getICommand() : new CommandProxy(editPolicyCommand);
-			request.setParameter(GeneratedEditHelperBase.EDIT_POLICY_COMMAND,
-					command);
+			ICommand command = editPolicyCommand instanceof ICommandProxy
+					? ((ICommandProxy) editPolicyCommand).getICommand() : new CommandProxy(editPolicyCommand);
+			request.setParameter(GeneratedEditHelperBase.EDIT_POLICY_COMMAND, command);
 		}
 		IElementType requestContextElementType = getContextElementType(request);
-		request.setParameter(GeneratedEditHelperBase.CONTEXT_ELEMENT_TYPE,
-				requestContextElementType);
+		request.setParameter(GeneratedEditHelperBase.CONTEXT_ELEMENT_TYPE, requestContextElementType);
 		ICommand command = requestContextElementType.getEditCommand(request);
 		request.setParameter(GeneratedEditHelperBase.EDIT_POLICY_COMMAND, null);
 		request.setParameter(GeneratedEditHelperBase.CONTEXT_ELEMENT_TYPE, null);
 		if (command != null) {
 			if (!(command instanceof CompositeTransactionalCommand)) {
-				command = new CompositeTransactionalCommand(getEditingDomain(),
-						command.getLabel()).compose(command);
+				command = new CompositeTransactionalCommand(getEditingDomain(), command.getLabel()).compose(command);
 			}
 			return new ICommandProxy(command);
 		}
@@ -161,10 +165,8 @@ public class ComponentSDDBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 	 * @generated
 	 */
 	private IElementType getContextElementType(IEditCommandRequest request) {
-		IElementType requestContextElementType = org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes
-				.getElementType(getVisualID(request));
-		return requestContextElementType != null ? requestContextElementType
-				: myElementType;
+		IElementType requestContextElementType = ComponentSDDElementTypes.getElementType(getVisualID(request));
+		return requestContextElementType != null ? requestContextElementType : myElementType;
 	}
 
 	/**
@@ -263,16 +265,14 @@ public class ComponentSDDBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 	/**
 	 * @generated
 	 */
-	protected Command getReorientReferenceRelationshipCommand(
-			ReorientReferenceRelationshipRequest req) {
+	protected Command getReorientReferenceRelationshipCommand(ReorientReferenceRelationshipRequest req) {
 		return UnexecutableCommand.INSTANCE;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected Command getReorientRelationshipCommand(
-			ReorientRelationshipRequest req) {
+	protected Command getReorientRelationshipCommand(ReorientRelationshipRequest req) {
 		return UnexecutableCommand.INSTANCE;
 	}
 
@@ -297,10 +297,10 @@ public class ComponentSDDBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 	 */
 	protected void addDestroyShortcutsCommand(ICompositeCommand cmd, View view) {
 		assert view.getEAnnotation("Shortcut") == null; //$NON-NLS-1$
-		for (Iterator it = view.getDiagram().getChildren().iterator(); it
-				.hasNext();) {
+		for (Iterator it = view.getDiagram().getChildren().iterator(); it.hasNext();) {
 			View nextView = (View) it.next();
-			if (nextView.getEAnnotation("Shortcut") == null || !nextView.isSetElement() || nextView.getElement() != view.getElement()) { //$NON-NLS-1$
+			if (nextView.getEAnnotation("Shortcut") == null || !nextView.isSetElement() //$NON-NLS-1$
+					|| nextView.getElement() != view.getElement()) {
 				continue;
 			}
 			cmd.add(new DeleteCommand(getEditingDomain(), nextView));
@@ -311,12 +311,9 @@ public class ComponentSDDBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 	 * @generated
 	 */
 	public static LinkConstraints getLinkConstraints() {
-		LinkConstraints cached = org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDDiagramEditorPlugin
-				.getInstance().getLinkConstraints();
+		LinkConstraints cached = ComponentSDDDiagramEditorPlugin.getInstance().getLinkConstraints();
 		if (cached == null) {
-			org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDDiagramEditorPlugin
-					.getInstance().setLinkConstraints(
-							cached = new LinkConstraints());
+			ComponentSDDDiagramEditorPlugin.getInstance().setLinkConstraints(cached = new LinkConstraints());
 		}
 		return cached;
 	}
@@ -334,108 +331,76 @@ public class ComponentSDDBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		}
 
 		/**
-		 * @generated
-		 */
-		public boolean canCreateEdge_4001(
-				org.muml.storydiagram.verification.sdd.AbstractStoryDecisionDiagram container,
-				org.muml.storydiagram.verification.sdd.Node source,
-				org.muml.storydiagram.verification.sdd.Node target,
+		* @generated
+		*/
+		public boolean canCreateEdge_4001(AbstractStoryDecisionDiagram container, Node source, Node target,
 				View sourceView, View targetView) {
-			return canExistEdge_4001(container, null, source, target,
-					sourceView, targetView);
+			return canExistEdge_4001(container, null, source, target, sourceView, targetView);
 		}
 
 		/**
-		 * @generated
-		 */
-		public boolean canCreateAssemblyVariable_4002(
-				org.muml.reconfiguration.componentstorypattern.ComponentVariable container,
-				org.muml.pim.connector.ConnectorEndpoint source,
-				org.muml.pim.connector.ConnectorEndpoint target,
-				View sourceView, View targetView) {
-			return canExistAssemblyVariable_4002(container, null, source,
-					target, sourceView, targetView);
+		* @generated
+		*/
+		public boolean canCreateAssemblyVariable_4002(ComponentVariable container, ConnectorEndpoint source,
+				ConnectorEndpoint target, View sourceView, View targetView) {
+			return canExistAssemblyVariable_4002(container, null, source, target, sourceView, targetView);
 		}
 
 		/**
-		 * @generated
-		 */
-		public boolean canCreateDelegationVariable_4003(
-				org.muml.reconfiguration.componentstorypattern.ComponentVariable container,
-				org.muml.pim.connector.ConnectorEndpoint source,
-				org.muml.pim.connector.ConnectorEndpoint target,
-				View sourceView, View targetView) {
-			return canExistDelegationVariable_4003(container, null, source,
-					target, sourceView, targetView);
+		* @generated
+		*/
+		public boolean canCreateDelegationVariable_4003(ComponentVariable container, ConnectorEndpoint source,
+				ConnectorEndpoint target, View sourceView, View targetView) {
+			return canExistDelegationVariable_4003(container, null, source, target, sourceView, targetView);
 		}
 
 		/**
-		 * @generated
-		 */
-		public boolean canCreateMultiPortOrderConstraint_4004(
-				org.muml.reconfiguration.componentstorypattern.MultiPortVariable container,
-				org.muml.reconfiguration.componentstorypattern.SinglePortVariable source,
-				org.muml.reconfiguration.componentstorypattern.SinglePortVariable target,
-				View sourceView, View targetView) {
-			return canExistMultiPortOrderConstraint_4004(container, null,
-					source, target, sourceView, targetView);
+		* @generated
+		*/
+		public boolean canCreateMultiPortOrderConstraint_4004(MultiPortVariable container, SinglePortVariable source,
+				SinglePortVariable target, View sourceView, View targetView) {
+			return canExistMultiPortOrderConstraint_4004(container, null, source, target, sourceView, targetView);
 		}
 
 		/**
-		 * @generated
-		 */
-		public boolean canExistEdge_4001(
-				org.muml.storydiagram.verification.sdd.AbstractStoryDecisionDiagram container,
-				org.muml.storydiagram.verification.sdd.Edge linkInstance,
-				org.muml.storydiagram.verification.sdd.Node source,
-				org.muml.storydiagram.verification.sdd.Node target,
-				View sourceView, View targetView) {
+		* @generated
+		*/
+		public boolean canExistEdge_4001(AbstractStoryDecisionDiagram container, Edge linkInstance, Node source,
+				Node target, View sourceView, View targetView) {
 			return true;
 		}
 
 		/**
-		 * @generated
-		 */
-		public java.lang.String getErrorEdge_4001(
-				org.muml.storydiagram.verification.sdd.AbstractStoryDecisionDiagram container,
-				org.muml.storydiagram.verification.sdd.Node source,
-				org.muml.storydiagram.verification.sdd.Node target,
+		* @generated
+		*/
+		public java.lang.String getErrorEdge_4001(AbstractStoryDecisionDiagram container, Node source, Node target,
 				View sourceView, View targetView) {
 			return null;
 		}
 
 		/**
-		 * @generated
-		 */
-		public boolean canExistAssemblyVariable_4002(
-				org.muml.reconfiguration.componentstorypattern.ComponentVariable container,
-				org.muml.reconfiguration.componentstorypattern.AssemblyVariable linkInstance,
-				org.muml.pim.connector.ConnectorEndpoint source,
-				org.muml.pim.connector.ConnectorEndpoint target,
-				View sourceView, View targetView) {
+		* @generated
+		*/
+		public boolean canExistAssemblyVariable_4002(ComponentVariable container, AssemblyVariable linkInstance,
+				ConnectorEndpoint source, ConnectorEndpoint target, View sourceView, View targetView) {
 			try {
 				if (source == null) {
 					return true;
 				} else {
 					Map<String, EClassifier> envType = new HashMap<String, EClassifier>();
 					Map<String, Object> env = new HashMap<String, Object>();
-					envType.put(
-							"oppositeEnd", org.muml.pim.connector.ConnectorPackage.eINSTANCE.getConnectorEndpoint()); //$NON-NLS-1$
+					envType.put("oppositeEnd", ConnectorPackage.eINSTANCE.getConnectorEndpoint()); //$NON-NLS-1$
 					env.put("oppositeEnd", target);
 					envType.put("view", NotationPackage.Literals.VIEW);
 					env.put("view", sourceView);
 					envType.put("oppositeView", NotationPackage.Literals.VIEW);
 					env.put("oppositeView", targetView);
 
-					org.muml.reconfiguration.verification.sdd.componentsdd.diagram.expressions.ComponentSDDAbstractExpression expression = org.muml.reconfiguration.verification.sdd.componentsdd.diagram.expressions.ComponentSDDOCLFactory
-							.getExpression(
-									18,
-									org.muml.pim.connector.ConnectorPackage.eINSTANCE
-											.getConnectorEndpoint(), envType);
+					ComponentSDDAbstractExpression expression = ComponentSDDOCLFactory.getExpression(18,
+							ConnectorPackage.eINSTANCE.getConnectorEndpoint(), envType);
 					Object sourceVal = expression.evaluate(source, env); //$NON-NLS-1$
 
-					if (false == sourceVal instanceof Boolean
-							|| !((Boolean) sourceVal).booleanValue()) {
+					if (false == sourceVal instanceof Boolean || !((Boolean) sourceVal).booleanValue()) {
 						return false;
 					} // else fall-through
 				}
@@ -444,66 +409,51 @@ public class ComponentSDDBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 				} else {
 					Map<String, EClassifier> envType = new HashMap<String, EClassifier>();
 					Map<String, Object> env = new HashMap<String, Object>();
-					envType.put(
-							"oppositeEnd", org.muml.pim.connector.ConnectorPackage.eINSTANCE.getConnectorEndpoint()); //$NON-NLS-1$
+					envType.put("oppositeEnd", ConnectorPackage.eINSTANCE.getConnectorEndpoint()); //$NON-NLS-1$
 					env.put("oppositeEnd", source);
 					envType.put("view", NotationPackage.Literals.VIEW);
 					env.put("view", targetView);
 					envType.put("oppositeView", NotationPackage.Literals.VIEW);
 					env.put("oppositeView", sourceView);
 
-					org.muml.reconfiguration.verification.sdd.componentsdd.diagram.expressions.ComponentSDDAbstractExpression expression = org.muml.reconfiguration.verification.sdd.componentsdd.diagram.expressions.ComponentSDDOCLFactory
-							.getExpression(
-									19,
-									org.muml.pim.connector.ConnectorPackage.eINSTANCE
-											.getConnectorEndpoint(), envType);
+					ComponentSDDAbstractExpression expression = ComponentSDDOCLFactory.getExpression(19,
+							ConnectorPackage.eINSTANCE.getConnectorEndpoint(), envType);
 					Object targetVal = expression.evaluate(target, env); //$NON-NLS-1$
 
-					if (false == targetVal instanceof Boolean
-							|| !((Boolean) targetVal).booleanValue()) {
+					if (false == targetVal instanceof Boolean || !((Boolean) targetVal).booleanValue()) {
 						return false;
 					} // else fall-through
 				}
 				return true;
 			} catch (Exception e) {
-				org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDDiagramEditorPlugin
-						.getInstance().logError(
-								"Link constraint evaluation error", e); //$NON-NLS-1$
+				ComponentSDDDiagramEditorPlugin.getInstance().logError("Link constraint evaluation error", e); //$NON-NLS-1$
 				return false;
 			}
 		}
 
 		/**
-		 * @generated
-		 */
-		public java.lang.String getErrorAssemblyVariable_4002(
-				org.muml.reconfiguration.componentstorypattern.ComponentVariable container,
-				org.muml.pim.connector.ConnectorEndpoint source,
-				org.muml.pim.connector.ConnectorEndpoint target,
-				View sourceView, View targetView) {
+		* @generated
+		*/
+		public java.lang.String getErrorAssemblyVariable_4002(ComponentVariable container, ConnectorEndpoint source,
+				ConnectorEndpoint target, View sourceView, View targetView) {
 			try {
 				if (source == null) {
 					return null;
 				} else {
 					Map<String, EClassifier> envType = new HashMap<String, EClassifier>();
 					Map<String, Object> env = new HashMap<String, Object>();
-					envType.put(
-							"oppositeEnd", org.muml.pim.connector.ConnectorPackage.eINSTANCE.getConnectorEndpoint()); //$NON-NLS-1$
+					envType.put("oppositeEnd", ConnectorPackage.eINSTANCE.getConnectorEndpoint()); //$NON-NLS-1$
 					env.put("oppositeEnd", target);
 					envType.put("view", NotationPackage.Literals.VIEW);
 					env.put("view", sourceView);
 					envType.put("oppositeView", NotationPackage.Literals.VIEW);
 					env.put("oppositeView", targetView);
 
-					org.muml.reconfiguration.verification.sdd.componentsdd.diagram.expressions.ComponentSDDAbstractExpression expression = org.muml.reconfiguration.verification.sdd.componentsdd.diagram.expressions.ComponentSDDOCLFactory
-							.getExpression(
-									18,
-									org.muml.pim.connector.ConnectorPackage.eINSTANCE
-											.getConnectorEndpoint(), envType);
+					ComponentSDDAbstractExpression expression = ComponentSDDOCLFactory.getExpression(18,
+							ConnectorPackage.eINSTANCE.getConnectorEndpoint(), envType);
 					Object sourceVal = expression.evaluate(source, env); //$NON-NLS-1$
 
-					if (false == sourceVal instanceof Boolean
-							|| !((Boolean) sourceVal).booleanValue()) {
+					if (false == sourceVal instanceof Boolean || !((Boolean) sourceVal).booleanValue()) {
 						String body = expression.body().trim();
 						if (body.startsWith("--")) {
 							int end = body.indexOf('\n');
@@ -524,23 +474,18 @@ public class ComponentSDDBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 				} else {
 					Map<String, EClassifier> envType = new HashMap<String, EClassifier>();
 					Map<String, Object> env = new HashMap<String, Object>();
-					envType.put(
-							"oppositeEnd", org.muml.pim.connector.ConnectorPackage.eINSTANCE.getConnectorEndpoint()); //$NON-NLS-1$
+					envType.put("oppositeEnd", ConnectorPackage.eINSTANCE.getConnectorEndpoint()); //$NON-NLS-1$
 					env.put("oppositeEnd", source);
 					envType.put("view", NotationPackage.Literals.VIEW);
 					env.put("view", targetView);
 					envType.put("oppositeView", NotationPackage.Literals.VIEW);
 					env.put("oppositeView", sourceView);
 
-					org.muml.reconfiguration.verification.sdd.componentsdd.diagram.expressions.ComponentSDDAbstractExpression expression = org.muml.reconfiguration.verification.sdd.componentsdd.diagram.expressions.ComponentSDDOCLFactory
-							.getExpression(
-									19,
-									org.muml.pim.connector.ConnectorPackage.eINSTANCE
-											.getConnectorEndpoint(), envType);
+					ComponentSDDAbstractExpression expression = ComponentSDDOCLFactory.getExpression(19,
+							ConnectorPackage.eINSTANCE.getConnectorEndpoint(), envType);
 					Object targetVal = expression.evaluate(target, env); //$NON-NLS-1$
 
-					if (false == targetVal instanceof Boolean
-							|| !((Boolean) targetVal).booleanValue()) {
+					if (false == targetVal instanceof Boolean || !((Boolean) targetVal).booleanValue()) {
 						String body = expression.body().trim();
 						if (body.startsWith("--")) {
 							int end = body.indexOf('\n');
@@ -558,45 +503,34 @@ public class ComponentSDDBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 				}
 				return null;
 			} catch (Exception e) {
-				org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDDiagramEditorPlugin
-						.getInstance().logError(
-								"Link constraint evaluation error", e); //$NON-NLS-1$
+				ComponentSDDDiagramEditorPlugin.getInstance().logError("Link constraint evaluation error", e); //$NON-NLS-1$
 				return "Link constraint evaluation error";
 			}
 		}
 
 		/**
-		 * @generated
-		 */
-		public boolean canExistDelegationVariable_4003(
-				org.muml.reconfiguration.componentstorypattern.ComponentVariable container,
-				org.muml.reconfiguration.componentstorypattern.DelegationVariable linkInstance,
-				org.muml.pim.connector.ConnectorEndpoint source,
-				org.muml.pim.connector.ConnectorEndpoint target,
-				View sourceView, View targetView) {
+		* @generated
+		*/
+		public boolean canExistDelegationVariable_4003(ComponentVariable container, DelegationVariable linkInstance,
+				ConnectorEndpoint source, ConnectorEndpoint target, View sourceView, View targetView) {
 			try {
 				if (source == null) {
 					return true;
 				} else {
 					Map<String, EClassifier> envType = new HashMap<String, EClassifier>();
 					Map<String, Object> env = new HashMap<String, Object>();
-					envType.put(
-							"oppositeEnd", org.muml.pim.connector.ConnectorPackage.eINSTANCE.getConnectorEndpoint()); //$NON-NLS-1$
+					envType.put("oppositeEnd", ConnectorPackage.eINSTANCE.getConnectorEndpoint()); //$NON-NLS-1$
 					env.put("oppositeEnd", target);
 					envType.put("view", NotationPackage.Literals.VIEW);
 					env.put("view", sourceView);
 					envType.put("oppositeView", NotationPackage.Literals.VIEW);
 					env.put("oppositeView", targetView);
 
-					org.muml.reconfiguration.verification.sdd.componentsdd.diagram.expressions.ComponentSDDAbstractExpression expression = org.muml.reconfiguration.verification.sdd.componentsdd.diagram.expressions.ComponentSDDOCLFactory
-							.getExpression(
-									21,
-									org.muml.pim.connector.ConnectorPackage.eINSTANCE
-											.getConnectorEndpoint(), envType);
+					ComponentSDDAbstractExpression expression = ComponentSDDOCLFactory.getExpression(21,
+							ConnectorPackage.eINSTANCE.getConnectorEndpoint(), envType);
 					Object sourceVal = expression.evaluate(source, env); //$NON-NLS-1$
 
-					if (false == sourceVal instanceof Boolean
-							|| !((Boolean) sourceVal).booleanValue()) {
+					if (false == sourceVal instanceof Boolean || !((Boolean) sourceVal).booleanValue()) {
 						return false;
 					} // else fall-through
 				}
@@ -605,66 +539,51 @@ public class ComponentSDDBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 				} else {
 					Map<String, EClassifier> envType = new HashMap<String, EClassifier>();
 					Map<String, Object> env = new HashMap<String, Object>();
-					envType.put(
-							"oppositeEnd", org.muml.pim.connector.ConnectorPackage.eINSTANCE.getConnectorEndpoint()); //$NON-NLS-1$
+					envType.put("oppositeEnd", ConnectorPackage.eINSTANCE.getConnectorEndpoint()); //$NON-NLS-1$
 					env.put("oppositeEnd", source);
 					envType.put("view", NotationPackage.Literals.VIEW);
 					env.put("view", targetView);
 					envType.put("oppositeView", NotationPackage.Literals.VIEW);
 					env.put("oppositeView", sourceView);
 
-					org.muml.reconfiguration.verification.sdd.componentsdd.diagram.expressions.ComponentSDDAbstractExpression expression = org.muml.reconfiguration.verification.sdd.componentsdd.diagram.expressions.ComponentSDDOCLFactory
-							.getExpression(
-									22,
-									org.muml.pim.connector.ConnectorPackage.eINSTANCE
-											.getConnectorEndpoint(), envType);
+					ComponentSDDAbstractExpression expression = ComponentSDDOCLFactory.getExpression(22,
+							ConnectorPackage.eINSTANCE.getConnectorEndpoint(), envType);
 					Object targetVal = expression.evaluate(target, env); //$NON-NLS-1$
 
-					if (false == targetVal instanceof Boolean
-							|| !((Boolean) targetVal).booleanValue()) {
+					if (false == targetVal instanceof Boolean || !((Boolean) targetVal).booleanValue()) {
 						return false;
 					} // else fall-through
 				}
 				return true;
 			} catch (Exception e) {
-				org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDDiagramEditorPlugin
-						.getInstance().logError(
-								"Link constraint evaluation error", e); //$NON-NLS-1$
+				ComponentSDDDiagramEditorPlugin.getInstance().logError("Link constraint evaluation error", e); //$NON-NLS-1$
 				return false;
 			}
 		}
 
 		/**
-		 * @generated
-		 */
-		public java.lang.String getErrorDelegationVariable_4003(
-				org.muml.reconfiguration.componentstorypattern.ComponentVariable container,
-				org.muml.pim.connector.ConnectorEndpoint source,
-				org.muml.pim.connector.ConnectorEndpoint target,
-				View sourceView, View targetView) {
+		* @generated
+		*/
+		public java.lang.String getErrorDelegationVariable_4003(ComponentVariable container, ConnectorEndpoint source,
+				ConnectorEndpoint target, View sourceView, View targetView) {
 			try {
 				if (source == null) {
 					return null;
 				} else {
 					Map<String, EClassifier> envType = new HashMap<String, EClassifier>();
 					Map<String, Object> env = new HashMap<String, Object>();
-					envType.put(
-							"oppositeEnd", org.muml.pim.connector.ConnectorPackage.eINSTANCE.getConnectorEndpoint()); //$NON-NLS-1$
+					envType.put("oppositeEnd", ConnectorPackage.eINSTANCE.getConnectorEndpoint()); //$NON-NLS-1$
 					env.put("oppositeEnd", target);
 					envType.put("view", NotationPackage.Literals.VIEW);
 					env.put("view", sourceView);
 					envType.put("oppositeView", NotationPackage.Literals.VIEW);
 					env.put("oppositeView", targetView);
 
-					org.muml.reconfiguration.verification.sdd.componentsdd.diagram.expressions.ComponentSDDAbstractExpression expression = org.muml.reconfiguration.verification.sdd.componentsdd.diagram.expressions.ComponentSDDOCLFactory
-							.getExpression(
-									21,
-									org.muml.pim.connector.ConnectorPackage.eINSTANCE
-											.getConnectorEndpoint(), envType);
+					ComponentSDDAbstractExpression expression = ComponentSDDOCLFactory.getExpression(21,
+							ConnectorPackage.eINSTANCE.getConnectorEndpoint(), envType);
 					Object sourceVal = expression.evaluate(source, env); //$NON-NLS-1$
 
-					if (false == sourceVal instanceof Boolean
-							|| !((Boolean) sourceVal).booleanValue()) {
+					if (false == sourceVal instanceof Boolean || !((Boolean) sourceVal).booleanValue()) {
 						String body = expression.body().trim();
 						if (body.startsWith("--")) {
 							int end = body.indexOf('\n');
@@ -685,23 +604,18 @@ public class ComponentSDDBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 				} else {
 					Map<String, EClassifier> envType = new HashMap<String, EClassifier>();
 					Map<String, Object> env = new HashMap<String, Object>();
-					envType.put(
-							"oppositeEnd", org.muml.pim.connector.ConnectorPackage.eINSTANCE.getConnectorEndpoint()); //$NON-NLS-1$
+					envType.put("oppositeEnd", ConnectorPackage.eINSTANCE.getConnectorEndpoint()); //$NON-NLS-1$
 					env.put("oppositeEnd", source);
 					envType.put("view", NotationPackage.Literals.VIEW);
 					env.put("view", targetView);
 					envType.put("oppositeView", NotationPackage.Literals.VIEW);
 					env.put("oppositeView", sourceView);
 
-					org.muml.reconfiguration.verification.sdd.componentsdd.diagram.expressions.ComponentSDDAbstractExpression expression = org.muml.reconfiguration.verification.sdd.componentsdd.diagram.expressions.ComponentSDDOCLFactory
-							.getExpression(
-									22,
-									org.muml.pim.connector.ConnectorPackage.eINSTANCE
-											.getConnectorEndpoint(), envType);
+					ComponentSDDAbstractExpression expression = ComponentSDDOCLFactory.getExpression(22,
+							ConnectorPackage.eINSTANCE.getConnectorEndpoint(), envType);
 					Object targetVal = expression.evaluate(target, env); //$NON-NLS-1$
 
-					if (false == targetVal instanceof Boolean
-							|| !((Boolean) targetVal).booleanValue()) {
+					if (false == targetVal instanceof Boolean || !((Boolean) targetVal).booleanValue()) {
 						String body = expression.body().trim();
 						if (body.startsWith("--")) {
 							int end = body.indexOf('\n');
@@ -719,33 +633,25 @@ public class ComponentSDDBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 				}
 				return null;
 			} catch (Exception e) {
-				org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDDiagramEditorPlugin
-						.getInstance().logError(
-								"Link constraint evaluation error", e); //$NON-NLS-1$
+				ComponentSDDDiagramEditorPlugin.getInstance().logError("Link constraint evaluation error", e); //$NON-NLS-1$
 				return "Link constraint evaluation error";
 			}
 		}
 
 		/**
-		 * @generated
-		 */
-		public boolean canExistMultiPortOrderConstraint_4004(
-				org.muml.reconfiguration.componentstorypattern.MultiPortVariable container,
-				org.muml.reconfiguration.componentstorypattern.MultiPortOrderConstraint linkInstance,
-				org.muml.reconfiguration.componentstorypattern.SinglePortVariable source,
-				org.muml.reconfiguration.componentstorypattern.SinglePortVariable target,
+		* @generated
+		*/
+		public boolean canExistMultiPortOrderConstraint_4004(MultiPortVariable container,
+				MultiPortOrderConstraint linkInstance, SinglePortVariable source, SinglePortVariable target,
 				View sourceView, View targetView) {
 			return true;
 		}
 
 		/**
-		 * @generated
-		 */
-		public java.lang.String getErrorMultiPortOrderConstraint_4004(
-				org.muml.reconfiguration.componentstorypattern.MultiPortVariable container,
-				org.muml.reconfiguration.componentstorypattern.SinglePortVariable source,
-				org.muml.reconfiguration.componentstorypattern.SinglePortVariable target,
-				View sourceView, View targetView) {
+		* @generated
+		*/
+		public java.lang.String getErrorMultiPortOrderConstraint_4004(MultiPortVariable container,
+				SinglePortVariable source, SinglePortVariable target, View sourceView, View targetView) {
 			return null;
 		}
 

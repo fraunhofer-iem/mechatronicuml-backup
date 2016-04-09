@@ -15,6 +15,7 @@ package org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.part
 import java.util.Collection;
 
 import org.eclipse.draw2d.ColorConstants;
+import org.eclipse.draw2d.ConnectionAnchor;
 import org.eclipse.draw2d.Ellipse;
 import org.eclipse.draw2d.GridData;
 import org.eclipse.draw2d.GridLayout;
@@ -39,6 +40,12 @@ import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.graphics.Color;
+import org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy;
+import org.muml.core.common.edit.policies.anchor.IConnectionAnchorCreationEditPolicy;
+import org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy;
+import org.muml.pim.common.edit.policies.IBackgroundColorEditPolicy;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.policies.InitialNodeItemSemanticEditPolicy;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDVisualIDRegistry;
 
 /**
  * @generated
@@ -74,6 +81,22 @@ public class InitialNodeEditPart extends ShapeNodeEditPart {
 	}
 
 	/**
+	* MUML FIX: Adapt background color if IBackgroundColorEditPolicy is registered.
+	* 
+	* @generated
+	*/
+	@Override
+	protected void refreshBackgroundColor() {
+		EditPolicy backgroundColorPolicy = getEditPolicy(
+				org.muml.core.common.edit.policies.EditPolicyRoles.BACKGROUND_COLOR_ROLE);
+		if (backgroundColorPolicy instanceof IBackgroundColorEditPolicy) {
+			setBackgroundColor(((IBackgroundColorEditPolicy) backgroundColorPolicy).getCurrentBackgroundColor());
+		} else {
+			super.refreshBackgroundColor();
+		}
+	}
+
+	/**
 	 * @generated
 	 */
 	protected IFigure contentPane;
@@ -95,20 +118,15 @@ public class InitialNodeEditPart extends ShapeNodeEditPart {
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(
-				EditPolicyRoles.SEMANTIC_ROLE,
-				new org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.policies.InitialNodeItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new InitialNodeItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 
-		installEditPolicy(
-				EditPolicy.GRAPHICAL_NODE_ROLE,
-				new org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy());
+		installEditPolicy(EditPolicy.GRAPHICAL_NODE_ROLE, new ConnectionConfigureHelperGraphicalNodeEditPolicy());
 
-		installEditPolicy(
-				org.muml.core.common.edit.policies.EditPolicyRoles.ERROR_FEEDBACK_ROLE,
-				new org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy());
+		installEditPolicy(org.muml.core.common.edit.policies.EditPolicyRoles.ERROR_FEEDBACK_ROLE,
+				new ErrorFeedbackEditPolicy());
 
 	}
 
@@ -119,8 +137,7 @@ public class InitialNodeEditPart extends ShapeNodeEditPart {
 		org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy lep = new org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy() {
 
 			protected EditPolicy createChildEditPolicy(EditPart child) {
-				EditPolicy result = child
-						.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
+				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
 				if (result == null) {
 					result = new NonResizableEditPolicy();
 				}
@@ -156,16 +173,12 @@ public class InitialNodeEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.WrappingLabel9EditPart) {
-			((org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.WrappingLabel9EditPart) childEditPart)
-					.setLabel(getPrimaryShape()
-							.getFigureInitialNodeCSDDNameLabel());
+		if (childEditPart instanceof WrappingLabel9EditPart) {
+			((WrappingLabel9EditPart) childEditPart).setLabel(getPrimaryShape().getFigureInitialNodeCSDDNameLabel());
 			return true;
 		}
-		if (childEditPart instanceof org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.WrappingLabel10EditPart) {
-			((org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.WrappingLabel10EditPart) childEditPart)
-					.setLabel(getPrimaryShape()
-							.getFigureInitialNodeInvariantLabel());
+		if (childEditPart instanceof WrappingLabel10EditPart) {
+			((WrappingLabel10EditPart) childEditPart).setLabel(getPrimaryShape().getFigureInitialNodeInvariantLabel());
 			return true;
 		}
 		return false;
@@ -175,10 +188,10 @@ public class InitialNodeEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.WrappingLabel9EditPart) {
+		if (childEditPart instanceof WrappingLabel9EditPart) {
 			return true;
 		}
-		if (childEditPart instanceof org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.WrappingLabel10EditPart) {
+		if (childEditPart instanceof WrappingLabel10EditPart) {
 			return true;
 		}
 		return false;
@@ -215,7 +228,17 @@ public class InitialNodeEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected NodeFigure createNodePlate() {
-		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(40, 40);
+		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(40, 40) {
+			@Override
+			public ConnectionAnchor createDefaultAnchor() {
+				IConnectionAnchorCreationEditPolicy connectionAnchorCreationEditPolicy = (IConnectionAnchorCreationEditPolicy) getEditPolicy(
+						org.muml.core.common.edit.policies.EditPolicyRoles.CONNECTION_ANCHOR_CREATION_ROLE);
+				if (connectionAnchorCreationEditPolicy != null) {
+					return connectionAnchorCreationEditPolicy.createDefaultAnchor();
+				}
+				return super.createDefaultAnchor();
+			}
+		};
 
 		// Ensures that the element can be shrinked (Muml Bug #62).
 		result.setMinimumSize(new Dimension(0, 0));
@@ -305,8 +328,7 @@ public class InitialNodeEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDVisualIDRegistry
-				.getType(org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.WrappingLabel9EditPart.VISUAL_ID));
+		return getChildBySemanticHint(ComponentSDDVisualIDRegistry.getType(WrappingLabel9EditPart.VISUAL_ID));
 	}
 
 	/**
@@ -355,8 +377,7 @@ public class InitialNodeEditPart extends ShapeNodeEditPart {
 			constraintFFigureInitialNodeInvariantLabel.verticalSpan = 1;
 			constraintFFigureInitialNodeInvariantLabel.grabExcessHorizontalSpace = true;
 			constraintFFigureInitialNodeInvariantLabel.grabExcessVerticalSpace = false;
-			this.add(fFigureInitialNodeInvariantLabel,
-					constraintFFigureInitialNodeInvariantLabel);
+			this.add(fFigureInitialNodeInvariantLabel, constraintFFigureInitialNodeInvariantLabel);
 
 			fFigureInitialNodeCSDDNameLabel = new WrappingLabel();
 
@@ -370,19 +391,15 @@ public class InitialNodeEditPart extends ShapeNodeEditPart {
 			constraintFFigureInitialNodeCSDDNameLabel.verticalSpan = 1;
 			constraintFFigureInitialNodeCSDDNameLabel.grabExcessHorizontalSpace = true;
 			constraintFFigureInitialNodeCSDDNameLabel.grabExcessVerticalSpace = false;
-			this.add(fFigureInitialNodeCSDDNameLabel,
-					constraintFFigureInitialNodeCSDDNameLabel);
+			this.add(fFigureInitialNodeCSDDNameLabel, constraintFFigureInitialNodeCSDDNameLabel);
 
 			Ellipse startNodeEllipse0 = new Ellipse();
 
 			startNodeEllipse0.setForegroundColor(ColorConstants.black);
 			startNodeEllipse0.setBackgroundColor(ColorConstants.black);
-			startNodeEllipse0.setPreferredSize(new Dimension(getMapMode()
-					.DPtoLP(15), getMapMode().DPtoLP(15)));
-			startNodeEllipse0.setMaximumSize(new Dimension(getMapMode().DPtoLP(
-					15), getMapMode().DPtoLP(15)));
-			startNodeEllipse0.setMinimumSize(new Dimension(getMapMode().DPtoLP(
-					15), getMapMode().DPtoLP(15)));
+			startNodeEllipse0.setPreferredSize(new Dimension(getMapMode().DPtoLP(15), getMapMode().DPtoLP(15)));
+			startNodeEllipse0.setMaximumSize(new Dimension(getMapMode().DPtoLP(15), getMapMode().DPtoLP(15)));
+			startNodeEllipse0.setMinimumSize(new Dimension(getMapMode().DPtoLP(15), getMapMode().DPtoLP(15)));
 
 			GridData constraintStartNodeEllipse0 = new GridData();
 			constraintStartNodeEllipse0.verticalAlignment = GridData.CENTER;

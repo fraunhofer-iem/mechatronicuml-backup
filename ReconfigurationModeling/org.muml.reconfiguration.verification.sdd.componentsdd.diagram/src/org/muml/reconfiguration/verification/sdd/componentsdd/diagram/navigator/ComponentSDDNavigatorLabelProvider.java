@@ -27,25 +27,59 @@ import org.eclipse.swt.graphics.Image;
 import org.eclipse.ui.IMemento;
 import org.eclipse.ui.navigator.ICommonContentExtensionSite;
 import org.eclipse.ui.navigator.ICommonLabelProvider;
+import org.muml.reconfiguration.componentstorypattern.ComponentStoryPattern;
+import org.muml.reconfiguration.componentstorypattern.SinglePortVariable;
+import org.muml.reconfiguration.verification.sdd.componentsdd.ComponentStoryDecisionDiagram;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.AssemblyVariableEditPart;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.AssemblyVariableNameEditPart;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.ComponentPartVariableEditPart;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.ComponentStoryDecisionDiagramEditPart;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.ComponentStoryPatternEditPart;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.ComponentStoryPatternNodeEditPart;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.ComponentStoryPatternNodeNameEditPart;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.ComponentVariableEditPart;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.ComponentVariableOperatorEditPart;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.DelegationVariableEditPart;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.DelegationVariableNameEditPart;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.EdgeEditPart;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.FadingComponentPartVariableEditPart;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.InitialNodeEditPart;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.LeafNodeEditPart;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.MultiPortOrderConstraintEditPart;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.MultiPortVariable2EditPart;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.MultiPortVariableEditPart;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.PortVariableOperator2EditPart;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.PortVariableOperator3EditPart;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.PortVariableOperator4EditPart;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.PortVariableOperatorEditPart;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.SinglePortVariable2EditPart;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.SinglePortVariable3EditPart;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.SinglePortVariableEditPart;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.WrappingLabel2EditPart;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.WrappingLabel4EditPart;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.WrappingLabel8EditPart;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.WrappingLabel9EditPart;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDDiagramEditorPlugin;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDVisualIDRegistry;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDParserProvider;
+import org.muml.storydiagram.verification.sdd.Edge;
+import org.muml.storydiagram.verification.sdd.LeafNode;
 
 /**
  * @generated
  */
-public class ComponentSDDNavigatorLabelProvider extends LabelProvider implements
-		ICommonLabelProvider, ITreePathLabelProvider {
+public class ComponentSDDNavigatorLabelProvider extends LabelProvider
+		implements ICommonLabelProvider, ITreePathLabelProvider {
 
 	/**
 	 * @generated
 	 */
 	static {
-		org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDDiagramEditorPlugin
-				.getInstance()
-				.getImageRegistry()
-				.put("Navigator?UnknownElement", ImageDescriptor.getMissingImageDescriptor()); //$NON-NLS-1$
-		org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDDiagramEditorPlugin
-				.getInstance()
-				.getImageRegistry()
-				.put("Navigator?ImageNotFound", ImageDescriptor.getMissingImageDescriptor()); //$NON-NLS-1$
+		ComponentSDDDiagramEditorPlugin.getInstance().getImageRegistry().put("Navigator?UnknownElement", //$NON-NLS-1$
+				ImageDescriptor.getMissingImageDescriptor());
+		ComponentSDDDiagramEditorPlugin.getInstance().getImageRegistry().put("Navigator?ImageNotFound", //$NON-NLS-1$
+				ImageDescriptor.getMissingImageDescriptor());
 	}
 
 	/**
@@ -53,9 +87,8 @@ public class ComponentSDDNavigatorLabelProvider extends LabelProvider implements
 	 */
 	public void updateLabel(ViewerLabel label, TreePath elementPath) {
 		Object element = elementPath.getLastSegment();
-		if (element instanceof org.muml.reconfiguration.verification.sdd.componentsdd.diagram.navigator.ComponentSDDNavigatorItem
-				&& !isOwnView(((org.muml.reconfiguration.verification.sdd.componentsdd.diagram.navigator.ComponentSDDNavigatorItem) element)
-						.getView())) {
+		if (element instanceof ComponentSDDNavigatorItem
+				&& !isOwnView(((ComponentSDDNavigatorItem) element).getView())) {
 			return;
 		}
 		label.setText(getText(element));
@@ -66,14 +99,13 @@ public class ComponentSDDNavigatorLabelProvider extends LabelProvider implements
 	 * @generated
 	 */
 	public Image getImage(Object element) {
-		if (element instanceof org.muml.reconfiguration.verification.sdd.componentsdd.diagram.navigator.ComponentSDDNavigatorGroup) {
-			org.muml.reconfiguration.verification.sdd.componentsdd.diagram.navigator.ComponentSDDNavigatorGroup group = (org.muml.reconfiguration.verification.sdd.componentsdd.diagram.navigator.ComponentSDDNavigatorGroup) element;
-			return org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDDiagramEditorPlugin
-					.getInstance().getBundledImage(group.getIcon());
+		if (element instanceof ComponentSDDNavigatorGroup) {
+			ComponentSDDNavigatorGroup group = (ComponentSDDNavigatorGroup) element;
+			return ComponentSDDDiagramEditorPlugin.getInstance().getBundledImage(group.getIcon());
 		}
 
-		if (element instanceof org.muml.reconfiguration.verification.sdd.componentsdd.diagram.navigator.ComponentSDDNavigatorItem) {
-			org.muml.reconfiguration.verification.sdd.componentsdd.diagram.navigator.ComponentSDDNavigatorItem navigatorItem = (org.muml.reconfiguration.verification.sdd.componentsdd.diagram.navigator.ComponentSDDNavigatorItem) element;
+		if (element instanceof ComponentSDDNavigatorItem) {
+			ComponentSDDNavigatorItem navigatorItem = (ComponentSDDNavigatorItem) element;
 			if (!isOwnView(navigatorItem.getView())) {
 				return super.getImage(element);
 			}
@@ -87,59 +119,73 @@ public class ComponentSDDNavigatorLabelProvider extends LabelProvider implements
 	 * @generated
 	 */
 	public Image getImage(View view) {
-		switch (org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDVisualIDRegistry
-				.getVisualID(view)) {
-		case org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.ComponentStoryDecisionDiagramEditPart.VISUAL_ID:
+		switch (ComponentSDDVisualIDRegistry.getVisualID(view)) {
+		case ComponentStoryDecisionDiagramEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Diagram?http://www.muml.org/reconfiguration/verification/sdd/componentsdd/1.0.0?ComponentStoryDecisionDiagram", org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.ComponentStoryDecisionDiagram_1000); //$NON-NLS-1$
-		case org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.LeafNodeEditPart.VISUAL_ID:
+					"Navigator?Diagram?http://www.muml.org/reconfiguration/verification/sdd/componentsdd/1.0.0?ComponentStoryDecisionDiagram", //$NON-NLS-1$
+					ComponentSDDElementTypes.ComponentStoryDecisionDiagram_1000);
+		case LeafNodeEditPart.VISUAL_ID:
+			return getImage("Navigator?TopLevelNode?http://www.muml.org/storydiagram/verification/sdd/1.0.0?LeafNode", //$NON-NLS-1$
+					ComponentSDDElementTypes.LeafNode_2002);
+		case ComponentStoryPatternNodeEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?TopLevelNode?http://www.muml.org/storydiagram/verification/sdd/1.0.0?LeafNode", org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.LeafNode_2002); //$NON-NLS-1$
-		case org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.ComponentStoryPatternNodeEditPart.VISUAL_ID:
+					"Navigator?TopLevelNode?http://www.muml.org/reconfiguration/verification/sdd/componentsdd/1.0.0?ComponentStoryPatternNode", //$NON-NLS-1$
+					ComponentSDDElementTypes.ComponentStoryPatternNode_2003);
+		case InitialNodeEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?TopLevelNode?http://www.muml.org/reconfiguration/verification/sdd/componentsdd/1.0.0?ComponentStoryPatternNode", org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.ComponentStoryPatternNode_2003); //$NON-NLS-1$
-		case org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.InitialNodeEditPart.VISUAL_ID:
+					"Navigator?TopLevelNode?http://www.muml.org/reconfiguration/verification/sdd/componentsdd/1.0.0?InitialNode", //$NON-NLS-1$
+					ComponentSDDElementTypes.InitialNode_2004);
+		case ComponentStoryPatternEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?TopLevelNode?http://www.muml.org/reconfiguration/verification/sdd/componentsdd/1.0.0?InitialNode", org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.InitialNode_2004); //$NON-NLS-1$
-		case org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.ComponentStoryPatternEditPart.VISUAL_ID:
+					"Navigator?Node?http://www.muml.org/reconfiguration/componentstorypattern/1.0.0?ComponentStoryPattern", //$NON-NLS-1$
+					ComponentSDDElementTypes.ComponentStoryPattern_3001);
+		case ComponentVariableEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Node?http://www.muml.org/reconfiguration/componentstorypattern/1.0.0?ComponentStoryPattern", org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.ComponentStoryPattern_3001); //$NON-NLS-1$
-		case org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.ComponentVariableEditPart.VISUAL_ID:
+					"Navigator?Node?http://www.muml.org/reconfiguration/componentstorypattern/1.0.0?ComponentVariable", //$NON-NLS-1$
+					ComponentSDDElementTypes.ComponentVariable_3002);
+		case ComponentPartVariableEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Node?http://www.muml.org/reconfiguration/componentstorypattern/1.0.0?ComponentVariable", org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.ComponentVariable_3002); //$NON-NLS-1$
-		case org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.ComponentPartVariableEditPart.VISUAL_ID:
+					"Navigator?Node?http://www.muml.org/reconfiguration/componentstorypattern/1.0.0?ComponentPartVariable", //$NON-NLS-1$
+					ComponentSDDElementTypes.ComponentPartVariable_3003);
+		case MultiPortVariableEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Node?http://www.muml.org/reconfiguration/componentstorypattern/1.0.0?ComponentPartVariable", org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.ComponentPartVariable_3003); //$NON-NLS-1$
-		case org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.MultiPortVariableEditPart.VISUAL_ID:
+					"Navigator?Node?http://www.muml.org/reconfiguration/componentstorypattern/1.0.0?MultiPortVariable", //$NON-NLS-1$
+					ComponentSDDElementTypes.MultiPortVariable_3004);
+		case SinglePortVariableEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Node?http://www.muml.org/reconfiguration/componentstorypattern/1.0.0?MultiPortVariable", org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.MultiPortVariable_3004); //$NON-NLS-1$
-		case org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.SinglePortVariableEditPart.VISUAL_ID:
+					"Navigator?Node?http://www.muml.org/reconfiguration/componentstorypattern/1.0.0?SinglePortVariable", //$NON-NLS-1$
+					ComponentSDDElementTypes.SinglePortVariable_3005);
+		case SinglePortVariable2EditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Node?http://www.muml.org/reconfiguration/componentstorypattern/1.0.0?SinglePortVariable", org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.SinglePortVariable_3005); //$NON-NLS-1$
-		case org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.SinglePortVariable2EditPart.VISUAL_ID:
+					"Navigator?Node?http://www.muml.org/reconfiguration/componentstorypattern/1.0.0?SinglePortVariable", //$NON-NLS-1$
+					ComponentSDDElementTypes.SinglePortVariable_3006);
+		case MultiPortVariable2EditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Node?http://www.muml.org/reconfiguration/componentstorypattern/1.0.0?SinglePortVariable", org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.SinglePortVariable_3006); //$NON-NLS-1$
-		case org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.MultiPortVariable2EditPart.VISUAL_ID:
+					"Navigator?Node?http://www.muml.org/reconfiguration/componentstorypattern/1.0.0?MultiPortVariable", //$NON-NLS-1$
+					ComponentSDDElementTypes.MultiPortVariable_3007);
+		case SinglePortVariable3EditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Node?http://www.muml.org/reconfiguration/componentstorypattern/1.0.0?MultiPortVariable", org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.MultiPortVariable_3007); //$NON-NLS-1$
-		case org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.SinglePortVariable3EditPart.VISUAL_ID:
+					"Navigator?Node?http://www.muml.org/reconfiguration/componentstorypattern/1.0.0?SinglePortVariable", //$NON-NLS-1$
+					ComponentSDDElementTypes.SinglePortVariable_3008);
+		case FadingComponentPartVariableEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Node?http://www.muml.org/reconfiguration/componentstorypattern/1.0.0?SinglePortVariable", org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.SinglePortVariable_3008); //$NON-NLS-1$
-		case org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.FadingComponentPartVariableEditPart.VISUAL_ID:
+					"Navigator?Node?http://www.muml.org/reconfiguration/componentstorypattern/1.0.0?FadingComponentPartVariable", //$NON-NLS-1$
+					ComponentSDDElementTypes.FadingComponentPartVariable_3009);
+		case EdgeEditPart.VISUAL_ID:
+			return getImage("Navigator?Link?http://www.muml.org/storydiagram/verification/sdd/1.0.0?Edge", //$NON-NLS-1$
+					ComponentSDDElementTypes.Edge_4001);
+		case AssemblyVariableEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Node?http://www.muml.org/reconfiguration/componentstorypattern/1.0.0?FadingComponentPartVariable", org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.FadingComponentPartVariable_3009); //$NON-NLS-1$
-		case org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.EdgeEditPart.VISUAL_ID:
+					"Navigator?Link?http://www.muml.org/reconfiguration/componentstorypattern/1.0.0?AssemblyVariable", //$NON-NLS-1$
+					ComponentSDDElementTypes.AssemblyVariable_4002);
+		case DelegationVariableEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Link?http://www.muml.org/storydiagram/verification/sdd/1.0.0?Edge", org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.Edge_4001); //$NON-NLS-1$
-		case org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.AssemblyVariableEditPart.VISUAL_ID:
+					"Navigator?Link?http://www.muml.org/reconfiguration/componentstorypattern/1.0.0?DelegationVariable", //$NON-NLS-1$
+					ComponentSDDElementTypes.DelegationVariable_4003);
+		case MultiPortOrderConstraintEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Link?http://www.muml.org/reconfiguration/componentstorypattern/1.0.0?AssemblyVariable", org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.AssemblyVariable_4002); //$NON-NLS-1$
-		case org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.DelegationVariableEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Link?http://www.muml.org/reconfiguration/componentstorypattern/1.0.0?DelegationVariable", org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.DelegationVariable_4003); //$NON-NLS-1$
-		case org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.MultiPortOrderConstraintEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Link?http://www.muml.org/reconfiguration/componentstorypattern/1.0.0?MultiPortOrderConstraint", org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.MultiPortOrderConstraint_4004); //$NON-NLS-1$
+					"Navigator?Link?http://www.muml.org/reconfiguration/componentstorypattern/1.0.0?MultiPortOrderConstraint", //$NON-NLS-1$
+					ComponentSDDElementTypes.MultiPortOrderConstraint_4004);
 		}
 		return getImage("Navigator?UnknownElement", null); //$NON-NLS-1$
 	}
@@ -148,15 +194,10 @@ public class ComponentSDDNavigatorLabelProvider extends LabelProvider implements
 	 * @generated
 	 */
 	private Image getImage(String key, IElementType elementType) {
-		ImageRegistry imageRegistry = org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDDiagramEditorPlugin
-				.getInstance().getImageRegistry();
+		ImageRegistry imageRegistry = ComponentSDDDiagramEditorPlugin.getInstance().getImageRegistry();
 		Image image = imageRegistry.get(key);
-		if (image == null
-				&& elementType != null
-				&& org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes
-						.isKnownElementType(elementType)) {
-			image = org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes
-					.getImage(elementType);
+		if (image == null && elementType != null && ComponentSDDElementTypes.isKnownElementType(elementType)) {
+			image = ComponentSDDElementTypes.getImage(elementType);
 			imageRegistry.put(key, image);
 		}
 
@@ -171,13 +212,13 @@ public class ComponentSDDNavigatorLabelProvider extends LabelProvider implements
 	 * @generated
 	 */
 	public String getText(Object element) {
-		if (element instanceof org.muml.reconfiguration.verification.sdd.componentsdd.diagram.navigator.ComponentSDDNavigatorGroup) {
-			org.muml.reconfiguration.verification.sdd.componentsdd.diagram.navigator.ComponentSDDNavigatorGroup group = (org.muml.reconfiguration.verification.sdd.componentsdd.diagram.navigator.ComponentSDDNavigatorGroup) element;
+		if (element instanceof ComponentSDDNavigatorGroup) {
+			ComponentSDDNavigatorGroup group = (ComponentSDDNavigatorGroup) element;
 			return group.getGroupName();
 		}
 
-		if (element instanceof org.muml.reconfiguration.verification.sdd.componentsdd.diagram.navigator.ComponentSDDNavigatorItem) {
-			org.muml.reconfiguration.verification.sdd.componentsdd.diagram.navigator.ComponentSDDNavigatorItem navigatorItem = (org.muml.reconfiguration.verification.sdd.componentsdd.diagram.navigator.ComponentSDDNavigatorItem) element;
+		if (element instanceof ComponentSDDNavigatorItem) {
+			ComponentSDDNavigatorItem navigatorItem = (ComponentSDDNavigatorItem) element;
 			if (!isOwnView(navigatorItem.getView())) {
 				return null;
 			}
@@ -194,41 +235,40 @@ public class ComponentSDDNavigatorLabelProvider extends LabelProvider implements
 		if (view.getElement() != null && view.getElement().eIsProxy()) {
 			return getUnresolvedDomainElementProxyText(view);
 		}
-		switch (org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDVisualIDRegistry
-				.getVisualID(view)) {
-		case org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.ComponentStoryDecisionDiagramEditPart.VISUAL_ID:
+		switch (ComponentSDDVisualIDRegistry.getVisualID(view)) {
+		case ComponentStoryDecisionDiagramEditPart.VISUAL_ID:
 			return getComponentStoryDecisionDiagram_1000Text(view);
-		case org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.LeafNodeEditPart.VISUAL_ID:
+		case LeafNodeEditPart.VISUAL_ID:
 			return getLeafNode_2002Text(view);
-		case org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.ComponentStoryPatternNodeEditPart.VISUAL_ID:
+		case ComponentStoryPatternNodeEditPart.VISUAL_ID:
 			return getComponentStoryPatternNode_2003Text(view);
-		case org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.InitialNodeEditPart.VISUAL_ID:
+		case InitialNodeEditPart.VISUAL_ID:
 			return getInitialNode_2004Text(view);
-		case org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.ComponentStoryPatternEditPart.VISUAL_ID:
+		case ComponentStoryPatternEditPart.VISUAL_ID:
 			return getComponentStoryPattern_3001Text(view);
-		case org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.ComponentVariableEditPart.VISUAL_ID:
+		case ComponentVariableEditPart.VISUAL_ID:
 			return getComponentVariable_3002Text(view);
-		case org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.ComponentPartVariableEditPart.VISUAL_ID:
+		case ComponentPartVariableEditPart.VISUAL_ID:
 			return getComponentPartVariable_3003Text(view);
-		case org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.MultiPortVariableEditPart.VISUAL_ID:
+		case MultiPortVariableEditPart.VISUAL_ID:
 			return getMultiPortVariable_3004Text(view);
-		case org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.SinglePortVariableEditPart.VISUAL_ID:
+		case SinglePortVariableEditPart.VISUAL_ID:
 			return getSinglePortVariable_3005Text(view);
-		case org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.SinglePortVariable2EditPart.VISUAL_ID:
+		case SinglePortVariable2EditPart.VISUAL_ID:
 			return getSinglePortVariable_3006Text(view);
-		case org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.MultiPortVariable2EditPart.VISUAL_ID:
+		case MultiPortVariable2EditPart.VISUAL_ID:
 			return getMultiPortVariable_3007Text(view);
-		case org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.SinglePortVariable3EditPart.VISUAL_ID:
+		case SinglePortVariable3EditPart.VISUAL_ID:
 			return getSinglePortVariable_3008Text(view);
-		case org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.FadingComponentPartVariableEditPart.VISUAL_ID:
+		case FadingComponentPartVariableEditPart.VISUAL_ID:
 			return getFadingComponentPartVariable_3009Text(view);
-		case org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.EdgeEditPart.VISUAL_ID:
+		case EdgeEditPart.VISUAL_ID:
 			return getEdge_4001Text(view);
-		case org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.AssemblyVariableEditPart.VISUAL_ID:
+		case AssemblyVariableEditPart.VISUAL_ID:
 			return getAssemblyVariable_4002Text(view);
-		case org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.DelegationVariableEditPart.VISUAL_ID:
+		case DelegationVariableEditPart.VISUAL_ID:
 			return getDelegationVariable_4003Text(view);
-		case org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.MultiPortOrderConstraintEditPart.VISUAL_ID:
+		case MultiPortOrderConstraintEditPart.VISUAL_ID:
 			return getMultiPortOrderConstraint_4004Text(view);
 		}
 		return getUnknownElementText(view);
@@ -238,15 +278,12 @@ public class ComponentSDDNavigatorLabelProvider extends LabelProvider implements
 	 * @generated
 	 */
 	private String getComponentStoryDecisionDiagram_1000Text(View view) {
-		org.muml.reconfiguration.verification.sdd.componentsdd.ComponentStoryDecisionDiagram domainModelElement = (org.muml.reconfiguration.verification.sdd.componentsdd.ComponentStoryDecisionDiagram) view
-				.getElement();
+		ComponentStoryDecisionDiagram domainModelElement = (ComponentStoryDecisionDiagram) view.getElement();
 		if (domainModelElement != null) {
 			return domainModelElement.getName();
 		} else {
-			org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDDiagramEditorPlugin
-					.getInstance()
-					.logError(
-							"No domain element for view with visualID = " + 1000); //$NON-NLS-1$
+			ComponentSDDDiagramEditorPlugin.getInstance()
+					.logError("No domain element for view with visualID = " + 1000); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -255,15 +292,12 @@ public class ComponentSDDNavigatorLabelProvider extends LabelProvider implements
 	 * @generated
 	 */
 	private String getLeafNode_2002Text(View view) {
-		org.muml.storydiagram.verification.sdd.LeafNode domainModelElement = (org.muml.storydiagram.verification.sdd.LeafNode) view
-				.getElement();
+		LeafNode domainModelElement = (LeafNode) view.getElement();
 		if (domainModelElement != null) {
 			return String.valueOf(domainModelElement.isValue());
 		} else {
-			org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDDiagramEditorPlugin
-					.getInstance()
-					.logError(
-							"No domain element for view with visualID = " + 2002); //$NON-NLS-1$
+			ComponentSDDDiagramEditorPlugin.getInstance()
+					.logError("No domain element for view with visualID = " + 2002); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -272,20 +306,14 @@ public class ComponentSDDNavigatorLabelProvider extends LabelProvider implements
 	 * @generated
 	 */
 	private String getComponentStoryPatternNode_2003Text(View view) {
-		IParser parser = org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDParserProvider
-				.getParser(
-						org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.ComponentStoryPatternNode_2003,
-						view.getElement() != null ? view.getElement() : view,
-						org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDVisualIDRegistry
-								.getType(org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.ComponentStoryPatternNodeNameEditPart.VISUAL_ID));
+		IParser parser = ComponentSDDParserProvider.getParser(ComponentSDDElementTypes.ComponentStoryPatternNode_2003,
+				view.getElement() != null ? view.getElement() : view,
+				ComponentSDDVisualIDRegistry.getType(ComponentStoryPatternNodeNameEditPart.VISUAL_ID));
 		if (parser != null) {
-			return parser.getPrintString(new EObjectAdapter(
-					view.getElement() != null ? view.getElement() : view),
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
 					ParserOptions.NONE.intValue());
 		} else {
-			org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDDiagramEditorPlugin
-					.getInstance().logError(
-							"Parser was not found for label " + 5037); //$NON-NLS-1$
+			ComponentSDDDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5037); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -294,20 +322,14 @@ public class ComponentSDDNavigatorLabelProvider extends LabelProvider implements
 	 * @generated
 	 */
 	private String getInitialNode_2004Text(View view) {
-		IParser parser = org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDParserProvider
-				.getParser(
-						org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.InitialNode_2004,
-						view.getElement() != null ? view.getElement() : view,
-						org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDVisualIDRegistry
-								.getType(org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.WrappingLabel9EditPart.VISUAL_ID));
+		IParser parser = ComponentSDDParserProvider.getParser(ComponentSDDElementTypes.InitialNode_2004,
+				view.getElement() != null ? view.getElement() : view,
+				ComponentSDDVisualIDRegistry.getType(WrappingLabel9EditPart.VISUAL_ID));
 		if (parser != null) {
-			return parser.getPrintString(new EObjectAdapter(
-					view.getElement() != null ? view.getElement() : view),
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
 					ParserOptions.NONE.intValue());
 		} else {
-			org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDDiagramEditorPlugin
-					.getInstance().logError(
-							"Parser was not found for label " + 5042); //$NON-NLS-1$
+			ComponentSDDDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5042); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -316,15 +338,12 @@ public class ComponentSDDNavigatorLabelProvider extends LabelProvider implements
 	 * @generated
 	 */
 	private String getComponentStoryPattern_3001Text(View view) {
-		org.muml.reconfiguration.componentstorypattern.ComponentStoryPattern domainModelElement = (org.muml.reconfiguration.componentstorypattern.ComponentStoryPattern) view
-				.getElement();
+		ComponentStoryPattern domainModelElement = (ComponentStoryPattern) view.getElement();
 		if (domainModelElement != null) {
 			return domainModelElement.getName();
 		} else {
-			org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDDiagramEditorPlugin
-					.getInstance()
-					.logError(
-							"No domain element for view with visualID = " + 3001); //$NON-NLS-1$
+			ComponentSDDDiagramEditorPlugin.getInstance()
+					.logError("No domain element for view with visualID = " + 3001); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -333,20 +352,14 @@ public class ComponentSDDNavigatorLabelProvider extends LabelProvider implements
 	 * @generated
 	 */
 	private String getComponentVariable_3002Text(View view) {
-		IParser parser = org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDParserProvider
-				.getParser(
-						org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.ComponentVariable_3002,
-						view.getElement() != null ? view.getElement() : view,
-						org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDVisualIDRegistry
-								.getType(org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.ComponentVariableOperatorEditPart.VISUAL_ID));
+		IParser parser = ComponentSDDParserProvider.getParser(ComponentSDDElementTypes.ComponentVariable_3002,
+				view.getElement() != null ? view.getElement() : view,
+				ComponentSDDVisualIDRegistry.getType(ComponentVariableOperatorEditPart.VISUAL_ID));
 		if (parser != null) {
-			return parser.getPrintString(new EObjectAdapter(
-					view.getElement() != null ? view.getElement() : view),
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
 					ParserOptions.NONE.intValue());
 		} else {
-			org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDDiagramEditorPlugin
-					.getInstance().logError(
-							"Parser was not found for label " + 5033); //$NON-NLS-1$
+			ComponentSDDDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5033); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -355,20 +368,14 @@ public class ComponentSDDNavigatorLabelProvider extends LabelProvider implements
 	 * @generated
 	 */
 	private String getComponentPartVariable_3003Text(View view) {
-		IParser parser = org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDParserProvider
-				.getParser(
-						org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.ComponentPartVariable_3003,
-						view.getElement() != null ? view.getElement() : view,
-						org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDVisualIDRegistry
-								.getType(org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.WrappingLabel2EditPart.VISUAL_ID));
+		IParser parser = ComponentSDDParserProvider.getParser(ComponentSDDElementTypes.ComponentPartVariable_3003,
+				view.getElement() != null ? view.getElement() : view,
+				ComponentSDDVisualIDRegistry.getType(WrappingLabel2EditPart.VISUAL_ID));
 		if (parser != null) {
-			return parser.getPrintString(new EObjectAdapter(
-					view.getElement() != null ? view.getElement() : view),
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
 					ParserOptions.NONE.intValue());
 		} else {
-			org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDDiagramEditorPlugin
-					.getInstance().logError(
-							"Parser was not found for label " + 5025); //$NON-NLS-1$
+			ComponentSDDDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5025); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -377,20 +384,14 @@ public class ComponentSDDNavigatorLabelProvider extends LabelProvider implements
 	 * @generated
 	 */
 	private String getMultiPortVariable_3004Text(View view) {
-		IParser parser = org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDParserProvider
-				.getParser(
-						org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.MultiPortVariable_3004,
-						view.getElement() != null ? view.getElement() : view,
-						org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDVisualIDRegistry
-								.getType(org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.PortVariableOperatorEditPart.VISUAL_ID));
+		IParser parser = ComponentSDDParserProvider.getParser(ComponentSDDElementTypes.MultiPortVariable_3004,
+				view.getElement() != null ? view.getElement() : view,
+				ComponentSDDVisualIDRegistry.getType(PortVariableOperatorEditPart.VISUAL_ID));
 		if (parser != null) {
-			return parser.getPrintString(new EObjectAdapter(
-					view.getElement() != null ? view.getElement() : view),
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
 					ParserOptions.NONE.intValue());
 		} else {
-			org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDDiagramEditorPlugin
-					.getInstance().logError(
-							"Parser was not found for label " + 5019); //$NON-NLS-1$
+			ComponentSDDDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5019); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -399,15 +400,12 @@ public class ComponentSDDNavigatorLabelProvider extends LabelProvider implements
 	 * @generated
 	 */
 	private String getSinglePortVariable_3005Text(View view) {
-		org.muml.reconfiguration.componentstorypattern.SinglePortVariable domainModelElement = (org.muml.reconfiguration.componentstorypattern.SinglePortVariable) view
-				.getElement();
+		SinglePortVariable domainModelElement = (SinglePortVariable) view.getElement();
 		if (domainModelElement != null) {
 			return domainModelElement.getName();
 		} else {
-			org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDDiagramEditorPlugin
-					.getInstance()
-					.logError(
-							"No domain element for view with visualID = " + 3005); //$NON-NLS-1$
+			ComponentSDDDiagramEditorPlugin.getInstance()
+					.logError("No domain element for view with visualID = " + 3005); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -416,20 +414,14 @@ public class ComponentSDDNavigatorLabelProvider extends LabelProvider implements
 	 * @generated
 	 */
 	private String getSinglePortVariable_3006Text(View view) {
-		IParser parser = org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDParserProvider
-				.getParser(
-						org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.SinglePortVariable_3006,
-						view.getElement() != null ? view.getElement() : view,
-						org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDVisualIDRegistry
-								.getType(org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.PortVariableOperator2EditPart.VISUAL_ID));
+		IParser parser = ComponentSDDParserProvider.getParser(ComponentSDDElementTypes.SinglePortVariable_3006,
+				view.getElement() != null ? view.getElement() : view,
+				ComponentSDDVisualIDRegistry.getType(PortVariableOperator2EditPart.VISUAL_ID));
 		if (parser != null) {
-			return parser.getPrintString(new EObjectAdapter(
-					view.getElement() != null ? view.getElement() : view),
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
 					ParserOptions.NONE.intValue());
 		} else {
-			org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDDiagramEditorPlugin
-					.getInstance().logError(
-							"Parser was not found for label " + 5022); //$NON-NLS-1$
+			ComponentSDDDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5022); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -438,20 +430,14 @@ public class ComponentSDDNavigatorLabelProvider extends LabelProvider implements
 	 * @generated
 	 */
 	private String getMultiPortVariable_3007Text(View view) {
-		IParser parser = org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDParserProvider
-				.getParser(
-						org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.MultiPortVariable_3007,
-						view.getElement() != null ? view.getElement() : view,
-						org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDVisualIDRegistry
-								.getType(org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.PortVariableOperator3EditPart.VISUAL_ID));
+		IParser parser = ComponentSDDParserProvider.getParser(ComponentSDDElementTypes.MultiPortVariable_3007,
+				view.getElement() != null ? view.getElement() : view,
+				ComponentSDDVisualIDRegistry.getType(PortVariableOperator3EditPart.VISUAL_ID));
 		if (parser != null) {
-			return parser.getPrintString(new EObjectAdapter(
-					view.getElement() != null ? view.getElement() : view),
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
 					ParserOptions.NONE.intValue());
 		} else {
-			org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDDiagramEditorPlugin
-					.getInstance().logError(
-							"Parser was not found for label " + 5027); //$NON-NLS-1$
+			ComponentSDDDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5027); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -460,20 +446,14 @@ public class ComponentSDDNavigatorLabelProvider extends LabelProvider implements
 	 * @generated
 	 */
 	private String getSinglePortVariable_3008Text(View view) {
-		IParser parser = org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDParserProvider
-				.getParser(
-						org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.SinglePortVariable_3008,
-						view.getElement() != null ? view.getElement() : view,
-						org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDVisualIDRegistry
-								.getType(org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.PortVariableOperator4EditPart.VISUAL_ID));
+		IParser parser = ComponentSDDParserProvider.getParser(ComponentSDDElementTypes.SinglePortVariable_3008,
+				view.getElement() != null ? view.getElement() : view,
+				ComponentSDDVisualIDRegistry.getType(PortVariableOperator4EditPart.VISUAL_ID));
 		if (parser != null) {
-			return parser.getPrintString(new EObjectAdapter(
-					view.getElement() != null ? view.getElement() : view),
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
 					ParserOptions.NONE.intValue());
 		} else {
-			org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDDiagramEditorPlugin
-					.getInstance().logError(
-							"Parser was not found for label " + 5030); //$NON-NLS-1$
+			ComponentSDDDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5030); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -482,20 +462,14 @@ public class ComponentSDDNavigatorLabelProvider extends LabelProvider implements
 	 * @generated
 	 */
 	private String getFadingComponentPartVariable_3009Text(View view) {
-		IParser parser = org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDParserProvider
-				.getParser(
-						org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.FadingComponentPartVariable_3009,
-						view.getElement() != null ? view.getElement() : view,
-						org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDVisualIDRegistry
-								.getType(org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.WrappingLabel4EditPart.VISUAL_ID));
+		IParser parser = ComponentSDDParserProvider.getParser(ComponentSDDElementTypes.FadingComponentPartVariable_3009,
+				view.getElement() != null ? view.getElement() : view,
+				ComponentSDDVisualIDRegistry.getType(WrappingLabel4EditPart.VISUAL_ID));
 		if (parser != null) {
-			return parser.getPrintString(new EObjectAdapter(
-					view.getElement() != null ? view.getElement() : view),
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
 					ParserOptions.NONE.intValue());
 		} else {
-			org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDDiagramEditorPlugin
-					.getInstance().logError(
-							"Parser was not found for label " + 5044); //$NON-NLS-1$
+			ComponentSDDDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5044); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -504,15 +478,12 @@ public class ComponentSDDNavigatorLabelProvider extends LabelProvider implements
 	 * @generated
 	 */
 	private String getEdge_4001Text(View view) {
-		org.muml.storydiagram.verification.sdd.Edge domainModelElement = (org.muml.storydiagram.verification.sdd.Edge) view
-				.getElement();
+		Edge domainModelElement = (Edge) view.getElement();
 		if (domainModelElement != null) {
 			return String.valueOf(domainModelElement.getType());
 		} else {
-			org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDDiagramEditorPlugin
-					.getInstance()
-					.logError(
-							"No domain element for view with visualID = " + 4001); //$NON-NLS-1$
+			ComponentSDDDiagramEditorPlugin.getInstance()
+					.logError("No domain element for view with visualID = " + 4001); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -521,20 +492,14 @@ public class ComponentSDDNavigatorLabelProvider extends LabelProvider implements
 	 * @generated
 	 */
 	private String getAssemblyVariable_4002Text(View view) {
-		IParser parser = org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDParserProvider
-				.getParser(
-						org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.AssemblyVariable_4002,
-						view.getElement() != null ? view.getElement() : view,
-						org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDVisualIDRegistry
-								.getType(org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.AssemblyVariableNameEditPart.VISUAL_ID));
+		IParser parser = ComponentSDDParserProvider.getParser(ComponentSDDElementTypes.AssemblyVariable_4002,
+				view.getElement() != null ? view.getElement() : view,
+				ComponentSDDVisualIDRegistry.getType(AssemblyVariableNameEditPart.VISUAL_ID));
 		if (parser != null) {
-			return parser.getPrintString(new EObjectAdapter(
-					view.getElement() != null ? view.getElement() : view),
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
 					ParserOptions.NONE.intValue());
 		} else {
-			org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDDiagramEditorPlugin
-					.getInstance().logError(
-							"Parser was not found for label " + 6001); //$NON-NLS-1$
+			ComponentSDDDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 6001); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -543,20 +508,14 @@ public class ComponentSDDNavigatorLabelProvider extends LabelProvider implements
 	 * @generated
 	 */
 	private String getDelegationVariable_4003Text(View view) {
-		IParser parser = org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDParserProvider
-				.getParser(
-						org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.DelegationVariable_4003,
-						view.getElement() != null ? view.getElement() : view,
-						org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDVisualIDRegistry
-								.getType(org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.DelegationVariableNameEditPart.VISUAL_ID));
+		IParser parser = ComponentSDDParserProvider.getParser(ComponentSDDElementTypes.DelegationVariable_4003,
+				view.getElement() != null ? view.getElement() : view,
+				ComponentSDDVisualIDRegistry.getType(DelegationVariableNameEditPart.VISUAL_ID));
 		if (parser != null) {
-			return parser.getPrintString(new EObjectAdapter(
-					view.getElement() != null ? view.getElement() : view),
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
 					ParserOptions.NONE.intValue());
 		} else {
-			org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDDiagramEditorPlugin
-					.getInstance().logError(
-							"Parser was not found for label " + 6002); //$NON-NLS-1$
+			ComponentSDDDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 6002); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -565,20 +524,14 @@ public class ComponentSDDNavigatorLabelProvider extends LabelProvider implements
 	 * @generated
 	 */
 	private String getMultiPortOrderConstraint_4004Text(View view) {
-		IParser parser = org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDParserProvider
-				.getParser(
-						org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.MultiPortOrderConstraint_4004,
-						view.getElement() != null ? view.getElement() : view,
-						org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDVisualIDRegistry
-								.getType(org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.WrappingLabel8EditPart.VISUAL_ID));
+		IParser parser = ComponentSDDParserProvider.getParser(ComponentSDDElementTypes.MultiPortOrderConstraint_4004,
+				view.getElement() != null ? view.getElement() : view,
+				ComponentSDDVisualIDRegistry.getType(WrappingLabel8EditPart.VISUAL_ID));
 		if (parser != null) {
-			return parser.getPrintString(new EObjectAdapter(
-					view.getElement() != null ? view.getElement() : view),
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
 					ParserOptions.NONE.intValue());
 		} else {
-			org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDDiagramEditorPlugin
-					.getInstance().logError(
-							"Parser was not found for label " + 6003); //$NON-NLS-1$
+			ComponentSDDDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 6003); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -626,9 +579,7 @@ public class ComponentSDDNavigatorLabelProvider extends LabelProvider implements
 	 * @generated
 	 */
 	private boolean isOwnView(View view) {
-		return org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.ComponentStoryDecisionDiagramEditPart.MODEL_ID
-				.equals(org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDVisualIDRegistry
-						.getModelID(view));
+		return ComponentStoryDecisionDiagramEditPart.MODEL_ID.equals(ComponentSDDVisualIDRegistry.getModelID(view));
 	}
 
 }

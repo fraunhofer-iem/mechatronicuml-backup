@@ -13,6 +13,7 @@
 package org.muml.reconfiguration.verification.sdd.componentsdd.diagram.navigator;
 
 import org.eclipse.jface.viewers.ViewerSorter;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDVisualIDRegistry;
 
 /**
  * @generated
@@ -28,10 +29,9 @@ public class ComponentSDDNavigatorSorter extends ViewerSorter {
 	 * @generated
 	 */
 	public int category(Object element) {
-		if (element instanceof org.muml.reconfiguration.verification.sdd.componentsdd.diagram.navigator.ComponentSDDNavigatorItem) {
-			org.muml.reconfiguration.verification.sdd.componentsdd.diagram.navigator.ComponentSDDNavigatorItem item = (org.muml.reconfiguration.verification.sdd.componentsdd.diagram.navigator.ComponentSDDNavigatorItem) element;
-			return org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDVisualIDRegistry
-					.getVisualID(item.getView());
+		if (element instanceof ComponentSDDNavigatorItem) {
+			ComponentSDDNavigatorItem item = (ComponentSDDNavigatorItem) element;
+			return ComponentSDDVisualIDRegistry.getVisualID(item.getView());
 		}
 		return GROUP_CATEGORY;
 	}

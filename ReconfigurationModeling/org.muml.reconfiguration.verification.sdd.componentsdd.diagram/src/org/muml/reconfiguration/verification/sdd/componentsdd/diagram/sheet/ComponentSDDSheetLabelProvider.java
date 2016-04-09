@@ -20,12 +20,14 @@ import org.eclipse.jface.viewers.BaseLabelProvider;
 import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.swt.graphics.Image;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.navigator.ComponentSDDNavigatorGroup;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDVisualIDRegistry;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes;
 
 /**
  * @generated
  */
-public class ComponentSDDSheetLabelProvider extends BaseLabelProvider implements
-		ILabelProvider {
+public class ComponentSDDSheetLabelProvider extends BaseLabelProvider implements ILabelProvider {
 
 	/**
 	 * @generated
@@ -43,9 +45,8 @@ public class ComponentSDDSheetLabelProvider extends BaseLabelProvider implements
 		}
 		// END: Added for MUML #912
 
-		if (element instanceof org.muml.reconfiguration.verification.sdd.componentsdd.diagram.navigator.ComponentSDDNavigatorGroup) {
-			return ((org.muml.reconfiguration.verification.sdd.componentsdd.diagram.navigator.ComponentSDDNavigatorGroup) element)
-					.getGroupName();
+		if (element instanceof ComponentSDDNavigatorGroup) {
+			return ((ComponentSDDNavigatorGroup) element).getGroupName();
 		}
 		IElementType etype = getElementType(getView(element));
 		return etype == null ? "" : etype.getDisplayName();
@@ -56,9 +57,7 @@ public class ComponentSDDSheetLabelProvider extends BaseLabelProvider implements
 	 */
 	public Image getImage(Object element) {
 		IElementType etype = getElementType(getView(unwrap(element)));
-		return etype == null ? null
-				: org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes
-						.getImage(etype);
+		return etype == null ? null : ComponentSDDElementTypes.getImage(etype);
 	}
 
 	/**
@@ -90,15 +89,12 @@ public class ComponentSDDSheetLabelProvider extends BaseLabelProvider implements
 	private IElementType getElementType(View view) {
 		// For intermediate views climb up the containment hierarchy to find the one associated with an element type.
 		while (view != null) {
-			int vid = org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDVisualIDRegistry
-					.getVisualID(view);
-			IElementType etype = org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes
-					.getElementType(vid);
+			int vid = ComponentSDDVisualIDRegistry.getVisualID(view);
+			IElementType etype = ComponentSDDElementTypes.getElementType(vid);
 			if (etype != null) {
 				return etype;
 			}
-			view = view.eContainer() instanceof View ? (View) view.eContainer()
-					: null;
+			view = view.eContainer() instanceof View ? (View) view.eContainer() : null;
 		}
 		return null;
 	}

@@ -15,7 +15,5 @@ package org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.help
 /**
  * @generated
  */
-public class ComponentVariableEditHelper
-		extends
-		org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.helpers.ComponentSDDBaseEditHelper {
+public class ComponentVariableEditHelper extends ComponentSDDBaseEditHelper {
 }

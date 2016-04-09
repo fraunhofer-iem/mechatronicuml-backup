@@ -20,6 +20,12 @@ import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy;
+import org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.policies.ComponentSDDBaseItemSemanticEditPolicy;
+import org.muml.storydiagram.verification.sdd.AbstractStoryDecisionDiagram;
+import org.muml.storydiagram.verification.sdd.Edge;
+import org.muml.storydiagram.verification.sdd.Node;
 
 /**
  * @generated
@@ -55,7 +61,7 @@ public class EdgeReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	public boolean canExecute() {
-		if (false == getElementToEdit() instanceof org.muml.storydiagram.verification.sdd.Edge) {
+		if (false == getElementToEdit() instanceof Edge) {
 			return false;
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
@@ -71,28 +77,21 @@ public class EdgeReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected boolean canReorientSource() {
-		if (!(oldEnd instanceof org.muml.storydiagram.verification.sdd.Node && newEnd instanceof org.muml.storydiagram.verification.sdd.Node)) {
+		if (!(oldEnd instanceof Node && newEnd instanceof Node)) {
 			return false;
 		}
-		org.muml.storydiagram.verification.sdd.Node target = getLink()
-				.getTargetNode();
-		if (!(getLink().eContainer() instanceof org.muml.storydiagram.verification.sdd.AbstractStoryDecisionDiagram)) {
+		Node target = getLink().getTargetNode();
+		if (!(getLink().eContainer() instanceof AbstractStoryDecisionDiagram)) {
 			return false;
 		}
-		org.muml.storydiagram.verification.sdd.AbstractStoryDecisionDiagram container = (org.muml.storydiagram.verification.sdd.AbstractStoryDecisionDiagram) getLink()
-				.eContainer();
-		View sourceView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-				.getSourceView(getRequest());
-		View targetView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-				.getTargetView(getRequest());
-		if (!org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.policies.ComponentSDDBaseItemSemanticEditPolicy
-				.getLinkConstraints().canExistEdge_4001(container, getLink(),
-						getNewSource(), target, sourceView, targetView)) {
-			String errorMessage = org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.policies.ComponentSDDBaseItemSemanticEditPolicy
-					.getLinkConstraints().getErrorEdge_4001(container,
-							getNewSource(), target, sourceView, targetView);
-			org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy
-					.showMessage(sourceView, errorMessage);
+		AbstractStoryDecisionDiagram container = (AbstractStoryDecisionDiagram) getLink().eContainer();
+		View sourceView = ConnectionConfigureHelperGraphicalNodeEditPolicy.getSourceView(getRequest());
+		View targetView = ConnectionConfigureHelperGraphicalNodeEditPolicy.getTargetView(getRequest());
+		if (!ComponentSDDBaseItemSemanticEditPolicy.getLinkConstraints().canExistEdge_4001(container, getLink(),
+				getNewSource(), target, sourceView, targetView)) {
+			String errorMessage = ComponentSDDBaseItemSemanticEditPolicy.getLinkConstraints()
+					.getErrorEdge_4001(container, getNewSource(), target, sourceView, targetView);
+			ErrorFeedbackEditPolicy.showMessage(sourceView, errorMessage);
 			return false;
 		}
 		return true;
@@ -102,28 +101,21 @@ public class EdgeReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected boolean canReorientTarget() {
-		if (!(oldEnd instanceof org.muml.storydiagram.verification.sdd.Node && newEnd instanceof org.muml.storydiagram.verification.sdd.Node)) {
+		if (!(oldEnd instanceof Node && newEnd instanceof Node)) {
 			return false;
 		}
-		org.muml.storydiagram.verification.sdd.Node source = getLink()
-				.getSourceNode();
-		if (!(getLink().eContainer() instanceof org.muml.storydiagram.verification.sdd.AbstractStoryDecisionDiagram)) {
+		Node source = getLink().getSourceNode();
+		if (!(getLink().eContainer() instanceof AbstractStoryDecisionDiagram)) {
 			return false;
 		}
-		org.muml.storydiagram.verification.sdd.AbstractStoryDecisionDiagram container = (org.muml.storydiagram.verification.sdd.AbstractStoryDecisionDiagram) getLink()
-				.eContainer();
-		View sourceView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-				.getSourceView(getRequest());
-		View targetView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-				.getTargetView(getRequest());
-		if (!org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.policies.ComponentSDDBaseItemSemanticEditPolicy
-				.getLinkConstraints().canExistEdge_4001(container, getLink(),
-						source, getNewTarget(), sourceView, targetView)) {
-			String errorMessage = org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.policies.ComponentSDDBaseItemSemanticEditPolicy
-					.getLinkConstraints().getErrorEdge_4001(container, source,
-							getNewTarget(), sourceView, targetView);
-			org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy
-					.showMessage(sourceView, errorMessage);
+		AbstractStoryDecisionDiagram container = (AbstractStoryDecisionDiagram) getLink().eContainer();
+		View sourceView = ConnectionConfigureHelperGraphicalNodeEditPolicy.getSourceView(getRequest());
+		View targetView = ConnectionConfigureHelperGraphicalNodeEditPolicy.getTargetView(getRequest());
+		if (!ComponentSDDBaseItemSemanticEditPolicy.getLinkConstraints().canExistEdge_4001(container, getLink(), source,
+				getNewTarget(), sourceView, targetView)) {
+			String errorMessage = ComponentSDDBaseItemSemanticEditPolicy.getLinkConstraints()
+					.getErrorEdge_4001(container, source, getNewTarget(), sourceView, targetView);
+			ErrorFeedbackEditPolicy.showMessage(sourceView, errorMessage);
 			return false;
 		}
 		return true;
@@ -132,11 +124,9 @@ public class EdgeReorientCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
-			IAdaptable info) throws ExecutionException {
+	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		if (!canExecute()) {
-			throw new ExecutionException(
-					"Invalid arguments in reorient link command"); //$NON-NLS-1$
+			throw new ExecutionException("Invalid arguments in reorient link command"); //$NON-NLS-1$
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
 			return reorientSource();
@@ -170,36 +160,36 @@ public class EdgeReorientCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected org.muml.storydiagram.verification.sdd.Edge getLink() {
-		return (org.muml.storydiagram.verification.sdd.Edge) getElementToEdit();
+	protected Edge getLink() {
+		return (Edge) getElementToEdit();
 	}
 
 	/**
 	 * @generated
 	 */
-	protected org.muml.storydiagram.verification.sdd.Node getOldSource() {
-		return (org.muml.storydiagram.verification.sdd.Node) oldEnd;
+	protected Node getOldSource() {
+		return (Node) oldEnd;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected org.muml.storydiagram.verification.sdd.Node getNewSource() {
-		return (org.muml.storydiagram.verification.sdd.Node) newEnd;
+	protected Node getNewSource() {
+		return (Node) newEnd;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected org.muml.storydiagram.verification.sdd.Node getOldTarget() {
-		return (org.muml.storydiagram.verification.sdd.Node) oldEnd;
+	protected Node getOldTarget() {
+		return (Node) oldEnd;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected org.muml.storydiagram.verification.sdd.Node getNewTarget() {
-		return (org.muml.storydiagram.verification.sdd.Node) newEnd;
+	protected Node getNewTarget() {
+		return (Node) newEnd;
 	}
 
 	/**

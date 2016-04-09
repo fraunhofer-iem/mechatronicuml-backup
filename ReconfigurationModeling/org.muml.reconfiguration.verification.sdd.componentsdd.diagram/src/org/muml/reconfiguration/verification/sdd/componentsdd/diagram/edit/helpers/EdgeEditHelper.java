@@ -15,7 +15,5 @@ package org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.help
 /**
  * @generated
  */
-public class EdgeEditHelper
-		extends
-		org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.helpers.ComponentSDDBaseEditHelper {
+public class EdgeEditHelper extends ComponentSDDBaseEditHelper {
 }

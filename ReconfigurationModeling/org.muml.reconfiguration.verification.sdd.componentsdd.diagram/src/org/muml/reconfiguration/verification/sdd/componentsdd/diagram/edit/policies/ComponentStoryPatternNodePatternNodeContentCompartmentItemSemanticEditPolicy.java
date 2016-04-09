@@ -14,30 +14,28 @@ package org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.poli
 
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.commands.ComponentStoryPatternCreateCommand;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes;
 
 /**
  * @generated
  */
 public class ComponentStoryPatternNodePatternNodeContentCompartmentItemSemanticEditPolicy
-		extends
-		org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.policies.ComponentSDDBaseItemSemanticEditPolicy {
+		extends ComponentSDDBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public ComponentStoryPatternNodePatternNodeContentCompartmentItemSemanticEditPolicy() {
-		super(
-				org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.ComponentStoryPatternNode_2003);
+		super(ComponentSDDElementTypes.ComponentStoryPatternNode_2003);
 	}
 
 	/**
 	 * @generated
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
-		if (org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.ComponentStoryPattern_3001 == req
-				.getElementType()) {
-			return getGEFWrapper(new org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.commands.ComponentStoryPatternCreateCommand(
-					req));
+		if (ComponentSDDElementTypes.ComponentStoryPattern_3001 == req.getElementType()) {
+			return getGEFWrapper(new ComponentStoryPatternCreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}

@@ -24,6 +24,13 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy;
+import org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.policies.ComponentSDDBaseItemSemanticEditPolicy;
+import org.muml.storydiagram.verification.sdd.AbstractStoryDecisionDiagram;
+import org.muml.storydiagram.verification.sdd.Edge;
+import org.muml.storydiagram.verification.sdd.Node;
+import org.muml.storydiagram.verification.sdd.SDDFactory;
 
 /**
  * @generated
@@ -43,24 +50,21 @@ public class EdgeCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	private final org.muml.storydiagram.verification.sdd.AbstractStoryDecisionDiagram container;
+	private final AbstractStoryDecisionDiagram container;
 
 	/**
 	 * @generated
 	 */
-	public EdgeCreateCommand(CreateRelationshipRequest request, EObject source,
-			EObject target) {
+	public EdgeCreateCommand(CreateRelationshipRequest request, EObject source, EObject target) {
 		super(request.getLabel(), null, request);
-		org.muml.storydiagram.verification.sdd.AbstractStoryDecisionDiagram container = null;
+		AbstractStoryDecisionDiagram container = null;
 		this.source = source;
 		this.target = target;
 		container = deduceContainer(source, target);
 
 		if (container == null) {
-			View sourceView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-					.getSourceView(getRequest());
-			View targetView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-					.getTargetView(getRequest());
+			View sourceView = ConnectionConfigureHelperGraphicalNodeEditPolicy.getSourceView(getRequest());
+			View targetView = ConnectionConfigureHelperGraphicalNodeEditPolicy.getTargetView(getRequest());
 			container = deduceContainerUsingViews(sourceView, targetView);
 		}
 		this.container = container;
@@ -73,12 +77,10 @@ public class EdgeCreateCommand extends EditElementCommand {
 		if (source == null && target == null) {
 			return false;
 		}
-		if (source != null
-				&& false == source instanceof org.muml.storydiagram.verification.sdd.Node) {
+		if (source != null && false == source instanceof Node) {
 			return false;
 		}
-		if (target != null
-				&& false == target instanceof org.muml.storydiagram.verification.sdd.Node) {
+		if (target != null && false == target instanceof Node) {
 			return false;
 		}
 		if (getSource() == null) {
@@ -88,19 +90,13 @@ public class EdgeCreateCommand extends EditElementCommand {
 		if (getContainer() == null) {
 			return false;
 		}
-		View sourceView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-				.getSourceView(getRequest());
-		View targetView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-				.getTargetView(getRequest());
-		if (!org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.policies.ComponentSDDBaseItemSemanticEditPolicy
-				.getLinkConstraints().canCreateEdge_4001(getContainer(),
-						getSource(), getTarget(), sourceView, targetView)) {
-			String errorMessage = org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.policies.ComponentSDDBaseItemSemanticEditPolicy
-					.getLinkConstraints().getErrorEdge_4001(getContainer(),
-							getSource(), getTarget(), sourceView, targetView);
-			org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy
-					.showMessage(targetView != null ? targetView : sourceView,
-							errorMessage);
+		View sourceView = ConnectionConfigureHelperGraphicalNodeEditPolicy.getSourceView(getRequest());
+		View targetView = ConnectionConfigureHelperGraphicalNodeEditPolicy.getTargetView(getRequest());
+		if (!ComponentSDDBaseItemSemanticEditPolicy.getLinkConstraints().canCreateEdge_4001(getContainer(), getSource(),
+				getTarget(), sourceView, targetView)) {
+			String errorMessage = ComponentSDDBaseItemSemanticEditPolicy.getLinkConstraints()
+					.getErrorEdge_4001(getContainer(), getSource(), getTarget(), sourceView, targetView);
+			ErrorFeedbackEditPolicy.showMessage(targetView != null ? targetView : sourceView, errorMessage);
 			return false;
 		}
 		return true;
@@ -109,15 +105,12 @@ public class EdgeCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
-			IAdaptable info) throws ExecutionException {
+	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		if (!canExecute()) {
-			throw new ExecutionException(
-					"Invalid arguments in create link command"); //$NON-NLS-1$
+			throw new ExecutionException("Invalid arguments in create link command"); //$NON-NLS-1$
 		}
 
-		org.muml.storydiagram.verification.sdd.Edge newElement = org.muml.storydiagram.verification.sdd.SDDFactory.eINSTANCE
-				.createEdge();
+		Edge newElement = SDDFactory.eINSTANCE.createEdge();
 		getContainer().getEdges().add(newElement);
 		newElement.setSourceNode(getSource());
 		newElement.setTargetNode(getTarget());
@@ -128,25 +121,16 @@ public class EdgeCreateCommand extends EditElementCommand {
 	}
 
 	/**
-	 * @generated
-	 */
-	protected void doConfigure(
-			org.muml.storydiagram.verification.sdd.Edge newElement,
-			IProgressMonitor monitor, IAdaptable info)
-			throws ExecutionException {
-		IElementType elementType = ((CreateElementRequest) getRequest())
-				.getElementType();
-		ConfigureRequest configureRequest = new ConfigureRequest(
-				getEditingDomain(), newElement, elementType);
-		configureRequest.setClientContext(((CreateElementRequest) getRequest())
-				.getClientContext());
+	* @generated
+	*/
+	protected void doConfigure(Edge newElement, IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
+		IElementType elementType = ((CreateElementRequest) getRequest()).getElementType();
+		ConfigureRequest configureRequest = new ConfigureRequest(getEditingDomain(), newElement, elementType);
+		configureRequest.setClientContext(((CreateElementRequest) getRequest()).getClientContext());
 		configureRequest.addParameters(getRequest().getParameters());
-		configureRequest.setParameter(CreateRelationshipRequest.SOURCE,
-				getSource());
-		configureRequest.setParameter(CreateRelationshipRequest.TARGET,
-				getTarget());
-		ICommand configureCommand = elementType
-				.getEditCommand(configureRequest);
+		configureRequest.setParameter(CreateRelationshipRequest.SOURCE, getSource());
+		configureRequest.setParameter(CreateRelationshipRequest.TARGET, getTarget());
+		ICommand configureCommand = elementType.getEditCommand(configureRequest);
 		if (configureCommand != null && configureCommand.canExecute()) {
 			configureCommand.execute(monitor, info);
 		}
@@ -162,21 +146,21 @@ public class EdgeCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected org.muml.storydiagram.verification.sdd.Node getSource() {
-		return (org.muml.storydiagram.verification.sdd.Node) source;
+	protected Node getSource() {
+		return (Node) source;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected org.muml.storydiagram.verification.sdd.Node getTarget() {
-		return (org.muml.storydiagram.verification.sdd.Node) target;
+	protected Node getTarget() {
+		return (Node) target;
 	}
 
 	/**
 	 * @generated
 	 */
-	public org.muml.storydiagram.verification.sdd.AbstractStoryDecisionDiagram getContainer() {
+	public AbstractStoryDecisionDiagram getContainer() {
 		return container;
 	}
 
@@ -185,15 +169,13 @@ public class EdgeCreateCommand extends EditElementCommand {
 	 * Modify with appropriate logic.
 	 * @generated
 	 */
-	private static org.muml.storydiagram.verification.sdd.AbstractStoryDecisionDiagram deduceContainer(
-			EObject source, EObject target) {
+	private static AbstractStoryDecisionDiagram deduceContainer(EObject source, EObject target) {
 		// Find container element for the new link.
 		// Climb up by containment hierarchy starting from the source
 		// and return the first element that is instance of the container class.
-		for (EObject element = source; element != null; element = element
-				.eContainer()) {
-			if (element instanceof org.muml.storydiagram.verification.sdd.AbstractStoryDecisionDiagram) {
-				return (org.muml.storydiagram.verification.sdd.AbstractStoryDecisionDiagram) element;
+		for (EObject element = source; element != null; element = element.eContainer()) {
+			if (element instanceof AbstractStoryDecisionDiagram) {
+				return (AbstractStoryDecisionDiagram) element;
 			}
 		}
 		return null;
@@ -204,13 +186,10 @@ public class EdgeCreateCommand extends EditElementCommand {
 	 * 
 	 * @generated
 	 */
-	private static org.muml.storydiagram.verification.sdd.AbstractStoryDecisionDiagram deduceContainerUsingViews(
-			View sourceView, View targetView) {
-		for (View view = sourceView; view != null; view = (View) view
-				.eContainer()) {
-			if (view.getElement() instanceof org.muml.storydiagram.verification.sdd.AbstractStoryDecisionDiagram) {
-				return (org.muml.storydiagram.verification.sdd.AbstractStoryDecisionDiagram) view
-						.getElement();
+	private static AbstractStoryDecisionDiagram deduceContainerUsingViews(View sourceView, View targetView) {
+		for (View view = sourceView; view != null; view = (View) view.eContainer()) {
+			if (view.getElement() instanceof AbstractStoryDecisionDiagram) {
+				return (AbstractStoryDecisionDiagram) view.getElement();
 			}
 		}
 		return null;

@@ -14,30 +14,28 @@ package org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.poli
 
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.commands.SinglePortVariableCreateCommand;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes;
 
 /**
  * @generated
  */
 public class MultiPortVariableMultiPortVariablesCompartmentItemSemanticEditPolicy
-		extends
-		org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.policies.ComponentSDDBaseItemSemanticEditPolicy {
+		extends ComponentSDDBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public MultiPortVariableMultiPortVariablesCompartmentItemSemanticEditPolicy() {
-		super(
-				org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.MultiPortVariable_3004);
+		super(ComponentSDDElementTypes.MultiPortVariable_3004);
 	}
 
 	/**
 	 * @generated
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
-		if (org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.SinglePortVariable_3005 == req
-				.getElementType()) {
-			return getGEFWrapper(new org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.commands.SinglePortVariableCreateCommand(
-					req));
+		if (ComponentSDDElementTypes.SinglePortVariable_3005 == req.getElementType()) {
+			return getGEFWrapper(new SinglePortVariableCreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}

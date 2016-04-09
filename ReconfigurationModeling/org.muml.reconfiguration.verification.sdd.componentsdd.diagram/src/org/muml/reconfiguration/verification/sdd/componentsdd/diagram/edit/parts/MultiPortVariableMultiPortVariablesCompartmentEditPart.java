@@ -31,12 +31,17 @@ import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.edit.policies.reparent.CreationEditPolicyWithCustomReparent;
+import org.muml.core.common.edit.policies.compartment.BorderlessCompartmentEditPolicy;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.policies.MultiPortVariableMultiPortVariablesCompartmentCanonicalEditPolicy;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.policies.MultiPortVariableMultiPortVariablesCompartmentItemSemanticEditPolicy;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDVisualIDRegistry;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.Messages;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes;
 
 /**
  * @generated
  */
-public class MultiPortVariableMultiPortVariablesCompartmentEditPart extends
-		ListCompartmentEditPart {
+public class MultiPortVariableMultiPortVariablesCompartmentEditPart extends ListCompartmentEditPart {
 
 	/**
 	 * @generated
@@ -84,21 +89,19 @@ public class MultiPortVariableMultiPortVariablesCompartmentEditPart extends
 	 * @generated
 	 */
 	public String getCompartmentName() {
-		return org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.Messages.MultiPortVariableMultiPortVariablesCompartmentEditPart_title;
+		return Messages.MultiPortVariableMultiPortVariablesCompartmentEditPart_title;
 	}
 
 	/**
 	 * @generated
 	 */
 	public IFigure createFigure() {
-		ResizableCompartmentFigure result = (ResizableCompartmentFigure) super
-				.createFigure();
+		ResizableCompartmentFigure result = (ResizableCompartmentFigure) super.createFigure();
 
 		result.setTitleVisibility(false);
 
 		// Begin added to always stretch list layouts
-		LayoutManager layoutManager = result.getContentPane()
-				.getLayoutManager();
+		LayoutManager layoutManager = result.getContentPane().getLayoutManager();
 		if (layoutManager instanceof ConstrainedToolbarLayout) {
 			ConstrainedToolbarLayout constrainedToolbarLayout = (ConstrainedToolbarLayout) layoutManager;
 			constrainedToolbarLayout.setStretchMajorAxis(true);
@@ -114,21 +117,17 @@ public class MultiPortVariableMultiPortVariablesCompartmentEditPart extends
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(
-				EditPolicyRoles.SEMANTIC_ROLE,
-				new org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.policies.MultiPortVariableMultiPortVariablesCompartmentItemSemanticEditPolicy());
-		installEditPolicy(
-				EditPolicyRoles.CREATION_ROLE,
-				new CreationEditPolicyWithCustomReparent(
-						org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDVisualIDRegistry.TYPED_INSTANCE));
-		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE,
-				new DragDropEditPolicy());
-		installEditPolicy(
-				EditPolicyRoles.CANONICAL_ROLE,
-				new org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.policies.MultiPortVariableMultiPortVariablesCompartmentCanonicalEditPolicy());
-		installEditPolicy(
-				org.muml.pim.common.edit.policies.EditPolicyRoles.COMPARTMENT_BORDER_ROLE,
-				new org.muml.core.common.edit.policies.compartment.BorderlessCompartmentEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
+				new MultiPortVariableMultiPortVariablesCompartmentItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.CREATION_ROLE,
+				new CreationEditPolicyWithCustomReparent(ComponentSDDVisualIDRegistry.TYPED_INSTANCE));
+		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
+		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE,
+				new MultiPortVariableMultiPortVariablesCompartmentCanonicalEditPolicy());
+
+		installEditPolicy(org.muml.pim.common.edit.policies.EditPolicyRoles.COMPARTMENT_BORDER_ROLE,
+				new BorderlessCompartmentEditPolicy());
+
 	}
 
 	/**
@@ -145,28 +144,22 @@ public class MultiPortVariableMultiPortVariablesCompartmentEditPart extends
 	 */
 	public EditPart getTargetEditPart(Request request) {
 		if (request instanceof CreateViewAndElementRequest) {
-			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request)
-					.getViewAndElementDescriptor()
+			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request).getViewAndElementDescriptor()
 					.getCreateElementRequestAdapter();
-			IElementType type = (IElementType) adapter
-					.getAdapter(IElementType.class);
-			if (type == org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.SinglePortVariable_3005) {
+			IElementType type = (IElementType) adapter.getAdapter(IElementType.class);
+			if (type == ComponentSDDElementTypes.SinglePortVariable_3005) {
 				return this;
 			}
 			return getParent().getTargetEditPart(request);
 		}
 		if (request instanceof CreateUnspecifiedTypeConnectionRequest) {
 			if (RequestConstants.REQ_CONNECTION_END.equals(request.getType())) {
-				for (Object type : ((CreateUnspecifiedTypeConnectionRequest) request)
-						.getElementTypes()) {
+				for (Object type : ((CreateUnspecifiedTypeConnectionRequest) request).getElementTypes()) {
 					if (type instanceof IElementType) {
 						IElementType elementType = (IElementType) type;
-						if (elementType
-								.equals(org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.AssemblyVariable_4002)
-								|| elementType
-										.equals(org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.DelegationVariable_4003)
-								|| elementType
-										.equals(org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.MultiPortOrderConstraint_4004))
+						if (elementType.equals(ComponentSDDElementTypes.AssemblyVariable_4002)
+								|| elementType.equals(ComponentSDDElementTypes.DelegationVariable_4003)
+								|| elementType.equals(ComponentSDDElementTypes.MultiPortOrderConstraint_4004))
 							return super.getTargetEditPart(request);
 					}
 				}

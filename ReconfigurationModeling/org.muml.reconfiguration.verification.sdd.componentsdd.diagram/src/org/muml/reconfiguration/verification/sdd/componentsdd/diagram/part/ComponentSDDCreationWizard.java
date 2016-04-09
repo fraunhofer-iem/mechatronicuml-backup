@@ -15,13 +15,12 @@ package org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.IWorkbench;
+import org.muml.core.modelinstance.ui.diagrams.AbstractFujabaDiagramNewWizard;
 
 /**
  * @generated
  */
-public class ComponentSDDCreationWizard
-		extends
-		org.muml.core.modelinstance.ui.diagrams.AbstractFujabaDiagramNewWizard {
+public class ComponentSDDCreationWizard extends AbstractFujabaDiagramNewWizard {
 
 	/**
 	 * @generated
@@ -29,8 +28,8 @@ public class ComponentSDDCreationWizard
 	public void init(IWorkbench workbench, IStructuredSelection selection) {
 		super.init(workbench, selection);
 
-		setDefaultPageImageDescriptor(org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDDiagramEditorPlugin
-				.getBundledImageDescriptor("icons/wizban/NewComponentsddWizard.gif")); //$NON-NLS-1$
+		setDefaultPageImageDescriptor(
+				ComponentSDDDiagramEditorPlugin.getBundledImageDescriptor("icons/wizban/NewComponentsddWizard.gif")); //$NON-NLS-1$
 
 	}
 
@@ -39,7 +38,7 @@ public class ComponentSDDCreationWizard
 	 */
 	@Override
 	public String getEditorId() {
-		return org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDDiagramEditor.ID;
+		return ComponentSDDDiagramEditor.ID;
 
 	}
 
@@ -48,8 +47,7 @@ public class ComponentSDDCreationWizard
 	 */
 	@Override
 	public AdapterFactory getItemProvidersAdapterFactory() {
-		return org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDDiagramEditorPlugin
-				.getInstance().getItemProvidersAdapterFactory();
+		return ComponentSDDDiagramEditorPlugin.getInstance().getItemProvidersAdapterFactory();
 	}
 
 }

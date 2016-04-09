@@ -30,17 +30,41 @@ import org.eclipse.gmf.tooling.runtime.LogHelper;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
+import org.muml.core.common.FujabaCommonPlugin;
 import org.muml.core.expressions.common.provider.CommonExpressionsItemProviderAdapterFactory;
 import org.muml.core.expressions.provider.ExpressionsItemProviderAdapterFactory;
 import org.muml.core.provider.CoreItemProviderAdapterFactory;
+import org.muml.pim.behavior.provider.BehaviorItemProviderAdapterFactory;
+import org.muml.pim.component.provider.ComponentItemProviderAdapterFactory;
+import org.muml.pim.connector.provider.ConnectorItemProviderAdapterFactory;
+import org.muml.pim.constraint.provider.ConstraintItemProviderAdapterFactory;
+import org.muml.pim.instance.provider.InstanceItemProviderAdapterFactory;
+import org.muml.pim.msgtype.provider.MsgtypeItemProviderAdapterFactory;
+import org.muml.pim.pattern.provider.PatternItemProviderAdapterFactory;
+import org.muml.pim.protocol.provider.ProtocolItemProviderAdapterFactory;
+import org.muml.pim.provider.PimItemProviderAdapterFactory;
+import org.muml.pim.realtimestatechart.provider.RealtimestatechartItemProviderAdapterFactory;
+import org.muml.pim.types.provider.TypesItemProviderAdapterFactory;
+import org.muml.pim.valuetype.provider.ValuetypeItemProviderAdapterFactory;
+import org.muml.reconfiguration.componentstorypattern.provider.ComponentstorypatternItemProviderAdapterFactory;
+import org.muml.reconfiguration.expression.provider.ExpressionItemProviderAdapterFactory;
+import org.muml.reconfiguration.protocolinstantiation.provider.ProtocolinstantiationItemProviderAdapterFactory;
+import org.muml.reconfiguration.provider.ReconfigurationItemProviderAdapterFactory;
+import org.muml.reconfiguration.structdatatype.provider.StructdatatypeItemProviderAdapterFactory;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.policies.ComponentSDDBaseItemSemanticEditPolicy;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.expressions.ComponentSDDOCLFactory;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ElementInitializers;
+import org.muml.reconfiguration.verification.sdd.componentsdd.provider.ComponentsddItemProviderAdapterFactory;
 import org.muml.storydiagram.activities.expressions.provider.ActivitiesExpressionsItemProviderAdapterFactory;
 import org.muml.storydiagram.activities.provider.ActivitiesItemProviderAdapterFactory;
 import org.muml.storydiagram.calls.expressions.provider.CallsExpressionsItemProviderAdapterFactory;
 import org.muml.storydiagram.calls.provider.CallsItemProviderAdapterFactory;
 import org.muml.storydiagram.patterns.expressions.provider.PatternsExpressionsItemProviderAdapterFactory;
 import org.muml.storydiagram.patterns.provider.PatternsItemProviderAdapterFactory;
+import org.muml.storydiagram.provider.StorydiagramItemProviderAdapterFactory;
 import org.muml.storydiagram.provider.StorydiagramsItemProviderAdapterFactory;
 import org.muml.storydiagram.templates.provider.TemplatesItemProviderAdapterFactory;
+import org.muml.storydiagram.verification.sdd.provider.SDDItemProviderAdapterFactory;
 import org.osgi.framework.BundleContext;
 
 /**
@@ -61,8 +85,7 @@ public class ComponentSDDDiagramEditorPlugin extends AbstractUIPlugin {
 	/**
 	 * @generated
 	 */
-	public static final PreferencesHint DIAGRAM_PREFERENCES_HINT = new PreferencesHint(
-			ID);
+	public static final PreferencesHint DIAGRAM_PREFERENCES_HINT = new PreferencesHint(ID);
 
 	/**
 	 * @generated
@@ -77,22 +100,22 @@ public class ComponentSDDDiagramEditorPlugin extends AbstractUIPlugin {
 	/**
 	 * @generated
 	 */
-	private org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDDocumentProvider documentProvider;
+	private ComponentSDDDocumentProvider documentProvider;
 
 	/**
 	 * @generated
 	 */
-	private org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.policies.ComponentSDDBaseItemSemanticEditPolicy.LinkConstraints linkConstraints;
+	private ComponentSDDBaseItemSemanticEditPolicy.LinkConstraints linkConstraints;
 
 	/**
 	 * @generated
 	 */
-	private org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ElementInitializers initializers;
+	private ElementInitializers initializers;
 
 	/**
 	 * @generated
 	 */
-	private org.muml.reconfiguration.verification.sdd.componentsdd.diagram.expressions.ComponentSDDOCLFactory oclFactory;
+	private ComponentSDDOCLFactory oclFactory;
 
 	/**
 	 * @generated
@@ -107,8 +130,7 @@ public class ComponentSDDDiagramEditorPlugin extends AbstractUIPlugin {
 		super.start(context);
 		instance = this;
 		myLogHelper = new LogHelper(this);
-		PreferencesHint.registerPreferenceStore(DIAGRAM_PREFERENCES_HINT,
-				getPreferenceStore());
+		PreferencesHint.registerPreferenceStore(DIAGRAM_PREFERENCES_HINT, getPreferenceStore());
 		adapterFactory = createAdapterFactory();
 	}
 
@@ -145,54 +167,42 @@ public class ComponentSDDDiagramEditorPlugin extends AbstractUIPlugin {
 	 * @generated
 	 */
 	protected void fillItemProviderFactories(List<AdapterFactory> factories) {
-		List<AdapterFactory> positivePriorityFactories = org.muml.core.common.FujabaCommonPlugin
-				.getInstance().getCustomItemProviderAdapterFactories(ID, true);
-		List<AdapterFactory> negativePriorityFactories = org.muml.core.common.FujabaCommonPlugin
-				.getInstance().getCustomItemProviderAdapterFactories(ID, false);
+		List<AdapterFactory> positivePriorityFactories = FujabaCommonPlugin.getInstance()
+				.getCustomItemProviderAdapterFactories(ID, true);
+		List<AdapterFactory> negativePriorityFactories = FujabaCommonPlugin.getInstance()
+				.getCustomItemProviderAdapterFactories(ID, false);
 
 		// Custom Factories with positive priority
 		factories.addAll(positivePriorityFactories);
 
 		// Default Factories
-		factories
-				.add(new org.muml.reconfiguration.verification.sdd.componentsdd.provider.ComponentsddItemProviderAdapterFactory());
-		factories
-				.add(new org.muml.reconfiguration.componentstorypattern.provider.ComponentstorypatternItemProviderAdapterFactory());
+		factories.add(new ComponentsddItemProviderAdapterFactory());
+		factories.add(new ComponentstorypatternItemProviderAdapterFactory());
 		factories.add(new CoreItemProviderAdapterFactory());
 		factories.add(new ExpressionsItemProviderAdapterFactory());
 		factories.add(new CommonExpressionsItemProviderAdapterFactory());
 		factories.add(new EcoreItemProviderAdapterFactory());
-		factories
-				.add(new org.muml.pim.component.provider.ComponentItemProviderAdapterFactory());
-		factories
-				.add(new org.muml.pim.constraint.provider.ConstraintItemProviderAdapterFactory());
-		factories
-				.add(new org.muml.pim.instance.provider.InstanceItemProviderAdapterFactory());
-		factories
-				.add(new org.muml.pim.protocol.provider.ProtocolItemProviderAdapterFactory());
-		factories
-				.add(new org.muml.pim.realtimestatechart.provider.RealtimestatechartItemProviderAdapterFactory());
-		factories
-				.add(new org.muml.pim.msgtype.provider.MsgtypeItemProviderAdapterFactory());
-		factories
-				.add(new org.muml.pim.types.provider.TypesItemProviderAdapterFactory());
-		factories
-				.add(new org.muml.pim.connector.provider.ConnectorItemProviderAdapterFactory());
-		factories
-				.add(new org.muml.pim.valuetype.provider.ValuetypeItemProviderAdapterFactory());
-		factories
-				.add(new org.muml.pim.behavior.provider.BehaviorItemProviderAdapterFactory());
-		factories
-				.add(new org.muml.reconfiguration.provider.ReconfigurationItemProviderAdapterFactory());
-		factories
-				.add(new org.muml.reconfiguration.expression.provider.ExpressionItemProviderAdapterFactory());
-		factories
-				.add(new org.muml.reconfiguration.structdatatype.provider.StructdatatypeItemProviderAdapterFactory());
-		factories
-				.add(new org.muml.reconfiguration.protocolinstantiation.provider.ProtocolinstantiationItemProviderAdapterFactory());
-		factories
-				.add(new org.muml.storydiagram.verification.sdd.provider.SDDItemProviderAdapterFactory());
-		factories.add(new StorydiagramsItemProviderAdapterFactory());
+		factories.add(new PimItemProviderAdapterFactory());
+		factories.add(new ConstraintItemProviderAdapterFactory());
+		factories.add(new InstanceItemProviderAdapterFactory());
+		factories.add(new ProtocolItemProviderAdapterFactory());
+		factories.add(new RealtimestatechartItemProviderAdapterFactory());
+		factories.add(
+				new org.muml.pim.realtimestatechart.one_to_n_schemata.provider.One_to_n_schemataItemProviderAdapterFactory());
+		factories.add(new MsgtypeItemProviderAdapterFactory());
+		factories.add(new TypesItemProviderAdapterFactory());
+		factories.add(new ConnectorItemProviderAdapterFactory());
+		factories.add(new ValuetypeItemProviderAdapterFactory());
+		factories.add(new BehaviorItemProviderAdapterFactory());
+		factories.add(new ComponentItemProviderAdapterFactory());
+		factories.add(new PatternItemProviderAdapterFactory());
+		factories.add(new ReconfigurationItemProviderAdapterFactory());
+		factories.add(new ExpressionItemProviderAdapterFactory());
+		factories.add(new StructdatatypeItemProviderAdapterFactory());
+		factories.add(new ProtocolinstantiationItemProviderAdapterFactory());
+		factories.add(new org.muml.reconfiguration.reconfInstance.provider.ReconfInstanceItemProviderAdapterFactory());
+		factories.add(new SDDItemProviderAdapterFactory());
+		factories.add(new StorydiagramItemProviderAdapterFactory());
 		factories.add(new ActivitiesItemProviderAdapterFactory());
 		factories.add(new ActivitiesExpressionsItemProviderAdapterFactory());
 		factories.add(new CallsItemProviderAdapterFactory());
@@ -218,11 +228,9 @@ public class ComponentSDDDiagramEditorPlugin extends AbstractUIPlugin {
 	 * @generated
 	 */
 	public ImageDescriptor getItemImageDescriptor(Object item) {
-		IItemLabelProvider labelProvider = (IItemLabelProvider) adapterFactory
-				.adapt(item, IItemLabelProvider.class);
+		IItemLabelProvider labelProvider = (IItemLabelProvider) adapterFactory.adapt(item, IItemLabelProvider.class);
 		if (labelProvider != null) {
-			return ExtendedImageRegistry.getInstance().getImageDescriptor(
-					labelProvider.getImage(item));
+			return ExtendedImageRegistry.getInstance().getImageDescriptor(labelProvider.getImage(item));
 		}
 		return null;
 	}
@@ -251,8 +259,8 @@ public class ComponentSDDDiagramEditorPlugin extends AbstractUIPlugin {
 	public static ImageDescriptor findImageDescriptor(String path) {
 		final IPath p = new Path(path);
 		if (p.isAbsolute() && p.segmentCount() > 1) {
-			return AbstractUIPlugin.imageDescriptorFromPlugin(p.segment(0), p
-					.removeFirstSegments(1).makeAbsolute().toString());
+			return AbstractUIPlugin.imageDescriptorFromPlugin(p.segment(0),
+					p.removeFirstSegments(1).makeAbsolute().toString());
 		} else {
 			return getBundledImageDescriptor(p.makeAbsolute().toString());
 		}
@@ -287,9 +295,9 @@ public class ComponentSDDDiagramEditorPlugin extends AbstractUIPlugin {
 	/**
 	 * @generated
 	 */
-	public org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDDocumentProvider getDocumentProvider() {
+	public ComponentSDDDocumentProvider getDocumentProvider() {
 		if (documentProvider == null) {
-			documentProvider = new org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDDocumentProvider();
+			documentProvider = new ComponentSDDDocumentProvider();
 		}
 		return documentProvider;
 	}
@@ -297,45 +305,42 @@ public class ComponentSDDDiagramEditorPlugin extends AbstractUIPlugin {
 	/**
 	 * @generated
 	 */
-	public org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.policies.ComponentSDDBaseItemSemanticEditPolicy.LinkConstraints getLinkConstraints() {
+	public ComponentSDDBaseItemSemanticEditPolicy.LinkConstraints getLinkConstraints() {
 		return linkConstraints;
 	}
 
 	/**
-	 * @generated
-	 */
-	public void setLinkConstraints(
-			org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.policies.ComponentSDDBaseItemSemanticEditPolicy.LinkConstraints lc) {
+	* @generated
+	*/
+	public void setLinkConstraints(ComponentSDDBaseItemSemanticEditPolicy.LinkConstraints lc) {
 		this.linkConstraints = lc;
 	}
 
 	/**
 	 * @generated
 	 */
-	public org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ElementInitializers getElementInitializers() {
+	public ElementInitializers getElementInitializers() {
 		return initializers;
 	}
 
 	/**
-	 * @generated
-	 */
-	public void setElementInitializers(
-			org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ElementInitializers i) {
+	* @generated
+	*/
+	public void setElementInitializers(ElementInitializers i) {
 		this.initializers = i;
 	}
 
 	/**
 	 * @generated
 	 */
-	public org.muml.reconfiguration.verification.sdd.componentsdd.diagram.expressions.ComponentSDDOCLFactory getComponentSDDOCLFactory() {
+	public ComponentSDDOCLFactory getComponentSDDOCLFactory() {
 		return oclFactory;
 	}
 
 	/**
-	 * @generated
-	 */
-	public void setComponentSDDOCLFactory(
-			org.muml.reconfiguration.verification.sdd.componentsdd.diagram.expressions.ComponentSDDOCLFactory f) {
+	* @generated
+	*/
+	public void setComponentSDDOCLFactory(ComponentSDDOCLFactory f) {
 		this.oclFactory = f;
 	}
 

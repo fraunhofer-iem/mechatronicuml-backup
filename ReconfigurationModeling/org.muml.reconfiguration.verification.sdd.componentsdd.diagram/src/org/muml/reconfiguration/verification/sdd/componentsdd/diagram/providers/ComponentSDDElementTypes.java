@@ -25,6 +25,27 @@ import org.eclipse.gmf.tooling.runtime.providers.DiagramElementTypeImages;
 import org.eclipse.gmf.tooling.runtime.providers.DiagramElementTypes;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.swt.graphics.Image;
+import org.muml.reconfiguration.componentstorypattern.ComponentstorypatternPackage;
+import org.muml.reconfiguration.verification.sdd.componentsdd.ComponentsddPackage;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.AssemblyVariableEditPart;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.ComponentPartVariableEditPart;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.ComponentStoryDecisionDiagramEditPart;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.ComponentStoryPatternEditPart;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.ComponentStoryPatternNodeEditPart;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.ComponentVariableEditPart;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.DelegationVariableEditPart;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.EdgeEditPart;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.FadingComponentPartVariableEditPart;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.InitialNodeEditPart;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.LeafNodeEditPart;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.MultiPortOrderConstraintEditPart;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.MultiPortVariable2EditPart;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.MultiPortVariableEditPart;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.SinglePortVariable2EditPart;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.SinglePortVariable3EditPart;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.SinglePortVariableEditPart;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDDiagramEditorPlugin;
+import org.muml.storydiagram.verification.sdd.SDDPackage;
 
 /**
  * @generated
@@ -46,8 +67,7 @@ public class ComponentSDDElementTypes {
 	 * @generated
 	 */
 	private static DiagramElementTypeImages elementTypeImages = new DiagramElementTypeImages(
-			org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDDiagramEditorPlugin
-					.getInstance().getItemProvidersAdapterFactory());
+			ComponentSDDDiagramEditorPlugin.getInstance().getItemProvidersAdapterFactory());
 
 	/**
 	 * @generated
@@ -57,74 +77,91 @@ public class ComponentSDDElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType ComponentStoryDecisionDiagram_1000 = getElementType("org.muml.reconfiguration.verification.sdd.componentsdd.diagram.ComponentStoryDecisionDiagram_1000"); //$NON-NLS-1$
+	public static final IElementType ComponentStoryDecisionDiagram_1000 = getElementType(
+			"org.muml.reconfiguration.verification.sdd.componentsdd.diagram.ComponentStoryDecisionDiagram_1000"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType ComponentStoryPatternNode_2003 = getElementType("org.muml.reconfiguration.verification.sdd.componentsdd.diagram.ComponentStoryPatternNode_2003"); //$NON-NLS-1$
+	public static final IElementType ComponentStoryPatternNode_2003 = getElementType(
+			"org.muml.reconfiguration.verification.sdd.componentsdd.diagram.ComponentStoryPatternNode_2003"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType LeafNode_2002 = getElementType("org.muml.reconfiguration.verification.sdd.componentsdd.diagram.LeafNode_2002"); //$NON-NLS-1$
+	public static final IElementType LeafNode_2002 = getElementType(
+			"org.muml.reconfiguration.verification.sdd.componentsdd.diagram.LeafNode_2002"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType InitialNode_2004 = getElementType("org.muml.reconfiguration.verification.sdd.componentsdd.diagram.InitialNode_2004"); //$NON-NLS-1$
+	public static final IElementType InitialNode_2004 = getElementType(
+			"org.muml.reconfiguration.verification.sdd.componentsdd.diagram.InitialNode_2004"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType ComponentStoryPattern_3001 = getElementType("org.muml.reconfiguration.verification.sdd.componentsdd.diagram.ComponentStoryPattern_3001"); //$NON-NLS-1$
+	public static final IElementType ComponentStoryPattern_3001 = getElementType(
+			"org.muml.reconfiguration.verification.sdd.componentsdd.diagram.ComponentStoryPattern_3001"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType ComponentVariable_3002 = getElementType("org.muml.reconfiguration.verification.sdd.componentsdd.diagram.ComponentVariable_3002"); //$NON-NLS-1$
+	public static final IElementType ComponentVariable_3002 = getElementType(
+			"org.muml.reconfiguration.verification.sdd.componentsdd.diagram.ComponentVariable_3002"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType ComponentPartVariable_3003 = getElementType("org.muml.reconfiguration.verification.sdd.componentsdd.diagram.ComponentPartVariable_3003"); //$NON-NLS-1$
+	public static final IElementType ComponentPartVariable_3003 = getElementType(
+			"org.muml.reconfiguration.verification.sdd.componentsdd.diagram.ComponentPartVariable_3003"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType MultiPortVariable_3004 = getElementType("org.muml.reconfiguration.verification.sdd.componentsdd.diagram.MultiPortVariable_3004"); //$NON-NLS-1$
+	public static final IElementType MultiPortVariable_3004 = getElementType(
+			"org.muml.reconfiguration.verification.sdd.componentsdd.diagram.MultiPortVariable_3004"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType SinglePortVariable_3005 = getElementType("org.muml.reconfiguration.verification.sdd.componentsdd.diagram.SinglePortVariable_3005"); //$NON-NLS-1$
+	public static final IElementType SinglePortVariable_3005 = getElementType(
+			"org.muml.reconfiguration.verification.sdd.componentsdd.diagram.SinglePortVariable_3005"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType SinglePortVariable_3006 = getElementType("org.muml.reconfiguration.verification.sdd.componentsdd.diagram.SinglePortVariable_3006"); //$NON-NLS-1$
+	public static final IElementType SinglePortVariable_3006 = getElementType(
+			"org.muml.reconfiguration.verification.sdd.componentsdd.diagram.SinglePortVariable_3006"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType MultiPortVariable_3007 = getElementType("org.muml.reconfiguration.verification.sdd.componentsdd.diagram.MultiPortVariable_3007"); //$NON-NLS-1$
+	public static final IElementType MultiPortVariable_3007 = getElementType(
+			"org.muml.reconfiguration.verification.sdd.componentsdd.diagram.MultiPortVariable_3007"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType SinglePortVariable_3008 = getElementType("org.muml.reconfiguration.verification.sdd.componentsdd.diagram.SinglePortVariable_3008"); //$NON-NLS-1$
+	public static final IElementType SinglePortVariable_3008 = getElementType(
+			"org.muml.reconfiguration.verification.sdd.componentsdd.diagram.SinglePortVariable_3008"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType FadingComponentPartVariable_3009 = getElementType("org.muml.reconfiguration.verification.sdd.componentsdd.diagram.FadingComponentPartVariable_3009"); //$NON-NLS-1$
+	public static final IElementType FadingComponentPartVariable_3009 = getElementType(
+			"org.muml.reconfiguration.verification.sdd.componentsdd.diagram.FadingComponentPartVariable_3009"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Edge_4001 = getElementType("org.muml.reconfiguration.verification.sdd.componentsdd.diagram.Edge_4001"); //$NON-NLS-1$
+	public static final IElementType Edge_4001 = getElementType(
+			"org.muml.reconfiguration.verification.sdd.componentsdd.diagram.Edge_4001"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType AssemblyVariable_4002 = getElementType("org.muml.reconfiguration.verification.sdd.componentsdd.diagram.AssemblyVariable_4002"); //$NON-NLS-1$
+	public static final IElementType AssemblyVariable_4002 = getElementType(
+			"org.muml.reconfiguration.verification.sdd.componentsdd.diagram.AssemblyVariable_4002"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType DelegationVariable_4003 = getElementType("org.muml.reconfiguration.verification.sdd.componentsdd.diagram.DelegationVariable_4003"); //$NON-NLS-1$
+	public static final IElementType DelegationVariable_4003 = getElementType(
+			"org.muml.reconfiguration.verification.sdd.componentsdd.diagram.DelegationVariable_4003"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType MultiPortOrderConstraint_4004 = getElementType("org.muml.reconfiguration.verification.sdd.componentsdd.diagram.MultiPortOrderConstraint_4004"); //$NON-NLS-1$
+	public static final IElementType MultiPortOrderConstraint_4004 = getElementType(
+			"org.muml.reconfiguration.verification.sdd.componentsdd.diagram.MultiPortOrderConstraint_4004"); //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -164,90 +201,42 @@ public class ComponentSDDElementTypes {
 		if (elements == null) {
 			elements = new IdentityHashMap<IElementType, ENamedElement>();
 
-			elements.put(
-					ComponentStoryDecisionDiagram_1000,
-					org.muml.reconfiguration.verification.sdd.componentsdd.ComponentsddPackage.eINSTANCE
-							.getComponentStoryDecisionDiagram());
+			elements.put(ComponentStoryDecisionDiagram_1000,
+					ComponentsddPackage.eINSTANCE.getComponentStoryDecisionDiagram());
 
-			elements.put(
-					ComponentStoryPatternNode_2003,
-					org.muml.reconfiguration.verification.sdd.componentsdd.ComponentsddPackage.eINSTANCE
-							.getComponentStoryPatternNode());
+			elements.put(ComponentStoryPatternNode_2003, ComponentsddPackage.eINSTANCE.getComponentStoryPatternNode());
 
-			elements.put(
-					LeafNode_2002,
-					org.muml.storydiagram.verification.sdd.SDDPackage.eINSTANCE
-							.getLeafNode());
+			elements.put(LeafNode_2002, SDDPackage.eINSTANCE.getLeafNode());
 
-			elements.put(
-					InitialNode_2004,
-					org.muml.reconfiguration.verification.sdd.componentsdd.ComponentsddPackage.eINSTANCE
-							.getInitialNode());
+			elements.put(InitialNode_2004, ComponentsddPackage.eINSTANCE.getInitialNode());
 
-			elements.put(
-					ComponentStoryPattern_3001,
-					org.muml.reconfiguration.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
-							.getComponentStoryPattern());
+			elements.put(ComponentStoryPattern_3001, ComponentstorypatternPackage.eINSTANCE.getComponentStoryPattern());
 
-			elements.put(
-					ComponentVariable_3002,
-					org.muml.reconfiguration.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
-							.getComponentVariable());
+			elements.put(ComponentVariable_3002, ComponentstorypatternPackage.eINSTANCE.getComponentVariable());
 
-			elements.put(
-					ComponentPartVariable_3003,
-					org.muml.reconfiguration.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
-							.getComponentPartVariable());
+			elements.put(ComponentPartVariable_3003, ComponentstorypatternPackage.eINSTANCE.getComponentPartVariable());
 
-			elements.put(
-					MultiPortVariable_3004,
-					org.muml.reconfiguration.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
-							.getMultiPortVariable());
+			elements.put(MultiPortVariable_3004, ComponentstorypatternPackage.eINSTANCE.getMultiPortVariable());
 
-			elements.put(
-					SinglePortVariable_3005,
-					org.muml.reconfiguration.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
-							.getSinglePortVariable());
+			elements.put(SinglePortVariable_3005, ComponentstorypatternPackage.eINSTANCE.getSinglePortVariable());
 
-			elements.put(
-					SinglePortVariable_3006,
-					org.muml.reconfiguration.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
-							.getSinglePortVariable());
+			elements.put(SinglePortVariable_3006, ComponentstorypatternPackage.eINSTANCE.getSinglePortVariable());
 
-			elements.put(
-					MultiPortVariable_3007,
-					org.muml.reconfiguration.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
-							.getMultiPortVariable());
+			elements.put(MultiPortVariable_3007, ComponentstorypatternPackage.eINSTANCE.getMultiPortVariable());
 
-			elements.put(
-					SinglePortVariable_3008,
-					org.muml.reconfiguration.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
-							.getSinglePortVariable());
+			elements.put(SinglePortVariable_3008, ComponentstorypatternPackage.eINSTANCE.getSinglePortVariable());
 
-			elements.put(
-					FadingComponentPartVariable_3009,
-					org.muml.reconfiguration.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
-							.getFadingComponentPartVariable());
+			elements.put(FadingComponentPartVariable_3009,
+					ComponentstorypatternPackage.eINSTANCE.getFadingComponentPartVariable());
 
-			elements.put(
-					Edge_4001,
-					org.muml.storydiagram.verification.sdd.SDDPackage.eINSTANCE
-							.getEdge());
+			elements.put(Edge_4001, SDDPackage.eINSTANCE.getEdge());
 
-			elements.put(
-					AssemblyVariable_4002,
-					org.muml.reconfiguration.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
-							.getAssemblyVariable());
+			elements.put(AssemblyVariable_4002, ComponentstorypatternPackage.eINSTANCE.getAssemblyVariable());
 
-			elements.put(
-					DelegationVariable_4003,
-					org.muml.reconfiguration.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
-							.getDelegationVariable());
+			elements.put(DelegationVariable_4003, ComponentstorypatternPackage.eINSTANCE.getDelegationVariable());
 
-			elements.put(
-					MultiPortOrderConstraint_4004,
-					org.muml.reconfiguration.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
-							.getMultiPortOrderConstraint());
+			elements.put(MultiPortOrderConstraint_4004,
+					ComponentstorypatternPackage.eINSTANCE.getMultiPortOrderConstraint());
 		}
 		return (ENamedElement) elements.get(type);
 	}
@@ -291,39 +280,39 @@ public class ComponentSDDElementTypes {
 	 */
 	public static IElementType getElementType(int visualID) {
 		switch (visualID) {
-		case org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.ComponentStoryDecisionDiagramEditPart.VISUAL_ID:
+		case ComponentStoryDecisionDiagramEditPart.VISUAL_ID:
 			return ComponentStoryDecisionDiagram_1000;
-		case org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.ComponentStoryPatternNodeEditPart.VISUAL_ID:
+		case ComponentStoryPatternNodeEditPart.VISUAL_ID:
 			return ComponentStoryPatternNode_2003;
-		case org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.LeafNodeEditPart.VISUAL_ID:
+		case LeafNodeEditPart.VISUAL_ID:
 			return LeafNode_2002;
-		case org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.InitialNodeEditPart.VISUAL_ID:
+		case InitialNodeEditPart.VISUAL_ID:
 			return InitialNode_2004;
-		case org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.ComponentStoryPatternEditPart.VISUAL_ID:
+		case ComponentStoryPatternEditPart.VISUAL_ID:
 			return ComponentStoryPattern_3001;
-		case org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.ComponentVariableEditPart.VISUAL_ID:
+		case ComponentVariableEditPart.VISUAL_ID:
 			return ComponentVariable_3002;
-		case org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.ComponentPartVariableEditPart.VISUAL_ID:
+		case ComponentPartVariableEditPart.VISUAL_ID:
 			return ComponentPartVariable_3003;
-		case org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.MultiPortVariableEditPart.VISUAL_ID:
+		case MultiPortVariableEditPart.VISUAL_ID:
 			return MultiPortVariable_3004;
-		case org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.SinglePortVariableEditPart.VISUAL_ID:
+		case SinglePortVariableEditPart.VISUAL_ID:
 			return SinglePortVariable_3005;
-		case org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.SinglePortVariable2EditPart.VISUAL_ID:
+		case SinglePortVariable2EditPart.VISUAL_ID:
 			return SinglePortVariable_3006;
-		case org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.MultiPortVariable2EditPart.VISUAL_ID:
+		case MultiPortVariable2EditPart.VISUAL_ID:
 			return MultiPortVariable_3007;
-		case org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.SinglePortVariable3EditPart.VISUAL_ID:
+		case SinglePortVariable3EditPart.VISUAL_ID:
 			return SinglePortVariable_3008;
-		case org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.FadingComponentPartVariableEditPart.VISUAL_ID:
+		case FadingComponentPartVariableEditPart.VISUAL_ID:
 			return FadingComponentPartVariable_3009;
-		case org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.EdgeEditPart.VISUAL_ID:
+		case EdgeEditPart.VISUAL_ID:
 			return Edge_4001;
-		case org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.AssemblyVariableEditPart.VISUAL_ID:
+		case AssemblyVariableEditPart.VISUAL_ID:
 			return AssemblyVariable_4002;
-		case org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.DelegationVariableEditPart.VISUAL_ID:
+		case DelegationVariableEditPart.VISUAL_ID:
 			return DelegationVariable_4003;
-		case org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.MultiPortOrderConstraintEditPart.VISUAL_ID:
+		case MultiPortOrderConstraintEditPart.VISUAL_ID:
 			return MultiPortOrderConstraint_4004;
 		}
 		return null;
@@ -332,33 +321,34 @@ public class ComponentSDDElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final DiagramElementTypes TYPED_INSTANCE = new DiagramElementTypes(
-			elementTypeImages) {
+	public static final DiagramElementTypes TYPED_INSTANCE = new DiagramElementTypes(elementTypeImages) {
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		@Override
+
 		public boolean isKnownElementType(IElementType elementType) {
 			return org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes
 					.isKnownElementType(elementType);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		@Override
+
 		public IElementType getElementTypeForVisualId(int visualID) {
 			return org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes
 					.getElementType(visualID);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		@Override
-		public ENamedElement getDefiningNamedElement(
-				IAdaptable elementTypeAdapter) {
+
+		public ENamedElement getDefiningNamedElement(IAdaptable elementTypeAdapter) {
 			return org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes
 					.getElement(elementTypeAdapter);
 		}

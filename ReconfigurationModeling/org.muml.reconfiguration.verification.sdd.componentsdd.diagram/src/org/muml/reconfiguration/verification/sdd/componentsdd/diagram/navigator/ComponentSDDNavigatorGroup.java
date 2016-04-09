@@ -18,9 +18,7 @@ import java.util.LinkedList;
 /**
  * @generated
  */
-public class ComponentSDDNavigatorGroup
-		extends
-		org.muml.reconfiguration.verification.sdd.componentsdd.diagram.navigator.ComponentSDDAbstractNavigatorItem {
+public class ComponentSDDNavigatorGroup extends ComponentSDDAbstractNavigatorItem {
 
 	/**
 	 * @generated

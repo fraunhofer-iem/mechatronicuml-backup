@@ -14,6 +14,7 @@ package org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.part
 
 import java.util.Collection;
 
+import org.eclipse.draw2d.ConnectionAnchor;
 import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.GridData;
 import org.eclipse.draw2d.GridLayout;
@@ -43,6 +44,16 @@ import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.edit.policies.reparent.CreationEditPolicyWithCustomReparent;
 import org.eclipse.swt.graphics.Color;
+import org.muml.core.common.edit.policies.BorderItemSelectionEditPolicy;
+import org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy;
+import org.muml.core.common.edit.policies.anchor.IConnectionAnchorCreationEditPolicy;
+import org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy;
+import org.muml.core.common.figures.CustomExternalLabelBorderItemLocator;
+import org.muml.pim.common.edit.policies.IBackgroundColorEditPolicy;
+import org.muml.pim.common.edit.policies.ports.MultiPortEditPolicy;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.policies.MultiPortVariableItemSemanticEditPolicy;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDVisualIDRegistry;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes;
 
 /**
  * @generated
@@ -78,6 +89,22 @@ public class MultiPortVariableEditPart extends BorderedBorderItemEditPart {
 	}
 
 	/**
+	* MUML FIX: Adapt background color if IBackgroundColorEditPolicy is registered.
+	* 
+	* @generated
+	*/
+	@Override
+	protected void refreshBackgroundColor() {
+		EditPolicy backgroundColorPolicy = getEditPolicy(
+				org.muml.core.common.edit.policies.EditPolicyRoles.BACKGROUND_COLOR_ROLE);
+		if (backgroundColorPolicy instanceof IBackgroundColorEditPolicy) {
+			setBackgroundColor(((IBackgroundColorEditPolicy) backgroundColorPolicy).getCurrentBackgroundColor());
+		} else {
+			super.refreshBackgroundColor();
+		}
+	}
+
+	/**
 	 * @generated
 	 */
 	protected IFigure contentPane;
@@ -98,30 +125,23 @@ public class MultiPortVariableEditPart extends BorderedBorderItemEditPart {
 	 * @generated
 	 */
 	protected void createDefaultEditPolicies() {
-		installEditPolicy(
-				EditPolicyRoles.CREATION_ROLE,
-				new CreationEditPolicyWithCustomReparent(
-						org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDVisualIDRegistry.TYPED_INSTANCE));
+		installEditPolicy(EditPolicyRoles.CREATION_ROLE,
+				new CreationEditPolicyWithCustomReparent(ComponentSDDVisualIDRegistry.TYPED_INSTANCE));
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE,
-				getPrimaryDragEditPolicy());
-		installEditPolicy(
-				EditPolicyRoles.SEMANTIC_ROLE,
-				new org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.policies.MultiPortVariableItemSemanticEditPolicy());
+		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, getPrimaryDragEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new MultiPortVariableItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
-		installEditPolicy(
-				org.muml.pim.common.edit.policies.EditPolicyRoles.PORT_VISUALIZATION_ROLE,
-				new org.muml.pim.common.edit.policies.ports.MultiPortEditPolicy());
+
+		installEditPolicy(org.muml.pim.common.edit.policies.EditPolicyRoles.PORT_VISUALIZATION_ROLE,
+				new MultiPortEditPolicy());
+
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 
-		installEditPolicy(
-				EditPolicy.GRAPHICAL_NODE_ROLE,
-				new org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy());
+		installEditPolicy(EditPolicy.GRAPHICAL_NODE_ROLE, new ConnectionConfigureHelperGraphicalNodeEditPolicy());
 
-		installEditPolicy(
-				org.muml.core.common.edit.policies.EditPolicyRoles.ERROR_FEEDBACK_ROLE,
-				new org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy());
+		installEditPolicy(org.muml.core.common.edit.policies.EditPolicyRoles.ERROR_FEEDBACK_ROLE,
+				new ErrorFeedbackEditPolicy());
 
 	}
 
@@ -133,15 +153,13 @@ public class MultiPortVariableEditPart extends BorderedBorderItemEditPart {
 
 			protected EditPolicy createChildEditPolicy(EditPart child) {
 				View childView = (View) child.getModel();
-				switch (org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDVisualIDRegistry
-						.getVisualID(childView)) {
-				case org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.PortVariableOperatorEditPart.VISUAL_ID:
-				case org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.MultiPortVariableNameEditPart.VISUAL_ID:
-				case org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.UnderlinedLabelEditPart.VISUAL_ID:
-					return new org.muml.core.common.edit.policies.BorderItemSelectionEditPolicy();
+				switch (ComponentSDDVisualIDRegistry.getVisualID(childView)) {
+				case PortVariableOperatorEditPart.VISUAL_ID:
+				case MultiPortVariableNameEditPart.VISUAL_ID:
+				case UnderlinedLabelEditPart.VISUAL_ID:
+					return new BorderItemSelectionEditPolicy();
 				}
-				EditPolicy result = child
-						.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
+				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
 				if (result == null) {
 					result = new NonResizableEditPolicy();
 				}
@@ -177,12 +195,10 @@ public class MultiPortVariableEditPart extends BorderedBorderItemEditPart {
 	 * @generated
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.MultiPortVariableMultiPortVariablesCompartmentEditPart) {
-			IFigure pane = getPrimaryShape()
-					.getFigureSinglePortVariablesCompartment();
+		if (childEditPart instanceof MultiPortVariableMultiPortVariablesCompartmentEditPart) {
+			IFigure pane = getPrimaryShape().getFigureSinglePortVariablesCompartment();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
-			pane.add(((org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.MultiPortVariableMultiPortVariablesCompartmentEditPart) childEditPart)
-					.getFigure());
+			pane.add(((MultiPortVariableMultiPortVariablesCompartmentEditPart) childEditPart).getFigure());
 			return true;
 		}
 		return false;
@@ -192,11 +208,9 @@ public class MultiPortVariableEditPart extends BorderedBorderItemEditPart {
 	 * @generated
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.MultiPortVariableMultiPortVariablesCompartmentEditPart) {
-			IFigure pane = getPrimaryShape()
-					.getFigureSinglePortVariablesCompartment();
-			pane.remove(((org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.MultiPortVariableMultiPortVariablesCompartmentEditPart) childEditPart)
-					.getFigure());
+		if (childEditPart instanceof MultiPortVariableMultiPortVariablesCompartmentEditPart) {
+			IFigure pane = getPrimaryShape().getFigureSinglePortVariablesCompartment();
+			pane.remove(((MultiPortVariableMultiPortVariablesCompartmentEditPart) childEditPart).getFigure());
 			return true;
 		}
 		return false;
@@ -226,7 +240,7 @@ public class MultiPortVariableEditPart extends BorderedBorderItemEditPart {
 	 * @generated
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
-		if (editPart instanceof org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.MultiPortVariableMultiPortVariablesCompartmentEditPart) {
+		if (editPart instanceof MultiPortVariableMultiPortVariablesCompartmentEditPart) {
 			return getPrimaryShape().getFigureSinglePortVariablesCompartment();
 		}
 		if (editPart instanceof IBorderItemEditPart) {
@@ -238,14 +252,13 @@ public class MultiPortVariableEditPart extends BorderedBorderItemEditPart {
 	/**
 	 * @generated
 	 */
-	protected void addBorderItem(IFigure borderItemContainer,
-			IBorderItemEditPart borderItemEditPart) {
-		if (borderItemEditPart instanceof org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.PortVariableOperatorEditPart
-				|| borderItemEditPart instanceof org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.MultiPortVariableNameEditPart
-				|| borderItemEditPart instanceof org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.UnderlinedLabelEditPart) {
+	protected void addBorderItem(IFigure borderItemContainer, IBorderItemEditPart borderItemEditPart) {
+		if (borderItemEditPart instanceof PortVariableOperatorEditPart
+				|| borderItemEditPart instanceof MultiPortVariableNameEditPart
+				|| borderItemEditPart instanceof UnderlinedLabelEditPart) {
 			// bug-fix: allows the free positioning of external Labels
-			org.muml.core.common.figures.CustomExternalLabelBorderItemLocator locator = new org.muml.core.common.figures.CustomExternalLabelBorderItemLocator(
-					getMainFigure(), PositionConstants.SOUTH);
+			CustomExternalLabelBorderItemLocator locator = new CustomExternalLabelBorderItemLocator(getMainFigure(),
+					PositionConstants.SOUTH);
 			locator.setBorderItemOffset(new Dimension(-20, -20));
 			borderItemContainer.add(borderItemEditPart.getFigure(), locator);
 		} else {
@@ -257,11 +270,20 @@ public class MultiPortVariableEditPart extends BorderedBorderItemEditPart {
 	 * @generated
 	 */
 	protected NodeFigure createNodePlate() {
-		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(44, 36);
+		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(44, 36) {
+			@Override
+			public ConnectionAnchor createDefaultAnchor() {
+				IConnectionAnchorCreationEditPolicy connectionAnchorCreationEditPolicy = (IConnectionAnchorCreationEditPolicy) getEditPolicy(
+						org.muml.core.common.edit.policies.EditPolicyRoles.CONNECTION_ANCHOR_CREATION_ROLE);
+				if (connectionAnchorCreationEditPolicy != null) {
+					return connectionAnchorCreationEditPolicy.createDefaultAnchor();
+				}
+				return super.createDefaultAnchor();
+			}
+		};
 
 		//FIXME: workaround for #154536
 		result.getBounds().setSize(result.getPreferredSize());
-
 		return result;
 	}
 
@@ -347,8 +369,7 @@ public class MultiPortVariableEditPart extends BorderedBorderItemEditPart {
 	 * @generated
 	 */
 	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDVisualIDRegistry
-				.getType(org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.PortVariableOperatorEditPart.VISUAL_ID));
+		return getChildBySemanticHint(ComponentSDDVisualIDRegistry.getType(PortVariableOperatorEditPart.VISUAL_ID));
 	}
 
 	/**
@@ -356,14 +377,12 @@ public class MultiPortVariableEditPart extends BorderedBorderItemEditPart {
 	 */
 	public EditPart getTargetEditPart(Request request) {
 		if (request instanceof CreateViewAndElementRequest) {
-			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request)
-					.getViewAndElementDescriptor()
+			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request).getViewAndElementDescriptor()
 					.getCreateElementRequestAdapter();
-			IElementType type = (IElementType) adapter
-					.getAdapter(IElementType.class);
-			if (type == org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.SinglePortVariable_3005) {
-				return getChildBySemanticHint(org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDVisualIDRegistry
-						.getType(org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.MultiPortVariableMultiPortVariablesCompartmentEditPart.VISUAL_ID));
+			IElementType type = (IElementType) adapter.getAdapter(IElementType.class);
+			if (type == ComponentSDDElementTypes.SinglePortVariable_3005) {
+				return getChildBySemanticHint(ComponentSDDVisualIDRegistry
+						.getType(MultiPortVariableMultiPortVariablesCompartmentEditPart.VISUAL_ID));
 			}
 		}
 		return super.getTargetEditPart(request);
@@ -411,8 +430,7 @@ public class MultiPortVariableEditPart extends BorderedBorderItemEditPart {
 			constraintFFigureSinglePortVariablesCompartment.verticalSpan = 1;
 			constraintFFigureSinglePortVariablesCompartment.grabExcessHorizontalSpace = true;
 			constraintFFigureSinglePortVariablesCompartment.grabExcessVerticalSpace = true;
-			this.add(fFigureSinglePortVariablesCompartment,
-					constraintFFigureSinglePortVariablesCompartment);
+			this.add(fFigureSinglePortVariablesCompartment, constraintFFigureSinglePortVariablesCompartment);
 
 		}
 

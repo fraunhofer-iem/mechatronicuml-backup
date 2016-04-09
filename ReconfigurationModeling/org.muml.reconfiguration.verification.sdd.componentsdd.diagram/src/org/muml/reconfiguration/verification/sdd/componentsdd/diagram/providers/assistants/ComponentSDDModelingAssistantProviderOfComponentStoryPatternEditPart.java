@@ -12,11 +12,12 @@
  */
 package org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.assistants;
 
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDModelingAssistantProvider;
+
 /**
  * @generated
  */
 public class ComponentSDDModelingAssistantProviderOfComponentStoryPatternEditPart
-		extends
-		org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDModelingAssistantProvider {
+		extends ComponentSDDModelingAssistantProvider {
 
 }

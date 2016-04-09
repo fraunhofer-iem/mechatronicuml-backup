@@ -18,15 +18,13 @@ import org.eclipse.gmf.tooling.runtime.providers.DefaultElementTypeIconProvider;
 /**
  * @generated
  */
-public class ComponentSDDIconProvider extends DefaultElementTypeIconProvider
-		implements IIconProvider {
+public class ComponentSDDIconProvider extends DefaultElementTypeIconProvider implements IIconProvider {
 
 	/**
 	 * @generated
 	 */
 	public ComponentSDDIconProvider() {
-		super(
-				org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.TYPED_INSTANCE);
+		super(ComponentSDDElementTypes.TYPED_INSTANCE);
 	}
 
 }

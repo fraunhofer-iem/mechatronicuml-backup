@@ -13,6 +13,7 @@
 package org.muml.reconfiguration.verification.sdd.componentsdd.diagram.preferences;
 
 import org.eclipse.gmf.runtime.diagram.ui.preferences.DiagramsPreferencePage;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDDiagramEditorPlugin;
 
 /**
  * @generated
@@ -23,7 +24,6 @@ public class DiagramGeneralPreferencePage extends DiagramsPreferencePage {
 	 * @generated
 	 */
 	public DiagramGeneralPreferencePage() {
-		setPreferenceStore(org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDDiagramEditorPlugin
-				.getInstance().getPreferenceStore());
+		setPreferenceStore(ComponentSDDDiagramEditorPlugin.getInstance().getPreferenceStore());
 	}
 }

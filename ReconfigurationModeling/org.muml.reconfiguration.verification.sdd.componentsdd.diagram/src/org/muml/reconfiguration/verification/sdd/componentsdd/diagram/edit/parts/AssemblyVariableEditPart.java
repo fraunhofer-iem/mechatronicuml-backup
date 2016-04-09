@@ -28,12 +28,13 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.swt.widgets.Display;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.policies.AssemblyVariableItemSemanticEditPolicy;
 
 /**
  * @generated
  */
-public class AssemblyVariableEditPart extends ConnectionNodeEditPart implements
-		ITreeBranchEditPart {
+public class AssemblyVariableEditPart extends ConnectionNodeEditPart implements ITreeBranchEditPart {
 
 	/**
 	 * @generated
@@ -75,19 +76,16 @@ public class AssemblyVariableEditPart extends ConnectionNodeEditPart implements
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(
-				EditPolicyRoles.SEMANTIC_ROLE,
-				new org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.policies.AssemblyVariableItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new AssemblyVariableItemSemanticEditPolicy());
 	}
 
 	/**
 	 * @generated
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.AssemblyVariableNameEditPart) {
-			((org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.AssemblyVariableNameEditPart) childEditPart)
-					.setLabel(getPrimaryShape()
-							.getFigureAssemblyVariableLabelFigure());
+		if (childEditPart instanceof AssemblyVariableNameEditPart) {
+			((AssemblyVariableNameEditPart) childEditPart)
+					.setLabel(getPrimaryShape().getFigureAssemblyVariableLabelFigure());
 			return true;
 		}
 		return false;
@@ -107,7 +105,7 @@ public class AssemblyVariableEditPart extends ConnectionNodeEditPart implements
 	 * @generated
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.AssemblyVariableNameEditPart) {
+		if (childEditPart instanceof AssemblyVariableNameEditPart) {
 			return true;
 		}
 		return false;
@@ -198,17 +196,19 @@ public class AssemblyVariableEditPart extends ConnectionNodeEditPart implements
 		// Properties View.
 		EObject sourceElement = null;
 		if (getSource() instanceof GraphicalEditPart) {
-			sourceElement = ((GraphicalEditPart) getSource()).getNotationView()
-					.getElement();
+			sourceElement = ((GraphicalEditPart) getSource()).getNotationView().getElement();
 		}
 		EObject targetElement = null;
 		if (getTarget() instanceof GraphicalEditPart) {
-			targetElement = ((GraphicalEditPart) getTarget()).getNotationView()
-					.getElement();
+			targetElement = ((GraphicalEditPart) getTarget()).getNotationView().getElement();
 		}
-		if (notification.getOldValue() == sourceElement
-				|| notification.getOldValue() == targetElement) {
-			doCanonicalRefresh();
+		if (notification.getOldValue() == sourceElement || notification.getOldValue() == targetElement) {
+			Display.getCurrent().asyncExec(new Runnable() {
+				@Override
+				public void run() {
+					doCanonicalRefresh();
+				}
+			});
 		}
 
 		super.handleNotificationEvent(notification);

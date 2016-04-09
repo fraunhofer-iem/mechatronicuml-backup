@@ -26,53 +26,86 @@ import org.eclipse.gmf.runtime.emf.ui.services.parser.ParserHintAdapter;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.parsers.EnumParser;
 import org.muml.core.CorePackage;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.AssemblyVariableNameEditPart;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.ComponentStoryPatternNodeNameEditPart;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.ComponentStoryPatternNodeTypeEditPart;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.DelegationVariableNameEditPart;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.MultiPortVariableName2EditPart;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.MultiPortVariableNameEditPart;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.SinglePortVariableName2EditPart;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.SinglePortVariableNameEditPart;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.UnderlinedLabel2EditPart;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.UnderlinedLabel3EditPart;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.UnderlinedLabel4EditPart;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.UnderlinedLabelEditPart;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.WrappingLabel10EditPart;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.WrappingLabel3EditPart;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.WrappingLabel4EditPart;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.WrappingLabel6EditPart;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.WrappingLabel7EditPart;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.WrappingLabel8EditPart;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.WrappingLabel9EditPart;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.parsers.ComponentPartVariableLabelExpressionLabelParser5026;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.parsers.ComponentPartVariableLabelExpressionLabelParser5040;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.parsers.ComponentStoryPatternNodeLabelExpressionLabelParser5037;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.parsers.ComponentStoryPatternNodeLabelExpressionLabelParser5038;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.parsers.FadingComponentPartVariableLabelExpressionLabelParser5044;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.parsers.FadingComponentPartVariableLabelExpressionLabelParser5046;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.parsers.InitialNodeLabelExpressionLabelParser5042;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.parsers.InitialNodeLabelExpressionLabelParser5043;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.parsers.MessageFormatParser;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.parsers.MultiPortOrderConstraintLabelExpressionLabelParser6003;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.parsers.MultiPortVariableLabelExpressionLabelParser5021;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.parsers.MultiPortVariableLabelExpressionLabelParser5029;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.parsers.SinglePortVariableLabelExpressionLabelParser5024;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.parsers.SinglePortVariableLabelExpressionLabelParser5032;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDVisualIDRegistry;
 
 /**
  * @generated
  */
-public class ComponentSDDParserProvider extends AbstractProvider implements
-		IParserProvider {
+public class ComponentSDDParserProvider extends AbstractProvider implements IParserProvider {
 
 	/**
 	 * @generated
 	 */
 	private IParser getComponentStoryPatternNodeLabel_5037Parser() {
-		return new org.muml.reconfiguration.verification.sdd.componentsdd.diagram.parsers.ComponentStoryPatternNodeLabelExpressionLabelParser5037();
+		return new ComponentStoryPatternNodeLabelExpressionLabelParser5037();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getComponentStoryPatternNodeLabel_5038Parser() {
-		return new org.muml.reconfiguration.verification.sdd.componentsdd.diagram.parsers.ComponentStoryPatternNodeLabelExpressionLabelParser5038();
+		return new ComponentStoryPatternNodeLabelExpressionLabelParser5038();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getInitialNodeLabel_5042Parser() {
-		return new org.muml.reconfiguration.verification.sdd.componentsdd.diagram.parsers.InitialNodeLabelExpressionLabelParser5042();
+		return new InitialNodeLabelExpressionLabelParser5042();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getInitialNodeLabel_5043Parser() {
-		return new org.muml.reconfiguration.verification.sdd.componentsdd.diagram.parsers.InitialNodeLabelExpressionLabelParser5043();
+		return new InitialNodeLabelExpressionLabelParser5043();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getComponentPartVariableLabel_5026Parser() {
-		return new org.muml.reconfiguration.verification.sdd.componentsdd.diagram.parsers.ComponentPartVariableLabelExpressionLabelParser5026();
+		return new ComponentPartVariableLabelExpressionLabelParser5026();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getComponentPartVariableLabel_5040Parser() {
-		return new org.muml.reconfiguration.verification.sdd.componentsdd.diagram.parsers.ComponentPartVariableLabelExpressionLabelParser5040();
+		return new ComponentPartVariableLabelExpressionLabelParser5040();
 	}
 
 	/**
@@ -85,12 +118,9 @@ public class ComponentSDDParserProvider extends AbstractProvider implements
 	 */
 	private IParser getMultiPortVariableName_5020Parser() {
 		if (multiPortVariableName_5020Parser == null) {
-			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
-			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
-			org.muml.reconfiguration.verification.sdd.componentsdd.diagram.parsers.MessageFormatParser parser = new org.muml.reconfiguration.verification.sdd.componentsdd.diagram.parsers.MessageFormatParser(
-					features, editableFeatures);
+			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
+			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
+			MessageFormatParser parser = new MessageFormatParser(features, editableFeatures);
 			multiPortVariableName_5020Parser = parser;
 		}
 		return multiPortVariableName_5020Parser;
@@ -100,7 +130,7 @@ public class ComponentSDDParserProvider extends AbstractProvider implements
 	 * @generated
 	 */
 	private IParser getMultiPortVariableLabel_5021Parser() {
-		return new org.muml.reconfiguration.verification.sdd.componentsdd.diagram.parsers.MultiPortVariableLabelExpressionLabelParser5021();
+		return new MultiPortVariableLabelExpressionLabelParser5021();
 	}
 
 	/**
@@ -113,12 +143,9 @@ public class ComponentSDDParserProvider extends AbstractProvider implements
 	 */
 	private IParser getSinglePortVariableName_5023Parser() {
 		if (singlePortVariableName_5023Parser == null) {
-			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
-			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
-			org.muml.reconfiguration.verification.sdd.componentsdd.diagram.parsers.MessageFormatParser parser = new org.muml.reconfiguration.verification.sdd.componentsdd.diagram.parsers.MessageFormatParser(
-					features, editableFeatures);
+			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
+			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
+			MessageFormatParser parser = new MessageFormatParser(features, editableFeatures);
 			singlePortVariableName_5023Parser = parser;
 		}
 		return singlePortVariableName_5023Parser;
@@ -128,7 +155,7 @@ public class ComponentSDDParserProvider extends AbstractProvider implements
 	 * @generated
 	 */
 	private IParser getSinglePortVariableLabel_5024Parser() {
-		return new org.muml.reconfiguration.verification.sdd.componentsdd.diagram.parsers.SinglePortVariableLabelExpressionLabelParser5024();
+		return new SinglePortVariableLabelExpressionLabelParser5024();
 	}
 
 	/**
@@ -141,12 +168,9 @@ public class ComponentSDDParserProvider extends AbstractProvider implements
 	 */
 	private IParser getMultiPortVariableName_5028Parser() {
 		if (multiPortVariableName_5028Parser == null) {
-			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
-			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
-			org.muml.reconfiguration.verification.sdd.componentsdd.diagram.parsers.MessageFormatParser parser = new org.muml.reconfiguration.verification.sdd.componentsdd.diagram.parsers.MessageFormatParser(
-					features, editableFeatures);
+			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
+			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
+			MessageFormatParser parser = new MessageFormatParser(features, editableFeatures);
 			multiPortVariableName_5028Parser = parser;
 		}
 		return multiPortVariableName_5028Parser;
@@ -156,7 +180,7 @@ public class ComponentSDDParserProvider extends AbstractProvider implements
 	 * @generated
 	 */
 	private IParser getMultiPortVariableLabel_5029Parser() {
-		return new org.muml.reconfiguration.verification.sdd.componentsdd.diagram.parsers.MultiPortVariableLabelExpressionLabelParser5029();
+		return new MultiPortVariableLabelExpressionLabelParser5029();
 	}
 
 	/**
@@ -169,12 +193,9 @@ public class ComponentSDDParserProvider extends AbstractProvider implements
 	 */
 	private IParser getSinglePortVariableName_5031Parser() {
 		if (singlePortVariableName_5031Parser == null) {
-			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
-			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
-			org.muml.reconfiguration.verification.sdd.componentsdd.diagram.parsers.MessageFormatParser parser = new org.muml.reconfiguration.verification.sdd.componentsdd.diagram.parsers.MessageFormatParser(
-					features, editableFeatures);
+			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
+			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
+			MessageFormatParser parser = new MessageFormatParser(features, editableFeatures);
 			singlePortVariableName_5031Parser = parser;
 		}
 		return singlePortVariableName_5031Parser;
@@ -184,21 +205,21 @@ public class ComponentSDDParserProvider extends AbstractProvider implements
 	 * @generated
 	 */
 	private IParser getSinglePortVariableLabel_5032Parser() {
-		return new org.muml.reconfiguration.verification.sdd.componentsdd.diagram.parsers.SinglePortVariableLabelExpressionLabelParser5032();
+		return new SinglePortVariableLabelExpressionLabelParser5032();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getFadingComponentPartVariableLabel_5044Parser() {
-		return new org.muml.reconfiguration.verification.sdd.componentsdd.diagram.parsers.FadingComponentPartVariableLabelExpressionLabelParser5044();
+		return new FadingComponentPartVariableLabelExpressionLabelParser5044();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getFadingComponentPartVariableLabel_5046Parser() {
-		return new org.muml.reconfiguration.verification.sdd.componentsdd.diagram.parsers.FadingComponentPartVariableLabelExpressionLabelParser5046();
+		return new FadingComponentPartVariableLabelExpressionLabelParser5046();
 	}
 
 	/**
@@ -211,12 +232,9 @@ public class ComponentSDDParserProvider extends AbstractProvider implements
 	 */
 	private IParser getAssemblyVariableName_6001Parser() {
 		if (assemblyVariableName_6001Parser == null) {
-			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
-			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
-			org.muml.reconfiguration.verification.sdd.componentsdd.diagram.parsers.MessageFormatParser parser = new org.muml.reconfiguration.verification.sdd.componentsdd.diagram.parsers.MessageFormatParser(
-					features, editableFeatures);
+			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
+			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
+			MessageFormatParser parser = new MessageFormatParser(features, editableFeatures);
 			assemblyVariableName_6001Parser = parser;
 		}
 		return assemblyVariableName_6001Parser;
@@ -232,12 +250,9 @@ public class ComponentSDDParserProvider extends AbstractProvider implements
 	 */
 	private IParser getDelegationVariableName_6002Parser() {
 		if (delegationVariableName_6002Parser == null) {
-			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
-			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
-			org.muml.reconfiguration.verification.sdd.componentsdd.diagram.parsers.MessageFormatParser parser = new org.muml.reconfiguration.verification.sdd.componentsdd.diagram.parsers.MessageFormatParser(
-					features, editableFeatures);
+			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
+			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
+			MessageFormatParser parser = new MessageFormatParser(features, editableFeatures);
 			delegationVariableName_6002Parser = parser;
 		}
 		return delegationVariableName_6002Parser;
@@ -247,7 +262,7 @@ public class ComponentSDDParserProvider extends AbstractProvider implements
 	 * @generated
 	 */
 	private IParser getMultiPortOrderConstraintLabel_6003Parser() {
-		return new org.muml.reconfiguration.verification.sdd.componentsdd.diagram.parsers.MultiPortOrderConstraintLabelExpressionLabelParser6003();
+		return new MultiPortOrderConstraintLabelExpressionLabelParser6003();
 	}
 
 	/**
@@ -255,43 +270,43 @@ public class ComponentSDDParserProvider extends AbstractProvider implements
 	 */
 	protected IParser getParser(int visualID) {
 		switch (visualID) {
-		case org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.ComponentStoryPatternNodeNameEditPart.VISUAL_ID:
+		case ComponentStoryPatternNodeNameEditPart.VISUAL_ID:
 			return getComponentStoryPatternNodeLabel_5037Parser();
-		case org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.ComponentStoryPatternNodeTypeEditPart.VISUAL_ID:
+		case ComponentStoryPatternNodeTypeEditPart.VISUAL_ID:
 			return getComponentStoryPatternNodeLabel_5038Parser();
-		case org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.WrappingLabel9EditPart.VISUAL_ID:
+		case WrappingLabel9EditPart.VISUAL_ID:
 			return getInitialNodeLabel_5042Parser();
-		case org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.WrappingLabel10EditPart.VISUAL_ID:
+		case WrappingLabel10EditPart.VISUAL_ID:
 			return getInitialNodeLabel_5043Parser();
-		case org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.WrappingLabel3EditPart.VISUAL_ID:
+		case WrappingLabel3EditPart.VISUAL_ID:
 			return getComponentPartVariableLabel_5026Parser();
-		case org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.WrappingLabel6EditPart.VISUAL_ID:
+		case WrappingLabel6EditPart.VISUAL_ID:
 			return getComponentPartVariableLabel_5040Parser();
-		case org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.MultiPortVariableNameEditPart.VISUAL_ID:
+		case MultiPortVariableNameEditPart.VISUAL_ID:
 			return getMultiPortVariableName_5020Parser();
-		case org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.UnderlinedLabelEditPart.VISUAL_ID:
+		case UnderlinedLabelEditPart.VISUAL_ID:
 			return getMultiPortVariableLabel_5021Parser();
-		case org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.SinglePortVariableNameEditPart.VISUAL_ID:
+		case SinglePortVariableNameEditPart.VISUAL_ID:
 			return getSinglePortVariableName_5023Parser();
-		case org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.UnderlinedLabel2EditPart.VISUAL_ID:
+		case UnderlinedLabel2EditPart.VISUAL_ID:
 			return getSinglePortVariableLabel_5024Parser();
-		case org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.MultiPortVariableName2EditPart.VISUAL_ID:
+		case MultiPortVariableName2EditPart.VISUAL_ID:
 			return getMultiPortVariableName_5028Parser();
-		case org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.UnderlinedLabel3EditPart.VISUAL_ID:
+		case UnderlinedLabel3EditPart.VISUAL_ID:
 			return getMultiPortVariableLabel_5029Parser();
-		case org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.SinglePortVariableName2EditPart.VISUAL_ID:
+		case SinglePortVariableName2EditPart.VISUAL_ID:
 			return getSinglePortVariableName_5031Parser();
-		case org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.UnderlinedLabel4EditPart.VISUAL_ID:
+		case UnderlinedLabel4EditPart.VISUAL_ID:
 			return getSinglePortVariableLabel_5032Parser();
-		case org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.WrappingLabel4EditPart.VISUAL_ID:
+		case WrappingLabel4EditPart.VISUAL_ID:
 			return getFadingComponentPartVariableLabel_5044Parser();
-		case org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.WrappingLabel7EditPart.VISUAL_ID:
+		case WrappingLabel7EditPart.VISUAL_ID:
 			return getFadingComponentPartVariableLabel_5046Parser();
-		case org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.AssemblyVariableNameEditPart.VISUAL_ID:
+		case AssemblyVariableNameEditPart.VISUAL_ID:
 			return getAssemblyVariableName_6001Parser();
-		case org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.DelegationVariableNameEditPart.VISUAL_ID:
+		case DelegationVariableNameEditPart.VISUAL_ID:
 			return getDelegationVariableName_6002Parser();
-		case org.muml.reconfiguration.verification.sdd.componentsdd.diagram.edit.parts.WrappingLabel8EditPart.VISUAL_ID:
+		case WrappingLabel8EditPart.VISUAL_ID:
 			return getMultiPortOrderConstraintLabel_6003Parser();
 		}
 		return null;
@@ -301,10 +316,8 @@ public class ComponentSDDParserProvider extends AbstractProvider implements
 	 * Utility method that consults ParserService
 	 * @generated
 	 */
-	public static IParser getParser(IElementType type, EObject object,
-			String parserHint) {
-		return ParserService.getInstance().getParser(
-				new HintAdapter(type, object, parserHint));
+	public static IParser getParser(IElementType type, EObject object, String parserHint) {
+		return ParserService.getInstance().getParser(new HintAdapter(type, object, parserHint));
 	}
 
 	/**
@@ -313,13 +326,11 @@ public class ComponentSDDParserProvider extends AbstractProvider implements
 	public IParser getParser(IAdaptable hint) {
 		String vid = (String) hint.getAdapter(String.class);
 		if (vid != null) {
-			return getParser(org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDVisualIDRegistry
-					.getVisualID(vid));
+			return getParser(ComponentSDDVisualIDRegistry.getVisualID(vid));
 		}
 		View view = (View) hint.getAdapter(View.class);
 		if (view != null) {
-			return getParser(org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDVisualIDRegistry
-					.getVisualID(view));
+			return getParser(ComponentSDDVisualIDRegistry.getVisualID(view));
 		}
 		return null;
 	}
@@ -330,8 +341,7 @@ public class ComponentSDDParserProvider extends AbstractProvider implements
 	public boolean provides(IOperation operation) {
 		if (operation instanceof GetParserOperation) {
 			IAdaptable hint = ((GetParserOperation) operation).getHint();
-			if (org.muml.reconfiguration.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes
-					.getElement(hint) == null) {
+			if (ComponentSDDElementTypes.getElement(hint) == null) {
 				return false;
 			}
 			return getParser(hint) != null;

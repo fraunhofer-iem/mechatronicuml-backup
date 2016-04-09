@@ -27,6 +27,7 @@ import org.eclipse.ocl.ecore.OCL.Helper;
 import org.eclipse.ocl.ecore.OCLExpression;
 import org.eclipse.ocl.ecore.Variable;
 import org.eclipse.ocl.options.ParsingOptions;
+import org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDDiagramEditorPlugin;
 
 /**
  * @generated
@@ -36,7 +37,7 @@ public class ComponentSDDOCLFactory {
 	/**
 	 * @generated
 	 */
-	private final org.muml.reconfiguration.verification.sdd.componentsdd.diagram.expressions.ComponentSDDAbstractExpression[] expressions;
+	private final ComponentSDDAbstractExpression[] expressions;
 
 	/**
 	 * @generated
@@ -47,29 +48,28 @@ public class ComponentSDDOCLFactory {
 	 * @generated
 	 */
 	protected ComponentSDDOCLFactory() {
-		this.expressions = new org.muml.reconfiguration.verification.sdd.componentsdd.diagram.expressions.ComponentSDDAbstractExpression[24];
-		this.expressionBodies = new String[] {
-				"\'componentStoryPattern\'", //$NON-NLS-1$
+		this.expressions = new ComponentSDDAbstractExpression[24];
+		this.expressionBodies = new String[] { "\'componentStoryPattern\'", //$NON-NLS-1$
 				"\'this\'", //$NON-NLS-1$
-				"storydiagrams::patterns::BindingState::BOUND", //$NON-NLS-1$
-				"storydiagrams::patterns::BindingSemantics::MANDATORY", //$NON-NLS-1$
+				"storydiagram::patterns::BindingState::BOUND", //$NON-NLS-1$
+				"storydiagram::patterns::BindingSemantics::MANDATORY", //$NON-NLS-1$
 				"let\r\n\t--couldn\'t get ->closure() working. Nicer Implementation would be something like: self->closure(eContainer())->select(oclIsTypeOf(componentsdd::ComponentStoryDecisionDiagram))\r\n\tcompStoryRule : componentsdd::ComponentStoryDecisionDiagram = self.eContainer().eContainer().eContainer().oclAsType(componentsdd::ComponentStoryDecisionDiagram)\r\nin\r\n\tif\r\n\t\tnot compStoryRule.reconfigurableComponent.oclIsUndefined()\r\n\tthen\r\n\t\tcompStoryRule.reconfigurableComponent\r\n\telse\r\n\t\tnull\r\n\tendif", //$NON-NLS-1$
 				"\'componentStoryPatternNode\'", //$NON-NLS-1$
-				"if\r\n\tself.bindingState = storydiagrams::patterns::BindingState::BOUND\r\nthen\r\n\t\'\'\r\nelse\r\n\t\':\'+self.dataType.name\r\nendif", //$NON-NLS-1$
+				"if\r\n\tself.bindingState = storydiagram::patterns::BindingState::BOUND\r\nthen\r\n\t\'\'\r\nelse\r\n\t\':\'+self.dataType.name\r\nendif", //$NON-NLS-1$
 				"self.multiPortVariable.oclIsUndefined()", //$NON-NLS-1$
-				"if\r\n\tself.bindingState = storydiagrams::patterns::BindingState::BOUND\r\nthen\r\n\t\'\'\r\nelse\r\n\t\':\'+self.dataType.name\r\nendif", //$NON-NLS-1$
+				"if\r\n\tself.bindingState = storydiagram::patterns::BindingState::BOUND\r\nthen\r\n\t\'\'\r\nelse\r\n\t\':\'+self.dataType.name\r\nendif", //$NON-NLS-1$
 				"--implemented by org.muml.reconfiguration.common.edit.policies.ComponentPartVariableTriggerEmbeddedComponentExpressionLabelEditPolicy\r\n\'\'", //$NON-NLS-1$
-				"let compName : String = if self.componentPartType.componentType.name.oclIsUndefined() then \'null\' else\t self.componentPartType.componentType.name endif in\r\nlet partName : String = if self.componentPartType.name.oclIsUndefined() then \' \' else\t\' / \'.concat(self.componentPartType.name) endif in\r\nlet selfName : String = if self.name.oclIsUndefined() then \'null\' else self.name endif in\r\nif bindingState = storydiagrams::patterns::BindingState::BOUND then\r\nselfName\r\nelse\r\nselfName.concat(partName.concat(\' : \'.concat(compName)))\r\nendif", //$NON-NLS-1$
-				"let compName : String = if self.componentPartType.componentType.name.oclIsUndefined() then \'null\' else\tself.componentPartType.componentType.name endif in\r\nlet partName : String = if self.componentPartType.name.oclIsUndefined() then \' \' else\t\' / \'.concat(self.componentPartType.name) endif in\r\nlet selfName : String = if self.name.oclIsUndefined() then \'null\' else self.name endif in\r\nif bindingState = storydiagrams::patterns::BindingState::BOUND then\r\nselfName\r\nelse\r\nselfName.concat(partName.concat(\' : \'.concat(compName)))\r\nendif", //$NON-NLS-1$
+				"let compName : String = if self.componentPartType.componentType.name.oclIsUndefined() then \'null\' else\t self.componentPartType.componentType.name endif in\r\nlet partName : String = if self.componentPartType.name.oclIsUndefined() then \' \' else\t\' / \'.concat(self.componentPartType.name) endif in\r\nlet selfName : String = if self.name.oclIsUndefined() then \'null\' else self.name endif in\r\nif bindingState = storydiagram::patterns::BindingState::BOUND then\r\nselfName\r\nelse\r\nselfName.concat(partName.concat(\' : \'.concat(compName)))\r\nendif", //$NON-NLS-1$
+				"let compName : String = if self.componentPartType.componentType.name.oclIsUndefined() then \'null\' else\tself.componentPartType.componentType.name endif in\r\nlet partName : String = if self.componentPartType.name.oclIsUndefined() then \' \' else\t\' / \'.concat(self.componentPartType.name) endif in\r\nlet selfName : String = if self.name.oclIsUndefined() then \'null\' else self.name endif in\r\nif bindingState = storydiagram::patterns::BindingState::BOUND then\r\nselfName\r\nelse\r\nselfName.concat(partName.concat(\' : \'.concat(compName)))\r\nendif", //$NON-NLS-1$
 				"if self.appliedFadingFunction.oclIsUndefined()\r\nthen \'\'\r\nelse\r\n\tself.appliedFadingFunction.name\r\nendif", //$NON-NLS-1$
-				"let\r\n\tdirectContents : Sequence(OclAny) = self.eContents(),\r\n\tallContents: Set(OclAny)= directContents->closure(t | \r\n\t\tif\r\n\t\t\tt.oclIsKindOf(ecore::EObject)\r\n\t\tthen\r\n\t\t\tt.oclAsType(ecore::EObject).eContents()\r\n\t\telse\r\n\t\t\tnull\r\n\t\tendif\r\n\t)->flatten()->asSet(),\r\n\tboundCompSPVariables : Set(OclAny) = allContents->select(oclIsKindOf(componentstorypattern::ComponentStoryPatternVariable) and oclAsType(componentstorypattern::ComponentStoryPatternVariable).bindingState = storydiagrams::patterns::BindingState::UNBOUND),\r\n\tcheckVariables : OrderedSet(OclAny) = boundCompSPVariables->select(not (oclIsTypeOf(componentstorypattern::ComponentVariable) or oclAsType(componentstorypattern::ComponentStoryPatternVariable).name = \'\'))->asOrderedSet()\r\nin\r\n\tcheckVariables->iterate(v : OclAny; s : String = \'\' | s+v.oclAsType(componentstorypattern::ComponentStoryPatternVariable).name+\r\n\t\tif\r\n\t\t\tcheckVariables->indexOf(v) = checkVariables->size()\r\n\t\tthen\r\n\t\t\t\'\'\r\n\t\telse\r\n\t\t\t\', \'\r\n\t\tendif\r\n\t)", //$NON-NLS-1$
+				"let\r\n\tdirectContents : Sequence(OclAny) = self.eContents(),\r\n\tallContents: Set(OclAny)= directContents->closure(t | \r\n\t\tif\r\n\t\t\tt.oclIsKindOf(ecore::EObject)\r\n\t\tthen\r\n\t\t\tt.oclAsType(ecore::EObject).eContents()\r\n\t\telse\r\n\t\t\tnull\r\n\t\tendif\r\n\t)->flatten()->asSet(),\r\n\tboundCompSPVariables : Set(OclAny) = allContents->select(oclIsKindOf(componentstorypattern::ComponentStoryPatternVariable) and oclAsType(componentstorypattern::ComponentStoryPatternVariable).bindingState = storydiagram::patterns::BindingState::UNBOUND),\r\n\tcheckVariables : OrderedSet(OclAny) = boundCompSPVariables->select(not (oclIsTypeOf(componentstorypattern::ComponentVariable) or oclAsType(componentstorypattern::ComponentStoryPatternVariable).name = \'\'))->asOrderedSet()\r\nin\r\n\tcheckVariables->iterate(v : OclAny; s : String = \'\' | s+v.oclAsType(componentstorypattern::ComponentStoryPatternVariable).name+\r\n\t\tif\r\n\t\t\tcheckVariables->indexOf(v) = checkVariables->size()\r\n\t\tthen\r\n\t\t\t\'\'\r\n\t\telse\r\n\t\t\t\', \'\r\n\t\tendif\r\n\t)", //$NON-NLS-1$
 				"if\r\n\tself.type = sdd::PatternNodeType::Existential\r\nthen\r\n\t\'\\u2203\'\r\nelse\r\n\t\'\\u2200\'\r\nendif", //$NON-NLS-1$
 				"let\r\n\tcsdd : componentsdd::ComponentStoryDecisionDiagram = self.eContainer().oclAsType(componentsdd::ComponentStoryDecisionDiagram),\r\n\tcompName : String = csdd.reconfigurableComponent.name,\r\n\tparameters : String = csdd.parameters->iterate(p:behavior::Parameter; s: String = \'\' | s+p.name+\': \'+p.dataType.name+\r\n\t\tif\r\n\t\t\tcsdd.parameters->indexOf(p) = csdd.parameters->size()\r\n\t\tthen\r\n\t\t\t\'\'\r\n\t\telse\r\n\t\t\t\'; \'\r\n\t\tendif\r\n\t)\r\nin\r\n\tcompName+\'::\'+csdd.name+\'(\'+parameters+\')\'", //$NON-NLS-1$
 				"let\r\n\tcsdd : componentsdd::ComponentStoryDecisionDiagram = self.eContainer().oclAsType(componentsdd::ComponentStoryDecisionDiagram)\t\r\nin\r\n\tif\r\n\t\tcsdd.invariantSDD\r\n\tthen\r\n\t\t\'\u00abinvariant\u00bb\'\r\n\telse\r\n\t\t\'\'\r\n\tendif", //$NON-NLS-1$
-				"let this : componentstorypattern::ComponentVariable = self.eContainer().oclAsType(ComponentVariable),\r\n\tassemblyConnectors : Collection(muml::connector::Connector) = this.type.oclAsType(muml::component::StructuredComponent).connectors->select(oclIsTypeOf(muml::component::AssemblyConnector)),\r\n\tportVariableTypes: Collection(muml::component::Port) = self.portVariables.portType->excluding(null),\r\n\tconnector : muml::component::AssemblyConnector = assemblyConnectors->select(aC | portVariableTypes->forAll(p | aC.oclAsType(muml::component::AssemblyConnector).portParts.portType->includes(p)))->any(true).oclAsType(muml::component::AssemblyConnector)\r\nin\r\n\tif\r\n\t\tnot connector.oclIsUndefined()\r\n\tthen\r\n\t\tconnector\r\n\telse\r\n\t\tnull\r\n\tendif", //$NON-NLS-1$
+				"let this : componentstorypattern::ComponentVariable = self.eContainer().oclAsType(ComponentVariable),\r\n\tassemblyConnectors : Collection(pim::connector::Connector) = this.type.oclAsType(pim::component::StructuredComponent).connectors->select(oclIsTypeOf(pim::component::AssemblyConnector)),\r\n\tportVariableTypes: Collection(pim::component::Port) = self.portVariables.portType->excluding(null),\r\n\tconnector : pim::component::AssemblyConnector = assemblyConnectors->select(aC | portVariableTypes->forAll(p | aC.oclAsType(pim::component::AssemblyConnector).portParts.portType->includes(p)))->any(true).oclAsType(pim::component::AssemblyConnector)\r\nin\r\n\tif\r\n\t\tnot connector.oclIsUndefined()\r\n\tthen\r\n\t\tconnector\r\n\telse\r\n\t\tnull\r\n\tendif", //$NON-NLS-1$
 				"--Create AssemblyVariable between PortVariables of PartVariables\r\nnot self.oclAsType(ecore::EObject).eContainer().eContainer().eContainer().eContainer().eContainer().eContainer().eContainer().oclIsUndefined()", //$NON-NLS-1$
 				"--Create AssemblyVariable between PortVariables of different PartVariables\r\nself.oclAsType(ecore::EObject).eContainer().eContainer() = oppositeEnd.eContainer().eContainer() and self.eContainer() <> oppositeEnd.eContainer()", //$NON-NLS-1$
-				"let outerPort : muml::component::Port = self.portVariables->select(eContainer().oclIsTypeOf(ComponentVariable))->at(1).portType,\r\n\tinnerPort : muml::component::Port = self.portVariables.portType->excluding(outerPort)->at(1),\r\n\tdelegationConnectorsOuter : OrderedSet(muml::connector::Connector) = outerPort.connectors->select(oclIsTypeOf(muml::component::DelegationConnector))\r\nin\r\n\tdelegationConnectorsOuter->select(dC | dC.oclAsType(muml::component::DelegationConnector).portPart.portType = innerPort)->any(true).oclAsType(muml::component::DelegationConnector)", //$NON-NLS-1$
+				"let outerPort : pim::component::Port = self.portVariables->select(eContainer().oclIsTypeOf(ComponentVariable))->at(1).portType,\r\n\tinnerPort : pim::component::Port = self.portVariables.portType->excluding(outerPort)->at(1),\r\n\tdelegationConnectorsOuter : OrderedSet(pim::connector::Connector) = outerPort.connectors->select(oclIsTypeOf(pim::component::DelegationConnector))\r\nin\r\n\tdelegationConnectorsOuter->select(dC | dC.oclAsType(pim::component::DelegationConnector).portPart.portType = innerPort)->any(true).oclAsType(pim::component::DelegationConnector)", //$NON-NLS-1$
 				"--Start creation of DelegationVariable at PortVariable of ComponentVariable\r\nself.oclAsType(ecore::EObject).eContainer().eContainer().eContainer().eContainer().eContainer().eContainer().eContainer().eContainer().oclIsUndefined()", //$NON-NLS-1$
 				"--End creation of DelegationVariable at PortVariable of PartVariable\r\nself.oclAsType(ecore::EObject).eContainer().eContainer().eContainer() = oppositeEnd.oclAsType(ecore::EObject).eContainer().eContainer()", //$NON-NLS-1$
 				"if self.orderConstraintType = MultiPortOrderConstraintType::NEXT then\r\n\'\u00abnext\u00bb\'\r\nelse\r\n\'\u00abprev\u00bb\'\r\nendif", //$NON-NLS-1$
@@ -80,12 +80,10 @@ public class ComponentSDDOCLFactory {
 	 * @generated
 	 */
 	private static ComponentSDDOCLFactory getInstance() {
-		ComponentSDDOCLFactory instance = org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDDiagramEditorPlugin
-				.getInstance().getComponentSDDOCLFactory();
+		ComponentSDDOCLFactory instance = ComponentSDDDiagramEditorPlugin.getInstance().getComponentSDDOCLFactory();
 		if (instance == null) {
-			org.muml.reconfiguration.verification.sdd.componentsdd.diagram.part.ComponentSDDDiagramEditorPlugin
-					.getInstance().setComponentSDDOCLFactory(
-							instance = new ComponentSDDOCLFactory());
+			ComponentSDDDiagramEditorPlugin.getInstance()
+					.setComponentSDDOCLFactory(instance = new ComponentSDDOCLFactory());
 		}
 		return instance;
 	}
@@ -100,18 +98,15 @@ public class ComponentSDDOCLFactory {
 	/**
 	 * @generated
 	 */
-	public static org.muml.reconfiguration.verification.sdd.componentsdd.diagram.expressions.ComponentSDDAbstractExpression getExpression(
-			int index, EClassifier context, Map<String, EClassifier> environment) {
+	public static ComponentSDDAbstractExpression getExpression(int index, EClassifier context,
+			Map<String, EClassifier> environment) {
 		ComponentSDDOCLFactory cached = getInstance();
 		if (index < 0 || index >= cached.expressions.length) {
 			throw new IllegalArgumentException();
 		}
 		if (cached.expressions[index] == null) {
-			cached.expressions[index] = getExpression(
-					cached.expressionBodies[index],
-					context,
-					environment == null ? Collections
-							.<String, EClassifier> emptyMap() : environment);
+			cached.expressions[index] = getExpression(cached.expressionBodies[index], context,
+					environment == null ? Collections.<String, EClassifier> emptyMap() : environment);
 		}
 		return cached.expressions[index];
 	}
@@ -120,8 +115,7 @@ public class ComponentSDDOCLFactory {
 	 * This is factory method, callers are responsible to keep reference to the return value if they want to reuse parsed expression
 	 * @generated
 	 */
-	public static org.muml.reconfiguration.verification.sdd.componentsdd.diagram.expressions.ComponentSDDAbstractExpression getExpression(
-			String body, EClassifier context,
+	public static ComponentSDDAbstractExpression getExpression(String body, EClassifier context,
 			Map<String, EClassifier> environment) {
 		return new Expression(body, context, environment);
 	}
@@ -130,18 +124,14 @@ public class ComponentSDDOCLFactory {
 	 * This method will become private in the next release
 	 * @generated
 	 */
-	public static org.muml.reconfiguration.verification.sdd.componentsdd.diagram.expressions.ComponentSDDAbstractExpression getExpression(
-			String body, EClassifier context) {
-		return getExpression(body, context,
-				Collections.<String, EClassifier> emptyMap());
+	public static ComponentSDDAbstractExpression getExpression(String body, EClassifier context) {
+		return getExpression(body, context, Collections.<String, EClassifier> emptyMap());
 	}
 
 	/**
 	 * @generated
 	 */
-	private static class Expression
-			extends
-			org.muml.reconfiguration.verification.sdd.componentsdd.diagram.expressions.ComponentSDDAbstractExpression {
+	private static class Expression extends ComponentSDDAbstractExpression {
 
 		/**
 		 * @generated
@@ -156,8 +146,7 @@ public class ComponentSDDOCLFactory {
 		/**
 		 * @generated
 		 */
-		public Expression(String body, EClassifier context,
-				Map<String, EClassifier> environment) {
+		public Expression(String body, EClassifier context, Map<String, EClassifier> environment) {
 			super(body, context);
 			oclInstance = org.eclipse.ocl.ecore.OCL.newInstance();
 			initCustomEnv(oclInstance.getEnvironment(), environment);
@@ -180,8 +169,7 @@ public class ComponentSDDOCLFactory {
 				return null;
 			}
 			// on the first call, both evalEnvironment and extentMap are clear, for later we have finally, below.
-			EvaluationEnvironment<?, ?, ?, ?, ?> evalEnv = oclInstance
-					.getEvaluationEnvironment();
+			EvaluationEnvironment<?, ?, ?, ?, ?> evalEnv = oclInstance.getEvaluationEnvironment();
 			// initialize environment
 			for (Object nextKey : env.keySet()) {
 				evalEnv.replace((String) nextKey, env.get(nextKey));
@@ -198,25 +186,21 @@ public class ComponentSDDOCLFactory {
 		/**
 		 * @generated
 		 */
-		private static void initCustomEnv(
-				Environment<?, EClassifier, ?, ?, ?, EParameter, ?, ?, ?, ?, ?, ?> ecoreEnv,
+		private static void initCustomEnv(Environment<?, EClassifier, ?, ?, ?, EParameter, ?, ?, ?, ?, ?, ?> ecoreEnv,
 				Map<String, EClassifier> environment) {
 			// Use EObject as implicit root class for any object, to allow eContainer() and other EObject operations from OCL expressions
-			ParsingOptions.setOption(ecoreEnv,
-					ParsingOptions.implicitRootClass(ecoreEnv),
+			ParsingOptions.setOption(ecoreEnv, ParsingOptions.implicitRootClass(ecoreEnv),
 					EcorePackage.eINSTANCE.getEObject());
 			for (String varName : environment.keySet()) {
 				EClassifier varType = environment.get(varName);
-				ecoreEnv.addElement(varName,
-						createVar(ecoreEnv, varName, varType), false);
+				ecoreEnv.addElement(varName, createVar(ecoreEnv, varName, varType), false);
 			}
 		}
 
 		/**
 		 * @generated
 		 */
-		private static Variable createVar(
-				Environment<?, EClassifier, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?> ecoreEnv,
+		private static Variable createVar(Environment<?, EClassifier, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?> ecoreEnv,
 				String name, EClassifier type) {
 			Variable var = EcoreFactory.eINSTANCE.createVariable();
 			var.setName(name);
