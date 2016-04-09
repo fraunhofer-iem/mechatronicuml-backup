@@ -1,4 +1,4 @@
-«REM» Remove the commments (--) before the OCL Expressions, which were added by: /de.uni_paderborn.fujaba.common/transformations/pre-reconcile.qvto «ENDREM»
+«REM» Remove the commments (--) before the OCL Expressions, which were added by: /org.muml.core.common/transformations/pre-reconcile.qvto «ENDREM»
 «REM»
 «AROUND _initInterpreterFactory FOR gmfgen::GenExpressionInterpreter-»
 	«EXPAND xpt::Common::generatedMemberComment»

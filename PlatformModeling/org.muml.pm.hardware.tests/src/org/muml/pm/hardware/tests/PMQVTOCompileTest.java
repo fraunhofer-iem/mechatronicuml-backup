@@ -12,7 +12,7 @@ public class PMQVTOCompileTest extends QVTOCompileErrorTest {
 			return false;
 		}
 		// Disable checking of GMF-templates helper qvto scripts
-		if (bundleName.equals("de.uni_paderborn.fujaba.common") || bundleName.endsWith("de.uni_paderborn.fujaba.muml.common")) {
+		if (bundleName.equals("org.muml.core.common") || bundleName.endsWith("de.uni_paderborn.fujaba.muml.common")) {
 			return false;
 		}
 		return true;

@@ -10,7 +10,7 @@ modeltype propsheet uses ape('http://www.muml.org/ape/1.0.0');
 mapping inout GenEditorGenerator::general(diagramFileExtension:String, pluginName:String) {
 	
 	self.dynamicTemplates :=true;
-	self.templateDirectory := "/de.uni_paderborn.fujaba.common/gmf-templates";
+	self.templateDirectory := "/org.muml.core.common/gmf-templates";
 	self.sameFileForDiagramAndModel := false;
 	
 	self.domainFileExtension := "fujaba"; 
@@ -85,10 +85,10 @@ mapping inout GenCompartment::addEnlargeCompoartmentEditPolicy(){
 
 mapping inout GenChildNode::addEnlargeCompartmentEditPolicy(){
 	var enlargeCompartmentBehavior : CustomBehaviour;
-	if(self.behaviour[CustomBehaviour]->select(behavior|behavior.key="de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.ENLARGE_COMPARTMENT_ROLE")->isEmpty()) then{
+	if(self.behaviour[CustomBehaviour]->select(behavior|behavior.key="org.muml.core.common.edit.policies.EditPolicyRoles.ENLARGE_COMPARTMENT_ROLE")->isEmpty()) then{
 		enlargeCompartmentBehavior:=new CustomBehaviour();
-		enlargeCompartmentBehavior.key:="de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.ENLARGE_COMPARTMENT_ROLE";
-		enlargeCompartmentBehavior.editPolicyQualifiedClassName:="de.uni_paderborn.fujaba.common.edit.policies.compartment.EnlargeCompartmentEditPolicy";
+		enlargeCompartmentBehavior.key:="org.muml.core.common.edit.policies.EditPolicyRoles.ENLARGE_COMPARTMENT_ROLE";
+		enlargeCompartmentBehavior.editPolicyQualifiedClassName:="org.muml.core.common.edit.policies.compartment.EnlargeCompartmentEditPolicy";
 		self.behaviour+=enlargeCompartmentBehavior;
 	}endif;
 }

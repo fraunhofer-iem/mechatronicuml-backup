@@ -6,7 +6,7 @@
     xmlns:gmfgen="http://www.eclipse.org/gmf/2009/GenModel"
     packageNamePrefix="de.uni_paderborn.fujaba.muml.verification.sdd.diagram"
     dynamicTemplates="true"
-    templateDirectory="/de.uni_paderborn.fujaba.common/gmf-templates"
+    templateDirectory="/org.muml.core.common/gmf-templates"
     pluginDirectory="/de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd.diagram/src">
   <diagram
       visualID="1000"

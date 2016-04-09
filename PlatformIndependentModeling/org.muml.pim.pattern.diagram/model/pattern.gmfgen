@@ -9,7 +9,7 @@
     diagramFileExtension="coordinationpattern_diagram"
     domainFileExtension="fujaba"
     dynamicTemplates="true"
-    templateDirectory="/de.uni_paderborn.fujaba.common/gmf-templates"
+    templateDirectory="/org.muml.core.common/gmf-templates"
     pluginDirectory="/de.uni_paderborn.fujaba.muml.pattern.diagram/src">
   <diagram
       visualID="1000"
@@ -54,11 +54,11 @@
       </viewmap>
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
-          key="de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.CONNECTION_ANCHOR_CREATION_ROLE"
-          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.common.edit.policies.anchor.EllipseConnectionAnchorCreationEditPolicy"/>
+          key="org.muml.core.common.edit.policies.EditPolicyRoles.CONNECTION_ANCHOR_CREATION_ROLE"
+          editPolicyQualifiedClassName="org.muml.core.common.edit.policies.anchor.EllipseConnectionAnchorCreationEditPolicy"/>
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
-          key="de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.NON_DELETABLE_ROLE"
+          key="org.muml.core.common.edit.policies.EditPolicyRoles.NON_DELETABLE_ROLE"
           editPolicyQualifiedClassName=" "/>
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
@@ -66,8 +66,8 @@
           editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.coordinationspecification.common.edit.policies.CustomAbstractCoordinationSpecificationUpdateEditPolicy"/>
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
-          key="de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.CANONICAL_REFRESH_ROLE"
-          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.common.edit.policies.CanonicalRefreshEditPolicy"/>
+          key="org.muml.core.common.edit.policies.EditPolicyRoles.CANONICAL_REFRESH_ROLE"
+          editPolicyQualifiedClassName="org.muml.core.common.edit.policies.CanonicalRefreshEditPolicy"/>
       <modelFacet>
         <metaClass
             href="../../org.muml.pim/model/pim.genmodel#//pim/pattern/CoordinationPattern"/>
@@ -483,11 +483,11 @@
       </viewmap>
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
-          key="de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.CONNECTION_ANCHOR_CREATION_ROLE"
-          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.common.edit.policies.anchor.EllipseConnectionAnchorCreationEditPolicy"/>
+          key="org.muml.core.common.edit.policies.EditPolicyRoles.CONNECTION_ANCHOR_CREATION_ROLE"
+          editPolicyQualifiedClassName="org.muml.core.common.edit.policies.anchor.EllipseConnectionAnchorCreationEditPolicy"/>
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
-          key="de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.NON_DELETABLE_ROLE"
+          key="org.muml.core.common.edit.policies.EditPolicyRoles.NON_DELETABLE_ROLE"
           editPolicyQualifiedClassName=" "/>
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
@@ -495,8 +495,8 @@
           editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.coordinationspecification.common.edit.policies.CustomAbstractCoordinationSpecificationUpdateEditPolicy"/>
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
-          key="de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.CANONICAL_REFRESH_ROLE"
-          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.common.edit.policies.CanonicalRefreshEditPolicy"/>
+          key="org.muml.core.common.edit.policies.EditPolicyRoles.CANONICAL_REFRESH_ROLE"
+          editPolicyQualifiedClassName="org.muml.core.common.edit.policies.CanonicalRefreshEditPolicy"/>
       <modelFacet>
         <metaClass
             href="../../org.muml.pim/model/pim.genmodel#//pim/pattern/CoordinationPatternVariant"/>
@@ -549,8 +549,8 @@
           figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
-          key="de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.NO_LINKS_ROLE"
-          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.common.edit.policies.NoLinksEditPolicy"/>
+          key="org.muml.core.common.edit.policies.EditPolicyRoles.NO_LINKS_ROLE"
+          editPolicyQualifiedClassName="org.muml.core.common.edit.policies.NoLinksEditPolicy"/>
       <modelFacet>
         <metaClass
             href="../../org.muml.pim/model/pim.genmodel#//pim/pattern/CoordinationPattern"/>
@@ -758,8 +758,8 @@
           figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
-          key="de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.NO_LINKS_ROLE"
-          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.common.edit.policies.NoLinksEditPolicy"/>
+          key="org.muml.core.common.edit.policies.EditPolicyRoles.NO_LINKS_ROLE"
+          editPolicyQualifiedClassName="org.muml.core.common.edit.policies.NoLinksEditPolicy"/>
       <modelFacet>
         <metaClass
             href="../../org.muml.pim/model/pim.genmodel#//pim/pattern/CoordinationPatternVariant"/>
@@ -1152,8 +1152,8 @@
           figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
-          key="de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.COMPARTMENT_BORDER_ROLE"
-          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.common.edit.policies.compartment.BorderlessCompartmentEditPolicy"/>
+          key="org.muml.core.common.edit.policies.EditPolicyRoles.COMPARTMENT_BORDER_ROLE"
+          editPolicyQualifiedClassName="org.muml.core.common.edit.policies.compartment.BorderlessCompartmentEditPolicy"/>
     </compartments>
     <compartments
         visualID="7003"
@@ -1173,12 +1173,12 @@
           figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
-          key="de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.COMPARTMENT_HORIZONTAL_LAYOUT_ROLE"
-          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.common.edit.policies.compartment.HorizontalCompartmentEditPolicy"/>
+          key="org.muml.core.common.edit.policies.EditPolicyRoles.COMPARTMENT_HORIZONTAL_LAYOUT_ROLE"
+          editPolicyQualifiedClassName="org.muml.core.common.edit.policies.compartment.HorizontalCompartmentEditPolicy"/>
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
-          key="de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.COMPARTMENT_BORDER_ROLE"
-          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.common.edit.policies.compartment.BorderlessCompartmentEditPolicy"/>
+          key="org.muml.core.common.edit.policies.EditPolicyRoles.COMPARTMENT_BORDER_ROLE"
+          editPolicyQualifiedClassName="org.muml.core.common.edit.policies.compartment.BorderlessCompartmentEditPolicy"/>
     </compartments>
     <compartments
         visualID="7004"
@@ -1282,11 +1282,11 @@
     <requiredPlugins>org.eclipse.gmf.tooling.runtime</requiredPlugins>
     <requiredPlugins>org.eclipse.draw2d</requiredPlugins>
     <requiredPlugins>org.eclipse.gmf.runtime.draw2d.ui</requiredPlugins>
-    <requiredPlugins>de.uni_paderborn.fujaba.common</requiredPlugins>
+    <requiredPlugins>org.muml.core.common</requiredPlugins>
     <requiredPlugins>de.uni_paderborn.fujaba.modelinstance.ui</requiredPlugins>
     <requiredPlugins>org.storydriven.core.edit.properties</requiredPlugins>
     <requiredPlugins>de.uni_paderborn.fujaba.muml.edit.properties</requiredPlugins>
-    <requiredPlugins>de.uni_paderborn.fujaba.common.editingdomain</requiredPlugins>
+    <requiredPlugins>org.muml.core.common.editingdomain</requiredPlugins>
     <requiredPlugins>de.uni_paderborn.fujaba.properties.runtime</requiredPlugins>
     <requiredPlugins>de.uni_paderborn.fujaba.muml.common</requiredPlugins>
   </plugin>

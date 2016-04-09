@@ -11,7 +11,7 @@ package org.muml.common.editingdomain;
 // *     Software Engineering Group - initial API and implementation
 // * </copyright>
 // */
-//package de.uni_paderborn.fujaba.common.editingdomain;
+//package org.muml.core.common.editingdomain;
 //
 //import java.io.IOException;
 //import java.util.ArrayList;
@@ -108,7 +108,7 @@ package org.muml.common.editingdomain;
 //
 //		DiagramDocument document = new DiagramDocument();
 //		document.setEditingDomain(
-//				de.uni_paderborn.fujaba.common.editingdomain.registry.MumlEditingDomainRegistry.INSTANCE
+//				org.muml.core.common.editingdomain.registry.MumlEditingDomainRegistry.INSTANCE
 //						.getEditingDomain(uri, true));
 //
 //		// Begin added to reuse the EditingDomain if the input element is of type FileEditorInputProxy (see muml bug #252)

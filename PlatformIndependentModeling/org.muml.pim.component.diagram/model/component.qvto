@@ -4,7 +4,7 @@ modeltype GMFGEN uses gmfgen('http://www.eclipse.org/gmf/2009/GenModel');
 transformation settings(inout gmfgen : GMFGEN);
 	-- extends transformation common...
 
--- TODO: call /de.uni_paderborn.fujaba.common/transformations/settings.qvto
+-- TODO: call /org.muml.core.common/transformations/settings.qvto
 
 main() {
 	gmfgen.rootObjects()![GenEditorGenerator]->map settings();
@@ -18,7 +18,7 @@ mapping inout GenEditorGenerator::settings() {
 
 
 mapping inout GenEditorGenerator::editorSpecific() {
-	var key = 'de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.BACKGROUND_COLOR_ROLE';
+	var key = 'org.muml.core.common.edit.policies.EditPolicyRoles.BACKGROUND_COLOR_ROLE';
 	var nodes := self.diagram.childNodes[GenNode]->union(self.diagram.topLevelNodes);
 	nodes->forEach(node) {
 		if (node.modelFacet.metaClass.ecoreClass.name = 'ComponentPart' or

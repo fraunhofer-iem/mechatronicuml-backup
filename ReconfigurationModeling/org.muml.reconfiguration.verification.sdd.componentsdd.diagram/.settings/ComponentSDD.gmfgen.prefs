@@ -1,4 +1,4 @@
-dynamic_figure_templates=platform\:/resource/de.uni_paderborn.fujaba.common/graphdef-templates
+dynamic_figure_templates=platform\:/resource/org.muml.core.common/graphdef-templates
 eclipse.preferences.version=1
 generate_rcp=false
 ignore_gmfgen_validation=false

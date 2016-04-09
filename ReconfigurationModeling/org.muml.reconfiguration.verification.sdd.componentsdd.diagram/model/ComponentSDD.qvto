@@ -4,7 +4,7 @@ modeltype GMFGEN uses gmfgen('http://www.eclipse.org/gmf/2009/GenModel');
 transformation settings(inout gmfgen : GMFGEN);
 	-- extends transformation common...
 
--- TODO: call /de.uni_paderborn.fujaba.common/transformations/settings.qvto
+-- TODO: call /org.muml.core.common/transformations/settings.qvto
 
 main() {
 	gmfgen.rootObjects()![GenEditorGenerator]->map settings();

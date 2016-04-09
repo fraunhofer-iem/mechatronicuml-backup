@@ -6,7 +6,7 @@ package «editPoliciesPackageName»;
 
 	«EXPAND xpt::Common::generatedClassComment»
 public class «canonicalEditPolicyClassName» extends org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy
-		implements de.uni_paderborn.fujaba.common.edit.policies.IDiagramCanonicalEditPolicy {
+		implements org.muml.core.common.edit.policies.IDiagramCanonicalEditPolicy {
 	«REM»
 		Perhaps, we need to supply implementation of refreshOnActivate() identical to that in CanonicalConnectionEditPolicy,
 		if we observe troubles like in the bug 114992. Although I suspect the fact we do no check for EP being active when creating

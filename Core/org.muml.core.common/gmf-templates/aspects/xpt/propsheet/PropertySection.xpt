@@ -1,5 +1,5 @@
 «REM»
-«AROUND implementsClause FOR gmfgen::GenCustomPropertyTab»«targetDef.proceed()», de.uni_paderborn.fujaba.common.emf.edit.ui.IRefreshProhibitedPropertySection«ENDAROUND»
+«AROUND implementsClause FOR gmfgen::GenCustomPropertyTab»«targetDef.proceed()», org.muml.core.common.emf.edit.ui.IRefreshProhibitedPropertySection«ENDAROUND»
 «ENDREM»
 
 ﻿«AROUND getAdapterFactoryMethod FOR gmfgen::GenCustomPropertyTab»
@@ -9,9 +9,9 @@
 		if (editingDomain != null) {
 			org.eclipse.emf.common.notify.AdapterFactory defaultFactory = editingDomain.getAdapterFactory();
 			java.util.List<org.eclipse.emf.common.notify.AdapterFactory> positivePriorityFactories =
-				de.uni_paderborn.fujaba.common.FujabaCommonPlugin.getInstance().getCustomItemProviderAdapterFactories(«self.sheet.editorGen.plugin.getActivatorQualifiedClassName()».ID, true);
+				org.muml.core.common.FujabaCommonPlugin.getInstance().getCustomItemProviderAdapterFactories(«self.sheet.editorGen.plugin.getActivatorQualifiedClassName()».ID, true);
 			java.util.List<org.eclipse.emf.common.notify.AdapterFactory> negativePriorityFactories =
-				de.uni_paderborn.fujaba.common.FujabaCommonPlugin.getInstance().getCustomItemProviderAdapterFactories(«self.sheet.editorGen.plugin.getActivatorQualifiedClassName()».ID, false);
+				org.muml.core.common.FujabaCommonPlugin.getInstance().getCustomItemProviderAdapterFactories(«self.sheet.editorGen.plugin.getActivatorQualifiedClassName()».ID, false);
 
 			// Put all factories into one composed adapter factory.
 			java.util.List<org.eclipse.emf.common.notify.AdapterFactory> factories = new java.util.ArrayList<org.eclipse.emf.common.notify.AdapterFactory>();

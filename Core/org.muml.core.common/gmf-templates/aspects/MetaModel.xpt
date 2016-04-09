@@ -6,8 +6,8 @@
 «EXTENSION gmf::GenModelUtils»
 
 «AROUND PopulateItemProviderFactories(factoryListVar : String) FOR gmfgen::GenEditorGenerator-»
-		java.util.List<org.eclipse.emf.common.notify.AdapterFactory> positivePriorityFactories = de.uni_paderborn.fujaba.common.FujabaCommonPlugin.getInstance().getCustomItemProviderAdapterFactories(ID, true);
-		java.util.List<org.eclipse.emf.common.notify.AdapterFactory> negativePriorityFactories = de.uni_paderborn.fujaba.common.FujabaCommonPlugin.getInstance().getCustomItemProviderAdapterFactories(ID, false);
+		java.util.List<org.eclipse.emf.common.notify.AdapterFactory> positivePriorityFactories = org.muml.core.common.FujabaCommonPlugin.getInstance().getCustomItemProviderAdapterFactories(ID, true);
+		java.util.List<org.eclipse.emf.common.notify.AdapterFactory> negativePriorityFactories = org.muml.core.common.FujabaCommonPlugin.getInstance().getCustomItemProviderAdapterFactories(ID, false);
 
 		// Custom Factories with positive priority
 		«factoryListVar».addAll(positivePriorityFactories);
