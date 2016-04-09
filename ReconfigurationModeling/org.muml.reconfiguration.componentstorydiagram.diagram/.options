@@ -1,7 +1,7 @@
-# Tracing options for the de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram plug-in
+# Tracing options for the org.muml.reconfiguration.componentstorydiagram.diagram plug-in
 
 # Common issues
-de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram/debug=false
+org.muml.reconfiguration.componentstorydiagram.diagram/debug=false
 
 # Visual IDs
-de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram/debug/visualID=false
+org.muml.reconfiguration.componentstorydiagram.diagram/debug/visualID=false

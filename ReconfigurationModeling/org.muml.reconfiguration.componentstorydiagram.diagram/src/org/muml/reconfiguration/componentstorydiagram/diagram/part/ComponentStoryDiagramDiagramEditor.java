@@ -47,12 +47,12 @@ public class ComponentStoryDiagramDiagramEditor extends DiagramDocumentEditor
 	/**
 	 * @generated
 	 */
-	public static final String ID = "de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramEditorID"; //$NON-NLS-1$
+	public static final String ID = "org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramEditorID"; //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final String CONTEXT_ID = "de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.ui.diagramContext"; //$NON-NLS-1$
+	public static final String CONTEXT_ID = "org.muml.reconfiguration.componentstorydiagram.diagram.ui.diagramContext"; //$NON-NLS-1$
 
 	/**
 	 * @generated

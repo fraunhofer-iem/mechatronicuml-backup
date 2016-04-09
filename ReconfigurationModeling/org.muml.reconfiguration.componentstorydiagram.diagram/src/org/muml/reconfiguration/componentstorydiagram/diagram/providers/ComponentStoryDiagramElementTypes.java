@@ -46,97 +46,97 @@ public class ComponentStoryDiagramElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType ComponentStoryRule_1000 = getElementType("de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.ComponentStoryRule_1000"); //$NON-NLS-1$
+	public static final IElementType ComponentStoryRule_1000 = getElementType("org.muml.reconfiguration.componentstorydiagram.diagram.ComponentStoryRule_1000"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType Activity_2003 = getElementType("de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.Activity_2003"); //$NON-NLS-1$
+	public static final IElementType Activity_2003 = getElementType("org.muml.reconfiguration.componentstorydiagram.diagram.Activity_2003"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType ComponentStoryNode_3001 = getElementType("de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.ComponentStoryNode_3001"); //$NON-NLS-1$
+	public static final IElementType ComponentStoryNode_3001 = getElementType("org.muml.reconfiguration.componentstorydiagram.diagram.ComponentStoryNode_3001"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType ComponentStoryPattern_3011 = getElementType("de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.ComponentStoryPattern_3011"); //$NON-NLS-1$
+	public static final IElementType ComponentStoryPattern_3011 = getElementType("org.muml.reconfiguration.componentstorydiagram.diagram.ComponentStoryPattern_3011"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType ComponentVariable_3012 = getElementType("de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.ComponentVariable_3012"); //$NON-NLS-1$
+	public static final IElementType ComponentVariable_3012 = getElementType("org.muml.reconfiguration.componentstorydiagram.diagram.ComponentVariable_3012"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType ComponentPartVariable_3014 = getElementType("de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.ComponentPartVariable_3014"); //$NON-NLS-1$
+	public static final IElementType ComponentPartVariable_3014 = getElementType("org.muml.reconfiguration.componentstorydiagram.diagram.ComponentPartVariable_3014"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType MultiPortVariable_3016 = getElementType("de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.MultiPortVariable_3016"); //$NON-NLS-1$
+	public static final IElementType MultiPortVariable_3016 = getElementType("org.muml.reconfiguration.componentstorydiagram.diagram.MultiPortVariable_3016"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType SinglePortVariable_3017 = getElementType("de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.SinglePortVariable_3017"); //$NON-NLS-1$
+	public static final IElementType SinglePortVariable_3017 = getElementType("org.muml.reconfiguration.componentstorydiagram.diagram.SinglePortVariable_3017"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType SinglePortVariable_3018 = getElementType("de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.SinglePortVariable_3018"); //$NON-NLS-1$
+	public static final IElementType SinglePortVariable_3018 = getElementType("org.muml.reconfiguration.componentstorydiagram.diagram.SinglePortVariable_3018"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType MultiPortVariable_3019 = getElementType("de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.MultiPortVariable_3019"); //$NON-NLS-1$
+	public static final IElementType MultiPortVariable_3019 = getElementType("org.muml.reconfiguration.componentstorydiagram.diagram.MultiPortVariable_3019"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType SinglePortVariable_3020 = getElementType("de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.SinglePortVariable_3020"); //$NON-NLS-1$
+	public static final IElementType SinglePortVariable_3020 = getElementType("org.muml.reconfiguration.componentstorydiagram.diagram.SinglePortVariable_3020"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType InitialNode_3007 = getElementType("de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.InitialNode_3007"); //$NON-NLS-1$
+	public static final IElementType InitialNode_3007 = getElementType("org.muml.reconfiguration.componentstorydiagram.diagram.InitialNode_3007"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType JunctionNode_3008 = getElementType("de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.JunctionNode_3008"); //$NON-NLS-1$
+	public static final IElementType JunctionNode_3008 = getElementType("org.muml.reconfiguration.componentstorydiagram.diagram.JunctionNode_3008"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType ActivityFinalNode_3010 = getElementType("de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.ActivityFinalNode_3010"); //$NON-NLS-1$
+	public static final IElementType ActivityFinalNode_3010 = getElementType("org.muml.reconfiguration.componentstorydiagram.diagram.ActivityFinalNode_3010"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType ControllerExchangeNode_3021 = getElementType("de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.ControllerExchangeNode_3021"); //$NON-NLS-1$
+	public static final IElementType ControllerExchangeNode_3021 = getElementType("org.muml.reconfiguration.componentstorydiagram.diagram.ControllerExchangeNode_3021"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType ComponentStoryPattern_3022 = getElementType("de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.ComponentStoryPattern_3022"); //$NON-NLS-1$
+	public static final IElementType ComponentStoryPattern_3022 = getElementType("org.muml.reconfiguration.componentstorydiagram.diagram.ComponentStoryPattern_3022"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType ComponentVariable_3023 = getElementType("de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.ComponentVariable_3023"); //$NON-NLS-1$
+	public static final IElementType ComponentVariable_3023 = getElementType("org.muml.reconfiguration.componentstorydiagram.diagram.ComponentVariable_3023"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType FadingComponentPartVariable_3024 = getElementType("de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.FadingComponentPartVariable_3024"); //$NON-NLS-1$
+	public static final IElementType FadingComponentPartVariable_3024 = getElementType("org.muml.reconfiguration.componentstorydiagram.diagram.FadingComponentPartVariable_3024"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType ActivityEdge_4001 = getElementType("de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.ActivityEdge_4001"); //$NON-NLS-1$
+	public static final IElementType ActivityEdge_4001 = getElementType("org.muml.reconfiguration.componentstorydiagram.diagram.ActivityEdge_4001"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType AssemblyVariable_4004 = getElementType("de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.AssemblyVariable_4004"); //$NON-NLS-1$
+	public static final IElementType AssemblyVariable_4004 = getElementType("org.muml.reconfiguration.componentstorydiagram.diagram.AssemblyVariable_4004"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType DelegationVariable_4005 = getElementType("de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.DelegationVariable_4005"); //$NON-NLS-1$
+	public static final IElementType DelegationVariable_4005 = getElementType("org.muml.reconfiguration.componentstorydiagram.diagram.DelegationVariable_4005"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType MultiPortOrderConstraint_4006 = getElementType("de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.MultiPortOrderConstraint_4006"); //$NON-NLS-1$
+	public static final IElementType MultiPortOrderConstraint_4006 = getElementType("org.muml.reconfiguration.componentstorydiagram.diagram.MultiPortOrderConstraint_4006"); //$NON-NLS-1$
 
 	/**
 	 * @generated

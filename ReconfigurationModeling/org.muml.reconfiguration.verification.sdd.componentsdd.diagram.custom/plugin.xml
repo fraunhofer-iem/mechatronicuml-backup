@@ -18,7 +18,7 @@
                ref="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.SinglePortVariable_3005">
          </elementType>
          <advice
-               ref="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.SinglePortVariable_3005Advice">
+               ref="org.muml.reconfiguration.componentstorydiagram.diagram.SinglePortVariable_3005Advice">
          </advice>
       </binding>
    </extension>
@@ -28,7 +28,7 @@
             nsURI="http://www.muml.org/reconfiguration/componentstorypattern/1.0.0">
          <adviceBinding
                class="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.custom.edit.helper.SinglePortVariableEditHelperAdvice"
-               id="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.SinglePortVariable_3005Advice"
+               id="org.muml.reconfiguration.componentstorydiagram.diagram.SinglePortVariable_3005Advice"
                inheritance="all"
                typeId="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.SinglePortVariable_3005">
          </adviceBinding>

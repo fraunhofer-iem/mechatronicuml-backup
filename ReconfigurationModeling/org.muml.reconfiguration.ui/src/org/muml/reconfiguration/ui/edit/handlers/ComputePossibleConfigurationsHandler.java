@@ -101,7 +101,7 @@ public class ComputePossibleConfigurationsHandler extends AbstractHandler {
 
 		// Load QVTO script
 		TransformationExecutor transformationExecutor = Activator.getInstance()
-				.getTransformationExecutor("/de.uni_paderborn.fujaba.muml.componentstorydiagram.sdm.transforms/transforms/CSD2SDTransform.qvto", false);		
+				.getTransformationExecutor("/org.muml.reconfiguration.componentstorydiagram.sdm.transforms/transforms/CSD2SDTransform.qvto", false);		
 		
 		ExecuteQvtoTransformationCommand command = new ExecuteQvtoTransformationCommand(
 				transformationExecutor,

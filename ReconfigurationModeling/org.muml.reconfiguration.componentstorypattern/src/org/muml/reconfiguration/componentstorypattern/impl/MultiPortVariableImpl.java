@@ -101,7 +101,7 @@ public class MultiPortVariableImpl extends PortVariableImpl implements
 	public EList<SinglePortVariable> getGmfSubPortVariables() {
 		// The generated code had to be exchanged. Otherwise an
 		// UnmodifiyableEList is returned, which ends up in crashing
-		// de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.commands.SinglePortVariableCreateCommand.java
+		// org.muml.reconfiguration.componentstorydiagram.diagram.edit.commands.SinglePortVariableCreateCommand.java
 		return getSubPortVariables();
 	}
 

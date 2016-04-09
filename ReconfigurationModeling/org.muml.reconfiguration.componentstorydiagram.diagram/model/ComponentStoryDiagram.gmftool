@@ -26,7 +26,7 @@
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="icons/ComponentStoryNode.png"
-            bundle="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.custom"/>
+            bundle="org.muml.reconfiguration.componentstorydiagram.diagram.custom"/>
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
@@ -35,7 +35,7 @@
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="icons/ControllerExchangeNode.png"
-            bundle="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.custom"/>
+            bundle="org.muml.reconfiguration.componentstorydiagram.diagram.custom"/>
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"

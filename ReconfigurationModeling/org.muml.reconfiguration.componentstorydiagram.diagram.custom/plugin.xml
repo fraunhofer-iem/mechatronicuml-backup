@@ -5,7 +5,7 @@
    <extension
          point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders">
       <editpartProvider
-            class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.custom.providers.CustomComponentStoryDiagramEditPartProvider">
+            class="org.muml.reconfiguration.componentstorydiagram.diagram.custom.providers.CustomComponentStoryDiagramEditPartProvider">
          <Priority
                name="Low">
          </Priority>
@@ -16,53 +16,53 @@
 	      <metamodel nsURI="http://www.muml.org/reconfiguration/componentstorypattern/1.0.0">
 	         <adviceBinding
                 class="org.muml.reconfiguration.componentstorydiagram.diagram.custom.edit.helpers.SinglePortVariableEditHelperAdvice"
-                id="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.SinglePortVariable_3017Advice"
+                id="org.muml.reconfiguration.componentstorydiagram.diagram.SinglePortVariable_3017Advice"
                 inheritance="all"
-                typeId="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.SinglePortVariable_3017">
+                typeId="org.muml.reconfiguration.componentstorydiagram.diagram.SinglePortVariable_3017">
 	         </adviceBinding>
 	      </metamodel>
 	    <metamodel nsURI="http://www.muml.org/reconfiguration/componentstorypattern/1.0.0">
 	         <adviceBinding
                 class="org.muml.reconfiguration.componentstorydiagram.diagram.custom.edit.helpers.SinglePortVariableEditHelperAdvice"
-                id="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.SinglePortVariable_3018Advice"
+                id="org.muml.reconfiguration.componentstorydiagram.diagram.SinglePortVariable_3018Advice"
                 inheritance="all"
-                typeId="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.SinglePortVariable_3018">
+                typeId="org.muml.reconfiguration.componentstorydiagram.diagram.SinglePortVariable_3018">
 	         </adviceBinding>
 	      </metamodel>
 	      <metamodel nsURI="http://www.muml.org/reconfiguration/componentstorypattern/1.0.0">
 	         <adviceBinding
                 class="org.muml.reconfiguration.componentstorydiagram.diagram.custom.edit.helpers.SinglePortVariableEditHelperAdvice"
-                id="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.SinglePortVariable_3020Advice"
+                id="org.muml.reconfiguration.componentstorydiagram.diagram.SinglePortVariable_3020Advice"
                 inheritance="all"
-                typeId="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.SinglePortVariable_3020">
+                typeId="org.muml.reconfiguration.componentstorydiagram.diagram.SinglePortVariable_3020">
 	         </adviceBinding>
 	      </metamodel>
       </extension>
       
       <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings">
-      	<binding context="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.TypeContext">
-      		<elementType ref="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.SinglePortVariable_3017"/>
-      		<advice ref="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.SinglePortVariable_3017Advice"/>
+      	<binding context="org.muml.reconfiguration.componentstorydiagram.diagram.TypeContext">
+      		<elementType ref="org.muml.reconfiguration.componentstorydiagram.diagram.SinglePortVariable_3017"/>
+      		<advice ref="org.muml.reconfiguration.componentstorydiagram.diagram.SinglePortVariable_3017Advice"/>
       	</binding>
       </extension>
       
       <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings">
-      	<binding context="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.TypeContext">
-      		<elementType ref="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.SinglePortVariable_3018"/>
-      		<advice ref="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.SinglePortVariable_3018Advice"/>
+      	<binding context="org.muml.reconfiguration.componentstorydiagram.diagram.TypeContext">
+      		<elementType ref="org.muml.reconfiguration.componentstorydiagram.diagram.SinglePortVariable_3018"/>
+      		<advice ref="org.muml.reconfiguration.componentstorydiagram.diagram.SinglePortVariable_3018Advice"/>
       	</binding>
       </extension>
       
       <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings">
-      	<binding context="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.TypeContext">
-      		<elementType ref="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.SinglePortVariable_3020"/>
-      		<advice ref="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.SinglePortVariable_3020Advice"/>
+      	<binding context="org.muml.reconfiguration.componentstorydiagram.diagram.TypeContext">
+      		<elementType ref="org.muml.reconfiguration.componentstorydiagram.diagram.SinglePortVariable_3020"/>
+      		<advice ref="org.muml.reconfiguration.componentstorydiagram.diagram.SinglePortVariable_3020Advice"/>
       	</binding>
       </extension>
 
 
    <extension point="org.eclipse.gmf.runtime.diagram.core.viewProviders" id="view-provider">
-      <viewProvider class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.custom.providers.CustomComponentStoryDiagramViewProvider">
+      <viewProvider class="org.muml.reconfiguration.componentstorydiagram.diagram.custom.providers.CustomComponentStoryDiagramViewProvider">
          <Priority name="Low"/>
       </viewProvider>
    </extension>
@@ -120,8 +120,8 @@
       <propertySections
             contributorId="org.muml.ape.contributor">
          <propertySection
-               class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.custom.properties.sections.ActivityFinalNodeExpressionSection"
-               filter="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.custom.properties.filters.ActivityFinalNodeFilter"
+               class="org.muml.reconfiguration.componentstorydiagram.diagram.custom.properties.sections.ActivityFinalNodeExpressionSection"
+               filter="org.muml.reconfiguration.componentstorydiagram.diagram.custom.properties.filters.ActivityFinalNodeFilter"
                id="ActivityFinalNode.expression"
                tab="general">
          </propertySection>
@@ -142,7 +142,7 @@
    <extension
          point="org.eclipse.gmf.runtime.diagram.ui.editpolicyProviders">
       <editpolicyProvider
-            class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.custom.providers.CustomComponentStoryDiagramEditPolicyProvider">
+            class="org.muml.reconfiguration.componentstorydiagram.diagram.custom.providers.CustomComponentStoryDiagramEditPolicyProvider">
          <Priority
                name="Low">
          </Priority>

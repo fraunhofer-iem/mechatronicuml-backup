@@ -103,7 +103,7 @@ public class ComponentStoryDiagramPaletteFactory {
 						.singletonList(org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.ComponentStoryNode_3001));
 		entry.setId("createComponentStoryNode2CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramEditorPlugin
-				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.custom/icons/ComponentStoryNode.png")); //$NON-NLS-1$
+				.findImageDescriptor("/org.muml.reconfiguration.componentstorydiagram.diagram.custom/icons/ComponentStoryNode.png")); //$NON-NLS-1$
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -119,7 +119,7 @@ public class ComponentStoryDiagramPaletteFactory {
 						.singletonList(org.muml.reconfiguration.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.ControllerExchangeNode_3021));
 		entry.setId("createControllerExchangeNode3CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(org.muml.reconfiguration.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramEditorPlugin
-				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.custom/icons/ControllerExchangeNode.png")); //$NON-NLS-1$
+				.findImageDescriptor("/org.muml.reconfiguration.componentstorydiagram.diagram.custom/icons/ControllerExchangeNode.png")); //$NON-NLS-1$
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}

@@ -35,8 +35,8 @@ public class ReconfDiagramPluginXmlTest extends org.muml.core.tests.DiagramPlugi
 
 		Object[][] pluginsToCheck = new Object[][] {
 			new Object[] { new String[] { 
-					"de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram",
-					"de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.custom",
+					"org.muml.reconfiguration.componentstorydiagram.diagram",
+					"org.muml.reconfiguration.componentstorydiagram.diagram.custom",
 			}},
 
 			new Object[] { new String[] {

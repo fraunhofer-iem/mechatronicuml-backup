@@ -172,7 +172,7 @@ public class ComponentStoryDiagramDocumentProvider extends
 		TransactionalEditingDomain editingDomain = DiagramEditingDomainFactory
 				.getInstance().createEditingDomain();
 		editingDomain
-				.setID("de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.EditingDomain"); //$NON-NLS-1$
+				.setID("org.muml.reconfiguration.componentstorydiagram.diagram.EditingDomain"); //$NON-NLS-1$
 		final NotificationFilter diagramResourceModifiedFilter = NotificationFilter
 				.createNotifierFilter(editingDomain.getResourceSet())
 				.and(NotificationFilter.createEventTypeFilter(Notification.ADD))
