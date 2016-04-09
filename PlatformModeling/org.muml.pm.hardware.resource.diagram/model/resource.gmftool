@@ -128,7 +128,7 @@
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="icons/ProtocolRepo.gif"
-            bundle="de.uni_paderborn.fujaba.muml.hardware.resource.diagram"/>
+            bundle="org.muml.pm.hardware.resource.diagram"/>
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"

@@ -46,78 +46,78 @@ public class HardwareElementTypes {
 	 * @generated
 	 */
 	public static final IElementType ResourceRepository_1000 = getElementType(
-			"de.uni_paderborn.fujaba.muml.hardware.resource.diagram.ResourceRepository_1000"); //$NON-NLS-1$
+			"org.muml.pm.hardware.resource.diagram.ResourceRepository_1000"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
 	public static final IElementType Device_2006 = getElementType(
-			"de.uni_paderborn.fujaba.muml.hardware.resource.diagram.Device_2006"); //$NON-NLS-1$
+			"org.muml.pm.hardware.resource.diagram.Device_2006"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
 	public static final IElementType StructuredResource_2007 = getElementType(
-			"de.uni_paderborn.fujaba.muml.hardware.resource.diagram.StructuredResource_2007"); //$NON-NLS-1$
+			"org.muml.pm.hardware.resource.diagram.StructuredResource_2007"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
 	public static final IElementType CommunicationProtocolRepository_2008 = getElementType(
-			"de.uni_paderborn.fujaba.muml.hardware.resource.diagram.CommunicationProtocolRepository_2008"); //$NON-NLS-1$
+			"org.muml.pm.hardware.resource.diagram.CommunicationProtocolRepository_2008"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
 	public static final IElementType CommunicationResource_3011 = getElementType(
-			"de.uni_paderborn.fujaba.muml.hardware.resource.diagram.CommunicationResource_3011"); //$NON-NLS-1$
+			"org.muml.pm.hardware.resource.diagram.CommunicationResource_3011"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
 	public static final IElementType CommunicationResource_3012 = getElementType(
-			"de.uni_paderborn.fujaba.muml.hardware.resource.diagram.CommunicationResource_3012"); //$NON-NLS-1$
+			"org.muml.pm.hardware.resource.diagram.CommunicationResource_3012"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
 	public static final IElementType Cache_3013 = getElementType(
-			"de.uni_paderborn.fujaba.muml.hardware.resource.diagram.Cache_3013"); //$NON-NLS-1$
+			"org.muml.pm.hardware.resource.diagram.Cache_3013"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
 	public static final IElementType Processor_3014 = getElementType(
-			"de.uni_paderborn.fujaba.muml.hardware.resource.diagram.Processor_3014"); //$NON-NLS-1$
+			"org.muml.pm.hardware.resource.diagram.Processor_3014"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
 	public static final IElementType ProgrammableLogicDevice_3015 = getElementType(
-			"de.uni_paderborn.fujaba.muml.hardware.resource.diagram.ProgrammableLogicDevice_3015"); //$NON-NLS-1$
+			"org.muml.pm.hardware.resource.diagram.ProgrammableLogicDevice_3015"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
 	public static final IElementType MemoryResource_3016 = getElementType(
-			"de.uni_paderborn.fujaba.muml.hardware.resource.diagram.MemoryResource_3016"); //$NON-NLS-1$
+			"org.muml.pm.hardware.resource.diagram.MemoryResource_3016"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
 	public static final IElementType BusProtocol_3017 = getElementType(
-			"de.uni_paderborn.fujaba.muml.hardware.resource.diagram.BusProtocol_3017"); //$NON-NLS-1$
+			"org.muml.pm.hardware.resource.diagram.BusProtocol_3017"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
 	public static final IElementType LinkProtocol_3018 = getElementType(
-			"de.uni_paderborn.fujaba.muml.hardware.resource.diagram.LinkProtocol_3018"); //$NON-NLS-1$
+			"org.muml.pm.hardware.resource.diagram.LinkProtocol_3018"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
 	public static final IElementType ProcessorOwnedCache_4002 = getElementType(
-			"de.uni_paderborn.fujaba.muml.hardware.resource.diagram.ProcessorOwnedCache_4002"); //$NON-NLS-1$
+			"org.muml.pm.hardware.resource.diagram.ProcessorOwnedCache_4002"); //$NON-NLS-1$
 
 	/**
 	 * @generated

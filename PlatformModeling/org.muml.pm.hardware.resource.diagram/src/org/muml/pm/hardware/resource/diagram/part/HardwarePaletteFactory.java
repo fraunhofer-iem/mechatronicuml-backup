@@ -223,7 +223,7 @@ public class HardwarePaletteFactory {
 						org.muml.pm.hardware.resource.diagram.providers.HardwareElementTypes.CommunicationProtocolRepository_2008));
 		entry.setId("createProtocolRepository1CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(org.muml.pm.hardware.resource.diagram.part.HardwareDiagramEditorPlugin
-				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.hardware.resource.diagram/icons/ProtocolRepo.gif")); //$NON-NLS-1$
+				.findImageDescriptor("/org.muml.pm.hardware.resource.diagram/icons/ProtocolRepo.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
