@@ -4,7 +4,7 @@
    <extension
          point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders">
       <editpartProvider
-            class="de.uni_paderborn.fujaba.muml.testlanguage.diagram.custom.providers.TestLanguageEditPartProviderOverride">
+            class="org.muml.testlanguage.diagram.custom.providers.TestLanguageEditPartProviderOverride">
          <Priority
                name="Medium">
          </Priority>
@@ -13,7 +13,7 @@
    <extension
          point="org.eclipse.ui.views.properties.tabbed.propertySections">
       <propertySections
-            contributorId="de.uni_paderborn.fujaba.muml.testlanguage.diagram">
+            contributorId="org.muml.testlanguage.diagram">
          <propertySection
                class="org.muml.testlanguage.diagram.custom.sheet.TestLanguagePropertySectionOverride"
                id="property.section.specification"
@@ -25,7 +25,7 @@
                   type="org.eclipse.gef.EditPart">
             </input>
             <input
-                  type="de.uni_paderborn.fujaba.muml.testlanguage.diagram.navigator.TestLanguageAbstractNavigatorItem">
+                  type="org.muml.testlanguage.diagram.navigator.TestLanguageAbstractNavigatorItem">
             </input>
          </propertySection>
       </propertySections>
@@ -33,7 +33,7 @@
    <extension
          point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
       <propertyTabs
-            contributorId="de.uni_paderborn.fujaba.muml.testlanguage.diagram">
+            contributorId="org.muml.testlanguage.diagram">
          <propertyTab
                category="domain"
                id="property.tab.TestLanguageSpecification"
@@ -53,7 +53,7 @@
                elements="Node_2001">
          </context>
          <object
-               class="de.uni_paderborn.fujaba.muml.testlanguage.diagram.edit.parts.NodeEditPart"
+               class="org.muml.testlanguage.diagram.edit.parts.NodeEditPart"
                id="Node_2001">
          </object>
       </modelingAssistantProvider>
@@ -66,7 +66,7 @@
                elements="TestCase_1000">
          </context>
          <object
-               class="de.uni_paderborn.fujaba.muml.testlanguage.diagram.edit.parts.TestCaseEditPart"
+               class="org.muml.testlanguage.diagram.edit.parts.TestCaseEditPart"
                id="TestCase_1000">
          </object>
       </modelingAssistantProvider>

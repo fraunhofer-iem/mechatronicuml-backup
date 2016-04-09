@@ -17,7 +17,7 @@ public abstract class TestLanguageAbstractNavigatorItem extends PlatformObject {
 		final Class[] supportedTypes = new Class[] { ITabbedPropertySheetPageContributor.class };
 		final ITabbedPropertySheetPageContributor propertySheetPageContributor = new ITabbedPropertySheetPageContributor() {
 			public String getContributorId() {
-				return "de.uni_paderborn.fujaba.muml.testlanguage.diagram"; //$NON-NLS-1$
+				return "org.muml.testlanguage.diagram"; //$NON-NLS-1$
 			}
 		};
 		Platform.getAdapterManager().registerAdapters(

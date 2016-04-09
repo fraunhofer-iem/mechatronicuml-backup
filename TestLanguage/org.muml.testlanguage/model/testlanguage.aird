@@ -2,7 +2,7 @@
 <viewpoint:DAnalysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style" xmi:id="_e5S90E7_EeSjybJ-h79MrA" selectedViews="_e8pz0E7_EeSjybJ-h79MrA _fALo8E7_EeSjybJ-h79MrA _fAWBAE7_EeSjybJ-h79MrA _fC3JgE7_EeSjybJ-h79MrA" version="8.1.1">
   <models xmi:type="ecore:EPackage" href="testlanguage.ecore#/"/>
   <models xmi:type="ecore:EPackage" href="http://www.eclipse.org/emf/2002/Ecore#/"/>
-  <models xmi:type="ecore:EPackage" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#/"/>
+  <models xmi:type="ecore:EPackage" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#/"/>
   <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_e8pz0E7_EeSjybJ-h79MrA" initialized="true">
     <ownedRepresentations xmi:type="diagram:DSemanticDiagram" xmi:id="_e_cCEE7_EeSjybJ-h79MrA" name="testlanguage class diagram">
       <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_e_cpIE7_EeSjybJ-h79MrA" source="GMF_DIAGRAMS">
@@ -92,8 +92,8 @@
         </data>
       </ownedAnnotationEntries>
       <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_e_7xUU7_EeSjybJ-h79MrA" width="-1" height="-1">
-        <target xmi:type="ecore:EPackage" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#/"/>
-        <semanticElements xmi:type="ecore:EPackage" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#/"/>
+        <target xmi:type="ecore:EPackage" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#/"/>
+        <semanticElements xmi:type="ecore:EPackage" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#/"/>
         <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_e_7xUk7_EeSjybJ-h79MrA" showIcon="false" labelPosition="node" workspacePath="/org.eclipse.emf.ecoretools.design/icons/full/back/empty.svg">
           <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_e_7xU07_EeSjybJ-h79MrA"/>
           <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@nodeMappings[name='Empty%20Diagram']/@style"/>
@@ -107,7 +107,7 @@
       <activatedLayers xmi:type="description_1:AdditionalLayer" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@additionalLayers[name='Package']"/>
       <activatedLayers xmi:type="description_1:AdditionalLayer" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@additionalLayers[name='Validation']"/>
       <activatedLayers xmi:type="description_1:AdditionalLayer" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Archetype']/@ownedRepresentationExtensions[name='Entities%20With%20Archetypes']/@layers[name='Archetypes']"/>
-      <target xmi:type="ecore:EPackage" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#/"/>
+      <target xmi:type="ecore:EPackage" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#/"/>
     </ownedRepresentations>
     <ownedRepresentations xmi:type="diagram:DSemanticDiagram" xmi:id="_g44P8E7_EeSjybJ-h79MrA" name="testlanguage class diagram">
       <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_g443AE7_EeSjybJ-h79MrA" source="GMF_DIAGRAMS">
@@ -472,10 +472,10 @@
               </value>
             </value>
             <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_qLLrUE8LEeSjybJ-h79MrA">
-              <key xmi:type="ecore:EAttribute" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification/label"/>
+              <key xmi:type="ecore:EAttribute" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification/label"/>
               <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_qLLrUU8LEeSjybJ-h79MrA" key="_s7DoYE7_EeSjybJ-h79MrA">
                 <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_qLLrU08LEeSjybJ-h79MrA" value="_qLLrUk8LEeSjybJ-h79MrA">
-                  <key xmi:type="ecore:EClass" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification"/>
+                  <key xmi:type="ecore:EClass" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification"/>
                 </value>
               </value>
             </value>
@@ -818,8 +818,8 @@
         <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='Bi-directional%20EC_EReference%20']"/>
       </ownedDiagramElements>
       <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_s6oxoE7_EeSjybJ-h79MrA" name="NodeSpecification" tooltipText="" incomingEdges="_s7P1oE7_EeSjybJ-h79MrA" width="12" height="10">
-        <target xmi:type="ecore:EClass" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification"/>
-        <semanticElements xmi:type="ecore:EClass" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification"/>
+        <target xmi:type="ecore:EClass" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification"/>
+        <semanticElements xmi:type="ecore:EClass" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification"/>
         <decorations xmi:type="viewpoint:Decoration" xmi:id="_s7MLQE7_EeSjybJ-h79MrA">
           <description xmi:type="description:SemanticBasedDecoration" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='External']"/>
         </decorations>
@@ -835,8 +835,8 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
         <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_s7DoYE7_EeSjybJ-h79MrA" name="label : EString = Node" visible="false" tooltipText="">
-          <target xmi:type="ecore:EAttribute" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification/label"/>
-          <semanticElements xmi:type="ecore:EAttribute" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification/label"/>
+          <target xmi:type="ecore:EAttribute" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification/label"/>
+          <semanticElements xmi:type="ecore:EAttribute" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification/label"/>
           <graphicalFilters xmi:type="diagram:HideFilter" xmi:id="_1Et3Ik7_EeSjybJ-h79MrA"/>
           <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_qLLrVE8LEeSjybJ-h79MrA" labelFormat="bold" labelAlignment="LEFT" description="_qLLrUk8LEeSjybJ-h79MrA">
             <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_qLLrVU8LEeSjybJ-h79MrA"/>
@@ -846,8 +846,8 @@
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
         </ownedElements>
         <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_s7E2gE7_EeSjybJ-h79MrA" name="initialize()" visible="false" tooltipText="initialize()">
-          <target xmi:type="ecore:EOperation" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification/initialize"/>
-          <semanticElements xmi:type="ecore:EOperation" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification/initialize"/>
+          <target xmi:type="ecore:EOperation" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification/initialize"/>
+          <semanticElements xmi:type="ecore:EOperation" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification/initialize"/>
           <graphicalFilters xmi:type="diagram:HideFilter" xmi:id="_1Et3IU7_EeSjybJ-h79MrA"/>
           <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_s7GEoE7_EeSjybJ-h79MrA" labelAlignment="LEFT">
             <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_s7GEoU7_EeSjybJ-h79MrA"/>
@@ -858,10 +858,10 @@
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='Operation']"/>
         </ownedElements>
         <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_s7GEpE7_EeSjybJ-h79MrA" name="execute(inputs EMap, outputs EMap)" visible="false" tooltipText="execute(inputs, outputs)">
-          <target xmi:type="ecore:EOperation" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification/execute"/>
-          <semanticElements xmi:type="ecore:EOperation" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification/execute"/>
-          <semanticElements xmi:type="ecore:EParameter" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification/execute/inputs"/>
-          <semanticElements xmi:type="ecore:EParameter" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification/execute/outputs"/>
+          <target xmi:type="ecore:EOperation" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification/execute"/>
+          <semanticElements xmi:type="ecore:EOperation" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification/execute"/>
+          <semanticElements xmi:type="ecore:EParameter" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification/execute/inputs"/>
+          <semanticElements xmi:type="ecore:EParameter" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification/execute/outputs"/>
           <graphicalFilters xmi:type="diagram:HideFilter" xmi:id="_1Et3Jk7_EeSjybJ-h79MrA"/>
           <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_s7GrsE7_EeSjybJ-h79MrA" labelAlignment="LEFT">
             <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_s7GrsU7_EeSjybJ-h79MrA"/>
@@ -872,9 +872,9 @@
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='Operation']"/>
         </ownedElements>
         <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_s7HSwE7_EeSjybJ-h79MrA" name="notifyChanged(notification EJavaObject) : EBoolean" visible="false" tooltipText="notifyChanged(notification) : EBoolean">
-          <target xmi:type="ecore:EOperation" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification/notifyChanged"/>
-          <semanticElements xmi:type="ecore:EOperation" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification/notifyChanged"/>
-          <semanticElements xmi:type="ecore:EParameter" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification/notifyChanged/notification"/>
+          <target xmi:type="ecore:EOperation" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification/notifyChanged"/>
+          <semanticElements xmi:type="ecore:EOperation" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification/notifyChanged"/>
+          <semanticElements xmi:type="ecore:EParameter" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification/notifyChanged/notification"/>
           <graphicalFilters xmi:type="diagram:HideFilter" xmi:id="_1Et3JU7_EeSjybJ-h79MrA"/>
           <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_s7H50E7_EeSjybJ-h79MrA" labelAlignment="LEFT">
             <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_s7H50U7_EeSjybJ-h79MrA"/>
@@ -885,11 +885,11 @@
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='Operation']"/>
         </ownedElements>
         <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_s7H51E7_EeSjybJ-h79MrA" name="addPortSpecification(type PortType, name EString, optional EBoolean) : PortSpecification" visible="false" tooltipText="addPortSpecification(type, name, optional) : PortSpecification">
-          <target xmi:type="ecore:EOperation" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification/addPortSpecification"/>
-          <semanticElements xmi:type="ecore:EOperation" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification/addPortSpecification"/>
-          <semanticElements xmi:type="ecore:EParameter" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification/addPortSpecification/name"/>
-          <semanticElements xmi:type="ecore:EParameter" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification/addPortSpecification/optional"/>
-          <semanticElements xmi:type="ecore:EParameter" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification/addPortSpecification/type"/>
+          <target xmi:type="ecore:EOperation" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification/addPortSpecification"/>
+          <semanticElements xmi:type="ecore:EOperation" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification/addPortSpecification"/>
+          <semanticElements xmi:type="ecore:EParameter" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification/addPortSpecification/name"/>
+          <semanticElements xmi:type="ecore:EParameter" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification/addPortSpecification/optional"/>
+          <semanticElements xmi:type="ecore:EParameter" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification/addPortSpecification/type"/>
           <graphicalFilters xmi:type="diagram:HideFilter" xmi:id="_1Et3IE7_EeSjybJ-h79MrA"/>
           <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_s7Ig4E7_EeSjybJ-h79MrA" labelAlignment="LEFT">
             <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_s7Ig4U7_EeSjybJ-h79MrA"/>
@@ -900,12 +900,12 @@
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='Operation']"/>
         </ownedElements>
         <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_s7JH8E7_EeSjybJ-h79MrA" name="addPortSpecification(type PortType, name EString, optional EBoolean, dataType EJavaClass) : PortSpecification" visible="false" tooltipText="addPortSpecification(type, name, optional, dataType) : PortSpecification">
-          <target xmi:type="ecore:EOperation" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification/addPortSpecification.1"/>
-          <semanticElements xmi:type="ecore:EOperation" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification/addPortSpecification.1"/>
-          <semanticElements xmi:type="ecore:EParameter" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification/addPortSpecification.1/dataType"/>
-          <semanticElements xmi:type="ecore:EParameter" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification/addPortSpecification.1/name"/>
-          <semanticElements xmi:type="ecore:EParameter" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification/addPortSpecification.1/optional"/>
-          <semanticElements xmi:type="ecore:EParameter" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification/addPortSpecification.1/type"/>
+          <target xmi:type="ecore:EOperation" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification/addPortSpecification.1"/>
+          <semanticElements xmi:type="ecore:EOperation" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification/addPortSpecification.1"/>
+          <semanticElements xmi:type="ecore:EParameter" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification/addPortSpecification.1/dataType"/>
+          <semanticElements xmi:type="ecore:EParameter" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification/addPortSpecification.1/name"/>
+          <semanticElements xmi:type="ecore:EParameter" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification/addPortSpecification.1/optional"/>
+          <semanticElements xmi:type="ecore:EParameter" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification/addPortSpecification.1/type"/>
           <graphicalFilters xmi:type="diagram:HideFilter" xmi:id="_1Et3JE7_EeSjybJ-h79MrA"/>
           <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_s7JH8U7_EeSjybJ-h79MrA" labelAlignment="LEFT">
             <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_s7JH8k7_EeSjybJ-h79MrA"/>
@@ -1255,42 +1255,42 @@
           <cache xmi:type="diagram:DiagramElementMapping2ModelElement" xmi:id="_UIEoVU8FEeSjybJ-h79MrA">
             <key xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
             <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_u3VDwFwkEeSAbq4udmuvUw">
-              <key xmi:type="ecore:EAttribute" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification/label"/>
+              <key xmi:type="ecore:EAttribute" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification/label"/>
               <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_u3VDwVwkEeSAbq4udmuvUw" key="_UIEoUk8FEeSjybJ-h79MrA">
                 <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_u3VDw1wkEeSAbq4udmuvUw" value="_u3VDwlwkEeSAbq4udmuvUw">
-                  <key xmi:type="ecore:EClass" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification"/>
+                  <key xmi:type="ecore:EClass" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification"/>
                 </value>
               </value>
             </value>
             <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_u3eNsFwkEeSAbq4udmuvUw">
-              <key xmi:type="ecore:EAttribute" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//PortSpecification/name"/>
+              <key xmi:type="ecore:EAttribute" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//PortSpecification/name"/>
               <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_u3eNsVwkEeSAbq4udmuvUw" key="_UIEofE8FEeSjybJ-h79MrA">
                 <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_u3eNs1wkEeSAbq4udmuvUw" value="_u3eNslwkEeSAbq4udmuvUw">
-                  <key xmi:type="ecore:EClass" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//PortSpecification"/>
+                  <key xmi:type="ecore:EClass" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//PortSpecification"/>
                 </value>
               </value>
             </value>
             <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_u3eNuFwkEeSAbq4udmuvUw">
-              <key xmi:type="ecore:EAttribute" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//PortSpecification/optional"/>
+              <key xmi:type="ecore:EAttribute" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//PortSpecification/optional"/>
               <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_u3eNuVwkEeSAbq4udmuvUw" key="_UINyJE8FEeSjybJ-h79MrA">
                 <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_u3eNu1wkEeSAbq4udmuvUw" value="_u3eNulwkEeSAbq4udmuvUw">
-                  <key xmi:type="ecore:EClass" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//PortSpecification"/>
+                  <key xmi:type="ecore:EClass" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//PortSpecification"/>
                 </value>
               </value>
             </value>
             <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_u3eNwFwkEeSAbq4udmuvUw">
-              <key xmi:type="ecore:EAttribute" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//PortSpecification/type"/>
+              <key xmi:type="ecore:EAttribute" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//PortSpecification/type"/>
               <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_u3eNwVwkEeSAbq4udmuvUw" key="_UINyLU8FEeSjybJ-h79MrA">
                 <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_u3eNw1wkEeSAbq4udmuvUw" value="_u3eNwlwkEeSAbq4udmuvUw">
-                  <key xmi:type="ecore:EClass" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//PortSpecification"/>
+                  <key xmi:type="ecore:EClass" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//PortSpecification"/>
                 </value>
               </value>
             </value>
             <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_u3eNyFwkEeSAbq4udmuvUw">
-              <key xmi:type="ecore:EAttribute" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//PrimitiveString/value"/>
+              <key xmi:type="ecore:EAttribute" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//PrimitiveString/value"/>
               <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_u3eNyVwkEeSAbq4udmuvUw" key="_UINyO08FEeSjybJ-h79MrA">
                 <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_u3eNy1wkEeSAbq4udmuvUw" value="_u3eNylwkEeSAbq4udmuvUw">
-                  <key xmi:type="ecore:EClass" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//PrimitiveString"/>
+                  <key xmi:type="ecore:EClass" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//PrimitiveString"/>
                 </value>
               </value>
             </value>
@@ -1298,10 +1298,10 @@
           <cache xmi:type="diagram:DiagramElementMapping2ModelElement" xmi:id="_UIXjLU8FEeSjybJ-h79MrA">
             <key xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
             <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_u3n-sFwkEeSAbq4udmuvUw">
-              <key xmi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification/portSpecifications"/>
+              <key xmi:type="ecore:EReference" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification/portSpecifications"/>
               <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_u3n-sVwkEeSAbq4udmuvUw" key="_UIXjLE8FEeSjybJ-h79MrA">
                 <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_u3n-tVwkEeSAbq4udmuvUw" value="_u3n-slwkEeSAbq4udmuvUw">
-                  <key xmi:type="ecore:EPackage" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#/"/>
+                  <key xmi:type="ecore:EPackage" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#/"/>
                 </value>
               </value>
             </value>
@@ -1309,8 +1309,8 @@
         </data>
       </ownedAnnotationEntries>
       <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_UHVBUE8FEeSjybJ-h79MrA" name="AssertBool" tooltipText="" outgoingEdges="_UIXjOk8FEeSjybJ-h79MrA" incomingEdges="_UIXjQU8FEeSjybJ-h79MrA _UIXjSE8FEeSjybJ-h79MrA" width="12" height="10">
-        <target xmi:type="ecore:EClass" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//AssertBool"/>
-        <semanticElements xmi:type="ecore:EClass" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//AssertBool"/>
+        <target xmi:type="ecore:EClass" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//AssertBool"/>
+        <semanticElements xmi:type="ecore:EClass" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//AssertBool"/>
         <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
         <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
         <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
@@ -1323,8 +1323,8 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
         <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_UH63ME8FEeSjybJ-h79MrA" name="assertion : EBoolean = true" tooltipText="">
-          <target xmi:type="ecore:EAttribute" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//AssertBool/assertion"/>
-          <semanticElements xmi:type="ecore:EAttribute" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//AssertBool/assertion"/>
+          <target xmi:type="ecore:EAttribute" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//AssertBool/assertion"/>
+          <semanticElements xmi:type="ecore:EAttribute" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//AssertBool/assertion"/>
           <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_UH63MU8FEeSjybJ-h79MrA" labelAlignment="LEFT">
             <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_UH63Mk8FEeSjybJ-h79MrA"/>
             <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
@@ -1334,8 +1334,8 @@
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
         </ownedElements>
         <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_UH63NU8FEeSjybJ-h79MrA" name="initialize()" visible="false" tooltipText="initialize()">
-          <target xmi:type="ecore:EOperation" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//AssertBool/initialize"/>
-          <semanticElements xmi:type="ecore:EOperation" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//AssertBool/initialize"/>
+          <target xmi:type="ecore:EOperation" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//AssertBool/initialize"/>
+          <semanticElements xmi:type="ecore:EOperation" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//AssertBool/initialize"/>
           <graphicalFilters xmi:type="diagram:HideFilter" xmi:id="_LqgUE08HEeSjybJ-h79MrA"/>
           <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_UH63Nk8FEeSjybJ-h79MrA" labelAlignment="LEFT">
             <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_UH63N08FEeSjybJ-h79MrA"/>
@@ -1346,10 +1346,10 @@
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='Operation']"/>
         </ownedElements>
         <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_UH63Ok8FEeSjybJ-h79MrA" name="execute(inputs EMap, outputs EMap)" visible="false" tooltipText="execute(inputs, outputs)">
-          <target xmi:type="ecore:EOperation" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//AssertBool/execute"/>
-          <semanticElements xmi:type="ecore:EOperation" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//AssertBool/execute"/>
-          <semanticElements xmi:type="ecore:EParameter" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//AssertBool/execute/inputs"/>
-          <semanticElements xmi:type="ecore:EParameter" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//AssertBool/execute/outputs"/>
+          <target xmi:type="ecore:EOperation" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//AssertBool/execute"/>
+          <semanticElements xmi:type="ecore:EOperation" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//AssertBool/execute"/>
+          <semanticElements xmi:type="ecore:EParameter" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//AssertBool/execute/inputs"/>
+          <semanticElements xmi:type="ecore:EParameter" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//AssertBool/execute/outputs"/>
           <graphicalFilters xmi:type="diagram:HideFilter" xmi:id="_LqgUFU8HEeSjybJ-h79MrA"/>
           <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_UH63O08FEeSjybJ-h79MrA" labelAlignment="LEFT">
             <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_UH63PE8FEeSjybJ-h79MrA"/>
@@ -1361,8 +1361,8 @@
         </ownedElements>
       </ownedDiagramElements>
       <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_UHVBVk8FEeSjybJ-h79MrA" name="AssertDiagnosticTrace" tooltipText="" outgoingEdges="_UIXjQU8FEeSjybJ-h79MrA" width="12" height="10">
-        <target xmi:type="ecore:EClass" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//AssertDiagnosticTrace"/>
-        <semanticElements xmi:type="ecore:EClass" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//AssertDiagnosticTrace"/>
+        <target xmi:type="ecore:EClass" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//AssertDiagnosticTrace"/>
+        <semanticElements xmi:type="ecore:EClass" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//AssertDiagnosticTrace"/>
         <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
         <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
         <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
@@ -1375,8 +1375,8 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
         <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_UH63P08FEeSjybJ-h79MrA" name="initialize()" visible="false" tooltipText="initialize()">
-          <target xmi:type="ecore:EOperation" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//AssertDiagnosticTrace/initialize"/>
-          <semanticElements xmi:type="ecore:EOperation" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//AssertDiagnosticTrace/initialize"/>
+          <target xmi:type="ecore:EOperation" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//AssertDiagnosticTrace/initialize"/>
+          <semanticElements xmi:type="ecore:EOperation" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//AssertDiagnosticTrace/initialize"/>
           <graphicalFilters xmi:type="diagram:HideFilter" xmi:id="_LqgUF08HEeSjybJ-h79MrA"/>
           <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_UIEoME8FEeSjybJ-h79MrA" labelAlignment="LEFT">
             <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_UIEoMU8FEeSjybJ-h79MrA"/>
@@ -1387,10 +1387,10 @@
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='Operation']"/>
         </ownedElements>
         <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_UIEoNE8FEeSjybJ-h79MrA" name="execute(inputs EMap, outputs EMap)" visible="false" tooltipText="execute(inputs, outputs)">
-          <target xmi:type="ecore:EOperation" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//AssertDiagnosticTrace/execute"/>
-          <semanticElements xmi:type="ecore:EOperation" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//AssertDiagnosticTrace/execute"/>
-          <semanticElements xmi:type="ecore:EParameter" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//AssertDiagnosticTrace/execute/inputs"/>
-          <semanticElements xmi:type="ecore:EParameter" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//AssertDiagnosticTrace/execute/outputs"/>
+          <target xmi:type="ecore:EOperation" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//AssertDiagnosticTrace/execute"/>
+          <semanticElements xmi:type="ecore:EOperation" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//AssertDiagnosticTrace/execute"/>
+          <semanticElements xmi:type="ecore:EParameter" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//AssertDiagnosticTrace/execute/inputs"/>
+          <semanticElements xmi:type="ecore:EParameter" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//AssertDiagnosticTrace/execute/outputs"/>
           <graphicalFilters xmi:type="diagram:HideFilter" xmi:id="_LqgUEU8HEeSjybJ-h79MrA"/>
           <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_UIEoNU8FEeSjybJ-h79MrA" labelAlignment="LEFT">
             <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_UIEoNk8FEeSjybJ-h79MrA"/>
@@ -1402,8 +1402,8 @@
         </ownedElements>
       </ownedDiagramElements>
       <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_UHVBXE8FEeSjybJ-h79MrA" name="AssertResult" tooltipText="" outgoingEdges="_UIXjSE8FEeSjybJ-h79MrA" width="12" height="10">
-        <target xmi:type="ecore:EClass" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//AssertResult"/>
-        <semanticElements xmi:type="ecore:EClass" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//AssertResult"/>
+        <target xmi:type="ecore:EClass" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//AssertResult"/>
+        <semanticElements xmi:type="ecore:EClass" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//AssertResult"/>
         <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
         <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
         <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
@@ -1416,8 +1416,8 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
         <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_UIEoOU8FEeSjybJ-h79MrA" name="initialize()" visible="false" tooltipText="initialize()">
-          <target xmi:type="ecore:EOperation" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//AssertResult/initialize"/>
-          <semanticElements xmi:type="ecore:EOperation" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//AssertResult/initialize"/>
+          <target xmi:type="ecore:EOperation" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//AssertResult/initialize"/>
+          <semanticElements xmi:type="ecore:EOperation" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//AssertResult/initialize"/>
           <graphicalFilters xmi:type="diagram:HideFilter" xmi:id="_LqgUEk8HEeSjybJ-h79MrA"/>
           <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_UIEoOk8FEeSjybJ-h79MrA" labelAlignment="LEFT">
             <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_UIEoO08FEeSjybJ-h79MrA"/>
@@ -1428,10 +1428,10 @@
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='Operation']"/>
         </ownedElements>
         <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_UIEoPk8FEeSjybJ-h79MrA" name="execute(inputs EMap, outputs EMap)" visible="false" tooltipText="execute(inputs, outputs)">
-          <target xmi:type="ecore:EOperation" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//AssertResult/execute"/>
-          <semanticElements xmi:type="ecore:EOperation" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//AssertResult/execute"/>
-          <semanticElements xmi:type="ecore:EParameter" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//AssertResult/execute/inputs"/>
-          <semanticElements xmi:type="ecore:EParameter" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//AssertResult/execute/outputs"/>
+          <target xmi:type="ecore:EOperation" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//AssertResult/execute"/>
+          <semanticElements xmi:type="ecore:EOperation" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//AssertResult/execute"/>
+          <semanticElements xmi:type="ecore:EParameter" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//AssertResult/execute/inputs"/>
+          <semanticElements xmi:type="ecore:EParameter" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//AssertResult/execute/outputs"/>
           <graphicalFilters xmi:type="diagram:HideFilter" xmi:id="_LqgUFE8HEeSjybJ-h79MrA"/>
           <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_UIEoP08FEeSjybJ-h79MrA" labelAlignment="LEFT">
             <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_UIEoQE8FEeSjybJ-h79MrA"/>
@@ -1443,8 +1443,8 @@
         </ownedElements>
       </ownedDiagramElements>
       <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_UHVBYk8FEeSjybJ-h79MrA" name="CheckMTCTL" tooltipText="" outgoingEdges="_UIXjT08FEeSjybJ-h79MrA" width="12" height="10">
-        <target xmi:type="ecore:EClass" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//CheckMTCTL"/>
-        <semanticElements xmi:type="ecore:EClass" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//CheckMTCTL"/>
+        <target xmi:type="ecore:EClass" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//CheckMTCTL"/>
+        <semanticElements xmi:type="ecore:EClass" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//CheckMTCTL"/>
         <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
         <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
         <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
@@ -1457,8 +1457,8 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
         <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_UIEoQ08FEeSjybJ-h79MrA" name="properties : EString" tooltipText="">
-          <target xmi:type="ecore:EAttribute" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//CheckMTCTL/properties"/>
-          <semanticElements xmi:type="ecore:EAttribute" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//CheckMTCTL/properties"/>
+          <target xmi:type="ecore:EAttribute" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//CheckMTCTL/properties"/>
+          <semanticElements xmi:type="ecore:EAttribute" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//CheckMTCTL/properties"/>
           <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_UIEoRE8FEeSjybJ-h79MrA" labelAlignment="LEFT">
             <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_UIEoRU8FEeSjybJ-h79MrA"/>
             <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
@@ -1468,8 +1468,8 @@
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
         </ownedElements>
         <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_UIEoSE8FEeSjybJ-h79MrA" name="initialize()" visible="false" tooltipText="initialize()">
-          <target xmi:type="ecore:EOperation" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//CheckMTCTL/initialize"/>
-          <semanticElements xmi:type="ecore:EOperation" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//CheckMTCTL/initialize"/>
+          <target xmi:type="ecore:EOperation" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//CheckMTCTL/initialize"/>
+          <semanticElements xmi:type="ecore:EOperation" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//CheckMTCTL/initialize"/>
           <graphicalFilters xmi:type="diagram:HideFilter" xmi:id="_LqgUFk8HEeSjybJ-h79MrA"/>
           <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_UIEoSU8FEeSjybJ-h79MrA" labelAlignment="LEFT">
             <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_UIEoSk8FEeSjybJ-h79MrA"/>
@@ -1480,10 +1480,10 @@
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='Operation']"/>
         </ownedElements>
         <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_UIEoTU8FEeSjybJ-h79MrA" name="execute(inputs EMap, outputs EMap)" visible="false" tooltipText="execute(inputs, outputs)">
-          <target xmi:type="ecore:EOperation" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//CheckMTCTL/execute"/>
-          <semanticElements xmi:type="ecore:EOperation" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//CheckMTCTL/execute"/>
-          <semanticElements xmi:type="ecore:EParameter" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//CheckMTCTL/execute/inputs"/>
-          <semanticElements xmi:type="ecore:EParameter" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//CheckMTCTL/execute/outputs"/>
+          <target xmi:type="ecore:EOperation" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//CheckMTCTL/execute"/>
+          <semanticElements xmi:type="ecore:EOperation" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//CheckMTCTL/execute"/>
+          <semanticElements xmi:type="ecore:EParameter" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//CheckMTCTL/execute/inputs"/>
+          <semanticElements xmi:type="ecore:EParameter" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//CheckMTCTL/execute/outputs"/>
           <graphicalFilters xmi:type="diagram:HideFilter" xmi:id="_LqgUEE8HEeSjybJ-h79MrA"/>
           <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_UIEoTk8FEeSjybJ-h79MrA" labelAlignment="LEFT">
             <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_UIEoT08FEeSjybJ-h79MrA"/>
@@ -1495,8 +1495,8 @@
         </ownedElements>
       </ownedDiagramElements>
       <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_UHeLRU8FEeSjybJ-h79MrA" name="DefaultException" tooltipText="" width="14" height="5">
-        <target xmi:type="ecore:EDataType" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//DefaultException"/>
-        <semanticElements xmi:type="ecore:EDataType" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//DefaultException"/>
+        <target xmi:type="ecore:EDataType" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//DefaultException"/>
+        <semanticElements xmi:type="ecore:EDataType" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//DefaultException"/>
         <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
         <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
         <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
@@ -1509,8 +1509,8 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EDataType']"/>
         <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_UIXjIE8FEeSjybJ-h79MrA" name="java.lang.Exception" tooltipText="">
-          <target xmi:type="ecore:EDataType" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//DefaultException"/>
-          <semanticElements xmi:type="ecore:EDataType" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//DefaultException"/>
+          <target xmi:type="ecore:EDataType" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//DefaultException"/>
+          <semanticElements xmi:type="ecore:EDataType" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//DefaultException"/>
           <decorations xmi:type="viewpoint:Decoration" xmi:id="_UIXjKk8FEeSjybJ-h79MrA">
             <description xmi:type="description:SemanticBasedDecoration" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='External']"/>
           </decorations>
@@ -1524,8 +1524,8 @@
         </ownedElements>
       </ownedDiagramElements>
       <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_UHeLS08FEeSjybJ-h79MrA" name="ExecutionException" tooltipText="" width="14" height="5">
-        <target xmi:type="ecore:EDataType" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//ExecutionException"/>
-        <semanticElements xmi:type="ecore:EDataType" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//ExecutionException"/>
+        <target xmi:type="ecore:EDataType" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//ExecutionException"/>
+        <semanticElements xmi:type="ecore:EDataType" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//ExecutionException"/>
         <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
         <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
         <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
@@ -1537,9 +1537,9 @@
           <foregroundColor xmi:type="viewpoint:RGBValues" xmi:id="_UHeLUE8FEeSjybJ-h79MrA" red="255" green="250" blue="191"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EDataType']"/>
-        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_UIXjJU8FEeSjybJ-h79MrA" name="de.uni_paderborn.fujaba.muml.testlanguage.specification.custom.ExecutionException" tooltipText="">
-          <target xmi:type="ecore:EDataType" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//ExecutionException"/>
-          <semanticElements xmi:type="ecore:EDataType" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//ExecutionException"/>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_UIXjJU8FEeSjybJ-h79MrA" name="org.muml.testlanguage.specification.custom.ExecutionException" tooltipText="">
+          <target xmi:type="ecore:EDataType" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//ExecutionException"/>
+          <semanticElements xmi:type="ecore:EDataType" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//ExecutionException"/>
           <decorations xmi:type="viewpoint:Decoration" xmi:id="_UIXjK08FEeSjybJ-h79MrA">
             <description xmi:type="description:SemanticBasedDecoration" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='External']"/>
           </decorations>
@@ -1553,8 +1553,8 @@
         </ownedElements>
       </ownedDiagramElements>
       <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_UHeLUU8FEeSjybJ-h79MrA" name="NodeSpecification" tooltipText="" outgoingEdges="_UIXjLE8FEeSjybJ-h79MrA" incomingEdges="_UIXjOk8FEeSjybJ-h79MrA _UIXjT08FEeSjybJ-h79MrA _UIXjVk8FEeSjybJ-h79MrA" width="12" height="10">
-        <target xmi:type="ecore:EClass" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification"/>
-        <semanticElements xmi:type="ecore:EClass" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification"/>
+        <target xmi:type="ecore:EClass" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification"/>
+        <semanticElements xmi:type="ecore:EClass" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification"/>
         <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
         <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
         <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
@@ -1567,8 +1567,8 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
         <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_UIEoUk8FEeSjybJ-h79MrA" name="label : EString = Node" tooltipText="">
-          <target xmi:type="ecore:EAttribute" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification/label"/>
-          <semanticElements xmi:type="ecore:EAttribute" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification/label"/>
+          <target xmi:type="ecore:EAttribute" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification/label"/>
+          <semanticElements xmi:type="ecore:EAttribute" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification/label"/>
           <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_u3VDxFwkEeSAbq4udmuvUw" labelFormat="bold" labelAlignment="LEFT" description="_u3VDwlwkEeSAbq4udmuvUw">
             <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_u3VDxVwkEeSAbq4udmuvUw"/>
             <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_u3VDxlwkEeSAbq4udmuvUw"/>
@@ -1577,8 +1577,8 @@
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
         </ownedElements>
         <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_UIEoXk8FEeSjybJ-h79MrA" name="initialize()" tooltipText="initialize()">
-          <target xmi:type="ecore:EOperation" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification/initialize"/>
-          <semanticElements xmi:type="ecore:EOperation" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification/initialize"/>
+          <target xmi:type="ecore:EOperation" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification/initialize"/>
+          <semanticElements xmi:type="ecore:EOperation" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification/initialize"/>
           <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_UIEoX08FEeSjybJ-h79MrA" labelAlignment="LEFT">
             <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_UIEoYE8FEeSjybJ-h79MrA"/>
             <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='Operation']/@style"/>
@@ -1588,10 +1588,10 @@
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='Operation']"/>
         </ownedElements>
         <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_UIEoY08FEeSjybJ-h79MrA" name="execute(inputs EMap, outputs EMap)" tooltipText="execute(inputs, outputs)">
-          <target xmi:type="ecore:EOperation" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification/execute"/>
-          <semanticElements xmi:type="ecore:EOperation" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification/execute"/>
-          <semanticElements xmi:type="ecore:EParameter" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification/execute/inputs"/>
-          <semanticElements xmi:type="ecore:EParameter" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification/execute/outputs"/>
+          <target xmi:type="ecore:EOperation" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification/execute"/>
+          <semanticElements xmi:type="ecore:EOperation" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification/execute"/>
+          <semanticElements xmi:type="ecore:EParameter" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification/execute/inputs"/>
+          <semanticElements xmi:type="ecore:EParameter" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification/execute/outputs"/>
           <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_UIEoZE8FEeSjybJ-h79MrA" labelAlignment="LEFT">
             <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_UIEoZU8FEeSjybJ-h79MrA"/>
             <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='Operation']/@style"/>
@@ -1601,9 +1601,9 @@
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='Operation']"/>
         </ownedElements>
         <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_UIEoaE8FEeSjybJ-h79MrA" name="notifyChanged(notification EJavaObject) : EBoolean" tooltipText="notifyChanged(notification) : EBoolean">
-          <target xmi:type="ecore:EOperation" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification/notifyChanged"/>
-          <semanticElements xmi:type="ecore:EOperation" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification/notifyChanged"/>
-          <semanticElements xmi:type="ecore:EParameter" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification/notifyChanged/notification"/>
+          <target xmi:type="ecore:EOperation" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification/notifyChanged"/>
+          <semanticElements xmi:type="ecore:EOperation" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification/notifyChanged"/>
+          <semanticElements xmi:type="ecore:EParameter" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification/notifyChanged/notification"/>
           <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_UIEoaU8FEeSjybJ-h79MrA" labelAlignment="LEFT">
             <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_UIEoak8FEeSjybJ-h79MrA"/>
             <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='Operation']/@style"/>
@@ -1613,11 +1613,11 @@
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='Operation']"/>
         </ownedElements>
         <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_UIEobU8FEeSjybJ-h79MrA" name="addPortSpecification(type PortType, name EString, optional EBoolean) : PortSpecification" visible="false" tooltipText="addPortSpecification(type, name, optional) : PortSpecification">
-          <target xmi:type="ecore:EOperation" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification/addPortSpecification"/>
-          <semanticElements xmi:type="ecore:EOperation" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification/addPortSpecification"/>
-          <semanticElements xmi:type="ecore:EParameter" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification/addPortSpecification/name"/>
-          <semanticElements xmi:type="ecore:EParameter" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification/addPortSpecification/optional"/>
-          <semanticElements xmi:type="ecore:EParameter" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification/addPortSpecification/type"/>
+          <target xmi:type="ecore:EOperation" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification/addPortSpecification"/>
+          <semanticElements xmi:type="ecore:EOperation" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification/addPortSpecification"/>
+          <semanticElements xmi:type="ecore:EParameter" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification/addPortSpecification/name"/>
+          <semanticElements xmi:type="ecore:EParameter" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification/addPortSpecification/optional"/>
+          <semanticElements xmi:type="ecore:EParameter" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification/addPortSpecification/type"/>
           <graphicalFilters xmi:type="diagram:HideFilter" xmi:id="_FjThwE8GEeSjybJ-h79MrA"/>
           <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_UIEobk8FEeSjybJ-h79MrA" labelAlignment="LEFT">
             <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_UIEob08FEeSjybJ-h79MrA"/>
@@ -1628,12 +1628,12 @@
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='Operation']"/>
         </ownedElements>
         <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_UIEock8FEeSjybJ-h79MrA" name="addPortSpecification(type PortType, name EString, optional EBoolean, dataType EJavaClass) : PortSpecification" visible="false" tooltipText="addPortSpecification(type, name, optional, dataType) : PortSpecification">
-          <target xmi:type="ecore:EOperation" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification/addPortSpecification.1"/>
-          <semanticElements xmi:type="ecore:EOperation" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification/addPortSpecification.1"/>
-          <semanticElements xmi:type="ecore:EParameter" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification/addPortSpecification.1/dataType"/>
-          <semanticElements xmi:type="ecore:EParameter" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification/addPortSpecification.1/name"/>
-          <semanticElements xmi:type="ecore:EParameter" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification/addPortSpecification.1/optional"/>
-          <semanticElements xmi:type="ecore:EParameter" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification/addPortSpecification.1/type"/>
+          <target xmi:type="ecore:EOperation" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification/addPortSpecification.1"/>
+          <semanticElements xmi:type="ecore:EOperation" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification/addPortSpecification.1"/>
+          <semanticElements xmi:type="ecore:EParameter" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification/addPortSpecification.1/dataType"/>
+          <semanticElements xmi:type="ecore:EParameter" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification/addPortSpecification.1/name"/>
+          <semanticElements xmi:type="ecore:EParameter" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification/addPortSpecification.1/optional"/>
+          <semanticElements xmi:type="ecore:EParameter" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification/addPortSpecification.1/type"/>
           <graphicalFilters xmi:type="diagram:HideFilter" xmi:id="_FjThwU8GEeSjybJ-h79MrA"/>
           <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_UIEoc08FEeSjybJ-h79MrA" labelAlignment="LEFT">
             <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_UIEodE8FEeSjybJ-h79MrA"/>
@@ -1645,8 +1645,8 @@
         </ownedElements>
       </ownedDiagramElements>
       <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_UHeLV08FEeSjybJ-h79MrA" name="PortSpecification" tooltipText="" incomingEdges="_UIXjLE8FEeSjybJ-h79MrA" width="12" height="10">
-        <target xmi:type="ecore:EClass" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//PortSpecification"/>
-        <semanticElements xmi:type="ecore:EClass" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//PortSpecification"/>
+        <target xmi:type="ecore:EClass" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//PortSpecification"/>
+        <semanticElements xmi:type="ecore:EClass" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//PortSpecification"/>
         <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
         <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
         <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
@@ -1659,8 +1659,8 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
         <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_UIEofE8FEeSjybJ-h79MrA" name="name : EString" tooltipText="">
-          <target xmi:type="ecore:EAttribute" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//PortSpecification/name"/>
-          <semanticElements xmi:type="ecore:EAttribute" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//PortSpecification/name"/>
+          <target xmi:type="ecore:EAttribute" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//PortSpecification/name"/>
+          <semanticElements xmi:type="ecore:EAttribute" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//PortSpecification/name"/>
           <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_u3eNtFwkEeSAbq4udmuvUw" labelFormat="bold" labelAlignment="LEFT" description="_u3eNslwkEeSAbq4udmuvUw">
             <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_u3eNtVwkEeSAbq4udmuvUw"/>
             <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_u3eNtlwkEeSAbq4udmuvUw"/>
@@ -1669,8 +1669,8 @@
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
         </ownedElements>
         <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_UINyJE8FEeSjybJ-h79MrA" name="optional : EBoolean = false" tooltipText="">
-          <target xmi:type="ecore:EAttribute" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//PortSpecification/optional"/>
-          <semanticElements xmi:type="ecore:EAttribute" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//PortSpecification/optional"/>
+          <target xmi:type="ecore:EAttribute" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//PortSpecification/optional"/>
+          <semanticElements xmi:type="ecore:EAttribute" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//PortSpecification/optional"/>
           <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_u3eNvFwkEeSAbq4udmuvUw" labelFormat="bold" labelAlignment="LEFT" description="_u3eNulwkEeSAbq4udmuvUw">
             <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_u3eNvVwkEeSAbq4udmuvUw"/>
             <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_u3eNvlwkEeSAbq4udmuvUw"/>
@@ -1679,8 +1679,8 @@
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
         </ownedElements>
         <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_UINyLU8FEeSjybJ-h79MrA" name="type : PortType = IN" tooltipText="">
-          <target xmi:type="ecore:EAttribute" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//PortSpecification/type"/>
-          <semanticElements xmi:type="ecore:EAttribute" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//PortSpecification/type"/>
+          <target xmi:type="ecore:EAttribute" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//PortSpecification/type"/>
+          <semanticElements xmi:type="ecore:EAttribute" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//PortSpecification/type"/>
           <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_u3eNxFwkEeSAbq4udmuvUw" labelFormat="bold" labelAlignment="LEFT" description="_u3eNwlwkEeSAbq4udmuvUw">
             <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_u3eNxVwkEeSAbq4udmuvUw"/>
             <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_u3eNxlwkEeSAbq4udmuvUw"/>
@@ -1689,8 +1689,8 @@
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
         </ownedElements>
         <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_UINyNk8FEeSjybJ-h79MrA" name="dataType : EJavaClass" tooltipText="">
-          <target xmi:type="ecore:EAttribute" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//PortSpecification/dataType"/>
-          <semanticElements xmi:type="ecore:EAttribute" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//PortSpecification/dataType"/>
+          <target xmi:type="ecore:EAttribute" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//PortSpecification/dataType"/>
+          <semanticElements xmi:type="ecore:EAttribute" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//PortSpecification/dataType"/>
           <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_UINyN08FEeSjybJ-h79MrA" labelAlignment="LEFT">
             <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_UINyOE8FEeSjybJ-h79MrA"/>
             <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
@@ -1701,8 +1701,8 @@
         </ownedElements>
       </ownedDiagramElements>
       <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_UHn8QE8FEeSjybJ-h79MrA" name="PortType" tooltipText="">
-        <target xmi:type="ecore:EEnum" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//PortType"/>
-        <semanticElements xmi:type="ecore:EEnum" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//PortType"/>
+        <target xmi:type="ecore:EEnum" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//PortType"/>
+        <semanticElements xmi:type="ecore:EEnum" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//PortType"/>
         <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
         <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
         <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
@@ -1715,8 +1715,8 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']"/>
         <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_UINyTk8FEeSjybJ-h79MrA" name="IN" tooltipText="">
-          <target xmi:type="ecore:EEnumLiteral" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//PortType/IN"/>
-          <semanticElements xmi:type="ecore:EEnumLiteral" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//PortType/IN"/>
+          <target xmi:type="ecore:EEnumLiteral" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//PortType/IN"/>
+          <semanticElements xmi:type="ecore:EEnumLiteral" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//PortType/IN"/>
           <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_UINyT08FEeSjybJ-h79MrA" labelAlignment="LEFT">
             <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_UINyUE8FEeSjybJ-h79MrA"/>
             <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']/@style"/>
@@ -1726,8 +1726,8 @@
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']"/>
         </ownedElements>
         <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_UINyU08FEeSjybJ-h79MrA" name="OUT" tooltipText="">
-          <target xmi:type="ecore:EEnumLiteral" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//PortType/OUT"/>
-          <semanticElements xmi:type="ecore:EEnumLiteral" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//PortType/OUT"/>
+          <target xmi:type="ecore:EEnumLiteral" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//PortType/OUT"/>
+          <semanticElements xmi:type="ecore:EEnumLiteral" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//PortType/OUT"/>
           <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_UINyVE8FEeSjybJ-h79MrA" labelAlignment="LEFT">
             <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_UINyVU8FEeSjybJ-h79MrA"/>
             <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']/@style"/>
@@ -1737,8 +1737,8 @@
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']"/>
         </ownedElements>
         <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_UINyWE8FEeSjybJ-h79MrA" name="INOUT" tooltipText="">
-          <target xmi:type="ecore:EEnumLiteral" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//PortType/INOUT"/>
-          <semanticElements xmi:type="ecore:EEnumLiteral" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//PortType/INOUT"/>
+          <target xmi:type="ecore:EEnumLiteral" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//PortType/INOUT"/>
+          <semanticElements xmi:type="ecore:EEnumLiteral" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//PortType/INOUT"/>
           <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_UINyWU8FEeSjybJ-h79MrA" labelAlignment="LEFT">
             <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_UINyWk8FEeSjybJ-h79MrA"/>
             <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']/@style"/>
@@ -1749,8 +1749,8 @@
         </ownedElements>
       </ownedDiagramElements>
       <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_UHn8Rk8FEeSjybJ-h79MrA" name="PrimitiveString" visible="false" tooltipText="" outgoingEdges="_UIXjVk8FEeSjybJ-h79MrA" width="12" height="10">
-        <target xmi:type="ecore:EClass" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//PrimitiveString"/>
-        <semanticElements xmi:type="ecore:EClass" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//PrimitiveString"/>
+        <target xmi:type="ecore:EClass" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//PrimitiveString"/>
+        <semanticElements xmi:type="ecore:EClass" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//PrimitiveString"/>
         <graphicalFilters xmi:type="diagram:HideFilter" xmi:id="_SYoOYE8GEeSjybJ-h79MrA"/>
         <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
         <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
@@ -1764,8 +1764,8 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
         <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_UINyO08FEeSjybJ-h79MrA" name="value : EString" visible="false" tooltipText="">
-          <target xmi:type="ecore:EAttribute" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//PrimitiveString/value"/>
-          <semanticElements xmi:type="ecore:EAttribute" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//PrimitiveString/value"/>
+          <target xmi:type="ecore:EAttribute" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//PrimitiveString/value"/>
+          <semanticElements xmi:type="ecore:EAttribute" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//PrimitiveString/value"/>
           <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_u3eNzFwkEeSAbq4udmuvUw" labelFormat="bold" labelAlignment="LEFT" description="_u3eNylwkEeSAbq4udmuvUw">
             <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_u3eNzVwkEeSAbq4udmuvUw"/>
             <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_u3eNzlwkEeSAbq4udmuvUw"/>
@@ -1774,8 +1774,8 @@
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
         </ownedElements>
         <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_UINyRE8FEeSjybJ-h79MrA" name="initialize()" visible="false" tooltipText="initialize()">
-          <target xmi:type="ecore:EOperation" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//PrimitiveString/initialize"/>
-          <semanticElements xmi:type="ecore:EOperation" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//PrimitiveString/initialize"/>
+          <target xmi:type="ecore:EOperation" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//PrimitiveString/initialize"/>
+          <semanticElements xmi:type="ecore:EOperation" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//PrimitiveString/initialize"/>
           <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_UINyRU8FEeSjybJ-h79MrA" labelAlignment="LEFT">
             <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_UINyRk8FEeSjybJ-h79MrA"/>
             <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='Operation']/@style"/>
@@ -1785,10 +1785,10 @@
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='Operation']"/>
         </ownedElements>
         <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_UINySU8FEeSjybJ-h79MrA" name="execute(inputs EMap, outputs EMap)" visible="false" tooltipText="execute(inputs, outputs)">
-          <target xmi:type="ecore:EOperation" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//PrimitiveString/execute"/>
-          <semanticElements xmi:type="ecore:EOperation" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//PrimitiveString/execute"/>
-          <semanticElements xmi:type="ecore:EParameter" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//PrimitiveString/execute/inputs"/>
-          <semanticElements xmi:type="ecore:EParameter" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//PrimitiveString/execute/outputs"/>
+          <target xmi:type="ecore:EOperation" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//PrimitiveString/execute"/>
+          <semanticElements xmi:type="ecore:EOperation" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//PrimitiveString/execute"/>
+          <semanticElements xmi:type="ecore:EParameter" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//PrimitiveString/execute/inputs"/>
+          <semanticElements xmi:type="ecore:EParameter" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//PrimitiveString/execute/outputs"/>
           <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_UINySk8FEeSjybJ-h79MrA" labelAlignment="LEFT">
             <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_UINyS08FEeSjybJ-h79MrA"/>
             <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='Operation']/@style"/>
@@ -1799,8 +1799,8 @@
         </ownedElements>
       </ownedDiagramElements>
       <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_UIXjLE8FEeSjybJ-h79MrA" name="[0..*] portSpecifications" sourceNode="_UHeLUU8FEeSjybJ-h79MrA" targetNode="_UHeLV08FEeSjybJ-h79MrA">
-        <target xmi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification/portSpecifications"/>
-        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification/portSpecifications"/>
+        <target xmi:type="ecore:EReference" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification/portSpecifications"/>
+        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//NodeSpecification/portSpecifications"/>
         <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_u3n-tlwkEeSAbq4udmuvUw" description="_u3n-slwkEeSAbq4udmuvUw" sourceArrow="FillDiamond" routingStyle="manhattan">
           <strokeColor xmi:type="viewpoint:RGBValues" xmi:id="_u3n-t1wkEeSAbq4udmuvUw"/>
           <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_u3n-uFwkEeSAbq4udmuvUw" showIcon="false">
@@ -1813,8 +1813,8 @@
         <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
       </ownedDiagramElements>
       <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_UIXjOk8FEeSjybJ-h79MrA" sourceNode="_UHVBUE8FEeSjybJ-h79MrA" targetNode="_UHeLUU8FEeSjybJ-h79MrA">
-        <target xmi:type="ecore:EClass" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//AssertBool"/>
-        <semanticElements xmi:type="ecore:EGenericType" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//AssertBool/@eGenericSuperTypes.0"/>
+        <target xmi:type="ecore:EClass" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//AssertBool"/>
+        <semanticElements xmi:type="ecore:EGenericType" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//AssertBool/@eGenericSuperTypes.0"/>
         <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_UIXjO08FEeSjybJ-h79MrA" targetArrow="InputClosedArrow" routingStyle="manhattan">
           <customFeatures>routingStyle</customFeatures>
           <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC%20ESupertypes']/@style"/>
@@ -1829,8 +1829,8 @@
         <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC%20ESupertypes']"/>
       </ownedDiagramElements>
       <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_UIXjQU8FEeSjybJ-h79MrA" sourceNode="_UHVBVk8FEeSjybJ-h79MrA" targetNode="_UHVBUE8FEeSjybJ-h79MrA">
-        <target xmi:type="ecore:EClass" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//AssertDiagnosticTrace"/>
-        <semanticElements xmi:type="ecore:EGenericType" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//AssertDiagnosticTrace/@eGenericSuperTypes.0"/>
+        <target xmi:type="ecore:EClass" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//AssertDiagnosticTrace"/>
+        <semanticElements xmi:type="ecore:EGenericType" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//AssertDiagnosticTrace/@eGenericSuperTypes.0"/>
         <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_UIXjQk8FEeSjybJ-h79MrA" targetArrow="InputClosedArrow" routingStyle="tree">
           <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC%20ESupertypes']/@style"/>
           <strokeColor xmi:type="viewpoint:RGBValues" xmi:id="_UIXjQ08FEeSjybJ-h79MrA" red="136" green="136" blue="136"/>
@@ -1844,8 +1844,8 @@
         <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC%20ESupertypes']"/>
       </ownedDiagramElements>
       <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_UIXjSE8FEeSjybJ-h79MrA" sourceNode="_UHVBXE8FEeSjybJ-h79MrA" targetNode="_UHVBUE8FEeSjybJ-h79MrA">
-        <target xmi:type="ecore:EClass" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//AssertResult"/>
-        <semanticElements xmi:type="ecore:EGenericType" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//AssertResult/@eGenericSuperTypes.0"/>
+        <target xmi:type="ecore:EClass" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//AssertResult"/>
+        <semanticElements xmi:type="ecore:EGenericType" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//AssertResult/@eGenericSuperTypes.0"/>
         <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_UIXjSU8FEeSjybJ-h79MrA" targetArrow="InputClosedArrow" routingStyle="tree">
           <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC%20ESupertypes']/@style"/>
           <strokeColor xmi:type="viewpoint:RGBValues" xmi:id="_UIXjSk8FEeSjybJ-h79MrA" red="136" green="136" blue="136"/>
@@ -1859,8 +1859,8 @@
         <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC%20ESupertypes']"/>
       </ownedDiagramElements>
       <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_UIXjT08FEeSjybJ-h79MrA" sourceNode="_UHVBYk8FEeSjybJ-h79MrA" targetNode="_UHeLUU8FEeSjybJ-h79MrA">
-        <target xmi:type="ecore:EClass" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//CheckMTCTL"/>
-        <semanticElements xmi:type="ecore:EGenericType" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//CheckMTCTL/@eGenericSuperTypes.0"/>
+        <target xmi:type="ecore:EClass" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//CheckMTCTL"/>
+        <semanticElements xmi:type="ecore:EGenericType" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//CheckMTCTL/@eGenericSuperTypes.0"/>
         <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_UIXjUE8FEeSjybJ-h79MrA" targetArrow="InputClosedArrow" routingStyle="manhattan">
           <customFeatures>routingStyle</customFeatures>
           <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC%20ESupertypes']/@style"/>
@@ -1875,8 +1875,8 @@
         <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC%20ESupertypes']"/>
       </ownedDiagramElements>
       <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_UIXjVk8FEeSjybJ-h79MrA" visible="false" sourceNode="_UHn8Rk8FEeSjybJ-h79MrA" targetNode="_UHeLUU8FEeSjybJ-h79MrA">
-        <target xmi:type="ecore:EClass" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//PrimitiveString"/>
-        <semanticElements xmi:type="ecore:EGenericType" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#//PrimitiveString/@eGenericSuperTypes.0"/>
+        <target xmi:type="ecore:EClass" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//PrimitiveString"/>
+        <semanticElements xmi:type="ecore:EGenericType" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#//PrimitiveString/@eGenericSuperTypes.0"/>
         <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_UIXjV08FEeSjybJ-h79MrA" targetArrow="InputClosedArrow" routingStyle="manhattan">
           <customFeatures>routingStyle</customFeatures>
           <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC%20ESupertypes']/@style"/>
@@ -1896,7 +1896,7 @@
       <activatedLayers xmi:type="description_1:AdditionalLayer" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@additionalLayers[name='Package']"/>
       <activatedLayers xmi:type="description_1:AdditionalLayer" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@additionalLayers[name='Validation']"/>
       <activatedLayers xmi:type="description_1:AdditionalLayer" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Archetype']/@ownedRepresentationExtensions[name='Entities%20With%20Archetypes']/@layers[name='Archetypes']"/>
-      <target xmi:type="ecore:EPackage" href="platform:/resource/de.uni_paderborn.fujaba.muml.testlanguage.specification/model/specification.ecore#/"/>
+      <target xmi:type="ecore:EPackage" href="platform:/resource/org.muml.testlanguage.specification/model/specification.ecore#/"/>
     </ownedRepresentations>
     <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
   </ownedViews>

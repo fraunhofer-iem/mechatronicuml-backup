@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.uni_paderborn.fujaba.muml.testlanguage="http://www.muml.org/testlanguage/1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_QxqAoDRwEeWfxodaa53aWw" type="TestLanguage" name="modelcopy.testlanguage_diagram" measurementUnit="Pixel">
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.muml.testlanguage="http://www.muml.org/testlanguage/1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_QxqAoDRwEeWfxodaa53aWw" type="TestLanguage" name="modelcopy.testlanguage_diagram" measurementUnit="Pixel">
   <children xmi:type="notation:Node" xmi:id="_S4JzEDRwEeWfxodaa53aWw" type="2001">
     <children xmi:type="notation:DecorationNode" xmi:id="_S4JzFTRwEeWfxodaa53aWw" type="5003"/>
     <children xmi:type="notation:DecorationNode" xmi:id="_S4JzFjRwEeWfxodaa53aWw" type="7001">
       <children xmi:type="notation:Shape" xmi:id="_S5MU4DRwEeWfxodaa53aWw" type="3002" fontName="Segoe UI">
         <children xmi:type="notation:DecorationNode" xmi:id="_S5MU4jRwEeWfxodaa53aWw" type="5002"/>
-        <element xmi:type="de.uni_paderborn.fujaba.muml.testlanguage:Output" href="modelcopy.testlanguage#//@nodes.0/@outputs[name='model']"/>
+        <element xmi:type="org.muml.testlanguage:Output" href="modelcopy.testlanguage#//@nodes.0/@outputs[name='model']"/>
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_S5MU4TRwEeWfxodaa53aWw"/>
       </children>
       <styles xmi:type="notation:SortingStyle" xmi:id="_S4JzFzRwEeWfxodaa53aWw"/>
@@ -14,7 +14,7 @@
     <styles xmi:type="notation:DescriptionStyle" xmi:id="_S4JzETRwEeWfxodaa53aWw"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_S4JzEjRwEeWfxodaa53aWw" fontName="Segoe UI"/>
     <styles xmi:type="notation:FillStyle" xmi:id="_S4JzEzRwEeWfxodaa53aWw"/>
-    <element xmi:type="de.uni_paderborn.fujaba.muml.testlanguage:Node" href="modelcopy.testlanguage#//@nodes.0"/>
+    <element xmi:type="org.muml.testlanguage:Node" href="modelcopy.testlanguage#//@nodes.0"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_S4JzFDRwEeWfxodaa53aWw" x="198" y="232"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_cfruADRwEeWfxodaa53aWw" type="2001">
@@ -22,12 +22,12 @@
     <children xmi:type="notation:DecorationNode" xmi:id="_cfruBjRwEeWfxodaa53aWw" type="7001">
       <children xmi:type="notation:Shape" xmi:id="_-r7U4DRwEeWfxodaa53aWw" type="3001" fontName="Segoe UI">
         <children xmi:type="notation:DecorationNode" xmi:id="_-r7U4jRwEeWfxodaa53aWw" type="5001"/>
-        <element xmi:type="de.uni_paderborn.fujaba.muml.testlanguage:Input" href="modelcopy.testlanguage#//@nodes.1/@inputs[name='i']"/>
+        <element xmi:type="org.muml.testlanguage:Input" href="modelcopy.testlanguage#//@nodes.1/@inputs[name='i']"/>
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-r7U4TRwEeWfxodaa53aWw"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_-r7U4zRwEeWfxodaa53aWw" type="3002" fontName="Segoe UI">
         <children xmi:type="notation:DecorationNode" xmi:id="_-r7U5TRwEeWfxodaa53aWw" type="5002"/>
-        <element xmi:type="de.uni_paderborn.fujaba.muml.testlanguage:Output" href="modelcopy.testlanguage#//@nodes.1/@outputs[name='o']"/>
+        <element xmi:type="org.muml.testlanguage:Output" href="modelcopy.testlanguage#//@nodes.1/@outputs[name='o']"/>
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-r7U5DRwEeWfxodaa53aWw"/>
       </children>
       <styles xmi:type="notation:SortingStyle" xmi:id="_cfruBzRwEeWfxodaa53aWw"/>
@@ -36,7 +36,7 @@
     <styles xmi:type="notation:DescriptionStyle" xmi:id="_cfruATRwEeWfxodaa53aWw"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_cfruAjRwEeWfxodaa53aWw" fontName="Segoe UI"/>
     <styles xmi:type="notation:FillStyle" xmi:id="_cfruAzRwEeWfxodaa53aWw"/>
-    <element xmi:type="de.uni_paderborn.fujaba.muml.testlanguage:Node" href="modelcopy.testlanguage#//@nodes.1"/>
+    <element xmi:type="org.muml.testlanguage:Node" href="modelcopy.testlanguage#//@nodes.1"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_cfruBDRwEeWfxodaa53aWw" x="461" y="137"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="__kTuYDRwEeWfxodaa53aWw" type="2001">
@@ -44,17 +44,17 @@
     <children xmi:type="notation:DecorationNode" xmi:id="__kTuZjRwEeWfxodaa53aWw" type="7001">
       <children xmi:type="notation:Shape" xmi:id="__kdfYDRwEeWfxodaa53aWw" type="3001" fontName="Segoe UI">
         <children xmi:type="notation:DecorationNode" xmi:id="__kdfYjRwEeWfxodaa53aWw" type="5001"/>
-        <element xmi:type="de.uni_paderborn.fujaba.muml.testlanguage:Input" href="modelcopy.testlanguage#//@nodes.2/@inputs[name='model_1']"/>
+        <element xmi:type="org.muml.testlanguage:Input" href="modelcopy.testlanguage#//@nodes.2/@inputs[name='model_1']"/>
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="__kdfYTRwEeWfxodaa53aWw"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="__kdfYzRwEeWfxodaa53aWw" type="3001" fontName="Segoe UI">
         <children xmi:type="notation:DecorationNode" xmi:id="__kdfZTRwEeWfxodaa53aWw" type="5001"/>
-        <element xmi:type="de.uni_paderborn.fujaba.muml.testlanguage:Input" href="modelcopy.testlanguage#//@nodes.2/@inputs[name='model_2']"/>
+        <element xmi:type="org.muml.testlanguage:Input" href="modelcopy.testlanguage#//@nodes.2/@inputs[name='model_2']"/>
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="__kdfZDRwEeWfxodaa53aWw"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="__kdfZjRwEeWfxodaa53aWw" type="3002" fontName="Segoe UI">
         <children xmi:type="notation:DecorationNode" xmi:id="__kdfaDRwEeWfxodaa53aWw" type="5002"/>
-        <element xmi:type="de.uni_paderborn.fujaba.muml.testlanguage:Output" href="modelcopy.testlanguage#//@nodes.2/@outputs[name='bool']"/>
+        <element xmi:type="org.muml.testlanguage:Output" href="modelcopy.testlanguage#//@nodes.2/@outputs[name='bool']"/>
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="__kdfZzRwEeWfxodaa53aWw"/>
       </children>
       <styles xmi:type="notation:SortingStyle" xmi:id="__kTuZzRwEeWfxodaa53aWw"/>
@@ -63,7 +63,7 @@
     <styles xmi:type="notation:DescriptionStyle" xmi:id="__kTuYTRwEeWfxodaa53aWw"/>
     <styles xmi:type="notation:FontStyle" xmi:id="__kTuYjRwEeWfxodaa53aWw" fontName="Segoe UI"/>
     <styles xmi:type="notation:FillStyle" xmi:id="__kTuYzRwEeWfxodaa53aWw"/>
-    <element xmi:type="de.uni_paderborn.fujaba.muml.testlanguage:Node" href="modelcopy.testlanguage#//@nodes.2"/>
+    <element xmi:type="org.muml.testlanguage:Node" href="modelcopy.testlanguage#//@nodes.2"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="__kTuZDRwEeWfxodaa53aWw" x="719" y="255"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_VyBGsDRxEeWfxodaa53aWw" type="2001">
@@ -71,7 +71,7 @@
     <children xmi:type="notation:DecorationNode" xmi:id="_VyBGtjRxEeWfxodaa53aWw" type="7001">
       <children xmi:type="notation:Shape" xmi:id="_VyK3sDRxEeWfxodaa53aWw" type="3001" fontName="Segoe UI">
         <children xmi:type="notation:DecorationNode" xmi:id="_VyK3sjRxEeWfxodaa53aWw" type="5001"/>
-        <element xmi:type="de.uni_paderborn.fujaba.muml.testlanguage:Input" href="modelcopy.testlanguage#//@nodes.3/@inputs[name='bool']"/>
+        <element xmi:type="org.muml.testlanguage:Input" href="modelcopy.testlanguage#//@nodes.3/@inputs[name='bool']"/>
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VyK3sTRxEeWfxodaa53aWw"/>
       </children>
       <styles xmi:type="notation:SortingStyle" xmi:id="_VyBGtzRxEeWfxodaa53aWw"/>
@@ -80,11 +80,11 @@
     <styles xmi:type="notation:DescriptionStyle" xmi:id="_VyBGsTRxEeWfxodaa53aWw"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_VyBGsjRxEeWfxodaa53aWw" fontName="Segoe UI"/>
     <styles xmi:type="notation:FillStyle" xmi:id="_VyBGszRxEeWfxodaa53aWw"/>
-    <element xmi:type="de.uni_paderborn.fujaba.muml.testlanguage:Node" href="modelcopy.testlanguage#//@nodes.3"/>
+    <element xmi:type="org.muml.testlanguage:Node" href="modelcopy.testlanguage#//@nodes.3"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VyBGtDRxEeWfxodaa53aWw" x="994" y="380"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_QxqAoTRwEeWfxodaa53aWw"/>
-  <element xmi:type="de.uni_paderborn.fujaba.muml.testlanguage:TestCase" href="modelcopy.testlanguage#/"/>
+  <element xmi:type="org.muml.testlanguage:TestCase" href="modelcopy.testlanguage#/"/>
   <edges xmi:type="notation:Connector" xmi:id="_ARY20DRxEeWfxodaa53aWw" type="4001" source="_S5MU4DRwEeWfxodaa53aWw" target="_-r7U4DRwEeWfxodaa53aWw">
     <styles xmi:type="notation:FontStyle" xmi:id="_ARY20TRxEeWfxodaa53aWw" fontName="Segoe UI"/>
     <element xsi:nil="true"/>

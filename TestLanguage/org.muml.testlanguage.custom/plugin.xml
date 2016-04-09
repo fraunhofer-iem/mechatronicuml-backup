@@ -4,7 +4,7 @@
    <extension
          point="org.eclipse.emf.validation.constraintProviders">
       <category
-            id="de.uni_paderborn.fujaba.muml.testlanguage.topologicalConstraints"
+            id="org.muml.testlanguage.topologicalConstraints"
             mandatory="true"
             name="TestLanguage Topological Constraints">
       </category>
@@ -15,10 +15,10 @@
                namespaceUri="http://www.muml.org/testlanguage/1.0">
          </package>
          <constraints
-               categories="de.uni_paderborn.fujaba.muml.testlanguage.topologicalConstraints">
+               categories="org.muml.testlanguage.topologicalConstraints">
             <constraint
                   class="org.muml.testlanguage.custom.validation.NodeExecutionConstraint"
-                  id="de.uni_paderborn.fujaba.muml.testlanguage.custom.validation.NodeExecutionConstraint"
+                  id="org.muml.testlanguage.custom.validation.NodeExecutionConstraint"
                   isEnabledByDefault="true"
                   lang="Java"
                   mode="Batch"
@@ -37,7 +37,7 @@
             </constraint>
             <constraint
                   class="org.muml.testlanguage.custom.validation.InputPortConstraint"
-                  id="de.uni_paderborn.fujaba.muml.testlanguage.custom.validation.OptionalInputs"
+                  id="org.muml.testlanguage.custom.validation.OptionalInputs"
                   isEnabledByDefault="true"
                   lang="Java"
                   mode="Batch"
@@ -61,15 +61,15 @@
          point="org.eclipse.emf.validation.constraintBindings">
       <clientContext
             default="true"
-            id="de.uni_paderborn.fujaba.muml.testlanguage.topologicalContext">
+            id="org.muml.testlanguage.topologicalContext">
          <selector
                class="org.muml.testlanguage.custom.ClientSelector">
          </selector>
       </clientContext>
       <binding
-            context="de.uni_paderborn.fujaba.muml.testlanguage.topologicalContext">
+            context="org.muml.testlanguage.topologicalContext">
          <category
-               ref="de.uni_paderborn.fujaba.muml.testlanguage.topologicalConstraints">
+               ref="org.muml.testlanguage.topologicalConstraints">
          </category>
       </binding>
    </extension>
@@ -85,7 +85,7 @@
       <listener
             class="org.muml.testlanguage.custom.validation.MarkerListener">
          <clientContext
-               id="de.uni_paderborn.fujaba.muml.testlanguage.topologicalContext">
+               id="org.muml.testlanguage.topologicalContext">
          </clientContext>
       </listener>
    </extension>

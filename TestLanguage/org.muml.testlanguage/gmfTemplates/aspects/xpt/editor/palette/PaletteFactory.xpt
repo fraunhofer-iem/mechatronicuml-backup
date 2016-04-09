@@ -8,24 +8,24 @@
 	«EXPAND xpt::Common::generatedMemberComment('Creates \"' + title + '\" palette tool group')»
 	private org.eclipse.gef.palette.PaletteContainer «createMethodName»() {
 		org.eclipse.gef.palette.PaletteGroup paletteContainer = new org.eclipse.gef.palette.PaletteGroup(
-				de.uni_paderborn.fujaba.muml.testlanguage.diagram.part.Messages.Nodes2Group_title);
+				org.muml.testlanguage.diagram.part.Messages.Nodes2Group_title);
 		paletteContainer.setId("createNodes2Group"); //$NON-NLS-1$
 
-		java.util.List<String> specs = de.uni_paderborn.fujaba.muml.testlanguage.specification.custom.SpecificationRegistry
+		java.util.List<String> specs = org.muml.testlanguage.specification.custom.SpecificationRegistry
 				.getSpecificationClasses();
 		for (String spec: specs)
 		{
 			java.util.ArrayList<org.eclipse.gmf.runtime.emf.type.core.IElementType> types = new java.util.ArrayList<org.eclipse.gmf.runtime.emf.type.core.IElementType>(3);
-			types.add(de.uni_paderborn.fujaba.muml.testlanguage.diagram.providers.TestLanguageElementTypes.Node_2001);
-			types.add(de.uni_paderborn.fujaba.muml.testlanguage.diagram.providers.TestLanguageElementTypes.Input_3001);
-			types.add(de.uni_paderborn.fujaba.muml.testlanguage.diagram.providers.TestLanguageElementTypes.Output_3002);
+			types.add(org.muml.testlanguage.diagram.providers.TestLanguageElementTypes.Node_2001);
+			types.add(org.muml.testlanguage.diagram.providers.TestLanguageElementTypes.Input_3001);
+			types.add(org.muml.testlanguage.diagram.providers.TestLanguageElementTypes.Output_3002);
 			
 			// Create a NodeSpecification-instance of the given type to get the
 			// label. *cough* A bit of a hack, but EMF won't allow static
 			// members.
 			String label = spec;
 			try {
-				SpecificationFactory fac = de.uni_paderborn.fujaba.muml.testlanguage.specification.SpecificationFactory.eINSTANCE;
+				SpecificationFactory fac = org.muml.testlanguage.specification.SpecificationFactory.eINSTANCE;
 				java.lang.reflect.Method creator = fac.getClass().getMethod(
 						"create" + spec);
 				NodeSpecification concSpec = (NodeSpecification) creator
@@ -43,8 +43,8 @@
 					spec,
 					types);
 			entry.setId("createNode1"+spec); //$NON-NLS-1$
-			entry.setSmallIcon(de.uni_paderborn.fujaba.muml.testlanguage.diagram.providers.TestLanguageElementTypes
-					.getImageDescriptor(de.uni_paderborn.fujaba.muml.testlanguage.diagram.providers.TestLanguageElementTypes.Node_2001));
+			entry.setSmallIcon(org.muml.testlanguage.diagram.providers.TestLanguageElementTypes
+					.getImageDescriptor(org.muml.testlanguage.diagram.providers.TestLanguageElementTypes.Node_2001));
 			entry.setLargeIcon(entry.getSmallIcon());
 			entry.setSpecificationClassName(spec);
 			paletteContainer.add(entry);

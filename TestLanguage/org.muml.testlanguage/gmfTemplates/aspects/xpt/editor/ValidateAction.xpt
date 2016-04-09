@@ -46,7 +46,7 @@
 		validator.setIncludeLiveConstraints(true);
 		if (view.isSetElement() && view.getElement() != null) {
 			// TODO somehow handle exceptions
-			de.uni_paderborn.fujaba.muml.testlanguage.custom.validation.ValidationRunnable validation = new ValidationRunnable(
+			org.muml.testlanguage.custom.validation.ValidationRunnable validation = new ValidationRunnable(
 					view, validator);
 			ValidationRunnable.runWithShell(validation, PlatformUI
 					.getWorkbench().getActiveWorkbenchWindow().getShell());

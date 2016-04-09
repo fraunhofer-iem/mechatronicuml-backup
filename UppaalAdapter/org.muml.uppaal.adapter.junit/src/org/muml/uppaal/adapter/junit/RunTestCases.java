@@ -21,20 +21,20 @@ public class RunTestCases {
 	public static Collection<Object[]> getTestCases() {
 		cases = new LinkedList<Object[]>();
 //
-// 		addCase("platform:/plugin/de.uni_paderborn.fujaba.muml.testlanguage.junit/tests/bebots_AllPositionsTransmission/bebots_AllPositionsTransmission.testlanguage");
-// 		addCase("platform:/plugin/de.uni_paderborn.fujaba.muml.testlanguage.junit/tests/bebots_Delegation/bebots_Delegation.testlanguage");
-// 		addCase("platform:/plugin/de.uni_paderborn.fujaba.muml.testlanguage.junit/tests/bebots_Navigation/bebots_Navigation.testlanguage");
-// 		addCase("platform:/plugin/de.uni_paderborn.fujaba.muml.testlanguage.junit/tests/overtaking-cars/overtaking_cars.testlanguage");
-//		addCase("platform:/plugin/de.uni_paderborn.fujaba.muml.testlanguage.junit/tests/overtaking-cars-w-contraflow_Allow/overtaking-cars-w-contraflow_Allow.testlanguage");
-// 		addCase("platform:/plugin/de.uni_paderborn.fujaba.muml.testlanguage.junit/tests/overtaking-cars-w-contraflow_ChangeSection/overtaking-cars-w-contraflow_ChangeSection.testlanguage");
-// 		addCase("platform:/plugin/de.uni_paderborn.fujaba.muml.testlanguage.junit/tests/overtaking-cars-w-contraflow_Delegate/overtaking-cars-w-contraflow_Delegate.testlanguage");
-// 		addCase("platform:/plugin/de.uni_paderborn.fujaba.muml.testlanguage.junit/tests/overtaking-cars-w-contraflow_Inform/overtaking-cars-w-contraflow_Inform.testlanguage");
-// 		addCase("platform:/plugin/de.uni_paderborn.fujaba.muml.testlanguage.junit/tests/overtaking-cars-w-contraflow_LimitVelocity/overtaking-cars-w-contraflow_LimitVelocity.testlanguage");
-// 		addCase("platform:/plugin/de.uni_paderborn.fujaba.muml.testlanguage.junit/tests/overtaking-cars-w-contraflow_Overtake/overtaking-cars-w-contraflow_Overtake.testlanguage");
-// 		addCase("platform:/plugin/de.uni_paderborn.fujaba.muml.testlanguage.junit/tests/overtaking-cars-w-contraflow_VModeControl/overtaking-cars-w-contraflow_VModeControl.testlanguage");
-//// 		addCase("platform:/plugin/de.uni_paderborn.fujaba.muml.testlanguage.junit/tests/railcab_Convoy/railcab_Convoy.testlanguage");
-// 		addCase("platform:/plugin/de.uni_paderborn.fujaba.muml.testlanguage.junit/tests/railcab_EnterSection/railcab_EnterSection.testlanguage");
-// 		addCase("platform:/plugin/de.uni_paderborn.fujaba.muml.testlanguage.junit/tests/railcab_NextSectionFree/railcab_NextSectionFree.testlanguage");
+// 		addCase("platform:/plugin/org.muml.testlanguage.junit/tests/bebots_AllPositionsTransmission/bebots_AllPositionsTransmission.testlanguage");
+// 		addCase("platform:/plugin/org.muml.testlanguage.junit/tests/bebots_Delegation/bebots_Delegation.testlanguage");
+// 		addCase("platform:/plugin/org.muml.testlanguage.junit/tests/bebots_Navigation/bebots_Navigation.testlanguage");
+// 		addCase("platform:/plugin/org.muml.testlanguage.junit/tests/overtaking-cars/overtaking_cars.testlanguage");
+//		addCase("platform:/plugin/org.muml.testlanguage.junit/tests/overtaking-cars-w-contraflow_Allow/overtaking-cars-w-contraflow_Allow.testlanguage");
+// 		addCase("platform:/plugin/org.muml.testlanguage.junit/tests/overtaking-cars-w-contraflow_ChangeSection/overtaking-cars-w-contraflow_ChangeSection.testlanguage");
+// 		addCase("platform:/plugin/org.muml.testlanguage.junit/tests/overtaking-cars-w-contraflow_Delegate/overtaking-cars-w-contraflow_Delegate.testlanguage");
+// 		addCase("platform:/plugin/org.muml.testlanguage.junit/tests/overtaking-cars-w-contraflow_Inform/overtaking-cars-w-contraflow_Inform.testlanguage");
+// 		addCase("platform:/plugin/org.muml.testlanguage.junit/tests/overtaking-cars-w-contraflow_LimitVelocity/overtaking-cars-w-contraflow_LimitVelocity.testlanguage");
+// 		addCase("platform:/plugin/org.muml.testlanguage.junit/tests/overtaking-cars-w-contraflow_Overtake/overtaking-cars-w-contraflow_Overtake.testlanguage");
+// 		addCase("platform:/plugin/org.muml.testlanguage.junit/tests/overtaking-cars-w-contraflow_VModeControl/overtaking-cars-w-contraflow_VModeControl.testlanguage");
+//// 		addCase("platform:/plugin/org.muml.testlanguage.junit/tests/railcab_Convoy/railcab_Convoy.testlanguage");
+// 		addCase("platform:/plugin/org.muml.testlanguage.junit/tests/railcab_EnterSection/railcab_EnterSection.testlanguage");
+// 		addCase("platform:/plugin/org.muml.testlanguage.junit/tests/railcab_NextSectionFree/railcab_NextSectionFree.testlanguage");
 
 		return cases;
 	}

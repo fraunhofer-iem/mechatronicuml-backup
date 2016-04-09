@@ -84,6 +84,6 @@ Package specification <http://www.muml.org/testlanguage/specification/1.0>
     Literal OUT = 1
     Literal INOUT = 2
 
-  DataType ExecutionException <de.uni_paderborn.fujaba.muml.testlanguage.specification.custom.ExecutionException>
+  DataType ExecutionException <org.muml.testlanguage.specification.custom.ExecutionException>
 
   DataType DefaultException <java.lang.Exception>

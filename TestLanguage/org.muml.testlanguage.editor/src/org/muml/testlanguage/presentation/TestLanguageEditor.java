@@ -636,7 +636,7 @@ public class TestLanguageEditor extends MultiPageEditorPart implements
 	protected void updateProblemIndication() {
 		if (updateProblemIndication) {
 			BasicDiagnostic diagnostic = new BasicDiagnostic(Diagnostic.OK,
-					"de.uni_paderborn.fujaba.muml.testlanguage.editor", 0,
+					"org.muml.testlanguage.editor", 0,
 					null, new Object[] { editingDomain.getResourceSet() });
 			for (Diagnostic childDiagnostic : resourceToDiagnosticMap.values()) {
 				if (childDiagnostic.getSeverity() != Diagnostic.OK) {
@@ -1025,7 +1025,7 @@ public class TestLanguageEditor extends MultiPageEditorPart implements
 				|| !resource.getWarnings().isEmpty()) {
 			BasicDiagnostic basicDiagnostic = new BasicDiagnostic(
 					Diagnostic.ERROR,
-					"de.uni_paderborn.fujaba.muml.testlanguage.editor",
+					"org.muml.testlanguage.editor",
 					0,
 					getString("_UI_CreateModelError_message", resource.getURI()),
 					new Object[] { exception == null ? (Object) resource
@@ -1035,7 +1035,7 @@ public class TestLanguageEditor extends MultiPageEditorPart implements
 		} else if (exception != null) {
 			return new BasicDiagnostic(
 					Diagnostic.ERROR,
-					"de.uni_paderborn.fujaba.muml.testlanguage.editor",
+					"org.muml.testlanguage.editor",
 					0,
 					getString("_UI_CreateModelError_message", resource.getURI()),
 					new Object[] { exception });

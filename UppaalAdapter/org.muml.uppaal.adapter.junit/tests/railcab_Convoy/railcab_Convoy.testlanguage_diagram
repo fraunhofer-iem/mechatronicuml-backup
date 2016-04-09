@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.uni_paderborn.fujaba.muml.testlanguage="http://www.muml.org/testlanguage/1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_WuXOYI9vEeWpFeLihqqhEw" type="TestLanguage" name="railcab_Convoy.testlanguage_diagram" measurementUnit="Pixel">
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.muml.testlanguage="http://www.muml.org/testlanguage/1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_WuXOYI9vEeWpFeLihqqhEw" type="TestLanguage" name="railcab_Convoy.testlanguage_diagram" measurementUnit="Pixel">
   <children xmi:type="notation:Node" xmi:id="_XlV5sI9vEeWpFeLihqqhEw" type="2001">
     <children xmi:type="notation:DecorationNode" xmi:id="_XlV5tY9vEeWpFeLihqqhEw" type="5003"/>
     <children xmi:type="notation:DecorationNode" xmi:id="_XlV5to9vEeWpFeLihqqhEw" type="7001">
       <children xmi:type="notation:Shape" xmi:id="_XlYV8I9vEeWpFeLihqqhEw" type="3002" fontName="Segoe UI">
         <children xmi:type="notation:DecorationNode" xmi:id="_XlYV8o9vEeWpFeLihqqhEw" type="5002"/>
-        <element xmi:type="de.uni_paderborn.fujaba.muml.testlanguage:Output" href="railcab_Convoy.testlanguage#//@nodes.0/@outputs[name='model']"/>
+        <element xmi:type="org.muml.testlanguage:Output" href="railcab_Convoy.testlanguage#//@nodes.0/@outputs[name='model']"/>
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_XlYV8Y9vEeWpFeLihqqhEw"/>
       </children>
       <styles xmi:type="notation:SortingStyle" xmi:id="_XlV5t49vEeWpFeLihqqhEw"/>
@@ -14,7 +14,7 @@
     <styles xmi:type="notation:DescriptionStyle" xmi:id="_XlV5sY9vEeWpFeLihqqhEw"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_XlV5so9vEeWpFeLihqqhEw" fontName="Segoe UI"/>
     <styles xmi:type="notation:FillStyle" xmi:id="_XlV5s49vEeWpFeLihqqhEw"/>
-    <element xmi:type="de.uni_paderborn.fujaba.muml.testlanguage:Node" href="railcab_Convoy.testlanguage#//@nodes.0"/>
+    <element xmi:type="org.muml.testlanguage:Node" href="railcab_Convoy.testlanguage#//@nodes.0"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_XlV5tI9vEeWpFeLihqqhEw" x="48" y="186"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_X5Xo8I9vEeWpFeLihqqhEw" type="2001">
@@ -22,17 +22,17 @@
     <children xmi:type="notation:DecorationNode" xmi:id="_X5Xo9o9vEeWpFeLihqqhEw" type="7001">
       <children xmi:type="notation:Shape" xmi:id="_X5ZeII9vEeWpFeLihqqhEw" type="3001" fontName="Segoe UI">
         <children xmi:type="notation:DecorationNode" xmi:id="_X5aFMI9vEeWpFeLihqqhEw" type="5001"/>
-        <element xmi:type="de.uni_paderborn.fujaba.muml.testlanguage:Input" href="railcab_Convoy.testlanguage#//@nodes.1/@inputs[name='muml']"/>
+        <element xmi:type="org.muml.testlanguage:Input" href="railcab_Convoy.testlanguage#//@nodes.1/@inputs[name='muml']"/>
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_X5ZeIY9vEeWpFeLihqqhEw"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_X5aFMY9vEeWpFeLihqqhEw" type="3001" fontName="Segoe UI">
         <children xmi:type="notation:DecorationNode" xmi:id="_X5aFM49vEeWpFeLihqqhEw" type="5001"/>
-        <element xmi:type="de.uni_paderborn.fujaba.muml.testlanguage:Input" href="railcab_Convoy.testlanguage#//@nodes.1/@inputs[name='options']"/>
+        <element xmi:type="org.muml.testlanguage:Input" href="railcab_Convoy.testlanguage#//@nodes.1/@inputs[name='options']"/>
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_X5aFMo9vEeWpFeLihqqhEw"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_X5aFNI9vEeWpFeLihqqhEw" type="3002" fontName="Segoe UI">
         <children xmi:type="notation:DecorationNode" xmi:id="_X5asQI9vEeWpFeLihqqhEw" type="5002"/>
-        <element xmi:type="de.uni_paderborn.fujaba.muml.testlanguage:Output" href="railcab_Convoy.testlanguage#//@nodes.1/@outputs[name='results']"/>
+        <element xmi:type="org.muml.testlanguage:Output" href="railcab_Convoy.testlanguage#//@nodes.1/@outputs[name='results']"/>
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_X5aFNY9vEeWpFeLihqqhEw"/>
       </children>
       <styles xmi:type="notation:SortingStyle" xmi:id="_X5Xo949vEeWpFeLihqqhEw"/>
@@ -41,7 +41,7 @@
     <styles xmi:type="notation:DescriptionStyle" xmi:id="_X5Xo8Y9vEeWpFeLihqqhEw"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_X5Xo8o9vEeWpFeLihqqhEw" fontName="Segoe UI"/>
     <styles xmi:type="notation:FillStyle" xmi:id="_X5Xo849vEeWpFeLihqqhEw"/>
-    <element xmi:type="de.uni_paderborn.fujaba.muml.testlanguage:Node" href="railcab_Convoy.testlanguage#//@nodes.1"/>
+    <element xmi:type="org.muml.testlanguage:Node" href="railcab_Convoy.testlanguage#//@nodes.1"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_X5Xo9I9vEeWpFeLihqqhEw" x="303" y="178"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_YRjfcI9vEeWpFeLihqqhEw" type="2001">
@@ -49,7 +49,7 @@
     <children xmi:type="notation:DecorationNode" xmi:id="_YRkGgY9vEeWpFeLihqqhEw" type="7001">
       <children xmi:type="notation:Shape" xmi:id="_YRlUoI9vEeWpFeLihqqhEw" type="3001" fontName="Segoe UI">
         <children xmi:type="notation:DecorationNode" xmi:id="_YRl7sI9vEeWpFeLihqqhEw" type="5001"/>
-        <element xmi:type="de.uni_paderborn.fujaba.muml.testlanguage:Input" href="railcab_Convoy.testlanguage#//@nodes.2/@inputs[name='property_result_repository']"/>
+        <element xmi:type="org.muml.testlanguage:Input" href="railcab_Convoy.testlanguage#//@nodes.2/@inputs[name='property_result_repository']"/>
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_YRlUoY9vEeWpFeLihqqhEw"/>
       </children>
       <styles xmi:type="notation:SortingStyle" xmi:id="_YRkGgo9vEeWpFeLihqqhEw"/>
@@ -58,11 +58,11 @@
     <styles xmi:type="notation:DescriptionStyle" xmi:id="_YRjfcY9vEeWpFeLihqqhEw"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_YRjfco9vEeWpFeLihqqhEw" fontName="Segoe UI"/>
     <styles xmi:type="notation:FillStyle" xmi:id="_YRjfc49vEeWpFeLihqqhEw"/>
-    <element xmi:type="de.uni_paderborn.fujaba.muml.testlanguage:Node" href="railcab_Convoy.testlanguage#//@nodes.2"/>
+    <element xmi:type="org.muml.testlanguage:Node" href="railcab_Convoy.testlanguage#//@nodes.2"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_YRjfdI9vEeWpFeLihqqhEw" x="597" y="191"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_WuXOYY9vEeWpFeLihqqhEw"/>
-  <element xmi:type="de.uni_paderborn.fujaba.muml.testlanguage:TestCase" href="railcab_Convoy.testlanguage#/"/>
+  <element xmi:type="org.muml.testlanguage:TestCase" href="railcab_Convoy.testlanguage#/"/>
   <edges xmi:type="notation:Connector" xmi:id="_YnSe4I9vEeWpFeLihqqhEw" type="4001" source="_XlYV8I9vEeWpFeLihqqhEw" target="_X5ZeII9vEeWpFeLihqqhEw">
     <styles xmi:type="notation:FontStyle" xmi:id="_YnSe4Y9vEeWpFeLihqqhEw" fontName="Segoe UI"/>
     <element xsi:nil="true"/>

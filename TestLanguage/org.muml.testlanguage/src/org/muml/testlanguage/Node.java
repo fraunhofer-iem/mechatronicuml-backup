@@ -261,7 +261,7 @@ public interface Node extends EObject {
 	 * end-model-doc -->
 	 * 
 	 * @model annotation=
-	 *        "http://www.eclipse.org/emf/2002/GenModel body='try {\r\n\tSpecificationFactory fac = de.uni_paderborn.fujaba.muml.testlanguage.specification.SpecificationFactory.eINSTANCE;\r\n\tjava.lang.reflect.Method creator = fac.getClass().getMethod(\"create\"+this.specificationClassName);\r\n\t\r\n\tthis.setSpecification((NodeSpecification) creator.invoke(fac));\r\n\tthis.specification.initialize();\r\n} catch (NoSuchMethodException e) {\r\n\t// The desired NodeSpecification does not exist.\r\n\te.printStackTrace();\r\n} catch (InvocationTargetException e) {\r\n\te.printStackTrace();\r\n} catch (IllegalAccessException e) {\r\n\te.printStackTrace();\r\n} catch (Exception e) {\r\n\te.printStackTrace();\r\n}'"
+	 *        "http://www.eclipse.org/emf/2002/GenModel body='try {\r\n\tSpecificationFactory fac = org.muml.testlanguage.specification.SpecificationFactory.eINSTANCE;\r\n\tjava.lang.reflect.Method creator = fac.getClass().getMethod(\"create\"+this.specificationClassName);\r\n\t\r\n\tthis.setSpecification((NodeSpecification) creator.invoke(fac));\r\n\tthis.specification.initialize();\r\n} catch (NoSuchMethodException e) {\r\n\t// The desired NodeSpecification does not exist.\r\n\te.printStackTrace();\r\n} catch (InvocationTargetException e) {\r\n\te.printStackTrace();\r\n} catch (IllegalAccessException e) {\r\n\te.printStackTrace();\r\n} catch (Exception e) {\r\n\te.printStackTrace();\r\n}'"
 	 * @generated
 	 */
 	void createSpecification();

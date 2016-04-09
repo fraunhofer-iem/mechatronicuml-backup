@@ -2180,7 +2180,7 @@ public interface SpecificationPackage extends EPackage {
 	 * @return the meta object for data type '<em>Execution Exception</em>'.
 	 * @see org.muml.testlanguage.specification.custom.ExecutionException
 	 * @model instanceClass=
-	 *        "de.uni_paderborn.fujaba.muml.testlanguage.specification.custom.ExecutionException"
+	 *        "org.muml.testlanguage.specification.custom.ExecutionException"
 	 *        serializeable="false"
 	 * @generated
 	 */

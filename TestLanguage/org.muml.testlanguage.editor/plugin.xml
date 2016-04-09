@@ -12,7 +12,7 @@
             id="org.eclipse.emf.ecore.Wizard.category.ID"
             name="%_UI_Wizard_category"/>
       <wizard
-            id="de.uni_paderborn.fujaba.muml.testlanguage.presentation.TestLanguageModelWizardID"
+            id="org.muml.testlanguage.presentation.TestLanguageModelWizardID"
             name="%_UI_TestLanguageModelWizard_label"
             class="org.muml.testlanguage.presentation.TestLanguageModelWizard"
             category="org.eclipse.emf.ecore.Wizard.category.ID"
@@ -25,7 +25,7 @@
    <extension point="org.eclipse.ui.editors">
       <!-- @generated testlanguage -->
       <editor
-            id="de.uni_paderborn.fujaba.muml.testlanguage.presentation.TestLanguageEditorID"
+            id="org.muml.testlanguage.presentation.TestLanguageEditorID"
             name="%_UI_TestLanguageEditor_label"
             icon="icons/full/obj16/TestLanguageModelFile.gif"
             extensions="testlanguage"

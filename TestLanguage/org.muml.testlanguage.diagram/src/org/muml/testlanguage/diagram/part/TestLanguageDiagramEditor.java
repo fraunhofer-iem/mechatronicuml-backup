@@ -50,12 +50,12 @@ public class TestLanguageDiagramEditor extends DiagramDocumentEditor implements
 	/**
 	 * @generated
 	 */
-	public static final String ID = "de.uni_paderborn.fujaba.muml.testlanguage.diagram.part.TestLanguageDiagramEditorID"; //$NON-NLS-1$
+	public static final String ID = "org.muml.testlanguage.diagram.part.TestLanguageDiagramEditorID"; //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final String CONTEXT_ID = "de.uni_paderborn.fujaba.muml.testlanguage.diagram.ui.diagramContext"; //$NON-NLS-1$
+	public static final String CONTEXT_ID = "org.muml.testlanguage.diagram.ui.diagramContext"; //$NON-NLS-1$
 
 	/**
 	 * @generated

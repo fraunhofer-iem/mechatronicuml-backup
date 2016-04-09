@@ -23,7 +23,7 @@ public class MarkerListener implements IValidationListener {
 				|| !event
 						.getClientContextIds()
 						.contains(
-								"de.uni_paderborn.fujaba.muml.testlanguage.topologicalContext")) {
+								"org.muml.testlanguage.topologicalContext")) {
 			return;
 		}
 

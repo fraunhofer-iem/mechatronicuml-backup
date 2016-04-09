@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<gmfgen:GenEditorGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gmfgen="http://www.eclipse.org/gmf/2009/GenModel" dynamicTemplates="true" templateDirectory="/de.uni_paderborn.fujaba.muml.testlanguage/gmfTemplates/">
+<gmfgen:GenEditorGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gmfgen="http://www.eclipse.org/gmf/2009/GenModel" dynamicTemplates="true" templateDirectory="/org.muml.testlanguage/gmfTemplates/">
   <diagram visualID="1000" editPartClassName="TestCaseEditPart" itemSemanticEditPolicyClassName="TestCaseItemSemanticEditPolicy" canonicalEditPolicyClassName="TestCaseCanonicalEditPolicy" iconProviderPriority="Low" validationProviderPriority="Low" validationEnabled="true" validationDecorators="true" validationDecoratorProviderPriority="Medium" liveValidationUIFeedback="true">
     <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Diagram"/>
     <elementType xsi:type="gmfgen:MetamodelType" displayName="Test Case" editHelperClassName="TestCaseEditHelper"/>
@@ -88,11 +88,11 @@
         <entries xsi:type="gmfgen:ToolEntry" title="Node" description="Create new Node" genNodes="//@diagram/@topLevelNodes.0 //@diagram/@childNodes.0 //@diagram/@childNodes.1"/>
       </groups>
     </palette>
-    <preferencePages xsi:type="gmfgen:GenStandardPreferencePage" iD="de.uni_paderborn.fujaba.muml.testlanguage.diagram.general" name="Testlanguage Diagram">
-      <children xsi:type="gmfgen:GenStandardPreferencePage" iD="de.uni_paderborn.fujaba.muml.testlanguage.diagram.appearance" name="Appearance" kind="Appearance"/>
-      <children xsi:type="gmfgen:GenStandardPreferencePage" iD="de.uni_paderborn.fujaba.muml.testlanguage.diagram.connections" name="Connections" kind="Connections"/>
-      <children xsi:type="gmfgen:GenStandardPreferencePage" iD="de.uni_paderborn.fujaba.muml.testlanguage.diagram.printing" name="Printing" kind="Printing"/>
-      <children xsi:type="gmfgen:GenStandardPreferencePage" iD="de.uni_paderborn.fujaba.muml.testlanguage.diagram.rulersAndGrid" name="Rulers And Grid" kind="RulersAndGrid"/>
+    <preferencePages xsi:type="gmfgen:GenStandardPreferencePage" iD="org.muml.testlanguage.diagram.general" name="Testlanguage Diagram">
+      <children xsi:type="gmfgen:GenStandardPreferencePage" iD="org.muml.testlanguage.diagram.appearance" name="Appearance" kind="Appearance"/>
+      <children xsi:type="gmfgen:GenStandardPreferencePage" iD="org.muml.testlanguage.diagram.connections" name="Connections" kind="Connections"/>
+      <children xsi:type="gmfgen:GenStandardPreferencePage" iD="org.muml.testlanguage.diagram.printing" name="Printing" kind="Printing"/>
+      <children xsi:type="gmfgen:GenStandardPreferencePage" iD="org.muml.testlanguage.diagram.rulersAndGrid" name="Rulers And Grid" kind="RulersAndGrid"/>
     </preferencePages>
   </diagram>
   <plugin name="TestLanguage Diagram Editor" provider="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Germany" printingEnabled="true">

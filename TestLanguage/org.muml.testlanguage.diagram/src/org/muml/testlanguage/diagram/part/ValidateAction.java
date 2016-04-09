@@ -76,7 +76,7 @@ public class ValidateAction extends Action {
 //					}
 //				}).run(new NullProgressMonitor());
 //			} catch (Exception e) {
-//				de.uni_paderborn.fujaba.muml.testlanguage.diagram.part.TestLanguageDiagramEditorPlugin.getInstance()
+//				org.muml.testlanguage.diagram.part.TestLanguageDiagramEditorPlugin.getInstance()
 //						.logError("Validation action failed", e); //$NON-NLS-1$
 //			}
 		}

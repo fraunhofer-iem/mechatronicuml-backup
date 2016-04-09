@@ -45,23 +45,23 @@ public class TestLanguageElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType TestCase_1000 = getElementType("de.uni_paderborn.fujaba.muml.testlanguage.diagram.TestCase_1000"); //$NON-NLS-1$
+	public static final IElementType TestCase_1000 = getElementType("org.muml.testlanguage.diagram.TestCase_1000"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType Node_2001 = getElementType("de.uni_paderborn.fujaba.muml.testlanguage.diagram.Node_2001"); //$NON-NLS-1$
+	public static final IElementType Node_2001 = getElementType("org.muml.testlanguage.diagram.Node_2001"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType Input_3001 = getElementType("de.uni_paderborn.fujaba.muml.testlanguage.diagram.Input_3001"); //$NON-NLS-1$
+	public static final IElementType Input_3001 = getElementType("org.muml.testlanguage.diagram.Input_3001"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType Output_3002 = getElementType("de.uni_paderborn.fujaba.muml.testlanguage.diagram.Output_3002"); //$NON-NLS-1$
+	public static final IElementType Output_3002 = getElementType("org.muml.testlanguage.diagram.Output_3002"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType OutputTargets_4001 = getElementType("de.uni_paderborn.fujaba.muml.testlanguage.diagram.OutputTargets_4001"); //$NON-NLS-1$
+	public static final IElementType OutputTargets_4001 = getElementType("org.muml.testlanguage.diagram.OutputTargets_4001"); //$NON-NLS-1$
 
 	/**
 	 * @generated
