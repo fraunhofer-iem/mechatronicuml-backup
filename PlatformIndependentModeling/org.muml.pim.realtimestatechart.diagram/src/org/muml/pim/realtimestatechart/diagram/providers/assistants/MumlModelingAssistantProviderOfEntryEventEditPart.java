@@ -12,10 +12,11 @@
  */
 package org.muml.pim.realtimestatechart.diagram.providers.assistants;
 
+import org.muml.pim.realtimestatechart.diagram.providers.MumlModelingAssistantProvider;
+
 /**
  * @generated
  */
-public class MumlModelingAssistantProviderOfEntryEventEditPart
-		extends org.muml.pim.realtimestatechart.diagram.providers.MumlModelingAssistantProvider {
+public class MumlModelingAssistantProviderOfEntryEventEditPart extends MumlModelingAssistantProvider {
 
 }

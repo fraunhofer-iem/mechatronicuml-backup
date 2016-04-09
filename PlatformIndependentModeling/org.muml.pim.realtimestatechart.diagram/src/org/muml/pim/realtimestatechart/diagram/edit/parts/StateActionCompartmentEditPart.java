@@ -30,6 +30,11 @@ import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.edit.policies.reparent.CreationEditPolicyWithCustomReparent;
+import org.muml.pim.realtimestatechart.diagram.edit.policies.StateActionCompartmentCanonicalEditPolicy;
+import org.muml.pim.realtimestatechart.diagram.edit.policies.StateActionCompartmentItemSemanticEditPolicy;
+import org.muml.pim.realtimestatechart.diagram.part.Messages;
+import org.muml.pim.realtimestatechart.diagram.part.MumlVisualIDRegistry;
+import org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes;
 
 /**
  * @generated
@@ -82,7 +87,7 @@ public class StateActionCompartmentEditPart extends ListCompartmentEditPart {
 	 * @generated
 	 */
 	public String getCompartmentName() {
-		return org.muml.pim.realtimestatechart.diagram.part.Messages.StateActionCompartmentEditPart_title;
+		return Messages.StateActionCompartmentEditPart_title;
 	}
 
 	/**
@@ -110,13 +115,11 @@ public class StateActionCompartmentEditPart extends ListCompartmentEditPart {
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
-				new org.muml.pim.realtimestatechart.diagram.edit.policies.StateActionCompartmentItemSemanticEditPolicy());
-		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicyWithCustomReparent(
-				org.muml.pim.realtimestatechart.diagram.part.MumlVisualIDRegistry.TYPED_INSTANCE));
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new StateActionCompartmentItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.CREATION_ROLE,
+				new CreationEditPolicyWithCustomReparent(MumlVisualIDRegistry.TYPED_INSTANCE));
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
-		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE,
-				new org.muml.pim.realtimestatechart.diagram.edit.policies.StateActionCompartmentCanonicalEditPolicy());
+		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new StateActionCompartmentCanonicalEditPolicy());
 	}
 
 	/**
@@ -136,13 +139,13 @@ public class StateActionCompartmentEditPart extends ListCompartmentEditPart {
 			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request).getViewAndElementDescriptor()
 					.getCreateElementRequestAdapter();
 			IElementType type = (IElementType) adapter.getAdapter(IElementType.class);
-			if (type == org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes.EntryEvent_3033) {
+			if (type == MumlElementTypes.EntryEvent_3033) {
 				return this;
 			}
-			if (type == org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes.DoEvent_3034) {
+			if (type == MumlElementTypes.DoEvent_3034) {
 				return this;
 			}
-			if (type == org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes.ExitEvent_3035) {
+			if (type == MumlElementTypes.ExitEvent_3035) {
 				return this;
 			}
 			return getParent().getTargetEditPart(request);

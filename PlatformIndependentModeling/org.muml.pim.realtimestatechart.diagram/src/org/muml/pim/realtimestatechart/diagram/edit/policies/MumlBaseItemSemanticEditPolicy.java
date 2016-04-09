@@ -47,6 +47,15 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.edit.helpers.GeneratedEditHelperBase;
+import org.muml.pim.realtimestatechart.RealtimeStatechart;
+import org.muml.pim.realtimestatechart.RealtimestatechartPackage;
+import org.muml.pim.realtimestatechart.Transition;
+import org.muml.pim.realtimestatechart.Vertex;
+import org.muml.pim.realtimestatechart.diagram.expressions.MumlAbstractExpression;
+import org.muml.pim.realtimestatechart.diagram.expressions.MumlOCLFactory;
+import org.muml.pim.realtimestatechart.diagram.part.MumlVisualIDRegistry;
+import org.muml.pim.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin;
+import org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes;
 
 /**
  * @generated
@@ -84,9 +93,7 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		if (request instanceof ReconnectRequest) {
 			Object view = ((ReconnectRequest) request).getConnectionEditPart().getModel();
 			if (view instanceof View) {
-				Integer id = new Integer(
-						org.muml.pim.realtimestatechart.diagram.part.MumlVisualIDRegistry
-								.getVisualID((View) view));
+				Integer id = new Integer(MumlVisualIDRegistry.getVisualID((View) view));
 				request.getExtendedData().put(VISUAL_ID_KEY, id);
 			}
 		}
@@ -151,8 +158,7 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 	 * @generated
 	 */
 	private IElementType getContextElementType(IEditCommandRequest request) {
-		IElementType requestContextElementType = org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes
-				.getElementType(getVisualID(request));
+		IElementType requestContextElementType = MumlElementTypes.getElementType(getVisualID(request));
 		return requestContextElementType != null ? requestContextElementType : myElementType;
 	}
 
@@ -298,11 +304,9 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 	 * @generated
 	 */
 	public static LinkConstraints getLinkConstraints() {
-		LinkConstraints cached = org.muml.pim.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
-				.getInstance().getLinkConstraints();
+		LinkConstraints cached = RealtimestatechartDiagramEditorPlugin.getInstance().getLinkConstraints();
 		if (cached == null) {
-			org.muml.pim.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
-					.getInstance().setLinkConstraints(cached = new LinkConstraints());
+			RealtimestatechartDiagramEditorPlugin.getInstance().setLinkConstraints(cached = new LinkConstraints());
 		}
 		return cached;
 	}
@@ -320,43 +324,33 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		}
 
 		/**
-		 * @generated
-		 */
-		public boolean canCreateTransition_4003(
-				org.muml.pim.realtimestatechart.RealtimeStatechart container,
-				org.muml.pim.realtimestatechart.Vertex source,
-				org.muml.pim.realtimestatechart.Vertex target, View sourceView, View targetView) {
+		* @generated
+		*/
+		public boolean canCreateTransition_4003(RealtimeStatechart container, Vertex source, Vertex target,
+				View sourceView, View targetView) {
 			return canExistTransition_4003(container, null, source, target, sourceView, targetView);
 		}
 
 		/**
-		 * @generated
-		 */
-		public boolean canExistTransition_4003(
-				org.muml.pim.realtimestatechart.RealtimeStatechart container,
-				org.muml.pim.realtimestatechart.Transition linkInstance,
-				org.muml.pim.realtimestatechart.Vertex source,
-				org.muml.pim.realtimestatechart.Vertex target, View sourceView, View targetView) {
+		* @generated
+		*/
+		public boolean canExistTransition_4003(RealtimeStatechart container, Transition linkInstance, Vertex source,
+				Vertex target, View sourceView, View targetView) {
 			try {
 				if (source == null) {
 					return true;
 				} else {
 					Map<String, EClassifier> envType = new HashMap<String, EClassifier>();
 					Map<String, Object> env = new HashMap<String, Object>();
-					envType.put("oppositeEnd", //$NON-NLS-1$
-							org.muml.pim.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-									.getVertex());
+					envType.put("oppositeEnd", RealtimestatechartPackage.eINSTANCE.getVertex()); //$NON-NLS-1$
 					env.put("oppositeEnd", target);
 					envType.put("view", NotationPackage.Literals.VIEW);
 					env.put("view", sourceView);
 					envType.put("oppositeView", NotationPackage.Literals.VIEW);
 					env.put("oppositeView", targetView);
 
-					org.muml.pim.realtimestatechart.diagram.expressions.MumlAbstractExpression expression = org.muml.pim.realtimestatechart.diagram.expressions.MumlOCLFactory
-							.getExpression(18,
-									org.muml.pim.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-											.getVertex(),
-									envType);
+					MumlAbstractExpression expression = MumlOCLFactory.getExpression(18,
+							RealtimestatechartPackage.eINSTANCE.getVertex(), envType);
 					Object sourceVal = expression.evaluate(source, env); //$NON-NLS-1$
 
 					if (false == sourceVal instanceof Boolean || !((Boolean) sourceVal).booleanValue()) {
@@ -365,39 +359,31 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 				}
 				return true;
 			} catch (Exception e) {
-				org.muml.pim.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
-						.getInstance().logError("Link constraint evaluation error", e); //$NON-NLS-1$
+				RealtimestatechartDiagramEditorPlugin.getInstance().logError("Link constraint evaluation error", e); //$NON-NLS-1$
 				return false;
 			}
 		}
 
 		/**
-		 * @generated
-		 */
-		public java.lang.String getErrorTransition_4003(
-				org.muml.pim.realtimestatechart.RealtimeStatechart container,
-				org.muml.pim.realtimestatechart.Vertex source,
-				org.muml.pim.realtimestatechart.Vertex target, View sourceView, View targetView) {
+		* @generated
+		*/
+		public java.lang.String getErrorTransition_4003(RealtimeStatechart container, Vertex source, Vertex target,
+				View sourceView, View targetView) {
 			try {
 				if (source == null) {
 					return null;
 				} else {
 					Map<String, EClassifier> envType = new HashMap<String, EClassifier>();
 					Map<String, Object> env = new HashMap<String, Object>();
-					envType.put("oppositeEnd", //$NON-NLS-1$
-							org.muml.pim.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-									.getVertex());
+					envType.put("oppositeEnd", RealtimestatechartPackage.eINSTANCE.getVertex()); //$NON-NLS-1$
 					env.put("oppositeEnd", target);
 					envType.put("view", NotationPackage.Literals.VIEW);
 					env.put("view", sourceView);
 					envType.put("oppositeView", NotationPackage.Literals.VIEW);
 					env.put("oppositeView", targetView);
 
-					org.muml.pim.realtimestatechart.diagram.expressions.MumlAbstractExpression expression = org.muml.pim.realtimestatechart.diagram.expressions.MumlOCLFactory
-							.getExpression(18,
-									org.muml.pim.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-											.getVertex(),
-									envType);
+					MumlAbstractExpression expression = MumlOCLFactory.getExpression(18,
+							RealtimestatechartPackage.eINSTANCE.getVertex(), envType);
 					Object sourceVal = expression.evaluate(source, env); //$NON-NLS-1$
 
 					if (false == sourceVal instanceof Boolean || !((Boolean) sourceVal).booleanValue()) {
@@ -418,8 +404,7 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 				}
 				return null;
 			} catch (Exception e) {
-				org.muml.pim.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
-						.getInstance().logError("Link constraint evaluation error", e); //$NON-NLS-1$
+				RealtimestatechartDiagramEditorPlugin.getInstance().logError("Link constraint evaluation error", e); //$NON-NLS-1$
 				return "Link constraint evaluation error";
 			}
 		}

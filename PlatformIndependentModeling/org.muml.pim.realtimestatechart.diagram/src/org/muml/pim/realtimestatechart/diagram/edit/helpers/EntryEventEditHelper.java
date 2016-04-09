@@ -15,6 +15,5 @@ package org.muml.pim.realtimestatechart.diagram.edit.helpers;
 /**
  * @generated
  */
-public class EntryEventEditHelper
-		extends org.muml.pim.realtimestatechart.diagram.edit.helpers.MumlBaseEditHelper {
+public class EntryEventEditHelper extends MumlBaseEditHelper {
 }

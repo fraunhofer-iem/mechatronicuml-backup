@@ -13,6 +13,7 @@
 package org.muml.pim.realtimestatechart.diagram.preferences;
 
 import org.eclipse.gmf.runtime.diagram.ui.preferences.RulerGridPreferencePage;
+import org.muml.pim.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin;
 
 /**
  * @generated
@@ -23,8 +24,6 @@ public class DiagramRulersAndGridPreferencePage extends RulerGridPreferencePage 
 	 * @generated
 	 */
 	public DiagramRulersAndGridPreferencePage() {
-		setPreferenceStore(
-				org.muml.pim.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
-						.getInstance().getPreferenceStore());
+		setPreferenceStore(RealtimestatechartDiagramEditorPlugin.getInstance().getPreferenceStore());
 	}
 }

@@ -13,6 +13,7 @@
 package org.muml.pim.realtimestatechart.diagram.preferences;
 
 import org.eclipse.gmf.runtime.diagram.ui.preferences.PrintingPreferencePage;
+import org.muml.pim.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin;
 
 /**
  * @generated
@@ -23,8 +24,6 @@ public class DiagramPrintingPreferencePage extends PrintingPreferencePage {
 	 * @generated
 	 */
 	public DiagramPrintingPreferencePage() {
-		setPreferenceStore(
-				org.muml.pim.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
-						.getInstance().getPreferenceStore());
+		setPreferenceStore(RealtimestatechartDiagramEditorPlugin.getInstance().getPreferenceStore());
 	}
 }

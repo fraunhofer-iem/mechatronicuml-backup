@@ -19,18 +19,18 @@ import org.eclipse.gmf.runtime.emf.commands.core.command.CompositeTransactionalC
 import org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes;
 
 /**
  * @generated
  */
-public class DoEventItemSemanticEditPolicy
-		extends org.muml.pim.realtimestatechart.diagram.edit.policies.MumlBaseItemSemanticEditPolicy {
+public class DoEventItemSemanticEditPolicy extends MumlBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public DoEventItemSemanticEditPolicy() {
-		super(org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes.DoEvent_3034);
+		super(MumlElementTypes.DoEvent_3034);
 	}
 
 	/**

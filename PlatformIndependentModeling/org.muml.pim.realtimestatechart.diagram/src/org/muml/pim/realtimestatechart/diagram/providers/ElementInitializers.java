@@ -13,6 +13,20 @@
 package org.muml.pim.realtimestatechart.diagram.providers;
 
 import org.eclipse.emf.ecore.EcorePackage;
+import org.muml.pim.realtimestatechart.Action;
+import org.muml.pim.realtimestatechart.DoEvent;
+import org.muml.pim.realtimestatechart.EntryPoint;
+import org.muml.pim.realtimestatechart.ExitPoint;
+import org.muml.pim.realtimestatechart.RealtimeStatechart;
+import org.muml.pim.realtimestatechart.RealtimestatechartFactory;
+import org.muml.pim.realtimestatechart.RealtimestatechartPackage;
+import org.muml.pim.realtimestatechart.Region;
+import org.muml.pim.realtimestatechart.State;
+import org.muml.pim.realtimestatechart.SynchronizationChannel;
+import org.muml.pim.realtimestatechart.Transition;
+import org.muml.pim.realtimestatechart.diagram.expressions.MumlAbstractExpression;
+import org.muml.pim.realtimestatechart.diagram.expressions.MumlOCLFactory;
+import org.muml.pim.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin;
 
 /**
  * @generated
@@ -26,221 +40,153 @@ public class ElementInitializers {
 	/**
 	* @generated
 	*/
-	public void init_RealtimeStatechart_2007(
-			org.muml.pim.realtimestatechart.RealtimeStatechart instance) {
+	public void init_RealtimeStatechart_2007(RealtimeStatechart instance) {
 		try {
-			Object value_0 = org.muml.pim.realtimestatechart.diagram.expressions.MumlOCLFactory
-					.getExpression(19,
-							org.muml.pim.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-									.getRealtimeStatechart(),
-							null)
+			Object value_0 = MumlOCLFactory
+					.getExpression(19, RealtimestatechartPackage.eINSTANCE.getRealtimeStatechart(), null)
 					.evaluate(instance);
 			instance.setName((String) value_0);
 		} catch (RuntimeException e) {
-			org.muml.pim.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
-					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
+			RealtimestatechartDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
 		}
 	}
 
 	/**
 	* @generated
 	*/
-	public void init_State_3032(org.muml.pim.realtimestatechart.State instance) {
+	public void init_State_3032(State instance) {
 		try {
-			Object value_0 = org.muml.pim.realtimestatechart.diagram.expressions.MumlOCLFactory
-					.getExpression(20,
-							org.muml.pim.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-									.getState(),
-							null)
+			Object value_0 = MumlOCLFactory.getExpression(20, RealtimestatechartPackage.eINSTANCE.getState(), null)
 					.evaluate(instance);
 			instance.setName((String) value_0);
 		} catch (RuntimeException e) {
-			org.muml.pim.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
-					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
+			RealtimestatechartDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
 		}
 	}
 
 	/**
-	 * @generated
-	 */
-	public void init_DoEvent_3034(org.muml.pim.realtimestatechart.DoEvent instance) {
+	* @generated
+	*/
+	public void init_DoEvent_3034(DoEvent instance) {
 		try {
-			org.muml.pim.realtimestatechart.Action newInstance_0_0 = org.muml.pim.realtimestatechart.RealtimestatechartFactory.eINSTANCE
-					.createAction();
+			Action newInstance_0_0 = RealtimestatechartFactory.eINSTANCE.createAction();
 			instance.setAction(newInstance_0_0);
-			Object value_0_0_0 = org.muml.pim.realtimestatechart.diagram.expressions.MumlOCLFactory
-					.getExpression(1,
-							org.muml.pim.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-									.getAction(),
-							null)
+			Object value_0_0_0 = MumlOCLFactory.getExpression(1, RealtimestatechartPackage.eINSTANCE.getAction(), null)
 					.evaluate(newInstance_0_0);
 			newInstance_0_0.setName((String) value_0_0_0);
 
 		} catch (RuntimeException e) {
-			org.muml.pim.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
-					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
+			RealtimestatechartDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
 		}
 	}
 
 	/**
 	* @generated
 	*/
-	public void init_SynchronizationChannel_3037(
-			org.muml.pim.realtimestatechart.SynchronizationChannel instance) {
+	public void init_SynchronizationChannel_3037(SynchronizationChannel instance) {
 		try {
-			Object value_0 = org.muml.pim.realtimestatechart.diagram.expressions.MumlOCLFactory
-					.getExpression(21,
-							org.muml.pim.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-									.getSynchronizationChannel(),
-							null)
+			Object value_0 = MumlOCLFactory
+					.getExpression(21, RealtimestatechartPackage.eINSTANCE.getSynchronizationChannel(), null)
 					.evaluate(instance);
 			instance.setName((String) value_0);
 		} catch (RuntimeException e) {
-			org.muml.pim.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
-					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
+			RealtimestatechartDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
 		}
 	}
 
 	/**
-	 * @generated
-	 */
-	public void init_Region_3042(org.muml.pim.realtimestatechart.Region instance) {
+	* @generated
+	*/
+	public void init_Region_3042(Region instance) {
 		try {
-			Object value_0 = org.muml.pim.realtimestatechart.diagram.expressions.MumlOCLFactory
-					.getExpression(6,
-							org.muml.pim.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-									.getRegion(),
-							null)
+			Object value_0 = MumlOCLFactory.getExpression(6, RealtimestatechartPackage.eINSTANCE.getRegion(), null)
 					.evaluate(instance);
 
-			value_0 = org.muml.pim.realtimestatechart.diagram.expressions.MumlAbstractExpression
-					.performCast(value_0, EcorePackage.eINSTANCE.getEInt());
+			value_0 = MumlAbstractExpression.performCast(value_0, EcorePackage.eINSTANCE.getEInt());
 			instance.setPriority(((Integer) value_0).intValue());
-			org.muml.pim.realtimestatechart.RealtimeStatechart newInstance_1_0 = org.muml.pim.realtimestatechart.RealtimestatechartFactory.eINSTANCE
-					.createRealtimeStatechart();
+			RealtimeStatechart newInstance_1_0 = RealtimestatechartFactory.eINSTANCE.createRealtimeStatechart();
 			instance.setEmbeddedStatechart(newInstance_1_0);
-			Object value_1_0_0 = org.muml.pim.realtimestatechart.diagram.expressions.MumlOCLFactory
-					.getExpression(7,
-							org.muml.pim.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-									.getRealtimeStatechart(),
-							null)
+			Object value_1_0_0 = MumlOCLFactory
+					.getExpression(7, RealtimestatechartPackage.eINSTANCE.getRealtimeStatechart(), null)
 					.evaluate(newInstance_1_0);
 			newInstance_1_0.setName((String) value_1_0_0);
-			org.muml.pim.realtimestatechart.State newInstance_1_0_1_0 = org.muml.pim.realtimestatechart.RealtimestatechartFactory.eINSTANCE
-					.createState();
+			State newInstance_1_0_1_0 = RealtimestatechartFactory.eINSTANCE.createState();
 			newInstance_1_0.getStates().add(newInstance_1_0_1_0);
-			Object value_1_0_1_0_0 = org.muml.pim.realtimestatechart.diagram.expressions.MumlOCLFactory
-					.getExpression(8,
-							org.muml.pim.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-									.getState(),
-							null)
+			Object value_1_0_1_0_0 = MumlOCLFactory
+					.getExpression(8, RealtimestatechartPackage.eINSTANCE.getState(), null)
 					.evaluate(newInstance_1_0_1_0);
 			newInstance_1_0_1_0.setName((String) value_1_0_1_0_0);
-			Object value_1_0_1_0_1 = org.muml.pim.realtimestatechart.diagram.expressions.MumlOCLFactory
-					.getExpression(9,
-							org.muml.pim.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-									.getState(),
-							null)
+			Object value_1_0_1_0_1 = MumlOCLFactory
+					.getExpression(9, RealtimestatechartPackage.eINSTANCE.getState(), null)
 					.evaluate(newInstance_1_0_1_0);
 			newInstance_1_0_1_0.setInitial(((Boolean) value_1_0_1_0_1).booleanValue());
 
 		} catch (RuntimeException e) {
-			org.muml.pim.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
-					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
+			RealtimestatechartDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
 		}
 	}
 
 	/**
-	 * @generated
-	 */
-	public void init_RealtimeStatechart_3043(
-			org.muml.pim.realtimestatechart.RealtimeStatechart instance) {
+	* @generated
+	*/
+	public void init_RealtimeStatechart_3043(RealtimeStatechart instance) {
 		try {
-			org.muml.pim.realtimestatechart.State newInstance_0_0 = org.muml.pim.realtimestatechart.RealtimestatechartFactory.eINSTANCE
-					.createState();
+			State newInstance_0_0 = RealtimestatechartFactory.eINSTANCE.createState();
 			instance.getStates().add(newInstance_0_0);
-			Object value_0_0_0 = org.muml.pim.realtimestatechart.diagram.expressions.MumlOCLFactory
-					.getExpression(10,
-							org.muml.pim.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-									.getState(),
-							null)
+			Object value_0_0_0 = MumlOCLFactory.getExpression(10, RealtimestatechartPackage.eINSTANCE.getState(), null)
 					.evaluate(newInstance_0_0);
 			newInstance_0_0.setName((String) value_0_0_0);
-			Object value_0_0_1 = org.muml.pim.realtimestatechart.diagram.expressions.MumlOCLFactory
-					.getExpression(11,
-							org.muml.pim.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-									.getState(),
-							null)
+			Object value_0_0_1 = MumlOCLFactory.getExpression(11, RealtimestatechartPackage.eINSTANCE.getState(), null)
 					.evaluate(newInstance_0_0);
 			newInstance_0_0.setInitial(((Boolean) value_0_0_1).booleanValue());
 
-			Object value_1 = org.muml.pim.realtimestatechart.diagram.expressions.MumlOCLFactory
-					.getExpression(22,
-							org.muml.pim.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-									.getRealtimeStatechart(),
-							null)
+			Object value_1 = MumlOCLFactory
+					.getExpression(22, RealtimestatechartPackage.eINSTANCE.getRealtimeStatechart(), null)
 					.evaluate(instance);
 			instance.setName((String) value_1);
 		} catch (RuntimeException e) {
-			org.muml.pim.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
-					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
+			RealtimestatechartDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
 		}
 	}
 
 	/**
 	* @generated
 	*/
-	public void init_EntryPoint_3040(org.muml.pim.realtimestatechart.EntryPoint instance) {
+	public void init_EntryPoint_3040(EntryPoint instance) {
 		try {
-			Object value_0 = org.muml.pim.realtimestatechart.diagram.expressions.MumlOCLFactory
-					.getExpression(23,
-							org.muml.pim.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-									.getEntryPoint(),
-							null)
+			Object value_0 = MumlOCLFactory.getExpression(23, RealtimestatechartPackage.eINSTANCE.getEntryPoint(), null)
 					.evaluate(instance);
 			instance.setName((String) value_0);
 		} catch (RuntimeException e) {
-			org.muml.pim.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
-					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
+			RealtimestatechartDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
 		}
 	}
 
 	/**
 	* @generated
 	*/
-	public void init_ExitPoint_3041(org.muml.pim.realtimestatechart.ExitPoint instance) {
+	public void init_ExitPoint_3041(ExitPoint instance) {
 		try {
-			Object value_0 = org.muml.pim.realtimestatechart.diagram.expressions.MumlOCLFactory
-					.getExpression(24,
-							org.muml.pim.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-									.getExitPoint(),
-							null)
+			Object value_0 = MumlOCLFactory.getExpression(24, RealtimestatechartPackage.eINSTANCE.getExitPoint(), null)
 					.evaluate(instance);
 			instance.setName((String) value_0);
 		} catch (RuntimeException e) {
-			org.muml.pim.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
-					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
+			RealtimestatechartDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
 		}
 	}
 
 	/**
-	 * @generated
-	 */
-	public void init_Transition_4003(org.muml.pim.realtimestatechart.Transition instance) {
+	* @generated
+	*/
+	public void init_Transition_4003(Transition instance) {
 		try {
-			Object value_0 = org.muml.pim.realtimestatechart.diagram.expressions.MumlOCLFactory
-					.getExpression(15,
-							org.muml.pim.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-									.getTransition(),
-							null)
+			Object value_0 = MumlOCLFactory.getExpression(15, RealtimestatechartPackage.eINSTANCE.getTransition(), null)
 					.evaluate(instance);
 
-			value_0 = org.muml.pim.realtimestatechart.diagram.expressions.MumlAbstractExpression
-					.performCast(value_0, EcorePackage.eINSTANCE.getEInt());
+			value_0 = MumlAbstractExpression.performCast(value_0, EcorePackage.eINSTANCE.getEInt());
 			instance.setPriority(((Integer) value_0).intValue());
 		} catch (RuntimeException e) {
-			org.muml.pim.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
-					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
+			RealtimestatechartDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
 		}
 	}
 
@@ -248,11 +194,10 @@ public class ElementInitializers {
 	 * @generated
 	 */
 	public static ElementInitializers getInstance() {
-		ElementInitializers cached = org.muml.pim.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
-				.getInstance().getElementInitializers();
+		ElementInitializers cached = RealtimestatechartDiagramEditorPlugin.getInstance().getElementInitializers();
 		if (cached == null) {
-			org.muml.pim.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
-					.getInstance().setElementInitializers(cached = new ElementInitializers());
+			RealtimestatechartDiagramEditorPlugin.getInstance()
+					.setElementInitializers(cached = new ElementInitializers());
 		}
 		return cached;
 	}

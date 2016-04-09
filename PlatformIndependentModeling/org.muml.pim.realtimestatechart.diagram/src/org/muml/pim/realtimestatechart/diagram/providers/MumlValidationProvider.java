@@ -14,6 +14,9 @@ package org.muml.pim.realtimestatechart.diagram.providers;
 
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.ModelElementCategoryEditPart;
+import org.muml.pim.realtimestatechart.diagram.part.MumlVisualIDRegistry;
+import org.muml.pim.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin;
 
 /**
  * @generated
@@ -51,8 +54,7 @@ public class MumlValidationProvider {
 			try {
 				editingDomain.runExclusive(task);
 			} catch (Exception e) {
-				org.muml.pim.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
-						.getInstance().logError("Validation failed", e); //$NON-NLS-1$
+				RealtimestatechartDiagramEditorPlugin.getInstance().logError("Validation failed", e); //$NON-NLS-1$
 			}
 		} else {
 			task.run();
@@ -68,9 +70,7 @@ public class MumlValidationProvider {
 		}
 		if (object instanceof View) {
 			return constraintsActive
-					&& org.muml.pim.realtimestatechart.diagram.edit.parts.ModelElementCategoryEditPart.MODEL_ID
-							.equals(org.muml.pim.realtimestatechart.diagram.part.MumlVisualIDRegistry
-									.getModelID((View) object));
+					&& ModelElementCategoryEditPart.MODEL_ID.equals(MumlVisualIDRegistry.getModelID((View) object));
 		}
 		return true;
 	}

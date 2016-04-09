@@ -19,18 +19,18 @@ import org.eclipse.gmf.runtime.emf.commands.core.command.CompositeTransactionalC
 import org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes;
 
 /**
  * @generated
  */
-public class ClockConstraintItemSemanticEditPolicy
-		extends org.muml.pim.realtimestatechart.diagram.edit.policies.MumlBaseItemSemanticEditPolicy {
+public class ClockConstraintItemSemanticEditPolicy extends MumlBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public ClockConstraintItemSemanticEditPolicy() {
-		super(org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes.ClockConstraint_3036);
+		super(MumlElementTypes.ClockConstraint_3036);
 	}
 
 	/**

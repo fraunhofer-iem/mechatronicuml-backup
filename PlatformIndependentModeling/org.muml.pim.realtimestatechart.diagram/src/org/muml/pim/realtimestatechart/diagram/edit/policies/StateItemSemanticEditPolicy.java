@@ -27,35 +27,47 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipReques
 import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.pim.realtimestatechart.diagram.edit.commands.EntryPointCreateCommand;
+import org.muml.pim.realtimestatechart.diagram.edit.commands.ExitPointCreateCommand;
+import org.muml.pim.realtimestatechart.diagram.edit.commands.TransitionCreateCommand;
+import org.muml.pim.realtimestatechart.diagram.edit.commands.TransitionReorientCommand;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.ClockConstraintEditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.DoEventEditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.EntryEventEditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.EntryPointEditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.ExitEventEditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.ExitPointEditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.RegionEditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.StateActionCompartmentEditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.StateChannelCompartmentEditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.StateInvariantCompartmentEditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.StateRegionCompartmentEditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.SynchronizationChannelEditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.TransitionEditPart;
+import org.muml.pim.realtimestatechart.diagram.part.MumlVisualIDRegistry;
+import org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes;
 
 /**
  * @generated
  */
-public class StateItemSemanticEditPolicy
-		extends org.muml.pim.realtimestatechart.diagram.edit.policies.MumlBaseItemSemanticEditPolicy {
+public class StateItemSemanticEditPolicy extends MumlBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public StateItemSemanticEditPolicy() {
-		super(org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes.State_3032);
+		super(MumlElementTypes.State_3032);
 	}
 
 	/**
 	 * @generated
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
-		if (org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes.EntryPoint_3040 == req
-				.getElementType()) {
-			return getGEFWrapper(
-					new org.muml.pim.realtimestatechart.diagram.edit.commands.EntryPointCreateCommand(
-							req));
+		if (MumlElementTypes.EntryPoint_3040 == req.getElementType()) {
+			return getGEFWrapper(new EntryPointCreateCommand(req));
 		}
-		if (org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes.ExitPoint_3041 == req
-				.getElementType()) {
-			return getGEFWrapper(
-					new org.muml.pim.realtimestatechart.diagram.edit.commands.ExitPointCreateCommand(
-							req));
+		if (MumlElementTypes.ExitPoint_3041 == req.getElementType()) {
+			return getGEFWrapper(new ExitPointCreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}
@@ -69,8 +81,7 @@ public class StateItemSemanticEditPolicy
 		cmd.setTransactionNestingEnabled(false);
 		for (Iterator<?> it = view.getTargetEdges().iterator(); it.hasNext();) {
 			Edge incomingLink = (Edge) it.next();
-			if (org.muml.pim.realtimestatechart.diagram.part.MumlVisualIDRegistry.getVisualID(
-					incomingLink) == org.muml.pim.realtimestatechart.diagram.edit.parts.TransitionEditPart.VISUAL_ID) {
+			if (MumlVisualIDRegistry.getVisualID(incomingLink) == TransitionEditPart.VISUAL_ID) {
 				DestroyElementRequest r = new DestroyElementRequest(incomingLink.getElement(), false);
 				cmd.add(new DestroyElementCommand(r));
 				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
@@ -79,8 +90,7 @@ public class StateItemSemanticEditPolicy
 		}
 		for (Iterator<?> it = view.getSourceEdges().iterator(); it.hasNext();) {
 			Edge outgoingLink = (Edge) it.next();
-			if (org.muml.pim.realtimestatechart.diagram.part.MumlVisualIDRegistry.getVisualID(
-					outgoingLink) == org.muml.pim.realtimestatechart.diagram.edit.parts.TransitionEditPart.VISUAL_ID) {
+			if (MumlVisualIDRegistry.getVisualID(outgoingLink) == TransitionEditPart.VISUAL_ID) {
 				DestroyElementRequest r = new DestroyElementRequest(outgoingLink.getElement(), false);
 				cmd.add(new DestroyElementCommand(r));
 				cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
@@ -107,13 +117,11 @@ public class StateItemSemanticEditPolicy
 		View view = (View) getHost().getModel();
 		for (Iterator<?> nit = view.getChildren().iterator(); nit.hasNext();) {
 			Node node = (Node) nit.next();
-			switch (org.muml.pim.realtimestatechart.diagram.part.MumlVisualIDRegistry
-					.getVisualID(node)) {
-			case org.muml.pim.realtimestatechart.diagram.edit.parts.EntryPointEditPart.VISUAL_ID:
+			switch (MumlVisualIDRegistry.getVisualID(node)) {
+			case EntryPointEditPart.VISUAL_ID:
 				for (Iterator<?> it = node.getTargetEdges().iterator(); it.hasNext();) {
 					Edge incomingLink = (Edge) it.next();
-					if (org.muml.pim.realtimestatechart.diagram.part.MumlVisualIDRegistry.getVisualID(
-							incomingLink) == org.muml.pim.realtimestatechart.diagram.edit.parts.TransitionEditPart.VISUAL_ID) {
+					if (MumlVisualIDRegistry.getVisualID(incomingLink) == TransitionEditPart.VISUAL_ID) {
 						DestroyElementRequest r = new DestroyElementRequest(incomingLink.getElement(), false);
 						cmd.add(new DestroyElementCommand(r));
 						cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
@@ -122,8 +130,7 @@ public class StateItemSemanticEditPolicy
 				}
 				for (Iterator<?> it = node.getSourceEdges().iterator(); it.hasNext();) {
 					Edge outgoingLink = (Edge) it.next();
-					if (org.muml.pim.realtimestatechart.diagram.part.MumlVisualIDRegistry.getVisualID(
-							outgoingLink) == org.muml.pim.realtimestatechart.diagram.edit.parts.TransitionEditPart.VISUAL_ID) {
+					if (MumlVisualIDRegistry.getVisualID(outgoingLink) == TransitionEditPart.VISUAL_ID) {
 						DestroyElementRequest r = new DestroyElementRequest(outgoingLink.getElement(), false);
 						cmd.add(new DestroyElementCommand(r));
 						cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
@@ -137,11 +144,10 @@ public class StateItemSemanticEditPolicy
 				// cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), node));
 
 				break;
-			case org.muml.pim.realtimestatechart.diagram.edit.parts.ExitPointEditPart.VISUAL_ID:
+			case ExitPointEditPart.VISUAL_ID:
 				for (Iterator<?> it = node.getTargetEdges().iterator(); it.hasNext();) {
 					Edge incomingLink = (Edge) it.next();
-					if (org.muml.pim.realtimestatechart.diagram.part.MumlVisualIDRegistry.getVisualID(
-							incomingLink) == org.muml.pim.realtimestatechart.diagram.edit.parts.TransitionEditPart.VISUAL_ID) {
+					if (MumlVisualIDRegistry.getVisualID(incomingLink) == TransitionEditPart.VISUAL_ID) {
 						DestroyElementRequest r = new DestroyElementRequest(incomingLink.getElement(), false);
 						cmd.add(new DestroyElementCommand(r));
 						cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
@@ -150,8 +156,7 @@ public class StateItemSemanticEditPolicy
 				}
 				for (Iterator<?> it = node.getSourceEdges().iterator(); it.hasNext();) {
 					Edge outgoingLink = (Edge) it.next();
-					if (org.muml.pim.realtimestatechart.diagram.part.MumlVisualIDRegistry.getVisualID(
-							outgoingLink) == org.muml.pim.realtimestatechart.diagram.edit.parts.TransitionEditPart.VISUAL_ID) {
+					if (MumlVisualIDRegistry.getVisualID(outgoingLink) == TransitionEditPart.VISUAL_ID) {
 						DestroyElementRequest r = new DestroyElementRequest(outgoingLink.getElement(), false);
 						cmd.add(new DestroyElementCommand(r));
 						cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
@@ -165,12 +170,11 @@ public class StateItemSemanticEditPolicy
 				// cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), node));
 
 				break;
-			case org.muml.pim.realtimestatechart.diagram.edit.parts.StateActionCompartmentEditPart.VISUAL_ID:
+			case StateActionCompartmentEditPart.VISUAL_ID:
 				for (Iterator<?> cit = node.getChildren().iterator(); cit.hasNext();) {
 					Node cnode = (Node) cit.next();
-					switch (org.muml.pim.realtimestatechart.diagram.part.MumlVisualIDRegistry
-							.getVisualID(cnode)) {
-					case org.muml.pim.realtimestatechart.diagram.edit.parts.EntryEventEditPart.VISUAL_ID:
+					switch (MumlVisualIDRegistry.getVisualID(cnode)) {
+					case EntryEventEditPart.VISUAL_ID:
 
 						cmd.add(new DestroyElementCommand(
 								new DestroyElementRequest(getEditingDomain(), cnode.getElement(), false)));
@@ -178,7 +182,7 @@ public class StateItemSemanticEditPolicy
 						// cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), cnode));
 
 						break;
-					case org.muml.pim.realtimestatechart.diagram.edit.parts.DoEventEditPart.VISUAL_ID:
+					case DoEventEditPart.VISUAL_ID:
 
 						cmd.add(new DestroyElementCommand(
 								new DestroyElementRequest(getEditingDomain(), cnode.getElement(), false)));
@@ -186,7 +190,7 @@ public class StateItemSemanticEditPolicy
 						// cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), cnode));
 
 						break;
-					case org.muml.pim.realtimestatechart.diagram.edit.parts.ExitEventEditPart.VISUAL_ID:
+					case ExitEventEditPart.VISUAL_ID:
 
 						cmd.add(new DestroyElementCommand(
 								new DestroyElementRequest(getEditingDomain(), cnode.getElement(), false)));
@@ -197,12 +201,11 @@ public class StateItemSemanticEditPolicy
 					}
 				}
 				break;
-			case org.muml.pim.realtimestatechart.diagram.edit.parts.StateRegionCompartmentEditPart.VISUAL_ID:
+			case StateRegionCompartmentEditPart.VISUAL_ID:
 				for (Iterator<?> cit = node.getChildren().iterator(); cit.hasNext();) {
 					Node cnode = (Node) cit.next();
-					switch (org.muml.pim.realtimestatechart.diagram.part.MumlVisualIDRegistry
-							.getVisualID(cnode)) {
-					case org.muml.pim.realtimestatechart.diagram.edit.parts.RegionEditPart.VISUAL_ID:
+					switch (MumlVisualIDRegistry.getVisualID(cnode)) {
+					case RegionEditPart.VISUAL_ID:
 
 						cmd.add(new DestroyElementCommand(
 								new DestroyElementRequest(getEditingDomain(), cnode.getElement(), false)));
@@ -213,12 +216,11 @@ public class StateItemSemanticEditPolicy
 					}
 				}
 				break;
-			case org.muml.pim.realtimestatechart.diagram.edit.parts.StateChannelCompartmentEditPart.VISUAL_ID:
+			case StateChannelCompartmentEditPart.VISUAL_ID:
 				for (Iterator<?> cit = node.getChildren().iterator(); cit.hasNext();) {
 					Node cnode = (Node) cit.next();
-					switch (org.muml.pim.realtimestatechart.diagram.part.MumlVisualIDRegistry
-							.getVisualID(cnode)) {
-					case org.muml.pim.realtimestatechart.diagram.edit.parts.SynchronizationChannelEditPart.VISUAL_ID:
+					switch (MumlVisualIDRegistry.getVisualID(cnode)) {
+					case SynchronizationChannelEditPart.VISUAL_ID:
 
 						cmd.add(new DestroyElementCommand(
 								new DestroyElementRequest(getEditingDomain(), cnode.getElement(), false)));
@@ -229,12 +231,11 @@ public class StateItemSemanticEditPolicy
 					}
 				}
 				break;
-			case org.muml.pim.realtimestatechart.diagram.edit.parts.StateInvariantCompartmentEditPart.VISUAL_ID:
+			case StateInvariantCompartmentEditPart.VISUAL_ID:
 				for (Iterator<?> cit = node.getChildren().iterator(); cit.hasNext();) {
 					Node cnode = (Node) cit.next();
-					switch (org.muml.pim.realtimestatechart.diagram.part.MumlVisualIDRegistry
-							.getVisualID(cnode)) {
-					case org.muml.pim.realtimestatechart.diagram.edit.parts.ClockConstraintEditPart.VISUAL_ID:
+					switch (MumlVisualIDRegistry.getVisualID(cnode)) {
+					case ClockConstraintEditPart.VISUAL_ID:
 
 						cmd.add(new DestroyElementCommand(
 								new DestroyElementRequest(getEditingDomain(), cnode.getElement(), false)));
@@ -262,11 +263,8 @@ public class StateItemSemanticEditPolicy
 	 * @generated
 	 */
 	protected Command getStartCreateRelationshipCommand(CreateRelationshipRequest req) {
-		if (org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes.Transition_4003 == req
-				.getElementType()) {
-			return getGEFWrapper(
-					new org.muml.pim.realtimestatechart.diagram.edit.commands.TransitionCreateCommand(
-							req, req.getSource(), req.getTarget()));
+		if (MumlElementTypes.Transition_4003 == req.getElementType()) {
+			return getGEFWrapper(new TransitionCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return null;
 	}
@@ -275,11 +273,8 @@ public class StateItemSemanticEditPolicy
 	 * @generated
 	 */
 	protected Command getCompleteCreateRelationshipCommand(CreateRelationshipRequest req) {
-		if (org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes.Transition_4003 == req
-				.getElementType()) {
-			return getGEFWrapper(
-					new org.muml.pim.realtimestatechart.diagram.edit.commands.TransitionCreateCommand(
-							req, req.getSource(), req.getTarget()));
+		if (MumlElementTypes.Transition_4003 == req.getElementType()) {
+			return getGEFWrapper(new TransitionCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return null;
 	}
@@ -292,10 +287,8 @@ public class StateItemSemanticEditPolicy
 	 */
 	protected Command getReorientRelationshipCommand(ReorientRelationshipRequest req) {
 		switch (getVisualID(req)) {
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.TransitionEditPart.VISUAL_ID:
-			return getGEFWrapper(
-					new org.muml.pim.realtimestatechart.diagram.edit.commands.TransitionReorientCommand(
-							req));
+		case TransitionEditPart.VISUAL_ID:
+			return getGEFWrapper(new TransitionReorientCommand(req));
 		}
 		return super.getReorientRelationshipCommand(req);
 	}

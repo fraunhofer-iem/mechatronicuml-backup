@@ -24,18 +24,22 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
 import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.pim.realtimestatechart.diagram.edit.commands.TransitionCreateCommand;
+import org.muml.pim.realtimestatechart.diagram.edit.commands.TransitionReorientCommand;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.TransitionEditPart;
+import org.muml.pim.realtimestatechart.diagram.part.MumlVisualIDRegistry;
+import org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes;
 
 /**
  * @generated
  */
-public class ExitPointItemSemanticEditPolicy
-		extends org.muml.pim.realtimestatechart.diagram.edit.policies.MumlBaseItemSemanticEditPolicy {
+public class ExitPointItemSemanticEditPolicy extends MumlBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public ExitPointItemSemanticEditPolicy() {
-		super(org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes.ExitPoint_3041);
+		super(MumlElementTypes.ExitPoint_3041);
 	}
 
 	/**
@@ -47,8 +51,7 @@ public class ExitPointItemSemanticEditPolicy
 		cmd.setTransactionNestingEnabled(false);
 		for (Iterator<?> it = view.getTargetEdges().iterator(); it.hasNext();) {
 			Edge incomingLink = (Edge) it.next();
-			if (org.muml.pim.realtimestatechart.diagram.part.MumlVisualIDRegistry.getVisualID(
-					incomingLink) == org.muml.pim.realtimestatechart.diagram.edit.parts.TransitionEditPart.VISUAL_ID) {
+			if (MumlVisualIDRegistry.getVisualID(incomingLink) == TransitionEditPart.VISUAL_ID) {
 				DestroyElementRequest r = new DestroyElementRequest(incomingLink.getElement(), false);
 				cmd.add(new DestroyElementCommand(r));
 				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
@@ -57,8 +60,7 @@ public class ExitPointItemSemanticEditPolicy
 		}
 		for (Iterator<?> it = view.getSourceEdges().iterator(); it.hasNext();) {
 			Edge outgoingLink = (Edge) it.next();
-			if (org.muml.pim.realtimestatechart.diagram.part.MumlVisualIDRegistry.getVisualID(
-					outgoingLink) == org.muml.pim.realtimestatechart.diagram.edit.parts.TransitionEditPart.VISUAL_ID) {
+			if (MumlVisualIDRegistry.getVisualID(outgoingLink) == TransitionEditPart.VISUAL_ID) {
 				DestroyElementRequest r = new DestroyElementRequest(outgoingLink.getElement(), false);
 				cmd.add(new DestroyElementCommand(r));
 				cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
@@ -90,11 +92,8 @@ public class ExitPointItemSemanticEditPolicy
 	 * @generated
 	 */
 	protected Command getStartCreateRelationshipCommand(CreateRelationshipRequest req) {
-		if (org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes.Transition_4003 == req
-				.getElementType()) {
-			return getGEFWrapper(
-					new org.muml.pim.realtimestatechart.diagram.edit.commands.TransitionCreateCommand(
-							req, req.getSource(), req.getTarget()));
+		if (MumlElementTypes.Transition_4003 == req.getElementType()) {
+			return getGEFWrapper(new TransitionCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return null;
 	}
@@ -103,11 +102,8 @@ public class ExitPointItemSemanticEditPolicy
 	 * @generated
 	 */
 	protected Command getCompleteCreateRelationshipCommand(CreateRelationshipRequest req) {
-		if (org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes.Transition_4003 == req
-				.getElementType()) {
-			return getGEFWrapper(
-					new org.muml.pim.realtimestatechart.diagram.edit.commands.TransitionCreateCommand(
-							req, req.getSource(), req.getTarget()));
+		if (MumlElementTypes.Transition_4003 == req.getElementType()) {
+			return getGEFWrapper(new TransitionCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return null;
 	}
@@ -120,10 +116,8 @@ public class ExitPointItemSemanticEditPolicy
 	 */
 	protected Command getReorientRelationshipCommand(ReorientRelationshipRequest req) {
 		switch (getVisualID(req)) {
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.TransitionEditPart.VISUAL_ID:
-			return getGEFWrapper(
-					new org.muml.pim.realtimestatechart.diagram.edit.commands.TransitionReorientCommand(
-							req));
+		case TransitionEditPart.VISUAL_ID:
+			return getGEFWrapper(new TransitionReorientCommand(req));
 		}
 		return super.getReorientRelationshipCommand(req);
 	}

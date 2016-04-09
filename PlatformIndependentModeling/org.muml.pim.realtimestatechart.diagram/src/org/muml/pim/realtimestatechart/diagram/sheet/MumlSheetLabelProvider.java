@@ -20,6 +20,9 @@ import org.eclipse.jface.viewers.BaseLabelProvider;
 import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.swt.graphics.Image;
+import org.muml.pim.realtimestatechart.diagram.navigator.MumlNavigatorGroup;
+import org.muml.pim.realtimestatechart.diagram.part.MumlVisualIDRegistry;
+import org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes;
 
 /**
  * @generated
@@ -42,9 +45,8 @@ public class MumlSheetLabelProvider extends BaseLabelProvider implements ILabelP
 		}
 		// END: Added for MUML #912
 
-		if (element instanceof org.muml.pim.realtimestatechart.diagram.navigator.MumlNavigatorGroup) {
-			return ((org.muml.pim.realtimestatechart.diagram.navigator.MumlNavigatorGroup) element)
-					.getGroupName();
+		if (element instanceof MumlNavigatorGroup) {
+			return ((MumlNavigatorGroup) element).getGroupName();
 		}
 		IElementType etype = getElementType(getView(element));
 		return etype == null ? "" : etype.getDisplayName();
@@ -55,8 +57,7 @@ public class MumlSheetLabelProvider extends BaseLabelProvider implements ILabelP
 	 */
 	public Image getImage(Object element) {
 		IElementType etype = getElementType(getView(unwrap(element)));
-		return etype == null ? null
-				: org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes.getImage(etype);
+		return etype == null ? null : MumlElementTypes.getImage(etype);
 	}
 
 	/**
@@ -88,10 +89,8 @@ public class MumlSheetLabelProvider extends BaseLabelProvider implements ILabelP
 	private IElementType getElementType(View view) {
 		// For intermediate views climb up the containment hierarchy to find the one associated with an element type.
 		while (view != null) {
-			int vid = org.muml.pim.realtimestatechart.diagram.part.MumlVisualIDRegistry
-					.getVisualID(view);
-			IElementType etype = org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes
-					.getElementType(vid);
+			int vid = MumlVisualIDRegistry.getVisualID(view);
+			IElementType etype = MumlElementTypes.getElementType(vid);
 			if (etype != null) {
 				return etype;
 			}

@@ -14,29 +14,27 @@ package org.muml.pim.realtimestatechart.diagram.edit.policies;
 
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
+import org.muml.pim.realtimestatechart.diagram.edit.commands.SynchronizationChannelCreateCommand;
+import org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes;
 
 /**
  * @generated
  */
-public class StateChannelCompartmentItemSemanticEditPolicy
-		extends org.muml.pim.realtimestatechart.diagram.edit.policies.MumlBaseItemSemanticEditPolicy {
+public class StateChannelCompartmentItemSemanticEditPolicy extends MumlBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public StateChannelCompartmentItemSemanticEditPolicy() {
-		super(org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes.State_3032);
+		super(MumlElementTypes.State_3032);
 	}
 
 	/**
 	 * @generated
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
-		if (org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes.SynchronizationChannel_3037 == req
-				.getElementType()) {
-			return getGEFWrapper(
-					new org.muml.pim.realtimestatechart.diagram.edit.commands.SynchronizationChannelCreateCommand(
-							req));
+		if (MumlElementTypes.SynchronizationChannel_3037 == req.getElementType()) {
+			return getGEFWrapper(new SynchronizationChannelCreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}

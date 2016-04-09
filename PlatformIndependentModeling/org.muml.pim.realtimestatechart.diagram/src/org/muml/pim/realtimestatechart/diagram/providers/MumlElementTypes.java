@@ -25,6 +25,21 @@ import org.eclipse.gmf.tooling.runtime.providers.DiagramElementTypeImages;
 import org.eclipse.gmf.tooling.runtime.providers.DiagramElementTypes;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.swt.graphics.Image;
+import org.muml.pim.realtimestatechart.RealtimestatechartPackage;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.ClockConstraintEditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.DoEventEditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.EntryEventEditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.EntryPointEditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.ExitEventEditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.ExitPointEditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.ModelElementCategoryEditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.RealtimeStatechart2EditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.RealtimeStatechartEditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.RegionEditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.StateEditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.SynchronizationChannelEditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.TransitionEditPart;
+import org.muml.pim.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin;
 
 /**
  * @generated
@@ -46,8 +61,7 @@ public class MumlElementTypes {
 	 * @generated
 	 */
 	private static DiagramElementTypeImages elementTypeImages = new DiagramElementTypeImages(
-			org.muml.pim.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
-					.getInstance().getItemProvidersAdapterFactory());
+			RealtimestatechartDiagramEditorPlugin.getInstance().getItemProvidersAdapterFactory());
 
 	/**
 	 * @generated
@@ -67,8 +81,7 @@ public class MumlElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType State_3032 = getElementType(
-			"org.muml.pim.realtimestatechart.diagram.State_3032"); //$NON-NLS-1$
+	public static final IElementType State_3032 = getElementType("org.muml.pim.realtimestatechart.diagram.State_3032"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
@@ -158,52 +171,31 @@ public class MumlElementTypes {
 		if (elements == null) {
 			elements = new IdentityHashMap<IElementType, ENamedElement>();
 
-			elements.put(RealtimeStatechart_1000,
-					org.muml.pim.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-							.getRealtimeStatechart());
+			elements.put(RealtimeStatechart_1000, RealtimestatechartPackage.eINSTANCE.getRealtimeStatechart());
 
-			elements.put(RealtimeStatechart_2007,
-					org.muml.pim.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-							.getRealtimeStatechart());
+			elements.put(RealtimeStatechart_2007, RealtimestatechartPackage.eINSTANCE.getRealtimeStatechart());
 
-			elements.put(State_3032,
-					org.muml.pim.realtimestatechart.RealtimestatechartPackage.eINSTANCE.getState());
+			elements.put(State_3032, RealtimestatechartPackage.eINSTANCE.getState());
 
-			elements.put(EntryEvent_3033,
-					org.muml.pim.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-							.getEntryEvent());
+			elements.put(EntryEvent_3033, RealtimestatechartPackage.eINSTANCE.getEntryEvent());
 
-			elements.put(DoEvent_3034,
-					org.muml.pim.realtimestatechart.RealtimestatechartPackage.eINSTANCE.getDoEvent());
+			elements.put(DoEvent_3034, RealtimestatechartPackage.eINSTANCE.getDoEvent());
 
-			elements.put(ExitEvent_3035,
-					org.muml.pim.realtimestatechart.RealtimestatechartPackage.eINSTANCE.getExitEvent());
+			elements.put(ExitEvent_3035, RealtimestatechartPackage.eINSTANCE.getExitEvent());
 
-			elements.put(ClockConstraint_3036,
-					org.muml.pim.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-							.getClockConstraint());
+			elements.put(ClockConstraint_3036, RealtimestatechartPackage.eINSTANCE.getClockConstraint());
 
-			elements.put(SynchronizationChannel_3037,
-					org.muml.pim.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-							.getSynchronizationChannel());
+			elements.put(SynchronizationChannel_3037, RealtimestatechartPackage.eINSTANCE.getSynchronizationChannel());
 
-			elements.put(Region_3042,
-					org.muml.pim.realtimestatechart.RealtimestatechartPackage.eINSTANCE.getRegion());
+			elements.put(Region_3042, RealtimestatechartPackage.eINSTANCE.getRegion());
 
-			elements.put(RealtimeStatechart_3043,
-					org.muml.pim.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-							.getRealtimeStatechart());
+			elements.put(RealtimeStatechart_3043, RealtimestatechartPackage.eINSTANCE.getRealtimeStatechart());
 
-			elements.put(EntryPoint_3040,
-					org.muml.pim.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-							.getEntryPoint());
+			elements.put(EntryPoint_3040, RealtimestatechartPackage.eINSTANCE.getEntryPoint());
 
-			elements.put(ExitPoint_3041,
-					org.muml.pim.realtimestatechart.RealtimestatechartPackage.eINSTANCE.getExitPoint());
+			elements.put(ExitPoint_3041, RealtimestatechartPackage.eINSTANCE.getExitPoint());
 
-			elements.put(Transition_4003,
-					org.muml.pim.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-							.getTransition());
+			elements.put(Transition_4003, RealtimestatechartPackage.eINSTANCE.getTransition());
 		}
 		return (ENamedElement) elements.get(type);
 	}
@@ -243,31 +235,31 @@ public class MumlElementTypes {
 	 */
 	public static IElementType getElementType(int visualID) {
 		switch (visualID) {
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.ModelElementCategoryEditPart.VISUAL_ID:
+		case ModelElementCategoryEditPart.VISUAL_ID:
 			return RealtimeStatechart_1000;
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.RealtimeStatechartEditPart.VISUAL_ID:
+		case RealtimeStatechartEditPart.VISUAL_ID:
 			return RealtimeStatechart_2007;
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.StateEditPart.VISUAL_ID:
+		case StateEditPart.VISUAL_ID:
 			return State_3032;
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.EntryEventEditPart.VISUAL_ID:
+		case EntryEventEditPart.VISUAL_ID:
 			return EntryEvent_3033;
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.DoEventEditPart.VISUAL_ID:
+		case DoEventEditPart.VISUAL_ID:
 			return DoEvent_3034;
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.ExitEventEditPart.VISUAL_ID:
+		case ExitEventEditPart.VISUAL_ID:
 			return ExitEvent_3035;
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.ClockConstraintEditPart.VISUAL_ID:
+		case ClockConstraintEditPart.VISUAL_ID:
 			return ClockConstraint_3036;
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.SynchronizationChannelEditPart.VISUAL_ID:
+		case SynchronizationChannelEditPart.VISUAL_ID:
 			return SynchronizationChannel_3037;
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.RegionEditPart.VISUAL_ID:
+		case RegionEditPart.VISUAL_ID:
 			return Region_3042;
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.RealtimeStatechart2EditPart.VISUAL_ID:
+		case RealtimeStatechart2EditPart.VISUAL_ID:
 			return RealtimeStatechart_3043;
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.EntryPointEditPart.VISUAL_ID:
+		case EntryPointEditPart.VISUAL_ID:
 			return EntryPoint_3040;
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.ExitPointEditPart.VISUAL_ID:
+		case ExitPointEditPart.VISUAL_ID:
 			return ExitPoint_3041;
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.TransitionEditPart.VISUAL_ID:
+		case TransitionEditPart.VISUAL_ID:
 			return Transition_4003;
 		}
 		return null;
@@ -284,8 +276,7 @@ public class MumlElementTypes {
 		@Override
 
 		public boolean isKnownElementType(IElementType elementType) {
-			return org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes
-					.isKnownElementType(elementType);
+			return org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes.isKnownElementType(elementType);
 		}
 
 		/**
@@ -294,8 +285,7 @@ public class MumlElementTypes {
 		@Override
 
 		public IElementType getElementTypeForVisualId(int visualID) {
-			return org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes
-					.getElementType(visualID);
+			return org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes.getElementType(visualID);
 		}
 
 		/**
@@ -304,8 +294,7 @@ public class MumlElementTypes {
 		@Override
 
 		public ENamedElement getDefiningNamedElement(IAdaptable elementTypeAdapter) {
-			return org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes
-					.getElement(elementTypeAdapter);
+			return org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes.getElement(elementTypeAdapter);
 		}
 	};
 

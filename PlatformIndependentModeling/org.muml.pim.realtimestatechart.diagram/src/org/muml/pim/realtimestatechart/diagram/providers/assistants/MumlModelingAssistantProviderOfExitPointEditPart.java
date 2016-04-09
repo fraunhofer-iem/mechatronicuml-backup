@@ -19,12 +19,16 @@ import java.util.List;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.EntryPointEditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.ExitPointEditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.StateEditPart;
+import org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes;
+import org.muml.pim.realtimestatechart.diagram.providers.MumlModelingAssistantProvider;
 
 /**
  * @generated
  */
-public class MumlModelingAssistantProviderOfExitPointEditPart
-		extends org.muml.pim.realtimestatechart.diagram.providers.MumlModelingAssistantProvider {
+public class MumlModelingAssistantProviderOfExitPointEditPart extends MumlModelingAssistantProvider {
 
 	/**
 	 * @generated
@@ -32,17 +36,15 @@ public class MumlModelingAssistantProviderOfExitPointEditPart
 	@Override
 	public List<IElementType> getRelTypesOnSource(IAdaptable source) {
 		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source.getAdapter(IGraphicalEditPart.class);
-		return doGetRelTypesOnSource(
-				(org.muml.pim.realtimestatechart.diagram.edit.parts.ExitPointEditPart) sourceEditPart);
+		return doGetRelTypesOnSource((ExitPointEditPart) sourceEditPart);
 	}
 
 	/**
-	 * @generated
-	 */
-	public List<IElementType> doGetRelTypesOnSource(
-			org.muml.pim.realtimestatechart.diagram.edit.parts.ExitPointEditPart source) {
+	* @generated
+	*/
+	public List<IElementType> doGetRelTypesOnSource(ExitPointEditPart source) {
 		List<IElementType> types = new ArrayList<IElementType>(1);
-		types.add(org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes.Transition_4003);
+		types.add(MumlElementTypes.Transition_4003);
 		return types;
 	}
 
@@ -53,29 +55,23 @@ public class MumlModelingAssistantProviderOfExitPointEditPart
 	public List<IElementType> getRelTypesOnSourceAndTarget(IAdaptable source, IAdaptable target) {
 		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source.getAdapter(IGraphicalEditPart.class);
 		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target.getAdapter(IGraphicalEditPart.class);
-		return doGetRelTypesOnSourceAndTarget(
-				(org.muml.pim.realtimestatechart.diagram.edit.parts.ExitPointEditPart) sourceEditPart,
-				targetEditPart);
+		return doGetRelTypesOnSourceAndTarget((ExitPointEditPart) sourceEditPart, targetEditPart);
 	}
 
 	/**
-	 * @generated
-	 */
-	public List<IElementType> doGetRelTypesOnSourceAndTarget(
-			org.muml.pim.realtimestatechart.diagram.edit.parts.ExitPointEditPart source,
+	* @generated
+	*/
+	public List<IElementType> doGetRelTypesOnSourceAndTarget(ExitPointEditPart source,
 			IGraphicalEditPart targetEditPart) {
 		List<IElementType> types = new LinkedList<IElementType>();
-		if (targetEditPart instanceof org.muml.pim.realtimestatechart.diagram.edit.parts.StateEditPart) {
-			types.add(
-					org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes.Transition_4003);
+		if (targetEditPart instanceof StateEditPart) {
+			types.add(MumlElementTypes.Transition_4003);
 		}
-		if (targetEditPart instanceof org.muml.pim.realtimestatechart.diagram.edit.parts.EntryPointEditPart) {
-			types.add(
-					org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes.Transition_4003);
+		if (targetEditPart instanceof EntryPointEditPart) {
+			types.add(MumlElementTypes.Transition_4003);
 		}
-		if (targetEditPart instanceof org.muml.pim.realtimestatechart.diagram.edit.parts.ExitPointEditPart) {
-			types.add(
-					org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes.Transition_4003);
+		if (targetEditPart instanceof ExitPointEditPart) {
+			types.add(MumlElementTypes.Transition_4003);
 		}
 		return types;
 	}
@@ -86,24 +82,18 @@ public class MumlModelingAssistantProviderOfExitPointEditPart
 	@Override
 	public List<IElementType> getTypesForTarget(IAdaptable source, IElementType relationshipType) {
 		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source.getAdapter(IGraphicalEditPart.class);
-		return doGetTypesForTarget(
-				(org.muml.pim.realtimestatechart.diagram.edit.parts.ExitPointEditPart) sourceEditPart,
-				relationshipType);
+		return doGetTypesForTarget((ExitPointEditPart) sourceEditPart, relationshipType);
 	}
 
 	/**
-	 * @generated
-	 */
-	public List<IElementType> doGetTypesForTarget(
-			org.muml.pim.realtimestatechart.diagram.edit.parts.ExitPointEditPart source,
-			IElementType relationshipType) {
+	* @generated
+	*/
+	public List<IElementType> doGetTypesForTarget(ExitPointEditPart source, IElementType relationshipType) {
 		List<IElementType> types = new ArrayList<IElementType>();
-		if (relationshipType == org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes.Transition_4003) {
-			types.add(org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes.State_3032);
-			types.add(
-					org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes.EntryPoint_3040);
-			types.add(
-					org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes.ExitPoint_3041);
+		if (relationshipType == MumlElementTypes.Transition_4003) {
+			types.add(MumlElementTypes.State_3032);
+			types.add(MumlElementTypes.EntryPoint_3040);
+			types.add(MumlElementTypes.ExitPoint_3041);
 		}
 		return types;
 	}
@@ -114,17 +104,15 @@ public class MumlModelingAssistantProviderOfExitPointEditPart
 	@Override
 	public List<IElementType> getRelTypesOnTarget(IAdaptable target) {
 		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target.getAdapter(IGraphicalEditPart.class);
-		return doGetRelTypesOnTarget(
-				(org.muml.pim.realtimestatechart.diagram.edit.parts.ExitPointEditPart) targetEditPart);
+		return doGetRelTypesOnTarget((ExitPointEditPart) targetEditPart);
 	}
 
 	/**
-	 * @generated
-	 */
-	public List<IElementType> doGetRelTypesOnTarget(
-			org.muml.pim.realtimestatechart.diagram.edit.parts.ExitPointEditPart target) {
+	* @generated
+	*/
+	public List<IElementType> doGetRelTypesOnTarget(ExitPointEditPart target) {
 		List<IElementType> types = new ArrayList<IElementType>(1);
-		types.add(org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes.Transition_4003);
+		types.add(MumlElementTypes.Transition_4003);
 		return types;
 	}
 
@@ -134,24 +122,18 @@ public class MumlModelingAssistantProviderOfExitPointEditPart
 	@Override
 	public List<IElementType> getTypesForSource(IAdaptable target, IElementType relationshipType) {
 		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target.getAdapter(IGraphicalEditPart.class);
-		return doGetTypesForSource(
-				(org.muml.pim.realtimestatechart.diagram.edit.parts.ExitPointEditPart) targetEditPart,
-				relationshipType);
+		return doGetTypesForSource((ExitPointEditPart) targetEditPart, relationshipType);
 	}
 
 	/**
-	 * @generated
-	 */
-	public List<IElementType> doGetTypesForSource(
-			org.muml.pim.realtimestatechart.diagram.edit.parts.ExitPointEditPart target,
-			IElementType relationshipType) {
+	* @generated
+	*/
+	public List<IElementType> doGetTypesForSource(ExitPointEditPart target, IElementType relationshipType) {
 		List<IElementType> types = new ArrayList<IElementType>();
-		if (relationshipType == org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes.Transition_4003) {
-			types.add(org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes.State_3032);
-			types.add(
-					org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes.EntryPoint_3040);
-			types.add(
-					org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes.ExitPoint_3041);
+		if (relationshipType == MumlElementTypes.Transition_4003) {
+			types.add(MumlElementTypes.State_3032);
+			types.add(MumlElementTypes.EntryPoint_3040);
+			types.add(MumlElementTypes.ExitPoint_3041);
 		}
 		return types;
 	}

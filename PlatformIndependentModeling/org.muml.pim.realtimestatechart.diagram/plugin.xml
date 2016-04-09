@@ -48,7 +48,7 @@
   	  <wizard
   	     name="%newWizardName"
   	     icon="icons/obj16/RealtimestatechartDiagramFile.gif"
-  	     category="de.uni_paderborn.fujaba/de.uni_paderborn.fujaba.diagrams"
+  	     category="org.muml/org.muml.diagrams"
   	     class="org.muml.pim.realtimestatechart.diagram.part.MumlCreationWizard"
   	     id="org.muml.pim.realtimestatechart.diagram.part.MumlCreationWizardID">
   	  	 <description>%newWizardDesc</description>  
@@ -734,9 +734,9 @@
 	         allPopups="false"
 	         locationURI="popup:de.uni_paderborn.fujaba.muml.browser.new.menu?after=additions">
 	  		<command
-                 commandId="de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart.browser.create"
+                 commandId="org.muml.pim.realtimestatechart.RealtimeStatechart.browser.create"
                  icon="icons/obj16/RealtimestatechartDiagramFile.gif"
-                 id="de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart.browser.create"
+                 id="org.muml.pim.realtimestatechart.RealtimeStatechart.browser.create"
                  label="RealtimeStatechart"
                  style="push">
               <visibleWhen
@@ -779,7 +779,7 @@
            defaultHandler="org.muml.pim.realtimestatechart.diagram.part.MumlInitDiagramFileAction$CreateDiagramElement"
            categoryId="de.uni_paderborn.fujaba"
            description="Create new Real-Time Statechart"
-           id="de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart.browser.create"
+           id="org.muml.pim.realtimestatechart.RealtimeStatechart.browser.create"
            name="Create new Real-Time Statechart">
     </command>
     </extension>
@@ -788,7 +788,7 @@
          point="org.muml.core.modelinstance.modelelementcategory">
       <?gmfgen generated="true"?>  
       <category
-            key="org.muml.realtimestatechart.category"
+            key="org.muml.pim.realtimestatechart.category"
             name="realtimestatechart">
          
          <child
@@ -807,7 +807,7 @@
             editorId="org.muml.pim.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorID"
             editorName="Real-Time Statechart Editor"
             fileExtension="realtimestatechart_diagram"
-            modelElementCategoryKey="org.muml.realtimestatechart.category"
+            modelElementCategoryKey="org.muml.pim.realtimestatechart.category"
             modelId="Real-Time Statechart">
          <diagramElement
                packageNsURI="http://www.muml.org/pim/realtimestatechart/1.0.0"

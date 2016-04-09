@@ -61,6 +61,10 @@ import org.eclipse.swt.accessibility.AccessibleEvent;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.FontData;
 import org.eclipse.swt.graphics.Image;
+import org.muml.pim.realtimestatechart.diagram.edit.policies.MumlTextSelectionEditPolicy;
+import org.muml.pim.realtimestatechart.diagram.part.MumlVisualIDRegistry;
+import org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes;
+import org.muml.pim.realtimestatechart.diagram.providers.MumlParserProvider;
 
 /**
  * @generated
@@ -125,8 +129,8 @@ public class WrappingLabel9EditPart extends LabelEditPart implements ITextAwareE
 	 */
 	static {
 		registerSnapBackPosition(
-				org.muml.pim.realtimestatechart.diagram.part.MumlVisualIDRegistry.getType(
-						org.muml.pim.realtimestatechart.diagram.edit.parts.WrappingLabel9EditPart.VISUAL_ID),
+				MumlVisualIDRegistry
+						.getType(org.muml.pim.realtimestatechart.diagram.edit.parts.WrappingLabel9EditPart.VISUAL_ID),
 				new Point(-10, 20));
 	}
 
@@ -143,8 +147,7 @@ public class WrappingLabel9EditPart extends LabelEditPart implements ITextAwareE
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicy.DIRECT_EDIT_ROLE, new LabelDirectEditPolicy());
-		installEditPolicy(EditPolicy.SELECTION_FEEDBACK_ROLE,
-				new org.muml.pim.realtimestatechart.diagram.edit.policies.MumlTextSelectionEditPolicy());
+		installEditPolicy(EditPolicy.SELECTION_FEEDBACK_ROLE, new MumlTextSelectionEditPolicy());
 		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, new DefaultLinkLabelDragPolicy());
 	}
 
@@ -341,10 +344,8 @@ public class WrappingLabel9EditPart extends LabelEditPart implements ITextAwareE
 	 */
 	public IParser getParser() {
 		if (parser == null) {
-			parser = org.muml.pim.realtimestatechart.diagram.providers.MumlParserProvider.getParser(
-					org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes.Transition_4003,
-					getParserElement(),
-					org.muml.pim.realtimestatechart.diagram.part.MumlVisualIDRegistry.getType(
+			parser = MumlParserProvider.getParser(MumlElementTypes.Transition_4003, getParserElement(),
+					MumlVisualIDRegistry.getType(
 							org.muml.pim.realtimestatechart.diagram.edit.parts.WrappingLabel9EditPart.VISUAL_ID));
 		}
 		return parser;
@@ -355,9 +356,7 @@ public class WrappingLabel9EditPart extends LabelEditPart implements ITextAwareE
 	 */
 	protected DirectEditManager getManager() {
 		if (manager == null) {
-			setManager(new TextDirectEditManager(this, null,
-					org.muml.pim.realtimestatechart.diagram.edit.parts.MumlEditPartFactory
-							.getTextCellEditorLocator(this)));
+			setManager(new TextDirectEditManager(this, null, MumlEditPartFactory.getTextCellEditorLocator(this)));
 		}
 		return manager;
 	}

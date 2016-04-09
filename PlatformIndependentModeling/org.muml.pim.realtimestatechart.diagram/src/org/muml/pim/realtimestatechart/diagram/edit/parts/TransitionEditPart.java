@@ -32,6 +32,9 @@ import org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.widgets.Display;
+import org.muml.pim.common.edit.policies.statechart.TransitionColorEditPolicy;
+import org.muml.pim.common.figures.TransitionPriorityDecoration;
+import org.muml.pim.realtimestatechart.diagram.edit.policies.TransitionItemSemanticEditPolicy;
 
 /**
  * @generated
@@ -78,11 +81,10 @@ public class TransitionEditPart extends ConnectionNodeEditPart implements ITreeB
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
-				new org.muml.pim.realtimestatechart.diagram.edit.policies.TransitionItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new TransitionItemSemanticEditPolicy());
 
 		installEditPolicy(org.muml.pim.common.edit.policies.EditPolicyRoles.TRANSITION_COLOR_ROLE,
-				new org.muml.pim.common.edit.policies.statechart.TransitionColorEditPolicy());
+				new TransitionColorEditPolicy());
 
 	}
 
@@ -90,13 +92,12 @@ public class TransitionEditPart extends ConnectionNodeEditPart implements ITreeB
 	 * @generated
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof org.muml.pim.realtimestatechart.diagram.edit.parts.WrappingLabel8EditPart) {
-			((org.muml.pim.realtimestatechart.diagram.edit.parts.WrappingLabel8EditPart) childEditPart)
-					.setLabel(getPrimaryShape().getFigureTransitionLabelFigure());
+		if (childEditPart instanceof WrappingLabel8EditPart) {
+			((WrappingLabel8EditPart) childEditPart).setLabel(getPrimaryShape().getFigureTransitionLabelFigure());
 			return true;
 		}
-		if (childEditPart instanceof org.muml.pim.realtimestatechart.diagram.edit.parts.WrappingLabel9EditPart) {
-			((org.muml.pim.realtimestatechart.diagram.edit.parts.WrappingLabel9EditPart) childEditPart)
+		if (childEditPart instanceof WrappingLabel9EditPart) {
+			((WrappingLabel9EditPart) childEditPart)
 					.setLabel(getPrimaryShape().getFigureTransitionDeadlineLabelFigure());
 			return true;
 		}
@@ -117,10 +118,10 @@ public class TransitionEditPart extends ConnectionNodeEditPart implements ITreeB
 	 * @generated
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof org.muml.pim.realtimestatechart.diagram.edit.parts.WrappingLabel8EditPart) {
+		if (childEditPart instanceof WrappingLabel8EditPart) {
 			return true;
 		}
-		if (childEditPart instanceof org.muml.pim.realtimestatechart.diagram.edit.parts.WrappingLabel9EditPart) {
+		if (childEditPart instanceof WrappingLabel9EditPart) {
 			return true;
 		}
 		return false;
@@ -203,7 +204,7 @@ public class TransitionEditPart extends ConnectionNodeEditPart implements ITreeB
 		 * @generated
 		 */
 		private RotatableDecoration createSourceDecoration() {
-			org.muml.pim.common.figures.TransitionPriorityDecoration df = new org.muml.pim.common.figures.TransitionPriorityDecoration();
+			TransitionPriorityDecoration df = new TransitionPriorityDecoration();
 			df.setLocation(new Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(0)));
 			df.setSize(getMapMode().DPtoLP(16), getMapMode().DPtoLP(16));
 

@@ -27,6 +27,35 @@ import org.eclipse.swt.graphics.Image;
 import org.eclipse.ui.IMemento;
 import org.eclipse.ui.navigator.ICommonContentExtensionSite;
 import org.eclipse.ui.navigator.ICommonLabelProvider;
+import org.muml.pim.realtimestatechart.EntryPoint;
+import org.muml.pim.realtimestatechart.ExitPoint;
+import org.muml.pim.realtimestatechart.RealtimeStatechart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.ClockConstraintEditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.DoEventEditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.EntryEventEditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.EntryPointEditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.ExitEventEditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.ExitPointEditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.ModelElementCategoryEditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.RealtimeStatechart2EditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.RealtimeStatechartEditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.RealtimeStatechartNameEditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.RegionEditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.RegionNameEditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.StateEditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.StateNameEditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.SynchronizationChannelEditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.TransitionEditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.WrappingLabel2EditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.WrappingLabel3EditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.WrappingLabel4EditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.WrappingLabel5EditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.WrappingLabel6EditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.WrappingLabel8EditPart;
+import org.muml.pim.realtimestatechart.diagram.part.MumlVisualIDRegistry;
+import org.muml.pim.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin;
+import org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes;
+import org.muml.pim.realtimestatechart.diagram.providers.MumlParserProvider;
 
 /**
  * @generated
@@ -37,10 +66,10 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements ICommon
 	 * @generated
 	 */
 	static {
-		org.muml.pim.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin.getInstance()
-				.getImageRegistry().put("Navigator?UnknownElement", ImageDescriptor.getMissingImageDescriptor()); //$NON-NLS-1$
-		org.muml.pim.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin.getInstance()
-				.getImageRegistry().put("Navigator?ImageNotFound", ImageDescriptor.getMissingImageDescriptor()); //$NON-NLS-1$
+		RealtimestatechartDiagramEditorPlugin.getInstance().getImageRegistry().put("Navigator?UnknownElement", //$NON-NLS-1$
+				ImageDescriptor.getMissingImageDescriptor());
+		RealtimestatechartDiagramEditorPlugin.getInstance().getImageRegistry().put("Navigator?ImageNotFound", //$NON-NLS-1$
+				ImageDescriptor.getMissingImageDescriptor());
 	}
 
 	/**
@@ -48,10 +77,7 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements ICommon
 	 */
 	public void updateLabel(ViewerLabel label, TreePath elementPath) {
 		Object element = elementPath.getLastSegment();
-		if (element instanceof org.muml.pim.realtimestatechart.diagram.navigator.MumlNavigatorItem
-				&& !isOwnView(
-						((org.muml.pim.realtimestatechart.diagram.navigator.MumlNavigatorItem) element)
-								.getView())) {
+		if (element instanceof MumlNavigatorItem && !isOwnView(((MumlNavigatorItem) element).getView())) {
 			return;
 		}
 		label.setText(getText(element));
@@ -62,14 +88,13 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements ICommon
 	 * @generated
 	 */
 	public Image getImage(Object element) {
-		if (element instanceof org.muml.pim.realtimestatechart.diagram.navigator.MumlNavigatorGroup) {
-			org.muml.pim.realtimestatechart.diagram.navigator.MumlNavigatorGroup group = (org.muml.pim.realtimestatechart.diagram.navigator.MumlNavigatorGroup) element;
-			return org.muml.pim.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
-					.getInstance().getBundledImage(group.getIcon());
+		if (element instanceof MumlNavigatorGroup) {
+			MumlNavigatorGroup group = (MumlNavigatorGroup) element;
+			return RealtimestatechartDiagramEditorPlugin.getInstance().getBundledImage(group.getIcon());
 		}
 
-		if (element instanceof org.muml.pim.realtimestatechart.diagram.navigator.MumlNavigatorItem) {
-			org.muml.pim.realtimestatechart.diagram.navigator.MumlNavigatorItem navigatorItem = (org.muml.pim.realtimestatechart.diagram.navigator.MumlNavigatorItem) element;
+		if (element instanceof MumlNavigatorItem) {
+			MumlNavigatorItem navigatorItem = (MumlNavigatorItem) element;
 			if (!isOwnView(navigatorItem.getView())) {
 				return super.getImage(element);
 			}
@@ -83,47 +108,47 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements ICommon
 	 * @generated
 	 */
 	public Image getImage(View view) {
-		switch (org.muml.pim.realtimestatechart.diagram.part.MumlVisualIDRegistry.getVisualID(view)) {
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.ModelElementCategoryEditPart.VISUAL_ID:
+		switch (MumlVisualIDRegistry.getVisualID(view)) {
+		case ModelElementCategoryEditPart.VISUAL_ID:
 			return getImage("Navigator?Diagram?http://www.muml.org/pim/realtimestatechart/1.0.0?RealtimeStatechart", //$NON-NLS-1$
-					org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes.RealtimeStatechart_1000);
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.RealtimeStatechartEditPart.VISUAL_ID:
+					MumlElementTypes.RealtimeStatechart_1000);
+		case RealtimeStatechartEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?TopLevelNode?http://www.muml.org/pim/realtimestatechart/1.0.0?RealtimeStatechart", //$NON-NLS-1$
-					org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes.RealtimeStatechart_2007);
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.StateEditPart.VISUAL_ID:
+					MumlElementTypes.RealtimeStatechart_2007);
+		case StateEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.muml.org/pim/realtimestatechart/1.0.0?State", //$NON-NLS-1$
-					org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes.State_3032);
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.EntryEventEditPart.VISUAL_ID:
+					MumlElementTypes.State_3032);
+		case EntryEventEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.muml.org/pim/realtimestatechart/1.0.0?EntryEvent", //$NON-NLS-1$
-					org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes.EntryEvent_3033);
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.DoEventEditPart.VISUAL_ID:
+					MumlElementTypes.EntryEvent_3033);
+		case DoEventEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.muml.org/pim/realtimestatechart/1.0.0?DoEvent", //$NON-NLS-1$
-					org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes.DoEvent_3034);
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.ExitEventEditPart.VISUAL_ID:
+					MumlElementTypes.DoEvent_3034);
+		case ExitEventEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.muml.org/pim/realtimestatechart/1.0.0?ExitEvent", //$NON-NLS-1$
-					org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes.ExitEvent_3035);
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.ClockConstraintEditPart.VISUAL_ID:
+					MumlElementTypes.ExitEvent_3035);
+		case ClockConstraintEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.muml.org/pim/realtimestatechart/1.0.0?ClockConstraint", //$NON-NLS-1$
-					org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes.ClockConstraint_3036);
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.SynchronizationChannelEditPart.VISUAL_ID:
+					MumlElementTypes.ClockConstraint_3036);
+		case SynchronizationChannelEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.muml.org/pim/realtimestatechart/1.0.0?SynchronizationChannel", //$NON-NLS-1$
-					org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes.SynchronizationChannel_3037);
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.EntryPointEditPart.VISUAL_ID:
+					MumlElementTypes.SynchronizationChannel_3037);
+		case EntryPointEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.muml.org/pim/realtimestatechart/1.0.0?EntryPoint", //$NON-NLS-1$
-					org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes.EntryPoint_3040);
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.ExitPointEditPart.VISUAL_ID:
+					MumlElementTypes.EntryPoint_3040);
+		case ExitPointEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.muml.org/pim/realtimestatechart/1.0.0?ExitPoint", //$NON-NLS-1$
-					org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes.ExitPoint_3041);
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.RegionEditPart.VISUAL_ID:
+					MumlElementTypes.ExitPoint_3041);
+		case RegionEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.muml.org/pim/realtimestatechart/1.0.0?Region", //$NON-NLS-1$
-					org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes.Region_3042);
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.RealtimeStatechart2EditPart.VISUAL_ID:
+					MumlElementTypes.Region_3042);
+		case RealtimeStatechart2EditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.muml.org/pim/realtimestatechart/1.0.0?RealtimeStatechart", //$NON-NLS-1$
-					org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes.RealtimeStatechart_3043);
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.TransitionEditPart.VISUAL_ID:
+					MumlElementTypes.RealtimeStatechart_3043);
+		case TransitionEditPart.VISUAL_ID:
 			return getImage("Navigator?Link?http://www.muml.org/pim/realtimestatechart/1.0.0?Transition", //$NON-NLS-1$
-					org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes.Transition_4003);
+					MumlElementTypes.Transition_4003);
 		}
 		return getImage("Navigator?UnknownElement", null); //$NON-NLS-1$
 	}
@@ -132,14 +157,10 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements ICommon
 	 * @generated
 	 */
 	private Image getImage(String key, IElementType elementType) {
-		ImageRegistry imageRegistry = org.muml.pim.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
-				.getInstance().getImageRegistry();
+		ImageRegistry imageRegistry = RealtimestatechartDiagramEditorPlugin.getInstance().getImageRegistry();
 		Image image = imageRegistry.get(key);
-		if (image == null && elementType != null
-				&& org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes
-						.isKnownElementType(elementType)) {
-			image = org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes
-					.getImage(elementType);
+		if (image == null && elementType != null && MumlElementTypes.isKnownElementType(elementType)) {
+			image = MumlElementTypes.getImage(elementType);
 			imageRegistry.put(key, image);
 		}
 
@@ -154,13 +175,13 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements ICommon
 	 * @generated
 	 */
 	public String getText(Object element) {
-		if (element instanceof org.muml.pim.realtimestatechart.diagram.navigator.MumlNavigatorGroup) {
-			org.muml.pim.realtimestatechart.diagram.navigator.MumlNavigatorGroup group = (org.muml.pim.realtimestatechart.diagram.navigator.MumlNavigatorGroup) element;
+		if (element instanceof MumlNavigatorGroup) {
+			MumlNavigatorGroup group = (MumlNavigatorGroup) element;
 			return group.getGroupName();
 		}
 
-		if (element instanceof org.muml.pim.realtimestatechart.diagram.navigator.MumlNavigatorItem) {
-			org.muml.pim.realtimestatechart.diagram.navigator.MumlNavigatorItem navigatorItem = (org.muml.pim.realtimestatechart.diagram.navigator.MumlNavigatorItem) element;
+		if (element instanceof MumlNavigatorItem) {
+			MumlNavigatorItem navigatorItem = (MumlNavigatorItem) element;
 			if (!isOwnView(navigatorItem.getView())) {
 				return null;
 			}
@@ -177,32 +198,32 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements ICommon
 		if (view.getElement() != null && view.getElement().eIsProxy()) {
 			return getUnresolvedDomainElementProxyText(view);
 		}
-		switch (org.muml.pim.realtimestatechart.diagram.part.MumlVisualIDRegistry.getVisualID(view)) {
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.ModelElementCategoryEditPart.VISUAL_ID:
+		switch (MumlVisualIDRegistry.getVisualID(view)) {
+		case ModelElementCategoryEditPart.VISUAL_ID:
 			return getRealtimeStatechart_1000Text(view);
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.RealtimeStatechartEditPart.VISUAL_ID:
+		case RealtimeStatechartEditPart.VISUAL_ID:
 			return getRealtimeStatechart_2007Text(view);
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.StateEditPart.VISUAL_ID:
+		case StateEditPart.VISUAL_ID:
 			return getState_3032Text(view);
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.EntryEventEditPart.VISUAL_ID:
+		case EntryEventEditPart.VISUAL_ID:
 			return getEntryEvent_3033Text(view);
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.DoEventEditPart.VISUAL_ID:
+		case DoEventEditPart.VISUAL_ID:
 			return getDoEvent_3034Text(view);
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.ExitEventEditPart.VISUAL_ID:
+		case ExitEventEditPart.VISUAL_ID:
 			return getExitEvent_3035Text(view);
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.ClockConstraintEditPart.VISUAL_ID:
+		case ClockConstraintEditPart.VISUAL_ID:
 			return getClockConstraint_3036Text(view);
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.SynchronizationChannelEditPart.VISUAL_ID:
+		case SynchronizationChannelEditPart.VISUAL_ID:
 			return getSynchronizationChannel_3037Text(view);
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.EntryPointEditPart.VISUAL_ID:
+		case EntryPointEditPart.VISUAL_ID:
 			return getEntryPoint_3040Text(view);
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.ExitPointEditPart.VISUAL_ID:
+		case ExitPointEditPart.VISUAL_ID:
 			return getExitPoint_3041Text(view);
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.RegionEditPart.VISUAL_ID:
+		case RegionEditPart.VISUAL_ID:
 			return getRegion_3042Text(view);
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.RealtimeStatechart2EditPart.VISUAL_ID:
+		case RealtimeStatechart2EditPart.VISUAL_ID:
 			return getRealtimeStatechart_3043Text(view);
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.TransitionEditPart.VISUAL_ID:
+		case TransitionEditPart.VISUAL_ID:
 			return getTransition_4003Text(view);
 		}
 		return getUnknownElementText(view);
@@ -212,13 +233,12 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements ICommon
 	 * @generated
 	 */
 	private String getRealtimeStatechart_1000Text(View view) {
-		org.muml.pim.realtimestatechart.RealtimeStatechart domainModelElement = (org.muml.pim.realtimestatechart.RealtimeStatechart) view
-				.getElement();
+		RealtimeStatechart domainModelElement = (RealtimeStatechart) view.getElement();
 		if (domainModelElement != null) {
 			return domainModelElement.getName();
 		} else {
-			org.muml.pim.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
-					.getInstance().logError("No domain element for view with visualID = " + 1000); //$NON-NLS-1$
+			RealtimestatechartDiagramEditorPlugin.getInstance()
+					.logError("No domain element for view with visualID = " + 1000); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -227,17 +247,14 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements ICommon
 	 * @generated
 	 */
 	private String getRealtimeStatechart_2007Text(View view) {
-		IParser parser = org.muml.pim.realtimestatechart.diagram.providers.MumlParserProvider.getParser(
-				org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes.RealtimeStatechart_2007,
+		IParser parser = MumlParserProvider.getParser(MumlElementTypes.RealtimeStatechart_2007,
 				view.getElement() != null ? view.getElement() : view,
-				org.muml.pim.realtimestatechart.diagram.part.MumlVisualIDRegistry.getType(
-						org.muml.pim.realtimestatechart.diagram.edit.parts.RealtimeStatechartNameEditPart.VISUAL_ID));
+				MumlVisualIDRegistry.getType(RealtimeStatechartNameEditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
 					ParserOptions.NONE.intValue());
 		} else {
-			org.muml.pim.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
-					.getInstance().logError("Parser was not found for label " + 5061); //$NON-NLS-1$
+			RealtimestatechartDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5061); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -246,17 +263,14 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements ICommon
 	 * @generated
 	 */
 	private String getState_3032Text(View view) {
-		IParser parser = org.muml.pim.realtimestatechart.diagram.providers.MumlParserProvider.getParser(
-				org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes.State_3032,
+		IParser parser = MumlParserProvider.getParser(MumlElementTypes.State_3032,
 				view.getElement() != null ? view.getElement() : view,
-				org.muml.pim.realtimestatechart.diagram.part.MumlVisualIDRegistry.getType(
-						org.muml.pim.realtimestatechart.diagram.edit.parts.StateNameEditPart.VISUAL_ID));
+				MumlVisualIDRegistry.getType(StateNameEditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
 					ParserOptions.NONE.intValue());
 		} else {
-			org.muml.pim.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
-					.getInstance().logError("Parser was not found for label " + 5060); //$NON-NLS-1$
+			RealtimestatechartDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5060); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -265,17 +279,14 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements ICommon
 	 * @generated
 	 */
 	private String getEntryEvent_3033Text(View view) {
-		IParser parser = org.muml.pim.realtimestatechart.diagram.providers.MumlParserProvider.getParser(
-				org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes.EntryEvent_3033,
+		IParser parser = MumlParserProvider.getParser(MumlElementTypes.EntryEvent_3033,
 				view.getElement() != null ? view.getElement() : view,
-				org.muml.pim.realtimestatechart.diagram.part.MumlVisualIDRegistry.getType(
-						org.muml.pim.realtimestatechart.diagram.edit.parts.WrappingLabel2EditPart.VISUAL_ID));
+				MumlVisualIDRegistry.getType(WrappingLabel2EditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
 					ParserOptions.NONE.intValue());
 		} else {
-			org.muml.pim.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
-					.getInstance().logError("Parser was not found for label " + 5050); //$NON-NLS-1$
+			RealtimestatechartDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5050); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -284,17 +295,14 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements ICommon
 	 * @generated
 	 */
 	private String getDoEvent_3034Text(View view) {
-		IParser parser = org.muml.pim.realtimestatechart.diagram.providers.MumlParserProvider.getParser(
-				org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes.DoEvent_3034,
+		IParser parser = MumlParserProvider.getParser(MumlElementTypes.DoEvent_3034,
 				view.getElement() != null ? view.getElement() : view,
-				org.muml.pim.realtimestatechart.diagram.part.MumlVisualIDRegistry.getType(
-						org.muml.pim.realtimestatechart.diagram.edit.parts.WrappingLabel3EditPart.VISUAL_ID));
+				MumlVisualIDRegistry.getType(WrappingLabel3EditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
 					ParserOptions.NONE.intValue());
 		} else {
-			org.muml.pim.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
-					.getInstance().logError("Parser was not found for label " + 5051); //$NON-NLS-1$
+			RealtimestatechartDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5051); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -303,17 +311,14 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements ICommon
 	 * @generated
 	 */
 	private String getExitEvent_3035Text(View view) {
-		IParser parser = org.muml.pim.realtimestatechart.diagram.providers.MumlParserProvider.getParser(
-				org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes.ExitEvent_3035,
+		IParser parser = MumlParserProvider.getParser(MumlElementTypes.ExitEvent_3035,
 				view.getElement() != null ? view.getElement() : view,
-				org.muml.pim.realtimestatechart.diagram.part.MumlVisualIDRegistry.getType(
-						org.muml.pim.realtimestatechart.diagram.edit.parts.WrappingLabel4EditPart.VISUAL_ID));
+				MumlVisualIDRegistry.getType(WrappingLabel4EditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
 					ParserOptions.NONE.intValue());
 		} else {
-			org.muml.pim.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
-					.getInstance().logError("Parser was not found for label " + 5052); //$NON-NLS-1$
+			RealtimestatechartDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5052); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -322,17 +327,14 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements ICommon
 	 * @generated
 	 */
 	private String getClockConstraint_3036Text(View view) {
-		IParser parser = org.muml.pim.realtimestatechart.diagram.providers.MumlParserProvider.getParser(
-				org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes.ClockConstraint_3036,
+		IParser parser = MumlParserProvider.getParser(MumlElementTypes.ClockConstraint_3036,
 				view.getElement() != null ? view.getElement() : view,
-				org.muml.pim.realtimestatechart.diagram.part.MumlVisualIDRegistry.getType(
-						org.muml.pim.realtimestatechart.diagram.edit.parts.WrappingLabel5EditPart.VISUAL_ID));
+				MumlVisualIDRegistry.getType(WrappingLabel5EditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
 					ParserOptions.NONE.intValue());
 		} else {
-			org.muml.pim.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
-					.getInstance().logError("Parser was not found for label " + 5053); //$NON-NLS-1$
+			RealtimestatechartDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5053); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -341,17 +343,14 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements ICommon
 	 * @generated
 	 */
 	private String getSynchronizationChannel_3037Text(View view) {
-		IParser parser = org.muml.pim.realtimestatechart.diagram.providers.MumlParserProvider.getParser(
-				org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes.SynchronizationChannel_3037,
+		IParser parser = MumlParserProvider.getParser(MumlElementTypes.SynchronizationChannel_3037,
 				view.getElement() != null ? view.getElement() : view,
-				org.muml.pim.realtimestatechart.diagram.part.MumlVisualIDRegistry.getType(
-						org.muml.pim.realtimestatechart.diagram.edit.parts.WrappingLabel6EditPart.VISUAL_ID));
+				MumlVisualIDRegistry.getType(WrappingLabel6EditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
 					ParserOptions.NONE.intValue());
 		} else {
-			org.muml.pim.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
-					.getInstance().logError("Parser was not found for label " + 5054); //$NON-NLS-1$
+			RealtimestatechartDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5054); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -360,13 +359,12 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements ICommon
 	 * @generated
 	 */
 	private String getEntryPoint_3040Text(View view) {
-		org.muml.pim.realtimestatechart.EntryPoint domainModelElement = (org.muml.pim.realtimestatechart.EntryPoint) view
-				.getElement();
+		EntryPoint domainModelElement = (EntryPoint) view.getElement();
 		if (domainModelElement != null) {
 			return domainModelElement.getName();
 		} else {
-			org.muml.pim.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
-					.getInstance().logError("No domain element for view with visualID = " + 3040); //$NON-NLS-1$
+			RealtimestatechartDiagramEditorPlugin.getInstance()
+					.logError("No domain element for view with visualID = " + 3040); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -375,13 +373,12 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements ICommon
 	 * @generated
 	 */
 	private String getExitPoint_3041Text(View view) {
-		org.muml.pim.realtimestatechart.ExitPoint domainModelElement = (org.muml.pim.realtimestatechart.ExitPoint) view
-				.getElement();
+		ExitPoint domainModelElement = (ExitPoint) view.getElement();
 		if (domainModelElement != null) {
 			return domainModelElement.getName();
 		} else {
-			org.muml.pim.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
-					.getInstance().logError("No domain element for view with visualID = " + 3041); //$NON-NLS-1$
+			RealtimestatechartDiagramEditorPlugin.getInstance()
+					.logError("No domain element for view with visualID = " + 3041); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -390,17 +387,14 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements ICommon
 	 * @generated
 	 */
 	private String getRegion_3042Text(View view) {
-		IParser parser = org.muml.pim.realtimestatechart.diagram.providers.MumlParserProvider.getParser(
-				org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes.Region_3042,
+		IParser parser = MumlParserProvider.getParser(MumlElementTypes.Region_3042,
 				view.getElement() != null ? view.getElement() : view,
-				org.muml.pim.realtimestatechart.diagram.part.MumlVisualIDRegistry.getType(
-						org.muml.pim.realtimestatechart.diagram.edit.parts.RegionNameEditPart.VISUAL_ID));
+				MumlVisualIDRegistry.getType(RegionNameEditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
 					ParserOptions.NONE.intValue());
 		} else {
-			org.muml.pim.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
-					.getInstance().logError("Parser was not found for label " + 5063); //$NON-NLS-1$
+			RealtimestatechartDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5063); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -409,13 +403,12 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements ICommon
 	 * @generated
 	 */
 	private String getRealtimeStatechart_3043Text(View view) {
-		org.muml.pim.realtimestatechart.RealtimeStatechart domainModelElement = (org.muml.pim.realtimestatechart.RealtimeStatechart) view
-				.getElement();
+		RealtimeStatechart domainModelElement = (RealtimeStatechart) view.getElement();
 		if (domainModelElement != null) {
 			return domainModelElement.getName();
 		} else {
-			org.muml.pim.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
-					.getInstance().logError("No domain element for view with visualID = " + 3043); //$NON-NLS-1$
+			RealtimestatechartDiagramEditorPlugin.getInstance()
+					.logError("No domain element for view with visualID = " + 3043); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -424,17 +417,14 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements ICommon
 	 * @generated
 	 */
 	private String getTransition_4003Text(View view) {
-		IParser parser = org.muml.pim.realtimestatechart.diagram.providers.MumlParserProvider.getParser(
-				org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes.Transition_4003,
+		IParser parser = MumlParserProvider.getParser(MumlElementTypes.Transition_4003,
 				view.getElement() != null ? view.getElement() : view,
-				org.muml.pim.realtimestatechart.diagram.part.MumlVisualIDRegistry.getType(
-						org.muml.pim.realtimestatechart.diagram.edit.parts.WrappingLabel8EditPart.VISUAL_ID));
+				MumlVisualIDRegistry.getType(WrappingLabel8EditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
 					ParserOptions.NONE.intValue());
 		} else {
-			org.muml.pim.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
-					.getInstance().logError("Parser was not found for label " + 6005); //$NON-NLS-1$
+			RealtimestatechartDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 6005); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -482,9 +472,7 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements ICommon
 	 * @generated
 	 */
 	private boolean isOwnView(View view) {
-		return org.muml.pim.realtimestatechart.diagram.edit.parts.ModelElementCategoryEditPart.MODEL_ID
-				.equals(org.muml.pim.realtimestatechart.diagram.part.MumlVisualIDRegistry
-						.getModelID(view));
+		return ModelElementCategoryEditPart.MODEL_ID.equals(MumlVisualIDRegistry.getModelID(view));
 	}
 
 }

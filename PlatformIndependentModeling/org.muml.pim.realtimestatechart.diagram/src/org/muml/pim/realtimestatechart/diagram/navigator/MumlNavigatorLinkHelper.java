@@ -33,6 +33,7 @@ import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.navigator.ILinkHelper;
 import org.eclipse.ui.part.FileEditorInput;
+import org.muml.pim.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin;
 
 /**
  * @generated
@@ -62,8 +63,8 @@ public class MumlNavigatorLinkHelper implements ILinkHelper {
 	 * @generated
 	 */
 	public IStructuredSelection findSelection(IEditorInput anInput) {
-		IDiagramDocument document = org.muml.pim.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
-				.getInstance().getDocumentProvider().getDiagramDocument(anInput);
+		IDiagramDocument document = RealtimestatechartDiagramEditorPlugin.getInstance().getDocumentProvider()
+				.getDiagramDocument(anInput);
 		if (document == null) {
 			return StructuredSelection.EMPTY;
 		}
@@ -73,8 +74,7 @@ public class MumlNavigatorLinkHelper implements ILinkHelper {
 		}
 		IFile file = WorkspaceSynchronizer.getFile(diagram.eResource());
 		if (file != null) {
-			org.muml.pim.realtimestatechart.diagram.navigator.MumlNavigatorItem item = new org.muml.pim.realtimestatechart.diagram.navigator.MumlNavigatorItem(
-					diagram, file, false);
+			MumlNavigatorItem item = new MumlNavigatorItem(diagram, file, false);
 			return new StructuredSelection(item);
 		}
 		return StructuredSelection.EMPTY;
@@ -87,23 +87,19 @@ public class MumlNavigatorLinkHelper implements ILinkHelper {
 		if (aSelection == null || aSelection.isEmpty()) {
 			return;
 		}
-		if (false == aSelection
-				.getFirstElement() instanceof org.muml.pim.realtimestatechart.diagram.navigator.RealtimestatechartAbstractNavigatorItem) {
+		if (false == aSelection.getFirstElement() instanceof RealtimestatechartAbstractNavigatorItem) {
 			return;
 		}
 
-		org.muml.pim.realtimestatechart.diagram.navigator.RealtimestatechartAbstractNavigatorItem abstractNavigatorItem = (org.muml.pim.realtimestatechart.diagram.navigator.RealtimestatechartAbstractNavigatorItem) aSelection
+		RealtimestatechartAbstractNavigatorItem abstractNavigatorItem = (RealtimestatechartAbstractNavigatorItem) aSelection
 				.getFirstElement();
 		View navigatorView = null;
-		if (abstractNavigatorItem instanceof org.muml.pim.realtimestatechart.diagram.navigator.MumlNavigatorItem) {
-			navigatorView = ((org.muml.pim.realtimestatechart.diagram.navigator.MumlNavigatorItem) abstractNavigatorItem)
-					.getView();
-		} else if (abstractNavigatorItem instanceof org.muml.pim.realtimestatechart.diagram.navigator.MumlNavigatorGroup) {
-			org.muml.pim.realtimestatechart.diagram.navigator.MumlNavigatorGroup navigatorGroup = (org.muml.pim.realtimestatechart.diagram.navigator.MumlNavigatorGroup) abstractNavigatorItem;
-			if (navigatorGroup
-					.getParent() instanceof org.muml.pim.realtimestatechart.diagram.navigator.MumlNavigatorItem) {
-				navigatorView = ((org.muml.pim.realtimestatechart.diagram.navigator.MumlNavigatorItem) navigatorGroup
-						.getParent()).getView();
+		if (abstractNavigatorItem instanceof MumlNavigatorItem) {
+			navigatorView = ((MumlNavigatorItem) abstractNavigatorItem).getView();
+		} else if (abstractNavigatorItem instanceof MumlNavigatorGroup) {
+			MumlNavigatorGroup navigatorGroup = (MumlNavigatorGroup) abstractNavigatorItem;
+			if (navigatorGroup.getParent() instanceof MumlNavigatorItem) {
+				navigatorView = ((MumlNavigatorItem) navigatorGroup.getParent()).getView();
 			}
 		}
 		if (navigatorView == null) {

@@ -18,6 +18,7 @@ import org.eclipse.gef.tools.CellEditorLocator;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ITextAwareEditPart;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.directedit.locator.CellEditorLocatorAccess;
+import org.muml.pim.realtimestatechart.diagram.part.MumlVisualIDRegistry;
 
 /**
  * @generated
@@ -30,130 +31,106 @@ public class MumlEditPartFactory implements EditPartFactory {
 	public EditPart createEditPart(EditPart context, Object model) {
 		if (model instanceof View) {
 			View view = (View) model;
-			switch (org.muml.pim.realtimestatechart.diagram.part.MumlVisualIDRegistry
-					.getVisualID(view)) {
+			switch (MumlVisualIDRegistry.getVisualID(view)) {
 
-			case org.muml.pim.realtimestatechart.diagram.edit.parts.ModelElementCategoryEditPart.VISUAL_ID:
-				return new org.muml.pim.realtimestatechart.diagram.edit.parts.ModelElementCategoryEditPart(
-						view);
+			case ModelElementCategoryEditPart.VISUAL_ID:
+				return new ModelElementCategoryEditPart(view);
 
-			case org.muml.pim.realtimestatechart.diagram.edit.parts.RealtimeStatechartEditPart.VISUAL_ID:
-				return new org.muml.pim.realtimestatechart.diagram.edit.parts.RealtimeStatechartEditPart(
-						view);
+			case RealtimeStatechartEditPart.VISUAL_ID:
+				return new RealtimeStatechartEditPart(view);
 
-			case org.muml.pim.realtimestatechart.diagram.edit.parts.RealtimeStatechartNameEditPart.VISUAL_ID:
-				return new org.muml.pim.realtimestatechart.diagram.edit.parts.RealtimeStatechartNameEditPart(
-						view);
+			case RealtimeStatechartNameEditPart.VISUAL_ID:
+				return new RealtimeStatechartNameEditPart(view);
 
-			case org.muml.pim.realtimestatechart.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID:
-				return new org.muml.pim.realtimestatechart.diagram.edit.parts.WrappingLabelEditPart(
-						view);
+			case WrappingLabelEditPart.VISUAL_ID:
+				return new WrappingLabelEditPart(view);
 
-			case org.muml.pim.realtimestatechart.diagram.edit.parts.StateEditPart.VISUAL_ID:
-				return new org.muml.pim.realtimestatechart.diagram.edit.parts.StateEditPart(view);
+			case StateEditPart.VISUAL_ID:
+				return new StateEditPart(view);
 
-			case org.muml.pim.realtimestatechart.diagram.edit.parts.StateNameEditPart.VISUAL_ID:
-				return new org.muml.pim.realtimestatechart.diagram.edit.parts.StateNameEditPart(view);
+			case StateNameEditPart.VISUAL_ID:
+				return new StateNameEditPart(view);
 
-			case org.muml.pim.realtimestatechart.diagram.edit.parts.EntryEventEditPart.VISUAL_ID:
-				return new org.muml.pim.realtimestatechart.diagram.edit.parts.EntryEventEditPart(view);
+			case EntryEventEditPart.VISUAL_ID:
+				return new EntryEventEditPart(view);
 
-			case org.muml.pim.realtimestatechart.diagram.edit.parts.WrappingLabel2EditPart.VISUAL_ID:
-				return new org.muml.pim.realtimestatechart.diagram.edit.parts.WrappingLabel2EditPart(
-						view);
+			case WrappingLabel2EditPart.VISUAL_ID:
+				return new WrappingLabel2EditPart(view);
 
-			case org.muml.pim.realtimestatechart.diagram.edit.parts.DoEventEditPart.VISUAL_ID:
-				return new org.muml.pim.realtimestatechart.diagram.edit.parts.DoEventEditPart(view);
+			case DoEventEditPart.VISUAL_ID:
+				return new DoEventEditPart(view);
 
-			case org.muml.pim.realtimestatechart.diagram.edit.parts.WrappingLabel3EditPart.VISUAL_ID:
-				return new org.muml.pim.realtimestatechart.diagram.edit.parts.WrappingLabel3EditPart(
-						view);
+			case WrappingLabel3EditPart.VISUAL_ID:
+				return new WrappingLabel3EditPart(view);
 
-			case org.muml.pim.realtimestatechart.diagram.edit.parts.ExitEventEditPart.VISUAL_ID:
-				return new org.muml.pim.realtimestatechart.diagram.edit.parts.ExitEventEditPart(view);
+			case ExitEventEditPart.VISUAL_ID:
+				return new ExitEventEditPart(view);
 
-			case org.muml.pim.realtimestatechart.diagram.edit.parts.WrappingLabel4EditPart.VISUAL_ID:
-				return new org.muml.pim.realtimestatechart.diagram.edit.parts.WrappingLabel4EditPart(
-						view);
+			case WrappingLabel4EditPart.VISUAL_ID:
+				return new WrappingLabel4EditPart(view);
 
-			case org.muml.pim.realtimestatechart.diagram.edit.parts.ClockConstraintEditPart.VISUAL_ID:
-				return new org.muml.pim.realtimestatechart.diagram.edit.parts.ClockConstraintEditPart(
-						view);
+			case ClockConstraintEditPart.VISUAL_ID:
+				return new ClockConstraintEditPart(view);
 
-			case org.muml.pim.realtimestatechart.diagram.edit.parts.WrappingLabel5EditPart.VISUAL_ID:
-				return new org.muml.pim.realtimestatechart.diagram.edit.parts.WrappingLabel5EditPart(
-						view);
+			case WrappingLabel5EditPart.VISUAL_ID:
+				return new WrappingLabel5EditPart(view);
 
-			case org.muml.pim.realtimestatechart.diagram.edit.parts.SynchronizationChannelEditPart.VISUAL_ID:
-				return new org.muml.pim.realtimestatechart.diagram.edit.parts.SynchronizationChannelEditPart(
-						view);
+			case SynchronizationChannelEditPart.VISUAL_ID:
+				return new SynchronizationChannelEditPart(view);
 
-			case org.muml.pim.realtimestatechart.diagram.edit.parts.WrappingLabel6EditPart.VISUAL_ID:
-				return new org.muml.pim.realtimestatechart.diagram.edit.parts.WrappingLabel6EditPart(
-						view);
+			case WrappingLabel6EditPart.VISUAL_ID:
+				return new WrappingLabel6EditPart(view);
 
-			case org.muml.pim.realtimestatechart.diagram.edit.parts.RegionEditPart.VISUAL_ID:
-				return new org.muml.pim.realtimestatechart.diagram.edit.parts.RegionEditPart(view);
+			case RegionEditPart.VISUAL_ID:
+				return new RegionEditPart(view);
 
-			case org.muml.pim.realtimestatechart.diagram.edit.parts.RegionNameEditPart.VISUAL_ID:
-				return new org.muml.pim.realtimestatechart.diagram.edit.parts.RegionNameEditPart(view);
+			case RegionNameEditPart.VISUAL_ID:
+				return new RegionNameEditPart(view);
 
-			case org.muml.pim.realtimestatechart.diagram.edit.parts.RegionPriorityEditPart.VISUAL_ID:
-				return new org.muml.pim.realtimestatechart.diagram.edit.parts.RegionPriorityEditPart(
-						view);
+			case RegionPriorityEditPart.VISUAL_ID:
+				return new RegionPriorityEditPart(view);
 
-			case org.muml.pim.realtimestatechart.diagram.edit.parts.WrappingLabel7EditPart.VISUAL_ID:
-				return new org.muml.pim.realtimestatechart.diagram.edit.parts.WrappingLabel7EditPart(
-						view);
+			case WrappingLabel7EditPart.VISUAL_ID:
+				return new WrappingLabel7EditPart(view);
 
-			case org.muml.pim.realtimestatechart.diagram.edit.parts.RealtimeStatechart2EditPart.VISUAL_ID:
-				return new org.muml.pim.realtimestatechart.diagram.edit.parts.RealtimeStatechart2EditPart(
-						view);
+			case RealtimeStatechart2EditPart.VISUAL_ID:
+				return new RealtimeStatechart2EditPart(view);
 
-			case org.muml.pim.realtimestatechart.diagram.edit.parts.EntryPointEditPart.VISUAL_ID:
-				return new org.muml.pim.realtimestatechart.diagram.edit.parts.EntryPointEditPart(view);
+			case EntryPointEditPart.VISUAL_ID:
+				return new EntryPointEditPart(view);
 
-			case org.muml.pim.realtimestatechart.diagram.edit.parts.ExitPointEditPart.VISUAL_ID:
-				return new org.muml.pim.realtimestatechart.diagram.edit.parts.ExitPointEditPart(view);
+			case ExitPointEditPart.VISUAL_ID:
+				return new ExitPointEditPart(view);
 
-			case org.muml.pim.realtimestatechart.diagram.edit.parts.RealtimeStatechartStatechartContentsCompartmentEditPart.VISUAL_ID:
-				return new org.muml.pim.realtimestatechart.diagram.edit.parts.RealtimeStatechartStatechartContentsCompartmentEditPart(
-						view);
+			case RealtimeStatechartStatechartContentsCompartmentEditPart.VISUAL_ID:
+				return new RealtimeStatechartStatechartContentsCompartmentEditPart(view);
 
-			case org.muml.pim.realtimestatechart.diagram.edit.parts.StateActionCompartmentEditPart.VISUAL_ID:
-				return new org.muml.pim.realtimestatechart.diagram.edit.parts.StateActionCompartmentEditPart(
-						view);
+			case StateActionCompartmentEditPart.VISUAL_ID:
+				return new StateActionCompartmentEditPart(view);
 
-			case org.muml.pim.realtimestatechart.diagram.edit.parts.StateRegionCompartmentEditPart.VISUAL_ID:
-				return new org.muml.pim.realtimestatechart.diagram.edit.parts.StateRegionCompartmentEditPart(
-						view);
+			case StateRegionCompartmentEditPart.VISUAL_ID:
+				return new StateRegionCompartmentEditPart(view);
 
-			case org.muml.pim.realtimestatechart.diagram.edit.parts.StateChannelCompartmentEditPart.VISUAL_ID:
-				return new org.muml.pim.realtimestatechart.diagram.edit.parts.StateChannelCompartmentEditPart(
-						view);
+			case StateChannelCompartmentEditPart.VISUAL_ID:
+				return new StateChannelCompartmentEditPart(view);
 
-			case org.muml.pim.realtimestatechart.diagram.edit.parts.StateInvariantCompartmentEditPart.VISUAL_ID:
-				return new org.muml.pim.realtimestatechart.diagram.edit.parts.StateInvariantCompartmentEditPart(
-						view);
+			case StateInvariantCompartmentEditPart.VISUAL_ID:
+				return new StateInvariantCompartmentEditPart(view);
 
-			case org.muml.pim.realtimestatechart.diagram.edit.parts.RegionRegionContentsCompartmentEditPart.VISUAL_ID:
-				return new org.muml.pim.realtimestatechart.diagram.edit.parts.RegionRegionContentsCompartmentEditPart(
-						view);
+			case RegionRegionContentsCompartmentEditPart.VISUAL_ID:
+				return new RegionRegionContentsCompartmentEditPart(view);
 
-			case org.muml.pim.realtimestatechart.diagram.edit.parts.RealtimeStatechartStatechartContentsCompartment2EditPart.VISUAL_ID:
-				return new org.muml.pim.realtimestatechart.diagram.edit.parts.RealtimeStatechartStatechartContentsCompartment2EditPart(
-						view);
+			case RealtimeStatechartStatechartContentsCompartment2EditPart.VISUAL_ID:
+				return new RealtimeStatechartStatechartContentsCompartment2EditPart(view);
 
-			case org.muml.pim.realtimestatechart.diagram.edit.parts.TransitionEditPart.VISUAL_ID:
-				return new org.muml.pim.realtimestatechart.diagram.edit.parts.TransitionEditPart(view);
+			case TransitionEditPart.VISUAL_ID:
+				return new TransitionEditPart(view);
 
-			case org.muml.pim.realtimestatechart.diagram.edit.parts.WrappingLabel8EditPart.VISUAL_ID:
-				return new org.muml.pim.realtimestatechart.diagram.edit.parts.WrappingLabel8EditPart(
-						view);
+			case WrappingLabel8EditPart.VISUAL_ID:
+				return new WrappingLabel8EditPart(view);
 
-			case org.muml.pim.realtimestatechart.diagram.edit.parts.WrappingLabel9EditPart.VISUAL_ID:
-				return new org.muml.pim.realtimestatechart.diagram.edit.parts.WrappingLabel9EditPart(
-						view);
+			case WrappingLabel9EditPart.VISUAL_ID:
+				return new WrappingLabel9EditPart(view);
 
 			}
 		}

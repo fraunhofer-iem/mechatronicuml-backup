@@ -14,29 +14,27 @@ package org.muml.pim.realtimestatechart.diagram.edit.policies;
 
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
+import org.muml.pim.realtimestatechart.diagram.edit.commands.RealtimeStatechart2CreateCommand;
+import org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes;
 
 /**
  * @generated
  */
-public class RegionRegionContentsCompartmentItemSemanticEditPolicy
-		extends org.muml.pim.realtimestatechart.diagram.edit.policies.MumlBaseItemSemanticEditPolicy {
+public class RegionRegionContentsCompartmentItemSemanticEditPolicy extends MumlBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public RegionRegionContentsCompartmentItemSemanticEditPolicy() {
-		super(org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes.Region_3042);
+		super(MumlElementTypes.Region_3042);
 	}
 
 	/**
 	 * @generated
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
-		if (org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes.RealtimeStatechart_3043 == req
-				.getElementType()) {
-			return getGEFWrapper(
-					new org.muml.pim.realtimestatechart.diagram.edit.commands.RealtimeStatechart2CreateCommand(
-							req));
+		if (MumlElementTypes.RealtimeStatechart_3043 == req.getElementType()) {
+			return getGEFWrapper(new RealtimeStatechart2CreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}

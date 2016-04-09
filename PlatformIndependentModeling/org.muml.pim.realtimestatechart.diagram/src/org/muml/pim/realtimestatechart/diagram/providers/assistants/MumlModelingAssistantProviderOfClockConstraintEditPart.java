@@ -12,10 +12,11 @@
  */
 package org.muml.pim.realtimestatechart.diagram.providers.assistants;
 
+import org.muml.pim.realtimestatechart.diagram.providers.MumlModelingAssistantProvider;
+
 /**
  * @generated
  */
-public class MumlModelingAssistantProviderOfClockConstraintEditPart
-		extends org.muml.pim.realtimestatechart.diagram.providers.MumlModelingAssistantProvider {
+public class MumlModelingAssistantProviderOfClockConstraintEditPart extends MumlModelingAssistantProvider {
 
 }

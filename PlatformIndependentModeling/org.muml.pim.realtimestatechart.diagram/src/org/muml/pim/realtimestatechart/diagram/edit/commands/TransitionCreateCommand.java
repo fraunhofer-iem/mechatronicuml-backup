@@ -24,6 +24,14 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy;
+import org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy;
+import org.muml.pim.realtimestatechart.RealtimeStatechart;
+import org.muml.pim.realtimestatechart.RealtimestatechartFactory;
+import org.muml.pim.realtimestatechart.Transition;
+import org.muml.pim.realtimestatechart.Vertex;
+import org.muml.pim.realtimestatechart.diagram.edit.policies.MumlBaseItemSemanticEditPolicy;
+import org.muml.pim.realtimestatechart.diagram.providers.ElementInitializers;
 
 /**
  * @generated
@@ -43,23 +51,21 @@ public class TransitionCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	private final org.muml.pim.realtimestatechart.RealtimeStatechart container;
+	private final RealtimeStatechart container;
 
 	/**
 	 * @generated
 	 */
 	public TransitionCreateCommand(CreateRelationshipRequest request, EObject source, EObject target) {
 		super(request.getLabel(), null, request);
-		org.muml.pim.realtimestatechart.RealtimeStatechart container = null;
+		RealtimeStatechart container = null;
 		this.source = source;
 		this.target = target;
 		container = deduceContainer(source, target);
 
 		if (container == null) {
-			View sourceView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-					.getSourceView(getRequest());
-			View targetView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-					.getTargetView(getRequest());
+			View sourceView = ConnectionConfigureHelperGraphicalNodeEditPolicy.getSourceView(getRequest());
+			View targetView = ConnectionConfigureHelperGraphicalNodeEditPolicy.getTargetView(getRequest());
 			container = deduceContainerUsingViews(sourceView, targetView);
 		}
 		this.container = container;
@@ -72,10 +78,10 @@ public class TransitionCreateCommand extends EditElementCommand {
 		if (source == null && target == null) {
 			return false;
 		}
-		if (source != null && false == source instanceof org.muml.pim.realtimestatechart.Vertex) {
+		if (source != null && false == source instanceof Vertex) {
 			return false;
 		}
-		if (target != null && false == target instanceof org.muml.pim.realtimestatechart.Vertex) {
+		if (target != null && false == target instanceof Vertex) {
 			return false;
 		}
 		if (getSource() == null) {
@@ -85,18 +91,13 @@ public class TransitionCreateCommand extends EditElementCommand {
 		if (getContainer() == null) {
 			return false;
 		}
-		View sourceView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-				.getSourceView(getRequest());
-		View targetView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-				.getTargetView(getRequest());
-		if (!org.muml.pim.realtimestatechart.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-				.getLinkConstraints()
-				.canCreateTransition_4003(getContainer(), getSource(), getTarget(), sourceView, targetView)) {
-			String errorMessage = org.muml.pim.realtimestatechart.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-					.getLinkConstraints()
+		View sourceView = ConnectionConfigureHelperGraphicalNodeEditPolicy.getSourceView(getRequest());
+		View targetView = ConnectionConfigureHelperGraphicalNodeEditPolicy.getTargetView(getRequest());
+		if (!MumlBaseItemSemanticEditPolicy.getLinkConstraints().canCreateTransition_4003(getContainer(), getSource(),
+				getTarget(), sourceView, targetView)) {
+			String errorMessage = MumlBaseItemSemanticEditPolicy.getLinkConstraints()
 					.getErrorTransition_4003(getContainer(), getSource(), getTarget(), sourceView, targetView);
-			org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy
-					.showMessage(targetView != null ? targetView : sourceView, errorMessage);
+			ErrorFeedbackEditPolicy.showMessage(targetView != null ? targetView : sourceView, errorMessage);
 			return false;
 		}
 		return true;
@@ -110,13 +111,11 @@ public class TransitionCreateCommand extends EditElementCommand {
 			throw new ExecutionException("Invalid arguments in create link command"); //$NON-NLS-1$
 		}
 
-		org.muml.pim.realtimestatechart.Transition newElement = org.muml.pim.realtimestatechart.RealtimestatechartFactory.eINSTANCE
-				.createTransition();
+		Transition newElement = RealtimestatechartFactory.eINSTANCE.createTransition();
 		getContainer().getTransitions().add(newElement);
 		newElement.setSource(getSource());
 		newElement.setTarget(getTarget());
-		org.muml.pim.realtimestatechart.diagram.providers.ElementInitializers.getInstance()
-				.init_Transition_4003(newElement);
+		ElementInitializers.getInstance().init_Transition_4003(newElement);
 		doConfigure(newElement, monitor, info);
 		((CreateElementRequest) getRequest()).setNewElement(newElement);
 		return CommandResult.newOKCommandResult(newElement);
@@ -124,10 +123,10 @@ public class TransitionCreateCommand extends EditElementCommand {
 	}
 
 	/**
-	 * @generated
-	 */
-	protected void doConfigure(org.muml.pim.realtimestatechart.Transition newElement,
-			IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
+	* @generated
+	*/
+	protected void doConfigure(Transition newElement, IProgressMonitor monitor, IAdaptable info)
+			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest()).getElementType();
 		ConfigureRequest configureRequest = new ConfigureRequest(getEditingDomain(), newElement, elementType);
 		configureRequest.setClientContext(((CreateElementRequest) getRequest()).getClientContext());
@@ -150,21 +149,21 @@ public class TransitionCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected org.muml.pim.realtimestatechart.Vertex getSource() {
-		return (org.muml.pim.realtimestatechart.Vertex) source;
+	protected Vertex getSource() {
+		return (Vertex) source;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected org.muml.pim.realtimestatechart.Vertex getTarget() {
-		return (org.muml.pim.realtimestatechart.Vertex) target;
+	protected Vertex getTarget() {
+		return (Vertex) target;
 	}
 
 	/**
 	 * @generated
 	 */
-	public org.muml.pim.realtimestatechart.RealtimeStatechart getContainer() {
+	public RealtimeStatechart getContainer() {
 		return container;
 	}
 
@@ -173,14 +172,13 @@ public class TransitionCreateCommand extends EditElementCommand {
 	 * Modify with appropriate logic.
 	 * @generated
 	 */
-	private static org.muml.pim.realtimestatechart.RealtimeStatechart deduceContainer(EObject source,
-			EObject target) {
+	private static RealtimeStatechart deduceContainer(EObject source, EObject target) {
 		// Find container element for the new link.
 		// Climb up by containment hierarchy starting from the source
 		// and return the first element that is instance of the container class.
 		for (EObject element = source; element != null; element = element.eContainer()) {
-			if (element instanceof org.muml.pim.realtimestatechart.RealtimeStatechart) {
-				return (org.muml.pim.realtimestatechart.RealtimeStatechart) element;
+			if (element instanceof RealtimeStatechart) {
+				return (RealtimeStatechart) element;
 			}
 		}
 		return null;
@@ -191,11 +189,10 @@ public class TransitionCreateCommand extends EditElementCommand {
 	 * 
 	 * @generated
 	 */
-	private static org.muml.pim.realtimestatechart.RealtimeStatechart deduceContainerUsingViews(
-			View sourceView, View targetView) {
+	private static RealtimeStatechart deduceContainerUsingViews(View sourceView, View targetView) {
 		for (View view = sourceView; view != null; view = (View) view.eContainer()) {
-			if (view.getElement() instanceof org.muml.pim.realtimestatechart.RealtimeStatechart) {
-				return (org.muml.pim.realtimestatechart.RealtimeStatechart) view.getElement();
+			if (view.getElement() instanceof RealtimeStatechart) {
+				return (RealtimeStatechart) view.getElement();
 			}
 		}
 		return null;

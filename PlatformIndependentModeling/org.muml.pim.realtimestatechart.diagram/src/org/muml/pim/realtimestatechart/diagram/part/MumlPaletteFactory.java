@@ -20,6 +20,7 @@ import org.eclipse.gef.palette.PaletteRoot;
 import org.eclipse.gef.palette.ToolEntry;
 import org.eclipse.gmf.tooling.runtime.part.DefaultLinkToolEntry;
 import org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry;
+import org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes;
 
 /**
  * @generated
@@ -39,11 +40,9 @@ public class MumlPaletteFactory {
 	 * @generated
 	 */
 	private PaletteContainer createRealTimeStatechart1Group() {
-		PaletteDrawer paletteContainer = new PaletteDrawer(
-				org.muml.pim.realtimestatechart.diagram.part.Messages.RealTimeStatechart1Group_title);
+		PaletteDrawer paletteContainer = new PaletteDrawer(Messages.RealTimeStatechart1Group_title);
 		paletteContainer.setId("createRealTimeStatechart1Group"); //$NON-NLS-1$
-		paletteContainer.setDescription(
-				org.muml.pim.realtimestatechart.diagram.part.Messages.RealTimeStatechart1Group_desc);
+		paletteContainer.setDescription(Messages.RealTimeStatechart1Group_desc);
 		paletteContainer.add(createState1CreationTool());
 		paletteContainer.add(createTransition2CreationTool());
 		return paletteContainer;
@@ -54,11 +53,9 @@ public class MumlPaletteFactory {
 	 * @generated
 	 */
 	private PaletteContainer createRealTimeState2Group() {
-		PaletteDrawer paletteContainer = new PaletteDrawer(
-				org.muml.pim.realtimestatechart.diagram.part.Messages.RealTimeState2Group_title);
+		PaletteDrawer paletteContainer = new PaletteDrawer(Messages.RealTimeState2Group_title);
 		paletteContainer.setId("createRealTimeState2Group"); //$NON-NLS-1$
-		paletteContainer.setDescription(
-				org.muml.pim.realtimestatechart.diagram.part.Messages.RealTimeState2Group_desc);
+		paletteContainer.setDescription(Messages.RealTimeState2Group_desc);
 		paletteContainer.add(createEntryAction1CreationTool());
 		paletteContainer.add(createDoAction2CreationTool());
 		paletteContainer.add(createExitAction3CreationTool());
@@ -72,16 +69,11 @@ public class MumlPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createState1CreationTool() {
-		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
-				org.muml.pim.realtimestatechart.diagram.part.Messages.State1CreationTool_title,
-				org.muml.pim.realtimestatechart.diagram.part.Messages.State1CreationTool_desc,
-				Collections.singletonList(
-						org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes.State_3032));
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.State1CreationTool_title,
+				Messages.State1CreationTool_desc, Collections.singletonList(MumlElementTypes.State_3032));
 		entry.setId("createState1CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(
-				org.muml.pim.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
-						.findImageDescriptor(
-								"/org.muml.pim.realtimestatechart.diagram/icon/c_state16.gif")); //$NON-NLS-1$
+		entry.setSmallIcon(RealtimestatechartDiagramEditorPlugin
+				.findImageDescriptor("/org.muml.pim.realtimestatechart.diagram/icon/c_state16.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -90,16 +82,11 @@ public class MumlPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createTransition2CreationTool() {
-		DefaultLinkToolEntry entry = new DefaultLinkToolEntry(
-				org.muml.pim.realtimestatechart.diagram.part.Messages.Transition2CreationTool_title,
-				org.muml.pim.realtimestatechart.diagram.part.Messages.Transition2CreationTool_desc,
-				Collections.singletonList(
-						org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes.Transition_4003));
+		DefaultLinkToolEntry entry = new DefaultLinkToolEntry(Messages.Transition2CreationTool_title,
+				Messages.Transition2CreationTool_desc, Collections.singletonList(MumlElementTypes.Transition_4003));
 		entry.setId("createTransition2CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(
-				org.muml.pim.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
-						.findImageDescriptor(
-								"/org.muml.pim.realtimestatechart.diagram/icon/transition16.gif")); //$NON-NLS-1$
+		entry.setSmallIcon(RealtimestatechartDiagramEditorPlugin
+				.findImageDescriptor("/org.muml.pim.realtimestatechart.diagram/icon/transition16.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -108,16 +95,11 @@ public class MumlPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createEntryAction1CreationTool() {
-		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
-				org.muml.pim.realtimestatechart.diagram.part.Messages.EntryAction1CreationTool_title,
-				org.muml.pim.realtimestatechart.diagram.part.Messages.EntryAction1CreationTool_desc,
-				Collections.singletonList(
-						org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes.EntryEvent_3033));
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.EntryAction1CreationTool_title,
+				Messages.EntryAction1CreationTool_desc, Collections.singletonList(MumlElementTypes.EntryEvent_3033));
 		entry.setId("createEntryAction1CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(
-				org.muml.pim.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
-						.findImageDescriptor(
-								"/org.muml.pim.realtimestatechart.diagram/icon/entry_action16.gif")); //$NON-NLS-1$
+		entry.setSmallIcon(RealtimestatechartDiagramEditorPlugin
+				.findImageDescriptor("/org.muml.pim.realtimestatechart.diagram/icon/entry_action16.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -126,16 +108,11 @@ public class MumlPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createDoAction2CreationTool() {
-		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
-				org.muml.pim.realtimestatechart.diagram.part.Messages.DoAction2CreationTool_title,
-				org.muml.pim.realtimestatechart.diagram.part.Messages.DoAction2CreationTool_desc,
-				Collections.singletonList(
-						org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes.DoEvent_3034));
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.DoAction2CreationTool_title,
+				Messages.DoAction2CreationTool_desc, Collections.singletonList(MumlElementTypes.DoEvent_3034));
 		entry.setId("createDoAction2CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(
-				org.muml.pim.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
-						.findImageDescriptor(
-								"/org.muml.pim.realtimestatechart.diagram/icon/do_action16.gif")); //$NON-NLS-1$
+		entry.setSmallIcon(RealtimestatechartDiagramEditorPlugin
+				.findImageDescriptor("/org.muml.pim.realtimestatechart.diagram/icon/do_action16.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -144,16 +121,11 @@ public class MumlPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createExitAction3CreationTool() {
-		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
-				org.muml.pim.realtimestatechart.diagram.part.Messages.ExitAction3CreationTool_title,
-				org.muml.pim.realtimestatechart.diagram.part.Messages.ExitAction3CreationTool_desc,
-				Collections.singletonList(
-						org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes.ExitEvent_3035));
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.ExitAction3CreationTool_title,
+				Messages.ExitAction3CreationTool_desc, Collections.singletonList(MumlElementTypes.ExitEvent_3035));
 		entry.setId("createExitAction3CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(
-				org.muml.pim.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
-						.findImageDescriptor(
-								"/org.muml.pim.realtimestatechart.diagram/icon/exit_action16.gif")); //$NON-NLS-1$
+		entry.setSmallIcon(RealtimestatechartDiagramEditorPlugin
+				.findImageDescriptor("/org.muml.pim.realtimestatechart.diagram/icon/exit_action16.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -162,16 +134,11 @@ public class MumlPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createRegion4CreationTool() {
-		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
-				org.muml.pim.realtimestatechart.diagram.part.Messages.Region4CreationTool_title,
-				org.muml.pim.realtimestatechart.diagram.part.Messages.Region4CreationTool_desc,
-				Collections.singletonList(
-						org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes.Region_3042));
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.Region4CreationTool_title,
+				Messages.Region4CreationTool_desc, Collections.singletonList(MumlElementTypes.Region_3042));
 		entry.setId("createRegion4CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(
-				org.muml.pim.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
-						.findImageDescriptor(
-								"/org.muml.pim.realtimestatechart.diagram/icon/region.gif")); //$NON-NLS-1$
+		entry.setSmallIcon(RealtimestatechartDiagramEditorPlugin
+				.findImageDescriptor("/org.muml.pim.realtimestatechart.diagram/icon/region.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -180,16 +147,11 @@ public class MumlPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createEntryPoint5CreationTool() {
-		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
-				org.muml.pim.realtimestatechart.diagram.part.Messages.EntryPoint5CreationTool_title,
-				org.muml.pim.realtimestatechart.diagram.part.Messages.EntryPoint5CreationTool_desc,
-				Collections.singletonList(
-						org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes.EntryPoint_3040));
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.EntryPoint5CreationTool_title,
+				Messages.EntryPoint5CreationTool_desc, Collections.singletonList(MumlElementTypes.EntryPoint_3040));
 		entry.setId("createEntryPoint5CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(
-				org.muml.pim.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
-						.findImageDescriptor(
-								"/org.muml.pim.realtimestatechart.diagram/icon/state_entry_point.gif")); //$NON-NLS-1$
+		entry.setSmallIcon(RealtimestatechartDiagramEditorPlugin
+				.findImageDescriptor("/org.muml.pim.realtimestatechart.diagram/icon/state_entry_point.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -198,16 +160,11 @@ public class MumlPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createExitPoint6CreationTool() {
-		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
-				org.muml.pim.realtimestatechart.diagram.part.Messages.ExitPoint6CreationTool_title,
-				org.muml.pim.realtimestatechart.diagram.part.Messages.ExitPoint6CreationTool_desc,
-				Collections.singletonList(
-						org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes.ExitPoint_3041));
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.ExitPoint6CreationTool_title,
+				Messages.ExitPoint6CreationTool_desc, Collections.singletonList(MumlElementTypes.ExitPoint_3041));
 		entry.setId("createExitPoint6CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(
-				org.muml.pim.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
-						.findImageDescriptor(
-								"/org.muml.pim.realtimestatechart.diagram/icon/state_exit_point.gif")); //$NON-NLS-1$
+		entry.setSmallIcon(RealtimestatechartDiagramEditorPlugin
+				.findImageDescriptor("/org.muml.pim.realtimestatechart.diagram/icon/state_exit_point.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}

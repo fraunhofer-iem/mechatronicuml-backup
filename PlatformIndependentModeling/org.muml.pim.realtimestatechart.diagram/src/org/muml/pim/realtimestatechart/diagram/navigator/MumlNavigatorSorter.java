@@ -13,6 +13,7 @@
 package org.muml.pim.realtimestatechart.diagram.navigator;
 
 import org.eclipse.jface.viewers.ViewerSorter;
+import org.muml.pim.realtimestatechart.diagram.part.MumlVisualIDRegistry;
 
 /**
  * @generated
@@ -28,10 +29,9 @@ public class MumlNavigatorSorter extends ViewerSorter {
 	 * @generated
 	 */
 	public int category(Object element) {
-		if (element instanceof org.muml.pim.realtimestatechart.diagram.navigator.MumlNavigatorItem) {
-			org.muml.pim.realtimestatechart.diagram.navigator.MumlNavigatorItem item = (org.muml.pim.realtimestatechart.diagram.navigator.MumlNavigatorItem) element;
-			return org.muml.pim.realtimestatechart.diagram.part.MumlVisualIDRegistry
-					.getVisualID(item.getView());
+		if (element instanceof MumlNavigatorItem) {
+			MumlNavigatorItem item = (MumlNavigatorItem) element;
+			return MumlVisualIDRegistry.getVisualID(item.getView());
 		}
 		return GROUP_CATEGORY;
 	}

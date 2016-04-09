@@ -24,6 +24,9 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.pim.realtimestatechart.RealtimeStatechart;
+import org.muml.pim.realtimestatechart.RealtimestatechartFactory;
+import org.muml.pim.realtimestatechart.diagram.providers.ElementInitializers;
 
 /**
  * @generated
@@ -68,13 +71,11 @@ public class RealtimeStatechartCreateCommand extends EditElementCommand {
 		// 	return null;
 		// }
 		Resource resource = getElementToEdit().eResource();
-		org.muml.pim.realtimestatechart.RealtimeStatechart newElement = org.muml.pim.realtimestatechart.RealtimestatechartFactory.eINSTANCE
-				.createRealtimeStatechart();
+		RealtimeStatechart newElement = RealtimestatechartFactory.eINSTANCE.createRealtimeStatechart();
 
 		resource.getContents().add(newElement);
 
-		org.muml.pim.realtimestatechart.diagram.providers.ElementInitializers.getInstance()
-				.init_RealtimeStatechart_2007(newElement);
+		ElementInitializers.getInstance().init_RealtimeStatechart_2007(newElement);
 
 		doConfigure(newElement, monitor, info);
 
@@ -83,10 +84,10 @@ public class RealtimeStatechartCreateCommand extends EditElementCommand {
 	}
 
 	/**
-	 * @generated
-	 */
-	protected void doConfigure(org.muml.pim.realtimestatechart.RealtimeStatechart newElement,
-			IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
+	* @generated
+	*/
+	protected void doConfigure(RealtimeStatechart newElement, IProgressMonitor monitor, IAdaptable info)
+			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest()).getElementType();
 		ConfigureRequest configureRequest = new ConfigureRequest(getEditingDomain(), newElement, elementType);
 		configureRequest.setClientContext(((CreateElementRequest) getRequest()).getClientContext());

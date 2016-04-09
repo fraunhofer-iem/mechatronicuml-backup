@@ -31,6 +31,8 @@ import org.eclipse.gmf.runtime.common.ui.services.parser.ParserEditStatus;
 import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand;
 import org.eclipse.gmf.tooling.runtime.parsers.ExpressionLabelParserBase;
 import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
+import org.muml.pim.realtimestatechart.RealtimestatechartPackage;
+import org.muml.pim.realtimestatechart.diagram.expressions.MumlOCLFactory;
 
 /**
  * @generated
@@ -47,9 +49,7 @@ public class TransitionLabelExpressionLabelParser6005 extends ExpressionLabelPar
 	 */
 	@Override
 	protected String getExpressionBody() {
-		return org.muml.pim.realtimestatechart.diagram.expressions.MumlOCLFactory.getExpression(16,
-				org.muml.pim.realtimestatechart.RealtimestatechartPackage.eINSTANCE.getTransition(),
-				null).body();
+		return MumlOCLFactory.getExpression(16, RealtimestatechartPackage.eINSTANCE.getTransition(), null).body();
 	}
 
 	/**

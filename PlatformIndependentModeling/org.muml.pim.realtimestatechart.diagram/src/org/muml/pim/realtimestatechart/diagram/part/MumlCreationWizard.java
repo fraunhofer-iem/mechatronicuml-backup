@@ -15,12 +15,12 @@ package org.muml.pim.realtimestatechart.diagram.part;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.IWorkbench;
+import org.muml.core.modelinstance.ui.diagrams.AbstractFujabaDiagramNewWizard;
 
 /**
  * @generated
  */
-public class MumlCreationWizard
-		extends org.muml.core.modelinstance.ui.diagrams.AbstractFujabaDiagramNewWizard {
+public class MumlCreationWizard extends AbstractFujabaDiagramNewWizard {
 
 	/**
 	 * @generated
@@ -28,9 +28,8 @@ public class MumlCreationWizard
 	public void init(IWorkbench workbench, IStructuredSelection selection) {
 		super.init(workbench, selection);
 
-		setDefaultPageImageDescriptor(
-				org.muml.pim.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
-						.getBundledImageDescriptor("icons/wizban/NewRealtimestatechartWizard.gif")); //$NON-NLS-1$
+		setDefaultPageImageDescriptor(RealtimestatechartDiagramEditorPlugin
+				.getBundledImageDescriptor("icons/wizban/NewRealtimestatechartWizard.gif")); //$NON-NLS-1$
 
 	}
 
@@ -39,7 +38,7 @@ public class MumlCreationWizard
 	 */
 	@Override
 	public String getEditorId() {
-		return org.muml.pim.realtimestatechart.diagram.part.RealtimestatechartDiagramEditor.ID;
+		return RealtimestatechartDiagramEditor.ID;
 
 	}
 
@@ -48,8 +47,7 @@ public class MumlCreationWizard
 	 */
 	@Override
 	public AdapterFactory getItemProvidersAdapterFactory() {
-		return org.muml.pim.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
-				.getInstance().getItemProvidersAdapterFactory();
+		return RealtimestatechartDiagramEditorPlugin.getInstance().getItemProvidersAdapterFactory();
 	}
 
 }

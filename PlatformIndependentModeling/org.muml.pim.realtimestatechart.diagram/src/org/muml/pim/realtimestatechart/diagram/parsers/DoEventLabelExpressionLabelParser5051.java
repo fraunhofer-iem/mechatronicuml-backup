@@ -31,6 +31,8 @@ import org.eclipse.gmf.runtime.common.ui.services.parser.ParserEditStatus;
 import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand;
 import org.eclipse.gmf.tooling.runtime.parsers.ExpressionLabelParserBase;
 import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
+import org.muml.pim.realtimestatechart.RealtimestatechartPackage;
+import org.muml.pim.realtimestatechart.diagram.expressions.MumlOCLFactory;
 
 /**
  * @generated
@@ -47,9 +49,7 @@ public class DoEventLabelExpressionLabelParser5051 extends ExpressionLabelParser
 	 */
 	@Override
 	protected String getExpressionBody() {
-		return org.muml.pim.realtimestatechart.diagram.expressions.MumlOCLFactory.getExpression(2,
-				org.muml.pim.realtimestatechart.RealtimestatechartPackage.eINSTANCE.getDoEvent(), null)
-				.body();
+		return MumlOCLFactory.getExpression(2, RealtimestatechartPackage.eINSTANCE.getDoEvent(), null).body();
 	}
 
 	/**

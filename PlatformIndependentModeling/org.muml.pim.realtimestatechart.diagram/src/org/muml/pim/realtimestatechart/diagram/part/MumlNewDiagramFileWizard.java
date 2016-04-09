@@ -39,6 +39,7 @@ import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.osgi.util.NLS;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.dialogs.WizardNewFileCreationPage;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.ModelElementCategoryEditPart;
 
 /**
  * @generated
@@ -53,7 +54,7 @@ public class MumlNewDiagramFileWizard extends Wizard {
 	/**
 	 * @generated
 	 */
-	private org.muml.pim.realtimestatechart.diagram.part.ModelElementSelectionPage diagramRootElementSelectionPage;
+	private ModelElementSelectionPage diagramRootElementSelectionPage;
 
 	/**
 	 * @generated
@@ -68,14 +69,11 @@ public class MumlNewDiagramFileWizard extends Wizard {
 		assert diagramRoot != null : "Doagram root element must be specified"; //$NON-NLS-1$
 		assert editingDomain != null : "Editing domain must be specified"; //$NON-NLS-1$
 
-		myFileCreationPage = new WizardNewFileCreationPage(
-				org.muml.pim.realtimestatechart.diagram.part.Messages.MumlNewDiagramFileWizard_CreationPageName,
+		myFileCreationPage = new WizardNewFileCreationPage(Messages.MumlNewDiagramFileWizard_CreationPageName,
 				StructuredSelection.EMPTY);
-		myFileCreationPage.setTitle(
-				org.muml.pim.realtimestatechart.diagram.part.Messages.MumlNewDiagramFileWizard_CreationPageTitle);
-		myFileCreationPage.setDescription(NLS.bind(
-				org.muml.pim.realtimestatechart.diagram.part.Messages.MumlNewDiagramFileWizard_CreationPageDescription,
-				org.muml.pim.realtimestatechart.diagram.edit.parts.ModelElementCategoryEditPart.MODEL_ID));
+		myFileCreationPage.setTitle(Messages.MumlNewDiagramFileWizard_CreationPageTitle);
+		myFileCreationPage.setDescription(NLS.bind(Messages.MumlNewDiagramFileWizard_CreationPageDescription,
+				ModelElementCategoryEditPart.MODEL_ID));
 		IPath filePath;
 		String fileName = URI.decode(domainModelURI.trimFileExtension().lastSegment());
 		if (domainModelURI.isPlatformResource()) {
@@ -88,15 +86,12 @@ public class MumlNewDiagramFileWizard extends Wizard {
 		}
 		myFileCreationPage.setContainerFullPath(filePath);
 		myFileCreationPage
-				.setFileName(org.muml.pim.realtimestatechart.diagram.part.MumlDiagramEditorUtil
-						.getUniqueFileName(filePath, fileName, "realtimestatechart_diagram")); //$NON-NLS-1$
+				.setFileName(MumlDiagramEditorUtil.getUniqueFileName(filePath, fileName, "realtimestatechart_diagram")); //$NON-NLS-1$
 
 		diagramRootElementSelectionPage = new DiagramRootElementSelectionPage(
-				org.muml.pim.realtimestatechart.diagram.part.Messages.MumlNewDiagramFileWizard_RootSelectionPageName);
-		diagramRootElementSelectionPage.setTitle(
-				org.muml.pim.realtimestatechart.diagram.part.Messages.MumlNewDiagramFileWizard_RootSelectionPageTitle);
-		diagramRootElementSelectionPage.setDescription(
-				org.muml.pim.realtimestatechart.diagram.part.Messages.MumlNewDiagramFileWizard_RootSelectionPageDescription);
+				Messages.MumlNewDiagramFileWizard_RootSelectionPageName);
+		diagramRootElementSelectionPage.setTitle(Messages.MumlNewDiagramFileWizard_RootSelectionPageTitle);
+		diagramRootElementSelectionPage.setDescription(Messages.MumlNewDiagramFileWizard_RootSelectionPageDescription);
 		diagramRootElementSelectionPage.setModelElement(diagramRoot);
 
 		myEditingDomain = editingDomain;
@@ -116,45 +111,39 @@ public class MumlNewDiagramFileWizard extends Wizard {
 	public boolean performFinish() {
 		LinkedList<IFile> affectedFiles = new LinkedList<IFile>();
 		IFile diagramFile = myFileCreationPage.createNewFile();
-		org.muml.pim.realtimestatechart.diagram.part.MumlDiagramEditorUtil.setCharset(diagramFile);
+		MumlDiagramEditorUtil.setCharset(diagramFile);
 		affectedFiles.add(diagramFile);
 		URI diagramModelURI = URI.createPlatformResourceURI(diagramFile.getFullPath().toString(), true);
 		ResourceSet resourceSet = myEditingDomain.getResourceSet();
 		final Resource diagramResource = resourceSet.createResource(diagramModelURI);
 		AbstractTransactionalCommand command = new AbstractTransactionalCommand(myEditingDomain,
-				org.muml.pim.realtimestatechart.diagram.part.Messages.MumlNewDiagramFileWizard_InitDiagramCommand,
-				affectedFiles) {
+				Messages.MumlNewDiagramFileWizard_InitDiagramCommand, affectedFiles) {
 
 			protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info)
 					throws ExecutionException {
-				int diagramVID = org.muml.pim.realtimestatechart.diagram.part.MumlVisualIDRegistry
+				int diagramVID = MumlVisualIDRegistry
 						.getDiagramVisualID(diagramRootElementSelectionPage.getModelElement());
-				if (diagramVID != org.muml.pim.realtimestatechart.diagram.edit.parts.ModelElementCategoryEditPart.VISUAL_ID) {
-					return CommandResult.newErrorCommandResult(
-							org.muml.pim.realtimestatechart.diagram.part.Messages.MumlNewDiagramFileWizard_IncorrectRootError);
+				if (diagramVID != ModelElementCategoryEditPart.VISUAL_ID) {
+					return CommandResult.newErrorCommandResult(Messages.MumlNewDiagramFileWizard_IncorrectRootError);
 				}
 				Diagram diagram = ViewService.createDiagram(diagramRootElementSelectionPage.getModelElement(),
-						org.muml.pim.realtimestatechart.diagram.edit.parts.ModelElementCategoryEditPart.MODEL_ID,
-						org.muml.pim.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT);
+						ModelElementCategoryEditPart.MODEL_ID,
+						RealtimestatechartDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT);
 				diagramResource.getContents().add(diagram);
 				return CommandResult.newOKCommandResult();
 			}
 		};
 		try {
 			OperationHistoryFactory.getOperationHistory().execute(command, new NullProgressMonitor(), null);
-			diagramResource.save(org.muml.pim.realtimestatechart.diagram.part.MumlDiagramEditorUtil
-					.getSaveOptions());
-			org.muml.pim.realtimestatechart.diagram.part.MumlDiagramEditorUtil
-					.openDiagram(diagramResource);
+			diagramResource.save(MumlDiagramEditorUtil.getSaveOptions());
+			MumlDiagramEditorUtil.openDiagram(diagramResource);
 		} catch (ExecutionException e) {
-			org.muml.pim.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
-					.getInstance().logError("Unable to create model and diagram", e); //$NON-NLS-1$
+			RealtimestatechartDiagramEditorPlugin.getInstance().logError("Unable to create model and diagram", e); //$NON-NLS-1$
 		} catch (IOException ex) {
-			org.muml.pim.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
-					.getInstance().logError("Save operation failed for: " + diagramModelURI, ex); //$NON-NLS-1$
+			RealtimestatechartDiagramEditorPlugin.getInstance()
+					.logError("Save operation failed for: " + diagramModelURI, ex); //$NON-NLS-1$
 		} catch (PartInitException ex) {
-			org.muml.pim.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
-					.getInstance().logError("Unable to open editor", ex); //$NON-NLS-1$
+			RealtimestatechartDiagramEditorPlugin.getInstance().logError("Unable to open editor", ex); //$NON-NLS-1$
 		}
 		return true;
 	}
@@ -162,8 +151,7 @@ public class MumlNewDiagramFileWizard extends Wizard {
 	/**
 	 * @generated
 	 */
-	private static class DiagramRootElementSelectionPage
-			extends org.muml.pim.realtimestatechart.diagram.part.ModelElementSelectionPage {
+	private static class DiagramRootElementSelectionPage extends ModelElementSelectionPage {
 
 		/**
 		 * @generated
@@ -176,7 +164,7 @@ public class MumlNewDiagramFileWizard extends Wizard {
 		 * @generated
 		 */
 		protected String getSelectionTitle() {
-			return org.muml.pim.realtimestatechart.diagram.part.Messages.MumlNewDiagramFileWizard_RootSelectionPageSelectionTitle;
+			return Messages.MumlNewDiagramFileWizard_RootSelectionPageSelectionTitle;
 		}
 
 		/**
@@ -184,17 +172,14 @@ public class MumlNewDiagramFileWizard extends Wizard {
 		 */
 		protected boolean validatePage() {
 			if (getModelElement() == null) {
-				setErrorMessage(
-						org.muml.pim.realtimestatechart.diagram.part.Messages.MumlNewDiagramFileWizard_RootSelectionPageNoSelectionMessage);
+				setErrorMessage(Messages.MumlNewDiagramFileWizard_RootSelectionPageNoSelectionMessage);
 				return false;
 			}
 			boolean result = ViewService.getInstance()
-					.provides(new CreateDiagramViewOperation(new EObjectAdapter(
-							getModelElement()),
-					org.muml.pim.realtimestatechart.diagram.edit.parts.ModelElementCategoryEditPart.MODEL_ID,
-					org.muml.pim.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT));
-			setErrorMessage(result ? null
-					: org.muml.pim.realtimestatechart.diagram.part.Messages.MumlNewDiagramFileWizard_RootSelectionPageInvalidSelectionMessage);
+					.provides(new CreateDiagramViewOperation(new EObjectAdapter(getModelElement()),
+							ModelElementCategoryEditPart.MODEL_ID,
+							RealtimestatechartDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT));
+			setErrorMessage(result ? null : Messages.MumlNewDiagramFileWizard_RootSelectionPageInvalidSelectionMessage);
 			return result;
 		}
 	}

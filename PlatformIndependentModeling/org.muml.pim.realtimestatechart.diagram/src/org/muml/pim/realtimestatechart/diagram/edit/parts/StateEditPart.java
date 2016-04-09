@@ -52,6 +52,16 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Font;
 import org.eclipse.swt.widgets.Display;
+import org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy;
+import org.muml.core.common.edit.policies.anchor.IConnectionAnchorCreationEditPolicy;
+import org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy;
+import org.muml.pim.common.edit.policies.IBackgroundColorEditPolicy;
+import org.muml.pim.common.edit.policies.statechart.StateEditPolicy;
+import org.muml.pim.realtimestatechart.diagram.edit.policies.StateCanonicalEditPolicy;
+import org.muml.pim.realtimestatechart.diagram.edit.policies.StateItemSemanticEditPolicy;
+import org.muml.pim.realtimestatechart.diagram.edit.policies.statechart.StateColorEditPolicy;
+import org.muml.pim.realtimestatechart.diagram.part.MumlVisualIDRegistry;
+import org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes;
 
 /**
  * @generated
@@ -95,10 +105,8 @@ public class StateEditPart extends AbstractBorderedShapeEditPart {
 	protected void refreshBackgroundColor() {
 		EditPolicy backgroundColorPolicy = getEditPolicy(
 				org.muml.core.common.edit.policies.EditPolicyRoles.BACKGROUND_COLOR_ROLE);
-		if (backgroundColorPolicy instanceof org.muml.pim.common.edit.policies.IBackgroundColorEditPolicy) {
-			setBackgroundColor(
-					((org.muml.pim.common.edit.policies.IBackgroundColorEditPolicy) backgroundColorPolicy)
-							.getCurrentBackgroundColor());
+		if (backgroundColorPolicy instanceof IBackgroundColorEditPolicy) {
+			setBackgroundColor(((IBackgroundColorEditPolicy) backgroundColorPolicy).getCurrentBackgroundColor());
 		} else {
 			super.refreshBackgroundColor();
 		}
@@ -125,30 +133,27 @@ public class StateEditPart extends AbstractBorderedShapeEditPart {
 	 * @generated
 	 */
 	protected void createDefaultEditPolicies() {
-		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicyWithCustomReparent(
-				org.muml.pim.realtimestatechart.diagram.part.MumlVisualIDRegistry.TYPED_INSTANCE));
+		installEditPolicy(EditPolicyRoles.CREATION_ROLE,
+				new CreationEditPolicyWithCustomReparent(MumlVisualIDRegistry.TYPED_INSTANCE));
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
-				new org.muml.pim.realtimestatechart.diagram.edit.policies.StateItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new StateItemSemanticEditPolicy());
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
-		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE,
-				new org.muml.pim.realtimestatechart.diagram.edit.policies.StateCanonicalEditPolicy());
+		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new StateCanonicalEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 
 		installEditPolicy(org.muml.pim.common.edit.policies.EditPolicyRoles.STATE_VISUALIZATION_ROLE,
-				new org.muml.pim.common.edit.policies.statechart.StateEditPolicy());
+				new StateEditPolicy());
 
 		installEditPolicy(org.muml.pim.common.edit.policies.EditPolicyRoles.STATE_COLOR_ROLE,
-				new org.muml.pim.realtimestatechart.diagram.edit.policies.statechart.StateColorEditPolicy());
+				new StateColorEditPolicy());
 
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 
-		installEditPolicy(EditPolicy.GRAPHICAL_NODE_ROLE,
-				new org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy());
+		installEditPolicy(EditPolicy.GRAPHICAL_NODE_ROLE, new ConnectionConfigureHelperGraphicalNodeEditPolicy());
 
 		installEditPolicy(org.muml.core.common.edit.policies.EditPolicyRoles.ERROR_FEEDBACK_ROLE,
-				new org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy());
+				new ErrorFeedbackEditPolicy());
 
 	}
 
@@ -160,10 +165,9 @@ public class StateEditPart extends AbstractBorderedShapeEditPart {
 
 			protected EditPolicy createChildEditPolicy(EditPart child) {
 				View childView = (View) child.getModel();
-				switch (org.muml.pim.realtimestatechart.diagram.part.MumlVisualIDRegistry
-						.getVisualID(childView)) {
-				case org.muml.pim.realtimestatechart.diagram.edit.parts.EntryPointEditPart.VISUAL_ID:
-				case org.muml.pim.realtimestatechart.diagram.edit.parts.ExitPointEditPart.VISUAL_ID:
+				switch (MumlVisualIDRegistry.getVisualID(childView)) {
+				case EntryPointEditPart.VISUAL_ID:
+				case ExitPointEditPart.VISUAL_ID:
 					return new BorderItemSelectionEditPolicy();
 				}
 				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
@@ -202,55 +206,42 @@ public class StateEditPart extends AbstractBorderedShapeEditPart {
 	 * @generated
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof org.muml.pim.realtimestatechart.diagram.edit.parts.StateNameEditPart) {
-			((org.muml.pim.realtimestatechart.diagram.edit.parts.StateNameEditPart) childEditPart)
-					.setLabel(getPrimaryShape().getFigureStateNameLabel());
+		if (childEditPart instanceof StateNameEditPart) {
+			((StateNameEditPart) childEditPart).setLabel(getPrimaryShape().getFigureStateNameLabel());
 			return true;
 		}
-		if (childEditPart instanceof org.muml.pim.realtimestatechart.diagram.edit.parts.StateActionCompartmentEditPart) {
+		if (childEditPart instanceof StateActionCompartmentEditPart) {
 			IFigure pane = getPrimaryShape().getFigureActionCompartment();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
-			pane.add(
-					((org.muml.pim.realtimestatechart.diagram.edit.parts.StateActionCompartmentEditPart) childEditPart)
-							.getFigure());
+			pane.add(((StateActionCompartmentEditPart) childEditPart).getFigure());
 			return true;
 		}
-		if (childEditPart instanceof org.muml.pim.realtimestatechart.diagram.edit.parts.StateRegionCompartmentEditPart) {
+		if (childEditPart instanceof StateRegionCompartmentEditPart) {
 			IFigure pane = getPrimaryShape().getFigureRegionsCompartment();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
-			pane.add(
-					((org.muml.pim.realtimestatechart.diagram.edit.parts.StateRegionCompartmentEditPart) childEditPart)
-							.getFigure());
+			pane.add(((StateRegionCompartmentEditPart) childEditPart).getFigure());
 			return true;
 		}
-		if (childEditPart instanceof org.muml.pim.realtimestatechart.diagram.edit.parts.StateChannelCompartmentEditPart) {
+		if (childEditPart instanceof StateChannelCompartmentEditPart) {
 			IFigure pane = getPrimaryShape().getFigureChannelCompartment();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
-			pane.add(
-					((org.muml.pim.realtimestatechart.diagram.edit.parts.StateChannelCompartmentEditPart) childEditPart)
-							.getFigure());
+			pane.add(((StateChannelCompartmentEditPart) childEditPart).getFigure());
 			return true;
 		}
-		if (childEditPart instanceof org.muml.pim.realtimestatechart.diagram.edit.parts.StateInvariantCompartmentEditPart) {
+		if (childEditPart instanceof StateInvariantCompartmentEditPart) {
 			IFigure pane = getPrimaryShape().getFigureInvariantCompartment();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
-			pane.add(
-					((org.muml.pim.realtimestatechart.diagram.edit.parts.StateInvariantCompartmentEditPart) childEditPart)
-							.getFigure());
+			pane.add(((StateInvariantCompartmentEditPart) childEditPart).getFigure());
 			return true;
 		}
-		if (childEditPart instanceof org.muml.pim.realtimestatechart.diagram.edit.parts.EntryPointEditPart) {
+		if (childEditPart instanceof EntryPointEditPart) {
 			BorderItemLocator locator = new BorderItemLocator(getMainFigure(), PositionConstants.WEST);
-			getBorderedFigure().getBorderItemContainer()
-					.add(((org.muml.pim.realtimestatechart.diagram.edit.parts.EntryPointEditPart) childEditPart)
-							.getFigure(), locator);
+			getBorderedFigure().getBorderItemContainer().add(((EntryPointEditPart) childEditPart).getFigure(), locator);
 			return true;
 		}
-		if (childEditPart instanceof org.muml.pim.realtimestatechart.diagram.edit.parts.ExitPointEditPart) {
+		if (childEditPart instanceof ExitPointEditPart) {
 			BorderItemLocator locator = new BorderItemLocator(getMainFigure(), PositionConstants.EAST);
-			getBorderedFigure().getBorderItemContainer()
-					.add(((org.muml.pim.realtimestatechart.diagram.edit.parts.ExitPointEditPart) childEditPart)
-							.getFigure(), locator);
+			getBorderedFigure().getBorderItemContainer().add(((ExitPointEditPart) childEditPart).getFigure(), locator);
 			return true;
 		}
 		return false;
@@ -260,47 +251,35 @@ public class StateEditPart extends AbstractBorderedShapeEditPart {
 	 * @generated
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof org.muml.pim.realtimestatechart.diagram.edit.parts.StateNameEditPart) {
+		if (childEditPart instanceof StateNameEditPart) {
 			return true;
 		}
-		if (childEditPart instanceof org.muml.pim.realtimestatechart.diagram.edit.parts.StateActionCompartmentEditPart) {
+		if (childEditPart instanceof StateActionCompartmentEditPart) {
 			IFigure pane = getPrimaryShape().getFigureActionCompartment();
-			pane.remove(
-					((org.muml.pim.realtimestatechart.diagram.edit.parts.StateActionCompartmentEditPart) childEditPart)
-							.getFigure());
+			pane.remove(((StateActionCompartmentEditPart) childEditPart).getFigure());
 			return true;
 		}
-		if (childEditPart instanceof org.muml.pim.realtimestatechart.diagram.edit.parts.StateRegionCompartmentEditPart) {
+		if (childEditPart instanceof StateRegionCompartmentEditPart) {
 			IFigure pane = getPrimaryShape().getFigureRegionsCompartment();
-			pane.remove(
-					((org.muml.pim.realtimestatechart.diagram.edit.parts.StateRegionCompartmentEditPart) childEditPart)
-							.getFigure());
+			pane.remove(((StateRegionCompartmentEditPart) childEditPart).getFigure());
 			return true;
 		}
-		if (childEditPart instanceof org.muml.pim.realtimestatechart.diagram.edit.parts.StateChannelCompartmentEditPart) {
+		if (childEditPart instanceof StateChannelCompartmentEditPart) {
 			IFigure pane = getPrimaryShape().getFigureChannelCompartment();
-			pane.remove(
-					((org.muml.pim.realtimestatechart.diagram.edit.parts.StateChannelCompartmentEditPart) childEditPart)
-							.getFigure());
+			pane.remove(((StateChannelCompartmentEditPart) childEditPart).getFigure());
 			return true;
 		}
-		if (childEditPart instanceof org.muml.pim.realtimestatechart.diagram.edit.parts.StateInvariantCompartmentEditPart) {
+		if (childEditPart instanceof StateInvariantCompartmentEditPart) {
 			IFigure pane = getPrimaryShape().getFigureInvariantCompartment();
-			pane.remove(
-					((org.muml.pim.realtimestatechart.diagram.edit.parts.StateInvariantCompartmentEditPart) childEditPart)
-							.getFigure());
+			pane.remove(((StateInvariantCompartmentEditPart) childEditPart).getFigure());
 			return true;
 		}
-		if (childEditPart instanceof org.muml.pim.realtimestatechart.diagram.edit.parts.EntryPointEditPart) {
-			getBorderedFigure().getBorderItemContainer()
-					.remove(((org.muml.pim.realtimestatechart.diagram.edit.parts.EntryPointEditPart) childEditPart)
-							.getFigure());
+		if (childEditPart instanceof EntryPointEditPart) {
+			getBorderedFigure().getBorderItemContainer().remove(((EntryPointEditPart) childEditPart).getFigure());
 			return true;
 		}
-		if (childEditPart instanceof org.muml.pim.realtimestatechart.diagram.edit.parts.ExitPointEditPart) {
-			getBorderedFigure().getBorderItemContainer()
-					.remove(((org.muml.pim.realtimestatechart.diagram.edit.parts.ExitPointEditPart) childEditPart)
-							.getFigure());
+		if (childEditPart instanceof ExitPointEditPart) {
+			getBorderedFigure().getBorderItemContainer().remove(((ExitPointEditPart) childEditPart).getFigure());
 			return true;
 		}
 		return false;
@@ -330,16 +309,16 @@ public class StateEditPart extends AbstractBorderedShapeEditPart {
 	 * @generated
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
-		if (editPart instanceof org.muml.pim.realtimestatechart.diagram.edit.parts.StateActionCompartmentEditPart) {
+		if (editPart instanceof StateActionCompartmentEditPart) {
 			return getPrimaryShape().getFigureActionCompartment();
 		}
-		if (editPart instanceof org.muml.pim.realtimestatechart.diagram.edit.parts.StateRegionCompartmentEditPart) {
+		if (editPart instanceof StateRegionCompartmentEditPart) {
 			return getPrimaryShape().getFigureRegionsCompartment();
 		}
-		if (editPart instanceof org.muml.pim.realtimestatechart.diagram.edit.parts.StateChannelCompartmentEditPart) {
+		if (editPart instanceof StateChannelCompartmentEditPart) {
 			return getPrimaryShape().getFigureChannelCompartment();
 		}
-		if (editPart instanceof org.muml.pim.realtimestatechart.diagram.edit.parts.StateInvariantCompartmentEditPart) {
+		if (editPart instanceof StateInvariantCompartmentEditPart) {
 			return getPrimaryShape().getFigureInvariantCompartment();
 		}
 		if (editPart instanceof IBorderItemEditPart) {
@@ -355,7 +334,7 @@ public class StateEditPart extends AbstractBorderedShapeEditPart {
 		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(40, 40) {
 			@Override
 			public ConnectionAnchor createDefaultAnchor() {
-				org.muml.core.common.edit.policies.anchor.IConnectionAnchorCreationEditPolicy connectionAnchorCreationEditPolicy = (org.muml.core.common.edit.policies.anchor.IConnectionAnchorCreationEditPolicy) getEditPolicy(
+				IConnectionAnchorCreationEditPolicy connectionAnchorCreationEditPolicy = (IConnectionAnchorCreationEditPolicy) getEditPolicy(
 						org.muml.core.common.edit.policies.EditPolicyRoles.CONNECTION_ANCHOR_CREATION_ROLE);
 				if (connectionAnchorCreationEditPolicy != null) {
 					return connectionAnchorCreationEditPolicy.createDefaultAnchor();
@@ -452,9 +431,7 @@ public class StateEditPart extends AbstractBorderedShapeEditPart {
 	 * @generated
 	 */
 	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(
-				org.muml.pim.realtimestatechart.diagram.part.MumlVisualIDRegistry.getType(
-						org.muml.pim.realtimestatechart.diagram.edit.parts.StateNameEditPart.VISUAL_ID));
+		return getChildBySemanticHint(MumlVisualIDRegistry.getType(StateNameEditPart.VISUAL_ID));
 	}
 
 	/**
@@ -465,35 +442,24 @@ public class StateEditPart extends AbstractBorderedShapeEditPart {
 			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request).getViewAndElementDescriptor()
 					.getCreateElementRequestAdapter();
 			IElementType type = (IElementType) adapter.getAdapter(IElementType.class);
-			if (type == org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes.EntryEvent_3033) {
-				return getChildBySemanticHint(
-						org.muml.pim.realtimestatechart.diagram.part.MumlVisualIDRegistry.getType(
-								org.muml.pim.realtimestatechart.diagram.edit.parts.StateActionCompartmentEditPart.VISUAL_ID));
+			if (type == MumlElementTypes.EntryEvent_3033) {
+				return getChildBySemanticHint(MumlVisualIDRegistry.getType(StateActionCompartmentEditPart.VISUAL_ID));
 			}
-			if (type == org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes.DoEvent_3034) {
-				return getChildBySemanticHint(
-						org.muml.pim.realtimestatechart.diagram.part.MumlVisualIDRegistry.getType(
-								org.muml.pim.realtimestatechart.diagram.edit.parts.StateActionCompartmentEditPart.VISUAL_ID));
+			if (type == MumlElementTypes.DoEvent_3034) {
+				return getChildBySemanticHint(MumlVisualIDRegistry.getType(StateActionCompartmentEditPart.VISUAL_ID));
 			}
-			if (type == org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes.ExitEvent_3035) {
-				return getChildBySemanticHint(
-						org.muml.pim.realtimestatechart.diagram.part.MumlVisualIDRegistry.getType(
-								org.muml.pim.realtimestatechart.diagram.edit.parts.StateActionCompartmentEditPart.VISUAL_ID));
+			if (type == MumlElementTypes.ExitEvent_3035) {
+				return getChildBySemanticHint(MumlVisualIDRegistry.getType(StateActionCompartmentEditPart.VISUAL_ID));
 			}
-			if (type == org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes.Region_3042) {
-				return getChildBySemanticHint(
-						org.muml.pim.realtimestatechart.diagram.part.MumlVisualIDRegistry.getType(
-								org.muml.pim.realtimestatechart.diagram.edit.parts.StateRegionCompartmentEditPart.VISUAL_ID));
+			if (type == MumlElementTypes.Region_3042) {
+				return getChildBySemanticHint(MumlVisualIDRegistry.getType(StateRegionCompartmentEditPart.VISUAL_ID));
 			}
-			if (type == org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes.SynchronizationChannel_3037) {
-				return getChildBySemanticHint(
-						org.muml.pim.realtimestatechart.diagram.part.MumlVisualIDRegistry.getType(
-								org.muml.pim.realtimestatechart.diagram.edit.parts.StateChannelCompartmentEditPart.VISUAL_ID));
+			if (type == MumlElementTypes.SynchronizationChannel_3037) {
+				return getChildBySemanticHint(MumlVisualIDRegistry.getType(StateChannelCompartmentEditPart.VISUAL_ID));
 			}
-			if (type == org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes.ClockConstraint_3036) {
+			if (type == MumlElementTypes.ClockConstraint_3036) {
 				return getChildBySemanticHint(
-						org.muml.pim.realtimestatechart.diagram.part.MumlVisualIDRegistry.getType(
-								org.muml.pim.realtimestatechart.diagram.edit.parts.StateInvariantCompartmentEditPart.VISUAL_ID));
+						MumlVisualIDRegistry.getType(StateInvariantCompartmentEditPart.VISUAL_ID));
 			}
 		}
 		return super.getTargetEditPart(request);

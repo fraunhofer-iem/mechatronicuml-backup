@@ -18,8 +18,7 @@ import java.util.LinkedList;
 /**
  * @generated
  */
-public class MumlNavigatorGroup extends
-		org.muml.pim.realtimestatechart.diagram.navigator.RealtimestatechartAbstractNavigatorItem {
+public class MumlNavigatorGroup extends RealtimestatechartAbstractNavigatorItem {
 
 	/**
 	 * @generated

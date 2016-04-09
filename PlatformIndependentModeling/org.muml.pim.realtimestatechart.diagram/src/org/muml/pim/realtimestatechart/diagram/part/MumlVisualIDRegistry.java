@@ -18,6 +18,41 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.structure.DiagramStructure;
+import org.muml.pim.realtimestatechart.RealtimeStatechart;
+import org.muml.pim.realtimestatechart.RealtimestatechartPackage;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.ClockConstraintEditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.DoEventEditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.EntryEventEditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.EntryPointEditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.ExitEventEditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.ExitPointEditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.ModelElementCategoryEditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.RealtimeStatechart2EditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.RealtimeStatechartEditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.RealtimeStatechartNameEditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.RealtimeStatechartStatechartContentsCompartment2EditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.RealtimeStatechartStatechartContentsCompartmentEditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.RegionEditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.RegionNameEditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.RegionPriorityEditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.RegionRegionContentsCompartmentEditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.StateActionCompartmentEditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.StateChannelCompartmentEditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.StateEditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.StateInvariantCompartmentEditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.StateNameEditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.StateRegionCompartmentEditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.SynchronizationChannelEditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.TransitionEditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.WrappingLabel2EditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.WrappingLabel3EditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.WrappingLabel4EditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.WrappingLabel5EditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.WrappingLabel6EditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.WrappingLabel7EditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.WrappingLabel8EditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.WrappingLabel9EditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.WrappingLabelEditPart;
 
 /**
  * This registry is used to determine which type of visual object should be
@@ -38,15 +73,13 @@ public class MumlVisualIDRegistry {
 	 */
 	public static int getVisualID(View view) {
 		if (view instanceof Diagram) {
-			if (org.muml.pim.realtimestatechart.diagram.edit.parts.ModelElementCategoryEditPart.MODEL_ID
-					.equals(view.getType())) {
-				return org.muml.pim.realtimestatechart.diagram.edit.parts.ModelElementCategoryEditPart.VISUAL_ID;
+			if (ModelElementCategoryEditPart.MODEL_ID.equals(view.getType())) {
+				return ModelElementCategoryEditPart.VISUAL_ID;
 			} else {
 				return -1;
 			}
 		}
-		return org.muml.pim.realtimestatechart.diagram.part.MumlVisualIDRegistry
-				.getVisualID(view.getType());
+		return org.muml.pim.realtimestatechart.diagram.part.MumlVisualIDRegistry.getVisualID(view.getType());
 	}
 
 	/**
@@ -72,8 +105,8 @@ public class MumlVisualIDRegistry {
 			return Integer.parseInt(type);
 		} catch (NumberFormatException e) {
 			if (Boolean.TRUE.toString().equalsIgnoreCase(Platform.getDebugOption(DEBUG_KEY))) {
-				org.muml.pim.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
-						.getInstance().logError("Unable to parse view type as a visualID number: " + type);
+				RealtimestatechartDiagramEditorPlugin.getInstance()
+						.logError("Unable to parse view type as a visualID number: " + type);
 			}
 		}
 		return -1;
@@ -93,10 +126,9 @@ public class MumlVisualIDRegistry {
 		if (domainElement == null) {
 			return -1;
 		}
-		if (org.muml.pim.realtimestatechart.RealtimestatechartPackage.eINSTANCE.getRealtimeStatechart()
-				.isSuperTypeOf(domainElement.eClass())
-				&& isDiagram((org.muml.pim.realtimestatechart.RealtimeStatechart) domainElement)) {
-			return org.muml.pim.realtimestatechart.diagram.edit.parts.ModelElementCategoryEditPart.VISUAL_ID;
+		if (RealtimestatechartPackage.eINSTANCE.getRealtimeStatechart().isSuperTypeOf(domainElement.eClass())
+				&& isDiagram((RealtimeStatechart) domainElement)) {
+			return ModelElementCategoryEditPart.VISUAL_ID;
 		}
 		return -1;
 	}
@@ -110,87 +142,73 @@ public class MumlVisualIDRegistry {
 		}
 		String containerModelID = org.muml.pim.realtimestatechart.diagram.part.MumlVisualIDRegistry
 				.getModelID(containerView);
-		if (!org.muml.pim.realtimestatechart.diagram.edit.parts.ModelElementCategoryEditPart.MODEL_ID
-				.equals(containerModelID)) {
+		if (!ModelElementCategoryEditPart.MODEL_ID.equals(containerModelID)) {
 			return -1;
 		}
 		int containerVisualID;
-		if (org.muml.pim.realtimestatechart.diagram.edit.parts.ModelElementCategoryEditPart.MODEL_ID
-				.equals(containerModelID)) {
+		if (ModelElementCategoryEditPart.MODEL_ID.equals(containerModelID)) {
 			containerVisualID = org.muml.pim.realtimestatechart.diagram.part.MumlVisualIDRegistry
 					.getVisualID(containerView);
 		} else {
 			if (containerView instanceof Diagram) {
-				containerVisualID = org.muml.pim.realtimestatechart.diagram.edit.parts.ModelElementCategoryEditPart.VISUAL_ID;
+				containerVisualID = ModelElementCategoryEditPart.VISUAL_ID;
 			} else {
 				return -1;
 			}
 		}
 		switch (containerVisualID) {
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.ModelElementCategoryEditPart.VISUAL_ID:
-			if (org.muml.pim.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-					.getRealtimeStatechart().isSuperTypeOf(domainElement.eClass())) {
-				return org.muml.pim.realtimestatechart.diagram.edit.parts.RealtimeStatechartEditPart.VISUAL_ID;
+		case ModelElementCategoryEditPart.VISUAL_ID:
+			if (RealtimestatechartPackage.eINSTANCE.getRealtimeStatechart().isSuperTypeOf(domainElement.eClass())) {
+				return RealtimeStatechartEditPart.VISUAL_ID;
 			}
 			break;
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.StateEditPart.VISUAL_ID:
-			if (org.muml.pim.realtimestatechart.RealtimestatechartPackage.eINSTANCE.getEntryPoint()
-					.isSuperTypeOf(domainElement.eClass())) {
-				return org.muml.pim.realtimestatechart.diagram.edit.parts.EntryPointEditPart.VISUAL_ID;
+		case StateEditPart.VISUAL_ID:
+			if (RealtimestatechartPackage.eINSTANCE.getEntryPoint().isSuperTypeOf(domainElement.eClass())) {
+				return EntryPointEditPart.VISUAL_ID;
 			}
-			if (org.muml.pim.realtimestatechart.RealtimestatechartPackage.eINSTANCE.getExitPoint()
-					.isSuperTypeOf(domainElement.eClass())) {
-				return org.muml.pim.realtimestatechart.diagram.edit.parts.ExitPointEditPart.VISUAL_ID;
+			if (RealtimestatechartPackage.eINSTANCE.getExitPoint().isSuperTypeOf(domainElement.eClass())) {
+				return ExitPointEditPart.VISUAL_ID;
 			}
 			break;
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.RealtimeStatechartStatechartContentsCompartmentEditPart.VISUAL_ID:
-			if (org.muml.pim.realtimestatechart.RealtimestatechartPackage.eINSTANCE.getState()
-					.isSuperTypeOf(domainElement.eClass())) {
-				return org.muml.pim.realtimestatechart.diagram.edit.parts.StateEditPart.VISUAL_ID;
+		case RealtimeStatechartStatechartContentsCompartmentEditPart.VISUAL_ID:
+			if (RealtimestatechartPackage.eINSTANCE.getState().isSuperTypeOf(domainElement.eClass())) {
+				return StateEditPart.VISUAL_ID;
 			}
 			break;
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.StateActionCompartmentEditPart.VISUAL_ID:
-			if (org.muml.pim.realtimestatechart.RealtimestatechartPackage.eINSTANCE.getEntryEvent()
-					.isSuperTypeOf(domainElement.eClass())) {
-				return org.muml.pim.realtimestatechart.diagram.edit.parts.EntryEventEditPart.VISUAL_ID;
+		case StateActionCompartmentEditPart.VISUAL_ID:
+			if (RealtimestatechartPackage.eINSTANCE.getEntryEvent().isSuperTypeOf(domainElement.eClass())) {
+				return EntryEventEditPart.VISUAL_ID;
 			}
-			if (org.muml.pim.realtimestatechart.RealtimestatechartPackage.eINSTANCE.getDoEvent()
-					.isSuperTypeOf(domainElement.eClass())) {
-				return org.muml.pim.realtimestatechart.diagram.edit.parts.DoEventEditPart.VISUAL_ID;
+			if (RealtimestatechartPackage.eINSTANCE.getDoEvent().isSuperTypeOf(domainElement.eClass())) {
+				return DoEventEditPart.VISUAL_ID;
 			}
-			if (org.muml.pim.realtimestatechart.RealtimestatechartPackage.eINSTANCE.getExitEvent()
-					.isSuperTypeOf(domainElement.eClass())) {
-				return org.muml.pim.realtimestatechart.diagram.edit.parts.ExitEventEditPart.VISUAL_ID;
+			if (RealtimestatechartPackage.eINSTANCE.getExitEvent().isSuperTypeOf(domainElement.eClass())) {
+				return ExitEventEditPart.VISUAL_ID;
 			}
 			break;
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.StateRegionCompartmentEditPart.VISUAL_ID:
-			if (org.muml.pim.realtimestatechart.RealtimestatechartPackage.eINSTANCE.getRegion()
-					.isSuperTypeOf(domainElement.eClass())) {
-				return org.muml.pim.realtimestatechart.diagram.edit.parts.RegionEditPart.VISUAL_ID;
+		case StateRegionCompartmentEditPart.VISUAL_ID:
+			if (RealtimestatechartPackage.eINSTANCE.getRegion().isSuperTypeOf(domainElement.eClass())) {
+				return RegionEditPart.VISUAL_ID;
 			}
 			break;
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.StateChannelCompartmentEditPart.VISUAL_ID:
-			if (org.muml.pim.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-					.getSynchronizationChannel().isSuperTypeOf(domainElement.eClass())) {
-				return org.muml.pim.realtimestatechart.diagram.edit.parts.SynchronizationChannelEditPart.VISUAL_ID;
+		case StateChannelCompartmentEditPart.VISUAL_ID:
+			if (RealtimestatechartPackage.eINSTANCE.getSynchronizationChannel().isSuperTypeOf(domainElement.eClass())) {
+				return SynchronizationChannelEditPart.VISUAL_ID;
 			}
 			break;
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.StateInvariantCompartmentEditPart.VISUAL_ID:
-			if (org.muml.pim.realtimestatechart.RealtimestatechartPackage.eINSTANCE.getClockConstraint()
-					.isSuperTypeOf(domainElement.eClass())) {
-				return org.muml.pim.realtimestatechart.diagram.edit.parts.ClockConstraintEditPart.VISUAL_ID;
+		case StateInvariantCompartmentEditPart.VISUAL_ID:
+			if (RealtimestatechartPackage.eINSTANCE.getClockConstraint().isSuperTypeOf(domainElement.eClass())) {
+				return ClockConstraintEditPart.VISUAL_ID;
 			}
 			break;
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.RegionRegionContentsCompartmentEditPart.VISUAL_ID:
-			if (org.muml.pim.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-					.getRealtimeStatechart().isSuperTypeOf(domainElement.eClass())) {
-				return org.muml.pim.realtimestatechart.diagram.edit.parts.RealtimeStatechart2EditPart.VISUAL_ID;
+		case RegionRegionContentsCompartmentEditPart.VISUAL_ID:
+			if (RealtimestatechartPackage.eINSTANCE.getRealtimeStatechart().isSuperTypeOf(domainElement.eClass())) {
+				return RealtimeStatechart2EditPart.VISUAL_ID;
 			}
 			break;
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.RealtimeStatechartStatechartContentsCompartment2EditPart.VISUAL_ID:
-			if (org.muml.pim.realtimestatechart.RealtimestatechartPackage.eINSTANCE.getState()
-					.isSuperTypeOf(domainElement.eClass())) {
-				return org.muml.pim.realtimestatechart.diagram.edit.parts.StateEditPart.VISUAL_ID;
+		case RealtimeStatechartStatechartContentsCompartment2EditPart.VISUAL_ID:
+			if (RealtimestatechartPackage.eINSTANCE.getState().isSuperTypeOf(domainElement.eClass())) {
+				return StateEditPart.VISUAL_ID;
 			}
 			break;
 		}
@@ -203,152 +221,150 @@ public class MumlVisualIDRegistry {
 	public static boolean canCreateNode(View containerView, int nodeVisualID) {
 		String containerModelID = org.muml.pim.realtimestatechart.diagram.part.MumlVisualIDRegistry
 				.getModelID(containerView);
-		if (!org.muml.pim.realtimestatechart.diagram.edit.parts.ModelElementCategoryEditPart.MODEL_ID
-				.equals(containerModelID)) {
+		if (!ModelElementCategoryEditPart.MODEL_ID.equals(containerModelID)) {
 			return false;
 		}
 		int containerVisualID;
-		if (org.muml.pim.realtimestatechart.diagram.edit.parts.ModelElementCategoryEditPart.MODEL_ID
-				.equals(containerModelID)) {
+		if (ModelElementCategoryEditPart.MODEL_ID.equals(containerModelID)) {
 			containerVisualID = org.muml.pim.realtimestatechart.diagram.part.MumlVisualIDRegistry
 					.getVisualID(containerView);
 		} else {
 			if (containerView instanceof Diagram) {
-				containerVisualID = org.muml.pim.realtimestatechart.diagram.edit.parts.ModelElementCategoryEditPart.VISUAL_ID;
+				containerVisualID = ModelElementCategoryEditPart.VISUAL_ID;
 			} else {
 				return false;
 			}
 		}
 		switch (containerVisualID) {
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.ModelElementCategoryEditPart.VISUAL_ID:
-			if (org.muml.pim.realtimestatechart.diagram.edit.parts.RealtimeStatechartEditPart.VISUAL_ID == nodeVisualID) {
+		case ModelElementCategoryEditPart.VISUAL_ID:
+			if (RealtimeStatechartEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.RealtimeStatechartEditPart.VISUAL_ID:
-			if (org.muml.pim.realtimestatechart.diagram.edit.parts.RealtimeStatechartNameEditPart.VISUAL_ID == nodeVisualID) {
+		case RealtimeStatechartEditPart.VISUAL_ID:
+			if (RealtimeStatechartNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (org.muml.pim.realtimestatechart.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID == nodeVisualID) {
+			if (WrappingLabelEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (org.muml.pim.realtimestatechart.diagram.edit.parts.RealtimeStatechartStatechartContentsCompartmentEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.StateEditPart.VISUAL_ID:
-			if (org.muml.pim.realtimestatechart.diagram.edit.parts.StateNameEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (org.muml.pim.realtimestatechart.diagram.edit.parts.StateActionCompartmentEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (org.muml.pim.realtimestatechart.diagram.edit.parts.StateRegionCompartmentEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (org.muml.pim.realtimestatechart.diagram.edit.parts.StateChannelCompartmentEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (org.muml.pim.realtimestatechart.diagram.edit.parts.StateInvariantCompartmentEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (org.muml.pim.realtimestatechart.diagram.edit.parts.EntryPointEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (org.muml.pim.realtimestatechart.diagram.edit.parts.ExitPointEditPart.VISUAL_ID == nodeVisualID) {
+			if (RealtimeStatechartStatechartContentsCompartmentEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.EntryEventEditPart.VISUAL_ID:
-			if (org.muml.pim.realtimestatechart.diagram.edit.parts.WrappingLabel2EditPart.VISUAL_ID == nodeVisualID) {
+		case StateEditPart.VISUAL_ID:
+			if (StateNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (StateActionCompartmentEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (StateRegionCompartmentEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (StateChannelCompartmentEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (StateInvariantCompartmentEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (EntryPointEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ExitPointEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.DoEventEditPart.VISUAL_ID:
-			if (org.muml.pim.realtimestatechart.diagram.edit.parts.WrappingLabel3EditPart.VISUAL_ID == nodeVisualID) {
+		case EntryEventEditPart.VISUAL_ID:
+			if (WrappingLabel2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.ExitEventEditPart.VISUAL_ID:
-			if (org.muml.pim.realtimestatechart.diagram.edit.parts.WrappingLabel4EditPart.VISUAL_ID == nodeVisualID) {
+		case DoEventEditPart.VISUAL_ID:
+			if (WrappingLabel3EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.ClockConstraintEditPart.VISUAL_ID:
-			if (org.muml.pim.realtimestatechart.diagram.edit.parts.WrappingLabel5EditPart.VISUAL_ID == nodeVisualID) {
+		case ExitEventEditPart.VISUAL_ID:
+			if (WrappingLabel4EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.SynchronizationChannelEditPart.VISUAL_ID:
-			if (org.muml.pim.realtimestatechart.diagram.edit.parts.WrappingLabel6EditPart.VISUAL_ID == nodeVisualID) {
+		case ClockConstraintEditPart.VISUAL_ID:
+			if (WrappingLabel5EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.RegionEditPart.VISUAL_ID:
-			if (org.muml.pim.realtimestatechart.diagram.edit.parts.RegionNameEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (org.muml.pim.realtimestatechart.diagram.edit.parts.RegionPriorityEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (org.muml.pim.realtimestatechart.diagram.edit.parts.WrappingLabel7EditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (org.muml.pim.realtimestatechart.diagram.edit.parts.RegionRegionContentsCompartmentEditPart.VISUAL_ID == nodeVisualID) {
+		case SynchronizationChannelEditPart.VISUAL_ID:
+			if (WrappingLabel6EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.RealtimeStatechart2EditPart.VISUAL_ID:
-			if (org.muml.pim.realtimestatechart.diagram.edit.parts.RealtimeStatechartStatechartContentsCompartment2EditPart.VISUAL_ID == nodeVisualID) {
+		case RegionEditPart.VISUAL_ID:
+			if (RegionNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (RegionPriorityEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (WrappingLabel7EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (RegionRegionContentsCompartmentEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.RealtimeStatechartStatechartContentsCompartmentEditPart.VISUAL_ID:
-			if (org.muml.pim.realtimestatechart.diagram.edit.parts.StateEditPart.VISUAL_ID == nodeVisualID) {
+		case RealtimeStatechart2EditPart.VISUAL_ID:
+			if (RealtimeStatechartStatechartContentsCompartment2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.StateActionCompartmentEditPart.VISUAL_ID:
-			if (org.muml.pim.realtimestatechart.diagram.edit.parts.EntryEventEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (org.muml.pim.realtimestatechart.diagram.edit.parts.DoEventEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (org.muml.pim.realtimestatechart.diagram.edit.parts.ExitEventEditPart.VISUAL_ID == nodeVisualID) {
+		case RealtimeStatechartStatechartContentsCompartmentEditPart.VISUAL_ID:
+			if (StateEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.StateRegionCompartmentEditPart.VISUAL_ID:
-			if (org.muml.pim.realtimestatechart.diagram.edit.parts.RegionEditPart.VISUAL_ID == nodeVisualID) {
+		case StateActionCompartmentEditPart.VISUAL_ID:
+			if (EntryEventEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (DoEventEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ExitEventEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.StateChannelCompartmentEditPart.VISUAL_ID:
-			if (org.muml.pim.realtimestatechart.diagram.edit.parts.SynchronizationChannelEditPart.VISUAL_ID == nodeVisualID) {
+		case StateRegionCompartmentEditPart.VISUAL_ID:
+			if (RegionEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.StateInvariantCompartmentEditPart.VISUAL_ID:
-			if (org.muml.pim.realtimestatechart.diagram.edit.parts.ClockConstraintEditPart.VISUAL_ID == nodeVisualID) {
+		case StateChannelCompartmentEditPart.VISUAL_ID:
+			if (SynchronizationChannelEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.RegionRegionContentsCompartmentEditPart.VISUAL_ID:
-			if (org.muml.pim.realtimestatechart.diagram.edit.parts.RealtimeStatechart2EditPart.VISUAL_ID == nodeVisualID) {
+		case StateInvariantCompartmentEditPart.VISUAL_ID:
+			if (ClockConstraintEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.RealtimeStatechartStatechartContentsCompartment2EditPart.VISUAL_ID:
-			if (org.muml.pim.realtimestatechart.diagram.edit.parts.StateEditPart.VISUAL_ID == nodeVisualID) {
+		case RegionRegionContentsCompartmentEditPart.VISUAL_ID:
+			if (RealtimeStatechart2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.TransitionEditPart.VISUAL_ID:
-			if (org.muml.pim.realtimestatechart.diagram.edit.parts.WrappingLabel8EditPart.VISUAL_ID == nodeVisualID) {
+		case RealtimeStatechartStatechartContentsCompartment2EditPart.VISUAL_ID:
+			if (StateEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (org.muml.pim.realtimestatechart.diagram.edit.parts.WrappingLabel9EditPart.VISUAL_ID == nodeVisualID) {
+			break;
+		case TransitionEditPart.VISUAL_ID:
+			if (WrappingLabel8EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (WrappingLabel9EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -363,20 +379,19 @@ public class MumlVisualIDRegistry {
 		if (domainElement == null) {
 			return -1;
 		}
-		if (org.muml.pim.realtimestatechart.RealtimestatechartPackage.eINSTANCE.getTransition()
-				.isSuperTypeOf(domainElement.eClass())) {
-			return org.muml.pim.realtimestatechart.diagram.edit.parts.TransitionEditPart.VISUAL_ID;
+		if (RealtimestatechartPackage.eINSTANCE.getTransition().isSuperTypeOf(domainElement.eClass())) {
+			return TransitionEditPart.VISUAL_ID;
 		}
 		return -1;
 	}
 
 	/**
-	 * User can change implementation of this method to handle some specific
-	 * situations not covered by default logic.
-	 * 
-	 * @generated
-	 */
-	private static boolean isDiagram(org.muml.pim.realtimestatechart.RealtimeStatechart element) {
+	* User can change implementation of this method to handle some specific
+	* situations not covered by default logic.
+	* 
+	* @generated
+	*/
+	private static boolean isDiagram(RealtimeStatechart element) {
 		return true;
 	}
 
@@ -397,13 +412,13 @@ public class MumlVisualIDRegistry {
 	 */
 	public static boolean isCompartmentVisualID(int visualID) {
 		switch (visualID) {
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.RealtimeStatechartStatechartContentsCompartmentEditPart.VISUAL_ID:
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.StateActionCompartmentEditPart.VISUAL_ID:
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.StateRegionCompartmentEditPart.VISUAL_ID:
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.StateChannelCompartmentEditPart.VISUAL_ID:
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.StateInvariantCompartmentEditPart.VISUAL_ID:
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.RegionRegionContentsCompartmentEditPart.VISUAL_ID:
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.RealtimeStatechartStatechartContentsCompartment2EditPart.VISUAL_ID:
+		case RealtimeStatechartStatechartContentsCompartmentEditPart.VISUAL_ID:
+		case StateActionCompartmentEditPart.VISUAL_ID:
+		case StateRegionCompartmentEditPart.VISUAL_ID:
+		case StateChannelCompartmentEditPart.VISUAL_ID:
+		case StateInvariantCompartmentEditPart.VISUAL_ID:
+		case RegionRegionContentsCompartmentEditPart.VISUAL_ID:
+		case RealtimeStatechartStatechartContentsCompartment2EditPart.VISUAL_ID:
 			return true;
 		default:
 			break;
@@ -416,15 +431,15 @@ public class MumlVisualIDRegistry {
 	 */
 	public static boolean isSemanticLeafVisualID(int visualID) {
 		switch (visualID) {
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.ModelElementCategoryEditPart.VISUAL_ID:
+		case ModelElementCategoryEditPart.VISUAL_ID:
 			return false;
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.EntryEventEditPart.VISUAL_ID:
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.DoEventEditPart.VISUAL_ID:
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.ExitEventEditPart.VISUAL_ID:
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.ClockConstraintEditPart.VISUAL_ID:
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.SynchronizationChannelEditPart.VISUAL_ID:
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.EntryPointEditPart.VISUAL_ID:
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.ExitPointEditPart.VISUAL_ID:
+		case EntryEventEditPart.VISUAL_ID:
+		case DoEventEditPart.VISUAL_ID:
+		case ExitEventEditPart.VISUAL_ID:
+		case ClockConstraintEditPart.VISUAL_ID:
+		case SynchronizationChannelEditPart.VISUAL_ID:
+		case EntryPointEditPart.VISUAL_ID:
+		case ExitPointEditPart.VISUAL_ID:
 			return true;
 		default:
 			break;
@@ -460,8 +475,8 @@ public class MumlVisualIDRegistry {
 		@Override
 
 		public int getNodeVisualID(View containerView, EObject domainElement) {
-			return org.muml.pim.realtimestatechart.diagram.part.MumlVisualIDRegistry
-					.getNodeVisualID(containerView, domainElement);
+			return org.muml.pim.realtimestatechart.diagram.part.MumlVisualIDRegistry.getNodeVisualID(containerView,
+					domainElement);
 		}
 
 		/**
@@ -470,8 +485,8 @@ public class MumlVisualIDRegistry {
 		@Override
 
 		public boolean checkNodeVisualID(View containerView, EObject domainElement, int candidate) {
-			return org.muml.pim.realtimestatechart.diagram.part.MumlVisualIDRegistry
-					.checkNodeVisualID(containerView, domainElement, candidate);
+			return org.muml.pim.realtimestatechart.diagram.part.MumlVisualIDRegistry.checkNodeVisualID(containerView,
+					domainElement, candidate);
 		}
 
 		/**
@@ -480,8 +495,7 @@ public class MumlVisualIDRegistry {
 		@Override
 
 		public boolean isCompartmentVisualID(int visualID) {
-			return org.muml.pim.realtimestatechart.diagram.part.MumlVisualIDRegistry
-					.isCompartmentVisualID(visualID);
+			return org.muml.pim.realtimestatechart.diagram.part.MumlVisualIDRegistry.isCompartmentVisualID(visualID);
 		}
 
 		/**
@@ -490,8 +504,7 @@ public class MumlVisualIDRegistry {
 		@Override
 
 		public boolean isSemanticLeafVisualID(int visualID) {
-			return org.muml.pim.realtimestatechart.diagram.part.MumlVisualIDRegistry
-					.isSemanticLeafVisualID(visualID);
+			return org.muml.pim.realtimestatechart.diagram.part.MumlVisualIDRegistry.isSemanticLeafVisualID(visualID);
 		}
 	};
 

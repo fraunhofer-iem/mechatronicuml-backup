@@ -23,6 +23,10 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.pim.realtimestatechart.DoEvent;
+import org.muml.pim.realtimestatechart.RealtimestatechartFactory;
+import org.muml.pim.realtimestatechart.State;
+import org.muml.pim.realtimestatechart.diagram.providers.ElementInitializers;
 
 /**
  * @generated
@@ -52,7 +56,7 @@ public class DoEventCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	public boolean canExecute() {
-		org.muml.pim.realtimestatechart.State container = (org.muml.pim.realtimestatechart.State) getElementToEdit();
+		State container = (State) getElementToEdit();
 		if (container.getDoEvent() != null) {
 			return false;
 		}
@@ -64,14 +68,12 @@ public class DoEventCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-		org.muml.pim.realtimestatechart.DoEvent newElement = org.muml.pim.realtimestatechart.RealtimestatechartFactory.eINSTANCE
-				.createDoEvent();
+		DoEvent newElement = RealtimestatechartFactory.eINSTANCE.createDoEvent();
 
-		org.muml.pim.realtimestatechart.State owner = (org.muml.pim.realtimestatechart.State) getElementToEdit();
+		State owner = (State) getElementToEdit();
 		owner.setDoEvent(newElement);
 
-		org.muml.pim.realtimestatechart.diagram.providers.ElementInitializers.getInstance()
-				.init_DoEvent_3034(newElement);
+		ElementInitializers.getInstance().init_DoEvent_3034(newElement);
 
 		doConfigure(newElement, monitor, info);
 
@@ -80,10 +82,10 @@ public class DoEventCreateCommand extends EditElementCommand {
 	}
 
 	/**
-	 * @generated
-	 */
-	protected void doConfigure(org.muml.pim.realtimestatechart.DoEvent newElement,
-			IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
+	* @generated
+	*/
+	protected void doConfigure(DoEvent newElement, IProgressMonitor monitor, IAdaptable info)
+			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest()).getElementType();
 		ConfigureRequest configureRequest = new ConfigureRequest(getEditingDomain(), newElement, elementType);
 		configureRequest.setClientContext(((CreateElementRequest) getRequest()).getClientContext());

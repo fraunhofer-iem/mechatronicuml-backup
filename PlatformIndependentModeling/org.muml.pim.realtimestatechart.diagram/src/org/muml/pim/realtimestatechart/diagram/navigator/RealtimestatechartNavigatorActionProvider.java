@@ -33,6 +33,11 @@ import org.eclipse.ui.navigator.ICommonActionConstants;
 import org.eclipse.ui.navigator.ICommonActionExtensionSite;
 import org.eclipse.ui.navigator.ICommonViewerWorkbenchSite;
 import org.eclipse.ui.part.FileEditorInput;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.ModelElementCategoryEditPart;
+import org.muml.pim.realtimestatechart.diagram.part.Messages;
+import org.muml.pim.realtimestatechart.diagram.part.MumlVisualIDRegistry;
+import org.muml.pim.realtimestatechart.diagram.part.RealtimestatechartDiagramEditor;
+import org.muml.pim.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin;
 
 /**
  * @generated
@@ -108,7 +113,7 @@ public class RealtimestatechartNavigatorActionProvider extends CommonActionProvi
 		 * @generated
 		 */
 		public OpenDiagramAction(ICommonViewerWorkbenchSite viewerSite) {
-			super(org.muml.pim.realtimestatechart.diagram.part.Messages.NavigatorActionProvider_OpenDiagramActionName);
+			super(Messages.NavigatorActionProvider_OpenDiagramActionName);
 			myViewerSite = viewerSite;
 		}
 
@@ -119,17 +124,14 @@ public class RealtimestatechartNavigatorActionProvider extends CommonActionProvi
 			myDiagram = null;
 			if (selection.size() == 1) {
 				Object selectedElement = selection.getFirstElement();
-				if (selectedElement instanceof org.muml.pim.realtimestatechart.diagram.navigator.MumlNavigatorItem) {
-					selectedElement = ((org.muml.pim.realtimestatechart.diagram.navigator.MumlNavigatorItem) selectedElement)
-							.getView();
+				if (selectedElement instanceof MumlNavigatorItem) {
+					selectedElement = ((MumlNavigatorItem) selectedElement).getView();
 				} else if (selectedElement instanceof IAdaptable) {
 					selectedElement = ((IAdaptable) selectedElement).getAdapter(View.class);
 				}
 				if (selectedElement instanceof Diagram) {
 					Diagram diagram = (Diagram) selectedElement;
-					if (org.muml.pim.realtimestatechart.diagram.edit.parts.ModelElementCategoryEditPart.MODEL_ID
-							.equals(org.muml.pim.realtimestatechart.diagram.part.MumlVisualIDRegistry
-									.getModelID(diagram))) {
+					if (ModelElementCategoryEditPart.MODEL_ID.equals(MumlVisualIDRegistry.getModelID(diagram))) {
 						myDiagram = diagram;
 					}
 				}
@@ -148,11 +150,9 @@ public class RealtimestatechartNavigatorActionProvider extends CommonActionProvi
 			IEditorInput editorInput = getEditorInput(myDiagram);
 			IWorkbenchPage page = myViewerSite.getPage();
 			try {
-				page.openEditor(editorInput,
-						org.muml.pim.realtimestatechart.diagram.part.RealtimestatechartDiagramEditor.ID);
+				page.openEditor(editorInput, RealtimestatechartDiagramEditor.ID);
 			} catch (PartInitException e) {
-				org.muml.pim.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
-						.getInstance().logError("Exception while openning diagram", e); //$NON-NLS-1$
+				RealtimestatechartDiagramEditorPlugin.getInstance().logError("Exception while openning diagram", e); //$NON-NLS-1$
 			}
 		}
 

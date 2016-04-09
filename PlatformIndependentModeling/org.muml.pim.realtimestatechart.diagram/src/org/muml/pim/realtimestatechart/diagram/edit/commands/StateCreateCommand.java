@@ -23,6 +23,10 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.pim.realtimestatechart.RealtimeStatechart;
+import org.muml.pim.realtimestatechart.RealtimestatechartFactory;
+import org.muml.pim.realtimestatechart.State;
+import org.muml.pim.realtimestatechart.diagram.providers.ElementInitializers;
 
 /**
  * @generated
@@ -60,14 +64,12 @@ public class StateCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-		org.muml.pim.realtimestatechart.State newElement = org.muml.pim.realtimestatechart.RealtimestatechartFactory.eINSTANCE
-				.createState();
+		State newElement = RealtimestatechartFactory.eINSTANCE.createState();
 
-		org.muml.pim.realtimestatechart.RealtimeStatechart owner = (org.muml.pim.realtimestatechart.RealtimeStatechart) getElementToEdit();
+		RealtimeStatechart owner = (RealtimeStatechart) getElementToEdit();
 		owner.getStates().add(newElement);
 
-		org.muml.pim.realtimestatechart.diagram.providers.ElementInitializers.getInstance()
-				.init_State_3032(newElement);
+		ElementInitializers.getInstance().init_State_3032(newElement);
 
 		doConfigure(newElement, monitor, info);
 
@@ -76,10 +78,9 @@ public class StateCreateCommand extends EditElementCommand {
 	}
 
 	/**
-	 * @generated
-	 */
-	protected void doConfigure(org.muml.pim.realtimestatechart.State newElement,
-			IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
+	* @generated
+	*/
+	protected void doConfigure(State newElement, IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest()).getElementType();
 		ConfigureRequest configureRequest = new ConfigureRequest(getEditingDomain(), newElement, elementType);
 		configureRequest.setClientContext(((CreateElementRequest) getRequest()).getClientContext());

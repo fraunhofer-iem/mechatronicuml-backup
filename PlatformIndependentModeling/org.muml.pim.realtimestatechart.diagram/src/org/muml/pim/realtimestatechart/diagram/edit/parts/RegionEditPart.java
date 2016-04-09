@@ -50,6 +50,13 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Font;
 import org.eclipse.swt.widgets.Display;
+import org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy;
+import org.muml.core.common.edit.policies.anchor.IConnectionAnchorCreationEditPolicy;
+import org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy;
+import org.muml.pim.common.edit.policies.IBackgroundColorEditPolicy;
+import org.muml.pim.realtimestatechart.diagram.edit.policies.RegionItemSemanticEditPolicy;
+import org.muml.pim.realtimestatechart.diagram.part.MumlVisualIDRegistry;
+import org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes;
 
 /**
  * @generated
@@ -93,10 +100,8 @@ public class RegionEditPart extends ShapeNodeEditPart {
 	protected void refreshBackgroundColor() {
 		EditPolicy backgroundColorPolicy = getEditPolicy(
 				org.muml.core.common.edit.policies.EditPolicyRoles.BACKGROUND_COLOR_ROLE);
-		if (backgroundColorPolicy instanceof org.muml.pim.common.edit.policies.IBackgroundColorEditPolicy) {
-			setBackgroundColor(
-					((org.muml.pim.common.edit.policies.IBackgroundColorEditPolicy) backgroundColorPolicy)
-							.getCurrentBackgroundColor());
+		if (backgroundColorPolicy instanceof IBackgroundColorEditPolicy) {
+			setBackgroundColor(((IBackgroundColorEditPolicy) backgroundColorPolicy).getCurrentBackgroundColor());
 		} else {
 			super.refreshBackgroundColor();
 		}
@@ -123,20 +128,18 @@ public class RegionEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected void createDefaultEditPolicies() {
-		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicyWithCustomReparent(
-				org.muml.pim.realtimestatechart.diagram.part.MumlVisualIDRegistry.TYPED_INSTANCE));
+		installEditPolicy(EditPolicyRoles.CREATION_ROLE,
+				new CreationEditPolicyWithCustomReparent(MumlVisualIDRegistry.TYPED_INSTANCE));
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
-				new org.muml.pim.realtimestatechart.diagram.edit.policies.RegionItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new RegionItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 
-		installEditPolicy(EditPolicy.GRAPHICAL_NODE_ROLE,
-				new org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy());
+		installEditPolicy(EditPolicy.GRAPHICAL_NODE_ROLE, new ConnectionConfigureHelperGraphicalNodeEditPolicy());
 
 		installEditPolicy(org.muml.core.common.edit.policies.EditPolicyRoles.ERROR_FEEDBACK_ROLE,
-				new org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy());
+				new ErrorFeedbackEditPolicy());
 
 	}
 
@@ -183,27 +186,22 @@ public class RegionEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof org.muml.pim.realtimestatechart.diagram.edit.parts.RegionNameEditPart) {
-			((org.muml.pim.realtimestatechart.diagram.edit.parts.RegionNameEditPart) childEditPart)
-					.setLabel(getPrimaryShape().getFigureStatechartNameLabel());
+		if (childEditPart instanceof RegionNameEditPart) {
+			((RegionNameEditPart) childEditPart).setLabel(getPrimaryShape().getFigureStatechartNameLabel());
 			return true;
 		}
-		if (childEditPart instanceof org.muml.pim.realtimestatechart.diagram.edit.parts.RegionPriorityEditPart) {
-			((org.muml.pim.realtimestatechart.diagram.edit.parts.RegionPriorityEditPart) childEditPart)
-					.setLabel(getPrimaryShape().getFigureRegionPriorityLabel());
+		if (childEditPart instanceof RegionPriorityEditPart) {
+			((RegionPriorityEditPart) childEditPart).setLabel(getPrimaryShape().getFigureRegionPriorityLabel());
 			return true;
 		}
-		if (childEditPart instanceof org.muml.pim.realtimestatechart.diagram.edit.parts.WrappingLabel7EditPart) {
-			((org.muml.pim.realtimestatechart.diagram.edit.parts.WrappingLabel7EditPart) childEditPart)
-					.setLabel(getPrimaryShape().getFigureStatechartVariablesLabel());
+		if (childEditPart instanceof WrappingLabel7EditPart) {
+			((WrappingLabel7EditPart) childEditPart).setLabel(getPrimaryShape().getFigureStatechartVariablesLabel());
 			return true;
 		}
-		if (childEditPart instanceof org.muml.pim.realtimestatechart.diagram.edit.parts.RegionRegionContentsCompartmentEditPart) {
+		if (childEditPart instanceof RegionRegionContentsCompartmentEditPart) {
 			IFigure pane = getPrimaryShape().getFigureRegionContentsCompartment();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
-			pane.add(
-					((org.muml.pim.realtimestatechart.diagram.edit.parts.RegionRegionContentsCompartmentEditPart) childEditPart)
-							.getFigure());
+			pane.add(((RegionRegionContentsCompartmentEditPart) childEditPart).getFigure());
 			return true;
 		}
 		return false;
@@ -213,20 +211,18 @@ public class RegionEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof org.muml.pim.realtimestatechart.diagram.edit.parts.RegionNameEditPart) {
+		if (childEditPart instanceof RegionNameEditPart) {
 			return true;
 		}
-		if (childEditPart instanceof org.muml.pim.realtimestatechart.diagram.edit.parts.RegionPriorityEditPart) {
+		if (childEditPart instanceof RegionPriorityEditPart) {
 			return true;
 		}
-		if (childEditPart instanceof org.muml.pim.realtimestatechart.diagram.edit.parts.WrappingLabel7EditPart) {
+		if (childEditPart instanceof WrappingLabel7EditPart) {
 			return true;
 		}
-		if (childEditPart instanceof org.muml.pim.realtimestatechart.diagram.edit.parts.RegionRegionContentsCompartmentEditPart) {
+		if (childEditPart instanceof RegionRegionContentsCompartmentEditPart) {
 			IFigure pane = getPrimaryShape().getFigureRegionContentsCompartment();
-			pane.remove(
-					((org.muml.pim.realtimestatechart.diagram.edit.parts.RegionRegionContentsCompartmentEditPart) childEditPart)
-							.getFigure());
+			pane.remove(((RegionRegionContentsCompartmentEditPart) childEditPart).getFigure());
 			return true;
 		}
 		return false;
@@ -256,7 +252,7 @@ public class RegionEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
-		if (editPart instanceof org.muml.pim.realtimestatechart.diagram.edit.parts.RegionRegionContentsCompartmentEditPart) {
+		if (editPart instanceof RegionRegionContentsCompartmentEditPart) {
 			return getPrimaryShape().getFigureRegionContentsCompartment();
 		}
 		return getContentPane();
@@ -269,7 +265,7 @@ public class RegionEditPart extends ShapeNodeEditPart {
 		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(40, 40) {
 			@Override
 			public ConnectionAnchor createDefaultAnchor() {
-				org.muml.core.common.edit.policies.anchor.IConnectionAnchorCreationEditPolicy connectionAnchorCreationEditPolicy = (org.muml.core.common.edit.policies.anchor.IConnectionAnchorCreationEditPolicy) getEditPolicy(
+				IConnectionAnchorCreationEditPolicy connectionAnchorCreationEditPolicy = (IConnectionAnchorCreationEditPolicy) getEditPolicy(
 						org.muml.core.common.edit.policies.EditPolicyRoles.CONNECTION_ANCHOR_CREATION_ROLE);
 				if (connectionAnchorCreationEditPolicy != null) {
 					return connectionAnchorCreationEditPolicy.createDefaultAnchor();
@@ -366,9 +362,7 @@ public class RegionEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(
-				org.muml.pim.realtimestatechart.diagram.part.MumlVisualIDRegistry.getType(
-						org.muml.pim.realtimestatechart.diagram.edit.parts.RegionNameEditPart.VISUAL_ID));
+		return getChildBySemanticHint(MumlVisualIDRegistry.getType(RegionNameEditPart.VISUAL_ID));
 	}
 
 	/**
@@ -379,10 +373,9 @@ public class RegionEditPart extends ShapeNodeEditPart {
 			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request).getViewAndElementDescriptor()
 					.getCreateElementRequestAdapter();
 			IElementType type = (IElementType) adapter.getAdapter(IElementType.class);
-			if (type == org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes.RealtimeStatechart_3043) {
+			if (type == MumlElementTypes.RealtimeStatechart_3043) {
 				return getChildBySemanticHint(
-						org.muml.pim.realtimestatechart.diagram.part.MumlVisualIDRegistry.getType(
-								org.muml.pim.realtimestatechart.diagram.edit.parts.RegionRegionContentsCompartmentEditPart.VISUAL_ID));
+						MumlVisualIDRegistry.getType(RegionRegionContentsCompartmentEditPart.VISUAL_ID));
 			}
 		}
 		return super.getTargetEditPart(request);

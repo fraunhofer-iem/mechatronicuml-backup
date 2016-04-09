@@ -17,12 +17,13 @@ import java.util.List;
 
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
+import org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes;
+import org.muml.pim.realtimestatechart.diagram.providers.MumlModelingAssistantProvider;
 
 /**
  * @generated
  */
-public class MumlModelingAssistantProviderOfRegionEditPart
-		extends org.muml.pim.realtimestatechart.diagram.providers.MumlModelingAssistantProvider {
+public class MumlModelingAssistantProviderOfRegionEditPart extends MumlModelingAssistantProvider {
 
 	/**
 	 * @generated
@@ -30,8 +31,7 @@ public class MumlModelingAssistantProviderOfRegionEditPart
 	@Override
 	public List<IElementType> getTypesForPopupBar(IAdaptable host) {
 		List<IElementType> types = new ArrayList<IElementType>(1);
-		types.add(
-				org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes.RealtimeStatechart_3043);
+		types.add(MumlElementTypes.RealtimeStatechart_3043);
 		return types;
 	}
 

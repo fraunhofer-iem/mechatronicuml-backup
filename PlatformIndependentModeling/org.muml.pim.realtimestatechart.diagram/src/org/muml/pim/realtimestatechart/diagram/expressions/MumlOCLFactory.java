@@ -27,6 +27,7 @@ import org.eclipse.ocl.ecore.OCLExpression;
 import org.eclipse.ocl.ecore.Variable;
 import org.eclipse.ocl.ecore.OCL.Helper;
 import org.eclipse.ocl.options.ParsingOptions;
+import org.muml.pim.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin;
 
 /**
  * @generated
@@ -36,7 +37,7 @@ public class MumlOCLFactory {
 	/**
 	 * @generated
 	 */
-	private final org.muml.pim.realtimestatechart.diagram.expressions.MumlAbstractExpression[] expressions;
+	private final MumlAbstractExpression[] expressions;
 
 	/**
 	 * @generated
@@ -47,7 +48,7 @@ public class MumlOCLFactory {
 	 * @generated
 	 */
 	protected MumlOCLFactory() {
-		this.expressions = new org.muml.pim.realtimestatechart.diagram.expressions.MumlAbstractExpression[25];
+		this.expressions = new MumlAbstractExpression[25];
 		this.expressionBodies = new String[] {
 				"\'entry /\'.concat(\n\t(\n\tif self.action.oclIsUndefined() or self.action.name = \'\' then\n\t\t\'\'\n\telse\n\t\t\' {\'.concat(self.action.name).concat(\'}\')\n\tendif\n\t).concat(\n\t\tif self.clockResets->isEmpty() then\n\t\t\t\'\'\n\t\telse\n\t\t\t\' {reset: \'.concat(self.clockResets->iterate(c : Clock; s : String = \'\' | if s = \'\' then s.concat(c.name) else s.concat(\', \').concat(c.name) endif)).concat(\'}\')\n\t\tendif\n\t)\n)", //$NON-NLS-1$
 				"\'action\'", //$NON-NLS-1$
@@ -81,11 +82,9 @@ public class MumlOCLFactory {
 	 * @generated
 	 */
 	private static MumlOCLFactory getInstance() {
-		MumlOCLFactory instance = org.muml.pim.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
-				.getInstance().getMumlOCLFactory();
+		MumlOCLFactory instance = RealtimestatechartDiagramEditorPlugin.getInstance().getMumlOCLFactory();
 		if (instance == null) {
-			org.muml.pim.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
-					.getInstance().setMumlOCLFactory(instance = new MumlOCLFactory());
+			RealtimestatechartDiagramEditorPlugin.getInstance().setMumlOCLFactory(instance = new MumlOCLFactory());
 		}
 		return instance;
 	}
@@ -100,8 +99,8 @@ public class MumlOCLFactory {
 	/**
 	 * @generated
 	 */
-	public static org.muml.pim.realtimestatechart.diagram.expressions.MumlAbstractExpression getExpression(
-			int index, EClassifier context, Map<String, EClassifier> environment) {
+	public static MumlAbstractExpression getExpression(int index, EClassifier context,
+			Map<String, EClassifier> environment) {
 		MumlOCLFactory cached = getInstance();
 		if (index < 0 || index >= cached.expressions.length) {
 			throw new IllegalArgumentException();
@@ -117,8 +116,8 @@ public class MumlOCLFactory {
 	 * This is factory method, callers are responsible to keep reference to the return value if they want to reuse parsed expression
 	 * @generated
 	 */
-	public static org.muml.pim.realtimestatechart.diagram.expressions.MumlAbstractExpression getExpression(
-			String body, EClassifier context, Map<String, EClassifier> environment) {
+	public static MumlAbstractExpression getExpression(String body, EClassifier context,
+			Map<String, EClassifier> environment) {
 		return new Expression(body, context, environment);
 	}
 
@@ -126,16 +125,14 @@ public class MumlOCLFactory {
 	 * This method will become private in the next release
 	 * @generated
 	 */
-	public static org.muml.pim.realtimestatechart.diagram.expressions.MumlAbstractExpression getExpression(
-			String body, EClassifier context) {
+	public static MumlAbstractExpression getExpression(String body, EClassifier context) {
 		return getExpression(body, context, Collections.<String, EClassifier> emptyMap());
 	}
 
 	/**
 	 * @generated
 	 */
-	private static class Expression
-			extends org.muml.pim.realtimestatechart.diagram.expressions.MumlAbstractExpression {
+	private static class Expression extends MumlAbstractExpression {
 
 		/**
 		 * @generated

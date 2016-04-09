@@ -14,28 +14,28 @@ package org.muml.pim.realtimestatechart.diagram.edit.policies;
 
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
+import org.muml.pim.realtimestatechart.diagram.edit.commands.StateCreateCommand;
+import org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes;
 
 /**
  * @generated
  */
 public class RealtimeStatechartStatechartContentsCompartmentItemSemanticEditPolicy
-		extends org.muml.pim.realtimestatechart.diagram.edit.policies.MumlBaseItemSemanticEditPolicy {
+		extends MumlBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public RealtimeStatechartStatechartContentsCompartmentItemSemanticEditPolicy() {
-		super(org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes.RealtimeStatechart_2007);
+		super(MumlElementTypes.RealtimeStatechart_2007);
 	}
 
 	/**
 	 * @generated
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
-		if (org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes.State_3032 == req
-				.getElementType()) {
-			return getGEFWrapper(
-					new org.muml.pim.realtimestatechart.diagram.edit.commands.StateCreateCommand(req));
+		if (MumlElementTypes.State_3032 == req.getElementType()) {
+			return getGEFWrapper(new StateCreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}

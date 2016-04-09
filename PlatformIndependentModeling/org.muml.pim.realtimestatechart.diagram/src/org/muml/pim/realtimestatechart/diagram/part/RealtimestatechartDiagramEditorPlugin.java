@@ -29,9 +29,26 @@ import org.eclipse.gmf.tooling.runtime.LogHelper;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
+import org.muml.core.common.FujabaCommonPlugin;
 import org.muml.core.expressions.common.provider.CommonExpressionsItemProviderAdapterFactory;
 import org.muml.core.expressions.provider.ExpressionsItemProviderAdapterFactory;
+import org.muml.core.modelinstance.provider.ModelinstanceItemProviderAdapterFactory;
 import org.muml.core.provider.CoreItemProviderAdapterFactory;
+import org.muml.pim.behavior.provider.BehaviorItemProviderAdapterFactory;
+import org.muml.pim.component.provider.ComponentItemProviderAdapterFactory;
+import org.muml.pim.connector.provider.ConnectorItemProviderAdapterFactory;
+import org.muml.pim.constraint.provider.ConstraintItemProviderAdapterFactory;
+import org.muml.pim.instance.provider.InstanceItemProviderAdapterFactory;
+import org.muml.pim.msgtype.provider.MsgtypeItemProviderAdapterFactory;
+import org.muml.pim.pattern.provider.PatternItemProviderAdapterFactory;
+import org.muml.pim.protocol.provider.ProtocolItemProviderAdapterFactory;
+import org.muml.pim.provider.PimItemProviderAdapterFactory;
+import org.muml.pim.realtimestatechart.diagram.edit.policies.MumlBaseItemSemanticEditPolicy;
+import org.muml.pim.realtimestatechart.diagram.expressions.MumlOCLFactory;
+import org.muml.pim.realtimestatechart.diagram.providers.ElementInitializers;
+import org.muml.pim.realtimestatechart.provider.RealtimestatechartItemProviderAdapterFactory;
+import org.muml.pim.types.provider.TypesItemProviderAdapterFactory;
+import org.muml.pim.valuetype.provider.ValuetypeItemProviderAdapterFactory;
 import org.osgi.framework.BundleContext;
 
 /**
@@ -67,22 +84,22 @@ public class RealtimestatechartDiagramEditorPlugin extends AbstractUIPlugin {
 	/**
 	 * @generated
 	 */
-	private org.muml.pim.realtimestatechart.diagram.part.MumlDocumentProvider documentProvider;
+	private MumlDocumentProvider documentProvider;
 
 	/**
 	 * @generated
 	 */
-	private org.muml.pim.realtimestatechart.diagram.edit.policies.MumlBaseItemSemanticEditPolicy.LinkConstraints linkConstraints;
+	private MumlBaseItemSemanticEditPolicy.LinkConstraints linkConstraints;
 
 	/**
 	 * @generated
 	 */
-	private org.muml.pim.realtimestatechart.diagram.providers.ElementInitializers initializers;
+	private ElementInitializers initializers;
 
 	/**
 	 * @generated
 	 */
-	private org.muml.pim.realtimestatechart.diagram.expressions.MumlOCLFactory oclFactory;
+	private MumlOCLFactory oclFactory;
 
 	/**
 	 * @generated
@@ -134,33 +151,33 @@ public class RealtimestatechartDiagramEditorPlugin extends AbstractUIPlugin {
 	 * @generated
 	 */
 	protected void fillItemProviderFactories(List<AdapterFactory> factories) {
-		List<AdapterFactory> positivePriorityFactories = org.muml.core.common.FujabaCommonPlugin.getInstance()
+		List<AdapterFactory> positivePriorityFactories = FujabaCommonPlugin.getInstance()
 				.getCustomItemProviderAdapterFactories(ID, true);
-		List<AdapterFactory> negativePriorityFactories = org.muml.core.common.FujabaCommonPlugin.getInstance()
+		List<AdapterFactory> negativePriorityFactories = FujabaCommonPlugin.getInstance()
 				.getCustomItemProviderAdapterFactories(ID, false);
 
 		// Custom Factories with positive priority
 		factories.addAll(positivePriorityFactories);
 
 		// Default Factories
-		factories.add(new org.muml.pim.constraint.provider.ConstraintItemProviderAdapterFactory());
-		factories.add(new org.muml.pim.instance.provider.InstanceItemProviderAdapterFactory());
-		factories.add(new org.muml.pim.protocol.provider.ProtocolItemProviderAdapterFactory());
-		factories.add(
-				new org.muml.pim.realtimestatechart.provider.RealtimestatechartItemProviderAdapterFactory());
+		factories.add(new PimItemProviderAdapterFactory());
+		factories.add(new ConstraintItemProviderAdapterFactory());
+		factories.add(new InstanceItemProviderAdapterFactory());
+		factories.add(new ProtocolItemProviderAdapterFactory());
+		factories.add(new RealtimestatechartItemProviderAdapterFactory());
 		factories.add(
 				new org.muml.pim.realtimestatechart.one_to_n_schemata.provider.One_to_n_schemataItemProviderAdapterFactory());
-		factories.add(new org.muml.pim.msgtype.provider.MsgtypeItemProviderAdapterFactory());
-		factories.add(new org.muml.pim.types.provider.TypesItemProviderAdapterFactory());
-		factories.add(new org.muml.pim.connector.provider.ConnectorItemProviderAdapterFactory());
-		factories.add(new org.muml.pim.valuetype.provider.ValuetypeItemProviderAdapterFactory());
-		factories.add(new org.muml.pim.behavior.provider.BehaviorItemProviderAdapterFactory());
-		factories.add(new org.muml.pim.component.provider.ComponentItemProviderAdapterFactory());
-		factories.add(new org.muml.pim.pattern.provider.PatternItemProviderAdapterFactory());
+		factories.add(new MsgtypeItemProviderAdapterFactory());
+		factories.add(new TypesItemProviderAdapterFactory());
+		factories.add(new ConnectorItemProviderAdapterFactory());
+		factories.add(new ValuetypeItemProviderAdapterFactory());
+		factories.add(new BehaviorItemProviderAdapterFactory());
+		factories.add(new ComponentItemProviderAdapterFactory());
+		factories.add(new PatternItemProviderAdapterFactory());
 		factories.add(new CoreItemProviderAdapterFactory());
 		factories.add(new ExpressionsItemProviderAdapterFactory());
 		factories.add(new CommonExpressionsItemProviderAdapterFactory());
-		factories.add(new org.muml.core.modelinstance.provider.ModelinstanceItemProviderAdapterFactory());
+		factories.add(new ModelinstanceItemProviderAdapterFactory());
 
 		// Custom Factories with negative priority
 		factories.addAll(negativePriorityFactories);
@@ -246,9 +263,9 @@ public class RealtimestatechartDiagramEditorPlugin extends AbstractUIPlugin {
 	/**
 	 * @generated
 	 */
-	public org.muml.pim.realtimestatechart.diagram.part.MumlDocumentProvider getDocumentProvider() {
+	public MumlDocumentProvider getDocumentProvider() {
 		if (documentProvider == null) {
-			documentProvider = new org.muml.pim.realtimestatechart.diagram.part.MumlDocumentProvider();
+			documentProvider = new MumlDocumentProvider();
 		}
 		return documentProvider;
 	}
@@ -256,45 +273,42 @@ public class RealtimestatechartDiagramEditorPlugin extends AbstractUIPlugin {
 	/**
 	 * @generated
 	 */
-	public org.muml.pim.realtimestatechart.diagram.edit.policies.MumlBaseItemSemanticEditPolicy.LinkConstraints getLinkConstraints() {
+	public MumlBaseItemSemanticEditPolicy.LinkConstraints getLinkConstraints() {
 		return linkConstraints;
 	}
 
 	/**
-	 * @generated
-	 */
-	public void setLinkConstraints(
-			org.muml.pim.realtimestatechart.diagram.edit.policies.MumlBaseItemSemanticEditPolicy.LinkConstraints lc) {
+	* @generated
+	*/
+	public void setLinkConstraints(MumlBaseItemSemanticEditPolicy.LinkConstraints lc) {
 		this.linkConstraints = lc;
 	}
 
 	/**
 	 * @generated
 	 */
-	public org.muml.pim.realtimestatechart.diagram.providers.ElementInitializers getElementInitializers() {
+	public ElementInitializers getElementInitializers() {
 		return initializers;
 	}
 
 	/**
-	 * @generated
-	 */
-	public void setElementInitializers(
-			org.muml.pim.realtimestatechart.diagram.providers.ElementInitializers i) {
+	* @generated
+	*/
+	public void setElementInitializers(ElementInitializers i) {
 		this.initializers = i;
 	}
 
 	/**
 	 * @generated
 	 */
-	public org.muml.pim.realtimestatechart.diagram.expressions.MumlOCLFactory getMumlOCLFactory() {
+	public MumlOCLFactory getMumlOCLFactory() {
 		return oclFactory;
 	}
 
 	/**
-	 * @generated
-	 */
-	public void setMumlOCLFactory(
-			org.muml.pim.realtimestatechart.diagram.expressions.MumlOCLFactory f) {
+	* @generated
+	*/
+	public void setMumlOCLFactory(MumlOCLFactory f) {
 		this.oclFactory = f;
 	}
 

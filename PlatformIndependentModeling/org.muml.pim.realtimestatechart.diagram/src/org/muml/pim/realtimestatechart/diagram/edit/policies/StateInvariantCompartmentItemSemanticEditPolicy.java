@@ -14,29 +14,27 @@ package org.muml.pim.realtimestatechart.diagram.edit.policies;
 
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
+import org.muml.pim.realtimestatechart.diagram.edit.commands.ClockConstraintCreateCommand;
+import org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes;
 
 /**
  * @generated
  */
-public class StateInvariantCompartmentItemSemanticEditPolicy
-		extends org.muml.pim.realtimestatechart.diagram.edit.policies.MumlBaseItemSemanticEditPolicy {
+public class StateInvariantCompartmentItemSemanticEditPolicy extends MumlBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public StateInvariantCompartmentItemSemanticEditPolicy() {
-		super(org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes.State_3032);
+		super(MumlElementTypes.State_3032);
 	}
 
 	/**
 	 * @generated
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
-		if (org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes.ClockConstraint_3036 == req
-				.getElementType()) {
-			return getGEFWrapper(
-					new org.muml.pim.realtimestatechart.diagram.edit.commands.ClockConstraintCreateCommand(
-							req));
+		if (MumlElementTypes.ClockConstraint_3036 == req.getElementType()) {
+			return getGEFWrapper(new ClockConstraintCreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}

@@ -20,6 +20,12 @@ import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy;
+import org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy;
+import org.muml.pim.realtimestatechart.RealtimeStatechart;
+import org.muml.pim.realtimestatechart.Transition;
+import org.muml.pim.realtimestatechart.Vertex;
+import org.muml.pim.realtimestatechart.diagram.edit.policies.MumlBaseItemSemanticEditPolicy;
 
 /**
  * @generated
@@ -55,7 +61,7 @@ public class TransitionReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	public boolean canExecute() {
-		if (false == getElementToEdit() instanceof org.muml.pim.realtimestatechart.Transition) {
+		if (false == getElementToEdit() instanceof Transition) {
 			return false;
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
@@ -71,27 +77,21 @@ public class TransitionReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected boolean canReorientSource() {
-		if (!(oldEnd instanceof org.muml.pim.realtimestatechart.Vertex
-				&& newEnd instanceof org.muml.pim.realtimestatechart.Vertex)) {
+		if (!(oldEnd instanceof Vertex && newEnd instanceof Vertex)) {
 			return false;
 		}
-		org.muml.pim.realtimestatechart.Vertex target = getLink().getTarget();
-		if (!(getLink().eContainer() instanceof org.muml.pim.realtimestatechart.RealtimeStatechart)) {
+		Vertex target = getLink().getTarget();
+		if (!(getLink().eContainer() instanceof RealtimeStatechart)) {
 			return false;
 		}
-		org.muml.pim.realtimestatechart.RealtimeStatechart container = (org.muml.pim.realtimestatechart.RealtimeStatechart) getLink()
-				.eContainer();
-		View sourceView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-				.getSourceView(getRequest());
-		View targetView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-				.getTargetView(getRequest());
-		if (!org.muml.pim.realtimestatechart.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-				.getLinkConstraints()
-				.canExistTransition_4003(container, getLink(), getNewSource(), target, sourceView, targetView)) {
-			String errorMessage = org.muml.pim.realtimestatechart.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-					.getLinkConstraints()
-					.getErrorTransition_4003(container, getNewSource(), target, sourceView, targetView);
-			org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy.showMessage(sourceView, errorMessage);
+		RealtimeStatechart container = (RealtimeStatechart) getLink().eContainer();
+		View sourceView = ConnectionConfigureHelperGraphicalNodeEditPolicy.getSourceView(getRequest());
+		View targetView = ConnectionConfigureHelperGraphicalNodeEditPolicy.getTargetView(getRequest());
+		if (!MumlBaseItemSemanticEditPolicy.getLinkConstraints().canExistTransition_4003(container, getLink(),
+				getNewSource(), target, sourceView, targetView)) {
+			String errorMessage = MumlBaseItemSemanticEditPolicy.getLinkConstraints().getErrorTransition_4003(container,
+					getNewSource(), target, sourceView, targetView);
+			ErrorFeedbackEditPolicy.showMessage(sourceView, errorMessage);
 			return false;
 		}
 		return true;
@@ -101,27 +101,21 @@ public class TransitionReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected boolean canReorientTarget() {
-		if (!(oldEnd instanceof org.muml.pim.realtimestatechart.Vertex
-				&& newEnd instanceof org.muml.pim.realtimestatechart.Vertex)) {
+		if (!(oldEnd instanceof Vertex && newEnd instanceof Vertex)) {
 			return false;
 		}
-		org.muml.pim.realtimestatechart.Vertex source = getLink().getSource();
-		if (!(getLink().eContainer() instanceof org.muml.pim.realtimestatechart.RealtimeStatechart)) {
+		Vertex source = getLink().getSource();
+		if (!(getLink().eContainer() instanceof RealtimeStatechart)) {
 			return false;
 		}
-		org.muml.pim.realtimestatechart.RealtimeStatechart container = (org.muml.pim.realtimestatechart.RealtimeStatechart) getLink()
-				.eContainer();
-		View sourceView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-				.getSourceView(getRequest());
-		View targetView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-				.getTargetView(getRequest());
-		if (!org.muml.pim.realtimestatechart.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-				.getLinkConstraints()
-				.canExistTransition_4003(container, getLink(), source, getNewTarget(), sourceView, targetView)) {
-			String errorMessage = org.muml.pim.realtimestatechart.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-					.getLinkConstraints()
-					.getErrorTransition_4003(container, source, getNewTarget(), sourceView, targetView);
-			org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy.showMessage(sourceView, errorMessage);
+		RealtimeStatechart container = (RealtimeStatechart) getLink().eContainer();
+		View sourceView = ConnectionConfigureHelperGraphicalNodeEditPolicy.getSourceView(getRequest());
+		View targetView = ConnectionConfigureHelperGraphicalNodeEditPolicy.getTargetView(getRequest());
+		if (!MumlBaseItemSemanticEditPolicy.getLinkConstraints().canExistTransition_4003(container, getLink(), source,
+				getNewTarget(), sourceView, targetView)) {
+			String errorMessage = MumlBaseItemSemanticEditPolicy.getLinkConstraints().getErrorTransition_4003(container,
+					source, getNewTarget(), sourceView, targetView);
+			ErrorFeedbackEditPolicy.showMessage(sourceView, errorMessage);
 			return false;
 		}
 		return true;
@@ -166,36 +160,36 @@ public class TransitionReorientCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected org.muml.pim.realtimestatechart.Transition getLink() {
-		return (org.muml.pim.realtimestatechart.Transition) getElementToEdit();
+	protected Transition getLink() {
+		return (Transition) getElementToEdit();
 	}
 
 	/**
 	 * @generated
 	 */
-	protected org.muml.pim.realtimestatechart.Vertex getOldSource() {
-		return (org.muml.pim.realtimestatechart.Vertex) oldEnd;
+	protected Vertex getOldSource() {
+		return (Vertex) oldEnd;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected org.muml.pim.realtimestatechart.Vertex getNewSource() {
-		return (org.muml.pim.realtimestatechart.Vertex) newEnd;
+	protected Vertex getNewSource() {
+		return (Vertex) newEnd;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected org.muml.pim.realtimestatechart.Vertex getOldTarget() {
-		return (org.muml.pim.realtimestatechart.Vertex) oldEnd;
+	protected Vertex getOldTarget() {
+		return (Vertex) oldEnd;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected org.muml.pim.realtimestatechart.Vertex getNewTarget() {
-		return (org.muml.pim.realtimestatechart.Vertex) newEnd;
+	protected Vertex getNewTarget() {
+		return (Vertex) newEnd;
 	}
 
 	/**

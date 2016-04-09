@@ -29,6 +29,7 @@ import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.ui.IMemento;
 import org.eclipse.ui.navigator.ICommonContentExtensionSite;
 import org.eclipse.ui.navigator.ICommonContentProvider;
+import org.muml.pim.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin;
 
 /**
  * @generated
@@ -70,8 +71,7 @@ public class RealtimestatechartDomainNavigatorContentProvider implements ICommon
 	 */
 	public RealtimestatechartDomainNavigatorContentProvider() {
 		myAdapterFctoryContentProvier = new AdapterFactoryContentProvider(
-				org.muml.pim.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
-						.getInstance().getItemProvidersAdapterFactory());
+				RealtimestatechartDiagramEditorPlugin.getInstance().getItemProvidersAdapterFactory());
 		TransactionalEditingDomain editingDomain = GMFEditingDomainFactory.INSTANCE.createEditingDomain();
 		myEditingDomain = (AdapterFactoryEditingDomain) editingDomain;
 		myEditingDomain.setResourceToReadOnlyMap(new HashMap() {
@@ -187,10 +187,9 @@ public class RealtimestatechartDomainNavigatorContentProvider implements ICommon
 			return wrapEObjects(myAdapterFctoryContentProvier.getChildren(resource), parentElement);
 		}
 
-		if (parentElement instanceof org.muml.pim.realtimestatechart.diagram.navigator.MumlDomainNavigatorItem) {
-			return wrapEObjects(myAdapterFctoryContentProvier.getChildren(
-					((org.muml.pim.realtimestatechart.diagram.navigator.MumlDomainNavigatorItem) parentElement)
-							.getEObject()),
+		if (parentElement instanceof MumlDomainNavigatorItem) {
+			return wrapEObjects(
+					myAdapterFctoryContentProvier.getChildren(((MumlDomainNavigatorItem) parentElement).getEObject()),
 					parentElement);
 		}
 		return EMPTY_ARRAY;
@@ -203,9 +202,8 @@ public class RealtimestatechartDomainNavigatorContentProvider implements ICommon
 		Collection result = new ArrayList();
 		for (int i = 0; i < objects.length; i++) {
 			if (objects[i] instanceof EObject) {
-				result.add(
-						new org.muml.pim.realtimestatechart.diagram.navigator.MumlDomainNavigatorItem(
-								(EObject) objects[i], parentElement, myAdapterFctoryContentProvier));
+				result.add(new MumlDomainNavigatorItem((EObject) objects[i], parentElement,
+						myAdapterFctoryContentProvier));
 			}
 		}
 		return result.toArray();
@@ -215,8 +213,8 @@ public class RealtimestatechartDomainNavigatorContentProvider implements ICommon
 	 * @generated
 	 */
 	public Object getParent(Object element) {
-		if (element instanceof org.muml.pim.realtimestatechart.diagram.navigator.RealtimestatechartAbstractNavigatorItem) {
-			org.muml.pim.realtimestatechart.diagram.navigator.RealtimestatechartAbstractNavigatorItem abstractNavigatorItem = (org.muml.pim.realtimestatechart.diagram.navigator.RealtimestatechartAbstractNavigatorItem) element;
+		if (element instanceof RealtimestatechartAbstractNavigatorItem) {
+			RealtimestatechartAbstractNavigatorItem abstractNavigatorItem = (RealtimestatechartAbstractNavigatorItem) element;
 			return abstractNavigatorItem.getParent();
 		}
 		return null;

@@ -25,6 +25,32 @@ import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.emf.ui.services.parser.ParserHintAdapter;
 import org.eclipse.gmf.runtime.notation.View;
 import org.muml.core.CorePackage;
+import org.muml.pim.realtimestatechart.RealtimestatechartPackage;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.RealtimeStatechartNameEditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.RegionNameEditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.RegionPriorityEditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.StateNameEditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.WrappingLabel2EditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.WrappingLabel3EditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.WrappingLabel4EditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.WrappingLabel5EditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.WrappingLabel6EditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.WrappingLabel7EditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.WrappingLabel8EditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.WrappingLabel9EditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.WrappingLabelEditPart;
+import org.muml.pim.realtimestatechart.diagram.parsers.ClockConstraintLabelExpressionLabelParser5053;
+import org.muml.pim.realtimestatechart.diagram.parsers.DoEventLabelExpressionLabelParser5051;
+import org.muml.pim.realtimestatechart.diagram.parsers.EntryEventLabelExpressionLabelParser5050;
+import org.muml.pim.realtimestatechart.diagram.parsers.ExitEventLabelExpressionLabelParser5052;
+import org.muml.pim.realtimestatechart.diagram.parsers.MessageFormatParser;
+import org.muml.pim.realtimestatechart.diagram.parsers.RealtimeStatechartLabelExpressionLabelParser5062;
+import org.muml.pim.realtimestatechart.diagram.parsers.RegionLabelExpressionLabelParser5063;
+import org.muml.pim.realtimestatechart.diagram.parsers.RegionLabelExpressionLabelParser5065;
+import org.muml.pim.realtimestatechart.diagram.parsers.SynchronizationChannelLabelExpressionLabelParser5054;
+import org.muml.pim.realtimestatechart.diagram.parsers.TransitionLabelExpressionLabelParser6005;
+import org.muml.pim.realtimestatechart.diagram.parsers.TransitionLabelExpressionLabelParser6006;
+import org.muml.pim.realtimestatechart.diagram.part.MumlVisualIDRegistry;
 
 /**
  * @generated
@@ -42,8 +68,7 @@ public class MumlParserProvider extends AbstractProvider implements IParserProvi
 	private IParser getRealtimeStatechartName_5061Parser() {
 		if (realtimeStatechartName_5061Parser == null) {
 			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
-			org.muml.pim.realtimestatechart.diagram.parsers.MessageFormatParser parser = new org.muml.pim.realtimestatechart.diagram.parsers.MessageFormatParser(
-					features);
+			MessageFormatParser parser = new MessageFormatParser(features);
 			realtimeStatechartName_5061Parser = parser;
 		}
 		return realtimeStatechartName_5061Parser;
@@ -53,7 +78,7 @@ public class MumlParserProvider extends AbstractProvider implements IParserProvi
 	 * @generated
 	 */
 	private IParser getRealtimeStatechartLabel_5062Parser() {
-		return new org.muml.pim.realtimestatechart.diagram.parsers.RealtimeStatechartLabelExpressionLabelParser5062();
+		return new RealtimeStatechartLabelExpressionLabelParser5062();
 	}
 
 	/**
@@ -67,8 +92,7 @@ public class MumlParserProvider extends AbstractProvider implements IParserProvi
 	private IParser getStateName_5060Parser() {
 		if (stateName_5060Parser == null) {
 			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
-			org.muml.pim.realtimestatechart.diagram.parsers.MessageFormatParser parser = new org.muml.pim.realtimestatechart.diagram.parsers.MessageFormatParser(
-					features);
+			MessageFormatParser parser = new MessageFormatParser(features);
 			stateName_5060Parser = parser;
 		}
 		return stateName_5060Parser;
@@ -78,42 +102,42 @@ public class MumlParserProvider extends AbstractProvider implements IParserProvi
 	 * @generated
 	 */
 	private IParser getEntryEventLabel_5050Parser() {
-		return new org.muml.pim.realtimestatechart.diagram.parsers.EntryEventLabelExpressionLabelParser5050();
+		return new EntryEventLabelExpressionLabelParser5050();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getDoEventLabel_5051Parser() {
-		return new org.muml.pim.realtimestatechart.diagram.parsers.DoEventLabelExpressionLabelParser5051();
+		return new DoEventLabelExpressionLabelParser5051();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getExitEventLabel_5052Parser() {
-		return new org.muml.pim.realtimestatechart.diagram.parsers.ExitEventLabelExpressionLabelParser5052();
+		return new ExitEventLabelExpressionLabelParser5052();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getClockConstraintLabel_5053Parser() {
-		return new org.muml.pim.realtimestatechart.diagram.parsers.ClockConstraintLabelExpressionLabelParser5053();
+		return new ClockConstraintLabelExpressionLabelParser5053();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getSynchronizationChannelLabel_5054Parser() {
-		return new org.muml.pim.realtimestatechart.diagram.parsers.SynchronizationChannelLabelExpressionLabelParser5054();
+		return new SynchronizationChannelLabelExpressionLabelParser5054();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getRegionLabel_5063Parser() {
-		return new org.muml.pim.realtimestatechart.diagram.parsers.RegionLabelExpressionLabelParser5063();
+		return new RegionLabelExpressionLabelParser5063();
 	}
 
 	/**
@@ -127,10 +151,8 @@ public class MumlParserProvider extends AbstractProvider implements IParserProvi
 	private IParser getRegionPriority_5064Parser() {
 		if (regionPriority_5064Parser == null) {
 			EAttribute[] features = new EAttribute[] {
-					org.muml.pim.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-							.getPrioritizedElement_Priority() };
-			org.muml.pim.realtimestatechart.diagram.parsers.MessageFormatParser parser = new org.muml.pim.realtimestatechart.diagram.parsers.MessageFormatParser(
-					features);
+					RealtimestatechartPackage.eINSTANCE.getPrioritizedElement_Priority() };
+			MessageFormatParser parser = new MessageFormatParser(features);
 			regionPriority_5064Parser = parser;
 		}
 		return regionPriority_5064Parser;
@@ -140,21 +162,21 @@ public class MumlParserProvider extends AbstractProvider implements IParserProvi
 	 * @generated
 	 */
 	private IParser getRegionLabel_5065Parser() {
-		return new org.muml.pim.realtimestatechart.diagram.parsers.RegionLabelExpressionLabelParser5065();
+		return new RegionLabelExpressionLabelParser5065();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getTransitionLabel_6005Parser() {
-		return new org.muml.pim.realtimestatechart.diagram.parsers.TransitionLabelExpressionLabelParser6005();
+		return new TransitionLabelExpressionLabelParser6005();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getTransitionLabel_6006Parser() {
-		return new org.muml.pim.realtimestatechart.diagram.parsers.TransitionLabelExpressionLabelParser6006();
+		return new TransitionLabelExpressionLabelParser6006();
 	}
 
 	/**
@@ -162,31 +184,31 @@ public class MumlParserProvider extends AbstractProvider implements IParserProvi
 	 */
 	protected IParser getParser(int visualID) {
 		switch (visualID) {
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.RealtimeStatechartNameEditPart.VISUAL_ID:
+		case RealtimeStatechartNameEditPart.VISUAL_ID:
 			return getRealtimeStatechartName_5061Parser();
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID:
+		case WrappingLabelEditPart.VISUAL_ID:
 			return getRealtimeStatechartLabel_5062Parser();
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.StateNameEditPart.VISUAL_ID:
+		case StateNameEditPart.VISUAL_ID:
 			return getStateName_5060Parser();
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.WrappingLabel2EditPart.VISUAL_ID:
+		case WrappingLabel2EditPart.VISUAL_ID:
 			return getEntryEventLabel_5050Parser();
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.WrappingLabel3EditPart.VISUAL_ID:
+		case WrappingLabel3EditPart.VISUAL_ID:
 			return getDoEventLabel_5051Parser();
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.WrappingLabel4EditPart.VISUAL_ID:
+		case WrappingLabel4EditPart.VISUAL_ID:
 			return getExitEventLabel_5052Parser();
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.WrappingLabel5EditPart.VISUAL_ID:
+		case WrappingLabel5EditPart.VISUAL_ID:
 			return getClockConstraintLabel_5053Parser();
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.WrappingLabel6EditPart.VISUAL_ID:
+		case WrappingLabel6EditPart.VISUAL_ID:
 			return getSynchronizationChannelLabel_5054Parser();
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.RegionNameEditPart.VISUAL_ID:
+		case RegionNameEditPart.VISUAL_ID:
 			return getRegionLabel_5063Parser();
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.RegionPriorityEditPart.VISUAL_ID:
+		case RegionPriorityEditPart.VISUAL_ID:
 			return getRegionPriority_5064Parser();
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.WrappingLabel7EditPart.VISUAL_ID:
+		case WrappingLabel7EditPart.VISUAL_ID:
 			return getRegionLabel_5065Parser();
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.WrappingLabel8EditPart.VISUAL_ID:
+		case WrappingLabel8EditPart.VISUAL_ID:
 			return getTransitionLabel_6005Parser();
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.WrappingLabel9EditPart.VISUAL_ID:
+		case WrappingLabel9EditPart.VISUAL_ID:
 			return getTransitionLabel_6006Parser();
 		}
 		return null;
@@ -206,13 +228,11 @@ public class MumlParserProvider extends AbstractProvider implements IParserProvi
 	public IParser getParser(IAdaptable hint) {
 		String vid = (String) hint.getAdapter(String.class);
 		if (vid != null) {
-			return getParser(
-					org.muml.pim.realtimestatechart.diagram.part.MumlVisualIDRegistry.getVisualID(vid));
+			return getParser(MumlVisualIDRegistry.getVisualID(vid));
 		}
 		View view = (View) hint.getAdapter(View.class);
 		if (view != null) {
-			return getParser(org.muml.pim.realtimestatechart.diagram.part.MumlVisualIDRegistry
-					.getVisualID(view));
+			return getParser(MumlVisualIDRegistry.getVisualID(view));
 		}
 		return null;
 	}
@@ -223,8 +243,7 @@ public class MumlParserProvider extends AbstractProvider implements IParserProvi
 	public boolean provides(IOperation operation) {
 		if (operation instanceof GetParserOperation) {
 			IAdaptable hint = ((GetParserOperation) operation).getHint();
-			if (org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes
-					.getElement(hint) == null) {
+			if (MumlElementTypes.getElement(hint) == null) {
 				return false;
 			}
 			return getParser(hint) != null;

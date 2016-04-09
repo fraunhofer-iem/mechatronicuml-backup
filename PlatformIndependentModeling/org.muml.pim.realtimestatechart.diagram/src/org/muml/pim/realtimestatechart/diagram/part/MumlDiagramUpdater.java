@@ -25,6 +25,41 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.update.DiagramUpdater;
+import org.muml.pim.realtimestatechart.ClockConstraint;
+import org.muml.pim.realtimestatechart.DoEvent;
+import org.muml.pim.realtimestatechart.EntryEvent;
+import org.muml.pim.realtimestatechart.EntryPoint;
+import org.muml.pim.realtimestatechart.ExitEvent;
+import org.muml.pim.realtimestatechart.ExitPoint;
+import org.muml.pim.realtimestatechart.RealtimeStatechart;
+import org.muml.pim.realtimestatechart.RealtimestatechartPackage;
+import org.muml.pim.realtimestatechart.Region;
+import org.muml.pim.realtimestatechart.State;
+import org.muml.pim.realtimestatechart.StateConnectionPoint;
+import org.muml.pim.realtimestatechart.SynchronizationChannel;
+import org.muml.pim.realtimestatechart.Transition;
+import org.muml.pim.realtimestatechart.Vertex;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.ClockConstraintEditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.DoEventEditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.EntryEventEditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.EntryPointEditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.ExitEventEditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.ExitPointEditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.ModelElementCategoryEditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.RealtimeStatechart2EditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.RealtimeStatechartEditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.RealtimeStatechartStatechartContentsCompartment2EditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.RealtimeStatechartStatechartContentsCompartmentEditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.RegionEditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.RegionRegionContentsCompartmentEditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.StateActionCompartmentEditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.StateChannelCompartmentEditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.StateEditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.StateInvariantCompartmentEditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.StateRegionCompartmentEditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.SynchronizationChannelEditPart;
+import org.muml.pim.realtimestatechart.diagram.edit.parts.TransitionEditPart;
+import org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes;
 
 /**
  * @generated
@@ -34,26 +69,25 @@ public class MumlDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pim.realtimestatechart.diagram.part.MumlNodeDescriptor> getSemanticChildren(
-			View view) {
-		switch (org.muml.pim.realtimestatechart.diagram.part.MumlVisualIDRegistry.getVisualID(view)) {
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.ModelElementCategoryEditPart.VISUAL_ID:
+	public static List<MumlNodeDescriptor> getSemanticChildren(View view) {
+		switch (MumlVisualIDRegistry.getVisualID(view)) {
+		case ModelElementCategoryEditPart.VISUAL_ID:
 			return getRealtimeStatechart_1000SemanticChildren(view);
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.StateEditPart.VISUAL_ID:
+		case StateEditPart.VISUAL_ID:
 			return getState_3032SemanticChildren(view);
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.RealtimeStatechartStatechartContentsCompartmentEditPart.VISUAL_ID:
+		case RealtimeStatechartStatechartContentsCompartmentEditPart.VISUAL_ID:
 			return getRealtimeStatechartStatechartContentsCompartment_7030SemanticChildren(view);
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.StateActionCompartmentEditPart.VISUAL_ID:
+		case StateActionCompartmentEditPart.VISUAL_ID:
 			return getStateActionCompartment_7031SemanticChildren(view);
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.StateRegionCompartmentEditPart.VISUAL_ID:
+		case StateRegionCompartmentEditPart.VISUAL_ID:
 			return getStateRegionCompartment_7032SemanticChildren(view);
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.StateChannelCompartmentEditPart.VISUAL_ID:
+		case StateChannelCompartmentEditPart.VISUAL_ID:
 			return getStateChannelCompartment_7033SemanticChildren(view);
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.StateInvariantCompartmentEditPart.VISUAL_ID:
+		case StateInvariantCompartmentEditPart.VISUAL_ID:
 			return getStateInvariantCompartment_7034SemanticChildren(view);
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.RegionRegionContentsCompartmentEditPart.VISUAL_ID:
+		case RegionRegionContentsCompartmentEditPart.VISUAL_ID:
 			return getRegionRegionContentsCompartment_7037SemanticChildren(view);
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.RealtimeStatechartStatechartContentsCompartment2EditPart.VISUAL_ID:
+		case RealtimeStatechartStatechartContentsCompartment2EditPart.VISUAL_ID:
 			return getRealtimeStatechartStatechartContentsCompartment_7038SemanticChildren(view);
 		}
 		return Collections.emptyList();
@@ -62,19 +96,15 @@ public class MumlDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pim.realtimestatechart.diagram.part.MumlNodeDescriptor> getRealtimeStatechart_1000SemanticChildren(
-			View view) {
+	public static List<MumlNodeDescriptor> getRealtimeStatechart_1000SemanticChildren(View view) {
 		if (!view.isSetElement()) {
 			return Collections.emptyList();
 		}
-		org.muml.pim.realtimestatechart.RealtimeStatechart modelElement = (org.muml.pim.realtimestatechart.RealtimeStatechart) view
-				.getElement();
-		LinkedList<org.muml.pim.realtimestatechart.diagram.part.MumlNodeDescriptor> result = new LinkedList<org.muml.pim.realtimestatechart.diagram.part.MumlNodeDescriptor>();
+		RealtimeStatechart modelElement = (RealtimeStatechart) view.getElement();
+		LinkedList<MumlNodeDescriptor> result = new LinkedList<MumlNodeDescriptor>();
 
-		if (org.muml.pim.realtimestatechart.diagram.part.MumlVisualIDRegistry.getNodeVisualID(view,
-				modelElement) == org.muml.pim.realtimestatechart.diagram.edit.parts.RealtimeStatechartEditPart.VISUAL_ID) {
-			result.add(new org.muml.pim.realtimestatechart.diagram.part.MumlNodeDescriptor(modelElement,
-					org.muml.pim.realtimestatechart.diagram.edit.parts.RealtimeStatechartEditPart.VISUAL_ID));
+		if (MumlVisualIDRegistry.getNodeVisualID(view, modelElement) == RealtimeStatechartEditPart.VISUAL_ID) {
+			result.add(new MumlNodeDescriptor(modelElement, RealtimeStatechartEditPart.VISUAL_ID));
 		}
 
 		return result;
@@ -83,27 +113,21 @@ public class MumlDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pim.realtimestatechart.diagram.part.MumlNodeDescriptor> getState_3032SemanticChildren(
-			View view) {
+	public static List<MumlNodeDescriptor> getState_3032SemanticChildren(View view) {
 		if (!view.isSetElement()) {
 			return Collections.emptyList();
 		}
-		org.muml.pim.realtimestatechart.State modelElement = (org.muml.pim.realtimestatechart.State) view
-				.getElement();
-		LinkedList<org.muml.pim.realtimestatechart.diagram.part.MumlNodeDescriptor> result = new LinkedList<org.muml.pim.realtimestatechart.diagram.part.MumlNodeDescriptor>();
+		State modelElement = (State) view.getElement();
+		LinkedList<MumlNodeDescriptor> result = new LinkedList<MumlNodeDescriptor>();
 		for (Iterator<?> it = modelElement.getConnectionPoints().iterator(); it.hasNext();) {
-			org.muml.pim.realtimestatechart.StateConnectionPoint childElement = (org.muml.pim.realtimestatechart.StateConnectionPoint) it
-					.next();
-			int visualID = org.muml.pim.realtimestatechart.diagram.part.MumlVisualIDRegistry
-					.getNodeVisualID(view, childElement);
-			if (visualID == org.muml.pim.realtimestatechart.diagram.edit.parts.EntryPointEditPart.VISUAL_ID) {
-				result.add(new org.muml.pim.realtimestatechart.diagram.part.MumlNodeDescriptor(
-						childElement, visualID));
+			StateConnectionPoint childElement = (StateConnectionPoint) it.next();
+			int visualID = MumlVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == EntryPointEditPart.VISUAL_ID) {
+				result.add(new MumlNodeDescriptor(childElement, visualID));
 				continue;
 			}
-			if (visualID == org.muml.pim.realtimestatechart.diagram.edit.parts.ExitPointEditPart.VISUAL_ID) {
-				result.add(new org.muml.pim.realtimestatechart.diagram.part.MumlNodeDescriptor(
-						childElement, visualID));
+			if (visualID == ExitPointEditPart.VISUAL_ID) {
+				result.add(new MumlNodeDescriptor(childElement, visualID));
 				continue;
 			}
 		}
@@ -114,7 +138,7 @@ public class MumlDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pim.realtimestatechart.diagram.part.MumlNodeDescriptor> getRealtimeStatechartStatechartContentsCompartment_7030SemanticChildren(
+	public static List<MumlNodeDescriptor> getRealtimeStatechartStatechartContentsCompartment_7030SemanticChildren(
 			View view) {
 		if (false == view.eContainer() instanceof View) {
 			return Collections.emptyList();
@@ -123,17 +147,13 @@ public class MumlDiagramUpdater {
 		if (!containerView.isSetElement()) {
 			return Collections.emptyList();
 		}
-		org.muml.pim.realtimestatechart.RealtimeStatechart modelElement = (org.muml.pim.realtimestatechart.RealtimeStatechart) containerView
-				.getElement();
-		LinkedList<org.muml.pim.realtimestatechart.diagram.part.MumlNodeDescriptor> result = new LinkedList<org.muml.pim.realtimestatechart.diagram.part.MumlNodeDescriptor>();
+		RealtimeStatechart modelElement = (RealtimeStatechart) containerView.getElement();
+		LinkedList<MumlNodeDescriptor> result = new LinkedList<MumlNodeDescriptor>();
 		for (Iterator<?> it = modelElement.getStates().iterator(); it.hasNext();) {
-			org.muml.pim.realtimestatechart.State childElement = (org.muml.pim.realtimestatechart.State) it
-					.next();
-			int visualID = org.muml.pim.realtimestatechart.diagram.part.MumlVisualIDRegistry
-					.getNodeVisualID(view, childElement);
-			if (visualID == org.muml.pim.realtimestatechart.diagram.edit.parts.StateEditPart.VISUAL_ID) {
-				result.add(new org.muml.pim.realtimestatechart.diagram.part.MumlNodeDescriptor(
-						childElement, visualID));
+			State childElement = (State) it.next();
+			int visualID = MumlVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == StateEditPart.VISUAL_ID) {
+				result.add(new MumlNodeDescriptor(childElement, visualID));
 				continue;
 			}
 		}
@@ -144,8 +164,7 @@ public class MumlDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pim.realtimestatechart.diagram.part.MumlNodeDescriptor> getStateActionCompartment_7031SemanticChildren(
-			View view) {
+	public static List<MumlNodeDescriptor> getStateActionCompartment_7031SemanticChildren(View view) {
 		if (false == view.eContainer() instanceof View) {
 			return Collections.emptyList();
 		}
@@ -153,34 +172,27 @@ public class MumlDiagramUpdater {
 		if (!containerView.isSetElement()) {
 			return Collections.emptyList();
 		}
-		org.muml.pim.realtimestatechart.State modelElement = (org.muml.pim.realtimestatechart.State) containerView
-				.getElement();
-		LinkedList<org.muml.pim.realtimestatechart.diagram.part.MumlNodeDescriptor> result = new LinkedList<org.muml.pim.realtimestatechart.diagram.part.MumlNodeDescriptor>();
+		State modelElement = (State) containerView.getElement();
+		LinkedList<MumlNodeDescriptor> result = new LinkedList<MumlNodeDescriptor>();
 		{
-			org.muml.pim.realtimestatechart.EntryEvent childElement = modelElement.getEntryEvent();
-			int visualID = org.muml.pim.realtimestatechart.diagram.part.MumlVisualIDRegistry
-					.getNodeVisualID(view, childElement);
-			if (visualID == org.muml.pim.realtimestatechart.diagram.edit.parts.EntryEventEditPart.VISUAL_ID) {
-				result.add(new org.muml.pim.realtimestatechart.diagram.part.MumlNodeDescriptor(
-						childElement, visualID));
+			EntryEvent childElement = modelElement.getEntryEvent();
+			int visualID = MumlVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == EntryEventEditPart.VISUAL_ID) {
+				result.add(new MumlNodeDescriptor(childElement, visualID));
 			}
 		}
 		{
-			org.muml.pim.realtimestatechart.DoEvent childElement = modelElement.getDoEvent();
-			int visualID = org.muml.pim.realtimestatechart.diagram.part.MumlVisualIDRegistry
-					.getNodeVisualID(view, childElement);
-			if (visualID == org.muml.pim.realtimestatechart.diagram.edit.parts.DoEventEditPart.VISUAL_ID) {
-				result.add(new org.muml.pim.realtimestatechart.diagram.part.MumlNodeDescriptor(
-						childElement, visualID));
+			DoEvent childElement = modelElement.getDoEvent();
+			int visualID = MumlVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == DoEventEditPart.VISUAL_ID) {
+				result.add(new MumlNodeDescriptor(childElement, visualID));
 			}
 		}
 		{
-			org.muml.pim.realtimestatechart.ExitEvent childElement = modelElement.getExitEvent();
-			int visualID = org.muml.pim.realtimestatechart.diagram.part.MumlVisualIDRegistry
-					.getNodeVisualID(view, childElement);
-			if (visualID == org.muml.pim.realtimestatechart.diagram.edit.parts.ExitEventEditPart.VISUAL_ID) {
-				result.add(new org.muml.pim.realtimestatechart.diagram.part.MumlNodeDescriptor(
-						childElement, visualID));
+			ExitEvent childElement = modelElement.getExitEvent();
+			int visualID = MumlVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == ExitEventEditPart.VISUAL_ID) {
+				result.add(new MumlNodeDescriptor(childElement, visualID));
 			}
 		}
 
@@ -190,8 +202,7 @@ public class MumlDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pim.realtimestatechart.diagram.part.MumlNodeDescriptor> getStateRegionCompartment_7032SemanticChildren(
-			View view) {
+	public static List<MumlNodeDescriptor> getStateRegionCompartment_7032SemanticChildren(View view) {
 		if (false == view.eContainer() instanceof View) {
 			return Collections.emptyList();
 		}
@@ -199,17 +210,13 @@ public class MumlDiagramUpdater {
 		if (!containerView.isSetElement()) {
 			return Collections.emptyList();
 		}
-		org.muml.pim.realtimestatechart.State modelElement = (org.muml.pim.realtimestatechart.State) containerView
-				.getElement();
-		LinkedList<org.muml.pim.realtimestatechart.diagram.part.MumlNodeDescriptor> result = new LinkedList<org.muml.pim.realtimestatechart.diagram.part.MumlNodeDescriptor>();
+		State modelElement = (State) containerView.getElement();
+		LinkedList<MumlNodeDescriptor> result = new LinkedList<MumlNodeDescriptor>();
 		for (Iterator<?> it = modelElement.getEmbeddedRegions().iterator(); it.hasNext();) {
-			org.muml.pim.realtimestatechart.Region childElement = (org.muml.pim.realtimestatechart.Region) it
-					.next();
-			int visualID = org.muml.pim.realtimestatechart.diagram.part.MumlVisualIDRegistry
-					.getNodeVisualID(view, childElement);
-			if (visualID == org.muml.pim.realtimestatechart.diagram.edit.parts.RegionEditPart.VISUAL_ID) {
-				result.add(new org.muml.pim.realtimestatechart.diagram.part.MumlNodeDescriptor(
-						childElement, visualID));
+			Region childElement = (Region) it.next();
+			int visualID = MumlVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == RegionEditPart.VISUAL_ID) {
+				result.add(new MumlNodeDescriptor(childElement, visualID));
 				continue;
 			}
 		}
@@ -220,8 +227,7 @@ public class MumlDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pim.realtimestatechart.diagram.part.MumlNodeDescriptor> getStateChannelCompartment_7033SemanticChildren(
-			View view) {
+	public static List<MumlNodeDescriptor> getStateChannelCompartment_7033SemanticChildren(View view) {
 		if (false == view.eContainer() instanceof View) {
 			return Collections.emptyList();
 		}
@@ -229,17 +235,13 @@ public class MumlDiagramUpdater {
 		if (!containerView.isSetElement()) {
 			return Collections.emptyList();
 		}
-		org.muml.pim.realtimestatechart.State modelElement = (org.muml.pim.realtimestatechart.State) containerView
-				.getElement();
-		LinkedList<org.muml.pim.realtimestatechart.diagram.part.MumlNodeDescriptor> result = new LinkedList<org.muml.pim.realtimestatechart.diagram.part.MumlNodeDescriptor>();
+		State modelElement = (State) containerView.getElement();
+		LinkedList<MumlNodeDescriptor> result = new LinkedList<MumlNodeDescriptor>();
 		for (Iterator<?> it = modelElement.getChannels().iterator(); it.hasNext();) {
-			org.muml.pim.realtimestatechart.SynchronizationChannel childElement = (org.muml.pim.realtimestatechart.SynchronizationChannel) it
-					.next();
-			int visualID = org.muml.pim.realtimestatechart.diagram.part.MumlVisualIDRegistry
-					.getNodeVisualID(view, childElement);
-			if (visualID == org.muml.pim.realtimestatechart.diagram.edit.parts.SynchronizationChannelEditPart.VISUAL_ID) {
-				result.add(new org.muml.pim.realtimestatechart.diagram.part.MumlNodeDescriptor(
-						childElement, visualID));
+			SynchronizationChannel childElement = (SynchronizationChannel) it.next();
+			int visualID = MumlVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == SynchronizationChannelEditPart.VISUAL_ID) {
+				result.add(new MumlNodeDescriptor(childElement, visualID));
 				continue;
 			}
 		}
@@ -250,8 +252,7 @@ public class MumlDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pim.realtimestatechart.diagram.part.MumlNodeDescriptor> getStateInvariantCompartment_7034SemanticChildren(
-			View view) {
+	public static List<MumlNodeDescriptor> getStateInvariantCompartment_7034SemanticChildren(View view) {
 		if (false == view.eContainer() instanceof View) {
 			return Collections.emptyList();
 		}
@@ -259,17 +260,13 @@ public class MumlDiagramUpdater {
 		if (!containerView.isSetElement()) {
 			return Collections.emptyList();
 		}
-		org.muml.pim.realtimestatechart.State modelElement = (org.muml.pim.realtimestatechart.State) containerView
-				.getElement();
-		LinkedList<org.muml.pim.realtimestatechart.diagram.part.MumlNodeDescriptor> result = new LinkedList<org.muml.pim.realtimestatechart.diagram.part.MumlNodeDescriptor>();
+		State modelElement = (State) containerView.getElement();
+		LinkedList<MumlNodeDescriptor> result = new LinkedList<MumlNodeDescriptor>();
 		for (Iterator<?> it = modelElement.getInvariants().iterator(); it.hasNext();) {
-			org.muml.pim.realtimestatechart.ClockConstraint childElement = (org.muml.pim.realtimestatechart.ClockConstraint) it
-					.next();
-			int visualID = org.muml.pim.realtimestatechart.diagram.part.MumlVisualIDRegistry
-					.getNodeVisualID(view, childElement);
-			if (visualID == org.muml.pim.realtimestatechart.diagram.edit.parts.ClockConstraintEditPart.VISUAL_ID) {
-				result.add(new org.muml.pim.realtimestatechart.diagram.part.MumlNodeDescriptor(
-						childElement, visualID));
+			ClockConstraint childElement = (ClockConstraint) it.next();
+			int visualID = MumlVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == ClockConstraintEditPart.VISUAL_ID) {
+				result.add(new MumlNodeDescriptor(childElement, visualID));
 				continue;
 			}
 		}
@@ -280,8 +277,7 @@ public class MumlDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pim.realtimestatechart.diagram.part.MumlNodeDescriptor> getRegionRegionContentsCompartment_7037SemanticChildren(
-			View view) {
+	public static List<MumlNodeDescriptor> getRegionRegionContentsCompartment_7037SemanticChildren(View view) {
 		if (false == view.eContainer() instanceof View) {
 			return Collections.emptyList();
 		}
@@ -289,17 +285,13 @@ public class MumlDiagramUpdater {
 		if (!containerView.isSetElement()) {
 			return Collections.emptyList();
 		}
-		org.muml.pim.realtimestatechart.Region modelElement = (org.muml.pim.realtimestatechart.Region) containerView
-				.getElement();
-		LinkedList<org.muml.pim.realtimestatechart.diagram.part.MumlNodeDescriptor> result = new LinkedList<org.muml.pim.realtimestatechart.diagram.part.MumlNodeDescriptor>();
+		Region modelElement = (Region) containerView.getElement();
+		LinkedList<MumlNodeDescriptor> result = new LinkedList<MumlNodeDescriptor>();
 		{
-			org.muml.pim.realtimestatechart.RealtimeStatechart childElement = modelElement
-					.getEmbeddedStatechart();
-			int visualID = org.muml.pim.realtimestatechart.diagram.part.MumlVisualIDRegistry
-					.getNodeVisualID(view, childElement);
-			if (visualID == org.muml.pim.realtimestatechart.diagram.edit.parts.RealtimeStatechart2EditPart.VISUAL_ID) {
-				result.add(new org.muml.pim.realtimestatechart.diagram.part.MumlNodeDescriptor(
-						childElement, visualID));
+			RealtimeStatechart childElement = modelElement.getEmbeddedStatechart();
+			int visualID = MumlVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == RealtimeStatechart2EditPart.VISUAL_ID) {
+				result.add(new MumlNodeDescriptor(childElement, visualID));
 			}
 		}
 
@@ -309,7 +301,7 @@ public class MumlDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pim.realtimestatechart.diagram.part.MumlNodeDescriptor> getRealtimeStatechartStatechartContentsCompartment_7038SemanticChildren(
+	public static List<MumlNodeDescriptor> getRealtimeStatechartStatechartContentsCompartment_7038SemanticChildren(
 			View view) {
 		if (false == view.eContainer() instanceof View) {
 			return Collections.emptyList();
@@ -318,17 +310,13 @@ public class MumlDiagramUpdater {
 		if (!containerView.isSetElement()) {
 			return Collections.emptyList();
 		}
-		org.muml.pim.realtimestatechart.RealtimeStatechart modelElement = (org.muml.pim.realtimestatechart.RealtimeStatechart) containerView
-				.getElement();
-		LinkedList<org.muml.pim.realtimestatechart.diagram.part.MumlNodeDescriptor> result = new LinkedList<org.muml.pim.realtimestatechart.diagram.part.MumlNodeDescriptor>();
+		RealtimeStatechart modelElement = (RealtimeStatechart) containerView.getElement();
+		LinkedList<MumlNodeDescriptor> result = new LinkedList<MumlNodeDescriptor>();
 		for (Iterator<?> it = modelElement.getStates().iterator(); it.hasNext();) {
-			org.muml.pim.realtimestatechart.State childElement = (org.muml.pim.realtimestatechart.State) it
-					.next();
-			int visualID = org.muml.pim.realtimestatechart.diagram.part.MumlVisualIDRegistry
-					.getNodeVisualID(view, childElement);
-			if (visualID == org.muml.pim.realtimestatechart.diagram.edit.parts.StateEditPart.VISUAL_ID) {
-				result.add(new org.muml.pim.realtimestatechart.diagram.part.MumlNodeDescriptor(
-						childElement, visualID));
+			State childElement = (State) it.next();
+			int visualID = MumlVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == StateEditPart.VISUAL_ID) {
+				result.add(new MumlNodeDescriptor(childElement, visualID));
 				continue;
 			}
 		}
@@ -346,34 +334,33 @@ public class MumlDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pim.realtimestatechart.diagram.part.MumlLinkDescriptor> getContainedLinks(
-			View view) {
-		switch (org.muml.pim.realtimestatechart.diagram.part.MumlVisualIDRegistry.getVisualID(view)) {
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.ModelElementCategoryEditPart.VISUAL_ID:
+	public static List<MumlLinkDescriptor> getContainedLinks(View view) {
+		switch (MumlVisualIDRegistry.getVisualID(view)) {
+		case ModelElementCategoryEditPart.VISUAL_ID:
 			return getRealtimeStatechart_1000ContainedLinks(view);
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.RealtimeStatechartEditPart.VISUAL_ID:
+		case RealtimeStatechartEditPart.VISUAL_ID:
 			return getRealtimeStatechart_2007ContainedLinks(view);
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.StateEditPart.VISUAL_ID:
+		case StateEditPart.VISUAL_ID:
 			return getState_3032ContainedLinks(view);
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.EntryEventEditPart.VISUAL_ID:
+		case EntryEventEditPart.VISUAL_ID:
 			return getEntryEvent_3033ContainedLinks(view);
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.DoEventEditPart.VISUAL_ID:
+		case DoEventEditPart.VISUAL_ID:
 			return getDoEvent_3034ContainedLinks(view);
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.ExitEventEditPart.VISUAL_ID:
+		case ExitEventEditPart.VISUAL_ID:
 			return getExitEvent_3035ContainedLinks(view);
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.ClockConstraintEditPart.VISUAL_ID:
+		case ClockConstraintEditPart.VISUAL_ID:
 			return getClockConstraint_3036ContainedLinks(view);
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.SynchronizationChannelEditPart.VISUAL_ID:
+		case SynchronizationChannelEditPart.VISUAL_ID:
 			return getSynchronizationChannel_3037ContainedLinks(view);
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.RegionEditPart.VISUAL_ID:
+		case RegionEditPart.VISUAL_ID:
 			return getRegion_3042ContainedLinks(view);
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.RealtimeStatechart2EditPart.VISUAL_ID:
+		case RealtimeStatechart2EditPart.VISUAL_ID:
 			return getRealtimeStatechart_3043ContainedLinks(view);
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.EntryPointEditPart.VISUAL_ID:
+		case EntryPointEditPart.VISUAL_ID:
 			return getEntryPoint_3040ContainedLinks(view);
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.ExitPointEditPart.VISUAL_ID:
+		case ExitPointEditPart.VISUAL_ID:
 			return getExitPoint_3041ContainedLinks(view);
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.TransitionEditPart.VISUAL_ID:
+		case TransitionEditPart.VISUAL_ID:
 			return getTransition_4003ContainedLinks(view);
 		}
 		return Collections.emptyList();
@@ -382,32 +369,31 @@ public class MumlDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pim.realtimestatechart.diagram.part.MumlLinkDescriptor> getIncomingLinks(
-			View view) {
-		switch (org.muml.pim.realtimestatechart.diagram.part.MumlVisualIDRegistry.getVisualID(view)) {
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.RealtimeStatechartEditPart.VISUAL_ID:
+	public static List<MumlLinkDescriptor> getIncomingLinks(View view) {
+		switch (MumlVisualIDRegistry.getVisualID(view)) {
+		case RealtimeStatechartEditPart.VISUAL_ID:
 			return getRealtimeStatechart_2007IncomingLinks(view);
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.StateEditPart.VISUAL_ID:
+		case StateEditPart.VISUAL_ID:
 			return getState_3032IncomingLinks(view);
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.EntryEventEditPart.VISUAL_ID:
+		case EntryEventEditPart.VISUAL_ID:
 			return getEntryEvent_3033IncomingLinks(view);
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.DoEventEditPart.VISUAL_ID:
+		case DoEventEditPart.VISUAL_ID:
 			return getDoEvent_3034IncomingLinks(view);
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.ExitEventEditPart.VISUAL_ID:
+		case ExitEventEditPart.VISUAL_ID:
 			return getExitEvent_3035IncomingLinks(view);
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.ClockConstraintEditPart.VISUAL_ID:
+		case ClockConstraintEditPart.VISUAL_ID:
 			return getClockConstraint_3036IncomingLinks(view);
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.SynchronizationChannelEditPart.VISUAL_ID:
+		case SynchronizationChannelEditPart.VISUAL_ID:
 			return getSynchronizationChannel_3037IncomingLinks(view);
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.RegionEditPart.VISUAL_ID:
+		case RegionEditPart.VISUAL_ID:
 			return getRegion_3042IncomingLinks(view);
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.RealtimeStatechart2EditPart.VISUAL_ID:
+		case RealtimeStatechart2EditPart.VISUAL_ID:
 			return getRealtimeStatechart_3043IncomingLinks(view);
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.EntryPointEditPart.VISUAL_ID:
+		case EntryPointEditPart.VISUAL_ID:
 			return getEntryPoint_3040IncomingLinks(view);
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.ExitPointEditPart.VISUAL_ID:
+		case ExitPointEditPart.VISUAL_ID:
 			return getExitPoint_3041IncomingLinks(view);
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.TransitionEditPart.VISUAL_ID:
+		case TransitionEditPart.VISUAL_ID:
 			return getTransition_4003IncomingLinks(view);
 		}
 		return Collections.emptyList();
@@ -416,32 +402,31 @@ public class MumlDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pim.realtimestatechart.diagram.part.MumlLinkDescriptor> getOutgoingLinks(
-			View view) {
-		switch (org.muml.pim.realtimestatechart.diagram.part.MumlVisualIDRegistry.getVisualID(view)) {
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.RealtimeStatechartEditPart.VISUAL_ID:
+	public static List<MumlLinkDescriptor> getOutgoingLinks(View view) {
+		switch (MumlVisualIDRegistry.getVisualID(view)) {
+		case RealtimeStatechartEditPart.VISUAL_ID:
 			return getRealtimeStatechart_2007OutgoingLinks(view);
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.StateEditPart.VISUAL_ID:
+		case StateEditPart.VISUAL_ID:
 			return getState_3032OutgoingLinks(view);
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.EntryEventEditPart.VISUAL_ID:
+		case EntryEventEditPart.VISUAL_ID:
 			return getEntryEvent_3033OutgoingLinks(view);
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.DoEventEditPart.VISUAL_ID:
+		case DoEventEditPart.VISUAL_ID:
 			return getDoEvent_3034OutgoingLinks(view);
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.ExitEventEditPart.VISUAL_ID:
+		case ExitEventEditPart.VISUAL_ID:
 			return getExitEvent_3035OutgoingLinks(view);
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.ClockConstraintEditPart.VISUAL_ID:
+		case ClockConstraintEditPart.VISUAL_ID:
 			return getClockConstraint_3036OutgoingLinks(view);
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.SynchronizationChannelEditPart.VISUAL_ID:
+		case SynchronizationChannelEditPart.VISUAL_ID:
 			return getSynchronizationChannel_3037OutgoingLinks(view);
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.RegionEditPart.VISUAL_ID:
+		case RegionEditPart.VISUAL_ID:
 			return getRegion_3042OutgoingLinks(view);
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.RealtimeStatechart2EditPart.VISUAL_ID:
+		case RealtimeStatechart2EditPart.VISUAL_ID:
 			return getRealtimeStatechart_3043OutgoingLinks(view);
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.EntryPointEditPart.VISUAL_ID:
+		case EntryPointEditPart.VISUAL_ID:
 			return getEntryPoint_3040OutgoingLinks(view);
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.ExitPointEditPart.VISUAL_ID:
+		case ExitPointEditPart.VISUAL_ID:
 			return getExitPoint_3041OutgoingLinks(view);
-		case org.muml.pim.realtimestatechart.diagram.edit.parts.TransitionEditPart.VISUAL_ID:
+		case TransitionEditPart.VISUAL_ID:
 			return getTransition_4003OutgoingLinks(view);
 		}
 		return Collections.emptyList();
@@ -450,11 +435,9 @@ public class MumlDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pim.realtimestatechart.diagram.part.MumlLinkDescriptor> getRealtimeStatechart_1000ContainedLinks(
-			View view) {
-		org.muml.pim.realtimestatechart.RealtimeStatechart modelElement = (org.muml.pim.realtimestatechart.RealtimeStatechart) view
-				.getElement();
-		LinkedList<org.muml.pim.realtimestatechart.diagram.part.MumlLinkDescriptor> result = new LinkedList<org.muml.pim.realtimestatechart.diagram.part.MumlLinkDescriptor>();
+	public static List<MumlLinkDescriptor> getRealtimeStatechart_1000ContainedLinks(View view) {
+		RealtimeStatechart modelElement = (RealtimeStatechart) view.getElement();
+		LinkedList<MumlLinkDescriptor> result = new LinkedList<MumlLinkDescriptor>();
 		result.addAll(getContainedTypeModelFacetLinks_Transition_4003(modelElement));
 		return result;
 	}
@@ -462,11 +445,9 @@ public class MumlDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pim.realtimestatechart.diagram.part.MumlLinkDescriptor> getRealtimeStatechart_2007ContainedLinks(
-			View view) {
-		org.muml.pim.realtimestatechart.RealtimeStatechart modelElement = (org.muml.pim.realtimestatechart.RealtimeStatechart) view
-				.getElement();
-		LinkedList<org.muml.pim.realtimestatechart.diagram.part.MumlLinkDescriptor> result = new LinkedList<org.muml.pim.realtimestatechart.diagram.part.MumlLinkDescriptor>();
+	public static List<MumlLinkDescriptor> getRealtimeStatechart_2007ContainedLinks(View view) {
+		RealtimeStatechart modelElement = (RealtimeStatechart) view.getElement();
+		LinkedList<MumlLinkDescriptor> result = new LinkedList<MumlLinkDescriptor>();
 		result.addAll(getContainedTypeModelFacetLinks_Transition_4003(modelElement));
 		return result;
 	}
@@ -474,67 +455,58 @@ public class MumlDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pim.realtimestatechart.diagram.part.MumlLinkDescriptor> getState_3032ContainedLinks(
-			View view) {
+	public static List<MumlLinkDescriptor> getState_3032ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pim.realtimestatechart.diagram.part.MumlLinkDescriptor> getEntryEvent_3033ContainedLinks(
-			View view) {
+	public static List<MumlLinkDescriptor> getEntryEvent_3033ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pim.realtimestatechart.diagram.part.MumlLinkDescriptor> getDoEvent_3034ContainedLinks(
-			View view) {
+	public static List<MumlLinkDescriptor> getDoEvent_3034ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pim.realtimestatechart.diagram.part.MumlLinkDescriptor> getExitEvent_3035ContainedLinks(
-			View view) {
+	public static List<MumlLinkDescriptor> getExitEvent_3035ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pim.realtimestatechart.diagram.part.MumlLinkDescriptor> getClockConstraint_3036ContainedLinks(
-			View view) {
+	public static List<MumlLinkDescriptor> getClockConstraint_3036ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pim.realtimestatechart.diagram.part.MumlLinkDescriptor> getSynchronizationChannel_3037ContainedLinks(
-			View view) {
+	public static List<MumlLinkDescriptor> getSynchronizationChannel_3037ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pim.realtimestatechart.diagram.part.MumlLinkDescriptor> getRegion_3042ContainedLinks(
-			View view) {
+	public static List<MumlLinkDescriptor> getRegion_3042ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pim.realtimestatechart.diagram.part.MumlLinkDescriptor> getRealtimeStatechart_3043ContainedLinks(
-			View view) {
-		org.muml.pim.realtimestatechart.RealtimeStatechart modelElement = (org.muml.pim.realtimestatechart.RealtimeStatechart) view
-				.getElement();
-		LinkedList<org.muml.pim.realtimestatechart.diagram.part.MumlLinkDescriptor> result = new LinkedList<org.muml.pim.realtimestatechart.diagram.part.MumlLinkDescriptor>();
+	public static List<MumlLinkDescriptor> getRealtimeStatechart_3043ContainedLinks(View view) {
+		RealtimeStatechart modelElement = (RealtimeStatechart) view.getElement();
+		LinkedList<MumlLinkDescriptor> result = new LinkedList<MumlLinkDescriptor>();
 		result.addAll(getContainedTypeModelFacetLinks_Transition_4003(modelElement));
 		return result;
 	}
@@ -542,45 +514,39 @@ public class MumlDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pim.realtimestatechart.diagram.part.MumlLinkDescriptor> getEntryPoint_3040ContainedLinks(
-			View view) {
+	public static List<MumlLinkDescriptor> getEntryPoint_3040ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pim.realtimestatechart.diagram.part.MumlLinkDescriptor> getExitPoint_3041ContainedLinks(
-			View view) {
+	public static List<MumlLinkDescriptor> getExitPoint_3041ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pim.realtimestatechart.diagram.part.MumlLinkDescriptor> getTransition_4003ContainedLinks(
-			View view) {
+	public static List<MumlLinkDescriptor> getTransition_4003ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pim.realtimestatechart.diagram.part.MumlLinkDescriptor> getRealtimeStatechart_2007IncomingLinks(
-			View view) {
+	public static List<MumlLinkDescriptor> getRealtimeStatechart_2007IncomingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pim.realtimestatechart.diagram.part.MumlLinkDescriptor> getState_3032IncomingLinks(
-			View view) {
-		org.muml.pim.realtimestatechart.State modelElement = (org.muml.pim.realtimestatechart.State) view
-				.getElement();
+	public static List<MumlLinkDescriptor> getState_3032IncomingLinks(View view) {
+		State modelElement = (State) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
-		LinkedList<org.muml.pim.realtimestatechart.diagram.part.MumlLinkDescriptor> result = new LinkedList<org.muml.pim.realtimestatechart.diagram.part.MumlLinkDescriptor>();
+		LinkedList<MumlLinkDescriptor> result = new LinkedList<MumlLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_Transition_4003(modelElement, crossReferences));
 		return result;
 	}
@@ -588,69 +554,60 @@ public class MumlDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pim.realtimestatechart.diagram.part.MumlLinkDescriptor> getEntryEvent_3033IncomingLinks(
-			View view) {
+	public static List<MumlLinkDescriptor> getEntryEvent_3033IncomingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pim.realtimestatechart.diagram.part.MumlLinkDescriptor> getDoEvent_3034IncomingLinks(
-			View view) {
+	public static List<MumlLinkDescriptor> getDoEvent_3034IncomingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pim.realtimestatechart.diagram.part.MumlLinkDescriptor> getExitEvent_3035IncomingLinks(
-			View view) {
+	public static List<MumlLinkDescriptor> getExitEvent_3035IncomingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pim.realtimestatechart.diagram.part.MumlLinkDescriptor> getClockConstraint_3036IncomingLinks(
-			View view) {
+	public static List<MumlLinkDescriptor> getClockConstraint_3036IncomingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pim.realtimestatechart.diagram.part.MumlLinkDescriptor> getSynchronizationChannel_3037IncomingLinks(
-			View view) {
+	public static List<MumlLinkDescriptor> getSynchronizationChannel_3037IncomingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pim.realtimestatechart.diagram.part.MumlLinkDescriptor> getRegion_3042IncomingLinks(
-			View view) {
+	public static List<MumlLinkDescriptor> getRegion_3042IncomingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pim.realtimestatechart.diagram.part.MumlLinkDescriptor> getRealtimeStatechart_3043IncomingLinks(
-			View view) {
+	public static List<MumlLinkDescriptor> getRealtimeStatechart_3043IncomingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pim.realtimestatechart.diagram.part.MumlLinkDescriptor> getEntryPoint_3040IncomingLinks(
-			View view) {
-		org.muml.pim.realtimestatechart.EntryPoint modelElement = (org.muml.pim.realtimestatechart.EntryPoint) view
-				.getElement();
+	public static List<MumlLinkDescriptor> getEntryPoint_3040IncomingLinks(View view) {
+		EntryPoint modelElement = (EntryPoint) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
-		LinkedList<org.muml.pim.realtimestatechart.diagram.part.MumlLinkDescriptor> result = new LinkedList<org.muml.pim.realtimestatechart.diagram.part.MumlLinkDescriptor>();
+		LinkedList<MumlLinkDescriptor> result = new LinkedList<MumlLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_Transition_4003(modelElement, crossReferences));
 		return result;
 	}
@@ -658,13 +615,11 @@ public class MumlDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pim.realtimestatechart.diagram.part.MumlLinkDescriptor> getExitPoint_3041IncomingLinks(
-			View view) {
-		org.muml.pim.realtimestatechart.ExitPoint modelElement = (org.muml.pim.realtimestatechart.ExitPoint) view
-				.getElement();
+	public static List<MumlLinkDescriptor> getExitPoint_3041IncomingLinks(View view) {
+		ExitPoint modelElement = (ExitPoint) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
-		LinkedList<org.muml.pim.realtimestatechart.diagram.part.MumlLinkDescriptor> result = new LinkedList<org.muml.pim.realtimestatechart.diagram.part.MumlLinkDescriptor>();
+		LinkedList<MumlLinkDescriptor> result = new LinkedList<MumlLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_Transition_4003(modelElement, crossReferences));
 		return result;
 	}
@@ -672,27 +627,23 @@ public class MumlDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pim.realtimestatechart.diagram.part.MumlLinkDescriptor> getTransition_4003IncomingLinks(
-			View view) {
+	public static List<MumlLinkDescriptor> getTransition_4003IncomingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pim.realtimestatechart.diagram.part.MumlLinkDescriptor> getRealtimeStatechart_2007OutgoingLinks(
-			View view) {
+	public static List<MumlLinkDescriptor> getRealtimeStatechart_2007OutgoingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pim.realtimestatechart.diagram.part.MumlLinkDescriptor> getState_3032OutgoingLinks(
-			View view) {
-		org.muml.pim.realtimestatechart.State modelElement = (org.muml.pim.realtimestatechart.State) view
-				.getElement();
-		LinkedList<org.muml.pim.realtimestatechart.diagram.part.MumlLinkDescriptor> result = new LinkedList<org.muml.pim.realtimestatechart.diagram.part.MumlLinkDescriptor>();
+	public static List<MumlLinkDescriptor> getState_3032OutgoingLinks(View view) {
+		State modelElement = (State) view.getElement();
+		LinkedList<MumlLinkDescriptor> result = new LinkedList<MumlLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Transition_4003(modelElement));
 		return result;
 	}
@@ -700,67 +651,58 @@ public class MumlDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pim.realtimestatechart.diagram.part.MumlLinkDescriptor> getEntryEvent_3033OutgoingLinks(
-			View view) {
+	public static List<MumlLinkDescriptor> getEntryEvent_3033OutgoingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pim.realtimestatechart.diagram.part.MumlLinkDescriptor> getDoEvent_3034OutgoingLinks(
-			View view) {
+	public static List<MumlLinkDescriptor> getDoEvent_3034OutgoingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pim.realtimestatechart.diagram.part.MumlLinkDescriptor> getExitEvent_3035OutgoingLinks(
-			View view) {
+	public static List<MumlLinkDescriptor> getExitEvent_3035OutgoingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pim.realtimestatechart.diagram.part.MumlLinkDescriptor> getClockConstraint_3036OutgoingLinks(
-			View view) {
+	public static List<MumlLinkDescriptor> getClockConstraint_3036OutgoingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pim.realtimestatechart.diagram.part.MumlLinkDescriptor> getSynchronizationChannel_3037OutgoingLinks(
-			View view) {
+	public static List<MumlLinkDescriptor> getSynchronizationChannel_3037OutgoingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pim.realtimestatechart.diagram.part.MumlLinkDescriptor> getRegion_3042OutgoingLinks(
-			View view) {
+	public static List<MumlLinkDescriptor> getRegion_3042OutgoingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pim.realtimestatechart.diagram.part.MumlLinkDescriptor> getRealtimeStatechart_3043OutgoingLinks(
-			View view) {
+	public static List<MumlLinkDescriptor> getRealtimeStatechart_3043OutgoingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pim.realtimestatechart.diagram.part.MumlLinkDescriptor> getEntryPoint_3040OutgoingLinks(
-			View view) {
-		org.muml.pim.realtimestatechart.EntryPoint modelElement = (org.muml.pim.realtimestatechart.EntryPoint) view
-				.getElement();
-		LinkedList<org.muml.pim.realtimestatechart.diagram.part.MumlLinkDescriptor> result = new LinkedList<org.muml.pim.realtimestatechart.diagram.part.MumlLinkDescriptor>();
+	public static List<MumlLinkDescriptor> getEntryPoint_3040OutgoingLinks(View view) {
+		EntryPoint modelElement = (EntryPoint) view.getElement();
+		LinkedList<MumlLinkDescriptor> result = new LinkedList<MumlLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Transition_4003(modelElement));
 		return result;
 	}
@@ -768,11 +710,9 @@ public class MumlDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pim.realtimestatechart.diagram.part.MumlLinkDescriptor> getExitPoint_3041OutgoingLinks(
-			View view) {
-		org.muml.pim.realtimestatechart.ExitPoint modelElement = (org.muml.pim.realtimestatechart.ExitPoint) view
-				.getElement();
-		LinkedList<org.muml.pim.realtimestatechart.diagram.part.MumlLinkDescriptor> result = new LinkedList<org.muml.pim.realtimestatechart.diagram.part.MumlLinkDescriptor>();
+	public static List<MumlLinkDescriptor> getExitPoint_3041OutgoingLinks(View view) {
+		ExitPoint modelElement = (ExitPoint) view.getElement();
+		LinkedList<MumlLinkDescriptor> result = new LinkedList<MumlLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Transition_4003(modelElement));
 		return result;
 	}
@@ -780,105 +720,89 @@ public class MumlDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<org.muml.pim.realtimestatechart.diagram.part.MumlLinkDescriptor> getTransition_4003OutgoingLinks(
-			View view) {
+	public static List<MumlLinkDescriptor> getTransition_4003OutgoingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
-	 * @generated
-	 */
-	private static Collection<org.muml.pim.realtimestatechart.diagram.part.MumlLinkDescriptor> getContainedTypeModelFacetLinks_Transition_4003(
-			org.muml.pim.realtimestatechart.RealtimeStatechart container) {
-		LinkedList<org.muml.pim.realtimestatechart.diagram.part.MumlLinkDescriptor> result = new LinkedList<org.muml.pim.realtimestatechart.diagram.part.MumlLinkDescriptor>();
+	* @generated
+	*/
+	private static Collection<MumlLinkDescriptor> getContainedTypeModelFacetLinks_Transition_4003(
+			RealtimeStatechart container) {
+		LinkedList<MumlLinkDescriptor> result = new LinkedList<MumlLinkDescriptor>();
 		for (Iterator<?> links = container.getTransitions().iterator(); links.hasNext();) {
 			EObject linkObject = (EObject) links.next();
-			if (false == linkObject instanceof org.muml.pim.realtimestatechart.Transition) {
+			if (false == linkObject instanceof Transition) {
 				continue;
 			}
-			org.muml.pim.realtimestatechart.Transition link = (org.muml.pim.realtimestatechart.Transition) linkObject;
-			if (org.muml.pim.realtimestatechart.diagram.edit.parts.TransitionEditPart.VISUAL_ID != org.muml.pim.realtimestatechart.diagram.part.MumlVisualIDRegistry
-					.getLinkWithClassVisualID(link)) {
+			Transition link = (Transition) linkObject;
+			if (TransitionEditPart.VISUAL_ID != MumlVisualIDRegistry.getLinkWithClassVisualID(link)) {
 				continue;
 			}
-			org.muml.pim.realtimestatechart.Vertex dst = link.getTarget();
-			org.muml.pim.realtimestatechart.Vertex src = link.getSource();
-			result.add(new org.muml.pim.realtimestatechart.diagram.part.MumlLinkDescriptor(src, dst,
-					link,
-					org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes.Transition_4003,
-					org.muml.pim.realtimestatechart.diagram.edit.parts.TransitionEditPart.VISUAL_ID));
+			Vertex dst = link.getTarget();
+			Vertex src = link.getSource();
+			result.add(new MumlLinkDescriptor(src, dst, link, MumlElementTypes.Transition_4003,
+					TransitionEditPart.VISUAL_ID));
 		}
 		return result;
 	}
 
 	/**
-	 * @generated
-	 */
-	private static Collection<org.muml.pim.realtimestatechart.diagram.part.MumlLinkDescriptor> getIncomingTypeModelFacetLinks_Transition_4003(
-			org.muml.pim.realtimestatechart.Vertex target,
+	* @generated
+	*/
+	private static Collection<MumlLinkDescriptor> getIncomingTypeModelFacetLinks_Transition_4003(Vertex target,
 			Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
-		LinkedList<org.muml.pim.realtimestatechart.diagram.part.MumlLinkDescriptor> result = new LinkedList<org.muml.pim.realtimestatechart.diagram.part.MumlLinkDescriptor>();
+		LinkedList<MumlLinkDescriptor> result = new LinkedList<MumlLinkDescriptor>();
 		Collection<EStructuralFeature.Setting> settings = crossReferences.get(target);
 		for (EStructuralFeature.Setting setting : settings) {
-			if (setting
-					.getEStructuralFeature() != org.muml.pim.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-							.getTransition_Target()
-					|| false == setting
-							.getEObject() instanceof org.muml.pim.realtimestatechart.Transition) {
+			if (setting.getEStructuralFeature() != RealtimestatechartPackage.eINSTANCE.getTransition_Target()
+					|| false == setting.getEObject() instanceof Transition) {
 				continue;
 			}
-			org.muml.pim.realtimestatechart.Transition link = (org.muml.pim.realtimestatechart.Transition) setting
-					.getEObject();
-			if (org.muml.pim.realtimestatechart.diagram.edit.parts.TransitionEditPart.VISUAL_ID != org.muml.pim.realtimestatechart.diagram.part.MumlVisualIDRegistry
-					.getLinkWithClassVisualID(link)) {
+			Transition link = (Transition) setting.getEObject();
+			if (TransitionEditPart.VISUAL_ID != MumlVisualIDRegistry.getLinkWithClassVisualID(link)) {
 				continue;
 			}
-			org.muml.pim.realtimestatechart.Vertex src = link.getSource();
-			result.add(new org.muml.pim.realtimestatechart.diagram.part.MumlLinkDescriptor(src, target,
-					link,
-					org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes.Transition_4003,
-					org.muml.pim.realtimestatechart.diagram.edit.parts.TransitionEditPart.VISUAL_ID));
+			Vertex src = link.getSource();
+			result.add(new MumlLinkDescriptor(src, target, link, MumlElementTypes.Transition_4003,
+					TransitionEditPart.VISUAL_ID));
 		}
 		return result;
 	}
 
 	/**
-	 * @generated
-	 */
-	private static Collection<org.muml.pim.realtimestatechart.diagram.part.MumlLinkDescriptor> getOutgoingTypeModelFacetLinks_Transition_4003(
-			org.muml.pim.realtimestatechart.Vertex source) {
-		org.muml.pim.realtimestatechart.RealtimeStatechart container = null;
+	* @generated
+	*/
+	private static Collection<MumlLinkDescriptor> getOutgoingTypeModelFacetLinks_Transition_4003(Vertex source) {
+		RealtimeStatechart container = null;
 		// Find container element for the link.
 		// Climb up by containment hierarchy starting from the source
 		// and return the first element that is instance of the container class.
 		for (EObject element = source; element != null && container == null; element = element.eContainer()) {
-			if (element instanceof org.muml.pim.realtimestatechart.RealtimeStatechart) {
-				container = (org.muml.pim.realtimestatechart.RealtimeStatechart) element;
+			if (element instanceof RealtimeStatechart) {
+				container = (RealtimeStatechart) element;
 			}
 		}
 		if (container == null) {
 			return Collections.emptyList();
 		}
-		LinkedList<org.muml.pim.realtimestatechart.diagram.part.MumlLinkDescriptor> result = new LinkedList<org.muml.pim.realtimestatechart.diagram.part.MumlLinkDescriptor>();
+		LinkedList<MumlLinkDescriptor> result = new LinkedList<MumlLinkDescriptor>();
 		for (Iterator<?> links = container.getTransitions().iterator(); links.hasNext();) {
 			EObject linkObject = (EObject) links.next();
-			if (false == linkObject instanceof org.muml.pim.realtimestatechart.Transition) {
+			if (false == linkObject instanceof Transition) {
 				continue;
 			}
-			org.muml.pim.realtimestatechart.Transition link = (org.muml.pim.realtimestatechart.Transition) linkObject;
-			if (org.muml.pim.realtimestatechart.diagram.edit.parts.TransitionEditPart.VISUAL_ID != org.muml.pim.realtimestatechart.diagram.part.MumlVisualIDRegistry
-					.getLinkWithClassVisualID(link)) {
+			Transition link = (Transition) linkObject;
+			if (TransitionEditPart.VISUAL_ID != MumlVisualIDRegistry.getLinkWithClassVisualID(link)) {
 				continue;
 			}
-			org.muml.pim.realtimestatechart.Vertex dst = link.getTarget();
-			org.muml.pim.realtimestatechart.Vertex src = link.getSource();
+			Vertex dst = link.getTarget();
+			Vertex src = link.getSource();
 			if (src != source) {
 				continue;
 			}
-			result.add(new org.muml.pim.realtimestatechart.diagram.part.MumlLinkDescriptor(src, dst,
-					link,
-					org.muml.pim.realtimestatechart.diagram.providers.MumlElementTypes.Transition_4003,
-					org.muml.pim.realtimestatechart.diagram.edit.parts.TransitionEditPart.VISUAL_ID));
+			result.add(new MumlLinkDescriptor(src, dst, link, MumlElementTypes.Transition_4003,
+					TransitionEditPart.VISUAL_ID));
 		}
 		return result;
 	}
@@ -892,8 +816,7 @@ public class MumlDiagramUpdater {
 		*/
 		@Override
 
-		public List<org.muml.pim.realtimestatechart.diagram.part.MumlNodeDescriptor> getSemanticChildren(
-				View view) {
+		public List<MumlNodeDescriptor> getSemanticChildren(View view) {
 			return MumlDiagramUpdater.getSemanticChildren(view);
 		}
 
@@ -902,8 +825,7 @@ public class MumlDiagramUpdater {
 		*/
 		@Override
 
-		public List<org.muml.pim.realtimestatechart.diagram.part.MumlLinkDescriptor> getContainedLinks(
-				View view) {
+		public List<MumlLinkDescriptor> getContainedLinks(View view) {
 			return MumlDiagramUpdater.getContainedLinks(view);
 		}
 
@@ -912,8 +834,7 @@ public class MumlDiagramUpdater {
 		*/
 		@Override
 
-		public List<org.muml.pim.realtimestatechart.diagram.part.MumlLinkDescriptor> getIncomingLinks(
-				View view) {
+		public List<MumlLinkDescriptor> getIncomingLinks(View view) {
 			return MumlDiagramUpdater.getIncomingLinks(view);
 		}
 
@@ -922,8 +843,7 @@ public class MumlDiagramUpdater {
 		*/
 		@Override
 
-		public List<org.muml.pim.realtimestatechart.diagram.part.MumlLinkDescriptor> getOutgoingLinks(
-				View view) {
+		public List<MumlLinkDescriptor> getOutgoingLinks(View view) {
 			return MumlDiagramUpdater.getOutgoingLinks(view);
 		}
 	};
