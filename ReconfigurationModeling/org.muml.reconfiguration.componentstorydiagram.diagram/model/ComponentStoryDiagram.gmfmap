@@ -165,7 +165,7 @@
                         <diagramLabel
                             href="ComponentStoryDiagram.gmfgraph#TriggerEmbeddedComponentExpression"/>
                         <viewExpression
-                            body="--implemented by de.uni_paderborn.fujaba.muml.reconfiguration.common.edit.policies.ComponentPartVariableTriggerEmbeddedComponentExpressionLabelEditPolicy&#xD;&#xA;''"/>
+                            body="--implemented by org.muml.reconfiguration.common.edit.policies.ComponentPartVariableTriggerEmbeddedComponentExpressionLabelEditPolicy&#xD;&#xA;''"/>
                       </labelMappings>
                       <labelMappings
                           xsi:type="gmfmap:ExpressionLabelMapping"

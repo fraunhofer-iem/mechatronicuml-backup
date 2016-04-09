@@ -80,7 +80,7 @@
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
           key="org.muml.pim.common.edit.policies.EditPolicyRoles.COMPONENTSTORYPATTERNVARIABLE_VISUALIZATION_ROLE"
-          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.reconfiguration.common.edit.policies.ComponentStoryPatternVariableEditPolicy"/>
+          editPolicyQualifiedClassName="org.muml.reconfiguration.common.edit.policies.ComponentStoryPatternVariableEditPolicy"/>
       <modelFacet>
         <metaClass
             href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentVariable"/>
@@ -151,11 +151,11 @@
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
           key="org.muml.pim.common.edit.policies.EditPolicyRoles.COMPONENTSTORYPATTERNVARIABLE_VISUALIZATION_ROLE"
-          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.reconfiguration.common.edit.policies.ComponentStoryPatternVariableEditPolicy"/>
+          editPolicyQualifiedClassName="org.muml.reconfiguration.common.edit.policies.ComponentStoryPatternVariableEditPolicy"/>
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
-          key="de.uni_paderborn.fujaba.muml.reconfiguration.common.edit.policies.EditPolicyRoles.TRIGGER_EMBEDDED_COMPONENT_EXPRESSION_LABEL_ROLE"
-          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.reconfiguration.common.edit.policies.ComponentPartVariableTriggerEmbeddedComponentExpressionLabelEditPolicy"/>
+          key="org.muml.reconfiguration.common.edit.policies.EditPolicyRoles.TRIGGER_EMBEDDED_COMPONENT_EXPRESSION_LABEL_ROLE"
+          editPolicyQualifiedClassName="org.muml.reconfiguration.common.edit.policies.ComponentPartVariableTriggerEmbeddedComponentExpressionLabelEditPolicy"/>
       <modelFacet>
         <metaClass
             href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentPartVariable"/>
@@ -344,15 +344,15 @@
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
           key="org.muml.pim.common.edit.policies.EditPolicyRoles.PORT_VISUALIZATION_ROLE"
-          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.reconfiguration.common.edit.policies.PortVariableEditPolicy"/>
+          editPolicyQualifiedClassName="org.muml.reconfiguration.common.edit.policies.PortVariableEditPolicy"/>
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
           key="org.muml.pim.common.edit.policies.EditPolicyRoles.COMPONENTSTORYPATTERNVARIABLE_VISUALIZATION_ROLE"
-          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.reconfiguration.common.edit.policies.ComponentStoryPatternVariableEditPolicy"/>
+          editPolicyQualifiedClassName="org.muml.reconfiguration.common.edit.policies.ComponentStoryPatternVariableEditPolicy"/>
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
-          key="de.uni_paderborn.fujaba.muml.reconfiguration.common.edit.policies.EditPolicyRoles.EMBEDDED_SINGLE_PORT_VARIABLES_LABEL_ROLE"
-          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.reconfiguration.common.edit.policies.EmbeddedSinglePortVariableExternalLabelsEditPolicy"/>
+          key="org.muml.reconfiguration.common.edit.policies.EditPolicyRoles.EMBEDDED_SINGLE_PORT_VARIABLES_LABEL_ROLE"
+          editPolicyQualifiedClassName="org.muml.reconfiguration.common.edit.policies.EmbeddedSinglePortVariableExternalLabelsEditPolicy"/>
       <modelFacet>
         <metaClass
             href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/SinglePortVariable"/>
@@ -388,11 +388,11 @@
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
           key="org.muml.pim.common.edit.policies.EditPolicyRoles.PORT_VISUALIZATION_ROLE"
-          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.reconfiguration.common.edit.policies.PortVariableEditPolicy"/>
+          editPolicyQualifiedClassName="org.muml.reconfiguration.common.edit.policies.PortVariableEditPolicy"/>
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
           key="org.muml.pim.common.edit.policies.EditPolicyRoles.COMPONENTSTORYPATTERNVARIABLE_VISUALIZATION_ROLE"
-          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.reconfiguration.common.edit.policies.ComponentStoryPatternVariableEditPolicy"/>
+          editPolicyQualifiedClassName="org.muml.reconfiguration.common.edit.policies.ComponentStoryPatternVariableEditPolicy"/>
       <modelFacet
           modelElementSelector="//@expressionProviders/@providers.0/@expressions.7">
         <metaClass
@@ -590,11 +590,11 @@
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
           key="org.muml.pim.common.edit.policies.EditPolicyRoles.PORT_VISUALIZATION_ROLE"
-          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.reconfiguration.common.edit.policies.PortVariableEditPolicy"/>
+          editPolicyQualifiedClassName="org.muml.reconfiguration.common.edit.policies.PortVariableEditPolicy"/>
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
           key="org.muml.pim.common.edit.policies.EditPolicyRoles.COMPONENTSTORYPATTERNVARIABLE_VISUALIZATION_ROLE"
-          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.reconfiguration.common.edit.policies.ComponentStoryPatternVariableEditPolicy"/>
+          editPolicyQualifiedClassName="org.muml.reconfiguration.common.edit.policies.ComponentStoryPatternVariableEditPolicy"/>
       <modelFacet
           modelElementSelector="//@expressionProviders/@providers.0/@expressions.7">
         <metaClass
@@ -688,7 +688,7 @@
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
           key="org.muml.pim.common.edit.policies.EditPolicyRoles.COMPONENTSTORYPATTERNVARIABLE_VISUALIZATION_ROLE"
-          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.reconfiguration.common.edit.policies.ComponentStoryPatternVariableEditPolicy"/>
+          editPolicyQualifiedClassName="org.muml.reconfiguration.common.edit.policies.ComponentStoryPatternVariableEditPolicy"/>
       <modelFacet>
         <metaClass
             href="../../org.muml.reconfiguration.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/FadingComponentPartVariable"/>
@@ -1948,7 +1948,7 @@
       <expressions
           body="if&#xD;&#xA;&#x9;self.bindingState = storydiagram::patterns::BindingState::BOUND&#xD;&#xA;then&#xD;&#xA;&#x9;''&#xD;&#xA;else&#xD;&#xA;&#x9;':'+self.dataType.name&#xD;&#xA;endif"/>
       <expressions
-          body="--implemented by de.uni_paderborn.fujaba.muml.reconfiguration.common.edit.policies.ComponentPartVariableTriggerEmbeddedComponentExpressionLabelEditPolicy&#xD;&#xA;''"/>
+          body="--implemented by org.muml.reconfiguration.common.edit.policies.ComponentPartVariableTriggerEmbeddedComponentExpressionLabelEditPolicy&#xD;&#xA;''"/>
       <expressions
           body="let compName : String = if self.componentPartType.componentType.name.oclIsUndefined() then 'null' else&#x9; self.componentPartType.componentType.name endif in&#xD;&#xA;let partName : String = if self.componentPartType.name.oclIsUndefined() then ' ' else&#x9;' / '.concat(self.componentPartType.name) endif in&#xD;&#xA;let selfName : String = if self.name.oclIsUndefined() then 'null' else self.name endif in&#xD;&#xA;if bindingState = storydiagram::patterns::BindingState::BOUND then&#xD;&#xA;selfName&#xD;&#xA;else&#xD;&#xA;selfName.concat(partName.concat(' : '.concat(compName)))&#xD;&#xA;endif"/>
       <expressions

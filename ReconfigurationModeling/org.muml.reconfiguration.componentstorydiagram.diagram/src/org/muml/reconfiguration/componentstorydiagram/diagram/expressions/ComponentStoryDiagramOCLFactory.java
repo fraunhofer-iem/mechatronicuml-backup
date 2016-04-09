@@ -47,7 +47,7 @@ public class ComponentStoryDiagramOCLFactory {
 				"if\r\n\tself.bindingState = storydiagrams::patterns::BindingState::BOUND\r\nthen\r\n\t\'\'\r\nelse\r\n\t\':\'+self.dataType.name\r\nendif", //$NON-NLS-1$
 				"self.multiPortVariable.oclIsUndefined()", //$NON-NLS-1$
 				"if\r\n\tself.bindingState = storydiagrams::patterns::BindingState::BOUND\r\nthen\r\n\t\'\'\r\nelse\r\n\t\':\'+self.dataType.name\r\nendif", //$NON-NLS-1$
-				"--implemented by de.uni_paderborn.fujaba.muml.reconfiguration.common.edit.policies.ComponentPartVariableTriggerEmbeddedComponentExpressionLabelEditPolicy\r\n\'\'", //$NON-NLS-1$
+				"--implemented by org.muml.reconfiguration.common.edit.policies.ComponentPartVariableTriggerEmbeddedComponentExpressionLabelEditPolicy\r\n\'\'", //$NON-NLS-1$
 				"let compName : String = if self.componentPartType.componentType.name.oclIsUndefined() then \'null\' else\t self.componentPartType.componentType.name endif in\r\nlet partName : String = if self.componentPartType.name.oclIsUndefined() then \' \' else\t\' / \'.concat(self.componentPartType.name) endif in\r\nlet selfName : String = if self.name.oclIsUndefined() then \'null\' else self.name endif in\r\nif bindingState = storydiagrams::patterns::BindingState::BOUND then\r\nselfName\r\nelse\r\nselfName.concat(partName.concat(\' : \'.concat(compName)))\r\nendif", //$NON-NLS-1$
 				"\'init\'", //$NON-NLS-1$
 				"\'junction\'", //$NON-NLS-1$

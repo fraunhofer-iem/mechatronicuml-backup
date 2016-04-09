@@ -4,7 +4,7 @@
    <extension
          point="org.muml.pim.actionlanguage.xtext.ScopeProvider">
       <provider
-            class="de.uni_paderborn.fujaba.muml.reconfiguration.common.xtext.CSDExecutableExtensionFactory:de.uni_paderborn.fujaba.muml.reconfiguration.common.xtext.CSDLanguageScopeProvider">
+            class="org.muml.reconfiguration.common.xtext.CSDExecutableExtensionFactory:org.muml.reconfiguration.common.xtext.CSDLanguageScopeProvider">
       </provider>
    </extension>
 
