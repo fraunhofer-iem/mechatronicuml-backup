@@ -716,7 +716,7 @@ Contributors:
       </parser>
    </extension>
 <extension
-         point="de.uni_paderborn.fujaba.modelinstance.modelelementcategory">
+         point="org.muml.core.modelinstance.modelelementcategory">
       <?gmfgen generated="true"?>  
       <category
             key="org.muml.pim.components.category"
