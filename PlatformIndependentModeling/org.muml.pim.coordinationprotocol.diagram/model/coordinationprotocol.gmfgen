@@ -68,8 +68,8 @@
           editPolicyQualifiedClassName="org.muml.core.common.edit.policies.CanonicalRefreshEditPolicy"/>
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
-          key="de.uni_paderborn.fujaba.muml.coordinationspecification.common.edit.policies.EditPolicyRoles.ABSTRACT_COORDINATION_SPECIFICATION_EDITPOLICY"
-          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.coordinationspecification.common.edit.policies.CustomAbstractCoordinationSpecificationUpdateEditPolicy"/>
+          key="org.muml.pim.coordinationspecification.common.edit.policies.EditPolicyRoles.ABSTRACT_COORDINATION_SPECIFICATION_EDITPOLICY"
+          editPolicyQualifiedClassName="org.muml.pim.coordinationspecification.common.edit.policies.CustomAbstractCoordinationSpecificationUpdateEditPolicy"/>
       <modelFacet>
         <metaClass
             href="../../org.muml.pim/model/pim.genmodel#//pim/protocol/CoordinationProtocol"/>
@@ -509,8 +509,8 @@
             figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="de.uni_paderborn.fujaba.muml.coordinationspecification.common.edit.policies.EditPolicyRoles.QoSA_LABEL_UpdateEditPolicy"
-            editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.coordinationspecification.common.edit.policies.CustomConnectorOfServiceAssumptionsWrappedLabelUpdateEditPolicy"/>
+            key="org.muml.pim.coordinationspecification.common.edit.policies.EditPolicyRoles.QoSA_LABEL_UpdateEditPolicy"
+            editPolicyQualifiedClassName="org.muml.pim.coordinationspecification.common.edit.policies.CustomConnectorOfServiceAssumptionsWrappedLabelUpdateEditPolicy"/>
         <modelFacet
             xsi:type="gmfgen:ExpressionLabelModelFacet"
             parser="//@labelParsers/@implementations.6"/>

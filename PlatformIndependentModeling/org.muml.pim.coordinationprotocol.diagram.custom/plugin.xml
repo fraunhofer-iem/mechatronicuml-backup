@@ -52,7 +52,7 @@
       <metamodel nsURI="http://www.muml.org/pim/protocol/1.0.0">
         <adviceBinding  id="org.muml.pim.coordinationprotocol.diagram.CoordinationProtocol2Advice"
 		  typeId="org.muml.pim.coordinationprotocol.diagram.CoordinationProtocol_3015"
-		  class="de.uni_paderborn.fujaba.muml.coordinationspecification.common.edit.helpers.PreventDeleteEditHelperAdvice"
+		  class="org.muml.pim.coordinationspecification.common.edit.helpers.PreventDeleteEditHelperAdvice"
 		  inheritance="all">
         </adviceBinding>
       </metamodel>
@@ -69,7 +69,7 @@
       <metamodel nsURI="http://www.muml.org/pim/protocol/1.0.0">
         <adviceBinding  id="org.muml.pim.coordinationprotocol.diagram.CoordinationProtocolAdvice"
 		  typeId="org.muml.pim.coordinationprotocol.diagram.CoordinationProtocol_2005"
-		  class="de.uni_paderborn.fujaba.muml.coordinationspecification.common.edit.helpers.DeleteWithChildrenEditHelperAdvice"
+		  class="org.muml.pim.coordinationspecification.common.edit.helpers.DeleteWithChildrenEditHelperAdvice"
 		  inheritance="all">
         </adviceBinding>
       </metamodel>
