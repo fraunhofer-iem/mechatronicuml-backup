@@ -14,6 +14,9 @@ package org.muml.pim.componentinstanceconfiguration.diagram.providers;
 
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.ComponentInstanceConfigurationDiagramEditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin;
+import org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry;
 
 /**
  * @generated
@@ -51,8 +54,7 @@ public class ComponentinstanceconfigurationValidationProvider {
 			try {
 				editingDomain.runExclusive(task);
 			} catch (Exception e) {
-				org.muml.pim.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin
-						.getInstance().logError("Validation failed", e); //$NON-NLS-1$
+				ComponentinstanceconfigurationDiagramEditorPlugin.getInstance().logError("Validation failed", e); //$NON-NLS-1$
 			}
 		} else {
 			task.run();
@@ -67,10 +69,8 @@ public class ComponentinstanceconfigurationValidationProvider {
 			return false;
 		}
 		if (object instanceof View) {
-			return constraintsActive
-					&& org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.ComponentInstanceConfigurationDiagramEditPart.MODEL_ID
-							.equals(org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-									.getModelID((View) object));
+			return constraintsActive && ComponentInstanceConfigurationDiagramEditPart.MODEL_ID
+					.equals(MumlVisualIDRegistry.getModelID((View) object));
 		}
 		return true;
 	}

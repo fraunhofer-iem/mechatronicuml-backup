@@ -21,6 +21,11 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelationshipRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy;
+import org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.policies.MumlBaseItemSemanticEditPolicy;
+import org.muml.pim.instance.CoordinationProtocolInstance;
+import org.muml.pim.instance.PortInstance;
 
 /**
  * @generated
@@ -62,7 +67,7 @@ public class CoordinationProtocolInstancePortInstancesReorientCommand extends Ed
 	 * @generated
 	 */
 	public boolean canExecute() {
-		if (false == referenceOwner instanceof org.muml.pim.instance.CoordinationProtocolInstance) {
+		if (false == referenceOwner instanceof CoordinationProtocolInstance) {
 			return false;
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
@@ -78,21 +83,17 @@ public class CoordinationProtocolInstancePortInstancesReorientCommand extends Ed
 	 * @generated
 	 */
 	protected boolean canReorientSource() {
-		if (!(oldEnd instanceof org.muml.pim.instance.PortInstance
-				&& newEnd instanceof org.muml.pim.instance.CoordinationProtocolInstance)) {
+		if (!(oldEnd instanceof PortInstance && newEnd instanceof CoordinationProtocolInstance)) {
 			return false;
 		}
-		View sourceView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-				.getSourceView(getRequest());
-		View targetView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-				.getTargetView(getRequest());
-		if (!org.muml.pim.componentinstanceconfiguration.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-				.getLinkConstraints().canExistCoordinationProtocolInstancePortInstances_4003(getNewSource(),
-						getOldTarget(), sourceView, targetView)) {
-			String errorMessage = org.muml.pim.componentinstanceconfiguration.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-					.getLinkConstraints().getErrorCoordinationProtocolInstancePortInstances_4003(getNewSource(),
-							getOldTarget(), sourceView, targetView);
-			org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy.showMessage(sourceView, errorMessage);
+		View sourceView = ConnectionConfigureHelperGraphicalNodeEditPolicy.getSourceView(getRequest());
+		View targetView = ConnectionConfigureHelperGraphicalNodeEditPolicy.getTargetView(getRequest());
+		if (!MumlBaseItemSemanticEditPolicy.getLinkConstraints().canExistCoordinationProtocolInstancePortInstances_4003(
+				getNewSource(), getOldTarget(), sourceView, targetView)) {
+			String errorMessage = MumlBaseItemSemanticEditPolicy.getLinkConstraints()
+					.getErrorCoordinationProtocolInstancePortInstances_4003(getNewSource(), getOldTarget(), sourceView,
+							targetView);
+			ErrorFeedbackEditPolicy.showMessage(sourceView, errorMessage);
 			return false;
 		}
 		return true;
@@ -102,21 +103,17 @@ public class CoordinationProtocolInstancePortInstancesReorientCommand extends Ed
 	 * @generated
 	 */
 	protected boolean canReorientTarget() {
-		if (!(oldEnd instanceof org.muml.pim.instance.PortInstance
-				&& newEnd instanceof org.muml.pim.instance.PortInstance)) {
+		if (!(oldEnd instanceof PortInstance && newEnd instanceof PortInstance)) {
 			return false;
 		}
-		View sourceView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-				.getSourceView(getRequest());
-		View targetView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-				.getTargetView(getRequest());
-		if (!org.muml.pim.componentinstanceconfiguration.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-				.getLinkConstraints().canExistCoordinationProtocolInstancePortInstances_4003(getOldSource(),
-						getNewTarget(), sourceView, targetView)) {
-			String errorMessage = org.muml.pim.componentinstanceconfiguration.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-					.getLinkConstraints().getErrorCoordinationProtocolInstancePortInstances_4003(getOldSource(),
-							getNewTarget(), sourceView, targetView);
-			org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy.showMessage(targetView, errorMessage);
+		View sourceView = ConnectionConfigureHelperGraphicalNodeEditPolicy.getSourceView(getRequest());
+		View targetView = ConnectionConfigureHelperGraphicalNodeEditPolicy.getTargetView(getRequest());
+		if (!MumlBaseItemSemanticEditPolicy.getLinkConstraints().canExistCoordinationProtocolInstancePortInstances_4003(
+				getOldSource(), getNewTarget(), sourceView, targetView)) {
+			String errorMessage = MumlBaseItemSemanticEditPolicy.getLinkConstraints()
+					.getErrorCoordinationProtocolInstancePortInstances_4003(getOldSource(), getNewTarget(), sourceView,
+							targetView);
+			ErrorFeedbackEditPolicy.showMessage(targetView, errorMessage);
 			return false;
 		}
 		return true;
@@ -169,29 +166,29 @@ public class CoordinationProtocolInstancePortInstancesReorientCommand extends Ed
 	/**
 	 * @generated
 	 */
-	protected org.muml.pim.instance.CoordinationProtocolInstance getOldSource() {
-		return (org.muml.pim.instance.CoordinationProtocolInstance) referenceOwner;
+	protected CoordinationProtocolInstance getOldSource() {
+		return (CoordinationProtocolInstance) referenceOwner;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected org.muml.pim.instance.CoordinationProtocolInstance getNewSource() {
-		return (org.muml.pim.instance.CoordinationProtocolInstance) newEnd;
+	protected CoordinationProtocolInstance getNewSource() {
+		return (CoordinationProtocolInstance) newEnd;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected org.muml.pim.instance.PortInstance getOldTarget() {
-		return (org.muml.pim.instance.PortInstance) oldEnd;
+	protected PortInstance getOldTarget() {
+		return (PortInstance) oldEnd;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected org.muml.pim.instance.PortInstance getNewTarget() {
-		return (org.muml.pim.instance.PortInstance) newEnd;
+	protected PortInstance getNewTarget() {
+		return (PortInstance) newEnd;
 	}
 
 	/**

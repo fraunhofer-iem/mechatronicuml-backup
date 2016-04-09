@@ -17,12 +17,14 @@ import java.util.List;
 
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
+import org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes;
+import org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlModelingAssistantProvider;
 
 /**
  * @generated
  */
-public class MumlModelingAssistantProviderOfComponentInstanceConfigurationDiagramEditPart extends
-		org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlModelingAssistantProvider {
+public class MumlModelingAssistantProviderOfComponentInstanceConfigurationDiagramEditPart
+		extends MumlModelingAssistantProvider {
 
 	/**
 	 * @generated
@@ -30,20 +32,13 @@ public class MumlModelingAssistantProviderOfComponentInstanceConfigurationDiagra
 	@Override
 	public List<IElementType> getTypesForPopupBar(IAdaptable host) {
 		List<IElementType> types = new ArrayList<IElementType>(7);
-		types.add(
-				org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes.HybridPortInstance_2021);
-		types.add(
-				org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes.DiscreteSinglePortInstance_2022);
-		types.add(
-				org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes.DiscreteMultiPortInstance_2023);
-		types.add(
-				org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes.ContinuousPortInstance_2024);
-		types.add(
-				org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes.AtomicComponentInstance_2016);
-		types.add(
-				org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes.StructuredComponentInstance_2015);
-		types.add(
-				org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes.CoordinationProtocolInstance_2025);
+		types.add(MumlElementTypes.HybridPortInstance_2021);
+		types.add(MumlElementTypes.DiscreteSinglePortInstance_2022);
+		types.add(MumlElementTypes.DiscreteMultiPortInstance_2023);
+		types.add(MumlElementTypes.ContinuousPortInstance_2024);
+		types.add(MumlElementTypes.AtomicComponentInstance_2016);
+		types.add(MumlElementTypes.StructuredComponentInstance_2015);
+		types.add(MumlElementTypes.CoordinationProtocolInstance_2025);
 		return types;
 	}
 

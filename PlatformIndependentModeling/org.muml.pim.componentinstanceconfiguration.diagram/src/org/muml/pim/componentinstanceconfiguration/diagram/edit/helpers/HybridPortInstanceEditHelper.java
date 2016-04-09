@@ -15,6 +15,5 @@ package org.muml.pim.componentinstanceconfiguration.diagram.edit.helpers;
 /**
  * @generated
  */
-public class HybridPortInstanceEditHelper
-		extends org.muml.pim.componentinstanceconfiguration.diagram.edit.helpers.MumlBaseEditHelper {
+public class HybridPortInstanceEditHelper extends MumlBaseEditHelper {
 }

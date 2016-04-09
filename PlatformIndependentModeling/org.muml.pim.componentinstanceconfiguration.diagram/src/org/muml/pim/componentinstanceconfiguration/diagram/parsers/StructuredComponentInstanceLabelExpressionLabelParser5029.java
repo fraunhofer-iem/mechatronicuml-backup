@@ -31,6 +31,8 @@ import org.eclipse.gmf.runtime.common.ui.services.parser.ParserEditStatus;
 import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand;
 import org.eclipse.gmf.tooling.runtime.parsers.ExpressionLabelParserBase;
 import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
+import org.muml.pim.componentinstanceconfiguration.diagram.expressions.MumlOCLFactory;
+import org.muml.pim.instance.InstancePackage;
 
 /**
  * @generated
@@ -47,9 +49,7 @@ public class StructuredComponentInstanceLabelExpressionLabelParser5029 extends E
 	 */
 	@Override
 	protected String getExpressionBody() {
-		return org.muml.pim.componentinstanceconfiguration.diagram.expressions.MumlOCLFactory
-				.getExpression(10, org.muml.pim.instance.InstancePackage.eINSTANCE
-						.getStructuredComponentInstance(), null)
+		return MumlOCLFactory.getExpression(10, InstancePackage.eINSTANCE.getStructuredComponentInstance(), null)
 				.body();
 	}
 

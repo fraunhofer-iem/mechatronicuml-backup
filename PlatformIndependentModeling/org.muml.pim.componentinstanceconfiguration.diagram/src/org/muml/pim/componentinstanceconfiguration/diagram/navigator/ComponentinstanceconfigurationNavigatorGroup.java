@@ -18,8 +18,7 @@ import java.util.LinkedList;
 /**
  * @generated
  */
-public class ComponentinstanceconfigurationNavigatorGroup extends
-		org.muml.pim.componentinstanceconfiguration.diagram.navigator.MumlAbstractNavigatorItem {
+public class ComponentinstanceconfigurationNavigatorGroup extends MumlAbstractNavigatorItem {
 
 	/**
 	 * @generated

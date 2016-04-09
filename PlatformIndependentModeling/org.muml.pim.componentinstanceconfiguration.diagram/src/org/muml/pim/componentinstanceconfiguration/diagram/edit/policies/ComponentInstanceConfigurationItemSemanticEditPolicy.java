@@ -26,18 +26,24 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyReferenceRequest;
 import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.AtomicComponentInstance2EditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.ComponentInstanceConfigurationComponentInstanceConfigurationContentsCompartmentEditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.CoordinationProtocolInstance2EditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.CoordinationProtocolInstancePortInstancesEditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.StructuredComponentInstance2EditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry;
+import org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes;
 
 /**
  * @generated
  */
-public class ComponentInstanceConfigurationItemSemanticEditPolicy extends
-		org.muml.pim.componentinstanceconfiguration.diagram.edit.policies.MumlBaseItemSemanticEditPolicy {
+public class ComponentInstanceConfigurationItemSemanticEditPolicy extends MumlBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public ComponentInstanceConfigurationItemSemanticEditPolicy() {
-		super(org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes.ComponentInstanceConfiguration_3023);
+		super(MumlElementTypes.ComponentInstanceConfiguration_3023);
 	}
 
 	/**
@@ -67,14 +73,12 @@ public class ComponentInstanceConfigurationItemSemanticEditPolicy extends
 		View view = (View) getHost().getModel();
 		for (Iterator<?> nit = view.getChildren().iterator(); nit.hasNext();) {
 			Node node = (Node) nit.next();
-			switch (org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-					.getVisualID(node)) {
-			case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.ComponentInstanceConfigurationComponentInstanceConfigurationContentsCompartmentEditPart.VISUAL_ID:
+			switch (MumlVisualIDRegistry.getVisualID(node)) {
+			case ComponentInstanceConfigurationComponentInstanceConfigurationContentsCompartmentEditPart.VISUAL_ID:
 				for (Iterator<?> cit = node.getChildren().iterator(); cit.hasNext();) {
 					Node cnode = (Node) cit.next();
-					switch (org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getVisualID(cnode)) {
-					case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.AtomicComponentInstance2EditPart.VISUAL_ID:
+					switch (MumlVisualIDRegistry.getVisualID(cnode)) {
+					case AtomicComponentInstance2EditPart.VISUAL_ID:
 
 						cmd.add(new DestroyElementCommand(
 								new DestroyElementRequest(getEditingDomain(), cnode.getElement(), false)));
@@ -82,7 +86,7 @@ public class ComponentInstanceConfigurationItemSemanticEditPolicy extends
 						// cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), cnode));
 
 						break;
-					case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.StructuredComponentInstance2EditPart.VISUAL_ID:
+					case StructuredComponentInstance2EditPart.VISUAL_ID:
 
 						cmd.add(new DestroyElementCommand(
 								new DestroyElementRequest(getEditingDomain(), cnode.getElement(), false)));
@@ -90,12 +94,11 @@ public class ComponentInstanceConfigurationItemSemanticEditPolicy extends
 						// cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), cnode));
 
 						break;
-					case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.CoordinationProtocolInstance2EditPart.VISUAL_ID:
+					case CoordinationProtocolInstance2EditPart.VISUAL_ID:
 						for (Iterator<?> it = cnode.getSourceEdges().iterator(); it.hasNext();) {
 							Edge outgoingLink = (Edge) it.next();
-							if (org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-									.getVisualID(
-											outgoingLink) == org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.CoordinationProtocolInstancePortInstancesEditPart.VISUAL_ID) {
+							if (MumlVisualIDRegistry.getVisualID(
+									outgoingLink) == CoordinationProtocolInstancePortInstancesEditPart.VISUAL_ID) {
 								DestroyReferenceRequest r = new DestroyReferenceRequest(
 										outgoingLink.getSource().getElement(), null,
 										outgoingLink.getTarget().getElement(), false);

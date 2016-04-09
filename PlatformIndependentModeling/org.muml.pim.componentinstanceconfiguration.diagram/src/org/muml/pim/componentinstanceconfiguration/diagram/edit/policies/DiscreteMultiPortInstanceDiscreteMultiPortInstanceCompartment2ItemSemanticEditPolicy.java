@@ -14,29 +14,28 @@ package org.muml.pim.componentinstanceconfiguration.diagram.edit.policies;
 
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.commands.DiscreteSinglePortInstance2CreateCommand;
+import org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes;
 
 /**
  * @generated
  */
-public class DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartment2ItemSemanticEditPolicy extends
-		org.muml.pim.componentinstanceconfiguration.diagram.edit.policies.MumlBaseItemSemanticEditPolicy {
+public class DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartment2ItemSemanticEditPolicy
+		extends MumlBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartment2ItemSemanticEditPolicy() {
-		super(org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes.DiscreteMultiPortInstance_3033);
+		super(MumlElementTypes.DiscreteMultiPortInstance_3033);
 	}
 
 	/**
 	 * @generated
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
-		if (org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes.DiscreteSinglePortInstance_3026 == req
-				.getElementType()) {
-			return getGEFWrapper(
-					new org.muml.pim.componentinstanceconfiguration.diagram.edit.commands.DiscreteSinglePortInstance2CreateCommand(
-							req));
+		if (MumlElementTypes.DiscreteSinglePortInstance_3026 == req.getElementType()) {
+			return getGEFWrapper(new DiscreteSinglePortInstance2CreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}

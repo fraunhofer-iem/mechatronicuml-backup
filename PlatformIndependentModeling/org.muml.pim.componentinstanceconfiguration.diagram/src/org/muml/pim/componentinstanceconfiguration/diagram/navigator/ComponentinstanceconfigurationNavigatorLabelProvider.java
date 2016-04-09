@@ -27,6 +27,48 @@ import org.eclipse.swt.graphics.Image;
 import org.eclipse.ui.IMemento;
 import org.eclipse.ui.navigator.ICommonContentExtensionSite;
 import org.eclipse.ui.navigator.ICommonLabelProvider;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.AssemblyConnectorInstanceEditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.AtomicComponentInstance2EditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.AtomicComponentInstanceEditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.ComponentInstanceConfigurationDiagramEditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.ComponentInstanceConfigurationEditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.ContinuousPortInstance2EditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.ContinuousPortInstanceEditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.ContinuousPortInstanceName2EditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.ContinuousPortInstanceNameEditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.CoordinationProtocolInstance2EditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.CoordinationProtocolInstanceEditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.CoordinationProtocolInstancePortInstancesEditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DelegationConnectorInstanceEditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteMultiPortInstance2EditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteMultiPortInstanceEditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteMultiPortInstanceName2EditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteMultiPortInstanceNameEditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteSinglePortInstance2EditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteSinglePortInstance3EditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteSinglePortInstanceEditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteSinglePortInstanceName3EditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteSinglePortInstanceNameEditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.HybridPortInstance2EditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.HybridPortInstanceEditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.HybridPortInstanceName2EditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.HybridPortInstanceNameEditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.StructuredComponentInstance2EditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.StructuredComponentInstanceEditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.WrappingLabel2EditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.WrappingLabel3EditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.WrappingLabel4EditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.WrappingLabel5EditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.WrappingLabel6EditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.WrappingLabelEditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin;
+import org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry;
+import org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes;
+import org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlParserProvider;
+import org.muml.pim.instance.AssemblyConnectorInstance;
+import org.muml.pim.instance.ComponentInstanceConfiguration;
+import org.muml.pim.instance.DelegationConnectorInstance;
+import org.muml.pim.instance.DiscreteSinglePortInstance;
 
 /**
  * @generated
@@ -38,11 +80,9 @@ public class ComponentinstanceconfigurationNavigatorLabelProvider extends LabelP
 	 * @generated
 	 */
 	static {
-		org.muml.pim.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin
-				.getInstance().getImageRegistry()
+		ComponentinstanceconfigurationDiagramEditorPlugin.getInstance().getImageRegistry()
 				.put("Navigator?UnknownElement", ImageDescriptor.getMissingImageDescriptor()); //$NON-NLS-1$
-		org.muml.pim.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin
-				.getInstance().getImageRegistry()
+		ComponentinstanceconfigurationDiagramEditorPlugin.getInstance().getImageRegistry()
 				.put("Navigator?ImageNotFound", ImageDescriptor.getMissingImageDescriptor()); //$NON-NLS-1$
 	}
 
@@ -51,10 +91,8 @@ public class ComponentinstanceconfigurationNavigatorLabelProvider extends LabelP
 	 */
 	public void updateLabel(ViewerLabel label, TreePath elementPath) {
 		Object element = elementPath.getLastSegment();
-		if (element instanceof org.muml.pim.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorItem
-				&& !isOwnView(
-						((org.muml.pim.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorItem) element)
-								.getView())) {
+		if (element instanceof ComponentinstanceconfigurationNavigatorItem
+				&& !isOwnView(((ComponentinstanceconfigurationNavigatorItem) element).getView())) {
 			return;
 		}
 		label.setText(getText(element));
@@ -65,14 +103,13 @@ public class ComponentinstanceconfigurationNavigatorLabelProvider extends LabelP
 	 * @generated
 	 */
 	public Image getImage(Object element) {
-		if (element instanceof org.muml.pim.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorGroup) {
-			org.muml.pim.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorGroup group = (org.muml.pim.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorGroup) element;
-			return org.muml.pim.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin
-					.getInstance().getBundledImage(group.getIcon());
+		if (element instanceof ComponentinstanceconfigurationNavigatorGroup) {
+			ComponentinstanceconfigurationNavigatorGroup group = (ComponentinstanceconfigurationNavigatorGroup) element;
+			return ComponentinstanceconfigurationDiagramEditorPlugin.getInstance().getBundledImage(group.getIcon());
 		}
 
-		if (element instanceof org.muml.pim.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorItem) {
-			org.muml.pim.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorItem navigatorItem = (org.muml.pim.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorItem) element;
+		if (element instanceof ComponentinstanceconfigurationNavigatorItem) {
+			ComponentinstanceconfigurationNavigatorItem navigatorItem = (ComponentinstanceconfigurationNavigatorItem) element;
 			if (!isOwnView(navigatorItem.getView())) {
 				return super.getImage(element);
 			}
@@ -86,72 +123,69 @@ public class ComponentinstanceconfigurationNavigatorLabelProvider extends LabelP
 	 * @generated
 	 */
 	public Image getImage(View view) {
-		switch (org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-				.getVisualID(view)) {
-		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.ComponentInstanceConfigurationDiagramEditPart.VISUAL_ID:
+		switch (MumlVisualIDRegistry.getVisualID(view)) {
+		case ComponentInstanceConfigurationDiagramEditPart.VISUAL_ID:
 			return getImage("Navigator?Diagram?http://www.muml.org/pim/instance/1.0.0?ComponentInstanceConfiguration", //$NON-NLS-1$
-					org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes.ComponentInstanceConfiguration_1000);
-		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.StructuredComponentInstanceEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?TopLevelNode?http://www.muml.org/pim/instance/1.0.0?StructuredComponentInstance", //$NON-NLS-1$
-					org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes.StructuredComponentInstance_2015);
-		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.AtomicComponentInstanceEditPart.VISUAL_ID:
+					MumlElementTypes.ComponentInstanceConfiguration_1000);
+		case StructuredComponentInstanceEditPart.VISUAL_ID:
+			return getImage("Navigator?TopLevelNode?http://www.muml.org/pim/instance/1.0.0?StructuredComponentInstance", //$NON-NLS-1$
+					MumlElementTypes.StructuredComponentInstance_2015);
+		case AtomicComponentInstanceEditPart.VISUAL_ID:
 			return getImage("Navigator?TopLevelNode?http://www.muml.org/pim/instance/1.0.0?AtomicComponentInstance", //$NON-NLS-1$
-					org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes.AtomicComponentInstance_2016);
-		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.HybridPortInstanceEditPart.VISUAL_ID:
+					MumlElementTypes.AtomicComponentInstance_2016);
+		case HybridPortInstanceEditPart.VISUAL_ID:
 			return getImage("Navigator?TopLevelNode?http://www.muml.org/pim/instance/1.0.0?HybridPortInstance", //$NON-NLS-1$
-					org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes.HybridPortInstance_2021);
-		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteSinglePortInstanceEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?TopLevelNode?http://www.muml.org/pim/instance/1.0.0?DiscreteSinglePortInstance", //$NON-NLS-1$
-					org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes.DiscreteSinglePortInstance_2022);
-		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteMultiPortInstanceEditPart.VISUAL_ID:
+					MumlElementTypes.HybridPortInstance_2021);
+		case DiscreteSinglePortInstanceEditPart.VISUAL_ID:
+			return getImage("Navigator?TopLevelNode?http://www.muml.org/pim/instance/1.0.0?DiscreteSinglePortInstance", //$NON-NLS-1$
+					MumlElementTypes.DiscreteSinglePortInstance_2022);
+		case DiscreteMultiPortInstanceEditPart.VISUAL_ID:
 			return getImage("Navigator?TopLevelNode?http://www.muml.org/pim/instance/1.0.0?DiscreteMultiPortInstance", //$NON-NLS-1$
-					org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes.DiscreteMultiPortInstance_2023);
-		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.ContinuousPortInstanceEditPart.VISUAL_ID:
+					MumlElementTypes.DiscreteMultiPortInstance_2023);
+		case ContinuousPortInstanceEditPart.VISUAL_ID:
 			return getImage("Navigator?TopLevelNode?http://www.muml.org/pim/instance/1.0.0?ContinuousPortInstance", //$NON-NLS-1$
-					org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes.ContinuousPortInstance_2024);
-		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.CoordinationProtocolInstanceEditPart.VISUAL_ID:
+					MumlElementTypes.ContinuousPortInstance_2024);
+		case CoordinationProtocolInstanceEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?TopLevelNode?http://www.muml.org/pim/instance/1.0.0?CoordinationProtocolInstance", //$NON-NLS-1$
-					org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes.CoordinationProtocolInstance_2025);
-		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.ComponentInstanceConfigurationEditPart.VISUAL_ID:
+					MumlElementTypes.CoordinationProtocolInstance_2025);
+		case ComponentInstanceConfigurationEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.muml.org/pim/instance/1.0.0?ComponentInstanceConfiguration", //$NON-NLS-1$
-					org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes.ComponentInstanceConfiguration_3023);
-		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.AtomicComponentInstance2EditPart.VISUAL_ID:
+					MumlElementTypes.ComponentInstanceConfiguration_3023);
+		case AtomicComponentInstance2EditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.muml.org/pim/instance/1.0.0?AtomicComponentInstance", //$NON-NLS-1$
-					org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes.AtomicComponentInstance_3024);
-		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.StructuredComponentInstance2EditPart.VISUAL_ID:
+					MumlElementTypes.AtomicComponentInstance_3024);
+		case StructuredComponentInstance2EditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.muml.org/pim/instance/1.0.0?StructuredComponentInstance", //$NON-NLS-1$
-					org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes.StructuredComponentInstance_3025);
-		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteSinglePortInstance2EditPart.VISUAL_ID:
+					MumlElementTypes.StructuredComponentInstance_3025);
+		case DiscreteSinglePortInstance2EditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.muml.org/pim/instance/1.0.0?DiscreteSinglePortInstance", //$NON-NLS-1$
-					org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes.DiscreteSinglePortInstance_3026);
-		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.HybridPortInstance2EditPart.VISUAL_ID:
+					MumlElementTypes.DiscreteSinglePortInstance_3026);
+		case HybridPortInstance2EditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.muml.org/pim/instance/1.0.0?HybridPortInstance", //$NON-NLS-1$
-					org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes.HybridPortInstance_3031);
-		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteSinglePortInstance3EditPart.VISUAL_ID:
+					MumlElementTypes.HybridPortInstance_3031);
+		case DiscreteSinglePortInstance3EditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.muml.org/pim/instance/1.0.0?DiscreteSinglePortInstance", //$NON-NLS-1$
-					org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes.DiscreteSinglePortInstance_3032);
-		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteMultiPortInstance2EditPart.VISUAL_ID:
+					MumlElementTypes.DiscreteSinglePortInstance_3032);
+		case DiscreteMultiPortInstance2EditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.muml.org/pim/instance/1.0.0?DiscreteMultiPortInstance", //$NON-NLS-1$
-					org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes.DiscreteMultiPortInstance_3033);
-		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.ContinuousPortInstance2EditPart.VISUAL_ID:
+					MumlElementTypes.DiscreteMultiPortInstance_3033);
+		case ContinuousPortInstance2EditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.muml.org/pim/instance/1.0.0?ContinuousPortInstance", //$NON-NLS-1$
-					org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes.ContinuousPortInstance_3034);
-		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.CoordinationProtocolInstance2EditPart.VISUAL_ID:
+					MumlElementTypes.ContinuousPortInstance_3034);
+		case CoordinationProtocolInstance2EditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.muml.org/pim/instance/1.0.0?CoordinationProtocolInstance", //$NON-NLS-1$
-					org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes.CoordinationProtocolInstance_3035);
-		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.AssemblyConnectorInstanceEditPart.VISUAL_ID:
+					MumlElementTypes.CoordinationProtocolInstance_3035);
+		case AssemblyConnectorInstanceEditPart.VISUAL_ID:
 			return getImage("Navigator?Link?http://www.muml.org/pim/instance/1.0.0?AssemblyConnectorInstance", //$NON-NLS-1$
-					org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes.AssemblyConnectorInstance_4001);
-		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DelegationConnectorInstanceEditPart.VISUAL_ID:
+					MumlElementTypes.AssemblyConnectorInstance_4001);
+		case DelegationConnectorInstanceEditPart.VISUAL_ID:
 			return getImage("Navigator?Link?http://www.muml.org/pim/instance/1.0.0?DelegationConnectorInstance", //$NON-NLS-1$
-					org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes.DelegationConnectorInstance_4002);
-		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.CoordinationProtocolInstancePortInstancesEditPart.VISUAL_ID:
+					MumlElementTypes.DelegationConnectorInstance_4002);
+		case CoordinationProtocolInstancePortInstancesEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?Link?http://www.muml.org/pim/instance/1.0.0?CoordinationProtocolInstance?portInstances", //$NON-NLS-1$
-					org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes.CoordinationProtocolInstancePortInstances_4003);
+					MumlElementTypes.CoordinationProtocolInstancePortInstances_4003);
 		}
 		return getImage("Navigator?UnknownElement", null); //$NON-NLS-1$
 	}
@@ -160,14 +194,11 @@ public class ComponentinstanceconfigurationNavigatorLabelProvider extends LabelP
 	 * @generated
 	 */
 	private Image getImage(String key, IElementType elementType) {
-		ImageRegistry imageRegistry = org.muml.pim.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin
-				.getInstance().getImageRegistry();
+		ImageRegistry imageRegistry = ComponentinstanceconfigurationDiagramEditorPlugin.getInstance()
+				.getImageRegistry();
 		Image image = imageRegistry.get(key);
-		if (image == null && elementType != null
-				&& org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes
-						.isKnownElementType(elementType)) {
-			image = org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes
-					.getImage(elementType);
+		if (image == null && elementType != null && MumlElementTypes.isKnownElementType(elementType)) {
+			image = MumlElementTypes.getImage(elementType);
 			imageRegistry.put(key, image);
 		}
 
@@ -182,13 +213,13 @@ public class ComponentinstanceconfigurationNavigatorLabelProvider extends LabelP
 	 * @generated
 	 */
 	public String getText(Object element) {
-		if (element instanceof org.muml.pim.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorGroup) {
-			org.muml.pim.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorGroup group = (org.muml.pim.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorGroup) element;
+		if (element instanceof ComponentinstanceconfigurationNavigatorGroup) {
+			ComponentinstanceconfigurationNavigatorGroup group = (ComponentinstanceconfigurationNavigatorGroup) element;
 			return group.getGroupName();
 		}
 
-		if (element instanceof org.muml.pim.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorItem) {
-			org.muml.pim.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorItem navigatorItem = (org.muml.pim.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorItem) element;
+		if (element instanceof ComponentinstanceconfigurationNavigatorItem) {
+			ComponentinstanceconfigurationNavigatorItem navigatorItem = (ComponentinstanceconfigurationNavigatorItem) element;
 			if (!isOwnView(navigatorItem.getView())) {
 				return null;
 			}
@@ -205,47 +236,46 @@ public class ComponentinstanceconfigurationNavigatorLabelProvider extends LabelP
 		if (view.getElement() != null && view.getElement().eIsProxy()) {
 			return getUnresolvedDomainElementProxyText(view);
 		}
-		switch (org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-				.getVisualID(view)) {
-		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.ComponentInstanceConfigurationDiagramEditPart.VISUAL_ID:
+		switch (MumlVisualIDRegistry.getVisualID(view)) {
+		case ComponentInstanceConfigurationDiagramEditPart.VISUAL_ID:
 			return getComponentInstanceConfiguration_1000Text(view);
-		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.StructuredComponentInstanceEditPart.VISUAL_ID:
+		case StructuredComponentInstanceEditPart.VISUAL_ID:
 			return getStructuredComponentInstance_2015Text(view);
-		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.AtomicComponentInstanceEditPart.VISUAL_ID:
+		case AtomicComponentInstanceEditPart.VISUAL_ID:
 			return getAtomicComponentInstance_2016Text(view);
-		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.HybridPortInstanceEditPart.VISUAL_ID:
+		case HybridPortInstanceEditPart.VISUAL_ID:
 			return getHybridPortInstance_2021Text(view);
-		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteSinglePortInstanceEditPart.VISUAL_ID:
+		case DiscreteSinglePortInstanceEditPart.VISUAL_ID:
 			return getDiscreteSinglePortInstance_2022Text(view);
-		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteMultiPortInstanceEditPart.VISUAL_ID:
+		case DiscreteMultiPortInstanceEditPart.VISUAL_ID:
 			return getDiscreteMultiPortInstance_2023Text(view);
-		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.ContinuousPortInstanceEditPart.VISUAL_ID:
+		case ContinuousPortInstanceEditPart.VISUAL_ID:
 			return getContinuousPortInstance_2024Text(view);
-		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.CoordinationProtocolInstanceEditPart.VISUAL_ID:
+		case CoordinationProtocolInstanceEditPart.VISUAL_ID:
 			return getCoordinationProtocolInstance_2025Text(view);
-		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.ComponentInstanceConfigurationEditPart.VISUAL_ID:
+		case ComponentInstanceConfigurationEditPart.VISUAL_ID:
 			return getComponentInstanceConfiguration_3023Text(view);
-		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.AtomicComponentInstance2EditPart.VISUAL_ID:
+		case AtomicComponentInstance2EditPart.VISUAL_ID:
 			return getAtomicComponentInstance_3024Text(view);
-		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.StructuredComponentInstance2EditPart.VISUAL_ID:
+		case StructuredComponentInstance2EditPart.VISUAL_ID:
 			return getStructuredComponentInstance_3025Text(view);
-		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteSinglePortInstance2EditPart.VISUAL_ID:
+		case DiscreteSinglePortInstance2EditPart.VISUAL_ID:
 			return getDiscreteSinglePortInstance_3026Text(view);
-		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.HybridPortInstance2EditPart.VISUAL_ID:
+		case HybridPortInstance2EditPart.VISUAL_ID:
 			return getHybridPortInstance_3031Text(view);
-		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteSinglePortInstance3EditPart.VISUAL_ID:
+		case DiscreteSinglePortInstance3EditPart.VISUAL_ID:
 			return getDiscreteSinglePortInstance_3032Text(view);
-		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteMultiPortInstance2EditPart.VISUAL_ID:
+		case DiscreteMultiPortInstance2EditPart.VISUAL_ID:
 			return getDiscreteMultiPortInstance_3033Text(view);
-		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.ContinuousPortInstance2EditPart.VISUAL_ID:
+		case ContinuousPortInstance2EditPart.VISUAL_ID:
 			return getContinuousPortInstance_3034Text(view);
-		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.CoordinationProtocolInstance2EditPart.VISUAL_ID:
+		case CoordinationProtocolInstance2EditPart.VISUAL_ID:
 			return getCoordinationProtocolInstance_3035Text(view);
-		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.AssemblyConnectorInstanceEditPart.VISUAL_ID:
+		case AssemblyConnectorInstanceEditPart.VISUAL_ID:
 			return getAssemblyConnectorInstance_4001Text(view);
-		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DelegationConnectorInstanceEditPart.VISUAL_ID:
+		case DelegationConnectorInstanceEditPart.VISUAL_ID:
 			return getDelegationConnectorInstance_4002Text(view);
-		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.CoordinationProtocolInstancePortInstancesEditPart.VISUAL_ID:
+		case CoordinationProtocolInstancePortInstancesEditPart.VISUAL_ID:
 			return getCoordinationProtocolInstancePortInstances_4003Text(view);
 		}
 		return getUnknownElementText(view);
@@ -255,13 +285,12 @@ public class ComponentinstanceconfigurationNavigatorLabelProvider extends LabelP
 	 * @generated
 	 */
 	private String getComponentInstanceConfiguration_1000Text(View view) {
-		org.muml.pim.instance.ComponentInstanceConfiguration domainModelElement = (org.muml.pim.instance.ComponentInstanceConfiguration) view
-				.getElement();
+		ComponentInstanceConfiguration domainModelElement = (ComponentInstanceConfiguration) view.getElement();
 		if (domainModelElement != null) {
 			return domainModelElement.getName();
 		} else {
-			org.muml.pim.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin
-					.getInstance().logError("No domain element for view with visualID = " + 1000); //$NON-NLS-1$
+			ComponentinstanceconfigurationDiagramEditorPlugin.getInstance()
+					.logError("No domain element for view with visualID = " + 1000); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -270,19 +299,15 @@ public class ComponentinstanceconfigurationNavigatorLabelProvider extends LabelP
 	 * @generated
 	 */
 	private String getStructuredComponentInstance_2015Text(View view) {
-		IParser parser = org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlParserProvider
-				.getParser(
-						org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes.StructuredComponentInstance_2015,
-						view.getElement() != null ? view.getElement() : view,
-						org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-								.getType(
-										org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID));
+		IParser parser = MumlParserProvider.getParser(MumlElementTypes.StructuredComponentInstance_2015,
+				view.getElement() != null ? view.getElement() : view,
+				MumlVisualIDRegistry.getType(WrappingLabelEditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
 					ParserOptions.NONE.intValue());
 		} else {
-			org.muml.pim.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin
-					.getInstance().logError("Parser was not found for label " + 5026); //$NON-NLS-1$
+			ComponentinstanceconfigurationDiagramEditorPlugin.getInstance()
+					.logError("Parser was not found for label " + 5026); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -291,19 +316,15 @@ public class ComponentinstanceconfigurationNavigatorLabelProvider extends LabelP
 	 * @generated
 	 */
 	private String getAtomicComponentInstance_2016Text(View view) {
-		IParser parser = org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlParserProvider
-				.getParser(
-						org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes.AtomicComponentInstance_2016,
-						view.getElement() != null ? view.getElement() : view,
-						org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-								.getType(
-										org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.WrappingLabel2EditPart.VISUAL_ID));
+		IParser parser = MumlParserProvider.getParser(MumlElementTypes.AtomicComponentInstance_2016,
+				view.getElement() != null ? view.getElement() : view,
+				MumlVisualIDRegistry.getType(WrappingLabel2EditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
 					ParserOptions.NONE.intValue());
 		} else {
-			org.muml.pim.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin
-					.getInstance().logError("Parser was not found for label " + 5027); //$NON-NLS-1$
+			ComponentinstanceconfigurationDiagramEditorPlugin.getInstance()
+					.logError("Parser was not found for label " + 5027); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -312,19 +333,15 @@ public class ComponentinstanceconfigurationNavigatorLabelProvider extends LabelP
 	 * @generated
 	 */
 	private String getHybridPortInstance_2021Text(View view) {
-		IParser parser = org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlParserProvider
-				.getParser(
-						org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes.HybridPortInstance_2021,
-						view.getElement() != null ? view.getElement() : view,
-						org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-								.getType(
-										org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.HybridPortInstanceNameEditPart.VISUAL_ID));
+		IParser parser = MumlParserProvider.getParser(MumlElementTypes.HybridPortInstance_2021,
+				view.getElement() != null ? view.getElement() : view,
+				MumlVisualIDRegistry.getType(HybridPortInstanceNameEditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
 					ParserOptions.NONE.intValue());
 		} else {
-			org.muml.pim.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin
-					.getInstance().logError("Parser was not found for label " + 5039); //$NON-NLS-1$
+			ComponentinstanceconfigurationDiagramEditorPlugin.getInstance()
+					.logError("Parser was not found for label " + 5039); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -333,19 +350,15 @@ public class ComponentinstanceconfigurationNavigatorLabelProvider extends LabelP
 	 * @generated
 	 */
 	private String getDiscreteSinglePortInstance_2022Text(View view) {
-		IParser parser = org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlParserProvider
-				.getParser(
-						org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes.DiscreteSinglePortInstance_2022,
-						view.getElement() != null ? view.getElement() : view,
-						org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-								.getType(
-										org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteSinglePortInstanceNameEditPart.VISUAL_ID));
+		IParser parser = MumlParserProvider.getParser(MumlElementTypes.DiscreteSinglePortInstance_2022,
+				view.getElement() != null ? view.getElement() : view,
+				MumlVisualIDRegistry.getType(DiscreteSinglePortInstanceNameEditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
 					ParserOptions.NONE.intValue());
 		} else {
-			org.muml.pim.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin
-					.getInstance().logError("Parser was not found for label " + 5040); //$NON-NLS-1$
+			ComponentinstanceconfigurationDiagramEditorPlugin.getInstance()
+					.logError("Parser was not found for label " + 5040); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -354,19 +367,15 @@ public class ComponentinstanceconfigurationNavigatorLabelProvider extends LabelP
 	 * @generated
 	 */
 	private String getDiscreteMultiPortInstance_2023Text(View view) {
-		IParser parser = org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlParserProvider
-				.getParser(
-						org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes.DiscreteMultiPortInstance_2023,
-						view.getElement() != null ? view.getElement() : view,
-						org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-								.getType(
-										org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteMultiPortInstanceNameEditPart.VISUAL_ID));
+		IParser parser = MumlParserProvider.getParser(MumlElementTypes.DiscreteMultiPortInstance_2023,
+				view.getElement() != null ? view.getElement() : view,
+				MumlVisualIDRegistry.getType(DiscreteMultiPortInstanceNameEditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
 					ParserOptions.NONE.intValue());
 		} else {
-			org.muml.pim.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin
-					.getInstance().logError("Parser was not found for label " + 5041); //$NON-NLS-1$
+			ComponentinstanceconfigurationDiagramEditorPlugin.getInstance()
+					.logError("Parser was not found for label " + 5041); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -375,19 +384,15 @@ public class ComponentinstanceconfigurationNavigatorLabelProvider extends LabelP
 	 * @generated
 	 */
 	private String getContinuousPortInstance_2024Text(View view) {
-		IParser parser = org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlParserProvider
-				.getParser(
-						org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes.ContinuousPortInstance_2024,
-						view.getElement() != null ? view.getElement() : view,
-						org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-								.getType(
-										org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.ContinuousPortInstanceNameEditPart.VISUAL_ID));
+		IParser parser = MumlParserProvider.getParser(MumlElementTypes.ContinuousPortInstance_2024,
+				view.getElement() != null ? view.getElement() : view,
+				MumlVisualIDRegistry.getType(ContinuousPortInstanceNameEditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
 					ParserOptions.NONE.intValue());
 		} else {
-			org.muml.pim.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin
-					.getInstance().logError("Parser was not found for label " + 5042); //$NON-NLS-1$
+			ComponentinstanceconfigurationDiagramEditorPlugin.getInstance()
+					.logError("Parser was not found for label " + 5042); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -396,19 +401,15 @@ public class ComponentinstanceconfigurationNavigatorLabelProvider extends LabelP
 	 * @generated
 	 */
 	private String getCoordinationProtocolInstance_2025Text(View view) {
-		IParser parser = org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlParserProvider
-				.getParser(
-						org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes.CoordinationProtocolInstance_2025,
-						view.getElement() != null ? view.getElement() : view,
-						org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-								.getType(
-										org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.WrappingLabel5EditPart.VISUAL_ID));
+		IParser parser = MumlParserProvider.getParser(MumlElementTypes.CoordinationProtocolInstance_2025,
+				view.getElement() != null ? view.getElement() : view,
+				MumlVisualIDRegistry.getType(WrappingLabel5EditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
 					ParserOptions.NONE.intValue());
 		} else {
-			org.muml.pim.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin
-					.getInstance().logError("Parser was not found for label " + 5048); //$NON-NLS-1$
+			ComponentinstanceconfigurationDiagramEditorPlugin.getInstance()
+					.logError("Parser was not found for label " + 5048); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -417,13 +418,12 @@ public class ComponentinstanceconfigurationNavigatorLabelProvider extends LabelP
 	 * @generated
 	 */
 	private String getComponentInstanceConfiguration_3023Text(View view) {
-		org.muml.pim.instance.ComponentInstanceConfiguration domainModelElement = (org.muml.pim.instance.ComponentInstanceConfiguration) view
-				.getElement();
+		ComponentInstanceConfiguration domainModelElement = (ComponentInstanceConfiguration) view.getElement();
 		if (domainModelElement != null) {
 			return domainModelElement.getName();
 		} else {
-			org.muml.pim.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin
-					.getInstance().logError("No domain element for view with visualID = " + 3023); //$NON-NLS-1$
+			ComponentinstanceconfigurationDiagramEditorPlugin.getInstance()
+					.logError("No domain element for view with visualID = " + 3023); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -432,19 +432,15 @@ public class ComponentinstanceconfigurationNavigatorLabelProvider extends LabelP
 	 * @generated
 	 */
 	private String getAtomicComponentInstance_3024Text(View view) {
-		IParser parser = org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlParserProvider
-				.getParser(
-						org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes.AtomicComponentInstance_3024,
-						view.getElement() != null ? view.getElement() : view,
-						org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-								.getType(
-										org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.WrappingLabel3EditPart.VISUAL_ID));
+		IParser parser = MumlParserProvider.getParser(MumlElementTypes.AtomicComponentInstance_3024,
+				view.getElement() != null ? view.getElement() : view,
+				MumlVisualIDRegistry.getType(WrappingLabel3EditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
 					ParserOptions.NONE.intValue());
 		} else {
-			org.muml.pim.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin
-					.getInstance().logError("Parser was not found for label " + 5028); //$NON-NLS-1$
+			ComponentinstanceconfigurationDiagramEditorPlugin.getInstance()
+					.logError("Parser was not found for label " + 5028); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -453,19 +449,15 @@ public class ComponentinstanceconfigurationNavigatorLabelProvider extends LabelP
 	 * @generated
 	 */
 	private String getStructuredComponentInstance_3025Text(View view) {
-		IParser parser = org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlParserProvider
-				.getParser(
-						org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes.StructuredComponentInstance_3025,
-						view.getElement() != null ? view.getElement() : view,
-						org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-								.getType(
-										org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.WrappingLabel4EditPart.VISUAL_ID));
+		IParser parser = MumlParserProvider.getParser(MumlElementTypes.StructuredComponentInstance_3025,
+				view.getElement() != null ? view.getElement() : view,
+				MumlVisualIDRegistry.getType(WrappingLabel4EditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
 					ParserOptions.NONE.intValue());
 		} else {
-			org.muml.pim.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin
-					.getInstance().logError("Parser was not found for label " + 5029); //$NON-NLS-1$
+			ComponentinstanceconfigurationDiagramEditorPlugin.getInstance()
+					.logError("Parser was not found for label " + 5029); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -474,13 +466,12 @@ public class ComponentinstanceconfigurationNavigatorLabelProvider extends LabelP
 	 * @generated
 	 */
 	private String getDiscreteSinglePortInstance_3026Text(View view) {
-		org.muml.pim.instance.DiscreteSinglePortInstance domainModelElement = (org.muml.pim.instance.DiscreteSinglePortInstance) view
-				.getElement();
+		DiscreteSinglePortInstance domainModelElement = (DiscreteSinglePortInstance) view.getElement();
 		if (domainModelElement != null) {
 			return domainModelElement.getName();
 		} else {
-			org.muml.pim.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin
-					.getInstance().logError("No domain element for view with visualID = " + 3026); //$NON-NLS-1$
+			ComponentinstanceconfigurationDiagramEditorPlugin.getInstance()
+					.logError("No domain element for view with visualID = " + 3026); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -489,19 +480,15 @@ public class ComponentinstanceconfigurationNavigatorLabelProvider extends LabelP
 	 * @generated
 	 */
 	private String getHybridPortInstance_3031Text(View view) {
-		IParser parser = org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlParserProvider
-				.getParser(
-						org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes.HybridPortInstance_3031,
-						view.getElement() != null ? view.getElement() : view,
-						org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-								.getType(
-										org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.HybridPortInstanceName2EditPart.VISUAL_ID));
+		IParser parser = MumlParserProvider.getParser(MumlElementTypes.HybridPortInstance_3031,
+				view.getElement() != null ? view.getElement() : view,
+				MumlVisualIDRegistry.getType(HybridPortInstanceName2EditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
 					ParserOptions.NONE.intValue());
 		} else {
-			org.muml.pim.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin
-					.getInstance().logError("Parser was not found for label " + 5043); //$NON-NLS-1$
+			ComponentinstanceconfigurationDiagramEditorPlugin.getInstance()
+					.logError("Parser was not found for label " + 5043); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -510,19 +497,15 @@ public class ComponentinstanceconfigurationNavigatorLabelProvider extends LabelP
 	 * @generated
 	 */
 	private String getDiscreteSinglePortInstance_3032Text(View view) {
-		IParser parser = org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlParserProvider
-				.getParser(
-						org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes.DiscreteSinglePortInstance_3032,
-						view.getElement() != null ? view.getElement() : view,
-						org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-								.getType(
-										org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteSinglePortInstanceName3EditPart.VISUAL_ID));
+		IParser parser = MumlParserProvider.getParser(MumlElementTypes.DiscreteSinglePortInstance_3032,
+				view.getElement() != null ? view.getElement() : view,
+				MumlVisualIDRegistry.getType(DiscreteSinglePortInstanceName3EditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
 					ParserOptions.NONE.intValue());
 		} else {
-			org.muml.pim.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin
-					.getInstance().logError("Parser was not found for label " + 5044); //$NON-NLS-1$
+			ComponentinstanceconfigurationDiagramEditorPlugin.getInstance()
+					.logError("Parser was not found for label " + 5044); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -531,19 +514,15 @@ public class ComponentinstanceconfigurationNavigatorLabelProvider extends LabelP
 	 * @generated
 	 */
 	private String getDiscreteMultiPortInstance_3033Text(View view) {
-		IParser parser = org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlParserProvider
-				.getParser(
-						org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes.DiscreteMultiPortInstance_3033,
-						view.getElement() != null ? view.getElement() : view,
-						org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-								.getType(
-										org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteMultiPortInstanceName2EditPart.VISUAL_ID));
+		IParser parser = MumlParserProvider.getParser(MumlElementTypes.DiscreteMultiPortInstance_3033,
+				view.getElement() != null ? view.getElement() : view,
+				MumlVisualIDRegistry.getType(DiscreteMultiPortInstanceName2EditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
 					ParserOptions.NONE.intValue());
 		} else {
-			org.muml.pim.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin
-					.getInstance().logError("Parser was not found for label " + 5045); //$NON-NLS-1$
+			ComponentinstanceconfigurationDiagramEditorPlugin.getInstance()
+					.logError("Parser was not found for label " + 5045); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -552,19 +531,15 @@ public class ComponentinstanceconfigurationNavigatorLabelProvider extends LabelP
 	 * @generated
 	 */
 	private String getContinuousPortInstance_3034Text(View view) {
-		IParser parser = org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlParserProvider
-				.getParser(
-						org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes.ContinuousPortInstance_3034,
-						view.getElement() != null ? view.getElement() : view,
-						org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-								.getType(
-										org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.ContinuousPortInstanceName2EditPart.VISUAL_ID));
+		IParser parser = MumlParserProvider.getParser(MumlElementTypes.ContinuousPortInstance_3034,
+				view.getElement() != null ? view.getElement() : view,
+				MumlVisualIDRegistry.getType(ContinuousPortInstanceName2EditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
 					ParserOptions.NONE.intValue());
 		} else {
-			org.muml.pim.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin
-					.getInstance().logError("Parser was not found for label " + 5046); //$NON-NLS-1$
+			ComponentinstanceconfigurationDiagramEditorPlugin.getInstance()
+					.logError("Parser was not found for label " + 5046); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -573,19 +548,15 @@ public class ComponentinstanceconfigurationNavigatorLabelProvider extends LabelP
 	 * @generated
 	 */
 	private String getCoordinationProtocolInstance_3035Text(View view) {
-		IParser parser = org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlParserProvider
-				.getParser(
-						org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes.CoordinationProtocolInstance_3035,
-						view.getElement() != null ? view.getElement() : view,
-						org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-								.getType(
-										org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.WrappingLabel6EditPart.VISUAL_ID));
+		IParser parser = MumlParserProvider.getParser(MumlElementTypes.CoordinationProtocolInstance_3035,
+				view.getElement() != null ? view.getElement() : view,
+				MumlVisualIDRegistry.getType(WrappingLabel6EditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
 					ParserOptions.NONE.intValue());
 		} else {
-			org.muml.pim.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin
-					.getInstance().logError("Parser was not found for label " + 5047); //$NON-NLS-1$
+			ComponentinstanceconfigurationDiagramEditorPlugin.getInstance()
+					.logError("Parser was not found for label " + 5047); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -594,13 +565,12 @@ public class ComponentinstanceconfigurationNavigatorLabelProvider extends LabelP
 	 * @generated
 	 */
 	private String getAssemblyConnectorInstance_4001Text(View view) {
-		org.muml.pim.instance.AssemblyConnectorInstance domainModelElement = (org.muml.pim.instance.AssemblyConnectorInstance) view
-				.getElement();
+		AssemblyConnectorInstance domainModelElement = (AssemblyConnectorInstance) view.getElement();
 		if (domainModelElement != null) {
 			return domainModelElement.getComment();
 		} else {
-			org.muml.pim.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin
-					.getInstance().logError("No domain element for view with visualID = " + 4001); //$NON-NLS-1$
+			ComponentinstanceconfigurationDiagramEditorPlugin.getInstance()
+					.logError("No domain element for view with visualID = " + 4001); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -609,13 +579,12 @@ public class ComponentinstanceconfigurationNavigatorLabelProvider extends LabelP
 	 * @generated
 	 */
 	private String getDelegationConnectorInstance_4002Text(View view) {
-		org.muml.pim.instance.DelegationConnectorInstance domainModelElement = (org.muml.pim.instance.DelegationConnectorInstance) view
-				.getElement();
+		DelegationConnectorInstance domainModelElement = (DelegationConnectorInstance) view.getElement();
 		if (domainModelElement != null) {
 			return domainModelElement.getComment();
 		} else {
-			org.muml.pim.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin
-					.getInstance().logError("No domain element for view with visualID = " + 4002); //$NON-NLS-1$
+			ComponentinstanceconfigurationDiagramEditorPlugin.getInstance()
+					.logError("No domain element for view with visualID = " + 4002); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -670,9 +639,7 @@ public class ComponentinstanceconfigurationNavigatorLabelProvider extends LabelP
 	 * @generated
 	 */
 	private boolean isOwnView(View view) {
-		return org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.ComponentInstanceConfigurationDiagramEditPart.MODEL_ID
-				.equals(org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-						.getModelID(view));
+		return ComponentInstanceConfigurationDiagramEditPart.MODEL_ID.equals(MumlVisualIDRegistry.getModelID(view));
 	}
 
 }

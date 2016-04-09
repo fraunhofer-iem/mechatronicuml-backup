@@ -12,10 +12,12 @@
  */
 package org.muml.pim.componentinstanceconfiguration.diagram.providers.assistants;
 
+import org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlModelingAssistantProvider;
+
 /**
  * @generated
  */
-public class MumlModelingAssistantProviderOfComponentInstanceConfigurationEditPart extends
-		org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlModelingAssistantProvider {
+public class MumlModelingAssistantProviderOfComponentInstanceConfigurationEditPart
+		extends MumlModelingAssistantProvider {
 
 }

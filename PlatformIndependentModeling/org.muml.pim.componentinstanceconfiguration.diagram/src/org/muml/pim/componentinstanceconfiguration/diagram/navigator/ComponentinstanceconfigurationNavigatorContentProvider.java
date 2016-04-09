@@ -34,6 +34,33 @@ import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.ui.IMemento;
 import org.eclipse.ui.navigator.ICommonContentExtensionSite;
 import org.eclipse.ui.navigator.ICommonContentProvider;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.AssemblyConnectorInstanceEditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.AtomicComponentInstance2EditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.AtomicComponentInstanceEditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.ComponentInstanceConfigurationComponentInstanceConfigurationContentsCompartmentEditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.ComponentInstanceConfigurationDiagramEditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.ComponentInstanceConfigurationEditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.ContinuousPortInstance2EditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.ContinuousPortInstanceEditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.CoordinationProtocolInstance2EditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.CoordinationProtocolInstanceEditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.CoordinationProtocolInstancePortInstancesEditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DelegationConnectorInstanceEditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteMultiPortInstance2EditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartment2EditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartmentEditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteMultiPortInstanceEditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteSinglePortInstance2EditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteSinglePortInstance3EditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteSinglePortInstanceEditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.HybridPortInstance2EditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.HybridPortInstanceEditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.StructuredComponentInstance2EditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.StructuredComponentInstanceComponentInstanceContentsCompartment2EditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.StructuredComponentInstanceComponentInstanceContentsCompartmentEditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.StructuredComponentInstanceEditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.part.Messages;
+import org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry;
 
 /**
  * @generated
@@ -182,7 +209,7 @@ public class ComponentinstanceconfigurationNavigatorContentProvider implements I
 			IFile file = (IFile) parentElement;
 			URI fileURI = URI.createPlatformResourceURI(file.getFullPath().toString(), true);
 			Resource resource = myEditingDomain.getResourceSet().getResource(fileURI, true);
-			ArrayList<org.muml.pim.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorItem> result = new ArrayList<org.muml.pim.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorItem>();
+			ArrayList<ComponentinstanceconfigurationNavigatorItem> result = new ArrayList<ComponentinstanceconfigurationNavigatorItem>();
 			ArrayList<View> topViews = new ArrayList<View>(resource.getContents().size());
 			for (EObject o : resource.getContents()) {
 				if (o instanceof View) {
@@ -190,19 +217,17 @@ public class ComponentinstanceconfigurationNavigatorContentProvider implements I
 				}
 			}
 			result.addAll(createNavigatorItems(
-					selectViewsByType(topViews,
-							org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.ComponentInstanceConfigurationDiagramEditPart.MODEL_ID),
-					file, false));
+					selectViewsByType(topViews, ComponentInstanceConfigurationDiagramEditPart.MODEL_ID), file, false));
 			return result.toArray();
 		}
 
-		if (parentElement instanceof org.muml.pim.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorGroup) {
-			org.muml.pim.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorGroup group = (org.muml.pim.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorGroup) parentElement;
+		if (parentElement instanceof ComponentinstanceconfigurationNavigatorGroup) {
+			ComponentinstanceconfigurationNavigatorGroup group = (ComponentinstanceconfigurationNavigatorGroup) parentElement;
 			return group.getChildren();
 		}
 
-		if (parentElement instanceof org.muml.pim.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorItem) {
-			org.muml.pim.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorItem navigatorItem = (org.muml.pim.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorItem) parentElement;
+		if (parentElement instanceof ComponentinstanceconfigurationNavigatorItem) {
+			ComponentinstanceconfigurationNavigatorItem navigatorItem = (ComponentinstanceconfigurationNavigatorItem) parentElement;
 			if (navigatorItem.isLeaf() || !isOwnView(navigatorItem.getView())) {
 				return EMPTY_ARRAY;
 			}
@@ -216,65 +241,44 @@ public class ComponentinstanceconfigurationNavigatorContentProvider implements I
 	 * @generated
 	 */
 	private Object[] getViewChildren(View view, Object parentElement) {
-		switch (org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-				.getVisualID(view)) {
+		switch (MumlVisualIDRegistry.getVisualID(view)) {
 
-		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.ComponentInstanceConfigurationDiagramEditPart.VISUAL_ID: {
-			LinkedList<org.muml.pim.componentinstanceconfiguration.diagram.navigator.MumlAbstractNavigatorItem> result = new LinkedList<org.muml.pim.componentinstanceconfiguration.diagram.navigator.MumlAbstractNavigatorItem>();
+		case ComponentInstanceConfigurationDiagramEditPart.VISUAL_ID: {
+			LinkedList<MumlAbstractNavigatorItem> result = new LinkedList<MumlAbstractNavigatorItem>();
 			Diagram sv = (Diagram) view;
-			org.muml.pim.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorGroup links = new org.muml.pim.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorGroup(
-					org.muml.pim.componentinstanceconfiguration.diagram.part.Messages.NavigatorGroupName_ComponentInstanceConfiguration_1000_links,
+			ComponentinstanceconfigurationNavigatorGroup links = new ComponentinstanceconfigurationNavigatorGroup(
+					Messages.NavigatorGroupName_ComponentInstanceConfiguration_1000_links,
 					"icons/linksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
 			connectedViews = getChildrenByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.HybridPortInstanceEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(HybridPortInstanceEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			connectedViews = getChildrenByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteSinglePortInstanceEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(DiscreteSinglePortInstanceEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			connectedViews = getChildrenByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteMultiPortInstanceEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(DiscreteMultiPortInstanceEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			connectedViews = getChildrenByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.ContinuousPortInstanceEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(ContinuousPortInstanceEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			connectedViews = getChildrenByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.AtomicComponentInstanceEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(AtomicComponentInstanceEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			connectedViews = getChildrenByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.StructuredComponentInstanceEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(StructuredComponentInstanceEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			connectedViews = getChildrenByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.CoordinationProtocolInstanceEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(CoordinationProtocolInstanceEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			connectedViews = getDiagramLinksByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.AssemblyConnectorInstanceEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(AssemblyConnectorInstanceEditPart.VISUAL_ID));
 			links.addChildren(createNavigatorItems(connectedViews, links, false));
 			connectedViews = getDiagramLinksByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DelegationConnectorInstanceEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(DelegationConnectorInstanceEditPart.VISUAL_ID));
 			links.addChildren(createNavigatorItems(connectedViews, links, false));
 			connectedViews = getDiagramLinksByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.CoordinationProtocolInstancePortInstancesEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(CoordinationProtocolInstancePortInstancesEditPart.VISUAL_ID));
 			links.addChildren(createNavigatorItems(connectedViews, links, false));
 			if (!links.isEmpty()) {
 				result.add(links);
@@ -282,103 +286,73 @@ public class ComponentinstanceconfigurationNavigatorContentProvider implements I
 			return result.toArray();
 		}
 
-		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.StructuredComponentInstanceEditPart.VISUAL_ID: {
-			LinkedList<org.muml.pim.componentinstanceconfiguration.diagram.navigator.MumlAbstractNavigatorItem> result = new LinkedList<org.muml.pim.componentinstanceconfiguration.diagram.navigator.MumlAbstractNavigatorItem>();
+		case StructuredComponentInstanceEditPart.VISUAL_ID: {
+			LinkedList<MumlAbstractNavigatorItem> result = new LinkedList<MumlAbstractNavigatorItem>();
 			Node sv = (Node) view;
 			Collection<View> connectedViews;
 			connectedViews = getChildrenByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.HybridPortInstance2EditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(HybridPortInstance2EditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			connectedViews = getChildrenByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteSinglePortInstance3EditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(DiscreteSinglePortInstance3EditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			connectedViews = getChildrenByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteMultiPortInstance2EditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(DiscreteMultiPortInstance2EditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			connectedViews = getChildrenByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.ContinuousPortInstance2EditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(ContinuousPortInstance2EditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getChildrenByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.StructuredComponentInstanceComponentInstanceContentsCompartmentEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(Collections.singleton(sv), MumlVisualIDRegistry
+					.getType(StructuredComponentInstanceComponentInstanceContentsCompartmentEditPart.VISUAL_ID));
 			connectedViews = getChildrenByType(connectedViews,
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.ComponentInstanceConfigurationEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(ComponentInstanceConfigurationEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			return result.toArray();
 		}
 
-		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.AtomicComponentInstanceEditPart.VISUAL_ID: {
-			LinkedList<org.muml.pim.componentinstanceconfiguration.diagram.navigator.MumlAbstractNavigatorItem> result = new LinkedList<org.muml.pim.componentinstanceconfiguration.diagram.navigator.MumlAbstractNavigatorItem>();
+		case AtomicComponentInstanceEditPart.VISUAL_ID: {
+			LinkedList<MumlAbstractNavigatorItem> result = new LinkedList<MumlAbstractNavigatorItem>();
 			Node sv = (Node) view;
 			Collection<View> connectedViews;
 			connectedViews = getChildrenByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.HybridPortInstance2EditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(HybridPortInstance2EditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			connectedViews = getChildrenByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteSinglePortInstance3EditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(DiscreteSinglePortInstance3EditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			connectedViews = getChildrenByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteMultiPortInstance2EditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(DiscreteMultiPortInstance2EditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			connectedViews = getChildrenByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.ContinuousPortInstance2EditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(ContinuousPortInstance2EditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			return result.toArray();
 		}
 
-		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.HybridPortInstanceEditPart.VISUAL_ID: {
-			LinkedList<org.muml.pim.componentinstanceconfiguration.diagram.navigator.MumlAbstractNavigatorItem> result = new LinkedList<org.muml.pim.componentinstanceconfiguration.diagram.navigator.MumlAbstractNavigatorItem>();
+		case HybridPortInstanceEditPart.VISUAL_ID: {
+			LinkedList<MumlAbstractNavigatorItem> result = new LinkedList<MumlAbstractNavigatorItem>();
 			Node sv = (Node) view;
-			org.muml.pim.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorGroup incominglinks = new org.muml.pim.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorGroup(
-					org.muml.pim.componentinstanceconfiguration.diagram.part.Messages.NavigatorGroupName_HybridPortInstance_2021_incominglinks,
+			ComponentinstanceconfigurationNavigatorGroup incominglinks = new ComponentinstanceconfigurationNavigatorGroup(
+					Messages.NavigatorGroupName_HybridPortInstance_2021_incominglinks,
 					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			org.muml.pim.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorGroup outgoinglinks = new org.muml.pim.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorGroup(
-					org.muml.pim.componentinstanceconfiguration.diagram.part.Messages.NavigatorGroupName_HybridPortInstance_2021_outgoinglinks,
+			ComponentinstanceconfigurationNavigatorGroup outgoinglinks = new ComponentinstanceconfigurationNavigatorGroup(
+					Messages.NavigatorGroupName_HybridPortInstance_2021_outgoinglinks,
 					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
 			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.AssemblyConnectorInstanceEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(AssemblyConnectorInstanceEditPart.VISUAL_ID));
 			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
 			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.AssemblyConnectorInstanceEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(AssemblyConnectorInstanceEditPart.VISUAL_ID));
 			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
 			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DelegationConnectorInstanceEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(DelegationConnectorInstanceEditPart.VISUAL_ID));
 			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
 			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DelegationConnectorInstanceEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(DelegationConnectorInstanceEditPart.VISUAL_ID));
 			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
 			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.CoordinationProtocolInstancePortInstancesEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(CoordinationProtocolInstancePortInstancesEditPart.VISUAL_ID));
 			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
 			if (!incominglinks.isEmpty()) {
 				result.add(incominglinks);
@@ -389,40 +363,30 @@ public class ComponentinstanceconfigurationNavigatorContentProvider implements I
 			return result.toArray();
 		}
 
-		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteSinglePortInstanceEditPart.VISUAL_ID: {
-			LinkedList<org.muml.pim.componentinstanceconfiguration.diagram.navigator.MumlAbstractNavigatorItem> result = new LinkedList<org.muml.pim.componentinstanceconfiguration.diagram.navigator.MumlAbstractNavigatorItem>();
+		case DiscreteSinglePortInstanceEditPart.VISUAL_ID: {
+			LinkedList<MumlAbstractNavigatorItem> result = new LinkedList<MumlAbstractNavigatorItem>();
 			Node sv = (Node) view;
-			org.muml.pim.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorGroup incominglinks = new org.muml.pim.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorGroup(
-					org.muml.pim.componentinstanceconfiguration.diagram.part.Messages.NavigatorGroupName_DiscreteSinglePortInstance_2022_incominglinks,
+			ComponentinstanceconfigurationNavigatorGroup incominglinks = new ComponentinstanceconfigurationNavigatorGroup(
+					Messages.NavigatorGroupName_DiscreteSinglePortInstance_2022_incominglinks,
 					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			org.muml.pim.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorGroup outgoinglinks = new org.muml.pim.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorGroup(
-					org.muml.pim.componentinstanceconfiguration.diagram.part.Messages.NavigatorGroupName_DiscreteSinglePortInstance_2022_outgoinglinks,
+			ComponentinstanceconfigurationNavigatorGroup outgoinglinks = new ComponentinstanceconfigurationNavigatorGroup(
+					Messages.NavigatorGroupName_DiscreteSinglePortInstance_2022_outgoinglinks,
 					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
 			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.AssemblyConnectorInstanceEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(AssemblyConnectorInstanceEditPart.VISUAL_ID));
 			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
 			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.AssemblyConnectorInstanceEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(AssemblyConnectorInstanceEditPart.VISUAL_ID));
 			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
 			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DelegationConnectorInstanceEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(DelegationConnectorInstanceEditPart.VISUAL_ID));
 			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
 			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DelegationConnectorInstanceEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(DelegationConnectorInstanceEditPart.VISUAL_ID));
 			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
 			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.CoordinationProtocolInstancePortInstancesEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(CoordinationProtocolInstancePortInstancesEditPart.VISUAL_ID));
 			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
 			if (!incominglinks.isEmpty()) {
 				result.add(incominglinks);
@@ -433,49 +397,35 @@ public class ComponentinstanceconfigurationNavigatorContentProvider implements I
 			return result.toArray();
 		}
 
-		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteMultiPortInstanceEditPart.VISUAL_ID: {
-			LinkedList<org.muml.pim.componentinstanceconfiguration.diagram.navigator.MumlAbstractNavigatorItem> result = new LinkedList<org.muml.pim.componentinstanceconfiguration.diagram.navigator.MumlAbstractNavigatorItem>();
+		case DiscreteMultiPortInstanceEditPart.VISUAL_ID: {
+			LinkedList<MumlAbstractNavigatorItem> result = new LinkedList<MumlAbstractNavigatorItem>();
 			Node sv = (Node) view;
-			org.muml.pim.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorGroup incominglinks = new org.muml.pim.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorGroup(
-					org.muml.pim.componentinstanceconfiguration.diagram.part.Messages.NavigatorGroupName_DiscreteMultiPortInstance_2023_incominglinks,
+			ComponentinstanceconfigurationNavigatorGroup incominglinks = new ComponentinstanceconfigurationNavigatorGroup(
+					Messages.NavigatorGroupName_DiscreteMultiPortInstance_2023_incominglinks,
 					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			org.muml.pim.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorGroup outgoinglinks = new org.muml.pim.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorGroup(
-					org.muml.pim.componentinstanceconfiguration.diagram.part.Messages.NavigatorGroupName_DiscreteMultiPortInstance_2023_outgoinglinks,
+			ComponentinstanceconfigurationNavigatorGroup outgoinglinks = new ComponentinstanceconfigurationNavigatorGroup(
+					Messages.NavigatorGroupName_DiscreteMultiPortInstance_2023_outgoinglinks,
 					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
-			connectedViews = getChildrenByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartmentEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(Collections.singleton(sv), MumlVisualIDRegistry
+					.getType(DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartmentEditPart.VISUAL_ID));
 			connectedViews = getChildrenByType(connectedViews,
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteSinglePortInstance2EditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(DiscreteSinglePortInstance2EditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.AssemblyConnectorInstanceEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(AssemblyConnectorInstanceEditPart.VISUAL_ID));
 			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
 			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.AssemblyConnectorInstanceEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(AssemblyConnectorInstanceEditPart.VISUAL_ID));
 			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
 			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DelegationConnectorInstanceEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(DelegationConnectorInstanceEditPart.VISUAL_ID));
 			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
 			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DelegationConnectorInstanceEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(DelegationConnectorInstanceEditPart.VISUAL_ID));
 			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
 			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.CoordinationProtocolInstancePortInstancesEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(CoordinationProtocolInstancePortInstancesEditPart.VISUAL_ID));
 			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
 			if (!incominglinks.isEmpty()) {
 				result.add(incominglinks);
@@ -486,40 +436,30 @@ public class ComponentinstanceconfigurationNavigatorContentProvider implements I
 			return result.toArray();
 		}
 
-		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.ContinuousPortInstanceEditPart.VISUAL_ID: {
-			LinkedList<org.muml.pim.componentinstanceconfiguration.diagram.navigator.MumlAbstractNavigatorItem> result = new LinkedList<org.muml.pim.componentinstanceconfiguration.diagram.navigator.MumlAbstractNavigatorItem>();
+		case ContinuousPortInstanceEditPart.VISUAL_ID: {
+			LinkedList<MumlAbstractNavigatorItem> result = new LinkedList<MumlAbstractNavigatorItem>();
 			Node sv = (Node) view;
-			org.muml.pim.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorGroup incominglinks = new org.muml.pim.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorGroup(
-					org.muml.pim.componentinstanceconfiguration.diagram.part.Messages.NavigatorGroupName_ContinuousPortInstance_2024_incominglinks,
+			ComponentinstanceconfigurationNavigatorGroup incominglinks = new ComponentinstanceconfigurationNavigatorGroup(
+					Messages.NavigatorGroupName_ContinuousPortInstance_2024_incominglinks,
 					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			org.muml.pim.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorGroup outgoinglinks = new org.muml.pim.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorGroup(
-					org.muml.pim.componentinstanceconfiguration.diagram.part.Messages.NavigatorGroupName_ContinuousPortInstance_2024_outgoinglinks,
+			ComponentinstanceconfigurationNavigatorGroup outgoinglinks = new ComponentinstanceconfigurationNavigatorGroup(
+					Messages.NavigatorGroupName_ContinuousPortInstance_2024_outgoinglinks,
 					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
 			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.AssemblyConnectorInstanceEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(AssemblyConnectorInstanceEditPart.VISUAL_ID));
 			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
 			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.AssemblyConnectorInstanceEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(AssemblyConnectorInstanceEditPart.VISUAL_ID));
 			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
 			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DelegationConnectorInstanceEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(DelegationConnectorInstanceEditPart.VISUAL_ID));
 			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
 			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DelegationConnectorInstanceEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(DelegationConnectorInstanceEditPart.VISUAL_ID));
 			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
 			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.CoordinationProtocolInstancePortInstancesEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(CoordinationProtocolInstancePortInstancesEditPart.VISUAL_ID));
 			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
 			if (!incominglinks.isEmpty()) {
 				result.add(incominglinks);
@@ -530,17 +470,15 @@ public class ComponentinstanceconfigurationNavigatorContentProvider implements I
 			return result.toArray();
 		}
 
-		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.CoordinationProtocolInstanceEditPart.VISUAL_ID: {
-			LinkedList<org.muml.pim.componentinstanceconfiguration.diagram.navigator.MumlAbstractNavigatorItem> result = new LinkedList<org.muml.pim.componentinstanceconfiguration.diagram.navigator.MumlAbstractNavigatorItem>();
+		case CoordinationProtocolInstanceEditPart.VISUAL_ID: {
+			LinkedList<MumlAbstractNavigatorItem> result = new LinkedList<MumlAbstractNavigatorItem>();
 			Node sv = (Node) view;
-			org.muml.pim.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorGroup outgoinglinks = new org.muml.pim.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorGroup(
-					org.muml.pim.componentinstanceconfiguration.diagram.part.Messages.NavigatorGroupName_CoordinationProtocolInstance_2025_outgoinglinks,
+			ComponentinstanceconfigurationNavigatorGroup outgoinglinks = new ComponentinstanceconfigurationNavigatorGroup(
+					Messages.NavigatorGroupName_CoordinationProtocolInstance_2025_outgoinglinks,
 					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
 			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.CoordinationProtocolInstancePortInstancesEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(CoordinationProtocolInstancePortInstancesEditPart.VISUAL_ID));
 			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
 			if (!outgoinglinks.isEmpty()) {
 				result.add(outgoinglinks);
@@ -548,137 +486,95 @@ public class ComponentinstanceconfigurationNavigatorContentProvider implements I
 			return result.toArray();
 		}
 
-		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.ComponentInstanceConfigurationEditPart.VISUAL_ID: {
-			LinkedList<org.muml.pim.componentinstanceconfiguration.diagram.navigator.MumlAbstractNavigatorItem> result = new LinkedList<org.muml.pim.componentinstanceconfiguration.diagram.navigator.MumlAbstractNavigatorItem>();
+		case ComponentInstanceConfigurationEditPart.VISUAL_ID: {
+			LinkedList<MumlAbstractNavigatorItem> result = new LinkedList<MumlAbstractNavigatorItem>();
 			Node sv = (Node) view;
 			Collection<View> connectedViews;
-			connectedViews = getChildrenByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.ComponentInstanceConfigurationComponentInstanceConfigurationContentsCompartmentEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(Collections.singleton(sv), MumlVisualIDRegistry.getType(
+					ComponentInstanceConfigurationComponentInstanceConfigurationContentsCompartmentEditPart.VISUAL_ID));
 			connectedViews = getChildrenByType(connectedViews,
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.AtomicComponentInstance2EditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(AtomicComponentInstance2EditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getChildrenByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.ComponentInstanceConfigurationComponentInstanceConfigurationContentsCompartmentEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(Collections.singleton(sv), MumlVisualIDRegistry.getType(
+					ComponentInstanceConfigurationComponentInstanceConfigurationContentsCompartmentEditPart.VISUAL_ID));
 			connectedViews = getChildrenByType(connectedViews,
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.StructuredComponentInstance2EditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(StructuredComponentInstance2EditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getChildrenByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.ComponentInstanceConfigurationComponentInstanceConfigurationContentsCompartmentEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(Collections.singleton(sv), MumlVisualIDRegistry.getType(
+					ComponentInstanceConfigurationComponentInstanceConfigurationContentsCompartmentEditPart.VISUAL_ID));
 			connectedViews = getChildrenByType(connectedViews,
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.CoordinationProtocolInstance2EditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(CoordinationProtocolInstance2EditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			return result.toArray();
 		}
 
-		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.AtomicComponentInstance2EditPart.VISUAL_ID: {
-			LinkedList<org.muml.pim.componentinstanceconfiguration.diagram.navigator.MumlAbstractNavigatorItem> result = new LinkedList<org.muml.pim.componentinstanceconfiguration.diagram.navigator.MumlAbstractNavigatorItem>();
+		case AtomicComponentInstance2EditPart.VISUAL_ID: {
+			LinkedList<MumlAbstractNavigatorItem> result = new LinkedList<MumlAbstractNavigatorItem>();
 			Node sv = (Node) view;
 			Collection<View> connectedViews;
 			connectedViews = getChildrenByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.HybridPortInstance2EditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(HybridPortInstance2EditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			connectedViews = getChildrenByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteSinglePortInstance3EditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(DiscreteSinglePortInstance3EditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			connectedViews = getChildrenByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteMultiPortInstance2EditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(DiscreteMultiPortInstance2EditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			connectedViews = getChildrenByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.ContinuousPortInstance2EditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(ContinuousPortInstance2EditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			return result.toArray();
 		}
 
-		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.StructuredComponentInstance2EditPart.VISUAL_ID: {
-			LinkedList<org.muml.pim.componentinstanceconfiguration.diagram.navigator.MumlAbstractNavigatorItem> result = new LinkedList<org.muml.pim.componentinstanceconfiguration.diagram.navigator.MumlAbstractNavigatorItem>();
+		case StructuredComponentInstance2EditPart.VISUAL_ID: {
+			LinkedList<MumlAbstractNavigatorItem> result = new LinkedList<MumlAbstractNavigatorItem>();
 			Node sv = (Node) view;
 			Collection<View> connectedViews;
 			connectedViews = getChildrenByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.HybridPortInstance2EditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(HybridPortInstance2EditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			connectedViews = getChildrenByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteSinglePortInstance3EditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(DiscreteSinglePortInstance3EditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			connectedViews = getChildrenByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteMultiPortInstance2EditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(DiscreteMultiPortInstance2EditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			connectedViews = getChildrenByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.ContinuousPortInstance2EditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(ContinuousPortInstance2EditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getChildrenByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.StructuredComponentInstanceComponentInstanceContentsCompartment2EditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(Collections.singleton(sv), MumlVisualIDRegistry
+					.getType(StructuredComponentInstanceComponentInstanceContentsCompartment2EditPart.VISUAL_ID));
 			connectedViews = getChildrenByType(connectedViews,
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.ComponentInstanceConfigurationEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(ComponentInstanceConfigurationEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			return result.toArray();
 		}
 
-		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteSinglePortInstance2EditPart.VISUAL_ID: {
-			LinkedList<org.muml.pim.componentinstanceconfiguration.diagram.navigator.MumlAbstractNavigatorItem> result = new LinkedList<org.muml.pim.componentinstanceconfiguration.diagram.navigator.MumlAbstractNavigatorItem>();
+		case DiscreteSinglePortInstance2EditPart.VISUAL_ID: {
+			LinkedList<MumlAbstractNavigatorItem> result = new LinkedList<MumlAbstractNavigatorItem>();
 			Node sv = (Node) view;
-			org.muml.pim.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorGroup incominglinks = new org.muml.pim.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorGroup(
-					org.muml.pim.componentinstanceconfiguration.diagram.part.Messages.NavigatorGroupName_DiscreteSinglePortInstance_3026_incominglinks,
+			ComponentinstanceconfigurationNavigatorGroup incominglinks = new ComponentinstanceconfigurationNavigatorGroup(
+					Messages.NavigatorGroupName_DiscreteSinglePortInstance_3026_incominglinks,
 					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			org.muml.pim.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorGroup outgoinglinks = new org.muml.pim.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorGroup(
-					org.muml.pim.componentinstanceconfiguration.diagram.part.Messages.NavigatorGroupName_DiscreteSinglePortInstance_3026_outgoinglinks,
+			ComponentinstanceconfigurationNavigatorGroup outgoinglinks = new ComponentinstanceconfigurationNavigatorGroup(
+					Messages.NavigatorGroupName_DiscreteSinglePortInstance_3026_outgoinglinks,
 					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
 			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.AssemblyConnectorInstanceEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(AssemblyConnectorInstanceEditPart.VISUAL_ID));
 			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
 			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.AssemblyConnectorInstanceEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(AssemblyConnectorInstanceEditPart.VISUAL_ID));
 			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
 			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DelegationConnectorInstanceEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(DelegationConnectorInstanceEditPart.VISUAL_ID));
 			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
 			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DelegationConnectorInstanceEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(DelegationConnectorInstanceEditPart.VISUAL_ID));
 			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
 			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.CoordinationProtocolInstancePortInstancesEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(CoordinationProtocolInstancePortInstancesEditPart.VISUAL_ID));
 			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
 			if (!incominglinks.isEmpty()) {
 				result.add(incominglinks);
@@ -689,40 +585,30 @@ public class ComponentinstanceconfigurationNavigatorContentProvider implements I
 			return result.toArray();
 		}
 
-		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.HybridPortInstance2EditPart.VISUAL_ID: {
-			LinkedList<org.muml.pim.componentinstanceconfiguration.diagram.navigator.MumlAbstractNavigatorItem> result = new LinkedList<org.muml.pim.componentinstanceconfiguration.diagram.navigator.MumlAbstractNavigatorItem>();
+		case HybridPortInstance2EditPart.VISUAL_ID: {
+			LinkedList<MumlAbstractNavigatorItem> result = new LinkedList<MumlAbstractNavigatorItem>();
 			Node sv = (Node) view;
-			org.muml.pim.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorGroup incominglinks = new org.muml.pim.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorGroup(
-					org.muml.pim.componentinstanceconfiguration.diagram.part.Messages.NavigatorGroupName_HybridPortInstance_3031_incominglinks,
+			ComponentinstanceconfigurationNavigatorGroup incominglinks = new ComponentinstanceconfigurationNavigatorGroup(
+					Messages.NavigatorGroupName_HybridPortInstance_3031_incominglinks,
 					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			org.muml.pim.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorGroup outgoinglinks = new org.muml.pim.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorGroup(
-					org.muml.pim.componentinstanceconfiguration.diagram.part.Messages.NavigatorGroupName_HybridPortInstance_3031_outgoinglinks,
+			ComponentinstanceconfigurationNavigatorGroup outgoinglinks = new ComponentinstanceconfigurationNavigatorGroup(
+					Messages.NavigatorGroupName_HybridPortInstance_3031_outgoinglinks,
 					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
 			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.AssemblyConnectorInstanceEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(AssemblyConnectorInstanceEditPart.VISUAL_ID));
 			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
 			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.AssemblyConnectorInstanceEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(AssemblyConnectorInstanceEditPart.VISUAL_ID));
 			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
 			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DelegationConnectorInstanceEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(DelegationConnectorInstanceEditPart.VISUAL_ID));
 			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
 			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DelegationConnectorInstanceEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(DelegationConnectorInstanceEditPart.VISUAL_ID));
 			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
 			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.CoordinationProtocolInstancePortInstancesEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(CoordinationProtocolInstancePortInstancesEditPart.VISUAL_ID));
 			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
 			if (!incominglinks.isEmpty()) {
 				result.add(incominglinks);
@@ -733,40 +619,30 @@ public class ComponentinstanceconfigurationNavigatorContentProvider implements I
 			return result.toArray();
 		}
 
-		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteSinglePortInstance3EditPart.VISUAL_ID: {
-			LinkedList<org.muml.pim.componentinstanceconfiguration.diagram.navigator.MumlAbstractNavigatorItem> result = new LinkedList<org.muml.pim.componentinstanceconfiguration.diagram.navigator.MumlAbstractNavigatorItem>();
+		case DiscreteSinglePortInstance3EditPart.VISUAL_ID: {
+			LinkedList<MumlAbstractNavigatorItem> result = new LinkedList<MumlAbstractNavigatorItem>();
 			Node sv = (Node) view;
-			org.muml.pim.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorGroup incominglinks = new org.muml.pim.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorGroup(
-					org.muml.pim.componentinstanceconfiguration.diagram.part.Messages.NavigatorGroupName_DiscreteSinglePortInstance_3032_incominglinks,
+			ComponentinstanceconfigurationNavigatorGroup incominglinks = new ComponentinstanceconfigurationNavigatorGroup(
+					Messages.NavigatorGroupName_DiscreteSinglePortInstance_3032_incominglinks,
 					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			org.muml.pim.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorGroup outgoinglinks = new org.muml.pim.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorGroup(
-					org.muml.pim.componentinstanceconfiguration.diagram.part.Messages.NavigatorGroupName_DiscreteSinglePortInstance_3032_outgoinglinks,
+			ComponentinstanceconfigurationNavigatorGroup outgoinglinks = new ComponentinstanceconfigurationNavigatorGroup(
+					Messages.NavigatorGroupName_DiscreteSinglePortInstance_3032_outgoinglinks,
 					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
 			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.AssemblyConnectorInstanceEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(AssemblyConnectorInstanceEditPart.VISUAL_ID));
 			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
 			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.AssemblyConnectorInstanceEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(AssemblyConnectorInstanceEditPart.VISUAL_ID));
 			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
 			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DelegationConnectorInstanceEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(DelegationConnectorInstanceEditPart.VISUAL_ID));
 			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
 			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DelegationConnectorInstanceEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(DelegationConnectorInstanceEditPart.VISUAL_ID));
 			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
 			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.CoordinationProtocolInstancePortInstancesEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(CoordinationProtocolInstancePortInstancesEditPart.VISUAL_ID));
 			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
 			if (!incominglinks.isEmpty()) {
 				result.add(incominglinks);
@@ -777,49 +653,35 @@ public class ComponentinstanceconfigurationNavigatorContentProvider implements I
 			return result.toArray();
 		}
 
-		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteMultiPortInstance2EditPart.VISUAL_ID: {
-			LinkedList<org.muml.pim.componentinstanceconfiguration.diagram.navigator.MumlAbstractNavigatorItem> result = new LinkedList<org.muml.pim.componentinstanceconfiguration.diagram.navigator.MumlAbstractNavigatorItem>();
+		case DiscreteMultiPortInstance2EditPart.VISUAL_ID: {
+			LinkedList<MumlAbstractNavigatorItem> result = new LinkedList<MumlAbstractNavigatorItem>();
 			Node sv = (Node) view;
-			org.muml.pim.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorGroup incominglinks = new org.muml.pim.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorGroup(
-					org.muml.pim.componentinstanceconfiguration.diagram.part.Messages.NavigatorGroupName_DiscreteMultiPortInstance_3033_incominglinks,
+			ComponentinstanceconfigurationNavigatorGroup incominglinks = new ComponentinstanceconfigurationNavigatorGroup(
+					Messages.NavigatorGroupName_DiscreteMultiPortInstance_3033_incominglinks,
 					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			org.muml.pim.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorGroup outgoinglinks = new org.muml.pim.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorGroup(
-					org.muml.pim.componentinstanceconfiguration.diagram.part.Messages.NavigatorGroupName_DiscreteMultiPortInstance_3033_outgoinglinks,
+			ComponentinstanceconfigurationNavigatorGroup outgoinglinks = new ComponentinstanceconfigurationNavigatorGroup(
+					Messages.NavigatorGroupName_DiscreteMultiPortInstance_3033_outgoinglinks,
 					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
-			connectedViews = getChildrenByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartment2EditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(Collections.singleton(sv), MumlVisualIDRegistry
+					.getType(DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartment2EditPart.VISUAL_ID));
 			connectedViews = getChildrenByType(connectedViews,
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteSinglePortInstance2EditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(DiscreteSinglePortInstance2EditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.AssemblyConnectorInstanceEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(AssemblyConnectorInstanceEditPart.VISUAL_ID));
 			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
 			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.AssemblyConnectorInstanceEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(AssemblyConnectorInstanceEditPart.VISUAL_ID));
 			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
 			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DelegationConnectorInstanceEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(DelegationConnectorInstanceEditPart.VISUAL_ID));
 			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
 			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DelegationConnectorInstanceEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(DelegationConnectorInstanceEditPart.VISUAL_ID));
 			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
 			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.CoordinationProtocolInstancePortInstancesEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(CoordinationProtocolInstancePortInstancesEditPart.VISUAL_ID));
 			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
 			if (!incominglinks.isEmpty()) {
 				result.add(incominglinks);
@@ -830,40 +692,30 @@ public class ComponentinstanceconfigurationNavigatorContentProvider implements I
 			return result.toArray();
 		}
 
-		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.ContinuousPortInstance2EditPart.VISUAL_ID: {
-			LinkedList<org.muml.pim.componentinstanceconfiguration.diagram.navigator.MumlAbstractNavigatorItem> result = new LinkedList<org.muml.pim.componentinstanceconfiguration.diagram.navigator.MumlAbstractNavigatorItem>();
+		case ContinuousPortInstance2EditPart.VISUAL_ID: {
+			LinkedList<MumlAbstractNavigatorItem> result = new LinkedList<MumlAbstractNavigatorItem>();
 			Node sv = (Node) view;
-			org.muml.pim.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorGroup incominglinks = new org.muml.pim.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorGroup(
-					org.muml.pim.componentinstanceconfiguration.diagram.part.Messages.NavigatorGroupName_ContinuousPortInstance_3034_incominglinks,
+			ComponentinstanceconfigurationNavigatorGroup incominglinks = new ComponentinstanceconfigurationNavigatorGroup(
+					Messages.NavigatorGroupName_ContinuousPortInstance_3034_incominglinks,
 					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			org.muml.pim.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorGroup outgoinglinks = new org.muml.pim.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorGroup(
-					org.muml.pim.componentinstanceconfiguration.diagram.part.Messages.NavigatorGroupName_ContinuousPortInstance_3034_outgoinglinks,
+			ComponentinstanceconfigurationNavigatorGroup outgoinglinks = new ComponentinstanceconfigurationNavigatorGroup(
+					Messages.NavigatorGroupName_ContinuousPortInstance_3034_outgoinglinks,
 					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
 			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.AssemblyConnectorInstanceEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(AssemblyConnectorInstanceEditPart.VISUAL_ID));
 			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
 			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.AssemblyConnectorInstanceEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(AssemblyConnectorInstanceEditPart.VISUAL_ID));
 			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
 			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DelegationConnectorInstanceEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(DelegationConnectorInstanceEditPart.VISUAL_ID));
 			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
 			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DelegationConnectorInstanceEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(DelegationConnectorInstanceEditPart.VISUAL_ID));
 			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
 			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.CoordinationProtocolInstancePortInstancesEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(CoordinationProtocolInstancePortInstancesEditPart.VISUAL_ID));
 			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
 			if (!incominglinks.isEmpty()) {
 				result.add(incominglinks);
@@ -874,17 +726,15 @@ public class ComponentinstanceconfigurationNavigatorContentProvider implements I
 			return result.toArray();
 		}
 
-		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.CoordinationProtocolInstance2EditPart.VISUAL_ID: {
-			LinkedList<org.muml.pim.componentinstanceconfiguration.diagram.navigator.MumlAbstractNavigatorItem> result = new LinkedList<org.muml.pim.componentinstanceconfiguration.diagram.navigator.MumlAbstractNavigatorItem>();
+		case CoordinationProtocolInstance2EditPart.VISUAL_ID: {
+			LinkedList<MumlAbstractNavigatorItem> result = new LinkedList<MumlAbstractNavigatorItem>();
 			Node sv = (Node) view;
-			org.muml.pim.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorGroup outgoinglinks = new org.muml.pim.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorGroup(
-					org.muml.pim.componentinstanceconfiguration.diagram.part.Messages.NavigatorGroupName_CoordinationProtocolInstance_3035_outgoinglinks,
+			ComponentinstanceconfigurationNavigatorGroup outgoinglinks = new ComponentinstanceconfigurationNavigatorGroup(
+					Messages.NavigatorGroupName_CoordinationProtocolInstance_3035_outgoinglinks,
 					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
 			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.CoordinationProtocolInstancePortInstancesEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(CoordinationProtocolInstancePortInstancesEditPart.VISUAL_ID));
 			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
 			if (!outgoinglinks.isEmpty()) {
 				result.add(outgoinglinks);
@@ -892,105 +742,69 @@ public class ComponentinstanceconfigurationNavigatorContentProvider implements I
 			return result.toArray();
 		}
 
-		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.AssemblyConnectorInstanceEditPart.VISUAL_ID: {
-			LinkedList<org.muml.pim.componentinstanceconfiguration.diagram.navigator.MumlAbstractNavigatorItem> result = new LinkedList<org.muml.pim.componentinstanceconfiguration.diagram.navigator.MumlAbstractNavigatorItem>();
+		case AssemblyConnectorInstanceEditPart.VISUAL_ID: {
+			LinkedList<MumlAbstractNavigatorItem> result = new LinkedList<MumlAbstractNavigatorItem>();
 			Edge sv = (Edge) view;
-			org.muml.pim.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorGroup target = new org.muml.pim.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorGroup(
-					org.muml.pim.componentinstanceconfiguration.diagram.part.Messages.NavigatorGroupName_AssemblyConnectorInstance_4001_target,
+			ComponentinstanceconfigurationNavigatorGroup target = new ComponentinstanceconfigurationNavigatorGroup(
+					Messages.NavigatorGroupName_AssemblyConnectorInstance_4001_target,
 					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			org.muml.pim.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorGroup source = new org.muml.pim.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorGroup(
-					org.muml.pim.componentinstanceconfiguration.diagram.part.Messages.NavigatorGroupName_AssemblyConnectorInstance_4001_source,
+			ComponentinstanceconfigurationNavigatorGroup source = new ComponentinstanceconfigurationNavigatorGroup(
+					Messages.NavigatorGroupName_AssemblyConnectorInstance_4001_source,
 					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.HybridPortInstanceEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(HybridPortInstanceEditPart.VISUAL_ID));
 			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteSinglePortInstanceEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(DiscreteSinglePortInstanceEditPart.VISUAL_ID));
 			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteMultiPortInstanceEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(DiscreteMultiPortInstanceEditPart.VISUAL_ID));
 			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.ContinuousPortInstanceEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(ContinuousPortInstanceEditPart.VISUAL_ID));
 			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteSinglePortInstance2EditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(DiscreteSinglePortInstance2EditPart.VISUAL_ID));
 			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.HybridPortInstance2EditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(HybridPortInstance2EditPart.VISUAL_ID));
 			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteSinglePortInstance3EditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(DiscreteSinglePortInstance3EditPart.VISUAL_ID));
 			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteMultiPortInstance2EditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(DiscreteMultiPortInstance2EditPart.VISUAL_ID));
 			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.ContinuousPortInstance2EditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(ContinuousPortInstance2EditPart.VISUAL_ID));
 			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.HybridPortInstanceEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(HybridPortInstanceEditPart.VISUAL_ID));
 			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteSinglePortInstanceEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(DiscreteSinglePortInstanceEditPart.VISUAL_ID));
 			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteMultiPortInstanceEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(DiscreteMultiPortInstanceEditPart.VISUAL_ID));
 			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.ContinuousPortInstanceEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(ContinuousPortInstanceEditPart.VISUAL_ID));
 			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteSinglePortInstance2EditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(DiscreteSinglePortInstance2EditPart.VISUAL_ID));
 			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.HybridPortInstance2EditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(HybridPortInstance2EditPart.VISUAL_ID));
 			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteSinglePortInstance3EditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(DiscreteSinglePortInstance3EditPart.VISUAL_ID));
 			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteMultiPortInstance2EditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(DiscreteMultiPortInstance2EditPart.VISUAL_ID));
 			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.ContinuousPortInstance2EditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(ContinuousPortInstance2EditPart.VISUAL_ID));
 			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			if (!target.isEmpty()) {
 				result.add(target);
@@ -1001,105 +815,69 @@ public class ComponentinstanceconfigurationNavigatorContentProvider implements I
 			return result.toArray();
 		}
 
-		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DelegationConnectorInstanceEditPart.VISUAL_ID: {
-			LinkedList<org.muml.pim.componentinstanceconfiguration.diagram.navigator.MumlAbstractNavigatorItem> result = new LinkedList<org.muml.pim.componentinstanceconfiguration.diagram.navigator.MumlAbstractNavigatorItem>();
+		case DelegationConnectorInstanceEditPart.VISUAL_ID: {
+			LinkedList<MumlAbstractNavigatorItem> result = new LinkedList<MumlAbstractNavigatorItem>();
 			Edge sv = (Edge) view;
-			org.muml.pim.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorGroup target = new org.muml.pim.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorGroup(
-					org.muml.pim.componentinstanceconfiguration.diagram.part.Messages.NavigatorGroupName_DelegationConnectorInstance_4002_target,
+			ComponentinstanceconfigurationNavigatorGroup target = new ComponentinstanceconfigurationNavigatorGroup(
+					Messages.NavigatorGroupName_DelegationConnectorInstance_4002_target,
 					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			org.muml.pim.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorGroup source = new org.muml.pim.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorGroup(
-					org.muml.pim.componentinstanceconfiguration.diagram.part.Messages.NavigatorGroupName_DelegationConnectorInstance_4002_source,
+			ComponentinstanceconfigurationNavigatorGroup source = new ComponentinstanceconfigurationNavigatorGroup(
+					Messages.NavigatorGroupName_DelegationConnectorInstance_4002_source,
 					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.HybridPortInstanceEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(HybridPortInstanceEditPart.VISUAL_ID));
 			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteSinglePortInstanceEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(DiscreteSinglePortInstanceEditPart.VISUAL_ID));
 			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteMultiPortInstanceEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(DiscreteMultiPortInstanceEditPart.VISUAL_ID));
 			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.ContinuousPortInstanceEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(ContinuousPortInstanceEditPart.VISUAL_ID));
 			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteSinglePortInstance2EditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(DiscreteSinglePortInstance2EditPart.VISUAL_ID));
 			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.HybridPortInstance2EditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(HybridPortInstance2EditPart.VISUAL_ID));
 			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteSinglePortInstance3EditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(DiscreteSinglePortInstance3EditPart.VISUAL_ID));
 			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteMultiPortInstance2EditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(DiscreteMultiPortInstance2EditPart.VISUAL_ID));
 			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.ContinuousPortInstance2EditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(ContinuousPortInstance2EditPart.VISUAL_ID));
 			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.HybridPortInstanceEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(HybridPortInstanceEditPart.VISUAL_ID));
 			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteSinglePortInstanceEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(DiscreteSinglePortInstanceEditPart.VISUAL_ID));
 			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteMultiPortInstanceEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(DiscreteMultiPortInstanceEditPart.VISUAL_ID));
 			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.ContinuousPortInstanceEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(ContinuousPortInstanceEditPart.VISUAL_ID));
 			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteSinglePortInstance2EditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(DiscreteSinglePortInstance2EditPart.VISUAL_ID));
 			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.HybridPortInstance2EditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(HybridPortInstance2EditPart.VISUAL_ID));
 			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteSinglePortInstance3EditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(DiscreteSinglePortInstance3EditPart.VISUAL_ID));
 			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteMultiPortInstance2EditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(DiscreteMultiPortInstance2EditPart.VISUAL_ID));
 			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.ContinuousPortInstance2EditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(ContinuousPortInstance2EditPart.VISUAL_ID));
 			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			if (!target.isEmpty()) {
 				result.add(target);
@@ -1110,70 +888,48 @@ public class ComponentinstanceconfigurationNavigatorContentProvider implements I
 			return result.toArray();
 		}
 
-		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.CoordinationProtocolInstancePortInstancesEditPart.VISUAL_ID: {
-			LinkedList<org.muml.pim.componentinstanceconfiguration.diagram.navigator.MumlAbstractNavigatorItem> result = new LinkedList<org.muml.pim.componentinstanceconfiguration.diagram.navigator.MumlAbstractNavigatorItem>();
+		case CoordinationProtocolInstancePortInstancesEditPart.VISUAL_ID: {
+			LinkedList<MumlAbstractNavigatorItem> result = new LinkedList<MumlAbstractNavigatorItem>();
 			Edge sv = (Edge) view;
-			org.muml.pim.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorGroup target = new org.muml.pim.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorGroup(
-					org.muml.pim.componentinstanceconfiguration.diagram.part.Messages.NavigatorGroupName_CoordinationProtocolInstancePortInstances_4003_target,
+			ComponentinstanceconfigurationNavigatorGroup target = new ComponentinstanceconfigurationNavigatorGroup(
+					Messages.NavigatorGroupName_CoordinationProtocolInstancePortInstances_4003_target,
 					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			org.muml.pim.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorGroup source = new org.muml.pim.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorGroup(
-					org.muml.pim.componentinstanceconfiguration.diagram.part.Messages.NavigatorGroupName_CoordinationProtocolInstancePortInstances_4003_source,
+			ComponentinstanceconfigurationNavigatorGroup source = new ComponentinstanceconfigurationNavigatorGroup(
+					Messages.NavigatorGroupName_CoordinationProtocolInstancePortInstances_4003_source,
 					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.HybridPortInstanceEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(HybridPortInstanceEditPart.VISUAL_ID));
 			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteSinglePortInstanceEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(DiscreteSinglePortInstanceEditPart.VISUAL_ID));
 			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteMultiPortInstanceEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(DiscreteMultiPortInstanceEditPart.VISUAL_ID));
 			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.ContinuousPortInstanceEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(ContinuousPortInstanceEditPart.VISUAL_ID));
 			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteSinglePortInstance2EditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(DiscreteSinglePortInstance2EditPart.VISUAL_ID));
 			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.HybridPortInstance2EditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(HybridPortInstance2EditPart.VISUAL_ID));
 			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteSinglePortInstance3EditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(DiscreteSinglePortInstance3EditPart.VISUAL_ID));
 			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteMultiPortInstance2EditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(DiscreteMultiPortInstance2EditPart.VISUAL_ID));
 			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.ContinuousPortInstance2EditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(ContinuousPortInstance2EditPart.VISUAL_ID));
 			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.CoordinationProtocolInstanceEditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(CoordinationProtocolInstanceEditPart.VISUAL_ID));
 			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getType(
-									org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.CoordinationProtocolInstance2EditPart.VISUAL_ID));
+					MumlVisualIDRegistry.getType(CoordinationProtocolInstance2EditPart.VISUAL_ID));
 			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			if (!target.isEmpty()) {
 				result.add(target);
@@ -1277,22 +1033,18 @@ public class ComponentinstanceconfigurationNavigatorContentProvider implements I
 	 * @generated
 	 */
 	private boolean isOwnView(View view) {
-		return org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.ComponentInstanceConfigurationDiagramEditPart.MODEL_ID
-				.equals(org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-						.getModelID(view));
+		return ComponentInstanceConfigurationDiagramEditPart.MODEL_ID.equals(MumlVisualIDRegistry.getModelID(view));
 	}
 
 	/**
 	 * @generated
 	 */
-	private Collection<org.muml.pim.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorItem> createNavigatorItems(
-			Collection<View> views, Object parent, boolean isLeafs) {
-		ArrayList<org.muml.pim.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorItem> result = new ArrayList<org.muml.pim.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorItem>(
+	private Collection<ComponentinstanceconfigurationNavigatorItem> createNavigatorItems(Collection<View> views,
+			Object parent, boolean isLeafs) {
+		ArrayList<ComponentinstanceconfigurationNavigatorItem> result = new ArrayList<ComponentinstanceconfigurationNavigatorItem>(
 				views.size());
 		for (View nextView : views) {
-			result.add(
-					new org.muml.pim.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorItem(
-							nextView, parent, isLeafs));
+			result.add(new ComponentinstanceconfigurationNavigatorItem(nextView, parent, isLeafs));
 		}
 		return result;
 	}
@@ -1301,8 +1053,8 @@ public class ComponentinstanceconfigurationNavigatorContentProvider implements I
 	 * @generated
 	 */
 	public Object getParent(Object element) {
-		if (element instanceof org.muml.pim.componentinstanceconfiguration.diagram.navigator.MumlAbstractNavigatorItem) {
-			org.muml.pim.componentinstanceconfiguration.diagram.navigator.MumlAbstractNavigatorItem abstractNavigatorItem = (org.muml.pim.componentinstanceconfiguration.diagram.navigator.MumlAbstractNavigatorItem) element;
+		if (element instanceof MumlAbstractNavigatorItem) {
+			MumlAbstractNavigatorItem abstractNavigatorItem = (MumlAbstractNavigatorItem) element;
 			return abstractNavigatorItem.getParent();
 		}
 		return null;

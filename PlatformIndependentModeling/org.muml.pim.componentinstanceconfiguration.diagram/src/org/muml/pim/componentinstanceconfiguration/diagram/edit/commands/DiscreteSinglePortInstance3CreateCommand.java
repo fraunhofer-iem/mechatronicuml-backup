@@ -23,6 +23,10 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.pim.componentinstanceconfiguration.diagram.providers.ElementInitializers;
+import org.muml.pim.instance.ComponentInstance;
+import org.muml.pim.instance.DiscreteSinglePortInstance;
+import org.muml.pim.instance.InstanceFactory;
 
 /**
  * @generated
@@ -60,14 +64,12 @@ public class DiscreteSinglePortInstance3CreateCommand extends EditElementCommand
 	 * @generated
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-		org.muml.pim.instance.DiscreteSinglePortInstance newElement = org.muml.pim.instance.InstanceFactory.eINSTANCE
-				.createDiscreteSinglePortInstance();
+		DiscreteSinglePortInstance newElement = InstanceFactory.eINSTANCE.createDiscreteSinglePortInstance();
 
-		org.muml.pim.instance.ComponentInstance owner = (org.muml.pim.instance.ComponentInstance) getElementToEdit();
+		ComponentInstance owner = (ComponentInstance) getElementToEdit();
 		owner.getPortInstances().add(newElement);
 
-		org.muml.pim.componentinstanceconfiguration.diagram.providers.ElementInitializers.getInstance()
-				.init_DiscreteSinglePortInstance_3032(newElement);
+		ElementInitializers.getInstance().init_DiscreteSinglePortInstance_3032(newElement);
 
 		doConfigure(newElement, monitor, info);
 
@@ -76,10 +78,10 @@ public class DiscreteSinglePortInstance3CreateCommand extends EditElementCommand
 	}
 
 	/**
-	 * @generated
-	 */
-	protected void doConfigure(org.muml.pim.instance.DiscreteSinglePortInstance newElement,
-			IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
+	* @generated
+	*/
+	protected void doConfigure(DiscreteSinglePortInstance newElement, IProgressMonitor monitor, IAdaptable info)
+			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest()).getElementType();
 		ConfigureRequest configureRequest = new ConfigureRequest(getEditingDomain(), newElement, elementType);
 		configureRequest.setClientContext(((CreateElementRequest) getRequest()).getClientContext());

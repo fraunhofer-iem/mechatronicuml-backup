@@ -31,6 +31,8 @@ import org.eclipse.gmf.runtime.common.ui.services.parser.ParserEditStatus;
 import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand;
 import org.eclipse.gmf.tooling.runtime.parsers.ExpressionLabelParserBase;
 import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
+import org.muml.pim.componentinstanceconfiguration.diagram.expressions.MumlOCLFactory;
+import org.muml.pim.instance.InstancePackage;
 
 /**
  * @generated
@@ -47,11 +49,7 @@ public class DiscreteSinglePortInstanceLabelExpressionLabelParser5044 extends Ex
 	 */
 	@Override
 	protected String getExpressionBody() {
-		return org.muml.pim.componentinstanceconfiguration.diagram.expressions.MumlOCLFactory
-				.getExpression(2,
-						org.muml.pim.instance.InstancePackage.eINSTANCE.getDiscreteSinglePortInstance(),
-						null)
-				.body();
+		return MumlOCLFactory.getExpression(2, InstancePackage.eINSTANCE.getDiscreteSinglePortInstance(), null).body();
 	}
 
 	/**

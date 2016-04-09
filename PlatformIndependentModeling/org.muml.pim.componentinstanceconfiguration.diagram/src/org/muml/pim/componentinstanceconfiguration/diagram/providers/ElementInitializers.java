@@ -12,6 +12,20 @@
  */
 package org.muml.pim.componentinstanceconfiguration.diagram.providers;
 
+import org.muml.pim.componentinstanceconfiguration.diagram.expressions.MumlOCLFactory;
+import org.muml.pim.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin;
+import org.muml.pim.instance.AtomicComponentInstance;
+import org.muml.pim.instance.ComponentInstance;
+import org.muml.pim.instance.ComponentInstanceConfiguration;
+import org.muml.pim.instance.ContinuousPortInstance;
+import org.muml.pim.instance.CoordinationProtocolInstance;
+import org.muml.pim.instance.DiscreteMultiPortInstance;
+import org.muml.pim.instance.DiscreteSinglePortInstance;
+import org.muml.pim.instance.HybridPortInstance;
+import org.muml.pim.instance.InstanceFactory;
+import org.muml.pim.instance.InstancePackage;
+import org.muml.pim.instance.StructuredComponentInstance;
+
 /**
  * @generated
  */
@@ -24,297 +38,254 @@ public class ElementInitializers {
 	/**
 	* @generated
 	*/
-	public void init_HybridPortInstance_2021(org.muml.pim.instance.HybridPortInstance instance) {
+	public void init_HybridPortInstance_2021(HybridPortInstance instance) {
 		try {
-			Object value_0 = org.muml.pim.componentinstanceconfiguration.diagram.expressions.MumlOCLFactory
-					.getExpression(14,
-							org.muml.pim.instance.InstancePackage.eINSTANCE.getHybridPortInstance(),
-							null)
+			Object value_0 = MumlOCLFactory.getExpression(14, InstancePackage.eINSTANCE.getHybridPortInstance(), null)
 					.evaluate(instance);
 			instance.setName((String) value_0);
 		} catch (RuntimeException e) {
-			org.muml.pim.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin
-					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
+			ComponentinstanceconfigurationDiagramEditorPlugin.getInstance().logError("Element initialization failed", //$NON-NLS-1$
+					e);
 		}
 	}
 
 	/**
 	* @generated
 	*/
-	public void init_DiscreteSinglePortInstance_2022(
-			org.muml.pim.instance.DiscreteSinglePortInstance instance) {
+	public void init_DiscreteSinglePortInstance_2022(DiscreteSinglePortInstance instance) {
 		try {
-			Object value_0 = org.muml.pim.componentinstanceconfiguration.diagram.expressions.MumlOCLFactory
-					.getExpression(15, org.muml.pim.instance.InstancePackage.eINSTANCE
-							.getDiscreteSinglePortInstance(), null)
+			Object value_0 = MumlOCLFactory
+					.getExpression(15, InstancePackage.eINSTANCE.getDiscreteSinglePortInstance(), null)
 					.evaluate(instance);
 			instance.setName((String) value_0);
 		} catch (RuntimeException e) {
-			org.muml.pim.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin
-					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
+			ComponentinstanceconfigurationDiagramEditorPlugin.getInstance().logError("Element initialization failed", //$NON-NLS-1$
+					e);
 		}
 	}
 
 	/**
 	* @generated
 	*/
-	public void init_DiscreteMultiPortInstance_2023(
-			org.muml.pim.instance.DiscreteMultiPortInstance instance) {
+	public void init_DiscreteMultiPortInstance_2023(DiscreteMultiPortInstance instance) {
 		try {
-			Object value_0 = org.muml.pim.componentinstanceconfiguration.diagram.expressions.MumlOCLFactory
-					.getExpression(16, org.muml.pim.instance.InstancePackage.eINSTANCE
-							.getDiscreteMultiPortInstance(), null)
+			Object value_0 = MumlOCLFactory
+					.getExpression(16, InstancePackage.eINSTANCE.getDiscreteMultiPortInstance(), null)
 					.evaluate(instance);
 			instance.setName((String) value_0);
 		} catch (RuntimeException e) {
-			org.muml.pim.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin
-					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
+			ComponentinstanceconfigurationDiagramEditorPlugin.getInstance().logError("Element initialization failed", //$NON-NLS-1$
+					e);
 		}
 	}
 
 	/**
 	* @generated
 	*/
-	public void init_ContinuousPortInstance_2024(
-			org.muml.pim.instance.ContinuousPortInstance instance) {
+	public void init_ContinuousPortInstance_2024(ContinuousPortInstance instance) {
 		try {
-			Object value_0 = org.muml.pim.componentinstanceconfiguration.diagram.expressions.MumlOCLFactory
-					.getExpression(17,
-							org.muml.pim.instance.InstancePackage.eINSTANCE.getContinuousPortInstance(),
-							null)
-					.evaluate(instance);
+			Object value_0 = MumlOCLFactory
+					.getExpression(17, InstancePackage.eINSTANCE.getContinuousPortInstance(), null).evaluate(instance);
 			instance.setName((String) value_0);
 		} catch (RuntimeException e) {
-			org.muml.pim.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin
-					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
+			ComponentinstanceconfigurationDiagramEditorPlugin.getInstance().logError("Element initialization failed", //$NON-NLS-1$
+					e);
 		}
 	}
 
 	/**
 	* @generated
 	*/
-	public void init_AtomicComponentInstance_2016(
-			org.muml.pim.instance.AtomicComponentInstance instance) {
+	public void init_AtomicComponentInstance_2016(AtomicComponentInstance instance) {
 		try {
-			Object value_0 = org.muml.pim.componentinstanceconfiguration.diagram.expressions.MumlOCLFactory
-					.getExpression(18, org.muml.pim.instance.InstancePackage.eINSTANCE
-							.getAtomicComponentInstance(), null)
-					.evaluate(instance);
+			Object value_0 = MumlOCLFactory
+					.getExpression(18, InstancePackage.eINSTANCE.getAtomicComponentInstance(), null).evaluate(instance);
 			instance.setName((String) value_0);
 		} catch (RuntimeException e) {
-			org.muml.pim.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin
-					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
+			ComponentinstanceconfigurationDiagramEditorPlugin.getInstance().logError("Element initialization failed", //$NON-NLS-1$
+					e);
 		}
 	}
 
 	/**
-	 * @generated
-	 */
-	public void init_StructuredComponentInstance_2015(
-			org.muml.pim.instance.StructuredComponentInstance instance) {
+	* @generated
+	*/
+	public void init_StructuredComponentInstance_2015(StructuredComponentInstance instance) {
 		try {
-			org.muml.pim.instance.ComponentInstanceConfiguration newInstance_0_0 = org.muml.pim.instance.InstanceFactory.eINSTANCE
+			ComponentInstanceConfiguration newInstance_0_0 = InstanceFactory.eINSTANCE
 					.createComponentInstanceConfiguration();
 			instance.setEmbeddedCIC(newInstance_0_0);
-			Object value_0_0_0 = org.muml.pim.componentinstanceconfiguration.diagram.expressions.MumlOCLFactory
-					.getExpression(9, org.muml.pim.instance.InstancePackage.eINSTANCE
-							.getComponentInstanceConfiguration(), null)
+			Object value_0_0_0 = MumlOCLFactory
+					.getExpression(9, InstancePackage.eINSTANCE.getComponentInstanceConfiguration(), null)
 					.evaluate(newInstance_0_0);
 			newInstance_0_0.setName((String) value_0_0_0);
 
-			Object value_1 = org.muml.pim.componentinstanceconfiguration.diagram.expressions.MumlOCLFactory
-					.getExpression(19, org.muml.pim.instance.InstancePackage.eINSTANCE
-							.getStructuredComponentInstance(), null)
+			Object value_1 = MumlOCLFactory
+					.getExpression(19, InstancePackage.eINSTANCE.getStructuredComponentInstance(), null)
 					.evaluate(instance);
 			instance.setName((String) value_1);
 		} catch (RuntimeException e) {
-			org.muml.pim.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin
-					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
+			ComponentinstanceconfigurationDiagramEditorPlugin.getInstance().logError("Element initialization failed", //$NON-NLS-1$
+					e);
 		}
 	}
 
 	/**
 	* @generated
 	*/
-	public void init_CoordinationProtocolInstance_2025(
-			org.muml.pim.instance.CoordinationProtocolInstance instance) {
+	public void init_CoordinationProtocolInstance_2025(CoordinationProtocolInstance instance) {
 		try {
-			Object value_0 = org.muml.pim.componentinstanceconfiguration.diagram.expressions.MumlOCLFactory
-					.getExpression(20, org.muml.pim.instance.InstancePackage.eINSTANCE
-							.getCoordinationProtocolInstance(), null)
+			Object value_0 = MumlOCLFactory
+					.getExpression(20, InstancePackage.eINSTANCE.getCoordinationProtocolInstance(), null)
 					.evaluate(instance);
 			instance.setName((String) value_0);
 		} catch (RuntimeException e) {
-			org.muml.pim.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin
-					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
+			ComponentinstanceconfigurationDiagramEditorPlugin.getInstance().logError("Element initialization failed", //$NON-NLS-1$
+					e);
 		}
 	}
 
 	/**
-	 * @generated
-	 */
-	public void init_DiscreteSinglePortInstance_3026(
-			org.muml.pim.instance.DiscreteSinglePortInstance instance) {
+	* @generated
+	*/
+	public void init_DiscreteSinglePortInstance_3026(DiscreteSinglePortInstance instance) {
 		try {
-			Object value_0 = org.muml.pim.componentinstanceconfiguration.diagram.expressions.MumlOCLFactory
-					.getExpression(4, org.muml.pim.instance.InstancePackage.eINSTANCE
-							.getDiscreteSinglePortInstance(), null)
+			Object value_0 = MumlOCLFactory
+					.getExpression(4, InstancePackage.eINSTANCE.getDiscreteSinglePortInstance(), null)
 					.evaluate(instance);
-			instance.setComponentInstance((org.muml.pim.instance.ComponentInstance) value_0);
-			Object value_1 = org.muml.pim.componentinstanceconfiguration.diagram.expressions.MumlOCLFactory
-					.getExpression(21, org.muml.pim.instance.InstancePackage.eINSTANCE
-							.getDiscreteSinglePortInstance(), null)
+			instance.setComponentInstance((ComponentInstance) value_0);
+			Object value_1 = MumlOCLFactory
+					.getExpression(21, InstancePackage.eINSTANCE.getDiscreteSinglePortInstance(), null)
 					.evaluate(instance);
 			instance.setName((String) value_1);
 		} catch (RuntimeException e) {
-			org.muml.pim.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin
-					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
+			ComponentinstanceconfigurationDiagramEditorPlugin.getInstance().logError("Element initialization failed", //$NON-NLS-1$
+					e);
 		}
 	}
 
 	/**
 	* @generated
 	*/
-	public void init_HybridPortInstance_3031(org.muml.pim.instance.HybridPortInstance instance) {
+	public void init_HybridPortInstance_3031(HybridPortInstance instance) {
 		try {
-			Object value_0 = org.muml.pim.componentinstanceconfiguration.diagram.expressions.MumlOCLFactory
-					.getExpression(22,
-							org.muml.pim.instance.InstancePackage.eINSTANCE.getHybridPortInstance(),
-							null)
+			Object value_0 = MumlOCLFactory.getExpression(22, InstancePackage.eINSTANCE.getHybridPortInstance(), null)
 					.evaluate(instance);
 			instance.setName((String) value_0);
 		} catch (RuntimeException e) {
-			org.muml.pim.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin
-					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
+			ComponentinstanceconfigurationDiagramEditorPlugin.getInstance().logError("Element initialization failed", //$NON-NLS-1$
+					e);
 		}
 	}
 
 	/**
 	* @generated
 	*/
-	public void init_DiscreteSinglePortInstance_3032(
-			org.muml.pim.instance.DiscreteSinglePortInstance instance) {
+	public void init_DiscreteSinglePortInstance_3032(DiscreteSinglePortInstance instance) {
 		try {
-			Object value_0 = org.muml.pim.componentinstanceconfiguration.diagram.expressions.MumlOCLFactory
-					.getExpression(23, org.muml.pim.instance.InstancePackage.eINSTANCE
-							.getDiscreteSinglePortInstance(), null)
+			Object value_0 = MumlOCLFactory
+					.getExpression(23, InstancePackage.eINSTANCE.getDiscreteSinglePortInstance(), null)
 					.evaluate(instance);
 			instance.setName((String) value_0);
 		} catch (RuntimeException e) {
-			org.muml.pim.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin
-					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
+			ComponentinstanceconfigurationDiagramEditorPlugin.getInstance().logError("Element initialization failed", //$NON-NLS-1$
+					e);
 		}
 	}
 
 	/**
 	* @generated
 	*/
-	public void init_DiscreteMultiPortInstance_3033(
-			org.muml.pim.instance.DiscreteMultiPortInstance instance) {
+	public void init_DiscreteMultiPortInstance_3033(DiscreteMultiPortInstance instance) {
 		try {
-			Object value_0 = org.muml.pim.componentinstanceconfiguration.diagram.expressions.MumlOCLFactory
-					.getExpression(24, org.muml.pim.instance.InstancePackage.eINSTANCE
-							.getDiscreteMultiPortInstance(), null)
+			Object value_0 = MumlOCLFactory
+					.getExpression(24, InstancePackage.eINSTANCE.getDiscreteMultiPortInstance(), null)
 					.evaluate(instance);
 			instance.setName((String) value_0);
 		} catch (RuntimeException e) {
-			org.muml.pim.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin
-					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
+			ComponentinstanceconfigurationDiagramEditorPlugin.getInstance().logError("Element initialization failed", //$NON-NLS-1$
+					e);
 		}
 	}
 
 	/**
 	* @generated
 	*/
-	public void init_ContinuousPortInstance_3034(
-			org.muml.pim.instance.ContinuousPortInstance instance) {
+	public void init_ContinuousPortInstance_3034(ContinuousPortInstance instance) {
 		try {
-			Object value_0 = org.muml.pim.componentinstanceconfiguration.diagram.expressions.MumlOCLFactory
-					.getExpression(25,
-							org.muml.pim.instance.InstancePackage.eINSTANCE.getContinuousPortInstance(),
-							null)
-					.evaluate(instance);
+			Object value_0 = MumlOCLFactory
+					.getExpression(25, InstancePackage.eINSTANCE.getContinuousPortInstance(), null).evaluate(instance);
 			instance.setName((String) value_0);
 		} catch (RuntimeException e) {
-			org.muml.pim.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin
-					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
+			ComponentinstanceconfigurationDiagramEditorPlugin.getInstance().logError("Element initialization failed", //$NON-NLS-1$
+					e);
 		}
 	}
 
 	/**
 	* @generated
 	*/
-	public void init_ComponentInstanceConfiguration_3023(
-			org.muml.pim.instance.ComponentInstanceConfiguration instance) {
+	public void init_ComponentInstanceConfiguration_3023(ComponentInstanceConfiguration instance) {
 		try {
-			Object value_0 = org.muml.pim.componentinstanceconfiguration.diagram.expressions.MumlOCLFactory
-					.getExpression(26, org.muml.pim.instance.InstancePackage.eINSTANCE
-							.getComponentInstanceConfiguration(), null)
+			Object value_0 = MumlOCLFactory
+					.getExpression(26, InstancePackage.eINSTANCE.getComponentInstanceConfiguration(), null)
 					.evaluate(instance);
 			instance.setName((String) value_0);
 		} catch (RuntimeException e) {
-			org.muml.pim.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin
-					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
+			ComponentinstanceconfigurationDiagramEditorPlugin.getInstance().logError("Element initialization failed", //$NON-NLS-1$
+					e);
 		}
 	}
 
 	/**
 	* @generated
 	*/
-	public void init_AtomicComponentInstance_3024(
-			org.muml.pim.instance.AtomicComponentInstance instance) {
+	public void init_AtomicComponentInstance_3024(AtomicComponentInstance instance) {
 		try {
-			Object value_0 = org.muml.pim.componentinstanceconfiguration.diagram.expressions.MumlOCLFactory
-					.getExpression(27, org.muml.pim.instance.InstancePackage.eINSTANCE
-							.getAtomicComponentInstance(), null)
-					.evaluate(instance);
+			Object value_0 = MumlOCLFactory
+					.getExpression(27, InstancePackage.eINSTANCE.getAtomicComponentInstance(), null).evaluate(instance);
 			instance.setName((String) value_0);
 		} catch (RuntimeException e) {
-			org.muml.pim.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin
-					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
+			ComponentinstanceconfigurationDiagramEditorPlugin.getInstance().logError("Element initialization failed", //$NON-NLS-1$
+					e);
 		}
 	}
 
 	/**
-	 * @generated
-	 */
-	public void init_StructuredComponentInstance_3025(
-			org.muml.pim.instance.StructuredComponentInstance instance) {
+	* @generated
+	*/
+	public void init_StructuredComponentInstance_3025(StructuredComponentInstance instance) {
 		try {
-			org.muml.pim.instance.ComponentInstanceConfiguration newInstance_0_0 = org.muml.pim.instance.InstanceFactory.eINSTANCE
+			ComponentInstanceConfiguration newInstance_0_0 = InstanceFactory.eINSTANCE
 					.createComponentInstanceConfiguration();
 			instance.setEmbeddedCIC(newInstance_0_0);
-			Object value_0_0_0 = org.muml.pim.componentinstanceconfiguration.diagram.expressions.MumlOCLFactory
-					.getExpression(9, org.muml.pim.instance.InstancePackage.eINSTANCE
-							.getComponentInstanceConfiguration(), null)
+			Object value_0_0_0 = MumlOCLFactory
+					.getExpression(9, InstancePackage.eINSTANCE.getComponentInstanceConfiguration(), null)
 					.evaluate(newInstance_0_0);
 			newInstance_0_0.setName((String) value_0_0_0);
 
-			Object value_1 = org.muml.pim.componentinstanceconfiguration.diagram.expressions.MumlOCLFactory
-					.getExpression(28, org.muml.pim.instance.InstancePackage.eINSTANCE
-							.getStructuredComponentInstance(), null)
+			Object value_1 = MumlOCLFactory
+					.getExpression(28, InstancePackage.eINSTANCE.getStructuredComponentInstance(), null)
 					.evaluate(instance);
 			instance.setName((String) value_1);
 		} catch (RuntimeException e) {
-			org.muml.pim.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin
-					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
+			ComponentinstanceconfigurationDiagramEditorPlugin.getInstance().logError("Element initialization failed", //$NON-NLS-1$
+					e);
 		}
 	}
 
 	/**
 	* @generated
 	*/
-	public void init_CoordinationProtocolInstance_3035(
-			org.muml.pim.instance.CoordinationProtocolInstance instance) {
+	public void init_CoordinationProtocolInstance_3035(CoordinationProtocolInstance instance) {
 		try {
-			Object value_0 = org.muml.pim.componentinstanceconfiguration.diagram.expressions.MumlOCLFactory
-					.getExpression(29, org.muml.pim.instance.InstancePackage.eINSTANCE
-							.getCoordinationProtocolInstance(), null)
+			Object value_0 = MumlOCLFactory
+					.getExpression(29, InstancePackage.eINSTANCE.getCoordinationProtocolInstance(), null)
 					.evaluate(instance);
 			instance.setName((String) value_0);
 		} catch (RuntimeException e) {
-			org.muml.pim.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin
-					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
+			ComponentinstanceconfigurationDiagramEditorPlugin.getInstance().logError("Element initialization failed", //$NON-NLS-1$
+					e);
 		}
 	}
 
@@ -322,11 +293,11 @@ public class ElementInitializers {
 	 * @generated
 	 */
 	public static ElementInitializers getInstance() {
-		ElementInitializers cached = org.muml.pim.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin
-				.getInstance().getElementInitializers();
+		ElementInitializers cached = ComponentinstanceconfigurationDiagramEditorPlugin.getInstance()
+				.getElementInitializers();
 		if (cached == null) {
-			org.muml.pim.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin
-					.getInstance().setElementInitializers(cached = new ElementInitializers());
+			ComponentinstanceconfigurationDiagramEditorPlugin.getInstance()
+					.setElementInitializers(cached = new ElementInitializers());
 		}
 		return cached;
 	}

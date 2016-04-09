@@ -25,6 +25,28 @@ import org.eclipse.gmf.tooling.runtime.providers.DiagramElementTypeImages;
 import org.eclipse.gmf.tooling.runtime.providers.DiagramElementTypes;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.swt.graphics.Image;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.AssemblyConnectorInstanceEditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.AtomicComponentInstance2EditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.AtomicComponentInstanceEditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.ComponentInstanceConfigurationDiagramEditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.ComponentInstanceConfigurationEditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.ContinuousPortInstance2EditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.ContinuousPortInstanceEditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.CoordinationProtocolInstance2EditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.CoordinationProtocolInstanceEditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.CoordinationProtocolInstancePortInstancesEditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DelegationConnectorInstanceEditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteMultiPortInstance2EditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteMultiPortInstanceEditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteSinglePortInstance2EditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteSinglePortInstance3EditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteSinglePortInstanceEditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.HybridPortInstance2EditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.HybridPortInstanceEditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.StructuredComponentInstance2EditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.StructuredComponentInstanceEditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin;
+import org.muml.pim.instance.InstancePackage;
 
 /**
  * @generated
@@ -46,8 +68,7 @@ public class MumlElementTypes {
 	 * @generated
 	 */
 	private static DiagramElementTypeImages elementTypeImages = new DiagramElementTypeImages(
-			org.muml.pim.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin
-					.getInstance().getItemProvidersAdapterFactory());
+			ComponentinstanceconfigurationDiagramEditorPlugin.getInstance().getItemProvidersAdapterFactory());
 
 	/**
 	 * @generated
@@ -194,67 +215,49 @@ public class MumlElementTypes {
 			elements = new IdentityHashMap<IElementType, ENamedElement>();
 
 			elements.put(ComponentInstanceConfiguration_1000,
-					org.muml.pim.instance.InstancePackage.eINSTANCE
-							.getComponentInstanceConfiguration());
+					InstancePackage.eINSTANCE.getComponentInstanceConfiguration());
 
-			elements.put(HybridPortInstance_2021,
-					org.muml.pim.instance.InstancePackage.eINSTANCE.getHybridPortInstance());
+			elements.put(HybridPortInstance_2021, InstancePackage.eINSTANCE.getHybridPortInstance());
 
-			elements.put(DiscreteSinglePortInstance_2022,
-					org.muml.pim.instance.InstancePackage.eINSTANCE.getDiscreteSinglePortInstance());
+			elements.put(DiscreteSinglePortInstance_2022, InstancePackage.eINSTANCE.getDiscreteSinglePortInstance());
 
-			elements.put(DiscreteMultiPortInstance_2023,
-					org.muml.pim.instance.InstancePackage.eINSTANCE.getDiscreteMultiPortInstance());
+			elements.put(DiscreteMultiPortInstance_2023, InstancePackage.eINSTANCE.getDiscreteMultiPortInstance());
 
-			elements.put(ContinuousPortInstance_2024,
-					org.muml.pim.instance.InstancePackage.eINSTANCE.getContinuousPortInstance());
+			elements.put(ContinuousPortInstance_2024, InstancePackage.eINSTANCE.getContinuousPortInstance());
 
-			elements.put(AtomicComponentInstance_2016,
-					org.muml.pim.instance.InstancePackage.eINSTANCE.getAtomicComponentInstance());
+			elements.put(AtomicComponentInstance_2016, InstancePackage.eINSTANCE.getAtomicComponentInstance());
 
-			elements.put(StructuredComponentInstance_2015,
-					org.muml.pim.instance.InstancePackage.eINSTANCE.getStructuredComponentInstance());
+			elements.put(StructuredComponentInstance_2015, InstancePackage.eINSTANCE.getStructuredComponentInstance());
 
 			elements.put(CoordinationProtocolInstance_2025,
-					org.muml.pim.instance.InstancePackage.eINSTANCE.getCoordinationProtocolInstance());
+					InstancePackage.eINSTANCE.getCoordinationProtocolInstance());
 
-			elements.put(DiscreteSinglePortInstance_3026,
-					org.muml.pim.instance.InstancePackage.eINSTANCE.getDiscreteSinglePortInstance());
+			elements.put(DiscreteSinglePortInstance_3026, InstancePackage.eINSTANCE.getDiscreteSinglePortInstance());
 
-			elements.put(HybridPortInstance_3031,
-					org.muml.pim.instance.InstancePackage.eINSTANCE.getHybridPortInstance());
+			elements.put(HybridPortInstance_3031, InstancePackage.eINSTANCE.getHybridPortInstance());
 
-			elements.put(DiscreteSinglePortInstance_3032,
-					org.muml.pim.instance.InstancePackage.eINSTANCE.getDiscreteSinglePortInstance());
+			elements.put(DiscreteSinglePortInstance_3032, InstancePackage.eINSTANCE.getDiscreteSinglePortInstance());
 
-			elements.put(DiscreteMultiPortInstance_3033,
-					org.muml.pim.instance.InstancePackage.eINSTANCE.getDiscreteMultiPortInstance());
+			elements.put(DiscreteMultiPortInstance_3033, InstancePackage.eINSTANCE.getDiscreteMultiPortInstance());
 
-			elements.put(ContinuousPortInstance_3034,
-					org.muml.pim.instance.InstancePackage.eINSTANCE.getContinuousPortInstance());
+			elements.put(ContinuousPortInstance_3034, InstancePackage.eINSTANCE.getContinuousPortInstance());
 
 			elements.put(ComponentInstanceConfiguration_3023,
-					org.muml.pim.instance.InstancePackage.eINSTANCE
-							.getComponentInstanceConfiguration());
+					InstancePackage.eINSTANCE.getComponentInstanceConfiguration());
 
-			elements.put(AtomicComponentInstance_3024,
-					org.muml.pim.instance.InstancePackage.eINSTANCE.getAtomicComponentInstance());
+			elements.put(AtomicComponentInstance_3024, InstancePackage.eINSTANCE.getAtomicComponentInstance());
 
-			elements.put(StructuredComponentInstance_3025,
-					org.muml.pim.instance.InstancePackage.eINSTANCE.getStructuredComponentInstance());
+			elements.put(StructuredComponentInstance_3025, InstancePackage.eINSTANCE.getStructuredComponentInstance());
 
 			elements.put(CoordinationProtocolInstance_3035,
-					org.muml.pim.instance.InstancePackage.eINSTANCE.getCoordinationProtocolInstance());
+					InstancePackage.eINSTANCE.getCoordinationProtocolInstance());
 
-			elements.put(AssemblyConnectorInstance_4001,
-					org.muml.pim.instance.InstancePackage.eINSTANCE.getAssemblyConnectorInstance());
+			elements.put(AssemblyConnectorInstance_4001, InstancePackage.eINSTANCE.getAssemblyConnectorInstance());
 
-			elements.put(DelegationConnectorInstance_4002,
-					org.muml.pim.instance.InstancePackage.eINSTANCE.getDelegationConnectorInstance());
+			elements.put(DelegationConnectorInstance_4002, InstancePackage.eINSTANCE.getDelegationConnectorInstance());
 
 			elements.put(CoordinationProtocolInstancePortInstances_4003,
-					org.muml.pim.instance.InstancePackage.eINSTANCE
-							.getCoordinationProtocolInstance_PortInstances());
+					InstancePackage.eINSTANCE.getCoordinationProtocolInstance_PortInstances());
 		}
 		return (ENamedElement) elements.get(type);
 	}
@@ -301,45 +304,45 @@ public class MumlElementTypes {
 	 */
 	public static IElementType getElementType(int visualID) {
 		switch (visualID) {
-		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.ComponentInstanceConfigurationDiagramEditPart.VISUAL_ID:
+		case ComponentInstanceConfigurationDiagramEditPart.VISUAL_ID:
 			return ComponentInstanceConfiguration_1000;
-		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.HybridPortInstanceEditPart.VISUAL_ID:
+		case HybridPortInstanceEditPart.VISUAL_ID:
 			return HybridPortInstance_2021;
-		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteSinglePortInstanceEditPart.VISUAL_ID:
+		case DiscreteSinglePortInstanceEditPart.VISUAL_ID:
 			return DiscreteSinglePortInstance_2022;
-		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteMultiPortInstanceEditPart.VISUAL_ID:
+		case DiscreteMultiPortInstanceEditPart.VISUAL_ID:
 			return DiscreteMultiPortInstance_2023;
-		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.ContinuousPortInstanceEditPart.VISUAL_ID:
+		case ContinuousPortInstanceEditPart.VISUAL_ID:
 			return ContinuousPortInstance_2024;
-		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.AtomicComponentInstanceEditPart.VISUAL_ID:
+		case AtomicComponentInstanceEditPart.VISUAL_ID:
 			return AtomicComponentInstance_2016;
-		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.StructuredComponentInstanceEditPart.VISUAL_ID:
+		case StructuredComponentInstanceEditPart.VISUAL_ID:
 			return StructuredComponentInstance_2015;
-		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.CoordinationProtocolInstanceEditPart.VISUAL_ID:
+		case CoordinationProtocolInstanceEditPart.VISUAL_ID:
 			return CoordinationProtocolInstance_2025;
-		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteSinglePortInstance2EditPart.VISUAL_ID:
+		case DiscreteSinglePortInstance2EditPart.VISUAL_ID:
 			return DiscreteSinglePortInstance_3026;
-		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.HybridPortInstance2EditPart.VISUAL_ID:
+		case HybridPortInstance2EditPart.VISUAL_ID:
 			return HybridPortInstance_3031;
-		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteSinglePortInstance3EditPart.VISUAL_ID:
+		case DiscreteSinglePortInstance3EditPart.VISUAL_ID:
 			return DiscreteSinglePortInstance_3032;
-		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteMultiPortInstance2EditPart.VISUAL_ID:
+		case DiscreteMultiPortInstance2EditPart.VISUAL_ID:
 			return DiscreteMultiPortInstance_3033;
-		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.ContinuousPortInstance2EditPart.VISUAL_ID:
+		case ContinuousPortInstance2EditPart.VISUAL_ID:
 			return ContinuousPortInstance_3034;
-		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.ComponentInstanceConfigurationEditPart.VISUAL_ID:
+		case ComponentInstanceConfigurationEditPart.VISUAL_ID:
 			return ComponentInstanceConfiguration_3023;
-		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.AtomicComponentInstance2EditPart.VISUAL_ID:
+		case AtomicComponentInstance2EditPart.VISUAL_ID:
 			return AtomicComponentInstance_3024;
-		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.StructuredComponentInstance2EditPart.VISUAL_ID:
+		case StructuredComponentInstance2EditPart.VISUAL_ID:
 			return StructuredComponentInstance_3025;
-		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.CoordinationProtocolInstance2EditPart.VISUAL_ID:
+		case CoordinationProtocolInstance2EditPart.VISUAL_ID:
 			return CoordinationProtocolInstance_3035;
-		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.AssemblyConnectorInstanceEditPart.VISUAL_ID:
+		case AssemblyConnectorInstanceEditPart.VISUAL_ID:
 			return AssemblyConnectorInstance_4001;
-		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DelegationConnectorInstanceEditPart.VISUAL_ID:
+		case DelegationConnectorInstanceEditPart.VISUAL_ID:
 			return DelegationConnectorInstance_4002;
-		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.CoordinationProtocolInstancePortInstancesEditPart.VISUAL_ID:
+		case CoordinationProtocolInstancePortInstancesEditPart.VISUAL_ID:
 			return CoordinationProtocolInstancePortInstances_4003;
 		}
 		return null;

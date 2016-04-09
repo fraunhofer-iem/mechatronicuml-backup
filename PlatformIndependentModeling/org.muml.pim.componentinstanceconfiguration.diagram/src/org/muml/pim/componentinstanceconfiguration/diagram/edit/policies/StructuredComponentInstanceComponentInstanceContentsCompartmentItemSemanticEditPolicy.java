@@ -14,29 +14,28 @@ package org.muml.pim.componentinstanceconfiguration.diagram.edit.policies;
 
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.commands.ComponentInstanceConfigurationCreateCommand;
+import org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes;
 
 /**
  * @generated
  */
-public class StructuredComponentInstanceComponentInstanceContentsCompartmentItemSemanticEditPolicy extends
-		org.muml.pim.componentinstanceconfiguration.diagram.edit.policies.MumlBaseItemSemanticEditPolicy {
+public class StructuredComponentInstanceComponentInstanceContentsCompartmentItemSemanticEditPolicy
+		extends MumlBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public StructuredComponentInstanceComponentInstanceContentsCompartmentItemSemanticEditPolicy() {
-		super(org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes.StructuredComponentInstance_2015);
+		super(MumlElementTypes.StructuredComponentInstance_2015);
 	}
 
 	/**
 	 * @generated
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
-		if (org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes.ComponentInstanceConfiguration_3023 == req
-				.getElementType()) {
-			return getGEFWrapper(
-					new org.muml.pim.componentinstanceconfiguration.diagram.edit.commands.ComponentInstanceConfigurationCreateCommand(
-							req));
+		if (MumlElementTypes.ComponentInstanceConfiguration_3023 == req.getElementType()) {
+			return getGEFWrapper(new ComponentInstanceConfigurationCreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}

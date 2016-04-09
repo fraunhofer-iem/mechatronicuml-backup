@@ -15,18 +15,18 @@ package org.muml.pim.componentinstanceconfiguration.diagram.edit.policies;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gmf.runtime.emf.type.core.commands.DestroyReferenceCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyReferenceRequest;
+import org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes;
 
 /**
  * @generated
  */
-public class CoordinationProtocolInstancePortInstancesItemSemanticEditPolicy extends
-		org.muml.pim.componentinstanceconfiguration.diagram.edit.policies.MumlBaseItemSemanticEditPolicy {
+public class CoordinationProtocolInstancePortInstancesItemSemanticEditPolicy extends MumlBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public CoordinationProtocolInstancePortInstancesItemSemanticEditPolicy() {
-		super(org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes.CoordinationProtocolInstancePortInstances_4003);
+		super(MumlElementTypes.CoordinationProtocolInstancePortInstances_4003);
 	}
 
 	/**

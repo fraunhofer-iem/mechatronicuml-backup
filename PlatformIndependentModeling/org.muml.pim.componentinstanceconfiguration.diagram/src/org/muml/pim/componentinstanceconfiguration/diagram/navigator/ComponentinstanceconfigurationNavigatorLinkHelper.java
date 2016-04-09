@@ -33,6 +33,7 @@ import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.navigator.ILinkHelper;
 import org.eclipse.ui.part.FileEditorInput;
+import org.muml.pim.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin;
 
 /**
  * @generated
@@ -62,8 +63,8 @@ public class ComponentinstanceconfigurationNavigatorLinkHelper implements ILinkH
 	 * @generated
 	 */
 	public IStructuredSelection findSelection(IEditorInput anInput) {
-		IDiagramDocument document = org.muml.pim.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin
-				.getInstance().getDocumentProvider().getDiagramDocument(anInput);
+		IDiagramDocument document = ComponentinstanceconfigurationDiagramEditorPlugin.getInstance()
+				.getDocumentProvider().getDiagramDocument(anInput);
 		if (document == null) {
 			return StructuredSelection.EMPTY;
 		}
@@ -73,8 +74,8 @@ public class ComponentinstanceconfigurationNavigatorLinkHelper implements ILinkH
 		}
 		IFile file = WorkspaceSynchronizer.getFile(diagram.eResource());
 		if (file != null) {
-			org.muml.pim.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorItem item = new org.muml.pim.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorItem(
-					diagram, file, false);
+			ComponentinstanceconfigurationNavigatorItem item = new ComponentinstanceconfigurationNavigatorItem(diagram,
+					file, false);
 			return new StructuredSelection(item);
 		}
 		return StructuredSelection.EMPTY;
@@ -87,23 +88,18 @@ public class ComponentinstanceconfigurationNavigatorLinkHelper implements ILinkH
 		if (aSelection == null || aSelection.isEmpty()) {
 			return;
 		}
-		if (false == aSelection
-				.getFirstElement() instanceof org.muml.pim.componentinstanceconfiguration.diagram.navigator.MumlAbstractNavigatorItem) {
+		if (false == aSelection.getFirstElement() instanceof MumlAbstractNavigatorItem) {
 			return;
 		}
 
-		org.muml.pim.componentinstanceconfiguration.diagram.navigator.MumlAbstractNavigatorItem abstractNavigatorItem = (org.muml.pim.componentinstanceconfiguration.diagram.navigator.MumlAbstractNavigatorItem) aSelection
-				.getFirstElement();
+		MumlAbstractNavigatorItem abstractNavigatorItem = (MumlAbstractNavigatorItem) aSelection.getFirstElement();
 		View navigatorView = null;
-		if (abstractNavigatorItem instanceof org.muml.pim.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorItem) {
-			navigatorView = ((org.muml.pim.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorItem) abstractNavigatorItem)
-					.getView();
-		} else if (abstractNavigatorItem instanceof org.muml.pim.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorGroup) {
-			org.muml.pim.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorGroup navigatorGroup = (org.muml.pim.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorGroup) abstractNavigatorItem;
-			if (navigatorGroup
-					.getParent() instanceof org.muml.pim.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorItem) {
-				navigatorView = ((org.muml.pim.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorItem) navigatorGroup
-						.getParent()).getView();
+		if (abstractNavigatorItem instanceof ComponentinstanceconfigurationNavigatorItem) {
+			navigatorView = ((ComponentinstanceconfigurationNavigatorItem) abstractNavigatorItem).getView();
+		} else if (abstractNavigatorItem instanceof ComponentinstanceconfigurationNavigatorGroup) {
+			ComponentinstanceconfigurationNavigatorGroup navigatorGroup = (ComponentinstanceconfigurationNavigatorGroup) abstractNavigatorItem;
+			if (navigatorGroup.getParent() instanceof ComponentinstanceconfigurationNavigatorItem) {
+				navigatorView = ((ComponentinstanceconfigurationNavigatorItem) navigatorGroup.getParent()).getView();
 			}
 		}
 		if (navigatorView == null) {

@@ -15,6 +15,5 @@ package org.muml.pim.componentinstanceconfiguration.diagram.edit.helpers;
 /**
  * @generated
  */
-public class AssemblyConnectorInstanceEditHelper
-		extends org.muml.pim.componentinstanceconfiguration.diagram.edit.helpers.MumlBaseEditHelper {
+public class AssemblyConnectorInstanceEditHelper extends MumlBaseEditHelper {
 }

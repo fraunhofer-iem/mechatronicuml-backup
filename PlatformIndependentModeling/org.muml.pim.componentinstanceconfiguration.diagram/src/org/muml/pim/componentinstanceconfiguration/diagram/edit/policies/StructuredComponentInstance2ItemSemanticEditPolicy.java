@@ -27,47 +27,49 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyReferenceRequest;
 import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.commands.ContinuousPortInstance2CreateCommand;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.commands.DiscreteMultiPortInstance2CreateCommand;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.commands.DiscreteSinglePortInstance3CreateCommand;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.commands.HybridPortInstance2CreateCommand;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.AssemblyConnectorInstanceEditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.ComponentInstanceConfigurationEditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.ContinuousPortInstance2EditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.CoordinationProtocolInstancePortInstancesEditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DelegationConnectorInstanceEditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteMultiPortInstance2EditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteSinglePortInstance3EditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.HybridPortInstance2EditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.StructuredComponentInstanceComponentInstanceContentsCompartment2EditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry;
+import org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes;
 
 /**
  * @generated
  */
-public class StructuredComponentInstance2ItemSemanticEditPolicy extends
-		org.muml.pim.componentinstanceconfiguration.diagram.edit.policies.MumlBaseItemSemanticEditPolicy {
+public class StructuredComponentInstance2ItemSemanticEditPolicy extends MumlBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public StructuredComponentInstance2ItemSemanticEditPolicy() {
-		super(org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes.StructuredComponentInstance_3025);
+		super(MumlElementTypes.StructuredComponentInstance_3025);
 	}
 
 	/**
 	 * @generated
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
-		if (org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes.HybridPortInstance_3031 == req
-				.getElementType()) {
-			return getGEFWrapper(
-					new org.muml.pim.componentinstanceconfiguration.diagram.edit.commands.HybridPortInstance2CreateCommand(
-							req));
+		if (MumlElementTypes.HybridPortInstance_3031 == req.getElementType()) {
+			return getGEFWrapper(new HybridPortInstance2CreateCommand(req));
 		}
-		if (org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes.DiscreteSinglePortInstance_3032 == req
-				.getElementType()) {
-			return getGEFWrapper(
-					new org.muml.pim.componentinstanceconfiguration.diagram.edit.commands.DiscreteSinglePortInstance3CreateCommand(
-							req));
+		if (MumlElementTypes.DiscreteSinglePortInstance_3032 == req.getElementType()) {
+			return getGEFWrapper(new DiscreteSinglePortInstance3CreateCommand(req));
 		}
-		if (org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes.DiscreteMultiPortInstance_3033 == req
-				.getElementType()) {
-			return getGEFWrapper(
-					new org.muml.pim.componentinstanceconfiguration.diagram.edit.commands.DiscreteMultiPortInstance2CreateCommand(
-							req));
+		if (MumlElementTypes.DiscreteMultiPortInstance_3033 == req.getElementType()) {
+			return getGEFWrapper(new DiscreteMultiPortInstance2CreateCommand(req));
 		}
-		if (org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes.ContinuousPortInstance_3034 == req
-				.getElementType()) {
-			return getGEFWrapper(
-					new org.muml.pim.componentinstanceconfiguration.diagram.edit.commands.ContinuousPortInstance2CreateCommand(
-							req));
+		if (MumlElementTypes.ContinuousPortInstance_3034 == req.getElementType()) {
+			return getGEFWrapper(new ContinuousPortInstance2CreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}
@@ -99,30 +101,25 @@ public class StructuredComponentInstance2ItemSemanticEditPolicy extends
 		View view = (View) getHost().getModel();
 		for (Iterator<?> nit = view.getChildren().iterator(); nit.hasNext();) {
 			Node node = (Node) nit.next();
-			switch (org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-					.getVisualID(node)) {
-			case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.HybridPortInstance2EditPart.VISUAL_ID:
+			switch (MumlVisualIDRegistry.getVisualID(node)) {
+			case HybridPortInstance2EditPart.VISUAL_ID:
 				for (Iterator<?> it = node.getTargetEdges().iterator(); it.hasNext();) {
 					Edge incomingLink = (Edge) it.next();
-					if (org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getVisualID(
-									incomingLink) == org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.AssemblyConnectorInstanceEditPart.VISUAL_ID) {
+					if (MumlVisualIDRegistry.getVisualID(incomingLink) == AssemblyConnectorInstanceEditPart.VISUAL_ID) {
 						DestroyElementRequest r = new DestroyElementRequest(incomingLink.getElement(), false);
 						cmd.add(new DestroyElementCommand(r));
 						cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
 						continue;
 					}
-					if (org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getVisualID(
-									incomingLink) == org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DelegationConnectorInstanceEditPart.VISUAL_ID) {
+					if (MumlVisualIDRegistry
+							.getVisualID(incomingLink) == DelegationConnectorInstanceEditPart.VISUAL_ID) {
 						DestroyElementRequest r = new DestroyElementRequest(incomingLink.getElement(), false);
 						cmd.add(new DestroyElementCommand(r));
 						cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
 						continue;
 					}
-					if (org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getVisualID(
-									incomingLink) == org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.CoordinationProtocolInstancePortInstancesEditPart.VISUAL_ID) {
+					if (MumlVisualIDRegistry
+							.getVisualID(incomingLink) == CoordinationProtocolInstancePortInstancesEditPart.VISUAL_ID) {
 						DestroyReferenceRequest r = new DestroyReferenceRequest(incomingLink.getSource().getElement(),
 								null, incomingLink.getTarget().getElement(), false);
 						cmd.add(new DestroyReferenceCommand(r));
@@ -132,17 +129,14 @@ public class StructuredComponentInstance2ItemSemanticEditPolicy extends
 				}
 				for (Iterator<?> it = node.getSourceEdges().iterator(); it.hasNext();) {
 					Edge outgoingLink = (Edge) it.next();
-					if (org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getVisualID(
-									outgoingLink) == org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.AssemblyConnectorInstanceEditPart.VISUAL_ID) {
+					if (MumlVisualIDRegistry.getVisualID(outgoingLink) == AssemblyConnectorInstanceEditPart.VISUAL_ID) {
 						DestroyElementRequest r = new DestroyElementRequest(outgoingLink.getElement(), false);
 						cmd.add(new DestroyElementCommand(r));
 						cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
 						continue;
 					}
-					if (org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getVisualID(
-									outgoingLink) == org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DelegationConnectorInstanceEditPart.VISUAL_ID) {
+					if (MumlVisualIDRegistry
+							.getVisualID(outgoingLink) == DelegationConnectorInstanceEditPart.VISUAL_ID) {
 						DestroyElementRequest r = new DestroyElementRequest(outgoingLink.getElement(), false);
 						cmd.add(new DestroyElementCommand(r));
 						cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
@@ -156,28 +150,24 @@ public class StructuredComponentInstance2ItemSemanticEditPolicy extends
 				// cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), node));
 
 				break;
-			case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteSinglePortInstance3EditPart.VISUAL_ID:
+			case DiscreteSinglePortInstance3EditPart.VISUAL_ID:
 				for (Iterator<?> it = node.getTargetEdges().iterator(); it.hasNext();) {
 					Edge incomingLink = (Edge) it.next();
-					if (org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getVisualID(
-									incomingLink) == org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.AssemblyConnectorInstanceEditPart.VISUAL_ID) {
+					if (MumlVisualIDRegistry.getVisualID(incomingLink) == AssemblyConnectorInstanceEditPart.VISUAL_ID) {
 						DestroyElementRequest r = new DestroyElementRequest(incomingLink.getElement(), false);
 						cmd.add(new DestroyElementCommand(r));
 						cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
 						continue;
 					}
-					if (org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getVisualID(
-									incomingLink) == org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DelegationConnectorInstanceEditPart.VISUAL_ID) {
+					if (MumlVisualIDRegistry
+							.getVisualID(incomingLink) == DelegationConnectorInstanceEditPart.VISUAL_ID) {
 						DestroyElementRequest r = new DestroyElementRequest(incomingLink.getElement(), false);
 						cmd.add(new DestroyElementCommand(r));
 						cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
 						continue;
 					}
-					if (org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getVisualID(
-									incomingLink) == org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.CoordinationProtocolInstancePortInstancesEditPart.VISUAL_ID) {
+					if (MumlVisualIDRegistry
+							.getVisualID(incomingLink) == CoordinationProtocolInstancePortInstancesEditPart.VISUAL_ID) {
 						DestroyReferenceRequest r = new DestroyReferenceRequest(incomingLink.getSource().getElement(),
 								null, incomingLink.getTarget().getElement(), false);
 						cmd.add(new DestroyReferenceCommand(r));
@@ -187,17 +177,14 @@ public class StructuredComponentInstance2ItemSemanticEditPolicy extends
 				}
 				for (Iterator<?> it = node.getSourceEdges().iterator(); it.hasNext();) {
 					Edge outgoingLink = (Edge) it.next();
-					if (org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getVisualID(
-									outgoingLink) == org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.AssemblyConnectorInstanceEditPart.VISUAL_ID) {
+					if (MumlVisualIDRegistry.getVisualID(outgoingLink) == AssemblyConnectorInstanceEditPart.VISUAL_ID) {
 						DestroyElementRequest r = new DestroyElementRequest(outgoingLink.getElement(), false);
 						cmd.add(new DestroyElementCommand(r));
 						cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
 						continue;
 					}
-					if (org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getVisualID(
-									outgoingLink) == org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DelegationConnectorInstanceEditPart.VISUAL_ID) {
+					if (MumlVisualIDRegistry
+							.getVisualID(outgoingLink) == DelegationConnectorInstanceEditPart.VISUAL_ID) {
 						DestroyElementRequest r = new DestroyElementRequest(outgoingLink.getElement(), false);
 						cmd.add(new DestroyElementCommand(r));
 						cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
@@ -211,28 +198,24 @@ public class StructuredComponentInstance2ItemSemanticEditPolicy extends
 				// cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), node));
 
 				break;
-			case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteMultiPortInstance2EditPart.VISUAL_ID:
+			case DiscreteMultiPortInstance2EditPart.VISUAL_ID:
 				for (Iterator<?> it = node.getTargetEdges().iterator(); it.hasNext();) {
 					Edge incomingLink = (Edge) it.next();
-					if (org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getVisualID(
-									incomingLink) == org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.AssemblyConnectorInstanceEditPart.VISUAL_ID) {
+					if (MumlVisualIDRegistry.getVisualID(incomingLink) == AssemblyConnectorInstanceEditPart.VISUAL_ID) {
 						DestroyElementRequest r = new DestroyElementRequest(incomingLink.getElement(), false);
 						cmd.add(new DestroyElementCommand(r));
 						cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
 						continue;
 					}
-					if (org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getVisualID(
-									incomingLink) == org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DelegationConnectorInstanceEditPart.VISUAL_ID) {
+					if (MumlVisualIDRegistry
+							.getVisualID(incomingLink) == DelegationConnectorInstanceEditPart.VISUAL_ID) {
 						DestroyElementRequest r = new DestroyElementRequest(incomingLink.getElement(), false);
 						cmd.add(new DestroyElementCommand(r));
 						cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
 						continue;
 					}
-					if (org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getVisualID(
-									incomingLink) == org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.CoordinationProtocolInstancePortInstancesEditPart.VISUAL_ID) {
+					if (MumlVisualIDRegistry
+							.getVisualID(incomingLink) == CoordinationProtocolInstancePortInstancesEditPart.VISUAL_ID) {
 						DestroyReferenceRequest r = new DestroyReferenceRequest(incomingLink.getSource().getElement(),
 								null, incomingLink.getTarget().getElement(), false);
 						cmd.add(new DestroyReferenceCommand(r));
@@ -242,17 +225,14 @@ public class StructuredComponentInstance2ItemSemanticEditPolicy extends
 				}
 				for (Iterator<?> it = node.getSourceEdges().iterator(); it.hasNext();) {
 					Edge outgoingLink = (Edge) it.next();
-					if (org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getVisualID(
-									outgoingLink) == org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.AssemblyConnectorInstanceEditPart.VISUAL_ID) {
+					if (MumlVisualIDRegistry.getVisualID(outgoingLink) == AssemblyConnectorInstanceEditPart.VISUAL_ID) {
 						DestroyElementRequest r = new DestroyElementRequest(outgoingLink.getElement(), false);
 						cmd.add(new DestroyElementCommand(r));
 						cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
 						continue;
 					}
-					if (org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getVisualID(
-									outgoingLink) == org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DelegationConnectorInstanceEditPart.VISUAL_ID) {
+					if (MumlVisualIDRegistry
+							.getVisualID(outgoingLink) == DelegationConnectorInstanceEditPart.VISUAL_ID) {
 						DestroyElementRequest r = new DestroyElementRequest(outgoingLink.getElement(), false);
 						cmd.add(new DestroyElementCommand(r));
 						cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
@@ -266,28 +246,24 @@ public class StructuredComponentInstance2ItemSemanticEditPolicy extends
 				// cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), node));
 
 				break;
-			case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.ContinuousPortInstance2EditPart.VISUAL_ID:
+			case ContinuousPortInstance2EditPart.VISUAL_ID:
 				for (Iterator<?> it = node.getTargetEdges().iterator(); it.hasNext();) {
 					Edge incomingLink = (Edge) it.next();
-					if (org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getVisualID(
-									incomingLink) == org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.AssemblyConnectorInstanceEditPart.VISUAL_ID) {
+					if (MumlVisualIDRegistry.getVisualID(incomingLink) == AssemblyConnectorInstanceEditPart.VISUAL_ID) {
 						DestroyElementRequest r = new DestroyElementRequest(incomingLink.getElement(), false);
 						cmd.add(new DestroyElementCommand(r));
 						cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
 						continue;
 					}
-					if (org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getVisualID(
-									incomingLink) == org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DelegationConnectorInstanceEditPart.VISUAL_ID) {
+					if (MumlVisualIDRegistry
+							.getVisualID(incomingLink) == DelegationConnectorInstanceEditPart.VISUAL_ID) {
 						DestroyElementRequest r = new DestroyElementRequest(incomingLink.getElement(), false);
 						cmd.add(new DestroyElementCommand(r));
 						cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
 						continue;
 					}
-					if (org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getVisualID(
-									incomingLink) == org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.CoordinationProtocolInstancePortInstancesEditPart.VISUAL_ID) {
+					if (MumlVisualIDRegistry
+							.getVisualID(incomingLink) == CoordinationProtocolInstancePortInstancesEditPart.VISUAL_ID) {
 						DestroyReferenceRequest r = new DestroyReferenceRequest(incomingLink.getSource().getElement(),
 								null, incomingLink.getTarget().getElement(), false);
 						cmd.add(new DestroyReferenceCommand(r));
@@ -297,17 +273,14 @@ public class StructuredComponentInstance2ItemSemanticEditPolicy extends
 				}
 				for (Iterator<?> it = node.getSourceEdges().iterator(); it.hasNext();) {
 					Edge outgoingLink = (Edge) it.next();
-					if (org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getVisualID(
-									outgoingLink) == org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.AssemblyConnectorInstanceEditPart.VISUAL_ID) {
+					if (MumlVisualIDRegistry.getVisualID(outgoingLink) == AssemblyConnectorInstanceEditPart.VISUAL_ID) {
 						DestroyElementRequest r = new DestroyElementRequest(outgoingLink.getElement(), false);
 						cmd.add(new DestroyElementCommand(r));
 						cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
 						continue;
 					}
-					if (org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getVisualID(
-									outgoingLink) == org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DelegationConnectorInstanceEditPart.VISUAL_ID) {
+					if (MumlVisualIDRegistry
+							.getVisualID(outgoingLink) == DelegationConnectorInstanceEditPart.VISUAL_ID) {
 						DestroyElementRequest r = new DestroyElementRequest(outgoingLink.getElement(), false);
 						cmd.add(new DestroyElementCommand(r));
 						cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
@@ -321,12 +294,11 @@ public class StructuredComponentInstance2ItemSemanticEditPolicy extends
 				// cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), node));
 
 				break;
-			case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.StructuredComponentInstanceComponentInstanceContentsCompartment2EditPart.VISUAL_ID:
+			case StructuredComponentInstanceComponentInstanceContentsCompartment2EditPart.VISUAL_ID:
 				for (Iterator<?> cit = node.getChildren().iterator(); cit.hasNext();) {
 					Node cnode = (Node) cit.next();
-					switch (org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getVisualID(cnode)) {
-					case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.ComponentInstanceConfigurationEditPart.VISUAL_ID:
+					switch (MumlVisualIDRegistry.getVisualID(cnode)) {
+					case ComponentInstanceConfigurationEditPart.VISUAL_ID:
 
 						cmd.add(new DestroyElementCommand(
 								new DestroyElementRequest(getEditingDomain(), cnode.getElement(), false)));

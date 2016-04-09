@@ -43,6 +43,15 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipReques
 import org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.edit.helpers.GeneratedEditHelperBase;
+import org.muml.pim.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin;
+import org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry;
+import org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes;
+import org.muml.pim.connector.ConnectorEndpointInstance;
+import org.muml.pim.instance.AssemblyConnectorInstance;
+import org.muml.pim.instance.ComponentInstanceConfiguration;
+import org.muml.pim.instance.CoordinationProtocolInstance;
+import org.muml.pim.instance.DelegationConnectorInstance;
+import org.muml.pim.instance.PortInstance;
 
 /**
  * @generated
@@ -80,9 +89,7 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		if (request instanceof ReconnectRequest) {
 			Object view = ((ReconnectRequest) request).getConnectionEditPart().getModel();
 			if (view instanceof View) {
-				Integer id = new Integer(
-						org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-								.getVisualID((View) view));
+				Integer id = new Integer(MumlVisualIDRegistry.getVisualID((View) view));
 				request.getExtendedData().put(VISUAL_ID_KEY, id);
 			}
 		}
@@ -147,8 +154,7 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 	 * @generated
 	 */
 	private IElementType getContextElementType(IEditCommandRequest request) {
-		IElementType requestContextElementType = org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes
-				.getElementType(getVisualID(request));
+		IElementType requestContextElementType = MumlElementTypes.getElementType(getVisualID(request));
 		return requestContextElementType != null ? requestContextElementType : myElementType;
 	}
 
@@ -294,11 +300,10 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 	 * @generated
 	 */
 	public static LinkConstraints getLinkConstraints() {
-		LinkConstraints cached = org.muml.pim.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin
-				.getInstance().getLinkConstraints();
+		LinkConstraints cached = ComponentinstanceconfigurationDiagramEditorPlugin.getInstance().getLinkConstraints();
 		if (cached == null) {
-			org.muml.pim.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin
-					.getInstance().setLinkConstraints(cached = new LinkConstraints());
+			ComponentinstanceconfigurationDiagramEditorPlugin.getInstance()
+					.setLinkConstraints(cached = new LinkConstraints());
 		}
 		return cached;
 	}
@@ -316,33 +321,26 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		}
 
 		/**
-		 * @generated
-		 */
-		public boolean canCreateAssemblyConnectorInstance_4001(
-				org.muml.pim.instance.ComponentInstanceConfiguration container,
-				org.muml.pim.connector.ConnectorEndpointInstance source,
-				org.muml.pim.connector.ConnectorEndpointInstance target, View sourceView,
-				View targetView) {
+		* @generated
+		*/
+		public boolean canCreateAssemblyConnectorInstance_4001(ComponentInstanceConfiguration container,
+				ConnectorEndpointInstance source, ConnectorEndpointInstance target, View sourceView, View targetView) {
 			return canExistAssemblyConnectorInstance_4001(container, null, source, target, sourceView, targetView);
 		}
 
 		/**
-		 * @generated
-		 */
-		public boolean canCreateDelegationConnectorInstance_4002(
-				org.muml.pim.instance.ComponentInstanceConfiguration container,
-				org.muml.pim.connector.ConnectorEndpointInstance source,
-				org.muml.pim.connector.ConnectorEndpointInstance target, View sourceView,
-				View targetView) {
+		* @generated
+		*/
+		public boolean canCreateDelegationConnectorInstance_4002(ComponentInstanceConfiguration container,
+				ConnectorEndpointInstance source, ConnectorEndpointInstance target, View sourceView, View targetView) {
 			return canExistDelegationConnectorInstance_4002(container, null, source, target, sourceView, targetView);
 		}
 
 		/**
-		 * @generated
-		 */
-		public boolean canCreateCoordinationProtocolInstancePortInstances_4003(
-				org.muml.pim.instance.CoordinationProtocolInstance source,
-				org.muml.pim.instance.PortInstance target, View sourceView, View targetView) {
+		* @generated
+		*/
+		public boolean canCreateCoordinationProtocolInstancePortInstances_4003(CoordinationProtocolInstance source,
+				PortInstance target, View sourceView, View targetView) {
 			if (source != null) {
 				if (source.getPortInstances().contains(target)) {
 					return false;
@@ -353,66 +351,52 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		}
 
 		/**
-		 * @generated
-		 */
-		public boolean canExistAssemblyConnectorInstance_4001(
-				org.muml.pim.instance.ComponentInstanceConfiguration container,
-				org.muml.pim.instance.AssemblyConnectorInstance linkInstance,
-				org.muml.pim.connector.ConnectorEndpointInstance source,
-				org.muml.pim.connector.ConnectorEndpointInstance target, View sourceView,
-				View targetView) {
+		* @generated
+		*/
+		public boolean canExistAssemblyConnectorInstance_4001(ComponentInstanceConfiguration container,
+				AssemblyConnectorInstance linkInstance, ConnectorEndpointInstance source,
+				ConnectorEndpointInstance target, View sourceView, View targetView) {
 			return true;
 		}
 
 		/**
-		 * @generated
-		 */
-		public java.lang.String getErrorAssemblyConnectorInstance_4001(
-				org.muml.pim.instance.ComponentInstanceConfiguration container,
-				org.muml.pim.connector.ConnectorEndpointInstance source,
-				org.muml.pim.connector.ConnectorEndpointInstance target, View sourceView,
-				View targetView) {
+		* @generated
+		*/
+		public java.lang.String getErrorAssemblyConnectorInstance_4001(ComponentInstanceConfiguration container,
+				ConnectorEndpointInstance source, ConnectorEndpointInstance target, View sourceView, View targetView) {
 			return null;
 		}
 
 		/**
-		 * @generated
-		 */
-		public boolean canExistDelegationConnectorInstance_4002(
-				org.muml.pim.instance.ComponentInstanceConfiguration container,
-				org.muml.pim.instance.DelegationConnectorInstance linkInstance,
-				org.muml.pim.connector.ConnectorEndpointInstance source,
-				org.muml.pim.connector.ConnectorEndpointInstance target, View sourceView,
-				View targetView) {
+		* @generated
+		*/
+		public boolean canExistDelegationConnectorInstance_4002(ComponentInstanceConfiguration container,
+				DelegationConnectorInstance linkInstance, ConnectorEndpointInstance source,
+				ConnectorEndpointInstance target, View sourceView, View targetView) {
 			return true;
 		}
 
 		/**
-		 * @generated
-		 */
-		public java.lang.String getErrorDelegationConnectorInstance_4002(
-				org.muml.pim.instance.ComponentInstanceConfiguration container,
-				org.muml.pim.connector.ConnectorEndpointInstance source,
-				org.muml.pim.connector.ConnectorEndpointInstance target, View sourceView,
-				View targetView) {
+		* @generated
+		*/
+		public java.lang.String getErrorDelegationConnectorInstance_4002(ComponentInstanceConfiguration container,
+				ConnectorEndpointInstance source, ConnectorEndpointInstance target, View sourceView, View targetView) {
 			return null;
 		}
 
 		/**
-		 * @generated
-		 */
-		public boolean canExistCoordinationProtocolInstancePortInstances_4003(
-				org.muml.pim.instance.CoordinationProtocolInstance source,
-				org.muml.pim.instance.PortInstance target, View sourceView, View targetView) {
+		* @generated
+		*/
+		public boolean canExistCoordinationProtocolInstancePortInstances_4003(CoordinationProtocolInstance source,
+				PortInstance target, View sourceView, View targetView) {
 			return true;
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		public java.lang.String getErrorCoordinationProtocolInstancePortInstances_4003(
-				org.muml.pim.instance.CoordinationProtocolInstance source,
-				org.muml.pim.instance.PortInstance target, View sourceView, View targetView) {
+				CoordinationProtocolInstance source, PortInstance target, View sourceView, View targetView) {
 			return null;
 		}
 

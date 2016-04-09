@@ -13,6 +13,7 @@
 package org.muml.pim.componentinstanceconfiguration.diagram.navigator;
 
 import org.eclipse.jface.viewers.ViewerSorter;
+import org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry;
 
 /**
  * @generated
@@ -28,10 +29,9 @@ public class ComponentinstanceconfigurationNavigatorSorter extends ViewerSorter 
 	 * @generated
 	 */
 	public int category(Object element) {
-		if (element instanceof org.muml.pim.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorItem) {
-			org.muml.pim.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorItem item = (org.muml.pim.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorItem) element;
-			return org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-					.getVisualID(item.getView());
+		if (element instanceof ComponentinstanceconfigurationNavigatorItem) {
+			ComponentinstanceconfigurationNavigatorItem item = (ComponentinstanceconfigurationNavigatorItem) element;
+			return MumlVisualIDRegistry.getVisualID(item.getView());
 		}
 		return GROUP_CATEGORY;
 	}

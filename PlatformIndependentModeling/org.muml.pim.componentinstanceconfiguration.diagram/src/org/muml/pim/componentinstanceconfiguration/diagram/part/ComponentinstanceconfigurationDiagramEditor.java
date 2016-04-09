@@ -56,6 +56,9 @@ import org.eclipse.ui.navigator.resources.ProjectExplorer;
 import org.eclipse.ui.part.FileEditorInput;
 import org.eclipse.ui.part.IShowInTargetList;
 import org.eclipse.ui.part.ShowInContext;
+import org.muml.core.common.editingdomain.EditingDomainPlugin;
+import org.muml.core.common.editingdomain.initialize.IEditingDomainInitializer;
+import org.muml.pim.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorItem;
 import org.muml.pim.types.PrimitiveDataType;
 
 /**
@@ -92,8 +95,7 @@ public class ComponentinstanceconfigurationDiagramEditor extends DiagramDocument
 	 */
 	protected PaletteRoot createPaletteRoot(PaletteRoot existingPaletteRoot) {
 		PaletteRoot root = super.createPaletteRoot(existingPaletteRoot);
-		new org.muml.pim.componentinstanceconfiguration.diagram.part.MumlPaletteFactory()
-				.fillPalette(root);
+		new MumlPaletteFactory().fillPalette(root);
 		return root;
 	}
 
@@ -101,14 +103,14 @@ public class ComponentinstanceconfigurationDiagramEditor extends DiagramDocument
 	 * @generated
 	 */
 	protected PreferencesHint getPreferencesHint() {
-		return org.muml.pim.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT;
+		return ComponentinstanceconfigurationDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT;
 	}
 
 	/**
 	 * @generated
 	 */
 	public String getContributorId() {
-		return org.muml.pim.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin.ID;
+		return ComponentinstanceconfigurationDiagramEditorPlugin.ID;
 	}
 
 	/**
@@ -131,8 +133,7 @@ public class ComponentinstanceconfigurationDiagramEditor extends DiagramDocument
 	 */
 	protected IDocumentProvider getDocumentProvider(IEditorInput input) {
 		if (input instanceof IFileEditorInput || input instanceof URIEditorInput) {
-			return org.muml.pim.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin
-					.getInstance().getDocumentProvider();
+			return ComponentinstanceconfigurationDiagramEditorPlugin.getInstance().getDocumentProvider();
 		}
 		return super.getDocumentProvider(input);
 	}
@@ -153,9 +154,7 @@ public class ComponentinstanceconfigurationDiagramEditor extends DiagramDocument
 	 */
 	protected void setDocumentProvider(IEditorInput input) {
 		if (input instanceof IFileEditorInput || input instanceof URIEditorInput) {
-			setDocumentProvider(
-					org.muml.pim.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin
-							.getInstance().getDocumentProvider());
+			setDocumentProvider(ComponentinstanceconfigurationDiagramEditorPlugin.getInstance().getDocumentProvider());
 		} else {
 			super.setDocumentProvider(input);
 		}
@@ -200,8 +199,7 @@ public class ComponentinstanceconfigurationDiagramEditor extends DiagramDocument
 			return;
 		}
 		if (provider.isDeleted(input) && original != null) {
-			String message = NLS.bind(
-					org.muml.pim.componentinstanceconfiguration.diagram.part.Messages.ComponentinstanceconfigurationDiagramEditor_SavingDeletedFile,
+			String message = NLS.bind(Messages.ComponentinstanceconfigurationDiagramEditor_SavingDeletedFile,
 					original.getName());
 			dialog.setErrorMessage(null);
 			dialog.setMessage(message, IMessageProvider.WARNING);
@@ -228,9 +226,8 @@ public class ComponentinstanceconfigurationDiagramEditor extends DiagramDocument
 				.getEditorReferences();
 		for (int i = 0; i < editorRefs.length; i++) {
 			if (matchingStrategy.matches(editorRefs[i], newInput)) {
-				MessageDialog.openWarning(shell,
-						org.muml.pim.componentinstanceconfiguration.diagram.part.Messages.ComponentinstanceconfigurationDiagramEditor_SaveAsErrorTitle,
-						org.muml.pim.componentinstanceconfiguration.diagram.part.Messages.ComponentinstanceconfigurationDiagramEditor_SaveAsErrorMessage);
+				MessageDialog.openWarning(shell, Messages.ComponentinstanceconfigurationDiagramEditor_SaveAsErrorTitle,
+						Messages.ComponentinstanceconfigurationDiagramEditor_SaveAsErrorMessage);
 				return;
 			}
 		}
@@ -243,10 +240,8 @@ public class ComponentinstanceconfigurationDiagramEditor extends DiagramDocument
 		} catch (CoreException x) {
 			IStatus status = x.getStatus();
 			if (status == null || status.getSeverity() != IStatus.CANCEL) {
-				ErrorDialog.openError(shell,
-						org.muml.pim.componentinstanceconfiguration.diagram.part.Messages.ComponentinstanceconfigurationDiagramEditor_SaveErrorTitle,
-						org.muml.pim.componentinstanceconfiguration.diagram.part.Messages.ComponentinstanceconfigurationDiagramEditor_SaveErrorMessage,
-						x.getStatus());
+				ErrorDialog.openError(shell, Messages.ComponentinstanceconfigurationDiagramEditor_SaveErrorTitle,
+						Messages.ComponentinstanceconfigurationDiagramEditor_SaveErrorMessage, x.getStatus());
 			}
 		} finally {
 			provider.changed(newInput);
@@ -280,8 +275,8 @@ public class ComponentinstanceconfigurationDiagramEditor extends DiagramDocument
 		}
 		IFile file = WorkspaceSynchronizer.getFile(diagram.eResource());
 		if (file != null) {
-			org.muml.pim.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorItem item = new org.muml.pim.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorItem(
-					diagram, file, false);
+			ComponentinstanceconfigurationNavigatorItem item = new ComponentinstanceconfigurationNavigatorItem(diagram,
+					file, false);
 			return new StructuredSelection(item);
 		}
 		return StructuredSelection.EMPTY;
@@ -292,8 +287,8 @@ public class ComponentinstanceconfigurationDiagramEditor extends DiagramDocument
 	 */
 	protected void configureGraphicalViewer() {
 		super.configureGraphicalViewer();
-		org.muml.pim.componentinstanceconfiguration.diagram.part.DiagramEditorContextMenuProvider provider = new org.muml.pim.componentinstanceconfiguration.diagram.part.DiagramEditorContextMenuProvider(
-				this, getDiagramGraphicalViewer());
+		DiagramEditorContextMenuProvider provider = new DiagramEditorContextMenuProvider(this,
+				getDiagramGraphicalViewer());
 		getDiagramGraphicalViewer().setContextMenu(provider);
 		getSite().registerContextMenu(ActionIds.DIAGRAM_EDITOR_CONTEXT_MENU, provider, getDiagramGraphicalViewer());
 
@@ -312,8 +307,7 @@ public class ComponentinstanceconfigurationDiagramEditor extends DiagramDocument
 	@Override
 	public void setInput(IEditorInput input) {
 		super.setInput(input);
-		for (org.muml.common.editingdomain.initialize.IEditingDomainInitializer init : org.muml.common.editingdomain.EditingDomainPlugin
-				.getEditingDomainInitializers()) {
+		for (IEditingDomainInitializer init : EditingDomainPlugin.getEditingDomainInitializers()) {
 			init.initialize(getEditingDomain());
 		}
 	}

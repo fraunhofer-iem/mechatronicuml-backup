@@ -62,6 +62,10 @@ import org.eclipse.swt.accessibility.AccessibleEvent;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.FontData;
 import org.eclipse.swt.graphics.Image;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.policies.MumlTextSelectionEditPolicy;
+import org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry;
+import org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes;
+import org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlParserProvider;
 
 /**
  * @generated
@@ -126,7 +130,7 @@ public class HybridPortInstanceNameEditPart extends LabelEditPart implements ITe
 	 */
 	static {
 		registerSnapBackPosition(
-				org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry.getType(
+				MumlVisualIDRegistry.getType(
 						org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.HybridPortInstanceNameEditPart.VISUAL_ID),
 				new Point(0, 0));
 	}
@@ -144,8 +148,7 @@ public class HybridPortInstanceNameEditPart extends LabelEditPart implements ITe
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicy.DIRECT_EDIT_ROLE, new LabelDirectEditPolicy());
-		installEditPolicy(EditPolicy.SELECTION_FEEDBACK_ROLE,
-				new org.muml.pim.componentinstanceconfiguration.diagram.edit.policies.MumlTextSelectionEditPolicy());
+		installEditPolicy(EditPolicy.SELECTION_FEEDBACK_ROLE, new MumlTextSelectionEditPolicy());
 	}
 
 	/**
@@ -357,13 +360,9 @@ public class HybridPortInstanceNameEditPart extends LabelEditPart implements ITe
 	 */
 	public IParser getParser() {
 		if (parser == null) {
-			parser = org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlParserProvider
-					.getParser(
-							org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes.HybridPortInstance_2021,
-							getParserElement(),
-							org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-									.getType(
-											org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.HybridPortInstanceNameEditPart.VISUAL_ID));
+			parser = MumlParserProvider.getParser(MumlElementTypes.HybridPortInstance_2021, getParserElement(),
+					MumlVisualIDRegistry.getType(
+							org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.HybridPortInstanceNameEditPart.VISUAL_ID));
 		}
 		return parser;
 	}
@@ -373,9 +372,7 @@ public class HybridPortInstanceNameEditPart extends LabelEditPart implements ITe
 	 */
 	protected DirectEditManager getManager() {
 		if (manager == null) {
-			setManager(new TextDirectEditManager(this, null,
-					org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.MumlEditPartFactory
-							.getTextCellEditorLocator(this)));
+			setManager(new TextDirectEditManager(this, null, MumlEditPartFactory.getTextCellEditorLocator(this)));
 		}
 		return manager;
 	}

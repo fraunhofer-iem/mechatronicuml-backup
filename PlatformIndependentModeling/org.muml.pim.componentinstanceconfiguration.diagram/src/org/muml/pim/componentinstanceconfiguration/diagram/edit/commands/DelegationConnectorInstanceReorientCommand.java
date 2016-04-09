@@ -20,6 +20,12 @@ import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy;
+import org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.policies.MumlBaseItemSemanticEditPolicy;
+import org.muml.pim.connector.ConnectorEndpointInstance;
+import org.muml.pim.instance.ComponentInstanceConfiguration;
+import org.muml.pim.instance.DelegationConnectorInstance;
 
 /**
  * @generated
@@ -55,7 +61,7 @@ public class DelegationConnectorInstanceReorientCommand extends EditElementComma
 	 * @generated
 	 */
 	public boolean canExecute() {
-		if (false == getElementToEdit() instanceof org.muml.pim.instance.DelegationConnectorInstance) {
+		if (false == getElementToEdit() instanceof DelegationConnectorInstance) {
 			return false;
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
@@ -71,8 +77,7 @@ public class DelegationConnectorInstanceReorientCommand extends EditElementComma
 	 * @generated
 	 */
 	protected boolean canReorientSource() {
-		if (!(oldEnd instanceof org.muml.pim.connector.ConnectorEndpointInstance
-				&& newEnd instanceof org.muml.pim.connector.ConnectorEndpointInstance)) {
+		if (!(oldEnd instanceof ConnectorEndpointInstance && newEnd instanceof ConnectorEndpointInstance)) {
 			return false;
 		}
 		// Removed this check, because other cases are now implemented; Enhancement for MUML-BUG #446
@@ -81,24 +86,19 @@ public class DelegationConnectorInstanceReorientCommand extends EditElementComma
 		  return false;
 		}
 		*/
-		org.muml.pim.connector.ConnectorEndpointInstance target = (org.muml.pim.connector.ConnectorEndpointInstance) getLink()
-				.getConnectorEndpointInstances().get(0);
-		if (!(getLink().eContainer() instanceof org.muml.pim.instance.ComponentInstanceConfiguration)) {
+		ConnectorEndpointInstance target = (ConnectorEndpointInstance) getLink().getConnectorEndpointInstances().get(0);
+		if (!(getLink().eContainer() instanceof ComponentInstanceConfiguration)) {
 			return false;
 		}
-		org.muml.pim.instance.ComponentInstanceConfiguration container = (org.muml.pim.instance.ComponentInstanceConfiguration) getLink()
-				.eContainer();
-		View sourceView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-				.getSourceView(getRequest());
-		View targetView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-				.getTargetView(getRequest());
-		if (!org.muml.pim.componentinstanceconfiguration.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-				.getLinkConstraints().canExistDelegationConnectorInstance_4002(container, getLink(), getNewSource(),
-						target, sourceView, targetView)) {
-			String errorMessage = org.muml.pim.componentinstanceconfiguration.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-					.getLinkConstraints().getErrorDelegationConnectorInstance_4002(container, getNewSource(), target,
-							sourceView, targetView);
-			org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy.showMessage(sourceView, errorMessage);
+		ComponentInstanceConfiguration container = (ComponentInstanceConfiguration) getLink().eContainer();
+		View sourceView = ConnectionConfigureHelperGraphicalNodeEditPolicy.getSourceView(getRequest());
+		View targetView = ConnectionConfigureHelperGraphicalNodeEditPolicy.getTargetView(getRequest());
+		if (!MumlBaseItemSemanticEditPolicy.getLinkConstraints().canExistDelegationConnectorInstance_4002(container,
+				getLink(), getNewSource(), target, sourceView, targetView)) {
+			String errorMessage = MumlBaseItemSemanticEditPolicy.getLinkConstraints()
+					.getErrorDelegationConnectorInstance_4002(container, getNewSource(), target, sourceView,
+							targetView);
+			ErrorFeedbackEditPolicy.showMessage(sourceView, errorMessage);
 			return false;
 		}
 		return true;
@@ -108,8 +108,7 @@ public class DelegationConnectorInstanceReorientCommand extends EditElementComma
 	 * @generated
 	 */
 	protected boolean canReorientTarget() {
-		if (!(oldEnd instanceof org.muml.pim.connector.ConnectorEndpointInstance
-				&& newEnd instanceof org.muml.pim.connector.ConnectorEndpointInstance)) {
+		if (!(oldEnd instanceof ConnectorEndpointInstance && newEnd instanceof ConnectorEndpointInstance)) {
 			return false;
 		}
 		// Removed this check, because other cases are now implemented; Enhancement for MUML-BUG #446
@@ -118,24 +117,19 @@ public class DelegationConnectorInstanceReorientCommand extends EditElementComma
 		  return false;
 		}
 		*/
-		org.muml.pim.connector.ConnectorEndpointInstance source = (org.muml.pim.connector.ConnectorEndpointInstance) getLink()
-				.getConnectorEndpointInstances().get(0);
-		if (!(getLink().eContainer() instanceof org.muml.pim.instance.ComponentInstanceConfiguration)) {
+		ConnectorEndpointInstance source = (ConnectorEndpointInstance) getLink().getConnectorEndpointInstances().get(0);
+		if (!(getLink().eContainer() instanceof ComponentInstanceConfiguration)) {
 			return false;
 		}
-		org.muml.pim.instance.ComponentInstanceConfiguration container = (org.muml.pim.instance.ComponentInstanceConfiguration) getLink()
-				.eContainer();
-		View sourceView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-				.getSourceView(getRequest());
-		View targetView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-				.getTargetView(getRequest());
-		if (!org.muml.pim.componentinstanceconfiguration.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-				.getLinkConstraints().canExistDelegationConnectorInstance_4002(container, getLink(), source,
-						getNewTarget(), sourceView, targetView)) {
-			String errorMessage = org.muml.pim.componentinstanceconfiguration.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-					.getLinkConstraints().getErrorDelegationConnectorInstance_4002(container, source, getNewTarget(),
-							sourceView, targetView);
-			org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy.showMessage(sourceView, errorMessage);
+		ComponentInstanceConfiguration container = (ComponentInstanceConfiguration) getLink().eContainer();
+		View sourceView = ConnectionConfigureHelperGraphicalNodeEditPolicy.getSourceView(getRequest());
+		View targetView = ConnectionConfigureHelperGraphicalNodeEditPolicy.getTargetView(getRequest());
+		if (!MumlBaseItemSemanticEditPolicy.getLinkConstraints().canExistDelegationConnectorInstance_4002(container,
+				getLink(), source, getNewTarget(), sourceView, targetView)) {
+			String errorMessage = MumlBaseItemSemanticEditPolicy.getLinkConstraints()
+					.getErrorDelegationConnectorInstance_4002(container, source, getNewTarget(), sourceView,
+							targetView);
+			ErrorFeedbackEditPolicy.showMessage(sourceView, errorMessage);
 			return false;
 		}
 		return true;
@@ -188,36 +182,36 @@ public class DelegationConnectorInstanceReorientCommand extends EditElementComma
 	/**
 	 * @generated
 	 */
-	protected org.muml.pim.instance.DelegationConnectorInstance getLink() {
-		return (org.muml.pim.instance.DelegationConnectorInstance) getElementToEdit();
+	protected DelegationConnectorInstance getLink() {
+		return (DelegationConnectorInstance) getElementToEdit();
 	}
 
 	/**
 	 * @generated
 	 */
-	protected org.muml.pim.connector.ConnectorEndpointInstance getOldSource() {
-		return (org.muml.pim.connector.ConnectorEndpointInstance) oldEnd;
+	protected ConnectorEndpointInstance getOldSource() {
+		return (ConnectorEndpointInstance) oldEnd;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected org.muml.pim.connector.ConnectorEndpointInstance getNewSource() {
-		return (org.muml.pim.connector.ConnectorEndpointInstance) newEnd;
+	protected ConnectorEndpointInstance getNewSource() {
+		return (ConnectorEndpointInstance) newEnd;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected org.muml.pim.connector.ConnectorEndpointInstance getOldTarget() {
-		return (org.muml.pim.connector.ConnectorEndpointInstance) oldEnd;
+	protected ConnectorEndpointInstance getOldTarget() {
+		return (ConnectorEndpointInstance) oldEnd;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected org.muml.pim.connector.ConnectorEndpointInstance getNewTarget() {
-		return (org.muml.pim.connector.ConnectorEndpointInstance) newEnd;
+	protected ConnectorEndpointInstance getNewTarget() {
+		return (ConnectorEndpointInstance) newEnd;
 	}
 
 	/**

@@ -24,6 +24,13 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy;
+import org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.policies.MumlBaseItemSemanticEditPolicy;
+import org.muml.pim.connector.ConnectorEndpointInstance;
+import org.muml.pim.instance.AssemblyConnectorInstance;
+import org.muml.pim.instance.ComponentInstanceConfiguration;
+import org.muml.pim.instance.InstanceFactory;
 
 /**
  * @generated
@@ -43,23 +50,21 @@ public class AssemblyConnectorInstanceCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	private final org.muml.pim.instance.ComponentInstanceConfiguration container;
+	private final ComponentInstanceConfiguration container;
 
 	/**
 	 * @generated
 	 */
 	public AssemblyConnectorInstanceCreateCommand(CreateRelationshipRequest request, EObject source, EObject target) {
 		super(request.getLabel(), null, request);
-		org.muml.pim.instance.ComponentInstanceConfiguration container = null;
+		ComponentInstanceConfiguration container = null;
 		this.source = source;
 		this.target = target;
 		container = deduceContainer(source, target);
 
 		if (container == null) {
-			View sourceView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-					.getSourceView(getRequest());
-			View targetView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-					.getTargetView(getRequest());
+			View sourceView = ConnectionConfigureHelperGraphicalNodeEditPolicy.getSourceView(getRequest());
+			View targetView = ConnectionConfigureHelperGraphicalNodeEditPolicy.getTargetView(getRequest());
 			container = deduceContainerUsingViews(sourceView, targetView);
 		}
 		this.container = container;
@@ -72,12 +77,10 @@ public class AssemblyConnectorInstanceCreateCommand extends EditElementCommand {
 		if (source == null && target == null) {
 			return false;
 		}
-		if (source != null
-				&& false == source instanceof org.muml.pim.connector.ConnectorEndpointInstance) {
+		if (source != null && false == source instanceof ConnectorEndpointInstance) {
 			return false;
 		}
-		if (target != null
-				&& false == target instanceof org.muml.pim.connector.ConnectorEndpointInstance) {
+		if (target != null && false == target instanceof ConnectorEndpointInstance) {
 			return false;
 		}
 		if (getSource() == null) {
@@ -87,18 +90,14 @@ public class AssemblyConnectorInstanceCreateCommand extends EditElementCommand {
 		if (getContainer() == null) {
 			return false;
 		}
-		View sourceView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-				.getSourceView(getRequest());
-		View targetView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-				.getTargetView(getRequest());
-		if (!org.muml.pim.componentinstanceconfiguration.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-				.getLinkConstraints().canCreateAssemblyConnectorInstance_4001(getContainer(), getSource(), getTarget(),
-						sourceView, targetView)) {
-			String errorMessage = org.muml.pim.componentinstanceconfiguration.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-					.getLinkConstraints().getErrorAssemblyConnectorInstance_4001(getContainer(), getSource(),
-							getTarget(), sourceView, targetView);
-			org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy
-					.showMessage(targetView != null ? targetView : sourceView, errorMessage);
+		View sourceView = ConnectionConfigureHelperGraphicalNodeEditPolicy.getSourceView(getRequest());
+		View targetView = ConnectionConfigureHelperGraphicalNodeEditPolicy.getTargetView(getRequest());
+		if (!MumlBaseItemSemanticEditPolicy.getLinkConstraints().canCreateAssemblyConnectorInstance_4001(getContainer(),
+				getSource(), getTarget(), sourceView, targetView)) {
+			String errorMessage = MumlBaseItemSemanticEditPolicy.getLinkConstraints()
+					.getErrorAssemblyConnectorInstance_4001(getContainer(), getSource(), getTarget(), sourceView,
+							targetView);
+			ErrorFeedbackEditPolicy.showMessage(targetView != null ? targetView : sourceView, errorMessage);
 			return false;
 		}
 		return true;
@@ -112,8 +111,7 @@ public class AssemblyConnectorInstanceCreateCommand extends EditElementCommand {
 			throw new ExecutionException("Invalid arguments in create link command"); //$NON-NLS-1$
 		}
 
-		org.muml.pim.instance.AssemblyConnectorInstance newElement = org.muml.pim.instance.InstanceFactory.eINSTANCE
-				.createAssemblyConnectorInstance();
+		AssemblyConnectorInstance newElement = InstanceFactory.eINSTANCE.createAssemblyConnectorInstance();
 		getContainer().getPortConnectorInstances().add(newElement);
 		newElement.getConnectorEndpointInstances().add(getSource());
 		newElement.getConnectorEndpointInstances().add(getTarget());
@@ -124,10 +122,10 @@ public class AssemblyConnectorInstanceCreateCommand extends EditElementCommand {
 	}
 
 	/**
-	 * @generated
-	 */
-	protected void doConfigure(org.muml.pim.instance.AssemblyConnectorInstance newElement,
-			IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
+	* @generated
+	*/
+	protected void doConfigure(AssemblyConnectorInstance newElement, IProgressMonitor monitor, IAdaptable info)
+			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest()).getElementType();
 		ConfigureRequest configureRequest = new ConfigureRequest(getEditingDomain(), newElement, elementType);
 		configureRequest.setClientContext(((CreateElementRequest) getRequest()).getClientContext());
@@ -150,21 +148,21 @@ public class AssemblyConnectorInstanceCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected org.muml.pim.connector.ConnectorEndpointInstance getSource() {
-		return (org.muml.pim.connector.ConnectorEndpointInstance) source;
+	protected ConnectorEndpointInstance getSource() {
+		return (ConnectorEndpointInstance) source;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected org.muml.pim.connector.ConnectorEndpointInstance getTarget() {
-		return (org.muml.pim.connector.ConnectorEndpointInstance) target;
+	protected ConnectorEndpointInstance getTarget() {
+		return (ConnectorEndpointInstance) target;
 	}
 
 	/**
 	 * @generated
 	 */
-	public org.muml.pim.instance.ComponentInstanceConfiguration getContainer() {
+	public ComponentInstanceConfiguration getContainer() {
 		return container;
 	}
 
@@ -173,14 +171,13 @@ public class AssemblyConnectorInstanceCreateCommand extends EditElementCommand {
 	 * Modify with appropriate logic.
 	 * @generated
 	 */
-	private static org.muml.pim.instance.ComponentInstanceConfiguration deduceContainer(EObject source,
-			EObject target) {
+	private static ComponentInstanceConfiguration deduceContainer(EObject source, EObject target) {
 		// Find container element for the new link.
 		// Climb up by containment hierarchy starting from the source
 		// and return the first element that is instance of the container class.
 		for (EObject element = source; element != null; element = element.eContainer()) {
-			if (element instanceof org.muml.pim.instance.ComponentInstanceConfiguration) {
-				return (org.muml.pim.instance.ComponentInstanceConfiguration) element;
+			if (element instanceof ComponentInstanceConfiguration) {
+				return (ComponentInstanceConfiguration) element;
 			}
 		}
 		return null;
@@ -191,11 +188,10 @@ public class AssemblyConnectorInstanceCreateCommand extends EditElementCommand {
 	 * 
 	 * @generated
 	 */
-	private static org.muml.pim.instance.ComponentInstanceConfiguration deduceContainerUsingViews(
-			View sourceView, View targetView) {
+	private static ComponentInstanceConfiguration deduceContainerUsingViews(View sourceView, View targetView) {
 		for (View view = sourceView; view != null; view = (View) view.eContainer()) {
-			if (view.getElement() instanceof org.muml.pim.instance.ComponentInstanceConfiguration) {
-				return (org.muml.pim.instance.ComponentInstanceConfiguration) view.getElement();
+			if (view.getElement() instanceof ComponentInstanceConfiguration) {
+				return (ComponentInstanceConfiguration) view.getElement();
 			}
 		}
 		return null;

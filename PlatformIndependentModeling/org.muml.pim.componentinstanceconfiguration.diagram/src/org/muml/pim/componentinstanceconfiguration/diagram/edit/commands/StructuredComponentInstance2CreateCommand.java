@@ -23,6 +23,10 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.pim.componentinstanceconfiguration.diagram.providers.ElementInitializers;
+import org.muml.pim.instance.ComponentInstanceConfiguration;
+import org.muml.pim.instance.InstanceFactory;
+import org.muml.pim.instance.StructuredComponentInstance;
 
 /**
  * @generated
@@ -60,14 +64,12 @@ public class StructuredComponentInstance2CreateCommand extends EditElementComman
 	 * @generated
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-		org.muml.pim.instance.StructuredComponentInstance newElement = org.muml.pim.instance.InstanceFactory.eINSTANCE
-				.createStructuredComponentInstance();
+		StructuredComponentInstance newElement = InstanceFactory.eINSTANCE.createStructuredComponentInstance();
 
-		org.muml.pim.instance.ComponentInstanceConfiguration owner = (org.muml.pim.instance.ComponentInstanceConfiguration) getElementToEdit();
+		ComponentInstanceConfiguration owner = (ComponentInstanceConfiguration) getElementToEdit();
 		owner.getComponentInstances().add(newElement);
 
-		org.muml.pim.componentinstanceconfiguration.diagram.providers.ElementInitializers.getInstance()
-				.init_StructuredComponentInstance_3025(newElement);
+		ElementInitializers.getInstance().init_StructuredComponentInstance_3025(newElement);
 
 		doConfigure(newElement, monitor, info);
 
@@ -76,10 +78,10 @@ public class StructuredComponentInstance2CreateCommand extends EditElementComman
 	}
 
 	/**
-	 * @generated
-	 */
-	protected void doConfigure(org.muml.pim.instance.StructuredComponentInstance newElement,
-			IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
+	* @generated
+	*/
+	protected void doConfigure(StructuredComponentInstance newElement, IProgressMonitor monitor, IAdaptable info)
+			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest()).getElementType();
 		ConfigureRequest configureRequest = new ConfigureRequest(getEditingDomain(), newElement, elementType);
 		configureRequest.setClientContext(((CreateElementRequest) getRequest()).getClientContext());

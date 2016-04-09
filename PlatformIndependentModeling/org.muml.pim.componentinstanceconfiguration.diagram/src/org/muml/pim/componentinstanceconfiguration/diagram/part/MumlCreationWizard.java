@@ -15,12 +15,12 @@ package org.muml.pim.componentinstanceconfiguration.diagram.part;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.IWorkbench;
+import org.muml.core.modelinstance.ui.diagrams.AbstractFujabaDiagramNewWizard;
 
 /**
  * @generated
  */
-public class MumlCreationWizard
-		extends org.muml.core.modelinstance.ui.diagrams.AbstractFujabaDiagramNewWizard {
+public class MumlCreationWizard extends AbstractFujabaDiagramNewWizard {
 
 	/**
 	 * @generated
@@ -28,9 +28,8 @@ public class MumlCreationWizard
 	public void init(IWorkbench workbench, IStructuredSelection selection) {
 		super.init(workbench, selection);
 
-		setDefaultPageImageDescriptor(
-				org.muml.pim.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin
-						.getBundledImageDescriptor("icons/wizban/NewInstanceWizard.gif")); //$NON-NLS-1$
+		setDefaultPageImageDescriptor(ComponentinstanceconfigurationDiagramEditorPlugin
+				.getBundledImageDescriptor("icons/wizban/NewInstanceWizard.gif")); //$NON-NLS-1$
 
 	}
 
@@ -39,7 +38,7 @@ public class MumlCreationWizard
 	 */
 	@Override
 	public String getEditorId() {
-		return org.muml.pim.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditor.ID;
+		return ComponentinstanceconfigurationDiagramEditor.ID;
 
 	}
 
@@ -48,8 +47,7 @@ public class MumlCreationWizard
 	 */
 	@Override
 	public AdapterFactory getItemProvidersAdapterFactory() {
-		return org.muml.pim.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin
-				.getInstance().getItemProvidersAdapterFactory();
+		return ComponentinstanceconfigurationDiagramEditorPlugin.getInstance().getItemProvidersAdapterFactory();
 	}
 
 }

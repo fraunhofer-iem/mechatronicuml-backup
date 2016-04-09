@@ -29,6 +29,7 @@ import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.ui.IMemento;
 import org.eclipse.ui.navigator.ICommonContentExtensionSite;
 import org.eclipse.ui.navigator.ICommonContentProvider;
+import org.muml.pim.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin;
 
 /**
  * @generated
@@ -70,8 +71,7 @@ public class ComponentinstanceconfigurationDomainNavigatorContentProvider implem
 	 */
 	public ComponentinstanceconfigurationDomainNavigatorContentProvider() {
 		myAdapterFctoryContentProvier = new AdapterFactoryContentProvider(
-				org.muml.pim.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin
-						.getInstance().getItemProvidersAdapterFactory());
+				ComponentinstanceconfigurationDiagramEditorPlugin.getInstance().getItemProvidersAdapterFactory());
 		TransactionalEditingDomain editingDomain = GMFEditingDomainFactory.INSTANCE.createEditingDomain();
 		myEditingDomain = (AdapterFactoryEditingDomain) editingDomain;
 		myEditingDomain.setResourceToReadOnlyMap(new HashMap() {
@@ -187,10 +187,10 @@ public class ComponentinstanceconfigurationDomainNavigatorContentProvider implem
 			return wrapEObjects(myAdapterFctoryContentProvier.getChildren(resource), parentElement);
 		}
 
-		if (parentElement instanceof org.muml.pim.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationDomainNavigatorItem) {
-			return wrapEObjects(myAdapterFctoryContentProvier.getChildren(
-					((org.muml.pim.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationDomainNavigatorItem) parentElement)
-							.getEObject()),
+		if (parentElement instanceof ComponentinstanceconfigurationDomainNavigatorItem) {
+			return wrapEObjects(
+					myAdapterFctoryContentProvier.getChildren(
+							((ComponentinstanceconfigurationDomainNavigatorItem) parentElement).getEObject()),
 					parentElement);
 		}
 		return EMPTY_ARRAY;
@@ -203,9 +203,8 @@ public class ComponentinstanceconfigurationDomainNavigatorContentProvider implem
 		Collection result = new ArrayList();
 		for (int i = 0; i < objects.length; i++) {
 			if (objects[i] instanceof EObject) {
-				result.add(
-						new org.muml.pim.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationDomainNavigatorItem(
-								(EObject) objects[i], parentElement, myAdapterFctoryContentProvier));
+				result.add(new ComponentinstanceconfigurationDomainNavigatorItem((EObject) objects[i], parentElement,
+						myAdapterFctoryContentProvier));
 			}
 		}
 		return result.toArray();
@@ -215,8 +214,8 @@ public class ComponentinstanceconfigurationDomainNavigatorContentProvider implem
 	 * @generated
 	 */
 	public Object getParent(Object element) {
-		if (element instanceof org.muml.pim.componentinstanceconfiguration.diagram.navigator.MumlAbstractNavigatorItem) {
-			org.muml.pim.componentinstanceconfiguration.diagram.navigator.MumlAbstractNavigatorItem abstractNavigatorItem = (org.muml.pim.componentinstanceconfiguration.diagram.navigator.MumlAbstractNavigatorItem) element;
+		if (element instanceof MumlAbstractNavigatorItem) {
+			MumlAbstractNavigatorItem abstractNavigatorItem = (MumlAbstractNavigatorItem) element;
 			return abstractNavigatorItem.getParent();
 		}
 		return null;

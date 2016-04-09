@@ -21,8 +21,7 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class ComponentinstanceconfigurationNavigatorItem extends
-		org.muml.pim.componentinstanceconfiguration.diagram.navigator.MumlAbstractNavigatorItem {
+public class ComponentinstanceconfigurationNavigatorItem extends MumlAbstractNavigatorItem {
 
 	/**
 	 * @generated

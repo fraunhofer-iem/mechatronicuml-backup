@@ -44,6 +44,16 @@ import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.edit.policies.reparent.CreationEditPolicyWithCustomReparent;
 import org.eclipse.swt.graphics.Color;
+import org.muml.core.common.edit.policies.BorderItemSelectionEditPolicy;
+import org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy;
+import org.muml.core.common.edit.policies.anchor.IConnectionAnchorCreationEditPolicy;
+import org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy;
+import org.muml.core.common.figures.CustomExternalLabelBorderItemLocator;
+import org.muml.pim.common.edit.policies.IBackgroundColorEditPolicy;
+import org.muml.pim.common.edit.policies.ports.MultiPortEditPolicy;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.policies.DiscreteMultiPortInstance2ItemSemanticEditPolicy;
+import org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry;
+import org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes;
 
 /**
  * @generated
@@ -87,10 +97,8 @@ public class DiscreteMultiPortInstance2EditPart extends BorderedBorderItemEditPa
 	protected void refreshBackgroundColor() {
 		EditPolicy backgroundColorPolicy = getEditPolicy(
 				org.muml.core.common.edit.policies.EditPolicyRoles.BACKGROUND_COLOR_ROLE);
-		if (backgroundColorPolicy instanceof org.muml.pim.common.edit.policies.IBackgroundColorEditPolicy) {
-			setBackgroundColor(
-					((org.muml.pim.common.edit.policies.IBackgroundColorEditPolicy) backgroundColorPolicy)
-							.getCurrentBackgroundColor());
+		if (backgroundColorPolicy instanceof IBackgroundColorEditPolicy) {
+			setBackgroundColor(((IBackgroundColorEditPolicy) backgroundColorPolicy).getCurrentBackgroundColor());
 		} else {
 			super.refreshBackgroundColor();
 		}
@@ -117,25 +125,23 @@ public class DiscreteMultiPortInstance2EditPart extends BorderedBorderItemEditPa
 	 * @generated
 	 */
 	protected void createDefaultEditPolicies() {
-		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicyWithCustomReparent(
-				org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry.TYPED_INSTANCE));
+		installEditPolicy(EditPolicyRoles.CREATION_ROLE,
+				new CreationEditPolicyWithCustomReparent(MumlVisualIDRegistry.TYPED_INSTANCE));
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, getPrimaryDragEditPolicy());
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
-				new org.muml.pim.componentinstanceconfiguration.diagram.edit.policies.DiscreteMultiPortInstance2ItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new DiscreteMultiPortInstance2ItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 
 		installEditPolicy(org.muml.pim.common.edit.policies.EditPolicyRoles.PORT_VISUALIZATION_ROLE,
-				new org.muml.pim.common.edit.policies.ports.MultiPortEditPolicy());
+				new MultiPortEditPolicy());
 
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 
-		installEditPolicy(EditPolicy.GRAPHICAL_NODE_ROLE,
-				new org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy());
+		installEditPolicy(EditPolicy.GRAPHICAL_NODE_ROLE, new ConnectionConfigureHelperGraphicalNodeEditPolicy());
 
 		installEditPolicy(org.muml.core.common.edit.policies.EditPolicyRoles.ERROR_FEEDBACK_ROLE,
-				new org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy());
+				new ErrorFeedbackEditPolicy());
 
 	}
 
@@ -147,11 +153,10 @@ public class DiscreteMultiPortInstance2EditPart extends BorderedBorderItemEditPa
 
 			protected EditPolicy createChildEditPolicy(EditPart child) {
 				View childView = (View) child.getModel();
-				switch (org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-						.getVisualID(childView)) {
-				case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteMultiPortInstanceName2EditPart.VISUAL_ID:
-				case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.WrappingLabel10EditPart.VISUAL_ID:
-					return new org.muml.core.common.edit.policies.BorderItemSelectionEditPolicy();
+				switch (MumlVisualIDRegistry.getVisualID(childView)) {
+				case DiscreteMultiPortInstanceName2EditPart.VISUAL_ID:
+				case WrappingLabel10EditPart.VISUAL_ID:
+					return new BorderItemSelectionEditPolicy();
 				}
 				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
 				if (result == null) {
@@ -189,12 +194,11 @@ public class DiscreteMultiPortInstance2EditPart extends BorderedBorderItemEditPa
 	 * @generated
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartment2EditPart) {
+		if (childEditPart instanceof DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartment2EditPart) {
 			IFigure pane = getPrimaryShape().getFigureDiscreteSinglePortInstancesCompartment();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
-			pane.add(
-					((org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartment2EditPart) childEditPart)
-							.getFigure());
+			pane.add(((DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartment2EditPart) childEditPart)
+					.getFigure());
 			return true;
 		}
 		return false;
@@ -204,11 +208,10 @@ public class DiscreteMultiPortInstance2EditPart extends BorderedBorderItemEditPa
 	 * @generated
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartment2EditPart) {
+		if (childEditPart instanceof DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartment2EditPart) {
 			IFigure pane = getPrimaryShape().getFigureDiscreteSinglePortInstancesCompartment();
-			pane.remove(
-					((org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartment2EditPart) childEditPart)
-							.getFigure());
+			pane.remove(((DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartment2EditPart) childEditPart)
+					.getFigure());
 			return true;
 		}
 		return false;
@@ -238,7 +241,7 @@ public class DiscreteMultiPortInstance2EditPart extends BorderedBorderItemEditPa
 	 * @generated
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
-		if (editPart instanceof org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartment2EditPart) {
+		if (editPart instanceof DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartment2EditPart) {
 			return getPrimaryShape().getFigureDiscreteSinglePortInstancesCompartment();
 		}
 		if (editPart instanceof IBorderItemEditPart) {
@@ -251,11 +254,11 @@ public class DiscreteMultiPortInstance2EditPart extends BorderedBorderItemEditPa
 	 * @generated
 	 */
 	protected void addBorderItem(IFigure borderItemContainer, IBorderItemEditPart borderItemEditPart) {
-		if (borderItemEditPart instanceof org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteMultiPortInstanceName2EditPart
-				|| borderItemEditPart instanceof org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.WrappingLabel10EditPart) {
+		if (borderItemEditPart instanceof DiscreteMultiPortInstanceName2EditPart
+				|| borderItemEditPart instanceof WrappingLabel10EditPart) {
 			// bug-fix: allows the free positioning of external Labels
-			org.muml.core.common.figures.CustomExternalLabelBorderItemLocator locator = new org.muml.core.common.figures.CustomExternalLabelBorderItemLocator(
-					getMainFigure(), PositionConstants.SOUTH);
+			CustomExternalLabelBorderItemLocator locator = new CustomExternalLabelBorderItemLocator(getMainFigure(),
+					PositionConstants.SOUTH);
 			locator.setBorderItemOffset(new Dimension(-20, -20));
 			borderItemContainer.add(borderItemEditPart.getFigure(), locator);
 		} else {
@@ -270,7 +273,7 @@ public class DiscreteMultiPortInstance2EditPart extends BorderedBorderItemEditPa
 		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(44, 36) {
 			@Override
 			public ConnectionAnchor createDefaultAnchor() {
-				org.muml.core.common.edit.policies.anchor.IConnectionAnchorCreationEditPolicy connectionAnchorCreationEditPolicy = (org.muml.core.common.edit.policies.anchor.IConnectionAnchorCreationEditPolicy) getEditPolicy(
+				IConnectionAnchorCreationEditPolicy connectionAnchorCreationEditPolicy = (IConnectionAnchorCreationEditPolicy) getEditPolicy(
 						org.muml.core.common.edit.policies.EditPolicyRoles.CONNECTION_ANCHOR_CREATION_ROLE);
 				if (connectionAnchorCreationEditPolicy != null) {
 					return connectionAnchorCreationEditPolicy.createDefaultAnchor();
@@ -366,9 +369,7 @@ public class DiscreteMultiPortInstance2EditPart extends BorderedBorderItemEditPa
 	 * @generated
 	 */
 	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(
-				org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry.getType(
-						org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteMultiPortInstanceName2EditPart.VISUAL_ID));
+		return getChildBySemanticHint(MumlVisualIDRegistry.getType(DiscreteMultiPortInstanceName2EditPart.VISUAL_ID));
 	}
 
 	/**
@@ -379,11 +380,9 @@ public class DiscreteMultiPortInstance2EditPart extends BorderedBorderItemEditPa
 			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request).getViewAndElementDescriptor()
 					.getCreateElementRequestAdapter();
 			IElementType type = (IElementType) adapter.getAdapter(IElementType.class);
-			if (type == org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes.DiscreteSinglePortInstance_3026) {
-				return getChildBySemanticHint(
-						org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-								.getType(
-										org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartment2EditPart.VISUAL_ID));
+			if (type == MumlElementTypes.DiscreteSinglePortInstance_3026) {
+				return getChildBySemanticHint(MumlVisualIDRegistry
+						.getType(DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartment2EditPart.VISUAL_ID));
 			}
 		}
 		return super.getTargetEditPart(request);

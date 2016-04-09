@@ -23,6 +23,43 @@ import org.eclipse.gmf.runtime.common.ui.services.parser.ParserService;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.emf.ui.services.parser.ParserHintAdapter;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.ContinuousPortInstanceName2EditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.ContinuousPortInstanceNameEditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteMultiPortInstanceName2EditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteMultiPortInstanceNameEditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteSinglePortInstanceName3EditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteSinglePortInstanceNameEditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.HybridPortInstanceName2EditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.HybridPortInstanceNameEditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.WrappingLabel10EditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.WrappingLabel2EditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.WrappingLabel3EditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.WrappingLabel4EditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.WrappingLabel5EditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.WrappingLabel6EditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.WrappingLabel7EditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.WrappingLabel8EditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.WrappingLabel9EditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.WrappingLabelEditPart;
+import org.muml.pim.componentinstanceconfiguration.diagram.parsers.AtomicComponentInstanceLabelExpressionLabelParser5027;
+import org.muml.pim.componentinstanceconfiguration.diagram.parsers.AtomicComponentInstanceLabelExpressionLabelParser5028;
+import org.muml.pim.componentinstanceconfiguration.diagram.parsers.ContinuousPortInstanceLabelExpressionLabelParser5042;
+import org.muml.pim.componentinstanceconfiguration.diagram.parsers.ContinuousPortInstanceLabelExpressionLabelParser5046;
+import org.muml.pim.componentinstanceconfiguration.diagram.parsers.CoordinationProtocolInstanceLabelExpressionLabelParser5047;
+import org.muml.pim.componentinstanceconfiguration.diagram.parsers.CoordinationProtocolInstanceLabelExpressionLabelParser5048;
+import org.muml.pim.componentinstanceconfiguration.diagram.parsers.DiscreteMultiPortInstanceLabelExpressionLabelParser5041;
+import org.muml.pim.componentinstanceconfiguration.diagram.parsers.DiscreteMultiPortInstanceLabelExpressionLabelParser5045;
+import org.muml.pim.componentinstanceconfiguration.diagram.parsers.DiscreteMultiPortInstanceLabelExpressionLabelParser5051;
+import org.muml.pim.componentinstanceconfiguration.diagram.parsers.DiscreteMultiPortInstanceLabelExpressionLabelParser5052;
+import org.muml.pim.componentinstanceconfiguration.diagram.parsers.DiscreteSinglePortInstanceLabelExpressionLabelParser5040;
+import org.muml.pim.componentinstanceconfiguration.diagram.parsers.DiscreteSinglePortInstanceLabelExpressionLabelParser5044;
+import org.muml.pim.componentinstanceconfiguration.diagram.parsers.DiscreteSinglePortInstanceLabelExpressionLabelParser5049;
+import org.muml.pim.componentinstanceconfiguration.diagram.parsers.DiscreteSinglePortInstanceLabelExpressionLabelParser5050;
+import org.muml.pim.componentinstanceconfiguration.diagram.parsers.HybridPortInstanceLabelExpressionLabelParser5039;
+import org.muml.pim.componentinstanceconfiguration.diagram.parsers.HybridPortInstanceLabelExpressionLabelParser5043;
+import org.muml.pim.componentinstanceconfiguration.diagram.parsers.StructuredComponentInstanceLabelExpressionLabelParser5026;
+import org.muml.pim.componentinstanceconfiguration.diagram.parsers.StructuredComponentInstanceLabelExpressionLabelParser5029;
+import org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry;
 
 /**
  * @generated
@@ -33,126 +70,126 @@ public class MumlParserProvider extends AbstractProvider implements IParserProvi
 	 * @generated
 	 */
 	private IParser getHybridPortInstanceLabel_5039Parser() {
-		return new org.muml.pim.componentinstanceconfiguration.diagram.parsers.HybridPortInstanceLabelExpressionLabelParser5039();
+		return new HybridPortInstanceLabelExpressionLabelParser5039();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getDiscreteSinglePortInstanceLabel_5040Parser() {
-		return new org.muml.pim.componentinstanceconfiguration.diagram.parsers.DiscreteSinglePortInstanceLabelExpressionLabelParser5040();
+		return new DiscreteSinglePortInstanceLabelExpressionLabelParser5040();
 	}
 
 	/**
 	* @generated
 	*/
 	private IParser getDiscreteSinglePortInstanceLabel_5049Parser() {
-		return new org.muml.pim.componentinstanceconfiguration.diagram.parsers.DiscreteSinglePortInstanceLabelExpressionLabelParser5049();
+		return new DiscreteSinglePortInstanceLabelExpressionLabelParser5049();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getDiscreteMultiPortInstanceLabel_5041Parser() {
-		return new org.muml.pim.componentinstanceconfiguration.diagram.parsers.DiscreteMultiPortInstanceLabelExpressionLabelParser5041();
+		return new DiscreteMultiPortInstanceLabelExpressionLabelParser5041();
 	}
 
 	/**
 	* @generated
 	*/
 	private IParser getDiscreteMultiPortInstanceLabel_5051Parser() {
-		return new org.muml.pim.componentinstanceconfiguration.diagram.parsers.DiscreteMultiPortInstanceLabelExpressionLabelParser5051();
+		return new DiscreteMultiPortInstanceLabelExpressionLabelParser5051();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getContinuousPortInstanceLabel_5042Parser() {
-		return new org.muml.pim.componentinstanceconfiguration.diagram.parsers.ContinuousPortInstanceLabelExpressionLabelParser5042();
+		return new ContinuousPortInstanceLabelExpressionLabelParser5042();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getAtomicComponentInstanceLabel_5027Parser() {
-		return new org.muml.pim.componentinstanceconfiguration.diagram.parsers.AtomicComponentInstanceLabelExpressionLabelParser5027();
+		return new AtomicComponentInstanceLabelExpressionLabelParser5027();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getStructuredComponentInstanceLabel_5026Parser() {
-		return new org.muml.pim.componentinstanceconfiguration.diagram.parsers.StructuredComponentInstanceLabelExpressionLabelParser5026();
+		return new StructuredComponentInstanceLabelExpressionLabelParser5026();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getCoordinationProtocolInstanceLabel_5048Parser() {
-		return new org.muml.pim.componentinstanceconfiguration.diagram.parsers.CoordinationProtocolInstanceLabelExpressionLabelParser5048();
+		return new CoordinationProtocolInstanceLabelExpressionLabelParser5048();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getHybridPortInstanceLabel_5043Parser() {
-		return new org.muml.pim.componentinstanceconfiguration.diagram.parsers.HybridPortInstanceLabelExpressionLabelParser5043();
+		return new HybridPortInstanceLabelExpressionLabelParser5043();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getDiscreteSinglePortInstanceLabel_5044Parser() {
-		return new org.muml.pim.componentinstanceconfiguration.diagram.parsers.DiscreteSinglePortInstanceLabelExpressionLabelParser5044();
+		return new DiscreteSinglePortInstanceLabelExpressionLabelParser5044();
 	}
 
 	/**
 	* @generated
 	*/
 	private IParser getDiscreteSinglePortInstanceLabel_5050Parser() {
-		return new org.muml.pim.componentinstanceconfiguration.diagram.parsers.DiscreteSinglePortInstanceLabelExpressionLabelParser5050();
+		return new DiscreteSinglePortInstanceLabelExpressionLabelParser5050();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getDiscreteMultiPortInstanceLabel_5045Parser() {
-		return new org.muml.pim.componentinstanceconfiguration.diagram.parsers.DiscreteMultiPortInstanceLabelExpressionLabelParser5045();
+		return new DiscreteMultiPortInstanceLabelExpressionLabelParser5045();
 	}
 
 	/**
 	* @generated
 	*/
 	private IParser getDiscreteMultiPortInstanceLabel_5052Parser() {
-		return new org.muml.pim.componentinstanceconfiguration.diagram.parsers.DiscreteMultiPortInstanceLabelExpressionLabelParser5052();
+		return new DiscreteMultiPortInstanceLabelExpressionLabelParser5052();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getContinuousPortInstanceLabel_5046Parser() {
-		return new org.muml.pim.componentinstanceconfiguration.diagram.parsers.ContinuousPortInstanceLabelExpressionLabelParser5046();
+		return new ContinuousPortInstanceLabelExpressionLabelParser5046();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getAtomicComponentInstanceLabel_5028Parser() {
-		return new org.muml.pim.componentinstanceconfiguration.diagram.parsers.AtomicComponentInstanceLabelExpressionLabelParser5028();
+		return new AtomicComponentInstanceLabelExpressionLabelParser5028();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getStructuredComponentInstanceLabel_5029Parser() {
-		return new org.muml.pim.componentinstanceconfiguration.diagram.parsers.StructuredComponentInstanceLabelExpressionLabelParser5029();
+		return new StructuredComponentInstanceLabelExpressionLabelParser5029();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getCoordinationProtocolInstanceLabel_5047Parser() {
-		return new org.muml.pim.componentinstanceconfiguration.diagram.parsers.CoordinationProtocolInstanceLabelExpressionLabelParser5047();
+		return new CoordinationProtocolInstanceLabelExpressionLabelParser5047();
 	}
 
 	/**
@@ -160,41 +197,41 @@ public class MumlParserProvider extends AbstractProvider implements IParserProvi
 	 */
 	protected IParser getParser(int visualID) {
 		switch (visualID) {
-		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.HybridPortInstanceNameEditPart.VISUAL_ID:
+		case HybridPortInstanceNameEditPart.VISUAL_ID:
 			return getHybridPortInstanceLabel_5039Parser();
-		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteSinglePortInstanceNameEditPart.VISUAL_ID:
+		case DiscreteSinglePortInstanceNameEditPart.VISUAL_ID:
 			return getDiscreteSinglePortInstanceLabel_5040Parser();
-		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.WrappingLabel7EditPart.VISUAL_ID:
+		case WrappingLabel7EditPart.VISUAL_ID:
 			return getDiscreteSinglePortInstanceLabel_5049Parser();
-		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteMultiPortInstanceNameEditPart.VISUAL_ID:
+		case DiscreteMultiPortInstanceNameEditPart.VISUAL_ID:
 			return getDiscreteMultiPortInstanceLabel_5041Parser();
-		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.WrappingLabel9EditPart.VISUAL_ID:
+		case WrappingLabel9EditPart.VISUAL_ID:
 			return getDiscreteMultiPortInstanceLabel_5051Parser();
-		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.ContinuousPortInstanceNameEditPart.VISUAL_ID:
+		case ContinuousPortInstanceNameEditPart.VISUAL_ID:
 			return getContinuousPortInstanceLabel_5042Parser();
-		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.WrappingLabel2EditPart.VISUAL_ID:
+		case WrappingLabel2EditPart.VISUAL_ID:
 			return getAtomicComponentInstanceLabel_5027Parser();
-		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID:
+		case WrappingLabelEditPart.VISUAL_ID:
 			return getStructuredComponentInstanceLabel_5026Parser();
-		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.WrappingLabel5EditPart.VISUAL_ID:
+		case WrappingLabel5EditPart.VISUAL_ID:
 			return getCoordinationProtocolInstanceLabel_5048Parser();
-		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.HybridPortInstanceName2EditPart.VISUAL_ID:
+		case HybridPortInstanceName2EditPart.VISUAL_ID:
 			return getHybridPortInstanceLabel_5043Parser();
-		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteSinglePortInstanceName3EditPart.VISUAL_ID:
+		case DiscreteSinglePortInstanceName3EditPart.VISUAL_ID:
 			return getDiscreteSinglePortInstanceLabel_5044Parser();
-		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.WrappingLabel8EditPart.VISUAL_ID:
+		case WrappingLabel8EditPart.VISUAL_ID:
 			return getDiscreteSinglePortInstanceLabel_5050Parser();
-		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.DiscreteMultiPortInstanceName2EditPart.VISUAL_ID:
+		case DiscreteMultiPortInstanceName2EditPart.VISUAL_ID:
 			return getDiscreteMultiPortInstanceLabel_5045Parser();
-		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.WrappingLabel10EditPart.VISUAL_ID:
+		case WrappingLabel10EditPart.VISUAL_ID:
 			return getDiscreteMultiPortInstanceLabel_5052Parser();
-		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.ContinuousPortInstanceName2EditPart.VISUAL_ID:
+		case ContinuousPortInstanceName2EditPart.VISUAL_ID:
 			return getContinuousPortInstanceLabel_5046Parser();
-		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.WrappingLabel3EditPart.VISUAL_ID:
+		case WrappingLabel3EditPart.VISUAL_ID:
 			return getAtomicComponentInstanceLabel_5028Parser();
-		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.WrappingLabel4EditPart.VISUAL_ID:
+		case WrappingLabel4EditPart.VISUAL_ID:
 			return getStructuredComponentInstanceLabel_5029Parser();
-		case org.muml.pim.componentinstanceconfiguration.diagram.edit.parts.WrappingLabel6EditPart.VISUAL_ID:
+		case WrappingLabel6EditPart.VISUAL_ID:
 			return getCoordinationProtocolInstanceLabel_5047Parser();
 		}
 		return null;
@@ -214,15 +251,11 @@ public class MumlParserProvider extends AbstractProvider implements IParserProvi
 	public IParser getParser(IAdaptable hint) {
 		String vid = (String) hint.getAdapter(String.class);
 		if (vid != null) {
-			return getParser(
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getVisualID(vid));
+			return getParser(MumlVisualIDRegistry.getVisualID(vid));
 		}
 		View view = (View) hint.getAdapter(View.class);
 		if (view != null) {
-			return getParser(
-					org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-							.getVisualID(view));
+			return getParser(MumlVisualIDRegistry.getVisualID(view));
 		}
 		return null;
 	}
@@ -233,8 +266,7 @@ public class MumlParserProvider extends AbstractProvider implements IParserProvi
 	public boolean provides(IOperation operation) {
 		if (operation instanceof GetParserOperation) {
 			IAdaptable hint = ((GetParserOperation) operation).getHint();
-			if (org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes
-					.getElement(hint) == null) {
+			if (MumlElementTypes.getElement(hint) == null) {
 				return false;
 			}
 			return getParser(hint) != null;

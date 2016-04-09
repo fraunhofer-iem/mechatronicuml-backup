@@ -31,6 +31,11 @@ import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.edit.policies.reparent.CreationEditPolicyWithCustomReparent;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.policies.DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartmentCanonicalEditPolicy;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.policies.DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartmentItemSemanticEditPolicy;
+import org.muml.pim.componentinstanceconfiguration.diagram.part.Messages;
+import org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry;
+import org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes;
 
 /**
  * @generated
@@ -83,7 +88,7 @@ public class DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartmentEditPa
 	 * @generated
 	 */
 	public String getCompartmentName() {
-		return org.muml.pim.componentinstanceconfiguration.diagram.part.Messages.DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartmentEditPart_title;
+		return Messages.DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartmentEditPart_title;
 	}
 
 	/**
@@ -112,12 +117,12 @@ public class DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartmentEditPa
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
-				new org.muml.pim.componentinstanceconfiguration.diagram.edit.policies.DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartmentItemSemanticEditPolicy());
-		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicyWithCustomReparent(
-				org.muml.pim.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry.TYPED_INSTANCE));
+				new DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartmentItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.CREATION_ROLE,
+				new CreationEditPolicyWithCustomReparent(MumlVisualIDRegistry.TYPED_INSTANCE));
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
 		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE,
-				new org.muml.pim.componentinstanceconfiguration.diagram.edit.policies.DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartmentCanonicalEditPolicy());
+				new DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartmentCanonicalEditPolicy());
 	}
 
 	/**
@@ -137,7 +142,7 @@ public class DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartmentEditPa
 			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request).getViewAndElementDescriptor()
 					.getCreateElementRequestAdapter();
 			IElementType type = (IElementType) adapter.getAdapter(IElementType.class);
-			if (type == org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes.DiscreteSinglePortInstance_3026) {
+			if (type == MumlElementTypes.DiscreteSinglePortInstance_3026) {
 				return this;
 			}
 			return getParent().getTargetEditPart(request);
@@ -147,12 +152,9 @@ public class DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartmentEditPa
 				for (Object type : ((CreateUnspecifiedTypeConnectionRequest) request).getElementTypes()) {
 					if (type instanceof IElementType) {
 						IElementType elementType = (IElementType) type;
-						if (elementType
-								.equals(org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes.AssemblyConnectorInstance_4001)
-								|| elementType
-										.equals(org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes.DelegationConnectorInstance_4002)
-								|| elementType.equals(
-										org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes.CoordinationProtocolInstancePortInstances_4003))
+						if (elementType.equals(MumlElementTypes.AssemblyConnectorInstance_4001)
+								|| elementType.equals(MumlElementTypes.DelegationConnectorInstance_4002)
+								|| elementType.equals(MumlElementTypes.CoordinationProtocolInstancePortInstances_4003))
 							return super.getTargetEditPart(request);
 					}
 				}

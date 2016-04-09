@@ -18,65 +18,51 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.emf.commands.core.commands.DuplicateEObjectsCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DuplicateElementsRequest;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.commands.AtomicComponentInstanceCreateCommand;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.commands.ContinuousPortInstanceCreateCommand;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.commands.CoordinationProtocolInstanceCreateCommand;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.commands.DiscreteMultiPortInstanceCreateCommand;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.commands.DiscreteSinglePortInstanceCreateCommand;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.commands.HybridPortInstanceCreateCommand;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.commands.StructuredComponentInstanceCreateCommand;
+import org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes;
 
 /**
  * @generated
  */
-public class ComponentInstanceConfigurationDiagramItemSemanticEditPolicy extends
-		org.muml.pim.componentinstanceconfiguration.diagram.edit.policies.MumlBaseItemSemanticEditPolicy {
+public class ComponentInstanceConfigurationDiagramItemSemanticEditPolicy extends MumlBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public ComponentInstanceConfigurationDiagramItemSemanticEditPolicy() {
-		super(org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes.ComponentInstanceConfiguration_1000);
+		super(MumlElementTypes.ComponentInstanceConfiguration_1000);
 	}
 
 	/**
 	 * @generated
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
-		if (org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes.HybridPortInstance_2021 == req
-				.getElementType()) {
-			return getGEFWrapper(
-					new org.muml.pim.componentinstanceconfiguration.diagram.edit.commands.HybridPortInstanceCreateCommand(
-							req));
+		if (MumlElementTypes.HybridPortInstance_2021 == req.getElementType()) {
+			return getGEFWrapper(new HybridPortInstanceCreateCommand(req));
 		}
-		if (org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes.DiscreteSinglePortInstance_2022 == req
-				.getElementType()) {
-			return getGEFWrapper(
-					new org.muml.pim.componentinstanceconfiguration.diagram.edit.commands.DiscreteSinglePortInstanceCreateCommand(
-							req));
+		if (MumlElementTypes.DiscreteSinglePortInstance_2022 == req.getElementType()) {
+			return getGEFWrapper(new DiscreteSinglePortInstanceCreateCommand(req));
 		}
-		if (org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes.DiscreteMultiPortInstance_2023 == req
-				.getElementType()) {
-			return getGEFWrapper(
-					new org.muml.pim.componentinstanceconfiguration.diagram.edit.commands.DiscreteMultiPortInstanceCreateCommand(
-							req));
+		if (MumlElementTypes.DiscreteMultiPortInstance_2023 == req.getElementType()) {
+			return getGEFWrapper(new DiscreteMultiPortInstanceCreateCommand(req));
 		}
-		if (org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes.ContinuousPortInstance_2024 == req
-				.getElementType()) {
-			return getGEFWrapper(
-					new org.muml.pim.componentinstanceconfiguration.diagram.edit.commands.ContinuousPortInstanceCreateCommand(
-							req));
+		if (MumlElementTypes.ContinuousPortInstance_2024 == req.getElementType()) {
+			return getGEFWrapper(new ContinuousPortInstanceCreateCommand(req));
 		}
-		if (org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes.AtomicComponentInstance_2016 == req
-				.getElementType()) {
-			return getGEFWrapper(
-					new org.muml.pim.componentinstanceconfiguration.diagram.edit.commands.AtomicComponentInstanceCreateCommand(
-							req));
+		if (MumlElementTypes.AtomicComponentInstance_2016 == req.getElementType()) {
+			return getGEFWrapper(new AtomicComponentInstanceCreateCommand(req));
 		}
-		if (org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes.StructuredComponentInstance_2015 == req
-				.getElementType()) {
-			return getGEFWrapper(
-					new org.muml.pim.componentinstanceconfiguration.diagram.edit.commands.StructuredComponentInstanceCreateCommand(
-							req));
+		if (MumlElementTypes.StructuredComponentInstance_2015 == req.getElementType()) {
+			return getGEFWrapper(new StructuredComponentInstanceCreateCommand(req));
 		}
-		if (org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes.CoordinationProtocolInstance_2025 == req
-				.getElementType()) {
-			return getGEFWrapper(
-					new org.muml.pim.componentinstanceconfiguration.diagram.edit.commands.CoordinationProtocolInstanceCreateCommand(
-							req));
+		if (MumlElementTypes.CoordinationProtocolInstance_2025 == req.getElementType()) {
+			return getGEFWrapper(new CoordinationProtocolInstanceCreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}

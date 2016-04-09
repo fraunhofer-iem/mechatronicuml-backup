@@ -48,7 +48,7 @@
   	  <wizard
   	     name="%newWizardName"
   	     icon="icons/obj16/InstanceDiagramFile.gif"
-  	     category="de.uni_paderborn.fujaba/de.uni_paderborn.fujaba.diagrams"
+  	     category="org.muml/org.muml.diagrams"
   	     class="org.muml.pim.componentinstanceconfiguration.diagram.part.MumlCreationWizard"
   	     id="org.muml.pim.componentinstanceconfiguration.diagram.part.MumlCreationWizardID">
   	  	 <description>%newWizardDesc</description>  
@@ -64,9 +64,9 @@
 	         allPopups="false"
 	         locationURI="popup:de.uni_paderborn.fujaba.muml.browser.new.menu?after=additions">
 	  		<command
-                 commandId="de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration.browser.create"
+                 commandId="org.muml.pim.instance.ComponentInstanceConfiguration.browser.create"
                  icon="icons/obj16/InstanceDiagramFile.gif"
-                 id="de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration.browser.create"
+                 id="org.muml.pim.instance.ComponentInstanceConfiguration.browser.create"
                  label="ComponentInstanceConfiguration"
                  style="push">
               <visibleWhen
@@ -110,27 +110,13 @@
            defaultHandler="org.muml.pim.componentinstanceconfiguration.diagram.part.MumlInitDiagramFileAction$CreateDiagramElement"
            categoryId="de.uni_paderborn.fujaba"
            description="Create new Component Instance Configuration"
-           id="de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration.browser.create"
+           id="org.muml.pim.instance.ComponentInstanceConfiguration.browser.create"
            name="Create new Component Instance Configuration">
     </command>
     </extension>
 
 	
-	<extension
-         point="org.muml.core.modelinstance.modelelementcategory">
-      <?gmfgen generated="true"?>  
-      <category
-            key="de.uni_paderborn.fujaba.muml.instance.category"
-            name="instance">
-         
-         <child
-               class="ComponentInstanceConfiguration"
-               packageNsUri="http://www.muml.org/pim/instance/1.0.0">
-         </child>
-         
-      </category>
-   </extension>
-
+	
 	
 	<extension
          point="org.muml.core.modelinstance.ui.diagraminformation">
@@ -140,7 +126,7 @@
             editorId="org.muml.pim.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorID"
             editorName="Component Instance Configuration Editor"
             fileExtension="componentinstanceconfiguration_diagram"
-            modelElementCategoryKey="de.uni_paderborn.fujaba.muml.instance.category"
+            modelElementCategoryKey="org.muml.pim.instance.category"
             modelId="Component Instance Configuration">
          <diagramElement
                packageNsURI="http://www.muml.org/pim/instance/1.0.0"
@@ -944,6 +930,21 @@
          class="org.eclipse.gmf.runtime.emf.core.resources.GMFResourceFactory">
       </parser>
    </extension>
+<extension
+         point="de.uni_paderborn.fujaba.modelinstance.modelelementcategory">
+      <?gmfgen generated="true"?>  
+      <category
+            key="org.muml.pim.instance.category"
+            name="instance">
+         
+         <child
+               class="ComponentInstanceConfiguration"
+               packageNsUri="http://www.muml.org/pim/instance/1.0.0">
+         </child>
+         
+      </category>
+   </extension>
+
 
 
 

@@ -14,42 +14,36 @@ package org.muml.pim.componentinstanceconfiguration.diagram.edit.policies;
 
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.commands.AtomicComponentInstance2CreateCommand;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.commands.CoordinationProtocolInstance2CreateCommand;
+import org.muml.pim.componentinstanceconfiguration.diagram.edit.commands.StructuredComponentInstance2CreateCommand;
+import org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes;
 
 /**
  * @generated
  */
 public class ComponentInstanceConfigurationComponentInstanceConfigurationContentsCompartmentItemSemanticEditPolicy
-		extends
-		org.muml.pim.componentinstanceconfiguration.diagram.edit.policies.MumlBaseItemSemanticEditPolicy {
+		extends MumlBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public ComponentInstanceConfigurationComponentInstanceConfigurationContentsCompartmentItemSemanticEditPolicy() {
-		super(org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes.ComponentInstanceConfiguration_3023);
+		super(MumlElementTypes.ComponentInstanceConfiguration_3023);
 	}
 
 	/**
 	 * @generated
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
-		if (org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes.AtomicComponentInstance_3024 == req
-				.getElementType()) {
-			return getGEFWrapper(
-					new org.muml.pim.componentinstanceconfiguration.diagram.edit.commands.AtomicComponentInstance2CreateCommand(
-							req));
+		if (MumlElementTypes.AtomicComponentInstance_3024 == req.getElementType()) {
+			return getGEFWrapper(new AtomicComponentInstance2CreateCommand(req));
 		}
-		if (org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes.StructuredComponentInstance_3025 == req
-				.getElementType()) {
-			return getGEFWrapper(
-					new org.muml.pim.componentinstanceconfiguration.diagram.edit.commands.StructuredComponentInstance2CreateCommand(
-							req));
+		if (MumlElementTypes.StructuredComponentInstance_3025 == req.getElementType()) {
+			return getGEFWrapper(new StructuredComponentInstance2CreateCommand(req));
 		}
-		if (org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes.CoordinationProtocolInstance_3035 == req
-				.getElementType()) {
-			return getGEFWrapper(
-					new org.muml.pim.componentinstanceconfiguration.diagram.edit.commands.CoordinationProtocolInstance2CreateCommand(
-							req));
+		if (MumlElementTypes.CoordinationProtocolInstance_3035 == req.getElementType()) {
+			return getGEFWrapper(new CoordinationProtocolInstance2CreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}

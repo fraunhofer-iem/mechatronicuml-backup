@@ -23,6 +23,10 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.pim.componentinstanceconfiguration.diagram.providers.ElementInitializers;
+import org.muml.pim.instance.ComponentInstanceConfiguration;
+import org.muml.pim.instance.InstanceFactory;
+import org.muml.pim.instance.StructuredComponentInstance;
 
 /**
  * @generated
@@ -52,7 +56,7 @@ public class ComponentInstanceConfigurationCreateCommand extends EditElementComm
 	 * @generated
 	 */
 	public boolean canExecute() {
-		org.muml.pim.instance.StructuredComponentInstance container = (org.muml.pim.instance.StructuredComponentInstance) getElementToEdit();
+		StructuredComponentInstance container = (StructuredComponentInstance) getElementToEdit();
 		if (container.getEmbeddedCIC() != null) {
 			return false;
 		}
@@ -64,14 +68,12 @@ public class ComponentInstanceConfigurationCreateCommand extends EditElementComm
 	 * @generated
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-		org.muml.pim.instance.ComponentInstanceConfiguration newElement = org.muml.pim.instance.InstanceFactory.eINSTANCE
-				.createComponentInstanceConfiguration();
+		ComponentInstanceConfiguration newElement = InstanceFactory.eINSTANCE.createComponentInstanceConfiguration();
 
-		org.muml.pim.instance.StructuredComponentInstance owner = (org.muml.pim.instance.StructuredComponentInstance) getElementToEdit();
+		StructuredComponentInstance owner = (StructuredComponentInstance) getElementToEdit();
 		owner.setEmbeddedCIC(newElement);
 
-		org.muml.pim.componentinstanceconfiguration.diagram.providers.ElementInitializers.getInstance()
-				.init_ComponentInstanceConfiguration_3023(newElement);
+		ElementInitializers.getInstance().init_ComponentInstanceConfiguration_3023(newElement);
 
 		doConfigure(newElement, monitor, info);
 
@@ -80,10 +82,10 @@ public class ComponentInstanceConfigurationCreateCommand extends EditElementComm
 	}
 
 	/**
-	 * @generated
-	 */
-	protected void doConfigure(org.muml.pim.instance.ComponentInstanceConfiguration newElement,
-			IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
+	* @generated
+	*/
+	protected void doConfigure(ComponentInstanceConfiguration newElement, IProgressMonitor monitor, IAdaptable info)
+			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest()).getElementType();
 		ConfigureRequest configureRequest = new ConfigureRequest(getEditingDomain(), newElement, elementType);
 		configureRequest.setClientContext(((CreateElementRequest) getRequest()).getClientContext());

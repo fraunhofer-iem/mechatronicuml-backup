@@ -13,6 +13,7 @@
 package org.muml.pim.componentinstanceconfiguration.diagram.preferences;
 
 import org.eclipse.gmf.runtime.diagram.ui.preferences.RulerGridPreferencePage;
+import org.muml.pim.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin;
 
 /**
  * @generated
@@ -23,8 +24,6 @@ public class DiagramRulersAndGridPreferencePage extends RulerGridPreferencePage 
 	 * @generated
 	 */
 	public DiagramRulersAndGridPreferencePage() {
-		setPreferenceStore(
-				org.muml.pim.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin
-						.getInstance().getPreferenceStore());
+		setPreferenceStore(ComponentinstanceconfigurationDiagramEditorPlugin.getInstance().getPreferenceStore());
 	}
 }

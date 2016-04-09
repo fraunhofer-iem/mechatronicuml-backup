@@ -18,6 +18,7 @@ import org.eclipse.swt.graphics.Image;
 import org.eclipse.ui.IMemento;
 import org.eclipse.ui.navigator.ICommonContentExtensionSite;
 import org.eclipse.ui.navigator.ICommonLabelProvider;
+import org.muml.pim.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin;
 
 /**
  * @generated
@@ -28,8 +29,7 @@ public class ComponentinstanceconfigurationDomainNavigatorLabelProvider implemen
 	 * @generated
 	 */
 	private AdapterFactoryLabelProvider myAdapterFactoryLabelProvider = new AdapterFactoryLabelProvider(
-			org.muml.pim.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin
-					.getInstance().getItemProvidersAdapterFactory());
+			ComponentinstanceconfigurationDiagramEditorPlugin.getInstance().getItemProvidersAdapterFactory());
 
 	/**
 	 * @generated
@@ -41,10 +41,9 @@ public class ComponentinstanceconfigurationDomainNavigatorLabelProvider implemen
 	 * @generated
 	 */
 	public Image getImage(Object element) {
-		if (element instanceof org.muml.pim.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationDomainNavigatorItem) {
-			return myAdapterFactoryLabelProvider.getImage(
-					((org.muml.pim.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationDomainNavigatorItem) element)
-							.getEObject());
+		if (element instanceof ComponentinstanceconfigurationDomainNavigatorItem) {
+			return myAdapterFactoryLabelProvider
+					.getImage(((ComponentinstanceconfigurationDomainNavigatorItem) element).getEObject());
 		}
 		return null;
 	}
@@ -53,10 +52,9 @@ public class ComponentinstanceconfigurationDomainNavigatorLabelProvider implemen
 	 * @generated
 	 */
 	public String getText(Object element) {
-		if (element instanceof org.muml.pim.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationDomainNavigatorItem) {
-			return myAdapterFactoryLabelProvider.getText(
-					((org.muml.pim.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationDomainNavigatorItem) element)
-							.getEObject());
+		if (element instanceof ComponentinstanceconfigurationDomainNavigatorItem) {
+			return myAdapterFactoryLabelProvider
+					.getText(((ComponentinstanceconfigurationDomainNavigatorItem) element).getEObject());
 		}
 		return null;
 	}

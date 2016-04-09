@@ -17,12 +17,13 @@ import java.util.List;
 
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
+import org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes;
+import org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlModelingAssistantProvider;
 
 /**
  * @generated
  */
-public class MumlModelingAssistantProviderOfAtomicComponentInstanceEditPart extends
-		org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlModelingAssistantProvider {
+public class MumlModelingAssistantProviderOfAtomicComponentInstanceEditPart extends MumlModelingAssistantProvider {
 
 	/**
 	 * @generated
@@ -30,14 +31,10 @@ public class MumlModelingAssistantProviderOfAtomicComponentInstanceEditPart exte
 	@Override
 	public List<IElementType> getTypesForPopupBar(IAdaptable host) {
 		List<IElementType> types = new ArrayList<IElementType>(4);
-		types.add(
-				org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes.HybridPortInstance_3031);
-		types.add(
-				org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes.DiscreteSinglePortInstance_3032);
-		types.add(
-				org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes.DiscreteMultiPortInstance_3033);
-		types.add(
-				org.muml.pim.componentinstanceconfiguration.diagram.providers.MumlElementTypes.ContinuousPortInstance_3034);
+		types.add(MumlElementTypes.HybridPortInstance_3031);
+		types.add(MumlElementTypes.DiscreteSinglePortInstance_3032);
+		types.add(MumlElementTypes.DiscreteMultiPortInstance_3033);
+		types.add(MumlElementTypes.ContinuousPortInstance_3034);
 		return types;
 	}
 
