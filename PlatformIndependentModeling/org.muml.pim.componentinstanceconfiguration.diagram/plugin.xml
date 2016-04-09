@@ -264,7 +264,7 @@
       <page
             id="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.general"
             name="%prefpage.de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.general"
-            category="de.uni_paderborn.fujaba.preferences"
+            category="org.muml.preferences"
             class="org.muml.pim.componentinstanceconfiguration.diagram.preferences.DiagramGeneralPreferencePage">
       </page>
       <page

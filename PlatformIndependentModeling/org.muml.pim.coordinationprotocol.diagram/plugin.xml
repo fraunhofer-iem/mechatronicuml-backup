@@ -172,7 +172,7 @@
       <page
             id="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.general"
             name="%prefpage.de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.general"
-            category="de.uni_paderborn.fujaba.preferences"
+            category="org.muml.preferences"
             class="org.muml.pim.coordinationprotocol.diagram.preferences.DiagramGeneralPreferencePage">
       </page>
       <page

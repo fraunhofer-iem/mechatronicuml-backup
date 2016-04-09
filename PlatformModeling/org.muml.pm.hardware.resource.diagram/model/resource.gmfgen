@@ -1319,7 +1319,7 @@
         xsi:type="gmfgen:GenStandardPreferencePage"
         iD="de.uni_paderborn.fujaba.muml.hardware.resource.diagram.general"
         name="Resource Diagram Editor"
-        parentCategory="de.uni_paderborn.fujaba.preferences">
+        parentCategory="org.muml.preferences">
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
           iD="de.uni_paderborn.fujaba.muml.hardware.resource.diagram.appearance"

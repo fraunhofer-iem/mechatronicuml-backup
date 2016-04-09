@@ -258,7 +258,7 @@ Contributors:
       <page
             id="org.muml.pim.component.diagram.general"
             name="%prefpage.org.muml.pim.component.diagram.general"
-            category="de.uni_paderborn.fujaba.preferences"
+            category="org.muml.preferences"
             class="org.muml.pim.component.diagram.preferences.DiagramGeneralPreferencePage">
       </page>
       <page

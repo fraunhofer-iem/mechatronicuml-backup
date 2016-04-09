@@ -1061,7 +1061,7 @@
         xsi:type="gmfgen:GenStandardPreferencePage"
         iD="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.general"
         name="Realtime Statechart Diagram Editor"
-        parentCategory="de.uni_paderborn.fujaba.preferences">
+        parentCategory="org.muml.preferences">
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
           iD="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.appearance"

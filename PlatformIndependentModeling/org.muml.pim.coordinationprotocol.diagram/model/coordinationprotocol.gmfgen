@@ -1010,7 +1010,7 @@
         xsi:type="gmfgen:GenStandardPreferencePage"
         iD="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.general"
         name="Coordination Protocol Diagram Editor"
-        parentCategory="de.uni_paderborn.fujaba.preferences">
+        parentCategory="org.muml.preferences">
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
           iD="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.appearance"

@@ -807,7 +807,7 @@
         xsi:type="gmfgen:GenStandardPreferencePage"
         iD="org.muml.pim.component.diagram.general"
         name="Component Diagram Editor"
-        parentCategory="de.uni_paderborn.fujaba.preferences">
+        parentCategory="org.muml.preferences">
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
           iD="org.muml.pim.component.diagram.appearance"

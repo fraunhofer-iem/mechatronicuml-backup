@@ -1248,7 +1248,7 @@
         xsi:type="gmfgen:GenStandardPreferencePage"
         iD="de.uni_paderborn.fujaba.muml.pattern.diagram.general"
         name="Coordination Pattern Diagram Editor"
-        parentCategory="de.uni_paderborn.fujaba.preferences">
+        parentCategory="org.muml.preferences">
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
           iD="de.uni_paderborn.fujaba.muml.pattern.diagram.appearance"

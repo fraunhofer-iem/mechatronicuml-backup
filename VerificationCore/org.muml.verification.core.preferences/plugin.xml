@@ -4,7 +4,7 @@
    <extension
          point="org.eclipse.ui.preferencePages">
       <page
-            category="de.uni_paderborn.fujaba.preferences"
+            category="org.muml.preferences"
             class="org.muml.verification.core.preferences.VerificationPreferencePage"
             id="de.uni_paderborn.fujaba.muml.verification.preferences"
             name="Verification">

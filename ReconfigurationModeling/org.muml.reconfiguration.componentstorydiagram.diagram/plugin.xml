@@ -183,7 +183,7 @@
       <page
             id="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.general"
             name="%prefpage.de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.general"
-            category="de.uni_paderborn.fujaba.preferences"
+            category="org.muml.preferences"
             class="org.muml.reconfiguration.componentstorydiagram.diagram.preferences.DiagramGeneralPreferencePage">
       </page>
       <page

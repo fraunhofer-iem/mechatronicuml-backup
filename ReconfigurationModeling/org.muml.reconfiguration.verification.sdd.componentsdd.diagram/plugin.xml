@@ -106,7 +106,7 @@
       <page
             id="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.general"
             name="%prefpage.de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.general"
-            category="de.uni_paderborn.fujaba.preferences"
+            category="org.muml.preferences"
             class="org.muml.reconfiguration.verification.sdd.componentsdd.diagram.preferences.DiagramGeneralPreferencePage">
       </page>
       <page

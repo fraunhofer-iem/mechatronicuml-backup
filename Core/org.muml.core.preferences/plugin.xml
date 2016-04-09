@@ -5,7 +5,7 @@
          point="org.eclipse.ui.preferencePages">
       <page
             class="org.muml.core.preferences.FujabaPreferencePage"
-            id="de.uni_paderborn.fujaba.preferences"
+            id="org.muml.preferences"
             name="MechatronicUML">
       </page>
    </extension>

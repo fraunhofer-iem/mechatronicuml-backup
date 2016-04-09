@@ -263,7 +263,7 @@
       <page
             id="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.general"
             name="%prefpage.de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.general"
-            category="de.uni_paderborn.fujaba.preferences"
+            category="org.muml.preferences"
             class="org.muml.pm.hardware.resourceinstance.diagram.preferences.DiagramGeneralPreferencePage">
       </page>
       <page

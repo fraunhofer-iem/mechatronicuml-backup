@@ -112,7 +112,7 @@ mapping inout GenPreferencePage::GenCustomPreferencePage(in editor:GenEditorGene
 		iD:= pluginID.concat(".").concat(iD.substring(indexOfPoint+1,iD.size()));
 		
 	if(self.parent.oclIsUndefined())then{
-		self.parentCategory:="de.uni_paderborn.fujaba.preferences";
+		self.parentCategory:="org.muml.preferences";
 		self.name:=editor.plugin.name;
 	}
 	else{
