@@ -13,6 +13,21 @@ import org.eclipse.gmf.tooling.runtime.providers.DiagramElementTypeImages;
 import org.eclipse.gmf.tooling.runtime.providers.DiagramElementTypes;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.swt.graphics.Image;
+import org.muml.pm.hardware.hwresource.HwresourcePackage;
+import org.muml.pm.hardware.resource.diagram.edit.parts.BusProtocolEditPart;
+import org.muml.pm.hardware.resource.diagram.edit.parts.CacheEditPart;
+import org.muml.pm.hardware.resource.diagram.edit.parts.CommunicationProtocolRepositoryEditPart;
+import org.muml.pm.hardware.resource.diagram.edit.parts.CommunicationResource2EditPart;
+import org.muml.pm.hardware.resource.diagram.edit.parts.CommunicationResourceEditPart;
+import org.muml.pm.hardware.resource.diagram.edit.parts.DeviceEditPart;
+import org.muml.pm.hardware.resource.diagram.edit.parts.LinkProtocolEditPart;
+import org.muml.pm.hardware.resource.diagram.edit.parts.MemoryResourceEditPart;
+import org.muml.pm.hardware.resource.diagram.edit.parts.ProcessorEditPart;
+import org.muml.pm.hardware.resource.diagram.edit.parts.ProcessorOwnedCacheEditPart;
+import org.muml.pm.hardware.resource.diagram.edit.parts.ProgrammableLogicDeviceEditPart;
+import org.muml.pm.hardware.resource.diagram.edit.parts.ResourceRepositoryEditPart;
+import org.muml.pm.hardware.resource.diagram.edit.parts.StructuredResourceEditPart;
+import org.muml.pm.hardware.resource.diagram.part.HardwareDiagramEditorPlugin;
 
 /**
  * @generated
@@ -34,8 +49,7 @@ public class HardwareElementTypes {
 	 * @generated
 	 */
 	private static DiagramElementTypeImages elementTypeImages = new DiagramElementTypeImages(
-			org.muml.pm.hardware.resource.diagram.part.HardwareDiagramEditorPlugin.getInstance()
-					.getItemProvidersAdapterFactory());
+			HardwareDiagramEditorPlugin.getInstance().getItemProvidersAdapterFactory());
 
 	/**
 	 * @generated
@@ -50,8 +64,7 @@ public class HardwareElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType Device_2006 = getElementType(
-			"org.muml.pm.hardware.resource.diagram.Device_2006"); //$NON-NLS-1$
+	public static final IElementType Device_2006 = getElementType("org.muml.pm.hardware.resource.diagram.Device_2006"); //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -80,8 +93,7 @@ public class HardwareElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType Cache_3013 = getElementType(
-			"org.muml.pm.hardware.resource.diagram.Cache_3013"); //$NON-NLS-1$
+	public static final IElementType Cache_3013 = getElementType("org.muml.pm.hardware.resource.diagram.Cache_3013"); //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -157,51 +169,32 @@ public class HardwareElementTypes {
 		if (elements == null) {
 			elements = new IdentityHashMap<IElementType, ENamedElement>();
 
-			elements.put(ResourceRepository_1000,
-					org.muml.pm.hardware.hwresource.HwresourcePackage.eINSTANCE
-							.getResourceRepository());
+			elements.put(ResourceRepository_1000, HwresourcePackage.eINSTANCE.getResourceRepository());
 
-			elements.put(Device_2006,
-					org.muml.pm.hardware.hwresource.HwresourcePackage.eINSTANCE.getDevice());
+			elements.put(Device_2006, HwresourcePackage.eINSTANCE.getDevice());
 
-			elements.put(StructuredResource_2007,
-					org.muml.pm.hardware.hwresource.HwresourcePackage.eINSTANCE
-							.getStructuredResource());
+			elements.put(StructuredResource_2007, HwresourcePackage.eINSTANCE.getStructuredResource());
 
 			elements.put(CommunicationProtocolRepository_2008,
-					org.muml.pm.hardware.hwresource.HwresourcePackage.eINSTANCE
-							.getCommunicationProtocolRepository());
+					HwresourcePackage.eINSTANCE.getCommunicationProtocolRepository());
 
-			elements.put(CommunicationResource_3011,
-					org.muml.pm.hardware.hwresource.HwresourcePackage.eINSTANCE
-							.getCommunicationResource());
+			elements.put(CommunicationResource_3011, HwresourcePackage.eINSTANCE.getCommunicationResource());
 
-			elements.put(CommunicationResource_3012,
-					org.muml.pm.hardware.hwresource.HwresourcePackage.eINSTANCE
-							.getCommunicationResource());
+			elements.put(CommunicationResource_3012, HwresourcePackage.eINSTANCE.getCommunicationResource());
 
-			elements.put(Cache_3013,
-					org.muml.pm.hardware.hwresource.HwresourcePackage.eINSTANCE.getCache());
+			elements.put(Cache_3013, HwresourcePackage.eINSTANCE.getCache());
 
-			elements.put(Processor_3014,
-					org.muml.pm.hardware.hwresource.HwresourcePackage.eINSTANCE.getProcessor());
+			elements.put(Processor_3014, HwresourcePackage.eINSTANCE.getProcessor());
 
-			elements.put(ProgrammableLogicDevice_3015,
-					org.muml.pm.hardware.hwresource.HwresourcePackage.eINSTANCE
-							.getProgrammableLogicDevice());
+			elements.put(ProgrammableLogicDevice_3015, HwresourcePackage.eINSTANCE.getProgrammableLogicDevice());
 
-			elements.put(MemoryResource_3016,
-					org.muml.pm.hardware.hwresource.HwresourcePackage.eINSTANCE.getMemoryResource());
+			elements.put(MemoryResource_3016, HwresourcePackage.eINSTANCE.getMemoryResource());
 
-			elements.put(BusProtocol_3017,
-					org.muml.pm.hardware.hwresource.HwresourcePackage.eINSTANCE.getBusProtocol());
+			elements.put(BusProtocol_3017, HwresourcePackage.eINSTANCE.getBusProtocol());
 
-			elements.put(LinkProtocol_3018,
-					org.muml.pm.hardware.hwresource.HwresourcePackage.eINSTANCE.getLinkProtocol());
+			elements.put(LinkProtocol_3018, HwresourcePackage.eINSTANCE.getLinkProtocol());
 
-			elements.put(ProcessorOwnedCache_4002,
-					org.muml.pm.hardware.hwresource.HwresourcePackage.eINSTANCE
-							.getProcessor_OwnedCache());
+			elements.put(ProcessorOwnedCache_4002, HwresourcePackage.eINSTANCE.getProcessor_OwnedCache());
 		}
 		return (ENamedElement) elements.get(type);
 	}
@@ -241,31 +234,31 @@ public class HardwareElementTypes {
 	 */
 	public static IElementType getElementType(int visualID) {
 		switch (visualID) {
-		case org.muml.pm.hardware.resource.diagram.edit.parts.ResourceRepositoryEditPart.VISUAL_ID:
+		case ResourceRepositoryEditPart.VISUAL_ID:
 			return ResourceRepository_1000;
-		case org.muml.pm.hardware.resource.diagram.edit.parts.DeviceEditPart.VISUAL_ID:
+		case DeviceEditPart.VISUAL_ID:
 			return Device_2006;
-		case org.muml.pm.hardware.resource.diagram.edit.parts.StructuredResourceEditPart.VISUAL_ID:
+		case StructuredResourceEditPart.VISUAL_ID:
 			return StructuredResource_2007;
-		case org.muml.pm.hardware.resource.diagram.edit.parts.CommunicationProtocolRepositoryEditPart.VISUAL_ID:
+		case CommunicationProtocolRepositoryEditPart.VISUAL_ID:
 			return CommunicationProtocolRepository_2008;
-		case org.muml.pm.hardware.resource.diagram.edit.parts.CommunicationResourceEditPart.VISUAL_ID:
+		case CommunicationResourceEditPart.VISUAL_ID:
 			return CommunicationResource_3011;
-		case org.muml.pm.hardware.resource.diagram.edit.parts.CommunicationResource2EditPart.VISUAL_ID:
+		case CommunicationResource2EditPart.VISUAL_ID:
 			return CommunicationResource_3012;
-		case org.muml.pm.hardware.resource.diagram.edit.parts.CacheEditPart.VISUAL_ID:
+		case CacheEditPart.VISUAL_ID:
 			return Cache_3013;
-		case org.muml.pm.hardware.resource.diagram.edit.parts.ProcessorEditPart.VISUAL_ID:
+		case ProcessorEditPart.VISUAL_ID:
 			return Processor_3014;
-		case org.muml.pm.hardware.resource.diagram.edit.parts.ProgrammableLogicDeviceEditPart.VISUAL_ID:
+		case ProgrammableLogicDeviceEditPart.VISUAL_ID:
 			return ProgrammableLogicDevice_3015;
-		case org.muml.pm.hardware.resource.diagram.edit.parts.MemoryResourceEditPart.VISUAL_ID:
+		case MemoryResourceEditPart.VISUAL_ID:
 			return MemoryResource_3016;
-		case org.muml.pm.hardware.resource.diagram.edit.parts.BusProtocolEditPart.VISUAL_ID:
+		case BusProtocolEditPart.VISUAL_ID:
 			return BusProtocol_3017;
-		case org.muml.pm.hardware.resource.diagram.edit.parts.LinkProtocolEditPart.VISUAL_ID:
+		case LinkProtocolEditPart.VISUAL_ID:
 			return LinkProtocol_3018;
-		case org.muml.pm.hardware.resource.diagram.edit.parts.ProcessorOwnedCacheEditPart.VISUAL_ID:
+		case ProcessorOwnedCacheEditPart.VISUAL_ID:
 			return ProcessorOwnedCache_4002;
 		}
 		return null;
@@ -282,8 +275,7 @@ public class HardwareElementTypes {
 		@Override
 
 		public boolean isKnownElementType(IElementType elementType) {
-			return org.muml.pm.hardware.resource.diagram.providers.HardwareElementTypes
-					.isKnownElementType(elementType);
+			return org.muml.pm.hardware.resource.diagram.providers.HardwareElementTypes.isKnownElementType(elementType);
 		}
 
 		/**
@@ -292,8 +284,7 @@ public class HardwareElementTypes {
 		@Override
 
 		public IElementType getElementTypeForVisualId(int visualID) {
-			return org.muml.pm.hardware.resource.diagram.providers.HardwareElementTypes
-					.getElementType(visualID);
+			return org.muml.pm.hardware.resource.diagram.providers.HardwareElementTypes.getElementType(visualID);
 		}
 
 		/**
@@ -302,8 +293,7 @@ public class HardwareElementTypes {
 		@Override
 
 		public ENamedElement getDefiningNamedElement(IAdaptable elementTypeAdapter) {
-			return org.muml.pm.hardware.resource.diagram.providers.HardwareElementTypes
-					.getElement(elementTypeAdapter);
+			return org.muml.pm.hardware.resource.diagram.providers.HardwareElementTypes.getElement(elementTypeAdapter);
 		}
 	};
 

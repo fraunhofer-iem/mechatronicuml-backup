@@ -18,6 +18,11 @@ import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.edit.policies.reparent.CreationEditPolicyWithCustomReparent;
+import org.muml.pm.hardware.resource.diagram.edit.policies.CommunicationProtocolRepositoryProtocolRepositoryCompartmentCanonicalEditPolicy;
+import org.muml.pm.hardware.resource.diagram.edit.policies.CommunicationProtocolRepositoryProtocolRepositoryCompartmentItemSemanticEditPolicy;
+import org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry;
+import org.muml.pm.hardware.resource.diagram.part.Messages;
+import org.muml.pm.hardware.resource.diagram.providers.HardwareElementTypes;
 
 /**
  * @generated
@@ -70,7 +75,7 @@ public class CommunicationProtocolRepositoryProtocolRepositoryCompartmentEditPar
 	 * @generated
 	 */
 	public String getCompartmentName() {
-		return org.muml.pm.hardware.resource.diagram.part.Messages.CommunicationProtocolRepositoryProtocolRepositoryCompartmentEditPart_title;
+		return Messages.CommunicationProtocolRepositoryProtocolRepositoryCompartmentEditPart_title;
 	}
 
 	/**
@@ -99,12 +104,12 @@ public class CommunicationProtocolRepositoryProtocolRepositoryCompartmentEditPar
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
-				new org.muml.pm.hardware.resource.diagram.edit.policies.CommunicationProtocolRepositoryProtocolRepositoryCompartmentItemSemanticEditPolicy());
-		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicyWithCustomReparent(
-				org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry.TYPED_INSTANCE));
+				new CommunicationProtocolRepositoryProtocolRepositoryCompartmentItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.CREATION_ROLE,
+				new CreationEditPolicyWithCustomReparent(HardwareVisualIDRegistry.TYPED_INSTANCE));
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
 		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE,
-				new org.muml.pm.hardware.resource.diagram.edit.policies.CommunicationProtocolRepositoryProtocolRepositoryCompartmentCanonicalEditPolicy());
+				new CommunicationProtocolRepositoryProtocolRepositoryCompartmentCanonicalEditPolicy());
 	}
 
 	/**
@@ -124,10 +129,10 @@ public class CommunicationProtocolRepositoryProtocolRepositoryCompartmentEditPar
 			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request).getViewAndElementDescriptor()
 					.getCreateElementRequestAdapter();
 			IElementType type = (IElementType) adapter.getAdapter(IElementType.class);
-			if (type == org.muml.pm.hardware.resource.diagram.providers.HardwareElementTypes.BusProtocol_3017) {
+			if (type == HardwareElementTypes.BusProtocol_3017) {
 				return this;
 			}
-			if (type == org.muml.pm.hardware.resource.diagram.providers.HardwareElementTypes.LinkProtocol_3018) {
+			if (type == HardwareElementTypes.LinkProtocol_3018) {
 				return this;
 			}
 			return getParent().getTargetEditPart(request);

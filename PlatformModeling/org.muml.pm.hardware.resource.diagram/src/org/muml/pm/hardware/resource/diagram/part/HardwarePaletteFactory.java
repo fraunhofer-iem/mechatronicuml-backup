@@ -15,6 +15,7 @@ import org.eclipse.gmf.runtime.diagram.ui.tools.UnspecifiedTypeCreationTool;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.tooling.runtime.part.DefaultLinkToolEntry;
 import org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry;
+import org.muml.pm.hardware.resource.diagram.providers.HardwareElementTypes;
 
 /**
  * @generated
@@ -35,8 +36,7 @@ public class HardwarePaletteFactory {
 	 * @generated
 	 */
 	private PaletteContainer createGeneral1Group() {
-		PaletteDrawer paletteContainer = new PaletteDrawer(
-				org.muml.pm.hardware.resource.diagram.part.Messages.General1Group_title);
+		PaletteDrawer paletteContainer = new PaletteDrawer(Messages.General1Group_title);
 		paletteContainer.setId("createGeneral1Group"); //$NON-NLS-1$
 		paletteContainer.add(createDevice1CreationTool());
 		paletteContainer.add(createCommunicationResource2CreationTool());
@@ -49,7 +49,7 @@ public class HardwarePaletteFactory {
 	 */
 	private PaletteContainer createStructuredResourceandemebeddedResources2Group() {
 		PaletteDrawer paletteContainer = new PaletteDrawer(
-				org.muml.pm.hardware.resource.diagram.part.Messages.StructuredResourceandemebeddedResources2Group_title);
+				Messages.StructuredResourceandemebeddedResources2Group_title);
 		paletteContainer.setId("createStructuredResourceandemebeddedResources2Group"); //$NON-NLS-1$
 		paletteContainer.add(createStructuredResource1CreationTool());
 		paletteContainer.add(createMemoryResource2CreationTool());
@@ -65,8 +65,7 @@ public class HardwarePaletteFactory {
 	 * @generated
 	 */
 	private PaletteContainer createCommunicationProtocol3Group() {
-		PaletteDrawer paletteContainer = new PaletteDrawer(
-				org.muml.pm.hardware.resource.diagram.part.Messages.CommunicationProtocol3Group_title);
+		PaletteDrawer paletteContainer = new PaletteDrawer(Messages.CommunicationProtocol3Group_title);
 		paletteContainer.setId("createCommunicationProtocol3Group"); //$NON-NLS-1$
 		paletteContainer.add(createProtocolRepository1CreationTool());
 		paletteContainer.add(createPointPointProtocol2CreationTool());
@@ -78,16 +77,13 @@ public class HardwarePaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createDevice1CreationTool() {
-		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
-				org.muml.pm.hardware.resource.diagram.part.Messages.Device1CreationTool_title,
-				org.muml.pm.hardware.resource.diagram.part.Messages.Device1CreationTool_desc,
-				Collections.singletonList(
-						org.muml.pm.hardware.resource.diagram.providers.HardwareElementTypes.Device_2006));
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.Device1CreationTool_title,
+				Messages.Device1CreationTool_desc, Collections.singletonList(HardwareElementTypes.Device_2006));
 		entry.setId("createDevice1CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(org.muml.pm.hardware.resource.diagram.part.HardwareDiagramEditorPlugin
-				.findImageDescriptor("/org.muml.pm.hardware.common/icons/device_small.gif")); //$NON-NLS-1$
-		entry.setLargeIcon(org.muml.pm.hardware.resource.diagram.part.HardwareDiagramEditorPlugin
-				.findImageDescriptor("/org.muml.pm.hardware.common/icons/device_large.gif")); //$NON-NLS-1$
+		entry.setSmallIcon(
+				HardwareDiagramEditorPlugin.findImageDescriptor("/org.muml.pm.hardware.common/icons/device_small.gif")); //$NON-NLS-1$
+		entry.setLargeIcon(
+				HardwareDiagramEditorPlugin.findImageDescriptor("/org.muml.pm.hardware.common/icons/device_large.gif")); //$NON-NLS-1$
 		return entry;
 	}
 
@@ -96,19 +92,15 @@ public class HardwarePaletteFactory {
 	 */
 	private ToolEntry createCommunicationResource2CreationTool() {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
-		types.add(
-				org.muml.pm.hardware.resource.diagram.providers.HardwareElementTypes.CommunicationResource_3011);
-		types.add(
-				org.muml.pm.hardware.resource.diagram.providers.HardwareElementTypes.CommunicationResource_3012);
-		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
-				org.muml.pm.hardware.resource.diagram.part.Messages.CommunicationResource2CreationTool_title,
-				org.muml.pm.hardware.resource.diagram.part.Messages.CommunicationResource2CreationTool_desc,
-				types);
+		types.add(HardwareElementTypes.CommunicationResource_3011);
+		types.add(HardwareElementTypes.CommunicationResource_3012);
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.CommunicationResource2CreationTool_title,
+				Messages.CommunicationResource2CreationTool_desc, types);
 		entry.setId("createCommunicationResource2CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(org.muml.pm.hardware.resource.diagram.part.HardwareDiagramEditorPlugin
-				.findImageDescriptor("/org.muml.pm.hardware.common/icons/port_small.gif")); //$NON-NLS-1$
-		entry.setLargeIcon(org.muml.pm.hardware.resource.diagram.part.HardwareDiagramEditorPlugin
-				.findImageDescriptor("/org.muml.pm.hardware.common/icons/port_large.gif")); //$NON-NLS-1$
+		entry.setSmallIcon(
+				HardwareDiagramEditorPlugin.findImageDescriptor("/org.muml.pm.hardware.common/icons/port_small.gif")); //$NON-NLS-1$
+		entry.setLargeIcon(
+				HardwareDiagramEditorPlugin.findImageDescriptor("/org.muml.pm.hardware.common/icons/port_large.gif")); //$NON-NLS-1$
 		return entry;
 	}
 
@@ -116,16 +108,14 @@ public class HardwarePaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createStructuredResource1CreationTool() {
-		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
-				org.muml.pm.hardware.resource.diagram.part.Messages.StructuredResource1CreationTool_title,
-				org.muml.pm.hardware.resource.diagram.part.Messages.StructuredResource1CreationTool_desc,
-				Collections.singletonList(
-						org.muml.pm.hardware.resource.diagram.providers.HardwareElementTypes.StructuredResource_2007));
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.StructuredResource1CreationTool_title,
+				Messages.StructuredResource1CreationTool_desc,
+				Collections.singletonList(HardwareElementTypes.StructuredResource_2007));
 		entry.setId("createStructuredResource1CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(org.muml.pm.hardware.resource.diagram.part.HardwareDiagramEditorPlugin
-				.findImageDescriptor("/org.muml.pm.hardware.common/icons/box_small.gif")); //$NON-NLS-1$
-		entry.setLargeIcon(org.muml.pm.hardware.resource.diagram.part.HardwareDiagramEditorPlugin
-				.findImageDescriptor("/org.muml.pm.hardware.common/icons/box_large.gif")); //$NON-NLS-1$
+		entry.setSmallIcon(
+				HardwareDiagramEditorPlugin.findImageDescriptor("/org.muml.pm.hardware.common/icons/box_small.gif")); //$NON-NLS-1$
+		entry.setLargeIcon(
+				HardwareDiagramEditorPlugin.findImageDescriptor("/org.muml.pm.hardware.common/icons/box_large.gif")); //$NON-NLS-1$
 		return entry;
 	}
 
@@ -133,16 +123,14 @@ public class HardwarePaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createMemoryResource2CreationTool() {
-		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
-				org.muml.pm.hardware.resource.diagram.part.Messages.MemoryResource2CreationTool_title,
-				org.muml.pm.hardware.resource.diagram.part.Messages.MemoryResource2CreationTool_desc,
-				Collections.singletonList(
-						org.muml.pm.hardware.resource.diagram.providers.HardwareElementTypes.MemoryResource_3016));
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.MemoryResource2CreationTool_title,
+				Messages.MemoryResource2CreationTool_desc,
+				Collections.singletonList(HardwareElementTypes.MemoryResource_3016));
 		entry.setId("createMemoryResource2CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(org.muml.pm.hardware.resource.diagram.part.HardwareDiagramEditorPlugin
-				.findImageDescriptor("/org.muml.pm.hardware.common/icons/memory_small.gif")); //$NON-NLS-1$
-		entry.setLargeIcon(org.muml.pm.hardware.resource.diagram.part.HardwareDiagramEditorPlugin
-				.findImageDescriptor("/org.muml.pm.hardware.common/icons/memory_large.gif")); //$NON-NLS-1$
+		entry.setSmallIcon(
+				HardwareDiagramEditorPlugin.findImageDescriptor("/org.muml.pm.hardware.common/icons/memory_small.gif")); //$NON-NLS-1$
+		entry.setLargeIcon(
+				HardwareDiagramEditorPlugin.findImageDescriptor("/org.muml.pm.hardware.common/icons/memory_large.gif")); //$NON-NLS-1$
 		return entry;
 	}
 
@@ -150,16 +138,13 @@ public class HardwarePaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createCache3CreationTool() {
-		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
-				org.muml.pm.hardware.resource.diagram.part.Messages.Cache3CreationTool_title,
-				org.muml.pm.hardware.resource.diagram.part.Messages.Cache3CreationTool_desc,
-				Collections.singletonList(
-						org.muml.pm.hardware.resource.diagram.providers.HardwareElementTypes.Cache_3013));
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.Cache3CreationTool_title,
+				Messages.Cache3CreationTool_desc, Collections.singletonList(HardwareElementTypes.Cache_3013));
 		entry.setId("createCache3CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(org.muml.pm.hardware.resource.diagram.part.HardwareDiagramEditorPlugin
-				.findImageDescriptor("/org.muml.pm.hardware.common/icons/memory_small.gif")); //$NON-NLS-1$
-		entry.setLargeIcon(org.muml.pm.hardware.resource.diagram.part.HardwareDiagramEditorPlugin
-				.findImageDescriptor("/org.muml.pm.hardware.common/icons/memory_large.gif")); //$NON-NLS-1$
+		entry.setSmallIcon(
+				HardwareDiagramEditorPlugin.findImageDescriptor("/org.muml.pm.hardware.common/icons/memory_small.gif")); //$NON-NLS-1$
+		entry.setLargeIcon(
+				HardwareDiagramEditorPlugin.findImageDescriptor("/org.muml.pm.hardware.common/icons/memory_large.gif")); //$NON-NLS-1$
 		return entry;
 	}
 
@@ -167,16 +152,14 @@ public class HardwarePaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createProgrammableLogicDevice4CreationTool() {
-		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
-				org.muml.pm.hardware.resource.diagram.part.Messages.ProgrammableLogicDevice4CreationTool_title,
-				org.muml.pm.hardware.resource.diagram.part.Messages.ProgrammableLogicDevice4CreationTool_desc,
-				Collections.singletonList(
-						org.muml.pm.hardware.resource.diagram.providers.HardwareElementTypes.ProgrammableLogicDevice_3015));
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.ProgrammableLogicDevice4CreationTool_title,
+				Messages.ProgrammableLogicDevice4CreationTool_desc,
+				Collections.singletonList(HardwareElementTypes.ProgrammableLogicDevice_3015));
 		entry.setId("createProgrammableLogicDevice4CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(org.muml.pm.hardware.resource.diagram.part.HardwareDiagramEditorPlugin
-				.findImageDescriptor("/org.muml.pm.hardware.common/icons/pld_small.gif")); //$NON-NLS-1$
-		entry.setLargeIcon(org.muml.pm.hardware.resource.diagram.part.HardwareDiagramEditorPlugin
-				.findImageDescriptor("/org.muml.pm.hardware.common/icons/pld_large.gif")); //$NON-NLS-1$
+		entry.setSmallIcon(
+				HardwareDiagramEditorPlugin.findImageDescriptor("/org.muml.pm.hardware.common/icons/pld_small.gif")); //$NON-NLS-1$
+		entry.setLargeIcon(
+				HardwareDiagramEditorPlugin.findImageDescriptor("/org.muml.pm.hardware.common/icons/pld_large.gif")); //$NON-NLS-1$
 		return entry;
 	}
 
@@ -184,16 +167,13 @@ public class HardwarePaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createProcessor5CreationTool() {
-		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
-				org.muml.pm.hardware.resource.diagram.part.Messages.Processor5CreationTool_title,
-				org.muml.pm.hardware.resource.diagram.part.Messages.Processor5CreationTool_desc,
-				Collections.singletonList(
-						org.muml.pm.hardware.resource.diagram.providers.HardwareElementTypes.Processor_3014));
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.Processor5CreationTool_title,
+				Messages.Processor5CreationTool_desc, Collections.singletonList(HardwareElementTypes.Processor_3014));
 		entry.setId("createProcessor5CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(org.muml.pm.hardware.resource.diagram.part.HardwareDiagramEditorPlugin
-				.findImageDescriptor("/org.muml.pm.hardware.common/icons/cpu_small.gif")); //$NON-NLS-1$
-		entry.setLargeIcon(org.muml.pm.hardware.resource.diagram.part.HardwareDiagramEditorPlugin
-				.findImageDescriptor("/org.muml.pm.hardware.common/icons/cpu_large.gif")); //$NON-NLS-1$
+		entry.setSmallIcon(
+				HardwareDiagramEditorPlugin.findImageDescriptor("/org.muml.pm.hardware.common/icons/cpu_small.gif")); //$NON-NLS-1$
+		entry.setLargeIcon(
+				HardwareDiagramEditorPlugin.findImageDescriptor("/org.muml.pm.hardware.common/icons/cpu_large.gif")); //$NON-NLS-1$
 		return entry;
 	}
 
@@ -201,13 +181,11 @@ public class HardwarePaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createProcessorOwnedCache6CreationTool() {
-		DefaultLinkToolEntry entry = new DefaultLinkToolEntry(
-				org.muml.pm.hardware.resource.diagram.part.Messages.ProcessorOwnedCache6CreationTool_title,
-				org.muml.pm.hardware.resource.diagram.part.Messages.ProcessorOwnedCache6CreationTool_desc,
-				Collections.singletonList(
-						org.muml.pm.hardware.resource.diagram.providers.HardwareElementTypes.ProcessorOwnedCache_4002));
+		DefaultLinkToolEntry entry = new DefaultLinkToolEntry(Messages.ProcessorOwnedCache6CreationTool_title,
+				Messages.ProcessorOwnedCache6CreationTool_desc,
+				Collections.singletonList(HardwareElementTypes.ProcessorOwnedCache_4002));
 		entry.setId("createProcessorOwnedCache6CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(org.muml.pm.hardware.resource.diagram.part.HardwareDiagramEditorPlugin
+		entry.setSmallIcon(HardwareDiagramEditorPlugin
 				.findImageDescriptor("/org.muml.pm.hardware.common/icons/processorcache.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
@@ -217,12 +195,10 @@ public class HardwarePaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createProtocolRepository1CreationTool() {
-		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
-				org.muml.pm.hardware.resource.diagram.part.Messages.ProtocolRepository1CreationTool_title,
-				null, Collections.singletonList(
-						org.muml.pm.hardware.resource.diagram.providers.HardwareElementTypes.CommunicationProtocolRepository_2008));
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.ProtocolRepository1CreationTool_title, null,
+				Collections.singletonList(HardwareElementTypes.CommunicationProtocolRepository_2008));
 		entry.setId("createProtocolRepository1CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(org.muml.pm.hardware.resource.diagram.part.HardwareDiagramEditorPlugin
+		entry.setSmallIcon(HardwareDiagramEditorPlugin
 				.findImageDescriptor("/org.muml.pm.hardware.resource.diagram/icons/ProtocolRepo.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
@@ -232,14 +208,10 @@ public class HardwarePaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createPointPointProtocol2CreationTool() {
-		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
-				org.muml.pm.hardware.resource.diagram.part.Messages.PointPointProtocol2CreationTool_title,
-				null, Collections.singletonList(
-						org.muml.pm.hardware.resource.diagram.providers.HardwareElementTypes.LinkProtocol_3018));
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.PointPointProtocol2CreationTool_title, null,
+				Collections.singletonList(HardwareElementTypes.LinkProtocol_3018));
 		entry.setId("createPointPointProtocol2CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(org.muml.pm.hardware.resource.diagram.providers.HardwareElementTypes
-				.getImageDescriptor(
-						org.muml.pm.hardware.resource.diagram.providers.HardwareElementTypes.LinkProtocol_3018));
+		entry.setSmallIcon(HardwareElementTypes.getImageDescriptor(HardwareElementTypes.LinkProtocol_3018));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -248,14 +220,10 @@ public class HardwarePaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createBusProtocol3CreationTool() {
-		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
-				org.muml.pm.hardware.resource.diagram.part.Messages.BusProtocol3CreationTool_title,
-				null, Collections.singletonList(
-						org.muml.pm.hardware.resource.diagram.providers.HardwareElementTypes.BusProtocol_3017));
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.BusProtocol3CreationTool_title, null,
+				Collections.singletonList(HardwareElementTypes.BusProtocol_3017));
 		entry.setId("createBusProtocol3CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(org.muml.pm.hardware.resource.diagram.providers.HardwareElementTypes
-				.getImageDescriptor(
-						org.muml.pm.hardware.resource.diagram.providers.HardwareElementTypes.BusProtocol_3017));
+		entry.setSmallIcon(HardwareElementTypes.getImageDescriptor(HardwareElementTypes.BusProtocol_3017));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}

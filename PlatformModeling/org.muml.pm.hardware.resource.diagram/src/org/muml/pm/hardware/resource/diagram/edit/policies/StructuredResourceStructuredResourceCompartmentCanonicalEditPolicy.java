@@ -23,6 +23,15 @@ import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest;
 import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.pm.hardware.hwresource.HwresourcePackage;
+import org.muml.pm.hardware.resource.diagram.edit.parts.CacheEditPart;
+import org.muml.pm.hardware.resource.diagram.edit.parts.CommunicationResource2EditPart;
+import org.muml.pm.hardware.resource.diagram.edit.parts.MemoryResourceEditPart;
+import org.muml.pm.hardware.resource.diagram.edit.parts.ProcessorEditPart;
+import org.muml.pm.hardware.resource.diagram.edit.parts.ProgrammableLogicDeviceEditPart;
+import org.muml.pm.hardware.resource.diagram.part.HardwareDiagramUpdater;
+import org.muml.pm.hardware.resource.diagram.part.HardwareNodeDescriptor;
+import org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry;
 
 /**
  * @generated
@@ -79,10 +88,8 @@ public class StructuredResourceStructuredResourceCompartmentCanonicalEditPolicy 
 	protected Set getFeaturesToSynchronize() {
 		if (myFeaturesToSynchronize == null) {
 			myFeaturesToSynchronize = new HashSet<EStructuralFeature>();
-			myFeaturesToSynchronize.add(org.muml.pm.hardware.hwresource.HwresourcePackage.eINSTANCE
-					.getResource_CommunicationResources());
-			myFeaturesToSynchronize.add(org.muml.pm.hardware.hwresource.HwresourcePackage.eINSTANCE
-					.getStructuredResource_EmbeddedAtomicResources());
+			myFeaturesToSynchronize.add(HwresourcePackage.eINSTANCE.getResource_CommunicationResources());
+			myFeaturesToSynchronize.add(HwresourcePackage.eINSTANCE.getStructuredResource_EmbeddedAtomicResources());
 		}
 		return myFeaturesToSynchronize;
 	}
@@ -92,9 +99,9 @@ public class StructuredResourceStructuredResourceCompartmentCanonicalEditPolicy 
 	 */
 	@SuppressWarnings("rawtypes")
 	protected List getSemanticChildrenList() {
-		List<org.muml.pm.hardware.resource.diagram.part.HardwareNodeDescriptor> childDescriptors = getSemanticChildrenViewDescriptors();
+		List<HardwareNodeDescriptor> childDescriptors = getSemanticChildrenViewDescriptors();
 		LinkedList<EObject> result = new LinkedList<EObject>();
-		for (org.muml.pm.hardware.resource.diagram.part.HardwareNodeDescriptor d : childDescriptors) {
+		for (HardwareNodeDescriptor d : childDescriptors) {
 			result.add(d.getModelElement());
 		}
 		return result;
@@ -110,24 +117,19 @@ public class StructuredResourceStructuredResourceCompartmentCanonicalEditPolicy 
 		if (!canonicalNodes) {
 			View containerView = (View) getHost().getModel();
 			List<View> childViews = containerView.getChildren();
-			List<org.muml.pm.hardware.resource.diagram.part.HardwareNodeDescriptor> result = new LinkedList<org.muml.pm.hardware.resource.diagram.part.HardwareNodeDescriptor>();
+			List<HardwareNodeDescriptor> result = new LinkedList<HardwareNodeDescriptor>();
 
 			for (View childView : childViews) {
 				EObject childElement = childView.getElement();
-				int visualID = org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry
-						.getVisualID(childView);
-				List<Integer> visualIDs = Arrays.asList(new Integer[] {
-						org.muml.pm.hardware.resource.diagram.edit.parts.CommunicationResource2EditPart.VISUAL_ID,
-						org.muml.pm.hardware.resource.diagram.edit.parts.CacheEditPart.VISUAL_ID,
-						org.muml.pm.hardware.resource.diagram.edit.parts.ProcessorEditPart.VISUAL_ID,
-						org.muml.pm.hardware.resource.diagram.edit.parts.ProgrammableLogicDeviceEditPart.VISUAL_ID,
-						org.muml.pm.hardware.resource.diagram.edit.parts.MemoryResourceEditPart.VISUAL_ID });
+				int visualID = HardwareVisualIDRegistry.getVisualID(childView);
+				List<Integer> visualIDs = Arrays.asList(new Integer[] { CommunicationResource2EditPart.VISUAL_ID,
+						CacheEditPart.VISUAL_ID, ProcessorEditPart.VISUAL_ID, ProgrammableLogicDeviceEditPart.VISUAL_ID,
+						MemoryResourceEditPart.VISUAL_ID });
 
 				// Note: childElement can be null, for diagram annotations!
 				if (childElement == null
 						|| childElement.eContainer() == containerView.getElement() && visualIDs.contains(visualID)) {
-					result.add(new org.muml.pm.hardware.resource.diagram.part.HardwareNodeDescriptor(
-							childElement, visualID));
+					result.add(new HardwareNodeDescriptor(childElement, visualID));
 					continue;
 				}
 			}
@@ -136,7 +138,7 @@ public class StructuredResourceStructuredResourceCompartmentCanonicalEditPolicy 
 		// End added
 
 		View viewObject = (View) getHost().getModel();
-		return org.muml.pm.hardware.resource.diagram.part.HardwareDiagramUpdater
+		return HardwareDiagramUpdater
 				.getStructuredResourceStructuredResourceCompartment_7003SemanticChildren(viewObject);
 
 	}
@@ -152,14 +154,13 @@ public class StructuredResourceStructuredResourceCompartmentCanonicalEditPolicy 
 	 * @generated
 	 */
 	private boolean isMyDiagramElement(View view) {
-		int visualID = org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry
-				.getVisualID(view);
+		int visualID = HardwareVisualIDRegistry.getVisualID(view);
 		switch (visualID) {
-		case org.muml.pm.hardware.resource.diagram.edit.parts.CommunicationResource2EditPart.VISUAL_ID:
-		case org.muml.pm.hardware.resource.diagram.edit.parts.CacheEditPart.VISUAL_ID:
-		case org.muml.pm.hardware.resource.diagram.edit.parts.ProcessorEditPart.VISUAL_ID:
-		case org.muml.pm.hardware.resource.diagram.edit.parts.ProgrammableLogicDeviceEditPart.VISUAL_ID:
-		case org.muml.pm.hardware.resource.diagram.edit.parts.MemoryResourceEditPart.VISUAL_ID:
+		case CommunicationResource2EditPart.VISUAL_ID:
+		case CacheEditPart.VISUAL_ID:
+		case ProcessorEditPart.VISUAL_ID:
+		case ProgrammableLogicDeviceEditPart.VISUAL_ID:
+		case MemoryResourceEditPart.VISUAL_ID:
 			return true;
 		}
 		return false;
@@ -173,7 +174,7 @@ public class StructuredResourceStructuredResourceCompartmentCanonicalEditPolicy 
 			return;
 		}
 		LinkedList<IAdaptable> createdViews = new LinkedList<IAdaptable>();
-		List<org.muml.pm.hardware.resource.diagram.part.HardwareNodeDescriptor> childDescriptors = getSemanticChildrenViewDescriptors();
+		List<HardwareNodeDescriptor> childDescriptors = getSemanticChildrenViewDescriptors();
 		LinkedList<View> orphaned = new LinkedList<View>();
 		// we care to check only views we recognize as ours
 		LinkedList<View> knownViewChildren = new LinkedList<View>();
@@ -187,12 +188,10 @@ public class StructuredResourceStructuredResourceCompartmentCanonicalEditPolicy 
 		// iteration happens over list of desired semantic elements, trying to find best matching View, while original CEP
 		// iterates views, potentially losing view (size/bounds) information - i.e. if there are few views to reference same EObject, only last one 
 		// to answer isOrphaned == true will be used for the domain element representation, see #cleanCanonicalSemanticChildren()
-		for (Iterator<org.muml.pm.hardware.resource.diagram.part.HardwareNodeDescriptor> descriptorsIterator = childDescriptors
-				.iterator(); descriptorsIterator.hasNext();) {
-			org.muml.pm.hardware.resource.diagram.part.HardwareNodeDescriptor next = descriptorsIterator
-					.next();
-			String hint = org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry
-					.getType(next.getVisualID());
+		for (Iterator<HardwareNodeDescriptor> descriptorsIterator = childDescriptors.iterator(); descriptorsIterator
+				.hasNext();) {
+			HardwareNodeDescriptor next = descriptorsIterator.next();
+			String hint = HardwareVisualIDRegistry.getType(next.getVisualID());
 			LinkedList<View> perfectMatch = new LinkedList<View>(); // both semanticElement and hint match that of NodeDescriptor
 			for (View childView : getViewChildren()) {
 				EObject semanticElement = childView.getElement();
@@ -219,9 +218,8 @@ public class StructuredResourceStructuredResourceCompartmentCanonicalEditPolicy 
 		//
 		ArrayList<CreateViewRequest.ViewDescriptor> viewDescriptors = new ArrayList<CreateViewRequest.ViewDescriptor>(
 				childDescriptors.size());
-		for (org.muml.pm.hardware.resource.diagram.part.HardwareNodeDescriptor next : childDescriptors) {
-			String hint = org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry
-					.getType(next.getVisualID());
+		for (HardwareNodeDescriptor next : childDescriptors) {
+			String hint = HardwareVisualIDRegistry.getType(next.getVisualID());
 			IAdaptable elementAdapter = new CanonicalElementAdapter(next.getModelElement(), hint);
 			CreateViewRequest.ViewDescriptor descriptor = new CreateViewRequest.ViewDescriptor(elementAdapter,
 					Node.class, hint, ViewUtil.APPEND, false, host().getDiagramPreferencesHint());

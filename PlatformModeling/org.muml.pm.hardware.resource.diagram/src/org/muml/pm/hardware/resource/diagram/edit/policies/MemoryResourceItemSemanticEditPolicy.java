@@ -7,18 +7,18 @@ import org.eclipse.gmf.runtime.emf.commands.core.command.CompositeTransactionalC
 import org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.pm.hardware.resource.diagram.providers.HardwareElementTypes;
 
 /**
  * @generated
  */
-public class MemoryResourceItemSemanticEditPolicy extends
-		org.muml.pm.hardware.resource.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy {
+public class MemoryResourceItemSemanticEditPolicy extends HardwareBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public MemoryResourceItemSemanticEditPolicy() {
-		super(org.muml.pm.hardware.resource.diagram.providers.HardwareElementTypes.MemoryResource_3016);
+		super(HardwareElementTypes.MemoryResource_3016);
 	}
 
 	/**

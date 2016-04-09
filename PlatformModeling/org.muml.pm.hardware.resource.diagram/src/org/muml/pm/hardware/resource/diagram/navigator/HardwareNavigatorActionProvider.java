@@ -21,6 +21,11 @@ import org.eclipse.ui.navigator.ICommonActionConstants;
 import org.eclipse.ui.navigator.ICommonActionExtensionSite;
 import org.eclipse.ui.navigator.ICommonViewerWorkbenchSite;
 import org.eclipse.ui.part.FileEditorInput;
+import org.muml.pm.hardware.resource.diagram.edit.parts.ResourceRepositoryEditPart;
+import org.muml.pm.hardware.resource.diagram.part.HardwareDiagramEditor;
+import org.muml.pm.hardware.resource.diagram.part.HardwareDiagramEditorPlugin;
+import org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry;
+import org.muml.pm.hardware.resource.diagram.part.Messages;
 
 /**
  * @generated
@@ -96,7 +101,7 @@ public class HardwareNavigatorActionProvider extends CommonActionProvider {
 		 * @generated
 		 */
 		public OpenDiagramAction(ICommonViewerWorkbenchSite viewerSite) {
-			super(org.muml.pm.hardware.resource.diagram.part.Messages.NavigatorActionProvider_OpenDiagramActionName);
+			super(Messages.NavigatorActionProvider_OpenDiagramActionName);
 			myViewerSite = viewerSite;
 		}
 
@@ -107,17 +112,14 @@ public class HardwareNavigatorActionProvider extends CommonActionProvider {
 			myDiagram = null;
 			if (selection.size() == 1) {
 				Object selectedElement = selection.getFirstElement();
-				if (selectedElement instanceof org.muml.pm.hardware.resource.diagram.navigator.HardwareNavigatorItem) {
-					selectedElement = ((org.muml.pm.hardware.resource.diagram.navigator.HardwareNavigatorItem) selectedElement)
-							.getView();
+				if (selectedElement instanceof HardwareNavigatorItem) {
+					selectedElement = ((HardwareNavigatorItem) selectedElement).getView();
 				} else if (selectedElement instanceof IAdaptable) {
 					selectedElement = ((IAdaptable) selectedElement).getAdapter(View.class);
 				}
 				if (selectedElement instanceof Diagram) {
 					Diagram diagram = (Diagram) selectedElement;
-					if (org.muml.pm.hardware.resource.diagram.edit.parts.ResourceRepositoryEditPart.MODEL_ID
-							.equals(org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry
-									.getModelID(diagram))) {
+					if (ResourceRepositoryEditPart.MODEL_ID.equals(HardwareVisualIDRegistry.getModelID(diagram))) {
 						myDiagram = diagram;
 					}
 				}
@@ -136,11 +138,9 @@ public class HardwareNavigatorActionProvider extends CommonActionProvider {
 			IEditorInput editorInput = getEditorInput(myDiagram);
 			IWorkbenchPage page = myViewerSite.getPage();
 			try {
-				page.openEditor(editorInput,
-						org.muml.pm.hardware.resource.diagram.part.HardwareDiagramEditor.ID);
+				page.openEditor(editorInput, HardwareDiagramEditor.ID);
 			} catch (PartInitException e) {
-				org.muml.pm.hardware.resource.diagram.part.HardwareDiagramEditorPlugin.getInstance()
-						.logError("Exception while openning diagram", e); //$NON-NLS-1$
+				HardwareDiagramEditorPlugin.getInstance().logError("Exception while openning diagram", e); //$NON-NLS-1$
 			}
 		}
 

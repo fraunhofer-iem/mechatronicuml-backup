@@ -22,6 +22,23 @@ import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.ui.IMemento;
 import org.eclipse.ui.navigator.ICommonContentExtensionSite;
 import org.eclipse.ui.navigator.ICommonContentProvider;
+import org.muml.pm.hardware.resource.diagram.edit.parts.BusProtocolEditPart;
+import org.muml.pm.hardware.resource.diagram.edit.parts.CacheEditPart;
+import org.muml.pm.hardware.resource.diagram.edit.parts.CommunicationProtocolRepositoryEditPart;
+import org.muml.pm.hardware.resource.diagram.edit.parts.CommunicationProtocolRepositoryProtocolRepositoryCompartmentEditPart;
+import org.muml.pm.hardware.resource.diagram.edit.parts.CommunicationResource2EditPart;
+import org.muml.pm.hardware.resource.diagram.edit.parts.CommunicationResourceEditPart;
+import org.muml.pm.hardware.resource.diagram.edit.parts.DeviceEditPart;
+import org.muml.pm.hardware.resource.diagram.edit.parts.LinkProtocolEditPart;
+import org.muml.pm.hardware.resource.diagram.edit.parts.MemoryResourceEditPart;
+import org.muml.pm.hardware.resource.diagram.edit.parts.ProcessorEditPart;
+import org.muml.pm.hardware.resource.diagram.edit.parts.ProcessorOwnedCacheEditPart;
+import org.muml.pm.hardware.resource.diagram.edit.parts.ProgrammableLogicDeviceEditPart;
+import org.muml.pm.hardware.resource.diagram.edit.parts.ResourceRepositoryEditPart;
+import org.muml.pm.hardware.resource.diagram.edit.parts.StructuredResourceEditPart;
+import org.muml.pm.hardware.resource.diagram.edit.parts.StructuredResourceStructuredResourceCompartmentEditPart;
+import org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry;
+import org.muml.pm.hardware.resource.diagram.part.Messages;
 
 /**
  * @generated
@@ -170,27 +187,25 @@ public class HardwareNavigatorContentProvider implements ICommonContentProvider 
 			IFile file = (IFile) parentElement;
 			URI fileURI = URI.createPlatformResourceURI(file.getFullPath().toString(), true);
 			Resource resource = myEditingDomain.getResourceSet().getResource(fileURI, true);
-			ArrayList<org.muml.pm.hardware.resource.diagram.navigator.HardwareNavigatorItem> result = new ArrayList<org.muml.pm.hardware.resource.diagram.navigator.HardwareNavigatorItem>();
+			ArrayList<HardwareNavigatorItem> result = new ArrayList<HardwareNavigatorItem>();
 			ArrayList<View> topViews = new ArrayList<View>(resource.getContents().size());
 			for (EObject o : resource.getContents()) {
 				if (o instanceof View) {
 					topViews.add((View) o);
 				}
 			}
-			result.addAll(createNavigatorItems(
-					selectViewsByType(topViews,
-							org.muml.pm.hardware.resource.diagram.edit.parts.ResourceRepositoryEditPart.MODEL_ID),
-					file, false));
+			result.addAll(createNavigatorItems(selectViewsByType(topViews, ResourceRepositoryEditPart.MODEL_ID), file,
+					false));
 			return result.toArray();
 		}
 
-		if (parentElement instanceof org.muml.pm.hardware.resource.diagram.navigator.HardwareNavigatorGroup) {
-			org.muml.pm.hardware.resource.diagram.navigator.HardwareNavigatorGroup group = (org.muml.pm.hardware.resource.diagram.navigator.HardwareNavigatorGroup) parentElement;
+		if (parentElement instanceof HardwareNavigatorGroup) {
+			HardwareNavigatorGroup group = (HardwareNavigatorGroup) parentElement;
 			return group.getChildren();
 		}
 
-		if (parentElement instanceof org.muml.pm.hardware.resource.diagram.navigator.HardwareNavigatorItem) {
-			org.muml.pm.hardware.resource.diagram.navigator.HardwareNavigatorItem navigatorItem = (org.muml.pm.hardware.resource.diagram.navigator.HardwareNavigatorItem) parentElement;
+		if (parentElement instanceof HardwareNavigatorItem) {
+			HardwareNavigatorItem navigatorItem = (HardwareNavigatorItem) parentElement;
 			if (navigatorItem.isLeaf() || !isOwnView(navigatorItem.getView())) {
 				return EMPTY_ARRAY;
 			}
@@ -204,31 +219,26 @@ public class HardwareNavigatorContentProvider implements ICommonContentProvider 
 	 * @generated
 	 */
 	private Object[] getViewChildren(View view, Object parentElement) {
-		switch (org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry
-				.getVisualID(view)) {
+		switch (HardwareVisualIDRegistry.getVisualID(view)) {
 
-		case org.muml.pm.hardware.resource.diagram.edit.parts.ResourceRepositoryEditPart.VISUAL_ID: {
-			LinkedList<org.muml.pm.hardware.resource.diagram.navigator.HardwareAbstractNavigatorItem> result = new LinkedList<org.muml.pm.hardware.resource.diagram.navigator.HardwareAbstractNavigatorItem>();
+		case ResourceRepositoryEditPart.VISUAL_ID: {
+			LinkedList<HardwareAbstractNavigatorItem> result = new LinkedList<HardwareAbstractNavigatorItem>();
 			Diagram sv = (Diagram) view;
-			org.muml.pm.hardware.resource.diagram.navigator.HardwareNavigatorGroup links = new org.muml.pm.hardware.resource.diagram.navigator.HardwareNavigatorGroup(
-					org.muml.pm.hardware.resource.diagram.part.Messages.NavigatorGroupName_ResourceRepository_1000_links,
-					"icons/linksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			HardwareNavigatorGroup links = new HardwareNavigatorGroup(
+					Messages.NavigatorGroupName_ResourceRepository_1000_links, "icons/linksNavigatorGroup.gif", //$NON-NLS-1$
+					parentElement);
 			Collection<View> connectedViews;
 			connectedViews = getChildrenByType(Collections.singleton(sv),
-					org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry.getType(
-							org.muml.pm.hardware.resource.diagram.edit.parts.DeviceEditPart.VISUAL_ID));
+					HardwareVisualIDRegistry.getType(DeviceEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			connectedViews = getChildrenByType(Collections.singleton(sv),
-					org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry.getType(
-							org.muml.pm.hardware.resource.diagram.edit.parts.StructuredResourceEditPart.VISUAL_ID));
+					HardwareVisualIDRegistry.getType(StructuredResourceEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			connectedViews = getChildrenByType(Collections.singleton(sv),
-					org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry.getType(
-							org.muml.pm.hardware.resource.diagram.edit.parts.CommunicationProtocolRepositoryEditPart.VISUAL_ID));
+					HardwareVisualIDRegistry.getType(CommunicationProtocolRepositoryEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			connectedViews = getDiagramLinksByType(Collections.singleton(sv),
-					org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry.getType(
-							org.muml.pm.hardware.resource.diagram.edit.parts.ProcessorOwnedCacheEditPart.VISUAL_ID));
+					HardwareVisualIDRegistry.getType(ProcessorOwnedCacheEditPart.VISUAL_ID));
 			links.addChildren(createNavigatorItems(connectedViews, links, false));
 			if (!links.isEmpty()) {
 				result.add(links);
@@ -236,90 +246,74 @@ public class HardwareNavigatorContentProvider implements ICommonContentProvider 
 			return result.toArray();
 		}
 
-		case org.muml.pm.hardware.resource.diagram.edit.parts.DeviceEditPart.VISUAL_ID: {
-			LinkedList<org.muml.pm.hardware.resource.diagram.navigator.HardwareAbstractNavigatorItem> result = new LinkedList<org.muml.pm.hardware.resource.diagram.navigator.HardwareAbstractNavigatorItem>();
+		case DeviceEditPart.VISUAL_ID: {
+			LinkedList<HardwareAbstractNavigatorItem> result = new LinkedList<HardwareAbstractNavigatorItem>();
 			Node sv = (Node) view;
 			Collection<View> connectedViews;
 			connectedViews = getChildrenByType(Collections.singleton(sv),
-					org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry.getType(
-							org.muml.pm.hardware.resource.diagram.edit.parts.CommunicationResourceEditPart.VISUAL_ID));
+					HardwareVisualIDRegistry.getType(CommunicationResourceEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			return result.toArray();
 		}
 
-		case org.muml.pm.hardware.resource.diagram.edit.parts.StructuredResourceEditPart.VISUAL_ID: {
-			LinkedList<org.muml.pm.hardware.resource.diagram.navigator.HardwareAbstractNavigatorItem> result = new LinkedList<org.muml.pm.hardware.resource.diagram.navigator.HardwareAbstractNavigatorItem>();
+		case StructuredResourceEditPart.VISUAL_ID: {
+			LinkedList<HardwareAbstractNavigatorItem> result = new LinkedList<HardwareAbstractNavigatorItem>();
 			Node sv = (Node) view;
 			Collection<View> connectedViews;
-			connectedViews = getChildrenByType(Collections.singleton(sv),
-					org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry.getType(
-							org.muml.pm.hardware.resource.diagram.edit.parts.StructuredResourceStructuredResourceCompartmentEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(Collections.singleton(sv), HardwareVisualIDRegistry
+					.getType(StructuredResourceStructuredResourceCompartmentEditPart.VISUAL_ID));
 			connectedViews = getChildrenByType(connectedViews,
-					org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry.getType(
-							org.muml.pm.hardware.resource.diagram.edit.parts.CommunicationResource2EditPart.VISUAL_ID));
+					HardwareVisualIDRegistry.getType(CommunicationResource2EditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getChildrenByType(Collections.singleton(sv),
-					org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry.getType(
-							org.muml.pm.hardware.resource.diagram.edit.parts.StructuredResourceStructuredResourceCompartmentEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(Collections.singleton(sv), HardwareVisualIDRegistry
+					.getType(StructuredResourceStructuredResourceCompartmentEditPart.VISUAL_ID));
 			connectedViews = getChildrenByType(connectedViews,
-					org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry.getType(
-							org.muml.pm.hardware.resource.diagram.edit.parts.CacheEditPart.VISUAL_ID));
+					HardwareVisualIDRegistry.getType(CacheEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getChildrenByType(Collections.singleton(sv),
-					org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry.getType(
-							org.muml.pm.hardware.resource.diagram.edit.parts.StructuredResourceStructuredResourceCompartmentEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(Collections.singleton(sv), HardwareVisualIDRegistry
+					.getType(StructuredResourceStructuredResourceCompartmentEditPart.VISUAL_ID));
 			connectedViews = getChildrenByType(connectedViews,
-					org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry.getType(
-							org.muml.pm.hardware.resource.diagram.edit.parts.ProcessorEditPart.VISUAL_ID));
+					HardwareVisualIDRegistry.getType(ProcessorEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getChildrenByType(Collections.singleton(sv),
-					org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry.getType(
-							org.muml.pm.hardware.resource.diagram.edit.parts.StructuredResourceStructuredResourceCompartmentEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(Collections.singleton(sv), HardwareVisualIDRegistry
+					.getType(StructuredResourceStructuredResourceCompartmentEditPart.VISUAL_ID));
 			connectedViews = getChildrenByType(connectedViews,
-					org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry.getType(
-							org.muml.pm.hardware.resource.diagram.edit.parts.ProgrammableLogicDeviceEditPart.VISUAL_ID));
+					HardwareVisualIDRegistry.getType(ProgrammableLogicDeviceEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getChildrenByType(Collections.singleton(sv),
-					org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry.getType(
-							org.muml.pm.hardware.resource.diagram.edit.parts.StructuredResourceStructuredResourceCompartmentEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(Collections.singleton(sv), HardwareVisualIDRegistry
+					.getType(StructuredResourceStructuredResourceCompartmentEditPart.VISUAL_ID));
 			connectedViews = getChildrenByType(connectedViews,
-					org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry.getType(
-							org.muml.pm.hardware.resource.diagram.edit.parts.MemoryResourceEditPart.VISUAL_ID));
+					HardwareVisualIDRegistry.getType(MemoryResourceEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			return result.toArray();
 		}
 
-		case org.muml.pm.hardware.resource.diagram.edit.parts.CommunicationProtocolRepositoryEditPart.VISUAL_ID: {
-			LinkedList<org.muml.pm.hardware.resource.diagram.navigator.HardwareAbstractNavigatorItem> result = new LinkedList<org.muml.pm.hardware.resource.diagram.navigator.HardwareAbstractNavigatorItem>();
+		case CommunicationProtocolRepositoryEditPart.VISUAL_ID: {
+			LinkedList<HardwareAbstractNavigatorItem> result = new LinkedList<HardwareAbstractNavigatorItem>();
 			Node sv = (Node) view;
 			Collection<View> connectedViews;
-			connectedViews = getChildrenByType(Collections.singleton(sv),
-					org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry.getType(
-							org.muml.pm.hardware.resource.diagram.edit.parts.CommunicationProtocolRepositoryProtocolRepositoryCompartmentEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(Collections.singleton(sv), HardwareVisualIDRegistry
+					.getType(CommunicationProtocolRepositoryProtocolRepositoryCompartmentEditPart.VISUAL_ID));
 			connectedViews = getChildrenByType(connectedViews,
-					org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry.getType(
-							org.muml.pm.hardware.resource.diagram.edit.parts.BusProtocolEditPart.VISUAL_ID));
+					HardwareVisualIDRegistry.getType(BusProtocolEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getChildrenByType(Collections.singleton(sv),
-					org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry.getType(
-							org.muml.pm.hardware.resource.diagram.edit.parts.CommunicationProtocolRepositoryProtocolRepositoryCompartmentEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(Collections.singleton(sv), HardwareVisualIDRegistry
+					.getType(CommunicationProtocolRepositoryProtocolRepositoryCompartmentEditPart.VISUAL_ID));
 			connectedViews = getChildrenByType(connectedViews,
-					org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry.getType(
-							org.muml.pm.hardware.resource.diagram.edit.parts.LinkProtocolEditPart.VISUAL_ID));
+					HardwareVisualIDRegistry.getType(LinkProtocolEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			return result.toArray();
 		}
 
-		case org.muml.pm.hardware.resource.diagram.edit.parts.CacheEditPart.VISUAL_ID: {
-			LinkedList<org.muml.pm.hardware.resource.diagram.navigator.HardwareAbstractNavigatorItem> result = new LinkedList<org.muml.pm.hardware.resource.diagram.navigator.HardwareAbstractNavigatorItem>();
+		case CacheEditPart.VISUAL_ID: {
+			LinkedList<HardwareAbstractNavigatorItem> result = new LinkedList<HardwareAbstractNavigatorItem>();
 			Node sv = (Node) view;
-			org.muml.pm.hardware.resource.diagram.navigator.HardwareNavigatorGroup incominglinks = new org.muml.pm.hardware.resource.diagram.navigator.HardwareNavigatorGroup(
-					org.muml.pm.hardware.resource.diagram.part.Messages.NavigatorGroupName_Cache_3013_incominglinks,
-					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			HardwareNavigatorGroup incominglinks = new HardwareNavigatorGroup(
+					Messages.NavigatorGroupName_Cache_3013_incominglinks, "icons/incomingLinksNavigatorGroup.gif", //$NON-NLS-1$
+					parentElement);
 			Collection<View> connectedViews;
 			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry.getType(
-							org.muml.pm.hardware.resource.diagram.edit.parts.ProcessorOwnedCacheEditPart.VISUAL_ID));
+					HardwareVisualIDRegistry.getType(ProcessorOwnedCacheEditPart.VISUAL_ID));
 			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
 			if (!incominglinks.isEmpty()) {
 				result.add(incominglinks);
@@ -327,16 +321,15 @@ public class HardwareNavigatorContentProvider implements ICommonContentProvider 
 			return result.toArray();
 		}
 
-		case org.muml.pm.hardware.resource.diagram.edit.parts.ProcessorEditPart.VISUAL_ID: {
-			LinkedList<org.muml.pm.hardware.resource.diagram.navigator.HardwareAbstractNavigatorItem> result = new LinkedList<org.muml.pm.hardware.resource.diagram.navigator.HardwareAbstractNavigatorItem>();
+		case ProcessorEditPart.VISUAL_ID: {
+			LinkedList<HardwareAbstractNavigatorItem> result = new LinkedList<HardwareAbstractNavigatorItem>();
 			Node sv = (Node) view;
-			org.muml.pm.hardware.resource.diagram.navigator.HardwareNavigatorGroup outgoinglinks = new org.muml.pm.hardware.resource.diagram.navigator.HardwareNavigatorGroup(
-					org.muml.pm.hardware.resource.diagram.part.Messages.NavigatorGroupName_Processor_3014_outgoinglinks,
-					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			HardwareNavigatorGroup outgoinglinks = new HardwareNavigatorGroup(
+					Messages.NavigatorGroupName_Processor_3014_outgoinglinks, "icons/outgoingLinksNavigatorGroup.gif", //$NON-NLS-1$
+					parentElement);
 			Collection<View> connectedViews;
 			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry.getType(
-							org.muml.pm.hardware.resource.diagram.edit.parts.ProcessorOwnedCacheEditPart.VISUAL_ID));
+					HardwareVisualIDRegistry.getType(ProcessorOwnedCacheEditPart.VISUAL_ID));
 			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
 			if (!outgoinglinks.isEmpty()) {
 				result.add(outgoinglinks);
@@ -344,23 +337,21 @@ public class HardwareNavigatorContentProvider implements ICommonContentProvider 
 			return result.toArray();
 		}
 
-		case org.muml.pm.hardware.resource.diagram.edit.parts.ProcessorOwnedCacheEditPart.VISUAL_ID: {
-			LinkedList<org.muml.pm.hardware.resource.diagram.navigator.HardwareAbstractNavigatorItem> result = new LinkedList<org.muml.pm.hardware.resource.diagram.navigator.HardwareAbstractNavigatorItem>();
+		case ProcessorOwnedCacheEditPart.VISUAL_ID: {
+			LinkedList<HardwareAbstractNavigatorItem> result = new LinkedList<HardwareAbstractNavigatorItem>();
 			Edge sv = (Edge) view;
-			org.muml.pm.hardware.resource.diagram.navigator.HardwareNavigatorGroup target = new org.muml.pm.hardware.resource.diagram.navigator.HardwareNavigatorGroup(
-					org.muml.pm.hardware.resource.diagram.part.Messages.NavigatorGroupName_ProcessorOwnedCache_4002_target,
-					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			org.muml.pm.hardware.resource.diagram.navigator.HardwareNavigatorGroup source = new org.muml.pm.hardware.resource.diagram.navigator.HardwareNavigatorGroup(
-					org.muml.pm.hardware.resource.diagram.part.Messages.NavigatorGroupName_ProcessorOwnedCache_4002_source,
-					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			HardwareNavigatorGroup target = new HardwareNavigatorGroup(
+					Messages.NavigatorGroupName_ProcessorOwnedCache_4002_target, "icons/linkTargetNavigatorGroup.gif", //$NON-NLS-1$
+					parentElement);
+			HardwareNavigatorGroup source = new HardwareNavigatorGroup(
+					Messages.NavigatorGroupName_ProcessorOwnedCache_4002_source, "icons/linkSourceNavigatorGroup.gif", //$NON-NLS-1$
+					parentElement);
 			Collection<View> connectedViews;
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry.getType(
-							org.muml.pm.hardware.resource.diagram.edit.parts.CacheEditPart.VISUAL_ID));
+					HardwareVisualIDRegistry.getType(CacheEditPart.VISUAL_ID));
 			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry.getType(
-							org.muml.pm.hardware.resource.diagram.edit.parts.ProcessorEditPart.VISUAL_ID));
+					HardwareVisualIDRegistry.getType(ProcessorEditPart.VISUAL_ID));
 			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			if (!target.isEmpty()) {
 				result.add(target);
@@ -464,21 +455,17 @@ public class HardwareNavigatorContentProvider implements ICommonContentProvider 
 	 * @generated
 	 */
 	private boolean isOwnView(View view) {
-		return org.muml.pm.hardware.resource.diagram.edit.parts.ResourceRepositoryEditPart.MODEL_ID
-				.equals(org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry
-						.getModelID(view));
+		return ResourceRepositoryEditPart.MODEL_ID.equals(HardwareVisualIDRegistry.getModelID(view));
 	}
 
 	/**
 	 * @generated
 	 */
-	private Collection<org.muml.pm.hardware.resource.diagram.navigator.HardwareNavigatorItem> createNavigatorItems(
-			Collection<View> views, Object parent, boolean isLeafs) {
-		ArrayList<org.muml.pm.hardware.resource.diagram.navigator.HardwareNavigatorItem> result = new ArrayList<org.muml.pm.hardware.resource.diagram.navigator.HardwareNavigatorItem>(
-				views.size());
+	private Collection<HardwareNavigatorItem> createNavigatorItems(Collection<View> views, Object parent,
+			boolean isLeafs) {
+		ArrayList<HardwareNavigatorItem> result = new ArrayList<HardwareNavigatorItem>(views.size());
 		for (View nextView : views) {
-			result.add(new org.muml.pm.hardware.resource.diagram.navigator.HardwareNavigatorItem(
-					nextView, parent, isLeafs));
+			result.add(new HardwareNavigatorItem(nextView, parent, isLeafs));
 		}
 		return result;
 	}
@@ -487,8 +474,8 @@ public class HardwareNavigatorContentProvider implements ICommonContentProvider 
 	 * @generated
 	 */
 	public Object getParent(Object element) {
-		if (element instanceof org.muml.pm.hardware.resource.diagram.navigator.HardwareAbstractNavigatorItem) {
-			org.muml.pm.hardware.resource.diagram.navigator.HardwareAbstractNavigatorItem abstractNavigatorItem = (org.muml.pm.hardware.resource.diagram.navigator.HardwareAbstractNavigatorItem) element;
+		if (element instanceof HardwareAbstractNavigatorItem) {
+			HardwareAbstractNavigatorItem abstractNavigatorItem = (HardwareAbstractNavigatorItem) element;
 			return abstractNavigatorItem.getParent();
 		}
 		return null;

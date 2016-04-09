@@ -19,6 +19,8 @@ import org.eclipse.gmf.runtime.common.ui.services.parser.ParserEditStatus;
 import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand;
 import org.eclipse.gmf.tooling.runtime.parsers.ExpressionLabelParserBase;
 import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
+import org.muml.pm.hardware.hwresource.HwresourcePackage;
+import org.muml.pm.hardware.resource.diagram.expressions.HardwareOCLFactory;
 
 /**
  * @generated
@@ -35,9 +37,7 @@ public class CommunicationResourceLabelExpressionLabelParser5040 extends Express
 	 */
 	@Override
 	protected String getExpressionBody() {
-		return org.muml.pm.hardware.resource.diagram.expressions.HardwareOCLFactory.getExpression(3,
-				org.muml.pm.hardware.hwresource.HwresourcePackage.eINSTANCE.getCommunicationResource(),
-				null).body();
+		return HardwareOCLFactory.getExpression(3, HwresourcePackage.eINSTANCE.getCommunicationResource(), null).body();
 	}
 
 	/**

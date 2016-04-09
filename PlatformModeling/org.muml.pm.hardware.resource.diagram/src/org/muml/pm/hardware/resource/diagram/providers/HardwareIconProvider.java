@@ -12,7 +12,7 @@ public class HardwareIconProvider extends DefaultElementTypeIconProvider impleme
 	 * @generated
 	 */
 	public HardwareIconProvider() {
-		super(org.muml.pm.hardware.resource.diagram.providers.HardwareElementTypes.TYPED_INSTANCE);
+		super(HardwareElementTypes.TYPED_INSTANCE);
 	}
 
 }

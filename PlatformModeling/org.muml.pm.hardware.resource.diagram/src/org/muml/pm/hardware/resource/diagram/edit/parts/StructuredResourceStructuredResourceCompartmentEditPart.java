@@ -22,6 +22,11 @@ import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.edit.policies.reparent.CreationEditPolicyWithCustomReparent;
+import org.muml.pm.hardware.resource.diagram.edit.policies.StructuredResourceStructuredResourceCompartmentCanonicalEditPolicy;
+import org.muml.pm.hardware.resource.diagram.edit.policies.StructuredResourceStructuredResourceCompartmentItemSemanticEditPolicy;
+import org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry;
+import org.muml.pm.hardware.resource.diagram.part.Messages;
+import org.muml.pm.hardware.resource.diagram.providers.HardwareElementTypes;
 
 /**
  * @generated
@@ -67,7 +72,7 @@ public class StructuredResourceStructuredResourceCompartmentEditPart extends Sha
 	 * @generated
 	 */
 	public String getCompartmentName() {
-		return org.muml.pm.hardware.resource.diagram.part.Messages.StructuredResourceStructuredResourceCompartmentEditPart_title;
+		return Messages.StructuredResourceStructuredResourceCompartmentEditPart_title;
 	}
 
 	/**
@@ -97,12 +102,12 @@ public class StructuredResourceStructuredResourceCompartmentEditPart extends Sha
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, new ResizableCompartmentEditPolicy());
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
-				new org.muml.pm.hardware.resource.diagram.edit.policies.StructuredResourceStructuredResourceCompartmentItemSemanticEditPolicy());
-		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicyWithCustomReparent(
-				org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry.TYPED_INSTANCE));
+				new StructuredResourceStructuredResourceCompartmentItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.CREATION_ROLE,
+				new CreationEditPolicyWithCustomReparent(HardwareVisualIDRegistry.TYPED_INSTANCE));
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
 		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE,
-				new org.muml.pm.hardware.resource.diagram.edit.policies.StructuredResourceStructuredResourceCompartmentCanonicalEditPolicy());
+				new StructuredResourceStructuredResourceCompartmentCanonicalEditPolicy());
 	}
 
 	/**
@@ -122,19 +127,19 @@ public class StructuredResourceStructuredResourceCompartmentEditPart extends Sha
 			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request).getViewAndElementDescriptor()
 					.getCreateElementRequestAdapter();
 			IElementType type = (IElementType) adapter.getAdapter(IElementType.class);
-			if (type == org.muml.pm.hardware.resource.diagram.providers.HardwareElementTypes.CommunicationResource_3012) {
+			if (type == HardwareElementTypes.CommunicationResource_3012) {
 				return this;
 			}
-			if (type == org.muml.pm.hardware.resource.diagram.providers.HardwareElementTypes.Cache_3013) {
+			if (type == HardwareElementTypes.Cache_3013) {
 				return this;
 			}
-			if (type == org.muml.pm.hardware.resource.diagram.providers.HardwareElementTypes.Processor_3014) {
+			if (type == HardwareElementTypes.Processor_3014) {
 				return this;
 			}
-			if (type == org.muml.pm.hardware.resource.diagram.providers.HardwareElementTypes.ProgrammableLogicDevice_3015) {
+			if (type == HardwareElementTypes.ProgrammableLogicDevice_3015) {
 				return this;
 			}
-			if (type == org.muml.pm.hardware.resource.diagram.providers.HardwareElementTypes.MemoryResource_3016) {
+			if (type == HardwareElementTypes.MemoryResource_3016) {
 				return this;
 			}
 			return getParent().getTargetEditPart(request);
@@ -144,8 +149,7 @@ public class StructuredResourceStructuredResourceCompartmentEditPart extends Sha
 				for (Object type : ((CreateUnspecifiedTypeConnectionRequest) request).getElementTypes()) {
 					if (type instanceof IElementType) {
 						IElementType elementType = (IElementType) type;
-						if (elementType.equals(
-								org.muml.pm.hardware.resource.diagram.providers.HardwareElementTypes.ProcessorOwnedCache_4002))
+						if (elementType.equals(HardwareElementTypes.ProcessorOwnedCache_4002))
 							return super.getTargetEditPart(request);
 					}
 				}

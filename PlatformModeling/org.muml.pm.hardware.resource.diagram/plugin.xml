@@ -73,9 +73,9 @@
 	         allPopups="false"
 	         locationURI="popup:de.uni_paderborn.fujaba.muml.browser.new.menu?after=additions">
 	  		<command
-                 commandId="de.uni_paderborn.fujaba.muml.hardware.hwresource.ResourceRepository.browser.create"
+                 commandId="org.muml.pm.hardware.hwresource.ResourceRepository.browser.create"
                  icon="icons/obj16/HwresourceDiagramFile.gif"
-                 id="de.uni_paderborn.fujaba.muml.hardware.hwresource.ResourceRepository.browser.create"
+                 id="org.muml.pm.hardware.hwresource.ResourceRepository.browser.create"
                  label="ResourceRepository"
                  style="push">
               <visibleWhen
@@ -119,7 +119,7 @@
            defaultHandler="org.muml.pm.hardware.resource.diagram.part.HardwareInitDiagramFileAction$CreateDiagramElement"
            categoryId="de.uni_paderborn.fujaba"
            description="Create new Resource"
-           id="de.uni_paderborn.fujaba.muml.hardware.hwresource.ResourceRepository.browser.create"
+           id="org.muml.pm.hardware.hwresource.ResourceRepository.browser.create"
            name="Create new Resource">
     </command>
     </extension>

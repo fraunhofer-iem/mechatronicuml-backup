@@ -36,6 +36,14 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.edit.helpers.GeneratedEditHelperBase;
+import org.muml.pm.hardware.hwresource.Cache;
+import org.muml.pm.hardware.hwresource.HwresourcePackage;
+import org.muml.pm.hardware.hwresource.Processor;
+import org.muml.pm.hardware.resource.diagram.expressions.HardwareAbstractExpression;
+import org.muml.pm.hardware.resource.diagram.expressions.HardwareOCLFactory;
+import org.muml.pm.hardware.resource.diagram.part.HardwareDiagramEditorPlugin;
+import org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry;
+import org.muml.pm.hardware.resource.diagram.providers.HardwareElementTypes;
 
 /**
  * @generated
@@ -73,9 +81,7 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		if (request instanceof ReconnectRequest) {
 			Object view = ((ReconnectRequest) request).getConnectionEditPart().getModel();
 			if (view instanceof View) {
-				Integer id = new Integer(
-						org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry
-								.getVisualID((View) view));
+				Integer id = new Integer(HardwareVisualIDRegistry.getVisualID((View) view));
 				request.getExtendedData().put(VISUAL_ID_KEY, id);
 			}
 		}
@@ -140,8 +146,7 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 	 * @generated
 	 */
 	private IElementType getContextElementType(IEditCommandRequest request) {
-		IElementType requestContextElementType = org.muml.pm.hardware.resource.diagram.providers.HardwareElementTypes
-				.getElementType(getVisualID(request));
+		IElementType requestContextElementType = HardwareElementTypes.getElementType(getVisualID(request));
 		return requestContextElementType != null ? requestContextElementType : myElementType;
 	}
 
@@ -287,11 +292,9 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 	 * @generated
 	 */
 	public static LinkConstraints getLinkConstraints() {
-		LinkConstraints cached = org.muml.pm.hardware.resource.diagram.part.HardwareDiagramEditorPlugin
-				.getInstance().getLinkConstraints();
+		LinkConstraints cached = HardwareDiagramEditorPlugin.getInstance().getLinkConstraints();
 		if (cached == null) {
-			org.muml.pm.hardware.resource.diagram.part.HardwareDiagramEditorPlugin.getInstance()
-					.setLinkConstraints(cached = new LinkConstraints());
+			HardwareDiagramEditorPlugin.getInstance().setLinkConstraints(cached = new LinkConstraints());
 		}
 		return cached;
 	}
@@ -309,11 +312,10 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		}
 
 		/**
-		 * @generated
-		 */
-		public boolean canCreateProcessorOwnedCache_4002(
-				org.muml.pm.hardware.hwresource.Processor source,
-				org.muml.pm.hardware.hwresource.Cache target, View sourceView, View targetView) {
+		* @generated
+		*/
+		public boolean canCreateProcessorOwnedCache_4002(Processor source, Cache target, View sourceView,
+				View targetView) {
 			if (source != null) {
 				if (source.getOwnedCache() != null) {
 					return false;
@@ -327,30 +329,25 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		}
 
 		/**
-		 * @generated
-		 */
-		public boolean canExistProcessorOwnedCache_4002(
-				org.muml.pm.hardware.hwresource.Processor source,
-				org.muml.pm.hardware.hwresource.Cache target, View sourceView, View targetView) {
+		* @generated
+		*/
+		public boolean canExistProcessorOwnedCache_4002(Processor source, Cache target, View sourceView,
+				View targetView) {
 			try {
 				if (source == null) {
 					return true;
 				} else {
 					Map<String, EClassifier> envType = new HashMap<String, EClassifier>();
 					Map<String, Object> env = new HashMap<String, Object>();
-					envType.put("oppositeEnd", //$NON-NLS-1$
-							org.muml.pm.hardware.hwresource.HwresourcePackage.eINSTANCE.getCache());
+					envType.put("oppositeEnd", HwresourcePackage.eINSTANCE.getCache()); //$NON-NLS-1$
 					env.put("oppositeEnd", target);
 					envType.put("view", NotationPackage.Literals.VIEW);
 					env.put("view", sourceView);
 					envType.put("oppositeView", NotationPackage.Literals.VIEW);
 					env.put("oppositeView", targetView);
 
-					org.muml.pm.hardware.resource.diagram.expressions.HardwareAbstractExpression expression = org.muml.pm.hardware.resource.diagram.expressions.HardwareOCLFactory
-							.getExpression(31,
-									org.muml.pm.hardware.hwresource.HwresourcePackage.eINSTANCE
-											.getProcessor(),
-									envType);
+					HardwareAbstractExpression expression = HardwareOCLFactory.getExpression(31,
+							HwresourcePackage.eINSTANCE.getProcessor(), envType);
 					Object sourceVal = expression.evaluate(source, env); //$NON-NLS-1$
 
 					if (false == sourceVal instanceof Boolean || !((Boolean) sourceVal).booleanValue()) {
@@ -362,20 +359,15 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 				} else {
 					Map<String, EClassifier> envType = new HashMap<String, EClassifier>();
 					Map<String, Object> env = new HashMap<String, Object>();
-					envType.put("oppositeEnd", //$NON-NLS-1$
-							org.muml.pm.hardware.hwresource.HwresourcePackage.eINSTANCE
-									.getProcessor());
+					envType.put("oppositeEnd", HwresourcePackage.eINSTANCE.getProcessor()); //$NON-NLS-1$
 					env.put("oppositeEnd", source);
 					envType.put("view", NotationPackage.Literals.VIEW);
 					env.put("view", targetView);
 					envType.put("oppositeView", NotationPackage.Literals.VIEW);
 					env.put("oppositeView", sourceView);
 
-					org.muml.pm.hardware.resource.diagram.expressions.HardwareAbstractExpression expression = org.muml.pm.hardware.resource.diagram.expressions.HardwareOCLFactory
-							.getExpression(32,
-									org.muml.pm.hardware.hwresource.HwresourcePackage.eINSTANCE
-											.getCache(),
-									envType);
+					HardwareAbstractExpression expression = HardwareOCLFactory.getExpression(32,
+							HwresourcePackage.eINSTANCE.getCache(), envType);
 					Object targetVal = expression.evaluate(target, env); //$NON-NLS-1$
 
 					if (false == targetVal instanceof Boolean || !((Boolean) targetVal).booleanValue()) {
@@ -384,37 +376,31 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 				}
 				return true;
 			} catch (Exception e) {
-				org.muml.pm.hardware.resource.diagram.part.HardwareDiagramEditorPlugin.getInstance()
-						.logError("Link constraint evaluation error", e); //$NON-NLS-1$
+				HardwareDiagramEditorPlugin.getInstance().logError("Link constraint evaluation error", e); //$NON-NLS-1$
 				return false;
 			}
 		}
 
 		/**
-		 * @generated
-		 */
-		public java.lang.String getErrorProcessorOwnedCache_4002(
-				org.muml.pm.hardware.hwresource.Processor source,
-				org.muml.pm.hardware.hwresource.Cache target, View sourceView, View targetView) {
+		* @generated
+		*/
+		public java.lang.String getErrorProcessorOwnedCache_4002(Processor source, Cache target, View sourceView,
+				View targetView) {
 			try {
 				if (source == null) {
 					return null;
 				} else {
 					Map<String, EClassifier> envType = new HashMap<String, EClassifier>();
 					Map<String, Object> env = new HashMap<String, Object>();
-					envType.put("oppositeEnd", //$NON-NLS-1$
-							org.muml.pm.hardware.hwresource.HwresourcePackage.eINSTANCE.getCache());
+					envType.put("oppositeEnd", HwresourcePackage.eINSTANCE.getCache()); //$NON-NLS-1$
 					env.put("oppositeEnd", target);
 					envType.put("view", NotationPackage.Literals.VIEW);
 					env.put("view", sourceView);
 					envType.put("oppositeView", NotationPackage.Literals.VIEW);
 					env.put("oppositeView", targetView);
 
-					org.muml.pm.hardware.resource.diagram.expressions.HardwareAbstractExpression expression = org.muml.pm.hardware.resource.diagram.expressions.HardwareOCLFactory
-							.getExpression(31,
-									org.muml.pm.hardware.hwresource.HwresourcePackage.eINSTANCE
-											.getProcessor(),
-									envType);
+					HardwareAbstractExpression expression = HardwareOCLFactory.getExpression(31,
+							HwresourcePackage.eINSTANCE.getProcessor(), envType);
 					Object sourceVal = expression.evaluate(source, env); //$NON-NLS-1$
 
 					if (false == sourceVal instanceof Boolean || !((Boolean) sourceVal).booleanValue()) {
@@ -438,20 +424,15 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 				} else {
 					Map<String, EClassifier> envType = new HashMap<String, EClassifier>();
 					Map<String, Object> env = new HashMap<String, Object>();
-					envType.put("oppositeEnd", //$NON-NLS-1$
-							org.muml.pm.hardware.hwresource.HwresourcePackage.eINSTANCE
-									.getProcessor());
+					envType.put("oppositeEnd", HwresourcePackage.eINSTANCE.getProcessor()); //$NON-NLS-1$
 					env.put("oppositeEnd", source);
 					envType.put("view", NotationPackage.Literals.VIEW);
 					env.put("view", targetView);
 					envType.put("oppositeView", NotationPackage.Literals.VIEW);
 					env.put("oppositeView", sourceView);
 
-					org.muml.pm.hardware.resource.diagram.expressions.HardwareAbstractExpression expression = org.muml.pm.hardware.resource.diagram.expressions.HardwareOCLFactory
-							.getExpression(32,
-									org.muml.pm.hardware.hwresource.HwresourcePackage.eINSTANCE
-											.getCache(),
-									envType);
+					HardwareAbstractExpression expression = HardwareOCLFactory.getExpression(32,
+							HwresourcePackage.eINSTANCE.getCache(), envType);
 					Object targetVal = expression.evaluate(target, env); //$NON-NLS-1$
 
 					if (false == targetVal instanceof Boolean || !((Boolean) targetVal).booleanValue()) {
@@ -472,8 +453,7 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 				}
 				return null;
 			} catch (Exception e) {
-				org.muml.pm.hardware.resource.diagram.part.HardwareDiagramEditorPlugin.getInstance()
-						.logError("Link constraint evaluation error", e); //$NON-NLS-1$
+				HardwareDiagramEditorPlugin.getInstance().logError("Link constraint evaluation error", e); //$NON-NLS-1$
 				return "Link constraint evaluation error";
 			}
 		}

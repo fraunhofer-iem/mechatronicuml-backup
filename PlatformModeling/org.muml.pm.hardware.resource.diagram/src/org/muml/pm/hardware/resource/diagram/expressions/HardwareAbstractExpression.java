@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EEnumLiteral;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.muml.pm.hardware.resource.diagram.part.HardwareDiagramEditorPlugin;
 
 /**
  * @generated
@@ -27,11 +28,11 @@ public abstract class HardwareAbstractExpression {
 	 * @generated
 	 */
 	protected void setStatus(int severity, String message, Throwable throwable) {
-		String pluginID = org.muml.pm.hardware.resource.diagram.part.HardwareDiagramEditorPlugin.ID;
+		String pluginID = HardwareDiagramEditorPlugin.ID;
 		this.status = new Status(severity, pluginID, -1, (message != null) ? message : "", throwable); //$NON-NLS-1$
 		if (!this.status.isOK()) {
-			org.muml.pm.hardware.resource.diagram.part.HardwareDiagramEditorPlugin.getInstance()
-					.logError("Expression problem:" + message + "body:" + body(), throwable); //$NON-NLS-1$ //$NON-NLS-2$
+			HardwareDiagramEditorPlugin.getInstance().logError("Expression problem:" + message + "body:" + body(), //$NON-NLS-1$//$NON-NLS-2$
+					throwable);
 		}
 	}
 
@@ -96,8 +97,7 @@ public abstract class HardwareAbstractExpression {
 			try {
 				return doEvaluate(context, env);
 			} catch (Exception e) {
-				org.muml.pm.hardware.resource.diagram.part.HardwareDiagramEditorPlugin.getInstance()
-						.logError("Expression evaluation failure: " + body(), e); //$NON-NLS-1$
+				HardwareDiagramEditorPlugin.getInstance().logError("Expression evaluation failure: " + body(), e); //$NON-NLS-1$
 			}
 		}
 		return null;

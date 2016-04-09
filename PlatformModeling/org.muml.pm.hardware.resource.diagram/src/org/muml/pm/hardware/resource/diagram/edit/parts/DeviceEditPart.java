@@ -33,6 +33,15 @@ import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.edit.policies.reparent.CreationEditPolicyWithCustomReparent;
 import org.eclipse.swt.graphics.Color;
+import org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy;
+import org.muml.core.common.edit.policies.anchor.IConnectionAnchorCreationEditPolicy;
+import org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy;
+import org.muml.pim.common.edit.policies.IBackgroundColorEditPolicy;
+import org.muml.pm.hardware.common.edit.policies.resource.ResourceEditPolicy;
+import org.muml.pm.hardware.common.figures.CustomIconFigure;
+import org.muml.pm.hardware.resource.diagram.edit.policies.DeviceCanonicalEditPolicy;
+import org.muml.pm.hardware.resource.diagram.edit.policies.DeviceItemSemanticEditPolicy;
+import org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry;
 
 /**
  * @generated
@@ -76,10 +85,8 @@ public class DeviceEditPart extends AbstractBorderedShapeEditPart {
 	protected void refreshBackgroundColor() {
 		EditPolicy backgroundColorPolicy = getEditPolicy(
 				org.muml.core.common.edit.policies.EditPolicyRoles.BACKGROUND_COLOR_ROLE);
-		if (backgroundColorPolicy instanceof org.muml.pim.common.edit.policies.IBackgroundColorEditPolicy) {
-			setBackgroundColor(
-					((org.muml.pim.common.edit.policies.IBackgroundColorEditPolicy) backgroundColorPolicy)
-							.getCurrentBackgroundColor());
+		if (backgroundColorPolicy instanceof IBackgroundColorEditPolicy) {
+			setBackgroundColor(((IBackgroundColorEditPolicy) backgroundColorPolicy).getCurrentBackgroundColor());
 		} else {
 			super.refreshBackgroundColor();
 		}
@@ -106,28 +113,24 @@ public class DeviceEditPart extends AbstractBorderedShapeEditPart {
 	 * @generated
 	 */
 	protected void createDefaultEditPolicies() {
-		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicyWithCustomReparent(
-				org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry.TYPED_INSTANCE));
+		installEditPolicy(EditPolicyRoles.CREATION_ROLE,
+				new CreationEditPolicyWithCustomReparent(HardwareVisualIDRegistry.TYPED_INSTANCE));
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
-				new org.muml.pm.hardware.resource.diagram.edit.policies.DeviceItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new DeviceItemSemanticEditPolicy());
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
-		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE,
-				new org.muml.pm.hardware.resource.diagram.edit.policies.DeviceCanonicalEditPolicy());
+		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new DeviceCanonicalEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 
-		installEditPolicy(
-				org.muml.pm.hardware.common.edit.policies.EditPolicyRoles.RESOURCE_VISUALIZATION_ROLE,
-				new org.muml.pm.hardware.common.edit.policies.resource.ResourceEditPolicy());
+		installEditPolicy(org.muml.pm.hardware.common.edit.policies.EditPolicyRoles.RESOURCE_VISUALIZATION_ROLE,
+				new ResourceEditPolicy());
 
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 
-		installEditPolicy(EditPolicy.GRAPHICAL_NODE_ROLE,
-				new org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy());
+		installEditPolicy(EditPolicy.GRAPHICAL_NODE_ROLE, new ConnectionConfigureHelperGraphicalNodeEditPolicy());
 
 		installEditPolicy(org.muml.core.common.edit.policies.EditPolicyRoles.ERROR_FEEDBACK_ROLE,
-				new org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy());
+				new ErrorFeedbackEditPolicy());
 
 	}
 
@@ -139,9 +142,8 @@ public class DeviceEditPart extends AbstractBorderedShapeEditPart {
 
 			protected EditPolicy createChildEditPolicy(EditPart child) {
 				View childView = (View) child.getModel();
-				switch (org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry
-						.getVisualID(childView)) {
-				case org.muml.pm.hardware.resource.diagram.edit.parts.CommunicationResourceEditPart.VISUAL_ID:
+				switch (HardwareVisualIDRegistry.getVisualID(childView)) {
+				case CommunicationResourceEditPart.VISUAL_ID:
 					return new BorderItemSelectionEditPolicy();
 				}
 				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
@@ -180,26 +182,22 @@ public class DeviceEditPart extends AbstractBorderedShapeEditPart {
 	 * @generated
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof org.muml.pm.hardware.resource.diagram.edit.parts.DeviceNameEditPart) {
-			((org.muml.pm.hardware.resource.diagram.edit.parts.DeviceNameEditPart) childEditPart)
-					.setLabel(getPrimaryShape().getFigureResourceNameFigure());
+		if (childEditPart instanceof DeviceNameEditPart) {
+			((DeviceNameEditPart) childEditPart).setLabel(getPrimaryShape().getFigureResourceNameFigure());
 			return true;
 		}
-		if (childEditPart instanceof org.muml.pm.hardware.resource.diagram.edit.parts.WrappingLabelEditPart) {
-			((org.muml.pm.hardware.resource.diagram.edit.parts.WrappingLabelEditPart) childEditPart)
-					.setLabel(getPrimaryShape().getFigureResourceCardinalityFigure());
+		if (childEditPart instanceof WrappingLabelEditPart) {
+			((WrappingLabelEditPart) childEditPart).setLabel(getPrimaryShape().getFigureResourceCardinalityFigure());
 			return true;
 		}
-		if (childEditPart instanceof org.muml.pm.hardware.resource.diagram.edit.parts.WrappingLabel2EditPart) {
-			((org.muml.pm.hardware.resource.diagram.edit.parts.WrappingLabel2EditPart) childEditPart)
-					.setLabel(getPrimaryShape().getFigureResourceKindFigure());
+		if (childEditPart instanceof WrappingLabel2EditPart) {
+			((WrappingLabel2EditPart) childEditPart).setLabel(getPrimaryShape().getFigureResourceKindFigure());
 			return true;
 		}
-		if (childEditPart instanceof org.muml.pm.hardware.resource.diagram.edit.parts.CommunicationResourceEditPart) {
+		if (childEditPart instanceof CommunicationResourceEditPart) {
 			BorderItemLocator locator = new BorderItemLocator(getMainFigure(), PositionConstants.EAST);
 			getBorderedFigure().getBorderItemContainer()
-					.add(((org.muml.pm.hardware.resource.diagram.edit.parts.CommunicationResourceEditPart) childEditPart)
-							.getFigure(), locator);
+					.add(((CommunicationResourceEditPart) childEditPart).getFigure(), locator);
 			return true;
 		}
 		return false;
@@ -209,19 +207,18 @@ public class DeviceEditPart extends AbstractBorderedShapeEditPart {
 	 * @generated
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof org.muml.pm.hardware.resource.diagram.edit.parts.DeviceNameEditPart) {
+		if (childEditPart instanceof DeviceNameEditPart) {
 			return true;
 		}
-		if (childEditPart instanceof org.muml.pm.hardware.resource.diagram.edit.parts.WrappingLabelEditPart) {
+		if (childEditPart instanceof WrappingLabelEditPart) {
 			return true;
 		}
-		if (childEditPart instanceof org.muml.pm.hardware.resource.diagram.edit.parts.WrappingLabel2EditPart) {
+		if (childEditPart instanceof WrappingLabel2EditPart) {
 			return true;
 		}
-		if (childEditPart instanceof org.muml.pm.hardware.resource.diagram.edit.parts.CommunicationResourceEditPart) {
+		if (childEditPart instanceof CommunicationResourceEditPart) {
 			getBorderedFigure().getBorderItemContainer()
-					.remove(((org.muml.pm.hardware.resource.diagram.edit.parts.CommunicationResourceEditPart) childEditPart)
-							.getFigure());
+					.remove(((CommunicationResourceEditPart) childEditPart).getFigure());
 			return true;
 		}
 		return false;
@@ -264,7 +261,7 @@ public class DeviceEditPart extends AbstractBorderedShapeEditPart {
 		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(130, 47) {
 			@Override
 			public ConnectionAnchor createDefaultAnchor() {
-				org.muml.core.common.edit.policies.anchor.IConnectionAnchorCreationEditPolicy connectionAnchorCreationEditPolicy = (org.muml.core.common.edit.policies.anchor.IConnectionAnchorCreationEditPolicy) getEditPolicy(
+				IConnectionAnchorCreationEditPolicy connectionAnchorCreationEditPolicy = (IConnectionAnchorCreationEditPolicy) getEditPolicy(
 						org.muml.core.common.edit.policies.EditPolicyRoles.CONNECTION_ANCHOR_CREATION_ROLE);
 				if (connectionAnchorCreationEditPolicy != null) {
 					return connectionAnchorCreationEditPolicy.createDefaultAnchor();
@@ -361,9 +358,7 @@ public class DeviceEditPart extends AbstractBorderedShapeEditPart {
 	 * @generated
 	 */
 	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(
-				org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry.getType(
-						org.muml.pm.hardware.resource.diagram.edit.parts.DeviceNameEditPart.VISUAL_ID));
+		return getChildBySemanticHint(HardwareVisualIDRegistry.getType(DeviceNameEditPart.VISUAL_ID));
 	}
 
 	/**
@@ -386,12 +381,12 @@ public class DeviceEditPart extends AbstractBorderedShapeEditPart {
 		/**
 			 * @generated
 			 */
-		private org.muml.pm.hardware.common.figures.CustomIconFigure fFigureCustomIconFigure;
+		private CustomIconFigure fFigureCustomIconFigure;
 
 		/**
 		 * @generated
 		 */
-		private org.muml.pm.hardware.common.figures.CustomIconFigure myCustomIconFigure;
+		private CustomIconFigure myCustomIconFigure;
 
 		/**
 		 * @generated
@@ -508,7 +503,7 @@ public class DeviceEditPart extends AbstractBorderedShapeEditPart {
 			layoutSimpleResourceIconRectangle1.makeColumnsEqualWidth = false;
 			simpleResourceIconRectangle1.setLayoutManager(layoutSimpleResourceIconRectangle1);
 
-			myCustomIconFigure = new org.muml.pm.hardware.common.figures.CustomIconFigure();
+			myCustomIconFigure = new CustomIconFigure();
 
 			simpleResourceIconRectangle1.add(myCustomIconFigure);
 
@@ -538,7 +533,7 @@ public class DeviceEditPart extends AbstractBorderedShapeEditPart {
 		/**
 			 * @generated
 			 */
-		public org.muml.pm.hardware.common.figures.CustomIconFigure getFigureCustomIconFigure() {
+		public CustomIconFigure getFigureCustomIconFigure() {
 			return myCustomIconFigure;
 		}
 

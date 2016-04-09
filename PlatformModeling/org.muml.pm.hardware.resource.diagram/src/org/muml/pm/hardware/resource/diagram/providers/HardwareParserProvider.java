@@ -13,6 +13,60 @@ import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.emf.ui.services.parser.ParserHintAdapter;
 import org.eclipse.gmf.runtime.notation.View;
 import org.muml.core.CorePackage;
+import org.muml.pm.hardware.resource.diagram.edit.parts.BusProtocolNameEditPart;
+import org.muml.pm.hardware.resource.diagram.edit.parts.CacheNameEditPart;
+import org.muml.pm.hardware.resource.diagram.edit.parts.CommunicationProtocolRepositoryNameEditPart;
+import org.muml.pm.hardware.resource.diagram.edit.parts.CommunicationResourceNameEditPart;
+import org.muml.pm.hardware.resource.diagram.edit.parts.DeviceNameEditPart;
+import org.muml.pm.hardware.resource.diagram.edit.parts.HWPortLabelEditPart;
+import org.muml.pm.hardware.resource.diagram.edit.parts.LinkProtocolNameEditPart;
+import org.muml.pm.hardware.resource.diagram.edit.parts.MemoryResourceNameEditPart;
+import org.muml.pm.hardware.resource.diagram.edit.parts.ProcessorNameEditPart;
+import org.muml.pm.hardware.resource.diagram.edit.parts.ProgrammableLogicDeviceNameEditPart;
+import org.muml.pm.hardware.resource.diagram.edit.parts.StructuredResourceNameEditPart;
+import org.muml.pm.hardware.resource.diagram.edit.parts.WrappingLabel10EditPart;
+import org.muml.pm.hardware.resource.diagram.edit.parts.WrappingLabel11EditPart;
+import org.muml.pm.hardware.resource.diagram.edit.parts.WrappingLabel12EditPart;
+import org.muml.pm.hardware.resource.diagram.edit.parts.WrappingLabel13EditPart;
+import org.muml.pm.hardware.resource.diagram.edit.parts.WrappingLabel14EditPart;
+import org.muml.pm.hardware.resource.diagram.edit.parts.WrappingLabel15EditPart;
+import org.muml.pm.hardware.resource.diagram.edit.parts.WrappingLabel16EditPart;
+import org.muml.pm.hardware.resource.diagram.edit.parts.WrappingLabel17EditPart;
+import org.muml.pm.hardware.resource.diagram.edit.parts.WrappingLabel18EditPart;
+import org.muml.pm.hardware.resource.diagram.edit.parts.WrappingLabel19EditPart;
+import org.muml.pm.hardware.resource.diagram.edit.parts.WrappingLabel20EditPart;
+import org.muml.pm.hardware.resource.diagram.edit.parts.WrappingLabel2EditPart;
+import org.muml.pm.hardware.resource.diagram.edit.parts.WrappingLabel3EditPart;
+import org.muml.pm.hardware.resource.diagram.edit.parts.WrappingLabel4EditPart;
+import org.muml.pm.hardware.resource.diagram.edit.parts.WrappingLabel5EditPart;
+import org.muml.pm.hardware.resource.diagram.edit.parts.WrappingLabel6EditPart;
+import org.muml.pm.hardware.resource.diagram.edit.parts.WrappingLabel7EditPart;
+import org.muml.pm.hardware.resource.diagram.edit.parts.WrappingLabel8EditPart;
+import org.muml.pm.hardware.resource.diagram.edit.parts.WrappingLabel9EditPart;
+import org.muml.pm.hardware.resource.diagram.edit.parts.WrappingLabelEditPart;
+import org.muml.pm.hardware.resource.diagram.parsers.CacheLabelExpressionLabelParser5048;
+import org.muml.pm.hardware.resource.diagram.parsers.CacheLabelExpressionLabelParser5049;
+import org.muml.pm.hardware.resource.diagram.parsers.CacheLabelExpressionLabelParser5050;
+import org.muml.pm.hardware.resource.diagram.parsers.CacheLabelExpressionLabelParser5051;
+import org.muml.pm.hardware.resource.diagram.parsers.CommunicationResourceLabelExpressionLabelParser5040;
+import org.muml.pm.hardware.resource.diagram.parsers.CommunicationResourceLabelExpressionLabelParser5045;
+import org.muml.pm.hardware.resource.diagram.parsers.CommunicationResourceLabelExpressionLabelParser5046;
+import org.muml.pm.hardware.resource.diagram.parsers.DeviceLabelExpressionLabelParser5042;
+import org.muml.pm.hardware.resource.diagram.parsers.DeviceLabelExpressionLabelParser5043;
+import org.muml.pm.hardware.resource.diagram.parsers.MemoryResourceLabelExpressionLabelParser5061;
+import org.muml.pm.hardware.resource.diagram.parsers.MemoryResourceLabelExpressionLabelParser5062;
+import org.muml.pm.hardware.resource.diagram.parsers.MemoryResourceLabelExpressionLabelParser5063;
+import org.muml.pm.hardware.resource.diagram.parsers.MemoryResourceLabelExpressionLabelParser5064;
+import org.muml.pm.hardware.resource.diagram.parsers.MessageFormatParser;
+import org.muml.pm.hardware.resource.diagram.parsers.ProcessorLabelExpressionLabelParser5052;
+import org.muml.pm.hardware.resource.diagram.parsers.ProcessorLabelExpressionLabelParser5054;
+import org.muml.pm.hardware.resource.diagram.parsers.ProcessorLabelExpressionLabelParser5055;
+import org.muml.pm.hardware.resource.diagram.parsers.ProcessorLabelExpressionLabelParser5056;
+import org.muml.pm.hardware.resource.diagram.parsers.ProgrammableLogicDeviceLabelExpressionLabelParser5058;
+import org.muml.pm.hardware.resource.diagram.parsers.ProgrammableLogicDeviceLabelExpressionLabelParser5059;
+import org.muml.pm.hardware.resource.diagram.parsers.StructuredResourceLabelExpressionLabelParser5066;
+import org.muml.pm.hardware.resource.diagram.parsers.StructuredResourceLabelExpressionLabelParser5067;
+import org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry;
 
 /**
  * @generated
@@ -31,8 +85,7 @@ public class HardwareParserProvider extends AbstractProvider implements IParserP
 		if (deviceName_5041Parser == null) {
 			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
 			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
-			org.muml.pm.hardware.resource.diagram.parsers.MessageFormatParser parser = new org.muml.pm.hardware.resource.diagram.parsers.MessageFormatParser(
-					features, editableFeatures);
+			MessageFormatParser parser = new MessageFormatParser(features, editableFeatures);
 			deviceName_5041Parser = parser;
 		}
 		return deviceName_5041Parser;
@@ -42,14 +95,14 @@ public class HardwareParserProvider extends AbstractProvider implements IParserP
 	 * @generated
 	 */
 	private IParser getDeviceLabel_5042Parser() {
-		return new org.muml.pm.hardware.resource.diagram.parsers.DeviceLabelExpressionLabelParser5042();
+		return new DeviceLabelExpressionLabelParser5042();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getDeviceLabel_5043Parser() {
-		return new org.muml.pm.hardware.resource.diagram.parsers.DeviceLabelExpressionLabelParser5043();
+		return new DeviceLabelExpressionLabelParser5043();
 	}
 
 	/**
@@ -64,8 +117,7 @@ public class HardwareParserProvider extends AbstractProvider implements IParserP
 		if (structuredResourceName_5065Parser == null) {
 			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
 			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
-			org.muml.pm.hardware.resource.diagram.parsers.MessageFormatParser parser = new org.muml.pm.hardware.resource.diagram.parsers.MessageFormatParser(
-					features, editableFeatures);
+			MessageFormatParser parser = new MessageFormatParser(features, editableFeatures);
 			structuredResourceName_5065Parser = parser;
 		}
 		return structuredResourceName_5065Parser;
@@ -75,14 +127,14 @@ public class HardwareParserProvider extends AbstractProvider implements IParserP
 	 * @generated
 	 */
 	private IParser getStructuredResourceLabel_5066Parser() {
-		return new org.muml.pm.hardware.resource.diagram.parsers.StructuredResourceLabelExpressionLabelParser5066();
+		return new StructuredResourceLabelExpressionLabelParser5066();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getStructuredResourceLabel_5067Parser() {
-		return new org.muml.pm.hardware.resource.diagram.parsers.StructuredResourceLabelExpressionLabelParser5067();
+		return new StructuredResourceLabelExpressionLabelParser5067();
 	}
 
 	/**
@@ -96,8 +148,7 @@ public class HardwareParserProvider extends AbstractProvider implements IParserP
 	private IParser getCommunicationProtocolRepositoryName_5070Parser() {
 		if (communicationProtocolRepositoryName_5070Parser == null) {
 			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
-			org.muml.pm.hardware.resource.diagram.parsers.MessageFormatParser parser = new org.muml.pm.hardware.resource.diagram.parsers.MessageFormatParser(
-					features);
+			MessageFormatParser parser = new MessageFormatParser(features);
 			communicationProtocolRepositoryName_5070Parser = parser;
 		}
 		return communicationProtocolRepositoryName_5070Parser;
@@ -107,7 +158,7 @@ public class HardwareParserProvider extends AbstractProvider implements IParserP
 	 * @generated
 	 */
 	private IParser getCommunicationResourceLabel_5040Parser() {
-		return new org.muml.pm.hardware.resource.diagram.parsers.CommunicationResourceLabelExpressionLabelParser5040();
+		return new CommunicationResourceLabelExpressionLabelParser5040();
 	}
 
 	/**
@@ -122,8 +173,7 @@ public class HardwareParserProvider extends AbstractProvider implements IParserP
 		if (communicationResourceName_5044Parser == null) {
 			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
 			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
-			org.muml.pm.hardware.resource.diagram.parsers.MessageFormatParser parser = new org.muml.pm.hardware.resource.diagram.parsers.MessageFormatParser(
-					features, editableFeatures);
+			MessageFormatParser parser = new MessageFormatParser(features, editableFeatures);
 			communicationResourceName_5044Parser = parser;
 		}
 		return communicationResourceName_5044Parser;
@@ -133,14 +183,14 @@ public class HardwareParserProvider extends AbstractProvider implements IParserP
 	 * @generated
 	 */
 	private IParser getCommunicationResourceLabel_5045Parser() {
-		return new org.muml.pm.hardware.resource.diagram.parsers.CommunicationResourceLabelExpressionLabelParser5045();
+		return new CommunicationResourceLabelExpressionLabelParser5045();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getCommunicationResourceLabel_5046Parser() {
-		return new org.muml.pm.hardware.resource.diagram.parsers.CommunicationResourceLabelExpressionLabelParser5046();
+		return new CommunicationResourceLabelExpressionLabelParser5046();
 	}
 
 	/**
@@ -155,8 +205,7 @@ public class HardwareParserProvider extends AbstractProvider implements IParserP
 		if (cacheName_5047Parser == null) {
 			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
 			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
-			org.muml.pm.hardware.resource.diagram.parsers.MessageFormatParser parser = new org.muml.pm.hardware.resource.diagram.parsers.MessageFormatParser(
-					features, editableFeatures);
+			MessageFormatParser parser = new MessageFormatParser(features, editableFeatures);
 			cacheName_5047Parser = parser;
 		}
 		return cacheName_5047Parser;
@@ -166,35 +215,35 @@ public class HardwareParserProvider extends AbstractProvider implements IParserP
 	 * @generated
 	 */
 	private IParser getCacheLabel_5048Parser() {
-		return new org.muml.pm.hardware.resource.diagram.parsers.CacheLabelExpressionLabelParser5048();
+		return new CacheLabelExpressionLabelParser5048();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getCacheLabel_5049Parser() {
-		return new org.muml.pm.hardware.resource.diagram.parsers.CacheLabelExpressionLabelParser5049();
+		return new CacheLabelExpressionLabelParser5049();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getCacheLabel_5050Parser() {
-		return new org.muml.pm.hardware.resource.diagram.parsers.CacheLabelExpressionLabelParser5050();
+		return new CacheLabelExpressionLabelParser5050();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getCacheLabel_5051Parser() {
-		return new org.muml.pm.hardware.resource.diagram.parsers.CacheLabelExpressionLabelParser5051();
+		return new CacheLabelExpressionLabelParser5051();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getProcessorLabel_5052Parser() {
-		return new org.muml.pm.hardware.resource.diagram.parsers.ProcessorLabelExpressionLabelParser5052();
+		return new ProcessorLabelExpressionLabelParser5052();
 	}
 
 	/**
@@ -209,8 +258,7 @@ public class HardwareParserProvider extends AbstractProvider implements IParserP
 		if (processorName_5053Parser == null) {
 			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
 			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
-			org.muml.pm.hardware.resource.diagram.parsers.MessageFormatParser parser = new org.muml.pm.hardware.resource.diagram.parsers.MessageFormatParser(
-					features, editableFeatures);
+			MessageFormatParser parser = new MessageFormatParser(features, editableFeatures);
 			processorName_5053Parser = parser;
 		}
 		return processorName_5053Parser;
@@ -220,21 +268,21 @@ public class HardwareParserProvider extends AbstractProvider implements IParserP
 	 * @generated
 	 */
 	private IParser getProcessorLabel_5054Parser() {
-		return new org.muml.pm.hardware.resource.diagram.parsers.ProcessorLabelExpressionLabelParser5054();
+		return new ProcessorLabelExpressionLabelParser5054();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getProcessorLabel_5055Parser() {
-		return new org.muml.pm.hardware.resource.diagram.parsers.ProcessorLabelExpressionLabelParser5055();
+		return new ProcessorLabelExpressionLabelParser5055();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getProcessorLabel_5056Parser() {
-		return new org.muml.pm.hardware.resource.diagram.parsers.ProcessorLabelExpressionLabelParser5056();
+		return new ProcessorLabelExpressionLabelParser5056();
 	}
 
 	/**
@@ -249,8 +297,7 @@ public class HardwareParserProvider extends AbstractProvider implements IParserP
 		if (programmableLogicDeviceName_5057Parser == null) {
 			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
 			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
-			org.muml.pm.hardware.resource.diagram.parsers.MessageFormatParser parser = new org.muml.pm.hardware.resource.diagram.parsers.MessageFormatParser(
-					features, editableFeatures);
+			MessageFormatParser parser = new MessageFormatParser(features, editableFeatures);
 			programmableLogicDeviceName_5057Parser = parser;
 		}
 		return programmableLogicDeviceName_5057Parser;
@@ -260,14 +307,14 @@ public class HardwareParserProvider extends AbstractProvider implements IParserP
 	 * @generated
 	 */
 	private IParser getProgrammableLogicDeviceLabel_5058Parser() {
-		return new org.muml.pm.hardware.resource.diagram.parsers.ProgrammableLogicDeviceLabelExpressionLabelParser5058();
+		return new ProgrammableLogicDeviceLabelExpressionLabelParser5058();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getProgrammableLogicDeviceLabel_5059Parser() {
-		return new org.muml.pm.hardware.resource.diagram.parsers.ProgrammableLogicDeviceLabelExpressionLabelParser5059();
+		return new ProgrammableLogicDeviceLabelExpressionLabelParser5059();
 	}
 
 	/**
@@ -282,8 +329,7 @@ public class HardwareParserProvider extends AbstractProvider implements IParserP
 		if (memoryResourceName_5060Parser == null) {
 			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
 			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
-			org.muml.pm.hardware.resource.diagram.parsers.MessageFormatParser parser = new org.muml.pm.hardware.resource.diagram.parsers.MessageFormatParser(
-					features, editableFeatures);
+			MessageFormatParser parser = new MessageFormatParser(features, editableFeatures);
 			memoryResourceName_5060Parser = parser;
 		}
 		return memoryResourceName_5060Parser;
@@ -293,28 +339,28 @@ public class HardwareParserProvider extends AbstractProvider implements IParserP
 	 * @generated
 	 */
 	private IParser getMemoryResourceLabel_5061Parser() {
-		return new org.muml.pm.hardware.resource.diagram.parsers.MemoryResourceLabelExpressionLabelParser5061();
+		return new MemoryResourceLabelExpressionLabelParser5061();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getMemoryResourceLabel_5062Parser() {
-		return new org.muml.pm.hardware.resource.diagram.parsers.MemoryResourceLabelExpressionLabelParser5062();
+		return new MemoryResourceLabelExpressionLabelParser5062();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getMemoryResourceLabel_5063Parser() {
-		return new org.muml.pm.hardware.resource.diagram.parsers.MemoryResourceLabelExpressionLabelParser5063();
+		return new MemoryResourceLabelExpressionLabelParser5063();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getMemoryResourceLabel_5064Parser() {
-		return new org.muml.pm.hardware.resource.diagram.parsers.MemoryResourceLabelExpressionLabelParser5064();
+		return new MemoryResourceLabelExpressionLabelParser5064();
 	}
 
 	/**
@@ -328,8 +374,7 @@ public class HardwareParserProvider extends AbstractProvider implements IParserP
 	private IParser getBusProtocolName_5068Parser() {
 		if (busProtocolName_5068Parser == null) {
 			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
-			org.muml.pm.hardware.resource.diagram.parsers.MessageFormatParser parser = new org.muml.pm.hardware.resource.diagram.parsers.MessageFormatParser(
-					features);
+			MessageFormatParser parser = new MessageFormatParser(features);
 			busProtocolName_5068Parser = parser;
 		}
 		return busProtocolName_5068Parser;
@@ -346,8 +391,7 @@ public class HardwareParserProvider extends AbstractProvider implements IParserP
 	private IParser getLinkProtocolName_5069Parser() {
 		if (linkProtocolName_5069Parser == null) {
 			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
-			org.muml.pm.hardware.resource.diagram.parsers.MessageFormatParser parser = new org.muml.pm.hardware.resource.diagram.parsers.MessageFormatParser(
-					features);
+			MessageFormatParser parser = new MessageFormatParser(features);
 			linkProtocolName_5069Parser = parser;
 		}
 		return linkProtocolName_5069Parser;
@@ -358,67 +402,67 @@ public class HardwareParserProvider extends AbstractProvider implements IParserP
 	 */
 	protected IParser getParser(int visualID) {
 		switch (visualID) {
-		case org.muml.pm.hardware.resource.diagram.edit.parts.DeviceNameEditPart.VISUAL_ID:
+		case DeviceNameEditPart.VISUAL_ID:
 			return getDeviceName_5041Parser();
-		case org.muml.pm.hardware.resource.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID:
+		case WrappingLabelEditPart.VISUAL_ID:
 			return getDeviceLabel_5042Parser();
-		case org.muml.pm.hardware.resource.diagram.edit.parts.WrappingLabel2EditPart.VISUAL_ID:
+		case WrappingLabel2EditPart.VISUAL_ID:
 			return getDeviceLabel_5043Parser();
-		case org.muml.pm.hardware.resource.diagram.edit.parts.StructuredResourceNameEditPart.VISUAL_ID:
+		case StructuredResourceNameEditPart.VISUAL_ID:
 			return getStructuredResourceName_5065Parser();
-		case org.muml.pm.hardware.resource.diagram.edit.parts.WrappingLabel3EditPart.VISUAL_ID:
+		case WrappingLabel3EditPart.VISUAL_ID:
 			return getStructuredResourceLabel_5066Parser();
-		case org.muml.pm.hardware.resource.diagram.edit.parts.WrappingLabel4EditPart.VISUAL_ID:
+		case WrappingLabel4EditPart.VISUAL_ID:
 			return getStructuredResourceLabel_5067Parser();
-		case org.muml.pm.hardware.resource.diagram.edit.parts.CommunicationProtocolRepositoryNameEditPart.VISUAL_ID:
+		case CommunicationProtocolRepositoryNameEditPart.VISUAL_ID:
 			return getCommunicationProtocolRepositoryName_5070Parser();
-		case org.muml.pm.hardware.resource.diagram.edit.parts.HWPortLabelEditPart.VISUAL_ID:
+		case HWPortLabelEditPart.VISUAL_ID:
 			return getCommunicationResourceLabel_5040Parser();
-		case org.muml.pm.hardware.resource.diagram.edit.parts.CommunicationResourceNameEditPart.VISUAL_ID:
+		case CommunicationResourceNameEditPart.VISUAL_ID:
 			return getCommunicationResourceName_5044Parser();
-		case org.muml.pm.hardware.resource.diagram.edit.parts.WrappingLabel5EditPart.VISUAL_ID:
+		case WrappingLabel5EditPart.VISUAL_ID:
 			return getCommunicationResourceLabel_5045Parser();
-		case org.muml.pm.hardware.resource.diagram.edit.parts.WrappingLabel6EditPart.VISUAL_ID:
+		case WrappingLabel6EditPart.VISUAL_ID:
 			return getCommunicationResourceLabel_5046Parser();
-		case org.muml.pm.hardware.resource.diagram.edit.parts.CacheNameEditPart.VISUAL_ID:
+		case CacheNameEditPart.VISUAL_ID:
 			return getCacheName_5047Parser();
-		case org.muml.pm.hardware.resource.diagram.edit.parts.WrappingLabel7EditPart.VISUAL_ID:
+		case WrappingLabel7EditPart.VISUAL_ID:
 			return getCacheLabel_5048Parser();
-		case org.muml.pm.hardware.resource.diagram.edit.parts.WrappingLabel8EditPart.VISUAL_ID:
+		case WrappingLabel8EditPart.VISUAL_ID:
 			return getCacheLabel_5049Parser();
-		case org.muml.pm.hardware.resource.diagram.edit.parts.WrappingLabel9EditPart.VISUAL_ID:
+		case WrappingLabel9EditPart.VISUAL_ID:
 			return getCacheLabel_5050Parser();
-		case org.muml.pm.hardware.resource.diagram.edit.parts.WrappingLabel10EditPart.VISUAL_ID:
+		case WrappingLabel10EditPart.VISUAL_ID:
 			return getCacheLabel_5051Parser();
-		case org.muml.pm.hardware.resource.diagram.edit.parts.WrappingLabel11EditPart.VISUAL_ID:
+		case WrappingLabel11EditPart.VISUAL_ID:
 			return getProcessorLabel_5052Parser();
-		case org.muml.pm.hardware.resource.diagram.edit.parts.ProcessorNameEditPart.VISUAL_ID:
+		case ProcessorNameEditPart.VISUAL_ID:
 			return getProcessorName_5053Parser();
-		case org.muml.pm.hardware.resource.diagram.edit.parts.WrappingLabel12EditPart.VISUAL_ID:
+		case WrappingLabel12EditPart.VISUAL_ID:
 			return getProcessorLabel_5054Parser();
-		case org.muml.pm.hardware.resource.diagram.edit.parts.WrappingLabel13EditPart.VISUAL_ID:
+		case WrappingLabel13EditPart.VISUAL_ID:
 			return getProcessorLabel_5055Parser();
-		case org.muml.pm.hardware.resource.diagram.edit.parts.WrappingLabel14EditPart.VISUAL_ID:
+		case WrappingLabel14EditPart.VISUAL_ID:
 			return getProcessorLabel_5056Parser();
-		case org.muml.pm.hardware.resource.diagram.edit.parts.ProgrammableLogicDeviceNameEditPart.VISUAL_ID:
+		case ProgrammableLogicDeviceNameEditPart.VISUAL_ID:
 			return getProgrammableLogicDeviceName_5057Parser();
-		case org.muml.pm.hardware.resource.diagram.edit.parts.WrappingLabel15EditPart.VISUAL_ID:
+		case WrappingLabel15EditPart.VISUAL_ID:
 			return getProgrammableLogicDeviceLabel_5058Parser();
-		case org.muml.pm.hardware.resource.diagram.edit.parts.WrappingLabel16EditPart.VISUAL_ID:
+		case WrappingLabel16EditPart.VISUAL_ID:
 			return getProgrammableLogicDeviceLabel_5059Parser();
-		case org.muml.pm.hardware.resource.diagram.edit.parts.MemoryResourceNameEditPart.VISUAL_ID:
+		case MemoryResourceNameEditPart.VISUAL_ID:
 			return getMemoryResourceName_5060Parser();
-		case org.muml.pm.hardware.resource.diagram.edit.parts.WrappingLabel17EditPart.VISUAL_ID:
+		case WrappingLabel17EditPart.VISUAL_ID:
 			return getMemoryResourceLabel_5061Parser();
-		case org.muml.pm.hardware.resource.diagram.edit.parts.WrappingLabel18EditPart.VISUAL_ID:
+		case WrappingLabel18EditPart.VISUAL_ID:
 			return getMemoryResourceLabel_5062Parser();
-		case org.muml.pm.hardware.resource.diagram.edit.parts.WrappingLabel19EditPart.VISUAL_ID:
+		case WrappingLabel19EditPart.VISUAL_ID:
 			return getMemoryResourceLabel_5063Parser();
-		case org.muml.pm.hardware.resource.diagram.edit.parts.WrappingLabel20EditPart.VISUAL_ID:
+		case WrappingLabel20EditPart.VISUAL_ID:
 			return getMemoryResourceLabel_5064Parser();
-		case org.muml.pm.hardware.resource.diagram.edit.parts.BusProtocolNameEditPart.VISUAL_ID:
+		case BusProtocolNameEditPart.VISUAL_ID:
 			return getBusProtocolName_5068Parser();
-		case org.muml.pm.hardware.resource.diagram.edit.parts.LinkProtocolNameEditPart.VISUAL_ID:
+		case LinkProtocolNameEditPart.VISUAL_ID:
 			return getLinkProtocolName_5069Parser();
 		}
 		return null;
@@ -438,13 +482,11 @@ public class HardwareParserProvider extends AbstractProvider implements IParserP
 	public IParser getParser(IAdaptable hint) {
 		String vid = (String) hint.getAdapter(String.class);
 		if (vid != null) {
-			return getParser(org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry
-					.getVisualID(vid));
+			return getParser(HardwareVisualIDRegistry.getVisualID(vid));
 		}
 		View view = (View) hint.getAdapter(View.class);
 		if (view != null) {
-			return getParser(org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry
-					.getVisualID(view));
+			return getParser(HardwareVisualIDRegistry.getVisualID(view));
 		}
 		return null;
 	}
@@ -455,8 +497,7 @@ public class HardwareParserProvider extends AbstractProvider implements IParserP
 	public boolean provides(IOperation operation) {
 		if (operation instanceof GetParserOperation) {
 			IAdaptable hint = ((GetParserOperation) operation).getHint();
-			if (org.muml.pm.hardware.resource.diagram.providers.HardwareElementTypes
-					.getElement(hint) == null) {
+			if (HardwareElementTypes.getElement(hint) == null) {
 				return false;
 			}
 			return getParser(hint) != null;

@@ -7,12 +7,15 @@ import java.util.List;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
+import org.muml.pm.hardware.resource.diagram.edit.parts.CacheEditPart;
+import org.muml.pm.hardware.resource.diagram.edit.parts.ProcessorEditPart;
+import org.muml.pm.hardware.resource.diagram.providers.HardwareElementTypes;
+import org.muml.pm.hardware.resource.diagram.providers.HardwareModelingAssistantProvider;
 
 /**
  * @generated
  */
-public class HardwareModelingAssistantProviderOfProcessorEditPart
-		extends org.muml.pm.hardware.resource.diagram.providers.HardwareModelingAssistantProvider {
+public class HardwareModelingAssistantProviderOfProcessorEditPart extends HardwareModelingAssistantProvider {
 
 	/**
 	 * @generated
@@ -20,18 +23,15 @@ public class HardwareModelingAssistantProviderOfProcessorEditPart
 	@Override
 	public List<IElementType> getRelTypesOnSource(IAdaptable source) {
 		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source.getAdapter(IGraphicalEditPart.class);
-		return doGetRelTypesOnSource(
-				(org.muml.pm.hardware.resource.diagram.edit.parts.ProcessorEditPart) sourceEditPart);
+		return doGetRelTypesOnSource((ProcessorEditPart) sourceEditPart);
 	}
 
 	/**
-	 * @generated
-	 */
-	public List<IElementType> doGetRelTypesOnSource(
-			org.muml.pm.hardware.resource.diagram.edit.parts.ProcessorEditPart source) {
+	* @generated
+	*/
+	public List<IElementType> doGetRelTypesOnSource(ProcessorEditPart source) {
 		List<IElementType> types = new ArrayList<IElementType>(1);
-		types.add(
-				org.muml.pm.hardware.resource.diagram.providers.HardwareElementTypes.ProcessorOwnedCache_4002);
+		types.add(HardwareElementTypes.ProcessorOwnedCache_4002);
 		return types;
 	}
 
@@ -42,21 +42,17 @@ public class HardwareModelingAssistantProviderOfProcessorEditPart
 	public List<IElementType> getRelTypesOnSourceAndTarget(IAdaptable source, IAdaptable target) {
 		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source.getAdapter(IGraphicalEditPart.class);
 		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target.getAdapter(IGraphicalEditPart.class);
-		return doGetRelTypesOnSourceAndTarget(
-				(org.muml.pm.hardware.resource.diagram.edit.parts.ProcessorEditPart) sourceEditPart,
-				targetEditPart);
+		return doGetRelTypesOnSourceAndTarget((ProcessorEditPart) sourceEditPart, targetEditPart);
 	}
 
 	/**
-	 * @generated
-	 */
-	public List<IElementType> doGetRelTypesOnSourceAndTarget(
-			org.muml.pm.hardware.resource.diagram.edit.parts.ProcessorEditPart source,
+	* @generated
+	*/
+	public List<IElementType> doGetRelTypesOnSourceAndTarget(ProcessorEditPart source,
 			IGraphicalEditPart targetEditPart) {
 		List<IElementType> types = new LinkedList<IElementType>();
-		if (targetEditPart instanceof org.muml.pm.hardware.resource.diagram.edit.parts.CacheEditPart) {
-			types.add(
-					org.muml.pm.hardware.resource.diagram.providers.HardwareElementTypes.ProcessorOwnedCache_4002);
+		if (targetEditPart instanceof CacheEditPart) {
+			types.add(HardwareElementTypes.ProcessorOwnedCache_4002);
 		}
 		return types;
 	}
@@ -67,20 +63,16 @@ public class HardwareModelingAssistantProviderOfProcessorEditPart
 	@Override
 	public List<IElementType> getTypesForTarget(IAdaptable source, IElementType relationshipType) {
 		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source.getAdapter(IGraphicalEditPart.class);
-		return doGetTypesForTarget(
-				(org.muml.pm.hardware.resource.diagram.edit.parts.ProcessorEditPart) sourceEditPart,
-				relationshipType);
+		return doGetTypesForTarget((ProcessorEditPart) sourceEditPart, relationshipType);
 	}
 
 	/**
-	 * @generated
-	 */
-	public List<IElementType> doGetTypesForTarget(
-			org.muml.pm.hardware.resource.diagram.edit.parts.ProcessorEditPart source,
-			IElementType relationshipType) {
+	* @generated
+	*/
+	public List<IElementType> doGetTypesForTarget(ProcessorEditPart source, IElementType relationshipType) {
 		List<IElementType> types = new ArrayList<IElementType>();
-		if (relationshipType == org.muml.pm.hardware.resource.diagram.providers.HardwareElementTypes.ProcessorOwnedCache_4002) {
-			types.add(org.muml.pm.hardware.resource.diagram.providers.HardwareElementTypes.Cache_3013);
+		if (relationshipType == HardwareElementTypes.ProcessorOwnedCache_4002) {
+			types.add(HardwareElementTypes.Cache_3013);
 		}
 		return types;
 	}

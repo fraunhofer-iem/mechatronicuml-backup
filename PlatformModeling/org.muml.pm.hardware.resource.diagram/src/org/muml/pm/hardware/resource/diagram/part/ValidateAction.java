@@ -34,6 +34,8 @@ import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.actions.WorkspaceModifyDelegatingOperation;
+import org.muml.pm.hardware.resource.diagram.providers.HardwareMarkerNavigationProvider;
+import org.muml.pm.hardware.resource.diagram.providers.HardwareValidationProvider;
 
 /**
  * @generated
@@ -49,7 +51,7 @@ public class ValidateAction extends Action {
 	 * @generated
 	 */
 	public ValidateAction(IWorkbenchPage page) {
-		setText(org.muml.pm.hardware.resource.diagram.part.Messages.ValidateActionMessage);
+		setText(Messages.ValidateActionMessage);
 		this.page = page;
 	}
 
@@ -68,8 +70,7 @@ public class ValidateAction extends Action {
 					}
 				}).run(new NullProgressMonitor());
 			} catch (Exception e) {
-				org.muml.pm.hardware.resource.diagram.part.HardwareDiagramEditorPlugin.getInstance()
-						.logError("Validation action failed", e); //$NON-NLS-1$
+				HardwareDiagramEditorPlugin.getInstance().logError("Validation action failed", e); //$NON-NLS-1$
 			}
 		}
 	}
@@ -79,8 +80,7 @@ public class ValidateAction extends Action {
 	 */
 	public static void runValidation(View view) {
 		try {
-			if (org.muml.pm.hardware.resource.diagram.part.HardwareDiagramEditorUtil
-					.openDiagram(view.eResource())) {
+			if (HardwareDiagramEditorUtil.openDiagram(view.eResource())) {
 				IEditorPart editorPart = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage()
 						.getActiveEditor();
 				if (editorPart instanceof IDiagramWorkbenchPart) {
@@ -90,8 +90,7 @@ public class ValidateAction extends Action {
 				}
 			}
 		} catch (Exception e) {
-			org.muml.pm.hardware.resource.diagram.part.HardwareDiagramEditorPlugin.getInstance()
-					.logError("Validation action failed", e); //$NON-NLS-1$
+			HardwareDiagramEditorPlugin.getInstance().logError("Validation action failed", e); //$NON-NLS-1$
 		}
 	}
 
@@ -111,13 +110,12 @@ public class ValidateAction extends Action {
 		final DiagramEditPart fpart = diagramEditPart;
 		final View fview = view;
 		TransactionalEditingDomain txDomain = TransactionUtil.getEditingDomain(view);
-		org.muml.pm.hardware.resource.diagram.providers.HardwareValidationProvider
-				.runWithConstraints(txDomain, new Runnable() {
+		HardwareValidationProvider.runWithConstraints(txDomain, new Runnable() {
 
-					public void run() {
-						validate(fpart, fview);
-					}
-				});
+			public void run() {
+				validate(fpart, fview);
+			}
+		});
 	}
 
 	/**
@@ -147,8 +145,7 @@ public class ValidateAction extends Action {
 	private static void validate(DiagramEditPart diagramEditPart, View view) {
 		IFile target = view.eResource() != null ? WorkspaceSynchronizer.getFile(view.eResource()) : null;
 		if (target != null) {
-			org.muml.pm.hardware.resource.diagram.providers.HardwareMarkerNavigationProvider
-					.deleteMarkers(target);
+			HardwareMarkerNavigationProvider.deleteMarkers(target);
 		}
 		Diagnostic diagnostic = runEMFValidator(view);
 		createMarkers(target, diagnostic, diagramEditPart);
@@ -170,13 +167,12 @@ public class ValidateAction extends Action {
 		}
 		final IStatus rootStatus = validationStatus;
 		List allStatuses = new ArrayList();
-		org.muml.pm.hardware.resource.diagram.part.HardwareDiagramEditorUtil.LazyElement2ViewMap element2ViewMap = new org.muml.pm.hardware.resource.diagram.part.HardwareDiagramEditorUtil.LazyElement2ViewMap(
+		HardwareDiagramEditorUtil.LazyElement2ViewMap element2ViewMap = new HardwareDiagramEditorUtil.LazyElement2ViewMap(
 				diagramEditPart.getDiagramView(),
 				collectTargetElements(rootStatus, new HashSet<EObject>(), allStatuses));
 		for (Iterator it = allStatuses.iterator(); it.hasNext();) {
 			IConstraintStatus nextStatus = (IConstraintStatus) it.next();
-			View view = org.muml.pm.hardware.resource.diagram.part.HardwareDiagramEditorUtil
-					.findView(diagramEditPart, nextStatus.getTarget(), element2ViewMap);
+			View view = HardwareDiagramEditorUtil.findView(diagramEditPart, nextStatus.getTarget(), element2ViewMap);
 			addMarker(diagramEditPart.getViewer(), target, view.eResource().getURIFragment(view),
 					EMFCoreUtil.getQualifiedName(nextStatus.getTarget(), true), nextStatus.getMessage(),
 					nextStatus.getSeverity());
@@ -192,7 +188,7 @@ public class ValidateAction extends Action {
 		}
 		final Diagnostic rootStatus = emfValidationStatus;
 		List allDiagnostics = new ArrayList();
-		org.muml.pm.hardware.resource.diagram.part.HardwareDiagramEditorUtil.LazyElement2ViewMap element2ViewMap = new org.muml.pm.hardware.resource.diagram.part.HardwareDiagramEditorUtil.LazyElement2ViewMap(
+		HardwareDiagramEditorUtil.LazyElement2ViewMap element2ViewMap = new HardwareDiagramEditorUtil.LazyElement2ViewMap(
 				diagramEditPart.getDiagramView(),
 				collectTargetElements(rootStatus, new HashSet<EObject>(), allDiagnostics));
 		for (Iterator it = emfValidationStatus.getChildren().iterator(); it.hasNext();) {
@@ -200,8 +196,7 @@ public class ValidateAction extends Action {
 			List data = nextDiagnostic.getData();
 			if (data != null && !data.isEmpty() && data.get(0) instanceof EObject) {
 				EObject element = (EObject) data.get(0);
-				View view = org.muml.pm.hardware.resource.diagram.part.HardwareDiagramEditorUtil
-						.findView(diagramEditPart, element, element2ViewMap);
+				View view = HardwareDiagramEditorUtil.findView(diagramEditPart, element, element2ViewMap);
 				addMarker(diagramEditPart.getViewer(), target, view.eResource().getURIFragment(view),
 						EMFCoreUtil.getQualifiedName(element, true), nextDiagnostic.getMessage(),
 						diagnosticToStatusSeverity(nextDiagnostic.getSeverity()));
@@ -217,8 +212,7 @@ public class ValidateAction extends Action {
 		if (target == null) {
 			return;
 		}
-		org.muml.pm.hardware.resource.diagram.providers.HardwareMarkerNavigationProvider
-				.addMarker(target, elementId, location, message, statusSeverity);
+		HardwareMarkerNavigationProvider.addMarker(target, elementId, location, message, statusSeverity);
 	}
 
 	/**

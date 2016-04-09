@@ -6,40 +6,35 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.emf.commands.core.commands.DuplicateEObjectsCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DuplicateElementsRequest;
+import org.muml.pm.hardware.resource.diagram.edit.commands.CommunicationProtocolRepositoryCreateCommand;
+import org.muml.pm.hardware.resource.diagram.edit.commands.DeviceCreateCommand;
+import org.muml.pm.hardware.resource.diagram.edit.commands.StructuredResourceCreateCommand;
+import org.muml.pm.hardware.resource.diagram.providers.HardwareElementTypes;
 
 /**
  * @generated
  */
-public class ResourceRepositoryItemSemanticEditPolicy extends
-		org.muml.pm.hardware.resource.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy {
+public class ResourceRepositoryItemSemanticEditPolicy extends HardwareBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public ResourceRepositoryItemSemanticEditPolicy() {
-		super(org.muml.pm.hardware.resource.diagram.providers.HardwareElementTypes.ResourceRepository_1000);
+		super(HardwareElementTypes.ResourceRepository_1000);
 	}
 
 	/**
 	 * @generated
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
-		if (org.muml.pm.hardware.resource.diagram.providers.HardwareElementTypes.Device_2006 == req
-				.getElementType()) {
-			return getGEFWrapper(
-					new org.muml.pm.hardware.resource.diagram.edit.commands.DeviceCreateCommand(req));
+		if (HardwareElementTypes.Device_2006 == req.getElementType()) {
+			return getGEFWrapper(new DeviceCreateCommand(req));
 		}
-		if (org.muml.pm.hardware.resource.diagram.providers.HardwareElementTypes.StructuredResource_2007 == req
-				.getElementType()) {
-			return getGEFWrapper(
-					new org.muml.pm.hardware.resource.diagram.edit.commands.StructuredResourceCreateCommand(
-							req));
+		if (HardwareElementTypes.StructuredResource_2007 == req.getElementType()) {
+			return getGEFWrapper(new StructuredResourceCreateCommand(req));
 		}
-		if (org.muml.pm.hardware.resource.diagram.providers.HardwareElementTypes.CommunicationProtocolRepository_2008 == req
-				.getElementType()) {
-			return getGEFWrapper(
-					new org.muml.pm.hardware.resource.diagram.edit.commands.CommunicationProtocolRepositoryCreateCommand(
-							req));
+		if (HardwareElementTypes.CommunicationProtocolRepository_2008 == req.getElementType()) {
+			return getGEFWrapper(new CommunicationProtocolRepositoryCreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}

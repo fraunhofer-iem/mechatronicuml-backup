@@ -1,7 +1,7 @@
 eclipse.preferences.version=1
 gmf_dashboard/domainGenerationModel=platform\:/resource/org.muml.pm.hardware/model/hardware.genmodel
 gmf_dashboard/domainModel=platform\:/resource/org.muml.pm.hardware/model/hardware.ecore
-gmf_dashboard/generationModel=platform\:/resource/de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagramm/model/resourcetype.gmfgen
-gmf_dashboard/graphicalDefinitionModel=platform\:/resource/de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagramm/model/resourcetype.gmfgraph
-gmf_dashboard/mappingModel=platform\:/resource/de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagramm/model/resourcetype.gmfmap
-gmf_dashboard/toolingDefinitionModel=platform\:/resource/de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagramm/model/resourcetype.gmftool
+gmf_dashboard/generationModel=platform\:/resource/org.muml.pm.hardware.resource.diagram/model/resource.gmfgen
+gmf_dashboard/graphicalDefinitionModel=platform\:/resource/org.muml.pm.hardware.resource.diagram/model/resource.gmfgraph
+gmf_dashboard/mappingModel=platform\:/resource/org.muml.pm.hardware.resource.diagram/model/resource.gmfmap
+gmf_dashboard/toolingDefinitionModel=platform\:/resource/org.muml.pm.hardware.resource.diagram/model/resource.gmftool

@@ -1,6 +1,7 @@
 package org.muml.pm.hardware.resource.diagram.navigator;
 
 import org.eclipse.jface.viewers.ViewerSorter;
+import org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry;
 
 /**
  * @generated
@@ -16,10 +17,9 @@ public class HardwareNavigatorSorter extends ViewerSorter {
 	 * @generated
 	 */
 	public int category(Object element) {
-		if (element instanceof org.muml.pm.hardware.resource.diagram.navigator.HardwareNavigatorItem) {
-			org.muml.pm.hardware.resource.diagram.navigator.HardwareNavigatorItem item = (org.muml.pm.hardware.resource.diagram.navigator.HardwareNavigatorItem) element;
-			return org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry
-					.getVisualID(item.getView());
+		if (element instanceof HardwareNavigatorItem) {
+			HardwareNavigatorItem item = (HardwareNavigatorItem) element;
+			return HardwareVisualIDRegistry.getVisualID(item.getView());
 		}
 		return GROUP_CATEGORY;
 	}

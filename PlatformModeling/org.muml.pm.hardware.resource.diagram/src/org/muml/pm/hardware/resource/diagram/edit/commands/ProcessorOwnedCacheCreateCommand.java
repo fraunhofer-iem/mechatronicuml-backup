@@ -8,6 +8,11 @@ import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy;
+import org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy;
+import org.muml.pm.hardware.hwresource.Cache;
+import org.muml.pm.hardware.hwresource.Processor;
+import org.muml.pm.hardware.resource.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy;
 
 /**
  * @generated
@@ -40,28 +45,23 @@ public class ProcessorOwnedCacheCreateCommand extends EditElementCommand {
 		if (source == null && target == null) {
 			return false;
 		}
-		if (source != null && false == source instanceof org.muml.pm.hardware.hwresource.Processor) {
+		if (source != null && false == source instanceof Processor) {
 			return false;
 		}
-		if (target != null && false == target instanceof org.muml.pm.hardware.hwresource.Cache) {
+		if (target != null && false == target instanceof Cache) {
 			return false;
 		}
 		if (getSource() == null) {
 			return true; // link creation is in progress; source is not defined yet
 		}
 		// target may be null here but it's possible to check constraint
-		View sourceView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-				.getSourceView(getRequest());
-		View targetView = org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-				.getTargetView(getRequest());
-		if (!org.muml.pm.hardware.resource.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy
-				.getLinkConstraints()
-				.canCreateProcessorOwnedCache_4002(getSource(), getTarget(), sourceView, targetView)) {
-			String errorMessage = org.muml.pm.hardware.resource.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy
-					.getLinkConstraints()
+		View sourceView = ConnectionConfigureHelperGraphicalNodeEditPolicy.getSourceView(getRequest());
+		View targetView = ConnectionConfigureHelperGraphicalNodeEditPolicy.getTargetView(getRequest());
+		if (!HardwareBaseItemSemanticEditPolicy.getLinkConstraints().canCreateProcessorOwnedCache_4002(getSource(),
+				getTarget(), sourceView, targetView)) {
+			String errorMessage = HardwareBaseItemSemanticEditPolicy.getLinkConstraints()
 					.getErrorProcessorOwnedCache_4002(getSource(), getTarget(), sourceView, targetView);
-			org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy
-					.showMessage(targetView != null ? targetView : sourceView, errorMessage);
+			ErrorFeedbackEditPolicy.showMessage(targetView != null ? targetView : sourceView, errorMessage);
 			return false;
 		}
 		return true;
@@ -92,14 +92,14 @@ public class ProcessorOwnedCacheCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected org.muml.pm.hardware.hwresource.Processor getSource() {
-		return (org.muml.pm.hardware.hwresource.Processor) source;
+	protected Processor getSource() {
+		return (Processor) source;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected org.muml.pm.hardware.hwresource.Cache getTarget() {
-		return (org.muml.pm.hardware.hwresource.Cache) target;
+	protected Cache getTarget() {
+		return (Cache) target;
 	}
 }

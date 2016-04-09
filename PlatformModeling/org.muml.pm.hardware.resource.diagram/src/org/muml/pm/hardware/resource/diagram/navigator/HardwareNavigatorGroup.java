@@ -6,8 +6,7 @@ import java.util.LinkedList;
 /**
  * @generated
  */
-public class HardwareNavigatorGroup
-		extends org.muml.pm.hardware.resource.diagram.navigator.HardwareAbstractNavigatorItem {
+public class HardwareNavigatorGroup extends HardwareAbstractNavigatorItem {
 
 	/**
 	 * @generated

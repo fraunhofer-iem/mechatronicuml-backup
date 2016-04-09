@@ -62,8 +62,7 @@ public class HardwareCreationWizardPage extends WizardNewFileCreationPage {
 	 */
 	public void createControl(Composite parent) {
 		super.createControl(parent);
-		setFileName(org.muml.pm.hardware.resource.diagram.part.HardwareDiagramEditorUtil
-				.getUniqueFileName(getContainerFullPath(), getFileName(), getExtension()));
+		setFileName(HardwareDiagramEditorUtil.getUniqueFileName(getContainerFullPath(), getFileName(), getExtension()));
 		setPageComplete(validatePage());
 	}
 
@@ -76,9 +75,7 @@ public class HardwareCreationWizardPage extends WizardNewFileCreationPage {
 		}
 		String extension = getExtension();
 		if (extension != null && !getFilePath().toString().endsWith("." + extension)) {
-			setErrorMessage(NLS.bind(
-					org.muml.pm.hardware.resource.diagram.part.Messages.HardwareCreationWizardPageExtensionError,
-					extension));
+			setErrorMessage(NLS.bind(Messages.HardwareCreationWizardPageExtensionError, extension));
 			return false;
 		}
 		return true;

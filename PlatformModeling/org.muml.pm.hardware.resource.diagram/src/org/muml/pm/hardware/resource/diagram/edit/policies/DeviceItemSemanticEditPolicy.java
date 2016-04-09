@@ -12,29 +12,29 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.pm.hardware.resource.diagram.edit.commands.CommunicationResourceCreateCommand;
+import org.muml.pm.hardware.resource.diagram.edit.parts.CommunicationResourceEditPart;
+import org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry;
+import org.muml.pm.hardware.resource.diagram.providers.HardwareElementTypes;
 
 /**
  * @generated
  */
-public class DeviceItemSemanticEditPolicy extends
-		org.muml.pm.hardware.resource.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy {
+public class DeviceItemSemanticEditPolicy extends HardwareBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public DeviceItemSemanticEditPolicy() {
-		super(org.muml.pm.hardware.resource.diagram.providers.HardwareElementTypes.Device_2006);
+		super(HardwareElementTypes.Device_2006);
 	}
 
 	/**
 	 * @generated
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
-		if (org.muml.pm.hardware.resource.diagram.providers.HardwareElementTypes.CommunicationResource_3011 == req
-				.getElementType()) {
-			return getGEFWrapper(
-					new org.muml.pm.hardware.resource.diagram.edit.commands.CommunicationResourceCreateCommand(
-							req));
+		if (HardwareElementTypes.CommunicationResource_3011 == req.getElementType()) {
+			return getGEFWrapper(new CommunicationResourceCreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}
@@ -66,9 +66,8 @@ public class DeviceItemSemanticEditPolicy extends
 		View view = (View) getHost().getModel();
 		for (Iterator<?> nit = view.getChildren().iterator(); nit.hasNext();) {
 			Node node = (Node) nit.next();
-			switch (org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry
-					.getVisualID(node)) {
-			case org.muml.pm.hardware.resource.diagram.edit.parts.CommunicationResourceEditPart.VISUAL_ID:
+			switch (HardwareVisualIDRegistry.getVisualID(node)) {
+			case CommunicationResourceEditPart.VISUAL_ID:
 
 				cmd.add(new DestroyElementCommand(
 						new DestroyElementRequest(getEditingDomain(), node.getElement(), false)));

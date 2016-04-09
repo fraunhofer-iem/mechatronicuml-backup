@@ -13,6 +13,8 @@ import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.gmf.tooling.runtime.sheet.DefaultPropertySection;
 import org.eclipse.ui.views.properties.IPropertySource;
 import org.eclipse.ui.views.properties.IPropertySourceProvider;
+import org.muml.core.common.FujabaCommonPlugin;
+import org.muml.pm.hardware.resource.diagram.part.HardwareDiagramEditorPlugin;
 
 /**
  * @generated
@@ -36,14 +38,10 @@ public class HardwarePropertySection extends DefaultPropertySection implements I
 		AdapterFactoryEditingDomain editingDomain = getEditingDomainFor(object);
 		if (editingDomain != null) {
 			AdapterFactory defaultFactory = editingDomain.getAdapterFactory();
-			List<AdapterFactory> positivePriorityFactories = org.muml.core.common.FujabaCommonPlugin
-					.getInstance().getCustomItemProviderAdapterFactories(
-							org.muml.pm.hardware.resource.diagram.part.HardwareDiagramEditorPlugin.ID,
-							true);
-			List<AdapterFactory> negativePriorityFactories = org.muml.core.common.FujabaCommonPlugin
-					.getInstance().getCustomItemProviderAdapterFactories(
-							org.muml.pm.hardware.resource.diagram.part.HardwareDiagramEditorPlugin.ID,
-							false);
+			List<AdapterFactory> positivePriorityFactories = FujabaCommonPlugin.getInstance()
+					.getCustomItemProviderAdapterFactories(HardwareDiagramEditorPlugin.ID, true);
+			List<AdapterFactory> negativePriorityFactories = FujabaCommonPlugin.getInstance()
+					.getCustomItemProviderAdapterFactories(HardwareDiagramEditorPlugin.ID, false);
 
 			// Put all factories into one composed adapter factory.
 			List<AdapterFactory> factories = new ArrayList<AdapterFactory>();

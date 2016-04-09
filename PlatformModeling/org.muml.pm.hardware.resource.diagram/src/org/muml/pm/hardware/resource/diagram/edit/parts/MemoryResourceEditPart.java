@@ -27,6 +27,15 @@ import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.graphics.Color;
+import org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy;
+import org.muml.core.common.edit.policies.anchor.IConnectionAnchorCreationEditPolicy;
+import org.muml.core.common.edit.policies.compartment.EnlargeCompartmentEditPolicy;
+import org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy;
+import org.muml.pim.common.edit.policies.IBackgroundColorEditPolicy;
+import org.muml.pm.hardware.common.edit.policies.resource.ResourceEditPolicy;
+import org.muml.pm.hardware.common.figures.CustomIconFigure;
+import org.muml.pm.hardware.resource.diagram.edit.policies.MemoryResourceItemSemanticEditPolicy;
+import org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry;
 
 /**
  * @generated
@@ -70,10 +79,8 @@ public class MemoryResourceEditPart extends ShapeNodeEditPart {
 	protected void refreshBackgroundColor() {
 		EditPolicy backgroundColorPolicy = getEditPolicy(
 				org.muml.core.common.edit.policies.EditPolicyRoles.BACKGROUND_COLOR_ROLE);
-		if (backgroundColorPolicy instanceof org.muml.pim.common.edit.policies.IBackgroundColorEditPolicy) {
-			setBackgroundColor(
-					((org.muml.pim.common.edit.policies.IBackgroundColorEditPolicy) backgroundColorPolicy)
-							.getCurrentBackgroundColor());
+		if (backgroundColorPolicy instanceof IBackgroundColorEditPolicy) {
+			setBackgroundColor(((IBackgroundColorEditPolicy) backgroundColorPolicy).getCurrentBackgroundColor());
 		} else {
 			super.refreshBackgroundColor();
 		}
@@ -101,25 +108,22 @@ public class MemoryResourceEditPart extends ShapeNodeEditPart {
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
-				new org.muml.pm.hardware.resource.diagram.edit.policies.MemoryResourceItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new MemoryResourceItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 
-		installEditPolicy(
-				org.muml.pm.hardware.common.edit.policies.EditPolicyRoles.RESOURCE_VISUALIZATION_ROLE,
-				new org.muml.pm.hardware.common.edit.policies.resource.ResourceEditPolicy());
+		installEditPolicy(org.muml.pm.hardware.common.edit.policies.EditPolicyRoles.RESOURCE_VISUALIZATION_ROLE,
+				new ResourceEditPolicy());
 
 		installEditPolicy(org.muml.core.common.edit.policies.EditPolicyRoles.ENLARGE_COMPARTMENT_ROLE,
-				new org.muml.core.common.edit.policies.compartment.EnlargeCompartmentEditPolicy());
+				new EnlargeCompartmentEditPolicy());
 
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 
-		installEditPolicy(EditPolicy.GRAPHICAL_NODE_ROLE,
-				new org.muml.core.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy());
+		installEditPolicy(EditPolicy.GRAPHICAL_NODE_ROLE, new ConnectionConfigureHelperGraphicalNodeEditPolicy());
 
 		installEditPolicy(org.muml.core.common.edit.policies.EditPolicyRoles.ERROR_FEEDBACK_ROLE,
-				new org.muml.core.common.edit.policies.ErrorFeedbackEditPolicy());
+				new ErrorFeedbackEditPolicy());
 
 	}
 
@@ -166,29 +170,24 @@ public class MemoryResourceEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof org.muml.pm.hardware.resource.diagram.edit.parts.MemoryResourceNameEditPart) {
-			((org.muml.pm.hardware.resource.diagram.edit.parts.MemoryResourceNameEditPart) childEditPart)
-					.setLabel(getPrimaryShape().getFigureResourceNameFigure());
+		if (childEditPart instanceof MemoryResourceNameEditPart) {
+			((MemoryResourceNameEditPart) childEditPart).setLabel(getPrimaryShape().getFigureResourceNameFigure());
 			return true;
 		}
-		if (childEditPart instanceof org.muml.pm.hardware.resource.diagram.edit.parts.WrappingLabel17EditPart) {
-			((org.muml.pm.hardware.resource.diagram.edit.parts.WrappingLabel17EditPart) childEditPart)
-					.setLabel(getPrimaryShape().getFigureResourceKindFigure());
+		if (childEditPart instanceof WrappingLabel17EditPart) {
+			((WrappingLabel17EditPart) childEditPart).setLabel(getPrimaryShape().getFigureResourceKindFigure());
 			return true;
 		}
-		if (childEditPart instanceof org.muml.pm.hardware.resource.diagram.edit.parts.WrappingLabel18EditPart) {
-			((org.muml.pm.hardware.resource.diagram.edit.parts.WrappingLabel18EditPart) childEditPart)
-					.setLabel(getPrimaryShape().getFigureResourceCardinalityFigure());
+		if (childEditPart instanceof WrappingLabel18EditPart) {
+			((WrappingLabel18EditPart) childEditPart).setLabel(getPrimaryShape().getFigureResourceCardinalityFigure());
 			return true;
 		}
-		if (childEditPart instanceof org.muml.pm.hardware.resource.diagram.edit.parts.WrappingLabel19EditPart) {
-			((org.muml.pm.hardware.resource.diagram.edit.parts.WrappingLabel19EditPart) childEditPart)
-					.setLabel(getPrimaryShape().getFigureResourceInfo1());
+		if (childEditPart instanceof WrappingLabel19EditPart) {
+			((WrappingLabel19EditPart) childEditPart).setLabel(getPrimaryShape().getFigureResourceInfo1());
 			return true;
 		}
-		if (childEditPart instanceof org.muml.pm.hardware.resource.diagram.edit.parts.WrappingLabel20EditPart) {
-			((org.muml.pm.hardware.resource.diagram.edit.parts.WrappingLabel20EditPart) childEditPart)
-					.setLabel(getPrimaryShape().getFigureResourceInfo2());
+		if (childEditPart instanceof WrappingLabel20EditPart) {
+			((WrappingLabel20EditPart) childEditPart).setLabel(getPrimaryShape().getFigureResourceInfo2());
 			return true;
 		}
 		return false;
@@ -198,19 +197,19 @@ public class MemoryResourceEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof org.muml.pm.hardware.resource.diagram.edit.parts.MemoryResourceNameEditPart) {
+		if (childEditPart instanceof MemoryResourceNameEditPart) {
 			return true;
 		}
-		if (childEditPart instanceof org.muml.pm.hardware.resource.diagram.edit.parts.WrappingLabel17EditPart) {
+		if (childEditPart instanceof WrappingLabel17EditPart) {
 			return true;
 		}
-		if (childEditPart instanceof org.muml.pm.hardware.resource.diagram.edit.parts.WrappingLabel18EditPart) {
+		if (childEditPart instanceof WrappingLabel18EditPart) {
 			return true;
 		}
-		if (childEditPart instanceof org.muml.pm.hardware.resource.diagram.edit.parts.WrappingLabel19EditPart) {
+		if (childEditPart instanceof WrappingLabel19EditPart) {
 			return true;
 		}
-		if (childEditPart instanceof org.muml.pm.hardware.resource.diagram.edit.parts.WrappingLabel20EditPart) {
+		if (childEditPart instanceof WrappingLabel20EditPart) {
 			return true;
 		}
 		return false;
@@ -250,7 +249,7 @@ public class MemoryResourceEditPart extends ShapeNodeEditPart {
 		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(130, 47) {
 			@Override
 			public ConnectionAnchor createDefaultAnchor() {
-				org.muml.core.common.edit.policies.anchor.IConnectionAnchorCreationEditPolicy connectionAnchorCreationEditPolicy = (org.muml.core.common.edit.policies.anchor.IConnectionAnchorCreationEditPolicy) getEditPolicy(
+				IConnectionAnchorCreationEditPolicy connectionAnchorCreationEditPolicy = (IConnectionAnchorCreationEditPolicy) getEditPolicy(
 						org.muml.core.common.edit.policies.EditPolicyRoles.CONNECTION_ANCHOR_CREATION_ROLE);
 				if (connectionAnchorCreationEditPolicy != null) {
 					return connectionAnchorCreationEditPolicy.createDefaultAnchor();
@@ -347,9 +346,7 @@ public class MemoryResourceEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(
-				org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry.getType(
-						org.muml.pm.hardware.resource.diagram.edit.parts.MemoryResourceNameEditPart.VISUAL_ID));
+		return getChildBySemanticHint(HardwareVisualIDRegistry.getType(MemoryResourceNameEditPart.VISUAL_ID));
 	}
 
 	/**
@@ -372,7 +369,7 @@ public class MemoryResourceEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		private org.muml.pm.hardware.common.figures.CustomIconFigure fFigureCustomIconFigure;
+		private CustomIconFigure fFigureCustomIconFigure;
 		/**
 		 * @generated
 		 */
@@ -389,7 +386,7 @@ public class MemoryResourceEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		private org.muml.pm.hardware.common.figures.CustomIconFigure myCustomIconFigure;
+		private CustomIconFigure myCustomIconFigure;
 
 		/**
 		 * @generated
@@ -513,7 +510,7 @@ public class MemoryResourceEditPart extends ShapeNodeEditPart {
 			layoutResourceIconRectangle1.makeColumnsEqualWidth = false;
 			resourceIconRectangle1.setLayoutManager(layoutResourceIconRectangle1);
 
-			myCustomIconFigure = new org.muml.pm.hardware.common.figures.CustomIconFigure();
+			myCustomIconFigure = new CustomIconFigure();
 
 			resourceIconRectangle1.add(myCustomIconFigure);
 
@@ -588,7 +585,7 @@ public class MemoryResourceEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		public org.muml.pm.hardware.common.figures.CustomIconFigure getFigureCustomIconFigure() {
+		public CustomIconFigure getFigureCustomIconFigure() {
 			return myCustomIconFigure;
 		}
 

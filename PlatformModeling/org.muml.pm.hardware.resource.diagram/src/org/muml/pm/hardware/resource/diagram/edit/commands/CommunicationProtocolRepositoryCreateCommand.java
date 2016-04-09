@@ -11,6 +11,10 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.pm.hardware.hwresource.CommunicationProtocolRepository;
+import org.muml.pm.hardware.hwresource.HwresourceFactory;
+import org.muml.pm.hardware.hwresource.ResourceRepository;
+import org.muml.pm.hardware.resource.diagram.providers.ElementInitializers;
 
 /**
  * @generated
@@ -48,14 +52,13 @@ public class CommunicationProtocolRepositoryCreateCommand extends EditElementCom
 	 * @generated
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-		org.muml.pm.hardware.hwresource.CommunicationProtocolRepository newElement = org.muml.pm.hardware.hwresource.HwresourceFactory.eINSTANCE
+		CommunicationProtocolRepository newElement = HwresourceFactory.eINSTANCE
 				.createCommunicationProtocolRepository();
 
-		org.muml.pm.hardware.hwresource.ResourceRepository owner = (org.muml.pm.hardware.hwresource.ResourceRepository) getElementToEdit();
+		ResourceRepository owner = (ResourceRepository) getElementToEdit();
 		owner.getProtocols().add(newElement);
 
-		org.muml.pm.hardware.resource.diagram.providers.ElementInitializers.getInstance()
-				.init_CommunicationProtocolRepository_2008(newElement);
+		ElementInitializers.getInstance().init_CommunicationProtocolRepository_2008(newElement);
 
 		doConfigure(newElement, monitor, info);
 
@@ -64,11 +67,10 @@ public class CommunicationProtocolRepositoryCreateCommand extends EditElementCom
 	}
 
 	/**
-	 * @generated
-	 */
-	protected void doConfigure(
-			org.muml.pm.hardware.hwresource.CommunicationProtocolRepository newElement,
-			IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
+	* @generated
+	*/
+	protected void doConfigure(CommunicationProtocolRepository newElement, IProgressMonitor monitor, IAdaptable info)
+			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest()).getElementType();
 		ConfigureRequest configureRequest = new ConfigureRequest(getEditingDomain(), newElement, elementType);
 		configureRequest.setClientContext(((CreateElementRequest) getRequest()).getClientContext());

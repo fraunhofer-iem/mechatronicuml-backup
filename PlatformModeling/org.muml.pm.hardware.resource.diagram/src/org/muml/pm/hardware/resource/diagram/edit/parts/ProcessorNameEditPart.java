@@ -45,6 +45,10 @@ import org.eclipse.swt.accessibility.AccessibleEvent;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.FontData;
 import org.eclipse.swt.graphics.Image;
+import org.muml.pm.hardware.resource.diagram.edit.policies.HardwareTextSelectionEditPolicy;
+import org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry;
+import org.muml.pm.hardware.resource.diagram.providers.HardwareElementTypes;
+import org.muml.pm.hardware.resource.diagram.providers.HardwareParserProvider;
 
 /**
  * @generated
@@ -116,8 +120,7 @@ public class ProcessorNameEditPart extends CompartmentEditPart implements ITextA
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicy.SELECTION_FEEDBACK_ROLE,
-				new org.muml.pm.hardware.resource.diagram.edit.policies.HardwareTextSelectionEditPolicy());
+		installEditPolicy(EditPolicy.SELECTION_FEEDBACK_ROLE, new HardwareTextSelectionEditPolicy());
 		installEditPolicy(EditPolicy.DIRECT_EDIT_ROLE, new LabelDirectEditPolicy());
 		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, new DefaultNodeLabelDragPolicy());
 	}
@@ -308,11 +311,9 @@ public class ProcessorNameEditPart extends CompartmentEditPart implements ITextA
 	 */
 	public IParser getParser() {
 		if (parser == null) {
-			parser = org.muml.pm.hardware.resource.diagram.providers.HardwareParserProvider.getParser(
-					org.muml.pm.hardware.resource.diagram.providers.HardwareElementTypes.Processor_3014,
-					getParserElement(),
-					org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry.getType(
-							org.muml.pm.hardware.resource.diagram.edit.parts.ProcessorNameEditPart.VISUAL_ID));
+			parser = HardwareParserProvider.getParser(HardwareElementTypes.Processor_3014, getParserElement(),
+					HardwareVisualIDRegistry
+							.getType(org.muml.pm.hardware.resource.diagram.edit.parts.ProcessorNameEditPart.VISUAL_ID));
 		}
 		return parser;
 	}
@@ -322,9 +323,7 @@ public class ProcessorNameEditPart extends CompartmentEditPart implements ITextA
 	 */
 	protected DirectEditManager getManager() {
 		if (manager == null) {
-			setManager(new TextDirectEditManager(this, null,
-					org.muml.pm.hardware.resource.diagram.edit.parts.HardwareEditPartFactory
-							.getTextCellEditorLocator(this)));
+			setManager(new TextDirectEditManager(this, null, HardwareEditPartFactory.getTextCellEditorLocator(this)));
 		}
 		return manager;
 	}

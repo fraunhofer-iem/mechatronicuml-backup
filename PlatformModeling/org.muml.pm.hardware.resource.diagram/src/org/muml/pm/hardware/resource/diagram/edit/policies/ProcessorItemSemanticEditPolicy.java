@@ -14,18 +14,22 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyReferenceRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelationshipRequest;
 import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.pm.hardware.resource.diagram.edit.commands.ProcessorOwnedCacheCreateCommand;
+import org.muml.pm.hardware.resource.diagram.edit.commands.ProcessorOwnedCacheReorientCommand;
+import org.muml.pm.hardware.resource.diagram.edit.parts.ProcessorOwnedCacheEditPart;
+import org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry;
+import org.muml.pm.hardware.resource.diagram.providers.HardwareElementTypes;
 
 /**
  * @generated
  */
-public class ProcessorItemSemanticEditPolicy extends
-		org.muml.pm.hardware.resource.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy {
+public class ProcessorItemSemanticEditPolicy extends HardwareBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public ProcessorItemSemanticEditPolicy() {
-		super(org.muml.pm.hardware.resource.diagram.providers.HardwareElementTypes.Processor_3014);
+		super(HardwareElementTypes.Processor_3014);
 	}
 
 	/**
@@ -37,8 +41,7 @@ public class ProcessorItemSemanticEditPolicy extends
 		cmd.setTransactionNestingEnabled(false);
 		for (Iterator<?> it = view.getSourceEdges().iterator(); it.hasNext();) {
 			Edge outgoingLink = (Edge) it.next();
-			if (org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry.getVisualID(
-					outgoingLink) == org.muml.pm.hardware.resource.diagram.edit.parts.ProcessorOwnedCacheEditPart.VISUAL_ID) {
+			if (HardwareVisualIDRegistry.getVisualID(outgoingLink) == ProcessorOwnedCacheEditPart.VISUAL_ID) {
 				DestroyReferenceRequest r = new DestroyReferenceRequest(outgoingLink.getSource().getElement(), null,
 						outgoingLink.getTarget().getElement(), false);
 				cmd.add(new DestroyReferenceCommand(r));
@@ -71,11 +74,8 @@ public class ProcessorItemSemanticEditPolicy extends
 	 * @generated
 	 */
 	protected Command getStartCreateRelationshipCommand(CreateRelationshipRequest req) {
-		if (org.muml.pm.hardware.resource.diagram.providers.HardwareElementTypes.ProcessorOwnedCache_4002 == req
-				.getElementType()) {
-			return getGEFWrapper(
-					new org.muml.pm.hardware.resource.diagram.edit.commands.ProcessorOwnedCacheCreateCommand(
-							req, req.getSource(), req.getTarget()));
+		if (HardwareElementTypes.ProcessorOwnedCache_4002 == req.getElementType()) {
+			return getGEFWrapper(new ProcessorOwnedCacheCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return null;
 	}
@@ -84,8 +84,7 @@ public class ProcessorItemSemanticEditPolicy extends
 	 * @generated
 	 */
 	protected Command getCompleteCreateRelationshipCommand(CreateRelationshipRequest req) {
-		if (org.muml.pm.hardware.resource.diagram.providers.HardwareElementTypes.ProcessorOwnedCache_4002 == req
-				.getElementType()) {
+		if (HardwareElementTypes.ProcessorOwnedCache_4002 == req.getElementType()) {
 			return null;
 		}
 		return null;
@@ -99,10 +98,8 @@ public class ProcessorItemSemanticEditPolicy extends
 	 */
 	protected Command getReorientReferenceRelationshipCommand(ReorientReferenceRelationshipRequest req) {
 		switch (getVisualID(req)) {
-		case org.muml.pm.hardware.resource.diagram.edit.parts.ProcessorOwnedCacheEditPart.VISUAL_ID:
-			return getGEFWrapper(
-					new org.muml.pm.hardware.resource.diagram.edit.commands.ProcessorOwnedCacheReorientCommand(
-							req));
+		case ProcessorOwnedCacheEditPart.VISUAL_ID:
+			return getGEFWrapper(new ProcessorOwnedCacheReorientCommand(req));
 		}
 		return super.getReorientReferenceRelationshipCommand(req);
 	}

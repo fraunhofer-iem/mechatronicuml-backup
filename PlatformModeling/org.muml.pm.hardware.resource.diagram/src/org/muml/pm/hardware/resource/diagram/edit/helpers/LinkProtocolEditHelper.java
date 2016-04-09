@@ -3,6 +3,5 @@ package org.muml.pm.hardware.resource.diagram.edit.helpers;
 /**
  * @generated
  */
-public class LinkProtocolEditHelper
-		extends org.muml.pm.hardware.resource.diagram.edit.helpers.HardwareBaseEditHelper {
+public class LinkProtocolEditHelper extends HardwareBaseEditHelper {
 }

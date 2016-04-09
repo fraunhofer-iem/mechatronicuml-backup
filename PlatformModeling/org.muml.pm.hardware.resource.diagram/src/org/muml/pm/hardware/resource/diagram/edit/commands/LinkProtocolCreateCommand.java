@@ -11,6 +11,10 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
+import org.muml.pm.hardware.hwresource.CommunicationProtocolRepository;
+import org.muml.pm.hardware.hwresource.HwresourceFactory;
+import org.muml.pm.hardware.hwresource.LinkProtocol;
+import org.muml.pm.hardware.resource.diagram.providers.ElementInitializers;
 
 /**
  * @generated
@@ -48,14 +52,12 @@ public class LinkProtocolCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-		org.muml.pm.hardware.hwresource.LinkProtocol newElement = org.muml.pm.hardware.hwresource.HwresourceFactory.eINSTANCE
-				.createLinkProtocol();
+		LinkProtocol newElement = HwresourceFactory.eINSTANCE.createLinkProtocol();
 
-		org.muml.pm.hardware.hwresource.CommunicationProtocolRepository owner = (org.muml.pm.hardware.hwresource.CommunicationProtocolRepository) getElementToEdit();
+		CommunicationProtocolRepository owner = (CommunicationProtocolRepository) getElementToEdit();
 		owner.getCommunicationProtocols().add(newElement);
 
-		org.muml.pm.hardware.resource.diagram.providers.ElementInitializers.getInstance()
-				.init_LinkProtocol_3018(newElement);
+		ElementInitializers.getInstance().init_LinkProtocol_3018(newElement);
 
 		doConfigure(newElement, monitor, info);
 
@@ -64,10 +66,10 @@ public class LinkProtocolCreateCommand extends EditElementCommand {
 	}
 
 	/**
-	 * @generated
-	 */
-	protected void doConfigure(org.muml.pm.hardware.hwresource.LinkProtocol newElement,
-			IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
+	* @generated
+	*/
+	protected void doConfigure(LinkProtocol newElement, IProgressMonitor monitor, IAdaptable info)
+			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest()).getElementType();
 		ConfigureRequest configureRequest = new ConfigureRequest(getEditingDomain(), newElement, elementType);
 		configureRequest.setClientContext(((CreateElementRequest) getRequest()).getClientContext());

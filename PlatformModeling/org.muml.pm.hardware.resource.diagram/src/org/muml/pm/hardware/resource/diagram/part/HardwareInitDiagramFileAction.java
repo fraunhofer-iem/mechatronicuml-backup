@@ -28,12 +28,13 @@ import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.IObjectActionDelegate;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.handlers.HandlerUtil;
+import org.muml.core.modelinstance.ui.handlers.AbstractCreateDiagramFileCommand;
+import org.muml.pm.hardware.hwresource.HwresourceFactory;
 
 /**
  * @generated
  */
-public class HardwareInitDiagramFileAction
-		extends org.muml.core.modelinstance.ui.handlers.AbstractCreateDiagramFileCommand {
+public class HardwareInitDiagramFileAction extends AbstractCreateDiagramFileCommand {
 
 	/**
 	* @generated
@@ -60,20 +61,18 @@ public class HardwareInitDiagramFileAction
 			if (selectedResource instanceof IContainer) {
 				// Get a unique filename for the new file
 				IPath filePath = selectedResource.getFullPath();
-				String fileName = org.muml.pm.hardware.resource.diagram.part.HardwareDiagramEditorUtil
-						.getUniqueFileName(filePath, "ResourceRepository", "resourcerepository");
+				String fileName = HardwareDiagramEditorUtil.getUniqueFileName(filePath, "ResourceRepository",
+						"resourcerepository");
 				// Create the new file
 				ResourceSet resourceSet = new ResourceSetImpl();
 				URI uri = URI.createPlatformResourceURI(filePath.append(fileName).toString(), true);
 				Resource resource = resourceSet.createResource(uri);
-				EObject model = org.muml.pm.hardware.hwresource.HwresourceFactory.eINSTANCE
-						.createResourceRepository();
+				EObject model = HwresourceFactory.eINSTANCE.createResourceRepository();
 				resource.getContents().add(model);
 				try {
 					resource.save(Collections.emptyMap());
 				} catch (IOException e) {
-					org.muml.pm.hardware.resource.diagram.part.HardwareDiagramEditorPlugin
-							.getInstance().logError("Could not create child element", e);
+					HardwareDiagramEditorPlugin.getInstance().logError("Could not create child element", e);
 				}
 			}
 			return null;
@@ -85,7 +84,7 @@ public class HardwareInitDiagramFileAction
 	 */
 	@Override
 	public void setCharset(IFile diagramFile) {
-		org.muml.pm.hardware.resource.diagram.part.HardwareDiagramEditorUtil.setCharset(diagramFile);
+		HardwareDiagramEditorUtil.setCharset(diagramFile);
 	}
 
 	/**
@@ -93,8 +92,7 @@ public class HardwareInitDiagramFileAction
 	 */
 	@Override
 	public String getUniqueFilename(String hint, String extension, IPath filePath) {
-		return org.muml.pm.hardware.resource.diagram.part.HardwareDiagramEditorUtil
-				.getUniqueFileName(filePath, hint, extension);
+		return HardwareDiagramEditorUtil.getUniqueFileName(filePath, hint, extension);
 	}
 
 	/**
@@ -102,7 +100,7 @@ public class HardwareInitDiagramFileAction
 	 */
 	@Override
 	public String getEditorId() {
-		return org.muml.pm.hardware.resource.diagram.part.HardwareDiagramEditor.ID;
+		return HardwareDiagramEditor.ID;
 
 	}
 }

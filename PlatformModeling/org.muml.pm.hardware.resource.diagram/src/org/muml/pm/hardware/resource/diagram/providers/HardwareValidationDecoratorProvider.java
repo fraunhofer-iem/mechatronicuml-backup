@@ -37,6 +37,10 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.ui.ISharedImages;
 import org.eclipse.ui.PlatformUI;
+import org.muml.pm.hardware.resource.diagram.edit.parts.ResourceRepositoryEditPart;
+import org.muml.pm.hardware.resource.diagram.part.HardwareDiagramEditor;
+import org.muml.pm.hardware.resource.diagram.part.HardwareDiagramEditorPlugin;
+import org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry;
 
 /**
  * @generated
@@ -51,8 +55,7 @@ public class HardwareValidationDecoratorProvider extends AbstractProvider implem
 	/**
 	 * @generated
 	 */
-	private static final String MARKER_TYPE = org.muml.pm.hardware.resource.diagram.part.HardwareDiagramEditorPlugin.ID
-			+ ".diagnostic"; //$NON-NLS-1$
+	private static final String MARKER_TYPE = HardwareDiagramEditorPlugin.ID + ".diagnostic"; //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -81,8 +84,7 @@ public class HardwareValidationDecoratorProvider extends AbstractProvider implem
 			if (!(ed instanceof DiagramEditDomain)) {
 				return;
 			}
-			if (((DiagramEditDomain) ed)
-					.getEditorPart() instanceof org.muml.pm.hardware.resource.diagram.part.HardwareDiagramEditor) {
+			if (((DiagramEditDomain) ed).getEditorPart() instanceof HardwareDiagramEditor) {
 				decoratorTarget.installDecorator(KEY, new StatusDecorator(decoratorTarget));
 			}
 		}
@@ -97,10 +99,7 @@ public class HardwareValidationDecoratorProvider extends AbstractProvider implem
 		}
 		IDecoratorTarget decoratorTarget = ((CreateDecoratorsOperation) operation).getDecoratorTarget();
 		View view = (View) decoratorTarget.getAdapter(View.class);
-		return view != null
-				&& org.muml.pm.hardware.resource.diagram.edit.parts.ResourceRepositoryEditPart.MODEL_ID
-						.equals(org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry
-								.getModelID(view));
+		return view != null && ResourceRepositoryEditPart.MODEL_ID.equals(HardwareVisualIDRegistry.getModelID(view));
 	}
 
 	/**
@@ -140,8 +139,7 @@ public class HardwareValidationDecoratorProvider extends AbstractProvider implem
 					}
 					// END Added null checks
 				} catch (Exception e) {
-					org.muml.pm.hardware.resource.diagram.part.HardwareDiagramEditorPlugin
-							.getInstance().logError("Decorator refresh failure", e); //$NON-NLS-1$
+					HardwareDiagramEditorPlugin.getInstance().logError("Decorator refresh failure", e); //$NON-NLS-1$
 				}
 			}
 		});
@@ -171,8 +169,7 @@ public class HardwareValidationDecoratorProvider extends AbstractProvider implem
 					}
 				});
 			} catch (Exception e) {
-				org.muml.pm.hardware.resource.diagram.part.HardwareDiagramEditorPlugin.getInstance()
-						.logError("ViewID access failure", e); //$NON-NLS-1$			
+				HardwareDiagramEditorPlugin.getInstance().logError("ViewID access failure", e); //$NON-NLS-1$			
 			}
 		}
 
@@ -205,8 +202,7 @@ public class HardwareValidationDecoratorProvider extends AbstractProvider implem
 			try {
 				markers = resource.findMarkers(MARKER_TYPE, true, IResource.DEPTH_INFINITE);
 			} catch (CoreException e) {
-				org.muml.pm.hardware.resource.diagram.part.HardwareDiagramEditorPlugin.getInstance()
-						.logError("Validation markers refresh failure", e); //$NON-NLS-1$
+				HardwareDiagramEditorPlugin.getInstance().logError("Validation markers refresh failure", e); //$NON-NLS-1$
 			}
 			if (markers == null || markers.length == 0) {
 				return;
@@ -411,8 +407,7 @@ public class HardwareValidationDecoratorProvider extends AbstractProvider implem
 			try {
 				return marker.getType();
 			} catch (CoreException e) {
-				org.muml.pm.hardware.resource.diagram.part.HardwareDiagramEditorPlugin.getInstance()
-						.logError("Validation marker refresh failure", e); //$NON-NLS-1$
+				HardwareDiagramEditorPlugin.getInstance().logError("Validation marker refresh failure", e); //$NON-NLS-1$
 				return ""; //$NON-NLS-1$
 			}
 		}

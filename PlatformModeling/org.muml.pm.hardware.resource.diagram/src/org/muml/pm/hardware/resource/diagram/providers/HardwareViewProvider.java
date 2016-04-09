@@ -42,6 +42,53 @@ import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.jface.preference.PreferenceConverter;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.FontData;
+import org.muml.pm.hardware.resource.diagram.edit.parts.BusProtocolEditPart;
+import org.muml.pm.hardware.resource.diagram.edit.parts.BusProtocolNameEditPart;
+import org.muml.pm.hardware.resource.diagram.edit.parts.CacheEditPart;
+import org.muml.pm.hardware.resource.diagram.edit.parts.CacheNameEditPart;
+import org.muml.pm.hardware.resource.diagram.edit.parts.CommunicationProtocolRepositoryEditPart;
+import org.muml.pm.hardware.resource.diagram.edit.parts.CommunicationProtocolRepositoryNameEditPart;
+import org.muml.pm.hardware.resource.diagram.edit.parts.CommunicationProtocolRepositoryProtocolRepositoryCompartmentEditPart;
+import org.muml.pm.hardware.resource.diagram.edit.parts.CommunicationResource2EditPart;
+import org.muml.pm.hardware.resource.diagram.edit.parts.CommunicationResourceEditPart;
+import org.muml.pm.hardware.resource.diagram.edit.parts.CommunicationResourceNameEditPart;
+import org.muml.pm.hardware.resource.diagram.edit.parts.DeviceEditPart;
+import org.muml.pm.hardware.resource.diagram.edit.parts.DeviceNameEditPart;
+import org.muml.pm.hardware.resource.diagram.edit.parts.HWPortLabelEditPart;
+import org.muml.pm.hardware.resource.diagram.edit.parts.LinkProtocolEditPart;
+import org.muml.pm.hardware.resource.diagram.edit.parts.LinkProtocolNameEditPart;
+import org.muml.pm.hardware.resource.diagram.edit.parts.MemoryResourceEditPart;
+import org.muml.pm.hardware.resource.diagram.edit.parts.MemoryResourceNameEditPart;
+import org.muml.pm.hardware.resource.diagram.edit.parts.ProcessorEditPart;
+import org.muml.pm.hardware.resource.diagram.edit.parts.ProcessorNameEditPart;
+import org.muml.pm.hardware.resource.diagram.edit.parts.ProcessorOwnedCacheEditPart;
+import org.muml.pm.hardware.resource.diagram.edit.parts.ProgrammableLogicDeviceEditPart;
+import org.muml.pm.hardware.resource.diagram.edit.parts.ProgrammableLogicDeviceNameEditPart;
+import org.muml.pm.hardware.resource.diagram.edit.parts.ResourceRepositoryEditPart;
+import org.muml.pm.hardware.resource.diagram.edit.parts.StructuredResourceEditPart;
+import org.muml.pm.hardware.resource.diagram.edit.parts.StructuredResourceNameEditPart;
+import org.muml.pm.hardware.resource.diagram.edit.parts.StructuredResourceStructuredResourceCompartmentEditPart;
+import org.muml.pm.hardware.resource.diagram.edit.parts.WrappingLabel10EditPart;
+import org.muml.pm.hardware.resource.diagram.edit.parts.WrappingLabel11EditPart;
+import org.muml.pm.hardware.resource.diagram.edit.parts.WrappingLabel12EditPart;
+import org.muml.pm.hardware.resource.diagram.edit.parts.WrappingLabel13EditPart;
+import org.muml.pm.hardware.resource.diagram.edit.parts.WrappingLabel14EditPart;
+import org.muml.pm.hardware.resource.diagram.edit.parts.WrappingLabel15EditPart;
+import org.muml.pm.hardware.resource.diagram.edit.parts.WrappingLabel16EditPart;
+import org.muml.pm.hardware.resource.diagram.edit.parts.WrappingLabel17EditPart;
+import org.muml.pm.hardware.resource.diagram.edit.parts.WrappingLabel18EditPart;
+import org.muml.pm.hardware.resource.diagram.edit.parts.WrappingLabel19EditPart;
+import org.muml.pm.hardware.resource.diagram.edit.parts.WrappingLabel20EditPart;
+import org.muml.pm.hardware.resource.diagram.edit.parts.WrappingLabel2EditPart;
+import org.muml.pm.hardware.resource.diagram.edit.parts.WrappingLabel3EditPart;
+import org.muml.pm.hardware.resource.diagram.edit.parts.WrappingLabel4EditPart;
+import org.muml.pm.hardware.resource.diagram.edit.parts.WrappingLabel5EditPart;
+import org.muml.pm.hardware.resource.diagram.edit.parts.WrappingLabel6EditPart;
+import org.muml.pm.hardware.resource.diagram.edit.parts.WrappingLabel7EditPart;
+import org.muml.pm.hardware.resource.diagram.edit.parts.WrappingLabel8EditPart;
+import org.muml.pm.hardware.resource.diagram.edit.parts.WrappingLabel9EditPart;
+import org.muml.pm.hardware.resource.diagram.edit.parts.WrappingLabelEditPart;
+import org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry;
 
 /**
  * @generated
@@ -83,10 +130,8 @@ public class HardwareViewProvider extends AbstractProvider implements IViewProvi
 	 * @generated
 	 */
 	protected boolean provides(CreateDiagramViewOperation op) {
-		return org.muml.pm.hardware.resource.diagram.edit.parts.ResourceRepositoryEditPart.MODEL_ID
-				.equals(op.getSemanticHint())
-				&& org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry
-						.getDiagramVisualID(getSemanticElement(op.getSemanticAdapter())) != -1;
+		return ResourceRepositoryEditPart.MODEL_ID.equals(op.getSemanticHint())
+				&& HardwareVisualIDRegistry.getDiagramVisualID(getSemanticElement(op.getSemanticAdapter())) != -1;
 	}
 
 	/**
@@ -106,14 +151,11 @@ public class HardwareViewProvider extends AbstractProvider implements IViewProvi
 			if (elementType != null || domainElement == null) {
 				return false;
 			}
-			visualID = org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry
-					.getNodeVisualID(op.getContainerView(), domainElement);
+			visualID = HardwareVisualIDRegistry.getNodeVisualID(op.getContainerView(), domainElement);
 		} else {
-			visualID = org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry
-					.getVisualID(op.getSemanticHint());
+			visualID = HardwareVisualIDRegistry.getVisualID(op.getSemanticHint());
 			if (elementType != null) {
-				if (!org.muml.pm.hardware.resource.diagram.providers.HardwareElementTypes
-						.isKnownElementType(elementType) || (!(elementType instanceof IHintedType))) {
+				if (!HardwareElementTypes.isKnownElementType(elementType) || (!(elementType instanceof IHintedType))) {
 					return false; // foreign element type
 				}
 				String elementTypeHint = ((IHintedType) elementType).getSemanticHint();
@@ -121,31 +163,28 @@ public class HardwareViewProvider extends AbstractProvider implements IViewProvi
 					return false; // if semantic hint is specified it should be the same as in element type
 				}
 				if (domainElement != null
-						&& visualID != org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry
-								.getNodeVisualID(op.getContainerView(), domainElement)) {
+						&& visualID != HardwareVisualIDRegistry.getNodeVisualID(op.getContainerView(), domainElement)) {
 					return false; // visual id for node EClass should match visual id from element type
 				}
 			} else {
-				if (!org.muml.pm.hardware.resource.diagram.edit.parts.ResourceRepositoryEditPart.MODEL_ID
-						.equals(org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry
-								.getModelID(op.getContainerView()))) {
+				if (!ResourceRepositoryEditPart.MODEL_ID
+						.equals(HardwareVisualIDRegistry.getModelID(op.getContainerView()))) {
 					return false; // foreign diagram
 				}
 				switch (visualID) {
-				case org.muml.pm.hardware.resource.diagram.edit.parts.DeviceEditPart.VISUAL_ID:
-				case org.muml.pm.hardware.resource.diagram.edit.parts.StructuredResourceEditPart.VISUAL_ID:
-				case org.muml.pm.hardware.resource.diagram.edit.parts.CommunicationProtocolRepositoryEditPart.VISUAL_ID:
-				case org.muml.pm.hardware.resource.diagram.edit.parts.CommunicationResourceEditPart.VISUAL_ID:
-				case org.muml.pm.hardware.resource.diagram.edit.parts.CacheEditPart.VISUAL_ID:
-				case org.muml.pm.hardware.resource.diagram.edit.parts.ProcessorEditPart.VISUAL_ID:
-				case org.muml.pm.hardware.resource.diagram.edit.parts.ProgrammableLogicDeviceEditPart.VISUAL_ID:
-				case org.muml.pm.hardware.resource.diagram.edit.parts.MemoryResourceEditPart.VISUAL_ID:
-				case org.muml.pm.hardware.resource.diagram.edit.parts.BusProtocolEditPart.VISUAL_ID:
-				case org.muml.pm.hardware.resource.diagram.edit.parts.LinkProtocolEditPart.VISUAL_ID:
-				case org.muml.pm.hardware.resource.diagram.edit.parts.CommunicationResource2EditPart.VISUAL_ID:
-					if (domainElement == null
-							|| visualID != org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry
-									.getNodeVisualID(op.getContainerView(), domainElement)) {
+				case DeviceEditPart.VISUAL_ID:
+				case StructuredResourceEditPart.VISUAL_ID:
+				case CommunicationProtocolRepositoryEditPart.VISUAL_ID:
+				case CommunicationResourceEditPart.VISUAL_ID:
+				case CacheEditPart.VISUAL_ID:
+				case ProcessorEditPart.VISUAL_ID:
+				case ProgrammableLogicDeviceEditPart.VISUAL_ID:
+				case MemoryResourceEditPart.VISUAL_ID:
+				case BusProtocolEditPart.VISUAL_ID:
+				case LinkProtocolEditPart.VISUAL_ID:
+				case CommunicationResource2EditPart.VISUAL_ID:
+					if (domainElement == null || visualID != HardwareVisualIDRegistry
+							.getNodeVisualID(op.getContainerView(), domainElement)) {
 						return false; // visual id in semantic hint should match visual id for domain element
 					}
 					break;
@@ -154,17 +193,13 @@ public class HardwareViewProvider extends AbstractProvider implements IViewProvi
 				}
 			}
 		}
-		return org.muml.pm.hardware.resource.diagram.edit.parts.DeviceEditPart.VISUAL_ID == visualID
-				|| org.muml.pm.hardware.resource.diagram.edit.parts.StructuredResourceEditPart.VISUAL_ID == visualID
-				|| org.muml.pm.hardware.resource.diagram.edit.parts.CommunicationProtocolRepositoryEditPart.VISUAL_ID == visualID
-				|| org.muml.pm.hardware.resource.diagram.edit.parts.CommunicationResourceEditPart.VISUAL_ID == visualID
-				|| org.muml.pm.hardware.resource.diagram.edit.parts.CommunicationResource2EditPart.VISUAL_ID == visualID
-				|| org.muml.pm.hardware.resource.diagram.edit.parts.CacheEditPart.VISUAL_ID == visualID
-				|| org.muml.pm.hardware.resource.diagram.edit.parts.ProcessorEditPart.VISUAL_ID == visualID
-				|| org.muml.pm.hardware.resource.diagram.edit.parts.ProgrammableLogicDeviceEditPart.VISUAL_ID == visualID
-				|| org.muml.pm.hardware.resource.diagram.edit.parts.MemoryResourceEditPart.VISUAL_ID == visualID
-				|| org.muml.pm.hardware.resource.diagram.edit.parts.BusProtocolEditPart.VISUAL_ID == visualID
-				|| org.muml.pm.hardware.resource.diagram.edit.parts.LinkProtocolEditPart.VISUAL_ID == visualID;
+		return DeviceEditPart.VISUAL_ID == visualID || StructuredResourceEditPart.VISUAL_ID == visualID
+				|| CommunicationProtocolRepositoryEditPart.VISUAL_ID == visualID
+				|| CommunicationResourceEditPart.VISUAL_ID == visualID
+				|| CommunicationResource2EditPart.VISUAL_ID == visualID || CacheEditPart.VISUAL_ID == visualID
+				|| ProcessorEditPart.VISUAL_ID == visualID || ProgrammableLogicDeviceEditPart.VISUAL_ID == visualID
+				|| MemoryResourceEditPart.VISUAL_ID == visualID || BusProtocolEditPart.VISUAL_ID == visualID
+				|| LinkProtocolEditPart.VISUAL_ID == visualID;
 	}
 
 	/**
@@ -172,8 +207,7 @@ public class HardwareViewProvider extends AbstractProvider implements IViewProvi
 	 */
 	protected boolean provides(CreateEdgeViewOperation op) {
 		IElementType elementType = getSemanticElementType(op.getSemanticAdapter());
-		if (!org.muml.pm.hardware.resource.diagram.providers.HardwareElementTypes
-				.isKnownElementType(elementType) || (!(elementType instanceof IHintedType))) {
+		if (!HardwareElementTypes.isKnownElementType(elementType) || (!(elementType instanceof IHintedType))) {
 			return false; // foreign element type
 		}
 		String elementTypeHint = ((IHintedType) elementType).getSemanticHint();
@@ -181,12 +215,9 @@ public class HardwareViewProvider extends AbstractProvider implements IViewProvi
 				|| (op.getSemanticHint() != null && !elementTypeHint.equals(op.getSemanticHint()))) {
 			return false; // our hint is visual id and must be specified, and it should be the same as in element type
 		}
-		int visualID = org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry
-				.getVisualID(elementTypeHint);
+		int visualID = HardwareVisualIDRegistry.getVisualID(elementTypeHint);
 		EObject domainElement = getSemanticElement(op.getSemanticAdapter());
-		if (domainElement != null
-				&& visualID != org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry
-						.getLinkWithClassVisualID(domainElement)) {
+		if (domainElement != null && visualID != HardwareVisualIDRegistry.getLinkWithClassVisualID(domainElement)) {
 			return false; // visual id for link EClass should match visual id from element type
 		}
 		return true;
@@ -198,8 +229,7 @@ public class HardwareViewProvider extends AbstractProvider implements IViewProvi
 	public Diagram createDiagram(IAdaptable semanticAdapter, String diagramKind, PreferencesHint preferencesHint) {
 		Diagram diagram = NotationFactory.eINSTANCE.createDiagram();
 		diagram.getStyles().add(NotationFactory.eINSTANCE.createDiagramStyle());
-		diagram.setType(
-				org.muml.pm.hardware.resource.diagram.edit.parts.ResourceRepositoryEditPart.MODEL_ID);
+		diagram.setType(ResourceRepositoryEditPart.MODEL_ID);
 		diagram.setElement(getSemanticElement(semanticAdapter));
 		diagram.setMeasurementUnit(MeasurementUnit.PIXEL_LITERAL);
 		return diagram;
@@ -213,35 +243,33 @@ public class HardwareViewProvider extends AbstractProvider implements IViewProvi
 		final EObject domainElement = getSemanticElement(semanticAdapter);
 		final int visualID;
 		if (semanticHint == null) {
-			visualID = org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry
-					.getNodeVisualID(containerView, domainElement);
+			visualID = HardwareVisualIDRegistry.getNodeVisualID(containerView, domainElement);
 		} else {
-			visualID = org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry
-					.getVisualID(semanticHint);
+			visualID = HardwareVisualIDRegistry.getVisualID(semanticHint);
 		}
 		switch (visualID) {
-		case org.muml.pm.hardware.resource.diagram.edit.parts.DeviceEditPart.VISUAL_ID:
+		case DeviceEditPart.VISUAL_ID:
 			return createDevice_2006(domainElement, containerView, index, persisted, preferencesHint);
-		case org.muml.pm.hardware.resource.diagram.edit.parts.StructuredResourceEditPart.VISUAL_ID:
+		case StructuredResourceEditPart.VISUAL_ID:
 			return createStructuredResource_2007(domainElement, containerView, index, persisted, preferencesHint);
-		case org.muml.pm.hardware.resource.diagram.edit.parts.CommunicationProtocolRepositoryEditPart.VISUAL_ID:
+		case CommunicationProtocolRepositoryEditPart.VISUAL_ID:
 			return createCommunicationProtocolRepository_2008(domainElement, containerView, index, persisted,
 					preferencesHint);
-		case org.muml.pm.hardware.resource.diagram.edit.parts.CommunicationResourceEditPart.VISUAL_ID:
+		case CommunicationResourceEditPart.VISUAL_ID:
 			return createCommunicationResource_3011(domainElement, containerView, index, persisted, preferencesHint);
-		case org.muml.pm.hardware.resource.diagram.edit.parts.CommunicationResource2EditPart.VISUAL_ID:
+		case CommunicationResource2EditPart.VISUAL_ID:
 			return createCommunicationResource_3012(domainElement, containerView, index, persisted, preferencesHint);
-		case org.muml.pm.hardware.resource.diagram.edit.parts.CacheEditPart.VISUAL_ID:
+		case CacheEditPart.VISUAL_ID:
 			return createCache_3013(domainElement, containerView, index, persisted, preferencesHint);
-		case org.muml.pm.hardware.resource.diagram.edit.parts.ProcessorEditPart.VISUAL_ID:
+		case ProcessorEditPart.VISUAL_ID:
 			return createProcessor_3014(domainElement, containerView, index, persisted, preferencesHint);
-		case org.muml.pm.hardware.resource.diagram.edit.parts.ProgrammableLogicDeviceEditPart.VISUAL_ID:
+		case ProgrammableLogicDeviceEditPart.VISUAL_ID:
 			return createProgrammableLogicDevice_3015(domainElement, containerView, index, persisted, preferencesHint);
-		case org.muml.pm.hardware.resource.diagram.edit.parts.MemoryResourceEditPart.VISUAL_ID:
+		case MemoryResourceEditPart.VISUAL_ID:
 			return createMemoryResource_3016(domainElement, containerView, index, persisted, preferencesHint);
-		case org.muml.pm.hardware.resource.diagram.edit.parts.BusProtocolEditPart.VISUAL_ID:
+		case BusProtocolEditPart.VISUAL_ID:
 			return createBusProtocol_3017(domainElement, containerView, index, persisted, preferencesHint);
-		case org.muml.pm.hardware.resource.diagram.edit.parts.LinkProtocolEditPart.VISUAL_ID:
+		case LinkProtocolEditPart.VISUAL_ID:
 			return createLinkProtocol_3018(domainElement, containerView, index, persisted, preferencesHint);
 		}
 		// can't happen, provided #provides(CreateNodeViewOperation) is correct
@@ -255,9 +283,8 @@ public class HardwareViewProvider extends AbstractProvider implements IViewProvi
 			boolean persisted, PreferencesHint preferencesHint) {
 		IElementType elementType = getSemanticElementType(semanticAdapter);
 		String elementTypeHint = ((IHintedType) elementType).getSemanticHint();
-		switch (org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry
-				.getVisualID(elementTypeHint)) {
-		case org.muml.pm.hardware.resource.diagram.edit.parts.ProcessorOwnedCacheEditPart.VISUAL_ID:
+		switch (HardwareVisualIDRegistry.getVisualID(elementTypeHint)) {
+		case ProcessorOwnedCacheEditPart.VISUAL_ID:
 			return createProcessorOwnedCache_4002(containerView, index, persisted, preferencesHint);
 		}
 		// can never happen, provided #provides(CreateEdgeViewOperation) is correct
@@ -271,8 +298,7 @@ public class HardwareViewProvider extends AbstractProvider implements IViewProvi
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
-		node.setType(org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry
-				.getType(org.muml.pm.hardware.resource.diagram.edit.parts.DeviceEditPart.VISUAL_ID));
+		node.setType(HardwareVisualIDRegistry.getType(DeviceEditPart.VISUAL_ID));
 		ViewUtil.insertChildView(containerView, node, index, persisted);
 		node.setElement(domainElement);
 		stampShortcut(containerView, node);
@@ -298,15 +324,9 @@ public class HardwareViewProvider extends AbstractProvider implements IViewProvi
 				IPreferenceConstants.PREF_FILL_COLOR);
 		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5041 = createLabel(node,
-				org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry.getType(
-						org.muml.pm.hardware.resource.diagram.edit.parts.DeviceNameEditPart.VISUAL_ID));
-		Node label5042 = createLabel(node,
-				org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry.getType(
-						org.muml.pm.hardware.resource.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID));
-		Node label5043 = createLabel(node,
-				org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry.getType(
-						org.muml.pm.hardware.resource.diagram.edit.parts.WrappingLabel2EditPart.VISUAL_ID));
+		Node label5041 = createLabel(node, HardwareVisualIDRegistry.getType(DeviceNameEditPart.VISUAL_ID));
+		Node label5042 = createLabel(node, HardwareVisualIDRegistry.getType(WrappingLabelEditPart.VISUAL_ID));
+		Node label5043 = createLabel(node, HardwareVisualIDRegistry.getType(WrappingLabel2EditPart.VISUAL_ID));
 		return node;
 	}
 
@@ -317,8 +337,7 @@ public class HardwareViewProvider extends AbstractProvider implements IViewProvi
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
-		node.setType(org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry.getType(
-				org.muml.pm.hardware.resource.diagram.edit.parts.StructuredResourceEditPart.VISUAL_ID));
+		node.setType(HardwareVisualIDRegistry.getType(StructuredResourceEditPart.VISUAL_ID));
 		ViewUtil.insertChildView(containerView, node, index, persisted);
 		node.setElement(domainElement);
 		stampShortcut(containerView, node);
@@ -344,18 +363,11 @@ public class HardwareViewProvider extends AbstractProvider implements IViewProvi
 				IPreferenceConstants.PREF_FILL_COLOR);
 		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5065 = createLabel(node,
-				org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry.getType(
-						org.muml.pm.hardware.resource.diagram.edit.parts.StructuredResourceNameEditPart.VISUAL_ID));
-		Node label5066 = createLabel(node,
-				org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry.getType(
-						org.muml.pm.hardware.resource.diagram.edit.parts.WrappingLabel3EditPart.VISUAL_ID));
-		Node label5067 = createLabel(node,
-				org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry.getType(
-						org.muml.pm.hardware.resource.diagram.edit.parts.WrappingLabel4EditPart.VISUAL_ID));
+		Node label5065 = createLabel(node, HardwareVisualIDRegistry.getType(StructuredResourceNameEditPart.VISUAL_ID));
+		Node label5066 = createLabel(node, HardwareVisualIDRegistry.getType(WrappingLabel3EditPart.VISUAL_ID));
+		Node label5067 = createLabel(node, HardwareVisualIDRegistry.getType(WrappingLabel4EditPart.VISUAL_ID));
 		createCompartment(node,
-				org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry.getType(
-						org.muml.pm.hardware.resource.diagram.edit.parts.StructuredResourceStructuredResourceCompartmentEditPart.VISUAL_ID),
+				HardwareVisualIDRegistry.getType(StructuredResourceStructuredResourceCompartmentEditPart.VISUAL_ID),
 				true, false, false, false);
 		return node;
 	}
@@ -367,8 +379,7 @@ public class HardwareViewProvider extends AbstractProvider implements IViewProvi
 			boolean persisted, PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
-		node.setType(org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry.getType(
-				org.muml.pm.hardware.resource.diagram.edit.parts.CommunicationProtocolRepositoryEditPart.VISUAL_ID));
+		node.setType(HardwareVisualIDRegistry.getType(CommunicationProtocolRepositoryEditPart.VISUAL_ID));
 		ViewUtil.insertChildView(containerView, node, index, persisted);
 		node.setElement(domainElement);
 		stampShortcut(containerView, node);
@@ -395,11 +406,10 @@ public class HardwareViewProvider extends AbstractProvider implements IViewProvi
 		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
 		Node label5070 = createLabel(node,
-				org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry.getType(
-						org.muml.pm.hardware.resource.diagram.edit.parts.CommunicationProtocolRepositoryNameEditPart.VISUAL_ID));
+				HardwareVisualIDRegistry.getType(CommunicationProtocolRepositoryNameEditPart.VISUAL_ID));
 		createCompartment(node,
-				org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry.getType(
-						org.muml.pm.hardware.resource.diagram.edit.parts.CommunicationProtocolRepositoryProtocolRepositoryCompartmentEditPart.VISUAL_ID),
+				HardwareVisualIDRegistry
+						.getType(CommunicationProtocolRepositoryProtocolRepositoryCompartmentEditPart.VISUAL_ID),
 				false, false, true, true);
 		return node;
 	}
@@ -411,8 +421,7 @@ public class HardwareViewProvider extends AbstractProvider implements IViewProvi
 			boolean persisted, PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
-		node.setType(org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry.getType(
-				org.muml.pm.hardware.resource.diagram.edit.parts.CommunicationResourceEditPart.VISUAL_ID));
+		node.setType(HardwareVisualIDRegistry.getType(CommunicationResourceEditPart.VISUAL_ID));
 		ViewUtil.insertChildView(containerView, node, index, persisted);
 		node.setElement(domainElement);
 		// initializeFromPreferences 
@@ -437,9 +446,7 @@ public class HardwareViewProvider extends AbstractProvider implements IViewProvi
 				IPreferenceConstants.PREF_FILL_COLOR);
 		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5040 = createLabel(node,
-				org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry.getType(
-						org.muml.pm.hardware.resource.diagram.edit.parts.HWPortLabelEditPart.VISUAL_ID));
+		Node label5040 = createLabel(node, HardwareVisualIDRegistry.getType(HWPortLabelEditPart.VISUAL_ID));
 		label5040.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
 		Location location5040 = (Location) label5040.getLayoutConstraint();
 		location5040.setX(0);
@@ -454,8 +461,7 @@ public class HardwareViewProvider extends AbstractProvider implements IViewProvi
 			boolean persisted, PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
-		node.setType(org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry.getType(
-				org.muml.pm.hardware.resource.diagram.edit.parts.CommunicationResource2EditPart.VISUAL_ID));
+		node.setType(HardwareVisualIDRegistry.getType(CommunicationResource2EditPart.VISUAL_ID));
 		ViewUtil.insertChildView(containerView, node, index, persisted);
 		node.setElement(domainElement);
 		// initializeFromPreferences 
@@ -481,14 +487,9 @@ public class HardwareViewProvider extends AbstractProvider implements IViewProvi
 		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
 		Node label5044 = createLabel(node,
-				org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry.getType(
-						org.muml.pm.hardware.resource.diagram.edit.parts.CommunicationResourceNameEditPart.VISUAL_ID));
-		Node label5045 = createLabel(node,
-				org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry.getType(
-						org.muml.pm.hardware.resource.diagram.edit.parts.WrappingLabel5EditPart.VISUAL_ID));
-		Node label5046 = createLabel(node,
-				org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry.getType(
-						org.muml.pm.hardware.resource.diagram.edit.parts.WrappingLabel6EditPart.VISUAL_ID));
+				HardwareVisualIDRegistry.getType(CommunicationResourceNameEditPart.VISUAL_ID));
+		Node label5045 = createLabel(node, HardwareVisualIDRegistry.getType(WrappingLabel5EditPart.VISUAL_ID));
+		Node label5046 = createLabel(node, HardwareVisualIDRegistry.getType(WrappingLabel6EditPart.VISUAL_ID));
 		return node;
 	}
 
@@ -499,8 +500,7 @@ public class HardwareViewProvider extends AbstractProvider implements IViewProvi
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
-		node.setType(org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry
-				.getType(org.muml.pm.hardware.resource.diagram.edit.parts.CacheEditPart.VISUAL_ID));
+		node.setType(HardwareVisualIDRegistry.getType(CacheEditPart.VISUAL_ID));
 		ViewUtil.insertChildView(containerView, node, index, persisted);
 		node.setElement(domainElement);
 		// initializeFromPreferences 
@@ -525,21 +525,11 @@ public class HardwareViewProvider extends AbstractProvider implements IViewProvi
 				IPreferenceConstants.PREF_FILL_COLOR);
 		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5047 = createLabel(node,
-				org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry.getType(
-						org.muml.pm.hardware.resource.diagram.edit.parts.CacheNameEditPart.VISUAL_ID));
-		Node label5048 = createLabel(node,
-				org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry.getType(
-						org.muml.pm.hardware.resource.diagram.edit.parts.WrappingLabel7EditPart.VISUAL_ID));
-		Node label5049 = createLabel(node,
-				org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry.getType(
-						org.muml.pm.hardware.resource.diagram.edit.parts.WrappingLabel8EditPart.VISUAL_ID));
-		Node label5050 = createLabel(node,
-				org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry.getType(
-						org.muml.pm.hardware.resource.diagram.edit.parts.WrappingLabel9EditPart.VISUAL_ID));
-		Node label5051 = createLabel(node,
-				org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry.getType(
-						org.muml.pm.hardware.resource.diagram.edit.parts.WrappingLabel10EditPart.VISUAL_ID));
+		Node label5047 = createLabel(node, HardwareVisualIDRegistry.getType(CacheNameEditPart.VISUAL_ID));
+		Node label5048 = createLabel(node, HardwareVisualIDRegistry.getType(WrappingLabel7EditPart.VISUAL_ID));
+		Node label5049 = createLabel(node, HardwareVisualIDRegistry.getType(WrappingLabel8EditPart.VISUAL_ID));
+		Node label5050 = createLabel(node, HardwareVisualIDRegistry.getType(WrappingLabel9EditPart.VISUAL_ID));
+		Node label5051 = createLabel(node, HardwareVisualIDRegistry.getType(WrappingLabel10EditPart.VISUAL_ID));
 		return node;
 	}
 
@@ -550,8 +540,7 @@ public class HardwareViewProvider extends AbstractProvider implements IViewProvi
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
-		node.setType(org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry.getType(
-				org.muml.pm.hardware.resource.diagram.edit.parts.ProcessorEditPart.VISUAL_ID));
+		node.setType(HardwareVisualIDRegistry.getType(ProcessorEditPart.VISUAL_ID));
 		ViewUtil.insertChildView(containerView, node, index, persisted);
 		node.setElement(domainElement);
 		// initializeFromPreferences 
@@ -576,21 +565,11 @@ public class HardwareViewProvider extends AbstractProvider implements IViewProvi
 				IPreferenceConstants.PREF_FILL_COLOR);
 		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5052 = createLabel(node,
-				org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry.getType(
-						org.muml.pm.hardware.resource.diagram.edit.parts.WrappingLabel11EditPart.VISUAL_ID));
-		Node label5053 = createLabel(node,
-				org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry.getType(
-						org.muml.pm.hardware.resource.diagram.edit.parts.ProcessorNameEditPart.VISUAL_ID));
-		Node label5054 = createLabel(node,
-				org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry.getType(
-						org.muml.pm.hardware.resource.diagram.edit.parts.WrappingLabel12EditPart.VISUAL_ID));
-		Node label5055 = createLabel(node,
-				org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry.getType(
-						org.muml.pm.hardware.resource.diagram.edit.parts.WrappingLabel13EditPart.VISUAL_ID));
-		Node label5056 = createLabel(node,
-				org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry.getType(
-						org.muml.pm.hardware.resource.diagram.edit.parts.WrappingLabel14EditPart.VISUAL_ID));
+		Node label5052 = createLabel(node, HardwareVisualIDRegistry.getType(WrappingLabel11EditPart.VISUAL_ID));
+		Node label5053 = createLabel(node, HardwareVisualIDRegistry.getType(ProcessorNameEditPart.VISUAL_ID));
+		Node label5054 = createLabel(node, HardwareVisualIDRegistry.getType(WrappingLabel12EditPart.VISUAL_ID));
+		Node label5055 = createLabel(node, HardwareVisualIDRegistry.getType(WrappingLabel13EditPart.VISUAL_ID));
+		Node label5056 = createLabel(node, HardwareVisualIDRegistry.getType(WrappingLabel14EditPart.VISUAL_ID));
 		return node;
 	}
 
@@ -601,8 +580,7 @@ public class HardwareViewProvider extends AbstractProvider implements IViewProvi
 			boolean persisted, PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
-		node.setType(org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry.getType(
-				org.muml.pm.hardware.resource.diagram.edit.parts.ProgrammableLogicDeviceEditPart.VISUAL_ID));
+		node.setType(HardwareVisualIDRegistry.getType(ProgrammableLogicDeviceEditPart.VISUAL_ID));
 		ViewUtil.insertChildView(containerView, node, index, persisted);
 		node.setElement(domainElement);
 		// initializeFromPreferences 
@@ -628,14 +606,9 @@ public class HardwareViewProvider extends AbstractProvider implements IViewProvi
 		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
 		Node label5057 = createLabel(node,
-				org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry.getType(
-						org.muml.pm.hardware.resource.diagram.edit.parts.ProgrammableLogicDeviceNameEditPart.VISUAL_ID));
-		Node label5058 = createLabel(node,
-				org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry.getType(
-						org.muml.pm.hardware.resource.diagram.edit.parts.WrappingLabel15EditPart.VISUAL_ID));
-		Node label5059 = createLabel(node,
-				org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry.getType(
-						org.muml.pm.hardware.resource.diagram.edit.parts.WrappingLabel16EditPart.VISUAL_ID));
+				HardwareVisualIDRegistry.getType(ProgrammableLogicDeviceNameEditPart.VISUAL_ID));
+		Node label5058 = createLabel(node, HardwareVisualIDRegistry.getType(WrappingLabel15EditPart.VISUAL_ID));
+		Node label5059 = createLabel(node, HardwareVisualIDRegistry.getType(WrappingLabel16EditPart.VISUAL_ID));
 		return node;
 	}
 
@@ -646,8 +619,7 @@ public class HardwareViewProvider extends AbstractProvider implements IViewProvi
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
-		node.setType(org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry.getType(
-				org.muml.pm.hardware.resource.diagram.edit.parts.MemoryResourceEditPart.VISUAL_ID));
+		node.setType(HardwareVisualIDRegistry.getType(MemoryResourceEditPart.VISUAL_ID));
 		ViewUtil.insertChildView(containerView, node, index, persisted);
 		node.setElement(domainElement);
 		// initializeFromPreferences 
@@ -672,21 +644,11 @@ public class HardwareViewProvider extends AbstractProvider implements IViewProvi
 				IPreferenceConstants.PREF_FILL_COLOR);
 		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5060 = createLabel(node,
-				org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry.getType(
-						org.muml.pm.hardware.resource.diagram.edit.parts.MemoryResourceNameEditPart.VISUAL_ID));
-		Node label5061 = createLabel(node,
-				org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry.getType(
-						org.muml.pm.hardware.resource.diagram.edit.parts.WrappingLabel17EditPart.VISUAL_ID));
-		Node label5062 = createLabel(node,
-				org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry.getType(
-						org.muml.pm.hardware.resource.diagram.edit.parts.WrappingLabel18EditPart.VISUAL_ID));
-		Node label5063 = createLabel(node,
-				org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry.getType(
-						org.muml.pm.hardware.resource.diagram.edit.parts.WrappingLabel19EditPart.VISUAL_ID));
-		Node label5064 = createLabel(node,
-				org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry.getType(
-						org.muml.pm.hardware.resource.diagram.edit.parts.WrappingLabel20EditPart.VISUAL_ID));
+		Node label5060 = createLabel(node, HardwareVisualIDRegistry.getType(MemoryResourceNameEditPart.VISUAL_ID));
+		Node label5061 = createLabel(node, HardwareVisualIDRegistry.getType(WrappingLabel17EditPart.VISUAL_ID));
+		Node label5062 = createLabel(node, HardwareVisualIDRegistry.getType(WrappingLabel18EditPart.VISUAL_ID));
+		Node label5063 = createLabel(node, HardwareVisualIDRegistry.getType(WrappingLabel19EditPart.VISUAL_ID));
+		Node label5064 = createLabel(node, HardwareVisualIDRegistry.getType(WrappingLabel20EditPart.VISUAL_ID));
 		return node;
 	}
 
@@ -697,8 +659,7 @@ public class HardwareViewProvider extends AbstractProvider implements IViewProvi
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
-		node.setType(org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry.getType(
-				org.muml.pm.hardware.resource.diagram.edit.parts.BusProtocolEditPart.VISUAL_ID));
+		node.setType(HardwareVisualIDRegistry.getType(BusProtocolEditPart.VISUAL_ID));
 		ViewUtil.insertChildView(containerView, node, index, persisted);
 		node.setElement(domainElement);
 		// initializeFromPreferences 
@@ -723,9 +684,7 @@ public class HardwareViewProvider extends AbstractProvider implements IViewProvi
 				IPreferenceConstants.PREF_FILL_COLOR);
 		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5068 = createLabel(node,
-				org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry.getType(
-						org.muml.pm.hardware.resource.diagram.edit.parts.BusProtocolNameEditPart.VISUAL_ID));
+		Node label5068 = createLabel(node, HardwareVisualIDRegistry.getType(BusProtocolNameEditPart.VISUAL_ID));
 		return node;
 	}
 
@@ -736,8 +695,7 @@ public class HardwareViewProvider extends AbstractProvider implements IViewProvi
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
-		node.setType(org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry.getType(
-				org.muml.pm.hardware.resource.diagram.edit.parts.LinkProtocolEditPart.VISUAL_ID));
+		node.setType(HardwareVisualIDRegistry.getType(LinkProtocolEditPart.VISUAL_ID));
 		ViewUtil.insertChildView(containerView, node, index, persisted);
 		node.setElement(domainElement);
 		// initializeFromPreferences 
@@ -762,9 +720,7 @@ public class HardwareViewProvider extends AbstractProvider implements IViewProvi
 				IPreferenceConstants.PREF_FILL_COLOR);
 		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5069 = createLabel(node,
-				org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry.getType(
-						org.muml.pm.hardware.resource.diagram.edit.parts.LinkProtocolNameEditPart.VISUAL_ID));
+		Node label5069 = createLabel(node, HardwareVisualIDRegistry.getType(LinkProtocolNameEditPart.VISUAL_ID));
 		return node;
 	}
 
@@ -782,8 +738,7 @@ public class HardwareViewProvider extends AbstractProvider implements IViewProvi
 		bendpoints.setPoints(points);
 		edge.setBendpoints(bendpoints);
 		ViewUtil.insertChildView(containerView, edge, index, persisted);
-		edge.setType(org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry.getType(
-				org.muml.pm.hardware.resource.diagram.edit.parts.ProcessorOwnedCacheEditPart.VISUAL_ID));
+		edge.setType(HardwareVisualIDRegistry.getType(ProcessorOwnedCacheEditPart.VISUAL_ID));
 		edge.setElement(null);
 		// initializePreferences
 		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint.getPreferenceStore();
@@ -814,13 +769,10 @@ public class HardwareViewProvider extends AbstractProvider implements IViewProvi
 	 * @generated
 	 */
 	private void stampShortcut(View containerView, Node target) {
-		if (!org.muml.pm.hardware.resource.diagram.edit.parts.ResourceRepositoryEditPart.MODEL_ID
-				.equals(org.muml.pm.hardware.resource.diagram.part.HardwareVisualIDRegistry
-						.getModelID(containerView))) {
+		if (!ResourceRepositoryEditPart.MODEL_ID.equals(HardwareVisualIDRegistry.getModelID(containerView))) {
 			EAnnotation shortcutAnnotation = EcoreFactory.eINSTANCE.createEAnnotation();
 			shortcutAnnotation.setSource("Shortcut"); //$NON-NLS-1$
-			shortcutAnnotation.getDetails().put("modelID", //$NON-NLS-1$
-					org.muml.pm.hardware.resource.diagram.edit.parts.ResourceRepositoryEditPart.MODEL_ID);
+			shortcutAnnotation.getDetails().put("modelID", ResourceRepositoryEditPart.MODEL_ID); //$NON-NLS-1$
 			target.getEAnnotations().add(shortcutAnnotation);
 		}
 	}
