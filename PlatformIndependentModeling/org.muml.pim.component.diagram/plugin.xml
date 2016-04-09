@@ -384,19 +384,19 @@ Contributors:
          <propertySection
             id="property.section.sampling" 
             tab="property.tab.sampling"
-            filter="de.uni_paderborn.fujaba.muml.properties.tabs.Property_tab_samplingTabElementFilter"
+            filter="org.muml.pim.properties.tabs.Property_tab_samplingTabElementFilter"
             class="org.muml.ape.runtime.sections.ObjectPropertySection">
          </propertySection>
          <propertySection
             id="property.section.message" 
             tab="property.tab.message"
-            filter="de.uni_paderborn.fujaba.muml.properties.tabs.Property_tab_messageTabElementFilter"
+            filter="org.muml.pim.properties.tabs.Property_tab_messageTabElementFilter"
             class="org.muml.ape.runtime.sections.ObjectPropertySection">
          </propertySection>
          <propertySection
             id="property.section.behavior" 
             tab="property.tab.behavior"
-            filter="de.uni_paderborn.fujaba.muml.properties.tabs.Property_tab_behaviorTabElementFilter"
+            filter="org.muml.pim.properties.tabs.Property_tab_behaviorTabElementFilter"
             class="org.muml.ape.runtime.sections.ObjectPropertySection">
          </propertySection>
          <propertySection

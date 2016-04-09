@@ -705,19 +705,19 @@
          <propertySection
             id="property.section.condition" 
             tab="property.tab.condition"
-            filter="de.uni_paderborn.fujaba.muml.properties.tabs.Property_tab_conditionTabElementFilter"
+            filter="org.muml.pim.properties.tabs.Property_tab_conditionTabElementFilter"
             class="org.muml.ape.runtime.sections.ObjectPropertySection">
          </propertySection>
          <propertySection
             id="property.section.effect" 
             tab="property.tab.effect"
-            filter="de.uni_paderborn.fujaba.muml.properties.tabs.Property_tab_effectTabElementFilter"
+            filter="org.muml.pim.properties.tabs.Property_tab_effectTabElementFilter"
             class="org.muml.ape.runtime.sections.ObjectPropertySection">
          </propertySection>
          <propertySection
             id="property.section.deadline" 
             tab="property.tab.deadline"
-            filter="de.uni_paderborn.fujaba.muml.properties.tabs.Property_tab_deadlineTabElementFilter"
+            filter="org.muml.pim.properties.tabs.Property_tab_deadlineTabElementFilter"
             class="org.muml.ape.runtime.sections.ObjectPropertySection">
          </propertySection>
          <propertySection

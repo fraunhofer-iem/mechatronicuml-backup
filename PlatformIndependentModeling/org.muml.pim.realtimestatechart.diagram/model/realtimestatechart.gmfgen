@@ -1265,7 +1265,7 @@
         generateBoilerplate="false">
       <filter
           xsi:type="gmfgen:CustomTabFilter"
-          className="de.uni_paderborn.fujaba.muml.properties.tabs.Property_tab_conditionTabElementFilter"/>
+          className="org.muml.pim.properties.tabs.Property_tab_conditionTabElementFilter"/>
     </tabs>
     <tabs
         xsi:type="gmfgen:GenCustomPropertyTab"
@@ -1275,7 +1275,7 @@
         generateBoilerplate="false">
       <filter
           xsi:type="gmfgen:CustomTabFilter"
-          className="de.uni_paderborn.fujaba.muml.properties.tabs.Property_tab_effectTabElementFilter"/>
+          className="org.muml.pim.properties.tabs.Property_tab_effectTabElementFilter"/>
     </tabs>
     <tabs
         xsi:type="gmfgen:GenCustomPropertyTab"
@@ -1285,7 +1285,7 @@
         generateBoilerplate="false">
       <filter
           xsi:type="gmfgen:CustomTabFilter"
-          className="de.uni_paderborn.fujaba.muml.properties.tabs.Property_tab_deadlineTabElementFilter"/>
+          className="org.muml.pim.properties.tabs.Property_tab_deadlineTabElementFilter"/>
     </tabs>
     <tabs
         xsi:type="gmfgen:GenCustomPropertyTab"

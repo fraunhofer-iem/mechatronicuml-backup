@@ -1093,7 +1093,7 @@
         generateBoilerplate="false">
       <filter
           xsi:type="gmfgen:CustomTabFilter"
-          className="de.uni_paderborn.fujaba.muml.properties.tabs.Property_tab_messageTabElementFilter"/>
+          className="org.muml.pim.properties.tabs.Property_tab_messageTabElementFilter"/>
     </tabs>
     <tabs
         xsi:type="gmfgen:GenCustomPropertyTab"
@@ -1103,7 +1103,7 @@
         generateBoilerplate="false">
       <filter
           xsi:type="gmfgen:CustomTabFilter"
-          className="de.uni_paderborn.fujaba.muml.properties.tabs.Property_tab_behaviorTabElementFilter"/>
+          className="org.muml.pim.properties.tabs.Property_tab_behaviorTabElementFilter"/>
     </tabs>
     <tabs
         xsi:type="gmfgen:GenCustomPropertyTab"
