@@ -37,12 +37,12 @@ public class OpenPlatformDiagramEditPolicy extends
 
 	@Override
 	protected String getEditorID() {
-		return "de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareDiagramEditorID";
+		return "org.muml.pm.hardware.platform.diagram.part.HardwareDiagramEditorID";
 	}
 
 	@Override
 	protected String getPluginID() {
-		return "de.uni_paderborn.fujaba.muml.hardware.platform.diagram";
+		return "org.muml.pm.hardware.platform.diagram";
 	}
 
 	@Override

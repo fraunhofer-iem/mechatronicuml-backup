@@ -19,7 +19,7 @@ public class HardwareVisualIDRegistry {
 	/**
 	 * @generated
 	 */
-	private static final String DEBUG_KEY = "de.uni_paderborn.fujaba.muml.hardware.platform.diagram/debug/visualID"; //$NON-NLS-1$
+	private static final String DEBUG_KEY = "org.muml.pm.hardware.platform.diagram/debug/visualID"; //$NON-NLS-1$
 
 	/**
 	 * @generated

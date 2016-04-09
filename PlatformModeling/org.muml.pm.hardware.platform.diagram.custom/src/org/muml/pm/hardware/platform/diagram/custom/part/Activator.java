@@ -24,7 +24,7 @@ public class Activator extends AbstractUIPlugin {
 	// The plug-in ID
 
 
-	public static final String UPDATE_HWPORTPART_TRANSFORMATION = "/de.uni_paderborn.fujaba.muml.hardware.platform.diagram.custom/transforms/updateHWPortParts.qvto";
+	public static final String UPDATE_HWPORTPART_TRANSFORMATION = "/org.muml.pm.hardware.platform.diagram.custom/transforms/updateHWPortParts.qvto";
 
 	// The shared instance
 

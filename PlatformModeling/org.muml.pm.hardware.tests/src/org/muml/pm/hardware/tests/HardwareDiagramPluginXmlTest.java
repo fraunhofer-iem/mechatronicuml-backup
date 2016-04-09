@@ -35,8 +35,8 @@ public class HardwareDiagramPluginXmlTest extends DiagramPluginXmlTest {
 					"de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.custom"
 			}},
 			new Object[] { new String[] {
-					"de.uni_paderborn.fujaba.muml.hardware.platform.diagram",
-					"de.uni_paderborn.fujaba.muml.hardware.platform.diagram.custom"
+					"org.muml.pm.hardware.platform.diagram",
+					"org.muml.pm.hardware.platform.diagram.custom"
 			}},
 			new Object[] { new String[] {
 					"de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram",
