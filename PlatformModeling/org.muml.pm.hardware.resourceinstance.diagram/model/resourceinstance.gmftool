@@ -16,11 +16,11 @@
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="icons/box_small.gif"
-            bundle="de.uni_paderborn.fujaba.muml.hardware.common"/>
+            bundle="org.muml.pm.hardware.common"/>
         <largeIcon
             xsi:type="gmftool:BundleImage"
             path="icons/box_large.gif"
-            bundle="de.uni_paderborn.fujaba.muml.hardware.common"/>
+            bundle="org.muml.pm.hardware.common"/>
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
@@ -29,11 +29,11 @@
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="icons/sensor_small.gif"
-            bundle="de.uni_paderborn.fujaba.muml.hardware.common"/>
+            bundle="org.muml.pm.hardware.common"/>
         <largeIcon
             xsi:type="gmftool:BundleImage"
             path="icons/sensor_large.gif"
-            bundle="de.uni_paderborn.fujaba.muml.hardware.common"/>
+            bundle="org.muml.pm.hardware.common"/>
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
@@ -42,11 +42,11 @@
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="icons/actuator_small.gif"
-            bundle="de.uni_paderborn.fujaba.muml.hardware.common"/>
+            bundle="org.muml.pm.hardware.common"/>
         <largeIcon
             xsi:type="gmftool:BundleImage"
             path="icons/actuator_large.gif"
-            bundle="de.uni_paderborn.fujaba.muml.hardware.common"/>
+            bundle="org.muml.pm.hardware.common"/>
       </tools>
       <tools
           xsi:type="gmftool:PaletteSeparator"
@@ -58,11 +58,11 @@
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="icons/busportInst_small.gif"
-            bundle="de.uni_paderborn.fujaba.muml.hardware.common"/>
+            bundle="org.muml.pm.hardware.common"/>
         <largeIcon
             xsi:type="gmftool:BundleImage"
             path="icons/busportInst_large.gif"
-            bundle="de.uni_paderborn.fujaba.muml.hardware.common"/>
+            bundle="org.muml.pm.hardware.common"/>
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"

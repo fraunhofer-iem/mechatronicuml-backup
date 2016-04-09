@@ -85,9 +85,9 @@ public class HardwarePaletteFactory {
 						org.muml.pm.hardware.resource.diagram.providers.HardwareElementTypes.Device_2006));
 		entry.setId("createDevice1CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(org.muml.pm.hardware.resource.diagram.part.HardwareDiagramEditorPlugin
-				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.hardware.common/icons/device_small.gif")); //$NON-NLS-1$
+				.findImageDescriptor("/org.muml.pm.hardware.common/icons/device_small.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(org.muml.pm.hardware.resource.diagram.part.HardwareDiagramEditorPlugin
-				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.hardware.common/icons/device_large.gif")); //$NON-NLS-1$
+				.findImageDescriptor("/org.muml.pm.hardware.common/icons/device_large.gif")); //$NON-NLS-1$
 		return entry;
 	}
 
@@ -106,9 +106,9 @@ public class HardwarePaletteFactory {
 				types);
 		entry.setId("createCommunicationResource2CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(org.muml.pm.hardware.resource.diagram.part.HardwareDiagramEditorPlugin
-				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.hardware.common/icons/port_small.gif")); //$NON-NLS-1$
+				.findImageDescriptor("/org.muml.pm.hardware.common/icons/port_small.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(org.muml.pm.hardware.resource.diagram.part.HardwareDiagramEditorPlugin
-				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.hardware.common/icons/port_large.gif")); //$NON-NLS-1$
+				.findImageDescriptor("/org.muml.pm.hardware.common/icons/port_large.gif")); //$NON-NLS-1$
 		return entry;
 	}
 
@@ -123,9 +123,9 @@ public class HardwarePaletteFactory {
 						org.muml.pm.hardware.resource.diagram.providers.HardwareElementTypes.StructuredResource_2007));
 		entry.setId("createStructuredResource1CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(org.muml.pm.hardware.resource.diagram.part.HardwareDiagramEditorPlugin
-				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.hardware.common/icons/box_small.gif")); //$NON-NLS-1$
+				.findImageDescriptor("/org.muml.pm.hardware.common/icons/box_small.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(org.muml.pm.hardware.resource.diagram.part.HardwareDiagramEditorPlugin
-				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.hardware.common/icons/box_large.gif")); //$NON-NLS-1$
+				.findImageDescriptor("/org.muml.pm.hardware.common/icons/box_large.gif")); //$NON-NLS-1$
 		return entry;
 	}
 
@@ -140,9 +140,9 @@ public class HardwarePaletteFactory {
 						org.muml.pm.hardware.resource.diagram.providers.HardwareElementTypes.MemoryResource_3016));
 		entry.setId("createMemoryResource2CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(org.muml.pm.hardware.resource.diagram.part.HardwareDiagramEditorPlugin
-				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.hardware.common/icons/memory_small.gif")); //$NON-NLS-1$
+				.findImageDescriptor("/org.muml.pm.hardware.common/icons/memory_small.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(org.muml.pm.hardware.resource.diagram.part.HardwareDiagramEditorPlugin
-				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.hardware.common/icons/memory_large.gif")); //$NON-NLS-1$
+				.findImageDescriptor("/org.muml.pm.hardware.common/icons/memory_large.gif")); //$NON-NLS-1$
 		return entry;
 	}
 
@@ -157,9 +157,9 @@ public class HardwarePaletteFactory {
 						org.muml.pm.hardware.resource.diagram.providers.HardwareElementTypes.Cache_3013));
 		entry.setId("createCache3CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(org.muml.pm.hardware.resource.diagram.part.HardwareDiagramEditorPlugin
-				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.hardware.common/icons/memory_small.gif")); //$NON-NLS-1$
+				.findImageDescriptor("/org.muml.pm.hardware.common/icons/memory_small.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(org.muml.pm.hardware.resource.diagram.part.HardwareDiagramEditorPlugin
-				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.hardware.common/icons/memory_large.gif")); //$NON-NLS-1$
+				.findImageDescriptor("/org.muml.pm.hardware.common/icons/memory_large.gif")); //$NON-NLS-1$
 		return entry;
 	}
 
@@ -174,9 +174,9 @@ public class HardwarePaletteFactory {
 						org.muml.pm.hardware.resource.diagram.providers.HardwareElementTypes.ProgrammableLogicDevice_3015));
 		entry.setId("createProgrammableLogicDevice4CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(org.muml.pm.hardware.resource.diagram.part.HardwareDiagramEditorPlugin
-				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.hardware.common/icons/pld_small.gif")); //$NON-NLS-1$
+				.findImageDescriptor("/org.muml.pm.hardware.common/icons/pld_small.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(org.muml.pm.hardware.resource.diagram.part.HardwareDiagramEditorPlugin
-				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.hardware.common/icons/pld_large.gif")); //$NON-NLS-1$
+				.findImageDescriptor("/org.muml.pm.hardware.common/icons/pld_large.gif")); //$NON-NLS-1$
 		return entry;
 	}
 
@@ -191,9 +191,9 @@ public class HardwarePaletteFactory {
 						org.muml.pm.hardware.resource.diagram.providers.HardwareElementTypes.Processor_3014));
 		entry.setId("createProcessor5CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(org.muml.pm.hardware.resource.diagram.part.HardwareDiagramEditorPlugin
-				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.hardware.common/icons/cpu_small.gif")); //$NON-NLS-1$
+				.findImageDescriptor("/org.muml.pm.hardware.common/icons/cpu_small.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(org.muml.pm.hardware.resource.diagram.part.HardwareDiagramEditorPlugin
-				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.hardware.common/icons/cpu_large.gif")); //$NON-NLS-1$
+				.findImageDescriptor("/org.muml.pm.hardware.common/icons/cpu_large.gif")); //$NON-NLS-1$
 		return entry;
 	}
 
@@ -208,7 +208,7 @@ public class HardwarePaletteFactory {
 						org.muml.pm.hardware.resource.diagram.providers.HardwareElementTypes.ProcessorOwnedCache_4002));
 		entry.setId("createProcessorOwnedCache6CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(org.muml.pm.hardware.resource.diagram.part.HardwareDiagramEditorPlugin
-				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.hardware.common/icons/processorcache.gif")); //$NON-NLS-1$
+				.findImageDescriptor("/org.muml.pm.hardware.common/icons/processorcache.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}

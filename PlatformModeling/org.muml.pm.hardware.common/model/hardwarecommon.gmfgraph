@@ -104,7 +104,7 @@
             <children
                 xsi:type="gmfgraph:CustomFigure"
                 name="CustomIconFigure"
-                qualifiedClassName="de.uni_paderborn.fujaba.muml.hardware.common.figures.CustomIconFigure"/>
+                qualifiedClassName="org.muml.pm.hardware.common.figures.CustomIconFigure"/>
           </children>
         </children>
         <children
@@ -273,7 +273,7 @@
       <actualFigure
           xsi:type="gmfgraph:CustomFigure"
           name="HWPortFigure"
-          qualifiedClassName="de.uni_paderborn.fujaba.muml.hardware.common.figures.CustomHWPortFigure"/>
+          qualifiedClassName="org.muml.pm.hardware.common.figures.CustomHWPortFigure"/>
     </descriptors>
     <descriptors
         name="StructuredResourceFigure">
@@ -362,7 +362,7 @@
           <children
               xsi:type="gmfgraph:CustomFigure"
               name="CustomStructuredIconFigure"
-              qualifiedClassName="de.uni_paderborn.fujaba.muml.hardware.common.figures.CustomIconFigure">
+              qualifiedClassName="org.muml.pm.hardware.common.figures.CustomIconFigure">
             <layoutData
                 xsi:type="gmfgraph:GridLayoutData"
                 grabExcessHorizontalSpace="true"
@@ -738,7 +738,7 @@
             <children
                 xsi:type="gmfgraph:CustomFigure"
                 name="CustomIconFigure"
-                qualifiedClassName="de.uni_paderborn.fujaba.muml.hardware.common.figures.CustomIconFigure"/>
+                qualifiedClassName="org.muml.pm.hardware.common.figures.CustomIconFigure"/>
           </children>
         </children>
       </actualFigure>

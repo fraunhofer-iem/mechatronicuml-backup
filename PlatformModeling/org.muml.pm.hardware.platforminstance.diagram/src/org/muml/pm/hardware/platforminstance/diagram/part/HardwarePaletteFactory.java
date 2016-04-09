@@ -70,11 +70,11 @@ public class HardwarePaletteFactory {
 		entry.setSmallIcon(
 				org.muml.pm.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
 						.findImageDescriptor(
-								"/de.uni_paderborn.fujaba.muml.hardware.common/icons/platforminstance_small.gif")); //$NON-NLS-1$
+								"/org.muml.pm.hardware.common/icons/platforminstance_small.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(
 				org.muml.pm.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
 						.findImageDescriptor(
-								"/de.uni_paderborn.fujaba.muml.hardware.common/icons/platforminstance_large.gif")); //$NON-NLS-1$
+								"/org.muml.pm.hardware.common/icons/platforminstance_large.gif")); //$NON-NLS-1$
 		return entry;
 	}
 
@@ -90,10 +90,10 @@ public class HardwarePaletteFactory {
 		entry.setId("createStructuredResourceInstance1CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(
 				org.muml.pm.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
-						.findImageDescriptor("/de.uni_paderborn.fujaba.muml.hardware.common/icons/box_small.gif")); //$NON-NLS-1$
+						.findImageDescriptor("/org.muml.pm.hardware.common/icons/box_small.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(
 				org.muml.pm.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
-						.findImageDescriptor("/de.uni_paderborn.fujaba.muml.hardware.common/icons/box_large.gif")); //$NON-NLS-1$
+						.findImageDescriptor("/org.muml.pm.hardware.common/icons/box_large.gif")); //$NON-NLS-1$
 		return entry;
 	}
 
@@ -109,10 +109,10 @@ public class HardwarePaletteFactory {
 		entry.setId("createActuatorInstance2CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(
 				org.muml.pm.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
-						.findImageDescriptor("/de.uni_paderborn.fujaba.muml.hardware.common/icons/actuator_small.gif")); //$NON-NLS-1$
+						.findImageDescriptor("/org.muml.pm.hardware.common/icons/actuator_small.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(
 				org.muml.pm.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
-						.findImageDescriptor("/de.uni_paderborn.fujaba.muml.hardware.common/icons/actuator_large.gif")); //$NON-NLS-1$
+						.findImageDescriptor("/org.muml.pm.hardware.common/icons/actuator_large.gif")); //$NON-NLS-1$
 		return entry;
 	}
 
@@ -128,10 +128,10 @@ public class HardwarePaletteFactory {
 		entry.setId("createSensorInstance3CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(
 				org.muml.pm.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
-						.findImageDescriptor("/de.uni_paderborn.fujaba.muml.hardware.common/icons/sensor_small.gif")); //$NON-NLS-1$
+						.findImageDescriptor("/org.muml.pm.hardware.common/icons/sensor_small.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(
 				org.muml.pm.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
-						.findImageDescriptor("/de.uni_paderborn.fujaba.muml.hardware.common/icons/sensor_large.gif")); //$NON-NLS-1$
+						.findImageDescriptor("/org.muml.pm.hardware.common/icons/sensor_large.gif")); //$NON-NLS-1$
 		return entry;
 	}
 

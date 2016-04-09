@@ -15,8 +15,8 @@ import org.muml.pm.hardware.platforminstance.diagram.part.PlatformInstanceDiagra
  */
 public enum HWPlatformInstanceImages {
 
-	COLLAPSE_PICTOGRAM("platform:/plugin/de.uni_paderborn.fujaba.muml.hardware.common/icons/collapse_large.gif"),
-	EXPAND_PICTOGRAM("platform:/plugin/de.uni_paderborn.fujaba.muml.hardware.common/icons/expand_large.gif"),
+	COLLAPSE_PICTOGRAM("platform:/plugin/org.muml.pm.hardware.common/icons/collapse_large.gif"),
+	EXPAND_PICTOGRAM("platform:/plugin/org.muml.pm.hardware.common/icons/expand_large.gif"),
 
 	LOGO("icons/obj16/logo-16.png");
 	

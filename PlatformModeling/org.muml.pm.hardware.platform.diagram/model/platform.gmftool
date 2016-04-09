@@ -17,11 +17,11 @@
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="icons/toBus_small.gif"
-            bundle="de.uni_paderborn.fujaba.muml.hardware.common"/>
+            bundle="org.muml.pm.hardware.common"/>
         <largeIcon
             xsi:type="gmftool:BundleImage"
             path="icons/toBus_large.gif"
-            bundle="de.uni_paderborn.fujaba.muml.hardware.common"/>
+            bundle="org.muml.pm.hardware.common"/>
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
@@ -30,11 +30,11 @@
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="icons/bridge_small.gif"
-            bundle="de.uni_paderborn.fujaba.muml.hardware.common"/>
+            bundle="org.muml.pm.hardware.common"/>
         <largeIcon
             xsi:type="gmftool:BundleImage"
             path="icons/bridge_large.gif"
-            bundle="de.uni_paderborn.fujaba.muml.hardware.common"/>
+            bundle="org.muml.pm.hardware.common"/>
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
@@ -43,11 +43,11 @@
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="icons/linkport_small.gif"
-            bundle="de.uni_paderborn.fujaba.muml.hardware.common"/>
+            bundle="org.muml.pm.hardware.common"/>
         <largeIcon
             xsi:type="gmftool:BundleImage"
             path="icons/linkport_large.gif"
-            bundle="de.uni_paderborn.fujaba.muml.hardware.common"/>
+            bundle="org.muml.pm.hardware.common"/>
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
@@ -56,11 +56,11 @@
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="icons/bus_small.gif"
-            bundle="de.uni_paderborn.fujaba.muml.hardware.common"/>
+            bundle="org.muml.pm.hardware.common"/>
         <largeIcon
             xsi:type="gmftool:BundleImage"
             path="icons/bus_large.gif"
-            bundle="de.uni_paderborn.fujaba.muml.hardware.common"/>
+            bundle="org.muml.pm.hardware.common"/>
       </tools>
     </tools>
     <tools
@@ -74,11 +74,11 @@
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="icons/box_small.gif"
-            bundle="de.uni_paderborn.fujaba.muml.hardware.common"/>
+            bundle="org.muml.pm.hardware.common"/>
         <largeIcon
             xsi:type="gmftool:BundleImage"
             path="icons/box_large.gif"
-            bundle="de.uni_paderborn.fujaba.muml.hardware.common"/>
+            bundle="org.muml.pm.hardware.common"/>
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
@@ -87,11 +87,11 @@
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="icons/box_small.gif"
-            bundle="de.uni_paderborn.fujaba.muml.hardware.common"/>
+            bundle="org.muml.pm.hardware.common"/>
         <largeIcon
             xsi:type="gmftool:BundleImage"
             path="icons/box_large.gif"
-            bundle="de.uni_paderborn.fujaba.muml.hardware.common"/>
+            bundle="org.muml.pm.hardware.common"/>
       </tools>
     </tools>
   </palette>

@@ -17,11 +17,11 @@
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="icons/device_small.gif"
-            bundle="de.uni_paderborn.fujaba.muml.hardware.common"/>
+            bundle="org.muml.pm.hardware.common"/>
         <largeIcon
             xsi:type="gmftool:BundleImage"
             path="icons/device_large.gif"
-            bundle="de.uni_paderborn.fujaba.muml.hardware.common"/>
+            bundle="org.muml.pm.hardware.common"/>
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
@@ -30,11 +30,11 @@
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="icons/port_small.gif"
-            bundle="de.uni_paderborn.fujaba.muml.hardware.common"/>
+            bundle="org.muml.pm.hardware.common"/>
         <largeIcon
             xsi:type="gmftool:BundleImage"
             path="icons/port_large.gif"
-            bundle="de.uni_paderborn.fujaba.muml.hardware.common"/>
+            bundle="org.muml.pm.hardware.common"/>
       </tools>
     </tools>
     <tools
@@ -48,11 +48,11 @@
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="icons/box_small.gif"
-            bundle="de.uni_paderborn.fujaba.muml.hardware.common"/>
+            bundle="org.muml.pm.hardware.common"/>
         <largeIcon
             xsi:type="gmftool:BundleImage"
             path="icons/box_large.gif"
-            bundle="de.uni_paderborn.fujaba.muml.hardware.common"/>
+            bundle="org.muml.pm.hardware.common"/>
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
@@ -61,11 +61,11 @@
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="icons/memory_small.gif"
-            bundle="de.uni_paderborn.fujaba.muml.hardware.common"/>
+            bundle="org.muml.pm.hardware.common"/>
         <largeIcon
             xsi:type="gmftool:BundleImage"
             path="icons/memory_large.gif"
-            bundle="de.uni_paderborn.fujaba.muml.hardware.common"/>
+            bundle="org.muml.pm.hardware.common"/>
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
@@ -74,11 +74,11 @@
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="icons/memory_small.gif"
-            bundle="de.uni_paderborn.fujaba.muml.hardware.common"/>
+            bundle="org.muml.pm.hardware.common"/>
         <largeIcon
             xsi:type="gmftool:BundleImage"
             path="icons/memory_large.gif"
-            bundle="de.uni_paderborn.fujaba.muml.hardware.common"/>
+            bundle="org.muml.pm.hardware.common"/>
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
@@ -87,11 +87,11 @@
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="icons/pld_small.gif"
-            bundle="de.uni_paderborn.fujaba.muml.hardware.common"/>
+            bundle="org.muml.pm.hardware.common"/>
         <largeIcon
             xsi:type="gmftool:BundleImage"
             path="icons/pld_large.gif"
-            bundle="de.uni_paderborn.fujaba.muml.hardware.common"/>
+            bundle="org.muml.pm.hardware.common"/>
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
@@ -100,11 +100,11 @@
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="icons/cpu_small.gif"
-            bundle="de.uni_paderborn.fujaba.muml.hardware.common"/>
+            bundle="org.muml.pm.hardware.common"/>
         <largeIcon
             xsi:type="gmftool:BundleImage"
             path="icons/cpu_large.gif"
-            bundle="de.uni_paderborn.fujaba.muml.hardware.common"/>
+            bundle="org.muml.pm.hardware.common"/>
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
@@ -113,7 +113,7 @@
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="icons/processorcache.gif"
-            bundle="de.uni_paderborn.fujaba.muml.hardware.common"/>
+            bundle="org.muml.pm.hardware.common"/>
         <largeIcon
             xsi:type="gmftool:DefaultImage"/>
       </tools>

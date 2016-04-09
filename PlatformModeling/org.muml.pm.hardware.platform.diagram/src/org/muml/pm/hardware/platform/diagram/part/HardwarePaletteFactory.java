@@ -67,9 +67,9 @@ public class HardwarePaletteFactory {
 						org.muml.pm.hardware.platform.diagram.providers.HardwareElementTypes.NetworkConnector_4032));
 		entry.setId("createNetworkConnector1CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(org.muml.pm.hardware.platform.diagram.part.PlatformDiagramEditorPlugin
-				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.hardware.common/icons/toBus_small.gif")); //$NON-NLS-1$
+				.findImageDescriptor("/org.muml.pm.hardware.common/icons/toBus_small.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(org.muml.pm.hardware.platform.diagram.part.PlatformDiagramEditorPlugin
-				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.hardware.common/icons/toBus_large.gif")); //$NON-NLS-1$
+				.findImageDescriptor("/org.muml.pm.hardware.common/icons/toBus_large.gif")); //$NON-NLS-1$
 		return entry;
 	}
 
@@ -84,9 +84,9 @@ public class HardwarePaletteFactory {
 						org.muml.pm.hardware.platform.diagram.providers.HardwareElementTypes.NetworkBridge_3026));
 		entry.setId("createNetworkBridge2CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(org.muml.pm.hardware.platform.diagram.part.PlatformDiagramEditorPlugin
-				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.hardware.common/icons/bridge_small.gif")); //$NON-NLS-1$
+				.findImageDescriptor("/org.muml.pm.hardware.common/icons/bridge_small.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(org.muml.pm.hardware.platform.diagram.part.PlatformDiagramEditorPlugin
-				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.hardware.common/icons/bridge_large.gif")); //$NON-NLS-1$
+				.findImageDescriptor("/org.muml.pm.hardware.common/icons/bridge_large.gif")); //$NON-NLS-1$
 		return entry;
 	}
 
@@ -101,9 +101,9 @@ public class HardwarePaletteFactory {
 						org.muml.pm.hardware.platform.diagram.providers.HardwareElementTypes.DelegationHWPort_3029));
 		entry.setId("createDelegationPort3CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(org.muml.pm.hardware.platform.diagram.part.PlatformDiagramEditorPlugin
-				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.hardware.common/icons/linkport_small.gif")); //$NON-NLS-1$
+				.findImageDescriptor("/org.muml.pm.hardware.common/icons/linkport_small.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(org.muml.pm.hardware.platform.diagram.part.PlatformDiagramEditorPlugin
-				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.hardware.common/icons/linkport_large.gif")); //$NON-NLS-1$
+				.findImageDescriptor("/org.muml.pm.hardware.common/icons/linkport_large.gif")); //$NON-NLS-1$
 		return entry;
 	}
 
@@ -118,9 +118,9 @@ public class HardwarePaletteFactory {
 						org.muml.pm.hardware.platform.diagram.providers.HardwareElementTypes.Bus_3025));
 		entry.setId("createBus4CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(org.muml.pm.hardware.platform.diagram.part.PlatformDiagramEditorPlugin
-				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.hardware.common/icons/bus_small.gif")); //$NON-NLS-1$
+				.findImageDescriptor("/org.muml.pm.hardware.common/icons/bus_small.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(org.muml.pm.hardware.platform.diagram.part.PlatformDiagramEditorPlugin
-				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.hardware.common/icons/bus_large.gif")); //$NON-NLS-1$
+				.findImageDescriptor("/org.muml.pm.hardware.common/icons/bus_large.gif")); //$NON-NLS-1$
 		return entry;
 	}
 
@@ -135,9 +135,9 @@ public class HardwarePaletteFactory {
 						org.muml.pm.hardware.platform.diagram.providers.HardwareElementTypes.HWPlatformPart_3027));
 		entry.setId("createHWPlatformPart1CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(org.muml.pm.hardware.platform.diagram.part.PlatformDiagramEditorPlugin
-				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.hardware.common/icons/box_small.gif")); //$NON-NLS-1$
+				.findImageDescriptor("/org.muml.pm.hardware.common/icons/box_small.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(org.muml.pm.hardware.platform.diagram.part.PlatformDiagramEditorPlugin
-				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.hardware.common/icons/box_large.gif")); //$NON-NLS-1$
+				.findImageDescriptor("/org.muml.pm.hardware.common/icons/box_large.gif")); //$NON-NLS-1$
 		return entry;
 	}
 
@@ -152,9 +152,9 @@ public class HardwarePaletteFactory {
 						org.muml.pm.hardware.platform.diagram.providers.HardwareElementTypes.ResourcePart_3030));
 		entry.setId("createResourceInstancePart2CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(org.muml.pm.hardware.platform.diagram.part.PlatformDiagramEditorPlugin
-				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.hardware.common/icons/box_small.gif")); //$NON-NLS-1$
+				.findImageDescriptor("/org.muml.pm.hardware.common/icons/box_small.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(org.muml.pm.hardware.platform.diagram.part.PlatformDiagramEditorPlugin
-				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.hardware.common/icons/box_large.gif")); //$NON-NLS-1$
+				.findImageDescriptor("/org.muml.pm.hardware.common/icons/box_large.gif")); //$NON-NLS-1$
 		return entry;
 	}
 }
