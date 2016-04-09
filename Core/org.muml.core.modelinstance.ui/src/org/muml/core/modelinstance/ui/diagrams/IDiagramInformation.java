@@ -6,7 +6,7 @@ import org.eclipse.emf.ecore.EClass;
 
 /**
  * Interface for objects that can be asked about information provided by an
- * extension of "de.uni_paderborn.fujaba.modelinstance.ui.diagraminformation".
+ * extension of "org.muml.core.modelinstance.ui.diagraminformation".
  * 
  * @author bingo
  * 

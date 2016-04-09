@@ -1844,7 +1844,7 @@
     <requiredPlugins>org.eclipse.gmf.runtime.draw2d.ui</requiredPlugins>
     <requiredPlugins>org.muml.core.common</requiredPlugins>
     <requiredPlugins>org.muml.pim.common</requiredPlugins>
-    <requiredPlugins>de.uni_paderborn.fujaba.modelinstance.ui</requiredPlugins>
+    <requiredPlugins>org.muml.core.modelinstance.ui</requiredPlugins>
     <requiredPlugins>org.storydriven.core.edit.properties</requiredPlugins>
     <requiredPlugins>de.uni_paderborn.fujaba.muml.edit.properties</requiredPlugins>
     <requiredPlugins>de.uni_paderborn.fujaba.properties.runtime</requiredPlugins>

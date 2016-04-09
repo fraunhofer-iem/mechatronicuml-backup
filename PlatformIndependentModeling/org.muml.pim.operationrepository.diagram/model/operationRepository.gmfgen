@@ -346,7 +346,7 @@
     <requiredPlugins>org.eclipse.gmf.tooling.runtime</requiredPlugins>
     <requiredPlugins>org.eclipse.draw2d</requiredPlugins>
     <requiredPlugins>org.muml.core.common</requiredPlugins>
-    <requiredPlugins>de.uni_paderborn.fujaba.modelinstance.ui</requiredPlugins>
+    <requiredPlugins>org.muml.core.modelinstance.ui</requiredPlugins>
     <requiredPlugins>org.storydriven.core.edit.properties</requiredPlugins>
     <requiredPlugins>de.uni_paderborn.fujaba.muml.edit.properties</requiredPlugins>
     <requiredPlugins>org.muml.core.common.editingdomain</requiredPlugins>

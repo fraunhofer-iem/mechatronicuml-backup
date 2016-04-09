@@ -21,7 +21,7 @@
 «EXPAND xpt::Common::packageStatement FOR qualifiedClassName»
 
 «EXPAND xpt::Common::generatedClassComment»
-public class «qualifiedClassName.xpandSplit('\\.')->last()» extends de.uni_paderborn.fujaba.modelinstance.ui.handlers.AbstractCreateDiagramFileCommand {
+public class «qualifiedClassName.xpandSplit('\\.')->last()» extends org.muml.core.modelinstance.ui.handlers.AbstractCreateDiagramFileCommand {
 
 	«EXPAND xpt::Common::generatedClassComment»
 	public static class CreateDiagramElement extends org.eclipse.core.commands.AbstractHandler {

@@ -3,7 +3,7 @@
 <schema targetNamespace="org.muml.core.modelinstance.ui" xmlns="http://www.w3.org/2001/XMLSchema">
 <annotation>
       <appinfo>
-         <meta.schema plugin="org.muml.core.modelinstance.ui" id="modelinitializer" name="de.uni_paderborn.fujaba.modelinstance.ui.modelinitializer"/>
+         <meta.schema plugin="org.muml.core.modelinstance.ui" id="modelinitializer" name="org.muml.core.modelinstance.ui.modelinitializer"/>
       </appinfo>
       <documentation>
          [Enter description of this extension point.]
@@ -55,7 +55,7 @@
                   Initialize the newly created Fujaba Model.
                </documentation>
                <appinfo>
-                  <meta.attribute kind="java" basedOn=":de.uni_paderborn.fujaba.modelinstance.ui.initializer.IModelInitializer"/>
+                  <meta.attribute kind="java" basedOn=":org.muml.core.modelinstance.ui.initializer.IModelInitializer"/>
                </appinfo>
             </annotation>
          </attribute>

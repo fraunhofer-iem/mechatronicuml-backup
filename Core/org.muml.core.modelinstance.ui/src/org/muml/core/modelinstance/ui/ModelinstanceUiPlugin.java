@@ -186,7 +186,7 @@ public class ModelinstanceUiPlugin extends AbstractUIPlugin {
 	/**
 	 * Gets (and lazily creates) the diagram information map (EditorId ->
 	 * IDiagramInformation), by reading the extension point
-	 * de.uni_paderborn.fujaba.modelinstance.ui.diagraminformation.
+	 * org.muml.core.modelinstance.ui.diagraminformation.
 	 * 
 	 * @return The map; never null.
 	 */

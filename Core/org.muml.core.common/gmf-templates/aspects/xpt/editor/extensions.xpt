@@ -171,7 +171,7 @@ diagrams«-»
 
 «DEFINE diagraminformation FOR gmfgen::GenEditorGenerator»
 	<extension
-         point="de.uni_paderborn.fujaba.modelinstance.ui.diagraminformation">
+         point="org.muml.core.modelinstance.ui.diagraminformation">
       «EXPAND xpt::Common::xmlGeneratedTag»
       <editor
             preferencesHint="«plugin.iD»"

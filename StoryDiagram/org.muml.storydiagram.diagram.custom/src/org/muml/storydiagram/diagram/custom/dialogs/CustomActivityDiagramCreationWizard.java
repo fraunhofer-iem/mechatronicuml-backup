@@ -10,7 +10,7 @@ import org.muml.storydiagram.diagram.part.StorydiagramsDiagramEditorPlugin;
 
 /**
  * A CreationWizard for Activity diagrams. It implements the abstract creation
- * wizard from the de.uni_paderborn.fujaba.modelinstance.ui plugin.
+ * wizard from the org.muml.core.modelinstance.ui plugin.
  * 
  * @author bingo
  * 

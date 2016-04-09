@@ -10,7 +10,7 @@ import org.eclipse.emf.ecore.EPackage;
 
 /**
  * Datastructure that represents the information provided by an extension of
- * "de.uni_paderborn.fujaba.modelinstance.ui.diagraminformation".
+ * "org.muml.core.modelinstance.ui.diagraminformation".
  * 
  * @author bingo
  * 
