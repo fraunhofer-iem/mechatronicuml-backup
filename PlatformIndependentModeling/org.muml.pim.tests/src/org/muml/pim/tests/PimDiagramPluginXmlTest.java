@@ -35,8 +35,8 @@ public class PimDiagramPluginXmlTest extends DiagramPluginXmlTest {
 					"org.muml.pim.componentinstanceconfiguration.diagram.custom"
 			}},
 			new Object[] { new String[] {
-					"de.uni_paderborn.fujaba.muml.messagetype.diagram",
-					"de.uni_paderborn.fujaba.muml.messagetype.diagram.custom"
+					"org.muml.pim.messagetype.diagram",
+					"org.muml.pim.messagetype.diagram.custom"
 			}},
 			new Object[] { new String[] {
 					"org.muml.pim.coordinationprotocol.diagram",

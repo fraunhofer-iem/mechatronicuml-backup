@@ -46,23 +46,23 @@ public class MumlElementTypes {
 	 * @generated
 	 */
 	public static final IElementType ModelElementCategory_1000 = getElementType(
-			"de.uni_paderborn.fujaba.muml.messagetype.diagram.ModelElementCategory_1000"); //$NON-NLS-1$
+			"org.muml.pim.messagetype.diagram.ModelElementCategory_1000"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
 	public static final IElementType MessageTypeRepository_2008 = getElementType(
-			"de.uni_paderborn.fujaba.muml.messagetype.diagram.MessageTypeRepository_2008"); //$NON-NLS-1$
+			"org.muml.pim.messagetype.diagram.MessageTypeRepository_2008"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
 	public static final IElementType MessageType_3007 = getElementType(
-			"de.uni_paderborn.fujaba.muml.messagetype.diagram.MessageType_3007"); //$NON-NLS-1$
+			"org.muml.pim.messagetype.diagram.MessageType_3007"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
 	public static final IElementType Parameter_3009 = getElementType(
-			"de.uni_paderborn.fujaba.muml.messagetype.diagram.Parameter_3009"); //$NON-NLS-1$
+			"org.muml.pim.messagetype.diagram.Parameter_3009"); //$NON-NLS-1$
 
 	/**
 	 * @generated

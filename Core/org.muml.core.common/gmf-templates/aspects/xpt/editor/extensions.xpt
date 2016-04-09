@@ -59,7 +59,7 @@
 structural-diagrams«-»
 «ELSEIF plugin.iD = 'de.uni_paderborn.fujaba.muml.realtimestatechart.diagram'-»
 behavioral-diagrams«-»
-«ELSEIF plugin.iD = 'de.uni_paderborn.fujaba.muml.messagetype.diagram'-»
+«ELSEIF plugin.iD = 'org.muml.pim.messagetype.diagram'-»
 types«-»
 «ELSE-»
 diagrams«-»

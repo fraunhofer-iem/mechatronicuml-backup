@@ -4,14 +4,14 @@
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:gmfgen="http://www.eclipse.org/gmf/2009/GenModel"
-    packageNamePrefix="de.uni_paderborn.fujaba.muml.messagetype.diagram"
+    packageNamePrefix="org.muml.pim.messagetype.diagram"
     modelID="Message Type"
     diagramFileExtension="messagetype_diagram"
     domainFileExtension="fujaba"
     dynamicTemplates="true"
     templateDirectory="/org.muml.core.common/gmf-templates"
     copyrightText="&lt;copyright>&#xD;&#xA;Copyright (c) 2013 Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Germany.&#xD;&#xA;All rights reserved. This program and the accompanying materials&#xD;&#xA;are made available under the terms of the Eclipse Public License v1.0&#xD;&#xA;which accompanies this distribution, and is available at&#xD;&#xA;http://www.eclipse.org/legal/epl-v10.html&#xD;&#xA;&#xD;&#xA;Contributors:&#xD;&#xA;    Software Engineering Group - initial API and implementation&#xD;&#xA;&lt;/copyright>"
-    pluginDirectory="/de.uni_paderborn.fujaba.muml.messagetype.diagram/src">
+    pluginDirectory="/org.muml.pim.messagetype.diagram/src">
   <diagram
       visualID="1000"
       editPartClassName="MessageInterfaceDiagramEditPart"
@@ -267,7 +267,7 @@
             xsi:type="gmfgen:ToolEntry"
             title="MessageTypeRepository"
             description="Create new MessageInterface"
-            smallIconPath="/de.uni_paderborn.fujaba.muml.messagetype.diagram.custom/icons/MessageInterface.gif"
+            smallIconPath="/org.muml.pim.messagetype.diagram.custom/icons/MessageInterface.gif"
             genNodes="//@diagram/@topLevelNodes.0"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
@@ -300,37 +300,37 @@
     </preferences>
     <preferencePages
         xsi:type="gmfgen:GenStandardPreferencePage"
-        iD="de.uni_paderborn.fujaba.muml.messagetype.diagram.general"
+        iD="org.muml.pim.messagetype.diagram.general"
         name="Message Type Diagram Editor"
         parentCategory="org.muml.preferences">
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
-          iD="de.uni_paderborn.fujaba.muml.messagetype.diagram.appearance"
+          iD="org.muml.pim.messagetype.diagram.appearance"
           name="Appearance"
-          parentCategory="de.uni_paderborn.fujaba.muml.messagetype.diagram.general"
+          parentCategory="org.muml.pim.messagetype.diagram.general"
           kind="Appearance"/>
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
-          iD="de.uni_paderborn.fujaba.muml.messagetype.diagram.connections"
+          iD="org.muml.pim.messagetype.diagram.connections"
           name="Connections"
-          parentCategory="de.uni_paderborn.fujaba.muml.messagetype.diagram.general"
+          parentCategory="org.muml.pim.messagetype.diagram.general"
           kind="Connections"/>
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
-          iD="de.uni_paderborn.fujaba.muml.messagetype.diagram.printing"
+          iD="org.muml.pim.messagetype.diagram.printing"
           name="Printing"
-          parentCategory="de.uni_paderborn.fujaba.muml.messagetype.diagram.general"
+          parentCategory="org.muml.pim.messagetype.diagram.general"
           kind="Printing"/>
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
-          iD="de.uni_paderborn.fujaba.muml.messagetype.diagram.rulersAndGrid"
+          iD="org.muml.pim.messagetype.diagram.rulersAndGrid"
           name="Rulers And Grid"
-          parentCategory="de.uni_paderborn.fujaba.muml.messagetype.diagram.general"
+          parentCategory="org.muml.pim.messagetype.diagram.general"
           kind="RulersAndGrid"/>
     </preferencePages>
   </diagram>
   <plugin
-      iD="de.uni_paderborn.fujaba.muml.messagetype.diagram"
+      iD="org.muml.pim.messagetype.diagram"
       name="Message Type Diagram Editor"
       provider="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn"
       version="0.5.0.qualifier"

@@ -50,7 +50,7 @@ public class MumlPaletteFactory {
 		entry.setId("createMessageTypeRepository1CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(org.muml.pim.messagetype.diagram.part.MessageTypeDiagramEditorPlugin
 				.findImageDescriptor(
-						"/de.uni_paderborn.fujaba.muml.messagetype.diagram.custom/icons/MessageInterface.gif")); //$NON-NLS-1$
+						"/org.muml.pim.messagetype.diagram.custom/icons/MessageInterface.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}

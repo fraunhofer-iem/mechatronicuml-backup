@@ -5,7 +5,7 @@
    <extension
          point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders">
       <editpartProvider
-            class="de.uni_paderborn.fujaba.muml.messagetype.diagram.custom.providers.CustomMessageinterfaceEditPartProvider">
+            class="org.muml.pim.messagetype.diagram.custom.providers.CustomMessageinterfaceEditPartProvider">
          <Priority
                name="Low">
          </Priority>
@@ -20,7 +20,7 @@
    
    
    <extension point="org.eclipse.gmf.runtime.diagram.ui.layoutProviders">
-       <layoutProvider class="de.uni_paderborn.fujaba.muml.messagetype.diagram.custom.layout.MessageTypeLayoutProvider">
+       <layoutProvider class="org.muml.pim.messagetype.diagram.custom.layout.MessageTypeLayoutProvider">
             <Priority name="High"/>
        </layoutProvider>
    </extension>
