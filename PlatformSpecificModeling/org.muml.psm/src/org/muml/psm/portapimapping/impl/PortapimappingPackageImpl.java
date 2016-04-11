@@ -15,6 +15,7 @@ import org.muml.pm.hardware.hwplatforminstance.HwplatforminstancePackage;
 import org.muml.pm.hardware.hwresource.HwresourcePackage;
 import org.muml.pm.hardware.hwresourceinstance.HwresourceinstancePackage;
 import org.muml.pm.hardware.hwvaluetype.HwvaluetypePackage;
+import org.muml.pm.software.SoftwarePackage;
 import org.muml.psm.PsmPackage;
 import org.muml.psm.allocation.AllocationPackage;
 import org.muml.psm.allocation.impl.AllocationPackageImpl;
@@ -37,8 +38,6 @@ import org.muml.psm.psm_realtimestatechart.realtimestatechartparameter.Realtimes
 import org.muml.psm.psm_realtimestatechart.realtimestatechartparameter.impl.RealtimestatechartparameterPackageImpl;
 import org.muml.psm.psm_realtimestatechart.realtimestatechartparameterbinding.RealtimestatechartparameterbindingPackage;
 import org.muml.psm.psm_realtimestatechart.realtimestatechartparameterbinding.impl.RealtimestatechartparameterbindingPackageImpl;
-import platform.PlatformPackage;
-import platform.impl.PlatformPackageImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -114,6 +113,7 @@ public class PortapimappingPackageImpl extends EPackageImpl implements Portapima
 		HwplatforminstancePackage.eINSTANCE.eClass();
 		HwresourcePackage.eINSTANCE.eClass();
 		HwresourceinstancePackage.eINSTANCE.eClass();
+		SoftwarePackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
 		PsmPackageImpl thePsmPackage = (PsmPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(PsmPackage.eNS_URI) instanceof PsmPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PsmPackage.eNS_URI) : PsmPackage.eINSTANCE);
@@ -125,7 +125,6 @@ public class PortapimappingPackageImpl extends EPackageImpl implements Portapima
 		Psm_instancePackageImpl thePsm_instancePackage = (Psm_instancePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(Psm_instancePackage.eNS_URI) instanceof Psm_instancePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(Psm_instancePackage.eNS_URI) : Psm_instancePackage.eINSTANCE);
 		ApiexpressionsPackageImpl theApiexpressionsPackage = (ApiexpressionsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ApiexpressionsPackage.eNS_URI) instanceof ApiexpressionsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ApiexpressionsPackage.eNS_URI) : ApiexpressionsPackage.eINSTANCE);
 		CodegenPackageImpl theCodegenPackage = (CodegenPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CodegenPackage.eNS_URI) instanceof CodegenPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CodegenPackage.eNS_URI) : CodegenPackage.eINSTANCE);
-		PlatformPackageImpl thePlatformPackage = (PlatformPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(PlatformPackage.eNS_URI) instanceof PlatformPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PlatformPackage.eNS_URI) : PlatformPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		thePortapimappingPackage.createPackageContents();
@@ -138,7 +137,6 @@ public class PortapimappingPackageImpl extends EPackageImpl implements Portapima
 		thePsm_instancePackage.createPackageContents();
 		theApiexpressionsPackage.createPackageContents();
 		theCodegenPackage.createPackageContents();
-		thePlatformPackage.createPackageContents();
 
 		// Initialize created meta-data
 		thePortapimappingPackage.initializePackageContents();
@@ -151,7 +149,6 @@ public class PortapimappingPackageImpl extends EPackageImpl implements Portapima
 		thePsm_instancePackage.initializePackageContents();
 		theApiexpressionsPackage.initializePackageContents();
 		theCodegenPackage.initializePackageContents();
-		thePlatformPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		thePortapimappingPackage.freeze();

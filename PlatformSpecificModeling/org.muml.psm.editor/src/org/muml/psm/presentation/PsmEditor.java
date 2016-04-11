@@ -129,6 +129,7 @@ import org.muml.pim.instance.provider.InstanceItemProviderAdapterFactory;
 import org.muml.pim.msgtype.provider.MsgtypeItemProviderAdapterFactory;
 import org.muml.pim.pattern.provider.PatternItemProviderAdapterFactory;
 import org.muml.pim.protocol.provider.ProtocolItemProviderAdapterFactory;
+import org.muml.pim.provider.PimItemProviderAdapterFactory;
 import org.muml.pim.realtimestatechart.one_to_n_schemata.provider.One_to_n_schemataItemProviderAdapterFactory;
 import org.muml.pim.realtimestatechart.provider.RealtimestatechartItemProviderAdapterFactory;
 import org.muml.pim.types.provider.TypesItemProviderAdapterFactory;
@@ -138,7 +139,7 @@ import org.muml.pm.hardware.hwplatforminstance.provider.HwplatforminstanceItemPr
 import org.muml.pm.hardware.hwresource.provider.HwresourceItemProviderAdapterFactory;
 import org.muml.pm.hardware.hwresourceinstance.provider.HwresourceinstanceItemProviderAdapterFactory;
 import org.muml.pm.hardware.hwvaluetype.provider.HwvaluetypeItemProviderAdapterFactory;
-import org.muml.pm.software.platform.provider.SwplatformItemProviderAdapterFactory;
+import org.muml.pm.software.provider.SoftwareItemProviderAdapterFactory;
 import org.muml.psm.allocation.provider.AllocationItemProviderAdapterFactory;
 import org.muml.psm.apiexpressions.provider.ApiexpressionsItemProviderAdapterFactory;
 import org.muml.psm.codegen.provider.CodegenItemProviderAdapterFactory;
@@ -610,7 +611,7 @@ public class PsmEditor
 			BasicDiagnostic diagnostic =
 				new BasicDiagnostic
 					(Diagnostic.OK,
-					 "de.uni_paderborn.fujaba.muml.psm.editor",
+					 "org.muml.psm.editor",
 					 0,
 					 null,
 					 new Object [] { editingDomain.getResourceSet() });
@@ -712,6 +713,7 @@ public class PsmEditor
 		adapterFactory.addAdapterFactory(new HwplatforminstanceItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new HwresourceItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new HwresourceinstanceItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new PimItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ConstraintItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new InstanceItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ProtocolItemProviderAdapterFactory());
@@ -724,7 +726,7 @@ public class PsmEditor
 		adapterFactory.addAdapterFactory(new BehaviorItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ComponentItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new PatternItemProviderAdapterFactory());
-		adapterFactory.addAdapterFactory(new SwplatformItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new SoftwareItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ReflectiveItemProviderAdapterFactory());
 
 		// Create the command stack that will notify this editor as commands are executed.
@@ -1005,7 +1007,7 @@ public class PsmEditor
 			BasicDiagnostic basicDiagnostic =
 				new BasicDiagnostic
 					(hasErrors ? Diagnostic.ERROR : Diagnostic.WARNING,
-					 "de.uni_paderborn.fujaba.muml.psm.editor",
+					 "org.muml.psm.editor",
 					 0,
 					 getString("_UI_CreateModelError_message", resource.getURI()),
 					 new Object [] { exception == null ? (Object)resource : exception });
@@ -1016,7 +1018,7 @@ public class PsmEditor
 			return
 				new BasicDiagnostic
 					(Diagnostic.ERROR,
-					 "de.uni_paderborn.fujaba.muml.psm.editor",
+					 "org.muml.psm.editor",
 					 0,
 					 getString("_UI_CreateModelError_message", resource.getURI()),
 					 new Object[] { exception });

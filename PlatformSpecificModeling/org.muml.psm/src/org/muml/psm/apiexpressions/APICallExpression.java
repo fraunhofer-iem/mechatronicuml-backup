@@ -5,6 +5,7 @@ package org.muml.psm.apiexpressions;
 import org.eclipse.emf.common.util.EList;
 import org.muml.core.expressions.Expression;
 import org.muml.pim.behavior.ParameterBinding;
+import org.muml.pm.software.APICommand;
 
 /**
  * <!-- begin-user-doc -->
@@ -36,12 +37,12 @@ public interface APICallExpression extends Expression {
 	 * The APICommand to which this expression belongs.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Api Command</em>' reference.
-	 * @see #setApiCommand(platform.APICommand)
+	 * @see #setApiCommand(APICommand)
 	 * @see org.muml.psm.apiexpressions.ApiexpressionsPackage#getAPICallExpression_ApiCommand()
 	 * @model required="true"
 	 * @generated
 	 */
-	platform.APICommand getApiCommand();
+	APICommand getApiCommand();
 
 	/**
 	 * Sets the value of the '{@link org.muml.psm.apiexpressions.APICallExpression#getApiCommand <em>Api Command</em>}' reference.
@@ -51,7 +52,7 @@ public interface APICallExpression extends Expression {
 	 * @see #getApiCommand()
 	 * @generated
 	 */
-	void setApiCommand(platform.APICommand value);
+	void setApiCommand(APICommand value);
 
 	/**
 	 * Returns the value of the '<em><b>Parameter Bindings</b></em>' containment reference list.

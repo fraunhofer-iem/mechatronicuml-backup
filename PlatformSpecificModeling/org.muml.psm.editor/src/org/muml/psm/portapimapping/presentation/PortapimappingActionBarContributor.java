@@ -174,7 +174,7 @@ public class PortapimappingActionBarContributor
 	public void contributeToMenu(IMenuManager menuManager) {
 		super.contributeToMenu(menuManager);
 
-		IMenuManager submenuManager = new MenuManager(PsmEditorPlugin.INSTANCE.getString("_UI_PortapimappingEditor_menu"), "de.uni_paderborn.fujaba.muml.psm.portapimappingMenuID");
+		IMenuManager submenuManager = new MenuManager(PsmEditorPlugin.INSTANCE.getString("_UI_PortapimappingEditor_menu"), "org.muml.psm.portapimappingMenuID");
 		menuManager.insertAfter("additions", submenuManager);
 		submenuManager.add(new Separator("settings"));
 		submenuManager.add(new Separator("actions"));

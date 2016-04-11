@@ -7,6 +7,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.muml.core.expressions.impl.ExpressionImpl;
+import org.muml.pm.software.EnumerationValue;
 import org.muml.psm.apiexpressions.ApiexpressionsPackage;
 import org.muml.psm.apiexpressions.EnumerationValueExpression;
 
@@ -32,7 +33,7 @@ public class EnumerationValueExpressionImpl extends ExpressionImpl implements En
 	 * @generated
 	 * @ordered
 	 */
-	protected platform.EnumerationValue enumValue;
+	protected EnumerationValue enumValue;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -58,10 +59,10 @@ public class EnumerationValueExpressionImpl extends ExpressionImpl implements En
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public platform.EnumerationValue getEnumValue() {
+	public EnumerationValue getEnumValue() {
 		if (enumValue != null && enumValue.eIsProxy()) {
 			InternalEObject oldEnumValue = (InternalEObject)enumValue;
-			enumValue = (platform.EnumerationValue)eResolveProxy(oldEnumValue);
+			enumValue = (EnumerationValue)eResolveProxy(oldEnumValue);
 			if (enumValue != oldEnumValue) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ApiexpressionsPackage.ENUMERATION_VALUE_EXPRESSION__ENUM_VALUE, oldEnumValue, enumValue));
@@ -75,7 +76,7 @@ public class EnumerationValueExpressionImpl extends ExpressionImpl implements En
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public platform.EnumerationValue basicGetEnumValue() {
+	public EnumerationValue basicGetEnumValue() {
 		return enumValue;
 	}
 
@@ -84,8 +85,8 @@ public class EnumerationValueExpressionImpl extends ExpressionImpl implements En
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setEnumValue(platform.EnumerationValue newEnumValue) {
-		platform.EnumerationValue oldEnumValue = enumValue;
+	public void setEnumValue(EnumerationValue newEnumValue) {
+		EnumerationValue oldEnumValue = enumValue;
 		enumValue = newEnumValue;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ApiexpressionsPackage.ENUMERATION_VALUE_EXPRESSION__ENUM_VALUE, oldEnumValue, enumValue));
@@ -115,7 +116,7 @@ public class EnumerationValueExpressionImpl extends ExpressionImpl implements En
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case ApiexpressionsPackage.ENUMERATION_VALUE_EXPRESSION__ENUM_VALUE:
-				setEnumValue((platform.EnumerationValue)newValue);
+				setEnumValue((EnumerationValue)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -130,7 +131,7 @@ public class EnumerationValueExpressionImpl extends ExpressionImpl implements En
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case ApiexpressionsPackage.ENUMERATION_VALUE_EXPRESSION__ENUM_VALUE:
-				setEnumValue((platform.EnumerationValue)null);
+				setEnumValue((EnumerationValue)null);
 				return;
 		}
 		super.eUnset(featureID);

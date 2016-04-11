@@ -27,7 +27,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.muml.core.edit;visibility:=reexport,
  org.muml.pm.hardware.edit;visibility:=reexport,
  org.muml.pim.edit;visibility:=reexport,
- org.muml.pm.software.platform.edit;visibility:=reexport,
+ org.muml.pm.software.edit;visibility:=reexport,
  org.muml.psm;bundle-version="1.0.0",
  org.muml.psm.edit;bundle-version="1.0.0";visibility:=reexport
 Bundle-ActivationPolicy: lazy

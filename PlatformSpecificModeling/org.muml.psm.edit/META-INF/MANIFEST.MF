@@ -59,6 +59,8 @@ Require-Bundle: org.eclipse.ocl.ecore,
  org.muml.pm.hardware.edit;visibility:=reexport,
  org.muml.pim;visibility:=reexport,
  org.muml.pim.edit;visibility:=reexport,
- org.muml.pm.software.platform;visibility:=reexport,
- org.muml.pm.software.platform.edit;visibility:=reexport
+ org.muml.pm.software;visibility:=reexport,
+ org.muml.pm.software.edit;visibility:=reexport,
+ org.muml.pm.software;visibility:=reexport,
+ org.muml.pm.software.edit;visibility:=reexport
 Bundle-ActivationPolicy: lazy

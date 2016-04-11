@@ -15,6 +15,7 @@ import org.muml.pm.hardware.hwplatforminstance.HwplatforminstancePackage;
 import org.muml.pm.hardware.hwresource.HwresourcePackage;
 import org.muml.pm.hardware.hwresourceinstance.HwresourceinstancePackage;
 import org.muml.pm.hardware.hwvaluetype.HwvaluetypePackage;
+import org.muml.pm.software.SoftwarePackage;
 import org.muml.psm.PsmPackage;
 import org.muml.psm.allocation.Allocation;
 import org.muml.psm.allocation.AllocationFactory;
@@ -39,8 +40,6 @@ import org.muml.psm.psm_realtimestatechart.realtimestatechartparameter.Realtimes
 import org.muml.psm.psm_realtimestatechart.realtimestatechartparameter.impl.RealtimestatechartparameterPackageImpl;
 import org.muml.psm.psm_realtimestatechart.realtimestatechartparameterbinding.RealtimestatechartparameterbindingPackage;
 import org.muml.psm.psm_realtimestatechart.realtimestatechartparameterbinding.impl.RealtimestatechartparameterbindingPackageImpl;
-import platform.PlatformPackage;
-import platform.impl.PlatformPackageImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -123,6 +122,7 @@ public class AllocationPackageImpl extends EPackageImpl implements AllocationPac
 		HwplatforminstancePackage.eINSTANCE.eClass();
 		HwresourcePackage.eINSTANCE.eClass();
 		HwresourceinstancePackage.eINSTANCE.eClass();
+		SoftwarePackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
 		PsmPackageImpl thePsmPackage = (PsmPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(PsmPackage.eNS_URI) instanceof PsmPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PsmPackage.eNS_URI) : PsmPackage.eINSTANCE);
@@ -134,7 +134,6 @@ public class AllocationPackageImpl extends EPackageImpl implements AllocationPac
 		PortapimappingPackageImpl thePortapimappingPackage = (PortapimappingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(PortapimappingPackage.eNS_URI) instanceof PortapimappingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PortapimappingPackage.eNS_URI) : PortapimappingPackage.eINSTANCE);
 		ApiexpressionsPackageImpl theApiexpressionsPackage = (ApiexpressionsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ApiexpressionsPackage.eNS_URI) instanceof ApiexpressionsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ApiexpressionsPackage.eNS_URI) : ApiexpressionsPackage.eINSTANCE);
 		CodegenPackageImpl theCodegenPackage = (CodegenPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CodegenPackage.eNS_URI) instanceof CodegenPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CodegenPackage.eNS_URI) : CodegenPackage.eINSTANCE);
-		PlatformPackageImpl thePlatformPackage = (PlatformPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(PlatformPackage.eNS_URI) instanceof PlatformPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PlatformPackage.eNS_URI) : PlatformPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theAllocationPackage.createPackageContents();
@@ -147,7 +146,6 @@ public class AllocationPackageImpl extends EPackageImpl implements AllocationPac
 		thePortapimappingPackage.createPackageContents();
 		theApiexpressionsPackage.createPackageContents();
 		theCodegenPackage.createPackageContents();
-		thePlatformPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theAllocationPackage.initializePackageContents();
@@ -160,7 +158,6 @@ public class AllocationPackageImpl extends EPackageImpl implements AllocationPac
 		thePortapimappingPackage.initializePackageContents();
 		theApiexpressionsPackage.initializePackageContents();
 		theCodegenPackage.initializePackageContents();
-		thePlatformPackage.initializePackageContents();
 
 		// Register package validator
 		EValidator.Registry.INSTANCE.put

@@ -363,7 +363,7 @@
         <details key="documentation" value="This class represents an api call. It has an actual parameter for each formal parameter of an api-command. Inside an actual parameter a concrete value will be mapped to the formal parameters of an api-command from the swplatform-package."/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="apiCommand" lowerBound="1"
-          eType="ecore:EClass ../../org.muml.pm.software.platform/model/swplatform.ecore#//APICommand">
+          eType="ecore:EClass ../../org.muml.pm.software/model/software.ecore#//APICommand">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The APICommand to which this expression belongs."/>
         </eAnnotations>
@@ -381,7 +381,7 @@
         <details key="documentation" value="This class represents an EnumerationValue at runtime. At runtime the Enumeration is bound to one of its possible values. This means, that a concrete EnumerationValue will be mapped to the Enumeration from the swplatform-package."/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="enumValue" lowerBound="1"
-          eType="ecore:EClass ../../org.muml.pm.software.platform/model/swplatform.ecore#//EnumerationValue">
+          eType="ecore:EClass ../../org.muml.pm.software/model/software.ecore#//EnumerationValue">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The EnumerationValue to which this expression belongs."/>
         </eAnnotations>

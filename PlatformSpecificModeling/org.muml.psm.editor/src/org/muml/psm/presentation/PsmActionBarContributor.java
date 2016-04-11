@@ -173,7 +173,7 @@ public class PsmActionBarContributor
 	public void contributeToMenu(IMenuManager menuManager) {
 		super.contributeToMenu(menuManager);
 
-		IMenuManager submenuManager = new MenuManager(PsmEditorPlugin.INSTANCE.getString("_UI_PsmEditor_menu"), "de.uni_paderborn.fujaba.muml.psmMenuID");
+		IMenuManager submenuManager = new MenuManager(PsmEditorPlugin.INSTANCE.getString("_UI_PsmEditor_menu"), "org.muml.psmMenuID");
 		menuManager.insertAfter("additions", submenuManager);
 		submenuManager.add(new Separator("settings"));
 		submenuManager.add(new Separator("actions"));

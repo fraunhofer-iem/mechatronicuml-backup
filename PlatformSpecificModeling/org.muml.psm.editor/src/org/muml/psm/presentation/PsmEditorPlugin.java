@@ -7,9 +7,8 @@ import org.eclipse.emf.common.ui.EclipseUIPlugin;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.muml.core.provider.CoreEditPlugin;
 import org.muml.pim.actionlanguage.provider.ActionlanguageEditPlugin;
-import org.muml.pim.constraint.provider.MumlEditPlugin;
 import org.muml.pm.hardware.hwplatform.provider.HardwareEditPlugin;
-import org.muml.pm.software.platform.provider.SwplatformEditPlugin;
+import org.muml.pm.software.provider.SoftwareEditPlugin;
 
 /**
  * This is the central singleton for the Psm editor plugin.
@@ -46,8 +45,8 @@ public final class PsmEditorPlugin extends EMFPlugin {
 				ActionlanguageEditPlugin.INSTANCE,
 				CoreEditPlugin.INSTANCE,
 				HardwareEditPlugin.INSTANCE,
-				MumlEditPlugin.INSTANCE,
-				SwplatformEditPlugin.INSTANCE,
+				org.muml.pim.provider.MumlEditPlugin.INSTANCE,
+				SoftwareEditPlugin.INSTANCE,
 			});
 	}
 

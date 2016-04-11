@@ -174,7 +174,7 @@ public class RealtimestatechartparameterActionBarContributor
 	public void contributeToMenu(IMenuManager menuManager) {
 		super.contributeToMenu(menuManager);
 
-		IMenuManager submenuManager = new MenuManager(PsmEditorPlugin.INSTANCE.getString("_UI_RealtimestatechartparameterEditor_menu"), "de.uni_paderborn.fujaba.muml.psm.psm_realtimestatechart.realtimestatechartparameterMenuID");
+		IMenuManager submenuManager = new MenuManager(PsmEditorPlugin.INSTANCE.getString("_UI_RealtimestatechartparameterEditor_menu"), "org.muml.psm.psm_realtimestatechart.realtimestatechartparameterMenuID");
 		menuManager.insertAfter("additions", submenuManager);
 		submenuManager.add(new Separator("settings"));
 		submenuManager.add(new Separator("actions"));

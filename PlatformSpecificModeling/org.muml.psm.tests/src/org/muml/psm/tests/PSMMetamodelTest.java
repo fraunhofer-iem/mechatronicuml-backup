@@ -17,7 +17,7 @@ import org.muml.core.tests.MetamodelTest;
 import org.muml.core.tests.TestUtilities;
 import org.muml.pim.PimPackage;
 import org.muml.pm.hardware.HardwarePackage;
-import org.muml.pm.software.platform.SwplatformPackage;
+import org.muml.pm.software.SoftwarePackage;;
 
 @RunWith(Parameterized.class)
 public class PSMMetamodelTest extends MetamodelTest {
@@ -33,7 +33,7 @@ public class PSMMetamodelTest extends MetamodelTest {
 		CorePackage.eINSTANCE.eClass();
 		PimPackage.eINSTANCE.eClass();
 		HardwarePackage.eINSTANCE.eClass();
-		SwplatformPackage.eINSTANCE.eClass();
+		SoftwarePackage.eINSTANCE.eClass();
 		// Resource coreModel = TestUtilities.loadResource(resourceSet,
 		// "org.muml.core/model/core.ecore");
 
