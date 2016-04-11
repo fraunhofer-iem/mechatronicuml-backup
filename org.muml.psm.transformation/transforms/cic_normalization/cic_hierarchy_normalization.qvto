@@ -9,7 +9,7 @@ modeltype Codegen uses psm::codegen('http://www.muml.org/psm/1.0.0');
 modeltype ConnectorPackage uses pim::connector('http://www.muml.org/pim/1.0.0');
 modeltype ValuetypePackage uses pim::valuetype('http://www.muml.org/pim/1.0.0');
 modeltype ComponentPackage uses pim::component('http://www.muml.org/pim/1.0.0');
-modeltype InstancePackage uses muml::instance('http://www.muml.org/pim/1.0.0');
+modeltype InstancePackage uses pim::instance('http://www.muml.org/pim/1.0.0');
 modeltype Ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
 
 main() {
