@@ -36,11 +36,28 @@ else
 	rtsc
 endif
 
- /]
+/]
 
 
 
 
+[**
+ * returns the IdentifierName (C-Macro definition) for a given DiscretePortInstance
+ * @param pi a DiscretePortInstance
+ * @return the IdentifierVarialbeName for the given DiscretePortInstance
+*/]
+[query public getIdentifierVariableName (pi: DiscretePortInstance) : String = 
+'PORT_'+pi.componentInstance.getName().toUpperCase()+pi.componentInstance.componentType.getName().toUpperCase()+pi.getName().toUpperCase()/]
+
+
+
+[**
+ * returns the IdentifierName (C-Macro definition) for a given MessageType
+ * @param msgT the MessageType
+ * @return the IdentifierVarialbeName for the given MessageType
+*/]
+[query public getIdentifierVariableName (msgT: MessageType) : String = 
+'MESSAGE_'+msgT.getVariableName().toUpperCase()/]
 
 [**
  * returns the C-type name for a given MessageType
@@ -48,7 +65,16 @@ endif
  * @return C-type for a the given message type
 */]
 [query public getTypeName (msgT: MessageType) : String = 
-msgT.getName() + msgT.repository.getName() +'Message'/]
+msgT.getVariableName()+'_Message'/]
+
+
+
+[query public getStructName(msgType : MessageType) : String = 
+	msgType.getName() + msgType.repository.getName() +'Message'
+/]
+
+
+
 
 [query public getName(oRep : OperationRepository) : String = 
 oRep.getQualifiedName() /]
@@ -56,6 +82,9 @@ oRep.getQualifiedName() /]
 [query public getMessageType(msgType : MessageType) : String = 
 	msgType.getName() +'_'+ msgType.repository.getName() +'_Message'
 /]
+
+
+
 
 
 
@@ -935,9 +964,6 @@ endif
 
 
 
-[query public getStructName(msgType : MessageType) : String = 
-	msgType.getName() + msgType.repository.getName() +'Message'
-/]
 
 
 [**
